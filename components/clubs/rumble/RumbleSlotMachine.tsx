@@ -9,11 +9,14 @@ import s from './rumble.module.css'
 
 /**
  * The casino reveal (port of the Worker's `RoyalRumbleSlotReveal`, spec §47): every time a slot opens,
- * three reels roll the names of the whole board past a payline, stop left to right, and each one flips
+ * three reels roll the names of the whole board past a payline, stop one after another, and each one flips
  * over into its card. The strip always ends on the card it covers — the machine cannot land on a lie.
  * Under reduced motion there is no spin: the cards simply are.
  */
 const STEP_MS=60
+
+/** a sticker prints the given name small over the family name: split at the first space, a single name is all surname */
+function nameParts(name:string){const i=name.trim().indexOf(' ');return i<0?{first:'',last:name.trim()}:{first:name.trim().slice(0,i),last:name.trim().slice(i+1)}}
 
 /** one reel: the names roll past the payline and the cover drops away when it lands — shared with LEGENDS MANAGER's draft */
 export function SlotReel({names,stopAt,landed,reduced,label}:{names:string[];stopAt:number;landed:boolean;reduced:boolean;label:string}){
@@ -43,7 +46,7 @@ export function RumbleCardButton({card,index,selected,disabled,blocked,flip,onPi
    </span>
    {card.price===5&&<span className={`${s.mono} ${s.legendTag}`}>{tr(copy,'rr.legend')}</span>}
    <span className={s.cardShirt}><RumbleShirt card={card} side="us" wardrobe={wardrobe}/></span>
-   <span className={s.cardName} dir="auto">{card.name}</span>
+   <span className={s.cardName} dir="auto">{nameParts(card.name).first&&<small className={s.cardFirst}>{nameParts(card.name).first} </small>}<span className={s.cardLast} data-len={nameParts(card.name).last.length>13?'xl':nameParts(card.name).last.length>10?'l':undefined}>{nameParts(card.name).last}</span></span>
    <span><span className={s.cardYearsLabel}>{tr(copy,'rr.years')}</span><span className={`${s.mono} ${s.cardYears}`} dir="ltr">{years(copy,card)}</span></span>
    <span className={s.bars} aria-hidden="true">{Array.from({length:5},(_,i)=><i key={i} data-on={i<card.price}/>)}</span>
   </span>

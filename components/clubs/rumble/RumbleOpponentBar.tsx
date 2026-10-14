@@ -26,6 +26,6 @@ export function RumbleOpponentBar({club,clubs,vs,duel,from,locale,me}:{club:stri
     ?clubs.map(c=><Link key={c.id} className={`${s.chip} min-h-tap`} aria-current={c.id===club?'true':undefined} href={`${clubHref(c.id,'royal-rumble','en')}${q({duel})}`}>{c.name}</Link>)
     :null}
   </div>
-  {!duel&&<RivalPicker me={me} current={vs??'self'} copy={{label:tr(copy,'rr.vsKicker'),pick:tr(copy,'rr.vsPick'),unavailable:tr(copy,'rr.xi.unavailable'),close:tr(copy,'rr.close'),same:tr(copy,'rr.vsSelf'),random:tr(copy,'rr.xi.rival.random'),vs:'VS'}} options={[{id:'self',kind:'same',name:tr(copy,'rr.vsSelf'),sub:null,ok:true,href:q({})||'?',...dress(me.id)},...clubs.filter(c=>c.id!==club).map(c=>({id:c.id,kind:'club' as const,name:c.name,sub:REGISTRY.find(r=>r.id===c.id)?.city??null,ok:true,href:q({vs:c.id}),...dress(c.id)}))]}/>}
+  {!duel&&<RivalPicker me={me} current={vs??'self'} copy={{label:tr(copy,'rr.vsKicker'),pick:tr(copy,'rr.vsPick'),unavailable:tr(copy,'rr.xi.unavailable'),close:tr(copy,'rr.close'),same:tr(copy,'rr.vsSelf'),random:tr(copy,'rr.xi.rival.random'),vs:'VS',change:tr(copy,'rr.vs.change'),title:tr(copy,'rr.vs.title'),ink:tr(copy,'rr.vs.ink')}} options={[{id:'self',kind:'same',name:tr(copy,'rr.vsSelf'),sub:null,ok:true,href:q({})||'?',...dress(me.id)},...clubs.filter(c=>c.id!==club).map(c=>({id:c.id,kind:'club' as const,name:c.name,sub:REGISTRY.find(r=>r.id===c.id)?.city??null,ok:true,href:q({vs:c.id}),...dress(c.id)}))]}/>}
  </section>
 }

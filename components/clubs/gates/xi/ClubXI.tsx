@@ -44,8 +44,8 @@ export type ClubXIProps={players:ClubPlayer[];club:string;clubName:string;locale
 /** Gate 1 · the all-time XI as a game: a printed pitch, shirts you tap or drag, a rail docked under it. */
 export function ClubXI(props:ClubXIProps){
  const [kind,setKind]=useState<Kind>('best'),{copy}=props,t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
- const tabs=<div className={css.tabs} role="tablist" aria-label={t('xi.tabs')}>
-  {(['best','worst'] as const).map(k=><button key={k} type="button" role="tab" className={css.tab} aria-selected={kind===k} onClick={()=>setKind(k)}>{t(`xi.tab.${k}`)}</button>)}
+ const tabs=<div className={`wk-seg ${css.tabs}`} role="tablist" aria-label={t('xi.tabs')}>
+  {(['best','worst'] as const).map(k=><button key={k} type="button" role="tab" className={`min-h-tap ${css.tab}`} aria-selected={kind===k} onClick={()=>setKind(k)}>{t(`xi.tab.${k}`)}{k==='worst'&&<small>{t('xi.tab.worstSub')}</small>}</button>)}
  </div>
  return <section className={css.stage} data-testid="xi-builder" data-kind={kind}>
   <XIBoard key={kind} kind={kind} tabs={tabs} {...props}/>
@@ -130,21 +130,22 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
 
  const main=<div className={css.main}>
   <div className={css.bar}>{tabs}
-   <button type="button" className={css.tool} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}>C</button>
-   <button type="button" className={css.tool} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
+   <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}>C</button>
+   <button type="button" className={`min-h-tap ${css.tool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
   </div>
   {kind==='worst'&&<p className={css.note}>{t('xi.worstNote')}</p>}
   <XIPitch xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} flip={localeDirection(locale)==='ltr'} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
    hud={{count:t('xi.count',{n:filledCount(xi)}),done:complete,formation:xi.formation,onFormation:open('formation'),formationLabel:t('xi.formationBtn',{name:xi.formation})}}/>
   <div className={css.dock}>
+   {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget}>{target}</span></p>}
    {railOpen
     ?<PickRail target={target} targetSub={activeMan?.name??t('xi.pickFor')} items={items} onPick={pick} onDrop={drop} onClose={()=>setRailOpen(false)} labels={labels} onQuery={setQuery}
        chips={role?[{key:'fit',label:t('xi.fits'),pressed:fitOnly,onClick:()=>setFitOnly(v=>!v)}]:[]}
        extra={<button type="button" onClick={open('full')} className="flex min-h-tap shrink-0 items-center border-hair border-ink/40 px-2 font-body text-[11.5px] font-extrabold text-ink">{t('xi.fullList')}</button>}/>
     :complete
      ?<div className={css.strip} data-testid="xi-complete"><h2>{t(kind==='best'?'xi.complete.title':'xi.complete.worst')}</h2>
-       <button type="button" className={css.tool} onClick={lockIn}>{copy.save}</button>
-       <button type="button" className={css.tool} onClick={open('result')}>{t('xi.share')}</button></div>
+       <button type="button" className={`min-h-tap ${css.tool}`} onClick={lockIn}>{copy.save}</button>
+       <button type="button" className={`min-h-tap ${css.tool}`} onClick={open('result')}>{t('xi.share')}</button></div>
      :<p className={css.hint}>{t('xi.hintReopen')}</p>}
    <p className={css.status} role="status">{notice}</p>
   </div>
@@ -154,7 +155,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
   <div className={css.layout}>
    {main}
    <aside className={css.side} aria-label={t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}>
-    <div className={css.sideCard}><h3>{xi.formation} · {t('xi.count',{n:filledCount(xi)})}</h3>
+    <div className={css.sideCard}><h3><span className="wk-logo red sm wk-tilt">{t('xi.sheet')}</span><small>{xi.formation} · {t('xi.count',{n:filledCount(xi)})}</small></h3>
      <ol className={css.sheetList}>{[...slots].sort((a,b)=>a.y-b.y||a.x-b.x).map(s=>{const p=xi.picks[s.slotId]?byId.get(xi.picks[s.slotId]!):null;return <li key={s.slotId} data-empty={!p}><b>{s.role}</b><span lang={contentLocale} dir="auto">{p?`${p.name}${xi.captain===p.id?` (${t('xi.captainWord')})`:''}`:'—'}</span></li>})}
       {xi.twelfth&&byId.get(xi.twelfth)&&<li><b>12</b><span lang={contentLocale} dir="auto">{byId.get(xi.twelfth)!.name}</span></li>}</ol></div>
     <p className={css.fine}>{copy.localOnly}</p>
@@ -162,7 +163,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
   </div>
 
   <SlideSheet open={sheet==='formation'} onClose={closeSheet} title={t('xi.formationTitle')} closeLabel={copy['play.close']}>
-   <ul className={css.formations}>{Object.keys(FORMATIONS).map(f=><li key={f}><button type="button" className={css.formation} aria-pressed={xi.formation===f} onClick={()=>{commit(changeFormation(xi,f));closeSheet()}}>
+   <ul className={css.formations}>{Object.keys(FORMATIONS).map(f=><li key={f}><button type="button" className={`min-h-tap ${css.formation}`} aria-pressed={xi.formation===f} onClick={()=>{commit(changeFormation(xi,f));closeSheet()}}>
     <svg viewBox="0 0 100 133" aria-hidden="true">{FORMATIONS[f]!.slots.map(s=><circle key={s.slotId} cx={localeDirection(locale)==='ltr'?100-s.x:s.x} cy={(11+(s.y-14)*(77/80))*1.33} r="5"/>)}</svg>{f}</button></li>)}</ul>
   </SlideSheet>
 
@@ -175,19 +176,19 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
      {role&&<label className={css.check}><input type="checkbox" checked={full.fit} onChange={e=>setFull(f=>({...f,fit:e.target.checked,limit:40}))}/>{copy.fitOnly}</label>}
     </div>
     <ul className={css.rows} data-testid="xi-players">{fullPool.slice(0,full.limit).map(p=>{const fit=role?fitOf(p.positions,role):'unknown',here=whereIs(xi,p.id)
-     return <li key={p.id}><button type="button" className={css.row} data-player-id={p.id} disabled={here===active} onClick={()=>{commit(place(xi,active,p.id),active);closeSheet()}}>
+     return <li key={p.id}><button type="button" className={`min-h-tap ${css.row}`} data-player-id={p.id} disabled={here===active} onClick={()=>{commit(place(xi,active,p.id),active);closeSheet()}}>
       <span className={css.rowShirt}><ClubShirt player={p} wardrobe={wardrobe} side={side}/></span>
       <span><span className={css.rowName} lang={contentLocale} dir="auto">{p.name}</span><span className={css.rowSub}>{p.positions.join(' / ')||copy.unknown} · {years(p)}</span></span>
       <span className={css.rowFit} data-fit={fit}>{here?t('xi.rail.taken'):fit==='fit'?copy.fit:fit==='other'?copy.fitOther:''}</span></button></li>})}</ul>
-    {fullPool.length>full.limit&&<button type="button" className={css.tool} onClick={()=>setFull(f=>({...f,limit:f.limit+40}))}>{copy.more}</button>}
+    {fullPool.length>full.limit&&<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>setFull(f=>({...f,limit:f.limit+40}))}>{copy.more}</button>}
    </div>
   </SlideSheet>
 
   <SlideSheet open={sheet==='result'} onClose={closeSheet} title={t(kind==='best'?'xi.poster.mine':'xi.poster.worst')} size="full" closeLabel={copy['play.close']}
    footer={<div className={css.actions}>
-    <button type="button" className={`${css.tool} ${css.primary}`} onClick={lockIn}>{copy.save}</button>
-    {kind==='best'&&complete?<ShareComposer label={t('xi.share')} draft={xiShare(club,{formation:xi.formation,lines:cardLines(xi,byId),captain:xi.captain?shortName(byId.get(xi.captain)?.name||'')||null:null})}/>:<button type="button" className={css.tool} onClick={share}>{t('xi.share')}</button>}
-    <button type="button" className={css.tool} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
+    <button type="button" className={`min-h-tap ${css.tool} ${css.primary}`} onClick={lockIn}>{copy.save}</button>
+    {kind==='best'&&complete?<ShareComposer label={t('xi.share')} draft={xiShare(club,{formation:xi.formation,lines:cardLines(xi,byId),captain:xi.captain?shortName(byId.get(xi.captain)?.name||'')||null:null})}/>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={share}>{t('xi.share')}</button>}
+    <button type="button" className={`min-h-tap ${css.tool}`} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
    <div className={css.poster} data-testid="xi-poster">
     <div className={css.posterHead}><p className={css.posterKicker}>{clubName} · {xi.formation}</p><h2 className={css.posterTitle}>{t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}</h2></div>
     <div className={css.posterRows}>{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p&&<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{shortName(p.name)}</span></div>})}</div>)}

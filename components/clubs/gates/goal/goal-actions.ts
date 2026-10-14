@@ -12,7 +12,7 @@ export type GoalVerdict=Verdict&{
  * Gate 8 grading: zone practice, decided where the answer lives. Full mode needs two to five valid touches and a goal whose
  * report describes at least two; a forged or malformed sheet is refused whole. An unnamed actor is not applicable (its term
  * leaves the denominator), extra and missing touches can only lower quality, and a hint costs once. The cast, verbs, order
- * and count never left the server before this call. The hint receipt is the player's own flag (`hinted`): it can only ever
+ * and count never reached the client before this call. The hint receipt is the player's own flag (`hinted`): it can only ever
  * lower his own score, so there is nothing to forge.
  */
 export async function gradeGoalReplay(slug:string,version:string,goalId:string,seed:number,touches:unknown,hinted=false):Promise<GoalVerdict|null>{

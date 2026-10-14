@@ -65,7 +65,7 @@ export function ChoicePicker({open,onClose,title,choices,current,contentLocale,c
 /** 1–99 as a grid of shirt-number tiles. */
 export function NumberPicker({open,onClose,title,current,closeLabel,t,onPick}:{open:boolean;onClose:()=>void;title:string;current:string|undefined;closeLabel:string;t:T;onPick:(v:string,from:HTMLElement|null)=>void}){
  return <SlideSheet open={open} onClose={onClose} title={title} size="full" closeLabel={closeLabel}>
-  <ul className={css.numbers} data-testid="polls-numbers">{NUMBERS.map(n=><li key={n}><button type="button" className={`${css.num} min-h-tap`} aria-pressed={current===String(n)} aria-label={t('tv.num.aria',{n})} onClick={e=>onPick(String(n),e.currentTarget)}>{n}</button></li>)}</ul>
+  <p className={css.pickNote}>{t('tv.num.note')}</p><ul className={css.numbers} data-testid="polls-numbers">{NUMBERS.map(n=><li key={n}><button type="button" className={`${css.num} min-h-tap`} aria-pressed={current===String(n)} aria-label={t('tv.num.aria',{n})} onClick={e=>onPick(String(n),e.currentTarget)}>{n}</button></li>)}</ul>
  </SlideSheet>
 }
 

@@ -126,10 +126,10 @@ export function KitBuilder(props:KitBuilderProps){
   const start=(m:KitMode)=>()=>{setMode(m);setPhase('play')}
   return <section className={css.stage} data-testid="kit-builder" data-phase="intro">
    <div className={css.intro}>
-    <div className={css.introShirt}><KitCloth spec={BLANK} missing={['maker','sponsor']} texture={false} monogram={monogram} crestSrc={crestFor(club)}/></div>
+    <div className={`wk-panel wk-lift wk-sky ${css.introShirt}`}><span className="wk-speed" aria-hidden="true"/><p className={`wk-banner ${css.introBanner}`}>{clubName} · {say(`kb.game.${game}`)}</p><KitCloth spec={BLANK} missing={['maker','sponsor']} texture={false} monogram={monogram} crestSrc={crestFor(club)}/><span className={`wk-burst ${css.introBurst}`} aria-hidden="true">{say('kb.intro.burst')}</span></div>
     <div className={css.introText}>
      <p className={css.kicker}>{clubName} · {say(`kb.game.${game}`)}</p>
-     <h2 className={css.introTitle}>{say('kb.intro.title')}</h2>
+     <h2 className={`wk-logo red ${css.introTitle}`}>{say('kb.intro.title')}</h2>
      <p>{say('kb.intro.body')}</p>
      <p className={css.fine} data-testid="kb-game-note">{say(`kb.game.${game}.note`)}</p>
      {legacy&&<p className={css.notice} role="note" data-testid="kb-legacy">{say('kb.legacy')}</p>}
@@ -153,7 +153,7 @@ export function KitBuilder(props:KitBuilderProps){
   const perfect=verdicts.filter(v=>v.perfect).length
   return <section className={css.stage} data-testid="kit-builder" data-phase="summary">
    <div className={css.cert} data-testid="kb-certificate">
-    <header className={css.certHead}><p className={css.kicker}>{clubName} · {say(`kb.game.${game}`)}</p><h2>{say('kb.cert.title')}</h2><p className={css.certScore}><b>{total}</b><span>{say('kb.cert.pts')}</span></p></header>
+    <header className={`wk-panel wk-lift wk-sky ${css.certHead}`}><p className={css.kicker}>{clubName} · {say(`kb.game.${game}`)}</p><h2>{say('kb.cert.title')}</h2><p className={`wk-burst ${css.certScore}`}><b className="wk-num">{total}</b><span>{say('kb.cert.pts')}</span></p></header>
     <ul className={css.certRows}>{verdicts.map(v=><li key={v.index}>
      <span className={css.certShirt}><KitCloth spec={v.answer} texture={false} monogram={monogram} crestSrc={crestFor(club)} title={`${v.seasonLabel} ${say(`kb.variant.${v.variant}`)}`}/></span>
      <span className={css.certName}><b><bdi>{v.seasonLabel}</bdi></b><small>{say(`kb.variant.${v.variant}`)} · {say('kb.cert.field',{f:v.fieldPoints})}{v.dna?` · ${say('kb.cert.dna')}`:''}</small></span>
@@ -175,10 +175,10 @@ export function KitBuilder(props:KitBuilderProps){
   const g=graded[idx]!,v=g.verdict,last=idx+1>=size
   return <section className={css.stage} data-testid="kit-builder" data-phase="reveal">
    <div className={css.reveal}>
-    <header className={css.revealHead} data-perfect={v.perfect}>
+    <header className={`wk-panel wk-lift ${css.revealHead}`} data-perfect={v.perfect}>
      <p className={css.kicker}>{say('kb.reveal.kicker',{i:idx+1,n:size})}</p>
      <h2>{v.perfect?say('kb.reveal.perfect'):say('kb.reveal.parts',{r:v.right,n:v.steps.length})}</h2>
-     <p className={css.revealScore}><b>{v.score}</b><span>{say('kb.cert.pts')}</span></p>
+     <p className={`wk-burst ${css.revealScore}`}><b className="wk-num">{v.score}</b><span>{say('kb.cert.pts')}</span></p>
      <p className={css.fine} data-testid="kb-field-accuracy">{say('kb.reveal.field',{f:v.fieldPoints})}</p>
     </header>
     <div className={css.pair}>
@@ -212,22 +212,24 @@ export function KitBuilder(props:KitBuilderProps){
  const progress=Object.keys(mine).length
  return <section className={css.stage} data-testid="kit-builder" data-phase="play" data-step={row?.step??'review'}>
   <div className={css.layout}>
-   <div className={css.left}>
+   <div className={css.colShirt}>
     <div className={css.top}>
      <span className={css.pill} data-testid="kb-count">{say('kb.shirtN',{i:idx+1,n:size})}</span>
      <div className={css.plate}><b><bdi>{puzzle.seasonLabel}</bdi></b><span>{variantName}</span></div>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={askHint} disabled={!canHint||inReview} aria-label={say('kb.hint.aria',{pts:HINT_PENALTY,left:HINT_LIMIT-hint.n})} data-testid="kb-hint"><span aria-hidden="true">?</span><small>{HINT_LIMIT-hint.n}</small></button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({kind:'rules'})} aria-label={say('kb.rules.open')}><span aria-hidden="true">i</span></button>
     </div>
-    <div className={css.garment} ref={garmentRef} {...dropZone('kit-shirt')} data-testid="kb-garment">
+    <div className={`wk-sky ${css.garment}`} ref={garmentRef} {...dropZone('kit-shirt')} data-testid="kb-garment">
+     <span className="wk-speed" aria-hidden="true"/>
      <KitCloth spec={cloth} missing={missing} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
     </div>
    </div>
-   <div className={css.right}>
+   <div className={css.colWork}>
     <ol className={css.rail} role="tablist" aria-label={say('kb.rail')}>
      {steps.map((s,i)=><li key={s.step}><button type="button" role="tab" aria-selected={stepIx===i} data-done={!!mine[s.step]} className={`min-h-tap ${css.railBtn}`} onClick={()=>setStepIx(i)} data-testid={`kb-step-${s.step}`}><i>{mine[s.step]?'✓':i+1}</i><span>{stepName(s.step)}</span></button></li>)}
      <li><button type="button" role="tab" aria-selected={inReview} className={`min-h-tap ${css.railBtn}`} data-done={allPlaced} onClick={()=>setStepIx(REVIEW)} disabled={!allPlaced} data-testid="kb-step-review"><i>{allPlaced?'✓':'★'}</i><span>{say('kb.step.review')}</span></button></li>
     </ol>
+    <div className={css.work}>
     {!inReview&&row?<div className={css.panel} role="tabpanel">
      <p className={css.question}>{say(`kb.q.${row.step}`,{season:puzzle.seasonLabel,variant:variantName})}</p>
      <ul className={css.cards} data-testid="kb-cards">{row.options.map(o=><li key={o.id}><OptionCard o={o} label={optionLabel(copy,o)} copy={copy} selected={mine[row.step]===o.id} struck={struck.includes(o.id)} wide={wide} cloth={cloth} contentLocale={contentLocale} monogram={monogram} onPlace={()=>place(row.step,o.id)} onDropped={()=>place(row.step,o.id)} onInfo={openSheet({kind:'info',option:o})} infoLabel={say('kb.info.open',{name:optionLabel(copy,o)})} struckLabel={say('kb.struck')}/></li>)}</ul>
@@ -241,6 +243,7 @@ export function KitBuilder(props:KitBuilderProps){
     {!inReview&&allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>setStepIx(REVIEW)} data-testid="kb-to-review"><b>{say('kb.toReview')}</b></button>}
     {error&&<div className={css.error} role="alert"><p>{say(`kb.err.${error}`)}</p>{error==='stale'?<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>location.reload()}>{say('kb.err.reload')}</button>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={check}>{say('kb.err.retry')}</button>}</div>}
     <p className={css.status} role="status">{notice}</p>
+    </div>
    </div>
   </div>
 
@@ -260,7 +263,7 @@ function OptionCard({o,label,copy,selected,struck,wide,cloth,contentLocale,monog
  // a design card shows the cut on the cloth already chosen — or on neutral cloth if nothing is placed yet
  const preview:ClothSpec={...cloth,maker:null,sponsor:null,crest:false,...o.patch,...(o.step==='construction'?{pattern:o.patch.pattern!}:{})}
  return <div className={css.cardWrap} data-struck={struck}>
-  <button type="button" className={css.card} aria-pressed={selected} disabled={struck} aria-label={struck?`${label} — ${struckLabel}`:label} data-testid={`kb-option-${o.step}`} data-option={o.id} onClick={onPlace} {...drag}>
+  <button type="button" className={`min-h-tap ${css.card}`} aria-pressed={selected} disabled={struck} aria-label={struck?`${label} — ${struckLabel}`:label} data-testid={`kb-option-${o.step}`} data-option={o.id} onClick={onPlace} {...drag}>
    <span className={css.cardArt}>
     {o.step==='body'&&<span className={css.discs} aria-hidden="true"><i style={{background:colourHex(o.patch.base!)}}/>{o.patch.trim&&<i style={{background:colourHex(o.patch.trim)}}/>}</span>}
     {o.step==='construction'&&<KitCloth spec={{...preview,base:cloth.base??'grey',trim:cloth.trim??(cloth.base?null:'white')}} texture={false} monogram={monogram} viewBox="40 36 240 262"/>}
@@ -268,6 +271,6 @@ function OptionCard({o,label,copy,selected,struck,wide,cloth,contentLocale,monog
    </span>
    <span className={css.cardLabel} lang={o.step==='maker'||o.step==='sponsor'?contentLocale:undefined} dir="auto">{label}</span>
   </button>
-  <button type="button" className={css.info} onClick={onInfo} aria-label={infoLabel}>i</button>
+  <button type="button" className={`min-h-tap ${css.info}`} onClick={onInfo} aria-label={infoLabel}>i</button>
  </div>
 }

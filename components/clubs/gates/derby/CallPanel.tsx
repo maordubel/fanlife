@@ -106,19 +106,19 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
  const m=q.kind==='result'?byId.get(q.meeting):null
  const trueResult=m?resultOf(m):null
  const dot=(k:number)=>k<trail.length?(trail[k]?'right':'wrong'):k===i?'now':'todo'
- const plate=(c:Result,kind:'club'|'rival'|'draw',label:string)=><button key={c} type="button" className={`${css.plate} min-h-tap`} data-k={kind} data-choice={c} data-lean={lean===c} onClick={e=>answer(c,e.currentTarget)} aria-keyshortcuts={c==='D'?'ArrowUp D':(c==='W')!==rtl?'ArrowLeft':'ArrowRight'}>{label}</button>
+ const plate=(c:Result,kind:'club'|'rival'|'draw',label:string)=><button key={c} type="button" className={`${css.plate} min-h-tap`} data-k={kind} data-choice={c} data-lean={lean===c} onClick={e=>answer(c,e.currentTarget)} aria-keyshortcuts={c==='D'?'ArrowUp D':(c==='W')!==rtl?'ArrowLeft':'ArrowRight'}><span className={css.plateKey} aria-hidden="true">{c==='D'?'↑':(c==='W')!==rtl?'←':'→'}</span>{label}</button>
  return <div className={css.call} ref={rootRef} tabIndex={-1} data-testid="derby-call" data-phase={phase}>
   <div className={css.hud}>
-   <ol className={css.dots} aria-label={t('derby.call.progress',{n:Math.min(i+1,qs.length),total:qs.length})}>{qs.map((x,k)=><li key={x.id} data-s={dot(k)}/>)}</ol>
-   <span className={css.hudStat}>{t('derby.call.points',{n:points})}</span>
-   {streak>1&&<span className={css.hudStat}>{t('derby.call.streak',{n:streak})}</span>}
+   <div className={css.hudCall}><span className={css.hudLabel}>{t('derby.call.hud')} <b className="wk-lamp" dir="ltr">{t('derby.call.progress',{n:Math.min(i+1,qs.length),total:qs.length})}</b></span>
+    <ol className={css.dots} aria-label={t('derby.call.progress',{n:Math.min(i+1,qs.length),total:qs.length})}>{qs.map((x,k)=><li key={x.id} data-s={dot(k)}/>)}</ol></div>
+   <span className={css.hudStat}><b className="wk-lamp red" dir="ltr">{points}</b><small>{t('derby.call.pts')}</small></span>
+   <span className={css.hudStat}><b className="wk-lamp" dir="ltr">{streak}</b><small>{t('derby.call.run')}</small></span>
   </div>
   <div className={css.arena}>
    {q.kind==='result'&&m&&<div className={css.card} data-call-card data-drag={drag.on} data-swipe={swipe} data-pop={phase==='ask'} style={{'--lean':`${drag.dx}px`} as CSSProperties}
      onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel}>
     <div className={css.cardTop}><span><bdi lang={contentLocale} dir="auto">{m.comp||t('derby.dossier.noComp')}</bdi></span><span><bdi>{dateText(m,locale,t)}</bdi></span></div>
-    <p className={css.q}>{t('derby.call.q.result')}</p>
-    <div className={css.callSides}><span data-us={m.us==='home'}><bdi lang={contentLocale} dir="auto">{m.home}</bdi></span><span data-us={m.us==='away'}><bdi lang={contentLocale} dir="auto">{m.away}</bdi></span></div>
+    <div className={css.callSides}><span data-us={m.us==='home'}><bdi lang={contentLocale} dir="auto">{m.home}</bdi></span><i aria-hidden="true">{t('derby.vs')}</i><span data-us={m.us==='away'}><bdi lang={contentLocale} dir="auto">{m.away}</bdi></span></div>
     <div className={css.callScore} data-hidden={!revealed} aria-label={revealed?t('derby.call.truth',{home:m.home,hg:m.hg,ag:m.ag,away:m.away}):t('derby.call.hidden')}>{revealed?`${m.hg}–${m.ag}`:'?–?'}</div>
     <p className={css.callComp}>{t('derby.you')}: <bdi>{clubName}</bdi></p>
     {revealed&&<span className={css.bigStamp} data-ok={ok} aria-hidden="true">{t(`derby.res.${trueResult??'U'}`)}</span>}
@@ -135,12 +135,17 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
    </div>}
   </div>
   <div className={css.dock}>
+   {!revealed&&q.kind==='result'&&<p className={css.whoWon}><span>{t('derby.call.q.result')}</span><span className={css.kicker}>{t('derby.call.coupon',{n:i+1,total:qs.length})}</span></p>}
    {!revealed&&q.kind==='result'&&<div className={css.plates} role="group" aria-label={t('derby.call.q.result')}>
     {plate('W','club',t('derby.call.club',{club:clubName}))}{plate('D','draw',t('derby.call.draw'))}{plate('L','rival',t('derby.call.rival',{rival}))}
    </div>}
    {!revealed&&q.kind==='earlier'&&<p className={css.fine} style={{textAlign:'center'}}>{t('derby.call.q.earlier')}</p>}
+   {!revealed&&<dl className={`wk-keys ${css.keys}`} aria-label={t('derby.keys.title')}>
+    {q.kind==='result'?<><div><dt><span className="wk-kbd">{rtl?'→':'←'}</span></dt><dd>{t('derby.call.club',{club:clubName})}</dd></div><div><dt><span className="wk-kbd">↑</span><span className="wk-kbd">D</span></dt><dd>{t('derby.call.draw')}</dd></div><div><dt><span className="wk-kbd">{rtl?'←':'→'}</span></dt><dd>{t('derby.call.rival',{rival})}</dd></div></>
+     :<div><dt><span className="wk-kbd">1</span><span className="wk-kbd">2</span></dt><dd>{t('derby.call.q.earlier')}</dd></div>}
+   </dl>}
    {revealed&&<>
-    <div className={css.feedback} data-ok={ok} role="status"><p>{ok?t('derby.call.right'):t('derby.call.wrong')}{q.kind==='result'&&trueResult?<> · <bdi>{clubName}</bdi>: {t(`derby.word.${trueResult}`)}</>:null}</p>
+    <div className={css.feedback} data-ok={ok} role="status" data-verdict={ok?'right':'wrong'} data-shout={ok?t('derby.call.shout'):undefined} data-shout-sub={ok?t('derby.call.points',{n:scoreStep(true,Math.max(0,streak-1)).points}):undefined}><span className={css.feedMark} aria-hidden="true">{ok?'✓':'✗'}</span><p>{ok?t('derby.call.right'):t('derby.call.wrong')}{q.kind==='result'&&trueResult?<> · <bdi>{clubName}</bdi>: {t(`derby.word.${trueResult}`)}</>:null}</p>
      {m&&<button type="button" className={`${css.btn} min-h-tap`} onClick={e=>onOpen(m,e.currentTarget)} aria-label={t('derby.dossier')}>i</button>}</div>
     <button ref={nextRef} type="button" className={`${css.btn} ${css.btnPrimary} ${css.btnWide} min-h-tap`} onClick={next} data-testid="derby-next">{i+1>=qs.length?t('derby.call.finish'):t('derby.call.next')}</button>
    </>}

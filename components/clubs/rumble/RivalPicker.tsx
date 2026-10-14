@@ -1,11 +1,11 @@
 'use client'
 import Link from 'next/link'
-import {useEffect,useId,useRef,useState,type CSSProperties} from 'react'
+import {useEffect,useId,useRef,useState} from 'react'
 import {Badge} from '@/components/clubs/Badge'
 import s from './rumble.module.css'
 
 export type RivalOpt={id:string;name:string;sub:string|null;ok:boolean;href:string;style?:Record<string,string>;pattern?:string;initials?:string;kind:'club'|'same'|'random'}
-export type RivalCopy={label:string;pick:string;unavailable:string;close:string;same:string;random:string;vs:string}
+export type RivalCopy={label:string;pick:string;unavailable:string;close:string;same:string;random:string;vs:string;/** the words under the opponent that open the grid */change?:string;/** the sheet's headline */title?:string;/** why the other clubs' crests print in one ink */ink?:string}
 
 /**
  * Who do you face? A drop-down that is a show in itself: the two crests across a VS, and a panel of club cards that drops open — each in
@@ -31,15 +31,19 @@ export function RivalPicker({me,current,options,copy}:{me:{id:string;name:string
   <button type="button" className={`${s.rpBar} min-h-tap`} aria-haspopup="listbox" aria-expanded={open} aria-controls={`${uid}-panel`} onClick={()=>setOpen(o=>!o)} data-testid="rumble-rival-open">
    <span className={s.rpSide}><Badge club={me} className={s.rpCrest}/><b dir="auto">{me.name}</b></span>
    <span className={s.rpVs} aria-hidden="true">{copy.vs}</span>
-   <span className={s.rpSide} style={now.style as CSSProperties}>{face(now)}<b dir="auto">{now.name}</b></span>
+   <span className={s.rpSide} data-kind={now.kind}>{face(now)}<b dir="auto">{now.name}</b>{copy.change&&<small className={s.rpChange}>{copy.change} <span aria-hidden="true">▾</span></small>}</span>
    <span className={s.rpChev} aria-hidden="true">▾</span>
   </button>
+  {open&&<span className={s.rpScrim} aria-hidden="true" onClick={()=>setOpen(false)}/>}
   <div id={`${uid}-panel`} className={s.rpPanel} role="listbox" aria-label={copy.pick} hidden={!open}>
+   <div className={s.rpHead}><span><small className={s.rpKicker}>{copy.label}</small><b className={s.rpTitle}>{copy.title??copy.pick}</b></span><button type="button" className={`${s.rpX} min-h-tap`} onClick={()=>setOpen(false)} aria-label={copy.close}><span aria-hidden="true">✕</span></button></div>
+   {copy.title&&<p className={s.rpLede}>{copy.pick}</p>}
    <ul>
     {options.map(o=><li key={o.id}>{o.ok
-     ?<Link data-rival href={o.href} scroll={false} role="option" aria-selected={o.id===current} className={`${s.rpCard} min-h-tap`} style={o.style as CSSProperties} data-kind={o.kind} onClick={()=>setOpen(false)}><span className={s.rpFace}>{face(o)}</span><b dir="auto">{o.name}</b>{o.sub&&<small>{o.sub}</small>}</Link>
-     :<span role="option" aria-disabled="true" aria-selected={false} className={`${s.rpCard} ${s.rpOff}`} style={o.style as CSSProperties}><span className={s.rpFace}>{face(o)}</span><b dir="auto">{o.name}</b><small>{copy.unavailable.replace('{reason}',o.sub??'—')}</small></span>}</li>)}
+     ?<Link data-rival href={o.href} scroll={false} role="option" aria-selected={o.id===current} className={`${s.rpCard} min-h-tap`} data-kind={o.kind} onClick={()=>setOpen(false)}><span className={s.rpFace}>{face(o)}</span><span className={s.rpText}><b dir="auto">{o.name}</b>{o.sub&&<small>{o.sub}</small>}</span></Link>
+     :<span role="option" aria-disabled="true" aria-selected={false} className={`${s.rpCard} ${s.rpOff}`} data-kind={o.kind}><span className={s.rpFace}>{face(o)}</span><span className={s.rpText}><b dir="auto">{o.name}</b><small>{copy.unavailable.replace('{reason}',o.sub??'—')}</small></span></span>}</li>)}
    </ul>
+   <p className={s.rpNote}>{copy.ink}</p>
    <button type="button" className={`${s.rpClose} min-h-tap`} onClick={()=>setOpen(false)}>{copy.close}</button>
   </div>
  </div>

@@ -20,7 +20,21 @@ import {terraceShare} from '@/lib/share/v3/adapters'
 import {DEBATE_REASONS,answerDebate,choicesFor,clearPick,dealBallot,debatesDone,emptySlip,filled,isComplete,nextOpen,questionOf,readDebates,reasonDebate,reasonKey,reasonsOf,receiptsFor,setPick,setReason,shareText,slipKey,standingOf,typeName,usableDebates,validateSlip,xiIds,type DebateState,type Slip} from '@/lib/clubs/polls-model'
 import {syncVotes} from '@/lib/clubs/polls-votes'
 import {clientTally} from '@/lib/clubs/polls-tally'
+import {crestFor} from '@/lib/clubs/crest'
 import css from './polls.module.css'
+
+/** the marked box: a printed cross, never colour alone */
+const Cross=()=><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 9l22 22M31 9L9 31"/></svg>
+/** the ballot box drawn on the slip's head — decorative, house inks only */
+const BallotBox=()=><svg className={css.box3d} viewBox="0 0 120 110" aria-hidden="true">
+ <path d="M60 10h26v40H60z" fill="var(--mag-card)" stroke="var(--mag-ink)" strokeWidth="4" transform="rotate(8 73 30)"/>
+ <path d="M66 20l14 14M80 20L66 34" stroke="var(--mag-vermilion)" strokeWidth="5" transform="rotate(8 73 30)"/>
+ <path d="M10 52l50-16 50 16-50 16z" fill="var(--mag-navy)" stroke="var(--mag-ink)" strokeWidth="4" strokeLinejoin="round"/>
+ <path d="M10 52v38l50 16V68z" fill="var(--mag-cyan)" stroke="var(--mag-ink)" strokeWidth="4" strokeLinejoin="round"/>
+ <path d="M110 52v38l-50 16V68z" fill="var(--mag-navy)" stroke="var(--mag-ink)" strokeWidth="4" strokeLinejoin="round"/>
+ <path d="M44 48l26-8" stroke="var(--mag-ink)" strokeWidth="5" strokeLinecap="round"/>
+ <path d="M35 74l3.5 7 7.7 1.1-5.6 5.4 1.3 7.7-6.9-3.6-6.9 3.6 1.3-7.7-5.6-5.4 7.7-1.1z" fill="var(--mag-white)" stroke="var(--mag-ink)" strokeWidth="2"/>
+</svg>
 
 type Tab='card'|'debates'
 type Sheet=null|{kind:'player'|'number'|'position'|'debate'|'card';id:string}
@@ -112,7 +126,7 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
  const honest=!tallyOn&&<aside className={css.honest} aria-label={t('tv.honest.title')} data-testid="polls-honest"><b>{t('tv.honest.title')}</b><p>{t('tv.honest.body')}</p></aside>
  const shorter=ballot.off.length>0&&<p className={`${css.fine} ${css.shorter}`} role="note" data-testid="polls-shorter" data-off={ballot.off.map(o=>o.id).join(' ')}>{t('tv.ballot.shorter',{m:ballot.length})} {ballot.off.map(o=>o.renamedTo?t('tv.off.renamed',{q:t(`tv.q.${o.id}`),to:t(`tv.q.${o.renamedTo}`)}):t('tv.off.short',{q:t(`tv.q.${o.id}`)})).join(' ')}</p>
  const cardView=<>
-  <SupporterCard slip={slip} ballot={ballot} byId={byId} wardrobe={wardrobe} clubName={clubName} contentLocale={contentLocale} t={t} editable onName={v=>setSlip(s=>({...s,name:typeName(v)}))}/>
+  <SupporterCard slip={slip} ballot={ballot} byId={byId} wardrobe={wardrobe} clubName={clubName} contentLocale={contentLocale} t={t} editable onName={v=>setSlip(s=>({...s,name:typeName(v)}))} crest={crestFor(club)} sealed={done}/>
   {honest}
  </>
  const shareBlock=<div className={css.shareRow}>
@@ -131,15 +145,16 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
      <span className={css.lineNo} aria-hidden="true">{i+1}</span>
      <span className={css.lineText}>
       <span className={css.latin} aria-hidden="true">{row.latin}</span>
-      <span className={css.ask}>{t(`tv.q.${row.id}`)}</span>
+      {answer
+       ?<span className={css.answer} lang={kind==='player'?contentLocale:undefined} dir="auto">{p&&<span className={css.markShirt}><ClubShirt player={p} wardrobe={wardrobe} side="us"/></span>}{answer}</span>
+       :<span className={css.ask}>{t(`tv.q.${row.id}`)}</span>}
       {!answer&&<span className={css.sub}>{t(`tv.sub.${row.id}`)}</span>}
       {row.id==='foreign'&&<span className={css.sub}>{t('tv.def.foreign')}</span>}
-      {answer&&reason&&<span className={css.reasonLine}>{t(`tv.why.${row.id}.${reason}`)}</span>}
+      {answer&&reason&&<span className={css.reasonLine}>— {t(`tv.why.${row.id}.${reason}`)}</span>}
       {answer&&<span className={css.state} data-standing={stand} data-testid={`polls-state-${row.id}`}>{t(stand==='counted'?'tv.state.counted':'tv.state.device')}</span>}
      </span>
      <span className={css.mark} data-empty={answer===null}>
-      {p&&<span className={css.markShirt}><ClubShirt player={p} wardrobe={wardrobe} side="us"/></span>}
-      <span className={css.stamp} data-empty={answer===null} lang={kind==='player'?contentLocale:undefined} dir="auto">{answer??t('tv.row.empty')}</span>
+      <span className={css.stamp} data-empty={answer===null}>{answer?<><Cross/><span className="sr-only">{t('tv.row.stamp')}</span></>:t('tv.row.empty')}</span>
      </span>
     </button>
     {answer&&<button type="button" className={`${css.whyBtn} min-h-tap`} aria-expanded={why===row.id} onClick={()=>setWhy(w=>w===row.id?null:row.id)}>{t('tv.why.open')}</button>}
@@ -164,8 +179,8 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
     return <li key={d.id} className={css.line} data-debate={d.id} data-done={!!picked}>
      <button type="button" className={`${css.lineMain} min-h-tap`} aria-label={picked?t('tv.deb.aria',{q:d.prompt,a:picked.name}):t('tv.deb.ariaEmpty',{q:d.prompt})} data-testid={`polls-debate-${d.id}`} onClick={openSheet({kind:'debate',id:d.id})}>
       <span className={css.lineNo} aria-hidden="true">{i+1}</span>
-      <span className={css.lineText}><span className={css.ask}>{d.prompt}</span>{picked&&r&&<span className={css.reasonLine}>{t(`tv.deb.why.${r}`)}</span>}{picked&&<span className={css.state} data-standing="device">{t('tv.state.device')}</span>}</span>
-      <span className={css.mark}><span className={css.stamp} data-empty={!picked} lang={picked?contentLocale:undefined} dir="auto">{picked?.name??t('tv.deb.choose')}</span></span>
+      <span className={css.lineText}><span className={css.ask}>{d.prompt}</span>{picked&&<span className={css.answer} lang={contentLocale} dir="auto">{picked.name}</span>}{picked&&r&&<span className={css.reasonLine}>— {t(`tv.deb.why.${r}`)}</span>}{picked&&<span className={css.state} data-standing="device">{t('tv.state.device')}</span>}</span>
+      <span className={css.mark}><span className={css.stamp} data-empty={!picked}>{picked?<><Cross/><span className="sr-only">{t('tv.row.stamp')}</span></>:t('tv.deb.choose')}</span></span>
      </button>
      {picked&&<div className={css.whyRow} role="group" aria-label={t('tv.deb.why.label')}>{DEBATE_REASONS.map(x=><button key={x} type="button" className={`${css.chip} min-h-tap`} aria-pressed={r===x} onClick={()=>giveReason(d.id,x)}>{t(`tv.deb.why.${x}`)}</button>)}</div>}
      {earlier&&!picked&&<div className={css.receipt} data-testid={`polls-deb-receipt-${d.id}`} data-retired={earlier.retired}><span>{earlierName?t('tv.receipt.older',{a:earlierName}):t('tv.receipt.retired',{a:'—'})}</span></div>}
@@ -174,29 +189,30 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
   {honest}
  </div>
 
- const tabs=<div className={css.bar}>
-  <div className={css.tabs} role="tablist" aria-label={t('tv.tabs')}>
-   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={`${css.tab} min-h-tap`} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}>{t(`tv.tab.${k}`)}</button>)}
+ const tabs=<><div className={css.bar}>
+  <div className={`wk-folders ${css.tabs}`} role="tablist" aria-label={t('tv.tabs')}>
+   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={`${css.tab} min-h-tap`} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={k==='card'?'M4 6h16v12H4zM8 10h8M8 14h5':'M4 12h16v8H4zM8 12V4h8v8M10 8l1.5 1.5L14 7'}/></svg>{t(`tv.tab.${k}`)}</button>)}
   </div>
   <span className={css.count} data-done={tab==='card'?done:debatesDone(ds.votes,debates)} aria-live="polite">{tab==='card'?t('tv.count',{n,m:ballot.length}):t('tv.deb.count',{n:answered,m:debates.length})}</span>
  </div>
+ <div className="wk-folders-rule" aria-hidden="true"/></>
 
  if(!loaded)return <section className={css.stage} data-testid="polls-board" data-tab={tab} data-loading="true" aria-busy="true"><p className={css.empty} role="status">{t('tv.loading')}</p></section>
 
- return <section className={css.stage} data-testid="polls-board" data-tab={tab} data-ballot={ballot.length}>
+ return <section className={`${css.stage} wgb`} data-testid="polls-board" data-tab={tab} data-ballot={ballot.length}>
   {!online&&<p className={css.offline} role="status" data-testid="polls-offline">{t('tv.offline')}</p>}
   {tabs}
   <div className={css.layout}>
    <div className={css.main}>
     {tab==='card'
      ?<div className={css.paper} role="tabpanel" id="tv-pane-card" aria-labelledby="tv-tab-card" data-testid="polls-pane-card">
-       <div className={css.paperHead}><p className={css.kicker}>{t('tv.slip.kicker')}</p><h2 className={css.paperTitle}>{t('tv.slip.title',{m:ballot.length})}</h2><p className={css.fine}>{t('tv.slip.sub')}</p>{shorter}</div>
+       <div className={css.paperHead}><BallotBox/><p className={css.kicker}>{t('tv.slip.kicker')} · <bdi>{clubName}</bdi></p><h2 className={css.paperTitle}>{t('tv.slip.title',{m:ballot.length})}</h2><p className={css.fine}>{t('tv.slip.sub')}</p>{shorter}</div>
        {slipView}
        <div className={css.onlyMobile}>{honest}</div>
       </div>
      :<div className={css.paper} role="tabpanel" id="tv-pane-debates" aria-labelledby="tv-tab-debates" data-testid="polls-pane-debates">{debateView}</div>}
     {tab==='card'&&<div className={css.dock}>
-     <button type="button" className={`${css.cta} ${css.onlyMobile}`} disabled={n===0} data-testid="polls-seal" onClick={e=>{opener.current=e.currentTarget;setNotice(done?t('tv.sealed'):'');setSheet({kind:'card',id:'card'})}}>{done?t('tv.seal'):t('tv.view')}</button>
+     <button type="button" className={`wk-btn red block lg min-h-tap ${css.seal} ${css.onlyMobile}`} disabled={n===0} data-testid="polls-seal" onClick={e=>{opener.current=e.currentTarget;setNotice(done?t('tv.sealed'):'');setSheet({kind:'card',id:'card'})}}>{done?t('tv.seal'):t('tv.view')}</button>
      {!done&&ballot.length>0&&<p className={css.hint}>{t('tv.sealHint',{m:ballot.length})}</p>}
      {undo&&<button type="button" className={`${css.undo} min-h-tap`} onClick={undoLast} data-testid="polls-undo">{t('tv.undo')}</button>}
      <p className={css.status} role="status">{notice}</p>

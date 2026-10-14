@@ -18,12 +18,12 @@
 
 /* ------------------------------------------------------------- the rail: decades + years */
 .rail { display: flex; flex-direction: column; gap: 6px; flex: none; min-width: 0; }
-.decades { display: flex; gap: 6px; margin: 0; padding: 2px 2px 6px; list-style: none; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+.decades { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 6px; margin: 0; padding: 2px 2px 6px; list-style: none; }
 .decades::-webkit-scrollbar { display: none; }
 .decade { flex: none; display: grid; align-content: center; justify-items: center; gap: 1px; min-height: 44px; min-width: 64px; padding: 2px 10px; border: 3px solid var(--t-ink); background: var(--mag-card); color: var(--t-ink); text-decoration: none; font-family: var(--mag-condensed, var(--mag-display)); font-weight: 700; font-size: 17px; line-height: 1; white-space: nowrap; }
 .decade small { font-family: var(--mag-mono); font-weight: 700; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; opacity: .8; }
 .decade[aria-current='page'] { background: var(--t-lit); color: var(--t-on); box-shadow: 3px 3px 0 var(--t-ink); }
-.knots { display: flex; gap: 4px; margin: 0; padding: 2px 2px 4px; list-style: none; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+.knots { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 2px 2px 4px; list-style: none; }
 .knots::-webkit-scrollbar { display: none; }
 .knot { flex: none; min-height: 36px; min-width: 52px; padding: 0 8px; border: 2px solid var(--t-ink); background: transparent; color: var(--t-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: .5px; font-variant-numeric: tabular-nums; cursor: pointer; }
 .knot[aria-current='true'] { background: var(--t-ink); color: var(--mag-paper); }
@@ -108,3 +108,12 @@
   .clip, .clip[data-dir] { animation: none; transition: none; }
   .knot:active, .step:active:not(:disabled) { transform: none; }
 }
+
+/* ------------------------------------------------------------- THE WEEKLY (rule 124): the chronicle as a printed page */
+.modes { margin-block: 8px 12px; }
+.mode { font-family: var(--mag-display); font-size: 15px; letter-spacing: 0; text-decoration: none; }
+.mode[aria-current='page'] { background: var(--mag-vermilion); color: var(--mag-white); }
+.decade { border-width: 3px; box-shadow: 3px 3px 0 var(--t-ink); font-family: var(--mag-goal); }
+.decade[aria-current='page'] { background: var(--mag-vermilion); color: var(--mag-white); }
+.knot { min-height: 44px; border-width: 2px; font-family: var(--mag-goal); font-weight: 400; }
+.knot[aria-current='true'] { background: var(--mag-ink); color: var(--mag-lamp); }

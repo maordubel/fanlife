@@ -15,7 +15,7 @@ import {completeRun} from '@/lib/clubs/completion'
 import {markStep} from '@/lib/analytics/meter'
 import {secondsLabel} from '@/lib/game/blind-cow/scoring'
 import {emptyHistory,encodeChallenge,historyKey,newSeed,penalties,recordResult,streak,validateHistory,type Challenge,type MysteryHistory} from '@/lib/clubs/mystery-model'
-import {MysteryMark} from './MysteryMark'
+import {Plate} from '@/components/weekly/Plate'
 import {GuessDrawer} from './GuessDrawer'
 import {ResultCard} from './ResultCard'
 import css from './blind-cow.module.css'
@@ -121,7 +121,7 @@ export function ClubMystery(props:ClubMysteryProps){
  const startChallenge=()=>{setSheet(null);void begin({mode:'duel',tag:String(newSeed())},{fresh:true})}
  const versus=play.mode==='duel'&&challenge&&String(challenge.seed)===play.tag?challenge:null
 
- return <section className={css.stage} data-testid="mystery-board" data-screen={screen} data-mode={play.mode}>
+ return <section className={`${css.stage} wgb`} data-testid="mystery-board" data-screen={screen} data-mode={play.mode}>
   {!online&&<p className={css.error} role="status" data-testid="mystery-offline">{t('bc.offline')}</p>}
   {error&&<div className={css.error} role="alert" data-testid="mystery-error"><p>{t('bc.error')}</p><div className={css.dockRow}>{screen==='run'&&<button type="button" className={`${css.btn} min-h-tap`} disabled={pending} onClick={()=>void resync()}>{t('bc.retry')}</button>}<button type="button" className={`${css.btn} min-h-tap`} onClick={toLobby}>{t('bc.res.lobby')}</button></div></div>}
   {screen==='lobby'
@@ -141,6 +141,18 @@ export function ClubMystery(props:ClubMysteryProps){
  </section>
 }
 
+// =============================================================== the portrait
+/** The blindfolded man (The Weekly, rule 124): one of the owner's comic plates on a sky of rays, the band across his eyes in
+ * the club's own colour. Never the mystery man himself and never a caption about him — the caption is the mode and the club. */
+function Portrait({who,caption,size}:{who:string;caption:string;size:'lobby'|'run'}){
+ return <div className={css.portrait} data-size={size}>
+  <span className={css.rays} aria-hidden="true"/>
+  <span className={css.faceBox} aria-hidden="true"><Plate art="face" ink="cyan" className={css.face}/><i className={css.blindfold}/></span>
+  <p className={css.who}>{who}</p>
+  <span className={css.caption}><bdi>{caption}</bdi></span>
+ </div>
+}
+
 // =============================================================== lobby
 function Lobby({t,lobby,history,challenge,clubName,pending,onOpen,onDaily,onSolo,onSoloNew,onDuelResume,onAccept}:{
  t:(k:string,v?:Record<string,string|number>)=>string;lobby:LobbyState;history:MysteryHistory;challenge:Challenge|null;clubName:string;pending:boolean;contentLocale:string
@@ -153,8 +165,8 @@ function Lobby({t,lobby,history,challenge,clubName,pending,onOpen,onDaily,onSolo
  const exploration=m.unique===0&&m.practice.open
  return <div className={css.lobby}>
   <div className={css.poster}>
-   <p className={css.kicker}>{clubName} · {t('bc.kicker')}</p>
-   <MysteryMark className={css.mark}/>
+   <Portrait who={t('bc.who')} caption={`${clubName} · ${t('bc.kicker')}`} size="lobby"/>
+   <div className={css.posterText}>
    <h2 className={css.title}>{t('bc.title')}</h2>
    <p className={css.lede}>{t('bc.lede')}</p>
    <p className={css.stats}>
@@ -163,6 +175,7 @@ function Lobby({t,lobby,history,challenge,clubName,pending,onOpen,onDaily,onSolo
     {history.best&&<span>{t('bc.best',{time:secondsLabel(history.best.weightedMs)})}</span>}
    </p>
    <p className={css.costs} data-testid="mystery-costs">{t('bc.costs',{clue:15,wrong:5})}</p>
+   </div>
   </div>
   {!m.practice.open?<div className={css.entries}><p className={css.locked} role="status" data-testid="mystery-empty" data-blockers={codes(m.practice)}>{t('bc.empty')}</p><button type="button" className={`${css.help} min-h-tap`} onClick={onOpen('howto')}>{t('bc.help')}</button></div>
   :<div className={css.entries}>
@@ -232,7 +245,10 @@ function RunBoard({t,run,play,fresh,pending,sure,pen,limitMs,onExpire,onReveal,o
    <Stopwatch run={run} limitMs={play.mode==='duel'?limitMs:0} onExpire={onExpire}/>
   </header>
   <ol className={css.rail} role="img" aria-label={t('bc.rail',{n:run.shown,total:run.total})}>{Array.from({length:run.total},(_,i)=><li key={i} data-open={i<run.shown}/>)}</ol>
+  <Portrait who={t('bc.who')} caption={t(`bc.mode.${play.mode}`)} size="run"/>
   {run.kind==='exploration'&&<p className={css.fine} data-testid="mystery-explore-note">{t('bc.explore.note')}</p>}
+  <div className={css.clips}>
+  <h3 className={css.clipsHead}>{t('bc.clippings')}<small>{t('bc.clippings.sub')}</small></h3>
   <ol className={css.stack} ref={list} aria-label={t('bc.stackLabel')} aria-live="polite">
    {run.clues.map((c,i)=>{const newest=i===run.clues.length-1;return <li key={c.n} ref={newest?last:undefined} className={newest?css.cardNew:css.cardOld} data-clue-n={c.n} data-fresh={fresh===c.n}>
     <span className={css.cardNo} aria-hidden="true">{c.n}</span>
@@ -241,9 +257,19 @@ function RunBoard({t,run,play,fresh,pending,sure,pen,limitMs,onExpire,onReveal,o
     ?<li className={css.sealedItem}><button type="button" className={`${css.sealed} min-h-tap`} disabled={pending} onClick={onReveal} data-testid="mystery-reveal"><span className={css.cardNo} aria-hidden="true">{run.shown+1}</span><span className={css.sealedText}><b>{t('bc.sealed',{n:run.shown+1})}</b><small>{t('bc.sealed.cost',{s:pen.clue})}</small></span></button></li>
     :<li className={css.lastNote}>{t('bc.sealed.none')}</li>}
   </ol>
+  </div>
   <div className={css.dock}>
+   <h3 className={css.nameHead}>{t('bc.nameHim')}</h3>
    <button type="button" className={`${css.btn} ${css.primary} ${css.big} min-h-tap`} disabled={pending} onClick={e=>{onFocusOpener(e);onGuess()}} data-testid="mystery-guess">{t('bc.guess')}</button>
    <button type="button" className={`${css.giveup} min-h-tap`} data-sure={sure} disabled={pending} onClick={e=>{firePickFxAt(e.currentTarget,{tone:'ink',haptic:false});onGiveUp()}} data-testid="mystery-giveup">{sure?t('bc.giveup.sure'):t('bc.giveup')}</button>
+   <div className={css.clockCard}>
+    <p className={css.clockHead}>{t('bc.clock.title')}</p>
+    <dl>
+     <div><dt>{t('bc.clock.clue')}</dt><dd>{t('bc.clock.plus',{s:pen.clue})}</dd></div>
+     <div><dt>{t('bc.clock.wrong')}</dt><dd>{t('bc.clock.plus',{s:pen.wrong})}</dd></div>
+     <div><dt>{t('bc.clock.giveup')}</dt><dd data-k="ink">{t('bc.clock.noScore')}</dd></div>
+    </dl>
+   </div>
   </div>
  </div>
 }

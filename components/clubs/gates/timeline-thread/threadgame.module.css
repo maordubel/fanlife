@@ -84,3 +84,29 @@
   .main { grid-template-columns: minmax(200px, 40%) minmax(0, 1fr); column-gap: 14px; align-items: start; }
 }
 @media (prefers-reduced-motion: reduce) { .cta:active:not(:disabled), .card2:active:not(:disabled) { transform: none; } }
+
+/* ------------------------------------------------------------- THE WEEKLY (rule 124): Chronology's cover and kick-off */
+.intro { --t-ink: var(--mag-ink); display: flex; flex-direction: column; gap: 12px; padding-block: 4px 0; min-width: 0; }
+.intro *, .intro *::before { box-sizing: border-box; }
+.cover { position: relative; overflow: hidden; block-size: min(46dvh, 380px); min-block-size: 300px; }
+.cover :global(.wk-speed) { --sc: color-mix(in srgb, var(--mag-white) 30%, transparent); }
+.coverArt { position: absolute; inset-inline-end: -12%; inset-block-end: 70px; inline-size: 100%; }
+.coverBanner { position: absolute; inset-inline: 12px; inset-block-start: 10px; margin: 0; font-size: 14px; color: var(--mag-white); text-shadow: 1px 1px 0 var(--mag-ink); }
+.coverTitle { position: absolute; inset-inline-start: 10px; inset-block-start: 36px; max-inline-size: 80%; font-size: clamp(38px, 11vw, 58px); line-height: 1.02; transform: rotate(-4deg); transform-origin: 0 100%; }
+.coverCap { position: absolute; inset-inline: 10px; inset-block-end: 10px; text-transform: none; font-family: var(--mag-body); font-size: 14px; }
+.intro .facts { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.intro .facts li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.35; }
+.intro .facts b { flex: none; inline-size: 28px; block-size: 28px; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--t-ink); background: var(--mag-cyan); color: var(--mag-white); font-family: var(--mag-goal); font-weight: 400; font-size: 13px; }
+.intro .tag { justify-self: start; background: var(--mag-ink); color: var(--mag-lamp); font-family: var(--mag-mono); font-weight: 400; }
+.kickRow { position: sticky; inset-block-end: 0; z-index: 3; margin-inline: calc(var(--gutter, 16px) * -1); padding: 10px var(--gutter, 16px) calc(10px + env(safe-area-inset-bottom)); background: var(--mag-paper); border-block-start: 3px solid var(--t-ink); }
+.kick { cursor: pointer; padding: 0; text-align: start; font: inherit; }
+.kick :global(.wk-kick-go) > span:not(:global(.wk-speed)) { font-size: clamp(20px, 6.2vw, 30px); min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; }
+.card { box-shadow: var(--mag-shadow-l); }
+.cta { background: var(--mag-vermilion); color: var(--mag-white); font-family: var(--mag-display); font-size: 19px; text-transform: uppercase; box-shadow: var(--mag-shadow); }
+.ghost { font-family: var(--mag-display); text-transform: uppercase; box-shadow: 3px 3px 0 var(--t-ink); }
+@media (min-width: 901px) {
+  .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: repeat(4, auto) 1fr; gap: 14px 32px; align-items: start; padding-block-start: 24px; }
+  .cover { grid-row: 1 / span 5; block-size: auto; aspect-ratio: .95; }
+  .coverTitle { font-size: clamp(56px, 5vw, 84px); inset-inline-start: 22px; inset-block-start: 56px; }
+  .kickRow { position: static; margin: 0; padding: 4px 0 0; border: 0; background: none; }
+}

@@ -11,6 +11,8 @@ import {triviaShare,type ShareDraft} from '@/lib/share/v3/adapters'
 import type {RunMeta} from '@/app/clubs/[slug]/[gate]/trivia-run-actions'
 import {MIN_ROUND,nextChallenges,reportOf,roundQuery,type LogEntry} from '@/lib/clubs/trivia-model'
 import css from './trivia.module.css'
+import {Plate} from '@/components/weekly/Plate'
+import {sharedGate} from '@/lib/clubs/gates'
 
 type Props={home?:string;
  session:Session;log:LogEntry[];count:number;asked:number;meta:RunMeta;club:string;clubName:string;version:string
@@ -49,43 +51,53 @@ export function TriviaReport(p:Props){
  const query=(extra:{mode?:string;topic?:string;era?:string;practice?:boolean;go?:boolean}={})=>`?${roundQuery({seed:meta.seed,cursor:meta.cursor+1,lang:locale,...extra})}`
  const again=meta.mode==='revenge'?query():query({mode:meta.mode,topic:meta.topic||undefined,era:meta.era||undefined,practice,go:true})
  const out=session.lives<=0
+ const gateNo=String(sharedGate('trivia')?.number??2).padStart(2,'0')
  return <section className={css.report} data-testid="trivia-result" data-tier={report.tier} data-category={category}>
-  <div className={css.reportHead}>
-   <p className={css.reportKicker}>{clubName} · {t('tq.report.kicker')}</p>
-   <h2 className={css.reportTitle}>{t(`tq.report.tier.${report.tier}`)}</h2>
-   <p className={css.reportCat} data-testid="trivia-category">{t(`tq.cat.${category}`)}</p>
-   {practice?<p className={css.reportLine}>{t('tq.report.practice')}</p>:<p className={css.reportScore}><span className="sr-only">{copy.score}: </span>{session.score}</p>}
-   <p className={css.reportLine}>{copy.correct}: {right}/{answered}</p>
-   <p className={css.reportLine}>{copy.answered}: {answered}/{asked}{out?` · ${t('tq.report.out')}`:''}</p>
-   <ol className={css.reportTicks} aria-label={t('tq.report.run')}>{log.map((e,i)=><li key={i} data-mark={e.correct?'right':'wrong'}><span aria-hidden="true">{e.correct?'✓':'✗'}</span><span className="sr-only">{e.correct?t('tq.row.right'):t('tq.row.wrong')}</span></li>)}</ol>
+  <div className={`wk-panel wk-lift wk-sky ${css.reportHead}`}>
+   <span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'74%',['--sy' as string]:'30%'}}/>
+   <Plate art="cheer" ink="club" className={css.reportArt}/>
+   <p className={`wk-banner ${css.reportKicker}`}>{clubName} · {t('tq.report.kicker')}</p>
+   <h2 className={`wk-logo red ${css.reportTitle}`}>{t(`tq.report.tier.${report.tier}`)}</h2>
+   <div className={`wk-burst ${css.reportBurst}`}><b className="wk-num"><bdi dir="ltr">{right}/{answered}</bdi></b><small>{copy.correct}</small></div>
+   <div className={`wk-cap white ${css.reportCap}`}>
+    <p className={css.reportCat} data-testid="trivia-category">{t(`tq.cat.${category}`)}</p>
+    {practice?<p className={css.reportLine}>{t('tq.report.practice')}</p>:<p className={css.reportScore}><span className="sr-only">{copy.score}: </span><b className="wk-num">{session.score}</b> <small>{t('tq.hud.pts')}</small></p>}
+    <p className={css.reportLine}>{copy.correct}: {right}/{answered}</p>
+    <p className={css.reportLine}>{copy.answered}: {answered}/{asked}{out?` · ${t('tq.report.out')}`:''}</p>
+   </div>
   </div>
-  {report.byTopic.length>0&&<div className={css.card}>
-   <h3>{t('tq.report.topics')}</h3>
-   <ul className={css.rows}>{report.byTopic.map(r=><li key={r.topic}><span>{topicLabel(r.topic)}</span><span>{r.right}/{r.asked}</span><i aria-hidden="true"><b style={{inlineSize:`${Math.round(100*r.right/r.asked)}%`}}/></i></li>)}</ul>
-  </div>}
-  <div className={css.card}>
-   <h3>{t('tq.report.facts')}</h3>
-   <ul className={css.facts}>
-    <li><b>{report.bestStreak}</b>{t('tq.report.streak')}</li>
-    {report.hardest!==null&&<li><b>{report.hardest}/5</b>{t('tq.report.hardest')}</li>}
-    {report.strongest&&<li><b>{topicLabel(report.strongest)}</b>{t('tq.report.strongest')}</li>}
-    {report.weakest&&<li><b>{topicLabel(report.weakest)}</b>{t('tq.report.weakest')}</li>}
-    {report.timeouts>0&&<li><b>{report.timeouts}</b>{t('tq.report.timeouts')}</li>}
-    {report.hinted>0&&<li><b>{report.hinted}</b>{t('tq.report.hinted')}</li>}
-   </ul>
-   <p className={css.fine}>{copy.localOnly}</p>
+  <div className={css.reportMid}>
+   <h3 className="wk-logo red sm wk-tilt">{t('tq.report.run')}</h3>
+   <ol className={css.reportTicks} aria-label={t('tq.report.run')}>{log.map((e,i)=><li key={i} data-mark={e.correct?'right':'wrong'}><span aria-hidden="true">{e.correct?'✓':'✗'}</span><span className="sr-only">{e.correct?t('tq.row.right'):t('tq.row.wrong')}</span></li>)}</ol>
+   {report.byTopic.length>0&&<div className={css.card}>
+    <h3>{t('tq.report.topics')}</h3>
+    <ul className={css.rows}>{report.byTopic.map(r=><li key={r.topic}><span>{topicLabel(r.topic)}</span><span>{r.right}/{r.asked}</span><i aria-hidden="true"><b style={{inlineSize:`${Math.round(100*r.right/r.asked)}%`}}/></i></li>)}</ul>
+   </div>}
+   <div className={css.card}>
+    <h3>{t('tq.report.facts')}</h3>
+    <ul className={css.facts}>
+     <li><b>{report.bestStreak}</b>{t('tq.report.streak')}</li>
+     {report.hardest!==null&&<li><b>{report.hardest}/5</b>{t('tq.report.hardest')}</li>}
+     {report.strongest&&<li><b>{topicLabel(report.strongest)}</b>{t('tq.report.strongest')}</li>}
+     {report.weakest&&<li><b>{topicLabel(report.weakest)}</b>{t('tq.report.weakest')}</li>}
+     {report.timeouts>0&&<li><b>{report.timeouts}</b>{t('tq.report.timeouts')}</li>}
+     {report.hinted>0&&<li><b>{report.hinted}</b>{t('tq.report.hinted')}</li>}
+    </ul>
+    <p className={css.fine}>{copy.localOnly}</p>
+   </div>
   </div>
   <div className={css.actions}>
-   <Link className={css.cta} data-kind="lit" href={again}><span>{copy.replay}</span><span aria-hidden="true">→</span></Link>
+   {draft&&<div className={css.shareBox}><ShareComposer label={t('tq.report.share')} draft={draft}/></div>}
+   <p className="wk-k muted">{t('tq.report.where')}</p>
    {next.map(n=>{
     const href=n.kind==='weak'?query({topic:n.topic,go:true}):n.kind==='hard'?query({mode:'hard',go:true}):query({mode:'standard',go:true})
     const label=n.kind==='weak'?t('tq.report.nextWeak',{topic:topicLabel(n.topic)}):n.kind==='hard'?t('tq.report.nextHard'):t('tq.report.nextMix')
     return <Link key={n.kind} className={css.cta} data-kind="plain" href={href}><span>{label}</span><span aria-hidden="true">→</span></Link>
    })}
-   {missedLeft>=MIN_ROUND&&meta.mode!=='revenge'&&<Link className={css.cta} data-kind="plain" href={query()} data-testid="trivia-next-revenge"><span>{t('tq.report.nextRevenge',{n:missedLeft})}</span><span aria-hidden="true">→</span></Link>}
-   {draft&&<ShareComposer label={t('tq.report.share')} draft={draft}/>}
+   {missedLeft>=MIN_ROUND&&meta.mode!=='revenge'&&<Link className={css.cta} data-kind="ink" href={query()} data-testid="trivia-next-revenge"><span>{t('tq.report.nextRevenge',{n:missedLeft})}</span><span aria-hidden="true">→</span></Link>}
    {!p.home&&<Link className={css.cta} data-kind="plain" href={`/clubs/${club}/archive?lang=${locale}`}><span>{t('tq.report.archive')}</span><span aria-hidden="true">→</span></Link>}
    {p.home?<Link className={css.cta} data-kind="plain" href={p.home}><span>Back to ALL FOOTBALL</span><span aria-hidden="true">→</span></Link>:<Link className={css.cta} data-kind="plain" href={`/clubs/${club}?lang=${locale}`}><span>{copy.backToClub}</span><span aria-hidden="true">→</span></Link>}
+   <Link className={`wk-kick ${css.again}`} data-kind="lit" href={again}><span className="wk-kick-gate" aria-hidden="true"><small>{copy.ticketGate}</small><b>{gateNo}</b></span><span className="wk-kick-go"><span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'100%',['--sy' as string]:'50%'}}/><span>{copy.replay}</span><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" className={css.ballFill}/><path d="M20 11l7 5-3 8h-8l-3-8z" className={css.ballInk}/></svg></span></Link>
   </div>
  </section>
 }

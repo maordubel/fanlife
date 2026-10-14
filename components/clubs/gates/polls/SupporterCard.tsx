@@ -18,13 +18,14 @@ export function answerOf(slip:Slip,qid:string,byId:ReadonlyMap<string,ClubPlayer
  * the number on your back, where you play, the other picks and how many carry a reason. It never prints a count of
  * other people, a rank or a score.
  */
-export function SupporterCard({slip,ballot,byId,wardrobe,clubName,contentLocale,t,editable,onName}:{
+export function SupporterCard({slip,ballot,byId,wardrobe,clubName,contentLocale,t,editable,onName,crest=null,sealed=false}:{
  slip:Slip;ballot:Ballot;byId:ReadonlyMap<string,ClubPlayer>;wardrobe:RumbleWardrobe;clubName:string;contentLocale:string;t:T;editable:boolean;onName:(v:string)=>void
+ /** the club's own crest, when we hold one */crest?:string|null;/** every line marked: the card carries the seal */sealed?:boolean
 }){
  const fav=slip.picks.favourite?byId.get(slip.picks.favourite)??null:null,n=filled(slip,ballot),reasoned=ballot.questions.filter(q=>slip.reasons[q.id]).length
  const rest=ballot.questions.filter(q=>q.id!=='favourite'&&q.id!=='number'&&q.id!=='position')
  return <article className={css.card} data-testid="polls-card" data-filled={n}>
-  <header className={css.cardHead}><p className={css.cardKicker}>{t('tv.card.kicker')}</p><h3 className={css.cardTitle} lang={contentLocale}>{t('tv.card.title',{club:clubName})}</h3></header>
+  <header className={css.cardHead}>{crest&&<span className={`wk-roundel ${css.cardCrest}`}><img src={crest} alt="" width={40} height={40}/></span>}<span><p className={css.cardKicker}>{t('tv.card.kicker')}</p><h3 className={css.cardTitle} lang={contentLocale}>{t('tv.card.title',{club:clubName})}</h3></span></header>
   <div className={css.cardBody}>
    <div className={css.cardMain}>
     <span className={css.cardShirt}>{fav?<ClubShirt player={fav} wardrobe={wardrobe} side="us"/>:<span className={css.cardGhost} aria-hidden="true">?</span>}
@@ -38,7 +39,7 @@ export function SupporterCard({slip,ballot,byId,wardrobe,clubName,contentLocale,
     </div>
    </div>
    <ul className={css.cardList}>{rest.map(q=>{const a=answerOf(slip,q.id,byId,t);return <li key={q.id} data-empty={a===null}><span>{t(`tv.q.${q.id}`)}</span><b lang={contentLocale} dir="auto">{a??'—'}</b></li>})}</ul>
-   <p className={css.cardFoot}>{n===0?t('tv.card.empty'):`${t('tv.count',{n,m:ballot.length})} · ${t('tv.card.reasoned',{n:reasoned,m:ballot.length})}`}</p>
+   <p className={css.cardFoot}>{sealed&&<span className="wk-stamp">{t('tv.card.sealed')}</span>}<span>{n===0?t('tv.card.empty'):`${t('tv.count',{n,m:ballot.length})} · ${t('tv.card.reasoned',{n:reasoned,m:ballot.length})}`}</span></p>
   </div>
  </article>
 }

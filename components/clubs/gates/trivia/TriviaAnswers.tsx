@@ -27,6 +27,7 @@ export function Answers(p:Props){
  return <Choices {...p} multi={q.type==='multi'}/>
 }
 
+const KEYS=['A','B','C','D','E','F','G','H']
 const Mark=({state}:{state:'right'|'wrong'|'picked'|null})=><span className={css.mark} data-state={state??'none'} aria-hidden="true">{state==='right'?'✓':state==='wrong'?'✗':state==='picked'?'●':''}</span>
 
 function Choices({q,locked,graded,struck,contentLocale,labels,onAnswer,multi=false,scale=false}:Props&{multi?:boolean;scale?:boolean}){
@@ -40,12 +41,13 @@ function Choices({q,locked,graded,struck,contentLocale,labels,onAnswer,multi=fal
  return <div className={css.answers} data-kind={scale?'year':multi?'multi':'mcq'}>
   {multi&&<p className={css.how} aria-live="polite">{labels.multiCount(picked.length,want)}</p>}
   <ul className={scale?css.scale:css.choices} role={scale?'group':undefined} aria-label={scale?labels.year:undefined}>
-   {q.options.map(o=>{
+   {q.options.map((o,i)=>{
     const right=graded?graded.correctAnswers.includes(o):null,mine=picked.includes(o),gone=struck.includes(o)
     const state=graded?(right?'right':mine?'wrong':null):mine?'picked':null
     return <li key={o}><button type="button" className={`min-h-tap ${css.choice}`} data-state={state??'none'} data-gone={gone||undefined} aria-pressed={multi?mine:undefined} disabled={locked||gone} onClick={()=>tap(o)}>
-     <Mark state={state}/>
+     {!scale&&<span className={css.key} aria-hidden="true">{KEYS[i]}</span>}
      <span className={css.choiceText} lang={contentLocale} dir="auto" style={gone?{textDecoration:'line-through'}:undefined}>{o}</span>
+     <Mark state={state}/>
      {graded&&right&&<span className="sr-only">{labels.right}</span>}{graded&&!right&&mine&&<span className="sr-only">{labels.wrong}</span>}{gone&&<span className="sr-only">{labels.struck}</span>}
     </button></li>
    })}
@@ -60,7 +62,7 @@ function TrueFalse({locked,graded,labels,onAnswer}:Props){
   {(['true','false'] as const).map(v=>{
    const right=graded?graded.correctAnswers.includes(v):null,mine=picked===v,state=graded?(right?'right':mine?'wrong':null):mine?'picked':null
    return <li key={v}><button type="button" className={`min-h-tap ${css.choice}`} data-state={state??'none'} data-big="true" disabled={locked} onClick={()=>{if(locked)return;haptic('tap');setPicked(v);onAnswer(v)}}>
-    <Mark state={state??null}/><span className={css.choiceText}>{v==='true'?labels.true:labels.false}</span>
+    <span className={css.choiceText}>{v==='true'?labels.true:labels.false}</span><Mark state={state??null}/>
     {graded&&right&&<span className="sr-only">{labels.right}</span>}</button></li>
   })}
  </ul></div>

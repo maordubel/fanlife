@@ -22,6 +22,7 @@ export function SaveButton({saved,title,copy,onToggle,tone}:{saved:boolean;title
  return <button type="button" className={`${css.save} min-h-tap`} data-tone={tone} aria-pressed={saved} onClick={onToggle}
   aria-label={tr(copy,saved?'ar.card.unsaveLabel':'ar.card.saveLabel',{title})} title={tr(copy,saved?'ar.card.saved':'ar.card.save')}>
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" fill={saved?'currentColor':'none'} stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/></svg>
+  <small className={css.saveWord} aria-hidden="true">{tr(copy,saved?'ar.card.saved':'ar.card.save')}</small>
  </button>
 }
 
@@ -58,5 +59,6 @@ export function EntryCard({e,ctx,variant='row',saved,onOpen,onToggleSave,id}:{e:
     :e.hint&&<p className={css.cardHint} lang={contentLocale} dir="auto">{e.hint}</p>}
   </div>
   <SaveButton saved={saved} title={e.title} copy={copy} onToggle={()=>onToggleSave(e.id)}/>
+  {variant==='deck'&&<span className={css.openLabel} aria-hidden="true">{tr(copy,'ar.card.openLabel')}</span>}
  </article>
 }

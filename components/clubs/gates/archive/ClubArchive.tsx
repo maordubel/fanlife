@@ -9,7 +9,7 @@ import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {decodeArchive,type ArchiveWire,type Entry} from '@/lib/clubs/entities'
-import {ROUND_DEPTH,addToTrail,buckets,dayIndex,digOrder,inDecade,isDayKey,localDayKey,nearestDays,roundDone,searchEntries,shiftDay,type Filter} from '@/lib/clubs/archive-model'
+import {ROUND_DEPTH,addToTrail,buckets,dayIndex,digOrder,inDecade,isDayKey,localDayKey,nearestDays,roundDone,searchEntries,type Filter} from '@/lib/clubs/archive-model'
 import {SAVED_EVENT,readSaved,savedIds,setSaved,type SavedBook} from '@/lib/clubs/archive-mine'
 import {EntryCard,keyLabel,type CardCtx} from './ArchiveCards'
 import {ArchiveSheetBody} from './ArchiveSheet'
@@ -117,11 +117,12 @@ export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wir
  }
 
  const distinct=new Set(trail).size,done=distinct>=ROUND_DEPTH
- return <section className={css.stage} data-testid="archive-board" data-tab={tab}>
-  <div className={css.dock} role="tablist" aria-label={t('ar.tabs')} onKeyDown={onTabKey}>
+ return <section className={`${css.stage} wgb`} data-testid="archive-board" data-tab={tab}>
+  <div className={`wk-folders five ${css.dock}`} role="tablist" aria-label={t('ar.tabs')} onKeyDown={onTabKey}>
    {TABS.map(k=><button key={k} id={`ar-tab-${k}`} type="button" role="tab" className={css.dockBtn} aria-selected={tab===k} aria-controls={`ar-panel-${k}`} tabIndex={tab===k?0:-1} onClick={()=>setTab(k)}>
     <Icon tab={k}/><span>{t(`ar.tab.${k}`)}</span>{k==='mine'&&savedSet.size>0&&<i className={css.badge} aria-hidden="true">{savedSet.size}</i>}</button>)}
   </div>
+  <div className="wk-folders-rule" aria-hidden="true"/>
   <div className={css.trail} role="status" data-done={done}>
    <span className={css.pips} aria-hidden="true">{Array.from({length:ROUND_DEPTH},(_,i)=><i key={i} data-on={i<distinct}/>)}</span>
    <span>{done?t('ar.round.done'):t('ar.round.progress',{n:Math.min(distinct,ROUND_DEPTH),total:ROUND_DEPTH})}</span>
@@ -130,7 +131,7 @@ export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wir
   {notice&&<p className={css.fine} role="status">{notice}</p>}
 
   <div id={`ar-panel-${tab}`} role="tabpanel" aria-labelledby={`ar-tab-${tab}`} className={css.panel}>
-   {tab==='today'&&<TodayPanel day={day} today={today} browse={browse} setBrowse={setBrowse} ix={ix} t={t} locale={locale} card={card} entriesCount={entries.length} onJumpTab={setTab}/>}
+   {tab==='today'&&<TodayPanel day={day} today={today} browse={browse} setBrowse={setBrowse} ix={ix} t={t} locale={locale} card={card} entriesCount={entries.length} onJumpTab={setTab} closeLabel={copy['play.close']}/>}
    {tab==='time'&&<TimePanel entries={entries} decade={decade} setDecade={setDecade} filter={filter} setFilter={setFilter} shown={shown} setShown={setShown} t={t} card={card}/>}
    {tab==='dig'&&<DigBox entries={entries} byId={byId} seed={seed} ctx={ctx} saved={savedSet} onOpen={onOpenCard} onToggleSave={onToggleSave}/>}
    {tab==='search'&&<SearchPanel entries={entries} q={q} setQ={v=>{setQ(v);setShown(PAGE);syncUrl({q:v})}} filter={filter} setFilter={setFilter} shown={shown} setShown={setShown} t={t} card={card}/>}
@@ -152,38 +153,68 @@ function Filters({filter,setFilter,t,onChange}:{filter:Filter;setFilter:(f:Filte
 }
 
 // ------------------------------------------------------------------ Today
-function TodayPanel({day,today,browse,setBrowse,ix,t,locale,card,entriesCount,onJumpTab}:{day:string|null;today:string|null;browse:string|null;setBrowse:(k:string|null)=>void;ix:ReturnType<typeof dayIndex>;t:T;locale:string;card:CardFn;entriesCount:number;onJumpTab:(t:ArchiveTab)=>void}){
- const deckRef=useRef<HTMLUListElement>(null),[pos,setPos]=useState(0)
+function TodayPanel({day,today,browse,setBrowse,ix,t,locale,card,entriesCount,onJumpTab,closeLabel}:{day:string|null;today:string|null;browse:string|null;setBrowse:(k:string|null)=>void;ix:ReturnType<typeof dayIndex>;t:T;locale:string;card:CardFn;entriesCount:number;onJumpTab:(t:ArchiveTab)=>void;closeLabel:string}){
  const list=useMemo(()=>day?ix.get(day)||[]:[],[day,ix]),near=useMemo(()=>day&&!list.length?nearestDays(ix,day,4):[],[day,list,ix]),nextList=near[0]?ix.get(near[0].key)||[]:[]
- useEffect(()=>{setPos(0);deckRef.current?.scrollTo?.({left:0})},[day])
  if(!day)return <p className={css.loading} aria-busy="true">{t('ar.today.loading')}</p>
  const label=keyLabel(day,locale,true),browsing=!!browse&&browse!==today
+ const fmt=(o:Intl.DateTimeFormatOptions)=>new Intl.DateTimeFormat(locale==='he'?'he':'en-GB',{timeZone:'UTC',...o})
+ const at=new Date(Date.UTC(2000,Number(day.slice(0,2))-1,Number(day.slice(3))))
  return <div className={css.today}>
   <div className={css.dateBar}>
-   <button type="button" className={css.step} aria-label={t('ar.today.prev')} onClick={()=>setBrowse(shiftDay(day,-1))}><span aria-hidden="true" className={css.arrow}>‹</span></button>
+   <span className={css.calPage} aria-hidden="true"><small>{fmt({month:'short'}).format(at)}</small><b>{Number(day.slice(3))}</b></span>
    <div className={css.dateMain}><p className={css.kicker}>{browsing?t('ar.today.browsing',{date:label}):t('ar.today.kicker')}</p>
-    <h2 className={css.bigDate}>{browsing?label:`${t('ar.today.title')} · ${label}`}</h2></div>
-   <button type="button" className={css.step} aria-label={t('ar.today.next')} onClick={()=>setBrowse(shiftDay(day,1))}><span aria-hidden="true" className={css.arrow}>›</span></button>
+    <h2 className={css.bigDate}>{browsing?<em>{label}</em>:<>{t('ar.today.title')} ·<br/><em>{label}</em></>}</h2></div>
   </div>
   {browsing&&<button type="button" className={`${css.linkBtn} min-h-tap`} onClick={()=>setBrowse(null)}>{t('ar.today.reset')}</button>}
-  {list.length>0?<>
-   <p className={css.count} role="status">{t('ar.today.count',{n:list.length})}{list.length>1&&<span className={css.pos}> · {t('ar.today.pos',{n:pos+1,total:list.length})}</span>}</p>
-   <ul ref={deckRef} className={css.deck} aria-label={t('ar.today.deck',{date:label})} data-count={list.length}
-    onScroll={e=>{const el=e.currentTarget,first=el.firstElementChild as HTMLElement|null;if(first)setPos(Math.min(list.length-1,Math.max(0,Math.round(Math.abs(el.scrollLeft)/(first.offsetWidth+12)))))}}>
-    {list.map(e=>card(e,'deck'))}
-   </ul>
-  </>:<div className={css.empty}>
-   <p className={css.emptyTitle}>{t('ar.today.none',{date:label})}</p>
-   <p className={css.fine}>{entriesCount?t('ar.today.noneNote'):''}</p>
-   {near.length>0&&<><p className={css.kicker}>{t('ar.today.nearest')}</p>
-    <div className={css.chips}>{near.map(n=><button key={n.key} type="button" className={css.chip} onClick={()=>setBrowse(n.key)}>{t('ar.today.nearestDay',{date:keyLabel(n.key,locale),n:n.count})}</button>)}</div></>}
-   {!near.length&&<button type="button" className={`${css.tool} min-h-tap`} onClick={()=>onJumpTab('time')}>{t('ar.tab.time')}</button>}
-  </div>}
-  {!list.length&&nextList.length>0&&<>
-   <p className={css.count} role="status">{t('ar.today.nextOnFile',{date:keyLabel(near[0]!.key,locale,true)})}</p>
-   <ul className={css.deck} aria-label={t('ar.today.deck',{date:keyLabel(near[0]!.key,locale,true)})} data-count={nextList.length}>{nextList.map(e=>card(e,'deck'))}</ul>
-  </>}
+  <div className={css.todayGrid}>
+   <div className={css.todayMain}>
+    {list.length>0?<>
+     <p className={css.count} role="status">{t('ar.today.count',{n:list.length})}</p>
+     <ul className={css.deck} aria-label={t('ar.today.deck',{date:label})} data-count={list.length}>
+      {list.map(e=>card(e,'deck'))}
+     </ul>
+    </>:<div className={css.empty}>
+     <p className={css.emptyTitle}>{t('ar.today.none',{date:label})}</p>
+     <p className={css.fine}>{entriesCount?t('ar.today.noneNote'):''}</p>
+     {near.length>0&&<><p className={css.kicker}>{t('ar.today.nearest')}</p>
+      <div className={css.nearGrid}>{near.map((n,i)=><button key={n.key} type="button" className={`${css.chip} min-h-tap`} data-first={i===0||undefined} onClick={()=>setBrowse(n.key)}>{t('ar.today.nearestDay',{date:keyLabel(n.key,locale),n:n.count})}</button>)}</div></>}
+     {!near.length&&<button type="button" className={`${css.tool} min-h-tap`} onClick={()=>onJumpTab('time')}>{t('ar.tab.time')}</button>}
+    </div>}
+    {!list.length&&nextList.length>0&&<>
+     <div className={css.nextHead}><h3 className={css.nextTitle}>{t('ar.today.nextTitle')}</h3><span className={css.kicker}>{t('ar.today.nextOnFile',{date:keyLabel(near[0]!.key,locale,true)})}</span></div>
+     <ul className={css.deck} aria-label={t('ar.today.deck',{date:keyLabel(near[0]!.key,locale,true)})} data-count={nextList.length}>{nextList.map(e=>card(e,'deck'))}</ul>
+    </>}
+   </div>
+   <MonthCalendar day={day} today={today} ix={ix} t={t} locale={locale} onPick={k=>setBrowse(k===today?null:k)} closeLabel={closeLabel}/>
+  </div>
  </div>
+}
+
+/** the month as a printed calendar (never ‹ › arrows): days with something on file are red, today is black, a tap reads that day */
+function MonthCalendar({day,today,ix,t,locale,onPick,closeLabel}:{day:string;today:string|null;ix:ReturnType<typeof dayIndex>;t:T;locale:string;onPick:(key:string)=>void;closeLabel:string}){
+ const [month,setMonth]=useState<number|null>(null),[sheet,setSheet]=useState(false)
+ useEffect(()=>{setMonth(null)},[day])
+ const m=month??Number(day.slice(0,2)),loc=locale==='he'?'he':'en-GB'
+ const year=new Date().getFullYear(),mm=String(m).padStart(2,'0')
+ const lead=(new Date(year,m-1,1).getDay()+6)%7
+ const days=Math.max(new Date(year,m,0).getDate(),m===2&&(ix.get('02-29')?.length??0)>0?29:0)
+ const name=new Intl.DateTimeFormat(loc,{month:'long'}).format(new Date(2000,m-1,1))
+ const wd=Array.from({length:7},(_,i)=>new Intl.DateTimeFormat(loc,{weekday:'short'}).format(new Date(2024,0,1+i)))
+ return <section className={css.cal} aria-label={name}>
+  <div className={css.calHead}><h3 className={css.calTitle}>{name}</h3><span className={css.kicker}>{t('ar.cal.tap')}</span><button type="button" className={`${css.tool} min-h-tap`} onClick={()=>setSheet(true)}>{t('ar.cal.change')}</button></div>
+  <ol className={css.calGrid} role="list">
+   {wd.map(w=><li key={`w${w}`} className={css.calWd} aria-hidden="true">{w}</li>)}
+   {Array.from({length:lead},(_,i)=><li key={`b${i}`} aria-hidden="true"/>)}
+   {Array.from({length:days},(_,i)=>{const key=`${mm}-${String(i+1).padStart(2,'0')}`,n=ix.get(key)?.length??0
+    return <li key={key}><button type="button" className={`${css.calDay} min-h-tap`} data-on={n>0||undefined} data-today={key===today||undefined} aria-current={key===day?'date':undefined} onClick={()=>onPick(key)} aria-label={t('ar.cal.aria',{date:keyLabel(key,locale,true),n})}>
+     <b>{i+1}</b>{key===today?<small>{t('ar.cal.today')}</small>:n>0?<small>{t('ar.today.count',{n})}</small>:null}
+    </button></li>})}
+  </ol>
+  <p className={css.calLegend}>{t('ar.cal.legend')}</p>
+  <SlideSheet open={sheet} onClose={()=>setSheet(false)} title={t('ar.cal.change')} closeLabel={closeLabel}>
+   <div className={css.monthGrid}>{Array.from({length:12},(_,i)=><button key={i} type="button" className={`${css.chip} min-h-tap`} aria-pressed={i+1===m} onClick={()=>{setMonth(i+1);setSheet(false)}}>{new Intl.DateTimeFormat(loc,{month:'long'}).format(new Date(2000,i,1))}</button>)}</div>
+  </SlideSheet>
+ </section>
 }
 
 // ------------------------------------------------------------------ Time

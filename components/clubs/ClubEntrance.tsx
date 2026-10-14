@@ -16,6 +16,6 @@ export function ClubEntrance({clubId,name,tap}:{clubId:string;name:string;tap:st
  if(!open)return null
  return <button type="button" className="club-entrance min-h-tap" data-club-entrance={clubId} aria-label={tap} onClick={end}>
   <span className="ce-leaf ce-l mag-band" aria-hidden="true"/><span className="ce-leaf ce-r mag-band" aria-hidden="true"/>
-  <span className="ce-name"><b>{name}</b><small>{tap}</small></span>
+  <span className="ce-name"><b className="wk-logo">{name}</b><small>{tap}</small></span>
  </button>
 }

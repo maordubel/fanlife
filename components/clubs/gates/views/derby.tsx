@@ -1,4 +1,5 @@
 import {ClubDerby} from '@/components/clubs/gates/derby/ClubDerby'
+import {DerbyHero} from '@/components/clubs/gates/derby/DerbyHero'
 import {ClubWall} from '@/components/clubs/gates/rivalry/ClubWall'
 import {ClubBlackFile} from '@/components/clubs/gates/rivalry/ClubBlackFile'
 import {ModeBar} from '@/components/clubs/gates/rivalry/ModeBar'
@@ -10,6 +11,10 @@ import {dealFile,publicFile,scopeOf} from '@/lib/clubs/blackfile-deal'
 import {wallOf} from '@/lib/clubs/derby-model'
 import {modeFrom,rivalList,rivalryModes,type ModeKey} from '@/lib/clubs/rivalry-modes'
 import {meetingsBetween} from '@/lib/fixtures/meetings'
+import {coverageOf} from '@/lib/clubs/derby-model'
+import {crestFor} from '@/lib/clubs/crest'
+import {sharedGate} from '@/lib/clubs/gates'
+import {REGISTRY} from '@/lib/master/registry'
 import {makeT} from '../derby/ui'
 import type {GateView} from '../types'
 
@@ -38,13 +43,18 @@ export const view:GateView=async({club,locale,copy,round,searchParams})=>{
  const contentLocale=club.locales.content
  const bar=<ModeBar modes={modes} current={mode} hrefs={hrefs} copy={copy} rivals={rivals} currentRival={rival?.id??null} rivalHref={id=>qs({mode:'meetings',rival:id})}/>
  const barHeight=66+(rivals.length>1&&mode==='meetings'?54:0)
+ // the masthead: the rival's crest only when the registry names that exact club — and it prints in one ink (rule 95)
+ const rivalClub=rival?REGISTRY.find(c=>[rival.name,...rival.aliases].some(n=>n.toLocaleLowerCase()===c.name.toLocaleLowerCase())&&c.id!==club.identity.id):undefined
+ const cov=coverageOf(meetings),span=cov.first!==null&&cov.last!==null?(cov.first===cov.last?String(cov.first):`${cov.first}–${cov.last}`):null
+ const hero=rival?<DerbyHero clubName={club.identity.name} rival={rival.name} clubCrest={crestFor(club.identity.id)} rivalCrest={crestFor(rivalClub?.id)} vs={t('derby.vs')}
+  kicker={[rival.type,rival.period].filter(Boolean).join(' · ')||null} tag={meetings.length?[t('derby.mode.count.meetings',{n:meetings.length}),span].filter(Boolean).join(' · '):null}/>:null
 
  let body:JSX.Element|null
  if(mode==='meetings'){
   if(!rival||info.state==='locked')body=<ModeLocked mode={modes[0]!} clubName={club.identity.name} copy={copy} otherHref={hrefs.meetings}/>
   else{
    const tab=searchParams.play==='1'?'call':(['wall','call','record'] as const).find(k=>k===searchParams.tab)??'wall'
-   body=<ClubDerby key={rival.id} club={club.identity.id} clubName={club.identity.name} rival={rival.name} rivalNote={[rival.type,rival.period,rival.note].filter(Boolean).join(' · ')||null} meetings={meetings} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={contentLocale} copy={copy} initialTab={tab} autoStart={searchParams.play==='1'}/>
+   body=<ClubDerby key={rival.id} gateNo={sharedGate('derby')?.number??null} club={club.identity.id} clubName={club.identity.name} rival={rival.name} rivalNote={[rival.type,rival.period,rival.note].filter(Boolean).join(' · ')||null} meetings={meetings} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={contentLocale} copy={copy} initialTab={tab} autoStart={searchParams.play==='1'}/>
   }
  }else if(mode==='wall'){
   body=info.state==='open'
@@ -61,5 +71,5 @@ export const view:GateView=async({club,locale,copy,round,searchParams})=>{
    </>
   }
  }
- return <div className={css.shell} data-testid="derby-gate" data-mode={mode} style={{'--mode-bar':`${barHeight}px`} as React.CSSProperties}>{bar}{body}</div>
+ return <div className={`${css.shell} wgb`} data-testid="derby-gate" data-mode={mode} style={{'--mode-bar':`${barHeight}px`} as React.CSSProperties}>{hero}{bar}{body}</div>
 }

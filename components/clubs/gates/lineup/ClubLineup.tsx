@@ -17,6 +17,8 @@ import {askLineupCoach,gradeLineupSheet} from './coach-action'
 import {BandPitch,type PitchLabels} from './BandPitch'
 import {LockerRack,type RackLabels} from './LockerRack'
 import css from './lineup.module.css'
+import {Plate} from '@/components/weekly/Plate'
+import {sharedGate} from '@/lib/clubs/gates'
 
 export type LineupItem={id:string;title:string;competition:string;on:string|null;year:number|null;score:string|null;pool:string[];/** how many coach notes this match can give (0 when the sheet has nothing to count) */coachBudget:number;sources:{title:string;url:string|null}[]}
 type Graded=GradeResult&{sources:string[]}
@@ -122,12 +124,20 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
  const activeLocked=active?locked.has(active):false
 
  if(!started)return <div className={css.intro} data-testid="lineup-intro">
+  <div className={`wk-panel wk-lift wk-sky ${css.cover}`}>
+   <span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'70%',['--sy' as string]:'52%'}}/>
+   <Plate art="keeper" ink="club" className={css.coverArt}/>
+   <p className={`wk-banner ${css.coverBanner}`}>{clubName} · {tx('lu.mode.name')}</p>
+   <h2 className={`wk-logo ${css.coverTitle}`}>{tx('lu.intro.title')}</h2>
+   <p className={`wk-cap white ${css.introMatch}`} lang={contentLocale} dir="auto"><b>{m.title}</b><span>{[m.competition,m.on].filter(Boolean).join(' · ')}</span></p>
+  </div>
   <p className={css.modeChip}>{tx('lu.mode.name')}</p>
-  <h2 className={css.introTitle}>{tx('lu.intro.title')}</h2>
-  <p className={css.introMatch} lang={contentLocale} dir="auto"><b>{m.title}</b><span>{[m.competition,m.on].filter(Boolean).join(' · ')}</span></p>
-  <p>{tx('lu.intro.body')}</p>
-  <ul className={css.rules}><li>{tx('lu.intro.rule1')}</li><li>{tx('lu.intro.rule2')}</li><li>{tx('lu.intro.rule3')}</li></ul>
-  <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={onStart} data-testid="lineup-start">{tx('lu.intro.start')} →</button>
+  <p className={css.introBody}>{tx('lu.intro.body')}</p>
+  <ul className={css.introRules}><li><b>1</b>{tx('lu.intro.rule1')}</li><li><b>2</b>{tx('lu.intro.rule2')}</li><li><b>3</b>{tx('lu.intro.rule3')}</li></ul>
+  <div className={css.kickRow}><button type="button" className={`min-h-tap wk-kick ${css.kick}`} onClick={onStart} data-testid="lineup-start">
+   <span className="wk-kick-gate" aria-hidden="true"><small>{copy.ticketGate}</small><b>{String(sharedGate('lineup')?.number??3).padStart(2,'0')}</b></span>
+   <span className="wk-kick-go"><span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'100%',['--sy' as string]:'50%'}}/><span>{tx('lu.intro.start')}</span><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" className="wga-ball-fill"/><path d="M20 11l7 5-3 8h-8l-3-8z" className="wga-ball-ink"/></svg></span>
+  </button></div>
  </div>
 
  return <>
@@ -152,8 +162,9 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
    <div className={css.dock}>
     <p className={css.prompt} data-tone={warn?'warn':undefined} data-testid="lineup-prompt">{prompt}</p>
     <div className={css.wall}>
+     {notes.length>0&&<div className={css.coachNote} role="status"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 16v8h6l14 8V8L12 16z M30 14c3 2 3 10 0 12 M34 10c5 4 5 16 0 20"/></svg><p><small>{tx('lu.coach.title')} · {notes.length}/{m.coachBudget}</small>{noteText(notes[notes.length-1]!)}</p></div>}
      <div className={css.wallHead}>
-      <p className={css.wallTarget}>{tx('lu.rack.title')} · {tx('lu.rack.into')} <b>{bandName(aimed)}</b></p>
+      <p className={css.wallTarget}><span className={`wk-logo red sm ${css.wallTitle}`}>{tx('lu.rack.title')}</span><span className={css.wallInto}>{tx('lu.rack.into')} <b>{bandName(aimed)}</b></span></p>
       <button type="button" className={`min-h-tap ${css.wallBtn} ${css.allBtn}`} onClick={open('all')}>{tx('lu.rack.all')}</button>
      </div>
      <LockerRack pool={m.pool} taken={taken} held={active} shirtOf={shirtOf} labels={rackLabels} contentLocale={contentLocale} onPick={pickFromRail} onDrop={dropOnBand} listLabel={tx('lu.rack.list')}/>
@@ -209,9 +220,11 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
         <button type="button" className={`min-h-tap ${css.btn}`} onClick={close}>{tx('lu.result.review')}</button>
     {grade&&<ShareComposer label={tx('lu.result.share')} draft={lineupShare(club,{title:m.title,on:m.on,competition:m.competition,correct:grade.correct,forbidden:[...m.pool.filter(x=>!grade.wrong.includes(x)&&picksOf(board).includes(x)),...grade.missed]})}/>}</div>}>
    {sheetData&&grade&&<div className={css.sheetBody} data-testid="lineup-result">
-    <div className={css.score}>
+    <div className={`wk-panel wk-lift wk-sky ${css.score}`}>
+     <span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'78%',['--sy' as string]:'30%'}}/>
+     <Plate art="cheer" ink="club" className={css.scoreArt}/>
      <p className={css.scoreKicker}>{tx('lu.result.kicker')} · <bdi lang={contentLocale}>{m.title}</bdi></p>
-     <p className={css.scoreNum}>{sheetData.correct}/11</p>
+     <p className={`wk-burst ${css.scoreNum}`}><b className="wk-num"><bdi dir="ltr">{sheetData.correct}/11</bdi></b></p>
      <p className={css.scoreKicker}>{tx('lu.result.scoreLabel')} · {tx('lu.mode.name')}</p>
      <p className={css.scoreLine}>{sheetData.correct===11?tx('lu.result.perfect'):sheetData.correct>=8?tx('lu.result.strong'):tx('lu.result.keep')}</p>
     </div>

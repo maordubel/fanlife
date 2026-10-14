@@ -83,7 +83,7 @@ export function RumbleXIGame({club,version,locale,formation,rival,wardrobe,faces
    </div>
    <div className={s.money} data-testid="rumble-money">
     <div className={`${s.mono} ${s.moneyTop}`}><span>{tr(copy,'rr.moneyLeft')}</span><Crown className={s.crown}/></div>
-    <p className={s.moneyValue} data-short={left<0} dir="ltr" aria-live="polite">{money(left)}</p>
+    <p className={s.moneyValue} data-short={left<0} dir="ltr" aria-live="polite">{[...money(left)].map((ch,i)=><span key={`${i}${ch}`} className={s.flap}>{ch}</span>)}</p>
     <p className={`${s.mono} ${s.trail}`} dir="ltr">{count<slots.length?tr(copy,'rr.xi.leftPerSlot',{n:money(perSlot)}):money(spent)+' / '+money(budget)}</p>
     <div className={s.progress}><i style={{width:`${(count/slots.length)*100}%`}}/></div>
     <p className={`${s.mono} ${s.trail}`}>{tr(copy,'rr.xi.picked',{n:count,total:slots.length})} · {tr(copy,'rr.archiveCount',{n:playerCount})}</p>
@@ -98,12 +98,12 @@ export function RumbleXIGame({club,version,locale,formation,rival,wardrobe,faces
    </button>})}
   </section>
 
-  <div className={s.chips}>
-   <button type="button" className={`${s.chip} ${s.rules} min-h-tap`} onClick={()=>setRules(true)}>{tr(copy,'rr.rules')}</button>
+  <div className={s.pickArea}>
+   <div ref={machine}>{phase==='draft'&&!complete&&<DraftPanel copy={copy} view={view} groupsLeft={groupsLeft} busy={dr.busy} error={dr.error} onOpen={g=>void dr.act({t:'open',g})} onReroll={()=>void dr.act({t:'reroll'})} onPick={(c,e)=>void pick(c,e)} nextLabel={nextLabel} wardrobe={wardrobe} reduced={reduced} seed={roundSeed} pickedCount={count} total={slots.length}/>}</div>
+   <div className={s.chips}>
+    <button type="button" className={`${s.chip} ${s.rules} min-h-tap`} onClick={()=>setRules(true)}>{tr(copy,'rr.rules')}</button>
+   </div>
   </div>
-
-  <div ref={machine}>{phase==='draft'&&!complete&&<DraftPanel copy={copy} view={view} groupsLeft={groupsLeft} busy={dr.busy} error={dr.error} onOpen={g=>void dr.act({t:'open',g})} onReroll={()=>void dr.act({t:'reroll'})} onPick={(c,e)=>void pick(c,e)} nextLabel={nextLabel} wardrobe={wardrobe} reduced={reduced} seed={roundSeed} pickedCount={count} total={slots.length}/>}</div>
-
 
   <button type="button" className={`${s.lock} min-h-tap`} disabled={!complete||left<0||busy||dr.busy} onClick={e=>void lock(e)} data-ready={complete&&left>=0} data-testid="rumble-lock">
    <span style={{minWidth:0}}><small className={s.mono}>{tr(copy,'rr.xi.lockLine',{left:money(left)})}</small><strong>{busy?tr(copy,'rr.locking'):complete?tr(copy,'rr.lockReady'):tr(copy,'rr.lockMissing',{n:slots.length-count})}</strong></span>
@@ -113,7 +113,7 @@ export function RumbleXIGame({club,version,locale,formation,rival,wardrobe,faces
   {phase==='jackpot'&&<div className={s.jackpot} role="status" data-testid="rumble-jackpot"><div className={s.jackpotPlate}><b>{tr(copy,'rr.jackpot')}</b><small className={s.mono}>{tr(copy,'rr.xi.yourEleven')} · {money(spent)}</small></div></div>}
 
   {rules&&<div className={s.sheetBack} onClick={()=>setRules(false)}>
-   <div className={`${s.sheet} relative z-[60]`} role="dialog" aria-modal="true" aria-labelledby="rr-rules" onClick={e=>e.stopPropagation()}>
+   <div className={`${s.sheet} relative z-[61]`} role="dialog" aria-modal="true" aria-labelledby="rr-rules" onClick={e=>e.stopPropagation()}>
     <div className={s.sheetHead}><h2 id="rr-rules">{tr(copy,'rr.rulesTitle')}</h2><button type="button" className={`${s.closeBtn} min-h-tap`} onClick={()=>setRules(false)} autoFocus>{tr(copy,'rr.close')}</button></div>
     <ul>{[1,2,3,4,5].map(n=><li key={n}>{tr(copy,`rr.xi.rule${n}`,{budget:budget})}</li>)}</ul>
     <p className={s.sheetNote}>{tr(copy,'rr.draft.freeRule')}</p>

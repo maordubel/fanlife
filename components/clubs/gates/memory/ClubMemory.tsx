@@ -14,7 +14,8 @@ import {haptic} from '@/lib/play/haptics'
 import {markStep} from '@/lib/analytics/meter'
 import {tr,useReducedMotion} from '@/components/clubs/rumble/shared'
 import {WallCard} from './WallCard'
-import {FusionPlate,ShelfSheet,type Plate,type RevealState,type T} from './MemoryParts'
+import {Face,FusionPlate,RevealLines,ShelfSheet,type Plate,type RevealState,type T} from './MemoryParts'
+import {ObjectMark} from '@/components/memory/ObjectMark'
 import {MemoryBlocked,MemoryReady} from './MemoryReady'
 import {MemoryReport} from './MemoryReport'
 import css from './memory.module.css'
@@ -160,12 +161,12 @@ function Wall(props:ClubMemoryProps&{deal:PublicDeal;t:T}){
   {phase==='done'&&result?<MemoryReport home={props.home} t={t} copy={copy} club={club} clubName={clubName} locale={locale} contentLocale={contentLocale} seed={seed} cursor={cursor} plan={plan} result={result} verdict={verdict(run,total)} label={deal.label}
     pairs={foundPairs(pairs,run.done)} perfectIds={run.perfect} reveals={reveals} onRetry={askReveal} best={bests[result.category]} improved={improved} shelfCount={Object.keys(shelf).length} onShelf={()=>setShelfOpen(true)} peek={peekOn}/>
   :<div className={css.play}>
-   <div className={css.hud} data-testid="memory-hud">
-    <p className={css.hudPairs}><span>{t('mem.hud.pairs')}</span> <b data-testid="memory-pairs"><Num>{run.done.length}/{total}</Num></b></p>
+   <div className={`wk-hud ${css.hud}`} data-testid="memory-hud">
+    <p className={css.hudPairs}><b className="wk-lamp" data-testid="memory-pairs"><Num>{run.done.length}/{total}</Num></b><span>{t('mem.hud.pairs')}</span></p>
+    <p className={css.hudMoves}><b className="wk-lamp" data-testid="memory-moves"><Num>{run.moves}</Num></b><span>{copy.flips}</span></p>
+    <p className={css.hudStreak} data-testid="memory-streak"><b className="wk-lamp red"><Num>{run.streak}</Num></b><span>{t('mem.hud.streak')}</span></p>
+    <p className={css.hudClock} aria-label={t('mem.hud.clock')}><b className="wk-lamp"><Num>{clockOf(elapsed)}</Num></b><span aria-hidden="true">{t('mem.hud.clock')}</span></p>
     <ol className={css.pips} aria-hidden="true">{pairs.map(p=><li key={p.id} data-lit={run.done.includes(p.id)}/>)}</ol>
-    <p className={css.hudMoves}><span>{copy.flips}</span> <b data-testid="memory-moves"><Num>{run.moves}</Num></b></p>
-    <p className={css.hudClock} aria-label={t('mem.hud.clock')}><Num>{clockOf(elapsed)}</Num></p>
-    <p className={css.hudStreak} data-testid="memory-streak"><span>{t('mem.hud.streak')}</span> <b><Num>{run.streak}</Num></b></p>
     <div className={css.wallBar} role="img" aria-label={t('mem.hud.wallAria',{n:wall})} data-lit={lit||undefined}><span>{t('mem.hud.wall')}</span><i><b style={{inlineSize:`${wall}%`}}/></i><span className={css.wallPct}><Num>{wall}%</Num></span></div>
     <p className={css.echo} data-state={run.echo} data-testid="memory-echo">{run.echo==='armed'?t('mem.hud.echoArmed'):run.echo==='spent'?t('mem.hud.echoSpent'):t('mem.hud.echoIdle',{n:echoLeft})}</p>
    </div>
@@ -185,11 +186,17 @@ function Wall(props:ClubMemoryProps&{deal:PublicDeal;t:T}){
     :<>
      {plate?<FusionPlate t={t} copy={copy} plate={plate} state={reveals[plate.pair.id]} locale={locale} contentLocale={contentLocale} fusing={fusing} onRetry={()=>askReveal(plate.pair.id)}/>:<p className={css.hintText} aria-live="polite">{t(hint)}</p>}
      <div className={css.toolRow}>
-      <button type="button" className={`min-h-tap ${css.tool}`} disabled={!peekOn||run.flashUsed||phase!=='play'||run.open.length>0} onClick={peek} title={t('mem.peek.title')} data-testid="memory-peek">{!peekOn?t('mem.peek.locked'):run.flashUsed?t('mem.peek.spent'):t('mem.peek')}</button>
+      <button type="button" className={`min-h-tap ${css.tool}`} disabled={!peekOn||run.flashUsed||phase!=='play'||run.open.length>0} onClick={peek} title={t('mem.peek.title')} data-testid="memory-peek"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6"/></svg>{!peekOn?t('mem.peek.locked'):run.flashUsed?t('mem.peek.spent'):t('mem.peek')}</button>
       <button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>setShelfOpen(true)} data-testid="memory-shelf-open">{t('mem.shelf')} <b><Num>{Object.keys(shelf).length}</Num></b></button>
      </div>
     </>}
    </div>
+   <aside className={css.sideCol} aria-label={t('mem.result.mural')}>
+    <h3 className="wk-logo red sm wk-tilt">{t('mem.result.mural')}</h3>
+    {run.done.length===0?<p className={css.fine}>{t('mem.shelf.empty')}</p>
+     :<ol className={css.mural}>{foundPairs(pairs,run.done).map(x=><li key={x.id} lang={contentLocale} dir="auto"><span className={css.plateIcon}><ObjectMark object={x.object} className={css.obj}/></span><div><p className={css.plateFaces}><b><Face value={x.a} locale={locale}/></b> <span aria-hidden="true">↔</span> <b><Face value={x.b} locale={locale}/></b></p><RevealLines t={t} copy={copy} state={reveals[x.id]} locale={locale} contentLocale={contentLocale} onRetry={()=>askReveal(x.id)}/></div></li>)}</ol>}
+    <div className="wga-keys"><p className="wk-k muted">{t('mem.keys.title')}</p><p><span className="wk-kbd">Tab</span><span>{t('mem.keys.move')}</span></p><p><span className="wk-kbd">Space</span><span>{t('mem.keys.turn')}</span></p></div>
+   </aside>
   </div>}
   <ShelfSheet t={t} copy={copy} open={shelfOpen} onClose={()=>setShelfOpen(false)} shelf={shelf} ok={shelfOk} locale={locale} contentLocale={contentLocale}/>
  </section>

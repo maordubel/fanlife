@@ -63,7 +63,7 @@ export function ResultCard({run,mode,player,wardrobe,contentLocale,club,locale,v
      <ol className={css.whyList}>{r.reveal.map(c=><li key={c.n} data-clue-n={c.n}>
       <small>{c.label}</small><span dir="auto">{c.value}</span>
       {c.caveat&&<em className={css.caveat}>{c.caveat}</em>}
-      {c.remaining!==null&&<span className={css.left}>{c.remaining===1?t('bc.why.one'):t('bc.why.left',{n:c.remaining})}</span>}
+      {c.remaining!==null&&<span className={css.remain}>{c.remaining===1?t('bc.why.one'):t('bc.why.left',{n:c.remaining})}</span>}
       {c.sources.length>0&&<span className={css.srcLine}>{c.sources.map((s,i)=><span key={s.id}>{i>0&&' · '}{s.url?<a href={s.url} target="_blank" rel="noreferrer"><bdi>{s.title}</bdi> ↗</a>:<bdi>{s.title}</bdi>}</span>)}</span>}
      </li>)}</ol>
     </details>

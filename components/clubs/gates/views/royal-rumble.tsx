@@ -50,11 +50,13 @@ export const view:GateView=async props=>{
  if(valid&&valid!==id){const r=await requestClub(valid,9);if(r)wardrobe=apart(own,rumbleWardrobe(kitViews(r.data),hex=>forbiddenColor(club.theme,hex)))}
  const again=new URLSearchParams({lang:locale,seed:String(round.seed+1)});if(token&&duel)again.set('duel',duel);else if(vsParam&&opponent.kind==='club')again.set('vs',vsParam)
  const rivalId=valid&&valid!==id?valid:id
- return <>
+ return <div className="wgb wgb-rumble" data-mode="five">
+  <div className="wgb-rumble-bill">
   <RumbleModeBar club={id} clubName={club.identity.name} locale={locale} mode="five"/>
   <RumbleOpponentBar club={id} clubs={clubs} vs={opponent.kind==='club'?vsParam:null} duel={token&&opponent.kind==='locked'?duel:null} from={token&&opponent.kind==='locked'?token.c:null} locale={locale} me={{id,name:club.identity.name,pattern:livery(id)?.pattern,initials:livery(id)?.initials}}/>
+  </div>
   <RumbleGame key={`${gameKey}:${valid??'self'}`} club={id} version={club.version} locale={locale} seed={round.seed} wardrobe={wardrobe} playerCount={pool.length} vs={opponent.kind==='club'&&vsParam?vsParam:undefined} duel={token&&opponent.kind==='locked'&&duel?duel:undefined} againHref={`?${again}`} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:nameOf(rivalId)}}} highlights={(await door('highlights')).open?highlightsAllow(hex=>forbiddenColor(club.theme,hex),{us:livery(id)?.primary,them:livery(rivalId)?.primary}):undefined}/>
- </>
+ </div>
 }
 
 async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
@@ -64,11 +66,11 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const okIds=rivals.filter(r=>r.ok).map(r=>r.id)
  let rival=sp==='random'?pickRandomRival(rivals,id,round.seed):sp==='same'?'same':okIds.includes(sp)?sp:'same'
  if(rival==='same'&&!ready.sameClub22)rival=pickRandomRival(rivals,id,round.seed)
- const head=(vs:string)=><>
+ const head=(vs:string)=><div className="wgb-rumble-bill">
   <RumbleModeBar club={id} clubName={club.identity.name} locale={locale} mode="xi"/>
   <RumbleXIEntry club={id} clubName={club.identity.name} locale={locale} formation={f} vs={vs} rivals={rivals} own={own} sameOk={ready.sameClub22} me={{id,name:club.identity.name,pattern:livery(id)?.pattern,initials:livery(id)?.initials}}/>
- </>
- const stop=(msg:string)=><>{head(sp)}<p role="alert" data-testid="rumble-xi-stop" style={{margin:'12px 0',fontWeight:700}}>{msg}</p></>
+ </div>
+ const stop=(msg:string)=><div className="wgb wgb-rumble" data-mode="xi">{head(sp)}<p role="alert" data-testid="rumble-xi-stop" style={{margin:'12px 0',fontWeight:700}}>{msg}</p></div>
  if(!ready.ready)return stop(say('rr.xi.notReady').replace('{formation}',f).replace('{reason}',ready.reasons[0]??'—'))
  if(!rival)return stop(say('rr.xi.noRival'))
  const same=rival==='same',rivalId=same?id:rival
@@ -79,8 +81,8 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const ownW={...rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex)),photos:hapoelPhotos(club,pool)}
  const wardrobe=same?{home:ownW.home,away:ownW.away.length?ownW.away:ownW.home,photos:ownW.photos}:apart(ownW,rumbleWardrobe(kitViews(away),hex=>forbiddenColor(club.theme,hex)))
  const again=new URLSearchParams({lang:locale,mode:'xi',f,vs:same?'same':rivalId,seed:String(round.seed+1)})
- return <>
+ return <div className="wgb wgb-rumble" data-mode="xi">
   {head(sp==='random'?'random':same?'same':rivalId)}
   <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} highlights={(await door('highlights')).open?highlightsAllow(hex=>forbiddenColor(club.theme,hex),{us:livery(id)?.primary,them:same?null:livery(rivalId)?.primary}):undefined} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
- </>
+ </div>
 }

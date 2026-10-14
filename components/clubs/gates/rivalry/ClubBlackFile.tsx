@@ -112,7 +112,7 @@ export function ClubBlackFile({club,clubName,slug,version,seed,cursor,locale,con
   {pending&&<p className={css.notice} role="status">{t('derby.bf.checking')}</p>}
   {failure&&<div className={css.notice} role="alert" data-testid="file-error"><p>{failure==='offline'?t('derby.bf.offline'):t('derby.bf.err')}</p><button type="button" className={`${css.ghost} min-h-tap`} onClick={()=>last.current?.()}>{t('derby.bf.retry')}</button></div>}
   {revealed&&cross&&<div className={css.reveal} data-testid="file-reveal" role="status">
-   <span className={css.verdict} data-ok={ok}>{ok?t('derby.bf.right'):t('derby.bf.wrong')}</span>
+   <span className={css.verdict} data-ok={ok} data-verdict={ok?'right':'wrong'}>{ok?t('derby.bf.right'):t('derby.bf.wrong')}</span>
    <dl className={css.rows}>
     <dt>{t('derby.bf.r.who')}</dt><dd><bdi lang={contentLocale} dir="auto">{cross.person}</bdi></dd>
     <dt>{t('derby.bf.r.what')}</dt><dd><bdi lang={contentLocale} dir="auto">{t(cross.answer==='crossed'?'derby.bf.r.crossed':'derby.bf.r.didNot',{person:cross.person,from:cross.from,to:cross.to})}</bdi></dd>
@@ -123,7 +123,7 @@ export function ClubBlackFile({club,clubName,slug,version,seed,cursor,locale,con
    </dl>
   </div>}
   {revealed&&order&&<div className={css.reveal} data-testid="file-reveal" role="status">
-   <span className={css.verdict} data-ok={ok}>{ok?t('derby.bf.right'):t('derby.bf.wrong')}</span>
+   <span className={css.verdict} data-ok={ok} data-verdict={ok?'right':'wrong'}>{ok?t('derby.bf.right'):t('derby.bf.wrong')}</span>
    <dl className={css.rows}>
     <dt>{t('derby.bf.o.earlier')}</dt><dd><bdi lang={contentLocale} dir="auto">{order.earlier.title}</bdi> · <bdi>{localizedDate(order.earlier.on,locale)}</bdi>{srcs(order.earlier.sources)}</dd>
     <dt>{t('derby.bf.o.later')}</dt><dd><bdi lang={contentLocale} dir="auto">{order.later.title}</bdi> · <bdi>{localizedDate(order.later.on,locale)}</bdi>{srcs(order.later.sources)}</dd>

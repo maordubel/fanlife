@@ -16,7 +16,7 @@ const href=(locale:UiLocale,q:Record<string,string>)=>{const p=new URLSearchPara
 export function RumbleModeBar({club,clubName,locale,mode}:{club:string;clubName:string;locale:UiLocale;mode:'five'|'xi'}){
  const copy=gameCopy(locale)
  return <section className={s.modeBar} aria-label={tr(copy,'rr.mode.kicker')} data-testid="rumble-mode">
-  <p className={`${s.mono} ${s.vsHead}`}>{tr(copy,'rr.mode.kicker')} · <bdi>{clubName}</bdi></p>
+  <p className={`${s.mono} ${s.vsHead} ${s.billHead}`}><span aria-hidden="true">★</span> {tr(copy,'rr.mode.kicker')} · <bdi>{clubName}</bdi> <span aria-hidden="true">★</span></p>
   <div className={s.modeCards} role="group">
    <Link className={`${s.modeCard} min-h-tap`} aria-current={mode==='five'?'true':undefined} href={href(locale,{})}><b>{tr(copy,'rr.mode.five')}</b><small>{tr(copy,'rr.mode.fiveSub')}</small></Link>
    <Link className={`${s.modeCard} min-h-tap`} aria-current={mode==='xi'?'true':undefined} href={href(locale,{mode:'xi'})} data-testid="rumble-mode-xi"><b>{tr(copy,'rr.mode.xi')}</b><small>{tr(copy,'rr.mode.xiSub')}</small></Link>
@@ -37,7 +37,7 @@ export function RumbleXIEntry({club,clubName,locale,formation,vs,rivals,own,same
   ...rivals.filter(r=>r.id!==club).map(r=>({id:r.id,kind:'club' as const,name:r.name,sub:r.ok?(REGISTRY.find(c=>c.id===r.id)?.city??null):r.reason,ok:r.ok,href:q({vs:r.id}),...dress(r.id)})),
   {id:'random',kind:'random',name:tr(copy,'rr.xi.rival.random'),sub:tr(copy,'rr.xi.randomSub'),ok:true,href:q({vs:'random'})},
  ]
- const rc:RivalCopy={label:tr(copy,'rr.xi.rivalKicker'),pick:tr(copy,'rr.xi.pickRival'),unavailable:tr(copy,'rr.xi.unavailable'),close:tr(copy,'rr.close'),same:tr(copy,'rr.xi.rival.same'),random:tr(copy,'rr.xi.rival.random'),vs:'VS'}
+ const rc:RivalCopy={label:tr(copy,'rr.xi.rivalKicker'),pick:tr(copy,'rr.xi.pickRival'),unavailable:tr(copy,'rr.xi.unavailable'),close:tr(copy,'rr.close'),same:tr(copy,'rr.xi.rival.same'),random:tr(copy,'rr.xi.rival.random'),vs:'VS',change:tr(copy,'rr.vs.change'),title:tr(copy,'rr.xi.pickRival'),ink:tr(copy,'rr.vs.ink')}
  return <section className={s.vsBar} aria-label={tr(copy,'rr.xi.rivalKicker')} data-testid="rumble-xi-entry">
   <RivalPicker me={me} current={vs} options={options} copy={rc}/>
   <p className={`${s.mono} ${s.vsHead}`}>{tr(copy,'rr.xi.formation')}</p>

@@ -10,7 +10,7 @@ export type TimelineMode='chronology'|'thread'|'chronicle'
  */
 export function ModeTabs({mode,locale,labels,aria}:{mode:TimelineMode;locale:string;labels:Record<TimelineMode,string>;aria:string}){
  const href=(m:TimelineMode)=>`?${new URLSearchParams(m==='chronology'?{lang:locale}:{mode:m,lang:locale})}`
- return <nav className={css.modes} aria-label={aria} data-testid="timeline-modes">
+ return <nav className={`wk-seg ${css.modes}`} aria-label={aria} data-testid="timeline-modes">
   {(['chronology','thread','chronicle'] as const).map(m=><Link key={m} prefetch={false} className={css.mode} href={href(m)} aria-current={mode===m?'page':undefined} data-testid={`timeline-mode-${m}`}>{labels[m]}</Link>)}
  </nav>
 }

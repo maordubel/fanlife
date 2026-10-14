@@ -42,7 +42,7 @@ export function RevealLines({t,copy,state,locale,contentLocale,onRetry,fallbackF
 /** a locked pair as one memory: the two faces joined at once, the rest as the server confirms it */
 export function FusionPlate({t,copy,plate,state,locale,contentLocale,fusing,onRetry}:{t:T;copy:GameCopy;plate:Plate;state:RevealState|undefined;locale:string;contentLocale:string;fusing:boolean;onRetry:()=>void}){
  const {pair,perfect}=plate
- return <div className={css.plate} data-perfect={perfect||undefined} data-fusing={fusing||undefined} role="status" data-testid="memory-plate" key={pair.id}>
+ return <div className={css.plate} data-perfect={perfect||undefined} data-fusing={fusing||undefined} role="status" data-testid="memory-plate" key={pair.id} data-verdict="right" data-shout="Pair!" data-shout-sub={perfect?t('mem.plate.perfect'):undefined}>
   <span className={css.plateIcon}><ObjectMark object={pair.object} className={css.obj}/></span>
   <div className={css.plateText} lang={contentLocale} dir="auto">
    <p className={css.plateHead}><span className={css.plateKicker}>{t('mem.plate.kicker')}</span>{perfect&&<span className={css.perfect}>{t('mem.plate.perfect')}</span>}</p>

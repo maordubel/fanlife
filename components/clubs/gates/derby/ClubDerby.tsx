@@ -1,7 +1,6 @@
 'use client'
 import {useMemo,useRef,useState} from 'react'
 import {SlideSheet} from '@/components/stage/SlideSheet'
-import {livery} from '@/lib/club-livery'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import {localeDirection,type UiLocale} from '@/lib/clubs/locale'
 import {canPlay,shootoutOf,type WallMeeting} from '@/lib/clubs/derby-model'
@@ -9,26 +8,27 @@ import {CallPanel} from './CallPanel'
 import {RecordPanel} from './RecordPanel'
 import {WallPanel} from './WallPanel'
 import {dateText,makeT,resKey,type Shared} from './ui'
+import {Icon} from '@/components/weekly/Icon'
 import css from './derby.module.css'
-import { Badge } from '@/components/clubs/Badge'
 
 type Tab='wall'|'call'|'record'
-export type ClubDerbyProps={club:string;clubName:string;rival:string;rivalNote:string|null;meetings:WallMeeting[];version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;initialTab:Tab;autoStart:boolean}
+export type ClubDerbyProps={club:string;clubName:string;rival:string;rivalNote:string|null;meetings:WallMeeting[];version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;initialTab:Tab;autoStart:boolean;/** the gate's shared number, printed on the "Call it!" plate */gateNo?:number|null}
 
 /**
  * Gate 11 · Rivalry Wall (a generic template — every club, every approved rival).
  * Three views over ONE input, the meetings the archives document: the Wall (posters), Call it (a round) and the Record.
- * The club wears its own colour; the rival is ink and paper, always.
+ * The club wears its own colour; the rival is ink and paper, always. The Weekly (rule 124): the three views are folder
+ * tabs (never a sideways strip); the masthead poster lives in the view, above the three ways in.
  */
 export function ClubDerby(p:ClubDerbyProps){
  const {club,clubName,rival,rivalNote,meetings,version,seed,cursor,locale,contentLocale,copy}=p
  const t=useMemo(()=>makeT(copy),[copy]),rtl=localeDirection(locale)==='rtl'
  const [tab,setTab]=useState<Tab>(p.initialTab),[open,setOpen]=useState<WallMeeting|null>(null),opener=useRef<HTMLElement|null>(null)
  const s:Shared={t,locale,contentLocale,club,clubName,rival}
- const lv=livery(club),playable=canPlay(meetings)
+ const playable=canPlay(meetings)
  const onOpen=(m:WallMeeting,el:HTMLElement|null)=>{opener.current=el;setOpen(m)}
  const close=()=>{setOpen(null);window.requestAnimationFrame(()=>opener.current?.focus?.())}
- const tabs:{k:Tab;label:string}[]=[{k:'wall',label:t('derby.tab.wall')},{k:'call',label:t('derby.tab.call')},{k:'record',label:t('derby.tab.record')}]
+ const tabs:{k:Tab;label:string;icon:string}[]=[{k:'wall',label:t('derby.tab.wall'),icon:'grid'},{k:'call',label:t('derby.tab.call'),icon:'vote'},{k:'record',label:t('derby.tab.record'),icon:'file'}]
  const onKey=(e:React.KeyboardEvent)=>{
   if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return
   const i=tabs.findIndex(x=>x.k===tab),step=(e.key==='ArrowRight')!==rtl?1:-1
@@ -39,18 +39,14 @@ export function ClubDerby(p:ClubDerbyProps){
  return <section className={css.stage} data-testid="derby-wall" data-tab={tab} data-playable={playable} lang={locale}>
   <div className={css.layout}>
    <div className={css.head}>
-    <div className={css.versus} role="group" aria-label={`${clubName} ${t('derby.vs')} ${rival}`}>
-     <div className={`${css.side} ${css.sideClub}`}>{lv&&<Badge club={lv}/>}<b><bdi>{clubName}</bdi></b></div>
-     <span className={css.vs} aria-hidden="true">{t('derby.vs')}</span>
-     <div className={`${css.side} ${css.sideRival}`}><b><bdi>{rival}</bdi></b></div>
-    </div>
     {rivalNote&&<p className={css.rivalNote}><bdi>{rivalNote}</bdi></p>}
-    <div className={css.tabs} role="tablist" aria-label={t('derby.tabs')} onKeyDown={onKey}>
-     {tabs.map(x=><button key={x.k} id={`derby-tab-${x.k}`} type="button" role="tab" className={`${css.tab} min-h-tap`} aria-selected={tab===x.k} aria-controls="derby-panel" tabIndex={tab===x.k?0:-1} onClick={()=>setTab(x.k)}>{x.label}</button>)}
+    <div className={`wk-folders ${css.tabs}`} role="tablist" aria-label={t('derby.tabs')} onKeyDown={onKey}>
+     {tabs.map(x=><button key={x.k} id={`derby-tab-${x.k}`} type="button" role="tab" className={`${css.tab} min-h-tap`} aria-selected={tab===x.k} aria-controls="derby-panel" tabIndex={tab===x.k?0:-1} onClick={()=>setTab(x.k)}><Icon name={x.icon} size={20}/>{x.label}</button>)}
     </div>
+    <div className="wk-folders-rule" aria-hidden="true"/>
    </div>
    <div className={css.panel} id="derby-panel" role="tabpanel" aria-labelledby={`derby-tab-${tab}`}>
-    {tab==='wall'&&<WallPanel meetings={meetings} s={s} onOpen={onOpen}/>}
+    {tab==='wall'&&<WallPanel meetings={meetings} s={s} onOpen={onOpen} gateNo={p.gateNo??null} playable={playable} onCall={()=>{setTab('call');window.requestAnimationFrame(()=>document.getElementById('derby-tab-call')?.scrollIntoView?.({block:'nearest'}))}}/>}
     {tab==='call'&&<CallPanel key={`${seed}:${cursor}`} meetings={meetings} s={s} seed={seed} cursor={cursor} version={version} rtl={rtl} autoStart={p.autoStart} onOpen={onOpen} onWall={()=>setTab('wall')}/>}
     {tab==='record'&&<RecordPanel meetings={meetings} s={s} onOpen={onOpen}/>}
    </div>
@@ -58,8 +54,9 @@ export function ClubDerby(p:ClubDerbyProps){
   <SlideSheet open={open!==null} onClose={close} title={t('derby.dossier')} closeLabel={copy['play.close']}>
    {open&&<div className={css.dossier} data-testid="derby-dossier">
     <div className={css.dossHead} data-r={r}>
+     <span className={css.dossStamp} aria-hidden="true">{t(`derby.res.${r}`)}</span>
      <span className={css.dossScore} dir="ltr">{open.hg}–{open.ag}</span>
-     <div className={css.dossSides} dir="ltr"><span><bdi lang={contentLocale} dir="auto">{open.home}</bdi></span><span><bdi lang={contentLocale} dir="auto">{open.away}</bdi></span></div>
+     <div className={css.dossSides} dir="ltr"><span data-us={open.us==='home'}><bdi lang={contentLocale} dir="auto">{open.home}</bdi></span><span data-us={open.us==='away'}><bdi lang={contentLocale} dir="auto">{open.away}</bdi></span></div>
     </div>
     <dl className={css.facts}>
      <dt>{t('derby.dossier.date')}</dt><dd><bdi>{dateText(open,locale,t)}</bdi></dd>

@@ -33,11 +33,11 @@ export function ClubGoal(props:ClubGoalProps){
  const {items}=props
  const [run,setRun]=useState(0),[pos,setPos]=useState(0),[results,setResults]=useState<GoalResult[]>([]),[summary,setSummary]=useState(false),[started,setStarted]=useState(false)
  const idx=useMemo(()=>runIndices(items.length,run),[items.length,run]),g=items[idx[pos]!]
- if(!g)return <section className={css.stage} data-testid="goal-board" lang={props.locale}><p role="alert" className={css.status} data-testid="goal-empty">{props.copy.unavailable}</p></section>
+ if(!g)return <section className={`${css.stage} wgb`} data-testid="goal-board" lang={props.locale}><p role="alert" className={css.status} data-testid="goal-empty">{props.copy.unavailable}</p></section>
  const record=(r:GoalResult)=>setResults(x=>x.some(y=>y.id===r.id)?x:[...x,r])
  const next=()=>{if(pos>=idx.length-1)setSummary(true);else setPos(pos+1)}
  const again=()=>{setRun(r=>r+1);setPos(0);setResults([]);setSummary(false)}
- return <section className={css.stage} data-testid="goal-board" lang={props.locale}>
+ return <section className={`${css.stage} wgb`} data-testid="goal-board" lang={props.locale} data-started={started||undefined}>
   {!started
    ?<Intro g={g} of={idx.length} onStart={()=>setStarted(true)} {...props}/>
    :summary
@@ -78,6 +78,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const tx:Say=(k,v)=>tr(copy,k,v)
  const [draft,setDraft]=useState<Draft>([]),[actor,setActor]=useState<string|null>(null),[verb,setVerbPick]=useState<ReplayAction|null>(null),[active,setActive]=useState<number|null>(null)
  const [phase,setPhase]=useState<Phase>('build'),[verdict,setVerdict]=useState<GoalVerdict|null>(null),[sheet,setSheet]=useState<Sheet>(null)
+ const [tab,setTab]=useState<'who'|'what'>('who')
  const [hintN,setHintN]=useState<number|null>(null),[hinted,setHinted]=useState(false),[err,setErr]=useState(false),[notice,setNotice]=useState(''),[warn,setWarn]=useState(false),[pending,start]=useTransition()
  const ball=useBallRun(),opener=useRef<HTMLElement|null>(null)
  const unnamed=tx('gl.unnamed'),verbWord=(a:string)=>tx(`gl.verb.${a}`)
@@ -96,7 +97,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   if(full){say(tx('gl.full'),true);return}
   const prev=draft[draft.length-1]
   const next=addTouch(draft,{actor:who,action:what,zone});if(next===draft)return
-  setDraft(next);setActor(null);setVerbPick(null);setActive(null);markStep(next.length)
+  setDraft(next);setActor(null);setVerbPick(null);setActive(null);setTab('who');markStep(next.length)
   say(tx('gl.placed',{n:next.length,name:`⁨${labelOf(who)}⁩`,verb:verbWord(what)}))
   window.requestAnimationFrame(()=>firePickFxAt(document.querySelector(`[data-zone="${zone}"]`),{label:labelOf(who)}))
   if(prev)ball.play(buildTimeline([{zone:prev.zone,action:prev.action},{zone,action:'pass'}],2.4))
@@ -105,8 +106,8 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   if(!building)return
   if(active!==null){setDraft(d=>moveTouch(d,active,zone));setActive(null);say(tx('gl.moved'));return}
   if(full){say(tx('gl.full'),true);return}
-  if(actor===null){say(tx(verb?'gl.needWho':'gl.start0',{n:draft.length+1,min:MIN_TOUCHES,max:MAX_TOUCHES}),true);return}
-  if(verb===null){say(tx('gl.needVerb'),true);return}
+  if(actor===null){setTab('who');say(tx(verb?'gl.needWho':'gl.start0',{n:draft.length+1,min:MIN_TOUCHES,max:MAX_TOUCHES}),true);return}
+  if(verb===null){setTab('what');say(tx('gl.needVerb'),true);return}
   add(zone,actor,verb)
  }
  const zoneOf=(zone:string)=>zone.startsWith('zone-')?zone.slice(5):null
@@ -117,7 +118,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  }
  function dropToken(i:number,zone:string){const z=zoneOf(zone);if(!z||!building)return;setDraft(d=>moveTouch(d,i,z));setActive(i);say(tx('gl.moved'))}
  const tapToken=(i:number)=>{if(!building)return;setActive(a=>a===i?null:i);say('')}
- const pickVerb=(a:ReplayAction)=>{if(active!==null){setDraft(d=>setVerb(d,active,a));say('')}else setVerbPick(v=>v===a?null:a)}
+ const pickVerb=(a:ReplayAction)=>{if(active!==null){setDraft(d=>setVerb(d,active,a));say('')}else{setVerbPick(v=>v===a?null:a);if(actor===null&&verb!==a)setTab('who')}}
  const removeActive=()=>{if(active===null)return;setDraft(d=>removeAt(d,active));setActive(null);say(tx('gl.removed'))}
  const undo=()=>{setDraft(removeLast);setActive(null);say('')}
 
@@ -178,34 +179,53 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   :actor===null?tx('gl.needWho'):tx('gl.tapZone')
  const dateLine=[g.competition,g.on,g.score].filter(Boolean).join(' · ')
 
+ const askWhat=active!==null?tx('gl.verb.edit',{n:active+1}):actor!==null?tx('gl.ask.what',{name:`⁨${labelOf(actor)}⁩`}):tx('gl.ask.what0',{n:n+1})
+ const picking=building&&active===null
+
  return <>
-  <div className={css.layout}>
-   <div className={css.pitchCol}>
+  <div className={css.layout} data-phase={phase}>
+   <div className={css.side}>
     <header className={css.plate}>
      <span className={css.plateNo}>{tx('gl.goalOf',{n:pos+1,m:of})}</span>
      <span className={css.plateText}><h2 className={css.plateTitle} lang={contentLocale} dir="auto">{g.title}</h2><p className={css.plateMeta} lang={contentLocale} dir="auto">{dateLine}</p></span>
      <button type="button" className={`min-h-tap ${css.plateBtn}`} onClick={openSheet('info')} aria-label={tx('gl.info')} title={tx('gl.info')}>i</button>
     </header>
-    <p className={css.modeChip} data-testid="goal-mode" title={tx('gl.approx')}>{tx('gl.mode.zone')}</p>
-    <div className={css.counters} aria-hidden="true">
-     <span className={css.total} data-done={full}>{tx('gl.touches',{n,min:MIN_TOUCHES,max:MAX_TOUCHES})}</span>
-     {hintN!==null&&<span className={css.count}>{tx('gl.hint.is',{n:hintN})}</span>}
+    <div className={css.counters}>
+     <p className={css.modeChip} data-testid="goal-mode" title={tx('gl.approx')}>{tx('gl.mode.zone')}</p>
+     <span className={css.total} data-done={full} aria-hidden="true">{tx('gl.touches',{n,min:MIN_TOUCHES,max:MAX_TOUCHES})}</span>
+     {hintN!==null&&<span className={css.count} aria-hidden="true">{tx('gl.hint.is',{n:hintN})}</span>}
     </div>
+    <section className={css.move} aria-label={tx('gl.move')}>
+     <h3 className={css.moveHead}>{tx('gl.move')}</h3>
+     {n?<ol className={css.moveList} lang={contentLocale}>{draft.map((t,i)=><li key={i}>
+      <button type="button" className={`min-h-tap ${css.moveItem}`} aria-pressed={active===i} disabled={!building} onClick={()=>tapToken(i)}>
+       <b className={css.moveNo}>{i+1}</b>
+       <span className={css.moveText}><span className={css.moveName} dir="auto">{labelOf(t.actor)}</span><small>{tx('gl.move.at',{verb:verbWord(t.action),zone:t.zone})}</small></span>
+      </button></li>)}</ol>
+      :<p className={css.moveEmpty}>{tx('gl.move.empty')}</p>}
+    </section>
+   </div>
+
+   <div className={css.pitchCol}>
     <div className={css.pitchBox}><div className={css.pitchIn}>
      <GoalPitch layers={layers} ball={shownBall?.pt??null} lift={shownBall?.lift??0} goalHit={goalHit} interactive={building} armed={armed} active={active} cam={cam} shirtOf={shirtOf} labels={pitchLabels} contentLocale={contentLocale} onZone={tapZone} onToken={tapToken} onMove={dropToken}/>
     </div></div>
    </div>
 
-   <div className={css.dock}>
-    <p className={css.prompt} data-tone={warn?'warn':undefined} data-testid="goal-prompt">{prompt}</p>
-    {building&&active===null&&<div className={css.wall}>
-     <p className={css.wallHead}>{tx('gl.who')}</p>
-     <GoalBench pool={g.pool} selected={actor} disabled={full} shirtOf={name=>shirtFor(name,'us')} unnamedShirt={unknownShirt} unnamed={unnamed} ariaOf={name=>tx('gl.benchAria',{name:name||unnamed})} listLabel={tx('gl.who')} contentLocale={contentLocale} onPick={name=>{setActor(a=>a===name?null:name);say('')}} onDrop={dropBench}/>
+   <div className={css.dock} data-tab={picking?tab:'what'}>
+    {picking&&<div className={`wk-seg ${css.seg}`} role="group" aria-label={`${tx('gl.who')} · ${tx('gl.what')}`}>
+     <button type="button" className="min-h-tap" aria-pressed={tab==='who'} onClick={()=>setTab('who')}>{tx('gl.who')}<small dir="auto">{actor!==null?labelOf(actor):'—'}</small></button>
+     <button type="button" className="min-h-tap" aria-pressed={tab==='what'} onClick={()=>setTab('what')}>{tx('gl.what')}<small>{verb?verbWord(verb):'—'}</small></button>
     </div>}
-    {building&&<div className={css.what}>
-     <p className={css.wallHead}>{active!==null?tx('gl.verb.edit',{n:active+1}):tx('gl.what')}</p>
+    {picking&&<div className={css.wall} data-panel="who">
+     <p className={css.wallHead}>{tx('gl.ask.who',{n:n+1})}</p>
+     <GoalBench pool={g.pool} selected={actor} disabled={full} shirtOf={name=>shirtFor(name,'us')} unnamedShirt={unknownShirt} unnamed={unnamed} ariaOf={name=>tx('gl.benchAria',{name:name||unnamed})} listLabel={tx('gl.who')} contentLocale={contentLocale} onPick={name=>{setActor(a=>a===name?null:name);if(actor!==name)setTab('what');say('')}} onDrop={dropBench}/>
+    </div>}
+    {building&&<div className={css.what} data-panel="what">
+     <p className={css.wallHead}>{askWhat}</p>
      <VerbRow value={active!==null?draft[active]?.action??null:verb} label={verbWord} onPick={pickVerb} disabled={full&&active===null} listLabel={tx('gl.what')}/>
     </div>}
+    <p className={css.prompt} data-tone={warn?'warn':undefined} data-testid="goal-prompt">{prompt}</p>
     <div className={css.actions}>
      {building
       ?(active!==null
