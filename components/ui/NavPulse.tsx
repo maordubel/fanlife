@@ -12,9 +12,10 @@ export function NavPulse(){
  const [busy,setBusy]=useState(false)
  const path=usePathname(),query=useSearchParams()?.toString()
  const timer=useRef<ReturnType<typeof setTimeout>|null>(null)
- useEffect(()=>{setBusy(false)},[path,query])
+ const tapped=useRef<HTMLAnchorElement|null>(null)
+ useEffect(()=>{setBusy(false);tapped.current?.removeAttribute('data-tapped');tapped.current=null},[path,query])
  useEffect(()=>{
-  const stop=()=>{setBusy(false);if(timer.current)clearTimeout(timer.current)}
+  const stop=()=>{setBusy(false);if(timer.current)clearTimeout(timer.current);tapped.current?.removeAttribute('data-tapped');tapped.current=null}
   const onClick=(e:MouseEvent)=>{
    if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return
    const a=(e.target as Element|null)?.closest?.('a[href]') as HTMLAnchorElement|null
@@ -22,10 +23,11 @@ export function NavPulse(){
    const url=new URL(a.href,location.href)
    if(url.origin!==location.origin)return
    if(url.pathname===location.pathname&&url.search===location.search)return // a hash or the same page: nothing loads
+   tapped.current?.removeAttribute('data-tapped');a.setAttribute('data-tapped','');tapped.current=a
    setBusy(true);if(timer.current)clearTimeout(timer.current);timer.current=setTimeout(stop,12_000)
   }
   document.addEventListener('click',onClick,true);window.addEventListener('popstate',stop)
   return ()=>{document.removeEventListener('click',onClick,true);window.removeEventListener('popstate',stop);if(timer.current)clearTimeout(timer.current)}
  },[])
- return <div className="nav-pulse" data-busy={busy?'true':'false'} aria-hidden="true"/>
+ return <><div className="nav-pulse" data-busy={busy?'true':'false'} aria-hidden="true"/><div className="nav-wait" data-busy={busy?'true':'false'} aria-hidden="true"><span>Going to press…</span></div></>
 }
