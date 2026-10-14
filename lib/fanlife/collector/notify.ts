@@ -35,6 +35,7 @@ export const NOTIFICATION_TEXT: Record<NotificationKind, MessageKey> = {
   AUCTION_CANCELLED: 'collector.notify.AUCTION_CANCELLED',
   ITEM_SUSPENDED: 'collector.notify.ITEM_SUSPENDED',
   REPORT_RECEIVED: 'collector.notify.REPORT_RECEIVED',
+  MANAGED_ACTIVITY: 'collector.notify.MANAGED_ACTIVITY',
 }
 
 /** COLLECTOR_MESSAGE can carry an `event`: the same kind, a more precise sentence (each key written out in full — rule 32). */
@@ -46,7 +47,7 @@ export const EVENT_TEXT: Record<string, MessageKey> = {
 }
 
 /** The kinds only an administrator is ever sent. */
-export const ADMIN_KINDS: ReadonlySet<NotificationKind> = new Set<NotificationKind>(['AUCTION_SUBMITTED', 'REPORT_RECEIVED'])
+export const ADMIN_KINDS: ReadonlySet<NotificationKind> = new Set<NotificationKind>(['AUCTION_SUBMITTED', 'REPORT_RECEIVED', 'MANAGED_ACTIVITY'])
 
 const UUID = /^[0-9a-f-]{36}$/i
 const safe = (id: string | undefined): string | null => (id && UUID.test(id) ? id : null)

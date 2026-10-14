@@ -112,10 +112,10 @@ function fixtures(shirts: Record<string, CollectorShirt>) {
     'COLLECTOR_MESSAGE', 'COLLECTOR_OFFER_RECEIVED', 'COLLECTOR_OFFER_ACCEPTED', 'COLLECTOR_OFFER_DECLINED',
     'CONNECTION_COMPLETED', 'CONNECTION_CANCELLED', 'AUCTION_SUBMITTED', 'AUCTION_APPROVED', 'AUCTION_REJECTED',
     'AUCTION_SCHEDULED', 'AUCTION_STARTED', 'AUCTION_OUTBID', 'AUCTION_ENDING', 'AUCTION_WON', 'AUCTION_SOLD',
-    'AUCTION_UNSOLD', 'AUCTION_CANCELLED', 'ITEM_SUSPENDED', 'REPORT_RECEIVED',
+    'AUCTION_UNSOLD', 'AUCTION_CANCELLED', 'ITEM_SUSPENDED', 'REPORT_RECEIVED', 'MANAGED_ACTIVITY',
   ]
   const payload = (kind: NotificationKind): CollectorNotification['payload'] => {
-    if (kind.startsWith('AUCTION_') || kind === 'REPORT_RECEIVED') {
+    if (kind.startsWith('AUCTION_') || kind === 'REPORT_RECEIVED' || kind === 'MANAGED_ACTIVITY') {
       return { lotId: uuid(900), archiveSlug: at(10).slug, amount: 820, currency: 'ILS', startsAt: '2026-09-24T17:00:00Z', endsAt: '2026-09-27T17:00:00Z', note: kind === 'AUCTION_REJECTED' ? 'צריך תמונה של הגב' : undefined }
     }
     if (kind === 'COLLECTOR_WANT_MATCHED') return { itemId: uuid(3), archiveSlug: at(2).slug }

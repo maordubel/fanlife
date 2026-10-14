@@ -467,6 +467,7 @@
   "collector.notify.CONNECTION_COMPLETED": "Deal complete. Another shirt has found a new home.",
   "collector.notify.ITEM_SUSPENDED": "One of your items has been suspended pending review.",
   "collector.notify.REPORT_RECEIVED": "A new report is awaiting review.",
+  "collector.notify.MANAGED_ACTIVITY": "Someone reached out about a listing you manage. The owner is waiting for your call.",
   "collector.notify.buy": "To buy",
   "collector.notify.close": "Close",
   "collector.notify.empty": "No notifications. When someone looks for a shirt you have, or a shirt you're looking for turns up, it'll be here.",

@@ -223,7 +223,7 @@ describe('התראות — a sentence and a door for every kind (spec §40, §69
   it('covers every NotificationKind the types declare, each with a real Hebrew sentence', () => {
     const declared = readFileSync(join(ROOT, 'lib/collector/types.ts'), 'utf8').match(/export type NotificationKind =([\s\S]*?)\n\n/)?.[1] ?? ''
     const names = [...declared.matchAll(/'([A-Z_]+)'/g)].map((m) => m[1])
-    expect(names.length).toBe(23)
+    expect(names.length).toBe(24)
     expect([...KINDS].sort()).toEqual([...names].sort())
     for (const kind of KINDS) {
       const text = MESSAGES[NOTIFICATION_TEXT[kind]]
@@ -251,7 +251,7 @@ describe('התראות — a sentence and a door for every kind (spec §40, §69
     expect(notificationHref({ kind: 'CONNECTION_COMPLETED', payload: { lotId: ID, kind: 'auction' } })).toBe(`/kits/auction/${ID}`)
     expect(notificationHref({ kind: 'AUCTION_WON', payload: { lotId: ID, connectionId: ID2 } })).toBe(`/kits/auction/${ID}`)
     for (const kind of ADMIN_KINDS) expect(notificationHref({ kind, payload: { lotId: ID } })).toBe('/kits/admin')
-    expect([...ADMIN_KINDS].sort()).toEqual(['AUCTION_SUBMITTED', 'REPORT_RECEIVED'])
+    expect([...ADMIN_KINDS].sort()).toEqual(['AUCTION_SUBMITTED', 'MANAGED_ACTIVITY', 'REPORT_RECEIVED'])
   })
 
   it('builds no link from something that is not an id', () => {
