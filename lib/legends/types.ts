@@ -61,9 +61,9 @@ export type Phase='draft'|'window'|'season'|'playoff'|'season-end'
 export type Career={
  v:2;id:string;rules:typeof RULE_VERSION;engine:EngineVersion;owner:string;clubId:string;clubName:string;status:'active'|'archived';
  settings:LegendsSettings;catalog:Catalog;teams:Team[];phase:Phase;draft:DraftState|null;season:Season;live:Live|null;
- cutscene:'board-grant'|'meet-squad'|'season-end'|null;soldThisWindow:string[];aiDone:string[];
+ cutscene:'board-grant'|'meet-squad'|'camp'|'season-end'|null;soldThisWindow:string[];/** the manager's transfer list — squad men he is willing to sell (owner 14.10.2026) */transferList?:string[];/** bids declined in this window (`windowKey`) */declinedBids?:{w:string;ids:string[]};aiDone:string[];
  ledger:LedgerEntry[];reputation:{points:number;events:{key:string;season:number;points:number;why:string}[]};history:SeasonRecord[];
  keys:string[];revision:number;createdAt:string;updatedAt:string
  /** the dressing-room talks given, newest last (engine 3) */
- talks?:TalkRecord[]
+ talks?:TalkRecord[];/** the press questions answered (or waved away), one per match at most */press?:{fixture:string;season:number;q:string;answer:number}[]
 }

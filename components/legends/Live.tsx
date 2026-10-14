@@ -5,6 +5,7 @@ import type {Tactics} from '@/lib/legends/types'
 import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
 import {useRumbleSound} from '@/components/clubs/rumble/shared'
 import {KitChip,Portal} from './Sheet'
+import {MatchBoard} from './MatchBoard'
 
 /**
  * The match, LIVE (owner, 12.10.2026: "a live experience — you don't know the result"; 13.10.2026: "at 65 and 70 only pop a
@@ -45,6 +46,7 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
    </header>
    {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onClock={m=>{clock.current=m}} onDone={()=>setStage(L?'break':'ft')}/>
     :stage!=='ft'&&L?<FallbackLog L={L} onDone={()=>setStage('break')}/>:null}
+   {reel&&stage!=='ft'?<MatchBoard reel={reel}/>:null}
    {stage==='watch'&&L?.engine4&&L.canTactics&&L.minute-L.prevStop>=3?<p className="lgm-live-tactics"><button type="button" className="lgm-ghost min-h-tap" disabled={busy||room<2} onClick={tactics} data-testid="legends-tactics">Tactics</button></p>:null}
    {stage==='break'&&L&&!L.engine4&&L.minute!==45&&asked!==L.minute?<ChangeAsk key={`ask${L.minute}`} L={L} busy={busy} onYes={()=>setAsked(L.minute)} onNo={()=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:{}})}}/>
     :stage==='break'&&L?<Touchline key={L.minute} L={L} busy={busy} onPlay={d=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:d})}} onFinish={()=>{setWatch({...watch,from:L.minute});send({kind:'match-finish'})}}/>:null}

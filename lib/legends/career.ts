@@ -8,7 +8,9 @@ import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScor
 import {checkDecision,maxStopsOf,run,stopsV4,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
+import {bidsFor,buySlots,windowKey} from './market'
 import {applyTalk,decayMood} from './morale'
+import {pressById,pressFor,type PressQ} from './press'
 import {pickSituation,situationById,type Result,type Situation,type TalkCtx} from './talks'
 import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
 
@@ -29,6 +31,9 @@ export const catalogMap=(c:Career)=>{let m=maps.get(c.catalog);if(!m){m=new Map(
 export function cardOf(c:Career,t:Team,id:string):Card|undefined{
  return (t.ai?t.cards[id]:catalogMap(c).get(id))??t.emergency.find(e=>e.id===id)?.card
 }
+/** this window's five men on sale (the whole market, owner 14.10.2026) */
+export const slotsOf=(c:Career)=>buySlots(c,me(c).squad.map(x=>x.id),c.soldThisWindow)
+export const bidsOf=(c:Career)=>bidsFor(c,c.transferList??[],c.declinedBids?.w===windowKey(c)?c.declinedBids.ids:[],id=>catalogMap(c).get(id))
 const teamBy=(c:Career)=>new Map(c.teams.map(t=>[t.club,t]))
 export const windowOpen=(c:Career)=>c.status==='active'&&c.phase==='window'
 const seasonSalt=(c:Career)=>`${c.id}:${c.season.ordinal}`
@@ -63,7 +68,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 }
 
 /* ───────── actions ───────── */
-export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
+export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'list';card:string;listed:boolean}|{kind:'press';fixture:string;q:string;answer:number}|{kind:'bid';card:string;accept:boolean}|{kind:'swap';sell:string;buy:string}
  |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
  |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'match-tactics';minute:number}|{kind:'play-round'}|{kind:'next-season'}
  |{kind:'talk-pre'|'talk-post';fixture:string;answer:number})&{key:string;rev:number}
@@ -86,6 +91,9 @@ export function parseAction(raw:unknown):Action|null{
    return null}
   case 'draft-confirm':case 'budget-draw':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
+  case 'press':return str(a.fixture)&&str(a.q)&&Number.isInteger(a.answer)&&(a.answer as number)>=0&&(a.answer as number)<=4?{...b,kind:'press',fixture:a.fixture as string,q:a.q as string,answer:a.answer as number}:null
+  case 'list':return str(a.card)&&typeof a.listed==='boolean'?{...b,kind:'list',card:a.card as string,listed:a.listed as boolean}:null
+  case 'bid':return str(a.card)&&typeof a.accept==='boolean'?{...b,kind:'bid',card:a.card as string,accept:a.accept as boolean}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
   case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||a.meet===true)?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
@@ -137,7 +145,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const by=catalogMap(c),squad=c.draft.picks.map(p=>({id:p.id,quota:p.quota,paid:p.price,apps:0,appsTotal:0,goals:0,joined:1}))
    const lu=bestLineup(squad.map(s=>by.get(s.id)!))!
    // no pre-season window: rounds 1 and 2 are played with the drafted squad, the window opens after round 2 (owner, 12.10.2026)
-   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'board-grant'}
+   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'meet-squad'}
    next=pay(next,{key:`draft-budget:${c.id}`,kind:'draft-budget',amount:budgetOf(c.draft)},ctx.now)
    for(const p of c.draft.picks)next=pay(next,{key:`draft-buy:${c.id}:${p.id}`,kind:'draft-buy',amount:-p.price,card:p.id},ctx.now)
    // the board's one-off grant (§1.2.12): ledger key first-window-grant:<career>, so it can never be paid twice
@@ -145,12 +153,13 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    return {ok:true,career:next}
   }
   // the board's news is followed by the squad itself: meet the men, set the eleven, the captain and his vice (owner, 13.10.2026)
-  case 'ack':return {ok:true,career:{...c,cutscene:c.cutscene==='board-grant'&&c.season.played===0&&!c.live?'meet-squad':null}}
+  case 'ack':return {ok:true,career:{...c,cutscene:c.cutscene==='meet-squad'?'meet-squad':c.cutscene==='camp'&&c.season.played===0&&!c.live?'board-grant':null}}
   case 'buy':{
    if(!windowOpen(c))return bad('The transfer window is shut.','closed')
    const card=catalogMap(c).get(a.card)
    if(!card)return bad(`That man never played for ${c.clubName}.`)
    if(t.squad.some(s=>s.id===card.id))return bad(`${card.name} is already in your squad.`)
+   if(!slotsOf(c).some(x=>x.id===card.id))return bad(`${card.name} is not on the market this window — only five men are.`)
    if(c.soldThisWindow.includes(card.id))return bad(`${card.name} left in this window — he can come back in the next one.`)
    if(t.squad.length>=R.maxSquad)return bad(`A squad holds ${R.maxSquad} at most. Sell first, or swap.`)
    if(card.price>t.cash+1e-9)return bad(`${card.name} costs €${card.price}M; you have €${t.cash}M.`)
@@ -164,7 +173,23 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(err)return bad(`${err} Swap him for someone instead.`)
    const q=saleQuote(card.price,s.paid,s.apps,card.stars,c.settings)
    const lineup=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup:t.lineup
-   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`sell:${a.key}`,kind:'sell',amount:q.net,card:card.id,note:`€${q.quoted}M quoted · €${roundTenths(q.fee+q.guard)}M fees`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id]}}
+   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`sell:${a.key}`,kind:'sell',amount:q.net,card:card.id,note:`€${q.quoted}M quoted · €${roundTenths(q.fee+q.guard)}M fees`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
+  }
+  case 'list':{
+   if(c.phase==='draft'||c.live)return bad('Not now.','closed')
+   if(!t.squad.some(x=>x.id===a.card))return bad('He is not in your squad.')
+   const cur=c.transferList??[],next=a.listed?[...new Set([...cur,a.card])]:cur.filter(x=>x!==a.card)
+   return {ok:true,career:{...c,transferList:next}}
+  }
+  case 'bid':{
+   if(!windowOpen(c))return bad('The transfer window is shut.','closed')
+   const bid=bidsOf(c).find(x=>x.card===a.card);if(!bid)return bad('That offer is no longer on the table.')
+   if(!a.accept){const w=windowKey(c),was=c.declinedBids?.w===w?c.declinedBids.ids:[];return {ok:true,career:{...c,declinedBids:{w,ids:[...was,a.card]}}}}
+   const s=t.squad.find(x=>x.id===a.card),card=s&&catalogMap(c).get(s.id);if(!s||!card)return bad('He is not in your squad.')
+   const squad=t.squad.filter(x=>x.id!==s.id),err=squadError(squad)
+   if(err)return bad(`${err} Swap him for someone instead.`)
+   const lineup=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup:t.lineup
+   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`bid:${a.key}`,kind:'sell',amount:bid.fee,card:card.id,note:`${bid.clubName} bid €${bid.fee}M`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
   }
   case 'swap':{
    if(!windowOpen(c))return bad('The transfer window is shut.','closed')
@@ -172,6 +197,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(!out||!oc)return bad('He is not in your squad.')
    if(!inc)return bad(`That man never played for ${c.clubName}.`)
    if(t.squad.some(s=>s.id===inc.id))return bad(`${inc.name} is already in your squad.`)
+   if(!slotsOf(c).some(x=>x.id===inc.id))return bad(`${inc.name} is not on the market this window — only five men are.`)
    if(c.soldThisWindow.includes(inc.id))return bad(`${inc.name} left in this window.`)
    const q=saleQuote(oc.price,out.paid,out.apps,oc.stars,c.settings),cash=roundTenths(t.cash+q.net-inc.price)
    if(cash<-1e-9)return bad(`After the sale you would have €${roundTenths(t.cash+q.net)}M; ${inc.name} costs €${inc.price}M.`)
@@ -196,7 +222,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    // a vice the request does not name stays, while he is still in the squad and not the new captain
    const vice=a.vice??(t.lineup.vice&&inSquad(t.lineup.vice)&&t.lineup.vice!==captain?t.lineup.vice:undefined)
    const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(captain?{captain}:{}),...(vice?{vice}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
-   return {ok:true,career:{...withMe(c,{...t,lineup:lu}),...(a.meet?{cutscene:null}:{})}}
+   return {ok:true,career:{...withMe(c,{...t,lineup:lu}),...(a.meet?{cutscene:'camp' as const}:{})}}
   }
   case 'auto':{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
@@ -270,6 +296,12 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const ans=o.situation.answers[a.answer]!,men=ans.men?talkTargets(c,o.fixture,when,ans.men.who).map(id=>({id,d:ans.men!.d})):[]
    const rec={fixture:o.fixture,when,situation:o.situation.id,answer:a.answer,season:c.season.ordinal} as const
    return {ok:true,career:{...withMe(c,applyTalk(t,{team:ans.team,men})),talks:[...(c.talks??[]),rec].slice(-40)}}
+  }
+  case 'press':{
+   const o=pressOffer(c);if(!o||o.fixture!==a.fixture||o.q.id!==a.q)return bad('The reporters have gone.','closed')
+   const ans=a.answer<4?o.q.answers[a.answer]!:null,men=ans?.men?talkTargets(c,o.fixture,'post',ans.men.who).map(id=>({id,d:ans.men!.d})):[]
+   const rec={fixture:o.fixture,season:c.season.ordinal,q:o.q.id,answer:a.answer}
+   return {ok:true,career:{...(ans?withMe(c,applyTalk(t,{team:ans.team,men})):c),press:[...(c.press??[]),rec].slice(-40)}}
   }
   case 'next-season':{
    if(c.phase!=='season-end')return bad('The season is not over.','closed')
@@ -453,6 +485,14 @@ export function talkOffers(c:Career):{pre:TalkOffer|null;post:TalkOffer|null}{
  const lm=lastMine(c),post=lm&&!talked(c,lm.id,'post')?offer(lm,'post'):null
  return {pre,post}
 }
+/** a newspaper question after the dressing-room word, now and then (never blocks anything) */
+export function pressOffer(c:Career):{fixture:string;q:PressQ;ctx:TalkCtx}|null{
+ if(c.status!=='active'||c.live||c.phase==='draft'||c.cutscene)return null
+ const lm=lastMine(c);if(!lm||talkOffers(c).post||(c.press??[]).some(x=>x.fixture===lm.id&&x.season===c.season.ordinal))return null
+ const ctx=talkContext(c,lm,'post'),q=pressFor(ctx,`${c.id}:${c.season.ordinal}:${lm.id}:press`)
+ return q?{fixture:lm.id,q,ctx}:null
+}
+export {pressById}
 /**
  * A talk is not optional (owner, 13.10.2026): the post-match word must be given before the next round is played or the next
  * season opens, and the pre-match word before kick-off. Answers the refusal, or null when the room is not waiting.
