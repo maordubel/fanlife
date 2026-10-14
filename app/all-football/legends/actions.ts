@@ -5,7 +5,7 @@ import {applyAction,parseAction} from '@/lib/legends/career'
 import {acceptFriendly,closeFriendly,createFriendly,friendlyView,lockSide,MAX_OPEN,statusAt,tokenHash,type FriendlyView} from '@/lib/legends/friendly'
 import {viewer} from '@/lib/legends/owner'
 import {ctxFor,marketPage,startCareer} from '@/lib/legends/server'
-import {insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
+import {deleteArchived,insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
 import {careerView,type CardView,type CareerView} from '@/lib/legends/view'
 import {withHighlights} from '@/lib/legends/kits'
 
@@ -68,6 +68,12 @@ export async function setCareerStatus(id:string,status:'active'|'archived'):Prom
  if(status!=='active'&&status!=='archived')return {ok:false,error:'Unknown status.'}
  const owner=await viewer(false);if(!owner)return {ok:false,error:'This career is not yours.'}
  try{return await setStatus(owner,id,status)}catch(e){return fail(e,'Could not save. Try again.')}
+}
+
+export async function deleteCareer(id:string):Promise<{ok:true}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false);if(!owner)return {ok:false,error:'This career is not yours.'}
+ try{return await deleteArchived(owner,id)}catch(e){return fail(e,'Could not delete. Try again.')}
 }
 
 /* ───────── friendlies (§1.7.38–40): two careers meet once; neither is written ───────── */

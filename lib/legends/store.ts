@@ -5,6 +5,7 @@ import {DEFAULT_SETTINGS,LEGENDS_RULES as R,readSettings,type LegendsSettings} f
 import {EMPTY_CONTROL,readControl,type RatingControl} from './ratings'
 import type {Career} from './types'
 import type {Friendly} from './friendly'
+import {saveName} from './saves'
 
 /**
  * Where Legends careers live (rulebook ยง2.11; ADR-fanlife-0011 rev. 2): one JSON document per career in the durable store
@@ -13,7 +14,7 @@ import type {Friendly} from './friendly'
  * FAN LEAGUE's old `fanleague/` documents are not read: the owner cleared those test careers (12.10.2026).
  */
 const area=fileArea('legends')
-export type IndexRow={id:string;club:string;clubName:string;createdAt:string;status:Career['status'];season:number;phase:Career['phase']}
+export type IndexRow={id:string;club:string;clubName:string;createdAt:string;status:Career['status'];season:number;phase:Career['phase'];/** the save's own name, unique among the owner's saves (owner 14.10.2026) */name?:string;/** when the manager last opened it */enteredAt?:string}
 export type OwnerIndex={v:1;careers:IndexRow[];friendlies?:{id:string;role:'inviter'|'invitee';at:string}[]}
 const EMPTY:OwnerIndex={v:1,careers:[]}
 export class SaveUnavailable extends Error{readonly code='unavailable' as const}
@@ -24,7 +25,7 @@ const refuse=()=>{throw new SaveUnavailable('Saving is not available right now โ
 export async function readCareer(id:string,fresh=false):Promise<{career:Career;etag:string}|null>{
  if(!idOk(id))return null
  const r=await area.read(`careers/${id}.json`,fresh).catch(()=>null);if(!r)return null
- try{const c=JSON.parse(r.text) as Career;return c?.v===2&&c.id===id?{career:c,etag:r.etag}:null}catch{return null}
+ try{const c=JSON.parse(r.text) as Career;return c?.v===2&&c.id===id&&(c.status as string)!=='deleted'?{career:c,etag:r.etag}:null}catch{return null}
 }
 export const activeCount=(i:OwnerIndex)=>i.careers.filter(c=>c.status==='active').length
 /** a new career: the three-active limit is checked again INSIDE the owner's index update, so two tabs cannot both make a fourth (S01) */
@@ -62,6 +63,29 @@ export async function setStatus(owner:string,id:string,status:Career['status']):
   await touchIndex(out.career);return {ok:true as const}
  })
 }
+/** the manager opened this save: stamp it, at most once in five minutes (an index write per page view would be waste) */
+export async function markEntered(owner:string,id:string):Promise<void>{
+ if(!ownerOk(owner)||!canSave())return
+ const now=Date.now()
+ await area.update<OwnerIndex>(`owners/${owner}.json`,EMPTY,cur=>{
+  const base=cur?.v===1?cur:EMPTY,row=base.careers.find(x=>x.id===id)
+  if(!row||(row.enteredAt&&now-Date.parse(row.enteredAt)<300_000))return base
+  return {...base,careers:base.careers.map(x=>x.id===id?{...x,enteredAt:new Date(now).toISOString()}:x)}
+ })
+}
+/** delete an ARCHIVED save for good: it leaves the owner's list and can no longer be opened (an active career must be archived first) */
+export async function deleteArchived(owner:string,id:string):Promise<{ok:true}|{ok:false;error:string}>{
+ if(!canSave())refuse()
+ return inOrder(`legends:owner:${owner}`,async()=>{
+  const idx=await ownerIndex(owner,true),row=idx.careers.find(x=>x.id===id)
+  if(!row)return {ok:false as const,error:'Save not found.'}
+  if(row.status!=='archived')return {ok:false as const,error:'Archive a career before deleting it.'}
+  const out=await mutateCareer(id,c=>c.owner!==owner?{error:'This career is not yours.'}:{career:{...c,status:'deleted' as unknown as Career['status'],revision:c.revision+1,updatedAt:new Date().toISOString()}})
+  if(out&&'error' in out)return {ok:false as const,error:String(out.error)}
+  await area.update<OwnerIndex>(`owners/${owner}.json`,EMPTY,cur=>{const base=cur?.v===1?cur:EMPTY;return {...base,careers:base.careers.filter(x=>x.id!==id)}})
+  return {ok:true as const}
+ })
+}
 export async function ownerIndex(owner:string,fresh=false):Promise<OwnerIndex>{
  if(!ownerOk(owner))return EMPTY
  const r=await area.read(`owners/${owner}.json`,fresh).catch(()=>null);if(!r)return EMPTY
@@ -70,8 +94,9 @@ export async function ownerIndex(owner:string,fresh=false):Promise<OwnerIndex>{
 async function touchIndex(c:Career){
  if(!ownerOk(c.owner))return
  await area.update<OwnerIndex>(`owners/${c.owner}.json`,EMPTY,cur=>{
-  const row:IndexRow={id:c.id,club:c.clubId,clubName:c.clubName,createdAt:c.createdAt,status:c.status,season:c.season.ordinal,phase:c.phase}
   const base=cur?.v===1?cur:EMPTY
+  const was=base.careers.find(x=>x.id===c.id)
+  const row:IndexRow={id:c.id,club:c.clubId,clubName:c.clubName,createdAt:c.createdAt,status:c.status,season:c.season.ordinal,phase:c.phase,name:was?.name??saveName(c.clubName,c.id,base.careers.map(x=>x.name??'')),enteredAt:was?.enteredAt??c.createdAt}
   return {...base,v:1,careers:[row,...base.careers.filter(x=>x.id!==c.id)].slice(0,60)}
  })
 }

@@ -2,7 +2,7 @@
 import {useState,useTransition,type CSSProperties} from 'react'
 import Link from 'next/link'
 import {useRouter} from 'next/navigation'
-import {createLegendsCareer,setCareerStatus} from '@/app/all-football/legends/actions'
+import {createLegendsCareer,deleteCareer,setCareerStatus} from '@/app/all-football/legends/actions'
 import {crestFor} from '@/lib/clubs/crest'
 import t from '@/messages/legends/en.json'
 import {Sheet} from './Sheet'
@@ -10,19 +10,31 @@ import {Thinking} from './Thinking'
 
 /** the club roll and the manager's careers — up to three active, any number archived (§1.7.43) */
 export type ClubOption={club:string;name:string;ready:boolean;held:boolean;reason:string|null;men:number;primary:string|null;/** the club's own livery (hub: every club wears its colours, rule 98) */paint?:Record<string,string>;initials?:string}
-export type CareerRow={id:string;clubName:string;season:number;phase:string;status:'active'|'archived'}
+export type CareerRow={id:string;clubName:string;season:number;phase:string;status:'active'|'archived';name?:string;enteredAt?:string}
+/** "last entered 3 h ago" — small, plain, never a clock the manager has to read */
+function ago(iso?:string):string{
+ if(!iso)return ''
+ const m=Math.max(0,Math.round((Date.now()-Date.parse(iso))/60000))
+ if(m<2)return 'last entered just now'
+ if(m<60)return `last entered ${m} min ago`
+ if(m<1440)return `last entered ${Math.round(m/60)} h ago`
+ const d=Math.round(m/1440);return `last entered ${d} day${d===1?'':'s'} ago`
+}
 const PHASE:Record<string,string>={draft:'In the draft',window:'Window open',season:'In season',playoff:'Title play-off','season-end':'Season over'}
 const Arrow=()=><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
 export function Careers({rows,max}:{rows:CareerRow[];max:number}){
  const [err,setErr]=useState<string|null>(null),[busy,start]=useTransition(),router=useRouter()
  const set=(id:string,s:'active'|'archived')=>start(async()=>{setErr(null);const r=await setCareerStatus(id,s);if(!r.ok)setErr(r.error);router.refresh()})
+ const [sure,setSure]=useState<string|null>(null)
+ const del=(id:string)=>start(async()=>{setErr(null);const r=await deleteCareer(id);if(!r.ok)setErr(r.error);setSure(null);router.refresh()})
  const active=rows.filter(r=>r.status==='active'),archived=rows.filter(r=>r.status==='archived')
  return <section className="lgm-careers" aria-labelledby="lgm-careers-h">
   <h2 id="lgm-careers-h"><span className="wk-logo sm">Your dynasties</span> <small className="wk-lamp">{active.length}/{max}</small><small className="wk-k wkl-mute"> active</small></h2>
-  {active.length?<ul>{active.map(c=><li key={c.id}><Link className="lgm-career min-h-tap" href={`/all-football/legends/career/${c.id}`}><b>{c.clubName}</b><small>Season {c.season} · {PHASE[c.phase]??c.phase}</small><span aria-hidden="true"><Arrow/></span></Link>
-   <button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>set(c.id,'archived')}>Archive</button></li>)}</ul>:<p className="lgm-fine">No active career.</p>}
-  {archived.length?<details className="wk-fold"><summary className="min-h-tap">The archive · {archived.length}</summary><ul>{archived.map(c=><li key={c.id}><span className="lgm-career"><b>{c.clubName}</b><small>Season {c.season} · archived — nothing is lost</small></span>
-   <button type="button" className="lgm-link min-h-tap" disabled={busy||active.length>=max} onClick={()=>set(c.id,'active')}>{active.length>=max?'Restore (archive one first)':'Restore'}</button></li>)}</ul></details>:null}
+  {active.length?<ul>{active.map(c=><li key={c.id}><Link className="lgm-career min-h-tap" href={`/all-football/legends/career/${c.id}`}><b>{c.name??c.clubName}</b><small>Season {c.season} · {PHASE[c.phase]??c.phase} · {ago(c.enteredAt)}</small><span aria-hidden="true"><Arrow/></span></Link>
+   <button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>set(c.id,'archived')} title="Moves it to the archive — nothing is lost, you can bring it back">Put away</button></li>)}</ul>:<p className="lgm-fine">No active career.</p>}
+  {archived.length?<details className="wk-fold"><summary className="min-h-tap">The archive · {archived.length} <small className="wk-k wkl-mute">(put-away saves)</small></summary><ul>{archived.map(c=><li key={c.id}><span className="lgm-career"><b>{c.name??c.clubName}</b><small>Season {c.season} · put away — nothing is lost · {ago(c.enteredAt)}</small></span>
+   <button type="button" className="lgm-link min-h-tap" disabled={busy||active.length>=max} onClick={()=>set(c.id,'active')}>{active.length>=max?'Bring back (put one away first)':'Bring back'}</button>
+   {sure===c.id?<span className="lgm-sure" role="group" aria-label="Delete for good?"><span>Delete for good?</span><button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>del(c.id)}>Yes, delete</button><button type="button" className="lgm-link min-h-tap" onClick={()=>setSure(null)}>No</button></span>:<button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>setSure(c.id)}>Delete</button>}</li>)}</ul></details>:null}
   {err?<p className="lgm-error" role="alert">{err}</p>:null}
  </section>
 }
