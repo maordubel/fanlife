@@ -1,22 +1,20 @@
-import type {CSSProperties} from 'react'
+import {Plate} from '@/components/weekly/Plate'
 
 /**
- * The loading plate: The Weekly's "going to press" (shown by NavPulse over a page that is loading). CSS only (app/weekly/loading.css),
- * so it paints at once with the first byte. Tokens only; the club's own colour inside a club, vermilion elsewhere.
- * `inline` = a smaller plate for a section that loads inside a page that is already on screen.
+ * The loading cover (shown by NavPulse over a page that is on its way): a floodlit-night comic cover —
+ * speed lines, a red starburst with the dribbler breaking the frame, "Working." in the masthead face and three
+ * split-flap lamps. CSS only (app/weekly/loading.css) so it paints at once; inks are tokens, so the rival lock holds.
  */
-export function PressWait({label='Going to press',inline=false}:{label?:string;inline?:boolean}){
- const bars=[92,78,86,60]
+export function PressWait({label='Working.'}:{label?:string}){
  return (
-  <div className={inline?'wkw wkw-inline':'wkw'} role="progressbar" aria-label={label} aria-busy="true" data-testid="press-wait">
-   <div className="wkw-plate">
-    <p className="wkw-tag"><span className="wkw-dot" aria-hidden="true"/>{label}…</p>
-    <div className="wkw-head" aria-hidden="true"><span className="wkw-ball"/><span className="wkw-sweep"/></div>
-    <div className="wkw-lines" aria-hidden="true">
-     {bars.map((w,i)=><span key={i} className="wkw-line" style={{'--w':`${w}%`,'--i':i} as CSSProperties}/>)}
-    </div>
+  <div className="wkw" role="progressbar" aria-label={label} aria-busy="true" data-testid="press-wait">
+   <span className="wk-speed wkw-speed" style={{['--sx' as string]:'50%',['--sy' as string]:'44%'}} aria-hidden="true"/>
+   <div className="wkw-stage" aria-hidden="true">
+    <span className="wk-burst wkw-burst"/>
+    <Plate art="dribbler" ink="red" className="wkw-art"/>
    </div>
-   {inline?null:<div className="wkw-grid" aria-hidden="true">{[0,1,2,3].map(i=><span key={i} className="wkw-card" style={{'--i':i} as CSSProperties}/>)}</div>}
+   <p className="wkw-title">{label}</p>
+   <div className="wkw-lamps" aria-hidden="true"><span/><span/><span/></div>
   </div>
  )
 }

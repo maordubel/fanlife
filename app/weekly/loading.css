@@ -1,24 +1,20 @@
-/* The loading page ("going to press"). components/weekly/PressWait.tsx. Tokens only; reduced motion = still plate. */
-.wkw { max-inline-size: 960px; margin-inline: auto; padding: 20px 16px 40px; display: grid; gap: 16px; min-block-size: 60vh; align-content: start; }
-.wkw-inline { min-block-size: 0; padding: 12px 0; }
-.wkw-plate { background: var(--mag-card, var(--mag-paper)); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); padding: 16px; display: grid; gap: 14px; }
-.wkw-tag { margin: 0; display: inline-flex; align-items: center; gap: 10px; font: 400 14px var(--mag-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mag-ink); }
-.wkw-dot { inline-size: 12px; block-size: 12px; border-radius: 50%; background: var(--club-primary, var(--mag-vermilion)); border: 2px solid var(--mag-ink); animation: wkw-beat .9s ease-in-out infinite; }
-.wkw-head { position: relative; block-size: 56px; border: 3px solid var(--mag-ink); background: var(--mag-ink); overflow: hidden; }
-.wkw-ball { position: absolute; inset-block: 0; inset-inline-start: 0; inline-size: 100%; background: var(--club-primary, var(--mag-vermilion)); transform-origin: 0 50%; animation: wkw-fill 1.8s cubic-bezier(.2,.7,.2,1) infinite; background-image: radial-gradient(rgb(21 19 15 / .22) 1.6px, transparent 1.9px); background-size: 8px 8px; }
-[dir='rtl'] .wkw-ball { transform-origin: 100% 50%; }
-.wkw-sweep { position: absolute; inset-block: 0; inline-size: 40%; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--mag-white) 35%, transparent), transparent); animation: wkw-sweep 1.2s linear infinite; }
-.wkw-lines { display: grid; gap: 10px; }
-.wkw-line { display: block; block-size: 12px; inline-size: var(--w); background: color-mix(in srgb, var(--mag-ink) 14%, transparent); animation: wkw-fade 1.4s ease-in-out infinite; animation-delay: calc(var(--i) * .12s); }
-.wkw-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
-.wkw-card { display: block; block-size: 110px; border: 3px solid var(--mag-ink); background: color-mix(in srgb, var(--mag-ink) 7%, var(--mag-paper)); box-shadow: 4px 4px 0 var(--mag-ink); animation: wkw-fade 1.4s ease-in-out infinite; animation-delay: calc(var(--i) * .15s); }
-@keyframes wkw-beat { 50% { transform: scale(1.35); } }
-@keyframes wkw-fill { 0% { transform: scaleX(.06); } 70% { transform: scaleX(1); } 100% { transform: scaleX(1); opacity: .35; } }
-@keyframes wkw-sweep { from { inset-inline-start: -40%; } to { inset-inline-start: 100%; } }
-@keyframes wkw-fade { 50% { opacity: .45; } }
-@media (prefers-reduced-motion: reduce) { .wkw *, .wkw-plate { animation: none !important; } .wkw-ball { transform: scaleX(.6); } }
+/* The loading cover ("Working."). components/weekly/PressWait.tsx, shown by components/ui/NavPulse.tsx. Tokens only; reduced motion = a still cover. */
+.wkw { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 14px; padding: 16px; overflow: hidden; background-color: var(--mag-night); background-image: radial-gradient(rgb(255 251 242 / .08) 1.4px, transparent 1.7px); background-size: 8px 8px; color: var(--mag-white); }
+.wkw-speed { inset: -45%; --sc: rgb(255 251 242 / .16); animation: wkw-spin 14s linear infinite; }
+.wkw-stage { position: relative; inline-size: min(64vw, 280px); aspect-ratio: 1; display: grid; place-items: center; }
+.wkw-burst { position: absolute; inset: 0; background: var(--mag-vermilion); animation: wkw-spin 9s linear infinite; filter: drop-shadow(6px 6px 0 var(--mag-ink)); }
+.wkw-art { position: relative; inline-size: 78%; animation: wkw-hop .7s cubic-bezier(.3,.7,.4,1) infinite alternate; }
+.wkw-title { position: relative; margin: 0; font-family: var(--mag-brand); font-size: clamp(40px, 12vw, 64px); line-height: 1; color: var(--mag-white); -webkit-text-stroke: 4px var(--mag-ink); paint-order: stroke fill; text-shadow: 5px 5px 0 var(--mag-ink); transform: rotate(-3deg); }
+.wkw-lamps { position: relative; display: flex; gap: 8px; }
+.wkw-lamps span { inline-size: 26px; block-size: 34px; border: 3px solid var(--mag-ink); background: var(--mag-white); box-shadow: 3px 3px 0 var(--mag-ink); animation: wkw-lamp 1.05s steps(1) infinite; }
+.wkw-lamps span:nth-child(2) { animation-delay: .35s; }
+.wkw-lamps span:nth-child(3) { animation-delay: .7s; }
+@keyframes wkw-spin { to { transform: rotate(360deg); } }
+@keyframes wkw-hop { from { transform: translateY(6px) rotate(-3deg); } to { transform: translateY(-10px) rotate(3deg); } }
+@keyframes wkw-lamp { 0%, 100% { background: var(--mag-white); } 33% { background: var(--mag-vermilion); } }
+@media (prefers-reduced-motion: reduce) { .wkw *, .wkw { animation: none !important; } .wkw-lamps span:first-child { background: var(--mag-vermilion); } }
 
-/* the tap: the pressed link dims in the same frame, and after a short wait the press plate covers the page that is loading (NavPulse) */
+/* the tap: the pressed link dims in the same frame; after a short wait the cover fills the page that is loading (NavPulse) */
 a[data-tapped] { opacity: .65; }
-.nav-plate { position: fixed; inset-inline: 0; inset-block-start: var(--app-top, 60px); inset-block-end: var(--app-bottom, 0px); z-index: 70; overflow: hidden; pointer-events: none; background: var(--mag-paper); background-image: var(--mag-grain); animation: wkw-in .2s ease-out .35s both; }
+.nav-plate { position: fixed; inset-inline: 0; inset-block-start: var(--app-top, 60px); inset-block-end: var(--app-bottom, 0px); z-index: 70; overflow: hidden; pointer-events: none; animation: wkw-in .18s ease-out .3s both; }
 @keyframes wkw-in { from { opacity: 0; } to { opacity: 1; } }
