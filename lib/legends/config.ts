@@ -44,7 +44,7 @@ export const LEGENDS_RULES={
  maxActiveCareers:3,
  emergencyMaxMatches:3,
  minEligibleClubs:4,
- maxLeagueClubs:8,
+ maxLeagueClubs:8,/** the most clubs a manager may set up in a league of his own (owner, 14.10.2026: default is everyone) */maxLeagueClubsSetup:16,
 } as const
 export type QuotaPos='GK'|'DF'|'MF'|'FW'
 export const QUOTA_POS:readonly QuotaPos[]=['GK','DF','MF','FW']

@@ -7,6 +7,7 @@ import {overrideOf} from '@/lib/players/effective'
 import {serverFeatures} from '@/lib/features-server'
 import {buildCatalog,eligible,type Eligibility} from './catalog'
 import {me,catalogMap,createCareer} from './career'
+import {LEGENDS_RULES as R} from './config'
 import {readiness,type ClubReadiness} from './readiness'
 import {insertCareer,readLegendsSettings,readRatingControl} from './store'
 import {cardView,type CardView} from './view'
@@ -48,12 +49,17 @@ export async function legendsReadyFor(club:string):Promise<ClubChoice|null>{
  const k=hit.catalog.digest;let r=ready.get(club);if(!r||r.key!==k){r={key:k,r:readiness(club,hit.catalog.clubName,hit.elig)};ready.set(club,r)}
  return {...r.r,held:f.fanLeagueOff.includes(club)}
 }
-export async function startCareer(owner:string,club:string):Promise<{ok:true;id:string}|{ok:false;error:string}>{
+export type LeagueSetup={size?:number;clubs?:string[]}
+export async function startCareer(owner:string,club:string,setup:LeagueSetup={}):Promise<{ok:true;id:string}|{ok:false;error:string}>{
  const [clubs,settings]=await Promise.all([legendsClubs(),readLegendsSettings()]),pick=clubs.find(c=>c.club===club)
  if(!pick||pick.held||pick.verdict!=='READY')return {ok:false,error:'That club is not open for a new career.'}
  const cats=await allCatalogs(),own=cats.find(c=>c.catalog.club===club)!.catalog,id=randomBytes(8).toString('hex')
  const rivals=cats.filter(c=>c.catalog.club!==club&&clubs.some(x=>x.club===c.catalog.club&&x.verdict==='READY'&&!x.held)).map(c=>c.catalog)
- const made=createCareer({id,owner,now:new Date().toISOString(),own,rivals,settings})
+ // the league the manager set up: a number (the rest drawn) or exactly the clubs he chose; default = every ready club
+ const chosen=setup.clubs?rivals.filter(r=>setup.clubs!.includes(r.club)):rivals
+ const cap=Math.min(R.maxLeagueClubsSetup,Math.max(R.minEligibleClubs,setup.clubs?chosen.length+1:setup.size??chosen.length+1))
+ if(setup.clubs&&chosen.length+1<R.minEligibleClubs)return {ok:false,error:`A league needs at least ${R.minEligibleClubs} clubs.`}
+ const made=createCareer({id,owner,now:new Date().toISOString(),own,rivals:chosen,settings,limit:cap})
  if(!made.ok)return made
  const ins=await insertCareer(made.career);if(!ins.ok)return ins
  return {ok:true,id}

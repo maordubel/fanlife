@@ -29,7 +29,7 @@ export type Team={club:string;name:string;ai:boolean;squad:SquadEntry[];cards:Re
 
 /* ───────── the draft (§1.2, §2.2) ───────── */
 export type Offer={id:string;tier:'premium'|'mid'|'budget';locked:string|null}
-export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:string[];picks:{id:string;quota:QuotaPos;price:Price;slot:number}[];rerollsLeft:number;spent:number;optionalDone:boolean;confirmed:boolean;recentDecades:number[]}
+export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:string[];picks:{id:string;quota:QuotaPos;price:Price;slot:number}[];rerollsLeft:number;spent:number;optionalDone:boolean;confirmed:boolean;recentDecades:number[];/** the draft budget, drawn on the slot machine at the start (€50–52M); absent on older careers = the standard budget */budget?:number}
 
 /* ───────── a match (§1.4, §2.5) ───────── */
 export type EventKind='kickoff'|'chance'|'goal'|'yellow'|'red'|'injury'|'sub'|'tactic'|'half-time'|'full-time'|'extra-time'|'penalties'|'stop'

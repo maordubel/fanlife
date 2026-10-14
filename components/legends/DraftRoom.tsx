@@ -11,6 +11,7 @@ import {SlotReel} from '@/components/clubs/rumble/RumbleSlotMachine'
 import s from '@/components/clubs/rumble/rumble.module.css'
 import {Stars} from './Brand'
 import {money,posName,years,GAME_VALUES} from './LegendCard'
+import {BudgetDraw} from './BudgetDraw'
 
 /**
  * The founding draft as the Royal Rumble's slot machine (owner, 12.10.2026: "the same slot system and graphics as the Royal
@@ -50,7 +51,9 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
   [signature,stops])
  const [landed,setLanded]=useState<boolean[]>(()=>offers.map(()=>reduced))
  // a slot is always live: with no line chosen yet, the line owed the most men opens by itself (the manager can still switch)
- const idle=!done&&!d.group&&!d.stuck&&!busy
+ // the budget is drawn on the opening slot machine first; a career that already has one (a reload) skips it
+ const [opened,setOpened]=useState(d.budget!==null)
+ const idle=!done&&!d.group&&!d.stuck&&!busy&&d.budget!==null&&opened
  useEffect(()=>{
   if(!idle)return
   const open=d.lines.filter(g=>g.open),pick=[...open].sort((x,y)=>y.need-x.need)[0]
@@ -86,6 +89,7 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
  }
  const quota=(['GK','DF','MF','FW'] as const).map(p=>({p,have:d.picks.filter(x=>x.pos===p).length,need:v.rules.minimums[p]}))
  const spent=SPINS-d.rerollsLeft
+ if(!opened)return <BudgetDraw budget={d.budget} busy={busy} onPull={()=>send({kind:'budget-draw'})} onOpen={()=>setOpened(true)}/>
  return <section className={`${s.game} lgm-draft`} aria-labelledby="lgm-draft-h" data-testid="legends-draft">
   <header className={s.hud}>
    <div className={s.hudCopy}>
@@ -143,7 +147,7 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
   </div>:null}
 
   {done||d.optionalOpen?<div className="lgm-confirm">
-   <p><b>Spent {money(d.spent)} of €{LEGENDS_RULES.initialDraftBudgetM}M.</b> On confirming, the board adds a one-off <b>€{LEGENDS_RULES.firstBoardGrantM}M</b>: your window starts with {money(tenths(LEGENDS_RULES.initialDraftBudgetM-d.spent+LEGENDS_RULES.firstBoardGrantM))}.</p>
+   <p><b>Spent {money(d.spent)} of €{d.budget??LEGENDS_RULES.initialDraftBudgetM}M.</b> On confirming, the board adds a one-off <b>€{LEGENDS_RULES.firstBoardGrantM}M</b>: your window starts with {money(tenths((d.budget??LEGENDS_RULES.initialDraftBudgetM)-d.spent+LEGENDS_RULES.firstBoardGrantM))}.</p>
    {d.canConfirm&&done?<p className="lgm-error" role="alert">{d.canConfirm}</p>:null}
    <button type="button" className={`${s.lock} min-h-tap lgm-register`} data-ready={!d.canConfirm} disabled={busy||!!d.canConfirm} onClick={e=>{firePickFxAt(e.currentTarget,{label:'Registered',tone:'red',big:true,haptic:'lock'});send({kind:'draft-confirm'},'The squad is registered.')}}><span><small>{d.picks.length} men · {money(d.spent)}</small><strong>Register the squad</strong></span><span aria-hidden="true">→</span></button>
   </div>:null}

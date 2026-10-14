@@ -15,6 +15,7 @@ import {TeamSheet} from './TeamSheet'
 import {BoardNews,ClubSheet,WindowSheet} from './Popups'
 import {Sheet} from './Sheet'
 import {MeetSquad} from './MeetSquad'
+import {Thinking} from './Thinking'
 import {LeagueCentre,Table} from './Stats'
 import {CareerNav,type Tab} from './CareerNav'
 import {ClubMark,ShirtProvider} from './Shirts'
@@ -53,7 +54,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
    <div><p className="lgm-kicker">Legends Manager · season {v.season}</p><h1><ClubMark club={v.clubId} name={v.clubName} size={34}/> {v.clubName}</h1></div>
    <dl className="lgm-meter">
     <div><dt>{v.phase==='draft'?'Draft':'Round'}</dt><dd>{v.phase==='draft'?'Open':<>{Math.min(v.played+1,v.rounds)}<small>/{v.rounds}</small></>}</dd></div>
-    <div><dt>Cash</dt><dd>{v.phase==='draft'?money(v.draft?.left??52):money(v.cash)}</dd></div>
+    <div><dt>Cash</dt><dd>{v.phase==='draft'?money(v.draft?.left??v.draft?.budget??52):money(v.cash)}</dd></div>
     <div><dt>Place</dt><dd>{v.phase==='draft'||!v.played?'—':ordinal(v.table.findIndex(r=>r.mine)+1)}</dd></div>
    </dl>
   </header>
@@ -70,6 +71,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
   </>}
   {watching?<LiveMatch v={v} busy={busy} send={send} watch={watch} setWatch={setWatch}/>:null}
   {room.sheet}
+ <Thinking active={busy&&!watching&&v.phase!=='draft'}/>
   {!watching&&!room.open&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}
   {club?<ClubSheet v={v} club={club} onClose={()=>setClub(null)}/>:null}
  </div></ShirtProvider>
