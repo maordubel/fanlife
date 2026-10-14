@@ -50,8 +50,7 @@ end $$;
 do $seed$
 declare
   r record;
-  v_has_anon boolean := exists (select 1 from information_schema.columns
-                                 where table_schema = 'auth' and table_name = 'users' and column_name = 'is_anonymous');
+  v_sql text;
 begin
   for r in select * from (values
     ('7a1c0001-0000-4000-8000-000000000001'::uuid, 'stpauli--st-pauli-cof-k-19', 's', null::smallint, null::text,
@@ -67,11 +66,13 @@ begin
   ) as t(uid, slug, size, num, player, descr, at)
   loop
     if not exists (select 1 from auth.users where id = r.uid) then
-      if v_has_anon then
-        execute 'insert into auth.users (id, instance_id, aud, role, is_anonymous, created_at, updated_at) values ($1, ''00000000-0000-0000-0000-000000000000'', ''authenticated'', ''authenticated'', true, $2, $2)' using r.uid, r.at;
-      else
-        execute 'insert into auth.users (id, instance_id, aud, role, created_at, updated_at) values ($1, ''00000000-0000-0000-0000-000000000000'', ''authenticated'', ''authenticated'', $2, $2)' using r.uid, r.at;
-      end if;
+      -- only the columns this project's auth.users has (a real project has all of them)
+      select 'insert into auth.users (' || string_agg(format('%I', c), ', ') || ') values (' || string_agg(v, ', ') || ')'
+        into v_sql
+        from (values ('id', '$1'), ('instance_id', '''00000000-0000-0000-0000-000000000000'''), ('aud', '''authenticated'''),
+                     ('role', '''authenticated'''), ('is_anonymous', 'true'), ('created_at', '$2'), ('updated_at', '$2')) as w(c, v)
+       where exists (select 1 from information_schema.columns where table_schema = 'auth' and table_name = 'users' and column_name = w.c);
+      execute v_sql using r.uid, r.at;
     end if;
     perform public.worker_collector_touch(r.uid);
     insert into public.worker_market_managed (user_id, note) values (r.uid, 'Owner known personally to the administrator') on conflict do nothing;
