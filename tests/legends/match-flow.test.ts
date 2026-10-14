@@ -32,9 +32,9 @@ describe('engine 3 — set pieces (owner, 13.10.2026)',()=>{
    for(const q of quick)expect(q.done&&q.outcome.events.some(ev=>ev.detail&&['penalty','corner','free-kick'].includes(ev.detail))).toBe(false)
   }
  })
- it('new matches are engine 3, which stops at 45′, 65′ and 70′; engine 2 still stops at 45′, 60′, 75′',()=>{
-  expect(ENGINE_VERSION).toBe('legends-engine-3');expect(R.touchlineStopsV3).toEqual([45,65,70]);expect(R.touchlineStops).toEqual([45,60,75])
-  for(const [e,want] of [['legends-engine-3',[45,65,70]],['legends-engine-2',[45,60,75]]] as const){
+ it('new matches are engine 4, which stops at 45′ and hands over at 89′; engines 3 and 2 keep their stops',()=>{
+  expect(ENGINE_VERSION).toBe('legends-engine-4');expect(R.touchlineStopsV4).toEqual([45,89]);expect(R.touchlineStopsV3).toEqual([45,65,70]);expect(R.touchlineStops).toEqual([45,60,75])
+  for(const [e,want] of [['legends-engine-4',[45,89]],['legends-engine-3',[45,65,70]],['legends-engine-2',[45,60,75]]] as const){
    const s=snapshotsOf(e,1)[0]!;let d:{stop:number}[]=[],r=run({...s,knockout:false,sides:[{...s.sides[0],home:true},{...s.sides[1],home:false}]},d,true);const got:number[]=[]
    while(!r.done){got.push(r.pause.minute);d=[...d,{stop:r.pause.stop}];r=run({...s,knockout:false,sides:[{...s.sides[0],home:true},{...s.sides[1],home:false}]},d,true)}
    expect(got).toEqual(want)
@@ -117,7 +117,7 @@ describe('the dressing room (owner, 13.10.2026)',()=>{
   expect(applyAction(c,keyed(c,{kind:'talk-pre',fixture:pre.fixture,answer:1}),ctx).ok).toBe(false)
   // the pre-match mood travels into the match snapshot
   const mood=me(c).mood??0;c=act(c,{kind:'match-start',mode:'interactive'});const side=c.live!.snapshot.sides.findIndex(s=>s.club===c.clubId)
-  expect(c.live!.snapshot.engine).toBe('legends-engine-3');expect(c.live!.snapshot.sides[side]!.mood??0).toBe(mood)
+  expect(c.live!.snapshot.engine).toBe('legends-engine-4');expect(c.live!.snapshot.sides[side]!.mood??0).toBe(mood)
   expect(talkOffers(c)).toEqual({pre:null,post:null}) // nothing while the match is on
   expect(applyAction(c,keyed(c,{kind:'talk-post',fixture:pre.fixture,answer:0}),ctx).ok).toBe(false)
   c=act(c,{kind:'match-finish'});const post=talkOffers(c).post!;expect(post.fixture).toBe(lastMine(c)!.id)
@@ -160,11 +160,22 @@ describe('the dressing room (owner, 13.10.2026)',()=>{
   const ui=['components/legends/Talk.tsx','components/legends/Live.tsx','components/legends/CareerApp.tsx'].map(f=>readFileSync(f,'utf8')).join('\n')
   expect(ui).not.toMatch(/moodScore|moodMen|teamEffect|manEffect|0\.025|2\.5%|mood[A-Za-z.]*\s*[*+\-\/]\s*\d|mood[A-Za-z.]*\.toFixed/)
  })
- it('a 65′ and a 70′ stop each take a "no" as an empty decision and play on',()=>{
+ it('the 45′ and 89′ stops each take a "no" as an empty decision and play on',()=>{
   let c=toMatch(drafted(newCareer('dd00000000000007')));c=act(c,{kind:'match-start',mode:'interactive'})
   expect(pauseOf(c)!.minute).toBe(45);c=act(c,{kind:'match-decide',decision:{}})
-  expect(pauseOf(c)!.minute).toBe(65);c=act(c,{kind:'match-decide',decision:{}})
-  expect(pauseOf(c)!.minute).toBe(70);c=act(c,{kind:'match-decide',decision:{}})
+  expect(pauseOf(c)!.minute).toBe(89);c=act(c,{kind:'match-decide',decision:{}})
   expect(c.live).toBeNull();expect(c.season.played).toBeGreaterThanOrEqual(1)
+ })
+})
+
+describe('engine 4 — Tactics at any minute',()=>{
+ it('a tactics stop is added between the last stop and the next, past events stay put, and bad minutes are refused',()=>{
+  let c=toMatch(drafted(newCareer('dd00000000000008')));c=act(c,{kind:'match-start',mode:'interactive'})
+  expect(pauseOf(c)!.minute).toBe(45)
+  expect(()=>act(c,{kind:'match-tactics',minute:45})).toThrow()
+  expect(()=>act(c,{kind:'match-tactics',minute:95})).toThrow()
+  c=act(c,{kind:'match-decide',decision:{}})
+  c=act(c,{kind:'match-tactics',minute:62})
+  expect(pauseOf(c)!.minute).toBe(62)
  })
 })

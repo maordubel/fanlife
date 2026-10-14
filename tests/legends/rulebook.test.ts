@@ -180,11 +180,11 @@ describe('the match (§1.4, M01–M04)',()=>{
   let stops=0;while(c.live&&pauseOf(c)){c=act(c,{kind:'match-decide',decision:{}});stops++}
   expect(stops).toBeLessThanOrEqual(3);expect(c.live).toBeNull()
  })
- it('a live match stops at half-time, 65′ and 70′ (engine 3) — always those three — and "to the final whistle" plays the rest',()=>{
+ it('a live match stops at half-time and at 89′ (engine 4) and "to the final whistle" plays the rest',()=>{
   let c=drafted(newCareer('c0ffee00000000e1'));if(isBye(c))c=act(c,{kind:'play-round'})
   c=act(c,{kind:'match-start',mode:'interactive'});const minutes:number[]=[]
-  for(let i=0;i<3&&c.live;i++){const p=pauseOf(c)!;minutes.push(p.minute);if(i<2)c=act(c,{kind:'match-decide',decision:{}})}
-  expect(minutes).toEqual([45,65,70])
+  for(let i=0;i<2&&c.live;i++){const p=pauseOf(c)!;minutes.push(p.minute);if(i<1)c=act(c,{kind:'match-decide',decision:{}})}
+  expect(minutes).toEqual([45,89])
   c=act(c,{kind:'match-finish'});expect(c.live).toBeNull();expect(c.season.played).toBe(1)
  })
  it('the captain wears the armband on every snapshot; an engine-1 match ignores it, and no screen names the edge',()=>{

@@ -41,7 +41,7 @@ export type MatchEventRow={seq:number;minute:number;kind:EventKind;side:0|1|null
 export type SnapMan={id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>;/** engine 3: his mood from the talks */mood?:number}
 export type SideSnapshot={club:string;name:string;formation:FormationId;tactics:Tactics;xi:SnapMan[];bench:SnapMan[];morale:number;home:boolean|null;captain?:string;/** engine 3: the dressing room's mood */mood?:number}
 export type Decision={stop:number;tactics?:Tactics;subs?:{out:string;in:string}[]}
-export type MatchSnapshot={id:string;seed:number;engine:EngineVersion;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties'}
+export type MatchSnapshot={id:string;seed:number;engine:EngineVersion;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties';/** engine 4: minutes at which the manager asked for the touchline, besides half-time */stops?:number[]}
 export type MatchOutcome={goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];stops:number[];
  /** who stepped on the pitch, per side — an official appearance (§2.3) */
  played:[string[],string[]];yellows:[Record<string,number>,Record<string,number>];reds:[Record<string,{second:boolean;length:number}>,Record<string,{second:boolean;length:number}>];

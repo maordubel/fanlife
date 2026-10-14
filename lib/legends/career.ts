@@ -5,7 +5,7 @@ import {aiWindow,prepareEmergency} from './ai'
 import {afterBye,afterMatch,available,fresh,newSeason,type MatchBook} from './discipline'
 import {botDraft,budgetOf,confirmCheck,minCostToFinish,draftMove,emptyDraft,type DraftMove} from './draft'
 import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScore} from './economy'
-import {checkDecision,run,type PauseState} from './engine'
+import {checkDecision,maxStopsOf,run,stopsV4,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {applyTalk,decayMood} from './morale'
@@ -65,7 +65,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 /* ───────── actions ───────── */
 export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
  |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
- |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'}
+ |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'match-tactics';minute:number}|{kind:'play-round'}|{kind:'next-season'}
  |{kind:'talk-pre'|'talk-post';fixture:string;answer:number})&{key:string;rev:number}
 /** an action before the server stamps it with a key and a revision */
 export type Intent=Action extends infer A?A extends Action?Omit<A,'key'|'rev'>:never:never
@@ -90,6 +90,7 @@ export function parseAction(raw:unknown):Action|null{
   case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||a.meet===true)?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
   case 'match-start':return a.mode==='fast'||a.mode==='interactive'?{...b,kind:'match-start',mode:a.mode}:null
+  case 'match-tactics':return Number.isInteger(a.minute)&&(a.minute as number)>=2&&(a.minute as number)<=88?{...b,kind:'match-tactics',minute:a.minute as number}:null
   case 'talk-pre':case 'talk-post':return str(a.fixture)&&Number.isInteger(a.answer)&&(a.answer as number)>=0&&(a.answer as number)<=3?{...b,kind:a.kind,fixture:a.fixture as string,answer:a.answer as number}:null
   case 'match-decide':{const d=(a.decision??{}) as Record<string,unknown>,t=d.tactics===undefined?undefined:tacticsOf(d.tactics)
    if(t===null)return null
@@ -235,17 +236,27 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(!c.live||c.live.mode!=='interactive')return bad('No match is waiting for you.','closed')
    const fx=fixtureById(c,c.live.fixture)!,side=mySide(c,fx),r=run(c.live.snapshot,c.live.decisions,true,side)
    if(r.done)return commitMine(c,ctx,null)
-   if(c.live.decisions.length>=R.maxInterventionWindows)return bad('Three stops a match — the rest plays out.')
+   if(c.live.decisions.length>=maxStopsOf(c.live.snapshot))return bad('No more stops this match — the rest plays out.')
    const d:Decision={stop:r.pause.stop,...a.decision},err=checkDecision(r.pause,side,d);if(err)return bad(err)
    const next={...c,live:{...c.live,decisions:[...c.live.decisions,d]}}
    const r2=run(next.live.snapshot,next.live.decisions,true,side)
    return r2.done?commitMine(next,ctx,null):{ok:true,career:next}
   }
+  // engine 4: the manager pressed Tactics at the minute he is watching — the match is paused THERE (owner, 14.10.2026).
+  // Only a minute between the last decided stop and the stop the match now waits at can be asked for, so nothing already decided moves.
+  case 'match-tactics':{
+   if(!c.live||c.live.mode!=='interactive'||c.live.snapshot.engine!=='legends-engine-4')return bad('No match is waiting for you.','closed')
+   const snap=c.live.snapshot,list=stopsV4(snap),done=c.live.decisions.length,last=list[done-1]??0,waiting=list[done]
+   if(waiting===undefined)return bad('The match has no stop left to move.')
+   if(list.length>=maxStopsOf(snap))return bad('No more stops this match — the rest plays out.')
+   if(!(a.minute>last&&a.minute<waiting)||a.minute<2)return bad('The touchline can only open between where you are and the next break.')
+   return {ok:true,career:{...c,live:{...c.live,snapshot:{...snap,stops:[...(snap.stops??[]),a.minute]}}}}
+  }
   case 'match-finish':{
    // "to the final whistle": every stop still ahead is passed with no change
    if(!c.live||c.live.mode!=='interactive')return bad('No match is waiting for you.','closed')
    const fx=fixtureById(c,c.live.fixture)!,side=mySide(c,fx);let live=c.live
-   for(let i=0;i<=R.maxInterventionWindows;i++){const r=run(live.snapshot,live.decisions,true,side);if(r.done)break;live={...live,decisions:[...live.decisions,{stop:r.pause.stop}]}}
+   for(let i=0;i<=maxStopsOf(live.snapshot);i++){const r=run(live.snapshot,live.decisions,true,side);if(r.done)break;live={...live,decisions:[...live.decisions,{stop:r.pause.stop}]}}
    return commitMine({...c,live},ctx,null)
   }
   case 'play-round':{
