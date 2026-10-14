@@ -40,7 +40,7 @@ const BallotBox=()=><svg className={css.box3d} viewBox="0 0 120 110" aria-hidden
 
 type Tab='card'|'debates'|'duel'
 type Sheet=null|{kind:'player'|'number'|'position'|'debate'|'card';id:string}
-export type ClubPollsProps={players:ClubPlayer[];debates:ClubPoll[];club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy;/** THE PEOPLE'S CHOICE swipe-duel (feature switch, off by default) */duel?:boolean}
+export type ClubPollsProps={players:ClubPlayer[];debates:ClubPoll[];club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy;/** THE PEOPLE'S CHOICE swipe-duel (feature switch, off by default) */duel?:boolean;/** the duel is the opening tab only once the switch is on for everyone; the owner's preview keeps the ballot first */duelFirst?:boolean}
 
 const readJSON=(key:string):unknown=>{try{const raw=localStorage.getItem(key);return raw&&raw.length<30000?JSON.parse(raw):null}catch{return null}}
 /** the per-device voter id: the unit of "one active vote" (PO-R06). Random, kept on this device, never shown. */
@@ -50,14 +50,14 @@ const newVoter=()=>{
 }
 
 /** Gate 7 · the Terrace vote: a printed ballot slip, a supporter card read back from it, and open debates. An opinion — no score, no clock. */
-export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed,cursor,locale,contentLocale,wardrobe,copy,duel=false}:ClubPollsProps){
+export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed,cursor,locale,contentLocale,wardrobe,copy,duel=false,duelFirst=false}:ClubPollsProps){
  const t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
  const byId=useMemo(()=>new Map(players.map(p=>[p.id,p])),[players])
  /** the ballot is DEALT from this roster: a line without two documented choices is not in it (PO-R02/R03/R05) */
  const ballot=useMemo(()=>dealBallot(players),[players])
  const debates=useMemo(()=>usableDebates(rawDebates),[rawDebates])
  const store=useMemo(()=>clientTally(),[])
- const [tab,setTab]=useState<Tab>(duel?'duel':'card'),[slip,setSlip]=useState<Slip>(emptySlip),[ds,setDs]=useState<DebateState>(()=>readDebates(null,null,[])),[loaded,setLoaded]=useState(false)
+ const [tab,setTab]=useState<Tab>(duel&&duelFirst?'duel':'card'),[slip,setSlip]=useState<Slip>(emptySlip),[ds,setDs]=useState<DebateState>(()=>readDebates(null,null,[])),[loaded,setLoaded]=useState(false)
  const [mine,setMine]=useState<ReadonlySet<string>>(()=>new Set()),[sheet,setSheet]=useState<Sheet>(null),[why,setWhy]=useState<string|null>(null),[aim,setAim]=useState<string|null>(null),[notice,setNotice]=useState('')
  const [undo,setUndo]=useState<Slip|null>(null),[online,setOnline]=useState(true)
  const opener=useRef<HTMLElement|null>(null),touched=useRef(false),voterRef=useRef('')

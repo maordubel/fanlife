@@ -105,6 +105,8 @@ const browser = await chromium.launch({
 let faults = 0
 for (const width of WIDTHS) {
   const context = await browser.newContext({ viewport: { width, height: 900 } })
+  // the owner's slide-up banner is third-party artwork that arrives after three seconds; a visit that has stopped ads never raises it
+  await context.addInitScript(() => { try { sessionStorage.setItem('fanlife.promo.session.v1', JSON.stringify({ seen: {}, shown: 0, last: 0, lastId: null, stop: true })) } catch { /* nothing to stop */ } })
   for (const route of ROUTES) {
     const page = await context.newPage()
     const errors = []

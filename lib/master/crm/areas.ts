@@ -11,6 +11,7 @@ export const SECTIONS=[
 export const TOOLS=[
  {key:'data',label:'Sources & research',hint:'Collect, parse, stage'},
  {key:'operations',label:'Operations',hint:'Runs, storage, schedules'},
+ {key:'advertising',label:'Advertising',hint:'Your banners, pages, schedule'},
  {key:'settings',label:'Settings',hint:'Features, LIFE display, access'},
 ] as const
 export type Section=typeof SECTIONS[number]['key']|typeof TOOLS[number]['key']|'more'
