@@ -293,6 +293,7 @@
   "collector.notify.AUCTION_CANCELLED": "המכירה הפומבית בוטלה.",
   "collector.notify.ITEM_SUSPENDED": "אחד העותקים שלך הושעה עד לבדיקה.",
   "collector.notify.REPORT_RECEIVED": "דיווח חדש מחכה לבדיקה.",
+  "collector.notify.MANAGED_ACTIVITY": "מישהו פנה על מודעה שבניהולך. הבעלים מחכה להחלטתך.",
   "collector.public.title": "ארון של אספן",
   "collector.public.sub": "מה שתלוי אצל אוהד אחר",
   "collector.public.loading": "פותח את הארון…",

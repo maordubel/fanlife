@@ -352,6 +352,7 @@ export type NotificationKind =
   | 'AUCTION_CANCELLED'
   | 'ITEM_SUSPENDED'
   | 'REPORT_RECEIVED'
+  | 'MANAGED_ACTIVITY'
 
 export type CollectorNotification = {
   id: string
