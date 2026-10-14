@@ -22,6 +22,8 @@ import './weekly/club.css'
 import './weekly/games-a.css'
 import './weekly/games-b.css'
 import './weekly/legends.css'
+import './promo.css'
+import { PromoSlot } from '@/components/promo/PromoSlot'
 import { headers } from 'next/headers'
 import {clubFromHost,DEFAULT_CLUB} from '@/lib/master/registry'
 import { readState } from '@/lib/master/store'
@@ -161,6 +163,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <GateMeter />
         <Suspense fallback={null}><NavPulse /></Suspense>
         <ClosetBridge />
+        {!closed&&pathname!=='/master'&&!pathname.startsWith('/master/')?<Suspense fallback={null}><PromoSlot /></Suspense>:null}
         <MarketAlerts />
         {topAd?<script src={TOP_AD_SRC} defer />:null}
       </body>

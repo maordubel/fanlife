@@ -1,3 +1,5 @@
+import {AdsDesk} from '@/components/master/desk/AdsDesk'
+import {readPromo} from '@/lib/promo/store'
 import {ProviderCheck} from '@/components/master/desk/ProviderCheck'
 import {Suspense} from 'react'
 import {ClubGaps} from '@/components/master/ClubGaps'
@@ -22,7 +24,7 @@ import {featuresOf} from '@/lib/features'
 import '../../desk.css'
 export const dynamic='force-dynamic'
 
-const SECTION_KEYS=['overview','clubs','players','games','market','community','audience','data','operations','settings','more'] as const
+const SECTION_KEYS=['overview','clubs','players','games','market','community','audience','data','operations','advertising','settings','more'] as const
 /** Old bookmarks keep working (rule 99 §2): `?tab=` and `?section=data&view=players` land where they always did. */
 const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'overview'},club:{section:'clubs',view:'evidence'},data:{section:'data'},display:{section:'settings'},updates:{section:'operations'},activity:{section:'operations'}}
 /** sections the Admin component draws (the rest are the desk's own panels) */
@@ -46,6 +48,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  if(section==='more')return shell(<MoreMenu owner={owner}/>)
  if(section==='players')return shell(<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>)
  if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features} lab={(['trivia','timeline','memory','league'] as const).find(g=>g===searchParams.lab)??null}/>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<ExperienceCard features={features}/>}/>)
+ if(section==='advertising')return shell(<AdsDesk initial={await readPromo()} clubs={state.clubs.map(c=>({id:c.id,name:c.name})).sort((a,b)=>a.name.localeCompare(b.name))}/>)
  if(section==='market')return shell(<MarketDesk/>)
  if(section==='community')return shell(<CommunityDesk/>)
  const runs=await readRuns()

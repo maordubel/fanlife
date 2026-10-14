@@ -18,9 +18,10 @@ describe('club crests', () => {
     }
     expect(ledger.crests).toHaveLength(Object.keys(CRESTS).length)
   })
-  it('only knows registry clubs, and a club with no crest falls back to initials', () => {
+  it('only knows registry clubs, an unknown club has no crest', () => {
     for (const club of Object.keys(CRESTS)) expect(REGISTRY.some((c) => c.id === club), club).toBe(true)
-    expect(crestFor('zrinjski-mostar')).toBeNull()
+    expect(crestFor('zrinjski-mostar')).toBe('/crests/zrinjski-mostar.png')
+    expect(crestFor('not-a-club')).toBeNull()
     expect(crestFor(undefined)).toBeNull()
   })
 })

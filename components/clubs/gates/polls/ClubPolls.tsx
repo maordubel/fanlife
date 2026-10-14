@@ -7,6 +7,8 @@ import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {tr} from '@/components/clubs/rumble/shared'
 import {SupporterCard,answerOf} from './SupporterCard'
+import {PeoplesChoice} from './PeoplesChoice'
+import {applyToBallot,applyToDebate,duelPolls} from '@/lib/clubs/polls-duel/adapter'
 import {ChoicePicker,NumberPicker,PlayerPicker,PositionPicker} from './Picker'
 import type {ClubPlayer} from '@/lib/clubs/contract'
 import type {GameCopy} from '@/lib/clubs/game-copy'
@@ -36,9 +38,9 @@ const BallotBox=()=><svg className={css.box3d} viewBox="0 0 120 110" aria-hidden
  <path d="M35 74l3.5 7 7.7 1.1-5.6 5.4 1.3 7.7-6.9-3.6-6.9 3.6 1.3-7.7-5.6-5.4 7.7-1.1z" fill="var(--mag-white)" stroke="var(--mag-ink)" strokeWidth="2"/>
 </svg>
 
-type Tab='card'|'debates'
+type Tab='card'|'debates'|'duel'
 type Sheet=null|{kind:'player'|'number'|'position'|'debate'|'card';id:string}
-export type ClubPollsProps={players:ClubPlayer[];debates:ClubPoll[];club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy}
+export type ClubPollsProps={players:ClubPlayer[];debates:ClubPoll[];club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy;/** THE PEOPLE'S CHOICE swipe-duel (feature switch, off by default) */duel?:boolean;/** the duel is the opening tab only once the switch is on for everyone; the owner's preview keeps the ballot first */duelFirst?:boolean}
 
 const readJSON=(key:string):unknown=>{try{const raw=localStorage.getItem(key);return raw&&raw.length<30000?JSON.parse(raw):null}catch{return null}}
 /** the per-device voter id: the unit of "one active vote" (PO-R06). Random, kept on this device, never shown. */
@@ -48,14 +50,14 @@ const newVoter=()=>{
 }
 
 /** Gate 7 · the Terrace vote: a printed ballot slip, a supporter card read back from it, and open debates. An opinion — no score, no clock. */
-export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed,cursor,locale,contentLocale,wardrobe,copy}:ClubPollsProps){
+export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed,cursor,locale,contentLocale,wardrobe,copy,duel=false,duelFirst=false}:ClubPollsProps){
  const t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
  const byId=useMemo(()=>new Map(players.map(p=>[p.id,p])),[players])
  /** the ballot is DEALT from this roster: a line without two documented choices is not in it (PO-R02/R03/R05) */
  const ballot=useMemo(()=>dealBallot(players),[players])
  const debates=useMemo(()=>usableDebates(rawDebates),[rawDebates])
  const store=useMemo(()=>clientTally(),[])
- const [tab,setTab]=useState<Tab>('card'),[slip,setSlip]=useState<Slip>(emptySlip),[ds,setDs]=useState<DebateState>(()=>readDebates(null,null,[])),[loaded,setLoaded]=useState(false)
+ const [tab,setTab]=useState<Tab>(duel&&duelFirst?'duel':'card'),[slip,setSlip]=useState<Slip>(emptySlip),[ds,setDs]=useState<DebateState>(()=>readDebates(null,null,[])),[loaded,setLoaded]=useState(false)
  const [mine,setMine]=useState<ReadonlySet<string>>(()=>new Set()),[sheet,setSheet]=useState<Sheet>(null),[why,setWhy]=useState<string|null>(null),[aim,setAim]=useState<string|null>(null),[notice,setNotice]=useState('')
  const [undo,setUndo]=useState<Slip|null>(null),[online,setOnline]=useState(true)
  const opener=useRef<HTMLElement|null>(null),touched=useRef(false),voterRef=useRef('')
@@ -170,6 +172,12 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
   })}
  </ol>
 
+ const duelList=useMemo(()=>duel?duelPolls({club,players,ballot,debates}):[],[duel,club,players,ballot,debates])
+ const currentPick=(id:string)=>{const q=questionOf(ballot,id);if(q)return slip.picks[id]?byId.get(slip.picks[id]!)?.name??null:null;const d=debates.find(x=>x.id===id);return d?d.choices.find(c=>c.id===ds.votes[id])?.name??null:null}
+ function confirmDuel(p:(typeof duelList)[number],winnerId:string){
+  if(p.sink==='ballot'){const q=questionOf(ballot,p.pollId);if(!q)return;const next=applyToBallot(slip,q,players,winnerId,{club,voter:voter()});if(next!==slip){touched.current=true;setUndo(slip);setSlip(next);markStep(filled(next,ballot))}}
+  else{const d=debates.find(x=>x.id===p.pollId);if(!d)return;const next=applyToDebate(ds,d,winnerId);setDs(next);persistDebates(next)}
+ }
  const answered=debates.filter(d=>ds.votes[d.id]!==undefined).length
  const debateView=<div className={css.debates} data-testid="polls-debates">
   <div className={css.paperHead}><p className={css.kicker}>{t('tv.deb.round',{n:cursor+1})}</p><h2 className={css.paperTitle}>{t('tv.deb.title')}</h2><p className={css.fine}>{t('tv.deb.sub')}</p><p className={css.fine} data-testid="polls-deb-context">{t('tv.deb.context')}</p></div>
@@ -190,10 +198,10 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
  </div>
 
  const tabs=<><div className={css.bar}>
-  <div className={`wk-folders ${css.tabs}`} role="tablist" aria-label={t('tv.tabs')}>
-   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={`${css.tab} min-h-tap`} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={k==='card'?'M4 6h16v12H4zM8 10h8M8 14h5':'M4 12h16v8H4zM8 12V4h8v8M10 8l1.5 1.5L14 7'}/></svg>{t(`tv.tab.${k}`)}</button>)}
+  <div className={`wk-folders ${css.tabs}`} data-n={duel?3:2} role="tablist" aria-label={t('tv.tabs')}>
+   {((duel?['duel','card','debates']:['card','debates']) as Tab[]).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={`${css.tab} min-h-tap`} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={k==='duel'?'M4 12h7M13 12h7M8 8l-4 4 4 4M16 8l4 4-4 4':k==='card'?'M4 6h16v12H4zM8 10h8M8 14h5':'M4 12h16v8H4zM8 12V4h8v8M10 8l1.5 1.5L14 7'}/></svg>{t(`tv.tab.${k}`)}</button>)}
   </div>
-  <span className={css.count} data-done={tab==='card'?done:debatesDone(ds.votes,debates)} aria-live="polite">{tab==='card'?t('tv.count',{n,m:ballot.length}):t('tv.deb.count',{n:answered,m:debates.length})}</span>
+  {tab!=='duel'&&<span className={css.count} data-done={tab==='card'?done:debatesDone(ds.votes,debates)} aria-live="polite">{tab==='card'?t('tv.count',{n,m:ballot.length}):t('tv.deb.count',{n:answered,m:debates.length})}</span>}
  </div>
  <div className="wk-folders-rule" aria-hidden="true"/></>
 
@@ -204,7 +212,10 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
   {tabs}
   <div className={css.layout}>
    <div className={css.main}>
-    {tab==='card'
+    {tab==='duel'
+     ?<div role="tabpanel" id="tv-pane-duel" aria-labelledby="tv-tab-duel" data-testid="polls-pane-duel"><PeoplesChoice club={club} polls={duelList} byId={byId} wardrobe={wardrobe} contentLocale={contentLocale} t={t} currentPick={currentPick} onConfirm={confirmDuel} onDirect={()=>setTab('card')} onCard={()=>setTab('card')}
+       renderShare={(p,w)=><ShareComposer label={t('pc.share')} draft={terraceShare(club,{question:p.prompt??t(`tv.q.${p.labelKey}`),pick:w.title})}/>}/>{honest}</div>
+    :tab==='card'
      ?<div className={css.paper} role="tabpanel" id="tv-pane-card" aria-labelledby="tv-tab-card" data-testid="polls-pane-card">
        <div className={css.paperHead}><BallotBox/><p className={css.kicker}>{t('tv.slip.kicker')} · <bdi>{clubName}</bdi></p><h2 className={css.paperTitle}>{t('tv.slip.title',{m:ballot.length})}</h2><p className={css.fine}>{t('tv.slip.sub')}</p>{shorter}</div>
        {slipView}

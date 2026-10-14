@@ -31,7 +31,7 @@ const left_=(slotY:number)=>8+((slotY-20)/64)*84
  */
 export function RumbleXIGame({club,version,locale,formation,rival,wardrobe,faces,highlights,againHref,playerCount,roundSeed}:{roundSeed:number;club:string;version:string;locale:UiLocale;formation:FormationId;rival:string;wardrobe:RumbleWardrobe;faces:{us:ClubFace;them:ClubFace};highlights?:HighlightsAllow;againHref:string;playerCount:number}){
  const copy=xiCopy(gameCopy(locale)),reduced=useReducedMotion(),sound=useRumbleSound(),slots=useMemo(()=>slotsOf(formation),[formation])
- const budget=budgetFor(roundSeed),dr=useDraft({slug:club,version,mode:'xi',seed:roundSeed,formation,rival}),view=dr.view
+ const budget=budgetFor(roundSeed),dr=useDraft({slug:club,version,mode:'xi',seed:roundSeed,formation,rival},useMemo(()=>slots.map(x=>({id:x.id,group:x.family})),[slots])),view=dr.view
  const [phase,setPhase]=useState<Phase>('draft'),[step,setStep]=useState<RevealStep>('entrance')
  const [script,setScript]=useState<ShowScript|null>(null),[busy,setBusy]=useState(false)
  const [rules,setRules]=useState(false),[recent,setRecent]=useState<RecentRound[]>([])

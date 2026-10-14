@@ -28,9 +28,10 @@ const HISTORY_MAX=8
  * The boards are dealt on the server from the round seed; the five is checked, the score decided and the
  * match staged on the server (`playRumble`). This screen only shows what it is handed.
  */
+const FIVE_ORDER=FIVE.slots.map((g,i)=>({id:`s${i}`,group:g}))
 export function RumbleGame({club,version,locale,seed,wardrobe,playerCount,againHref,vs,duel,faces,highlights}:{faces:{us:ClubFace;them:ClubFace};highlights?:HighlightsAllow;club:string;version:string;locale:UiLocale;seed:number;wardrobe:RumbleWardrobe;playerCount:number;againHref:string;vs?:string;duel?:string}){
  const copy=gameCopy(locale),reduced=useReducedMotion(),sound=useRumbleSound()
- const dr=useDraft({slug:club,version,mode:'five',seed,vs,duel}),view=dr.view
+ const dr=useDraft({slug:club,version,mode:'five',seed,vs,duel},FIVE_ORDER),view=dr.view
  const [phase,setPhase]=useState<Phase>('draft'),[step,setStep]=useState<RevealStep>('entrance')
  const [script,setScript]=useState<ShowScript|null>(null),[busy,setBusy]=useState(false)
  const [rules,setRules]=useState(false),[recent,setRecent]=useState<RecentRound[]>([])
