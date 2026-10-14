@@ -14,10 +14,11 @@ export function NavPulse(){
  const [plate,setPlate]=useState(false)
  const path=usePathname(),query=useSearchParams()?.toString()
  const timer=useRef<ReturnType<typeof setTimeout>|null>(null)
+ const rescue=useRef<ReturnType<typeof setTimeout>|null>(null)
  const tapped=useRef<HTMLAnchorElement|null>(null)
  useEffect(()=>{setBusy(false);setPlate(false);tapped.current?.removeAttribute('data-tapped');tapped.current=null},[path,query])
  useEffect(()=>{
-  const stop=()=>{setBusy(false);setPlate(false);if(timer.current)clearTimeout(timer.current);tapped.current?.removeAttribute('data-tapped');tapped.current=null}
+  const stop=()=>{setBusy(false);setPlate(false);if(timer.current)clearTimeout(timer.current);if(rescue.current)clearTimeout(rescue.current);tapped.current?.removeAttribute('data-tapped');tapped.current=null}
   const onClick=(e:MouseEvent)=>{
    if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return
    const a=(e.target as Element|null)?.closest?.('a[href]') as HTMLAnchorElement|null
@@ -28,10 +29,12 @@ export function NavPulse(){
    tapped.current?.removeAttribute('data-tapped');a.setAttribute('data-tapped','');tapped.current=a
    // the loading plate only for a new page; a changed query on the same page (a tab, a filter, a run) keeps what is on screen
    setPlate(url.pathname!==location.pathname)
-   setBusy(true);if(timer.current)clearTimeout(timer.current);timer.current=setTimeout(stop,12_000)
+   setBusy(true);if(timer.current)clearTimeout(timer.current);timer.current=setTimeout(stop,30_000)
+   // the tap must arrive: if the soft navigation has not landed after 8 s (a dropped request, a stuck transition), load the page the plain way
+   if(rescue.current)clearTimeout(rescue.current);const here=location.href;rescue.current=setTimeout(()=>{if(location.href===here)location.assign(url.href)},8_000)
   }
   document.addEventListener('click',onClick,true);window.addEventListener('popstate',stop)
-  return ()=>{document.removeEventListener('click',onClick,true);window.removeEventListener('popstate',stop);if(timer.current)clearTimeout(timer.current)}
+  return ()=>{document.removeEventListener('click',onClick,true);window.removeEventListener('popstate',stop);if(timer.current)clearTimeout(timer.current);if(rescue.current)clearTimeout(rescue.current)}
  },[])
  return <><div className="nav-pulse" data-busy={busy?'true':'false'} aria-hidden="true"/>{plate?<div className="nav-plate" aria-hidden="true"><PressWait/></div>:null}</>
 }

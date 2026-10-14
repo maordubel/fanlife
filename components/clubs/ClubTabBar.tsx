@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import {ArcLabel} from '@/components/weekly/ArcLabel'
 import {useSelectedLayoutSegment} from 'next/navigation'
 import {tabHref,tabOfSegment,type ClubTab} from '@/lib/clubs/club-href'
 import type {UiLocale} from '@/lib/clubs/locale'
@@ -26,7 +27,7 @@ export function ClubTabBar({clubId,locale,labels,navLabel,pattern}:{clubId:strin
    const centre=tab==='life'
    return <Link key={tab} href={href} data-tab={tab} aria-current={on===tab?'page':undefined} className={centre?'club-tab club-tab-centre':'club-tab'}>
     {centre?<span className="mag-badge club-tab-badge" data-livery={pattern} aria-hidden="true">{ICONS[tab]}</span>:ICONS[tab]}
-    <span className="club-tab-label">{labels[tab]}</span>
+    {centre?<><span className="sr-only">{labels[tab]}</span><ArcLabel id="club-tab-arc" text={labels[tab]}/></>:<span className="club-tab-label">{labels[tab]}</span>}
    </Link>
   })}
  </nav>
