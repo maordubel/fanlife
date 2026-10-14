@@ -1,5 +1,6 @@
 'use client'
 import { evaluationMode } from '@/lib/master/mode'
+import { seedPhotoUrl } from './seedPhotos'
 import { normaliseWorld } from '@/lib/fanlife/world'
 
 import { portalConfigured } from '@/lib/portal/env'
@@ -95,6 +96,8 @@ async function read<T>(fn: string, args: Record<string, unknown> | undefined, fa
 
 /** The public URL of a stored photo. Never built from anything but a path the database returned. */
 export function photoUrl(path: string): string {
+  const seeded = seedPhotoUrl(path)
+  if (seeded) return seeded
   if (evaluationMode()) return `/api/evaluation/files?path=${encodeURIComponent(path)}`
   const base = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? '').replace(/\/$/, '')
   return `${base}/storage/v1/object/public/${bucketFor(path)}/${path.split('/').map(encodeURIComponent).join('/')}`
