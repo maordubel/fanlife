@@ -25,7 +25,19 @@
   .wkg-world { grid-template-columns: 220px minmax(0, 1fr); padding: 26px 32px; } .wkg-crowd { inline-size: 220px; block-size: 150px; }
 }
 
-/* the hub's bottom bar: OUR GAMES is the loud door */
-.mag-tabbar[data-ourgames] a[href='/our-games'] { background: var(--mag-vermilion); color: var(--mag-white); box-shadow: inset 0 3px 0 var(--mag-ink); }
-.mag-tabbar[data-ourgames] a[href='/our-games'][aria-current='page'] { background: var(--mag-white); color: var(--mag-vermilion); box-shadow: inset 0 3px 0 var(--mag-vermilion); }
-.mag-tabbar[data-ourgames] a[href='/our-games'] svg { inline-size: 26px; block-size: 26px; }
+/* the hub's bottom bar: OUR GAMES is an arcade coin button that stands up out of the bar */
+@media (max-width: 900px) {
+  .mag-tabbar[data-ourgames] { overflow: visible; }
+  .mag-tabbar[data-ourgames] a[href='/our-games'] { position: relative; flex: 1.25; color: var(--mag-white); background: none; box-shadow: none; font-family: var(--mag-display); font-weight: 400; font-size: 12px; letter-spacing: 0.4px; white-space: nowrap; padding-block: 0 4px; justify-content: flex-end; }
+  .mag-tabbar[data-ourgames] a[href='/our-games']::before { content: ''; position: absolute; inset-inline: 50%; inset-block-start: -22px; inline-size: 52px; block-size: 52px; margin-inline-start: -26px; border-radius: 50%; background: var(--mag-vermilion); border: 3px solid var(--mag-ink); box-shadow: 0 0 0 3px var(--mag-paper), 4px 5px 0 3px var(--mag-ink); background-image: radial-gradient(circle at 50% 30%, rgb(255 255 255 / 0.22), transparent 55%); }
+  .mag-tabbar[data-ourgames] a[href='/our-games'] svg { position: absolute; inset-block-start: -13px; inset-inline: 50%; margin-inline-start: -15px; inline-size: 30px; block-size: 30px; stroke-width: 2.2; color: var(--mag-white); transform: none; }
+  .mag-tabbar[data-ourgames] a[href='/our-games'][aria-current='page']::before { background: var(--mag-navy); }
+  .mag-tabbar[data-ourgames] a[href='/our-games']:active::before { transform: translateY(3px); box-shadow: 0 0 0 3px var(--mag-paper), 1px 2px 0 3px var(--mag-ink); }
+  .mag-tabbar[data-ourgames] a[href='/our-games'] { overflow: visible; }
+}
+
+/* a club's bar: the label never truncates, and the joystick sits on a paper disc over the livery pattern */
+@media (max-width: 900px) {
+  .club-tab-centre { flex: 1.3; } .club-tab-centre .club-tab-label { overflow: visible; text-overflow: clip; font-size: 10px; letter-spacing: 0; }
+  .club-tab-badge svg { inline-size: 26px; block-size: 26px; padding: 5px; box-sizing: content-box; border-radius: 50%; background: var(--mag-paper); color: var(--mag-ink); }
+}

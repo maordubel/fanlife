@@ -18,7 +18,7 @@ export function TabBar({locale='en'}:{locale?:UiLocale}) {
  const tabs:[string,string,JSX.Element,boolean][]=[
   ['/',copy.home,<svg key="h" {...ICON}><path d="M3 11l9-7 9 7v9H3z"/></svg>,at('/')],
   ['/#clubs',copy.tabClubs,<svg key="c" {...ICON}><circle cx="12" cy="12" r="9"/><path d="M12 8l4 3-1.5 5h-5L8 11z"/></svg>,path.startsWith('/clubs')&&!path.endsWith('/life')],
-  ['/our-games',copy.tabOurGames,<svg key="l" {...ICON}><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10v5M4.5 12.5h5M16 11.5h.01M18.5 13.5h.01"/></svg>,at('/our-games')||path.endsWith('/life')],
+  ['/our-games',copy.tabOurGames,<svg key="l" {...ICON}><circle cx="12" cy="4.6" r="2.7"/><path d="M12 7.3v6M3.5 20v-4.2c0-1.4 1.1-2.5 2.5-2.5h12c1.4 0 2.5 1.1 2.5 2.5V20z"/><path d="M7 16.5h3M16 16.9h.01M18.3 16.9h.01"/></svg>,at('/our-games')||path.endsWith('/life')],
   ['/market',copy.tabMarket,<svg key="m" {...ICON}><path d="M8 3l-5 4 3 4 2-1v11h8V10l2 1 3-4-5-4c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>,at('/market')],
   ['/me',copy.tabCorner,<svg key="u" {...ICON}><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>,at('/me')],
  ]
