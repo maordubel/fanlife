@@ -1,7 +1,7 @@
 import 'server-only'
 import {FIXTURE_TEAMS} from './teams'
-import {nextForClub} from './provider'
-import type {Fixture, FixtureDiagnostic, FixtureFeed} from './types'
+import {lastForClub, nextForClub} from './provider'
+import type {Fixture, FixtureDiagnostic, FixtureFeed, Result} from './types'
 
 const OK_TTL = 6 * 3600_000
 const FAIL_TTL = 10 * 60_000
@@ -31,17 +31,22 @@ export async function getFixtureFeed(now = new Date()): Promise<FixtureFeed> {
 async function fetchFeed(now: Date): Promise<FixtureFeed> {
   const key = process.env.THESPORTSDB_KEY?.trim() || '123' // the provider's published free key
   const settled = await Promise.allSettled(FIXTURE_TEAMS.map(t => nextForClub(t, key, get, now)))
-  const fixtures: Fixture[] = [], diagnostics: FixtureDiagnostic[] = []
+  const fixtures: Fixture[] = [], diagnostics: FixtureDiagnostic[] = [], results: Result[] = []
+  const teamIds: Array<[string, string]> = []
   let failed = 0
   settled.forEach((r, i) => {
     const clubId = FIXTURE_TEAMS[i]!.clubId
     if (r.status === 'rejected') { failed++; diagnostics.push({clubId, teamId: null, note: `unavailable: ${String(r.reason?.message ?? r.reason).slice(0, 120)}`, eventsNext: 0, leagueNext: 0}); return }
     if (r.value.fixture) fixtures.push(r.value.fixture)
+    if (r.value.teamId) teamIds.push([clubId, r.value.teamId])
     diagnostics.push({clubId, teamId: r.value.teamId, note: r.value.note, eventsNext: r.value.eventsNext, leagueNext: r.value.leagueNext})
   })
+  // the latest finished match per club (Stop Press: LAST). A club the provider cannot answer simply has none.
+  const last = await Promise.allSettled(teamIds.map(([clubId, teamId]) => lastForClub(clubId, teamId, key, get, now)))
+  for (const l of last) if (l.status === 'fulfilled' && l.value) results.push(l.value)
   const feed: FixtureFeed = {
     status: failed === 0 ? 'ok' : failed === FIXTURE_TEAMS.length ? 'unavailable' : 'partial',
-    source: 'thesportsdb', generatedAt: now.toISOString(), fixtures, diagnostics,
+    source: 'thesportsdb', generatedAt: now.toISOString(), fixtures, results, diagnostics,
   }
   cache = {at: now.getTime(), ttl: failed ? FAIL_TTL : OK_TTL, feed}
   return feed

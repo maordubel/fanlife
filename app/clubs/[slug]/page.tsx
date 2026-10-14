@@ -14,6 +14,7 @@ import {belovedOf,wallNumbers} from '@/lib/clubs/beloved'
 import {ClubEntrance} from '@/components/clubs/ClubEntrance'
 import {FixtureCard,MatchTicket} from '@/components/clubs/FixtureCard'
 import {Plate} from '@/components/weekly/Plate'
+import {ClubLifeCard} from '@/components/clubs/ClubLifeCard'
 import {Icon} from '@/components/weekly/Icon'
 import {readState} from '@/lib/master/store'
 import {loadClub,resolveClubId} from '@/lib/clubs/resolver'
@@ -96,6 +97,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<p className="wk-cap wkk-span">{copy.fallback}</p>}
 
   {/* ═════ the cover story: today's pick ═════ */}
+  {core&&open.length>0&&<Link className="wk-btn wkk-allgames min-h-tap" href={clubHref(id,'play',locale)} data-testid="all-club-games">{copy.wkkAllClubGames} <span aria-hidden="true">→</span></Link>}
   <div className="wkk-lead" data-story={core&&pickGate?'':undefined}>
   {core&&pickGate&&<section className="wkk-story" aria-labelledby="cs-h">
    <Link className="wk-panel wk-lift wkk-story-in" href={pickHref} tabIndex={-1} aria-hidden="true">
@@ -127,16 +129,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
 
   {/* ═════ the rest of the issue ═════ */}
   {core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
-  <section className="wkk-life" id="life-block" aria-labelledby="life-h"><div className="wk-panel shadow wkk-life-in" id="life" data-life-entry={life.state}>
-   <span className="wkk-life-art wk-clubplate" aria-hidden="true"><Plate art="fatherson" ink="ink"/></span>
-   <div className="wkk-life-text">
-    <p className="wk-k red">{copy.lifeGame}</p>
-    <p className="wk-shout wkk-life-shout" aria-hidden="true">{copy.wkkLifeShout}</p>
-    <h2 id="life-h" className="wk-head">{copy.lifeTitle}</h2>
-    <p className="wkk-life-note">{life.href?copy.lifeOpen:copy.lifeWorkshop}</p>
-    {life.href&&<Link className="wk-btn red wkk-life-cta min-h-tap" href={life.href}>{copy.life}</Link>}
-   </div>
-  </div></section>
+  <ClubLifeCard href={life.href} state={life.state} copy={copy}/>
   {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 

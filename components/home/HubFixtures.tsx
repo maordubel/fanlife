@@ -4,6 +4,7 @@ import {FixtureRotator,type RotatorItem,type RotatorCopy} from '@/components/hom
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery} from '@/lib/club-livery'
+import {StopRotator,type StopItem} from '@/components/home/StopRotator'
 
 /**
  * The hub's live-data half (performance audit, 11.10.2026). The provider used to be awaited before the hub sent its first
@@ -25,9 +26,17 @@ async function itemsFor(open:readonly Club[],locale:string):Promise<RotatorItem[
 }
 
 /** `none` is what the strip says when no match is confirmed (the evaluation notice in preview, else nothing — the strip hides). */
-export async function HubStop({open,locale,stopPress,vs,none}:{open:readonly Club[];locale:string;stopPress:string;vs:string;none:ReactNode}){
- const first=(await itemsFor(open,locale)).find(x=>x.tag!=='tbc')
- return first?<div className="mag-stop-in"><b>{stopPress}</b><span>{first.club} {vs} {first.opponent}</span></div>:<>{none}</>
+export async function HubStop({open,locale,stopPress,vs,none,last,next}:{open:readonly Club[];locale:string;stopPress:string;vs:string;none:ReactNode;last:string;next:string}){
+ const now=new Date(),feed=await getFixtureFeed(now).catch(()=>null),names=new Map(open.map(c=>[c.id,livery(c.id)?.name??'']))
+ const day=new Intl.DateTimeFormat(locale==='en'?'en-GB':locale,{weekday:'short',day:'numeric',month:'short',timeZone:'UTC'})
+ const lasts:StopItem[]=(feed?.results??[]).filter(r=>names.get(r.clubId)).sort((a,b)=>Date.parse(b.kickoff)-Date.parse(a.kickoff)).map(r=>({kind:'last' as const,tag:last,
+  text:`${r.home} ${r.homeScore}–${r.awayScore} ${r.away}`,href:`/clubs/${r.clubId}?lang=${locale}`}))
+ const nexts:StopItem[]=(feed?rotationOrder(feed.fixtures,now):[]).filter(f=>names.get(f.clubId)).map(f=>({kind:'next' as const,tag:next,
+  text:`${f.home} ${vs} ${f.away} · ${day.format(new Date(f.kickoff))}`,href:`/clubs/${f.clubId}?lang=${locale}`}))
+ // Last and Next take turns, soonest and latest first; at most ten lines so a turn comes round in under a minute
+ const items:StopItem[]=[]
+ for(let i=0;items.length<10&&(i<lasts.length||i<nexts.length);i++){if(lasts[i])items.push(lasts[i]!);if(nexts[i]&&items.length<10)items.push(nexts[i]!)}
+ return items.length?<StopRotator items={items} label={stopPress}/>:<>{none}</>
 }
 
 /** The section head of "Next up — for real": a kicker and the title in the weekly's script, red. */

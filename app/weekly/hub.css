@@ -296,8 +296,10 @@
   .wkh .wkh-d-only { display: revert; }
   .wkh .wkh-m-only { display: none; }
   .wkh { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; padding: 22px 40px 72px;
-    grid-template-areas: 'mast mast mast' 'cover cover inside' 'cover cover cont' 'cover cover life' 'clubs clubs letter' 'next say spec' 'back say spec' 'market market market';
-    grid-template-rows: auto auto auto auto auto auto 1fr auto; }
+    grid-template-areas: 'mast mast mast' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'clubs clubs letter' 'next say spec' 'back say spec';
+    grid-template-rows: auto auto auto auto auto auto auto auto 1fr; }
+  .wkh-lm { grid-area: lm; margin-block-start: 28px; }
+  .wkh-market-mini { grid-area: market; margin-block-start: 40px; }
   .wkh :is(#clubs, #next, #life, #market, #suggest) { scroll-margin-top: 92px; }
   .wkh-mast { grid-area: mast; }
   .wkh-mast-line { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; }
@@ -585,4 +587,35 @@
 @media (prefers-reduced-motion: reduce) {
   .wkh-teaser, .wkh-stk { transition: none; }
   .wkh-teaser:active, .wkh-stk:active, .wkh-stk:hover, .wkh-sp:active, .wkh-back:active, .wkh .mag-shop-vote:active, .wkh-drawer:active { translate: none; }
+}
+
+/* Stop Press: Last and Next take turns */
+.mag-stop-in{min-inline-size:0;align-items:center}
+.mag-stop-rot{flex:1 1 auto;min-inline-size:0;display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none;animation:stop-in .35s ease-out both}
+.mag-stop-rot em{flex:none;font:900 10px/1 var(--mag-mono);letter-spacing:.08em;font-style:normal;padding:3px 6px;background:var(--mag-paper);color:var(--mag-ink)}
+.mag-stop-rot[data-kind='last'] em{background:var(--mag-cyan,var(--mag-paper))}
+.mag-stop-rot span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-inline-size:0;padding-block:2px}
+.mag-stop-dots{flex:none;display:flex;gap:3px;padding-inline-end:10px}.mag-stop-dots i{inline-size:5px;block-size:5px;background:var(--mag-paper);opacity:.35}.mag-stop-dots i[data-on]{opacity:1}
+@keyframes stop-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.mag-stop-rot{animation:none}}
+@media (max-width:600px){.mag-stop-dots{display:none}}
+
+
+/* ═════════════ THE MANAGER BANNER (above the cover) and the COMPACT MARKET ═════════════ */
+.wkh-lm { margin-block-start: 18px; }
+.wkh-lm .wkh-sp { grid-template-columns: 76px minmax(0, 1fr) 24px; }
+.wkh-lm .wkh-sp-t b { font-size: clamp(22px, 7vw, 30px); overflow-wrap: anywhere; }
+.wkh-market.wkh-market-mini { margin-block-start: 22px; padding: 12px 14px; min-block-size: 0; display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 4px 12px; box-shadow: 4px 4px 0 var(--mag-ink); }
+.wkh-market-mini .wkh-market-art { position: relative; inset: auto; translate: none; block-size: 84px; grid-row: 1 / span 2; filter: drop-shadow(3px 3px 0 var(--mag-ink)); justify-self: center; }
+.wkh-market-mini .wkh-market-art:dir(rtl) { translate: none; }
+.wkh-market-mini .wkh-market-txt .wk-k { font-size: 11px; }
+.wkh .wkh-market-mini .wkh-market-title { margin: 2px 0 0; font-size: clamp(22px, 7vw, 30px); transform: none; line-height: 1; overflow-wrap: anywhere; }
+.wkh-market-mini .wkh-market-ctas { margin: 0; grid-column: 2; }
+.wkh-market-mini .wkh-market-ctas .wk-btn { inline-size: 100%; min-block-size: 44px; }
+@media (min-width: 901px) {
+  .wkh-market.wkh-market-mini { grid-template-columns: 120px minmax(0, 1fr) 260px; grid-template-rows: auto; min-block-size: 0; padding: 14px 24px; gap: 20px; box-shadow: 6px 6px 0 var(--mag-ink); }
+  .wkh-market-mini .wkh-market-art { grid-row: auto; block-size: 110px; }
+  .wkh .wkh-market-mini .wkh-market-title { font-size: 40px; }
+  .wkh-market-mini .wkh-market-ctas { grid-column: auto; }
+  .wkh-market-mini .wkh-market-speed { --sx: 20%; --sy: 50%; }
 }

@@ -1,5 +1,5 @@
 import {describe,expect,it,vi} from 'vitest'
-import {parseTeam,parseEvents,chooseNext} from '@/lib/fixtures/provider'
+import {parseTeam,parseEvents,chooseNext,parseResults,chooseLast} from '@/lib/fixtures/provider'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {sameClub,norm} from '@/lib/fixtures/names'
 import {FIXTURE_TEAMS} from '@/lib/fixtures/teams'
@@ -92,4 +92,14 @@ describe('Hapoel Tel Aviv: the basketball namesake is never the football club',(
     expect(r.teamId).toBe('T7')
     expect(seen.filter(u=>u.includes('searchteams.php')).length).toBe(2)
   })
+})
+
+describe('last results (Stop Press)',()=>{
+ const r=(o:Record<string,string>)=>ev({strStatus:'Match Finished',intHomeScore:'2',intAwayScore:'1',...o})
+ it('takes only finished matches with a real score, newest first, from the club side',()=>{
+  const json={results:[r({idEvent:'10',dateEvent:'2026-10-01'}),r({idEvent:'11',dateEvent:'2026-10-04',idHomeTeam:'T2',idAwayTeam:'T1',strHomeTeam:'Aston Villa',strAwayTeam:'Olympiacos',intHomeScore:'0',intAwayScore:'3'}),r({idEvent:'12',dateEvent:'2026-10-05',intHomeScore:'x'}),r({idEvent:'13',dateEvent:'2026-10-20'})]}
+  const last=chooseLast('olympiacos','T1',parseResults(json),now)!
+  expect(last.providerEventId).toBe('11');expect(last.clubSide).toBe('away');expect(last.opponent).toBe('Aston Villa');expect([last.homeScore,last.awayScore]).toEqual([0,3])
+  expect(chooseLast('olympiacos','T9',parseResults(json),now)).toBeNull()
+ })
 })

@@ -15,6 +15,10 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import {todaysPick} from '@/lib/clubs/play-groups'
 import {belovedOf} from '@/lib/clubs/beloved'
 import {worldFor} from '@/lib/clubs/world'
+import {Suspense} from 'react'
+import {LegendsBanner} from '@/components/legends/ClubBanner'
+import {ClubLifeCard} from '@/components/clubs/ClubLifeCard'
+import {lifeEntry} from '@/lib/clubs/life/entry'
 import {todayInIsrael} from '@/lib/date/israel'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
@@ -32,6 +36,7 @@ export default async function Play({params,searchParams}:{params:{slug:string};s
  const states:GateState[]=core?SHARED_GATES.map(g=>({key:g.key,allowed:gateAccess(c,g.number,evaluationMode()).allowed,playable:gateAvailability(core.data,g.key).playable})):[]
  const open=states.filter(s=>s.allowed&&s.playable).map(s=>s.key as GateKey),anyOpen=open.length>0
  const beloved=belovedOf(world.terrace,open),pick=todaysPick(id,open,todayInIsrael())
+ const life=await lifeEntry(id,{evaluation:evaluationMode(),paused:c.status==='paused',status:c.status,locale})
  const word=world.terrace?.local?world.terrace.local.replace(/\s*\d+\s*/g,' ').trim()||copy.wallGate:copy.wallGate
  const fill=(t:string)=>t.replaceAll('{club}',c.name).replaceAll('{city}',c.city)
  const title=<div className="wkk-wall-title"><p className="wk-banner">{copy.wkkInsideIssue}</p><h1 className="wk-logo red wk-tilt">{copy.wkkGatesN.replace('{n}',String(SHARED_GATES.length))}</h1><p className="wk-k muted">{copy.playKicker}</p></div>
@@ -40,5 +45,9 @@ export default async function Play({params,searchParams}:{params:{slug:string};s
   :<ClubGateWall clubId={id} states={states} locale={locale} games={games} beloved={beloved} pickKey={pick} title={title}
     belovedCopy={{featured:`${copy.wallFeatured} · ${copy.wkkTerraceGame}`,shout:copy.wkkTerraceGame,title:fill(copy.wallFeatureShirt),line:world.terrace?.line,cta:games.play,gateWord:copy.wallGate,local:word,script:world.terrace?.script}}
     copy={{soon:c.status==='paused'?copy.paused:games.comingSoon,gateWord:copy.wallGate,all:copy.wkkAll,quick:copy.playQuick,deep:copy.playDeep,archive:copy.wkkArchiveShort,quickNote:copy.playQuickNote,deepNote:copy.playDeepNote,archiveNote:copy.playArchiveNote,show:copy.wkkShowGates,pick:copy.homeToday,mark:{best:games.best,played:copy.wkkPlayed,fresh:copy.wkkFresh,xi:games.xiSaved}}}/>}
+ {core&&anyOpen&&<div className="wkk-playextras">
+   <div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>
+   <ClubLifeCard href={life.href} state={life.state} copy={copy}/>
+  </div>}
  </main></ClubSurface>
 }

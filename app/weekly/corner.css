@@ -626,3 +626,6 @@
 }
 .wkc .wkc-h2 { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; column-gap: 12px; row-gap: 4px; }
 .wkc .wkc-h2 > .wk-k { min-inline-size: 0; max-inline-size: 190px; margin-inline-start: auto; text-align: end; }
+
+/* ME: the supporter belongs to no club — a black-and-white fan on orange (owner, 14.10.2026) */
+.wkc-mast[data-corner-mast='me'] .wkc-mast-art { filter: grayscale(1) contrast(1.05); }

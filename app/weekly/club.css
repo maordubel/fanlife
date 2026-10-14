@@ -743,3 +743,18 @@ button.wkk-stub-ground { min-block-size: 44px; text-decoration: underline; text-
 .wkk-stub-score .mag-been { min-block-size: 44px; inline-size: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 2px 4px; border: 2px dashed currentColor; background: transparent; color: inherit; box-shadow: none; font-family: var(--mag-display); font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; line-height: 1.05; transform: none; }
 .wkk-stub-score .mag-been[aria-pressed='true'] { border-style: solid; background: var(--mag-white); color: var(--mag-ink); }
 @media (min-width: 901px) { .wkk-meet-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 22px; } }
+
+/* the Manager banner sits square in the column — the old -16px bleed pushed it off to one side (owner, 14.10.2026) */
+.wkk-legends .lgm-banner-wrap .lgm-banner { margin-inline: 0; inline-size: 100%; box-sizing: border-box; }
+.wkk-legends .lgm-banner-wrap { inline-size: 100%; }
+
+/* "All the club games" above today's pick, and the Manager + LIFE banners that close the All gates page */
+.wkk-allgames { display: flex; align-items: center; justify-content: space-between; inline-size: 100%; min-block-size: 48px; margin-block-end: 14px; font-size: 15px; }
+.wkk-playextras { display: flex; flex-direction: column; gap: 22px; margin-block-start: 28px; }
+@media (min-width: 901px) { .wkk-playextras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 28px; } }
+
+/* the terrace page carries your corner: this club's card, the account, and the door to ME */
+.wkk-yourcorner { display: flex; flex-direction: column; gap: 14px; }
+.wkk-yourcorner .wkc-account { margin-block-start: 0; }
+.wkk-corner-me { inline-size: 100%; display: flex; justify-content: space-between; align-items: center; }
+@media (min-width: 901px) { .wkk-yourcorner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; } .wkk-yourcorner .wkk-sechead { grid-column: 1 / -1; } .wkk-corner-me { grid-column: 1 / -1; } }

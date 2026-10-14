@@ -37,7 +37,7 @@ function Gavel() {
 
 type Mast = { plate: string; art: ReactNode; burst?: boolean }
 const MASTS: Record<CornerTab, Mast> = {
-  me: { plate: 'wk-greenplate', art: <Plate art="fanfist" ink="green" className="wkc-mast-plate" /> },
+  me: { plate: 'wk-orangeplate', art: <Plate art="fanfist" ink="ink" className="wkc-mast-plate" /> },
   file: { plate: 'wk-sky', art: <Plate art="memo" ink="navy" className="wkc-mast-plate wkc-wide" /> },
   closet: { plate: 'wk-redplate', art: <DrawnShirt id="wkc-mast-closet" className="wkc-mast-shirt" /> },
   market: { plate: 'wk-orangeplate', art: <Plate art="swap" ink="red" className="wkc-mast-plate wkc-wide" />, burst: true },

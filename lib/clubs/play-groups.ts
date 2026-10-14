@@ -13,5 +13,7 @@ const hash=(s:string)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCo
 /** One gate per club per day, the same for everyone who opens the page that day. `day` is a calendar day (YYYY-MM-DD). */
 export function todaysPick(clubId:string,open:readonly GateKey[],day:string):GateKey|null{
  const pool=PICKABLE.filter(k=>open.includes(k))
- return pool.length?pool[hash(`${clubId}:${day}`)%pool.length]!:null
+ // a calendar rotation, not a dice roll: consecutive days never repeat, and each club starts at its own place in the cycle
+ const n=Math.floor(Date.parse(`${day}T00:00:00Z`)/86400000)
+ return pool.length?pool[((Number.isFinite(n)?n:0)+hash(clubId))%pool.length]!:null
 }
