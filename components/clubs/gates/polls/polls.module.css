@@ -19,6 +19,8 @@
 .tabs { flex: 1; min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 .tab { min-height: 58px !important; font-size: 15px !important; }
 [lang='he'] .tab { text-transform: none; }
+.tabs[data-n='3'] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.tabs[data-n='3'] .tab { font-size: 13px !important; padding-inline: 4px; }
 .count { flex: none; min-height: 48px; display: inline-flex; align-items: center; padding: 0 10px; background: var(--mag-ink); color: var(--mag-lamp); font-family: var(--mag-goal); font-size: 15px; font-variant-numeric: tabular-nums; white-space: nowrap; border-radius: 4px; }
 .count[data-done='true'] { background: var(--pl-lit); color: var(--pl-on); }
 

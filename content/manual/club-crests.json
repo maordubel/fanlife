@@ -1,5 +1,5 @@
 {
-  "note": "Club crests. Owner approved their use everywhere a club mark appears (10.10.2026). Trademarks of their clubs, shown as identification. Zrinjski is not in the source; it keeps its initials badge. Modern marks only: AWAY DAYS opponents are historical clubs and are not given today's crest.",
+  "note": "Club crests. Owner approved their use everywhere a club mark appears (10.10.2026). Trademarks of their clubs, shown as identification. Zrinjski Mostar: supplied by the owner (14.10.2026). Modern marks only: AWAY DAYS opponents are historical clubs and are not given today's crest.",
   "crests": [
     {
       "club": "aek-athens",
@@ -63,6 +63,15 @@
       "source": "https://github.com/luukhopman/football-logos",
       "sourcePath": "logos/Israel - Ligat ha'Al/Hapoel Tel Aviv.png",
       "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "zrinjski-mostar",
+      "file": "public/crests/zrinjski-mostar.png",
+      "sha256": "98bdb32c6a1874aa6553066032edbaefdfe5a6ccf5aa35525f7ca8a14190b384",
+      "bytes": 113957,
+      "source": "owner upload (14.10.2026)",
+      "sourcePath": "owner-supplied image",
+      "sourceCommit": null
     }
   ]
 }
