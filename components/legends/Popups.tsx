@@ -124,6 +124,8 @@ export function WindowSheet({v,busy,send,onMarket,onClose}:{v:CareerView;busy:bo
  return <Sheet id="lgm-window" tone="night" wide kicker={when} title={<span className="lgm-wintitle"><b>Transfer window</b><i>Open</i></span>} onClose={onClose}>
   <div className="lgm-window-body">
    <dl className="lgm-sum lgm-sum-row"><div data-total><dt>To spend</dt><dd>{money(v.cash)}</dd></div><div><dt>Squad</dt><dd>{v.squad.length}<small>/{v.rules.maxSquad}</small></dd></div><div><dt>Quotas</dt><dd className="lgm-q">GK {v.quotas.GK} · DF {v.quotas.DF} · MF {v.quotas.MF} · FW {v.quotas.FW}</dd></div></dl>
+   {w.bids.length?<section className="lgm-bids" aria-label="Bids for your listed men" data-testid="legends-bids"><p className="lgm-kicker">Offers on the table</p><ul>{w.bids.map(b=><li key={b.card}><span><b>{b.name}</b><small>{b.clubName} offer {money(b.fee)}</small></span>
+    <span className="lgm-bid-btns"><button type="button" className="lgm-go min-h-tap" disabled={busy} onClick={()=>send({kind:'bid',card:b.card,accept:true},`${b.name} sold to ${b.clubName} for ${money(b.fee)}.`)}>Accept</button><button type="button" className="lgm-ghost min-h-tap" disabled={busy} onClick={()=>send({kind:'bid',card:b.card,accept:false},`You turned down ${b.clubName}.`)}>Decline</button></span></li>)}</ul></section>:null}
    <div className="lgm-seg lgm-seg-wide" role="tablist" aria-label="The window">
     <button type="button" role="tab" aria-selected={tab==='buy'} className="min-h-tap" onClick={()=>setTab('buy')}>Buy · {w.offers.length}</button>
     <button type="button" role="tab" aria-selected={tab==='sell'} className="min-h-tap" onClick={()=>setTab('sell')}>Sell · {v.squad.length}</button>
@@ -131,7 +133,7 @@ export function WindowSheet({v,busy,send,onMarket,onClose}:{v:CareerView;busy:bo
    {tab==='buy'?<>
     {full?<p className="lgm-fine">The squad is full ({v.rules.maxSquad}). Sell a man first, or swap one in the full market.</p>:null}
     <ul className="lgm-deals">{w.offers.length?w.offers.map((c,i)=><Deal key={c.id} c={c} i={i} disabled={busy||full||c.price>v.cash} onBuy={()=>send({kind:'buy',card:c.id},`${c.name} signed for ${money(c.price)}.`)} cash={v.cash}/>):<li className="lgm-fine">Nothing you can afford today.</li>}</ul>
-    <p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={onMarket}>Search all of {v.clubName}’s history →</button></p>
+    <p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={onMarket}>See the five on sale →</button></p>
    </>:<ul className="lgm-cands">{v.squad.map(s=><li key={s.id}><div className="lgm-sellrow"><span className="lgm-pos" data-pos={s.pos}>{s.pos}</span><b>{s.name}</b><Stars value={s.stars} size="sm"/>
      {sell===s.id?<span className="lgm-sellyes"><button type="button" className="lgm-go min-h-tap" disabled={busy||!s.sale} onClick={()=>{send({kind:'sell',card:s.id},`${s.name} sold for ${money(s.sale?.net??0)}.`);setSell(null)}}>Sell · {money(s.sale?.net??0)}</button><button type="button" className="lgm-link min-h-tap" onClick={()=>setSell(null)}>Keep</button></span>
       :<button type="button" className="lgm-ghost min-h-tap" disabled={!s.sale} onClick={()=>setSell(s.id)}>{s.sale?money(s.sale.net):'—'}</button>}</div></li>)}</ul>}

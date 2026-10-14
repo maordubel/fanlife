@@ -156,6 +156,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
 
   {card?<Sheet id="lgm-card" kicker={posName(card.pos)} title={card.name} onClose={()=>setCard(null)}>
    <LegendCard c={card} shirt><p className="lgm-fine">{card.appsTotal} appearances · {card.goals} goals this season · {card.yellows} yellows · signed for {money(card.paid)}</p>
+    <p className="lgm-actions"><button type="button" className="lgm-ghost min-h-tap" disabled={busy} aria-pressed={card.listed} onClick={()=>send({kind:'list',card:card.id,listed:!card.listed},card.listed?`${card.name} is off the transfer list.`:`${card.name} is on the transfer list. Bids come when a window opens.`)} data-testid="legends-list">{card.listed?'Take off the transfer list':'Put on the transfer list'}</button></p>
     {card.sale?<p className="lgm-actions"><button type="button" className="lgm-ghost min-h-tap" disabled={busy} onClick={()=>{send({kind:'sell',card:card.id},`${card.name} sold for ${money(card.sale!.net)}.`);setCard(null)}}>Sell · {money(card.sale.net)}</button></p>:<p className="lgm-fine">Sales happen in a transfer window.</p>}
    </LegendCard>
   </Sheet>:null}

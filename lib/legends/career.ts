@@ -8,6 +8,7 @@ import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScor
 import {checkDecision,maxStopsOf,run,stopsV4,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
+import {bidsFor,buySlots,windowKey} from './market'
 import {applyTalk,decayMood} from './morale'
 import {pickSituation,situationById,type Result,type Situation,type TalkCtx} from './talks'
 import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
@@ -29,6 +30,9 @@ export const catalogMap=(c:Career)=>{let m=maps.get(c.catalog);if(!m){m=new Map(
 export function cardOf(c:Career,t:Team,id:string):Card|undefined{
  return (t.ai?t.cards[id]:catalogMap(c).get(id))??t.emergency.find(e=>e.id===id)?.card
 }
+/** this window's five men on sale (the whole market, owner 14.10.2026) */
+export const slotsOf=(c:Career)=>buySlots(c,me(c).squad.map(x=>x.id),c.soldThisWindow)
+export const bidsOf=(c:Career)=>bidsFor(c,c.transferList??[],c.declinedBids?.w===windowKey(c)?c.declinedBids.ids:[],id=>catalogMap(c).get(id))
 const teamBy=(c:Career)=>new Map(c.teams.map(t=>[t.club,t]))
 export const windowOpen=(c:Career)=>c.status==='active'&&c.phase==='window'
 const seasonSalt=(c:Career)=>`${c.id}:${c.season.ordinal}`
@@ -63,7 +67,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 }
 
 /* ───────── actions ───────── */
-export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
+export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'list';card:string;listed:boolean}|{kind:'bid';card:string;accept:boolean}|{kind:'swap';sell:string;buy:string}
  |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
  |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'match-tactics';minute:number}|{kind:'play-round'}|{kind:'next-season'}
  |{kind:'talk-pre'|'talk-post';fixture:string;answer:number})&{key:string;rev:number}
@@ -86,6 +90,8 @@ export function parseAction(raw:unknown):Action|null{
    return null}
   case 'draft-confirm':case 'budget-draw':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
+  case 'list':return str(a.card)&&typeof a.listed==='boolean'?{...b,kind:'list',card:a.card as string,listed:a.listed as boolean}:null
+  case 'bid':return str(a.card)&&typeof a.accept==='boolean'?{...b,kind:'bid',card:a.card as string,accept:a.accept as boolean}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
   case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||a.meet===true)?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
@@ -151,6 +157,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const card=catalogMap(c).get(a.card)
    if(!card)return bad(`That man never played for ${c.clubName}.`)
    if(t.squad.some(s=>s.id===card.id))return bad(`${card.name} is already in your squad.`)
+   if(!slotsOf(c).some(x=>x.id===card.id))return bad(`${card.name} is not on the market this window — only five men are.`)
    if(c.soldThisWindow.includes(card.id))return bad(`${card.name} left in this window — he can come back in the next one.`)
    if(t.squad.length>=R.maxSquad)return bad(`A squad holds ${R.maxSquad} at most. Sell first, or swap.`)
    if(card.price>t.cash+1e-9)return bad(`${card.name} costs €${card.price}M; you have €${t.cash}M.`)
@@ -164,7 +171,23 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(err)return bad(`${err} Swap him for someone instead.`)
    const q=saleQuote(card.price,s.paid,s.apps,card.stars,c.settings)
    const lineup=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup:t.lineup
-   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`sell:${a.key}`,kind:'sell',amount:q.net,card:card.id,note:`€${q.quoted}M quoted · €${roundTenths(q.fee+q.guard)}M fees`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id]}}
+   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`sell:${a.key}`,kind:'sell',amount:q.net,card:card.id,note:`€${q.quoted}M quoted · €${roundTenths(q.fee+q.guard)}M fees`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
+  }
+  case 'list':{
+   if(c.phase==='draft'||c.live)return bad('Not now.','closed')
+   if(!t.squad.some(x=>x.id===a.card))return bad('He is not in your squad.')
+   const cur=c.transferList??[],next=a.listed?[...new Set([...cur,a.card])]:cur.filter(x=>x!==a.card)
+   return {ok:true,career:{...c,transferList:next}}
+  }
+  case 'bid':{
+   if(!windowOpen(c))return bad('The transfer window is shut.','closed')
+   const bid=bidsOf(c).find(x=>x.card===a.card);if(!bid)return bad('That offer is no longer on the table.')
+   if(!a.accept){const w=windowKey(c),was=c.declinedBids?.w===w?c.declinedBids.ids:[];return {ok:true,career:{...c,declinedBids:{w,ids:[...was,a.card]}}}}
+   const s=t.squad.find(x=>x.id===a.card),card=s&&catalogMap(c).get(s.id);if(!s||!card)return bad('He is not in your squad.')
+   const squad=t.squad.filter(x=>x.id!==s.id),err=squadError(squad)
+   if(err)return bad(`${err} Swap him for someone instead.`)
+   const lineup=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup:t.lineup
+   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`bid:${a.key}`,kind:'sell',amount:bid.fee,card:card.id,note:`${bid.clubName} bid €${bid.fee}M`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
   }
   case 'swap':{
    if(!windowOpen(c))return bad('The transfer window is shut.','closed')
@@ -172,6 +195,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(!out||!oc)return bad('He is not in your squad.')
    if(!inc)return bad(`That man never played for ${c.clubName}.`)
    if(t.squad.some(s=>s.id===inc.id))return bad(`${inc.name} is already in your squad.`)
+   if(!slotsOf(c).some(x=>x.id===inc.id))return bad(`${inc.name} is not on the market this window — only five men are.`)
    if(c.soldThisWindow.includes(inc.id))return bad(`${inc.name} left in this window.`)
    const q=saleQuote(oc.price,out.paid,out.apps,oc.stars,c.settings),cash=roundTenths(t.cash+q.net-inc.price)
    if(cash<-1e-9)return bad(`After the sale you would have €${roundTenths(t.cash+q.net)}M; ${inc.name} costs €${inc.price}M.`)

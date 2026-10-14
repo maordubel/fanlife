@@ -1,6 +1,6 @@
 import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
 import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
-import {abilities,cardOf,catalogMap,isBye,me,nextFixture,pauseOf,situationById,table,talkOffers,windowOpen,type TalkOffer} from './career'
+import {abilities,bidsOf,slotsOf as marketSlots,cardOf,catalogMap,isBye,me,nextFixture,pauseOf,situationById,table,talkOffers,windowOpen,type TalkOffer} from './career'
 import {manMood,MOOD_TEXT,moodScore,moodWord,type ManMood,type MoodWord} from './morale'
 import {fill,TONE_TEXT,type Tone} from './talks'
 import {available} from './discipline'
@@ -17,7 +17,7 @@ import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
  * hidden rating leaves the server (the catalog never stored it). Every line of the match log is written here with names.
  */
 export type CardView={id:string;name:string;pos:QuotaPos;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
-export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null}
+export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null;/** on the manager's transfer list */listed:boolean}
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
 export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
 export type CareerView={
@@ -27,7 +27,7 @@ export type CareerView={
  draft:null|{budget:number|null;slot:number;required:number;optional:number;picks:(CardView&{slot:number})[];spent:number;left:number;minToFinish:number;rerollsLeft:number;group:QuotaPos|null;lines:{group:QuotaPos;open:boolean;reason:string|null;need:number}[];stuck:boolean;/** names of the same line that roll past the payline before the three land */strip:string[];offers:(CardView&{tier:string;locked:string|null})[];deficits:Record<QuotaPos,number>;canConfirm:string|null;optionalOpen:boolean};
  squad:SquadView[];quotas:Record<QuotaPos,number>;emergency:{id:string;name:string;pos:QuotaPos;games:number}[];
  lineup:{formation:string;xi:string[];bench:string[];tactics:Tactics;/** the manager's captain */captain:string|null;/** his vice-captain */vice:string|null;/** who wears the armband today: the captain in the eleven, else the vice in it, else the eleven's most-starred man */armband:string|null;error:string|null;slots:{id:string;fine:string;family:string;x:number;y:number}[]};
- window:null|{which:'pre'|'early'|'mid';offers:CardView[];sold:string[]};
+ window:null|{which:'pre'|'early'|'mid';/** the five men on sale this window */offers:CardView[];sold:string[];/** bids for the manager's listed men */bids:{card:string;name:string;club:string;clubName:string;fee:number;quoted:number}[]};
  /** the round after which the next window opens, null when none is left this season */
  nextWindow:number|null;
  /** every other club of the league, its squad as a fan may see it: names, lines, stars, years — never a hidden rating */
@@ -65,7 +65,7 @@ export function careerView(c:Career):CareerView{
  const nameIn=(club:string,id?:string)=>{if(!id)return '—';const tm=teams.get(club);return (tm&&cardOf(c,tm,id)?.name)??'—'}
  const win=windowOpen(c)
  const squad:SquadView[]=t.squad.map(s=>{const card=by.get(s.id)!,st=t.status[s.id],q=win?saleQuote(card.price,s.paid,s.apps,card.stars,c.settings):null
-  return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
+  return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),listed:(c.transferList??[]).includes(s.id),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
   .sort((a,b)=>QUOTA_POS.indexOf(a.quota)-QUOTA_POS.indexOf(b.quota)||b.stars-a.stars||a.name.localeCompare(b.name))
  const seed=hash(`${c.id}:draft`),d=c.draft&&c.phase==='draft'?deal(c.catalog.cards,c.draft,seed):null
  const draft=d?{budget:d.budget??null,slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...cv(by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
@@ -89,25 +89,15 @@ export function careerView(c:Career):CareerView{
  const seasonEnd=c.phase==='season-end'&&hist?{place:hist.place,of:hist.of,champion:hist.champion,playoff:hist.playoff,grant:hist.grant,
   bonuses:c.ledger.filter(l=>l.kind==='bonus'&&l.season===hist.ordinal).map(l=>({why:l.note??'Bonus',amount:l.amount})),
   reputation:c.reputation.events.filter(e=>e.season===hist.ordinal).map(e=>({why:e.why,points:e.points})),topScorer:hist.topScorer?{name:hist.topScorer.name,goals:hist.topScorer.goals}:null}:null
- // special offers (§1.3.13): the weakest line's best affordable man, a man of a decade the squad lacks, and the best stars-per-euro — three, four with Market contacts
- let wOffers:CardView[]=[]
- if(win){
-  const own=new Set(t.squad.map(s=>s.id)),n=quotaCount(t.squad),avail=c.catalog.cards.filter(x=>!own.has(x.id)&&!c.soldThisWindow.includes(x.id))
-  const weak=[...QUOTA_POS].sort((a,b)=>{const avg=(p:QuotaPos)=>{const xs=t.squad.filter(s=>s.quota===p).map(s=>by.get(s.id)!.stars).sort((x,y)=>y-x).slice(0,n[p]);return xs.reduce((u,v)=>u+v,0)/Math.max(1,xs.length)};return avg(a)-avg(b)})
-  const decs=new Set(t.squad.flatMap(s=>by.get(s.id)!.decades)),picks:Card[]=[]
-  const add=(x:Card|undefined)=>{if(x&&!picks.includes(x))picks.push(x)}
-  add(avail.filter(x=>x.pos===weak[0]&&x.price<=t.cash).sort((a,b)=>b.stars-a.stars||a.price-b.price)[0])
-  add(avail.filter(x=>x.decades.length&&x.decades.every(dd=>!decs.has(dd))&&x.price<=t.cash).sort((a,b)=>b.stars-a.stars)[0])
-  add(avail.filter(x=>x.price<=t.cash).sort((a,b)=>b.stars/b.price-a.stars/a.price||b.stars-a.stars)[0])
-  if(ab.includes('contacts'))add(avail.filter(x=>x.pos===weak[1]&&x.price<=t.cash).sort((a,b)=>b.stars-a.stars)[0])
-  wOffers=picks.map(cv)
- }
+ // the market is five slots, the better-known names likelier (owner, 14.10.2026); bids come for the men on the transfer list
+ const wOffers:CardView[]=win?marketSlots(c).map(cv):[]
+ const wBids=win?bidsOf(c).map(b=>({...b,name:by.get(b.card)?.name??'—'})):[]
  return {id:c.id,revision:c.revision,status:c.status,phase:c.phase,cutscene:c.cutscene,clubId:c.clubId,clubName:c.clubName,season:c.season.ordinal,rounds:c.season.rounds,played:c.season.played,cash:t.cash,reputation:c.reputation.points,
   abilities:ABILITIES.map(a=>({id:a.id,label:a.label,hint:a.hint,at:a.at,open:c.reputation.points>=a.at})),settings:c.settings,
   rules:{minSquad:R.minSquad,maxSquad:R.maxSquad,minimums:{...R.minimums},maxSubs:R.maxSubs,stops:R.maxInterventionWindows},draft,squad,quotas:quotaCount(t.squad),
   emergency:t.emergency.map(e=>({id:e.id,name:e.card.name,pos:e.card.pos,games:e.games})),
   lineup:{formation:t.lineup.formation,xi:t.lineup.xi,bench:t.lineup.bench,tactics:t.lineup.tactics,captain:t.lineup.captain??null,vice:t.lineup.vice??null,armband:captainOf(t.lineup,id=>cardOf(c,t,id))??null,error:c.phase==='draft'?null:lineupError(t.lineup,fieldable(t,id=>cardOf(c,t,id))),slots:slotsOf(t.lineup.formation).map(s=>({id:s.id,fine:s.fine,family:s.family,x:s.x,y:s.y}))},
-  window:win?{which:c.season.played===0?'pre':c.season.played<Math.floor(c.season.rounds/2)?'early':'mid',offers:wOffers,sold:c.soldThisWindow}:null,nextWindow:nextWindowOf(c),clubs:clubsOf(c),next,bye:isBye(c),live,last,results,
+  window:win?{which:c.season.played===0?'pre':c.season.played<Math.floor(c.season.rounds/2)?'early':'mid',offers:wOffers,sold:c.soldThisWindow,bids:wBids}:null,nextWindow:nextWindowOf(c),clubs:clubsOf(c),next,bye:isBye(c),live,last,results,
   table:rows.map(r=>({club:r.club,name:r.name,p:r.p,w:r.w,d:r.d,l:r.l,gf:r.gf,ga:r.ga,gd:r.gd,pts:r.pts,form:r.form.slice(-5),mine:r.club===c.clubId})),
   tieNote:`Ties: points, goal difference, goals scored, head-to-head, then lots drawn at kick-off. A title level on everything but the lots goes to a play-off.`,
   seasonEnd,stats:seasonStats(c,nameIn),lastChampion:c.phase==='season-end'&&c.season.ranks[0]?teams.get(c.season.ranks[0])?.name??null:null,history:c.history,
