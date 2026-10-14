@@ -23,6 +23,8 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {livery} from '@/lib/club-livery'
 import {clubHref} from '@/lib/clubs/club-href'
+import {SupporterCard} from '@/components/clubs/SupporterCard'
+import {GoogleAccount} from '@/components/fanlife/me/GoogleAccount'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
@@ -78,6 +80,13 @@ export default async function Terrace({params,searchParams}:{params:{slug:string
     <header className="wk-stripes wkk-season-head"><span className="wkk-card-crest"><Badge club={{id,pattern:lv?.pattern,initials:c.initials,name:c.name}}/></span><h2 id="season-h" className="wk-logo sm">{copy.terraceSeason}</h2></header>
     <ClubActivity club={id} locale={locale}/>
    </div>
+  </section>}
+
+  {core&&<section className="wkk-yourcorner" id="your-corner" aria-labelledby="corner-h">
+   <div className="wkk-sechead"><h2 id="corner-h" className="wk-logo red sm wk-tilt">{copy.terraceCorner}</h2></div>
+   <SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={Object.fromEntries(SHARED_GATES.map(g=>[g.key,games[`gate.${g.key}`]]))} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/>
+   <GoogleAccount/>
+   <Link className="wk-btn paper min-h-tap wkk-corner-me" href="/me" data-testid="terrace-me">{copy.terraceMeCta} <span aria-hidden="true">→</span></Link>
   </section>}
 
   {vote&&<section className="wkk-vote" aria-labelledby="vote-h">

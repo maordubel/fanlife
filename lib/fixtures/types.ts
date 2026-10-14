@@ -27,6 +27,20 @@ export type Fixture = {
   providerEventId: string
 }
 
+/** a finished match with a recorded score (the provider's "last events"); the hub's Stop Press reads it as LAST */
+export type Result = {
+  clubId: string
+  kickoff: string
+  home: string
+  away: string
+  homeScore: number
+  awayScore: number
+  clubSide: 'home' | 'away'
+  opponent: string
+  competition: string | null
+  providerEventId: string
+}
+
 export type FixtureDiagnostic = {
   clubId: string
   teamId: string | null
@@ -41,5 +55,7 @@ export type FixtureFeed = {
   source: 'thesportsdb'
   generatedAt: string
   fixtures: Fixture[]
+  /** the latest finished match per club, where the provider has one — absent on feeds cached before results existed */
+  results?: Result[]
   diagnostics: FixtureDiagnostic[]
 }

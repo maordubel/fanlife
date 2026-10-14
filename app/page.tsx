@@ -46,7 +46,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   const nick=(id:string)=>clubWorld(id)?.nicknames[0]?.text
  const now=new Date(),preview=evaluationMode()
  // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
- const [{model,strict},life,af,fl]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('allFootball'),door('fanLeague')])
+ const [{model,strict},life,fl]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague')])
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
@@ -55,7 +55,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  // English reads day-month-year (rule 94.5)
  const date=new Intl.DateTimeFormat(locale==='en'?'en-GB':locale,{dateStyle:'full',timeZone:'UTC'}).format(now),iso=now.toISOString().slice(0,10)
  // the provider never holds the first byte: the strip and the match card stream in when the feed answers
- const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
+ const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} last={copy.stopLast} next={copy.stopNext} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
  const couponCopy={kicker:copy.wkhInNext,coupon:copy.wkhCoupon,cols:copy.wkhCouponCols,all:copy.wkhNextAll,note:copy.nextNote,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLamp:copy.wkhTbc,close:copy.chooserClose}
  const dockCopy={title:copy.dockTitle,kept:copy.wkhKept,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,fileSub:copy.wkFileSub,stand:copy.dockStand,standSub:copy.wkhStandSub,market:copy.dockMarket,marketSub:copy.wkMarketSub,sources:copy.dockSources,sourcesSub:copy.wkSourcesSub,voted:copy.dockVoted,vote:copy.dockVote,voteSub:copy.wkhVoteSub}
  const dockClubs=open.map(c=>({id:c.id,name:c.name})),dockOpen=live.map(c=>c.id)
@@ -80,6 +80,14 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <time className="wk-k wk-muted wkh-date-m" dateTime={iso}>{date}</time>
   </header>
 
+  {/* THE MANAGER: LEGENDS MANAGER leads the page, above the gates (owner, 14.10.2026). */}
+  {fl.open&&<section className="wkh-lm" aria-label={copy.wkhLmTitle}>
+   <Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
+    <Emblem size={76} label="" className="wkh-sp-emblem"/>
+    <span className="wkh-sp-t"><span className="wk-k">{copy.wkhLmK}</span><b>{copy.wkhLmTitle}</b><small>{copy.wkhLmSub}{fl.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
+   </Link>
+  </section>}
+
   {/* THE COVER: orange plate, speed lines, the kicker, the two teasers that open a club chooser. */}
   <section className="wkh-cover wk-panel wk-orangeplate" aria-labelledby="cover-h">
    <span className="wk-speed wkh-cover-speed" aria-hidden="true"/>
@@ -95,6 +103,30 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
     <GateChooser gate="trivia" clubs={model} copy={chooser} className="wkh-teaser"><b>{copy.teaseQuizK}</b><small>{copy.teaseQuiz}</small></GateChooser>
    </div>
    <p className="wkh-plus"><span className="wk-tag red">{copy.plusK}</span><span className="wk-k white wkh-plus-t"><span>{copy.plus1}</span><span className="wkh-plus-sep"> · </span><span>{copy.plus2}</span></span><Image className="wkh-seal" src="/brand/fanlife/logo-192.png" alt="" width={192} height={192} priority unoptimized/></p>
+  </section>
+
+  {/* THE GAME: LIFE, the app's central feature (owner, 7.10.2026). */}
+  <section className="wkh-life" id="life" aria-labelledby="life-h">
+   <div className="wkh-life-card wk-panel">
+    <span className="wkh-life-art wk-orangeplate" aria-hidden="true"><span className="wk-speed"/><Plate art="fatherson" ink="navy"/></span>
+    <div className="wkh-life-txt">
+     <p className="wk-k wkh-orange">{copy.lifeEntryTitle} · {copy.lifeGameSub}</p>
+     <h2 className="wk-shout wkh-life-shout" id="life-h" dir="ltr">{copy.wkhLifeShout}</h2>
+     <p className="wk-small">{copy.lifeEntryNote}</p>
+     <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="wkh-life-cta">{copy.lifeEntryCta} <Arrow/></GateChooser>
+    </div>
+   </div>
+  </section>
+
+  {/* THE MARKET, compact: one line, one button (owner, 14.10.2026). */}
+  <section className="wkh-market wkh-market-mini wk-redplate" id="market" aria-labelledby="market-h">
+   <span className="wk-speed wkh-market-speed" aria-hidden="true"/>
+   <Plate art="swap" ink="red" className="wkh-market-art"/>
+   <div className="wkh-market-txt">
+    <p className="wk-k white">{copy.marketKicker}</p>
+    <h2 className="wk-logo wkh-market-title" id="market-h">{copy.marketTitle}</h2>
+   </div>
+   <div className="wkh-market-ctas"><Link className="wk-btn paper" href="/market">{copy.marketCta} <Arrow/></Link></div>
   </section>
 
   {/* INSIDE THIS ISSUE: four cells on a phone, the contents column on a desktop. Never a sideways strip. */}
@@ -129,32 +161,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   {/* NEXT UP — FOR REAL: the coupon, every club on the roll (streams in; rule 104). */}
   <Suspense fallback={<HubNextUpWaiting title={copy.nextUp} kicker={copy.wkhInNext}/>}><HubNextUp open={open} locale={locale} copy={couponCopy} title={copy.nextUp}/></Suspense>
 
-  {/* THE GAME: LIFE, the app's central feature (owner, 7.10.2026). */}
-  <section className="wkh-life" id="life" aria-labelledby="life-h">
-   <div className="wkh-life-card wk-panel">
-    <span className="wkh-life-art wk-orangeplate" aria-hidden="true"><span className="wk-speed"/><Plate art="fatherson" ink="navy"/></span>
-    <div className="wkh-life-txt">
-     <p className="wk-k wkh-orange">{copy.lifeEntryTitle} · {copy.lifeGameSub}</p>
-     <h2 className="wk-shout wkh-life-shout" id="life-h" dir="ltr">{copy.wkhLifeShout}</h2>
-     <p className="wk-small">{copy.lifeEntryNote}</p>
-     <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="wkh-life-cta">{copy.lifeEntryCta} <Arrow/></GateChooser>
-    </div>
-   </div>
-  </section>
-
-  {/* SPECIAL EDITIONS + YOUR WORLD: the doors that span every club, then what this device remembers. */}
   <div className="wkh-spec">
-   {(af.open||fl.open)&&<section className="wkh-special" aria-labelledby="sp-h">
-    <div className="wkh-sechead"><p className="wk-banner">{copy.wkhSpecialK}</p><h2 className="wk-logo cyan wkh-title" id="sp-h">{copy.wkhSpecial}</h2></div>
-    {af.open&&<Link className="wkh-sp wkh-sp-af" href="/all-football" data-preview={af.preview||undefined}>
-     <span className="wk-roundel wkh-sp-mark" aria-hidden="true"><b className="wk-num">∞</b></span>
-     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhAfK}</span><b>{copy.wkAllFootball}</b><small>{copy.wkhAfSub}{af.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
-    </Link>}
-    {fl.open&&<Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
-     <Emblem size={76} label="" className="wkh-sp-emblem"/>
-     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhLmK}</span><b>{copy.wkhLmTitle}</b><small>{copy.wkhLmSub}{fl.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
-    </Link>}
-   </section>}
    <HubDock part="links" clubs={dockClubs} openIds={dockOpen} locale={locale} copy={dockCopy}/>
   </div>
 
@@ -162,20 +169,6 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
    {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{ballot:copy.wkhBallot,question:copy.wkhBallotQ,kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,note:copy.voteNote,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess}}/>}
   </SuggestClub>
-
-  {/* THE MARKET: the shirt swap is the market's mark, repeated here, on the market page and at its door (owner, 9.10.2026). */}
-  <section className="wkh-market wk-redplate" id="market" aria-labelledby="market-h">
-   <span className="wk-speed wkh-market-speed" aria-hidden="true"/>
-   <Plate art="swap" ink="red" className="wkh-market-art"/>
-   <span className="wk-burst yellow wkh-market-burst" aria-hidden="true"><span className="wk-head">{copy.wkhNoFee}</span></span>
-   <div className="wkh-market-txt">
-    <p className="wk-k white">{copy.marketKicker}</p>
-    <h2 className="wk-logo wkh-market-title" id="market-h">{copy.marketTitle}</h2>
-    <p>{copy.marketBody}</p>
-    <ul className="wkh-points"><li>{copy.marketPoint1}</li><li>{copy.marketPoint2}</li><li>{copy.marketPoint3}</li></ul>
-   </div>
-   <div className="wkh-market-ctas"><Link className="wk-btn paper" href="/market">{copy.marketCta} <Arrow/></Link><Link className="wkh-ghost" href="/market?view=wanted">{copy.marketWanted}</Link></div>
-  </section>
 
   {/* DEAR TERRACE: the editor's letter — the old weekly's "from the editor" box (owner, 7.10.2026). */}
   <aside className="wkh-letter" aria-labelledby="editor-h">

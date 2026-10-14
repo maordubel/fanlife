@@ -42,6 +42,10 @@ describe('club app shell',()=>{
   expect(todaysPick('olympiacos',['kits','archive'],'2026-10-08')).toBeNull()
   const days=new Set(Array.from({length:30},(_,i)=>todaysPick('olympiacos',open,`2026-11-${String(i+1).padStart(2,'0')}`)))
   expect(days.size).toBeGreaterThan(1)
+  // truly rotates: no two consecutive days share a round, and the whole pool comes round
+  const seq=Array.from({length:10},(_,i)=>todaysPick('olympiacos',open.slice(0,3),`2026-11-${String(i+1).padStart(2,'0')}`))
+  for(let i=1;i<seq.length;i++)expect(seq[i]).not.toBe(seq[i-1])
+  expect(new Set(seq).size).toBe(3)
  })
  it("every club's tab bar reads: ink bar with paper type, and the club badge's own ink reads on its colour",()=>{
   for(const r of REGISTRY){const t=clubTheme(r);expect(contrast(t.primary,t.onPrimary),r.id).toBeGreaterThanOrEqual(4.5)}

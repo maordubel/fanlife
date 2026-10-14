@@ -10,7 +10,7 @@
  * team that cannot be identified exactly gives no fixture.
  */
 import {norm} from './names'
-import type {Fixture, FixtureTeam} from './types'
+import type {Fixture, FixtureTeam, Result} from './types'
 
 const BASE = 'https://www.thesportsdb.com/api/v1/json'
 export const providerUrl = (key: string, path: string) => `${BASE}/${encodeURIComponent(key)}/${path}`
@@ -121,4 +121,30 @@ export async function teamCardFor(team: FixtureTeam, key: string, get: Fetcher):
     if (card) return card
   }
   return null
+}
+
+/** Finished matches with both scores written by the provider; anything else is dropped, never guessed. */
+export function parseResults(json: unknown): Array<ProviderEvent & {homeScore: number; awayScore: number}> {
+  const byId = new Map(parseEvents(json).map(e => [e.id, e]))
+  const out: Array<ProviderEvent & {homeScore: number; awayScore: number}> = []
+  for (const e of [...list(json, 'results'), ...list(json, 'events')]) {
+    const id = str(e.idEvent), ev = id ? byId.get(id) : undefined
+    const h = str(e.intHomeScore), a = str(e.intAwayScore)
+    if (!ev || h === null || a === null || !/^\d{1,2}$/.test(h) || !/^\d{1,2}$/.test(a)) continue
+    if (!out.some(x => x.id === ev.id)) out.push({...ev, homeScore: Number(h), awayScore: Number(a)})
+  }
+  return out
+}
+/** The most recent finished match of this provider team, before now. */
+export function chooseLast(clubId: string, teamId: string, results: ReturnType<typeof parseResults>, now: Date): Result | null {
+  const e = results
+    .filter(r => (r.homeId === teamId || r.awayId === teamId) && Date.parse(r.kickoff) < now.getTime())
+    .sort((a, b) => Date.parse(b.kickoff) - Date.parse(a.kickoff) || a.id.localeCompare(b.id))[0]
+  if (!e) return null
+  const clubSide = e.homeId === teamId ? 'home' : 'away'
+  return {clubId, kickoff: e.kickoff, home: e.home, away: e.away, homeScore: e.homeScore, awayScore: e.awayScore, clubSide,
+    opponent: clubSide === 'home' ? e.away : e.home, competition: e.competition, providerEventId: e.id}
+}
+export async function lastForClub(clubId: string, teamId: string, key: string, get: Fetcher, now: Date): Promise<Result | null> {
+  return chooseLast(clubId, teamId, parseResults(await get(providerUrl(key, `eventslast.php?id=${teamId}`))), now)
 }
