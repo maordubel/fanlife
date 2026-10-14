@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic'
 export default function ContributionsPage() {
   return (
     <FanPage active="closet" title={fl('contrib.title')} sub={fl('contrib.lede')}>
-      <p className="mb-4"><a href="/closet" className="inline-flex min-h-tap items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4">{fl('contrib.back')}</a></p>
+      <p className="mb-4"><a href="/closet" className="wk-k wkc-back"><span aria-hidden="true">‹</span> {fl('contrib.back')}</a></p>
       <Contributions />
     </FanPage>
   )

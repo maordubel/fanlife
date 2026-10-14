@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic'
 export default async function ClosetPage() {
   const shirts = await fanShirtMap()
   return (
-    <FanPage active="closet" title={t('collector.closet.title')} sub={t('collector.closet.lede')}>
+    <FanPage active="closet" mast="full" title={t('collector.closet.title')} sub={t('collector.closet.lede')}>
       <AdoptShirts shirts={shirts} />
       <ClosetScreen shirts={shirts} archive={Object.values(shirts)} />
     </FanPage>

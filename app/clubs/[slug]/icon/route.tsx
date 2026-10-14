@@ -11,11 +11,12 @@ export function GET(req:Request,{params}:{params:{slug:string}}) {
  if(!app)return new NextResponse('Not found',{status:404})
  const s=[180,192,512].includes(Number(new URL(req.url).searchParams.get('s')))?Number(new URL(req.url).searchParams.get('s')):512
  const {primary,on,pattern}=app,paper=app.background
- const bg=pattern==='stripes'?`repeating-linear-gradient(90deg, ${primary} 0px, ${primary} ${s/9}px, ${paper} ${s/9}px, ${paper} ${2*s/9}px)`
-  :pattern==='hoops'?`repeating-linear-gradient(0deg, ${primary} 0px, ${primary} ${s/9}px, ${paper} ${s/9}px, ${paper} ${2*s/9}px)`
-  :pattern==='sash'?`linear-gradient(135deg, ${primary} 0%, ${primary} 36%, ${paper} 36%, ${paper} 64%, ${primary} 64%, ${primary} 100%)`
+ // stripes and hoops: nine hard bands as one plain gradient — the OG renderer refuses a repeating gradient at fractional px stops
+ const bands=pattern==='stripes'||pattern==='hoops'
+ const nine=Array.from({length:9},(_,i)=>{const c=i%2?paper:primary,a=Math.round(i*1000/9)/10,b=Math.round((i+1)*1000/9)/10;return `${c} ${a}%, ${c} ${b}%`}).join(', ')
+ const bg=pattern==='sash'?`linear-gradient(135deg, ${primary} 0%, ${primary} 36%, ${paper} 36%, ${paper} 64%, ${primary} 64%, ${primary} 100%)`
   :pattern==='halves'?`linear-gradient(90deg, ${primary} 0%, ${primary} 50%, ${paper} 50%, ${paper} 100%)`
-  :primary
+  :bands?`linear-gradient(${pattern==='stripes'?'90deg':'0deg'}, ${nine})`:primary
  const plated=pattern!=='solid',crest=crestFor(app.reg.id)
  return new ImageResponse(<div style={{width:s,height:s,display:'flex',alignItems:'center',justifyContent:'center',background:bg}}>
   <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:s*0.62,height:s*0.62,borderRadius:s,border:`${Math.round(s/40)}px solid ${BRAND.ink}`,background:crest?paper:plated?paper:primary,color:plated?BRAND.ink:on,fontSize:s*0.26,fontWeight:900,letterSpacing:-s/80}}>{crest?<img src={new URL(crest,req.url).toString()} width={Math.round(s*0.38)} height={Math.round(s*0.5)} alt=""/>:app.reg.initials}</div>

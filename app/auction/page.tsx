@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic'
 /** The auction — one shirt, one time window, one winner (The Worker's auction, every club). */
 export default async function AuctionPage() {
   return (
-    <FanPage active="auction" title={t('screen.auction.title')} sub={t('screen.auction.sub')}>
+    <FanPage active="auction" mast="full" title={t('screen.auction.title')} sub={t('screen.auction.sub')}>
       <AuctionBoard shirts={await fanAuctionShirts()} />
     </FanPage>
   )

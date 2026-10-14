@@ -139,9 +139,9 @@ try {
  await page.goto(`${base}/`)
  for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']){
   // magazine home: shared paper tile, club colour only on the badge (livery) — see CLAUDE.md rule 91
-  const tile=page.locator(`.mag-tile[data-club="${slug}"]`)
+  const tile=page.locator(`a[data-club-tile="open"][data-club="${slug}"]`)
   // A club is either open (its own tile) or still in the workshop (a vote tile) — the owner's publication decides which (rule 91/100)
-  if(await tile.count()===0){assert.equal(await page.locator(`.mag-shop[data-club="${slug}"]`).count(),1,`${slug} neither open nor in the workshop`);continue}
+  if(await tile.count()===0){assert.equal(await page.locator(`[data-club-tile="workshop"][data-club="${slug}"]`).count(),1,`${slug} neither open nor in the workshop`);continue}
   assert.equal(await tile.count(),1,`${slug} tile`)
   assert((await tile.getAttribute('href')).startsWith(`/clubs/${slug}`),`${slug} href`)
   const badge=tile.locator('.mag-badge')

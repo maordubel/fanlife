@@ -158,5 +158,15 @@
   "ks.own.closet": "To my closet →",
   "ks.own.market": "{n} in the market →",
   "ks.own.saved": "Saved.",
-  "ks.own.label": "Your closet"
+  "ks.own.label": "Your closet",
+  "ks.brief.change": "tap to change",
+  "ks.coll.album": "the shirt album",
+  "ks.coll.of": "of {n} open",
+  "ks.coll.mapAria": "{n} of {total} shirts open, oldest to newest",
+  "ks.coll.axis": "oldest → newest",
+  "ks.coll.decade": "{decade}s",
+  "ks.coll.otherSeasons": "Other seasons",
+  "ks.coll.page": "Page {n}",
+  "ks.coll.openOf": "{n} of {total} open",
+  "ks.coll.buildOne": "Build one!"
 }

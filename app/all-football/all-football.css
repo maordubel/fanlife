@@ -1,67 +1,182 @@
-/* ───────── ALL FOOTBALL — the world edition (ADR-fanlife-0009) ─────────
-   FAN LIFE's neutral press: paper, ink, vermilion rules. Club colour lives only on .mag-badge. Tokens only (rule 91). */
+/* ───────── ALL FOOTBALL — the world edition (ADR-fanlife-0009), dressed as THE WEEKLY (rule 124) ─────────
+   FAN LIFE's neutral press over every club: a navy masthead with the globe, the draw as a coupon, each gate a cover. A club's
+   colour lives only on its own disc. Tokens only (--mag-*), logical properties only, nothing slides sideways; the phone gets one
+   column, the desk a spread (the draw beside the covers). */
 .af { --af-rule: color-mix(in srgb, var(--mag-ink) 24%, transparent); --club-primary: var(--mag-vermilion); --club-on-primary: var(--mag-white); --club-type: var(--mag-vermilion); }
-.af-ribbon { margin: 0; padding: 10px 16px; background: var(--mag-ink); color: var(--mag-paper); font: 600 14px var(--mag-body); text-align: center; }
-.af-ribbon b { font-family: var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-salmon); margin-inline-end: 8px; }
-.af-front { max-inline-size: 1180px; margin: 0 auto; padding: 22px var(--gutter, 16px) 64px; }
-.af-mast { display: grid; gap: 10px; padding-block: 18px 22px; border-block: 6px double var(--mag-ink); text-align: center; position: relative; }
-.af-mast .af-edition { display: flex; justify-content: space-between; gap: 12px; font: 700 11px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; border-block-end: 1px solid var(--af-rule); padding-block-end: 8px; }
-.af-mast h1 { margin: 0; font-family: var(--mag-display); font-size: clamp(54px, 13vw, 148px); line-height: .82; letter-spacing: -1px; text-transform: uppercase; }
-.af-mast h1 span { color: var(--mag-vermilion); }
-.af-mast p { margin: 0 auto; max-inline-size: 56ch; font: 500 clamp(16px, 2.2vw, 20px)/1.4 var(--mag-body); }
-.af-label { display: block; font: 700 11px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); }
-.af-contrib { margin-block: 18px; }
-.af-contrib ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 16px; }
-.af-contrib li { display: inline-flex; align-items: center; gap: 8px; font: 700 14px var(--mag-body); }
-.af-badge { inline-size: 32px; block-size: 32px; font-size: 11px; border-width: 2px; }
-.af-modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 3px solid var(--mag-ink); margin-block: 8px 26px; background: var(--mag-card); }
-.af-modes > a, .af-modes > form { display: grid; align-content: start; gap: 6px; padding: 14px 16px; border-inline-end: 1px solid var(--af-rule); color: var(--mag-ink); min-block-size: 44px; }
-.af-modes > :last-child { border: 0; }
-.af-modes b { font: 700 24px/1 var(--mag-condensed); text-transform: uppercase; letter-spacing: .5px; }
-.af-modes small { font-size: 13px; }
-.af-modes [aria-current='true'] { background: var(--mag-ink); color: var(--mag-paper); }
-.af-modes select { min-block-size: 44px; border: 2px solid currentColor; background: var(--mag-paper); color: var(--mag-ink); font: 600 14px var(--mag-body); padding: 0 8px; }
-.af-modes .af-duel-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.af-modes button { min-block-size: 44px; padding: 0 14px; background: var(--mag-vermilion); color: var(--mag-white); border: 0; font: 700 13px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; }
-.af-stories { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 0; border-block: 3px solid var(--mag-ink); }
-.af-story { display: grid; align-content: start; gap: 10px; padding: 20px 20px 24px; border-inline-end: 1px solid var(--af-rule); color: var(--mag-ink); }
-.af-story:last-child { border: 0; }
-.af-story:hover h2 { text-decoration: underline; text-decoration-thickness: 3px; }
-.af-story .af-kicker { font: 700 11px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); }
-.af-story h2 { margin: 0; font: 700 clamp(34px, 4.6vw, 58px)/.9 var(--mag-condensed); text-transform: uppercase; letter-spacing: .3px; }
-.af-story:first-child h2 { font-size: clamp(42px, 6vw, 80px); }
-.af-story p { margin: 0; font-size: 16px; line-height: 1.45; }
-.af-story .af-figure { font: 700 64px/1 var(--mag-condensed); color: var(--mag-vermilion); }
-.af-story .af-figure small { display: block; font: 700 11px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-ink); }
-.af-story .af-go { justify-self: start; display: inline-flex; align-items: center; gap: 8px; min-block-size: 48px; padding: 0 18px; background: var(--mag-ink); color: var(--mag-paper); font: 700 14px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; }
-.af-story[data-closed] { opacity: .55; } .af-story[data-closed] .af-go { background: transparent; color: var(--mag-ink); border: 2px dashed var(--mag-ink); }
-.af-note { margin-block: 22px 0; font-size: 14px; color: color-mix(in srgb, var(--mag-ink) 78%, transparent); border-inline-start: 5px solid var(--mag-vermilion); padding-inline-start: 12px; }
-.af-gatebar { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding-block: 10px; border-block-end: 3px solid var(--mag-ink); margin-block-end: 14px; }
-.af-gatebar h1 { margin: 0; font: 700 32px/1 var(--mag-condensed); text-transform: uppercase; }
-.af-back { display: inline-flex; align-items: center; font: 700 12px var(--mag-mono); letter-spacing: 1px; color: var(--mag-ink); }
-.af-mode { font: 700 11px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; border: 2px solid currentColor; padding: 4px 8px; }
-.af-gatebar .af-contrib { grid-column: 1 / -1; margin: 0; }
-.af-closed { padding: 18px; border: 3px dashed var(--mag-ink); background: var(--mag-card); }
-@media (max-width: 860px) {
-  .af-front { display: flex; flex-direction: column; } .af-modes { order: 3; margin-block: 26px 0; } .af-note { order: 4; }
-  .af-stories { grid-template-columns: minmax(0, 1fr); }
-  .af-story { border-inline-end: 0; border-block-end: 1px solid var(--af-rule); }
-  .af-modes { grid-template-columns: minmax(0, 1fr); }
-  .af-modes > a, .af-modes > form { border-inline-end: 0; border-block-end: 1px solid var(--af-rule); }
-  .af-mast .af-edition span:nth-child(2) { display: none; }
-  .af-gatebar { grid-template-columns: minmax(0, 1fr) auto; } .af-gatebar h1 { grid-column: 1 / -1; grid-row: 2; font-size: 28px; }
-}
-.af-line { list-style: none; margin: 0; padding: 0; border-block-start: 2px solid var(--mag-ink); }
-.af-line li { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 4px 12px; padding: 8px 0; border-block-end: 1px solid var(--af-rule); }
-.af-line b { font: 700 13px var(--mag-mono); } .af-line small { grid-column: 2; font-size: 12px; color: color-mix(in srgb, var(--mag-ink) 70%, transparent); }
-.af-contrib[data-compact] ul { gap: 6px; margin-block-start: 6px; } .af-contrib[data-compact] .af-badge { inline-size: 30px; block-size: 30px; }
-.af-league { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; margin-block-start: 22px; padding: 16px 18px; border: 3px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-paper); min-block-size: 44px; }
-.af-league .af-kicker { font: 700 11px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-salmon); }
-.af-league b { font: 700 clamp(34px, 5vw, 56px)/.9 var(--mag-condensed); text-transform: uppercase; } .af-league small { font-size: 15px; }
-.af-league > span[aria-hidden] { grid-row: 1 / 4; grid-column: 2; align-self: center; font-size: 34px; }
 
-/* the Legends Manager badge on the ALL FOOTBALL card (rule 122) */
-.af-league .lgm-emblem { display: block; object-fit: contain; }
-.af-league { grid-template-columns: auto minmax(0, 1fr) auto; }
-.af-league .lgm-emblem { grid-row: 1 / 4; grid-column: 1; inline-size: 96px; block-size: 96px; align-self: center; }
-.af-league > span[aria-hidden] { grid-column: 3; }
+/* the owner's preview note: a peach strip with an ink tag */
+.af-ribbon { display: flex; align-items: center; gap: 10px; margin: 0; padding: 8px 16px; background: color-mix(in srgb, var(--mag-orange) 22%, var(--mag-white)); color: var(--mag-ink); border-block-end: 3px solid var(--mag-ink); font: 700 14px/1.3 var(--mag-body); }
+.af-ribbon .wk-tag { flex: none; }
+.af-ribbon > span { min-inline-size: 0; }
+
+/* back links (the front door and the career use them too) */
+.af-back-row { margin: 0 0 10px; }
+.af-back { display: inline-flex; align-items: center; gap: 6px; min-block-size: 44px; font: 400 15px var(--mag-display); text-transform: uppercase; color: var(--mag-ink); }
+.af-back svg { inline-size: 20px; block-size: 20px; fill: none; stroke: currentColor; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── the front page ── */
+.wkl-af { inline-size: min(1240px, 100%); margin-inline: auto; padding: 14px 16px 56px; }
+.wkl-edition { display: flex; justify-content: space-between; gap: 8px; margin: 0; }
+.wkl-edition-date { display: none; }
+.wkl-af-plate { position: relative; margin-block-start: 10px; block-size: 214px; border: 3px solid var(--mag-ink); box-shadow: inset 0 0 0 3px var(--mag-white), inset 0 0 0 5px var(--mag-ink), 5px 5px 0 var(--mag-ink); }
+.wkl-af-plate > .wk-speed { --sc: rgb(255 251 242 / 0.18); }
+.wkl-globe { position: absolute; inset-inline-start: 16px; inset-block-end: 16px; inline-size: 66px; block-size: 66px; border-radius: 50%; background: var(--mag-cyan); border: 3px solid var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); display: flex; align-items: center; justify-content: center; color: var(--mag-white); z-index: 1; }
+.wkl-globe svg { inline-size: 46px; block-size: 46px; stroke-width: 1.8; }
+.wkl-af-title { position: absolute; inset-inline-start: 14px; inset-block-start: 14px; z-index: 2; display: flex; flex-direction: column; margin: 0; line-height: .9; transform: rotate(-4deg); transform-origin: 0 0; }
+.wkl-af-all { font: 400 30px/0.95 var(--mag-display); text-transform: uppercase; color: var(--mag-yellow); -webkit-text-stroke: 1.5px var(--mag-ink); paint-order: stroke fill; text-shadow: 3px 3px 0 var(--mag-ink); }
+.wkl-af-word { text-transform: none; font: 400 64px/1 var(--mag-brand); color: var(--mag-white); -webkit-text-stroke: 4px var(--mag-ink); paint-order: stroke fill; text-shadow: 5px 5px 0 var(--mag-green); letter-spacing: .5px; }
+.wkl-af-fans { position: absolute; inset-inline-end: -10px; inset-block-end: -22px; block-size: 118px; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wkl-af .wkl-af-date { margin: 14px 0 0; max-inline-size: 52%; }
+.wkl-af .wkl-af-tag { margin: 10px 0 0; font-size: 15px; transform: rotate(-1deg); }
+
+.wkl-af-body { display: flex; flex-direction: column; gap: 28px; margin-block-start: 30px; }
+.wkl-af-side, .wkl-af-main { display: contents; }
+.wkl-contrib { order: 1; }
+.wkl-af-draw { order: 2; }
+.wkl-af-gatesh { order: 3; }
+.wkl-covers { order: 4; }
+.wkl-af-league { order: 5; }
+.wkl-af-main > .af-note { order: 6; }
+
+/* drawn from: the clubs on paper discs */
+.wkl-contrib-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0; padding-block-end: 6px; border-block-end: 3px solid var(--mag-ink); }
+.wkl-contrib-h .wk-k.red { font-size: 15px; }
+.wkl-contrib ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 4px; }
+.wkl-contrib li { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px 2px; text-align: center; min-inline-size: 0; }
+.wkl-contrib li .wk-k { font-size: 11px; letter-spacing: .2px; line-height: 1.15; overflow-wrap: break-word; }
+.wkl-disc { display: flex; align-items: center; justify-content: center; inline-size: 50px; block-size: 50px; border-radius: 50%; background: var(--mag-white); border: 3px solid var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); flex: none; }
+.wkl-disc img { inline-size: 34px; block-size: 34px; object-fit: contain; }
+.wkl-disc .af-badge { inline-size: 38px; block-size: 38px; border-width: 0; font: 400 15px var(--mag-goal); }
+.wkl-contrib[data-compact] .wkl-contrib-h { border: 0; padding: 0; }
+.wkl-contrib[data-compact] ul { display: flex; flex-wrap: wrap; gap: 6px; margin-block-start: 6px; }
+.wkl-contrib[data-compact] li { padding: 0; }
+.wkl-contrib[data-compact] .wkl-disc { inline-size: 36px; block-size: 36px; border-width: 2px; box-shadow: 2px 2px 0 var(--mag-ink); }
+.wkl-contrib[data-compact] .wkl-disc img { inline-size: 24px; block-size: 24px; }
+.wkl-contrib[data-compact] .wkl-disc .af-badge { inline-size: 28px; block-size: 28px; font-size: 11px; }
+
+/* the draw, cut out as a coupon */
+.wkl-af-draw { padding: 22px 12px 14px; }
+.wkl-af-draw .wk-scissors svg { fill: none; }
+.wkl-af .wkl-af-drawh { font: 400 26px/0.95 var(--mag-display); letter-spacing: -.2px; margin-block-end: 12px; }
+.wkl-modes { display: flex; flex-direction: column; gap: 12px; }
+.wkl-mode { display: flex; gap: 12px; align-items: flex-start; padding: 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 3px 3px 0 var(--mag-ink); color: var(--mag-ink); min-block-size: 44px; }
+.wkl-mode[aria-current='true'], .wkl-mode[data-current] { background: color-mix(in srgb, var(--mag-vermilion) 18%, var(--mag-white)); box-shadow: 4px 4px 0 var(--mag-vermilion); }
+.wkl-mode-tick { flex: none; inline-size: 30px; block-size: 30px; border-radius: 50%; border: 3px solid var(--mag-ink); background: var(--mag-card); display: flex; align-items: center; justify-content: center; }
+.wkl-mode[aria-current='true'] .wkl-mode-tick, .wkl-mode[data-current] .wkl-mode-tick { background: var(--mag-vermilion); }
+.wkl-mode-tick svg { inline-size: 16px; block-size: 16px; fill: none; stroke: var(--mag-white); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+.wkl-mode-t { display: flex; flex-direction: column; gap: 4px; flex: 1; min-inline-size: 0; }
+.wkl-mode-t b { font-size: 22px; }
+.wkl-mode-t small { font: 600 14px/1.4 var(--mag-body); }
+.wkl-mode .af-duel-row { display: flex; align-items: center; gap: 6px; margin-block-start: 6px; }
+.wkl-mode .af-duel-row > .wk-head { font-size: 18px; flex: none; }
+.wkl-mode select { flex: 1 1 0; min-inline-size: 0; min-block-size: 44px; padding: 0 8px; border: 2px solid var(--mag-ink); border-radius: 0; background: var(--mag-card); color: var(--mag-ink); font: 800 14px var(--mag-body); }
+.wkl-mode .wk-btn { flex: none; min-block-size: 44px; padding: 0 12px; font-size: 15px; box-shadow: 2px 2px 0 var(--mag-vermilion); }
+
+/* pick a gate: the covers */
+.wkl-af-gatesh { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
+.wkl-af-gatesh .wk-banner { font-size: 15px; margin: 0; }
+.wkl-af .wkl-af-pick { font: 400 42px/1 var(--mag-brand); letter-spacing: .5px; transform: rotate(-3deg); transform-origin: 0 100%; margin-block-start: 6px; }
+.wkl-af-stamp { display: none; color: var(--mag-green); font-size: 16px; }
+.wkl-covers { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.wkl-cover { box-shadow: 5px 5px 0 var(--mag-ink); }
+.wkl-cover-art { display: block; block-size: 170px; min-block-size: 0; }
+.wkl-cover-plate { position: absolute; inset-inline-end: -14px; inset-block-end: -6px; block-size: 173px; }
+.wkl-cover[data-gate='memory'] .wkl-cover-plate { block-size: 150px; inset-block-end: -4px; }
+.wkl-cover[data-gate='timeline'] .wkl-cover-plate { block-size: 112px; inset-block-end: 4px; inset-inline-end: -8px; }
+.wkl-af .wkl-cover-name { margin: 0; inset-inline-start: 12px; inset-block-start: 12px; font: 400 32px/1 var(--mag-brand); text-transform: none; letter-spacing: .3px; max-inline-size: 68%; }
+.wkl-cover .wk-cover-price { color: var(--mag-ink); }
+.wkl-cover-foot { padding: 12px 14px 14px; gap: 8px; }
+.wkl-cover-foot p { margin: 0; font: 400 15px/1.45 var(--mag-body); }
+.wkl-cover-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; margin-block-start: 2px; padding-block-start: 10px; border-block-start: 3px dashed var(--mag-ink); }
+.wkl-cover-row .af-figure { display: flex; flex-direction: column; gap: 4px; line-height: 1; min-inline-size: 0; }
+.wkl-cover-row .af-figure .wk-num { font-size: 34px; color: var(--mag-vermilion); }
+.wkl-cover-row .af-figure .wk-k { white-space: nowrap; }
+.wkl-cover-row .wk-btn { min-block-size: 50px; font-size: 18px; flex: none; }
+.wkl-cover-row .wk-btn svg { inline-size: 20px; block-size: 20px; }
+.wkl-cover[data-closed] { opacity: .62; box-shadow: none; }
+.wkl-cover[data-closed] .wk-btn { font-size: 13px; text-transform: none; font-family: var(--mag-body); font-weight: 700; min-block-size: 44px; }
+
+/* the hall of fame edition */
+.wkl-af-league { position: relative; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: 'mark kick go' 'mark name go' 'mark text go'; align-items: center; gap: 2px 14px; padding: 16px 14px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); color: var(--mag-white); --lgm-bronze-hi: #C98A55; }
+.wkl-af-league > .wk-speed { --sc: rgb(255 251 242 / 0.12); }
+.wkl-af-league .lgm-emblem { grid-area: mark; position: relative; inline-size: 84px; block-size: 84px; object-fit: contain; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wkl-af-league .af-kicker { grid-area: kick; position: relative; font: 400 12px/1.2 var(--mag-mono); letter-spacing: .7px; text-transform: uppercase; color: var(--lgm-bronze-hi); }
+.wkl-af-league b { grid-area: name; position: relative; font: 400 34px/1.05 var(--mag-brand); color: var(--mag-white); -webkit-text-stroke: 3px var(--mag-ink); paint-order: stroke fill; text-shadow: 3px 3px 0 var(--mag-ink); }
+.wkl-af-league small { grid-area: text; position: relative; font: 400 15px/1.4 var(--mag-body); }
+.wkl-af-arrow { grid-area: go; position: relative; }
+.wkl-af-arrow svg { inline-size: 30px; block-size: 30px; fill: none; stroke: currentColor; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.af-note { margin: 0; font-size: 13px; }
+
+/* ── a gate inside ALL FOOTBALL: the weekly's game bar over the club's own engine ── */
+.wkl-af-gate > .wga-hud { inset-block-start: var(--app-top, 0px); }
+.wga-hud .wkl-globe-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--mag-cyan); color: var(--mag-white); }
+.wkl-globe-badge svg { inline-size: 70%; block-size: 70%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.wga-hud-kicker .af-mode { font: inherit; border: 0; padding: 0; }
+.wkl-gate-from { margin-block: 12px 14px; padding-block-end: 12px; border-block-end: 3px solid var(--mag-ink); }
+.af-closed { display: grid; gap: 12px; justify-items: start; }
+.af-closed h2 { font: 400 26px/1 var(--mag-display); text-transform: uppercase; letter-spacing: -.2px; }
+.af-closed p { margin: 0; }
+.wkl-ft { display: grid; gap: 12px; }
+.af .wkl-ft-h { font: 400 40px/1 var(--mag-brand); letter-spacing: .5px; transform: rotate(-3deg); transform-origin: 0 100%; }
+.af .wkl-ft-score { display: flex; align-items: center; gap: 10px; margin: 0; }
+.wkl-ft-score .wk-lamp { font-size: 34px; }
+.af .wkl-ft-go { display: flex; flex-wrap: wrap; gap: 12px; margin: 4px 0 0; }
+.af-line { list-style: none; margin: 0; padding: 0; border-block-start: 3px solid var(--mag-ink); }
+.af-line li { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 4px 12px; padding: 8px 0; border-block-end: 2px solid var(--af-rule); }
+.af-line b { font: 400 13px var(--mag-mono); text-transform: uppercase; }
+.af-line small { grid-column: 2; font-size: 13px; color: var(--mag-muted); }
+
+@media (max-width: 380px) {
+  .wkl-af-word { font-size: 56px; }
+  .wkl-af .wkl-cover-name { font-size: 28px; }
+  .wkl-cover-row .af-figure .wk-num { font-size: 30px; }
+  .af-line li { grid-template-columns: minmax(0, 1fr); } .af-line small { grid-column: 1; }
+}
+
+/* ── the desk: a double-page spread ── */
+@media (min-width: 901px) {
+  .wkl-af { inline-size: min(1400px, 100%); padding: 22px 40px 64px; }
+  .wkl-edition-date { display: inline; }
+  .wkl-af .wkl-af-date { display: none; }
+  .wkl-af-plate { margin-block-start: 14px; block-size: 196px; }
+  .wkl-globe { inset-inline-start: 34px; inset-block-start: 34px; inset-block-end: auto; inline-size: 122px; block-size: 122px; border-width: 4px; box-shadow: 6px 6px 0 var(--mag-ink); }
+  .wkl-globe svg { inline-size: 84px; block-size: 84px; }
+  .wkl-af-title { inset-inline-start: 190px; inset-block-start: 30px; flex-direction: row; align-items: baseline; gap: 18px; }
+  .wkl-af-all { font-size: 64px; -webkit-text-stroke-width: 2px; text-shadow: 4px 4px 0 var(--mag-ink); }
+  .wkl-af-word { font-size: 104px; -webkit-text-stroke-width: 5px; text-shadow: 7px 7px 0 var(--mag-green); }
+  .wkl-af-fans { block-size: 220px; inset-inline-end: -12px; inset-block-end: -34px; }
+  .wkl-af .wkl-af-tag { margin: 28px 0 0; padding: 0; margin-inline-start: 190px; max-inline-size: 52ch; border: 0; background: none; transform: none; font: 400 22px/1.05 var(--mag-display); text-transform: uppercase; }
+  .wkl-af-body { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 40px; align-items: start; margin-block-start: 40px; }
+  .wkl-af-side, .wkl-af-main { display: flex; flex-direction: column; gap: 26px; min-inline-size: 0; }
+  .wkl-af-side { order: 0; } .wkl-af-draw { order: 0; } .wkl-contrib { order: 1; }
+  .wkl-af .wkl-af-pick { font-size: 54px; }
+  .wkl-af-stamp { display: inline-flex; transform: rotate(-6deg); }
+  .wkl-covers { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .wkl-cover-art { block-size: 250px; }
+  .wkl-cover-plate { block-size: 240px; }
+  .wkl-cover[data-gate='memory'] .wkl-cover-plate { block-size: 170px; inset-block-end: 4px; }
+  .wkl-cover[data-gate='timeline'] .wkl-cover-plate { block-size: 150px; inset-block-end: 6px; }
+  .wkl-af .wkl-cover-name { font-size: 34px; max-inline-size: 86%; }
+  .wkl-cover-row .af-figure .wk-num { font-size: 28px; }
+  .wkl-cover-row .wk-btn { min-block-size: 48px; padding: 0 12px; font-size: 17px; }
+  .wkl-cover-row { flex-wrap: wrap; }
+  .wkl-cover-row .af-figure .wk-k { white-space: normal; }
+  .wkl-af-league { grid-template-columns: 150px minmax(0, 1fr) auto; padding: 20px 28px; gap: 4px 24px; }
+  .wkl-af-league .lgm-emblem { inline-size: 140px; block-size: 140px; }
+  .wkl-af-league b { font-size: 52px; }
+  .wkl-af-league small { font-size: 18px; max-inline-size: 56ch; }
+  .wkl-af-league .af-kicker { font-size: 13px; }
+  .af-note { font-size: 13px; }
+  .wkl-gate-from { margin-block-start: 18px; }
+}
+@media (min-width: 901px) and (max-width: 1180px) {
+  .wkl-af-body { grid-template-columns: 300px minmax(0, 1fr); gap: 28px; }
+  .wkl-covers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wkl-af-word { font-size: 84px; }
+}
+@media (prefers-reduced-motion: reduce) { .wkl-mode, .wkl-cover { transition: none; } }
+/* the kit's muted caps — named apart, because the legacy `.fl .muted` rule (master.css) forces its own size and margins */
+.wk-k.wkl-mute { color: var(--mag-muted); }
+/* the draw is named in the bar on both glasses (a club's gate bar drops its kicker on a desk; this one says which draw) */
+@media (max-width: 900px) { .wkl-af-gate .wga-hud-name { font-size: clamp(19px, 6vw, 25px); } }
+@media (min-width: 901px) { .wkl-af-gate .wga-hud-kicker { display: block; font-size: 12px; color: var(--mag-white); } .wkl-af-gate .wga-hud-words { gap: 4px; } }

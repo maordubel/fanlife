@@ -90,5 +90,11 @@
  "gl.result.points": "נקודות",
  "gl.result.hintCost": "עלות רמז {cost}",
  "gl.result.extraCost": "{n} נגיעה עודפת: מורידה איכות",
- "gl.result.na": "לא מדורג: הדיווח לא נוקב בשמו"
+ "gl.result.na": "לא מדורג: הדיווח לא נוקב בשמו",
+ "gl.ask.who": "מי היה בנגיעה {n}?",
+ "gl.ask.what": "מה {name} עשה?",
+ "gl.ask.what0": "מה קרה בנגיעה {n}?",
+ "gl.move": "המהלך",
+ "gl.move.empty": "עוד אין נגיעות. המהלך מתחיל בבחירה הראשונה שלך.",
+ "gl.move.at": "{verb} · {zone}"
 }

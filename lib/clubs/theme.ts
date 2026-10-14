@@ -36,9 +36,19 @@ export function forbiddenColor(theme:ClubTheme,color:string):boolean {
  return theme.rivalForbiddenColors.some(r=>sameColorFamily(r,color))||theme.colorPolicy.legacyRules.some(r=>c.s>=r.minSaturation&&c.v>=r.minValue&&(r.hue[0]<=r.hue[1]?c.h>=r.hue[0]&&c.h<=r.hue[1]:c.h>=r.hue[0]||c.h<=r.hue[1]))
 }
 /** Colour families an owner-approved rivalry takes away from a club's pages (red for Panathinaikos, green for Olympiacos). */
+/** The colour family a hex belongs to, in the words rivalBans() speaks (null for a colour with no hue: white, black, grey). */
+export function colourFamily(hex:string):'red'|'yellow'|'green'|'blue'|null{
+ if(!HEX.test(hex))return null
+ const x=hsv(hex);if(x.s<0.2)return null
+ return x.h<=18||x.h>=342?'red':x.h>=38&&x.h<=70?'yellow':x.h>=90&&x.h<=170?'green':x.h>=190&&x.h<=260?'blue':null
+}
+/** A colour this club's pages may not print: its family is banned (rule 95) — the crest of a club that wears it prints in one ink. */
+export function bannedHere(theme:ClubTheme,hex:string):boolean{const f=colourFamily(hex);return !!f&&rivalBans(theme).includes(f)}
 export function rivalBans(theme:ClubTheme):string[]{
  const bans=new Set<string>()
- for(const c of theme.rivalForbiddenColors){const x=hsv(c);if(x.s<0.2)continue;if(x.h<=18||x.h>=342)bans.add('red');else if(x.h>=90&&x.h<=170)bans.add('green');else if(x.h>=190&&x.h<=260)bans.add('blue')}
+ for(const c of theme.rivalForbiddenColors){const x=hsv(c);if(x.s<0.2)continue;if(x.h<=18||x.h>=342)bans.add('red');else if(x.h>=38&&x.h<=70)bans.add('yellow');else if(x.h>=90&&x.h<=170)bans.add('green');else if(x.h>=190&&x.h<=260)bans.add('blue')}
+ // a legacy hue rule (Hapoel Tel Aviv's yellow, The Worker's rule 8) bans the family its range covers (rule 124: the weekly's yellow re-points)
+ for(const r of theme.colorPolicy.legacyRules){const has=(h:number)=>r.hue[0]<=r.hue[1]?h>=r.hue[0]&&h<=r.hue[1]:h>=r.hue[0]||h<=r.hue[1];if(has(50))bans.add('yellow');if(has(0))bans.add('red');if(has(130))bans.add('green');if(has(225))bans.add('blue')}
  return [...bans]
 }
 function luminance(hex:string){return rgb(hex).map(n=>n/255).map(n=>n<=0.04045?n/12.92:((n+0.055)/1.055)**2.4).reduce((n,v,i)=>n+v*[0.2126,0.7152,0.0722][i]!,0)}

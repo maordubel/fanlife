@@ -22,11 +22,16 @@ describe('the magazine is the house style (rule 91)',()=>{
   const s=read('components/master/Shell.tsx')
   expect(s).toContain('https://DubelTeam.com');expect(s).toContain('<TabBar');expect(read('components/master/TabBar.tsx')).toContain('mag-tabbar');expect(s).toContain('mag-top');expect(s).toContain('mag-foot')
  })
- it('the stylesheet defines the tokens, self-hosts the display face and never names a yellow',()=>{
+ it('the stylesheet defines the tokens, self-hosts the weekly faces and names yellow once, as a re-pointable token (rules 95, 124)',()=>{
   const css=read('app/magazine.css')
-  for(const t of ['--mag-ink','--mag-paper','--mag-vermilion','--mag-navy','--mag-purple','--mag-green'])expect(css).toContain(t)
-  expect(existsSync(join(root,'public/fonts/bowlby-one-latin-400-normal.woff2'))).toBe(true)
-  for(const [,hex] of css.matchAll(/#([0-9a-f]{6})\b/gi)){const n=parseInt(hex!,16);expect(isYellow((n>>16)&255,(n>>8)&255,n&255),`#${hex} is yellow`).toBe(false)}
+  for(const t of ['--mag-ink','--mag-paper','--mag-vermilion','--mag-navy','--mag-purple','--mag-green','--mag-orange','--mag-goal','--mag-shout'])expect(css).toContain(t)
+  for(const f of ['shrikhand-latin-ext-400-normal','knewave-latin-ext-400-normal','ultra-latin-ext-400-normal','weekly-head-latin-ext','weekly-caps-latin-ext','weekly-body-latin-ext'])expect(existsSync(join(root,`public/fonts/${f}.woff2`)),f).toBe(true)
+  // the weekly's one highlighter ink lives on ONE line; every other hex in the house stylesheet is not yellow
+  const yellowLine=css.split('\n').filter(l=>/--mag-yellow:\s*#/.test(l))
+  expect(yellowLine).toHaveLength(1)
+  for(const [,hex] of css.split('\n').filter(l=>!/--mag-yellow:\s*#/.test(l)).join('\n').matchAll(/#([0-9a-f]{6})\b/gi)){const n=parseInt(hex!,16);expect(isYellow((n>>16)&255,(n>>8)&255,n&255),`#${hex} is yellow`).toBe(false)}
+  // and a club whose rival owns yellow never prints it: the token is re-pointed (Hapoel Tel Aviv)
+  expect(css).toMatch(/\[data-rival-no~='yellow'\]\s*\{[^}]*--mag-yellow:\s*var\(--mag-orange\)/)
  })
  it('a club is worn only through its livery variable',()=>{
   const css=read('app/magazine.css')

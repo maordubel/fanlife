@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic'
 export default async function MarketItemPage({ params }: { params: { id: string } }) {
   const shirts = await fanShirtMap()
   return (
-    <FanPage market active="market" title={t('market.item.title')} sub={t('market.item.sub')}>
+    <FanPage market spread active="market" title={t('market.item.title')} sub={t('market.item.sub')}>
       <AdoptShirts shirts={shirts} />
       <ListingScreen id={params.id} shirts={shirts} />
     </FanPage>

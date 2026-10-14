@@ -13,13 +13,10 @@
  "ar.today.nearest": "Nearest days on file",
  "ar.today.nearestDay": "{date} · {n}",
  "ar.today.nextOnFile": "Next on file: {date}",
- "ar.today.prev": "Previous day",
- "ar.today.next": "Next day",
  "ar.today.reset": "Back to today",
  "ar.today.browsing": "Browsing {date}",
  "ar.today.loading": "Checking today's date…",
  "ar.today.deck": "Entries for {date}",
- "ar.today.pos": "{n} of {total}",
  "ar.time.title": "Time machine",
  "ar.time.pick": "Choose a decade",
  "ar.time.decade": "{decade}s",
@@ -100,5 +97,12 @@
  "ar.sheet.share": "Share this entry",
  "ar.link.xi": "Build your all-time XI",
  "ar.link.derby": "The rivalry wall",
- "ar.link.more": "More from this club"
+ "ar.link.more": "More from this club",
+ "ar.today.nextTitle": "Next on file",
+ "ar.cal.tap": "Tap a day",
+ "ar.cal.change": "Change month",
+ "ar.cal.aria": "{date}: {n} on file",
+ "ar.cal.today": "Today",
+ "ar.cal.legend": "Red days have something on file · the black one is today",
+ "ar.card.openLabel": "Open the entry"
 }

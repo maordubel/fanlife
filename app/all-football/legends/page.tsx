@@ -10,6 +10,8 @@ import {door} from '@/lib/features-server'
 import {LEGENDS_RULES as R} from '@/lib/legends/config'
 import {viewer} from '@/lib/legends/owner'
 import {legendsClubs} from '@/lib/legends/server'
+import {livery,wearLivery} from '@/lib/club-livery'
+import t from '@/messages/legends/en.json'
 import {activeCount,canSave,ownerIndex} from '@/lib/legends/store'
 import '../all-football.css'
 import './styles'
@@ -26,34 +28,40 @@ export default async function Page({searchParams}:{searchParams?:{club?:string}}
  const [owner,clubs,af]=await Promise.all([viewer(false),legendsClubs(),door('allFootball')])
  const idx=owner?await ownerIndex(owner):{v:1 as const,careers:[]}
  const rows=idx.careers.map(c=>({id:c.id,clubName:c.clubName,season:c.season,phase:c.phase,status:c.status}))
- const options:ClubOption[]=clubs.map(c=>({club:c.club,name:c.name,ready:c.verdict==='READY',held:c.held,reason:c.reasons[0]??null,men:c.men,primary:null}))
+ const options:ClubOption[]=clubs.map(c=>({club:c.club,name:c.name,ready:c.verdict==='READY',held:c.held,reason:c.reasons[0]??null,men:c.men,primary:livery(c.club)?.pattern??null,paint:wearLivery(livery(c.club)),initials:livery(c.club)?.initials}))
  const openClubs=options.filter(o=>o.ready&&!o.held).length
+ const lamps=[`€${R.initialDraftBudgetM}M`,...(['GK','DF','MF','FW'] as const).map(p=>`${p} ${R.minimums[p]}`)]
  return <Shell locale="en">
   <PreviewRibbon on={d.preview}/>
   <LegendsReveal/>
-  <main id="main" className="af lgm">
-   <header className="lgm-hero">
-    <p className="lgm-edition"><span>ALL FOOTBALL presents</span><span>{openClubs} clubs · their immortals</span></p>
-    <Emblem size={340} eager/>
-    <h1 className="lgm-hero-name"><span>Legends</span> Manager</h1>
-    <p className="lgm-motto">One club. Only the men who wore its shirt. Your dynasty.</p>
-    <p className="lgm-lede">Draft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.</p>
-    {af.open?<p className="af-back-row"><Link className="af-back" href="/all-football">← ALL FOOTBALL</Link></p>:null}
-   </header>
-   {!canSave()?<p className="lgm-error" role="status">Saving is not available on this server right now, so a career cannot be started. Nothing is lost.</p>:null}
-   {rows.length?<Careers rows={rows} max={R.maxActiveCareers}/>:null}
-   <ClubRoll clubs={options} canStart={canSave()} full={activeCount(idx)>=R.maxActiveCareers} initial={typeof searchParams?.club==='string'?searchParams.club:null}/>
+  <main id="main" className="af lgm wkl-lm">
+   <div className="wkl-lm-top">
+    <header className="lgm-hero wkl-lm-hero">
+     <span className="wk-speed" aria-hidden="true"/>
+     <p className="lgm-edition"><span>ALL FOOTBALL presents</span><span>{openClubs} clubs · their immortals</span></p>
+     <Emblem size={340} eager/>
+     <h1 className="lgm-hero-name"><span>Legends</span> Manager</h1>
+     <p className="lgm-motto">One club. Only the men who wore its shirt. Your dynasty.</p>
+     <p className="lgm-lede">Draft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.</p>
+     {af.open?<p className="af-back-row"><Link className="af-back" href="/all-football"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>ALL FOOTBALL</Link></p>:null}
+    </header>
+    <div className="wkl-lm-main">
+     {!canSave()?<p className="lgm-error" role="status">Saving is not available on this server right now, so a career cannot be started. Nothing is lost.</p>:null}
+     {rows.length?<Careers rows={rows} max={R.maxActiveCareers}/>:null}
+     <ClubRoll clubs={options} canStart={canSave()} full={activeCount(idx)>=R.maxActiveCareers} initial={typeof searchParams?.club==='string'?searchParams.club:null} max={R.maxActiveCareers}/>
+    </div>
+   </div>
    <section className="lgm-code" aria-labelledby="lgm-code-h">
-    <h2 id="lgm-code-h">The code of the legends</h2>
+    <header className="wkl-code-h"><i className="wkl-pin" aria-hidden="true"/><p className="wk-k red">{t.codeKicker}</p><h2 id="lgm-code-h" className="wk-head">The code of the legends</h2></header>
     <ol>
      <li><b>One club, its own men.</b> Every legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.</li>
-     <li><b>The founding draft.</b> Seventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.</li>
+     <li><b>The founding draft.</b> Seventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.<span className="wkl-lamps" aria-hidden="true">{lamps.map(l=><span key={l} className="wk-lamp">{l}</span>)}</span></li>
      <li><b>The board backs you.</b> Confirm the squad and the board adds €8M for the first window. Every season after, a grant of €4–10M by results — smaller when the coffers are full.</li>
      <li><b>Two windows a season.</b> Buy and sell inside your club’s history. Sold before he has played for you, a man never makes you money.</li>
      <li><b>The touchline.</b> Watch the quick result or stand at the touchline: up to three stops a match, three changes, tactics you can turn. Cards, bans and injuries are real and carry on.</li>
      <li><b>Stars, not numbers.</b> {GAME_VALUES}</li>
     </ol>
-    <p className="lgm-fine">A signing is a time machine: “a 1980s legend” means his recorded years at the club touch the 1980s. It is a fantasy, never a transfer that happened.</p>
+    <p className="lgm-fine wk-cap">A signing is a time machine: “a 1980s legend” means his recorded years at the club touch the 1980s. It is a fantasy, never a transfer that happened.</p>
    </section>
   </main>
  </Shell>

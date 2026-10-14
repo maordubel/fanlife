@@ -22,7 +22,8 @@ try{
  const doors=['','play','history','terrace','meetings','life',...SHARED_GATES.map(g=>g.key)]
  const urls=['/','/market','/sources','/me',...CORE_CLUB_IDS.flatMap(c=>[...new Set(doors)].map(d=>`/clubs/${c}${d?'/'+d:''}`))]
  for(const u of urls){checked++;const r=await page.goto(base+u,{waitUntil:'domcontentloaded'}).catch(()=>null);const s=r?.status()??0;if((s>=400&&s!==404)||!s||await visibleFault())bad.push(`${u} → ${s}`)}
- if(!(await page.goto(base+'/'),await page.locator('main').innerText()).includes('Olympiacos'))bad.push('/ → the hub lists no clubs')
+ // innerText follows text-transform, and the weekly's club stickers print names in capitals
+ if(!(await page.goto(base+'/'),await page.locator('main').innerText()).toLowerCase().includes('olympiacos'))bad.push('/ → the hub lists no clubs')
  await page.goto(base+'/master/admin');await page.locator('#owner-key').fill(KEY);await page.getByRole('button',{name:'Enter the control room'}).click()
  await page.waitForURL(u=>u.pathname==='/master/admin',{timeout:30000}).catch(()=>bad.push('admin → the key did not open the control room'))
  for(const s of ['overview','clubs','data','audience','operations','settings']){checked++;const r=await page.goto(`${base}/master/admin?section=${s}`);if(r.status()>=400||await visibleFault())bad.push(`admin ${s} → ${r.status()}`)}

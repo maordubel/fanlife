@@ -2,8 +2,7 @@ import Link from 'next/link'
 import {headers} from 'next/headers'
 import {redirect} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
-import {Dye} from '@/components/master/Dye'
-import {TornBlocks,PressPhoto} from '@/components/master/Poster'
+import {Plate} from '@/components/weekly/Plate'
 import {Suspense} from 'react'
 import {HubStop,HubNextUp,HubNextUpWaiting} from '@/components/home/HubFixtures'
 import {readState} from '@/lib/master/store'
@@ -25,10 +24,19 @@ import {seedVotes,rank} from '@/lib/home/vote'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 import { Badge } from '@/components/clubs/Badge'
+import {Emblem} from '@/components/legends/Brand'
 import {door} from '@/lib/features-server'
 export const dynamic='force-dynamic'
 
+const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
 
+/**
+ * THE FRONT PAGE (rule 124 · boards Hub-M / Hub-D). The hub is this week's issue of the weekly: the masthead with a fan
+ * breaking the frame, the cover and its two teasers, "Inside this issue", the Top Teams sticker page, the coupon of
+ * everybody's next match, LIFE, the special editions, the ballot, the shirt market, the editor's letter and the back pages.
+ * The phone reads it top to bottom; the desktop lays the same sections out as a spread (CSS grid areas, app/weekly/hub.css).
+ * Nothing scrolls sideways. All inks are allowed here — the hub has no rival.
+ */
 export default async function Home({searchParams}:{searchParams:{lang?:string}}){
  const hc=headers().get('x-fan-life-club')
  if(hc)redirect(hc==='hapoel-tel-aviv'?'/ground':`/clubs/${hc}`)
@@ -44,81 +52,145 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
  const shopClubs=order2.map(id=>{const c=shop.find(x=>x.id===id)!,l=livery(id);return {id,name:c.name,city:c.city,initials:l?.initials??c.initials,pattern:l?.pattern??'',seed:seed[id]??0,href:preview?`/clubs/${id}?lang=${locale}`:null}})
  const chooser={title:copy.chooseClub,search:copy.chooserSearch,close:copy.chooserClose,none:copy.chooserNone,workshop:copy.chooserWorkshop,partial:''}
- const date=new Intl.DateTimeFormat(locale,{dateStyle:'full',timeZone:'UTC'}).format(now)
+ // English reads day-month-year (rule 94.5)
+ const date=new Intl.DateTimeFormat(locale==='en'?'en-GB':locale,{dateStyle:'full',timeZone:'UTC'}).format(now),iso=now.toISOString().slice(0,10)
  // the provider never holds the first byte: the strip and the match card stream in when the feed answers
  const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
- const rotatorCopy={next:copy.nextUp,cta:copy.nextCta,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,pause:copy.pause,play:copy.resume,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLine:copy.tbcLine,tbcCta:copy.tbcCta,of:copy.nextMore,prev:copy.nextPrev,fwd:copy.nextNext}
- return <Shell locale={locale} stop={stop}><main id="main">
-  <section className="mag-cover mag-cover-poster" aria-labelledby="cover-h"><div className="mag-cover-in">
-   <div className="mag-dateline"><span>{copy.coverIssue}</span><span><span className="mag-date-long">{date} · </span>{copy.coverNo}</span></div>
-   <h1 className="mag-masthead" id="cover-h" dir="ltr"><span>FAN</span><span>LIFE</span></h1>
-   <Image className="mag-cover-seal" src="/brand/fanlife/logo-192.png" alt="" width={192} height={192} priority unoptimized/>
-   <Image className="mag-collage" src="/brand/magazine/football-cover-collage.png" alt="" width={1254} height={1254} priority unoptimized/>
-   <span className="mag-burst mag-gates-burst" aria-hidden="true"><b>{SHARED_GATES.length}</b>{copy.gates}<br/>{copy.coverStamp}</span>
-   <div className="mag-rail">
-    <GateChooser gate="xi" clubs={model} copy={chooser} className="mag-tease mag-tease-a"><b>{copy.teaseXiK}</b><small>{copy.teaseXi}</small></GateChooser>
-    <GateChooser gate="trivia" clubs={model} copy={chooser} className="mag-tease mag-tease-b"><b>{copy.teaseQuizK}</b><small>{copy.teaseQuiz}</small></GateChooser>
-   </div>
-   <p className="mag-cover-bottom">{copy.coverBottom}</p>
-   <p className="mag-plus"><b>{copy.plusK}</b><span>{copy.plus1}<br/>{copy.plus2}</span></p>
-  </div></section>
-  <nav className="mag-hubnav" aria-label={copy.primaryNav}><a href="#life">{copy.navLife}</a><a href="#next">{copy.navNext}</a><a href="#clubs">{copy.navClubs}</a><a href="#market">{copy.navMarket}</a></nav>
-  <HubDock clubs={open.map(c=>({id:c.id,name:c.name}))} openIds={live.map(c=>c.id)} locale={locale} copy={{title:copy.dockTitle,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,stand:copy.dockStand,market:copy.dockMarket,sources:copy.dockSources,voted:copy.dockVoted,vote:copy.dockVote}}/>
+ const couponCopy={kicker:copy.wkhInNext,coupon:copy.wkhCoupon,cols:copy.wkhCouponCols,all:copy.wkhNextAll,note:copy.nextNote,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLamp:copy.wkhTbc,close:copy.chooserClose}
+ const dockCopy={title:copy.dockTitle,kept:copy.wkhKept,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,fileSub:copy.wkFileSub,stand:copy.dockStand,standSub:copy.wkhStandSub,market:copy.dockMarket,marketSub:copy.wkMarketSub,sources:copy.dockSources,sourcesSub:copy.wkSourcesSub,voted:copy.dockVoted,vote:copy.dockVote,voteSub:copy.wkhVoteSub}
+ const dockClubs=open.map(c=>({id:c.id,name:c.name})),dockOpen=live.map(c=>c.id)
+ const inside=[
+  {href:'#clubs',title:copy.clubs,sub:copy.wkhInClubs.replace('{n}',String(live.length)),go:'↓'},
+  {href:'#next',title:copy.navNext,sub:copy.wkhInNext,go:'↓'},
+  {href:'#life',title:copy.navLife,sub:`${copy.lifeEntryTitle} · ${copy.lifeGameSub}`,go:'↓'},
+  {href:'#market',title:copy.navMarket,sub:copy.marketTitle,go:'↓'},
+ ]
+ return <Shell locale={locale} stop={stop}><main id="main" className="wkh">
 
-  {/* THE GAME: the app's central feature, right under the cover (owner, 7.10.2026 — "the hub first, but this is the heart"). */}
-  <section className="mag-section mag-game-band" id="life" aria-labelledby="life-h">
-   <div className="mag-game-art" aria-hidden="true"><TornBlocks seed="life" inks={['var(--mag-green)','var(--mag-navy)','var(--mag-vermilion)']}/><PressPhoto art="father-son" className="mag-game-photo"/></div>
-   <div className="mag-game-text">
-    <p className="mag-kicker">{copy.lifeEntryTitle}</p>
-    <h2 className="mag-game-title" id="life-h"><span dir="ltr">LIFE</span><span className="mag-game-stamp">{copy.lifeGameSub}</span></h2>
-    <p>{copy.lifeEntryNote}</p>
-    <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="mag-cta red">{copy.lifeEntryCta} →</GateChooser>
+  {/* THE MASTHEAD: the paper's name on a green plate, a supporter breaking the frame (board Hub-M / Hub-D). */}
+  <header className="wkh-mast">
+   <div className="wkh-mast-line"><p className="wk-banner wkh-green">{copy.coverIssue}</p><time className="wk-k wkh-date-d" dateTime={iso}>{date}</time><span className="wk-k">{copy.coverNo}</span></div>
+   <div className="wkh-mast-plate wk-greenplate">
+    <Plate art="cheer" ink="red" className="wkh-mast-fig"/>
+    <Plate art="fans" ink="orange" className="wkh-mast-crowd"/>
+    <h1 className="wk-logo wkh-mast-logo" dir="ltr"><span>Fan</span> <span>Life</span></h1>
+    <span className="wk-roundel wkh-mast-no" aria-hidden="true"><span className="wk-k">{copy.wkhNo}</span><b className="wk-num">{copy.wkhIssueNo}</b><span className="wk-k">{copy.wkhFree}</span></span>
    </div>
+   <p className="wk-k wkh-mast-tag">{copy.wkhForever}<span className="wkh-d-only"> · {copy.tagline}</span></p>
+   <time className="wk-k wk-muted wkh-date-m" dateTime={iso}>{date}</time>
+  </header>
+
+  {/* THE COVER: orange plate, speed lines, the kicker, the two teasers that open a club chooser. */}
+  <section className="wkh-cover wk-panel wk-orangeplate" aria-labelledby="cover-h">
+   <span className="wk-speed wkh-cover-speed" aria-hidden="true"/>
+   <span className="wk-flash wkh-cover-flash" aria-hidden="true"/>
+   <Plate art="kicker" ink="green" className="wkh-cover-fig"/>
+   <div className="wkh-cover-head">
+    <p className="wk-banner">{copy.wkhInside.replace('{gates}',String(SHARED_GATES.length)).replace('{clubs}',String(live.length))}</p>
+    <h2 className="wk-head white wkh-cover-title" id="cover-h">{copy.coverBottom.split(/(?<=\.)\s+/).map((l,i)=><span key={i}>{l} </span>)}</h2>
+   </div>
+   <span className="wk-burst yellow wkh-cover-burst" aria-hidden="true"><span><b className="wk-num">{SHARED_GATES.length}</b><span className="wk-head">{copy.gates}<br/>{copy.coverStamp}</span></span></span>
+   <div className="wkh-teasers">
+    <GateChooser gate="xi" clubs={model} copy={chooser} className="wkh-teaser"><b>{copy.teaseXiK}</b><small>{copy.teaseXi}</small></GateChooser>
+    <GateChooser gate="trivia" clubs={model} copy={chooser} className="wkh-teaser"><b>{copy.teaseQuizK}</b><small>{copy.teaseQuiz}</small></GateChooser>
+   </div>
+   <p className="wkh-plus"><span className="wk-tag red">{copy.plusK}</span><span className="wk-k white wkh-plus-t"><span>{copy.plus1}</span><span className="wkh-plus-sep"> · </span><span>{copy.plus2}</span></span><Image className="wkh-seal" src="/brand/fanlife/logo-192.png" alt="" width={192} height={192} priority unoptimized/></p>
   </section>
 
-  <Suspense fallback={<HubNextUpWaiting title={copy.nextUp}/>}><HubNextUp open={open} locale={locale} copy={rotatorCopy} title={copy.nextUp}/></Suspense>
+  {/* INSIDE THIS ISSUE: four cells on a phone, the contents column on a desktop. Never a sideways strip. */}
+  <nav className="wkh-inside" aria-label={copy.insideTitle}>
+   <p className="wk-banner wkh-inside-k">{copy.insideTitle}</p>
+   <ol>{inside.map((x,i)=><li key={x.href}><a href={x.href} className="min-h-tap"><span className="no wk-num" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><span className="t"><b>{x.title}</b><small>{x.sub}</small></span><span className="pg" aria-hidden="true">{x.go}</span></a></li>)}</ol>
+  </nav>
+  <HubDock part="continue" clubs={dockClubs} openIds={dockOpen} locale={locale} copy={dockCopy}/>
 
-  {/* The clubs, with the editor's letter as a side column — the old football weekly's "from the editor" box (owner, 7.10.2026). */}
-  <section className="mag-section mag-editorial mag-clubsrow" id="clubs">
-   <div className="mag-clubsmain">
-    <hr className="mag-rule"/>
-    <div className="mag-head"><div><p className="mag-kicker">{copy.clubs}</p><h2 className="mag-h2">{copy.pickClub}</h2></div><BackToClub clubs={open.map(c=>({id:c.id,name:c.name}))} locale={locale} label={copy.backTo}/></div>
-    <div className="mag-tiles mag-tiles-hub">
-     {af.open&&<Link className="mag-tile is-open is-wide af-tile" href="/all-football" data-preview={af.preview||undefined}><span className="no" aria-hidden="true">∞</span><span><b>ALL FOOTBALL</b><small>Every club’s history in one room{af.preview?' · owner preview':''}</small></span><span className="mag-tile-state">Open</span></Link>}
-     {fl.open&&<Link className="mag-tile is-open is-wide af-tile" href="/all-football/legends" data-preview={fl.preview||undefined}><span className="no" aria-hidden="true">LM</span><span><b>LEGENDS MANAGER</b><small>Draft one club’s immortals and build a dynasty, season after season{fl.preview?' · owner preview':''}</small></span><span className="mag-tile-state">Open</span></Link>}
-     {live.map((c,n)=>{
-      const l=livery(c.id)
-      return <Link key={c.id} className={`mag-tile is-open${live.length%2===1&&n===live.length-1?' is-wide':''}`} data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>
-       <span className="no" aria-label={`${copy.collectorNo} ${n+1}`}>{String(n+1).padStart(2,'0')}</span>
-       {l&&<Badge club={l}/>}
-       <span><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small></span>{l&&<Dye art="shirt" soft className="mag-tile-shirt"/>}
-       <span className="mag-tile-state">{copy.tileOpen}</span>
-      </Link>})}
-     {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess}}/>}
+  {/* TOP TEAMS: the sticker page — every open club, A–Z, in its own colours. A wrapping grid, never a rail. */}
+  <section className="wkh-clubs" id="clubs" aria-labelledby="clubs-h">
+   <div className="wkh-clubs-head">
+    <div><p className="wk-banner">{copy.pickClub}</p><h2 className="wk-logo green wkh-title" id="clubs-h">{copy.wkPickClub}</h2></div>
+    <div className="wkh-clubs-side"><p className="wk-small wkh-d-only">{copy.wkhStickerNote}</p><span className="wk-stamp wkh-green">{copy.wkhStampOpen.replace('{n}',String(live.length))}</span></div>
+   </div>
+   <BackToClub clubs={open.map(c=>({id:c.id,name:c.name}))} locale={locale} label={copy.backTo}/>
+   <div className="wkh-stickers">
+    {live.map((c,n)=>{
+     const l=livery(c.id)
+     return <Link key={c.id} className="wkh-stk" data-club={c.id} data-club-tile="open" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>
+      <span className="wkh-stk-band" data-livery={l?.pattern}>
+       <span className="wkh-stk-no wk-num" aria-hidden="true">{String(n+1).padStart(2,'0')}</span><span className="sr-only">{`${copy.collectorNo} ${n+1}`}</span>
+       <span className="wkh-disc">{l&&<Badge club={l}/>}</span>
+      </span>
+      <span className="wkh-stk-nm"><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small></span>
+      <svg className="wkh-peel" viewBox="0 0 22 22" aria-hidden="true"><path className="a" d="M22 0 L22 22 L0 22 Z"/><path className="b" d="M22 0 L0 22 L1 1 Z"/></svg>
+     </Link>})}
+   </div>
+   <p className="wk-small wkh-clubs-note wkh-m-only">{copy.wkhStickerNote}</p>
+  </section>
+
+  {/* NEXT UP — FOR REAL: the coupon, every club on the roll (streams in; rule 104). */}
+  <Suspense fallback={<HubNextUpWaiting title={copy.nextUp} kicker={copy.wkhInNext}/>}><HubNextUp open={open} locale={locale} copy={couponCopy} title={copy.nextUp}/></Suspense>
+
+  {/* THE GAME: LIFE, the app's central feature (owner, 7.10.2026). */}
+  <section className="wkh-life" id="life" aria-labelledby="life-h">
+   <div className="wkh-life-card wk-panel">
+    <span className="wkh-life-art wk-orangeplate" aria-hidden="true"><span className="wk-speed"/><Plate art="fatherson" ink="navy"/></span>
+    <div className="wkh-life-txt">
+     <p className="wk-k wkh-orange">{copy.lifeEntryTitle} · {copy.lifeGameSub}</p>
+     <h2 className="wk-shout wkh-life-shout" id="life-h" dir="ltr">{copy.wkhLifeShout}</h2>
+     <p className="wk-small">{copy.lifeEntryNote}</p>
+     <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="wkh-life-cta">{copy.lifeEntryCta} <Arrow/></GateChooser>
     </div>
    </div>
-   <aside className="mag-editor" aria-labelledby="editor-h">
-    <p className="mag-editor-stamp" aria-hidden="true">{copy.letterStamp}</p>
-    <p className="mag-kicker">{copy.letterKicker}</p>
-    <div className="mag-editor-photo"><PressPhoto art="fan-fist"/></div>
-    <h2 id="editor-h">{copy.letterTitle}</h2>
-    <p className="dropcap">{copy.letterBody}</p>
-    <p className="mag-editor-more">{copy.letterBody2}</p>
-    <p className="mag-editor-more">{copy.letterBody3}</p>
-    <p className="mag-sign">{copy.editor}</p>
-   </aside>
   </section>
-  <SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed}}/>
+
+  {/* SPECIAL EDITIONS + YOUR WORLD: the doors that span every club, then what this device remembers. */}
+  <div className="wkh-spec">
+   {(af.open||fl.open)&&<section className="wkh-special" aria-labelledby="sp-h">
+    <div className="wkh-sechead"><p className="wk-banner">{copy.wkhSpecialK}</p><h2 className="wk-logo cyan wkh-title" id="sp-h">{copy.wkhSpecial}</h2></div>
+    {af.open&&<Link className="wkh-sp wkh-sp-af" href="/all-football" data-preview={af.preview||undefined}>
+     <span className="wk-roundel wkh-sp-mark" aria-hidden="true"><b className="wk-num">∞</b></span>
+     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhAfK}</span><b>{copy.wkAllFootball}</b><small>{copy.wkhAfSub}{af.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
+    </Link>}
+    {fl.open&&<Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
+     <Emblem size={76} label="" className="wkh-sp-emblem"/>
+     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhLmK}</span><b>{copy.wkhLmTitle}</b><small>{copy.wkhLmSub}{fl.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
+    </Link>}
+   </section>}
+   <HubDock part="links" clubs={dockClubs} openIds={dockOpen} locale={locale} copy={dockCopy}/>
+  </div>
+
+  {/* YOUR SAY: the ballot of the clubs still in the workshop, and a club written in. */}
+  <SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
+   {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{ballot:copy.wkhBallot,question:copy.wkhBallotQ,kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,note:copy.voteNote,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess}}/>}
+  </SuggestClub>
 
   {/* THE MARKET: the shirt swap is the market's mark, repeated here, on the market page and at its door (owner, 9.10.2026). */}
-  <section className="mag-section mag-market-band" id="market" aria-labelledby="market-h">
-   <div className="mag-market-text">
-    <p className="mag-kicker">{copy.marketKicker}</p>
-    <h2 className="mag-market-title" id="market-h">{copy.marketTitle}</h2>
+  <section className="wkh-market wk-redplate" id="market" aria-labelledby="market-h">
+   <span className="wk-speed wkh-market-speed" aria-hidden="true"/>
+   <Plate art="swap" ink="red" className="wkh-market-art"/>
+   <span className="wk-burst yellow wkh-market-burst" aria-hidden="true"><span className="wk-head">{copy.wkhNoFee}</span></span>
+   <div className="wkh-market-txt">
+    <p className="wk-k white">{copy.marketKicker}</p>
+    <h2 className="wk-logo wkh-market-title" id="market-h">{copy.marketTitle}</h2>
     <p>{copy.marketBody}</p>
-    <ul className="mag-market-points"><li>{copy.marketPoint1}</li><li>{copy.marketPoint2}</li><li>{copy.marketPoint3}</li></ul>
-    <div className="mag-feature-ctas"><Link className="mag-cta red" href="/market">{copy.marketCta} →</Link><Link className="mag-cta ghost" href="/market?view=wanted">{copy.marketWanted}</Link></div>
+    <ul className="wkh-points"><li>{copy.marketPoint1}</li><li>{copy.marketPoint2}</li><li>{copy.marketPoint3}</li></ul>
    </div>
-   <div className="mag-market-art" aria-hidden="true"><TornBlocks seed="market" inks={['var(--mag-vermilion)','var(--mag-navy)','var(--mag-green)']}/><PressPhoto art="shirt-swap" className="mag-swap"/></div>
+   <div className="wkh-market-ctas"><Link className="wk-btn paper" href="/market">{copy.marketCta} <Arrow/></Link><Link className="wkh-ghost" href="/market?view=wanted">{copy.marketWanted}</Link></div>
   </section>
+
+  {/* DEAR TERRACE: the editor's letter — the old weekly's "from the editor" box (owner, 7.10.2026). */}
+  <aside className="wkh-letter" aria-labelledby="editor-h">
+   <span className="wk-stamp wkh-letter-stamp" aria-hidden="true">{copy.letterStamp}</span>
+   <p className="wk-k red">{copy.letterKicker}</p>
+   <div className="wkh-letter-head"><span className="wk-circle wk-greenplate wkh-letter-pic" aria-hidden="true"><Plate art="fanfist" ink="green"/></span><h2 className="wk-logo green" id="editor-h">{copy.letterTitle}</h2></div>
+   <p className="wkh-dropcap">{copy.letterBody}</p>
+   <p>{copy.letterBody2}</p>
+   <p>{copy.letterBody3}</p>
+   <p className="wk-head wkh-sign">{copy.editor}</p>
+  </aside>
+
+  {/* THE BACK PAGES: where every fact in the paper comes from. */}
+  <Link className="wkh-back" href="/sources">
+   <svg className="wkh-lens" viewBox="-12 -12 234 234" aria-hidden="true"><path className="h" d="M132 132 L192 192"/><path className="g" d="M140 140 L188 188"/><circle className="r" cx="86" cy="86" r="62"/><path className="s" d="M52 66 A40 40 0 0 1 82 42"/></svg>
+   <span className="wkh-back-t"><span className="wk-k cyan">{copy.wkhBackPages}</span><b className="wk-head">{copy.wkSources}</b><span className="wk-small">{copy.wkhSourcesSub}</span></span><Arrow/>
+  </Link>
  </main></Shell>}

@@ -158,5 +158,15 @@
   "ks.own.closet": "לארון שלי ←",
   "ks.own.market": "{n} בשוק ←",
   "ks.own.saved": "נשמר.",
-  "ks.own.label": "הארון שלך"
+  "ks.own.label": "הארון שלך",
+  "ks.brief.change": "הקישו להחלפה",
+  "ks.coll.album": "אלבום החולצות",
+  "ks.coll.of": "מתוך {n} פתוחות",
+  "ks.coll.mapAria": "{n} מתוך {total} חולצות פתוחות, מהישנה לחדשה",
+  "ks.coll.axis": "מהישנה → לחדשה",
+  "ks.coll.decade": "שנות ה־{decade}",
+  "ks.coll.otherSeasons": "עונות אחרות",
+  "ks.coll.page": "עמוד {n}",
+  "ks.coll.openOf": "{n} מתוך {total} פתוחות",
+  "ks.coll.buildOne": "בנו אחת!"
 }

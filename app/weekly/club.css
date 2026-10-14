@@ -1,0 +1,745 @@
+/* THE WEEKLY (rule 124) — club pages. Owned by one family; tokens only (--mag-*), logical properties, no sideways scroll.
+   Prefix wkk-. A phone (≤900px) reads one column with a 16px gutter; a desktop is a double-page spread. Colour comes from
+   tokens the rival lock re-points ([data-rival-no]) or from the club's own --club-primary; never a literal ink here. */
+
+/* ═════════ 0 · page frame ═════════ */
+.wkk { width: min(1280px, 100% - 32px); margin-inline: auto; padding-block: 14px 30px; display: flex; flex-direction: column; gap: 24px; color: var(--mag-ink); font-family: var(--mag-body); }
+.wkk > * { min-width: 0; }
+.wkk p { margin: 0; }
+.wkk .wk-cap { color: var(--mag-ink); }
+.wkk h1, .wkk h2, .wkk h3 { margin: 0; }
+.wkk .wk-head.red { color: var(--mag-vermilion); }
+.wkk .wk-logo { font-weight: 400; }
+.wkk :is(h1, h2, h3).wk-logo { font-family: var(--mag-brand); text-transform: none; letter-spacing: 0.5px; }
+.wkk :is(h1, h2, h3).wk-head { font-family: var(--mag-display); text-transform: uppercase; }
+.club-surface[lang='he'] .wkk :is(h1, h2, h3, .wk-logo, .wk-shout, .wk-cover-name) { font-family: var(--mag-body); font-weight: 900; }
+/* the weekly's newsprint, not the old livery stripes */
+.club-surface:has(> .wkk) { background-color: var(--mag-paper); background-image: var(--mag-grain); }
+.wkk-sr { position: absolute; opacity: 0; inline-size: 1px; block-size: 1px; margin: 0; pointer-events: none; }
+.wkk-span { grid-column: 1 / -1; }
+.wkk-sechead { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-block-end: 4px solid var(--mag-ink); padding-block-end: 8px; }
+.wkk-sechead .wk-logo { font-size: 34px; }
+.wkk-sechead .wk-k { padding-block-end: 4px; }
+@media (min-width: 901px) {
+  .wkk { width: min(1320px, 100% - 64px); padding-block: 24px 40px; gap: 30px; }
+  .wkk-sechead .wk-logo { font-size: 46px; }
+}
+
+/* ═════════ 1 · the shared pieces: covers, rows, plates ═════════ */
+/* the cover art: surface, speed lines, the comic plate in the club's ink */
+.wkk-art { container-type: inline-size; display: block; }
+.wkk-art .wk-speed { --sx: 72%; --sy: 70%; --sc: rgb(255 251 242 / 0.34); }
+.wkk-art.wk-sky .wk-speed { --sc: rgb(255 251 242 / 0.5); }
+.wkk-art-plate { position: absolute; inset-inline-end: -12px; inset-block-end: -4px; block-size: 90%; inline-size: auto; max-inline-size: 96%; }
+.wkk-art[data-art='fans'] .wkk-art-plate, .wkk-art[data-art='scarf'] .wkk-art-plate, .wkk-art[data-art='memo'] .wkk-art-plate, .wkk-art[data-art='swap'] .wkk-art-plate, .wkk-art[data-art='bootball'] .wkk-art-plate, .wkk-art[data-art='keeper'] .wkk-art-plate { block-size: auto; inline-size: 92%; inset-block-end: 0; }
+.wkk-art[data-art='keeper'] .wkk-art-plate { inline-size: 84%; inset-block-end: -6px; inset-inline-end: -14px; }
+.wkk-art-flash { inline-size: 90px; block-size: 90px; inset-inline-start: 18%; inset-block-start: 42%; transform: rotate(-18deg); }
+.wkk-art-shirt { position: absolute; inline-size: 66%; inset-inline-start: 17%; inset-block-start: 22%; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wkk-art-q { position: absolute; inline-size: 52px; block-size: 52px; inset-inline-end: 8px; inset-block-start: 46%; font-family: var(--mag-display); font-size: 28px; transform: rotate(10deg); }
+.wkk-art-bar { position: absolute; inset-inline: 8% 4%; inset-block-start: 46%; block-size: 22px; background: var(--mag-vermilion); border: 3px solid var(--mag-ink); transform: rotate(-6deg); }
+.wkk-art.wk-night .wkk-art-plate { opacity: 0.95; }
+/* a drawn shirt, in the club's own colour */
+.wkk-shirt { display: block; overflow: visible; }
+.wkk-shirt .body { fill: var(--club-primary, var(--mag-vermilion)); stroke: var(--mag-ink); stroke-width: 1.1; stroke-linejoin: round; }
+.wkk-shirt .collar { fill: none; stroke: var(--mag-white); stroke-width: 1.1; stroke-linecap: round; }
+.wkk-shirt.blank .body { fill: var(--mag-white); }
+.wkk-shirt .dash { fill: none; stroke: var(--mag-ink); stroke-width: 1.2; stroke-dasharray: 1.3 1; }
+
+/* the cover */
+.wkk-cover { min-block-size: 0; }
+.wkk-cover .wk-cover-art { min-block-size: 0; block-size: 196px; }
+.wkk-cover-name { font-size: min(27px, calc(150cqi / var(--len, 8))); inline-size: calc(100% - 12px); overflow-wrap: anywhere; }
+.wkk-cover .wk-cover-price { inline-size: 50px; block-size: 50px; }
+.wkk-cover-foot { gap: 4px; flex: 1; }
+.wkk-cover-line { font-weight: 700; font-size: 13.5px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.wkk-cover-foot .wk-k { font-size: 11.5px; }
+.wkk-mark { min-block-size: 1.15em; }
+.wkk-cover:active { transform: translate(3px, 3px); box-shadow: none; }
+.wkk-cover[aria-disabled='true'] .wk-cover-art > :not(.wk-cover-name):not(.wk-cover-price) { filter: grayscale(1); }
+.wkk-soon { position: absolute; z-index: 2; inset-inline: 10px; inset-block-start: 38%; justify-content: center; background: var(--mag-card); font-size: 16px; color: var(--mag-ink); }
+.wkk-cover[data-away] .wk-cover-price { background: var(--mag-ink); color: var(--mag-white); border-color: var(--mag-white); }
+.wkk-covers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 640px) { .wkk-covers { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 901px) { .wkk-covers { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; } .wkk-cover .wk-cover-art { block-size: 220px; } .wkk-cover-name { font-size: min(32px, calc(150cqi / var(--len, 8))); } }
+
+/* a gate as a contents row */
+.wkk-rows { display: grid; grid-template-columns: minmax(0, 1fr); border-block-start: 4px solid var(--mag-ink); }
+@media (min-width: 901px) { .wkk-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 36px; border-block-start: 0; } }
+.wkk-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; min-block-size: 68px; padding: 8px 2px; border-block-end: 2px solid var(--mag-ink); color: var(--mag-ink); text-decoration: none; }
+.wkk-row-no { inline-size: 48px; block-size: 48px; background: var(--mag-card); }
+.wkk-row-no .wk-num { font-size: 18px; }
+.wkk-row[data-away] .wkk-row-no { background: var(--mag-ink); color: var(--mag-white); }
+.wkk-row-t { display: flex; flex-direction: column; gap: 2px; min-inline-size: 0; }
+.wkk-row-t .wk-head { font-size: 23px; color: var(--mag-vermilion); }
+.wkk-row[data-away] .wkk-row-t .wk-head { color: var(--mag-ink); }
+.wkk-row-t small { font-size: 14px; font-style: italic; font-weight: 600; line-height: 1.3; }
+.wkk-row-go { font-family: var(--mag-display); font-size: 22px; }
+.wkk-row[aria-disabled='true'] { opacity: 0.6; }
+.wkk-row[aria-disabled='true'] .wkk-row-no { border-style: dashed; }
+
+/* the segmented choice as native radios (no script; the page shows what is checked) */
+.wkk-filter > label { position: relative; gap: 1px; }
+.wkk-filter > label:has(input:checked) { background: var(--mag-vermilion); color: var(--mag-white); }
+.wkk-filter > label:has(input:focus-visible) { outline: 3px solid var(--mag-ink); outline-offset: 2px; z-index: 1; }
+.wkk-filter > label > span { display: block; }
+.wkk-picker:has(input[value='quick']:checked) .wkk-grp:not([data-grp='quick']),
+.wkk-picker:has(input[value='deep']:checked) .wkk-grp:not([data-grp='deep']),
+.wkk-picker:has(input[value='archive']:checked) .wkk-grp:not([data-grp='archive']),
+.wkk-wall:has(input[value='quick']:checked) .wkk-grp:not([data-grp='quick']),
+.wkk-wall:has(input[value='deep']:checked) .wkk-grp:not([data-grp='deep']),
+.wkk-wall:has(input[value='archive']:checked) .wkk-grp:not([data-grp='archive']) { display: none; }
+/* a browser without :has() shows every group, in order */
+
+/* the beloved gate's plate */
+.wkk-beloved { display: flex; flex-direction: column; overflow: hidden; color: var(--mag-ink); text-decoration: none; }
+.wkk-beloved:active { transform: translate(3px, 3px); box-shadow: none; }
+.wkk-beloved-art { position: relative; display: block; block-size: 168px; border-block-end: 3px solid var(--mag-ink); overflow: hidden; }
+.wkk-beloved-scarf { position: absolute; inset-inline-start: -12px; inset-block-end: -8px; block-size: 150px; inline-size: auto; }
+.wkk-beloved-shirt { position: absolute; inset-inline-end: 14px; inset-block-start: 14px; inline-size: 132px; transform: rotate(6deg); filter: drop-shadow(4px 4px 0 var(--mag-ink)); }
+.wkk-beloved-burst { position: absolute; inset-inline-start: 38%; inset-block-start: 10px; inline-size: 88px; block-size: 88px; transform: rotate(-8deg); }
+.wkk-beloved-burst > span { display: flex; flex-direction: column; align-items: center; line-height: 0.85; }
+.wkk-beloved-burst small { font-family: var(--mag-mono); font-size: 11px; text-transform: uppercase; }
+.wkk-beloved-burst b { font-size: 32px; }
+.wkk-beloved-text { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 16px; }
+.wkk-beloved-text .wk-tag { align-self: flex-start; }
+.wkk-beloved-shout { font-size: 28px; transform: rotate(-2deg); transform-origin: 0 100%; }
+.wkk-beloved-title { font-size: 28px; }
+.wkk-beloved-line { font-size: 14px; line-height: 1.4; }
+.wkk-beloved-line.muted { color: var(--mag-muted); font-style: italic; }
+.wkk-beloved-cta { align-self: flex-start; margin-block-start: 4px; min-block-size: 50px; font-size: 17px; }
+
+/* the Kick off! plate */
+.wkk-kick .wk-speed { --sx: 100%; --sy: 50%; --sc: rgb(255 251 242 / 0.35); }
+.wkk-ball { inline-size: 40px; block-size: 40px; position: relative; flex: none; }
+.wkk-ball circle { fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 3; }
+.wkk-ball path { fill: var(--mag-ink); }
+@media (prefers-reduced-motion: reduce) { .wkk-cover, .wkk-beloved, .wkk-kick { transition: none; } .wkk-cover:active, .wkk-beloved:active { transform: none; } }
+
+/* a match ticket */
+.wkk-ticket { overflow: hidden; min-block-size: 150px; }
+.wkk-ticket-notch { display: none; }
+.wkk-ticket-body { flex: 1; min-inline-size: 0; display: flex; flex-direction: column; gap: 8px; padding: 14px; }
+.wkk-ticket-tag { align-self: flex-start; }
+.wkk-ticket-h { font-size: 30px; color: var(--mag-vermilion); overflow-wrap: anywhere; }
+.wkk-v { color: var(--mag-ink); font-size: 0.7em; }
+.wkk-ticket-local { font-weight: 700; font-size: 15px; }
+.wkk-ticket-meta { font-size: 12px; }
+.wkk-ticket-cap { font-size: 12px; }
+.wkk-ticket-cta { align-self: flex-start; min-block-size: 48px; font-size: 15px; }
+.wkk-ticket-stub { inline-size: 92px; gap: 4px; background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-white)); text-align: center; }
+.wkk-ticket-stub small { font-family: var(--mag-display); font-size: 12px; text-transform: uppercase; }
+.wkk-ticket-stub b { font-size: 26px; line-height: 0.9; }
+
+/* the Did-you-know box */
+.wkk-dyk { margin-block-start: 18px; display: flex; flex-direction: column; gap: 10px; }
+.wkk-dyk-head { font-size: 30px; }
+.wkk-dyk-text { font-size: 16px; line-height: 1.5; }
+.wkk-dyk-cta { align-self: flex-start; min-block-size: 50px; font-size: 16px; }
+
+/* a caption box of local flavour */
+.wkk-flavour { display: flex; flex-direction: column; gap: 4px; text-transform: none; font-family: var(--mag-body); font-size: 14.5px; line-height: 1.45; }
+.wkk-flavour .wk-k { font-size: 11.5px; }
+
+/* ═════════ 2 · the club home ═════════ */
+/* the masthead panel: the kicker breaks the frame */
+.wkk-mast { display: flex; flex-direction: column; gap: 8px; }
+.wkk-tagline { font-size: 14px; }
+.wkk-mast-plate { position: relative; container-type: inline-size; min-block-size: 118px; border: 3px solid var(--mag-ink); display: flex; align-items: center; justify-content: center; padding-block: 14px; padding-inline: 82px 10px; }
+.wkk-mast-plate .wk-speed { --sx: 12%; --sy: 70%; --sc: rgb(255 251 242 / 0.2); overflow: hidden; }
+.wkk-mast-kicker { position: absolute; z-index: 2; inset-inline-start: -14px; inset-block-end: -20px; block-size: 104px; inline-size: auto; }
+.wkk-mast-keeper { display: none; }
+.wkk-mast-name { position: relative; z-index: 1; font-size: min(50px, calc(100cqi / (var(--len, 8) * 0.72))); transform: rotate(-4deg); text-align: center; line-height: 1.04; overflow-wrap: anywhere; }
+.wkk-mast-line { position: relative; display: flex; align-items: center; gap: 18px; padding-inline-start: 84px; padding-inline-end: 72px; min-block-size: 34px; }
+.wkk-mast-line .wk-k { font-size: 12px; }
+.wkk-mast-gate { position: absolute; z-index: 3; inset-inline-end: 2px; inset-block-start: -18px; inline-size: 62px; block-size: 62px; background: var(--mag-card); color: var(--mag-ink); transform: rotate(8deg); text-decoration: none; box-shadow: 3px 3px 0 var(--mag-ink); }
+.wkk-mast-gate .wk-k { font-size: 10px; }
+.wkk-mast-gate .wk-num { font-size: 26px; color: var(--mag-vermilion); }
+.wkk-mast-voice { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.wkk-welcome { flex: 0 1 auto; }
+.wkk-aka { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.wkk-aka .wk-tag { font-size: 13px; }
+.wkk-aka bdi { font-family: var(--mag-body); font-weight: 700; text-transform: none; }
+.wkk time { color: inherit; }
+
+/* the lead: cover story + the one action + coupon + your gate */
+.wkk-lead { display: flex; flex-direction: column; gap: 22px; }
+.wkk-lead-side { display: flex; flex-direction: column; gap: 22px; }
+.wkk-story { position: relative; }
+.wkk-story-in { display: block; block-size: 440px; overflow: hidden; text-decoration: none; }
+.wkk-art.big { position: absolute; inset: 0; block-size: auto; border-block-end: 0; }
+.wkk-art.big .wkk-art-plate { inset-inline-end: auto; inset-inline-start: -16px; block-size: 70%; inline-size: auto; max-inline-size: 78%; }
+.wkk-art.big[data-art='fans'] .wkk-art-plate, .wkk-art.big[data-art='memo'] .wkk-art-plate, .wkk-art.big[data-art='keeper'] .wkk-art-plate { block-size: auto; inline-size: 82%; inset-block-end: 70px; }
+.wkk-art.big .wkk-art-shirt { inline-size: min(54%, 300px); inset-inline-start: 8%; inset-block-start: 36%; }
+.wkk-art.big .wkk-art-flash { inset-inline-start: 46%; inset-block-start: 38%; inline-size: 120px; block-size: 120px; }
+.wkk-story-head { position: absolute; z-index: 2; inset-inline: 14px; inset-block-start: 14px; pointer-events: none; display: flex; flex-direction: column; gap: 6px; }
+.wkk-story-head .wk-head { font-size: clamp(38px, 11vw, 52px); -webkit-text-stroke: 1px var(--mag-ink); text-shadow: 3px 3px 0 var(--mag-white); }
+.wkk-story-sub { font-family: var(--mag-display); text-transform: uppercase; font-size: 19px; line-height: 1; color: var(--mag-white); text-shadow: 2px 2px 0 var(--mag-ink); }
+.wkk-story-burst { position: absolute; z-index: 1; inset-inline-end: 14px; inset-block-start: 128px; inline-size: 104px; block-size: 104px; transform: rotate(10deg); padding: 10px; }
+.wkk-story-burst .wk-head { font-size: 16px; line-height: 0.95; }
+.wkk-story-cap { position: absolute; z-index: 1; inset-inline-end: 12px; inset-block-end: 14px; inline-size: min(210px, 58%); }
+.wkk-pick { display: flex; flex-direction: column; gap: 8px; }
+.wkk-carry:empty { display: none; }
+.wkk-coupon-ph { min-block-size: 0; }
+.wkk-coupon { display: flex; align-items: center; gap: 12px; color: var(--mag-ink); text-decoration: none; padding-block: 12px; }
+.wkk-coupon-go { inline-size: 46px; block-size: 46px; background: var(--mag-cyan); color: var(--mag-white); }
+.wkk-coupon-go svg { inline-size: 18px; block-size: 18px; fill: currentColor; }
+.wkk-coupon-t { display: flex; flex-direction: column; gap: 2px; flex: 1; min-inline-size: 0; }
+.wkk-coupon-t .wk-head { font-size: 21px; overflow-wrap: anywhere; }
+.wkk-coupon-arrow { font-family: var(--mag-display); font-size: 22px; }
+.wkk-coupon .wk-scissors { background: var(--mag-paper); }
+
+/* pick a gate */
+.wkk-picker { display: flex; flex-direction: column; gap: 14px; }
+.wkk-picker-head { border-block-end: 0; padding-block-end: 0; }
+.wkk-picker-head .wk-banner { font-size: 15px; }
+.wkk-picker-head .wk-logo { font-size: 38px; }
+.wkk-picker-all { min-block-size: 44px; font-size: 15px; padding-inline: 12px; }
+
+/* the rest of the issue */
+.wkk-legends:empty { display: none; }
+.wkk-legends .lgm-banner-wrap { padding: 0; margin: 0; }
+.wkk-life-in { display: flex; overflow: hidden; min-block-size: 230px; }
+.wkk-life-art { position: relative; flex: 0 0 42%; border-inline-end: 3px solid var(--mag-ink); overflow: hidden; }
+.wkk-life-art .wk-plate { position: absolute; inset-inline-start: 4%; inset-block-end: -4px; block-size: 94%; inline-size: auto; max-inline-size: 96%; }
+.wkk-life-text { display: flex; flex-direction: column; gap: 6px; padding: 14px; flex: 1; min-inline-size: 0; }
+.wkk-life-shout { font-size: 54px; transform: rotate(-5deg); transform-origin: 0 100%; margin-block: 2px 4px; }
+.wkk-life-text .wk-head { font-size: 20px; }
+.wkk-life-note { font-size: 14px; line-height: 1.45; }
+.wkk-life-cta { align-self: flex-start; min-block-size: 48px; font-size: 15px; margin-block-start: auto; }
+.wkk-card { overflow: hidden; }
+.wkk-card-ph { min-block-size: 150px; }
+.wkk-card-head { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-block-end: 3px solid var(--mag-ink); }
+.wkk-card-crest { flex: none; inline-size: 58px; block-size: 58px; border-radius: 50%; background: var(--mag-card); border: 3px solid var(--mag-ink); display: grid; place-items: center; overflow: hidden; }
+.wkk-card-crest .mag-badge { inline-size: 44px; block-size: 44px; }
+.wkk-card-head > div { min-inline-size: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.wkk-card-head .wk-k { background: var(--mag-ink); color: var(--mag-white); padding: 2px 6px; font-size: 11px; }
+.wkk-card-head .wk-logo { font-size: 26px; transform: rotate(-2deg); overflow-wrap: anywhere; }
+.wkk-card-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
+.wkk-card-stats > div { display: flex; flex-direction: column-reverse; align-items: center; gap: 4px; padding: 12px 4px; border-inline-end: 3px dashed var(--mag-ink); text-align: center; }
+.wkk-card-stats > div:last-child { border-inline-end: 0; }
+.wkk-card-stats dd { margin: 0; font-size: 32px; }
+.wkk-card-stats dd.red { color: var(--club-type, var(--mag-vermilion)); }
+.wkk-card-stats dt { font-family: var(--mag-mono); font-size: 11px; letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.15; }
+.wkk-card-empty { padding: 14px; font-size: 15px; line-height: 1.45; }
+.wkk-card-since { padding: 0 14px 12px; }
+.wkk-card-next { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 12px 14px; border-block-start: 3px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-white); font-family: var(--mag-mono); font-size: 12px; text-transform: uppercase; text-decoration: none; }
+.wkk-card-next b { font-family: var(--mag-display); font-weight: 400; font-size: 15px; }
+
+/* the contents rows */
+.wkk-contents { display: flex; flex-direction: column; gap: 14px; }
+.wkk-crow { list-style: none; margin: 0; padding: 0; border-block-start: 4px solid var(--mag-ink); }
+.wkk-crow li { border-block-end: 2px solid var(--mag-ink); }
+.wkk-crow a { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 10px; min-block-size: 58px; padding: 6px 2px; color: var(--mag-ink); text-decoration: none; }
+.wkk-crow .wk-head { font-size: 22px; overflow-wrap: anywhere; }
+.wkk-crow .wk-k { font-size: 11px; text-align: end; }
+.wkk-crow svg { flex: none; }
+.wkk-share .share3-open { min-block-size: 50px; }
+
+@media (min-width: 901px) {
+  .wkk-home { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px 28px; align-items: start; }
+  .wkk-home > * { grid-column: 1 / -1; }
+  .wkk-tagline { font-size: 22px; }
+  .wkk-mast-plate { min-block-size: 172px; padding-inline: 230px 220px; }
+  .wkk-mast-kicker { block-size: 196px; inset-inline-start: 22px; inset-block-end: -26px; }
+  .wkk-mast-keeper { display: block; position: absolute; inset-inline-end: 10px; inset-block: 6px; inline-size: auto; block-size: calc(100% - 12px); }
+  .wkk-mast-name { font-size: min(118px, calc(100cqi / (var(--len, 8) * 0.7))); }
+  .wkk-mast-line { padding-inline: 0 120px; }
+  .wkk-mast-line .wk-k { font-size: 13px; }
+  .wkk-mast-gate { inline-size: 92px; block-size: 92px; inset-block-start: -14px; inset-inline-end: 20px; }
+  .wkk-mast-gate .wk-k { font-size: 13px; }
+  .wkk-mast-gate .wk-num { font-size: 40px; }
+  .wkk-lead { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  .wkk-lead:not([data-story]) { grid-template-columns: minmax(0, 1fr); }
+  .wkk-lead:not([data-story]) .wkk-lead-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .wkk-story-in { block-size: 600px; }
+  .wkk-story-head { inset-inline: 28px; inset-block-start: 24px; }
+  .wkk-story-head .wk-head { font-size: 74px; }
+  .wkk-story-sub { font-size: 30px; }
+  .wkk-story-burst { inline-size: 150px; block-size: 150px; inset-block-start: 70px; inset-inline-end: 30px; }
+  .wkk-story-burst .wk-head { font-size: 24px; }
+  .wkk-story-cap { inline-size: 330px; inset-inline-end: 26px; inset-block-end: 22px; font-size: 14px; }
+  .wkk-art.big .wkk-art-plate { block-size: 80%; }
+  .wkk-art.big .wkk-art-flash { inline-size: 170px; block-size: 170px; }
+  .wkk-picker-head .wk-logo { font-size: 50px; }
+  .wkk-picker { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 20px; row-gap: 18px; }
+  .wkk-picker > * { grid-column: 1 / -1; }
+  .wkk-picker-head { grid-column: 1; align-self: end; }
+  .wkk-picker > .wkk-filter { grid-column: 2; grid-row: 1; align-self: end; inline-size: 460px; }
+  .wkk-picker > .wk-seeall { justify-self: start; inline-size: auto; min-inline-size: 320px; }
+  .wkk-life { grid-column: 1 / 7; }
+  .wkk-dykwrap { grid-column: 7 / 13; }
+  .wkk-home:not(:has(.wkk-dykwrap)) .wkk-life { grid-column: 1 / -1; }
+  .wkk-life-in { min-block-size: 300px; }
+  .wkk-life-shout { font-size: 70px; }
+  .wkk-life-text .wk-head { font-size: 24px; }
+  .wkk-dyk { margin-block-start: 22px; }
+  .wkk-nextwrap { grid-column: 1 / 5; }
+  .wkk-cardwrap { grid-column: 5 / 9; }
+  .wkk-contents { grid-column: 9 / 13; }
+  .wkk-home:not(:has(.wkk-nextwrap)) .wkk-cardwrap { grid-column: 1 / 7; }
+  .wkk-home:not(:has(.wkk-nextwrap)) .wkk-contents { grid-column: 7 / 13; }
+  .wkk-card-stats dd { font-size: 30px; }
+}
+
+/* ═════════ 3 · Play: the gate wall ═════════ */
+.wkk-wall { display: flex; flex-direction: column; gap: 24px; }
+.wkk-wall-side { display: flex; flex-direction: column; gap: 14px; min-inline-size: 0; }
+.wkk-wall-title { display: flex; flex-direction: column; gap: 2px; }
+.wkk-wall-title .wk-banner { font-size: 15px; }
+.wkk-wall-title .wk-logo { font-size: 58px; margin-block: 2px 4px; }
+.wkk-wall-main { display: flex; flex-direction: column; gap: 30px; min-inline-size: 0; }
+.wkk-wall-grp { display: flex; flex-direction: column; gap: 14px; }
+.wkk-wall-grp .wkk-sechead { justify-content: flex-start; align-items: baseline; }
+.wkk-wall-grp .wkk-rows { border-block-start: 0; }
+.wkk-filter > label > small { font-family: var(--mag-mono); }
+.wkk-wall-beloved .wkk-beloved[data-variant='wall'] { flex-direction: row; }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-art { flex: 0 0 36%; block-size: auto; min-block-size: 150px; border-block-end: 0; border-inline-end: 3px solid var(--mag-ink); }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-scarf, .wkk-beloved[data-variant='wall'] .wkk-beloved-shirt { display: none; }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-burst { inset: 0; margin: auto; inline-size: 96px; block-size: 96px; }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-shout, .wkk-beloved[data-variant='wall'] .wkk-beloved-line { display: none; }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-title { font-size: 22px; }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-text .wk-tag { font-size: 11px; white-space: normal; }
+.wkk-beloved[data-variant='wall'] .wkk-beloved-cta { min-block-size: 46px; font-size: 15px; }
+.wkk-play-none { display: flex; flex-direction: column; gap: 14px; }
+@media (min-width: 901px) {
+  .wkk-wall { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 44px; align-items: start; }
+  .wkk-wall-side { position: sticky; inset-block-start: calc(var(--club-stick, 72px) + 18px); gap: 18px; }
+  .wkk-wall-title .wk-logo { font-size: 58px; white-space: nowrap; }
+  .wkk-wall .wkk-filter { grid-auto-flow: row; grid-auto-columns: auto; box-shadow: var(--mag-shadow); }
+  .wkk-wall .wkk-filter > label { flex-direction: row; justify-content: space-between; min-block-size: 54px; padding-inline: 16px; border-inline-end: 0; border-block-end: 3px solid var(--mag-ink); font-size: 19px; }
+  .wkk-wall .wkk-filter > label:last-child { border-block-end: 0; }
+  .wkk-wall .wkk-filter > label > small { font-size: 12px; }
+  .wkk-beloved[data-variant='wall'] { flex-direction: column; }
+  .wkk-wall-beloved .wkk-beloved[data-variant='wall'] { flex-direction: column; }
+  .wkk-beloved[data-variant='wall'] .wkk-beloved-art { flex: none; block-size: 150px; border-inline-end: 0; border-block-end: 3px solid var(--mag-ink); }
+  .wkk-beloved[data-variant='wall'] .wkk-beloved-shirt { display: block; inline-size: 120px; }
+  .wkk-beloved[data-variant='wall'] .wkk-beloved-burst { inset-block: 10px auto; inset-inline: 26% auto; margin: 0; }
+  .wkk-wall-main { gap: 40px; }
+}
+
+/* ═════════ 4 · History: the "Top Teams" club file ═════════ */
+.wkk-hist-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; border-block-end: 3px solid var(--mag-ink); padding-block-end: 8px; }
+.wkk-hist-tt { font-family: var(--mag-brand); text-transform: none; font-size: 17px; transform: rotate(-3deg); box-shadow: 3px 3px 0 var(--mag-ink); }
+.wkk-hist-top .wk-banner { font-size: 16px; }
+.wkk-hist-place { margin-inline-start: auto; font-size: 12px; }
+.wkk-hist-lead { display: flex; flex-direction: column; gap: 22px; }
+.wkk-record { position: relative; min-block-size: 440px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
+.wkk-record .wk-speed { --sx: 70%; --sy: 40%; --sc: rgb(255 251 242 / 0.5); }
+.wkk-record-crest { position: absolute; z-index: 2; inset-inline-start: 16px; inset-block-start: 16px; inline-size: 112px; block-size: 112px; background: var(--mag-card); display: grid; place-items: center; }
+.wkk-record-crest img { inline-size: 74%; block-size: auto; object-fit: contain; }
+.wkk-record-crest .mag-badge { inline-size: 80px; block-size: 80px; }
+.wkk-record-kicker { position: absolute; z-index: 1; inset-inline-end: -36px; inset-block-start: 6px; block-size: 72%; inline-size: auto; }
+.wkk-record-name { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 0 14px 16px; }
+.wkk-record-h { font-size: min(56px, calc((100vw - 64px) / (var(--len, 8) * 0.72))); transform: rotate(-4deg); transform-origin: 0 100%; }
+.wkk-record-welcome { max-inline-size: 280px; }
+.wkk-record-band { position: relative; z-index: 3; border-block-start: 3px solid var(--mag-ink); padding: 12px 10px; }
+.wkk-record-band ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.wkk-nick { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; padding: 5px 12px; background: var(--mag-ink); color: var(--mag-white); transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--mag-white); }
+.wkk-nick.alt { background: var(--mag-vermilion); transform: rotate(1deg); margin-inline-start: 14px; }
+.wkk-nick b { font-family: var(--mag-display); font-weight: 400; font-size: 19px; text-transform: uppercase; }
+.wkk-nick bdi { font-weight: 700; font-size: 15px; }
+.wkk-hist-side { display: flex; flex-direction: column; gap: 22px; }
+.wkk-roundels { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.wkk-roundels li { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.wkk-roundels .wk-roundel { inline-size: 76px; block-size: 76px; max-inline-size: 100%; aspect-ratio: 1; block-size: auto; box-shadow: 3px 3px 0 var(--mag-ink); }
+.wkk-roundels .wk-num { font-size: 24px; }
+.wkk-roundels li:first-child:nth-last-child(n+1) .wk-num { letter-spacing: -0.5px; }
+.wkk-roundels small { font-size: 10.5px; line-height: 1.15; }
+.wkk-roundels [data-tone='club'] .wk-roundel { background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-white)); }
+.wkk-roundels [data-tone='navy'] .wk-roundel { background: var(--mag-navy); color: var(--mag-white); }
+.wkk-roundels [data-tone='cyan'] .wk-roundel { background: var(--mag-cyan); color: var(--mag-white); }
+.wkk-hist-empty { font-size: 15px; text-transform: none; font-family: var(--mag-body); }
+.wkk-hist-two { display: flex; flex-direction: column; gap: 26px; }
+.wkk-began, .wkk-ground { display: flex; flex-direction: column; gap: 12px; }
+.wkk-began-in { overflow: hidden; }
+.wkk-began-art { position: relative; display: block; block-size: 190px; border-block-end: 3px solid var(--mag-ink); overflow: hidden; }
+.wkk-began-plate { position: absolute; inset-inline-end: -10px; inset-block-end: -6px; inline-size: 82%; block-size: auto; }
+.wkk-began-burst { position: absolute; z-index: 1; inset-inline-start: 10px; inset-block-start: 14px; inline-size: 116px; block-size: 104px; transform: rotate(-10deg); }
+.wkk-began-burst > span { display: flex; flex-direction: column; align-items: center; line-height: 0.9; }
+.wkk-began-burst .wk-num { font-size: 32px; }
+.wkk-began-burst .wk-k { font-size: 11px; }
+.wkk-began-line { padding: 14px 16px 18px; font-size: 19px; font-weight: 600; line-height: 1.45; }
+.wkk-ground-in { position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.wkk-ground-in .wk-speed { --sx: 50%; --sy: 100%; --sc: rgb(255 251 242 / 0.14); }
+.wkk-stand { position: relative; display: block; inline-size: min(100%, 300px); margin: 18px auto 0; }
+.wkk-stand .pole { stroke: var(--mag-ink); stroke-width: 5; }
+.wkk-stand .lamp { fill: var(--mag-ink); stroke: var(--mag-ink); }
+.wkk-stand .roof { fill: var(--mag-ink); }
+.wkk-stand .seats { fill: var(--club-primary, var(--mag-vermilion)); stroke: var(--mag-ink); stroke-width: 3; }
+.wkk-stand .rows { stroke: var(--mag-white); stroke-width: 2.5; }
+.wkk-stand .ground { stroke: var(--mag-ink); stroke-width: 4; }
+.wkk-ground-t { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 14px 16px 18px; border-block-start: 3px solid var(--mag-ink); background: var(--mag-navy); }
+.wkk-ground-t .wk-head { font-size: 34px; }
+.wkk-ground-local { font-weight: 700; font-size: 16px; color: var(--mag-white); }
+.wkk-ground-flav { position: relative; margin: 0 16px 16px; text-transform: none; font-family: var(--mag-body); font-size: 13px; }
+.wkk-hist-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.wkk-hist-cards > article { display: flex; flex-direction: column; overflow: hidden; }
+.wkk-hist-cards > article > div { padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.wkk-hist-cards .wk-head { font-size: 22px; }
+.wkk-hist-cards p, .wkk-hist-cards li { font-size: 14px; line-height: 1.45; }
+.wkk-factcard { grid-column: 1 / -1; }
+.wkk-badgecard-art { display: grid; place-items: center; block-size: 140px; border-block-end: 3px solid var(--mag-ink); background-color: var(--mag-card); }
+.wkk-badgecard-art img { block-size: 108px; inline-size: auto; }
+.wkk-badgecard-art .mag-badge { inline-size: 84px; block-size: 84px; }
+.wkk-colourcard-art { display: flex; align-items: center; justify-content: center; gap: 10px; block-size: 140px; border-block-end: 3px solid var(--mag-ink); }
+.wkk-colourcard-art i { inline-size: 54px; block-size: 54px; border-radius: 50%; border: 3px solid var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); }
+.wkk-colourcard-art .a { background: var(--club-primary, var(--mag-vermilion)); }
+.wkk-colourcard-art .b { background: var(--club-secondary, var(--mag-white)); }
+.wkk-turn { display: flex; flex-direction: column; gap: 14px; }
+.wkk-doors { display: flex; flex-direction: column; border-block-start: 4px solid var(--mag-ink); }
+.wkk-door { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; min-block-size: 76px; padding: 10px 2px; background: transparent; border: 0; border-block-end: 2px solid var(--mag-ink); box-shadow: none; overflow: visible; }
+.wkk-door-art { display: none; }
+.wkk-door-no { inline-size: 52px; block-size: 52px; }
+.wkk-door-no small { font-size: 9px; }
+.wkk-door-no .wk-num { font-size: 20px; }
+.wkk-door-t { display: flex; flex-direction: column; gap: 3px; min-inline-size: 0; }
+.wkk-door-t .wk-head { font-size: 24px; color: var(--mag-vermilion); }
+.wkk-door-t .wk-k { color: var(--mag-muted); font-size: 11.5px; }
+/* the first door is the page's one action, the Kick off! plate */
+.wkk-door:first-child { grid-template-columns: 82px minmax(0, 1fr); gap: 0; padding: 0; margin-block: 14px 8px; min-block-size: 76px; border: 3px solid var(--mag-ink); background: var(--mag-vermilion); color: var(--mag-white); box-shadow: var(--mag-shadow-l); }
+.wkk-door:first-child .wkk-door-no { inline-size: auto; block-size: 100%; border: 0; border-radius: 0; border-inline-end: 3px solid var(--mag-ink); background: var(--mag-cyan); color: var(--mag-white); }
+.wkk-door:first-child .wkk-door-no .wk-num { font-size: 30px; }
+.wkk-door:first-child .wkk-door-t { padding: 10px 14px; }
+.wkk-door:first-child .wkk-door-t .wk-head { color: var(--mag-white); font-size: 24px; text-shadow: 2px 2px 0 var(--mag-ink); }
+.wkk-door:first-child .wkk-door-t .wk-k { color: var(--mag-white); }
+.wkk-door:first-child:active { transform: translate(5px, 5px); box-shadow: none; }
+.wkk-turn-burst { position: absolute; inline-size: 70px; block-size: 70px; inset-inline-end: 8px; inset-block-start: 8px; transform: rotate(-8deg); }
+.wkk-turn-burst .wk-num { font-size: 22px; }
+.wkk-credit { font-size: 13px; line-height: 1.5; color: var(--mag-muted); border-block-start: 3px solid var(--mag-ink); padding-block-start: 10px; }
+@media (min-width: 901px) {
+  .wkk-hist-tt { font-size: 22px; }
+  .wkk-hist-top .wk-banner { font-size: 22px; }
+  .wkk-hist-place { font-size: 14px; }
+  .wkk-hist-lead { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 30px; align-items: start; }
+  .wkk-record { min-block-size: 620px; }
+  .wkk-record-crest { inline-size: 210px; block-size: 210px; inset-inline-start: 28px; inset-block-start: 28px; }
+  .wkk-record-kicker { block-size: 86%; inset-inline-end: -40px; inset-block-start: -10px; }
+  .wkk-record-name { padding: 0 28px 22px; }
+  .wkk-record-h { font-size: min(110px, calc(52vw / (var(--len, 8) * 0.72))); }
+  .wkk-record-band { padding: 16px 26px; }
+  .wkk-record-band ul { flex-direction: row; flex-wrap: wrap; gap: 14px; }
+  .wkk-nick b { font-size: 24px; }
+  .wkk-roundels { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .wkk-roundels .wk-roundel { inline-size: 120px; }
+  .wkk-roundels .wk-num { font-size: 36px; }
+  .wkk-roundels small { font-size: 12px; }
+  .wkk-hist-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 30px; align-items: start; }
+  .wkk-ground-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .wkk-stand { align-self: end; margin: 30px auto 20px; inline-size: 88%; }
+  .wkk-ground-t { border-block-start: 0; border-inline-start: 3px solid var(--mag-ink); justify-content: center; padding: 24px; }
+  .wkk-ground-t .wk-head { font-size: 46px; }
+  .wkk-ground-flav { grid-column: 1 / -1; margin: 0 24px 22px; }
+  .wkk-hist-cards { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .wkk-factcard { grid-column: auto; }
+  .wkk-badgecard-art, .wkk-colourcard-art { block-size: 170px; }
+  .wkk-doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; border-block-start: 0; }
+  .wkk-door, .wkk-door:first-child { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 0; margin: 0; min-block-size: 0; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); box-shadow: var(--mag-shadow); overflow: hidden; }
+  .wkk-door-art { display: block; }
+  .wkk-door-art .wk-cover-art { block-size: 190px; }
+  .wkk-door-no, .wkk-door:first-child .wkk-door-no { position: absolute; z-index: 2; inset-inline-start: 10px; inset-block-start: 128px; inline-size: 52px; block-size: 52px; border: 3px solid var(--mag-ink); border-radius: 50%; background: var(--mag-white); color: var(--mag-ink); }
+  .wkk-door:first-child .wkk-door-no .wk-num { font-size: 20px; }
+  .wkk-door-t, .wkk-door:first-child .wkk-door-t { padding: 12px 14px 14px; }
+  .wkk-door-t .wk-head, .wkk-door:first-child .wkk-door-t .wk-head { color: var(--mag-ink); text-shadow: none; font-size: 21px; }
+  .wkk-door-t .wk-k, .wkk-door:first-child .wkk-door-t .wk-k { color: var(--mag-red-deep); }
+}
+
+/* ═════════ 5 · the terrace: the pull-out poster ═════════ */
+.wkk-poster { position: relative; overflow: hidden; min-block-size: 560px; display: flex; flex-direction: column; justify-content: space-between; padding: 0; }
+.wkk-poster .wk-speed { --sx: 60%; --sy: 55%; --sc: rgb(255 251 242 / 0.22); }
+.wkk-poster-scarf { position: absolute; inset-inline: -10% 30%; inset-block-start: 74px; block-size: 46px; border-block: 3px solid var(--mag-ink); transform: rotate(-12deg); z-index: 1; }
+.wkk-poster-fan { position: absolute; z-index: 2; inset-inline-end: -24px; inset-block-end: -8px; block-size: 82%; inline-size: auto; }
+.wkk-poster-flash { z-index: 1; inline-size: 150px; block-size: 150px; inset-inline-start: 6%; inset-block-start: 46%; background: var(--mag-navy); transform: rotate(14deg); }
+.wkk-poster-no { position: absolute; z-index: 4; inset-inline-end: 12px; inset-block-start: 12px; inline-size: 96px; block-size: 96px; background: var(--mag-card); color: var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); }
+.wkk-poster-no .wk-k { font-size: 13px; }
+.wkk-poster-no .wk-num { font-size: 44px; color: var(--mag-vermilion); }
+.wkk-poster-head { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 140px 14px 0; }
+.wkk-poster-h { display: flex; flex-direction: column; font-size: min(104px, calc((100vw - 50px) / (var(--len, 6) * 0.66))); line-height: 0.92; transform: rotate(-5deg); transform-origin: 0 100%; }
+.wkk-poster-h > span:nth-child(2) { font-family: var(--mag-goal); font-size: 1.15em; }
+.wkk-poster-cap { position: relative; z-index: 3; margin: 0 12px 14px; max-inline-size: 300px; }
+.wkk-tgame { display: flex; flex-direction: column; gap: 14px; }
+.wkk-beloved[data-variant='terrace'] .wkk-beloved-cta { display: none; }
+.wkk-tnext, .wkk-season, .wkk-vote { display: flex; flex-direction: column; gap: 12px; }
+.wkk-ticket-note { font-size: 14px; color: var(--mag-muted); }
+.wkk-season-in { overflow: hidden; }
+.wkk-season-head { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-block-end: 3px solid var(--mag-ink); }
+.wkk-season-head .wk-logo { font-size: clamp(20px, 5.4vw, 30px); transform: rotate(-2deg); }
+/* the season ticket (ClubActivity) printed on this page's paper */
+.wkk-season .mag-ticket { display: flex; flex-direction: column; gap: 0; padding: 0; border: 0; box-shadow: none; background: transparent; margin: 0; }
+.wkk-season .mag-stats { order: 1; }
+.wkk-season .mag-ticket > .mag-fine { order: 2; margin: 0; padding: 10px 14px; border-block-start: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-size: 11px; letter-spacing: 0.4px; text-transform: uppercase; color: var(--mag-muted); }
+.wkk-season .mag-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 0; }
+.wkk-season .mag-stats > div { border: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 6px; border-inline-end: 3px dashed var(--mag-ink); border-block-end: 3px dashed var(--mag-ink); text-align: center; background: transparent; box-shadow: none; }
+.wkk-season .mag-stats > div:nth-child(3n) { border-inline-end: 0; }
+.wkk-season .mag-stats b { font-family: var(--mag-goal); font-weight: 400; font-size: 34px; line-height: 1; color: var(--mag-ink); }
+.wkk-season .mag-stats > div:first-child b { color: var(--club-type, var(--mag-vermilion)); }
+.wkk-season .mag-stats span { font-family: var(--mag-display); font-size: 14px; text-transform: uppercase; line-height: 1.05; }
+.wkk-season .mag-stats small { font-size: 11.5px; color: var(--mag-muted); font-weight: 600; }
+.wkk-season .mag-chip { order: 3; align-self: flex-start; margin: 10px 14px; min-block-size: 44px; background: transparent; border: 0; border-block-end: 3px solid var(--mag-ink); box-shadow: none; padding-inline: 0; font-family: var(--mag-display); text-transform: uppercase; font-size: 15px; color: var(--mag-ink); }
+.wkk-vote-in { display: flex; overflow: hidden; }
+.wkk-vote-art { flex: 0 0 34%; display: grid; place-items: center; border-inline-end: 3px solid var(--mag-ink); }
+.wkk-ballot { inline-size: 76%; max-inline-size: 140px; }
+.wkk-ballot .slip { fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 2.5; }
+.wkk-ballot .mark { stroke: var(--mag-vermilion); stroke-width: 3; stroke-linecap: round; }
+.wkk-ballot .box { fill: var(--mag-navy); stroke: var(--mag-ink); stroke-width: 3; }
+.wkk-ballot .slot { stroke: var(--mag-ink); stroke-width: 4; }
+.wkk-ballot .star { fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 1.5; }
+.wkk-vote-t { display: flex; flex-direction: column; gap: 8px; padding: 14px; flex: 1; min-inline-size: 0; }
+.wkk-vote-t .wk-head { font-size: 28px; }
+.wkk-vote-line { font-size: 14px; line-height: 1.45; }
+.wkk-vote-cta { align-self: flex-start; min-block-size: 50px; font-size: 16px; }
+.wkk-crowd { position: relative; overflow: hidden; block-size: 190px; border-block: 3px solid var(--mag-ink); margin-inline: -16px; }
+.wkk-crowd .wk-speed { --sx: 50%; --sy: 50%; --sc: rgb(255 251 242 / 0.2); }
+.wkk-crowd-a, .wkk-crowd-b { position: absolute; inset-block-end: -6px; block-size: 92%; inline-size: auto; }
+.wkk-crowd-a { inset-inline-start: -30px; }
+.wkk-crowd-b { inset-inline-end: -30px; }
+.wkk-crowd-tag { position: absolute; inset-inline: 0; margin-inline: auto; inline-size: max-content; inset-block-end: 14px; z-index: 2; font-size: 16px; text-transform: none; }
+@media (min-width: 901px) {
+  .wkk-terrace { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 30px 34px; align-items: start; }
+  .wkk-poster { grid-row: 1 / span 4; min-block-size: 900px; align-self: stretch; }
+  .wkk-poster-scarf { inset-block-start: 120px; block-size: 64px; }
+  .wkk-poster-no { inline-size: 150px; block-size: 150px; inset-inline-end: 22px; inset-block-start: 22px; }
+  .wkk-poster-no .wk-k { font-size: 18px; }
+  .wkk-poster-no .wk-num { font-size: 76px; }
+  .wkk-poster-head { padding: 220px 28px 0; }
+  .wkk-poster-h { font-size: min(170px, calc(40vw / (var(--len, 6) * 0.7))); }
+  .wkk-poster-cap { margin: 0 26px 26px; max-inline-size: 360px; font-size: 14px; }
+  .wkk-tgame .wkk-beloved[data-variant='terrace'] { flex-direction: row; }
+  .wkk-beloved[data-variant='terrace'] .wkk-beloved-art { flex: 0 0 42%; block-size: auto; min-block-size: 280px; border-block-end: 0; border-inline-end: 3px solid var(--mag-ink); }
+  .wkk-beloved[data-variant='terrace'] .wkk-beloved-burst { inset-inline-start: 6px; }
+  .wkk-beloved[data-variant='terrace'] .wkk-beloved-shirt { inset-inline-end: 20px; inset-block-start: 70px; inline-size: 150px; }
+  .wkk-beloved[data-variant='terrace'] .wkk-beloved-text { justify-content: center; padding: 18px 20px; }
+  .wkk-tnext, .wkk-vote, .wkk-season { grid-column: 2; }
+  .wkk-crowd { grid-column: 1 / -1; margin-inline: 0; block-size: 250px; }
+  .wkk-crowd-tag { font-size: 20px; }
+}
+
+/* ═════════ 6 · the kit archive: a sticker album ═════════ */
+.wkk-kits-layout { display: flex; flex-direction: column; gap: 22px; }
+.wkk-kits-side { display: flex; flex-direction: column; gap: 14px; min-inline-size: 0; }
+.wkk-kits-cover { position: relative; overflow: hidden; min-block-size: 290px; padding: 14px; }
+.wkk-kits-back { position: relative; z-index: 3; display: inline-flex; align-items: center; min-block-size: 44px; padding: 0 10px; background: var(--mag-card); border: 3px solid var(--mag-ink); font-family: var(--mag-display); font-size: 14px; text-transform: uppercase; color: var(--mag-ink); text-decoration: none; }
+.wkk-kits-label { position: relative; z-index: 3; margin-block-start: 10px; display: inline-flex; flex-direction: column; gap: 2px; padding: 10px 14px; background: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); transform: rotate(-3deg); max-inline-size: 92%; }
+.wkk-kits-label .wk-logo { font-size: min(44px, calc((100vw - 90px) / (var(--len, 8) * 0.7))); }
+.wkk-kits-shirt { position: absolute; z-index: 2; inline-size: 170px; inset-inline-end: 12px; inset-block-end: 14px; transform: rotate(8deg); filter: drop-shadow(4px 4px 0 var(--mag-ink)); }
+.wkk-kits-burst { position: absolute; z-index: 1; inline-size: 120px; block-size: 120px; inset-inline-end: 4px; inset-block-start: 96px; background: var(--mag-cyan); }
+.wkk-kits-count { position: absolute; z-index: 3; inset-inline-start: 14px; inset-block-end: 14px; inline-size: 112px; block-size: 112px; background: var(--mag-navy); color: var(--mag-white); box-shadow: var(--mag-shadow); gap: 2px; }
+.wkk-kits-count .wk-num { font-size: 40px; }
+.wkk-kits-count small { font-size: 10px; max-inline-size: 80px; text-align: center; }
+.wkk-kits-lede { font-size: 15px; line-height: 1.5; }
+.wkk-kits-types small { font-size: 11px; }
+.wkk-kits-types > [aria-current='page'] { background: var(--mag-vermilion); color: var(--mag-white); }
+.wkk-kits-types > * { font-size: 15px; padding-inline: 2px; }
+.wkk-kits-jump > summary small { margin-inline-start: auto; margin-inline-end: 8px; }
+.wkk-jump { display: flex; flex-direction: column; gap: 8px; }
+.wkk-jump-row { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 6px; align-items: start; }
+.wkk-jump-row > b { font-size: 18px; padding-block-start: 10px; }
+.wkk-jump-row > span { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 5px; }
+.wkk-jump-s { display: flex; align-items: center; justify-content: center; min-block-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font-family: var(--mag-goal); font-size: 13px; text-decoration: none; }
+.wkk-jump-s:hover, .wkk-jump-s:focus-visible { background: var(--mag-ink); color: var(--mag-white); }
+.wkk-kits-main { display: flex; flex-direction: column; gap: 26px; min-inline-size: 0; }
+.wkk-season-sec { display: flex; flex-direction: column; gap: 14px; scroll-margin-block-start: calc(var(--club-stick, 64px) + 12px); }
+.wkk-season-bar { display: flex; align-items: center; gap: 12px; padding: 8px 14px; background: var(--mag-ink); color: var(--mag-white); box-shadow: 4px 4px 0 var(--mag-vermilion); }
+.wkk-season-bar .wk-k { color: var(--mag-salmon); font-size: 12px; }
+.wkk-season-bar .wk-num { font-size: 34px; }
+.wkk-season-n { margin-inline-start: auto; color: var(--mag-white) !important; }
+.wkk-kits-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.wkk-kit { flex-direction: row; overflow: hidden; }
+.wkk-kit-art { position: relative; flex: 0 0 40%; display: grid; place-items: center; min-block-size: 190px; padding: 26px 8px 8px; border-inline-end: 3px solid var(--mag-ink); }
+.wkk-kit-img { inline-size: 100%; max-inline-size: 150px; block-size: auto; max-block-size: 170px; object-fit: contain; filter: drop-shadow(3px 3px 0 rgb(21 19 15 / 0.35)); }
+.wkk-kit-art .kit-plate, .wkk-kit-art svg { inline-size: 100%; max-inline-size: 150px; block-size: auto; }
+.wkk-kit-type { position: absolute; inset-inline-start: 6px; inset-block-start: 6px; font-size: 12px; }
+.wkk-kit-body { flex: 1; min-inline-size: 0; display: flex; flex-direction: column; gap: 6px; padding: 10px 10px 12px; }
+.wkk-kit-maker { font-size: 18px; overflow-wrap: anywhere; }
+.wkk-kit-svg a { color: var(--mag-cyan-text); }
+.wkk-kit-more { border-block: 2px dashed var(--mag-ink); }
+.wkk-kit-more > summary { display: flex; align-items: center; justify-content: space-between; min-block-size: 44px; cursor: pointer; list-style: none; font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; }
+.wkk-kit-more > summary::-webkit-details-marker { display: none; }
+.wkk-kit-more > summary::after { content: '⌄'; font-family: var(--mag-body); font-weight: 900; font-size: 18px; }
+.wkk-kit-more[open] > summary::after { content: '⌃'; }
+.wkk-kit-dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; margin: 0 0 10px; font-size: 13px; }
+.wkk-kit-dl dt { font-weight: 800; }
+.wkk-kit-dl dd { margin: 0; overflow-wrap: anywhere; }
+.wkk-kits-older > summary { font-size: 17px; }
+.wkk-kits-older > .wkk-kits-older-in { display: flex; flex-direction: column; gap: 26px; padding: 14px 10px; border-block-start: 2px solid var(--mag-ink); background: var(--mag-paper); }
+.wkk-kits-extra { display: flex; flex-direction: column; gap: 12px; }
+.wkk-kits-extra > .wk-logo { font-size: 28px; }
+.wkk-kits-note { font-size: 14px; line-height: 1.45; }
+.wkk-kits-note a { text-decoration: underline; }
+/* "I have it" / "Looking for it": two coupon buttons side by side (components/clubs/KitOwn) */
+.wkk .kit-own, .kit-own.kit-own { display: grid; gap: 6px; margin-block-start: 2px; }
+.kit-own .kit-own-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.kit-own .kit-own-btn { min-block-size: 46px; padding: 2px 6px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); box-shadow: none; font-family: var(--mag-display); font-weight: 400; font-size: 12.5px; letter-spacing: 0; line-height: 1.05; text-transform: uppercase; text-align: center; white-space: normal; display: flex; align-items: center; justify-content: center; }
+.kit-own .kit-own-btn.red { background: var(--mag-ink); color: var(--mag-white); }
+.kit-own .kit-own-btn[aria-pressed='true'] { background: var(--mag-navy); color: var(--mag-white); }
+.kit-own .kit-own-btn[disabled] { opacity: 0.55; }
+.kit-own-note { margin: 0; font-size: 12.5px; }
+.kit-own-note a { text-decoration: underline; }
+.kit-own-err { color: var(--mag-red-deep); font-weight: 700; }
+@media (min-width: 640px) { .wkk-kits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 901px) {
+  .wkk-kits-layout { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 40px; align-items: start; }
+  .wkk-kits-side { position: sticky; inset-block-start: calc(var(--club-stick, 72px) + 16px); max-block-size: calc(100dvh - var(--club-stick, 72px) - 32px); overflow-y: auto; overscroll-behavior: contain; padding-block-end: 8px; padding-inline-end: 6px; }
+  .wkk-kits-label .wk-logo { font-size: min(44px, calc(250px / (var(--len, 8) * 0.7))); }
+  .wkk-kits-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+  .wkk-kit { flex-direction: column; }
+  .wkk-kit-art { flex: none; min-block-size: 220px; border-inline-end: 0; border-block-end: 3px solid var(--mag-ink); }
+  .wkk-season-bar .wk-num { font-size: 42px; }
+}
+
+/* ═════════ 7 · away days: the travel log ═════════ */
+.wkk-away-head { display: flex; flex-direction: column; gap: 12px; }
+.wkk-back { align-self: flex-start; display: inline-flex; align-items: center; min-block-size: 44px; font-family: var(--mag-mono); font-size: 13px; text-transform: uppercase; color: var(--mag-ink); text-decoration: none; }
+.wkk-away-cover { position: relative; overflow: hidden; min-block-size: 270px; padding: 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.wkk-away-cover .wk-speed { --sx: 80%; --sy: 30%; --sc: rgb(255 251 242 / 0.4); }
+.wkk-away-tag { position: relative; z-index: 2; }
+.wkk-away-h { position: relative; z-index: 2; font-size: min(48px, calc((100vw - 70px) / (var(--len, 8) * 0.68))); transform: rotate(-4deg); transform-origin: 0 100%; line-height: 1.02; }
+.wkk-bus { position: absolute; z-index: 1; inline-size: 190px; inset-inline-start: 8px; inset-block-end: 10px; filter: drop-shadow(4px 4px 0 var(--mag-ink)); }
+.wkk-bus .body { fill: var(--club-primary, var(--mag-vermilion)); stroke: var(--mag-ink); stroke-width: 3; stroke-linejoin: round; }
+.wkk-bus .win { fill: var(--mag-cyan); stroke: var(--mag-ink); stroke-width: 2.5; }
+.wkk-bus .band { stroke: var(--mag-white); stroke-width: 3; }
+.wkk-bus .wheel { fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 4; }
+.wkk-bus .speed { stroke: var(--mag-ink); stroke-width: 2.5; stroke-linecap: round; }
+.wkk-away-nights { position: absolute; z-index: 2; inset-inline-end: 12px; inset-block-end: 12px; inline-size: 104px; block-size: 104px; background: var(--mag-card); color: var(--mag-ink); box-shadow: var(--mag-shadow); gap: 2px; }
+.wkk-away-nights .wk-num { font-size: 38px; color: var(--mag-vermilion); }
+.wkk-away-nights small { font-size: 11px; }
+.wkk-away-lede { font-size: 15px; line-height: 1.5; }
+.wkk-modes { margin-block-start: -6px; }
+.wkk-modes > [aria-selected='true'] { background: var(--mag-vermilion); color: var(--mag-white); }
+/* the road */
+.wkk-road { display: flex; flex-direction: column; gap: 20px; }
+.wkk-road-side { display: contents; }
+.wkk-startticket { order: 1; }
+.wkk-road-lead { order: 2; display: flex; flex-direction: column; gap: 14px; }
+.wkk-prog { order: 3; }
+.wkk-now { order: 4; }
+.wkk-decades { order: 5; }
+.wkk-roadlist { order: 6; }
+.wkk-whole { order: 7; }
+.wkk-keys { order: 8; }
+.wkk-playrow { order: 9; position: sticky; z-index: 5; inset-block-end: calc(84px + env(safe-area-inset-bottom)); display: grid; grid-template-columns: minmax(0, 1fr) 70px; gap: 10px; padding-block: 8px; background: var(--mag-paper); }
+.wkk-play { font-size: 20px; }
+.wkk-play[aria-pressed='true'] { background: var(--mag-ink); }
+.wkk-speed { padding: 0; font-family: var(--mag-goal); }
+.wkk-mapframe { overflow: hidden; display: flex; flex-direction: column; }
+.wkk-mapbar { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px; background: var(--mag-ink); border-block-end: 3px solid var(--mag-ink); }
+.wkk-mapbar .wk-lamp { font-size: 17px; }
+.wkk-map { position: relative; overflow: hidden; block-size: 340px; background-color: var(--mag-cyan); background-image: radial-gradient(rgb(255 251 242 / 0.32) 1.6px, transparent 1.9px); background-size: 8px 8px; }
+.wkk-map > div > .bg-ink, .wkk-map .bg-ink { background: transparent; }
+.wkk-map svg path:nth-of-type(1) { fill: transparent; stroke: var(--mag-ink); stroke-opacity: 0.3; }
+.wkk-map svg path:nth-of-type(2) { stroke: var(--mag-white); stroke-opacity: 0.18; }
+.wkk-map svg path:nth-of-type(3) { fill: var(--mag-paper); }
+.wkk-map svg path:nth-of-type(4) { stroke: var(--mag-ink); stroke-opacity: 0.55; }
+.wkk-map svg g path { stroke-opacity: 1; }
+.wkk-map svg .away-num { fill: var(--mag-white); stroke: var(--mag-ink); }
+.wkk-map svg .away-num.active { fill: var(--mag-vermilion); }
+.wkk-map svg .away-num-t { fill: var(--mag-ink); font-family: var(--mag-goal); }
+.wkk-map svg .away-num.active + .away-num-t { fill: var(--mag-white); }
+.cad-map-load { block-size: 100%; }
+.wkk-mapcap { position: absolute; inset-inline-start: 8px; inset-block-start: 8px; display: grid; gap: 2px; max-inline-size: calc(100% - 16px); padding: 6px 10px; background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); pointer-events: none; animation: wkk-pop .45s cubic-bezier(.2,1.4,.4,1) both; }
+.wkk-mapcap b { font-family: var(--mag-display); font-weight: 400; font-size: 14px; text-transform: uppercase; }
+.wkk-mapcap span { font-size: 12px; }
+.wkk-maprun { position: absolute; inset-inline-end: 8px; inset-block-end: 8px; display: flex; align-items: baseline; gap: 4px; padding: 4px 10px; background: var(--mag-ink); color: var(--mag-white); pointer-events: none; }
+.wkk-maprun b { font-family: var(--mag-goal); font-weight: 400; font-size: 18px; margin-inline-start: 8px; }
+.wkk-maprun b:first-child { margin-inline-start: 0; }
+.wkk-maprun small { font-family: var(--mag-mono); font-size: 10px; text-transform: uppercase; }
+.wkk-unplaced { margin: 0; border-width: 3px 0 0; font-size: 11.5px; }
+@keyframes wkk-pop { from { opacity: 0; transform: scale(.88); } to { opacity: 1; transform: none; } }
+.wkk-startticket .wkk-ticket-body { gap: 4px; }
+.wkk-start-city { font-size: 26px; }
+.wkk-start-line { font-size: 26px; margin-block-start: 6px; color: var(--mag-vermilion); }
+.wkk-startticket .wkk-ticket-stub { inline-size: 104px; padding-inline: 8px; }
+.wkk-startticket .wkk-ticket-stub .wk-head { font-size: 20px; overflow-wrap: anywhere; }
+.wkk-prog { margin: 0; text-align: center; }
+.wkk-now:empty { display: none; }
+.wkk-nowcard { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; animation: wkk-pop .4s ease-out both; }
+.wkk-nowcard[data-result='W'] { box-shadow: 4px 4px 0 var(--club-primary, var(--mag-vermilion)); }
+.wkk-chapter { font-size: 26px; margin-block-end: 4px; }
+.wkk-now-big { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.wkk-now-big .wk-head { font-size: clamp(22px, 6vw, 32px); overflow-wrap: anywhere; }
+.wkk-now-score { font-size: clamp(36px, 10vw, 52px); display: inline-flex; }
+.wkk-now-score i { font-style: normal; }
+.wkk-now-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.wkk-decades { display: flex; flex-direction: column; gap: 10px; }
+.wkk-decades-h { font-size: 30px; }
+.wkk-decgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.wkk-decgrid > button { min-block-size: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); cursor: pointer; }
+.wkk-decgrid > button .wk-head { font-size: 17px; }
+.wkk-decgrid > button small { font-size: 14px; }
+.wkk-decgrid > button[aria-pressed='true'] { background: var(--mag-vermilion); color: var(--mag-white); }
+.wkk-whole { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.wkk-whole ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; }
+.wkk-whole li { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.wkk-whole li.wide { grid-column: 1 / -1; }
+.wkk-whole .wk-num { font-size: 30px; }
+.wkk-whole small { font-size: 11px; }
+.wkk-keys { display: flex; flex-direction: column; gap: 6px; border-block-start: 3px dashed var(--mag-ink); padding-block-start: 10px; font-size: 14px; }
+.wkk-roadsec { display: flex; flex-direction: column; gap: 14px; scroll-margin-block-start: calc(var(--club-stick, 64px) + 10px); }
+.wkk-road-head { align-items: flex-end; }
+.wkk-road-head .wk-banner { font-size: 13px; }
+.wkk-road-head .wk-logo { font-size: 40px; }
+.wkk-road-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.wkk-stubs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.wkk-stub { position: relative; display: grid; grid-template-columns: 74px minmax(0, 1fr) 96px; background: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); }
+.wkk-stub[aria-current='step'] { box-shadow: 6px 6px 0 var(--club-primary, var(--mag-vermilion)); outline: 3px solid var(--mag-ink); }
+.wkk-stub-no { position: absolute; z-index: 2; inset-inline-start: -10px; inset-block-start: -14px; inline-size: 34px; block-size: 34px; font-family: var(--mag-goal); font-size: 13px; background: var(--mag-card); }
+.wkk-stub-date { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 8px 4px; border: 0; border-inline-end: 3px dashed var(--mag-ink); background: transparent; color: var(--mag-ink); cursor: pointer; text-align: center; }
+.wkk-stub-date .wk-num { font-size: 22px; }
+.wkk-stub-date small { font-size: 11px; }
+button.wkk-stub-date:hover, button.wkk-stub-date:focus-visible { background: var(--mag-lilac); }
+.wkk-stub-body { display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; min-inline-size: 0; }
+.wkk-stub-body .wk-head { font-size: 20px; overflow-wrap: break-word; }
+.wkk-stub-ground { margin: 0; padding: 0; border: 0; background: none; font: inherit; font-size: 14px; line-height: 1.35; color: inherit; text-align: start; }
+button.wkk-stub-ground { min-block-size: 44px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.wkk-stub-ground .wk-k { font-size: 11px; }
+.wkk-stub-comp { font-size: 11px; color: var(--mag-muted); }
+.wkk-stub-note { font-size: 12.5px; line-height: 1.35; color: var(--mag-muted); }
+.wkk-stub-score { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 8px 6px; background: var(--mag-ink); color: var(--mag-white); border-inline-start: 3px solid var(--mag-ink); }
+.wkk-stub[data-result='W'] .wkk-stub-score { background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-white)); }
+.wkk-stub-score .wk-num { font-size: 30px; }
+.wkk-stub-word { font-family: var(--mag-display); text-transform: uppercase; font-size: 15px; }
+.wkk-been { min-block-size: 44px; inline-size: 100%; padding: 2px 4px; border: 2px dashed currentColor; background: transparent; color: inherit; font-family: var(--mag-display); font-size: 11.5px; text-transform: uppercase; line-height: 1.05; cursor: pointer; }
+.wkk-been[aria-pressed='true'] { border-style: solid; background: var(--mag-white); color: var(--mag-ink); }
+.wkk-nextdec { margin-block-start: 6px; }
+.wkk-source { font-size: 12.5px; line-height: 1.5; color: var(--mag-muted); }
+/* explore */
+.wkk-explore { display: flex; flex-direction: column; gap: 20px; }
+.wkk-explore-top { display: flex; flex-direction: column; gap: 14px; }
+.wkk-explore .wkk-map { block-size: 380px; }
+.wkk-explore-side { display: flex; flex-direction: column; gap: 12px; }
+.wkk-explore-sel { align-self: flex-start; }
+.wkk-mine { align-self: flex-start; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .wkk-mapcap, .wkk-nowcard { animation: none; } }
+@media (min-width: 901px) {
+  .wkk-away-head { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 10px 34px; align-items: end; }
+  .wkk-back { grid-column: 1 / -1; }
+  .wkk-away-cover { min-block-size: 230px; padding: 22px 26px; }
+  .wkk-away-h { font-size: min(84px, calc(46vw / (var(--len, 8) * 0.68))); }
+  .wkk-bus { inline-size: 200px; inset-inline-start: auto; inset-inline-end: 170px; inset-block-end: 22px; }
+  .wkk-away-nights { inline-size: 130px; block-size: 130px; inset-inline-end: 18px; inset-block-end: 18px; }
+  .wkk-away-nights .wk-num { font-size: 48px; }
+  .wkk-away-lede { font-size: 17px; }
+  .wkk-modes { margin: 0; max-inline-size: 460px; margin-inline-start: auto; }
+  .wkk-road { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 28px 34px; align-items: start; }
+  .wkk-road-side { display: flex; flex-direction: column; gap: 18px; grid-column: 2; grid-row: 1; }
+  .wkk-road-lead { grid-column: 1; grid-row: 1; }
+  .wkk-roadlist { grid-column: 1 / -1; }
+  .wkk-road-side > * { order: 0; }
+  .wkk-playrow { position: static; padding: 0; background: none; grid-template-columns: minmax(0, 1fr) 72px; }
+  .wkk-map { block-size: 600px; }
+  .wkk-mapbar .wk-lamp { font-size: 22px; }
+  .wkk-road-head .wk-logo { font-size: 54px; }
+  .wkk-stubs { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 22px; }
+  .wkk-explore-top { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 30px; align-items: start; }
+  .wkk-explore .wkk-map { block-size: 560px; }
+}
+
+/* ═════════ 8 · meetings with one opponent ═════════ */
+.wkk-meet-head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.wkk-meet-head .wk-banner { font-size: 15px; }
+.wkk-meet-h { font-size: clamp(34px, 9vw, 64px); line-height: 1.05; overflow-wrap: anywhere; }
+.wkk-meet-h .wkk-v { color: var(--mag-ink); font-size: 0.6em; }
+.wkk-meet-none { font-family: var(--mag-body); text-transform: none; font-size: 15px; }
+.wkk-meet-list .wkk-stub { grid-template-columns: 92px minmax(0, 1fr) 110px; }
+.wkk-stub-score .mag-been { min-block-size: 44px; inline-size: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 2px 4px; border: 2px dashed currentColor; background: transparent; color: inherit; box-shadow: none; font-family: var(--mag-display); font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; line-height: 1.05; transform: none; }
+.wkk-stub-score .mag-been[aria-pressed='true'] { border-style: solid; background: var(--mag-white); color: var(--mag-ink); }
+@media (min-width: 901px) { .wkk-meet-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 22px; } }

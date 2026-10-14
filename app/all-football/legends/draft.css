@@ -56,7 +56,7 @@
   .lgm-draft > .lgm-board { grid-area: board; }
   .lgm-draft > .lgm-error { grid-area: err; }
   .lgm-draft > .lgm-fine { grid-area: fine; }
-  .lgm-draft .lgm-rail-slots { grid-auto-columns: minmax(64px, 1fr); }
+  .lgm-draft .lgm-rail-slots { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); }
   .lgm-draft .lgm-rail-slots > li { flex-direction: column; justify-content: center; align-items: stretch; gap: 2px; min-block-size: 56px; padding: 4px 6px; text-align: center; min-inline-size: 0; }
   .lgm-draft .lgm-rail-slots > li [class*='slotPos'] { flex: none; }
   .lgm-draft .lgm-rail-slots > li [class*='slotName'] { flex: none; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

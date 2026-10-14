@@ -105,5 +105,10 @@
   "mem.result.trySize": "לנסות קיר של {n} צמדים",
   "mem.result.share": "לשתף את הקיר",
   "mem.result.copied": "הועתק. אפשר להדביק בכל מקום.",
-  "mem.result.shelf": "לפתוח את המדף"
+  "mem.result.shelf": "לפתוח את המדף",
+  "mem.coupon.title": "הגדרות הקיר",
+  "mem.coupon.done": "סיום",
+  "mem.keys.title": "במקלדת",
+  "mem.keys.move": "מעבר בין קלפים",
+  "mem.keys.turn": "הפיכת קלף"
 }

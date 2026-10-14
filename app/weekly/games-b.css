@@ -1,0 +1,38 @@
+/* THE WEEKLY (rule 124) — games-b pages. Owned by one family; tokens only (--mag-*), logical properties, no sideways scroll.
+ * Gates: 5 Kit studio · 7 Terrace vote · 8 Rebuild the goal · 9 Royal Rumble · 10 Blind Cow · 11 The derby · 12 Living archive.
+ * Most of each gate's dress lives in its own CSS module; this file holds only what must reach across a module boundary:
+ * the desktop spread width of these gates, and the shared sheet (components/stage/SlideSheet) re-inked as a coupon
+ * torn off the page — scoped to `.wgb`, the root class every gate of this family carries. */
+
+/* a desktop gate is a double-page spread, not a phone column in the middle of the screen */
+@media (min-width: 901px) {
+  main.mag-game:is([data-gate='derby'], [data-gate='kits'], [data-gate='polls'], [data-gate='archive'], [data-gate='goal'], [data-gate='blind-cow'], [data-gate='royal-rumble']) { max-width: 1240px; }
+}
+
+/* ── the sheet, as a coupon: dashed tear edge, scissors, the title in Weekly Head, the close as a plate ── */
+.wgb [role='dialog'][aria-modal='true'] { background: color-mix(in srgb, var(--mag-ink) 58%, transparent); }
+.wgb [role='dialog'][aria-modal='true'] > div { position: relative; background: var(--mag-card); color: var(--mag-ink); border-block-start: 3px dashed var(--mag-ink); font-family: var(--mag-body); }
+.wgb [role='dialog'][aria-modal='true'] > div::before { content: ''; position: absolute; inset-block-start: -17px; inset-inline-start: 18px; width: 32px; height: 32px; border-radius: 50%; background-color: var(--mag-card); background-image: none; -webkit-mask: none; z-index: 1; }
+.wgb [role='dialog'][aria-modal='true'] > div::after { content: ''; position: absolute; inset-block-start: -12px; inset-inline-start: 23px; width: 22px; height: 22px; background: var(--mag-ink); z-index: 2; pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'><circle cx='6' cy='6' r='3'/><circle cx='6' cy='18' r='3'/><path d='M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'><circle cx='6' cy='6' r='3'/><circle cx='6' cy='18' r='3'/><path d='M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12'/></svg>") center / contain no-repeat; }
+.wgb [role='dialog'][aria-modal='true'] > div > div:first-child { padding-block-start: 14px; }
+.wgb [role='dialog'][aria-modal='true'] > div > div:first-child > span[aria-hidden='true'] { background: var(--mag-ink); opacity: .35; }
+.wgb [role='dialog'][aria-modal='true'] > div > div:first-child p { font-family: var(--mag-display); font-weight: 400; font-size: 26px; line-height: 1; text-transform: uppercase; color: var(--mag-ink); overflow-wrap: anywhere; }
+.wgb [role='dialog'][aria-modal='true'] > div > div:first-child button { min-width: 48px; min-height: 48px; padding-inline: 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font-family: var(--mag-display); font-weight: 400; font-size: 15px; text-transform: uppercase; box-shadow: 3px 3px 0 var(--mag-ink); }
+.wgb [role='dialog'][aria-modal='true'] > div > div:first-child button:active { transform: translate(3px, 3px); box-shadow: none; }
+.wgb [role='dialog'][aria-modal='true'] > div > div:last-child:not(:first-child) { border-color: var(--mag-ink); }
+.wgb:is([lang='he'], [lang='he'] *) [role='dialog'][aria-modal='true'] > div > div:first-child p { text-transform: none; }
+@media (min-width: 640px) { .wgb [role='dialog'][aria-modal='true'] > div { border: 3px solid var(--mag-ink); border-block-start-style: dashed; box-shadow: 0 12px 0 color-mix(in srgb, var(--mag-ink) 25%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .wgb [role='dialog'][aria-modal='true'] > div > div:first-child button:active { transform: none; } }
+
+/* Royal Rumble frame (global half of rumble.module.css's scoped block:
+   a CSS module may not hold a rule with no local class). */
+.wgb-rumble { --rr-lit: var(--club-primary, var(--mag-vermilion)); display: flex; flex-direction: column; gap: 0; min-width: 0; padding-block: 12px 8px; }
+.wgb-rumble-bill { display: flex; flex-direction: column; min-width: 0; }
+@media (min-width: 901px) {
+  .wgb-rumble { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr) minmax(0, 300px); grid-template-rows: auto auto auto 1fr; column-gap: 26px; align-items: start; }
+  .wgb-rumble > * { grid-column: 1 / -1; }
+  .wgb-rumble > .wgb-rumble-bill { grid-column: 1; grid-row: 2 / -1; margin: 0; }
+  .wgb-rumble:not(:has(> [data-testid='rumble'] > header)) > .wgb-rumble-bill { grid-row: 1 / -1; }
+}

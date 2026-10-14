@@ -116,5 +116,15 @@
  "bc.why.left": "{n} players still fit",
  "bc.cover.unique-in-archive": "Unique within this club's checked archive — that is not proof that nobody else ever fit.",
  "bc.cover.few-candidates": "A few players could fit all of these clues in the archive ({n} left); the archive's intended player is the answer.",
- "bc.cover.unproven": "The archive has not counted who else fits, so this is an exploration, not a proven single answer."
+ "bc.cover.unproven": "The archive has not counted who else fits, so this is an exploration, not a proven single answer.",
+ "bc.who": "Who is he??",
+ "bc.clippings": "The clippings",
+ "bc.clippings.sub": "Each clue costs time",
+ "bc.nameHim": "Name him!",
+ "bc.clock.title": "The clock",
+ "bc.clock.clue": "Each extra clue you open",
+ "bc.clock.wrong": "Each wrong name",
+ "bc.clock.giveup": "Give up",
+ "bc.clock.noScore": "No score",
+ "bc.clock.plus": "+{s}s"
 }

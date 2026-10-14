@@ -53,7 +53,7 @@ try{
   timings.push(['/ (fetch, ttfb)',ttfb]);if(ttfb>4000)fail('hub','first byte after '+ttfb+' ms')}
  await visit('hub','/')
  await page.locator('#next').waitFor({timeout:20000}).catch(()=>fail('hub','Next up never arrived'))
- const tile=page.locator('a.mag-tile.is-open').first()
+ const tile=page.locator('a[data-club-tile="open"]').first()
  if(await tile.count()){
   const href=await tile.getAttribute('href')
   await tile.click()
@@ -118,7 +118,7 @@ try{
    await step('revert',await api('life-display/revert'));if((await live()).zoom===1.4)fail('admin flow','revert left the published value live')
    await step('reset',await api('life-display/reset'))}
   const st=JSON.parse((await call('/api/master/state')).text||'{}'),club=(st.clubs||[]).find(c=>c.id==='olympiacos')
-  const onHub=async()=>{await page.goto(base+'/',{waitUntil:'domcontentloaded'});return page.locator('a.mag-tile.is-open[data-club="olympiacos"]').count()}
+  const onHub=async()=>{await page.goto(base+'/',{waitUntil:'domcontentloaded'});return page.locator('a[data-club-tile="open"][data-club="olympiacos"]').count()}
   if(!club)fail('admin flow','olympiacos missing from the control state')
   else if(await onHub()){
    const body=(c,status)=>({id:c.id,version:c.version,status,gates:c.gates,name:c.name,city:c.city,primary:c.primary,secondary:c.secondary})

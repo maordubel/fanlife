@@ -13,5 +13,5 @@ export const metadata = { title: 'My file' }
 export default async function FilePage() {
   const [clubs, map] = await Promise.all([meClubs(), fanShirtMap()])
   const labels = Object.fromEntries(Object.values(map).map((s) => [s.slug, { label: `${s.variantHe} · ${shirtDateText(s)}`, club: s.club }]))
-  return <FanPage active="file" title={fl('file.title')} sub={fl('file.sub')}><MyFile clubs={clubs} labels={labels} /></FanPage>
+  return <FanPage active="file" mast="full" spread title={fl('file.title')} sub={fl('file.sub')}><MyFile clubs={clubs} labels={labels} /></FanPage>
 }

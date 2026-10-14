@@ -9,11 +9,14 @@ import {dealMode,modeCatalog} from '@/lib/clubs/trivia-deck'
 import {planMemory} from '@/lib/clubs/memory-deck'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {roundFrom} from '@/lib/rotation/round'
+import {modeOf} from '@/lib/clubs/layout-mode'
 import type {ClubData} from '@/lib/clubs/contract'
 import type {TriviaPlan} from '@/components/clubs/gates/trivia/ClubTrivia'
 import '../all-football.css'
 export const dynamic='force-dynamic'
 const TITLE:Record<PoolGate,string>={trivia:'The quiz stand',timeline:'The long line',memory:'The memory wall'}
+/** the gate's printed number, as on its cover (the club gates' numbers: trivia 2, memory 6, timeline 13) */
+const NO:Record<PoolGate,string>={trivia:'02',timeline:'13',memory:'06'}
 export function generateMetadata({params}:{params:{gate:string}}){return {title:`${TITLE[params.gate as PoolGate]??'Gate'} · ALL FOOTBALL`,robots:{index:false}}}
 
 type Search={mode?:string;a?:string;b?:string;seed?:string;r?:string;topic?:string;era?:string;go?:string;practice?:string;size?:string;theme?:string;peek?:string}
@@ -29,12 +32,12 @@ export default async function Page({params,searchParams}:{params:{gate:string};s
  const mode=parseModeQuery(searchParams),a=await aggregateFor(gate,mode)
  const q=modeQuery(mode),home=`/all-football${q?`?${q}`:''}`
  const copy=gameCopy('en'),round=roundFrom(searchParams)
- const body=!a?<section className="af-closed"><h2>Not enough clubs for this round</h2><p>{mode.kind==='duel'?'One of the two clubs cannot field this gate yet. Pick another pair.':'At least two clubs must have this gate open to fans.'}</p><Link className="game-button min-h-tap" href="/all-football">Back to ALL FOOTBALL</Link></section>:
+ const body=!a?<section className="af-closed wk-coupon"><h2 className="wk-head">Not enough clubs for this round</h2><p>{mode.kind==='duel'?'One of the two clubs cannot field this gate yet. Pick another pair.':'At least two clubs must have this gate open to fans.'}</p><Link className="wk-btn min-h-tap" href="/all-football">Back to ALL FOOTBALL</Link></section>:
   gate==='trivia'?trivia(a,copy,round,searchParams,home):gate==='memory'?memory(a,copy,round,searchParams,home):timeline(a,round,home)
  return <Shell locale="en">
   <PreviewRibbon on={door.preview}/>
-  <main id="main" className="af mag-game mx-auto min-h-screen max-w-3xl px-gutter py-6" lang="en">
-   <GateBar title={TITLE[gate]} mode={mode} back={home}>{a?<Contributors members={a.members} label={`This round draws from ${a.members.length} clubs`} compact/>:null}</GateBar>
+  <main id="main" className="af wkl-af-gate mag-game mx-auto min-h-screen max-w-3xl px-gutter py-6" lang="en" data-gate={gate} data-mode={modeOf(gate)} data-view={gate==='timeline'?'chronology':undefined}>
+   <GateBar title={TITLE[gate]} mode={mode} back={home} gateNo={NO[gate]}>{a?<Contributors members={a.members} label={`This round draws from ${a.members.length} clubs`} compact/>:null}</GateBar>
    {body}
   </main>
  </Shell>
@@ -52,7 +55,7 @@ function trivia(a:Agg,copy:Copy,round:Round,sp:Search,home:string){
   selected:{mode:filtered?undefined:catalog.mode,topic:sp.topic&&catalog.topics.some(x=>x.id===sp.topic)?sp.topic:undefined,era:sp.era&&catalog.eras.some(x=>String(x.decade)===sp.era)?sp.era:undefined,
    category:'blocked' in dealt?null:dealt.category,size:'blocked' in dealt?0:dealt.ids.length,banded:'blocked' in dealt?false:dealt.banded,blocker:'blocked' in dealt?dealt.blocked:undefined},
  }
- return <AfTrivia key={`${a.version}:${round.seed}:${round.cursor}:${sp.topic||''}:${sp.era||''}`} home={home} club={a.slug} clubName="ALL FOOTBALL" version={a.version} seed={round.seed} cursor={round.cursor}
+ return <AfTrivia key={`${a.version}:${round.pinned?`${round.seed}:${round.cursor}`:'fresh'}:${sp.topic||''}:${sp.era||''}`/* the run cookie re-renders the page; an unpinned seed must not remount the board */} home={home} club={a.slug} clubName="ALL FOOTBALL" version={a.version} seed={round.seed} cursor={round.cursor}
   locale="en" contentLocale="en" copy={copy} plan={plan} autostart={sp.go==='1'} practice={sp.practice==='1'}/>
 }
 function memory(a:Agg,copy:Copy,round:Round,sp:Search,home:string){
@@ -62,6 +65,6 @@ function memory(a:Agg,copy:Copy,round:Round,sp:Search,home:string){
 }
 function timeline(a:Agg,round:Round,home:string){
  const game=aggregateTimeline(a)
- if(!game.available)return <section className="af-closed"><h2>Not enough dated moments yet</h2><Link className="game-button min-h-tap" href={home}>Back</Link></section>
+ if(!game.available)return <section className="af-closed wk-coupon"><h2 className="wk-head">Not enough dated moments yet</h2><Link className="wk-btn min-h-tap" href={home}>Back</Link></section>
  return <AfTimeline key={`${a.version}:${round.seed}:${round.cursor}`} deal={game.dealTimelineRun(round.seed,round.cursor)} slug={a.slug} version={a.version} seed={round.seed} cursor={round.cursor} home={home}/>
 }

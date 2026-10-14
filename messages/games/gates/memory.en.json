@@ -105,5 +105,10 @@
   "mem.result.trySize": "Try a {n}-pair wall",
   "mem.result.share": "Share this wall",
   "mem.result.copied": "Copied. Paste it anywhere.",
-  "mem.result.shelf": "Open the shelf"
+  "mem.result.shelf": "Open the shelf",
+  "mem.coupon.title": "Wall settings",
+  "mem.coupon.done": "Done",
+  "mem.keys.title": "On a keyboard",
+  "mem.keys.move": "move between cards",
+  "mem.keys.turn": "turn a card"
 }

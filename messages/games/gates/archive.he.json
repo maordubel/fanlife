@@ -13,13 +13,10 @@
  "ar.today.nearest": "הימים הקרובים שיש בהם רשומות",
  "ar.today.nearestDay": "{date} · {n}",
  "ar.today.nextOnFile": "הבא ברשומות: {date}",
- "ar.today.prev": "היום הקודם",
- "ar.today.next": "היום הבא",
  "ar.today.reset": "חזרה להיום",
  "ar.today.browsing": "מעיינים בתאריך {date}",
  "ar.today.loading": "בודקים את התאריך של היום…",
  "ar.today.deck": "רשומות לתאריך {date}",
- "ar.today.pos": "{n} מתוך {total}",
  "ar.time.title": "מכונת הזמן",
  "ar.time.pick": "בחרו עשור",
  "ar.time.decade": "שנות ה־{decade}",
@@ -100,5 +97,12 @@
  "ar.sheet.share": "לשתף את הרשומה",
  "ar.link.xi": "לבנות את ההרכב של כל הזמנים",
  "ar.link.derby": "קיר היריבות",
- "ar.link.more": "עוד מהמועדון"
+ "ar.link.more": "עוד מהמועדון",
+ "ar.today.nextTitle": "הבא בתיק",
+ "ar.cal.tap": "הקישו על יום",
+ "ar.cal.change": "החלפת חודש",
+ "ar.cal.aria": "{date}: {n} בתיק",
+ "ar.cal.today": "היום",
+ "ar.cal.legend": "ימים אדומים — יש בתיק · השחור — היום",
+ "ar.card.openLabel": "לפתוח את הרשומה"
 }

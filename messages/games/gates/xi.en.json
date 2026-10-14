@@ -42,5 +42,8 @@
  "xi.edit": "Edit",
  "xi.captainWord": "captain",
  "xi.twelfthWord": "12th man",
- "xi.rankless": "Not a ranking. Not a verdict."
+ "xi.rankless": "Not a ranking. Not a verdict.",
+ "xi.shout": "Pick your legends!",
+ "xi.tab.worstSub": "your opinion only",
+ "xi.sheet": "Team sheet"
 }

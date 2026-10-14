@@ -19,7 +19,15 @@ import {clubHref} from '@/lib/clubs/club-href'
 import {clubApp,iconHref,manifestHref} from '@/lib/clubs/pwa'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
-import { Badge } from '@/components/clubs/Badge'
+import {Contents} from '@/components/weekly/Contents'
+import {clubSections,menuClubs,menuCopy,menuCorner,menuFanLife} from '@/lib/weekly/menu'
+import {contentsGates} from '@/lib/weekly/contents'
+import {SHARED_GATES,gateAvailability} from '@/lib/clubs/gates'
+import {gateAccess} from '@/lib/clubs/access'
+import {belovedOf} from '@/lib/clubs/beloved'
+import {gameCopy} from '@/lib/clubs/game-copy'
+import {hasClubAway} from '@/lib/away-days/club'
+import {bannedHere} from '@/lib/clubs/theme'
 
 /** Each club installs as its own app (manifest + icon), with its own colour in the browser bar. */
 export function generateMetadata({params}:{params:{slug:string}}):Metadata{
@@ -49,16 +57,20 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
  const life=await lifeEntry(id,{evaluation:preview,paused:c.status==='paused',status:c.status,locale}),world=worldFor(reg)
  const tenant=clubFromHost(host)
  const exitHref=tenant?`https://${PORTAL_HOST_ROOT}`:'/'
- const clubs:SwitchClub[]=state.clubs.filter(x=>x.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name)).map(x=>{const l=livery(x.id);return {id:x.id,name:x.name,city:x.city,initials:x.initials,pattern:l?.pattern??'solid',style:wearLivery(l)}})
+ const clubs:SwitchClub[]=state.clubs.filter(x=>x.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name)).map(x=>{const l=livery(x.id);return {id:x.id,name:x.name,city:x.city,initials:x.initials,pattern:l?.pattern??'solid',style:wearLivery(l),rival:!!(l&&x.id!==id&&bannedHere(theme,l.primary))}})
+ const states=core?SHARED_GATES.map(g=>({key:g.key,allowed:gateAccess(c,g.number,preview).allowed,playable:gateAvailability(core.data,g.key).playable})):[]
+ const openKeys=states.filter(s=>s.allowed&&s.playable).map(s=>s.key)
+ const t=menuCopy(locale),gates=contentsGates({clubId:id,locale,states,beloved:belovedOf(world.terrace,openKeys),copy:gameCopy(locale) as Record<string,string>})
+ const away=id==='hapoel-tel-aviv'?'/away-days':hasClubAway(id)?clubHref(id,'away-days',locale):null
  const labels={home:copy.clubTabHome,play:copy.clubTabPlay,life:copy.clubTabLife,history:copy.clubTabHistory,terrace:locale==='en'?world.terraceTab:copy.clubTabTerrace}
  return <div className="club-app" data-club={id} data-pattern={theme.pattern} data-rival-no={rivalBans(theme).join(' ')||undefined} dir={localeDirection(locale)} lang={locale} style={themeStyle(theme,locale) as CSSProperties}>
   <header className="club-masthead">
    <div className="club-masthead-in">
-    <Link className="club-who" href={clubHref(id,'',locale)} aria-label={`${c.name} — ${copy.clubTabHome}`}>
-     <Badge club={{id:c.id,pattern:lv?.pattern,initials:c.initials,name:c.name}}/>
-     <span style={{minWidth:0}}><span className="club-who-kicker">{world.voice.kicker}</span><span className="club-who-name">{c.name}</span></span>
-    </Link>
     <ClubSwitcher current={id} clubs={clubs} locale={locale} copy={{switch:copy.clubSwitch,title:copy.clubSwitchTitle,note:copy.clubSwitchNote,here:copy.clubSwitchHere,close:copy.clubSwitchClose,market:copy.clubSwitchMarket,me:copy.clubSwitchMe,hub:copy.clubSwitchHub}}/>
+    <Link className="club-who" href={clubHref(id,'',locale)} aria-label={`${c.name} — ${copy.clubTabHome}`}><span className="club-who-kicker">{world.voice.kicker}</span></Link>
+    <Contents rivalNo={rivalBans(theme).join(' ')||undefined} paint={themeStyle(theme,locale) as Record<string,string>}
+     copy={{menu:t.wkMenu,title:t.wkContents,kicker:t.wkKickerClub.replace('{club}',c.name),close:t.wkClose,gates:t.wkGates,quick:t.wkQuick,deep:t.wkDeep,archive:t.wkArchive,corner:t.wkCorner,clubs:t.wkClubs,fanlife:t.wkFanLife,section:t.wkTheClub}}
+     sections={clubSections(id,locale,{terrace:labels.terrace,away,kitArchive:!!core})} gates={gates} corner={menuCorner(locale)} clubs={menuClubs(state.clubs,id,locale,theme)} fanlife={menuFanLife(locale)}/>
     <a className="club-exit" href={exitHref} aria-label={copy.clubExitLabel}><img src="/brand/fanlife/logo-mono.webp" alt="" width={34} height={34}/></a>
    </div>
    <span className="club-band mag-band" data-livery={lv?.pattern} aria-hidden="true"/>

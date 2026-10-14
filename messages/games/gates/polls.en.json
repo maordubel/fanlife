@@ -127,5 +127,7 @@
  "tv.loading": "Loading your slip…",
  "tv.offline": "You are offline. Your slip is kept on this device and will not be counted until you reconnect.",
  "tv.share.text": "Share as text",
- "tv.deb.context": "Debates come from the club’s own record: documented moments and players."
+ "tv.deb.context": "Debates come from the club’s own record: documented moments and players.",
+ "tv.card.sealed": "Ballot sealed",
+ "tv.num.note": "Any number from 1 to 99. It claims nothing about who wore what."
 }

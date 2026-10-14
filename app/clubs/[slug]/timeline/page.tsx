@@ -47,11 +47,11 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  let body:JSX.Element
  if(mode==='chronology'){
   if(!game.available){
-   body=<section className="my-8 border-rule border-dashed border-ink p-5" data-testid="timeline-locked" data-blocker="TIMELINE_EXACT_DATES_SHORT"><h2 className="font-display text-step-2">{fmt('tl.c.locked.title',{})}</h2><p className="my-3">{fmt('tl.c.locked.body',{need:MIN_DATES,club:name,have:game.distinctDays})}</p><p className="font-mono tabular-nums text-[11px] uppercase tracking-wider">{fmt('tl.c.locked.blocker',{code:'TIMELINE_EXACT_DATES_SHORT'})}</p></section>
+   body=<section className="wga-locked" data-testid="timeline-locked" data-blocker="TIMELINE_EXACT_DATES_SHORT"><h2 className="font-display text-step-2">{fmt('tl.c.locked.title',{})}</h2><p className="my-3">{fmt('tl.c.locked.body',{need:MIN_DATES,club:name,have:game.distinctDays})}</p><p className="font-mono tabular-nums text-[11px] uppercase tracking-wider">{fmt('tl.c.locked.blocker',{code:'TIMELINE_EXACT_DATES_SHORT'})}</p></section>
   }else{
    const shape=chronologyShape(game.distinctDays),deal=game.dealTimelineRun(round.seed,round.cursor)
    const events=threadEvents(club),links=threadLinks(club,events,[deal.anchor.id,...deal.queue.map(c=>c.id)])
-   body=<>{club.readiness.state==='PARTIAL'&&<p className="my-4 border-hair border-ink bg-sheet p-3">{copy.partial}</p>}<ChronologyStart key={`${club.identity.id}:${round.seed}:${round.cursor}`} copy={games} clubName={name} placements={deal.queue.length} category={shape.category==='full'?'full':'short'} have={game.distinctDays} need={FULL_DATES} autoStart={searchParams.play==='1'}><ClubTimelineBoard key={`${club.identity.id}:${club.version}:${round.seed}:${round.cursor}:${locale}`} deal={deal} slug={club.identity.id} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={club.locales.content} threadLinks={links} threadLabel={String(games['tl.result.open'])} runId={runKey(club.version,round.seed,round.cursor,{...shape,placements:deal.queue.length})}/></ChronologyStart></>
+   body=<>{club.readiness.state==='PARTIAL'&&<p className="wk-cap white wga-partial">{copy.partial}</p>}<ChronologyStart key={`${club.identity.id}:${round.seed}:${round.cursor}`} copy={games} clubName={name} placements={deal.queue.length} category={shape.category==='full'?'full':'short'} have={game.distinctDays} need={FULL_DATES} autoStart={searchParams.play==='1'}><ClubTimelineBoard key={`${club.identity.id}:${club.version}:${round.seed}:${round.cursor}:${locale}`} deal={deal} slug={club.identity.id} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={club.locales.content} threadLinks={links} threadLabel={String(games['tl.result.open'])} runId={runKey(club.version,round.seed,round.cursor,{...shape,placements:deal.queue.length})}/></ChronologyStart></>
   }
  }else if(mode==='thread'){
   const plan=publicPlan(await bindThread(club),round.seed)
@@ -66,7 +66,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  const wide=mode!=='chronology'
  return <ClubSurface theme={club.theme} clubId={club.identity.id} locale={locale} tabbar={!compact}><main id="main" dir={localeDirection(locale)} lang={locale} data-mode={compact?modeOf('timeline'):'reading'} data-view={mode} className={`mag-game mx-auto min-h-screen ${wide?'max-w-4xl':'max-w-2xl'} px-gutter py-8`}>
   {compact
-   ?<PlayHeader clubId={club.identity.id} clubName={name} title={copy.title} locale={locale} help={String(games['tl.help'])} copy={{back:games['play.back'],help:games['play.help'],close:games['play.close'],fanlife:games['play.fanlife'],language:games['play.language']}} langLinks={langLinks}/>
+   ?<PlayHeader clubId={club.identity.id} clubName={name} title={copy.title} locale={locale} help={String(games['tl.help'])} copy={{back:games['play.back'],help:games['play.help'],close:games['play.close'],fanlife:games['play.fanlife'],language:games['play.language']}} langLinks={langLinks} gateNo="13" gateWord={String(games.ticketGate)}/>
    :<><GateHead clubId={club.identity.id} clubName={name} hubLabel={games.hub} gateNo="13" gateNoLabel={games.gateNo} title={copy.title} locale={locale} langLinks={langLinks}/><p>{copy.sub}</p></>}
   {fallback}{tabs}{body}
  </main></ClubSurface>

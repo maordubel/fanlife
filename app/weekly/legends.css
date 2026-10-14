@@ -1,0 +1,30 @@
+/* THE WEEKLY (rule 124) — legends pages. Owned by one family; tokens only (--mag-*), logical properties, no sideways scroll.
+   The ALL FOOTBALL and LEGENDS MANAGER pages carry their own sheets (app/all-football/all-football.css, legends/weekly.css);
+   this global file holds what shows OUTSIDE them: the Legends Manager banner on a club's home (components/legends/ClubBanner.tsx). */
+
+/* ── the banner on a club's home: the hall of fame's special-edition advert, printed weekly ──
+   Rule 95 holds: every colour here is one of the banner's own --b-* tokens, which `bannerPaint(theme)` (lib/legends/banner.ts)
+   has already cleared for this club through the data attributes in app/club-app.css — a banned navy is ink, a banned bronze is
+   paper, a banned star steps aside. Scoped under .lgm-banner-wrap so it wins over the older dress whatever the load order. */
+.lgm-banner-wrap .lgm-banner { gap: 12px 16px; padding: 16px 16px 18px; color: var(--mag-white);
+  background-color: var(--b-night); background-image: radial-gradient(rgb(255 251 242 / 0.12) 1.6px, transparent 1.9px); background-size: 8px 8px;
+  border: 3px solid var(--mag-ink); border-block-end-width: 4px; box-shadow: none; }
+.lgm-banner-wrap .lgm-banner::after { content: none; animation: none; }
+.lgm-banner-wrap .lgm-banner::before { background: repeating-conic-gradient(color-mix(in srgb, var(--b-bronze-hi) 22%, transparent) 0 1.6deg, transparent 1.6deg 7deg); }
+.lgm-banner-wrap .lgm-banner-mark .lgm-emblem { filter: brightness(1.18) contrast(1.12) drop-shadow(3px 4px 0 var(--mag-ink)); }
+.lgm-banner-wrap .lgm-banner-kicker { font: 400 12px/1.2 var(--mag-mono); letter-spacing: .7px; color: var(--b-bronze-hi); }
+.lgm-banner-wrap .lgm-banner-title { font: 400 clamp(36px, 10vw, 66px)/.98 var(--mag-brand); text-transform: none; letter-spacing: .5px; color: var(--mag-white);
+  -webkit-text-stroke: 3px var(--mag-ink); paint-order: stroke fill; text-shadow: 4px 4px 0 var(--mag-ink); transform: rotate(-3deg); transform-origin: 0 100%; margin-block: 4px 6px; }
+.lgm-banner-wrap .lgm-banner-title span { color: var(--b-bronze-hi); }
+.lgm-banner-wrap .lgm-banner-lede { font: 400 15px/1.4 var(--mag-body); }
+.lgm-banner-wrap .lgm-banner-fine { font: 400 12px/1.45 var(--mag-mono); letter-spacing: .6px; color: rgb(255 251 242 / 0.78); }
+.lgm-banner-wrap .lgm-banner-cta { min-block-size: 54px; padding: 0 16px; background: var(--b-bronze); color: var(--mag-white); border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink);
+  font: 400 18px/1 var(--mag-display); letter-spacing: 0; text-transform: uppercase; }
+.lgm-banner-wrap .lgm-banner-cta i { font-size: 24px; }
+.lgm-banner-wrap .lgm-banner:active .lgm-banner-cta { translate: 4px 4px; box-shadow: none; }
+@media (max-width: 760px) { .lgm-banner-wrap .lgm-banner { border-inline: 0; } }
+@media (min-width: 761px) {
+  .lgm-banner-wrap .lgm-banner { gap: 24px 32px; padding: 26px 30px; outline: 0; box-shadow: 8px 8px 0 var(--b-bronze); }
+  .lgm-banner-wrap .lgm-banner-cta { min-block-size: 62px; padding: 0 22px; font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .lgm-banner-wrap .lgm-banner:active .lgm-banner-cta { translate: none; } }

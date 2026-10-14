@@ -90,5 +90,11 @@
  "gl.result.points": "points",
  "gl.result.hintCost": "hint cost {cost}",
  "gl.result.extraCost": "{n} extra touch: lowers quality",
- "gl.result.na": "not scored: the report does not name him"
+ "gl.result.na": "not scored: the report does not name him",
+ "gl.ask.who": "Who had touch {n}?",
+ "gl.ask.what": "What did {name} do?",
+ "gl.ask.what0": "What happened on touch {n}?",
+ "gl.move": "The move",
+ "gl.move.empty": "No touches yet. The move starts with your first pick.",
+ "gl.move.at": "{verb} · {zone}"
 }

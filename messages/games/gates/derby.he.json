@@ -203,5 +203,21 @@
  "derby.bf.err": "לא הצלחנו לבדוק. נסו שוב.",
  "derby.bf.offline": "נראה שאין חיבור. התחברו ונסו שוב.",
  "derby.bf.retry": "נסו שוב",
- "derby.bf.empty": "לא ניתן היה לחלק פריטים."
+ "derby.bf.empty": "לא ניתן היה לחלק פריטים.",
+ "derby.mode.ways": "שלוש דרכים פנימה",
+ "derby.form.title": "טבלת הכושר",
+ "derby.form.goals": "שערים",
+ "derby.form.last": "{n} האחרונים · מהחדש לישן",
+ "derby.form.aria": "{n} המפגשים המתועדים האחרונים, מהחדש לישן: {list}",
+ "derby.dec.jump": "הקישו כדי לקפוץ",
+ "derby.dec.aria": "{decade}: {n} מפגשים — {w} ניצחונות, {d} תיקו, {l} הפסדים",
+ "derby.kick.go": "תנחשו!",
+ "derby.kick.note": "סבב מהמפגשים המתועדים · התוצאה נסתרת עד שתנחשו",
+ "derby.rec.goals": "שערים בעד – נגד",
+ "derby.call.hud": "ניחוש",
+ "derby.call.pts": "נק׳",
+ "derby.call.run": "רצף",
+ "derby.call.shout": "בול!",
+ "derby.call.coupon": "קופון · ניחוש {n} מתוך {total}",
+ "derby.keys.title": "במקלדת"
 }
