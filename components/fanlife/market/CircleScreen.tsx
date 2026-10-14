@@ -64,7 +64,7 @@ export function CircleScreen({ kind, keyId, shirts }: { kind: CircleKind; keyId:
 
   return (
     <div className="mt-stack" data-hub="circle">
-      <p><Link href="/market?view=circles" className="min-h-tap inline-flex items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4">← {h('hub.circle.back')}</Link></p>
+      <p><Link href="/market?view=circles" className="wk-k wkc-back"><span aria-hidden="true">‹</span> {h('hub.circle.back')}</Link></p>
 
       {s.state === 'off' ? (
         <Notice title={h('hub.circle.bad')} body="" />
@@ -75,7 +75,7 @@ export function CircleScreen({ kind, keyId, shirts }: { kind: CircleKind; keyId:
       ) : (
         <>
           <Kicker>{h(`hub.circle.kind.${kind}` as 'hub.circle.kind.club')}</Kicker>
-          <h2 className="mt-1 font-display text-step-2 leading-tight text-ink">{h('hub.circle.title', { name: nameOf(kind, keyId, data.label) })}</h2>
+          <h2 className="wkc-h2-t orange wkc-page-h2">{h('hub.circle.title', { name: nameOf(kind, keyId, data.label) })}</h2>
           <p className="mt-1 font-body text-step--1 text-ink">
             <Num>{h('hub.circle.stats', { shirts: data.shirts, week: data.newThisWeek, wanted: data.wanted })}</Num>
           </p>

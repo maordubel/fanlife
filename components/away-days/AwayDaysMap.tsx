@@ -30,7 +30,8 @@ import type { VenueLite } from '@/lib/away-days/journey'
 
 type LngLat = [number, number]
 export type MarkerState = 'active' | 'past' | 'idle' | 'origin'
-export type MapMarker = { venue: VenueLite; state: MarkerState; label?: string; count?: number }
+/** `num` — the stop number(s) printed on a roundel (a club's travel log, numbered as its list); the Worker's journey passes none. */
+export type MapMarker = { venue: VenueLite; state: MarkerState; label?: string; count?: number; num?: string }
 export type Camera = { lng: number; lat: number; zoom: number }
 
 const topo = world as unknown as Topology<{ countries: GeometryCollection; land: GeometryCollection }>
@@ -300,6 +301,14 @@ export function AwayDaysMap({
                           : 'fill-red stroke-ink'
                   }
                 />
+                {m.num && (
+                  <g data-away="marker-num" aria-hidden="true">
+                    <circle r={m.num.length > 3 ? 15 : 12} className={m.state === 'active' ? 'away-num active fill-red stroke-ink' : 'away-num fill-sheet stroke-ink'} strokeWidth={2.4} />
+                    <text y={3.6} textAnchor="middle" direction="ltr" className={m.state === 'active' ? 'away-num-t fill-sheet font-mono text-[10px] font-bold tabular-nums' : 'away-num-t fill-ink font-mono text-[10px] font-bold tabular-nums'}>
+                      {m.num}
+                    </text>
+                  </g>
+                )}
                 {m.count && m.count > 1 && interactive && (
                   <text x={0} y={3} textAnchor="middle" className="fill-sheet font-mono text-[7px] font-bold tabular-nums" aria-hidden="true">
                     {m.count}

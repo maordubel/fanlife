@@ -30,9 +30,9 @@ function Card({ r, shirts, onOpen }: { r: IdRequest; shirts: Readonly<Record<str
   const solved = r.solvedSlug ? shirts[r.solvedSlug] : null
   return (
     <li className="border-rule border-ink bg-paper p-2.5">
-      <div className="flex gap-1.5 overflow-x-auto">
+      <div className="grid grid-cols-4 gap-1.5">
         {r.photos.map((p) => (
-          <span key={p} className="block h-[84px] w-[84px] shrink-0 border-hair border-ink/30"><UserPhoto path={p} /></span>
+          <span key={p} className="block aspect-square min-w-0 border-hair border-ink/30"><UserPhoto path={p} /></span>
         ))}
       </div>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
@@ -297,9 +297,10 @@ export function HelpScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>>
 
   return (
     <div className="mt-stack" data-hub="help">
-      <p><Link href="/market?view=circles" className="min-h-tap inline-flex items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4">← {h('hub.help.back')}</Link></p>
-      <h1 className="font-display text-step-2 leading-tight text-ink">{h('hub.help.title')}</h1>
-      <p className="mt-1 max-w-prose font-body text-step--1 leading-relaxed text-ink">{h('hub.help.lede')}</p>
+      <p><Link href="/market?view=circles" className="wk-k wkc-back"><span aria-hidden="true">‹</span> {h('hub.help.back')}</Link></p>
+      <p className="wk-banner">{h('hub.hero.kicker')}</p>
+      <h1 className="wk-logo cyan wk-tilt wkc-page-h">{h('hub.help.title')}</h1>
+      <p className="mt-3 max-w-prose font-body text-step--1 leading-relaxed text-ink">{h('hub.help.lede')}</p>
       <div className="mt-3">
         {signedIn ? <button type="button" onClick={() => setAsking(true)} className={buttonPrimary}>{h('hub.help.ask')}</button> : <MarketSignIn next="/market/help" />}
       </div>

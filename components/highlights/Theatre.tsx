@@ -245,7 +245,7 @@ function ground(c:CanvasRenderingContext2D,cam:Cam,P:Palette,t:number,s=S){
  for(let y=Math.ceil(near+9);y<H;y+=3)for(let x=(y/3)%2?0:1;x<W;x+=3){const k=(x*5+y*11)%11;c.fillStyle=k<5?P.skin[k]!:k<8?P.board:P.hair[k%5]!;c.fillRect(x,y,2,2)}
  // the boards along both touchlines
  c.fillStyle=P.board;c.fillRect(0,Math.floor(far)-10,W,10);c.fillRect(0,Math.ceil(near),W,9)
- c.fillStyle=P.boardText;c.font='7px monospace';c.textBaseline='top'
+ c.fillStyle=P.boardText;c.font=`7px ${caps()}`;c.textBaseline='top'
  // the boards slide past with the camera, one message every 72 pixels whatever the zoom
  const off=Math.floor(((cam.L*s)%72+72)%72)
  for(let x=-off-72,i=Math.floor(cam.L*s/72);x<W+72;x+=72,i++){c.fillText(i%2?'ALL FOOTBALL':'FAN LIFE',x,Math.floor(far)-9);c.fillText(i%2?'LEGENDS':'FAN LIFE',x+20,Math.ceil(near)+1)}
@@ -309,9 +309,12 @@ function drawEnds(c:CanvasRenderingContext2D,teams:Reel['teams'],before:number,a
   c.fillStyle=tm.kit.shirt;c.fillRect(Math.min(x,x+len*d),y,len,h)
   if(tm.kit.second){c.fillStyle=tm.kit.second;for(let i=2;i<len-2;i+=6)c.fillRect(Math.min(x,x+len*d)+i,y+1,2,h-2)}
   const tip=x+len*d;for(let i=0;i<9;i++){c.fillStyle=P.ref;c.fillRect(tip+d*i-(d<0?1:0),y-3+i,1,h+6-2*i);c.fillStyle=tm.kit.shirt;if(i>0&&i<8)c.fillRect(tip+d*i-(d<0?1:0),y-2+i,1,h+4-2*i)}
-  c.fillStyle=P.boardText;c.font='8px monospace';c.textBaseline='middle';c.fillText(tm.code,Math.round(p.x-10),Math.round(p.y)-12)
+  c.fillStyle=P.boardText;c.font=`8px ${caps()}`;c.textBaseline='middle';c.fillText(tm.code,Math.round(p.x-10),Math.round(p.y)-12)
  })
 }
+/** the boards' lettering in the weekly's caps face (rule 124), read once from the page's own token; a bare canvas keeps monospace */
+let capsFace:string|null=null
+const caps=()=>capsFace??=((typeof document!=='undefined'&&getComputedStyle(document.documentElement).getPropertyValue('--mag-mono').trim())||'monospace')
 let shared:HTMLCanvasElement|null=null
 const cellOf=()=>shared??=Object.assign(document.createElement('canvas'),{width:16,height:20})
 export type {Moment}

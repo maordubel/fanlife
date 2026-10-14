@@ -160,8 +160,8 @@ export function PrivacyPanel({
   return (
     <div className="space-y-4">
       {/* ── 1 · how you appear ── */}
-      <section aria-labelledby="identity-title" className="border-plate border-ink bg-sheet">
-        <h2 id="identity-title" className="bg-ink px-3 py-2 font-display text-step-1 leading-none text-paper">
+      <section aria-labelledby="identity-title" className="wkc-privacy">
+        <h2 id="identity-title" className="wkc-h2-t cyan">
           {t('collector.identity.title')}
         </h2>
         <div className="space-y-3 p-3">
@@ -175,7 +175,7 @@ export function PrivacyPanel({
                 return (
                   <label
                     key={option.value}
-                    className={`flex min-h-tap cursor-pointer items-start gap-2.5 border-rule px-3 py-2 ${on ? 'border-ink bg-paper' : 'border-ink/25 bg-sheet'}`}
+                    className="wkc-radio min-h-tap" data-on={on || undefined}
                   >
                     <input
                       type="radio"
@@ -262,8 +262,8 @@ export function PrivacyPanel({
       </section>
 
       {/* ── 2 · who opens your closet ── */}
-      <section aria-labelledby="privacy-title" className="border-plate border-ink bg-sheet">
-        <h2 id="privacy-title" className="bg-ink px-3 py-2 font-display text-step-1 leading-none text-paper">
+      <section aria-labelledby="privacy-title" className="wkc-privacy">
+        <h2 id="privacy-title" className="wkc-h2-t navy">
           {t('collector.privacy.title')}
         </h2>
         <div className="space-y-3 p-3">
@@ -275,7 +275,7 @@ export function PrivacyPanel({
                 return (
                   <label
                     key={option.value}
-                    className={`flex min-h-tap items-start gap-2.5 border-rule px-3 py-2 ${anonymous ? 'cursor-not-allowed opacity-70' : 'cursor-pointer'} ${on ? 'border-ink bg-paper' : 'border-ink/25 bg-sheet'}`}
+                    className="wkc-radio min-h-tap" data-on={on || undefined} data-locked={anonymous || undefined}
                   >
                     <input
                       type="radio"

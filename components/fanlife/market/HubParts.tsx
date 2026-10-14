@@ -4,16 +4,16 @@ import type { ReactNode } from 'react'
 
 import { Num } from '@/components/ui/Num'
 
-/** Small pieces every hub panel draws with — the same plate/rule vocabulary as the market board. */
+/** Small pieces every hub panel draws with — THE WEEKLY's vocabulary (rule 124): options wrap, nothing scrolls sideways. */
 export function Kicker({ children }: { children: ReactNode }) {
-  return <p className="font-body text-[10.5px] font-extrabold uppercase tracking-[.14em] text-sign">{children}</p>
+  return <p className="wk-banner wkc-kicker">{children}</p>
 }
 
 export function Rail({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="mt-1.5 flex items-center gap-2" role="group" aria-label={label}>
-      <span className="w-[52px] shrink-0 font-body text-[10px] font-extrabold uppercase tracking-wide text-muted">{label}</span>
-      <div className="-mx-0.5 flex flex-1 gap-1 overflow-x-auto px-0.5 pb-1">{children}</div>
+    <div className="wkc-rail" role="group" aria-label={label}>
+      <span className="wk-k wk-muted">{label}</span>
+      <div className="wkc-rail-opts">{children}</div>
     </div>
   )
 }
@@ -25,15 +25,13 @@ export function Chip({ on, onClick, label, count, disabled }: { on: boolean; onC
       onClick={onClick}
       aria-pressed={on}
       disabled={disabled}
-      className={`flex min-h-tap shrink-0 items-center gap-1.5 border-hair px-3 font-body text-[12px] font-extrabold leading-none transition-transform duration-press ease-stamp active:scale-[.96] disabled:opacity-40 motion-reduce:transition-none ${
-        on ? 'border-ink bg-ink text-paper' : 'border-ink/40 bg-paper text-ink'
-      }`}
+      className="wk-opt wkc-chip min-h-tap"
     >
       <span>{label}</span>
       {count !== undefined ? (
-        <span className={`text-[10.5px] ${on ? 'text-concrete' : 'text-muted'}`}>
+        <small>
           <Num>{count}</Num>
-        </span>
+        </small>
       ) : null}
     </button>
   )
@@ -41,16 +39,16 @@ export function Chip({ on, onClick, label, count, disabled }: { on: boolean; onC
 
 export function Notice({ title, body, tone = 'ink', children }: { title: string; body: string; tone?: 'ink' | 'red'; children?: ReactNode }) {
   return (
-    <div className={`mt-stack border-rule p-4 ${tone === 'red' ? 'border-red' : 'border-ink'} bg-sheet`} role={tone === 'red' ? 'alert' : undefined}>
-      <p className={`font-sign text-step-1 leading-tight ${tone === 'red' ? 'text-red' : 'text-ink'}`}>{title}</p>
-      <p className="mt-2 max-w-prose font-body text-step--1 leading-relaxed text-ink">{body}</p>
-      {children ? <div className="mt-3 flex flex-wrap items-center gap-2">{children}</div> : null}
+    <div className={`wk-coupon wkc-notice${tone === 'red' ? ' red' : ''}`} role={tone === 'red' ? 'alert' : undefined}>
+      <p className={`wk-head${tone === 'red' ? ' red' : ''}`}>{title}</p>
+      <p className="wkc-notice-body">{body}</p>
+      {children ? <div className="wkc-notice-act">{children}</div> : null}
     </div>
   )
 }
 
-export const buttonPrimary = 'inline-flex min-h-tap items-center justify-center border-rule border-ink bg-red px-4 font-body text-step--1 font-extrabold text-paper disabled:opacity-50'
-export const buttonPlain = 'inline-flex min-h-tap items-center justify-center border-rule border-ink bg-sheet px-4 font-body text-step--1 font-extrabold text-ink disabled:opacity-50'
-export const linkQuiet = 'inline-flex min-h-tap items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4'
+export const buttonPrimary = 'wk-btn red wkc-sm min-h-tap'
+export const buttonPlain = 'wk-btn paper wkc-sm min-h-tap'
+export const linkQuiet = 'wk-link wkc-sm-link min-h-tap'
 
 export const buttonQuiet = buttonPlain

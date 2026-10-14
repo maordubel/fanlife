@@ -2,11 +2,12 @@
 import Link from 'next/link'
 import {useEffect, useRef, useState} from 'react'
 import type {CSSProperties} from 'react'
+import {createPortal} from 'react-dom'
 import type {LiveryPattern} from '@/lib/club-livery'
-import {dwellMs} from '@/lib/fixtures/rotation'
 import { Badge } from '@/components/clubs/Badge'
+import {Icon} from '@/components/weekly/Icon'
 
-/** One card of the rotation, fully resolved on the server: the client formats time and nothing else. */
+/** One line of the coupon, fully resolved on the server: the client formats time and nothing else. */
 export type RotatorItem = {
   clubId: string
   club: string
@@ -25,63 +26,77 @@ export type RotatorItem = {
   tag: 'live' | 'today' | 'soon' | 'later' | 'tbc'
 }
 export type RotatorCopy = {
-  next: string; cta: string; of: string; prev: string; fwd: string; home: string; away: string; vs: string; pause: string; play: string
-  live: string; today: string; soon: string; later: string; tbc: string; tbcLine: string; tbcCta: string
+  kicker: string; coupon: string; cols: string; all: string; note: string; close: string
+  home: string; away: string; vs: string
+  live: string; today: string; soon: string; later: string; tbc: string; tbcLamp: string
 }
+
+/** Lines printed on the coupon itself; the rest are one tap away in the sheet. A phone shows the first four (hub.css). */
+const ON_COUPON = 6
+const ON_PHONE = 4
 
 const wear = (x: {primary: string; on: string; type: string}): CSSProperties => ({['--club-primary' as string]: x.primary, ['--club-on-primary' as string]: x.on, ['--club-type' as string]: x.type})
 
+/**
+ * NEXT UP — FOR REAL, as THE WEEKLY's coupon (rule 124, boards Hub-M / Hub-D): every club on the roll, one numbered line
+ * each, in the order the feed gives (on now, today, this week, later, then the clubs with nothing confirmed). It used to be
+ * a ‹ › rotator; now nothing moves and nothing scrolls sideways — the first lines are printed, "All N clubs' next matches"
+ * opens the full coupon in a sheet. A club without a confirmed match says so and its line takes you to the club (rule 98).
+ */
 export function FixtureRotator({items, copy, locale}: {items: RotatorItem[]; copy: RotatorCopy; locale: string}) {
-  const [i, setI] = useState(0)
-  const [held, setHeld] = useState(false)
-  const [pinned, setPinned] = useState(false)
-  const [reduced, setReduced] = useState(true)
   const [when, setWhen] = useState<string[] | null>(null)
-  const box = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const q = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setReduced(q.matches)
-    const on = () => setReduced(q.matches)
-    q.addEventListener('change', on)
-    return () => q.removeEventListener('change', on)
-  }, [])
+  const [open, setOpen] = useState(false)
+  const btn = useRef<HTMLButtonElement>(null), closeRef = useRef<HTMLButtonElement>(null)
   // kick-off is shown in the reader's own time zone, so it can only be written after mount
   useEffect(() => {
-    setWhen(items.map(f => !f.kickoff ? '' : new Intl.DateTimeFormat(locale, f.dateOnly ? {weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC'} : {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'}).format(new Date(f.kickoff))))
+    setWhen(items.map(f => !f.kickoff ? '' : new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, f.dateOnly ? {weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC'} : {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'}).format(new Date(f.kickoff))))
   }, [items, locale])
   useEffect(() => {
-    if (reduced || held || pinned || items.length < 2) return
-    const t = window.setTimeout(() => setI(n => (n + 1) % items.length), dwellMs(items[i]!.tag === 'tbc' ? 'later' : items[i]!.tag))
-    return () => window.clearTimeout(t)
-  }, [i, reduced, held, pinned, items])
+    if (!open) return
+    const root = document.documentElement, prev = root.style.overflow
+    root.style.overflow = 'hidden'; closeRef.current?.focus()
+    const key = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', key)
+    return () => { root.style.overflow = prev; window.removeEventListener('keydown', key); btn.current?.focus() }
+  }, [open])
 
-  const f = items[i]
-  if (!f) return null
-  const tagWord = copy[f.tag]
-  const step = (d: number) => { setI(n => (n + d + items.length) % items.length); setPinned(true) }
-  // One slim ticket, not a wall of chips (owner, 7.10.2026: "smaller, more modest"). Every club is still on the roll.
-  return (
-    <div ref={box} className="mag-next" onMouseEnter={() => setHeld(true)} onMouseLeave={() => setHeld(false)} onFocus={() => setHeld(true)} onBlur={() => setHeld(false)} onTouchStart={() => setHeld(true)}>
-      {items.length > 1 && <button type="button" className="mag-next-step min-h-tap" aria-label={copy.prev} onClick={() => step(-1)}><span aria-hidden="true">‹</span></button>}
-      <Link className="mag-next-card" href={f.href} style={wear(f)} aria-live={pinned || held ? 'off' : 'polite'}>
-        <Badge club={f}/>
-        <span className="mag-next-txt">
-          <small>{tagWord}{f.tag === 'tbc' ? null : <> · {f.clubSide === 'home' ? copy.home : copy.away}</>}</small>
+  const line = (f: RotatorItem, i: number, onPick?: () => void) => (
+    <li key={f.clubId}>
+      <Link className="wkh-fx" href={f.href} style={wear(f)} onClick={onPick}>
+        <b className="wkh-fx-no wk-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</b>
+        <span className="wkh-fx-crest"><Badge club={f}/></span>
+        <span className="wkh-fx-t">
+          <b>{f.club}</b>
           {f.tag === 'tbc'
-            ? <b><span>{f.club}</span></b>
-            : <b><span>{f.club}</span> {copy.vs} {f.opponent}</b>}
-          {f.tag === 'tbc'
-            ? <i>{copy.tbcLine}</i>
-            : <i><time dateTime={f.kickoff}>{when ? when[i] : f.kickoff.slice(0, 10)}</time>{f.competition ? <> · {f.competition}</> : null}</i>}
+            ? <small>{copy.vs} <span className="wkh-blank" aria-hidden="true"/> {copy.tbc}</small>
+            : <small>{f.clubSide === 'home' ? copy.home : copy.away} · {copy.vs} {f.opponent}<br/><time dateTime={f.kickoff}>{when ? when[i] : f.kickoff.slice(0, 10)}</time>{f.competition ? <> · {f.competition}</> : null}</small>}
         </span>
-        <span className="mag-next-go" aria-hidden="true">→</span>
+        <span className={`wk-lamp wkh-fx-lamp${f.tag === 'live' ? ' red' : ''}`}>{f.tag === 'tbc' ? copy.tbcLamp : copy[f.tag]}</span>
       </Link>
-      {items.length > 1 && <button type="button" className="mag-next-step min-h-tap" aria-label={copy.fwd} onClick={() => step(1)}><span aria-hidden="true">›</span></button>}
-      {items.length > 1 && <p className="mag-next-count">
-        <span>{i + 1} {copy.of} {items.length}</span>
-        {!reduced && <button type="button" className="min-h-tap" aria-pressed={pinned} onClick={() => setPinned(p => !p)}>{pinned ? copy.play : copy.pause}</button>}
-      </p>}
-    </div>
+    </li>
   )
+  const head = <div className="wkh-coupon-bar"><b className="wk-head white">{copy.coupon}</b><span className="wk-k white">{copy.cols}</span></div>
+  const sheet = open ? <div className="wk-portal" lang={locale} dir={locale === 'he' ? 'rtl' : 'ltr'}>
+    <div className="wk-scrim" onClick={() => setOpen(false)} aria-hidden="true"/>
+    <div className="wk-sheet narrow wkh-next-sheet z-[91]" role="dialog" aria-modal="true" aria-labelledby="wkh-next-sheet-h">
+      <div className="wk-sheet-head">
+        <div><p className="wk-banner wkh-red">{copy.kicker}</p><h2 id="wkh-next-sheet-h" className="wk-logo red wk-tilt wkh-sheet-title">{copy.coupon}</h2></div>
+        <button ref={closeRef} type="button" className="wk-icon min-h-tap" onClick={() => setOpen(false)} aria-label={copy.close}><Icon name="close"/></button>
+      </div>
+      <div className="wk-coupon wkh-coupon"><div className="wkh-coupon-bar"><span className="wk-k white">{copy.cols}</span></div><ol className="wkh-fx-list">{items.map((f, i) => line(f, i, () => setOpen(false)))}</ol><p className="wk-small wkh-coupon-note">{copy.note}</p></div>
+    </div>
+  </div> : null
+
+  return <>
+    <div className="wk-coupon wkh-coupon">
+      <span className="wk-scissors" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.5 8.5L20 18M8.5 15.5L20 6"/></svg></span>
+      {head}
+      <ol className="wkh-fx-list wkh-fx-short">{items.slice(0, ON_COUPON).map((f, i) => line(f, i))}</ol>
+      <p className="wk-small wkh-coupon-note">{copy.note}</p>
+    </div>
+    {items.length > ON_PHONE && <button ref={btn} type="button" className={`wk-seeall min-h-tap wkh-seeall${items.length > ON_COUPON ? '' : ' wkh-m-only'}`} aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(true)}>
+      <span>{copy.all.replace('{n}', String(items.length))}</span><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>}
+    {sheet && typeof document !== 'undefined' ? createPortal(sheet, document.body) : null}
+  </>
 }

@@ -1,64 +1,69 @@
-/* THE MATCH HIGHLIGHTS — an arcade cabinet's screen in the magazine. The pitch is a 320×200 canvas scaled up without smoothing;
+/* THE MATCH HIGHLIGHTS — an arcade cabinet's screen in THE WEEKLY (rule 124): ink frame, offset shadow, split-flap score,
+   coupon buttons; every colour a token, so a club page's rival lock re-points it (rule 95).
+   Before the weekly: an arcade cabinet's screen in the magazine. The pitch is a 320×200 canvas scaled up without smoothing;
    the scoreboard, name tags, captions and the broadcast line-up board are HTML so they stay sharp and readable.
    Mobile first: the screen keeps its 16:10 and fills the column; controls wrap; every target ≥44px. */
-.theatre { max-inline-size: 960px; inline-size: 100%; margin-inline: auto; --hl-ink: #0b0f1c; --hl-blue: var(--mag-navy, #1c2f93); --hl-blue-2: #0d1758; --hl-white: #ffffff; --hl-tag: #f4f4ec;
+.theatre { max-inline-size: 960px; inline-size: 100%; margin-inline: auto; --hl-ink: var(--mag-ink); --hl-blue: var(--mag-navy); --hl-blue-2: var(--mag-night); --hl-white: var(--mag-white); --hl-tag: var(--mag-white);
   display: grid; gap: 8px; margin: 0 0 16px; }
-.screen { position: relative; aspect-ratio: 16 / 10; inline-size: 100%; overflow: hidden; background: var(--hl-ink); border: 3px solid var(--hl-ink); box-shadow: 0 0 0 2px var(--mag-paper, #f0e8d4), 6px 6px 0 var(--hl-ink); }
+.screen { position: relative; aspect-ratio: 16 / 10; inline-size: 100%; overflow: hidden; background: var(--hl-ink); border: 3px solid var(--hl-ink); box-shadow: 0 0 0 3px var(--mag-white), 0 0 0 5px var(--hl-ink), 7px 7px 0 2px var(--hl-ink); }
 .canvas { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; image-rendering: pixelated; image-rendering: crisp-edges; }
 .hud { position: absolute; inset-block-start: 0; inset-inline: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px; padding: 4px 8px; pointer-events: none;
   font: 400 clamp(14px, 3.4vw, 26px)/1 var(--mag-display); text-transform: uppercase; color: var(--hl-white); text-shadow: 2px 2px 0 var(--hl-ink), -1px -1px 0 var(--hl-ink), 1px -1px 0 var(--hl-ink), -1px 1px 0 var(--hl-ink); }
 .team { display: inline-flex; align-items: center; gap: 6px; } .team[data-right] { justify-self: end; }
 .chip { display: inline-block; inline-size: 1.6em; block-size: .95em; border: 2px solid var(--hl-ink); }
 .score { display: inline-flex; align-items: center; gap: 8px; font-size: 1.25em; }
-.score b { min-inline-size: 1.2em; text-align: center; } .score i { font-style: normal; font-size: .7em; letter-spacing: 1px; }
+.score b { min-inline-size: 1.2em; text-align: center; font-family: var(--mag-goal); font-weight: 400; font-size: .9em; color: var(--mag-lamp); padding: 3px 5px 2px; border-radius: 3px; text-shadow: none; background: linear-gradient(180deg, var(--mag-flap-top) 0 48%, var(--mag-flap-mid) 48% 53%, var(--mag-flap-bot) 53% 100%); box-shadow: 0 0 0 2px var(--hl-ink); font-variant-numeric: tabular-nums; }
+.score i { font-style: normal; font-size: .62em; letter-spacing: .5px; font-family: var(--mag-mono); }
 .tag { position: absolute; transform: translate(-50%, -100%); display: grid; justify-items: center; pointer-events: none; white-space: nowrap;
   font: 700 clamp(9px, 1.9vw, 13px)/1 var(--mag-mono); letter-spacing: .5px; color: var(--hl-tag); text-shadow: 1px 1px 0 var(--hl-ink), -1px 0 0 var(--hl-ink); }
 .tag i { font-style: normal; font-size: .8em; line-height: .9; }
 .fx { position: absolute; inset-inline: 6% ; inset-block-start: 50%; inline-size: 88%; max-block-size: 70%; object-fit: contain; transform: translateY(-50%); pointer-events: none; animation: hl-pop .35s cubic-bezier(.2, 1.6, .5, 1) both; filter: drop-shadow(3px 3px 0 var(--hl-ink)); }
 /* the lettering a page shows instead of a celebration film it may not show (its colours cross the club's rival ban) */
-.fxText { position: absolute; inset-inline: 0; inset-block-start: 50%; transform: translateY(-50%); text-align: center; pointer-events: none; font: 400 clamp(34px, 11vw, 84px)/1 var(--mag-display); text-transform: uppercase; color: var(--club-primary, var(--hl-white)); -webkit-text-stroke: 2px var(--hl-ink); text-shadow: 4px 4px 0 var(--hl-ink); animation: hl-pop .35s cubic-bezier(.2, 1.6, .5, 1) both; }
+.fxText { position: absolute; inset-inline: 0; inset-block-start: 50%; transform: translateY(-50%); text-align: center; pointer-events: none; font: 400 clamp(34px, 11vw, 84px)/1 var(--mag-shout); text-transform: none; color: var(--club-primary, var(--hl-white)); -webkit-text-stroke: 4px var(--hl-ink); paint-order: stroke fill; text-shadow: 5px 5px 0 var(--hl-ink); animation: hl-pop .35s cubic-bezier(.2, 1.6, .5, 1) both; }
 @keyframes hl-pop { from { transform: translateY(-50%) scale(.4); opacity: 0; } to { transform: translateY(-50%) scale(1); opacity: 1; } }
 .cover { position: absolute; inset: 0; overflow-y: auto; background: linear-gradient(180deg, color-mix(in srgb, var(--hl-ink) 55%, transparent), color-mix(in srgb, var(--hl-ink) 85%, transparent)); }
 .final { position: absolute; inset: 0; display: grid; place-content: center; gap: 6px; text-align: center; background: color-mix(in srgb, var(--hl-ink) 72%, transparent); color: var(--hl-white); }
 .finalScore { display: grid; gap: 4px; margin: 0; font: 400 clamp(18px, 4.6vw, 40px)/1 var(--mag-display); text-transform: uppercase; text-shadow: 2px 2px 0 var(--hl-ink); }
-.finalScore b { font-size: 1.5em; }
-.small { margin: 0; font: 700 12px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; }
-.caption { margin: 0; min-block-size: 1.5em; padding: 6px 10px; background: var(--hl-ink); color: var(--hl-white); font: 700 clamp(12px, 2.6vw, 15px)/1.3 var(--mag-mono); letter-spacing: .5px; text-transform: uppercase; }
+.finalScore b { font-size: 1.5em; font-family: var(--mag-goal); color: var(--mag-lamp); }
+.small { margin: 0; font: 400 13px var(--mag-mono); letter-spacing: .7px; text-transform: uppercase; }
+.caption { margin: 0; min-block-size: 1.5em; padding: 7px 10px; background: var(--hl-ink); color: var(--hl-white); border: 3px solid var(--hl-ink); font: 400 clamp(13px, 2.6vw, 15px)/1.3 var(--mag-mono); letter-spacing: .4px; text-transform: uppercase; }
 .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; }
-.btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: 44px; padding: 0 14px; font: 700 12px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--hl-white); background: var(--hl-blue); border: 2px solid var(--hl-ink); box-shadow: 3px 3px 0 var(--hl-ink); cursor: pointer; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: 46px; padding: 0 14px; font: 400 16px/1 var(--mag-display); letter-spacing: 0; text-transform: uppercase; color: var(--hl-white); background: var(--hl-blue); border: 3px solid var(--hl-ink); box-shadow: 3px 3px 0 var(--hl-ink); cursor: pointer; transition: box-shadow .08s, translate .08s; }
+.btn:active { translate: 3px 3px; box-shadow: none; }
 .btn[aria-pressed='true'] { background: var(--hl-ink); }
 .ghost { background: transparent; color: var(--hl-ghost, var(--mag-ink, var(--hl-ink))); border-color: var(--hl-ghost, var(--hl-ink)); }
-.count { color: var(--hl-ghost, inherit);  margin-inline-start: auto; font: 700 11px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; }
+.count { color: var(--hl-ghost, inherit);  margin-inline-start: auto; font: 400 12px var(--mag-mono); letter-spacing: .6px; text-transform: uppercase; }
 /* the broadcast line-up board */
 .lineups { display: grid; gap: 10px; padding: 10px; background: var(--hl-ink); border: 3px solid var(--hl-ink); }
 .screen[hidden] { display: none; }
 .boards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
-.board { padding: 8px 10px 10px; background: linear-gradient(180deg, var(--hl-blue) 0%, var(--hl-blue-2) 100%); border: 2px solid var(--hl-ink); color: var(--hl-white); }
+.board { padding: 8px 10px 10px; background-color: var(--hl-blue); background-image: radial-gradient(rgb(255 251 242 / 0.12) 1.6px, transparent 1.9px); background-size: 8px 8px; border: 3px solid var(--hl-ink); color: var(--hl-white); }
 .board h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; padding-block-end: 4px; border-block-end: 2px dotted color-mix(in srgb, var(--hl-white) 60%, transparent);
-  font: italic 700 clamp(16px, 3.4vw, 24px)/1.05 var(--mag-body); text-shadow: 2px 2px 0 var(--hl-ink); }
+  font: 400 clamp(16px, 3.4vw, 24px)/1.05 var(--mag-display); text-transform: uppercase; text-shadow: 2px 2px 0 var(--hl-ink); }
 .flag { flex: none; inline-size: 26px; block-size: 18px; border: 1px solid var(--hl-ink); }
-.formation { margin: 0 0 4px; font: 700 10px var(--mag-mono); letter-spacing: 2px; opacity: .85; }
+.formation { margin: 0 0 4px; font: 400 12px var(--mag-mono); letter-spacing: .6px; opacity: .9; }
 .board ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; }
-.board li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: 6px; font: italic 700 clamp(12px, 2.6vw, 16px)/1.25 var(--mag-body); text-shadow: 1px 1px 0 var(--hl-ink), 2px 2px 0 var(--hl-ink); }
+.board li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: 6px; font: 400 clamp(13px, 2.6vw, 16px)/1.25 var(--mag-display); text-transform: uppercase; text-shadow: 1px 1px 0 var(--hl-ink), 2px 2px 0 var(--hl-ink); }
+.board li b { font-family: var(--mag-goal); font-weight: 400; }
 .board li b { text-align: end; } .board li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .kick { justify-self: center; }
 @media (min-width: 620px) { .boards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (prefers-reduced-motion: reduce) { .fx, .fxText { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .fx, .fxText { animation: none; } .btn { transition: none; } }
 /* ── the full ground (13.10.2026): crests on the scoreboard, the attacking arrows, the goal cards ── */
 .hudCrest { inline-size: auto; block-size: 1.25em; filter: drop-shadow(1px 1px 0 var(--hl-ink)) drop-shadow(-1px -1px 0 var(--hl-ink)); }
 .dir { font-style: normal; font-size: .55em; opacity: .9; letter-spacing: 0; }
 .crest { flex: none; display: inline-grid; place-items: center; inline-size: 30px; block-size: 34px; }
 .crest img { inline-size: 100%; block-size: 100%; object-fit: contain; filter: drop-shadow(1px 1px 0 var(--hl-ink)); }
 .boardName { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.boardTag { margin-inline-start: auto; font: 700 10px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; font-style: normal; opacity: .8; text-shadow: none; }
+.boardTag { margin-inline-start: auto; font: 400 11px var(--mag-mono); letter-spacing: .6px; text-transform: uppercase; font-style: normal; opacity: .8; text-shadow: none; }
 .boardBody { display: grid; grid-template-columns: minmax(0, 1fr) clamp(76px, 24vw, 120px); align-items: start; gap: 8px; }
 .boardShirt { margin: 0; padding: 4px; aspect-ratio: 240 / 268; background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--hl-white) 22%, transparent), transparent 70%); }
 .shirtArt { display: block; inline-size: 100%; block-size: 100%; filter: drop-shadow(3px 3px 0 var(--hl-ink)); }
 /* after OUR goal: the scorer's shirt, back to camera, under the film */
-.scorer { position: absolute; inset-inline-start: 3%; inset-block-end: 6%; display: flex; align-items: center; gap: 6px; padding: 4px 10px 4px 4px; background: var(--hl-ink); border: 2px solid var(--hl-white); box-shadow: 3px 3px 0 var(--hl-ink); color: var(--hl-white); pointer-events: none; animation: hl-rise .45s .25s cubic-bezier(.2, 1.4, .5, 1) both; }
+.scorer { position: absolute; inset-inline-start: 3%; inset-block-end: 6%; display: flex; align-items: center; gap: 6px; padding: 4px 10px 4px 4px; background: var(--hl-ink); border: 3px solid var(--hl-white); box-shadow: 3px 3px 0 var(--hl-ink); color: var(--hl-white); pointer-events: none; animation: hl-rise .45s .25s cubic-bezier(.2, 1.4, .5, 1) both; }
 .scorerShirt { inline-size: clamp(34px, 9vw, 58px); block-size: auto; aspect-ratio: 240 / 268; }
 .scorer span { display: grid; gap: 2px; } .scorer b { font: 400 clamp(13px, 3.2vw, 22px)/1 var(--mag-display); text-transform: uppercase; }
-.scorer i { font: 700 10px var(--mag-mono); letter-spacing: 2px; font-style: normal; opacity: .8; }
+.scorer i { font: 400 11px var(--mag-mono); letter-spacing: .6px; font-style: normal; opacity: .85; }
 @keyframes hl-rise { from { transform: translateY(30%); opacity: 0; } to { transform: none; opacity: 1; } }
 /* THEIR goal: no film — a muted, misprinted card in their colours, slid in from the end they attack */
 .against { position: absolute; inset-inline: 7%; inset-block-start: 50%; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 8px 14px 8px 8px; pointer-events: none;
@@ -68,8 +73,8 @@
 .against[data-from='right'] { animation-name: hl-slide-r; }
 .againstShirt { inline-size: clamp(40px, 11vw, 74px); block-size: auto; aspect-ratio: 240 / 268; transform: skewX(7deg); }
 .againstText { display: grid; gap: 4px; min-inline-size: 0; }
-.againstText b { font: 400 clamp(30px, 9vw, 66px)/.9 var(--mag-display); text-transform: uppercase; letter-spacing: 2px; color: color-mix(in srgb, var(--hl-white) 86%, var(--opp)); -webkit-text-stroke: 1.5px var(--hl-ink); text-shadow: 3px 3px 0 var(--hl-ink); }
-.againstText i { font: 700 clamp(10px, 2.2vw, 13px)/1.2 var(--mag-mono); letter-spacing: 1.5px; font-style: normal; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.againstText b { font: 400 clamp(30px, 9vw, 66px)/.95 var(--mag-shout); text-transform: none; letter-spacing: 1px; paint-order: stroke fill; color: color-mix(in srgb, var(--hl-white) 86%, var(--opp)); -webkit-text-stroke: 1.5px var(--hl-ink); text-shadow: 3px 3px 0 var(--hl-ink); }
+.againstText i { font: 400 clamp(11px, 2.2vw, 13px)/1.2 var(--mag-mono); letter-spacing: .6px; font-style: normal; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @keyframes hl-slide-l { from { transform: translateY(-50%) translateX(-120%) skewX(-7deg); } to { transform: translateY(-50%) skewX(-7deg); } }
 @keyframes hl-slide-r { from { transform: translateY(-50%) translateX(120%) skewX(-7deg); } to { transform: translateY(-50%) skewX(-7deg); } }
 @media (min-width: 900px) { .boardBody { grid-template-columns: minmax(0, 1fr) 132px; } .against { inset-inline: 18%; } }

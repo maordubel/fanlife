@@ -58,59 +58,91 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
   const held = closet?.items.filter((i) => i.state === 'held' || i.state === 'reserved') ?? []
   const name = (slug: string) => labels[slug]?.label ?? slug
 
+  const dayOf = (on: string | null) => {
+    if (!on) return null
+    if (on.length === 4) return { d: null, m: null, y: on }
+    const at = new Date(on)
+    return Number.isNaN(at.getTime()) ? null : { d: String(at.getUTCDate()), m: new Intl.DateTimeFormat('en-GB', { month: 'short', timeZone: 'UTC' }).format(at), y: String(at.getUTCFullYear()) }
+  }
+
   return (
-    <div className="fl-me">
-      <section className="fl-me-section" aria-labelledby="file-xi">
-        <h2 id="file-xi">{fl('file.xi.title')}</h2>
-        {xis === null ? null : xis.length === 0 ? <p className="fl-me-note">{fl('file.xi.none')}</p> : (
-          <ul className="fl-file-xis">
-            {xis.map((x) => (
-              <li key={x.club.id} style={wearLivery(x.club)}>
-                <header><Badge club={x.club}/><b>{x.club.name}</b><small>{x.formation}</small></header>
-                <ol>{x.rows.map((r) => <li key={r.slot}><span>{r.role}</span>{x.names[r.id] ?? '—'}{x.captain === r.id ? <em> (C)</em> : null}</li>)}</ol>
-                <Link className="mag-chip min-h-tap" href={`/clubs/${x.club.id}/xi`}>{fl('me.clubs.open')} →</Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
+    <>
+      <div className="wkc-l wkc-file-l">
+        <section className="wkc-sec" aria-labelledby="file-xi">
+          <div className="wkc-h2"><h2 id="file-xi" className="wkc-h2-t cyan">{fl('file.xi.title')}</h2>{xis?.length ? <span className="wk-k wk-muted">{fl('file.xi.count', { n: xis.length })}</span> : null}</div>
+          {xis === null ? null : xis.length === 0 ? <p className="wk-cap white">{fl('file.xi.none')}</p> : (
+            <ul className="wkc-xis">
+              {xis.map((x) => (
+                <li key={x.club.id} className="wk-panel shadow wkc-xi" style={wearLivery(x.club)}>
+                  <span className="wkc-clip" aria-hidden="true" />
+                  <header className="wkc-xi-head"><Badge club={x.club} /><span><b className="wk-head">{x.club.name}</b><small className="wk-k wk-muted">{fl('file.xi.saved')}</small></span><span className="wk-tag ink">{x.formation}</span></header>
+                  <div className="wk-pitch wkc-xi-pitch">
+                    <span className="wkc-xi-lines" aria-hidden="true" />
+                    <ol>{x.rows.map((r) => {
+                      const slot = FORMATIONS[x.formation]!.slots.find((sl) => sl.slotId === r.slot)
+                      return (
+                        <li key={r.slot} style={{ insetInlineStart: `${slot?.x ?? 50}%`, insetBlockStart: `${slot?.y ?? 50}%` }} data-gk={r.role === 'GK' || undefined}>
+                          <span className="wkc-xi-shirt" aria-hidden="true" />
+                          <span className="wkc-xi-name"><span className="sr-only">{r.role} </span>{x.names[r.id] ?? '—'}{x.captain === r.id ? <em className="wkc-xi-c"> (C)</em> : null}</span>
+                        </li>
+                      )
+                    })}</ol>
+                  </div>
+                  <Link className="wk-seeall" href={`/clubs/${x.club.id}/xi`}>{fl('file.xi.open')} <span aria-hidden="true">→</span></Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
 
-      <section className="fl-me-section" id="been" aria-labelledby="file-been">
-        <h2 id="file-been">{fl('file.been.title')}</h2>
-        {been.length === 0 ? <p className="fl-me-note">{fl('file.been.none')}</p> : (
-          <ul className="fl-me-clubs fl-been-list">
-            {been.map((b) => { const club = clubs.find((c) => c.id === b.club); return club ? (
-              <li key={b.key} style={wearLivery(club)}>
-                <Badge club={club}/>
-                <div><b dir="auto">{b.label}</b><small>{club.name} · {b.on ? (b.on.length === 4 ? b.on : fmt(b.on)) : fl('file.been.undated')}</small></div>
-                <span className="fl-been-star" aria-hidden="true">★</span>
-              </li>) : null })}
-          </ul>
-        )}
-      </section>
+        <section className="wkc-sec" id="been" aria-labelledby="file-been">
+          <div className="wkc-h2"><h2 id="file-been" className="wkc-h2-t red">{fl('file.been.title')}</h2>{been.length ? <span className="wk-k wk-muted">{fl('file.been.count', { n: been.length })}</span> : null}</div>
+          {been.length === 0 ? <p className="wk-cap white">{fl('file.been.none')}</p> : (
+            <ul className="wkc-tickets">
+              {been.map((b) => { const club = clubs.find((c) => c.id === b.club); const day = dayOf(b.on); return club ? (
+                <li key={b.key} className="wk-ticket wkc-been" style={wearLivery(club)}>
+                  <div className="wkc-been-t">
+                    <span className="wkc-been-k"><Badge club={club} /><span className="wk-k red">★ {fl('file.been.stamp')} · {club.name}</span></span>
+                    <b dir="auto">{b.label}</b>
+                  </div>
+                  <span className="wk-ticket-stub wkc-been-stub">{day ? <>{day.d ? <b className="wk-num">{day.d}</b> : null}{day.m ? <small className="wk-k">{day.m}</small> : null}<b className="wk-num wkc-been-y">{day.y}</b></> : <small className="wk-k">{fl('file.been.undated')}</small>}</span>
+                </li>) : null })}
+            </ul>
+          )}
+        </section>
+      </div>
 
-      <section className="fl-me-section" aria-labelledby="file-life">
-        <h2 id="file-life">{fl('file.life.title')}</h2>
-        {lives.length === 0 ? <p className="fl-me-note">{fl('file.life.none')}</p> : (
-          <ul className="fl-me-clubs">
-            {lives.map((l) => (
-              <li key={l.club.id} style={wearLivery(l.club)}>
-                <Badge club={l.club}/>
-                <div><b>{l.club.name}</b><small>{fl('file.life.at', { n: l.chapters, of: l.club.lifeChapters || l.chapters, when: l.at ? fmt(l.at) : '—' })}</small></div>
-                <Link className="mag-chip min-h-tap" href={`/clubs/${l.club.id}/life`}>{fl('me.clubs.open')} →</Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
+      <div className="wkc-r wkc-file-r">
+        <section className="wkc-sec" aria-labelledby="file-life">
+          <div className="wkc-h2"><h2 id="file-life" className="wkc-h2-t navy">{fl('file.life.title')}</h2></div>
+          {lives.length === 0 ? <p className="wk-cap white">{fl('file.life.none')}</p> : (
+            <ul className="wkc-rows">
+              {lives.map((l) => (
+                <li key={l.club.id} style={wearLivery(l.club)}>
+                  <Badge club={l.club} />
+                  <div><b className="wk-head">{l.club.name}</b><small>{fl('file.life.at', { n: l.chapters, of: l.club.lifeChapters || l.chapters, when: l.at ? fmt(l.at) : '—' })}</small></div>
+                  <Link className="wk-btn paper wkc-row-go" href={`/clubs/${l.club.id}/life`}>{fl('me.clubs.open')} →</Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
 
-      <section className="fl-me-section" aria-labelledby="file-shirts">
-        <h2 id="file-shirts">{fl('file.shirts.title')}</h2>
-        {held.length === 0 ? <p className="fl-me-note">{fl('file.shirts.none')}</p> : <ul className="fl-file-list">{held.map((i) => <li key={i.id}>{name(i.archiveSlug)}{i.size ? <small> · {i.size}</small> : null}</li>)}</ul>}
-        <h2>{fl('file.wants.title')}</h2>
-        {!closet || closet.wants.length === 0 ? <p className="fl-me-note">{fl('file.wants.none')}</p> : <ul className="fl-file-list">{closet.wants.map((w) => <li key={w.id}>{name(w.archiveSlug)}</li>)}</ul>}
-        <Link className="mag-cta red" href="/closet">{fl('me.closet.open')} →</Link>
-      </section>
-    </div>
+        <section className="wkc-sec" aria-labelledby="file-shirts">
+          <div className="wkc-h2"><h2 id="file-shirts" className="wkc-h2-t orange">{fl('file.shirts.title')}</h2>{held.length ? <span className="wk-k wk-muted">{fl('shirts.count', { n: held.length })}</span> : null}</div>
+          {held.length === 0 ? <p className="wk-cap white">{fl('file.shirts.none')}</p> : (
+            <ul className="wkc-swing">{held.map((i) => <li key={i.id}><svg viewBox="0 0 60 34" aria-hidden="true"><path d="M30 12 a6 6 0 1 1 6 -6 M30 12 V15 L4 30 H56 L30 15" /></svg><b>{name(i.archiveSlug)}</b>{i.size ? <small className="wk-k wk-muted">{i.size}</small> : null}</li>)}</ul>
+          )}
+        </section>
+
+        <section className="wkc-sec" aria-labelledby="file-wants">
+          <div className="wkc-h2"><h2 id="file-wants" className="wkc-h2-t navy">{fl('file.wants.title')}</h2>{closet?.wants.length ? <span className="wk-k wk-muted">{fl('shirts.count', { n: closet.wants.length })}</span> : null}</div>
+          {!closet || closet.wants.length === 0 ? <p className="wk-cap white">{fl('file.wants.none')}</p> : (
+            <ul className="wkc-posters">{closet.wants.map((w) => <li key={w.id}><span className="wk-shout sm wkc-poster-shout" aria-hidden="true">{fl('file.wants.shout')}</span><b className="wk-head">{name(w.archiveSlug)}</b><small className="wk-k red">♡ {fl('file.wants.looking')}</small></li>)}</ul>
+          )}
+          <Link className="wk-btn red block" href="/closet">{fl('me.closet.open')} →</Link>
+        </section>
+      </div>
+    </>
   )
 }

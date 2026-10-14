@@ -13,6 +13,8 @@ import {canvasMeasure,loadShareAssets,svgToPng,svgUrl} from '@/lib/share/v3/clie
  * person's own words, an optional nickname (anonymous by default), club colours or black-and-white. The PNG is printed
  * BEFORE the share button is pressed, so the phone's share sheet opens inside the same tap. Nothing is posted for the
  * person; every channel only opens an intent.
+ * THE WEEKLY (rule 124): the sheet is a coupon cut from the paper — dashed tear edge, scissors, ink and the club's own
+ * colour only (it is portalled outside the page, so it never reaches for an ink a rival lock could have banned).
  */
 const FORMATS:ShareFormat[]=['story','square','link']
 const FORMAT_LABEL:Record<ShareFormat,Parameters<typeof fl>[0]>={story:'share3.story',square:'share3.post',link:'share3.link'}
@@ -35,7 +37,7 @@ function Sheet({draft,onClose}:{draft:ShareDraft;onClose:()=>void}){
  const data=useMemo(()=>({...draft.data,statement,showAlias:sign,alias:alias.slice(0,18),inkMode:ink}),[draft.data,statement,sign,alias,ink])
  useEffect(()=>{closeRef.current?.focus();const k=(e:KeyboardEvent)=>{if(e.key==='Escape')onClose()};document.addEventListener('keydown',k);const o=document.body.style.overflow;document.body.style.overflow='hidden';return ()=>{document.removeEventListener('keydown',k);document.body.style.overflow=o}},[onClose])
  useEffect(()=>{loadShareAssets().then(setAssets).catch(()=>setFailed(true))},[])
- // print: preview at once, the PNG right after — ready before the share button is pressed
+ // print: preview at once, the PNG straight after — ready before the share button is pressed
  useEffect(()=>{if(!assets)return;const v=++version.current;setPng(null)
   const timer=setTimeout(()=>{try{const r=renderShare(draft.template,data,format,{assets,measure:canvasMeasure});const url=svgUrl(r.svg);setPreview(old=>{if(old)URL.revokeObjectURL(old);return url})
    svgToPng(r.svg).then(b=>{if(v===version.current)setPng(b)}).catch(()=>setFailed(true))}catch{setFailed(true)}},180)
@@ -50,9 +52,10 @@ function Sheet({draft,onClose}:{draft:ShareDraft;onClose:()=>void}){
  const intent=(channel:'whatsapp'|'telegram')=>{const u=channel==='whatsapp'?`https://wa.me/?text=${encodeURIComponent(caption)}`:`https://t.me/share/url?url=${encodeURIComponent(data.link)}&text=${encodeURIComponent(caption.replace(data.link,'').trim())}`;window.open(u,'_blank','noopener');track('share_click',{detail:channel})}
  const copy=async()=>{try{await navigator.clipboard.writeText(data.link);note(fl('share3.copied'))}catch{note(data.link)}track('share_click',{detail:'copy'})}
  const size=SHARE_FORMATS[format]
- return <div className="share3 fl mag z-[60]" lang="en" dir="ltr" role="dialog" aria-modal="true" aria-labelledby="share3-h" style={{['--s3-accent' as string]:P.primary,['--s3-on' as string]:P.onPrimary,['--s3-type' as string]:P.red}}>
+ return <div className="share3 fl mag z-[61]" lang="en" dir="ltr" role="dialog" aria-modal="true" aria-labelledby="share3-h" style={{['--s3-accent' as string]:P.primary,['--s3-on' as string]:P.onPrimary,['--s3-type' as string]:P.red}}>
   <div className="share3-scrim" onClick={onClose} aria-hidden="true"/>
   <section className="share3-panel">
+   <span className="share3-snip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.5 8.5L20 18M8.5 15.5L20 6"/></svg></span>
    <header className="share3-head"><h2 id="share3-h">{fl('share3.title')}</h2><span className="share3-club">{club.name}</span><button ref={closeRef} type="button" className="share3-x min-h-tap" onClick={onClose} aria-label={fl('share3.close')}>×</button></header>
    <div className="share3-body">
     <figure className="share3-preview" data-format={format} style={{aspectRatio:`${size.w} / ${size.h}`}}>

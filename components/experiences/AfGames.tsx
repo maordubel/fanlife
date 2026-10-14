@@ -17,11 +17,11 @@ export function AfTrivia(p:Omit<ClubTriviaProps,'actions'>){return <ClubTrivia {
 export function AfMemory(p:Omit<ClubMemoryProps,'reveal'>){return <ClubMemory {...p} reveal={actions.revealMemoryPair}/>}
 
 export function AfTimeline({deal,slug,version,seed,cursor,home}:{deal:TimelineDeal;slug:string;version:string;seed:number;cursor:number;home:string}){
- const result=({run,board}:ResultProps)=><section className="mt-stack" aria-live="polite">
-  <h2 className="font-display text-step-2">{en.finished}</h2>
-  <p className="my-4">{en.score}: <bdi>{run.score}</bdi></p>
+ const result=({run,board}:ResultProps)=><section className="mt-stack wkl-ft" aria-live="polite">
+  <h2 className="wk-logo red wkl-ft-h">{en.finished}</h2>
+  <p className="wkl-ft-score"><span className="wk-k">{en.score}</span> <bdi className="wk-lamp">{run.score}</bdi></p>
   <ol className="af-line">{board.map(c=><li key={c.id}><b>{localizedDate(c.on,'en')}</b> <span dir="auto">{c.title}</span>{c.hint?<small dir="auto">{c.hint}</small>:null}</li>)}</ol>
-  <p className="mt-4 flex flex-wrap gap-2"><Link className="game-button min-h-tap" href={`?seed=${seed+1}`}>{en.again??'Play again'}</Link><Link className="game-button min-h-tap" href={home}>Back to ALL FOOTBALL</Link></p>
+  <p className="wkl-ft-go"><Link className="wk-btn red min-h-tap" href={`?seed=${seed+1}`}>{en.again??'Play again'}</Link><Link className="wk-btn paper min-h-tap" href={home}>Back to ALL FOOTBALL</Link></p>
  </section>
  return <SharedTimelineBoard {...deal} seed={seed} cursor={cursor} copy={en} dateLocale="en" contentLocale="en" renderResult={result} submit={(s,p,slot,r)=>actions.placeCard(slug,version,deal.queue[p]?.id||'',s,p,slot,r)}/>
 }

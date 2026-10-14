@@ -3,6 +3,7 @@ import {useEffect,useState,useTransition} from 'react'
 import Link from 'next/link'
 import {answerFriendly,cancelFriendly,inviteFriendly,myFriendlies} from '@/app/all-football/legends/actions'
 import type {FriendlyView} from '@/lib/legends/friendly'
+import t from '@/messages/legends/en.json'
 
 /** friendlies between real managers (§1.7.38–40): locked elevens, played once on the server, nothing in either season changes */
 const STATUS:Record<FriendlyView['status'],string>={sent:'Waiting for an answer',completed:'Played',declined:'Declined',cancelled:'Cancelled',expired:'Expired'}
@@ -43,9 +44,15 @@ export function AnswerFriendly({initial,token,careers}:{initial:FriendlyView;tok
  const answer=(careerId:string|null)=>start(async()=>{setErr(null);const r=await answerFriendly(f.id,token,careerId);if(r.ok)setF(r.view);else setErr(r.error)})
  if(f.status==='completed')return <section className="lgm-panel"><p className="lgm-kicker">Full time · friendly</p><FriendlyResult f={f}/><p className="lgm-actions"><Link className="lgm-go min-h-tap" href="/all-football/legends">Back to Legends Manager</Link></p></section>
  if(f.status!=='sent')return <section className="lgm-panel"><p className="lgm-kicker">Friendly</p><h2>This invitation is {f.status}.</h2></section>
- return <section className="lgm-panel">
-  <p className="lgm-kicker">An invitation · expires {when(f.expiresAt)}</p>
-  <h2>{f.home.name} want a friendly</h2>
+ return <section className="lgm-panel wkl-invite">
+  <div className="wkl-ticket">
+   <div className="wkl-ticket-main">
+    <p className="wk-k red">{t.admitOne}</p>
+    <p className="lgm-kicker">An invitation · expires {when(f.expiresAt)}</p>
+    <h2>{f.home.name} want a friendly</h2>
+   </div>
+   <div className="wkl-ticket-stub" aria-hidden="true"><small>{t.theirEleven}</small><b className="wk-lamp">?</b><span className="wk-stamp">{t.sealed}</span></div>
+  </div>
   <p>Their eleven is locked; you see it after the match. Answer with one of your own careers — your club’s legends only. Nothing in either season changes.</p>
   {careers.length?<><label className="lgm-select">Your career<select className="min-h-tap" value={pick} onChange={e=>setPick(e.target.value)}>{careers.map(c=><option key={c.id} value={c.id}>{c.clubName} · season {c.season}</option>)}</select></label>
    <p className="lgm-actions"><button type="button" className="lgm-go min-h-tap" disabled={busy||!pick} onClick={()=>answer(pick)}>{busy?'Playing…':'Lock my eleven and play'}</button><button type="button" className="lgm-ghost min-h-tap" disabled={busy} onClick={()=>answer(null)}>Decline</button></p></>

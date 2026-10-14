@@ -9,7 +9,7 @@ import {livery} from '@/lib/club-livery'
  * The hub's live-data half (performance audit, 11.10.2026). The provider used to be awaited before the hub sent its first
  * byte — on a cold server that was every club's fixture fetch, up to the 8 s timeout. These two server components are
  * rendered inside <Suspense>, so the cover, LIFE, the clubs and the market stream at once and the match card follows.
- * Nothing here invents: a club with no confirmed match is a "To be confirmed" card (rule 98).
+ * Nothing here invents: a club with no confirmed match is a "To be confirmed" line (rule 98).
  */
 type Club={id:string}
 async function itemsFor(open:readonly Club[],locale:string):Promise<RotatorItem[]>{
@@ -30,19 +30,24 @@ export async function HubStop({open,locale,stopPress,vs,none}:{open:readonly Clu
  return first?<div className="mag-stop-in"><b>{stopPress}</b><span>{first.club} {vs} {first.opponent}</span></div>:<>{none}</>
 }
 
+/** The section head of "Next up — for real": a kicker and the title in the weekly's script, red. */
+function Head({title,kicker}:{title:string;kicker:string}){
+ return <div className="wkh-sechead"><p className="wk-banner wkh-red">{kicker}</p><h2 className="wk-logo red wkh-title" id="next-h">{title}</h2></div>
+}
+
 export async function HubNextUp({open,locale,copy,title}:{open:readonly Club[];locale:string;copy:RotatorCopy;title:string}){
  const items=await itemsFor(open,locale)
  if(!items.length)return null
- return <section className="mag-section mag-next-section" id="next" aria-labelledby="next-h">
-  <h2 className="mag-kicker" id="next-h">{title}</h2>
+ return <section className="wkh-next" id="next" aria-labelledby="next-h">
+  <Head title={title} kicker={copy.kicker}/>
   <FixtureRotator items={items} copy={copy} locale={locale}/>
  </section>
 }
 
-/** Holds the section's place while the feed is on its way, so the clubs below do not jump. */
-export function HubNextUpWaiting({title}:{title:string}){
- return <section className="mag-section mag-next-section" id="next" aria-labelledby="next-h" aria-busy="true">
-  <h2 className="mag-kicker" id="next-h">{title}</h2>
-  <div className="mag-fixture empty" style={{minBlockSize:'9rem'}}/>
+/** Holds the section's place while the feed is on its way, so the sections below do not jump. */
+export function HubNextUpWaiting({title,kicker}:{title:string;kicker:string}){
+ return <section className="wkh-next" id="next" aria-labelledby="next-h" aria-busy="true">
+  <Head title={title} kicker={kicker}/>
+  <div className="wk-coupon wkh-coupon wkh-coupon-wait"/>
  </section>
 }

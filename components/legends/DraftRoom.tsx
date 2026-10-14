@@ -66,8 +66,6 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
  const total=d.required+(d.optionalOpen||d.picks.length>d.required?d.optional:0)
  const order=[...d.picks.map(p=>({pos:p.pos,name:surname(p.name),filled:true})),...Array.from({length:Math.max(0,total-d.picks.length)},()=>({pos:'' as string,name:'',filled:false}))]
  const current=d.picks.length
- const railRef=useRef<HTMLOListElement>(null)
- useEffect(()=>{railRef.current?.querySelector('[aria-current="step"]')?.scrollIntoView({block:'nearest',inline:'center',behavior:reduced?'auto':'smooth'})},[current,reduced])
  const sign=(o:Offer,e:MouseEvent<HTMLButtonElement>)=>{
   firePickFxAt(e.currentTarget,{label:money(o.price),tone:'red',haptic:o.price>=5?'lock':'tap',big:o.price>=5})
   if(!reduced)setPending(true)
@@ -97,7 +95,7 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
 
   <section className={`${s.rail} lgm-rail`} aria-label="The draft order">
    <div className={`${s.mono} ${s.railHead}`}><span>Your squad · choose a line for every slot</span><span>{d.picks.length}/{d.required}{d.optional?` +${d.optional}`:''}</span></div>
-   <ol ref={railRef} className="lgm-rail-slots">{order.map((o,i)=><li key={i} className={s.slot} data-filled={o.filled} aria-current={i===current&&!done?'step':undefined} data-optional={i>=d.required||undefined}>
+   <ol className="lgm-rail-slots">{order.map((o,i)=><li key={i} className={s.slot} data-filled={o.filled} aria-current={i===current&&!done?'step':undefined} data-optional={i>=d.required||undefined}>
     <span className={`${s.mono} ${s.slotPos}`}>{String(i+1).padStart(2,'0')}{o.pos?` · ${SHORT[o.pos]}`:''}</span>
     {o.filled?<span className={s.slotName} dir="auto">{o.name}</span>:<span className={s.slotEmpty} aria-hidden="true">{i>=d.required?'+':'?'}</span>}
    </li>)}</ol>

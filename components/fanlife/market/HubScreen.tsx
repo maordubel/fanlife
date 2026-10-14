@@ -8,14 +8,13 @@ import { HubFilters } from '@/components/fanlife/market/HubFilters'
 import { CirclesPanel } from '@/components/fanlife/market/CirclesPanel'
 import { PipePanel } from '@/components/fanlife/market/PipePanel'
 import { ForYouPanel } from '@/components/fanlife/market/ForYouPanel'
-import { PressPhoto } from '@/components/master/Poster'
 import { MarketCurtain } from './MarketCurtain'
 import { MarketSignIn } from '@/components/fanlife/market/MarketSignIn'
 import type { MatchesState } from '@/components/fanlife/market/MatchesPanel'
 import { WorldHaveSheet } from '@/components/fanlife/market/WorldHaveSheet'
 import { RequestSheet } from '@/components/fanlife/market/RequestSheet'
 import { WantedBoard } from '@/components/fanlife/market/WantedBoard'
-import { Kicker, Notice, buttonPlain, buttonPrimary } from '@/components/fanlife/market/HubParts'
+import { Notice, buttonPlain, buttonPrimary } from '@/components/fanlife/market/HubParts'
 import { matches as matchesCall } from '@/lib/collector/api'
 import type { CollectorShirt } from '@/lib/collector/types'
 import { errorLabel } from '@/lib/fanlife/collector/labels'
@@ -28,6 +27,7 @@ import {
 } from '@/lib/fanlife/hub/query'
 import type { Cursor, HubFacets, HubItem, MyWant, Place, SavedSearch, WantedRow } from '@/lib/fanlife/hub/types'
 import { h } from '@/lib/fanlife/hub/copy'
+import { fl } from '@/lib/fanlife/copy'
 import { t } from '@/lib/fanlife/i18n'
 import { portalConfigured } from '@/lib/portal/env'
 import { adoptShirts } from '@/lib/fanlife/world'
@@ -190,85 +190,94 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
     } else flash(errorLabel(out.error))
   }
 
+  const withFilters = view === 'market' || view === 'wanted'
+
   return (
-    <div className="mt-stack" data-hub="root">
+    <>
       <MarketCurtain label={h('hub.hero.kicker')} />
-      <header className="fl-mk-hero">
-        <div className="fl-mk-hero-text">
-          <p className="fl-mk-kicker"><span>{h('hub.hero.kicker')}</span></p>
-          <h1 className="fl-mk-title">{h('hub.hero.title')}</h1>
-          <p className="fl-mk-sub">{h('hub.hero.sub')}</p>
+      <div className="wkc-l wkc-mk-l" data-hub="root">
+        <div role="tablist" aria-label={h('hub.tabs.title')} className="wk-seg wkc-mk-tabs">
+          {([['market', 'hub.tabs.market'], ['wanted', 'hub.tabs.wanted'], ['foryou', 'hub.tabs.foryou'], ['circles', 'hub.tabs.circles']] as const).map(([id, key]) => (
+            <button key={id} role="tab" type="button" className="min-h-tap" aria-selected={view === id} onClick={() => go(id)}>
+              {h(key)}
+            </button>
+          ))}
         </div>
-        <PressPhoto art="shirt-swap" className="fl-mk-hero-art" />
-      </header>
 
-      <div className="fl-mk-searchrow" role="search">
-        <label className="fl-mk-search">
-          <span aria-hidden="true" className="fl-mk-search-ico">⌕</span>
-          <span className="sr-only">{h('hub.search.label')}</span>
-          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={h('hub.search.placeholder')} enterKeyHint="search" />
-        </label>
-        <button type="button" onClick={() => setFiltersOpen((v) => !v)} aria-expanded={filtersOpen} className="fl-mk-filterbtn">
-          <span aria-hidden="true">⚲</span> {h('hub.filters.title')}{activeCount(filters) ? ` · ${activeCount(filters)}` : ''}
-        </button>
+        <div className="wkc-searchrow" role="search">
+          <label className="wkc-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4.5a6 6 0 1 0 0 12a6 6 0 1 0 0-12M15 15l5 5" /></svg>
+            <span className="sr-only">{h('hub.search.label')}</span>
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={h('hub.search.placeholder')} enterKeyHint="search" />
+          </label>
+          {withFilters ? (
+            <button type="button" onClick={() => setFiltersOpen((v) => !v)} aria-expanded={filtersOpen} aria-haspopup="dialog" className="wk-btn min-h-tap wkc-fopen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 8v6l-4-2v-4z" /></svg>
+              {h('hub.filters.title')}{activeCount(filters) ? <span className="wkc-fcount">{activeCount(filters)}</span> : null}
+            </button>
+          ) : null}
+        </div>
+
+        {note ? <p className="wk-cap white" role="status">{note}</p> : null}
+
+        {view === 'market' ? (
+          <>
+            <div className="wk-seg wkc-scope" role="group" aria-label={h('hub.scope.title')}>
+              {([['all', 'hub.scope.all', facets ? facets.total : null], ['game', 'hub.scope.game', facets?.scope?.game ?? null], ['world', 'hub.scope.world', facets?.scope?.world ?? null]] as const).map(([id, key, n]) => (
+                <button key={id} type="button" className="min-h-tap" data-world={id === 'world' ? '' : undefined} aria-pressed={filters.scope === id} onClick={() => setFilters((f) => ({ ...f, scope: id, slug: null, club: null, decade: null, variant: null }))}>
+                  {h(key)}
+                  {n !== null ? <small>{n}</small> : null}
+                </button>
+              ))}
+            </div>
+            {focus ? <BackToAll shirt={focus} onClear={() => setFilters((f) => ({ ...f, slug: null }))} /> : null}
+            <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={facets} myCountry={place?.country ?? null} panelOpen={filtersOpen} onPanel={setFiltersOpen} />
+            {narrowed && market.state === 'ready' ? (
+              saving ? (
+                <form className="wkc-savesearch" onSubmit={(e) => { e.preventDefault(); void saveSearch() }}>
+                  <label htmlFor="hub-save-name" className="sr-only">{h('hub.searches.nameLabel')}</label>
+                  <input id="hub-save-name" value={saving.name} maxLength={40} onChange={(e) => setSaving({ name: e.target.value })} />
+                  <button type="submit" className="wk-btn min-h-tap">{h('hub.searches.save')}</button>
+                  <button type="button" onClick={() => setSaving(null)} className="wk-btn paper min-h-tap">{h('hub.cancel')}</button>
+                </form>
+              ) : (
+                <div className="wkc-savesearch">
+                  {signedIn === false ? (
+                    <>
+                      <span className="wk-small wk-muted">{h('hub.searches.guestHint')}</span>
+                      {signIn}
+                    </>
+                  ) : (
+                    <button type="button" onClick={() => setSaving({ name: autoName(filters, shirts) })} className="wk-btn paper min-h-tap">
+                      🔔 {h('hub.searches.cta')}
+                    </button>
+                  )}
+                </div>
+              )
+            ) : null}
+          </>
+        ) : null}
+
+        {view === 'wanted' ? (
+          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={null} showCopyRails={false} panelOpen={filtersOpen} onPanel={setFiltersOpen} />
+        ) : null}
       </div>
 
-      <div role="tablist" aria-label={h('hub.tabs.title')} className="fl-mk-tabs">
-        {([['market', 'hub.tabs.market'], ['wanted', 'hub.tabs.wanted'], ['foryou', 'hub.tabs.foryou'], ['circles', 'hub.tabs.circles']] as const).map(([id, key]) => (
-          <button key={id} role="tab" type="button" aria-selected={view === id} onClick={() => go(id)}>
-            {h(key)}
-          </button>
-        ))}
-      </div>
-
-      {note ? <p className="mt-2 border-hair border-ink bg-sheet px-3 py-2 font-body text-[13px] font-extrabold text-ink" role="status">{note}</p> : null}
-
+      <div className="wkc-r wkc-mk-r">
       {view === 'market' ? (
-        <section role="tabpanel" aria-label={h('hub.tabs.market')}>
-          <div className="fl-scope" role="group" aria-label={h('hub.scope.title')}>
-            {([['all', 'hub.scope.all', facets ? facets.total : null], ['game', 'hub.scope.game', facets?.scope?.game ?? null], ['world', 'hub.scope.world', facets?.scope?.world ?? null]] as const).map(([id, key, n]) => (
-              <button key={id} type="button" data-world={id === 'world' ? '' : undefined} aria-pressed={filters.scope === id} onClick={() => setFilters((f) => ({ ...f, scope: id, slug: null, club: null, decade: null, variant: null }))}>
-                {h(key)}
-                {n !== null ? <small>{n}</small> : null}
-              </button>
-            ))}
+        <section role="tabpanel" aria-label={h('hub.tabs.market')} className="wkc-sec">
+          <div className="wkc-h2">
+            <h2 className="wkc-h2-t orange">{fl('market.swaps')}</h2>
+            {facets ? <span className="wk-k" data-hub="count">{h('hub.count', { n: String(facets.total) })}</span> : null}
           </div>
-          {filters.scope !== 'game' ? (
-            <button type="button" className="fl-world-link min-h-tap" onClick={() => setWizard(true)}>{h('hub.world.list')} <span aria-hidden="true">›</span></button>
-          ) : null}
-          {focus ? <BackToAll shirt={focus} onClear={() => setFilters((f) => ({ ...f, slug: null }))} /> : null}
-          <div className="fl-mk-chips" role="group" aria-label={h('hub.rail.deal')}>
+          <p className="wk-small wkc-note-p">{t('market.lede')}</p>
+          <div className="wk-seg wkc-kind" role="group" aria-label={h('hub.rail.deal')}>
             {([[null, 'hub.kind.all'], ['sale', 'hub.kind.sale'], ['trade', 'hub.kind.swap']] as const).map(([kind, key]) => (
-              <button key={key} type="button" aria-pressed={filters.kind === kind} onClick={() => setFilters((f) => ({ ...f, slug: null, kind }))}>
+              <button key={key} type="button" className="min-h-tap" aria-pressed={filters.kind === kind} onClick={() => setFilters((f) => ({ ...f, slug: null, kind }))}>
                 {h(key)}
               </button>
             ))}
           </div>
-          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={facets} myCountry={place?.country ?? null} panelOpen={filtersOpen} />
-
-          {narrowed && market.state === 'ready' ? (
-            saving ? (
-              <form className="mt-2 flex flex-wrap items-center gap-2 border-rule border-dashed border-ink bg-paper p-2" onSubmit={(e) => { e.preventDefault(); void saveSearch() }}>
-                <label htmlFor="hub-save-name" className="sr-only">{h('hub.searches.nameLabel')}</label>
-                <input id="hub-save-name" value={saving.name} maxLength={40} onChange={(e) => setSaving({ name: e.target.value })} className="min-h-tap min-w-0 flex-1 border-hair border-ink/40 bg-sheet px-2 font-body text-[14px] text-ink" />
-                <button type="submit" className={buttonPrimary}>{h('hub.searches.save')}</button>
-                <button type="button" onClick={() => setSaving(null)} className={buttonPlain}>{h('hub.cancel')}</button>
-              </form>
-            ) : (
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                {signedIn === false ? (
-                  <>
-                    <span className="font-body text-[12.5px] text-muted">{h('hub.searches.guestHint')}</span>
-                    {signIn}
-                  </>
-                ) : (
-                  <button type="button" onClick={() => setSaving({ name: autoName(filters, shirts) })} className={buttonPlain}>
-                    🔔 {h('hub.searches.cta')}
-                  </button>
-                )}
-              </div>
-            )
-          ) : null}
 
           {market.state === 'off' ? (
             <Notice title={t('market.off.title')} body={t('market.off.body')}>
@@ -277,7 +286,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
           ) : market.state === 'error' ? (
             <Notice title={t('market.error.title')} body={market.message} tone="red" />
           ) : market.state === 'loading' ? (
-            <p className="mt-stack border-rule border-dashed border-ink/50 p-4 font-body text-step--1 text-muted" role="status">{t('market.loading')}</p>
+            <p className="wkc-loading" role="status">{t('market.loading')}</p>
           ) : market.rows.length === 0 ? (
             filters.scope === 'world' && !qSent && activeCount(filters) === 1 ? (
               <Notice title={h('hub.world.empty.title')} body={h('hub.world.empty.body')}>
@@ -290,47 +299,56 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             ) : (
               <Notice title={t('market.empty.title')} body={t('market.empty.body')}>
                 <Link href="/closet" className={buttonPrimary}>{t('market.toCloset')}</Link>
-                <Link href="/shirts" className="min-h-tap inline-flex items-center px-2 font-body text-step--1 font-extrabold text-sign underline underline-offset-4">{t('market.toArchive')}</Link>
+                <Link href="/shirts" className="wk-link">{t('market.toArchive')}</Link>
               </Notice>
             )
           ) : (
             <>
-              <p className="fl-mk-count" data-hub="count">
-                {facets ? h('hub.count', { n: String(facets.total) }) : null}
-              </p>
               <HubListings items={market.rows} shirts={shirts} wants={wants} focused={Boolean(focus)} onFocus={(slug) => setFilters((f) => ({ ...f, slug }))} />
               {market.next ? (
-                <button type="button" onClick={moreMarket} disabled={market.more} className="mt-stack flex min-h-tap w-full items-center justify-center border-rule border-dashed border-ink bg-paper font-body text-step--1 font-extrabold text-ink disabled:opacity-60">
-                  {t('market.table.more')}
+                <button type="button" onClick={moreMarket} disabled={market.more} className="wk-seeall min-h-tap">
+                  {t('market.table.more')} <span aria-hidden="true">↓</span>
                 </button>
               ) : null}
             </>
           )}
-          <button type="button" className="fl-mk-wanted" onClick={() => go('wanted')}>
-            <span className="fl-mk-wanted-pic" aria-hidden="true">⚑</span>
-            <span><b>{h('hub.wantedStrip.title')}</b><small>{h('hub.wantedStrip.sub')}</small></span>
-            <span aria-hidden="true" className="fl-mk-wanted-go">›</span>
+          <button type="button" className="wkc-wantedstrip min-h-tap" onClick={() => go('wanted')}>
+            <span className="wk-burst orange wkc-wantedstrip-b" aria-hidden="true">{h('hub.wantedStrip.title')}</span>
+            <span><b className="wk-head">{h('hub.wantedStrip.title')}</b><small className="wk-k">{h('hub.wantedStrip.sub')}</small></span>
+            <span aria-hidden="true" className="wkc-wantedstrip-go">→</span>
           </button>
+          {filters.scope !== 'game' ? (
+            <button type="button" className="wk-coupon wkc-anyclub min-h-tap" onClick={() => setWizard(true)}>
+              <span className="wk-scissors" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="3" /><circle cx="6" cy="17" r="3" /><path d="M8.5 8.5L20 18M8.5 15.5L20 6" /></svg></span>
+              <svg className="wkc-anyclub-globe" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" /></svg>
+              <b className="wk-head">{h('hub.world.list')}</b>
+              <span aria-hidden="true">→</span>
+            </button>
+          ) : null}
+          <Link href="/market/help" className="wkc-helpbox">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4.5a6 6 0 1 0 0 12a6 6 0 1 0 0-12M15 15l5 5" /></svg>
+            <span><b className="wk-head">{h('hub.help.title')}</b><small>{h('hub.help.lede')}</small><span className="wk-k cyan">{h('hub.help.ask')} →</span></span>
+          </Link>
+          <p className="wk-small wk-muted">{t('market.safety')}</p>
         </section>
       ) : null}
 
       {view === 'wanted' ? (
-        <section role="tabpanel" aria-label={h('hub.tabs.wanted')}>
-          <div className="mt-3 flex flex-wrap items-end justify-between gap-2">
+        <section role="tabpanel" aria-label={h('hub.tabs.wanted')} className="wkc-sec">
+          <div className="wkc-h2">
             <div>
-              <Kicker>{h('hub.wanted.kicker')}</Kicker>
-              <h2 className="font-sign text-step-1 leading-tight text-ink">{h('hub.wanted.title')}</h2>
+              <p className="wk-banner">{h('hub.wanted.kicker')}</p>
+              <h2 className="wkc-h2-t orange">{h('hub.wanted.title')}</h2>
             </div>
-            <button type="button" onClick={() => setSheet({ slug: filters.slug })} className={buttonPrimary}>{h('hub.actions.look')}</button>
+            <button type="button" onClick={() => setSheet({ slug: filters.slug })} className="wk-btn red min-h-tap">{h('hub.actions.look')}</button>
           </div>
-          <p className="mt-1 max-w-prose font-body text-[12.5px] leading-snug text-muted">{h('hub.wanted.lede')}</p>
-          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={null} showCopyRails={false} />
+          <p className="wk-small wkc-note-p">{h('hub.wanted.lede')}</p>
           {wanted.state === 'off' ? (
             <Notice title={t('market.off.title')} body={t('market.off.body')} />
           ) : wanted.state === 'error' ? (
             <Notice title={t('market.error.title')} body={wanted.message} tone="red" />
           ) : wanted.state === 'loading' ? (
-            <p className="mt-stack font-body text-step--1 text-muted" role="status">{t('market.loading')}</p>
+            <p className="wkc-loading" role="status">{t('market.loading')}</p>
           ) : wanted.rows.length === 0 ? (
             <Notice title={h('hub.wanted.emptyTitle')} body={h('hub.wanted.emptyBody')}>
               <button type="button" onClick={() => setSheet({ slug: filters.slug })} className={buttonPrimary}>{h('hub.actions.look')}</button>
@@ -344,8 +362,8 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
                 onRemoveOwn={(id) => void wantPublicSet(id, false).then(() => { loadWanted(); loadMine(); flash(h('hub.wanted.withdrawn')) })}
               />
               {wanted.next ? (
-                <button type="button" onClick={moreWanted} disabled={wanted.more} className="mt-stack flex min-h-tap w-full items-center justify-center border-rule border-dashed border-ink bg-paper font-body text-step--1 font-extrabold text-ink disabled:opacity-60">
-                  {t('market.table.more')}
+                <button type="button" onClick={moreWanted} disabled={wanted.more} className="wk-seeall min-h-tap">
+                  {t('market.table.more')} <span aria-hidden="true">↓</span>
                 </button>
               ) : null}
             </>
@@ -354,7 +372,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       ) : null}
 
       {view === 'foryou' ? (
-        <section role="tabpanel" aria-label={h('hub.tabs.foryou')}>
+        <section role="tabpanel" aria-label={h('hub.tabs.foryou')} className="wkc-sec">
           <PipePanel signedIn={signedIn} signIn={signIn} shirts={shirts} wants={wants} onFocus={(slug) => { setFilters((f) => ({ ...f, slug })); go('market') }} version={pipeVersion} />
           <ForYouPanel
             matches={match}
@@ -373,13 +391,14 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       ) : null}
 
       {view === 'circles' ? (
-        <section role="tabpanel" aria-label={h('hub.tabs.circles')} className="mt-3">
+        <section role="tabpanel" aria-label={h('hub.tabs.circles')} className="wkc-sec">
           <CirclesPanel shirts={shirts} signedIn={signedIn} signIn={signIn} place={place} onPlace={setPlace} />
         </section>
       ) : null}
 
-      <div className="fl-mk-sticky">
-        <Link href="/closet" className="fl-mk-list">{h('hub.list.cta')}</Link>
+      <div className="wkc-listcta">
+        <Link href="/closet" className="wk-btn red lg block">{h('hub.list.cta')}</Link>
+      </div>
       </div>
 
       {wizard ? (
@@ -413,6 +432,6 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
           }}
         />
       ) : null}
-    </div>
+    </>
   )
 }
