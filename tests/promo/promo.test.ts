@@ -76,7 +76,6 @@ describe('the control room\'s write path',()=>{
  it('the outbound link says where it was seen',()=>{const u=new URL(outbound(SEED_DOC.banners[2]!,at('hapoel-tel-aviv','/c')));expect(u.hostname).toBe('dubid.dubelteam.com');expect(u.searchParams.get('utm_content')).toBe('hapoel-tel-aviv');expect(u.searchParams.get('utm_campaign')).toBe('dubid')})
 })
 
-import {SEED_DOC} from '@/lib/promo/seed'
 import {isOwn} from '@/lib/promo/rules'
 describe('own banners',()=>{
  it('seeds Manager, Market, LIFE and the extra banner',()=>{
