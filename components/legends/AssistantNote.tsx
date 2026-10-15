@@ -7,6 +7,6 @@ export function AssistantNotes({notes,go}:{notes:AdviceNote[];go:(t:Tab)=>void})
  if(!notes.length)return null
  return <section className="wk-panel wk-lift wkl-assist" aria-label="Assistant manager" data-testid="legends-assistant">
   <h3 className="wk-logo sm">Your assistant</h3>
-  <ul>{notes.map(n=><li key={n.id} data-severity={n.severity}><span className="wk-cap white">{n.text}</span><button type="button" className="wk-btn paper" onClick={()=>go(n.to)}>{n.cta}</button></li>)}</ul>
+  <ul>{notes.map(n=><li key={n.id} data-severity={n.severity}><span className="wk-cap white">{n.text}</span><button type="button" className="wk-btn paper min-h-tap" onClick={()=>go(n.to)}>{n.cta}</button></li>)}</ul>
  </section>
 }

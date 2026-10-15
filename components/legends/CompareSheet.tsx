@@ -36,8 +36,8 @@ export function CompareSheet({v,cand,busy,onClose,send}:{v:CareerView;cand:CardV
    {deal.blocked&&swap?<p className="wk-cap yellow" role="status" data-testid="legends-compare-why">Swap closed: {deal.blocked.text}</p>:null}
    {!full&&plainBuy.blocked?<p className="wk-cap yellow" role="status">Signing closed: {plainBuy.blocked.text}</p>:null}
    <p className="wkl-actions">
-    {!full?<button type="button" className="wk-btn red block" disabled={busy||!!plainBuy.blocked} onClick={()=>{send({kind:'buy',card:cand.id},`${cand.name} signed for ${money(cand.price)}.`);onClose()}}>Sign · {money(cand.price)}</button>:null}
-    <button type="button" className="wk-btn red block" disabled={busy||!!deal.blocked||!out} onClick={()=>{send({kind:'swap',sell:out!.id,buy:cand.id},`${cand.name} in, ${out!.name} out.`);onClose()}}>Swap · {out?.name??'choose a man'}</button>
+    {!full?<button type="button" className="wk-btn red block min-h-tap" disabled={busy||!!plainBuy.blocked} onClick={()=>{send({kind:'buy',card:cand.id},`${cand.name} signed for ${money(cand.price)}.`);onClose()}}>Sign · {money(cand.price)}</button>:null}
+    <button type="button" className="wk-btn red block min-h-tap" disabled={busy||!!deal.blocked||!out} onClick={()=>{send({kind:'swap',sell:out!.id,buy:cand.id},`${cand.name} in, ${out!.name} out.`);onClose()}}>Swap · {out?.name??'choose a man'}</button>
    </p>
   </div>
  </Sheet>

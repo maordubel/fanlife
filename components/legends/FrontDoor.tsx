@@ -28,7 +28,7 @@ export function ClaimBanner({count}:{count:number}){
  const go=()=>start(async()=>{setMsg(null);const r=await claimGuestCareers();if(!r.ok)setMsg(r.error);else{setMsg(r.archived?`${r.moved} saves moved to your account; ${r.archived} put away in the archive.`:`${r.moved} saves moved to your account.`);router.refresh()}})
  return <section className="wk-panel wk-lift wkl-claim" aria-label="Saves from before you signed in" data-testid="legends-claim">
   <p className="wk-cap white"><b>{count} {count===1?'save':'saves'} from before you signed in.</b> Move {count===1?'it':'them'} to your account to play on any device.</p>
-  <button type="button" className="wk-btn red block" disabled={busy} onClick={go}>Move to my account</button>
+  <button type="button" className="wk-btn red block min-h-tap" disabled={busy} onClick={go}>Move to my account</button>
   {msg?<p className="wk-cap yellow" role="status">{msg}</p>:null}
  </section>
 }

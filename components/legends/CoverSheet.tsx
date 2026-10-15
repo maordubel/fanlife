@@ -34,7 +34,7 @@ export function CoverSheet({careerId,season,onClose}:{careerId:string;season:num
  return <Sheet id="cover" title={`Season ${season} cover`} kicker="Magazine cover" onClose={onClose} wide>
   <div className="wkl-cover" data-testid="legends-cover">
    {err?<p className="wk-k red" role="alert">{err}</p>:!covers||!assets?<p className="wk-k wk-muted" role="status">Setting the type…</p>:<>
-    <div className="wk-opts two" role="tablist" aria-label="Cover moment">{covers.map((c,i)=><button key={c.kind} type="button" role="tab" aria-selected={i===pick} className="wk-opt" onClick={()=>setPick(i)}>{KIND_NAME[c.kind]}</button>)}</div>
+    <div className="wk-opts two" role="tablist" aria-label="Cover moment">{covers.map((c,i)=><button key={c.kind} type="button" role="tab" aria-selected={i===pick} className="wk-opt min-h-tap" onClick={()=>setPick(i)}>{KIND_NAME[c.kind]}</button>)}</div>
     <div className="wk-seg" role="group" aria-label="Format">{(Object.keys(COVER_FORMATS) as CoverFormat[]).map(f=><button key={f} type="button" aria-pressed={f===format} onClick={()=>setFormat(f)}>{f==="story"?"Story":"Feed"}<small>{f==="story"?"1080×1920":"1080×1350"}</small></button>)}</div>
     {drawn?<img className="wkl-cover-preview" data-format={format} alt={`${cover!.clubName}: ${cover!.headline} ${cover!.big}`} src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(drawn.svg)}`}/>:<p className="wk-k red" role="alert">This cover could not be drawn.</p>}
     {drawn?.warnings.length?<p className="wk-k wk-muted" role="status">{drawn.warnings[0]}</p>:null}
@@ -42,9 +42,9 @@ export function CoverSheet({careerId,season,onClose}:{careerId:string;season:num
     {show?<label className="wkl-cover-alias wk-k">Public name <input value={alias} maxLength={18} onChange={e=>setAlias(e.target.value)} placeholder="1–18 characters" aria-invalid={aliasBad||undefined}/></label>:null}
     <p className="wk-cap white">This picture is private until you share it. It shows the club, the result and nothing from your save.</p>
     <div className="wkl-cover-actions">
-     <button type="button" className="wk-btn red block" disabled={!drawn||busy||aliasBad} onClick={download} data-testid="legends-cover-download">Download</button>
-     <button type="button" className="wk-btn block" disabled={!drawn||busy||aliasBad} onClick={share} data-testid="legends-cover-share">Share</button>
-     <button type="button" className="wk-btn paper block" onClick={copy}>Copy link</button>
+     <button type="button" className="wk-btn red block min-h-tap" disabled={!drawn||busy||aliasBad} onClick={download} data-testid="legends-cover-download">Download</button>
+     <button type="button" className="wk-btn block min-h-tap" disabled={!drawn||busy||aliasBad} onClick={share} data-testid="legends-cover-share">Share</button>
+     <button type="button" className="wk-btn paper block min-h-tap" onClick={copy}>Copy link</button>
     </div>
     {note?<p className="wk-k wk-muted" role="status">{note}</p>:null}
    </>}
