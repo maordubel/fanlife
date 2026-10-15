@@ -322,3 +322,35 @@ describe('F06 · the captain and the vice are the manager’s appointments (15.1
   expect(tested).toBeGreaterThan(0)
  })
 })
+
+import {careerView} from '@/lib/legends/view'
+describe('F08/F07 · five fixed candidates per window; contacts, scouting report, board forecast (15.10.2026)',()=>{
+ const inWindow=(i:number)=>toWindow(drafted(newCareer(`f08seed${String(i).padStart(10,'0')}`)))
+ it('the five are drawn when the window opens; a signing leaves a gap — no sixth name appears',()=>{
+  const c0=inWindow(1),five=slotsOf(c0).map(x=>x.id);expect(c0.market?.ids).toEqual(five);expect(five.length).toBeLessThanOrEqual(5)
+  const buy=slotsOf(c0).find(x=>x.price<=me(c0).cash)!,c1=act(c0,{kind:'buy',card:buy.id})
+  const after=slotsOf(c1).map(x=>x.id);expect(after).toEqual(five.filter(id=>id!==buy.id))
+  expect(careerView(c1).window!.signed.map(x=>x.id)).toEqual([buy.id])
+  expect(applyAction(c1,{kind:'buy',card:c1.catalog.cards.find(x=>!five.includes(x.id)&&!me(c1).squad.some(s=>s.id===x.id))!.id,key:'k-f08-out',rev:c1.revision} as Action,ctx).ok).toBe(false)
+ })
+ it('a window that opened before snapshots gets its list at the first move and keeps every purchase',()=>{
+  const c0=inWindow(2),legacy={...c0,market:undefined} as Career,buy=slotsOf(legacy).find(x=>x.price<=me(legacy).cash)!
+  const r=applyAction(legacy,{kind:'buy',card:buy.id,key:'k-f08-legacy',rev:legacy.revision} as Action,ctx);expect(r.ok).toBe(true)
+  if(r.ok){expect(r.career.market?.ids).toContain(buy.id);expect(me(r.career).squad.some(s=>s.id===buy.id)).toBe(true)}
+ })
+ it('market contacts: closed under 80 reputation; then once a window, one man of the asked line replaces an unsigned name, still five at most',()=>{
+  const c0=inWindow(3)
+  expect(applyAction(c0,{kind:'scout',pos:'MF',key:'k-f07-closed',rev:c0.revision} as Action,ctx).ok).toBe(false)
+  const rich={...c0,reputation:{...c0.reputation,points:90}} as Career,c1=act(rich,{kind:'scout',pos:'MF'})
+  expect(slotsOf(c1).length).toBeLessThanOrEqual(5);expect(c1.market!.scouted).toBe(1);expect(c1.market!.ids.length).toBe(c0.market!.ids.length)
+  expect(c1.market!.ids.some(id=>!c0.market!.ids.includes(id))).toBe(true)
+  expect(applyAction(c1,{kind:'scout',pos:'FW',key:'k-f07-twice',rev:c1.revision} as Action,ctx).ok).toBe(false)
+  expect(careerView(c1).window!.contacts).toEqual({open:true,used:true})
+ })
+ it('the scouting report (30) and the board forecast (160) appear only when earned, from real state',()=>{
+  const c0=inWindow(4),low=careerView({...c0,reputation:{...c0.reputation,points:0}} as Career),mid=careerView({...c0,reputation:{...c0.reputation,points:40}} as Career),high=careerView({...c0,reputation:{...c0.reputation,points:200}} as Career)
+  expect(low.next?.opponent.report ?? null).toBeNull();expect(low.boardForecast).toBeNull()
+  const r=mid.next?.opponent.report;if(mid.next){expect(r).not.toBeNull();expect(r!.lines.length).toBe(4);expect(r!.form.every(f=>'WDL'.includes(f))).toBe(true)}
+  expect(mid.boardForecast).toBeNull();expect(high.boardForecast).toBeGreaterThan(0)
+ })
+})

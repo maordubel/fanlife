@@ -135,3 +135,11 @@
 @media (max-width: 520px) { .lgm-bd-xi { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .lgm-bd-bar u, .lgm-bd-bar s { transition: none; } }
 .lgm-live .lgm-live-err { margin: 0; padding: 8px 12px; border: 3px solid var(--mag-ink); background: var(--mag-lamp); color: var(--mag-ink); font: 700 14px/1.35 var(--mag-body); }
+
+/* F07/F08: scouting report and market contacts — paper panels, ink text set explicitly */
+.lgm-scout { margin-block: 8px; padding: 8px 10px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); }
+.lgm-scout table { inline-size: 100%; border-collapse: collapse; font: 700 12px var(--mag-mono); }
+.lgm-scout th, .lgm-scout td { padding: 3px 4px; text-align: center; border-block-end: 1px dashed var(--lgm-rule); } .lgm-scout th[scope='row'] { text-align: start; }
+.lgm-form { display: inline-block; min-inline-size: 1.6em; margin-inline-end: 3px; padding: 1px 4px; text-align: center; border: 2px solid var(--mag-ink); font: 700 11px var(--mag-mono); }
+.lgm-form[data-r='W'] { background: var(--mag-ink); color: var(--mag-white); } .lgm-form[data-r='L'] { text-decoration: line-through; }
+.lgm-contacts { margin-block-start: 10px; padding-block-start: 8px; border-block-start: 2px dashed var(--lgm-rule); }
