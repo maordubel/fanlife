@@ -2,6 +2,7 @@ import {hash} from '@/lib/clubs/rumble-rng'
 import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
 import {TIER_PRICES as DRAFT_TIER_PRICES} from '@/lib/draft-core/types'
 import type {Card,DraftState,Offer,Price} from './types'
+import {oldMayShow} from './era'
 
 /**
  * The opening draft (rulebook §1.2, §2.2). Pure and deterministic from the career's seed.
@@ -17,7 +18,7 @@ import type {Card,DraftState,Offer,Price} from './types'
  * cheapest of everyone left — no search is needed (§2.2's matching collapses to this when positions do not overlap).
  */
 export const TIER_PRICES:Record<Offer['tier'],readonly Price[]>=DRAFT_TIER_PRICES as Record<Offer['tier'],readonly Price[]>
-export const emptyDraft=():DraftState=>({slot:1,group:null,offers:[],shown:[],picks:[],rerollsLeft:R.rerollsPerDraft,spent:0,optionalDone:false,confirmed:false,recentDecades:[]})
+export const emptyDraft=(modern=false):DraftState=>({...(modern?{modern:true}:{}),slot:1,group:null,offers:[],shown:[],picks:[],rerollsLeft:R.rerollsPerDraft,spent:0,optionalDone:false,confirmed:false,recentDecades:[]})
 const BUDGET=R.initialDraftBudgetM,REQ=R.initialDraftRequired
 export const budgetOf=(d:DraftState)=>d.budget??BUDGET
 export const cashLeft=(d:DraftState)=>budgetOf(d)-d.spent
@@ -54,8 +55,8 @@ export function trioReserve(group:readonly Card[],k:number):boolean{
  return n([5,4])>=1&&n([2,1])>=1&&n([4,3,2])>=1&&group.length>=k+2
 }
 /** three different men for a tier set, preferring the ones the solver allows, fresh decades, then a stable shuffle */
-function pickTrio(pool:readonly Card[],ok:(c:Card)=>boolean,recent:readonly number[],salt:string,tight:boolean):Offer[]|null{
- const rk=new Map<string,number>(),rank=(c:Card)=>{let v=rk.get(c.id);if(v===undefined){v=(ok(c)?0:1e6)+(c.decades.some(d=>!recent.includes(d))?0:1e5)+(hash(`${salt}:${c.id}`)%1e5);rk.set(c.id,v)}return v}
+function pickTrio(pool:readonly Card[],ok:(c:Card)=>boolean,recent:readonly number[],salt:string,tight:boolean,modern=false):Offer[]|null{
+ const rk=new Map<string,number>(),rank=(c:Card)=>{let v=rk.get(c.id);if(v===undefined){v=(ok(c)?0:1e6)+(!modern||oldMayShow(c,salt)?0:3e5)+(c.decades.some(d=>!recent.includes(d))?0:1e5)+(hash(`${salt}:${c.id}`)%1e5);rk.set(c.id,v)}return v}
  const tiers:Offer['tier'][][]=[['premium','mid','budget'],['premium','budget','mid'],['budget','premium','mid'],['mid','premium','budget']]
  for(const order of tiers){
   const taken=new Set<string>(),out:Partial<Record<Offer['tier'],Card>>={}
@@ -89,7 +90,7 @@ export function offersFor(cards:readonly Card[],d:DraftState,group:QuotaPos,seed
  const picked=new Set(d.picks.map(p=>p.id)),shown=new Set(d.shown)
  const fresh=cards.filter(c=>c.pos===group&&!picked.has(c.id)&&!shown.has(c.id))
  const ok=(c:Card)=>okToPick(cards,d,c),tight=cashLeft(d)-minCostToFinish(cards,d)<3
- const trio=pickTrio(fresh,ok,d.recentDecades,`${seed}:${d.slot}:${group}:${seenIn(cards,d,group)}`,tight);if(!trio)return null
+ const trio=pickTrio(fresh,ok,d.recentDecades,`${seed}:${d.slot}:${group}:${seenIn(cards,d,group)}`,tight,!!d.modern);if(!trio)return null
  const by=new Map(cards.map(c=>[c.id,c]))
  return trio.map(o=>({...o,locked:ok(by.get(o.id)!)?null:lockReason(cards,d,by.get(o.id)!)}))
 }
@@ -175,8 +176,8 @@ export function confirmCheck(cards:readonly Card[],d:DraftState):string|null{
 }
 
 /** a bot through the whole draft — the AI clubs, the readiness check and the lab. `style` decides what it values. */
-export function botDraft(cards:readonly Card[],seed:number,style:'value'|'random'|'premium'|'budget'='value'):{draft:DraftState;error:string|null}{
- let d=emptyDraft()
+export function botDraft(cards:readonly Card[],seed:number,style:'value'|'random'|'premium'|'budget'='value',modern=false):{draft:DraftState;error:string|null}{
+ let d=emptyDraft(modern)
  for(let guard=0;guard<120&&d.picks.length<REQ;guard++){
   // the bot chooses its line like a manager: a line it still owes first (the fewest men left to pick from), else any open line
   const open=groups(cards,d,seed).filter(g=>g.open)

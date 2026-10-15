@@ -29,7 +29,7 @@ export type Team={club:string;name:string;ai:boolean;squad:SquadEntry[];cards:Re
 
 /* ───────── the draft (§1.2, §2.2) ───────── */
 export type Offer={id:string;tier:'premium'|'mid'|'budget';locked:string|null}
-export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:string[];picks:{id:string;quota:QuotaPos;price:Price;slot:number}[];rerollsLeft:number;spent:number;optionalDone:boolean;confirmed:boolean;recentDecades:number[];/** the draft budget, drawn on the slot machine at the start (€50–52M); absent on older careers = the standard budget */budget?:number}
+export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:string[];picks:{id:string;quota:QuotaPos;price:Price;slot:number}[];rerollsLeft:number;spent:number;optionalDone:boolean;confirmed:boolean;recentDecades:number[];/** the draft budget, drawn on the slot machine at the start (€50–52M); absent on older careers = the standard budget */budget?:number;/** careers begun from 15.10.2026: men whose years end before 1960 are dealt at a low share (lib/legends/era.ts); absent = the old even deal */modern?:boolean}
 
 /* ───────── a match (§1.4, §2.5) ───────── */
 export type EventKind='kickoff'|'chance'|'goal'|'yellow'|'red'|'injury'|'sub'|'tactic'|'half-time'|'full-time'|'extra-time'|'penalties'|'stop'
@@ -59,7 +59,7 @@ export type TalkRecord={fixture:string;when:'pre'|'post';situation:string;answer
 export type Phase='draft'|'window'|'season'|'playoff'|'season-end'
 
 export type Career={
- v:2;id:string;rules:typeof RULE_VERSION;engine:EngineVersion;owner:string;clubId:string;clubName:string;status:'active'|'archived';
+ v:2;/** begun from 15.10.2026: the draft and the market favour men of 1960 on (lib/legends/era.ts) */modernEra?:boolean;id:string;rules:typeof RULE_VERSION;engine:EngineVersion;owner:string;clubId:string;clubName:string;status:'active'|'archived';
  settings:LegendsSettings;catalog:Catalog;teams:Team[];phase:Phase;draft:DraftState|null;season:Season;live:Live|null;
  cutscene:'board-grant'|'meet-squad'|'camp'|'season-end'|null;soldThisWindow:string[];/** the manager's transfer list — squad men he is willing to sell (owner 14.10.2026) */transferList?:string[];/** bids declined in this window (`windowKey`) */declinedBids?:{w:string;ids:string[]};aiDone:string[];
  ledger:LedgerEntry[];reputation:{points:number;events:{key:string;season:number;points:number;why:string}[]};history:SeasonRecord[];

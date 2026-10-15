@@ -16,7 +16,7 @@ import type {Card,Career,Catalog,MatchSnapshot,SideSnapshot} from './types'
 export type DraftLab={club:string;runs:number;deadEnds:number;avgSpent:number;examples:string[]}
 export function draftLab(cat:Catalog,runs=200):DraftLab{
  let dead=0,spent=0;const ex:string[]=[]
- for(let i=0;i<runs;i++){const r=botDraft(cat.cards,hash(`${cat.club}:lab:${i}`),(['random','value','premium','budget'] as const)[i%4]);if(r.error){dead++;if(ex.length<3)ex.push(r.error)}else spent+=r.draft.spent}
+ for(let i=0;i<runs;i++){const r=botDraft(cat.cards,hash(`${cat.club}:lab:${i}`),(['random','value','premium','budget'] as const)[i%4],true);if(r.error){dead++;if(ex.length<3)ex.push(r.error)}else spent+=r.draft.spent}
  return {club:cat.club,runs,deadEnds:dead,avgSpent:runs-dead?roundTenths(spent/(runs-dead)):0,examples:ex}
 }
 const side=(club:string,name:string,cards:Card[],home:boolean|null):SideSnapshot|null=>{
@@ -56,7 +56,7 @@ export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,s
  // the dressing room is never skipped: the autopilot answers every talk with a calm word before it plays on
  const talk=()=>{const o=talkOffers(c);if(o.post)go({kind:'talk-post',fixture:o.post.fixture,answer:0});const p=talkOffers(c).pre;if(p)go({kind:'talk-pre',fixture:p.fixture,answer:0})}
  try{
-  const d=botDraft(own.cards,hash(`${c.id}:draft`),'value');if(d.error)return {career:c,error:d.error}
+  const d=botDraft(own.cards,hash(`${c.id}:draft`),'value',true);if(d.error)return {career:c,error:d.error}
   for(const p of d.draft.picks){go({kind:'draft',move:{kind:'group',group:p.quota}});go({kind:'draft',move:{kind:'pick',id:p.id}})}
   go({kind:'draft-confirm'});go({kind:'ack'})
   for(let s=0;s<seasons;s++){

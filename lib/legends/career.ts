@@ -64,7 +64,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
  }
  if(teams.length<R.minEligibleClubs)return {ok:false,error:`A league needs ${R.minEligibleClubs} ready clubs; ${teams.length} are ready.`}
  return {ok:true,career:{v:2,id:i.id,rules:RULE_VERSION,engine:ENGINE_VERSION,owner:i.owner,clubId:i.own.club,clubName:i.own.clubName,status:'active',settings:{...i.settings,points:{...i.settings.points}},catalog:i.own,teams,
-  phase:'draft',draft:emptyDraft(),season:newSeasonOf(teams,1,i.id),live:null,cutscene:null,soldThisWindow:[],aiDone:[],ledger:[],reputation:{points:0,events:[]},history:[],keys:[],revision:1,createdAt:i.now,updatedAt:i.now}}
+  phase:'draft',modernEra:true,draft:emptyDraft(true),season:newSeasonOf(teams,1,i.id),live:null,cutscene:null,soldThisWindow:[],aiDone:[],ledger:[],reputation:{points:0,events:[]},history:[],keys:[],revision:1,createdAt:i.now,updatedAt:i.now}}
 }
 
 /* ───────── actions ───────── */

@@ -2,6 +2,7 @@ import {hash} from '@/lib/clubs/rumble-rng'
 import {roundTenths} from './config'
 import {saleQuote} from './economy'
 import type {Card,Career} from './types'
+import {eraWeight} from './era'
 
 /**
  * The transfer market is five slots, not the whole archive (owner, 14.10.2026): each window shows at most FIVE men of the club's
@@ -12,10 +13,10 @@ export const BUY_SLOTS=5
 export const windowKey=(c:Career)=>`${c.season.ordinal}:${c.season.played}`
 const ln=(k:string)=>-Math.log(((hash(k)%100000)+1)/100001)
 
-/** the men on sale this window — a weighted draw without replacement; weight = stars³ so a famous man comes up far more often */
+/** the men on sale this window — a weighted draw without replacement; weight = stars³ so a famous man comes up far more often, and a man whose years end before 1960 weighs about an eighth as much (lib/legends/era.ts) */
 export function buySlots(c:Career,squadIds:string[],sold:string[]):Card[]{
  const own=new Set(squadIds),pool=c.catalog.cards.filter(x=>!own.has(x.id)&&!sold.includes(x.id))
- return pool.map(x=>({x,k:ln(`${c.id}:slots:${windowKey(c)}:${x.id}`)/Math.max(1,x.stars)**3}))
+ return pool.map(x=>({x,k:ln(`${c.id}:slots:${windowKey(c)}:${x.id}`)/(Math.max(1,x.stars)**3*(c.modernEra?eraWeight(x):1))}))
   .sort((a,b)=>a.k-b.k||a.x.id.localeCompare(b.x.id)).slice(0,BUY_SLOTS).map(e=>e.x)
 }
 export type Bid={card:string;club:string;clubName:string;fee:number;quoted:number}

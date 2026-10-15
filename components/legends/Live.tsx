@@ -27,7 +27,7 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
  const final=!L&&v.last?.id===watch.id?v.last:null
  const [stage,setStage]=useState<'watch'|'break'|'ft'>('watch'),[asked,setAsked]=useState<number|null>(null)
  // the picture's minute, for the Tactics button; `jump` is the minute the manager asked the touchline for — its part was already watched
- const clock=useRef(0),jump=useRef<number|null>(null)
+ const clock=useRef(0),jump=useRef<number|null>(null),[shown,setShown]=useState(0)
  // a new stop, or the final part, starts a new spell of watching
  useEffect(()=>{if(jump.current!==null&&jump.current===L?.minute){jump.current=null;setStage('break')}else setStage('watch')},[L?.minute,final?.id])
  // engine 4: 89′ is a silent hand-over — the screen passes it by itself
@@ -44,9 +44,9 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
     <h2 id="lgm-live-h" className="sr-only">{L?`${L.home} v ${L.away}, live`:'Full time'}</h2>
     <button type="button" className="lgm-x min-h-tap" onClick={()=>setWatch(null)} aria-label={L?'Leave the match for now':'Close'}>×</button>
    </header>
-   {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onClock={m=>{clock.current=m}} onDone={()=>setStage(L?'break':'ft')}/>
+   {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onClock={m=>{clock.current=m;setShown(m)}} onDone={()=>setStage(L?'break':'ft')}/>
     :stage!=='ft'&&L?<FallbackLog L={L} onDone={()=>setStage('break')}/>:null}
-   {reel&&stage!=='ft'?<MatchBoard reel={reel}/>:null}
+   {reel&&stage!=='ft'?<MatchBoard reel={reel} upTo={stage==='watch'?Math.max(segment.from,shown-1):segment.to}/>:null}
    {stage==='watch'&&L?.engine4&&L.canTactics&&L.minute-L.prevStop>=3?<p className="lgm-live-tactics"><button type="button" className="lgm-ghost min-h-tap" disabled={busy||room<2} onClick={tactics} data-testid="legends-tactics">Tactics</button></p>:null}
    {stage==='break'&&L&&!L.engine4&&L.minute!==45&&asked!==L.minute?<ChangeAsk key={`ask${L.minute}`} L={L} busy={busy} onYes={()=>setAsked(L.minute)} onNo={()=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:{}})}}/>
     :stage==='break'&&L?<Touchline key={L.minute} L={L} busy={busy} onPlay={d=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:d})}} onFinish={()=>{setWatch({...watch,from:L.minute});send({kind:'match-finish'})}}/>:null}

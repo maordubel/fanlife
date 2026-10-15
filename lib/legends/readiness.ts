@@ -23,7 +23,7 @@ export function readiness(club:string,name:string,e:Eligibility,runs=24):ClubRea
  let deadEnds=0,drafts=0
  if(!reasons.length){
   const styles=['value','random','premium','budget'] as const
-  for(let i=0;i<runs;i++){const r=botDraft(cards,hash(`${club}:ready:${i}`),styles[i%4]);drafts++;if(r.error){deadEnds++;if(reasons.length<3)reasons.push(`A ${styles[i%4]} draft ends: ${r.error}`)}}
+  for(let i=0;i<runs;i++){const r=botDraft(cards,hash(`${club}:ready:${i}`),styles[i%4],true);drafts++;if(r.error){deadEnds++;if(reasons.length<3)reasons.push(`A ${styles[i%4]} draft ends: ${r.error}`)}}
  }
  return {club,name,verdict:reasons.length?'NOT_READY':'READY',men:cards.length,byPos,tiers,excluded:e.excluded,drafts,deadEnds,reasons}
 }

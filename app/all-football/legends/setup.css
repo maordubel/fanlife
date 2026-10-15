@@ -100,3 +100,37 @@
 .lgm-board-stats td, .lgm-board-stats th { padding: 6px 4px; border-block-end: 1px dashed currentColor; text-align: center; font: 400 14px var(--mag-body); }
 .lgm-board-stats td { font-family: var(--mag-goal); inline-size: 3em; }
 .lgm-board-stats th { text-transform: uppercase; font: 700 11px var(--mag-mono); }
+
+/* ---- the live board, '94 broadcast caption (owner 15.10.2026: the text was ivory on paper — unreadable) ----
+   Every colour is set on the board itself; nothing is inherited from .lgm-live. */
+.lgm-bd { gap: 0; padding: 0; border: 3px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-white); box-shadow: 0 0 0 3px var(--mag-white), 0 0 0 5px var(--mag-ink), 6px 6px 0 2px var(--mag-ink); }
+.lgm-bd-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; background: var(--mag-ink); }
+.lgm-bd-tabs button { background: var(--mag-night); color: var(--mag-white); border: 0; font: 400 14px/1 var(--mag-display); letter-spacing: .5px; text-transform: uppercase; cursor: pointer; opacity: .7; }
+.lgm-bd-tabs button[aria-selected='true'] { background: var(--mag-navy); color: var(--mag-white); opacity: 1; box-shadow: inset 0 -4px 0 var(--mag-lamp); }
+.lgm-bd-xi { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 0 3px 3px; }
+.lgm-bd-card { padding: 8px 10px 10px; background-color: var(--mag-navy); background-image: radial-gradient(rgb(255 251 242 / .12) 1.6px, transparent 1.9px); background-size: 8px 8px; color: var(--mag-white); min-inline-size: 0; }
+.lgm-bd-card h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; padding-block-end: 4px; border-block-end: 2px dotted color-mix(in srgb, var(--mag-white) 60%, transparent); font: 400 clamp(14px, 3.4vw, 18px)/1.1 var(--mag-display); text-transform: uppercase; color: var(--mag-white); text-shadow: 1px 1px 0 var(--mag-ink), 2px 2px 0 var(--mag-ink); }
+.lgm-bd-card h3 i { margin-inline-start: auto; font: 400 11px var(--mag-mono); letter-spacing: .6px; font-style: normal; opacity: .85; text-shadow: none; }
+.lgm-bd-name { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lgm-bd-crest { flex: none; display: inline-grid; place-items: center; inline-size: 26px; block-size: 30px; }
+.lgm-bd-crest img { inline-size: 100%; block-size: 100%; object-fit: contain; filter: drop-shadow(1px 1px 0 var(--mag-ink)); }
+.lgm-bd-flag { flex: none; inline-size: 26px; block-size: 18px; border: 1px solid var(--mag-ink); }
+.lgm-bd-form { margin: 0 0 4px; font: 400 12px var(--mag-mono); letter-spacing: .6px; color: var(--mag-white); opacity: .9; }
+.lgm-bd-card ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; }
+.lgm-bd-card li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr) auto; gap: 6px; font: 400 clamp(13px, 2.8vw, 16px)/1.25 var(--mag-display); text-transform: uppercase; color: var(--mag-white); text-shadow: 1px 1px 0 var(--mag-ink), 2px 2px 0 var(--mag-ink); }
+.lgm-bd-card li b { font-family: var(--mag-goal); font-weight: 400; text-align: end; color: var(--mag-lamp); }
+.lgm-bd-card li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lgm-bd-card li em { font: 400 11px var(--mag-mono); font-style: normal; opacity: .75; text-shadow: none; align-self: center; }
+.lgm-bd-statcard { margin: 0 3px 3px; }
+.lgm-bd-teams { display: flex; justify-content: space-between; gap: 8px; margin: 0 0 6px; font: 400 clamp(13px, 3.2vw, 17px)/1.1 var(--mag-display); text-transform: uppercase; text-shadow: 1px 1px 0 var(--mag-ink), 2px 2px 0 var(--mag-ink); }
+.lgm-bd-teams span { display: inline-flex; align-items: center; gap: 6px; min-inline-size: 0; }
+.lgm-bd-stats { inline-size: 100%; border-collapse: collapse; color: var(--mag-white); }
+.lgm-bd-stats td, .lgm-bd-stats th { padding: 5px 4px; border: 0; border-block-end: 1px dotted color-mix(in srgb, var(--mag-white) 45%, transparent); color: var(--mag-white); text-shadow: 1px 1px 0 var(--mag-ink); }
+.lgm-bd-n { inline-size: 2.2em; text-align: center; font: 400 clamp(18px, 4.4vw, 24px) var(--mag-goal); color: var(--mag-lamp); }
+.lgm-bd-stats th { text-align: center; font: 400 12px var(--mag-mono); letter-spacing: .8px; text-transform: uppercase; }
+.lgm-bd-stats th span { display: block; margin-block-end: 3px; }
+.lgm-bd-bar { display: flex; block-size: 7px; background: color-mix(in srgb, var(--mag-ink) 55%, transparent); border: 1px solid var(--mag-ink); }
+.lgm-bd-bar u, .lgm-bd-bar s { display: block; text-decoration: none; transition: inline-size .4s ease-out; }
+.lgm-bd-bar u { inline-size: var(--a); background: var(--mag-white); } .lgm-bd-bar s { inline-size: var(--b); background: var(--mag-lamp); margin-inline-start: auto; }
+@media (max-width: 520px) { .lgm-bd-xi { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .lgm-bd-bar u, .lgm-bd-bar s { transition: none; } }
