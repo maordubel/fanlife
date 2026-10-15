@@ -6,6 +6,8 @@ import {EMPTY_CONTROL,readControl,type RatingControl} from './ratings'
 import type {Career} from './types'
 import type {Friendly} from './friendly'
 import {saveName} from './saves'
+import {planClaim} from './ownership'
+import {archiveOk,archivePath,type SeasonArchive} from './history'
 
 /**
  * Where Legends careers live (rulebook §2.11; ADR-fanlife-0011 rev. 2): one JSON document per career in the durable store
@@ -80,8 +82,10 @@ export async function deleteArchived(owner:string,id:string):Promise<{ok:true}|{
   const idx=await ownerIndex(owner,true),row=idx.careers.find(x=>x.id===id)
   if(!row)return {ok:false as const,error:'Save not found.'}
   if(row.status!=='archived')return {ok:false as const,error:'Archive a career before deleting it.'}
-  const out=await mutateCareer(id,c=>c.owner!==owner?{error:'This career is not yours.'}:{career:{...c,status:'deleted' as unknown as Career['status'],revision:c.revision+1,updatedAt:new Date().toISOString()}})
+  let ords:number[]=[]
+  const out=await mutateCareer(id,c=>{if(c.owner!==owner)return {error:'This career is not yours.'};ords=[...new Set([...c.history.map(h=>h.ordinal),...(c.pendingArchive??[]).map(a=>a.ordinal)])];return {career:{...c,pendingArchive:undefined,status:'deleted' as unknown as Career['status'],revision:c.revision+1,updatedAt:new Date().toISOString()}}})
   if(out&&'error' in out)return {ok:false as const,error:String(out.error)}
+  await wipeArchives(id,ords)
   await area.update<OwnerIndex>(`owners/${owner}.json`,EMPTY,cur=>{const base=cur?.v===1?cur:EMPTY;return {...base,careers:base.careers.filter(x=>x.id!==id)}})
   return {ok:true as const}
  })
@@ -133,4 +137,86 @@ export async function mutateFriendly(id:string,fn:(f:Friendly)=>{ok:true;friendl
 async function noteFriendly(owner:string,id:string,role:'inviter'|'invitee'){
  if(!ownerOk(owner))return
  await area.update<OwnerIndex>(`owners/${owner}.json`,EMPTY,cur=>{const base=cur?.v===1?cur:EMPTY;return {...base,friendlies:[{id,role,at:new Date().toISOString()},...(base.friendlies??[]).filter(x=>x.id!==id)].slice(0,60)}})
+}
+
+/* ───────── guest → account (F05) ───────── */
+/**
+ * Move the careers a device key played under onto the signed-in account. The caller (a server action) has verified BOTH keys
+ * itself — the browser never names an owner. Idempotent: a journal under `claims/<guest>.json` records the plan before anything
+ * moves, a career already owned by the account is skipped, so a repeated or interrupted claim just finishes. Over the cap the
+ * surplus is archived, never deleted. Friendlies stay with the old key (their invitation documents name it) — a known limit.
+ */
+export async function claimDeviceCareers(guest:string,account:string):Promise<{ok:true;moved:number;archived:number}|{ok:false;error:string}>{
+ if(!canSave())refuse()
+ if(!ownerOk(guest)||!ownerOk(account)||guest===account)return {ok:false,error:'Nothing to claim.'}
+ // both lanes, always in the same order, so two claims cannot wait on each other
+ const [a,b]=guest<account?[guest,account]:[account,guest]
+ return inOrder(`legends:owner:${a}`,()=>inOrder(`legends:owner:${b}`,async()=>{
+  const [gi,ai]=await Promise.all([ownerIndex(guest,true),ownerIndex(account,true)])
+  const journal=await area.readJson<{to:string;move:{id:string;status:Career['status']}[];archived:string[]}|null>(`claims/${guest}.json`,null).catch(()=>null)
+  const plan=journal&&journal.to===account&&gi.careers.length?{move:journal.move.filter(m=>gi.careers.some(r=>r.id===m.id)),archived:journal.archived}:planClaim(gi.careers,ai.careers,R.maxActiveCareers)
+  if(!plan.move.length)return {ok:true as const,moved:0,archived:0}
+  await area.update<unknown>(`claims/${guest}.json`,null,()=>({to:account,move:plan.move,archived:plan.archived,at:new Date().toISOString()}))
+  let moved=0
+  for(const m of plan.move){
+   const out=await mutateCareer(m.id,c=>c.owner===account?{career:c}:c.owner!==guest?{error:'not the guest'}:{career:{...c,owner:account,status:m.status,revision:c.revision+1,updatedAt:new Date().toISOString()}})
+   if(out&&!('error' in out)){
+    moved++
+    const row=gi.careers.find(r=>r.id===m.id)!
+    await area.update<OwnerIndex>(`owners/${account}.json`,EMPTY,cur=>{
+     const base=cur?.v===1?cur:EMPTY,taken=base.careers.filter(x=>x.id!==m.id).map(x=>x.name??'')
+     const name=row.name&&!taken.includes(row.name)?row.name:saveName(row.clubName,row.id,taken)
+     return {...base,v:1,careers:[{...row,status:m.status,name},...base.careers.filter(x=>x.id!==m.id)].slice(0,60)}
+    })
+    await area.update<OwnerIndex>(`owners/${guest}.json`,EMPTY,cur=>{const base=cur?.v===1?cur:EMPTY;return {...base,careers:base.careers.filter(x=>x.id!==m.id)}})
+   }
+  }
+  return {ok:true as const,moved,archived:plan.archived.length}
+ }))
+}
+
+/* ───────── season history (F04) ───────── */
+/**
+ * Write each pending season to its own document, READ IT BACK, and only then drop the pending copy from the career. The write
+ * is create-only: if a document already exists with the same signature the transition was already done (idempotent); a
+ * different one is left alone and the pending copy stays, so nothing is ever overwritten or lost. Best effort — a failure leaves
+ * the career as it was and the next move tries again.
+ */
+export async function flushArchives(id:string):Promise<number>{
+ if(!canSave())return 0
+ const cur=await readCareer(id,true);const pending=cur?.career.pendingArchive
+ if(!cur||!pending?.length)return 0
+ const done:number[]=[]
+ for(const a of pending){
+  const name=archivePath(id,a.ordinal)
+  await area.write(name,JSON.stringify(a),null).catch(()=>false)
+  const back=await area.read(name,true).catch(()=>null)
+  try{if(back&&archiveOk(JSON.parse(back.text),id,a.ordinal)&&(JSON.parse(back.text) as SeasonArchive).signature===a.signature)done.push(a.ordinal)}catch{/* leave it pending */}
+ }
+ if(!done.length)return 0
+ await mutateCareer(id,c=>{
+  const left=(c.pendingArchive??[]).filter(a=>!done.includes(a.ordinal))
+  if(left.length===(c.pendingArchive??[]).length)return {career:c}
+  const {pendingArchive:_,...rest}=c;return {career:{...rest,...(left.length?{pendingArchive:left}:{}),revision:c.revision+1,updatedAt:new Date().toISOString()}}
+ })
+ return done.length
+}
+/** one finished season, only for its owner: knowing the id is not permission */
+export async function readSeasonArchive(owner:string,id:string,ordinal:number):Promise<SeasonArchive|'summary-only'|null>{
+ if(!Number.isInteger(ordinal)||ordinal<1||ordinal>999)return null
+ const cur=await readCareer(id);if(!cur||cur.career.owner!==owner)return null
+ const pending=cur.career.pendingArchive?.find(a=>a.ordinal===ordinal);if(pending)return pending
+ const r=await area.read(archivePath(id,ordinal)).catch(()=>null)
+ if(r)try{const a=JSON.parse(r.text);if(archiveOk(a,id,ordinal))return a}catch{/* fall through */}
+ return cur.career.history.some(h=>h.ordinal===ordinal)?'summary-only':null
+}
+/** which of a career's seasons have a document of their own (a small read per season, only when the history list is opened) */
+export async function storedSeasons(id:string,ordinals:number[]):Promise<Set<number>>{
+ const out=new Set<number>()
+ await Promise.all(ordinals.map(async o=>{const r=await area.read(archivePath(id,o)).catch(()=>null);if(r)try{if(archiveOk(JSON.parse(r.text),id,o))out.add(o)}catch{/* not valid */}}))
+ return out
+}
+/** a deleted career takes its season documents with it: there is no delete in the store, so each is overwritten with an empty tombstone */
+async function wipeArchives(id:string,ordinals:number[]){
+ for(const o of ordinals)await area.update<unknown>(archivePath(id,o),null,()=>({v:0,deleted:true})).catch(()=>{})
 }

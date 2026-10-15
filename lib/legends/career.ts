@@ -6,6 +6,7 @@ import {afterBye,afterMatch,available,fresh,newSeason,type MatchBook} from './di
 import {botDraft,budgetOf,confirmCheck,minCostToFinish,draftMove,emptyDraft,type DraftMove} from './draft'
 import {ABILITIES,abilitiesAt,achievements,capBonuses,finalProceeds,nextSeasonGrant,saleQuote,seasonScore} from './economy'
 import {checkDecision,maxStopsOf,run,stopsV4,type PauseState} from './engine'
+import {buildArchive} from './history'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {armbandNote,bestLineup,captainOf,carryArmband,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {bidsFor,buySlots,openMarket,scoutSwap,windowKey} from './market'
@@ -460,8 +461,10 @@ function finishSeason(c:Career,ctx:Ctx,note:string|null):ActionResult{
  const record={ordinal:c.season.ordinal,place,of:n,points:mine.pts,w:mine.w,d:mine.d,l:mine.l,gf:mine.gf,ga:mine.ga,champion,playoff:!!c.season.playoff,grant,bonus,cash:me(next).cash,squad:me(next).squad.map(s=>s.id),topScorer:scorer&&scorer.goals>0?{id:scorer.id,name:catalogMap(c).get(scorer.id)?.name??'—',goals:scorer.goals}:null}
  // goals were a season tally on the squad entry; the record keeps them, the new season counts from zero
  next={...next,teams:next.teams.map(t=>({...t,squad:t.squad.map(s=>({...s,goals:0}))}))}
+ const tm=new Map(c.teams.map(t=>[t.club,t]))
+ const archive=(next.pendingArchive??[]).some(a=>a.ordinal===c.season.ordinal)?[]:[buildArchive({...c,teams:c.teams},ranked,record,(club,id)=>{const t=tm.get(club);return (t&&cardOf(c,t,id)?.name)??'—'})]
  return {ok:true,career:{...next,phase:'season-end',cutscene:'season-end',season:{...next.season,ended:true,bonusAwarded:roundTenths(c.season.bonusAwarded+bonus),ranks:ranked.map(r=>r.club)},
-  reputation:{points:next.reputation.points+events.reduce((a,e)=>a+e.points,0),events:[...next.reputation.events,...events]},history:[...next.history,record]},note:note??undefined}
+  reputation:{points:next.reputation.points+events.reduce((a,e)=>a+e.points,0),events:[...next.reputation.events,...events]},history:[...next.history,record],...(archive.length||next.pendingArchive?.length?{pendingArchive:[...(next.pendingArchive??[]),...archive]}:{})},note:note??undefined}
 }
 export const abilities=(c:Career)=>abilitiesAt(c.reputation.points)
 export const quotas=(t:Team)=>quotaCount(t.squad)

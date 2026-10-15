@@ -4,11 +4,11 @@ import {Shell} from '@/components/master/Shell'
 import {PreviewRibbon} from '@/components/experiences/AfFrame'
 import {Emblem} from '@/components/legends/Brand'
 import {LegendsReveal} from '@/components/legends/Reveal'
-import {Careers,ClubRoll,type ClubOption} from '@/components/legends/FrontDoor'
+import {Careers,ClaimBanner,ClubRoll,type ClubOption} from '@/components/legends/FrontDoor'
 import {GAME_VALUES} from '@/components/legends/LegendCard'
 import {door} from '@/lib/features-server'
 import {LEGENDS_RULES as R} from '@/lib/legends/config'
-import {viewer} from '@/lib/legends/owner'
+import {claimKeys,viewer} from '@/lib/legends/owner'
 import {legendsClubs} from '@/lib/legends/server'
 import {livery,wearLivery} from '@/lib/club-livery'
 import t from '@/messages/legends/en.json'
@@ -27,6 +27,7 @@ export default async function Page({searchParams}:{searchParams?:{club?:string}}
  const d=await door('fanLeague');if(!d.open)notFound()
  const [owner,clubs,af]=await Promise.all([viewer(false),legendsClubs(),door('allFootball')])
  const idx=owner?await ownerIndex(owner):{v:1 as const,careers:[]}
+ const keys=await claimKeys(),pending=keys?(await ownerIndex(keys.device)).careers.length:0
  const rows=idx.careers.map(c=>({id:c.id,clubName:c.clubName,season:c.season,phase:c.phase,status:c.status,name:c.name??c.clubName,enteredAt:c.enteredAt??c.createdAt}))
  const options:ClubOption[]=clubs.map(c=>({club:c.club,name:c.name,ready:c.verdict==='READY',held:c.held,reason:c.reasons[0]??null,men:c.men,primary:livery(c.club)?.pattern??null,paint:wearLivery(livery(c.club)),initials:livery(c.club)?.initials}))
  const openClubs=options.filter(o=>o.ready&&!o.held).length
@@ -47,6 +48,7 @@ export default async function Page({searchParams}:{searchParams?:{club?:string}}
     </header>
     <div className="wkl-lm-main">
      {!canSave()?<p className="lgm-error" role="status">Saving is not available on this server right now, so a career cannot be started. Nothing is lost.</p>:null}
+     {pending?<ClaimBanner count={pending}/>:null}
      {rows.length?<Careers rows={rows} max={R.maxActiveCareers}/>:null}
      <ClubRoll clubs={options} canStart={canSave()} full={activeCount(idx)>=R.maxActiveCareers} initial={typeof searchParams?.club==='string'?searchParams.club:null} max={R.maxActiveCareers}/>
     </div>

@@ -3,9 +3,9 @@ import {randomBytes} from 'node:crypto'
 import {door} from '@/lib/features-server'
 import {applyAction,parseAction} from '@/lib/legends/career'
 import {acceptFriendly,closeFriendly,createFriendly,friendlyView,lockSide,MAX_OPEN,statusAt,tokenHash,type FriendlyView} from '@/lib/legends/friendly'
-import {viewer} from '@/lib/legends/owner'
+import {claimKeys,viewer} from '@/lib/legends/owner'
 import {ctxFor,marketPage,startCareer} from '@/lib/legends/server'
-import {deleteArchived,insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
+import {claimDeviceCareers,deleteArchived,flushArchives,readSeasonArchive,storedSeasons,insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
 import {careerView,type CardView,type CareerView} from '@/lib/legends/view'
 import {withHighlights} from '@/lib/legends/kits'
 
@@ -47,6 +47,7 @@ export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view
   })
   if(!out)return {ok:false,error:'Career not found.',code:'missing'}
   if('error' in out)return out.error as Fail
+  if(out.career.pendingArchive?.length)await flushArchives(id).catch(()=>0)
   return {ok:true,view:await withHighlights(slim(careerView(out.career)),out.career),replay:out.replay,...(note?{note}:{})}
  }catch(e){return fail(e,'The move could not be saved. Try again.')}
 }
@@ -63,11 +64,33 @@ export async function legendsMarket(id:string,f:{pos?:string|null;decade?:number
  return {ok:true,...marketPage(cur.career,{pos,decade,price,q:typeof f.q==='string'?f.q.slice(0,60):null})}
 }
 
+/** F04: one finished season in full (results, table, leaders, squad) — or `summary-only` for a season that pre-dates the archive */
+export async function legendsSeason(id:string,ordinal:number):Promise<{ok:true;season:import('@/lib/legends/history').SeasonArchive|'summary-only'}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false);if(!owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
+ try{const s=await readSeasonArchive(owner,id,ordinal);return s?{ok:true,season:s}:{ok:false,error:'That season was not found.',code:'missing'}}catch(e){return fail(e,'The season could not be loaded. Try again.')}
+}
+/** which past seasons can be opened in full — a small read, only when the history list is opened */
+export async function legendsHistory(id:string):Promise<{ok:true;full:number[]}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false),cur=owner?await readCareer(id):null
+ if(!cur||cur.career.owner!==owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
+ const stored=await storedSeasons(id,cur.career.history.map(h=>h.ordinal));for(const a of cur.career.pendingArchive??[])stored.add(a.ordinal)
+ return {ok:true,full:[...stored].sort((a,b)=>a-b)}
+}
+
 export async function setCareerStatus(id:string,status:'active'|'archived'):Promise<{ok:true}|Fail>{
  if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
  if(status!=='active'&&status!=='archived')return {ok:false,error:'Unknown status.'}
  const owner=await viewer(false);if(!owner)return {ok:false,error:'This career is not yours.'}
  try{return await setStatus(owner,id,status)}catch(e){return fail(e,'Could not save. Try again.')}
+}
+
+/** F05: after a verified sign-in, the fan asks to bring the saves played on this device under the account. No owner id is accepted from the browser. */
+export async function claimGuestCareers():Promise<{ok:true;moved:number;archived:number}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const k=await claimKeys();if(!k)return {ok:false,error:'Sign in first.',code:'forbidden'}
+ try{const r=await claimDeviceCareers(k.device,k.account);return r.ok?r:{ok:false,error:r.error}}catch(e){return fail(e,'Could not move your saves. Try again.')}
 }
 
 export async function deleteCareer(id:string):Promise<{ok:true}|Fail>{

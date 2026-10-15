@@ -143,3 +143,13 @@
 .lgm-form { display: inline-block; min-inline-size: 1.6em; margin-inline-end: 3px; padding: 1px 4px; text-align: center; border: 2px solid var(--mag-ink); font: 700 11px var(--mag-mono); }
 .lgm-form[data-r='W'] { background: var(--mag-ink); color: var(--mag-white); } .lgm-form[data-r='L'] { text-decoration: line-through; }
 .lgm-contacts { margin-block-start: 10px; padding-block-start: 8px; border-block-start: 2px dashed var(--lgm-rule); }
+
+/* F05 — saves from before sign-in */
+.lgm-claim{border:1px solid var(--mag-lamp);background:var(--mag-night);color:var(--mag-white);padding:.75rem 1rem;display:grid;gap:.5rem;margin-block-end:1rem}
+.lgm-claim p{margin:0}
+
+/* F04 — a finished season, opened */
+.tl-season{display:grid;gap:.75rem}
+.tl-leaders,.tl-seasonres{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.tl-leaders li,.tl-seasonres li{display:flex;flex-wrap:wrap;gap:.25rem .5rem;align-items:baseline;border-block-end:1px solid color-mix(in srgb,currentColor 15%,transparent);padding-block:.25rem}
+.tl-seasonres small{flex-basis:100%;opacity:.8}

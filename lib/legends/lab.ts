@@ -48,8 +48,8 @@ export function matchLab(cats:readonly Catalog[],matches=2000,engine:EngineVersi
   setPieces:{penalties:Math.round(out.pen/n*100)/100,penaltyGoals:Math.round(out.penG/n*100)/100,corners:roundTenths(out.corner/n),freeKicks:roundTenths(out.fk/n),goals:Math.round(out.spG/n*100)/100}}
 }
 /** one career on autopilot: the bot drafts, the windows close, every match plays on the quick sim */
-export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,seed:string,settings:LegendsSettings=DEFAULT_SETTINGS):{career:Career|null;error:string|null}{
- const made=createCareer({id:`lab-${seed}`,owner:'lab',now:'2026-01-01T00:00:00Z',own,rivals:[...rivals],settings});if(!made.ok)return {career:null,error:made.error}
+export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,seed:string,settings:LegendsSettings=DEFAULT_SETTINGS,id=`lab-${seed}`):{career:Career|null;error:string|null}{
+ const made=createCareer({id,owner:'lab',now:'2026-01-01T00:00:00Z',own,rivals:[...rivals],settings});if(!made.ok)return {career:null,error:made.error}
  let c=made.career,n=0
  const catalogs=new Map(rivals.map(r=>[r.club,r.cards]))
  const go=(a:Intent)=>{const r=applyAction(c,{...a,key:`lab${seed}k${n++}`,rev:c.revision} as Action,{now:'2026-01-01T00:00:00Z',catalogs});if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);c=r.career}
