@@ -26,10 +26,10 @@ const Arrow=()=><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13
 export function ClaimBanner({count}:{count:number}){
  const [msg,setMsg]=useState<string|null>(null),[busy,start]=useTransition(),router=useRouter()
  const go=()=>start(async()=>{setMsg(null);const r=await claimGuestCareers();if(!r.ok)setMsg(r.error);else{setMsg(r.archived?`${r.moved} saves moved to your account; ${r.archived} put away in the archive.`:`${r.moved} saves moved to your account.`);router.refresh()}})
- return <section className="lgm-claim" aria-label="Saves from before you signed in" data-testid="legends-claim">
-  <p><b>{count} {count===1?'save':'saves'} from before you signed in.</b> Move {count===1?'it':'them'} to your account to play on any device.</p>
-  <button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={go}>Move to my account</button>
-  {msg?<p className="lgm-fine" role="status">{msg}</p>:null}
+ return <section className="wk-panel wk-lift wkl-claim" aria-label="Saves from before you signed in" data-testid="legends-claim">
+  <p className="wk-cap white"><b>{count} {count===1?'save':'saves'} from before you signed in.</b> Move {count===1?'it':'them'} to your account to play on any device.</p>
+  <button type="button" className="wk-btn red block" disabled={busy} onClick={go}>Move to my account</button>
+  {msg?<p className="wk-cap yellow" role="status">{msg}</p>:null}
  </section>
 }
 export function Careers({rows,max}:{rows:CareerRow[];max:number}){

@@ -323,7 +323,6 @@ describe('F06 · the captain and the vice are the manager’s appointments (15.1
  })
 })
 
-import {careerView} from '@/lib/legends/view'
 describe('F08/F07 · five fixed candidates per window; contacts, scouting report, board forecast (15.10.2026)',()=>{
  const inWindow=(i:number)=>toWindow(drafted(newCareer(`f08seed${String(i).padStart(10,'0')}`)))
  it('the five are drawn when the window opens; a signing leaves a gap — no sixth name appears',()=>{

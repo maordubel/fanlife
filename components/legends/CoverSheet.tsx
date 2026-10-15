@@ -32,21 +32,21 @@ export function CoverSheet({careerId,season,onClose}:{careerId:string;season:num
   catch(e){if((e as Error).name!=='AbortError')setNote('Could not share. Try Download instead.')}finally{setBusy(false)}}
  async function copy(){try{await navigator.clipboard.writeText(COVER_LINK(cover!.club));setNote('Link copied — it opens LEGENDS MANAGER, not your career.')}catch{setNote('Could not copy the link.')}}
  return <Sheet id="cover" title={`Season ${season} cover`} kicker="Magazine cover" onClose={onClose} wide>
-  <div className="lgm-cover" data-testid="legends-cover">
-   {err?<p className="lgm-fine" role="alert">{err}</p>:!covers||!assets?<p className="lgm-fine" role="status">Setting the type…</p>:<>
-    <div className="cover-pick" role="tablist" aria-label="Cover moment">{covers.map((c,i)=><button key={c.kind} type="button" role="tab" aria-selected={i===pick} className="lgm-ghost min-h-tap" data-on={i===pick||undefined} onClick={()=>setPick(i)}>{KIND_NAME[c.kind]}</button>)}</div>
-    <div className="cover-pick" role="group" aria-label="Format">{(Object.keys(COVER_FORMATS) as CoverFormat[]).map(f=><button key={f} type="button" className="lgm-ghost min-h-tap" aria-pressed={f===format} data-on={f===format||undefined} onClick={()=>setFormat(f)}>{COVER_FORMATS[f].label}</button>)}</div>
-    {drawn?<img className="cover-preview" data-format={format} alt={`${cover!.clubName}: ${cover!.headline} ${cover!.big}`} src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(drawn.svg)}`}/>:<p className="lgm-fine" role="alert">This cover could not be drawn.</p>}
-    {drawn?.warnings.length?<p className="lgm-fine" role="status">{drawn.warnings[0]}</p>:null}
-    <label className="cover-alias"><input type="checkbox" checked={show} onChange={e=>setShow(e.target.checked)}/> Show a public name on the cover <small>(off by default — no account name, ever)</small></label>
-    {show?<label className="cover-alias">Public name <input value={alias} maxLength={18} onChange={e=>setAlias(e.target.value)} placeholder="1–18 characters" aria-invalid={aliasBad||undefined}/></label>:null}
-    <p className="lgm-fine">This picture is private until you share it. It shows the club, the result and nothing from your save.</p>
-    <div className="cover-actions">
-     <button type="button" className="lgm-go min-h-tap" disabled={!drawn||busy||aliasBad} onClick={download} data-testid="legends-cover-download">Download</button>
-     <button type="button" className="lgm-go min-h-tap" disabled={!drawn||busy||aliasBad} onClick={share} data-testid="legends-cover-share">Share</button>
-     <button type="button" className="lgm-link min-h-tap" onClick={copy}>Copy link</button>
+  <div className="wkl-cover" data-testid="legends-cover">
+   {err?<p className="wk-k red" role="alert">{err}</p>:!covers||!assets?<p className="wk-k wk-muted" role="status">Setting the type…</p>:<>
+    <div className="wk-opts two" role="tablist" aria-label="Cover moment">{covers.map((c,i)=><button key={c.kind} type="button" role="tab" aria-selected={i===pick} className="wk-opt" onClick={()=>setPick(i)}>{KIND_NAME[c.kind]}</button>)}</div>
+    <div className="wk-seg" role="group" aria-label="Format">{(Object.keys(COVER_FORMATS) as CoverFormat[]).map(f=><button key={f} type="button" aria-pressed={f===format} onClick={()=>setFormat(f)}>{f==="story"?"Story":"Feed"}<small>{f==="story"?"1080×1920":"1080×1350"}</small></button>)}</div>
+    {drawn?<img className="wkl-cover-preview" data-format={format} alt={`${cover!.clubName}: ${cover!.headline} ${cover!.big}`} src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(drawn.svg)}`}/>:<p className="wk-k red" role="alert">This cover could not be drawn.</p>}
+    {drawn?.warnings.length?<p className="wk-k wk-muted" role="status">{drawn.warnings[0]}</p>:null}
+    <label className="wkl-cover-alias wk-k"><input type="checkbox" checked={show} onChange={e=>setShow(e.target.checked)}/> Show a public name on the cover <small>(off by default — no account name, ever)</small></label>
+    {show?<label className="wkl-cover-alias wk-k">Public name <input value={alias} maxLength={18} onChange={e=>setAlias(e.target.value)} placeholder="1–18 characters" aria-invalid={aliasBad||undefined}/></label>:null}
+    <p className="wk-cap white">This picture is private until you share it. It shows the club, the result and nothing from your save.</p>
+    <div className="wkl-cover-actions">
+     <button type="button" className="wk-btn red block" disabled={!drawn||busy||aliasBad} onClick={download} data-testid="legends-cover-download">Download</button>
+     <button type="button" className="wk-btn block" disabled={!drawn||busy||aliasBad} onClick={share} data-testid="legends-cover-share">Share</button>
+     <button type="button" className="wk-btn paper block" onClick={copy}>Copy link</button>
     </div>
-    {note?<p className="lgm-fine" role="status">{note}</p>:null}
+    {note?<p className="wk-k wk-muted" role="status">{note}</p>:null}
    </>}
   </div>
  </Sheet>

@@ -103,17 +103,17 @@ function SeasonSheet({id,ordinal:n,onClose}:{id:string;ordinal:number;onClose:()
  const nm=(club:string,pid:string)=>(a&&a!=='summary-only'&&a.names[`${club}:${pid}`])||'—'
  const teams=a&&a!=='summary-only'?new Map(a.table.map(r=>[r.club,r.name])):new Map<string,string>()
  return <Sheet id={`season-${n}`} title={`Season ${n}`} kicker="The full record" onClose={onClose} wide>
-  {err?<p className="lgm-error" role="alert">{err}</p>:!a?<p className="lgm-fine" role="status">Loading the season…</p>:a==='summary-only'?<p className="lgm-fine">Only the summary was kept for this season.</p>:<div className="tl-season" data-testid="legends-season-sheet">
-   <p className="lgm-fine">Champions: <b>{a.champion.name}</b> · {a.stats.played} matches · {a.stats.goals} goals</p>
+  {err?<p className="lgm-error" role="alert">{err}</p>:!a?<p className="lgm-fine" role="status">Loading the season…</p>:a==='summary-only'?<p className="lgm-fine">Only the summary was kept for this season.</p>:<div className="wkl-season" data-testid="legends-season-sheet">
+   <p className="wk-cap white">Champions: <b>{a.champion.name}</b> · {a.stats.played} matches · {a.stats.goals} goals</p>
    <div className="lgm-table-wrap"><table className="lgm-table tl-table"><thead><tr><th scope="col">#</th><th scope="col">Club</th><th scope="col">P</th><th scope="col">W</th><th scope="col">D</th><th scope="col">L</th><th scope="col">GF</th><th scope="col">GA</th><th scope="col">Pts</th></tr></thead>
     <tbody>{a.table.map((r,i)=><tr key={r.club}><td>{i+1}</td><th scope="row">{r.name}</th><td>{r.p}</td><td>{r.w}</td><td>{r.d}</td><td>{r.l}</td><td>{r.gf}</td><td>{r.ga}</td><td><b>{r.pts}</b></td></tr>)}</tbody></table></div>
-   <p className="lgm-kicker">Leaders</p>
-   <ul className="tl-leaders">{a.stats.scorers.slice(0,5).map(l=><li key={l.club+l.id}><span>{l.name}</span> <small>{l.clubName}</small> <b>{l.value}</b></li>)}</ul>
-   <p className="lgm-kicker">Results</p>
-   <ol className="tl-seasonres">{[...a.fixtures,...(a.playoff?.result?[a.playoff]:[])].filter(f=>f.result).map(f=>{const r=f.result!;const goals=r.events.filter(e=>e.kind==='goal'&&e.side!==null&&e.player).map(e=>`${nm(e.side===0?f.home:f.away,e.player!)} ${e.minute}′`).join(', ')
+   <h3 className="wk-k red">Leaders</h3>
+   <ul className="wkl-leaders">{a.stats.scorers.slice(0,5).map(l=><li key={l.club+l.id}><span>{l.name}</span> <small>{l.clubName}</small> <b>{l.value}</b></li>)}</ul>
+   <h3 className="wk-k red">Results</h3>
+   <ol className="wkl-results">{[...a.fixtures,...(a.playoff?.result?[a.playoff]:[])].filter(f=>f.result).map(f=>{const r=f.result!;const goals=r.events.filter(e=>e.kind==='goal'&&e.side!==null&&e.player).map(e=>`${nm(e.side===0?f.home:f.away,e.player!)} ${e.minute}′`).join(', ')
     return <li key={f.id}><span>R{f.round}</span> <b>{teams.get(f.home)??f.home} {r.goals[0]}–{r.goals[1]}{r.pens?` (${r.pens[0]}–${r.pens[1]} p)`:''} {teams.get(f.away)??f.away}</b>{goals?<small> {goals}</small>:null}</li>})}</ol>
-   <p className="lgm-kicker">Squad at the end</p>
-   <ul className="tl-leaders">{a.squad.map(s=><li key={s.id}><span>{s.name}</span> <small>{s.pos}</small> <b>{s.goals||''}</b></li>)}</ul>
+   <h3 className="wk-k red">Squad at the end</h3>
+   <ul className="wkl-leaders">{a.squad.map(s=><li key={s.id}><span>{s.name}</span> <small>{s.pos}</small> <b>{s.goals||''}</b></li>)}</ul>
   </div>}
  </Sheet>
 }
