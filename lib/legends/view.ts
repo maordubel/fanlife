@@ -11,6 +11,8 @@ import {captainOf,fieldable,lineupError,quotaCount} from './squad'
 import {seasonStats,type SeasonStats} from './stats'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {windowKey} from './market'
+import {adviceFor,type AdviceNote} from './advice'
+import {matchReport} from './report'
 import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
 
 /**
@@ -20,7 +22,7 @@ import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
 export type CardView={id:string;name:string;pos:QuotaPos;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
 export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null;/** on the manager's transfer list */listed:boolean}
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
-export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
+export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** U02: the story of the manager's own match, from its stored log */report?:import('./report').MatchReport|null;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
 export type CareerView={
  id:string;revision:number;status:Career['status'];phase:Career['phase'];cutscene:Career['cutscene'];clubId:string;clubName:string;
  season:number;rounds:number;played:number;cash:number;reputation:number;abilities:{id:string;label:string;hint:string;at:number;open:boolean}[];
@@ -31,7 +33,7 @@ export type CareerView={
  /** a newspaper question waiting for an answer (answers are text only), and the reaction to the last one */press:null|{fixture:string;qid:string;paper:string;head:string;answers:string[]};pressLast:string|null;
  window:null|{which:'pre'|'early'|'mid';/** the men still on sale from this window's five (fixed when it opened — a signing leaves a gap, never a new name) */offers:CardView[];/** the men signed out of the five */signed:{id:string;name:string}[];/** market contacts: open at reputation 80, once a window */contacts:{open:boolean;used:boolean};sold:string[];/** bids for the manager's listed men */bids:{card:string;name:string;club:string;clubName:string;fee:number;quoted:number}[]};
  /** the round after which the next window opens, null when none is left this season */
- nextWindow:number|null;
+ nextWindow:number|null;/** U01: up to three plain notes before a match */advice:AdviceNote[];
  /** Board trust (reputation 160): the grant if the season ended with the club where it stands — never promised, the table still moves */boardForecast:number|null;
  /** every other club of the league, its squad as a fan may see it: names, lines, stars, years — never a hidden rating */
  clubs:{club:string;name:string;formation:string;stars:number;squad:{id:string;name:string;pos:QuotaPos;stars:number;from:number|null;to:number|null;apps:number;goals:number;xi:boolean}[]}[];
@@ -99,7 +101,8 @@ export function careerView(c:Career):CareerView{
  const mySide=liveFx?.home===c.clubId?0:1
  const live=c.live&&pause&&liveFx?{mode:c.live.mode,minute:pause.minute,goals:pause.goals,log:logOf(c,pause.events,liveFx,snapNames),pitch:pause.pitch[mySide],bench:pause.bench[mySide],subsLeft:pause.subsLeft[mySide],tactics:pause.tactics[mySide],stopsLeft:maxStopsOf(c.live.snapshot)-c.live.decisions.length-(c.live.snapshot.engine==='legends-engine-4'?1:0),engine4:c.live.snapshot.engine==='legends-engine-4',canTactics:c.live.snapshot.engine==='legends-engine-4'&&stopsV4(c.live.snapshot).length<maxStopsOf(c.live.snapshot),home:c.live.snapshot.sides[0].name,away:c.live.snapshot.sides[1].name,fixture:c.live.fixture,homeClub:c.live.snapshot.sides[0].club,awayClub:c.live.snapshot.sides[1].club,mine:mySide as 0|1,prevStop:prevStopOf(c)}:null
  const results:ResultView[]=[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])].filter(f=>f.result).map(f=>({id:f.id,round:f.round,home:teams.get(f.home)!.name,away:teams.get(f.away)!.name,homeClub:f.home,awayClub:f.away,goals:f.result!.goals,pens:f.result!.pens,mine:f.home===c.clubId||f.away===c.clubId,
-  log:logOf(c,f.result!.events,f,(s,id)=>nameIn(s?f.away:f.home,id))}))
+  log:logOf(c,f.result!.events,f,(s,id)=>nameIn(s?f.away:f.home,id)),
+  ...(f.home===c.clubId||f.away===c.clubId?{report:matchReport(f,c.clubId,club=>teams.get(club)?.name??club,(side,id)=>{if(!id)return '—';const club=side?f.away:f.home,kept=f.result!.sides?.[side]?.xi.find(x=>x.id===id)?.name,n=nameIn(club,id);return kept??(n!=='—'?n:club===c.clubId?by.get(id)?.name??'—':'—')})}:{})}))
  const last=[...results].filter(r=>r.mine).sort((a,b)=>b.round-a.round)[0]??null
  const rows=table(c),hist=c.history.at(-1)
  const seasonEnd=c.phase==='season-end'&&hist?{place:hist.place,of:hist.of,champion:hist.champion,playoff:hist.playoff,grant:hist.grant,
@@ -115,7 +118,7 @@ export function careerView(c:Career):CareerView{
   rules:{minSquad:R.minSquad,maxSquad:R.maxSquad,minimums:{...R.minimums},maxSubs:R.maxSubs,stops:R.maxInterventionWindows},draft,squad,quotas:quotaCount(t.squad),
   emergency:t.emergency.map(e=>({id:e.id,name:e.card.name,pos:e.card.pos,games:e.games})),
   lineup:{formation:t.lineup.formation,xi:t.lineup.xi,bench:t.lineup.bench,tactics:t.lineup.tactics,captain:t.lineup.captain??null,vice:t.lineup.vice??null,armband:captainOf(t.lineup,id=>cardOf(c,t,id))??null,error:c.phase==='draft'?null:lineupError(t.lineup,fieldable(t,id=>cardOf(c,t,id))),slots:slotsOf(t.lineup.formation).map(s=>({id:s.id,fine:s.fine,family:s.family,x:s.x,y:s.y}))},
-  window:win?{which:c.season.played===0?'pre':c.season.played<Math.floor(c.season.rounds/2)?'early':'mid',offers:wOffers,signed:signedOf(c).map(x=>({id:x.id,name:x.name})),contacts:{open:abilities(c).includes('contacts'),used:(c.market?.w===windowKey(c)?c.market.scouted:0)>0},sold:c.soldThisWindow,bids:wBids}:null,nextWindow:nextWindowOf(c),boardForecast:abilities(c).includes('board')&&c.season.played>0&&(c.phase==='season'||c.phase==='window')?grantForecast(c,rows.findIndex(r=>r.club===c.clubId)+1):null,clubs:clubsOf(c),next,bye:isBye(c),live,last,results,
+  window:win?{which:c.season.played===0?'pre':c.season.played<Math.floor(c.season.rounds/2)?'early':'mid',offers:wOffers,signed:signedOf(c).map(x=>({id:x.id,name:x.name})),contacts:{open:abilities(c).includes('contacts'),used:(c.market?.w===windowKey(c)?c.market.scouted:0)>0},sold:c.soldThisWindow,bids:wBids}:null,nextWindow:nextWindowOf(c),advice:adviceFor(c,(t,id)=>cardOf(c,t,id),{open:c.phase==='window',after:nextWindowOf(c)}),boardForecast:abilities(c).includes('board')&&c.season.played>0&&(c.phase==='season'||c.phase==='window')?grantForecast(c,rows.findIndex(r=>r.club===c.clubId)+1):null,clubs:clubsOf(c),next,bye:isBye(c),live,last,results,
   table:rows.map(r=>({club:r.club,name:r.name,p:r.p,w:r.w,d:r.d,l:r.l,gf:r.gf,ga:r.ga,gd:r.gd,pts:r.pts,form:r.form.slice(-5),mine:r.club===c.clubId})),
   tieNote:`Ties: points, goal difference, goals scored, head-to-head, then lots drawn at kick-off. A title level on everything but the lots goes to a play-off.`,
   seasonEnd,stats:seasonStats(c,nameIn),lastChampion:c.phase==='season-end'&&c.season.ranks[0]?teams.get(c.season.ranks[0])?.name??null:null,history:c.history,

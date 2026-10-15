@@ -3,6 +3,7 @@ import {useEffect,useState,useTransition} from 'react'
 import {legendsHistory,legendsSeason} from '@/app/all-football/legends/actions'
 import type {SeasonArchive} from '@/lib/legends/history'
 import {Sheet} from './Sheet'
+import {MatchReportCard} from './MatchReportCard'
 import type {CareerView,ResultView} from '@/lib/legends/view'
 import type {Leader} from '@/lib/legends/stats'
 import {ClubMark} from './Shirts'
@@ -45,7 +46,7 @@ export function LeagueCentre({v,openClub}:{v:CareerView;openClub:(c:string)=>voi
 function Results({v}:{v:CareerView}){
  const rounds=[...new Set(v.results.map(r=>r.round))].sort((a,b)=>b-a),[open,setOpen]=useState<string|null>(null)
  return <section className="lgm-panel"><p className="lgm-kicker">Season {v.season} · results</p>
-  {rounds.length?rounds.map(rd=><div key={rd} className="tl-round"><h3>{rd>v.rounds?'Play-off':`Round ${rd}`}</h3><ul>{v.results.filter(r=>r.round===rd).map(r=><li key={r.id} data-mine={r.mine||undefined}><ResultRow r={r} expanded={open===r.id} onClick={()=>setOpen(open===r.id?null:r.id)}/>{open===r.id?<Log r={r}/>:null}</li>)}</ul></div>):<p className="lgm-fine">No round has been played yet.</p>}
+  {rounds.length?rounds.map(rd=><div key={rd} className="tl-round"><h3>{rd>v.rounds?'Play-off':`Round ${rd}`}</h3><ul>{v.results.filter(r=>r.round===rd).map(r=><li key={r.id} data-mine={r.mine||undefined}><ResultRow r={r} expanded={open===r.id} onClick={()=>setOpen(open===r.id?null:r.id)}/>{open===r.id?<>{r.report?<MatchReportCard report={r.report}/>:null}<Log r={r}/></>:null}</li>)}</ul></div>):<p className="lgm-fine">No round has been played yet.</p>}
  </section>
 }
 function Board({title,rows,unit,empty,testid}:{title:string;rows:Leader[];unit:(n:number)=>string;empty:string;testid?:string}){

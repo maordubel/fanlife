@@ -153,3 +153,22 @@
 .tl-leaders,.tl-seasonres{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
 .tl-leaders li,.tl-seasonres li{display:flex;flex-wrap:wrap;gap:.25rem .5rem;align-items:baseline;border-block-end:1px solid color-mix(in srgb,currentColor 15%,transparent);padding-block:.25rem}
 .tl-seasonres small{flex-basis:100%;opacity:.8}
+
+/* U01 — the assistant */
+.lgm-assist ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.lgm-assist li{display:flex;flex-wrap:wrap;gap:.25rem .75rem;align-items:center;justify-content:space-between}
+.lgm-assist li[data-severity="blocker"] span{color:var(--mag-goal)}
+
+/* U02 — the match report */
+.lgm-report{display:grid;gap:.5rem}
+.lgm-report-notes{margin:0;padding-inline-start:1.1rem;display:grid;gap:.25rem}
+.lgm-report-names{display:grid;gap:.25rem;margin:0}
+.lgm-report-names div{display:flex;gap:.5rem;flex-wrap:wrap}
+.lgm-report-names dt{font-family:var(--mag-mono);text-transform:uppercase;letter-spacing:.04em;opacity:.8}
+.lgm-report-names dd{margin:0}
+
+/* U03 — compare */
+.lgm-compare{display:grid;gap:.75rem}
+.lgm-compare table{inline-size:100%;table-layout:fixed}
+.lgm-compare td,.lgm-compare th{overflow-wrap:anywhere}
+.lgm-compare-bill{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
