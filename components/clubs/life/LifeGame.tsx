@@ -13,12 +13,14 @@
  * walks is therefore exactly what is walked here.
  */
 import {KeepArt, keepArt} from './KeepArt'
+import {Reel} from './Reel'
 import {PixelSprite, spriteForKeep} from './PixelSprite'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import Link from 'next/link'
 import {Dye} from '@/components/master/Dye'
 import {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react'
 import {BOOT_START, BOOT_TIMEOUT_MS, bootReducer, failureCopyKey, probeWebgl, voxelFailure} from './boot'
+import type {ReelInput} from '@/lib/life/universal/reel'
 import {afterPlay, chapterOf, eventsOf, Life, meets, nextChapter, openChapter, playAmount, untold, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import type {CardDef, Chapter, Effect, LifePack, LifeState} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
@@ -740,6 +742,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
   const ending = chapter && state.done[chapter.id] ? chapter.endings[state.done[chapter.id]!] : null
   const keepsake = (id: string | undefined) => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return k } return null }
   const chapterCards: CardDef[] = chapter?.prelude ?? []
+  const reelInput = ((): ReelInput | null => {
+    if (!chapter) return null
+    const rooms = [...new Set(chapter.objectives.map(o => o.room).filter((r): r is string => !!r))]
+    const prev = pack.chapters[chapterNo - 2]
+    return {no: chapterNo, of: pack.chapters.length, age: chapter.age, prevAge: prev?.age ?? 0, title: chapter.title, kicker: chapter.kicker, intro: chapter.intro,
+      places: rooms.map(r => roomName(pack, r, chapter)), keep: chapter.keepsakes?.[0]?.id ?? null}
+  })()
   const prelude = phase === 'chapter' && cardAt < chapterCards.length ? chapterCards[cardAt]! : null
   const saved = state.started && !!chapter
 
@@ -896,14 +905,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
               <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => { cue('page'); setCardAt(n => n + 1) }} data-life="card-next">{copy.next}</button></div>
             </div>
           ) : (
-            <div className={styles.ticket} key={chapter.id}>
-              <p className={styles.serial}>{copy.chapter} {pad2(chapterNo)} {copy.of} {pad2(pack.chapters.length)}</p>
-              <p className={styles.ageBig} aria-hidden="true">{chapter.age}</p>
-              <p className={styles.kicker} {...story}>{chapter.kicker}</p>
-              <h2 id="life-card-title" className={styles.cardTitle} {...story}>{chapter.title}</h2>
-              <p className={styles.lede} {...story}>{chapter.intro}</p>
-              <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={beginDay} disabled={!ready} data-life="begin-day">{ready ? copy.beginDay : copy.loading}</button></div>
-            </div>
+            <Reel key={chapter.id} input={reelInput!} copy={copy} ready={ready} onBegin={beginDay} onCue={cue} storyProps={story} primary={primary} />
           )}
         </section>
       )}
