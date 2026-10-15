@@ -506,3 +506,29 @@ button.tapChip:active { transform: translate(2px, 2px); box-shadow: none; }
 .life:not([data-phase='title']):not([data-phase='boot']) { position: fixed; inset: 0; z-index: 40; }
 .menuList .button { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .menuList .button small { font-size: .8125rem; font-weight: 400; opacity: .88; }
+
+/* ───── arcade layer: the title as an attract screen, the box as a sticker album ───── */
+.attract { position: relative; }
+.attract::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, color-mix(in srgb, var(--l-ink) 7%, transparent) 0 1px, transparent 1px 3px); }
+.pixRow { display: flex; align-items: flex-end; gap: 14px; margin-block-start: 16px; padding-block-end: 8px; border-block-end: 4px solid var(--l-ink); }
+.pixRow svg { display: block; flex: none; max-inline-size: 22vw; block-size: auto; }
+.pixBall { margin-inline-start: auto; animation: pixBounce 1.1s steps(2, jump-none) infinite alternate; }
+.attract [data-life='begin'], .attract [data-life='continue-life'] { animation: pixBlink 1.4s steps(1) infinite; }
+.attract [data-life='begin']:focus-visible, .attract [data-life='continue-life']:focus-visible, .attract [data-life='begin']:active { animation: none; }
+.attract .stub { padding: 10px 12px; background: var(--l-deep); color: var(--l-paper); border: 3px solid var(--l-ink); border-block-start: 3px solid var(--l-ink); box-shadow: 3px 3px 0 var(--l-prime); }
+.attract .stub dt { color: color-mix(in srgb, var(--l-paper) 75%, transparent); }
+@keyframes pixBounce { from { translate: 0 0; } to { translate: 0 -14px; } }
+@keyframes pixBlink { 50% { box-shadow: 0 0 0 3px var(--l-paper), 0 0 0 6px var(--l-prime); } }
+@media (prefers-reduced-motion: reduce) { .pixBall, .attract [data-life='begin'], .attract [data-life='continue-life'] { animation: none; } }
+
+.box ul.album { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
+.box ul.album li.sticker { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; align-items: start; padding: 8px; border: 3px solid var(--l-ink); background: var(--l-paper); box-shadow: 3px 3px 0 var(--l-ink); rotate: var(--tilt, 0deg); position: relative; overflow: hidden; }
+.stickerPic { display: grid; place-items: center; min-block-size: 76px; padding: 6px; background: var(--l-ground); border: 2px solid var(--l-ink); }
+.stickerPic :global(.keepArt) { max-inline-size: 100%; max-block-size: 76px; }
+.stickerName { display: block; margin: 0 -8px; padding: 5px 8px; background: var(--l-prime); color: var(--l-on); border-block: 2px solid var(--l-ink); font-family: var(--font-courier), monospace; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; line-height: 1.3; overflow-wrap: anywhere; }
+.box ul.album li.sticker small { font-size: .8125rem; }
+.sticker[data-foil='true']::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 2; background: linear-gradient(115deg, transparent 30%, color-mix(in srgb, var(--l-paper) 75%, transparent) 45%, transparent 60%) 120% 0 / 250% 100% no-repeat; animation: foil 3.6s ease-in-out infinite; }
+@keyframes foil { to { background-position: -60% 0; } }
+.box ul.album li.gap { border-style: dashed; box-shadow: none; background: transparent; color: var(--l-soft); place-items: center; min-block-size: 120px; rotate: 0deg; font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; text-align: center; }
+@media (min-width: 640px) { .box ul.album { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .sticker[data-foil='true']::before { animation: none; } }

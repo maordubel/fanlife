@@ -43,6 +43,8 @@
   "box": "The box under the bed",
   "boxEmpty": "Nothing in it yet. Enough room for things worth keeping.",
   "boxNote": "What this life has kept",
+  "albumGap": "No.",
+  "albumCount": "stickers in the album",
   "sound": "Sound",
   "soundOn": "Sound on",
   "soundOff": "Sound off",
