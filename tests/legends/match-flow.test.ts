@@ -19,7 +19,7 @@ function newCareer(id:string):Career{const r=createCareer({id,owner:'o'.repeat(3
 let n=0
 const keyed=(c:Career,a:Intent):Action=>({...a,key:`mf${n++}xxxxxxxx`,rev:c.revision} as Action)
 function act(c:Career,a:Intent):Career{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,keyed(c,a),ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
-function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})};return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
+function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value',true);for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})};return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
 const toMatch=(c:Career)=>{for(let i=0;i<4&&isBye(c);i++)c=act(c,{kind:'play-round'});return c}
 
 describe('engine 3 — set pieces (owner, 13.10.2026)',()=>{
@@ -197,5 +197,22 @@ describe('the press (owner, 14.10.2026)',()=>{
    expect(parseAction({kind:'press',fixture:o.fixture,q:o.q.id,answer:9,key:'k-press-3abcd',rev:k.revision})).toBeNull()
   }
   expect(found).toBe(true)
+ })
+})
+
+import {isModern,eraWeight,oldMayShow,OLD_SHARE_PCT} from '@/lib/legends/era'
+import {offersFor,emptyDraft} from '@/lib/legends/draft'
+describe('modern men first (owner, 15.10.2026)',()=>{
+ it('a man whose years end before 1960 is old; no recorded years counts as modern',()=>{
+  expect(isModern({from:1950,to:1958})).toBe(false);expect(isModern({from:1955,to:1962})).toBe(true);expect(isModern({from:null,to:null})).toBe(true)
+  expect(eraWeight({from:1940,to:1950})).toBeCloseTo(OLD_SHARE_PCT/100)
+ })
+ it('over many deals the old men are a low share of what a new career is shown, and are still shown',()=>{
+  const cards=LEAGUE[2]!.cards,count=(modern:boolean)=>{let old=0,all=0
+   for(let s=1;s<=300;s++){const o=offersFor(cards,emptyDraft(modern),'MF',s);for(const x of o??[]){all++;if(!isModern(cards.find(c=>c.id===x.id)!))old++}}
+   return old/all}
+  const m=count(true),plain=count(false)
+  expect(m).toBeLessThan(plain);expect(m).toBeGreaterThan(0)
+  expect(oldMayShow({id:'x',from:1930,to:1940},'s')).toBeTypeOf('boolean')
  })
 })

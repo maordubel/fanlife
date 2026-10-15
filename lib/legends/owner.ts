@@ -36,3 +36,10 @@ export async function viewer(create=false):Promise<string|null>{
  jar.set(COOKIE,`${v}.${sign(v,k)}`,{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',path:'/',maxAge:60*60*24*730})
  return ownerHash(`d:${v}`)
 }
+
+/** both keys, read by the server only: the signed-in account's owner hash and the verified device cookie's owner hash (F05) */
+export async function claimKeys():Promise<{account:string;device:string}|null>{
+ const acc=await account();if(!acc)return null
+ const dev=verifyDevice(cookies().get(COOKIE)?.value,secret());if(!dev)return null
+ return {account:ownerHash(acc),device:ownerHash(`d:${dev}`)}
+}

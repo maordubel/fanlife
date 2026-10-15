@@ -1,5 +1,10 @@
 'use client'
-import {useState} from 'react'
+import {useEffect,useState,useTransition} from 'react'
+import {CoverSheet} from './CoverSheet'
+import {legendsHistory,legendsSeason} from '@/app/all-football/legends/actions'
+import type {SeasonArchive} from '@/lib/legends/history'
+import {Sheet} from './Sheet'
+import {MatchReportCard} from './MatchReportCard'
 import type {CareerView,ResultView} from '@/lib/legends/view'
 import type {Leader} from '@/lib/legends/stats'
 import {ClubMark} from './Shirts'
@@ -42,7 +47,7 @@ export function LeagueCentre({v,openClub}:{v:CareerView;openClub:(c:string)=>voi
 function Results({v}:{v:CareerView}){
  const rounds=[...new Set(v.results.map(r=>r.round))].sort((a,b)=>b-a),[open,setOpen]=useState<string|null>(null)
  return <section className="lgm-panel"><p className="lgm-kicker">Season {v.season} · results</p>
-  {rounds.length?rounds.map(rd=><div key={rd} className="tl-round"><h3>{rd>v.rounds?'Play-off':`Round ${rd}`}</h3><ul>{v.results.filter(r=>r.round===rd).map(r=><li key={r.id} data-mine={r.mine||undefined}><ResultRow r={r} expanded={open===r.id} onClick={()=>setOpen(open===r.id?null:r.id)}/>{open===r.id?<Log r={r}/>:null}</li>)}</ul></div>):<p className="lgm-fine">No round has been played yet.</p>}
+  {rounds.length?rounds.map(rd=><div key={rd} className="tl-round"><h3>{rd>v.rounds?'Play-off':`Round ${rd}`}</h3><ul>{v.results.filter(r=>r.round===rd).map(r=><li key={r.id} data-mine={r.mine||undefined}><ResultRow r={r} expanded={open===r.id} onClick={()=>setOpen(open===r.id?null:r.id)}/>{open===r.id?<>{r.report?<MatchReportCard report={r.report}/>:null}<Log r={r}/></>:null}</li>)}</ul></div>):<p className="lgm-fine">No round has been played yet.</p>}
  </section>
 }
 function Board({title,rows,unit,empty,testid}:{title:string;rows:Leader[];unit:(n:number)=>string;empty:string;testid?:string}){
@@ -74,6 +79,9 @@ function Numbers({v}:{v:CareerView}){
  </div>
 }
 function History({v}:{v:CareerView}){
+ const [full,setFull]=useState<number[]|null>(null),[open,setOpen]=useState<number|null>(null),[cover,setCover]=useState<number|null>(null)
+ // which seasons have a document of their own is asked once, only when this list is opened (F04)
+ useEffect(()=>{if(!v.history.length)return;let live=true;legendsHistory(v.id).then(r=>{if(live)setFull(r.ok?r.full:[])});return()=>{live=false}},[v.id,v.history.length])
  if(!v.history.length)return <section className="lgm-panel"><p className="lgm-kicker">Past seasons</p><p className="lgm-fine">The first season is still being written.</p></section>
  return <section className="lgm-panel"><p className="lgm-kicker">Past seasons · {v.clubName}</p>
   <ol className="tl-history">{[...v.history].reverse().map((h,i)=>{const champ=h.champion?v.clubName:i===0&&v.lastChampion?v.lastChampion:null
@@ -81,6 +89,31 @@ function History({v}:{v:CareerView}){
     <p className="tl-history-season">Season {h.ordinal}</p>
     <p className="tl-history-place"><b>{h.champion?'Champions':ordinal(h.place)}</b><small>of {h.of}{h.playoff?' · after a play-off':''}</small></p>
     <dl><div><dt>Champions</dt><dd>{champ??'Not kept in this career’s record'}</dd></div><div><dt>Record</dt><dd>{h.w}-{h.d}-{h.l} · {h.points} pts · {h.gf}–{h.ga}</dd></div><div><dt>Top scorer</dt><dd>{h.topScorer?`${h.topScorer.name} · ${h.topScorer.goals}`:'—'}</dd></div><div><dt>Board grant</dt><dd>€{h.grant}M</dd></div></dl>
+    {full===null?null:full.includes(h.ordinal)?<button type="button" className="lgm-link min-h-tap" onClick={()=>setOpen(h.ordinal)} data-testid={`legends-season-${h.ordinal}`}>Open season {h.ordinal}</button>:<p className="lgm-fine">Summary only — this season was played before full history was kept.</p>}
+   <button type="button" className="lgm-link min-h-tap" onClick={()=>setCover(h.ordinal)} data-testid={`legends-cover-open-${h.ordinal}`}>Magazine cover</button>
    </li>})}</ol>
+  {open!==null?<SeasonSheet id={v.id} ordinal={open} onClose={()=>setOpen(null)}/>:null}
+  {cover!==null?<CoverSheet careerId={v.id} season={cover} onClose={()=>setCover(null)}/>:null}
  </section>
+}
+/** one finished season in full: the table, every result, the leaders and the squad that finished it */
+function SeasonSheet({id,ordinal:n,onClose}:{id:string;ordinal:number;onClose:()=>void}){
+ const [a,setA]=useState<SeasonArchive|'summary-only'|null>(null),[err,setErr]=useState<string|null>(null),[,start]=useTransition()
+ useEffect(()=>{start(async()=>{const r=await legendsSeason(id,n);if(r.ok)setA(r.season);else setErr(r.error)})},[id,n])
+ const nm=(club:string,pid:string)=>(a&&a!=='summary-only'&&a.names[`${club}:${pid}`])||'—'
+ const teams=a&&a!=='summary-only'?new Map(a.table.map(r=>[r.club,r.name])):new Map<string,string>()
+ return <Sheet id={`season-${n}`} title={`Season ${n}`} kicker="The full record" onClose={onClose} wide>
+  {err?<p className="lgm-error" role="alert">{err}</p>:!a?<p className="lgm-fine" role="status">Loading the season…</p>:a==='summary-only'?<p className="lgm-fine">Only the summary was kept for this season.</p>:<div className="wkl-season" data-testid="legends-season-sheet">
+   <p className="wk-cap white">Champions: <b>{a.champion.name}</b> · {a.stats.played} matches · {a.stats.goals} goals</p>
+   <div className="lgm-table-wrap"><table className="lgm-table tl-table"><thead><tr><th scope="col">#</th><th scope="col">Club</th><th scope="col">P</th><th scope="col">W</th><th scope="col">D</th><th scope="col">L</th><th scope="col">GF</th><th scope="col">GA</th><th scope="col">Pts</th></tr></thead>
+    <tbody>{a.table.map((r,i)=><tr key={r.club}><td>{i+1}</td><th scope="row">{r.name}</th><td>{r.p}</td><td>{r.w}</td><td>{r.d}</td><td>{r.l}</td><td>{r.gf}</td><td>{r.ga}</td><td><b>{r.pts}</b></td></tr>)}</tbody></table></div>
+   <h3 className="wk-k red">Leaders</h3>
+   <ul className="wkl-leaders">{a.stats.scorers.slice(0,5).map(l=><li key={l.club+l.id}><span>{l.name}</span> <small>{l.clubName}</small> <b>{l.value}</b></li>)}</ul>
+   <h3 className="wk-k red">Results</h3>
+   <ol className="wkl-results">{[...a.fixtures,...(a.playoff?.result?[a.playoff]:[])].filter(f=>f.result).map(f=>{const r=f.result!;const goals=r.events.filter(e=>e.kind==='goal'&&e.side!==null&&e.player).map(e=>`${nm(e.side===0?f.home:f.away,e.player!)} ${e.minute}′`).join(', ')
+    return <li key={f.id}><span>R{f.round}</span> <b>{teams.get(f.home)??f.home} {r.goals[0]}–{r.goals[1]}{r.pens?` (${r.pens[0]}–${r.pens[1]} p)`:''} {teams.get(f.away)??f.away}</b>{goals?<small> {goals}</small>:null}</li>})}</ol>
+   <h3 className="wk-k red">Squad at the end</h3>
+   <ul className="wkl-leaders">{a.squad.map(s=><li key={s.id}><span>{s.name}</span> <small>{s.pos}</small> <b>{s.goals||''}</b></li>)}</ul>
+  </div>}
+ </Sheet>
 }

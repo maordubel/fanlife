@@ -21,19 +21,28 @@ const PRESS=[['low','Sit off'],['medium','Press'],['high','High press']] as cons
 const TEMPO=[['slow','Patient'],['normal','Normal'],['fast','Fast']] as const
 const surname=(n:string)=>{const p=n.trim().split(/\s+/);return p.length>1?p[p.length-1]!:n}
 
-export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolean;send:Send;watch:Watch;setWatch:(w:Watch|null)=>void}){
+/** F01: the minute a Tactics stop would be asked for — the minute on screen, never before the last stop, never at or past the next one */
+export const tacticsMinute=(L:{minute:number;prevStop:number},shown:number)=>Math.min(L.minute-1,Math.max(shown,L.prevStop+1))
+/** F03: the last minute whose moments the board may count — while watching, only what the picture has passed; at a stop, the spell's end */
+export const revealUpTo=(stage:'watch'|'break'|'ft',seg:{from:number;to:number},shown:number)=>stage==='watch'?Math.max(seg.from,shown-1):seg.to
+export type LiveMsg={kind:'ok'|'error';text:string}|null
+export function LiveMatch({v,busy,send,watch,setWatch,msg=null}:{v:CareerView;busy:boolean;send:Send;watch:Watch;setWatch:(w:Watch|null)=>void;/** the last action's answer — an error is shown INSIDE the live window (F03), never behind it */msg?:LiveMsg}){
  const snd=useRumbleSound(),L=v.live
  const sound:TheatreSound=n=>snd.play(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
  const final=!L&&v.last?.id===watch.id?v.last:null
  const [stage,setStage]=useState<'watch'|'break'|'ft'>('watch'),[asked,setAsked]=useState<number|null>(null)
  // the picture's minute, for the Tactics button; `jump` is the minute the manager asked the touchline for — its part was already watched
- const clock=useRef(0),jump=useRef<number|null>(null)
+ const clock=useRef(0),jump=useRef<number|null>(null),undo=useRef<number|null>(null),[shown,setShown]=useState(0)
  // a new stop, or the final part, starts a new spell of watching
  useEffect(()=>{if(jump.current!==null&&jump.current===L?.minute){jump.current=null;setStage('break')}else setStage('watch')},[L?.minute,final?.id])
  // engine 4: 89′ is a silent hand-over — the screen passes it by itself
  useEffect(()=>{if(L?.engine4&&L.minute===89&&stage==='break'&&!busy){setWatch({...watch,from:89});send({kind:'match-decide',decision:{}})}},[L?.engine4,L?.minute,stage,busy]) // eslint-disable-line react-hooks/exhaustive-deps
- const room=L?.engine4&&L.canTactics&&stage==='watch'&&!busy?Math.min(L.minute-1,Math.max(clock.current,L.prevStop+1)):0
- const tactics=()=>{if(room<2||room<=L!.prevStop)return;jump.current=room;setWatch({...watch,from:room});send({kind:'match-tactics',minute:room})}
+ // F01: the Tactics button follows the minute the picture shows (`shown` is state, so the button re-renders as the clock moves); the click reads the clock again
+ const askMinute=()=>L?tacticsMinute(L,clock.current):0
+ const room=L?.engine4&&L.canTactics&&stage==='watch'&&!busy?tacticsMinute(L,shown):0
+ const tactics=()=>{const m=askMinute();if(busy||!L||m<2||m<=L.prevStop)return;undo.current=watch.from;jump.current=m;setWatch({...watch,from:m});send({kind:'match-tactics',minute:m})}
+ // a refused action puts the screen back where it was: nothing was changed, the minute is not marked as watched
+ useEffect(()=>{if(msg?.kind==='error'&&jump.current!==null){if(undo.current!==null)setWatch({...watch,from:undo.current});jump.current=null;undo.current=null}},[msg]) // eslint-disable-line react-hooks/exhaustive-deps
  const segment=L?{from:L.prevStop,to:L.minute,outro:false}:{from:watch.from,to:999,outro:true}
  const reel=L?.reel??final?.reel
  const colours=v.colours??{}
@@ -44,9 +53,10 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
     <h2 id="lgm-live-h" className="sr-only">{L?`${L.home} v ${L.away}, live`:'Full time'}</h2>
     <button type="button" className="lgm-x min-h-tap" onClick={()=>setWatch(null)} aria-label={L?'Leave the match for now':'Close'}>×</button>
    </header>
-   {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onClock={m=>{clock.current=m}} onDone={()=>setStage(L?'break':'ft')}/>
+   {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onClock={m=>{clock.current=m;setShown(m)}} onDone={()=>setStage(L?'break':'ft')}/>
     :stage!=='ft'&&L?<FallbackLog L={L} onDone={()=>setStage('break')}/>:null}
-   {reel&&stage!=='ft'?<MatchBoard reel={reel}/>:null}
+   {msg?.kind==='error'&&stage!=='ft'?<p className="lgm-live-msg lgm-live-err" role="alert" data-kind="error" data-testid="legends-live-error">{msg.text} Nothing was changed — try again.</p>:null}
+   {reel&&stage!=='ft'?<MatchBoard reel={reel} upTo={revealUpTo(stage,segment,shown)}/>:null}
    {stage==='watch'&&L?.engine4&&L.canTactics&&L.minute-L.prevStop>=3?<p className="lgm-live-tactics"><button type="button" className="lgm-ghost min-h-tap" disabled={busy||room<2} onClick={tactics} data-testid="legends-tactics">Tactics</button></p>:null}
    {stage==='break'&&L&&!L.engine4&&L.minute!==45&&asked!==L.minute?<ChangeAsk key={`ask${L.minute}`} L={L} busy={busy} onYes={()=>setAsked(L.minute)} onNo={()=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:{}})}}/>
     :stage==='break'&&L?<Touchline key={L.minute} L={L} busy={busy} onPlay={d=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:d})}} onFinish={()=>{setWatch({...watch,from:L.minute});send({kind:'match-finish'})}}/>:null}

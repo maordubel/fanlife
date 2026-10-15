@@ -3,11 +3,13 @@ import {randomBytes} from 'node:crypto'
 import {door} from '@/lib/features-server'
 import {applyAction,parseAction} from '@/lib/legends/career'
 import {acceptFriendly,closeFriendly,createFriendly,friendlyView,lockSide,MAX_OPEN,statusAt,tokenHash,type FriendlyView} from '@/lib/legends/friendly'
-import {viewer} from '@/lib/legends/owner'
+import {claimKeys,viewer} from '@/lib/legends/owner'
 import {ctxFor,marketPage,startCareer} from '@/lib/legends/server'
-import {deleteArchived,insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
+import {claimDeviceCareers,deleteArchived,flushArchives,readSeasonArchive,storedSeasons,insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
 import {careerView,type CardView,type CareerView} from '@/lib/legends/view'
 import {withHighlights} from '@/lib/legends/kits'
+import {coversFor,type CoverData} from '@/lib/legends/cover'
+import {buildRecords,type Records,type SeasonSource} from '@/lib/legends/records'
 
 /**
  * LEGENDS MANAGER's server actions. The browser sends an intent with the revision it saw and a fresh key; the server reads who
@@ -47,6 +49,7 @@ export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view
   })
   if(!out)return {ok:false,error:'Career not found.',code:'missing'}
   if('error' in out)return out.error as Fail
+  if(out.career.pendingArchive?.length)await flushArchives(id).catch(()=>0)
   return {ok:true,view:await withHighlights(slim(careerView(out.career)),out.career),replay:out.replay,...(note?{note}:{})}
  }catch(e){return fail(e,'The move could not be saved. Try again.')}
 }
@@ -63,11 +66,60 @@ export async function legendsMarket(id:string,f:{pos?:string|null;decade?:number
  return {ok:true,...marketPage(cur.career,{pos,decade,price,q:typeof f.q==='string'?f.q.slice(0,60):null})}
 }
 
+/** F04: one finished season in full (results, table, leaders, squad) — or `summary-only` for a season that pre-dates the archive */
+export async function legendsSeason(id:string,ordinal:number):Promise<{ok:true;season:import('@/lib/legends/history').SeasonArchive|'summary-only'}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false);if(!owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
+ try{const s=await readSeasonArchive(owner,id,ordinal);return s?{ok:true,season:s}:{ok:false,error:'That season was not found.',code:'missing'}}catch(e){return fail(e,'The season could not be loaded. Try again.')}
+}
+/** U04: the career's records — every season held in full plus the one in progress; never another owner's */
+export async function legendsRecords(id:string):Promise<{ok:true;records:Records}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false),cur=owner?await readCareer(id):null
+ if(!cur||cur.career.owner!==owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
+ const c=cur.career
+ try{
+  const ords=await storedSeasons(id,c.history.map(h=>h.ordinal));for(const a of c.pendingArchive??[])ords.add(a.ordinal)
+  const sources:SeasonSource[]=[]
+  for(const a of await Promise.all([...ords].map(o=>readSeasonArchive(owner!,id,o))))if(a&&a!=='summary-only')sources.push({ordinal:a.ordinal,fixtures:[...a.fixtures,...(a.playoff?[a.playoff]:[])],names:a.names,champion:a.champion})
+  const names:Record<string,string>={};for(const k of c.catalog.cards)names[`${c.clubId}:${k.id}`]=k.name
+  sources.push({ordinal:c.season.ordinal,fixtures:[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])],names,champion:null})
+  return {ok:true,records:buildRecords(c.clubId,c.history,sources)}
+ }catch(e){return fail(e,'The records could not be loaded. Try again.')}
+}
+/** U05: the covers a FINISHED season offers — built from the saved result only, with the public fields and nothing else */
+export async function legendsCovers(id:string,ordinal:number):Promise<{ok:true;covers:CoverData[]}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false),cur=owner?await readCareer(id):null
+ if(!cur||cur.career.owner!==owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
+ const c=cur.career,record=c.history.find(h=>h.ordinal===ordinal)
+ if(!record)return {ok:false,error:'That season is not finished.',code:'missing'}
+ try{
+  const pending=c.pendingArchive?.find(a=>a.ordinal===ordinal),read=pending??await readSeasonArchive(owner!,id,ordinal)
+  return {ok:true,covers:coversFor({club:c.clubId,clubName:c.clubName,record,archive:read&&read!=='summary-only'?read:null})}
+ }catch(e){return fail(e,'The cover could not be prepared. Try again.')}
+}
+/** which past seasons can be opened in full — a small read, only when the history list is opened */
+export async function legendsHistory(id:string):Promise<{ok:true;full:number[]}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const owner=await viewer(false),cur=owner?await readCareer(id):null
+ if(!cur||cur.career.owner!==owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
+ const stored=await storedSeasons(id,cur.career.history.map(h=>h.ordinal));for(const a of cur.career.pendingArchive??[])stored.add(a.ordinal)
+ return {ok:true,full:[...stored].sort((a,b)=>a-b)}
+}
+
 export async function setCareerStatus(id:string,status:'active'|'archived'):Promise<{ok:true}|Fail>{
  if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
  if(status!=='active'&&status!=='archived')return {ok:false,error:'Unknown status.'}
  const owner=await viewer(false);if(!owner)return {ok:false,error:'This career is not yours.'}
  try{return await setStatus(owner,id,status)}catch(e){return fail(e,'Could not save. Try again.')}
+}
+
+/** F05: after a verified sign-in, the fan asks to bring the saves played on this device under the account. No owner id is accepted from the browser. */
+export async function claimGuestCareers():Promise<{ok:true;moved:number;archived:number}|Fail>{
+ if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
+ const k=await claimKeys();if(!k)return {ok:false,error:'Sign in first.',code:'forbidden'}
+ try{const r=await claimDeviceCareers(k.device,k.account);return r.ok?r:{ok:false,error:r.error}}catch(e){return fail(e,'Could not move your saves. Try again.')}
 }
 
 export async function deleteCareer(id:string):Promise<{ok:true}|Fail>{

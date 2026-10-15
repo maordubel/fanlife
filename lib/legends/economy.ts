@@ -19,6 +19,12 @@ export function saleQuote(base:number,paid:number,appsSincePurchase:number,stars
  const net=floorTenths(Math.max(0,quoted-fee-guard))
  return {quoted,fee,guard,net:appsSincePurchase===0?Math.min(net,paid):net,factor}
 }
+/**
+ * F02 (15.10.2026): THE rule for every way a man can leave — a direct sale, a bid that is accepted, a swap: before his first
+ * official appearance since you signed him, what the manager receives can never beat what he paid. Applied to the FINAL amount,
+ * after any premium a bidder adds, so no route can slip past it.
+ */
+export const finalProceeds=(amount:number,paid:number,appsSincePurchase:number)=>appsSincePurchase===0?roundTenths(Math.min(amount,paid)):roundTenths(amount)
 /** 0–1 for the season, from the final place (and a title) */
 export const seasonScore=(place:number,of:number,champion:boolean)=>clamp((of>1?(of-place)/(of-1):1)*0.85+(champion?0.15:0),0,1)
 export function nextSeasonGrant(score01:number,cashBefore:number,s:Pick<LegendsSettings,'grantLiquidityM'>):number{
@@ -43,6 +49,6 @@ export function capBonuses(list:readonly Achievement[],already:number):Achieveme
  return out
 }
 /** reputation — it opens management abilities, never match strength (§1.7.42) */
-export const ABILITIES=[{at:30,id:'scouting',label:'Scouting report',hint:'See the next opponent’s eleven before kick-off.'},{at:80,id:'contacts',label:'Market contacts',hint:'Four special offers in a window instead of three.'},{at:160,id:'board',label:'Board trust',hint:'See the board’s grant forecast all season.'}] as const
+export const ABILITIES=[{at:30,id:'scouting',label:'Scouting report',hint:'A full report before every match: their shape, strength line by line, key men and recent results.'},{at:80,id:'contacts',label:'Market contacts',hint:'Once a window, ask for a man of one line — he takes the place of an unsigned name on your list of five.'},{at:160,id:'board',label:'Board trust',hint:'See next season’s grant forecast all season, worked out the way the board works it out at the end.'}] as const
 export type AbilityId=typeof ABILITIES[number]['id']
 export const abilitiesAt=(points:number):AbilityId[]=>ABILITIES.filter(a=>points>=a.at).map(a=>a.id)

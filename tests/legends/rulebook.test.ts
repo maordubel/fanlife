@@ -2,10 +2,10 @@ import {describe,expect,it} from 'vitest'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {DEFAULT_SETTINGS,LEGENDS_RULES as R,patchSettings,readSettings} from '@/lib/legends/config'
 import {eligible} from '@/lib/legends/catalog'
-import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,slotsOf,type Action,type Intent} from '@/lib/legends/career'
+import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,slotsOf,bidsOf,type Action,type Intent} from '@/lib/legends/career'
 import {afterMatch,fresh} from '@/lib/legends/discipline'
 import {botDraft,deal,draftMove,emptyDraft,groups,TIER_PRICES} from '@/lib/legends/draft'
-import {achievements,capBonuses,nextSeasonGrant,saleQuote} from '@/lib/legends/economy'
+import {achievements,capBonuses,nextSeasonGrant,saleQuote,finalProceeds} from '@/lib/legends/economy'
 import {run} from '@/lib/legends/engine'
 import {autopilot,matchLab} from '@/lib/legends/lab'
 import {fixturesFor,roundsFor,standings,titleTie} from '@/lib/legends/league'
@@ -22,7 +22,7 @@ const ctx={now:NOW,catalogs:new Map(LEAGUE.map(c=>[c.club,c.cards]))}
 function newCareer(id='c0ffee0000000001'):Career{const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error);return r.career}
 let n=0
 function act(c:Career,a:Intent):Career{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,{...a,key:`k${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
-function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
+function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value',true);for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
 /** play on the quick sim until the transfer window opens (after round 2) */
 function toWindow(c:Career):Career{for(let i=0;i<6&&c.phase!=='window';i++)c=isBye(c)?act(c,{kind:'play-round'}):act(c,{kind:'match-start',mode:'fast'});return c}
 
@@ -70,7 +70,7 @@ describe('the draft (§1.2, D01–D07)',()=>{
   const r=draftMove(cat.cards,d,{kind:'reroll'},3);expect(r.ok).toBe(false);expect(d.picks).toHaveLength(0);expect(d.spent).toBe(0)
  })
  it('1,000 generated draft paths over five clubs end in a legal seventeen — no dead end',()=>{
-  let dead=0;for(let i=0;i<1000;i++){const r=botDraft(LEAGUE[i%5]!.cards,hash(`path:${i}`),(['random','value','premium','budget'] as const)[i%4]);if(r.error)dead++}
+  let dead=0;for(let i=0;i<1000;i++){const r=botDraft(LEAGUE[i%5]!.cards,hash(`path:${i}`),(['random','value','premium','budget'] as const)[i%4],i%2===0);if(r.error)dead++}
   expect(dead).toBe(0)
  },120_000)
  it('D06/D07 · confirm: €52M less the draft plus the board’s €8M, paid once; seventeen is a legal squad',()=>{
@@ -92,6 +92,21 @@ describe('the draft (§1.2, D01–D07)',()=>{
 })
 
 describe('money (§1.3, E01–E05)',()=>{
+ it('F02 · a bid cannot lift a man bought and never played above what he cost — the final amount is guarded, whatever the premium',()=>{
+  let seen=0
+  for(let i=0;i<24;i++){
+   let c=toWindow(drafted(newCareer(`f02seed${String(i).padStart(10,'0')}`)))
+   const buy=slotsOf(c).find(x=>x.price<=me(c).cash);if(!buy)continue
+   c=act(c,{kind:'buy',card:buy.id});c=act(c,{kind:'list',card:buy.id,listed:true})
+   const bid=bidsOf(c).find(b=>b.card===buy.id);if(!bid)continue
+   seen++
+   expect(bid.fee,`bid fee for a €${buy.price}M man never played`).toBeLessThanOrEqual(buy.price+1e-9)
+   const before=me(c).cash,after=me(act(c,{kind:'bid',card:buy.id,accept:true})).cash
+   expect(after-before).toBeLessThanOrEqual(buy.price+1e-9)
+  }
+  expect(seen).toBeGreaterThan(3)
+  expect(finalProceeds(3.1,3,0)).toBe(3);expect(finalProceeds(3.1,3,1)).toBe(3.1)
+ })
  it('E01/E02 · before an official appearance a sale never beats the price paid; after it the market decides within 80–120%',()=>{
   for(const base of [1,2,3,4,5])for(const stars of [1,3,5]){
    const q0=saleQuote(base,base,0,stars,DEFAULT_SETTINGS);expect(q0.net).toBeLessThanOrEqual(base)
@@ -276,5 +291,65 @@ describe('free line choice (13.10.2026)',()=>{
   expect(d.rerollsLeft).toBe(3)
   const fw=mv(mv(d,{kind:'group',group:'FW'}),{kind:'reroll'});expect(fw.rerollsLeft).toBe(2)
   const back=mv(fw,{kind:'group',group:'MF'});expect(back.offers.map(o=>o.id)).toEqual(mf)
+ })
+})
+
+import {carryArmband} from '@/lib/legends/squad'
+describe('F06 · the captain and the vice are the manager’s appointments (15.10.2026)',()=>{
+ const base={formation:'4-4-2',xi:['a','b','c'],bench:[],tactics:{approach:'balanced',pressing:'medium',tempo:'normal'}} as never as import('@/lib/legends/types').Lineup
+ it('a rebuilt eleven keeps both while they are in the squad — even benched; nobody is both',()=>{
+  const next={...base,captain:'z'} as import('@/lib/legends/types').Lineup
+  expect(carryArmband({captain:'a',vice:'b'},next,()=>true)).toMatchObject({captain:'a',vice:'b'})
+  expect(carryArmband({captain:'a',vice:'a'},next,()=>true).vice).toBeUndefined()
+  expect(carryArmband({captain:'a',vice:'b'},next,id=>id!=='a')).toMatchObject({captain:'b'})
+  expect(carryArmband({captain:'a',vice:'b'},next,id=>id!=='a').vice).toBeUndefined()
+  expect(carryArmband({captain:'a',vice:'b'},next,id=>id!=='b')).toMatchObject({captain:'a'})
+  expect(carryArmband({},next,()=>true).captain).toBe('z')
+ })
+ it('a swap of a third man leaves the captain and the vice; swapping the captain out promotes the vice',()=>{
+  let tested=0
+  for(let i=0;i<12&&tested<2;i++){
+   let c=toWindow(drafted(newCareer(`f06seed${String(i).padStart(10,'0')}`)));const t=me(c),xi=t.lineup.xi
+   const [cap,vice]=[xi[0]!,xi[1]!]
+   c=act(c,{kind:'lineup',formation:t.lineup.formation,xi:t.lineup.xi,bench:t.lineup.bench,tactics:t.lineup.tactics,captain:cap,vice})
+   const mt=me(c),card=(id:string)=>c.catalog.cards.find(x=>x.id===id)!
+   const inc=slotsOf(c).find(x=>mt.squad.some(s=>xi.includes(s.id)&&![cap,vice].includes(s.id)&&card(s.id).pos===x.pos)&&x.price<=mt.cash+3)
+   if(!inc)continue
+   const out=mt.squad.find(s=>xi.includes(s.id)&&![cap,vice].includes(s.id)&&card(s.id).pos===inc.pos)!
+   const r=applyAction(c,{kind:'swap',sell:out.id,buy:inc.id,key:'k-f06-swap1',rev:c.revision} as Action,ctx);if(!r.ok)continue
+   expect(me(r.career).lineup.captain).toBe(cap);expect(me(r.career).lineup.vice).toBe(vice);tested++
+  }
+  expect(tested).toBeGreaterThan(0)
+ })
+})
+
+describe('F08/F07 · five fixed candidates per window; contacts, scouting report, board forecast (15.10.2026)',()=>{
+ const inWindow=(i:number)=>toWindow(drafted(newCareer(`f08seed${String(i).padStart(10,'0')}`)))
+ it('the five are drawn when the window opens; a signing leaves a gap — no sixth name appears',()=>{
+  const c0=inWindow(1),five=slotsOf(c0).map(x=>x.id);expect(c0.market?.ids).toEqual(five);expect(five.length).toBeLessThanOrEqual(5)
+  const buy=slotsOf(c0).find(x=>x.price<=me(c0).cash)!,c1=act(c0,{kind:'buy',card:buy.id})
+  const after=slotsOf(c1).map(x=>x.id);expect(after).toEqual(five.filter(id=>id!==buy.id))
+  expect(careerView(c1).window!.signed.map(x=>x.id)).toEqual([buy.id])
+  expect(applyAction(c1,{kind:'buy',card:c1.catalog.cards.find(x=>!five.includes(x.id)&&!me(c1).squad.some(s=>s.id===x.id))!.id,key:'k-f08-out',rev:c1.revision} as Action,ctx).ok).toBe(false)
+ })
+ it('a window that opened before snapshots gets its list at the first move and keeps every purchase',()=>{
+  const c0=inWindow(2),legacy={...c0,market:undefined} as Career,buy=slotsOf(legacy).find(x=>x.price<=me(legacy).cash)!
+  const r=applyAction(legacy,{kind:'buy',card:buy.id,key:'k-f08-legacy',rev:legacy.revision} as Action,ctx);expect(r.ok).toBe(true)
+  if(r.ok){expect(r.career.market?.ids).toContain(buy.id);expect(me(r.career).squad.some(s=>s.id===buy.id)).toBe(true)}
+ })
+ it('market contacts: closed under 80 reputation; then once a window, one man of the asked line replaces an unsigned name, still five at most',()=>{
+  const c0=inWindow(3)
+  expect(applyAction(c0,{kind:'scout',pos:'MF',key:'k-f07-closed',rev:c0.revision} as Action,ctx).ok).toBe(false)
+  const rich={...c0,reputation:{...c0.reputation,points:90}} as Career,c1=act(rich,{kind:'scout',pos:'MF'})
+  expect(slotsOf(c1).length).toBeLessThanOrEqual(5);expect(c1.market!.scouted).toBe(1);expect(c1.market!.ids.length).toBe(c0.market!.ids.length)
+  expect(c1.market!.ids.some(id=>!c0.market!.ids.includes(id))).toBe(true)
+  expect(applyAction(c1,{kind:'scout',pos:'FW',key:'k-f07-twice',rev:c1.revision} as Action,ctx).ok).toBe(false)
+  expect(careerView(c1).window!.contacts).toEqual({open:true,used:true})
+ })
+ it('the scouting report (30) and the board forecast (160) appear only when earned, from real state',()=>{
+  const c0=inWindow(4),low=careerView({...c0,reputation:{...c0.reputation,points:0}} as Career),mid=careerView({...c0,reputation:{...c0.reputation,points:40}} as Career),high=careerView({...c0,reputation:{...c0.reputation,points:200}} as Career)
+  expect(low.next?.opponent.report ?? null).toBeNull();expect(low.boardForecast).toBeNull()
+  const r=mid.next?.opponent.report;if(mid.next){expect(r).not.toBeNull();expect(r!.lines.length).toBe(4);expect(r!.form.every(f=>'WDL'.includes(f))).toBe(true)}
+  expect(mid.boardForecast).toBeNull();expect(high.boardForecast).toBeGreaterThan(0)
  })
 })

@@ -28,3 +28,47 @@
   .lgm-banner-wrap .lgm-banner-cta { min-block-size: 62px; padding: 0 22px; font-size: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .lgm-banner-wrap .lgm-banner:active .lgm-banner-cta { translate: none; } }
+
+/* U04 hall of fame · U05 cover sheet — The Weekly kit only: tokens, 3px ink, offset shadows, wrapping grids, no sideways scroll */
+.wkl-fame { padding: 14px; display: grid; gap: 12px; }
+.wkl-fame-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.wkl-fame-tiles > div { border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 3px 3px 0 var(--mag-ink); padding: 10px 12px; display: grid; gap: 6px; }
+.wkl-fame-tiles dd { margin: 0; font-size: 38px; }
+.wkl-fame-line { margin: 0; font: 400 15px/1.35 var(--mag-body); }
+.wkl-fame-line b { font-family: var(--mag-goal); font-weight: 400; }
+.wkl-fame-cols { display: grid; gap: 10px; }
+.wkl-fame-list { margin: 0; padding: 0; list-style: none; }
+.wkl-fame-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 2px dotted var(--mag-ink); font-family: var(--mag-body); font-weight: 700; }
+.wkl-fame-list .wk-num { font-size: 22px; }
+.wkl-cover { display: grid; gap: 12px; }
+.wkl-cover-preview { display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto; border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); }
+.wkl-cover-preview[data-format='feed'] { max-width: 420px; }
+.wkl-cover-alias { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 44px; }
+.wkl-cover-alias input:not([type]) { min-height: 44px; padding: 0 10px; border: 3px solid var(--mag-ink); background: var(--mag-card); font: 700 16px var(--mag-body); max-width: 100%; }
+.wkl-cover-actions { display: grid; gap: 10px; }
+@media (min-width: 720px) { .wkl-fame-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } .wkl-fame-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } .wkl-cover-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* F04–U03 — claim banner, season sheet, assistant, match report, compare (The Weekly kit) */
+.wkl-claim { display: grid; gap: 10px; padding: 12px; margin-block-end: 14px; }
+.wkl-claim p { margin: 0; }
+.wkl-season { display: grid; gap: 12px; }
+.wkl-leaders, .wkl-results { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.wkl-leaders li, .wkl-results li { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; border-block-end: 2px dashed var(--mag-ink); padding-block: 6px; min-inline-size: 0; overflow-wrap: anywhere; }
+.wkl-leaders b { font-family: var(--mag-goal); }
+.wkl-results small { flex-basis: 100%; }
+.wkl-assist { display: grid; gap: 10px; padding: 12px; }
+.wkl-assist ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.wkl-assist li { display: grid; gap: 8px; }
+.wkl-assist li[data-severity="blocker"] .wk-cap { background: var(--mag-vermilion); color: var(--mag-white); }
+.wkl-report { display: grid; gap: 10px; }
+.wkl-report-notes { margin: 0; padding-inline-start: 18px; display: grid; gap: 4px; }
+.wkl-report-names { display: grid; gap: 6px; margin: 0; }
+.wkl-report-names div { display: flex; gap: 8px; flex-wrap: wrap; }
+.wkl-report-names dd { margin: 0; min-inline-size: 0; overflow-wrap: anywhere; }
+.wkl-compare { display: grid; gap: 12px; }
+.wkl-table { inline-size: 100%; table-layout: fixed; border-collapse: collapse; border: 3px solid var(--mag-ink); background: var(--mag-card); }
+.wkl-table th, .wkl-table td { border: 2px solid var(--mag-ink); padding: 6px; text-align: start; overflow-wrap: anywhere; font-size: 14px; }
+.wkl-table thead th { background: var(--mag-ink); color: var(--mag-white); font-family: var(--mag-display); text-transform: uppercase; }
+.wkl-bill { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.wkl-bill b { font-family: var(--mag-goal); }
+.wkl-actions { display: grid; gap: 10px; margin: 0; }

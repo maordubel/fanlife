@@ -18,7 +18,7 @@ const tryAct=(c:Career,a:Intent)=>applyAction(c,{...a,key:`t${n++}xxxxxxxx`,rev:
 function raw(c:Career,a:Intent){const r=tryAct(c,a);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
 // the dressing room is answered first, as a player must (rule 116)
 function act(c:Career,a:Intent){if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,raw);const r=tryAct(c,a);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
-function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})};return act(c,{kind:'draft-confirm'})}
+function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value',true);for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})};return act(c,{kind:'draft-confirm'})}
 const sheet=(c:Career,extra:Record<string,unknown>={})=>{const l=me(c).lineup;return {kind:'lineup',formation:l.formation,xi:l.xi,bench:l.bench,tactics:l.tactics,...extra} as Intent}
 const reload=(c:Career)=>JSON.parse(JSON.stringify(c)) as Career
 

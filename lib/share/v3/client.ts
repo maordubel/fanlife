@@ -10,13 +10,21 @@ import type {ShareArt} from './templates'
 const ART:ShareArt[]=['archive-objects','away-supporters','father-child','footballer','scarf-fan','shirt-exchange','terrace-crowd','vintage-shirt']
 const BASE='/share/v3'
 let loading:Promise<ShareAssets>|null=null
-const dataUri=async(url:string)=>{const r=await fetch(url);if(!r.ok)throw new Error(`asset ${url}`);const b=await r.blob();return await new Promise<string>((ok,no)=>{const f=new FileReader();f.onload=()=>ok(String(f.result));f.onerror=no;f.readAsDataURL(b)})}
-export function loadShareAssets():Promise<ShareAssets>{
- loading??=(async()=>{
+export const dataUri=async(url:string)=>{const r=await fetch(url);if(!r.ok)throw new Error(`asset ${url}`);const b=await r.blob();return await new Promise<string>((ok,no)=>{const f=new FileReader();f.onload=()=>ok(String(f.result));f.onerror=no;f.readAsDataURL(b)})}
+let fontLoading:Promise<string>|null=null
+/** the fonts alone (registered for measuring, inlined for the SVG) — for a card that needs no pictures */
+export function loadShareFonts():Promise<string>{
+ fontLoading??=(async()=>{
   const fonts=await Promise.all(Object.values(SHARE_FONTS).map(async f=>({f,uri:(await dataUri(`${BASE}/fonts/${f.file}.woff2`)).replace(/^data:[^;]*;/,'data:font/woff2;')})))
   // registered on the document so canvas measurement uses the very glyphs the SVG will draw
   await Promise.all(fonts.map(async({f,uri})=>{if([...document.fonts].some(x=>x.family===f.family))return;const face=new FontFace(f.family,`url(${uri})`,{weight:String(f.weight)});await face.load();document.fonts.add(face)}))
-  const fontCss=fonts.map(({f,uri})=>`@font-face{font-family:${f.family};font-style:normal;font-weight:${f.weight};src:url("${uri}") format("woff2");}`).join('')
+  return fonts.map(({f,uri})=>`@font-face{font-family:${f.family};font-style:normal;font-weight:${f.weight};src:url("${uri}") format("woff2");}`).join('')
+ })().catch(e=>{fontLoading=null;throw e})
+ return fontLoading
+}
+export function loadShareAssets():Promise<ShareAssets>{
+ loading??=(async()=>{
+  const fontCss=await loadShareFonts()
   const [logo,shirt,...art]=await Promise.all([dataUri(`${BASE}/logo.webp`),dataUri(`${BASE}/shirt.webp`),...ART.map(a=>dataUri(`${BASE}/art/${a}.webp`))])
   return {logo:logo!,shirt:shirt!,fontCss,art:Object.fromEntries(ART.map((a,i)=>[a,art[i]!])) as Record<ShareArt,string>}
  })().catch(e=>{loading=null;throw e})

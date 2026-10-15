@@ -11,6 +11,8 @@ import type {Status} from './types'
  *  · a round his club plays counts for a ban AND an injury at once — an injured man serves his ban too (§2.6)
  *  · an injury keeps a man out for whole rounds his club plays; the round he was hurt in does not count
  */
+/** a ban every five yellow cards */
+export const YELLOWS_PER_BAN=5
 export const fresh=():Status=>({yellows:0,thresholds:0,suspension:0,injury:0,injuryKind:null})
 export const available=(s:Status|undefined)=>!s||(s.suspension<=0&&s.injury<=0)
 export type MatchBook={yellows:number;red:{second:boolean;length:number}|null;injury:{kind:'minor'|'moderate'|'severe';rounds:number}|null}
@@ -20,7 +22,7 @@ export function afterMatch(prev:Status|undefined,book:MatchBook|null,servedThisR
  if(servedThisRound){if(s.suspension>0)s.suspension--;if(s.injury>0){s.injury--;if(!s.injury)s.injuryKind=null}}
  if(!book)return s
  s.yellows+=book.yellows
- const crossed=Math.floor(s.yellows/5)-s.thresholds
+ const crossed=Math.floor(s.yellows/YELLOWS_PER_BAN)-s.thresholds
  if(crossed>0)s.thresholds+=crossed
  let ban=0
  if(book.red&&!book.red.second)ban=book.red.length+(crossed>0?crossed:0)

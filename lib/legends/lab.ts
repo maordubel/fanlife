@@ -16,7 +16,7 @@ import type {Card,Career,Catalog,MatchSnapshot,SideSnapshot} from './types'
 export type DraftLab={club:string;runs:number;deadEnds:number;avgSpent:number;examples:string[]}
 export function draftLab(cat:Catalog,runs=200):DraftLab{
  let dead=0,spent=0;const ex:string[]=[]
- for(let i=0;i<runs;i++){const r=botDraft(cat.cards,hash(`${cat.club}:lab:${i}`),(['random','value','premium','budget'] as const)[i%4]);if(r.error){dead++;if(ex.length<3)ex.push(r.error)}else spent+=r.draft.spent}
+ for(let i=0;i<runs;i++){const r=botDraft(cat.cards,hash(`${cat.club}:lab:${i}`),(['random','value','premium','budget'] as const)[i%4],true);if(r.error){dead++;if(ex.length<3)ex.push(r.error)}else spent+=r.draft.spent}
  return {club:cat.club,runs,deadEnds:dead,avgSpent:runs-dead?roundTenths(spent/(runs-dead)):0,examples:ex}
 }
 const side=(club:string,name:string,cards:Card[],home:boolean|null):SideSnapshot|null=>{
@@ -48,15 +48,15 @@ export function matchLab(cats:readonly Catalog[],matches=2000,engine:EngineVersi
   setPieces:{penalties:Math.round(out.pen/n*100)/100,penaltyGoals:Math.round(out.penG/n*100)/100,corners:roundTenths(out.corner/n),freeKicks:roundTenths(out.fk/n),goals:Math.round(out.spG/n*100)/100}}
 }
 /** one career on autopilot: the bot drafts, the windows close, every match plays on the quick sim */
-export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,seed:string,settings:LegendsSettings=DEFAULT_SETTINGS):{career:Career|null;error:string|null}{
- const made=createCareer({id:`lab-${seed}`,owner:'lab',now:'2026-01-01T00:00:00Z',own,rivals:[...rivals],settings});if(!made.ok)return {career:null,error:made.error}
+export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,seed:string,settings:LegendsSettings=DEFAULT_SETTINGS,id=`lab-${seed}`):{career:Career|null;error:string|null}{
+ const made=createCareer({id,owner:'lab',now:'2026-01-01T00:00:00Z',own,rivals:[...rivals],settings});if(!made.ok)return {career:null,error:made.error}
  let c=made.career,n=0
  const catalogs=new Map(rivals.map(r=>[r.club,r.cards]))
  const go=(a:Intent)=>{const r=applyAction(c,{...a,key:`lab${seed}k${n++}`,rev:c.revision} as Action,{now:'2026-01-01T00:00:00Z',catalogs});if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);c=r.career}
  // the dressing room is never skipped: the autopilot answers every talk with a calm word before it plays on
  const talk=()=>{const o=talkOffers(c);if(o.post)go({kind:'talk-post',fixture:o.post.fixture,answer:0});const p=talkOffers(c).pre;if(p)go({kind:'talk-pre',fixture:p.fixture,answer:0})}
  try{
-  const d=botDraft(own.cards,hash(`${c.id}:draft`),'value');if(d.error)return {career:c,error:d.error}
+  const d=botDraft(own.cards,hash(`${c.id}:draft`),'value',true);if(d.error)return {career:c,error:d.error}
   for(const p of d.draft.picks){go({kind:'draft',move:{kind:'group',group:p.quota}});go({kind:'draft',move:{kind:'pick',id:p.id}})}
   go({kind:'draft-confirm'});go({kind:'ack'})
   for(let s=0;s<seasons;s++){
