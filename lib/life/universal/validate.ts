@@ -88,6 +88,7 @@ export function validateChapter(pack: Pick<LifePack, 'rooms' | 'cast'>, chapter:
     }
   }
   const used = new Set<string>()
+  flagsOf(chapter.when, used)
   const read = (c: Cond | undefined) => flagsOf(c, used)
   chapter.cast.forEach(p => read(p.when)); chapter.spots.forEach(s => read(s.when)); chapter.doors.forEach(d => { read(d.when); read(d.needs) })
   chapter.beats.forEach(b => read(b.when)); chapter.objectives.forEach(o => read(o.done))

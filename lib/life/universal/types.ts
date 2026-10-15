@@ -197,6 +197,8 @@ export type Chapter = {
   anchor?: ArchiveRef
   /** the one night of this life that is the club's own match, told with its teams, its competition and its result */
   centrepiece?: boolean
+  /** the chapter is part of this life only while this holds when its turn comes (a route the player was invited into); otherwise it is skipped, never dead-ended */
+  when?: Cond
 }
 
 /* ───────────── history (only what the archive holds) ───────────── */

@@ -15,6 +15,7 @@
  */
 import {buildCast, HERO_LOOKS, type CastManifest} from './cast'
 import {screenplayChapters} from './screenplay'
+import {MASTER_IDS, masterChapters} from './screenplay/master'
 import {nightChapter} from './content/night'
 import {centrepieceOf, readMatch} from './match'
 import {ROOMS} from './rooms'
@@ -46,6 +47,8 @@ export type ComposeInput = {
   dataVersion: string
   /** the language the club's life is told in; default English */
   storyLocale?: 'en' | 'he'
+  /** master-screenplay chapters (bible §16) this life adds to the shared ones; default: all of them, for every club; pass [] to opt out */
+  master?: readonly string[]
 }
 
 export const ANCHOR_TARGET = 8
@@ -123,7 +126,7 @@ export function composeLife(input: ComposeInput): LifePack {
   }
   const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId, locale))
 
-  const universal = screenplayChapters(locale)
+  const universal = [...screenplayChapters(locale), ...masterChapters(input.master ?? MASTER_IDS, locale)]
   const lastAge = Math.max(...universal.map(c => c.age), ...nights.map(c => c.age), 0)
   // one life, in the order it was lived: by age, a night after the ordinary day of the same age
   const ordered = [...universal.map((c, i) => ({c, k: c.age, o: i, night: 0})), ...nights.map((c, i) => ({c, k: c.age, o: i, night: 1}))]
