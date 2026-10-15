@@ -384,7 +384,8 @@ export const MASTER_MIDDLE: ChapterScript[] = [
   chapter({
     id: 'F25', age: 44, act: 2, title: t('An Ordinary Saturday', 'שבת רגילה'),
     intro: t('Nothing is on today. That is exactly why you came.', 'אין היום כלום. בדיוק בגלל זה באת.'),
-    keep: {id: 'napkin-list', name: t('The napkin', 'המפית'), note: t('Only if somebody wrote on it. No prize for turning up.', 'רק אם מישהו כתב עליה. אין פרס על עצם ההגעה.')},
+    keep: {id: 'napkin-list', name: t('The napkin', 'המפית'), note: t('Only if somebody wrote on it. No prize for turning up.', 'רק אם מישהו כתב עליה. אין פרס על עצם ההגעה.'),
+      when: {any: [is('life:master:F25:quarrel', 'checked'), is('life:master:F25:end', 'again')]}},
     scenes: [
       sc({
         id: 'F25-S1', room: 'street', who: 'friend', after: [], slot: 'doorstep', spot: 'window', verb: 'talk',

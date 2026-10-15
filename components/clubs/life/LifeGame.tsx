@@ -19,7 +19,7 @@ import Link from 'next/link'
 import {Dye} from '@/components/master/Dye'
 import {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react'
 import {BOOT_START, BOOT_TIMEOUT_MS, bootReducer, failureCopyKey, probeWebgl, voxelFailure} from './boot'
-import {afterPlay, chapterOf, eventsOf, Life, meets, nextChapter, openChapter, playAmount, type Directive, type LifeStore} from '@/lib/life/universal/engine'
+import {afterPlay, chapterOf, eventsOf, Life, meets, nextChapter, openChapter, playAmount, untold, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import type {CardDef, Chapter, Effect, LifePack, LifeState} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
@@ -499,6 +499,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
     void enterAndSettle()
   }, [enterAndSettle])
 
+  const [asWas, setAsWas] = useState(false)
   const openChapterCard = useCallback(() => { setCardAt(0); setPhase('chapter') }, [])
 
   const begin = useCallback((fresh: boolean) => {
@@ -515,6 +516,15 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
     if (!l) return
     if (!next) { finishVisit(`/clubs/${pack.clubId}/life`); setPhase('finished'); return }
     l.dispatch(...openChapter(next))
+    openChapterCard()
+  }, [openChapterCard, pack])
+
+  const readNew = useCallback(() => {
+    const l = life.current
+    if (!l) return
+    const first = untold(pack, l.state)[0]
+    if (!first) return
+    l.dispatch(...openChapter(first))
     openChapterCard()
   }, [openChapterCard, pack])
 
@@ -726,6 +736,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
   const current = firstOpen >= 0 ? objectives[firstOpen]! : null
   const lastLine = !!talk && talk.view.index >= talk.view.lines.length - 1
   const speaker = !line || line.who === null ? null : line.who === 'me' ? copy.you! : chapter ? nameOf(pack, chapter, line.who) : line.who
+  const newChapters = phase === 'finished' ? untold(pack, state) : []
   const ending = chapter && state.done[chapter.id] ? chapter.endings[state.done[chapter.id]!] : null
   const keepsake = (id: string | undefined) => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return k } return null }
   const chapterCards: CardDef[] = chapter?.prelude ?? []
@@ -903,7 +914,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
             <p className={styles.serial}>{copy.ending} · {copy.age} <bdi>{chapter.age}</bdi></p>
             <h2 id="life-card-title" className={styles.cardTitle} {...story}>{ending.title}</h2>
             <p className={styles.lede} {...story}>{ending.body}</p>
-            {keepsake(ending.keep) && <div className={styles.kept}><KeepArt id={ending.keep!} tilt={-3} /><p className={styles.stamp}>{copy.kept}</p><p className={styles.keptName} {...story}>{keepsake(ending.keep)!.name}</p><p {...story}>{keepsake(ending.keep)!.note}</p></div>}
+            {keepsake(ending.keep) && state.keeps.includes(ending.keep!) && <div className={styles.kept}><KeepArt id={ending.keep!} tilt={-3} /><p className={styles.stamp}>{copy.kept}</p><p className={styles.keptName} {...story}>{keepsake(ending.keep)!.name}</p><p {...story}>{keepsake(ending.keep)!.note}</p></div>}
             <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={toNext} data-life="next-chapter">{nextChapter(pack, chapter.id, life.current?.state) ? copy.nextChapter : copy.theEnd}</button></div>
           </div>
         </section>
@@ -915,6 +926,16 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
             <p className={styles.serial}>{pack.club.name}</p>
             <h2 id="life-card-title" className={styles.cardTitle}>{copy.finished}</h2>
             <p className={styles.lede}>{copy.finishedNote}</p>
+            {!asWas && newChapters.length > 0 && (
+              <div className={styles.kept} data-life="new-chapters">
+                <p className={styles.stamp}>{copy.newChapters}</p>
+                <p className={styles.lede}>{(copy.newChaptersNote ?? '').replace('{n}', String(newChapters.length))}</p>
+                <div className={styles.actions}>
+                  <button type="button" className={`${styles.button} min-h-tap`} onClick={readNew} data-life="read-new">{copy.readNew}</button>
+                  <button type="button" className={`${styles.quiet} min-h-tap`} onClick={() => setAsWas(true)} data-life="keep-as-was">{copy.keepAsWas}</button>
+                </div>
+              </div>
+            )}
             <h3 className={styles.heading}>{copy.yourEndings}</h3>
             <ol className={styles.lifeLine}>
               {pack.chapters.filter(c => state.done[c.id]).map(c => <li key={c.id}><span><bdi>{c.age}</bdi></span><span {...story}>{c.endings[state.done[c.id]!]?.title ?? c.title}</span></li>)}

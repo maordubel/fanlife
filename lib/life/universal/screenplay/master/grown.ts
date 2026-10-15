@@ -172,7 +172,7 @@ export const MASTER_GROWN: ChapterScript[] = [
         action: [s(null, 'The board flicks over. Nothing on it concerns you. It looks like it does.', 'הלוח מתחלף. שום דבר בו לא נוגע אליך. זה נראה שכן.')],
         options: [
           o('trip', t('Take a trip you can pay for', 'לצאת למסע שאפשר לממן'), s('friend', 'We check the money first. I mean it. Before we pay, not after.', 'קודם בודקים את הכסף. ברצינות. לפני שמשלמים, לא אחרי.'),
-            [flag('life:master:F16:plan', 'trip'), bond('friend', 3), coins(-3)]),
+            [flag('life:master:F16:plan', 'trip'), bond('friend', 3), coins(-3)], {when: {min: ['coins', 3]}}),
           o('home', t('Host, or join, a local gathering', 'לארח או להצטרף למפגש מקומי'), s('stranger', 'Come in, mind the dog. Everyone here is early because I lied about the time.', 'תיכנס, תיזהר מהכלב. כולם כאן מוקדם כי שיקרתי לגבי השעה.'),
             [flag('life:master:F16:plan', 'home'), bond('stranger', 3), energy(-5)]),
           o('mine', t('Stay with your own goal', 'להמשיך ביעד האישי'), s('friend', 'Your thing, then. I will tell you how mine went and you will pretend it was better than yours.', 'הדבר שלך, אז. אספר לך איך שלי עבר ואתה תעמיד פנים שהוא היה יותר טוב משלך.'),
@@ -248,7 +248,7 @@ export const MASTER_GROWN: ChapterScript[] = [
           o('small', t('Keep the evening small', 'לשמור את הערב קטן'), s('elder', 'Small. Good. Small is how you keep it from shattering.', 'קטן. טוב. ככה שומרים שלא ישבר.'),
             [flag('life:master:F17:wait', 'small'), bond('elder', 3)]),
           o('life', t('Prepare the next thing in your life', 'להכין את הדבר הבא בחיים'), s('friend', 'You are going to do your errands tonight? Fine. I will tell you everything when it is over.', 'אתה תעשה סידורים הערב? בסדר. אספר לך הכול כשזה ייגמר.'),
-            [flag('life:master:F17:wait', 'life'), heart(1)]),
+            [flag('life:master:F17:wait', 'life'), heart(1)], {skip: ['F17-S2']}),
         ],
       }),
       sc({
@@ -376,7 +376,8 @@ export const MASTER_GROWN: ChapterScript[] = [
   chapter({
     id: 'F19', age: 32, act: 2, title: t('Another Season on the Shelf', 'עוד עונה על המדף'),
     intro: t('A shelf is a diary that cannot lie about what you chose to keep.', 'מדף הוא יומן שלא יכול לשקר לגבי מה בחרת לשמור.'),
-    keep: {id: 'shelf-piece', name: t('What you added to the shelf', 'מה שהוספת למדף'), note: t('Only if it was bought or handed to you. A new album does not open by age.', 'רק אם נקנה או נמסר לך. אלבום חדש לא נפתח לפי גיל.')},
+    keep: {id: 'shelf-piece', name: t('What you added to the shelf', 'מה שהוספת למדף'), note: t('Only if it was bought or handed to you. A new album does not open by age.', 'רק אם נקנה או נמסר לך. אלבום חדש לא נפתח לפי גיל.'),
+      when: {any: [is('life:master:F19:piece', 'bought'), is('life:master:F19:copy', 'swap'), is('life:master:F19:carry', 'chosen')]}},
     scenes: [
       sc({
         id: 'F19-S1', room: 'street', who: 'seller', after: [], spot: 'crates', slot: 'kiosk', verb: 'look',
@@ -396,7 +397,7 @@ export const MASTER_GROWN: ChapterScript[] = [
           o('ask', t('Ask to see it and where it came from', 'לבקש לראות ולברר מאיפה זה'), s('seller', 'Gladly. The story is half the price. You may ask without buying.', 'בשמחה. הסיפור הוא חצי מהמחיר. אפשר לשאול בלי לקנות.'),
             [flag('life:master:F19:piece', 'asked'), bond('seller', 3)]),
           o('buy', t('Buy it, if you really have the money', 'לקנות, אם באמת יש כסף פנוי'), s('seller', 'Fair price, and you know it. It is yours. Mind the corner.', 'מחיר הוגן, ואתה יודע את זה. זה שלך. תיזהר מהפינה.'),
-            [flag('life:master:F19:piece', 'bought'), coins(-4), heart(2)]),
+            [flag('life:master:F19:piece', 'bought'), coins(-4), heart(2)], {when: {min: ['coins', 4]}}),
           o('enough', t('Say you have enough already', 'לומר שיש לך כבר מספיק'), s('seller', 'Enough is a rare word at this table. Come, there is someone you should meet.', 'מספיק היא מילה נדירה בשולחן הזה. בוא, יש מישהו שכדאי שתפגוש.'),
             [flag('life:master:F19:piece', 'enough'), bond('seller', 2), bond('friend', 1)]),
         ],

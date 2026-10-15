@@ -8,5 +8,5 @@ export const t = (en: string, he: string): Words => [en, he]
 export const o = (id: string, text: Words, reply: Speech | Speech[], effects: Effect[] = [], more: Partial<Option> = {}): Option =>
   ({id, text, reply: Array.isArray(reply) && Array.isArray(reply[0]) ? reply as Speech[] : [reply as Speech], effects, ...more})
 export const sc = (x: SceneScript): SceneScript => x
-export const chapter = (x: {id: string; age: number; act: 1 | 2 | 3; title: Words; intro: Words; keep: {id: string; name: Words; note: Words}; scenes: SceneScript[]; when?: Cond}): ChapterScript =>
+export const chapter = (x: {id: string; age: number; act: 1 | 2 | 3; title: Words; intro: Words; keep: {id: string; name: Words; note: Words; when?: Cond}; scenes: SceneScript[]; when?: Cond}): ChapterScript =>
   ({id: x.id, age: x.age, act: x.act, title: x.title, intro: x.intro, keepsake: x.keep, scenes: x.scenes, ...(x.when ? {when: x.when} : {})})
