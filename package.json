@@ -29,6 +29,7 @@
     "life:budget": "tsx scripts/life/budget-audit.ts",
     "life:orphans": "tsx scripts/life/orphan-audit.ts",
     "life:actions": "node scripts/life/small-actions-probe-2026-09-20.mjs",
+    "life:master": "tsx scripts/life/master-screenplay.ts",
     "life:screenplay": "tsx scripts/life/ingest-screenplay-2026-09-20.ts",
     "life:screenplay-map": "tsx scripts/life/screenplay-map-2026-09-20.ts",
     "life:places": "tsx scripts/life/screenplay-places-2026-09-20.ts",

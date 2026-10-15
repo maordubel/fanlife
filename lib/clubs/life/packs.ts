@@ -21,6 +21,7 @@ import zrinjskiCast from '@/club-packs/zrinjski-mostar/life/cast.json'
 import zrinjskiTimeline from '@/club-packs/zrinjski-mostar/life/timeline.json'
 import zrinjskiMatches from '@/club-packs/zrinjski-mostar/matches.json'
 import zrinjskiAnchors from '@/club-packs/zrinjski-mostar/life/anchors.json'
+import zrinjskiMaster from '@/club-packs/zrinjski-mostar/life/master.json'
 import olympiacosSkin from '@/club-packs/olympiacos/life/skin.json'
 import olympiacosCast from '@/club-packs/olympiacos/life/cast.json'
 import aekSkin from '@/club-packs/aek-athens/life/skin.json'
@@ -45,6 +46,15 @@ export const LIFE_CAST: Record<string, CastManifest> = {
 export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
   'hapoel-tel-aviv': hapoelTimeline as TimelineManifest,
   'zrinjski-mostar': zrinjskiTimeline as TimelineManifest,
+}
+
+/**
+ * Master-screenplay chapters a pack opts into (bible §16). `draft` / `review` chapters are written but not in the life;
+ * only `approved` enters it. No row = the shared life exactly as before.
+ */
+export type LifeMasterManifest = {schemaVersion: 1; clubId: string; status: 'draft' | 'review' | 'approved'; chapters: string[]; note?: string}
+export const LIFE_MASTER: Record<string, LifeMasterManifest> = {
+  'zrinjski-mostar': zrinjskiMaster as LifeMasterManifest,
 }
 
 export const LIFE_ANCHORS: Record<string, AnchorSelection> = {

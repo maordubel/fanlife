@@ -9,7 +9,7 @@ import type {ClubData} from '@/lib/clubs/contract'
 import {REGISTRY} from '@/lib/master/registry'
 import {composeLife} from '@/lib/life/universal/compose'
 import type {ArchiveRef, LifePack} from '@/lib/life/universal/types'
-import {LIFE_ANCHORS, LIFE_CAST, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs'
+import {LIFE_ANCHORS, LIFE_CAST, LIFE_MASTER, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs'
 import {clubSkin} from './skins'
 
 const scriptOf = (s: string, fallback: string) => /[֐-׿]/.test(s) ? 'he' : /[Ͱ-Ͽ]/.test(s) ? 'el' : fallback === 'he' || fallback === 'el' ? 'en' : fallback
@@ -46,6 +46,8 @@ export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): Li
   if (!cast) pending.push('The family and the street have no names yet: roles keep their own word.')
   else if (cast.status !== 'approved') pending.push(`Cast names are ${cast.status}, not owner-approved.`)
   const selection = has(LIFE_ANCHORS)
+  const master = has(LIFE_MASTER)
+  if (master && master.status !== 'approved') pending.push(`Master chapters ${master.chapters.join(', ')} are ${master.status}, not owner-approved: they are not part of this life yet.`)
   const pack = composeLife({
     club: {id, name: data.identity.name, city: data.identity.city, country: data.identity.country},
     aliases: selection?.aliases ?? [],
@@ -53,6 +55,7 @@ export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): Li
     cast, timeline: has(LIFE_TIMELINE), selection,
     anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, dataVersion: data.version,
     storyLocale: story.locale,
+    master: master?.status === 'approved' ? master.chapters : [],
   })
   cache.set(key, pack)
   return pack
