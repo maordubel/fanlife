@@ -37,7 +37,7 @@ export const MASTER_LATE: ChapterScript[] = [
           o('after', t('Come only to the part afterwards', 'להגיע רק לחלק שאחרי'), s('friend', 'After is good. After is when we talk anyway.', 'אחרי זה טוב. אחרי זה כשמדברים בכל מקרה.'),
             [flag('life:master:F26:answer', 'after'), bond('friend', 2)]),
           o('not', t('Say not this time', 'להגיד לא הפעם'), s('friend', 'Not this time is not never. I will not ask twice in one breath.', 'לא הפעם זה לא אף פעם. אני לא אשאל פעמיים באותה נשימה.'),
-            [flag('life:master:F26:answer', 'declined'), bond('friend', 1)]),
+            [flag('life:master:F26:answer', 'declined'), bond('friend', 1)], {skip: ['F26-S2']}),
         ],
       }),
       sc({

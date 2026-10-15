@@ -9,6 +9,8 @@ export type Option = {
   wearAdd?: 'shirt' | 'scarf'
   /** what is said instead of `reply` when the person this scene is with is not here */
   soloReply?: Speech[]
+  /** scenes (ids) this choice leaves out for good: they count as done, the way on skips them, and nothing they would have said is told */
+  skip?: string[]
 }
 /** When several hold at once they are told together, in the order written, ahead of the scene's own opening. */
 export type Callback = {when: Cond; lines: Speech[]; /** callbacks sharing a group never hold together (three outcomes of one thing) */ group?: string}
@@ -46,7 +48,7 @@ export type SceneScript = {
 }
 export type ChapterScript = {
   id: string; age: number; act: 1 | 2 | 3; title: Words; intro: Words
-  keepsake: {id: string; name: Words; note: Words}
+  keepsake: {id: string; name: Words; note: Words; /** only given when this holds as the last choice is made; omitted = always */ when?: Cond}
   scenes: SceneScript[]
   /** present only for the lives this holds for (a route); evaluated when the chapter's turn comes */
   when?: Cond

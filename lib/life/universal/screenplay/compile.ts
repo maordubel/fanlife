@@ -155,11 +155,20 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
     }
 
     // ───── what doing it does
-    const successors = scenes.filter((m, j) => afterOf(m, j).includes(scene.id))
-    const next = successors.length === 1 && afterOf(successors[0]!, scenes.indexOf(successors[0]!)).length === 1 && !successors[0]!.when ? successors[0]! : null
+    const successorOf = (from: SceneScript): SceneScript | null => {
+      const ss = scenes.filter((m, j) => afterOf(m, j).includes(from.id))
+      return ss.length === 1 && afterOf(ss[0]!, scenes.indexOf(ss[0]!)).length === 1 && !ss[0]!.when ? ss[0]! : null
+    }
     const here = scene.locations?.[0]?.room ?? scene.room
-    const mustCut = !!next && (next.cut === true || !next.locations && (!inTown(here) || !inTown(next.room) || (pathRooms(here, next.room)?.length ?? 99) > 4))
-    const destinations = next && mustCut ? (next.locations ?? [{room: next.room, when: {all: []} as Cond}]) : [null]
+    /** where this option leads: the next errand, past any the option itself leaves out */
+    const wayOn = (o: Option) => {
+      const skipped: SceneScript[] = []
+      let next = successorOf(scene)
+      while (next && o.skip?.includes(next.id)) { skipped.push(next); next = successorOf(next) }
+      const mustCut = !!next && (next.cut === true || !next.locations && (!inTown(here) || !inTown(next.room) || (pathRooms(here, next.room)?.length ?? 99) > 4))
+      return {next, skipped, destinations: next && mustCut ? (next.locations ?? [{room: next.room, when: {all: []} as Cond}]) : [null]}
+    }
+    for (const o of scene.options) for (const id of o.skip ?? []) if (!ids.has(id) || ids.get(id)! <= n) throw new Error(`STORY_SKIP:${script.id}.${scene.id}.${o.id}→${id}`)
     const last = n === scenes.length - 1 || !!scene.final
     const actionBranches: Branch[] = []
     const wearBranches = (o: Option): {when?: Cond; fx: Effect[]}[] => {
@@ -171,12 +180,16 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
         {when: {all: [{wears: o.wearAdd}]}, fx: [{e: 'wear', what: o.wearAdd}]},
       ]
     }
-    for (const o of scene.options) for (const dest of destinations) for (const wear of wearBranches(o)) for (const solo of present ? [true, false] : [false]) {
+    const keepWhen = script.keepsake.when
+    for (const o of scene.options) for (const keeps of last && keepWhen ? [true, false] : [true]) {
+    const {next, skipped, destinations} = wayOn(o)
+    const keepCond: Cond | undefined = last && keepWhen ? (keeps ? settle(keepWhen, o.effects ?? []) : {none: [settle(keepWhen, o.effects ?? [])]}) : undefined
+    for (const dest of destinations) for (const wear of wearBranches(o)) for (const solo of present ? [true, false] : [false]) {
       const done: Effect[] = [...(scene.sound ? [{e: 'sound' as const, cue: scene.sound}] : []), ...(o.effects ?? []), ...wear.fx,
-        {e: 'flag', k: `life:decision:${scene.id}`, v: o.id}, {e: 'flag', k: doneF(scene.id)}]
+        {e: 'flag', k: `life:decision:${scene.id}`, v: o.id}, {e: 'flag', k: doneF(scene.id)}, ...skipped.map(x => ({e: 'flag' as const, k: doneF(x.id)}))]
       if (last) for (const k of ECHO) done.push({e: 'flag', k, v: false})
       if (last) {
-        done.push({e: 'flag', k: `story:${script.id}:complete`}, {e: 'keep', item: script.keepsake.id}, {e: 'end', ending: o.id})
+        done.push({e: 'flag', k: `story:${script.id}:complete`}, ...(keeps ? [{e: 'keep' as const, item: script.keepsake.id}] : []), {e: 'end', ending: o.id})
         if (endingFrom.get(o.id) && endingFrom.get(o.id) !== scene.id) throw new Error(`STORY_ENDING_DUP:${script.id}.${o.id}`)
         endingFrom.set(o.id, scene.id)
         endings[o.id] = {title: word(script.title), body: word(o.text) + ' — ' + o.reply.map(s => s[he ? 2 : 1]).join(' '), keep: script.keepsake.id}
@@ -189,9 +202,10 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
         ? [{e: 'play', game: scene.game, id: `${scene.id}:${o.id}`, then: done, ...(scene.reward?.good ? {good: scene.reward.good} : {}), ...(scene.reward?.slip ? {slip: scene.reward.slip} : {})}]
         : done
       actionBranches.push({
-        when: allOf(doing, {is: [pick, o.id]}, dest ? settle(dest.when, o.effects ?? []) : undefined, wear.when, present ? (solo ? {none: [present]} : present) : undefined),
+        when: allOf(doing, {is: [pick, o.id]}, keepCond, dest ? settle(dest.when, o.effects ?? []) : undefined, wear.when, present ? (solo ? {none: [present]} : present) : undefined),
         lines: lines(spoken.length ? spoken : [alone]), then: effects,
       })
+    }
     }
     talks.push({id: task, branches: [...actionBranches, {lines: sayDone}]})
   })

@@ -113,6 +113,11 @@ export function nextChapter(pack: LifePack, id: string, state?: LifeState): Chap
   return null
 }
 
+/** Chapters this life has not lived and could: a book that grew after the save was written. Routes not taken are not counted. */
+export function untold(pack: LifePack, state: LifeState): Chapter[] {
+  return pack.chapters.filter(c => !state.done[c.id] && (!c.when || meets(state, c.when)))
+}
+
 /** The rows that open a chapter: the chapter itself, then the room the day begins in. */
 export function openChapter(chapter: Chapter): LifeEvent[] {
   return [{t: 'chapter', id: chapter.id}, {t: 'moved', room: chapter.start.room, spawn: chapter.start.spawn, time: chapter.start.time}]
