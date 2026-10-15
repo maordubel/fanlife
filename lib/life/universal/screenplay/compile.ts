@@ -242,5 +242,6 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
     start: {room: first.locations?.[0]?.room ?? first.room, spawn: 'start', time: first.night ? 'night' : 'day'},
     cast: [...follows, ...mains, ...companions], spots, doors, beats, talks, objectives, endings,
     keepsakes: [{id: script.keepsake.id, name: word(script.keepsake.name), note: word(script.keepsake.note)}],
+    ...(script.when ? {when: script.when} : {}),
   }
 }

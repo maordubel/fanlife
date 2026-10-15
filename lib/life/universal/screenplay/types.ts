@@ -48,6 +48,8 @@ export type ChapterScript = {
   id: string; age: number; act: 1 | 2 | 3; title: Words; intro: Words
   keepsake: {id: string; name: Words; note: Words}
   scenes: SceneScript[]
+  /** present only for the lives this holds for (a route); evaluated when the chapter's turn comes */
+  when?: Cond
 }
 export const flag = (k: string, v: string | number | boolean = true): Effect => ({e: 'flag', k, v})
 export const is = (k: string, v: string | number | boolean): Cond => ({is: [k, v]})

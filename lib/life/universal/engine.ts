@@ -105,9 +105,12 @@ export const afterPlay = (d: Extract<Directive, {d: 'play'}>, result: PlayResult
 export const playAmount = (d: Extract<Directive, {d: 'play'}>): number => [...d.then, ...d.good].reduce((n, fx) => n + (fx.e === 'coins' && fx.by > 0 ? fx.by : 0), 0)
 
 export const chapterOf = (pack: LifePack, id: string | null): Chapter | null => pack.chapters.find(c => c.id === id) ?? null
-export function nextChapter(pack: LifePack, id: string): Chapter | null {
+/** The chapter after this one. With the state, chapters whose `when` does not hold for this life (a route not taken) are skipped. */
+export function nextChapter(pack: LifePack, id: string, state?: LifeState): Chapter | null {
   const i = pack.chapters.findIndex(c => c.id === id)
-  return i >= 0 ? pack.chapters[i + 1] ?? null : null
+  if (i < 0) return null
+  for (let j = i + 1; j < pack.chapters.length; j++) { const c = pack.chapters[j]!; if (!state || !c.when || meets(state, c.when)) return c }
+  return null
 }
 
 /** The rows that open a chapter: the chapter itself, then the room the day begins in. */

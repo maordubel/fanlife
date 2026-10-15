@@ -505,12 +505,12 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
     if (!l) return
     sound.current?.wake()
     if (fresh || !l.state.started || !chapterOf(pack, l.state.chapter)) { l.begin(); openChapterCard(); return }
-    if (l.state.done[l.state.chapter!]) { setPhase(nextChapter(pack, l.state.chapter!) ? 'ending' : 'finished'); return }
+    if (l.state.done[l.state.chapter!]) { setPhase(nextChapter(pack, l.state.chapter!, l.state) ? 'ending' : 'finished'); return }
     openChapterCard()
   }, [openChapterCard, pack])
 
   const toNext = useCallback(() => {
-    const l = life.current, next = l?.state.chapter ? nextChapter(pack, l.state.chapter) : null
+    const l = life.current, next = l?.state.chapter ? nextChapter(pack, l.state.chapter, l.state) : null
     if (!l) return
     if (!next) { finishVisit(`/clubs/${pack.clubId}/life`); setPhase('finished'); return }
     l.dispatch(...openChapter(next))
@@ -902,7 +902,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
             <h2 id="life-card-title" className={styles.cardTitle} {...story}>{ending.title}</h2>
             <p className={styles.lede} {...story}>{ending.body}</p>
             {keepsake(ending.keep) && <div className={styles.kept}><KeepArt id={ending.keep!} tilt={-3} /><p className={styles.stamp}>{copy.kept}</p><p className={styles.keptName} {...story}>{keepsake(ending.keep)!.name}</p><p {...story}>{keepsake(ending.keep)!.note}</p></div>}
-            <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={toNext} data-life="next-chapter">{nextChapter(pack, chapter.id) ? copy.nextChapter : copy.theEnd}</button></div>
+            <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={toNext} data-life="next-chapter">{nextChapter(pack, chapter.id, life.current?.state) ? copy.nextChapter : copy.theEnd}</button></div>
           </div>
         </section>
       )}

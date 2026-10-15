@@ -151,7 +151,7 @@ export const MASTER_CHILDHOOD = [
 
   // ───────────────────────────────────────────────────────────────────────── F03 · the shirt in the window
   chapter({
-    id: 'F03', age: 10, act: 1, title: t('The Shirt in the Window', 'החולצה בחלון'),
+    id: 'F03', age: 9, act: 1, title: t('The Shirt in the Window', 'החולצה בחלון'),
     intro: t('It has been there all month. You have walked past it nineteen times, and you did not count.', 'היא שם כבר חודש. עברת לידה תשע־עשרה פעמים, ולא ספרת.'),
     keep: {id: 'window-shirt', name: t('What you did about the shirt', 'מה שעשית בקשר לחולצה'), note: t('A shirt, an old one, or something you made. Not a shirt you only wished for.', 'חולצה, חולצה ישנה, או משהו שעשית. לא חולצה שרק איחלת לעצמך.')},
     scenes: [
