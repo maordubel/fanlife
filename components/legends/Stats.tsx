@@ -1,5 +1,6 @@
 'use client'
 import {useEffect,useState,useTransition} from 'react'
+import {CoverSheet} from './CoverSheet'
 import {legendsHistory,legendsSeason} from '@/app/all-football/legends/actions'
 import type {SeasonArchive} from '@/lib/legends/history'
 import {Sheet} from './Sheet'
@@ -78,7 +79,7 @@ function Numbers({v}:{v:CareerView}){
  </div>
 }
 function History({v}:{v:CareerView}){
- const [full,setFull]=useState<number[]|null>(null),[open,setOpen]=useState<number|null>(null)
+ const [full,setFull]=useState<number[]|null>(null),[open,setOpen]=useState<number|null>(null),[cover,setCover]=useState<number|null>(null)
  // which seasons have a document of their own is asked once, only when this list is opened (F04)
  useEffect(()=>{if(!v.history.length)return;let live=true;legendsHistory(v.id).then(r=>{if(live)setFull(r.ok?r.full:[])});return()=>{live=false}},[v.id,v.history.length])
  if(!v.history.length)return <section className="lgm-panel"><p className="lgm-kicker">Past seasons</p><p className="lgm-fine">The first season is still being written.</p></section>
@@ -89,8 +90,10 @@ function History({v}:{v:CareerView}){
     <p className="tl-history-place"><b>{h.champion?'Champions':ordinal(h.place)}</b><small>of {h.of}{h.playoff?' · after a play-off':''}</small></p>
     <dl><div><dt>Champions</dt><dd>{champ??'Not kept in this career’s record'}</dd></div><div><dt>Record</dt><dd>{h.w}-{h.d}-{h.l} · {h.points} pts · {h.gf}–{h.ga}</dd></div><div><dt>Top scorer</dt><dd>{h.topScorer?`${h.topScorer.name} · ${h.topScorer.goals}`:'—'}</dd></div><div><dt>Board grant</dt><dd>€{h.grant}M</dd></div></dl>
     {full===null?null:full.includes(h.ordinal)?<button type="button" className="lgm-link min-h-tap" onClick={()=>setOpen(h.ordinal)} data-testid={`legends-season-${h.ordinal}`}>Open season {h.ordinal}</button>:<p className="lgm-fine">Summary only — this season was played before full history was kept.</p>}
+   <button type="button" className="lgm-link min-h-tap" onClick={()=>setCover(h.ordinal)} data-testid={`legends-cover-open-${h.ordinal}`}>Magazine cover</button>
    </li>})}</ol>
   {open!==null?<SeasonSheet id={v.id} ordinal={open} onClose={()=>setOpen(null)}/>:null}
+  {cover!==null?<CoverSheet careerId={v.id} season={cover} onClose={()=>setCover(null)}/>:null}
  </section>
 }
 /** one finished season in full: the table, every result, the leaders and the squad that finished it */

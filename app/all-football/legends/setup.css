@@ -172,3 +172,26 @@
 .lgm-compare table{inline-size:100%;table-layout:fixed}
 .lgm-compare td,.lgm-compare th{overflow-wrap:anywhere}
 .lgm-compare-bill{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+
+/* U04 · the hall of fame (Club tab) */
+.lgm-fame .fame-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.lgm-fame .fame-tiles div{padding:10px 12px;border:1px solid var(--lgm-line,currentColor);background:var(--lgm-card,transparent)}
+.lgm-fame .fame-tiles dt{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.lgm-fame .fame-tiles dd{margin:2px 0 0;font-size:1.4rem;font-weight:800}
+.lgm-fame .fame-line{margin:4px 0;font-size:.92rem}
+.lgm-fame .fame-cols{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:12px}
+.lgm-fame .fame-list h4{margin:0 0 4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.lgm-fame .fame-list ol{margin:0;padding:0;list-style:none}
+.lgm-fame .fame-list li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px dotted var(--lgm-line,currentColor)}
+.lgm-fame .fame-note{margin-top:12px;padding:8px 10px;border:1px dashed var(--lgm-line,currentColor);font-size:.85rem}
+@media (min-width:720px){.lgm-fame .fame-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}.lgm-fame .fame-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* U05 · the magazine cover sheet */
+.lgm-cover{display:grid;gap:12px}
+.lgm-cover .cover-pick{display:flex;flex-wrap:wrap;gap:8px}
+.lgm-cover .cover-preview{display:block;width:100%;max-width:340px;height:auto;margin:0 auto;border:1px solid var(--lgm-line,currentColor)}
+.lgm-cover .cover-preview[data-format="feed"]{max-width:420px}
+.lgm-cover .cover-alias{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.9rem}
+.lgm-cover .cover-alias input[type=text],.lgm-cover .cover-alias input:not([type]){min-height:44px;padding:0 10px;max-width:100%}
+.lgm-cover .cover-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.lgm-cover .lgm-ghost[data-on]{background:var(--lgm-night);color:var(--lgm-ivory)}

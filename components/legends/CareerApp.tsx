@@ -22,6 +22,7 @@ import {CareerNav,type Tab} from './CareerNav'
 import {AssistantNotes} from './AssistantNote'
 import {MatchReportCard} from './MatchReportCard'
 import {CompareSheet} from './CompareSheet'
+import HallOfFame from './HallOfFame'
 import {ClubMark,ShirtProvider} from './Shirts'
 import type {CareerShirt} from '@/lib/legends/shirts'
  import {useDressingRoom} from './Talk'
@@ -180,6 +181,7 @@ function Club({v,friendlies}:{v:CareerView;friendlies?:import('react').ReactNode
   <section className="lgm-panel"><p className="lgm-kicker">The honours board</p>
    {v.history.length?<ol className="lgm-honours">{v.history.map(h=><li key={h.ordinal} data-champion={h.champion||undefined}><b>Season {h.ordinal}</b><span>{h.champion?'Champions':`${ordinal(h.place)} of ${h.of}`} · {h.points} pts · {h.w}-{h.d}-{h.l}</span>{h.topScorer?<small>Top scorer {h.topScorer.name} ({h.topScorer.goals})</small>:null}</li>)}</ol>:<p className="lgm-fine">The first season is still being written.</p>}
   </section>
+  <HallOfFame careerId={v.id} seasons={v.history.length} team={club=>v.clubs.find(x=>x.club===club)?.name??club}/>
   <section className="lgm-panel"><p className="lgm-kicker">The manager · {v.reputation} reputation</p>
    <ul className="lgm-abilities">{v.abilities.map(a=><li key={a.id} data-open={a.open||undefined}><b>{a.label}</b><small>{a.open?a.hint:`Opens at ${a.at} reputation — ${a.hint.toLowerCase()}`}</small></li>)}</ul>
    <p className="lgm-fine">Reputation comes from wins, titles and runs. It opens management tools — never strength on the pitch.</p>
