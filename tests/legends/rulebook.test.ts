@@ -2,10 +2,10 @@ import {describe,expect,it} from 'vitest'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {DEFAULT_SETTINGS,LEGENDS_RULES as R,patchSettings,readSettings} from '@/lib/legends/config'
 import {eligible} from '@/lib/legends/catalog'
-import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,slotsOf,type Action,type Intent} from '@/lib/legends/career'
+import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,slotsOf,bidsOf,type Action,type Intent} from '@/lib/legends/career'
 import {afterMatch,fresh} from '@/lib/legends/discipline'
 import {botDraft,deal,draftMove,emptyDraft,groups,TIER_PRICES} from '@/lib/legends/draft'
-import {achievements,capBonuses,nextSeasonGrant,saleQuote} from '@/lib/legends/economy'
+import {achievements,capBonuses,nextSeasonGrant,saleQuote,finalProceeds} from '@/lib/legends/economy'
 import {run} from '@/lib/legends/engine'
 import {autopilot,matchLab} from '@/lib/legends/lab'
 import {fixturesFor,roundsFor,standings,titleTie} from '@/lib/legends/league'
@@ -92,6 +92,21 @@ describe('the draft (§1.2, D01–D07)',()=>{
 })
 
 describe('money (§1.3, E01–E05)',()=>{
+ it('F02 · a bid cannot lift a man bought and never played above what he cost — the final amount is guarded, whatever the premium',()=>{
+  let seen=0
+  for(let i=0;i<24;i++){
+   let c=toWindow(drafted(newCareer(`f02seed${String(i).padStart(10,'0')}`)))
+   const buy=slotsOf(c).find(x=>x.price<=me(c).cash);if(!buy)continue
+   c=act(c,{kind:'buy',card:buy.id});c=act(c,{kind:'list',card:buy.id,listed:true})
+   const bid=bidsOf(c).find(b=>b.card===buy.id);if(!bid)continue
+   seen++
+   expect(bid.fee,`bid fee for a €${buy.price}M man never played`).toBeLessThanOrEqual(buy.price+1e-9)
+   const before=me(c).cash,after=me(act(c,{kind:'bid',card:buy.id,accept:true})).cash
+   expect(after-before).toBeLessThanOrEqual(buy.price+1e-9)
+  }
+  expect(seen).toBeGreaterThan(3)
+  expect(finalProceeds(3.1,3,0)).toBe(3);expect(finalProceeds(3.1,3,1)).toBe(3.1)
+ })
  it('E01/E02 · before an official appearance a sale never beats the price paid; after it the market decides within 80–120%',()=>{
   for(const base of [1,2,3,4,5])for(const stars of [1,3,5]){
    const q0=saleQuote(base,base,0,stars,DEFAULT_SETTINGS);expect(q0.net).toBeLessThanOrEqual(base)
@@ -276,5 +291,34 @@ describe('free line choice (13.10.2026)',()=>{
   expect(d.rerollsLeft).toBe(3)
   const fw=mv(mv(d,{kind:'group',group:'FW'}),{kind:'reroll'});expect(fw.rerollsLeft).toBe(2)
   const back=mv(fw,{kind:'group',group:'MF'});expect(back.offers.map(o=>o.id)).toEqual(mf)
+ })
+})
+
+import {carryArmband} from '@/lib/legends/squad'
+describe('F06 · the captain and the vice are the manager’s appointments (15.10.2026)',()=>{
+ const base={formation:'4-4-2',xi:['a','b','c'],bench:[],tactics:{approach:'balanced',pressing:'medium',tempo:'normal'}} as never as import('@/lib/legends/types').Lineup
+ it('a rebuilt eleven keeps both while they are in the squad — even benched; nobody is both',()=>{
+  const next={...base,captain:'z'} as import('@/lib/legends/types').Lineup
+  expect(carryArmband({captain:'a',vice:'b'},next,()=>true)).toMatchObject({captain:'a',vice:'b'})
+  expect(carryArmband({captain:'a',vice:'a'},next,()=>true).vice).toBeUndefined()
+  expect(carryArmband({captain:'a',vice:'b'},next,id=>id!=='a')).toMatchObject({captain:'b'})
+  expect(carryArmband({captain:'a',vice:'b'},next,id=>id!=='a').vice).toBeUndefined()
+  expect(carryArmband({captain:'a',vice:'b'},next,id=>id!=='b')).toMatchObject({captain:'a'})
+  expect(carryArmband({},next,()=>true).captain).toBe('z')
+ })
+ it('a swap of a third man leaves the captain and the vice; swapping the captain out promotes the vice',()=>{
+  let tested=0
+  for(let i=0;i<12&&tested<2;i++){
+   let c=toWindow(drafted(newCareer(`f06seed${String(i).padStart(10,'0')}`)));const t=me(c),xi=t.lineup.xi
+   const [cap,vice]=[xi[0]!,xi[1]!]
+   c=act(c,{kind:'lineup',formation:t.lineup.formation,xi:t.lineup.xi,bench:t.lineup.bench,tactics:t.lineup.tactics,captain:cap,vice})
+   const mt=me(c),card=(id:string)=>c.catalog.cards.find(x=>x.id===id)!
+   const inc=slotsOf(c).find(x=>mt.squad.some(s=>xi.includes(s.id)&&![cap,vice].includes(s.id)&&card(s.id).pos===x.pos)&&x.price<=mt.cash+3)
+   if(!inc)continue
+   const out=mt.squad.find(s=>xi.includes(s.id)&&![cap,vice].includes(s.id)&&card(s.id).pos===inc.pos)!
+   const r=applyAction(c,{kind:'swap',sell:out.id,buy:inc.id,key:'k-f06-swap1',rev:c.revision} as Action,ctx);if(!r.ok)continue
+   expect(me(r.career).lineup.captain).toBe(cap);expect(me(r.career).lineup.vice).toBe(vice);tested++
+  }
+  expect(tested).toBeGreaterThan(0)
  })
 })

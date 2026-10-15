@@ -134,3 +134,4 @@
 .lgm-bd-bar u { inline-size: var(--a); background: var(--mag-white); } .lgm-bd-bar s { inline-size: var(--b); background: var(--mag-lamp); margin-inline-start: auto; }
 @media (max-width: 520px) { .lgm-bd-xi { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .lgm-bd-bar u, .lgm-bd-bar s { transition: none; } }
+.lgm-live .lgm-live-err { margin: 0; padding: 8px 12px; border: 3px solid var(--mag-ink); background: var(--mag-lamp); color: var(--mag-ink); font: 700 14px/1.35 var(--mag-body); }

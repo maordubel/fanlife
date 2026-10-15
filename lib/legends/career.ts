@@ -4,10 +4,10 @@ import {ENGINE_VERSION,LEGENDS_RULES as R,RULE_VERSION,roundTenths,type LegendsS
 import {aiWindow,prepareEmergency} from './ai'
 import {afterBye,afterMatch,available,fresh,newSeason,type MatchBook} from './discipline'
 import {botDraft,budgetOf,confirmCheck,minCostToFinish,draftMove,emptyDraft,type DraftMove} from './draft'
-import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScore} from './economy'
+import {abilitiesAt,achievements,capBonuses,finalProceeds,nextSeasonGrant,saleQuote,seasonScore} from './economy'
 import {checkDecision,maxStopsOf,run,stopsV4,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
-import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
+import {armbandNote,bestLineup,captainOf,carryArmband,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {bidsFor,buySlots,windowKey} from './market'
 import {applyTalk,decayMood} from './morale'
 import {pressById,pressFor,type PressQ} from './press'
@@ -172,8 +172,10 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const squad=t.squad.filter(x=>x.id!==s.id),err=squadError(squad)
    if(err)return bad(`${err} Swap him for someone instead.`)
    const q=saleQuote(card.price,s.paid,s.apps,card.stars,c.settings)
-   const lineup=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup:t.lineup
-   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`sell:${a.key}`,kind:'sell',amount:q.net,card:card.id,note:`€${q.quoted}M quoted · €${roundTenths(q.fee+q.guard)}M fees`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
+   const rebuilt=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics):null
+   const lineup=rebuilt?carryArmband(t.lineup,rebuilt,id=>squad.some(x=>x.id===id)):t.lineup.captain===s.id||t.lineup.vice===s.id?carryArmband(t.lineup,t.lineup,id=>squad.some(x=>x.id===id)):t.lineup
+   const armband=armbandNote(t.lineup,s.id,card.name,t.lineup.vice?catalogMap(c).get(t.lineup.vice)?.name:undefined)
+   return {ok:true,...(armband?{note:armband}:{}),career:{...pay(withMe(c,{...t,squad,lineup}),{key:`sell:${a.key}`,kind:'sell',amount:finalProceeds(q.net,s.paid,s.apps),card:card.id,note:`€${q.quoted}M quoted · €${roundTenths(q.fee+q.guard)}M fees`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
   }
   case 'list':{
    if(c.phase==='draft'||c.live)return bad('Not now.','closed')
@@ -188,8 +190,10 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const s=t.squad.find(x=>x.id===a.card),card=s&&catalogMap(c).get(s.id);if(!s||!card)return bad('He is not in your squad.')
    const squad=t.squad.filter(x=>x.id!==s.id),err=squadError(squad)
    if(err)return bad(`${err} Swap him for someone instead.`)
-   const lineup=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup:t.lineup
-   return {ok:true,career:{...pay(withMe(c,{...t,squad,lineup}),{key:`bid:${a.key}`,kind:'sell',amount:bid.fee,card:card.id,note:`${bid.clubName} bid €${bid.fee}M`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
+   const rebuilt=t.lineup.xi.includes(s.id)||t.lineup.bench.includes(s.id)?bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics):null
+   const lineup=rebuilt?carryArmband(t.lineup,rebuilt,id=>squad.some(x=>x.id===id)):t.lineup.captain===s.id||t.lineup.vice===s.id?carryArmband(t.lineup,t.lineup,id=>squad.some(x=>x.id===id)):t.lineup
+   const armband=armbandNote(t.lineup,s.id,card.name,t.lineup.vice?catalogMap(c).get(t.lineup.vice)?.name:undefined)
+   return {ok:true,...(armband?{note:armband}:{}),career:{...pay(withMe(c,{...t,squad,lineup}),{key:`bid:${a.key}`,kind:'sell',amount:finalProceeds(bid.fee,s.paid,s.apps),card:card.id,note:`${bid.clubName} bid €${bid.fee}M`},ctx.now),soldThisWindow:[...c.soldThisWindow,card.id],transferList:(c.transferList??[]).filter(x=>x!==card.id)}}
   }
   case 'swap':{
    if(!windowOpen(c))return bad('The transfer window is shut.','closed')
@@ -199,14 +203,16 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(t.squad.some(s=>s.id===inc.id))return bad(`${inc.name} is already in your squad.`)
    if(!slotsOf(c).some(x=>x.id===inc.id))return bad(`${inc.name} is not on the market this window — only five men are.`)
    if(c.soldThisWindow.includes(inc.id))return bad(`${inc.name} left in this window.`)
-   const q=saleQuote(oc.price,out.paid,out.apps,oc.stars,c.settings),cash=roundTenths(t.cash+q.net-inc.price)
-   if(cash<-1e-9)return bad(`After the sale you would have €${roundTenths(t.cash+q.net)}M; ${inc.name} costs €${inc.price}M.`)
+   const q=saleQuote(oc.price,out.paid,out.apps,oc.stars,c.settings),net=finalProceeds(q.net,out.paid,out.apps),cash=roundTenths(t.cash+net-inc.price)
+   if(cash<-1e-9)return bad(`After the sale you would have €${roundTenths(t.cash+net)}M; ${inc.name} costs €${inc.price}M.`)
    const squad=[...t.squad.filter(x=>x.id!==out.id),{id:inc.id,quota:inc.pos,paid:inc.price,apps:0,appsTotal:0,goals:0,joined:c.season.ordinal}]
    const err=squadError(squad);if(err)return bad(err)
-   const lineup=bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)??t.lineup
-   let next=pay(withMe(c,{...t,squad,lineup}),{key:`swap-sell:${a.key}`,kind:'sell',amount:q.net,card:oc.id,note:`swap · €${q.quoted}M quoted`},ctx.now)
+   const rebuilt=bestLineup(squad.map(x=>catalogMap(c).get(x.id)!).filter(x=>available(t.status[x.id])),t.lineup.formation,t.lineup.tactics)
+   const lineup=rebuilt?carryArmband(t.lineup,rebuilt,id=>squad.some(x=>x.id===id)):t.lineup
+   const armband=armbandNote(t.lineup,out.id,oc.name,t.lineup.vice?catalogMap(c).get(t.lineup.vice)?.name:undefined)
+   let next=pay(withMe(c,{...t,squad,lineup}),{key:`swap-sell:${a.key}`,kind:'sell',amount:net,card:oc.id,note:`swap · €${q.quoted}M quoted`},ctx.now)
    next=pay(next,{key:`swap-buy:${a.key}`,kind:'buy',amount:-inc.price,card:inc.id,note:'swap'},ctx.now)
-   return {ok:true,career:{...next,soldThisWindow:[...c.soldThisWindow,oc.id]}}
+   return {ok:true,...(armband?{note:armband}:{}),career:{...next,soldThisWindow:[...c.soldThisWindow,oc.id]}}
   }
   case 'lineup':{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
@@ -231,8 +237,8 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(!lu)return bad('Not enough fit men for an eleven.')
    // the manager's armband stays on his man when he is still in the eleven
    // the manager's captain and vice stay his while they are in the squad; the armband itself is worked out per match (`captainOf`)
-   const inSquad=(id?:string)=>!!id&&t.squad.some(s=>s.id===id),cap=inSquad(t.lineup.captain)?t.lineup.captain:lu.captain,vice=inSquad(t.lineup.vice)&&t.lineup.vice!==cap?t.lineup.vice:undefined
-   return {ok:true,career:withMe(c,{...t,lineup:{...lu,...(cap?{captain:cap}:{}),...(vice?{vice}:{})}})}
+   const inSquad=(id?:string)=>!!id&&t.squad.some(s=>s.id===id),kept=carryArmband(t.lineup,lu,inSquad)
+   return {ok:true,career:withMe(c,{...t,lineup:kept})}
   }
   case 'close-window':{
    if(!windowOpen(c))return bad('No window is open.','closed')
@@ -328,7 +334,7 @@ function prepareSide(c:Career,t:Team,ctx:Ctx):{career:Career;note:string|null}|{
  const men=fieldable(team,id=>cardOf(c,team,id))
  if(t.ai||team.emergency.length||lineupError(team.lineup,men)){
   const own=!t.ai&&!lineupError(team.lineup,men)
-  if(!own){const lu=bestLineup(men,team.lineup.formation,team.lineup.tactics);if(!lu)return {error:'Not enough fit men for an eleven, even with the archive’s help.'};team={...team,lineup:lu};if(!t.ai)repaired=true}
+  if(!own){const lu=bestLineup(men,team.lineup.formation,team.lineup.tactics);if(!lu)return {error:'Not enough fit men for an eleven, even with the archive’s help.'};team={...team,lineup:t.ai?lu:carryArmband(team.lineup,lu,id=>team.squad.some(x=>x.id===id))};if(!t.ai)repaired=true}
  }
  const teams=c.teams.map(x=>x.club===t.club?team:x)
  return {career:{...c,teams,ledger:[...c.ledger,...e.ledger]},note:t.ai?null:[e.note,repaired?'Your eleven had an unavailable man — the best fit eleven was picked.':null].filter(Boolean).join(' ')||null}

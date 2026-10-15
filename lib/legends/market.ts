@@ -1,6 +1,6 @@
 import {hash} from '@/lib/clubs/rumble-rng'
 import {roundTenths} from './config'
-import {saleQuote} from './economy'
+import {finalProceeds,saleQuote} from './economy'
 import type {Card,Career} from './types'
 import {eraWeight} from './era'
 
@@ -31,7 +31,7 @@ export function bidsFor(c:Career,listed:string[],declined:string[],byId:(id:stri
   if(hash(`${c.id}:bid:${windowKey(c)}:${id}`)%100<15)continue // one listing in seven draws no bid this window
   const r=rivals[hash(`${c.id}:bidder:${windowKey(c)}:${id}`)%rivals.length]!
   const f=0.9+0.3*((hash(`${c.id}:bidfee:${windowKey(c)}:${id}`)%1000)/1000)
-  out.push({card:id,club:r.club,clubName:r.name,quoted:q.net,fee:roundTenths(Math.max(0.1,q.net*f))})
+  out.push({card:id,club:r.club,clubName:r.name,quoted:q.net,fee:finalProceeds(Math.max(0.1,q.net*f),s.paid,s.apps)})
  }
  return out
 }

@@ -19,6 +19,12 @@ export function saleQuote(base:number,paid:number,appsSincePurchase:number,stars
  const net=floorTenths(Math.max(0,quoted-fee-guard))
  return {quoted,fee,guard,net:appsSincePurchase===0?Math.min(net,paid):net,factor}
 }
+/**
+ * F02 (15.10.2026): THE rule for every way a man can leave — a direct sale, a bid that is accepted, a swap: before his first
+ * official appearance since you signed him, what the manager receives can never beat what he paid. Applied to the FINAL amount,
+ * after any premium a bidder adds, so no route can slip past it.
+ */
+export const finalProceeds=(amount:number,paid:number,appsSincePurchase:number)=>appsSincePurchase===0?roundTenths(Math.min(amount,paid)):roundTenths(amount)
 /** 0–1 for the season, from the final place (and a title) */
 export const seasonScore=(place:number,of:number,champion:boolean)=>clamp((of>1?(of-place)/(of-1):1)*0.85+(champion?0.15:0),0,1)
 export function nextSeasonGrant(score01:number,cashBefore:number,s:Pick<LegendsSettings,'grantLiquidityM'>):number{

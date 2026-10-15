@@ -72,7 +72,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
    {tab==='league'?<LeagueCentre v={v} openClub={setClub}/>:null}
    {tab==='club'?<Club v={v} friendlies={friendlies?<CareerFriendlies careerId={v.id} ready={!v.lineup.error}/>:null}/>:null}
   </>}
-  {watching?<LiveMatch v={v} busy={busy} send={send} watch={watch} setWatch={setWatch}/>:null}
+  {watching?<LiveMatch v={v} busy={busy} send={send} watch={watch} setWatch={setWatch} msg={msg}/>:null}
   {room.sheet}
  <Thinking active={busy&&!watching&&v.phase!=='draft'}/>
   {!watching&&!room.open&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}

@@ -57,6 +57,26 @@ export function captainOf(l:Pick<Lineup,'xi'|'captain'|'vice'>,card:(id:string)=
  if(l.vice&&l.xi.includes(l.vice))return l.vice
  return [...l.xi].sort((a,b)=>(card(b)?.stars??0)-(card(a)?.stars??0)||a.localeCompare(b))[0]
 }
+/**
+ * F06 (15.10.2026): the manager's captain and vice are HIS appointments; a rebuilt eleven (a sale, a bid, a swap, a repair after an
+ * injury) never overwrites them. Appointments survive while the man is in the squad — benched, injured or suspended he stays
+ * captain, and `captainOf` hands the armband to the vice for the match. A captain who has left the squad is replaced by his vice
+ * (the vice slot is then empty); with nobody appointed the rebuilt eleven's own pick stands. Nobody is both.
+ */
+export function carryArmband(prev:Pick<Lineup,'captain'|'vice'>,next:Lineup,inSquad:(id:string)=>boolean):Lineup{
+ let cap=prev.captain&&inSquad(prev.captain)?prev.captain:undefined,vice=prev.vice&&inSquad(prev.vice)?prev.vice:undefined
+ if(!cap&&vice){cap=vice;vice=undefined}
+ if(!cap)cap=next.captain
+ if(vice===cap)vice=undefined
+ const {captain:_c,vice:_v,...rest}=next
+ return {...rest,...(cap?{captain:cap}:{}),...(vice?{vice}:{})}
+}
+/** what to tell the manager when a sale takes his captain or vice away; null when the sale touched neither */
+export function armbandNote(prev:Pick<Lineup,'captain'|'vice'>,gone:string,name:string,viceName?:string):string|null{
+ if(prev.captain===gone)return `${name} was your captain.${prev.vice&&viceName?` ${viceName}, your vice-captain, is captain now.`:' Pick a new captain on the team sheet.'}`
+ if(prev.vice===gone)return `${name} was your vice-captain. Pick a new one on the team sheet.`
+ return null
+}
 export function lineupError(l:Lineup,men:readonly Card[]):string|null{
  const ok=new Set(men.map(c=>c.id)),slots=slotsOf(l.formation)
  if(l.xi.length!==slots.length)return `An eleven needs ${slots.length} men.`
