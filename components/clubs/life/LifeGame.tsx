@@ -13,6 +13,7 @@
  * walks is therefore exactly what is walked here.
  */
 import {KeepArt, keepArt} from './KeepArt'
+import {PixelSprite, spriteForKeep} from './PixelSprite'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import Link from 'next/link'
 import {Dye} from '@/components/master/Dye'
@@ -843,11 +844,12 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
 
       {phase === 'title' && (
         <section className={`${styles.cover} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-title" data-life="title">
-          <div className={styles.ticket}>
+          <div className={`${styles.ticket} ${styles.attract}`}>
             <Dye art="face" ink="var(--l-prime)" className={styles.titleArt}/>
             <p className={styles.serial}>{pack.club.name} · {pack.club.city}</p>
             <h1 id="life-title" className={styles.poster}>{copy.title}</h1>
             <p className={styles.lede}>{copy.tagline}</p>
+            <div className={styles.pixRow} aria-hidden="true"><PixelSprite name="kid" scale={5} /><PixelSprite name="ball" scale={5} className={styles.pixBall} /><PixelSprite name="cup" scale={4} /></div>
             <div className={styles.actions}>
               {saved && <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => begin(false)} data-life="continue-life">{copy.continue} · {copy.chapter} {chapterNo} {copy.of} {pack.chapters.length}</button>}
               {!saved && <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => begin(true)} data-life="begin">{copy.begin}</button>}
@@ -1009,12 +1011,23 @@ const doneObjective = (c: Chapter['objectives'][number]['done'], state: LifeStat
 
 function Box({pack, state, copy, story}: {pack: LifePack; state: LifeState; copy: Copy; story: {lang?: string; dir?: 'ltr' | 'rtl'}}) {
   const kept = state.keeps.flatMap(id => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return [{...k, age: c.age}] } return [] })
+  const total = new Set(pack.chapters.flatMap(c => (c.keepsakes ?? []).map(k => k.id))).size
+  const gaps = Math.max(0, Math.min(total - kept.length, 3))
   return (
     <section className={styles.box} aria-label={copy.box} data-life="box">
       <h3 className={styles.heading}>{copy.box}</h3>
-      {kept.length === 0 ? <p className={styles.muted}>{copy.boxEmpty}</p> : (
-        <ul>{kept.map((k, i) => <li key={k.id} data-art={keepArt(k.id) ? 'true' : 'false'}><KeepArt id={k.id} tilt={i % 2 ? 3 : -3} /><span className={styles.boxAge}><bdi>{k.age}</bdi></span><span><b lang={k.id.startsWith('night:') ? undefined : story.lang} dir="auto">{k.name}</b><small {...story}>{k.note}</small></span></li>)}</ul>
-      )}
+      {kept.length === 0 ? <p className={styles.muted}>{copy.boxEmpty}</p> : null}
+      <ul className={styles.album} data-life="album">
+        {kept.map((k, i) => (
+          <li key={k.id} className={styles.sticker} data-art={keepArt(k.id) ? 'true' : 'false'} data-foil={i % 2 === 0 ? 'true' : 'false'} style={{'--tilt': `${[-2, 1.5, -1, 2][i % 4]}deg`} as React.CSSProperties}>
+            <span className={styles.stickerPic}>{keepArt(k.id) ? <KeepArt id={k.id} tilt={0} /> : <PixelSprite name={spriteForKeep(k.id)} scale={5} />}</span>
+            <span className={styles.stickerName}><bdi>{k.age}</bdi> · <span lang={k.id.startsWith('night:') ? undefined : story.lang} dir="auto">{k.name}</span></span>
+            <small {...story}>{k.note}</small>
+          </li>
+        ))}
+        {Array.from({length: gaps}, (_, g) => <li key={`gap${g}`} className={`${styles.sticker} ${styles.gap}`} aria-label={`${copy.albumGap} ${kept.length + g + 1}`}><span><bdi>{copy.albumGap} {kept.length + g + 1}</bdi></span></li>)}
+      </ul>
+      {total > kept.length && <p className={styles.muted}><bdi>{kept.length}</bdi> / <bdi>{total}</bdi> {copy.albumCount}</p>}
     </section>
   )
 }
