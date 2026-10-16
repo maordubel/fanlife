@@ -73,6 +73,20 @@ Tests use synthetic credentials only. Do not use the live bot token in automated
 
 ## Remaining release gate
 
+### Welcome message activation (separate from BotFather description)
+
+The `/api/telegram/webhook` POST route replies to `/start` and `/help` in private chats with an English welcome and a native **Open FanLife** button. The footer always reads `FanLife.DubelTeam.com`. Unrelated messages and groups are ignored. The response uses Telegram's webhook reply mechanism; no external messaging service or background worker is added. It is not active merely because code is deployed.
+
+1. In the deployment's environment settings, set `TELEGRAM_WEBHOOK_SECRET` to a new random 32–256 character secret containing only letters, digits, `_` or `-`. Generate it locally, for example with `openssl rand -hex 32`. Store it privately. It is separate from the bot token.
+2. Set `TELEGRAM_APP_URL` explicitly to the approved test URL while testing: `https://fanlife-git-codex-telegram-mini-ap-1047ba-dubel-team-s-projects.vercel.app/telegram`. Use the primary site's `/telegram` URL only after release. Redeploy to load both values.
+3. In a secure owner terminal, provide `TELEGRAM_BOT_TOKEN`, the same `TELEGRAM_WEBHOOK_SECRET`, and `TELEGRAM_APP_URL` as environment variables. Do not place secrets in source, command arguments, screenshots or logs. Run `node scripts/telegram/configure-webhook.mjs`. This explicitly connects the real bot to the specified deployment. It is never run during builds. It refuses to replace an existing webhook at another URL.
+4. The deployment must be publicly reachable by Telegram without Vercel sign-in. The script probes authenticated delivery before changing the bot. If protection blocks the probe, resolve access first; do not register a broken endpoint.
+5. Open `https://t.me/FanLife_appbot`, send `/start`, verify exactly the welcome content, and tap **Open FanLife**. Test `/help`, then verify unrelated text produces no reply. Previous `/start` messages do not automatically prove activation; send a fresh command.
+
+Tests cover authentication, private-chat scoping, body size, URL validation and the response/button payload using synthetic credentials. The webhook response mechanism does not expose Telegram's send result to this server; real-device receipt is a required final check. No durable deduplication is claimed; Telegram retries could repeat a welcome after interrupted delivery. Activating this hook replaces polling for this bot, so coordinate with any future results automation.
+
+This session prepared and tested the code only. No webhook registration or deployment environment update was performed.
+
 Real Telegram device validation, production secret setup, deployment and BotFather Main Mini App configuration are required. A localhost/test result does not prove the live bot is connected. Keep the change unmerged until the intended checks are reviewed.
 
 ### Evidence from this implementation session
