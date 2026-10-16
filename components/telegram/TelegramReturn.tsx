@@ -23,7 +23,7 @@ export function TelegramReturn({ clubs, selected, choose = false }: { clubs: Clu
     <div className="tg-return-actions">
       <Link className="wk-btn" href={`/telegram?club=${club.id}`}>Open your club ↗</Link>
       {game && <Link className="tg-text-link" href={telegramGameHref(club.id, game.key)!}>Open {game.title} →</Link>}
-      <button className="tg-text-link" onClick={() => { try { window.localStorage.removeItem(TELEGRAM_MEMORY_KEY) } catch {} setVisit(null) }}>Forget this preference</button>
+      <button className="tg-text-link min-h-tap" onClick={() => { try { window.localStorage.removeItem(TELEGRAM_MEMORY_KEY) } catch {} setVisit(null) }}>Forget this preference</button>
     </div>
   </section>
 }

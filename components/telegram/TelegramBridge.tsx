@@ -112,8 +112,8 @@ export function TelegramBridge() {
       <Link href="/telegram" className="tg-home">FAN LIFE</Link>
       <p role="status" data-testid="telegram-status">{labels[status]}</p>
       {app?.isVersionAtLeast('8.0') && <div className="tg-tools">
-        {app.requestFullscreen && <button onClick={() => { try { app.requestFullscreen?.() } catch {} }}>Full screen</button>}
-        {app.addToHomeScreen && <button onClick={() => {
+        {app.requestFullscreen && <button className="min-h-tap" onClick={() => { try { app.requestFullscreen?.() } catch {} }}>Full screen</button>}
+        {app.addToHomeScreen && <button className="min-h-tap" onClick={() => {
           try {
             if (app.checkHomeScreenStatus) app.checkHomeScreenStatus(value => {
               if (value === 'added') setHomeMessage('Already on your home screen')
