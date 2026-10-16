@@ -1,0 +1,24 @@
+# One-time, click-only: links the owner's Telegram chat to FINAL WHISTLE. Run it, then within four minutes open the bot,
+# tap Start and tap "Share my number". Only the sender's OWN contact with the expected number is accepted.
+name: Final Whistle · link Telegram
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: final-whistle
+jobs:
+  link:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      FINAL_WHISTLE_OWNER_PHONE: ${{ secrets.FINAL_WHISTLE_OWNER_PHONE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/final-whistle/link.mjs

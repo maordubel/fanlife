@@ -1,0 +1,54 @@
+# FINAL WHISTLE (spec 16.10.2026): after a real match of a live club is verified final, render the story card and send it to the
+# owner's Telegram chat. Idle runs are one cheap request: the site says whether anything is waiting, and only then is a browser installed.
+# Everything is OFF until the owner switches it on in the control room (Operations → Final Whistle), and starts as a dry run.
+name: Final Whistle
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: final-whistle
+  cancel-in-progress: false
+jobs:
+  run:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    steps:
+      - name: Look for finished matches
+        id: look
+        env:
+          DELIVERY: ${{ secrets.TELEGRAM_BOT_TOKEN != '' && '1' || '0' }}
+        run: |
+          set -euo pipefail
+          if [ "${#CRON_SECRET}" -lt 32 ]; then echo "::error::FAN_LIFE_CRON_SECRET is missing."; exit 1; fi
+          code=$(curl --silent --show-error --max-time 120 -o look.json -w '%{http_code}' -X POST -H "Authorization: Bearer $CRON_SECRET" "$FAN_LIFE_URL/api/master/final-whistle/discover?delivery=$DELIVERY")
+          if [ "$code" != "200" ]; then echo "::error title=Final Whistle answered $code::$(head -c 300 look.json)"; exit 1; fi
+          jq -c '{enabled, clubs, watched, created, pending, errors}' look.json
+          echo "pending=$(jq -r '.pending // 0' look.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        if: steps.look.outputs.pending != '0'
+      - uses: actions/setup-node@v4
+        if: steps.look.outputs.pending != '0'
+        with:
+          node-version: '22'
+      - name: Install the browser
+        if: steps.look.outputs.pending != '0'
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts "playwright@^1.62.1"
+          npx playwright install --with-deps chromium
+      - name: Render and deliver
+        if: steps.look.outputs.pending != '0'
+        run: node scripts/final-whistle/run.mjs
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.look.outputs.pending != '0'
+        with:
+          name: final-whistle-cards
+          path: out/
+          retention-days: 7
+          if-no-files-found: ignore

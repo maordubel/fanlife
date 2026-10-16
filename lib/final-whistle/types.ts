@@ -23,6 +23,8 @@ export type Watch = {
   state: 'waiting' | 'confirming' | 'ready' | 'needs_review' | 'done'
   /** why it waits or needs a person — shown in the admin, never guessed away */
   note: string | null
+  /** every job made for this event, oldest first; a new one after a sent job is a CORRECTION */
+  jobs?: string[]
 }
 
 export type Config = {
@@ -34,5 +36,36 @@ export type Config = {
   bootstrapAt: string | null
   /** configured / not configured only — never the secret itself */
   deliveryConfigured: boolean
+  /** when a scheduled run last reported the delivery secret as set / missing */
+  deliverySeenAt: string | null
 }
-export const DEFAULT_CONFIG: Config = {enabled: false, dryRun: true, clubIds: [], bootstrapAt: null, deliveryConfigured: false}
+export const DEFAULT_CONFIG: Config = {enabled: false, dryRun: true, clubIds: [], bootstrapAt: null, deliveryConfigured: false, deliverySeenAt: null}
+
+export const DESTINATION_ID = 'owner-telegram'
+export const MAX_ATTEMPTS = 5
+export const LEASE_MS = 10 * 60_000
+
+export type Delivered = {photo?: number; document?: number}
+export type Job = {
+  id: string
+  destinationId: typeof DESTINATION_ID
+  providerEventId: string
+  clubId: string
+  fingerprint: string
+  kind: 'FINAL' | 'CORRECTED'
+  state: JobState
+  result: FinalResult
+  /** a dry-run job renders and is checked but never leaves the building */
+  dryRun: boolean
+  createdAt: string
+  updatedAt: string
+  attempts: number
+  lease: {by: string; until: string} | null
+  retryAfter: string | null
+  delivered: Delivered
+  sentAt: string | null
+  /** what went wrong or what a person should know — never a secret */
+  note: string | null
+}
+export type Destination = {chatId: string; linkedAt: string}
+export type RunInfo = {at: string; clubs: number; watched: number; created: number; errors: string[]}
