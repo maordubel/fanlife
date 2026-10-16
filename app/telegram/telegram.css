@@ -1,0 +1,28 @@
+.telegram-app { min-block-size: 100dvh; background: var(--mag-paper); color: var(--mag-ink); padding-block-start: var(--fl-tg-top, 0px); padding-block-end: var(--fl-tg-bottom, 0px); padding-inline: var(--fl-tg-left, 0px) var(--fl-tg-right, 0px); }
+.tg-bridge { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding: 12px 20px; border-block-end: 2px solid currentColor; font-family: var(--mag-mono); font-size: 11px; }
+.tg-bridge p { flex: 1; margin: 0; min-inline-size: 180px; }
+.tg-bridge a { min-block-size: 44px; display: inline-flex; align-items: center; text-underline-offset: 4px; }
+.tg-home { font-weight: 900; font-size: 18px; }
+.tg-lobby { max-inline-size: 920px; margin-inline: auto; padding: 28px 20px; }
+.tg-cover { padding-block-end: 28px; border-block-end: 5px solid currentColor; }
+.tg-cover img { float: inline-end; margin-inline-start: 12px; }
+.tg-cover h1 { font-family: var(--mag-display); font-size: clamp(38px, 8vw, 76px); line-height: 1.05; margin-block: 18px; overflow-wrap: anywhere; color: var(--club-type, var(--mag-ink)); }
+.tg-cover p { font-family: var(--mag-body); }
+.tg-issue { font-family: var(--mag-mono) !important; font-size: 12px; letter-spacing: 1px; }
+.tg-clubs, .tg-games { display: grid; gap: 12px; margin-block: 24px; }
+.tg-clubs { grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); }
+.tg-club { display: grid; grid-template-columns: 48px 1fr; gap: 6px 12px; border: 2px solid currentColor; padding: 16px; min-block-size: 100px; text-decoration: none; }
+.tg-club > span { grid-row: span 2; align-self: center; font-family: var(--mag-display); font-size: 24px; }
+.tg-club strong { font-family: var(--mag-body); font-size: 20px; }
+.tg-club small { font-family: var(--mag-mono); }
+.tg-switch { display: inline-flex; align-items: center; min-block-size: 48px; margin-block-start: 12px; }
+.tg-game { display: flex; align-items: center; gap: 18px; border: 2px solid currentColor; padding: 20px; color: var(--club-type, var(--mag-ink)); text-decoration: none; }
+.tg-game h2 { font-family: var(--mag-display); font-size: clamp(23px, 4vw, 34px); margin: 0; }
+.tg-game p { margin-block: 8px 0; font-family: var(--mag-body); }
+.tg-game > b { margin-inline-start: auto; font-size: 30px; }
+.tg-number { font-family: var(--mag-mono); font-size: 28px; }
+.tg-club:focus-visible, .tg-game:focus-visible, .tg-bridge a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.tg-note { font-family: var(--mag-mono); font-size: 12px; line-height: 1.7; border-block-start: 1px solid currentColor; padding-block-start: 20px; }
+.tg-footer { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-block-start: 28px; font-family: var(--mag-mono); font-size: 12px; }
+.telegram-app .club-foot, .telegram-app .club-tabbar { display: none; }
+@media (max-width: 420px) { .tg-cover img { inline-size: 80px; block-size: 80px; } .tg-game { gap: 10px; padding: 16px 12px; } .tg-number { font-size: 22px; } }

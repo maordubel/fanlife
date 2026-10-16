@@ -116,7 +116,7 @@ export function generateMetadata(): Metadata {
   return clubFromHost(headers().get('host')) === DEFAULT_CLUB ? workerMetadata : fanLifeMetadata
 }
 
-const FAN_PATHS=['/master','/clubs','/sources','/closet','/market','/auction','/shirts','/me','/stands']
+const FAN_PATHS=['/master','/clubs','/telegram','/sources','/closet','/market','/auction','/shirts','/me','/stands']
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
@@ -133,7 +133,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const topAd=topAdAllowedOn(pathname)&&!closed&&((await readState().catch(()=>null))?.ads??DEFAULT_TOP_AD).topAd
   return (
     <html lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
-      <head><Analytics off={pathname==='/master'||pathname.startsWith('/master/')} /></head>
+      <head><Analytics off={pathname==='/master'||pathname.startsWith('/master/')||pathname==='/telegram'||pathname.startsWith('/telegram/')} /></head>
       <body className="font-body antialiased" data-no-ads={topAd?undefined:""}>
         <a
           href="#main"
@@ -165,7 +165,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <GateMeter />
         <Suspense fallback={null}><NavPulse /></Suspense>
         <ClosetBridge />
-        {!closed&&pathname!=='/master'&&!pathname.startsWith('/master/')?<Suspense fallback={null}><PromoSlot /></Suspense>:null}
+        {!closed&&pathname!=='/master'&&!pathname.startsWith('/master/')&&pathname!=='/telegram'&&!pathname.startsWith('/telegram/')?<Suspense fallback={null}><PromoSlot /></Suspense>:null}
         <MarketAlerts />
         {topAd?<script src={TOP_AD_SRC} defer />:null}
       </body>
