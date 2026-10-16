@@ -1,0 +1,122 @@
+[
+ {
+  "id": "ga-35e7aa7ef302a0f3",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "60",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/about-celtic/celtic-board/celtic-takeover/celtic-takeover-miscellaneous-articles/",
+    "locator": "p98",
+    "quote": "UP TO 300 Celtic fans walked out during last night’s game with Kilmarnock – the worst attended match at Parkhead in six years – in protest at the Celtic board. The walkout had been organised by groups of supporters in conjunction with a boycott of the match. Their plan seemed to have been effective because the Parkhead crowd was 10,882, which included about 2,000 Kilmarnock supporters. The walkout, in the 60th minute of the match, was jeered by the Celtic fans who stayed. The boycotting supporters claimed not to be disappointed at the number who had left the stadium, saying that the crowd size",
+    "bodyHash": "0ab5118ef031f43e4b1611f0966a5f8c1ab430c2eede0d47b75f039bb428c268",
+    "fetchedAt": "2026-10-16T08:19:58.572Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:19:58.572Z",
+  "updatedAt": "2026-10-16T08:19:58.572Z"
+ },
+ {
+  "id": "ga-b62cccd6f7bbc627",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "2",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/about-celtic/celtic-incidents-events-and-controversies/the-janefield-street-riot-1985/",
+    "locator": "p6",
+    "quote": "Aitken penalty on 2 min; scored but retake ordered because ball moved;",
+    "bodyHash": "0b01a477a70a4667d5f8b84b1bda3ed6123f150e6c68788426f2b37d94ccf79f",
+    "fetchedAt": "2026-10-16T08:19:58.589Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:19:58.589Z",
+  "updatedAt": "2026-10-16T08:19:58.589Z"
+ },
+ {
+  "id": "ga-1648e168f44eedf4",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "77",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/about-celtic/celtic-incidents-events-and-controversies/the-janefield-street-riot-1985/",
+    "locator": "p10",
+    "quote": "77 min penalty to Rangers Aitken handled",
+    "bodyHash": "0b01a477a70a4667d5f8b84b1bda3ed6123f150e6c68788426f2b37d94ccf79f",
+    "fetchedAt": "2026-10-16T08:19:58.589Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:19:58.589Z",
+  "updatedAt": "2026-10-16T08:19:58.589Z"
+ },
+ {
+  "id": "ga-b204ecee725dedd9",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": "2019-10-24",
+  "opponentHe": null,
+  "minute": "20",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/about-celtic/celtic-slang/ducephobia/",
+    "locator": "p60",
+    "quote": "Then not long after the 20th minute, fans in the corner of the Lisbon Lions stand, in the area of the Green Brigade, unfurled a banner which summed up the views of not just Celtic fans but football supporters around the world.",
+    "bodyHash": "fc087ec2714ecd21f8ae64159120acac4772435ed00d9457b659499ecbe7bc8a",
+    "fetchedAt": "2026-10-16T08:20:04.694Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:20:04.694Z",
+  "updatedAt": "2026-10-16T08:20:04.694Z"
+ }
+]

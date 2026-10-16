@@ -16,6 +16,14 @@
   "owner": null
  },
  {
+  "id": "blocked-hajduk-official-/eng/history/players",
+  "priority": "P2",
+  "task": "HNK Hajduk Split: /eng/history/players answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "HNK Hajduk Split: /eng/history/players חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-hajduk-official-0",
   "priority": "P3",
   "task": "Direct access answered 403 in one sampling and some pages need rendering — check access before writing a parser; a 403 is recorded, never bypassed.",
@@ -34,8 +42,8 @@
  {
   "id": "continue-torcida-posts",
   "priority": "P3",
-  "task": "Torcida Split posts: 2 page(s) read of 27; the scheduled task continues from the checkpoint.",
-  "taskHe": "Torcida Split posts: נקראו 2 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Torcida Split posts: 4 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },

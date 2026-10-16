@@ -2,8 +2,8 @@
  {
   "id": "continue-aekpedia-posts",
   "priority": "P3",
-  "task": "AEKpedia posts: 4 page(s) read of 31; the scheduled task continues from the checkpoint.",
-  "taskHe": "AEKpedia posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "AEKpedia posts: 8 page(s) read of 31; the scheduled task continues from the checkpoint.",
+  "taskHe": "AEKpedia posts: נקראו 8 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -36,6 +36,14 @@
   "priority": "P2",
   "task": "AEK FC: /pages/history.aspx?lang=el answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
   "taskHe": "AEK FC: /pages/history.aspx?lang=el חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-aek-official-history-/c/gegonota-42826.htm?lang=en&path=-1828815320",
+  "priority": "P2",
+  "task": "AEK FC: /c/gegonota-42826.htm?lang=en&path=-1828815320 answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "AEK FC: /c/gegonota-42826.htm?lang=en&path=-1828815320 חסום (403). נרשם כפער — לא עוקפים.",
   "status": "queued",
   "owner": null
  },

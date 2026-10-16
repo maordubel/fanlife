@@ -11,14 +11,14 @@
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/en/club/history",
    "/en/timeline/145"
   ],
   "seen": [
-   "/hr/klub/povijest"
+   "/hr/klub/povijest",
+   "/en/club/history"
   ],
   "state": "blocked",
-  "updatedAt": "2026-10-13T10:47:45.799Z",
+  "updatedAt": "2026-10-16T08:20:19.363Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "bad-blue-boys:posts": {
@@ -27,13 +27,13 @@
   "collection": "posts",
   "queryFingerprint": "784e8d93d109dbb7",
   "parserVersion": "bbb-history-v1",
-  "nextPage": 3,
-  "lastCommittedPage": 2,
+  "nextPage": 5,
+  "lastCommittedPage": 4,
   "observedTotalDocuments": 79,
   "observedTotalPages": 4,
   "perPage": 25,
   "state": "partial_budget",
-  "updatedAt": "2026-10-13T10:47:51.090Z",
+  "updatedAt": "2026-10-16T08:20:24.244Z",
   "lastError": null
  },
  "bad-blue-boys:pages": {
@@ -48,7 +48,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-13T10:47:53.520Z",
+  "updatedAt": "2026-10-16T08:20:27.267Z",
   "lastError": null
  },
  "hns-semafor:html": {
@@ -67,7 +67,7 @@
    "/klubovi/609/gnk-dinamo/"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-13T10:47:54.449Z",
+  "updatedAt": "2026-10-16T08:20:28.869Z",
   "lastError": null
  },
  "wikipedia-dinamo-records:html": {
@@ -86,7 +86,7 @@
    "/wiki/Dinamo_Zagreb_records_and_statistics"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-13T10:47:54.637Z",
+  "updatedAt": "2026-10-16T08:20:29.115Z",
   "lastError": null
  },
  "nft-dinamo:html": {
@@ -105,7 +105,7 @@
    "/club/504/1953/Dinamo_Zagreb.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-13T10:47:55.484Z",
+  "updatedAt": "2026-10-16T08:20:30.381Z",
   "lastError": null
  }
 }

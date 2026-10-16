@@ -1,0 +1,32 @@
+[
+ {
+  "id": "ga-a559d20f62f6b302",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "30",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2018/09/24/verein-am-wochenende-38-2018/",
+    "locator": "p29",
+    "quote": "In einem Spiel auf Augenhöhe gewannen wir mit 2:1 gegen den Tabellen-Nachbarn Billstedt-Horn II. Die Kiezkicker ließen kaum Chancen zu und dominierten in den ersten 30min. Ein Kopfballtor in der 23. Minute vom unserem Funkturm Block, führte zum 1:0. Dies war auch der Halbzeitstand.",
+    "bodyHash": "833903d1c65fb424616c4754a97c1a017656bace50d30058a44037a40f73850a",
+    "fetchedAt": "2026-10-16T08:21:24.044Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:24.044Z",
+  "updatedAt": "2026-10-16T08:21:24.044Z"
+ }
+]

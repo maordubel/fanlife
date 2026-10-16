@@ -6,7 +6,7 @@
    {
     "collection": "posts",
     "state": "partial_budget",
-    "pagesRead": 4,
+    "pagesRead": 8,
     "observedTotalDocuments": 762,
     "observedTotalPages": 31,
     "queue": null,
@@ -22,8 +22,8 @@
     "lastError": null
    }
   ],
-  "documents": 105,
-  "historicalRecordsExtracted": 100,
+  "documents": 205,
+  "historicalRecordsExtracted": 200,
   "seasonReviews": [
    "1959/60",
    "1960/61",
@@ -95,7 +95,7 @@
     "pagesRead": 0,
     "observedTotalDocuments": 2,
     "observedTotalPages": null,
-    "queue": 1,
+    "queue": 0,
     "lastError": "HTTP 403 — a refusal is an answer"
    }
   ],

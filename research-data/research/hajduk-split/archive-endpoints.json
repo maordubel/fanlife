@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-13T10:48:02.043Z"
+  "checkedAt": "2026-10-16T08:20:38.397Z"
  },
  "torcida:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-13T10:48:05.800Z"
+  "checkedAt": "2026-10-16T08:20:42.078Z"
  },
  "wikipedia-hajduk-records:/wiki/HNK_Hajduk_Split_statistics_and_records": {
   "endpoint": "/wiki/HNK_Hajduk_Split_statistics_and_records",
@@ -29,7 +29,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-13T10:48:05.908Z"
+  "checkedAt": "2026-10-16T08:20:42.501Z"
  },
  "hajduk-official-history-en:/eng/history": {
   "endpoint": "/eng/history",
@@ -38,5 +38,13 @@
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
   "checkedAt": "2026-10-13T10:48:05.973Z"
+ },
+ "hajduk-official:/eng/history/players": {
+  "endpoint": "/eng/history/players",
+  "providerId": "hajduk-official",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-16T08:20:32.470Z"
  }
 }

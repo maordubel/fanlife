@@ -8,10 +8,10 @@
   "sourceFamilyId": "bbb-zagreb",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-10-13",
-  "retrievedAt": "2026-10-13T10:47:55.490Z",
+  "checkedAt": "2026-10-16",
+  "retrievedAt": "2026-10-16T08:20:30.387Z",
   "collected": {
-   "documents": 92,
+   "documents": 96,
    "observedTotalDocuments": 79,
    "state": "partial_budget",
    "parser": null
@@ -29,10 +29,10 @@
   "sourceFamilyId": "bbb-zagreb",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-10-13",
-  "retrievedAt": "2026-10-13T10:47:55.490Z",
+  "checkedAt": "2026-10-16",
+  "retrievedAt": "2026-10-16T08:20:30.387Z",
   "collected": {
-   "documents": 92,
+   "documents": 96,
    "observedTotalDocuments": 17,
    "state": "listed",
    "parser": null
@@ -50,8 +50,8 @@
   "sourceFamilyId": "hns",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-10-13",
-  "retrievedAt": "2026-10-13T10:47:55.490Z",
+  "checkedAt": "2026-10-16",
+  "retrievedAt": "2026-10-16T08:20:30.387Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -71,8 +71,8 @@
   "sourceFamilyId": "wikimedia",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-10-13",
-  "retrievedAt": "2026-10-13T10:47:55.490Z",
+  "checkedAt": "2026-10-16",
+  "retrievedAt": "2026-10-16T08:20:30.387Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -92,8 +92,8 @@
   "sourceFamilyId": "national-football-teams",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-10-13",
-  "retrievedAt": "2026-10-13T10:47:55.490Z",
+  "checkedAt": "2026-10-16",
+  "retrievedAt": "2026-10-16T08:20:30.387Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,

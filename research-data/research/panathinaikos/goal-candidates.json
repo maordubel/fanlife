@@ -19,6 +19,15 @@
     "bodyHash": "f34785d5a0823c27eebd1cea4699d10abf63234a4a7d64970f5bd92219d84f26",
     "fetchedAt": "2026-10-13T10:48:19.166Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p194",
+    "quote": "23.08.95: Hajduk – Panathinaikos 1-1 (4′ Stimac – 56′ Boreli).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -26,8 +35,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:19.166Z",
-  "updatedAt": "2026-10-13T10:48:19.166Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-aeb255d144d308a4",
@@ -109,6 +118,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p131",
+    "quote": "17.09.87: Panathinaikos – Auxerres 2-0 (9′ own g. Bare, 51′ Vlachos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -116,8 +134,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-aa1c0fd38deeee1d",
@@ -169,6 +187,24 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/valkaniko-kypello/",
+    "locator": "p64",
+    "quote": "The course started on April, 17 1977 in Albania in a duel against Vlaznia. The \"Greens\" draw 1-1 thanks to a goal scored by Vakalis in the 24th minute. Three weeks later in Titograd, Yugoslavia, the Shamrock draw 2-2 playing against Boutognost with two goals scored by Eleftherakis (40th min.) and Aslanidis (87th min.). In \"Leoforos\" stadium, Panathinaikos got the \"ticket\" to the final after achieving two victories playing against Vlaznia and Budognost, \"bowing\" the first one 3-0 with two goals by Yiannakoulas (77th and 90th min) and one more by Papademetriou (82th min.) winning the second riva",
+    "bodyHash": "0ace7d9ce6769807b281f7ccb70079069d61db940e0286ad15e46242beaf9425",
+    "fetchedAt": "2026-10-16T08:20:57.462Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p164",
+    "quote": "06.11.91: Goteborg – Panathinaikos 2-2 (24′ Svenson, 38′ Ekstrom – 60′ and 81′ pen. Saravakos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -176,8 +212,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-9ae7645fe6355507",
@@ -259,6 +295,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p172",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Kalatzis, Christodoulou, Kalitzakis, Mavridis, Saravakos, Antoniou (46′ Donis), Karageorgiou, Frantzeskos, Maragkos.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -266,8 +311,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-bef9131ffbf9b977",
@@ -319,6 +364,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p139",
+    "quote": "PANATHINAIKOS: Minou, Vassiliou (29′ Chatziathanassiou), Patsiavouras, Kalitzakis, Vamvakoulas, Mavridis, Saravakos (82′ Th. Dimopoulos), Antoniou, Chr. Dimopoulos, Vlachos, Georgamlis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -326,8 +380,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-74181e3ee4c5c300",
@@ -349,6 +403,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p202",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Ouzounidis, G. Ch. Georgiadis, Kalitzakis, Boreli (77′ Maragkos), Kapouranis, G.S. Georgiadis, Warzycha, Markos, Donis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -356,8 +419,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-39e3212fbb6b7673",
@@ -379,6 +442,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p123",
+    "quote": "PANATHINAIKOS: Laftsis, Tarassis, Karoulias, Kyrastas, Jaec (78′ Papavassiliou), Mavridis, Saravakos, Antoniou, Charalambidis (69′ Karavidas), Rocha, Th. Dimopoulos (77′ Kavouras).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -386,8 +458,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-84e8ae397dce3797",
@@ -409,6 +481,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p216",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Ouzounidis, G.S. Georgiadis, Kalitzakis, Kolitsidakis, Boreli (82′ Markos), Kapouranis, Warzycha (88′ Nioplias), Maragkos (65′ G. Ch. Georgiadis), Donis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -416,8 +497,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-a4fff93ef0697916",
@@ -469,6 +550,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p163",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Kalatzis, Christodoulou, Kalitzakis, Mavridis, Saravakos, Karageorgiou, Athanassiadis (83′ Donis), Georgakopoulos (67′ Antoniou), Maragkos.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -476,8 +566,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-3179f9215c78a1e3",
@@ -499,6 +589,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p229",
+    "quote": "PANATHINAIKOS: Nikopolidis, Seitaridis, Fyssas, Kyriakos, Henriksen, Bassinas, Mikaelsen, Karagounis (62′ Souza), Kolka, Lyberopoulos (34’ Vlaovic), Konstantinou (83’ Vokolos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -506,8 +605,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-b0838914a1e927ae",
@@ -529,6 +628,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p198",
+    "quote": "PANATHINAIKOS: Wanchik, Boreli (79′ Nioplias), Ouzounidis, G. Ch. Georgiadis, Kalitzakis, G.S. Georgiadis, Markos, Alexoudis (67′ Kapouranis), Warzycha, Maragkos (85′ Kolitsidakis), Donis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -536,8 +644,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-212f21ccb2b565b5",
@@ -589,6 +697,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p193",
+    "quote": "PANATHINAIKOS: Nikopolidis, Apostolakis, Ouzounidis, G, Ch. Georgiadis, Kalitzakis, G.S. Georgiadis, Boreli (75′ Christodoulou), Markos, Warzycha, Maragkos, Donis (78′ Alexoudis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -596,8 +713,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-031f5a5812cb1f10",
@@ -679,6 +796,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p181",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Georgamlis (70′ Athanassiadis), Christodoulou, Kourbanas, Mavridisς, Saravakos, Antoniou, Warzycha, Boreli (80′ Donis), Karageorgiou.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -686,8 +812,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-851927c001c76db2",
@@ -709,6 +835,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p79",
+    "quote": "PANATHINAIKOS: Ikonomopoulos (72′ Konstantinou), Tomaras, Vlachos, Kapsis, Sourpis, Eleftherakis, Grammos, Kamaras, Antoniadis, Domazos, Fylakouris.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -716,14 +851,15 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-ef61a942dfaa72e1",
   "clubId": "panathinaikos",
   "sourceIds": [
-   "pao-official-history"
+   "pao-official-history",
+   "rsssf-greece"
   ],
   "playedOn": null,
   "opponentHe": null,
@@ -739,6 +875,24 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p122",
+    "quote": "24.04.85: Panathinaikos – Liverpool 0-1 (60′ Lorenson).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "rsssf-greece",
+    "url": "https://www.rsssf.org/tablesg/grkhist.html",
+    "locator": "p147",
+    "quote": "For 3th Place :\nPlayed 24/5/80 in Pireas (Karaiskaki Stadium)\nPanathinaikos A.O. - A.E.K. 1:0 [60' Ore]",
+    "bodyHash": "f2ff0a5a2e5fb1ca933715620c8c3f3b86552fe9962f6d919492e9d47dc1c580",
+    "fetchedAt": "2026-10-16T08:21:03.847Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -746,8 +900,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:03.847Z",
+  "updatedAt": "2026-10-16T08:21:03.847Z"
  },
  {
   "id": "ga-ad6f3b0a798fdce3",
@@ -799,6 +953,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p92",
+    "quote": "Panathinaikos: Ikonomopoulos, Tomaras (59′ Vlachos), Athanassopoulos, Eleftherakis, Kapsis, Sourpis, Dimitriou, Fylakouris, Antoniadis, Domazos, Kouvas (18′ Deliyiannis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -806,8 +969,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-6a650dc7d41e523b",
@@ -859,6 +1022,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p213",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Ouzounidis, G.S. Georgiadis, Kalitzakis, Kolitsidakis, Boreli (90′ Goumas), Kapouranis, Warzycha (90’Lagonikakis), Maragkos (80′ Nioplias), Donis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -866,8 +1038,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-1a46d53018517eee",
@@ -889,6 +1061,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p195",
+    "quote": "PANATHINAIKOS: Nikopolidis, Apostolakis, Ouzounidis, G,Ch. Georgiadis, Kalitzakis, G.S. Georgiadis, Boreli (67′ Christodoulou), Markos, Warzycha(86′ Lagonikakis), Maragkos (53′ Alexoudis), Donis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -896,8 +1077,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-c65af308592368d1",
@@ -949,6 +1130,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p158",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Kalatzis, Christodoulou, Kalitzakis, Mavridis, Saravakos, Karageorgiou, Donis (64′ Antoniou), Athanassiadis, Maragkos (80′ Georgamlis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -956,8 +1146,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-7d6ff7a2d00c3795",
@@ -1009,6 +1199,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p217",
+    "quote": "17.4.96 Panathinaikos – Ajax 0-3 (3′, 77′ Litmanen, 86′ Wouter)",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1016,8 +1215,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-4556c017d727c694",
@@ -1039,6 +1238,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p143",
+    "quote": "09.12.87: Panathinaikos – Honvent 5-1 (21′ and 37′ Vlachos, 55′ Antoniou, 64′ Mavridis, 82′ Batsinilas – 58′ Fitos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1046,8 +1254,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-61cd5f4aa161b9b9",
@@ -1129,6 +1337,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p212",
+    "quote": "20.3.96 Panathinaikos – Legia 3-0 (34′, 58′ Warzycha, 72′ Boreli)",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1136,8 +1353,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-395818dd8040758c",
@@ -1159,6 +1376,15 @@
     "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
     "fetchedAt": "2026-10-13T10:48:22.942Z",
     "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p169",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Kalatzis, Christodoulou, Kalitzakis, Mavridis, Saravakos, Antoniou, Athanassiadisς (68′ Donis, 89′ Franteskos), Maragkos, Karageorgiou.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1166,8 +1392,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:22.942Z",
-  "updatedAt": "2026-10-13T10:48:22.942Z"
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
  },
  {
   "id": "ga-30f53959a79baae1",
@@ -1228,5 +1454,1084 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-13T10:48:22.942Z",
   "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-1c4907cbc8d1b125",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "74",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/super-cup/",
+    "locator": "p90",
+    "quote": "Further to the three goals scored, the team coached by Juan Ramon Rocha, had also a ball to the post, by Krzysztof Warzycha, at the 74th minute of the game!",
+    "bodyHash": "d947bb3c12af60d799fa57cbfdbc4769027e8f367376239df31efc9ef29ccfe9",
+    "fetchedAt": "2026-10-16T08:20:53.830Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p211",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Markos, G. Ch. Georgiadis, Kalitzakis, Kolitsidakis, Boreli, G.S. Georgiadis, Warzycha, Maragkos (74′ Kapouranis), Alexoudis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-cf3969b457595c9c",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "38",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/valkaniko-kypello/",
+    "locator": "p65",
+    "quote": "The first match for the final took place in Bulgaria against Slavia Sofia and was a no goal draw (although in the 38th minute the referee didn't allow a goal even though the ball passed the line after a shoot by Eleftheriadis).",
+    "bodyHash": "0ace7d9ce6769807b281f7ccb70079069d61db940e0286ad15e46242beaf9425",
+    "fetchedAt": "2026-10-16T08:20:57.462Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:20:57.462Z",
+  "updatedAt": "2026-10-16T08:20:57.462Z"
+ },
+ {
+  "id": "ga-516696dfdc3f9ddf",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "80",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/valkaniko-kypello/",
+    "locator": "p68",
+    "quote": "The team: Konstantinou, Eleftheriadis, Stefanakis, Yiannakoulas, Gonios, Livathinos, Vakalis, Eleftherakis (80' Katsiakos), Alvarez, Terzanidis, Papademetriou (46’ Vallidis).",
+    "bodyHash": "0ace7d9ce6769807b281f7ccb70079069d61db940e0286ad15e46242beaf9425",
+    "fetchedAt": "2026-10-16T08:20:57.462Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:20:57.462Z",
+  "updatedAt": "2026-10-16T08:20:57.462Z"
+ },
+ {
+  "id": "ga-55ca03f65dedce1a",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "11",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p63",
+    "quote": "16.09.70: Jeunesse d’ Esch – Panathinaikos 1-2 (11′ De Genova – 6′ Antoniadis, 35′ Eleftherakis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-4bdf8a87f77bb80e",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "86",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p64",
+    "quote": "PANATHINAIKOS: Ikonomopoulos, Tomaras (86′ Kapsis), Kamaras, Sourpis, Vlachos, Eleftherakis, Fylakouris, Grammos, Antoniadis, Domazos, Kalligeris (80′ Deliyiannis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-02a5647460b32d1b",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "17",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p65",
+    "quote": "30.09.70: Panathinaikos – Jeunesse d’ Esch 5-0 (17′ Eleftherakis, 26′, 29′, 37′ and 58′ Antoniadis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-27afe1fced6071cb",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "33",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p70",
+    "quote": "04.11.70: Slovan – Panathinaikos 2-1 (33′ Monter, 58′ Chapkovic – 52′ Antoniadis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-0eb7f4bf50ea881a",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "14",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p78",
+    "quote": "14.04.71: Red Star – Panathinaikos 4-1 (14′, 47′ and 68′ Ostoic, 39′ Yiankovic, 56′ Kamaras).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-ed805eabdc3f68fa",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "1",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p80",
+    "quote": "28.04.71: Panathinaikos – Red Star 3-0 (1′ and 54′ Antoniadis, 68′ Kamaras).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-25a116ad0a91c0b0",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "54",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p81",
+    "quote": "PANATHINAIKOS: Konstantinou, Tomaras, Vlachos, Kapsis, Sourpis, Fylakouris, Grammos, Kamaras, Antoniadis, Domazos, Kalligeris (54′ Athanassopoulos, 88′ Chatziandreou).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-03404a57563ccd8d",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "5",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p83",
+    "quote": "02.06.71: Ajax – Panathinaikos 2-0 (5′ Van Dijk, 83′ own g. Kapsis).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-5a5c47d23304d63f",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "48",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p91",
+    "quote": "Panathinaikos – Nacional 1-1 (48′ Fylakouris – 51′ Artime)",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-ac66fb725e228572",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history",
+   "rsssf-greece"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "81",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p96",
+    "quote": "Nacional: Manga, Masnic, Blanco, Ubina, Maneiro, Montero, Cubilla (81′ Mujica), Esparrago, Artime, Brunel, Mameli (81′ Barenco).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "rsssf-greece",
+    "url": "https://www.rsssf.org/tablesg/grkhist.html",
+    "locator": "p94",
+    "quote": "Olympiakos Pireas - Panathinaikos was suspended at 81' (3:2), awarded with 2-0\nPanathinaikos - P.A.O.K. 0-2 Awarded, Panathinaikos did not show up.\nAigaleo - Panathinaikos 2-0 Awarded, Panathinaikos did not show up.\nOmonoia - Panathinaikos suspended at halftime at 0:0, awarded 0-2",
+    "bodyHash": "f2ff0a5a2e5fb1ca933715620c8c3f3b86552fe9962f6d919492e9d47dc1c580",
+    "fetchedAt": "2026-10-16T08:21:03.847Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:03.847Z",
+  "updatedAt": "2026-10-16T08:21:03.847Z"
+ },
+ {
+  "id": "ga-c14dab91ca5350d9",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "89",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p106",
+    "quote": "PANATHINAIKOS: Laftsis, Dontas, Tarasssis, Kyrastas, Jaec (89′ Th. Dimopoulos), Vonortas, Saravakos, Antoniou, Mavridis, Rocha, Livathinos.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-da5613637d75df04",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "40",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p107",
+    "quote": "03.10.84: Panathinaikos – Feyenoord 2-1 (40′ Mavridis, 42′ Rocha – 69′ Rep).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-91b9a5cf13de8436",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "43",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p110",
+    "quote": "24.10.84: Panathinaikos – Linfield 2-1 (43′ pen. Charalambidis, 88′ Tarassis – 20′ Toten).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-db2bd8e114da4f94",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "32",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p111",
+    "quote": "PANATHINAIKOS: Laftsis, Tarassis, Karoulias, Kyrastas, Jaec, Livathinos, Mavridis, Antoniou, Charalabidis, Papavassiliou (32′ Saravakos), Th. Dimopoulos.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-f6cedac5ded110c5",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "6",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p112",
+    "quote": "07.11.84: Linfield – Panathinaikos 3-3 (6′ and 26′ pen. Mac Gahie, 10′ Maxwell – 30′ pen. Saravakos, 32′ Rocha, 64′ Antoniou).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-45e0eaf04f22ed86",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history",
+   "rsssf-greece"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "85",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p113",
+    "quote": "PANATHINAIKOS: Laftsis, Tarassis, Karoulias, Kyrastas, Jaec, Livathinos, Saravakos (85′ Papavassiliou), Antoniou, Mavridis (31′ Th. Dimopoulos), Rocha, Dontas.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "rsssf-greece",
+    "url": "https://www.rsssf.org/tablesg/grkhist.html",
+    "locator": "p88",
+    "quote": "NOTE :\nOlympiakos Lefkosias - Olympiakos S.F.P. suspended at 85' (0:1) awarded 0-2 on goals and 0-3 on points for Pireas.",
+    "bodyHash": "f2ff0a5a2e5fb1ca933715620c8c3f3b86552fe9962f6d919492e9d47dc1c580",
+    "fetchedAt": "2026-10-16T08:21:03.847Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:03.847Z",
+  "updatedAt": "2026-10-16T08:21:03.847Z"
+ },
+ {
+  "id": "ga-001bcd2b3cd994c5",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "50",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p115",
+    "quote": "06.03.85: Goteborg – Panathinaikos 0-1 (50′ pen. Saravakos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-17bb5e1783398f1c",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "44",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p117",
+    "quote": "20.03.85: Panathinaikos – Goteborg 2-2 (44′ Th. Dimopoulos, 78′ pen. Saravakos – 10′ T. NIlson, 52′ Τ. Homgren).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-a705df6954190401",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "87",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p118",
+    "quote": "PANATHINAIKOS: Laftsis, Livathinos, Karoulias, Kyrastas, Jaec, Vonortas, Saravakos, Antoniou, Mavridis, Gerothodoros, Th.Dimopoulos (87′ Dontas).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-3fda97521a4a556d",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "36",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p120",
+    "quote": "10.04.85: Liverpool – Panathinaikos 4-0 (36′ Work, 48′ and 49′ Ras, 84′ Beglin).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-36af4a0470c90dbb",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "23",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p133",
+    "quote": "30.09.87: Auxerres – Panathinaikos 3-2 (23′ Ditiel, 41′ Cantona, 73′ Courte – 32′ Vassiliou, 44′ Saravakos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-221aac4c0a9c7084",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "52",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p138",
+    "quote": "04.11.87: Juventus – Panathinaikos 3-2 (52′ and 72′ pen. Cabrini, 70′ Alessio – 50′ Saravakos, 60′ Chr. Dimopoulos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-4c8996f732765b11",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "2",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p141",
+    "quote": "25.11.87: Honvent – Panathinaikos 5-2 (2′, 32′, 59′ and 62′ Kovac, 24′ pen. Fodor – 66′ and 89′ Saravakos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-765494955bf15d53",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "39",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p142",
+    "quote": "PANATHINAIKOS: Minou, Vassiliou (39′ Batsinilas), Patsiavouras, Vamvakoulas, Kalitzakis, Mavridis, Saravakos, Antoniou, Chr. Dimopoulos, Vlachos (70′ Georgakopoulos), Georgamlis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-dc37a144e51c1e47",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "58",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p157",
+    "quote": "18.09.91: Fram – Panathinaikos 2-2 (58′ Ragnarsson, 63′ Arnthorsson – 36′ and 75′ Christodoulou).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-631657a2744490df",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "27",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p162",
+    "quote": "23.10.91: Panathinaikos – Goteborg 2-0 (27′ Saravakos, 49′ Maragkos).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-30bf7a4641e4d138",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "55",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p165",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Kalatzis, Christodoulou, Kalitzakis, Mavridis, Saravakos, Karageorgiou, Athanassiadis, Georgakopoulos (55′ Antoniou), Maragkos.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-3d549481cecdeaf0",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "53",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p177",
+    "quote": "18.03.92: Red Star – Panathinaikos 1-0 (53′ pen. Michailovic).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-2432ae7874e0dc93",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "7",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p201",
+    "quote": "25.10.95 Aalborg – Panathinaikos 2-1 (7′ Andersen, 89′ Mantsen – 42′ Warzycha)",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-4ee94778069d5505",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "66",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p204",
+    "quote": "PANATHINAIKOS: Wanchik, Apostolakis, Ouzounidis, G. Ch. Georgiadis, Kolitsidakis, G.S. Georgiadis, Boreli (66′ Kapouranis), Markos, Warzycha (89′ Lagonikakis), Maragkos, Donis.",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-2959b337a4b22722",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "106",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/european-history/",
+    "locator": "p291",
+    "quote": "PANATHINAIKOS: Nikopolidis, Henriksen, Seitaridis (106′ Warzycha), Fyssas, Kyriakos, Mikaelsen, Konstantinidis (46′ Goumas), Kolka, Karagounis, Lyberopoulos, Olisadebe(82′ Konstantinou).",
+    "bodyHash": "64a9ad8c332124a6d9c7115d1b26696364914f867213445853f5d523ab0debc6",
+    "fetchedAt": "2026-10-16T08:21:01.538Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:01.538Z",
+  "updatedAt": "2026-10-16T08:21:01.538Z"
+ },
+ {
+  "id": "ga-52c68bf1ce0095a9",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "rsssf-greece"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "47",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "rsssf-greece",
+    "url": "https://www.rsssf.org/tablesg/grkhist.html",
+    "locator": "p146",
+    "quote": "For Championship :\nPlayed 25/5/80 in Volos (National Stadium)\nOlympiakos S.F.P. - A.S. Aris 2:0 [47' Vaggelis Kousoulakis, 54' Thomas Alstrom]",
+    "bodyHash": "f2ff0a5a2e5fb1ca933715620c8c3f3b86552fe9962f6d919492e9d47dc1c580",
+    "fetchedAt": "2026-10-16T08:21:03.847Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-16T08:21:03.847Z",
+  "updatedAt": "2026-10-16T08:21:03.847Z"
  }
 ]

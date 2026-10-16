@@ -5,7 +5,7 @@
   "state": "schema-changed",
   "status": 200,
   "reason": "rows lack id/link",
-  "checkedAt": "2026-10-13T10:48:08.094Z"
+  "checkedAt": "2026-10-16T08:20:46.890Z"
  },
  "paopedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-13T10:48:14.420Z"
+  "checkedAt": "2026-10-16T08:20:52.803Z"
  },
  "pao-official-history:/en/history/": {
   "endpoint": "/en/history/",
@@ -62,5 +62,45 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-10-13T10:48:32.559Z"
+ },
+ "pao-official-history:/en/history/super-cup/": {
+  "endpoint": "/en/history/super-cup/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-16T08:20:53.829Z"
+ },
+ "pao-official-history:/en/history/valkaniko-kypello/": {
+  "endpoint": "/en/history/valkaniko-kypello/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-16T08:20:57.461Z"
+ },
+ "pao-official-history:/en/history/european-history/": {
+  "endpoint": "/en/history/european-history/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-16T08:21:01.538Z"
+ },
+ "rsssf-greece:/tablesg/grkhist.html": {
+  "endpoint": "/tablesg/grkhist.html",
+  "providerId": "rsssf-greece",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-16T08:21:03.846Z"
+ },
+ "rsssf-greece:/tablesg/grkchamp.html": {
+  "endpoint": "/tablesg/grkchamp.html",
+  "providerId": "rsssf-greece",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-16T08:21:07.378Z"
  }
 }

@@ -37,11 +37,11 @@
     "pagesRead": 0,
     "observedTotalDocuments": 11,
     "observedTotalPages": null,
-    "queue": 8,
+    "queue": 5,
     "lastError": null
    }
   ],
-  "documents": 3,
+  "documents": 6,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
@@ -56,11 +56,11 @@
     "pagesRead": 0,
     "observedTotalDocuments": 5,
     "observedTotalPages": null,
-    "queue": 2,
+    "queue": 0,
     "lastError": null
    }
   ],
-  "documents": 3,
+  "documents": 5,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."

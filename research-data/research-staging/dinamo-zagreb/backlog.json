@@ -16,6 +16,14 @@
   "owner": null
  },
  {
+  "id": "blocked-dinamo-official-/en/club/history",
+  "priority": "P2",
+  "task": "GNK Dinamo Zagreb: /en/club/history answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "GNK Dinamo Zagreb: /en/club/history חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-dinamo-official-0",
   "priority": "P3",
   "task": "The Croatian and English pages are one source family.",
@@ -50,8 +58,8 @@
  {
   "id": "continue-bad-blue-boys-posts",
   "priority": "P3",
-  "task": "Bad Blue Boys posts: 2 page(s) read of 4; the scheduled task continues from the checkpoint.",
-  "taskHe": "Bad Blue Boys posts: נקראו 2 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Bad Blue Boys posts: 4 page(s) read of 4; the scheduled task continues from the checkpoint.",
+  "taskHe": "Bad Blue Boys posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
