@@ -59,3 +59,32 @@ export type FixtureFeed = {
   results?: Result[]
   diagnostics: FixtureDiagnostic[]
 }
+
+/**
+ * FINAL WHISTLE (spec 16.10.2026). A result is only a FINAL when the provider says so in words — a score on its own,
+ * or a kick-off in the past, is not an ending (the old FINISHED pattern also matched cancellations).
+ * homeScore/awayScore keep ONE meaning: the match's main score, without the shoot-out's kicks. A 90-minute score is
+ * never derived from an after-extra-time one.
+ */
+export type FinalStatus = 'FT' | 'AET' | 'PEN'
+export type CompetitionKind = 'league' | 'cup' | 'friendly' | 'unknown'
+export type FinalEvidence = {
+  source: 'thesportsdb'
+  providerEventId: string
+  /** the provider's own status word, as received — the allowlist grows from what the dry run actually sees */
+  rawStatus: string
+  status: FinalStatus
+  /** when WE observed it (UTC) */
+  observedAt: string
+  providerUpdatedAt: string | null
+}
+export type FinalResult = Result & {
+  dateOnly: boolean
+  finalStatus: FinalStatus
+  regulationScore: { home: number; away: number } | null
+  afterExtraTimeScore: { home: number; away: number } | null
+  /** the shoot-out's kicks; null when the provider did not give them (a PEN without them is NEEDS REVIEW, never guessed) */
+  penalties: { home: number; away: number } | null
+  competitionKind: CompetitionKind
+  evidence: FinalEvidence
+}

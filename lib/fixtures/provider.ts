@@ -10,7 +10,7 @@
  * team that cannot be identified exactly gives no fixture.
  */
 import {norm} from './names'
-import type {Fixture, FixtureTeam, Result} from './types'
+import type {Fixture, FinalStatus, FixtureTeam, Result} from './types'
 
 const BASE = 'https://www.thesportsdb.com/api/v1/json'
 export const providerUrl = (key: string, path: string) => `${BASE}/${encodeURIComponent(key)}/${path}`
@@ -147,4 +147,36 @@ export function chooseLast(clubId: string, teamId: string, results: ReturnType<t
 }
 export async function lastForClub(clubId: string, teamId: string, key: string, get: Fetcher, now: Date): Promise<Result | null> {
   return chooseLast(clubId, teamId, parseResults(await get(providerUrl(key, `eventslast.php?id=${teamId}`))), now)
+}
+
+/**
+ * FINAL WHISTLE: the provider's words for "the match is over", mapped to ours. Anything not listed — live, half time,
+ * postponed, cancelled, abandoned, awarded, walkover, void, and any status never seen before — is NOT a final.
+ * The list grows only from `rawStatus` values the dry run has actually recorded.
+ */
+const FINAL_WORDS: Record<string, FinalStatus> = {
+  'ft': 'FT', 'match finished': 'FT', 'full time': 'FT', 'finished': 'FT',
+  'aet': 'AET', 'after extra time': 'AET', 'finished after extra time': 'AET',
+  'pen': 'PEN', 'ap': 'PEN', 'after penalties': 'PEN', 'finished after penalties': 'PEN', 'penalties': 'PEN',
+}
+export const finalStatusOf = (raw: string | null): FinalStatus | null => (raw ? FINAL_WORDS[raw.trim().toLowerCase()] ?? null : null)
+
+export type ProviderFinal = ProviderEvent & {rawStatus: string; finalStatus: FinalStatus; homeScore: number; awayScore: number; updatedAt: string | null}
+/**
+ * Events the provider calls finished, with whole non-negative scores. Never guesses: a missing or odd score, an unknown
+ * status and a duplicate id are dropped. Penalty kicks are NOT read — no provider field for them has been verified yet,
+ * so a shoot-out stays "penalties unknown" and waits for review rather than being invented.
+ */
+export function parseFinals(json: unknown): ProviderFinal[] {
+  const byId = new Map(parseEvents(json).map(e => [e.id, e]))
+  const out: ProviderFinal[] = []
+  for (const e of [...list(json, 'results'), ...list(json, 'events')]) {
+    const id = str(e.idEvent), ev = id ? byId.get(id) : undefined
+    const raw = str(e.strStatus), fin = finalStatusOf(raw)
+    const h = str(e.intHomeScore), a = str(e.intAwayScore)
+    if (!ev || !raw || !fin || h === null || a === null || !/^\d{1,2}$/.test(h) || !/^\d{1,2}$/.test(a)) continue
+    if (out.some(x => x.id === ev.id)) continue
+    out.push({...ev, rawStatus: raw, finalStatus: fin, homeScore: Number(h), awayScore: Number(a), updatedAt: null})
+  }
+  return out
 }
