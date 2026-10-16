@@ -1,4 +1,5 @@
 export type TelegramWebApp = {
+  platform: string
   initData: string
   initDataUnsafe?: { start_param?: string }
   ready(): void

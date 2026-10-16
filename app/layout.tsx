@@ -120,6 +120,7 @@ const FAN_PATHS=['/master','/clubs','/telegram','/sources','/closet','/market','
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
+  const telegram=pathname==='/telegram'||pathname.startsWith('/telegram/')
   const sharedLocale=pathname.startsWith('/clubs/')?uiLocale(headers().get('x-fan-life-locale')||undefined):'en'
   // FAN LIFE's own pages (English, LTR, never behind The Worker's gate switches): the hub, the clubs,
   // the control room, and "your corner" — the personal area ported from The Worker (7.10.2026).
@@ -133,7 +134,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const topAd=topAdAllowedOn(pathname)&&!closed&&((await readState().catch(()=>null))?.ads??DEFAULT_TOP_AD).topAd
   return (
     <html lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
-      <head><Analytics off={pathname==='/master'||pathname.startsWith('/master/')||pathname==='/telegram'||pathname.startsWith('/telegram/')} /></head>
+      <head>
+        {telegram?<Script id="fanlife-telegram-sdk" src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive" />:null}
+        <Analytics off={pathname==='/master'||pathname.startsWith('/master/')||telegram} />
+      </head>
       <body className="font-body antialiased" data-no-ads={topAd?undefined:""}>
         <a
           href="#main"

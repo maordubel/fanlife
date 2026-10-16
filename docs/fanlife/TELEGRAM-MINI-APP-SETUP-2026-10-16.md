@@ -12,6 +12,8 @@ Bot: [@FanLife_appbot](https://t.me/FanLife_appbot). Target URL **after deployme
 - Server-side HMAC validation of raw initData, bounded request sizes, constant-time hash comparison and a one-hour launch freshness limit. No Telegram name, ID or phone is printed in the public UI.
 - No added package, paid API, subscription or separate server.
 - Third-party analytics and top/promo ad loading are excluded from the Telegram routes. Raw Telegram launch data must not be forwarded to analytics.
+- Telegram routes follow the same public readState fallback as the main site if the write store refuses a read. Published/last-good state still goes through live-club, gate-switch and playable-content checks; this is not an evaluation bypass or permission to write through an outage.
+- Initial Telegram entry loads its SDK before hydration in the root layout. The bridge's cached script also supports navigation into the Mini App from the website. Native Telegram without signed initData is a guest, not an authenticated account; browser/guest mode never tells a user already in Telegram to reopen the bot.
 
 ## Explicit limits — do not describe these as finished
 

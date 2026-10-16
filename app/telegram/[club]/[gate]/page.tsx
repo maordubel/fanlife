@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import SharedGatePage from '@/app/clubs/[slug]/[gate]/page'
 import { telegramGame, knownClub } from '@/lib/telegram/routes'
-import { readState, stateUnavailable } from '@/lib/master/store'
+import { readState } from '@/lib/master/store'
 import { gateAccess } from '@/lib/clubs/access'
 import type { GateSearch } from '@/components/clubs/gates/types'
 
@@ -12,6 +12,6 @@ export default async function TelegramGate({ params, searchParams }: { params: {
   const game = telegramGame(params.gate)
   if (!game || !knownClub(params.club)) notFound()
   const state = await readState()
-  if (stateUnavailable() || !gateAccess(state.clubs.find(club => club.id === params.club), game.number, false).allowed) notFound()
+  if (!gateAccess(state.clubs.find(club => club.id === params.club), game.number, false).allowed) notFound()
   return SharedGatePage({ params: { slug: params.club, gate: game.key }, searchParams: { ...searchParams, lang: 'en' } })
 }

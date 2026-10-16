@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { telegramInternalHref, telegramInvite, telegramStartHref } from '@/lib/telegram/routes'
+import { telegramLaunchMode } from '@/lib/telegram/connection'
 import type { TelegramWebApp } from '@/types/telegram'
 
 type Status = 'loading' | 'preview' | 'verifying' | 'verified' | 'guest' | 'unavailable'
@@ -18,10 +19,14 @@ export function TelegramBridge() {
   useEffect(() => {
     if (!ready) return
     const sdk = window.Telegram?.WebApp
-    if (!sdk?.initData) { setStatus('preview'); return }
-    const controller = new AbortController()
-    setApp(sdk); setStatus('verifying')
+    const mode = telegramLaunchMode(sdk)
+    if (!sdk || mode === 'unavailable') { setStatus('unavailable'); return }
+    if (mode === 'preview') { setStatus('preview'); return }
+    setApp(sdk)
     sdk.ready(); sdk.expand()
+    if (mode === 'guest') { setStatus('guest'); return }
+    const controller = new AbortController()
+    setStatus('verifying')
     const timeout = window.setTimeout(() => { controller.abort(); setStatus('guest') }, 10000)
     void fetch('/api/telegram/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ initData: sdk.initData }), signal: controller.signal })
       .then(async response => { const body = await response.json(); if (!controller.signal.aborted) setStatus(response.ok && body.ok === true ? 'verified' : 'guest') })
@@ -89,11 +94,12 @@ export function TelegramBridge() {
   const invite = match ? telegramInvite(match[1]!, match[2]!) : null
   const share = invite ? `https://t.me/share/url?${new URLSearchParams({ url: invite, text: 'Your club. Your call. Play FAN LIFE.' })}` : null
   const labels: Record<Status, string> = {
-    loading: 'Connecting to Telegram…', preview: 'Browser preview · open @FanLife_appbot to play inside Telegram.',
+    loading: 'Getting ready…', preview: 'Guest mode · games are available without signing in.',
     verifying: 'Verifying Telegram connection…', verified: 'Telegram connection verified · your Telegram name is not published.',
-    guest: 'Playing as a guest · reopen from the bot to retry verification.', unavailable: 'Telegram is unavailable · you can still play here.',
+    guest: 'Guest mode · your Telegram account is not connected.', unavailable: 'Guest mode · you can still play here.',
   }
   return <>
+    {/* Same cache ID as the root's early script; also supports client navigation from the website. */}
     <Script id="fanlife-telegram-sdk" src="https://telegram.org/js/telegram-web-app.js" strategy="afterInteractive" onReady={() => setReady(true)} onError={() => setStatus('unavailable')} />
     <nav className="tg-bridge" aria-label="Telegram app navigation">
       <Link href="/telegram" className="tg-home">FAN LIFE</Link>
