@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
+import { Shell } from '@/components/master/Shell'
 import { readState, stateUnavailable } from '@/lib/master/store'
 import { REGISTRY } from '@/lib/master/registry'
 import { loadClub } from '@/lib/clubs/resolver'
@@ -25,7 +26,7 @@ export default async function TelegramHome({ searchParams }: { searchParams: { c
   const selected = clubs.find(club => club.reg.id === searchParams.club)
   const theme = selected ? clubTheme(selected.reg) : null
 
-  return <main id="main" className="tg-lobby" style={theme ? themeStyle(theme, 'en') as CSSProperties : undefined} data-rival-no={theme ? rivalBans(theme).join(' ') : undefined}>
+  return <Shell theme={theme ?? undefined} locale="en"><main id="main" className="tg-lobby" style={theme ? themeStyle(theme, 'en') as CSSProperties : undefined} data-rival-no={theme ? rivalBans(theme).join(' ') : undefined}>
     <header className="tg-cover">
       {/* eslint-disable-next-line @next/next/no-img-element -- exact existing brand asset */}
       <img src="/brand/fanlife/logo-mono.webp" width={112} height={112} alt="FAN LIFE — Football. Forever." />
@@ -49,5 +50,5 @@ export default async function TelegramHome({ searchParams }: { searchParams: { c
     </section>}
     <aside className="tg-note">Games and club content are shared with the main site. Telegram verification does not automatically link an existing Fan Life account. Guest progress stays in this browser; cross-device account linking is not included in this first release.</aside>
     <footer className="tg-footer"><a href="https://fanlife.dubelteam.com" target="_blank" rel="noopener noreferrer">FanLife.DubelTeam.com</a><span>FOOTBALL. FOREVER.</span></footer>
-  </main>
+  </main></Shell>
 }

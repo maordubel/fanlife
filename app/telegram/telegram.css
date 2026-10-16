@@ -25,4 +25,6 @@
 .tg-note { font-family: var(--mag-mono); font-size: 12px; line-height: 1.7; border-block-start: 1px solid currentColor; padding-block-start: 20px; }
 .tg-footer { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-block-start: 28px; font-family: var(--mag-mono); font-size: 12px; }
 .telegram-app .club-foot, .telegram-app .club-tabbar { display: none; }
+/* Keep the magazine surface/tokens; TelegramBridge provides this container's navigation. */
+.telegram-app .mag-top, .telegram-app .mag-foot, .telegram-app .mag-tabbar { display: none; }
 @media (max-width: 420px) { .tg-cover img { inline-size: 80px; block-size: 80px; } .tg-game { gap: 10px; padding: 16px 12px; } .tg-number { font-size: 22px; } }
