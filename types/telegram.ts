@@ -4,6 +4,9 @@ export type TelegramWebApp = {
   initDataUnsafe?: { start_param?: string }
   ready(): void
   expand(): void
+  requestFullscreen?(): void
+  addToHomeScreen?(): void
+  checkHomeScreenStatus?(callback: (status: 'unsupported' | 'unknown' | 'added' | 'missed') => void): void
   isVersionAtLeast(version: string): boolean
   enableClosingConfirmation(): void
   disableClosingConfirmation(): void

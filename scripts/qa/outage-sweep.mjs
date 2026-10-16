@@ -25,6 +25,27 @@ try{
  // innerText follows text-transform, and the weekly's club stickers print names in capitals
  if(!(await page.goto(base+'/'),await page.locator('main').innerText()).toLowerCase().includes('olympiacos'))bad.push('/ → the hub lists no clubs')
  if(!(await page.goto(base+'/telegram'),await page.locator('main').innerText()).toLowerCase().includes('olympiacos'))bad.push('/telegram → the Mini App lists no published clubs during an outage')
+ // Telegram's new front door must fit a phone and desktop, remember an actual visit, and let the fan choose again.
+ for(const width of [390,1440]){
+  await page.setViewportSize({width,height:844})
+  for(const path of ['/telegram','/telegram?club=panathinaikos']){
+   await page.goto(base+path,{waitUntil:'domcontentloaded'})
+   if(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth))bad.push(`Telegram ${width}px ${path} → sideways overflow`)
+  }
+ }
+ await page.setViewportSize({width:390,height:844})
+ await page.goto(base+'/telegram?choose=1',{waitUntil:'domcontentloaded'})
+ await page.locator('.tg-club').first().click()
+ await page.locator('.tg-game').first().click()
+ await page.waitForFunction(()=>{
+  try{return /^\/telegram\/[^/]+\/[^/]+$/.test(location.pathname)&&JSON.parse(localStorage.getItem('fanlife.telegram.visit.v1')||'null')?.game===location.pathname.split('/')[3]}catch{return false}
+ })
+ await page.locator('.tg-home').click()
+ await page.locator('.tg-return').waitFor({state:'visible'})
+ await page.getByRole('button',{name:'Forget this preference'}).click()
+ await page.locator('.tg-return').waitFor({state:'hidden'})
+ const photo=await page.request.get(base+'/api/telegram/welcome-card?v=1')
+ if(photo.status()!==200||!photo.headers()['content-type']?.startsWith('image/png'))bad.push('Telegram → welcome photo is not a public PNG')
  await page.goto(base+'/master/admin');await page.locator('#owner-key').fill(KEY);await page.getByRole('button',{name:'Enter the control room'}).click()
  await page.waitForURL(u=>u.pathname==='/master/admin',{timeout:30000}).catch(()=>bad.push('admin → the key did not open the control room'))
  for(const s of ['overview','clubs','data','audience','operations','settings']){checked++;const r=await page.goto(`${base}/master/admin?section=${s}`);if(r.status()>=400||await visibleFault())bad.push(`admin ${s} → ${r.status()}`)}

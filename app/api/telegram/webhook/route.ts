@@ -36,11 +36,18 @@ export async function POST(request: Request) {
     const appUrl = new URL(process.env.TELEGRAM_APP_URL || 'https://fanlife.dubelteam.com/telegram')
     const allowedHosts = ['fanlife.dubelteam.com', 'fanlife-git-codex-telegram-mini-ap-1047ba-dubel-team-s-projects.vercel.app']
     if (appUrl.protocol !== 'https:' || !allowedHosts.includes(appUrl.hostname) || appUrl.port || appUrl.username || appUrl.password || appUrl.pathname !== '/telegram' || appUrl.search || appUrl.hash) return reply({ ok: false }, 503)
+    const start = /^\/start(?:@FanLife_appbot)?(?:\s|$)/i.test(message.text)
+    const text = start
+      ? 'Welcome to FAN LIFE.\nPick your club. Take your place in the stand.\n\nFanLife.DubelTeam.com'
+      : 'FAN LIFE · Your club. Your call.\n\nChoose a club, play the quiz, have your say or build your all-time XI. Your club preference stays on this device.\n\n/start — open FanLife\n/help — show this guide\n\nFanLife.DubelTeam.com'
     return reply({
-      method: 'sendMessage',
+      method: start ? 'sendPhoto' : 'sendMessage',
       chat_id: message.chat.id,
-      text: 'FOOTBALL IS NINETY MINUTES.\nBEING A SUPPORTER IS A LIFETIME.\n\nWelcome to FAN LIFE.\nPick your club. Test your knowledge. Build your all-time XI. Have your say.\n\nYour club. Your call.\n\nFanLife.DubelTeam.com',
-      reply_markup: { inline_keyboard: [[{ text: '⚽ Open FanLife', web_app: { url: appUrl.href } }]] },
+      ...(start ? {photo:new URL('/api/telegram/welcome-card?v=1',appUrl).href,caption:text} : {text}),
+      reply_markup: { inline_keyboard: [
+        [{ text: '⚽ Open FanLife', web_app: { url: appUrl.href } }],
+        [{ text: 'Choose Your Club', web_app: { url: `${appUrl.href}?choose=1` } }],
+      ] },
     })
   } catch { return reply({ ok: false }, 400) }
 }
