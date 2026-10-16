@@ -26,6 +26,12 @@ export async function POST(request: Request) {
     }
     const update = JSON.parse(Buffer.concat(chunks).toString('utf8'))
     const message = update?.message
+    // FINAL WHISTLE: the owner links his chat with a one-time code issued by the control room (`/link CODE`)
+    if (Number.isSafeInteger(update?.update_id) && message?.chat?.type === 'private' && Number.isSafeInteger(message.chat.id) && message.chat.id > 0 && message?.from?.is_bot !== true && typeof message?.text === 'string' && /^\/link(?:@\w+)?(?:\s|$)/i.test(message.text)) {
+      const {redeemLink} = await import('@/lib/final-whistle/link')
+      const text = await redeemLink(message.text, message.chat.id, new Date()).catch(() => 'Linking is not available right now. Try again in a minute.')
+      return text ? reply({method: 'sendMessage', chat_id: message.chat.id, text}) : reply({ok: true})
+    }
     if (!Number.isSafeInteger(update?.update_id) || message?.chat?.type !== 'private' || !Number.isSafeInteger(message.chat.id) || message.chat.id <= 0 || message?.from?.is_bot === true || typeof message?.text !== 'string' || !/^\/(?:start|help)(?:@FanLife_appbot)?(?:\s|$)/i.test(message.text)) return reply({ ok: true })
     const appUrl = new URL(process.env.TELEGRAM_APP_URL || 'https://fanlife.dubelteam.com/telegram')
     const allowedHosts = ['fanlife.dubelteam.com', 'fanlife-git-codex-telegram-mini-ap-1047ba-dubel-team-s-projects.vercel.app']
