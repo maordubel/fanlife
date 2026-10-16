@@ -8,12 +8,43 @@ const root=process.cwd()
 const read=(p:string)=>readFileSync(join(root,p),'utf8')
 const pages=(dir:string):string[]=>readdirSync(join(root,dir)).flatMap(n=>{const p=`${dir}/${n}`;return statSync(join(root,p)).isDirectory()?pages(p):n==='page.tsx'?[p]:[]})
 
+/** A thin route can return another app page; follow that actual call rather than exempting the route. */
+function magazinePage(page:string,load:(p:string)=>string=read,seen=new Set<string>()):boolean {
+ if(seen.has(page))return false
+ const visited=new Set(seen).add(page)
+ let source:string
+ try{source=load(page)}catch{return false}
+ if(/Shell|ClubSurface|FanPage/.test(source))return true
+ for(const match of source.matchAll(/import\s+([A-Za-z_$][\w$]*)\s+from\s+['"]@\/(app\/[^'"]+\/page)['"]/g)){
+  const name=match[1]!,target=match[2]!+'.tsx'
+  // Importing a dressed page without returning/rendering it does not dress this page.
+  const called=new RegExp(`return\\s+(?:await\\s+)?${name}\\s*\\(`).test(source)
+  const rendered=new RegExp(`<${name}(?:\\s|/|>)`).test(source)
+  if((called||rendered)&&magazinePage(target,load,visited))return true
+ }
+ return false
+}
+
 describe('the magazine is the house style (rule 91)',()=>{
  it('every page is dressed as the magazine, or is a named Worker-native page',()=>{
   const allowed=new Set(native.pages)
   // FanPage (components/fanlife/FanPage.tsx) is the Shell plus the corner's header — the same dress
-  const bad=pages('app').filter(p=>!/Shell|ClubSurface|FanPage/.test(read(p))&&!allowed.has(p))
+  const bad=pages('app').filter(p=>!magazinePage(p)&&!allowed.has(p))
   expect(bad,`new pages must wrap in Shell or ClubSurface: ${bad.join(', ')}`).toEqual([])
+ })
+ it('only follows a returned shared page, and still rejects undressed pages and cycles',()=>{
+  const fixture:Record<string,string>={
+   'app/shared/page.tsx':'export default function Page(){return <ClubSurface />}',
+   'app/empty/page.tsx':'export default function Page(){return <main />}',
+   'app/delegate/page.tsx':"import Shared from '@/app/shared/page'; export default function Page(){return Shared({})}",
+   'app/unused/page.tsx':"import Shared from '@/app/shared/page'; export default function Page(){return <main />}",
+   'app/undressed/page.tsx':"import Shared from '@/app/empty/page'; export default function Page(){return Shared({})}",
+   'app/a/page.tsx':"import Other from '@/app/b/page'; export default function Page(){return Other({})}",
+   'app/b/page.tsx':"import Other from '@/app/a/page'; export default function Page(){return Other({})}",
+  }
+  const load=(p:string)=>{if(!(p in fixture))throw new Error('missing page');return fixture[p]!}
+  expect(magazinePage('app/delegate/page.tsx',load)).toBe(true)
+  for(const p of ['app/empty/page.tsx','app/unused/page.tsx','app/undressed/page.tsx','app/a/page.tsx','app/missing/page.tsx'])expect(magazinePage(p,load),p).toBe(false)
  })
  it('the Worker-native list only shrinks: every entry still exists and still is not magazine',()=>{
   for(const p of native.pages){expect(existsSync(join(root,p)),p).toBe(true);expect(/Shell|ClubSurface/.test(read(p)),`${p} now uses the magazine — remove it from the list`).toBe(false)}

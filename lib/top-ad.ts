@@ -12,7 +12,7 @@
  */
 export const TOP_AD_SRC = '/dubel-top-ad.js'
 
-const NEVER_PREFIX = ['/master', '/qa', '/api', '/auth', '/life', '/city', '/c/']
+const NEVER_PREFIX = ['/master', '/qa', '/api', '/auth', '/telegram', '/life', '/city', '/c/']
 /** ALL FOOTBALL and LEGENDS MANAGER: their front page is a reading page; every gate, career and match is a run (rule 28) */
 const EXPERIENCE_RUNS = /^\/all-football\/.+/
 /** THE WORKER's gate routes (rule 24) and the club gates are game screens. */

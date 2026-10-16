@@ -20,10 +20,11 @@ try{
  browser=await chromium.launch();const page=await browser.newPage()
  const visibleFault=()=>page.evaluate(()=>{const seen=e=>!!(e.offsetWidth||e.offsetHeight);return [...document.querySelectorAll('main *, body > *')].some(e=>e.childElementCount===0&&seen(e)&&/WENT TO PRESS WITH A FAULT|No club matches/i.test(e.textContent||''))})
  const doors=['','play','history','terrace','meetings','life',...SHARED_GATES.map(g=>g.key)]
- const urls=['/','/market','/sources','/me',...CORE_CLUB_IDS.flatMap(c=>[...new Set(doors)].map(d=>`/clubs/${c}${d?'/'+d:''}`))]
+ const urls=['/','/market','/sources','/me','/telegram','/telegram?club=hapoel-tel-aviv','/telegram/hapoel-tel-aviv/xi',...CORE_CLUB_IDS.flatMap(c=>[...new Set(doors)].map(d=>`/clubs/${c}${d?'/'+d:''}`))]
  for(const u of urls){checked++;const r=await page.goto(base+u,{waitUntil:'domcontentloaded'}).catch(()=>null);const s=r?.status()??0;if((s>=400&&s!==404)||!s||await visibleFault())bad.push(`${u} → ${s}`)}
  // innerText follows text-transform, and the weekly's club stickers print names in capitals
  if(!(await page.goto(base+'/'),await page.locator('main').innerText()).toLowerCase().includes('olympiacos'))bad.push('/ → the hub lists no clubs')
+ if(!(await page.goto(base+'/telegram'),await page.locator('main').innerText()).toLowerCase().includes('olympiacos'))bad.push('/telegram → the Mini App lists no published clubs during an outage')
  await page.goto(base+'/master/admin');await page.locator('#owner-key').fill(KEY);await page.getByRole('button',{name:'Enter the control room'}).click()
  await page.waitForURL(u=>u.pathname==='/master/admin',{timeout:30000}).catch(()=>bad.push('admin → the key did not open the control room'))
  for(const s of ['overview','clubs','data','audience','operations','settings']){checked++;const r=await page.goto(`${base}/master/admin?section=${s}`);if(r.status()>=400||await visibleFault())bad.push(`admin ${s} → ${r.status()}`)}
