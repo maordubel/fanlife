@@ -10,6 +10,8 @@ import {teamCardFor,type TeamCard} from './provider'
  */
 export type CardRow={clubId:string;card:TeamCard|null;error:string|null;checks:{field:'ground'|'founded';ours:string;theirs:string;agree:boolean}[]}
 const TTL=24*3600_000
+// An optional provider must not hold the streamed control-room document open while eight serial requests time out.
+const FIRST_READ_BUDGET_MS=1500
 let cache:{at:number;ttl:number;rows:CardRow[]}|null=null,inflight:Promise<CardRow[]>|null=null
 const norm=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()
 async function get(url:string):Promise<unknown>{const r=await fetch(url,{signal:AbortSignal.timeout(8000),next:{revalidate:24*3600},headers:{accept:'application/json'}});if(!r.ok)throw new Error(`provider answered ${r.status}`);return r.json()}
@@ -34,5 +36,8 @@ export async function teamCards(now=Date.now()):Promise<CardRow[]>{
  if(cache&&now-cache.at<cache.ttl)return cache.rows
  const refresh=(inflight??=load().then(rows=>{cache={at:Date.now(),ttl:rows.some(r=>r.card)?TTL:10*60_000,rows};return rows}).finally(()=>{inflight=null}))
  if(cache){refresh.catch(()=>undefined);return cache.rows}
- return refresh
+ let timer:ReturnType<typeof setTimeout>|undefined
+ try{
+  return await Promise.race([refresh,new Promise<never>((_,reject)=>{timer=setTimeout(()=>reject(new Error('Provider check is still loading.')),FIRST_READ_BUDGET_MS)})])
+ }finally{clearTimeout(timer)}
 }
