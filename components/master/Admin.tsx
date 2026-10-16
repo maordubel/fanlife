@@ -41,7 +41,7 @@ const VIEW_OUT:Record<ClubView,string>={launch:'launch',summary:'summary',decisi
  * reload, a bookmark and Back keep the context; the old `?tab=` links are mapped on the server. Global sections show
  * all clubs; a club is a scope you enter and leave on purpose.
  */
-export function Admin({tasks,features,ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps,provider}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string;migration?:{pending:string|null;blobRetired:boolean}};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode;provider?:ReactNode;tasks?:ReactNode;features?:Features}){
+export function Admin({tasks,features,ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps,provider,finalWhistle}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string;migration?:{pending:string|null;blobRetired:boolean}};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode;provider?:ReactNode;finalWhistle?:ReactNode;tasks?:ReactNode;features?:Features}){
  const router=useRouter(),path=usePathname(),params=useSearchParams()
  const go=(next:Record<string,string|null>)=>{const q=new URLSearchParams(params.toString());q.delete('tab');for(const [k,v] of Object.entries(next)){if(v)q.set(k,v);else q.delete(k)}router.push(`${path}?${q}`,{scroll:false})}
  const api=useAdminApi(),[state,setState]=useState(initial),[sums,setSums]=useState(summaries)
@@ -114,6 +114,7 @@ export function Admin({tasks,features,ads,initial,summaries,adapters,runs,displa
 
   {section==='operations'&&<>
    <header className="desk-head"><p className="desk-kicker">Operations</p><h1 className="desk-h1">Is the application running reliably?</h1></header>
+   {finalWhistle}
    {storage?.migration&&<StorageRecovery pending={storage.migration.pending} blobRetired={storage.migration.blobRetired}/>}
    <section className="desk-sub" id="storage" aria-labelledby="st-h"><h2 id="st-h">Storage map</h2><ul className="desk-rows">{ops.storage.map(r=><li key={r.what} data-durable={r.durable}><span className="desk-stamp">{r.durable==='yes'?'Kept':r.durable==='committed'?'Committed':r.durable==='no'?'Temporary':'Unknown'}</span><div><b>{r.what}</b><small>{r.where}</small><p>{r.note}</p></div></li>)}</ul></section>
    <section className="desk-sub" id="schedules" aria-labelledby="sc-h"><h2 id="sc-h">Schedules</h2><p className="desk-fine">Read from the workflow files. Run or pause them on GitHub → Actions.</p><ul className="desk-rows">{SCHEDULES.map(s=><li key={s.workflow}><span className="desk-stamp">{s.utc}</span><div><b>{s.name}</b><p>{s.what}</p>{s.needs&&<small>Needs: {s.needs}</small>}</div><a className="desk-btn ghost" href={githubActions(s.workflow)} target="_blank" rel="noreferrer">Open ↗</a></li>)}</ul></section>

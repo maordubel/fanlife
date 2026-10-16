@@ -1,3 +1,5 @@
+import {FinalWhistleDesk} from '@/components/master/desk/FinalWhistleDesk'
+import {FIXTURE_TEAMS} from '@/lib/fixtures/teams'
 import {AdsDesk} from '@/components/master/desk/AdsDesk'
 import {readPromo} from '@/lib/promo/store'
 import {ProviderCheck} from '@/components/master/desk/ProviderCheck'
@@ -61,6 +63,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
     tasks={admin==='overview'?<TaskDesk initial={desk.view} scope={club} players={desk.players}/>:undefined}
     ops={{storage:storageMap(),integrations:integrations(),release:release()}}
     audience={admin==='audience'?<AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(summaries.map(s=>[s.id,s.name]))}/>:undefined}
+    finalWhistle={admin==='operations'?<FinalWhistleDesk clubs={state.clubs.map(c=>({id:c.id,name:c.name,live:c.status==='live',provider:FIXTURE_TEAMS.some(t=>t.clubId===c.id)})).sort((a,b)=>a.name.localeCompare(b.name))}/>:undefined}
     gaps={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">Club gaps — what each gate still needs</summary><ClubGaps summaries={summaries}/></details>:undefined}
     provider={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">TheSportsDB check — grounds, founding years, badges and kits</summary><Suspense fallback={<p className="desk-state" role="status">Asking TheSportsDB…</p>}><ProviderCheck/></Suspense></details>:undefined}/>
   </Suspense>)
