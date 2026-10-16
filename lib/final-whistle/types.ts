@@ -30,8 +30,12 @@ export type Watch = {
 export type Config = {
   enabled: boolean
   dryRun: boolean
-  /** clubs the owner chose; a club must ALSO be live, or it is skipped */
+  /** every club the provider can identify is watched, published or not (owner, 16.10.2026) — unless this is off */
+  allClubs: boolean
+  /** used only when `allClubs` is off */
   clubIds: string[]
+  /** `morning`: a result is sent at 06:00 Athens the day after the match (yesterday's results, every morning). `live`: at the whistle. */
+  delivery: 'morning' | 'live'
   /** events that kicked off before this are never sent (bootstrap: no history), unless a backfill is asked for */
   bootstrapAt: string | null
   /** configured / not configured only — never the secret itself */
@@ -39,7 +43,7 @@ export type Config = {
   /** when a scheduled run last reported the delivery secret as set / missing */
   deliverySeenAt: string | null
 }
-export const DEFAULT_CONFIG: Config = {enabled: false, dryRun: true, clubIds: [], bootstrapAt: null, deliveryConfigured: false, deliverySeenAt: null}
+export const DEFAULT_CONFIG: Config = {enabled: false, dryRun: true, allClubs: true, clubIds: [], delivery: 'morning', bootstrapAt: null, deliveryConfigured: false, deliverySeenAt: null}
 
 export const DESTINATION_ID = 'owner-telegram'
 export const MAX_ATTEMPTS = 5
@@ -57,6 +61,8 @@ export type Job = {
   result: FinalResult
   /** a dry-run job renders and is checked but never leaves the building */
   dryRun: boolean
+  /** a morning job is not claimed before this instant */
+  notBefore?: string | null
   createdAt: string
   updatedAt: string
   attempts: number

@@ -1,3 +1,4 @@
+import {issueLinkCode} from '@/lib/final-whistle/link'
 import {NextRequest, NextResponse} from 'next/server'
 import {adminFromRequest} from '@/lib/master/admin'
 import {audit, mutate} from '@/lib/master/store'
@@ -59,10 +60,15 @@ export async function POST(r: NextRequest, {params}: {params: {action: string}})
     const b = await body(r)
     if (a === 'config') {
       const before = await getConfig()
-      const patch = {...(typeof b.enabled === 'boolean' ? {enabled: b.enabled} : {}), ...(typeof b.dryRun === 'boolean' ? {dryRun: b.dryRun} : {}), ...(Array.isArray(b.clubIds) ? {clubIds: b.clubIds.filter((x): x is string => typeof x === 'string').slice(0, 40)} : {})}
+      const patch = {...(typeof b.enabled === 'boolean' ? {enabled: b.enabled} : {}), ...(typeof b.dryRun === 'boolean' ? {dryRun: b.dryRun} : {}), ...(typeof b.allClubs === 'boolean' ? {allClubs: b.allClubs} : {}), ...(b.delivery === 'morning' || b.delivery === 'live' ? {delivery: b.delivery as 'morning' | 'live'} : {}), ...(Array.isArray(b.clubIds) ? {clubIds: b.clubIds.filter((x): x is string => typeof x === 'string').slice(0, 40)} : {})}
       const after = await setConfig(patch, now)
       await mutate(s => audit(s, 'final-whistle.config', 'final-whistle', JSON.stringify(patch), {actor: actorOf(admin).actor, role: actorOf(admin).role, before: JSON.stringify({enabled: before.enabled, dryRun: before.dryRun, clubIds: before.clubIds}), after: JSON.stringify({enabled: after.enabled, dryRun: after.dryRun, clubIds: after.clubIds})}))
       return json(after)
+    }
+    if (a === 'link-code') {
+      const res = await issueLinkCode(now)
+      await mutate(s => audit(s, 'final-whistle.link-code', 'final-whistle', '', {actor: actorOf(admin).actor, role: actorOf(admin).role}))
+      return json(res)
     }
     if (a === 'retry' || a === 'dismiss') {
       const id = str(b.jobId, 64)

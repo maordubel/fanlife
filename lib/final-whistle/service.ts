@@ -4,6 +4,7 @@ import {parseFinals, parseTeam, providerUrl} from '@/lib/fixtures/provider'
 import {readState} from '@/lib/master/store'
 import {eligibleClubIds} from './eligibility'
 import {jobId, scoreFingerprint} from './fingerprint'
+import {morningAfter} from './athens'
 import {afterBootstrap, emptyWatch, observe, toFinalResult} from './verify'
 import {listDocs, readDoc, updateDoc} from './store'
 import {DEFAULT_CONFIG, DESTINATION_ID, LEASE_MS, MAX_ATTEMPTS, type Config, type Delivered, type Destination, type Job, type RunInfo, type Watch} from './types'
@@ -17,7 +18,7 @@ const iso = (d: Date) => d.toISOString()
 
 // ───────────── config and destination
 export async function getConfig(): Promise<Config> { return {...DEFAULT_CONFIG, ...(await readDoc<Partial<Config>>('config.json', {})).value} }
-export async function setConfig(patch: Partial<Pick<Config, 'enabled' | 'dryRun' | 'clubIds'>>, now: Date): Promise<Config> {
+export async function setConfig(patch: Partial<Pick<Config, 'enabled' | 'dryRun' | 'clubIds' | 'allClubs' | 'delivery'>>, now: Date): Promise<Config> {
   if (patch.clubIds) {
     const known = new Set(FIXTURE_TEAMS.map(t => t.clubId))
     const bad = patch.clubIds.filter(c => !known.has(c))
@@ -98,7 +99,7 @@ async function ensureJob(w: Watch, cfg: Config, now: Date): Promise<boolean> {
   let made = false
   await updateDoc<Job | null>(jobName(id), null, cur => {
     made = !cur
-    return cur ?? {id, destinationId: DESTINATION_ID, providerEventId: w.providerEventId, clubId: w.clubId, fingerprint: w.confirmedFingerprint!, kind: prior.length ? 'CORRECTED' : 'FINAL', state: 'ready', result: f, dryRun: cfg.dryRun, createdAt: iso(now), updatedAt: iso(now), attempts: 0, lease: null, retryAfter: null, delivered: {}, sentAt: null, note: null}
+    return cur ?? {id, destinationId: DESTINATION_ID, providerEventId: w.providerEventId, clubId: w.clubId, fingerprint: w.confirmedFingerprint!, kind: prior.length ? 'CORRECTED' : 'FINAL', state: 'ready', result: f, dryRun: cfg.dryRun, notBefore: cfg.delivery === 'live' ? null : morningAfter(f.kickoff), createdAt: iso(now), updatedAt: iso(now), attempts: 0, lease: null, retryAfter: null, delivered: {}, sentAt: null, note: null}
   })
   // a result that is corrected before it was sent supersedes the earlier job; one already sent stays as history
   for (const p of prior) await updateDoc<Job | null>(jobName(p), null, cur => (cur && ['ready', 'retryable_failed', 'needs_review'].includes(cur.state) ? {...cur, state: 'superseded', updatedAt: iso(now), note: 'replaced by a corrected result'} : cur))
@@ -107,7 +108,8 @@ async function ensureJob(w: Watch, cfg: Config, now: Date): Promise<boolean> {
 }
 
 // ───────────── claim / transitions (the runner)
-const claimable = (j: Job, now: Date) => j.state === 'ready' || (j.state === 'retryable_failed' && (!j.retryAfter || Date.parse(j.retryAfter) <= now.getTime())) || (j.state === 'rendering' && !!j.lease && Date.parse(j.lease.until) <= now.getTime())
+const due = (j: Job, now: Date) => !j.notBefore || Date.parse(j.notBefore) <= now.getTime()
+const claimable = (j: Job, now: Date) => due(j, now) && (j.state === 'ready' || (j.state === 'retryable_failed' && (!j.retryAfter || Date.parse(j.retryAfter) <= now.getTime())) || (j.state === 'rendering' && !!j.lease && Date.parse(j.lease.until) <= now.getTime()))
 
 /** A lease that ran out while SENDING means we cannot know whether Telegram delivered: it waits for a person, never auto-resends. */
 export async function sweepLeases(now: Date) {

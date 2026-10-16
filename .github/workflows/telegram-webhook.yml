@@ -1,0 +1,20 @@
+name: Telegram · connect webhook
+# Click-only: Actions → this workflow → Run workflow. Connects @FanLife_appbot to the site's /api/telegram/webhook.
+# Needs the same TELEGRAM_WEBHOOK_SECRET in Vercel (Environment Variables) and a redeploy first — the script probes before it changes anything.
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_WEBHOOK_SECRET: ${{ secrets.TELEGRAM_WEBHOOK_SECRET }}
+      TELEGRAM_APP_URL: ${{ secrets.TELEGRAM_APP_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/telegram/configure-webhook.mjs
