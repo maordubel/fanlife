@@ -1,6 +1,7 @@
 {
   "note": "Deleted on 12.10.2026 (rule 26). Deltas now land by a git pull request, which deletes, so a retired file is deleted rather than tombstoned. Every path here must stay gone, and a path in docs/shipped-paths.txt that no longer exists must be listed here.",
   "deleted": [
+    ".github/workflows/final-whistle-link.yml",
     "app/api/kits/reference/[token]/route.ts",
     "app/archive/ArchiveWing.tsx",
     "app/clubs/[slug]/[gate]/trivia-actions.ts",
@@ -84,6 +85,7 @@
     "public/life/voxel/display-admin.css",
     "public/life/voxel/display-admin.html",
     "public/life/voxel/display-admin.js",
-    "scripts/cleanup-retired.sh"
+    "scripts/cleanup-retired.sh",
+    "scripts/final-whistle/link.mjs"
   ]
 }

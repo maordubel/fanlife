@@ -2,6 +2,7 @@ import {finalStatusOf, type ProviderFinal} from '@/lib/fixtures/provider'
 import type {FinalResult} from '@/lib/fixtures/types'
 import {scoreFingerprint} from './fingerprint'
 import {competitionKind, outcomeOf} from './presentation'
+import {startOfPreviousAthensDay} from './athens'
 import type {Watch} from './types'
 
 /** Two looks at the same final, at least this far apart, with the same fingerprint (spec §5.5). */
@@ -46,7 +47,8 @@ export function checkFinal(f: FinalResult, now: Date): Check {
 
 /** Events before bootstrap are history and are never sent — unless they were already being watched before it. */
 export function afterBootstrap(kickoff: string, bootstrapAt: string | null, watchedBefore: boolean): boolean {
-  return !bootstrapAt || watchedBefore || Date.parse(kickoff) >= Date.parse(bootstrapAt)
+  // the floor is the start of the Athens day BEFORE switching on: enabling today still brings yesterday's results
+  return !bootstrapAt || watchedBefore || Date.parse(kickoff) >= startOfPreviousAthensDay(bootstrapAt)
 }
 
 /**

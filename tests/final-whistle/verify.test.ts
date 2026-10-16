@@ -84,8 +84,9 @@ describe('identity, outcome and the club’s own view', () => {
     expect(afterBootstrap('2026-10-01T00:00:00Z', '2026-10-10T00:00:00Z', true)).toBe(true)
     expect(afterBootstrap('2026-10-11T00:00:00Z', '2026-10-10T00:00:00Z', false)).toBe(true)
   })
-  it('only a published, chosen and provider-known club is eligible', () => {
+  it('every provider-known club is eligible, published or not; a club the provider cannot identify never is', () => {
     const clubs = [{id: 'hapoel-tel-aviv', status: 'live'}, {id: 'panathinaikos', status: 'paused'}, {id: 'olympiacos', status: 'research'}, {id: 'nowhere', status: 'live'}] as never
-    expect(eligibleClubIds({clubs}, {clubIds: ['hapoel-tel-aviv', 'panathinaikos', 'olympiacos', 'nowhere']})).toEqual(['hapoel-tel-aviv'])
+    expect(eligibleClubIds({clubs}, {allClubs: true, clubIds: []})).toEqual(['hapoel-tel-aviv', 'olympiacos', 'panathinaikos'])
+    expect(eligibleClubIds({clubs}, {allClubs: false, clubIds: ['olympiacos', 'nowhere']})).toEqual(['olympiacos'])
   })
 })
