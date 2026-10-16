@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { telegramInternalHref, telegramInvite, telegramStartHref } from '@/lib/telegram/routes'
 import { telegramLaunchMode } from '@/lib/telegram/connection'
 import type { TelegramWebApp } from '@/types/telegram'
+import { rememberTelegramVisit } from '@/lib/telegram/memory'
 
 type Status = 'loading' | 'preview' | 'verifying' | 'verified' | 'guest' | 'unavailable'
 
@@ -15,6 +16,12 @@ export function TelegramBridge() {
   const router = useRouter(), pathname = usePathname()
   const [ready, setReady] = useState(false), [status, setStatus] = useState<Status>('loading')
   const [app, setApp] = useState<TelegramWebApp | null>(null)
+  const [homeMessage, setHomeMessage] = useState('')
+
+  useEffect(() => {
+    const game = /^\/telegram\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(pathname)
+    if (game) { try { rememberTelegramVisit(window.localStorage, game[1]!, game[2]!) } catch {} }
+  }, [pathname])
 
   useEffect(() => {
     if (!ready) return
@@ -94,9 +101,9 @@ export function TelegramBridge() {
   const invite = match ? telegramInvite(match[1]!, match[2]!) : null
   const share = invite ? `https://t.me/share/url?${new URLSearchParams({ url: invite, text: 'Your club. Your call. Play FAN LIFE.' })}` : null
   const labels: Record<Status, string> = {
-    loading: 'Getting ready…', preview: 'Guest mode · games are available without signing in.',
-    verifying: 'Verifying Telegram connection…', verified: 'Telegram connection verified · your Telegram name is not published.',
-    guest: 'Guest mode · your Telegram account is not connected.', unavailable: 'Guest mode · you can still play here.',
+    loading: 'Getting ready…', preview: 'Play as a guest',
+    verifying: 'Connecting…', verified: 'Connected to Telegram',
+    guest: 'Play as a guest', unavailable: 'Play as a guest',
   }
   return <>
     {/* Same cache ID as the root's early script; also supports client navigation from the website. */}
@@ -104,6 +111,20 @@ export function TelegramBridge() {
     <nav className="tg-bridge" aria-label="Telegram app navigation">
       <Link href="/telegram" className="tg-home">FAN LIFE</Link>
       <p role="status" data-testid="telegram-status">{labels[status]}</p>
+      {app?.isVersionAtLeast('8.0') && <div className="tg-tools">
+        {app.requestFullscreen && <button className="min-h-tap" onClick={() => { try { app.requestFullscreen?.() } catch {} }}>Full screen</button>}
+        {app.addToHomeScreen && <button className="min-h-tap" onClick={() => {
+          try {
+            if (app.checkHomeScreenStatus) app.checkHomeScreenStatus(value => {
+              if (value === 'added') setHomeMessage('Already on your home screen')
+              else if (value === 'unsupported') setHomeMessage('Home screen shortcuts are not supported here')
+              else app.addToHomeScreen?.()
+            })
+            else app.addToHomeScreen?.()
+          } catch { setHomeMessage('Use the Telegram menu to add a shortcut') }
+        }}>Add to home screen</button>}
+        {homeMessage && <span role="status">{homeMessage}</span>}
+      </div>}
       {share && <a href={share} target="_blank" rel="noopener noreferrer" onClick={event => { if (app) { event.preventDefault(); app.openTelegramLink(share) } }}>Invite a friend ↗</a>}
     </nav>
   </>

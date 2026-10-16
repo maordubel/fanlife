@@ -14,10 +14,12 @@ describe('Telegram welcome webhook', () => {
     const response = await POST(request())
     const body = await response.json()
     expect(response.status).toBe(200)
-    expect(body.method).toBe('sendMessage')
+    expect(body.method).toBe('sendPhoto')
     expect(body.chat_id).toBe(123)
-    expect(body.text).toContain('FanLife.DubelTeam.com')
+    expect(body.caption).toContain('FanLife.DubelTeam.com')
+    expect(body.photo).toBe(new URL('/api/telegram/welcome-card?v=1',preview).href)
     expect(body.reply_markup.inline_keyboard[0][0].web_app.url).toBe(preview)
+    expect(body.reply_markup.inline_keyboard[1][0].web_app.url).toBe(preview+'?choose=1')
     expect(JSON.stringify(body)).not.toContain(secret)
   })
   it('refuses unauthenticated or unconfigured requests', async () => {
@@ -36,8 +38,14 @@ describe('Telegram welcome webhook', () => {
   })
   it('supports addressed commands and help without interpolating user input', async () => {
     const body = await (await POST(request({ ...update, message: { ...update.message, text: '/start@FanLife_appbot unsafe-input' } }))).json()
+    expect(body.method).toBe('sendPhoto')
+    expect(body.caption).not.toContain('unsafe-input')
+  })
+  it('keeps help available as text with the same working launch buttons',async()=>{
+    const body=await (await POST(request({...update,message:{...update.message,text:'/help'}}))).json()
     expect(body.method).toBe('sendMessage')
-    expect(body.text).not.toContain('unsafe-input')
+    expect(body.text).toContain('/start')
+    expect(body.reply_markup.inline_keyboard[0][0].web_app.url).toBe(preview)
   })
   it('rejects untrusted app URLs', async () => {
     vi.stubEnv('TELEGRAM_APP_URL', 'https://attacker.test/telegram')

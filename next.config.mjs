@@ -15,6 +15,7 @@ const nextConfig = {
     // Keys are picomatch globs matched against the route id, so the catch-all's brackets MUST be escaped —
     // an unescaped '[...action]' is a character class and matched nothing (audit F03, 7.10.2026).
     outputFileTracingIncludes: {
+      '/api/telegram/welcome-card': ['./app/magazine.css', './lib/og/fonts/archivo-latin-800.ttf', './public/brand/fanlife/logo-192.png', './public/brand/weekly/plates/cheer-line.webp'],
       '/master/admin': RESEARCH_FILES,
       '/api/master/\\[...action\\]': RESEARCH_FILES,
       '/api/evaluation/db': EVALUATION_FILES,
