@@ -87,3 +87,12 @@ describe('own banners',()=>{
   expect(isOwn(by.fuckyou!)).toBe(false)
  })
 })
+
+describe('the “/” exclusion',()=>{
+ it('hides a banner on the home page only, not on every page',async()=>{
+  const {pageAllows}=await import('@/lib/promo/rules')
+  const t={home:true,allClubs:true,clubs:[],other:true,paths:[],exclude:['/']}
+  expect(pageAllows(t,{kind:'home'})).toBe(false)
+  expect(pageAllows(t,{kind:'other',path:'/market'})).toBe(true)
+ })
+})

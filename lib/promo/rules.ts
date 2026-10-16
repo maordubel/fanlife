@@ -3,7 +3,7 @@ import type {Banner,Page,PageRule,PromoDoc,PromoSettings,Seen,Targeting} from '.
 /** Never shown, whatever a banner says: the control room, test pages, and The Worker's game run (rule 28). */
 export const NEVER_ON=['/master','/qa','/life','/api','/closet/play']
 export const DEFAULTS:PromoSettings={enabled:true,delaySec:3,showSec:7,gapSec:45,maxPerSession:3,pageRules:[]}
-const pathStarts=(path:string,prefix:string)=>path===prefix||path.startsWith(prefix.endsWith('/')?prefix:prefix+'/')
+const pathStarts=(path:string,prefix:string)=>prefix==='/'?(path==='/'||path===''):path===prefix||path.startsWith(prefix.endsWith('/')?prefix:prefix+'/')
 
 export function pageOf(club:string|null,path:string):Page{
  if(club)return {kind:'club',club,path}
