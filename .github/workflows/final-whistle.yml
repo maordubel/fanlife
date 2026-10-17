@@ -5,6 +5,8 @@ name: Final Whistle
 on:
   schedule:
     - cron: '7,22,37,52 * * * *'
+    # GitHub delays busy-clock schedules by hours: these extra anchors sit right after 06:00 Athens (03:00 UTC in summer, 04:00 in winter)
+    - cron: '3,18,33,48 3,4 * * *'
   workflow_dispatch:
 permissions: {}
 concurrency:

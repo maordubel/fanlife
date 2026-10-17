@@ -4,7 +4,7 @@ import {adminFromRequest} from '@/lib/master/admin'
 import {audit, mutate} from '@/lib/master/store'
 import {actorOf} from '@/lib/master/audit-log'
 import {cronAuthorized, sameOrigin} from '@/lib/master/request'
-import {claim, complete, discover, fail, getConfig, linkDestination, markSending, ownerAction, reportDelivery, setConfig, status, uncertain} from '@/lib/final-whistle/service'
+import {claim, complete, discover, fail, getConfig, getDestination, linkDestination, markSending, ownerAction, reportDelivery, setConfig, status, uncertain} from '@/lib/final-whistle/service'
 import {signRender} from '@/lib/final-whistle/token'
 
 export const dynamic = 'force-dynamic'
@@ -15,7 +15,7 @@ const str = (v: unknown, max = 300) => (typeof v === 'string' ? v.slice(0, max) 
 const delivered = (v: unknown) => { const o = (v && typeof v === 'object' ? v : {}) as Record<string, unknown>; return {...(Number.isInteger(o.photo) ? {photo: o.photo as number} : {}), ...(Number.isInteger(o.document) ? {document: o.document as number} : {})} }
 
 /** The scheduler's own calls (discover, claim, progress, link) take the CRON secret; the owner's (status, config, resend) take the owner's session. */
-const RUNNER = new Set(['discover', 'claim', 'sending', 'complete', 'fail', 'uncertain', 'link'])
+const RUNNER = new Set(['ping', 'discover', 'claim', 'sending', 'complete', 'fail', 'uncertain', 'link'])
 
 export async function GET(r: NextRequest, {params}: {params: {action: string}}) {
   try {
@@ -32,10 +32,19 @@ export async function POST(r: NextRequest, {params}: {params: {action: string}})
     if (RUNNER.has(a)) {
       if (!cronAuthorized(r)) return json({error: 'Not authorised.'}, 401)
       const b = await body(r)
+      if (a === 'ping') { const d = await getDestination(); return json({linked: !!d, chatId: d?.chatId ?? null}) }
       if (a === 'discover') {
         const q = r.nextUrl.searchParams.get('delivery')
         if (q === '0' || q === '1') await reportDelivery(q === '1', now)
-        return json(await discover({get: async url => { const res = await fetch(url, {signal: AbortSignal.timeout(10_000), cache: 'no-store', headers: {accept: 'application/json'}}); if (!res.ok) throw new Error(`provider answered ${res.status}`); return res.json() }, now, key: process.env.THESPORTSDB_KEY?.trim() || '123'}))
+        return json(await discover({budgetMs: 40_000, get: async url => {
+          // the provider's free key is shared with the world and often answers 429: wait a moment and ask once more before giving up on the club
+          for (let n = 0; ; n++) {
+            const res = await fetch(url, {signal: AbortSignal.timeout(10_000), cache: 'no-store', headers: {accept: 'application/json'}})
+            if (res.status === 429 && n < 1) { await new Promise(r => setTimeout(r, 6000)); continue }
+            if (!res.ok) throw new Error(`provider answered ${res.status}`)
+            return res.json()
+          }
+        }, now, key: process.env.THESPORTSDB_KEY?.trim() || '123'}))
       }
       if (a === 'claim') {
         const got = await claim(str(b.by, 80) || 'runner', now)

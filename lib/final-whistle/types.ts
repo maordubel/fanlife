@@ -74,4 +74,4 @@ export type Job = {
   note: string | null
 }
 export type Destination = {chatId: string; linkedAt: string}
-export type RunInfo = {at: string; clubs: number; watched: number; created: number; errors: string[]}
+export type RunInfo = {at: string; clubs: number; watched: number; created: number; errors: string[]; /** clubs not reached this run (out of time); they go first next time */ deferred?: number}
