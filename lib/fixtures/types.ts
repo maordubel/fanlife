@@ -69,7 +69,7 @@ export type FixtureFeed = {
 export type FinalStatus = 'FT' | 'AET' | 'PEN'
 export type CompetitionKind = 'league' | 'cup' | 'friendly' | 'unknown'
 export type FinalEvidence = {
-  source: 'thesportsdb'
+  source: 'thesportsdb' | '365scores'
   providerEventId: string
   /** the provider's own status word, as received — the allowlist grows from what the dry run actually sees */
   rawStatus: string

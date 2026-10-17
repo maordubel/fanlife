@@ -155,13 +155,13 @@ export async function lastForClub(clubId: string, teamId: string, key: string, g
  * The list grows only from `rawStatus` values the dry run has actually recorded.
  */
 const FINAL_WORDS: Record<string, FinalStatus> = {
-  'ft': 'FT', 'match finished': 'FT', 'full time': 'FT', 'finished': 'FT',
+  'ft': 'FT', 'match finished': 'FT', 'ended': 'FT', 'full time': 'FT', 'finished': 'FT',
   'aet': 'AET', 'after extra time': 'AET', 'finished after extra time': 'AET',
   'pen': 'PEN', 'ap': 'PEN', 'after penalties': 'PEN', 'finished after penalties': 'PEN', 'penalties': 'PEN',
 }
 export const finalStatusOf = (raw: string | null): FinalStatus | null => (raw ? FINAL_WORDS[raw.trim().toLowerCase()] ?? null : null)
 
-export type ProviderFinal = ProviderEvent & {rawStatus: string; finalStatus: FinalStatus; homeScore: number; awayScore: number; updatedAt: string | null}
+export type ProviderFinal = ProviderEvent & {rawStatus: string; finalStatus: FinalStatus; homeScore: number; awayScore: number; updatedAt: string | null; source?: 'thesportsdb' | '365scores'}
 /**
  * Events the provider calls finished, with whole non-negative scores. Never guesses: a missing or odd score, an unknown
  * status and a duplicate id are dropped. Penalty kicks are NOT read — no provider field for them has been verified yet,

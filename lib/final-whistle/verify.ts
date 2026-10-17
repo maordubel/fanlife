@@ -22,7 +22,7 @@ export function toFinalResult(clubId: string, teamId: string, p: ProviderFinal, 
     afterExtraTimeScore: p.finalStatus === 'AET' ? main : null,
     penalties: null,
     competitionKind: competitionKind(p.competition),
-    evidence: {source: 'thesportsdb', providerEventId: p.id, rawStatus: p.rawStatus, status: p.finalStatus, observedAt: now.toISOString(), providerUpdatedAt: p.updatedAt},
+    evidence: {source: p.source ?? 'thesportsdb', providerEventId: p.id, rawStatus: p.rawStatus, status: p.finalStatus, observedAt: now.toISOString(), providerUpdatedAt: p.updatedAt},
   }
 }
 

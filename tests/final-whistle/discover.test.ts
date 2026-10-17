@@ -101,4 +101,29 @@ describe('discover', () => {
     const cursor = (await readDoc<Record<string, string>>('cursor.json', {})).value
     expect(Object.keys(cursor)).toEqual(['hapoel-tel-aviv'])
   })
+  it('when the first provider refuses, the second answers for that club — and the same match is never watched twice', async () => {
+    await setConfig({enabled: true, delivery: 'live', allClubs: false, clubIds: ['hapoel-tel-aviv']}, new Date('2026-10-17T10:00:00Z'))
+    const game = {id: 99, sportId: 1, competitionDisplayName: 'Premier League', startTime: '2026-10-17T16:00:00Z', statusGroup: 4, statusText: 'Ended',
+      homeCompetitor: {id: 567, name: 'Hapoel Tel Aviv', score: 2}, awayCompetitor: {id: 563, name: 'Rival FC', score: 1}}
+    const second = async (url: string) => {
+      if (url.includes('thesportsdb')) throw new Error('provider answered 429')
+      if (url.includes('/search/')) return {competitors: [{id: 567, name: 'Hapoel Tel Aviv', sportId: 1}]}
+      return {games: [game]}
+    }
+    const d = {get: second, now: T0, key: 'k', pause: async () => {}}
+    const r = await discover(d)
+    expect(r.errors ?? []).toEqual([])
+    await discover({...d, now: at(6)})
+    expect((await status()).jobs).toHaveLength(1)
+    expect((await status()).jobs[0]).toMatchObject({kind: 'FINAL', result: {home: 'Hapoel Tel Aviv', homeScore: 2, evidence: {source: '365scores'}}})
+    // the first provider recovers and reports the same match under its own id: no second job
+    const p = provider([ev()])
+    await discover(deps(p, at(21))); await discover(deps(p, at(30)))
+    expect((await status()).jobs).toHaveLength(1)
+  })
+  it('when neither provider can answer, the club is reported with both reasons', async () => {
+    await setConfig({enabled: true, delivery: 'live', allClubs: false, clubIds: ['hapoel-tel-aviv']}, new Date('2026-10-17T10:00:00Z'))
+    const r = await discover({get: async () => { throw new Error('provider answered 429') }, now: T0, key: 'k', pause: async () => {}})
+    expect(r.errors?.[0]).toMatch(/429; then provider answered 429/)
+  })
 })
