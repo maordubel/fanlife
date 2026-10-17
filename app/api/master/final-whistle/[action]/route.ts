@@ -37,13 +37,10 @@ export async function POST(r: NextRequest, {params}: {params: {action: string}})
         const q = r.nextUrl.searchParams.get('delivery')
         if (q === '0' || q === '1') await reportDelivery(q === '1', now)
         return json(await discover({budgetMs: 40_000, get: async url => {
-          // the provider's free key is shared with the world and often answers 429: wait a moment and ask once more before giving up on the club
-          for (let n = 0; ; n++) {
-            const res = await fetch(url, {signal: AbortSignal.timeout(10_000), cache: 'no-store', headers: {accept: 'application/json'}})
-            if (res.status === 429 && n < 1) { await new Promise(r => setTimeout(r, 6000)); continue }
-            if (!res.ok) throw new Error(`provider answered ${res.status}`)
-            return res.json()
-          }
+          // the first provider's free key is shared with the world and often answers 429: no waiting here, discover asks the second provider instead
+          const res = await fetch(url, {signal: AbortSignal.timeout(10_000), cache: 'no-store', headers: {accept: 'application/json', 'user-agent': 'FanLife-FinalWhistle/1.0 (results for a fan page; low volume)'}})
+          if (!res.ok) throw new Error(`provider answered ${res.status}`)
+          return res.json()
         }, now, key: process.env.THESPORTSDB_KEY?.trim() || '123'}))
       }
       if (a === 'claim') {

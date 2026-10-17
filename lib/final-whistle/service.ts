@@ -7,6 +7,7 @@ import {jobId, scoreFingerprint} from './fingerprint'
 import {morningAfter} from './athens'
 import {afterBootstrap, emptyWatch, observe, toFinalResult} from './verify'
 import {listDocs, readDoc, updateDoc} from './store'
+import {parseS365Finals, parseS365Team, s365ResultsUrl, s365SearchUrl} from './s365'
 import {DEFAULT_CONFIG, DESTINATION_ID, LEASE_MS, MAX_ATTEMPTS, type Config, type Delivered, type Destination, type Job, type RunInfo, type Watch} from './types'
 
 export type Deps = {get: (url: string) => Promise<unknown>; now: Date; key: string; pause?: (ms: number) => Promise<void>; /** stop starting new clubs after this many ms (the route has 60 s); the rest go first next run */ budgetMs?: number; clock?: () => number}
@@ -55,6 +56,21 @@ async function teamIdFor(clubId: string, deps: Deps): Promise<string | null> {
   }
   return null
 }
+/** 365scores has its own team ids; kept under `<club>@365` so the two providers never mix. */
+async function s365TeamIdFor(clubId: string, deps: Deps): Promise<string | null> {
+  const key = `${clubId}@365`
+  const known = (await readDoc<Record<string, string>>('teams.json', {})).value[key]
+  if (known) return known
+  const team = FIXTURE_TEAMS.find(t => t.clubId === clubId)
+  if (!team) return null
+  for (const term of [team.search, ...(team.searchAlso ?? [])]) {
+    const found = parseS365Team(await deps.get(s365SearchUrl(term)), team)
+    if (found) { await updateDoc<Record<string, string>>('teams.json', {}, c => ({...c, [key]: found})); return found }
+  }
+  return null
+}
+/** The same match seen by the other source is the same match: an existing watch of this club within this window blocks a second one. */
+const SAME_MATCH_MS = 6 * 3600_000
 const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms))
 
 export async function discover(deps: Deps): Promise<{enabled: boolean} & Partial<RunInfo> & {pending?: number}> {
@@ -72,16 +88,31 @@ export async function discover(deps: Deps): Promise<{enabled: boolean} & Partial
   for (const clubId of order) {
     if (deps.budgetMs && (deps.clock ?? Date.now)() - t0 > deps.budgetMs) break
     try {
-      const teamId = await teamIdFor(clubId, deps)
-      if (!teamId) { run.errors.push(`${clubId}: provider team not identified`); continue }
-      const finals = parseFinals(await deps.get(providerUrl(deps.key, `eventslast.php?id=${teamId}`)))
+      let teamId: string | null = null, finals: ReturnType<typeof parseFinals> = [], why = ''
+      try {
+        teamId = await teamIdFor(clubId, deps)
+        if (!teamId) why = 'provider team not identified'
+        else { finals = parseFinals(await deps.get(providerUrl(deps.key, `eventslast.php?id=${teamId}`))); await (deps.pause ?? sleep)(PROVIDER_GAP_MS) }
+      } catch (e) { why = String((e as Error).message ?? e).slice(0, 100) }
+      if (why) {
+        // the first provider could not answer for this club (rate limit, unknown team): ask the second one before giving up
+        try {
+          teamId = await s365TeamIdFor(clubId, deps)
+          if (!teamId) throw new Error('second provider team not identified')
+          finals = parseS365Finals(await deps.get(s365ResultsUrl(teamId)))
+          await (deps.pause ?? sleep)(1000)
+        } catch (e2) { throw new Error(`${why}; then ${String((e2 as Error).message ?? e2).slice(0, 80)}`) }
+      }
+      if (!teamId) continue
       looked.push(clubId)
-      await (deps.pause ?? sleep)(PROVIDER_GAP_MS)
+      let others: Watch[] | null = null
       for (const p of finals) {
         const f = toFinalResult(clubId, teamId, p, deps.now)
         if (!f) continue
         const existing = (await readDoc<Watch | null>(watchName(clubId, p.id), null)).value
         if (!existing) {
+          others ??= await listDocs<Watch>(`watch/${clubId}~`)
+          if (others.some(o => o.providerEventId !== p.id && Math.abs(Date.parse(o.kickoff) - Date.parse(f.kickoff)) < SAME_MATCH_MS)) continue
           if (!afterBootstrap(f.kickoff, cfg.bootstrapAt, false)) continue
           if (!f.dateOnly && deps.now.getTime() - Date.parse(f.kickoff) > MAX_AGE_MS) continue
         }
