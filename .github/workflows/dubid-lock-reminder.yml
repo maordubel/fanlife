@@ -1,0 +1,26 @@
+# DUBID round-lock reminder (owner, 17.10.2026): one Telegram message to the owner's linked chat, 12 hours before a DUBID round locks.
+# Idle runs are one cheap request. The same lock time is announced once; a moved lock time is announced again.
+name: DUBID lock reminder
+on:
+  schedule:
+    - cron: '11,26,41,56 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: dubid-lock-reminder
+  cancel-in-progress: false
+jobs:
+  run:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/dubid/lock-reminder.mjs
