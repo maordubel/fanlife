@@ -32,6 +32,8 @@ import { readState } from '@/lib/master/store'
 import { GATES } from '@/lib/master/types'
 import {uiLocale,localeDirection} from '@/lib/clubs/locale'
 import { Shell } from '@/components/master/Shell'
+import { TelegramSession } from '@/components/telegram/TelegramSession'
+import './telegram/telegram.css'
 
 /**
  * The faces live in `globals.css` as self-hosted @font-face rules (brand spec §3) —
@@ -116,7 +118,7 @@ export function generateMetadata(): Metadata {
   return clubFromHost(headers().get('host')) === DEFAULT_CLUB ? workerMetadata : fanLifeMetadata
 }
 
-const FAN_PATHS=['/master','/clubs','/telegram','/sources','/closet','/market','/auction','/shirts','/me','/stands']
+const FAN_PATHS=['/master','/clubs','/telegram','/our-games','/all-football','/sources','/closet','/market','/auction','/shirts','/me','/stands']
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
@@ -139,6 +141,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Analytics off={pathname==='/master'||pathname.startsWith('/master/')||telegram} />
       </head>
       <body className="font-body antialiased" data-no-ads={topAd?undefined:""}>
+        <Suspense fallback={null}><TelegramSession entry={telegram} /></Suspense>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:start-2 focus:z-50 focus:bg-red focus:px-4 focus:py-2 focus:text-sheet"

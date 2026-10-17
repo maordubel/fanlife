@@ -1,18 +1,19 @@
 import { REGISTRY } from '@/lib/master/registry'
+import { SHARED_GATES } from '@/lib/clubs/gates'
+import games from '@/messages/games/en.json'
 
 /** A closed launch vocabulary. This is navigation, never an authorization grant. */
 export const TELEGRAM_BOT_USERNAME = 'FanLife_appbot'
-export const TELEGRAM_GAMES = [
-  { key: 'trivia', number: 2, title: 'The Quiz Stand', description: 'Know your club? Take your place.' },
-  { key: 'polls', number: 7, title: "The People’s Choice", description: 'Two names. Your side of the argument.' },
-  { key: 'xi', number: 1, title: 'Your All-time XI', description: 'The ones you would build it around.' },
-] as const
+export const TELEGRAM_GAMES = SHARED_GATES.map(gate => ({
+  key: gate.key, number: gate.number,
+  title: games[`gate.${gate.key}`], description: games[`blurb.${gate.key}`],
+}))
 export type TelegramGame = typeof TELEGRAM_GAMES[number]['key']
 export const telegramGame = (key: string) => TELEGRAM_GAMES.find(game => game.key === key)
 export const knownClub = (id: string) => REGISTRY.some(club => club.id === id)
 
 export function telegramGameHref(club: string, game: string): string | null {
-  return knownClub(club) && telegramGame(game) ? `/telegram/${club}/${game}` : null
+  return knownClub(club) && (telegramGame(game) || game === 'life') ? `/telegram/${club}/${game}` : null
 }
 
 /** startapp permits letters, digits, underscores and hyphens. No arbitrary URL is accepted. */
@@ -34,12 +35,26 @@ export function telegramInvite(club: string, game: string): string | null {
   return `https://t.me/${TELEGRAM_BOT_USERNAME}?startapp=${club}__${game}`
 }
 
-/** Keep only the three shared games inside the Mini App. Other site links remain normal links. */
+/** Shared games stay on their launch URLs; other features use their original pages in the same WebView. */
 export function telegramInternalHref(url: URL): string | null {
-  if (url.pathname === '/') return '/telegram'
+  if (url.pathname === '/') return url.hash === '#life' ? '/our-games' : '/telegram'
   const match = /^\/clubs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(url.pathname)
   if (!match || !knownClub(match[1]!)) return null
-  if (!match[2] || match[2] === 'play') return `/telegram?club=${match[1]}`
+  if (!match[2] || match[2] === 'play') return null
   const game = telegramGameHref(match[1]!, match[2])
   return game ? game + url.search + url.hash : null
+}
+
+export { TELEGRAM_SESSION_KEY, isTelegramPath, telegramSurface } from './session'
+
+/** Deterministic native Back, including cold launches without browser history. */
+export function telegramBackHref(path: string): string {
+  const game = /^\/telegram\/([a-z0-9-]+)\/[^/]+\/?$/.exec(path)
+  if (game && knownClub(game[1]!)) return `/telegram?club=${game[1]}`
+  const club = /^\/clubs\/([a-z0-9-]+)(?:\/(.*))?$/.exec(path)
+  if (club && knownClub(club[1]!)) return club[2] && club[2] !== 'play' ? `/clubs/${club[1]}/play?lang=en` : `/telegram?club=${club[1]}`
+  if (/^\/all-football\/legends\/(career|friendlies)\//.test(path)) return '/all-football/legends'
+  if (path.startsWith('/all-football/')) return '/all-football'
+  for (const area of ['/market', '/closet', '/auction', '/me', '/stand']) if (path.startsWith(area + '/')) return area
+  return '/telegram'
 }

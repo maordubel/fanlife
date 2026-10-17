@@ -61,10 +61,10 @@ export function GateArt({gate,children,className='',big=false}:{gate:GateKey;chi
  </span>
 }
 
-type CoverProps={clubId:string;gate:GateKey;n:number;open:boolean;locale:UiLocale;games:ReturnType<typeof gameCopy>;soon:string;gateWord:string;pick?:string|null;mark?:MarkCopy}
+type CoverProps={clubId:string;gate:GateKey;n:number;open:boolean;locale:UiLocale;games:ReturnType<typeof gameCopy>;soon:string;gateWord:string;pick?:string|null;mark?:MarkCopy;href?:string;className?:string}
 export type MarkCopy={best:string;played:string;fresh:string;xi:string}
 /** One gate as a cover: name in the masthead face, the wall number as its price, one line and its state underneath. */
-export function GateCover({clubId,gate,n,open,locale,games,soon,gateWord,pick,mark}:CoverProps){
+export function GateCover({clubId,gate,n,open,locale,games,soon,gateWord,pick,mark,href,className=''}:CoverProps){
  const name=games[`gate.${gate}`]??gate
  const inner=<>
   <GateArt gate={gate}>
@@ -78,7 +78,7 @@ export function GateCover({clubId,gate,n,open,locale,games,soon,gateWord,pick,ma
   {!open&&<span className="wk-stamp wkk-soon">{soon}</span>}
  </>
  return open
-  ?<Link className="wk-cover wkk-cover min-h-tap" data-gate={gate} data-group={groupOfGate(gate)} data-away={gate==='derby'||undefined} href={clubHref(clubId,gate,locale)}>{inner}</Link>
+  ?<Link className={`wk-cover wkk-cover min-h-tap ${className}`} data-gate={gate} data-group={groupOfGate(gate)} data-away={gate==='derby'||undefined} href={href??clubHref(clubId,gate,locale)}>{inner}</Link>
   :<div className="wk-cover wkk-cover" data-gate={gate} data-group={groupOfGate(gate)} data-away={gate==='derby'||undefined} aria-disabled="true">{inner}</div>
 }
 

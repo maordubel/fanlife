@@ -1,4 +1,4 @@
-.telegram-app { min-block-size:100dvh; background:var(--mag-paper); color:var(--mag-ink); padding-block-start:var(--fl-tg-top,0px); padding-block-end:var(--fl-tg-bottom,0px); padding-inline:var(--fl-tg-left,0px) var(--fl-tg-right,0px); }
+.telegram-app { min-block-size:100dvh; background:var(--mag-paper); color:var(--mag-ink);  }
 .tg-bridge { display:flex; align-items:center; flex-wrap:wrap; gap:4px 14px; padding:8px 18px; border-block-end:3px solid var(--mag-ink); background:var(--mag-paper); font-family:var(--mag-mono); font-size:11px; }
 .tg-bridge p { margin:0; margin-inline-start:auto; }
 .tg-bridge a,.tg-bridge button { min-block-size:48px; display:inline-flex; align-items:center; }
@@ -11,9 +11,9 @@
 .tg-masthead p { margin:0; }
 .tg-cover-plate { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,1fr) 36%; align-items:center; min-block-size:310px; background:var(--mag-green); color:var(--mag-white); }
 .club-theme .tg-cover-plate { background:var(--club-primary); color:var(--club-on-primary); }
-.tg-cover-copy { grid-column:1; grid-row:1; position:relative; z-index:1; padding:24px; }
+.tg-cover-copy { grid-column:1; grid-row:1; position:relative; z-index:1; padding:24px; min-inline-size:0; container-type:inline-size; }
 .tg-seal { inline-size:62px; block-size:62px; margin-block-end:14px; }
-.tg-cover h1 { font-family:var(--mag-display); font-size:clamp(38px,7vw,76px); line-height:1; margin-block:14px; overflow-wrap:anywhere; color:inherit; }
+.tg-cover h1 { font-family:var(--mag-display); font-size:clamp(26px,5vw,60px); font-size:clamp(22px,calc(140cqi / var(--tg-title-length,8)),76px); line-height:1; margin-block:14px; overflow-wrap:anywhere; color:inherit; }
 .tg-cover-copy > p:last-child { margin-block:12px 0; font-family:var(--mag-body); font-size:17px; line-height:1.5; }
 .tg-cover-copy .wk-k { font-size:11px; }
 .tg-cover-art { grid-column:2; grid-row:1; align-self:end; inline-size:140%; max-inline-size:none; margin-inline-start:-20%; z-index:0; }
@@ -28,11 +28,6 @@
 .tg-club strong { font-family:var(--mag-display); font-size:23px; line-height:1.1; overflow-wrap:anywhere; }
 .tg-club small { font-family:var(--mag-mono); font-size:11px; }
 .tg-switch { display:inline-flex; align-items:center; min-block-size:48px; margin-block-start:14px; font-family:var(--mag-mono); }
-.tg-game { display:flex; align-items:center; gap:18px; min-block-size:140px; padding:20px; background:var(--mag-card); color:var(--club-type,var(--mag-ink)); text-decoration:none; }
-.tg-game h2 { font-family:var(--mag-display); font-size:clamp(23px,3vw,32px); margin:0; }
-.tg-game p { margin-block:8px 0; font-family:var(--mag-body); color:var(--mag-ink); line-height:1.5; }
-.tg-game > b { margin-inline-start:auto; font-size:30px; }
-.tg-number { font-size:35px; flex:none; }
 .tg-return { margin-block:24px; padding:20px; background:var(--mag-card); }
 .tg-return > p { margin-block:0 12px; color:var(--mag-muted); }
 .tg-return-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; margin-block-start:18px; }
@@ -42,4 +37,26 @@
 .tg-footer { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; margin-block-start:24px; font-family:var(--mag-mono); font-size:12px; }
 .tg-loading { padding:40px 20px; text-align:center; font-family:var(--mag-display); font-size:28px; }
 .telegram-app .club-foot,.telegram-app .club-tabbar,.telegram-app .mag-top,.telegram-app .mag-foot,.telegram-app .mag-tabbar { display:none; }
-@media(max-width:420px) { .tg-cover-plate { min-block-size:290px; grid-template-columns:minmax(0,1fr) 29%; } .tg-cover-copy { padding:20px 14px; } .tg-cover-art { inline-size:190%; margin-inline-start:-65%; opacity:.85; } .tg-cover h1 { font-size:40px; } .tg-cover-copy > p:last-child { font-size:15px; } .tg-masthead { padding-inline:12px; } .tg-masthead .wk-k { font-size:10px; } .tg-game { gap:12px; padding:18px 14px; } }
+@media(max-width:420px) { .tg-cover-plate { min-block-size:290px; grid-template-columns:minmax(0,1fr) 29%; } .tg-cover-copy { padding:20px 14px; } .tg-cover-art { inline-size:190%; margin-inline-start:-65%; opacity:.85; } .tg-cover-copy > p:last-child { font-size:15px; } .tg-masthead { padding-inline:12px; } .tg-masthead .wk-k { font-size:10px; } }
+
+/* Canonical covers, fonts and inks; only the layout belongs to Telegram. */
+.tg-club-links { display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; margin-block:18px 28px; }
+.tg-gates-title { margin-block:24px; }
+.tg-group-title { font-size:26px; margin-block:24px 12px; }
+.tg-gate-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.tg-gate-grid > * { min-inline-size:0; }
+.tg-whole { margin-block:32px; padding-block-start:20px; border-block-start:3px solid var(--mag-ink); }
+.tg-whole h2 { font-size:28px; margin-block:12px 20px; }
+.tg-life { display:grid; grid-template-columns:120px minmax(0,1fr); gap:16px; align-items:center; padding:20px; margin-block:28px; background:var(--mag-card); }
+.tg-life h2 { font-size:38px; margin:0; }
+.tg-life p { font-family:var(--mag-body); line-height:1.5; margin-block:12px; }
+.telegram-app .mag { padding-block:0; --app-top:0px; --app-bottom:0px; }
+@media(min-width:760px) { .tg-gate-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:350px) { .tg-gate-grid { grid-template-columns:minmax(0,1fr); } .tg-life { grid-template-columns:minmax(0,1fr); } }
+/* The root session preserves native controls on the original club, market and account pages. */
+html[data-telegram] body { padding-block:var(--fl-tg-top,0px) var(--fl-tg-bottom,0px); padding-inline:var(--fl-tg-left,0px) var(--fl-tg-right,0px); }
+html[data-telegram] .wk-sheet { max-block-size:calc(100dvh - var(--fl-tg-top,0px) - var(--fl-tg-bottom,0px)); }
+@media(max-width:900px) {
+ html[data-telegram] body:not(:has(.telegram-app)) :is(.mag > .mag-top,.club-masthead) { padding-block-start:max(env(safe-area-inset-top),var(--fl-tg-top,0px)); }
+ html[data-telegram] body:not(:has(.telegram-app)) :is(.mag-tabbar,.club-tabbar) { padding-block-end:max(env(safe-area-inset-bottom),var(--fl-tg-bottom,0px)); }
+}
