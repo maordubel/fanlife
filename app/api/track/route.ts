@@ -25,8 +25,20 @@ function noContent() {
   return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } })
 }
 
+/** A per-instance brake on one address (kept in memory only, never stored): the device id is the browser's own claim, so it cannot be the only limit. */
+const hits = new Map<string, { n: number; at: number }>()
+function tooMany(request: Request): boolean {
+  const ip = (request.headers.get('x-forwarded-for') || 'unknown').split(',')[0]!.trim()
+  const now = Date.now()
+  if (hits.size > 5000) for (const [k, v] of hits) if (now - v.at > 60_000) hits.delete(k)
+  const h = hits.get(ip)
+  if (!h || now - h.at > 60_000) { hits.set(ip, { n: 1, at: now }); return false }
+  h.n += 1
+  return h.n > 120
+}
+
 export async function POST(request: Request): Promise<Response> {
-  if (!portalConfigured()) return noContent()
+  if (!portalConfigured() || tooMany(request)) return noContent()
   let text: string
   try {
     text = await request.text()
