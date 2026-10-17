@@ -60,7 +60,7 @@ export default async function TelegramHome({ searchParams }: { searchParams: { c
         <Plate art={selected ? 'kicker' : 'cheer'} ink={selected ? 'club' : 'red'} className="tg-cover-art" />
         <div className="tg-cover-copy"><Image unoptimized className="tg-seal" src={selected ? '/brand/fanlife/logo-mono.webp' : '/brand/fanlife/logo-192.png'} width={72} height={72} alt="FAN LIFE" />
           <p className="wk-k">{selected ? words.clubKicker : words.hubKicker}</p>
-          <h1>{selected ? selected.reg.name : <>YOUR CLUB.<br />YOUR CALL.</>}</h1>
+          <h1 style={{'--tg-title-length':selected?Math.max(8,...selected.reg.name.split(/\s+/).map(word=>word.length)):8} as CSSProperties}>{selected ? selected.reg.name : <>YOUR CLUB.<br />YOUR CALL.</>}</h1>
           <p>{selected ? words.clubIntro : words.hubIntro}</p>
         </div>
       </div>

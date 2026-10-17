@@ -11,9 +11,9 @@
 .tg-masthead p { margin:0; }
 .tg-cover-plate { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,1fr) 36%; align-items:center; min-block-size:310px; background:var(--mag-green); color:var(--mag-white); }
 .club-theme .tg-cover-plate { background:var(--club-primary); color:var(--club-on-primary); }
-.tg-cover-copy { grid-column:1; grid-row:1; position:relative; z-index:1; padding:24px; }
+.tg-cover-copy { grid-column:1; grid-row:1; position:relative; z-index:1; padding:24px; min-inline-size:0; container-type:inline-size; }
 .tg-seal { inline-size:62px; block-size:62px; margin-block-end:14px; }
-.tg-cover h1 { font-family:var(--mag-display); font-size:clamp(38px,7vw,76px); line-height:1; margin-block:14px; overflow-wrap:anywhere; color:inherit; }
+.tg-cover h1 { font-family:var(--mag-display); font-size:clamp(26px,5vw,60px); font-size:clamp(22px,calc(140cqi / var(--tg-title-length,8)),76px); line-height:1; margin-block:14px; overflow-wrap:anywhere; color:inherit; }
 .tg-cover-copy > p:last-child { margin-block:12px 0; font-family:var(--mag-body); font-size:17px; line-height:1.5; }
 .tg-cover-copy .wk-k { font-size:11px; }
 .tg-cover-art { grid-column:2; grid-row:1; align-self:end; inline-size:140%; max-inline-size:none; margin-inline-start:-20%; z-index:0; }
@@ -37,7 +37,7 @@
 .tg-footer { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; margin-block-start:24px; font-family:var(--mag-mono); font-size:12px; }
 .tg-loading { padding:40px 20px; text-align:center; font-family:var(--mag-display); font-size:28px; }
 .telegram-app .club-foot,.telegram-app .club-tabbar,.telegram-app .mag-top,.telegram-app .mag-foot,.telegram-app .mag-tabbar { display:none; }
-@media(max-width:420px) { .tg-cover-plate { min-block-size:290px; grid-template-columns:minmax(0,1fr) 29%; } .tg-cover-copy { padding:20px 14px; } .tg-cover-art { inline-size:190%; margin-inline-start:-65%; opacity:.85; } .tg-cover h1 { font-size:40px; } .tg-cover-copy > p:last-child { font-size:15px; } .tg-masthead { padding-inline:12px; } .tg-masthead .wk-k { font-size:10px; } }
+@media(max-width:420px) { .tg-cover-plate { min-block-size:290px; grid-template-columns:minmax(0,1fr) 29%; } .tg-cover-copy { padding:20px 14px; } .tg-cover-art { inline-size:190%; margin-inline-start:-65%; opacity:.85; } .tg-cover-copy > p:last-child { font-size:15px; } .tg-masthead { padding-inline:12px; } .tg-masthead .wk-k { font-size:10px; } }
 
 /* Canonical covers, fonts and inks; only the layout belongs to Telegram. */
 .tg-club-links { display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; margin-block:18px 28px; }
