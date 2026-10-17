@@ -1,3 +1,4 @@
+import {signingKey} from '@/lib/secrets'
 import 'server-only'
 import {createHmac,timingSafeEqual} from 'node:crypto'
 
@@ -12,7 +13,7 @@ import {createHmac,timingSafeEqual} from 'node:crypto'
  * hint receipt binds the puzzle, the step, the strike number and the struck card, so the same hint cannot be spent twice
  * (the grade counts DISTINCT valid receipts). The content version is deliberately not bound: an unlock survives an archive update.
  */
-function secret(){return process.env.KIT_UNLOCK_KEY||process.env.SUPABASE_SERVICE_ROLE_KEY||'fan-life-kit-local-development'}
+function secret(){return signingKey([process.env.KIT_UNLOCK_KEY,process.env.SUPABASE_SERVICE_ROLE_KEY],'fan-life-kit-local-development')}
 const mac=(...parts:(string|number)[])=>createHmac('sha256',secret()).update(parts.join('|')).digest('base64url').slice(0,24)
 function equal(token:unknown,expected:string){
  if(typeof token!=='string'||token.length!==24)return false

@@ -1,3 +1,4 @@
+import {signingKey} from '@/lib/secrets'
 import 'server-only'
 import {createHmac} from 'node:crypto'
 import type {ClubData} from '@/lib/clubs/contract'
@@ -17,7 +18,7 @@ import {parseSize,type MemoryPlan,type PublicDeal,type Reveal} from '@/lib/clubs
  * are a pair. The faces themselves are on the cards — they have to be: the whole wall is shown face up at the start.
  */
 
-function secret(){return process.env.BLIND_COW_KEY||process.env.SUPABASE_SERVICE_ROLE_KEY||'blind-cow-local-development'}
+function secret(){return signingKey([process.env.BLIND_COW_KEY,process.env.SUPABASE_SERVICE_ROLE_KEY],'blind-cow-local-development')}
 /** an archive id the browser cannot read back, stable per club and pair so the souvenir shelf can keep it once */
 export function pairKey(clubId:string,pairId:string):string{
  return createHmac('sha256',`worker-memory-pair|${secret()}`).update(`${clubId}|${pairId}`).digest('hex').slice(0,14)

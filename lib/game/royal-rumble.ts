@@ -1,3 +1,4 @@
+import {signingKey} from '@/lib/secrets'
 import 'server-only'
 
 import { createHmac } from 'node:crypto'
@@ -146,7 +147,7 @@ function priceForPercentile(percentile: number): RoyalRumblePrice {
  * The fallback keeps local/test builds deterministic without changing the public UI.
  */
 function privateNudge(slug: string): number {
-  const key = process.env.ROYAL_RUMBLE_RATING_KEY ?? 'royal-rumble-local-development'
+  const key = signingKey([process.env.ROYAL_RUMBLE_RATING_KEY], 'royal-rumble-local-development')
   const hex = createHmac('sha256', key).update(slug).digest('hex').slice(0, 8)
   return (Number.parseInt(hex, 16) % 5) - 2
 }

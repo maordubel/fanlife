@@ -19,8 +19,10 @@ import { evaluationMode } from '@/lib/master/mode'
  * production build still hides them.
  */
 export function qaAllowed(): boolean {
-  if (evaluationMode()) return true
   const vercel = process.env.VERCEL_ENV
+  // the live site never serves a proofing screen, evaluation mode or not
+  if (vercel === 'production') return false
+  if (evaluationMode()) return true
   if (vercel) return vercel !== 'production'
   return process.env.NODE_ENV !== 'production'
 }
