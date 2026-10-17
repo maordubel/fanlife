@@ -26,6 +26,7 @@ describe('Telegram routes share the existing games', () => {
   it('keeps supported game links and club/home links inside the shell', () => {
     const link = (path: string) => telegramInternalHref(new URL(path, 'https://fanlife.dubelteam.com'))
     expect(link('/')).toBe('/telegram')
+    expect(link('/#life')).toBe('/our-games')
     expect(link('/clubs/aek-athens')).toBeNull()
     expect(link('/clubs/aek-athens/play')).toBeNull()
     expect(link('/clubs/aek-athens/trivia?seed=42&r=3')).toBe('/telegram/aek-athens/trivia?seed=42&r=3')

@@ -3,7 +3,7 @@ import * as React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
 const mock = vi.hoisted(() => ({
-  state: { clubs: [{ id: 'hapoel-tel-aviv', status: 'live', gates: [1, 2, 7] }] },
+  state: { clubs: [{ id: 'hapoel-tel-aviv', status: 'live', gates: [1, 2, 7] }],features:{allFootball:false} },
   shared: vi.fn(() => 'canonical-shared-game'),
   timeline: vi.fn(() => 'canonical-timeline'),
   life: vi.fn(() => 'canonical-life'),
@@ -26,6 +26,7 @@ afterAll(() => vi.unstubAllGlobals())
 
 beforeEach(() => {
   mock.state.clubs = [{ id: 'hapoel-tel-aviv', status: 'live', gates: [1, 2, 7] }]
+  mock.state.features.allFootball = false
   mock.shared.mockClear()
   mock.timeline.mockClear()
   mock.life.mockClear()
@@ -41,6 +42,13 @@ describe('Telegram follows the same public fallback policy as the main site', ()
   it('opens the canonical game from the approved public fallback', async () => {
     expect(await TelegramGate({ params: { club: 'hapoel-tel-aviv', gate: 'trivia' }, searchParams: {} })).toBe('canonical-shared-game')
     expect(mock.shared).toHaveBeenCalledOnce()
+  })
+  it('offers the original Our Games page and hides All Football until publicly enabled', async () => {
+    const html=renderToStaticMarkup((await TelegramHome({searchParams:{}})).props.children)
+    expect(html).toContain('href="/our-games"')
+    expect(html).not.toContain('href="/all-football"')
+    mock.state.features.allFootball=true
+    expect(renderToStaticMarkup((await TelegramHome({searchParams:{}})).props.children)).toContain('href="/all-football"')
   })
   it('continues to refuse paused, unpublished and switched-off games', async () => {
     for (const status of ['paused', 'research']) {

@@ -26,6 +26,7 @@ import words from '@/messages/telegram/en.json'
 import { belovedOf, wallNumbers } from '@/lib/clubs/beloved'
 import { worldFor } from '@/lib/clubs/world'
 import { contentsGates } from '@/lib/weekly/contents'
+import { featuresOf } from '@/lib/features'
 
 export const dynamic = 'force-dynamic'
 
@@ -45,7 +46,10 @@ export default async function TelegramHome({ searchParams }: { searchParams: { c
   const selected = clubs.find(club => club.reg.id === searchParams.club)
   const theme = selected ? clubTheme(selected.reg) : null
   const copy = gameCopy('en'), menu = menuCopy('en'), corner = menuCorner('en')
-  const sections = selected ? clubSections(selected.reg.id, 'en', { terrace: menu.clubTabTerrace, away: null, kitArchive: true }) : hubSections('en')
+  const features = featuresOf(state)
+  const fanlife = menuFanLife('en').filter(item=>item.href!=='/all-football'||features.allFootball)
+  const sections = selected ? clubSections(selected.reg.id, 'en', { terrace: menu.clubTabTerrace, away: null, kitArchive: true }) : hubSections('en').filter(item=>item.href!=='/all-football'||features.allFootball)
+  const tiles = [{href:'/our-games',title:menu.ourGamesTitle,sub:menu.ourGamesKicker},...corner,...fanlife.filter(item=>item.href==='/all-football')]
   const beloved = selected ? belovedOf(worldFor(selected.reg).terrace,selected.games.map(g=>g.key)) : null
   const numbers = beloved ? wallNumbers(beloved) : null
   const gates = selected && beloved ? contentsGates({clubId:selected.reg.id,locale:'en',states:selected.states,beloved,copy:copy as Record<string,string>}) : undefined
@@ -54,7 +58,7 @@ export default async function TelegramHome({ searchParams }: { searchParams: { c
     <header className="tg-cover wk-panel">
       <div className="tg-masthead"><p className="wk-k">{words.edition}</p><Contents
         copy={{menu:menu.wkMenu,title:menu.wkContents,kicker:words.edition,close:menu.wkClose,corner:menu.wkCorner,clubs:menu.wkClubs,fanlife:menu.wkFanLife,section:menu.wkPaper,gates:menu.wkGates,quick:menu.wkQuick,deep:menu.wkDeep,archive:menu.wkArchive}}
-        sections={sections} gates={gates} corner={corner} clubs={menuClubs(state.clubs.filter(c=>c.status==='live'),selected?.reg.id??null,'en',theme??undefined)} fanlife={menuFanLife('en')}
+        sections={sections} gates={gates} corner={corner} clubs={menuClubs(state.clubs.filter(c=>c.status==='live'),selected?.reg.id??null,'en',theme??undefined)} fanlife={fanlife}
         rivalNo={theme?rivalBans(theme).join(' '):undefined} paint={theme?themeStyle(theme,'en') as Record<string,string>:undefined}/></div>
       <div className="tg-cover-plate">
         <Plate art={selected ? 'kicker' : 'cheer'} ink={selected ? 'club' : 'red'} className="tg-cover-art" />
@@ -93,7 +97,7 @@ export default async function TelegramHome({ searchParams }: { searchParams: { c
       </div>
     </section>}
     <section className="tg-whole" aria-labelledby="tg-whole-title"><p className="wk-k">{words.corner}</p><h2 className="wk-head" id="tg-whole-title">{words.cornerIntro}</h2>
-      <nav className="wk-tiles" aria-label={menu.wkCorner}>{[...corner,...menuFanLife('en').filter(item=>item.href==='/all-football')].map(item=><Link prefetch={false} key={item.href} href={item.href}><b>{item.title}</b>{item.sub&&<small>{item.sub}</small>}</Link>)}</nav>
+      <nav className="wk-tiles" aria-label={menu.wkCorner}>{tiles.map(item=><Link prefetch={false} key={item.href} href={item.href}><b>{item.title}</b>{item.sub&&<small>{item.sub}</small>}</Link>)}</nav>
     </section>
     <aside className="tg-note">{words.guest}</aside>
     <footer className="tg-footer"><a href="https://fanlife.dubelteam.com" target="_blank" rel="noopener noreferrer">FanLife.DubelTeam.com</a><span>FOOTBALL. FOREVER.</span></footer>

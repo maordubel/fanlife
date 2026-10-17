@@ -37,7 +37,7 @@ export function telegramInvite(club: string, game: string): string | null {
 
 /** Shared games stay on their launch URLs; other features use their original pages in the same WebView. */
 export function telegramInternalHref(url: URL): string | null {
-  if (url.pathname === '/') return '/telegram'
+  if (url.pathname === '/') return url.hash === '#life' ? '/our-games' : '/telegram'
   const match = /^\/clubs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(url.pathname)
   if (!match || !knownClub(match[1]!)) return null
   if (!match[2] || match[2] === 'play') return null
