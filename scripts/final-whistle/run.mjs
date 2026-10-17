@@ -29,6 +29,8 @@ try {
     const {job, renderUrl, chatId} = got
     const tag = `${job.clubId} ${job.result.home} ${job.result.homeScore}-${job.result.awayScore} ${job.result.away} (${job.kind}${job.dryRun ? ', dry run' : ''})`
     console.log('job', job.id, tag)
+    let marked = false // once true, a lost answer means "unknown", never "send again"
+    let delivered = {...job.delivered}
     try {
       const page = await browser.newPage({viewport: {width: 1100, height: 1000}})
       await page.goto(renderUrl, {waitUntil: 'domcontentloaded', timeout: 60_000})
@@ -45,19 +47,21 @@ try {
       if (!token || !chatId) { await api('fail', {jobId: job.id, error: !token ? 'the Telegram bot token is not set in GitHub secrets' : 'no Telegram chat is linked yet', retryable: true, retryAfterSec: 1800}); continue }
       const mark = await api('sending', {jobId: job.id})
       if (!mark.ok) { console.log('could not take the job:', mark.error); continue }
-      const delivered = {...job.delivered}
+      marked = true
       const caption = captionFor(job)
       let stop = null
       if (!delivered.photo) { const s = await sendPhoto(token, chatId, png, caption); if (s.ok) delivered.photo = s.messageId; else stop = s }
       if (!stop && !delivered.document) { const s = await sendDocument(token, chatId, png, documentName(job), caption); if (s.ok) delivered.document = s.messageId; else stop = s }
       if (!stop) { await api('complete', {jobId: job.id, delivered}); console.log('sent'); continue }
       if (stop.kind === 'unknown') await api('uncertain', {jobId: job.id, error: stop.error, delivered})
-      else await api('fail', {jobId: job.id, error: stop.error, retryable: stop.retryable, retryAfterSec: stop.retryAfterSec, delivered})
+      else await api('fail', {jobId: job.id, error: stop.error, retryable: stop.retryable, retryAfterSec: stop.retryAfterSec, delivered, definite: true})
       console.log('not sent:', stop.kind)
     } catch (e) {
       // we do not know how far this got; before "sending" it is safe to retry, after it the lease will turn it into "unknown"
       console.error('job error', String(e?.message ?? e).replace(token || '\u0000', '[token]').slice(0, 200))
-      await api('fail', {jobId: job.id, error: `runner error: ${String(e?.message ?? e).slice(0, 150)}`, retryable: true}).catch(() => {})
+      const msg = String(e?.message ?? e).replace(token || '\u0000', '[token]').slice(0, 150)
+      if (marked) await api('uncertain', {jobId: job.id, error: `runner error after sending began: ${msg}`, delivered}).catch(() => {})
+      else await api('fail', {jobId: job.id, error: `runner error: ${msg}`, retryable: true}).catch(() => {})
     }
   }
 } finally { await browser.close() }
