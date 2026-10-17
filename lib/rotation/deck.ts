@@ -125,21 +125,24 @@ export function rotate<T>(deck: readonly T[], from: number): T[] {
  * rotation (`lib/rotation/store.ts`) overrides it on the link when JS is running,
  * because only the device knows how far through the deck it already is.
  */
+/** A link number is a positive whole number a seed can really be; `1e300` and friends are not. */
+const validNumber = (v: number) => Number.isFinite(v) && v > 0 && v <= 2 ** 31
+
 export function readSeed(raw: string | string[] | undefined, fallback: () => number = mintSeed): number {
   const value = Number(Array.isArray(raw) ? raw[0] : raw)
-  return Number.isFinite(value) && value > 0 ? Math.floor(value) : fallback()
+  return validNumber(value) ? Math.floor(value) : fallback()
 }
 
 /** The cursor a screen should play. Absent means the start of the deck. */
 export function readCursor(raw: string | string[] | undefined): number {
   const value = Number(Array.isArray(raw) ? raw[0] : raw)
-  return Number.isFinite(value) && value > 0 ? Math.floor(value) : 0
+  return validNumber(value) ? Math.floor(value) : 0
 }
 
 /** True when the link pinned a round — a duel, a share, a bookmark. Never re-rolled. */
 export function isPinned(raw: string | string[] | undefined): boolean {
   const value = Number(Array.isArray(raw) ? raw[0] : raw)
-  return Number.isFinite(value) && value > 0
+  return validNumber(value)
 }
 
 /** `?seed=…&r=…` — the two numbers, in the order they are read. */

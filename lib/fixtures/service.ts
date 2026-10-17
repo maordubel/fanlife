@@ -44,6 +44,13 @@ async function fetchFeed(now: Date): Promise<FixtureFeed> {
   // the latest finished match per club (Stop Press: LAST). A club the provider cannot answer simply has none.
   const last = await Promise.allSettled(teamIds.map(([clubId, teamId]) => lastForClub(clubId, teamId, key, get, now)))
   for (const l of last) if (l.status === 'fulfilled' && l.value) results.push(l.value)
+  // A club the provider failed on this time keeps what we knew before: a bad minute at the provider must not empty the hub.
+  const prev = cache?.feed
+  if (prev && failed) {
+    const failedIds = new Set(diagnostics.filter(d => d.note.startsWith('unavailable')).map(d => d.clubId))
+    for (const f of prev.fixtures) if (failedIds.has(f.clubId) && Date.parse(f.kickoff) > now.getTime() && !fixtures.some(x => x.clubId === f.clubId)) fixtures.push(f)
+    for (const r of prev.results ?? []) if (failedIds.has(r.clubId) && !results.some(x => x.clubId === r.clubId)) results.push(r)
+  }
   const feed: FixtureFeed = {
     status: failed === 0 ? 'ok' : failed === FIXTURE_TEAMS.length ? 'unavailable' : 'partial',
     source: 'thesportsdb', generatedAt: now.toISOString(), fixtures, results, diagnostics,
