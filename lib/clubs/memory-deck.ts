@@ -1,5 +1,5 @@
-import {signingKey} from '@/lib/secrets'
 import 'server-only'
+import {signingKey} from '@/lib/secrets'
 import {createHmac} from 'node:crypto'
 import type {ClubData} from '@/lib/clubs/contract'
 import {eligibleArchive} from '@/lib/clubs/archive'

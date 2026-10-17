@@ -1,5 +1,5 @@
-import {signingKey} from '@/lib/secrets'
 import 'server-only'
+import {signingKey} from '@/lib/secrets'
 
 import { createHmac } from 'node:crypto'
 
