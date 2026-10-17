@@ -8,6 +8,15 @@ export const EVALUATION_FILES = ['./scripts/master/local-bootstrap.sql', './supa
 const nextConfig = {
   // FAN LEAGUE became LEGENDS MANAGER (owner, 12.10.2026); its test careers were cleared, so every old link lands at the new door
   async redirects() { return [{ source: '/all-football/fan-league/:path*', destination: '/all-football/legends', permanent: false }, { source: '/all-football/fan-league', destination: '/all-football/legends', permanent: false }] },
+  // Static art is large and names are not versioned: a day in the browser, a week stale-while-revalidate (a replaced file shows within a day).
+  async headers() {
+    const art = [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }]
+    const fonts = [{ key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=604800' }]
+    return [
+      ...['life', 'kits', 'brand', 'legends', 'away', 'kit-archive', 'highlights', 'art', 'club-kits', 'crests', 'video', 'uss'].map((d) => ({ source: `/${d}/:path*`, headers: art })),
+      { source: '/fonts/:path*', headers: fonts },
+    ]
+  },
   reactStrictMode: true,
   experimental: {
     serverComponentsExternalPackages: ['@electric-sql/pglite'], cpus: 2,
