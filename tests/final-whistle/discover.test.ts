@@ -92,4 +92,13 @@ describe('discover', () => {
     expect((await readDoc('teams.json', {})).value).toEqual({})
     expect((await getConfig()).enabled).toBe(true)
   })
+  it('runs out of time politely: the clubs it did not reach go first next run', async () => {
+    await setConfig({enabled: true, delivery: 'live'}, new Date('2026-10-17T10:00:00Z'))
+    let t = 0
+    const slow = {...deps(provider([ev()]), T0), budgetMs: 7, clock: () => (t += 5)}
+    const first = await discover(slow)
+    expect(first.clubs).toBe(2); expect(first.deferred).toBe(1)
+    const cursor = (await readDoc<Record<string, string>>('cursor.json', {})).value
+    expect(Object.keys(cursor)).toEqual(['hapoel-tel-aviv'])
+  })
 })

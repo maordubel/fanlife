@@ -9,7 +9,7 @@ import {afterBootstrap, emptyWatch, observe, toFinalResult} from './verify'
 import {listDocs, readDoc, updateDoc} from './store'
 import {DEFAULT_CONFIG, DESTINATION_ID, LEASE_MS, MAX_ATTEMPTS, type Config, type Delivered, type Destination, type Job, type RunInfo, type Watch} from './types'
 
-export type Deps = {get: (url: string) => Promise<unknown>; now: Date; key: string; pause?: (ms: number) => Promise<void>}
+export type Deps = {get: (url: string) => Promise<unknown>; now: Date; key: string; pause?: (ms: number) => Promise<void>; /** stop starting new clubs after this many ms (the route has 60 s); the rest go first next run */ budgetMs?: number; clock?: () => number}
 /** the provider's free tier allows 30 requests a minute; one every 2.2 s stays under it */
 const PROVIDER_GAP_MS = 2200
 /** an event older than this is history unless it was already being watched */
@@ -64,11 +64,18 @@ export async function discover(deps: Deps): Promise<{enabled: boolean} & Partial
   const clubs = eligibleClubIds(state, cfg)
   const run: RunInfo = {at: iso(deps.now), clubs: clubs.length, watched: 0, created: 0, errors: []}
   await sweepLeases(deps.now)
-  for (const clubId of clubs) {
+  // every club gets looked at: the one checked longest ago goes first, so a rate-limited or out-of-time run never starves the same clubs twice
+  const cursor = (await readDoc<Record<string, string>>('cursor.json', {})).value
+  const order = [...clubs].sort((a, b) => (cursor[a] ?? '').localeCompare(cursor[b] ?? '') || a.localeCompare(b))
+  const t0 = (deps.clock ?? Date.now)()
+  const looked: string[] = []
+  for (const clubId of order) {
+    if (deps.budgetMs && (deps.clock ?? Date.now)() - t0 > deps.budgetMs) break
     try {
       const teamId = await teamIdFor(clubId, deps)
       if (!teamId) { run.errors.push(`${clubId}: provider team not identified`); continue }
       const finals = parseFinals(await deps.get(providerUrl(deps.key, `eventslast.php?id=${teamId}`)))
+      looked.push(clubId)
       await (deps.pause ?? sleep)(PROVIDER_GAP_MS)
       for (const p of finals) {
         const f = toFinalResult(clubId, teamId, p, deps.now)
@@ -87,6 +94,8 @@ export async function discover(deps: Deps): Promise<{enabled: boolean} & Partial
       }
     } catch (e) { run.errors.push(`${clubId}: ${String((e as Error).message ?? e).slice(0, 160)}`) }
   }
+  if (looked.length) await updateDoc<Record<string, string>>('cursor.json', {}, c => ({...c, ...Object.fromEntries(looked.map(id => [id, iso(deps.now)]))}))
+  run.deferred = order.length - looked.length - run.errors.length
   await updateDoc<RunInfo | null>('run.json', null, () => run)
   return {enabled: true, ...run, pending: await pendingCount(deps.now)}
 }
