@@ -1,0 +1,19 @@
+name: Final Whistle · send test
+# Click-only: Actions → this workflow → Run workflow. Sends one short message to the linked Telegram chat and reports who that chat is.
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/final-whistle/test-send.mjs
