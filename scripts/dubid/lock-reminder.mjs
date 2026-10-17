@@ -11,9 +11,17 @@ const due = await res.json()
 console.log(JSON.stringify({due: due.due, reason: due.reason, stamp: due.stamp}))
 if (!due.due) process.exit(0)
 if (!token) fail('TELEGRAM_BOT_TOKEN is missing in GitHub secrets.')
+// Take the claim first. If this fails, nothing is sent: a missed reminder is retried in 15 minutes, a repeated one is not undone.
+const claim = (body) => fetch(`${base}/api/master/dubid-lock`, {method: 'POST', headers: {...h, 'content-type': 'application/json'}, body: JSON.stringify(body), signal: AbortSignal.timeout(30_000)})
+const got = await claim({stamp: due.stamp}).catch(e => ({status: 0, error: String(e)}))
+if (got.status === 409) { console.log('already claimed by another run'); process.exit(0) }
+if (got.status !== 200) fail(`could not claim the reminder (${got.status}); nothing was sent`)
 const when = new Intl.DateTimeFormat('he-IL', {timeZone: 'Asia/Jerusalem', weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false}).format(new Date(due.lockAt))
 const text = `⏳ DUBID · מחזור ${due.number}\nהמחזור ננעל בעוד ${due.hours} שעות — ${when}.\nהשעון כבר רץ בראש האפליקציה.\n\ndubid.dubelteam.com`
-const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: due.chatId, text}), signal: AbortSignal.timeout(20_000)}).then(r => r.json()).catch(e => ({ok: false, description: String(e)}))
-if (!sent.ok) fail(`Telegram refused the message: ${sent.description}`)
-const ok = await fetch(`${base}/api/master/dubid-lock`, {method: 'POST', headers: {...h, 'content-type': 'application/json'}, body: JSON.stringify({stamp: due.stamp})})
-console.log(`::notice title=DUBID reminder::sent for ${due.stamp}; confirmed ${ok.status}`)
+const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: due.chatId, text}), signal: AbortSignal.timeout(20_000)}).then(r => r.json()).catch(e => ({ok: false, unknown: true, description: String(e)}))
+if (!sent.ok) {
+  // a Telegram answer that says no means nothing went out: hand the claim back. No answer at all is "unknown": keep the claim (no repeat).
+  if (!sent.unknown) await claim({stamp: due.stamp, release: true}).catch(() => {})
+  fail(`Telegram ${sent.unknown ? 'did not answer (claim kept, no repeat)' : 'refused the message'}: ${sent.description}`)
+}
+console.log(`::notice title=DUBID reminder::sent for ${due.stamp}`)

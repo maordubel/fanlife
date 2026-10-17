@@ -26,6 +26,10 @@ export async function POST(r:NextRequest){
  let b:Record<string,unknown>={};try{b=await r.json()}catch{/* empty */}
  const stamp=typeof b.stamp==='string'?b.stamp.slice(0,120):''
  if(!/^[a-z0-9-]+@\d{4}-\d{2}-\d{2}T/i.test(stamp))return json({error:'stamp is required.'},400)
- await area.update<Sent>('dubid-lock-sent.json',{},cur=>{const keep=Object.entries(cur).slice(-40);return {...Object.fromEntries(keep),[stamp]:new Date().toISOString()}})
- return json({ok:true})
+ // `release` hands the claim back after Telegram definitely refused the message, so the next run may try again.
+ if(b.release===true){await area.update<Sent>('dubid-lock-sent.json',{},cur=>{const n={...cur};delete n[stamp];return n});return json({ok:true,released:true})}
+ // The claim is taken BEFORE the message goes out: at most one runner wins it, so a lost confirmation can never cause a repeat.
+ let already=false
+ await area.update<Sent>('dubid-lock-sent.json',{},cur=>{already=!!cur[stamp];if(already)return cur;const keep=Object.entries(cur).slice(-40);return {...Object.fromEntries(keep),[stamp]:new Date().toISOString()}})
+ return already?json({ok:false,error:'already claimed',already:true},409):json({ok:true})
 }

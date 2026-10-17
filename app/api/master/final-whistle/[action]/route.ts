@@ -55,7 +55,7 @@ export async function POST(r: NextRequest, {params}: {params: {action: string}})
       if (!/^[a-f0-9]{24}$/.test(id)) return json({error: 'jobId is required.'}, 400)
       const res = a === 'sending' ? await markSending(id, by, now)
         : a === 'complete' ? await complete(id, by, delivered(b.delivered), now)
-        : a === 'fail' ? await fail(id, by, {error: str(b.error), retryable: b.retryable === true, retryAfterSec: Number.isFinite(b.retryAfterSec) ? Math.min(3600, Number(b.retryAfterSec)) : undefined, delivered: delivered(b.delivered)}, now)
+        : a === 'fail' ? await fail(id, by, {error: str(b.error), retryable: b.retryable === true, retryAfterSec: Number.isFinite(b.retryAfterSec) ? Math.min(3600, Number(b.retryAfterSec)) : undefined, delivered: delivered(b.delivered), definite: b.definite === true}, now)
         : await uncertain(id, by, {error: str(b.error), delivered: delivered(b.delivered)}, now)
       return json(res, res.ok ? 200 : 409)
     }

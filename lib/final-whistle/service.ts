@@ -198,8 +198,11 @@ export async function complete(id: string, by: string, d: Delivered, now: Date) 
   if (r.ok) await updateDoc<Watch | null>(watchName(r.job.clubId, r.job.providerEventId), null, w => (w && w.confirmedFingerprint === r.job.fingerprint ? {...w, state: 'done'} : w))
   return r
 }
-export const fail = (id: string, by: string, o: {error: string; retryable: boolean; retryAfterSec?: number; delivered?: Delivered}, now: Date) => transition(id, by, now, c =>
-  c.state === 'sent' ? c : o.retryable && c.attempts < MAX_ATTEMPTS
+export const fail = (id: string, by: string, o: {error: string; retryable: boolean; retryAfterSec?: number; delivered?: Delivered; definite?: boolean}, now: Date) => transition(id, by, now, c =>
+  c.state === 'sent' ? c
+    // after the point of no return only a runner that KNOWS nothing more went out may ask for a retry; anything else is "unknown"
+    : c.state === 'sending' && !o.definite ? {...c, state: 'delivery_unknown', lease: null, delivered: {...c.delivered, ...o.delivered}, note: `${o.error.slice(0, 200)} — check the chat before resending`}
+    : o.retryable && c.attempts < MAX_ATTEMPTS
     ? {...c, state: 'retryable_failed', lease: null, delivered: {...c.delivered, ...o.delivered}, retryAfter: iso(new Date(now.getTime() + (o.retryAfterSec ?? 120 * c.attempts) * 1000)), note: o.error.slice(0, 300)}
     : {...c, state: 'needs_review', lease: null, delivered: {...c.delivered, ...o.delivered}, note: o.error.slice(0, 300)})
 export const uncertain = (id: string, by: string, o: {error: string; delivered?: Delivered}, now: Date) => transition(id, by, now, c => c.state === 'sent' ? c : {...c, state: 'delivery_unknown', lease: null, delivered: {...c.delivered, ...o.delivered}, note: `${o.error.slice(0, 200)} — check the chat before resending`})

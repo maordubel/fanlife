@@ -119,6 +119,16 @@ describe('jobs: lease, idempotency, and never sending twice', () => {
     const r = await complete(ID, 'A', {}, at(1))
     expect(r.ok && r.job.note).toMatch(/dry run/)
   })
+  it('after sending began, an unqualified failure is "unknown" — never a silent resend; a definite refusal may retry', async () => {
+    useDurableStore(memoryStore()); await seedJob()
+    await claim('A', T0); await markSending(ID, 'A', at(1))
+    const lost = await fail(ID, 'A', {error: 'runner crashed', retryable: true}, at(2))
+    expect(lost.ok && lost.job.state).toBe('delivery_unknown')
+    useDurableStore(memoryStore()); await seedJob()
+    await claim('A', T0); await markSending(ID, 'A', at(1))
+    const refused = await fail(ID, 'A', {error: 'rate limited', retryable: true, definite: true, delivered: {photo: 9}}, at(2))
+    expect(refused.ok && refused.job).toMatchObject({state: 'retryable_failed', delivered: {photo: 9}})
+  })
   it('failures: retryable waits (with the delivered half remembered); a refusal needs a person; "unknown" is never retried by itself', async () => {
     useDurableStore(memoryStore()); await seedJob()
     await claim('A', T0)
