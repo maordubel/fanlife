@@ -1,4 +1,4 @@
-import { knownClub, telegramGame, telegramGameHref } from './routes'
+import { knownClub, telegramGame } from './routes'
 
 export const TELEGRAM_MEMORY_KEY = 'fanlife.telegram.visit.v1'
 export type TelegramVisit = { v: 1; club: string; game?: string }
@@ -10,7 +10,7 @@ export function parseTelegramVisit(raw: string | null): TelegramVisit | null {
   } catch { return null }
 }
 export function rememberTelegramVisit(storage: Pick<Storage, 'getItem' | 'setItem'>, club: string, game?: string) {
-  if (!knownClub(club) || (game && !telegramGameHref(club, game))) return
+  if (!knownClub(club) || (game && !telegramGame(game))) return
   try {
     const prior = parseTelegramVisit(storage.getItem(TELEGRAM_MEMORY_KEY))
     storage.setItem(TELEGRAM_MEMORY_KEY, JSON.stringify({ v: 1, club, ...(game ? { game } : prior?.club === club && prior.game ? { game: prior.game } : {}) }))

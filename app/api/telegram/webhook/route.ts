@@ -1,3 +1,4 @@
+import words from '@/messages/telegram/en.json'
 import { timingSafeEqual } from 'node:crypto'
 import { NextResponse } from 'next/server'
 
@@ -39,11 +40,11 @@ export async function POST(request: Request) {
     const start = /^\/start(?:@FanLife_appbot)?(?:\s|$)/i.test(message.text)
     const text = start
       ? 'Welcome to FAN LIFE.\nPick your club. Take your place in the stand.\n\nFanLife.DubelTeam.com'
-      : 'FAN LIFE · Your club. Your call.\n\nChoose a club, play the quiz, have your say or build your all-time XI. Your club preference stays on this device.\n\n/start — open FanLife\n/help — show this guide\n\nFanLife.DubelTeam.com'
+      : words.botGuide
     return reply({
       method: start ? 'sendPhoto' : 'sendMessage',
       chat_id: message.chat.id,
-      ...(start ? {photo:new URL('/api/telegram/welcome-card?v=1',appUrl).href,caption:text} : {text}),
+      ...(start ? {photo:new URL('/api/telegram/welcome-card?v=2',appUrl).href,caption:text} : {text}),
       reply_markup: { inline_keyboard: [
         [{ text: '⚽ Open FanLife', web_app: { url: appUrl.href } }],
         [{ text: 'Choose Your Club', web_app: { url: `${appUrl.href}?choose=1` } }],

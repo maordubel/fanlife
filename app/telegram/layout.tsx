@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { TelegramBridge } from '@/components/telegram/TelegramBridge'
 import '../club-app.css'
 import './telegram.css'
 
@@ -10,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function TelegramLayout({ children }: { children: ReactNode }) {
-  return <div className="telegram-app"><TelegramBridge />{children}</div>
+  return <div className="telegram-app">{children}</div>
 }

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- ImageResponse renders embedded image bytes, not a browser page. */
+import words from '@/messages/telegram/en.json'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import sharp from 'sharp'
@@ -30,7 +31,7 @@ async function render() {
       <div style={{display:'flex',flexDirection:'column',position:'relative',width:760}}>
         <img src={`data:image/png;base64,${logo.toString('base64')}`} width={92} height={92} alt="" />
         <div style={{display:'flex',flexDirection:'column',fontSize:100,lineHeight:1.04,marginTop:20}}><span>YOUR CLUB.</span><span>YOUR CALL.</span></div>
-        <span style={{fontSize:25,marginTop:20}}>THE QUIZ. THE DEBATE. YOUR ALL-TIME XI.</span>
+        <span style={{fontSize:25,marginTop:20}}>{words.welcomeFeatures}</span>
       </div>
       <img src={`data:image/png;base64,${art.toString('base64')}`} width={340} height={490} alt="" style={{position:'absolute',right:0,bottom:-20,objectFit:'contain'}} />
     </div>

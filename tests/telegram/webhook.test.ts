@@ -17,7 +17,7 @@ describe('Telegram welcome webhook', () => {
     expect(body.method).toBe('sendPhoto')
     expect(body.chat_id).toBe(123)
     expect(body.caption).toContain('FanLife.DubelTeam.com')
-    expect(body.photo).toBe(new URL('/api/telegram/welcome-card?v=1',preview).href)
+    expect(body.photo).toBe(new URL('/api/telegram/welcome-card?v=2',preview).href)
     expect(body.reply_markup.inline_keyboard[0][0].web_app.url).toBe(preview)
     expect(body.reply_markup.inline_keyboard[1][0].web_app.url).toBe(preview+'?choose=1')
     expect(JSON.stringify(body)).not.toContain(secret)

@@ -44,6 +44,37 @@ try{
  await page.locator('.tg-return').waitFor({state:'visible'})
  await page.getByRole('button',{name:'Forget this preference'}).click()
  await page.locator('.tg-return').waitFor({state:'hidden'})
+ // Every original gate is discoverable; only published/playable gates are links.
+ await page.goto(base+'/telegram?club=hapoel-tel-aviv',{waitUntil:'domcontentloaded'})
+ for(const gate of SHARED_GATES) if(await page.locator(`main [data-gate="${gate.key}"]`).count()!==1)bad.push(`Telegram → missing gate ${gate.key}`)
+ // A native guest mock checks real client navigation and a cold reload, without a token or a real account.
+ const native=await browser.newPage({viewport:{width:390,height:844}})
+ await native.route('https://telegram.org/js/telegram-web-app.js',route=>route.fulfill({contentType:'application/javascript',body:`
+ window.__tgProbe={back:null,shown:false,closing:false};
+ window.Telegram={WebApp:{platform:'android',initData:'',ready(){},expand(){},isVersionAtLeast(){return true},
+ enableClosingConfirmation(){window.__tgProbe.closing=true},disableClosingConfirmation(){window.__tgProbe.closing=false},
+ disableVerticalSwipes(){},enableVerticalSwipes(){},openTelegramLink(){},onEvent(){},offEvent(){},
+ safeAreaInset:{top:12,bottom:12,left:0,right:0},contentSafeAreaInset:{top:24,bottom:0,left:0,right:0},
+ BackButton:{show(){window.__tgProbe.shown=true},hide(){window.__tgProbe.shown=false},onClick(fn){window.__tgProbe.back=fn},offClick(fn){if(window.__tgProbe.back===fn)window.__tgProbe.back=null}}
+ }};`}))
+ await native.goto(base+'/telegram?club=hapoel-tel-aviv',{waitUntil:'domcontentloaded'})
+ await native.waitForFunction(()=>document.documentElement.dataset.telegram==='true'&&window.__tgProbe.shown)
+ await native.locator('.tg-whole a[href="/market"]').click()
+ await native.waitForURL('**/market')
+ await native.waitForFunction(()=>document.documentElement.dataset.telegram==='true'&&window.__tgProbe.shown)
+ if(await native.evaluate(()=>document.documentElement.scrollWidth>innerWidth))bad.push('Telegram → market overflows on a phone')
+ await native.reload({waitUntil:'domcontentloaded'})
+ await native.waitForFunction(()=>document.documentElement.dataset.telegram==='true'&&window.__tgProbe.shown)
+ await native.evaluate(()=>window.__tgProbe.back())
+ await native.waitForURL('**/telegram')
+ await native.waitForFunction(()=>window.__tgProbe.shown===false)
+ await native.goto(base+'/telegram?club=hapoel-tel-aviv',{waitUntil:'domcontentloaded'})
+ await native.locator('.tg-game[data-gate="timeline"]').click()
+ await native.waitForURL('**/telegram/hapoel-tel-aviv/timeline')
+ await native.waitForFunction(()=>window.__tgProbe.closing===true)
+ await native.evaluate(()=>window.__tgProbe.back())
+ await native.waitForURL('**/telegram?club=hapoel-tel-aviv')
+ await native.close()
  const photo=await page.request.get(base+'/api/telegram/welcome-card?v=1')
  if(photo.status()!==200||!photo.headers()['content-type']?.startsWith('image/png'))bad.push('Telegram → welcome photo is not a public PNG')
  await page.goto(base+'/master/admin');await page.locator('#owner-key').fill(KEY);await page.getByRole('button',{name:'Enter the control room'}).click()
