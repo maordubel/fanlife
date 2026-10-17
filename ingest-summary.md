@@ -1,0 +1,8 @@
+- aek-athens: ok
+- celtic: ok
+- hapoel-petah-tikva: ok
+- hapoel-tel-aviv: ok
+- olympiacos: ok
+- panathinaikos: ok
+- st-pauli: ok
+- zrinjski-mostar: ok
