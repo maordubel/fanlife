@@ -134,9 +134,16 @@ function supabaseStore(): DurableStore {
     const rows = (await call(`${base()}?name=eq.${q(name)}&select=body,etag`)) as { body: string; etag: string }[]
     return rows[0] ? { text: rows[0].body, etag: rows[0].etag } : null
   }
+  /** PostgREST answers at most 1000 rows a call: page until a short page, so a long prefix is never silently cut. `\\`, `%` and `_` in the prefix are matched literally. */
   const rawList = async (prefix: string): Promise<string[]> => {
-    const rows = (await call(`${base()}?name=like.${q(prefix.replace(/[*%_\\]/g, ''))}*&select=name&order=name`)) as { name: string }[]
-    return rows.map((r) => r.name)
+    const like = q(prefix.replace(/[\\%_]/g, (m) => `\\${m}`))
+    const out: string[] = []
+    for (let offset = 0; offset < 50_000; offset += 1000) {
+      const rows = (await call(`${base()}?name=like.${like}*&select=name&order=name&limit=1000&offset=${offset}`)) as { name: string }[]
+      out.push(...rows.map((r) => r.name))
+      if (rows.length < 1000) break
+    }
+    return out
   }
   return {
     kind: 'supabase',
