@@ -118,7 +118,7 @@ export function generateMetadata(): Metadata {
   return clubFromHost(headers().get('host')) === DEFAULT_CLUB ? workerMetadata : fanLifeMetadata
 }
 
-const FAN_PATHS=['/master','/clubs','/telegram','/sources','/closet','/market','/auction','/shirts','/me','/stands']
+const FAN_PATHS=['/master','/clubs','/telegram','/our-games','/all-football','/sources','/closet','/market','/auction','/shirts','/me','/stands']
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
