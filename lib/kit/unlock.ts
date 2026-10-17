@@ -1,4 +1,5 @@
 import 'server-only'
+import {signingKey} from '@/lib/secrets'
 
 import { createHmac, timingSafeEqual } from 'node:crypto'
 
@@ -19,7 +20,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto'
  */
 
 function key(): string {
-  return process.env.KIT_UNLOCK_KEY ?? 'kit-unlock-local-development'
+  return signingKey([process.env.KIT_UNLOCK_KEY], 'kit-unlock-local-development')
 }
 
 export function kitSign(payload: string, length = 20): string {

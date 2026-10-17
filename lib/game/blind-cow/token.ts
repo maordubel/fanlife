@@ -1,4 +1,5 @@
 import 'server-only'
+import {signingKey} from '@/lib/secrets'
 
 import { createCipheriv, createDecipheriv, createHash, randomBytes } from 'node:crypto'
 
@@ -13,7 +14,7 @@ import { createCipheriv, createDecipheriv, createHash, randomBytes } from 'node:
  * by the database and does not rest on this key at all.
  */
 function key(): Buffer {
-  const secret = process.env.BLIND_COW_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || 'blind-cow-local-development'
+  const secret = signingKey([process.env.BLIND_COW_KEY, process.env.SUPABASE_SERVICE_ROLE_KEY], 'blind-cow-local-development')
   return createHash('sha256').update(`worker-blind-cow-run|${secret}`).digest()
 }
 
