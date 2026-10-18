@@ -96,3 +96,13 @@ describe('the “/” exclusion',()=>{
   expect(pageAllows(t,{kind:'other',path:'/market'})).toBe(true)
  })
 })
+describe('Dubid EN/GR banners',()=>{
+ const has=(id:string,page:ReturnType<typeof at>,v:{israel:boolean;greece?:boolean})=>eligible(SEED_DOC,page,NOW,v).some(b=>b.id===id)
+ it('English shows everywhere',()=>{expect(has('dubid-en',at(null),{israel:false})).toBe(true);expect(has('dubid-en',at('celtic'),{israel:false})).toBe(true)})
+ it('Greek: Greek visitors anywhere, anyone on Greek clubs, nobody else',()=>{
+  expect(has('dubid-gr',at(null),{israel:false,greece:true})).toBe(true)
+  expect(has('dubid-gr',at('olympiacos'),{israel:false})).toBe(true)
+  expect(has('dubid-gr',at(null),{israel:false})).toBe(false)
+  expect(has('dubid-gr',at('celtic'),{israel:false})).toBe(false)})
+})
+
