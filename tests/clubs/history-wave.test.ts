@@ -51,7 +51,7 @@ describe('recovered evidence reaches the actual club feature inputs',()=>{
   expect(d.memory.some(p=>p.pair.includes(':history-'))).toBe(true)
   expect(d.timeline.some(f=>f.id.includes(':history-'))).toBe(true)
   expect(entries.some(e=>e.id.includes(':history-'))).toBe(true)
-  expect(d.matches!.some(f=>Array.isArray((f.value as {lineup?:string[]}).lineup)&&(f.value as {lineup:string[]}).lineup.length===11)).toBe(true)
+  expect(d.matches!.some(f=>{const lineup=(f.value as {lineup?:unknown}).lineup;return Array.isArray(lineup)&&lineup.length===11})).toBe(true)
   expect(d.sources.filter(s=>s.id.startsWith('history-')).every(s=>s.access==='available'&&s.checkedAt==='2026-10-18')).toBe(true)
   const excluded=new Set(r.diagnostics.filter(x=>x.code==='HISTORY_CONFLICT').map(x=>x.record))
   expect(d.matches!.every(f=>!excluded.has(f.id))).toBe(true)
