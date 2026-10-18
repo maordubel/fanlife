@@ -19,5 +19,9 @@ export const SEED_ADDED:Banner[]=[
  own('life','LIFE','/#life','Life! — live one fan’s seasons.',['/']),
  {...base,id:'fuckyou',name:'FUCK YOU (fuckyou.dubelteam.com)',href:'https://fuckyou.dubelteam.com',alt:'Say it. Don’t send it. — play now.',img1x:'/ads/fuckyou-1x.webp',img2x:'/ads/fuckyou-2x.webp',
   targeting:{home:true,allClubs:true,clubs:[],other:true,paths:[],exclude:[]},note:'Every page.'},
+ {...base,id:'dubid-en',name:'Dubid (English)',href:'https://dubid.dubelteam.com',alt:'Dubid — a different fantasy, a whole new game. Play now!',img1x:'/ads/dubid-en-1x.webp',img2x:'/ads/dubid-en-2x.webp',
+  targeting:{home:true,allClubs:true,clubs:[],other:true,paths:[],exclude:[]},note:'Every page.'},
+ {...base,id:'dubid-gr',name:'Dubid (Greek)',audience:'greece' as const,href:'https://dubid.dubelteam.com',alt:'Dubid — μια διαφορετική φαντασία, ένα εντελώς νέο παιχνίδι. Παίξε τώρα!',img1x:'/ads/dubid-gr-1x.webp',img2x:'/ads/dubid-gr-2x.webp',
+  targeting:{home:true,allClubs:true,clubs:['aek-athens','olympiacos','panathinaikos'],other:true,paths:[],exclude:[]},note:'Visitors from Greece on any page; anyone on a Greek club page.'},
 ]
 export const SEED_DOC:PromoDoc={v:1,settings:{enabled:true,delaySec:3,showSec:7,gapSec:45,maxPerSession:3,pageRules:[]},banners:[...SEED_BANNERS,...SEED_ADDED],audit:[]}
