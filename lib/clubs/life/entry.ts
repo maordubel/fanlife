@@ -1,6 +1,7 @@
 import 'server-only'
 import {CORE_CLUB_IDS, loadClub} from '@/lib/clubs/resolver'
 import {clubLife} from './pack'
+import {readLifePlayable} from '@/lib/clubs/precompiled'
 
 /**
  * Where a visitor enters one club's LIFE — the single answer the home page, the club cards and the
@@ -18,8 +19,12 @@ export async function lifeEntry(clubId: string, opts: {evaluation: boolean; paus
   if (!CORE_CLUB_IDS.includes(clubId)) return WORKSHOP
   // Preview opens every club; the real site opens LIFE for a club the owner has published (live).
   if (!opts.evaluation && opts.status !== 'live') return WORKSHOP
-  const club = await loadClub(clubId)
-  if (!club || !clubLife(club.data).readiness.playable) return WORKSHOP
+  const known = await readLifePlayable(clubId)
+  if (known === false) return WORKSHOP
+  if (known === null) {
+    const club = await loadClub(clubId)
+    if (!club || !clubLife(club.data).readiness.playable) return WORKSHOP
+  }
   return {state: 'universal', href: `/clubs/${clubId}/life${opts.locale ? `?lang=${opts.locale}` : ''}`}
 }
 
