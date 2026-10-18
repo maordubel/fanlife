@@ -9,9 +9,19 @@ HERE = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location('history', HERE / 'build-history-2026-10-18.py')
 history = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(history)
+collector_spec = importlib.util.spec_from_file_location('collector', HERE / 'recover-history-2026-10-18.py')
+collector = importlib.util.module_from_spec(collector_spec)
+collector_spec.loader.exec_module(collector)
 
 
 class HistorySources(unittest.TestCase):
+    def test_owner_spelling_is_applied_at_collection_without_changing_other_names(self):
+        family = 'תקו' + 'וה'
+        row = {'remark': ['שלום ' + family, 'שלום-' + family, 'אבי ' + family], 'id': 822}
+        self.assertEqual(collector.owner_spelling(row),
+                         {'remark': ['שלום תקוה', 'שלום-תקוה', 'אבי ' + family], 'id': 822})
+        self.assertEqual(row['remark'][0], 'שלום ' + family)
+
     def test_date_ranges_and_new_rounds_do_not_inherit_a_previous_day(self):
         doc = {'seasonEnd': 2024, 'sourceUrl': 'https://example.org', 'text': '''Round 1 [Aug 1]
 Zrinjski 2-0 Velez

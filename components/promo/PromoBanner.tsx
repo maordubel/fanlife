@@ -24,7 +24,7 @@ const busy=()=>!!document.querySelector('[data-chrome="immersive"],dialog[open],
  * its show time (7 s), and drops away. Hover or keyboard focus holds it. Per-device caps live in localStorage, per-visit
  * caps in sessionStorage; both are optional — without them the banner simply rotates by chance.
  */
-export function PromoBanner({doc,israel}:{doc:PromoDoc;israel:boolean}){
+export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boolean;greece?:boolean}){
  const path=usePathname(),[shown,setShown]=useState<{b:Banner;page:Page}|null>(null),[up,setUp]=useState(false)
  const hold=useRef(false),timers=useRef<number[]>([]),current=useRef<string|null>(null)
  const clear=()=>{timers.current.forEach(clearTimeout);timers.current=[]}
@@ -36,7 +36,7 @@ export function PromoBanner({doc,israel}:{doc:PromoDoc;israel:boolean}){
   const now0=Date.now(),page0=here();const cap=doc.settings.maxPerSession
   if(cap>0&&sess.shown>=cap)return
   const pool=()=>{const now=Date.now(),page=here(),seen=read<Seen>('local',KEY,{}),s=read<Session>('session',SKEY,blank())
-   return {page,now,seen,s,list:eligible(doc,page,now,{israel}).filter(b=>!capped(b,seen,s.seen,now))}}
+   return {page,now,seen,s,list:eligible(doc,page,now,{israel,greece}).filter(b=>!capped(b,seen,s.seen,now))}}
   // the first banner of a visit waits the banner's own delay; later pages wait the gap since the last one closed
   const first=pickBanner(pool().list,pool().seen,sess.lastId,now0,Math.random)
   if(!first)return
@@ -63,7 +63,7 @@ export function PromoBanner({doc,israel}:{doc:PromoDoc;israel:boolean}){
   void page0
   return clear
  // eslint-disable-next-line react-hooks/exhaustive-deps
- },[path,doc,israel])
+ },[path,doc,israel,greece])
 
  if(!shown)return null
  const {b,page}=shown

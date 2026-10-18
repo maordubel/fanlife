@@ -16,7 +16,7 @@ function where(b:Banner,names:Record<string,string>):string{
  if(t.allClubs)bits.push('every club')
  else if(t.clubs.length)bits.push(t.clubs.map(c=>names[c]||c).join(', '))
  if(t.other)bits.push('all other pages');if(t.paths.length)bits.push(t.paths.join(', '))
- return (bits.join(' · ')||'nowhere')+(b.audience==='israel'?' — Israeli visitors only':'')
+ return (bits.join(' · ')||'nowhere')+(b.audience==='israel'?' — Israeli visitors only':b.audience==='greece'?' — Greek visitors, and everyone on the clubs chosen':'')
 }
 
 export function AdsDesk({initial,clubs}:{initial:PromoDoc;clubs:{id:string;name:string}[]}){
@@ -82,6 +82,7 @@ export function AdsDesk({initial,clubs}:{initial:PromoDoc;clubs:{id:string;name:
      <fieldset><legend>Who sees it</legend>
       <label className="ads-row"><input type="radio" name={`aud${i}`} checked={b.audience==='all'} onChange={()=>setB(i,{audience:'all'})}/> Everyone</label>
       <label className="ads-row"><input type="radio" name={`aud${i}`} checked={b.audience==='israel'} onChange={()=>setB(i,{audience:'israel'})}/> Israeli visitors only (by the visitor’s country)</label>
+      <label className="ads-row"><input type="radio" name={`aud${i}`} checked={b.audience==='greece'} onChange={()=>setB(i,{audience:'greece'})}/> Greek visitors, plus everyone on the clubs chosen below</label>
      </fieldset>
      <fieldset><legend>Where it appears</legend>
       <div className="ads-chips">

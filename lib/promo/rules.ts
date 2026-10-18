@@ -44,13 +44,19 @@ export function inWindow(b:Banner,now:number):boolean{
  return a<z?(c.hour>=a&&c.hour<z):(c.hour>=a||c.hour<z) // 22→6 wraps midnight
 }
 
-export type Viewer={israel:boolean}
+export type Viewer={israel:boolean;greece?:boolean}
+/** who may see this banner: everyone, Israeli visitors, or Greek visitors anywhere plus anyone on a club page the banner names */
+export function audienceAllows(b:Pick<Banner,'audience'|'targeting'>,v:Viewer,p:Page):boolean{
+ if(b.audience==='all')return true
+ if(b.audience==='israel')return v.israel
+ return !!v.greece||(p.kind==='club'&&b.targeting.clubs.includes(p.club))
+}
 /** every banner that may be put in front of this viewer on this page right now, before frequency caps */
 export function eligible(doc:Pick<PromoDoc,'settings'|'banners'>,page:Page,now:number,v:Viewer):Banner[]{
  if(!doc.settings.enabled)return []
  const rule=ruleFor(doc.settings.pageRules,page)
  if(rule?.mode==='off')return []
- return doc.banners.filter(b=>b.enabled&&(b.audience==='all'||v.israel)&&pageAllows(b.targeting,page)&&inWindow(b,now)&&(!rule||rule.mode!=='only'||rule.only.includes(b.id)))
+ return doc.banners.filter(b=>b.enabled&&audienceAllows(b,v,page)&&pageAllows(b.targeting,page)&&inWindow(b,now)&&(!rule||rule.mode!=='only'||rule.only.includes(b.id)))
 }
 
 /** frequency caps: per session, per Israel day, and a cooldown between two showings of one banner */
@@ -101,7 +107,7 @@ export function cleanBanner(raw:unknown):Banner{
  if(!u||u.protocol!=='https:')throw new PromoInvalid(`${id}: the link must be a full https:// address.`)
  const img1x=img(r.img1x),img2x=img(r.img2x)||img1x;if(!img1x)throw new PromoInvalid(`${id}: the 1× image must be an /ads/… file or an https address.`)
  return {id,name:String(r.name??id).trim().slice(0,80)||id,enabled:r.enabled===true,href:u.toString(),alt:String(r.alt??'').trim().slice(0,160),img1x,img2x,
-  audience:r.audience==='israel'?'israel':'all',
+  audience:r.audience==='israel'?'israel':r.audience==='greece'?'greece':'all',
   targeting:{home:t.home===true,allClubs:t.allClubs===true,clubs:strs(t.clubs,SLUG),other:t.other===true,paths:pathList(t.paths),exclude:pathList(t.exclude)},
   startsAt:date(r.startsAt),endsAt:date(r.endsAt),
   days:[...new Set((Array.isArray(r.days)?r.days:[]).map(Number).filter(n=>Number.isInteger(n)&&n>=0&&n<=6))].sort(),

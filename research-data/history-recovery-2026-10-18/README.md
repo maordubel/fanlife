@@ -17,6 +17,9 @@ files were recovered. The owner approved direct archive/feature integration on
 - Each document carries its URL and a SHA-256 of the downloaded bytes. Declared
   Windows-1250 encodings are decoded before parsing; no replacement glyph is
   accepted in a match name.
+- Museum annotations use the owner's exact spelling ruling for שלום תקוה at
+  ingestion. Affected snapshots declare this normalization; their SHA-256 still
+  identifies the original downloaded bytes, not the normalized JSON.
 - `collection.json`: collection coverage and fetch errors.
 - `validation.json`: counts and every withheld numerical claim, including the
   disposition of HPT's 24 approved archive-only records.

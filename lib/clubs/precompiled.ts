@@ -18,7 +18,7 @@ import type {ClubData,Diagnostic} from './contract'
  *  - Owner overrides and readiness still apply on top at runtime (`loadClub`), per revision, exactly as before.
  */
 export const COMPILED_DIR = path.join(process.cwd(), 'content', 'compiled')
-export type CompiledManifest = {schema: 1; stamp: string; clubs: string[]}
+export type CompiledManifest = {schema: 1; stamp: string; clubs: string[]; life?: Record<string, boolean>}
 type Compiled = {data: ClubData; diagnostics: Diagnostic[]}
 
 export function precompiledEnabled(env: Record<string, string | undefined> = process.env): boolean {
@@ -46,4 +46,15 @@ export async function readPrecompiled(id: string): Promise<Compiled | null> {
   } catch {
     return null
   }
+}
+
+/**
+ * Whether a club's LIFE is playable, as the build measured it — answered from the manifest, without parsing the club
+ * (the hub asks this for every club, and building eight screenplays took ~0.5 s on a cold instance). Null = not known: compile.
+ * LIFE's anchors are matches, kits and the skin; the owner's player overrides cannot change the answer.
+ */
+export async function readLifePlayable(id: string): Promise<boolean | null> {
+  if (!precompiledEnabled()) return null
+  const m = await readManifest()
+  return m && typeof m.life?.[id] === 'boolean' ? m.life[id]! : null
 }

@@ -19,6 +19,17 @@ OUT = ROOT / 'research-data/history-recovery-2026-10-18'
 CACHE = Path('/tmp/fanlife-recovery-cache')
 
 
+def owner_spelling(value):
+    """Apply the exact owner ruling from lib/canon/spelling.ts at ingestion."""
+    if isinstance(value, str):
+        return re.sub(r'(שלו[םמ])([\s\-_\u05BE]+)תקו{2}ה', r'\1\2תקוה', value)
+    if isinstance(value, list):
+        return [owner_spelling(item) for item in value]
+    if isinstance(value, dict):
+        return {key: owner_spelling(item) for key, item in value.items()}
+    return value
+
+
 def fetch(url, key):
     CACHE.mkdir(exist_ok=True)
     p = CACHE / key
@@ -73,7 +84,11 @@ def hpt(year):
         if row['id'] in by_id and by_id[row['id']] != row:
             raise ValueError(f'conflicting source id {row["id"]}')
         by_id[row['id']] = row
-    return {'sourceUrl': url, 'sha256': sha, 'seasonLabel': label, 'seasonId': year, 'games': list(by_id.values())}
+    doc = {'sourceUrl': url, 'sha256': sha, 'seasonLabel': label, 'seasonId': year, 'games': list(by_id.values())}
+    normalized = owner_spelling(doc)
+    if normalized != doc:
+        normalized['normalizations'] = ['Owner spelling: שלום תקוה (spec §0.1, 22.9.2026); sha256 still identifies the downloaded bytes.']
+    return normalized
 
 
 def rsssf(year):

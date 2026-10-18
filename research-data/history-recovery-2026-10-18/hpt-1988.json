@@ -51,7 +51,7 @@
    "crowd": 2000,
    "referee": "יהושע לויה",
    "story": "$3e",
-   "remark": "הפסד ביתי ראשון מול מכבי נתניה מאז 29/3/1969 (18.5 שנים). כובש שער הניצחון לנתניה, שלום תקווה, היה בן ארבע בהפסד הקודם.",
+   "remark": "הפסד ביתי ראשון מול מכבי נתניה מאז 29/3/1969 (18.5 שנים). כובש שער הניצחון לנתניה, שלום תקוה, היה בן ארבע בהפסד הקודם.",
    "leg": null,
    "position": 14,
    "hapoelPenaltyGoals": null,
@@ -1135,5 +1135,8 @@
    "opponentPenaltyGoals": null,
    "opponentCrestKey": "$2d:props:children:0:props:children:0:0:props:games:2:opponentCrestKey"
   }
+ ],
+ "normalizations": [
+  "Owner spelling: שלום תקוה (spec §0.1, 22.9.2026); sha256 still identifies the downloaded bytes."
  ]
 }

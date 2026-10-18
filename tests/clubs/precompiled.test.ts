@@ -12,7 +12,7 @@ describe('pre-compiled club packs (performance, 11.10.2026)',()=>{
  })
  it('the resolver falls back to compiling on any miss, and the build writes them first',()=>{
   const r=readFileSync('lib/clubs/resolver.ts','utf8')
-  expect(r).toMatch(/readPrecompiled\(id\)\.then\(pre=>pre\?\?providers\[id\]!\(\)/)
+  expect(r).toMatch(/readPrecompiled\(id\)\.then\(pre=>pre\?\?compilePath\(\)\.then\(m=>m\.providers\[id\]!\(\)/)
   const pkg=JSON.parse(readFileSync('package.json','utf8')) as {scripts:Record<string,string>}
   expect(pkg.scripts.build).toBe('npm run clubs:precompile && next build')
   expect(JSON.parse(readFileSync('vercel.json','utf8')).buildCommand).toBe('npm run build')
