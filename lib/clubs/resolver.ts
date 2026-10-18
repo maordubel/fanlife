@@ -18,13 +18,17 @@ import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
+import {withHistorical} from './history-wave'
 import {withRosterWave} from './roster-wave'
 import {readPrecompiled} from './precompiled'
 import {withPlayerOverrides} from '@/lib/players/apply'
 import {refreshSnapshot} from '@/lib/players/snapshot'
 import {getSnapshot} from '@/lib/players/effective'
 import {withForgedTrivia} from '@/lib/trivia/club'
-const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>compilePackBase(withEuro(pack,club.id) as never,club)
+const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>{
+ const history=withHistorical(pack,club.id),result=compilePackBase(withEuro(history.pack,club.id) as never,club)
+ return {...result,diagnostics:[...result.diagnostics,...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
+}
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */
 const CATALOGUE_KITS:Record<string,unknown>={'st-pauli':stPauliCof,celtic:celticCof,panathinaikos:panathinaikosCof,'zrinjski-mostar':zrinjskiCof,olympiacos:olympiacosCof}

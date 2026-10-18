@@ -60,6 +60,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Historical archive source validation
+        run: npm run research:history:check
+
       # Pure static TypeScript over THE WORKER LIFE's scene graph — no browser, no build,
       # seconds to run — so it sits with the other static checks above rather than after
       # the slower dynamic ones below. It reads content the way the runtime reads it and

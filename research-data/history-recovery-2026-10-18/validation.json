@@ -1,0 +1,1054 @@
+{
+ "checkedAt": "2026-10-18",
+ "approval": "owner: chat 2026-10-18 — תעלה , תאשר את כל המחקר שלך להיכנס ישירות לארכיונים ולפיצרים.",
+ "completeArchiveClaim": false,
+ "clubs": {
+  "hapoel-petah-tikva": {
+   "sourceDocuments": 86,
+   "approvedCandidates": 3007,
+   "archiveOnly": 24,
+   "byCompetition": {
+    "Israeli League": 2458,
+    "Israel State Cup": 234,
+    "Emergency League": 5,
+    "Israel Super Cup": 2,
+    "Sukkot Cup": 3,
+    "Decade Cup": 1,
+    "Israel FA Shield": 9,
+    "Referees Association Cup": 3,
+    "20th Anniversary Cup": 8,
+    "25th Anniversary Cup": 3,
+    "Toto Cup": 247,
+    "UEFA Intertoto Cup": 18,
+    "Lilian Cup": 2,
+    "UEFA Cup Winners Cup": 4,
+    "Play-offs": 4,
+    "UEFA Cup": 6
+   },
+   "held": [
+    {
+     "source": "https://hpt.co.il/seasons/1935",
+     "sourceId": 3010,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 3010,
+      "seasonId": 1935,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "03",
+      "day": 16,
+      "month": 2,
+      "year": 1935,
+      "date": -1100563200,
+      "opponent": "מכבי פתח תקוה",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "",
+      "crowd": 0,
+      "referee": "",
+      "story": "",
+      "remark": "ניצחון טכני לאחר שמכבי פ\"ת לא הופיעה למשחק",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "maccabi_petah_tikva/maccabi_petah_tikva__1900-2000",
+       "darkBgColor": null,
+       "hasDarkImage": true
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1939",
+     "sourceId": 2967,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2967,
+      "seasonId": 1939,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "12",
+      "day": 16,
+      "month": 9,
+      "year": 1939,
+      "date": -956016000,
+      "opponent": "הכוכב תל אביב",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "",
+      "crowd": 0,
+      "referee": "",
+      "story": "",
+      "remark": "ניצחון טכני עקב הפסקת פעילות של הכוכב תל אביב",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": null
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1940",
+     "sourceId": 2345,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2345,
+      "seasonId": 1940,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "01",
+      "day": 3,
+      "month": 2,
+      "year": 1940,
+      "date": -943920000,
+      "opponent": "הפועל רמת גן",
+      "hapoelGoals": 1,
+      "opponentGoals": 9,
+      "locationType": 2,
+      "stadium": "הפועל רמת-גן",
+      "crowd": 1200,
+      "referee": "?",
+      "story": "$3a",
+      "remark": "התבוסה הגדולה ביותר בהיסטוריה של הפועל הופסקה בדקה ה-78 לאחר שזלמן למין, הצדיק בסדום, סטר על פניו של נפתלי שוולב, שחקן הפועל ר\"ג.\nבמקום התפתחה תגרה שבמהלכה פרץ הקהל למגרש.",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "hapoel_ramat_gan/hapoel_ramat_gan__1900-2010",
+       "darkBgColor": null,
+       "hasDarkImage": false
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1940",
+     "sourceId": 2346,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2346,
+      "seasonId": 1940,
+      "competition": "גביע המדינה",
+      "competitionType": 2,
+      "round": "שמינית גמר",
+      "day": 17,
+      "month": 2,
+      "year": 1940,
+      "date": -942710400,
+      "opponent": "הפועל הרצליה",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "אין",
+      "crowd": 0,
+      "referee": "אין",
+      "story": "",
+      "remark": "הפועל הרצליה לא התייצבה למשחק וספגה הפסד טכני.",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "hapoel_herzliya/hapoel_herzliya_red",
+       "darkBgColor": null,
+       "hasDarkImage": false
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1942",
+     "sourceId": 2298,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2298,
+      "seasonId": 1942,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "13",
+      "day": 17,
+      "month": 1,
+      "year": 1942,
+      "date": -882230400,
+      "opponent": "מכבי רחובות",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "?",
+      "crowd": 0,
+      "referee": "?",
+      "story": "",
+      "remark": "מכבי רחובות לא הופיעה, ניצחון טכני להפועל.",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "maccabi_rehovot/current",
+       "darkBgColor": null,
+       "hasDarkImage": false
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1942",
+     "sourceId": 2307,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2307,
+      "seasonId": 1942,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "20",
+      "day": 23,
+      "month": 5,
+      "year": 1942,
+      "date": -871344000,
+      "opponent": "הפועל הרצליה",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "פתח-תקוה",
+      "crowd": 0,
+      "referee": "?",
+      "story": "קבוצת הפועל הרצליה לא היתה מוכנה לתחרות ליגה ומשום כך הפך המשחק לידידותי. השופט פסק ניצחון לפתח-תקוואים 0:3 ברשימת הליגה. המשחק הידידותי נסתיים בניצחון הפתח-תקוואים בתוצאות 1:4 (1:2).",
+      "remark": "מספר מחזורים לסיום העונה הופסקה פעילותה של הפועל הרצליה והיא הפסידה טכנית את שאר המשחקים שנותרו לה.\nבמקום משחק הליגה שתוכנן שיחקו הפועל והפועל הרצליה משחק ידידות שנגמר בניצחון 4:1 לזכות הפועל.",
+      "leg": 1,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$30:props:children:0:props:children:0:0:props:games:5:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1942",
+     "sourceId": 2312,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2312,
+      "seasonId": 1942,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "20",
+      "day": 30,
+      "month": 5,
+      "year": 1942,
+      "date": -870739200,
+      "opponent": "הפועל ראשון לציון",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "אין",
+      "crowd": 0,
+      "referee": "אין",
+      "story": "",
+      "remark": "מספר מחזורים לסיום העונה הופסקה פעילותה של הפועל ראשון-לציון והיא הפסידה טכנית את שאר המשחקים שנותרו לה.",
+      "leg": 2,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$30:props:children:0:props:children:0:0:props:games:0:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1942",
+     "sourceId": 2310,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2310,
+      "seasonId": 1942,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "22",
+      "day": 13,
+      "month": 6,
+      "year": 1942,
+      "date": -869529600,
+      "opponent": "דגל ציון תל אביב",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "אין",
+      "crowd": 0,
+      "referee": "אין",
+      "story": "",
+      "remark": "מספר מחזורים לסיום העונה הופסקה פעילותה של דגל ציון תל-אביב והיא הפסידה טכנית את שאר המשחקים שנותרו לה.",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": null
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1942",
+     "sourceId": 2313,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2313,
+      "seasonId": 1942,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "19",
+      "day": 5,
+      "month": 7,
+      "year": 1942,
+      "date": -867628800,
+      "opponent": "הכח תל אביב",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "?",
+      "crowd": 0,
+      "referee": "?",
+      "story": "",
+      "remark": "המשחק לא התקיים כי הכח ת״א לא הגיעה לפ״ת והפועל פ״ת זכתה בניצחון טכני",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": null
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1944",
+     "sourceId": 2279,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2279,
+      "seasonId": 1944,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "21",
+      "day": 30,
+      "month": 9,
+      "year": 1944,
+      "date": -796953600,
+      "opponent": "הפועל רחובות",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "?",
+      "crowd": 0,
+      "referee": "?",
+      "story": "",
+      "remark": "ניצחון טכני",
+      "leg": null,
+      "position": 7,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2c:props:children:0:props:children:0:0:props:games:10:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1944",
+     "sourceId": 2738,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2738,
+      "seasonId": 1944,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "07",
+      "day": 16,
+      "month": 10,
+      "year": 1944,
+      "date": -795571200,
+      "opponent": "הפועל תל אביב",
+      "hapoelGoals": 1,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "",
+      "crowd": 0,
+      "referee": "",
+      "story": "",
+      "remark": "בספורט הבוקר המשחק הוזכר כמשחק ליגה, אך בשאר העיתונים כמשחק ידידות שפוצץ בדקה ה-75. בעקבות כך המשחק נותר במוזיאון אך לא נספר במאזן העונה.",
+      "leg": 2,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2c:props:children:0:props:children:0:0:props:games:6:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1945",
+     "sourceId": 2249,
+     "reasons": [
+      "source annotation identifies the score as half-time only"
+     ],
+     "record": {
+      "id": 2249,
+      "seasonId": 1945,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "10",
+      "day": 16,
+      "month": 6,
+      "year": 1945,
+      "date": -774576000,
+      "opponent": "מכבי נתניה",
+      "hapoelGoals": 2,
+      "opponentGoals": 1,
+      "locationType": 2,
+      "stadium": "נתניה",
+      "crowd": 0,
+      "referee": "?",
+      "story": "",
+      "remark": "תוצאת המחצית 2-1",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2f:props:children:0:props:children:0:0:props:games:2:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1946",
+     "sourceId": 3022,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 3022,
+      "seasonId": 1946,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "07",
+      "day": 9,
+      "month": 2,
+      "year": 1946,
+      "date": -754012800,
+      "opponent": "הפועל נתניה",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "",
+      "crowd": 0,
+      "referee": "",
+      "story": "",
+      "remark": "לא התקיים, ניצחון טכני",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$30:props:children:0:props:children:0:0:props:games:1:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1947",
+     "sourceId": 2341,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2341,
+      "seasonId": 1947,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "24",
+      "day": 6,
+      "month": 9,
+      "year": 1947,
+      "date": -704419200,
+      "opponent": "הפועל הרצליה",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "אין",
+      "crowd": 0,
+      "referee": "אין",
+      "story": "",
+      "remark": "מספר מחזורים לסיום הופסקה פעילותה של הפועל הרצליה והיא הפסידה טכנית את המשחקים שנותרו לה.",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$31:props:children:0:props:children:0:0:props:games:10:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1948",
+     "sourceId": 2371,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2371,
+      "seasonId": 1948,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "04",
+      "day": 22,
+      "month": 11,
+      "year": 1947,
+      "date": -697766400,
+      "opponent": "הפועל רמת גן",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "אין",
+      "crowd": 0,
+      "referee": "אין",
+      "story": "המשחק בתחילתו היה הוגן אך בהמשכו נעשה חריף ואף פראי עקב משחקם הגס של שחקני ר\"ג. השופט נאלץ להפסיק 4 דקות לפני הגמר כי לא ניתנה לו אפשרות לסיים את המשחק מצד שחקני ר\"ג מלאך וגרוסמן שהחלו רוגמים אותו באבנים ורק הודות להתערבותם של הפתח-תקוואים ניצל מהתקפות קשות יותר.",
+      "remark": "4 דקות לסיום המשחק, במצב של יתרון 2:1 להפועל פ\"ת, החלו שחקני ר\"ג לרגום את השופט באבנים ולכן הופסק המשחק. הפועל קיבלה ניצחון טכני.\nהכובשים במשחק: להפועל: עמיחי שוהם (59), משה וארון, פנדל (85). לר\"ג: בנדיקט (67)\nהרכב הפועל: לודוויג גרובר, אורי קרני, מאיר מאירמן, מתתיהו כהן, ג'ורי גרנר, מאיר נבנהויז, אברהם פרגר, עמיחי שוהם, דב שונשין, משה וארון",
+      "leg": null,
+      "position": 3,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "hapoel_ramat_gan/hapoel_ramat_gan__1900-2010",
+       "darkBgColor": null,
+       "hasDarkImage": false
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1950",
+     "sourceId": 2774,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2774,
+      "seasonId": 1950,
+      "competition": "גביע המדינה",
+      "competitionType": 2,
+      "round": "סיבוב ראשון",
+      "day": 9,
+      "month": 4,
+      "year": 1949,
+      "date": -654172200,
+      "opponent": "מכבי פתח תקוה",
+      "hapoelGoals": 0,
+      "opponentGoals": 1,
+      "locationType": 1,
+      "stadium": "פתח-תקוה",
+      "crowd": 2000,
+      "referee": "יאשצ'מסקי",
+      "story": "$54",
+      "remark": "המשחק פוצץ בדקה ה-87 בעקבות קטטה והוחלט על משחק חוזר.",
+      "leg": 1,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2d:props:children:0:props:children:0:0:props:games:3:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1955",
+     "sourceId": 1776,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 1776,
+      "seasonId": 1955,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "04",
+      "day": 26,
+      "month": 2,
+      "year": 1955,
+      "date": -468500400,
+      "opponent": "מכבי נתניה",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "נתניה",
+      "crowd": 2000,
+      "referee": "אברהם דודקוביץ'",
+      "story": "[ArticleTitle]חדשות הספורט:[/ArticleTitle]המשחק המתוח לא הגיע לידי סיומו החוקי, לאחר שבדקה ה-80 הבקיע סטלמך את השער השלישי ממצב נבדל ושופט הקו הלפרין הרים את דגלו, אולם השופט דודקוביץ אישר את השער. הקהל געש ומספר חמומי מוח פרצו למגרש והיכו את השופט. הודות לסדרנים והמשטרה הורחק הקהל מהמגרש, אולם השופט המוכה שרק לסיום המשחק.\n\nתחילת המשחק סימנה התקפות של חלוצי פ\"ת, ובדקה השלישית נוצרה עירבוביה ליד שער נתניה וסודק נוגע בכדור בידו בתחום ה-16. השופט פוסק על בעיטת-11, אשר קופמן הופכה לשער ראשון ג€“ 0:1. \nצירוף נאה בין ח.מלר ושפיגל, בדקה ה-18, מסתיים בבעיטת סיבוב של הוזיאס, המחדיר את הכדור לרשת ג€“ 1:1. בדקה ה-42 בועט זליקוביץ' ממרחק של 20 מטר ג€“ ולהפתעת הכל חדר הכדור מתחת לאפו של השוער כספי ג€“ 1:2.\n\nבמחצית השנייה מתגוננת קבוצת מכבי נתניה, ומנסה לבנות את התקפותיה על פריצות של כהן ושפיגל. 10 דקות לסיום, כשהאווירה סוערת, כובש סטלמך את השער השלישי, שגרם לשערורייה הגדולה...",
+      "remark": "הקהל פוצץ את המשחק בדקה ה-80 והפועל זכתה בניצחון טכני, 0:3.\nלמרות שעפ\"י התקנון היבש השערים שנכבשו לא אמורים להיזקף לזכות הכובשים בסיכום מספר השערים הכולל שלהם, אנחנו נתנו להם את הקרדיט - גם כי זה יותר נוח וגם כי לא ניתן לאספסוף נתנייתי מתלהם לגרוע שערים חוקיים משחקנינו.",
+      "leg": null,
+      "position": 3,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "maccabi_netanya/maccabi_netanya__1900-1970",
+       "darkBgColor": null,
+       "hasDarkImage": true
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1958",
+     "sourceId": 1727,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 1727,
+      "seasonId": 1958,
+      "competition": "גביע המדינה",
+      "competitionType": 2,
+      "round": "רבע גמר",
+      "day": 5,
+      "month": 7,
+      "year": 1958,
+      "date": -362655000,
+      "opponent": "מכבי תל אביב",
+      "hapoelGoals": 0,
+      "opponentGoals": 1,
+      "locationType": 2,
+      "stadium": "באסה",
+      "crowd": 9000,
+      "referee": "אברהם דודאי",
+      "story": "",
+      "remark": "המשחק פוצץ לאחר שהשופט דודאי אישר בדקה ה-44 שער מפוקפק ביותר לזכות מכבי ת\"א ובתגובה שחקני הפועל פ\"ת עטו עליו ולטענתו תקפו אותו.\nמכבי ת\"א זכתה בניצחון טכני 0:3, ראובן יפת ואורי קרני הורחקו ל-3 חודשים.",
+      "leg": null,
+      "position": 0,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2d:props:children:0:props:children:0:0:props:games:10:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1964",
+     "sourceId": 1536,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 1536,
+      "seasonId": 1964,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "25",
+      "day": 13,
+      "month": 6,
+      "year": 1964,
+      "date": -175167000,
+      "opponent": "מכבי שעריים",
+      "hapoelGoals": 1,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "פתח-תקוה",
+      "crowd": 3000,
+      "referee": "שמואל הנדוורג",
+      "story": "",
+      "remark": "1) המשחק הופסק לאחר בעיטת הפנדל, כשהתברר כי גדעון מנצור משעריים שהורחק מסרב לרדת מן המגרש.\n2) למכבי יפו והפועל ר\"ג משחק חסר.",
+      "leg": null,
+      "position": 1,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2d:props:children:0:props:children:0:0:props:games:10:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1966",
+     "sourceId": 1452,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 1452,
+      "seasonId": 1966,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "29",
+      "day": 21,
+      "month": 5,
+      "year": 1966,
+      "date": -114087600,
+      "opponent": "מכבי יפו",
+      "hapoelGoals": 3,
+      "opponentGoals": 0,
+      "locationType": 1,
+      "stadium": "פתח-תקוה",
+      "crowd": 3500,
+      "referee": "אליהו לאופר",
+      "story": "",
+      "remark": "הפועל זכתה בניצחון טכני עקב שיתופו של שלמה גולדברג במדי מכבי יפו שלא כחוק. הטבלה המצורפת היא לפני ההחלטה, שהתקבלה כעבור כחודש.",
+      "leg": null,
+      "position": 3,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "maccabi_jaffa/maccabi_jaffa__1900-2000",
+       "darkBgColor": null,
+       "hasDarkImage": false
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1968",
+     "sourceId": 1387,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 1387,
+      "seasonId": 1968,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "22",
+      "day": 25,
+      "month": 3,
+      "year": 1967,
+      "date": -87474600,
+      "opponent": "מכבי שעריים",
+      "hapoelGoals": 0,
+      "opponentGoals": 1,
+      "locationType": 2,
+      "stadium": "רחובות",
+      "crowd": 2000,
+      "referee": "יצחק עורבי",
+      "story": "$3d",
+      "remark": "המשחק הופסק בדקה ה-60: השופט פסל שער שיוויון של שרעבי לאחר שכבר אישר אותו, ואז הפסיק את המשחק בטענה שקופמן בעט בו.\nקופמן זוכה מכיוון שהתמונות הראו שלא היה בסביבה, והוחלט על קיום משחק חוזר.",
+      "leg": 1,
+      "position": 5,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "maccabi_shaarayim/maccabi_shaarayim__1900-2016",
+       "darkBgColor": null,
+       "hasDarkImage": false
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1969",
+     "sourceId": 577,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 577,
+      "seasonId": 1969,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "30",
+      "day": 21,
+      "month": 6,
+      "year": 1969,
+      "date": -16711200,
+      "opponent": "מכבי נתניה",
+      "hapoelGoals": 0,
+      "opponentGoals": 3,
+      "locationType": 2,
+      "stadium": "נתניה",
+      "crowd": 3000,
+      "referee": "גגו כהן",
+      "story": "",
+      "remark": "המשחק הופסק בדקה ה-50: ויסוקר רץ לקוון לאחר השער השני, השופט הורה לו לעזוב את תחומי המגרש. לאחר כמה דקות של ויכוחים החליט השופט לסיים את המשחק למרות שויסוקר התרצה והסכים לעזוב את המגרש וכולם ביקשו להמשיך, כולל אנשי נתניה.\nהפועל הפסידה 3:0 טכני.",
+      "leg": null,
+      "position": 9,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2d:props:children:0:props:children:0:0:props:games:21:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/1985",
+     "sourceId": 445,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 445,
+      "seasonId": 1985,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "06",
+      "day": 27,
+      "month": 10,
+      "year": 1984,
+      "date": 467730000,
+      "opponent": "מכבי נתניה",
+      "hapoelGoals": 2,
+      "opponentGoals": 0,
+      "locationType": 2,
+      "stadium": "נתניה",
+      "crowd": 3500,
+      "referee": "יצחק רוזנברג",
+      "story": "",
+      "remark": "המשחק פוצץ בדקה ה-42 בגלל בקבוק שנזרק על הקוון.\nהפועל זכתה בניצחון טכני, 0:2.",
+      "leg": null,
+      "position": 6,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": {
+       "key": "maccabi_netanya/maccabi_netanya__1980-1990",
+       "darkBgColor": null,
+       "hasDarkImage": true
+      }
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    },
+    {
+     "source": "https://hpt.co.il/seasons/2019",
+     "sourceId": 2854,
+     "reasons": [
+      "administrative, abandoned, cancelled or replay annotation"
+     ],
+     "record": {
+      "id": 2854,
+      "seasonId": 2019,
+      "competition": "ליגה",
+      "competitionType": 1,
+      "round": "23",
+      "day": 8,
+      "month": 2,
+      "year": 2019,
+      "date": 1549630800,
+      "opponent": "בית\"ר תל אביב רמלה",
+      "hapoelGoals": 0,
+      "opponentGoals": 1,
+      "locationType": 2,
+      "stadium": "רמלה",
+      "crowd": 700,
+      "referee": "קובי לחם הכהן",
+      "story": "$50",
+      "remark": "המשחק פוצץ עקב אבנים שהושלכו ליציע אוהדי הפועל פ\"ת, שנמלטו לתחומי המגרש. בתחילה נקבע משחק חוזר בין הקבוצות, אך לאחר שהוגש ערעור מטעם הפועל פ\"ת פסק בית הדין על 0:0 ללא נקודות.",
+      "leg": null,
+      "position": 14,
+      "hapoelPenaltyGoals": null,
+      "opponentPenaltyGoals": null,
+      "opponentCrestKey": "$2c:props:children:0:props:children:0:0:props:games:7:opponentCrestKey"
+     },
+     "disposition": "approved contextual archive record; excluded from final-result matches"
+    }
+   ]
+  },
+  "zrinjski-mostar": {
+   "sourceDocuments": 26,
+   "approvedCandidates": 850,
+   "archiveOnly": 0,
+   "byCompetition": {
+    "Bosnia and Herzegovina League": 777,
+    "Bosnia and Herzegovina Cup": 73
+   },
+   "held": [
+    {
+     "source": "https://www.rsssf.org/tablesb/bih01.html",
+     "line": 625,
+     "record": "Zrinjski         5-2 Kiseljak",
+     "reasons": [
+      "no unambiguous exact day"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih03.html",
+     "line": 355,
+     "record": "Buducnost         3-0 Zrinjski",
+     "reasons": [
+      "no unambiguous exact day"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih03.html",
+     "line": 419,
+     "record": "Zrinjski          1-0 Siroki Brijeg",
+     "reasons": [
+      "no unambiguous exact day"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih03.html",
+     "line": 589,
+     "record": "Zrinjski (Mostar)               1-0 0-1 Radnik (Bijeljina)       [4-2 pen]",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih03.html",
+     "line": 602,
+     "record": "Rudar (Kakanj)                  5-0 0-8 Zrinjski (Mostar)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih03.html",
+     "line": 613,
+     "record": "Borac (Banja Luka)              1-0 0-2 Zrinjski (Mostar)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih03.html",
+     "line": 618,
+     "record": "Leotar (Trebinje)               1-0 0-1 Zrinjski (Mostar)        [6-5 pen; no extra time]",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih05.html",
+     "line": 642,
+     "record": "Celik (Zenica)                  3-0 0-3 Zrinjski (Mostar)          [6-7 pen]",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih05.html",
+     "line": 653,
+     "record": "SASK Napredak (Sarajevo)        1-1 0-3 Zrinjski (Mostar)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih05.html",
+     "line": 657,
+     "record": "Siroki Brijeg                   1-0 1-2 Zrinjski (Mostar)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih06.html",
+     "line": 421,
+     "record": "Zrinjski (Mostar)           3-1 0-2 Modrica Maxima (Modrica)    [Modrica on away goal]",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih07.html",
+     "line": 302,
+     "record": "Orašje        awd Zrinjski            [awarded 3-0; abandoned at 3-2 in 84']",
+     "reasons": [
+      "administrative or non-final annotation"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih08.html",
+     "line": 730,
+     "record": "Slavija (Ist. Sarajevo, 1)  2-3 0-1 Zrinjski (Mostar, 1)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih08.html",
+     "line": 740,
+     "record": "Zrinjski (Mostar, 1)        1-0 0-1 Široki Brijeg (Široki Brijeg, 1)   [3-2 pen]",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih08.html",
+     "line": 747,
+     "record": "Zrinjski (Mostar, 1)        4-0 2-0 Posušje (Posušje, 1)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih08.html",
+     "line": 750,
+     "record": "Sloboda (Tuzla, 1)          2-1 1-2 Zrinjski (Mostar, 1)               [1-4 pen]",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih09.html",
+     "line": 425,
+     "record": "Sutjeska (Foča, 2)          0-1 1-2 Zrinjski (Mostar, 1)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih09.html",
+     "line": 440,
+     "record": "Radnik (Bijeljina, 2)       1-1 0-2 Zrinjski (Mostar, 1)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih09.html",
+     "line": 443,
+     "record": "Zrinjski (Mostar, 1)        4-2 0-2 Slavija (I. Sarajevo, 1)",
+     "reasons": [
+      "no unambiguous exact day",
+      "combined two-leg row; individual dates not resolved"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih2012.html",
+     "line": 433,
+     "record": "Zrinjski (Mostar, 1)          awd Velež (Mostar, 1)             [awarded 0-3; abandoned at 0-1 in 90+2']",
+     "reasons": [
+      "administrative or non-final annotation"
+     ]
+    },
+    {
+     "source": "https://www.rsssf.org/tablesb/bih2025.html",
+     "line": 95,
+     "record": "Zrinjski          awd Posušje           [awarded 3-0; originally 1-0, Posušje played",
+     "reasons": [
+      "non-played or non-final result"
+     ]
+    }
+   ]
+  }
+ }
+}

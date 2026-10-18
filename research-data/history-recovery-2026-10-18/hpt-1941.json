@@ -1,0 +1,33 @@
+{
+ "sourceUrl": "https://hpt.co.il/seasons/1941",
+ "sha256": "23716cefc6150523ea29538945f3f8c9558ebcd120f78eac17c42a8caa176cc2",
+ "seasonLabel": "1940/41",
+ "seasonId": 1941,
+ "games": [
+  {
+   "id": 2286,
+   "seasonId": 1941,
+   "competition": "גביע המדינה",
+   "competitionType": 2,
+   "round": "סיבוב ראשון",
+   "day": 20,
+   "month": 9,
+   "year": 1941,
+   "date": -892512000,
+   "opponent": "הומנטמן ירושלים",
+   "hapoelGoals": 0,
+   "opponentGoals": 1,
+   "locationType": 2,
+   "stadium": "?",
+   "crowd": 0,
+   "referee": "?",
+   "story": "",
+   "remark": "",
+   "leg": null,
+   "position": 0,
+   "hapoelPenaltyGoals": null,
+   "opponentPenaltyGoals": null,
+   "opponentCrestKey": null
+  }
+ ]
+}
