@@ -88,7 +88,9 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   if(rawComp&&!comp){skip('match-competition-not-english');continue}
   const kind=kindOf(comp);if(kind==='friendly'){skip('match-friendly');continue}
   let opp:string|null=null,us:number,them:number,home:boolean|null=null
-  if(typeof v.home==='string'&&typeof v.away==='string'&&typeof v.homeGoals==='number'&&typeof v.awayGoals==='number'&&(v.us==='home'||v.us==='away')){
+  if(v.neutral===true&&typeof v.opponent==='string'&&typeof v.clubGoals==='number'&&typeof v.opponentGoals==='number'){
+   opp=v.opponent;us=v.clubGoals;them=v.opponentGoals;home=null
+  }else if(typeof v.home==='string'&&typeof v.away==='string'&&typeof v.homeGoals==='number'&&typeof v.awayGoals==='number'&&(v.us==='home'||v.us==='away')){
    home=v.us==='home';opp=home?v.away:v.home;us=home?v.homeGoals:v.awayGoals;them=home?v.awayGoals:v.homeGoals
   }else{
    const name=String(v.name??'').replace(/\s*\([^)]*\)\s*$/,'').trim(),m=/^(.*\S)\s+(\d{1,2})\s*[-–:]\s*(\d{1,2})\s+(\S.*)$/.exec(name)
@@ -100,7 +102,10 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   const en=enClub(opp);if(!en||isUs(en)){skip('match-opponent-not-english');continue}
   const names=(xs:unknown)=>Array.isArray(xs)?xs.filter((x):x is string=>typeof x==='string'&&isLatin(x)):[]
   const scorers=Array.isArray(v.scorers)?(v.scorers as {name?:string;minute?:number|null}[]).filter(s=>typeof s?.name==='string'&&isLatin(s.name)).map(s=>({name:s.name!,minute:typeof s.minute==='number'?s.minute:null})):[]
-  rows.push({id:f.id,on,season:seasonOf(on),year:Number(on.slice(0,4)),comp,kind,final:!!comp&&/\bfinal\b/i.test(comp)&&!/semi|quarter/i.test(comp),opp:en,oppKey:normKey(en),us:us!,them:them!,home,derby:rivalNames.has(normKey(en)),scorers,lineup:names(v.lineup),bench:names(v.bench),source:sourceOf(f)})
+  // Historical seasons may span calendar years differently (1955, 1966/68).
+  // A source's explicit label is authoritative; July is only a legacy fallback.
+  const season=typeof v.season==='string'&&/^\d{4}(?:\/\d{2,4})?$/.test(v.season)?v.season:seasonOf(on)
+  rows.push({id:f.id,on,season,year:Number(on.slice(0,4)),comp,kind,final:!!comp&&/\bfinal\b/i.test(comp)&&!/semi|quarter/i.test(comp),opp:en,oppKey:normKey(en),us:us!,them:them!,home,derby:rivalNames.has(normKey(en)),scorers,lineup:names(v.lineup),bench:names(v.bench),source:sourceOf(f)})
  }
  const spell=new Map<string,Map<string,number>>();for(const r of rows){const m=spell.get(r.oppKey)??new Map();m.set(r.opp,(m.get(r.opp)??0)+1);spell.set(r.oppKey,m)}
  for(const r of rows)r.opp=[...spell.get(r.oppKey)!.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))[0]![0]

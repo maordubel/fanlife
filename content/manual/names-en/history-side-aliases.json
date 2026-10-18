@@ -1,0 +1,13 @@
+{
+ "reviewedAt": "2026-10-18",
+ "basis": "Exact published short labels used for the same clubs in museum/UEFA/RSSSF match records. No fuzzy matching or successor-club inference.",
+ "names": {
+  "H. Petah Tikva": "Hapoel Petah Tikva",
+  "VB": "Vejle",
+  "LASK": "LASK Linz",
+  "Hakoah Amidar Ramat Gan": "Hakoah Ramat Gan",
+  "Ironi Dorot Tiberias": "Ironi Tiberias",
+  "FK Velež Mostar": "Velež",
+  "Velež Mostar": "Velež"
+ }
+}

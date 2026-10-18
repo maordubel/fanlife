@@ -1,0 +1,72 @@
+{
+ "hapoel-petah-tikva": {
+  "matches": 3014,
+  "archiveEntries": 3111,
+  "timeline": 3032,
+  "trivia": 5499,
+  "memory": 3032,
+  "documentedElevens": 54,
+  "historyConflicts": [
+   {
+    "record": "hapoel-petah-tikva:history-hpt-905",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1992-08-19; existing r26-mt-9208-cwc1,a-m-1992-08-19-str-msgodset-h-petah-tikva. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-906",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1992-09-02; existing r26-mt-9209-cwc2,a-m-1992-09-02-h-petah-tikva-str-msgodset. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-2421",
+    "code": "HISTORY_CONFLICT",
+    "message": "result-or-opponent-conflict: 1995-07-08; existing a-m-1995-07-08-wacker-h-petah-tikva. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-1971",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1997-07-23; existing r26-mt-9707-q1a,a-m-1997-07-23-h-petah-tikva-flora-tallinn. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-1972",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1997-07-30; existing r26-mt-9707-q1b,a-m-1997-07-30-flora-tallinn-h-petah-tikva. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-1976",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1997-08-26; existing r26-mt-9708-q2b,a-m-1997-08-26-h-petah-tikva-vb. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-1977",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1997-09-16; existing r26-mt-9709-r1a,a-m-1997-09-16-sk-rapid-h-petah-tikva. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-1978",
+    "code": "HISTORY_CONFLICT",
+    "message": "multiple-matches-on-day: 1997-09-30; existing r26-mt-9709-r1b,a-m-1997-09-30-h-petah-tikva-sk-rapid. Incoming result withheld from matches and timeline."
+   },
+   {
+    "record": "hapoel-petah-tikva:history-hpt-2423",
+    "code": "HISTORY_CONFLICT",
+    "message": "result-or-opponent-conflict: 2000-06-18; existing a-m-2000-06-18-lask-h-petah-tikva. Incoming result withheld from matches and timeline."
+   }
+  ]
+ },
+ "zrinjski-mostar": {
+  "matches": 993,
+  "archiveEntries": 999,
+  "timeline": 961,
+  "trivia": 3586,
+  "memory": 961,
+  "documentedElevens": 106,
+  "historyConflicts": [
+   {
+    "record": "zrinjski-mostar:history-rsssf-54ec8c5b7393dfbd",
+    "code": "HISTORY_CONFLICT",
+    "message": "result-or-opponent-conflict: 2023-05-17; existing w-m-cup-final-2023. Incoming result withheld from matches and timeline."
+   }
+  ]
+ }
+}
