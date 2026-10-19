@@ -1,4 +1,5 @@
 import type {Banner,Page,PageRule,PromoDoc,PromoSettings,Seen,Targeting} from './types'
+import {goHref} from '@/lib/ecosystem/links'
 
 /** Never shown, whatever a banner says: the control room, test pages, and The Worker's game run (rule 28). */
 export const NEVER_ON=['/master','/qa','/life','/api','/closet/play']
@@ -85,10 +86,11 @@ export function pickBanner(list:readonly Banner[],seen:Seen,lastId:string|null,n
 export const delayOf=(b:Banner,s:PromoSettings)=>(b.delaySec??s.delaySec)*1000
 export const showOf=(b:Banner,s:PromoSettings)=>(b.showSec??s.showSec)*1000
 
-/** the link carries where it was seen, so the other app can tell a banner visit from any other */
+/** the link carries where it was seen, so the other app can tell a banner visit from any other; a sibling app (DUBID, OFFSIDES, THE WORKER) goes through /go/<app>, which counts it as a shared.handoff */
 /** a banner that points back into this site: same tab, no tracking parameters */
 export const isOwn=(b:Banner)=>{try{return new URL(b.href).hostname==='fanlife.dubelteam.com'}catch{return false}}
 export function outbound(b:Banner,p:Page):string{
+ const go=goHref(b.href,`promo-${b.id}`,p.kind==='club'?p.club:null);if(go)return go
  try{const u=new URL(b.href);if(u.hostname==='fanlife.dubelteam.com')return b.href;u.searchParams.set('utm_source','fanlife');u.searchParams.set('utm_medium','banner');u.searchParams.set('utm_campaign',b.id);u.searchParams.set('utm_content',p.kind==='club'?p.club:p.kind);return u.toString()}catch{return b.href}
 }
 

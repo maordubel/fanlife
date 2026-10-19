@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { Analytics } from '@/components/ads/Analytics'
 import { MarketAlerts } from '@/components/fanlife/market/MarketAlerts'
 import { ClosetBridge } from '@/components/collector/ClosetBridge'
+import { EcosystemBeacon } from '@/components/ecosystem/EcosystemBeacon'
 import { GateMeter } from '@/components/meter/GateMeter'
 import { NavPulse } from '@/components/ui/NavPulse'
 import { TOP_AD_SRC, topAdAllowedOn, DEFAULT_TOP_AD, MONETAG_SITE_VERIFICATION } from '@/lib/top-ad'
@@ -172,6 +173,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <GateMeter />
         <Suspense fallback={null}><NavPulse /></Suspense>
         <ClosetBridge />
+        <EcosystemBeacon />
         {!closed&&pathname!=='/master'&&!pathname.startsWith('/master/')&&pathname!=='/telegram'&&!pathname.startsWith('/telegram/')?<Suspense fallback={null}><PromoSlot /></Suspense>:null}
         <MarketAlerts />
         {topAd?<script src={TOP_AD_SRC} defer />:null}

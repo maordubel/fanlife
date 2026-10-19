@@ -73,7 +73,7 @@ describe('the control room\'s write path',()=>{
   expect(cleanDoc(SEED_DOC).banners).toEqual(SEED_DOC.banners.map(b=>({...b,href:new URL(b.href).toString()})))
  })
  it('clamps numbers into their range',()=>{const x=cleanBanner({...SEED_DOC.banners[0],weight:9999,fromHour:99,showSec:1});expect([x.weight,x.fromHour,x.showSec]).toEqual([100,23,2])})
- it('the outbound link says where it was seen',()=>{const u=new URL(outbound(SEED_DOC.banners[2]!,at('hapoel-tel-aviv','/c')));expect(u.hostname).toBe('dubid.dubelteam.com');expect(u.searchParams.get('utm_content')).toBe('hapoel-tel-aviv');expect(u.searchParams.get('utm_campaign')).toBe('dubid')})
+ it('the outbound link to a sibling app goes through /go and says where it was seen',()=>{const u=new URL(outbound(SEED_DOC.banners[2]!,at('hapoel-tel-aviv','/c')),'https://fanlife.dubelteam.com');expect(u.pathname).toBe('/go/dubid');expect(u.searchParams.get('club')).toBe('hapoel-tel-aviv');expect(u.searchParams.get('c')).toBe('promo-dubid')})
 })
 
 import {isOwn} from '@/lib/promo/rules'

@@ -10,8 +10,11 @@ import type {LifePack} from '@/lib/life/universal/types'
 import {throughDoor} from '@/lib/life/universal/world'
 
 const mem = (): LifeStore => { const d = new Map<string, string>(); return {read: k => d.get(k) ?? null, write: (k, v) => { d.set(k, v) }, clear: k => { d.delete(k) }} }
-const cache = new Map<string, LifePack>()
-const packOf = async (id: string) => { if (!cache.has(id)) cache.set(id, clubLife((await loadClub(id))!.data)); return cache.get(id)! }
+// The promise is cached, not the result: Hapoel Tel Aviv's pack is built from the whole
+// legacy archive (~15 s cold), and three tests asking at once must load it once.
+const cache = new Map<string, Promise<LifePack>>()
+const packOf = (id: string) => { if (!cache.has(id)) cache.set(id, loadClub(id).then(c => clubLife(c!.data))); return cache.get(id)! }
+const LOAD = 60_000
 
 describe('reading a recorded match', () => {
   it('reads a scoreline with the club on either side, and refuses what it cannot be sure of', () => {
@@ -40,7 +43,7 @@ describe.each(CORE_CLUB_IDS)('%s — the town', id => {
       expect(routeTo(pack, ch, life.state, p.id)).toEqual(p.route)
       void s
     }
-  })
+  }, LOAD)
   it('introduces a person once, and walking a street marks it seen', async () => {
     const pack = await packOf(id), life = Life.load(pack, mem())
     life.begin()
@@ -50,12 +53,12 @@ describe.each(CORE_CLUB_IDS)('%s — the town', id => {
     const ch = chapterOf(pack, life.state.chapter)!
     const door = ch.doors.find(d => d.room === life.state.room && !d.needs)
     if (door) { life.dispatch({t: 'moved', room: door.to, spawn: door.spawn, time: life.state.time}); expect(life.state.seen).toContain(door.to) }
-  })
+  }, LOAD)
   it('gives its centrepiece night a readable match', async () => {
     const pack = await packOf(id)
     const c = pack.chapters.find(x => x.centrepiece)
     if (c) { expect(c.anchor?.match).toBeTruthy(); expect(c.anchor?.on === null || typeof c.anchor?.on === 'string').toBe(true) }
-  })
+  }, LOAD)
 })
 
 describe('copy', () => {
