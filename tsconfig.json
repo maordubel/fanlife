@@ -61,7 +61,7 @@
     "components/**/*.tsx",
     "lib/**/*.ts",
     "types/**/*.ts",
-    "ecosystem/**/*.ts",
+    "ecosystem/sdk.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [
