@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-petah-tikva",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "gr-hpt-2000-haifa",
+      "url": "https://hpt.co.il/game/2001/league/6",
+      "title": "HPT Museum: Haifa, 23 September 2000",
+      "publisher": "Hapoel Petah Tikva Museum",
+      "language": "he",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Goal paragraphs under the newspaper report: first and second goals"
+    },
+    {
+      "id": "gr-hpt-1998-hta",
+      "url": "https://hpt.co.il/game/1999/league/2",
+      "title": "HPT Museum: Hapoel Tel Aviv, 29 August 1998",
+      "publisher": "Hapoel Petah Tikva Museum",
+      "language": "he",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First goal before half-time / second goal at minute 86"
+    },
+    {
+      "id": "gr-hpt-1997-beitar",
+      "url": "https://hpt.co.il/game/1997/league/24",
+      "title": "HPT Museum: Beitar Jerusalem, 5 April 1997",
+      "publisher": "Hapoel Petah Tikva Museum",
+      "language": "he",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Fourth-minute goal paragraph in the newspaper report: Ofri shot, Kornfein foot save, Fletcher finish"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-1997-04-05-avi-fletcher-4",
+      "value": {
+        "name": "4' · Avi Fletcher v Beitar Jerusalem",
+        "subtitle": "1997-04-05 · 4'",
+        "on": "1997-04-05",
+        "competition": "Israeli League",
+        "opponent": "Beitar Jerusalem",
+        "score": "2-1",
+        "narrative": "Yaniv Ofri: Shoots after the corner reaches the middle. Itzik Kornfein: Stops the attempt with his foot. Avi Fletcher: Finishes the rebound.",
+        "sequence": [
+          {
+            "actor": "Yaniv Ofri",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "centre of the penalty area",
+            "note": "Shoots after the corner reaches the middle."
+          },
+          {
+            "actor": "Itzik Kornfein",
+            "side": "opponent",
+            "action": "save",
+            "zone": "C1",
+            "position": "goal mouth",
+            "note": "Stops the attempt with his foot."
+          },
+          {
+            "actor": "Avi Fletcher",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "close range",
+            "note": "Finishes the rebound."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-hpt-1997-beitar"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final three contacts; the earlier corner origin is outside this reconstruction."
+    },
+    {
+      "id": "goal-1998-08-29-moti-kakon-86",
+      "value": {
+        "name": "86' · Moti Kakon v Hapoel Tel Aviv",
+        "subtitle": "1998-08-29 · 86'",
+        "on": "1998-08-29",
+        "competition": "Israeli Premier League",
+        "opponent": "Hapoel Tel Aviv",
+        "score": "2-0",
+        "narrative": "Moti Kakon: Goes past Shavit Elimelech. Moti Kakon: Finishes into the empty net.",
+        "sequence": [
+          {
+            "actor": "Moti Kakon",
+            "side": "club",
+            "action": "dribble",
+            "zone": "C1",
+            "position": "one on one with the goalkeeper",
+            "note": "Goes past Shavit Elimelech."
+          },
+          {
+            "actor": "Moti Kakon",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "in front of the unguarded goal",
+            "note": "Finishes into the empty net."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-hpt-1998-hta"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final two documented touches. Manor Hasan supplied the earlier pass, but its origin is not given and is not placed on the board."
+    },
+    {
+      "id": "goal-2000-09-23-moti-kakon-25",
+      "value": {
+        "name": "25' · Moti Kakon v Hapoel Haifa",
+        "subtitle": "2000-09-23 · 25'",
+        "on": "2000-09-23",
+        "competition": "Israeli Premier League",
+        "opponent": "Hapoel Haifa",
+        "score": "2-0",
+        "narrative": "Michael Zandberg: Carries the ball down the left. Michael Zandberg: Plays a low ball across goal. Moti Kakon: Turns the ball into the net.",
+        "sequence": [
+          {
+            "actor": "Michael Zandberg",
+            "side": "club",
+            "action": "dribble",
+            "zone": "A2",
+            "position": "left flank",
+            "note": "Carries the ball down the left."
+          },
+          {
+            "actor": "Michael Zandberg",
+            "side": "club",
+            "action": "cross",
+            "zone": "A2",
+            "position": "left flank",
+            "note": "Plays a low ball across goal."
+          },
+          {
+            "actor": "Moti Kakon",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "close range",
+            "note": "Turns the ball into the net."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-hpt-2000-haifa"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2000-09-23-moti-kakon-8",
+      "value": {
+        "name": "8' · Moti Kakon v Hapoel Haifa",
+        "subtitle": "2000-09-23 · 8'",
+        "on": "2000-09-23",
+        "competition": "Israeli Premier League",
+        "opponent": "Hapoel Haifa",
+        "score": "2-0",
+        "narrative": "Golan Derai: Sends the free kick into the area. Moti Kakon: Heads the delivery into the net.",
+        "sequence": [
+          {
+            "actor": "Golan Derai",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right-sided free kick",
+            "note": "Sends the free kick into the area."
+          },
+          {
+            "actor": "Moti Kakon",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "seven metres from goal",
+            "note": "Heads the delivery into the net."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-hpt-2000-haifa"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    }
+  ]
+}

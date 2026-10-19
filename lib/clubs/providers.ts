@@ -13,10 +13,11 @@ import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-0
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
 import {withHistorical} from './history-wave'
+import {withGoalWave} from './goal-wave'
 import {withRosterWave} from './roster-wave'
 import {withForgedTrivia} from '@/lib/trivia/club'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>{
- const history=withHistorical(pack,club.id),result=compilePackBase(withEuro(history.pack,club.id) as never,club)
+ const history=withHistorical(pack,club.id),result=compilePackBase(withGoalWave(withEuro(history.pack,club.id),club.id) as never,club)
  return {...result,diagnostics:[...result.diagnostics,...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */

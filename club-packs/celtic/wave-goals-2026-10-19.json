@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "clubId": "celtic",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "gr-uefa-celtic-anderlecht",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0197-0e6a76fd0967-7ee89a39803a-1000--celtic-climb-into-contention/",
+      "title": "Celtic climb into contention",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Celtic in front / Miller magic / Sutton strikes"
+    },
+    {
+      "id": "gr-uefa-celtic-lyon",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0195-0e6a71dcc0f6-7ec967783105-1000--celtic-roar-past-lyon/",
+      "title": "Celtic roar past Lyon",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Miller makes breakthrough / Sutton strikes"
+    },
+    {
+      "id": "gr-uefa-celtic-porto",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/0252-0cd9ce958ed0-c7a5ba88c4b5-1000--derlei-decides-dramatic-final/",
+      "title": "Derlei decides dramatic final",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Opening second-half equaliser"
+    },
+    {
+      "id": "gr-celticwiki-anderlecht",
+      "url": "https://www.thecelticwiki.com/2003-11-05-celtic-3-1-anderlecht-champions-league/",
+      "title": "Celtic v Anderlecht: archived match reports",
+      "publisher": "The Celtic Wiki",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Review and BBC report: six-yard header, ten-yard finish, central Sutton header; clockwatch has conflicting times and a chest-down"
+    },
+    {
+      "id": "gr-celticwiki-porto",
+      "url": "https://www.thecelticwiki.com/2003-05-21-celtic-2-3-porto-uefa-cup-match-reports/",
+      "title": "Celtic v Porto: archived match reports",
+      "publisher": "The Celtic Wiki",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First equaliser: Agathe delivery to the far post"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2003-05-21-henrik-larsson-47",
+      "value": {
+        "name": "47' · Henrik Larsson v Porto",
+        "subtitle": "2003-05-21 · 47'",
+        "on": "2003-05-21",
+        "competition": "UEFA Cup",
+        "opponent": "Porto",
+        "score": "2-3 (aet)",
+        "narrative": "Didier Agathe: Sends a deep cross over the area. Henrik Larsson: Loops a header over Vitor Baia.",
+        "sequence": [
+          {
+            "actor": "Didier Agathe",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right flank",
+            "note": "Sends a deep cross over the area."
+          },
+          {
+            "actor": "Henrik Larsson",
+            "side": "club",
+            "action": "header",
+            "zone": "B1",
+            "position": "far-post area, receiving a cross from the right",
+            "note": "Loops a header over Vitor Baia."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-celtic-porto",
+        "gr-celticwiki-porto"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-09-30-chris-sutton-79",
+      "value": {
+        "name": "79' · Chris Sutton v Lyon",
+        "subtitle": "2003-09-30 · 79'",
+        "on": "2003-09-30",
+        "competition": "UEFA Champions League",
+        "opponent": "Lyon",
+        "score": "2-0",
+        "narrative": "Henrik Larsson: Turns past Edmilson. Henrik Larsson: Crosses towards Sutton. Chris Sutton: Heads beyond Coupet.",
+        "sequence": [
+          {
+            "actor": "Henrik Larsson",
+            "side": "club",
+            "action": "dribble",
+            "zone": "A2",
+            "position": "left flank",
+            "note": "Turns past Edmilson."
+          },
+          {
+            "actor": "Henrik Larsson",
+            "side": "club",
+            "action": "cross",
+            "zone": "A2",
+            "position": "left flank",
+            "note": "Crosses towards Sutton."
+          },
+          {
+            "actor": "Chris Sutton",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Heads beyond Coupet."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-celtic-lyon"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-09-30-liam-miller-70",
+      "value": {
+        "name": "70' · Liam Miller v Lyon",
+        "subtitle": "2003-09-30 · 70'",
+        "on": "2003-09-30",
+        "competition": "UEFA Champions League",
+        "opponent": "Lyon",
+        "score": "2-0",
+        "narrative": "Henrik Larsson: Wins possession on the left and crosses. Liam Miller: Heads down past Coupet.",
+        "sequence": [
+          {
+            "actor": "Henrik Larsson",
+            "side": "club",
+            "action": "cross",
+            "zone": "A2",
+            "position": "left flank",
+            "note": "Wins possession on the left and crosses."
+          },
+          {
+            "actor": "Liam Miller",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Heads down past Coupet."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-celtic-lyon"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-11-05-chris-sutton-29",
+      "value": {
+        "name": "Chris Sutton v Anderlecht",
+        "subtitle": "2003-11-05",
+        "on": "2003-11-05",
+        "competition": "UEFA Champions League",
+        "opponent": "Anderlecht",
+        "score": "3-1",
+        "narrative": "John Hartson: Flicks on the corner. Chris Sutton: Meets the flick-on and heads in.",
+        "sequence": [
+          {
+            "actor": "John Hartson",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Flicks on the corner."
+          },
+          {
+            "actor": "Chris Sutton",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Meets the flick-on and heads in."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-celtic-anderlecht",
+        "gr-celticwiki-anderlecht"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final two documented ball contacts after the corner; the corner side is not stated and is not invented. Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29)."
+    },
+    {
+      "id": "goal-2003-11-05-henrik-larsson-12",
+      "value": {
+        "name": "Henrik Larsson v Anderlecht",
+        "subtitle": "2003-11-05",
+        "on": "2003-11-05",
+        "competition": "UEFA Champions League",
+        "opponent": "Anderlecht",
+        "score": "3-1",
+        "narrative": "John Hartson: Holds off a challenge and releases Agathe. Didier Agathe: Crosses for Larsson. Henrik Larsson: Heads past Daniel Zitka.",
+        "sequence": [
+          {
+            "actor": "John Hartson",
+            "side": "club",
+            "action": "pass",
+            "zone": "C3",
+            "position": "midfield",
+            "note": "Holds off a challenge and releases Agathe."
+          },
+          {
+            "actor": "Didier Agathe",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right flank",
+            "note": "Crosses for Larsson."
+          },
+          {
+            "actor": "Henrik Larsson",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "in front of goal",
+            "note": "Heads past Daniel Zitka."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-celtic-anderlecht",
+        "gr-celticwiki-anderlecht"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": " Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29)."
+    },
+    {
+      "id": "goal-2003-11-05-liam-miller-17",
+      "value": {
+        "name": "Liam Miller v Anderlecht",
+        "subtitle": "2003-11-05",
+        "on": "2003-11-05",
+        "competition": "UEFA Champions League",
+        "opponent": "Anderlecht",
+        "score": "3-1",
+        "narrative": "Jackie McNamara: Delivers an inswinging cross. John Hartson: Heads the ball back across goal. Liam Miller: Finishes low.",
+        "sequence": [
+          {
+            "actor": "Jackie McNamara",
+            "side": "club",
+            "action": "cross",
+            "zone": "A2",
+            "position": "left flank",
+            "note": "Delivers an inswinging cross."
+          },
+          {
+            "actor": "John Hartson",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Heads the ball back across goal."
+          },
+          {
+            "actor": "Liam Miller",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "ten yards from goal",
+            "note": "Finishes low."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-celtic-anderlecht",
+        "gr-celticwiki-anderlecht"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": " Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29). UEFA and the archived BBC report describe Hartson heading the ball; their account is used over the conflicting live clockwatch chest-down."
+    }
+  ]
+}

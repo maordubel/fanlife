@@ -1,0 +1,1209 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-19",
+  "sources": [
+    {
+      "id": "gr-hpt-2000-haifa",
+      "url": "https://hpt.co.il/game/2001/league/6",
+      "title": "HPT Museum: Haifa, 23 September 2000",
+      "publisher": "Hapoel Petah Tikva Museum",
+      "language": "he",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Goal paragraphs under the newspaper report: first and second goals"
+    },
+    {
+      "id": "gr-uefa-celtic-anderlecht",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0197-0e6a76fd0967-7ee89a39803a-1000--celtic-climb-into-contention/",
+      "title": "Celtic climb into contention",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Celtic in front / Miller magic / Sutton strikes"
+    },
+    {
+      "id": "gr-uefa-celtic-lyon",
+      "url": "https://www.uefa.com/uefachampionsleague/news/0195-0e6a71dcc0f6-7ec967783105-1000--celtic-roar-past-lyon/",
+      "title": "Celtic roar past Lyon",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Miller makes breakthrough / Sutton strikes"
+    },
+    {
+      "id": "gr-uefa-celtic-porto",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/0252-0cd9ce958ed0-c7a5ba88c4b5-1000--derlei-decides-dramatic-final/",
+      "title": "Derlei decides dramatic final",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Opening second-half equaliser"
+    },
+    {
+      "id": "gr-uefa-pao-anderlecht",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/018e-0e6a9d83e44f-5c2562e49c2d-1000--panathinaikos-punish-anderlecht/",
+      "title": "Panathinaikos punish Anderlecht",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Quick reactions / Half-time change"
+    },
+    {
+      "id": "gr-uefa-pao-real",
+      "url": "https://www.uefa.com/uefachampionsleague/news/025a-0eab0617e2cb-e7d010fc8a4c-1000--panathinaikos-keep-dream-alive/",
+      "title": "Panathinaikos keep dream alive",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Ninth-minute strike"
+    },
+    {
+      "id": "gr-fcsp-dusseldorf",
+      "url": "https://www.fcstpauli.com/en/news/published/dusseldorf-match-report-a23-24/",
+      "title": "Hartel brace seals 2-1 win at Dusseldorf",
+      "publisher": "FC St. Pauli",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Second goal, minute 26"
+    },
+    {
+      "id": "gr-fcsp-osnabruck",
+      "url": "https://leichtesprache.fcstpauli.com/news-blog/fc-st.-pauli-steigt-in-die-1.-bundesliga-auf",
+      "title": "FC St. Pauli steigt in die 1. Bundesliga auf",
+      "publisher": "FC St. Pauli",
+      "language": "de",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Third goal: Saad in the centre, Afolayan on the right, Hartel header"
+    },
+    {
+      "id": "gr-fcsp-furth",
+      "url": "https://www.fcstpauli.com/en/matches/2018-2019-17-fc-st-pauli-vs-spvgg-greuther-furth/",
+      "title": "St. Pauli v Greuther Furth: club match report",
+      "publisher": "FC St. Pauli",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First goal: Veerman header, Burchert save, Carstens rebound header; header date 16 December conflicts with the DFB fixture record and is not used"
+    },
+    {
+      "id": "gr-sky-aek-brighton",
+      "url": "https://www.skysports.com/football/news/12964928/brighton-2-3-aek-athens-seagulls-narrowly-beaten-on-europa-league-debut-despite-joao-pedro-double",
+      "title": "Brighton 2-3 AEK Athens: match report",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First-half goals and final counterattack"
+    },
+    {
+      "id": "gr-bhn-aek-brighton",
+      "url": "https://www.brightonandhovenews.org/2023/09/21/not-a-tragedy-but-albion-learn-europa-league-lesson/",
+      "title": "Not a tragedy, but Albion learn Europa League lesson",
+      "publisher": "Brighton and Hove News",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Left corner before minute 11 / long free kick before second goal"
+    },
+    {
+      "id": "gr-feed-aek-brighton",
+      "url": "https://www.sportinglife.com/football/live/174696/brighton-and-hove-albion-vs-aek-athens/commentary",
+      "title": "Brighton v AEK: event commentary",
+      "publisher": "Sporting Life",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Goals at 11 and 40; Hajsafi assists"
+    },
+    {
+      "id": "gr-dinamo-aek",
+      "url": "https://gnkdinamo.hr/en/news/dinamo-silovito-krenuo-i-poveo-grci-ipak-preokrenuli-rezultat",
+      "title": "Dinamo - AEK 1:2, 15 August 2023",
+      "publisher": "GNK Dinamo Zagreb",
+      "language": "hr",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Paragraph beginning Grci su pobjedu dohvatili; scorers list"
+    },
+    {
+      "id": "gr-sky-zrinjski-villa",
+      "url": "https://www.skysports.com/football/news/13030310/zrinjski-mostar-1-1-aston-villa-nicolo-zaniolos-first-goal-for-club-secures-europa-conference-league-last-16-spot",
+      "title": "Zrinjski Mostar 1-1 Aston Villa",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Malekinusic drives forward on the left and curls in from the edge"
+    },
+    {
+      "id": "gr-nfsbih-zrinjski-az",
+      "url": "https://www.nfsbih.ba/en/news/football-m/m-tel-premier-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+      "title": "Zrinjski debuted in the group stage and celebrated a turnaround",
+      "publisher": "NFSBiH",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Paragraph about the equaliser in minute 71"
+    },
+    {
+      "id": "gr-hpt-1998-hta",
+      "url": "https://hpt.co.il/game/1999/league/2",
+      "title": "HPT Museum: Hapoel Tel Aviv, 29 August 1998",
+      "publisher": "Hapoel Petah Tikva Museum",
+      "language": "he",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First goal before half-time / second goal at minute 86"
+    },
+    {
+      "id": "gr-celticwiki-anderlecht",
+      "url": "https://www.thecelticwiki.com/2003-11-05-celtic-3-1-anderlecht-champions-league/",
+      "title": "Celtic v Anderlecht: archived match reports",
+      "publisher": "The Celtic Wiki",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Review and BBC report: six-yard header, ten-yard finish, central Sutton header; clockwatch has conflicting times and a chest-down"
+    },
+    {
+      "id": "gr-celticwiki-porto",
+      "url": "https://www.thecelticwiki.com/2003-05-21-celtic-2-3-porto-uefa-cup-match-reports/",
+      "title": "Celtic v Porto: archived match reports",
+      "publisher": "The Celtic Wiki",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First equaliser: Agathe delivery to the far post"
+    },
+    {
+      "id": "gr-hpt-1997-beitar",
+      "url": "https://hpt.co.il/game/1997/league/24",
+      "title": "HPT Museum: Beitar Jerusalem, 5 April 1997",
+      "publisher": "Hapoel Petah Tikva Museum",
+      "language": "he",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Fourth-minute goal paragraph in the newspaper report: Ofri shot, Kornfein foot save, Fletcher finish"
+    },
+    {
+      "id": "gr-uefa-pao-inter",
+      "url": "https://www.uefa.com/uefachampionsleague/news/01d3-0e7071aeddb8-50f205ae9e21-1000--inter-progress-despite-panathinaikos-loss/",
+      "title": "Inter progress despite Panathinaikos loss",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Sarriegi shock: Goumas header hits the post; close-range rebound"
+    },
+    {
+      "id": "gr-ftw-stpauli-hamburg",
+      "url": "https://www.fearthewall.com/2019/9/17/20869645/2-bundesliga-update-matchday-6",
+      "title": "2. Bundesliga Update - Matchday 6",
+      "publisher": "Fear The Wall",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "St Pauli 2 - Hamburg 0: Knoll header off post, Diamantakos rebound header"
+    },
+    {
+      "id": "gr-srpskainfo-zrinjski-urartu",
+      "url": "https://sport.srpskainfo.com/fudbal/drama-pod-bijelim-brijegom-zrinjski-se-nakon-penala-plasirao-u-2-kolo-kvalifikacija-za-ligu-sampiona-video-foto/",
+      "title": "Zrinjski progress after penalties against Urartu",
+      "publisher": "Srpskainfo",
+      "language": "bs",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Minute 27: Corluka crosses from the right; Bilbija heads from inside the penalty area; full-time and shootout distinguished"
+    },
+    {
+      "id": "gr-nfsbih-zrinjski-legia",
+      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-od-legije/",
+      "title": "Zrinjski porazen od Legije",
+      "publisher": "NFSBiH",
+      "language": "bs",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Minute 30: Corluka cross from the right, Bilbija header"
+    },
+    {
+      "id": "gr-feed-zrinjski-legia",
+      "url": "https://www.sportinglife.com/football/live/174838/zrinjski-mostar-vs-legia-warszawa/commentary",
+      "title": "Zrinjski v Legia: event commentary",
+      "publisher": "Sporting Life",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Minute 30: header from the centre of the box, Corluka cross assist"
+    },
+    {
+      "id": "gr-dfb-stpauli-2018",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2018-2019/teams/fc-st-pauli",
+      "title": "FC St. Pauli: 2018/19 fixtures",
+      "publisher": "DFB",
+      "language": "de",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "17th matchday: Saturday 15 December 2018, St. Pauli 2-0 Greuther Furth"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2023-08-15-kostas-galanopoulos-90",
+      "clubId": "aek-athens",
+      "on": "2023-08-15",
+      "minute": 90,
+      "scorer": "Kostas Galanopoulos",
+      "opponent": "Dinamo Zagreb",
+      "score": "1-2",
+      "competition": "UEFA Champions League qualifying",
+      "sourceIds": [
+        "gr-dinamo-aek"
+      ],
+      "sequence": [
+        {
+          "actor": "Rodolfo Pizarro",
+          "side": "club",
+          "action": "pass",
+          "zone": "D2",
+          "position": "right side of the penalty area",
+          "note": "Plays a short cutback."
+        },
+        {
+          "actor": "Kostas Galanopoulos",
+          "side": "club",
+          "action": "shot",
+          "zone": "C2",
+          "position": "running onto the cutback in the penalty area",
+          "note": "Strikes the winner."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-09-21-djibril-sidibe-11",
+      "clubId": "aek-athens",
+      "on": "2023-09-21",
+      "minute": 11,
+      "scorer": "Djibril Sidibe",
+      "opponent": "Brighton",
+      "score": "2-3",
+      "competition": "UEFA Europa League",
+      "sourceIds": [
+        "gr-bhn-aek-brighton",
+        "gr-sky-aek-brighton",
+        "gr-feed-aek-brighton"
+      ],
+      "sequence": [
+        {
+          "actor": "Ehsan Hajsafi",
+          "side": "club",
+          "action": "cross",
+          "zone": "A1",
+          "position": "left corner",
+          "note": "Sends in the corner."
+        },
+        {
+          "actor": "Djibril Sidibe",
+          "side": "club",
+          "action": "header",
+          "zone": "C2",
+          "position": "edge of the area, about 15 yards out",
+          "note": "Powers a diving header into the net."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-09-21-ezequiel-ponce-84",
+      "clubId": "aek-athens",
+      "on": "2023-09-21",
+      "minute": 84,
+      "scorer": "Ezequiel Ponce",
+      "opponent": "Brighton",
+      "score": "2-3",
+      "competition": "UEFA Europa League",
+      "sourceIds": [
+        "gr-feed-aek-brighton"
+      ],
+      "sequence": [
+        {
+          "actor": "Ezequiel Ponce",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "centre of the penalty area",
+          "note": "His first effort is stopped."
+        },
+        {
+          "actor": "Jason Steele",
+          "side": "opponent",
+          "action": "save",
+          "zone": "C1",
+          "position": "goal mouth",
+          "note": "Stops the first attempt."
+        },
+        {
+          "actor": "Ezequiel Ponce",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "centre of the penalty area",
+          "note": "The rebound supplies the winning finish."
+        }
+      ],
+      "notes": "Final three recorded contacts only. Reports disagree on the earlier supplier; no assist or preceding pass is asserted here."
+    },
+    {
+      "id": "goal-2003-05-21-henrik-larsson-47",
+      "clubId": "celtic",
+      "on": "2003-05-21",
+      "minute": 47,
+      "scorer": "Henrik Larsson",
+      "opponent": "Porto",
+      "score": "2-3 (aet)",
+      "competition": "UEFA Cup",
+      "sourceIds": [
+        "gr-uefa-celtic-porto",
+        "gr-celticwiki-porto"
+      ],
+      "sequence": [
+        {
+          "actor": "Didier Agathe",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right flank",
+          "note": "Sends a deep cross over the area."
+        },
+        {
+          "actor": "Henrik Larsson",
+          "side": "club",
+          "action": "header",
+          "zone": "B1",
+          "position": "far-post area, receiving a cross from the right",
+          "note": "Loops a header over Vitor Baia."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-09-30-chris-sutton-79",
+      "clubId": "celtic",
+      "on": "2003-09-30",
+      "minute": 79,
+      "scorer": "Chris Sutton",
+      "opponent": "Lyon",
+      "score": "2-0",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-celtic-lyon"
+      ],
+      "sequence": [
+        {
+          "actor": "Henrik Larsson",
+          "side": "club",
+          "action": "dribble",
+          "zone": "A2",
+          "position": "left flank",
+          "note": "Turns past Edmilson."
+        },
+        {
+          "actor": "Henrik Larsson",
+          "side": "club",
+          "action": "cross",
+          "zone": "A2",
+          "position": "left flank",
+          "note": "Crosses towards Sutton."
+        },
+        {
+          "actor": "Chris Sutton",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Heads beyond Coupet."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-09-30-liam-miller-70",
+      "clubId": "celtic",
+      "on": "2003-09-30",
+      "minute": 70,
+      "scorer": "Liam Miller",
+      "opponent": "Lyon",
+      "score": "2-0",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-celtic-lyon"
+      ],
+      "sequence": [
+        {
+          "actor": "Henrik Larsson",
+          "side": "club",
+          "action": "cross",
+          "zone": "A2",
+          "position": "left flank",
+          "note": "Wins possession on the left and crosses."
+        },
+        {
+          "actor": "Liam Miller",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Heads down past Coupet."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-11-05-chris-sutton-29",
+      "clubId": "celtic",
+      "on": "2003-11-05",
+      "minute": null,
+      "scorer": "Chris Sutton",
+      "opponent": "Anderlecht",
+      "score": "3-1",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-celtic-anderlecht",
+        "gr-celticwiki-anderlecht"
+      ],
+      "sequence": [
+        {
+          "actor": "John Hartson",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Flicks on the corner."
+        },
+        {
+          "actor": "Chris Sutton",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Meets the flick-on and heads in."
+        }
+      ],
+      "notes": "Final two documented ball contacts after the corner; the corner side is not stated and is not invented. Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29)."
+    },
+    {
+      "id": "goal-2003-11-05-henrik-larsson-12",
+      "clubId": "celtic",
+      "on": "2003-11-05",
+      "minute": null,
+      "scorer": "Henrik Larsson",
+      "opponent": "Anderlecht",
+      "score": "3-1",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-celtic-anderlecht",
+        "gr-celticwiki-anderlecht"
+      ],
+      "sequence": [
+        {
+          "actor": "John Hartson",
+          "side": "club",
+          "action": "pass",
+          "zone": "C3",
+          "position": "midfield",
+          "note": "Holds off a challenge and releases Agathe."
+        },
+        {
+          "actor": "Didier Agathe",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right flank",
+          "note": "Crosses for Larsson."
+        },
+        {
+          "actor": "Henrik Larsson",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "in front of goal",
+          "note": "Heads past Daniel Zitka."
+        }
+      ],
+      "notes": " Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29)."
+    },
+    {
+      "id": "goal-2003-11-05-liam-miller-17",
+      "clubId": "celtic",
+      "on": "2003-11-05",
+      "minute": null,
+      "scorer": "Liam Miller",
+      "opponent": "Anderlecht",
+      "score": "3-1",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-celtic-anderlecht",
+        "gr-celticwiki-anderlecht"
+      ],
+      "sequence": [
+        {
+          "actor": "Jackie McNamara",
+          "side": "club",
+          "action": "cross",
+          "zone": "A2",
+          "position": "left flank",
+          "note": "Delivers an inswinging cross."
+        },
+        {
+          "actor": "John Hartson",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Heads the ball back across goal."
+        },
+        {
+          "actor": "Liam Miller",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "ten yards from goal",
+          "note": "Finishes low."
+        }
+      ],
+      "notes": " Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29). UEFA and the archived BBC report describe Hartson heading the ball; their account is used over the conflicting live clockwatch chest-down."
+    },
+    {
+      "id": "goal-1997-04-05-avi-fletcher-4",
+      "clubId": "hapoel-petah-tikva",
+      "on": "1997-04-05",
+      "minute": 4,
+      "scorer": "Avi Fletcher",
+      "opponent": "Beitar Jerusalem",
+      "score": "2-1",
+      "competition": "Israeli League",
+      "sourceIds": [
+        "gr-hpt-1997-beitar"
+      ],
+      "sequence": [
+        {
+          "actor": "Yaniv Ofri",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "centre of the penalty area",
+          "note": "Shoots after the corner reaches the middle."
+        },
+        {
+          "actor": "Itzik Kornfein",
+          "side": "opponent",
+          "action": "save",
+          "zone": "C1",
+          "position": "goal mouth",
+          "note": "Stops the attempt with his foot."
+        },
+        {
+          "actor": "Avi Fletcher",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "close range",
+          "note": "Finishes the rebound."
+        }
+      ],
+      "notes": "Final three contacts; the earlier corner origin is outside this reconstruction."
+    },
+    {
+      "id": "goal-1998-08-29-moti-kakon-86",
+      "clubId": "hapoel-petah-tikva",
+      "on": "1998-08-29",
+      "minute": 86,
+      "scorer": "Moti Kakon",
+      "opponent": "Hapoel Tel Aviv",
+      "score": "2-0",
+      "competition": "Israeli Premier League",
+      "sourceIds": [
+        "gr-hpt-1998-hta"
+      ],
+      "sequence": [
+        {
+          "actor": "Moti Kakon",
+          "side": "club",
+          "action": "dribble",
+          "zone": "C1",
+          "position": "one on one with the goalkeeper",
+          "note": "Goes past Shavit Elimelech."
+        },
+        {
+          "actor": "Moti Kakon",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "in front of the unguarded goal",
+          "note": "Finishes into the empty net."
+        }
+      ],
+      "notes": "Final two documented touches. Manor Hasan supplied the earlier pass, but its origin is not given and is not placed on the board."
+    },
+    {
+      "id": "goal-2000-09-23-moti-kakon-25",
+      "clubId": "hapoel-petah-tikva",
+      "on": "2000-09-23",
+      "minute": 25,
+      "scorer": "Moti Kakon",
+      "opponent": "Hapoel Haifa",
+      "score": "2-0",
+      "competition": "Israeli Premier League",
+      "sourceIds": [
+        "gr-hpt-2000-haifa"
+      ],
+      "sequence": [
+        {
+          "actor": "Michael Zandberg",
+          "side": "club",
+          "action": "dribble",
+          "zone": "A2",
+          "position": "left flank",
+          "note": "Carries the ball down the left."
+        },
+        {
+          "actor": "Michael Zandberg",
+          "side": "club",
+          "action": "cross",
+          "zone": "A2",
+          "position": "left flank",
+          "note": "Plays a low ball across goal."
+        },
+        {
+          "actor": "Moti Kakon",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "close range",
+          "note": "Turns the ball into the net."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2000-09-23-moti-kakon-8",
+      "clubId": "hapoel-petah-tikva",
+      "on": "2000-09-23",
+      "minute": 8,
+      "scorer": "Moti Kakon",
+      "opponent": "Hapoel Haifa",
+      "score": "2-0",
+      "competition": "Israeli Premier League",
+      "sourceIds": [
+        "gr-hpt-2000-haifa"
+      ],
+      "sequence": [
+        {
+          "actor": "Golan Derai",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right-sided free kick",
+          "note": "Sends the free kick into the area."
+        },
+        {
+          "actor": "Moti Kakon",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "seven metres from goal",
+          "note": "Heads the delivery into the net."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2002-03-20-nikos-liberopoulos-9",
+      "clubId": "panathinaikos",
+      "on": "2002-03-20",
+      "minute": 9,
+      "scorer": "Nikos Liberopoulos",
+      "opponent": "Real Madrid",
+      "score": "2-2",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-pao-real"
+      ],
+      "sequence": [
+        {
+          "actor": "Georgios Seitaridis",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right flank",
+          "note": "Crosses into the area."
+        },
+        {
+          "actor": null,
+          "side": "unnamed",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "A Madrid defender heads the cross clear."
+        },
+        {
+          "actor": "Nikos Liberopoulos",
+          "side": "club",
+          "action": "shot",
+          "zone": "C2",
+          "position": "edge of the penalty area",
+          "note": "Strikes the clearance past Casillas."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-02-20-emmanuel-olisadebe-12",
+      "clubId": "panathinaikos",
+      "on": "2003-02-20",
+      "minute": null,
+      "scorer": "Emmanuel Olisadebe",
+      "opponent": "Anderlecht",
+      "score": "3-0",
+      "competition": "UEFA Cup",
+      "sourceIds": [
+        "gr-uefa-pao-anderlecht"
+      ],
+      "sequence": [
+        {
+          "actor": "Angelos Basinas",
+          "side": "club",
+          "action": "cross",
+          "zone": "A3",
+          "position": "deep on the left",
+          "note": "Curls a free kick into the box."
+        },
+        {
+          "actor": "Nikos Liberopoulos",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Heads against the post."
+        },
+        {
+          "actor": "Emmanuel Olisadebe",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "two metres from goal",
+          "note": "Finishes the rebound."
+        }
+      ],
+      "notes": "The goalkeeper comes out and misses: this is not recorded as a save or another ball contact. UEFA and club history differ by a minute; no minute is asserted.",
+      "eventLabel": "Opening goal"
+    },
+    {
+      "id": "goal-2003-02-20-nikos-liberopoulos-63",
+      "clubId": "panathinaikos",
+      "on": "2003-02-20",
+      "minute": null,
+      "scorer": "Nikos Liberopoulos",
+      "opponent": "Anderlecht",
+      "score": "3-0",
+      "competition": "UEFA Cup",
+      "sourceIds": [
+        "gr-uefa-pao-anderlecht"
+      ],
+      "sequence": [
+        {
+          "actor": "Emmanuel Olisadebe",
+          "side": "club",
+          "action": "cross",
+          "zone": "E1",
+          "position": "right byline",
+          "note": "Whips the ball across the goal."
+        },
+        {
+          "actor": "Nikos Liberopoulos",
+          "side": "club",
+          "action": "header",
+          "zone": "B1",
+          "position": "far-post area, receiving a cross from the right",
+          "note": "Heads past Zitka."
+        }
+      ],
+      "notes": "UEFA prose gives 63 minutes; club history gives 64. Runtime omits a minute label until this discrepancy is settled. UEFA and club history differ by a minute; no minute is asserted."
+    },
+    {
+      "id": "goal-2008-11-26-jose-sarriegi-69",
+      "clubId": "panathinaikos",
+      "on": "2008-11-26",
+      "minute": 69,
+      "scorer": "Jose Sarriegi",
+      "opponent": "Inter Milan",
+      "score": "0-1",
+      "competition": "UEFA Champions League",
+      "sourceIds": [
+        "gr-uefa-pao-inter"
+      ],
+      "sequence": [
+        {
+          "actor": "Giannis Goumas",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Heads the corner against the post."
+        },
+        {
+          "actor": "Jose Sarriegi",
+          "side": "club",
+          "action": "shot",
+          "zone": "C1",
+          "position": "close range",
+          "note": "Scores from the rebound."
+        }
+      ],
+      "notes": "Final two contacts only. Gabriel takes the earlier corner, but its side is not supplied."
+    },
+    {
+      "id": "goal-2018-12-15-florian-carstens-21",
+      "clubId": "st-pauli",
+      "on": "2018-12-15",
+      "minute": 21,
+      "scorer": "Florian Carstens",
+      "opponent": "Greuther Furth",
+      "score": "2-0",
+      "competition": "2. Bundesliga",
+      "sourceIds": [
+        "gr-fcsp-furth",
+        "gr-dfb-stpauli-2018"
+      ],
+      "sequence": [
+        {
+          "actor": "Henk Veerman",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "near-post area (side not stated)",
+          "note": "Heads the corner towards goal."
+        },
+        {
+          "actor": "Sascha Burchert",
+          "side": "opponent",
+          "action": "save",
+          "zone": "C1",
+          "position": "goal mouth",
+          "note": "Turns the header onto the crossbar."
+        },
+        {
+          "actor": "Florian Carstens",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "at the goal line",
+          "note": "Heads the rebound over the line."
+        }
+      ],
+      "notes": "Final three contacts after the corner. No side is assigned to the preceding corner or near post. The club page header gives 16 December; DFB and contemporary match records place the match on Saturday 15 December. Use the DFB date, with the club report for the contact sequence."
+    },
+    {
+      "id": "goal-2019-09-16-dimitris-diamantakos-18",
+      "clubId": "st-pauli",
+      "on": "2019-09-16",
+      "minute": 18,
+      "scorer": "Dimitris Diamantakos",
+      "opponent": "Hamburger SV",
+      "score": "2-0",
+      "competition": "2. Bundesliga",
+      "sourceIds": [
+        "gr-ftw-stpauli-hamburg"
+      ],
+      "sequence": [
+        {
+          "actor": "Marvin Knoll",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "goal-mouth attacking area",
+          "note": "Heads against the post."
+        },
+        {
+          "actor": "Dimitris Diamantakos",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "close-range rebound area",
+          "note": "Heads in the rebound."
+        }
+      ],
+      "notes": "Final two contacts only; no side or precise distance is assigned to the preceding delivery."
+    },
+    {
+      "id": "goal-2024-01-27-marcel-hartel-26",
+      "clubId": "st-pauli",
+      "on": "2024-01-27",
+      "minute": 26,
+      "scorer": "Marcel Hartel",
+      "opponent": "Fortuna Dusseldorf",
+      "score": "1-2",
+      "competition": "2. Bundesliga",
+      "sourceIds": [
+        "gr-fcsp-dusseldorf"
+      ],
+      "sequence": [
+        {
+          "actor": "Manolis Saliakas",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right-hand corner of the penalty area",
+          "note": "Crosses accurately towards Hartel."
+        },
+        {
+          "actor": "Marcel Hartel",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Glances the ball into the net."
+        }
+      ],
+      "notes": "The earlier Afolayan pass is documented without an origin and is outside this final-two-touch reconstruction."
+    },
+    {
+      "id": "goal-2024-05-12-marcel-hartel-68",
+      "clubId": "st-pauli",
+      "on": "2024-05-12",
+      "minute": 68,
+      "scorer": "Marcel Hartel",
+      "opponent": "VfL Osnabruck",
+      "score": "3-1",
+      "competition": "2. Bundesliga",
+      "sourceIds": [
+        "gr-fcsp-osnabruck"
+      ],
+      "sequence": [
+        {
+          "actor": "Elias Saad",
+          "side": "club",
+          "action": "pass",
+          "zone": "C3",
+          "position": "central attack",
+          "note": "Moves the ball out to Afolayan."
+        },
+        {
+          "actor": "Oladapo Afolayan",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right side",
+          "note": "Crosses for Hartel."
+        },
+        {
+          "actor": "Marcel Hartel",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "penalty area",
+          "note": "Heads in via the inside of the post."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-07-18-nemanja-bilbija-27",
+      "clubId": "zrinjski-mostar",
+      "on": "2023-07-18",
+      "minute": 27,
+      "scorer": "Nemanja Bilbija",
+      "opponent": "Urartu",
+      "score": "2-3 (aet)",
+      "competition": "UEFA Champions League qualifying",
+      "sourceIds": [
+        "gr-srpskainfo-zrinjski-urartu"
+      ],
+      "sequence": [
+        {
+          "actor": "Josip Corluka",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right side",
+          "note": "Delivers into the penalty area."
+        },
+        {
+          "actor": "Nemanja Bilbija",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "inside the penalty area",
+          "note": "Rises to head in."
+        }
+      ],
+      "notes": "Match score after extra time; the separate 4-3 penalty shootout is not the match score."
+    },
+    {
+      "id": "goal-2023-09-21-aldin-hrvanovic-71",
+      "clubId": "zrinjski-mostar",
+      "on": "2023-09-21",
+      "minute": 71,
+      "scorer": "Aldin Hrvanović",
+      "opponent": "AZ Alkmaar",
+      "score": "4-3",
+      "competition": "UEFA Europa Conference League",
+      "sourceIds": [
+        "gr-nfsbih-zrinjski-az"
+      ],
+      "sequence": [
+        {
+          "actor": "Matija Malekinušić",
+          "side": "club",
+          "action": "pass",
+          "zone": "C2",
+          "position": "central attacking area",
+          "note": "Sends the ball through the middle."
+        },
+        {
+          "actor": "Aldin Hrvanović",
+          "side": "club",
+          "action": "shot",
+          "zone": "C2",
+          "position": "sixteen metres from goal",
+          "note": "Strikes the equaliser."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-10-26-nemanja-bilbija-30",
+      "clubId": "zrinjski-mostar",
+      "on": "2023-10-26",
+      "minute": 30,
+      "scorer": "Nemanja Bilbija",
+      "opponent": "Legia Warsaw",
+      "score": "1-2",
+      "competition": "UEFA Europa Conference League",
+      "sourceIds": [
+        "gr-nfsbih-zrinjski-legia",
+        "gr-feed-zrinjski-legia"
+      ],
+      "sequence": [
+        {
+          "actor": "Josip Corluka",
+          "side": "club",
+          "action": "cross",
+          "zone": "E2",
+          "position": "right side",
+          "note": "Sends the ball in from the right."
+        },
+        {
+          "actor": "Nemanja Bilbija",
+          "side": "club",
+          "action": "header",
+          "zone": "C1",
+          "position": "centre of the penalty area",
+          "note": "Heads the opening goal."
+        }
+      ],
+      "notes": "Federation supplies the right-sided delivery; the event commentary corroborates the cross and places the header in the centre of the box."
+    },
+    {
+      "id": "goal-2023-12-14-matija-malekinusic-87",
+      "clubId": "zrinjski-mostar",
+      "on": "2023-12-14",
+      "minute": 87,
+      "scorer": "Matija Malekinušić",
+      "opponent": "Aston Villa",
+      "score": "1-1",
+      "competition": "UEFA Europa Conference League",
+      "sourceIds": [
+        "gr-sky-zrinjski-villa"
+      ],
+      "sequence": [
+        {
+          "actor": "Matija Malekinušić",
+          "side": "club",
+          "action": "dribble",
+          "zone": "A2",
+          "position": "left side of the attack",
+          "note": "Carries the ball forward."
+        },
+        {
+          "actor": "Matija Malekinušić",
+          "side": "club",
+          "action": "shot",
+          "zone": "B2",
+          "position": "left edge of the penalty area",
+          "note": "Curls the equaliser past Marschall."
+        }
+      ],
+      "notes": ""
+    }
+  ],
+  "held": [
+    {
+      "clubId": "aek-athens",
+      "on": "2023-09-21",
+      "scorer": "Mijat Gacinovic",
+      "sourceIds": [
+        "gr-sky-aek-brighton",
+        "gr-bhn-aek-brighton",
+        "gr-feed-aek-brighton"
+      ],
+      "reason": "INTERMEDIATE_CONTACT_UNRESOLVED",
+      "detail": "Event commentary credits Levi Garcia; the prose jumps from the free kick to the finish and does not describe his contact."
+    },
+    {
+      "clubId": "hapoel-petah-tikva",
+      "on": "1997-05-16",
+      "scorer": "Moti Kakon / Gabor Marton",
+      "sourceUrl": "https://hpt.co.il/game/1997/league/28",
+      "reason": "PARTICIPANT_TIMELINE_CONFLICT",
+      "detail": "Report attributes crosses at 44 and 56 to Abravanel; the same museum page says he was substituted at 40. Both candidate goals withheld."
+    },
+    {
+      "clubId": "zrinjski-mostar",
+      "on": "2023-09-21",
+      "scorer": "Zvonimir Kozulj (48) / Josip Corluka (68)",
+      "sourceIds": [
+        "gr-nfsbih-zrinjski-az"
+      ],
+      "reason": "NO_MULTI_TOUCH_SEQUENCE",
+      "detail": "Two excellent strikes, but only the final kicks are described in this federation report. No preparatory touches are invented."
+    },
+    {
+      "clubId": "celtic",
+      "on": "2003-05-21",
+      "scorer": "Henrik Larsson (second equaliser)",
+      "sourceUrl": "https://www.thecelticwiki.com/2003-05-21-celtic-2-3-porto-uefa-cup-match-reports/",
+      "reason": "CORNER_ORIGIN_NOT_RESOLVED",
+      "detail": "The old pilot calls this 56; other reports say 57. The corner side is also unspecified. The first equaliser is usable independently."
+    },
+    {
+      "clubId": "panathinaikos",
+      "on": "2003-02-20",
+      "scorer": "Emmanuel Olisadebe (third goal)",
+      "sourceIds": [
+        "gr-uefa-pao-anderlecht"
+      ],
+      "reason": "POSITION_NOT_DOCUMENTED",
+      "detail": "The one-two is described, but its origin is not. No positions are guessed to fill the target."
+    },
+    {
+      "clubId": "hapoel-petah-tikva",
+      "on": "1998-08-29",
+      "scorer": "Moti Kakon",
+      "sourceIds": [
+        "gr-hpt-1998-hta"
+      ],
+      "reason": "POSITION_NOT_DOCUMENTED",
+      "detail": "Two contacts are known, but Ben Yishai shot location is not established. No C2 origin is inferred from the preceding clearance."
+    }
+  ],
+  "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope.",
+  "approvalBasis": "Owner chat 2026-10-18 authorizes checked research integration directly into archives/features; renewed research instruction 2026-10-19. This is agent source review under that standing authorization, not a claim of individual human review."
+}

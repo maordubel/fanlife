@@ -248,6 +248,34 @@ try {
  // All six existing interactions are preserved in native QA; this mixed browser round
  // exercises the interaction types actually dealt, without forcing a handpicked fork.
  assert(interactions.has('mcq')&&interactions.size>=2)
+ // Each new goal delivery must work through the mobile board and server action.
+ const goalResearch=JSON.parse(readFileSync('research-data/goal-recovery-2026-10-19/reviewed.json','utf8'))
+ const goalReplays=[]
+ for(const slug of [...new Set(goalResearch.goals.map(g=>g.clubId))]){
+  const g=goalResearch.goals.find(g=>g.clubId===slug)
+  const id=`${slug}:${g.id}`
+  const response=await page.goto(`${base}/clubs/${slug}/goal?seed=42&lang=en&g=${encodeURIComponent(id)}`)
+  assert.equal(response.status(),200)
+  await page.getByTestId('goal-start').click()
+  if(g.minute!==null)assert((await page.getByTestId('goal-board').locator('h2').first().innerText()).includes(`${g.minute}'`),`${slug}: scoring minute is missing from the goal identity`)
+  for(let i=0;i<g.sequence.length;i++){
+   const touch=g.sequence[i]
+   await page.locator(`[data-testid="goal-bench"] [data-actor=${JSON.stringify(touch.actor??'')}]`).click()
+   await page.locator(`[data-testid="goal-verbs"] [data-verb="${touch.action}"]`).click()
+   await page.getByTestId(`zone-${touch.zone}`).click({position:{x:5,y:5}})
+   await page.locator(`[data-touch="${i}"]`).waitFor()
+  }
+  await page.getByTestId('goal-whistle').click()
+  const result=page.getByTestId('goal-result')
+  await result.waitFor({timeout:30000})
+  assert.equal(await result.locator('[data-ok="false"], [data-zone="miss"], [data-zone="near"]').count(),0,`${slug}: correct replay was marked wrong`)
+  assert.equal(await result.locator('[data-zone="exact"]').count(),g.sequence.length)
+  assert((await result.locator('a[href^="https://"]').count())>=1,`${slug}: missing source link`)
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${slug}: goal mobile overflow`)
+  await page.screenshot({path:`/tmp/fanlife-m1-browser/${slug}-goal.png`})
+  goalReplays.push({club:slug,goal:id,contacts:g.sequence.length,serverVerdict:'passed',sourceLinks:'passed'})
+ }
+ writeFileSync('/tmp/fanlife-m1-browser/goal-replays.json',JSON.stringify(goalReplays,null,2))
  for(const xiClub of ['hapoel-tel-aviv','zrinjski-mostar','hapoel-petah-tikva']){
  await page.goto(`${base}/clubs/${xiClub}/xi`)
  await page.getByTestId('xi-builder').waitFor()
