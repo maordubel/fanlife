@@ -296,8 +296,8 @@
   .wkh .wkh-d-only { display: revert; }
   .wkh .wkh-m-only { display: none; }
   .wkh { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; padding: 22px 40px 72px;
-    grid-template-areas: 'mast mast mast' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'clubs clubs letter' 'next say spec' 'back say spec';
-    grid-template-rows: auto auto auto auto auto auto auto auto 1fr; }
+    grid-template-areas: 'mast mast mast' 'hero hero hero' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'clubs clubs letter' 'next say spec' 'back say spec';
+    grid-template-rows: auto auto auto auto auto auto auto auto auto 1fr; }
   .wkh-lm { grid-area: lm; margin-block-start: 28px; }
   .wkh-market-mini { grid-area: market; margin-block-start: 40px; }
   .wkh :is(#clubs, #next, #life, #market, #suggest) { scroll-margin-top: 92px; }
@@ -619,3 +619,13 @@
   .wkh-market-mini .wkh-market-ctas { grid-column: auto; }
   .wkh-market-mini .wkh-market-speed { --sx: 20%; --sy: 50%; }
 }
+
+/* H1 hero: the first screen */
+.wkh-hero { margin-block-start: 18px; padding: 16px; display: flex; flex-direction: column; gap: 8px; background: var(--mag-card); color: var(--mag-ink); }
+.wkh-hero-h { font-size: 28px; line-height: 1; }
+.wkh-otd { display: flex; flex-direction: column; gap: 2px; margin: 0; padding-block: 8px; border-block: 2px dashed var(--mag-ink); }
+.wkh-hero-go { align-self: flex-start; }
+.wkh-hero-crests { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.wkh-hero-crest { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px 4px; min-block-size: 44px; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); text-align: center; }
+.wkh-hero-crest b { font-family: var(--mag-display); font-size: 13px; line-height: 1.05; text-transform: uppercase; }
+@media (min-width: 900px) { .wkh-hero { grid-area: hero; margin-block-start: 28px; } }

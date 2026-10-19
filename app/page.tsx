@@ -19,6 +19,9 @@ import {BackToClub} from '@/components/clubs/BackToClub'
 import {WorkshopGrid} from '@/components/home/WorkshopGrid'
 import {SuggestClub} from '@/components/home/SuggestClub'
 import {HubDock} from '@/components/home/HubDock'
+import {HubHero} from '@/components/home/HubHero'
+import {loadClubBase} from '@/lib/clubs/resolver'
+import {momentFor} from '@/lib/clubs/today'
 import {isOpenClub} from '@/lib/home/hub-open'
 import {seedVotes,rank} from '@/lib/home/vote'
 import en from '@/messages/clubs/en.json'
@@ -58,6 +61,8 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} last={copy.stopLast} next={copy.stopNext} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
  const couponCopy={kicker:copy.wkhInNext,coupon:copy.wkhCoupon,cols:copy.wkhCouponCols,all:copy.wkhNextAll,note:copy.nextNote,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLamp:copy.wkhTbc,close:copy.chooserClose}
  const dockCopy={title:copy.dockTitle,kept:copy.wkhKept,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,fileSub:copy.wkFileSub,stand:copy.dockStand,standSub:copy.wkhStandSub,market:copy.dockMarket,marketSub:copy.wkMarketSub,sources:copy.dockSources,sourcesSub:copy.wkSourcesSub,voted:copy.dockVoted,vote:copy.dockVote,voteSub:copy.wkhVoteSub}
+ const heroClubs=await Promise.all(live.map(async c=>{const m=await loadClubBase(c.id).then(r=>r?momentFor(r.data,now):null).catch(()=>null);return {id:c.id,name:c.name,city:c.city,otd:m&&m.offset===0?{title:m.title,years:m.yearsAgo}:null}}))
+ const heroCopy={kicker:copy.wkhHeroK,cont:copy.dockContinue,contSub:copy.wkhHeroSub,newK:copy.wkhHeroNewK,newT:copy.wkhHeroNewT,otd:copy.todayExact,play:''}
  const dockClubs=open.map(c=>({id:c.id,name:c.name})),dockOpen=live.map(c=>c.id)
  const inside=[
   {href:'#clubs',title:copy.clubs,sub:copy.wkhInClubs.replace('{n}',String(live.length)),go:'↓'},
@@ -79,6 +84,9 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <p className="wk-k wkh-mast-tag">{copy.wkhForever}<span className="wkh-d-only"> · {copy.tagline}</span></p>
    <time className="wk-k wk-muted wkh-date-m" dateTime={iso}>{date}</time>
   </header>
+
+  {/* THE FIRST SCREEN (H1): a new fan sees the crests and taps one; a returning fan continues where they were. */}
+  <HubHero clubs={heroClubs} lang={locale==='en'?'':`?lang=${locale}`} copy={heroCopy} crests={<ul className="wkh-hero-crests">{live.map(c=>{const l=livery(c.id);return <li key={c.id}><Link className="wkh-hero-crest min-h-tap" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}><span className="wkh-disc">{l&&<Badge club={l}/>}</span><b>{c.name}</b></Link></li>})}</ul>}/>
 
   {/* THE MANAGER: LEGENDS MANAGER leads the page, above the gates (owner, 14.10.2026). */}
   {fl.open&&<section className="wkh-lm" aria-label={copy.wkhLmTitle}>
