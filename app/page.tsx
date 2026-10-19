@@ -19,6 +19,7 @@ import {BackToClub} from '@/components/clubs/BackToClub'
 import {WorkshopGrid} from '@/components/home/WorkshopGrid'
 import {SuggestClub} from '@/components/home/SuggestClub'
 import {HubDock} from '@/components/home/HubDock'
+import {TileStreak} from '@/components/home/TileStreak'
 import {HubHero} from '@/components/home/HubHero'
 import {loadClubBase} from '@/lib/clubs/resolver'
 import {momentFor} from '@/lib/clubs/today'
@@ -159,7 +160,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
        <span className="wkh-stk-no wk-num" aria-hidden="true">{String(n+1).padStart(2,'0')}</span><span className="sr-only">{`${copy.collectorNo} ${n+1}`}</span>
        <span className="wkh-disc">{l&&<Badge club={l}/>}</span>
       </span>
-      <span className="wkh-stk-nm"><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small></span>
+      <span className="wkh-stk-nm"><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small>{heroClubs.find(h=>h.id===c.id)?.otd&&<span className="wkh-stk-otd wk-k">{copy.wkhOtdTag}</span>}<TileStreak clubId={c.id} label={copy.wkhStreak}/></span>
       <svg className="wkh-peel" viewBox="0 0 22 22" aria-hidden="true"><path className="a" d="M22 0 L22 22 L0 22 Z"/><path className="b" d="M22 0 L0 22 L1 1 Z"/></svg>
      </Link>})}
    </div>

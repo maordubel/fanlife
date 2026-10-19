@@ -629,3 +629,7 @@
 .wkh-hero-crest { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px 4px; min-block-size: 44px; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); text-align: center; }
 .wkh-hero-crest b { font-family: var(--mag-display); font-size: 13px; line-height: 1.05; text-transform: uppercase; }
 @media (min-width: 900px) { .wkh-hero { grid-area: hero; margin-block-start: 28px; } }
+
+/* H2 tile extras */
+.wkh-stk-streak, .wkh-stk-otd { display: block; font-size: 11px; line-height: 1.2; margin-block-start: 2px; }
+.wkh-stk-otd { color: var(--mag-red); }

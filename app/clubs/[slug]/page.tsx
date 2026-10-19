@@ -9,6 +9,7 @@ import type {GateState} from '@/components/clubs/GateTickets'
 import {BelovedPlate,GateArt,PickAGate} from '@/components/clubs/ClubGateWall'
 import {CarryOn,SupporterCard} from '@/components/clubs/SupporterCard'
 import {KickOff,TodayMoment} from '@/components/clubs/ClubToday'
+import {InstallClub} from '@/components/clubs/InstallClub'
 import {momentFor} from '@/lib/clubs/today'
 import {belovedOf,wallNumbers} from '@/lib/clubs/beloved'
 import {ClubEntrance} from '@/components/clubs/ClubEntrance'
@@ -112,6 +113,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {core&&pickGate&&<section className="wkk-pick" aria-label={copy.homeToday}>
    <p className="wk-k red">{copy.wkkPickLine}</p>
    <KickOff href={pickHref} n={num[pickGate.key]} gateWord={copy.wallGate} shout={copy.wkkKickOff} label={`${copy.todayPick}: ${names[pickGate.key]} — ${copy.wkkKickOff}`} testid="today-pick"/>
+   <InstallClub label={copy.installClub.replace('{club}',c.name)}/>
   </section>}
   {core&&open.length>0&&<div className="wkk-carry"><CarryOn clubId={id} locale={locale} open={open} names={names} copy={{carry:copy.wkkCarry,start:copy.wkkStart,next:copy.cardNext}}/></div>}
 
