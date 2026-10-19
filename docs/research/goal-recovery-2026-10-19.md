@@ -47,6 +47,9 @@ The Madrid fixture is **20 March 2002**, checked against UEFA's dated report.
 St. Pauli–Fürth is **15 December 2018**, checked against the DFB fixture record
 and contemporary reporting; the club report's header says 16 December. The
 contact sequence comes from that report, while the fixture date follows DFB.
+Documented minutes appear at the start of each goal title, so Kakon's two goals
+against Haifa are distinguishable before playing. Olisadebe's first goal against
+Anderlecht is labelled "Opening goal" without asserting the disputed minute.
 For Celtic–Anderlecht and Panathinaikos–Anderlecht, disagreeing minute labels
 are omitted. UEFA and the archived BBC report agree on Hartson's headed touch
 before Miller's finish; their account takes precedence over a conflicting live

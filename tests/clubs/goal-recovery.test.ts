@@ -62,6 +62,7 @@ describe('checked historical goal recovery',()=>{
 
  it('preserves the source corrections: actual Madrid date, no invented minute, unnamed defender and separate shootout',async()=>{
   const pao=clubGoals((await loadClub('panathinaikos'))!.data)
+  expect(pao.find(g=>g.opponent==='Anderlecht'&&g.title.includes('Olisadebe'))?.title).toContain('Opening goal')
   const real=pao.find(g=>g.opponent==='Real Madrid')!
   expect(real.on).toBe('2002-03-20')
   expect(real.steps[1]).toMatchObject({actor:null,side:'unnamed',action:'header'})
@@ -72,6 +73,9 @@ describe('checked historical goal recovery',()=>{
   const hpt=clubGoals((await loadClub('hapoel-petah-tikva'))!.data)
   expect(hpt.some(g=>g.id.endsWith('kakon-opening'))).toBe(false)
   expect(hpt.some(g=>g.on==='1997-05-16')).toBe(false)
+  const kakon=hpt.filter(g=>g.on==='2000-09-23')
+  expect(kakon).toHaveLength(2)
+  expect(kakon.map(g=>g.title)).toEqual(expect.arrayContaining([expect.stringMatching(/^8' · /),expect.stringMatching(/^25' · /)]))
   const stPauli=clubGoals((await loadClub('st-pauli'))!.data)
   expect(stPauli.find(g=>g.opponent==='Greuther Furth')?.on).toBe('2018-12-15')
  },60000)

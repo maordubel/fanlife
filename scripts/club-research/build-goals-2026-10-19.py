@@ -25,7 +25,7 @@ def deliveries(data):
         assert s['access'] == 'available' and s['checkedAt'] == checked
         assert s['url'].startswith('https://') and s['publisher'] and s['locator']
     out = {c: dict(schemaVersion=1, clubId=c, contentLocale='en', sources=[], goals=[]) for c in CLUBS}
-    seen, fixtures = set(), set()
+    seen, fixtures, display_ids = set(), set(), set()
     for g in data['goals']:
         club, gid, seq = g['clubId'], g['id'], g['sequence']
         assert club in out and re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,100}', gid)
@@ -50,8 +50,17 @@ def deliveries(data):
         assert seq[-1]['side'] == 'club' and seq[-1]['actor'] == g['scorer']
         assert seq[-1]['action'] in {'shot', 'header'}
         subtitle = g['on'] + (f" · {g['minute']}'" if g['minute'] is not None else '')
+        # The board displays the title, not the subtitle. A scorer can score
+        # twice in one fixture, so put the documented event cue in that title.
+        cue = f"{g['minute']}'" if g['minute'] is not None else g.get('eventLabel', '')
+        title = f"{g['scorer']} v {g['opponent']}"
+        if cue:
+            title = f'{cue} · {title}'
+        display_id = (club, g['on'], title)
+        assert display_id not in display_ids, 'Ambiguous goal: needs a sourced event cue'
+        display_ids.add(display_id)
         narrative = ' '.join(f"{s['actor'] or 'An unnamed defender'}: {s['note']}" for s in seq)
-        value = dict(name=f"{g['scorer']} v {g['opponent']}", subtitle=subtitle,
+        value = dict(name=title, subtitle=subtitle,
                      on=g['on'], competition=g['competition'], opponent=g['opponent'],
                      score=g['score'], narrative=narrative, sequence=seq,
                      reconstructionScope='Final documented contacts; not the entire possession.',

@@ -802,7 +802,8 @@
           "note": "Finishes the rebound."
         }
       ],
-      "notes": "The goalkeeper comes out and misses: this is not recorded as a save or another ball contact. UEFA and club history differ by a minute; no minute is asserted."
+      "notes": "The goalkeeper comes out and misses: this is not recorded as a save or another ball contact. UEFA and club history differ by a minute; no minute is asserted.",
+      "eventLabel": "Opening goal"
     },
     {
       "id": "goal-2003-02-20-nikos-liberopoulos-63",

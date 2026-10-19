@@ -257,6 +257,7 @@ try {
   const response=await page.goto(`${base}/clubs/${slug}/goal?seed=42&lang=en&g=${encodeURIComponent(id)}`)
   assert.equal(response.status(),200)
   await page.getByTestId('goal-start').click()
+  if(g.minute!==null)assert((await page.getByTestId('goal-board').locator('h2').first().innerText()).includes(`${g.minute}'`),`${slug}: scoring minute is missing from the goal identity`)
   for(let i=0;i<g.sequence.length;i++){
    const touch=g.sequence[i]
    await page.locator(`[data-testid="goal-bench"] [data-actor=${JSON.stringify(touch.actor??'')}]`).click()
