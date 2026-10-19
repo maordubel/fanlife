@@ -44,6 +44,9 @@ is never supplied for a corner. In particular, the Ben Yishai/Kakon opening goal
 against Hapoel Tel Aviv is held because the earlier shot cannot be located.
 
 The Madrid fixture is **20 March 2002**, checked against UEFA's dated report.
+St. Pauli–Fürth is **15 December 2018**, checked against the DFB fixture record
+and contemporary reporting; the club report's header says 16 December. The
+contact sequence comes from that report, while the fixture date follows DFB.
 For Celtic–Anderlecht and Panathinaikos–Anderlecht, disagreeing minute labels
 are omitted. UEFA and the archived BBC report agree on Hartson's headed touch
 before Miller's finish; their account takes precedence over a conflicting live

@@ -85,12 +85,12 @@
     {
       "id": "gr-fcsp-furth",
       "url": "https://www.fcstpauli.com/en/matches/2018-2019-17-fc-st-pauli-vs-spvgg-greuther-furth/",
-      "title": "St. Pauli v Greuther Furth, 16 December 2018",
+      "title": "St. Pauli v Greuther Furth: club match report",
       "publisher": "FC St. Pauli",
       "language": "en",
       "checkedAt": "2026-10-19",
       "access": "available",
-      "locator": "First goal: Veerman header, Burchert save, Carstens rebound header"
+      "locator": "First goal: Veerman header, Burchert save, Carstens rebound header; header date 16 December conflicts with the DFB fixture record and is not used"
     },
     {
       "id": "gr-sky-aek-brighton",
@@ -241,6 +241,16 @@
       "checkedAt": "2026-10-19",
       "access": "available",
       "locator": "Minute 30: header from the centre of the box, Corluka cross assist"
+    },
+    {
+      "id": "gr-dfb-stpauli-2018",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2018-2019/teams/fc-st-pauli",
+      "title": "FC St. Pauli: 2018/19 fixtures",
+      "publisher": "DFB",
+      "language": "de",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "17th matchday: Saturday 15 December 2018, St. Pauli 2-0 Greuther Furth"
     }
   ],
   "goals": [
@@ -859,16 +869,17 @@
       "notes": "Final two contacts only. Gabriel takes the earlier corner, but its side is not supplied."
     },
     {
-      "id": "goal-2018-12-16-florian-carstens-21",
+      "id": "goal-2018-12-15-florian-carstens-21",
       "clubId": "st-pauli",
-      "on": "2018-12-16",
+      "on": "2018-12-15",
       "minute": 21,
       "scorer": "Florian Carstens",
       "opponent": "Greuther Furth",
       "score": "2-0",
       "competition": "2. Bundesliga",
       "sourceIds": [
-        "gr-fcsp-furth"
+        "gr-fcsp-furth",
+        "gr-dfb-stpauli-2018"
       ],
       "sequence": [
         {
@@ -896,7 +907,7 @@
           "note": "Heads the rebound over the line."
         }
       ],
-      "notes": "Final three contacts after the corner. No side is assigned to the preceding corner or near post."
+      "notes": "Final three contacts after the corner. No side is assigned to the preceding corner or near post. The club page header gives 16 December; DFB and contemporary match records place the match on Saturday 15 December. Use the DFB date, with the club report for the contact sequence."
     },
     {
       "id": "goal-2019-09-16-dimitris-diamantakos-18",

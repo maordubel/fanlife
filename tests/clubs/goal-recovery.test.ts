@@ -72,6 +72,8 @@ describe('checked historical goal recovery',()=>{
   const hpt=clubGoals((await loadClub('hapoel-petah-tikva'))!.data)
   expect(hpt.some(g=>g.id.endsWith('kakon-opening'))).toBe(false)
   expect(hpt.some(g=>g.on==='1997-05-16')).toBe(false)
+  const stPauli=clubGoals((await loadClub('st-pauli'))!.data)
+  expect(stPauli.find(g=>g.opponent==='Greuther Furth')?.on).toBe('2018-12-15')
  },60000)
 
  it('still refuses another tenant, stale versions, paused clubs and closed gates for newly opened clubs',async()=>{
