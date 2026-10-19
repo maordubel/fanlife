@@ -123,7 +123,7 @@ export async function signInWithGoogle(next = '/tik'): Promise<void> {
 
 /**
  * Ends THIS browser's session only (`scope: 'local'`: the global default would also sign the person out of their
- * phone, and out of DUBID in the shared project). Answers whether it worked, so the screen never says "signed out"
+ * phone). With SSO the session cookie is shared on .dubelteam.com, so this browser leaves every app at once, and no other device. Answers whether it worked, so the screen never says "signed out"
  * while a session is still live.
  */
 export async function signOut(): Promise<boolean> {
