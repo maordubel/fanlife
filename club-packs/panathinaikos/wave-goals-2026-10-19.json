@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "clubId": "panathinaikos",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "gr-uefa-pao-anderlecht",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/018e-0e6a9d83e44f-5c2562e49c2d-1000--panathinaikos-punish-anderlecht/",
+      "title": "Panathinaikos punish Anderlecht",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Quick reactions / Half-time change"
+    },
+    {
+      "id": "gr-uefa-pao-real",
+      "url": "https://www.uefa.com/uefachampionsleague/news/025a-0eab0617e2cb-e7d010fc8a4c-1000--panathinaikos-keep-dream-alive/",
+      "title": "Panathinaikos keep dream alive",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Ninth-minute strike"
+    },
+    {
+      "id": "gr-uefa-pao-inter",
+      "url": "https://www.uefa.com/uefachampionsleague/news/01d3-0e7071aeddb8-50f205ae9e21-1000--inter-progress-despite-panathinaikos-loss/",
+      "title": "Inter progress despite Panathinaikos loss",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Sarriegi shock: Goumas header hits the post; close-range rebound"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2002-03-20-nikos-liberopoulos-9",
+      "value": {
+        "name": "Nikos Liberopoulos v Real Madrid",
+        "subtitle": "2002-03-20 · 9'",
+        "on": "2002-03-20",
+        "competition": "UEFA Champions League",
+        "opponent": "Real Madrid",
+        "score": "2-2",
+        "narrative": "Georgios Seitaridis: Crosses into the area. An unnamed defender: A Madrid defender heads the cross clear. Nikos Liberopoulos: Strikes the clearance past Casillas.",
+        "sequence": [
+          {
+            "actor": "Georgios Seitaridis",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right flank",
+            "note": "Crosses into the area."
+          },
+          {
+            "actor": null,
+            "side": "unnamed",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "A Madrid defender heads the cross clear."
+          },
+          {
+            "actor": "Nikos Liberopoulos",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "edge of the penalty area",
+            "note": "Strikes the clearance past Casillas."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-pao-real"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2003-02-20-emmanuel-olisadebe-12",
+      "value": {
+        "name": "Emmanuel Olisadebe v Anderlecht",
+        "subtitle": "2003-02-20",
+        "on": "2003-02-20",
+        "competition": "UEFA Cup",
+        "opponent": "Anderlecht",
+        "score": "3-0",
+        "narrative": "Angelos Basinas: Curls a free kick into the box. Nikos Liberopoulos: Heads against the post. Emmanuel Olisadebe: Finishes the rebound.",
+        "sequence": [
+          {
+            "actor": "Angelos Basinas",
+            "side": "club",
+            "action": "cross",
+            "zone": "A3",
+            "position": "deep on the left",
+            "note": "Curls a free kick into the box."
+          },
+          {
+            "actor": "Nikos Liberopoulos",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Heads against the post."
+          },
+          {
+            "actor": "Emmanuel Olisadebe",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "two metres from goal",
+            "note": "Finishes the rebound."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-pao-anderlecht"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "The goalkeeper comes out and misses: this is not recorded as a save or another ball contact. UEFA and club history differ by a minute; no minute is asserted."
+    },
+    {
+      "id": "goal-2003-02-20-nikos-liberopoulos-63",
+      "value": {
+        "name": "Nikos Liberopoulos v Anderlecht",
+        "subtitle": "2003-02-20",
+        "on": "2003-02-20",
+        "competition": "UEFA Cup",
+        "opponent": "Anderlecht",
+        "score": "3-0",
+        "narrative": "Emmanuel Olisadebe: Whips the ball across the goal. Nikos Liberopoulos: Heads past Zitka.",
+        "sequence": [
+          {
+            "actor": "Emmanuel Olisadebe",
+            "side": "club",
+            "action": "cross",
+            "zone": "E1",
+            "position": "right byline",
+            "note": "Whips the ball across the goal."
+          },
+          {
+            "actor": "Nikos Liberopoulos",
+            "side": "club",
+            "action": "header",
+            "zone": "B1",
+            "position": "far-post area, receiving a cross from the right",
+            "note": "Heads past Zitka."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-pao-anderlecht"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "UEFA prose gives 63 minutes; club history gives 64. Runtime omits a minute label until this discrepancy is settled. UEFA and club history differ by a minute; no minute is asserted."
+    },
+    {
+      "id": "goal-2008-11-26-jose-sarriegi-69",
+      "value": {
+        "name": "Jose Sarriegi v Inter Milan",
+        "subtitle": "2008-11-26 · 69'",
+        "on": "2008-11-26",
+        "competition": "UEFA Champions League",
+        "opponent": "Inter Milan",
+        "score": "0-1",
+        "narrative": "Giannis Goumas: Heads the corner against the post. Jose Sarriegi: Scores from the rebound.",
+        "sequence": [
+          {
+            "actor": "Giannis Goumas",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Heads the corner against the post."
+          },
+          {
+            "actor": "Jose Sarriegi",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "close range",
+            "note": "Scores from the rebound."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-pao-inter"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final two contacts only. Gabriel takes the earlier corner, but its side is not supplied."
+    }
+  ]
+}

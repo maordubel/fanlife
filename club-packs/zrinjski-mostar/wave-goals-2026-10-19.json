@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "gr-sky-zrinjski-villa",
+      "url": "https://www.skysports.com/football/news/13030310/zrinjski-mostar-1-1-aston-villa-nicolo-zaniolos-first-goal-for-club-secures-europa-conference-league-last-16-spot",
+      "title": "Zrinjski Mostar 1-1 Aston Villa",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Malekinusic drives forward on the left and curls in from the edge"
+    },
+    {
+      "id": "gr-nfsbih-zrinjski-az",
+      "url": "https://www.nfsbih.ba/en/news/football-m/m-tel-premier-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+      "title": "Zrinjski debuted in the group stage and celebrated a turnaround",
+      "publisher": "NFSBiH",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Paragraph about the equaliser in minute 71"
+    },
+    {
+      "id": "gr-srpskainfo-zrinjski-urartu",
+      "url": "https://sport.srpskainfo.com/fudbal/drama-pod-bijelim-brijegom-zrinjski-se-nakon-penala-plasirao-u-2-kolo-kvalifikacija-za-ligu-sampiona-video-foto/",
+      "title": "Zrinjski progress after penalties against Urartu",
+      "publisher": "Srpskainfo",
+      "language": "bs",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Minute 27: Corluka crosses from the right; Bilbija heads from inside the penalty area; full-time and shootout distinguished"
+    },
+    {
+      "id": "gr-nfsbih-zrinjski-legia",
+      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-od-legije/",
+      "title": "Zrinjski porazen od Legije",
+      "publisher": "NFSBiH",
+      "language": "bs",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Minute 30: Corluka cross from the right, Bilbija header"
+    },
+    {
+      "id": "gr-feed-zrinjski-legia",
+      "url": "https://www.sportinglife.com/football/live/174838/zrinjski-mostar-vs-legia-warszawa/commentary",
+      "title": "Zrinjski v Legia: event commentary",
+      "publisher": "Sporting Life",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Minute 30: header from the centre of the box, Corluka cross assist"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2023-07-18-nemanja-bilbija-27",
+      "value": {
+        "name": "Nemanja Bilbija v Urartu",
+        "subtitle": "2023-07-18 · 27'",
+        "on": "2023-07-18",
+        "competition": "UEFA Champions League qualifying",
+        "opponent": "Urartu",
+        "score": "2-3 (aet)",
+        "narrative": "Josip Corluka: Delivers into the penalty area. Nemanja Bilbija: Rises to head in.",
+        "sequence": [
+          {
+            "actor": "Josip Corluka",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right side",
+            "note": "Delivers into the penalty area."
+          },
+          {
+            "actor": "Nemanja Bilbija",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "inside the penalty area",
+            "note": "Rises to head in."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-srpskainfo-zrinjski-urartu"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Match score after extra time; the separate 4-3 penalty shootout is not the match score."
+    },
+    {
+      "id": "goal-2023-09-21-aldin-hrvanovic-71",
+      "value": {
+        "name": "Aldin Hrvanović v AZ Alkmaar",
+        "subtitle": "2023-09-21 · 71'",
+        "on": "2023-09-21",
+        "competition": "UEFA Europa Conference League",
+        "opponent": "AZ Alkmaar",
+        "score": "4-3",
+        "narrative": "Matija Malekinušić: Sends the ball through the middle. Aldin Hrvanović: Strikes the equaliser.",
+        "sequence": [
+          {
+            "actor": "Matija Malekinušić",
+            "side": "club",
+            "action": "pass",
+            "zone": "C2",
+            "position": "central attacking area",
+            "note": "Sends the ball through the middle."
+          },
+          {
+            "actor": "Aldin Hrvanović",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "sixteen metres from goal",
+            "note": "Strikes the equaliser."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-nfsbih-zrinjski-az"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-10-26-nemanja-bilbija-30",
+      "value": {
+        "name": "Nemanja Bilbija v Legia Warsaw",
+        "subtitle": "2023-10-26 · 30'",
+        "on": "2023-10-26",
+        "competition": "UEFA Europa Conference League",
+        "opponent": "Legia Warsaw",
+        "score": "1-2",
+        "narrative": "Josip Corluka: Sends the ball in from the right. Nemanja Bilbija: Heads the opening goal.",
+        "sequence": [
+          {
+            "actor": "Josip Corluka",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right side",
+            "note": "Sends the ball in from the right."
+          },
+          {
+            "actor": "Nemanja Bilbija",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "centre of the penalty area",
+            "note": "Heads the opening goal."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-nfsbih-zrinjski-legia",
+        "gr-feed-zrinjski-legia"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Federation supplies the right-sided delivery; the event commentary corroborates the cross and places the header in the centre of the box."
+    },
+    {
+      "id": "goal-2023-12-14-matija-malekinusic-87",
+      "value": {
+        "name": "Matija Malekinušić v Aston Villa",
+        "subtitle": "2023-12-14 · 87'",
+        "on": "2023-12-14",
+        "competition": "UEFA Europa Conference League",
+        "opponent": "Aston Villa",
+        "score": "1-1",
+        "narrative": "Matija Malekinušić: Carries the ball forward. Matija Malekinušić: Curls the equaliser past Marschall.",
+        "sequence": [
+          {
+            "actor": "Matija Malekinušić",
+            "side": "club",
+            "action": "dribble",
+            "zone": "A2",
+            "position": "left side of the attack",
+            "note": "Carries the ball forward."
+          },
+          {
+            "actor": "Matija Malekinušić",
+            "side": "club",
+            "action": "shot",
+            "zone": "B2",
+            "position": "left edge of the penalty area",
+            "note": "Curls the equaliser past Marschall."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-sky-zrinjski-villa"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    }
+  ]
+}

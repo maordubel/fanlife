@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "clubId": "st-pauli",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "gr-fcsp-dusseldorf",
+      "url": "https://www.fcstpauli.com/en/news/published/dusseldorf-match-report-a23-24/",
+      "title": "Hartel brace seals 2-1 win at Dusseldorf",
+      "publisher": "FC St. Pauli",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Second goal, minute 26"
+    },
+    {
+      "id": "gr-fcsp-osnabruck",
+      "url": "https://leichtesprache.fcstpauli.com/news-blog/fc-st.-pauli-steigt-in-die-1.-bundesliga-auf",
+      "title": "FC St. Pauli steigt in die 1. Bundesliga auf",
+      "publisher": "FC St. Pauli",
+      "language": "de",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Third goal: Saad in the centre, Afolayan on the right, Hartel header"
+    },
+    {
+      "id": "gr-fcsp-furth",
+      "url": "https://www.fcstpauli.com/en/matches/2018-2019-17-fc-st-pauli-vs-spvgg-greuther-furth/",
+      "title": "St. Pauli v Greuther Furth, 16 December 2018",
+      "publisher": "FC St. Pauli",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First goal: Veerman header, Burchert save, Carstens rebound header"
+    },
+    {
+      "id": "gr-ftw-stpauli-hamburg",
+      "url": "https://www.fearthewall.com/2019/9/17/20869645/2-bundesliga-update-matchday-6",
+      "title": "2. Bundesliga Update - Matchday 6",
+      "publisher": "Fear The Wall",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "St Pauli 2 - Hamburg 0: Knoll header off post, Diamantakos rebound header"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2018-12-16-florian-carstens-21",
+      "value": {
+        "name": "Florian Carstens v Greuther Furth",
+        "subtitle": "2018-12-16 · 21'",
+        "on": "2018-12-16",
+        "competition": "2. Bundesliga",
+        "opponent": "Greuther Furth",
+        "score": "2-0",
+        "narrative": "Henk Veerman: Heads the corner towards goal. Sascha Burchert: Turns the header onto the crossbar. Florian Carstens: Heads the rebound over the line.",
+        "sequence": [
+          {
+            "actor": "Henk Veerman",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "near-post area (side not stated)",
+            "note": "Heads the corner towards goal."
+          },
+          {
+            "actor": "Sascha Burchert",
+            "side": "opponent",
+            "action": "save",
+            "zone": "C1",
+            "position": "goal mouth",
+            "note": "Turns the header onto the crossbar."
+          },
+          {
+            "actor": "Florian Carstens",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "at the goal line",
+            "note": "Heads the rebound over the line."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-fcsp-furth"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final three contacts after the corner. No side is assigned to the preceding corner or near post."
+    },
+    {
+      "id": "goal-2019-09-16-dimitris-diamantakos-18",
+      "value": {
+        "name": "Dimitris Diamantakos v Hamburger SV",
+        "subtitle": "2019-09-16 · 18'",
+        "on": "2019-09-16",
+        "competition": "2. Bundesliga",
+        "opponent": "Hamburger SV",
+        "score": "2-0",
+        "narrative": "Marvin Knoll: Heads against the post. Dimitris Diamantakos: Heads in the rebound.",
+        "sequence": [
+          {
+            "actor": "Marvin Knoll",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "goal-mouth attacking area",
+            "note": "Heads against the post."
+          },
+          {
+            "actor": "Dimitris Diamantakos",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "close-range rebound area",
+            "note": "Heads in the rebound."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-ftw-stpauli-hamburg"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final two contacts only; no side or precise distance is assigned to the preceding delivery."
+    },
+    {
+      "id": "goal-2024-01-27-marcel-hartel-26",
+      "value": {
+        "name": "Marcel Hartel v Fortuna Dusseldorf",
+        "subtitle": "2024-01-27 · 26'",
+        "on": "2024-01-27",
+        "competition": "2. Bundesliga",
+        "opponent": "Fortuna Dusseldorf",
+        "score": "1-2",
+        "narrative": "Manolis Saliakas: Crosses accurately towards Hartel. Marcel Hartel: Glances the ball into the net.",
+        "sequence": [
+          {
+            "actor": "Manolis Saliakas",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right-hand corner of the penalty area",
+            "note": "Crosses accurately towards Hartel."
+          },
+          {
+            "actor": "Marcel Hartel",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Glances the ball into the net."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-fcsp-dusseldorf"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "The earlier Afolayan pass is documented without an origin and is outside this final-two-touch reconstruction."
+    },
+    {
+      "id": "goal-2024-05-12-marcel-hartel-68",
+      "value": {
+        "name": "Marcel Hartel v VfL Osnabruck",
+        "subtitle": "2024-05-12 · 68'",
+        "on": "2024-05-12",
+        "competition": "2. Bundesliga",
+        "opponent": "VfL Osnabruck",
+        "score": "3-1",
+        "narrative": "Elias Saad: Moves the ball out to Afolayan. Oladapo Afolayan: Crosses for Hartel. Marcel Hartel: Heads in via the inside of the post.",
+        "sequence": [
+          {
+            "actor": "Elias Saad",
+            "side": "club",
+            "action": "pass",
+            "zone": "C3",
+            "position": "central attack",
+            "note": "Moves the ball out to Afolayan."
+          },
+          {
+            "actor": "Oladapo Afolayan",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right side",
+            "note": "Crosses for Hartel."
+          },
+          {
+            "actor": "Marcel Hartel",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area",
+            "note": "Heads in via the inside of the post."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-fcsp-osnabruck"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    }
+  ]
+}

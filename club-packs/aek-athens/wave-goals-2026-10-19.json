@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "clubId": "aek-athens",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "gr-sky-aek-brighton",
+      "url": "https://www.skysports.com/football/news/12964928/brighton-2-3-aek-athens-seagulls-narrowly-beaten-on-europa-league-debut-despite-joao-pedro-double",
+      "title": "Brighton 2-3 AEK Athens: match report",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "First-half goals and final counterattack"
+    },
+    {
+      "id": "gr-bhn-aek-brighton",
+      "url": "https://www.brightonandhovenews.org/2023/09/21/not-a-tragedy-but-albion-learn-europa-league-lesson/",
+      "title": "Not a tragedy, but Albion learn Europa League lesson",
+      "publisher": "Brighton and Hove News",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Left corner before minute 11 / long free kick before second goal"
+    },
+    {
+      "id": "gr-feed-aek-brighton",
+      "url": "https://www.sportinglife.com/football/live/174696/brighton-and-hove-albion-vs-aek-athens/commentary",
+      "title": "Brighton v AEK: event commentary",
+      "publisher": "Sporting Life",
+      "language": "en",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Goals at 11 and 40; Hajsafi assists"
+    },
+    {
+      "id": "gr-dinamo-aek",
+      "url": "https://gnkdinamo.hr/en/news/dinamo-silovito-krenuo-i-poveo-grci-ipak-preokrenuli-rezultat",
+      "title": "Dinamo - AEK 1:2, 15 August 2023",
+      "publisher": "GNK Dinamo Zagreb",
+      "language": "hr",
+      "checkedAt": "2026-10-19",
+      "access": "available",
+      "locator": "Paragraph beginning Grci su pobjedu dohvatili; scorers list"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2023-08-15-kostas-galanopoulos-90",
+      "value": {
+        "name": "Kostas Galanopoulos v Dinamo Zagreb",
+        "subtitle": "2023-08-15 · 90'",
+        "on": "2023-08-15",
+        "competition": "UEFA Champions League qualifying",
+        "opponent": "Dinamo Zagreb",
+        "score": "1-2",
+        "narrative": "Rodolfo Pizarro: Plays a short cutback. Kostas Galanopoulos: Strikes the winner.",
+        "sequence": [
+          {
+            "actor": "Rodolfo Pizarro",
+            "side": "club",
+            "action": "pass",
+            "zone": "D2",
+            "position": "right side of the penalty area",
+            "note": "Plays a short cutback."
+          },
+          {
+            "actor": "Kostas Galanopoulos",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "running onto the cutback in the penalty area",
+            "note": "Strikes the winner."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-dinamo-aek"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-09-21-djibril-sidibe-11",
+      "value": {
+        "name": "Djibril Sidibe v Brighton",
+        "subtitle": "2023-09-21 · 11'",
+        "on": "2023-09-21",
+        "competition": "UEFA Europa League",
+        "opponent": "Brighton",
+        "score": "2-3",
+        "narrative": "Ehsan Hajsafi: Sends in the corner. Djibril Sidibe: Powers a diving header into the net.",
+        "sequence": [
+          {
+            "actor": "Ehsan Hajsafi",
+            "side": "club",
+            "action": "cross",
+            "zone": "A1",
+            "position": "left corner",
+            "note": "Sends in the corner."
+          },
+          {
+            "actor": "Djibril Sidibe",
+            "side": "club",
+            "action": "header",
+            "zone": "C2",
+            "position": "edge of the area, about 15 yards out",
+            "note": "Powers a diving header into the net."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-bhn-aek-brighton",
+        "gr-sky-aek-brighton",
+        "gr-feed-aek-brighton"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": ""
+    },
+    {
+      "id": "goal-2023-09-21-ezequiel-ponce-84",
+      "value": {
+        "name": "Ezequiel Ponce v Brighton",
+        "subtitle": "2023-09-21 · 84'",
+        "on": "2023-09-21",
+        "competition": "UEFA Europa League",
+        "opponent": "Brighton",
+        "score": "2-3",
+        "narrative": "Ezequiel Ponce: His first effort is stopped. Jason Steele: Stops the first attempt. Ezequiel Ponce: The rebound supplies the winning finish.",
+        "sequence": [
+          {
+            "actor": "Ezequiel Ponce",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "centre of the penalty area",
+            "note": "His first effort is stopped."
+          },
+          {
+            "actor": "Jason Steele",
+            "side": "opponent",
+            "action": "save",
+            "zone": "C1",
+            "position": "goal mouth",
+            "note": "Stops the first attempt."
+          },
+          {
+            "actor": "Ezequiel Ponce",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "centre of the penalty area",
+            "note": "The rebound supplies the winning finish."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-feed-aek-brighton"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-19",
+      "approvedAt": "2026-10-19",
+      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "notes": "Final three recorded contacts only. Reports disagree on the earlier supplier; no assist or preceding pass is asserted here."
+    }
+  ]
+}
