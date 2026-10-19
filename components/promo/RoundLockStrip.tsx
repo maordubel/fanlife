@@ -1,5 +1,6 @@
 'use client'
 import {useEffect,useState} from 'react'
+import {goHref} from '@/lib/ecosystem/links'
 type C={id:string;label:string;closesAt:string;href:string}
 const pad=(n:number)=>String(n).padStart(2,'0')
 const fmt=(ms:number)=>{const s=Math.max(0,Math.floor(ms/1000)),h=Math.floor(s/3600),m=Math.floor(s%3600/60);return h>0?`${pad(h)}:${pad(m)}:${pad(s%60)}`:`${pad(m)}:${pad(s%60)}`}
@@ -17,7 +18,7 @@ export function RoundLockStrip(){
  const left=Date.parse(c.closesAt)-(now+off)
  if(left<=0)return null
  return <div role="timer" style={{position:'fixed',insetInline:12,bottom:'calc(var(--app-bottom, 0px) + 10px)',zIndex:40,display:'flex',alignItems:'center',gap:10,justifyContent:'center',padding:'8px 12px',background:'var(--mag-ink)',color:'var(--mag-paper)',font:'800 14px var(--mag-body, system-ui)',maxWidth:420,marginInline:'auto'}}>
-  <a href={c.href} target="_blank" rel="noopener" style={{color:'inherit',textDecoration:'none',display:'flex',gap:8,alignItems:'center'}}><span>DUBID · {c.label}</span><b style={{fontVariantNumeric:'tabular-nums',direction:'ltr'}}>{fmt(left)}</b></a>
+  <a href={goHref(c.href,'round-lock')??c.href} target="_blank" rel="noopener" style={{color:'inherit',textDecoration:'none',display:'flex',gap:8,alignItems:'center'}}><span>DUBID · {c.label}</span><b style={{fontVariantNumeric:'tabular-nums',direction:'ltr'}}>{fmt(left)}</b></a>
   <button type="button" className="min-h-tap" aria-label="Close" onClick={()=>{try{sessionStorage.setItem('fl.lock.'+c.id,'1')}catch{/* optional */}setC(null)}} style={{background:'none',border:0,color:'inherit',font:'inherit',cursor:'pointer',minWidth:44,minHeight:44}}>×</button>
  </div>
 }
