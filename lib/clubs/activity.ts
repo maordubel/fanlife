@@ -1,4 +1,5 @@
 import {finishVisit} from '@/lib/analytics/meter'
+import {touchStreak} from '@/lib/clubs/streak'
 /**
  * Evaluation-only device state. Server-resolved club IDs scope every storage key.
  * Every game with a finish is on the ticket (research 7.10.2026 §4.3): a round is counted once by its run id,
@@ -30,7 +31,7 @@ export function recordActivity(club:string,gate:RunGate|'xi',raw:string,score=0)
  // audience (audit A07, 8.10.2026): a finished round is a finish for the meter too — sent first, so a full or blocked
  // browser storage can never turn a completed game into an abandonment. The meter sends one finish per visit.
  try{finishVisit(`/clubs/${club}/${gate}`,Math.max(0,Math.floor(score)))}catch{/* measurement never breaks a game */}
- try{const p=readActivity(club);if(gate==='xi')p.xi=true;else if(!p.seen.includes(run)){p[gate].completed++;p[gate].best=Math.max(p[gate].best,Math.max(0,Math.floor(score)));p.recent=[run,...p.recent].slice(0,100);p.seen=[run,...p.seen].slice(0,SEEN_MAX)}localStorage.setItem(activityKey(club),JSON.stringify(p));return true}catch{return false}
+ try{const p=readActivity(club);if(gate==='xi')p.xi=true;else if(!p.seen.includes(run)){p[gate].completed++;p[gate].best=Math.max(p[gate].best,Math.max(0,Math.floor(score)));p.recent=[run,...p.recent].slice(0,100);p.seen=[run,...p.seen].slice(0,SEEN_MAX)}localStorage.setItem(activityKey(club),JSON.stringify(p));if(gate!=='xi')touchStreak(club);return true}catch{return false}
 }
 
 export const pollKey=(club:string)=>`fan-life:club:${club}:polls:v1`
