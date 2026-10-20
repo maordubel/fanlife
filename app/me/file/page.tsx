@@ -7,7 +7,7 @@ import { shirtDateText } from '@/lib/fanlife/collector/cards'
 import { meClubs } from '../data'
 
 export const dynamic = 'force-dynamic'
-export const metadata = { title: 'My file' }
+export const metadata = { title: 'My file', robots: { index: false, follow: false } }
 
 /** The Worker's "התיק שלי": what this supporter made and kept, from every club. */
 export default async function FilePage() {
