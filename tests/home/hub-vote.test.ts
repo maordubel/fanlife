@@ -36,4 +36,16 @@ describe('the vote lives inside the workshop tiles (owner, 8.10.2026)',()=>{
   expect(grid).toMatch(/className="mag-shop-vote min-h-tap"/)
   expect(grid).toContain('VOTE_KEY')
  })
+ it('counts through the real ballot (cast / mine / tally), keeps the labelled early count, and shows accounts and guests apart',()=>{
+  const sync=readFileSync('lib/home/vote-sync.ts','utf8')
+  for(const fn of ['worker_hub_vote_cast','worker_hub_vote_mine','worker_hub_vote_tally'])expect(sync).toContain(fn)
+  expect(grid).toContain('castVote')
+  expect(grid).toContain('vote-split')
+  expect(grid).toContain('copy.demo')
+  expect(grid).toContain('SEED_TOTAL')
+ })
+ it('never lets the device id travel anywhere but the hub-vote calls',()=>{
+  const sync=readFileSync('lib/home/vote-sync.ts','utf8')
+  expect(sync.match(/deviceId\(\)/g)?.length).toBe(2)
+ })
 })
