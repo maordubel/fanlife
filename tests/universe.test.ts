@@ -28,8 +28,8 @@ describe('universe offer policy',()=>{
   const p=PRODUCTS.find(x=>x.id==='dubid')!;const was=p.enabled;(p as {enabled:boolean}).enabled=false
   try{expect(offerFor(fx(24),now)).toBeNull()}finally{(p as {enabled:boolean}).enabled=was}
  })
- it('the switch is off by default and validates',()=>{
-  expect(DEFAULT_FEATURES.universe).toBe(false);expect(featuresOf(null).universe).toBe(false)
+ it('the switch is on by default (owner, 20.10.2026) and validates',()=>{
+  expect(DEFAULT_FEATURES.universe).toBe(true);expect(featuresOf(null).universe).toBe(true);expect(featuresOf({features:{universe:false}} as never).universe).toBe(false)
   expect(validateFeaturePatch({universe:true}).ok).toBe(true);expect(validateFeaturePatch({universe:'yes'}).ok).toBe(false)
  })
 })
