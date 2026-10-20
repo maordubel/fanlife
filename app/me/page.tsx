@@ -5,7 +5,7 @@ import { fl } from '@/lib/fanlife/copy'
 import { meClubs } from './data'
 
 export const dynamic = 'force-dynamic'
-export const metadata = { title: 'Me' }
+export const metadata = { title: 'Me', robots: { index: false, follow: false } }
 
 /** The supporter's card, the oath, the story and the standing — The Worker's /tik for every club. */
 export default async function MePage() {

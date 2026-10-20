@@ -2,7 +2,9 @@ import type { MetadataRoute } from 'next'
 
 import { SITE_URL } from '@/lib/brand'
 import { GATES, isOpen } from '@/lib/gates'
-import { REGISTRY } from '@/lib/master/registry'
+import { readState } from '@/lib/master/store'
+import { DEFAULT_CLUB, REGISTRY } from '@/lib/master/registry'
+import { indexableStatus } from '@/lib/seo/club'
 
 /**
  * מפת האתר — every public gate, derived from `lib/gates.ts` so it can never drift from
@@ -26,8 +28,12 @@ import { REGISTRY } from '@/lib/master/registry'
  * lives on (spec §0.3, 22.9.2026), and every screen that states a fact links to it.
  * `/away-days` is by hand: the journey is entered from the wall's strip, not a gate (24.9.2026).
  */
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
+  // ADR-U03 / master plan §SEO: only a PUBLISHED club is listed — a club in research is not a page to index.
+  const live = await readState()
+    .then((s) => new Set(s.clubs.filter((c) => indexableStatus(c.status)).map((c) => c.id)))
+    .catch(() => new Set<string>([DEFAULT_CLUB]))
 
   // A gate under refurbishment has no URL to list. Putting one in the sitemap would be
   // asking a search engine to index a page that does not exist.
@@ -47,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/credits`, lastModified: now },
     { url: `${SITE_URL}/away-days`, lastModified: now },
     // FAN LIFE (7.10.2026): every club's own page and the sources page
-    ...REGISTRY.map((club) => ({ url: `${SITE_URL}/clubs/${club.id}`, lastModified: now })),
+    ...REGISTRY.filter((club) => live.has(club.id)).map((club) => ({ url: `${SITE_URL}/clubs/${club.id}`, lastModified: now })),
     { url: `${SITE_URL}/sources`, lastModified: now },
   ]
 }

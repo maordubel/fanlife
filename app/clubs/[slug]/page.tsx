@@ -38,9 +38,10 @@ import {clubHref} from '@/lib/clubs/club-href'
 import {todaysPick} from '@/lib/clubs/play-groups'
 import {todayInIsrael} from '@/lib/date/israel'
 import {Suspense} from 'react'
+import {clubMetadata} from '@/lib/seo/club'
 import {LegendsBanner} from '@/components/legends/ClubBanner'
 export const dynamic='force-dynamic'
-export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?{title:`${c.name} — ${c.city}`,description:nicknameLine(worldFor(c))||undefined}:{}}
+export async function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);if(!c)return {};const st=await readState().then(s=>s.clubs.find(x=>x.id===c.id)?.status).catch(()=>undefined);return clubMetadata({id:c.id,name:c.name,city:c.city,description:nicknameLine(worldFor(c)),status:st})}
 
 /**
  * A club's home is THE WEEKLY's club issue (rule 124): the masthead panel with the kicker breaking the frame, today's pick
