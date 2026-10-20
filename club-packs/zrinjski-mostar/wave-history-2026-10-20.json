@@ -1,0 +1,80 @@
+{
+ "schemaVersion": 1,
+ "clubId": "zrinjski-mostar",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-92f308d82fcebb79",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/bosnia-herzegovina/2024-25_ba1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/bosnia-herzegovina/2024-25_ba1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "bosnia-herzegovina/2024-25_ba1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1c50b65b7e9dbf2f770c704afbc1d202a24049155b493c1b2bd26b5a04a9cd81",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-1cff3f724288cc13b462",
+   "value": {
+    "id": "research-20261020-1cff3f724288cc13b462",
+    "name": "Zrinjski Mostar 1-0 HŠK Posušje",
+    "on": "2024-09-03",
+    "home": "Zrinjski Mostar",
+    "away": "HŠK Posušje",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Bosnia and Herzegovina Premier Liga 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-92f308d82fcebb79"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-40f9a884a7cb9271710e",
+   "value": {
+    "id": "research-20261020-40f9a884a7cb9271710e",
+    "name": "NK GOŠK Gabela 3-2 Zrinjski Mostar",
+    "on": "2025-05-30",
+    "home": "NK GOŠK Gabela",
+    "away": "Zrinjski Mostar",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Bosnia and Herzegovina Premier Liga 2024/25",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-92f308d82fcebb79"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "clubId": "st-pauli",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "The family and the street have no names yet: roles keep their own word.",
+        "The supporter's birth year is the composer's default; the pack has not set one."
+      ],
+      "anchors": 1422,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "Cast names are review, not owner-approved."
+      ],
+      "anchors": 3080,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "panathinaikos",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "The family and the street have no names yet: roles keep their own word.",
+        "The supporter's birth year is the composer's default; the pack has not set one."
+      ],
+      "anchors": 445,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "Cast names are proposed, not owner-approved.",
+        "The supporter's birth year is the composer's default; the pack has not set one."
+      ],
+      "anchors": 3032,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "Cast names are review, not owner-approved."
+      ],
+      "anchors": 961,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "olympiacos",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "Cast names are proposed, not owner-approved.",
+        "The supporter's birth year is the composer's default; the pack has not set one."
+      ],
+      "anchors": 79,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "aek-athens",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "The family and the street have no names yet: roles keep their own word.",
+        "The supporter's birth year is the composer's default; the pack has not set one."
+      ],
+      "anchors": 835,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  },
+  {
+    "clubId": "celtic",
+    "lifeReadiness": {
+      "state": "PARTIAL",
+      "playable": true,
+      "reasons": [
+        "Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.",
+        "The crest is a monogram of the club's initials: no licensed crest artwork is in the pack.",
+        "No approved ground name in the pack: signs say \"the ground\".",
+        "The family and the street have no names yet: roles keep their own word.",
+        "The supporter's birth year is the composer's default; the pack has not set one."
+      ],
+      "anchors": 90,
+      "target": 8
+    },
+    "scope": "inherited compiled readiness, not historical completeness"
+  }
+]

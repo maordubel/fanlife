@@ -1,0 +1,23 @@
+[
+  {
+    "clubId": "olympiacos",
+    "on": "2024-05-29",
+    "sourceId": "oly-final-20240529",
+    "startersAsReported": [
+      "Konstantinos Tzolakis",
+      "Rodinei",
+      "Panagiotis Retsos",
+      "David Carmo",
+      "Francisco Ortega",
+      "Santiago Hezze",
+      "Vicente Iborra",
+      "Daniel Podence",
+      "Chiquinho",
+      "Kostas Fortounis",
+      "Ayoub El Kaabi"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "clubId": "st-pauli",
+    "on": "2024-11-02",
+    "sourceId": "stp-hoff-20241102",
+    "startersAsReported": [
+      "Nikola Vasilj",
+      "Hauke Wahl",
+      "Eric Smith",
+      "Karol Mets",
+      "Manolis Saliakas",
+      "Jackson Irvine",
+      "Carlo Boukhalfa",
+      "Philipp Treu",
+      "Oladapo Afolayan",
+      "Johannes Eggestein",
+      "Morgan Guilavogui"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  },
+  {
+    "clubId": "st-pauli",
+    "on": "2024-09-28",
+    "sourceId": "stp-freiburg-20240928",
+    "startersAsReported": [
+      "Nikola Vasilj",
+      "Hauke Wahl",
+      "Eric Smith",
+      "Karol Mets",
+      "Manolis Saliakas",
+      "Jackson Irvine",
+      "Carlo Boukhalfa",
+      "Philipp Treu",
+      "Oladapo Afolayan",
+      "Johannes Eggestein",
+      "Elias Saad"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  }
+]

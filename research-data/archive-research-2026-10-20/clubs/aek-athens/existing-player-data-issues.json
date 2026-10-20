@@ -1,0 +1,3864 @@
+[
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d3b0f55f9c0148",
+    "nameOriginal": "Στέλιος Σεραφείδης",
+    "nameEnglish": "Stelios Serafeidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-e281a7715795b8",
+    "nameOriginal": "Κίμων Δημητρίου",
+    "nameEnglish": "Kimon Dimitriou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-e78d01a611b1c6",
+    "nameOriginal": "Σωτήρης Φακής",
+    "nameEnglish": "Sotiris Fakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-520ae783931e7a",
+    "nameOriginal": "Θεόφιλος Βερνέζης",
+    "nameEnglish": "Theofilos Vernezis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-ae03fff3ebe4e4",
+    "nameOriginal": "Γιάννης Μαρδίτσης",
+    "nameEnglish": "Giannis Marditsis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-9aa2d96e213679",
+    "nameOriginal": "Μίλτος Παπαποστόλου",
+    "nameEnglish": "Miltos Papapostolou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c0690d0d7c616e",
+    "nameOriginal": "Δημήτρης Αναστασιάδης",
+    "nameEnglish": "Dimitris Anastasiadis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-19469ce22f4409",
+    "nameOriginal": "Θανάσης Τσαγγάρης",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dfaf0c9cd79a08",
+    "nameOriginal": "Δημήτρης Διακάκης",
+    "nameEnglish": "Dimitris Diakakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c8aa78b71d8a0b",
+    "nameOriginal": "Πέτρος Σταματελόπουλος",
+    "nameEnglish": "Petros Stamatelopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-da5e507a7336a3",
+    "nameOriginal": "Αλέκος Σοφιανίδης",
+    "nameEnglish": "Alekos Sofianidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-456ed4cc0cd893",
+    "nameOriginal": "Σταμάτης Σκαφίδας",
+    "nameEnglish": "Stamatis Skafidas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d3ea932ef36167",
+    "nameOriginal": "Θύμιος Πολύζος",
+    "nameEnglish": "Thymios Polyzos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-4f633c83f18aa2",
+    "nameOriginal": "Ανδρέας Σταματιάδης",
+    "nameEnglish": "Andreas Stamatiadis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-082d3e47f12180",
+    "nameOriginal": "Νίκος Μελισσής",
+    "nameEnglish": "Nikos Melissis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-f1552f26205e70",
+    "nameOriginal": "Κώστας Ζωγράφος",
+    "nameEnglish": "Kostas Zografos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-93e3b76f5b8627",
+    "nameOriginal": "Γιάννης Κανάκης",
+    "nameEnglish": "Giannis Kanakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0ae55740f6359a",
+    "nameOriginal": "Παυλάκης Εμμανουηλίδης",
+    "nameEnglish": "Paylakis Emmanouilidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-92725eeff0e0a3",
+    "nameOriginal": "Κώστας Νεστορίδης",
+    "nameEnglish": "Kostas Nestoridis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-99005eb5fc5f8c",
+    "nameOriginal": "Γιώργος Πετρίδης",
+    "nameEnglish": "Giorgos Petridis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-df4dfcfbc23c67",
+    "nameOriginal": "Χρήστος Άμπος",
+    "nameEnglish": "Christos Ampos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c3134bb1e5e4bc",
+    "nameOriginal": "Στέφανος Δεμίρης",
+    "nameEnglish": "Stefanos Demiris",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-20ad30c75b1a15",
+    "nameOriginal": "Αργύρης Αργυρόπουλος",
+    "nameEnglish": "Argyris Argyropoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-eb90966ac16928",
+    "nameOriginal": "Λουκάς Σισμάνης",
+    "nameEnglish": "Loukas Sismanis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-02d8ed543cdf47",
+    "nameOriginal": "Δημήτρης Τσανούλας",
+    "nameEnglish": "Dimitris Tsanoulas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_181d9fa581c0f6"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-f044bccdf18fac",
+    "nameOriginal": "Βασίλης Καραγιάννης",
+    "nameEnglish": "Vasilis Karagiannis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-037c393d13c254",
+    "nameOriginal": "Σπύρος Οικονομόπουλος",
+    "nameEnglish": "Spyros Oikonomopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-6285922c387c87",
+    "nameOriginal": "Στέλιος Μανωλάς",
+    "nameEnglish": "Stelios Manolas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-35e1f8714ea422",
+    "nameOriginal": "Βάιος Καραγιάννης",
+    "nameEnglish": "Vaios Karagiannis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0a0d4c544a53eb",
+    "nameOriginal": "Γιώργος Αγορογιάννης",
+    "nameEnglish": "Giorgos Agorogiannis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-2cc604f98efb6d",
+    "nameOriginal": "Μιχάλης Βλάχος",
+    "nameEnglish": "Michalis Vlachos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c1116b27b6e5bc",
+    "nameOriginal": "Χάρης Κοπιτσής",
+    "nameEnglish": "Charis Kopitsis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-a061bd7e6772d0",
+    "nameOriginal": "Γιώργος Κούτουλας",
+    "nameEnglish": "Giorgos Koutoulas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-8f5e15f569f820",
+    "nameOriginal": "Μανώλης Παπαδόπουλος",
+    "nameEnglish": "Manolis Papadopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-69afc4d1a46faa",
+    "nameOriginal": "Ανδρέας Θεοδωρόπουλος",
+    "nameEnglish": "Andreas Theodoropoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-79e3f46e19db81",
+    "nameOriginal": "Ρέφικ Σαμπανάτζοβιτς",
+    "nameEnglish": "Refik Sampanatzovits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-9236ddd9581ef2",
+    "nameOriginal": "Τόνι Σαβέφσκι",
+    "nameEnglish": "Toni Savefski",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-f2944ab1c8063b",
+    "nameOriginal": "Σταύρος Σταματής",
+    "nameEnglish": "Stayros Stamatis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-b8ef7114bb77b2",
+    "nameOriginal": "Βασίλης Μπορμπόκης",
+    "nameEnglish": "Vasilis Bormpokis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e",
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-72626835ce8872",
+    "nameOriginal": "Παντελής Κωνσταντινίδης",
+    "nameEnglish": "Pantelis Konstantinidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-866f496334d816",
+    "nameOriginal": "Αλέξης Αλεξανδρής",
+    "nameEnglish": "Alexis Alexandris",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-388f4af6d683d3",
+    "nameOriginal": "Ζόραν Σλίσκοβιτς",
+    "nameEnglish": "Zoran Sliskovits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-db29bc7f2f256e",
+    "nameOriginal": "Τάσος Μητρόπουλος",
+    "nameEnglish": "Tasos Mitropoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-9bd20d9c0aea04",
+    "nameOriginal": "Σαμουήλ Δρακόπουλος",
+    "nameEnglish": "Samouil Drakopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_457613ddd33b2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-6207f14f76f6ab",
+    "nameOriginal": "Διονύσης Χιώτης",
+    "nameEnglish": "Dionysis Chiotis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-79766af5488f88",
+    "nameOriginal": "Χρυσόστομος Μιχαηλίδης",
+    "nameEnglish": "Chrysostomos Michailidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c4f0d7eecddf7b",
+    "nameOriginal": "Σωτήρης Λυμπερόπουλος",
+    "nameEnglish": "Sotiris Lymperopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-4c6eaa2fc6c07c",
+    "nameOriginal": "Γιάννης Αραμπατζής",
+    "nameEnglish": "Giannis Arampatzis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-3e9c0287a00eba",
+    "nameOriginal": "Μιχάλης Καψής",
+    "nameEnglish": "Michalis Kapsis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-328df000222d1d",
+    "nameOriginal": "Νίκος Κωστένογλου",
+    "nameEnglish": "Nikos Kostenoglou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-22ffdd23ba1481",
+    "nameOriginal": "Νίκος Γεωργέας",
+    "nameEnglish": "Nikos Georgeas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-066af3d63e57d9",
+    "nameOriginal": "Μαουρίτσιο Ράιτ",
+    "nameEnglish": "Maouritsio Rait",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-712d5e93709c42",
+    "nameOriginal": "Μίχελ Κρέεκ",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-81378e1fb09328",
+    "nameOriginal": "Γρηγόρης Τόσκας",
+    "nameEnglish": "Grigoris Toskas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d131638bc85b41",
+    "nameOriginal": "Στέλιος Μαιστρέλλης",
+    "nameEnglish": "Stelios Maistrellis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-609926f7c64902",
+    "nameOriginal": "Στάθης Κάππος",
+    "nameEnglish": "Stathis Kappos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c924b0556c3291",
+    "nameOriginal": "Χρήστος Μαλαδένης",
+    "nameEnglish": "Christos Maladenis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-7e6494d6d7053d",
+    "nameOriginal": "Κώστας Κατσουράνης",
+    "nameEnglish": "Kostas Katsouranis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-6f3e98d4c67aa1",
+    "nameOriginal": "Θοδωρής Ζαγοράκης",
+    "nameEnglish": "Thodoris Zagorakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-326a3645794d6b",
+    "nameOriginal": "Γρηγόρης Γεωργάτος",
+    "nameEnglish": "Grigoris Georgatos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-35a1dea00be0b1",
+    "nameOriginal": "Βάλτερ Σεντένο",
+    "nameEnglish": "Valter Senteno",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-4aea2e1f0e0df2",
+    "nameOriginal": "Μίλεν Πετκόφ",
+    "nameEnglish": "Milen Petkof",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-7c1b76af826a96",
+    "nameOriginal": "Λίβιο Αρμάντο Πριέτο",
+    "nameEnglish": "Livio Armanto Prieto",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-8f4a6ea5512501",
+    "nameOriginal": "Δημήτρης Καραμέρης",
+    "nameEnglish": "Dimitris Karameris",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dc80d5930b02f3",
+    "nameOriginal": "Γιώργος Πάσιος",
+    "nameEnglish": "Giorgos Pasios",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-733e5801f50dd6",
+    "nameOriginal": "Ιβάν Ρούσεφ",
+    "nameEnglish": "Ivan Rousef",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-ab58eda637ae97",
+    "nameOriginal": "Νίκος Πορτουλίδης",
+    "nameEnglish": "Nikos Portoulidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-03ba3daf9b4cf5",
+    "nameOriginal": "Ίλια Ίβιτς",
+    "nameEnglish": "Ilia Ivits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-fe73eec13513c8",
+    "nameOriginal": "Σωτήρης Κωνσταντινίδης",
+    "nameEnglish": "Sotiris Konstantinidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-68d4dc2caff1b2",
+    "nameOriginal": "Δημήτρης Ναλιτζής",
+    "nameEnglish": "Dimitris Nalitzis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d4aac15d581bfc",
+    "nameOriginal": "Χρήστος Κωστής",
+    "nameEnglish": "Christos Kostis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-cc2d3c950d277a",
+    "nameOriginal": "Ηλίας Σολάκης",
+    "nameEnglish": "Ilias Solakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_9bad760a0c7cbd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0d8899e481f7b2",
+    "nameOriginal": "Βασίλης Μπάρκας",
+    "nameEnglish": "Vasilis Barkas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-4d73fca8968f12",
+    "nameOriginal": "Γιάννης Ανέστης",
+    "nameEnglish": "Giannis Anestis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-651388d3f99177",
+    "nameOriginal": "Παναγιώτης Τσιντώτας",
+    "nameEnglish": "Panagiotis Tsintotas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-972db783739b84",
+    "nameOriginal": "Παναγιώτης Ντούνης",
+    "nameEnglish": "Panagiotis Dounis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-250ed40ff1c2e9",
+    "nameOriginal": "Μιχάλης Μπακάκης",
+    "nameEnglish": "Michalis Bakakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-e0f25a0f38192e",
+    "nameOriginal": "Ντμίτρο Τσιγκρίνσκι",
+    "nameEnglish": "Dmitro Tsingrinski",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-555a01df5c74fb",
+    "nameOriginal": "Ούρος Τσόσιτς",
+    "nameEnglish": "Ouros Tsosits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-a317bfefdc1482",
+    "nameOriginal": "Χέλντερ Λόπες",
+    "nameEnglish": "Chelnter Lopes",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0addd5d8a7159c",
+    "nameOriginal": "Βασίλης Λαμπρόπουλος",
+    "nameEnglish": "Vasilis Lampropoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-1d64fac53f1c20",
+    "nameOriginal": "Νίκλας Χούλτ",
+    "nameEnglish": "Niklas Choult",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-422d48562bf21a",
+    "nameOriginal": "Γιώργος Γιαννούτσος",
+    "nameEnglish": "Giorgos Giannoutsos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-3ebb3f85a6fed4",
+    "nameOriginal": "Ροντρίγκο Γκάλο",
+    "nameEnglish": "Rontringo Galo",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-416dbe4e6403c6",
+    "nameOriginal": "Άνταμ Τζανετόπουλος",
+    "nameEnglish": "Antam Tzanetopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-30cff21351a085",
+    "nameOriginal": "Όγκνεν Βράνιες",
+    "nameEnglish": "Ongnen Vranies",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-18b55e169c9e1c",
+    "nameOriginal": "Αντρές Σιμόες",
+    "nameEnglish": "Antres Simoes",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-2026bb4b67ae3f",
+    "nameOriginal": "Αστρίτ Αϊντάρεβιτς",
+    "nameEnglish": "Astrit Aintarevits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-066df1052defe1",
+    "nameOriginal": "Πέτρος Μάνταλος",
+    "nameEnglish": "Petros Mantalos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77",
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0c810d9c63a848",
+    "nameOriginal": "Πάρης Μπάμπης",
+    "nameEnglish": "Paris Bampis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-f733cc15b910cf",
+    "nameOriginal": "Έρικ Μοράν",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-54161685fa6774",
+    "nameOriginal": "Κώστας Γαλανόπουλος",
+    "nameEnglish": "Kostas Galanopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77",
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0801315f88e4e1",
+    "nameOriginal": "Γιάκομπ Γιόχανσον",
+    "nameEnglish": "Giakomp Giochanson",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dd924b41357ae0",
+    "nameOriginal": "Παναγιώτης Κονέ",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d463e7d719b10c",
+    "nameOriginal": "Σοτζέϊ Μασούντ",
+    "nameEnglish": "Sotzei Masount",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-c3bbe2b5c1f856",
+    "nameOriginal": "Τάσος Μπακασέτας",
+    "nameEnglish": "Tasos Bakasetas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-4868c92acb4d1b",
+    "nameOriginal": "Αντώνης Κυριαζής",
+    "nameEnglish": "Antonis Kyriazis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-0203cafd2c741e",
+    "nameOriginal": "Βίκτωρ Ντόριαν Κλωναρίδης",
+    "nameEnglish": "Viktor Dorian Klonaridis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-b811ad7dba3e33",
+    "nameOriginal": "Σέρχιο Αραούχο",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_bf1122561d7b77",
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-b4ca429486e8ca",
+    "nameOriginal": "Γιώργος Γιακουμάκης",
+    "nameEnglish": "Giorgos Giakoumakis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-8a6879e8d65354",
+    "nameOriginal": "Χρήστος Γιούσης",
+    "nameEnglish": "Christos Giousis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-643934e200ce46",
+    "nameOriginal": "Πατίτο Ροντρίγκεζ",
+    "nameEnglish": "Patito Rontringez",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-92340fad365ce3",
+    "nameOriginal": "Μάρκο Λιβάγια",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_bf1122561d7b77",
+      "src_ac69e38fc2e51a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-b34d009e058aa2",
+    "nameOriginal": "Λάζαρος Χριστοδουλόπουλος",
+    "nameEnglish": "Lazaros Christodoulopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dc3725a24202b1",
+    "nameOriginal": "Δημήτρης Μελικιώτης",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-723fd08dca00e1",
+    "nameOriginal": "Χρήστος Αντωνίου",
+    "nameEnglish": "Christos Antoniou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_bf1122561d7b77"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-703acda59a001d",
+    "nameOriginal": "Τσίτσαν Στάνκοβιτς",
+    "nameEnglish": "Tsitsan Stankovits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-5f6e1caf2be5e5",
+    "nameOriginal": "Γιώργος Αθανασιάδης",
+    "nameEnglish": "Giorgos Athanasiadis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-b4f4f8a468d250",
+    "nameOriginal": "Βασίλης Χατζηεμμανουήλ",
+    "nameEnglish": "Vasilis Chatziemmanouil",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-47d33ca7d5e9bf",
+    "nameOriginal": "Γιώργος Θεοχάρης",
+    "nameEnglish": "Giorgos Theocharis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-cd14dc79303005",
+    "nameOriginal": "Αρόλντ Μουκουντί",
+    "nameEnglish": "Arolnt Moukounti",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-70cd3dce5e265d",
+    "nameOriginal": "Ντομαγκόι Βίντα",
+    "nameEnglish": "Domangoi Vinta",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-a4eaf6896b19b8",
+    "nameOriginal": "Τζιμπρίλ Σιντιμπέ",
+    "nameEnglish": "Tzimpril Sintimpe",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-79f2f2a4cce96a",
+    "nameOriginal": "Βεντάτ Ραντόνια",
+    "nameEnglish": "Ventat Rantonia",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-29db91610c99d7",
+    "nameOriginal": "Γιώργος Τζαβέλλας",
+    "nameEnglish": "Giorgos Tzavellas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-f1cfd0ca8af0e2",
+    "nameOriginal": "Γεράσιμος Μήτογλου",
+    "nameEnglish": "Gerasimos Mitoglou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-35701552e3f5e7",
+    "nameOriginal": "Λάζαρος Ρότα",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-daec97941bec3a",
+    "nameOriginal": "Μίλαντ Μοχαμάντι",
+    "nameEnglish": "Milant Mochamanti",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-45f7282796f00a",
+    "nameOriginal": "Εχσάν Χατζισαφί",
+    "nameEnglish": "Echsan Chatzisafi",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-f9929cb3941577",
+    "nameOriginal": "Ζίγκα Λάτσι",
+    "nameEnglish": "Zinga Latsi",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-91dd66bdbc6e29",
+    "nameOriginal": "Ορμπελίν Πινέδα",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dcd6d75c4fa94a",
+    "nameOriginal": "Γιενς Γιόνσον",
+    "nameEnglish": "Giens Gionson",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-2c9d8507ef66ac",
+    "nameOriginal": "Νταμιάν Σιμάνσκι",
+    "nameEnglish": "Damian Simanski",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d96f67bd0b13ea",
+    "nameOriginal": "Μιγιάτ Γκατσίνοβιτς",
+    "nameEnglish": "Migiat Gatsinovits",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-ca40acff88ac83",
+    "nameOriginal": "Νίκλας Ελίασον",
+    "nameEnglish": "Niklas Eliason",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-8174723762038d",
+    "nameOriginal": "Γιώργος Μουστακόπουλος",
+    "nameEnglish": "Giorgos Moustakopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-fa325547dc0bf6",
+    "nameOriginal": "Πάολο Φερνάντεζ",
+    "nameEnglish": "Paolo Fernantez",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d3d3c29d61ef6c",
+    "nameOriginal": "Αλεξάντερ Φράνσον",
+    "nameEnglish": "Alexanter Franson",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-15823d2d7ab50a",
+    "nameOriginal": "Χρήστος Αλμπάνης",
+    "nameEnglish": "Christos Almpanis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-98114ba26cc840",
+    "nameOriginal": "Λιβάι Γκαρσία",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-6cecb549fe58a9",
+    "nameOriginal": "Τομ Φαν Βερτ",
+    "nameEnglish": "Tom Fan Vert",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-abd0c76b0ba901",
+    "nameOriginal": "Μιχάλης Κοσίδης",
+    "nameEnglish": "Michalis Kosidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-32c4d778e0dbb7",
+    "nameOriginal": "Στίβεν Τσούμπερ",
+    "nameEnglish": "Stiven Tsoumper",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-d28d0a1cb66f3b",
+    "nameOriginal": "Νορντίν Άμραμπατ",
+    "nameEnglish": "Norntin Amrampat",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-aa35804a979991",
+    "nameOriginal": "Θεοδόσης Μαχαίρας",
+    "nameEnglish": "Theodosis Machairas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-a547073cd48ca4",
+    "nameOriginal": "Ζίνι",
+    "nameEnglish": "Zini",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_c41c270dfb9198"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-bc8a5032677b79",
+    "nameOriginal": "Μίμης Παπαϊωάννου",
+    "nameEnglish": "Mimis Papaioannou",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "src_67806347950352"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-2983bfa4c633",
+    "nameOriginal": "Θωμάς Strakosha",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-e73672226d74"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-50478233ceaf",
+    "nameOriginal": "Σπύρος Χριστακόπουλος",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-23ac6700fba9"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-15ce70043d88",
+    "nameOriginal": "Χρήστος Αλεξίου",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-a5bd6742f7cc"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-c44bba74a09f",
+    "nameOriginal": "Μάριος Μπαλαμώτης",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-4bbf802758cd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-b65d5f644e9f",
+    "nameOriginal": "Ζώης Καραργύρης",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-b803d9418054"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-02dcd7fead1a",
+    "nameOriginal": "Αργύρης Αργυρίου",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-31f3478a3359"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-2ef7eb5596c0",
+    "nameOriginal": "Κούτουλας",
+    "nameEnglish": "Koutoulas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-23bc5fd8f766"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-821a46733f8e",
+    "nameOriginal": "Λιάγκος",
+    "nameEnglish": "Liangos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-3f2c50c5b34e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-fca415c50345",
+    "nameOriginal": "Φιλιππίδης",
+    "nameEnglish": "Filippidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-4f9b8ccc8f2c"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-b7545a659aba",
+    "nameOriginal": "Κυπιώτης",
+    "nameEnglish": "Kypiotis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-1668d761691c"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-41ebf66e0075",
+    "nameOriginal": "Τάσος Σαλονίδης",
+    "nameEnglish": "Tasos Salonidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-245eb388bafd"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-f9b514cf9fd1",
+    "nameOriginal": "Γιάννης Ιατρούδης",
+    "nameEnglish": "Giannis Iatroudis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-7b4da40bca50"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-c305d8dd0079",
+    "nameOriginal": "Παπαϊωάννου",
+    "nameEnglish": "Papaioannou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-ef227fe4e642"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-2817b264a1f5",
+    "nameOriginal": "Γιώργος Μπαστάνης",
+    "nameEnglish": "Giorgos Bastanis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-3b0e68799b73"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-b2d186684d28",
+    "nameOriginal": "Σιαμαντάς",
+    "nameEnglish": "Siamantas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-5762d749c125"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-a340c73d9742",
+    "nameOriginal": "Πρίντεζης",
+    "nameEnglish": "Printezis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-3c97e1677289"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-070aa4220c5c",
+    "nameOriginal": "Φυτόπουλος",
+    "nameEnglish": "Fytopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-31ca25c8bcd0"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:p-dh-b67f8b49c4da",
+    "nameOriginal": "Βασίλης Κοντονίκος",
+    "nameEnglish": "Vasilis Kontonikos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "dh-a1bade112604"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-59429f6e1d",
+    "nameOriginal": "Alexandros Tzamalis",
+    "nameEnglish": "Alexandros Tzamalis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-b2edc09a26",
+    "nameOriginal": "Anastasios Loupas",
+    "nameEnglish": "Anastasios Loupas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-6d833f2ebc",
+    "nameOriginal": "Argyris Argyriou",
+    "nameEnglish": "Argyris Argyriou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-e481284d3f",
+    "nameOriginal": "Charalampos Lykogiannis",
+    "nameEnglish": "Charalampos Lykogiannis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-9660ec2ac2",
+    "nameOriginal": "Christos Alexiou",
+    "nameEnglish": "Christos Alexiou",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-5c1e198a84",
+    "nameOriginal": "Dimitrios Kaloskamis",
+    "nameEnglish": "Dimitrios Kaloskamis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-4b3eb219f7",
+    "nameOriginal": "Georgios Sarakasidis",
+    "nameEnglish": "Georgios Sarakasidis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-ff58d42970",
+    "nameOriginal": "Hakim Sahabo",
+    "nameEnglish": "Hakim Sahabo",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-d758ad501c",
+    "nameOriginal": "Isaac Ayuba",
+    "nameEnglish": "Isaac Ayuba",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-9799f3a636",
+    "nameOriginal": "Marios Balamotis",
+    "nameEnglish": "Marios Balamotis",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-00ff7a75ec",
+    "nameOriginal": "Nikolaos Vlioras",
+    "nameEnglish": "Nikolaos Vlioras",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-89ebfec264",
+    "nameOriginal": "Spyros Christakopoulos",
+    "nameEnglish": "Spyros Christakopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-1bd5fc2a05",
+    "nameOriginal": "Stavros Pilios",
+    "nameEnglish": "Stavros Pilios",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-d6b36d690c",
+    "nameOriginal": "Stavros Psyropoulos",
+    "nameEnglish": "Stavros Psyropoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-28438deae4",
+    "nameOriginal": "Thomas Strakosha",
+    "nameEnglish": "Thomas Strakosha",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-5e175d6530",
+    "nameOriginal": "Zois Karargyris",
+    "nameEnglish": "Zois Karargyris",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-1d93abd073",
+    "nameOriginal": "Αλεξάντερ Φράνσון",
+    "nameEnglish": "Alexanter Frans",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-689b2a0e44",
+    "nameOriginal": "Νורדίν Άμραμπατ",
+    "nameEnglish": "Nin Amrampat",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-3431b5d81b",
+    "nameOriginal": "Sergio Abdurahmani",
+    "nameEnglish": "Sergio Abdurahmani",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-347853cf23",
+    "nameOriginal": "Joseph Agyriba",
+    "nameEnglish": "Joseph Agyriba",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-089dbb5210",
+    "nameOriginal": "Charalampos Akrivopoulos",
+    "nameEnglish": "Charalampos Akrivopoulos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-3cbad143f9",
+    "nameOriginal": "Alef",
+    "nameEnglish": "Alef",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-c5dad27743",
+    "nameOriginal": "Alexandre",
+    "nameEnglish": "Alexandre",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-c1afe52413",
+    "nameOriginal": "Christos Albanis",
+    "nameEnglish": "Christos Albanis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-98f06e037e",
+    "nameOriginal": "Mimis Anastasiadis",
+    "nameEnglish": "Mimis Anastasiadis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-b3902d8d01",
+    "nameOriginal": "Giannis Arabatzis",
+    "nameEnglish": "Giannis Arabatzis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-b0130df59a",
+    "nameOriginal": "Youlielmos Arvanitis",
+    "nameEnglish": "Youlielmos Arvanitis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-2c34e250fc",
+    "nameOriginal": "Paris Babis",
+    "nameEnglish": "Paris Babis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-0346530c74",
+    "nameOriginal": "Anastasios Bakasetas",
+    "nameEnglish": "Anastasios Bakasetas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-befb284b42",
+    "nameOriginal": "Nikos Barboudis",
+    "nameEnglish": "Nikos Barboudis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-5a31b712f8",
+    "nameOriginal": "Davide Belotti",
+    "nameEnglish": "Davide Belotti",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-82caf748d3",
+    "nameOriginal": "Vasilios Borbokis",
+    "nameEnglish": "Vasilios Borbokis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-7fcbeb9962",
+    "nameOriginal": "Cala",
+    "nameEnglish": "Cala",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-7a20fe5ac9",
+    "nameOriginal": "Pablo Cantero",
+    "nameEnglish": "Pablo Cantero",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-57dc24c880",
+    "nameOriginal": "Alekos Chatzistavridis",
+    "nameEnglish": "Alekos Chatzistavridis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-21cb877e48",
+    "nameOriginal": "Apostolos Christopoulos",
+    "nameEnglish": "Apostolos Christopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-4158341801",
+    "nameOriginal": "Efthymis Christopoulos",
+    "nameEnglish": "Efthymis Christopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-c4f352ce29",
+    "nameOriginal": "Andreas Chronis",
+    "nameEnglish": "Andreas Chronis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-c66c611dbd",
+    "nameOriginal": "Ajdi Dajko",
+    "nameEnglish": "Ajdi Dajko",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-34bb786bca",
+    "nameOriginal": "Dino Drpić",
+    "nameEnglish": "Dino Drpić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-1cc074f119",
+    "nameOriginal": "Christopher Duberet",
+    "nameEnglish": "Christopher Duberet",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-9a369d6516",
+    "nameOriginal": "Edinho",
+    "nameEnglish": "Edinho",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-6bb1b4164f",
+    "nameOriginal": "Kostas Eleftherakis",
+    "nameEnglish": "Kostas Eleftherakis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-04420308ac",
+    "nameOriginal": "Emerson",
+    "nameEnglish": "Emerson",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-db9da15bc0",
+    "nameOriginal": "Xenofon Fetsis",
+    "nameEnglish": "Xenofon Fetsis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-54cefef4e4",
+    "nameOriginal": "Dimitris Froxylias",
+    "nameEnglish": "Dimitris Froxylias",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-8f0b6668b9",
+    "nameOriginal": "Giannis Fysekis",
+    "nameEnglish": "Giannis Fysekis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-b51f68cc64",
+    "nameOriginal": "Iraklis Garoufalias",
+    "nameEnglish": "Iraklis Garoufalias",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-8295d9c77d",
+    "nameOriginal": "Francisco Geraldes",
+    "nameEnglish": "Francisco Geraldes",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-96c36cf147",
+    "nameOriginal": "Makis Giannikoglou",
+    "nameEnglish": "Makis Giannikoglou",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-08e9132434",
+    "nameOriginal": "Alexis Golfinos",
+    "nameEnglish": "Alexis Golfinos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-33d483f796",
+    "nameOriginal": "Eiður Guðjohnsen",
+    "nameEnglish": "Eiður Guðjohnsen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-7841abedf4",
+    "nameOriginal": "Juanfran",
+    "nameEnglish": "Juanfran",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-d345a3e152",
+    "nameOriginal": "Nikolaos Karabelas",
+    "nameEnglish": "Nikolaos Karabelas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-e53c5f3f59",
+    "nameOriginal": "Fotis Karagiolidis",
+    "nameEnglish": "Fotis Karagiolidis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-1b68afe637",
+    "nameOriginal": "Takis Karagiozopoulos",
+    "nameEnglish": "Takis Karagiozopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-29aebcdaf7",
+    "nameOriginal": "Evripidis Katsavos",
+    "nameEnglish": "Evripidis Katsavos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-68fc243dee",
+    "nameOriginal": "Roberto Katsikas",
+    "nameEnglish": "Roberto Katsikas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-6c00e04930",
+    "nameOriginal": "Fotis Kezos",
+    "nameEnglish": "Fotis Kezos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-d5855270fa",
+    "nameOriginal": "Bledar Kola",
+    "nameEnglish": "Bledar Kola",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-61b0b1c13a",
+    "nameOriginal": "Angelos Komvolidis",
+    "nameEnglish": "Angelos Komvolidis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-285c91ca95",
+    "nameOriginal": "Anastasios Kritikos",
+    "nameEnglish": "Anastasios Kritikos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-32bb749c4e",
+    "nameOriginal": "Lefter Küçükandonyadis",
+    "nameEnglish": "Lefter Küçükandonyadis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-c6e54e3bee",
+    "nameOriginal": "Leonardo",
+    "nameEnglish": "Leonardo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-325adcd46b",
+    "nameOriginal": "Nikos Liberopoulos",
+    "nameEnglish": "Nikos Liberopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-28641879ac",
+    "nameOriginal": "Sotiris Liberopoulos",
+    "nameEnglish": "Sotiris Liberopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-f48b656205",
+    "nameOriginal": "Aristidis Louvaris",
+    "nameEnglish": "Aristidis Louvaris",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-505a56f4de",
+    "nameOriginal": "Milan Lukač",
+    "nameEnglish": "Milan Lukač",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-c0e3e63e9e",
+    "nameOriginal": "Ilias Makryonitis",
+    "nameEnglish": "Ilias Makryonitis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-ed27c5126a",
+    "nameOriginal": "Flosard Malçi",
+    "nameEnglish": "Flosard Malçi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-e5f48fcdd7",
+    "nameOriginal": "Theodoros Maniateas",
+    "nameEnglish": "Theodoros Maniateas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-af6f0b6e3b",
+    "nameOriginal": "Manú",
+    "nameEnglish": "Manú",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-09208fac7f",
+    "nameOriginal": "Maricá",
+    "nameEnglish": "Maricá",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-1538da3a2a",
+    "nameOriginal": "Spyros Matentzidis",
+    "nameEnglish": "Spyros Matentzidis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-4b2eae67dd",
+    "nameOriginal": "Sotiris Mavrodimos",
+    "nameEnglish": "Sotiris Mavrodimos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-69740a74a0",
+    "nameOriginal": "Míchel",
+    "nameEnglish": "Míchel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-761f490d6c",
+    "nameOriginal": "Konstantinos Nikolopoulos",
+    "nameEnglish": "Konstantinos Nikolopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-54ceb64c64",
+    "nameOriginal": "Antonis Parayios",
+    "nameEnglish": "Antonis Parayios",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-26ece03102",
+    "nameOriginal": "Jim Patikas",
+    "nameEnglish": "Jim Patikas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-a067e14e3c",
+    "nameOriginal": "Paulinho",
+    "nameEnglish": "Paulinho",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-d215003377",
+    "nameOriginal": "Michalis Pavlis",
+    "nameEnglish": "Michalis Pavlis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-a8d14557e6",
+    "nameOriginal": "Konstantinos Pavlopoulos",
+    "nameEnglish": "Konstantinos Pavlopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-97ec8d0028",
+    "nameOriginal": "Stavros Petavrakis",
+    "nameEnglish": "Stavros Petavrakis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-a4fac5df32",
+    "nameOriginal": "Dimitris Pittas",
+    "nameEnglish": "Dimitris Pittas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-4d4b5d7e8c",
+    "nameOriginal": "Rodolfo Pizarro",
+    "nameEnglish": "Rodolfo Pizarro",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-27e84d7448",
+    "nameOriginal": "Edson Ratinho",
+    "nameEnglish": "Edson Ratinho",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-142f843af4",
+    "nameOriginal": "Christos Ribas",
+    "nameEnglish": "Christos Ribas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-1a3b26835a",
+    "nameOriginal": "Rodrigo",
+    "nameEnglish": "Rodrigo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-58096d5acd",
+    "nameOriginal": "Ignacio Scocco",
+    "nameEnglish": "Ignacio Scocco",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-6be35d01b7",
+    "nameOriginal": "Mimis Seltsikas",
+    "nameEnglish": "Mimis Seltsikas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-b28bfc6369",
+    "nameOriginal": "Stelios Skevofilakas",
+    "nameEnglish": "Stelios Skevofilakas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-9c57b549fb",
+    "nameOriginal": "Spyros Skondras",
+    "nameEnglish": "Spyros Skondras",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-5443d2a27d",
+    "nameOriginal": "Minas Stavridis",
+    "nameEnglish": "Minas Stavridis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-54bc66b2e2",
+    "nameOriginal": "Giannis Stavrou",
+    "nameEnglish": "Giannis Stavrou",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-b7a3089615",
+    "nameOriginal": "Fanis Tasinos",
+    "nameEnglish": "Fanis Tasinos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-5a3283afe1",
+    "nameOriginal": "Victoras Theofilopoulos",
+    "nameEnglish": "Victoras Theofilopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-7f7ad9757b",
+    "nameOriginal": "Anastasios Tsoumagas",
+    "nameEnglish": "Anastasios Tsoumagas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-4046b38621",
+    "nameOriginal": "Konstantinos Vlachos",
+    "nameEnglish": "Konstantinos Vlachos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-57dde11502",
+    "nameOriginal": "Dimitris Volonakis",
+    "nameEnglish": "Dimitris Volonakis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-e3d4cf6bc8",
+    "nameOriginal": "Nikos Zagotsis",
+    "nameEnglish": "Nikos Zagotsis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-73124e3cd4",
+    "nameOriginal": "Dimitris Zagylos",
+    "nameEnglish": "Dimitris Zagylos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-fd3eb76029",
+    "nameOriginal": "Sakis Zarzopoulos",
+    "nameEnglish": "Sakis Zarzopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-abcd6a86e0",
+    "nameOriginal": "Zini",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-8c4352851e",
+    "nameOriginal": "Panagiotis Zorbas",
+    "nameEnglish": "Panagiotis Zorbas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-98de5bc018",
+    "nameOriginal": "Paraschos Zouboulis",
+    "nameEnglish": "Paraschos Zouboulis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "aek-athens",
+    "canonicalPlayerId": "aek-athens:wv-3f9b0d6b85",
+    "nameOriginal": "Bruno Zuculini",
+    "nameEnglish": "Bruno Zuculini",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-aek-athens"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  }
+]

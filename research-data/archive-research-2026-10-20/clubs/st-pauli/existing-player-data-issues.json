@@ -1,0 +1,4468 @@
+[
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-ed1042de6022ca",
+    "nameOriginal": "Oladapo Afolayan",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a",
+      "src_7f0d1422a2c839"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-3f82457c62e546",
+    "nameOriginal": "Sören Ahlers",
+    "nameEnglish": "Sören Ahlers",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-76ae62abf668f9",
+    "nameOriginal": "Andreas Albers",
+    "nameEnglish": "Andreas Albers",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a",
+      "src_17d993fe6d1d2e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-43903a30f67409",
+    "nameOriginal": "Sami Allagui",
+    "nameEnglish": "Sami Allagui",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-f641a065cc0865",
+    "nameOriginal": "Etienne Amenyido",
+    "nameEnglish": "Etienne Amenyido",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-eeb4c1f68f0556",
+    "nameOriginal": "Afeez Aremu",
+    "nameEnglish": "Afeez Aremu",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-268bb4fdec12aa",
+    "nameOriginal": "Christopher Avevor",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-0bf161cdab3829",
+    "nameOriginal": "Scott Banks",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-e4f731beb883c8",
+    "nameOriginal": "Fin Bartels",
+    "nameEnglish": "Fin Bartels",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-7080ec52dcea06",
+    "nameOriginal": "Finn Ole Becker",
+    "nameEnglish": "Finn Ole Becker",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-7f47e7de7d8c73",
+    "nameOriginal": "Fabian Boll",
+    "nameEnglish": "Fabian Boll",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-3e24d9d639d2f7",
+    "nameOriginal": "Daniel Buballa",
+    "nameEnglish": "Daniel Buballa",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-e56d7f7323696d",
+    "nameOriginal": "Christopher Buchtmann",
+    "nameEnglish": "Christopher Buchtmann",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-e695b1e16dd0ca",
+    "nameOriginal": "Sascha Burchert",
+    "nameEnglish": "Sascha Burchert",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-644de8b27db6f3",
+    "nameOriginal": "Guido Burgstaller",
+    "nameEnglish": "Guido Burgstaller",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-f158c822565fed",
+    "nameOriginal": "Jackson Irvine",
+    "nameEnglish": "Jackson Irvine",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-22fd0b5b8428d2",
+    "nameOriginal": "Daniel-Kofi Kyereh",
+    "nameEnglish": "Daniel-Kofi Kyereh",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a",
+      "src_08a09fd6171a27"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-f49afe97691e26",
+    "nameOriginal": "Karol Mets",
+    "nameEnglish": "Karol Mets",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-61cce1815f9c76",
+    "nameOriginal": "Leart Paqarada",
+    "nameEnglish": "Leart Paqarada",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-3eae01c86d6d31",
+    "nameOriginal": "Manolis Saliakas",
+    "nameEnglish": "Manolis Saliakas",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a",
+      "src_df7926bf95d582"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-386020d119ac0f",
+    "nameOriginal": "Eric Smith",
+    "nameEnglish": "Eric Smith",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-002fabbfd6ecd9",
+    "nameOriginal": "Ben Voll",
+    "nameEnglish": "Ben Voll",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-1c73bd69f0c0d5",
+    "nameOriginal": "Hauke Wahl",
+    "nameEnglish": "Hauke Wahl",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_3a766d9a81cc9a",
+      "src_6040cee02358f3"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-fa0b9ca2de9ef6",
+    "nameOriginal": "Marcel Hartel",
+    "nameEnglish": "Marcel Hartel",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "src_b4a7dde3f41e3b"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-dh-f6b33639e3df",
+    "nameOriginal": "Holger Hieronymus",
+    "nameEnglish": "Holger Hieronymus",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "dh-bd11bd30d90e"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-dh-97f76db1c31b",
+    "nameOriginal": "Morten Berre",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-5da7ec1d1845"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-dh-334c51e182f8",
+    "nameOriginal": "Joe Gyau",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-725c5c35a4c7"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-dh-974b31a311d3",
+    "nameOriginal": "Luis Coordes",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-ccf61381a82a"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:p-dh-6afd3af0f406",
+    "nameOriginal": "Erik Ahlstrand",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "dh-ea1f97296252"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a9159dea4d",
+    "nameOriginal": "Aljoscha Kemlein",
+    "nameEnglish": "Aljoscha Kemlein",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f7ae3c033b",
+    "nameOriginal": "August Seyda",
+    "nameEnglish": "August Seyda",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4979f131fa",
+    "nameOriginal": "Benjamin Adrion",
+    "nameEnglish": "Benjamin Adrion",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-45032d3b4b",
+    "nameOriginal": "Bentley Bahn",
+    "nameEnglish": "Bentley Bahn",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-1dd607d985",
+    "nameOriginal": "Carlo Boukhalfa",
+    "nameEnglish": "Carlo Boukhalfa",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c7a832d5a1",
+    "nameOriginal": "David Nemeth",
+    "nameEnglish": "David Nemeth",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4a465604b5",
+    "nameOriginal": "Dennis Daube",
+    "nameEnglish": "Dennis Daube",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0ba4a00886",
+    "nameOriginal": "Dietmar Demuth",
+    "nameEnglish": "Dietmar Demuth",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-45b02fd564",
+    "nameOriginal": "Dimitrios Diamantakos",
+    "nameEnglish": "Dimitrios Diamantakos",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-70ab1bfeed",
+    "nameOriginal": "Eric Schumacher",
+    "nameEnglish": "Eric Schumacher",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d2345d9853",
+    "nameOriginal": "Florian Kirschke",
+    "nameEnglish": "Florian Kirschke",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-03d8000f43",
+    "nameOriginal": "Fred Klaus",
+    "nameEnglish": "Fred Klaus",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-cab0cffecb",
+    "nameOriginal": "Gustavo Acosta",
+    "nameEnglish": "Gustavo Acosta",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-34f41fd84c",
+    "nameOriginal": "Hans-Helmuth Sembritzki",
+    "nameEnglish": "Hans-Helmuth Sembritzki",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-7a5b9e52c3",
+    "nameOriginal": "Haron Sabah",
+    "nameEnglish": "Haron Sabah",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-cace7408e3",
+    "nameOriginal": "Heinz Deininger",
+    "nameEnglish": "Heinz Deininger",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-caabdda5f9",
+    "nameOriginal": "Hugo Weber",
+    "nameEnglish": "Hugo Weber",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ac8172aa32",
+    "nameOriginal": "Jannik Westphal",
+    "nameEnglish": "Jannik Westphal",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c44cb63288",
+    "nameOriginal": "Jeton Arifi",
+    "nameEnglish": "Jeton Arifi",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6707c5c612",
+    "nameOriginal": "Jochen Kientz",
+    "nameEnglish": "Jochen Kientz",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9e29abb69f",
+    "nameOriginal": "Joel Chima Fujita",
+    "nameEnglish": "Joel Chima Fujita",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-040c732d7a",
+    "nameOriginal": "Jonathan Bourgault",
+    "nameEnglish": "Jonathan Bourgault",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9deccc8dd7",
+    "nameOriginal": "Jörn Schwinkendorf",
+    "nameEnglish": "Jörn Schwinkendorf",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e92fcfd752",
+    "nameOriginal": "Kai Dittmer",
+    "nameEnglish": "Kai Dittmer",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-fbf62f1a42",
+    "nameOriginal": "Khvicha Shubitidze",
+    "nameEnglish": "Khvicha Shubitidze",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2ebbe4ecf6",
+    "nameOriginal": "Lars Ritzka",
+    "nameEnglish": "Lars Ritzka",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c202e13ec6",
+    "nameOriginal": "Louis Oppie",
+    "nameEnglish": "Louis Oppie",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a00d8a18b8",
+    "nameOriginal": "Lukas Daschner",
+    "nameEnglish": "Lukas Daschner",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a84f4414bd",
+    "nameOriginal": "Marcus Mathisen",
+    "nameEnglish": "Marcus Mathisen",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0f4b71561e",
+    "nameOriginal": "Martijn Kaars",
+    "nameEnglish": "Martijn Kaars",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c42def737d",
+    "nameOriginal": "Martin Driller",
+    "nameEnglish": "Martin Driller",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2ca252fba4",
+    "nameOriginal": "Marvin Senger",
+    "nameEnglish": "Marvin Senger",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-540a4f04b5",
+    "nameOriginal": "Marwin Schmitz",
+    "nameEnglish": "Marwin Schmitz",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-731c1cd112",
+    "nameOriginal": "Mathias Pereira Lage",
+    "nameEnglish": "Mathias Pereira Lage",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e12239632d",
+    "nameOriginal": "Mathias Rasmussen",
+    "nameEnglish": "Mathias Rasmussen",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d36b7d8dc6",
+    "nameOriginal": "Max Dittgen",
+    "nameEnglish": "Max Dittgen",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-3cb1a0f659",
+    "nameOriginal": "Michael Klauß",
+    "nameEnglish": "Michael Klauß",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-eae1a47c37",
+    "nameOriginal": "Nick Schmidt",
+    "nameEnglish": "Nick Schmidt",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-929952b477",
+    "nameOriginal": "Nikola Vasilj",
+    "nameEnglish": "Nikola Vasilj",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8b540794b8",
+    "nameOriginal": "Oliver Schweißing",
+    "nameEnglish": "Oliver Schweißing",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-74596b2fa6",
+    "nameOriginal": "Peter Kilian",
+    "nameEnglish": "Peter Kilian",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-27ac954092",
+    "nameOriginal": "Peter Knäbel",
+    "nameEnglish": "Peter Knäbel",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d6951b98b9",
+    "nameOriginal": "Ricky Jade-Jones",
+    "nameEnglish": "Ricky Jade-Jones",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b1f61e8897",
+    "nameOriginal": "Ronny Seibt",
+    "nameEnglish": "Ronny Seibt",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-48d59f1d60",
+    "nameOriginal": "Samuel Klein",
+    "nameEnglish": "Samuel Klein",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0fe7d9fb49",
+    "nameOriginal": "Simon Spari",
+    "nameEnglish": "Simon Spari",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a1822d8637",
+    "nameOriginal": "Thomas Kessler",
+    "nameEnglish": "Thomas Kessler",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a762b85f09",
+    "nameOriginal": "Thomas Seeliger",
+    "nameEnglish": "Thomas Seeliger",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2b4e29cd20",
+    "nameOriginal": "Ulrich Schulz",
+    "nameEnglish": "Ulrich Schulz",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-52d126ced5",
+    "nameOriginal": "Wissou Kaba",
+    "nameEnglish": "Wissou Kaba",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a224e29882",
+    "nameOriginal": "Youssoupha Niang",
+    "nameEnglish": "Youssoupha Niang",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6717d232db",
+    "nameOriginal": "Shamo Abbey",
+    "nameEnglish": "Shamo Abbey",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-499a40ee32",
+    "nameOriginal": "Yusuf Adewunmi",
+    "nameEnglish": "Yusuf Adewunmi",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-7c1f2db1e8",
+    "nameOriginal": "Dapo Afolayan",
+    "nameEnglish": "Dapo Afolayan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-1a5484fbf3",
+    "nameOriginal": "Eric Agyemang",
+    "nameEnglish": "Eric Agyemang",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f66b06402f",
+    "nameOriginal": "Mohamed Aidara",
+    "nameEnglish": "Mohamed Aidara",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a04194c5b6",
+    "nameOriginal": "Madjid Albry",
+    "nameEnglish": "Madjid Albry",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-af33ebde41",
+    "nameOriginal": "Berkan Algan",
+    "nameEnglish": "Berkan Algan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ea6003db28",
+    "nameOriginal": "Target Ayannubi",
+    "nameEnglish": "Target Ayannubi",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9336805542",
+    "nameOriginal": "Bentley Baxter Bahn",
+    "nameEnglish": "Bentley Baxter Bahn",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-64396d8147",
+    "nameOriginal": "Arne Barez",
+    "nameEnglish": "Arne Barez",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8783435d4f",
+    "nameOriginal": "Ralf Becker",
+    "nameEnglish": "Ralf Becker",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6bbb9156bf",
+    "nameOriginal": "Jakub Bednarczyk",
+    "nameEnglish": "Jakub Bednarczyk",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-5b3d07848e",
+    "nameOriginal": "Stefan Blank",
+    "nameEnglish": "Stefan Blank",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-08221b1a7f",
+    "nameOriginal": "Rolf Blau",
+    "nameEnglish": "Rolf Blau",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6584e235f5",
+    "nameOriginal": "Michael Bochtler",
+    "nameEnglish": "Michael Bochtler",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-42f9c339a7",
+    "nameOriginal": "Christopher Braun",
+    "nameEnglish": "Christopher Braun",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-06214fab52",
+    "nameOriginal": "Svend Brodersen",
+    "nameEnglish": "Svend Brodersen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9373d46668",
+    "nameOriginal": "Florian Bruns",
+    "nameEnglish": "Florian Bruns",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-3b82cd015b",
+    "nameOriginal": "Henning Bürger",
+    "nameEnglish": "Henning Bürger",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-7868f8379c",
+    "nameOriginal": "Fayez Chamsine",
+    "nameEnglish": "Fayez Chamsine",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a374007a4d",
+    "nameOriginal": "Choi Kyoung-rok",
+    "nameEnglish": "Choi Kyoung-rok",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f73cd07c60",
+    "nameOriginal": "Chris",
+    "nameEnglish": "Chris",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-48ca8bb01e",
+    "nameOriginal": "Christian Conteh",
+    "nameEnglish": "Christian Conteh",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e37dca1aea",
+    "nameOriginal": "Muhammad Dahaba",
+    "nameEnglish": "Muhammad Dahaba",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2db6f883e8",
+    "nameOriginal": "Dirk Dammann",
+    "nameEnglish": "Dirk Dammann",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-331b4b34eb",
+    "nameOriginal": "Chad Deering",
+    "nameEnglish": "Chad Deering",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9ab9bcaff8",
+    "nameOriginal": "Youba Diarra",
+    "nameEnglish": "Youba Diarra",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ba8d2de9ea",
+    "nameOriginal": "Marius Ebbers",
+    "nameEnglish": "Marius Ebbers",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-67396490d3",
+    "nameOriginal": "Johannes Eggestein",
+    "nameEnglish": "Johannes Eggestein",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d4d01db89e",
+    "nameOriginal": "Émerson",
+    "nameEnglish": "Émerson",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e156e7d596",
+    "nameOriginal": "Joe Enochs",
+    "nameEnglish": "Joe Enochs",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ab028b8100",
+    "nameOriginal": "Petar Filipović",
+    "nameEnglish": "Petar Filipović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-666edd67cd",
+    "nameOriginal": "Leon Flach",
+    "nameEnglish": "Leon Flach",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-defebc0cb5",
+    "nameOriginal": "Egon Flad",
+    "nameEnglish": "Egon Flad",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e6d22dc173",
+    "nameOriginal": "Patrick Funk",
+    "nameEnglish": "Patrick Funk",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-3c64c97f36",
+    "nameOriginal": "Maik Galakos",
+    "nameEnglish": "Maik Galakos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-199e983f0d",
+    "nameOriginal": "Emil Gazdov",
+    "nameEnglish": "Emil Gazdov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-fe9b341ea1",
+    "nameOriginal": "Akaki Gogia",
+    "nameEnglish": "Akaki Gogia",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-33d14a8b27",
+    "nameOriginal": "Sören Gonther",
+    "nameEnglish": "Sören Gonther",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6f7b15fb26",
+    "nameOriginal": "Rudolf González",
+    "nameEnglish": "Rudolf González",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a74c36bd15",
+    "nameOriginal": "Michael Görlitz",
+    "nameEnglish": "Michael Görlitz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-47b6ee9ce6",
+    "nameOriginal": "Jörn Großkopf",
+    "nameEnglish": "Jörn Großkopf",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-49f62ce713",
+    "nameOriginal": "Karim Guédé",
+    "nameEnglish": "Karim Guédé",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-7dace7d8c7",
+    "nameOriginal": "Tim Gutberlet",
+    "nameEnglish": "Tim Gutberlet",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-631bc8080e",
+    "nameOriginal": "Mathias Hain",
+    "nameEnglish": "Mathias Hain",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-fe87402f41",
+    "nameOriginal": "Uwe Hain",
+    "nameEnglish": "Uwe Hain",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f697171c5c",
+    "nameOriginal": "Philipp Heerwagen",
+    "nameEnglish": "Philipp Heerwagen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-1fd7154c5d",
+    "nameOriginal": "Oliver Held",
+    "nameEnglish": "Oliver Held",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8454c7352d",
+    "nameOriginal": "Rouwen Hennings",
+    "nameEnglish": "Rouwen Hennings",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-28c47b6316",
+    "nameOriginal": "Simon Henzler",
+    "nameEnglish": "Simon Henzler",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-20954ddc38",
+    "nameOriginal": "Robin Himmelmann",
+    "nameEnglish": "Robin Himmelmann",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9d38072c2a",
+    "nameOriginal": "Niklas Hoffmann",
+    "nameEnglish": "Niklas Hoffmann",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-df3eb6db36",
+    "nameOriginal": "Bernd Hollerbach",
+    "nameEnglish": "Bernd Hollerbach",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f35a697b2c",
+    "nameOriginal": "Achim Hollerieth",
+    "nameEnglish": "Achim Hollerieth",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-623f06da60",
+    "nameOriginal": "Justin Hoogma",
+    "nameEnglish": "Justin Hoogma",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-3b96ee66be",
+    "nameOriginal": "Marc Hornschuh",
+    "nameEnglish": "Marc Hornschuh",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e25e4a2408",
+    "nameOriginal": "Volker Ippig",
+    "nameEnglish": "Volker Ippig",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-3c708aa549",
+    "nameOriginal": "Henry Isaac",
+    "nameEnglish": "Henry Isaac",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-46441e5905",
+    "nameOriginal": "Helmut Jahn",
+    "nameEnglish": "Helmut Jahn",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2292ccb261",
+    "nameOriginal": "Andreas Jeschke",
+    "nameEnglish": "Andreas Jeschke",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-36a36e555a",
+    "nameOriginal": "Niklas Jessen",
+    "nameEnglish": "Niklas Jessen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a9f4584e8d",
+    "nameOriginal": "Ian Joy",
+    "nameEnglish": "Ian Joy",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b9b9a5c1fa",
+    "nameOriginal": "Jan-Philipp Kalla",
+    "nameEnglish": "Jan-Philipp Kalla",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-514fa4e882",
+    "nameOriginal": "Cem Karaca",
+    "nameEnglish": "Cem Karaca",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a8d7dbbfe6",
+    "nameOriginal": "Jeremy Karikari",
+    "nameEnglish": "Jeremy Karikari",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-bbe83f83a1",
+    "nameOriginal": "Steffen Karl",
+    "nameEnglish": "Steffen Karl",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2ffca997a5",
+    "nameOriginal": "Robin Kehr",
+    "nameEnglish": "Robin Kehr",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-309dfdc68b",
+    "nameOriginal": "Joël Keller",
+    "nameEnglish": "Joël Keller",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-84ea2daf5f",
+    "nameOriginal": "Sam Klein",
+    "nameEnglish": "Sam Klein",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-dfa8422d56",
+    "nameOriginal": "Marvin Knoll",
+    "nameEnglish": "Marvin Knoll",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9409331f26",
+    "nameOriginal": "Julian Koch",
+    "nameEnglish": "Julian Koch",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d250cbb245",
+    "nameOriginal": "Brian Koglin",
+    "nameEnglish": "Brian Koglin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b117cdfae6",
+    "nameOriginal": "Dubravko Kolinger",
+    "nameEnglish": "Dubravko Kolinger",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9da5406b57",
+    "nameOriginal": "Toralf Konetzke",
+    "nameEnglish": "Toralf Konetzke",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d692e7299b",
+    "nameOriginal": "Dema Kovalenko",
+    "nameEnglish": "Dema Kovalenko",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-bc81275285",
+    "nameOriginal": "Rudolf Krčil",
+    "nameEnglish": "Rudolf Krčil",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-18c5488d47",
+    "nameOriginal": "Nicolas Kühn",
+    "nameEnglish": "Nicolas Kühn",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0bfc245282",
+    "nameOriginal": "Laurynas Kulikas",
+    "nameEnglish": "Laurynas Kulikas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a1a24f97b4",
+    "nameOriginal": "Tobias Kurbjuweit",
+    "nameEnglish": "Tobias Kurbjuweit",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-197f661d84",
+    "nameOriginal": "Okan Kurt",
+    "nameEnglish": "Okan Kurt",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ce2700b162",
+    "nameOriginal": "Ahmet Kuru",
+    "nameEnglish": "Ahmet Kuru",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-afab58d0c0",
+    "nameOriginal": "Mert Kuyucu",
+    "nameEnglish": "Mert Kuyucu",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-403d447021",
+    "nameOriginal": "Kevin Lankford",
+    "nameEnglish": "Kevin Lankford",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-69bb940720",
+    "nameOriginal": "Florian Lechner",
+    "nameEnglish": "Florian Lechner",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-cb38aa6acd",
+    "nameOriginal": "Matthias Lehmann",
+    "nameEnglish": "Matthias Lehmann",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2dbc6f66b7",
+    "nameOriginal": "Maurice Litka",
+    "nameEnglish": "Maurice Litka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-5460add462",
+    "nameOriginal": "Markus Lotter",
+    "nameEnglish": "Markus Lotter",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8768bc598e",
+    "nameOriginal": "Alexander Ludwig",
+    "nameEnglish": "Alexander Ludwig",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-fd832aa45c",
+    "nameOriginal": "Felix Luz",
+    "nameEnglish": "Felix Luz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ef1a32206c",
+    "nameOriginal": "Sebastian Maier",
+    "nameEnglish": "Sebastian Maier",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-7759700554",
+    "nameOriginal": "Leonardo Manzi",
+    "nameEnglish": "Leonardo Manzi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ed3d057384",
+    "nameOriginal": "Marcão",
+    "nameEnglish": "Marcão",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9bfb4576b4",
+    "nameOriginal": "Marcus Marin",
+    "nameEnglish": "Marcus Marin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-91af28639b",
+    "nameOriginal": "Nico Matern",
+    "nameEnglish": "Nico Matern",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b298623e1e",
+    "nameOriginal": "Maurides",
+    "nameEnglish": "Maurides",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-835824ea0d",
+    "nameOriginal": "Andreas Mayer",
+    "nameEnglish": "Andreas Mayer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-dc68d84ffc",
+    "nameOriginal": "Jakov Medić",
+    "nameEnglish": "Jakov Medić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9cfa72894b",
+    "nameOriginal": "Thomas Meggle",
+    "nameEnglish": "Thomas Meggle",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ced4c2c819",
+    "nameOriginal": "Alexander Meier",
+    "nameEnglish": "Alexander Meier",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6b45b00965",
+    "nameOriginal": "Steffen Menze",
+    "nameEnglish": "Steffen Menze",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-56fdfc44ad",
+    "nameOriginal": "Stjepan Milardović",
+    "nameEnglish": "Stjepan Milardović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0f1a395dfa",
+    "nameOriginal": "Marinko Miletić",
+    "nameEnglish": "Marinko Miletić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-337a6cb474",
+    "nameOriginal": "Florian Mohr",
+    "nameEnglish": "Florian Mohr",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-df7f6525fb",
+    "nameOriginal": "Patrick Mölzl",
+    "nameEnglish": "Patrick Mölzl",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0e86154ecc",
+    "nameOriginal": "Fabio Morena",
+    "nameEnglish": "Fabio Morena",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e0b88caef0",
+    "nameOriginal": "Youssoufa Moukoko",
+    "nameEnglish": "Youssoufa Moukoko",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-5b37db8860",
+    "nameOriginal": "Heinz Müller",
+    "nameEnglish": "Heinz Müller",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d4d6857608",
+    "nameOriginal": "Benjamin Nadjem",
+    "nameEnglish": "Benjamin Nadjem",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-97d9b4d1e9",
+    "nameOriginal": "Deniz Naki",
+    "nameEnglish": "Deniz Naki",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9f3a7dd68c",
+    "nameOriginal": "Bernd Nehrig",
+    "nameEnglish": "Bernd Nehrig",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-12d527b6ec",
+    "nameOriginal": "Richard Neudecker",
+    "nameEnglish": "Richard Neudecker",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9d8cad0445",
+    "nameOriginal": "Robert Nikolic",
+    "nameEnglish": "Robert Nikolic",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2891ca020f",
+    "nameOriginal": "Christopher Nöthe",
+    "nameEnglish": "Christopher Nöthe",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0882bd6acb",
+    "nameOriginal": "Bastian Oczipka",
+    "nameEnglish": "Bastian Oczipka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ba26110036",
+    "nameOriginal": "Eric Oelschlägel",
+    "nameEnglish": "Eric Oelschlägel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6f8106f52e",
+    "nameOriginal": "Adolphus Ofodile",
+    "nameEnglish": "Adolphus Ofodile",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-568846808b",
+    "nameOriginal": "Sebastian Ohlsson",
+    "nameEnglish": "Sebastian Ohlsson",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b02bfb359a",
+    "nameOriginal": "Peter Osterhoff",
+    "nameEnglish": "Peter Osterhoff",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4a9b08fbb1",
+    "nameOriginal": "Walter Oswald",
+    "nameEnglish": "Walter Oswald",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-46340c4d0a",
+    "nameOriginal": "David Otto",
+    "nameEnglish": "David Otto",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-aebce6c52a",
+    "nameOriginal": "Robert Palikuča",
+    "nameEnglish": "Robert Palikuča",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-12cac1452d",
+    "nameOriginal": "Park Yi-young",
+    "nameEnglish": "Park Yi-young",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-416e51767c",
+    "nameOriginal": "Nico Patschinski",
+    "nameEnglish": "Nico Patschinski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-67fc580fe0",
+    "nameOriginal": "Matt Penney",
+    "nameEnglish": "Matt Penney",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-be8bc82141",
+    "nameOriginal": "Tim Petersen",
+    "nameEnglish": "Tim Petersen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-80a0c4e497",
+    "nameOriginal": "Joachim Philipkowski",
+    "nameEnglish": "Joachim Philipkowski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-75fb173750",
+    "nameOriginal": "Nils Pichinot",
+    "nameEnglish": "Nils Pichinot",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6b464cfbf9",
+    "nameOriginal": "Benedikt Pliquett",
+    "nameEnglish": "Benedikt Pliquett",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8a21c77351",
+    "nameOriginal": "Roman Prokoph",
+    "nameEnglish": "Roman Prokoph",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2a36c47697",
+    "nameOriginal": "Carsten Pröpper",
+    "nameEnglish": "Carsten Pröpper",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-fd1d3c2fe1",
+    "nameOriginal": "Cătălin Răcănel",
+    "nameEnglish": "Cătălin Răcănel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ee356785dc",
+    "nameOriginal": "Jens Rasiejewski",
+    "nameEnglish": "Jens Rasiejewski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-733a892cee",
+    "nameOriginal": "Jacob Rasmussen",
+    "nameEnglish": "Jacob Rasmussen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-267d402df8",
+    "nameOriginal": "Marcel Rath",
+    "nameEnglish": "Marcel Rath",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2256fd4d2c",
+    "nameOriginal": "Andreas Reinke",
+    "nameEnglish": "Andreas Reinke",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-aef0b7105a",
+    "nameOriginal": "Timo Reus",
+    "nameEnglish": "Timo Reus",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-40eb03eb04",
+    "nameOriginal": "Jannik Robatsch",
+    "nameEnglish": "Jannik Robatsch",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-542fc1a574",
+    "nameOriginal": "Franz Roggow",
+    "nameEnglish": "Franz Roggow",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ab00653b44",
+    "nameOriginal": "Frank Ronstadt",
+    "nameEnglish": "Frank Ronstadt",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-17bcb313c2",
+    "nameOriginal": "Dennis Rosin",
+    "nameEnglish": "Dennis Rosin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-323ed037e9",
+    "nameOriginal": "Tom Rothe",
+    "nameEnglish": "Tom Rothe",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b5ea165919",
+    "nameOriginal": "Carsten Rothenbach",
+    "nameEnglish": "Carsten Rothenbach",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ce42df418c",
+    "nameOriginal": "Matthias Ruländer",
+    "nameEnglish": "Matthias Ruländer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f404418aee",
+    "nameOriginal": "Ryszard Rybak",
+    "nameEnglish": "Ryszard Rybak",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f2161e04c9",
+    "nameOriginal": "Jürgen Rynio",
+    "nameEnglish": "Jürgen Rynio",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f57f971a7f",
+    "nameOriginal": "Marc Rzatkowski",
+    "nameEnglish": "Marc Rzatkowski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-80d27d3f36",
+    "nameOriginal": "Mahir Sağlık",
+    "nameEnglish": "Mahir Sağlık",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e59c60c43b",
+    "nameOriginal": "Cenk Şahin",
+    "nameEnglish": "Cenk Şahin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-77e6cf1be1",
+    "nameOriginal": "Morike Sako",
+    "nameEnglish": "Morike Sako",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-53882bee61",
+    "nameOriginal": "Moses Sakyi",
+    "nameEnglish": "Moses Sakyi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-24cc73130e",
+    "nameOriginal": "Abdou Sall",
+    "nameEnglish": "Abdou Sall",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0d2ca10bdd",
+    "nameOriginal": "Sebastian Schachten",
+    "nameEnglish": "Sebastian Schachten",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-eed4c75a2f",
+    "nameOriginal": "Jens Scharping",
+    "nameEnglish": "Jens Scharping",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2ed77e2d1c",
+    "nameOriginal": "Daniel Scheinhardt",
+    "nameEnglish": "Daniel Scheinhardt",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e599042cd7",
+    "nameOriginal": "Tjark Scheller",
+    "nameEnglish": "Tjark Scheller",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b5dc7fc394",
+    "nameOriginal": "Matthias Scherz",
+    "nameEnglish": "Matthias Scherz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b80c636d92",
+    "nameOriginal": "Kevin Schindler",
+    "nameEnglish": "Kevin Schindler",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-95acd2d9f1",
+    "nameOriginal": "Dieter Schlindwein",
+    "nameEnglish": "Dieter Schlindwein",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4c7ef14abf",
+    "nameOriginal": "Jan-Marc Schneider",
+    "nameEnglish": "Jan-Marc Schneider",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8fe2cef693",
+    "nameOriginal": "René Schnitzler",
+    "nameEnglish": "René Schnitzler",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6a4cd55611",
+    "nameOriginal": "Rudolf Schönbeck",
+    "nameEnglish": "Rudolf Schönbeck",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-29e10bd4b6",
+    "nameOriginal": "Clemens Schoppenhauer",
+    "nameEnglish": "Clemens Schoppenhauer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f2738d44a0",
+    "nameOriginal": "Timo Schultz",
+    "nameEnglish": "Timo Schultz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-650d4ed08e",
+    "nameOriginal": "Moritz Seiffert",
+    "nameEnglish": "Moritz Seiffert",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6a4c9479e9",
+    "nameOriginal": "Ralf Sievers",
+    "nameEnglish": "Ralf Sievers",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6827f773fe",
+    "nameOriginal": "Ömer Şişmanoğlu",
+    "nameEnglish": "Ömer Şişmanoğlu",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9c8245c33f",
+    "nameOriginal": "Petar Slišković",
+    "nameEnglish": "Petar Slišković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-6b72e00603",
+    "nameOriginal": "Dennis Smarsch",
+    "nameEnglish": "Dennis Smarsch",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9dcc8b213b",
+    "nameOriginal": "Lasse Sobiech",
+    "nameEnglish": "Lasse Sobiech",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-63d26b6c07",
+    "nameOriginal": "Thomas Sobotzik",
+    "nameEnglish": "Thomas Sobotzik",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-571148bb75",
+    "nameOriginal": "Lennard Sowah",
+    "nameEnglish": "Lennard Sowah",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d08cfc292c",
+    "nameOriginal": "Christian Springer",
+    "nameEnglish": "Christian Springer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-608e53af93",
+    "nameOriginal": "Holger Stanislawski",
+    "nameEnglish": "Holger Stanislawski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f4931f5e4e",
+    "nameOriginal": "Andrej Startsev",
+    "nameEnglish": "Andrej Startsev",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e07f47897f",
+    "nameOriginal": "Daniel Stendel",
+    "nameEnglish": "Daniel Stendel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2aacbf6908",
+    "nameOriginal": "Dragan Stevanović",
+    "nameEnglish": "Dragan Stevanović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-afeffd85b8",
+    "nameOriginal": "Marco Stier",
+    "nameEnglish": "Marco Stier",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a25c11d905",
+    "nameOriginal": "Kay Stisi",
+    "nameEnglish": "Kay Stisi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-519c25cb98",
+    "nameOriginal": "Dejan Stojanović",
+    "nameEnglish": "Dejan Stojanović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4ff07dacc0",
+    "nameOriginal": "Stefan Studer",
+    "nameEnglish": "Stefan Studer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-1c36c3e8e8",
+    "nameOriginal": "Richard Sukuta-Pasu",
+    "nameEnglish": "Richard Sukuta-Pasu",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c1bdc8367d",
+    "nameOriginal": "Ive Sulentic",
+    "nameEnglish": "Ive Sulentic",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-1a3eeefd49",
+    "nameOriginal": "Bronisław Szlagowski",
+    "nameEnglish": "Bronisław Szlagowski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ccbcf0128f",
+    "nameOriginal": "Ifet Taljević",
+    "nameEnglish": "Ifet Taljević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-395d80dc55",
+    "nameOriginal": "Borys Tashchy",
+    "nameEnglish": "Borys Tashchy",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ccec6aba6d",
+    "nameOriginal": "Thomas Puschmann",
+    "nameEnglish": "Thomas Puschmann",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2b3aa662d5",
+    "nameOriginal": "Klaus Thomforde",
+    "nameEnglish": "Klaus Thomforde",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-52b612231c",
+    "nameOriginal": "Markus Thorandt",
+    "nameEnglish": "Markus Thorandt",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-34c7c965af",
+    "nameOriginal": "Lennart Thy",
+    "nameEnglish": "Lennart Thy",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-74930f7c72",
+    "nameOriginal": "Torsten Traub",
+    "nameEnglish": "Torsten Traub",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4d333729b7",
+    "nameOriginal": "Marek Trejgis",
+    "nameEnglish": "Marek Trejgis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-a93d7357cf",
+    "nameOriginal": "Piotr Trochowski",
+    "nameEnglish": "Piotr Trochowski",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2c9dbf8faf",
+    "nameOriginal": "Filip Trojan",
+    "nameEnglish": "Filip Trojan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-1035e3b47b",
+    "nameOriginal": "André Trulsen",
+    "nameEnglish": "André Trulsen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-8b99b569bd",
+    "nameOriginal": "Tom Trybull",
+    "nameEnglish": "Tom Trybull",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-9bcb1bf95b",
+    "nameOriginal": "Philipp Tschauner",
+    "nameEnglish": "Philipp Tschauner",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-be4b06d4b8",
+    "nameOriginal": "Julian Ulbricht",
+    "nameEnglish": "Julian Ulbricht",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d7eb29ba5b",
+    "nameOriginal": "Henk Veerman",
+    "nameEnglish": "Henk Veerman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-55a699633d",
+    "nameOriginal": "John Verhoek",
+    "nameEnglish": "John Verhoek",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4843d055e7",
+    "nameOriginal": "Thibaud Verlinden",
+    "nameEnglish": "Thibaud Verlinden",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b2942e45bb",
+    "nameOriginal": "Christian Viet",
+    "nameEnglish": "Christian Viet",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-832c5b64b2",
+    "nameOriginal": "Moritz Volz",
+    "nameEnglish": "Moritz Volz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4162431264",
+    "nameOriginal": "Robert Wagner",
+    "nameEnglish": "Robert Wagner",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-446a7c8c0b",
+    "nameOriginal": "Holger Wehlage",
+    "nameEnglish": "Holger Wehlage",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-2ef0b358a3",
+    "nameOriginal": "Carsten Wehlmann",
+    "nameEnglish": "Carsten Wehlmann",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-89fbab92af",
+    "nameOriginal": "Benjamin Weigelt",
+    "nameEnglish": "Benjamin Weigelt",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-56365a1592",
+    "nameOriginal": "Niclas Weiland",
+    "nameEnglish": "Niclas Weiland",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-62c86af0cb",
+    "nameOriginal": "Noah Weißhaupt",
+    "nameEnglish": "Noah Weißhaupt",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-b6ac21062c",
+    "nameOriginal": "Rüdiger Wenzel",
+    "nameEnglish": "Rüdiger Wenzel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-422fb42bd4",
+    "nameOriginal": "Karl Werner",
+    "nameEnglish": "Karl Werner",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4c45853610",
+    "nameOriginal": "Jannes Wieckhoff",
+    "nameEnglish": "Jannes Wieckhoff",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c8fbd27045",
+    "nameOriginal": "Gert Wieczorkowski",
+    "nameEnglish": "Gert Wieczorkowski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-e31f1e117f",
+    "nameOriginal": "Fritz Wilde",
+    "nameEnglish": "Fritz Wilde",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-0d93221b92",
+    "nameOriginal": "Uwe Witt",
+    "nameEnglish": "Uwe Witt",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-231044ab39",
+    "nameOriginal": "Horst Wohlers",
+    "nameEnglish": "Horst Wohlers",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-16c59e4c0f",
+    "nameOriginal": "Dirk Wolf",
+    "nameEnglish": "Dirk Wolf",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-4233e17ed6",
+    "nameOriginal": "Pavlo Yanchuk",
+    "nameEnglish": "Pavlo Yanchuk",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-ea6c08cfe3",
+    "nameOriginal": "Julien Yanda",
+    "nameEnglish": "Julien Yanda",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-323da5ebbd",
+    "nameOriginal": "Yang Chen",
+    "nameEnglish": "Yang Chen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-d539663e2a",
+    "nameOriginal": "Dirk Zander",
+    "nameEnglish": "Dirk Zander",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-134656f142",
+    "nameOriginal": "Luca Zander",
+    "nameEnglish": "Luca Zander",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f179e4aea7",
+    "nameOriginal": "Ersin Zehir",
+    "nameEnglish": "Ersin Zehir",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-c7e266f777",
+    "nameOriginal": "Philipp Ziereis",
+    "nameEnglish": "Philipp Ziereis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "st-pauli",
+    "canonicalPlayerId": "st-pauli:wv-f76cf8168e",
+    "nameOriginal": "Simon Zoller",
+    "nameEnglish": "Simon Zoller",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-st-pauli"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  }
+]

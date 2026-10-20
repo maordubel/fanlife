@@ -1,0 +1,19 @@
+{
+  "asOf": "2026-10-20",
+  "openClubs": 8,
+  "unopenedDossiers": 10,
+  "existingPlayers": 5693,
+  "existingMatches": 14180,
+  "newOpenClubMatchCandidates": 373,
+  "unopenedClubMatchCandidates": 3320,
+  "inheritedCrossClubMatchCandidates": 738,
+  "freshGoalObservations": 37,
+  "draftReplays": 9,
+  "newlyCertifiedPlayableReplays": 0,
+  "freshLineupObservations": 8,
+  "peopleObservations": 2444,
+  "peopleObservationWarning": "includes coaches, overlapping existing identities and registrations; not a count of unique new players",
+  "internalResearchAlreadyAttached": "all project research-staging and research-data preserved with original provenance",
+  "productionChanged": false,
+  "certified99PercentClubs": 0
+}
