@@ -67,3 +67,12 @@
 .club-theme .xi-slot[aria-pressed=true] { border:2px solid var(--club-primary); }
 .club-theme .xi-slot small { color:var(--club-accent);font-weight:bold; }
 @media(max-width:420px) { .club-theme .memory-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.club-theme .game-filters>label { width:100%; } }
+
+/* DAILY TERRACE — begin (one component, club theme tokens only) */
+.club-theme .terrace-main { display:grid;gap:16px;max-inline-size:640px;margin-inline:auto;padding:16px; }
+.club-theme .terrace-round .game-option[disabled] { opacity:.45;text-decoration:line-through; }
+.club-theme .terrace-total { font-size:clamp(48px,14vw,88px);line-height:1; }
+.club-theme .terrace-total small { font-size:.35em; }
+.club-theme .terrace-rows { list-style:none;margin:0;padding:0;display:grid;gap:8px; }
+.club-theme .terrace-rows li { display:flex;justify-content:space-between;gap:12px;border-block-end:1px solid rgb(var(--ink)/.25);padding-block:8px; }
+/* DAILY TERRACE — end */

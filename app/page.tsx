@@ -9,6 +9,7 @@ import {readState} from '@/lib/master/store'
 import Image from 'next/image'
 import {SHARED_GATES} from '@/lib/clubs/gates'
 import {hubModels} from '@/lib/home/hub-model'
+import {buildEdition,clubDay} from '@/lib/terrace/edition'
 import {lifeEntries} from '@/lib/clubs/life/entry'
 import {GateChooser} from '@/components/home/MagazineHubControls'
 import {evaluationMode} from '@/lib/master/mode'
@@ -62,8 +63,8 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} last={copy.stopLast} next={copy.stopNext} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
  const couponCopy={kicker:copy.wkhInNext,coupon:copy.wkhCoupon,cols:copy.wkhCouponCols,all:copy.wkhNextAll,note:copy.nextNote,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLamp:copy.wkhTbc,close:copy.chooserClose}
  const dockCopy={title:copy.dockTitle,kept:copy.wkhKept,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,fileSub:copy.wkFileSub,stand:copy.dockStand,standSub:copy.wkhStandSub,market:copy.dockMarket,marketSub:copy.wkMarketSub,sources:copy.dockSources,sourcesSub:copy.wkSourcesSub,voted:copy.dockVoted,vote:copy.dockVote,voteSub:copy.wkhVoteSub}
- const heroClubs=await Promise.all(live.map(async c=>{const m=await loadClubBase(c.id).then(r=>r?momentFor(r.data,now):null).catch(()=>null);return {id:c.id,name:c.name,city:c.city,otd:m&&m.offset===0?{title:m.title,years:m.yearsAgo}:null}}))
- const heroCopy={kicker:copy.wkhHeroK,cont:copy.dockContinue,contSub:copy.wkhHeroSub,newK:copy.wkhHeroNewK,newT:copy.wkhHeroNewT,otd:copy.todayExact,play:''}
+ const heroClubs=await Promise.all(live.map(async c=>{const base=await loadClubBase(c.id).catch(()=>null);const m=base?momentFor(base.data,now):null;const daily=!!base&&base.data.gates.trivia.playable&&buildEdition(base.data,clubDay(base.data.identity.country,now))!==null;return {id:c.id,name:c.name,city:c.city,daily,otd:m&&m.offset===0?{title:m.title,years:m.yearsAgo}:null}}))
+ const heroCopy={kicker:copy.wkhHeroK,cont:copy.dockContinue,contSub:copy.wkhHeroSub,newK:copy.wkhHeroNewK,newT:copy.wkhHeroNewT,otd:copy.todayExact,play:copy.wkhHeroDaily}
  const dockClubs=open.map(c=>({id:c.id,name:c.name})),dockOpen=live.map(c=>c.id)
  const inside=[
   {href:'#clubs',title:copy.clubs,sub:copy.wkhInClubs.replace('{n}',String(live.length)),go:'↓'},
