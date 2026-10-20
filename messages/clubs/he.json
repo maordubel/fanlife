@@ -601,5 +601,10 @@
   "awayd_whole": "כל הדרך",
   "awayd_won": "ניצחונות {n}",
   "awayd_drew": "תיקו {n}",
-  "awayd_lost": "הפסדים {n}"
+  "awayd_lost": "הפסדים {n}",
+  "voteAccounts": "{n} חשבונות",
+  "voteGuests": "{n} אורחים",
+  "voteBase": "{n} ספירה ראשונית",
+  "voteOffline": "נשמר במכשיר. לא הצלחנו להגיע לקלפי, נסו שוב מאוחר יותר.",
+  "voteTooMany": "המכשיר הזה כבר הצביע בקלפיות רבות מדי."
 }

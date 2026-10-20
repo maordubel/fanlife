@@ -176,7 +176,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
 
   {/* YOUR SAY: the ballot of the clubs still in the workshop, and a club written in. */}
   <SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
-   {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{ballot:copy.wkhBallot,question:copy.wkhBallotQ,kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,note:copy.voteNote,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess}}/>}
+   {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{ballot:copy.wkhBallot,question:copy.wkhBallotQ,kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,note:copy.voteNote,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess,accounts:copy.voteAccounts,guests:copy.voteGuests,base:copy.voteBase,offline:copy.voteOffline,tooMany:copy.voteTooMany}}/>}
   </SuggestClub>
 
   {/* DEAR TERRACE: the editor's letter — the old weekly's "from the editor" box (owner, 7.10.2026). */}

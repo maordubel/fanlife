@@ -601,5 +601,10 @@
   "awayd_whole": "The whole road",
   "awayd_won": "Won {n}",
   "awayd_drew": "Drew {n}",
-  "awayd_lost": "Lost {n}"
+  "awayd_lost": "Lost {n}",
+  "voteAccounts": "{n} accounts",
+  "voteGuests": "{n} guests",
+  "voteBase": "{n} early count",
+  "voteOffline": "Saved on this device. We couldn't reach the ballot box; try again later.",
+  "voteTooMany": "This device has voted on too many ballots."
 }
