@@ -51,7 +51,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   const nick=(id:string)=>clubWorld(id)?.nicknames[0]?.text
  const now=new Date(),preview=evaluationMode()
  // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
- const [{model,strict},life,fl]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague')])
+ const [{model,strict},life,fl,af]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('allFootball')])
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
@@ -95,6 +95,13 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
     <Emblem size={76} label="" className="wkh-sp-emblem"/>
     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhLmK}</span><b>{copy.wkhLmTitle}</b><small>{copy.wkhLmSub}{fl.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
+   </Link>
+  </section>}
+
+  {/* THE ARCADE: ALL FOOTBALL, one game over every club (switch-gated, owner preview while off). */}
+  {af.open&&<section className="wkh-lm wkh-af" aria-label={copy.wkhAfTitle}>
+   <Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football" data-preview={af.preview||undefined}>
+    <span className="wkh-sp-t"><span className="wk-k">{copy.wkhAfK}</span><b>{copy.wkhAfTitle}</b><small>{copy.wkhAfSub}{af.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
    </Link>
   </section>}
 

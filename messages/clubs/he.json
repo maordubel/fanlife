@@ -544,8 +544,8 @@
   "wkhLifeShout": "Life!",
   "wkhSpecialK": "כל המועדונים יחד",
   "wkhSpecial": "גיליונות מיוחדים",
-  "wkhAfK": "מהדורת העולם",
-  "wkhAfSub": "ההיסטוריה של כל מועדון בחדר אחד.",
+  "wkhAfK": "הארקייד",
+  "wkhAfSub": "משחק אחד על כל המועדונים — טריוויה, ציר זמן וזיכרון מעורבים.",
   "wkhLmK": "מהדורת היכל התהילה",
   "wkhLmTitle": "Legends Manager",
   "wkhLmSub": "בחרו את בני האלמוות של מועדון אחד ובנו שושלת, עונה אחרי עונה.",
@@ -625,5 +625,6 @@
   "terraceDailyClosed": "היציע היומי עדיין לא פתוח למועדון הזה.",
   "terraceDailyLoading": "מחלקים את המהדורה של היום…",
   "terraceDailyGone": "אי אפשר היה לקבל את התשובה. טענו מחדש.",
-  "wkhHeroDaily": "שחקו את היציע היומי"
+  "wkhHeroDaily": "שחקו את היציע היומי",
+  "wkhAfTitle": "ALL FOOTBALL"
 }
