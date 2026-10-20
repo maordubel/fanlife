@@ -76,3 +76,10 @@
 .club-theme .terrace-rows { list-style:none;margin:0;padding:0;display:grid;gap:8px; }
 .club-theme .terrace-rows li { display:flex;justify-content:space-between;gap:12px;border-block-end:1px solid rgb(var(--ink)/.25);padding-block:8px; }
 /* DAILY TERRACE — end */
+
+/* DAILY TERRACE BOARD — begin */
+.terrace-board{display:grid;gap:.6rem;margin-block-start:1rem}
+.terrace-rows li[data-me]{outline:2px solid var(--club-primary,var(--mag-ink));outline-offset:2px}
+.terrace-join{display:grid;gap:.5rem}
+.terrace-join input{border:2px solid var(--mag-ink);background:var(--mag-paper);padding-inline:.75rem;font:inherit;border-radius:0}
+/* DAILY TERRACE BOARD — end */
