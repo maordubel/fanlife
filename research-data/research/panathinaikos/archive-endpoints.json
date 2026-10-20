@@ -5,7 +5,7 @@
   "state": "schema-changed",
   "status": 200,
   "reason": "rows lack id/link",
-  "checkedAt": "2026-10-16T08:20:46.890Z"
+  "checkedAt": "2026-10-20T08:43:02.227Z"
  },
  "paopedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:20:52.803Z"
+  "checkedAt": "2026-10-20T08:43:07.631Z"
  },
  "pao-official-history:/en/history/": {
   "endpoint": "/en/history/",
@@ -102,5 +102,29 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-10-16T08:21:07.378Z"
+ },
+ "pao-official-history:/en/history/events/": {
+  "endpoint": "/en/history/events/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-20T08:43:08.257Z"
+ },
+ "pao-official-history:/en/the-club/stadium/": {
+  "endpoint": "/en/the-club/stadium/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-20T08:43:12.049Z"
+ },
+ "pao-official-history:/en/historyitem/all-time-coaches/": {
+  "endpoint": "/en/historyitem/all-time-coaches/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-20T08:43:16.071Z"
  }
 }

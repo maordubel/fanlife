@@ -28,5 +28,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-16T08:21:24.044Z",
   "updatedAt": "2026-10-16T08:21:24.044Z"
+ },
+ {
+  "id": "ga-03973ac070b40b9b",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "3",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2019/06/05/fcspgoesusa-and-can-oder-zu-gast-bei-freunden/",
+    "locator": "p7",
+    "quote": "Er sorgte dabei auch gleich für gute Laune: Beim Security-Check seiner Gitarre fragte ihn der Security-Hoschi: „ Ey, dich kenne ich, bist Du nicht Bosse? “, als er das verneinte, haute der Typ ab, um 3 min später wieder zu kommen: „ Ach nee, aber jetzt weiß ich es: Du bist Thees Uhlmann von Kettcar! “",
+    "bodyHash": "2c64aecb0bb9bf31cd8abc1bbc7ac50c9cd0ad089c9e02f91de5f65f05ae2914",
+    "fetchedAt": "2026-10-20T08:43:37.067Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-20T08:43:37.067Z",
+  "updatedAt": "2026-10-20T08:43:37.067Z"
  }
 ]

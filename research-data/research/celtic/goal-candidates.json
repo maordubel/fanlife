@@ -118,5 +118,104 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-16T08:20:04.694Z",
   "updatedAt": "2026-10-16T08:20:04.694Z"
+ },
+ {
+  "id": "ga-f051e78b1b82ffc4",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "57",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/about-celtic/the-soul-of-celtic/a-rapid-exit/",
+    "locator": "p12",
+    "quote": "In truth Celtic struggled to get into their stride in Vienna and Rapid were worthy winners. However, thanks to Brian McClair’s 57th minute equaliser Celtic had got a valuable away goal. Despite Rapid netting twice more before full-time hopes were high that revenge would be served back in Glasgow.",
+    "bodyHash": "6e247ee698b742034798eccb2e9d70643dcbe49779cd8d3676fd53659891b1a4",
+    "fetchedAt": "2026-10-20T08:42:26.374Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-20T08:42:26.374Z",
+  "updatedAt": "2026-10-20T08:42:26.374Z"
+ },
+ {
+  "id": "ga-d6cfb54fce1e6778",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "20",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/about-the-celtic-wiki/thecelticwiki-audio-podcasts/",
+    "locator": "p100",
+    "quote": "History Bhoys Abroad Podcasts: See: 20 Min Tims RSS",
+    "bodyHash": "9fd4d967ee420508262ca1b1a5171c2af375af87c7381ecefc49877f68a55070",
+    "fetchedAt": "2026-10-20T08:42:29.522Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1888-2/1888-10-27-rangers-1-6-celtic-glasgow-cup/",
+    "locator": "p55",
+    "quote": "Rangers had selected two youngsters, Wilson and Whyte, up front who had won the Junior cup the year before with Fairfield and it was Wilson who, dodging the Celtic backs, broke the deadlock in the 20th minute ‘amidst deafening roars.’ This was a setback for the Bhoys given their strong play so far. The Celtic fans in the crowd wondered how they would respond. Straight from kick-off Celtic launched a counter-attack on the Rangers defence. According to the Herald, ‘Immediately thereafter the cheering was, if anything, intensified when Groves equalised.’ ‘Darlin’ Willie, as the 20-year-old signin",
+    "bodyHash": "dffae77a98fc846d6e77fffecf88769d3739ea52e64c00ff76cac66617c559b9",
+    "fetchedAt": "2026-10-20T08:42:32.368Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-20T08:42:32.368Z",
+  "updatedAt": "2026-10-20T08:42:32.368Z"
+ },
+ {
+  "id": "ga-577d3a63d33d9c1c",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "41",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1888-2/1888-10-27-rangers-1-6-celtic-glasgow-cup/",
+    "locator": "p56",
+    "quote": "Celtic had overcome the elements to get straight back into the game. Now they were taking the game to their Ibrox rivals: ‘The strangers pressed hardly and determinedly, showing greatly superior to their opponents in the matter of passing, and making a good show against them and the wind.’ A run from Tom Maley opened up the Rangers defence for Mick Dunbar to give Celtic a 2-1 lead in the 41st minute.",
+    "bodyHash": "dffae77a98fc846d6e77fffecf88769d3739ea52e64c00ff76cac66617c559b9",
+    "fetchedAt": "2026-10-20T08:42:32.368Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-20T08:42:32.368Z",
+  "updatedAt": "2026-10-20T08:42:32.368Z"
  }
 ]

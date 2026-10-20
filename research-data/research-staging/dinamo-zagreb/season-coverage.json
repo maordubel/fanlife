@@ -9,7 +9,7 @@
     "pagesRead": 0,
     "observedTotalDocuments": 3,
     "observedTotalPages": null,
-    "queue": 1,
+    "queue": 0,
     "lastError": "HTTP 403 — a refusal is an answer"
    }
   ],
@@ -24,7 +24,7 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "partial_budget",
+    "state": "listed",
     "pagesRead": 4,
     "observedTotalDocuments": 79,
     "observedTotalPages": 4,

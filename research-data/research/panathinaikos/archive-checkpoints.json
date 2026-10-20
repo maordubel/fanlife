@@ -11,7 +11,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "schema-changed",
-  "updatedAt": "2026-10-16T08:20:46.890Z",
+  "updatedAt": "2026-10-20T08:43:02.227Z",
   "lastError": "schema"
  },
  "paopedia:pages": {
@@ -26,7 +26,7 @@
   "observedTotalPages": 2,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-16T08:20:52.803Z",
+  "updatedAt": "2026-10-20T08:43:07.632Z",
   "lastError": null
  },
  "pao-official-history:html": {
@@ -41,9 +41,6 @@
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/en/history/events/",
-   "/en/the-club/stadium/",
-   "/en/historyitem/all-time-coaches/",
    "/en/historyitem/all-time-foreigners/",
    "/historyitem/all-time-roster/"
   ],
@@ -53,10 +50,13 @@
    "/en/history/greek-cups/",
    "/en/history/super-cup/",
    "/en/history/valkaniko-kypello/",
-   "/en/history/european-history/"
+   "/en/history/european-history/",
+   "/en/history/events/",
+   "/en/the-club/stadium/",
+   "/en/historyitem/all-time-coaches/"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-16T08:21:01.542Z",
+  "updatedAt": "2026-10-20T08:43:16.074Z",
   "lastError": null
  },
  "rsssf-greece:html": {
@@ -79,7 +79,7 @@
    "/tablesg/grkchamp.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-16T08:21:07.378Z",
+  "updatedAt": "2026-10-20T08:43:16.074Z",
   "lastError": null
  }
 }

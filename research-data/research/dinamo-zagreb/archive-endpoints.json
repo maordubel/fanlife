@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:20:27.266Z"
+  "checkedAt": "2026-10-20T08:42:48.073Z"
  },
  "hns-semafor:/klubovi/609/gnk-dinamo/": {
   "endpoint": "/klubovi/609/gnk-dinamo/",
@@ -29,7 +29,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:20:28.865Z"
+  "checkedAt": "2026-10-20T08:42:48.781Z"
  },
  "wikipedia-dinamo-records:/wiki/Dinamo_Zagreb_records_and_statistics": {
   "endpoint": "/wiki/Dinamo_Zagreb_records_and_statistics",
@@ -37,7 +37,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:20:29.109Z"
+  "checkedAt": "2026-10-20T08:42:48.916Z"
  },
  "nft-dinamo:/club/504/1953/Dinamo_Zagreb.html": {
   "endpoint": "/club/504/1953/Dinamo_Zagreb.html",
@@ -45,7 +45,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:20:30.379Z"
+  "checkedAt": "2026-10-20T08:42:50.027Z"
  },
  "dinamo-official:/en/club/history": {
   "endpoint": "/en/club/history",
@@ -54,5 +54,13 @@
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
   "checkedAt": "2026-10-16T08:20:19.363Z"
+ },
+ "dinamo-official:/en/timeline/145": {
+  "endpoint": "/en/timeline/145",
+  "providerId": "dinamo-official",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-20T08:42:46.294Z"
  }
 }
