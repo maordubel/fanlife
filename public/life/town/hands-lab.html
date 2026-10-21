@@ -15,7 +15,7 @@ PEOPLE.load().then(function(){
  window.__fist=pose==='cheer'?1:0;
  for(var i=0;i<5;i++)PEOPLE.sync(g,i*.03,.03);
  var v=Q.get('view')||'hand';
- var hb=new THREE.Vector3();g.updateMatrixWorld(true);g.traverse(function(o){if(o.isBone&&o.name==='hand_r')o.getWorldPosition(hb)});
- if(v==='body'){cam.position.set(0,1.1,3.2);cam.lookAt(0,1,0)}else if(v==='front'){cam.position.set(hb.x,hb.y-.04,hb.z+.45);cam.lookAt(hb.x,hb.y-.08,hb.z)}else if(v==='side'){cam.position.set(hb.x-.45,hb.y-.05,hb.z+.05);cam.lookAt(hb.x,hb.y-.08,hb.z)}else if(v==='inside'){cam.position.set(hb.x+.35,hb.y-.05,hb.z+.25);cam.lookAt(hb.x,hb.y-.08,hb.z)}else{cam.position.set(-.55,.95,.55);cam.lookAt(-.25,.82,0)}
+ var hb=new THREE.Vector3();g.updateMatrixWorld(true);g.traverse(function(o){if(o.isBone&&o.name==='hand_r')o.getWorldPosition(hb)});var hd=new THREE.Vector3();g.traverse(function(o){if(o.isBone&&o.name==='head')o.getWorldPosition(hd)});
+ if(v==='face'){cam.position.set(hd.x+.1,hd.y+.1,hd.z+.6);cam.lookAt(hd.x,hd.y+.08,hd.z)}else if(v==='body'){cam.position.set(0,1.1,3.2);cam.lookAt(0,1,0)}else if(v==='front'){cam.position.set(hb.x,hb.y-.04,hb.z+.45);cam.lookAt(hb.x,hb.y-.08,hb.z)}else if(v==='side'){cam.position.set(hb.x-.45,hb.y-.05,hb.z+.05);cam.lookAt(hb.x,hb.y-.08,hb.z)}else if(v==='inside'){cam.position.set(hb.x+.35,hb.y-.05,hb.z+.25);cam.lookAt(hb.x,hb.y-.08,hb.z)}else{cam.position.set(-.55,.95,.55);cam.lookAt(-.25,.82,0)}
  g.updateMatrixWorld(true);ren.render(sc,cam);window.__done=true});
 </script></body></html>
