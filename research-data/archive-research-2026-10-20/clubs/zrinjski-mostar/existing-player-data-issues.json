@@ -1,0 +1,3313 @@
+[
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:dario-canadija",
+    "nameOriginal": "Dario Čanađija",
+    "nameEnglish": "Dario Čanađija",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-breid-home"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:andrija-balic",
+    "nameOriginal": "Andrija Balić",
+    "nameEnglish": "Andrija Balić",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-az-away",
+      "r26-wiki"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:stipe-radic",
+    "nameOriginal": "Stipe Radić",
+    "nameEnglish": "Stipe Radić",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-legia-away"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:antonio-ivancic",
+    "nameOriginal": "Antonio Ivančić",
+    "nameEnglish": "Antonio Ivančić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lineups-2039291",
+      "wiki-club",
+      "soccerway-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:marijo-cuze",
+    "nameOriginal": "Marijo Ćuže",
+    "nameEnglish": "Marijo Ćuže",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-wiki",
+      "r26-fotmob"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:slobodan-jakovljevic",
+    "nameOriginal": "Slobodan Jakovljević",
+    "nameEnglish": "Slobodan Jakovljević",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-wiki",
+      "r26-sw"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:kerim-memija",
+    "nameOriginal": "Kerim Memija",
+    "nameEnglish": "Kerim Memija",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-legia-away"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:nemanja-bilbija",
+    "nameOriginal": "Nemanja Bilbija",
+    "nameEnglish": "Nemanja Bilbija",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-wiki",
+      "r26-sw"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:luka-marin",
+    "nameOriginal": "Luka Marin",
+    "nameEnglish": "Luka Marin",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-urartu-home"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:damir-zlomislic",
+    "nameOriginal": "Damir Zlomislić",
+    "nameEnglish": "Damir Zlomislić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lineups-2039291",
+      "wiki-2324"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:aldin-hrvanovic",
+    "nameOriginal": "Aldin Hrvanović",
+    "nameEnglish": "Aldin Hrvanović",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-urartu-home",
+      "r26-sw"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:petar-misic",
+    "nameOriginal": "Petar Mišić",
+    "nameEnglish": "Petar Mišić",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-breid-home"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:filip-bradaric",
+    "nameOriginal": "Filip Bradarić",
+    "nameEnglish": "Filip Bradarić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lineups-2039291",
+      "wiki-2324"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:matej-senic",
+    "nameOriginal": "Matej Senić",
+    "nameEnglish": "Matej Senić",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-az-full",
+      "ns-urartu-home"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:goran-karacic",
+    "nameOriginal": "Goran Karačić",
+    "nameEnglish": "Goran Karačić",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-wiki",
+      "r26-fotmob"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:hrvoje-barisic",
+    "nameOriginal": "Hrvoje Barišić",
+    "nameEnglish": "Hrvoje Barišić",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-wiki",
+      "r26-fotmob"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:tarik-ramic",
+    "nameOriginal": "Tarik Ramić",
+    "nameEnglish": "Tarik Ramić",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "ns-cup-2024",
+      "club-cup-2024"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:toni-sunjic",
+    "nameOriginal": "Toni Šunjić",
+    "nameEnglish": "Toni Šunjić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-300948",
+      "wd-q2319654"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:besart-abdurahimi",
+    "nameOriginal": "Besart Abdurahimi",
+    "nameEnglish": "Besart Abdurahimi",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "ns-cup-2024",
+      "club-cup-2024"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-tomi-juric",
+    "nameOriginal": "Tomi Juric",
+    "nameEnglish": "Tomi Juric",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-fotmob"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-karlo-abramovic",
+    "nameOriginal": "Karlo Abramović",
+    "nameEnglish": "Karlo Abramović",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-fotmob",
+      "r26-nfs"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-petar-mamic",
+    "nameOriginal": "Petar Mamić",
+    "nameEnglish": "Petar Mamić",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-fotmob",
+      "r26-nfs"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-matej-bogdan",
+    "nameOriginal": "Matej Bogdan",
+    "nameEnglish": "Matej Bogdan",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-sw"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-niko-jankovic",
+    "nameOriginal": "Niko Janković",
+    "nameEnglish": "Niko Janković",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs",
+      "r26-ontour"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-ivan-jukic",
+    "nameOriginal": "Ivan Jukić",
+    "nameEnglish": "Ivan Jukić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-jasmin-mesanovic",
+    "nameOriginal": "Jasmin Mešanović",
+    "nameEnglish": "Jasmin Mešanović",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-haris-handzic",
+    "nameOriginal": "Haris Handžić",
+    "nameEnglish": "Haris Handžić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-marko-bencun",
+    "nameOriginal": "Marko Bencun",
+    "nameEnglish": "Marko Bencun",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-duje-dujmovic",
+    "nameOriginal": "Duje Dujmović",
+    "nameEnglish": "Duje Dujmović",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs",
+      "r26-corr"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:r26-leo-mikic",
+    "nameOriginal": "Leo Mikić",
+    "nameEnglish": "Leo Mikić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-nfs",
+      "r26-corr"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:milos-zeravica",
+    "nameOriginal": "Miloš Žeravica",
+    "nameEnglish": "Miloš Žeravica",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2017101",
+      "wd-q3178533"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:dinko-trebotic",
+    "nameOriginal": "Dinko Trebotić",
+    "nameEnglish": "Dinko Trebotić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2030262",
+      "wd-q3447702"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:velimir-vidic",
+    "nameOriginal": "Velimir Vidić",
+    "nameEnglish": "Velimir Vidić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-81188",
+      "wd-q3511306"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:ivica-dzidic",
+    "nameOriginal": "Ivica Džidić",
+    "nameEnglish": "Ivica Džidić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-81188",
+      "wd-q3511619"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:damir-dzidic",
+    "nameOriginal": "Damir Džidić",
+    "nameEnglish": "Damir Džidić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-84146",
+      "wd-q3511759"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:bulend-biscevic",
+    "nameOriginal": "Bulend Biščević",
+    "nameEnglish": "Bulend Biščević",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-84146",
+      "wd-q3513865"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:igor-musa",
+    "nameOriginal": "Igor Musa",
+    "nameEnglish": "Igor Musa",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2000308",
+      "wd-q3513947"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:amer-bekic",
+    "nameOriginal": "Amer Bekić",
+    "nameEnglish": "Amer Bekić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2012215",
+      "wd-q3613967"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:goran-zakaric",
+    "nameOriginal": "Goran Zakarić",
+    "nameEnglish": "Goran Zakarić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2017152",
+      "wd-q3773461"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:ante-serdarusic",
+    "nameOriginal": "Ante Serdarušić",
+    "nameEnglish": "Ante Serdarušić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-303526",
+      "wd-q4771097"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:ilija-prodanovic",
+    "nameOriginal": "Ilija Prodanović",
+    "nameEnglish": "Ilija Prodanović",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-84146",
+      "wd-q5998199"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:mateo-susic",
+    "nameOriginal": "Mateo Sušić",
+    "nameEnglish": "Mateo Sušić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-303526",
+      "wd-q6470844"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:renato-gojkovic",
+    "nameOriginal": "Renato Gojković",
+    "nameEnglish": "Renato Gojković",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2027552",
+      "wd-q22162802"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:danijel-graovac",
+    "nameOriginal": "Danijel Graovac",
+    "nameEnglish": "Danijel Graovac",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2012215",
+      "wd-q23772341"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:kristijan-stanic",
+    "nameOriginal": "Kristijan Stanić",
+    "nameEnglish": "Kristijan Stanić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2025353",
+      "wd-q60676773"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:toni-jovic",
+    "nameOriginal": "Toni Jović",
+    "nameEnglish": "Toni Jović",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2021515",
+      "wd-q60998956"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:nikola-vasilj",
+    "nameOriginal": "Nikola Vasilj",
+    "nameEnglish": "Nikola Vasilj",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2012215",
+      "wd-q77243490"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:igor-savic",
+    "nameOriginal": "Igor Savić",
+    "nameEnglish": "Igor Savić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2034959",
+      "wd-q113564811"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:omer-nir-on",
+    "nameOriginal": "Omer Nir On",
+    "nameEnglish": "Omer Nir On",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2038604",
+      "wd-q123202095"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:lamine-diarra",
+    "nameOriginal": "Lamine Diarra",
+    "nameEnglish": "Lamine Diarra",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-84146",
+      "wd-q562325"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:ivan-lendric",
+    "nameOriginal": "Ivan Lendrić",
+    "nameEnglish": "Ivan Lendrić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2027552",
+      "wd-q773334"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:matija-matko",
+    "nameOriginal": "Matija Matko",
+    "nameEnglish": "Matija Matko",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-300948",
+      "wd-q6787468"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:stanisa-nikolic",
+    "nameOriginal": "Staniša Nikolić",
+    "nameEnglish": "Staniša Nikolić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-84147",
+      "wd-q7599359"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:afedzie-stanley",
+    "nameOriginal": "Afedzie Stanley",
+    "nameEnglish": "Afedzie Stanley",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2000291",
+      "wd-q7599425"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:toni-pezo",
+    "nameOriginal": "Toni Pezo",
+    "nameEnglish": "Toni Pezo",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-300948",
+      "wd-q7821315"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:vedran-turkalj",
+    "nameOriginal": "Vedran Turkalj",
+    "nameEnglish": "Vedran Turkalj",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2014136",
+      "wd-q7918022"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:vladimir-brankovic",
+    "nameOriginal": "Vladimir Branković",
+    "nameEnglish": "Vladimir Branković",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-84146",
+      "wd-q7938287"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:lazar-marjanovic",
+    "nameOriginal": "Lazar Marjanović",
+    "nameEnglish": "Lazar Marjanović",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2012215",
+      "wd-q13085273"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:nemanja-stjepanovic",
+    "nameOriginal": "Nemanja Stjepanović",
+    "nameEnglish": "Nemanja Stjepanović",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2002455",
+      "wd-q13089773"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:vlado-zadro",
+    "nameOriginal": "Vlado Zadro",
+    "nameEnglish": "Vlado Zadro",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-300948",
+      "wd-q13090927"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:tomislav-barisic",
+    "nameOriginal": "Tomislav Barišić",
+    "nameEnglish": "Tomislav Barišić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2027552",
+      "wd-q17372468"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:vitalie-damascan",
+    "nameOriginal": "Vitalie Damașcan",
+    "nameEnglish": "Vitalie Damașcan",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2046309",
+      "wd-q21621188"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:stanislav-vasilj",
+    "nameOriginal": "Stanislav Vasilj",
+    "nameEnglish": "Stanislav Vasilj",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-81188",
+      "wd-q2331145"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:karlo-stapic",
+    "nameOriginal": "Karlo Stapić",
+    "nameEnglish": "Karlo Stapić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2048834",
+      "wd-q141505271"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:dan-lagumdzija",
+    "nameOriginal": "Dan Lagumdžija",
+    "nameEnglish": "Dan Lagumdžija",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "uefa-lu-2047728",
+      "wd-q141505268"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-28c1154490",
+    "nameOriginal": "Stanley Afedzie",
+    "nameEnglish": "Stanley Afedzie",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-887e935c2a",
+    "nameOriginal": "Milodrag Akmadžić",
+    "nameEnglish": "Milodrag Akmadžić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a717645443",
+    "nameOriginal": "Radosav Aleksić",
+    "nameEnglish": "Radosav Aleksić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-b2b5de12d1",
+    "nameOriginal": "Filip Arežina",
+    "nameEnglish": "Filip Arežina",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-f82fcc3fc2",
+    "nameOriginal": "Rašid Avdić",
+    "nameEnglish": "Rašid Avdić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-01cecd54b5",
+    "nameOriginal": "Aleksandar Bajić",
+    "nameEnglish": "Aleksandar Bajić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-aa8762fc9f",
+    "nameOriginal": "Krešimir Bandić",
+    "nameEnglish": "Krešimir Bandić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6bb2c8a1a2",
+    "nameOriginal": "Tomislav Barbarić",
+    "nameEnglish": "Tomislav Barbarić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bf36d5bb75",
+    "nameOriginal": "Mario Barić",
+    "nameEnglish": "Mario Barić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3019bc9c75",
+    "nameOriginal": "Marko Basara",
+    "nameEnglish": "Marko Basara",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-2e1945b14f",
+    "nameOriginal": "Ivan Bašić",
+    "nameEnglish": "Ivan Bašić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7385a7a4d2",
+    "nameOriginal": "Marko Bašić",
+    "nameEnglish": "Marko Bašić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-b43cc78b90",
+    "nameOriginal": "Almir Bekić",
+    "nameEnglish": "Almir Bekić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-e8cc859bda",
+    "nameOriginal": "Samir Bekrić",
+    "nameEnglish": "Samir Bekrić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-4c48d9a8dc",
+    "nameOriginal": "Zoran Belošević",
+    "nameEnglish": "Zoran Belošević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-898821c479",
+    "nameOriginal": "Draženko Bogdan",
+    "nameEnglish": "Draženko Bogdan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-e9c4c337ac",
+    "nameOriginal": "Petar Bojo",
+    "nameEnglish": "Petar Bojo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-d614712abe",
+    "nameOriginal": "Filip Brekalo",
+    "nameEnglish": "Filip Brekalo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-23c661bb02",
+    "nameOriginal": "Ivan Brkić",
+    "nameEnglish": "Ivan Brkić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bebd4337f9",
+    "nameOriginal": "Tyler Burey",
+    "nameEnglish": "Tyler Burey",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-afa4d01611",
+    "nameOriginal": "Marijan Ćavar",
+    "nameEnglish": "Marijan Ćavar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3a90fedb8f",
+    "nameOriginal": "Jasmin Čeliković",
+    "nameEnglish": "Jasmin Čeliković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-4ca9eaa5de",
+    "nameOriginal": "Frane Čirjak",
+    "nameEnglish": "Frane Čirjak",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-1f7488a62e",
+    "nameOriginal": "Benjamin Čolić",
+    "nameEnglish": "Benjamin Čolić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-37120aeb6f",
+    "nameOriginal": "Josip Čondrić",
+    "nameEnglish": "Josip Čondrić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-1c75724ec3",
+    "nameOriginal": "Sebastián Corda",
+    "nameEnglish": "Sebastián Corda",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-47208d7bc5",
+    "nameOriginal": "Denis Ćorić",
+    "nameEnglish": "Denis Ćorić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-27bc75b576",
+    "nameOriginal": "Ricardo da Costa",
+    "nameEnglish": "Ricardo da Costa",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-0d76a601d0",
+    "nameOriginal": "Ivan Crnov",
+    "nameEnglish": "Ivan Crnov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3c78c188c9",
+    "nameOriginal": "Danijel Ćulum",
+    "nameEnglish": "Danijel Ćulum",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-5fb5390aa4",
+    "nameOriginal": "Ivan Čurjurić",
+    "nameEnglish": "Ivan Čurjurić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-4990ddc216",
+    "nameOriginal": "Mate Dragičević",
+    "nameEnglish": "Mate Dragičević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-ba24df217a",
+    "nameOriginal": "Andrija Drljo",
+    "nameEnglish": "Andrija Drljo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-b26a25c998",
+    "nameOriginal": "Ratko Dujković",
+    "nameEnglish": "Ratko Dujković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-24a3e2b929",
+    "nameOriginal": "Neven Đurasek",
+    "nameEnglish": "Neven Đurasek",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a006a8e9bb",
+    "nameOriginal": "Samir Duro",
+    "nameEnglish": "Samir Duro",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c1d3fc3fcf",
+    "nameOriginal": "William Etchu Tabi",
+    "nameEnglish": "William Etchu Tabi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-76958e3611",
+    "nameOriginal": "Joško Farac",
+    "nameEnglish": "Joško Farac",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-0b268bd194",
+    "nameOriginal": "Nenad Gagro",
+    "nameEnglish": "Nenad Gagro",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-838f1d3ad6",
+    "nameOriginal": "Karim Gazzetta",
+    "nameEnglish": "Karim Gazzetta",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-0e3522cdae",
+    "nameOriginal": "Gligor Gligorov",
+    "nameEnglish": "Gligor Gligorov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3891797a50",
+    "nameOriginal": "Miljan Govedarica",
+    "nameEnglish": "Miljan Govedarica",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c2a1f9c721",
+    "nameOriginal": "Suvad Grabus",
+    "nameEnglish": "Suvad Grabus",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-b26e50b2ad",
+    "nameOriginal": "Šime Gržan",
+    "nameEnglish": "Šime Gržan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-09242fd62c",
+    "nameOriginal": "Irfan Hadžić",
+    "nameEnglish": "Irfan Hadžić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-592705ddc9",
+    "nameOriginal": "Ismar Hairlahović",
+    "nameEnglish": "Ismar Hairlahović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-9551cf759a",
+    "nameOriginal": "Dinko Horkaš",
+    "nameEnglish": "Dinko Horkaš",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-5b553737e6",
+    "nameOriginal": "Luis Ibáñez",
+    "nameEnglish": "Luis Ibáñez",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7f73a4d84e",
+    "nameOriginal": "Phil Jackson Ibargüen",
+    "nameEnglish": "Phil Jackson Ibargüen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-8c7b019bbb",
+    "nameOriginal": "Silvio Ilinković",
+    "nameEnglish": "Silvio Ilinković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-d6df32afd1",
+    "nameOriginal": "Marsel Ismailgeci",
+    "nameEnglish": "Marsel Ismailgeci",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6742f66a28",
+    "nameOriginal": "Josip Ivančić",
+    "nameEnglish": "Josip Ivančić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-d265de4007",
+    "nameOriginal": "Mario Ivanković",
+    "nameEnglish": "Mario Ivanković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-59b396275b",
+    "nameOriginal": "Nermin Jamak",
+    "nameEnglish": "Nermin Jamak",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-20e1a2ed5f",
+    "nameOriginal": "Marko Janjetović",
+    "nameEnglish": "Marko Janjetović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-09665d1993",
+    "nameOriginal": "Nikola Janjić",
+    "nameEnglish": "Nikola Janjić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bfc35a3329",
+    "nameOriginal": "Dragan Juranović",
+    "nameEnglish": "Dragan Juranović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-eb5bb1fec0",
+    "nameOriginal": "Nedeljko Jurić",
+    "nameEnglish": "Nedeljko Jurić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bf31bcd5d8",
+    "nameOriginal": "Alen Jurilj",
+    "nameEnglish": "Alen Jurilj",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-456bb11702",
+    "nameOriginal": "Marin Jurina",
+    "nameEnglish": "Marin Jurina",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c2361cb13d",
+    "nameOriginal": "Advan Kadušić",
+    "nameEnglish": "Advan Kadušić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7c84a030e7",
+    "nameOriginal": "Saša Kajkut",
+    "nameEnglish": "Saša Kajkut",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bca947c1a4",
+    "nameOriginal": "Karlo Kamenar",
+    "nameEnglish": "Karlo Kamenar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-170eb63fc5",
+    "nameOriginal": "Dragan Kapčević",
+    "nameEnglish": "Dragan Kapčević",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-12a707d7d4",
+    "nameOriginal": "Alvin Karadža",
+    "nameEnglish": "Alvin Karadža",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-9deab91483",
+    "nameOriginal": "Tin Karamatić",
+    "nameEnglish": "Tin Karamatić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-8b59699944",
+    "nameOriginal": "Mislav Karoglan",
+    "nameEnglish": "Mislav Karoglan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bf1dc0cda5",
+    "nameOriginal": "Dušan Kerkez",
+    "nameEnglish": "Dušan Kerkez",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-15cf5a047b",
+    "nameOriginal": "Rijad Kobiljar",
+    "nameEnglish": "Rijad Kobiljar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c65f38f997",
+    "nameOriginal": "Vasilije Kolak",
+    "nameEnglish": "Vasilije Kolak",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-877124a083",
+    "nameOriginal": "Germain Kouadio",
+    "nameEnglish": "Germain Kouadio",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-85e5470d95",
+    "nameOriginal": "Dalibor Kozić",
+    "nameEnglish": "Dalibor Kozić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-2f9b33bb2c",
+    "nameOriginal": "Dario Krišto",
+    "nameEnglish": "Dario Krišto",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a63d7000e9",
+    "nameOriginal": "Mario Krstovski",
+    "nameEnglish": "Mario Krstovski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-36d341117e",
+    "nameOriginal": "Luka Kukić",
+    "nameEnglish": "Luka Kukić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7c3a434cf4",
+    "nameOriginal": "Tonći Kukoč",
+    "nameEnglish": "Tonći Kukoč",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-89ad47d467",
+    "nameOriginal": "Petar Kunić",
+    "nameEnglish": "Petar Kunić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-065280aae8",
+    "nameOriginal": "Levan Kutalia",
+    "nameEnglish": "Levan Kutalia",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-06c9898605",
+    "nameOriginal": "Anđelko Kvesić",
+    "nameEnglish": "Anđelko Kvesić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-f048e46f6b",
+    "nameOriginal": "Zarija Lambulić",
+    "nameEnglish": "Zarija Lambulić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-f53c3d72d9",
+    "nameOriginal": "Davor Landeka",
+    "nameEnglish": "Davor Landeka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-4295f68978",
+    "nameOriginal": "Neven Laštro",
+    "nameEnglish": "Neven Laštro",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-bc1bb4287b",
+    "nameOriginal": "Juraj Ljubić",
+    "nameEnglish": "Juraj Ljubić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-41de1bd163",
+    "nameOriginal": "Marin Ljubić",
+    "nameEnglish": "Marin Ljubić",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-d8512d1c1b",
+    "nameOriginal": "Filip Lončarić",
+    "nameEnglish": "Filip Lončarić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-10ada115f4",
+    "nameOriginal": "Dragan Lovrić",
+    "nameEnglish": "Dragan Lovrić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-ffb01aa397",
+    "nameOriginal": "Luka Lučić",
+    "nameEnglish": "Luka Lučić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-5434b0f6b6",
+    "nameOriginal": "Luka Lukanić",
+    "nameEnglish": "Luka Lukanić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-d5ebe9a0dd",
+    "nameOriginal": "Anton Maglica",
+    "nameEnglish": "Anton Maglica",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-1f40f0e154",
+    "nameOriginal": "Toni Majić",
+    "nameEnglish": "Toni Majić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-4dd223f91a",
+    "nameOriginal": "Nikola Mandić",
+    "nameEnglish": "Nikola Mandić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7284841393",
+    "nameOriginal": "Staniša Mandić",
+    "nameEnglish": "Staniša Mandić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-1b94b1a3c3",
+    "nameOriginal": "Denis Marandici",
+    "nameEnglish": "Denis Marandici",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7d19795560",
+    "nameOriginal": "Armando Marenzi",
+    "nameEnglish": "Armando Marenzi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-aa9f3e020e",
+    "nameOriginal": "Toni Markić",
+    "nameEnglish": "Toni Markić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-8effcdf070",
+    "nameOriginal": "Eman Marković",
+    "nameEnglish": "Eman Marković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a308265fa2",
+    "nameOriginal": "Goran Marković",
+    "nameEnglish": "Goran Marković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-59112cab5d",
+    "nameOriginal": "Anes Mašić",
+    "nameEnglish": "Anes Mašić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6a0fda9f90",
+    "nameOriginal": "Ilija Mašić",
+    "nameEnglish": "Ilija Mašić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-287b8aa428",
+    "nameOriginal": "Nejc Mevlja",
+    "nameEnglish": "Nejc Mevlja",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-ebf57ba9ea",
+    "nameOriginal": "Ivan Milas",
+    "nameEnglish": "Ivan Milas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-220102f5a9",
+    "nameOriginal": "Hrvoje Miličević",
+    "nameEnglish": "Hrvoje Miličević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-e13dd3e0af",
+    "nameOriginal": "Semjon Milošević",
+    "nameEnglish": "Semjon Milošević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-d6358231b7",
+    "nameOriginal": "Romeo Mitrović",
+    "nameEnglish": "Romeo Mitrović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-562f3496ad",
+    "nameOriginal": "Frano Mlinar",
+    "nameEnglish": "Frano Mlinar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-5e10fccf5d",
+    "nameOriginal": "Darick Kobie Morris",
+    "nameEnglish": "Darick Kobie Morris",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6e28d1ea45",
+    "nameOriginal": "Abid Mujagić",
+    "nameEnglish": "Abid Mujagić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-23586eb510",
+    "nameOriginal": "Siniša Mulina",
+    "nameEnglish": "Siniša Mulina",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-355a736a20",
+    "nameOriginal": "Slaven Musa",
+    "nameEnglish": "Slaven Musa",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-0ff609046c",
+    "nameOriginal": "Adi Nalić",
+    "nameEnglish": "Adi Nalić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c7d546f3ac",
+    "nameOriginal": "Milan Pecelj",
+    "nameEnglish": "Milan Pecelj",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3c8917e149",
+    "nameOriginal": "Mate Pehar",
+    "nameEnglish": "Mate Pehar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-81df4542b2",
+    "nameOriginal": "Ivan Peko",
+    "nameEnglish": "Ivan Peko",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6e1b79400d",
+    "nameOriginal": "Boško Peraica",
+    "nameEnglish": "Boško Peraica",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3da307cf89",
+    "nameOriginal": "Ozren Perić",
+    "nameEnglish": "Ozren Perić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-814ebbe8da",
+    "nameOriginal": "Marko Perišić",
+    "nameEnglish": "Marko Perišić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-fea7ccc821",
+    "nameOriginal": "Oliver Petrak",
+    "nameEnglish": "Oliver Petrak",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6f48cfef8e",
+    "nameOriginal": "Kenan Pirić",
+    "nameEnglish": "Kenan Pirić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3e3ac10578",
+    "nameOriginal": "Marko Popović",
+    "nameEnglish": "Marko Popović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-0d7fdfe315",
+    "nameOriginal": "Jurica Puljiz",
+    "nameEnglish": "Jurica Puljiz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c6863587a8",
+    "nameOriginal": "Domagoj Pušić",
+    "nameEnglish": "Domagoj Pušić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6b6701c887",
+    "nameOriginal": "Demir Ramović",
+    "nameEnglish": "Demir Ramović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7843ce2a52",
+    "nameOriginal": "Marko Rašo",
+    "nameEnglish": "Marko Rašo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6249760f17",
+    "nameOriginal": "Matej Rodin",
+    "nameEnglish": "Matej Rodin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-807465138b",
+    "nameOriginal": "Dario Rugašević",
+    "nameEnglish": "Dario Rugašević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-f4c9575260",
+    "nameOriginal": "Anes Rušević",
+    "nameEnglish": "Anes Rušević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-58a41bce74",
+    "nameOriginal": "Edin Rustemović",
+    "nameEnglish": "Edin Rustemović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-b33fd4bdd6",
+    "nameOriginal": "Franko Sabljić",
+    "nameEnglish": "Franko Sabljić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-951455113b",
+    "nameOriginal": "Rijad Sadiku",
+    "nameEnglish": "Rijad Sadiku",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c13ce51383",
+    "nameOriginal": "Suad Sahiti",
+    "nameEnglish": "Suad Sahiti",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-dca00b5115",
+    "nameOriginal": "Matej Šakota",
+    "nameEnglish": "Matej Šakota",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-5b3bcaa1f0",
+    "nameOriginal": "Fenan Salčinović",
+    "nameEnglish": "Fenan Salčinović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-e2e71f6597",
+    "nameOriginal": "Dalibor Šilić",
+    "nameEnglish": "Dalibor Šilić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-c8cd5dc94d",
+    "nameOriginal": "Viktor Šiljeg",
+    "nameEnglish": "Viktor Šiljeg",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-f71741de0b",
+    "nameOriginal": "Predrag Šimić",
+    "nameEnglish": "Predrag Šimić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-db5f49f04e",
+    "nameOriginal": "Matej Sivrić",
+    "nameEnglish": "Matej Sivrić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-1c945ff513",
+    "nameOriginal": "Miljan Škrbić",
+    "nameEnglish": "Miljan Škrbić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-8deb4561c2",
+    "nameOriginal": "Blaž Slišković",
+    "nameEnglish": "Blaž Slišković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a73c9df506",
+    "nameOriginal": "Vladimir Slišković",
+    "nameEnglish": "Vladimir Slišković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-3bd441736c",
+    "nameOriginal": "So Hyon-uk",
+    "nameEnglish": "So Hyon-uk",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-95c7b8fbe4",
+    "nameOriginal": "Damir Šovšić",
+    "nameEnglish": "Damir Šovšić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-cecacb4689",
+    "nameOriginal": "Srđan Stanić",
+    "nameEnglish": "Srđan Stanić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-dd63b3a57a",
+    "nameOriginal": "Aleksandar Stanković",
+    "nameEnglish": "Aleksandar Stanković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6840417f04",
+    "nameOriginal": "Danijel Stojanović",
+    "nameEnglish": "Danijel Stojanović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7270250937",
+    "nameOriginal": "Petar Sučić",
+    "nameEnglish": "Petar Sučić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-5a2f0040e2",
+    "nameOriginal": "Stefano Surdanovic",
+    "nameEnglish": "Stefano Surdanovic",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-835a530d2d",
+    "nameOriginal": "Želimir Terkeš",
+    "nameEnglish": "Želimir Terkeš",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-e272041603",
+    "nameOriginal": "Marko Tešija",
+    "nameEnglish": "Marko Tešija",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a3fecebf99",
+    "nameOriginal": "Tomislav Tomić",
+    "nameEnglish": "Tomislav Tomić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-cf7dab22ff",
+    "nameOriginal": "Kenan Topolović",
+    "nameEnglish": "Kenan Topolović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-435d763a81",
+    "nameOriginal": "Dejan Trajkovski",
+    "nameEnglish": "Dejan Trajkovski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-52b246c3f0",
+    "nameOriginal": "Miro Varvodić",
+    "nameEnglish": "Miro Varvodić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-69a639f6fc",
+    "nameOriginal": "Dalibor Veselinović",
+    "nameEnglish": "Dalibor Veselinović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-9aafc0cc74",
+    "nameOriginal": "Dejan Vukomanović",
+    "nameEnglish": "Dejan Vukomanović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-a12eb6f6b8",
+    "nameOriginal": "Milan Vukotić",
+    "nameEnglish": "Milan Vukotić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-6b9c25ee92",
+    "nameOriginal": "Ivan Yenin",
+    "nameEnglish": "Ivan Yenin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-f29c6290f2",
+    "nameOriginal": "Zajko Zeba",
+    "nameEnglish": "Zajko Zeba",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-9fa0e60e10",
+    "nameOriginal": "Asim Zec",
+    "nameEnglish": "Asim Zec",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-0c4ba2a3a5",
+    "nameOriginal": "Tomislav Živko",
+    "nameEnglish": "Tomislav Živko",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-9f5dfcb6d7",
+    "nameOriginal": "Mladen Žižović",
+    "nameEnglish": "Mladen Žižović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-73b9e2055c",
+    "nameOriginal": "Abdul Zubairu",
+    "nameEnglish": "Abdul Zubairu",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "canonicalPlayerId": "zrinjski-mostar:wv-7f9dba0d76",
+    "nameOriginal": "Igor Žuržinov",
+    "nameEnglish": "Igor Žuržinov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-zrinjski-mostar"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  }
+]

@@ -1,0 +1,428 @@
+[
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_6fa23a3cdc",
+    "nameOriginal": "אבי אדרי",
+    "nameEnglish": "Avi Adri",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_a9f3874b86",
+    "nameOriginal": "אברהם פרידריך",
+    "nameEnglish": "Avraham Friedrich",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_5f8d21fbb0",
+    "nameOriginal": "אמרה יעקבי",
+    "nameEnglish": "Amra Yaakobi",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_6780090f07",
+    "nameOriginal": "בן ציון ריידר",
+    "nameEnglish": "Ben Zion Reider",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_81af211a4f",
+    "nameOriginal": "בני גולדשטיין",
+    "nameEnglish": "Benny Goldstein",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_a605ffbd7f",
+    "nameOriginal": "יהושע זילברשטיין",
+    "nameEnglish": "Yehoshua Zilberstein",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_a82f4f89e9",
+    "nameOriginal": "יום טוב טליאס",
+    "nameEnglish": "Yom Tov Talias",
+    "englishMethod": "alias-latin",
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "1421b92a582d5909",
+      "3c276a52fd35e6db"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_df55a90930",
+    "nameOriginal": "יונה פוקס",
+    "nameEnglish": "Yona Fuchs",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_45cd55bc49",
+    "nameOriginal": "ליאונרדו בוארב",
+    "nameEnglish": "Leonardo Boareb",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_706a75168c",
+    "nameOriginal": "מאיר אהרן מליקה",
+    "nameEnglish": null,
+    "englishMethod": null,
+    "issues": [
+      "not_in_rated_game_pool"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_72181cf8a0",
+    "nameOriginal": "מאיר ברנר",
+    "nameEnglish": "Meir Brenner",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_90d21ac295",
+    "nameOriginal": "מוניה גושן",
+    "nameEnglish": "Munia Goshen",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_d2cf8ead07",
+    "nameOriginal": "משה מוסטרל",
+    "nameEnglish": "Moshe Mostrel",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_abff31f026",
+    "nameOriginal": "משה פיימן",
+    "nameEnglish": "Moshe Pyman",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_e50849c7c4",
+    "nameOriginal": "משה רסקין",
+    "nameEnglish": "Moshe Raskin",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_3761a4caa2",
+    "nameOriginal": "נסים חלפון",
+    "nameEnglish": "Nissim Halfon",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_82db47f9fa",
+    "nameOriginal": "נפתלי שוואלב",
+    "nameEnglish": "Naftali Schwalb",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_f73e868810",
+    "nameOriginal": "עומאר גאריבה",
+    "nameEnglish": "Omar Gariba",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_0b894afa80",
+    "nameOriginal": "עומר פרץ (קשר)",
+    "nameEnglish": "Omer Peretz (MF)",
+    "englishMethod": "editor-override",
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_67db828630",
+    "nameOriginal": "עמי אדמוני",
+    "nameEnglish": "Ami Admoni",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_c5d2cb22a6",
+    "nameOriginal": "שמחה חינקיס",
+    "nameEnglish": "Simcha Hinkis",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_3768acb435",
+    "nameOriginal": "שמעון בנודיס",
+    "nameEnglish": "Shimon Benudis",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "62659d638cd18bad",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "canonicalPlayerId": "p_1ddc859543",
+    "nameOriginal": "שמעון צימרמן",
+    "nameEnglish": "Shimon Zimmerman",
+    "englishMethod": "editor-override",
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "a6a2db1374e76d19",
+      "50d91a3908057723",
+      "a0a7b3bcbfd88b78",
+      "d1c2250dbf999b8b",
+      "07b61a923c2691ea"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  }
+]

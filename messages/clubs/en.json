@@ -544,8 +544,15 @@
   "wkhLifeShout": "Life!",
   "wkhSpecialK": "Every club at once",
   "wkhSpecial": "Special editions",
-  "wkhAfK": "The world edition",
-  "wkhAfSub": "Every club’s history in one room.",
+  "terraceDailyBoard": "Today's board",
+  "terraceDailyBoardJoin": "Join the board",
+  "terraceDailyBoardNick": "Pick a name for the board (2–20 letters or digits)",
+  "terraceDailyBoardBad": "Use 2–20 letters, digits, spaces, dots or dashes.",
+  "terraceDailyBoardYou": "You're on today's board — #{n}.",
+  "terraceDailyBoardOff": "Optional. Only your name and today’s score are shown. Nothing else is stored.",
+  "wkhUvK": "Matchday",
+  "wkhAfK": "Arcade",
+  "wkhAfSub": "One game, every club — mixed trivia, timelines and memory.",
   "wkhLmK": "The hall of fame edition",
   "wkhLmTitle": "Legends Manager",
   "wkhLmSub": "Draft one club’s immortals and build a dynasty, season after season.",
@@ -625,5 +632,6 @@
   "terraceDailyClosed": "Daily Terrace is not open for this club.",
   "terraceDailyLoading": "Dealing today's edition…",
   "terraceDailyGone": "That answer could not be taken. Reload the page.",
-  "wkhHeroDaily": "Play today's Daily Terrace"
+  "wkhHeroDaily": "Play today's Daily Terrace",
+  "wkhAfTitle": "ALL FOOTBALL"
 }

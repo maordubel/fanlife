@@ -1,0 +1,178 @@
+[
+  {
+    "clubId": "hapoel-petah-tikva",
+    "researchGoalId": "r20261020-goal-c2c601107eeb3855",
+    "goalId": "r20261020-goal-c2c601107eeb3855",
+    "titleHe": "ניב טל v Bnei Yehuda",
+    "subtitleHe": "2000-12-09 · 5",
+    "playedOn": "2000-12-09",
+    "competitionHe": "official first-team match",
+    "opponentHe": "Bnei Yehuda",
+    "scoreHe": "5-1",
+    "narrativeHe": "טל נגח ריבאונד משני מטרים אחרי הדיפת יניב והבה.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "יניב והבה",
+        "side": "opponent",
+        "action": "save",
+        "zone": "C1",
+        "positionHe": "מול השער",
+        "noteHe": "הדיפת הנגיחה הקודמת"
+      },
+      {
+        "step": 2,
+        "actorHe": "ניב טל",
+        "side": "club",
+        "action": "header",
+        "zone": "C1",
+        "positionHe": "שני מטרים מהשער",
+        "noteHe": "נגח את הריבאונד פנימה"
+      }
+    ],
+    "sourceUrl": "https://hpt.co.il/game/2001/league/16",
+    "sourceTitle": "Hapoel Petah Tikva Museum",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "researchGoalId": "r20261020-goal-98252a5e529ee012",
+    "goalId": "r20261020-goal-98252a5e529ee012",
+    "titleHe": "מוטי קקון v Bnei Yehuda",
+    "subtitleHe": "2000-12-09 · 67",
+    "playedOn": "2000-12-09",
+    "competitionHe": "official first-team match",
+    "opponentHe": "Bnei Yehuda",
+    "scoreHe": "5-1",
+    "narrativeHe": "דרעי הגביה מימין וקקון נגח מחמישה מטרים.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "גולן דרעי",
+        "side": "club",
+        "action": "cross",
+        "zone": "E2",
+        "positionHe": "אגף ימין",
+        "noteHe": "הגביה מימין"
+      },
+      {
+        "step": 2,
+        "actorHe": "מוטי קקון",
+        "side": "club",
+        "action": "header",
+        "zone": "C1",
+        "positionHe": "חמישה מטרים מהשער",
+        "noteHe": "נגח פנימה"
+      }
+    ],
+    "sourceUrl": "https://hpt.co.il/game/2001/league/16",
+    "sourceTitle": "Hapoel Petah Tikva Museum",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "researchGoalId": "r20261020-goal-e05f83b005e1683e",
+    "goalId": "r20261020-goal-e05f83b005e1683e",
+    "titleHe": "מוטי קקון v Bnei Yehuda",
+    "subtitleHe": "2000-12-09 · 78",
+    "playedOn": "2000-12-09",
+    "competitionHe": "official first-team match",
+    "opponentHe": "Bnei Yehuda",
+    "scoreHe": "5-1",
+    "narrativeHe": "טל נכנס משמאל לרחבה ומסר אחורה לקקון, שסיים ממטר.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "ניב טל",
+        "side": "club",
+        "action": "pass",
+        "zone": "B1",
+        "positionHe": "בתוך הרחבה משמאל, סמוך לקו הרוחב",
+        "noteHe": "מסירה קצרה אחורה"
+      },
+      {
+        "step": 2,
+        "actorHe": "מוטי קקון",
+        "side": "club",
+        "action": "shot",
+        "zone": "C1",
+        "positionHe": "מטר מהשער",
+        "noteHe": "בעיטה לשער החשוף"
+      }
+    ],
+    "sourceUrl": "https://hpt.co.il/game/2001/league/16",
+    "sourceTitle": "Hapoel Petah Tikva Museum",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "researchGoalId": "r20261020-goal-63bd55f8f92ca8c4",
+    "goalId": "r20261020-goal-63bd55f8f92ca8c4",
+    "titleHe": "בורימיר פרקוביץ' v Maccabi Tel Aviv",
+    "subtitleHe": "2000-09-09 · 84",
+    "playedOn": "2000-09-09",
+    "competitionHe": "official first-team match",
+    "opponentHe": "Maccabi Tel Aviv",
+    "scoreHe": "3-1",
+    "narrativeHe": "אחרי מסירת עומק מטל פרקוביץ׳ חדר לרחבה ובעט מארבעה עשר מטרים.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "בורימיר פרקוביץ'",
+        "side": "club",
+        "action": "dribble",
+        "zone": "C2",
+        "positionHe": "בתוך הרחבה",
+        "noteHe": "חדר לרחבה"
+      },
+      {
+        "step": 2,
+        "actorHe": "בורימיר פרקוביץ'",
+        "side": "club",
+        "action": "shot",
+        "zone": "C2",
+        "positionHe": "ארבעה עשר מטרים מהשער",
+        "noteHe": "בעיטה לפינה הרחוקה"
+      }
+    ],
+    "sourceUrl": "https://hpt.co.il/game/2001/league/4",
+    "sourceTitle": "Hapoel Petah Tikva Museum",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  }
+]

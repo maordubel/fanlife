@@ -1,0 +1,137 @@
+[
+  {
+    "id": "hpt-bnei-20001209",
+    "url": "https://hpt.co.il/game/2001/league/16",
+    "publisher": "Hapoel Petah Tikva Museum",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal timeline and goal paragraphs",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "hpt-mta-20000909",
+    "url": "https://hpt.co.il/game/2001/league/4",
+    "publisher": "Hapoel Petah Tikva Museum",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal timeline and goal paragraphs",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "hpt-jlm-19970201",
+    "url": "https://hpt.co.il/game/1997/league/16",
+    "publisher": "Hapoel Petah Tikva Museum",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal timeline and lineup",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "pao-chelsea-20241024",
+    "url": "https://www.pao.gr/en/match/78900/",
+    "publisher": "Panathinaikos FC",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "match header, minute 69 and first-team lineup",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "pao-rangers-20031209",
+    "url": "https://www.uefa.com/uefachampionsleague/news/025a-0eaaced99921-f0a21c3013a8-1000--panathinaikos-finish-in-style/",
+    "publisher": "UEFA",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "equaliser, swirling strike and killer goal sections",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "aek-shakhtar-20230713",
+    "url": "https://shakhtar.com/en/news/2023/july/13_news/13_shakhtar_aek/",
+    "publisher": "FC Shakhtar Donetsk",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "friendly goal paragraphs and goals summary",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "aek-hajduk-20100916",
+    "url": "https://www.uefa.com/uefaeuropaleague/news/01e9-0e75822c50a9-6598dd5b6515-1000--aek-persistence-overcomes-hajduk/",
+    "publisher": "UEFA",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal paragraphs",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "stp-hoff-20241102",
+    "url": "https://www.bundesliga.com/en/bundesliga/matchday/2024-2025/9/tsg-hoffenheim-vs-fc-st-pauli/liveticker",
+    "publisher": "Bundesliga / DFL",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "20 and 90+3 goal events; starting lineup",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "stp-freiburg-20240928",
+    "url": "https://www.bundesliga.com/en/bundesliga/matchday/2024-2025/5/sport-club-freiburg-vs-fc-st-pauli/liveticker",
+    "publisher": "Bundesliga / DFL",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal events and starting lineup",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "stp-hoff-20250314",
+    "url": "https://www.bundesliga.com/en/bundesliga/matchday/2024-2025/26/fc-st-pauli-vs-tsg-hoffenheim/liveticker",
+    "publisher": "Bundesliga / DFL",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "51-minute event",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "zrinjski-botev-20240815",
+    "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-defeats-botev/",
+    "publisher": "Football Association of Bosnia and Herzegovina",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "39, 83-minute goals and starting lineup",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "hta-benfica-20101124",
+    "url": "https://www.uefa.com/uefachampionsleague/news/01eb-0e76568345ad-c7d4b2bca5f9-1000--battered-hapoel-stand-firm-to-beat-benfica/",
+    "publisher": "UEFA",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal paragraphs",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "celtic-feyenoord-20231213",
+    "url": "https://www.skysports.com/football/news/13028424/celtic-2-1-feyenoord-gustaf-lagerbielkes-late-header-ends-celtics-champions-league-drought",
+    "publisher": "Sky Sports",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "goal descriptions; article published the following day",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "oly-final-20240529",
+    "url": "https://www.uefa.com/uefaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-in-to-secure-/",
+    "publisher": "UEFA",
+    "checkedAt": "2026-10-20",
+    "access": "available_at_research",
+    "locator": "116-minute goal and starting lineup",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  },
+  {
+    "id": "oly-final-flank-review",
+    "url": "https://www.ekathimerini.com/sports/1240089/olympiakos-triumphs-in-conference-league-final/",
+    "publisher": "eKathimerini",
+    "checkedAt": "2026-10-20",
+    "access": "search-index evidence only; direct access 403",
+    "locator": "search-indexed match report: left-sided delivery; direct access returned 403",
+    "rights": "factual extraction and original paraphrase only; no article, footage or photo redistribution"
+  }
+]

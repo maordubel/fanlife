@@ -1,0 +1,36 @@
+[
+  {
+    "id": "r20261020-goal-7960ffb179fdf091",
+    "clubId": "celtic",
+    "on": "2023-12-13",
+    "opponent": "Feyenoord",
+    "scoreFromClubPerspective": "2-1",
+    "competition": "UEFA Champions League",
+    "scorerAsReported": "Luis Palma",
+    "minuteAsReported": null,
+    "sourceId": "celtic-feyenoord-20231213",
+    "paraphrase": "Palma converted a penalty; exact goal minute is not asserted from this report.",
+    "existingReplaySameMatch": [],
+    "importStatus": "source_verified_goal_archive_candidate",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  },
+  {
+    "id": "r20261020-goal-06319ca02de31725",
+    "clubId": "celtic",
+    "on": "2023-12-13",
+    "opponent": "Feyenoord",
+    "scoreFromClubPerspective": "2-1",
+    "competition": "UEFA Champions League",
+    "scorerAsReported": "Gustaf Lagerbielke",
+    "minuteAsReported": null,
+    "sourceId": "celtic-feyenoord-20231213",
+    "paraphrase": "Lagerbielke headed O’Riley’s delivery in stoppage time; origin not fixed for replay.",
+    "existingReplaySameMatch": [],
+    "importStatus": "source_verified_goal_archive_candidate",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  }
+]

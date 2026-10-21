@@ -1,0 +1,23 @@
+[
+  {
+    "clubId": "panathinaikos",
+    "on": "2024-10-24",
+    "sourceId": "pao-chelsea-20241024",
+    "startersAsReported": [
+      "Bartlomiej Dragowski",
+      "Giannis Kotsiras",
+      "Filip Mladenovic",
+      "Tin Jedvaj",
+      "Bart Schenkeveld",
+      "Nemanja Maksimovic",
+      "Adam Gnezda Cerin",
+      "Azzedine Ounahi",
+      "Facundo Pellistri",
+      "Daniel Mancini",
+      "Alexander Jeremejeff"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  }
+]

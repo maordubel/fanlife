@@ -4,6 +4,7 @@ import {FixtureRotator,type RotatorItem,type RotatorCopy} from '@/components/hom
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery} from '@/lib/club-livery'
+import {bestOffer} from '@/lib/universe/policy'
 import {StopRotator,type StopItem} from '@/components/home/StopRotator'
 
 /**
@@ -58,5 +59,22 @@ export function HubNextUpWaiting({title,kicker}:{title:string;kicker:string}){
  return <section className="wkh-next" id="next" aria-labelledby="next-h" aria-busy="true">
   <Head title={title} kicker={kicker}/>
   <div className="wk-coupon wkh-coupon wkh-coupon-wait"/>
+ </section>
+}
+
+/**
+ * The matchday card (Universe bridge): ONE companion offer — DUBID before the round or OFFSIDES near kick-off — for the soonest
+ * verified fixture of a club on the roll. Nothing is shown without a verified fixture; a failing feed shows nothing.
+ */
+export async function HubMatchday({open,locale,kicker}:{open:readonly Club[];locale:string;kicker:string}){
+ const now=new Date(),feed=await getFixtureFeed(now).catch(()=>null)
+ const ids=new Set(open.map(c=>c.id)),hit=bestOffer((feed?.fixtures??[]).filter(f=>ids.has(f.clubId)),now)
+ if(!hit)return null
+ const l=livery(hit.fixture.clubId)
+ return <section className="wkh-lm wkh-uv" aria-label={hit.offer.name} data-testid="hub-matchday">
+  <p className="wk-banner wkh-red">{kicker}</p>
+  <p className="wkh-uv-line"><b>{l?.name??hit.fixture.clubId}</b> {hit.fixture.home} – {hit.fixture.away}</p>
+  <p className="wkh-uv-line">{hit.offer.line}</p>
+  <a className="wk-btn min-h-tap" href={hit.offer.href} rel="noopener" data-moment={hit.offer.moment}>{hit.offer.cta}</a>
  </section>
 }

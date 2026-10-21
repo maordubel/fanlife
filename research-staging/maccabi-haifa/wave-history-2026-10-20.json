@@ -1,0 +1,838 @@
+{
+ "schemaVersion": 1,
+ "clubId": "maccabi-haifa",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-8dec507ad1625f9f",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2021-22/conf.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2021-22/conf.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2021-22/conf.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "5537cd70cc73898f2c44c1c512be6cd7abfc147df1aa6716a41a2a66dbc4aff1",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-214b8d4f828d56d7",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2022-23/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2022-23/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2022-23/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "bf9cd05939b055f12ee9b095bec1c20a0922277bef8940172218548de2e7b93a",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-4d87427835953457",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2023-24/conf.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2023-24/conf.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2023-24/conf.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "d7030d077ffe5f4d8ddc6eae3e50b846b9409bd085593fde08342ddbae80f909",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-7e7ef183a6389406",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2023-24/el.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2023-24/el.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2023-24/el.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "2655fbfb3b636e3584664531463719711e79ea58a17cb27543a9521bfc1c1818",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-b0f6dc355a57eea5",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/confq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/confq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/confq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1e248f3fbd2c9c8860a795373eba7b9f1f943a9dc672a4d4a3c3ad5452723fea",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-0aa9394e0477fe15",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/confq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/confq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2025-26/confq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "417d8fd7f0b79771f4293476a3815a0db6cfd3391e457b46e0fa2ddea81965c4",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-e68a3706b098c55961d6",
+   "value": {
+    "id": "research-20261020-e68a3706b098c55961d6",
+    "name": "Maccabi Haifa 0-0 Feyenoord",
+    "on": "2021-09-14",
+    "home": "Maccabi Haifa",
+    "away": "Feyenoord",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0907aa86de7045711d1e",
+   "value": {
+    "id": "research-20261020-0907aa86de7045711d1e",
+    "name": "1. FC Union Berlin 3-0 Maccabi Haifa",
+    "on": "2021-09-30",
+    "home": "1. FC Union Berlin",
+    "away": "Maccabi Haifa",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9955200d455255fa76e7",
+   "value": {
+    "id": "research-20261020-9955200d455255fa76e7",
+    "name": "Maccabi Haifa 1-0 Slavia Praha",
+    "on": "2021-10-21",
+    "home": "Maccabi Haifa",
+    "away": "Slavia Praha",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-441f3cc2c966563574d7",
+   "value": {
+    "id": "research-20261020-441f3cc2c966563574d7",
+    "name": "Slavia Praha 1-0 Maccabi Haifa",
+    "on": "2021-11-04",
+    "home": "Slavia Praha",
+    "away": "Maccabi Haifa",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-be8b168f0d89633fb686",
+   "value": {
+    "id": "research-20261020-be8b168f0d89633fb686",
+    "name": "Maccabi Haifa 0-1 1. FC Union Berlin",
+    "on": "2021-11-25",
+    "home": "Maccabi Haifa",
+    "away": "1. FC Union Berlin",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-61873301ed88426bc497",
+   "value": {
+    "id": "research-20261020-61873301ed88426bc497",
+    "name": "Feyenoord 2-1 Maccabi Haifa",
+    "on": "2021-12-09",
+    "home": "Feyenoord",
+    "away": "Maccabi Haifa",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-659263ae9c7fed0a5907",
+   "value": {
+    "id": "research-20261020-659263ae9c7fed0a5907",
+    "name": "SL Benfica 2-0 Maccabi Haifa",
+    "on": "2022-09-06",
+    "home": "SL Benfica",
+    "away": "Maccabi Haifa",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b5d337441b1650eab9ac",
+   "value": {
+    "id": "research-20261020-b5d337441b1650eab9ac",
+    "name": "Maccabi Haifa 1-3 Paris Saint-Germain",
+    "on": "2022-09-14",
+    "home": "Maccabi Haifa",
+    "away": "Paris Saint-Germain",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0f82f7154258b9d5652f",
+   "value": {
+    "id": "research-20261020-0f82f7154258b9d5652f",
+    "name": "Juventus 3-1 Maccabi Haifa",
+    "on": "2022-10-05",
+    "home": "Juventus",
+    "away": "Maccabi Haifa",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d192b1ca4606578c3b8a",
+   "value": {
+    "id": "research-20261020-d192b1ca4606578c3b8a",
+    "name": "Maccabi Haifa 2-0 Juventus",
+    "on": "2022-10-11",
+    "home": "Maccabi Haifa",
+    "away": "Juventus",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-52e8584b1fae41d4c5be",
+   "value": {
+    "id": "research-20261020-52e8584b1fae41d4c5be",
+    "name": "Paris Saint-Germain 7-2 Maccabi Haifa",
+    "on": "2022-10-25",
+    "home": "Paris Saint-Germain",
+    "away": "Maccabi Haifa",
+    "homeGoals": 7,
+    "awayGoals": 2,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "7-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ef0ea9f994b40882703e",
+   "value": {
+    "id": "research-20261020-ef0ea9f994b40882703e",
+    "name": "Maccabi Haifa 1-6 SL Benfica",
+    "on": "2022-11-02",
+    "home": "Maccabi Haifa",
+    "away": "SL Benfica",
+    "homeGoals": 1,
+    "awayGoals": 6,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "1-6",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-46b4e85baae2ff118aaf",
+   "value": {
+    "id": "research-20261020-46b4e85baae2ff118aaf",
+    "name": "Stade Rennais 3-0 Maccabi Haifa",
+    "on": "2023-09-21",
+    "home": "Stade Rennais",
+    "away": "Maccabi Haifa",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Europa League 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e7ef183a6389406"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-535e198fde970953e76e",
+   "value": {
+    "id": "research-20261020-535e198fde970953e76e",
+    "name": "Maccabi Haifa 0-0 Panathinaikos",
+    "on": "2023-10-05",
+    "home": "Maccabi Haifa",
+    "away": "Panathinaikos",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Europa League 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e7ef183a6389406"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6a13bae6038c1f977f36",
+   "value": {
+    "id": "research-20261020-6a13bae6038c1f977f36",
+    "name": "Maccabi Haifa 1-2 Villarreal CF",
+    "on": "2023-11-09",
+    "home": "Maccabi Haifa",
+    "away": "Villarreal CF",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "UEFA Europa League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e7ef183a6389406"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9de10724e4c5165f62c3",
+   "value": {
+    "id": "research-20261020-9de10724e4c5165f62c3",
+    "name": "Maccabi Haifa 0-3 Stade Rennais",
+    "on": "2023-11-30",
+    "home": "Maccabi Haifa",
+    "away": "Stade Rennais",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "UEFA Europa League 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e7ef183a6389406"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6167705a1a35541fb418",
+   "value": {
+    "id": "research-20261020-6167705a1a35541fb418",
+    "name": "Villarreal CF 0-0 Maccabi Haifa",
+    "on": "2023-12-06",
+    "home": "Villarreal CF",
+    "away": "Maccabi Haifa",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Europa League 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e7ef183a6389406"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-98dc360f91408ff4b8ca",
+   "value": {
+    "id": "research-20261020-98dc360f91408ff4b8ca",
+    "name": "Panathinaikos 1-2 Maccabi Haifa",
+    "on": "2023-12-14",
+    "home": "Panathinaikos",
+    "away": "Maccabi Haifa",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "UEFA Europa League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e7ef183a6389406"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-562b9d7f7414aad6e551",
+   "value": {
+    "id": "research-20261020-562b9d7f7414aad6e551",
+    "name": "Maccabi Haifa 1-0 KAA Gent",
+    "on": "2024-02-15",
+    "home": "Maccabi Haifa",
+    "away": "KAA Gent",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7c0b086e6b842cc64404",
+   "value": {
+    "id": "research-20261020-7c0b086e6b842cc64404",
+    "name": "KAA Gent 1-1 Maccabi Haifa",
+    "on": "2024-02-21",
+    "home": "KAA Gent",
+    "away": "Maccabi Haifa",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-af6d0f2c70b21d285bd5",
+   "value": {
+    "id": "research-20261020-af6d0f2c70b21d285bd5",
+    "name": "Maccabi Haifa 3-4 ACF Fiorentina",
+    "on": "2024-03-07",
+    "home": "Maccabi Haifa",
+    "away": "ACF Fiorentina",
+    "homeGoals": 3,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "3-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-92e1826ebd924bb4871b",
+   "value": {
+    "id": "research-20261020-92e1826ebd924bb4871b",
+    "name": "ACF Fiorentina 1-1 Maccabi Haifa",
+    "on": "2024-03-14",
+    "home": "ACF Fiorentina",
+    "away": "Maccabi Haifa",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e7c7af9fb9cf25d5042d",
+   "value": {
+    "id": "research-20261020-e7c7af9fb9cf25d5042d",
+    "name": "Maccabi Haifa 0-3 Sabah FK",
+    "on": "2024-07-25",
+    "home": "Maccabi Haifa",
+    "away": "Sabah FK",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-97bd3868696a8d9ca593",
+   "value": {
+    "id": "research-20261020-97bd3868696a8d9ca593",
+    "name": "Torpedo-BelAZ Zhodino 1-1 Maccabi Haifa",
+    "on": "2025-07-24",
+    "home": "Torpedo-BelAZ Zhodino",
+    "away": "Maccabi Haifa",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0d22d7a9899b646edbf9",
+   "value": {
+    "id": "research-20261020-0d22d7a9899b646edbf9",
+    "name": "Maccabi Haifa 3-0 Torpedo-BelAZ Zhodino",
+    "on": "2025-07-31",
+    "home": "Maccabi Haifa",
+    "away": "Torpedo-BelAZ Zhodino",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad0e0c18afcff7dba6df",
+   "value": {
+    "id": "research-20261020-ad0e0c18afcff7dba6df",
+    "name": "Raków Częstochowa 0-1 Maccabi Haifa",
+    "on": "2025-08-07",
+    "home": "Raków Częstochowa",
+    "away": "Maccabi Haifa",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-531fcc8a727e68e33c91",
+   "value": {
+    "id": "research-20261020-531fcc8a727e68e33c91",
+    "name": "Maccabi Haifa 0-2 Raków Częstochowa",
+    "on": "2025-08-14",
+    "home": "Maccabi Haifa",
+    "away": "Raków Częstochowa",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

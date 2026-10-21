@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "clubId": "aek-athens",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-e06552a97b83f3c3",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2019-20_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2019-20_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2019-20_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "ff52716bbbb39bc583543c9b993d23dac793d46cc60854320a81458bdced25e2",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-d16a8c821eb999912ca5",
+   "value": {
+    "id": "research-20261020-d16a8c821eb999912ca5",
+    "name": "PAOK Saloniki 0-2 AEK Athen",
+    "on": "2019-07-01",
+    "home": "PAOK Saloniki",
+    "away": "AEK Athen",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-61e97bcbbf0c05c063c0",
+   "value": {
+    "id": "research-20261020-61e97bcbbf0c05c063c0",
+    "name": "Aris Saloniki 1-4 AEK Athen",
+    "on": "2019-07-05",
+    "home": "Aris Saloniki",
+    "away": "AEK Athen",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5d74e31225e9ab1a0cf0",
+   "value": {
+    "id": "research-20261020-5d74e31225e9ab1a0cf0",
+    "name": "AEK Athen 2-0 OFI Heraklion",
+    "on": "2019-07-08",
+    "home": "AEK Athen",
+    "away": "OFI Heraklion",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b05c8454ae221bbacb1e",
+   "value": {
+    "id": "research-20261020-b05c8454ae221bbacb1e",
+    "name": "Panathinaikos 1-3 AEK Athen",
+    "on": "2019-07-12",
+    "home": "Panathinaikos",
+    "away": "AEK Athen",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0687b6ddf06d033ad58e",
+   "value": {
+    "id": "research-20261020-0687b6ddf06d033ad58e",
+    "name": "AEK Athen 0-0 PAOK Saloniki",
+    "on": "2019-07-15",
+    "home": "AEK Athen",
+    "away": "PAOK Saloniki",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-43369da7aaa5de534f60",
+   "value": {
+    "id": "research-20261020-43369da7aaa5de534f60",
+    "name": "Olympiakos Piraeus 3-0 AEK Athen",
+    "on": "2019-07-19",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}
