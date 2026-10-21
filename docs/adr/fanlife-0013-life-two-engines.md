@@ -53,3 +53,20 @@ that club's own archive, with no pilot club. The universal engine already has th
 Every club has ≥3 playable missions; every bound night equals the club's approved row; HELD always carries a
 critical research task. Typical gaps: relegation and ground-opening nights; Hapoel Tel Aviv has no dated title row
 in the LIFE anchors; AEK Athens and St. Pauli have no dated final.
+
+## M1–M2 (21.10.2026): the seam and the engine
+- **The seam is the play directive.** A script option (or a scene) carries `mission: {template, mandatory?}`; the
+  compiled effect is `{e: 'play', game: <fallback> | null, mission}`. LifeGame asks `missionSpecFor` (pure,
+  `lib/life/rush/call.ts`): the club must be able to hold the mission (READY/NEUTRAL), the chapter's age must be in
+  the template's range, and the night is the CHAPTER's own (`chapterFit`) — a universal chapter states no year, so
+  its missions are always the neutral version. Anything that says no plays the script's fallback game, or nothing.
+- **Switch `lifeRush`** (Settings → Features), off by default, owner preview always (rule 106).
+- **The engine** is three parts: `lib/life/rush/level.ts` (four places — street, road, yard, crowd — every moving
+  thing a function of time), `lib/life/rush/sim.ts` (one fixed step, the bot that proves every seed winnable) and
+  `lib/life/rush-render/` (three 0.169, loaded only when a mission starts). `components/clubs/life/rush/RushHost.tsx`
+  owns the glass and the input (keys, touch stick, gamepad) and returns one `MissionResult`.
+- **What it leaves in the life:** `life:rush:<template>` = good/ok/slip/skipped, plus up to three proof flags.
+- **First script use:** "The long way to the ground" (age 27) — running ahead plays Kickoff Run.
+- **Control room:** Games → LIFE · Missions shows every mission × club and the research that would open one.
+- Tests: `tests/life-rush-sim.test.ts` — every template × difficulty × 12 seeds is won by the bot and lost by
+  standing still; story mode never slips; determinism; words in both languages; screenplay missions are real.

@@ -4,6 +4,8 @@ import {notFound} from 'next/navigation'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
 import {LifeGame} from '@/components/clubs/life/LifeGame'
 import {clubLife} from '@/lib/clubs/life/pack'
+import {rushDoor} from '@/lib/clubs/life/rush'
+import {door} from '@/lib/features-server'
 import {uiLocale} from '@/lib/clubs/locale'
 import {loadClub, resolveClubId} from '@/lib/clubs/resolver'
 import {evaluationMode} from '@/lib/master/mode'
@@ -23,17 +25,19 @@ export default async function Page({params, searchParams}: {params: {slug: strin
   const preview = evaluationMode()
   const id = resolveClubId(headers().get('host'), params.slug, preview)
   if (!id) notFound()
-  const [state, club] = await Promise.all([readState(), loadClub(id)])
+  const [state, club, rushSwitch] = await Promise.all([readState(), loadClub(id), door('lifeRush')])
   const control = state.clubs.find(c => c.id === id)
   if (!club || !control || control.status === 'paused') notFound()
   if (!preview && control.status !== 'live') notFound()
   const locale = uiLocale(searchParams.lang), base = `/clubs/${id}`, copy = locale === 'he' ? he : en
   const pack = clubLife(club.data, {locale})
   if (!pack.readiness.playable) notFound()
+  // RUSH missions: the switch (or the owner's preview), and the missions this club's own archive can hold
+  const rush = rushSwitch.open ? rushDoor(club.data, pack.skin) : null
   return (
     <ClubSurface theme={club.data.theme} clubId={id} locale={locale} tabbar={false}>
       <main id="main">
-        <LifeGame key={`${id}:${locale}`} pack={pack} locale={locale} copy={copy} hubHref={`${base}?lang=${locale}`} langHref={{en: `${base}/life?lang=en`, he: `${base}/life?lang=he`}} />
+        <LifeGame key={`${id}:${locale}`} pack={pack} locale={locale} copy={copy} hubHref={`${base}?lang=${locale}`} langHref={{en: `${base}/life?lang=en`, he: `${base}/life?lang=he`}} rush={rush} />
       </main>
     </ClubSurface>
   )

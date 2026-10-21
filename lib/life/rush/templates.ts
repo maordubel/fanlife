@@ -120,3 +120,20 @@ export const MISSION_TEMPLATES: readonly MissionTemplate[] = [
 ]
 
 export const templateById = (id: string): MissionTemplate | null => MISSION_TEMPLATES.find(t => t.id === id) ?? null
+
+/**
+ * The Hebrew of every template, the same four lines in the same order, with the same tokens.
+ * `templateProblems` holds them to the same rule: the neutral lines never print a date, a rival or a ground.
+ */
+export const TEMPLATE_HE: Readonly<Record<string, {title: string; brief: string; neutralTitle: string; neutralBrief: string}>> = {
+  'kickoff-run': {title: 'ריצה לפתיחה · {date}', brief: 'השריקה ב{ground} לא תחכה. דרך {city}, עד השער, לפני הפתיחה.', neutralTitle: 'ריצה לפתיחה', neutralBrief: 'השריקה לא תחכה. דרך {city}, עד השער, לפני הפתיחה.'},
+  'sneak-in': {title: 'בלי כרטיס · {date}', brief: 'אין כרטיס, אין כסף, פרצה אחת בגדר. להיכנס לפני שהסדרנים מסתכלים לכיוון שלך.', neutralTitle: 'בלי כרטיס', neutralBrief: 'אין כרטיס, אין כסף, פרצה אחת בגדר. להיכנס לפני שהסדרנים מסתכלים לכיוון שלך.'},
+  'away-day': {title: 'משחק חוץ · {date}', brief: 'ארבעה אתם, מכונית אחת, ופתיחה במרחק דרך ארוכה מ{city}. להגיע.', neutralTitle: 'משחק חוץ', neutralBrief: 'ארבעה אתם, מכונית אחת, ופתיחה במרחק דרך ארוכה מ{city}. להגיע.'},
+  'cup-final-trip': {title: 'הגמר · {date}', brief: 'כל העיר בדרך לגמר. וגם כל מכונית שלפניך.', neutralTitle: 'הגמר', neutralBrief: 'כל העיר בדרך לגמר. וגם כל מכונית שלפניך.'},
+  'europe-night': {title: 'לילה באירופה · {date}', brief: 'עיר זרה, טלפון בלי קליטה, והחבר שלך איפשהו ביציע האורחים. למצוא אותו לפני שסוגרים את השערים.', neutralTitle: 'לילה באירופה', neutralBrief: 'עיר זרה, טלפון בלי קליטה, והחבר שלך איפשהו ביציע האורחים. למצוא אותו לפני שסוגרים את השערים.'},
+  'title-night': {title: 'אלופים · {date}', brief: 'המגרש מלא, היציעים ריקים, ואבא שלך איפשהו בפנים. למצוא אותו.', neutralTitle: 'אלופים', neutralBrief: 'המגרש מלא, היציעים ריקים, ואבא שלך איפשהו בפנים. למצוא אותו.'},
+  'where-you-stood': {title: 'איפה שעמדת · {date}', brief: 'כולם הולכים. לעלות בחזרה במדרגות למקום שתמיד עמדת בו, פעם אחרונה העונה.', neutralTitle: 'איפה שעמדת', neutralBrief: 'כולם הולכים. לעלות בחזרה במדרגות למקום שתמיד עמדת בו, פעם אחרונה העונה.'},
+  'new-ground': {title: 'היום הראשון · {date}', brief: 'אף אחד עוד לא יודע איך נכנסים. למצוא את השער ב{ground} לפני השריקה הראשונה שם.', neutralTitle: 'היום הראשון', neutralBrief: 'אף אחד עוד לא יודע איך נכנסים. למצוא את השער החדש לפני השריקה הראשונה שם.'},
+  'derby-banner-raid': {title: 'הדגל שלהם · {date}', brief: 'הדגל שלהם תלוי במחסן ליד היציע של {rival}. להחזיר אותו לפני הדרבי — אף אחד לא נפגע.', neutralTitle: 'הדגל שלהם', neutralBrief: 'הדגל של החבר’ה מהצד השני תלוי במחסן ליד היציע שלהם. להחזיר אותו לפני הדרבי — אף אחד לא נפגע.'},
+  'tifo-carry': {title: 'הכוראוגרפיה · {date}', brief: 'ארבעים גלילי נייר, שניים אתם, והם זורקים כל מה שיש להם ביד. להביא אותו ליציע שלם.', neutralTitle: 'הכוראוגרפיה', neutralBrief: 'ארבעים גלילי נייר, שניים אתם, והצד השני זורק כל מה שיש לו ביד. להביא אותו ליציע שלם.'},
+}

@@ -134,12 +134,18 @@ export type Effect =
    * `then` always happens; `good` follows a clean or good-enough go ('good' and 'ok'), `slip` follows a go that got away.
    * A slip is a different outcome, not a lost day: put what the story needs in `then`, what skill earns in `good`.
    */
-  | {e: 'play'; game: MiniGame; id: string; then?: Effect[]; good?: Effect[]; slip?: Effect[]}
+  /**
+   * A small game, or a RUSH mission (ADR-fanlife-0013). `game` is what plays when RUSH is not open on this site or
+   * device; `null` means the option simply happens without a game then. A mission never fails the day either.
+   */
+  | {e: 'play'; game: MiniGame | null; id: string; mission?: MissionCall; then?: Effect[]; good?: Effect[]; slip?: Effect[]}
   | {e: 'card'; card: string}
   | {e: 'sound'; cue: SoundCue}
   | {e: 'end'; ending: string}
 
 export type MiniGame = 'tune' | 'clap' | 'carry' | 'count' | 'kick' | 'chant'
+/** a RUSH mission a script asks for: the template (`lib/life/rush/templates.ts`) and whether the script lets it be skipped */
+export type MissionCall = {template: string; mandatory: boolean}
 /** How a small game went. 'ok' is good enough: it applies the same effects as 'good'. */
 export type PlayResult = 'good' | 'ok' | 'slip'
 export type SoundCue = 'roar' | 'murmur' | 'whistle' | 'radio' | 'door' | 'coin' | 'bus'

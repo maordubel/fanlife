@@ -33,6 +33,9 @@ import {GaugesSheet} from './GaugesSheet'
 import {Hud, type Meter} from './Hud'
 import {TapChip} from './TapChip'
 import {MiniGame} from './MiniGame'
+import {RushHost} from './rush/RushHost'
+import {missionFlags, missionSpecFor, type RushDoor} from '@/lib/life/rush/call'
+import type {MissionResult, MissionSpec} from '@/lib/life/rush/spec'
 import {instantText, Typed, type TypedHandle} from './Typed'
 import {skyOf} from '@/lib/life/universal/sky'
 import {people, roomConfig, type PlayEvent, type PlayRuntime, type PlayTarget} from './runtime'
@@ -47,8 +50,12 @@ type Result = 'good' | 'ok' | 'slip'
 /** the room changes through one machine: idle → leaving (he reached a door) → entering (the next room is being built) → idle */
 type Transit = 'idle' | 'leaving' | 'entering'
 type Delta = {id: number; text: string; tone: 'up' | 'down'}
-type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d: 'play'}>} | null
-type Props = {pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}}
+type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d: 'play'}> & {game: NonNullable<Extract<Directive, {d: 'play'}>['game']>}} | {k: 'mission'; spec: MissionSpec} | null
+type Props = {
+  pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}
+  /** RUSH for this club (the missions its archive can hold), or null where the switch is off: a mission's choice then plays its small game, or simply happens */
+  rush?: RushDoor | null
+}
 
 /* where the room sits on the glass: on a phone it takes the upper part and lifts clear of the page while somebody is speaking */
 const FRAME = {phone: {top: 0.8, bottom: -0.4}, talk: {top: 0.8, bottom: -0.06}, wide: {top: 0.86, bottom: -0.78}}
@@ -88,7 +95,7 @@ function browserStore(): LifeStore {
 
 const pad2 = (n: number) => String(n).padStart(2, '0')
 
-export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
+export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null}: Props) {
   const [state, setState] = useState<LifeState | null>(null)
   const [phase, setPhase] = useState<Phase>('boot')
   const [cardAt, setCardAt] = useState(0)
@@ -100,6 +107,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
   const [target, setTarget] = useState<PlayTarget>(null)
   const [talk, setTalk] = useState<(TalkContext & {view: RunnerView}) | null>(null)
   const [overlay, setOverlay] = useState<Overlay>(null)
+  /** the open mission's answer: RUSH hands back a whole MissionResult, not a game's three-way result */
+  const missionDone = useRef<((r: MissionResult) => void) | null>(null)
   const [toast, setToast] = useState<string | null>(null)
   const [place, setPlace] = useState<{id: string; name: string; first: boolean} | null>(null)
   const known = useRef<Set<string>>(new Set())
@@ -343,7 +352,19 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
         const card = chapterOf(pack, l.state.chapter)?.cards?.find(c => c.id === d.card)
         if (card) await new Promise<void>(res => { dismiss.current = () => res(); cue('page'); setOverlay({k: 'card', card}) })
       } else if (d.d === 'play') {
-        const result = await new Promise<Result>(res => { dismiss.current = r => res(r ?? 'ok'); setOverlay({k: 'game', d}) })
+        // a RUSH mission where this club, this age and this site can play it; otherwise the script's own small game, or nothing at all
+        const ch = chapterOf(pack, l.state.chapter)
+        const spec = d.mission && ch ? missionSpecFor(rush, d.mission, ch, {time: l.state.time === 'night' ? 'night' : 'day', locale, playId: d.id}) : null
+        let result: Result
+        if (spec) {
+          const mission = await new Promise<MissionResult | null>(res => { missionDone.current = res; dismiss.current = () => res(null); setOverlay({k: 'mission', spec}) })
+          missionDone.current = null
+          result = mission ? mission.outcome : 'ok'
+          if (mission && d.mission) l.dispatch(...missionFlags(d.mission.template, mission).map(f => ({t: 'flag' as const, k: f.k, v: f.v})))
+        } else if (d.game) {
+          const game = d.game
+          result = await new Promise<Result>(res => { dismiss.current = r => res(r ?? 'ok'); setOverlay({k: 'game', d: {...d, game}}) })
+        } else result = 'ok'
         // the game's own outcome adds to what the directive always does
         const after = eventsOf(afterPlay(d, result), l.state)
         l.dispatch(...after.events)
@@ -354,7 +375,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
       } else if (d.d === 'end') { finishChapter(d.ending); return true }
     }
     return false
-  }, [cue, enterRoom, finishChapter, pack])
+  }, [cue, enterRoom, finishChapter, locale, pack, rush])
 
   const closeTalk = useCallback(async (completed: boolean) => {
     const run = runner.current, ctx = live.current.talk, l = life.current
@@ -962,6 +983,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
             <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => closeOverlay()} data-life="card-close">{copy.next}</button></div>
           </div>
         </section>
+      )}
+
+      {overlay?.k === 'mission' && rush && (
+        <div data-clear="true" data-life="mission">
+          <RushHost spec={overlay.spec} skin={pack.skin} locale={locale} reduced={reduced} gateLabel={rush.gateLabel}
+            onDone={r => { const done = missionDone.current; missionDone.current = null; dismiss.current = null; setOverlay(null); done?.(r) }} />
+        </div>
       )}
 
       {overlay?.k === 'game' && (

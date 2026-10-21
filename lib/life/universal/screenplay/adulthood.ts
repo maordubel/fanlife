@@ -447,9 +447,9 @@ export const ADULTHOOD = [
         task: t('Choose your pace', 'לבחור את הקצב'),
         action: [s(null, 'The road is longer when you choose it. The ground is on the horizon, and not any nearer.', 'הדרך ארוכה יותר כשבוחרים אותה. המגרש באופק, ולא קרוב יותר.')],
         options: [
-          o('fast', t('Run ahead with the young ones', 'לרוץ קדימה עם הצעירים'), s('elder', 'Go. Save me a place near the wall.', 'לך. תשמור לי מקום ליד הקיר.'), [flag('life:march:pace', 'fast'), energy(-25), heart(3), standing(2)]),
+          o('fast', t('Run ahead with the young ones', 'לרוץ קדימה עם הצעירים'), s('elder', 'Go. Save me a place near the wall.', 'לך. תשמור לי מקום ליד הקיר.'), [flag('life:march:pace', 'fast'), energy(-25), heart(3), standing(2)], {mission: {template: 'kickoff-run'}}),
           o('slow', t('Stay beside him, step for step', 'להישאר לידו, צעד צעד'), s('elder', 'I will tell you who sat where in nineteen-something. You will pretend to be surprised.', 'אספר לך מי ישב איפה בשנה כלשהי. אתה תעמיד פנים שאתה מופתע.'), [flag('life:march:pace', 'slow'), energy(-5), bond('elder', 6), heart(2)]),
-          o('half', t('Run ahead, then come back for him', 'לרוץ קדימה ואז לחזור אליו'), s('elder', 'Twice the road for the same destination. That is an honest sum.', 'פעמיים הדרך לאותו יעד. זה חשבון ישר.'), [flag('life:march:pace', 'both'), energy(-30), bond('elder', 3), heart(3)]),
+          o('half', t('Run ahead, then come back for him', 'לרוץ קדימה ואז לחזור אליו'), s('elder', 'Twice the road for the same destination. That is an honest sum.', 'פעמיים הדרך לאותו יעד. זה חשבון ישר.'), [flag('life:march:pace', 'both'), energy(-30), bond('elder', 3), heart(3)], {mission: {template: 'kickoff-run'}}),
         ],
       }),
       sc({
