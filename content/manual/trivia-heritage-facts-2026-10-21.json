@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "scope": "Trivia only. Independently checked primary-source facts, original wording. Not an archive-wide approval or historical completeness claim.",
+  "facts": [
+    {
+      "club": "celtic",
+      "id": "walfrid",
+      "group": "founding",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "name",
+      "statement": "Brother Walfrid helped found Celtic in 1887.",
+      "prompt": "Before the trophies, there was a purpose. Which Celtic founder turned football into a way to help Glasgow’s poor?",
+      "answer": "Brother Walfrid",
+      "distractors": [
+        "Jock Stein",
+        "Willie Maley",
+        "Fergus McCann"
+      ],
+      "explanation": "Brother Walfrid helped establish Celtic in 1887 to raise money for people in need in Glasgow’s East End.",
+      "source": {
+        "title": "Celtic FC Foundation: Brother Walfrid",
+        "url": "https://charity.celticfc.com/brother-walfrid/",
+        "confidence": 2
+      },
+      "locator": "Brother Walfrid, paragraphs on the charity drive and founding",
+      "decade": 1880
+    },
+    {
+      "club": "celtic",
+      "id": "purpose",
+      "group": "founding",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "purpose",
+      "statement": "Celtic was formed to raise money to feed people in need.",
+      "prompt": "Back to Celtic’s beginnings: what did Brother Walfrid want the football club to help provide?",
+      "answer": "Food for people in need",
+      "distractors": [
+        "A new railway station",
+        "A professional cycling team",
+        "An overseas football academy"
+      ],
+      "explanation": "Celtic began with a charitable purpose: football could bring in money to help feed local people.",
+      "source": {
+        "title": "Celtic FC Foundation: Brother Walfrid",
+        "url": "https://charity.celticfc.com/brother-walfrid/",
+        "confidence": 2
+      },
+      "locator": "Charity drive and paying football customers",
+      "decade": 1880
+    },
+    {
+      "club": "celtic",
+      "id": "hall",
+      "group": "founding",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "ground",
+      "statement": "Celtic was formally constituted at St Mary’s Church Hall.",
+      "prompt": "Every club has a first meeting. In which hall was Celtic formally established in November 1887?",
+      "answer": "St Mary’s Church Hall",
+      "distractors": [
+        "Glasgow City Chambers",
+        "Kelvingrove Art Gallery",
+        "St Andrew’s Hall"
+      ],
+      "explanation": "The founding meeting took place at St Mary’s Church Hall on Abercromby Street.",
+      "source": {
+        "title": "Celtic FC Foundation: Brother Walfrid",
+        "url": "https://charity.celticfc.com/brother-walfrid/",
+        "confidence": 2
+      },
+      "locator": "Formal constitution, 6 November 1887",
+      "decade": 1880
+    },
+    {
+      "club": "celtic",
+      "id": "name-bridge",
+      "group": "founding",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 2,
+      "kind": "connection",
+      "statement": "The name Celtic was intended to connect Scottish and Irish cultures.",
+      "prompt": "A name with a bridge built into it: which two cultures did Brother Walfrid want “Celtic” to connect?",
+      "answer": "Scottish and Irish",
+      "distractors": [
+        "Scottish and Welsh",
+        "Irish and French",
+        "Welsh and English"
+      ],
+      "explanation": "The Foundation explains that the name was chosen to speak to Scots and Irish alike.",
+      "source": {
+        "title": "Celtic FC Foundation: Brother Walfrid",
+        "url": "https://charity.celticfc.com/brother-walfrid/",
+        "confidence": 2
+      },
+      "locator": "Club name and bridge of cultures",
+      "decade": 1880
+    },
+    {
+      "club": "panathinaikos",
+      "id": "kalafatis",
+      "group": "founding",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 2,
+      "kind": "name",
+      "statement": "Giorgos Kalafatis founded the football section in 1908.",
+      "prompt": "The story starts with a football vision in 1908. Who founded Panathinaikos’ football section?",
+      "answer": "Giorgos Kalafatis",
+      "distractors": [
+        "Michalis Papazoglou",
+        "George Hatzopoulos",
+        "Mimis Domazos"
+      ],
+      "explanation": "Giorgos Kalafatis founded the football section on 3 February 1908.",
+      "source": {
+        "title": "Panathinaikos FC: official milestones",
+        "url": "https://www.pao.gr/en/history/events/?id=281",
+        "confidence": 2
+      },
+      "locator": "1908 — The foundation of Panathinaikos",
+      "decade": 1900
+    },
+    {
+      "club": "panathinaikos",
+      "id": "shamrock",
+      "group": "shamrock",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "crest",
+      "statement": "Panathinaikos adopted the shamrock as its emblem in 1918.",
+      "prompt": "Picture the green badge. Which plant became Panathinaikos’ emblem in 1918?",
+      "answer": "Shamrock",
+      "distractors": [
+        "Oak leaf",
+        "Rose",
+        "Thistle"
+      ],
+      "explanation": "The shamrock became the club’s emblem in 1918 and an enduring symbol for its supporters.",
+      "source": {
+        "title": "Panathinaikos FC: official milestones",
+        "url": "https://www.pao.gr/en/history/events/?id=281",
+        "confidence": 2
+      },
+      "locator": "1918 — The Shamrock as a symbol",
+      "decade": 1910
+    },
+    {
+      "club": "panathinaikos",
+      "id": "papazoglou",
+      "group": "shamrock",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "name",
+      "statement": "Michalis Papazoglou proposed the shamrock; George Hatzopoulos designed it.",
+      "prompt": "The shamrock had to start somewhere. Who proposed it as Panathinaikos’ emblem?",
+      "answer": "Michalis Papazoglou",
+      "distractors": [
+        "George Hatzopoulos",
+        "Giorgos Kalafatis",
+        "Mimis Domazos"
+      ],
+      "explanation": "Michalis Papazoglou proposed the shamrock. George Hatzopoulos designed the emblem.",
+      "source": {
+        "title": "Panathinaikos FC: official milestones",
+        "url": "https://www.pao.gr/en/history/events/?id=281",
+        "confidence": 2
+      },
+      "locator": "1918 — proposer and designer distinguished",
+      "decade": 1910
+    },
+    {
+      "club": "panathinaikos",
+      "id": "leoforos-neighbourhood",
+      "group": "leoforos",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "ground",
+      "statement": "Leoforos developed in Perivola, in the Ambelokipi area of Athens.",
+      "prompt": "Leoforos is part of the neighbourhood. In which area of Athens did Panathinaikos put down those stadium roots?",
+      "answer": "Ambelokipi",
+      "distractors": [
+        "Nea Filadelfeia",
+        "Piraeus",
+        "Kallithea"
+      ],
+      "explanation": "The club’s history places the Perivola neighbourhood in Ambelokipi at the start of the Leoforos story.",
+      "source": {
+        "title": "Panathinaikos FC: official milestones",
+        "url": "https://www.pao.gr/en/history/events/?id=281",
+        "confidence": 2
+      },
+      "locator": "1920 — Leoforos starts",
+      "decade": 1920
+    },
+    {
+      "club": "st-pauli",
+      "id": "flag-origin",
+      "group": "skull-flag",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "origin",
+      "statement": "The skull flag spread from supporter culture, rather than a marketing agency.",
+      "prompt": "The skull and crossbones became a St. Pauli signature. Where did the flag tradition begin?",
+      "answer": "With a supporter on the terraces",
+      "distractors": [
+        "In an advertising agency",
+        "In a kit supplier’s design studio",
+        "In a league branding campaign"
+      ],
+      "explanation": "The museum traces the flag to supporter Doc Mabuse, who brought it to the Millerntor around 1986.",
+      "source": {
+        "title": "FC St. Pauli Museum: how the skull and crossbones came to the club",
+        "url": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+        "confidence": 2
+      },
+      "locator": "First paragraph — Doc Mabuse’s flag",
+      "decade": 1980
+    },
+    {
+      "club": "st-pauli",
+      "id": "doc-mabuse",
+      "group": "skull-flag",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "name",
+      "statement": "Doc Mabuse took a skull flag on a broomstick to the Millerntor around 1986.",
+      "prompt": "A flag, a broomstick, the Millerntor. Which supporter does St. Pauli’s museum credit with bringing that early skull flag?",
+      "answer": "Doc Mabuse",
+      "distractors": [
+        "Steph Braun",
+        "Fabian Boll",
+        "Thomas Meggle"
+      ],
+      "explanation": "Doc Mabuse brought the flag to the Gegengerade. The later printed skull design has a separate origin.",
+      "source": {
+        "title": "FC St. Pauli Museum: how the skull and crossbones came to the club",
+        "url": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+        "confidence": 2
+      },
+      "locator": "First paragraph — not the later printed design",
+      "decade": 1980
+    },
+    {
+      "club": "st-pauli",
+      "id": "anatomy-book",
+      "group": "printed-skull",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 2,
+      "kind": "origin",
+      "statement": "Steph Braun found the template for the printed skull in an anatomy book.",
+      "prompt": "From a neighbourhood shirt to a club symbol: where did Steph Braun find the template for St. Pauli’s printed skull?",
+      "answer": "An anatomy book",
+      "distractors": [
+        "A nautical map",
+        "A comic-book cover",
+        "A match programme"
+      ],
+      "explanation": "An old anatomy book supplied Braun’s skull template; he combined it with crossed bones.",
+      "source": {
+        "title": "FC St. Pauli Museum: how the skull and crossbones came to the club",
+        "url": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+        "confidence": 2
+      },
+      "locator": "Second paragraph — Steph Braun’s independent design",
+      "decade": 1980
+    },
+    {
+      "club": "st-pauli",
+      "id": "braun",
+      "group": "printed-skull",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "name",
+      "statement": "Steph Braun created the printed neighbourhood skull design independently of the original flag.",
+      "prompt": "The flag came first, but the printed design had its own creator. Who made the neighbourhood skull design later adopted by St. Pauli?",
+      "answer": "Steph Braun",
+      "distractors": [
+        "Doc Mabuse",
+        "Fabian Boll",
+        "Thomas Meggle"
+      ],
+      "explanation": "Steph Braun developed the printed skull independently. The club adopted his registered design in the late 1990s.",
+      "source": {
+        "title": "FC St. Pauli Museum: how the skull and crossbones came to the club",
+        "url": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+        "confidence": 2
+      },
+      "locator": "Second and third paragraphs — separate histories",
+      "decade": 1990
+    },
+    {
+      "club": "olympiacos",
+      "id": "laurel",
+      "group": "crest",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "crest",
+      "statement": "The Olympiacos crest depicts a young figure crowned with laurel.",
+      "prompt": "Look closely at Olympiacos’ crest: what crowns the young figure’s head?",
+      "answer": "A laurel wreath",
+      "distractors": [
+        "A royal crown",
+        "A winged helmet",
+        "A sailor’s cap"
+      ],
+      "explanation": "The club’s history describes its emblem as the adolescent crowned with laurel.",
+      "source": {
+        "title": "Olympiacos FC: official history",
+        "url": "https://www.olympiacos.org/en/history/",
+        "confidence": 2
+      },
+      "locator": "The Legend Conquered Europe — adolescent crowned with laurel",
+      "decade": 1920
+    },
+    {
+      "club": "olympiacos",
+      "id": "port-city",
+      "group": "city",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "ground",
+      "statement": "Olympiacos is the club from Piraeus.",
+      "prompt": "Olympiacos’ story is tied to a port city. Which one?",
+      "answer": "Piraeus",
+      "distractors": [
+        "Thessaloniki",
+        "Patras",
+        "Volos"
+      ],
+      "explanation": "Piraeus is the city at the heart of Olympiacos’ history.",
+      "source": {
+        "title": "Olympiacos FC: official history",
+        "url": "https://www.olympiacos.org/en/history/",
+        "confidence": 2
+      },
+      "locator": "1955–1975 — the team from Piraeus",
+      "decade": 1920
+    },
+    {
+      "club": "olympiacos",
+      "id": "rizoupoli",
+      "group": "rizoupoli",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "ground",
+      "statement": "Olympiacos moved from OAKA to Rizoupoli for the 2002/03 season.",
+      "prompt": "A different home for a European chapter: where did Olympiacos move from OAKA for the 2002/03 season?",
+      "answer": "Rizoupoli",
+      "distractors": [
+        "Leoforos",
+        "Kaftanzoglio",
+        "Toumba"
+      ],
+      "explanation": "The club moved to Rizoupoli in 2002/03 and stayed for two years.",
+      "source": {
+        "title": "Olympiacos FC: official history",
+        "url": "https://www.olympiacos.org/en/history/",
+        "confidence": 2
+      },
+      "locator": "2002–2013 — move from OAKA to Rizoupoli",
+      "decade": 2000
+    },
+    {
+      "club": "zrinjski-mostar",
+      "id": "modric",
+      "group": "modric-2003",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "name",
+      "statement": "Luka Modrić played his first professional season at Zrinjski in 2003/04.",
+      "prompt": "Before his later European career: who played his first professional season at Zrinjski in 2003/04?",
+      "answer": "Luka Modrić",
+      "distractors": [
+        "Nemanja Bilbija",
+        "Zvonimir Kožulj",
+        "Toni Šunjić"
+      ],
+      "explanation": "Luka Modrić spent his first professional season at Zrinjski in 2003/04 and won the supporters’ Filip Šunjić–Pipa award.",
+      "source": {
+        "title": "HŠK Zrinjski Mostar: official club brochure",
+        "url": "https://hskzrinjski.ba/en/info/",
+        "confidence": 2
+      },
+      "locator": "Interesting facts — Modrić first professional season",
+      "decade": 2000
+    },
+    {
+      "club": "zrinjski-mostar",
+      "id": "europe-group",
+      "group": "group-2023",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 2,
+      "kind": "connection",
+      "statement": "Zrinjski’s 2023/24 Conference League group included Aston Villa, AZ Alkmaar and Legia.",
+      "prompt": "Zrinjski’s 2023/24 group-stage adventure: which English club joined AZ Alkmaar and Legia in their group?",
+      "answer": "Aston Villa",
+      "distractors": [
+        "West Ham United",
+        "Brighton & Hove Albion",
+        "Liverpool"
+      ],
+      "explanation": "Aston Villa, AZ Alkmaar and Legia were Zrinjski’s opponents in that Conference League group.",
+      "source": {
+        "title": "HŠK Zrinjski Mostar: official club brochure",
+        "url": "https://hskzrinjski.ba/en/info/",
+        "confidence": 2
+      },
+      "locator": "UEFA competitions — 2023/2024",
+      "decade": 2020
+    },
+    {
+      "club": "hapoel-petah-tikva",
+      "id": "stelmach-1955",
+      "group": "title-1955",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 2,
+      "kind": "name",
+      "statement": "Nahum Stelmach scored 28 league goals in 25 appearances in the 1955 title season.",
+      "prompt": "A title season to remember: which 18-year-old scored 28 league goals for Hapoel Petah Tikva in 1955?",
+      "answer": "Nahum Stelmach",
+      "distractors": [
+        "Boaz Kofman",
+        "Moshe Varon",
+        "Yosef Tzirik"
+      ],
+      "explanation": "Nahum Stelmach scored 28 league goals in 25 appearances during the championship campaign.",
+      "source": {
+        "title": "Hapoel Petah Tikva Museum: 1955 season",
+        "url": "https://hpt.co.il/seasons/1955",
+        "confidence": 2
+      },
+      "locator": "Short season story — age, goals and appearances",
+      "decade": 1950
+    },
+    {
+      "club": "hapoel-petah-tikva",
+      "id": "kofman-title",
+      "group": "title-1955",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "name",
+      "statement": "Boaz Kofman scored the only goal against Hapoel Tel Aviv in the final league match of 1955.",
+      "prompt": "The last league match of 1955, away to Hapoel Tel Aviv. Who headed in the goal that sealed Hapoel Petah Tikva’s title-winning campaign?",
+      "answer": "Boaz Kofman",
+      "distractors": [
+        "Nahum Stelmach",
+        "Yosef Tzirik",
+        "Moshe Varon"
+      ],
+      "explanation": "Boaz Kofman’s 49th-minute header made it 1-0 in the final league match.",
+      "source": {
+        "title": "Hapoel Petah Tikva Museum: 1955 season",
+        "url": "https://hpt.co.il/seasons/1955",
+        "confidence": 2
+      },
+      "locator": "Final rounds — last league match and 49th-minute header",
+      "decade": 1950
+    },
+    {
+      "club": "aek-athens",
+      "id": "eagle",
+      "group": "founding-symbol",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 1,
+      "kind": "crest",
+      "statement": "AEK adopted the double-headed eagle as its emblem.",
+      "prompt": "Two heads, one unmistakable badge. Which bird is at the heart of AEK’s emblem?",
+      "answer": "Eagle",
+      "distractors": [
+        "Falcon",
+        "Owl",
+        "Phoenix"
+      ],
+      "explanation": "AEK chose the double-headed eagle as its emblem at its foundation in 1924.",
+      "source": {
+        "title": "AEK FC: official 1924 timeline (indexed official text)",
+        "url": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+        "confidence": 2
+      },
+      "locator": "1924 — emblem; official text available through search index; direct page returns 403",
+      "decade": 1920
+    },
+    {
+      "club": "aek-athens",
+      "id": "sports-store",
+      "group": "founding-meeting",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 2,
+      "kind": "origin",
+      "statement": "AEK’s founders met in a sports store on Veranzerou Street in April 1924.",
+      "prompt": "Before there was a team, there was a meeting on Veranzerou Street. What kind of place hosted AEK’s founders in April 1924?",
+      "answer": "A sports shop",
+      "distractors": [
+        "A cinema",
+        "A railway office",
+        "A bakery"
+      ],
+      "explanation": "The founders met in the sports store at 24 Veranzerou Street in Athens.",
+      "source": {
+        "title": "AEK FC: official 1924 timeline (indexed official text)",
+        "url": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+        "confidence": 2
+      },
+      "locator": "1924 — founders’ meeting venue; indexed official text",
+      "decade": 1920
+    },
+    {
+      "club": "aek-athens",
+      "id": "spanoudis",
+      "group": "founding-president",
+      "status": "approved",
+      "reviewedAt": "2026-10-21",
+      "level": 3,
+      "kind": "name",
+      "statement": "Journalist Kostas Spanoudis was AEK’s first president.",
+      "prompt": "A journalist at the start of the story: who became AEK’s first president?",
+      "answer": "Kostas Spanoudis",
+      "distractors": [
+        "Nikos Eleopoulos",
+        "Konstantinos Dimopoulos",
+        "Timoleon Tagaris"
+      ],
+      "explanation": "AEK’s official timeline names journalist Kostas Spanoudis as its first president.",
+      "source": {
+        "title": "AEK FC: official 1924 timeline (indexed official text)",
+        "url": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+        "confidence": 2
+      },
+      "locator": "1924 — first president; indexed official text",
+      "decade": 1920
+    }
+  ]
+}

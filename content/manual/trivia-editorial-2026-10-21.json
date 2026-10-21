@@ -1,0 +1,3323 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-21",
+  "basis": "Editorial selection over approved club facts and the separately documented primary-source heritage research. A truth/source change withdraws the overlay.",
+  "clubs": {
+    "hapoel-tel-aviv": [
+      {
+        "questionId": "q_c407e88bd3dadd74",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:p_2cc60c0e20"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Salim Toama belongs on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "explanation": "Salim Toama played as a midfielder for Hapoel Tel Aviv (recorded 1998–2014).",
+        "basePrompt": "Salim Toama is on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "baseExplanation": "Salim Toama played as a midfielder for Hapoel Tel Aviv (recorded 1998–2014)."
+      },
+      {
+        "questionId": "q_3493eec9f88ab16b",
+        "answer": "Forward",
+        "factIds": [
+          "pos:p_25fbe5fc0d"
+        ],
+        "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+        "prompt": "Gili Landau belongs on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "explanation": "Gili Landau played as a forward for Hapoel Tel Aviv (recorded 1974–1990).",
+        "basePrompt": "Gili Landau is on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "baseExplanation": "Gili Landau played as a forward for Hapoel Tel Aviv (recorded 1974–1990)."
+      },
+      {
+        "questionId": "q_584ff57dfa549372",
+        "answer": "Goalkeeper",
+        "factIds": [
+          "pos:p_9a7b6e96a1"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+        "prompt": "Shavit Elimelech belongs on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "explanation": "Shavit Elimelech played as a goalkeeper for Hapoel Tel Aviv (recorded 1996–2007).",
+        "basePrompt": "Shavit Elimelech is on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "baseExplanation": "Shavit Elimelech played as a goalkeeper for Hapoel Tel Aviv (recorded 1996–2007)."
+      },
+      {
+        "questionId": "q_0265d26666c40dc3",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:p_b272171d0e",
+          "pos:p_69e9291fab",
+          "pos:p_2cc60c0e20"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
+        "prompt": "Fill the Hapoel Tel Aviv team sheet: match each player to his position.",
+        "explanation": "Arie Bejarano: Goalkeeper · Kobi Hadadi: Defender · Salim Toama: Midfielder.",
+        "basePrompt": "Fill the Hapoel Tel Aviv team sheet: match each player to his position.",
+        "baseExplanation": "Arie Bejarano: Goalkeeper · Kobi Hadadi: Defender · Salim Toama: Midfielder."
+      },
+      {
+        "questionId": "q_610507add7893bfd",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:p_43edb562c4",
+          "pos:p_ad4a8b0671",
+          "pos:p_d5b6d6ee0a"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
+        "prompt": "Fill the Hapoel Tel Aviv team sheet: match each player to his position.",
+        "explanation": "Dani Elkayam: Goalkeeper · Yaakov Rahminovich: Defender · Moshe Sinai: Midfielder.",
+        "basePrompt": "Fill the Hapoel Tel Aviv team sheet: match each player to his position.",
+        "baseExplanation": "Dani Elkayam: Goalkeeper · Yaakov Rahminovich: Defender · Moshe Sinai: Midfielder."
+      },
+      {
+        "questionId": "q_07fb97ac29e15627",
+        "answer": "true",
+        "factIds": [
+          "hapoel-tel-aviv:honour:גביע-המדינה:2011/12"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+        "prompt": "True or false: Hapoel Tel Aviv won the Israel State Cup in 2011/12.",
+        "explanation": "Hapoel Tel Aviv won the Israel State Cup in 2011/12.",
+        "basePrompt": "True or false: Hapoel Tel Aviv won the Israel State Cup in 2011/12.",
+        "baseExplanation": "Hapoel Tel Aviv won the Israel State Cup in 2011/12."
+      },
+      {
+        "questionId": "q_1262cbc004a1c2da",
+        "answer": "true",
+        "factIds": [
+          "hapoel-tel-aviv:honour:גביע-המדינה:2010/11"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+        "prompt": "True or false: Hapoel Tel Aviv won the Israel State Cup in 2010/11.",
+        "explanation": "Hapoel Tel Aviv won the Israel State Cup in 2010/11.",
+        "basePrompt": "True or false: Hapoel Tel Aviv won the Israel State Cup in 2010/11.",
+        "baseExplanation": "Hapoel Tel Aviv won the Israel State Cup in 2010/11."
+      },
+      {
+        "questionId": "q_daab678bfe60b73f",
+        "answer": "NIKE",
+        "factIds": [
+          "hapoel-tel-aviv:cof-k-33"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_3.html",
+        "prompt": "Picture Hapoel Tel Aviv's 2025/26 third shirt. Which maker belongs on the label?",
+        "explanation": "Hapoel Tel Aviv's 2025/26 third shirt was made by NIKE.",
+        "basePrompt": "Picture Hapoel Tel Aviv's 2025/26 third shirt. Which maker belongs on the label?",
+        "baseExplanation": "Hapoel Tel Aviv's 2025/26 third shirt was made by NIKE."
+      },
+      {
+        "questionId": "q_e12ee792b0fdb73c",
+        "answer": "true",
+        "factIds": [
+          "hapoel-tel-aviv:cof-k-26"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_2.html",
+        "prompt": "True or false: Macron made Hapoel Tel Aviv's 2020/21 third shirt.",
+        "explanation": "It was Macron.",
+        "basePrompt": "True or false: Macron made Hapoel Tel Aviv's 2020/21 third shirt.",
+        "baseExplanation": "It was Macron."
+      },
+      {
+        "questionId": "q_ad4459bb07076b1f",
+        "answer": "NIKE",
+        "factIds": [
+          "hapoel-tel-aviv:cof-k-17"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_2.html",
+        "prompt": "Picture Hapoel Tel Aviv's 2016/17 away shirt. Which maker belongs on the label?",
+        "explanation": "Hapoel Tel Aviv's 2016/17 away shirt was made by NIKE.",
+        "basePrompt": "Picture Hapoel Tel Aviv's 2016/17 away shirt. Which maker belongs on the label?",
+        "baseExplanation": "Hapoel Tel Aviv's 2016/17 away shirt was made by NIKE."
+      },
+      {
+        "questionId": "q_8521198fe64d8543",
+        "answer": "Sergei Kleschenko",
+        "factIds": [
+          "hapoel-tel-aviv:goal-milan-2002-kleschenko-31",
+          "hapoel-tel-aviv:match-m_b88bc98d09db"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+        "prompt": "The Milan chapter: 14 March 2002. Whose winning finish are Hapoel Tel Aviv fans remembering?",
+        "explanation": "Sergei Kleschenko found the net against AC Milan in minute 32, 14 Mar 2002.",
+        "basePrompt": "Rewind to Hapoel Tel Aviv v AC Milan, 14 Mar 2002. Minute 32: who found the net?",
+        "baseExplanation": "Sergei Kleschenko found the net against AC Milan in minute 32, 14 Mar 2002."
+      },
+      {
+        "questionId": "q_1ceb789f1e97fca1",
+        "answer": "Eran Zahavi",
+        "factIds": [
+          "hapoel-tel-aviv:goal-championship-2010-zahavi-92",
+          "hapoel-tel-aviv:match-m_0058581bfa65"
+        ],
+        "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3889711,00.html",
+        "prompt": "Late in the 2010 title race: Hapoel Tel Aviv at Beitar Jerusalem, 15 May. Who finds the net in minute 92?",
+        "explanation": "Eran Zahavi found the net against Beitar Jerusalem in minute 92, 15 May 2010.",
+        "basePrompt": "Rewind to Hapoel Tel Aviv v Beitar Jerusalem, 15 May 2010. Minute 92: who found the net?",
+        "baseExplanation": "Eran Zahavi found the net against Beitar Jerusalem in minute 92, 15 May 2010."
+      },
+      {
+        "questionId": "q_5b8de81776e91b72",
+        "answer": "Gil Vermouth",
+        "factIds": [
+          "hapoel-tel-aviv:goal-cupfinal-2010-vermouth-73",
+          "hapoel-tel-aviv:match-m_a166e1b1a395"
+        ],
+        "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
+        "prompt": "Rewind to Hapoel Tel Aviv v Bnei Yehuda, 11 May 2010 (Israel State Cup final). Minute 73: who found the net?",
+        "explanation": "Gil Vermouth found the net against Bnei Yehuda in minute 73, 11 May 2010.",
+        "basePrompt": "Rewind to Hapoel Tel Aviv v Bnei Yehuda, 11 May 2010 (Israel State Cup final). Minute 73: who found the net?",
+        "baseExplanation": "Gil Vermouth found the net against Bnei Yehuda in minute 73, 11 May 2010."
+      },
+      {
+        "questionId": "q_c7e562a8aa1ac0fa",
+        "answer": "2000s",
+        "factIds": [
+          "span:p_98a480c32b"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Turn back to Walid Badir's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "explanation": "Walid Badir's recorded years at Hapoel Tel Aviv: 2005–2013.",
+        "basePrompt": "Turn back to Walid Badir's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Walid Badir's recorded years at Hapoel Tel Aviv: 2005–2013."
+      },
+      {
+        "questionId": "q_488f2c81abe3cd7e",
+        "answer": "1970s",
+        "factIds": [
+          "span:p_d5b6d6ee0a"
+        ],
+        "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+        "prompt": "Turn back to Moshe Sinai's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "explanation": "Moshe Sinai's recorded years at Hapoel Tel Aviv: 1979–1993.",
+        "basePrompt": "Turn back to Moshe Sinai's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Moshe Sinai's recorded years at Hapoel Tel Aviv: 1979–1993."
+      },
+      {
+        "questionId": "q_bfa0a70ae0ce10df",
+        "answer": "1970s",
+        "factIds": [
+          "span:p_25fbe5fc0d"
+        ],
+        "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+        "prompt": "Turn back to Gili Landau's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "explanation": "Gili Landau's recorded years at Hapoel Tel Aviv: 1974–1990.",
+        "basePrompt": "Turn back to Gili Landau's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Gili Landau's recorded years at Hapoel Tel Aviv: 1974–1990."
+      },
+      {
+        "questionId": "q_3b102b7ecc66cee6",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:p_92e5eca2c1",
+          "pos:p_8b855bbf4e",
+          "pos:p_2cd9d3a0a5"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
+        "prompt": "Fill the Hapoel Tel Aviv team sheet: match each player to his position.",
+        "explanation": "Nir Rahamin: Goalkeeper · Yitzhak Bibas: Defender · Shabi Ben Baruch: Midfielder.",
+        "basePrompt": "Fill the Hapoel Tel Aviv team sheet: match each player to his position.",
+        "baseExplanation": "Nir Rahamin: Goalkeeper · Yitzhak Bibas: Defender · Shabi Ben Baruch: Midfielder."
+      },
+      {
+        "questionId": "q_870f67a2f1c092d0",
+        "answer": "true",
+        "factIds": [
+          "hapoel-tel-aviv:honour:ליגת-העל:1987/88"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+        "prompt": "True or false: Hapoel Tel Aviv won the Israeli championship in 1987/88.",
+        "explanation": "Hapoel Tel Aviv won the Israeli championship in 1987/88.",
+        "basePrompt": "True or false: Hapoel Tel Aviv won the Israeli championship in 1987/88.",
+        "baseExplanation": "Hapoel Tel Aviv won the Israeli championship in 1987/88."
+      },
+      {
+        "questionId": "q_b2200a6d35b8af77",
+        "answer": "2001/02",
+        "factIds": [
+          "hapoel-tel-aviv:honour:גביע-הטוטו:2001/02"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+        "prompt": "In which season did Hapoel Tel Aviv win the Toto Cup?",
+        "explanation": "Hapoel Tel Aviv won the Toto Cup in 2001/02.",
+        "basePrompt": "In which season did Hapoel Tel Aviv win the Toto Cup?",
+        "baseExplanation": "Hapoel Tel Aviv won the Toto Cup in 2001/02."
+      },
+      {
+        "questionId": "q_5999b8204ca0a134",
+        "answer": "16",
+        "factIds": [
+          "hapoel-tel-aviv:honour:גביע-המדינה:count"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+        "prompt": "How many times does Hapoel Tel Aviv's honours list record the club winning the Israel State Cup?",
+        "explanation": "16 wins: 1999/00, 2005/06, 2006/07, 2009/10, 2010/11, 2011/12 and more.",
+        "basePrompt": "How many times does Hapoel Tel Aviv's honours list record the club winning the Israel State Cup?",
+        "baseExplanation": "16 wins: 1999/00, 2005/06, 2006/07, 2009/10, 2010/11, 2011/12 and more."
+      },
+      {
+        "questionId": "q_0d7366b8a32c4258",
+        "answer": [
+          "Yoel Shoham",
+          "Shavit Elimelech",
+          "Rami Halis"
+        ],
+        "factIds": [
+          "span:p_a389316c8d",
+          "span:p_9a7b6e96a1",
+          "span:p_9388f9c2ce"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
+        "prompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Yoel Shoham (1963) → Shavit Elimelech (1996) → Rami Halis (2001)",
+        "basePrompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Yoel Shoham (1963) → Shavit Elimelech (1996) → Rami Halis (2001)"
+      },
+      {
+        "questionId": "q_a3d5775f60dda9f3",
+        "answer": [
+          "Shabtai Levi",
+          "Kfir Udi",
+          "Eran Zahavi"
+        ],
+        "factIds": [
+          "span:p_1108a4ea15",
+          "span:p_a6f4efca3b",
+          "span:p_c37eaf41cd"
+        ],
+        "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+        "prompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Shabtai Levi (1977) → Kfir Udi (1996) → Eran Zahavi (2006)",
+        "basePrompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Shabtai Levi (1977) → Kfir Udi (1996) → Eran Zahavi (2006)"
+      },
+      {
+        "questionId": "q_83316e473a46a03d",
+        "answer": [
+          "Kobi Shalu",
+          "Sergei Kleschenko",
+          "Ariel Cohen"
+        ],
+        "factIds": [
+          "span:p_77fb9ae6d9",
+          "span:p_6f1fd9dc54",
+          "span:p_0b4143e70d"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
+        "prompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Kobi Shalu (1996) → Sergei Kleschenko (2001) → Ariel Cohen (2022)",
+        "basePrompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Kobi Shalu (1996) → Sergei Kleschenko (2001) → Ariel Cohen (2022)"
+      },
+      {
+        "questionId": "q_f1963d70e09ffe7e",
+        "answer": "PUMA",
+        "factIds": [
+          "hapoel-tel-aviv:kit-kit-1992-93-home"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/",
+        "prompt": "Picture Hapoel Tel Aviv's 1992/93 home shirt. Which maker belongs on the label?",
+        "explanation": "Hapoel Tel Aviv's 1992/93 home shirt was made by PUMA.",
+        "basePrompt": "Picture Hapoel Tel Aviv's 1992/93 home shirt. Which maker belongs on the label?",
+        "baseExplanation": "Hapoel Tel Aviv's 1992/93 home shirt was made by PUMA."
+      },
+      {
+        "questionId": "q_f11b26d1c199c34f",
+        "answer": "2001/02",
+        "factIds": [
+          "hapoel-tel-aviv:match-m_67a2f41af253"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+        "prompt": "Place this result in its season: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which campaign was it?",
+        "explanation": "Hapoel Tel Aviv 2-0 Chelsea, UEFA Cup, 18 Oct 2001.",
+        "basePrompt": "Place this result in its season: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which campaign was it?",
+        "baseExplanation": "Hapoel Tel Aviv 2-0 Chelsea, UEFA Cup, 18 Oct 2001."
+      },
+      {
+        "questionId": "q_ff8bce3973dbc0d6",
+        "answer": "2001/02",
+        "factIds": [
+          "hapoel-tel-aviv:match-m_73bc1426d0e3"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Place this result in its season: Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which campaign was it?",
+        "explanation": "Chelsea 1-1 Hapoel Tel Aviv, UEFA Cup, 1 Nov 2001.",
+        "basePrompt": "Place this result in its season: Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which campaign was it?",
+        "baseExplanation": "Chelsea 1-1 Hapoel Tel Aviv, UEFA Cup, 1 Nov 2001."
+      },
+      {
+        "questionId": "q_87d4fb32b564c332",
+        "answer": "1-2",
+        "factIds": [
+          "hapoel-tel-aviv:match-m_50b241094fed"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Nov 1967 in the Israel State Cup. How did it finish? (Hapoel Tel Aviv first)",
+        "explanation": "Maccabi Tel Aviv 2-1 Hapoel Tel Aviv, Israel State Cup, 1 Nov 1967.",
+        "basePrompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Nov 1967 in the Israel State Cup. How did it finish? (Hapoel Tel Aviv first)",
+        "baseExplanation": "Maccabi Tel Aviv 2-1 Hapoel Tel Aviv, Israel State Cup, 1 Nov 1967."
+      },
+      {
+        "questionId": "q_3cdb62182011dc10",
+        "answer": "1991/92",
+        "factIds": [
+          "hapoel-tel-aviv:match-m_8257deacd9e0"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Place this result in its season: Hapoel Tel Aviv lost 1-3 to Maccabi Tel Aviv in the Israel State Cup. Which campaign was it?",
+        "explanation": "Maccabi Tel Aviv 3-1 Hapoel Tel Aviv, Israel State Cup, 25 Apr 1992.",
+        "basePrompt": "Place this result in its season: Hapoel Tel Aviv lost 1-3 to Maccabi Tel Aviv in the Israel State Cup. Which campaign was it?",
+        "baseExplanation": "Maccabi Tel Aviv 3-1 Hapoel Tel Aviv, Israel State Cup, 25 Apr 1992."
+      },
+      {
+        "questionId": "q_d1632ab8d64db13c",
+        "answer": "0-0",
+        "factIds": [
+          "hapoel-tel-aviv:match-m_d9908525390f"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Mar 1986 in the Liga Leumit. How did it finish? (Hapoel Tel Aviv first)",
+        "explanation": "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv, Liga Leumit, 1 Mar 1986.",
+        "basePrompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Mar 1986 in the Liga Leumit. How did it finish? (Hapoel Tel Aviv first)",
+        "baseExplanation": "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv, Liga Leumit, 1 Mar 1986."
+      },
+      {
+        "questionId": "q_59bafb71987cc21d",
+        "answer": "2-1",
+        "factIds": [
+          "hapoel-tel-aviv:match-m_c4fdcf7a9b56"
+        ],
+        "sourceUrl": "https://wiki.red-fans.com/",
+        "prompt": "Remember the scoreline: Hapoel Tel Aviv v Teplice, 20 Aug 2009 in the UEFA Europa League. How did it finish? (Hapoel Tel Aviv first)",
+        "explanation": "Teplice 1-2 Hapoel Tel Aviv, UEFA Europa League, 20 Aug 2009.",
+        "basePrompt": "Remember the scoreline: Hapoel Tel Aviv v Teplice, 20 Aug 2009 in the UEFA Europa League. How did it finish? (Hapoel Tel Aviv first)",
+        "baseExplanation": "Teplice 1-2 Hapoel Tel Aviv, UEFA Europa League, 20 Aug 2009."
+      }
+    ],
+    "zrinjski-mostar": [
+      {
+        "questionId": "q_44bbfcf11106ff0f",
+        "answer": "Luka Modrić",
+        "factIds": [
+          "heritage:zrinjski-mostar:modric-2003"
+        ],
+        "sourceUrl": "https://hskzrinjski.ba/en/info/",
+        "prompt": "Before his later European career: who played his first professional season at Zrinjski in 2003/04?",
+        "explanation": "Luka Modrić spent his first professional season at Zrinjski in 2003/04 and won the supporters’ Filip Šunjić–Pipa award.",
+        "basePrompt": "Before his later European career: who played his first professional season at Zrinjski in 2003/04?",
+        "baseExplanation": "Luka Modrić spent his first professional season at Zrinjski in 2003/04 and won the supporters’ Filip Šunjić–Pipa award."
+      },
+      {
+        "questionId": "q_30573469279164ea",
+        "answer": "Forward",
+        "factIds": [
+          "pos:zrinjski-mostar:nemanja-bilbija"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
+        "prompt": "Nemanja Bilbija belongs on the Zrinjski Mostar team sheet. Which position was his?",
+        "explanation": "Nemanja Bilbija played as a forward for Zrinjski Mostar (recorded 2016).",
+        "basePrompt": "Nemanja Bilbija is on the Zrinjski Mostar team sheet. Which position was his?",
+        "baseExplanation": "Nemanja Bilbija played as a forward for Zrinjski Mostar (recorded 2016)."
+      },
+      {
+        "questionId": "q_41dcf7d2a5db4cb2",
+        "answer": "Borac",
+        "factIds": [
+          "zrinjski-mostar:w-m-cup-final-2024-second-leg"
+        ],
+        "sourceUrl": "https://www.nfsbih.ba/vijesti/nogomet-m/kup-bih-m/hsk-zrinjski-po-treci-put-osvojio-kup-bosne-i-hercegovine/",
+        "prompt": "Zrinjski Mostar rewind: 23 May 2024 in the Bosnia and Herzegovina Cup Final, Second Leg. A 1-0 win — against which club?",
+        "explanation": "Borac 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, Second Leg, 23 May 2024.",
+        "basePrompt": "Zrinjski Mostar rewind: 23 May 2024 in the Bosnia and Herzegovina Cup Final, Second Leg. A 1-0 win — against which club?",
+        "baseExplanation": "Borac 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, Second Leg, 23 May 2024."
+      },
+      {
+        "questionId": "q_7a13bcde7e324918",
+        "answer": "Velež",
+        "factIds": [
+          "zrinjski-mostar:w-m-cup-2026-first-leg"
+        ],
+        "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/cup-bih-m/zrinjski-wins-first-leg-of-the-bih-cup-final/",
+        "prompt": "Zrinjski Mostar rewind: 6 May 2026 in the Bosnia and Herzegovina Cup Final, First Leg. A 1-0 win — against which club?",
+        "explanation": "Zrinjski Mostar 1-0 Velež, Bosnia and Herzegovina Cup Final, First Leg, 6 May 2026.",
+        "basePrompt": "Zrinjski Mostar rewind: 6 May 2026 in the Bosnia and Herzegovina Cup Final, First Leg. A 1-0 win — against which club?",
+        "baseExplanation": "Zrinjski Mostar 1-0 Velež, Bosnia and Herzegovina Cup Final, First Leg, 6 May 2026."
+      },
+      {
+        "questionId": "q_a8d97cf6b5e83dd0",
+        "answer": "FK Velež Mostar",
+        "factIds": [
+          "zrinjski-mostar:w-m-cup-final-2023"
+        ],
+        "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/cup-bih-m/hsk-zrinjski-won-the-bh-cup-and-the-double-crown",
+        "prompt": "Zrinjski Mostar derby rewind: 17 May 2023 in the Bosnia and Herzegovina Cup Final. A 1-0 win — against which club?",
+        "explanation": "FK Velež Mostar 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, 17 May 2023.",
+        "basePrompt": "Zrinjski Mostar derby rewind: 17 May 2023 in the Bosnia and Herzegovina Cup Final. A 1-0 win — against which club?",
+        "baseExplanation": "FK Velež Mostar 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, 17 May 2023."
+      },
+      {
+        "questionId": "q_f73785bcbbdc58bc",
+        "answer": "false",
+        "factIds": [
+          "zrinjski-mostar:cof-k-03"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+        "prompt": "True or false: Lotto made Zrinjski Mostar's 2010/11 home shirt.",
+        "explanation": "It was Zeus.",
+        "basePrompt": "True or false: Lotto made Zrinjski Mostar's 2010/11 home shirt.",
+        "baseExplanation": "It was Zeus."
+      },
+      {
+        "questionId": "q_23654f33f8ffef71",
+        "answer": "false",
+        "factIds": [
+          "zrinjski-mostar:fka-k-154139"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-2002-03-away-kit-154139/",
+        "prompt": "True or false: Fotex made Zrinjski Mostar's 2002/03 away shirt.",
+        "explanation": "It was Naai.",
+        "basePrompt": "True or false: Fotex made Zrinjski Mostar's 2002/03 away shirt.",
+        "baseExplanation": "It was Naai."
+      },
+      {
+        "questionId": "q_785861169727587f",
+        "answer": "Macron",
+        "factIds": [
+          "zrinjski-mostar:fka-k-120774"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-2018-19-away-kit-120774/",
+        "prompt": "Picture Zrinjski Mostar's 2018/19 away shirt. Which maker belongs on the label?",
+        "explanation": "Zrinjski Mostar's 2018/19 away shirt was made by Macron.",
+        "basePrompt": "Picture Zrinjski Mostar's 2018/19 away shirt. Which maker belongs on the label?",
+        "baseExplanation": "Zrinjski Mostar's 2018/19 away shirt was made by Macron."
+      },
+      {
+        "questionId": "q_2690a2b5a62e7123",
+        "answer": "false",
+        "factIds": [
+          "zrinjski-mostar:fka-k-479743"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-2012-13-away-kit-479743/",
+        "prompt": "True or false: Pienne made Zrinjski Mostar's 2012/13 away shirt.",
+        "explanation": "It was Zeus.",
+        "basePrompt": "True or false: Pienne made Zrinjski Mostar's 2012/13 away shirt.",
+        "baseExplanation": "It was Zeus."
+      },
+      {
+        "questionId": "q_b6376bad417f33d7",
+        "answer": "Zeus",
+        "factIds": [
+          "zrinjski-mostar:fka-k-173652"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-2016-17-away-kit-173652/",
+        "prompt": "Picture Zrinjski Mostar's 2016/17 away shirt. Which maker belongs on the label?",
+        "explanation": "Zrinjski Mostar's 2016/17 away shirt was made by Zeus.",
+        "basePrompt": "Picture Zrinjski Mostar's 2016/17 away shirt. Which maker belongs on the label?",
+        "baseExplanation": "Zrinjski Mostar's 2016/17 away shirt was made by Zeus."
+      },
+      {
+        "questionId": "q_b58e42e35ea8fc2f",
+        "answer": "Aston Villa",
+        "factIds": [
+          "heritage:zrinjski-mostar:group-2023"
+        ],
+        "sourceUrl": "https://hskzrinjski.ba/en/info/",
+        "prompt": "Zrinjski’s 2023/24 group-stage adventure: which English club joined AZ Alkmaar and Legia in their group?",
+        "explanation": "Aston Villa, AZ Alkmaar and Legia were Zrinjski’s opponents in that Conference League group.",
+        "basePrompt": "Zrinjski’s 2023/24 group-stage adventure: which English club joined AZ Alkmaar and Legia in their group?",
+        "baseExplanation": "Aston Villa, AZ Alkmaar and Legia were Zrinjski’s opponents in that Conference League group."
+      },
+      {
+        "questionId": "q_9c61f6f9ed5c261f",
+        "answer": "Matija Malekinušić",
+        "factIds": [
+          "zrinjski-mostar:goal-2023-12-14-matija-malekinusic-87",
+          "zrinjski-mostar:w-m-villa-home-2023",
+          "zrinjski-mostar:a-m-2023-12-14-zrinjski-aston-villa"
+        ],
+        "sourceUrl": "https://www.skysports.com/football/news/13030310/zrinjski-mostar-1-1-aston-villa-nicolo-zaniolos-first-goal-for-club-secures-europa-conference-league-last-16-spot",
+        "prompt": "Rewind to Zrinjski Mostar v Aston Villa, 14 Dec 2023 (UEFA Europa Conference League). Minute 87: who found the net?",
+        "explanation": "Matija Malekinušić found the net against Aston Villa in minute 87, 14 Dec 2023.",
+        "basePrompt": "Rewind to Zrinjski Mostar v Aston Villa, 14 Dec 2023 (UEFA Europa Conference League). Minute 87: who found the net?",
+        "baseExplanation": "Matija Malekinušić found the net against Aston Villa in minute 87, 14 Dec 2023."
+      },
+      {
+        "questionId": "q_320dec3e12e316ac",
+        "answer": "Zvonimir Kožulj",
+        "factIds": [
+          "zrinjski-mostar:goal-2023-09-21-kozulj-winner-az",
+          "zrinjski-mostar:w-m-az-home-2023",
+          "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+        ],
+        "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+        "prompt": "Rewind to Zrinjski Mostar v AZ Alkmaar, 21 Sept 2023 (UEFA Europa Conference League). Minute 81: who found the net?",
+        "explanation": "Zvonimir Kožulj found the net against AZ Alkmaar in minute 81, 21 Sept 2023.",
+        "basePrompt": "Rewind to Zrinjski Mostar v AZ Alkmaar, 21 Sept 2023 (UEFA Europa Conference League). Minute 81: who found the net?",
+        "baseExplanation": "Zvonimir Kožulj found the net against AZ Alkmaar in minute 81, 21 Sept 2023."
+      },
+      {
+        "questionId": "q_ca6249c57894da9c",
+        "answer": "Nemanja Bilbija",
+        "factIds": [
+          "zrinjski-mostar:goal-2023-07-18-nemanja-bilbija-27",
+          "zrinjski-mostar:a-m-2023-07-18-zrinjski-urartu"
+        ],
+        "sourceUrl": "https://sport.srpskainfo.com/fudbal/drama-pod-bijelim-brijegom-zrinjski-se-nakon-penala-plasirao-u-2-kolo-kvalifikacija-za-ligu-sampiona-video-foto/",
+        "prompt": "Rewind to Zrinjski Mostar v Urartu, 18 Jul 2023 (UEFA Champions League qualifying). Minute 27: who found the net?",
+        "explanation": "Nemanja Bilbija found the net against Urartu in minute 27, 18 Jul 2023.",
+        "basePrompt": "Rewind to Zrinjski Mostar v Urartu, 18 Jul 2023 (UEFA Champions League qualifying). Minute 27: who found the net?",
+        "baseExplanation": "Nemanja Bilbija found the net against Urartu in minute 27, 18 Jul 2023."
+      },
+      {
+        "questionId": "q_f848c02591fc8c6c",
+        "answer": "2010s",
+        "factIds": [
+          "span:zrinjski-mostar:nemanja-bilbija"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
+        "prompt": "Turn back to Nemanja Bilbija's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "explanation": "Nemanja Bilbija's recorded years at Zrinjski Mostar: 2016.",
+        "basePrompt": "Turn back to Nemanja Bilbija's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Nemanja Bilbija's recorded years at Zrinjski Mostar: 2016."
+      },
+      {
+        "questionId": "q_d8d2d6ccdb3bd337",
+        "answer": [
+          "Pienne",
+          "Fotex",
+          "Naai"
+        ],
+        "factIds": [
+          "zrinjski-mostar:fka-k-154125",
+          "zrinjski-mostar:fka-k-154126",
+          "zrinjski-mostar:fka-k-154138"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-1994-95-home-kit-154125/",
+        "prompt": "Three shirts from Zrinjski Mostar's past. Match each home-shirt season to its maker.",
+        "explanation": "1994/95: Pienne · 1997/98: Fotex · 2002/03: Naai.",
+        "basePrompt": "Three shirts from Zrinjski Mostar's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "1994/95: Pienne · 1997/98: Fotex · 2002/03: Naai."
+      },
+      {
+        "questionId": "q_0e478668724025ad",
+        "answer": [
+          "Fotex",
+          "Naai",
+          "Lotto"
+        ],
+        "factIds": [
+          "zrinjski-mostar:fka-k-154140",
+          "zrinjski-mostar:fka-k-154138",
+          "zrinjski-mostar:fka-k-154142"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-2001-02-home-kit-154140/",
+        "prompt": "Three shirts from Zrinjski Mostar's past. Match each home-shirt season to its maker.",
+        "explanation": "2001/02: Fotex · 2002/03: Naai · 2006/07: Lotto.",
+        "basePrompt": "Three shirts from Zrinjski Mostar's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2001/02: Fotex · 2002/03: Naai · 2006/07: Lotto."
+      },
+      {
+        "questionId": "q_4f6728ed9e0c0449",
+        "answer": [
+          "Naai",
+          "Lotto",
+          "Zeus"
+        ],
+        "factIds": [
+          "zrinjski-mostar:fka-k-154133",
+          "zrinjski-mostar:fka-k-154142",
+          "zrinjski-mostar:fka-k-154129"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-2004-05-home-kit-154133/",
+        "prompt": "Three shirts from Zrinjski Mostar's past. Match each home-shirt season to its maker.",
+        "explanation": "2004/05: Naai · 2006/07: Lotto · 2007/08: Zeus.",
+        "basePrompt": "Three shirts from Zrinjski Mostar's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2004/05: Naai · 2006/07: Lotto · 2007/08: Zeus."
+      },
+      {
+        "questionId": "q_a51182c730c2c059",
+        "answer": [
+          "Defender",
+          "Midfielder",
+          "Forward"
+        ],
+        "factIds": [
+          "pos:zrinjski-mostar:toni-sunjic",
+          "pos:zrinjski-mostar:ante-serdarusic",
+          "pos:zrinjski-mostar:amer-bekic"
+        ],
+        "sourceUrl": "https://match.uefa.com/v5/matches/300948/lineups",
+        "prompt": "Fill the Zrinjski Mostar team sheet: match each player to his position.",
+        "explanation": "Toni Šunjić: Defender · Ante Serdarušić: Midfielder · Amer Bekić: Forward.",
+        "basePrompt": "Fill the Zrinjski Mostar team sheet: match each player to his position.",
+        "baseExplanation": "Toni Šunjić: Defender · Ante Serdarušić: Midfielder · Amer Bekić: Forward."
+      },
+      {
+        "questionId": "q_1fb782aa09c3c442",
+        "answer": [
+          "Defender",
+          "Midfielder",
+          "Forward"
+        ],
+        "factIds": [
+          "pos:zrinjski-mostar:hrvoje-barisic",
+          "pos:zrinjski-mostar:r26-niko-jankovic",
+          "pos:zrinjski-mostar:r26-sulejman-smajic"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
+        "prompt": "Fill the Zrinjski Mostar team sheet: match each player to his position.",
+        "explanation": "Hrvoje Barišić: Defender · Niko Janković: Midfielder · Sulejman Smajić: Forward.",
+        "basePrompt": "Fill the Zrinjski Mostar team sheet: match each player to his position.",
+        "baseExplanation": "Hrvoje Barišić: Defender · Niko Janković: Midfielder · Sulejman Smajić: Forward."
+      },
+      {
+        "questionId": "q_fba96c3a6e8896fc",
+        "answer": "Nemanja Bilbija",
+        "factIds": [
+          "zrinjski-mostar:a-m-2025-10-02-zrinjski-l-red-imps"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2046309--",
+        "prompt": "Who opened Zrinjski Mostar's scoring against L. Red Imps in the UEFA Conference League on 2 Oct 2025?",
+        "explanation": "Zrinjski Mostar 5-0 L. Red Imps, UEFA Conference League, 2 Oct 2025. Nemanja Bilbija opened the scoring for Zrinjski Mostar.",
+        "basePrompt": "Who opened Zrinjski Mostar's scoring against L. Red Imps in the UEFA Conference League on 2 Oct 2025?",
+        "baseExplanation": "Zrinjski Mostar 5-0 L. Red Imps, UEFA Conference League, 2 Oct 2025. Nemanja Bilbija opened the scoring for Zrinjski Mostar."
+      },
+      {
+        "questionId": "q_66dfe6328838be91",
+        "answer": [
+          "Goran Karačić",
+          "Nemanja Bilbija",
+          "Petar Mamić"
+        ],
+        "factIds": [
+          "zrinjski-mostar:a-m-2025-12-18-zrinjski-sk-rapid"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2046402--",
+        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against SK Rapid in the UEFA Conference League on 18 Dec 2025?",
+        "explanation": "Zrinjski Mostar 1-1 SK Rapid, UEFA Conference League, 18 Dec 2025. Starting eleven: Goran Karačić, Hrvoje Barišić, Ilija Mašić, Leo Mikić, Petar Mamić, Antonio Ivančić, Igor Savić, Mario Ćuže, Kerim Memija, Duje Dujmović, Nemanja Bilbija.",
+        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against SK Rapid in the UEFA Conference League on 18 Dec 2025?",
+        "baseExplanation": "Zrinjski Mostar 1-1 SK Rapid, UEFA Conference League, 18 Dec 2025. Starting eleven: Goran Karačić, Hrvoje Barišić, Ilija Mašić, Leo Mikić, Petar Mamić, Antonio Ivančić, Igor Savić, Mario Ćuže, Kerim Memija, Duje Dujmović, Nemanja Bilbija."
+      },
+      {
+        "questionId": "q_deca13b05ec582a7",
+        "answer": [
+          "Igor Savić",
+          "Duje Dujmović",
+          "Nemanja Bilbija"
+        ],
+        "factIds": [
+          "zrinjski-mostar:a-m-2025-10-23-mainz-zrinjski"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2046322--",
+        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against Mainz in the UEFA Conference League on 23 Oct 2025?",
+        "explanation": "Mainz 1-0 Zrinjski Mostar, UEFA Conference League, 23 Oct 2025. Starting eleven: Goran Karačić, Ilija Mašić, Marko Vranjković, Igor Savić, Jakov Pranjić, Stefano Surdanović, Mario Ćuže, Neven Djurasek, Kerim Memija, Duje Dujmović, Nemanja Bilbija.",
+        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against Mainz in the UEFA Conference League on 23 Oct 2025?",
+        "baseExplanation": "Mainz 1-0 Zrinjski Mostar, UEFA Conference League, 23 Oct 2025. Starting eleven: Goran Karačić, Ilija Mašić, Marko Vranjković, Igor Savić, Jakov Pranjić, Stefano Surdanović, Mario Ćuže, Neven Djurasek, Kerim Memija, Duje Dujmović, Nemanja Bilbija."
+      },
+      {
+        "questionId": "q_4a18eb32ab359aee",
+        "answer": "Nemanja Bilbija",
+        "factIds": [
+          "zrinjski-mostar:a-m-2018-07-26-zrinjski-valletta"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2024836--",
+        "prompt": "Whose name went on the scoresheet for Zrinjski Mostar against Valletta in the UEFA Europa League on 26 Jul 2018?",
+        "explanation": "Zrinjski Mostar 1-1 Valletta, UEFA Europa League, 26 Jul 2018. Nemanja Bilbija scored for Zrinjski Mostar.",
+        "basePrompt": "Whose name went on the scoresheet for Zrinjski Mostar against Valletta in the UEFA Europa League on 26 Jul 2018?",
+        "baseExplanation": "Zrinjski Mostar 1-1 Valletta, UEFA Europa League, 26 Jul 2018. Nemanja Bilbija scored for Zrinjski Mostar."
+      },
+      {
+        "questionId": "q_0d3034175665d226",
+        "answer": [
+          "Mateo Sušić",
+          "Antonio Ivančić",
+          "Nemanja Bilbija"
+        ],
+        "factIds": [
+          "zrinjski-mostar:a-m-2025-07-22-s-bratislava-zrinjski"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2045376--",
+        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against S. Bratislava in the UEFA Champions League on 22 Jul 2025?",
+        "explanation": "S. Bratislava 4-0 Zrinjski Mostar, UEFA Champions League, 22 Jul 2025. Starting eleven: Goran Karačić, Ilija Mašić, Mateo Sušić, Antonio Ivančić, Igor Savić, Jakov Pranjić, Stefano Surdanović, Kerim Memija, Duje Dujmović, Karlo Abramović, Nemanja Bilbija.",
+        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against S. Bratislava in the UEFA Champions League on 22 Jul 2025?",
+        "baseExplanation": "S. Bratislava 4-0 Zrinjski Mostar, UEFA Champions League, 22 Jul 2025. Starting eleven: Goran Karačić, Ilija Mašić, Mateo Sušić, Antonio Ivančić, Igor Savić, Jakov Pranjić, Stefano Surdanović, Kerim Memija, Duje Dujmović, Karlo Abramović, Nemanja Bilbija."
+      },
+      {
+        "questionId": "q_0763213e600ed2dd",
+        "answer": "Nemanja Bilbija",
+        "factIds": [
+          "zrinjski-mostar:a-m-2023-08-31-zrinjski-lask"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2039038--",
+        "prompt": "Whose name went on the scoresheet for Zrinjski Mostar against LASK in the UEFA Europa League on 31 Aug 2023?",
+        "explanation": "Zrinjski Mostar 1-1 LASK, UEFA Europa League, 31 Aug 2023. Nemanja Bilbija scored for Zrinjski Mostar.",
+        "basePrompt": "Whose name went on the scoresheet for Zrinjski Mostar against LASK in the UEFA Europa League on 31 Aug 2023?",
+        "baseExplanation": "Zrinjski Mostar 1-1 LASK, UEFA Europa League, 31 Aug 2023. Nemanja Bilbija scored for Zrinjski Mostar."
+      },
+      {
+        "questionId": "q_57acf673776573e9",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:zrinjski-mostar:r26-matej-bogdan",
+          "pos:zrinjski-mostar:r26-matija-katanec",
+          "pos:zrinjski-mostar:zvonimir-kozulj"
+        ],
+        "sourceUrl": "https://int.soccerway.com/",
+        "prompt": "Fill the Zrinjski Mostar team sheet: match each player to his position.",
+        "explanation": "Matej Bogdan: Goalkeeper · Matija Katanec: Defender · Zvonimir Kožulj: Midfielder.",
+        "basePrompt": "Fill the Zrinjski Mostar team sheet: match each player to his position.",
+        "baseExplanation": "Matej Bogdan: Goalkeeper · Matija Katanec: Defender · Zvonimir Kožulj: Midfielder."
+      },
+      {
+        "questionId": "q_8a58fb92854f729d",
+        "answer": "Pienne",
+        "factIds": [
+          "zrinjski-mostar:fka-k-154125"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-1994-95-home-kit-154125/",
+        "prompt": "Picture Zrinjski Mostar's 1994/95 home shirt. Which maker belongs on the label?",
+        "explanation": "Zrinjski Mostar's 1994/95 home shirt was made by Pienne.",
+        "basePrompt": "Picture Zrinjski Mostar's 1994/95 home shirt. Which maker belongs on the label?",
+        "baseExplanation": "Zrinjski Mostar's 1994/95 home shirt was made by Pienne."
+      },
+      {
+        "questionId": "q_5efa3d2e06f75621",
+        "answer": "2020s",
+        "factIds": [
+          "span:zrinjski-mostar:aldin-hrvanovic"
+        ],
+        "sourceUrl": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039291_FR.pdf",
+        "prompt": "Turn back to Aldin Hrvanović's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "explanation": "Aldin Hrvanović's recorded years at Zrinjski Mostar: 2023–2024.",
+        "basePrompt": "Turn back to Aldin Hrvanović's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Aldin Hrvanović's recorded years at Zrinjski Mostar: 2023–2024."
+      },
+      {
+        "questionId": "q_fe9fde28a72d0861",
+        "answer": "Defender",
+        "factIds": [
+          "pos:zrinjski-mostar:r26-daniel-graovac"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
+        "prompt": "Daniel Graovac belongs on the Zrinjski Mostar team sheet. Which position was his?",
+        "explanation": "Daniel Graovac played as a defender for Zrinjski Mostar (recorded 2012–2016).",
+        "basePrompt": "Daniel Graovac is on the Zrinjski Mostar team sheet. Which position was his?",
+        "baseExplanation": "Daniel Graovac played as a defender for Zrinjski Mostar (recorded 2012–2016)."
+      }
+    ],
+    "hapoel-petah-tikva": [
+      {
+        "questionId": "q_8cb9de618e8c0948",
+        "answer": "Forward",
+        "factIds": [
+          "pos:hapoel-petah-tikva:r26-nir-levin"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=NirLevin",
+        "prompt": "Nir Levin belongs on the Hapoel Petah Tikva team sheet. Which position was his?",
+        "explanation": "Nir Levin played as a forward for Hapoel Petah Tikva (recorded 1984–1993).",
+        "basePrompt": "Nir Levin is on the Hapoel Petah Tikva team sheet. Which position was his?",
+        "baseExplanation": "Nir Levin played as a forward for Hapoel Petah Tikva (recorded 1984–1993)."
+      },
+      {
+        "questionId": "q_a3e329eef1963990",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:hapoel-petah-tikva:r26-itzhak-vissoker",
+          "pos:hapoel-petah-tikva:r26-eitan-bodenyuk",
+          "pos:hapoel-petah-tikva:r26-alon-hazan"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=ItzikVisoker",
+        "prompt": "Fill the Hapoel Petah Tikva team sheet: match each player to his position.",
+        "explanation": "Yitzhak Vissoker: Goalkeeper · Eitan Budniuk: Defender · Alon Hazan: Midfielder.",
+        "basePrompt": "Fill the Hapoel Petah Tikva team sheet: match each player to his position.",
+        "baseExplanation": "Yitzhak Vissoker: Goalkeeper · Eitan Budniuk: Defender · Alon Hazan: Midfielder."
+      },
+      {
+        "questionId": "q_0360f3cced9b2406",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:hapoel-petah-tikva:r26-rafi-cohen-gk",
+          "pos:hapoel-petah-tikva:r26-beni-kozoshvili",
+          "pos:hapoel-petah-tikva:r26-eli-mahpud"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=RaffiCohen1",
+        "prompt": "Fill the Hapoel Petah Tikva team sheet: match each player to his position.",
+        "explanation": "Rafi Cohen: Goalkeeper · Benny Kozoshvili: Defender · Eli Mahfoud: Midfielder.",
+        "basePrompt": "Fill the Hapoel Petah Tikva team sheet: match each player to his position.",
+        "baseExplanation": "Rafi Cohen: Goalkeeper · Benny Kozoshvili: Defender · Eli Mahfoud: Midfielder."
+      },
+      {
+        "questionId": "q_211b64ef6da55612",
+        "answer": "Lotto",
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-90242"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2021-22-third-kit-90242/",
+        "prompt": "Picture Hapoel Petah Tikva's 2021/22 third shirt. Which maker belongs on the label?",
+        "explanation": "Hapoel Petah Tikva's 2021/22 third shirt was made by Lotto.",
+        "basePrompt": "Picture Hapoel Petah Tikva's 2021/22 third shirt. Which maker belongs on the label?",
+        "baseExplanation": "Hapoel Petah Tikva's 2021/22 third shirt was made by Lotto."
+      },
+      {
+        "questionId": "q_dc23f4edae581bce",
+        "answer": "false",
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-52815"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2019-20-home-kit-52815/",
+        "prompt": "True or false: Puma made Hapoel Petah Tikva's 2019/20 home shirt.",
+        "explanation": "It was Givova.",
+        "basePrompt": "True or false: Puma made Hapoel Petah Tikva's 2019/20 home shirt.",
+        "baseExplanation": "It was Givova."
+      },
+      {
+        "questionId": "q_6c0f42b939e5a062",
+        "answer": "false",
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-24565"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2014-15-home-kit-24565/",
+        "prompt": "True or false: Umbro made Hapoel Petah Tikva's 2014/15 home shirt.",
+        "explanation": "It was Lotto.",
+        "basePrompt": "True or false: Umbro made Hapoel Petah Tikva's 2014/15 home shirt.",
+        "baseExplanation": "It was Lotto."
+      },
+      {
+        "questionId": "q_e725487ee3baed33",
+        "answer": "false",
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-157524"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2022-23-third-kit-157524/",
+        "prompt": "True or false: Umbro made Hapoel Petah Tikva's 2022/23 third shirt.",
+        "explanation": "It was Lotto.",
+        "basePrompt": "True or false: Umbro made Hapoel Petah Tikva's 2022/23 third shirt.",
+        "baseExplanation": "It was Lotto."
+      },
+      {
+        "questionId": "q_658adb46be6a94c0",
+        "answer": "Lotto",
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-52812"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2020-21-home-kit-52812/",
+        "prompt": "Picture Hapoel Petah Tikva's 2020/21 home shirt. Which maker belongs on the label?",
+        "explanation": "Hapoel Petah Tikva's 2020/21 home shirt was made by Lotto.",
+        "basePrompt": "Picture Hapoel Petah Tikva's 2020/21 home shirt. Which maker belongs on the label?",
+        "baseExplanation": "Hapoel Petah Tikva's 2020/21 home shirt was made by Lotto."
+      },
+      {
+        "questionId": "q_582770d105521a12",
+        "answer": "Lotto",
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-500627"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2026-27-home-kit-500627/",
+        "prompt": "Picture Hapoel Petah Tikva's 2026/27 home shirt. Which maker belongs on the label?",
+        "explanation": "Hapoel Petah Tikva's 2026/27 home shirt was made by Lotto.",
+        "basePrompt": "Picture Hapoel Petah Tikva's 2026/27 home shirt. Which maker belongs on the label?",
+        "baseExplanation": "Hapoel Petah Tikva's 2026/27 home shirt was made by Lotto."
+      },
+      {
+        "questionId": "q_f8e189c6011e5a12",
+        "answer": "Maccabi Petah Tikva",
+        "factIds": [
+          "hapoel-petah-tikva:history-hpt-2503"
+        ],
+        "sourceUrl": "https://hpt.co.il/seasons/2012",
+        "prompt": "Hapoel Petah Tikva derby rewind: 10 Aug 2011 in the Toto Cup. A 0-1 defeat — against which club?",
+        "explanation": "Hapoel Petah Tikva 0-1 Maccabi Petah Tikva, Toto Cup, 10 Aug 2011.",
+        "basePrompt": "Hapoel Petah Tikva derby rewind: 10 Aug 2011 in the Toto Cup. A 0-1 defeat — against which club?",
+        "baseExplanation": "Hapoel Petah Tikva 0-1 Maccabi Petah Tikva, Toto Cup, 10 Aug 2011."
+      },
+      {
+        "questionId": "q_85d06faae414a560",
+        "answer": "Nahum Stelmach",
+        "factIds": [
+          "heritage:hapoel-petah-tikva:title-1955"
+        ],
+        "sourceUrl": "https://hpt.co.il/seasons/1955",
+        "prompt": "A title season to remember: which 18-year-old scored 28 league goals for Hapoel Petah Tikva in 1955?",
+        "explanation": "Nahum Stelmach scored 28 league goals in 25 appearances during the championship campaign.",
+        "basePrompt": "A title season to remember: which 18-year-old scored 28 league goals for Hapoel Petah Tikva in 1955?",
+        "baseExplanation": "Nahum Stelmach scored 28 league goals in 25 appearances during the championship campaign."
+      },
+      {
+        "questionId": "q_d6aee8950e93ada6",
+        "answer": "Moti Kakon",
+        "factIds": [
+          "hapoel-petah-tikva:goal-2000-09-23-moti-kakon-8",
+          "hapoel-petah-tikva:history-hpt-1127"
+        ],
+        "sourceUrl": "https://hpt.co.il/game/2001/league/6",
+        "prompt": "Rewind to Hapoel Petah Tikva v Hapoel Haifa, 23 Sept 2000 (Israeli Premier League). Minute 8: who found the net?",
+        "explanation": "Moti Kakon found the net against Hapoel Haifa in minute 8, 23 Sept 2000.",
+        "basePrompt": "Rewind to Hapoel Petah Tikva v Hapoel Haifa, 23 Sept 2000 (Israeli Premier League). Minute 8: who found the net?",
+        "baseExplanation": "Moti Kakon found the net against Hapoel Haifa in minute 8, 23 Sept 2000."
+      },
+      {
+        "questionId": "q_72236c4191e39036",
+        "answer": "Avi Fletcher",
+        "factIds": [
+          "hapoel-petah-tikva:goal-1997-04-05-avi-fletcher-4",
+          "hapoel-petah-tikva:history-hpt-1102"
+        ],
+        "sourceUrl": "https://hpt.co.il/game/1997/league/24",
+        "prompt": "Rewind to Hapoel Petah Tikva v Beitar Jerusalem, 5 Apr 1997 (Israeli League). Minute 4: who found the net?",
+        "explanation": "Avi Fletcher found the net against Beitar Jerusalem in minute 4, 5 Apr 1997.",
+        "basePrompt": "Rewind to Hapoel Petah Tikva v Beitar Jerusalem, 5 Apr 1997 (Israeli League). Minute 4: who found the net?",
+        "baseExplanation": "Avi Fletcher found the net against Beitar Jerusalem in minute 4, 5 Apr 1997."
+      },
+      {
+        "questionId": "q_346754a1de8fce83",
+        "answer": "Moti Kakon",
+        "factIds": [
+          "hapoel-petah-tikva:goal-1998-08-29-moti-kakon-86",
+          "hapoel-petah-tikva:history-hpt-1036"
+        ],
+        "sourceUrl": "https://hpt.co.il/game/1999/league/2",
+        "prompt": "Rewind to Hapoel Petah Tikva v Hapoel Tel Aviv, 29 Aug 1998 (Israeli Premier League). Minute 86: who found the net?",
+        "explanation": "Moti Kakon found the net against Hapoel Tel Aviv in minute 86, 29 Aug 1998.",
+        "basePrompt": "Rewind to Hapoel Petah Tikva v Hapoel Tel Aviv, 29 Aug 1998 (Israeli Premier League). Minute 86: who found the net?",
+        "baseExplanation": "Moti Kakon found the net against Hapoel Tel Aviv in minute 86, 29 Aug 1998."
+      },
+      {
+        "questionId": "q_31d66d49027b1406",
+        "answer": "1950s",
+        "factIds": [
+          "span:hapoel-petah-tikva:r26-nahum-stelmach"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=NahumStelmah",
+        "prompt": "Turn back to Nahum Stelmach's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "explanation": "Nahum Stelmach's recorded years at Hapoel Petah Tikva: 1951–1969.",
+        "basePrompt": "Turn back to Nahum Stelmach's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Nahum Stelmach's recorded years at Hapoel Petah Tikva: 1951–1969."
+      },
+      {
+        "questionId": "q_b45cbded4d99ad6b",
+        "answer": "1980s",
+        "factIds": [
+          "span:hapoel-petah-tikva:r26-nir-levin"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=NirLevin",
+        "prompt": "Turn back to Nir Levin's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "explanation": "Nir Levin's recorded years at Hapoel Petah Tikva: 1984–1993.",
+        "basePrompt": "Turn back to Nir Levin's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Nir Levin's recorded years at Hapoel Petah Tikva: 1984–1993."
+      },
+      {
+        "questionId": "q_96a56574ce6ceca9",
+        "answer": [
+          "Nike",
+          "Diadora",
+          "Puma"
+        ],
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-231959",
+          "hapoel-petah-tikva:fka-k-24579",
+          "hapoel-petah-tikva:fka-k-52827"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-1999-00-home-kit-231959/",
+        "prompt": "Three shirts from Hapoel Petah Tikva's past. Match each home-shirt season to its maker.",
+        "explanation": "1999/00: Nike · 2003/04: Diadora · 2006/07: Puma.",
+        "basePrompt": "Three shirts from Hapoel Petah Tikva's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "1999/00: Nike · 2003/04: Diadora · 2006/07: Puma."
+      },
+      {
+        "questionId": "q_f06949e4dae48b38",
+        "answer": [
+          "Umbro",
+          "Nike",
+          "Diadora"
+        ],
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-24596",
+          "hapoel-petah-tikva:fka-k-24587",
+          "hapoel-petah-tikva:fka-k-24579"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-1994-95-home-kit-24596/",
+        "prompt": "Three shirts from Hapoel Petah Tikva's past. Match each home-shirt season to its maker.",
+        "explanation": "1994/95: Umbro · 1998/99: Nike · 2003/04: Diadora.",
+        "basePrompt": "Three shirts from Hapoel Petah Tikva's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "1994/95: Umbro · 1998/99: Nike · 2003/04: Diadora."
+      },
+      {
+        "questionId": "q_98d2d2292b5080d4",
+        "answer": [
+          "Puma",
+          "Givova",
+          "Lotto"
+        ],
+        "factIds": [
+          "hapoel-petah-tikva:fka-k-24576",
+          "hapoel-petah-tikva:fka-k-24569",
+          "hapoel-petah-tikva:fka-k-52826"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-2008-09-home-kit-24576/",
+        "prompt": "Three shirts from Hapoel Petah Tikva's past. Match each home-shirt season to its maker.",
+        "explanation": "2008/09: Puma · 2011/12: Givova · 2012/13: Lotto.",
+        "basePrompt": "Three shirts from Hapoel Petah Tikva's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2008/09: Puma · 2011/12: Givova · 2012/13: Lotto."
+      },
+      {
+        "questionId": "q_c35facc18a29e417",
+        "answer": [
+          "Defender",
+          "Midfielder",
+          "Forward"
+        ],
+        "factIds": [
+          "pos:hapoel-petah-tikva:yazan-nassar",
+          "pos:hapoel-petah-tikva:karim-kimvuidi",
+          "pos:hapoel-petah-tikva:r26-dani-niron"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C.",
+        "prompt": "Fill the Hapoel Petah Tikva team sheet: match each player to his position.",
+        "explanation": "Yazen Nassar: Defender · Karim Kimbidi: Midfielder · Dani Nir'on: Forward.",
+        "basePrompt": "Fill the Hapoel Petah Tikva team sheet: match each player to his position.",
+        "baseExplanation": "Yazen Nassar: Defender · Karim Kimbidi: Midfielder · Dani Nir'on: Forward."
+      },
+      {
+        "questionId": "q_0222134624c92257",
+        "answer": [
+          "Yitzhak Vissoker",
+          "Nir Levin",
+          "Manor Hassan"
+        ],
+        "factIds": [
+          "span:hapoel-petah-tikva:r26-itzhak-vissoker",
+          "span:hapoel-petah-tikva:r26-nir-levin",
+          "span:hapoel-petah-tikva:r26-manor-hassan"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=ItzikVisoker",
+        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Yitzhak Vissoker (1963) → Nir Levin (1984) → Manor Hassan (1994)",
+        "basePrompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Yitzhak Vissoker (1963) → Nir Levin (1984) → Manor Hassan (1994)"
+      },
+      {
+        "questionId": "q_604aba1317372839",
+        "answer": [
+          "Nahum Stelmach",
+          "Gadi Tzelniker",
+          "Eli Mahfoud"
+        ],
+        "factIds": [
+          "span:hapoel-petah-tikva:r26-nahum-stelmach",
+          "span:hapoel-petah-tikva:r26-gadi-tzelniker",
+          "span:hapoel-petah-tikva:r26-eli-mahpud"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=NahumStelmah",
+        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Nahum Stelmach (1951) → Gadi Tzelniker (1969) → Eli Mahfoud (1979)",
+        "basePrompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Nahum Stelmach (1951) → Gadi Tzelniker (1969) → Eli Mahfoud (1979)"
+      },
+      {
+        "questionId": "q_37aa0792988a5335",
+        "answer": "2-0",
+        "factIds": [
+          "hapoel-petah-tikva:r26-mt-2007-toto"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Toto_Cup_Leumit",
+        "prompt": "Remember the scoreline: Hapoel Petah Tikva v Hakoah Ramat Gan, 18 Dec 2007 in the Toto Cup Leumit final. How did it finish? (Hapoel Petah Tikva first)",
+        "explanation": "Hapoel Petah Tikva 2-0 Hakoah Ramat Gan, Toto Cup Leumit final, 18 Dec 2007.",
+        "basePrompt": "Remember the scoreline: Hapoel Petah Tikva v Hakoah Ramat Gan, 18 Dec 2007 in the Toto Cup Leumit final. How did it finish? (Hapoel Petah Tikva first)",
+        "baseExplanation": "Hapoel Petah Tikva 2-0 Hakoah Ramat Gan, Toto Cup Leumit final, 18 Dec 2007."
+      },
+      {
+        "questionId": "q_51714184c9b60bb5",
+        "answer": "1-3",
+        "factIds": [
+          "hapoel-petah-tikva:r26-mt-1991-final"
+        ],
+        "sourceUrl": "https://rsssf.org/tablesi/isra91.html",
+        "prompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Haifa, 4 Jun 1991 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "explanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991.",
+        "basePrompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Haifa, 4 Jun 1991 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "baseExplanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991."
+      },
+      {
+        "questionId": "q_eaffdca6dcae520c",
+        "answer": "3-1",
+        "factIds": [
+          "hapoel-petah-tikva:r26-mt-1992-final"
+        ],
+        "sourceUrl": "https://rsssf.org/tablesi/isra92.html",
+        "prompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Tel Aviv, 9 Jun 1992 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "explanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992.",
+        "basePrompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Tel Aviv, 9 Jun 1992 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "baseExplanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992."
+      },
+      {
+        "questionId": "q_9da4ccd01fab3786",
+        "answer": "1956/57",
+        "factIds": [
+          "hapoel-petah-tikva:r26-mt-1957-final"
+        ],
+        "sourceUrl": "https://rsssf.org/tablesi/isra57.html",
+        "prompt": "Place this result in its season: Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which campaign was it?",
+        "explanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957.",
+        "basePrompt": "Place this result in its season: Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which campaign was it?",
+        "baseExplanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957."
+      },
+      {
+        "questionId": "q_85efd581318fcf98",
+        "answer": "2004/05",
+        "factIds": [
+          "hapoel-petah-tikva:r26-mt-2005-toto"
+        ],
+        "sourceUrl": "https://rsssf.org/tablesi/isratotocup05.html",
+        "prompt": "Place this result in its season: Hapoel Petah Tikva drew 3-3 with MS Ashdod in the Toto Cup final. Which campaign was it?",
+        "explanation": "Hapoel Petah Tikva 3-3 MS Ashdod, Toto Cup final, 6 Apr 2005.",
+        "basePrompt": "Place this result in its season: Hapoel Petah Tikva drew 3-3 with MS Ashdod in the Toto Cup final. Which campaign was it?",
+        "baseExplanation": "Hapoel Petah Tikva 3-3 MS Ashdod, Toto Cup final, 6 Apr 2005."
+      },
+      {
+        "questionId": "q_d7237feb0f0992ba",
+        "answer": [
+          "Rafi Cohen",
+          "Eli Abarbanel",
+          "Ben Azubel"
+        ],
+        "factIds": [
+          "span:hapoel-petah-tikva:r26-rafi-cohen-gk",
+          "span:hapoel-petah-tikva:r26-eli-abarbanel",
+          "span:hapoel-petah-tikva:r26-ben-azubel"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=RaffiCohen1",
+        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Rafi Cohen (1988) → Eli Abarbanel (1993) → Ben Azubel (2015)",
+        "basePrompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Rafi Cohen (1988) → Eli Abarbanel (1993) → Ben Azubel (2015)"
+      },
+      {
+        "questionId": "q_37f82d215ec0e7c6",
+        "answer": "1990s",
+        "factIds": [
+          "span:hapoel-petah-tikva:r26-eli-abarbanel"
+        ],
+        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=EliAbarbanel",
+        "prompt": "Turn back to Eli Abarbanel's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "explanation": "Eli Abarbanel's recorded years at Hapoel Petah Tikva: 1993–2010.",
+        "basePrompt": "Turn back to Eli Abarbanel's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Eli Abarbanel's recorded years at Hapoel Petah Tikva: 1993–2010."
+      },
+      {
+        "questionId": "q_6cc0130644f86499",
+        "answer": "1979/80",
+        "factIds": [
+          "hapoel-petah-tikva:history-hpt-809"
+        ],
+        "sourceUrl": "https://hpt.co.il/seasons/1980",
+        "prompt": "Place this result in its season: Hapoel Petah Tikva lost 1-5 to Maccabi Petah Tikva in the Israeli League. Which campaign was it?",
+        "explanation": "Hapoel Petah Tikva 1-5 Maccabi Petah Tikva, Israeli League, 23 Feb 1980.",
+        "basePrompt": "Place this result in its season: Hapoel Petah Tikva lost 1-5 to Maccabi Petah Tikva in the Israeli League. Which campaign was it?",
+        "baseExplanation": "Hapoel Petah Tikva 1-5 Maccabi Petah Tikva, Israeli League, 23 Feb 1980."
+      }
+    ],
+    "panathinaikos": [
+      {
+        "questionId": "q_fd7e873bc486417a",
+        "answer": "Shamrock",
+        "factIds": [
+          "heritage:panathinaikos:shamrock"
+        ],
+        "sourceUrl": "https://www.pao.gr/en/history/events/?id=281",
+        "prompt": "Picture the green badge. Which plant became Panathinaikos’ emblem in 1918?",
+        "explanation": "The shamrock became the club’s emblem in 1918 and an enduring symbol for its supporters.",
+        "basePrompt": "Picture the green badge. Which plant became Panathinaikos’ emblem in 1918?",
+        "baseExplanation": "The shamrock became the club’s emblem in 1918 and an enduring symbol for its supporters."
+      },
+      {
+        "questionId": "q_3772c1b7e37b4585",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:panathinaikos:giorgos-karagounis"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Giorgos Karagounis belongs on the Panathinaikos team sheet. Which position was his?",
+        "explanation": "Giorgos Karagounis played as a midfielder for Panathinaikos (recorded 1995–2012).",
+        "basePrompt": "Giorgos Karagounis is on the Panathinaikos team sheet. Which position was his?",
+        "baseExplanation": "Giorgos Karagounis played as a midfielder for Panathinaikos (recorded 1995–2012)."
+      },
+      {
+        "questionId": "q_eb6072f7856688d7",
+        "answer": "Forward",
+        "factIds": [
+          "pos:panathinaikos:nikos-liberopoulos"
+        ],
+        "sourceUrl": "https://match.uefa.com/v5/matches/52922/lineups",
+        "prompt": "Nikos Liberopoulos belongs on the Panathinaikos team sheet. Which position was his?",
+        "explanation": "Nikos Liberopoulos played as a forward for Panathinaikos.",
+        "basePrompt": "Nikos Liberopoulos is on the Panathinaikos team sheet. Which position was his?",
+        "baseExplanation": "Nikos Liberopoulos played as a forward for Panathinaikos."
+      },
+      {
+        "questionId": "q_384cfab61ba8d5e9",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:panathinaikos:mimis-domazos"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Mimis Domazos belongs on the Panathinaikos team sheet. Which position was his?",
+        "explanation": "Mimis Domazos played as a midfielder for Panathinaikos (recorded 1959–1980).",
+        "basePrompt": "Mimis Domazos is on the Panathinaikos team sheet. Which position was his?",
+        "baseExplanation": "Mimis Domazos played as a midfielder for Panathinaikos (recorded 1959–1980)."
+      },
+      {
+        "questionId": "q_e95f3b2fca2beb55",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:panathinaikos:antonis-nikopolidis",
+          "pos:panathinaikos:giannis-goumas",
+          "pos:panathinaikos:giorgos-karagounis"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Fill the Panathinaikos team sheet: match each player to his position.",
+        "explanation": "Antonis Nikopolidis: Goalkeeper · Giannis Goumas: Defender · Giorgos Karagounis: Midfielder.",
+        "basePrompt": "Fill the Panathinaikos team sheet: match each player to his position.",
+        "baseExplanation": "Antonis Nikopolidis: Goalkeeper · Giannis Goumas: Defender · Giorgos Karagounis: Midfielder."
+      },
+      {
+        "questionId": "q_5bb2d9d5ef7bed9b",
+        "answer": "Ajax",
+        "factIds": [
+          "panathinaikos:ec-final-1971-ajax"
+        ],
+        "sourceUrl": "https://rsssf.org/ec/ec197071det.html",
+        "prompt": "Panathinaikos rewind: 2 Jun 1971 in the European Cup final. A 0-2 defeat — against which club?",
+        "explanation": "Ajax 2-0 Panathinaikos, European Cup final, 2 Jun 1971.",
+        "basePrompt": "Panathinaikos rewind: 2 Jun 1971 in the European Cup final. A 0-2 defeat — against which club?",
+        "baseExplanation": "Ajax 2-0 Panathinaikos, European Cup final, 2 Jun 1971."
+      },
+      {
+        "questionId": "q_d39414c5bf392e43",
+        "answer": "true",
+        "factIds": [
+          "panathinaikos:fka-k-55631"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-2009-10-third-kit-55631/",
+        "prompt": "True or false: Adidas made Panathinaikos's 2009/10 third shirt.",
+        "explanation": "It was Adidas.",
+        "basePrompt": "True or false: Adidas made Panathinaikos's 2009/10 third shirt.",
+        "baseExplanation": "It was Adidas."
+      },
+      {
+        "questionId": "q_e9ecc5a773593da8",
+        "answer": "false",
+        "factIds": [
+          "panathinaikos:fka-k-55643"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-2005-06-home-kit-55643/",
+        "prompt": "True or false: Puma made Panathinaikos's 2005/06 home shirt.",
+        "explanation": "It was Adidas.",
+        "basePrompt": "True or false: Puma made Panathinaikos's 2005/06 home shirt.",
+        "baseExplanation": "It was Adidas."
+      },
+      {
+        "questionId": "q_065c2701d1d93c21",
+        "answer": "true",
+        "factIds": [
+          "panathinaikos:fka-k-22943"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-2013-14-home-kit-22943/",
+        "prompt": "True or false: Adidas made Panathinaikos's 2013/14 home shirt.",
+        "explanation": "It was Adidas.",
+        "basePrompt": "True or false: Adidas made Panathinaikos's 2013/14 home shirt.",
+        "baseExplanation": "It was Adidas."
+      },
+      {
+        "questionId": "q_ca0b74fc6b013119",
+        "answer": "Adidas",
+        "factIds": [
+          "panathinaikos:fka-k-427953"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-2025-26-third-kit-427953/",
+        "prompt": "Picture Panathinaikos's 2025/26 third shirt. Which maker belongs on the label?",
+        "explanation": "Panathinaikos's 2025/26 third shirt was made by Adidas.",
+        "basePrompt": "Picture Panathinaikos's 2025/26 third shirt. Which maker belongs on the label?",
+        "baseExplanation": "Panathinaikos's 2025/26 third shirt was made by Adidas."
+      },
+      {
+        "questionId": "q_cb6c14a4e163f706",
+        "answer": "Giorgos Kalafatis",
+        "factIds": [
+          "heritage:panathinaikos:founding"
+        ],
+        "sourceUrl": "https://www.pao.gr/en/history/events/?id=281",
+        "prompt": "The story starts with a football vision in 1908. Who founded Panathinaikos’ football section?",
+        "explanation": "Giorgos Kalafatis founded the football section on 3 February 1908.",
+        "basePrompt": "The story starts with a football vision in 1908. Who founded Panathinaikos’ football section?",
+        "baseExplanation": "Giorgos Kalafatis founded the football section on 3 February 1908."
+      },
+      {
+        "questionId": "q_82ae02a6ec2368d2",
+        "answer": "Nikos Liberopoulos",
+        "factIds": [
+          "panathinaikos:goal-2002-03-20-nikos-liberopoulos-9",
+          "panathinaikos:a-m-2002-03-20-panathinaikos-real-madrid"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/025a-0eab0617e2cb-e7d010fc8a4c-1000--panathinaikos-keep-dream-alive/",
+        "prompt": "Rewind to Panathinaikos v Real Madrid, 20 Mar 2002 (UEFA Champions League). Minute 9: who found the net?",
+        "explanation": "Nikos Liberopoulos found the net against Real Madrid in minute 9, 20 Mar 2002.",
+        "basePrompt": "Rewind to Panathinaikos v Real Madrid, 20 Mar 2002 (UEFA Champions League). Minute 9: who found the net?",
+        "baseExplanation": "Nikos Liberopoulos found the net against Real Madrid in minute 9, 20 Mar 2002."
+      },
+      {
+        "questionId": "q_9c179921fcaeed89",
+        "answer": "Jose Sarriegi",
+        "factIds": [
+          "panathinaikos:goal-2008-11-26-jose-sarriegi-69"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/01d3-0e7071aeddb8-50f205ae9e21-1000--inter-progress-despite-panathinaikos-loss/",
+        "prompt": "Rewind to Panathinaikos v Inter Milan, 26 Nov 2008 (UEFA Champions League). Minute 69: who found the net?",
+        "explanation": "Jose Sarriegi found the net against Inter Milan in minute 69, 26 Nov 2008.",
+        "basePrompt": "Rewind to Panathinaikos v Inter Milan, 26 Nov 2008 (UEFA Champions League). Minute 69: who found the net?",
+        "baseExplanation": "Jose Sarriegi found the net against Inter Milan in minute 69, 26 Nov 2008."
+      },
+      {
+        "questionId": "q_4934fc4eceb39f3e",
+        "answer": "2000s",
+        "factIds": [
+          "span:panathinaikos:gilberto-silva"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Turn back to Gilberto Silva's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "explanation": "Gilberto Silva's recorded years at Panathinaikos: 2008–2011.",
+        "basePrompt": "Turn back to Gilberto Silva's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Gilberto Silva's recorded years at Panathinaikos: 2008–2011."
+      },
+      {
+        "questionId": "q_718d570a4dbd5d6d",
+        "answer": "1950s",
+        "factIds": [
+          "span:panathinaikos:mimis-domazos"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Turn back to Mimis Domazos's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "explanation": "Mimis Domazos's recorded years at Panathinaikos: 1959–1980.",
+        "basePrompt": "Turn back to Mimis Domazos's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Mimis Domazos's recorded years at Panathinaikos: 1959–1980."
+      },
+      {
+        "questionId": "q_be82beffe5506468",
+        "answer": "1980s",
+        "factIds": [
+          "span:panathinaikos:dimitris-saravakos"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Turn back to Dimitris Saravakos's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "explanation": "Dimitris Saravakos's recorded years at Panathinaikos: 1985–1998.",
+        "basePrompt": "Turn back to Dimitris Saravakos's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Dimitris Saravakos's recorded years at Panathinaikos: 1985–1998."
+      },
+      {
+        "questionId": "q_b6d16e96d14ff675",
+        "answer": [
+          "Adidas",
+          "Nike",
+          "Kappa"
+        ],
+        "factIds": [
+          "panathinaikos:fka-k-55643",
+          "panathinaikos:cof-k-37",
+          "panathinaikos:fka-k-21415"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-2005-06-home-kit-55643/",
+        "prompt": "Three shirts from Panathinaikos's past. Match each home-shirt season to its maker.",
+        "explanation": "2005/06: Adidas · 2018/19: Nike · 2019/20: Kappa.",
+        "basePrompt": "Three shirts from Panathinaikos's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2005/06: Adidas · 2018/19: Nike · 2019/20: Kappa."
+      },
+      {
+        "questionId": "q_75c3b18f3cd98994",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:panathinaikos:daniel-fernandes",
+          "pos:panathinaikos:takis-fyssas",
+          "pos:panathinaikos:spyridon-marangos"
+        ],
+        "sourceUrl": "https://match.uefa.com/v5/matches/2002855/lineups",
+        "prompt": "Fill the Panathinaikos team sheet: match each player to his position.",
+        "explanation": "Daniel Fernandes: Goalkeeper · Takis Fyssas: Defender · Spyridon Marangos: Midfielder.",
+        "basePrompt": "Fill the Panathinaikos team sheet: match each player to his position.",
+        "baseExplanation": "Daniel Fernandes: Goalkeeper · Takis Fyssas: Defender · Spyridon Marangos: Midfielder."
+      },
+      {
+        "questionId": "q_dcc0bc96a8beaaca",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:panathinaikos:takis-ikonomopoulos",
+          "pos:panathinaikos:jean-alain-boumsong",
+          "pos:panathinaikos:angelos-basinas"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Fill the Panathinaikos team sheet: match each player to his position.",
+        "explanation": "Takis Ikonomopoulos: Goalkeeper · Jean-Alain Boumsong: Defender · Angelos Basinas: Midfielder.",
+        "basePrompt": "Fill the Panathinaikos team sheet: match each player to his position.",
+        "baseExplanation": "Takis Ikonomopoulos: Goalkeeper · Jean-Alain Boumsong: Defender · Angelos Basinas: Midfielder."
+      },
+      {
+        "questionId": "q_cea396ae9fb46b6c",
+        "answer": [
+          "Adidas",
+          "Nike",
+          "Kappa"
+        ],
+        "factIds": [
+          "panathinaikos:fka-k-55650",
+          "panathinaikos:cof-k-37",
+          "panathinaikos:fka-k-21415"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-2001-02-home-kit-55650/",
+        "prompt": "Three shirts from Panathinaikos's past. Match each home-shirt season to its maker.",
+        "explanation": "2001/02: Adidas · 2018/19: Nike · 2019/20: Kappa.",
+        "basePrompt": "Three shirts from Panathinaikos's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2001/02: Adidas · 2018/19: Nike · 2019/20: Kappa."
+      },
+      {
+        "questionId": "q_4f452be29c0efe2f",
+        "answer": "Ambelokipi",
+        "factIds": [
+          "heritage:panathinaikos:leoforos"
+        ],
+        "sourceUrl": "https://www.pao.gr/en/history/events/?id=281",
+        "prompt": "Leoforos is part of the neighbourhood. In which area of Athens did Panathinaikos put down those stadium roots?",
+        "explanation": "The club’s history places the Perivola neighbourhood in Ambelokipi at the start of the Leoforos story.",
+        "basePrompt": "Leoforos is part of the neighbourhood. In which area of Athens did Panathinaikos put down those stadium roots?",
+        "baseExplanation": "The club’s history places the Perivola neighbourhood in Ambelokipi at the start of the Leoforos story."
+      },
+      {
+        "questionId": "q_05d55605d404bb07",
+        "answer": [
+          "Krzysztof Warzycha",
+          "Gilberto Silva",
+          "Aitor Cantalapiedra"
+        ],
+        "factIds": [
+          "span:panathinaikos:krzysztof-warzycha",
+          "span:panathinaikos:gilberto-silva",
+          "span:panathinaikos:aitor-cantalapiedra"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Krzysztof Warzycha (1990) → Gilberto Silva (2008) → Aitor Cantalapiedra (2020)",
+        "basePrompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Krzysztof Warzycha (1990) → Gilberto Silva (2008) → Aitor Cantalapiedra (2020)"
+      },
+      {
+        "questionId": "q_5c38033446ecb8f4",
+        "answer": "Giorgos Karagounis",
+        "factIds": [
+          "panathinaikos:a-m-2000-11-21-man-utd-panathinaikos"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/66307--",
+        "prompt": "Whose name went on the scoresheet for Panathinaikos against Man Utd in the UEFA Champions League on 21 Nov 2000?",
+        "explanation": "Man Utd 3-1 Panathinaikos, UEFA Champions League, 21 Nov 2000. Giorgos Karagounis scored for Panathinaikos.",
+        "basePrompt": "Whose name went on the scoresheet for Panathinaikos against Man Utd in the UEFA Champions League on 21 Nov 2000?",
+        "baseExplanation": "Man Utd 3-1 Panathinaikos, UEFA Champions League, 21 Nov 2000. Giorgos Karagounis scored for Panathinaikos."
+      },
+      {
+        "questionId": "q_2c18dcb402ff4eb7",
+        "answer": [
+          "Athanasios Kolitsidakis",
+          "Krzysztof Warzycha",
+          "Józef Wandzik"
+        ],
+        "factIds": [
+          "panathinaikos:a-m-1996-03-20-panathinaikos-legia-warszawa"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/52292--",
+        "prompt": "Which three names belong in Panathinaikos's starting eleven against Legia Warszawa in the UEFA Champions League on 20 Mar 1996?",
+        "explanation": "Panathinaikos 3-0 Legia Warszawa, UEFA Champions League, 20 Mar 1996. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Georgios Georgiadis, Ioannis Kalitzakis, Athanasios Kolitsidakis, Juan Jose Borrelli, Georgios Kapouranis, Krzysztof Warzycha, Spyridon Marangos, Georgios Donis.",
+        "basePrompt": "Which three names belong in Panathinaikos's starting eleven against Legia Warszawa in the UEFA Champions League on 20 Mar 1996?",
+        "baseExplanation": "Panathinaikos 3-0 Legia Warszawa, UEFA Champions League, 20 Mar 1996. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Georgios Georgiadis, Ioannis Kalitzakis, Athanasios Kolitsidakis, Juan Jose Borrelli, Georgios Kapouranis, Krzysztof Warzycha, Spyridon Marangos, Georgios Donis."
+      },
+      {
+        "questionId": "q_e4704725376e29e9",
+        "answer": "Nikos Liberopoulos",
+        "factIds": [
+          "panathinaikos:a-m-2002-03-20-panathinaikos-real-madrid"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/68649--",
+        "prompt": "Who opened Panathinaikos's scoring against Real Madrid in the UEFA Champions League on 20 Mar 2002?",
+        "explanation": "Panathinaikos 2-2 Real Madrid, UEFA Champions League, 20 Mar 2002. Nikos Liberopoulos opened the scoring for Panathinaikos.",
+        "basePrompt": "Who opened Panathinaikos's scoring against Real Madrid in the UEFA Champions League on 20 Mar 2002?",
+        "baseExplanation": "Panathinaikos 2-2 Real Madrid, UEFA Champions League, 20 Mar 2002. Nikos Liberopoulos opened the scoring for Panathinaikos."
+      },
+      {
+        "questionId": "q_ad7775f25cf8e5b0",
+        "answer": [
+          "Dimitris Saravakos",
+          "Antonis Nikopolidis",
+          "Zeca"
+        ],
+        "factIds": [
+          "span:panathinaikos:dimitris-saravakos",
+          "span:panathinaikos:antonis-nikopolidis",
+          "span:panathinaikos:zeca"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Dimitris Saravakos (1985) → Antonis Nikopolidis (1990) → Zeca (2011)",
+        "basePrompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Dimitris Saravakos (1985) → Antonis Nikopolidis (1990) → Zeca (2011)"
+      },
+      {
+        "questionId": "q_898a3cbd98b1edb1",
+        "answer": "Giorgos Karagounis",
+        "factIds": [
+          "panathinaikos:a-m-2009-02-25-villarreal-panathinaikos"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/302786--",
+        "prompt": "Whose name went on the scoresheet for Panathinaikos against Villarreal in the UEFA Champions League on 25 Feb 2009?",
+        "explanation": "Villarreal 1-1 Panathinaikos, UEFA Champions League, 25 Feb 2009. Giorgos Karagounis scored for Panathinaikos.",
+        "basePrompt": "Whose name went on the scoresheet for Panathinaikos against Villarreal in the UEFA Champions League on 25 Feb 2009?",
+        "baseExplanation": "Villarreal 1-1 Panathinaikos, UEFA Champions League, 25 Feb 2009. Giorgos Karagounis scored for Panathinaikos."
+      },
+      {
+        "questionId": "q_ec7d7001e1467d37",
+        "answer": [
+          "Józef Wandzik",
+          "Efstratios Apostolakis",
+          "Krzysztof Warzycha"
+        ],
+        "factIds": [
+          "panathinaikos:a-m-1995-10-25-aab-panathinaikos"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/52109--",
+        "prompt": "Which three names belong in Panathinaikos's starting eleven against AaB in the UEFA Champions League on 25 Oct 1995?",
+        "explanation": "AaB 2-1 Panathinaikos, UEFA Champions League, 25 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Georgios Kapouranis, Georgios Georgiadis, Krzysztof Warzycha, Dimitrios Markos, Georgios Donis.",
+        "basePrompt": "Which three names belong in Panathinaikos's starting eleven against AaB in the UEFA Champions League on 25 Oct 1995?",
+        "baseExplanation": "AaB 2-1 Panathinaikos, UEFA Champions League, 25 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Georgios Kapouranis, Georgios Georgiadis, Krzysztof Warzycha, Dimitrios Markos, Georgios Donis."
+      },
+      {
+        "questionId": "q_14be441b19a5a35e",
+        "answer": [
+          "Efstratios Apostolakis",
+          "Alexandros Alexoudis",
+          "Krzysztof Warzycha"
+        ],
+        "factIds": [
+          "panathinaikos:a-m-1995-10-18-porto-panathinaikos"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/52113--",
+        "prompt": "Which three names belong in Panathinaikos's starting eleven against Porto in the UEFA Champions League on 18 Oct 1995?",
+        "explanation": "Porto 0-1 Panathinaikos, UEFA Champions League, 18 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Dimitrios Markos, Georgios Georgiadis, Krzysztof Warzycha, Alexandros Alexoudis, Georgios Donis.",
+        "basePrompt": "Which three names belong in Panathinaikos's starting eleven against Porto in the UEFA Champions League on 18 Oct 1995?",
+        "baseExplanation": "Porto 0-1 Panathinaikos, UEFA Champions League, 18 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Dimitrios Markos, Georgios Georgiadis, Krzysztof Warzycha, Alexandros Alexoudis, Georgios Donis."
+      },
+      {
+        "questionId": "q_85a76a06a7cd97ca",
+        "answer": [
+          "Mimis Domazos",
+          "Juan Ramon Rocha",
+          "Giorgos Karagounis"
+        ],
+        "factIds": [
+          "span:panathinaikos:mimis-domazos",
+          "span:panathinaikos:juan-ramon-rocha",
+          "span:panathinaikos:giorgos-karagounis"
+        ],
+        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
+        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Mimis Domazos (1959) → Juan Ramon Rocha (1980) → Giorgos Karagounis (1995)",
+        "basePrompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Mimis Domazos (1959) → Juan Ramon Rocha (1980) → Giorgos Karagounis (1995)"
+      }
+    ],
+    "aek-athens": [
+      {
+        "questionId": "q_363505a027034d6e",
+        "answer": "Eagle",
+        "factIds": [
+          "heritage:aek-athens:founding-symbol"
+        ],
+        "sourceUrl": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+        "prompt": "Two heads, one unmistakable badge. Which bird is at the heart of AEK’s emblem?",
+        "explanation": "AEK chose the double-headed eagle as its emblem at its foundation in 1924.",
+        "basePrompt": "Two heads, one unmistakable badge. Which bird is at the heart of AEK’s emblem?",
+        "baseExplanation": "AEK chose the double-headed eagle as its emblem at its foundation in 1924."
+      },
+      {
+        "questionId": "q_fc1f992a2594ceba",
+        "answer": "Forward",
+        "factIds": [
+          "pos:aek-athens:p-dh-6b312841b95a"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/215-dusan-bajevic",
+        "prompt": "Dusan Bajevic belongs on the AEK Athens team sheet. Which position was his?",
+        "explanation": "Dusan Bajevic played as a forward for AEK Athens (recorded 1977–1981).",
+        "basePrompt": "Dusan Bajevic is on the AEK Athens team sheet. Which position was his?",
+        "baseExplanation": "Dusan Bajevic played as a forward for AEK Athens (recorded 1977–1981)."
+      },
+      {
+        "questionId": "q_0128f4d4f777650f",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:aek-athens:p-dh-511f91d4a304",
+          "pos:aek-athens:p-dh-3a766b45890a",
+          "pos:aek-athens:p-dh-56aa29161afb"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/159-fanis-kofinas",
+        "prompt": "Fill the AEK Athens team sheet: match each player to his position.",
+        "explanation": "Fanis Kofinas: Goalkeeper · Petros Ravousis: Defender · Paylos Papaioannou: Midfielder.",
+        "basePrompt": "Fill the AEK Athens team sheet: match each player to his position.",
+        "baseExplanation": "Fanis Kofinas: Goalkeeper · Petros Ravousis: Defender · Paylos Papaioannou: Midfielder."
+      },
+      {
+        "questionId": "q_4f950c6989f07ce4",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:aek-athens:p-dh-519ff79b62d7",
+          "pos:aek-athens:p-dh-608f81ea29f9",
+          "pos:aek-athens:p-dh-80f758c370c3"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/516-stelios-konstantinidis",
+        "prompt": "Fill the AEK Athens team sheet: match each player to his position.",
+        "explanation": "Stelios Konstantinidis: Goalkeeper · Lakis Nikolaou: Defender · Giorgos Mageiras: Midfielder.",
+        "basePrompt": "Fill the AEK Athens team sheet: match each player to his position.",
+        "baseExplanation": "Stelios Konstantinidis: Goalkeeper · Lakis Nikolaou: Defender · Giorgos Mageiras: Midfielder."
+      },
+      {
+        "questionId": "q_771bffb3bb2751e2",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:aek-athens:p-dh-174361f8cd75",
+          "pos:aek-athens:p-dh-852fc8329552",
+          "pos:aek-athens:p-dh-8c28fda77ee9"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/683-tasos-pavlis",
+        "prompt": "Fill the AEK Athens team sheet: match each player to his position.",
+        "explanation": "Tasos Paylis: Goalkeeper · Domagoj Vida: Defender · Toni Savevski: Midfielder.",
+        "basePrompt": "Fill the AEK Athens team sheet: match each player to his position.",
+        "baseExplanation": "Tasos Paylis: Goalkeeper · Domagoj Vida: Defender · Toni Savevski: Midfielder."
+      },
+      {
+        "questionId": "q_fcf68c3e79e57f8e",
+        "answer": "OFI Crete",
+        "factIds": [
+          "aek-athens:a-m-2026-08-12-aek-athens-ofi-crete"
+        ],
+        "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4730040",
+        "prompt": "AEK Athens rewind: 12 Aug 2026 in the Super Cup - Final. A 2-2 draw — against which club?",
+        "explanation": "AEK Athens 2-2 OFI Crete, Super Cup - Final, 12 Aug 2026.",
+        "basePrompt": "AEK Athens rewind: 12 Aug 2026 in the Super Cup - Final. A 2-2 draw — against which club?",
+        "baseExplanation": "AEK Athens 2-2 OFI Crete, Super Cup - Final, 12 Aug 2026."
+      },
+      {
+        "questionId": "q_1c58e0db4aafbb58",
+        "answer": "true",
+        "factIds": [
+          "aek-athens:tr-dh-7d09fab65308:2013/14"
+        ],
+        "sourceUrl": "https://aekdata.gr/titloi",
+        "prompt": "True or false: AEK Athens won the Third division (Football League 2) in 2013/14.",
+        "explanation": "AEK Athens won the Third division (Football League 2) in 2013/14.",
+        "basePrompt": "True or false: AEK Athens won the Third division (Football League 2) in 2013/14.",
+        "baseExplanation": "AEK Athens won the Third division (Football League 2) in 2013/14."
+      },
+      {
+        "questionId": "q_eea3e3efe345b801",
+        "answer": "true",
+        "factIds": [
+          "aek-athens:tr-dh-d72614b25503:2022/23"
+        ],
+        "sourceUrl": "https://aekdata.gr/titloi",
+        "prompt": "True or false: AEK Athens won the Greek Cup in 2022/23.",
+        "explanation": "AEK Athens won the Greek Cup in 2022/23.",
+        "basePrompt": "True or false: AEK Athens won the Greek Cup in 2022/23.",
+        "baseExplanation": "AEK Athens won the Greek Cup in 2022/23."
+      },
+      {
+        "questionId": "q_e94734d5e14ef47a",
+        "answer": "true",
+        "factIds": [
+          "aek-athens:tr-dh-a0ccff93eb8b:2014/15"
+        ],
+        "sourceUrl": "https://aekdata.gr/titloi",
+        "prompt": "True or false: AEK Athens won the Second division (Football League) in 2014/15.",
+        "explanation": "AEK Athens won the Second division (Football League) in 2014/15.",
+        "basePrompt": "True or false: AEK Athens won the Second division (Football League) in 2014/15.",
+        "baseExplanation": "AEK Athens won the Second division (Football League) in 2014/15."
+      },
+      {
+        "questionId": "q_68fd20caa8800283",
+        "answer": "true",
+        "factIds": [
+          "aek-athens:cof-k-25"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/gre/aek/aek_2.html",
+        "prompt": "True or false: Puma made AEK Athens's 2010/11 third shirt.",
+        "explanation": "It was Puma.",
+        "basePrompt": "True or false: Puma made AEK Athens's 2010/11 third shirt.",
+        "baseExplanation": "It was Puma."
+      },
+      {
+        "questionId": "q_04420ca151f8a8ff",
+        "answer": "A sports shop",
+        "factIds": [
+          "heritage:aek-athens:founding-meeting"
+        ],
+        "sourceUrl": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+        "prompt": "Before there was a team, there was a meeting on Veranzerou Street. What kind of place hosted AEK’s founders in April 1924?",
+        "explanation": "The founders met in the sports store at 24 Veranzerou Street in Athens.",
+        "basePrompt": "Before there was a team, there was a meeting on Veranzerou Street. What kind of place hosted AEK’s founders in April 1924?",
+        "baseExplanation": "The founders met in the sports store at 24 Veranzerou Street in Athens."
+      },
+      {
+        "questionId": "q_05cc1230a6c2bcbc",
+        "answer": "Ezequiel Ponce",
+        "factIds": [
+          "aek-athens:goal-2023-09-21-ezequiel-ponce-84",
+          "aek-athens:m-dh-90f5c0e60cf2"
+        ],
+        "sourceUrl": "https://www.sportinglife.com/football/live/174696/brighton-and-hove-albion-vs-aek-athens/commentary",
+        "prompt": "Rewind to AEK Athens v Brighton, 21 Sept 2023 (UEFA Europa League). Minute 84: who found the net?",
+        "explanation": "Ezequiel Ponce found the net against Brighton in minute 84, 21 Sept 2023.",
+        "basePrompt": "Rewind to AEK Athens v Brighton, 21 Sept 2023 (UEFA Europa League). Minute 84: who found the net?",
+        "baseExplanation": "Ezequiel Ponce found the net against Brighton in minute 84, 21 Sept 2023."
+      },
+      {
+        "questionId": "q_b173664ed607e7fb",
+        "answer": "Kostas Galanopoulos",
+        "factIds": [
+          "aek-athens:goal-2023-08-15-kostas-galanopoulos-90",
+          "aek-athens:m-dh-0e8f8460f871"
+        ],
+        "sourceUrl": "https://gnkdinamo.hr/en/news/dinamo-silovito-krenuo-i-poveo-grci-ipak-preokrenuli-rezultat",
+        "prompt": "Rewind to AEK Athens v Dinamo Zagreb, 15 Aug 2023 (UEFA Champions League qualifying). Minute 90: who found the net?",
+        "explanation": "Kostas Galanopoulos found the net against Dinamo Zagreb in minute 90, 15 Aug 2023.",
+        "basePrompt": "Rewind to AEK Athens v Dinamo Zagreb, 15 Aug 2023 (UEFA Champions League qualifying). Minute 90: who found the net?",
+        "baseExplanation": "Kostas Galanopoulos found the net against Dinamo Zagreb in minute 90, 15 Aug 2023."
+      },
+      {
+        "questionId": "q_1255b57ec231b0cc",
+        "answer": "Djibril Sidibe",
+        "factIds": [
+          "aek-athens:goal-2023-09-21-djibril-sidibe-11",
+          "aek-athens:m-dh-90f5c0e60cf2"
+        ],
+        "sourceUrl": "https://www.brightonandhovenews.org/2023/09/21/not-a-tragedy-but-albion-learn-europa-league-lesson/",
+        "prompt": "Rewind to AEK Athens v Brighton, 21 Sept 2023 (UEFA Europa League). Minute 11: who found the net?",
+        "explanation": "Djibril Sidibe found the net against Brighton in minute 11, 21 Sept 2023.",
+        "basePrompt": "Rewind to AEK Athens v Brighton, 21 Sept 2023 (UEFA Europa League). Minute 11: who found the net?",
+        "baseExplanation": "Djibril Sidibe found the net against Brighton in minute 11, 21 Sept 2023."
+      },
+      {
+        "questionId": "q_353aca0646e71da0",
+        "answer": "Forward",
+        "factIds": [
+          "pos:aek-athens:p-dh-cc50e0056344"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/714-levi-garcia",
+        "prompt": "Levi Garcia belongs on the AEK Athens team sheet. Which position was his?",
+        "explanation": "Levi Garcia played as a forward for AEK Athens (recorded 2020–2025).",
+        "basePrompt": "Levi Garcia is on the AEK Athens team sheet. Which position was his?",
+        "baseExplanation": "Levi Garcia played as a forward for AEK Athens (recorded 2020–2025)."
+      },
+      {
+        "questionId": "q_42610aea6a2b716c",
+        "answer": "Forward",
+        "factIds": [
+          "pos:aek-athens:p-46c0ff1549ef2d"
+        ],
+        "sourceUrl": "https://www.aekpedia.com/season-2002-03/",
+        "prompt": "Demis Nikolaidis belongs on the AEK Athens team sheet. Which position was his?",
+        "explanation": "Demis Nikolaidis played as a forward for AEK Athens (recorded 1996–2003).",
+        "basePrompt": "Demis Nikolaidis is on the AEK Athens team sheet. Which position was his?",
+        "baseExplanation": "Demis Nikolaidis played as a forward for AEK Athens (recorded 1996–2003)."
+      },
+      {
+        "questionId": "q_3721888bda3397f1",
+        "answer": "1970s",
+        "factIds": [
+          "span:aek-athens:p-dh-6b312841b95a"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/215-dusan-bajevic",
+        "prompt": "Turn back to Dusan Bajevic's AEK Athens years. In which decade does the archive first place him at the club?",
+        "explanation": "Dusan Bajevic's recorded years at AEK Athens: 1977–1981.",
+        "basePrompt": "Turn back to Dusan Bajevic's AEK Athens years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Dusan Bajevic's recorded years at AEK Athens: 1977–1981."
+      },
+      {
+        "questionId": "q_a8d40a9df60388b8",
+        "answer": [
+          "Puma",
+          "Nike",
+          "Capelli Sport"
+        ],
+        "factIds": [
+          "aek-athens:cof-k-20",
+          "aek-athens:cof-k-28",
+          "aek-athens:cof-k-34"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/gre/aek/aek_2.html",
+        "prompt": "Three shirts from AEK Athens's past. Match each home-shirt season to its maker.",
+        "explanation": "2009/10: Puma · 2016/17: Nike · 2018/19: Capelli Sport.",
+        "basePrompt": "Three shirts from AEK Athens's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2009/10: Puma · 2016/17: Nike · 2018/19: Capelli Sport."
+      },
+      {
+        "questionId": "q_aad660309e0a5a8d",
+        "answer": [
+          "Adidas",
+          "Puma",
+          "Nike"
+        ],
+        "factIds": [
+          "aek-athens:cof-k-12",
+          "aek-athens:cof-k-14",
+          "aek-athens:cof-k-28"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
+        "prompt": "Three shirts from AEK Athens's past. Match each home-shirt season to its maker.",
+        "explanation": "2006/07: Adidas · 2007/08: Puma · 2016/17: Nike.",
+        "basePrompt": "Three shirts from AEK Athens's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2006/07: Adidas · 2007/08: Puma · 2016/17: Nike."
+      },
+      {
+        "questionId": "q_2fa1c35804b88b80",
+        "answer": [
+          "Nike",
+          "Adidas",
+          "Puma"
+        ],
+        "factIds": [
+          "aek-athens:cof-k-01",
+          "aek-athens:cof-k-12",
+          "aek-athens:cof-k-14"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
+        "prompt": "Three shirts from AEK Athens's past. Match each home-shirt season to its maker.",
+        "explanation": "2002/03: Nike · 2006/07: Adidas · 2007/08: Puma.",
+        "basePrompt": "Three shirts from AEK Athens's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2002/03: Nike · 2006/07: Adidas · 2007/08: Puma."
+      },
+      {
+        "questionId": "q_9096042a5eb89665",
+        "answer": "Kostas Spanoudis",
+        "factIds": [
+          "heritage:aek-athens:founding-president"
+        ],
+        "sourceUrl": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+        "prompt": "A journalist at the start of the story: who became AEK’s first president?",
+        "explanation": "AEK’s official timeline names journalist Kostas Spanoudis as its first president.",
+        "basePrompt": "A journalist at the start of the story: who became AEK’s first president?",
+        "baseExplanation": "AEK’s official timeline names journalist Kostas Spanoudis as its first president."
+      },
+      {
+        "questionId": "q_c668d3a7600087cf",
+        "answer": "Demis Nikolaidis",
+        "factIds": [
+          "aek-athens:m-dh-8bfe07ed9603"
+        ],
+        "sourceUrl": "https://aekdata.gr/agonas/1464-futura-humenne-aek-1-2",
+        "prompt": "Who opened AEK Athens's scoring against Futura Humenne in the Cup Winners' Cup on 26 Sept 1996?",
+        "explanation": "Futura Humenne 1-2 AEK Athens, Cup Winners' Cup, 26 Sept 1996. Demis Nikolaidis opened the scoring for AEK Athens.",
+        "basePrompt": "Who opened AEK Athens's scoring against Futura Humenne in the Cup Winners' Cup on 26 Sept 1996?",
+        "baseExplanation": "Futura Humenne 1-2 AEK Athens, Cup Winners' Cup, 26 Sept 1996. Demis Nikolaidis opened the scoring for AEK Athens."
+      },
+      {
+        "questionId": "q_cb9fecd1549044ae",
+        "answer": [
+          "Michel Kreek",
+          "Kostas Katsouranis",
+          "Michalis Kapsis"
+        ],
+        "factIds": [
+          "aek-athens:m-dh-08b42f28439f"
+        ],
+        "sourceUrl": "https://aekdata.gr/agonas/98-aek-monaco-0-0",
+        "prompt": "Which three names belong in AEK Athens's starting eleven against Monaco in the UEFA Champions League on 10 Dec 2003?",
+        "explanation": "AEK Athens 0-0 Monaco, UEFA Champions League, 10 Dec 2003. Starting eleven: Chrisostomos Mihailidis, Vassilios Borbokis, Theodoros Zagorakis, Michel Kreek, Ioannis Okkas, Vasilis Tsiartas, Vangelis Moras, Kostas Katsouranis, Vasilis Lakis, Michalis Kapsis, Nikos Liberopoulos.",
+        "basePrompt": "Which three names belong in AEK Athens's starting eleven against Monaco in the UEFA Champions League on 10 Dec 2003?",
+        "baseExplanation": "AEK Athens 0-0 Monaco, UEFA Champions League, 10 Dec 2003. Starting eleven: Chrisostomos Mihailidis, Vassilios Borbokis, Theodoros Zagorakis, Michel Kreek, Ioannis Okkas, Vasilis Tsiartas, Vangelis Moras, Kostas Katsouranis, Vasilis Lakis, Michalis Kapsis, Nikos Liberopoulos."
+      },
+      {
+        "questionId": "q_da49ee9a427092d6",
+        "answer": [
+          "Levi Garcia",
+          "Niclas Eliasson",
+          "Harold Moukoudi"
+        ],
+        "factIds": [
+          "aek-athens:m-dh-ee1dc0881f5d"
+        ],
+        "sourceUrl": "https://aekdata.gr/agonas/3841-aek-inter-escaldes-4-3",
+        "prompt": "Which three names belong in AEK Athens's starting eleven against Inter Escaldes in the UEFA Conference League on 24 Jul 2024?",
+        "explanation": "AEK Athens 4-3 Inter Escaldes, UEFA Conference League, 24 Jul 2024. Starting eleven: Thomas Strakosha, Harold Moukoudi, Damian Szymański, Jens Jønsson, Levi Garcia, Mijat Gaćinović, Lazaros Rota, Niclas Eliasson, Domagoj Vida, Robert Ljubičić, Ehsan Hajsafi.",
+        "basePrompt": "Which three names belong in AEK Athens's starting eleven against Inter Escaldes in the UEFA Conference League on 24 Jul 2024?",
+        "baseExplanation": "AEK Athens 4-3 Inter Escaldes, UEFA Conference League, 24 Jul 2024. Starting eleven: Thomas Strakosha, Harold Moukoudi, Damian Szymański, Jens Jønsson, Levi Garcia, Mijat Gaćinović, Lazaros Rota, Niclas Eliasson, Domagoj Vida, Robert Ljubičić, Ehsan Hajsafi."
+      },
+      {
+        "questionId": "q_92b1bffe03278ef6",
+        "answer": "Demis Nikolaidis",
+        "factIds": [
+          "aek-athens:m-dh-7b36f690bfff"
+        ],
+        "sourceUrl": "https://aekdata.gr/agonas/1306-ferencvaros-aek-4-2",
+        "prompt": "Who opened AEK Athens's scoring against Ferencvaros in the UEFA Cup on 11 Aug 1998?",
+        "explanation": "Ferencvaros 4-2 AEK Athens, UEFA Cup, 11 Aug 1998. Demis Nikolaidis opened the scoring for AEK Athens.",
+        "basePrompt": "Who opened AEK Athens's scoring against Ferencvaros in the UEFA Cup on 11 Aug 1998?",
+        "baseExplanation": "Ferencvaros 4-2 AEK Athens, UEFA Cup, 11 Aug 1998. Demis Nikolaidis opened the scoring for AEK Athens."
+      },
+      {
+        "questionId": "q_2c008f61f32ac4ce",
+        "answer": [
+          "Christos Kontis",
+          "Milen Petkov",
+          "Kostas Katsouranis"
+        ],
+        "factIds": [
+          "aek-athens:m-dh-2bb5b5550c8e"
+        ],
+        "sourceUrl": "https://aekdata.gr/agonas/47-aek-gorica-1-0",
+        "prompt": "Which three names belong in AEK Athens's starting eleven against Gorica in the UEFA Cup on 30 Sept 2004?",
+        "explanation": "AEK Athens 1-0 Gorica, UEFA Cup, 30 Sept 2004. Starting eleven: Chrisostomos Mihailidis, Christos Kontis, Stavros Tziortziopoulos, Nikolaos Kostenoglou, Bruno Alves, Milen Petkov, Paulo Assunção, Kostas Katsouranis, Alessandro Soares, Asimakis Krassas, Nikos Liberopoulos.",
+        "basePrompt": "Which three names belong in AEK Athens's starting eleven against Gorica in the UEFA Cup on 30 Sept 2004?",
+        "baseExplanation": "AEK Athens 1-0 Gorica, UEFA Cup, 30 Sept 2004. Starting eleven: Chrisostomos Mihailidis, Christos Kontis, Stavros Tziortziopoulos, Nikolaos Kostenoglou, Bruno Alves, Milen Petkov, Paulo Assunção, Kostas Katsouranis, Alessandro Soares, Asimakis Krassas, Nikos Liberopoulos."
+      },
+      {
+        "questionId": "q_0dddd504cd97b33b",
+        "answer": "Demis Nikolaidis",
+        "factIds": [
+          "aek-athens:m-dh-cceb7f6ef2fa"
+        ],
+        "sourceUrl": "https://aekdata.gr/agonas/1311-dinaburg-aek-2-4",
+        "prompt": "Who opened AEK Athens's scoring against Dinaburg in the Cup Winners' Cup on 2 Oct 1997?",
+        "explanation": "Dinaburg 2-4 AEK Athens, Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens.",
+        "basePrompt": "Who opened AEK Athens's scoring against Dinaburg in the Cup Winners' Cup on 2 Oct 1997?",
+        "baseExplanation": "Dinaburg 2-4 AEK Athens, Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens."
+      },
+      {
+        "questionId": "q_b26c1c50304988e8",
+        "answer": [
+          "Kostas Negrepontis",
+          "Stayros Letsas",
+          "Levi Garcia"
+        ],
+        "factIds": [
+          "span:aek-athens:p-dh-248f27479ac8",
+          "span:aek-athens:p-dh-1a92b5169009",
+          "span:aek-athens:p-dh-cc50e0056344"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/295-kostas-negrepontis",
+        "prompt": "Three chapters of AEK Athens history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Kostas Negrepontis (1926) → Stayros Letsas (1979) → Levi Garcia (2020)",
+        "basePrompt": "Three chapters of AEK Athens history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Kostas Negrepontis (1926) → Stayros Letsas (1979) → Levi Garcia (2020)"
+      },
+      {
+        "questionId": "q_e9587f989a0dbe5d",
+        "answer": "1970s",
+        "factIds": [
+          "span:aek-athens:p-2cef59e24a5992"
+        ],
+        "sourceUrl": "https://www.aekpedia.com/thomas-mavros/",
+        "prompt": "Turn back to Thomas Mavros's AEK Athens years. In which decade does the archive first place him at the club?",
+        "explanation": "Thomas Mavros's recorded years at AEK Athens: 1976–1987.",
+        "basePrompt": "Turn back to Thomas Mavros's AEK Athens years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Thomas Mavros's recorded years at AEK Athens: 1976–1987."
+      },
+      {
+        "questionId": "q_6c846b826f141bb2",
+        "answer": "2020s",
+        "factIds": [
+          "span:aek-athens:p-dh-cc50e0056344"
+        ],
+        "sourceUrl": "https://aekdata.gr/paiktis/714-levi-garcia",
+        "prompt": "Turn back to Levi Garcia's AEK Athens years. In which decade does the archive first place him at the club?",
+        "explanation": "Levi Garcia's recorded years at AEK Athens: 2020–2025.",
+        "basePrompt": "Turn back to Levi Garcia's AEK Athens years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Levi Garcia's recorded years at AEK Athens: 2020–2025."
+      }
+    ],
+    "celtic": [
+      {
+        "questionId": "q_d0ea4ca505338fc8",
+        "answer": "Food for people in need",
+        "factIds": [
+          "heritage:celtic:founding"
+        ],
+        "sourceUrl": "https://charity.celticfc.com/brother-walfrid/",
+        "prompt": "Back to Celtic’s beginnings: what did Brother Walfrid want the football club to help provide?",
+        "explanation": "Celtic began with a charitable purpose: football could bring in money to help feed local people.",
+        "basePrompt": "Back to Celtic’s beginnings: what did Brother Walfrid want the football club to help provide?",
+        "baseExplanation": "Celtic began with a charitable purpose: football could bring in money to help feed local people."
+      },
+      {
+        "questionId": "q_312a8101072b2a0c",
+        "answer": "Defender",
+        "factIds": [
+          "pos:celtic:p-bba452e5216b39"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcneill-billy-1958-75/",
+        "prompt": "Billy McNeill belongs on the Celtic team sheet. Which position was his?",
+        "explanation": "Billy McNeill played as a defender for Celtic (recorded 1957–1975).",
+        "basePrompt": "Billy McNeill is on the Celtic team sheet. Which position was his?",
+        "baseExplanation": "Billy McNeill played as a defender for Celtic (recorded 1957–1975)."
+      },
+      {
+        "questionId": "q_b7e957cc13dc66e5",
+        "answer": "Forward",
+        "factIds": [
+          "pos:celtic:p-c96ae91376dc7a"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennox-bobby/",
+        "prompt": "Bobby Lennox belongs on the Celtic team sheet. Which position was his?",
+        "explanation": "Bobby Lennox played as a forward for Celtic (recorded 1961–1980).",
+        "basePrompt": "Bobby Lennox is on the Celtic team sheet. Which position was his?",
+        "baseExplanation": "Bobby Lennox played as a forward for Celtic (recorded 1961–1980)."
+      },
+      {
+        "questionId": "q_29f62ceff4be5fc0",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:celtic:p-10312c3e5265d5"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/first-team-squad/brown-scott/",
+        "prompt": "Scott Brown belongs on the Celtic team sheet. Which position was his?",
+        "explanation": "Scott Brown played as a midfielder for Celtic (recorded 2007–2021).",
+        "basePrompt": "Scott Brown is on the Celtic team sheet. Which position was his?",
+        "baseExplanation": "Scott Brown played as a midfielder for Celtic (recorded 2007–2021)."
+      },
+      {
+        "questionId": "q_5b8bc6d7732ac17f",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:celtic:p-dh-8038dedf73cd",
+          "pos:celtic:p-dh-5dd4eb0107c8",
+          "pos:celtic:p-10312c3e5265d5"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/first-team-squad/forster-fraser/",
+        "prompt": "Fill the Celtic team sheet: match each player to his position.",
+        "explanation": "Fraser Gerard Forster: Goalkeeper · James Brogan: Defender · Scott Brown: Midfielder.",
+        "basePrompt": "Fill the Celtic team sheet: match each player to his position.",
+        "baseExplanation": "Fraser Gerard Forster: Goalkeeper · James Brogan: Defender · Scott Brown: Midfielder."
+      },
+      {
+        "questionId": "q_ee73bfd553283ec0",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:celtic:p-dh-66da601aeeb7",
+          "pos:celtic:p-dh-a45c95e7a9dc",
+          "pos:celtic:p-dh-afd52717f3ca"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/miller-willie/",
+        "prompt": "Fill the Celtic team sheet: match each player to his position.",
+        "explanation": "William Miller: Goalkeeper · John Robert Peacock MBE: Defender · Thomas Burns: Midfielder.",
+        "basePrompt": "Fill the Celtic team sheet: match each player to his position.",
+        "baseExplanation": "William Miller: Goalkeeper · John Robert Peacock MBE: Defender · Thomas Burns: Midfielder."
+      },
+      {
+        "questionId": "q_a7df818be09a1ad4",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:celtic:p-dh-0ce9a3aed813",
+          "pos:celtic:p-dh-518061ec13c1",
+          "pos:celtic:p-dh-dac0fb6b360e"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/marshall-gordon-jnr/",
+        "prompt": "Fill the Celtic team sheet: match each player to his position.",
+        "explanation": "Gordon George Banks Marshall: Goalkeeper · John Morrison: Defender · George Denholm Paterson: Midfielder.",
+        "basePrompt": "Fill the Celtic team sheet: match each player to his position.",
+        "baseExplanation": "Gordon George Banks Marshall: Goalkeeper · John Morrison: Defender · George Denholm Paterson: Midfielder."
+      },
+      {
+        "questionId": "q_ec3aef30c27c16c8",
+        "answer": "Dunfermline",
+        "factIds": [
+          "celtic:a-m-2026-05-23-celtic-dunfermline"
+        ],
+        "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4704260",
+        "prompt": "Celtic rewind: 23 May 2026 in the FA Cup - Final - Final. A 3-1 win — against which club?",
+        "explanation": "Celtic 3-1 Dunfermline, FA Cup - Final - Final, 23 May 2026.",
+        "basePrompt": "Celtic rewind: 23 May 2026 in the FA Cup - Final - Final. A 3-1 win — against which club?",
+        "baseExplanation": "Celtic 3-1 Dunfermline, FA Cup - Final - Final, 23 May 2026."
+      },
+      {
+        "questionId": "q_5e11a6c12cebb4ac",
+        "answer": "FC Porto",
+        "factIds": [
+          "celtic:m-22c83ba20f"
+        ],
+        "sourceUrl": "https://www.uefa.com/newsfiles/uefacup/2002/71041_FR.pdf",
+        "prompt": "Celtic rewind: 21 May 2003 in the UEFA Cup final. A 2-3 defeat — against which club?",
+        "explanation": "Celtic 2-3 FC Porto, UEFA Cup final, 21 May 2003.",
+        "basePrompt": "Celtic rewind: 21 May 2003 in the UEFA Cup final. A 2-3 defeat — against which club?",
+        "baseExplanation": "Celtic 2-3 FC Porto, UEFA Cup final, 21 May 2003."
+      },
+      {
+        "questionId": "q_8c405fea5a862287",
+        "answer": "St. Mirren",
+        "factIds": [
+          "celtic:a-m-2025-12-14-st-mirren-celtic"
+        ],
+        "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4609959",
+        "prompt": "Celtic rewind: 14 Dec 2025 in the League Cup - Final. A 1-3 defeat — against which club?",
+        "explanation": "St. Mirren 3-1 Celtic, League Cup - Final, 14 Dec 2025.",
+        "basePrompt": "Celtic rewind: 14 Dec 2025 in the League Cup - Final. A 1-3 defeat — against which club?",
+        "baseExplanation": "St. Mirren 3-1 Celtic, League Cup - Final, 14 Dec 2025."
+      },
+      {
+        "questionId": "q_672e212abb6f8ab6",
+        "answer": "Henrik Larsson",
+        "factIds": [
+          "celtic:goal-2003-05-21-henrik-larsson-47"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0252-0cd9ce958ed0-c7a5ba88c4b5-1000--derlei-decides-dramatic-final/",
+        "prompt": "Back to Celtic’s UEFA Cup night against Porto, 21 May 2003. Whose header arrives in the 47th minute?",
+        "explanation": "Henrik Larsson found the net against Porto in minute 47, 21 May 2003.",
+        "basePrompt": "Rewind to Celtic v Porto, 21 May 2003 (UEFA Cup). Minute 47: who found the net?",
+        "baseExplanation": "Henrik Larsson found the net against Porto in minute 47, 21 May 2003."
+      },
+      {
+        "questionId": "q_7e197f90110f722b",
+        "answer": "Liam Miller",
+        "factIds": [
+          "celtic:goal-2003-09-30-liam-miller-70",
+          "celtic:a-m-2003-09-30-celtic-lyon"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0195-0e6a71dcc0f6-7ec967783105-1000--celtic-roar-past-lyon/",
+        "prompt": "Rewind to Celtic v Lyon, 30 Sept 2003 (UEFA Champions League). Minute 70: who found the net?",
+        "explanation": "Liam Miller found the net against Lyon in minute 70, 30 Sept 2003.",
+        "basePrompt": "Rewind to Celtic v Lyon, 30 Sept 2003 (UEFA Champions League). Minute 70: who found the net?",
+        "baseExplanation": "Liam Miller found the net against Lyon in minute 70, 30 Sept 2003."
+      },
+      {
+        "questionId": "q_9477dc098291e806",
+        "answer": "Chris Sutton",
+        "factIds": [
+          "celtic:goal-2003-09-30-chris-sutton-79",
+          "celtic:a-m-2003-09-30-celtic-lyon"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/news/0195-0e6a71dcc0f6-7ec967783105-1000--celtic-roar-past-lyon/",
+        "prompt": "Rewind to Celtic v Lyon, 30 Sept 2003 (UEFA Champions League). Minute 79: who found the net?",
+        "explanation": "Chris Sutton found the net against Lyon in minute 79, 30 Sept 2003.",
+        "basePrompt": "Rewind to Celtic v Lyon, 30 Sept 2003 (UEFA Champions League). Minute 79: who found the net?",
+        "baseExplanation": "Chris Sutton found the net against Lyon in minute 79, 30 Sept 2003."
+      },
+      {
+        "questionId": "q_ef624aed26cfb142",
+        "answer": "1960s",
+        "factIds": [
+          "span:celtic:p-c96ae91376dc7a"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennox-bobby/",
+        "prompt": "Turn back to Bobby Lennox's Celtic years. In which decade does the archive first place him at the club?",
+        "explanation": "Bobby Lennox's recorded years at Celtic: 1961–1980.",
+        "basePrompt": "Turn back to Bobby Lennox's Celtic years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Bobby Lennox's recorded years at Celtic: 1961–1980."
+      },
+      {
+        "questionId": "q_ea670446d7476347",
+        "answer": "1960s",
+        "factIds": [
+          "span:celtic:p-4c519397e2cdbd"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgrain-danny/",
+        "prompt": "Turn back to Danny McGrain's Celtic years. In which decade does the archive first place him at the club?",
+        "explanation": "Danny McGrain's recorded years at Celtic: 1967–1987.",
+        "basePrompt": "Turn back to Danny McGrain's Celtic years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Danny McGrain's recorded years at Celtic: 1967–1987."
+      },
+      {
+        "questionId": "q_c336ed69256aedc6",
+        "answer": [
+          "Jimmy Johnstone",
+          "Tommy Gemmell",
+          "Bertie Auld"
+        ],
+        "factIds": [
+          "celtic:m-de23a2dbc5"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/1967-05-25-celtic-2-1-inter-milan-european-cup/",
+        "prompt": "Which three names belong in Celtic's starting eleven against Inter Milan in the European Cup final on 25 May 1967?",
+        "explanation": "Celtic 2-1 Inter Milan, European Cup final, 25 May 1967. Starting eleven: Ronnie Simpson, Jim Craig, Tommy Gemmell, Bobby Murdoch, Billy McNeill, John Clark, Jimmy Johnstone, Willie Wallace, Stevie Chalmers, Bertie Auld, Bobby Lennox.",
+        "basePrompt": "Which three names belong in Celtic's starting eleven against Inter Milan in the European Cup final on 25 May 1967?",
+        "baseExplanation": "Celtic 2-1 Inter Milan, European Cup final, 25 May 1967. Starting eleven: Ronnie Simpson, Jim Craig, Tommy Gemmell, Bobby Murdoch, Billy McNeill, John Clark, Jimmy Johnstone, Willie Wallace, Stevie Chalmers, Bertie Auld, Bobby Lennox."
+      },
+      {
+        "questionId": "q_82c2fdaa5b674359",
+        "answer": "2000s",
+        "factIds": [
+          "span:celtic:p-10312c3e5265d5"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/players/first-team-squad/brown-scott/",
+        "prompt": "Turn back to Scott Brown's Celtic years. In which decade does the archive first place him at the club?",
+        "explanation": "Scott Brown's recorded years at Celtic: 2007–2021.",
+        "basePrompt": "Turn back to Scott Brown's Celtic years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Scott Brown's recorded years at Celtic: 2007–2021."
+      },
+      {
+        "questionId": "q_11c71092a69d1e32",
+        "answer": [
+          "Nike",
+          "New Balance",
+          "Adidas"
+        ],
+        "factIds": [
+          "celtic:cof-k-27",
+          "celtic:cof-k-31",
+          "celtic:cof-k-52"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_2.html",
+        "prompt": "Three shirts from Celtic's past. Match each home-shirt season to its maker.",
+        "explanation": "2013/14: Nike · 2015/16: New Balance · 2020/21: Adidas.",
+        "basePrompt": "Three shirts from Celtic's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2013/14: Nike · 2015/16: New Balance · 2020/21: Adidas."
+      },
+      {
+        "questionId": "q_f03ef9c6b0062550",
+        "answer": [
+          "Umbro",
+          "Nike",
+          "New Balance"
+        ],
+        "factIds": [
+          "celtic:cof-k-01",
+          "celtic:cof-k-14",
+          "celtic:cof-k-31"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+        "prompt": "Three shirts from Celtic's past. Match each home-shirt season to its maker.",
+        "explanation": "2001/02: Umbro · 2007/08: Nike · 2015/16: New Balance.",
+        "basePrompt": "Three shirts from Celtic's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2001/02: Umbro · 2007/08: Nike · 2015/16: New Balance."
+      },
+      {
+        "questionId": "q_10cbcd8f9cf8b709",
+        "answer": [
+          "Nike",
+          "New Balance",
+          "Adidas"
+        ],
+        "factIds": [
+          "celtic:cof-k-14",
+          "celtic:cof-k-31",
+          "celtic:cof-k-52"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+        "prompt": "Three shirts from Celtic's past. Match each home-shirt season to its maker.",
+        "explanation": "2007/08: Nike · 2015/16: New Balance · 2020/21: Adidas.",
+        "basePrompt": "Three shirts from Celtic's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2007/08: Nike · 2015/16: New Balance · 2020/21: Adidas."
+      },
+      {
+        "questionId": "q_3127c4526bc24416",
+        "answer": [
+          "Jos Hooiveld",
+          "Glenn Loovens",
+          "Scott Brown"
+        ],
+        "factIds": [
+          "celtic:a-m-2010-08-04-celtic-braga"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2002744--",
+        "prompt": "Which three names belong in Celtic's starting eleven against Braga in the UEFA Champions League on 4 Aug 2010?",
+        "explanation": "Celtic 2-1 Braga, UEFA Champions League, 4 Aug 2010. Starting eleven: Łukasz Załuska, Efraín Juárez, Jos Hooiveld, Scott Brown, Giorgios Samaras, Cha Du-Ri, Shaun Maloney, Joe Ledley, Charlie Mulgrew, Glenn Loovens, Gary Hooper.",
+        "basePrompt": "Which three names belong in Celtic's starting eleven against Braga in the UEFA Champions League on 4 Aug 2010?",
+        "baseExplanation": "Celtic 2-1 Braga, UEFA Champions League, 4 Aug 2010. Starting eleven: Łukasz Załuska, Efraín Juárez, Jos Hooiveld, Scott Brown, Giorgios Samaras, Cha Du-Ri, Shaun Maloney, Joe Ledley, Charlie Mulgrew, Glenn Loovens, Gary Hooper."
+      },
+      {
+        "questionId": "q_f218815fca196657",
+        "answer": [
+          "Scott Brown",
+          "Lee Naylor",
+          "Gary Caldwell"
+        ],
+        "factIds": [
+          "celtic:a-m-2007-09-18-shakhtar-celtic"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/301174--",
+        "prompt": "Which three names belong in Celtic's starting eleven against Shakhtar in the UEFA Champions League on 18 Sept 2007?",
+        "explanation": "Shakhtar 2-0 Celtic, UEFA Champions League, 18 Sept 2007. Starting eleven: Artur Boruc, Lee Naylor, Gary Caldwell, Scott Brown, Jan Vennegoor of Hesselink, Paul Hartley, Mark Wilson, Massimo Donati, Shunsuke Nakamura, Scott McDonald, Stephen McManus.",
+        "basePrompt": "Which three names belong in Celtic's starting eleven against Shakhtar in the UEFA Champions League on 18 Sept 2007?",
+        "baseExplanation": "Shakhtar 2-0 Celtic, UEFA Champions League, 18 Sept 2007. Starting eleven: Artur Boruc, Lee Naylor, Gary Caldwell, Scott Brown, Jan Vennegoor of Hesselink, Paul Hartley, Mark Wilson, Massimo Donati, Shunsuke Nakamura, Scott McDonald, Stephen McManus."
+      },
+      {
+        "questionId": "q_99b0d97a57d6e948",
+        "answer": "Jimmy Johnstone",
+        "factIds": [
+          "celtic:a-m-1971-03-24-celtic-ajax"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/63024--",
+        "prompt": "Whose name went on the scoresheet for Celtic against Ajax in the UEFA Champions League on 24 Mar 1971?",
+        "explanation": "Celtic 1-0 Ajax, UEFA Champions League, 24 Mar 1971. Jimmy Johnstone scored for Celtic.",
+        "basePrompt": "Whose name went on the scoresheet for Celtic against Ajax in the UEFA Champions League on 24 Mar 1971?",
+        "baseExplanation": "Celtic 1-0 Ajax, UEFA Champions League, 24 Mar 1971. Jimmy Johnstone scored for Celtic."
+      },
+      {
+        "questionId": "q_513a8b03e88f1474",
+        "answer": "Henrik Larsson",
+        "factIds": [
+          "celtic:a-m-2003-04-10-celtic-boavista"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/70975--",
+        "prompt": "Whose name went on the scoresheet for Celtic against Boavista in the UEFA Europa League on 10 Apr 2003?",
+        "explanation": "Celtic 1-1 Boavista, UEFA Europa League, 10 Apr 2003. Henrik Larsson scored for Celtic.",
+        "basePrompt": "Whose name went on the scoresheet for Celtic against Boavista in the UEFA Europa League on 10 Apr 2003?",
+        "baseExplanation": "Celtic 1-1 Boavista, UEFA Europa League, 10 Apr 2003. Henrik Larsson scored for Celtic."
+      },
+      {
+        "questionId": "q_65008ca0d08ef81c",
+        "answer": "Bobby Lennox",
+        "factIds": [
+          "celtic:a-m-1973-11-06-vb-celtic"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/63188--",
+        "prompt": "Whose name went on the scoresheet for Celtic against VB in the UEFA Champions League on 6 Nov 1973?",
+        "explanation": "VB 0-1 Celtic, UEFA Champions League, 6 Nov 1973. Bobby Lennox scored for Celtic.",
+        "basePrompt": "Whose name went on the scoresheet for Celtic against VB in the UEFA Champions League on 6 Nov 1973?",
+        "baseExplanation": "VB 0-1 Celtic, UEFA Champions League, 6 Nov 1973. Bobby Lennox scored for Celtic."
+      },
+      {
+        "questionId": "q_a3192a1d86ec05b0",
+        "answer": "1906/07",
+        "factIds": [
+          "celtic:m-dh-745df96d6143"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1907-2/1907-04-20-celtic-3-0-heart-of-midlothian-scottish-cup-final/",
+        "prompt": "Place this result in its season: Celtic beat Heart of Midlothian 3-0 in the Scottish Cup Final. Which campaign was it?",
+        "explanation": "Celtic 3-0 Heart of Midlothian, Scottish Cup Final, 20 Apr 1907.",
+        "basePrompt": "Place this result in its season: Celtic beat Heart of Midlothian 3-0 in the Scottish Cup Final. Which campaign was it?",
+        "baseExplanation": "Celtic 3-0 Heart of Midlothian, Scottish Cup Final, 20 Apr 1907."
+      },
+      {
+        "questionId": "q_8ab7dafa4a5916e2",
+        "answer": "1984/85",
+        "factIds": [
+          "celtic:m-dh-283593e0248a"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/1985-05-18-celtic-2-1-dundee-united-scottish-cup-final/",
+        "prompt": "Place this result in its season: Celtic beat Dundee United 2-1 in the Scottish Cup Final. Which campaign was it?",
+        "explanation": "Celtic 2-1 Dundee United, Scottish Cup Final, 18 May 1985.",
+        "basePrompt": "Place this result in its season: Celtic beat Dundee United 2-1 in the Scottish Cup Final. Which campaign was it?",
+        "baseExplanation": "Celtic 2-1 Dundee United, Scottish Cup Final, 18 May 1985."
+      },
+      {
+        "questionId": "q_55b480855bfa4617",
+        "answer": "1907/08",
+        "factIds": [
+          "celtic:m-dh-5c701e61e619"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1908-2/1908-04-18-celtic-5-1-st-mirren-scottish-cup-final/",
+        "prompt": "Place this result in its season: Celtic beat St. Mirren 5-1 in the Scottish Cup Final. Which campaign was it?",
+        "explanation": "Celtic 5-1 St. Mirren, Scottish Cup Final, 18 Apr 1908.",
+        "basePrompt": "Place this result in its season: Celtic beat St. Mirren 5-1 in the Scottish Cup Final. Which campaign was it?",
+        "baseExplanation": "Celtic 5-1 St. Mirren, Scottish Cup Final, 18 Apr 1908."
+      },
+      {
+        "questionId": "q_6b67ae2e62cdfbfc",
+        "answer": "0-2",
+        "factIds": [
+          "celtic:m-a2210b09c4"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/1888-2/",
+        "prompt": "Remember the scoreline: Celtic v Cowlairs, 6 Aug 1888 in the Glasgow Exhibition Cup Final. How did it finish? (Celtic first)",
+        "explanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Aug 1888.",
+        "basePrompt": "Remember the scoreline: Celtic v Cowlairs, 6 Aug 1888 in the Glasgow Exhibition Cup Final. How did it finish? (Celtic first)",
+        "baseExplanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Aug 1888."
+      },
+      {
+        "questionId": "q_0cf4fd7dbe5ac9ec",
+        "answer": "1-0",
+        "factIds": [
+          "celtic:m-dh-f00811bc76c7"
+        ],
+        "sourceUrl": "https://www.thecelticwiki.com/1938-06-10-celtic-1-0-everton-empire-exhibition-cup-final/",
+        "prompt": "Remember the scoreline: Celtic v Everton, 10 Jun 1938 in the Empire Exhibition Cup Final. How did it finish? (Celtic first)",
+        "explanation": "Celtic 1-0 Everton, Empire Exhibition Cup Final, 10 Jun 1938.",
+        "basePrompt": "Remember the scoreline: Celtic v Everton, 10 Jun 1938 in the Empire Exhibition Cup Final. How did it finish? (Celtic first)",
+        "baseExplanation": "Celtic 1-0 Everton, Empire Exhibition Cup Final, 10 Jun 1938."
+      }
+    ],
+    "st-pauli": [
+      {
+        "questionId": "q_9192d7fba7ba2850",
+        "answer": "With a supporter on the terraces",
+        "factIds": [
+          "heritage:st-pauli:skull-flag"
+        ],
+        "sourceUrl": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+        "prompt": "The skull and crossbones became a St. Pauli signature. Where did the flag tradition begin?",
+        "explanation": "The museum traces the flag to supporter Doc Mabuse, who brought it to the Millerntor around 1986.",
+        "basePrompt": "The skull and crossbones became a St. Pauli signature. Where did the flag tradition begin?",
+        "baseExplanation": "The museum traces the flag to supporter Doc Mabuse, who brought it to the Millerntor around 1986."
+      },
+      {
+        "questionId": "q_679dc225641705aa",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:st-pauli:p-dh-231abf25cc84",
+          "pos:st-pauli:p-dh-817a9ac644cf",
+          "pos:st-pauli:p-dh-65e454ad5c8a"
+        ],
+        "sourceUrl": "https://www.weltfussball.de/person/pe48670/frank-droege/",
+        "prompt": "Fill the FC St. Pauli team sheet: match each player to his position.",
+        "explanation": "Frank Dröge: Goalkeeper · Karl Miller: Defender · Jürgen Gronau: Midfielder.",
+        "basePrompt": "Fill the FC St. Pauli team sheet: match each player to his position.",
+        "baseExplanation": "Frank Dröge: Goalkeeper · Karl Miller: Defender · Jürgen Gronau: Midfielder."
+      },
+      {
+        "questionId": "q_b264707d755c7c84",
+        "answer": "true",
+        "factIds": [
+          "st-pauli:tr-2-bundesliga:2023/24"
+        ],
+        "sourceUrl": "https://millernton.de/statistik-spiele-des-fc-st-pauli/fcsp-saison-2023-24/",
+        "prompt": "True or false: FC St. Pauli won the 2. Bundesliga in 2023/24.",
+        "explanation": "FC St. Pauli won the 2. Bundesliga in 2023/24.",
+        "basePrompt": "True or false: FC St. Pauli won the 2. Bundesliga in 2023/24.",
+        "baseExplanation": "FC St. Pauli won the 2. Bundesliga in 2023/24."
+      },
+      {
+        "questionId": "q_0a3580b9a32e8ace",
+        "answer": "Under Armour",
+        "factIds": [
+          "st-pauli:cof-k-17"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "Picture FC St. Pauli's 2016/17 home shirt. Which maker belongs on the label?",
+        "explanation": "FC St. Pauli's 2016/17 home shirt was made by Under Armour.",
+        "basePrompt": "Picture FC St. Pauli's 2016/17 home shirt. Which maker belongs on the label?",
+        "baseExplanation": "FC St. Pauli's 2016/17 home shirt was made by Under Armour."
+      },
+      {
+        "questionId": "q_dc42ee2b122086c8",
+        "answer": "false",
+        "factIds": [
+          "st-pauli:cof-k-25"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "True or false: Hummel made FC St. Pauli's 2018/19 third shirt.",
+        "explanation": "It was Under Armour.",
+        "basePrompt": "True or false: Hummel made FC St. Pauli's 2018/19 third shirt.",
+        "baseExplanation": "It was Under Armour."
+      },
+      {
+        "questionId": "q_ce5a6cff685f25e6",
+        "answer": "false",
+        "factIds": [
+          "st-pauli:cof-k-19"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "True or false: Kappa made FC St. Pauli's 2016/17 third shirt.",
+        "explanation": "It was Under Armour.",
+        "basePrompt": "True or false: Kappa made FC St. Pauli's 2016/17 third shirt.",
+        "baseExplanation": "It was Under Armour."
+      },
+      {
+        "questionId": "q_b53498dc1c8f6201",
+        "answer": "Under Armour",
+        "factIds": [
+          "st-pauli:cof-k-28"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "Picture FC St. Pauli's 2019/20 third shirt. Which maker belongs on the label?",
+        "explanation": "FC St. Pauli's 2019/20 third shirt was made by Under Armour.",
+        "basePrompt": "Picture FC St. Pauli's 2019/20 third shirt. Which maker belongs on the label?",
+        "baseExplanation": "FC St. Pauli's 2019/20 third shirt was made by Under Armour."
+      },
+      {
+        "questionId": "q_05e5fb05bb7b006a",
+        "answer": "false",
+        "factIds": [
+          "st-pauli:cof-k-27"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "True or false: Kappa made FC St. Pauli's 2019/20 away shirt.",
+        "explanation": "It was Under Armour.",
+        "basePrompt": "True or false: Kappa made FC St. Pauli's 2019/20 away shirt.",
+        "baseExplanation": "It was Under Armour."
+      },
+      {
+        "questionId": "q_85224905a5981fff",
+        "answer": "PUMA",
+        "factIds": [
+          "st-pauli:cof-k-46"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_3.html",
+        "prompt": "Picture FC St. Pauli's 2025/26 third shirt. Which maker belongs on the label?",
+        "explanation": "FC St. Pauli's 2025/26 third shirt was made by PUMA.",
+        "basePrompt": "Picture FC St. Pauli's 2025/26 third shirt. Which maker belongs on the label?",
+        "baseExplanation": "FC St. Pauli's 2025/26 third shirt was made by PUMA."
+      },
+      {
+        "questionId": "q_4075754dc5a3e49a",
+        "answer": "Hamburger SV",
+        "factIds": [
+          "st-pauli:ea-match-1e37507533dc5b1c"
+        ],
+        "sourceUrl": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2021-22/teams/fc-st-pauli",
+        "prompt": "FC St. Pauli derby rewind: 21 Jan 2022 in the 2. Bundesliga. A 1-2 defeat — against which club?",
+        "explanation": "Hamburger SV 2-1 FC St. Pauli, 2. Bundesliga, 21 Jan 2022.",
+        "basePrompt": "FC St. Pauli derby rewind: 21 Jan 2022 in the 2. Bundesliga. A 1-2 defeat — against which club?",
+        "baseExplanation": "Hamburger SV 2-1 FC St. Pauli, 2. Bundesliga, 21 Jan 2022."
+      },
+      {
+        "questionId": "q_e08591fcd5c93573",
+        "answer": "An anatomy book",
+        "factIds": [
+          "heritage:st-pauli:printed-skull"
+        ],
+        "sourceUrl": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+        "prompt": "From a neighbourhood shirt to a club symbol: where did Steph Braun find the template for St. Pauli’s printed skull?",
+        "explanation": "An old anatomy book supplied Braun’s skull template; he combined it with crossed bones.",
+        "basePrompt": "From a neighbourhood shirt to a club symbol: where did Steph Braun find the template for St. Pauli’s printed skull?",
+        "baseExplanation": "An old anatomy book supplied Braun’s skull template; he combined it with crossed bones."
+      },
+      {
+        "questionId": "q_28aab4913722c721",
+        "answer": "Dimitris Diamantakos",
+        "factIds": [
+          "st-pauli:goal-2019-09-16-dimitris-diamantakos-18",
+          "st-pauli:ea-match-de10049f619a63ea"
+        ],
+        "sourceUrl": "https://www.fearthewall.com/2019/9/17/20869645/2-bundesliga-update-matchday-6",
+        "prompt": "A derby memory: FC St. Pauli v Hamburger SV, 16 September 2019. Who scores in the 18th minute?",
+        "explanation": "Dimitris Diamantakos found the net against Hamburger SV in minute 18, 16 Sept 2019.",
+        "basePrompt": "Rewind to FC St. Pauli v Hamburger SV, 16 Sept 2019 (2. Bundesliga). Minute 18: who found the net?",
+        "baseExplanation": "Dimitris Diamantakos found the net against Hamburger SV in minute 18, 16 Sept 2019."
+      },
+      {
+        "questionId": "q_cd0fb693792cce82",
+        "answer": "Marcel Hartel",
+        "factIds": [
+          "st-pauli:goal-2024-05-12-marcel-hartel-68",
+          "st-pauli:ea-match-b26378463ba09e40"
+        ],
+        "sourceUrl": "https://leichtesprache.fcstpauli.com/news-blog/fc-st.-pauli-steigt-in-die-1.-bundesliga-auf",
+        "prompt": "Rewind to FC St. Pauli v VfL Osnabruck, 12 May 2024 (2. Bundesliga). Minute 68: who found the net?",
+        "explanation": "Marcel Hartel found the net against VfL Osnabruck in minute 68, 12 May 2024.",
+        "basePrompt": "Rewind to FC St. Pauli v VfL Osnabruck, 12 May 2024 (2. Bundesliga). Minute 68: who found the net?",
+        "baseExplanation": "Marcel Hartel found the net against VfL Osnabruck in minute 68, 12 May 2024."
+      },
+      {
+        "questionId": "q_27adeb2eaf745857",
+        "answer": "Marcel Hartel",
+        "factIds": [
+          "st-pauli:goal-2024-01-27-marcel-hartel-26",
+          "st-pauli:ea-match-ca4fd88c93169155"
+        ],
+        "sourceUrl": "https://www.fcstpauli.com/en/news/published/dusseldorf-match-report-a23-24/",
+        "prompt": "Rewind to FC St. Pauli v Fortuna Dusseldorf, 27 Jan 2024 (2. Bundesliga). Minute 26: who found the net?",
+        "explanation": "Marcel Hartel found the net against Fortuna Dusseldorf in minute 26, 27 Jan 2024.",
+        "basePrompt": "Rewind to FC St. Pauli v Fortuna Dusseldorf, 27 Jan 2024 (2. Bundesliga). Minute 26: who found the net?",
+        "baseExplanation": "Marcel Hartel found the net against Fortuna Dusseldorf in minute 26, 27 Jan 2024."
+      },
+      {
+        "questionId": "q_15234803a8bf0e18",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:st-pauli:p-fa0b9ca2de9ef6"
+        ],
+        "sourceUrl": "https://millernton.de/2021/08/10/wer-ist-marcel-hartel-ein-spielerprofil/",
+        "prompt": "Marcel Hartel belongs on the FC St. Pauli team sheet. Which position was his?",
+        "explanation": "Marcel Hartel played as a midfielder for FC St. Pauli.",
+        "basePrompt": "Marcel Hartel is on the FC St. Pauli team sheet. Which position was his?",
+        "baseExplanation": "Marcel Hartel played as a midfielder for FC St. Pauli."
+      },
+      {
+        "questionId": "q_c165f0aa6e4292f6",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:st-pauli:p-dh-099931076e14",
+          "pos:st-pauli:p-dh-7e01828e4ed1",
+          "pos:dfb-67949"
+        ],
+        "sourceUrl": "https://www.weltfussball.de/person/pe47011/frank-boese/",
+        "prompt": "Fill the FC St. Pauli team sheet: match each player to his position.",
+        "explanation": "Frank Böse: Goalkeeper · Ralph Gunesch: Defender · Reenald Koch: Midfielder.",
+        "basePrompt": "Fill the FC St. Pauli team sheet: match each player to his position.",
+        "baseExplanation": "Frank Böse: Goalkeeper · Ralph Gunesch: Defender · Reenald Koch: Midfielder."
+      },
+      {
+        "questionId": "q_6d3f3723007d1ec4",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:st-pauli:p-dh-6baa6e6a710d",
+          "pos:st-pauli:p-dh-d2bfd3b7d84c",
+          "pos:st-pauli:p-dh-5e36764d590f"
+        ],
+        "sourceUrl": "https://www.weltfussball.de/person/pe148598/ludwig-alm/",
+        "prompt": "Fill the FC St. Pauli team sheet: match each player to his position.",
+        "explanation": "Ludwig Alm: Goalkeeper · Hauke Brückner: Defender · Michél Mazingu Dinzey: Midfielder.",
+        "basePrompt": "Fill the FC St. Pauli team sheet: match each player to his position.",
+        "baseExplanation": "Ludwig Alm: Goalkeeper · Hauke Brückner: Defender · Michél Mazingu Dinzey: Midfielder."
+      },
+      {
+        "questionId": "q_86ec8341ec379dcc",
+        "answer": [
+          "Under Armour",
+          "DIIY",
+          "PUMA"
+        ],
+        "factIds": [
+          "st-pauli:cof-k-17",
+          "st-pauli:k-f1dec0f8",
+          "st-pauli:k-2b9463c5"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "Three shirts from FC St. Pauli's past. Match each home-shirt season to its maker.",
+        "explanation": "2016/17: Under Armour · 2021/22: DIIY · 2024/25: PUMA.",
+        "basePrompt": "Three shirts from FC St. Pauli's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2016/17: Under Armour · 2021/22: DIIY · 2024/25: PUMA."
+      },
+      {
+        "questionId": "q_41d8bfeeabce9eeb",
+        "answer": [
+          "Kappa",
+          "Hummel",
+          "Under Armour"
+        ],
+        "factIds": [
+          "st-pauli:cof-k-01",
+          "st-pauli:cof-k-11",
+          "st-pauli:cof-k-17"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+        "prompt": "Three shirts from FC St. Pauli's past. Match each home-shirt season to its maker.",
+        "explanation": "2002/03: Kappa · 2014/15: Hummel · 2016/17: Under Armour.",
+        "basePrompt": "Three shirts from FC St. Pauli's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2002/03: Kappa · 2014/15: Hummel · 2016/17: Under Armour."
+      },
+      {
+        "questionId": "q_672cf76e20bb3249",
+        "answer": [
+          "Under Armour",
+          "DIIY",
+          "PUMA"
+        ],
+        "factIds": [
+          "st-pauli:cof-k-26",
+          "st-pauli:k-f1dec0f8",
+          "st-pauli:k-2b9463c5"
+        ],
+        "sourceUrl": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+        "prompt": "Three shirts from FC St. Pauli's past. Match each home-shirt season to its maker.",
+        "explanation": "2019/20: Under Armour · 2021/22: DIIY · 2024/25: PUMA.",
+        "basePrompt": "Three shirts from FC St. Pauli's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2019/20: Under Armour · 2021/22: DIIY · 2024/25: PUMA."
+      },
+      {
+        "questionId": "q_3bba5c7f773fc140",
+        "answer": "Forward",
+        "factIds": [
+          "pos:st-pauli:p-dh-3e0ee30741e4"
+        ],
+        "sourceUrl": "https://www.national-football-teams.com/player/52406/Max_Kruse.html",
+        "prompt": "Max Kruse belongs on the FC St. Pauli team sheet. Which position was his?",
+        "explanation": "Max Kruse played as a forward for FC St. Pauli (recorded 2009–2012).",
+        "basePrompt": "Max Kruse is on the FC St. Pauli team sheet. Which position was his?",
+        "baseExplanation": "Max Kruse played as a forward for FC St. Pauli (recorded 2009–2012)."
+      },
+      {
+        "questionId": "q_21d389223e9851fc",
+        "answer": "2000s",
+        "factIds": [
+          "span:st-pauli:p-dh-3e0ee30741e4"
+        ],
+        "sourceUrl": "https://www.national-football-teams.com/player/52406/Max_Kruse.html",
+        "prompt": "Turn back to Max Kruse's FC St. Pauli years. In which decade does the archive first place him at the club?",
+        "explanation": "Max Kruse's recorded years at FC St. Pauli: 2009–2012.",
+        "basePrompt": "Turn back to Max Kruse's FC St. Pauli years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Max Kruse's recorded years at FC St. Pauli: 2009–2012."
+      },
+      {
+        "questionId": "q_a6f81d0cc8d55cf9",
+        "answer": [
+          "Rolf Börner",
+          "Arvo Heino Raudanma Hansen",
+          "Mathias Hinzmann"
+        ],
+        "factIds": [
+          "span:st-pauli:p-dh-6eda6e01323b",
+          "span:st-pauli:p-dh-e470b28764dc",
+          "span:dfb-10668"
+        ],
+        "sourceUrl": "https://www.weltfussball.de/person/pe145465/rolf-boerner/",
+        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Mathias Hinzmann (2009)",
+        "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Mathias Hinzmann (2009)"
+      },
+      {
+        "questionId": "q_862b327251123ba8",
+        "answer": [
+          "Martin Haase",
+          "Heino Hansen",
+          "Afeez Aremu Olalekan"
+        ],
+        "factIds": [
+          "span:st-pauli:p-dh-d0b378bc353d",
+          "span:st-pauli:p-dh-ec722507c11e",
+          "span:st-pauli:p-dh-3d4fcd19e850"
+        ],
+        "sourceUrl": "https://www.weltfussball.de/person/pe257633/martin-haase/",
+        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Martin Haase (1954) → Heino Hansen (1974) → Afeez Aremu Olalekan (2020)",
+        "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Martin Haase (1954) → Heino Hansen (1974) → Afeez Aremu Olalekan (2020)"
+      },
+      {
+        "questionId": "q_d789639a94c075a9",
+        "answer": [
+          "Walter Dzur",
+          "Klaus Emmerich",
+          "Frank Dröge"
+        ],
+        "factIds": [
+          "span:st-pauli:p-dh-9c206c8cecc9",
+          "span:st-pauli:p-dh-8d1b8a696ffd",
+          "span:st-pauli:p-dh-231abf25cc84"
+        ],
+        "sourceUrl": "https://www.weltfussball.de/person/pe76952/walter-dzur/",
+        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Walter Dzur (1945) → Klaus Emmerich (1983) → Frank Dröge (1998)",
+        "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Walter Dzur (1945) → Klaus Emmerich (1983) → Frank Dröge (1998)"
+      },
+      {
+        "questionId": "q_cf3f11f373ca8b6b",
+        "answer": "false",
+        "factIds": [
+          "st-pauli:tr-dh-348f203ffb9b:1973/74:not"
+        ],
+        "sourceUrl": "https://datencenter.dfb.de/en/data-center/regional-league-north/2006-2007/current",
+        "prompt": "True or false: FC St. Pauli won the Regionalliga Nord in 1973/74.",
+        "explanation": "Not that season. FC St. Pauli's Regionalliga Nord wins include 1972/73.",
+        "basePrompt": "True or false: FC St. Pauli won the Regionalliga Nord in 1973/74.",
+        "baseExplanation": "Not that season. FC St. Pauli's Regionalliga Nord wins include 1972/73."
+      },
+      {
+        "questionId": "q_b6e225068e282533",
+        "answer": "4",
+        "factIds": [
+          "st-pauli:tr-dh-2b1aede80137:count"
+        ],
+        "sourceUrl": "https://fussballarchiv.de.tl/Verbandspokale.htm",
+        "prompt": "How many times does FC St. Pauli's honours list record the club winning the Hamburg Cup?",
+        "explanation": "4 wins: 1985/86, 2003/04, 2004/05, 2005/06.",
+        "basePrompt": "How many times does FC St. Pauli's honours list record the club winning the Hamburg Cup?",
+        "baseExplanation": "4 wins: 1985/86, 2003/04, 2004/05, 2005/06."
+      },
+      {
+        "questionId": "q_c09b9aa1acc9ab1f",
+        "answer": "false",
+        "factIds": [
+          "st-pauli:tr-dh-3672c8985c3d:1947/48:not"
+        ],
+        "sourceUrl": "https://www.bundesliga.com/en/bundesliga/news/hamburg-st-pauli-worlds-apart-in-germany-s-second-city-derby-16727",
+        "prompt": "True or false: FC St. Pauli won the Hamburg city league in 1947/48.",
+        "explanation": "Not that season. FC St. Pauli's Hamburg city league wins include 1946/47.",
+        "basePrompt": "True or false: FC St. Pauli won the Hamburg city league in 1947/48.",
+        "baseExplanation": "Not that season. FC St. Pauli's Hamburg city league wins include 1946/47."
+      },
+      {
+        "questionId": "q_9467efb4e4f6c592",
+        "answer": "1946/47",
+        "factIds": [
+          "st-pauli:tr-dh-3672c8985c3d:1946/47"
+        ],
+        "sourceUrl": "https://www.bundesliga.com/en/bundesliga/news/hamburg-st-pauli-worlds-apart-in-germany-s-second-city-derby-16727",
+        "prompt": "In which season did FC St. Pauli win the Hamburg city league?",
+        "explanation": "FC St. Pauli won the Hamburg city league in 1946/47.",
+        "basePrompt": "In which season did FC St. Pauli win the Hamburg city league?",
+        "baseExplanation": "FC St. Pauli won the Hamburg city league in 1946/47."
+      },
+      {
+        "questionId": "q_342cfcb3cd62c5cc",
+        "answer": "5",
+        "factIds": [
+          "st-pauli:tr-dh-348f203ffb9b:count"
+        ],
+        "sourceUrl": "https://datencenter.dfb.de/en/data-center/regional-league-north/2006-2007/current",
+        "prompt": "How many times does FC St. Pauli's honours list record the club winning the Regionalliga Nord?",
+        "explanation": "5 wins: 1963/64, 1965/66, 1971/72, 1972/73, 2006/07.",
+        "basePrompt": "How many times does FC St. Pauli's honours list record the club winning the Regionalliga Nord?",
+        "baseExplanation": "5 wins: 1963/64, 1965/66, 1971/72, 1972/73, 2006/07."
+      }
+    ],
+    "olympiacos": [
+      {
+        "questionId": "q_3a9e69d648cf9320",
+        "answer": "A laurel wreath",
+        "factIds": [
+          "heritage:olympiacos:crest"
+        ],
+        "sourceUrl": "https://www.olympiacos.org/en/history/",
+        "prompt": "Look closely at Olympiacos’ crest: what crowns the young figure’s head?",
+        "explanation": "The club’s history describes its emblem as the adolescent crowned with laurel.",
+        "basePrompt": "Look closely at Olympiacos’ crest: what crowns the young figure’s head?",
+        "baseExplanation": "The club’s history describes its emblem as the adolescent crowned with laurel."
+      },
+      {
+        "questionId": "q_98e2961c0299ff01",
+        "answer": "Piraeus",
+        "factIds": [
+          "heritage:olympiacos:city"
+        ],
+        "sourceUrl": "https://www.olympiacos.org/en/history/",
+        "prompt": "Olympiacos’ story is tied to a port city. Which one?",
+        "explanation": "Piraeus is the city at the heart of Olympiacos’ history.",
+        "basePrompt": "Olympiacos’ story is tied to a port city. Which one?",
+        "baseExplanation": "Piraeus is the city at the heart of Olympiacos’ history."
+      },
+      {
+        "questionId": "q_98847edd61ce90ed",
+        "answer": "Ayoub El Kaabi",
+        "factIds": [
+          "olympiacos:oly-goal-elkaabi-final-fiorentina",
+          "olympiacos:w-m-uecl-final-fiorentina-2024",
+          "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-to-secure-g/",
+        "prompt": "The 2024 Conference League final goes deep into extra time. Who heads in Olympiacos’ winner against Fiorentina?",
+        "explanation": "Ayoub El Kaabi. His 116th-minute header settled the final, 1-0 after extra time.",
+        "basePrompt": "Rewind to Olympiacos v Fiorentina, 29 May 2024 (UEFA Europa Conference League final). Minute 116: who found the net?",
+        "baseExplanation": "Ayoub El Kaabi found the net against Fiorentina in minute 116, 29 May 2024."
+      },
+      {
+        "questionId": "q_68ba8958cdac6ecd",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:olympiacos:r26-karembeu"
+        ],
+        "sourceUrl": "https://www.tovima.com/sports/christian-karembeu-the-ambassador/",
+        "prompt": "Christian Karembeu belongs on the Olympiacos team sheet. Which position was his?",
+        "explanation": "Christian Karembeu played as a midfielder for Olympiacos (recorded 2001–2004).",
+        "basePrompt": "Christian Karembeu is on the Olympiacos team sheet. Which position was his?",
+        "baseExplanation": "Christian Karembeu played as a midfielder for Olympiacos (recorded 2001–2004)."
+      },
+      {
+        "questionId": "q_702a85b53f15bec1",
+        "answer": "Midfielder",
+        "factIds": [
+          "pos:olympiacos:r26-djordjevic"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Predrag_%C4%90or%C4%91evi%C4%87",
+        "prompt": "Predrag Djordjevic belongs on the Olympiacos team sheet. Which position was his?",
+        "explanation": "Predrag Djordjevic played as a midfielder for Olympiacos.",
+        "basePrompt": "Predrag Djordjevic is on the Olympiacos team sheet. Which position was his?",
+        "baseExplanation": "Predrag Djordjevic played as a midfielder for Olympiacos."
+      },
+      {
+        "questionId": "q_334f27d87bbd881c",
+        "answer": "Forward",
+        "factIds": [
+          "pos:olympiacos:r26-elkaabi"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Ayoub_El_Kaabi",
+        "prompt": "Ayoub El Kaabi belongs on the Olympiacos team sheet. Which position was his?",
+        "explanation": "Ayoub El Kaabi played as a forward for Olympiacos (recorded 2023).",
+        "basePrompt": "Ayoub El Kaabi is on the Olympiacos team sheet. Which position was his?",
+        "baseExplanation": "Ayoub El Kaabi played as a forward for Olympiacos (recorded 2023)."
+      },
+      {
+        "questionId": "q_7163727f19789a4f",
+        "answer": [
+          "Defender",
+          "Midfielder",
+          "Forward"
+        ],
+        "factIds": [
+          "pos:olympiacos:r26-manolas",
+          "pos:olympiacos:r26-giannakopoulos",
+          "pos:olympiacos:r26-elkaabi"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Kostas_Manolas",
+        "prompt": "Fill the Olympiacos team sheet: match each player to his position.",
+        "explanation": "Kostas Manolas: Defender · Stelios Giannakopoulos: Midfielder · Ayoub El Kaabi: Forward.",
+        "basePrompt": "Fill the Olympiacos team sheet: match each player to his position.",
+        "baseExplanation": "Kostas Manolas: Defender · Stelios Giannakopoulos: Midfielder · Ayoub El Kaabi: Forward."
+      },
+      {
+        "questionId": "q_f4470c896c3a86c0",
+        "answer": "Asteras Tripolis",
+        "factIds": [
+          "olympiacos:r26-m-cup-asteras"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2013_Greek_Football_Cup_final",
+        "prompt": "Olympiacos rewind: 11 May 2013 in the Greek Cup final. A 3-1 win — against which club?",
+        "explanation": "Olympiacos 3-1 Asteras Tripolis, Greek Cup final, 11 May 2013.",
+        "basePrompt": "Olympiacos rewind: 11 May 2013 in the Greek Cup final. A 3-1 win — against which club?",
+        "baseExplanation": "Olympiacos 3-1 Asteras Tripolis, Greek Cup final, 11 May 2013."
+      },
+      {
+        "questionId": "q_198e30b30b3cb5b9",
+        "answer": "OFI",
+        "factIds": [
+          "olympiacos:r26-m-cup-ofi"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2025_Greek_Football_Cup_final",
+        "prompt": "Olympiacos rewind: 17 May 2025 in the Greek Cup final. A 2-0 win — against which club?",
+        "explanation": "OFI 0-2 Olympiacos, Greek Cup final, 17 May 2025.",
+        "basePrompt": "Olympiacos rewind: 17 May 2025 in the Greek Cup final. A 2-0 win — against which club?",
+        "baseExplanation": "OFI 0-2 Olympiacos, Greek Cup final, 17 May 2025."
+      },
+      {
+        "questionId": "q_0ac2b3d90f31eb2a",
+        "answer": "OFI Crete",
+        "factIds": [
+          "olympiacos:a-m-2026-01-03-olympiacos-ofi-crete"
+        ],
+        "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4647666",
+        "prompt": "Olympiacos rewind: 3 Jan 2026 in the Super Cup - Final. A 3-0 win — against which club?",
+        "explanation": "Olympiacos 3-0 OFI Crete, Super Cup - Final, 3 Jan 2026.",
+        "basePrompt": "Olympiacos rewind: 3 Jan 2026 in the Super Cup - Final. A 3-0 win — against which club?",
+        "baseExplanation": "Olympiacos 3-0 OFI Crete, Super Cup - Final, 3 Jan 2026."
+      },
+      {
+        "questionId": "q_07572fc8a5fdfdf4",
+        "answer": "Alejandro Dominguez",
+        "factIds": [
+          "olympiacos:oly-goal-dominguez-man-utd",
+          "olympiacos:r26-m-eu-manutd-home"
+        ],
+        "sourceUrl": "https://english.ahram.org.eg/News/95250.aspx",
+        "prompt": "Rewind to Olympiacos v Manchester United, 25 Feb 2014 (UEFA Champions League round of 16, first leg). Minute 38: who found the net?",
+        "explanation": "Alejandro Dominguez found the net against Manchester United in minute 38, 25 Feb 2014.",
+        "basePrompt": "Rewind to Olympiacos v Manchester United, 25 Feb 2014 (UEFA Champions League round of 16, first leg). Minute 38: who found the net?",
+        "baseExplanation": "Alejandro Dominguez found the net against Manchester United in minute 38, 25 Feb 2014."
+      },
+      {
+        "questionId": "q_02589095bb7605b3",
+        "answer": "Ayoub El Kaabi",
+        "factIds": [
+          "olympiacos:oly-goal-elkaabi-villa-second",
+          "olympiacos:a-m-2024-05-02-aston-villa-olympiacos"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1acb87e80493-a2c21428ae7d-1000--report-olympiacos-stun-aston-villa/",
+        "prompt": "Rewind to Olympiacos v Aston Villa, 2 May 2024 (UEFA Europa Conference League semi-final, first leg). Minute 29: who found the net?",
+        "explanation": "Ayoub El Kaabi found the net against Aston Villa in minute 29, 2 May 2024.",
+        "basePrompt": "Rewind to Olympiacos v Aston Villa, 2 May 2024 (UEFA Europa Conference League semi-final, first leg). Minute 29: who found the net?",
+        "baseExplanation": "Ayoub El Kaabi found the net against Aston Villa in minute 29, 2 May 2024."
+      },
+      {
+        "questionId": "q_ba730bcfe6db1b5c",
+        "answer": "2000s",
+        "factIds": [
+          "span:olympiacos:r26-rivaldo"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Rivaldo",
+        "prompt": "Turn back to Rivaldo's Olympiacos years. In which decade does the archive first place him at the club?",
+        "explanation": "Rivaldo's recorded years at Olympiacos: 2004–2007.",
+        "basePrompt": "Turn back to Rivaldo's Olympiacos years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Rivaldo's recorded years at Olympiacos: 2004–2007."
+      },
+      {
+        "questionId": "q_16b5584385de7493",
+        "answer": "2010s",
+        "factIds": [
+          "span:olympiacos:r26-fortounis"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Kostas_Fortounis",
+        "prompt": "Turn back to Kostas Fortounis's Olympiacos years. In which decade does the archive first place him at the club?",
+        "explanation": "Kostas Fortounis's recorded years at Olympiacos: 2014.",
+        "basePrompt": "Turn back to Kostas Fortounis's Olympiacos years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Kostas Fortounis's recorded years at Olympiacos: 2014."
+      },
+      {
+        "questionId": "q_8d8ea1ccbf4fe0f0",
+        "answer": "1990s",
+        "factIds": [
+          "span:olympiacos:r26-giovanni"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Giovanni_(footballer,_born_1972)",
+        "prompt": "Turn back to Giovanni's Olympiacos years. In which decade does the archive first place him at the club?",
+        "explanation": "Giovanni's recorded years at Olympiacos: 1999–2005.",
+        "basePrompt": "Turn back to Giovanni's Olympiacos years. In which decade does the archive first place him at the club?",
+        "baseExplanation": "Giovanni's recorded years at Olympiacos: 1999–2005."
+      },
+      {
+        "questionId": "q_6acdab8a82ad9f70",
+        "answer": [
+          "Umbro",
+          "Puma",
+          "Adidas"
+        ],
+        "factIds": [
+          "olympiacos:fka-k-19698",
+          "olympiacos:fka-k-19709",
+          "olympiacos:w-k-2016-17-home"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-home-kit-19698/",
+        "prompt": "Three shirts from Olympiacos's past. Match each home-shirt season to its maker.",
+        "explanation": "2000/01: Umbro · 2005/06: Puma · 2016/17: Adidas.",
+        "basePrompt": "Three shirts from Olympiacos's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "2000/01: Umbro · 2005/06: Puma · 2016/17: Adidas."
+      },
+      {
+        "questionId": "q_134ebfae74bb7db4",
+        "answer": [
+          "Defender",
+          "Midfielder",
+          "Forward"
+        ],
+        "factIds": [
+          "pos:olympiacos:r26-gaitatzis",
+          "pos:olympiacos:r26-fortounis",
+          "pos:olympiacos:r26-vazos"
+        ],
+        "sourceUrl": "https://www.tovima.com/sports/giannis-gaitatzis-the-one-shoe-iron-man/",
+        "prompt": "Fill the Olympiacos team sheet: match each player to his position.",
+        "explanation": "Giannis Gaitatzis: Defender · Kostas Fortounis: Midfielder · Giannis Vazos: Forward.",
+        "basePrompt": "Fill the Olympiacos team sheet: match each player to his position.",
+        "baseExplanation": "Giannis Gaitatzis: Defender · Kostas Fortounis: Midfielder · Giannis Vazos: Forward."
+      },
+      {
+        "questionId": "q_7e78bf1e9bd3f42e",
+        "answer": [
+          "Asics",
+          "Puma",
+          "Umbro"
+        ],
+        "factIds": [
+          "olympiacos:fka-k-110860",
+          "olympiacos:fka-k-80869",
+          "olympiacos:fka-k-19698"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/olympiacos-fc-1983-84-home-kit-110860/",
+        "prompt": "Three shirts from Olympiacos's past. Match each home-shirt season to its maker.",
+        "explanation": "1983/84: Asics · 1998/99: Puma · 2000/01: Umbro.",
+        "basePrompt": "Three shirts from Olympiacos's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "1983/84: Asics · 1998/99: Puma · 2000/01: Umbro."
+      },
+      {
+        "questionId": "q_1f831951a39ce678",
+        "answer": [
+          "Goalkeeper",
+          "Defender",
+          "Midfielder"
+        ],
+        "factIds": [
+          "pos:olympiacos:r26-grammatikopoulos",
+          "pos:olympiacos:r26-torosidis",
+          "pos:olympiacos:r26-karapialis"
+        ],
+        "sourceUrl": "https://www.tovima.com/sports/achilleas-grammatikopoulos-the-zamora-of-piraeus/",
+        "prompt": "Fill the Olympiacos team sheet: match each player to his position.",
+        "explanation": "Achilleas Grammatikopoulos: Goalkeeper · Vasilis Torosidis: Defender · Vasilis Karapialis: Midfielder.",
+        "basePrompt": "Fill the Olympiacos team sheet: match each player to his position.",
+        "baseExplanation": "Achilleas Grammatikopoulos: Goalkeeper · Vasilis Torosidis: Defender · Vasilis Karapialis: Midfielder."
+      },
+      {
+        "questionId": "q_daf7f8347fec0e62",
+        "answer": [
+          "Adidas",
+          "Asics",
+          "Puma"
+        ],
+        "factIds": [
+          "olympiacos:fka-k-314879",
+          "olympiacos:fka-k-110864",
+          "olympiacos:fka-k-80869"
+        ],
+        "sourceUrl": "https://www.footballkitarchive.com/olympiacos-fc-1978-79-home-kit-314879/",
+        "prompt": "Three shirts from Olympiacos's past. Match each home-shirt season to its maker.",
+        "explanation": "1978/79: Adidas · 1980/81: Asics · 1998/99: Puma.",
+        "basePrompt": "Three shirts from Olympiacos's past. Match each home-shirt season to its maker.",
+        "baseExplanation": "1978/79: Adidas · 1980/81: Asics · 1998/99: Puma."
+      },
+      {
+        "questionId": "q_092f3ffeddbc6d00",
+        "answer": "Rizoupoli",
+        "factIds": [
+          "heritage:olympiacos:rizoupoli"
+        ],
+        "sourceUrl": "https://www.olympiacos.org/en/history/",
+        "prompt": "A different home for a European chapter: where did Olympiacos move from OAKA for the 2002/03 season?",
+        "explanation": "The club moved to Rizoupoli in 2002/03 and stayed for two years.",
+        "basePrompt": "A different home for a European chapter: where did Olympiacos move from OAKA for the 2002/03 season?",
+        "baseExplanation": "The club moved to Rizoupoli in 2002/03 and stayed for two years."
+      },
+      {
+        "questionId": "q_444e5ec3f56d30bc",
+        "answer": "Nikos Anastopoulos",
+        "factIds": [
+          "olympiacos:a-m-1983-09-28-olympiacos-ajax"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/933--",
+        "prompt": "Whose name went on the scoresheet for Olympiacos against Ajax in the UEFA Champions League on 28 Sept 1983?",
+        "explanation": "Olympiacos 2-0 Ajax, UEFA Champions League, 28 Sept 1983. Nikos Anastopoulos scored for Olympiacos.",
+        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Ajax in the UEFA Champions League on 28 Sept 1983?",
+        "baseExplanation": "Olympiacos 2-0 Ajax, UEFA Champions League, 28 Sept 1983. Nikos Anastopoulos scored for Olympiacos."
+      },
+      {
+        "questionId": "q_852341f81751115d",
+        "answer": "Kostas Fortounis",
+        "factIds": [
+          "olympiacos:w-m-pao-2020-11-21"
+        ],
+        "sourceUrl": "https://www.eurosport.it/calcio/campionato-greco/2020-2021/live-olympiakos-panathinaikos_mtc1222245/live-lineup.shtml",
+        "prompt": "Whose name went on the scoresheet for Olympiacos against Panathinaikos in the Super League Greece on 21 Nov 2020?",
+        "explanation": "Olympiacos 1-0 Panathinaikos, Super League Greece, 21 Nov 2020. Kostas Fortounis scored for Olympiacos.",
+        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Panathinaikos in the Super League Greece on 21 Nov 2020?",
+        "baseExplanation": "Olympiacos 1-0 Panathinaikos, Super League Greece, 21 Nov 2020. Kostas Fortounis scored for Olympiacos."
+      },
+      {
+        "questionId": "q_4645f522bbc371ab",
+        "answer": "Kostas Fortounis",
+        "factIds": [
+          "olympiacos:a-m-2016-02-25-olympiacos-anderlecht"
+        ],
+        "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2017186--",
+        "prompt": "Whose name went on the scoresheet for Olympiacos against Anderlecht in the UEFA Europa League on 25 Feb 2016?",
+        "explanation": "Olympiacos 1-2 Anderlecht, UEFA Europa League, 25 Feb 2016. Kostas Fortounis scored for Olympiacos.",
+        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Anderlecht in the UEFA Europa League on 25 Feb 2016?",
+        "baseExplanation": "Olympiacos 1-2 Anderlecht, UEFA Europa League, 25 Feb 2016. Kostas Fortounis scored for Olympiacos."
+      },
+      {
+        "questionId": "q_28b12094e9df00fe",
+        "answer": [
+          "Vangelis Kousoulakis",
+          "Vasilis Karapialis",
+          "Rivaldo"
+        ],
+        "factIds": [
+          "span:olympiacos:r26-kousoulakis",
+          "span:olympiacos:r26-karapialis",
+          "span:olympiacos:r26-rivaldo"
+        ],
+        "sourceUrl": "https://www.tovima.com/sports/vangelis-kousoulakis-ahead-of-his-time/",
+        "prompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Vangelis Kousoulakis (1979) → Vasilis Karapialis (1991) → Rivaldo (2004)",
+        "basePrompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Vangelis Kousoulakis (1979) → Vasilis Karapialis (1991) → Rivaldo (2004)"
+      },
+      {
+        "questionId": "q_b8ac8dfca8bb6210",
+        "answer": "3-0",
+        "factIds": [
+          "olympiacos:r26-m-cup-aek-heraklion"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2006_Greek_Football_Cup_final",
+        "prompt": "Remember the scoreline: Olympiacos v AEK Athens, 10 May 2006 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "explanation": "AEK Athens 0-3 Olympiacos, Greek Cup final, 10 May 2006.",
+        "basePrompt": "Remember the scoreline: Olympiacos v AEK Athens, 10 May 2006 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "baseExplanation": "AEK Athens 0-3 Olympiacos, Greek Cup final, 10 May 2006."
+      },
+      {
+        "questionId": "q_fa6bf1a31e07668f",
+        "answer": "4-4",
+        "factIds": [
+          "olympiacos:r26-m-cup-aek-pens"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2009_Greek_Football_Cup_final",
+        "prompt": "Remember the scoreline: Olympiacos v AEK Athens, 2 May 2009 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "explanation": "AEK Athens 4-4 Olympiacos, Greek Cup final, 2 May 2009.",
+        "basePrompt": "Remember the scoreline: Olympiacos v AEK Athens, 2 May 2009 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "baseExplanation": "AEK Athens 4-4 Olympiacos, Greek Cup final, 2 May 2009."
+      },
+      {
+        "questionId": "q_73aef56092bcb7fa",
+        "answer": "1998/99",
+        "factIds": [
+          "olympiacos:r26-m-cup-pao-99"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/1999_Greek_Football_Cup_final",
+        "prompt": "Place this result in its season: Olympiacos beat Panathinaikos 2-0 in the Greek Cup final. Which campaign was it?",
+        "explanation": "Panathinaikos 0-2 Olympiacos, Greek Cup final, 5 May 1999.",
+        "basePrompt": "Place this result in its season: Olympiacos beat Panathinaikos 2-0 in the Greek Cup final. Which campaign was it?",
+        "baseExplanation": "Panathinaikos 0-2 Olympiacos, Greek Cup final, 5 May 1999."
+      },
+      {
+        "questionId": "q_2a696b1893cf4102",
+        "answer": "2004/05",
+        "factIds": [
+          "olympiacos:r26-m-cup-aris-patras"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2005_Greek_Football_Cup_final",
+        "prompt": "Place this result in its season: Olympiacos beat Aris 3-0 in the Greek Cup final. Which campaign was it?",
+        "explanation": "Olympiacos 3-0 Aris, Greek Cup final, 21 May 2005.",
+        "basePrompt": "Place this result in its season: Olympiacos beat Aris 3-0 in the Greek Cup final. Which campaign was it?",
+        "baseExplanation": "Olympiacos 3-0 Aris, Greek Cup final, 21 May 2005."
+      },
+      {
+        "questionId": "q_f24c13039df96f2c",
+        "answer": "2-0",
+        "factIds": [
+          "olympiacos:r26-m-cup-aris-kaftanzoglio"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/2008_Greek_Football_Cup_final",
+        "prompt": "Remember the scoreline: Olympiacos v Aris, 17 May 2008 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "explanation": "Olympiacos 2-0 Aris, Greek Cup final, 17 May 2008.",
+        "basePrompt": "Remember the scoreline: Olympiacos v Aris, 17 May 2008 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "baseExplanation": "Olympiacos 2-0 Aris, Greek Cup final, 17 May 2008."
+      }
+    ]
+  }
+}
