@@ -8,6 +8,7 @@ import {rawPool} from '@/lib/clubs/rumble'
 import {normKey} from '@/lib/clubs/trivia-bank'
 import {clampLevel,difficultyOf} from './levels'
 import {brand,enClub,enCompetition,enSponsor,enText,isLatin} from './names'
+import {CLUB_SPELLINGS} from '@/lib/clubs/spellings'
 
 /**
  * THE QUESTION FORGE — one English trivia bank for every club, built from the club's own approved records (owner,
@@ -40,7 +41,7 @@ const POS:Record<string,string>={GK:'Goalkeeper',DF:'Defender',MF:'Midfielder',F
 const ORD=['1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th','11th','12th','13th','14th','15th','16th','17th','18th','19th','20th']
 const plural=(n:number,w:string)=>`${n} ${w}${n===1?'':'s'}`
 /** native spellings of the club itself in its own sources — how a match line is read for "us" */
-const US:Record<string,string[]>={'aek-athens':['ΑΕΚ','AEK'],'hapoel-tel-aviv':['הפועל תל אביב','הפועל ת"א'],'hapoel-petah-tikva':['הפועל פתח תקווה','הפועל פ"ת'],panathinaikos:['Παναθηναϊκός','Panathinaikos'],olympiacos:['Ολυμπιακός','Olympiacos','Olympiakos'],celtic:['Celtic'],'st-pauli':['St. Pauli','St Pauli'],'zrinjski-mostar':['Zrinjski']}
+const US:Readonly<Record<string,readonly string[]>>=CLUB_SPELLINGS
 
 type Row={id:string;on:string;season:string;year:number;comp:string|null;kind:'europe'|'cup'|'league';final:boolean;opp:string;oppKey:string;us:number;them:number;home:boolean|null;derby:boolean;scorers:{name:string;minute:number|null}[];lineup:string[];bench:string[];source:SourceRef}
 const kindOf=(c:string|null):Row['kind']|'friendly'=>!c?'league':/friendl/i.test(c)?'friendly':/UEFA|Europ|Champions|Intertoto|Cup Winners|Fairs|Conference|Asian|Mitropa|Latin Cup/i.test(c)?'europe':/cup|pokal|coppa|copa|kupa|trophy|shield/i.test(c)?'cup':'league'
