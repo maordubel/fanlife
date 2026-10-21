@@ -1,0 +1,46 @@
+[
+  {
+    "clubId": "st-pauli",
+    "researchGoalId": "r20261020-goal-9260eda1e5dff001",
+    "goalId": "r20261020-goal-9260eda1e5dff001",
+    "titleHe": "Oladapo Afolayan v Hoffenheim",
+    "subtitleHe": "2024-11-02 · 20",
+    "playedOn": "2024-11-02",
+    "competitionHe": "Bundesliga",
+    "opponentHe": "Hoffenheim",
+    "scoreHe": "2-0",
+    "narrativeHe": "Irvine crossed from the right; Afolayan volleyed inside the area.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "Jackson Irvine",
+        "side": "club",
+        "action": "cross",
+        "zone": "E2",
+        "positionHe": "right flank",
+        "noteHe": "Turned and crossed"
+      },
+      {
+        "step": 2,
+        "actorHe": "Oladapo Afolayan",
+        "side": "club",
+        "action": "shot",
+        "zone": "C2",
+        "positionHe": "just inside the penalty area, 15.11 metres",
+        "noteHe": "First-time volley"
+      }
+    ],
+    "sourceUrl": "https://www.bundesliga.com/en/bundesliga/matchday/2024-2025/9/tsg-hoffenheim-vs-fc-st-pauli/liveticker",
+    "sourceTitle": "Bundesliga / DFL",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  }
+]

@@ -1,0 +1,5409 @@
+{
+ "schemaVersion": 1,
+ "clubId": "celtic",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-51f7b2b6f16f8fc1",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2012-13/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2012-13/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2012-13/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "87783db9a89da5a8cd81845f97154ace4b52136bf185f767eb5ec0a474592e77",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-cadaf0f8ce5b19ff",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2018-19/sco.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2018-19/sco.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2018-19/sco.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "98a6e19402b3aa8ced4bae86fb10b6de5362618de834450022c0db7845877b29",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-98c6ceb13809a822",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/sco.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/sco.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2019-20/sco.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "cdae163de9222307f2f31556227ef3671700f538f4877f2cba98b07391be7d03",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-d28288a452db14d1",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2020-21/sco.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2020-21/sco.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2020-21/sco.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "07912d6240d3036f2ca08133b2da1e90a606888a06e5ff381ac6bf89218d2fb4",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-d3f4be1a314a7270",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2024-25/sco.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2024-25/sco.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/sco.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "18315197d5ec78f81928cd14ed8ab90bb09e1745907e1636ae89c07079dc8501",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-340011ef518ba38d",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2025-26/sco.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2025-26/sco.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2025-26/sco.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "484463f1546edae948cc12c329c8cc02d8c1a00826ea47c8776c27d5a2c3df5a",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-c79635984ad78426",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2018-19_sco1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2018-19_sco1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "scotland/2018-19_sco1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "a990bdfcd6345e933be1c7696c0293e5c3228195fd29eae148aeb8ccc32c7beb",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-db779ca4769078c1",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2019-20_sco1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2019-20_sco1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "scotland/2019-20_sco1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "b6d621858695b33953ea63f0feb8f14e190f1ab9c5a8c252120aff4536d82aa4",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-61858514a4caa91b",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2020-21_sco1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2020-21_sco1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "scotland/2020-21_sco1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "11f01e9791637b201963c8f6f638a32bf16911f63450b94043ab01adb4f5efbc",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-3356fc67f4940a3b",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2023-24_sco1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2023-24_sco1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "scotland/2023-24_sco1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "6a31af2dc1e60c1bf778b5bbd1b68fd2568819e24d1aac990d9f8d76d6b32578",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e66cd360762d3826",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2024-25_sco1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2024-25_sco1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "scotland/2024-25_sco1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "6076a3d19fe0f660123312e48f25dce1c371af570dade64924270edad0a7d1b3",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-0b23b44441b0496a",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2025-26_sco1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/scotland/2025-26_sco1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "scotland/2025-26_sco1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "8f522be125f68ccaf99ddf617400b312435f60a05b6bf8d02c9f3c769eedeb6b",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e20052dc4e51e501",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2012-13/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2012-13/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2012-13/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1a60314a79ce760cc718eaab7cc5ab1d4f1534eeb788e19f0d102926988ccff5",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-078d2203fb13ba0c86e3",
+   "value": {
+    "id": "research-20261020-078d2203fb13ba0c86e3",
+    "name": "Celtic FC 2-1 FC Barcelona",
+    "on": "2012-11-07",
+    "home": "Celtic FC",
+    "away": "FC Barcelona",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-caeace4d2b93e2eb6e72",
+   "value": {
+    "id": "research-20261020-caeace4d2b93e2eb6e72",
+    "name": "Celtic FC 3-1 Livingston FC",
+    "on": "2018-08-04",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bea1caa68780b2728455",
+   "value": {
+    "id": "research-20261020-bea1caa68780b2728455",
+    "name": "Heart of Midlothian 1-0 Celtic FC",
+    "on": "2018-08-11",
+    "home": "Heart of Midlothian",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-df2b7650d453e0a1760b",
+   "value": {
+    "id": "research-20261020-df2b7650d453e0a1760b",
+    "name": "Celtic FC 1-0 Hamilton Academical",
+    "on": "2018-08-26",
+    "home": "Celtic FC",
+    "away": "Hamilton Academical",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e583bc0486c4ee7275a1",
+   "value": {
+    "id": "research-20261020-e583bc0486c4ee7275a1",
+    "name": "Celtic FC 1-0 Rangers FC",
+    "on": "2018-09-02",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-dadebd48d5f4e41aae0e",
+   "value": {
+    "id": "research-20261020-dadebd48d5f4e41aae0e",
+    "name": "St. Mirren FC 0-0 Celtic FC",
+    "on": "2018-09-14",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e3d3f2586323cf207306",
+   "value": {
+    "id": "research-20261020-e3d3f2586323cf207306",
+    "name": "Kilmarnock FC 2-1 Celtic FC",
+    "on": "2018-09-23",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9c57a88f73ce04ee8ef8",
+   "value": {
+    "id": "research-20261020-9c57a88f73ce04ee8ef8",
+    "name": "Celtic FC 1-0 Aberdeen FC",
+    "on": "2018-09-29",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-922808ac3f1cd53de0e4",
+   "value": {
+    "id": "research-20261020-922808ac3f1cd53de0e4",
+    "name": "St. Johnstone FC 0-6 Celtic FC",
+    "on": "2018-10-07",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 6,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-6",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cc9dd24b6cfa4ed0afb9",
+   "value": {
+    "id": "research-20261020-cc9dd24b6cfa4ed0afb9",
+    "name": "Celtic FC 4-2 Hibernian FC",
+    "on": "2018-10-20",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "4-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c6b7ce762cdcb2c62760",
+   "value": {
+    "id": "research-20261020-c6b7ce762cdcb2c62760",
+    "name": "Dundee FC 0-5 Celtic FC",
+    "on": "2018-10-31",
+    "home": "Dundee FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a6ee73ea40b225f4b09",
+   "value": {
+    "id": "research-20261020-8a6ee73ea40b225f4b09",
+    "name": "Celtic FC 5-0 Heart of Midlothian",
+    "on": "2018-11-03",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cfe406a33203dd441d4a",
+   "value": {
+    "id": "research-20261020-cfe406a33203dd441d4a",
+    "name": "Livingston FC 0-0 Celtic FC",
+    "on": "2018-11-11",
+    "home": "Livingston FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d7d31afd88c44af12f21",
+   "value": {
+    "id": "research-20261020-d7d31afd88c44af12f21",
+    "name": "Hamilton Academical 0-3 Celtic FC",
+    "on": "2018-11-24",
+    "home": "Hamilton Academical",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2a153e3b6f65f84332b1",
+   "value": {
+    "id": "research-20261020-2a153e3b6f65f84332b1",
+    "name": "Motherwell FC 1-1 Celtic FC",
+    "on": "2018-12-05",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9afc44e293ef7d5e0795",
+   "value": {
+    "id": "research-20261020-9afc44e293ef7d5e0795",
+    "name": "Celtic FC 5-1 Kilmarnock FC",
+    "on": "2018-12-08",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-90d270731eece4f91159",
+   "value": {
+    "id": "research-20261020-90d270731eece4f91159",
+    "name": "Hibernian FC 2-0 Celtic FC",
+    "on": "2018-12-16",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e70c678fc9783bfa6366",
+   "value": {
+    "id": "research-20261020-e70c678fc9783bfa6366",
+    "name": "Celtic FC 3-0 Motherwell FC",
+    "on": "2018-12-19",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4dd70d74bbcc3a65fdfc",
+   "value": {
+    "id": "research-20261020-4dd70d74bbcc3a65fdfc",
+    "name": "Celtic FC 3-0 Dundee FC",
+    "on": "2018-12-22",
+    "home": "Celtic FC",
+    "away": "Dundee FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a5bbf3a5d19e4c9a9042",
+   "value": {
+    "id": "research-20261020-a5bbf3a5d19e4c9a9042",
+    "name": "Aberdeen FC 3-4 Celtic FC",
+    "on": "2018-12-26",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 3,
+    "awayGoals": 4,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "3-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2482deaad856f13a34ad",
+   "value": {
+    "id": "research-20261020-2482deaad856f13a34ad",
+    "name": "Rangers FC 1-0 Celtic FC",
+    "on": "2018-12-29",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-df4b5dde0f99d13cf442",
+   "value": {
+    "id": "research-20261020-df4b5dde0f99d13cf442",
+    "name": "Celtic FC 4-0 St. Mirren FC",
+    "on": "2019-01-23",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-abc1be54784ddbadb1dc",
+   "value": {
+    "id": "research-20261020-abc1be54784ddbadb1dc",
+    "name": "Celtic FC 3-0 Hamilton Academical",
+    "on": "2019-01-26",
+    "home": "Celtic FC",
+    "away": "Hamilton Academical",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1a0310bdb9c4106b1532",
+   "value": {
+    "id": "research-20261020-1a0310bdb9c4106b1532",
+    "name": "Celtic FC 2-0 St. Johnstone FC",
+    "on": "2019-01-30",
+    "home": "Celtic FC",
+    "away": "St. Johnstone FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5a934374f40306de64de",
+   "value": {
+    "id": "research-20261020-5a934374f40306de64de",
+    "name": "St. Johnstone FC 0-2 Celtic FC",
+    "on": "2019-02-03",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b5c367b5df72a3cd5850",
+   "value": {
+    "id": "research-20261020-b5c367b5df72a3cd5850",
+    "name": "Celtic FC 2-0 Hibernian FC",
+    "on": "2019-02-06",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a7dabeb1aa885d586c32",
+   "value": {
+    "id": "research-20261020-a7dabeb1aa885d586c32",
+    "name": "Celtic FC 4-1 Motherwell FC",
+    "on": "2019-02-24",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6d406c3a7c4bea4c0cf9",
+   "value": {
+    "id": "research-20261020-6d406c3a7c4bea4c0cf9",
+    "name": "Heart of Midlothian 1-2 Celtic FC",
+    "on": "2019-02-27",
+    "home": "Heart of Midlothian",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-26aef154f6dfff77be04",
+   "value": {
+    "id": "research-20261020-26aef154f6dfff77be04",
+    "name": "Celtic FC 0-0 Aberdeen FC",
+    "on": "2019-03-09",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d5da8fa20907e75e095b",
+   "value": {
+    "id": "research-20261020-d5da8fa20907e75e095b",
+    "name": "Dundee FC 0-1 Celtic FC",
+    "on": "2019-03-17",
+    "home": "Dundee FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-af96d7a7b4258d5d26cf",
+   "value": {
+    "id": "research-20261020-af96d7a7b4258d5d26cf",
+    "name": "Celtic FC 2-1 Rangers FC",
+    "on": "2019-03-31",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a2616aaf1e6eb787c613",
+   "value": {
+    "id": "research-20261020-a2616aaf1e6eb787c613",
+    "name": "St. Mirren FC 0-2 Celtic FC",
+    "on": "2019-04-03",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cc7f5057b2d2223425a4",
+   "value": {
+    "id": "research-20261020-cc7f5057b2d2223425a4",
+    "name": "Celtic FC 0-0 Livingston FC",
+    "on": "2019-04-06",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Scottish Premiership 2018/19",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-c79635984ad78426",
+    "of-cadaf0f8ce5b19ff"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-614c2108c863935c892c",
+   "value": {
+    "id": "research-20261020-614c2108c863935c892c",
+    "name": "Celtic FC 7-0 St. Johnstone FC",
+    "on": "2019-08-03",
+    "home": "Celtic FC",
+    "away": "St. Johnstone FC",
+    "homeGoals": 7,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "7-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-542c131dbc2f48005e0f",
+   "value": {
+    "id": "research-20261020-542c131dbc2f48005e0f",
+    "name": "Motherwell FC 2-5 Celtic FC",
+    "on": "2019-08-10",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 5,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-07c95f306ce59cba4d10",
+   "value": {
+    "id": "research-20261020-07c95f306ce59cba4d10",
+    "name": "Celtic FC 3-1 Heart of Midlothian",
+    "on": "2019-08-25",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5f5ee4807a8c9ead8fd2",
+   "value": {
+    "id": "research-20261020-5f5ee4807a8c9ead8fd2",
+    "name": "Rangers FC 0-2 Celtic FC",
+    "on": "2019-09-01",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-28a7df3bc2ff5b68a59f",
+   "value": {
+    "id": "research-20261020-28a7df3bc2ff5b68a59f",
+    "name": "Hamilton Academical 0-1 Celtic FC",
+    "on": "2019-09-14",
+    "home": "Hamilton Academical",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4763e58cf8634a221f85",
+   "value": {
+    "id": "research-20261020-4763e58cf8634a221f85",
+    "name": "Celtic FC 3-1 Kilmarnock FC",
+    "on": "2019-09-22",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e42aaea4a0bb2d6fd3c4",
+   "value": {
+    "id": "research-20261020-e42aaea4a0bb2d6fd3c4",
+    "name": "Hibernian FC 1-1 Celtic FC",
+    "on": "2019-09-28",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bd223fb1ff06dfdfd686",
+   "value": {
+    "id": "research-20261020-bd223fb1ff06dfdfd686",
+    "name": "Livingston FC 2-0 Celtic FC",
+    "on": "2019-10-06",
+    "home": "Livingston FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ed585bcc98ffcbb8b559",
+   "value": {
+    "id": "research-20261020-ed585bcc98ffcbb8b559",
+    "name": "Celtic FC 6-0 Ross County FC",
+    "on": "2019-10-19",
+    "home": "Celtic FC",
+    "away": "Ross County FC",
+    "homeGoals": 6,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "6-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ac2426002865d30547c5",
+   "value": {
+    "id": "research-20261020-ac2426002865d30547c5",
+    "name": "Aberdeen FC 0-4 Celtic FC",
+    "on": "2019-10-27",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f42ecdd8770625744b47",
+   "value": {
+    "id": "research-20261020-f42ecdd8770625744b47",
+    "name": "Celtic FC 2-0 St. Mirren FC",
+    "on": "2019-10-30",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bc77899b5f978e752e5a",
+   "value": {
+    "id": "research-20261020-bc77899b5f978e752e5a",
+    "name": "Celtic FC 2-0 Motherwell FC",
+    "on": "2019-11-10",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e8c1cee76292ced75347",
+   "value": {
+    "id": "research-20261020-e8c1cee76292ced75347",
+    "name": "Celtic FC 4-0 Livingston FC",
+    "on": "2019-11-23",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8cf5ec2f940bf2ce04ce",
+   "value": {
+    "id": "research-20261020-8cf5ec2f940bf2ce04ce",
+    "name": "Ross County FC 1-4 Celtic FC",
+    "on": "2019-12-01",
+    "home": "Ross County FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d5f052e6bba9a76d1f1c",
+   "value": {
+    "id": "research-20261020-d5f052e6bba9a76d1f1c",
+    "name": "Celtic FC 2-1 Hamilton Academical",
+    "on": "2019-12-04",
+    "home": "Celtic FC",
+    "away": "Hamilton Academical",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-78b48bae4a35b6c18980",
+   "value": {
+    "id": "research-20261020-78b48bae4a35b6c18980",
+    "name": "Celtic FC 2-0 Hibernian FC",
+    "on": "2019-12-15",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-205230f7822bb7726ceb",
+   "value": {
+    "id": "research-20261020-205230f7822bb7726ceb",
+    "name": "Heart of Midlothian 0-2 Celtic FC",
+    "on": "2019-12-18",
+    "home": "Heart of Midlothian",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f3e9005a3bbe59cad67b",
+   "value": {
+    "id": "research-20261020-f3e9005a3bbe59cad67b",
+    "name": "Celtic FC 2-1 Aberdeen FC",
+    "on": "2019-12-21",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6064cb1960a666c185df",
+   "value": {
+    "id": "research-20261020-6064cb1960a666c185df",
+    "name": "St. Mirren FC 1-2 Celtic FC",
+    "on": "2019-12-26",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cc1268692ebf6ab684d2",
+   "value": {
+    "id": "research-20261020-cc1268692ebf6ab684d2",
+    "name": "Celtic FC 1-2 Rangers FC",
+    "on": "2019-12-29",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-383942c75979f63a8f62",
+   "value": {
+    "id": "research-20261020-383942c75979f63a8f62",
+    "name": "Kilmarnock FC 1-3 Celtic FC",
+    "on": "2020-01-22",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a72cd1b1d07ec68c8cab",
+   "value": {
+    "id": "research-20261020-a72cd1b1d07ec68c8cab",
+    "name": "Celtic FC 3-0 Ross County FC",
+    "on": "2020-01-25",
+    "home": "Celtic FC",
+    "away": "Ross County FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c47ddedf6023a50c4f9e",
+   "value": {
+    "id": "research-20261020-c47ddedf6023a50c4f9e",
+    "name": "St. Johnstone FC 0-3 Celtic FC",
+    "on": "2020-01-29",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ef6be2a54b3bc11e7132",
+   "value": {
+    "id": "research-20261020-ef6be2a54b3bc11e7132",
+    "name": "Hamilton Academical 1-4 Celtic FC",
+    "on": "2020-02-02",
+    "home": "Hamilton Academical",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9c3bd6d934dac4c0c290",
+   "value": {
+    "id": "research-20261020-9c3bd6d934dac4c0c290",
+    "name": "Motherwell FC 0-4 Celtic FC",
+    "on": "2020-02-05",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-102967ae9511fb39ba5f",
+   "value": {
+    "id": "research-20261020-102967ae9511fb39ba5f",
+    "name": "Celtic FC 5-0 Heart of Midlothian",
+    "on": "2020-02-12",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9acaf97b7392cc70242a",
+   "value": {
+    "id": "research-20261020-9acaf97b7392cc70242a",
+    "name": "Aberdeen FC 1-2 Celtic FC",
+    "on": "2020-02-16",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3a6f51c3758769add97a",
+   "value": {
+    "id": "research-20261020-3a6f51c3758769add97a",
+    "name": "Celtic FC 3-1 Kilmarnock FC",
+    "on": "2020-02-23",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad4f3e1846e3075dec74",
+   "value": {
+    "id": "research-20261020-ad4f3e1846e3075dec74",
+    "name": "Livingston FC 2-2 Celtic FC",
+    "on": "2020-03-04",
+    "home": "Livingston FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Scottish Premiership 2019/20",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-98c6ceb13809a822",
+    "of-db779ca4769078c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-dfa73c53b8ae847c1d88",
+   "value": {
+    "id": "research-20261020-dfa73c53b8ae847c1d88",
+    "name": "Celtic FC 5-1 Hamilton Academical",
+    "on": "2020-08-02",
+    "home": "Celtic FC",
+    "away": "Hamilton Academical",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-76e8b18a5400bddebc23",
+   "value": {
+    "id": "research-20261020-76e8b18a5400bddebc23",
+    "name": "Kilmarnock FC 1-1 Celtic FC",
+    "on": "2020-08-09",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-77b355bda097815839ed",
+   "value": {
+    "id": "research-20261020-77b355bda097815839ed",
+    "name": "Dundee United 0-1 Celtic FC",
+    "on": "2020-08-22",
+    "home": "Dundee United",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fae08847bae78c6a354c",
+   "value": {
+    "id": "research-20261020-fae08847bae78c6a354c",
+    "name": "Celtic FC 3-0 Motherwell FC",
+    "on": "2020-08-30",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4041f9892cd508fd8b8f",
+   "value": {
+    "id": "research-20261020-4041f9892cd508fd8b8f",
+    "name": "Ross County FC 0-5 Celtic FC",
+    "on": "2020-09-12",
+    "home": "Ross County FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e33849f28029388460bc",
+   "value": {
+    "id": "research-20261020-e33849f28029388460bc",
+    "name": "St. Mirren FC 1-2 Celtic FC",
+    "on": "2020-09-16",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f3c78952521ef54f396f",
+   "value": {
+    "id": "research-20261020-f3c78952521ef54f396f",
+    "name": "Celtic FC 3-2 Livingston FC",
+    "on": "2020-09-19",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a7edd04cca9b6367e51d",
+   "value": {
+    "id": "research-20261020-a7edd04cca9b6367e51d",
+    "name": "Celtic FC 3-0 Hibernian FC",
+    "on": "2020-09-27",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-babd189568b28965ed16",
+   "value": {
+    "id": "research-20261020-babd189568b28965ed16",
+    "name": "St. Johnstone FC 0-2 Celtic FC",
+    "on": "2020-10-04",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0e14839253dffc1b0ed6",
+   "value": {
+    "id": "research-20261020-0e14839253dffc1b0ed6",
+    "name": "Celtic FC 0-2 Rangers FC",
+    "on": "2020-10-17",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9e4ff534871de4d2a330",
+   "value": {
+    "id": "research-20261020-9e4ff534871de4d2a330",
+    "name": "Aberdeen FC 3-3 Celtic FC",
+    "on": "2020-10-25",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6489bae2aedbc6ea0b23",
+   "value": {
+    "id": "research-20261020-6489bae2aedbc6ea0b23",
+    "name": "Motherwell FC 1-4 Celtic FC",
+    "on": "2020-11-08",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-84805c1d00a8235bb1aa",
+   "value": {
+    "id": "research-20261020-84805c1d00a8235bb1aa",
+    "name": "Hibernian FC 2-2 Celtic FC",
+    "on": "2020-11-21",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fdf4fad7c458f05792c3",
+   "value": {
+    "id": "research-20261020-fdf4fad7c458f05792c3",
+    "name": "Celtic FC 1-1 St. Johnstone FC",
+    "on": "2020-12-06",
+    "home": "Celtic FC",
+    "away": "St. Johnstone FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fb36cf0ec2efa02d01f7",
+   "value": {
+    "id": "research-20261020-fb36cf0ec2efa02d01f7",
+    "name": "Celtic FC 2-0 Kilmarnock FC",
+    "on": "2020-12-13",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cacc241931ef3ea69c01",
+   "value": {
+    "id": "research-20261020-cacc241931ef3ea69c01",
+    "name": "Celtic FC 2-0 Ross County FC",
+    "on": "2020-12-23",
+    "home": "Celtic FC",
+    "away": "Ross County FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e3d75f56498499597b5a",
+   "value": {
+    "id": "research-20261020-e3d75f56498499597b5a",
+    "name": "Hamilton Academical 0-3 Celtic FC",
+    "on": "2020-12-26",
+    "home": "Hamilton Academical",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cb5cb7ed69a26191e325",
+   "value": {
+    "id": "research-20261020-cb5cb7ed69a26191e325",
+    "name": "Celtic FC 3-0 Dundee United",
+    "on": "2020-12-30",
+    "home": "Celtic FC",
+    "away": "Dundee United",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c44b75537d122a72a996",
+   "value": {
+    "id": "research-20261020-c44b75537d122a72a996",
+    "name": "Rangers FC 1-0 Celtic FC",
+    "on": "2021-01-02",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-43000bae7e2f6794b045",
+   "value": {
+    "id": "research-20261020-43000bae7e2f6794b045",
+    "name": "Celtic FC 1-1 Hibernian FC",
+    "on": "2021-01-11",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-49230ba641dcce5097b9",
+   "value": {
+    "id": "research-20261020-49230ba641dcce5097b9",
+    "name": "Celtic FC 0-0 Livingston FC",
+    "on": "2021-01-16",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-00fb2ce66cf112cb3a25",
+   "value": {
+    "id": "research-20261020-00fb2ce66cf112cb3a25",
+    "name": "Livingston FC 2-2 Celtic FC",
+    "on": "2021-01-20",
+    "home": "Livingston FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2c9f6acaa168397e88d5",
+   "value": {
+    "id": "research-20261020-2c9f6acaa168397e88d5",
+    "name": "Celtic FC 2-0 Hamilton Academical",
+    "on": "2021-01-27",
+    "home": "Celtic FC",
+    "away": "Hamilton Academical",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-114f960c7b3d8ad163ed",
+   "value": {
+    "id": "research-20261020-114f960c7b3d8ad163ed",
+    "name": "Celtic FC 1-2 St. Mirren FC",
+    "on": "2021-01-30",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1aaa655fd5ad5e9b0759",
+   "value": {
+    "id": "research-20261020-1aaa655fd5ad5e9b0759",
+    "name": "Kilmarnock FC 0-4 Celtic FC",
+    "on": "2021-02-02",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-de3e8c77393592c89bcb",
+   "value": {
+    "id": "research-20261020-de3e8c77393592c89bcb",
+    "name": "Celtic FC 2-1 Motherwell FC",
+    "on": "2021-02-06",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3392c0dfac509eb463a6",
+   "value": {
+    "id": "research-20261020-3392c0dfac509eb463a6",
+    "name": "St. Mirren FC 0-4 Celtic FC",
+    "on": "2021-02-10",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1a7c945fdcd920ae457a",
+   "value": {
+    "id": "research-20261020-1a7c945fdcd920ae457a",
+    "name": "St. Johnstone FC 1-2 Celtic FC",
+    "on": "2021-02-14",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7eac9315ea98a2c1e9ee",
+   "value": {
+    "id": "research-20261020-7eac9315ea98a2c1e9ee",
+    "name": "Celtic FC 1-0 Aberdeen FC",
+    "on": "2021-02-17",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b5153668fc8ce16a2ed5",
+   "value": {
+    "id": "research-20261020-b5153668fc8ce16a2ed5",
+    "name": "Ross County FC 1-0 Celtic FC",
+    "on": "2021-02-21",
+    "home": "Ross County FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-54b0f610524cc47c3e3c",
+   "value": {
+    "id": "research-20261020-54b0f610524cc47c3e3c",
+    "name": "Celtic FC 1-0 Aberdeen FC",
+    "on": "2021-02-27",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b058a310f01510881cf8",
+   "value": {
+    "id": "research-20261020-b058a310f01510881cf8",
+    "name": "Dundee United 0-0 Celtic FC",
+    "on": "2021-03-07",
+    "home": "Dundee United",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b2db2869a32947ee7f02",
+   "value": {
+    "id": "research-20261020-b2db2869a32947ee7f02",
+    "name": "Celtic FC 1-1 Rangers FC",
+    "on": "2021-03-21",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Scottish Premiership 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-61858514a4caa91b",
+    "of-d28288a452db14d1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-728d5e4001f1bdd5f9f7",
+   "value": {
+    "id": "research-20261020-728d5e4001f1bdd5f9f7",
+    "name": "Celtic FC 4-2 Ross County FC",
+    "on": "2023-08-05",
+    "home": "Celtic FC",
+    "away": "Ross County FC",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "4-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-890c111f6e0cff0852f0",
+   "value": {
+    "id": "research-20261020-890c111f6e0cff0852f0",
+    "name": "Aberdeen FC 1-3 Celtic FC",
+    "on": "2023-08-13",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b2057e9e76ef9de0a730",
+   "value": {
+    "id": "research-20261020-b2057e9e76ef9de0a730",
+    "name": "Celtic FC 0-0 St. Johnstone FC",
+    "on": "2023-08-26",
+    "home": "Celtic FC",
+    "away": "St. Johnstone FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8019af26dc8f2ba17349",
+   "value": {
+    "id": "research-20261020-8019af26dc8f2ba17349",
+    "name": "Rangers FC 0-1 Celtic FC",
+    "on": "2023-09-03",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f33716b00c729471c944",
+   "value": {
+    "id": "research-20261020-f33716b00c729471c944",
+    "name": "Celtic FC 3-0 Dundee FC",
+    "on": "2023-09-16",
+    "home": "Celtic FC",
+    "away": "Dundee FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-35d3e7375c38629b41e5",
+   "value": {
+    "id": "research-20261020-35d3e7375c38629b41e5",
+    "name": "Livingston FC 0-3 Celtic FC",
+    "on": "2023-09-23",
+    "home": "Livingston FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7fac8c43a5b905920e0d",
+   "value": {
+    "id": "research-20261020-7fac8c43a5b905920e0d",
+    "name": "Motherwell FC 1-2 Celtic FC",
+    "on": "2023-09-30",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-df3ad58195c6c5cb4d48",
+   "value": {
+    "id": "research-20261020-df3ad58195c6c5cb4d48",
+    "name": "Celtic FC 3-1 Kilmarnock FC",
+    "on": "2023-10-07",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad00764fdfa7587d9a91",
+   "value": {
+    "id": "research-20261020-ad00764fdfa7587d9a91",
+    "name": "Heart of Midlothian 1-4 Celtic FC",
+    "on": "2023-10-22",
+    "home": "Heart of Midlothian",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-18d258dc4a0a9330a589",
+   "value": {
+    "id": "research-20261020-18d258dc4a0a9330a589",
+    "name": "Hibernian FC 0-0 Celtic FC",
+    "on": "2023-10-28",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d35f40d748610c3bbae0",
+   "value": {
+    "id": "research-20261020-d35f40d748610c3bbae0",
+    "name": "Celtic FC 2-1 St. Mirren FC",
+    "on": "2023-11-01",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-967cb11121dc5a4684f6",
+   "value": {
+    "id": "research-20261020-967cb11121dc5a4684f6",
+    "name": "Ross County FC 0-3 Celtic FC",
+    "on": "2023-11-04",
+    "home": "Ross County FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-20a592c89dd43c6ca608",
+   "value": {
+    "id": "research-20261020-20a592c89dd43c6ca608",
+    "name": "Celtic FC 6-0 Aberdeen FC",
+    "on": "2023-11-12",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 6,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "6-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-af3e3a70efad0b5a3596",
+   "value": {
+    "id": "research-20261020-af3e3a70efad0b5a3596",
+    "name": "Celtic FC 1-1 Motherwell FC",
+    "on": "2023-11-25",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c149c66eef6b54da371d",
+   "value": {
+    "id": "research-20261020-c149c66eef6b54da371d",
+    "name": "St. Johnstone FC 1-3 Celtic FC",
+    "on": "2023-12-03",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-07b48f1fb0f7d9f7593c",
+   "value": {
+    "id": "research-20261020-07b48f1fb0f7d9f7593c",
+    "name": "Celtic FC 4-1 Hibernian FC",
+    "on": "2023-12-06",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a9f6901947856862feba",
+   "value": {
+    "id": "research-20261020-a9f6901947856862feba",
+    "name": "Kilmarnock FC 2-1 Celtic FC",
+    "on": "2023-12-10",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e0f93129aa5a83c9f9ff",
+   "value": {
+    "id": "research-20261020-e0f93129aa5a83c9f9ff",
+    "name": "Celtic FC 0-2 Heart of Midlothian",
+    "on": "2023-12-16",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad41dc0b55db68fef1f0",
+   "value": {
+    "id": "research-20261020-ad41dc0b55db68fef1f0",
+    "name": "Celtic FC 2-0 Livingston FC",
+    "on": "2023-12-23",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-91c31325b03fa26ff955",
+   "value": {
+    "id": "research-20261020-91c31325b03fa26ff955",
+    "name": "Dundee FC 0-3 Celtic FC",
+    "on": "2023-12-26",
+    "home": "Dundee FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e687e3014e478dc6ec08",
+   "value": {
+    "id": "research-20261020-e687e3014e478dc6ec08",
+    "name": "Celtic FC 2-1 Rangers FC",
+    "on": "2023-12-30",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-37e0218edc03975a6ee8",
+   "value": {
+    "id": "research-20261020-37e0218edc03975a6ee8",
+    "name": "St. Mirren FC 0-3 Celtic FC",
+    "on": "2024-01-02",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6dd39f5afa96b7a967ef",
+   "value": {
+    "id": "research-20261020-6dd39f5afa96b7a967ef",
+    "name": "Celtic FC 1-0 Ross County FC",
+    "on": "2024-01-27",
+    "home": "Celtic FC",
+    "away": "Ross County FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e93ffa17d4f992753e8d",
+   "value": {
+    "id": "research-20261020-e93ffa17d4f992753e8d",
+    "name": "Aberdeen FC 1-1 Celtic FC",
+    "on": "2024-02-03",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-64aa98f1370f0f192b2c",
+   "value": {
+    "id": "research-20261020-64aa98f1370f0f192b2c",
+    "name": "Hibernian FC 1-2 Celtic FC",
+    "on": "2024-02-07",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-40a441a2a04d350a5683",
+   "value": {
+    "id": "research-20261020-40a441a2a04d350a5683",
+    "name": "Celtic FC 1-1 Kilmarnock FC",
+    "on": "2024-02-17",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b636f860e018d99ae233",
+   "value": {
+    "id": "research-20261020-b636f860e018d99ae233",
+    "name": "Motherwell FC 1-3 Celtic FC",
+    "on": "2024-02-25",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-53a4f76b70c6bde21243",
+   "value": {
+    "id": "research-20261020-53a4f76b70c6bde21243",
+    "name": "Celtic FC 7-1 Dundee FC",
+    "on": "2024-02-28",
+    "home": "Celtic FC",
+    "away": "Dundee FC",
+    "homeGoals": 7,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "7-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9ab89e91eba7a66edfb2",
+   "value": {
+    "id": "research-20261020-9ab89e91eba7a66edfb2",
+    "name": "Heart of Midlothian 2-0 Celtic FC",
+    "on": "2024-03-03",
+    "home": "Heart of Midlothian",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-03a1579efa8b4d7a365c",
+   "value": {
+    "id": "research-20261020-03a1579efa8b4d7a365c",
+    "name": "Celtic FC 3-1 St. Johnstone FC",
+    "on": "2024-03-16",
+    "home": "Celtic FC",
+    "away": "St. Johnstone FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2543fa81d90355ced3b6",
+   "value": {
+    "id": "research-20261020-2543fa81d90355ced3b6",
+    "name": "Livingston FC 0-3 Celtic FC",
+    "on": "2024-03-31",
+    "home": "Livingston FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b0f0a8f15bdbfe5a8285",
+   "value": {
+    "id": "research-20261020-b0f0a8f15bdbfe5a8285",
+    "name": "Rangers FC 3-3 Celtic FC",
+    "on": "2024-04-07",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5f56270226e3b73f136d",
+   "value": {
+    "id": "research-20261020-5f56270226e3b73f136d",
+    "name": "Celtic FC 3-0 St. Mirren FC",
+    "on": "2024-04-13",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-632d84103e377d24ef9c",
+   "value": {
+    "id": "research-20261020-632d84103e377d24ef9c",
+    "name": "Dundee FC 1-2 Celtic FC",
+    "on": "2024-04-28",
+    "home": "Dundee FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d889d3d2128432b2833c",
+   "value": {
+    "id": "research-20261020-d889d3d2128432b2833c",
+    "name": "Celtic FC 3-0 Heart of Midlothian",
+    "on": "2024-05-04",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-49f478252849663aaf83",
+   "value": {
+    "id": "research-20261020-49f478252849663aaf83",
+    "name": "Kilmarnock FC 0-5 Celtic FC",
+    "on": "2024-05-15",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "0-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a6a03f8ae6c0a19e7a80",
+   "value": {
+    "id": "research-20261020-a6a03f8ae6c0a19e7a80",
+    "name": "Celtic FC 3-2 St. Mirren FC",
+    "on": "2024-05-18",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Scottish Premiership 2023/24",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-3356fc67f4940a3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7733960007baf749e235",
+   "value": {
+    "id": "research-20261020-7733960007baf749e235",
+    "name": "Celtic FC 4-0 Kilmarnock FC",
+    "on": "2024-08-04",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad8d6bd274d8c728b76d",
+   "value": {
+    "id": "research-20261020-ad8d6bd274d8c728b76d",
+    "name": "Hibernian FC 0-2 Celtic FC",
+    "on": "2024-08-11",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ed0de4ea28e91ccb609c",
+   "value": {
+    "id": "research-20261020-ed0de4ea28e91ccb609c",
+    "name": "St. Mirren FC 0-3 Celtic FC",
+    "on": "2024-08-25",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-81eff07adc1458ee21ce",
+   "value": {
+    "id": "research-20261020-81eff07adc1458ee21ce",
+    "name": "Celtic FC 3-0 Rangers FC",
+    "on": "2024-09-01",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-03a9a3371a8340bae2f2",
+   "value": {
+    "id": "research-20261020-03a9a3371a8340bae2f2",
+    "name": "Celtic FC 2-0 Heart of Midlothian",
+    "on": "2024-09-14",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-26f55937c180c58bdd6f",
+   "value": {
+    "id": "research-20261020-26f55937c180c58bdd6f",
+    "name": "St. Johnstone FC 0-6 Celtic FC",
+    "on": "2024-09-28",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 6,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-6",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fd65ae956bd6577ce55d",
+   "value": {
+    "id": "research-20261020-fd65ae956bd6577ce55d",
+    "name": "Ross County FC 1-2 Celtic FC",
+    "on": "2024-10-06",
+    "home": "Ross County FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1752efd514dd06f6577f",
+   "value": {
+    "id": "research-20261020-1752efd514dd06f6577f",
+    "name": "Celtic FC 2-2 Aberdeen FC",
+    "on": "2024-10-19",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-54ba78e7ea851424bbdb",
+   "value": {
+    "id": "research-20261020-54ba78e7ea851424bbdb",
+    "name": "Motherwell FC 0-3 Celtic FC",
+    "on": "2024-10-27",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ee0484df769975d3d977",
+   "value": {
+    "id": "research-20261020-ee0484df769975d3d977",
+    "name": "Celtic FC 2-0 Dundee FC",
+    "on": "2024-10-30",
+    "home": "Celtic FC",
+    "away": "Dundee FC",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2d40fd25398381eacab4",
+   "value": {
+    "id": "research-20261020-2d40fd25398381eacab4",
+    "name": "Kilmarnock FC 0-2 Celtic FC",
+    "on": "2024-11-10",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-31d8902a5c0987554aec",
+   "value": {
+    "id": "research-20261020-31d8902a5c0987554aec",
+    "name": "Heart of Midlothian 1-4 Celtic FC",
+    "on": "2024-11-23",
+    "home": "Heart of Midlothian",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-648e6af5eabafd257d18",
+   "value": {
+    "id": "research-20261020-648e6af5eabafd257d18",
+    "name": "Celtic FC 5-0 Ross County FC",
+    "on": "2024-11-30",
+    "home": "Celtic FC",
+    "away": "Ross County FC",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-803044d905fa2046d5c9",
+   "value": {
+    "id": "research-20261020-803044d905fa2046d5c9",
+    "name": "Celtic FC 3-0 Hibernian FC",
+    "on": "2024-12-07",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0646bbab510eb8cba570",
+   "value": {
+    "id": "research-20261020-0646bbab510eb8cba570",
+    "name": "Dundee United 0-0 Celtic FC",
+    "on": "2024-12-22",
+    "home": "Dundee United",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-27cb569c38ae19572f2d",
+   "value": {
+    "id": "research-20261020-27cb569c38ae19572f2d",
+    "name": "Celtic FC 4-0 Motherwell FC",
+    "on": "2024-12-26",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-779134e16636f2cdc267",
+   "value": {
+    "id": "research-20261020-779134e16636f2cdc267",
+    "name": "Celtic FC 4-0 St. Johnstone FC",
+    "on": "2024-12-29",
+    "home": "Celtic FC",
+    "away": "St. Johnstone FC",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d7949f8a7d702bbd2b4b",
+   "value": {
+    "id": "research-20261020-d7949f8a7d702bbd2b4b",
+    "name": "Rangers FC 3-0 Celtic FC",
+    "on": "2025-01-02",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7214da9b43eaa93287a8",
+   "value": {
+    "id": "research-20261020-7214da9b43eaa93287a8",
+    "name": "Celtic FC 3-0 St. Mirren FC",
+    "on": "2025-01-05",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2ff22e665f7ee690e733",
+   "value": {
+    "id": "research-20261020-2ff22e665f7ee690e733",
+    "name": "Celtic FC 2-0 Dundee United",
+    "on": "2025-01-08",
+    "home": "Celtic FC",
+    "away": "Dundee United",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-55fcd91127926b9e51b1",
+   "value": {
+    "id": "research-20261020-55fcd91127926b9e51b1",
+    "name": "Ross County FC 1-4 Celtic FC",
+    "on": "2025-01-11",
+    "home": "Ross County FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c41b7d0d60070c06b809",
+   "value": {
+    "id": "research-20261020-c41b7d0d60070c06b809",
+    "name": "Dundee FC 3-3 Celtic FC",
+    "on": "2025-01-14",
+    "home": "Dundee FC",
+    "away": "Celtic FC",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7efc9af44976f7c2b0f3",
+   "value": {
+    "id": "research-20261020-7efc9af44976f7c2b0f3",
+    "name": "Motherwell FC 1-3 Celtic FC",
+    "on": "2025-02-02",
+    "home": "Motherwell FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3337c49fcf34d03f3641",
+   "value": {
+    "id": "research-20261020-3337c49fcf34d03f3641",
+    "name": "Celtic FC 6-0 Dundee FC",
+    "on": "2025-02-05",
+    "home": "Celtic FC",
+    "away": "Dundee FC",
+    "homeGoals": 6,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "6-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e5c615628a58303ce3e9",
+   "value": {
+    "id": "research-20261020-e5c615628a58303ce3e9",
+    "name": "Celtic FC 3-0 Dundee United",
+    "on": "2025-02-15",
+    "home": "Celtic FC",
+    "away": "Dundee United",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-68ee08c8907341a35c1c",
+   "value": {
+    "id": "research-20261020-68ee08c8907341a35c1c",
+    "name": "Hibernian FC 2-1 Celtic FC",
+    "on": "2025-02-22",
+    "home": "Hibernian FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e2e5c6252946afe42457",
+   "value": {
+    "id": "research-20261020-e2e5c6252946afe42457",
+    "name": "Celtic FC 5-1 Aberdeen FC",
+    "on": "2025-02-25",
+    "home": "Celtic FC",
+    "away": "Aberdeen FC",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d2a30c971127ec0be919",
+   "value": {
+    "id": "research-20261020-d2a30c971127ec0be919",
+    "name": "St. Mirren FC 2-5 Celtic FC",
+    "on": "2025-03-01",
+    "home": "St. Mirren FC",
+    "away": "Celtic FC",
+    "homeGoals": 2,
+    "awayGoals": 5,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2218ea098986ad2f5536",
+   "value": {
+    "id": "research-20261020-2218ea098986ad2f5536",
+    "name": "Celtic FC 2-3 Rangers FC",
+    "on": "2025-03-16",
+    "home": "Celtic FC",
+    "away": "Rangers FC",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c0e905aaf1610ff169b7",
+   "value": {
+    "id": "research-20261020-c0e905aaf1610ff169b7",
+    "name": "Celtic FC 3-0 Heart of Midlothian",
+    "on": "2025-03-29",
+    "home": "Celtic FC",
+    "away": "Heart of Midlothian",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-46f4044ed47b15055d7e",
+   "value": {
+    "id": "research-20261020-46f4044ed47b15055d7e",
+    "name": "St. Johnstone FC 1-0 Celtic FC",
+    "on": "2025-04-06",
+    "home": "St. Johnstone FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-285c7df51e434eb22d0c",
+   "value": {
+    "id": "research-20261020-285c7df51e434eb22d0c",
+    "name": "Celtic FC 5-1 Kilmarnock FC",
+    "on": "2025-04-12",
+    "home": "Celtic FC",
+    "away": "Kilmarnock FC",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b86689a9751ffa43d2c0",
+   "value": {
+    "id": "research-20261020-b86689a9751ffa43d2c0",
+    "name": "Dundee United 0-5 Celtic FC",
+    "on": "2025-04-26",
+    "home": "Dundee United",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "0-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a8369805c7d0bb88fdeb",
+   "value": {
+    "id": "research-20261020-a8369805c7d0bb88fdeb",
+    "name": "Rangers FC 1-1 Celtic FC",
+    "on": "2025-05-04",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-928636eeba95440cc0b0",
+   "value": {
+    "id": "research-20261020-928636eeba95440cc0b0",
+    "name": "Celtic FC 3-1 Hibernian FC",
+    "on": "2025-05-10",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-94623b5667e0ebdb62ba",
+   "value": {
+    "id": "research-20261020-94623b5667e0ebdb62ba",
+    "name": "Aberdeen FC 1-5 Celtic FC",
+    "on": "2025-05-14",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 5,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4c2f2e15663a05c277ee",
+   "value": {
+    "id": "research-20261020-4c2f2e15663a05c277ee",
+    "name": "Celtic FC 1-1 St. Mirren FC",
+    "on": "2025-05-17",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Scottish Premiership 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-d3f4be1a314a7270",
+    "of-e66cd360762d3826"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5778dbbc737a198e8be4",
+   "value": {
+    "id": "research-20261020-5778dbbc737a198e8be4",
+    "name": "Celtic FC 1-0 St. Mirren FC",
+    "on": "2025-08-03",
+    "home": "Celtic FC",
+    "away": "St. Mirren FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3776cc976fbbedcab521",
+   "value": {
+    "id": "research-20261020-3776cc976fbbedcab521",
+    "name": "Aberdeen FC 0-2 Celtic FC",
+    "on": "2025-08-10",
+    "home": "Aberdeen FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-eb1785d1461a0ad33aa8",
+   "value": {
+    "id": "research-20261020-eb1785d1461a0ad33aa8",
+    "name": "Celtic FC 3-0 Livingston FC",
+    "on": "2025-08-23",
+    "home": "Celtic FC",
+    "away": "Livingston FC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-95c002b6dfff6d5db8cb",
+   "value": {
+    "id": "research-20261020-95c002b6dfff6d5db8cb",
+    "name": "Rangers FC 0-0 Celtic FC",
+    "on": "2025-08-31",
+    "home": "Rangers FC",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8d88847dd1b2f59dc775",
+   "value": {
+    "id": "research-20261020-8d88847dd1b2f59dc775",
+    "name": "Kilmarnock FC 1-2 Celtic FC",
+    "on": "2025-09-14",
+    "home": "Kilmarnock FC",
+    "away": "Celtic FC",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ab2ceff9bf7097fcf9ad",
+   "value": {
+    "id": "research-20261020-ab2ceff9bf7097fcf9ad",
+    "name": "Celtic FC 0-0 Hibernian FC",
+    "on": "2025-09-27",
+    "home": "Celtic FC",
+    "away": "Hibernian FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-74a52bec2182adde46bd",
+   "value": {
+    "id": "research-20261020-74a52bec2182adde46bd",
+    "name": "Celtic FC 3-2 Motherwell FC",
+    "on": "2025-10-05",
+    "home": "Celtic FC",
+    "away": "Motherwell FC",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2025-26",
+    "competition": "Scottish Premiership 2025/26",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-0b23b44441b0496a",
+    "of-340011ef518ba38d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

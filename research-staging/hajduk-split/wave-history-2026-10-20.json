@@ -1,0 +1,2298 @@
+{
+ "schemaVersion": 1,
+ "clubId": "hajduk-split",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-5740b3f16bea0138",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2023-24_hr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2023-24_hr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "croatia/2023-24_hr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "367fcb838f804e741e1bbf4511de20b66c09374c8f60972329a21e3d0dd98aeb",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e0591ae149031a06",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2024-25_hr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2024-25_hr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "croatia/2024-25_hr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "91daef5495ac6088e7f98ba28b6dc082d80c94b9b89faaec11d9a9eb2ebb1d16",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-b0f6dc355a57eea5",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/confq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/confq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/confq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1e248f3fbd2c9c8860a795373eba7b9f1f943a9dc672a4d4a3c3ad5452723fea",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-0aa9394e0477fe15",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/confq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/confq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2025-26/confq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "417d8fd7f0b79771f4293476a3815a0db6cfd3391e457b46e0fa2ddea81965c4",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-a2d2d83b99efd34503dd",
+   "value": {
+    "id": "research-20261020-a2d2d83b99efd34503dd",
+    "name": "Dinamo Zagreb 1-2 Hajduk Split",
+    "on": "2023-07-21",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-113412485c64f5793139",
+   "value": {
+    "id": "research-20261020-113412485c64f5793139",
+    "name": "Hajduk Split 1-0 HNK Rijeka",
+    "on": "2023-07-30",
+    "home": "Hajduk Split",
+    "away": "HNK Rijeka",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-255c6f3f4b748ee94950",
+   "value": {
+    "id": "research-20261020-255c6f3f4b748ee94950",
+    "name": "Hajduk Split 3-0 Slaven Belupo",
+    "on": "2023-08-13",
+    "home": "Hajduk Split",
+    "away": "Slaven Belupo",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-394cbb0f6b33702aad0f",
+   "value": {
+    "id": "research-20261020-394cbb0f6b33702aad0f",
+    "name": "NK Rudeš 0-2 Hajduk Split",
+    "on": "2023-08-20",
+    "home": "NK Rudeš",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2d15bf9695f572c055f4",
+   "value": {
+    "id": "research-20261020-2d15bf9695f572c055f4",
+    "name": "NK Varaždin 1-2 Hajduk Split",
+    "on": "2023-08-26",
+    "home": "NK Varaždin",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e2855e9ebe0fcd8d441c",
+   "value": {
+    "id": "research-20261020-e2855e9ebe0fcd8d441c",
+    "name": "Hajduk Split 0-1 NK Istra 1961",
+    "on": "2023-09-02",
+    "home": "Hajduk Split",
+    "away": "NK Istra 1961",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad5ad861ca74bfc03c75",
+   "value": {
+    "id": "research-20261020-ad5ad861ca74bfc03c75",
+    "name": "HNK Gorica 2-1 Hajduk Split",
+    "on": "2023-09-17",
+    "home": "HNK Gorica",
+    "away": "Hajduk Split",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6034a15ad7470a3c75a2",
+   "value": {
+    "id": "research-20261020-6034a15ad7470a3c75a2",
+    "name": "Hajduk Split 1-0 Lokomotiva Zagreb",
+    "on": "2023-09-23",
+    "home": "Hajduk Split",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8e09f216bc2b6ffedafc",
+   "value": {
+    "id": "research-20261020-8e09f216bc2b6ffedafc",
+    "name": "Hajduk Split 1-0 Dinamo Zagreb",
+    "on": "2023-10-01",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-add1c5b272adcf74650a",
+   "value": {
+    "id": "research-20261020-add1c5b272adcf74650a",
+    "name": "HNK Rijeka 1-0 Hajduk Split",
+    "on": "2023-10-07",
+    "home": "HNK Rijeka",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d8284ffd76b5be8e1536",
+   "value": {
+    "id": "research-20261020-d8284ffd76b5be8e1536",
+    "name": "Hajduk Split 0-2 NK Osijek",
+    "on": "2023-10-22",
+    "home": "Hajduk Split",
+    "away": "NK Osijek",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b76e7d2070743685c1e8",
+   "value": {
+    "id": "research-20261020-b76e7d2070743685c1e8",
+    "name": "Slaven Belupo 0-1 Hajduk Split",
+    "on": "2023-10-27",
+    "home": "Slaven Belupo",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a504ebfd64f82734adf",
+   "value": {
+    "id": "research-20261020-8a504ebfd64f82734adf",
+    "name": "Hajduk Split 1-0 NK Rudeš",
+    "on": "2023-11-04",
+    "home": "Hajduk Split",
+    "away": "NK Rudeš",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-35751cee439c951b3401",
+   "value": {
+    "id": "research-20261020-35751cee439c951b3401",
+    "name": "NK Osijek 0-1 Hajduk Split",
+    "on": "2023-11-08",
+    "home": "NK Osijek",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-715d899aeb1eec9fd78e",
+   "value": {
+    "id": "research-20261020-715d899aeb1eec9fd78e",
+    "name": "Hajduk Split 3-1 NK Varaždin",
+    "on": "2023-11-12",
+    "home": "Hajduk Split",
+    "away": "NK Varaždin",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1e47de58cbe24eb49eea",
+   "value": {
+    "id": "research-20261020-1e47de58cbe24eb49eea",
+    "name": "NK Istra 1961 0-2 Hajduk Split",
+    "on": "2023-11-26",
+    "home": "NK Istra 1961",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c0c5e9b78ec57b830b57",
+   "value": {
+    "id": "research-20261020-c0c5e9b78ec57b830b57",
+    "name": "Hajduk Split 3-0 HNK Gorica",
+    "on": "2023-12-02",
+    "home": "Hajduk Split",
+    "away": "HNK Gorica",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cc290de8ecc83005547f",
+   "value": {
+    "id": "research-20261020-cc290de8ecc83005547f",
+    "name": "Lokomotiva Zagreb 1-1 Hajduk Split",
+    "on": "2023-12-08",
+    "home": "Lokomotiva Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d37e852d491aa6d2ecab",
+   "value": {
+    "id": "research-20261020-d37e852d491aa6d2ecab",
+    "name": "Dinamo Zagreb 0-0 Hajduk Split",
+    "on": "2023-12-17",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-413428fb3de7c99201d8",
+   "value": {
+    "id": "research-20261020-413428fb3de7c99201d8",
+    "name": "Hajduk Split 1-2 HNK Rijeka",
+    "on": "2024-01-28",
+    "home": "Hajduk Split",
+    "away": "HNK Rijeka",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-772ddd85b129ba20740d",
+   "value": {
+    "id": "research-20261020-772ddd85b129ba20740d",
+    "name": "NK Osijek 1-1 Hajduk Split",
+    "on": "2024-02-03",
+    "home": "NK Osijek",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-71bf1e75c54132dd8a77",
+   "value": {
+    "id": "research-20261020-71bf1e75c54132dd8a77",
+    "name": "Hajduk Split 4-0 Slaven Belupo",
+    "on": "2024-02-11",
+    "home": "Hajduk Split",
+    "away": "Slaven Belupo",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bff3334695110323d778",
+   "value": {
+    "id": "research-20261020-bff3334695110323d778",
+    "name": "NK Rudeš 0-2 Hajduk Split",
+    "on": "2024-02-17",
+    "home": "NK Rudeš",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-590607b51d0eb83faba3",
+   "value": {
+    "id": "research-20261020-590607b51d0eb83faba3",
+    "name": "NK Varaždin 1-1 Hajduk Split",
+    "on": "2024-02-24",
+    "home": "NK Varaždin",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a3e25437fb004188f71",
+   "value": {
+    "id": "research-20261020-8a3e25437fb004188f71",
+    "name": "Hajduk Split 1-0 NK Istra 1961",
+    "on": "2024-03-02",
+    "home": "Hajduk Split",
+    "away": "NK Istra 1961",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c34a2627d5aa8a705769",
+   "value": {
+    "id": "research-20261020-c34a2627d5aa8a705769",
+    "name": "HNK Gorica 0-3 Hajduk Split",
+    "on": "2024-03-09",
+    "home": "HNK Gorica",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-02e7d5a4e4cdff5b3e9b",
+   "value": {
+    "id": "research-20261020-02e7d5a4e4cdff5b3e9b",
+    "name": "Hajduk Split 1-2 Lokomotiva Zagreb",
+    "on": "2024-03-16",
+    "home": "Hajduk Split",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e619fe5b11a667d474ae",
+   "value": {
+    "id": "research-20261020-e619fe5b11a667d474ae",
+    "name": "Hajduk Split 0-1 Dinamo Zagreb",
+    "on": "2024-03-30",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-02df11670d8fd1927cf4",
+   "value": {
+    "id": "research-20261020-02df11670d8fd1927cf4",
+    "name": "HNK Rijeka 1-0 Hajduk Split",
+    "on": "2024-04-07",
+    "home": "HNK Rijeka",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c8f2003b5714d59b48ed",
+   "value": {
+    "id": "research-20261020-c8f2003b5714d59b48ed",
+    "name": "Hajduk Split 1-2 NK Osijek",
+    "on": "2024-04-14",
+    "home": "Hajduk Split",
+    "away": "NK Osijek",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-272c21e4378e47312803",
+   "value": {
+    "id": "research-20261020-272c21e4378e47312803",
+    "name": "Slaven Belupo 0-1 Hajduk Split",
+    "on": "2024-04-20",
+    "home": "Slaven Belupo",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-96cce48cf58e58101661",
+   "value": {
+    "id": "research-20261020-96cce48cf58e58101661",
+    "name": "Hajduk Split 5-1 NK Rudeš",
+    "on": "2024-04-27",
+    "home": "Hajduk Split",
+    "away": "NK Rudeš",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4f6e378b8fe606c8bbec",
+   "value": {
+    "id": "research-20261020-4f6e378b8fe606c8bbec",
+    "name": "Hajduk Split 0-1 NK Varaždin",
+    "on": "2024-05-05",
+    "home": "Hajduk Split",
+    "away": "NK Varaždin",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2d96c55723c3a2b00dfd",
+   "value": {
+    "id": "research-20261020-2d96c55723c3a2b00dfd",
+    "name": "NK Istra 1961 1-1 Hajduk Split",
+    "on": "2024-05-12",
+    "home": "NK Istra 1961",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-70f1386a2d093c8a9cf0",
+   "value": {
+    "id": "research-20261020-70f1386a2d093c8a9cf0",
+    "name": "Hajduk Split 2-1 HNK Gorica",
+    "on": "2024-05-19",
+    "home": "Hajduk Split",
+    "away": "HNK Gorica",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8aa14afc7de4d7ea8593",
+   "value": {
+    "id": "research-20261020-8aa14afc7de4d7ea8593",
+    "name": "Lokomotiva Zagreb 2-5 Hajduk Split",
+    "on": "2024-05-25",
+    "home": "Lokomotiva Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 2,
+    "awayGoals": 5,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e1e3d1cd7934fd0c752e",
+   "value": {
+    "id": "research-20261020-e1e3d1cd7934fd0c752e",
+    "name": "Hajduk Split 2-0 HB Tórshavn",
+    "on": "2024-07-25",
+    "home": "Hajduk Split",
+    "away": "HB Tórshavn",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2e46ce3b07e1dafe1c90",
+   "value": {
+    "id": "research-20261020-2e46ce3b07e1dafe1c90",
+    "name": "HB Tórshavn 0-0 Hajduk Split",
+    "on": "2024-08-01",
+    "home": "HB Tórshavn",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ddc68b1980dd7315c871",
+   "value": {
+    "id": "research-20261020-ddc68b1980dd7315c871",
+    "name": "Hajduk Split 2-1 Slaven Belupo",
+    "on": "2024-08-04",
+    "home": "Hajduk Split",
+    "away": "Slaven Belupo",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-20b43b9e381ac31cd446",
+   "value": {
+    "id": "research-20261020-20b43b9e381ac31cd446",
+    "name": "MFK Ružomberok 0-0 Hajduk Split",
+    "on": "2024-08-08",
+    "home": "MFK Ružomberok",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e7bd26451317a352be04",
+   "value": {
+    "id": "research-20261020-e7bd26451317a352be04",
+    "name": "Lokomotiva Zagreb 1-1 Hajduk Split",
+    "on": "2024-08-11",
+    "home": "Lokomotiva Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d9e6db2759ebeb496797",
+   "value": {
+    "id": "research-20261020-d9e6db2759ebeb496797",
+    "name": "Hajduk Split 0-1 MFK Ružomberok",
+    "on": "2024-08-15",
+    "home": "Hajduk Split",
+    "away": "MFK Ružomberok",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0ca121a4668f227df7b3",
+   "value": {
+    "id": "research-20261020-0ca121a4668f227df7b3",
+    "name": "Hajduk Split 2-1 NK Varaždin",
+    "on": "2024-08-18",
+    "home": "Hajduk Split",
+    "away": "NK Varaždin",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-13a7c299e2f5d2a423c6",
+   "value": {
+    "id": "research-20261020-13a7c299e2f5d2a423c6",
+    "name": "NK Istra 1961 1-1 Hajduk Split",
+    "on": "2024-08-25",
+    "home": "NK Istra 1961",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-00565a5ad971310e8902",
+   "value": {
+    "id": "research-20261020-00565a5ad971310e8902",
+    "name": "Hajduk Split 1-0 NK Osijek",
+    "on": "2024-08-31",
+    "home": "Hajduk Split",
+    "away": "NK Osijek",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0be5845ca804e0717206",
+   "value": {
+    "id": "research-20261020-0be5845ca804e0717206",
+    "name": "Dinamo Zagreb 0-1 Hajduk Split",
+    "on": "2024-09-13",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bce6c68dedd9ff4698e6",
+   "value": {
+    "id": "research-20261020-bce6c68dedd9ff4698e6",
+    "name": "Hajduk Split 4-1 HNK Gorica",
+    "on": "2024-09-21",
+    "home": "Hajduk Split",
+    "away": "HNK Gorica",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f85b9522be001e2428df",
+   "value": {
+    "id": "research-20261020-f85b9522be001e2428df",
+    "name": "HNK Rijeka 0-0 Hajduk Split",
+    "on": "2024-09-29",
+    "home": "HNK Rijeka",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-388c392bac493529c3e4",
+   "value": {
+    "id": "research-20261020-388c392bac493529c3e4",
+    "name": "Hajduk Split 4-0 HNK Šibenik",
+    "on": "2024-10-06",
+    "home": "Hajduk Split",
+    "away": "HNK Šibenik",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1bee6645002672c1a527",
+   "value": {
+    "id": "research-20261020-1bee6645002672c1a527",
+    "name": "Slaven Belupo 0-2 Hajduk Split",
+    "on": "2024-10-20",
+    "home": "Slaven Belupo",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6494b087e56300798ece",
+   "value": {
+    "id": "research-20261020-6494b087e56300798ece",
+    "name": "Hajduk Split 2-1 Lokomotiva Zagreb",
+    "on": "2024-10-26",
+    "home": "Hajduk Split",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-eab9bf33ce485bebb85a",
+   "value": {
+    "id": "research-20261020-eab9bf33ce485bebb85a",
+    "name": "NK Varaždin 1-0 Hajduk Split",
+    "on": "2024-11-03",
+    "home": "NK Varaždin",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5e9347ed3fec09c58c64",
+   "value": {
+    "id": "research-20261020-5e9347ed3fec09c58c64",
+    "name": "Hajduk Split 1-1 NK Istra 1961",
+    "on": "2024-11-09",
+    "home": "Hajduk Split",
+    "away": "NK Istra 1961",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-95db26d746f270881bcc",
+   "value": {
+    "id": "research-20261020-95db26d746f270881bcc",
+    "name": "NK Osijek 2-2 Hajduk Split",
+    "on": "2024-11-24",
+    "home": "NK Osijek",
+    "away": "Hajduk Split",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c7136e64c34fc84c8259",
+   "value": {
+    "id": "research-20261020-c7136e64c34fc84c8259",
+    "name": "Hajduk Split 1-0 Dinamo Zagreb",
+    "on": "2024-12-01",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ad748dac89661c619f07",
+   "value": {
+    "id": "research-20261020-ad748dac89661c619f07",
+    "name": "HNK Gorica 1-0 Hajduk Split",
+    "on": "2024-12-07",
+    "home": "HNK Gorica",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3010ca826f1d4eb9e2c4",
+   "value": {
+    "id": "research-20261020-3010ca826f1d4eb9e2c4",
+    "name": "Hajduk Split 2-2 HNK Rijeka",
+    "on": "2024-12-15",
+    "home": "Hajduk Split",
+    "away": "HNK Rijeka",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-db01098319537adf14cf",
+   "value": {
+    "id": "research-20261020-db01098319537adf14cf",
+    "name": "HNK Šibenik 1-2 Hajduk Split",
+    "on": "2024-12-22",
+    "home": "HNK Šibenik",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2be7b0bfdc9e6c02b2f5",
+   "value": {
+    "id": "research-20261020-2be7b0bfdc9e6c02b2f5",
+    "name": "Hajduk Split 0-0 Slaven Belupo",
+    "on": "2025-01-26",
+    "home": "Hajduk Split",
+    "away": "Slaven Belupo",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8409a7e499ccad530565",
+   "value": {
+    "id": "research-20261020-8409a7e499ccad530565",
+    "name": "Lokomotiva Zagreb 3-2 Hajduk Split",
+    "on": "2025-02-02",
+    "home": "Lokomotiva Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7f5d4ae9692074eae558",
+   "value": {
+    "id": "research-20261020-7f5d4ae9692074eae558",
+    "name": "Hajduk Split 1-0 NK Varaždin",
+    "on": "2025-02-08",
+    "home": "Hajduk Split",
+    "away": "NK Varaždin",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7d1c6afd405874e14223",
+   "value": {
+    "id": "research-20261020-7d1c6afd405874e14223",
+    "name": "NK Istra 1961 1-1 Hajduk Split",
+    "on": "2025-02-15",
+    "home": "NK Istra 1961",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1b96aac7e11ac5a16faf",
+   "value": {
+    "id": "research-20261020-1b96aac7e11ac5a16faf",
+    "name": "Hajduk Split 4-0 NK Osijek",
+    "on": "2025-02-22",
+    "home": "Hajduk Split",
+    "away": "NK Osijek",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-502e9245e00d2026caf8",
+   "value": {
+    "id": "research-20261020-502e9245e00d2026caf8",
+    "name": "Dinamo Zagreb 2-2 Hajduk Split",
+    "on": "2025-03-02",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2621c16f1456ee87104a",
+   "value": {
+    "id": "research-20261020-2621c16f1456ee87104a",
+    "name": "Hajduk Split 2-1 HNK Gorica",
+    "on": "2025-03-09",
+    "home": "Hajduk Split",
+    "away": "HNK Gorica",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4f193c67e1b896e7a4ce",
+   "value": {
+    "id": "research-20261020-4f193c67e1b896e7a4ce",
+    "name": "HNK Rijeka 3-0 Hajduk Split",
+    "on": "2025-03-16",
+    "home": "HNK Rijeka",
+    "away": "Hajduk Split",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-209768237eb663ca17fb",
+   "value": {
+    "id": "research-20261020-209768237eb663ca17fb",
+    "name": "Hajduk Split 1-0 HNK Šibenik",
+    "on": "2025-03-30",
+    "home": "Hajduk Split",
+    "away": "HNK Šibenik",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1423af2724e2b9524b08",
+   "value": {
+    "id": "research-20261020-1423af2724e2b9524b08",
+    "name": "Slaven Belupo 0-1 Hajduk Split",
+    "on": "2025-04-05",
+    "home": "Slaven Belupo",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e96484e583320c4dd299",
+   "value": {
+    "id": "research-20261020-e96484e583320c4dd299",
+    "name": "Hajduk Split 1-1 Lokomotiva Zagreb",
+    "on": "2025-04-13",
+    "home": "Hajduk Split",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fd7501668d720a538c95",
+   "value": {
+    "id": "research-20261020-fd7501668d720a538c95",
+    "name": "NK Varaždin 1-1 Hajduk Split",
+    "on": "2025-04-18",
+    "home": "NK Varaždin",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-204c9baf7fe2aba1a0f4",
+   "value": {
+    "id": "research-20261020-204c9baf7fe2aba1a0f4",
+    "name": "Hajduk Split 0-1 NK Istra 1961",
+    "on": "2025-04-23",
+    "home": "Hajduk Split",
+    "away": "NK Istra 1961",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bd92cea0a6d15b321d85",
+   "value": {
+    "id": "research-20261020-bd92cea0a6d15b321d85",
+    "name": "NK Osijek 2-0 Hajduk Split",
+    "on": "2025-04-27",
+    "home": "NK Osijek",
+    "away": "Hajduk Split",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4177e0963c8c83910de5",
+   "value": {
+    "id": "research-20261020-4177e0963c8c83910de5",
+    "name": "Hajduk Split 1-3 Dinamo Zagreb",
+    "on": "2025-05-03",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2dc14630013bf494f43b",
+   "value": {
+    "id": "research-20261020-2dc14630013bf494f43b",
+    "name": "HNK Gorica 1-1 Hajduk Split",
+    "on": "2025-05-11",
+    "home": "HNK Gorica",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-df32f3f469765ec699cf",
+   "value": {
+    "id": "research-20261020-df32f3f469765ec699cf",
+    "name": "Hajduk Split 2-1 HNK Rijeka",
+    "on": "2025-05-18",
+    "home": "Hajduk Split",
+    "away": "HNK Rijeka",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-30fca730cca2fdad0692",
+   "value": {
+    "id": "research-20261020-30fca730cca2fdad0692",
+    "name": "HNK Šibenik 0-1 Hajduk Split",
+    "on": "2025-05-25",
+    "home": "HNK Šibenik",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-877bc51b93eb28c0a310",
+   "value": {
+    "id": "research-20261020-877bc51b93eb28c0a310",
+    "name": "Zira FK 1-1 Hajduk Split",
+    "on": "2025-07-23",
+    "home": "Zira FK",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1792c52f094dd8426da1",
+   "value": {
+    "id": "research-20261020-1792c52f094dd8426da1",
+    "name": "Hajduk Split 2-1 Zira FK",
+    "on": "2025-07-31",
+    "home": "Hajduk Split",
+    "away": "Zira FK",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4c3843fd4d88aac89ecc",
+   "value": {
+    "id": "research-20261020-4c3843fd4d88aac89ecc",
+    "name": "Hajduk Split 2-1 FC Dinamo City",
+    "on": "2025-08-07",
+    "home": "Hajduk Split",
+    "away": "FC Dinamo City",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-04f6e3297a36e0d85ec4",
+   "value": {
+    "id": "research-20261020-04f6e3297a36e0d85ec4",
+    "name": "FC Dinamo City 3-1 Hajduk Split",
+    "on": "2025-08-14",
+    "home": "FC Dinamo City",
+    "away": "Hajduk Split",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

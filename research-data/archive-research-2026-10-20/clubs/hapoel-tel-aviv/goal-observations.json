@@ -1,0 +1,62 @@
+[
+  {
+    "id": "r20261020-goal-d5f87466277860df",
+    "clubId": "hapoel-tel-aviv",
+    "on": "2010-11-24",
+    "opponent": "Benfica",
+    "scoreFromClubPerspective": "3-0",
+    "competition": "UEFA Champions League",
+    "scorerAsReported": "Eran Zahavi",
+    "minuteAsReported": "24",
+    "sourceId": "hta-benfica-20101124",
+    "paraphrase": "Zahavi headed Abutbul’s free kick; David Luiz deflected it.",
+    "existingReplaySameMatch": [
+      "hapoel-tel-aviv:goal-benfica-2010-zahavi-24",
+      "hapoel-tel-aviv:goal-benfica-2010-zahavi-90-2"
+    ],
+    "importStatus": "review_same_match_existing_replay",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  },
+  {
+    "id": "r20261020-goal-8fd641d80af379b0",
+    "clubId": "hapoel-tel-aviv",
+    "on": "2010-11-24",
+    "opponent": "Benfica",
+    "scoreFromClubPerspective": "3-0",
+    "competition": "UEFA Champions League",
+    "scorerAsReported": "Douglas da Silva",
+    "minuteAsReported": "74",
+    "sourceId": "hta-benfica-20101124",
+    "paraphrase": "Da Silva scored from close range after a corner reached him off Javi García.",
+    "existingReplaySameMatch": [
+      "hapoel-tel-aviv:goal-benfica-2010-zahavi-24",
+      "hapoel-tel-aviv:goal-benfica-2010-zahavi-90-2"
+    ],
+    "importStatus": "review_same_match_existing_replay",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  },
+  {
+    "id": "r20261020-goal-c981d725cb2742e1",
+    "clubId": "hapoel-tel-aviv",
+    "on": "2010-11-24",
+    "opponent": "Benfica",
+    "scoreFromClubPerspective": "3-0",
+    "competition": "UEFA Champions League",
+    "scorerAsReported": "Eran Zahavi",
+    "minuteAsReported": null,
+    "sourceId": "hta-benfica-20101124",
+    "paraphrase": "Zahavi scored again in added time; exact minute not established from this report.",
+    "existingReplaySameMatch": [
+      "hapoel-tel-aviv:goal-benfica-2010-zahavi-24",
+      "hapoel-tel-aviv:goal-benfica-2010-zahavi-90-2"
+    ],
+    "importStatus": "review_same_match_existing_replay",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  }
+]

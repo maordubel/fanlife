@@ -1,0 +1,3590 @@
+[
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:yazan-nassar",
+    "providerPlayerId": 2235,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:karim-kimvuidi",
+    "providerPlayerId": 2236,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:edmond-asante",
+    "providerPlayerId": 2243,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:stav-israeli",
+    "providerPlayerId": 2233,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:or-israelov",
+    "providerPlayerId": 2248,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:hamidou-keita",
+    "providerPlayerId": 2247,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:roei-levi",
+    "providerPlayerId": 2250,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:eric-billa",
+    "providerPlayerId": 2249,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:itay-ehud",
+    "providerPlayerId": 2245,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:roei-david",
+    "providerPlayerId": 2130,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2021/22",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "2003-11-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:omer-katz",
+    "providerPlayerId": 2107,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2020/21",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1998-04-21",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:bony-amian",
+    "providerPlayerId": 2210,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2025/26",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "2003-03-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:tomer-altman",
+    "providerPlayerId": 2192,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2024/25",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1998-02-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:noam-cohen",
+    "providerPlayerId": 2219,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "MF"
+        ],
+        "sourceValue": [
+          "FW"
+        ],
+        "action": "review_correction"
+      },
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2025/26",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "2008-08-26",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9f6cf9e9f8",
+    "providerPlayerId": 2214,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1997-12-12",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:alex-musonda",
+    "providerPlayerId": 2227,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2025/26",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:guy-badash",
+    "providerPlayerId": 2237,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:harel-shalom",
+    "providerPlayerId": 2240,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:avishay-cohen",
+    "providerPlayerId": 2234,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:diego-arroyo",
+    "providerPlayerId": 2246,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2026/27",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:shavit-mazal",
+    "providerPlayerId": 2213,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2025/26",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "2001-11-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d8c94321f1",
+    "providerPlayerId": 2206,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2001-04-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:orel-dgani",
+    "providerPlayerId": 2216,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2025/26",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1989-01-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9981527bfa",
+    "providerPlayerId": 2198,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "2004-09-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ddcea967ba",
+    "providerPlayerId": 2199,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2002-08-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cfb471fe5f",
+    "providerPlayerId": 2207,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1996-01-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6cd4f91f24",
+    "providerPlayerId": 2211,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2001-04-11",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-aaabbb50f3",
+    "providerPlayerId": 2203,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "2005-02-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bbb95fc051",
+    "providerPlayerId": 2205,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2003-10-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b5ca2ebc04",
+    "providerPlayerId": 2208,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2001-05-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-86db7bacf4",
+    "providerPlayerId": 1930,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-04-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-77566fee5d",
+    "providerPlayerId": 2155,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-11-11",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1e520d8fe6",
+    "providerPlayerId": 2193,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "2000-06-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-ben-azubel",
+    "providerPlayerId": 1810,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-09-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-df246afb4f",
+    "providerPlayerId": 2191,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1996-04-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f688c4d116",
+    "providerPlayerId": 2190,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2001-08-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-462454b224",
+    "providerPlayerId": 2200,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "FW"
+        ],
+        "action": "fill_missing"
+      },
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2024/25",
+        "action": "fill_observed_season; not contract start"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9b4e86c071",
+    "providerPlayerId": 1622,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1988-09-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e9d4c60376",
+    "providerPlayerId": 2185,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "2004-08-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d4f2f46ca9",
+    "providerPlayerId": 2187,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1994-09-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-df7eb3766c",
+    "providerPlayerId": 2163,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1989-05-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b4ba5bd5bb",
+    "providerPlayerId": 2170,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2004-04-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a2b91cf8ab",
+    "providerPlayerId": 2172,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1998-10-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f175a774f4",
+    "providerPlayerId": 2184,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1991-09-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-88a09a74f5",
+    "providerPlayerId": 2186,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1999-01-02",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f449455e76",
+    "providerPlayerId": 2183,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-04-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-754fd774ac",
+    "providerPlayerId": 2177,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1987-02-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4d4d1006c4",
+    "providerPlayerId": 2174,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2001-12-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-55db99408c",
+    "providerPlayerId": 2173,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-08-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f01a3a2d71",
+    "providerPlayerId": 2181,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-02-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-91ddaa1a72",
+    "providerPlayerId": 2182,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1992-07-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4bc01ef515",
+    "providerPlayerId": 2160,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1997-10-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-aff46155dd",
+    "providerPlayerId": 2136,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1996-08-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-roei-zikri",
+    "providerPlayerId": 1738,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1992-10-13",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f79d8c8487",
+    "providerPlayerId": 2158,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1990-08-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6461855b81",
+    "providerPlayerId": 2149,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2002-10-07",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ffd361bd60",
+    "providerPlayerId": 1815,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-01-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c54d793fe2",
+    "providerPlayerId": 2147,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "2001-05-07",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8f82a9d46b",
+    "providerPlayerId": 2139,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-08-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e8a5ca7133",
+    "providerPlayerId": 1797,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1992-12-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b718f14f7f",
+    "providerPlayerId": 2113,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1998-03-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b7076e2365",
+    "providerPlayerId": 2114,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1996-09-26",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dbc66a83fd",
+    "providerPlayerId": 2125,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1997-09-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f1008b0d74",
+    "providerPlayerId": 2105,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1992-01-21",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d144a12856",
+    "providerPlayerId": 1922,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-01-07",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-481487058a",
+    "providerPlayerId": 2096,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-01-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-95878d4bc2",
+    "providerPlayerId": 2095,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1995-03-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-db70a1cd18",
+    "providerPlayerId": 2097,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-08-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-amadou-soukouna",
+    "providerPlayerId": 1910,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1992-06-21",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-89b1c0fa24",
+    "providerPlayerId": 1848,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1990-01-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a157427451",
+    "providerPlayerId": 1859,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-03-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a80f6e5b67",
+    "providerPlayerId": 1906,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-02-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1bb197ac2d",
+    "providerPlayerId": 1921,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1989-08-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c06f48f2f2",
+    "providerPlayerId": 1909,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-01-07",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e9bd6f5aa2",
+    "providerPlayerId": 1911,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1995-11-27",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-30ad808ab8",
+    "providerPlayerId": 1837,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1986-12-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3f737f4050",
+    "providerPlayerId": 1610,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1983-04-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7ba2108e85",
+    "providerPlayerId": 1691,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1988-03-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-83460060fb",
+    "providerPlayerId": 1816,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1991-02-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3593c71b69",
+    "providerPlayerId": 1878,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-08-31",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a855bb4e88",
+    "providerPlayerId": 1879,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1985-08-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-02f6ed9306",
+    "providerPlayerId": 1874,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1987-05-26",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-47056bbb3d",
+    "providerPlayerId": 1889,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1995-09-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-15636d0e59",
+    "providerPlayerId": 1881,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1997-11-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-15912ea10c",
+    "providerPlayerId": 1869,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1998-05-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4809978ddc",
+    "providerPlayerId": 1864,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1987-10-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-12bcb67227",
+    "providerPlayerId": 1866,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1989-01-27",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-956dd696fc",
+    "providerPlayerId": 1755,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1978-10-02",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e21926869f",
+    "providerPlayerId": 1865,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1996-07-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-39ac5b95a2",
+    "providerPlayerId": 1855,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1981-03-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d14582bf19",
+    "providerPlayerId": 424,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1987-09-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bea16f23cc",
+    "providerPlayerId": 1760,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1984-08-04",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-50fd3da6c3",
+    "providerPlayerId": 1807,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1989-12-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7d32bc3b8f",
+    "providerPlayerId": 1808,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1991-07-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c8d78689c1",
+    "providerPlayerId": 1818,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-05-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-96d983d7ce",
+    "providerPlayerId": 1822,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-11-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e794c62a22",
+    "providerPlayerId": 1823,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1984-05-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-62dcb7c0fa",
+    "providerPlayerId": 1821,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-08-13",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f94ee01759",
+    "providerPlayerId": 1763,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1980-10-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-32d76dc5ef",
+    "providerPlayerId": 1612,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2007/08",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1987-08-04",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-92b0cec5f0",
+    "providerPlayerId": 1806,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1995-10-04",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-18d459517f",
+    "providerPlayerId": 1817,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1989-01-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ee2526f13f",
+    "providerPlayerId": 1812,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1990-06-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9c830082eb",
+    "providerPlayerId": 1770,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1982-04-18",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-18b2949499",
+    "providerPlayerId": 1771,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-08-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d4eebe4745",
+    "providerPlayerId": 1773,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-05-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5c85b34ff6",
+    "providerPlayerId": 1774,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1995-07-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4195ac24bb",
+    "providerPlayerId": 1778,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-03-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-23b9b7189c",
+    "providerPlayerId": 1786,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1989-06-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b86ffb745f",
+    "providerPlayerId": 1795,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1989-01-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-580fd7bdba",
+    "providerPlayerId": 1796,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1989-07-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c93a512917",
+    "providerPlayerId": 1798,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1994-12-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cf93ee9cd1",
+    "providerPlayerId": 1772,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-09-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-53c8810d9e",
+    "providerPlayerId": 1783,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1991-02-04",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-19c69126f4",
+    "providerPlayerId": 1693,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2010/11",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1986-08-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-72291aa580",
+    "providerPlayerId": 1799,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-07-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-fbb6cff2cb",
+    "providerPlayerId": 1782,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1992-11-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7bb09a0d5e",
+    "providerPlayerId": 1784,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1993-06-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e6796ed224",
+    "providerPlayerId": 1582,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2007/08",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1989-06-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-603f8c6450",
+    "providerPlayerId": 1743,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-09-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-82f7a917da",
+    "providerPlayerId": 1756,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1986-04-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2703db8197",
+    "providerPlayerId": 1614,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1990-03-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ca874eb6cb",
+    "providerPlayerId": 1739,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1990-06-21",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d82a50b460",
+    "providerPlayerId": 1762,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1980-11-28",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-yaniv-luzon",
+    "providerPlayerId": 288,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "fill_missing"
+      },
+      "birthDate": {
+        "sourceValue": "1981-08-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b473758d72",
+    "providerPlayerId": 1747,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1979-07-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a215e37fbd",
+    "providerPlayerId": 1606,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1990-02-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f65ea01d0d",
+    "providerPlayerId": 1679,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1983-09-02",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dda3debde6",
+    "providerPlayerId": 1686,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "MF"
+        ],
+        "sourceValue": [
+          "DF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1987-03-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-0d896d742d",
+    "providerPlayerId": 1709,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2010/11",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1988-03-31",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f4fbf9206d",
+    "providerPlayerId": 1683,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1984-04-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e4af962106",
+    "providerPlayerId": 1675,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1979-04-28",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d2f367070b",
+    "providerPlayerId": 1727,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1987-05-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a7fdf6d0e9",
+    "providerPlayerId": 1706,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1974-08-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-27c84fb784",
+    "providerPlayerId": 1721,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1980-05-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cde1598fd2",
+    "providerPlayerId": 395,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2000/01",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1982-08-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3b5cfcb3f8",
+    "providerPlayerId": 1715,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2010/11",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1990-03-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bd837e19c9",
+    "providerPlayerId": 1701,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2010/11",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1990-01-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-eee770a630",
+    "providerPlayerId": 1694,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-03-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9add7f8520",
+    "providerPlayerId": 1656,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1986-04-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d82ee507e5",
+    "providerPlayerId": 1700,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2010/11",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1989-01-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-42f55da77e",
+    "providerPlayerId": 336,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1986-04-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9707d0e859",
+    "providerPlayerId": 1671,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1989-05-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-379e4a9300",
+    "providerPlayerId": 1687,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1982-01-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cd54f03fc3",
+    "providerPlayerId": 1689,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1990-10-13",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3511c29d72",
+    "providerPlayerId": 363,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1986-10-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3f086b9389",
+    "providerPlayerId": 1681,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1984-09-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-fd78b80313",
+    "providerPlayerId": 1665,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-01-02",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-784316d5ca",
+    "providerPlayerId": 1684,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1981-01-17",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7743cdec89",
+    "providerPlayerId": 1657,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "fill_missing"
+      },
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2009/10",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1981-09-13",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-478db13e4d",
+    "providerPlayerId": 1678,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1982-12-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-928db46762",
+    "providerPlayerId": 1680,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1992-12-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2f6c69dbd7",
+    "providerPlayerId": 1677,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1985-10-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-eli-abarbanel",
+    "providerPlayerId": 235,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "fill_missing"
+      },
+      "birthDate": {
+        "sourceValue": "1976-02-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-be26c4734f",
+    "providerPlayerId": 393,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1978-12-27",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f18e436216",
+    "providerPlayerId": 1632,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1984-05-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ae0645be42",
+    "providerPlayerId": 367,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1986-10-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6832a5df87",
+    "providerPlayerId": 1621,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1971-09-07",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-80fdc146ea",
+    "providerPlayerId": 1624,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-06-26",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d1981bf24b",
+    "providerPlayerId": 1599,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1977-10-07",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-89a1e36cb6",
+    "providerPlayerId": 1601,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1980-01-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4dbc9851d2",
+    "providerPlayerId": 1603,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1976-07-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-manor-hassan",
+    "providerPlayerId": 246,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "fill_missing"
+      },
+      "birthDate": {
+        "sourceValue": "1976-08-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cf7deabb69",
+    "providerPlayerId": 1598,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1971-09-02",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-moti-kakoun",
+    "providerPlayerId": 217,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1972-11-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6dc0d08cda",
+    "providerPlayerId": 1563,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1979-11-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2d2376d749",
+    "providerPlayerId": 1571,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1987-12-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8f483b66a1",
+    "providerPlayerId": 1583,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "MF"
+        ],
+        "sourceValue": [
+          "FW"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1988-01-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f527030cfb",
+    "providerPlayerId": 1595,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1975-12-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-38d9c69037",
+    "providerPlayerId": 1574,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1981-08-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b70e5958e3",
+    "providerPlayerId": 1585,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1978-09-18",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9f0bc4deac",
+    "providerPlayerId": 304,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1982-03-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5713c2341a",
+    "providerPlayerId": 360,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1982-06-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7f130ef50a",
+    "providerPlayerId": 378,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1983-11-04",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a1bdbd5d00",
+    "providerPlayerId": 362,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1988-04-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e6ed9cdeae",
+    "providerPlayerId": 284,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "1998/99",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1979-09-26",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b282c8ec63",
+    "providerPlayerId": 340,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1980-02-17",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8cf34b6d7b",
+    "providerPlayerId": 357,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1978-06-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b871c7ebc6",
+    "providerPlayerId": 313,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "2001/02",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1975-06-09",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-aa66b9a211",
+    "providerPlayerId": 325,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1982-05-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4241e1c234",
+    "providerPlayerId": 335,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1981-01-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9db5c19e36",
+    "providerPlayerId": 230,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "DF"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "1993/94",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1974-08-31",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dce4b5b63d",
+    "providerPlayerId": 322,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1976-10-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7c69034c47",
+    "providerPlayerId": 328,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1978-11-27",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-533940af08",
+    "providerPlayerId": 277,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1980-04-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-474647eb6a",
+    "providerPlayerId": 297,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1979-02-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3997dc41de",
+    "providerPlayerId": 309,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1975-06-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cb3a69872a",
+    "providerPlayerId": 311,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1970-11-28",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1722e6a5e6",
+    "providerPlayerId": 303,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1976-08-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-39133ce8bd",
+    "providerPlayerId": 308,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1983-05-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e6c0b9d20f",
+    "providerPlayerId": 291,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1975-06-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-beni-kozoshvili",
+    "providerPlayerId": 185,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1967-09-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dc39928c71",
+    "providerPlayerId": 221,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1974-03-12",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-be246d14e2",
+    "providerPlayerId": 283,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1969-01-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-26ee226cfd",
+    "providerPlayerId": 279,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1967-10-17",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b0614557a2",
+    "providerPlayerId": 263,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1966-10-15",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-52e87e93bc",
+    "providerPlayerId": 259,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1966-09-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c257ae99b9",
+    "providerPlayerId": 273,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1976-03-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7bd9532fd2",
+    "providerPlayerId": 274,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1973-08-28",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-meni-basson",
+    "providerPlayerId": 190,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1968-08-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b18f7c84d8",
+    "providerPlayerId": 220,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1975-04-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-18cb201a08",
+    "providerPlayerId": 238,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1972-03-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2281bf7110",
+    "providerPlayerId": 254,
+    "identityStatus": "hold_period_disagreement",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1976-09-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6f7aa5bdda",
+    "providerPlayerId": 227,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1963-08-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2817474580",
+    "providerPlayerId": 240,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "MF"
+        ],
+        "sourceValue": [
+          "DF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1964-03-02",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f8f4e4d6f1",
+    "providerPlayerId": 241,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1971-03-16",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a6260c420f",
+    "providerPlayerId": 242,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1962-05-27",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d68e27193f",
+    "providerPlayerId": 239,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1971-06-23",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-30630c63c0",
+    "providerPlayerId": 414,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1962-05-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-noam-keysi",
+    "providerPlayerId": 188,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "DF",
+          "MF"
+        ],
+        "action": "fill_missing"
+      },
+      "birthDate": {
+        "sourceValue": "1965-01-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-yossi-shoshani",
+    "providerPlayerId": 201,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1963-07-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-dani-niron",
+    "providerPlayerId": 203,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1971-01-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-nir-levin",
+    "providerPlayerId": 180,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1962-03-04",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-eli-mahpud",
+    "providerPlayerId": 140,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1961-03-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-alon-hazan",
+    "providerPlayerId": 182,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1967-09-14",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-eitan-bodenyuk",
+    "providerPlayerId": 119,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1958-01-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-ronen-hillel",
+    "providerPlayerId": 143,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1961-10-20",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-yehiel-salem",
+    "providerPlayerId": 83,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1952-07-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-dov-remler",
+    "providerPlayerId": 110,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "FW"
+        ],
+        "sourceValue": [
+          "MF",
+          "FW"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1956-08-06",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ec2f0f5083",
+    "providerPlayerId": 132,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1944-11-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-moshe-shvaytzer",
+    "providerPlayerId": 1537,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1954-04-24",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-itzhak-vissoker",
+    "providerPlayerId": 55,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1944-11-18",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-shmuel-rosenthal",
+    "providerPlayerId": 62,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "1963/64",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1947-04-22",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-gabi-rosendoren",
+    "providerPlayerId": 81,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1947-10-30",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-gadi-tzelniker",
+    "providerPlayerId": 86,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1944-03-12",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-haim-bachar",
+    "providerPlayerId": 47,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1943-07-10",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-shaul-hayak",
+    "providerPlayerId": 71,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1948-08-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a9784467b6",
+    "providerPlayerId": 51,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [
+          "MF"
+        ],
+        "sourceValue": [
+          "DF",
+          "MF"
+        ],
+        "action": "review_correction"
+      },
+      "birthDate": {
+        "sourceValue": "1944-10-01",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1ab338d646",
+    "providerPlayerId": 87,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1943-06-08",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-nahum-stelmach",
+    "providerPlayerId": 11,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "MF"
+        ],
+        "action": "fill_missing"
+      },
+      "birthDate": {
+        "sourceValue": "1936-07-19",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e4933153bd",
+    "providerPlayerId": 76,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "positions": {
+        "before": [],
+        "sourceValue": [
+          "FW"
+        ],
+        "action": "fill_missing"
+      },
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "1967/68",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1948-03-25",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-boaz-kofman",
+    "providerPlayerId": 17,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "1951/52",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1935-03-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-yaakov-visoker",
+    "providerPlayerId": 1,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "firstDocumentedSeason": {
+        "before": null,
+        "sourceValue": "1947/48",
+        "action": "fill_observed_season; not contract start"
+      },
+      "birthDate": {
+        "sourceValue": "1930-09-05",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-shlomo-nahari",
+    "providerPlayerId": 29,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1934-10-17",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-zecharia-ratzabi",
+    "providerPlayerId": 31,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1934-05-29",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-moshe-varon",
+    "providerPlayerId": 10,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1926-01-03",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  },
+  {
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-amihai-shoham",
+    "providerPlayerId": 1536,
+    "identityStatus": "exact_name_candidate_not_identity_proof",
+    "changes": {
+      "birthDate": {
+        "sourceValue": "1922-01-31",
+        "action": "add_scoped_fact"
+      }
+    },
+    "source": "https://hpt.co.il/players",
+    "applyAutomatically": false
+  }
+]

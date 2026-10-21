@@ -1,6 +1,12 @@
 import 'server-only'
 import petah from '@/club-packs/hapoel-petah-tikva/wave-history-2026-10-18.json'
 import zrinjski from '@/club-packs/zrinjski-mostar/wave-history-2026-10-18.json'
+import aek20 from '@/club-packs/aek-athens/wave-history-2026-10-20.json'
+import celtic20 from '@/club-packs/celtic/wave-history-2026-10-20.json'
+import olympiacos20 from '@/club-packs/olympiacos/wave-history-2026-10-20.json'
+import panathinaikos20 from '@/club-packs/panathinaikos/wave-history-2026-10-20.json'
+import stpauli20 from '@/club-packs/st-pauli/wave-history-2026-10-20.json'
+import zrinjski20 from '@/club-packs/zrinjski-mostar/wave-history-2026-10-20.json'
 import {mergeWave} from './waves'
 import {enClub} from '@/lib/trivia/names'
 import aliases from '@/content/manual/names-en/history-side-aliases.json'
@@ -13,7 +19,8 @@ const key=(x:string)=>{
  const en=enClub(x)??x,name=(aliases.names as Record<string,string>)[en]??en
  return name.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replaceAll('ø','o').replaceAll('đ','d').replaceAll('ł','l').replace(/\b(?:hsk|nk|fk|fc|hapoel)\b/g,'').replace(/[^a-z0-9]/g,'')
 }
-const WAVES:Record<string,unknown>={'hapoel-petah-tikva':petah,'zrinjski-mostar':zrinjski}
+/** Waves are applied in order; each one goes through the same day-collision gate, so a later wave never overrides an earlier fact. */
+const WAVES:Record<string,unknown[]>={'hapoel-petah-tikva':[petah],'zrinjski-mostar':[zrinjski,zrinjski20],'aek-athens':[aek20],'celtic':[celtic20],'olympiacos':[olympiacos20],'panathinaikos':[panathinaikos20],'st-pauli':[stpauli20]}
 
 /** Scores are HOME first in both source formats. Shootouts are a separate field. */
 function result(v:Raw):{home:string;away:string;hg:number;ag:number}|null{
@@ -45,9 +52,19 @@ export function mergeHistorical<T extends Raw>(pack:T,wave:Raw):{pack:T;conflict
    const same=a&&b&&key(a.home)===key(b.home)&&key(a.away)===key(b.away)&&a.hg===b.hg&&a.ag===b.ag
    const neutralReversed=a&&b&&(v.neutral===true||pv.neutral===true)&&key(a.home)===key(b.away)&&key(a.away)===key(b.home)&&a.hg===b.ag&&a.ag===b.hg
    if(!same&&!neutralReversed){conflicts.push({existing:str(p.id),incoming:str(f.id),on,reason:'result-or-opponent-conflict'});continue}
+   // An existing record whose sources are not checked-and-available cannot carry the incoming approval
+   // (the compiler would drop the merged record): the approved record replaces it, keeping both source lists.
+   const usable=new Set(arr(pack.sources).filter(x=>obj(x).access==='available'&&obj(x).checkedAt).map(x=>str(obj(x).id)))
+   const known=new Set(arr(pack.sources).map(x=>str(obj(x).id)))
+   const pSources=Array.isArray(p.sources)?p.sources as string[]:[]
+   if(p.status!=='approved'||Number(p.confidence)<2||(pSources.length>0&&pSources.every(x=>known.has(x))&&!pSources.some(x=>usable.has(x)))){
+    out[i]={...f,sources:[...new Set([...pSources.filter(x=>usable.has(x)),...(f.sources as string[])])]}
+    matched=true
+   }else{
    // Core approval, identifiers, documented season, lineup and scorers survive.
    out[i]={...p,value:{...v,...pv,season:pv.season??v.season},sources:[...new Set([...(Array.isArray(p.sources)?p.sources as string[]:[]),...(f.sources as string[])])]}
    matched=true
+   }
   }else{byDay.set(on,[out.length]);out.push(f)}
   // Match-only input would never reach Living Archive (eligibleArchive reads
   // archive/timeline). Make its projection here, after the same collision gate.
@@ -58,6 +75,7 @@ export function mergeHistorical<T extends Raw>(pack:T,wave:Raw):{pack:T;conflict
 }
 
 export function withHistorical<T extends Raw>(pack:T,clubId:string):{pack:T;conflicts:HistoryConflict[]}{
- const wave=WAVES[clubId]
- return wave?mergeHistorical(pack,obj(wave)):{pack,conflicts:[]}
+ let cur=pack;const conflicts:HistoryConflict[]=[]
+ for(const wave of WAVES[clubId]??[]){const r=mergeHistorical(cur,obj(wave));cur=r.pack;conflicts.push(...r.conflicts)}
+ return {pack:cur,conflicts}
 }

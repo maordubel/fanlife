@@ -1,0 +1,37 @@
+[
+  {
+    "clubId": "olympiacos",
+    "recordId": "olympiacos:oly-goal-elkaabi-final-fiorentina",
+    "field": "steps[0].zone / steps[0].position / narrative",
+    "before": "E2; cross from right",
+    "proposal": "Review left-sided cross; remove unsupported right-sided claim until source/video review",
+    "evidence": [
+      "oly-final-20240529",
+      "oly-final-flank-review"
+    ],
+    "status": "review_spatial_correction",
+    "applyAutomatically": false
+  },
+  {
+    "clubId": "panathinaikos",
+    "record": "Panathinaikos–Chelsea 2024-10-24",
+    "field": "playedOn",
+    "proposal": "Use 2024-10-24 from match header, not article publication 2024-10-26",
+    "evidence": [
+      "pao-chelsea-20241024"
+    ],
+    "status": "integration_date_guard",
+    "applyAutomatically": false
+  },
+  {
+    "clubId": "aek-athens",
+    "record": "Shakhtar–AEK 2023-07-13",
+    "field": "competition",
+    "proposal": "Friendly; do not count in official league/cup statistics",
+    "evidence": [
+      "aek-shakhtar-20230713"
+    ],
+    "status": "integration_competition_guard",
+    "applyAutomatically": false
+  }
+]

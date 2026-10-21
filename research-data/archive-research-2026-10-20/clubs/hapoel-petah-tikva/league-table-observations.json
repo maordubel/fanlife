@@ -1,0 +1,6377 @@
+[
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 7,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 22,
+      "goalsAgainst": 3,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 7,
+      "wins": 3,
+      "draws": 1,
+      "losses": 1,
+      "goalsFor": 12,
+      "goalsAgainst": 5,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 3,
+      "team": "הכח תל אביב",
+      "isHapoel": false,
+      "points": 7,
+      "wins": 3,
+      "draws": 1,
+      "losses": 1,
+      "goalsFor": 8,
+      "goalsAgainst": 7,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 4,
+      "team": "מכבי חשמונאי",
+      "isHapoel": false,
+      "points": 4,
+      "wins": 2,
+      "draws": 0,
+      "losses": 1,
+      "goalsFor": 8,
+      "goalsAgainst": 4,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 5,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 4,
+      "wins": 2,
+      "draws": 0,
+      "losses": 2,
+      "goalsFor": 8,
+      "goalsAgainst": 6,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 6,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 4,
+      "wins": 2,
+      "draws": 0,
+      "losses": 5,
+      "goalsFor": 10,
+      "goalsAgainst": 14,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 7,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 3,
+      "wins": 1,
+      "draws": 1,
+      "losses": 1,
+      "goalsFor": 6,
+      "goalsAgainst": 8,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 7,
+      "team": "מכבי נס ציונה",
+      "isHapoel": false,
+      "points": 3,
+      "wins": 1,
+      "draws": 1,
+      "losses": 2,
+      "goalsFor": 4,
+      "goalsAgainst": 6,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 9,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 2,
+      "wins": 1,
+      "draws": 0,
+      "losses": 2,
+      "goalsFor": 3,
+      "goalsAgainst": 9,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1935,
+    "sourceId": "hpt-museum-season-1935",
+    "row": {
+      "position": 10,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 6,
+      "goalsFor": 0,
+      "goalsAgainst": 19,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 1,
+      "team": "ק.ס מונטיפיורי",
+      "isHapoel": false,
+      "points": 15,
+      "wins": 7,
+      "draws": 1,
+      "losses": 1,
+      "goalsFor": 27,
+      "goalsAgainst": 10,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 2,
+      "team": "מכבי הרצליה",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 6,
+      "draws": 2,
+      "losses": 1,
+      "goalsFor": 23,
+      "goalsAgainst": 11,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 3,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 11,
+      "wins": 5,
+      "draws": 1,
+      "losses": 3,
+      "goalsFor": 26,
+      "goalsAgainst": 11,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 4,
+      "team": "התחייה ת\"א",
+      "isHapoel": false,
+      "points": 10,
+      "wins": 4,
+      "draws": 2,
+      "losses": 3,
+      "goalsFor": 19,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 5,
+      "team": "הפועל נס ציונה",
+      "isHapoel": false,
+      "points": 9,
+      "wins": 4,
+      "draws": 1,
+      "losses": 4,
+      "goalsFor": 20,
+      "goalsAgainst": 21,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 6,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 4,
+      "goalsFor": 26,
+      "goalsAgainst": 20,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 7,
+      "team": "הפועל נחלת יצחק",
+      "isHapoel": false,
+      "points": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 4,
+      "goalsFor": 20,
+      "goalsAgainst": 20,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 8,
+      "team": "ק.ס בית וגן",
+      "isHapoel": false,
+      "points": 6,
+      "wins": 2,
+      "draws": 2,
+      "losses": 5,
+      "goalsFor": 11,
+      "goalsAgainst": 19,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 9,
+      "team": "הפועל נתניה",
+      "isHapoel": false,
+      "points": 6,
+      "wins": 3,
+      "draws": 0,
+      "losses": 6,
+      "goalsFor": 11,
+      "goalsAgainst": 19,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1938,
+    "sourceId": "hpt-museum-season-1938",
+    "row": {
+      "position": 10,
+      "team": "הפועל רחובות",
+      "isHapoel": false,
+      "points": 3,
+      "wins": 1,
+      "draws": 1,
+      "losses": 7,
+      "goalsFor": 4,
+      "goalsAgainst": 36,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 1,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 42,
+      "wins": 20,
+      "draws": 2,
+      "losses": 0,
+      "goalsFor": 110,
+      "goalsAgainst": 13,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 2,
+      "team": "אגד תל אביב",
+      "isHapoel": false,
+      "points": 36,
+      "wins": 17,
+      "draws": 2,
+      "losses": 3,
+      "goalsFor": 79,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 3,
+      "team": "דגל ציון תל אביב",
+      "isHapoel": false,
+      "points": 35,
+      "wins": 16,
+      "draws": 3,
+      "losses": 3,
+      "goalsFor": 91,
+      "goalsAgainst": 17,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 4,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 30,
+      "wins": 13,
+      "draws": 4,
+      "losses": 5,
+      "goalsFor": 63,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 5,
+      "team": "הגה תל אביב",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 13,
+      "draws": 2,
+      "losses": 7,
+      "goalsFor": 68,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 6,
+      "team": "התחייה תל אביב",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 12,
+      "draws": 3,
+      "losses": 7,
+      "goalsFor": 54,
+      "goalsAgainst": 45,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 7,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 8,
+      "draws": 2,
+      "losses": 12,
+      "goalsFor": 56,
+      "goalsAgainst": 86,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 8,
+      "team": "הכח פתח תקוה",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 6,
+      "draws": 2,
+      "losses": 14,
+      "goalsFor": 45,
+      "goalsAgainst": 66,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 9,
+      "team": "מכבי הרצליה",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 5,
+      "draws": 3,
+      "losses": 14,
+      "goalsFor": 33,
+      "goalsAgainst": 69,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 10,
+      "team": "הפועל רעננה",
+      "isHapoel": false,
+      "points": 11,
+      "wins": 5,
+      "draws": 1,
+      "losses": 16,
+      "goalsFor": 22,
+      "goalsAgainst": 85,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 11,
+      "team": "מכבי רמת גן",
+      "isHapoel": false,
+      "points": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 19,
+      "goalsFor": 24,
+      "goalsAgainst": 119,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1939,
+    "sourceId": "hpt-museum-season-1939",
+    "row": {
+      "position": 12,
+      "team": "הכוכב תל אביב",
+      "isHapoel": false,
+      "points": 3,
+      "wins": 1,
+      "draws": 1,
+      "losses": 20,
+      "goalsFor": 15,
+      "goalsAgainst": 75,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 1,
+      "team": "דגל ציון תל אביב",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 13,
+      "draws": 5,
+      "losses": 0,
+      "goalsFor": 53,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 2,
+      "team": "אגד תל אביב",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 13,
+      "draws": 1,
+      "losses": 4,
+      "goalsFor": 74,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 3,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 12,
+      "draws": 2,
+      "losses": 4,
+      "goalsFor": 83,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 4,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 25,
+      "wins": 11,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 71,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 5,
+      "team": "הכח פתח תקוה",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 10,
+      "draws": 1,
+      "losses": 7,
+      "goalsFor": 71,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 6,
+      "team": "הפועל רעננה",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 6,
+      "draws": 2,
+      "losses": 10,
+      "goalsFor": 34,
+      "goalsAgainst": 49,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 7,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 5,
+      "draws": 3,
+      "losses": 10,
+      "goalsFor": 31,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 8,
+      "team": "הפועל נתניה",
+      "isHapoel": false,
+      "points": 12,
+      "wins": 5,
+      "draws": 2,
+      "losses": 11,
+      "goalsFor": 29,
+      "goalsAgainst": 59,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 9,
+      "team": "בית\"ר נתניה",
+      "isHapoel": false,
+      "points": 10,
+      "wins": 3,
+      "draws": 4,
+      "losses": 11,
+      "goalsFor": 21,
+      "goalsAgainst": 67,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1940,
+    "sourceId": "hpt-museum-season-1940",
+    "row": {
+      "position": 10,
+      "team": "מכבי רמת גן",
+      "isHapoel": false,
+      "points": 1,
+      "wins": 0,
+      "draws": 1,
+      "losses": 17,
+      "goalsFor": 14,
+      "goalsAgainst": 87,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1941,
+    "sourceId": "hpt-museum-season-1941",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 8,
+      "draws": 0,
+      "losses": 2,
+      "goalsFor": 37,
+      "goalsAgainst": 15,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1941,
+    "sourceId": "hpt-museum-season-1941",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 16,
+      "wins": 8,
+      "draws": 0,
+      "losses": 2,
+      "goalsFor": 32,
+      "goalsAgainst": 14,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1941,
+    "sourceId": "hpt-museum-season-1941",
+    "row": {
+      "position": 3,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 7,
+      "draws": 0,
+      "losses": 3,
+      "goalsFor": 35,
+      "goalsAgainst": 22,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1941,
+    "sourceId": "hpt-museum-season-1941",
+    "row": {
+      "position": 4,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 10,
+      "wins": 5,
+      "draws": 0,
+      "losses": 5,
+      "goalsFor": 22,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1941,
+    "sourceId": "hpt-museum-season-1941",
+    "row": {
+      "position": 5,
+      "team": "הפועל רחובות",
+      "isHapoel": false,
+      "points": 6,
+      "wins": 3,
+      "draws": 0,
+      "losses": 7,
+      "goalsFor": 15,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1941,
+    "sourceId": "hpt-museum-season-1941",
+    "row": {
+      "position": 6,
+      "team": "אגד תל אביב",
+      "isHapoel": false,
+      "points": 2,
+      "wins": 1,
+      "draws": 0,
+      "losses": 9,
+      "goalsFor": 6,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 1,
+      "team": "מכבי ראשון לציון",
+      "isHapoel": false,
+      "points": 43,
+      "wins": 20,
+      "draws": 3,
+      "losses": 3,
+      "goalsFor": 89,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 2,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 43,
+      "wins": 21,
+      "draws": 1,
+      "losses": 4,
+      "goalsFor": 82,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 3,
+      "team": "מכבי נס ציונה",
+      "isHapoel": false,
+      "points": 41,
+      "wins": 19,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 69,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 4,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 40,
+      "wins": 19,
+      "draws": 2,
+      "losses": 5,
+      "goalsFor": 87,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 5,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 15,
+      "draws": 2,
+      "losses": 9,
+      "goalsFor": 54,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 6,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 31,
+      "wins": 13,
+      "draws": 5,
+      "losses": 8,
+      "goalsFor": 55,
+      "goalsAgainst": 49,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 7,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 11,
+      "draws": 4,
+      "losses": 11,
+      "goalsFor": 50,
+      "goalsAgainst": 48,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 8,
+      "team": "נשיונל ספורט קלוב יפו",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 11,
+      "draws": 3,
+      "losses": 12,
+      "goalsFor": 55,
+      "goalsAgainst": 55,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 9,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 22,
+      "wins": 9,
+      "draws": 4,
+      "losses": 13,
+      "goalsFor": 54,
+      "goalsAgainst": 67,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 10,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 8,
+      "draws": 5,
+      "losses": 13,
+      "goalsFor": 34,
+      "goalsAgainst": 50,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 11,
+      "team": "הפועל הרצליה",
+      "isHapoel": false,
+      "points": 11,
+      "wins": 4,
+      "draws": 3,
+      "losses": 19,
+      "goalsFor": 27,
+      "goalsAgainst": 66,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 12,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 10,
+      "wins": 5,
+      "draws": 2,
+      "losses": 19,
+      "goalsFor": 26,
+      "goalsAgainst": 71,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 13,
+      "team": "הכח תל אביב",
+      "isHapoel": false,
+      "points": 9,
+      "wins": 4,
+      "draws": 1,
+      "losses": 21,
+      "goalsFor": 27,
+      "goalsAgainst": 95,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1942,
+    "sourceId": "hpt-museum-season-1942",
+    "row": {
+      "position": 14,
+      "team": "דגל ציון תל אביב",
+      "isHapoel": false,
+      "points": 7,
+      "wins": 1,
+      "draws": 6,
+      "losses": 19,
+      "goalsFor": 11,
+      "goalsAgainst": 77,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 35,
+      "wins": 16,
+      "draws": 3,
+      "losses": 0,
+      "goalsFor": 73,
+      "goalsAgainst": 10,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 2,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 35,
+      "wins": 15,
+      "draws": 5,
+      "losses": 4,
+      "goalsFor": 59,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 3,
+      "team": "מכבי נס ציונה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 13,
+      "draws": 3,
+      "losses": 6,
+      "goalsFor": 61,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 4,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 13,
+      "draws": 2,
+      "losses": 6,
+      "goalsFor": 63,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 5,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 10,
+      "draws": 5,
+      "losses": 4,
+      "goalsFor": 44,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 6,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 11,
+      "draws": 1,
+      "losses": 0,
+      "goalsFor": 50,
+      "goalsAgainst": 12,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 7,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 23,
+      "wins": 10,
+      "draws": 3,
+      "losses": 9,
+      "goalsFor": 60,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 8,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 22,
+      "wins": 8,
+      "draws": 6,
+      "losses": 9,
+      "goalsFor": 56,
+      "goalsAgainst": 53,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 9,
+      "team": "הפועל רחובות",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 8,
+      "draws": 4,
+      "losses": 12,
+      "goalsFor": 30,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 10,
+      "team": "מכבי ראשון לציון",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 8,
+      "draws": 0,
+      "losses": 12,
+      "goalsFor": 41,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 11,
+      "team": "הכח תל אביב",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 4,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 22,
+      "goalsAgainst": 42,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 12,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 5,
+      "draws": 4,
+      "losses": 15,
+      "goalsFor": 33,
+      "goalsAgainst": 94,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 13,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 17,
+      "goalsFor": 23,
+      "goalsAgainst": 76,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1944,
+    "sourceId": "hpt-museum-season-1944",
+    "row": {
+      "position": 14,
+      "team": "הפועל הרצליה",
+      "isHapoel": false,
+      "points": 3,
+      "wins": 1,
+      "draws": 1,
+      "losses": 20,
+      "goalsFor": 17,
+      "goalsAgainst": 96,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 8,
+      "draws": 2,
+      "losses": 0,
+      "goalsFor": 28,
+      "goalsAgainst": 9,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 2,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 5,
+      "draws": 3,
+      "losses": 2,
+      "goalsFor": 29,
+      "goalsAgainst": 16,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 5,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 20,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 4,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 11,
+      "wins": 4,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 20,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 5,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 10,
+      "wins": 4,
+      "draws": 2,
+      "losses": 5,
+      "goalsFor": 19,
+      "goalsAgainst": 15,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 6,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 7,
+      "wins": 3,
+      "draws": 1,
+      "losses": 8,
+      "goalsFor": 9,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 7,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 6,
+      "wins": 3,
+      "draws": 0,
+      "losses": 9,
+      "goalsFor": 21,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1945,
+    "sourceId": "hpt-museum-season-1945",
+    "row": {
+      "position": 8,
+      "team": "הפועל הרצליה",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": "*"
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 1,
+      "team": "הפועל חדרה",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 2,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 3,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 4,
+      "team": "הפועל נתניה",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 5,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 6,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 7,
+      "team": "הפועל רחובות",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 8,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1946,
+    "sourceId": "hpt-museum-season-1946",
+    "row": {
+      "position": 9,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 46,
+      "wins": 22,
+      "draws": 2,
+      "losses": 2,
+      "goalsFor": 116,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 2,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 43,
+      "wins": 20,
+      "draws": 3,
+      "losses": 3,
+      "goalsFor": 90,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 3,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 37,
+      "wins": 17,
+      "draws": 3,
+      "losses": 6,
+      "goalsFor": 84,
+      "goalsAgainst": 45,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 4,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 34,
+      "wins": 14,
+      "draws": 6,
+      "losses": 6,
+      "goalsFor": 55,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 5,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 30,
+      "wins": 13,
+      "draws": 4,
+      "losses": 9,
+      "goalsFor": 55,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 6,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 12,
+      "draws": 6,
+      "losses": 8,
+      "goalsFor": 62,
+      "goalsAgainst": 56,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 7,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 10,
+      "draws": 7,
+      "losses": 9,
+      "goalsFor": 55,
+      "goalsAgainst": 58,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 8,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 9,
+      "draws": 7,
+      "losses": 10,
+      "goalsFor": 57,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 9,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 9,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 47,
+      "goalsAgainst": 62,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 10,
+      "team": "מכבי ראשון לציון",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 6,
+      "draws": 7,
+      "losses": 13,
+      "goalsFor": 39,
+      "goalsAgainst": 67,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 11,
+      "team": "מכבי נס ציונה",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 7,
+      "draws": 4,
+      "losses": 15,
+      "goalsFor": 52,
+      "goalsAgainst": 68,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 12,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 5,
+      "draws": 6,
+      "losses": 15,
+      "goalsFor": 27,
+      "goalsAgainst": 67,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 13,
+      "team": "הפועל רחובות",
+      "isHapoel": false,
+      "points": 12,
+      "wins": 4,
+      "draws": 4,
+      "losses": 18,
+      "goalsFor": 23,
+      "goalsAgainst": 67,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1947,
+    "sourceId": "hpt-museum-season-1947",
+    "row": {
+      "position": 14,
+      "team": "הפועל הרצליה",
+      "isHapoel": false,
+      "points": 1,
+      "wins": 0,
+      "draws": 1,
+      "losses": 25,
+      "goalsFor": 12,
+      "goalsAgainst": 100,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 43,
+      "wins": 21,
+      "draws": 1,
+      "losses": 2,
+      "goalsFor": 103,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 2,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 37,
+      "wins": 17,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 59,
+      "goalsAgainst": 12,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 36,
+      "wins": 16,
+      "draws": 4,
+      "losses": 4,
+      "goalsFor": 53,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 4,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 33,
+      "wins": 15,
+      "draws": 3,
+      "losses": 5,
+      "goalsFor": 62,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 5,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 13,
+      "draws": 5,
+      "losses": 6,
+      "goalsFor": 91,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 6,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 12,
+      "draws": 2,
+      "losses": 9,
+      "goalsFor": 57,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 7,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 12,
+      "draws": 1,
+      "losses": 11,
+      "goalsFor": 60,
+      "goalsAgainst": 49,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 8,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 11,
+      "draws": 2,
+      "losses": 11,
+      "goalsFor": 53,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 9,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 7,
+      "draws": 3,
+      "losses": 14,
+      "goalsFor": 42,
+      "goalsAgainst": 73,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 10,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 8,
+      "draws": 0,
+      "losses": 16,
+      "goalsFor": 47,
+      "goalsAgainst": 62,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 11,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 6,
+      "draws": 2,
+      "losses": 16,
+      "goalsFor": 28,
+      "goalsAgainst": 62,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 12,
+      "team": "מכבי ראשון לציון",
+      "isHapoel": false,
+      "points": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 19,
+      "goalsFor": 21,
+      "goalsAgainst": 111,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1950,
+    "sourceId": "hpt-museum-season-1950",
+    "row": {
+      "position": 13,
+      "team": "מכבי נס ציונה",
+      "isHapoel": false,
+      "points": 0,
+      "wins": 0,
+      "draws": 0,
+      "losses": 24,
+      "goalsFor": 7,
+      "goalsAgainst": 95,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 38,
+      "wins": 18,
+      "draws": 2,
+      "losses": 2,
+      "goalsFor": 89,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 2,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 12,
+      "draws": 6,
+      "losses": 4,
+      "goalsFor": 65,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 14,
+      "draws": 1,
+      "losses": 7,
+      "goalsFor": 46,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 4,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 27,
+      "wins": 10,
+      "draws": 7,
+      "losses": 5,
+      "goalsFor": 38,
+      "goalsAgainst": 20,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 5,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 9,
+      "draws": 7,
+      "losses": 6,
+      "goalsFor": 31,
+      "goalsAgainst": 22,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 6,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 8,
+      "draws": 7,
+      "losses": 7,
+      "goalsFor": 35,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 7,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 7,
+      "draws": 7,
+      "losses": 8,
+      "goalsFor": 39,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 8,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 7,
+      "draws": 3,
+      "losses": 12,
+      "goalsFor": 37,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 9,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 36,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 10,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 33,
+      "goalsAgainst": 53,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 11,
+      "team": "הפועל ראשון לציון",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 5,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 22,
+      "goalsAgainst": 51,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1952,
+    "sourceId": "hpt-museum-season-1952",
+    "row": {
+      "position": 12,
+      "team": "מכבי ראשון לציון",
+      "isHapoel": false,
+      "points": 4,
+      "wins": 1,
+      "draws": 2,
+      "losses": 19,
+      "goalsFor": 13,
+      "goalsAgainst": 100,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 38,
+      "wins": 16,
+      "draws": 6,
+      "losses": 0,
+      "goalsFor": 59,
+      "goalsAgainst": 11,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 2,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 13,
+      "draws": 6,
+      "losses": 3,
+      "goalsFor": 51,
+      "goalsAgainst": 21,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 3,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 27,
+      "wins": 12,
+      "draws": 3,
+      "losses": 7,
+      "goalsFor": 55,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 4,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 9,
+      "draws": 7,
+      "losses": 6,
+      "goalsFor": 35,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 5,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 6,
+      "draws": 9,
+      "losses": 7,
+      "goalsFor": 30,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 6,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 8,
+      "draws": 4,
+      "losses": 10,
+      "goalsFor": 31,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 7,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 7,
+      "draws": 5,
+      "losses": 10,
+      "goalsFor": 23,
+      "goalsAgainst": 36,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 8,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 8,
+      "draws": 3,
+      "losses": 11,
+      "goalsFor": 25,
+      "goalsAgainst": 52,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 9,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 7,
+      "draws": 4,
+      "losses": 11,
+      "goalsFor": 26,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 10,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 8,
+      "draws": 1,
+      "losses": 13,
+      "goalsFor": 27,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 11,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 7,
+      "draws": 3,
+      "losses": 12,
+      "goalsFor": 23,
+      "goalsAgainst": 42,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1954,
+    "sourceId": "hpt-museum-season-1954",
+    "row": {
+      "position": 12,
+      "team": "הפועל בלפוריה",
+      "isHapoel": false,
+      "points": 11,
+      "wins": 4,
+      "draws": 3,
+      "losses": 15,
+      "goalsFor": 20,
+      "goalsAgainst": 57,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 1,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 40,
+      "wins": 18,
+      "draws": 4,
+      "losses": 4,
+      "goalsFor": 68,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 2,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 38,
+      "wins": 17,
+      "draws": 4,
+      "losses": 5,
+      "goalsFor": 84,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 3,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 12,
+      "draws": 9,
+      "losses": 5,
+      "goalsFor": 49,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 4,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 13,
+      "draws": 7,
+      "losses": 6,
+      "goalsFor": 54,
+      "goalsAgainst": 43,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 5,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 12,
+      "draws": 5,
+      "losses": 9,
+      "goalsFor": 64,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 6,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 11,
+      "draws": 6,
+      "losses": 9,
+      "goalsFor": 54,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 7,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 11,
+      "draws": 7,
+      "losses": 8,
+      "goalsFor": 37,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 8,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 9,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 49,
+      "goalsAgainst": 48,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 9,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 10,
+      "draws": 4,
+      "losses": 12,
+      "goalsFor": 40,
+      "goalsAgainst": 55,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 10,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 10,
+      "draws": 3,
+      "losses": 13,
+      "goalsFor": 35,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 11,
+      "team": "בית\"ר ירושלים",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 8,
+      "draws": 5,
+      "losses": 13,
+      "goalsFor": 37,
+      "goalsAgainst": 59,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 12,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 6,
+      "draws": 6,
+      "losses": 14,
+      "goalsFor": 38,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 13,
+      "team": "הפועל חדרה",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 7,
+      "draws": 2,
+      "losses": 17,
+      "goalsFor": 36,
+      "goalsAgainst": 53,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1955,
+    "sourceId": "hpt-museum-season-1955",
+    "row": {
+      "position": 14,
+      "team": "הפועל בלפוריה",
+      "isHapoel": false,
+      "points": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 21,
+      "goalsFor": 32,
+      "goalsAgainst": 127,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 13,
+      "draws": 6,
+      "losses": 3,
+      "goalsFor": 47,
+      "goalsAgainst": 16,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 29,
+      "wins": 12,
+      "draws": 5,
+      "losses": 5,
+      "goalsFor": 54,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 3,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 12,
+      "draws": 5,
+      "losses": 5,
+      "goalsFor": 49,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 4,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 10,
+      "draws": 7,
+      "losses": 5,
+      "goalsFor": 45,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 5,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 11,
+      "draws": 3,
+      "losses": 8,
+      "goalsFor": 51,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 6,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 22,
+      "wins": 9,
+      "draws": 4,
+      "losses": 9,
+      "goalsFor": 32,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 7,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 10,
+      "draws": 0,
+      "losses": 12,
+      "goalsFor": 42,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 8,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 9,
+      "draws": 2,
+      "losses": 11,
+      "goalsFor": 31,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 9,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 9,
+      "draws": 0,
+      "losses": 13,
+      "goalsFor": 28,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 10,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 32,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 11,
+      "team": "מכבי רחובות",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 6,
+      "draws": 1,
+      "losses": 15,
+      "goalsFor": 25,
+      "goalsAgainst": 64,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1956,
+    "sourceId": "hpt-museum-season-1956",
+    "row": {
+      "position": 12,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 12,
+      "wins": 3,
+      "draws": 6,
+      "losses": 13,
+      "goalsFor": 20,
+      "goalsAgainst": 48,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 13,
+      "draws": 2,
+      "losses": 3,
+      "goalsFor": 41,
+      "goalsAgainst": 19,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 24,
+      "wins": 10,
+      "draws": 4,
+      "losses": 4,
+      "goalsFor": 42,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 3,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 10,
+      "draws": 3,
+      "losses": 5,
+      "goalsFor": 36,
+      "goalsAgainst": 20,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 4,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 8,
+      "draws": 5,
+      "losses": 5,
+      "goalsFor": 27,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 5,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 8,
+      "draws": 3,
+      "losses": 7,
+      "goalsFor": 34,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 6,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 15,
+      "wins": 6,
+      "draws": 3,
+      "losses": 9,
+      "goalsFor": 29,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 7,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 5,
+      "draws": 4,
+      "losses": 9,
+      "goalsFor": 2,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 8,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 7,
+      "draws": 0,
+      "losses": 11,
+      "goalsFor": 22,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 9,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 12,
+      "wins": 4,
+      "draws": 4,
+      "losses": 10,
+      "goalsFor": 23,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1957,
+    "sourceId": "hpt-museum-season-1957",
+    "row": {
+      "position": 10,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 10,
+      "wins": 4,
+      "draws": 2,
+      "losses": 12,
+      "goalsFor": 19,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 35,
+      "wins": 13,
+      "draws": 9,
+      "losses": 0,
+      "goalsFor": 50,
+      "goalsAgainst": 12,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 34,
+      "wins": 15,
+      "draws": 4,
+      "losses": 3,
+      "goalsFor": 50,
+      "goalsAgainst": 21,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 3,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 12,
+      "draws": 3,
+      "losses": 7,
+      "goalsFor": 42,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 4,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 5,
+      "draws": 11,
+      "losses": 6,
+      "goalsFor": 21,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 5,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 6,
+      "draws": 8,
+      "losses": 8,
+      "goalsFor": 29,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 6,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 6,
+      "draws": 8,
+      "losses": 8,
+      "goalsFor": 21,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 7,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 7,
+      "draws": 5,
+      "losses": 10,
+      "goalsFor": 33,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 8,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 8,
+      "draws": 3,
+      "losses": 11,
+      "goalsFor": 24,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 9,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 8,
+      "draws": 3,
+      "losses": 11,
+      "goalsFor": 30,
+      "goalsAgainst": 51,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 10,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 6,
+      "draws": 6,
+      "losses": 10,
+      "goalsFor": 20,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 11,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 7,
+      "draws": 3,
+      "losses": 12,
+      "goalsFor": 30,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1958,
+    "sourceId": "hpt-museum-season-1958",
+    "row": {
+      "position": 12,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 15,
+      "wins": 6,
+      "draws": 3,
+      "losses": 13,
+      "goalsFor": 30,
+      "goalsAgainst": 45,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 1,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 33,
+      "wins": 15,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 49,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 2,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 13,
+      "draws": 5,
+      "losses": 4,
+      "goalsFor": 46,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 3,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 13,
+      "draws": 4,
+      "losses": 5,
+      "goalsFor": 38,
+      "goalsAgainst": 19,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 4,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 14,
+      "draws": 1,
+      "losses": 7,
+      "goalsFor": 47,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 5,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 10,
+      "draws": 4,
+      "losses": 8,
+      "goalsFor": 33,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 6,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 10,
+      "draws": 3,
+      "losses": 9,
+      "goalsFor": 27,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 7,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 6,
+      "draws": 7,
+      "losses": 9,
+      "goalsFor": 29,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 8,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 6,
+      "draws": 7,
+      "losses": 9,
+      "goalsFor": 26,
+      "goalsAgainst": 36,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 9,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 7,
+      "draws": 5,
+      "losses": 10,
+      "goalsFor": 22,
+      "goalsAgainst": 36,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 10,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 5,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 17,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 11,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 2,
+      "draws": 9,
+      "losses": 11,
+      "goalsFor": 20,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1959,
+    "sourceId": "hpt-museum-season-1959",
+    "row": {
+      "position": 12,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 16,
+      "goalsFor": 21,
+      "goalsAgainst": 50,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 1,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 31,
+      "wins": 14,
+      "draws": 3,
+      "losses": 5,
+      "goalsFor": 65,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 2,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 12,
+      "draws": 6,
+      "losses": 4,
+      "goalsFor": 52,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 10,
+      "draws": 6,
+      "losses": 6,
+      "goalsFor": 46,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 4,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 9,
+      "draws": 7,
+      "losses": 6,
+      "goalsFor": 28,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 5,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 7,
+      "draws": 10,
+      "losses": 5,
+      "goalsFor": 42,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 6,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 10,
+      "draws": 4,
+      "losses": 8,
+      "goalsFor": 26,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 7,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 9,
+      "draws": 1,
+      "losses": 12,
+      "goalsFor": 34,
+      "goalsAgainst": 51,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 8,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 8,
+      "draws": 3,
+      "losses": 11,
+      "goalsFor": 30,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 9,
+      "team": "בית\"ר ת\"א",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 14,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 10,
+      "team": "מכבי פ\"ת",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 25,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 11,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 5,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 23,
+      "goalsAgainst": 36,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1960,
+    "sourceId": "hpt-museum-season-1960",
+    "row": {
+      "position": 12,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 7,
+      "draws": 2,
+      "losses": 13,
+      "goalsFor": 31,
+      "goalsAgainst": 50,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 1,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 36,
+      "wins": 16,
+      "draws": 4,
+      "losses": 2,
+      "goalsFor": 48,
+      "goalsAgainst": 15,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 2,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 14,
+      "draws": 2,
+      "losses": 6,
+      "goalsFor": 38,
+      "goalsAgainst": 20,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 12,
+      "draws": 5,
+      "losses": 5,
+      "goalsFor": 44,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 4,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 12,
+      "draws": 2,
+      "losses": 8,
+      "goalsFor": 34,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 5,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 11,
+      "draws": 3,
+      "losses": 8,
+      "goalsFor": 40,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 6,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 10,
+      "draws": 3,
+      "losses": 9,
+      "goalsFor": 27,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 7,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 9,
+      "draws": 3,
+      "losses": 10,
+      "goalsFor": 29,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 8,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 6,
+      "draws": 8,
+      "losses": 8,
+      "goalsFor": 18,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 9,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 6,
+      "draws": 4,
+      "losses": 12,
+      "goalsFor": 23,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 10,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 14,
+      "wins": 6,
+      "draws": 2,
+      "losses": 14,
+      "goalsFor": 19,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 11,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 4,
+      "draws": 5,
+      "losses": 13,
+      "goalsFor": 20,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1961,
+    "sourceId": "hpt-museum-season-1961",
+    "row": {
+      "position": 12,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 11,
+      "wins": 5,
+      "draws": 1,
+      "losses": 16,
+      "goalsFor": 17,
+      "goalsAgainst": 50,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 1,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 26,
+      "wins": 11,
+      "draws": 4,
+      "losses": 6,
+      "goalsFor": 32,
+      "goalsAgainst": 19,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 2,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 10,
+      "draws": 6,
+      "losses": 6,
+      "goalsFor": 33,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 3,
+      "team": "הפועל טבריה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 11,
+      "draws": 3,
+      "losses": 8,
+      "goalsFor": 43,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 4,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 11,
+      "draws": 3,
+      "losses": 8,
+      "goalsFor": 45,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 5,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 9,
+      "draws": 6,
+      "losses": 6,
+      "goalsFor": 32,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 6,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 8,
+      "draws": 7,
+      "losses": 7,
+      "goalsFor": 26,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 7,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 10,
+      "draws": 3,
+      "losses": 9,
+      "goalsFor": 31,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 8,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 22,
+      "wins": 8,
+      "draws": 6,
+      "losses": 8,
+      "goalsFor": 34,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 9,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 22,
+      "wins": 8,
+      "draws": 6,
+      "losses": 8,
+      "goalsFor": 24,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 10,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 5,
+      "draws": 7,
+      "losses": 10,
+      "goalsFor": 22,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 11,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 5,
+      "draws": 6,
+      "losses": 11,
+      "goalsFor": 14,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1962,
+    "sourceId": "hpt-museum-season-1962",
+    "row": {
+      "position": 12,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 13,
+      "wins": 4,
+      "draws": 5,
+      "losses": 13,
+      "goalsFor": 23,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 1,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 32,
+      "wins": 13,
+      "draws": 6,
+      "losses": 3,
+      "goalsFor": 38,
+      "goalsAgainst": 17,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 2,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 9,
+      "draws": 9,
+      "losses": 4,
+      "goalsFor": 31,
+      "goalsAgainst": 16,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 3,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 10,
+      "draws": 5,
+      "losses": 7,
+      "goalsFor": 35,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 4,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 9,
+      "draws": 6,
+      "losses": 7,
+      "goalsFor": 32,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 5,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 22,
+      "wins": 9,
+      "draws": 4,
+      "losses": 9,
+      "goalsFor": 30,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 6,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 9,
+      "draws": 3,
+      "losses": 10,
+      "goalsFor": 21,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 7,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 21,
+      "wins": 7,
+      "draws": 7,
+      "losses": 8,
+      "goalsFor": 22,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 8,
+      "team": "הפועל טבריה",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 8,
+      "draws": 4,
+      "losses": 10,
+      "goalsFor": 26,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 9,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 7,
+      "draws": 5,
+      "losses": 10,
+      "goalsFor": 36,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 10,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 5,
+      "draws": 8,
+      "losses": 9,
+      "goalsFor": 20,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 11,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 20,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1963,
+    "sourceId": "hpt-museum-season-1963",
+    "row": {
+      "position": 12,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 17,
+      "wins": 6,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 19,
+      "goalsAgainst": 30,
+      "minus": 2,
+      "remark": "*"
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 1,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 40,
+      "wins": 17,
+      "draws": 6,
+      "losses": 5,
+      "goalsFor": 52,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 2,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 39,
+      "wins": 15,
+      "draws": 9,
+      "losses": 4,
+      "goalsFor": 51,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 3,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 38,
+      "wins": 15,
+      "draws": 8,
+      "losses": 5,
+      "goalsFor": 50,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 4,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 34,
+      "wins": 12,
+      "draws": 10,
+      "losses": 6,
+      "goalsFor": 48,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 5,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 13,
+      "draws": 5,
+      "losses": 10,
+      "goalsFor": 40,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 6,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 11,
+      "draws": 7,
+      "losses": 10,
+      "goalsFor": 41,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 7,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 12,
+      "draws": 4,
+      "losses": 12,
+      "goalsFor": 46,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 8,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 11,
+      "draws": 5,
+      "losses": 12,
+      "goalsFor": 36,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 9,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 7,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 44,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 10,
+      "team": "הפועל טבריה",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 10,
+      "draws": 4,
+      "losses": 14,
+      "goalsFor": 41,
+      "goalsAgainst": 52,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 11,
+      "team": "מכבי שעריים",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 10,
+      "draws": 4,
+      "losses": 14,
+      "goalsFor": 29,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 12,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 8,
+      "draws": 7,
+      "losses": 13,
+      "goalsFor": 36,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 13,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 8,
+      "draws": 7,
+      "losses": 13,
+      "goalsFor": 31,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 14,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 6,
+      "draws": 8,
+      "losses": 14,
+      "goalsFor": 27,
+      "goalsAgainst": 46,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1964,
+    "sourceId": "hpt-museum-season-1964",
+    "row": {
+      "position": 15,
+      "team": "הפועל לוד",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 5,
+      "draws": 6,
+      "losses": 17,
+      "goalsFor": 17,
+      "goalsAgainst": 43,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 1,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 37,
+      "wins": 13,
+      "draws": 11,
+      "losses": 6,
+      "goalsFor": 42,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 37,
+      "wins": 15,
+      "draws": 7,
+      "losses": 8,
+      "goalsFor": 54,
+      "goalsAgainst": 42,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 3,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 36,
+      "wins": 14,
+      "draws": 8,
+      "losses": 8,
+      "goalsFor": 48,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 4,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 14,
+      "draws": 5,
+      "losses": 11,
+      "goalsFor": 46,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 5,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 12,
+      "draws": 8,
+      "losses": 10,
+      "goalsFor": 48,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 6,
+      "team": "מכבי שעריים",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 12,
+      "draws": 7,
+      "losses": 11,
+      "goalsFor": 28,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 7,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 14,
+      "draws": 3,
+      "losses": 13,
+      "goalsFor": 46,
+      "goalsAgainst": 56,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 8,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 12,
+      "draws": 6,
+      "losses": 12,
+      "goalsFor": 34,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 9,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 9,
+      "draws": 12,
+      "losses": 9,
+      "goalsFor": 38,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 10,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 10,
+      "draws": 9,
+      "losses": 11,
+      "goalsFor": 39,
+      "goalsAgainst": 42,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 11,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 9,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 48,
+      "goalsAgainst": 48,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 12,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 11,
+      "draws": 6,
+      "losses": 13,
+      "goalsFor": 44,
+      "goalsAgainst": 49,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 13,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 9,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 32,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 14,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 10,
+      "draws": 7,
+      "losses": 13,
+      "goalsFor": 33,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 15,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 24,
+      "wins": 8,
+      "draws": 8,
+      "losses": 14,
+      "goalsFor": 42,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1965,
+    "sourceId": "hpt-museum-season-1965",
+    "row": {
+      "position": 16,
+      "team": "הפועל טבריה",
+      "isHapoel": false,
+      "points": 19,
+      "wins": 7,
+      "draws": 5,
+      "losses": 18,
+      "goalsFor": 34,
+      "goalsAgainst": 69,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 38,
+      "wins": 12,
+      "draws": 14,
+      "losses": 4,
+      "goalsFor": 36,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 35,
+      "wins": 11,
+      "draws": 13,
+      "losses": 6,
+      "goalsFor": 42,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 3,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 34,
+      "wins": 14,
+      "draws": 6,
+      "losses": 10,
+      "goalsFor": 45,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 4,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 34,
+      "wins": 13,
+      "draws": 8,
+      "losses": 9,
+      "goalsFor": 49,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 5,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 34,
+      "wins": 12,
+      "draws": 10,
+      "losses": 8,
+      "goalsFor": 40,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 6,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 12,
+      "draws": 8,
+      "losses": 10,
+      "goalsFor": 37,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 7,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 12,
+      "draws": 8,
+      "losses": 10,
+      "goalsFor": 31,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 8,
+      "team": "הפועל מחנה יהודה",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 11,
+      "draws": 9,
+      "losses": 10,
+      "goalsFor": 36,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 9,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 9,
+      "draws": 12,
+      "losses": 9,
+      "goalsFor": 37,
+      "goalsAgainst": 34,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 10,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 9,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 31,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 11,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 9,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 33,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 12,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 9,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 29,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 13,
+      "team": "הפועל באר שבע",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 9,
+      "draws": 9,
+      "losses": 12,
+      "goalsFor": 21,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 14,
+      "team": "מכבי שעריים",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 10,
+      "draws": 7,
+      "losses": 13,
+      "goalsFor": 33,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 15,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 7,
+      "draws": 9,
+      "losses": 14,
+      "goalsFor": 26,
+      "goalsAgainst": 43,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1966,
+    "sourceId": "hpt-museum-season-1966",
+    "row": {
+      "position": 16,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 20,
+      "wins": 5,
+      "draws": 10,
+      "losses": 15,
+      "goalsFor": 21,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 78,
+      "wins": 30,
+      "draws": 18,
+      "losses": 12,
+      "goalsFor": 88,
+      "goalsAgainst": 50,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 2,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 75,
+      "wins": 27,
+      "draws": 21,
+      "losses": 12,
+      "goalsFor": 72,
+      "goalsAgainst": 48,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 70,
+      "wins": 27,
+      "draws": 16,
+      "losses": 17,
+      "goalsFor": 72,
+      "goalsAgainst": 47,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 4,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 69,
+      "wins": 24,
+      "draws": 21,
+      "losses": 15,
+      "goalsFor": 80,
+      "goalsAgainst": 55,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 5,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 67,
+      "wins": 26,
+      "draws": 15,
+      "losses": 19,
+      "goalsFor": 55,
+      "goalsAgainst": 43,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 6,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 66,
+      "wins": 25,
+      "draws": 16,
+      "losses": 19,
+      "goalsFor": 66,
+      "goalsAgainst": 55,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 7,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 64,
+      "wins": 20,
+      "draws": 24,
+      "losses": 16,
+      "goalsFor": 54,
+      "goalsAgainst": 49,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 8,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 60,
+      "wins": 20,
+      "draws": 20,
+      "losses": 20,
+      "goalsFor": 82,
+      "goalsAgainst": 68,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 9,
+      "team": "הפועל באר שבע",
+      "isHapoel": false,
+      "points": 60,
+      "wins": 21,
+      "draws": 18,
+      "losses": 21,
+      "goalsFor": 71,
+      "goalsAgainst": 62,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 10,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 60,
+      "wins": 22,
+      "draws": 16,
+      "losses": 22,
+      "goalsFor": 66,
+      "goalsAgainst": 78,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 11,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 54,
+      "wins": 15,
+      "draws": 24,
+      "losses": 21,
+      "goalsFor": 65,
+      "goalsAgainst": 69,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 12,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 53,
+      "wins": 17,
+      "draws": 19,
+      "losses": 24,
+      "goalsFor": 50,
+      "goalsAgainst": 59,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 13,
+      "team": "מכבי שעריים",
+      "isHapoel": false,
+      "points": 52,
+      "wins": 14,
+      "draws": 24,
+      "losses": 22,
+      "goalsFor": 49,
+      "goalsAgainst": 72,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 14,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 51,
+      "wins": 14,
+      "draws": 23,
+      "losses": 23,
+      "goalsFor": 65,
+      "goalsAgainst": 80,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 15,
+      "team": "הפועל מחנה יהודה",
+      "isHapoel": false,
+      "points": 49,
+      "wins": 13,
+      "draws": 23,
+      "losses": 24,
+      "goalsFor": 51,
+      "goalsAgainst": 82,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1968,
+    "sourceId": "hpt-museum-season-1968",
+    "row": {
+      "position": 16,
+      "team": "ס.כ נס ציונה",
+      "isHapoel": false,
+      "points": 32,
+      "wins": 8,
+      "draws": 16,
+      "losses": 36,
+      "goalsFor": 54,
+      "goalsAgainst": 123,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 1,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 44,
+      "wins": 19,
+      "draws": 6,
+      "losses": 5,
+      "goalsFor": 55,
+      "goalsAgainst": 21,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 2,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 43,
+      "wins": 18,
+      "draws": 7,
+      "losses": 5,
+      "goalsFor": 45,
+      "goalsAgainst": 23,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 3,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 41,
+      "wins": 16,
+      "draws": 9,
+      "losses": 5,
+      "goalsFor": 71,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 4,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 37,
+      "wins": 11,
+      "draws": 15,
+      "losses": 4,
+      "goalsFor": 34,
+      "goalsAgainst": 16,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 5,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 13,
+      "draws": 7,
+      "losses": 10,
+      "goalsFor": 36,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 6,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 10,
+      "draws": 11,
+      "losses": 9,
+      "goalsFor": 39,
+      "goalsAgainst": 31,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 7,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 9,
+      "draws": 10,
+      "losses": 11,
+      "goalsFor": 34,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 8,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 11,
+      "draws": 5,
+      "losses": 14,
+      "goalsFor": 36,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 9,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 26,
+      "wins": 8,
+      "draws": 10,
+      "losses": 12,
+      "goalsFor": 27,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 10,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 8,
+      "draws": 10,
+      "losses": 12,
+      "goalsFor": 30,
+      "goalsAgainst": 40,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 11,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 10,
+      "draws": 6,
+      "losses": 14,
+      "goalsFor": 28,
+      "goalsAgainst": 41,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 12,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 8,
+      "draws": 10,
+      "losses": 12,
+      "goalsFor": 29,
+      "goalsAgainst": 45,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 13,
+      "team": "בית\"ר ירושלים",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 6,
+      "draws": 14,
+      "losses": 10,
+      "goalsFor": 24,
+      "goalsAgainst": 42,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 14,
+      "team": "הפועל באר שבע",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 9,
+      "draws": 7,
+      "losses": 14,
+      "goalsFor": 37,
+      "goalsAgainst": 48,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 15,
+      "team": "מכבי שעריים",
+      "isHapoel": false,
+      "points": 23,
+      "wins": 7,
+      "draws": 9,
+      "losses": 14,
+      "goalsFor": 32,
+      "goalsAgainst": 44,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1969,
+    "sourceId": "hpt-museum-season-1969",
+    "row": {
+      "position": 16,
+      "team": "הפועל רמת גן",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 5,
+      "draws": 8,
+      "losses": 17,
+      "goalsFor": 11,
+      "goalsAgainst": 42,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 1,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 39,
+      "wins": 15,
+      "draws": 9,
+      "losses": 6,
+      "goalsFor": 51,
+      "goalsAgainst": 21,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 2,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 39,
+      "wins": 13,
+      "draws": 13,
+      "losses": 4,
+      "goalsFor": 48,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 3,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 10,
+      "draws": 13,
+      "losses": 7,
+      "goalsFor": 29,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 4,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 10,
+      "draws": 11,
+      "losses": 9,
+      "goalsFor": 35,
+      "goalsAgainst": 27,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 5,
+      "team": "בית\"ר ירושלים",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 10,
+      "draws": 10,
+      "losses": 10,
+      "goalsFor": 29,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 6,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 10,
+      "draws": 10,
+      "losses": 10,
+      "goalsFor": 34,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 7,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 30,
+      "wins": 8,
+      "draws": 14,
+      "losses": 8,
+      "goalsFor": 25,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 8,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 8,
+      "draws": 13,
+      "losses": 9,
+      "goalsFor": 28,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 9,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 6,
+      "draws": 17,
+      "losses": 7,
+      "goalsFor": 21,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 10,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 7,
+      "draws": 14,
+      "losses": 9,
+      "goalsFor": 19,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 11,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 7,
+      "draws": 14,
+      "losses": 9,
+      "goalsFor": 29,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 12,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 7,
+      "draws": 14,
+      "losses": 9,
+      "goalsFor": 32,
+      "goalsAgainst": 37,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 13,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 28,
+      "wins": 7,
+      "draws": 14,
+      "losses": 9,
+      "goalsFor": 27,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 14,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 27,
+      "wins": 6,
+      "draws": 15,
+      "losses": 9,
+      "goalsFor": 24,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 15,
+      "team": "מכבי יפו",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 7,
+      "draws": 12,
+      "losses": 11,
+      "goalsFor": 17,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1970,
+    "sourceId": "hpt-museum-season-1970",
+    "row": {
+      "position": 16,
+      "team": "הפועל באר שבע",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 10,
+      "draws": 5,
+      "losses": 15,
+      "goalsFor": 24,
+      "goalsAgainst": 49,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 1,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 47,
+      "wins": 20,
+      "draws": 7,
+      "losses": 3,
+      "goalsFor": 44,
+      "goalsAgainst": 18,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 2,
+      "team": "שמשון תל אביב",
+      "isHapoel": false,
+      "points": 36,
+      "wins": 12,
+      "draws": 12,
+      "losses": 6,
+      "goalsFor": 31,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 3,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 35,
+      "wins": 15,
+      "draws": 5,
+      "losses": 10,
+      "goalsFor": 35,
+      "goalsAgainst": 30,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 4,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 34,
+      "wins": 11,
+      "draws": 12,
+      "losses": 7,
+      "goalsFor": 26,
+      "goalsAgainst": 17,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 5,
+      "team": "בית\"ר תל אביב",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 13,
+      "draws": 7,
+      "losses": 10,
+      "goalsFor": 26,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 6,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 31,
+      "wins": 9,
+      "draws": 13,
+      "losses": 8,
+      "goalsFor": 32,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 7,
+      "team": "הפועל ירושלים",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 10,
+      "draws": 10,
+      "losses": 10,
+      "goalsFor": 39,
+      "goalsAgainst": 32,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 8,
+      "team": "הכח רמת גן",
+      "isHapoel": false,
+      "points": 30,
+      "wins": 9,
+      "draws": 12,
+      "losses": 9,
+      "goalsFor": 26,
+      "goalsAgainst": 25,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 9,
+      "team": "הפועל כפר סבא",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 8,
+      "draws": 13,
+      "losses": 9,
+      "goalsFor": 30,
+      "goalsAgainst": 24,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 10,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 29,
+      "wins": 8,
+      "draws": 13,
+      "losses": 9,
+      "goalsFor": 33,
+      "goalsAgainst": 35,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 11,
+      "team": "בית\"ר ירושלים",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 8,
+      "draws": 10,
+      "losses": 12,
+      "goalsFor": 35,
+      "goalsAgainst": 36,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 12,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 6,
+      "draws": 14,
+      "losses": 10,
+      "goalsFor": 20,
+      "goalsAgainst": 26,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 13,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 26,
+      "wins": 7,
+      "draws": 12,
+      "losses": 11,
+      "goalsFor": 19,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 14,
+      "team": "הפועל חדרה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 6,
+      "draws": 13,
+      "losses": 11,
+      "goalsFor": 21,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 15,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 25,
+      "wins": 8,
+      "draws": 9,
+      "losses": 13,
+      "goalsFor": 30,
+      "goalsAgainst": 39,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 1971,
+    "sourceId": "hpt-museum-season-1971",
+    "row": {
+      "position": 16,
+      "team": "הפועל חולון",
+      "isHapoel": false,
+      "points": 18,
+      "wins": 4,
+      "draws": 10,
+      "losses": 16,
+      "goalsFor": 20,
+      "goalsAgainst": 54,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 1,
+      "team": "מכבי חיפה",
+      "isHapoel": false,
+      "points": 82,
+      "wins": 24,
+      "draws": 10,
+      "losses": 4,
+      "goalsFor": 68,
+      "goalsAgainst": 28,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 2,
+      "team": "הפועל תל אביב",
+      "isHapoel": false,
+      "points": 75,
+      "wins": 21,
+      "draws": 12,
+      "losses": 5,
+      "goalsFor": 55,
+      "goalsAgainst": 29,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 3,
+      "team": "הפועל חיפה",
+      "isHapoel": false,
+      "points": 71,
+      "wins": 20,
+      "draws": 11,
+      "losses": 7,
+      "goalsFor": 59,
+      "goalsAgainst": 38,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 4,
+      "team": "מכבי תל אביב",
+      "isHapoel": false,
+      "points": 68,
+      "wins": 19,
+      "draws": 11,
+      "losses": 8,
+      "goalsFor": 73,
+      "goalsAgainst": 33,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 5,
+      "team": "בית\"ר ירושלים",
+      "isHapoel": false,
+      "points": 62,
+      "wins": 18,
+      "draws": 9,
+      "losses": 11,
+      "goalsFor": 49,
+      "goalsAgainst": 42,
+      "minus": 1,
+      "remark": "*"
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 6,
+      "team": "הפועל פתח תקוה",
+      "isHapoel": true,
+      "points": 46,
+      "wins": 12,
+      "draws": 10,
+      "losses": 16,
+      "goalsFor": 58,
+      "goalsAgainst": 66,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 7,
+      "team": "מכבי נתניה",
+      "isHapoel": false,
+      "points": 49,
+      "wins": 13,
+      "draws": 10,
+      "losses": 15,
+      "goalsFor": 63,
+      "goalsAgainst": 61,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 8,
+      "team": "מכבי פתח תקוה",
+      "isHapoel": false,
+      "points": 47,
+      "wins": 13,
+      "draws": 8,
+      "losses": 17,
+      "goalsFor": 43,
+      "goalsAgainst": 52,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 9,
+      "team": "עירוני ראשון לציון",
+      "isHapoel": false,
+      "points": 41,
+      "wins": 11,
+      "draws": 8,
+      "losses": 19,
+      "goalsFor": 41,
+      "goalsAgainst": 61,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 10,
+      "team": "מ.ס אשדוד",
+      "isHapoel": false,
+      "points": 38,
+      "wins": 10,
+      "draws": 8,
+      "losses": 20,
+      "goalsFor": 44,
+      "goalsAgainst": 57,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 11,
+      "team": "בני יהודה",
+      "isHapoel": false,
+      "points": 33,
+      "wins": 8,
+      "draws": 9,
+      "losses": 21,
+      "goalsFor": 38,
+      "goalsAgainst": 64,
+      "minus": 0,
+      "remark": ""
+    }
+  },
+  {
+    "seasonEndingYear": 2001,
+    "sourceId": "hpt-museum-season-2001",
+    "row": {
+      "position": 12,
+      "team": "צפרירים חולון",
+      "isHapoel": false,
+      "points": 16,
+      "wins": 4,
+      "draws": 4,
+      "losses": 30,
+      "goalsFor": 25,
+      "goalsAgainst": 85,
+      "minus": 0,
+      "remark": ""
+    }
+  }
+]

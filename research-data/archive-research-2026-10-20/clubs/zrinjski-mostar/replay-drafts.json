@@ -1,0 +1,46 @@
+[
+  {
+    "clubId": "zrinjski-mostar",
+    "researchGoalId": "r20261020-goal-53bf617262514934",
+    "goalId": "r20261020-goal-53bf617262514934",
+    "titleHe": "Nardin Mulahusejnović v Botev Plovdiv",
+    "subtitleHe": "2024-08-15 · 39",
+    "playedOn": "2024-08-15",
+    "competitionHe": "UEFA Conference League qualifying",
+    "opponentHe": "Botev Plovdiv",
+    "scoreHe": "2-0",
+    "narrativeHe": "Mulahusejnović headed in Memija’s right-sided cross.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "Kerim Memija",
+        "side": "club",
+        "action": "cross",
+        "zone": "E2",
+        "positionHe": "right flank",
+        "noteHe": "Crossed from the right"
+      },
+      {
+        "step": 2,
+        "actorHe": "Nardin Mulahusejnović",
+        "side": "club",
+        "action": "header",
+        "zone": "C1",
+        "positionHe": "penalty area; exact position not reported",
+        "noteHe": "Headed in"
+      }
+    ],
+    "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-defeats-botev/",
+    "sourceTitle": "Football Association of Bosnia and Herzegovina",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  }
+]

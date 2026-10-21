@@ -1,0 +1,114 @@
+{
+ "aek-athens": {
+  "matches": 6,
+  "approved": 6,
+  "held": 0,
+  "file": "club-packs/aek-athens/wave-history-2026-10-20.json",
+  "wired": true
+ },
+ "atalanta": {
+  "matches": 576,
+  "approved": 0,
+  "held": 576,
+  "file": "research-staging/atalanta/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "borussia-dortmund": {
+  "matches": 683,
+  "approved": 0,
+  "held": 683,
+  "file": "research-staging/borussia-dortmund/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "celtic": {
+  "matches": 176,
+  "approved": 176,
+  "held": 0,
+  "file": "club-packs/celtic/wave-history-2026-10-20.json",
+  "wired": true
+ },
+ "dinamo-zagreb": {
+  "matches": 148,
+  "approved": 0,
+  "held": 148,
+  "file": "research-staging/dinamo-zagreb/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "fenerbahce": {
+  "matches": 246,
+  "approved": 0,
+  "held": 246,
+  "file": "research-staging/fenerbahce/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "hajduk-split": {
+  "matches": 80,
+  "approved": 0,
+  "held": 80,
+  "file": "research-staging/hajduk-split/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "leicester-city": {
+  "matches": 725,
+  "approved": 0,
+  "held": 725,
+  "file": "research-staging/leicester-city/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "maccabi-haifa": {
+  "matches": 27,
+  "approved": 0,
+  "held": 27,
+  "file": "research-staging/maccabi-haifa/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "olympiacos": {
+  "matches": 175,
+  "approved": 175,
+  "held": 0,
+  "file": "club-packs/olympiacos/wave-history-2026-10-20.json",
+  "wired": true
+ },
+ "panathinaikos": {
+  "matches": 6,
+  "approved": 6,
+  "held": 0,
+  "file": "club-packs/panathinaikos/wave-history-2026-10-20.json",
+  "wired": true
+ },
+ "paok": {
+  "matches": 232,
+  "approved": 0,
+  "held": 232,
+  "file": "research-staging/paok/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "partizan-belgrade": {
+  "matches": 103,
+  "approved": 0,
+  "held": 103,
+  "file": "research-staging/partizan-belgrade/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "st-pauli": {
+  "matches": 8,
+  "approved": 8,
+  "held": 0,
+  "file": "club-packs/st-pauli/wave-history-2026-10-20.json",
+  "wired": true
+ },
+ "union-berlin": {
+  "matches": 500,
+  "approved": 0,
+  "held": 500,
+  "file": "research-staging/union-berlin/wave-history-2026-10-20.json",
+  "wired": false
+ },
+ "zrinjski-mostar": {
+  "matches": 2,
+  "approved": 2,
+  "held": 0,
+  "file": "club-packs/zrinjski-mostar/wave-history-2026-10-20.json",
+  "wired": true
+ }
+}

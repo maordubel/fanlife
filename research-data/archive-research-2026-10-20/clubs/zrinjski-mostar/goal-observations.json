@@ -1,0 +1,36 @@
+[
+  {
+    "id": "r20261020-goal-53bf617262514934",
+    "clubId": "zrinjski-mostar",
+    "on": "2024-08-15",
+    "opponent": "Botev Plovdiv",
+    "scoreFromClubPerspective": "2-0",
+    "competition": "UEFA Conference League qualifying",
+    "scorerAsReported": "Nardin Mulahusejnović",
+    "minuteAsReported": "39",
+    "sourceId": "zrinjski-botev-20240815",
+    "paraphrase": "Mulahusejnović headed in Memija’s right-sided cross.",
+    "existingReplaySameMatch": [],
+    "importStatus": "source_verified_goal_archive_candidate",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "draft_requires_schema_truth_and_actor_review",
+    "approximateCoords": true
+  },
+  {
+    "id": "r20261020-goal-8515ccee43151b4e",
+    "clubId": "zrinjski-mostar",
+    "on": "2024-08-15",
+    "opponent": "Botev Plovdiv",
+    "scoreFromClubPerspective": "2-0",
+    "competition": "UEFA Conference League qualifying",
+    "scorerAsReported": "Tomislav Kiš",
+    "minuteAsReported": "83",
+    "sourceId": "zrinjski-botev-20240815",
+    "paraphrase": "Kiš scored following an assist by Marijo Ćuže.",
+    "existingReplaySameMatch": [],
+    "importStatus": "source_verified_goal_archive_candidate",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  }
+]

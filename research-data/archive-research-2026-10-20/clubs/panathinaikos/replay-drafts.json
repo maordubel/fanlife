@@ -1,0 +1,46 @@
+[
+  {
+    "clubId": "panathinaikos",
+    "researchGoalId": "r20261020-goal-8ebf5ace0ce138b3",
+    "goalId": "r20261020-goal-8ebf5ace0ce138b3",
+    "titleHe": "Facundo Pellistri v Chelsea",
+    "subtitleHe": "2024-10-24 · 69",
+    "playedOn": "2024-10-24",
+    "competitionHe": "UEFA Conference League",
+    "opponentHe": "Chelsea",
+    "scoreHe": "1-4",
+    "narrativeHe": "Vagiannidis delivered from the right and Pellistri finished at the far post.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "Giorgos Vagiannidis",
+        "side": "club",
+        "action": "cross",
+        "zone": "E2",
+        "positionHe": "right flank",
+        "noteHe": "Crossed towards the far post"
+      },
+      {
+        "step": 2,
+        "actorHe": "Facundo Pellistri",
+        "side": "club",
+        "action": "shot",
+        "zone": "B1",
+        "positionHe": "far-post area, receiving from the right",
+        "noteHe": "Finished the delivery"
+      }
+    ],
+    "sourceUrl": "https://www.pao.gr/en/match/78900/",
+    "sourceTitle": "Panathinaikos FC",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  }
+]

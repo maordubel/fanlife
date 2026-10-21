@@ -1,0 +1,4890 @@
+[
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:itay-ehud",
+    "nameOriginal": "איתי אהוד",
+    "nameEnglish": "Itay Ehud",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:tomer-altman",
+    "nameOriginal": "תומר אלטמן",
+    "nameEnglish": "Tomer Altman",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:bony-amian",
+    "nameOriginal": "בוני אמיאן",
+    "nameEnglish": "Bonny Amian",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:edmond-asante",
+    "nameOriginal": "אדמונד אסנטה",
+    "nameEnglish": "Edmund Asante",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:diego-arroyo",
+    "nameOriginal": "דייגו ארויו",
+    "nameEnglish": "Diego Arroyo",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:guy-badash",
+    "nameOriginal": "גיא בדש",
+    "nameEnglish": "Guy Badash",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:eric-billa",
+    "nameOriginal": "אריק בילה",
+    "nameEnglish": "Arik Bilha",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:orel-dgani",
+    "nameOriginal": "אוראל דגני",
+    "nameEnglish": "Orel Dgani",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:roei-david",
+    "nameOriginal": "רועי דוד",
+    "nameEnglish": "Roy David",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:or-israelov",
+    "nameOriginal": "אור ישראלוב",
+    "nameEnglish": "Or Israelov",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:stav-israeli",
+    "nameOriginal": "סתיו ישראלי",
+    "nameEnglish": "Stav Israeli",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:noam-cohen",
+    "nameOriginal": "נעם כהן",
+    "nameEnglish": "Noam Cohen",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:avishay-cohen",
+    "nameOriginal": "אבישי כהן",
+    "nameEnglish": "Avishai Cohen",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:omer-katz",
+    "nameOriginal": "עומר כץ",
+    "nameEnglish": "Omer Katz",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:roei-levi",
+    "nameOriginal": "רועי לוי",
+    "nameEnglish": "Roey Levi",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:alex-musonda",
+    "nameOriginal": "אלכס מוסונדה",
+    "nameEnglish": "Alex Musonda",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:shavit-mazal",
+    "nameOriginal": "שביט מזל",
+    "nameEnglish": "Shavit Mazal",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:yazan-nassar",
+    "nameOriginal": "יזן נסאר",
+    "nameEnglish": "Yazen Nassar",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:hamidou-keita",
+    "nameOriginal": "חמידו קייטה",
+    "nameEnglish": "Hamidou Keita",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "hpt-roster",
+      "club-roster"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:karim-kimvuidi",
+    "nameOriginal": "קארים קימבידי",
+    "nameEnglish": "Karim Kimbidi",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:harel-shalom",
+    "nameOriginal": "הראל שלום",
+    "nameEnglish": "Harel Shalom",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "wiki-hapoel-petah-tikva-fc",
+      "fotmob-squad"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-nahum-stelmach",
+    "nameOriginal": "נחום סטלמך",
+    "nameEnglish": "Nahum Stelmach",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "r26-hpt-p-stelmach",
+      "r26-wp-p-stelmach"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-boaz-kofman",
+    "nameOriginal": "בועז קופמן",
+    "nameEnglish": "Boaz Kofman",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-hpt-p-kofman",
+      "r26-wp-p-kofman"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-shmuel-rosenthal",
+    "nameOriginal": "שמוליק רוזנטל",
+    "nameEnglish": "Shmuel Rosenthal",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-hpt-p-rosenthal",
+      "r26-wp-p-rosenthal"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-eli-abarbanel",
+    "nameOriginal": "אלי אברבנל",
+    "nameEnglish": "Eli Abarbanel",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "r26-hpt-p-abarbanel",
+      "r26-wp-p-abarbanel"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-manor-hassan",
+    "nameOriginal": "מנור חסן",
+    "nameEnglish": "Manor Hassan",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "r26-hpt-p-hassan",
+      "r26-wp-p-hassan"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-yaniv-luzon",
+    "nameOriginal": "יניב לוזון",
+    "nameEnglish": "Yaniv Luzon",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "r26-hpt-p-luzon",
+      "r26-wp-p-luzon"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-yaakov-visoker",
+    "nameOriginal": "יעקב ויסוקר",
+    "nameEnglish": "Yaakov Vissoker",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing"
+    ],
+    "sources": [
+      "r26-hpt-p-yakov",
+      "r26-wp-p-yakov"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:r26-noam-keysi",
+    "nameOriginal": "נועם קייסי",
+    "nameEnglish": "Noam Keysi",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive"
+    ],
+    "sources": [
+      "r26-hpt-p-keysi"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b871c7ebc6",
+    "nameOriginal": "Abed Rabah",
+    "nameEnglish": "Abed Rabah",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d82ee507e5",
+    "nameOriginal": "Adi Mahpud",
+    "nameEnglish": "Adi Mahpud",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9db5c19e36",
+    "nameOriginal": "Alon Maya",
+    "nameEnglish": "Alon Maya",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5067b6f08d",
+    "nameOriginal": "Alon Turgeman",
+    "nameEnglish": "Alon Turgeman",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7ba2108e85",
+    "nameOriginal": "Amiran Shkalim",
+    "nameEnglish": "Amiran Shkalim",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f4fbf9206d",
+    "nameOriginal": "Austin Ejide",
+    "nameEnglish": "Austin Ejide",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e6ed9cdeae",
+    "nameOriginal": "Avi Yehiel",
+    "nameEnglish": "Avi Yehiel",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4201cf88d4",
+    "nameOriginal": "Efraim Bugla",
+    "nameEnglish": "Efraim Bugla",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-379e4a9300",
+    "nameOriginal": "Eli Biton",
+    "nameEnglish": "Eli Biton",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9add7f8520",
+    "nameOriginal": "Emmanuel Mathias",
+    "nameEnglish": "Emmanuel Mathias",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a6430cad47",
+    "nameOriginal": "Eyad Hutava",
+    "nameEnglish": "Eyad Hutava",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-0d896d742d",
+    "nameOriginal": "Fabian Stoller",
+    "nameEnglish": "Fabian Stoller",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cde1598fd2",
+    "nameOriginal": "Gal Cohen",
+    "nameEnglish": "Gal Cohen",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-19c69126f4",
+    "nameOriginal": "Guy Dayan",
+    "nameEnglish": "Guy Dayan",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e4af962106",
+    "nameOriginal": "Guy Tzarfati",
+    "nameEnglish": "Guy Tzarfati",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4b67113783",
+    "nameOriginal": "Ido Exbard",
+    "nameEnglish": "Ido Exbard",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-49434846bd",
+    "nameOriginal": "Igor Tomašić",
+    "nameEnglish": "Igor Tomašić",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bd837e19c9",
+    "nameOriginal": "Israel Zaguri",
+    "nameEnglish": "Israel Zaguri",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f65ea01d0d",
+    "nameOriginal": "Jonathan Assous",
+    "nameEnglish": "Jonathan Assous",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-0ec7dad323",
+    "nameOriginal": "Mario Osibov",
+    "nameEnglish": "Mario Osibov",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3b5cfcb3f8",
+    "nameOriginal": "Mirlan Murzaev",
+    "nameEnglish": "Mirlan Murzaev",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-94ef87aac7",
+    "nameOriginal": "Mohammed Nator",
+    "nameEnglish": "Mohammed Nator",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c27a4d3590",
+    "nameOriginal": "Ohad Kadousi",
+    "nameEnglish": "Ohad Kadousi",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e6796ed224",
+    "nameOriginal": "Or Fishbein",
+    "nameEnglish": "Or Fishbein",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ff6c18f27a",
+    "nameOriginal": "Rafi Dahan",
+    "nameEnglish": "Rafi Dahan",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a9725e184b",
+    "nameOriginal": "Roei Gordana",
+    "nameEnglish": "Roei Gordana",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-32d76dc5ef",
+    "nameOriginal": "Snir Dori",
+    "nameEnglish": "Snir Dori",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7c49e67254",
+    "nameOriginal": "William Amamoo",
+    "nameEnglish": "William Amamoo",
+    "englishMethod": null,
+    "issues": [
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-owner-roster-2026-10-10"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-29e9861761",
+    "nameOriginal": "Elisha Abas",
+    "nameEnglish": "Elisha Abas",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-72f330dc83",
+    "nameOriginal": "David Abidor",
+    "nameEnglish": "David Abidor",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7aee8af2f1",
+    "nameOriginal": "Mahran Abu Raiya",
+    "nameEnglish": "Mahran Abu Raiya",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d4521551b0",
+    "nameOriginal": "Salem Abu Siam",
+    "nameEnglish": "Salem Abu Siam",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-53c8810d9e",
+    "nameOriginal": "Hasan Abu Zaid",
+    "nameEnglish": "Hasan Abu Zaid",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ae0645be42",
+    "nameOriginal": "Shimon Abuhatzira",
+    "nameEnglish": "Shimon Abuhatzira",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7d32bc3b8f",
+    "nameOriginal": "Florin Achim",
+    "nameEnglish": "Florin Achim",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dda3debde6",
+    "nameOriginal": "Daniel Addo",
+    "nameEnglish": "Daniel Addo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-88a09a74f5",
+    "nameOriginal": "Dennis Adeniran",
+    "nameEnglish": "Dennis Adeniran",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1ab338d646",
+    "nameOriginal": "Yohai Aharoni",
+    "nameEnglish": "Yohai Aharoni",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4bc01ef515",
+    "nameOriginal": "Djimy Alexis",
+    "nameEnglish": "Djimy Alexis",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b8fffcbc86",
+    "nameOriginal": "Angelo Alistar",
+    "nameEnglish": "Angelo Alistar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4195ac24bb",
+    "nameOriginal": "Omri Altman",
+    "nameEnglish": "Omri Altman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e2d1cec53f",
+    "nameOriginal": "Miodrag Anđelković",
+    "nameEnglish": "Miodrag Anđelković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a7fdf6d0e9",
+    "nameOriginal": "Yigal Antebi",
+    "nameEnglish": "Yigal Antebi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f175a774f4",
+    "nameOriginal": "Nico Antonitsch",
+    "nameEnglish": "Nico Antonitsch",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2684d456bf",
+    "nameOriginal": "Shlomi Arbeitman",
+    "nameEnglish": "Shlomi Arbeitman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-580fd7bdba",
+    "nameOriginal": "Gal Arel",
+    "nameEnglish": "Gal Arel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f0608ead05",
+    "nameOriginal": "Facundo Argüello",
+    "nameEnglish": "Facundo Argüello",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8f82a9d46b",
+    "nameOriginal": "Yossi Asayag",
+    "nameEnglish": "Yossi Asayag",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f94ee01759",
+    "nameOriginal": "Lior Asulin",
+    "nameEnglish": "Lior Asulin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-be246d14e2",
+    "nameOriginal": "Reuven Atar",
+    "nameEnglish": "Reuven Atar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-39133ce8bd",
+    "nameOriginal": "Ibrahim Atiku",
+    "nameEnglish": "Ibrahim Atiku",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f688c4d116",
+    "nameOriginal": "Charlemagne Azongnitode",
+    "nameEnglish": "Charlemagne Azongnitode",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-80fdc146ea",
+    "nameOriginal": "Hen Azriel",
+    "nameEnglish": "Hen Azriel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7702d1f491",
+    "nameOriginal": "Shlomi Yosef Azulay",
+    "nameEnglish": "Shlomi Yosef Azulay",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dc39928c71",
+    "nameOriginal": "Walid Badir",
+    "nameEnglish": "Walid Badir",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4809978ddc",
+    "nameOriginal": "Semir Bajraktarević",
+    "nameEnglish": "Semir Bajraktarević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7fc188a63c",
+    "nameOriginal": "Barak Bakhar",
+    "nameEnglish": "Barak Bakhar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2703db8197",
+    "nameOriginal": "Shahar Balilti",
+    "nameEnglish": "Shahar Balilti",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2ad6bf4c25",
+    "nameOriginal": "Matan Baltaxa",
+    "nameEnglish": "Matan Baltaxa",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4a1cabd7b7",
+    "nameOriginal": "Emmanuel Banahene",
+    "nameEnglish": "Emmanuel Banahene",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9bc3456af1",
+    "nameOriginal": "Stasys Baranauskas",
+    "nameEnglish": "Stasys Baranauskas",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ee2526f13f",
+    "nameOriginal": "Gal Barel",
+    "nameEnglish": "Gal Barel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-0a4f429739",
+    "nameOriginal": "Orr Barouch",
+    "nameEnglish": "Orr Barouch",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9707d0e859",
+    "nameOriginal": "Osman Bashiru",
+    "nameEnglish": "Osman Bashiru",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cd54f03fc3",
+    "nameOriginal": "Ibrahim Basit",
+    "nameEnglish": "Ibrahim Basit",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a2b91cf8ab",
+    "nameOriginal": "Fortune Bassey",
+    "nameEnglish": "Fortune Bassey",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8e45846a0d",
+    "nameOriginal": "Orel Baye",
+    "nameEnglish": "Orel Baye",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1722e6a5e6",
+    "nameOriginal": "Eyal Ben Ami",
+    "nameEnglish": "Eyal Ben Ami",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7c69034c47",
+    "nameOriginal": "Dedi Ben Dayan",
+    "nameEnglish": "Dedi Ben Dayan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-fd78b80313",
+    "nameOriginal": "Tomer Ben Haim",
+    "nameEnglish": "Tomer Ben Haim",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cbc5bb60c2",
+    "nameOriginal": "Shlomi Ben Hemo",
+    "nameEnglish": "Shlomi Ben Hemo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c8d78689c1",
+    "nameOriginal": "Asael Ben Shabat",
+    "nameEnglish": "Asael Ben Shabat",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-82f7a917da",
+    "nameOriginal": "Yogev Ben Simon",
+    "nameEnglish": "Yogev Ben Simon",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e8a5ca7133",
+    "nameOriginal": "Ben Ben Yair",
+    "nameEnglish": "Ben Ben Yair",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-48c47740ef",
+    "nameOriginal": "Asaf Ben-Muha",
+    "nameEnglish": "Asaf Ben-Muha",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a215e37fbd",
+    "nameOriginal": "Armon Ben-Naim",
+    "nameEnglish": "Armon Ben-Naim",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cb3a69872a",
+    "nameOriginal": "Ran Ben-Shimon",
+    "nameEnglish": "Ran Ben-Shimon",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1e520d8fe6",
+    "nameOriginal": "Amir Berkovits",
+    "nameEnglish": "Amir Berkovits",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5686366b1b",
+    "nameOriginal": "Krasimir Bezinski",
+    "nameEnglish": "Krasimir Bezinski",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7f58501373",
+    "nameOriginal": "Khasanbi Bidzhiyev",
+    "nameEnglish": "Khasanbi Bidzhiyev",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-eee770a630",
+    "nameOriginal": "Dudu Biton",
+    "nameEnglish": "Dudu Biton",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9c2fee0a91",
+    "nameOriginal": "Ilan Boaron",
+    "nameEnglish": "Ilan Boaron",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-91ddaa1a72",
+    "nameOriginal": "Richard Boateng",
+    "nameEnglish": "Richard Boateng",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cd7d9ee05f",
+    "nameOriginal": "Olivier Boissy",
+    "nameEnglish": "Olivier Boissy",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-69cd67f7b2",
+    "nameOriginal": "Aviad Bourla",
+    "nameEnglish": "Aviad Bourla",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ad2f24b10f",
+    "nameOriginal": "Elvis Brajković",
+    "nameEnglish": "Elvis Brajković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bcd897865c",
+    "nameOriginal": "Yaron Brown",
+    "nameEnglish": "Yaron Brown",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e1c1684d84",
+    "nameOriginal": "Omer Buchsenbaum",
+    "nameEnglish": "Omer Buchsenbaum",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e6c0b9d20f",
+    "nameOriginal": "Ivan Bulat",
+    "nameEnglish": "Ivan Bulat",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-928db46762",
+    "nameOriginal": "Almog Buzaglo",
+    "nameEnglish": "Almog Buzaglo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-478db13e4d",
+    "nameOriginal": "Asi Buzaglo",
+    "nameEnglish": "Asi Buzaglo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8f483b66a1",
+    "nameOriginal": "Maor Buzaglo",
+    "nameEnglish": "Maor Buzaglo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-27c84fb784",
+    "nameOriginal": "André Caldeira",
+    "nameEnglish": "André Caldeira",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2817474580",
+    "nameOriginal": "Peter Cargill",
+    "nameEnglish": "Peter Cargill",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c8e1ea64ee",
+    "nameOriginal": "Silvije Čavlina",
+    "nameEnglish": "Silvije Čavlina",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ab7aa2325e",
+    "nameOriginal": "Tomasz Cebula",
+    "nameEnglish": "Tomasz Cebula",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f18e436216",
+    "nameOriginal": "Jair Céspedes",
+    "nameEnglish": "Jair Céspedes",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6917d35447",
+    "nameOriginal": "Chazom Chazom",
+    "nameEnglish": "Chazom Chazom",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c4cecc4617",
+    "nameOriginal": "Mario Čižmek",
+    "nameEnglish": "Mario Čižmek",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9f6cf9e9f8",
+    "nameOriginal": "Clé",
+    "nameEnglish": "Clé",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cfb471fe5f",
+    "nameOriginal": "Idan Cohen",
+    "nameEnglish": "Idan Cohen",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-18cb201a08",
+    "nameOriginal": "Israel Cohen",
+    "nameEnglish": "Israel Cohen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3f737f4050",
+    "nameOriginal": "Itzik Cohen",
+    "nameEnglish": "Itzik Cohen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3997dc41de",
+    "nameOriginal": "Ohad Cohen",
+    "nameEnglish": "Ohad Cohen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d14582bf19",
+    "nameOriginal": "Sagiv Cohen",
+    "nameEnglish": "Sagiv Cohen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e1ebe9e272",
+    "nameOriginal": "Shimon Cohen",
+    "nameEnglish": "Shimon Cohen",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7bb09a0d5e",
+    "nameOriginal": "Sékou Condé",
+    "nameEnglish": "Sékou Condé",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2d87022074",
+    "nameOriginal": "Kobi Dajani",
+    "nameEnglish": "Kobi Dajani",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b5ca2ebc04",
+    "nameOriginal": "David Dego",
+    "nameEnglish": "David Dego",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1a5d1573d3",
+    "nameOriginal": "Enes Demirović",
+    "nameEnglish": "Enes Demirović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-38d9c69037",
+    "nameOriginal": "Yossi Dora",
+    "nameEnglish": "Yossi Dora",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-fe39560446",
+    "nameOriginal": "Itzhak Drucker",
+    "nameEnglish": "Itzhak Drucker",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d2f367070b",
+    "nameOriginal": "Rami Duani",
+    "nameEnglish": "Rami Duani",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4116c757c8",
+    "nameOriginal": "Stanislav Dubrovin",
+    "nameEnglish": "Stanislav Dubrovin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9bc1806dbe",
+    "nameOriginal": "Duško Đurišić",
+    "nameEnglish": "Duško Đurišić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-89ab26276c",
+    "nameOriginal": "Ohad Edelstein",
+    "nameEnglish": "Ohad Edelstein",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-aa66b9a211",
+    "nameOriginal": "Shlomi Edri",
+    "nameEnglish": "Shlomi Edri",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bbb95fc051",
+    "nameOriginal": "Shon Edri",
+    "nameEnglish": "Shon Edri",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2281bf7110",
+    "nameOriginal": "Mark Edusei",
+    "nameEnglish": "Mark Edusei",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ea70ec05f0",
+    "nameOriginal": "Tomer Elbaz",
+    "nameEnglish": "Tomer Elbaz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6832a5df87",
+    "nameOriginal": "Shavit Elimelech",
+    "nameEnglish": "Shavit Elimelech",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7ad56e7130",
+    "nameOriginal": "Itay Elkaslasy",
+    "nameEnglish": "Itay Elkaslasy",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dce4b5b63d",
+    "nameOriginal": "Eliran Elkayam",
+    "nameEnglish": "Eliran Elkayam",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-82fd67557d",
+    "nameOriginal": "Émerson",
+    "nameEnglish": "Émerson",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2008466527",
+    "nameOriginal": "Tomislav Erceg",
+    "nameEnglish": "Tomislav Erceg",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-72291aa580",
+    "nameOriginal": "Gaël Etock",
+    "nameEnglish": "Gaël Etock",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-30630c63c0",
+    "nameOriginal": "Ofer Fabian",
+    "nameEnglish": "Ofer Fabian",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-474647eb6a",
+    "nameOriginal": "Dudi Fadlon",
+    "nameEnglish": "Dudi Fadlon",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d82a50b460",
+    "nameOriginal": "Adrián Fernández",
+    "nameEnglish": "Adrián Fernández",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-aff46155dd",
+    "nameOriginal": "Ofek Fishler",
+    "nameEnglish": "Ofek Fishler",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ffb997fddf",
+    "nameOriginal": "Elad Gabai",
+    "nameEnglish": "Elad Gabai",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6dc0d08cda",
+    "nameOriginal": "Cheikh Gadiaga",
+    "nameEnglish": "Cheikh Gadiaga",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1b0245b990",
+    "nameOriginal": "Ronnie Gafney",
+    "nameEnglish": "Ronnie Gafney",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-23b9b7189c",
+    "nameOriginal": "Oded Gavish",
+    "nameEnglish": "Oded Gavish",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5713c2341a",
+    "nameOriginal": "Ravid Gazal",
+    "nameEnglish": "Ravid Gazal",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7743cdec89",
+    "nameOriginal": "George Gebro",
+    "nameEnglish": "George Gebro",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4d68c8cb26",
+    "nameOriginal": "Irakli Geperidze",
+    "nameEnglish": "Irakli Geperidze",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e89760c09f",
+    "nameOriginal": "Najwan Ghrayib",
+    "nameEnglish": "Najwan Ghrayib",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f01a3a2d71",
+    "nameOriginal": "Nikos Giannakopoulos",
+    "nameEnglish": "Nikos Giannakopoulos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e21926869f",
+    "nameOriginal": "Samuel Gilmore",
+    "nameEnglish": "Samuel Gilmore",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-29951f0bb8",
+    "nameOriginal": "Miroslav Gjokić",
+    "nameEnglish": "Miroslav Gjokić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-25a28abba7",
+    "nameOriginal": "Igor Gjuzelov",
+    "nameEnglish": "Igor Gjuzelov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-603f8c6450",
+    "nameOriginal": "David Gomez",
+    "nameEnglish": "David Gomez",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d41c26822d",
+    "nameOriginal": "Mark Gurman",
+    "nameEnglish": "Mark Gurman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-62dcb7c0fa",
+    "nameOriginal": "Raul Gorshumov",
+    "nameEnglish": "Raul Gorshumov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-784316d5ca",
+    "nameOriginal": "Revaz Gotsiridze",
+    "nameEnglish": "Revaz Gotsiridze",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f449455e76",
+    "nameOriginal": "Shoval Gozlan",
+    "nameEnglish": "Shoval Gozlan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b963d44066",
+    "nameOriginal": "Ben Grabli",
+    "nameEnglish": "Ben Grabli",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a5d945e897",
+    "nameOriginal": "Ze'ev Haimovich",
+    "nameEnglish": "Ze'ev Haimovich",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e707031231",
+    "nameOriginal": "Jerry Haldi",
+    "nameEnglish": "Jerry Haldi",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-15912ea10c",
+    "nameOriginal": "Omer Hanin",
+    "nameEnglish": "Omer Hanin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7ebe46d33e",
+    "nameOriginal": "Udi Hanoun",
+    "nameEnglish": "Udi Hanoun",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a855bb4e88",
+    "nameOriginal": "Shlomi Hanuka",
+    "nameEnglish": "Shlomi Hanuka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8805e35bc8",
+    "nameOriginal": "Admir Hasančić",
+    "nameEnglish": "Admir Hasančić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a157427451",
+    "nameOriginal": "Yarin Hassan",
+    "nameEnglish": "Yarin Hassan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-050d1ce354",
+    "nameOriginal": "Or Havivyan",
+    "nameEnglish": "Or Havivyan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5713dc29ca",
+    "nameOriginal": "Daniel Heidman",
+    "nameEnglish": "Daniel Heidman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-fc10239dc5",
+    "nameOriginal": "Shahar Hirsh",
+    "nameEnglish": "Shahar Hirsh",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-5c85b34ff6",
+    "nameOriginal": "Dor Hugi",
+    "nameEnglish": "Dor Hugi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-af5f5b8db7",
+    "nameOriginal": "Eyad Hutba",
+    "nameEnglish": "Eyad Hutba",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7f130ef50a",
+    "nameOriginal": "Evyatar Iluz",
+    "nameEnglish": "Evyatar Iluz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c48bc55591",
+    "nameOriginal": "Motti Ivanir",
+    "nameEnglish": "Motti Ivanir",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-956dd696fc",
+    "nameOriginal": "Avi Ivgi",
+    "nameEnglish": "Avi Ivgi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c93a512917",
+    "nameOriginal": "Dor Jan",
+    "nameEnglish": "Dor Jan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9b1743cfc6",
+    "nameOriginal": "Lior Jean",
+    "nameEnglish": "Lior Jean",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8768db59bd",
+    "nameOriginal": "Ehud Kachila",
+    "nameEnglish": "Ehud Kachila",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ffd361bd60",
+    "nameOriginal": "Viki Kahlon",
+    "nameEnglish": "Viki Kahlon",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-01708c7ed5",
+    "nameOriginal": "Tvrtko Kale",
+    "nameEnglish": "Tvrtko Kale",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e4933153bd",
+    "nameOriginal": "Eliezer Kalina",
+    "nameEnglish": "Eliezer Kalina",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bb4e97639b",
+    "nameOriginal": "Gabi Kanichowsky",
+    "nameEnglish": "Gabi Kanichowsky",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-df246afb4f",
+    "nameOriginal": "Kelvin Kapumbu",
+    "nameEnglish": "Kelvin Kapumbu",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f1008b0d74",
+    "nameOriginal": "Kwame Karikari",
+    "nameEnglish": "Kwame Karikari",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a9784467b6",
+    "nameOriginal": "Dror Kashtan",
+    "nameEnglish": "Dror Kashtan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d242b90e07",
+    "nameOriginal": "Ahmed Kasoum",
+    "nameEnglish": "Ahmed Kasoum",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c6043a0edd",
+    "nameOriginal": "Adoram Keisi",
+    "nameEnglish": "Adoram Keisi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9c6e0584d8",
+    "nameOriginal": "Omri Kende",
+    "nameEnglish": "Omri Kende",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4dbc9851d2",
+    "nameOriginal": "Papi Kimoto",
+    "nameEnglish": "Papi Kimoto",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d4eebe4745",
+    "nameOriginal": "Dor Kochav",
+    "nameEnglish": "Dor Kochav",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c98e6ec5d7",
+    "nameOriginal": "Vitaliy Komarnytskyi",
+    "nameEnglish": "Vitaliy Komarnytskyi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ca9788b791",
+    "nameOriginal": "Djakaridja Koné",
+    "nameEnglish": "Djakaridja Koné",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-96d983d7ce",
+    "nameOriginal": "Adi Konstantinos",
+    "nameEnglish": "Adi Konstantinos",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d4f2f46ca9",
+    "nameOriginal": "Gilbert Koomson",
+    "nameEnglish": "Gilbert Koomson",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b18f7c84d8",
+    "nameOriginal": "Ofir Kopel",
+    "nameEnglish": "Ofir Kopel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-eabbc4e7ee",
+    "nameOriginal": "Itzik Kornfein",
+    "nameEnglish": "Itzik Kornfein",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6461855b81",
+    "nameOriginal": "Omer Korsia",
+    "nameEnglish": "Omer Korsia",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9441306061",
+    "nameOriginal": "Miljenko Kovačić",
+    "nameEnglish": "Miljenko Kovačić",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-52e87e93bc",
+    "nameOriginal": "Ondrej Krištofík",
+    "nameEnglish": "Ondrej Krištofík",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b473758d72",
+    "nameOriginal": "Leonid Krupnik",
+    "nameEnglish": "Leonid Krupnik",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-47056bbb3d",
+    "nameOriginal": "Wato Kuaté",
+    "nameEnglish": "Wato Kuaté",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-95878d4bc2",
+    "nameOriginal": "Benjamin Kuku",
+    "nameEnglish": "Benjamin Kuku",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3e0c990bff",
+    "nameOriginal": "Ivica Kulešević",
+    "nameEnglish": "Ivica Kulešević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ff7f8c360e",
+    "nameOriginal": "Eyal Lahman",
+    "nameEnglish": "Eyal Lahman",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a0129ce817",
+    "nameOriginal": "Gabi Lasri",
+    "nameEnglish": "Gabi Lasri",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d144a12856",
+    "nameOriginal": "Barak Levi",
+    "nameEnglish": "Barak Levi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a80f6e5b67",
+    "nameOriginal": "Gal Levi",
+    "nameEnglish": "Gal Levi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3593c71b69",
+    "nameOriginal": "Robi Levkovich",
+    "nameEnglish": "Robi Levkovich",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ab3179432a",
+    "nameOriginal": "Guy Levy",
+    "nameEnglish": "Guy Levy",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2f6c69dbd7",
+    "nameOriginal": "James Koko Lomell",
+    "nameEnglish": "James Koko Lomell",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-bea16f23cc",
+    "nameOriginal": "Imoro Lukman",
+    "nameEnglish": "Imoro Lukman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-18d459517f",
+    "nameOriginal": "Andrei Lungu",
+    "nameEnglish": "Andrei Lungu",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-36c34b178b",
+    "nameOriginal": "Yakir Lusky",
+    "nameEnglish": "Yakir Lusky",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-02461e3278",
+    "nameOriginal": "Saïd Makasi",
+    "nameEnglish": "Saïd Makasi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-50fd3da6c3",
+    "nameOriginal": "Ben Malka",
+    "nameEnglish": "Ben Malka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-81900c5fd2",
+    "nameOriginal": "Sean Malka",
+    "nameEnglish": "Sean Malka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e13a963858",
+    "nameOriginal": "Raphael Maltinsky",
+    "nameEnglish": "Raphael Maltinsky",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-15d94621e2",
+    "nameOriginal": "Tom Mansharov",
+    "nameEnglish": "Tom Mansharov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c5321bbac2",
+    "nameOriginal": "Zvi Markus",
+    "nameEnglish": "Zvi Markus",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f527030cfb",
+    "nameOriginal": "Mickaël Marsiglia",
+    "nameEnglish": "Mickaël Marsiglia",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b0614557a2",
+    "nameOriginal": "Gábor Márton",
+    "nameEnglish": "Gábor Márton",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3d23bc82f5",
+    "nameOriginal": "Gal Mayo",
+    "nameEnglish": "Gal Mayo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-fbb6cff2cb",
+    "nameOriginal": "Chimezie Mbah",
+    "nameEnglish": "Chimezie Mbah",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-dbc66a83fd",
+    "nameOriginal": "Yaya Meledje",
+    "nameEnglish": "Yaya Meledje",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-907651473b",
+    "nameOriginal": "Asher Messing",
+    "nameEnglish": "Asher Messing",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6f7aa5bdda",
+    "nameOriginal": "Carmelo Micciche",
+    "nameEnglish": "Carmelo Micciche",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-83460060fb",
+    "nameOriginal": "Branko Mihajlović",
+    "nameEnglish": "Branko Mihajlović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ca874eb6cb",
+    "nameOriginal": "Guy Mishpati",
+    "nameEnglish": "Guy Mishpati",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c06f48f2f2",
+    "nameOriginal": "Kobi Mor",
+    "nameEnglish": "Kobi Mor",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-61d0898d9b",
+    "nameOriginal": "Alex Moucketou-Moussounda",
+    "nameEnglish": "Alex Moucketou-Moussounda",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f8f4e4d6f1",
+    "nameOriginal": "Oren Muharer",
+    "nameEnglish": "Oren Muharer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7ec3542ce2",
+    "nameOriginal": "Jasmin Mujdža",
+    "nameEnglish": "Jasmin Mujdža",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1bb197ac2d",
+    "nameOriginal": "Takuya Murayama",
+    "nameEnglish": "Takuya Murayama",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-1e49ad4c5b",
+    "nameOriginal": "Mirlan Murzayev",
+    "nameEnglish": "Mirlan Murzayev",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9c830082eb",
+    "nameOriginal": "Kobi Musa",
+    "nameEnglish": "Kobi Musa",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-706687cdb9",
+    "nameOriginal": "Kobi Nachtailer",
+    "nameEnglish": "Kobi Nachtailer",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d1981bf24b",
+    "nameOriginal": "Shuki Nagar",
+    "nameEnglish": "Shuki Nagar",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b4ba5bd5bb",
+    "nameOriginal": "Roy Nawi",
+    "nameEnglish": "Roy Nawi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6cd4f91f24",
+    "nameOriginal": "Nadav Nidam",
+    "nameEnglish": "Nadav Nidam",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b8319b2b67",
+    "nameOriginal": "M'peti Nimba",
+    "nameEnglish": "M'peti Nimba",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-15636d0e59",
+    "nameOriginal": "Jacob Njoku",
+    "nameEnglish": "Jacob Njoku",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-756b048cf6",
+    "nameOriginal": "Stephen Offei",
+    "nameEnglish": "Stephen Offei",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-462454b224",
+    "nameOriginal": "Amit Ohana",
+    "nameEnglish": "Amit Ohana",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-db70a1cd18",
+    "nameOriginal": "Almog Ohayon",
+    "nameEnglish": "Almog Ohayon",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cf93ee9cd1",
+    "nameOriginal": "Mirko Oremuš",
+    "nameEnglish": "Mirko Oremuš",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e5d73554d5",
+    "nameOriginal": "Reuven Oved",
+    "nameEnglish": "Reuven Oved",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e9bd6f5aa2",
+    "nameOriginal": "Yves Pambou",
+    "nameEnglish": "Yves Pambou",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e794c62a22",
+    "nameOriginal": "Mindaugas Panka",
+    "nameEnglish": "Mindaugas Panka",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-43fcd845de",
+    "nameOriginal": "Luke Pavone",
+    "nameEnglish": "Luke Pavone",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-77566fee5d",
+    "nameOriginal": "Matan Peleg",
+    "nameEnglish": "Matan Peleg",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-cf7deabb69",
+    "nameOriginal": "Avi Peretz",
+    "nameEnglish": "Avi Peretz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-86db7bacf4",
+    "nameOriginal": "Oz Peretz",
+    "nameEnglish": "Oz Peretz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8aec3ea335",
+    "nameOriginal": "Reef Peretz",
+    "nameEnglish": "Reef Peretz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-73938fde4d",
+    "nameOriginal": "Borimir Perković",
+    "nameEnglish": "Borimir Perković",
+    "englishMethod": null,
+    "issues": [
+      "position_missing_in_canonical_archive",
+      "first_year_missing",
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f3f1838b3e",
+    "nameOriginal": "Uri Peso",
+    "nameEnglish": "Uri Peso",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8cf34b6d7b",
+    "nameOriginal": "Fabio Pieters",
+    "nameEnglish": "Fabio Pieters",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a6260c420f",
+    "nameOriginal": "David Pizanti",
+    "nameEnglish": "David Pizanti",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-6d5236547f",
+    "nameOriginal": "Shlomo Poliakov",
+    "nameEnglish": "Shlomo Poliakov",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4d4d1006c4",
+    "nameOriginal": "Jean Quiñónez",
+    "nameEnglish": "Jean Quiñónez",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b7a90d8fc9",
+    "nameOriginal": "Arie Radler",
+    "nameEnglish": "Arie Radler",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-80d4bb865a",
+    "nameOriginal": "Ermin Rakovič",
+    "nameEnglish": "Ermin Rakovič",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-0970427f0a",
+    "nameOriginal": "Shay Revivo",
+    "nameEnglish": "Shay Revivo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9b4e86c071",
+    "nameOriginal": "Avi Rikan",
+    "nameEnglish": "Avi Rikan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d8c94321f1",
+    "nameOriginal": "Franck Rivollier",
+    "nameEnglish": "Franck Rivollier",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-02f6ed9306",
+    "nameOriginal": "Adrian Rochet",
+    "nameEnglish": "Adrian Rochet",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-087590e06c",
+    "nameOriginal": "Shahar Rosen",
+    "nameEnglish": "Shahar Rosen",
+    "englishMethod": null,
+    "issues": [
+      "last_year_missing",
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ddcea967ba",
+    "nameOriginal": "Itay Rotman",
+    "nameEnglish": "Itay Rotman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7916d002ac",
+    "nameOriginal": "Timur Rudoselsky",
+    "nameEnglish": "Timur Rudoselsky",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b282c8ec63",
+    "nameOriginal": "Klemi Saban",
+    "nameEnglish": "Klemi Saban",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-42f55da77e",
+    "nameOriginal": "Elnatan Salami",
+    "nameEnglish": "Elnatan Salami",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2d2376d749",
+    "nameOriginal": "Maoz Samia",
+    "nameEnglish": "Maoz Samia",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ec2f0f5083",
+    "nameOriginal": "Victor Sarusi",
+    "nameEnglish": "Victor Sarusi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ec6d44e7e0",
+    "nameOriginal": "Dorin Semeghin",
+    "nameEnglish": "Dorin Semeghin",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7bd9532fd2",
+    "nameOriginal": "Armen Shahgeldyan",
+    "nameEnglish": "Armen Shahgeldyan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-30ad808ab8",
+    "nameOriginal": "Mor Shaked",
+    "nameEnglish": "Mor Shaked",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-754fd774ac",
+    "nameOriginal": "Itay Shechter",
+    "nameEnglish": "Itay Shechter",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-7bca350786",
+    "nameOriginal": "Michael Sheinfeld",
+    "nameEnglish": "Michael Sheinfeld",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3f086b9389",
+    "nameOriginal": "Yossi Shekel",
+    "nameEnglish": "Yossi Shekel",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-f79d8c8487",
+    "nameOriginal": "Idan Shemesh",
+    "nameEnglish": "Idan Shemesh",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-e9d4c60376",
+    "nameOriginal": "Hamza Shibli",
+    "nameEnglish": "Hamza Shibli",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9f0bc4deac",
+    "nameOriginal": "Yossi Shivhon",
+    "nameEnglish": "Yossi Shivhon",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c257ae99b9",
+    "nameOriginal": "Idan Shum",
+    "nameEnglish": "Idan Shum",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-275867ba9c",
+    "nameOriginal": "Ebrima Ebou Sillah",
+    "nameEnglish": "Ebrima Ebou Sillah",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b70e5958e3",
+    "nameOriginal": "Augustine Simo",
+    "nameEnglish": "Augustine Simo",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d68e27193f",
+    "nameOriginal": "Aleksandr Solop",
+    "nameEnglish": "Aleksandr Solop",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-9981527bfa",
+    "nameOriginal": "Chipyoka Songa",
+    "nameEnglish": "Chipyoka Songa",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3511c29d72",
+    "nameOriginal": "Idan Srur",
+    "nameEnglish": "Idan Srur",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-26ee226cfd",
+    "nameOriginal": "Ilie Stan",
+    "nameEnglish": "Ilie Stan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-12bcb67227",
+    "nameOriginal": "Slaviša Stojanović",
+    "nameEnglish": "Slaviša Stojanović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-aaabbb50f3",
+    "nameOriginal": "Jocelin Ta Bi",
+    "nameEnglish": "Jocelin Ta Bi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-c54d793fe2",
+    "nameOriginal": "Ilay Tamam",
+    "nameEnglish": "Ilay Tamam",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a1bdbd5d00",
+    "nameOriginal": "Toto Tamuz",
+    "nameEnglish": "Toto Tamuz",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-481487058a",
+    "nameOriginal": "Omer Tchalisher",
+    "nameEnglish": "Omer Tchalisher",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-eae96b0f9a",
+    "nameOriginal": "Bernard Tchoutang",
+    "nameEnglish": "Bernard Tchoutang",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3282162210",
+    "nameOriginal": "Dalibor Teinović",
+    "nameEnglish": "Dalibor Teinović",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-55db99408c",
+    "nameOriginal": "André Teixeira",
+    "nameEnglish": "André Teixeira",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b718f14f7f",
+    "nameOriginal": "Terrence Tisdell",
+    "nameEnglish": "Terrence Tisdell",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-69c7933271",
+    "nameOriginal": "Assi Tubi",
+    "nameEnglish": "Assi Tubi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-18b2949499",
+    "nameOriginal": "Michael Tukura",
+    "nameEnglish": "Michael Tukura",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b86ffb745f",
+    "nameOriginal": "Ben Turjeman",
+    "nameEnglish": "Ben Turjeman",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-239e899ecc",
+    "nameOriginal": "Assaf Tzur",
+    "nameEnglish": "Assaf Tzur",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2b7240d0b1",
+    "nameOriginal": "Adrian Ungur",
+    "nameEnglish": "Adrian Ungur",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-be26c4734f",
+    "nameOriginal": "Ori Uzan",
+    "nameEnglish": "Ori Uzan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-df7eb3766c",
+    "nameOriginal": "Idan Vered",
+    "nameEnglish": "Idan Vered",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-89b1c0fa24",
+    "nameOriginal": "Omer Vered",
+    "nameEnglish": "Omer Vered",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b7076e2365",
+    "nameOriginal": "Higor Vidal",
+    "nameEnglish": "Higor Vidal",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-d58cfdc519",
+    "nameOriginal": "Dalibor Višković",
+    "nameEnglish": "Dalibor Višković",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-141a28331c",
+    "nameOriginal": "Junior Viza",
+    "nameEnglish": "Junior Viza",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-a7d01ee500",
+    "nameOriginal": "Dominique Wassi",
+    "nameEnglish": "Dominique Wassi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-8b77cfafaa",
+    "nameOriginal": "Patrick Wleh",
+    "nameEnglish": "Patrick Wleh",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-3a9bc7796d",
+    "nameOriginal": "Yeghia Yavruyan",
+    "nameEnglish": "Yeghia Yavruyan",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-44f1909c2b",
+    "nameOriginal": "Yves Yuvuladio",
+    "nameEnglish": "Yves Yuvuladio",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-64f7b5f6b2",
+    "nameOriginal": "Yisrael Zaguri",
+    "nameEnglish": "Yisrael Zaguri",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-92b0cec5f0",
+    "nameOriginal": "Stav Zalait",
+    "nameEnglish": "Stav Zalait",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-b170f4ac66",
+    "nameOriginal": "Ness Zamir",
+    "nameEnglish": "Ness Zamir",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-533940af08",
+    "nameOriginal": "Michael Zandberg",
+    "nameEnglish": "Michael Zandberg",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-4241e1c234",
+    "nameOriginal": "Liron Zarko",
+    "nameEnglish": "Liron Zarko",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-2137804c72",
+    "nameOriginal": "Ben Zhairi",
+    "nameEnglish": "Ben Zhairi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-ef32a298a5",
+    "nameOriginal": "Liroy Zhairi",
+    "nameEnglish": "Liroy Zhairi",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-39ac5b95a2",
+    "nameOriginal": "Yoav Ziv",
+    "nameEnglish": "Yoav Ziv",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-535e72af2b",
+    "nameOriginal": "Ivica Žuljević",
+    "nameEnglish": "Ivica Žuljević",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "canonicalPlayerId": "hapoel-petah-tikva:wv-89a1e36cb6",
+    "nameOriginal": "Israel Zviti",
+    "nameEnglish": "Israel Zviti",
+    "englishMethod": null,
+    "issues": [
+      "archive_confidence_below_2"
+    ],
+    "sources": [
+      "src-wp-roster-hapoel-petah-tikva"
+    ],
+    "action": "enrich_existing_id_only; never delete because a field is unknown"
+  }
+]
