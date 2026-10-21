@@ -2,6 +2,7 @@ import 'server-only'
 import type {ClubData} from '@/lib/clubs/contract'
 import {gateReadiness} from '@/lib/clubs/gate-data'
 import {GATE_THRESHOLDS as T} from '@/lib/clubs/thresholds'
+import {curateQuestions} from './curation'
 import {forgeTrivia,SOMBRE,type ForgeReport} from './forge'
 import {hapoelExtras} from './hapoel-extras'
 import {isLatin} from './names'
@@ -19,7 +20,7 @@ export function withForgedTrivia(data:ClubData):ClubData{
  const {trivia,report}=forgeTrivia(data,hapoel?hapoelExtras():{})
  reports.set(data.identity.id,report)
  const kept=hapoel?[]:data.trivia.questions.filter(q=>isLatin(q.prompt)&&isLatin(q.explanation)&&!SOMBRE.test(q.prompt))
- const questions=[...kept.map(q=>({...q,facets:[`club:${data.identity.id}`,`template:${q.template}`,'level:1']})),...trivia.questions]
+ const questions=curateQuestions(data.identity.id,[...kept.map(q=>({...q,facets:[`club:${data.identity.id}`,`template:${q.template}`,'level:1']})),...trivia.questions])
  const pools={...(hapoel?{}:data.trivia.pools),...trivia.pools}
  return {...data,trivia:{questions,pools},gates:{...data.gates,trivia:gateReadiness(questions.length,T.trivia.target,T.trivia.minimum,T.trivia.unit)}}
 }

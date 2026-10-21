@@ -36,7 +36,7 @@ export type TriviaPlan={
 export type TriviaActions={startTriviaRun:typeof startTriviaRun;resumeTriviaRun:typeof resumeTriviaRun;openTriviaQuestion:typeof openTriviaQuestion;answerTriviaRun:typeof answerTriviaRun;hintTriviaRun:typeof hintTriviaRun;reviewMissedQuestions:typeof reviewMissedQuestions}
 const CLUB_ACTIONS:TriviaActions={startTriviaRun,resumeTriviaRun,openTriviaQuestion,answerTriviaRun,hintTriviaRun,reviewMissedQuestions}
 /** `actions`/`home`: an experience (ALL FOOTBALL) plays the same run through its own server actions and returns to its own home (ADR-fanlife-0010); a club passes neither. */
-export type ClubTriviaProps={actions?:TriviaActions;home?:string;club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;plan:TriviaPlan;autostart:boolean;practice:boolean}
+export type ClubTriviaProps={actions?:TriviaActions;home?:string;fresh?:boolean;club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;plan:TriviaPlan;autostart:boolean;practice:boolean}
 type Shown={answer:AnswerView;reaction:Reaction;ms:number}
 type Hint={kind:'decade';decade:number}|{kind:'context';text:string}|{kind:'strike';strike:string[]}
 type Phase='ready'|'loading'|'play'|'over'
@@ -58,8 +58,8 @@ export function ClubTrivia(props:ClubTriviaProps){
  const [secondsLeft,setSecondsLeft]=useState(0),[stageShown,setStageShown]=useState<number|null>(null),[announce,setAnnounce]=useState(''),[pace,setPace]=useState<PaceMode>('auto'),[paused,setPaused]=useState(false)
  const [resume,setResume]=useState<RunView|null>(null),[retired,setRetired]=useState(false),[missed,setMissed]=useState<Missed>({v:1,items:[]}),[review,setReview]=useState<{playable:number;retired:number;withdrawn:number;merged:number}|null>(null)
  const lock=useRef(false),pending=useRef<{answer:string|string[];timeout:boolean}|null>(null),recorded=useRef(false),plate=useRef<HTMLDivElement|null>(null),deadline=useRef<number|null>(null),submitRef=useRef<(a:string|string[],timeout?:boolean)=>void>(()=>{}),started=useRef(false)
- const questions=run?.questions??[],count=questions.length,q:(PublicQuestion&{hint:boolean})|undefined=questions[index]
- const asked=askedOf(count),total=practice?0:secondsOf(index,count),cap=capOf(index,count),over=phase==='over'
+ const questions=run?.questions??[],count=questions.length,q:(PublicQuestion&{hint:boolean;seconds?:number})|undefined=questions[index]
+ const asked=askedOf(count),total=practice?0:(q?.seconds??secondsOf(index,count)),cap=capOf(index,count),over=phase==='over'
  const locked=busy||opening||!!shown||!!fatal||conn==='open'
 
  useEffect(()=>{try{const p=localStorage.getItem(PACE_KEY);if(p==='tap'||p==='auto')setPace(p)}catch{/* the default pace is used */}},[])
@@ -87,11 +87,11 @@ export function ClubTrivia(props:ClubTriviaProps){
   if(lock.current)return;lock.current=true;setPhase('loading');setStartError(null)
   haptic('lock')
   try{
-   const r=await A.startTriviaRun({slug:club,version,seed,cursor,mode:mode??plan.selected.mode,topic:mode?undefined:plan.selected.topic,era:mode?undefined:plan.selected.era,practice,...(mode==='revenge'?{missed:idsOf(missed)}:{})})
+   const r=await A.startTriviaRun({slug:club,version,seed,cursor,fresh:props.fresh===true,mode:mode??plan.selected.mode,topic:mode?undefined:plan.selected.topic,era:mode?undefined:plan.selected.era,practice,...(mode==='revenge'?{missed:idsOf(missed)}:{})})
    lock.current=false
    if(r.ok)begin(r,false);else{setPhase('ready');setStartError(failKey(r.error))}
   }catch{lock.current=false;setPhase('ready');setStartError('tq.offline.start')}
- },[club,version,seed,cursor,plan.selected.mode,plan.selected.topic,plan.selected.era,practice,missed,begin])
+ },[club,version,seed,cursor,props.fresh,plan.selected.mode,plan.selected.topic,plan.selected.era,practice,missed,begin])
  useEffect(()=>{if(props.autostart&&!started.current){started.current=true;void start()}},[]) // eslint-disable-line react-hooks/exhaustive-deps -- once on arrival; the link asked for a run
 
  // ---- the clock starts when the question is on screen and the server has opened it; never behind a card, never in practice
@@ -323,7 +323,7 @@ function Ready({club,clubName,seed,cursor,locale,plan,practice,onPractice,pace,o
    </div>
    <div className={css.side}>
     <ul className={css.stickers} aria-hidden="true">
-     <li className="wk-burst cyan"><b className="wk-num">{practice?'—':`${STAGE_SECONDS[0]}s`}</b><span className="wk-k white">{practice?t('tq.ready.sticker.noclock'):t('tq.ready.sticker.clock')}</span></li>
+     <li className="wk-burst cyan"><b className="wk-num">{practice?'—':'12–45s'}</b><span className="wk-k white">{practice?t('tq.ready.sticker.noclock'):t('tq.ready.sticker.clock')}</span></li>
      <li className="wk-burst white"><span className={css.balls}><i/><i/><i/></span><span className="wk-k">{t('tq.ready.sticker.balls',{n:LIVES})}</span></li>
      <li className="wk-burst"><b className="wk-num">×{STAGE_CAPS[2]}</b><span className="wk-k white">{t('tq.ready.sticker.combo')}</span></li>
     </ul>
