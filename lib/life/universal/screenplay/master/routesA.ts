@@ -120,7 +120,7 @@ export const MASTER_ROUTES_A: ChapterScript[] = [
         action: [s(null, 'The cloth is heavier than it looks, the way anything you will have to carry is.', 'הבד כבד ממה שנראה, כמו כל דבר שיהיה עליך לשאת.')],
         options: [
           o('hands', t('Work with your hands', 'לעבוד בידיים'), s('mate', 'Good. Pull it flat from your side. Slowly. It forgives nothing fast.', 'טוב. תמתח אותו ישר מהצד שלך. לאט. הוא לא סולח על מהירות.'),
-            [flag('life:master:R-TER:role', 'hands'), bond('mate', 3), energy(-5)]),
+            [flag('life:master:R-TER:role', 'hands'), bond('mate', 3), energy(-5)], {mission: {template: 'tifo-carry'}}),
           o('organise', t('Organise the meeting', 'לארגן את המפגש'), s('boss', 'A list of the people who said yes. Only those. No names from guessing.', 'רשימה של האנשים שאמרו כן. רק אותם. בלי שמות מניחוש.'),
             [flag('life:master:R-TER:role', 'organise'), bond('boss', 2), heart(1)]),
           o('crowd', t('Join the crowd', 'להצטרף לקהל'), s('boss', 'Stand with them, then. Somebody has to be what it is all for.', 'תעמוד איתם, אם כך. מישהו צריך להיות מה שכל זה בשבילו.'),
@@ -255,7 +255,7 @@ export const MASTER_ROUTES_A: ChapterScript[] = [
         action: [s(null, 'Someone has taken out a map. The route on it looks tidier than the road.', 'מישהו הוציא מפה. המסלול עליה נראה מסודר יותר מהדרך.')],
         options: [
           o('go', t('Carry on with a workable plan', 'להמשיך לפי תוכנית ישימה'), s('friend', 'The plan costs time and costs money, and we are saying so out loud. All right. That is honest.', 'התוכנית עולה זמן ועולה כסף, ואנחנו אומרים את זה בקול. בסדר. זה כנה.'),
-            [flag('life:master:R-WAY:delay', 'continued'), coins(-3), energy(-10)]),
+            [flag('life:master:R-WAY:delay', 'continued'), coins(-3), energy(-10)], {mission: {template: 'away-day', mandatory: true}}),
           o('watch', t('Change how you are there and watch from a valid alternative', 'לשנות נוכחות ולראות ממקום חלופי תקף'), s('friend', 'No magic arrival at the gate. We will see it from a window, with a bad view. That is allowed.', 'בלי הגעה קסומה לשער. נראה את זה מחלון, עם נוף גרוע. זה מותר.'),
             [flag('life:master:R-WAY:delay', 'watched'), heart(1), bond('friend', 2)]),
           o('cancel', t('Cancel your part and look after the one who counted on you', 'לבטל את חלקך ולדאוג למי שסמך עליך'), s('friend', 'You are sitting down in the cold with a person who needed you more than the evening did. I will remember that.', 'אתה מתיישב בקור עם אדם שהיה צריך אותך יותר ממה שהערב היה צריך. אזכור את זה.'),

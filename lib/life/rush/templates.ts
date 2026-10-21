@@ -39,8 +39,8 @@ export const MISSION_TEMPLATES: readonly MissionTemplate[] = [
     needs: [
       {of: {anchor: ['away']}, grade: 'critical', day: true, why: 'An away day is a real away match on a known day — the road and the kickoff come from it.'},
     ],
-    title: 'Away day · {date}', brief: 'Four of you, one car, one kickoff a long road from {city}. Make it.',
-    neutralTitle: 'Away day', neutralBrief: 'Four of you, one car, one kickoff a long road from {city}. Make it.',
+    title: 'Away day · {date}', brief: 'A long road from {city}, a full car, one kickoff. Make it.',
+    neutralTitle: 'Away day', neutralBrief: 'A long road from {city}, a full car, one kickoff. Make it.',
     weight: {away: 1, europe: 0.5},
   },
   {
@@ -128,7 +128,7 @@ export const templateById = (id: string): MissionTemplate | null => MISSION_TEMP
 export const TEMPLATE_HE: Readonly<Record<string, {title: string; brief: string; neutralTitle: string; neutralBrief: string}>> = {
   'kickoff-run': {title: 'ריצה לפתיחה · {date}', brief: 'השריקה ב{ground} לא תחכה. דרך {city}, עד השער, לפני הפתיחה.', neutralTitle: 'ריצה לפתיחה', neutralBrief: 'השריקה לא תחכה. דרך {city}, עד השער, לפני הפתיחה.'},
   'sneak-in': {title: 'בלי כרטיס · {date}', brief: 'אין כרטיס, אין כסף, פרצה אחת בגדר. להיכנס לפני שהסדרנים מסתכלים לכיוון שלך.', neutralTitle: 'בלי כרטיס', neutralBrief: 'אין כרטיס, אין כסף, פרצה אחת בגדר. להיכנס לפני שהסדרנים מסתכלים לכיוון שלך.'},
-  'away-day': {title: 'משחק חוץ · {date}', brief: 'ארבעה אתם, מכונית אחת, ופתיחה במרחק דרך ארוכה מ{city}. להגיע.', neutralTitle: 'משחק חוץ', neutralBrief: 'ארבעה אתם, מכונית אחת, ופתיחה במרחק דרך ארוכה מ{city}. להגיע.'},
+  'away-day': {title: 'משחק חוץ · {date}', brief: 'דרך ארוכה מ{city}, רכב מלא, ופתיחה אחת. להגיע.', neutralTitle: 'משחק חוץ', neutralBrief: 'דרך ארוכה מ{city}, רכב מלא, ופתיחה אחת. להגיע.'},
   'cup-final-trip': {title: 'הגמר · {date}', brief: 'כל העיר בדרך לגמר. וגם כל מכונית שלפניך.', neutralTitle: 'הגמר', neutralBrief: 'כל העיר בדרך לגמר. וגם כל מכונית שלפניך.'},
   'europe-night': {title: 'לילה באירופה · {date}', brief: 'עיר זרה, טלפון בלי קליטה, והחבר שלך איפשהו ביציע האורחים. למצוא אותו לפני שסוגרים את השערים.', neutralTitle: 'לילה באירופה', neutralBrief: 'עיר זרה, טלפון בלי קליטה, והחבר שלך איפשהו ביציע האורחים. למצוא אותו לפני שסוגרים את השערים.'},
   'title-night': {title: 'אלופים · {date}', brief: 'המגרש מלא, היציעים ריקים, ואבא שלך איפשהו בפנים. למצוא אותו.', neutralTitle: 'אלופים', neutralBrief: 'המגרש מלא, היציעים ריקים, ואבא שלך איפשהו בפנים. למצוא אותו.'},

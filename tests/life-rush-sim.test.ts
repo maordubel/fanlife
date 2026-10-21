@@ -14,6 +14,7 @@ import {chapterFit, type Fit} from '@/lib/life/rush/fit'
 import {missionFlags, missionSpecFor, type RushDoor} from '@/lib/life/rush/call'
 import {RUSH_WORDS} from '@/lib/life/rush/words'
 import {screenplayChapters} from '@/lib/life/universal/screenplay'
+import {MASTER_IDS, masterChapters} from '@/lib/life/universal/screenplay/master'
 import type {ArchiveRef, Effect} from '@/lib/life/universal/types'
 
 const SEEDS = Array.from({length: 12}, (_, i) => i + 1)
@@ -186,7 +187,7 @@ describe('RUSH · the screenplay asks for missions that exist', () => {
   const plays = (fx: readonly Effect[] | undefined, out: Extract<Effect, {e: 'play'}>[] = []) => { for (const e of fx ?? []) if (e.e === 'play') { out.push(e); plays(e.then, out); plays(e.good, out); plays(e.slip, out) } return out }
   for (const locale of ['en', 'he'] as const) it(`every mission in the ${locale} screenplay names a real template, fits the chapter's age, and has a way through without RUSH`, () => {
     let found = 0
-    for (const ch of screenplayChapters(locale)) for (const talk of ch.talks) for (const b of talk.branches) {
+    for (const ch of [...screenplayChapters(locale), ...masterChapters(MASTER_IDS, locale)]) for (const talk of ch.talks) for (const b of talk.branches) {
       const all = [...plays(b.then), ...(b.choices ?? []).flatMap(c => plays(c.then))]
       for (const p of all) if (p.mission) {
         found++
@@ -198,5 +199,13 @@ describe('RUSH · the screenplay asks for missions that exist', () => {
       }
     }
     expect(found).toBeGreaterThan(0)
+  })
+  it('the ultras missions are asked for only on the terrace route, and a mandatory mission exists', () => {
+    const asked: {chapter: string; template: string; mandatory: boolean}[] = []
+    for (const ch of [...screenplayChapters('en'), ...masterChapters(MASTER_IDS, 'en')]) for (const talk of ch.talks) for (const b of talk.branches) for (const p of [...plays(b.then), ...(b.choices ?? []).flatMap(c => plays(c.then))]) if (p.mission) asked.push({chapter: ch.id, template: p.mission.template, mandatory: p.mission.mandatory})
+    for (const a of asked) if (templateById(a.template)!.route === 'ultras') expect(a.chapter, a.template).toBe('R-TER')
+    expect(asked.some(a => a.mandatory)).toBe(true)
+    // sneak waits for a scene in the bible (the banner raid): the owner's script decides where it goes
+    expect(new Set(asked.map(a => templateById(a.template)!.verb))).toEqual(new Set(['run', 'carry', 'drive', 'find']))
   })
 })
