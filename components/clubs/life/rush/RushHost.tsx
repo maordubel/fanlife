@@ -28,13 +28,18 @@ export type RushHostProps = {
   /** the club's gate as its own signs write it ("Gate 5", "ΘΥΡΑ 7") */
   gateLabel: string
   quality?: Quality
+  /** LIFE's own sound (the same recordings the day uses); silent when absent */
+  cue?: (name: string) => void
   onDone: (result: MissionResult) => void
 }
 
 const fmt = (s: number) => { const v = Math.max(0, Math.round(s)); return `${Math.floor(v / 60)}:${String(v % 60).padStart(2, '0')}` }
 const ENDING_SECONDS = 2.4
 
-export function RushHost({spec, skin, locale, reduced, gateLabel, quality, onDone}: RushHostProps) {
+export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, onDone}: RushHostProps) {
+  const cueRef = useRef(cue)
+  useEffect(() => { cueRef.current = cue }, [cue])
+  const sfx = (name: string) => { try { cueRef.current?.(name) } catch { /* a sound that fails is silence */ } }
   const w = useCallback((k: RushKey | string, vars: Record<string, string> = {}) => rushWord(locale, k, {gate: gateLabel, ...vars}), [locale, gateLabel])
   const level = useMemo<Level>(() => buildLevel(spec), [spec])
   const [phase, setPhase] = useState<Phase>('brief')
@@ -106,12 +111,13 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, onDon
     setClueKeys(level.place === 'crowd' ? cluesShown(level, 0) : [])
     setCam(spec.camera)
     if (!reduced) { setCut(false); requestAnimationFrame(() => setCut(true)) }
+    sfx('whistle')
     setPhase('play')
   }, [level, reduced, spec.camera])
 
   /* the loop: fixed steps for the simulation, one picture per frame */
   useEffect(() => {
-    let raf = 0, last = performance.now(), acc = 0, shownClues = -1, tiredSaid = false
+    let raf = 0, last = performance.now(), acc = 0, shownClues = -1, tiredSaid = false, stride = 0
     const pad = (): Input => {
       const k = keys.current
       let x = (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0) + stick.current.x
@@ -148,18 +154,20 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, onDon
           for (const e of sim.events) {
             // what a knock cost, in the clock's own seconds — nothing in story mode
             const cost = (n: number) => { if (!sim.assist) pop(`−${n}s`) }
-            if (e.k === 'hit') { say(w(`ev.${e.by}`), 1400); cost(e.by === 'car' ? 9 : e.by === 'throw' ? 8 : e.by === 'police' ? 24 : 5) }
-            else if (e.k === 'caught') { say(w('ev.caught'), 1800); cost(24) }
-            else if (e.k === 'wrong') { say(w('ev.wrong'), 1200); cost(12) }
-            else if (e.k === 'found') say(w('ev.found'), 1600)
-            else if (e.k === 'grab') say(w('ev.grab'), 1200)
-            else if (e.k === 'drop') say(w('ev.drop'), 1400)
-            else if (e.k === 'voice') say(w(e.key), 2600)
-            else if (e.k === 'end') { phaseRef.current = 'ending'; setPhase('ending'); endT.current = 0 }
+            if (e.k === 'hit') { say(w(`ev.${e.by}`), 1400); cost(e.by === 'car' ? 9 : e.by === 'throw' ? 8 : e.by === 'police' ? 24 : 5); sfx(e.by === 'police' ? 'whistle' : 'bounce') }
+            else if (e.k === 'caught') { say(w('ev.caught'), 1800); cost(24); sfx('whistle') }
+            else if (e.k === 'wrong') { say(w('ev.wrong'), 1200); cost(12); sfx('tick') }
+            else if (e.k === 'found') { say(w('ev.found'), 1600); sfx('reveal') }
+            else if (e.k === 'grab') { say(w('ev.grab'), 1200); sfx('keep') }
+            else if (e.k === 'drop') { say(w('ev.drop'), 1400); sfx('bounce') }
+            else if (e.k === 'voice') { say(w(e.key), 2600); if (e.key.endsWith('.3') || e.key.endsWith('.4') || e.key.endsWith('.2')) sfx('murmur') }
+            else if (e.k === 'end') { phaseRef.current = 'ending'; setPhase('ending'); endT.current = 0; sfx(e.outcome === 'slip' ? 'murmur' : 'roar') }
           }
           acc -= STEP; steps++
         }
         if (acc > STEP * 12) acc = 0
+        // feet on the pavement: one step a stride, faster when he runs
+        if (ph === 'play' && level.place !== 'road' && sim.speed > 1.5) { stride += real * (1.6 + sim.speed * 0.28); if (stride >= 1) { stride = 0; sfx('step') } }
         if (sim.stamina < 0.25 && !tiredSaid && level.place !== 'road') { tiredSaid = true; say(w('ev.tired'), 1800) }
         if (sim.stamina > 0.9) tiredSaid = false
         if (level.place === 'crowd') { const n = cluesShown(level, sim.t).length; if (n !== shownClues) { shownClues = n; setClueKeys(cluesShown(level, sim.t)) } }

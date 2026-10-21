@@ -987,7 +987,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null}: P
 
       {overlay?.k === 'mission' && rush && (
         <div data-clear="true" data-life="mission">
-          <RushHost spec={overlay.spec} skin={pack.skin} locale={locale} reduced={reduced} gateLabel={rush.gateLabel}
+          <RushHost spec={overlay.spec} skin={pack.skin} locale={locale} reduced={reduced} gateLabel={rush.gateLabel} cue={soundOn ? cue : undefined}
             onDone={r => { const done = missionDone.current; missionDone.current = null; dismiss.current = null; setOverlay(null); done?.(r) }} />
         </div>
       )}
