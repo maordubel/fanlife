@@ -436,7 +436,10 @@ var q=new URLSearchParams(location.search),el=K.ren.domElement,down=null;
 el.addEventListener('pointerdown',function(e){down={x:e.clientX,y:e.clientY,t:performance.now()}});
 el.addEventListener('pointerup',function(e){if(!down)return;var d=Math.hypot(e.clientX-down.x,e.clientY-down.y),dt=performance.now()-down.t;down=null;if(d<12&&dt<600)tap(e.clientX,e.clientY)});
 fetch('/life/voxel/skins').then(function(r){return r.ok?r.json():{skins:{}}}).catch(function(){return{skins:{}}}).then(function(d){
- SKINS=d.skins||{};window.__start();
+ SKINS=d.skins||{};
+ /* the stand-alone room viewer (no ?play) dresses a room for ?club= exactly as play does: the same skin, the same colour guard */
+ window.__skinFor=function(id){var S=SKINS[id]||null;if(K.colourGuard)K.colourGuard(S);return S?{name:id,c1:S.p,c2:S.s,c3:S.t||'#14141c',club:S}:null};
+ window.__start();
  var l=document.getElementById('loader');if(l)l.classList.add('off');
  window.__ready=true;emit({type:'ready',quality:K.quality});
  if(window.parent!==window&&window.parent.__vxHostReady)window.parent.__vxHostReady(P);

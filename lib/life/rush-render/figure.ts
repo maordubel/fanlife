@@ -56,6 +56,11 @@ function geos(): Record<string, THREE.BufferGeometry> {
     strap: new THREE.TorusGeometry(0.13, 0.012, 6, 16, Math.PI * 1.1),
     vest: lathe([[0.001, 0.04], [0.176, 0.04], [0.186, 0.2], [0.208, 0.34], [0.214, 0.44], [0.13, 0.5], [0.001, 0.5]], 28),
     roll: new THREE.CylinderGeometry(0.16, 0.16, 1.15, 18).rotateZ(Math.PI / 2),
+    palm: new THREE.CapsuleGeometry(0.03, 0.035, 6, 12),
+    phal1: new THREE.CapsuleGeometry(0.0092, 0.026, 4, 8).translate(0, -0.013 - 0.0092, 0),
+    phal2: new THREE.CapsuleGeometry(0.0082, 0.02, 4, 8).translate(0, -0.01 - 0.0082, 0),
+    thumb1: new THREE.CapsuleGeometry(0.011, 0.024, 4, 8).translate(0, -0.012 - 0.011, 0),
+    thumb2: new THREE.CapsuleGeometry(0.0095, 0.018, 4, 8).translate(0, -0.009 - 0.0095, 0),
   }
   G.torso!.computeVertexNormals()
   return G
@@ -75,6 +80,34 @@ export function kitTexture(c: Cloth): THREE.CanvasTexture {
   if (c.pattern === 'solid') { g.fillStyle = ink; g.fillRect(0, 118, 256, 5) }
   const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4
   return t
+}
+
+
+/**
+ * A hand, not a mitten (owner, 21.10.2026: "the hands are alien"). A palm, four fingers of two joints each, a thumb that
+ * lies along the index. It hangs from the wrist along −y; the palm faces +z of the hand's own frame and every finger
+ * curls towards it. `grip` 0 is a hand at rest (a soft cascade, index least, little finger most), 1 a closed fist.
+ */
+export function makeHand(skin: THREE.Material, grip = 0, role = 'skin', out?: THREE.Mesh[]): THREE.Group {
+  const g = geos(), hand = new THREE.Group()
+  const add = (geo: THREE.BufferGeometry, parent: THREE.Object3D, x = 0, y = 0, z = 0) => { const m = new THREE.Mesh(geo, skin); m.position.set(x, y, z); m.castShadow = true; m.userData.role = role; parent.add(m); out?.push(m); return m }
+  add(g.palm!, hand, 0, -0.045, 0).scale.set(1.15, 1, 0.5)
+  const fingers: THREE.Object3D[] = []
+  ;[[-0.026, 0.95, 0.9], [-0.009, 1.05, 1], [0.009, 1.0, 1.1], [0.025, 0.85, 1.25]].forEach(([x, len, cas]) => {
+    const base = new THREE.Group(); base.position.set(x!, -0.094, 0.002); base.scale.setScalar(len!); hand.add(base)
+    base.rotation.x = (0.42 + grip * 0.95) * cas!
+    base.rotation.z = -x! * 1.2 * (1 - grip * 0.5)
+    add(g.phal1!, base)
+    const mid = new THREE.Group(); mid.position.y = -0.044; base.add(mid); mid.rotation.x = (0.62 + grip * 0.95) * cas!
+    add(g.phal2!, mid)
+    fingers.push(base)
+  })
+  const th = new THREE.Group(); th.position.set(-0.034, -0.035, 0.012); th.rotation.set(0.35 + grip * 0.5, 0, -0.55 + grip * 0.25); hand.add(th)
+  add(g.thumb1!, th)
+  const th2 = new THREE.Group(); th2.position.y = -0.045; th2.rotation.x = 0.3 + grip * 0.5; th.add(th2)
+  add(g.thumb2!, th2)
+  hand.userData.fingers = fingers
+  return hand
 }
 
 export type FigureOptions = {
@@ -137,7 +170,8 @@ export function makeFigure(cloth: Cloth, kitMap: THREE.Texture, o: FigureOptions
     const el = J['elbow' + L] = node(sh, 0, -0.27, 0)
     part(g.fore!, o.longSleeves ? M.top : M.skin, o.longSleeves ? 'top' : 'skin', el)
     const wr = J['wrist' + L] = node(el, 0, -0.22, 0)
-    part(g.hand!, M.skin, 'skin', wr, 0, -0.03, 0.005).scale.set(0.95, 1.12, 0.82)
+    // the hand: palm towards the body, fingers falling into a soft curl
+    const hd = makeHand(M.skin, 0, 'skin', meshes); hd.rotation.y = -s * Math.PI / 2; if (s > 0) hd.scale.x = -1; hd.position.y = 0.01; wr.add(hd); J['hand' + L] = hd
   }
   J.neck = node(J.chest, 0, 0.53, 0)
   part(g.neck!, M.skin, 'skin', J.neck, 0, 0.05, 0)

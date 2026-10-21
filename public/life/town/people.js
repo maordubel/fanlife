@@ -491,11 +491,22 @@ function facade(g,B,S){var J=B.J;var fx=new T.Group();fx.visible=true;g.add(fx);
   var qh=align(mi.clone().sub(ha),palm,downF,inward);rest['hd_'+side]=qh;
   // the forearm carries half of the hand's turn
   var ql=new T.Quaternion().setFromUnitVectors(ha.clone().sub(la).normalize(),downF);rest['la_'+side]=ql.clone().slerp(qh,.5)});
- // relaxed fingers: curl about the axis across the palm
- rest.curl={};['l','r'].forEach(function(s){var hd=jv(J,'hand_'+s),ix=jv(J,'index_01_'+s),pk=jv(J,'pinky_01_'+s);var across=ix.clone().sub(pk).normalize();
-  ['index','middle','ring','pinky','thumb'].forEach(function(f){[1,2,3].forEach(function(k){var nm=f+'_0'+k+'_'+s,a=jv(J,nm),b=k<3?jv(J,f+'_0'+(k+1)+'_'+s):a.clone().add(a.clone().sub(jv(J,f+'_0'+(k-1)+'_'+s)));var dir=b.clone().sub(a).normalize();
-   var ax=f==='thumb'?dir.clone().cross(across).normalize():across.clone().sub(dir.clone().multiplyScalar(across.dot(dir))).normalize();var ang=f==='thumb'?.2:(k===1?.18:k===2?.5:.32)*(f==='pinky'?1.35:f==='ring'?1.2:f==='index'?.8:1);
-   rest.curl[nm]=new T.Quaternion().setFromAxisAngle(ax,(P.curlSign||1)*(s==='l'?1:-1)*ang)})})});
+ /* hands (owner, 21.10.2026: "the hands are alien"): a living hand is never flat. At rest the fingers fall into a soft
+    cascade — index least, little finger most — they close up instead of fanning out, and the thumb lies along the
+    index instead of sticking out like a hitch-hiker's. Every axis is measured on this person's own rest skeleton:
+    curl turns a joint towards the palm, spread turns a finger towards the middle one. */
+ rest.hand={};['l','r'].forEach(function(s){var hd=jv(J,'hand_'+s),mi=jv(J,'middle_01_'+s),ix=jv(J,'index_01_'+s),pk=jv(J,'pinky_01_'+s),th=jv(J,'thumb_01_'+s);
+  var fwd=mi.clone().sub(hd).normalize(),across=ix.clone().sub(pk).normalize(),n=fwd.clone().cross(across).normalize();
+  // which side is the palm was measured on the rendered hand (hands lab): the mesh's rest thumb leans the other way
+  var thTip=jv(J,'thumb_03_'+s);if(thTip.clone().sub(th).dot(n)>0)n.negate();
+  var midDir=jv(J,'middle_02_'+s).clone().sub(mi).normalize(),palmC=hd.clone().lerp(mi,.55).add(n.clone().multiplyScalar(.035));
+  var F={};['index','middle','ring','pinky','thumb'].forEach(function(f){[1,2,3].forEach(function(k){var nm=f+'_0'+k+'_'+s,a=jv(J,nm),b=k<3?jv(J,f+'_0'+(k+1)+'_'+s):a.clone().add(a.clone().sub(jv(J,f+'_0'+(k-1)+'_'+s)));var dir=b.clone().sub(a).normalize();
+   var curl=dir.clone().cross(n).normalize();
+   // spread: about the palm normal, the sign that brings this finger towards the middle finger
+   var sp=new T.Vector3(),spA=0;if(k===1&&f!=='middle'&&f!=='thumb'){sp.copy(n);var L=.09,mt=mi.clone().add(midDir.clone().multiplyScalar(L)),tip0=a.clone().add(dir.clone().multiplyScalar(L)),tip1=a.clone().add(dir.clone().applyAxisAngle(sp,.1).multiplyScalar(L));if(tip1.distanceTo(mt)>tip0.distanceTo(mt))sp.negate();spA={index:.1,ring:.12,pinky:.22}[f]}
+   // thumb: its base swings in towards the palm and the index; its two joints fold gently
+   var opp=null;if(f==='thumb'&&k===1){var want=palmC.clone().sub(a).normalize();opp=dir.clone().cross(want).normalize()}
+   F[nm]={curl:curl,sp:sp,spA:spA,opp:opp,f:f,k:k}})});rest.hand[s]=F});
  return{u:{hips:hips,torso:torso,head:head,arms:arms,legs:legs,eyes:eyes,mouth:mouth},rest:rest}}
 
 var _q=new T.Quaternion(),_q2=new T.Quaternion(),_qi=new T.Quaternion(),_e=new T.Euler(),ID=new T.Quaternion();
@@ -516,7 +527,14 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
   b[BONE['hand_'+s]].quaternion.copy(_qi.copy(Wl).invert()).multiply(qOf(a.hand,_q)).multiply(Wh);
   // shoulders lift a little when the arm goes up
   var lift=clamp(-a.sh.rotation.x-1.2,0,1.6)*.22;b[BONE['clavicle_'+s]].quaternion.setFromAxisAngle(new T.Vector3(0,0,1),(s==='l'?1:-1)*lift);
-  for(var k in R.curl)if(k.slice(-1)===s)b[BONE[k]].quaternion.copy(R.curl[k])});
+  // the fingers: a soft cascade at rest, closing towards a grip when the arm is raised (a scarf, a flag, a fist)
+  var Fh=R.hand&&R.hand[s];if(Fh){var up=clamp((-a.sh.rotation.x-1.6)/1.1,0,1),grip=clamp(u.grip!=null?u.grip:up*.75,0,1),j=h.fj||(h.fj=.85+Math.random()*.3);
+   for(var nm in Fh){var e2=Fh[nm],bn=b[BONE[nm]];if(!bn)continue;var q=bn.quaternion.copy(ID);
+    if(e2.f==='thumb'){var o2=e2.k===1?.42+grip*.25:e2.k===2?.22+grip*.35:.28+grip*.45;if(e2.opp&&e2.k===1)q.multiply(_q2.setFromAxisAngle(e2.opp,o2));else q.multiply(_q2.setFromAxisAngle(e2.curl,o2));continue}
+    var cas={index:.78,middle:.95,ring:1.08,pinky:1.22}[e2.f],rel=(e2.k===1?.42:e2.k===2?.68:.38)*cas*j,fist=e2.k===1?1.35:e2.k===2?1.55:1.05;
+    if(e2.spA)q.multiply(_q2.setFromAxisAngle(e2.sp,e2.spA*(1-grip*.5)));
+    q.multiply(_q2.setFromAxisAngle(e2.curl,rel+(fist-rel)*grip))}}
+ });
  // legs, with an ankle that keeps the sole near the floor
  [['r',0],['l',1]].forEach(function(e){var s=e[0],l=u.legs[e[1]];b[BONE['thigh_'+s]].quaternion.copy(qOf(l.h,_q));b[BONE['calf_'+s]].quaternion.copy(qOf(l.kn,_q));
   var sum=l.h.rotation.x+l.kn.rotation.x;b[BONE['foot_'+s]].quaternion.setFromAxisAngle(new T.Vector3(1,0,0),-sum*.75)});

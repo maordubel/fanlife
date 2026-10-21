@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>hands lab</title><style>html,body{margin:0;background:#20242c}</style></head><body>
+<script src="/life/voxel/three.r128.min.js"></script>
+<script src="/life/town/people.js"></script>
+<script>
+// QA only: one person, close on the hands, to judge the fingers (not linked from anywhere)
+var Q=new URLSearchParams(location.search),T=THREE;
+var ren=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});ren.setSize(innerWidth,innerHeight);ren.outputEncoding=T.sRGBEncoding;document.body.appendChild(ren.domElement);
+var sc=new T.Scene();sc.background=new T.Color('#3a3f4a');var cam=new T.PerspectiveCamera(30,innerWidth/innerHeight,.01,50);
+sc.add(new T.HemisphereLight('#ffffff','#556',1.1));var d=new T.DirectionalLight('#fff',1.4);d.position.set(2,3,3);sc.add(d);
+PEOPLE.load().then(function(){
+ var g=PEOPLE.make({age:Number(Q.get('age')||35),sex:Q.get('g')==='f'?'f':'m',top:'#3d4558',skin:'#c99470',_id:'lab'},{own:function(m){return m}});sc.add(g);
+ var u=g.userData;var pose=Q.get('pose')||'idle';
+ if(pose==='forward'){u.arms.forEach(function(a){a.sh.rotation.x=-1.2;a.el.rotation.x=-.4})}
+ if(pose==='cheer'){u.arms.forEach(function(a){a.sh.rotation.x=-2.8})}
+ window.__fist=pose==='cheer'?1:0;
+ for(var i=0;i<5;i++)PEOPLE.sync(g,i*.03,.03);
+ var v=Q.get('view')||'hand';
+ var hb=new THREE.Vector3();g.updateMatrixWorld(true);g.traverse(function(o){if(o.isBone&&o.name==='hand_r')o.getWorldPosition(hb)});var hd=new THREE.Vector3();g.traverse(function(o){if(o.isBone&&o.name==='head')o.getWorldPosition(hd)});
+ if(v==='face'){cam.position.set(hd.x+.1,hd.y+.1,hd.z+.6);cam.lookAt(hd.x,hd.y+.08,hd.z)}else if(v==='body'){cam.position.set(0,1.1,3.2);cam.lookAt(0,1,0)}else if(v==='front'){cam.position.set(hb.x,hb.y-.04,hb.z+.45);cam.lookAt(hb.x,hb.y-.08,hb.z)}else if(v==='side'){cam.position.set(hb.x-.45,hb.y-.05,hb.z+.05);cam.lookAt(hb.x,hb.y-.08,hb.z)}else if(v==='inside'){cam.position.set(hb.x+.35,hb.y-.05,hb.z+.25);cam.lookAt(hb.x,hb.y-.08,hb.z)}else{cam.position.set(-.55,.95,.55);cam.lookAt(-.25,.82,0)}
+ g.updateMatrixWorld(true);ren.render(sc,cam);window.__done=true});
+</script></body></html>
