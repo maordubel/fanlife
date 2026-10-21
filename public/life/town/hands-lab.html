@@ -8,7 +8,7 @@ var ren=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});ren.set
 var sc=new T.Scene();sc.background=new T.Color('#3a3f4a');var cam=new T.PerspectiveCamera(30,innerWidth/innerHeight,.01,50);
 sc.add(new T.HemisphereLight('#ffffff','#556',1.1));var d=new T.DirectionalLight('#fff',1.4);d.position.set(2,3,3);sc.add(d);
 PEOPLE.load().then(function(){
- var g=PEOPLE.make({age:Number(Q.get('age')||35),sex:Q.get('g')==='f'?'f':'m',top:'#3d4558',skin:'#c99470',_id:'lab'},{own:function(m){return m}});sc.add(g);
+ var g=PEOPLE.make({age:Number(Q.get('age')||35),sex:Q.get('g')==='f'?'f':'m',top:'#3d4558',skin:'#c99470',_id:'lab',earring:Q.get('er')==='1',style:Q.get('st')||undefined,lash:Q.get('g')==='f'},{own:function(m){return m}});sc.add(g);
  var u=g.userData;var pose=Q.get('pose')||'idle';
  if(pose==='forward'){u.arms.forEach(function(a){a.sh.rotation.x=-1.2;a.el.rotation.x=-.4})}
  if(pose==='cheer'){u.arms.forEach(function(a){a.sh.rotation.x=-2.8})}

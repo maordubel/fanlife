@@ -149,7 +149,7 @@ L.monitor=function(par,x,y,z,ry,kind,o){o=o||{};var G=L.grp(x,y,z,ry||0,par);L.b
  draw(0);var tx=c.tex(cv,1,1);var sc=new T.Mesh(new T.PlaneGeometry(1.55,1.15),new T.MeshBasicMaterial({map:tx,color:'#fff'}));sc.position.set(0,1.45,.56);G.add(sc);L.glow(0,1.45,.9,kind==='pitch'?'#a8e0b8':'#a8c8ff',2.6,.2,G);
  c.tick(function(t){if(Math.floor(t*2)%2===(o.ph||0)){draw(t);tx.needsUpdate=true}});return G};
 L.keyboard=function(par,x,y,z,ry){var G=L.grp(x,y,z,ry||0,par);L.box(1.5,.1,.55,'#d6d2c8',0,0,0,{par:G,r:.03});for(var q=0;q<3;q++)L.box(1.35,.02,.1,'#8a8a90',0,.1,-.16+q*.14,{par:G,r:.01,ns:1});return G};
-L.mug=function(par,x,y,z,col,o){o=o||{};var m=L.cyl(.2,.17,.38,col||'#e8e2da',x,y,z,{par:par,rough:.4,seg:12});L.cyl(.17,.17,.02,'#4a2a1a',x,y+.36,z,{par:par,seg:12,ns:1});L.box(.06,.2,.04,col||'#e8e2da',x+.22,y+.1,z,{par:par,r:.02,ns:1});return m};
+L.mug=function(par,x,y,z,col,o){o=o||{};var m=L.cyl(.16,.14,.36,col||'#e8e2da',x,y,z,{par:par,rough:.4,seg:12});L.cyl(.135,.135,.02,'#4a2a1a',x,y+.34,z,{par:par,seg:12,ns:1});L.box(.05,.18,.04,col||'#e8e2da',x+.18,y+.09,z,{par:par,r:.02,ns:1});return m};
 L.steam=function(par,x,y,z,n){var sp=[];for(var i=0;i<(n||5);i++){var s=new T.Sprite(new T.SpriteMaterial({color:'#f4f0ec',map:c.glowTex(),transparent:true,opacity:0,depthWrite:false}));s.scale.set(.4,.4,1);par.add(s);sp.push({s:s,a:i/(n||5)})}c.tick(function(t,dt){sp.forEach(function(o){o.a=(o.a+dt*.22)%1;var k=o.a;o.s.position.set(x+Math.sin(k*8+o.a*5)*.08,y+k*2,z);o.s.material.opacity=Math.sin(k*3.14)*.22;o.s.scale.setScalar(.35+k*.7)})})};
 /* soft cloth strip (scarf) */
 L.scarfTex=function(c1,c2,w,h){var cv=C(w||128,h||512),k=X(cv);k.fillStyle=c1;k.fillRect(0,0,cv.width,cv.height);k.fillStyle=c2;var n=7,sh=cv.height/(n*2);for(var i=1;i<n*2;i+=2)k.fillRect(0,i*sh,cv.width,sh);k.strokeStyle='rgba(0,0,0,.12)';k.lineWidth=1;for(i=0;i<cv.width;i+=4){k.beginPath();k.moveTo(i,0);k.lineTo(i,cv.height);k.stroke()}for(i=0;i<cv.width;i+=5){k.strokeStyle=i%2?c1:c2;k.lineWidth=3;k.beginPath();k.moveTo(i,cv.height-26);k.lineTo(i,cv.height);k.stroke()}k.fillStyle='#f4f1ff';k.font='bold 22px Heebo, Arial';k.textAlign='center';nz(k,cv.width,cv.height,10);return c.tex(cv,1,1)};
@@ -643,6 +643,11 @@ RM.def('schoolyard',{kind:'school',build:function(c){var L=lib(c),rr=c.rr,rnd=c.
  c.person({skin:SK[0],top:'#e8e4de',bot:'#3a4a6a',hair:'#6a3a2a',style:'pony',w:.82,mode:'sit',s:.7,ry:.2,lash:true},{x:10.4,z:16.5});
  c.person({skin:SK[3],top:'#3d5f63',bot:'#2a2a30',hair:'#14100e',style:'curly',w:.9,mode:'cheer',s:.72,ry:2.8},{x:34.5,z:12.4});
  c.person({skin:SK[1],top:__CK.ad,bot:'#2a3040',hair:'#2a1a14',style:'short',w:.9,mode:'idle',s:.72,ry:0},{x:18.8,z:11.0});
+ /* a schoolyard is boys and girls: two girls talking by the wall, one at the hopscotch, a younger one watching the ball */
+ c.person({skin:SK[2],top:'#e8a8b8',bot:'#2a2a34',skirt:'#3a4a6a',hair:'#2a1a14',style:'long',lash:true,w:.85,mode:'talk',s:.7,ry:.9,look:.3},{x:14.6,z:12.2});
+ c.person({skin:SK[0],top:'#f4f1ee',bot:'#3e5674',hair:'#8a5a3a',style:'pony',lash:true,w:.82,mode:'listen',s:.72,ry:-2.2},{x:16.0,z:12.9});
+ c.person({skin:SK[3],top:'#5a7aa8',bot:'#2a2a30',skirt:'#6a3a4a',hair:'#14100e',style:'curlyLong',lash:true,w:.84,mode:'cheer',s:.7,ry:.3},{x:27.6,z:15.0});
+ c.person({skin:SK[1],top:__CK.a,bot:'#3e5674',hair:'#4a2a1a',style:'pony',lash:true,w:.8,mode:'cross',s:.62,ry:-.4,look:.4},{x:30.2,z:17.6});
  c.setCam(5.9,4.5,12.0,5.9,1.0,3.3,40,66)}});
 /* ===== newsroom ===== */
 RM.def('newsroom',{kind:'work',build:function(c){var L=lib(c),rr=c.rr,rnd=c.rnd,g=c.g,SK=c.SK,C1=c.skin.c1,C2=c.skin.c2,i,j;

@@ -65,9 +65,10 @@ function H(c){
   var d=new T.Object3D(),col=new T.Color(),first=null,dim=o.dim||1;
   function setc(att,i,hex,k){col.set(hex);col.multiplyScalar(k);col.convertSRGBToLinear();att.setXYZ(i,col.r,col.g,col.b)}
   Object.keys(groups).forEach(function(k){var L=groups[k];if(!L.length)return;var im=PEOPLE.crowdMesh(k,L.length);if(!im)return;var A=im.userData.att;
-   L.forEach(function(s,i){var sc=(s.s||1)*(.88+rnd()*.14)*.93,ry=(s.ry||0)+(rnd()-.5)*.5,sw=rnd()<.28?1.1+rnd()*.14:1+(rnd()-.5)*.14;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
+   var FEM=[];/* a terrace is not all men: about a quarter are women, narrower and a little shorter, many with their hair tied back */L.forEach(function(s,i){var fem=rnd()<.24,sc=(s.s||1)*(.88+rnd()*.14)*.93*(fem?.94:1),ry=(s.ry||0)+(rnd()-.5)*.5,sw=fem?.88+rnd()*.06:rnd()<.28?1.1+rnd()*.14:1+(rnd()-.5)*.14;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
     var sk=h.pick(SK),hr=rnd()<.12?sk:h.pick(HAIR),sh=s.col||h.pick(pal),k2=dim*(.85+rnd()*.2);
-    setc(A.cSkin,i,sk,Math.min(1,dim*1.1));setc(A.cShirt,i,sh,k2);setc(A.cPants,i,h.pick(PANTS),dim);setc(A.cShoe,i,h.pick(SHOE),dim);setc(A.cHair,i,hr,dim)});
+    if(fem&&hr===sk)hr=h.pick(HAIR);setc(A.cSkin,i,sk,Math.min(1,dim*1.1));setc(A.cShirt,i,sh,k2);setc(A.cPants,i,h.pick(PANTS),dim);setc(A.cShoe,i,h.pick(SHOE),dim);setc(A.cHair,i,hr,dim);if(fem&&rnd()<.7)FEM.push([i,hr])});
+   if(FEM.length){var top=headTop('down'),pg=new T.SphereGeometry(.055,8,6);pg.scale(1,2.1,1);var pmx=new T.InstancedMesh(pg,new T.MeshStandardMaterial({color:'#ffffff',roughness:.8}),FEM.length),PM=new T.Matrix4(),QM=new T.Matrix4(),qo=new T.Object3D();qo.position.set(0,top-.17,-.1);qo.rotation.x=.35;qo.updateMatrix();FEM.forEach(function(f,n){im.getMatrixAt(f[0],PM);QM.multiplyMatrices(PM,qo.matrix);pmx.setMatrixAt(n,QM);col.set(f[1]);col.multiplyScalar(dim);col.convertSRGBToLinear();pmx.setColorAt(n,col)});pmx.frustumCulled=false;pmx.castShadow=false;w.add(pmx)}
    ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im;
    /* both arms up: most of them hold a scarf stretched between the hands; one arm up: some carry a small flag */
    if(k!=='down'&&!o.noProps){var hp=handsOf(k),props=[];L.forEach(function(s,i){if(rnd()<(k==='both'?.62:.22))props.push(i)});if(!props.length)return;
@@ -77,6 +78,7 @@ function H(c){
      else{var hh=hp.r.y>hp.l.y?hp.r:hp.l;q.position.set(hh.x,hh.y+.24,hh.z);q.rotation.set(0,rr(-.4,.4),rr(-.12,.12));q.scale.set(1,1,1);if(pole){var qp=new T.Object3D();qp.position.set(hh.x,hh.y+.2,hh.z);qp.updateMatrix();M4.multiplyMatrices(P4,qp.matrix);pole.setMatrixAt(n,M4)}q.position.x+=(hh.x>0?.17:-.17)}
      q.updateMatrix();M4.multiplyMatrices(P4,q.matrix);pm.setMatrixAt(n,M4)});
     [pm,pole].forEach(function(m){if(!m)return;m.frustumCulled=false;m.castShadow=false;w.add(m)})}});return first};
+ var TOPS={};function headTop(k){if(TOPS[k]!=null)return TOPS[k];var p=PEOPLE.crowd[k].attributes.position,my=-1e9;for(var i=0;i<p.count;i++)my=Math.max(my,p.getY(i));return TOPS[k]=my}
  var HANDS={};function handsOf(k){if(HANDS[k])return HANDS[k];var g=PEOPLE.crowd[k],p=g.attributes.position,my=-1e9,i;for(i=0;i<p.count;i++)my=Math.max(my,p.getY(i));
   var l=new T.Vector3(),r=new T.Vector3(),nl=0,nr=0;for(i=0;i<p.count;i++){var y=p.getY(i);if(y<my-.16)continue;if(p.getX(i)>0){l.x+=p.getX(i);l.y+=y;l.z+=p.getZ(i);nl++}else{r.x+=p.getX(i);r.y+=y;r.z+=p.getZ(i);nr++}}
   if(nl)l.divideScalar(nl);if(nr)r.divideScalar(nr);if(!nl)l.copy(r);if(!nr)r.copy(l);return HANDS[k]={l:l,r:r}}

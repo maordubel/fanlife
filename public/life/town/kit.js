@@ -213,8 +213,12 @@ function humanStand(u,T_,o){var ar=u.arms,lg=u.legs,cyc=Math.sin(T_*.23+u.ph*3),
  u.hips.position.x=(u.hips.userData.x0==null?(u.hips.userData.x0=u.hips.position.x):u.hips.userData.x0)+side*.022*k;u.hips.position.y=.95-.012*k;u.hips.rotation.z=-side*.045*k;u.torso.rotation.z=side*.04*k;
  for(var i=0;i<2;i++){var a=ar[i],sg=i?-1:1;a.sh.rotation.z=sg*(.06+Math.sin(T_*.9+i)*.012);a.el.rotation.x=-.2-Math.sin(T_*.7+i*1.3)*.04;a.hand&&(a.hand.rotation.z=sg*.12)}
  var lk=Math.sin(T_*.31+u.ph)*.28+Math.sin(T_*.11)*.12;u.head.rotation.y=lk+(o.look||0);u.head.rotation.x=.04+Math.sin(T_*.27)*.03;u.head.rotation.z=-side*.03*k}
-function humanGait(u,w,sv){var ar=u.arms,lg=u.legs;for(var i=0;i<2;i++){var a=ar[i],sg=i?-1:1;a.el.rotation.x=-.32-Math.max(0,(i?1:-1)*Math.sin(w))*.35*sv;a.sh.rotation.z=sg*.07;lg[i].h.rotation.z=0}
- u.hips.rotation.y=Math.sin(w)*.1*sv;u.torso.rotation.y=-Math.sin(w)*.14*sv;u.hips.rotation.z=Math.cos(w)*.035*sv;u.torso.rotation.z=-Math.cos(w)*.02*sv;u.head.rotation.y-=u.torso.rotation.y*.6;u.head.rotation.x=.03;
+/* a walk says who walks: a woman's steps fall on one line, her hips tilt and her arms swing close; a man's shoulders
+   counter-swing wider; a child bounces and swings big; an old man shortens everything and leans into it */
+function humanGait(u,w,sv){var ar=u.arms,lg=u.legs,hp=(u.human&&u.human.ph)||{},fem=!!hp.fem,age=hp.age||35,kid=age<13,old=age>68;
+ if(old)sv*=.72;var swE=fem?.42:kid?.3:.35,shZ=fem?.045:kid?.1:.085,legIn=fem?.035:0;
+ for(var i=0;i<2;i++){var a=ar[i],sg=i?-1:1;a.el.rotation.x=-.32-(fem?.06:0)-Math.max(0,(i?1:-1)*Math.sin(w))*swE*sv;a.sh.rotation.z=sg*shZ;lg[i].h.rotation.z=-sg*legIn}
+ u.hips.rotation.y=Math.sin(w)*(fem?.07:.1)*sv;u.torso.rotation.y=-Math.sin(w)*(fem?.09:kid?.12:.16)*sv;u.hips.rotation.z=Math.cos(w)*(fem?.065:.03)*sv;u.torso.rotation.z=-Math.cos(w)*(fem?.035:.02)*sv;u.head.rotation.y-=u.torso.rotation.y*.6;u.head.rotation.x=old?.12:.03;if(old)u.torso.rotation.x=.07;
  if(u.hips.userData.x0!=null)u.hips.position.x=u.hips.userData.x0}
 function animDoll(g,t,dt){var u=g.userData,o=u.o,m=o.mode||'idle',ph=u.ph;var T_=t+ph;
  u.torso.scale.y=1+Math.sin(T_*1.7)*.012;
