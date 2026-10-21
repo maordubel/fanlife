@@ -1,9 +1,11 @@
 import 'server-only'
 import {cookies} from 'next/headers'
 import {dealMode,reviewMissed,categoryOf,type Blocker,type Bank} from '@/lib/clubs/trivia-deck'
-import {resolveHint,type HintPlan} from '@/lib/clubs/trivia-bank'
-import {markHint,openQuestion,settleQuestion,startLedger,isOver,type Ledger,type LedgerError} from '@/lib/clubs/trivia-ledger'
-import {runKey,secondsOf} from '@/lib/clubs/trivia-model'
+import {factsOf,resolveHint,type HintPlan} from '@/lib/clubs/trivia-bank'
+import {markHint,openQuestion,settleQuestion,startLedger,isOver,totalOf,type Ledger,type LedgerError} from '@/lib/clubs/trivia-ledger'
+import {runKey,stageIndex} from '@/lib/clubs/trivia-model'
+import {questionSeconds} from '@/lib/trivia/clock'
+import {TRIVIA_RULES} from '@/lib/trivia/editorial'
 import {seal,open} from '@/lib/game/blind-cow/token'
 import type {PublicQuestion,SourceRef} from '@/lib/game/questions/types'
 import type {Session} from '@/lib/game/session'
@@ -17,7 +19,7 @@ import type {Session} from '@/lib/game/session'
  * experience is only WHO resolves the bank: `trivia-run-actions.ts` passes the club tenant (`requestClub`), ALL FOOTBALL
  * passes its derived pool. A stale version cannot resume a run (`VERSION_RETIRED`).
  */
-export type RunQuestion=PublicQuestion&{hint:boolean}
+export type RunQuestion=PublicQuestion&{hint:boolean;seconds?:number}
 export type RunMeta={run:string;category:string;mode:string;banded:boolean;practice:boolean;seed:number;cursor:number;topic:string;era:string;count:number}
 export type SettledEntry={id:string;correct:boolean;timeout:boolean;hinted:boolean;gained:number}
 export type Fail={ok:false;error:LedgerError|'GATE_CLOSED'|'BAD_INPUT'|'BLOCKED'|'UNAVAILABLE';blocker?:Blocker}
@@ -25,7 +27,7 @@ export type RunView={ok:true;meta:RunMeta;questions:RunQuestion[];settled:Settle
 export type Verdict={correct:boolean;correctAnswers:string[];hits:number;explanation:string;difficulty:number;source:SourceRef}
 export type AnswerView={ok:true;duplicate:boolean;timeout:boolean;correct:boolean;hinted:boolean;gained:number;combo:number;multiplier:number;left:number;session:Session;over:boolean;verdict:Verdict}
 export type HintView={ok:true;hint:HintPlan;first:boolean}|Fail
-export type StartInput={slug:string;version:string;seed:number;cursor:number;mode?:string;topic?:string;era?:string;practice?:boolean;missed?:string[]}
+export type StartInput={slug:string;version:string;seed:number;cursor:number;mode?:string;topic?:string;era?:string;practice?:boolean;missed?:string[];fresh?:boolean}
 /** who answers for a (slug, version): the club tenant, or an experience's pool. null = closed or stale */
 export type BankResolver=(slug:string,version:string)=>Promise<{bank:Bank}|null>
 export type CoreOptions={resolve:BankResolver;idMax?:number}
@@ -40,16 +42,26 @@ async function gate(slug:unknown,version:unknown){if(!text(slug)||!text(version)
 function read(slug:string,version:string):Ledger|Fail{
  const l=open<Ledger>(cookies().get(cookieName(slug))?.value)
  if(!l||l.v!==1||l.club!==slug||!Array.isArray(l.ids)||!Array.isArray(l.e))return {ok:false,error:'NO_RUN'}
- if(l.ver!==version)return {ok:false,error:'VERSION_RETIRED'}
+ if(l.ver!==version||l.rules!==TRIVIA_RULES)return {ok:false,error:'VERSION_RETIRED'}
  return l
 }
 function write(l:Ledger){cookies().set(cookieName(l.club),seal(l),{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',path:'/',maxAge:60*60*6})}
+type Recent={club:string;ver:string;rules:number;ids:string[]}
+const recentName=(slug:string)=>`${cookieName(slug)}-recent`
+function recent(slug:string,version:string):string[]{
+ const r=open<Recent>(cookies().get(recentName(slug))?.value)
+ return r?.club===slug&&r.ver===version&&r.rules===TRIVIA_RULES&&Array.isArray(r.ids)&&r.ids.length<=48&&r.ids.every(id=>text(id,idMax))?r.ids:[]
+}
+function remember(l:Ledger,id:string){
+ const ids=[...recent(l.club,l.ver).filter(x=>x!==id),id].slice(-48)
+ cookies().set(recentName(l.club),seal({club:l.club,ver:l.ver,rules:TRIVIA_RULES,ids}),{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',path:'/',maxAge:60*60*24*14})
+}
 
 function questionsOf(bank:Bank,ids:readonly string[],seed:number):RunQuestion[]{
  const out:RunQuestion[]=[]
  for(const q of bank.engine.publicQuestions(ids,seed)){
   const original=bank.byId.get(q.id)
-  out.push({...q,hint:!!original&&resolveHint(original,q.options,seed)!==null})
+  out.push({...q,seconds:questionSeconds(q,stageIndex(out.length,ids.length)),hint:!!original&&resolveHint(original,q.options,seed)!==null})
  }
  return out
 }
@@ -57,8 +69,8 @@ const metaOf=(l:Ledger):RunMeta=>({run:l.run,category:l.practice?'practice':l.ca
 function viewOf(bank:Bank,l:Ledger,now:number):RunView{
  const settled=l.e.filter(e=>e.st!==0).map((e,i)=>({id:l.ids[i]!,correct:e.st===1,timeout:e.st===3,hinted:e.h===1,gained:e.g}))
  const open=l.e.findIndex(e=>e.st===0)
- const remaining=open>=0&&!l.practice?Math.max(0,l.e[open]!.o+secondsOf(open,l.ids.length)*1000-now):null
- return {ok:true,meta:metaOf(l),questions:questionsOf(bank,l.ids,l.seed),settled,session:l.s,openIndex:open>=0?open:null,remainingMs:remaining}
+ const remaining=open>=0&&!l.practice?Math.max(0,l.e[open]!.o+totalOf(l,open)*1000-now):null
+ return {ok:true,meta:metaOf(l),questions:questionsOf(bank,l.ids,l.seed).map((q,i)=>({...q,seconds:totalOf({...l,practice:false},i)})),settled,session:l.s,openIndex:open>=0?open:null,remainingMs:remaining}
 }
 
 /** deal a run and open its ledger; a bank that cannot field the mode answers with the blocker, never a substitute */
@@ -69,10 +81,25 @@ async function startTriviaRun(input:StartInput):Promise<RunView|Fail>{
  const ctx=await gate(input.slug,input.version)
  if(!ctx)return {ok:false,error:'GATE_CLOSED'}
  const practice=input.practice===true
- const dealt=dealMode(ctx.bank,{mode:input.mode,topic:input.topic,era:input.era,practice},input.seed,input.cursor,input.missed??[])
+ const deal=(seed:number)=>dealMode(ctx.bank,{mode:input.mode,topic:input.topic,era:input.era,practice},seed,input.cursor,input.missed??[])
+ let seed=input.seed,dealt=deal(seed)
  if('blocked' in dealt)return {ok:false,error:'BLOCKED',blocker:dealt.blocked}
- const run=runKey({version:input.version,seed:input.seed,cursor:dealt.cursor,mode:dealt.mode,topic:dealt.topic??'',era:dealt.era?String(dealt.era):'',practice})+(dealt.mode==='revenge'?`:${dealt.ids.length}:${dealt.ids[0]}`:'')
- const ledger=startLedger({run,club:input.slug,ver:input.version,seed:input.seed,cursor:dealt.cursor,cat:categoryOf(dealt,false),mode:dealt.mode,topic:dealt.topic,era:dealt.era,practice,banded:dealt.banded,ids:dealt.ids})
+ // An unpinned lobby may choose a fresher SEED, never a personalised deck for an existing seed.
+ // The chosen seed goes in the share link, so another device receives exactly this challenge.
+ if(input.fresh===true&&dealt.mode==='standard'){
+  const seen=new Set(recent(input.slug,input.version).flatMap(id=>{const q=ctx.bank.byId.get(id);return q?factsOf(q):[]}))
+  const overlap=(ids:string[])=>ids.reduce((n,id)=>n+(factsOf(ctx.bank.byId.get(id)!).some(f=>seen.has(f))?1:0),0)
+  let best=overlap(dealt.ids)
+  for(let i=1;best>0&&i<=8;i++){
+   const candidateSeed=(input.seed+Math.imul(i,0x9e3779b9))>>>0,candidate=deal(candidateSeed)
+   if('blocked' in candidate)continue
+   const score=overlap(candidate.ids)
+   if(score<best){seed=candidateSeed;dealt=candidate;best=score}
+  }
+ }
+ const run=runKey({version:`${input.version}~trivia${TRIVIA_RULES}`,seed,cursor:dealt.cursor,mode:dealt.mode,topic:dealt.topic??'',era:dealt.era?String(dealt.era):'',practice})+(dealt.mode==='revenge'?`:${dealt.ids.length}:${dealt.ids[0]}`:'')
+ const publicQuestions=questionsOf(ctx.bank,dealt.ids,seed)
+ const ledger=startLedger({seconds:publicQuestions.map(q=>q.seconds!),run,club:input.slug,ver:input.version,seed,cursor:dealt.cursor,cat:categoryOf(dealt,false),mode:dealt.mode,topic:dealt.topic,era:dealt.era,practice,banded:dealt.banded,ids:dealt.ids})
  write(ledger)
  return viewOf(ctx.bank,ledger,Date.now())
 }
@@ -103,7 +130,7 @@ async function openTriviaQuestion(slug:string,version:string,run:string,index:nu
  if('ok' in l)return l
  const r=openQuestion(l,index,Date.now())
  if(!r.ok)return r
- if(r.ledger!==l)write(r.ledger)
+ if(r.ledger!==l){write(r.ledger);remember(l,l.ids[index]!)}
  return {ok:true,remainingMs:r.remainingMs}
 }
 

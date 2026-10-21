@@ -8,6 +8,7 @@ import {clubBank} from '@/lib/clubs/trivia-deck'
 import {open,seal} from '@/lib/game/blind-cow/token'
 import type {Ledger} from '@/lib/clubs/trivia-ledger'
 import {GRACE_MS} from '@/lib/clubs/trivia-ledger'
+import {factsOf} from '@/lib/clubs/trivia-bank'
 
 const KEY='fanlife-trivia-hapoel-tel-aviv'
 let data:NonNullable<Awaited<ReturnType<typeof loadClub>>>['data']
@@ -33,19 +34,36 @@ describe('Gate 2 · the run lives on the server (§17.4)',()=>{
   expect(json).not.toContain('"answer"');expect(json).not.toContain('"explanation"')
   const raw=request.values.get(KEY)!;for(const id of r.questions.map(q=>q.id))expect(raw).not.toContain(id)
   expect(ledger().ids).toEqual(r.questions.map(q=>q.id))
+  expect(ledger().seconds).toEqual(r.questions.map(q=>q.seconds))
+ })
+ it('a fresh lobby avoids a recently opened fact by choosing a shareable seed; pinned links ignore device history',async()=>{
+  const first=await start(),firstIds=first.questions.map(q=>q.id)
+  // Starting alone does not count unseen questions as seen.
+  expect((await start({fresh:true})).meta.seed).toBe(42)
+  await openTriviaQuestion('hapoel-tel-aviv',data.version,first.meta.run,0)
+  const next=await start({fresh:true}),bank=clubBank(data),seen=new Set(factsOf(bank.byId.get(firstIds[0]!)!))
+  expect(next.meta.seed).not.toBe(42)
+  expect(next.questions.every(q=>factsOf(bank.byId.get(q.id)!).every(f=>!seen.has(f)))).toBe(true)
+  const pinned=await start({seed:next.meta.seed,fresh:false})
+  expect(pinned.questions).toEqual(next.questions)
+  expect((await start({fresh:false})).questions.map(q=>q.id)).toEqual(firstIds)
+ })
+ it('a ledger from the previous clock/editorial rules cannot resume',async()=>{
+  await start();const old=ledger();request.values.set(KEY,seal({...old,rules:1}))
+  expect(await resumeTriviaRun('hapoel-tel-aviv',data.version)).toEqual({ok:false,error:'VERSION_RETIRED'})
  })
  it('the ledger opens a question\'s clock when it is opened, and a reload keeps the deadline',async()=>{
-  const r=await start();const run=r.meta.run
-  const o=await openTriviaQuestion('hapoel-tel-aviv',data.version,run,0);expect(o).toEqual({ok:true,remainingMs:20_000})
+  const r=await start();const run=r.meta.run,budget=r.questions[0]!.seconds!*1000
+  const o=await openTriviaQuestion('hapoel-tel-aviv',data.version,run,0);expect(o).toEqual({ok:true,remainingMs:budget})
   request.now+=7_000
-  const again=await openTriviaQuestion('hapoel-tel-aviv',data.version,run,0);expect(again).toEqual({ok:true,remainingMs:13_000})
-  const resumed=await resumeTriviaRun('hapoel-tel-aviv',data.version);expect(resumed).toMatchObject({ok:true,openIndex:0,remainingMs:13_000})
+  const again=await openTriviaQuestion('hapoel-tel-aviv',data.version,run,0);expect(again).toEqual({ok:true,remainingMs:budget-7_000})
+  const resumed=await resumeTriviaRun('hapoel-tel-aviv',data.version);expect(resumed).toMatchObject({ok:true,openIndex:0,remainingMs:budget-7_000})
  })
  it('grades on the server, scores from the formula and keeps the lives',async()=>{
   const r=await start(),id=r.questions[0]!.id
   await openTriviaQuestion('hapoel-tel-aviv',data.version,r.meta.run,0);request.now+=4_000
   const a=await answerTriviaRun('hapoel-tel-aviv',data.version,r.meta.run,0,answerOf(id,true));if(!a.ok)throw new Error(a.error)
-  expect(a.correct).toBe(true);expect(a.gained).toBe(Math.round((100*truth(id).g.difficulty+100*(16/20))*1));expect(a.session.score).toBe(a.gained);expect(a.verdict.source.title).toBeTruthy()
+  expect(a.correct).toBe(true);expect(a.gained).toBe(Math.round((100*truth(id).g.difficulty+100*((r.questions[0]!.seconds!-4)/r.questions[0]!.seconds!))*1));expect(a.session.score).toBe(a.gained);expect(a.verdict.source.title).toBeTruthy()
   await openTriviaQuestion('hapoel-tel-aviv',data.version,r.meta.run,1)
   const w=await answerTriviaRun('hapoel-tel-aviv',data.version,r.meta.run,1,answerOf(r.questions[1]!.id,false));if(!w.ok)throw new Error(w.error)
   expect(w.correct).toBe(false);expect(w.session.lives).toBe(2);expect(w.session.combo).toBe(0);expect(w.verdict.correctAnswers.length).toBeGreaterThan(0)
@@ -58,7 +76,7 @@ describe('Gate 2 · the run lives on the server (§17.4)',()=>{
   const flip=await answerTriviaRun('hapoel-tel-aviv',data.version,r.meta.run,0,answerOf(r.questions[0]!.id,true));if(!flip.ok)throw new Error('x');expect(flip.correct).toBe(false)
  })
  it('a late answer is a timeout and cannot replace one',async()=>{
-  const r=await start();await openTriviaQuestion('hapoel-tel-aviv',data.version,r.meta.run,0);request.now+=20_000+GRACE_MS+10
+  const r=await start();await openTriviaQuestion('hapoel-tel-aviv',data.version,r.meta.run,0);request.now+=r.questions[0]!.seconds!*1000+GRACE_MS+10
   const a=await answerTriviaRun('hapoel-tel-aviv',data.version,r.meta.run,0,answerOf(r.questions[0]!.id,true));if(!a.ok)throw new Error('x')
   expect(a.timeout).toBe(true);expect(a.correct).toBe(false);expect(a.session.lives).toBe(2)
   const b=await answerTriviaRun('hapoel-tel-aviv',data.version,r.meta.run,0,answerOf(r.questions[0]!.id,true));if(!b.ok)throw new Error('x');expect(b.timeout).toBe(true);expect(b.session.lives).toBe(2)

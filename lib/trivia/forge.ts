@@ -4,10 +4,14 @@ import type {ClubData,ClubTrivia,Fact,Source} from '@/lib/clubs/contract'
 import type {MasterQuestion,QTopic,QType,SourceRef} from '@/lib/game/questions/types'
 import {localizedDate} from '@/lib/clubs/locale'
 import {englishName} from '@/lib/clubs/rumble-xi/names'
+import playerLabels from '@/content/manual/trivia-player-labels.json'
+import heritage from '@/content/manual/trivia-heritage-facts-2026-10-21.json'
+import goalReviews from '@/content/manual/trivia-goal-reviews.json'
 import {rawPool} from '@/lib/clubs/rumble'
 import {normKey} from '@/lib/clubs/trivia-bank'
 import {clampLevel,difficultyOf} from './levels'
 import {brand,enClub,enCompetition,enSponsor,enText,isLatin} from './names'
+import {CLUB_SPELLINGS} from '@/lib/clubs/spellings'
 
 /**
  * THE QUESTION FORGE — one English trivia bank for every club, built from the club's own approved records (owner,
@@ -40,7 +44,7 @@ const POS:Record<string,string>={GK:'Goalkeeper',DF:'Defender',MF:'Midfielder',F
 const ORD=['1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th','11th','12th','13th','14th','15th','16th','17th','18th','19th','20th']
 const plural=(n:number,w:string)=>`${n} ${w}${n===1?'':'s'}`
 /** native spellings of the club itself in its own sources — how a match line is read for "us" */
-const US:Record<string,string[]>={'aek-athens':['ΑΕΚ','AEK'],'hapoel-tel-aviv':['הפועל תל אביב','הפועל ת"א'],'hapoel-petah-tikva':['הפועל פתח תקווה','הפועל פ"ת'],panathinaikos:['Παναθηναϊκός','Panathinaikos'],olympiacos:['Ολυμπιακός','Olympiacos','Olympiakos'],celtic:['Celtic'],'st-pauli':['St. Pauli','St Pauli'],'zrinjski-mostar':['Zrinjski']}
+const US:Readonly<Record<string,readonly string[]>>=CLUB_SPELLINGS
 
 type Row={id:string;on:string;season:string;year:number;comp:string|null;kind:'europe'|'cup'|'league';final:boolean;opp:string;oppKey:string;us:number;them:number;home:boolean|null;derby:boolean;scorers:{name:string;minute:number|null}[];lineup:string[];bench:string[];source:SourceRef}
 const kindOf=(c:string|null):Row['kind']|'friendly'=>!c?'league':/friendl/i.test(c)?'friendly':/UEFA|Europ|Champions|Intertoto|Cup Winners|Fairs|Conference|Asian|Mitropa|Latin Cup/i.test(c)?'europe':/cup|pokal|coppa|copa|kupa|trophy|shield/i.test(c)?'cup':'league'
@@ -50,7 +54,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  const id=club.identity.id,NAME=club.identity.name,skipped:Record<string,number>={}
  const skip=(why:string)=>{skipped[why]=(skipped[why]??0)+1}
  const srcBy=new Map(club.sources.map(s=>[s.id,s]))
- const sourceOf=(f:Pick<Fact<unknown>,'sources'|'confidence'>):SourceRef=>{const s:Source|undefined=srcBy.get(f.sources[0]??'');return {title:s?.title||'Club source ledger',url:s?.url??null,confidence:f.confidence}}
+ const sourceOf=(f:Pick<Fact<unknown>,'sources'|'confidence'>):SourceRef=>{const ss=f.sources.map(id=>srcBy.get(id)).filter((s):s is Source=>!!s);const s=ss.find(s=>s.url&&s.access==='available')??ss.find(s=>s.url)??ss[0];return {title:s?.title||'Club source ledger',url:s?.url??null,confidence:f.confidence}}
  const ok=(f:Fact<unknown>)=>f.status==='approved'&&f.confidence>=2
  const usKeys=[NAME,...(US[id]??[])].map(normKey).filter(Boolean)
  const isUs=(side:string)=>{const k=normKey(side);return usKeys.some(u=>k===u||k.includes(u))}
@@ -61,18 +65,19 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
 
  /* ───────── the club's men, English names, and how prominent each is in his own club's archive ───────── */
  type Man={id:string;name:string;positions:string[];from:number|null;to:number|null;fame:1|2|3|4;source:SourceRef}
- const rating=new Map<string,number>()
- try{for(const r of rawPool(club,{base:true}))rating.set(r.id,r.rating)}catch{/* no ratings: everyone is ordinary */}
+ const rating=new Map<string,number>(),prominence=new Map<string,number>()
+ try{for(const r of rawPool(club,{base:true})){rating.set(r.id,r.rating);prominence.set(r.id,r.reputation??r.rating)}}catch{/* no ratings: everyone is ordinary */}
  const sortedR=[...rating.values()].sort((a,b)=>b-a)
  const fameOf=(pid:string):1|2|3|4=>{const r=rating.get(pid);if(r===undefined||!sortedR.length)return 3;const at=sortedR.findIndex(x=>x<=r)/sortedR.length;return at<0.1?1:at<0.35?2:at<0.7?3:4}
- const byId=new Map<string,Man>(),players=new Map<string,Man>()
+ const byId=new Map<string,Man>(),players=new Map<string,Man>(),originalNames=new Map<string,Set<Man>>()
  for(const f of club.players??[]){
   if(!ok(f as Fact<unknown>))continue
-  const v=f.value,name=englishName(id,v.id,v.name)
+  const v=f.value,labels=playerLabels as Record<string,Record<string,{name:string}>>,name=labels[id]?.[v.id]?.name??englishName(id,v.id,v.name)
   if(!isLatin(name)||!name.trim())continue
   const man:Man={id:v.id,name,positions:v.positions,from:v.fromYear,to:v.toYear,fame:fameOf(v.id),source:sourceOf(f as Fact<unknown>)}
   if(players.has(normKey(name))){players.delete(normKey(name));continue}
   byId.set(v.id,man);players.set(normKey(name),man)
+  for(const n of [v.name,...v.aliases,name]){const k=normKey(n),xs=originalNames.get(k)??new Set<Man>();xs.add(man);originalNames.set(k,xs)}
   for(const a of v.aliases)if(isLatin(a)&&!players.has(normKey(a)))players.set(normKey(a),man)
  }
  // two men with one printed name cannot both be asked about by name
@@ -115,14 +120,11 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  const ageAdj=(y:number)=>y<1970?1:y>=2010?-1:0
  const topicOf=(r:Row):QTopic=>r.derby?'derby':r.kind==='europe'?'europe':'history'
  const compPhrase=(r:Row)=>r.comp?` in the ${r.comp}`:''
- const facetsOf=(r:Row,level:number)=>[`level:${level}`,`kind:${r.kind}`,`decade:${decadeOf(r.year)}`,...(r.derby?['derby']:[]),...(r.final?['final']:[])]
- const result=(r:Row)=>r.us>r.them?'won':r.us<r.them?'lost':'drew'
+ const facetsOf=(r:Row,level:number)=>[`level:${level}`,`kind:${r.kind}`,`decade:${decadeOf(r.year)}`,...(r.derby?['derby']:[]),...(r.final?['final']:[]),...(!notable(r)?['archive-depth']:[])]
  const verbPhrase=(r:Row)=>r.us>r.them?`beat ${r.opp} ${r.us}-${r.them}`:r.us<r.them?`lost ${r.us}-${r.them} to ${r.opp}`:`drew ${r.us}-${r.them} with ${r.opp}`
- const verbBase=(r:Row)=>r.us>r.them?`beat ${r.opp} ${r.us}-${r.them}`:r.us<r.them?`lose ${r.us}-${r.them} to ${r.opp}`:`draw ${r.us}-${r.them} with ${r.opp}`
  const lineOf=(r:Row)=>r.home===false?`${r.opp} ${r.them}-${r.us} ${NAME}`:`${NAME} ${r.us}-${r.them} ${r.opp}`
  // the same result against the same side in the same competition twice: a season prompt would have two answers
  const twin=new Map<string,number>();for(const r of rows){const k=`${r.oppKey}|${r.comp}|${r.us}|${r.them}`;twin.set(k,(twin.get(k)??0)+1)}
- const seasonsVs=new Map<string,Set<string>>();for(const r of rows){const k=`${r.oppKey}|${r.comp}`;if(!seasonsVs.has(k))seasonsVs.set(k,new Set());seasonsVs.get(k)!.add(r.season)}
  // deep league rounds are sampled (a stable hash picks which) so a club with 3,000 league nights does not drown its Europe
  const DEEP_CAP=700
  const deep=rows.filter(r=>!notable(r)).sort((a,b)=>h(`${id}:${a.id}`).localeCompare(h(`${id}:${b.id}`)))
@@ -134,29 +136,30 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   const common={factIds:[r.id],decades:dec,source:r.source}
   if(byDate.get(r.on)===1){
    const L=clampLevel(base)
-   add({...common,key:`opp:${r.id}`,template:'fl-match-opponent',type:'mcq',topic:t,level:L,prompt:`On ${when(r.on)}, ${NAME} ${result(r)} ${r.us}-${r.them}${compPhrase(r)}. Who were the opponents?`,answer:r.opp,pool:`opp:${r.kind}`,explanation,hint:{kind:'decade'},facets:facetsOf(r,L)})
+   add({...common,key:`opp:${r.id}`,template:'fl-match-opponent',type:'mcq',topic:t,level:L,prompt:`${NAME}${r.derby?' derby':''} rewind: ${when(r.on)}${compPhrase(r)}. A ${r.us}-${r.them} ${r.us>r.them?'win':r.us<r.them?'defeat':'draw'} — against which club?`,answer:r.opp,pool:`opp:${r.kind}`,explanation,hint:{kind:'decade'},facets:facetsOf(r,L)})
    const L2=clampLevel(base+1),fixed=[[r.them,r.us],[r.us+1,r.them],[r.us,r.them+1],[Math.max(0,r.us-1),r.them],[r.us+1,r.them+1],[r.us+2,r.them]].filter(([a,b])=>a!==r.us||b!==r.them).map(([a,b])=>`${a}-${b}`)
-   add({...common,key:`score:${r.id}`,template:'fl-match-score',type:'mcq',topic:'numbers',tags:[t],level:L2,prompt:`${NAME} v ${r.opp}${compPhrase(r)}, ${when(r.on)}. What was the score? (${NAME}'s goals first)`,answer:`${r.us}-${r.them}`,distractors:[...new Set(fixed)],explanation,hint:{kind:'strike'},facets:facetsOf(r,L2)})
+   add({...common,key:`score:${r.id}`,template:'fl-match-score',type:'mcq',topic:'numbers',tags:[t],level:L2,prompt:`Remember the scoreline: ${NAME} v ${r.opp}, ${when(r.on)}${compPhrase(r)}. How did it finish? (${NAME} first)`,answer:`${r.us}-${r.them}`,distractors:[...new Set(fixed)],explanation,hint:{kind:'strike'},facets:facetsOf(r,L2)})
   }
   if(twin.get(`${r.oppKey}|${r.comp}|${r.us}|${r.them}`)===1&&r.comp){
    const L=clampLevel(base+1)
-   add({...common,key:`season:${r.id}`,template:'fl-match-season',type:'year',topic:t,level:L,prompt:`In which season did ${NAME} ${verbBase(r)} in the ${r.comp}?`,answer:r.season,pool:'season',explanation,hint:{kind:'decade'},facets:facetsOf(r,L)})
-   // the false twin: another season the club played, in which no such match against that side in that competition exists
-   const others=seasons.filter(s=>!seasonsVs.get(`${r.oppKey}|${r.comp}`)!.has(s)&&Math.abs(seasonYear(s)-r.year)<=6)
-   const truth=Number.parseInt(h(r.id,2),16)%2===0||!others.length,s=truth?r.season:others[Number.parseInt(h(r.id+'s',4),16)%others.length]!
-   const L3=clampLevel(base-1)
-   add({...common,key:`tf:${r.id}`,template:'fl-match-tf',type:'tf',topic:t,level:L3,prompt:`True or false: ${NAME} ${verbPhrase(r)} in the ${r.comp} in ${s}.`,answer:truth?'true':'false',explanation,hint:{kind:'decade'},facets:facetsOf(r,L3)})
+   add({...common,key:`season:${r.id}`,template:'fl-match-season',type:'year',topic:t,level:L,prompt:`Place this result in its season: ${NAME} ${verbPhrase(r)} in the ${r.comp}. Which campaign was it?`,answer:r.season,pool:'season',explanation,hint:{kind:'decade'},facets:facetsOf(r,L)})
+   // A missing fixture is not evidence of a false season. Anchor both variants to ONE documented date.
+   if(byDate.get(r.on)===1){
+    const truth=Number.parseInt(h(r.id,2),16)%2===0,us=truth?r.us:r.us+1
+    const L3=clampLevel(base-1)
+    add({...common,key:`tf:${r.id}`,template:'fl-match-tf',type:'tf',topic:t,level:L3,prompt:`Scoreboard check: ${NAME} v ${r.opp}, ${when(r.on)}${compPhrase(r)}. It finished ${us}-${r.them} (${NAME} first). True or false?`,answer:truth?'true':'false',explanation,hint:{kind:'decade'},facets:facetsOf(r,L3)})
+   }
   }
   // scorers: one question per match, and only when it names one man without doubt
   const scoredBy=[...new Set(r.scorers.map(s=>s.name))],ours=scoredBy.filter(n=>players.has(normKey(n)))
-  if(ours.length&&ours.length===scoredBy.length&&byDate.get(r.on)===1){
+  if(r.us>0&&r.scorers.length===r.us&&ours.length&&ours.length===scoredBy.length&&byDate.get(r.on)===1){
    const timed=r.scorers.filter(s=>s.minute!==null).sort((a,b)=>a.minute!-b.minute!)
    const one=scoredBy.length===1,first=timed[0]?.name
    const answer=one?scoredBy[0]!:first&&timed.length===r.scorers.length?first:null
    if(answer){
     const played=[...r.lineup,...r.bench].filter(n=>!scoredBy.includes(n)&&players.has(normKey(n)))
     const L=clampLevel((notable(r)?3:4)+ageAdj(r.year)/2)
-    add({...common,key:`scorer:${r.id}`,template:'fl-match-scorer',type:'mcq',topic:t,tags:['players'],level:L,prompt:one?`Who scored for ${NAME} against ${r.opp}${compPhrase(r)} on ${when(r.on)}?`:`Who scored ${NAME}'s first goal against ${r.opp}${compPhrase(r)} on ${when(r.on)}?`,answer,distractors:[...new Set(played)].slice(0,5),pool:`pl:${decadeOf(r.year)}`,explanation:`${explanation} ${one?`${answer} scored for ${NAME}.`:`${answer} opened the scoring for ${NAME}.`}`,hint:{kind:'strike'},facets:[...facetsOf(r,L),'scorer']})
+    add({...common,key:`scorer:${r.id}`,template:'fl-match-scorer',type:'mcq',topic:t,tags:['players'],level:L,prompt:one?`Whose name went on the scoresheet for ${NAME} against ${r.opp}${compPhrase(r)} on ${when(r.on)}?`:`Who opened ${NAME}'s scoring against ${r.opp}${compPhrase(r)} on ${when(r.on)}?`,answer,distractors:[...new Set(played)].slice(0,5),pool:`pl:${decadeOf(r.year)}`,explanation:`${explanation} ${one?`${answer} scored for ${NAME}.`:`${answer} opened the scoring for ${NAME}.`}`,hint:{kind:'strike'},facets:[...facetsOf(r,L),'scorer']})
    }
   }
   // the starting eleven: three who started, three who were at the club then and were not in that matchday squad
@@ -167,7 +170,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
    if(starters.length>=3&&absent.length>=3){
     const pick=(xs:string[],salt:string)=>[...new Set(xs)].sort((a,b)=>h(salt+a).localeCompare(h(salt+b))).slice(0,3)
     const L=clampLevel((notable(r)?3:4)+(r.final?-1:0))
-    add({...common,key:`xi:${r.id}`,template:'fl-match-eleven',type:'multi',topic:t,tags:['players'],level:L,prompt:`Which three of these started for ${NAME} against ${r.opp}${compPhrase(r)} on ${when(r.on)}?`,answer:pick(starters,r.id),distractors:pick(absent,r.id+'x'),explanation:`${explanation} Starting eleven: ${r.lineup.join(', ')}.`,hint:{kind:'strike'},facets:[...facetsOf(r,L),'lineup']})
+    add({...common,key:`xi:${r.id}`,template:'fl-match-eleven',type:'multi',topic:t,tags:['players'],level:L,prompt:`Which three names belong in ${NAME}'s starting eleven against ${r.opp}${compPhrase(r)} on ${when(r.on)}?`,answer:pick(starters,r.id),distractors:pick(absent,r.id+'x'),explanation:`${explanation} Starting eleven: ${r.lineup.join(', ')}.`,hint:{kind:'strike'},facets:[...facetsOf(r,L),'lineup']})
    }
   }
  }
@@ -199,14 +202,14 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   const y=seasonYear(k.season),L=clampLevel(2+(y<1995?1:0)+(y>=2015?-1:0)),dec=[decadeOf(y)],common={factIds:[k.id],decades:dec,source:k.source}
   const facets=[`level:${L}`,`decade:${decadeOf(y)}`,'kit']
   if(k.maker&&makers.size>=4){
-   add({...common,key:`kit-maker:${k.id}`,template:'fl-kit-maker',type:'mcq',topic:'kits',level:L,prompt:`Who made ${NAME}'s ${k.season} ${k.type} shirt?`,answer:k.maker,pool:'maker',explanation:`${NAME}'s ${k.season} ${k.type} shirt was made by ${k.maker}.`,hint:{kind:'decade'},facets})
+   add({...common,key:`kit-maker:${k.id}`,template:'fl-kit-maker',type:'mcq',topic:'kits',level:L,prompt:`Picture ${NAME}'s ${k.season} ${k.type} shirt. Which maker belongs on the label?`,answer:k.maker,pool:'maker',explanation:`${NAME}'s ${k.season} ${k.type} shirt was made by ${k.maker}.`,hint:{kind:'decade'},facets})
    const wrong=[...makers].filter(m=>m!==k.maker).sort((a,b)=>h(k.id+a).localeCompare(h(k.id+b)))[0]
    const truth=Number.parseInt(h(k.id,2),16)%2===0||!wrong
    add({...common,key:`kit-tf:${k.id}`,template:'fl-kit-tf',type:'tf',topic:'kits',level:clampLevel(L-1),prompt:`True or false: ${truth?k.maker:wrong} made ${NAME}'s ${k.season} ${k.type} shirt.`,answer:truth?'true':'false',explanation:`It was ${k.maker}.`,hint:{kind:'decade'},facets:[`level:${clampLevel(L-1)}`,'kit']})
   }
   if(k.sponsor&&sponsors.size>=4){
    const L2=clampLevel(L+1)
-   add({...common,key:`kit-sponsor:${k.id}`,template:'fl-kit-sponsor',type:'mcq',topic:'kits',level:L2,prompt:`Which sponsor was on ${NAME}'s ${k.season} ${k.type} shirt?`,answer:k.sponsor,pool:'sponsor',explanation:`${k.sponsor} was on the front of ${NAME}'s ${k.season} ${k.type} shirt.`,hint:{kind:'decade'},facets:[`level:${L2}`,`decade:${decadeOf(y)}`,'kit']})
+   add({...common,key:`kit-sponsor:${k.id}`,template:'fl-kit-sponsor',type:'mcq',topic:'kits',level:L2,prompt:`From the shirt rail: ${NAME}, ${k.season}, ${k.type}. Which sponsor was on the front?`,answer:k.sponsor,pool:'sponsor',explanation:`${k.sponsor} was on the front of ${NAME}'s ${k.season} ${k.type} shirt.`,hint:{kind:'decade'},facets:[`level:${L2}`,`decade:${decadeOf(y)}`,'kit']})
   }
  }
 
@@ -265,12 +268,12 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  for(const p of ranked){
   if(p.positions.length===1){
    const ans=POS[p.positions[0]!]!,L=clampLevel(p.fame)
-   add({key:`pos:${p.id}`,template:'fl-player-position',type:'mcq',topic:'players',level:L,prompt:`What was ${p.name}'s position at ${NAME}?`,answer:ans,distractors:Object.values(POS).filter(x=>x!==ans),explanation:`${p.name} played as a ${ans.toLowerCase()} for ${NAME}${p.from?` (recorded ${p.from}${p.to&&p.to!==p.from?`–${p.to}`:''})`:''}.`,hint:{kind:'strike'},factIds:[`pos:${p.id}`],decades:p.from?[decadeOf(p.from)]:[],source:p.source,facets:[`level:${L}`,'player']})
+   add({key:`pos:${p.id}`,template:'fl-player-position',type:'mcq',topic:'players',level:L,prompt:`${p.name} is on the ${NAME} team sheet. Which position was his?`,answer:ans,distractors:Object.values(POS).filter(x=>x!==ans),explanation:`${p.name} played as a ${ans.toLowerCase()} for ${NAME}${p.from?` (recorded ${p.from}${p.to&&p.to!==p.from?`–${p.to}`:''})`:''}.`,hint:{kind:'strike'},factIds:[`pos:${p.id}`],decades:p.from?[decadeOf(p.from)]:[],source:p.source,facets:[`level:${L}`,'player']})
   }
   if(p.from){
    const d=decadeOf(p.from),ans=`${d}s`,L=clampLevel(p.fame+1)
    const fixed=[d-10,d+10,d-20,d+20,d+30,d-30].filter(x=>x>=1880&&x<=2020).map(x=>`${x}s`)
-   add({key:`arrive:${p.id}`,template:'fl-player-decade',type:'mcq',topic:'players',level:L,prompt:`In which decade do ${p.name}'s recorded years at ${NAME} begin?`,answer:ans,distractors:fixed,explanation:`${p.name}'s recorded years at ${NAME}: ${p.from}${p.to&&p.to!==p.from?`–${p.to}`:''}.`,hint:{kind:'strike'},factIds:[`span:${p.id}`],decades:[d],source:p.source,facets:[`level:${L}`,`decade:${d}`,'player']})
+   add({key:`arrive:${p.id}`,template:'fl-player-decade',type:'mcq',topic:'players',level:L,prompt:`Turn back to ${p.name}'s ${NAME} years. In which decade does the archive first place him at the club?`,answer:ans,distractors:fixed,explanation:`${p.name}'s recorded years at ${NAME}: ${p.from}${p.to&&p.to!==p.from?`–${p.to}`:''}.`,hint:{kind:'strike'},factIds:[`span:${p.id}`],decades:[d],source:p.source,facets:[`level:${L}`,`decade:${d}`,'player']})
   }
  }
  // era sets: "which three played in the 1990s" — the strongest-remembered first, never a man whose years are unknown
@@ -280,7 +283,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   const outside=known.filter(p=>p.to!<d||p.from!>d+9).sort((a,b)=>a.fame-b.fame||a.id.localeCompare(b.id))
   for(let i=0;i+2<Math.min(inside.length,18)&&i+2<outside.length;i+=3){
    const yes=inside.slice(i,i+3),no=outside.slice(i,i+3),L=clampLevel(Math.round((yes.reduce((t,p)=>t+p.fame,0)/3))+1)
-   add({key:`era:${d}:${i}`,template:'fl-player-era',type:'multi',topic:'players',level:L,prompt:`Which three of these played for ${NAME} in the ${d}s? (Set ${i/3+1})`,answer:yes.map(p=>p.name),distractors:no.map(p=>p.name),explanation:[...yes,...no].map(p=>`${p.name}: ${p.from}–${p.to}`).join(' · '),hint:{kind:'strike'},factIds:yes.map(p=>`span:${p.id}`),decades:[d],source:yes[0]!.source,facets:[`level:${L}`,`decade:${d}`,'player']})
+   add({key:`era:${d}:${i}`,template:'fl-player-era',type:'multi',topic:'players',level:L,prompt:`Build a ${d}s ${NAME} team sheet: which three of these players belong in that decade? (${i/3+1})`,answer:yes.map(p=>p.name),distractors:no.map(p=>p.name),explanation:[...yes,...no].map(p=>`${p.name}: ${p.from}–${p.to}`).join(' · '),hint:{kind:'strike'},factIds:yes.map(p=>`span:${p.id}`),decades:[d],source:yes[0]!.source,facets:[`level:${L}`,`decade:${d}`,'player']})
   }
  }
  // arrival order: three men from different decades, the better-known first
@@ -288,7 +291,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  for(let i=0;i+2<Math.min(firsts.length,120);i+=3){
   const trio=firsts.slice(i,i+3).sort((a,b)=>a.from!-b.from!);if(new Set(trio.map(p=>decadeOf(p.from!))).size<3)continue
   const L=clampLevel(3)
-  add({key:`arrive-order:${trio.map(p=>p.id).join(',')}`,template:'fl-player-order',type:'order',topic:'players',level:L,prompt:`Put these ${NAME} players in order of arrival, earliest first.`,answer:trio.map(p=>p.name),explanation:trio.map(p=>`${p.name} (${p.from})`).join(' → '),hint:{kind:'context'},factIds:trio.map(p=>`span:${p.id}`),decades:trio.map(p=>decadeOf(p.from!)),source:trio[0]!.source,facets:[`level:${L}`,'player']})
+  add({key:`arrive-order:${trio.map(p=>p.id).join(',')}`,template:'fl-player-order',type:'order',topic:'players',level:L,prompt:`Three chapters of ${NAME} history. Put these players in order of their first recorded club year, earliest first.`,answer:trio.map(p=>p.name),explanation:trio.map(p=>`${p.name} (${p.from})`).join(' → '),hint:{kind:'context'},factIds:trio.map(p=>`span:${p.id}`),decades:trio.map(p=>decadeOf(p.from!)),source:trio[0]!.source,facets:[`level:${L}`,'player']})
  }
 
  /* ───────── English timeline moments (a persecution, a death or a war is remembered on the timeline, never quizzed) */
@@ -299,6 +302,62 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   add({key:`moment-year:${f.id}`,template:'fl-moment-year',type:'year',topic:'history',level:L,prompt:`${NAME} history: in which year — “${t}”?`,answer:String(y),pool:'year',explanation:`${t} — ${when(v.on)}.`,hint:{kind:'decade'},factIds:[f.id],decades:[decadeOf(y)],source:sourceOf(f as Fact<unknown>),facets:[`level:${L}`,`decade:${decadeOf(y)}`,'moment']})
  }
 
+ /* ───────── the scorer the replay actually names; no invented narrative, minute or winning-goal claim ───────── */
+ for(const f of club.goals??[]){
+  if(!ok(f))continue
+  const v=f.value as Record<string,unknown>,on=typeof v.on==='string'?v.on:'',subtitle=String(v.subtitle??'')
+  const opp=typeof v.opponent==='string'?enClub(v.opponent):null,comp=typeof v.competition==='string'?enCompetition(v.competition):null
+  const seq=Array.isArray(v.sequence)?v.sequence as {actor?:string;side?:string;action?:string}[]:[],last=seq.at(-1)
+  if(!opp||!/^\d{4}-\d{2}-\d{2}$/.test(on)||!last?.actor||last.side!=='club'||!['shot','header'].includes(last.action??''))continue
+  const recordedMinute=/(?:·\s*|minute\s+|דקה\s+)(\d+(?:\s*\+\s*\d+)?)\s*['′]?(?:\s*$)/i.exec(subtitle)?.[1]
+  if(!recordedMinute)continue
+  const reviews=goalReviews as Record<string,{on:string;originalMinute:string;minute:string;source:SourceRef}>,candidate=reviews[f.id]
+  const review=candidate?.on===on&&candidate.originalMinute===recordedMinute?candidate:null,minute=review?.minute??recordedMinute
+  const found=originalNames.get(normKey(last.actor)),man=found?.size===1?[...found][0]:null
+  const scorer=man?.name??(isLatin(last.actor)?last.actor:null);if(!scorer)continue
+  const sameMatch=rows.filter(r=>r.on===on&&r.oppKey===normKey(opp))
+  const relevant=sameMatch[0],year=Number(on.slice(0,4)),topic:QTopic=relevant?topicOf(relevant):comp&&kindOf(comp)==='europe'?'europe':'history'
+  const L=clampLevel(relevant?.final?1:relevant?.derby?2:2+(year<1990?1:0)),source=review?.source??sourceOf(f)
+  if(!source.url)continue
+  // Replay geometry can be illustrative. The scorer is documented; do not turn a sketch into a body-part claim.
+  const action='found the net'
+  add({key:`goal-finisher:${f.id}`,template:'fl-goal-finisher',type:'mcq',topic,tags:['players'],level:L,
+   prompt:`Rewind to ${NAME} v ${opp}, ${when(on)}${comp?` (${comp})`:''}. Minute ${minute}: who ${action}?`,
+   answer:scorer,distractors:[...new Set(seq.flatMap(s=>s.side==='club'&&s.actor&&isLatin(s.actor)&&normKey(s.actor)!==normKey(scorer)?[s.actor]:[]))],pool:`pl:${decadeOf(year)}`,
+   explanation:`${scorer} ${action} against ${opp} in minute ${minute}, ${when(on)}.`,hint:{kind:'strike'},
+   factIds:[f.id,...sameMatch.map(r=>r.id)],decades:[decadeOf(year)],source,facets:[`level:${L}`,'goal',...(relevant?.final?['final']:[]),...(relevant?.derby?['derby']:[])]})
+ }
+ // Pair names with genuinely different positions. Each component keeps its underlying fact identity.
+ const positionMen=ranked.filter(p=>p.positions.length===1&&POS[p.positions[0]!]&&p.source.url).sort((a,b)=>(prominence.get(b.id)??0)-(prominence.get(a.id)??0)||a.id.localeCompare(b.id))
+ const lanes=Object.keys(POS).map(pos=>positionMen.filter(p=>p.positions[0]===pos))
+ for(let i=0;i<12;i++){
+  const trio=lanes.map(l=>l[i]).filter((p):p is Man=>!!p).slice(0,3);if(trio.length!==3)continue
+  const L=clampLevel(Math.round(trio.reduce((n,p)=>n+p.fame,0)/3))
+  add({key:`player-pairs:${trio.map(p=>p.id).join(',')}`,template:'fl-player-pairs',type:'match',topic:'players',level:L,
+   prompt:`Fill the ${NAME} team sheet: match each player to his position.`,left:trio.map(p=>p.name),answer:trio.map(p=>POS[p.positions[0]!]!),
+   explanation:trio.map(p=>`${p.name}: ${POS[p.positions[0]!]}`).join(' · ')+'.',hint:{kind:'context'},
+   factIds:trio.map(p=>`pos:${p.id}`),decades:[...new Set(trio.flatMap(p=>p.from?[decadeOf(p.from)]:[]))],source:trio[0]!.source,facets:[`level:${L}`,'player']})
+ }
+ // Three home shirts, three distinct makers: one unambiguous answer per season.
+ const homeKits=kits.filter(k=>k.type==='home'&&k.maker&&k.source.url&&kitKey.get(`${k.season}|home`)===1).sort((a,b)=>a.season.localeCompare(b.season))
+ for(let i=0;i<homeKits.length;i+=3){
+  const trio:Kit[]=[],seen=new Set<string>()
+  for(const k of homeKits.slice(i)){if(seen.has(normKey(k.maker!)))continue;seen.add(normKey(k.maker!));trio.push(k);if(trio.length===3)break}
+  if(trio.length!==3)continue
+  const L=2
+  add({key:`kit-pairs:${trio.map(k=>k.id).join(',')}`,template:'fl-kit-pairs',type:'match',topic:'kits',level:L,
+   prompt:`Three shirts from ${NAME}'s past. Match each home-shirt season to its maker.`,left:trio.map(k=>k.season),answer:trio.map(k=>k.maker!),
+   explanation:trio.map(k=>`${k.season}: ${k.maker}`).join(' · ')+'.',hint:{kind:'context'},factIds:trio.map(k=>k.id),decades:[...new Set(trio.map(k=>decadeOf(seasonYear(k.season))))],source:trio[0]!.source,facets:[`level:${L}`,'kit']})
+ }
+
+ // Original questions from individually reviewed primary-source facts. Related variants share a fact group.
+ for(const f of heritage.facts){
+  if(f.club!==id||f.status!=='approved'||f.source.confidence<2||!f.source.url)continue
+  add({key:`heritage:${f.id}`,template:`fl-heritage-${f.kind}`,type:'mcq',topic:'history',level:f.level,
+   prompt:f.prompt,answer:f.answer,distractors:f.distractors,explanation:f.explanation,hint:{kind:'strike'},
+   factIds:[`heritage:${id}:${f.group}`],decades:[f.decade],source:f.source,facets:[`level:${f.level}`,'heritage','editorial:2026-10-21']})
+ }
+
  /* ───────── pools: real values of the same kind ───────── */
  const pools:Record<string,string[]>={season:seasons,maker:[...makers],sponsor:[...sponsors],number:numbersAll,year:[...new Set(club.timeline.map(t=>t.value.on.slice(0,4)))].sort()}
  for(const k of ['europe','cup','league'] as const)pools[`opp:${k}`]=[...new Set(rows.filter(r=>r.kind===k).map(r=>r.opp))]
@@ -306,7 +365,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  // one spelling per name in a pool: two spellings of one club are an alias of the answer, never a distractor
  for(const [k,v] of Object.entries(pools)){const seen=new Set<string>();pools[k]=v.filter(x=>{const n=normKey(x);if(!n||seen.has(n))return false;seen.add(n);return true})}
 
- const questions:MasterQuestion[]=drafts.map(d=>({id:`q_${h(`${id}:${d.template}:${d.key}`)}`,key:`${d.template}:${id}:${d.key}`,template:d.template,type:d.type,topic:d.topic,tags:[...new Set([d.topic,...(d.tags??[])])],sport:'football',decades:d.decades,difficulty:difficultyOf(d.level as 1|2|3|4),prompt:d.prompt,answer:d.answer,...(d.pool?{pool:d.pool}:{}),...(d.distractors?{distractors:d.distractors}:{}),...(d.left?{left:d.left}:{}),explanation:d.explanation,hint:d.hint,factIds:d.factIds,source:d.source,facets:[`club:${id}`,`template:${d.template}`,...d.facets]}))
+ const questions:MasterQuestion[]=drafts.map(d=>({id:`q_${h(`${id}:${d.template}:${d.key}`)}`,key:`${d.template}:${id}:${d.key}`,template:d.template,type:d.type,topic:d.topic,tags:[...new Set([d.topic,...(d.tags??[])])],sport:'football',decades:d.decades,difficulty:difficultyOf(d.level as 1|2|3|4),...(d.facets.includes('archive-depth')?{deep:true as const}:{}),prompt:d.prompt,answer:d.answer,...(d.pool?{pool:d.pool}:{}),...(d.distractors?{distractors:d.distractors}:{}),...(d.left?{left:d.left}:{}),explanation:d.explanation,hint:d.hint,factIds:d.factIds,source:d.source,facets:[`club:${id}`,`template:${d.template}`,...d.facets]}))
  const byTemplate:Record<string,number>={},byLevel:Record<string,number>={}
  for(const q of questions){byTemplate[q.template]=(byTemplate[q.template]??0)+1;byLevel[q.difficulty]=(byLevel[q.difficulty]??0)+1}
  return {trivia:{questions,pools},report:{club:id,made:questions.length,byTemplate,byLevel,skipped}}

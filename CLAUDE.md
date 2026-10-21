@@ -3200,3 +3200,11 @@ Owner approved every board (Design canvas "The Weekly", 82 boards) and: *"merge 
 6. **The GOAL! moment is global** (`components/clubs/PlayFx.tsx`): any element that appears with `data-verdict` fires it — `wrong` is the quiet navy "Wide!", anything else a win; `data-shout` names the word, `data-shout-sub` adds a line, `data-shout="off"` keeps the old ✓/✗. No sound, reduced motion stops it. A game never builds a second one.
 7. **Pictures are comic plates** (`<Plate art ink>`: two layers, `public/brand/weekly/plates/<art>-{line,tone}.webp`, the tone filled with a token ink; `scripts/brand/weekly-plates.py`). Original drawings, not real players.
 8. **A trivia board is keyed by its seed only when the link pinned one**: starting a run sets the run cookie and Next re-renders the page, so an unpinned seed re-minted on that render remounted the board to its start card (found 13.10.2026 on main too).
+
+## 125 · LIFE runs on two engines, and a mission fits every club through its own archive (21.10.2026)
+
+Owner: the day stays Sims (TOWN, voxel); a mission switches to GTA/DOOM (RUSH). ADR-fanlife-0013; skill `life-rush-mission-authoring`.
+1. **RUSH (`lib/life/rush`) never writes the save, reads a chapter or names a club.** LIFE sends a `MissionSpec`, RUSH returns a `MissionResult` (`good | ok | slip`) through the existing `play` directive.
+2. **No pilot club.** A mission is a template whose `needs` are graded critical / enriching / decor; the Fitter answers per club READY (one approved night, printed as recorded) · NEUTRAL (no date, no name) · HELD (a research task: what, why, where to look) · IRRELEVANT. Never an invented date to make a mission READY.
+3. **The main route harms nobody.** Only the ultras route may throw objects, shove or "steal" a rival group's gear — never blood, weapons or injury; rival ultras groups are invented and obey the club's rival-colour bans.
+4. **Mandatory is the script's call**, and a mandatory mission never dead-ends: story mode after two failures, `slip` continues the chapter.
