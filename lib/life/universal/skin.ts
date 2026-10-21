@@ -15,6 +15,9 @@ export const KIT_PATTERNS = ['solid', 'stripes', 'hoops', 'halves', 'sash', 'che
 export type KitPattern = typeof KIT_PATTERNS[number]
 export const SIGN_KEYS = ['kiosk', 'ticket', 'school', 'club', 'news', 'bus', 'ground', 'gate', 'stand', 'away', 'cafe', 'snack', 'since', 'shop', 'market'] as const
 export type SignKey = typeof SIGN_KEYS[number]
+/** ordinary shop and street words the town letters in the club's own language (never a fact; never from a manifest) */
+export const STREET_KEYS = ['closed', 'pharmacy', 'fruit', 'veg', 'spices', 'nuts', 'salon', 'swim', 'sport', 'scarves', 'tonight', 'today', 'oos', 'pitch', 'hood', 'popcorn', 'win'] as const
+export type StreetKey = typeof STREET_KEYS[number]
 export type SkinStatus = 'approved' | 'review'
 
 export type LifeSkinManifest = {
@@ -44,7 +47,9 @@ export type VoxelSkin = {
   nums: [number, number, number]
   stadium: string | null
   city: string
-  strings: Partial<Record<SignKey, string>>
+  strings: Partial<Record<SignKey | StreetKey, string>>
+  /** the year the club's sourced world file says it was founded; null when it names none */
+  founded?: number | null
   policy: {hue: [number, number]; minSaturation: number; minValue: number}[]
   /** colour families an owner-approved rivalry takes away (red · green · blue): the town never paints them */
   rivals?: string[]
