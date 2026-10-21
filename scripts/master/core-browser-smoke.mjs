@@ -171,6 +171,9 @@ try {
  // the four clubs are independent: each plays on its own page, at the same time (the serial run took longer than everything else in CI together)
  await Promise.all(['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva'].map(async slug=>{
   const page=await context.newPage();await page.setViewportSize({width:390,height:844})
+  // force skips Playwright's enabled check as well as stability. The server opens each question
+  // asynchronously (also after a stage card), so resolve an enabled button before sending a real tap.
+  const tapAnswer=button=>button.and(page.locator('button:enabled')).click({force:true})
   const response=await page.goto(`${base}/clubs/${slug}/trivia?seed=42&lang=en`)
   assert.equal(response.status(),200)
   // the club's own compiled bank, as the page deals it: since rule 109 every club (Hapoel included) plays the forged English bank
@@ -191,17 +194,21 @@ try {
    assert(bank.has(id),`Unknown ${slug} question ${id}`);answer=bank.get(id).answer
    interactions.add(type)
    const values=Array.isArray(answer)?answer:[answer]
-   if(type==='match'){ // pairs are tapped: the first unmatched left item is active, so the right-hand answers go in order
-    const question=bank.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
+   if(type==='match'){ // the first unmatched left item is active; wait for each pair to appear before the next tap
+    const question=bank.get(id),columns=board.locator('[data-kind="match"] ul')
+    for(let i=0;i<question.left.length;i++){
+     await tapAnswer(columns.nth(1).getByRole('button',{name:values[i],exact:true}))
+     await columns.nth(0).getByRole('button').nth(i).locator('small bdi').filter({hasText:values[i]}).waitFor()
+    }}
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else if(['order','multi'].includes(type)){ // these need a Confirm, and a placed item is itself a button that un-places on a second tap: tap once
-    for(const value of values)await board.getByRole('button',{name:value,exact:true}).first().click({force:true})}
+    for(const value of values)await tapAnswer(board.getByRole('button',{name:value,exact:true}).first())}
    else for(let attempt=0;attempt<4;attempt++){ // a stage card can land a beat after the board: tap it away and answer again until a verdict shows
-    for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true}).catch(()=>{})
+    for(const value of values)await tapAnswer(board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true})).catch(()=>{})
     if(await board.locator('[role=status][data-right]').waitFor({timeout:2500}).then(()=>true,()=>false))break
     await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})}
-   if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
+   if(['match','order','multi'].includes(type))await tapAnswer(board.getByRole('button',{name:'Confirm answer',exact:true}))
    await board.locator('[role=status][data-right]').waitFor({timeout:20000}).catch(async()=>{throw new Error(`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)}: no verdict. Screen: ${JSON.stringify((await page.locator('main').innerText()).slice(0,400))}`)});{const st=await board.locator('[role=status][data-right]').innerText();assert((await board.locator('[role=status][data-right]').getAttribute('data-right'))==='true'&&st.toLowerCase().includes('correct'),`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)} -> ${JSON.stringify(st.slice(0,120))}`)} /* innerText follows text-transform: the magazine prints capitals (rule 91) */
    await board.locator('[role=status][data-right]').click({position:{x:8,y:8},force:true}) // tap to go on
    answers++
