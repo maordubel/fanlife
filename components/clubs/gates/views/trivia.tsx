@@ -35,6 +35,6 @@ export const view:GateView=({club,locale,copy,round,gameKey,searchParams})=>{
  // Starting a run sets the run cookie, and Next re-renders the page; an unpinned link would mint a new seed on that
  // render, change the key and remount the board back to its start card. Only a pinned round is keyed by its seed.
  const key=round.pinned?gameKey:['fresh',club.identity.id,club.version,locale,searchParams.topic||'',searchParams.era||'',searchParams.hard||''].join(':')
- return <ClubTrivia key={key} club={club.identity.id} clubName={club.identity.name} version={club.version} seed={round.seed} cursor={round.cursor}
+ return <ClubTrivia key={key} fresh={!round.pinned} club={club.identity.id} clubName={club.identity.name} version={club.version} seed={round.seed} cursor={round.cursor}
   locale={locale} contentLocale={club.locales.content} copy={copy} plan={plan} autostart={searchParams.go==='1'} practice={searchParams.practice==='1'}/>
 }

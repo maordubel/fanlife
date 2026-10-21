@@ -15,6 +15,7 @@
  *  · **A hint is asked once** per question, and marks the entry before anything is revealed.
  * No timers, no DOM, no storage: `trivia-actions` seals this object into a cookie and tests play it directly.
  */
+import {TRIVIA_RULES} from '@/lib/trivia/editorial'
 import {LIVES,NEW_SESSION,advance,multiplierFor,outcomeOf,type Session} from '@/lib/game/session'
 import {HINT_COST,askedOf,capOf,secondsOf} from './trivia-model'
 
@@ -23,16 +24,16 @@ export type EntryState=0|1|2|3 // open · right · wrong · timeout
 export type Entry={o:number;st:EntryState;h:0|1;g:number;l:number}
 export type LedgerError='NO_RUN'|'RUN_MISMATCH'|'VERSION_RETIRED'|'OUT_OF_ORDER'|'NOT_OPEN'|'RUN_OVER'|'BAD_INDEX'
 export type Ledger={
- v:1;run:string;club:string;ver:string;seed:number;cursor:number;cat:string;mode:string;topic:string;era:string;practice:boolean;banded:boolean
+ v:1;rules?:number;seconds?:number[];run:string;club:string;ver:string;seed:number;cursor:number;cat:string;mode:string;topic:string;era:string;practice:boolean;banded:boolean
  ids:string[];e:Entry[];s:Session
 }
-export type Start={run:string;club:string;ver:string;seed:number;cursor:number;cat:string;mode:string;topic?:string|null;era?:number|null;practice:boolean;banded:boolean;ids:string[]}
+export type Start={run:string;club:string;ver:string;seed:number;cursor:number;cat:string;mode:string;topic?:string|null;era?:number|null;practice:boolean;banded:boolean;ids:string[];seconds?:number[]}
 
-export const startLedger=(x:Start):Ledger=>({v:1,run:x.run,club:x.club,ver:x.ver,seed:x.seed,cursor:x.cursor,cat:x.cat,mode:x.mode,topic:x.topic??'',era:x.era?String(x.era):'',practice:x.practice,banded:x.banded,ids:[...x.ids],e:[],s:{...NEW_SESSION,history:[]}})
+export const startLedger=(x:Start):Ledger=>({v:1,rules:TRIVIA_RULES,...(x.seconds?{seconds:[...x.seconds]}:{}),run:x.run,club:x.club,ver:x.ver,seed:x.seed,cursor:x.cursor,cat:x.cat,mode:x.mode,topic:x.topic??'',era:x.era?String(x.era):'',practice:x.practice,banded:x.banded,ids:[...x.ids],e:[],s:{...NEW_SESSION,history:[]}})
 
 export const countOf=(l:Pick<Ledger,'ids'>)=>l.ids.length
 /** seconds on the clock for question `index`; practice has none */
-export const totalOf=(l:Pick<Ledger,'ids'|'practice'>,index:number)=>l.practice?0:secondsOf(index,l.ids.length)
+export const totalOf=(l:Pick<Ledger,'ids'|'practice'|'seconds'>,index:number)=>l.practice?0:l.seconds?.[index]??secondsOf(index,l.ids.length)
 export const isOver=(l:Ledger)=>l.s.over||l.s.lives<=0||(l.e.length>=countOf(l)&&l.e.every(x=>x.st!==0))
 export const deadlineOf=(l:Ledger,index:number)=>{const e=l.e[index];return e&&!l.practice?e.o+totalOf(l,index)*1000:null}
 

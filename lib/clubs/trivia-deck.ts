@@ -16,6 +16,8 @@ import 'server-only'
  * A deck is deterministic in (mode, seed, cursor): the engine's rotation holds, so the next cursor is a different
  * deck until the eligible cycle is spent.
  */
+import {standardDeck} from './trivia-selection'
+import {standardQuestion} from '@/lib/trivia/editorial'
 import {createTriviaEngine,MIXED,ROUND_LENGTH,type RunSpec} from '@/lib/game/trivia-engine'
 import {Q_TOPICS,type MasterQuestion,type QTopic} from '@/lib/game/questions/types'
 import type {ClubData} from './contract'
@@ -86,6 +88,7 @@ function mixedAnswers(bank:Bank,ids:readonly string[]){
 
 const LAPS=8
 function attempt(bank:Bank,spec:RunSpec,seed:number,cursor:number,opts:{banded:boolean;hard?:boolean;full:boolean}):{ids:string[];cursor:number}|null{
+ if(opts.banded&&!opts.hard){const ids=standardDeck(bank.questions,seed,cursor);return ids&&verifyDeck(bank,ids,opts)?{ids,cursor}:null}
  for(let lap=0;lap<LAPS;lap++){
   const ids=bank.engine.dealSeededRun(spec,seed,cursor+lap).ids
   if(opts.full&&ids.length!==ROUND_LENGTH)continue
@@ -100,7 +103,7 @@ const factCount=(bank:Bank,spec:RunSpec)=>distinctFacts(bank.engine.eligible(spe
 
 /** what this club's bank can field, for the start card: every mode with its size, banding and — if shut — its blocker */
 export function modeCatalog(bank:Bank,seed:number,cursor:number,want?:{mode?:string;topic?:string;era?:string}):Catalog{
- const std=stageCapacity(bank.questions,false,STAGE_NEED),hard=stageCapacity(bank.questions,true,STAGE_NEED)
+ const std=stageCapacity(bank.questions.filter(standardQuestion),false,STAGE_NEED),hard=stageCapacity(bank.questions,true,STAGE_NEED)
  const stdDeal=std.ok?attempt(bank,MIXED,seed,cursor,{banded:true,full:true}):null
  const hardDeal=hard.ok?attempt(bank,specOf(null,null,true),seed,cursor,{banded:true,hard:true,full:true}):null
  const blocker=(c:{counts:readonly number[]},unverified:boolean):Blocker=>({code:unverified?'TRIVIA_DECK_UNVERIFIED':'TRIVIA_STAGE_POOL_SHORT',counts:[...c.counts],need:STAGE_NEED})
@@ -163,7 +166,7 @@ export function dealMode(bank:Bank,params:Params,seed:number,cursor:number,misse
   const short=got.ids.length<ROUND_LENGTH
   return {ids:got.ids,category:short?'short':topic?'topic':decade?'era':'history',banded:false,cursor:got.cursor,mode:'history',topic,era:decade}
  }
- const std=stageCapacity(bank.questions,hard,STAGE_NEED)
+ const std=stageCapacity(hard?bank.questions:bank.questions.filter(standardQuestion),hard,STAGE_NEED)
  const mode:ModeId=hard?'hard':'standard'
  if(!std.ok)return {mode,blocked:{code:'TRIVIA_STAGE_POOL_SHORT',counts:std.counts,need:STAGE_NEED}}
  const got=attempt(bank,specOf(null,null,hard),seed,cursor,{banded:true,hard,full:true})

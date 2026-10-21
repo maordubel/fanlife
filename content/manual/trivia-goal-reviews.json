@@ -1,0 +1,14 @@
+{
+  "hapoel-tel-aviv:goal-milan-2002-kleschenko-31": {
+    "on": "2002-03-14",
+    "originalMinute": "31",
+    "minute": "32",
+    "reviewedAt": "2026-10-21",
+    "reason": "UEFA's contemporary match report explicitly places the winning volley 32 minutes into the game. Apply to trivia only; the replay archive still needs a separate correction.",
+    "source": {
+      "title": "UEFA: Clescenko stuns Milan, 14 March 2002",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+      "confidence": 2
+    }
+  }
+}

@@ -28,7 +28,7 @@ export const enSponsor=via(SPONSORS)
 export const enText=(s:string|null|undefined)=>s&&isLatin(s)&&s.trim()?s.trim():null
 /** a maker or sponsor as a brand prints it: "umbro" → "Umbro", "SUBARU" → "Subaru"; short capitals stay (BRT, AEK); a dash or "none" is no sponsor */
 export function brand(s:string|null|undefined):string|null{
- const t=s?.trim();if(!t||/^[-–—?]+$|^(none|no sponsor|unbranded|no maker|n\/a|unknown)$/i.test(t))return null
+ const t=s?.trim();if(!t||/^[-–—?]+$|^(none|no sponsor|unbranded|no brand|in-house|no maker|n\/a|unknown)$/i.test(t))return null
  const fix=(w:string)=>w.length<=4&&w===w.toUpperCase()?w:w.charAt(0).toUpperCase()+w.slice(1).toLowerCase()
  return t===t.toLowerCase()||(t===t.toUpperCase()&&t.replace(/[^A-Z]/g,'').length>4)?t.split(/(\s+|-)/).map(w=>/^\s+$|^-$/.test(w)?w:fix(w)).join(''):t
 }
