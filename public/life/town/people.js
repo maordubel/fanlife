@@ -257,11 +257,13 @@ function r2(v){return Math.round(v*50)/50}
 /* the street is not a cast list: anybody the story did not author (no sex given) gets a body and a look of their own —
    heavy or thin, shaved or not, cap, glasses, a jacket or a track top — decided by their id, so the same person is the
    same person every time the room is drawn. Colours the room chose are kept. */
-function vary(o){if(o.sex||o.authored||o._id==='player'||(o.s||1)<.86)return o;var id=String(o._id||JSON.stringify([o.top,o.bot,o.skin,o.x,o.z])),r=function(k){return hashf(id+'~'+k)},pick=function(k,a){return a[Math.floor(r(k)*a.length)%a.length]};
+function vary(o){if(o.sex||o.authored||o._id==='player')return o;if((o.s||1)<.86)return varyKid(o);var id=String(o._id||JSON.stringify([o.top,o.bot,o.skin,o.x,o.z])),r=function(k){return hashf(id+'~'+k)},pick=function(k,a){return a[Math.floor(r(k)*a.length)%a.length]};
  var q=Object.assign({},o),fem=!!(o.lash||o.long||o.skirt||o.flower||o.earring||o.style==='bun'||o.style==='long'||o.style==='pony');q.sex=fem?'f':'m';
  var a=r('age');q.age=o.age!=null?o.age:Math.round(a<.15?17+a*40:a<.7?24+(a-.15)*45:48+(a-.7)*95);
  var b=r('build');q.build=b<.3?.45+r('b2')*.5:b<.45?-.55+r('b2')*.35:-.15+r('b2')*.45;
- if(fem){q.style=pick('st',['long','bun','pony','curlyLong','long','bun']);q.long=true;if(r('bang')<.35)q.bangles=true;if(r('bag')<.3)q.bag=pick('bc',['#5a3e2e','#2a2624','#7a5a3e'])}
+ if(fem){/* women are not one haircut: long, tied up, curly, a bun, and some cut it short */q.style=pick('st',['long','bun','pony','curlyLong','long','bun','curly','short','pony']);q.long=q.style!=='short'&&q.style!=='curly';q.lash=true;if(r('bang')<.35)q.bangles=true;if(r('bag')<.3)q.bag=pick('bc',['#5a3e2e','#2a2624','#7a5a3e']);
+  if(q.age>16&&!o.track&&r('sk')<.24)q.skirt=pick('skc',['#2a2a34','#3a4a6a','#6a3a3a','#4a5a4a','#8a7a6a','#1c1c22']);if(r('nk')<.3)q.necklace=true;if(r('er')<.45)q.earring=true;
+  if(q.age>50&&r('grey')<(q.age-45)/40)q.hair=pick('gh',['#8a8884','#a8a6a2','#6a6866','#b8b4ae'])}
  else{var old=q.age>40;q.style=pick('st',old?['short','bald','bald','short','slick','buzz','curly']:['short','buzz','curly','slick','spiky','short','buzz','long']);
   var f=r('face');q.stubble=f<.32;q.mustache=f>=.32&&f<(old?.55:.44);q.beard=f>=(old?.55:.44)&&f<(old?.78:.62);
   if(q.age>30&&r('grey')<(q.age-30)/45)q.hair=pick('gh',['#6a6866','#8a8884','#a8a6a2','#4a4644'])}
@@ -269,6 +271,14 @@ function vary(o){if(o.sex||o.authored||o._id==='player'||(o.s||1)<.86)return o;v
  var j=r('out');if(!o.jacket&&!o.cardigan&&!o.track){if(j<.18)q.jacket=pick('jc',['#1e2026','#2a3446','#3a3630','#4a3a2a','#2e3a2e']);else if(j<.24&&q.age>45)q.cardigan=pick('cd',['#5a4a3a','#3a4a4a','#6a5a4a']);else if(j<.3)q.track=true}
  if(!o.sleeves)q.sleeves=r('sl')<.5?'short':'long';if(!o.denim&&r('dn')<.38){q.denim=true;q.bot=pick('db',['#3e5674','#4a6588','#2e3e58','#5a6e86'])}if(!o.shoe)q.shoe=r('sho')<.32?'#e8e4dc':pick('shc',['#1c1a18','#2a2420','#3a2c22','#24262c']);if(q.shoe==='#e8e4dc'&&r('ss')<.5)q.shoeStripe=pick('ssc',['#1e2a4a','#a82a22','#1c1a18']);
  if(r('wt')<.25)q.watch=true;return q}
+/* a child is a boy or a girl, with a child's own clothes and hair; the scene's own choices (style, colours) always win */
+function varyKid(o){var id=String(o._id||JSON.stringify([o.top,o.bot,o.skin,o.x,o.z])),r=function(k){return hashf(id+'~k~'+k)},pick=function(k,a){return a[Math.floor(r(k)*a.length)%a.length]};
+ var q=Object.assign({},o),known=o.style||o.lash||o.long||o.skirt;var fem=known?!!(o.lash||o.long||o.skirt||o.style==='bun'||o.style==='long'||o.style==='pony'||o.style==='curlyLong'):r('sex')<.5;q.sex=fem?'f':'m';
+ if(q.age==null)q.age=Math.round(6+r('age')*7);
+ if(!o.style)q.style=fem?pick('st',['pony','long','pony','curlyLong','bun']):pick('st',['short','buzz','short','curly','spiky']);
+ if(fem){q.lash=true;q.long=q.style!=='short';if(!o.skirt&&!o.bot&&r('sk')<.3)q.skirt=pick('skc',['#3a4a6a','#6a3a4a','#2a2a34','#8a5a6a'])}
+ if(!o.sleeves)q.sleeves=r('sl')<.7?'short':'long';if(!o.shoe)q.shoe=r('sho')<.5?'#e8e4dc':pick('shc',['#1c1a18','#3a2c22','#24262c']);if(!o.bot&&!q.skirt&&r('dn')<.4){q.denim=true;q.bot=pick('db',['#3e5674','#4a6588'])}
+ return q}
 P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress(o,ph);
  var topT=look.sleeve==='long'?'long':look.sleeve==='jacket'?'jacket':'tee';
  var botT=look.legs==='shorts'?'shorts':look.legs==='skirt'?null:'pants';
@@ -466,6 +476,7 @@ function accessories(o,look,B,S,ctx,ph){var J=B.J,head=jv(J,'head'),top=0;for(va
  if(o.pack){var pk=new T.Mesh(new T.BoxGeometry(.28,.36,.13),std(o.pack));var s3b=jv(J,'spine_02');attach(S,'spine_02',pk,J,new T.Vector3(0,s3b.y+.06,s3b.z-.17))}
  if(o.bag){var bgm=new T.Mesh(new T.BoxGeometry(.2,.22,.07),std(o.bag));var pl2=jv(J,'pelvis');attach(S,'pelvis',bgm,J,new T.Vector3(-.2,pl2.y-.02,pl2.z+.04))}
  if(o.necklace&&look.outer!=='track'){var nk=new T.Mesh(new T.TorusGeometry(1,.06,6,24),std('#d8c8a8',{metalness:.7,roughness:.3}));nk.rotation.x=PI/2.3;var tk=look.outer==='track';nk.scale.set(tk?.082:.07,tk?.095:.07,tk?.08:.07);var nn=jv(J,'neck_01');attach(S,'neck_01',nk,J,nn.clone().add(new T.Vector3(0,tk?-.075:-.035,tk?.05:.025)))}
+ if(o.earring){/* small gold-free studs: silver at the lobe, the same both sides */var hj=jv(J,'head');[-1,1].forEach(function(sd){var er=new T.Mesh(new T.SphereGeometry(.0065,8,6),std('#d4d6da',{metalness:.85,roughness:.25}));attach(S,'head',er,J,hj.clone().add(new T.Vector3(sd*.0705,-.013,.003)))})}
  if(o.armband){var ua=jv(J,'upperarm_l'),la=jv(J,'lowerarm_l'),ab=new T.Mesh(new T.CylinderGeometry(1,1,1,16,1,true),std(o.armband,{roughness:.8,side:T.DoubleSide}));ab.scale.set(.062,.075,.062);var ax=la.clone().sub(ua).normalize();ab.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),ax);attach(S,'upperarm_l',ab,J,ua.clone().lerp(la,.42))}
  if(o.bangles){var hr=jv(J,'hand_r'),lr=jv(J,'lowerarm_r');for(var bi=0;bi<3;bi++){var bg=new T.Mesh(new T.TorusGeometry(.034,.004,5,16),std(bi%2?'#b88a5a':'#6a4a34',{metalness:bi%2?.6:.1,roughness:.4}));bg.quaternion.setFromUnitVectors(new T.Vector3(0,0,1),hr.clone().sub(lr).normalize());attach(S,'lowerarm_r',bg,J,hr.clone().lerp(lr,.06+bi*.035))}}
  if(o.watch){var hl=jv(J,'hand_l');var wt=new T.Mesh(new T.TorusGeometry(.03,.007,6,14),std('#3a3a44',{metalness:.5}));attach(S,'lowerarm_l',wt,J,hl.clone().lerp(jv(J,'lowerarm_l'),.08))}}
