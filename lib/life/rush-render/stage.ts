@@ -18,7 +18,7 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {carAt, patrolAt, walkerAt, type Level, type Look} from '@/lib/life/rush/level'
 import type {Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
-import {HAIR, kitTexture, makeFigure, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
+import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
 export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number}
@@ -423,9 +423,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const arm = new THREE.Group(); arm.position.set(s * 0.2, -0.3, -0.3); hands.add(arm)
       const sl = new THREE.Mesh(keep(new THREE.CapsuleGeometry(0.06, 0.2, 4, 10)), km); sl.rotation.x = -1.35; arm.add(sl)
       const fa = new THREE.Mesh(keep(new THREE.CapsuleGeometry(0.045, 0.2, 4, 10)), hm); fa.rotation.x = -1.35; fa.position.set(0, -0.04, -0.15); arm.add(fa)
-      const h = new THREE.Mesh(keep(new THREE.SphereGeometry(0.052, 12, 10)), hm); h.position.set(0, -0.07, -0.38); h.scale.set(0.95, 0.9, 1.1); arm.add(h)
+      // a hand with fingers, half closed as a runner's is, palm in (owner, 21.10.2026: "the hands are alien")
+      const h = makeHand(hm, 0.5); h.position.set(0, -0.07, -0.33); h.rotation.set(1.42, -s * Math.PI / 2, 0); if (s > 0) h.scale.x = -1; h.scale.multiplyScalar(1.05); arm.add(h)
     }
-    const sc = new THREE.Mesh(box, keep(std(skin.p, {emissive: C(skin.p), emissiveIntensity: 0.2}))); sc.scale.set(0.34, 0.05, 0.02); sc.position.set(0, -0.36, -0.69); hands.add(sc)
+    // the scarf held between the fists sags like cloth, not a plank
+    const sag = new THREE.CatmullRomCurve3([new THREE.Vector3(-0.19, -0.36, -0.64), new THREE.Vector3(-0.08, -0.41, -0.68), new THREE.Vector3(0.08, -0.41, -0.68), new THREE.Vector3(0.19, -0.36, -0.64)])
+    const sc = new THREE.Mesh(keep(new THREE.TubeGeometry(sag, 24, 0.024, 8, false)), keep(std(skin.p, {emissive: C(skin.p), emissiveIntensity: 0.2, roughness: 0.95}))); sc.scale.z = 1; hands.add(sc)
     hands.visible = false; cam.add(hands) }
 
   /* ───────────── post ───────────── */
