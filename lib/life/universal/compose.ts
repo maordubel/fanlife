@@ -145,7 +145,15 @@ export function composeLife(input: ComposeInput): LifePack {
     preludes.set(host.id, list)
   }
 
-  const chapters: Chapter[] = ordered.map(c => fillChapter({...sideLife(c), prelude: preludes.get(c.id)}, vars))
+  const built: Chapter[] = ordered.map(c => fillChapter({...sideLife(c), prelude: preludes.get(c.id)}, vars))
+  // A night may echo a choice from an ordinary day, but only when that day came first in THIS life (the order is by age,
+  // and the archive's nights decide it): an echo of a day not yet lived is dropped, and the unconditional line stays.
+  const raisedBefore = new Set<string>()
+  const chapters: Chapter[] = built.map(c => {
+    const out = c.id.startsWith('night-') ? {...c, talks: c.talks.map(t => ({...t, branches: t.branches.filter(b => !(b.when && 'is' in b.when && b.when.is[0].startsWith('life:') && !raisedBefore.has(b.when.is[0])))}))} : c
+    lifeFlagsOf(c).forEach(k => raisedBefore.add(k))
+    return out
+  })
   const rooms = Object.fromEntries(Object.entries(ROOMS).filter(([id]) => chapters.some(c => c.start.room === id || c.cast.some(p => p.room === id) || c.doors.some(d => d.room === id || d.to === id) || c.spots.some(s => s.room === id) || c.beats.some(b => b.room === id) || JSON.stringify(c.talks).includes(`"room":"${id}"`))))
 
   const issues: string[] = [], earlier = new Set<string>()
