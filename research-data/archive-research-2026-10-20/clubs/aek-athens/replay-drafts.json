@@ -1,0 +1,90 @@
+[
+  {
+    "clubId": "aek-athens",
+    "researchGoalId": "r20261020-goal-420dd076ddb49f7b",
+    "goalId": "r20261020-goal-420dd076ddb49f7b",
+    "titleHe": "Levi Garcia v Shakhtar Donetsk",
+    "subtitleHe": "2023-07-13 · 65",
+    "playedOn": "2023-07-13",
+    "competitionHe": "Friendly",
+    "opponentHe": "Shakhtar Donetsk",
+    "scoreHe": "5-0",
+    "narrativeHe": "Garcia won the ball in the box, beat a defender and the goalkeeper, and completed his hat-trick.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": "Levi Garcia",
+        "side": "club",
+        "action": "dribble",
+        "zone": "C1",
+        "positionHe": "inside the penalty area",
+        "noteHe": "Beat the defender and goalkeeper"
+      },
+      {
+        "step": 2,
+        "actorHe": "Levi Garcia",
+        "side": "club",
+        "action": "shot",
+        "zone": "C1",
+        "positionHe": "inside the penalty area",
+        "noteHe": "Completed the move"
+      }
+    ],
+    "sourceUrl": "https://shakhtar.com/en/news/2023/july/13_news/13_shakhtar_aek/",
+    "sourceTitle": "FC Shakhtar Donetsk",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  },
+  {
+    "clubId": "aek-athens",
+    "researchGoalId": "r20261020-goal-9175f14d773213f5",
+    "goalId": "r20261020-goal-9175f14d773213f5",
+    "titleHe": "Zine v Shakhtar Donetsk",
+    "subtitleHe": "2023-07-13 · 83",
+    "playedOn": "2023-07-13",
+    "competitionHe": "Friendly",
+    "opponentHe": "Shakhtar Donetsk",
+    "scoreHe": "5-0",
+    "narrativeHe": "Zine headed in a delivery from the right at the far post.",
+    "sequence": [
+      {
+        "step": 1,
+        "actorHe": null,
+        "side": "unnamed",
+        "action": "cross",
+        "zone": "E2",
+        "positionHe": "right flank",
+        "noteHe": "Delivery from the right; supplier not named"
+      },
+      {
+        "step": 2,
+        "actorHe": "Zine",
+        "side": "club",
+        "action": "header",
+        "zone": "B1",
+        "positionHe": "far-post area receiving from the right",
+        "noteHe": "Headed home"
+      }
+    ],
+    "sourceUrl": "https://shakhtar.com/en/news/2023/july/13_news/13_shakhtar_aek/",
+    "sourceTitle": "FC Shakhtar Donetsk",
+    "confidence": 2,
+    "status": "review",
+    "approximateCoords": true,
+    "reviewRequired": [
+      "replay truth envelope",
+      "actor identity against that season",
+      "non-redundant contiguous contacts",
+      "deduplicate against existing goals"
+    ],
+    "note": "Only the documented final segment is drafted. Zones are approximate interpretations, not provider coordinates. Not certified playable."
+  }
+]

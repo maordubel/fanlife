@@ -1,0 +1,954 @@
+[
+  {
+    "clubId": "st-pauli",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1422,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 4254,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 255,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1728,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1060,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "blind-cow",
+    "state": "READY",
+    "playable": true,
+    "eligible": 80,
+    "target": 30,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 38,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 36,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 46,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "goal",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 4,
+    "target": 6,
+    "reasons": [
+      "2 more goals with a sourced touch-by-touch sequence needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "st-pauli",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 601,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 3080,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 4521,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 653,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 3080,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 60,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "blind-cow",
+    "state": "READY",
+    "playable": true,
+    "eligible": 547,
+    "target": 30,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 5,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 51,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 52,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "goal",
+    "state": "READY",
+    "playable": true,
+    "eligible": 21,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 652,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 445,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 4271,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 209,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 675,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 377,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "blind-cow",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 28,
+    "target": 30,
+    "reasons": [
+      "2 more canonical players with at least four eligible clues needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 375,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 138,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 138,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "goal",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 4,
+    "target": 6,
+    "reasons": [
+      "2 more goals with a sourced touch-by-touch sequence needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "panathinaikos",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 543,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 3032,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 5499,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 57,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 3168,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1437,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "blind-cow",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 16,
+    "target": 30,
+    "reasons": [
+      "14 more canonical players with at least four eligible clues needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 53,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 87,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 87,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "goal",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 4,
+    "target": 6,
+    "reasons": [
+      "2 more goals with a sourced touch-by-touch sequence needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 367,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 961,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 3586,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 87,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1086,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 687,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "blind-cow",
+    "state": "READY",
+    "playable": true,
+    "eligible": 42,
+    "target": 30,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 106,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 62,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 63,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "goal",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 5,
+    "target": 6,
+    "reasons": [
+      "1 more goals with a sourced touch-by-touch sequence needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 255,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 79,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 2169,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 33,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 114,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 79,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "blind-cow",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 29,
+    "target": 30,
+    "reasons": [
+      "1 more canonical players with at least four eligible clues needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 422,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 90,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 90,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "goal",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "olympiacos",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 672,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 835,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6763,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1092,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1927,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 427,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "blind-cow",
+    "state": "READY",
+    "playable": true,
+    "eligible": 97,
+    "target": 30,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 292,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 55,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 97,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "goal",
+    "state": "PARTIAL",
+    "playable": true,
+    "eligible": 3,
+    "target": 6,
+    "reasons": [
+      "3 more goals with a sourced touch-by-touch sequence needed for full readiness."
+    ]
+  },
+  {
+    "clubId": "aek-athens",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1181,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "timeline",
+    "state": "READY",
+    "playable": true,
+    "eligible": 90,
+    "target": 11,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "trivia",
+    "state": "READY",
+    "playable": true,
+    "eligible": 4765,
+    "target": 60,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "xi",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1064,
+    "target": 22,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "archive",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1154,
+    "target": 20,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "memory",
+    "state": "READY",
+    "playable": true,
+    "eligible": 85,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "polls",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "blind-cow",
+    "state": "READY",
+    "playable": true,
+    "eligible": 46,
+    "target": 30,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "lineup",
+    "state": "READY",
+    "playable": true,
+    "eligible": 429,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "kit-builder",
+    "state": "READY",
+    "playable": true,
+    "eligible": 63,
+    "target": 5,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "kits",
+    "state": "READY",
+    "playable": true,
+    "eligible": 65,
+    "target": 8,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "derby",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1,
+    "target": 1,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "goal",
+    "state": "READY",
+    "playable": true,
+    "eligible": 6,
+    "target": 6,
+    "reasons": []
+  },
+  {
+    "clubId": "celtic",
+    "game": "royal-rumble",
+    "state": "READY",
+    "playable": true,
+    "eligible": 1373,
+    "target": 20,
+    "reasons": []
+  }
+]

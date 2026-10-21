@@ -1,0 +1,15 @@
+{
+ "asOf": "2026-10-20",
+ "from": "FANLIFE-ARCHIVE-RESEARCH-2026-10-20/new-research/targeted-corrections.json",
+ "items": [
+  {"club": "olympiacos", "record": "oly-goal-elkaabi-final-fiorentina", "field": "steps[0].zone / position / narrative",
+   "disposition": "OPEN CONFLICT — replay left unchanged",
+   "why": "The existing replay says right-sided (UEFA and TNT agree, confidence 3). The bundle's contrary evidence is a search-index snippet of eKathimerini (direct access 403) saying left-sided. One unreadable snippet does not outweigh two readable reports; neither side is certified. Needs the match footage or a readable report before any change."},
+  {"club": "panathinaikos", "record": "Panathinaikos 1-4 Chelsea", "field": "playedOn",
+   "disposition": "ALREADY CORRECT",
+   "why": "Both pack records (pm-abd7138e5b, a-m-2024-10-24-panathinaikos-chelsea) already carry 2024-10-24, the match date, not the article date 2024-10-26."},
+  {"club": "aek-athens", "record": "Shakhtar–AEK 2023-07-13", "field": "competition",
+   "disposition": "NOT IN THE ARCHIVE — nothing to correct",
+   "why": "No pack record exists for this friendly. If it is ever added it must carry competition 'Friendly' and stay out of league/cup totals."}
+ ]
+}

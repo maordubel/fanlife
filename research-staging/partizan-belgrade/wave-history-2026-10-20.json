@@ -1,0 +1,3002 @@
+{
+ "schemaVersion": 1,
+ "clubId": "partizan-belgrade",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-c643736450a0511a",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/serbia/2023-24_rs1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/serbia/2023-24_rs1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "serbia/2023-24_rs1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "5e07927d8819634f402b4e0b8f5034b40ffbd3fb53011ab6bf17a379f3f034f4",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-91782b60062b8b31",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/serbia/2024-25_rs1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/serbia/2024-25_rs1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "serbia/2024-25_rs1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "7e123544e4aac6a03acc05b3b2b1b8f7f480ac45989e776db453dbca7780cad1",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-8dec507ad1625f9f",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2021-22/conf.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2021-22/conf.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2021-22/conf.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "5537cd70cc73898f2c44c1c512be6cd7abfc147df1aa6716a41a2a66dbc4aff1",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-8ae040336e2adfe2",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2022-23/conf.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2022-23/conf.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2022-23/conf.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "a40da4aab99944bdcd2976f9419ea817badb5dfc8f165d18242945109532b555",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-269fb0de1edfb749",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/clq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/clq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/clq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "a39cc3ed20233ce2fcc490d4feda4a67dacf0d8080c83f4078ab34eca4632c25",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-b0f6dc355a57eea5",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/confq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/confq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/confq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1e248f3fbd2c9c8860a795373eba7b9f1f943a9dc672a4d4a3c3ad5452723fea",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-3100e242de53e939",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/elq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/elq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/elq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "6bd4db7e8993c35c4e57d9474bf3e1062d46a51a27c089c901e68bb0581a78ff",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-0aa9394e0477fe15",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/confq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/confq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2025-26/confq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "417d8fd7f0b79771f4293476a3815a0db6cfd3391e457b46e0fa2ddea81965c4",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-a3b89ecb5cb14900",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/elq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2025-26/elq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2025-26/elq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "91f6d5440da9d100322be0de8ad95df8d873040abba4af8986147d9da55e5e32",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-0ede5b353a9df3737486",
+   "value": {
+    "id": "research-20261020-0ede5b353a9df3737486",
+    "name": "Anorthosis Famagusta 0-2 Partizan",
+    "on": "2021-09-16",
+    "home": "Anorthosis Famagusta",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-691bd0a5ce2f145dbd61",
+   "value": {
+    "id": "research-20261020-691bd0a5ce2f145dbd61",
+    "name": "Partizan 2-0 FC Flora",
+    "on": "2021-09-30",
+    "home": "Partizan",
+    "away": "FC Flora",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3d94b46f0d4d04003e65",
+   "value": {
+    "id": "research-20261020-3d94b46f0d4d04003e65",
+    "name": "Partizan 0-1 KAA Gent",
+    "on": "2021-10-21",
+    "home": "Partizan",
+    "away": "KAA Gent",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-374cab672eed2af87cda",
+   "value": {
+    "id": "research-20261020-374cab672eed2af87cda",
+    "name": "KAA Gent 1-1 Partizan",
+    "on": "2021-11-04",
+    "home": "KAA Gent",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-200c356e54b802a7e454",
+   "value": {
+    "id": "research-20261020-200c356e54b802a7e454",
+    "name": "FC Flora 1-0 Partizan",
+    "on": "2021-11-25",
+    "home": "FC Flora",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d058cb62d577bc083e4c",
+   "value": {
+    "id": "research-20261020-d058cb62d577bc083e4c",
+    "name": "Partizan 1-1 Anorthosis Famagusta",
+    "on": "2021-12-09",
+    "home": "Partizan",
+    "away": "Anorthosis Famagusta",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8b6f7f17c8c1da01f8fa",
+   "value": {
+    "id": "research-20261020-8b6f7f17c8c1da01f8fa",
+    "name": "AC Sparta Praha 0-1 Partizan",
+    "on": "2022-02-17",
+    "home": "AC Sparta Praha",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-78a2ba216735d6ddf52a",
+   "value": {
+    "id": "research-20261020-78a2ba216735d6ddf52a",
+    "name": "Partizan 2-1 AC Sparta Praha",
+    "on": "2022-02-24",
+    "home": "Partizan",
+    "away": "AC Sparta Praha",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d7aaa6372c67ed861fac",
+   "value": {
+    "id": "research-20261020-d7aaa6372c67ed861fac",
+    "name": "Partizan 2-5 Feyenoord",
+    "on": "2022-03-10",
+    "home": "Partizan",
+    "away": "Feyenoord",
+    "homeGoals": 2,
+    "awayGoals": 5,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "2-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2e57fa1a8b5f29b602c8",
+   "value": {
+    "id": "research-20261020-2e57fa1a8b5f29b602c8",
+    "name": "Feyenoord 3-1 Partizan",
+    "on": "2022-03-17",
+    "home": "Feyenoord",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Conference League 2021/22",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8dec507ad1625f9f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-192933e9988f5e4bbcac",
+   "value": {
+    "id": "research-20261020-192933e9988f5e4bbcac",
+    "name": "1. FC Slovácko 3-3 Partizan",
+    "on": "2022-09-08",
+    "home": "1. FC Slovácko",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-548c469edbbaf77cfce9",
+   "value": {
+    "id": "research-20261020-548c469edbbaf77cfce9",
+    "name": "Partizan 1-1 OGC Nice",
+    "on": "2022-09-15",
+    "home": "Partizan",
+    "away": "OGC Nice",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a9b7eca37e0c9ce96179",
+   "value": {
+    "id": "research-20261020-a9b7eca37e0c9ce96179",
+    "name": "1. FC Köln 0-1 Partizan",
+    "on": "2022-10-06",
+    "home": "1. FC Köln",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c8c8d3990ea110113818",
+   "value": {
+    "id": "research-20261020-c8c8d3990ea110113818",
+    "name": "Partizan 2-0 1. FC Köln",
+    "on": "2022-10-13",
+    "home": "Partizan",
+    "away": "1. FC Köln",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-656b6fbc9ca331579e81",
+   "value": {
+    "id": "research-20261020-656b6fbc9ca331579e81",
+    "name": "OGC Nice 2-1 Partizan",
+    "on": "2022-10-27",
+    "home": "OGC Nice",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5a02f07cc9140bd10393",
+   "value": {
+    "id": "research-20261020-5a02f07cc9140bd10393",
+    "name": "Partizan 1-1 1. FC Slovácko",
+    "on": "2022-11-03",
+    "home": "Partizan",
+    "away": "1. FC Slovácko",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3688812d16f08dcd3a9b",
+   "value": {
+    "id": "research-20261020-3688812d16f08dcd3a9b",
+    "name": "FC Sheriff 0-1 Partizan",
+    "on": "2023-02-16",
+    "home": "FC Sheriff",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0d40a41657391f050e84",
+   "value": {
+    "id": "research-20261020-0d40a41657391f050e84",
+    "name": "Partizan 1-3 FC Sheriff",
+    "on": "2023-02-23",
+    "home": "Partizan",
+    "away": "FC Sheriff",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2022/23",
+    "competition": "UEFA Conference League 2022/23",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-8ae040336e2adfe2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e760fc1a96928e04df05",
+   "value": {
+    "id": "research-20261020-e760fc1a96928e04df05",
+    "name": "TSC Bačka Topola 3-3 Partizan",
+    "on": "2023-07-29",
+    "home": "TSC Bačka Topola",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-158d89bd49979691162f",
+   "value": {
+    "id": "research-20261020-158d89bd49979691162f",
+    "name": "Vojvodina 0-2 Partizan",
+    "on": "2023-08-06",
+    "home": "Vojvodina",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bf5607e01419ae55416b",
+   "value": {
+    "id": "research-20261020-bf5607e01419ae55416b",
+    "name": "Partizan 2-1 Radnički Niš",
+    "on": "2023-08-13",
+    "home": "Partizan",
+    "away": "Radnički Niš",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6d84f9fe4213f83f6140",
+   "value": {
+    "id": "research-20261020-6d84f9fe4213f83f6140",
+    "name": "Partizan 3-1 FK Javor",
+    "on": "2023-08-27",
+    "home": "Partizan",
+    "away": "FK Javor",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c11436ca370863c52a8c",
+   "value": {
+    "id": "research-20261020-c11436ca370863c52a8c",
+    "name": "IMT Beograd 2-3 Partizan",
+    "on": "2023-09-03",
+    "home": "IMT Beograd",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-71b7d8d530447cfbb11e",
+   "value": {
+    "id": "research-20261020-71b7d8d530447cfbb11e",
+    "name": "Partizan 3-2 Radnik Surdulica",
+    "on": "2023-09-17",
+    "home": "Partizan",
+    "away": "Radnik Surdulica",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-35bcf4dc8182f985d459",
+   "value": {
+    "id": "research-20261020-35bcf4dc8182f985d459",
+    "name": "Železničar Pančevo 1-2 Partizan",
+    "on": "2023-09-22",
+    "home": "Železničar Pančevo",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e6a16984f61c42e7e6d9",
+   "value": {
+    "id": "research-20261020-e6a16984f61c42e7e6d9",
+    "name": "FK Napredak 0-2 Partizan",
+    "on": "2023-10-01",
+    "home": "FK Napredak",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-af0c54d249cf4b55fc51",
+   "value": {
+    "id": "research-20261020-af0c54d249cf4b55fc51",
+    "name": "Partizan 2-0 Mladost Lučani",
+    "on": "2023-10-07",
+    "home": "Partizan",
+    "away": "Mladost Lučani",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0ace7409660b1b470dbf",
+   "value": {
+    "id": "research-20261020-0ace7409660b1b470dbf",
+    "name": "Spartak Subotica 0-3 Partizan",
+    "on": "2023-10-20",
+    "home": "Spartak Subotica",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d49dd40cf51956fca00d",
+   "value": {
+    "id": "research-20261020-d49dd40cf51956fca00d",
+    "name": "FK Radnički 1923 0-4 Partizan",
+    "on": "2023-10-25",
+    "home": "FK Radnički 1923",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e9c2d9f625ba10a0a5bd",
+   "value": {
+    "id": "research-20261020-e9c2d9f625ba10a0a5bd",
+    "name": "Partizan 3-0 FK Voždovac",
+    "on": "2023-10-29",
+    "home": "Partizan",
+    "away": "FK Voždovac",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-68743881b15b53835bdc",
+   "value": {
+    "id": "research-20261020-68743881b15b53835bdc",
+    "name": "FK Novi Pazar 0-1 Partizan",
+    "on": "2023-11-06",
+    "home": "FK Novi Pazar",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6fa40bfc2d359dfdab4a",
+   "value": {
+    "id": "research-20261020-6fa40bfc2d359dfdab4a",
+    "name": "Partizan 2-1 FK Čukarički",
+    "on": "2023-11-12",
+    "home": "Partizan",
+    "away": "FK Čukarički",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-299db5b6a297310ad1b9",
+   "value": {
+    "id": "research-20261020-299db5b6a297310ad1b9",
+    "name": "Partizan 0-4 TSC Bačka Topola",
+    "on": "2023-11-25",
+    "home": "Partizan",
+    "away": "TSC Bačka Topola",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fb2becff25fdaa9bc336",
+   "value": {
+    "id": "research-20261020-fb2becff25fdaa9bc336",
+    "name": "Partizan 3-1 Vojvodina",
+    "on": "2023-12-02",
+    "home": "Partizan",
+    "away": "Vojvodina",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9b37d6c54e4cf0821b46",
+   "value": {
+    "id": "research-20261020-9b37d6c54e4cf0821b46",
+    "name": "Radnički Niš 2-1 Partizan",
+    "on": "2023-12-11",
+    "home": "Radnički Niš",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2be77d252de9a0b709b1",
+   "value": {
+    "id": "research-20261020-2be77d252de9a0b709b1",
+    "name": "Partizan 3-3 FK Radnički 1923",
+    "on": "2023-12-16",
+    "home": "Partizan",
+    "away": "FK Radnički 1923",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a33e5e102b4b593f1cce",
+   "value": {
+    "id": "research-20261020-a33e5e102b4b593f1cce",
+    "name": "Partizan 2-1 Crvena Zvezda",
+    "on": "2023-12-20",
+    "home": "Partizan",
+    "away": "Crvena Zvezda",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-075a7beac52adf99815c",
+   "value": {
+    "id": "research-20261020-075a7beac52adf99815c",
+    "name": "FK Javor 0-1 Partizan",
+    "on": "2024-02-10",
+    "home": "FK Javor",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b04776b3e83575b02a89",
+   "value": {
+    "id": "research-20261020-b04776b3e83575b02a89",
+    "name": "Partizan 5-2 IMT Beograd",
+    "on": "2024-02-17",
+    "home": "Partizan",
+    "away": "IMT Beograd",
+    "homeGoals": 5,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "5-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4ab85640b191e02d7ed6",
+   "value": {
+    "id": "research-20261020-4ab85640b191e02d7ed6",
+    "name": "Radnik Surdulica 1-2 Partizan",
+    "on": "2024-02-24",
+    "home": "Radnik Surdulica",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a3326bb5c88fda920315",
+   "value": {
+    "id": "research-20261020-a3326bb5c88fda920315",
+    "name": "Partizan 3-1 Železničar Pančevo",
+    "on": "2024-03-02",
+    "home": "Partizan",
+    "away": "Železničar Pančevo",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-385979b169bacbff30f8",
+   "value": {
+    "id": "research-20261020-385979b169bacbff30f8",
+    "name": "Crvena Zvezda 2-2 Partizan",
+    "on": "2024-03-09",
+    "home": "Crvena Zvezda",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-44ffe2f384dd3c71af1e",
+   "value": {
+    "id": "research-20261020-44ffe2f384dd3c71af1e",
+    "name": "Partizan 0-1 FK Napredak",
+    "on": "2024-03-13",
+    "home": "Partizan",
+    "away": "FK Napredak",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-29d5a8bf01ceb9b5e92b",
+   "value": {
+    "id": "research-20261020-29d5a8bf01ceb9b5e92b",
+    "name": "Mladost Lučani 1-1 Partizan",
+    "on": "2024-03-17",
+    "home": "Mladost Lučani",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ef96e51496aac2657996",
+   "value": {
+    "id": "research-20261020-ef96e51496aac2657996",
+    "name": "Partizan 1-0 Spartak Subotica",
+    "on": "2024-03-30",
+    "home": "Partizan",
+    "away": "Spartak Subotica",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0262ccbea36b4e3b8344",
+   "value": {
+    "id": "research-20261020-0262ccbea36b4e3b8344",
+    "name": "FK Voždovac 2-3 Partizan",
+    "on": "2024-04-03",
+    "home": "FK Voždovac",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cad9c22934024604683c",
+   "value": {
+    "id": "research-20261020-cad9c22934024604683c",
+    "name": "Partizan 2-0 FK Novi Pazar",
+    "on": "2024-04-07",
+    "home": "Partizan",
+    "away": "FK Novi Pazar",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-11cd6d4b25eedc6cf46a",
+   "value": {
+    "id": "research-20261020-11cd6d4b25eedc6cf46a",
+    "name": "FK Čukarički 3-2 Partizan",
+    "on": "2024-04-14",
+    "home": "FK Čukarički",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b66499bfbaafe3c900b7",
+   "value": {
+    "id": "research-20261020-b66499bfbaafe3c900b7",
+    "name": "Crvena Zvezda 3-2 Partizan",
+    "on": "2024-04-20",
+    "home": "Crvena Zvezda",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d14ef58a69915e001e42",
+   "value": {
+    "id": "research-20261020-d14ef58a69915e001e42",
+    "name": "Partizan 1-2 TSC Bačka Topola",
+    "on": "2024-04-28",
+    "home": "Partizan",
+    "away": "TSC Bačka Topola",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ef4f81de468da51e29a7",
+   "value": {
+    "id": "research-20261020-ef4f81de468da51e29a7",
+    "name": "Partizan 2-3 Vojvodina",
+    "on": "2024-05-02",
+    "home": "Partizan",
+    "away": "Vojvodina",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4bfbf3cc1f703c95f86f",
+   "value": {
+    "id": "research-20261020-4bfbf3cc1f703c95f86f",
+    "name": "FK Napredak 3-3 Partizan",
+    "on": "2024-05-08",
+    "home": "FK Napredak",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cad78e5b024091f60ea4",
+   "value": {
+    "id": "research-20261020-cad78e5b024091f60ea4",
+    "name": "Partizan 3-0 Mladost Lučani",
+    "on": "2024-05-12",
+    "home": "Partizan",
+    "away": "Mladost Lučani",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6b5e1f75332063a2832b",
+   "value": {
+    "id": "research-20261020-6b5e1f75332063a2832b",
+    "name": "FK Čukarički 0-1 Partizan",
+    "on": "2024-05-17",
+    "home": "FK Čukarički",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3c44885a7c6527c5d991",
+   "value": {
+    "id": "research-20261020-3c44885a7c6527c5d991",
+    "name": "Partizan 2-2 FK Radnički 1923",
+    "on": "2024-05-25",
+    "home": "Partizan",
+    "away": "FK Radnički 1923",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Serbia Super League 2023/24",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-c643736450a0511a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-099d92113cdcc42e24cf",
+   "value": {
+    "id": "research-20261020-099d92113cdcc42e24cf",
+    "name": "FK Napredak 0-1 Partizan",
+    "on": "2024-07-19",
+    "home": "FK Napredak",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3c57134b45234c334282",
+   "value": {
+    "id": "research-20261020-3c57134b45234c334282",
+    "name": "Dinamo Kiev 6-2 Partizan",
+    "on": "2024-07-23",
+    "home": "Dinamo Kiev",
+    "away": "Partizan",
+    "homeGoals": 6,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "UEFA Champions League - Quali 2024/25",
+    "score": "6-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-269fb0de1edfb749"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-38c93d795135705143b6",
+   "value": {
+    "id": "research-20261020-38c93d795135705143b6",
+    "name": "Jedinstvo Ub 0-4 Partizan",
+    "on": "2024-07-27",
+    "home": "Jedinstvo Ub",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4e110a1362dbf9663904",
+   "value": {
+    "id": "research-20261020-4e110a1362dbf9663904",
+    "name": "Partizan 0-3 Dinamo Kiev",
+    "on": "2024-07-31",
+    "home": "Partizan",
+    "away": "Dinamo Kiev",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "UEFA Champions League - Quali 2024/25",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-269fb0de1edfb749"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6c8bea2d2b199b245158",
+   "value": {
+    "id": "research-20261020-6c8bea2d2b199b245158",
+    "name": "Partizan 2-0 Železničar Pančevo",
+    "on": "2024-08-04",
+    "home": "Partizan",
+    "away": "Železničar Pančevo",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c28f34ba8f818159360f",
+   "value": {
+    "id": "research-20261020-c28f34ba8f818159360f",
+    "name": "Partizan 0-1 FC Lugano",
+    "on": "2024-08-08",
+    "home": "Partizan",
+    "away": "FC Lugano",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "UEFA Europa League - Quali 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-3100e242de53e939"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f2fb194535b6fb9c8e01",
+   "value": {
+    "id": "research-20261020-f2fb194535b6fb9c8e01",
+    "name": "IMT Beograd 0-0 Partizan",
+    "on": "2024-08-11",
+    "home": "IMT Beograd",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6f4955621dd92ebf8f74",
+   "value": {
+    "id": "research-20261020-6f4955621dd92ebf8f74",
+    "name": "FC Lugano 2-2 Partizan",
+    "on": "2024-08-15",
+    "home": "FC Lugano",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "UEFA Europa League - Quali 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-3100e242de53e939"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3639417f35528a5c925c",
+   "value": {
+    "id": "research-20261020-3639417f35528a5c925c",
+    "name": "Partizan 0-1 KAA Gent",
+    "on": "2024-08-22",
+    "home": "Partizan",
+    "away": "KAA Gent",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5cf1b858fbc2910eeda4",
+   "value": {
+    "id": "research-20261020-5cf1b858fbc2910eeda4",
+    "name": "KAA Gent 1-0 Partizan",
+    "on": "2024-08-28",
+    "home": "KAA Gent",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "UEFA Conference League - Quali 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-b0f6dc355a57eea5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f9ce6a89c965e99b93f1",
+   "value": {
+    "id": "research-20261020-f9ce6a89c965e99b93f1",
+    "name": "Partizan 0-0 Vojvodina",
+    "on": "2024-09-01",
+    "home": "Partizan",
+    "away": "Vojvodina",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-767a0cfec802f852ae6b",
+   "value": {
+    "id": "research-20261020-767a0cfec802f852ae6b",
+    "name": "OFK Beograd 3-2 Partizan",
+    "on": "2024-09-15",
+    "home": "OFK Beograd",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a53f18041d74b1dae082",
+   "value": {
+    "id": "research-20261020-a53f18041d74b1dae082",
+    "name": "Partizan 0-4 Crvena Zvezda",
+    "on": "2024-09-23",
+    "home": "Partizan",
+    "away": "Crvena Zvezda",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1a17eb23fa30e7af2964",
+   "value": {
+    "id": "research-20261020-1a17eb23fa30e7af2964",
+    "name": "Mladost Lučani 1-3 Partizan",
+    "on": "2024-09-29",
+    "home": "Mladost Lučani",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a5c2803f6f6f67872e08",
+   "value": {
+    "id": "research-20261020-a5c2803f6f6f67872e08",
+    "name": "Partizan 4-1 Tekstilac Odžaci",
+    "on": "2024-10-05",
+    "home": "Partizan",
+    "away": "Tekstilac Odžaci",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-994a7fe195fd2c178f60",
+   "value": {
+    "id": "research-20261020-994a7fe195fd2c178f60",
+    "name": "FK Novi Pazar 3-4 Partizan",
+    "on": "2024-10-21",
+    "home": "FK Novi Pazar",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-012e34a8688a357ef82d",
+   "value": {
+    "id": "research-20261020-012e34a8688a357ef82d",
+    "name": "Partizan 3-1 FK Čukarički",
+    "on": "2024-10-26",
+    "home": "Partizan",
+    "away": "FK Čukarički",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-83c6e99ba94cb1e41306",
+   "value": {
+    "id": "research-20261020-83c6e99ba94cb1e41306",
+    "name": "TSC Bačka Topola 1-2 Partizan",
+    "on": "2024-11-03",
+    "home": "TSC Bačka Topola",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3acff4fffb197310765d",
+   "value": {
+    "id": "research-20261020-3acff4fffb197310765d",
+    "name": "Partizan 2-2 FK Radnički 1923",
+    "on": "2024-11-10",
+    "home": "Partizan",
+    "away": "FK Radnički 1923",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7d9a7f0074314421c18e",
+   "value": {
+    "id": "research-20261020-7d9a7f0074314421c18e",
+    "name": "Partizan 0-0 FK Napredak",
+    "on": "2024-11-24",
+    "home": "Partizan",
+    "away": "FK Napredak",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8936860126265201e9fe",
+   "value": {
+    "id": "research-20261020-8936860126265201e9fe",
+    "name": "Partizan 3-0 Jedinstvo Ub",
+    "on": "2024-11-30",
+    "home": "Partizan",
+    "away": "Jedinstvo Ub",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-57d8313066807c75c35a",
+   "value": {
+    "id": "research-20261020-57d8313066807c75c35a",
+    "name": "Partizan 3-1 Radnički Niš",
+    "on": "2024-12-04",
+    "home": "Partizan",
+    "away": "Radnički Niš",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8c068f9d5fbcb1c5291c",
+   "value": {
+    "id": "research-20261020-8c068f9d5fbcb1c5291c",
+    "name": "Železničar Pančevo 0-1 Partizan",
+    "on": "2024-12-08",
+    "home": "Železničar Pančevo",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-efd54d0b5885f8e4b7a5",
+   "value": {
+    "id": "research-20261020-efd54d0b5885f8e4b7a5",
+    "name": "Spartak Subotica 2-1 Partizan",
+    "on": "2024-12-12",
+    "home": "Spartak Subotica",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-119894886257f16f8b24",
+   "value": {
+    "id": "research-20261020-119894886257f16f8b24",
+    "name": "Partizan 1-1 IMT Beograd",
+    "on": "2024-12-16",
+    "home": "Partizan",
+    "away": "IMT Beograd",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b2306c19816d6444ef2b",
+   "value": {
+    "id": "research-20261020-b2306c19816d6444ef2b",
+    "name": "Radnički Niš 0-1 Partizan",
+    "on": "2024-12-21",
+    "home": "Radnički Niš",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-26da98758b8566b53d2b",
+   "value": {
+    "id": "research-20261020-26da98758b8566b53d2b",
+    "name": "Partizan 2-2 Spartak Subotica",
+    "on": "2025-02-01",
+    "home": "Partizan",
+    "away": "Spartak Subotica",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fa26598dd0dda147708e",
+   "value": {
+    "id": "research-20261020-fa26598dd0dda147708e",
+    "name": "Vojvodina 0-0 Partizan",
+    "on": "2025-02-08",
+    "home": "Vojvodina",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4dee9479931a20767354",
+   "value": {
+    "id": "research-20261020-4dee9479931a20767354",
+    "name": "Partizan 4-1 OFK Beograd",
+    "on": "2025-02-15",
+    "home": "Partizan",
+    "away": "OFK Beograd",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-67c2030c8ad28fd8dc7e",
+   "value": {
+    "id": "research-20261020-67c2030c8ad28fd8dc7e",
+    "name": "Crvena Zvezda 3-3 Partizan",
+    "on": "2025-02-22",
+    "home": "Crvena Zvezda",
+    "away": "Partizan",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-299f0ea9c8dab25a6243",
+   "value": {
+    "id": "research-20261020-299f0ea9c8dab25a6243",
+    "name": "Partizan 2-0 Mladost Lučani",
+    "on": "2025-02-26",
+    "home": "Partizan",
+    "away": "Mladost Lučani",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-95246735294a0b1bdb75",
+   "value": {
+    "id": "research-20261020-95246735294a0b1bdb75",
+    "name": "Tekstilac Odžaci 1-4 Partizan",
+    "on": "2025-03-02",
+    "home": "Tekstilac Odžaci",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e730b4cdcca0630b581d",
+   "value": {
+    "id": "research-20261020-e730b4cdcca0630b581d",
+    "name": "Partizan 3-2 FK Novi Pazar",
+    "on": "2025-03-08",
+    "home": "Partizan",
+    "away": "FK Novi Pazar",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d1a38cdb1147fd7a1865",
+   "value": {
+    "id": "research-20261020-d1a38cdb1147fd7a1865",
+    "name": "FK Čukarički 0-1 Partizan",
+    "on": "2025-03-16",
+    "home": "FK Čukarički",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4ffccb028bb79c0e63a4",
+   "value": {
+    "id": "research-20261020-4ffccb028bb79c0e63a4",
+    "name": "Partizan 0-0 TSC Bačka Topola",
+    "on": "2025-03-29",
+    "home": "Partizan",
+    "away": "TSC Bačka Topola",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-acc7ff003bcbbca59ffc",
+   "value": {
+    "id": "research-20261020-acc7ff003bcbbca59ffc",
+    "name": "FK Radnički 1923 0-2 Partizan",
+    "on": "2025-04-06",
+    "home": "FK Radnički 1923",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-05dea40986b6a0796b49",
+   "value": {
+    "id": "research-20261020-05dea40986b6a0796b49",
+    "name": "Crvena Zvezda 2-1 Partizan",
+    "on": "2025-04-12",
+    "home": "Crvena Zvezda",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-669e63596f637eff1cd8",
+   "value": {
+    "id": "research-20261020-669e63596f637eff1cd8",
+    "name": "Partizan 2-2 OFK Beograd",
+    "on": "2025-04-23",
+    "home": "Partizan",
+    "away": "OFK Beograd",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2ea48202c644d5556979",
+   "value": {
+    "id": "research-20261020-2ea48202c644d5556979",
+    "name": "Partizan 3-1 FK Radnički 1923",
+    "on": "2025-04-27",
+    "home": "Partizan",
+    "away": "FK Radnički 1923",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1bba370eecb80a2b0f67",
+   "value": {
+    "id": "research-20261020-1bba370eecb80a2b0f67",
+    "name": "FK Novi Pazar 2-1 Partizan",
+    "on": "2025-05-04",
+    "home": "FK Novi Pazar",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cda21f85343303011773",
+   "value": {
+    "id": "research-20261020-cda21f85343303011773",
+    "name": "Partizan 1-2 TSC Bačka Topola",
+    "on": "2025-05-11",
+    "home": "Partizan",
+    "away": "TSC Bačka Topola",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-57afa8625a40edb98cf2",
+   "value": {
+    "id": "research-20261020-57afa8625a40edb98cf2",
+    "name": "Mladost Lučani 0-4 Partizan",
+    "on": "2025-05-17",
+    "home": "Mladost Lučani",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ecb9b1955f7ebe8a2753",
+   "value": {
+    "id": "research-20261020-ecb9b1955f7ebe8a2753",
+    "name": "Partizan 3-2 Vojvodina",
+    "on": "2025-05-25",
+    "home": "Partizan",
+    "away": "Vojvodina",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Serbia Super League 2024/25",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-91782b60062b8b31"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8d5ce3d4ce9d28828030",
+   "value": {
+    "id": "research-20261020-8d5ce3d4ce9d28828030",
+    "name": "AEK Larnaca 1-0 Partizan",
+    "on": "2025-07-10",
+    "home": "AEK Larnaca",
+    "away": "Partizan",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2025/26",
+    "competition": "UEFA Europa League - Quali 2025/26",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-a3b89ecb5cb14900"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bd7c96dc7ff13b381877",
+   "value": {
+    "id": "research-20261020-bd7c96dc7ff13b381877",
+    "name": "FK Oleksandriya 0-2 Partizan",
+    "on": "2025-07-24",
+    "home": "FK Oleksandriya",
+    "away": "Partizan",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e482ba3b004bc29297d6",
+   "value": {
+    "id": "research-20261020-e482ba3b004bc29297d6",
+    "name": "Partizan 4-0 FK Oleksandriya",
+    "on": "2025-07-31",
+    "home": "Partizan",
+    "away": "FK Oleksandriya",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7d7ebd70ad7932a3f55f",
+   "value": {
+    "id": "research-20261020-7d7ebd70ad7932a3f55f",
+    "name": "Partizan 0-2 Hibernian FC",
+    "on": "2025-08-07",
+    "home": "Partizan",
+    "away": "Hibernian FC",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6c43712195207d7cb92e",
+   "value": {
+    "id": "research-20261020-6c43712195207d7cb92e",
+    "name": "Hibernian FC 2-3 Partizan",
+    "on": "2025-08-14",
+    "home": "Hibernian FC",
+    "away": "Partizan",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2025/26",
+    "competition": "UEFA Conference League - Quali 2025/26",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-0aa9394e0477fe15"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

@@ -10,7 +10,7 @@ const GATE_LABEL:Record<ExperienceGate,string>={trivia:'Gate 2 · Trivia',timeli
 export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{id:string;name:string}[];api:{busy:boolean;post:<T>(action:string,data?:unknown,message?:string)=>Promise<T|null>}}){
  const [f,setF]=useState(initial)
  const save=async(patch:Partial<Features>,msg:string)=>{const r=await api.post<Features>('features',{patch},msg);if(r)setF(r)}
- const row=(k:'allFootball'|'fanLeague'|'friendlies'|'highlights'|'peoplesChoice'|'lifeRush',extra?:React.ReactNode)=><li key={k} data-durable={f[k]?'yes':'no'}><span className="desk-stamp">{f[k]?'On':'Off'}</span><div>
+ const row=(k:'allFootball'|'fanLeague'|'friendlies'|'highlights'|'peoplesChoice'|'universe'|'lifeRush',extra?:React.ReactNode)=><li key={k} data-durable={f[k]?'yes':'no'}><span className="desk-stamp">{f[k]?'On':'Off'}</span><div>
   <b>{FEATURE_TEXT[k].label}</b><p>{FEATURE_TEXT[k].hint}</p>
   <p className="desk-fine">{f[k]?'Open to every visitor.':'Off for fans. Your owner session can already play it (marked “Owner preview”).'}{f.updatedAt?` Last change ${new Date(f.updatedAt).toLocaleString('en-GB')}.`:''}</p>
   {extra}
@@ -25,6 +25,7 @@ export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{
    {row('friendlies')}
    {row('highlights')}
    {row('peoplesChoice')}
+   {row('universe')}
    {row('lifeRush')}
   </ul>
  </section>

@@ -1,0 +1,4420 @@
+{
+ "schemaVersion": 1,
+ "clubId": "dinamo-zagreb",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-7739ac461b9c39fc",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2011-12/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2011-12/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2011-12/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1a78964fd35da08341db7da80be8cd96af49187f28da21f633604b55da975903",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-51f7b2b6f16f8fc1",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2012-13/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2012-13/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2012-13/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "87783db9a89da5a8cd81845f97154ace4b52136bf185f767eb5ec0a474592e77",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-daabb53ec0acf35b",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2015-16/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2015-16/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2015-16/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "16fc9b06c3cc4ef34b4b387616d06dfaa935bfc3679f2f1191ae957dde58935a",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-95891fee2c182fec",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2016-17/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2016-17/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2016-17/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "07b573059d5523b9bf11953bc8520dcf051bf3adadf682abbaf7537ee7b51293",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-7e6fd0f14111d48c",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2019-20/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "a215e1f722bf32fab0d8c6470bd1e92559362418ac40572365201d61951c127a",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-4ff3132ee6d4c270",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2024-25/uefa.cl.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2024-25/uefa.cl.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/uefa.cl.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "12d6dc343a83ec353efbb89f84186a20d3f5c11aee1f10fdebe2219754d4a1b6",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-5740b3f16bea0138",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2023-24_hr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2023-24_hr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "croatia/2023-24_hr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "367fcb838f804e741e1bbf4511de20b66c09374c8f60972329a21e3d0dd98aeb",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e0591ae149031a06",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2024-25_hr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/croatia/2024-25_hr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "croatia/2024-25_hr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "91daef5495ac6088e7f98ba28b6dc082d80c94b9b89faaec11d9a9eb2ebb1d16",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-f11ffe60cab85d03",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2011-12/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2011-12/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2011-12/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "5820927a22fdf615d88120a50f770eeed2e2105daf9b0582963a5d67331b9060",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e20052dc4e51e501",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2012-13/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2012-13/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2012-13/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1a60314a79ce760cc718eaab7cc5ab1d4f1534eeb788e19f0d102926988ccff5",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-6c137e8b268824f5",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2015-16/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2015-16/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2015-16/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "09b7c605a6c723ffd85b9cb8a36f6bcf427485b9b0427b49014da22d455a8d8c",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-cf65ebcbe6f66996",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2016-17/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2016-17/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2016-17/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "fe604207c9e945d2a76ed9d660b5499c4680d8b474aeeb166d585f819c029a31",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-dfaf1ee771a63230",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2019-20/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2019-20/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2019-20/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "e0f6d8990b3110108193eecdcd698dfa48b6f324ffa7532cdc11aea19f7ee419",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-afc19521d406009f",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2020-21/el.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2020-21/el.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2020-21/el.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "d494cc0c88c951d92b3839f2e425752a382f2779de251a0df115a1f19b308f21",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-4b4589a3c9d8a603",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2021-22/el.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2021-22/el.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2021-22/el.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "0bd953fd4927f096a8e4162c414b639801d4c5d33b49cba33ac54fcf565bf788",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-214b8d4f828d56d7",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2022-23/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2022-23/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2022-23/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "bf9cd05939b055f12ee9b095bec1c20a0922277bef8940172218548de2e7b93a",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-4d87427835953457",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2023-24/conf.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2023-24/conf.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2023-24/conf.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "d7030d077ffe5f4d8ddc6eae3e50b846b9409bd085593fde08342ddbae80f909",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-de1414ce35fb1ff5",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/cl.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/cl.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/cl.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "c2692b22af02c5df4587b69c5f430aebf7d936845b5337aee462ce8e649eb1b5",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-269fb0de1edfb749",
+   "url": "https://github.com/openfootball/champions-league/blob/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/clq.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/champions-league/abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef/2024-25/clq.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/clq.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "a39cc3ed20233ce2fcc490d4feda4a67dacf0d8080c83f4078ab34eca4632c25",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-d7b2af70e57b2ccd2383",
+   "value": {
+    "id": "research-20261020-d7b2af70e57b2ccd2383",
+    "name": "Dinamo Zagreb 0-1 Real Madrid",
+    "on": "2011-09-14",
+    "home": "Dinamo Zagreb",
+    "away": "Real Madrid",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2011-12",
+    "competition": "UEFA Champions League 2011/12",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7739ac461b9c39fc",
+    "of-f11ffe60cab85d03"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a4274b15062987bd7586",
+   "value": {
+    "id": "research-20261020-a4274b15062987bd7586",
+    "name": "Olympique Lyonnais 2-0 Dinamo Zagreb",
+    "on": "2011-09-27",
+    "home": "Olympique Lyonnais",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2011-12",
+    "competition": "UEFA Champions League 2011/12",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7739ac461b9c39fc",
+    "of-f11ffe60cab85d03"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7c2dea86c1b4910cba34",
+   "value": {
+    "id": "research-20261020-7c2dea86c1b4910cba34",
+    "name": "Dinamo Zagreb 0-2 AFC Ajax",
+    "on": "2011-10-18",
+    "home": "Dinamo Zagreb",
+    "away": "AFC Ajax",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2011-12",
+    "competition": "UEFA Champions League 2011/12",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7739ac461b9c39fc",
+    "of-f11ffe60cab85d03"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1e703d7c45fcde241d0c",
+   "value": {
+    "id": "research-20261020-1e703d7c45fcde241d0c",
+    "name": "AFC Ajax 4-0 Dinamo Zagreb",
+    "on": "2011-11-02",
+    "home": "AFC Ajax",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2011-12",
+    "competition": "UEFA Champions League 2011/12",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7739ac461b9c39fc",
+    "of-f11ffe60cab85d03"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b2d344890b0686d5146f",
+   "value": {
+    "id": "research-20261020-b2d344890b0686d5146f",
+    "name": "Real Madrid 6-2 Dinamo Zagreb",
+    "on": "2011-11-22",
+    "home": "Real Madrid",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 6,
+    "awayGoals": 2,
+    "season": "2011-12",
+    "competition": "UEFA Champions League 2011/12",
+    "score": "6-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7739ac461b9c39fc",
+    "of-f11ffe60cab85d03"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b80f2c0db9dea51816c7",
+   "value": {
+    "id": "research-20261020-b80f2c0db9dea51816c7",
+    "name": "Dinamo Zagreb 1-7 Olympique Lyonnais",
+    "on": "2011-12-07",
+    "home": "Dinamo Zagreb",
+    "away": "Olympique Lyonnais",
+    "homeGoals": 1,
+    "awayGoals": 7,
+    "season": "2011-12",
+    "competition": "UEFA Champions League 2011/12",
+    "score": "1-7",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7739ac461b9c39fc",
+    "of-f11ffe60cab85d03"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d6167d3755a7ed258432",
+   "value": {
+    "id": "research-20261020-d6167d3755a7ed258432",
+    "name": "Dinamo Zagreb 0-2 FC Porto",
+    "on": "2012-09-18",
+    "home": "Dinamo Zagreb",
+    "away": "FC Porto",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-74376ccaee40278021d6",
+   "value": {
+    "id": "research-20261020-74376ccaee40278021d6",
+    "name": "Dinamo Kiev 2-0 Dinamo Zagreb",
+    "on": "2012-10-03",
+    "home": "Dinamo Kiev",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d8da76b1eed847956e90",
+   "value": {
+    "id": "research-20261020-d8da76b1eed847956e90",
+    "name": "Dinamo Zagreb 0-2 Paris Saint-Germain",
+    "on": "2012-10-24",
+    "home": "Dinamo Zagreb",
+    "away": "Paris Saint-Germain",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-deafeb9a8d3ce08e7140",
+   "value": {
+    "id": "research-20261020-deafeb9a8d3ce08e7140",
+    "name": "Paris Saint-Germain 4-0 Dinamo Zagreb",
+    "on": "2012-11-06",
+    "home": "Paris Saint-Germain",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-180a7b0033b6d83ff501",
+   "value": {
+    "id": "research-20261020-180a7b0033b6d83ff501",
+    "name": "FC Porto 3-0 Dinamo Zagreb",
+    "on": "2012-11-21",
+    "home": "FC Porto",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7dae4b4804f090fec7ef",
+   "value": {
+    "id": "research-20261020-7dae4b4804f090fec7ef",
+    "name": "Dinamo Zagreb 1-1 Dinamo Kiev",
+    "on": "2012-12-04",
+    "home": "Dinamo Zagreb",
+    "away": "Dinamo Kiev",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2012-13",
+    "competition": "UEFA Champions League 2012/13",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-51f7b2b6f16f8fc1",
+    "of-e20052dc4e51e501"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8ea258b39f7483ff5662",
+   "value": {
+    "id": "research-20261020-8ea258b39f7483ff5662",
+    "name": "Dinamo Zagreb 2-1 Arsenal FC",
+    "on": "2015-09-16",
+    "home": "Dinamo Zagreb",
+    "away": "Arsenal FC",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2015-16",
+    "competition": "UEFA Champions League 2015/16",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-6c137e8b268824f5",
+    "of-daabb53ec0acf35b"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5a478c7073da7ec47ef6",
+   "value": {
+    "id": "research-20261020-5a478c7073da7ec47ef6",
+    "name": "Bayern München 5-0 Dinamo Zagreb",
+    "on": "2015-09-29",
+    "home": "Bayern München",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2015-16",
+    "competition": "UEFA Champions League 2015/16",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-6c137e8b268824f5",
+    "of-daabb53ec0acf35b"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fb658dc7d6a732c84811",
+   "value": {
+    "id": "research-20261020-fb658dc7d6a732c84811",
+    "name": "Dinamo Zagreb 0-1 Olympiakos Piraeus",
+    "on": "2015-10-20",
+    "home": "Dinamo Zagreb",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2015-16",
+    "competition": "UEFA Champions League 2015/16",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-6c137e8b268824f5",
+    "of-daabb53ec0acf35b"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-01ae34dde8bbcbd7aee7",
+   "value": {
+    "id": "research-20261020-01ae34dde8bbcbd7aee7",
+    "name": "Olympiakos Piraeus 2-1 Dinamo Zagreb",
+    "on": "2015-11-04",
+    "home": "Olympiakos Piraeus",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2015-16",
+    "competition": "UEFA Champions League 2015/16",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-6c137e8b268824f5",
+    "of-daabb53ec0acf35b"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ba9d6d667ca45a2d0687",
+   "value": {
+    "id": "research-20261020-ba9d6d667ca45a2d0687",
+    "name": "Arsenal FC 3-0 Dinamo Zagreb",
+    "on": "2015-11-24",
+    "home": "Arsenal FC",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2015-16",
+    "competition": "UEFA Champions League 2015/16",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-6c137e8b268824f5",
+    "of-daabb53ec0acf35b"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0461ecc9b2480a70a11a",
+   "value": {
+    "id": "research-20261020-0461ecc9b2480a70a11a",
+    "name": "Dinamo Zagreb 0-2 Bayern München",
+    "on": "2015-12-09",
+    "home": "Dinamo Zagreb",
+    "away": "Bayern München",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2015-16",
+    "competition": "UEFA Champions League 2015/16",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-6c137e8b268824f5",
+    "of-daabb53ec0acf35b"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-869e0a509baa5a777681",
+   "value": {
+    "id": "research-20261020-869e0a509baa5a777681",
+    "name": "Olympique Lyonnais 3-0 Dinamo Zagreb",
+    "on": "2016-09-14",
+    "home": "Olympique Lyonnais",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2016-17",
+    "competition": "UEFA Champions League 2016/17",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-95891fee2c182fec",
+    "of-cf65ebcbe6f66996"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-35baacfb488f09e9d5e8",
+   "value": {
+    "id": "research-20261020-35baacfb488f09e9d5e8",
+    "name": "Dinamo Zagreb 0-4 Juventus",
+    "on": "2016-09-27",
+    "home": "Dinamo Zagreb",
+    "away": "Juventus",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2016-17",
+    "competition": "UEFA Champions League 2016/17",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-95891fee2c182fec",
+    "of-cf65ebcbe6f66996"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-76cc60799a5a0251ee3c",
+   "value": {
+    "id": "research-20261020-76cc60799a5a0251ee3c",
+    "name": "Dinamo Zagreb 0-1 Sevilla FC",
+    "on": "2016-10-18",
+    "home": "Dinamo Zagreb",
+    "away": "Sevilla FC",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2016-17",
+    "competition": "UEFA Champions League 2016/17",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-95891fee2c182fec",
+    "of-cf65ebcbe6f66996"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-dc711a607924fd8f1d66",
+   "value": {
+    "id": "research-20261020-dc711a607924fd8f1d66",
+    "name": "Sevilla FC 4-0 Dinamo Zagreb",
+    "on": "2016-11-02",
+    "home": "Sevilla FC",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2016-17",
+    "competition": "UEFA Champions League 2016/17",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-95891fee2c182fec",
+    "of-cf65ebcbe6f66996"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-02e2d7497c8bd085a5d0",
+   "value": {
+    "id": "research-20261020-02e2d7497c8bd085a5d0",
+    "name": "Dinamo Zagreb 0-1 Olympique Lyonnais",
+    "on": "2016-11-22",
+    "home": "Dinamo Zagreb",
+    "away": "Olympique Lyonnais",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2016-17",
+    "competition": "UEFA Champions League 2016/17",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-95891fee2c182fec",
+    "of-cf65ebcbe6f66996"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a807e6803f4e5c0ce72f",
+   "value": {
+    "id": "research-20261020-a807e6803f4e5c0ce72f",
+    "name": "Juventus 2-0 Dinamo Zagreb",
+    "on": "2016-12-07",
+    "home": "Juventus",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2016-17",
+    "competition": "UEFA Champions League 2016/17",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-95891fee2c182fec",
+    "of-cf65ebcbe6f66996"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a19f6688d2871d1bf0a7",
+   "value": {
+    "id": "research-20261020-a19f6688d2871d1bf0a7",
+    "name": "Dinamo Zagreb 4-0 Atalanta",
+    "on": "2019-09-18",
+    "home": "Dinamo Zagreb",
+    "away": "Atalanta",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "UEFA Champions League 2019/20",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e6fd0f14111d48c",
+    "of-dfaf1ee771a63230"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e54cff26e5a4205de552",
+   "value": {
+    "id": "research-20261020-e54cff26e5a4205de552",
+    "name": "Manchester City 2-0 Dinamo Zagreb",
+    "on": "2019-10-01",
+    "home": "Manchester City",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "UEFA Champions League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e6fd0f14111d48c",
+    "of-dfaf1ee771a63230"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-261276d82466944be86e",
+   "value": {
+    "id": "research-20261020-261276d82466944be86e",
+    "name": "Shakhtar Donetsk 2-2 Dinamo Zagreb",
+    "on": "2019-10-22",
+    "home": "Shakhtar Donetsk",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "UEFA Champions League 2019/20",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e6fd0f14111d48c",
+    "of-dfaf1ee771a63230"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-73b1920f01f42b3afab1",
+   "value": {
+    "id": "research-20261020-73b1920f01f42b3afab1",
+    "name": "Dinamo Zagreb 3-3 Shakhtar Donetsk",
+    "on": "2019-11-06",
+    "home": "Dinamo Zagreb",
+    "away": "Shakhtar Donetsk",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2019-20",
+    "competition": "UEFA Champions League 2019/20",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e6fd0f14111d48c",
+    "of-dfaf1ee771a63230"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bd4d5aeaff4eb36140f9",
+   "value": {
+    "id": "research-20261020-bd4d5aeaff4eb36140f9",
+    "name": "Atalanta 2-0 Dinamo Zagreb",
+    "on": "2019-11-26",
+    "home": "Atalanta",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "UEFA Champions League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e6fd0f14111d48c",
+    "of-dfaf1ee771a63230"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8c1f5b8ce325729bb4a6",
+   "value": {
+    "id": "research-20261020-8c1f5b8ce325729bb4a6",
+    "name": "Dinamo Zagreb 1-4 Manchester City",
+    "on": "2019-12-11",
+    "home": "Dinamo Zagreb",
+    "away": "Manchester City",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "UEFA Champions League 2019/20",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-7e6fd0f14111d48c",
+    "of-dfaf1ee771a63230"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8d1b5b6c21f1ed27923d",
+   "value": {
+    "id": "research-20261020-8d1b5b6c21f1ed27923d",
+    "name": "Dinamo Zagreb 0-0 Feyenoord",
+    "on": "2020-10-22",
+    "home": "Dinamo Zagreb",
+    "away": "Feyenoord",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b2dfd03e23057d2381f1",
+   "value": {
+    "id": "research-20261020-b2dfd03e23057d2381f1",
+    "name": "CSKA Moskva 0-0 Dinamo Zagreb",
+    "on": "2020-10-29",
+    "home": "CSKA Moskva",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0d804f49c8cf557243c9",
+   "value": {
+    "id": "research-20261020-0d804f49c8cf557243c9",
+    "name": "Dinamo Zagreb 1-0 Wolfsberger AC",
+    "on": "2020-11-05",
+    "home": "Dinamo Zagreb",
+    "away": "Wolfsberger AC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c5c6a57083a9924030cb",
+   "value": {
+    "id": "research-20261020-c5c6a57083a9924030cb",
+    "name": "Wolfsberger AC 0-3 Dinamo Zagreb",
+    "on": "2020-11-26",
+    "home": "Wolfsberger AC",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-baf8588a652eb2a96466",
+   "value": {
+    "id": "research-20261020-baf8588a652eb2a96466",
+    "name": "Feyenoord 0-2 Dinamo Zagreb",
+    "on": "2020-12-03",
+    "home": "Feyenoord",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f557c68a93c4858cc629",
+   "value": {
+    "id": "research-20261020-f557c68a93c4858cc629",
+    "name": "Dinamo Zagreb 3-1 CSKA Moskva",
+    "on": "2020-12-10",
+    "home": "Dinamo Zagreb",
+    "away": "CSKA Moskva",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-82663fa525d88d455c5b",
+   "value": {
+    "id": "research-20261020-82663fa525d88d455c5b",
+    "name": "FK Krasnodar 2-3 Dinamo Zagreb",
+    "on": "2021-02-18",
+    "home": "FK Krasnodar",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-01459992a33a98db243d",
+   "value": {
+    "id": "research-20261020-01459992a33a98db243d",
+    "name": "Dinamo Zagreb 1-0 FK Krasnodar",
+    "on": "2021-02-25",
+    "home": "Dinamo Zagreb",
+    "away": "FK Krasnodar",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a969ffafc4cc69d42354",
+   "value": {
+    "id": "research-20261020-a969ffafc4cc69d42354",
+    "name": "Tottenham Hotspur 2-0 Dinamo Zagreb",
+    "on": "2021-03-11",
+    "home": "Tottenham Hotspur",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c0769e8f07c9eb0c5f18",
+   "value": {
+    "id": "research-20261020-c0769e8f07c9eb0c5f18",
+    "name": "Dinamo Zagreb 3-0 Tottenham Hotspur",
+    "on": "2021-03-18",
+    "home": "Dinamo Zagreb",
+    "away": "Tottenham Hotspur",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7cffc739ab7a500bbb72",
+   "value": {
+    "id": "research-20261020-7cffc739ab7a500bbb72",
+    "name": "Dinamo Zagreb 0-1 Villarreal CF",
+    "on": "2021-04-08",
+    "home": "Dinamo Zagreb",
+    "away": "Villarreal CF",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-02f09e9d4ab175daaec4",
+   "value": {
+    "id": "research-20261020-02f09e9d4ab175daaec4",
+    "name": "Villarreal CF 2-1 Dinamo Zagreb",
+    "on": "2021-04-15",
+    "home": "Villarreal CF",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2020/21",
+    "competition": "UEFA Europa League 2020/21",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-afc19521d406009f"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4e86f43b0fe2f074c488",
+   "value": {
+    "id": "research-20261020-4e86f43b0fe2f074c488",
+    "name": "Dinamo Zagreb 0-2 West Ham United",
+    "on": "2021-09-16",
+    "home": "Dinamo Zagreb",
+    "away": "West Ham United",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6f8bf8e522382f9e5a4d",
+   "value": {
+    "id": "research-20261020-6f8bf8e522382f9e5a4d",
+    "name": "KRC Genk 0-3 Dinamo Zagreb",
+    "on": "2021-09-30",
+    "home": "KRC Genk",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a5a2cbbc4c54e0465bcb",
+   "value": {
+    "id": "research-20261020-a5a2cbbc4c54e0465bcb",
+    "name": "Rapid Wien 2-1 Dinamo Zagreb",
+    "on": "2021-10-21",
+    "home": "Rapid Wien",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7695c93bbad2c71c0218",
+   "value": {
+    "id": "research-20261020-7695c93bbad2c71c0218",
+    "name": "Dinamo Zagreb 3-1 Rapid Wien",
+    "on": "2021-11-04",
+    "home": "Dinamo Zagreb",
+    "away": "Rapid Wien",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d69d9f02ccaee1b07377",
+   "value": {
+    "id": "research-20261020-d69d9f02ccaee1b07377",
+    "name": "Dinamo Zagreb 1-1 KRC Genk",
+    "on": "2021-11-25",
+    "home": "Dinamo Zagreb",
+    "away": "KRC Genk",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3d14a9323a1bbaaee1e0",
+   "value": {
+    "id": "research-20261020-3d14a9323a1bbaaee1e0",
+    "name": "West Ham United 0-1 Dinamo Zagreb",
+    "on": "2021-12-09",
+    "home": "West Ham United",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2e6a720584ee04afdbbc",
+   "value": {
+    "id": "research-20261020-2e6a720584ee04afdbbc",
+    "name": "Sevilla FC 3-1 Dinamo Zagreb",
+    "on": "2022-02-17",
+    "home": "Sevilla FC",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4c7a64862b37ce52f978",
+   "value": {
+    "id": "research-20261020-4c7a64862b37ce52f978",
+    "name": "Dinamo Zagreb 1-0 Sevilla FC",
+    "on": "2022-02-24",
+    "home": "Dinamo Zagreb",
+    "away": "Sevilla FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2021/22",
+    "competition": "UEFA Europa League 2021/22",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4b4589a3c9d8a603"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8232d29a2d28853f7c3e",
+   "value": {
+    "id": "research-20261020-8232d29a2d28853f7c3e",
+    "name": "Dinamo Zagreb 1-0 Chelsea FC",
+    "on": "2022-09-06",
+    "home": "Dinamo Zagreb",
+    "away": "Chelsea FC",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-68ad497b63f9d9ae26e2",
+   "value": {
+    "id": "research-20261020-68ad497b63f9d9ae26e2",
+    "name": "AC Milan 3-1 Dinamo Zagreb",
+    "on": "2022-09-14",
+    "home": "AC Milan",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ac9fd63f76990dd18784",
+   "value": {
+    "id": "research-20261020-ac9fd63f76990dd18784",
+    "name": "RB Salzburg 1-0 Dinamo Zagreb",
+    "on": "2022-10-05",
+    "home": "RB Salzburg",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0aabac5558b3522a193e",
+   "value": {
+    "id": "research-20261020-0aabac5558b3522a193e",
+    "name": "Dinamo Zagreb 1-1 RB Salzburg",
+    "on": "2022-10-11",
+    "home": "Dinamo Zagreb",
+    "away": "RB Salzburg",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f895ade91576f08c510b",
+   "value": {
+    "id": "research-20261020-f895ade91576f08c510b",
+    "name": "Dinamo Zagreb 0-4 AC Milan",
+    "on": "2022-10-25",
+    "home": "Dinamo Zagreb",
+    "away": "AC Milan",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-132248573b427a58358d",
+   "value": {
+    "id": "research-20261020-132248573b427a58358d",
+    "name": "Chelsea FC 2-1 Dinamo Zagreb",
+    "on": "2022-11-02",
+    "home": "Chelsea FC",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2022/23",
+    "competition": "UEFA Champions League 2022/23",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-214b8d4f828d56d7"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1e7e6d127b031da64f44",
+   "value": {
+    "id": "research-20261020-1e7e6d127b031da64f44",
+    "name": "Dinamo Zagreb 1-2 Hajduk Split",
+    "on": "2023-07-21",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3bbbafe2530dcba9dbb4",
+   "value": {
+    "id": "research-20261020-3bbbafe2530dcba9dbb4",
+    "name": "NK Istra 1961 0-3 Dinamo Zagreb",
+    "on": "2023-07-29",
+    "home": "NK Istra 1961",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-35ad5145dcd2973b0281",
+   "value": {
+    "id": "research-20261020-35ad5145dcd2973b0281",
+    "name": "Dinamo Zagreb 0-0 HNK Gorica",
+    "on": "2023-08-05",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Gorica",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d50c2f29ea95dc07bf7a",
+   "value": {
+    "id": "research-20261020-d50c2f29ea95dc07bf7a",
+    "name": "Dinamo Zagreb 2-1 HNK Rijeka",
+    "on": "2023-08-27",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Rijeka",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fb442f86171ab66e9408",
+   "value": {
+    "id": "research-20261020-fb442f86171ab66e9408",
+    "name": "NK Osijek 2-3 Dinamo Zagreb",
+    "on": "2023-09-03",
+    "home": "NK Osijek",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ede481b94cbf88ed2417",
+   "value": {
+    "id": "research-20261020-ede481b94cbf88ed2417",
+    "name": "Dinamo Zagreb 3-0 Slaven Belupo",
+    "on": "2023-09-16",
+    "home": "Dinamo Zagreb",
+    "away": "Slaven Belupo",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c44cbdb95c5af26738f6",
+   "value": {
+    "id": "research-20261020-c44cbdb95c5af26738f6",
+    "name": "Dinamo Zagreb 5-1 FK Astana",
+    "on": "2023-09-21",
+    "home": "Dinamo Zagreb",
+    "away": "FK Astana",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5814a45a8da8905253d0",
+   "value": {
+    "id": "research-20261020-5814a45a8da8905253d0",
+    "name": "NK Rudeš 1-5 Dinamo Zagreb",
+    "on": "2023-09-24",
+    "home": "NK Rudeš",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 5,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ab2b5d69b813edd6fd62",
+   "value": {
+    "id": "research-20261020-ab2b5d69b813edd6fd62",
+    "name": "Hajduk Split 1-0 Dinamo Zagreb",
+    "on": "2023-10-01",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-eacfa96781c2470a3777",
+   "value": {
+    "id": "research-20261020-eacfa96781c2470a3777",
+    "name": "KF Ballkani 2-0 Dinamo Zagreb",
+    "on": "2023-10-05",
+    "home": "KF Ballkani",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b29515c922fa76bf5231",
+   "value": {
+    "id": "research-20261020-b29515c922fa76bf5231",
+    "name": "Dinamo Zagreb 3-0 NK Istra 1961",
+    "on": "2023-10-08",
+    "home": "Dinamo Zagreb",
+    "away": "NK Istra 1961",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4849b2261a3613ffda14",
+   "value": {
+    "id": "research-20261020-4849b2261a3613ffda14",
+    "name": "HNK Gorica 2-1 Dinamo Zagreb",
+    "on": "2023-10-21",
+    "home": "HNK Gorica",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2222eedbdd4ccf4dd69e",
+   "value": {
+    "id": "research-20261020-2222eedbdd4ccf4dd69e",
+    "name": "Dinamo Zagreb 0-1 Viktoria Plzeň",
+    "on": "2023-10-26",
+    "home": "Dinamo Zagreb",
+    "away": "Viktoria Plzeň",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-48e170cf291175c38345",
+   "value": {
+    "id": "research-20261020-48e170cf291175c38345",
+    "name": "Dinamo Zagreb 2-1 Lokomotiva Zagreb",
+    "on": "2023-10-29",
+    "home": "Dinamo Zagreb",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-72d655dbe06c8a021e8c",
+   "value": {
+    "id": "research-20261020-72d655dbe06c8a021e8c",
+    "name": "NK Varaždin 1-1 Dinamo Zagreb",
+    "on": "2023-11-05",
+    "home": "NK Varaždin",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-78b05084c0168e11230e",
+   "value": {
+    "id": "research-20261020-78b05084c0168e11230e",
+    "name": "Viktoria Plzeň 1-0 Dinamo Zagreb",
+    "on": "2023-11-09",
+    "home": "Viktoria Plzeň",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-175c6476d7727345c893",
+   "value": {
+    "id": "research-20261020-175c6476d7727345c893",
+    "name": "HNK Rijeka 2-2 Dinamo Zagreb",
+    "on": "2023-11-12",
+    "home": "HNK Rijeka",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-940a14968c82173d9d06",
+   "value": {
+    "id": "research-20261020-940a14968c82173d9d06",
+    "name": "Dinamo Zagreb 2-1 NK Osijek",
+    "on": "2023-11-25",
+    "home": "Dinamo Zagreb",
+    "away": "NK Osijek",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3a6bbfc928528b814879",
+   "value": {
+    "id": "research-20261020-3a6bbfc928528b814879",
+    "name": "FK Astana 0-2 Dinamo Zagreb",
+    "on": "2023-11-30",
+    "home": "FK Astana",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-70bf46984203e41c0f6f",
+   "value": {
+    "id": "research-20261020-70bf46984203e41c0f6f",
+    "name": "Slaven Belupo 0-2 Dinamo Zagreb",
+    "on": "2023-12-04",
+    "home": "Slaven Belupo",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2166d658293f8920a764",
+   "value": {
+    "id": "research-20261020-2166d658293f8920a764",
+    "name": "Dinamo Zagreb 1-0 NK Rudeš",
+    "on": "2023-12-09",
+    "home": "Dinamo Zagreb",
+    "away": "NK Rudeš",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b267a6f3e212edf76cd0",
+   "value": {
+    "id": "research-20261020-b267a6f3e212edf76cd0",
+    "name": "Dinamo Zagreb 3-0 KF Ballkani",
+    "on": "2023-12-14",
+    "home": "Dinamo Zagreb",
+    "away": "KF Ballkani",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-de3e5067cad6fb5ce4ce",
+   "value": {
+    "id": "research-20261020-de3e5067cad6fb5ce4ce",
+    "name": "Dinamo Zagreb 0-0 Hajduk Split",
+    "on": "2023-12-17",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1aee804f0120779633b3",
+   "value": {
+    "id": "research-20261020-1aee804f0120779633b3",
+    "name": "Dinamo Zagreb 0-3 Lokomotiva Zagreb",
+    "on": "2024-01-23",
+    "home": "Dinamo Zagreb",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7d35a9dc7e4a55c79f6d",
+   "value": {
+    "id": "research-20261020-7d35a9dc7e4a55c79f6d",
+    "name": "NK Istra 1961 0-1 Dinamo Zagreb",
+    "on": "2024-01-27",
+    "home": "NK Istra 1961",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e6f5342d1a12fa980eb4",
+   "value": {
+    "id": "research-20261020-e6f5342d1a12fa980eb4",
+    "name": "Dinamo Zagreb 2-0 HNK Gorica",
+    "on": "2024-02-04",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Gorica",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e6a74502673056601cf3",
+   "value": {
+    "id": "research-20261020-e6a74502673056601cf3",
+    "name": "Lokomotiva Zagreb 2-2 Dinamo Zagreb",
+    "on": "2024-02-10",
+    "home": "Lokomotiva Zagreb",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a2d67abf13479cc88d30",
+   "value": {
+    "id": "research-20261020-a2d67abf13479cc88d30",
+    "name": "Real Betis 0-1 Dinamo Zagreb",
+    "on": "2024-02-15",
+    "home": "Real Betis",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-be44c83873729c8a2a6d",
+   "value": {
+    "id": "research-20261020-be44c83873729c8a2a6d",
+    "name": "Dinamo Zagreb 1-0 NK Varaždin",
+    "on": "2024-02-18",
+    "home": "Dinamo Zagreb",
+    "away": "NK Varaždin",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-46f0411878cc0b58c3ca",
+   "value": {
+    "id": "research-20261020-46f0411878cc0b58c3ca",
+    "name": "Dinamo Zagreb 1-1 Real Betis",
+    "on": "2024-02-22",
+    "home": "Dinamo Zagreb",
+    "away": "Real Betis",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8631824675affa42e718",
+   "value": {
+    "id": "research-20261020-8631824675affa42e718",
+    "name": "Dinamo Zagreb 1-0 HNK Rijeka",
+    "on": "2024-02-25",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Rijeka",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7dfd2a2b8995dba58dd5",
+   "value": {
+    "id": "research-20261020-7dfd2a2b8995dba58dd5",
+    "name": "NK Osijek 1-1 Dinamo Zagreb",
+    "on": "2024-03-03",
+    "home": "NK Osijek",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3a2b4dff5dd5b1974539",
+   "value": {
+    "id": "research-20261020-3a2b4dff5dd5b1974539",
+    "name": "Dinamo Zagreb 2-0 PAOK Saloniki",
+    "on": "2024-03-07",
+    "home": "Dinamo Zagreb",
+    "away": "PAOK Saloniki",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-68601b6146e2351f7276",
+   "value": {
+    "id": "research-20261020-68601b6146e2351f7276",
+    "name": "Dinamo Zagreb 5-2 Slaven Belupo",
+    "on": "2024-03-10",
+    "home": "Dinamo Zagreb",
+    "away": "Slaven Belupo",
+    "homeGoals": 5,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "5-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8c5b4cdc53e8b185a56a",
+   "value": {
+    "id": "research-20261020-8c5b4cdc53e8b185a56a",
+    "name": "PAOK Saloniki 5-1 Dinamo Zagreb",
+    "on": "2024-03-14",
+    "home": "PAOK Saloniki",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "UEFA Conference League 2023/24",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4d87427835953457"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f6979232ea3eb7870775",
+   "value": {
+    "id": "research-20261020-f6979232ea3eb7870775",
+    "name": "NK Rudeš 0-3 Dinamo Zagreb",
+    "on": "2024-03-17",
+    "home": "NK Rudeš",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b8067f3a22a12389a3ad",
+   "value": {
+    "id": "research-20261020-b8067f3a22a12389a3ad",
+    "name": "Hajduk Split 0-1 Dinamo Zagreb",
+    "on": "2024-03-30",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c029b7230c2b472c166f",
+   "value": {
+    "id": "research-20261020-c029b7230c2b472c166f",
+    "name": "Dinamo Zagreb 4-1 NK Istra 1961",
+    "on": "2024-04-07",
+    "home": "Dinamo Zagreb",
+    "away": "NK Istra 1961",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-86076b46873ed3384319",
+   "value": {
+    "id": "research-20261020-86076b46873ed3384319",
+    "name": "HNK Gorica 0-2 Dinamo Zagreb",
+    "on": "2024-04-13",
+    "home": "HNK Gorica",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c827ef55a7038db56b9e",
+   "value": {
+    "id": "research-20261020-c827ef55a7038db56b9e",
+    "name": "Dinamo Zagreb 2-1 NK Varaždin",
+    "on": "2024-04-17",
+    "home": "Dinamo Zagreb",
+    "away": "NK Varaždin",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c68c20fd0bef61d93c92",
+   "value": {
+    "id": "research-20261020-c68c20fd0bef61d93c92",
+    "name": "Lokomotiva Zagreb 0-1 Dinamo Zagreb",
+    "on": "2024-04-21",
+    "home": "Lokomotiva Zagreb",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f3e116aa0d9a50f35448",
+   "value": {
+    "id": "research-20261020-f3e116aa0d9a50f35448",
+    "name": "NK Varaždin 0-1 Dinamo Zagreb",
+    "on": "2024-04-27",
+    "home": "NK Varaždin",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1591ade24ca560d94078",
+   "value": {
+    "id": "research-20261020-1591ade24ca560d94078",
+    "name": "HNK Rijeka 1-2 Dinamo Zagreb",
+    "on": "2024-05-05",
+    "home": "HNK Rijeka",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-909f91bbfd69b3f73937",
+   "value": {
+    "id": "research-20261020-909f91bbfd69b3f73937",
+    "name": "Dinamo Zagreb 1-0 NK Osijek",
+    "on": "2024-05-11",
+    "home": "Dinamo Zagreb",
+    "away": "NK Osijek",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-71e5ff412b7dcebba5f0",
+   "value": {
+    "id": "research-20261020-71e5ff412b7dcebba5f0",
+    "name": "Slaven Belupo 2-3 Dinamo Zagreb",
+    "on": "2024-05-18",
+    "home": "Slaven Belupo",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2a2776d9c3353ded6504",
+   "value": {
+    "id": "research-20261020-2a2776d9c3353ded6504",
+    "name": "Dinamo Zagreb 3-3 NK Rudeš",
+    "on": "2024-05-26",
+    "home": "Dinamo Zagreb",
+    "away": "NK Rudeš",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Croatia HNL 2023/24",
+    "score": "3-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-5740b3f16bea0138"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0ed488adc6bd015708ef",
+   "value": {
+    "id": "research-20261020-0ed488adc6bd015708ef",
+    "name": "Dinamo Zagreb 5-0 NK Istra 1961",
+    "on": "2024-08-02",
+    "home": "Dinamo Zagreb",
+    "away": "NK Istra 1961",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3134b16ee6bc060229e2",
+   "value": {
+    "id": "research-20261020-3134b16ee6bc060229e2",
+    "name": "NK Osijek 1-2 Dinamo Zagreb",
+    "on": "2024-08-11",
+    "home": "NK Osijek",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-95223fac4e87754fea5a",
+   "value": {
+    "id": "research-20261020-95223fac4e87754fea5a",
+    "name": "Dinamo Zagreb 3-0 HNK Šibenik",
+    "on": "2024-08-16",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Šibenik",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5a915683cb30f2c479e1",
+   "value": {
+    "id": "research-20261020-5a915683cb30f2c479e1",
+    "name": "Dinamo Zagreb 3-0 Qarabağ FK",
+    "on": "2024-08-20",
+    "home": "Dinamo Zagreb",
+    "away": "Qarabağ FK",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "UEFA Champions League - Quali 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-269fb0de1edfb749"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e52afeea5fd279b1be3d",
+   "value": {
+    "id": "research-20261020-e52afeea5fd279b1be3d",
+    "name": "Dinamo Zagreb 2-1 HNK Gorica",
+    "on": "2024-08-24",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Gorica",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d7d6043d8aacb7e353d5",
+   "value": {
+    "id": "research-20261020-d7d6043d8aacb7e353d5",
+    "name": "Qarabağ FK 0-2 Dinamo Zagreb",
+    "on": "2024-08-28",
+    "home": "Qarabağ FK",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "UEFA Champions League - Quali 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-269fb0de1edfb749"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a3bad5cc9a4f26f95565",
+   "value": {
+    "id": "research-20261020-a3bad5cc9a4f26f95565",
+    "name": "HNK Rijeka 1-1 Dinamo Zagreb",
+    "on": "2024-09-01",
+    "home": "HNK Rijeka",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-688ab3a6577cb25aecd2",
+   "value": {
+    "id": "research-20261020-688ab3a6577cb25aecd2",
+    "name": "Dinamo Zagreb 0-1 Hajduk Split",
+    "on": "2024-09-13",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-179c8a08050a10096c18",
+   "value": {
+    "id": "research-20261020-179c8a08050a10096c18",
+    "name": "FC Bayern München 9-2 GNK Dinamo Zagreb",
+    "on": "2024-09-17",
+    "home": "FC Bayern München",
+    "away": "GNK Dinamo Zagreb",
+    "homeGoals": 9,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "9-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e6b6564f04da9f2cf6ac",
+   "value": {
+    "id": "research-20261020-e6b6564f04da9f2cf6ac",
+    "name": "Slaven Belupo 4-1 Dinamo Zagreb",
+    "on": "2024-09-21",
+    "home": "Slaven Belupo",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e069931f1889671e0948",
+   "value": {
+    "id": "research-20261020-e069931f1889671e0948",
+    "name": "Dinamo Zagreb 5-1 Lokomotiva Zagreb",
+    "on": "2024-09-28",
+    "home": "Dinamo Zagreb",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3d9c111f0d2ad6f7ac4c",
+   "value": {
+    "id": "research-20261020-3d9c111f0d2ad6f7ac4c",
+    "name": "GNK Dinamo Zagreb 2-2 AS Monaco FC",
+    "on": "2024-10-02",
+    "home": "GNK Dinamo Zagreb",
+    "away": "AS Monaco FC",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d52216bcd539c5e94610",
+   "value": {
+    "id": "research-20261020-d52216bcd539c5e94610",
+    "name": "NK Varaždin 0-1 Dinamo Zagreb",
+    "on": "2024-10-06",
+    "home": "NK Varaždin",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4c8000d9690b5e72704f",
+   "value": {
+    "id": "research-20261020-4c8000d9690b5e72704f",
+    "name": "NK Istra 1961 2-2 Dinamo Zagreb",
+    "on": "2024-10-19",
+    "home": "NK Istra 1961",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8c1937b473b370dc80cc",
+   "value": {
+    "id": "research-20261020-8c1937b473b370dc80cc",
+    "name": "FC Red Bull Salzburg 0-2 GNK Dinamo Zagreb",
+    "on": "2024-10-23",
+    "home": "FC Red Bull Salzburg",
+    "away": "GNK Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9a5e5b0c1aff76595eee",
+   "value": {
+    "id": "research-20261020-9a5e5b0c1aff76595eee",
+    "name": "Dinamo Zagreb 2-4 NK Osijek",
+    "on": "2024-10-27",
+    "home": "Dinamo Zagreb",
+    "away": "NK Osijek",
+    "homeGoals": 2,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b84b439c1df3b7db1931",
+   "value": {
+    "id": "research-20261020-b84b439c1df3b7db1931",
+    "name": "HNK Šibenik 0-4 Dinamo Zagreb",
+    "on": "2024-11-01",
+    "home": "HNK Šibenik",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bfd81b5bf2900cd84857",
+   "value": {
+    "id": "research-20261020-bfd81b5bf2900cd84857",
+    "name": "ŠK Slovan Bratislava 1-4 GNK Dinamo Zagreb",
+    "on": "2024-11-05",
+    "home": "ŠK Slovan Bratislava",
+    "away": "GNK Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-262a3925e55a65d7552e",
+   "value": {
+    "id": "research-20261020-262a3925e55a65d7552e",
+    "name": "HNK Gorica 2-2 Dinamo Zagreb",
+    "on": "2024-11-09",
+    "home": "HNK Gorica",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-db92d4c376eac3c754dd",
+   "value": {
+    "id": "research-20261020-db92d4c376eac3c754dd",
+    "name": "Dinamo Zagreb 0-0 HNK Rijeka",
+    "on": "2024-11-23",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Rijeka",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2640483789bf86796374",
+   "value": {
+    "id": "research-20261020-2640483789bf86796374",
+    "name": "GNK Dinamo Zagreb 0-3 Borussia Dortmund",
+    "on": "2024-11-27",
+    "home": "GNK Dinamo Zagreb",
+    "away": "Borussia Dortmund",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f127fad33dce5ba1f683",
+   "value": {
+    "id": "research-20261020-f127fad33dce5ba1f683",
+    "name": "Hajduk Split 1-0 Dinamo Zagreb",
+    "on": "2024-12-01",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d0895fdae5695358eb26",
+   "value": {
+    "id": "research-20261020-d0895fdae5695358eb26",
+    "name": "Dinamo Zagreb 1-1 Slaven Belupo",
+    "on": "2024-12-06",
+    "home": "Dinamo Zagreb",
+    "away": "Slaven Belupo",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-aa8eb2d639a97c46f075",
+   "value": {
+    "id": "research-20261020-aa8eb2d639a97c46f075",
+    "name": "GNK Dinamo Zagreb 0-0 Celtic FC",
+    "on": "2024-12-10",
+    "home": "GNK Dinamo Zagreb",
+    "away": "Celtic FC",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-46f94ea339b64ba35e86",
+   "value": {
+    "id": "research-20261020-46f94ea339b64ba35e86",
+    "name": "Lokomotiva Zagreb 3-1 Dinamo Zagreb",
+    "on": "2024-12-14",
+    "home": "Lokomotiva Zagreb",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2e47940aaa5a4fc23530",
+   "value": {
+    "id": "research-20261020-2e47940aaa5a4fc23530",
+    "name": "Dinamo Zagreb 3-2 NK Varaždin",
+    "on": "2024-12-22",
+    "home": "Dinamo Zagreb",
+    "away": "NK Varaždin",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f001331f4c84e789d716",
+   "value": {
+    "id": "research-20261020-f001331f4c84e789d716",
+    "name": "Arsenal FC 3-0 GNK Dinamo Zagreb",
+    "on": "2025-01-22",
+    "home": "Arsenal FC",
+    "away": "GNK Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-704b8e741e3280cb9ccd",
+   "value": {
+    "id": "research-20261020-704b8e741e3280cb9ccd",
+    "name": "Dinamo Zagreb 3-1 NK Istra 1961",
+    "on": "2025-01-25",
+    "home": "Dinamo Zagreb",
+    "away": "NK Istra 1961",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-943775c14cc4cac8ba03",
+   "value": {
+    "id": "research-20261020-943775c14cc4cac8ba03",
+    "name": "GNK Dinamo Zagreb 2-1 AC Milan",
+    "on": "2025-01-29",
+    "home": "GNK Dinamo Zagreb",
+    "away": "AC Milan",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "UEFA Champions League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-4ff3132ee6d4c270",
+    "of-de1414ce35fb1ff5"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-541402b45df8943fcc81",
+   "value": {
+    "id": "research-20261020-541402b45df8943fcc81",
+    "name": "NK Osijek 2-1 Dinamo Zagreb",
+    "on": "2025-02-02",
+    "home": "NK Osijek",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-79b4f9c4ace79f4908f9",
+   "value": {
+    "id": "research-20261020-79b4f9c4ace79f4908f9",
+    "name": "Dinamo Zagreb 3-0 HNK Šibenik",
+    "on": "2025-02-07",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Šibenik",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b5f66469616985db6e3d",
+   "value": {
+    "id": "research-20261020-b5f66469616985db6e3d",
+    "name": "Dinamo Zagreb 3-1 HNK Gorica",
+    "on": "2025-02-15",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Gorica",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-63ffb6704384b85e437e",
+   "value": {
+    "id": "research-20261020-63ffb6704384b85e437e",
+    "name": "HNK Rijeka 4-0 Dinamo Zagreb",
+    "on": "2025-02-22",
+    "home": "HNK Rijeka",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ce2098d1733210c177f1",
+   "value": {
+    "id": "research-20261020-ce2098d1733210c177f1",
+    "name": "Dinamo Zagreb 2-2 Hajduk Split",
+    "on": "2025-03-02",
+    "home": "Dinamo Zagreb",
+    "away": "Hajduk Split",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ee0f1214fbbb8628d59f",
+   "value": {
+    "id": "research-20261020-ee0f1214fbbb8628d59f",
+    "name": "Slaven Belupo 0-1 Dinamo Zagreb",
+    "on": "2025-03-09",
+    "home": "Slaven Belupo",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-effecddbe6e38205a424",
+   "value": {
+    "id": "research-20261020-effecddbe6e38205a424",
+    "name": "Dinamo Zagreb 3-0 Lokomotiva Zagreb",
+    "on": "2025-03-15",
+    "home": "Dinamo Zagreb",
+    "away": "Lokomotiva Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ca1d814535fa681905fd",
+   "value": {
+    "id": "research-20261020-ca1d814535fa681905fd",
+    "name": "NK Varaždin 1-1 Dinamo Zagreb",
+    "on": "2025-03-30",
+    "home": "NK Varaždin",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-72f5ede0c95e079c255b",
+   "value": {
+    "id": "research-20261020-72f5ede0c95e079c255b",
+    "name": "NK Istra 1961 3-0 Dinamo Zagreb",
+    "on": "2025-04-05",
+    "home": "NK Istra 1961",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2c870736efcb19a3156e",
+   "value": {
+    "id": "research-20261020-2c870736efcb19a3156e",
+    "name": "Dinamo Zagreb 2-0 NK Osijek",
+    "on": "2025-04-12",
+    "home": "Dinamo Zagreb",
+    "away": "NK Osijek",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9f22ee41cfb58a006352",
+   "value": {
+    "id": "research-20261020-9f22ee41cfb58a006352",
+    "name": "HNK Šibenik 0-4 Dinamo Zagreb",
+    "on": "2025-04-17",
+    "home": "HNK Šibenik",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1878ffb7ecd5013c4570",
+   "value": {
+    "id": "research-20261020-1878ffb7ecd5013c4570",
+    "name": "HNK Gorica 1-0 Dinamo Zagreb",
+    "on": "2025-04-23",
+    "home": "HNK Gorica",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0fcef1a7d6dd81832402",
+   "value": {
+    "id": "research-20261020-0fcef1a7d6dd81832402",
+    "name": "Dinamo Zagreb 1-0 HNK Rijeka",
+    "on": "2025-04-27",
+    "home": "Dinamo Zagreb",
+    "away": "HNK Rijeka",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c1033cddccdd6ecae828",
+   "value": {
+    "id": "research-20261020-c1033cddccdd6ecae828",
+    "name": "Hajduk Split 1-3 Dinamo Zagreb",
+    "on": "2025-05-03",
+    "home": "Hajduk Split",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-618f68e968a2750346c5",
+   "value": {
+    "id": "research-20261020-618f68e968a2750346c5",
+    "name": "Dinamo Zagreb 5-0 Slaven Belupo",
+    "on": "2025-05-10",
+    "home": "Dinamo Zagreb",
+    "away": "Slaven Belupo",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6779bc8610c2fdae0fee",
+   "value": {
+    "id": "research-20261020-6779bc8610c2fdae0fee",
+    "name": "Lokomotiva Zagreb 1-1 Dinamo Zagreb",
+    "on": "2025-05-17",
+    "home": "Lokomotiva Zagreb",
+    "away": "Dinamo Zagreb",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b30e27fa3190de3b54e3",
+   "value": {
+    "id": "research-20261020-b30e27fa3190de3b54e3",
+    "name": "Dinamo Zagreb 1-0 NK Varaždin",
+    "on": "2025-05-25",
+    "home": "Dinamo Zagreb",
+    "away": "NK Varaždin",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024/25",
+    "competition": "Croatia HNL 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "of-e0591ae149031a06"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-20",
+   "approvedAt": null,
+   "approvedBy": null,
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

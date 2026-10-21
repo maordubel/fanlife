@@ -30,6 +30,7 @@ export default async function Page({ params, searchParams }: { params: { slug: s
     kicker: c.terraceDailyKicker, round: c.terraceDailyRound, of: c.terraceDailyOf, kinds: [c.terraceDailyRemember, c.terraceDailyRewind, c.terraceDailyWild] as [string, string, string],
     tryN: c.terraceDailyTry, right: c.terraceDailyRight, wrong: c.terraceDailyWrong, points: c.terraceDailyPoints, yourDay: c.terraceDailyYourDay,
     share: c.terraceDailyShare, copied: c.terraceDailyCopied, back: c.terraceDailyBack, notReady: c.terraceDailyNotReady, closed: c.terraceDailyClosed, loading: c.terraceDailyLoading, gone: c.terraceDailyGone,
+    boardTitle: c.terraceDailyBoard, boardJoin: c.terraceDailyBoardJoin, boardNick: c.terraceDailyBoardNick, boardBad: c.terraceDailyBoardBad, boardYou: c.terraceDailyBoardYou, boardOff: c.terraceDailyBoardOff,
   }
   return (
     <ClubSurface theme={core?.data.theme || clubTheme(reg)} clubId={id} locale={locale}>

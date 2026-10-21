@@ -1,0 +1,522 @@
+[
+  {
+    "clubId": "hapoel-tel-aviv",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "hapoel-tel-aviv",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "blind-cow",
+    "current": 16,
+    "target": 30,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "goal",
+    "current": 4,
+    "target": 6,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "goal",
+    "current": 5,
+    "target": 6,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "zrinjski-mostar",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "olympiacos",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "blind-cow",
+    "current": 29,
+    "target": 30,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "olympiacos",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "olympiacos",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "olympiacos",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "panathinaikos",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "blind-cow",
+    "current": 28,
+    "target": 30,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "panathinaikos",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "goal",
+    "current": 4,
+    "target": 6,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "panathinaikos",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "panathinaikos",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "panathinaikos",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "aek-athens",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "goal",
+    "current": 3,
+    "target": 6,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "aek-athens",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "aek-athens",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "aek-athens",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "celtic",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "celtic",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "celtic",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "st-pauli",
+    "priority": 1,
+    "domain": "game-readiness",
+    "issue": "goal",
+    "current": 4,
+    "target": 6,
+    "action": "fill verified eligible records and rerun existing gate; threshold is not archive completeness"
+  },
+  {
+    "clubId": "st-pauli",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "st-pauli",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "st-pauli",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "maccabi-haifa",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "maccabi-haifa",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "maccabi-haifa",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "maccabi-haifa",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "paok",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "paok",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "paok",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "paok",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "dinamo-zagreb",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "dinamo-zagreb",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "dinamo-zagreb",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "dinamo-zagreb",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "hajduk-split",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "hajduk-split",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "hajduk-split",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "hajduk-split",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "partizan-belgrade",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "partizan-belgrade",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "partizan-belgrade",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "partizan-belgrade",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "union-berlin",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "union-berlin",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "union-berlin",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "union-berlin",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "borussia-dortmund",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "borussia-dortmund",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "borussia-dortmund",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "borussia-dortmund",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "leicester-city",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "leicester-city",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "leicester-city",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "leicester-city",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "atalanta",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "atalanta",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "atalanta",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "atalanta",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  },
+  {
+    "clubId": "fenerbahce",
+    "priority": 2,
+    "domain": "archive-coverage",
+    "issue": "all-time universe denominator unknown",
+    "action": "enumerate club seasons and competition entries, establish expected match totals, reconcile played/awarded/abandoned, then certify coverage"
+  },
+  {
+    "clubId": "fenerbahce",
+    "priority": 2,
+    "domain": "goals",
+    "issue": "all-match scorer universe not established",
+    "action": "collect event sheets per match, include opponent/own goals and unknown minutes; reconcile goal sums against score"
+  },
+  {
+    "clubId": "fenerbahce",
+    "priority": 2,
+    "domain": "people",
+    "issue": "identity crosswalk and documented club membership",
+    "action": "join provider IDs plus independent birth date/season evidence; retain original script, split homonyms and spells"
+  },
+  {
+    "clubId": "fenerbahce",
+    "priority": 3,
+    "domain": "unopened-club",
+    "issue": "research dossier only",
+    "action": "attach inherited documents and match/player candidates; a dossier does not activate a club"
+  }
+]

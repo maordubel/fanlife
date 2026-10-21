@@ -1,0 +1,352 @@
+{
+ "schemaVersion": 1,
+ "clubId": "st-pauli",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-5806a640a0ed44de",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/de.cup.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/de.cup.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2019-20/de.cup.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "f1d2eb1bfac2f97ca1e38ed848075612f8a1f448b70d8b205e0c3cf4d9eda186",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-610d9cb9a4fcf813",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2020-21/de.cup.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2020-21/de.cup.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2020-21/de.cup.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "a33e6fc9e10fce8f4e7471bc2b0a8513e82eb68b2ea245b1d07597832f83e90a",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e693ba6bf48bac14",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/2018-19/cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/2018-19/cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2018-19/cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "7c8963662f0f8d3d90d96f7a82a09b42cf43856d4b66a4ff9fdc64e53d311a18",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-96a075915025c5a1",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/2019-20/cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/2019-20/cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2019-20/cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "0e246a9355cc3415b248f8699c63a2f025f296c5ff94eac3c7e170965d936976",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e6e0ad593b2cfe4a",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/2024-25/cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/2024-25/cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "b80d38d26a1e15541330fc10fc9a0bd8ad6e878fa601662d691da40c06ffdb74",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-24c8dc241eaa221c",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2020-21_de.cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2020-21_de.cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "openliga/2020-21_de.cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "3e420bef648f8adddbaa4b4850666f48c08de046ca166f8735e2b846a9b2bfd7",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-a69cecb94fbb6c41",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2021-22_de.cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2021-22_de.cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "openliga/2021-22_de.cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "d806e9a0c009ba48afa6fc3e980f6d999938f8be37e5aa3fa72e013b7ad194ac",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-42fa49784cbcea57",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2022-23_de.cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2022-23_de.cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "openliga/2022-23_de.cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "356b1476dc6cc367cd5b5388147aebe1cdc5251c9c97e9cf642e83e39ce058de",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-855b6d6d53a13e6e",
+   "url": "https://github.com/openfootball/deutschland/blob/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2023-24_de.cup.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/deutschland/c34532ab6950aa0089ef1c736ffdb8c818c3356f/openliga/2023-24_de.cup.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "openliga/2023-24_de.cup.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "8a1e69a9ff1661a0fc206bddc37c3f552783b4689e652aa20a3a1a915fd4ae23",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-c901b36fbd90e562f21d",
+   "value": {
+    "id": "research-20261020-c901b36fbd90e562f21d",
+    "name": "SV Wehen Wiesbaden 3-2 FC St. Pauli",
+    "on": "2018-08-17",
+    "home": "SV Wehen Wiesbaden",
+    "away": "FC St. Pauli",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2018/19",
+    "competition": "DFB Pokal 2018/19",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e693ba6bf48bac14"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8888291069194706e92e",
+   "value": {
+    "id": "research-20261020-8888291069194706e92e",
+    "name": "FC St. Pauli 1-2 Eintracht Frankfurt",
+    "on": "2019-10-30",
+    "home": "FC St. Pauli",
+    "away": "Eintracht Frankfurt",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "DFB Pokal 2019/20",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-5806a640a0ed44de",
+    "of-96a075915025c5a1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-95fbbb5e7e46323bd532",
+   "value": {
+    "id": "research-20261020-95fbbb5e7e46323bd532",
+    "name": "SV 07 Elversberg 4-2 FC St. Pauli",
+    "on": "2020-09-13",
+    "home": "SV 07 Elversberg",
+    "away": "FC St. Pauli",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "DFB Pokal 2020/21",
+    "score": "4-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-24c8dc241eaa221c",
+    "of-610d9cb9a4fcf813"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a812e9e9b4bba920c66",
+   "value": {
+    "id": "research-20261020-8a812e9e9b4bba920c66",
+    "name": "FC St. Pauli 2-1 Borussia Dortmund",
+    "on": "2022-01-18",
+    "home": "FC St. Pauli",
+    "away": "Borussia Dortmund",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "DFB-Pokal 2021/22",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-a69cecb94fbb6c41"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-15e5dd9f15e7cc512a8c",
+   "value": {
+    "id": "research-20261020-15e5dd9f15e7cc512a8c",
+    "name": "1. FC Union Berlin 2-1 FC St. Pauli",
+    "on": "2022-03-01",
+    "home": "1. FC Union Berlin",
+    "away": "FC St. Pauli",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2021/22",
+    "competition": "DFB-Pokal 2021/22",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-a69cecb94fbb6c41"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e9b5f22772f6bfb02c19",
+   "value": {
+    "id": "research-20261020-e9b5f22772f6bfb02c19",
+    "name": "SV Straelen 3-4 FC St. Pauli",
+    "on": "2022-07-30",
+    "home": "SV Straelen",
+    "away": "FC St. Pauli",
+    "homeGoals": 3,
+    "awayGoals": 4,
+    "season": "2022/23",
+    "competition": "DFB-Pokal 2022/23",
+    "score": "3-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-42fa49784cbcea57"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-738521d80aec9b733110",
+   "value": {
+    "id": "research-20261020-738521d80aec9b733110",
+    "name": "FC 08 Homburg 1-4 FC St. Pauli",
+    "on": "2023-12-05",
+    "home": "FC 08 Homburg",
+    "away": "FC St. Pauli",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "DFB-Pokal 2023/2024",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-855b6d6d53a13e6e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-295c1b7bd05d22ceeb81",
+   "value": {
+    "id": "research-20261020-295c1b7bd05d22ceeb81",
+    "name": "Hallescher FC 2-3 FC St. Pauli",
+    "on": "2024-08-16",
+    "home": "Hallescher FC",
+    "away": "FC St. Pauli",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2024/25",
+    "competition": "DFB Pokal 2024/25",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e6e0ad593b2cfe4a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

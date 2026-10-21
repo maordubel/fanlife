@@ -1,0 +1,21 @@
+[
+  {
+    "id": "r20261020-goal-a735ce639bfbccd5",
+    "clubId": "olympiacos",
+    "on": "2024-05-29",
+    "opponent": "Fiorentina",
+    "scoreFromClubPerspective": "1-0 aet",
+    "competition": "UEFA Europa Conference League final",
+    "scorerAsReported": "Ayoub El Kaabi",
+    "minuteAsReported": "116",
+    "sourceId": "oly-final-20240529",
+    "paraphrase": "El Kaabi headed Hezze’s delivery to win the final. This corroborates an existing goal, not an additional one.",
+    "existingReplaySameMatch": [
+      "olympiacos:oly-goal-elkaabi-final-fiorentina"
+    ],
+    "importStatus": "review_same_match_existing_replay",
+    "sourcePrecision": "reported minute; null means not securely established",
+    "replayStatus": "not_reconstructed_missing_origin_or_unmapped_contact",
+    "approximateCoords": true
+  }
+]

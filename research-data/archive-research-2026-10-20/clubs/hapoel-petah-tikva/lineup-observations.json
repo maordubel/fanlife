@@ -1,0 +1,65 @@
+[
+  {
+    "clubId": "hapoel-petah-tikva",
+    "on": "1997-02-01",
+    "sourceId": "hpt-jlm-19970201",
+    "startersAsReported": [
+      "שי הס",
+      "בני קוזושווילי",
+      "אילן בוארון",
+      "וואליד באדיר",
+      "גאבור מרטון",
+      "שלומי בן-חמו",
+      "אנדריי כרישטופיק",
+      "אלי אברבנל",
+      "מנור חסן",
+      "יניב עופרי",
+      "מוטי קקון"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "on": "2000-12-09",
+    "sourceId": "hpt-bnei-20001209",
+    "startersAsReported": [
+      "רפי כהן",
+      "גולן דרעי",
+      "אבי יחיאל",
+      "אלביס ברייקוביץ'",
+      "רועי סבג",
+      "קרונוסלאב גרגוריץ'",
+      "אנש דמירוביץ'",
+      "אלי אברבנל",
+      "מיכאל זנדברג",
+      "ניב טל",
+      "מוטי קקון"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  },
+  {
+    "clubId": "hapoel-petah-tikva",
+    "on": "2000-09-09",
+    "sourceId": "hpt-mta-20000909",
+    "startersAsReported": [
+      "רפי כהן",
+      "גולן דרעי",
+      "אלביס ברייקוביץ'",
+      "אהוד כחילה",
+      "יסמין מוז'ה",
+      "קרונוסלאב גרגוריץ'",
+      "אייל בן-עמי",
+      "אנש דמירוביץ'",
+      "אלי אברבנל",
+      "מיכאל זנדברג",
+      "מוטי קקון"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  }
+]

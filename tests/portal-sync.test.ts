@@ -475,6 +475,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20260922090000_worker_shared_project.sql',
       // 17.10.2026 (launch hardening): bounds worker_poll_cast, standalone
       '20261017090000_worker_poll_cast_limits.sql',
+      '20261020090000_worker_terrace_board.sql', // 20.10.2026: Daily Terrace club board (tests/terrace-board.test.ts)
       '20260922120000_worker_collector_market.sql',
       '20260924090000_worker_blind_cow.sql',
       '20260925090000_worker_events.sql',

@@ -1,0 +1,5345 @@
+{
+ "schemaVersion": 1,
+ "clubId": "olympiacos",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "of-396b5f15c2c45523",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2018-19/gr.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2018-19/gr.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2018-19/gr.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "3cca41e84454607f08865f7e18c4514aa783be3d0d3636f5a879e8ba334e034e",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-33e7fd16b4434469",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/gr.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2019-20/gr.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2019-20/gr.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "2be136c3aaca11aa0ebc0471f11552dd7999ea798a71c5fbba225e2d064be02c",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-a565553d1eeb186e",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2020-21/gr.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2020-21/gr.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2020-21/gr.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "99eb0d1fd45da8c032a0100b34458d494ce849cb1084947968add469ce3667df",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-81b61bbe53d4564e",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2024-25/gr.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2024-25/gr.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2024-25/gr.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "1348c90e2e0ac32bc3fcc588597fc1d63a0eda1a05a39750ba566ebc2cddc142",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-cb55a057489fc37b",
+   "url": "https://github.com/openfootball/football.json/blob/e6744429ee395bc86f247348c6184bb08d4eb361/2025-26/gr.1.json",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/football.json/e6744429ee395bc86f247348c6184bb08d4eb361/2025-26/gr.1.json",
+   "publisher": "OpenFootball contributors",
+   "title": "2025-26/gr.1.json",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "efd9a83eb46ecaea5ba2acc719e7b724be57311cf96ff9587622209d475f7f62",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-5e6ec8d990d913a9",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2018-19_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2018-19_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2018-19_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "371f9428f8136692510f804522eb4797f9757461586ee4e6c5bbc1749c3dd70b",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-e06552a97b83f3c3",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2019-20_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2019-20_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2019-20_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "ff52716bbbb39bc583543c9b993d23dac793d46cc60854320a81458bdced25e2",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-732e8ba4542389c0",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2020-21_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2020-21_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2020-21_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "5c2c0c1e60e560468ae59cb8fee5cc6adee8a6486309f532855048243e753db4",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-511228cdf7e850fc",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2023-24_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2023-24_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2023-24_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "3d2c0a3e48d4405c9d26ec73848c8f5e5e8cbef127cc4d1fe35675455500f370",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-eca09ff4b799e2c1",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2024-25_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2024-25_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2024-25_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "cbeee810abc15c55d2179af58c8e652c52a4aa439d748e6a5b4bf20552040c41",
+   "independenceGroup": "openfootball"
+  },
+  {
+   "id": "of-5e47ac4a1e399306",
+   "url": "https://github.com/openfootball/europe/blob/63df627f3c87ce71708f016522ea236cf74332c3/greece/2025-26_gr1.txt",
+   "rawUrl": "https://raw.githubusercontent.com/openfootball/europe/63df627f3c87ce71708f016522ea236cf74332c3/greece/2025-26_gr1.txt",
+   "publisher": "OpenFootball contributors",
+   "title": "greece/2025-26_gr1.txt",
+   "access": "available",
+   "checkedAt": "2026-10-20",
+   "license": "CC0-1.0",
+   "sha256": "893ea7250c6e2af1ad7faca9002eb7abefe0234b13bafc143eab075944587c29",
+   "independenceGroup": "openfootball"
+  }
+ ],
+ "matches": [
+  {
+   "id": "research-20261020-b91baeee6bfafc708a3d",
+   "value": {
+    "id": "research-20261020-b91baeee6bfafc708a3d",
+    "name": "Olympiakos Piraeus 1-0 Levadiakos",
+    "on": "2018-08-26",
+    "home": "Olympiakos Piraeus",
+    "away": "Levadiakos",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0f116f0f756717353d59",
+   "value": {
+    "id": "research-20261020-0f116f0f756717353d59",
+    "name": "Olympiakos Piraeus 5-0 PAS Giannina",
+    "on": "2018-09-02",
+    "home": "Olympiakos Piraeus",
+    "away": "PAS Giannina",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-dc3f7181cc5d3d29f3a6",
+   "value": {
+    "id": "research-20261020-dc3f7181cc5d3d29f3a6",
+    "name": "Olympiakos Piraeus 2-1 Asteras Tripolis",
+    "on": "2018-09-16",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-64452e2111ff95f82f49",
+   "value": {
+    "id": "research-20261020-64452e2111ff95f82f49",
+    "name": "Panionios GSS 0-1 Olympiakos Piraeus",
+    "on": "2018-09-24",
+    "home": "Panionios GSS",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-44f8106ffc99e6941d56",
+   "value": {
+    "id": "research-20261020-44f8106ffc99e6941d56",
+    "name": "Olympiakos Piraeus 0-1 PAOK Saloniki",
+    "on": "2018-09-30",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8f973e99cd8a9e7d0b5a",
+   "value": {
+    "id": "research-20261020-8f973e99cd8a9e7d0b5a",
+    "name": "AEK Athen 1-1 Olympiakos Piraeus",
+    "on": "2018-10-07",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-54b3eea4506d97cc73d6",
+   "value": {
+    "id": "research-20261020-54b3eea4506d97cc73d6",
+    "name": "OFI Heraklion 1-0 Olympiakos Piraeus",
+    "on": "2018-10-21",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b7a97a7a6bb88e717b8f",
+   "value": {
+    "id": "research-20261020-b7a97a7a6bb88e717b8f",
+    "name": "Olympiakos Piraeus 1-0 Apollon Smyrnis",
+    "on": "2018-10-29",
+    "home": "Olympiakos Piraeus",
+    "away": "Apollon Smyrnis",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-71663d59a129dbf0f482",
+   "value": {
+    "id": "research-20261020-71663d59a129dbf0f482",
+    "name": "Aris Saloniki 0-1 Olympiakos Piraeus",
+    "on": "2018-11-04",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4255e7f6fbbd65e4fbb1",
+   "value": {
+    "id": "research-20261020-4255e7f6fbbd65e4fbb1",
+    "name": "Olympiakos Piraeus 1-1 Panathinaikos",
+    "on": "2018-11-11",
+    "home": "Olympiakos Piraeus",
+    "away": "Panathinaikos",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e99749c17177f46c9db3",
+   "value": {
+    "id": "research-20261020-e99749c17177f46c9db3",
+    "name": "Atromitos 1-2 Olympiakos Piraeus",
+    "on": "2018-11-25",
+    "home": "Atromitos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c1d54a43c878826eef3e",
+   "value": {
+    "id": "research-20261020-c1d54a43c878826eef3e",
+    "name": "Olympiakos Piraeus 2-1 Panetolikos",
+    "on": "2018-12-03",
+    "home": "Olympiakos Piraeus",
+    "away": "Panetolikos",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-68fc514030e89f9060f7",
+   "value": {
+    "id": "research-20261020-68fc514030e89f9060f7",
+    "name": "Xanthi FC 1-1 Olympiakos Piraeus",
+    "on": "2018-12-09",
+    "home": "Xanthi FC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5183f41850ba86b8f0cb",
+   "value": {
+    "id": "research-20261020-5183f41850ba86b8f0cb",
+    "name": "Olympiakos Piraeus 3-0 Lamia",
+    "on": "2018-12-16",
+    "home": "Olympiakos Piraeus",
+    "away": "Lamia",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-af5e0c7fd6923022b61c",
+   "value": {
+    "id": "research-20261020-af5e0c7fd6923022b61c",
+    "name": "Levadiakos 0-2 Olympiakos Piraeus",
+    "on": "2019-01-13",
+    "home": "Levadiakos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-77e28216c8eb79641d1f",
+   "value": {
+    "id": "research-20261020-77e28216c8eb79641d1f",
+    "name": "PAS Giannina 1-2 Olympiakos Piraeus",
+    "on": "2019-01-19",
+    "home": "PAS Giannina",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-434264b0952b3374062d",
+   "value": {
+    "id": "research-20261020-434264b0952b3374062d",
+    "name": "Asteras Tripolis 0-2 Olympiakos Piraeus",
+    "on": "2019-01-27",
+    "home": "Asteras Tripolis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c9e56626bb9e24b073cc",
+   "value": {
+    "id": "research-20261020-c9e56626bb9e24b073cc",
+    "name": "Olympiakos Piraeus 4-0 AE Lárissa",
+    "on": "2019-01-30",
+    "home": "Olympiakos Piraeus",
+    "away": "AE Lárissa",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e2d6b868c0fc52a63a5b",
+   "value": {
+    "id": "research-20261020-e2d6b868c0fc52a63a5b",
+    "name": "Olympiakos Piraeus 4-0 Panionios GSS",
+    "on": "2019-02-02",
+    "home": "Olympiakos Piraeus",
+    "away": "Panionios GSS",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4bf127823420c929a923",
+   "value": {
+    "id": "research-20261020-4bf127823420c929a923",
+    "name": "PAOK Saloniki 3-1 Olympiakos Piraeus",
+    "on": "2019-02-10",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d379e35b7dd8c0391b05",
+   "value": {
+    "id": "research-20261020-d379e35b7dd8c0391b05",
+    "name": "Olympiakos Piraeus 4-1 AEK Athen",
+    "on": "2019-02-17",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ffa78882b6a38b10df63",
+   "value": {
+    "id": "research-20261020-ffa78882b6a38b10df63",
+    "name": "Olympiakos Piraeus 5-1 OFI Heraklion",
+    "on": "2019-02-25",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8e2ff21d584ca57874b9",
+   "value": {
+    "id": "research-20261020-8e2ff21d584ca57874b9",
+    "name": "Apollon Smyrnis 0-2 Olympiakos Piraeus",
+    "on": "2019-03-04",
+    "home": "Apollon Smyrnis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a6f2b21f6a14ed60790d",
+   "value": {
+    "id": "research-20261020-a6f2b21f6a14ed60790d",
+    "name": "Olympiakos Piraeus 4-1 Aris Saloniki",
+    "on": "2019-03-10",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6d84b9c45d7565fd10f0",
+   "value": {
+    "id": "research-20261020-6d84b9c45d7565fd10f0",
+    "name": "Panathinaikos 0-3 Olympiakos Piraeus",
+    "on": "2019-03-17",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-f70b9ff0e3f8cf954eea",
+   "value": {
+    "id": "research-20261020-f70b9ff0e3f8cf954eea",
+    "name": "Olympiakos Piraeus 2-1 Atromitos",
+    "on": "2019-03-31",
+    "home": "Olympiakos Piraeus",
+    "away": "Atromitos",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b343f303048ce839f50a",
+   "value": {
+    "id": "research-20261020-b343f303048ce839f50a",
+    "name": "Panetolikos 0-5 Olympiakos Piraeus",
+    "on": "2019-04-07",
+    "home": "Panetolikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e471863ab0e003839728",
+   "value": {
+    "id": "research-20261020-e471863ab0e003839728",
+    "name": "Olympiakos Piraeus 4-0 Xanthi FC",
+    "on": "2019-04-14",
+    "home": "Olympiakos Piraeus",
+    "away": "Xanthi FC",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bf6162f841dd67e5a39f",
+   "value": {
+    "id": "research-20261020-bf6162f841dd67e5a39f",
+    "name": "Lamia 1-3 Olympiakos Piraeus",
+    "on": "2019-04-21",
+    "home": "Lamia",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4922f5b99305699d3c55",
+   "value": {
+    "id": "research-20261020-4922f5b99305699d3c55",
+    "name": "AE Lárissa 0-3 Olympiakos Piraeus",
+    "on": "2019-05-05",
+    "home": "AE Lárissa",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2018-19",
+    "competition": "Greek Super League 2018/19",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-396b5f15c2c45523",
+    "of-5e6ec8d990d913a9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d2cf5d2b41a82f611cac",
+   "value": {
+    "id": "research-20261020-d2cf5d2b41a82f611cac",
+    "name": "Olympiakos Piraeus 2-1 OFI Heraklion",
+    "on": "2019-07-01",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-83e843cfd4cbb5d34b42",
+   "value": {
+    "id": "research-20261020-83e843cfd4cbb5d34b42",
+    "name": "Panathinaikos 0-0 Olympiakos Piraeus",
+    "on": "2019-07-05",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e8e7a25dfadceedd0983",
+   "value": {
+    "id": "research-20261020-e8e7a25dfadceedd0983",
+    "name": "Aris Saloniki 2-4 Olympiakos Piraeus",
+    "on": "2019-07-08",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 4,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9b26f55c0362410bbe34",
+   "value": {
+    "id": "research-20261020-9b26f55c0362410bbe34",
+    "name": "Olympiakos Piraeus 0-1 PAOK Saloniki",
+    "on": "2019-07-12",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-52b304d5387620852cde",
+   "value": {
+    "id": "research-20261020-52b304d5387620852cde",
+    "name": "OFI Heraklion 1-3 Olympiakos Piraeus",
+    "on": "2019-07-15",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1b28d48a3db4d6b12bf8",
+   "value": {
+    "id": "research-20261020-1b28d48a3db4d6b12bf8",
+    "name": "Olympiakos Piraeus 3-0 AEK Athen",
+    "on": "2019-07-19",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2019/20",
+    "competition": "Greek Super League 2019/20",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b73b9dc68885c90bd140",
+   "value": {
+    "id": "research-20261020-b73b9dc68885c90bd140",
+    "name": "Olympiakos Piraeus 1-0 Asteras Tripolis",
+    "on": "2019-08-24",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d4bd1b79116a5515fbf7",
+   "value": {
+    "id": "research-20261020-d4bd1b79116a5515fbf7",
+    "name": "AE Lárissa 0-1 Olympiakos Piraeus",
+    "on": "2019-09-01",
+    "home": "AE Lárissa",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-28a5cb8ddad39c4adb4b",
+   "value": {
+    "id": "research-20261020-28a5cb8ddad39c4adb4b",
+    "name": "Olympiakos Piraeus 5-0 Volos NFC",
+    "on": "2019-09-14",
+    "home": "Olympiakos Piraeus",
+    "away": "Volos NFC",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c967d3ffd8c7520c32b6",
+   "value": {
+    "id": "research-20261020-c967d3ffd8c7520c32b6",
+    "name": "Olympiakos Piraeus 2-0 Lamia",
+    "on": "2019-09-28",
+    "home": "Olympiakos Piraeus",
+    "away": "Lamia",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-059e6c55c3d922685f49",
+   "value": {
+    "id": "research-20261020-059e6c55c3d922685f49",
+    "name": "Aris Saloniki 1-2 Olympiakos Piraeus",
+    "on": "2019-10-06",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c298d81a532221f7902e",
+   "value": {
+    "id": "research-20261020-c298d81a532221f7902e",
+    "name": "Olympiakos Piraeus 2-1 OFI Heraklion",
+    "on": "2019-10-19",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-09f19e7112f049f4c38f",
+   "value": {
+    "id": "research-20261020-09f19e7112f049f4c38f",
+    "name": "Olympiakos Piraeus 2-0 AEK Athen",
+    "on": "2019-10-27",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7248535d82a8b6511e11",
+   "value": {
+    "id": "research-20261020-7248535d82a8b6511e11",
+    "name": "Xanthi FC 0-0 Olympiakos Piraeus",
+    "on": "2019-11-02",
+    "home": "Xanthi FC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9248b864f1fef1eafc6f",
+   "value": {
+    "id": "research-20261020-9248b864f1fef1eafc6f",
+    "name": "Olympiakos Piraeus 2-0 Atromitos",
+    "on": "2019-11-10",
+    "home": "Olympiakos Piraeus",
+    "away": "Atromitos",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b25ae0cd039c9c0d170e",
+   "value": {
+    "id": "research-20261020-b25ae0cd039c9c0d170e",
+    "name": "Panionios GSS 1-1 Olympiakos Piraeus",
+    "on": "2019-11-23",
+    "home": "Panionios GSS",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-73b1371af542c4f9915d",
+   "value": {
+    "id": "research-20261020-73b1371af542c4f9915d",
+    "name": "Olympiakos Piraeus 1-1 PAOK Saloniki",
+    "on": "2019-12-01",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-26aca237d5cb400dbd92",
+   "value": {
+    "id": "research-20261020-26aca237d5cb400dbd92",
+    "name": "Panetolikos 0-3 Olympiakos Piraeus",
+    "on": "2019-12-07",
+    "home": "Panetolikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-858e72209da1cf1f0c2e",
+   "value": {
+    "id": "research-20261020-858e72209da1cf1f0c2e",
+    "name": "Asteras Tripolis 0-5 Olympiakos Piraeus",
+    "on": "2019-12-15",
+    "home": "Asteras Tripolis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-dad2a05d50ac86eb12ab",
+   "value": {
+    "id": "research-20261020-dad2a05d50ac86eb12ab",
+    "name": "Olympiakos Piraeus 4-1 AE Lárissa",
+    "on": "2019-12-18",
+    "home": "Olympiakos Piraeus",
+    "away": "AE Lárissa",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b0968a18f94c0b1f95aa",
+   "value": {
+    "id": "research-20261020-b0968a18f94c0b1f95aa",
+    "name": "Volos NFC 0-0 Olympiakos Piraeus",
+    "on": "2019-12-22",
+    "home": "Volos NFC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-577caa9af1eb32a4ccf0",
+   "value": {
+    "id": "research-20261020-577caa9af1eb32a4ccf0",
+    "name": "Olympiakos Piraeus 1-0 Panathinaikos",
+    "on": "2020-01-05",
+    "home": "Olympiakos Piraeus",
+    "away": "Panathinaikos",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b596dd06acd8f90a5ca8",
+   "value": {
+    "id": "research-20261020-b596dd06acd8f90a5ca8",
+    "name": "Lamia 0-4 Olympiakos Piraeus",
+    "on": "2020-01-12",
+    "home": "Lamia",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5ddc696ac4fa9759afb3",
+   "value": {
+    "id": "research-20261020-5ddc696ac4fa9759afb3",
+    "name": "Olympiakos Piraeus 4-2 Aris Saloniki",
+    "on": "2020-01-19",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "4-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-23008f7b5533829c8ef3",
+   "value": {
+    "id": "research-20261020-23008f7b5533829c8ef3",
+    "name": "OFI Heraklion 0-1 Olympiakos Piraeus",
+    "on": "2020-01-22",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3ad468b2ac7b2d4a6f9c",
+   "value": {
+    "id": "research-20261020-3ad468b2ac7b2d4a6f9c",
+    "name": "AEK Athen 0-0 Olympiakos Piraeus",
+    "on": "2020-01-26",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e36636ee4f70adb6f7cc",
+   "value": {
+    "id": "research-20261020-e36636ee4f70adb6f7cc",
+    "name": "Olympiakos Piraeus 3-1 Xanthi FC",
+    "on": "2020-02-01",
+    "home": "Olympiakos Piraeus",
+    "away": "Xanthi FC",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7e2e3c6ae9d42de4493f",
+   "value": {
+    "id": "research-20261020-7e2e3c6ae9d42de4493f",
+    "name": "Atromitos 0-1 Olympiakos Piraeus",
+    "on": "2020-02-09",
+    "home": "Atromitos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-feab1b002b6da04897c1",
+   "value": {
+    "id": "research-20261020-feab1b002b6da04897c1",
+    "name": "Olympiakos Piraeus 4-0 Panionios GSS",
+    "on": "2020-02-15",
+    "home": "Olympiakos Piraeus",
+    "away": "Panionios GSS",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c587fa88608ab8f37e56",
+   "value": {
+    "id": "research-20261020-c587fa88608ab8f37e56",
+    "name": "PAOK Saloniki 0-1 Olympiakos Piraeus",
+    "on": "2020-02-23",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-97e0948a4ce038ba7061",
+   "value": {
+    "id": "research-20261020-97e0948a4ce038ba7061",
+    "name": "Olympiakos Piraeus 2-0 Panetolikos",
+    "on": "2020-03-01",
+    "home": "Olympiakos Piraeus",
+    "away": "Panetolikos",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a08b325bb392c1630867",
+   "value": {
+    "id": "research-20261020-a08b325bb392c1630867",
+    "name": "PAOK Saloniki 0-1 Olympiakos Piraeus",
+    "on": "2020-06-07",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c1d68ed3f1dc7f325633",
+   "value": {
+    "id": "research-20261020-c1d68ed3f1dc7f325633",
+    "name": "Olympiakos Piraeus 3-1 Aris Saloniki",
+    "on": "2020-06-14",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-31d4114a5db1f537d715",
+   "value": {
+    "id": "research-20261020-31d4114a5db1f537d715",
+    "name": "AEK Athen 1-2 Olympiakos Piraeus",
+    "on": "2020-06-28",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469",
+    "of-e06552a97b83f3c3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-14124a39537b5f16a3b4",
+   "value": {
+    "id": "research-20261020-14124a39537b5f16a3b4",
+    "name": "Olympiakos Piraeus 2-1 OFI Heraklion",
+    "on": "2020-07-01",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-005f4b4fcf66cc0cc1e3",
+   "value": {
+    "id": "research-20261020-005f4b4fcf66cc0cc1e3",
+    "name": "Aris Saloniki 2-4 Olympiakos Piraeus",
+    "on": "2020-07-08",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 4,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "2-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6df06f9e14444d619578",
+   "value": {
+    "id": "research-20261020-6df06f9e14444d619578",
+    "name": "Olympiakos Piraeus 0-1 PAOK Saloniki",
+    "on": "2020-07-12",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-33e7fd16b4434469"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-35550d583e604fc7fad8",
+   "value": {
+    "id": "research-20261020-35550d583e604fc7fad8",
+    "name": "OFI Heraklion 1-3 Olympiakos Piraeus",
+    "on": "2020-07-15",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2019-20",
+    "competition": "Greek Super League 2019/20",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-33e7fd16b4434469"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d4d5a2cfd9073f7003ac",
+   "value": {
+    "id": "research-20261020-d4d5a2cfd9073f7003ac",
+    "name": "Olympiakos Piraeus 3-0 Asteras Tripolis",
+    "on": "2020-09-18",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fb794429782d81c1e058",
+   "value": {
+    "id": "research-20261020-fb794429782d81c1e058",
+    "name": "Olympiakos Piraeus 2-0 Panetolikos",
+    "on": "2020-09-26",
+    "home": "Olympiakos Piraeus",
+    "away": "Panetolikos",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6a6967dd0b5ec0128d7e",
+   "value": {
+    "id": "research-20261020-6a6967dd0b5ec0128d7e",
+    "name": "PAS Giannina 1-1 Olympiakos Piraeus",
+    "on": "2020-10-04",
+    "home": "PAS Giannina",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3ee2c7129df4fce1d9a7",
+   "value": {
+    "id": "research-20261020-3ee2c7129df4fce1d9a7",
+    "name": "Olympiakos Piraeus 4-0 Atromitos",
+    "on": "2020-10-17",
+    "home": "Olympiakos Piraeus",
+    "away": "Atromitos",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-97eaa1e1a7dc42617a0a",
+   "value": {
+    "id": "research-20261020-97eaa1e1a7dc42617a0a",
+    "name": "Olympiakos Piraeus 2-0 Apollon Smyrnis",
+    "on": "2020-10-31",
+    "home": "Olympiakos Piraeus",
+    "away": "Apollon Smyrnis",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8e165ce2062cc09c6838",
+   "value": {
+    "id": "research-20261020-8e165ce2062cc09c6838",
+    "name": "OFI Heraklion 0-2 Olympiakos Piraeus",
+    "on": "2020-11-08",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1e2d11c08b057c7fbb62",
+   "value": {
+    "id": "research-20261020-1e2d11c08b057c7fbb62",
+    "name": "Aris Saloniki 1-2 Olympiakos Piraeus",
+    "on": "2020-11-28",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6d7fda5e9113bc288ed0",
+   "value": {
+    "id": "research-20261020-6d7fda5e9113bc288ed0",
+    "name": "Olympiakos Piraeus 4-1 Volos NFC",
+    "on": "2020-12-05",
+    "home": "Olympiakos Piraeus",
+    "away": "Volos NFC",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a42964d49dfd98c3f3a8",
+   "value": {
+    "id": "research-20261020-a42964d49dfd98c3f3a8",
+    "name": "Lamia 0-6 Olympiakos Piraeus",
+    "on": "2020-12-13",
+    "home": "Lamia",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 6,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "0-6",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-252096fb44ca974268f1",
+   "value": {
+    "id": "research-20261020-252096fb44ca974268f1",
+    "name": "AEK Athen 1-1 Olympiakos Piraeus",
+    "on": "2020-12-16",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5a3bad33f502034db8e4",
+   "value": {
+    "id": "research-20261020-5a3bad33f502034db8e4",
+    "name": "Olympiakos Piraeus 5-1 AE Lárissa",
+    "on": "2020-12-20",
+    "home": "Olympiakos Piraeus",
+    "away": "AE Lárissa",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "5-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-02e3d4d5bd0cb00838ca",
+   "value": {
+    "id": "research-20261020-02e3d4d5bd0cb00838ca",
+    "name": "Olympiakos Piraeus 3-0 AEK Athen",
+    "on": "2021-01-03",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7bef414486d01679f3b8",
+   "value": {
+    "id": "research-20261020-7bef414486d01679f3b8",
+    "name": "Asteras Tripolis 0-4 Olympiakos Piraeus",
+    "on": "2021-01-06",
+    "home": "Asteras Tripolis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8b9abb37372fd81f1cd9",
+   "value": {
+    "id": "research-20261020-8b9abb37372fd81f1cd9",
+    "name": "Panetolikos 1-2 Olympiakos Piraeus",
+    "on": "2021-01-09",
+    "home": "Panetolikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5133d2546026a062247f",
+   "value": {
+    "id": "research-20261020-5133d2546026a062247f",
+    "name": "PAOK Saloniki 1-1 Olympiakos Piraeus",
+    "on": "2021-01-13",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a1dbeeeb9667e4387a61",
+   "value": {
+    "id": "research-20261020-a1dbeeeb9667e4387a61",
+    "name": "Olympiakos Piraeus 1-0 PAS Giannina",
+    "on": "2021-01-17",
+    "home": "Olympiakos Piraeus",
+    "away": "PAS Giannina",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-779e12be518e924ceaed",
+   "value": {
+    "id": "research-20261020-779e12be518e924ceaed",
+    "name": "Atromitos 0-1 Olympiakos Piraeus",
+    "on": "2021-01-24",
+    "home": "Atromitos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2562d80cf882dc90a562",
+   "value": {
+    "id": "research-20261020-2562d80cf882dc90a562",
+    "name": "Olympiakos Piraeus 3-0 PAOK Saloniki",
+    "on": "2021-01-27",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c86e55338e5dd0bd7cb6",
+   "value": {
+    "id": "research-20261020-c86e55338e5dd0bd7cb6",
+    "name": "Apollon Smyrnis 1-3 Olympiakos Piraeus",
+    "on": "2021-01-31",
+    "home": "Apollon Smyrnis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-654322af236978fd9ed9",
+   "value": {
+    "id": "research-20261020-654322af236978fd9ed9",
+    "name": "Olympiakos Piraeus 3-0 OFI Heraklion",
+    "on": "2021-02-07",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8f899be80459c6f9e9a1",
+   "value": {
+    "id": "research-20261020-8f899be80459c6f9e9a1",
+    "name": "Panathinaikos 2-1 Olympiakos Piraeus",
+    "on": "2021-02-14",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3e1aba41678054005237",
+   "value": {
+    "id": "research-20261020-3e1aba41678054005237",
+    "name": "Olympiakos Piraeus 1-1 Aris Saloniki",
+    "on": "2021-02-21",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6a9a1fcd1b24997d7947",
+   "value": {
+    "id": "research-20261020-6a9a1fcd1b24997d7947",
+    "name": "Volos NFC 1-2 Olympiakos Piraeus",
+    "on": "2021-03-01",
+    "home": "Volos NFC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-acfd444b785aff90e730",
+   "value": {
+    "id": "research-20261020-acfd444b785aff90e730",
+    "name": "Olympiakos Piraeus 3-0 Lamia",
+    "on": "2021-03-07",
+    "home": "Olympiakos Piraeus",
+    "away": "Lamia",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6a588d28999c7f77b6a2",
+   "value": {
+    "id": "research-20261020-6a588d28999c7f77b6a2",
+    "name": "AE Lárissa 1-3 Olympiakos Piraeus",
+    "on": "2021-03-14",
+    "home": "AE Lárissa",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cf62c3305f9a68594f59",
+   "value": {
+    "id": "research-20261020-cf62c3305f9a68594f59",
+    "name": "Olympiakos Piraeus 1-0 Aris Saloniki",
+    "on": "2021-03-21",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5d5edeedde137f165b4c",
+   "value": {
+    "id": "research-20261020-5d5edeedde137f165b4c",
+    "name": "AEK Athen 1-5 Olympiakos Piraeus",
+    "on": "2021-04-04",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 5,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8ae42aa3977455b17064",
+   "value": {
+    "id": "research-20261020-8ae42aa3977455b17064",
+    "name": "PAOK Saloniki 2-0 Olympiakos Piraeus",
+    "on": "2021-04-18",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b239d6fafb89630e088f",
+   "value": {
+    "id": "research-20261020-b239d6fafb89630e088f",
+    "name": "Olympiakos Piraeus 1-0 Asteras Tripolis",
+    "on": "2021-04-21",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a6359ff9d7b23aee8f6",
+   "value": {
+    "id": "research-20261020-8a6359ff9d7b23aee8f6",
+    "name": "Olympiakos Piraeus 2-0 AEK Athen",
+    "on": "2021-04-25",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-780fd2a98805e8e09a10",
+   "value": {
+    "id": "research-20261020-780fd2a98805e8e09a10",
+    "name": "Aris Saloniki 1-1 Olympiakos Piraeus",
+    "on": "2021-05-05",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e7eea2d27d517a75596e",
+   "value": {
+    "id": "research-20261020-e7eea2d27d517a75596e",
+    "name": "Asteras Tripolis 0-0 Olympiakos Piraeus",
+    "on": "2021-05-09",
+    "home": "Asteras Tripolis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-58cc2bffa3a773507dac",
+   "value": {
+    "id": "research-20261020-58cc2bffa3a773507dac",
+    "name": "Olympiakos Piraeus 1-0 PAOK Saloniki",
+    "on": "2021-05-12",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b6101575174b0169f3a5",
+   "value": {
+    "id": "research-20261020-b6101575174b0169f3a5",
+    "name": "Panathinaikos 1-4 Olympiakos Piraeus",
+    "on": "2021-05-16",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2020-21",
+    "competition": "Greek Super League 2020/21",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-732e8ba4542389c0",
+    "of-a565553d1eeb186e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-15c3a74583cb7c782ebc",
+   "value": {
+    "id": "research-20261020-15c3a74583cb7c782ebc",
+    "name": "Olympiakos Piraeus 2-0 Panserraikos",
+    "on": "2023-08-20",
+    "home": "Olympiakos Piraeus",
+    "away": "Panserraikos",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e210afbf01dd9b4f02da",
+   "value": {
+    "id": "research-20261020-e210afbf01dd9b4f02da",
+    "name": "Olympiakos Piraeus 4-0 Atromitos",
+    "on": "2023-08-27",
+    "home": "Olympiakos Piraeus",
+    "away": "Atromitos",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-536f4bcd7582a43255a0",
+   "value": {
+    "id": "research-20261020-536f4bcd7582a43255a0",
+    "name": "Olympiakos Piraeus 4-0 Lamia",
+    "on": "2023-09-03",
+    "home": "Olympiakos Piraeus",
+    "away": "Lamia",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fc8622d65ebf295ab5fc",
+   "value": {
+    "id": "research-20261020-fc8622d65ebf295ab5fc",
+    "name": "AEK Athen 1-1 Olympiakos Piraeus",
+    "on": "2023-09-17",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-54fd7521735010e9dfb4",
+   "value": {
+    "id": "research-20261020-54fd7521735010e9dfb4",
+    "name": "Olympiakos Piraeus 4-0 AE Kifisias",
+    "on": "2023-09-24",
+    "home": "Olympiakos Piraeus",
+    "away": "AE Kifisias",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8efc631824b87a7e2aa6",
+   "value": {
+    "id": "research-20261020-8efc631824b87a7e2aa6",
+    "name": "Olympiakos Piraeus 4-1 Aris Saloniki",
+    "on": "2023-09-27",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-3308529f2027685e11fe",
+   "value": {
+    "id": "research-20261020-3308529f2027685e11fe",
+    "name": "PAS Giannina 0-3 Olympiakos Piraeus",
+    "on": "2023-10-01",
+    "home": "PAS Giannina",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5bd930db372f220bcff9",
+   "value": {
+    "id": "research-20261020-5bd930db372f220bcff9",
+    "name": "Olympiakos Piraeus 0-3 Panathinaikos",
+    "on": "2023-10-22",
+    "home": "Olympiakos Piraeus",
+    "away": "Panathinaikos",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c88034b826f11a0fdce5",
+   "value": {
+    "id": "research-20261020-c88034b826f11a0fdce5",
+    "name": "OFI Heraklion 0-2 Olympiakos Piraeus",
+    "on": "2023-10-30",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8b79e2594b73539734a3",
+   "value": {
+    "id": "research-20261020-8b79e2594b73539734a3",
+    "name": "Olympiakos Piraeus 2-4 PAOK Saloniki",
+    "on": "2023-11-05",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 2,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6a5492a8229c50413b60",
+   "value": {
+    "id": "research-20261020-6a5492a8229c50413b60",
+    "name": "Asteras Tripolis 0-2 Olympiakos Piraeus",
+    "on": "2023-11-12",
+    "home": "Asteras Tripolis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6fcc9572e58936df6d7a",
+   "value": {
+    "id": "research-20261020-6fcc9572e58936df6d7a",
+    "name": "Olympiakos Piraeus 3-1 Panetolikos",
+    "on": "2023-11-25",
+    "home": "Olympiakos Piraeus",
+    "away": "Panetolikos",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5052cf875759e660c319",
+   "value": {
+    "id": "research-20261020-5052cf875759e660c319",
+    "name": "Volos NFC 2-2 Olympiakos Piraeus",
+    "on": "2023-12-03",
+    "home": "Volos NFC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c0774acc075150726921",
+   "value": {
+    "id": "research-20261020-c0774acc075150726921",
+    "name": "Panserraikos 0-1 Olympiakos Piraeus",
+    "on": "2023-12-18",
+    "home": "Panserraikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a3fb4b5dabea0a7afa23",
+   "value": {
+    "id": "research-20261020-a3fb4b5dabea0a7afa23",
+    "name": "Atromitos 0-0 Olympiakos Piraeus",
+    "on": "2023-12-21",
+    "home": "Atromitos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e1da444e39d69b0f5f5b",
+   "value": {
+    "id": "research-20261020-e1da444e39d69b0f5f5b",
+    "name": "Lamia 1-0 Olympiakos Piraeus",
+    "on": "2024-01-03",
+    "home": "Lamia",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-cefba11522571b753cb2",
+   "value": {
+    "id": "research-20261020-cefba11522571b753cb2",
+    "name": "Olympiakos Piraeus 1-2 AEK Athen",
+    "on": "2024-01-07",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-6105e37a294fcec29362",
+   "value": {
+    "id": "research-20261020-6105e37a294fcec29362",
+    "name": "AE Kifisias 2-3 Olympiakos Piraeus",
+    "on": "2024-01-14",
+    "home": "AE Kifisias",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-e7046fa81364b2c75885",
+   "value": {
+    "id": "research-20261020-e7046fa81364b2c75885",
+    "name": "Aris Saloniki 1-2 Olympiakos Piraeus",
+    "on": "2024-01-21",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a43a61d7398c542ae4f4",
+   "value": {
+    "id": "research-20261020-a43a61d7398c542ae4f4",
+    "name": "Olympiakos Piraeus 3-1 PAS Giannina",
+    "on": "2024-01-28",
+    "home": "Olympiakos Piraeus",
+    "away": "PAS Giannina",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "3-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8806c29024208bcbcd08",
+   "value": {
+    "id": "research-20261020-8806c29024208bcbcd08",
+    "name": "Panathinaikos 2-0 Olympiakos Piraeus",
+    "on": "2024-02-04",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9f36bac465cd50ed0d07",
+   "value": {
+    "id": "research-20261020-9f36bac465cd50ed0d07",
+    "name": "Olympiakos Piraeus 4-0 OFI Heraklion",
+    "on": "2024-02-10",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "4-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-1a31c34beac40e5b42ec",
+   "value": {
+    "id": "research-20261020-1a31c34beac40e5b42ec",
+    "name": "PAOK Saloniki 1-4 Olympiakos Piraeus",
+    "on": "2024-02-18",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2330459efbbe830c5d74",
+   "value": {
+    "id": "research-20261020-2330459efbbe830c5d74",
+    "name": "Olympiakos Piraeus 2-1 Asteras Tripolis",
+    "on": "2024-02-25",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d1cb1e4c4bb2bcc5105e",
+   "value": {
+    "id": "research-20261020-d1cb1e4c4bb2bcc5105e",
+    "name": "Panetolikos 1-2 Olympiakos Piraeus",
+    "on": "2024-02-28",
+    "home": "Panetolikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c564092d2fc6ea189233",
+   "value": {
+    "id": "research-20261020-c564092d2fc6ea189233",
+    "name": "Olympiakos Piraeus 3-0 Volos NFC",
+    "on": "2024-03-03",
+    "home": "Olympiakos Piraeus",
+    "away": "Volos NFC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-aa034a8be821299b8e57",
+   "value": {
+    "id": "research-20261020-aa034a8be821299b8e57",
+    "name": "Olympiakos Piraeus 1-3 Panathinaikos",
+    "on": "2024-03-10",
+    "home": "Olympiakos Piraeus",
+    "away": "Panathinaikos",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2675884f06b8278d5f09",
+   "value": {
+    "id": "research-20261020-2675884f06b8278d5f09",
+    "name": "AEK Athen 1-0 Olympiakos Piraeus",
+    "on": "2024-03-31",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-0b35245faa6a4cb83e11",
+   "value": {
+    "id": "research-20261020-0b35245faa6a4cb83e11",
+    "name": "Olympiakos Piraeus 3-0 Aris Saloniki",
+    "on": "2024-04-03",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-895b53b2942546dca21f",
+   "value": {
+    "id": "research-20261020-895b53b2942546dca21f",
+    "name": "Lamia 1-5 Olympiakos Piraeus",
+    "on": "2024-04-07",
+    "home": "Lamia",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 5,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-5",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-802cf045d50c926eb097",
+   "value": {
+    "id": "research-20261020-802cf045d50c926eb097",
+    "name": "Olympiakos Piraeus 2-1 PAOK Saloniki",
+    "on": "2024-04-21",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ab169ea1f567f538251a",
+   "value": {
+    "id": "research-20261020-ab169ea1f567f538251a",
+    "name": "Aris Saloniki 1-1 Olympiakos Piraeus",
+    "on": "2024-04-24",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-63898b185c9a0d877126",
+   "value": {
+    "id": "research-20261020-63898b185c9a0d877126",
+    "name": "Olympiakos Piraeus 4-1 Lamia",
+    "on": "2024-04-28",
+    "home": "Olympiakos Piraeus",
+    "away": "Lamia",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-321d9fc084fbe715b342",
+   "value": {
+    "id": "research-20261020-321d9fc084fbe715b342",
+    "name": "PAOK Saloniki 2-0 Olympiakos Piraeus",
+    "on": "2024-05-12",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-af103de39e843a0d353b",
+   "value": {
+    "id": "research-20261020-af103de39e843a0d353b",
+    "name": "Olympiakos Piraeus 2-0 AEK Athen",
+    "on": "2024-05-15",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-de14cb2ab468610f24a4",
+   "value": {
+    "id": "research-20261020-de14cb2ab468610f24a4",
+    "name": "Panathinaikos 2-2 Olympiakos Piraeus",
+    "on": "2024-05-19",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2023/24",
+    "competition": "Greek Super League 2023/24",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-511228cdf7e850fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-2fe9aa87774feaa8cf59",
+   "value": {
+    "id": "research-20261020-2fe9aa87774feaa8cf59",
+    "name": "Volos NFC 0-2 Olympiakos Piraeus",
+    "on": "2024-08-17",
+    "home": "Volos NFC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-84499d1088d73f19ef5c",
+   "value": {
+    "id": "research-20261020-84499d1088d73f19ef5c",
+    "name": "Olympiakos Piraeus 2-1 GS Kallithea",
+    "on": "2024-08-26",
+    "home": "Olympiakos Piraeus",
+    "away": "GS Kallithea",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a8a5661ad374b9dbab5",
+   "value": {
+    "id": "research-20261020-8a8a5661ad374b9dbab5",
+    "name": "Lamia 0-3 Olympiakos Piraeus",
+    "on": "2024-08-31",
+    "home": "Lamia",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-ffd2b4912d071118e5f5",
+   "value": {
+    "id": "research-20261020-ffd2b4912d071118e5f5",
+    "name": "Olympiakos Piraeus 0-0 Panetolikos",
+    "on": "2024-09-15",
+    "home": "Olympiakos Piraeus",
+    "away": "Panetolikos",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b4e18b3737a9d6914eff",
+   "value": {
+    "id": "research-20261020-b4e18b3737a9d6914eff",
+    "name": "Aris Saloniki 2-1 Olympiakos Piraeus",
+    "on": "2024-09-21",
+    "home": "Aris Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-be50475ad5c9d3281513",
+   "value": {
+    "id": "research-20261020-be50475ad5c9d3281513",
+    "name": "Olympiakos Piraeus 2-0 Atromitos",
+    "on": "2024-09-29",
+    "home": "Olympiakos Piraeus",
+    "away": "Atromitos",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-098965101fc1c477fbf0",
+   "value": {
+    "id": "research-20261020-098965101fc1c477fbf0",
+    "name": "Panathinaikos 0-0 Olympiakos Piraeus",
+    "on": "2024-10-06",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-53ea353b46dec6b3f6b8",
+   "value": {
+    "id": "research-20261020-53ea353b46dec6b3f6b8",
+    "name": "Olympiakos Piraeus 2-2 Levadiakos",
+    "on": "2024-10-20",
+    "home": "Olympiakos Piraeus",
+    "away": "Levadiakos",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-9d2573208ddd8a86cdec",
+   "value": {
+    "id": "research-20261020-9d2573208ddd8a86cdec",
+    "name": "Asteras Tripolis 1-0 Olympiakos Piraeus",
+    "on": "2024-10-27",
+    "home": "Asteras Tripolis",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d702812d680dba0f47c9",
+   "value": {
+    "id": "research-20261020-d702812d680dba0f47c9",
+    "name": "Olympiakos Piraeus 2-1 Panserraikos",
+    "on": "2024-11-02",
+    "home": "Olympiakos Piraeus",
+    "away": "Panserraikos",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-78999841b953c62c8b5c",
+   "value": {
+    "id": "research-20261020-78999841b953c62c8b5c",
+    "name": "PAOK Saloniki 2-3 Olympiakos Piraeus",
+    "on": "2024-11-10",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-3",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a19d08025f8e81b18e1d",
+   "value": {
+    "id": "research-20261020-a19d08025f8e81b18e1d",
+    "name": "Olympiakos Piraeus 4-1 AEK Athen",
+    "on": "2024-11-24",
+    "home": "Olympiakos Piraeus",
+    "away": "AEK Athen",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "4-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c361c0c4a3c437dd87d2",
+   "value": {
+    "id": "research-20261020-c361c0c4a3c437dd87d2",
+    "name": "OFI Heraklion 0-2 Olympiakos Piraeus",
+    "on": "2024-12-01",
+    "home": "OFI Heraklion",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-42091e21a2d7e2fbb90c",
+   "value": {
+    "id": "research-20261020-42091e21a2d7e2fbb90c",
+    "name": "Olympiakos Piraeus 3-0 Volos NFC",
+    "on": "2024-12-07",
+    "home": "Olympiakos Piraeus",
+    "away": "Volos NFC",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "3-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-bc83b76bcaea8bb874a9",
+   "value": {
+    "id": "research-20261020-bc83b76bcaea8bb874a9",
+    "name": "GS Kallithea 1-1 Olympiakos Piraeus",
+    "on": "2024-12-16",
+    "home": "GS Kallithea",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-5a6c1a8ffc7328bea3f4",
+   "value": {
+    "id": "research-20261020-5a6c1a8ffc7328bea3f4",
+    "name": "Olympiakos Piraeus 1-0 Lamia",
+    "on": "2024-12-21",
+    "home": "Olympiakos Piraeus",
+    "away": "Lamia",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-b4e44fe38d271480208d",
+   "value": {
+    "id": "research-20261020-b4e44fe38d271480208d",
+    "name": "Panetolikos 0-2 Olympiakos Piraeus",
+    "on": "2025-01-06",
+    "home": "Panetolikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-aa610a80c0be4a735752",
+   "value": {
+    "id": "research-20261020-aa610a80c0be4a735752",
+    "name": "Olympiakos Piraeus 2-1 Aris Saloniki",
+    "on": "2025-01-11",
+    "home": "Olympiakos Piraeus",
+    "away": "Aris Saloniki",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-114fcb04bd88e5460df6",
+   "value": {
+    "id": "research-20261020-114fcb04bd88e5460df6",
+    "name": "Atromitos 1-2 Olympiakos Piraeus",
+    "on": "2025-01-19",
+    "home": "Atromitos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d1c8e788e551b3bd3e41",
+   "value": {
+    "id": "research-20261020-d1c8e788e551b3bd3e41",
+    "name": "Olympiakos Piraeus 1-1 Panathinaikos",
+    "on": "2025-01-26",
+    "home": "Olympiakos Piraeus",
+    "away": "Panathinaikos",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-723e7585a49ee867327e",
+   "value": {
+    "id": "research-20261020-723e7585a49ee867327e",
+    "name": "Levadiakos 0-1 Olympiakos Piraeus",
+    "on": "2025-02-02",
+    "home": "Levadiakos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-fa4d45154549fc0e7878",
+   "value": {
+    "id": "research-20261020-fa4d45154549fc0e7878",
+    "name": "Olympiakos Piraeus 1-1 Asteras Tripolis",
+    "on": "2025-02-09",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-d974a77b8d3c5b894193",
+   "value": {
+    "id": "research-20261020-d974a77b8d3c5b894193",
+    "name": "Panserraikos 0-4 Olympiakos Piraeus",
+    "on": "2025-02-16",
+    "home": "Panserraikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 4,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-4",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a96a0382604ad760647e",
+   "value": {
+    "id": "research-20261020-a96a0382604ad760647e",
+    "name": "Olympiakos Piraeus 2-1 PAOK Saloniki",
+    "on": "2025-02-23",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-877147493cee9b92829f",
+   "value": {
+    "id": "research-20261020-877147493cee9b92829f",
+    "name": "AEK Athen 0-1 Olympiakos Piraeus",
+    "on": "2025-03-02",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-58cc54558bb7454a4802",
+   "value": {
+    "id": "research-20261020-58cc54558bb7454a4802",
+    "name": "Olympiakos Piraeus 1-0 OFI Heraklion",
+    "on": "2025-03-09",
+    "home": "Olympiakos Piraeus",
+    "away": "OFI Heraklion",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "1-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-7f34401a3e4e319b69bc",
+   "value": {
+    "id": "research-20261020-7f34401a3e4e319b69bc",
+    "name": "Olympiakos Piraeus 4-2 Panathinaikos",
+    "on": "2025-03-30",
+    "home": "Olympiakos Piraeus",
+    "away": "Panathinaikos",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "4-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-29bc696a425e7a5b4184",
+   "value": {
+    "id": "research-20261020-29bc696a425e7a5b4184",
+    "name": "PAOK Saloniki 2-1 Olympiakos Piraeus",
+    "on": "2025-04-06",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8652da721407ff14d7a8",
+   "value": {
+    "id": "research-20261020-8652da721407ff14d7a8",
+    "name": "AEK Athen 0-2 Olympiakos Piraeus",
+    "on": "2025-04-27",
+    "home": "AEK Athen",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a8bef6d71528ba256503",
+   "value": {
+    "id": "research-20261020-a8bef6d71528ba256503",
+    "name": "Olympiakos Piraeus 4-2 PAOK Saloniki",
+    "on": "2025-05-04",
+    "home": "Olympiakos Piraeus",
+    "away": "PAOK Saloniki",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "4-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8a1fd12ad2ec39fd37fb",
+   "value": {
+    "id": "research-20261020-8a1fd12ad2ec39fd37fb",
+    "name": "Panathinaikos 0-1 Olympiakos Piraeus",
+    "on": "2025-05-11",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "season": "2024-25",
+    "competition": "Greek Super League 2024/25",
+    "score": "0-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-81b61bbe53d4564e",
+    "of-eca09ff4b799e2c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-566a2256c4e4fbb39ee2",
+   "value": {
+    "id": "research-20261020-566a2256c4e4fbb39ee2",
+    "name": "Olympiakos Piraeus 2-0 Asteras Tripolis",
+    "on": "2025-08-23",
+    "home": "Olympiakos Piraeus",
+    "away": "Asteras Tripolis",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "season": "2025-26",
+    "competition": "Greek Super League 2025/26",
+    "score": "2-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-5e47ac4a1e399306",
+    "of-cb55a057489fc37b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-a69defc7d817771b6047",
+   "value": {
+    "id": "research-20261020-a69defc7d817771b6047",
+    "name": "Volos NFC 0-2 Olympiakos Piraeus",
+    "on": "2025-08-30",
+    "home": "Volos NFC",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "season": "2025-26",
+    "competition": "Greek Super League 2025/26",
+    "score": "0-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-5e47ac4a1e399306",
+    "of-cb55a057489fc37b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-8b67386f58168b8fb12d",
+   "value": {
+    "id": "research-20261020-8b67386f58168b8fb12d",
+    "name": "Olympiakos Piraeus 5-0 Panserraikos",
+    "on": "2025-09-13",
+    "home": "Olympiakos Piraeus",
+    "away": "Panserraikos",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "season": "2025-26",
+    "competition": "Greek Super League 2025/26",
+    "score": "5-0",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-5e47ac4a1e399306",
+    "of-cb55a057489fc37b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-abe76b22f51bda618e86",
+   "value": {
+    "id": "research-20261020-abe76b22f51bda618e86",
+    "name": "Panathinaikos 1-1 Olympiakos Piraeus",
+    "on": "2025-09-21",
+    "home": "Panathinaikos",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "season": "2025-26",
+    "competition": "Greek Super League 2025/26",
+    "score": "1-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-5e47ac4a1e399306",
+    "of-cb55a057489fc37b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-c3f52e9c16980c04fac3",
+   "value": {
+    "id": "research-20261020-c3f52e9c16980c04fac3",
+    "name": "Olympiakos Piraeus 3-2 Levadiakos",
+    "on": "2025-09-27",
+    "home": "Olympiakos Piraeus",
+    "away": "Levadiakos",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "season": "2025-26",
+    "competition": "Greek Super League 2025/26",
+    "score": "3-2",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "home"
+   },
+   "sources": [
+    "of-5e47ac4a1e399306",
+    "of-cb55a057489fc37b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  },
+  {
+   "id": "research-20261020-4bea91e983c0dd7c57cd",
+   "value": {
+    "id": "research-20261020-4bea91e983c0dd7c57cd",
+    "name": "PAOK Saloniki 2-1 Olympiakos Piraeus",
+    "on": "2025-10-05",
+    "home": "PAOK Saloniki",
+    "away": "Olympiakos Piraeus",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "season": "2025-26",
+    "competition": "Greek Super League 2025/26",
+    "score": "2-1",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "us": "away"
+   },
+   "sources": [
+    "of-5e47ac4a1e399306",
+    "of-cb55a057489fc37b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-20",
+   "approvedAt": "2026-10-20",
+   "approvedBy": "owner: chat 2026-10-20 — החדר וסדר את המידע, הכל מאושר לעבוד מיידית. להחדיר לכל הפיצרים הרלוונטים.",
+   "notes": "CC0 score/date observation; no scorer or lineup completeness asserted. Upstream source snapshots are one evidence family. Review before approving and applying mergeHistorical."
+  }
+ ],
+ "archive": []
+}

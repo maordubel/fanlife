@@ -57,3 +57,12 @@ export async function terraceAnswer(slug: unknown, round: unknown, option: unkno
   save(r.ledger)
   return { ok: true, correct: r.correct, done: r.done, points: r.points, answer: r.answer, state: view(edition, answers, r.ledger) }
 }
+
+/** The finished day's score for the board — the server's own number from the sealed ledger, or null when the day is not done. */
+export async function terraceFinished(slug: unknown): Promise<{ club: string; date: string; edition: string; total: number } | null> {
+  const t = await today(slug)
+  if (!t || !t.built) return null
+  const { edition } = t.built
+  const l = ledgerFor(t.id, edition.date, edition.id)
+  return finished(l) ? { club: t.id, date: edition.date, edition: edition.id, total: total(l) } : null
+}

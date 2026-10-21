@@ -1,0 +1,23 @@
+[
+  {
+    "clubId": "zrinjski-mostar",
+    "on": "2024-08-15",
+    "sourceId": "zrinjski-botev-20240815",
+    "startersAsReported": [
+      "Marko Marić",
+      "Josip Ćorluka",
+      "Toni Šunjić",
+      "Hrvoje Barišić",
+      "Mario Tičinović",
+      "Frano Mlinar",
+      "Ivan Posavec",
+      "Antonio Ivančić",
+      "Marijo Ćuže",
+      "Nardin Mulahusejnović",
+      "Matija Malekinušić"
+    ],
+    "status": "source_verified_identity_review",
+    "scope": "starting eleven only; substitute bench not asserted",
+    "canonicalPlayerIds": null
+  }
+]
