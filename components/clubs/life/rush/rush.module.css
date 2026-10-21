@@ -1,0 +1,90 @@
+/*
+ * LIFE · RUSH — the mission's glass. The briefing and the result are matchday paper like the rest of
+ * LIFE (a punched ticket in the club's own tokens); while the mission runs, the words float on the
+ * picture as small dark plates, out of the way of the thumbs. No colour is written here: the club's
+ * theme tokens only, mixed. Radius 0. Every motion is off under prefers-reduced-motion.
+ */
+.rush {
+  --r-paper: var(--club-surface);
+  --r-ink: var(--club-text);
+  --r-soft: var(--club-muted);
+  --r-prime: var(--club-primary);
+  --r-on: var(--club-on-primary);
+  --r-deep: color-mix(in srgb, var(--club-text) 92%, var(--club-primary));
+  --r-glass: color-mix(in srgb, var(--r-deep) 78%, transparent);
+  --r-light: color-mix(in srgb, var(--club-surface) 94%, transparent);
+  --r-safe-t: env(safe-area-inset-top, 0px);
+  --r-safe-b: env(safe-area-inset-bottom, 0px);
+  position: fixed; inset: 0;
+  background: var(--r-deep); color: var(--r-light);
+  font-family: var(--font-heebo), system-ui, sans-serif;
+  overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none;
+}
+.rush button { font: inherit; cursor: pointer; }
+.canvas { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; }
+
+/* the cut: TOWN goes white, RUSH comes up out of it */
+.cut { position: absolute; inset: 0; background: var(--r-paper); opacity: 0; pointer-events: none; }
+.cut[data-on='true'] { animation: rushCut .62s ease-out both; }
+@keyframes rushCut { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+/* paper: briefing, pause, result */
+.cover { position: absolute; inset: 0; display: grid; place-items: center; padding: calc(16px + var(--r-safe-t)) 14px calc(16px + var(--r-safe-b)); background: color-mix(in srgb, var(--r-deep) 70%, transparent); }
+.ticket { position: relative; inline-size: min(100%, 30rem); max-block-size: 100%; overflow: auto; padding: 22px 20px 18px; background: var(--r-paper); color: var(--r-ink); box-shadow: 3px 3px 0 var(--r-ink); border-inline-start: 10px solid var(--r-prime); }
+.ticket::before { content: ''; position: absolute; inset-inline: 0; inset-block-start: -7px; block-size: 14px; pointer-events: none; background: radial-gradient(circle at center, var(--r-deep) 4px, transparent 4.6px) 0 0 / 14px 14px repeat-x; }
+.kicker { font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--r-soft); display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; }
+.title { margin: 6px 0 8px; font-family: var(--font-frank), serif; font-size: clamp(1.5rem, 6vw, 2.1rem); font-weight: 700; line-height: 1.1; }
+.brief { margin: 0; font-size: 1.0625rem; line-height: 1.45; }
+.fine { margin: 12px 0 0; font-size: .875rem; color: var(--r-soft); line-height: 1.4; }
+.archive { margin: 12px 0 0; padding: 8px 10px; border: 1px dashed color-mix(in srgb, var(--r-ink) 40%, transparent); font-size: .875rem; }
+.archive b { display: block; font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--r-soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-block-start: 18px; }
+.btn { min-block-size: 44px; padding: 0 18px; border: 2px solid var(--r-ink); background: var(--r-paper); color: var(--r-ink); font-weight: 700; }
+.btn[data-primary='true'] { background: var(--r-prime); color: var(--r-on); border-color: var(--r-prime); box-shadow: 3px 3px 0 var(--r-ink); }
+.btn:focus-visible { outline: 3px solid var(--r-ink); outline-offset: 2px; }
+.big { font-family: var(--font-frank), serif; font-size: clamp(2.2rem, 10vw, 3.4rem); font-weight: 700; line-height: 1; margin: 6px 0 6px; }
+
+/* the HUD: plates on the glass */
+.hud { position: absolute; inset: 0; pointer-events: none; }
+.plate { position: absolute; background: var(--r-glass); color: var(--r-light); padding: 6px 10px; font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(6px); }
+.clock { inset-block-start: calc(10px + var(--r-safe-t)); inset-inline: 0; margin-inline: auto; inline-size: max-content; text-align: center; }
+.clock b { display: block; font-family: var(--font-frank), serif; font-size: 1.9rem; letter-spacing: 0; line-height: 1; font-variant-numeric: tabular-nums; }
+.clock[data-low='true'] b { color: var(--r-prime); animation: rushPulse .5s ease-in-out infinite alternate; }
+@keyframes rushPulse { to { opacity: .55; } }
+.meters { inset-block-start: calc(10px + var(--r-safe-t)); inset-inline-start: 10px; display: grid; gap: 6px; min-inline-size: 8.5rem; }
+.bar { position: relative; block-size: 6px; background: color-mix(in srgb, var(--r-light) 22%, transparent); }
+.bar > i { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--r-light); }
+.bar[data-hot='true'] > i { background: var(--r-prime); }
+.pauseBtn { pointer-events: auto; position: absolute; inset-block-start: calc(10px + var(--r-safe-t)); inset-inline-end: 10px; min-inline-size: 44px; min-block-size: 44px; border: 0; background: var(--r-glass); color: var(--r-light); font-size: 1.1rem; }
+.story { inset-block-start: calc(62px + var(--r-safe-t)); inset-inline-end: 10px; }
+.clues { inset-block-start: calc(68px + var(--r-safe-t)); inset-inline: 0; margin-inline: auto; inline-size: max-content; text-transform: none; letter-spacing: 0; font-family: var(--font-heebo), system-ui, sans-serif; font-size: .9375rem; text-align: center; max-inline-size: 88vw; }
+.sub { position: absolute; inset-inline: 0; inset-block-end: calc(120px + var(--r-safe-b)); text-align: center; pointer-events: none; }
+.sub span { display: inline-block; max-inline-size: 86vw; padding: 6px 12px; background: var(--r-glass); color: var(--r-light); font-size: 1.0625rem; font-style: italic; opacity: 0; transition: opacity .25s; }
+.sub span[data-on='true'] { opacity: 1; }
+.toast { position: absolute; inset-block-start: 38%; inset-inline: 0; text-align: center; pointer-events: none; }
+.toast span { display: inline-block; padding: 4px 12px; background: var(--r-prime); color: var(--r-on); font-family: var(--font-courier), monospace; font-weight: 700; letter-spacing: .06em; }
+
+/* touch: a stick under the left thumb, buttons under the right */
+.stickZone { position: absolute; inset-block: 30% 0; inset-inline-start: 0; inline-size: 55%; pointer-events: auto; }
+.stick { position: absolute; inline-size: 110px; block-size: 110px; margin-block-start: -55px; margin-inline-start: -55px; border: 2px solid color-mix(in srgb, var(--r-light) 55%, transparent); border-radius: 50%; opacity: 0; pointer-events: none; }
+.stick[data-on='true'] { opacity: 1; }
+.stick > i { position: absolute; inset: 30px; border-radius: 50%; background: color-mix(in srgb, var(--r-light) 70%, transparent); }
+.pads { position: absolute; inset-inline-end: 14px; inset-block-end: calc(18px + var(--r-safe-b)); display: grid; gap: 10px; justify-items: end; pointer-events: auto; }
+.pad { min-inline-size: 64px; min-block-size: 64px; border: 2px solid color-mix(in srgb, var(--r-light) 70%, transparent); background: var(--r-glass); color: var(--r-light); font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+.pad[data-big='true'] { min-inline-size: 84px; min-block-size: 84px; border-radius: 50%; }
+.pad[data-on='true'] { background: var(--r-prime); color: var(--r-on); border-color: var(--r-prime); }
+.keys { position: absolute; inset-block-end: calc(12px + var(--r-safe-b)); inset-inline: 0; text-align: center; font-family: var(--font-courier), monospace; font-size: .75rem; color: color-mix(in srgb, var(--r-light) 70%, transparent); pointer-events: none; }
+.sr { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* a phone: the clock stays on top, the meters step down under it, the words sit above the thumbs */
+@media (max-width: 640px) {
+  .meters { inset-block-start: calc(78px + var(--r-safe-t)); min-inline-size: 7rem; }
+  .clock b { font-size: 1.5rem; }
+  .clues { inset-block-start: calc(78px + var(--r-safe-t)); inset-inline-end: 10px; inset-inline-start: auto; margin-inline: 0; max-inline-size: 52vw; inline-size: auto; }
+  .sub { inset-block-end: calc(220px + var(--r-safe-b)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cut[data-on='true'], .clock[data-low='true'] b { animation: none; }
+  .sub span { transition: none; }
+}

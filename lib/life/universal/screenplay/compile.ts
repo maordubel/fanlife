@@ -198,8 +198,9 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
         if (dest) done.push({e: 'goto', room: dest.room, spawn: 'start', ...(next.night ? {time: 'night' as const} : {})})
       }
       const spoken = solo ? without([...scene.action, ...(o.action ?? [])], scene.who) : [...scene.action, ...(o.action ?? [])]
-      const effects: Effect[] = scene.game
-        ? [{e: 'play', game: scene.game, id: `${scene.id}:${o.id}`, then: done, ...(scene.reward?.good ? {good: scene.reward.good} : {}), ...(scene.reward?.slip ? {slip: scene.reward.slip} : {})}]
+      const mission = o.mission ?? scene.mission
+      const effects: Effect[] = scene.game || mission
+        ? [{e: 'play', game: scene.game ?? null, id: `${scene.id}:${o.id}`, ...(mission ? {mission: {template: mission.template, mandatory: mission.mandatory === true}} : {}), then: done, ...(scene.reward?.good ? {good: scene.reward.good} : {}), ...(scene.reward?.slip ? {slip: scene.reward.slip} : {})}]
         : done
       actionBranches.push({
         when: allOf(doing, {is: [pick, o.id]}, keepCond, dest ? settle(dest.when, o.effects ?? []) : undefined, wear.when, present ? (solo ? {none: [present]} : present) : undefined),

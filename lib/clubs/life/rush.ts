@@ -13,6 +13,8 @@ import {namesOf, norm, sameClub} from '@/lib/fixtures/names'
 import {REGISTRY} from '@/lib/master/registry'
 import type {ClubArchiveView} from '@/lib/life/rush/archive'
 import {fitClub, type Fit} from '@/lib/life/rush/fit'
+import type {RushDoor} from '@/lib/life/rush/call'
+import type {VoxelSkin} from '@/lib/life/universal/skin'
 
 type Named = {name?: unknown; aliases?: unknown; role?: unknown; city?: unknown}
 
@@ -60,3 +62,17 @@ export function rushView(data: ClubData): ClubArchiveView {
 
 /** Every mission template fitted to this club, most relevant first. */
 export const clubMissions = (data: ClubData): Fit[] => fitClub(rushView(data))
+
+/**
+ * What LIFE receives about RUSH for this club: every template's fit (with its research), the club's names,
+ * and the gate as the club's own signs write it — the number only when the club's sourced terrace line
+ * names one (rule 101), never a guessed one. Only the one night each fit is bound to travels; a mission
+ * inside a chapter stands on that chapter's night (`chapterFit`), which LIFE already holds.
+ */
+export function rushDoor(data: ClubData, skin: Pick<VoxelSkin, 'strings'>): RushDoor {
+  const view = rushView(data)
+  const word = skin.strings.gate ?? 'Gate'
+  const n = clubWorld(data.identity.id)?.terrace ? /\bgate\s+(\d{1,2})\b/i.exec(clubWorld(data.identity.id)!.terrace!.name) : null
+  const {anchors: _anchors, ...names} = view
+  return {fits: fitClub(view), view: names, gateLabel: n ? `${word} ${n[1]}` : word}
+}

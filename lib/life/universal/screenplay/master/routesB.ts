@@ -273,7 +273,7 @@ export const MASTER_ROUTES_B: ChapterScript[] = [
           o('life', t('Show him the life you built', 'להראות לו את החיים שבנית'), s('elder', 'It is a home. A real one. And on the wall is the club, as if it just moved in with you.', 'זה בית. אמיתי. ועל הקיר המועדון, כאילו פשוט עבר לגור איתך.'),
             [flag('life:master:R-ABROAD:welcome', 'showed-life'), heart(2), bond('elder', 2)]),
           o('game', t('Go out together to a match that suits the plan', 'לצאת יחד למשחק מאושר שמתאים לתוכנית'), s('elder', 'A match that is actually possible from here, with tickets that actually exist. We do not invent a trip nobody can make.', 'משחק שבאמת אפשרי מכאן, עם כרטיסים שבאמת קיימים. לא ממציאים נסיעה שאף אחד לא יכול לעשות.'),
-            [flag('life:master:R-ABROAD:welcome', 'went-out'), energy(-10), coins(-3), bond('elder', 3)]),
+            [flag('life:master:R-ABROAD:welcome', 'went-out'), energy(-10), coins(-3), bond('elder', 3)], {mission: {template: 'europe-night'}}),
           o('stay', t('Stay in with him', 'להישאר בבית איתו'), s('elder', 'In, then. Soup, the colours on the wall, no ticket. That is the nearest we have been in years.', 'פנימה, אם כך. מרק, הצבעים על הקיר, בלי כרטיס. זו הפעם הכי קרובה שהיינו בשנים.'),
             [flag('life:master:R-ABROAD:welcome', 'stayed-in'), bond('elder', 2), heart(1)]),
         ],

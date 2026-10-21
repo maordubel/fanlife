@@ -12,9 +12,9 @@
  * usually found. The Fitter is pure and deterministic: same view, same answer.
  */
 import type {ArchiveRef} from '../universal/types'
-import {readArchive, type ClubArchiveView, type ReadArchive} from './archive'
+import {kindsOf, readArchive, type ClubArchiveView, type ReadArchive} from './archive'
 import type {AnchorKind, ClubNeed, Grade, MissionSpec, MissionTemplate, Need} from './spec'
-import {MISSION_TEMPLATES} from './templates'
+import {MISSION_TEMPLATES, TEMPLATE_HE} from './templates'
 
 export type FitState = 'READY' | 'NEUTRAL' | 'HELD' | 'IRRELEVANT'
 
@@ -166,18 +166,40 @@ function weatherOf(anchor: ArchiveRef | null): MissionSpec['weather'] {
   return m === 12 || m === 1 || m === 2 ? 'cold' : m === 3 || m === 11 ? 'rain' : m === 7 || m === 8 ? 'heat' : 'clear'
 }
 
-export type SpecContext = {seed: number; skin: string; age: number; mandatory: boolean; time: 'day' | 'night'}
+export type SpecContext = {seed: number; skin: string; age: number; mandatory: boolean; time: 'day' | 'night'; locale?: 'en' | 'he'}
 
 /** A playable fit becomes the one object RUSH receives. HELD and IRRELEVANT fits have no spec. */
 export function specFor(t: MissionTemplate, fit: Fit, view: ClubArchiveView, ctx: SpecContext): MissionSpec {
   if (!playable(fit)) throw new Error(`RUSH_NOT_PLAYABLE: ${t.id} is ${fit.state} for ${view.clubId}`)
   if (ctx.age < t.ages[0] || ctx.age > t.ages[1]) throw new Error(`RUSH_AGE: ${t.id} is for ages ${t.ages[0]}–${t.ages[1]}, not ${ctx.age}`)
   const anchor = fit.state === 'READY' ? fit.anchor : null
+  const text = ctx.locale === 'he' && TEMPLATE_HE[t.id] ? TEMPLATE_HE[t.id]! : t
   return {
     template: t.id, verb: t.verb, camera: t.camera, route: t.route, seed: ctx.seed >>> 0, skin: ctx.skin,
     age: ctx.age, time: ctx.time, weather: weatherOf(anchor), clock: t.clock, hazards: [...t.hazards],
     difficulty: ctx.age < 12 ? 0 : ctx.age < 18 ? 1 : 2, mandatory: ctx.mandatory, anchor,
-    title: fillText(anchor ? t.title : t.neutralTitle, view, anchor),
-    brief: fillText(anchor ? t.brief : t.neutralBrief, view, anchor),
+    title: fillText(anchor ? text.title : text.neutralTitle, view, anchor),
+    brief: fillText(anchor ? text.brief : text.neutralBrief, view, anchor),
   }
+}
+
+/* ───────────── a mission inside a chapter ───────────── */
+
+/**
+ * A mission asked for by a CHAPTER stands on that chapter's night, never on another one: a universal
+ * chapter states an age and never a year, so a mission played inside it is the neutral version even
+ * when the club's archive holds the perfect night elsewhere. An anchored night chapter lends its own
+ * row, and only when the row is the kind the template needs (a derby raid on a derby, not a cup tie).
+ * A mission the club cannot play at all (HELD, IRRELEVANT) stays unplayable here too.
+ */
+export function chapterFit(t: MissionTemplate, clubFit: Fit, chapterAnchor: ArchiveRef | null, view: Pick<ClubArchiveView, 'rival' | 'ownNames'>): Fit {
+  if (!playable(clubFit)) return clubFit
+  if (chapterAnchor) {
+    const kinds = new Set(kindsOf(chapterAnchor, view))
+    const row = {ref: chapterAnchor, kinds}
+    const anchorNeeds = t.needs.filter(n => 'anchor' in n.of)
+    const critical = anchorNeeds.filter(n => n.grade === 'critical')
+    if (anchorNeeds.some(n => satisfies(row, n)) && critical.every(n => satisfies(row, n))) return {...clubFit, state: 'READY', anchor: chapterAnchor}
+  }
+  return {...clubFit, state: 'NEUTRAL', anchor: null}
 }

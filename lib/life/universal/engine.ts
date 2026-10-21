@@ -6,7 +6,7 @@
  * `Life` and the simulator in the test suite holds the very same functions, which is the point:
  * what the tests walk is what the player walks.
  */
-import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, MiniGame, PlayResult, SaveFile, Wear} from './types'
+import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, MiniGame, MissionCall, PlayResult, SaveFile, Wear} from './types'
 
 export const SAVE_VERSION = 1
 /** A flag with this prefix is part of the person and outlives the chapter that raised it. */
@@ -69,7 +69,7 @@ export function meets(state: LifeState, c: Cond | undefined): boolean {
 /** What the shell has to DO after a conversation, as opposed to what the log has to remember. */
 export type Directive =
   | {d: 'goto'; room: string; spawn: string; time?: 'day' | 'night'}
-  | {d: 'play'; game: MiniGame; id: string; then: Effect[]; good: Effect[]; slip: Effect[]}
+  | {d: 'play'; game: MiniGame | null; id: string; mission?: MissionCall; then: Effect[]; good: Effect[]; slip: Effect[]}
   | {d: 'card'; card: string}
   | {d: 'sound'; cue: string}
   | {d: 'end'; ending: string}
@@ -89,7 +89,7 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
       case 'wear': events.push({t: 'wear', what: fx.what}); break
       case 'time': events.push({t: 'time', to: fx.to}); break
       case 'goto': directives.push({d: 'goto', room: fx.room, spawn: fx.spawn, time: fx.time}); break
-      case 'play': directives.push({d: 'play', game: fx.game, id: fx.id, then: fx.then ?? [], good: fx.good ?? [], slip: fx.slip ?? []}); break
+      case 'play': directives.push({d: 'play', game: fx.game, id: fx.id, ...(fx.mission ? {mission: fx.mission} : {}), then: fx.then ?? [], good: fx.good ?? [], slip: fx.slip ?? []}); break
       case 'card': directives.push({d: 'card', card: fx.card}); break
       case 'sound': directives.push({d: 'sound', cue: fx.cue}); break
       case 'end': if (state.chapter) directives.push({d: 'end', ending: fx.ending}); break

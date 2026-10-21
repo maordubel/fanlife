@@ -11,13 +11,19 @@ export type Option = {
   soloReply?: Speech[]
   /** scenes (ids) this choice leaves out for good: they count as done, the way on skips them, and nothing they would have said is told */
   skip?: string[]
+  /** this choice is played as a RUSH mission (ADR-fanlife-0013); overrides the scene's own `mission` */
+  mission?: MissionAsk
 }
+/** a RUSH mission asked for by a scene or a choice: the template id, and whether the script forbids skipping it */
+export type MissionAsk = {template: string; mandatory?: boolean}
 /** When several hold at once they are told together, in the order written, ahead of the scene's own opening. */
 export type Callback = {when: Cond; lines: Speech[]; /** callbacks sharing a group never hold together (three outcomes of one thing) */ group?: string}
 export type SceneLocation = {room: string; when: Cond; slot?: string; spot?: string}
 export type SceneScript = {
   id: string; room: string; who: string; title: Words; lines: Speech[]
   options: Option[]; task: Words; action: Speech[]; game?: MiniGame
+  /** every choice of this scene is played as this RUSH mission; `game` (if any) is what plays where RUSH is not open */
+  mission?: MissionAsk
   callbacks?: Callback[]
   /** the person is here only while this holds; `solo` is what the room says without them */
   presence?: Cond
