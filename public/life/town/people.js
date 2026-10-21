@@ -89,20 +89,21 @@ function skeleton(J){var bones=[],inv=[];H.bones.forEach(function(name,i){var b=
 function jv(J,name){var i=BONE[name]*3;return new T.Vector3(J[i],J[i+1],J[i+2])}
 
 /* ---------- materials ---------- */
-var SKIN_VS_HEAD='attribute float hf;attribute float stc;varying float vHf;varying float vStc;\n',SKIN_FS_HEAD='uniform vec3 uSkin,uLip,uBrow,uBeard;uniform float uBeardAmt,uBrowAmt,uBuzz,uBlush,uMake,uStache;varying float vHf;varying float vStc;\n';
+var SKIN_VS_HEAD='attribute float hf;attribute float stc;varying float vHf;varying float vStc;\n',SKIN_FS_HEAD='uniform vec3 uSkin,uLip,uBrow,uBeard;uniform float uBeardAmt,uBrowAmt,uBuzz,uBlush,uMake,uStache,uAge;varying float vHf;varying float vStc;\n';
 function skinMat(look,ctx){var m=new T.MeshStandardMaterial({color:0xffffff,roughness:.56,metalness:0,map:P.skinTex,envMapIntensity:window.__EI||.4});m.map.encoding=T.LinearEncoding;
- var U={uSkin:{value:lin(look.skin)},uLip:{value:lin(look.lip)},uBrow:{value:lin(look.brow)},uBeard:{value:lin(look.beardCol)},uBeardAmt:{value:look.beardAmt},uBrowAmt:{value:look.browAmt},uBuzz:{value:look.buzz},uBlush:{value:look.blush},uMake:{value:look.make},uStache:{value:look.stache||0}};
+ var U={uSkin:{value:lin(look.skin)},uLip:{value:lin(look.lip)},uBrow:{value:lin(look.brow)},uBeard:{value:lin(look.beardCol)},uBeardAmt:{value:look.beardAmt},uBrowAmt:{value:look.browAmt},uBuzz:{value:look.buzz},uBlush:{value:look.blush},uMake:{value:look.make},uStache:{value:look.stache||0},uAge:{value:look.aged||0}};
  m.onBeforeCompile=function(s){Object.assign(s.uniforms,U);
   s.vertexShader=SKIN_VS_HEAD+s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvHf=hf;vStc=stc;');
   s.fragmentShader=SKIN_FS_HEAD+s.fragmentShader.replace('#include <map_fragment>',[
    'vec4 sk=texture2D(map,vUv);',
-   'vec3 c=uSkin*mix(.66,1.06,sk.r);',
+   /* age reads in the skin: the folds the texture already carries deepen, the colour loses a little of its saturation */
+   'vec3 c=uSkin*mix(.66-.17*uAge,1.06,sk.r);',
    'float red=smoothstep(.05,.5,sk.g);c=mix(c,c*vec3(1.1,.84,.82),red*(.45+uBlush));',
    'float lip=smoothstep(.55,.95,sk.g);c=mix(c,mix(c*vec3(.86,.6,.6),uLip,uMake),lip*.85);',
    'c=mix(c,uBeard,sk.a*uBeardAmt);c=mix(c,uBrow*.75,smoothstep(.12,.55,vStc)*uStache*(.75+.25*sk.a));',
    'float hz=smoothstep(.42,.62,vHf);c=mix(c,uBrow*.85,hz*uBuzz);',
    'c=mix(c,uBrow*.7,sk.b*uBrowAmt);',
-   'float lc=dot(c,vec3(.3,.59,.11));c=mix(vec3(lc),c,1.28)*.93;',
+   'float lc=dot(c,vec3(.3,.59,.11));c=mix(vec3(lc),c,1.28-.3*uAge)*(.93-.04*uAge);',
    'diffuseColor.rgb*=c;'].join('\n'))
    .replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance+=diffuseColor.rgb*vec3(.12,.04,.018);')};
  m.skinning=true;ctx.own(m);return m}
@@ -237,7 +238,7 @@ function dress(o,ph){var id=o._id||'',r=function(k){return hashf(id+JSON.stringi
  var L={skin:o.skin||'#d8a882',hair:o.hair||'#2a1a14',eye:o.eye||'#3a2a1c'};
  var sk=new T.Color(L.skin);L.lip='#'+sk.clone().lerp(new T.Color('#a84a4a'),.45).getHexString();
  L.brow=L.hair;L.browAmt=ph.age<10?.55:ph.fem?.8:.95;L.beardCol=new T.Color(L.hair).lerp(sk,.35).getStyle();
- L.beardAmt=o.beard?.92:o.stubble?.5:(!ph.fem&&ph.age>17?.22:0);L.blush=ph.fem?.25:.05;L.make=ph.fem&&ph.age>15?.55:.15;
+ L.beardAmt=o.beard?.92:o.stubble?.5:(!ph.fem&&ph.age>17?.22:0);L.blush=ph.fem?.25:.05;L.aged=clamp((ph.age-38)/34,0,1);L.make=ph.fem&&ph.age>15?.55:.15;
  var st=STYLE_OF[o.style]||(ph.fem?(o.long?'long':'bun'):'short');L.style=st;L.buzz=st==='buzz'?.85:st==='bald'?0:st==='curly'?.4:.6;
  L.top=top;L.bot=bot;L.sleeve=(o.sleeves==='long'||o.jacket||o.cardigan||o.track)?'long':o.sleeves==='short'?'tee':(ph.age>55?'long':'tee');
  L.outer=o.track?'track':o.cardigan?'cardigan':o.jacket?'jacket':null;L.outerCol=o.track?(o.trackCol||o.top):o.cardigan||o.jacket||null;
