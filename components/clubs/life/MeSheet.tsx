@@ -6,9 +6,14 @@
  * coin or a rest did). Bonds are words, like the master's profile card; a person is shown by
  * name only after the supporter has been introduced. A night shows its teams and score only
  * once the chapter that holds it has been lived.
+ *
+ * What the life has kept is listed with where it came from: the chapter and the age it was kept at, and for the first
+ * shirt the way it was paid for, read from what the life recorded (`shirtFrom`), never guessed.
  */
 import {useState} from 'react'
 import {nameOf} from '@/lib/life/universal/world'
+import {shirtFrom} from '@/lib/life/universal/screenplay/childhood'
+import {KeepArt} from './KeepArt'
 import type {Chapter, LifePack, LifeState} from '@/lib/life/universal/types'
 import styles from './life.module.css'
 
@@ -26,6 +31,8 @@ export function MeSheet({pack, chapter, state, copy, locale, story, onClose}: {p
   const everyone = [...new Map(pack.chapters.flatMap(c => c.cast.map(p => [p.who, c] as const))).entries()]
   const nights = pack.chapters.filter(c => c.anchor?.match)
   const now = pack.chapters.findIndex(c => c.id === chapter.id)
+  const kept = state.keeps.flatMap(id => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return [{...k, age: c.age, from: c.title}] } return [] })
+  const shirt = shirtFrom(state.flags)
   return (
     <section className={`${styles.cover} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-me-title" data-life="me">
       <div className={styles.mapSheet}>
@@ -50,6 +57,19 @@ export function MeSheet({pack, chapter, state, copy, locale, story, onClose}: {p
             <h3 className={styles.heading}>{copy['me.bonds']}</h3>
             {Object.entries(state.bonds).filter(([, v]) => v > 0).length === 0 ? <p className={styles.muted}>{copy['me.noBonds']}</p> : (
               <ul className={styles.bondList}>{Object.entries(state.bonds).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).map(([w, v]) => <li key={w}><span {...story}>{nameOf(pack, chapter, w)}</span><i data-bond={bondWord(v)}>{copy[`me.bond.${bondWord(v)}`]}</i></li>)}</ul>
+            )}
+            <h3 className={styles.heading}>{copy.box}</h3>
+            {kept.length === 0 ? <p className={styles.muted}>{copy.boxEmpty}</p> : (
+              <ul className={styles.dossier} data-life="me-box">
+                {kept.map(k => (
+                  <li key={k.id} data-keep={k.id}>
+                    <KeepArt id={k.id} />
+                    <b {...story}>{k.name}</b>
+                    <small><span className={styles.serial}>{copy.age} <bdi>{k.age}</bdi></span> · <span {...story}>{k.from}</span></small>
+                    {(k.id === 'shirt' || k.id === 'window-shirt') && shirt ? <small {...story} data-life="me-box-origin">{shirt[locale === 'he' ? 1 : 0]}</small> : <small {...story}>{k.note}</small>}
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
         )}

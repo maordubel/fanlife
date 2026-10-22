@@ -1,6 +1,12 @@
 import type {ChapterScript} from '../types'
 import {chapter, o, s, sc, t} from '../write'
 import {bond, coins, energy, flag, heart, is} from '../types'
+import type {Cond, Effect} from '../../types'
+
+/** hands, not words (spec 22.10.2026 §3): `id` names the action for the hands layer; `game` is what plays today */
+const hands = (game: 'carry' | 'count' | 'clap' | 'tune', id: string, then: Effect[] = []): Effect => ({e: 'play', game, id, then})
+/** a life that owns a first shirt, however it came (c2-shirt at eight, or F03 at nine) */
+const HAS_SHIRT: Cond = {any: [is('life:shirt:origin', 'bought'), is('life:shirt:origin', 'gift'), is('life:shirt:origin', 'handed'), is('life:shirt:origin', 'earned')]}
 
 /**
  * Master screenplay F26–F32 (bible §16, 15.10.2026): the last stretch of the shared life, ending in the private coda.
@@ -184,9 +190,9 @@ export const MASTER_LATE: ChapterScript[] = [
         action: [s(null, 'Hangers sway, then settle, one after the other.', 'קולבים מתנדנדים, ואז נרגעים, אחד אחרי השני.')],
         options: [
           o('lend', t('Offer something to borrow', 'להציע משהו להשאלה'), s('child', 'Borrow? I will bring it back. Exactly as it is. I promise.', 'להשאיל? אחזיר. בדיוק כמו שהוא. אני מבטיח.'),
-            [flag('life:master:F28:bring', 'lent'), bond('child', 2), heart(1)]),
+            [flag('life:master:F28:bring', 'lent'), bond('child', 2), heart(1), hands('carry', 'wardrobe-lend')]),
           o('give', t('Give something as a gift', 'לתת משהו במתנה'), s('child', 'For me? To keep? But what will you wear?', 'בשבילי? לשמור? אבל מה אתה תלבש?'),
-            [flag('life:master:F28:bring', 'gave'), bond('child', 3), heart(1), coins(-1)]),
+            [flag('life:master:F28:bring', 'gave'), bond('child', 3), heart(1), coins(-1)], {when: {min: ['coins', 1]}}),
           o('nothing', t('Say he need not bring anything', 'להגיד שלא חייבים להביא כלום'), s('child', 'Nothing? Just me? That is easier. That is a bit scary, but easier.', 'כלום? רק אני? זה קל יותר. זה קצת מפחיד, אבל קל יותר.'),
             [flag('life:master:F28:bring', 'nothing'), bond('child', 2)]),
         ],
@@ -250,6 +256,7 @@ export const MASTER_LATE: ChapterScript[] = [
         callbacks: [
           {group: 'fav', when: {any: [is('life:master:F06:fav', 'chosen'), is('life:master:F06:fav', 'trade')]}, lines: [s('friend', 'There is the one you picked that first day. The one you said was yours. I remember how you held it.', 'הנה זה שבחרת באותו יום ראשון. זה שאמרת שהוא שלך. אני זוכר איך החזקת אותו.')]},
           {group: 'fav', when: {none: [is('life:master:F06:fav', 'chosen'), is('life:master:F06:fav', 'trade')]}, lines: [s('friend', 'No big album, I know. Just a few things and a day we shared. That is also an open box.', 'אין אלבום גדול, אני יודע. רק כמה דברים ויום שחלקנו. גם זו קופסה פתוחה.')]},
+          {when: HAS_SHIRT, lines: [s(null, 'Under everything, folded small, is the first shirt. The collar has gone soft. The sleeves have stopped pretending.', 'מתחת לכול, מקופלת קטן, החולצה הראשונה. הצווארון התרכך. השרוולים הפסיקו להעמיד פנים.')]},
           {group: 'gap', when: {any: [is('life:master:F07:gap', 'kept'), is('life:master:F07:gap', 'left')]}, lines: [s('friend', 'And there is the empty place. The one we went all the way for.', 'והנה המקום הריק. זה שהלכנו בשבילו עד הסוף.')]},
         ],
         task: t('Choose where to begin', 'לבחור מאיפה מתחילים'),
@@ -295,6 +302,9 @@ export const MASTER_LATE: ChapterScript[] = [
         ],
         callbacks: [
           {when: is('life:master:F28:bring', 'gave'), lines: [s(null, 'You already gave one thing away this decade. You know what the empty hook feels like.', 'כבר נתת דבר אחד בעשור הזה. אתה יודע איך נראה הקרס הריק.')]},
+          {group: 'from', when: {any: [is('life:shirt:paid:F03', 'kiosk'), is('life:shirt:origin', 'earned')]}, lines: [s(null, 'The shirt was paid for with crates. You stacked them heavy at the bottom, glass at the top, and counted the coins in front of the man who paid you.', 'החולצה שולמה בארגזים. סידרת אותם כבדים למטה, זכוכית למעלה, וספרת את המטבעות מול האיש ששילם לך.')]},
+          {group: 'from', when: {any: [is('life:shirt:origin', 'gift'), is('life:master:F03:source', 'gift')]}, lines: [s(null, 'The shirt was a present. You still remember the hand that counted the coins into yours.', 'החולצה הייתה מתנה. אתה עדיין זוכר את היד שספרה לך את המטבעות לתוך היד.')]},
+          {group: 'from', when: is('life:shirt:origin', 'handed'), lines: [s(null, 'The shirt was your father\'s before it was yours. The repair by the cuff is older than you are.', 'החולצה הייתה של אבא לפני שהייתה שלך. התיקון ליד השרוול ישן ממך.')]},
         ],
         task: t('Decide where it lives now', 'להחליט איפה זה גר עכשיו'),
         action: [s(null, 'You hold the page up to the lamp. It is lighter than you expected.', 'אתה מרים את הדף אל המנורה. הוא קל ממה שציפית.')],
@@ -357,9 +367,10 @@ export const MASTER_LATE: ChapterScript[] = [
           o('direct', t('Take the direct way, if it suits everyone', 'לקחת את הדרך הישירה, אם היא מתאימה לכולם'), s('friend', 'Direct is good when everyone can do it. Ask first.', 'ישיר זה טוב כשכולם יכולים. תשאל קודם.'),
             [flag('life:master:F30:way', 'direct'), energy(-8)]),
           o('easy', t('Pay or give time for the easier way', 'לשלם או להקדיש זמן לדרך הנוחה'), s('friend', 'Easier costs more. It is not better, only gentler. I will say the price out loud.', 'נוח עולה יותר. זה לא יותר טוב, רק עדין יותר. אגיד את המחיר בקול.'),
-            [flag('life:master:F30:way', 'easy'), coins(-4), energy(3)]),
+            [flag('life:master:F30:way', 'easy'), coins(-4), energy(3)], {when: {min: ['coins', 4]}}),
           o('lead', t('Ask someone else to lead a part', 'לבקש ממישהו אחר להוביל חלק'), s('child', 'Me? Can I? I know a quicker turn, but it is not very pretty.', 'אני? אפשר? אני מכיר פנייה קצרה יותר, אבל היא לא ממש יפה.'),
-            [flag('life:master:F30:way', 'shared'), bond('child', 2), heart(1)]),
+            [flag('life:master:F30:way', 'shared'), bond('child', 2), heart(1), hands('carry', 'follow-lead')],
+            {action: [s(null, 'He goes a step ahead. You keep a step behind, close enough to ask, far enough that he does not have to.', 'הוא הולך צעד לפני. אתה נשאר צעד מאחור, קרוב מספיק כדי לשאול, רחוק מספיק כדי שהוא לא יצטרך.')]}),
         ],
       }),
       sc({
@@ -371,6 +382,7 @@ export const MASTER_LATE: ChapterScript[] = [
         ],
         callbacks: [
           {group: 'a', when: is('life:master:F29:fate', 'carry'), lines: [s(null, 'You had already decided on one thing, back at the open page. It is right there on the shelf.', 'כבר החלטת על דבר אחד, שם, ליד הדף הפתוח. הוא ממש כאן על המדף.')]},
+          {group: 'shirt', when: HAS_SHIRT, lines: [s(null, 'The first shirt is on the top shelf. It would not go over your head now. It goes in your pocket instead.', 'החולצה הראשונה על המדף העליון. היא לא תעבור לך כבר על הראש. היא נכנסת לכיס במקום.')]},
           {group: 'a', when: is('life:master:F29:fate', 'passed'), lines: [s(null, 'There is a space where a thing used to hang. You pass it without stopping.', 'יש רווח איפה שפעם תלוי היה דבר. אתה עובר לידו בלי לעצור.')]},
         ],
         task: t('Choose what goes with you', 'לבחור מה הולך איתך'),
