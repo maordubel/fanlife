@@ -203,6 +203,10 @@ try {
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else if(['order','multi'].includes(type)){ // these need a Confirm, and a placed item is itself a button that un-places on a second tap: tap once
+    // a stage card that lands a beat after the board swallows these taps and Confirm never enables (CI, 22.10.2026):
+    // give the card its beat, tap it away, and only then place the items
+    await page.getByTestId('trivia-stage').waitFor({timeout:1200}).then(()=>page.getByTestId('trivia-stage').click({timeout:800}),()=>{}).catch(()=>{})
+    await page.getByTestId('trivia-stage').waitFor({state:'detached',timeout:5000}).catch(()=>{})
     for(const value of values)await tapAnswer(board.getByRole('button',{name:value,exact:true}).first())}
    else for(let attempt=0;attempt<4;attempt++){ // a stage card can land a beat after the board: tap it away and answer again until a verdict shows
     for(const value of values)await tapAnswer(board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true})).catch(()=>{})
