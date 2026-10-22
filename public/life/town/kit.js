@@ -74,6 +74,10 @@ var SK=['#f1c7a5','#e0a982','#c68863','#8d5a3e','#6b4430'];
 function glowTex(){if(glowTex.t)return glowTex.t;var c=cvs(64,64),g=c.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.3,'rgba(255,255,255,.35)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64);return glowTex.t=new T.CanvasTexture(c)}
 function concrete(base,rx,ry){return wall(base,['#8a8a92','#6a6a74','#9a9aa4','#555560'],rx,ry)}
 function asphalt(){var c=cvs(1024,1024),g=c.getContext('2d'),i;g.fillStyle='#34333a';g.fillRect(0,0,1024,1024);var d=g.getImageData(0,0,1024,1024),p=d.data;for(i=0;i<p.length;i+=4){var n=(rnd()-.5)*34+(rnd()<.04?28:0);p[i]+=n;p[i+1]+=n;p[i+2]+=n*1.05}g.putImageData(d,0,0);
+/* every generated surface says what it is made of, so the light can treat it as that: a brick has relief, a
+   painted wall has stains that are only colour, cloth is soft, metal shines where it is worn (owner's list, item 6) */
+function tagged(f,kind){return function(){var t=f.apply(this,arguments);if(t&&t.userData)t.userData.mat=kind;return t}}
+brick=tagged(brick,'stone');cobble=tagged(cobble,'stone');asphalt=tagged(asphalt,'stone');planks=tagged(planks,'wood');wall=tagged(wall,'plaster');concrete=tagged(concrete,'stone');
  /* worn asphalt: fine aggregate, darker tar patches where it was dug up, a tar-sealed crack or two, the odd oil stain */
  for(i=0;i<4;i++){g.fillStyle='rgba(18,18,22,'+rr(.1,.2)+')';var px=rnd()*900,py=rnd()*900;g.fillRect(px,py,rr(60,200),rr(40,140))}
  g.strokeStyle='rgba(12,12,14,.55)';for(i=0;i<9;i++){g.lineWidth=rr(1.5,3.5);g.beginPath();var cx=rnd()*1024,cy=rnd()*1024;g.moveTo(cx,cy);for(var k=0;k<8;k++){cx+=rr(-40,40);cy+=rr(-40,40);g.lineTo(cx,cy)}g.stroke()}
@@ -292,7 +296,40 @@ RM.load=function(id,opts){opts=opts||{};PLAYMODE=!!opts.play&&({home:1,hall:1,sc
  def.build(c);
  sc.traverse(function(o){var ms=o.material?(Array.isArray(o.material)?o.material:[o.material]):[];ms.forEach(function(m){if(conv.has(m))return;conv.add(m);if(m.isShaderMaterial)return;if(m.color)m.color.convertSRGBToLinear();if(m.emissive)m.emissive.convertSRGBToLinear()})});
  var inside=({home:1,hall:1,school:1,work:1,'club-room':1})[def.kind]===1;sc.environment=QL==='low'?null:envFor(inside?'in':'out');var EI=SOBER?(inside?.24:.22):(inside?.42:.32);sc.traverse(function(o){var ms=o.material?(Array.isArray(o.material)?o.material:[o.material]):[];ms.forEach(function(m){if(m.isMeshStandardMaterial&&m.envMapIntensity===1)m.envMapIntensity=EI;if(QL!=='low'&&!Q.get('nowx'))weatherMat(m,o,inside)})});window.__EI=EI;if(SOBER)sober(sc,inside);post.exposure(SOBER?(inside?.84:.86):(inside?.84:.92));if(inside&&QL!=='low')sc.traverse(function(o){if(o.isHemisphereLight)o.intensity*=.72});
+ atmos(sc,inside,opts);
  cur.cam=c.cam||{p:[12*U,3.4,9.2],l:[12*U,1.2,1.2],fov:38,fovP:56};size();return c};
+/* ---- the weather and the hour the scene contract asks for (owner's list, item 1) ----
+   rain: a grey low sky, a wet street that takes the light, puddles that hold it, falling rain; dusk: a low warm sun;
+   a room at night is lit by its own lamps and window, not by a sky it cannot see. Colours here are warm reds and
+   blue-greys only — the post pass still removes any band the club may not wear. Its random stream is its own. */
+function atmos(S,inside,o){o=o||{};var rain=o.weather==='rain'||o.mood==='rain'||Q.get('weather')==='rain',dusk=o.mood==='dusk'||Q.get('mood')==='dusk',night=o.time==='night';
+ var seed=0;String(cur&&cur.id||'').split('').forEach(function(ch){seed=(seed*31+ch.charCodeAt(0))>>>0});var R=function(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
+ if(inside){if(night)S.traverse(function(l){if(!l.isLight)return;if(l.isHemisphereLight||l.isAmbientLight)l.intensity*=.42;else if(l.isDirectionalLight)l.intensity*=.38;else if(l.isPointLight||l.isSpotLight)l.intensity*=1.55});
+  if(rain)S.traverse(function(l){if(l.isDirectionalLight){l.intensity*=.7;l.color.lerp(new T.Color(.78,.84,.95),.4)}});return}
+ function sky(c0,c1){S.children.forEach(function(o){if(o.isMesh&&o.geometry&&o.geometry.parameters&&o.geometry.parameters.radius===90&&o.material.isShaderMaterial)o.visible=false});var cv=cvs(4,256),g=cv.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,c0);gr.addColorStop(1,c1);g.fillStyle=gr;g.fillRect(0,0,4,256);var tx=new T.CanvasTexture(cv);tx.encoding=T.sRGBEncoding;S.background=tx}
+ if(rain)sky(night?'#151a24':'#5d6670',night?'#0b0e14':'#8b939c');else if(dusk&&!night)sky('#4a4a78','#c87a6e');
+ if(dusk&&!rain&&!night)S.traverse(function(l){if(l.isDirectionalLight){l.intensity*=.72;l.color.lerp(new T.Color(1,.52,.42),.75)}else if(l.isHemisphereLight){l.intensity*=.8;l.color.lerp(new T.Color(.86,.6,.66),.45);if(l.groundColor)l.groundColor.lerp(new T.Color(.25,.18,.24),.4)}});
+ if(!rain)return;
+ S.traverse(function(l){if(l.isDirectionalLight){l.intensity*=.34;l.color.lerp(new T.Color(.8,.86,.95),.6)}else if(l.isHemisphereLight){l.intensity*=.7;l.color.lerp(new T.Color(.62,.68,.78),.6)}else if(l.isPointLight||l.isSpotLight)l.intensity*=1.25});
+ if(S.fog&&S.fog.isFog){S.fog.color.lerp(new T.Color(.42,.46,.52),.7);S.fog.near*=.55;S.fog.far*=.6}
+ /* the ground is wet: what lies flat and low darkens and takes the light */
+ var box=new T.Box3(),sz=new T.Vector3(),gx0=1e9,gx1=-1e9,gz0=1e9,gz1=-1e9,done=new Set();
+ world.updateMatrixWorld(true);
+ S.traverse(function(o){if(!o.isMesh||!o.material||o.isSkinnedMesh)return;box.setFromObject(o);box.getSize(sz);if(sz.y>.12||box.max.y>.3||box.min.y<-.4||Math.max(sz.x,sz.z)<.8)return;
+  gx0=Math.min(gx0,box.min.x);gx1=Math.max(gx1,box.max.x);gz0=Math.min(gz0,box.min.z);gz1=Math.max(gz1,box.max.z);
+  (Array.isArray(o.material)?o.material:[o.material]).forEach(function(m){if(!m.isMeshStandardMaterial||done.has(m))return;done.add(m);m.roughness=Math.max(.12,m.roughness*.4);m.color.multiplyScalar(.72);m.envMapIntensity=Math.max(m.envMapIntensity||0,.9);m.needsUpdate=true})});
+ window.__atmos={rain:true,wet:done.size,ground:[gx0,gx1,gz0,gz1]};post.exposure((SOBER?.86:.92)*.86);
+ if(gx1>gx0){var pm=new T.MeshStandardMaterial({color:new T.Color(.06,.07,.09),roughness:.04,metalness:.1,envMapIntensity:1.6,transparent:true,opacity:.82,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2});
+  /* the puddles lie where he will see them: in front of the camera, on whatever surface is really there */
+  var CK=cur&&cur.cam,lx=CK?CK.l[0]:(gx0+gx1)/2,lz=CK?CK.l[2]:(gz0+gz1)/2,rc=new T.Raycaster(),dn=new T.Vector3(0,-1,0),solid=[];S.traverse(function(o){if(o.isMesh&&!o.isSkinnedMesh&&o.material&&!o.material.transparent)solid.push(o)});
+  var n=9+Math.floor(R()*6),made=0;for(var i=0;i<n*3&&made<n;i++){var px=lx+(R()-.5)*8,pz=lz-.6+R()*3.6;rc.set(new T.Vector3(px,3,pz),dn);var hit=rc.intersectObjects(solid,false)[0];if(!hit||hit.point.y>.35||!hit.face||Math.abs(hit.face.normal.y)<.5)continue;
+   var r=.1+R()*.3,pg=new T.CircleGeometry(1,22);pg.rotateX(-Math.PI/2);var pd=new T.Mesh(pg,pm);pd.scale.set(r*(1+R()),1,r);pd.rotation.y=R()*Math.PI;pd.position.set(px,hit.point.y+.004,pz);pd.renderOrder=2;world.add(pd);extras.push(pd);made++}
+  window.__atmos.puddles=made}
+ /* the rain itself: short streaks falling past the camera, wrapped in a box around what it looks at */
+ if(QL!=='low'){var N=QL==='high'?1400:800,pos=new Float32Array(N*6),sp=new Float32Array(N),W=9,H=5,D=7;for(var k=0;k<N;k++){var x=(R()-.5)*W,y=R()*H,z=(R()-.5)*D,l=.16+R()*.12;pos.set([x,y,z,x+.02,y-l,z],k*6);sp[k]=7+R()*3}
+  var rg=new T.BufferGeometry();rg.setAttribute('position',new T.BufferAttribute(pos,3));var rl=new T.LineSegments(rg,new T.LineBasicMaterial({color:new T.Color(.72,.78,.86),transparent:true,opacity:.42,depthWrite:false}));rl.frustumCulled=false;world.add(rl);extras.push(rl);
+  anim.tick.push(function(t,dt){var K=cur&&cur.cam;if(K)rl.position.set(K.l[0]+(VW.fx||0),0,K.l[2]+1.5);var a=rg.attributes.position.array;for(var k=0;k<N;k++){var d=sp[k]*dt,o=k*6;a[o+1]-=d;a[o+4]-=d;if(a[o+4]<0){var l2=a[o+1]-a[o+4];a[o+1]=H;a[o+4]=H-l2}}rg.attributes.position.needsUpdate=true})}
+}
 var VW={top:.8,bottom:-.4,fx:0,zoom:1,fov:null,on:false};
 function size(){var W=innerWidth,H=innerHeight;ren.setSize(W,H,false);var sx=VW.on?(VW.top-VW.bottom)/2:1,a=W/(H*sx);cam.aspect=a;var K=(cur&&cur.cam)||{p:[3,3.4,9],l:[3,1.2,1],fov:38,fovP:56};
  var fN=Q.get('face');if(fN!==null&&anim.chars[+fN]){var cc=anim.chars[+fN],h=new T.Vector3();cc.userData.head.getWorldPosition(h);var f=new T.Vector3(Math.sin(cc.rotation.y),0,Math.cos(cc.rotation.y));cam.fov=26;cam.position.set(h.x+f.x*2+.3,h.y+.05,h.z+f.z*2);cam.lookAt(h.x,h.y+.02,h.z);cam.updateProjectionMatrix();return}
@@ -308,7 +345,7 @@ var post=(function(){var w=innerWidth,h=innerHeight,pr=ren.getPixelRatio();var r
  var mb=new T.ShaderMaterial({uniforms:{t:{value:null},d:{value:new T.Vector2()},th:{value:1}},vertexShader:vs,fragmentShader:'varying vec2 v;uniform sampler2D t;uniform vec2 d;uniform float th;void main(){vec3 c=vec3(0.);float w[5];w[0]=.227;w[1]=.19;w[2]=.12;w[3]=.06;w[4]=.02;c=texture2D(t,v).rgb*w[0];for(int i=1;i<5;i++){vec3 a=texture2D(t,v+d*float(i)*1.6).rgb,b=texture2D(t,v-d*float(i)*1.6).rgb;c+=(a+b)*w[i];}gl_FragColor=vec4(c,1.);}'});
  var mt=new T.ShaderMaterial({uniforms:{t:{value:null},th:{value:SOBER?2.4:.9}},vertexShader:vs,fragmentShader:'varying vec2 v;uniform sampler2D t;uniform float th;void main(){vec3 c=texture2D(t,v).rgb;float l=dot(c,vec3(.3,.59,.11));gl_FragColor=vec4(c*smoothstep(th,th*2.2,l),1.);}'});
  /* ---- ambient occlusion: a depth pre-pass at half size, Alchemy-style obscurance, a depth-aware blur ---- */
- var AO=QL!=='low';var dRT=null,aRT=null,aRT2=null,ma=null,mab=null,depthMat=null;
+ var AO=QL!=='low',aoOn=true;var dRT=null,aRT=null,aRT2=null,ma=null,mab=null,depthMat=null;
  var AOD=QL==='high'?2:3;if(AO){var hw=Math.max(2,w*pr/AOD|0),hh=Math.max(2,h*pr/AOD|0);dRT=new T.WebGLRenderTarget(hw,hh);dRT.depthTexture=new T.DepthTexture(hw,hh);dRT.depthTexture.type=T.UnsignedIntType;
   aRT=new T.WebGLRenderTarget(hw,hh);aRT2=aRT.clone();depthMat=new T.MeshBasicMaterial({colorWrite:false});depthMat.skinning=true;depthMat.morphTargets=false;
   ma=new T.ShaderMaterial({uniforms:{dp:{value:dRT.depthTexture},pi:{value:new T.Matrix4()},px:{value:new T.Vector2()},rad:{value:.3},sc:{value:1}},vertexShader:vs,
@@ -329,9 +366,9 @@ var post=(function(){var w=innerWidth,h=innerHeight,pr=ren.getPixelRatio();var r
  function pass(m,tgt){quad.material=m;ren.setRenderTarget(tgt);ren.render(qs,qc)}
  var hid=[];function depthPass(){hid.length=0;sc.traverseVisible(function(o){var m=o.material;if(o.isSprite||o.isPoints||o.isLine||(m&&(m.transparent||m.blending===T.AdditiveBlending||m.depthWrite===false))){if(o.visible){o.visible=false;hid.push(o)}}});
   var bg=sc.background,fog=sc.fog;sc.background=null;sc.overrideMaterial=depthMat;ren.setRenderTarget(dRT);ren.clear();ren.render(sc,cam);sc.overrideMaterial=null;sc.background=bg;hid.forEach(function(o){o.visible=true})}
- return{bands:function(list){var v=mc.uniforms.gb.value;for(var i=0;i<4;i++){var b=list[i];if(b)v[i].set(b[0],b[1],b[2]);else v[i].set(0,0,0)}},exposure:function(e){mc.uniforms.ex.value=e},render:function(){var pr2=ren.getPixelRatio(),W=ren.domElement.width,H=ren.domElement.height;if(rt.width!==W||rt.height!==H){rt.setSize(W,H);b1.setSize(W/4|0,H/4|0);b2.setSize(W/4|0,H/4|0);mc.uniforms.px.value.set(1/W,1/H);if(AO){dRT.setSize(W/AOD|0,H/AOD|0);aRT.setSize(W/AOD|0,H/AOD|0);aRT2.setSize(W/AOD|0,H/AOD|0)}}
+ return{ao:function(on){aoOn=!!on},bands:function(list){var v=mc.uniforms.gb.value;for(var i=0;i<4;i++){var b=list[i];if(b)v[i].set(b[0],b[1],b[2]);else v[i].set(0,0,0)}},exposure:function(e){mc.uniforms.ex.value=e},render:function(){var pr2=ren.getPixelRatio(),W=ren.domElement.width,H=ren.domElement.height;if(rt.width!==W||rt.height!==H){rt.setSize(W,H);b1.setSize(W/4|0,H/4|0);b2.setSize(W/4|0,H/4|0);mc.uniforms.px.value.set(1/W,1/H);if(AO){dRT.setSize(W/AOD|0,H/AOD|0);aRT.setSize(W/AOD|0,H/AOD|0);aRT2.setSize(W/AOD|0,H/AOD|0)}}
   ren.toneMapping=T.NoToneMapping;ren.outputEncoding=T.LinearEncoding;
-  if(AO&&cur){depthPass();ma.uniforms.pi.value.copy(cam.projectionMatrixInverse);ma.uniforms.px.value.set(1/dRT.width,1/dRT.height);ma.uniforms.sc.value=cam.projectionMatrix.elements[5]*.5;pass(ma,aRT);
+  if(AO&&aoOn&&cur){depthPass();ma.uniforms.pi.value.copy(cam.projectionMatrixInverse);ma.uniforms.px.value.set(1/dRT.width,1/dRT.height);ma.uniforms.sc.value=cam.projectionMatrix.elements[5]*.5;pass(ma,aRT);
    mab.uniforms.t.value=aRT.texture;mab.uniforms.d.value.set(1/aRT.width,0);pass(mab,aRT2);mab.uniforms.t.value=aRT2.texture;mab.uniforms.d.value.set(0,1/aRT.height);pass(mab,aRT);mc.uniforms.ao.value=aRT.texture;mc.uniforms.aoK.value=1}else mc.uniforms.aoK.value=0;
   ren.setRenderTarget(rt);ren.render(sc,cam);
   mt.uniforms.t.value=rt.texture;pass(mt,b1);mb.uniforms.t.value=b1.texture;mb.uniforms.d.value.set(1/b1.width,0);pass(mb,b2);mb.uniforms.t.value=b2.texture;mb.uniforms.d.value.set(0,1/b1.height);pass(mb,b1);
@@ -340,14 +377,20 @@ var post=(function(){var w=innerWidth,h=innerHeight,pr=ren.getPixelRatio();var r
 /* every surface in a room gets the same slow, world-anchored variation a real place has: no two metres of wall the same tone,
    darker where hands and floors and years have been. Relief comes from the surface's own painted texture. */
 var WX_GLSL='float wxh(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}float wxn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mix(wxh(i),wxh(i+vec3(1,0,0)),f.x),mix(wxh(i+vec3(0,1,0)),wxh(i+vec3(1,1,0)),f.x),f.y),mix(mix(wxh(i+vec3(0,0,1)),wxh(i+vec3(1,0,1)),f.x),mix(wxh(i+vec3(0,1,1)),wxh(i+vec3(1,1,1)),f.x),f.y),f.z);}float wxf(vec3 p){return wxn(p)*.5+wxn(p*2.13)*.28+wxn(p*4.37)*.14+wxn(p*9.1)*.08;}';
+/* what a surface is made of: a texture's own tag first (stone, wood, plaster, cloth, paper), then the material's
+   physics (metal); everything else is painted. Relief only where the thing has relief: a paint stain is not a bump. */
+function matKind(m){var t=m.map&&m.map.userData&&m.map.userData.mat;if(t)return t;if(m.metalness>=.3)return'metal';if(!m.map&&m.roughness>=.88)return'cloth';return'paint'}
+var WXK={stone:[1,.5,1,.006],wood:[.8,.45,.95,.004],plaster:[1,.55,1,0],paint:[.6,.5,1,0],cloth:[.45,.86,1,0],paper:[.18,.7,.95,0],metal:[.5,.22,.82,0]};
 function weatherMat(m,o,inside){if(!m||!m.isMeshStandardMaterial||m.skinning||m.onBeforeCompile!==T.Material.prototype.onBeforeCompile&&m.onBeforeCompile||m.userData.wx||m.transparent||m.blending===T.AdditiveBlending)return;m.userData.wx=1;
- var big=!!m.map,K={value:big?1:.6},IN={value:inside?1:0};
- if(m.map&&!m.bumpMap&&m.map.image&&m.map.image.width>=128){m.bumpMap=m.map;m.bumpScale=big?.006:.004}
- m.onBeforeCompile=function(sh){sh.uniforms.wxK=K;sh.uniforms.wxIn=IN;
+ var kind=matKind(m),P=WXK[kind]||WXK.paint;m.userData.kind=kind;
+ var K={value:P[0]*(m.map?1:.6)},IN={value:inside?1:0},R0={value:P[1]},R1={value:P[2]},SH={value:kind==='cloth'?1:0},MT={value:kind==='metal'?1:0};
+ if(P[3]&&m.map&&!m.bumpMap&&m.map.image&&m.map.image.width>=128){m.bumpMap=m.map;m.bumpScale=P[3]}
+ m.onBeforeCompile=function(sh){sh.uniforms.wxK=K;sh.uniforms.wxIn=IN;sh.uniforms.wxR0=R0;sh.uniforms.wxR1=R1;sh.uniforms.wxSh=SH;sh.uniforms.wxMt=MT;
   sh.vertexShader='varying vec3 vWx;varying vec3 vWn;\n'+sh.vertexShader.replace('#include <project_vertex>','#include <project_vertex>\nvWx=(modelMatrix*vec4(transformed,1.)).xyz;vWn=normalize(mat3(modelMatrix)*objectNormal);');
-  sh.fragmentShader='varying vec3 vWx;varying vec3 vWn;uniform float wxK,wxIn;\n'+WX_GLSL+'\n'+sh.fragmentShader.replace('#include <map_fragment>','#include <map_fragment>\n{float n=wxf(vWx*1.6)-.5,n2=wxf(vWx*7.)-.5;float vert=1.-abs(vWn.y);float g=wxIn*vert*(1.-smoothstep(.0,.55,vWx.y))*.22;float top=wxIn*vert*smoothstep(1.6,3.,vWx.y)*.06;diffuseColor.rgb*=(1.+n*.2*wxK+n2*.07*wxK)*(1.-g-top);}')
-   .replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nroughnessFactor=clamp(roughnessFactor*(1.+(wxf(vWx*3.1+7.)-.5)*.3*wxK),.5,1.);')};
- m.customProgramCacheKey=function(){return'wx'};m.needsUpdate=true}
+  sh.fragmentShader='varying vec3 vWx;varying vec3 vWn;uniform float wxK,wxIn,wxR0,wxR1,wxSh,wxMt;\n'+WX_GLSL+'\n'+sh.fragmentShader.replace('#include <map_fragment>','#include <map_fragment>\n{float n=wxf(vWx*1.6)-.5,n2=wxf(vWx*7.)-.5;float vert=1.-abs(vWn.y);float g=wxIn*vert*(1.-smoothstep(.0,.55,vWx.y))*.22;float top=wxIn*vert*smoothstep(1.6,3.,vWx.y)*.06;float wear=wxMt*smoothstep(.15,.45,wxf(vWx*2.3+3.))*.18;diffuseColor.rgb*=(1.+n*.2*wxK+n2*.07*wxK)*(1.-g-top-wear);}')
+   .replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nroughnessFactor=clamp(roughnessFactor*(1.+(wxf(vWx*3.1+7.)-.5)*.3*wxK)+wxMt*(wxf(vWx*2.3+3.)-.45)*.6,wxR0,wxR1);')
+   .replace('#include <dithering_fragment>','#include <dithering_fragment>\nif(wxSh>0.){vec3 vv=normalize(vViewPosition);float fr=pow(1.-clamp(abs(dot(normal,vv)),0.,1.),3.);gl_FragColor.rgb+=gl_FragColor.rgb*fr*.35;}')};
+ m.customProgramCacheKey=function(){return'wx-'+kind}; m.needsUpdate=true}
 /* ---- image-based light: a soft room (or sky) probe every PBR surface reflects ---- */
 var pmrem=new T.PMREMGenerator(ren),ENV={};
 function envFor(kind){if(ENV[kind])return ENV[kind];var es=new T.Scene(),box=new T.BoxGeometry(1,1,1);
@@ -369,6 +412,14 @@ window.__sc=sc;window.RM=RM;var hooks=[];window.__town={step:step,render:functio
  /* bands the grade may not paint: the club's own legacy rules (wider than the scanner's, rule 44) and its rivals' colour families */
  colourGuard:function(S){var L=[];if(!S){L.push([37,72,-.3])}else{(S.policy||[]).forEach(function(r){L.push([Math.max(0,r.hue[0]-1),Math.min(360,r.hue[1]+2),-Math.max(.2,r.minSaturation-.05)])});
   var F={red:[342,18,.45],green:[88,172,.38],blue:[188,262,.4]};(S.rivals||[]).forEach(function(n){if(F[n])L.push(F[n])})}post.bands(L.slice(0,4))}};
-var last=performance.now();function loop(n){var dt=Math.min(.05,(n-last)/1000);last=n;if(!window.__manual)step(dt);for(var i=0;i<hooks.length;i++)hooks[i](TT,dt);post.render();requestAnimationFrame(loop)}
+/* adaptive quality (owner's list, item 8): the frame time is measured, and when it stays slow the costly things
+   step down one at a time — finer pixels first, then ambient occlusion, then the full pixel ratio — and come back when
+   there is room again. Never below one pixel per pixel, so faces, signs and the action stay sharp. A browser under
+   automation (QA screenshots) and ?aq=off keep the quality fixed. */
+var AQ={lvl:0,ema:16,acc:0,cool:0,pr0:ren.getPixelRatio()},AQON=Q.get('aq')!=='off'&&!navigator.webdriver;
+function aqApply(){var pr=AQ.lvl>=3?Math.min(1,AQ.pr0):AQ.lvl>=1?Math.max(1,AQ.pr0*.8):AQ.pr0;if(Math.abs(ren.getPixelRatio()-pr)>.01){ren.setPixelRatio(pr);size()}post.ao(AQ.lvl<2);window.__town.aq=AQ.lvl}
+function adapt(ms){if(!AQON||ms>250)return;AQ.ema=AQ.ema*.94+ms*.06;AQ.acc+=ms;if(AQ.acc<1500)return;AQ.acc=0;if(AQ.cool>0){AQ.cool--;return}
+ if(AQ.ema>30&&AQ.lvl<3){AQ.lvl++;aqApply();AQ.cool=2}else if(AQ.ema<14&&AQ.lvl>0){AQ.lvl--;aqApply();AQ.cool=5}}
+var last=performance.now();function loop(n){var dt=Math.min(.05,(n-last)/1000);adapt(n-last);last=n;if(!window.__manual)step(dt);for(var i=0;i<hooks.length;i++)hooks[i](TT,dt);post.render();requestAnimationFrame(loop)}
 window.__start=function(){if(window.PEOPLE&&!PEOPLE.ready&&!PEOPLE.failed){Promise.all([PEOPLE.load(),QL!=='low'&&PEOPLE.loadCrowd?PEOPLE.loadCrowd():0]).then(window.__start);return}var id=Q.get('room')||RM.ids()[0];if(!Q.get('play'))RM.load(id,{club:Q.get('club'),time:Q.get('time'),skinSet:window.__skinFor?window.__skinFor(Q.get('club')):null});window.__town.ready=true;requestAnimationFrame(loop)};
 })();

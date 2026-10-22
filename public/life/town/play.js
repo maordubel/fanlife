@@ -209,12 +209,12 @@ function enter(c){
  if(K.colourGuard)K.colourGuard(S)
  FR=c.frame||{};
  var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c',club:S}:null;
- RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true});
+ RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true,weather:c.weather||null,mood:c.mood||'normal',age:c.age==null?null:c.age,year:c.year==null?null:c.year});
  var def=RM.defs[c.room];pruneDecor(c,def&&def.kind);
  if(window.__gnd)window.__sc.remove(window.__gnd);if(def&&IND[def.kind]){var gm=new T.Mesh(new T.PlaneGeometry(300,300),new T.MeshBasicMaterial({color:new T.Color('#1e1a17').convertSRGBToLinear()}));gm.rotation.x=-PI/2;gm.position.set(12*U,-.06,8*U);window.__sc.add(gm);window.__gnd=gm}
  if(window.__fill)window.__sc.remove(window.__fill);var fi=new T.DirectionalLight('#fff0e0',def&&IND[def.kind]?.3:.15);fi.position.set(0,6,14);window.__sc.add(fi);window.__fill=fi;
  var sp=c.spawn||{x:(c.walk[0]+c.walk[2])/2,z:(c.walk[1]+c.walk[3])/2,yaw:0};
- setView();skyOf(c.time==='night',def&&def.kind);
+ setView();skyOf(c.time==='night',def&&def.kind,c.weather==='rain'||c.mood==='rain',c.mood==='dusk');
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
  (c.spots||[]).forEach(addSpot);
  (c.exits||[]).forEach(addExit);
@@ -239,9 +239,13 @@ function setView(){
  if(info&&a<1.15){var d=Math.hypot(info.p[1]-info.l[1],info.p[2]-info.l[2]),roomW=(cfg.walk[2]-cfg.walk[0]+2)*U,vis=Math.min(roomW,W/H<.9?(IND[((RM.defs[cfg.room]||{}).kind)]?3.3:4.2):4.6);fov=Math.max(20,Math.min(70,2*Math.atan(vis/2/(d*a))*180/PI))}
  K.view(top,bottom,fov);
 }
-function skyOf(night,kind){
+function skyOf(night,kind,rain,dusk){
  var inside=!!IND[kind];
- if(inside)window.__sc.children.forEach(function(o){if(o.isMesh&&o.geometry&&o.geometry.parameters&&o.geometry.parameters.radius===90&&o.material.isShaderMaterial)o.visible=false});
+ if(inside||rain||(dusk&&!night))window.__sc.children.forEach(function(o){if(o.isMesh&&o.geometry&&o.geometry.parameters&&o.geometry.parameters.radius===90&&o.material.isShaderMaterial)o.visible=false});
+ /* the sky the street stands under: a low grey ceiling in rain, a warm-to-violet evening at dusk */
+ if(!inside&&rain){K.bg(night?'#151a24':'#5d6670',night?'#0b0e14':'#8b939c');return}
+ if(!inside&&dusk&&!night){K.bg('#4a4a78','#c87a6e');return}
+
  if(inside)K.bg(night?'#5a5066':'#d8c4a6',night?'#463e56':'#c8b090');
  else if(night)K.bg('#1a2a6a','#0a1030');else K.bg('#6f9bd0','#cfd9e6');
 }

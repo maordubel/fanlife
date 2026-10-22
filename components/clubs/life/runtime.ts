@@ -27,6 +27,8 @@ type PlayExit = {id: string; x: number; z: number; w: number; d: number; dir: st
 export type PlayPeople = {actors: PlayActor[]; spots: PlaySpot[]; exits: PlayExit[]; player: Look}
 export type PlayConfig = PlayPeople & {
   room: string; club: string; time: 'day' | 'night'; floorY: number; walk: [number, number, number, number]; viewH?: number; surface: string; reveal?: boolean; weather?: 'rain' | null; mood?: string
+  /** how old he is in this chapter, and the year it is when the pack knows his birth year: the room dresses for it (TV, phone, the wall over the bed) */
+  age?: number; year?: number | null
   spawn: {x: number; z: number; yaw?: number}; frame: {top: number; bottom: number}; blocks?: number[][]; clear?: number[][]; frozen?: boolean
 }
 
@@ -71,6 +73,6 @@ export function roomConfig(pack: LifePack, chapter: Chapter, state: LifeState, f
   const spawn = at ?? geo.spawns[state.spawn] ?? Object.values(geo.spawns)[0] ?? {x: (geo.walk[0] + geo.walk[2]) / 2, z: (geo.walk[1] + geo.walk[3]) / 2}
   return {
     scene,
-    config: {...play, room, club: pack.clubId, time: state.time, floorY: geo.floorY, walk: geo.walk, viewH: geo.viewH, surface: geo.surface, spawn, frame, blocks: geo.blocks, clear: geo.clear, frozen: true},
+    config: {...play, room, club: pack.clubId, time: state.time, age: chapter.age, year: pack.hero.birthYear == null ? null : pack.hero.birthYear + chapter.age, floorY: geo.floorY, walk: geo.walk, viewH: geo.viewH, surface: geo.surface, spawn, frame, blocks: geo.blocks, clear: geo.clear, frozen: true},
   }
 }
