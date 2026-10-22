@@ -422,7 +422,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null}: P
   /* a line that carries a feeling bends the picture while it is on screen; the next one lets it go */
   const roomNow = state?.room ?? null, timeNow = state?.time ?? 'day'
   const lineMood = talk ? talk.view.lines[talk.view.index]?.mood ?? null : null
-  useEffect(() => { rt.current?.emote(lineMood, 30) }, [lineMood, talk?.view.talk])
+  /* every line, not only every change of mood: in the town the speaker's gesture starts and ends with its line */
+  useEffect(() => { rt.current?.emote(lineMood, 30) }, [lineMood, talk?.view.talk, talk?.view.index])
   /* the town sounds like where it is: a crowd that is far away, nearer the closer he walks to the ground */
   useEffect(() => {
     if (phase !== 'play' || !roomNow) { sound.current?.bed(0); sound.current?.ambience(null); return }

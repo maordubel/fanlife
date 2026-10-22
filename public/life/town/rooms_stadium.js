@@ -59,6 +59,28 @@ function H(c){
   [bm,hm,am].forEach(function(m){m.frustumCulled=false;w.add(m)});return bm};
  /* real bodies on the terrace: three poses, per-person shirt/trousers/skin/hair. The palette is the club's; jackets and
     plain dark clothes keep a stand from reading as a kit advert. */
+ /* ---------- a stand that reacts ----------
+    A terrace is never three statues: every fan sways on his own phase, the blocks bounce on a beat that is not the
+    same in every block (some go, some only nod), the arms-up rows lift their scarves higher on the beat, and a goal
+    (LIFE's celebrate()) sends a jump through the stand block by block from one end. All of it is a small matrix on
+    top of each fan's standing matrix, so the bodies, scarves and flags stay one draw each. Reduced motion keeps
+    only the slowest sway and no jump. */
+ var STAND=[],CALM=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function hsh(i){var v=Math.sin(i*12.9898+78.233)*43758.5453;return v-Math.floor(v)}
+ var M=new T.Matrix4(),Ma=new T.Matrix4(),B=new T.Matrix4(),R=new T.Matrix4(),LIFT=new T.Matrix4(),odd=0;
+ c.anim.tick.push(function(){if(!STAND.length||(odd^=1))return;/* thirty times a second is plenty for a terrace */var tn=performance.now()/1000,pulse=window.__crowdPulse||-99,x0=1e9;
+  STAND.forEach(function(r){for(var i=0;i<r.x.length;i++)if(r.x[i]<x0)x0=r.x[i]});
+  STAND.forEach(function(r){var up=r.k!=='down',n=r.x.length,anim=r.anim||(r.anim=[]);
+   for(var i=0;i<n;i++){var ph=hsh(i*3.1+r.x[i]),blk=Math.floor(r.x[i]/2.6),be=hsh(blk*7.7+(up?1:0)),
+     sway=Math.sin(tn*(1.1+ph*.5)+ph*6.3)*(up?.05:.032),beat=Math.max(0,Math.sin(tn*6.6+blk*.9)),bounce=be>.45&&!CALM?beat*beat*(up?.07:.035)*(.6+ph*.6):0,
+     dj=tn-pulse-(r.x[i]-x0)*.055,jump=!CALM&&dj>0&&dj<.62?Math.sin(dj/.62*Math.PI)*(.16+ph*.08):0;
+    if(CALM){sway*=.4}
+    R.makeRotationZ(sway);R.setPosition(0,bounce+jump,0);B.fromArray(r.base,i*16);M.multiplyMatrices(B,R);r.im.setMatrixAt(i,M);(anim[i]||(anim[i]=new T.Matrix4())).copy(R)}
+   r.im.instanceMatrix.needsUpdate=true;
+   r.props.forEach(function(q){B.fromArray(r.base,q.i*16);Ma.multiplyMatrices(B,anim[q.i]);
+    // the scarf rises a little more than the arms on the beat: it is held up, not worn
+    if(up&&!CALM){LIFT.makeTranslation(0,Math.max(0,Math.sin(tn*6.6+Math.floor(r.x[q.i]/2.6)*.9))*.03,0);Ma.multiply(LIFT)}
+    M.multiplyMatrices(Ma,q.local);q.m.setMatrixAt(q.n,M);q.m.instanceMatrix.needsUpdate=true})})});
  h.crowdPeople=function(spots,o){var pal=o.pal||[h.c1,h.c1,h.c1,h.c2,h.c2,h.c3,'#1c1e26','#2a2e3a','#3a3a44','#24304a'];
   var HAIR=['#120d0a','#1c1410','#2a1d16','#3a2a1e','#5a4634','#6a6a70','#1a1a1c'],PANTS=['#14151c','#1c2030','#232633','#2a3450','#30302e','#1a1a1a'],SHOE=['#121214','#1c1c20','#d8d6d0','#2a2420'];
   var groups={down:[],one:[],both:[]};spots.forEach(function(s){var u=s.up==null?(o.up==null?.25:o.up):s.up,a=rnd()<u,b=rnd()<u;(a&&b?groups.both:a||b?groups.one:groups.down).push(s)});
@@ -69,14 +91,14 @@ function H(c){
     var sk=h.pick(SK),hr=rnd()<.12?sk:h.pick(HAIR),sh=s.col||h.pick(pal),k2=dim*(.85+rnd()*.2);
     if(fem&&hr===sk)hr=h.pick(HAIR);setc(A.cSkin,i,sk,Math.min(1,dim*1.1));setc(A.cShirt,i,sh,k2);setc(A.cPants,i,h.pick(PANTS),dim);setc(A.cShoe,i,h.pick(SHOE),dim);setc(A.cHair,i,hr,dim);if(fem&&rnd()<.7)FEM.push([i,hr])});
    if(FEM.length){var top=headTop('down'),pg=new T.SphereGeometry(.055,8,6);pg.scale(1,2.1,1);var pmx=new T.InstancedMesh(pg,new T.MeshStandardMaterial({color:'#ffffff',roughness:.8}),FEM.length),PM=new T.Matrix4(),QM=new T.Matrix4(),qo=new T.Object3D();qo.position.set(0,top-.17,-.1);qo.rotation.x=.35;qo.updateMatrix();FEM.forEach(function(f,n){im.getMatrixAt(f[0],PM);QM.multiplyMatrices(PM,qo.matrix);pmx.setMatrixAt(n,QM);col.set(f[1]);col.multiplyScalar(dim);col.convertSRGBToLinear();pmx.setColorAt(n,col)});pmx.frustumCulled=false;pmx.castShadow=false;w.add(pmx)}
-   ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im;
+   ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im;var REC={im:im,k:k,base:im.instanceMatrix.array.slice(0,L.length*16),x:L.map(function(s){return s.x}),props:[]};STAND.push(REC);
    /* both arms up: most of them hold a scarf stretched between the hands; one arm up: some carry a small flag */
    if(k!=='down'&&!o.noProps){var hp=handsOf(k),props=[];L.forEach(function(s,i){if(rnd()<(k==='both'?.62:.22))props.push(i)});if(!props.length)return;
     var geo=k==='both'?new T.BoxGeometry(1,.085,.012):new T.PlaneGeometry(.34,.22),mat=new T.MeshStandardMaterial({map:scarfTex(),roughness:.9,side:T.DoubleSide});mat.__al=1;
     var pm=new T.InstancedMesh(geo,mat,props.length),pole=k==='one'?new T.InstancedMesh(new T.CylinderGeometry(.008,.008,.62,5),new T.MeshStandardMaterial({color:'#2a2622',roughness:.8}),props.length):null,M4=new T.Matrix4(),P4=new T.Matrix4(),q=new T.Object3D();
     props.forEach(function(i,n){im.getMatrixAt(i,P4);if(k==='both'){var L0=hp.l,R0=hp.r,mid=L0.clone().add(R0).multiplyScalar(.5);q.position.copy(mid);q.position.y-=.03;q.rotation.set(rr(-.15,.15),0,rr(-.06,.06));q.scale.set(L0.distanceTo(R0)+.08,1,1)}
      else{var hh=hp.r.y>hp.l.y?hp.r:hp.l;q.position.set(hh.x,hh.y+.24,hh.z);q.rotation.set(0,rr(-.4,.4),rr(-.12,.12));q.scale.set(1,1,1);if(pole){var qp=new T.Object3D();qp.position.set(hh.x,hh.y+.2,hh.z);qp.updateMatrix();M4.multiplyMatrices(P4,qp.matrix);pole.setMatrixAt(n,M4)}q.position.x+=(hh.x>0?.17:-.17)}
-     q.updateMatrix();M4.multiplyMatrices(P4,q.matrix);pm.setMatrixAt(n,M4)});
+     q.updateMatrix();M4.multiplyMatrices(P4,q.matrix);pm.setMatrixAt(n,M4);REC.props.push({m:pm,n:n,i:i,local:q.matrix.clone()});if(pole){var qp2=new T.Object3D();var hh2=hp.r.y>hp.l.y?hp.r:hp.l;qp2.position.set(hh2.x,hh2.y+.2,hh2.z);qp2.updateMatrix();REC.props.push({m:pole,n:n,i:i,local:qp2.matrix.clone()})}});
     [pm,pole].forEach(function(m){if(!m)return;m.frustumCulled=false;m.castShadow=false;w.add(m)})}});return first};
  var TOPS={};function headTop(k){if(TOPS[k]!=null)return TOPS[k];var p=PEOPLE.crowd[k].attributes.position,my=-1e9;for(var i=0;i<p.count;i++)my=Math.max(my,p.getY(i));return TOPS[k]=my}
  var HANDS={};function handsOf(k){if(HANDS[k])return HANDS[k];var g=PEOPLE.crowd[k],p=g.attributes.position,my=-1e9,i;for(i=0;i<p.count;i++)my=Math.max(my,p.getY(i));
