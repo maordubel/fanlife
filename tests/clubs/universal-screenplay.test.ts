@@ -65,7 +65,7 @@ const walk=(node:unknown,reads:Set<string>,raised:Set<string>)=>{
 const UNREAD_ON_PURPOSE = new Set<string>([
  // what the box remembers at the end of the life: its shape, not a thing anybody asks about again
  'life:legacy','life:legacy:object','life:legacy:voice',
- // the crates' four at eight are read a year later by the master F03 (the tin counted at the window) and by the box's line on the shirt (`shirtFrom`)
+ // the crates' four at eight: the box's line on the shirt reads it (`shirtFrom`); F03 reads the tin itself (`life:shirt:saving`)
  'life:shirt:paid:c2',
  // the account of a trip, a repair or a ride is spoken in the scene that raises it; the later scenes read the promise, not the sum
  'life:trip:budget','life:trip:pace','life:trip:prepared','life:trip:route','life:repair:account','life:ride:account',

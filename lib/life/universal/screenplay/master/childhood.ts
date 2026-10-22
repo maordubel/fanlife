@@ -174,7 +174,7 @@ export const MASTER_CHILDHOOD = [
         callbacks: [
           // what the tin holds is what this life put in it (a year of crates, or nothing yet): read from the coins, never assumed
           {group: 'tin', when: {min: ['coins', 1]}, lines: [s(null, 'In your pocket, the tin. It rattles: there is already something in it, and you know exactly where each coin came from.', 'בכיס, הקופסה. היא מקשקשת: כבר יש בה משהו, ואתה יודע בדיוק מאיפה כל מטבע הגיע.')]},
-          {when: is('life:shirt:paid:c2', 'crates'), lines: [s(null, 'Four of them are from the kiosk\'s crates, a year ago. You have not spent one.', 'ארבעה מהם מהארגזים של הקיוסק, לפני שנה. לא הוצאת אף אחד.')]},
+          {when: {flag: 'life:shirt:saving'}, lines: [s(null, 'Four of them are from the kiosk\'s crates, a year ago. You have not spent one.', 'ארבעה מהם מהארגזים של הקיוסק, לפני שנה. לא הוצאת אף אחד.')]},
           {group: 'tin', when: {none: [{min: ['coins', 1]}]}, lines: [s(null, 'In your pocket, a tin. It rattles less than you would like.', 'בכיס, קופסה. היא מקשקשת פחות ממה שהיית רוצה.')]},
         ],
         task: t('Tip out the tin on the sill and count it against the card', 'לרוקן את הקופסה על אדן החלון ולספור מול הכרטיס'),
