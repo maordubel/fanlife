@@ -400,6 +400,13 @@ try {
  const result={nextGates,hapoelPetahTikvaArchive:{facts:24,exactDates:11,players:21,yearOnly:'passed',playerEvidence:'passed'},zrinjskiArchive:{records:42,exactDates:14,players:27,yearOnly:'passed',playerEvidence:'passed'},mystery:{solve:'passed',wrongGuess:'passed',resume:'passed',giveUp:'passed',insufficientDataLocks:'passed'},sharedGames,interactionTypes:[...interactions],xiSaveReload:'passed',newGatesRtl:'passed',allGateReadiness:'passed',flows:report,identities,portalCards:'passed',clubHubsRtl:'passed',unsupportedLocale:'passed',rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length}
  writeFileSync('/tmp/fanlife-m1-browser/report.json',JSON.stringify(result,null,2))
  console.log(JSON.stringify(result,null,2))
+} catch (e) {
+ // the job log and its artifact live on a host this project's tools cannot read; an annotation is read by the
+ // checks API, so the reason a run failed reaches whoever has to fix it (and the server's last lines with it)
+ const say=t=>String(t).replace(/%/g,'%25').replace(/\r/g,'').replace(/\n/g,'%0A')
+ console.log(`::error title=Shared gates browser flow::${say(String(e?.stack||e).slice(0,1800))}`)
+ console.log(`::error title=Shared gates server log (tail)::${say(String(logs).slice(-1500))}`)
+ throw e
 } finally {
  writeFileSync('/tmp/fanlife-m1-browser-server.log',logs)
  await browser?.close();server.kill('SIGTERM')
