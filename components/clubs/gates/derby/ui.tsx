@@ -7,7 +7,7 @@ export type T=(key:string,vars?:Record<string,string|number>)=>string
 const tr=(copy:GameCopy,key:string,vars:Record<string,string|number>={}):string=>((copy as Record<string,string>)[key]??key).replace(/\{(\w+)\}/g,(_,k:string)=>k in vars?String(vars[k]):`{${k}}`)
 export const makeT=(copy:GameCopy):T=>(k,v)=>tr(copy,k,v)
 export type Open=(m:WallMeeting,opener:HTMLElement|null)=>void
-export type Shared={t:T;locale:UiLocale;contentLocale:string;club:string;clubName:string;rival:string}
+export type Shared={t:T;locale:UiLocale;contentLocale:string;club:string;clubName:string;rival:string;rivalId?:string}
 
 /** The date as the archive states it: the day when it has one, the bare year (labelled as such) when it has not. */
 export function dateText(m:WallMeeting,locale:UiLocale,t:T):string{

@@ -15,7 +15,7 @@ const SWIPE=90
 
 /** Gate 11 · "Call it": a round dealt from the documented meetings — name the result before the score is shown. */
 export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,onWall}:{meetings:WallMeeting[];s:Shared;seed:number;cursor:number;version:string;rtl:boolean;autoStart:boolean;onOpen:Open;onWall:()=>void}){
- const {t,locale,contentLocale,club,clubName,rival}=s
+ const {t,locale,contentLocale,club,clubName,rival,rivalId}=s
  const byId=useMemo(()=>new Map(meetings.map(m=>[m.id,m])),[meetings])
  const qs=useMemo(()=>dealRound(meetings,seed,cursor),[meetings,seed,cursor])
  const [phase,setPhase]=useState<Phase>(autoStart&&qs.length>0?'ask':'intro')
@@ -94,7 +94,7 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
   <div className={css.slipHead}><h2>{t('derby.res.title')}</h2><span className={css.slipBig}>{summary.correct}/{summary.total}</span><p className={css.status}>{t('derby.res.line',{correct:summary.correct,total:summary.total})} · {t('derby.call.points',{n:summary.score})} · {t('derby.res.best',{n:summary.bestStreak})}</p></div>
   <ol className={css.trail} aria-label={t('derby.res.title')}>{summary.trail.map((ok,k)=><li key={k} data-s={ok?'right':'wrong'}><span aria-hidden="true">{ok?'✓':'✗'}</span><span className="sr-only">{ok?t('derby.call.right'):t('derby.call.wrong')}</span></li>)}</ol>
   <div className={css.actions}>
-   <ShareComposer draft={callShare(club,{seed,cursor,correct:summary.correct,asked:summary.total,rival})}/>
+   <ShareComposer draft={callShare(club,{seed,cursor,correct:summary.correct,asked:summary.total,rival,rivalId})}/>
    <button type="button" className={`${css.btn} min-h-tap`} onClick={restart}>{t('derby.res.again')}</button>
    <Link className={`${css.btn} min-h-tap`} href={`/clubs/${club}/derby?${roundQuery(seed,cursor+1)}&play=1&lang=${locale}`} data-testid="derby-new-round">{t('derby.res.new')}</Link>
    <button type="button" className={`${css.btn} min-h-tap`} onClick={onWall}>{t('derby.res.wall')}</button>

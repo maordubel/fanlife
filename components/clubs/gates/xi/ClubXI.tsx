@@ -4,7 +4,7 @@ import {PickRail,flyShirt,type RailItem,type RailLabels} from '@/components/rost
 import {SlideSheet} from '@/components/stage/SlideSheet'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
-import {tr,shortName} from '@/components/clubs/rumble/shared'
+import {tr,shortName,nameLabeler} from '@/components/clubs/rumble/shared'
 import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {xiShare} from '@/lib/share/v3/adapters'
 import {FORMATIONS} from '@/lib/game/formations'
@@ -37,7 +37,7 @@ const rowsOf=(xi:XIState)=>{
 }
 
 /** the eleven for the share card: keeper first, then each line from the back, left to right */
-const cardLines=(xi:XIState,byId:ReadonlyMap<string,ClubPlayer>)=>{const rows=rowsOf(xi);if(!rows[0]?.includes('GK'))rows.reverse();return rows.map(r=>r.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p?shortName(p.name):''}))}
+const cardLines=(xi:XIState,byId:ReadonlyMap<string,ClubPlayer>,label:(n:string)=>string=shortName)=>{const rows=rowsOf(xi);if(!rows[0]?.includes('GK'))rows.reverse();return rows.map(r=>r.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p?label(p.name):''}))}
 
 export type ClubXIProps={players:ClubPlayer[];club:string;clubName:string;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy}
 
@@ -60,6 +60,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  const [full,setFull]=useState({q:'',pos:'',era:'',fit:false,limit:40})
  const sheetOpener=useRef<HTMLElement|null>(null)
  const byId=useMemo(()=>new Map(players.map(p=>[p.id,p])),[players])
+ const label=useMemo(()=>nameLabeler(players.map(p=>p.name)),[players])
  const slots=slotsOf(xi),role=active===TWELFTH?null:(slots.find(s=>s.slotId===active)?.role??null)
 
  useEffect(()=>{
@@ -78,13 +79,13 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  const spot=(where:Where)=>document.querySelector(`[data-slot="${where}"]`)
  function pick(key:string,from:Element|null){
   const p=byId.get(key);if(!p)return
-  const where=active;commit(place(xi,where,key),where);flyShirt(from,`[data-slot="${where}"]`,shortName(p.name))
+  const where=active;commit(place(xi,where,key),where);flyShirt(from,`[data-slot="${where}"]`,label(p.name))
  }
  function drop(zone:string,key:string){
   if(!zone.startsWith('xi:'))return
   const where=zone.slice(3);if(where!==TWELFTH&&!slots.some(s=>s.slotId===where))return
   const p=byId.get(key);if(!p)return
-  commit(place(xi,where,key),where);setActive(where);window.requestAnimationFrame(()=>firePickFxAt(spot(where),{label:shortName(p.name)}))
+  commit(place(xi,where,key),where);setActive(where);window.requestAnimationFrame(()=>firePickFxAt(spot(where),{label:label(p.name)}))
  }
  function move(from:Where,zone:string){
   if(!zone.startsWith('xi:'))return
@@ -134,7 +135,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
    <button type="button" className={`min-h-tap ${css.tool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
   </div>
   {kind==='worst'&&<p className={css.note}>{t('xi.worstNote')}</p>}
-  <XIPitch xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} flip={localeDirection(locale)==='ltr'} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
+  <XIPitch plateOf={label} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} flip={localeDirection(locale)==='ltr'} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
    hud={{count:t('xi.count',{n:filledCount(xi)}),done:complete,formation:xi.formation,onFormation:open('formation'),formationLabel:t('xi.formationBtn',{name:xi.formation})}}/>
   <div className={css.dock}>
    {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget}>{target}</span></p>}
@@ -187,12 +188,12 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
   <SlideSheet open={sheet==='result'} onClose={closeSheet} title={t(kind==='best'?'xi.poster.mine':'xi.poster.worst')} size="full" closeLabel={copy['play.close']}
    footer={<div className={css.actions}>
     <button type="button" className={`min-h-tap ${css.tool} ${css.primary}`} onClick={lockIn}>{copy.save}</button>
-    {kind==='best'&&complete?<ShareComposer label={t('xi.share')} draft={xiShare(club,{formation:xi.formation,lines:cardLines(xi,byId),captain:xi.captain?shortName(byId.get(xi.captain)?.name||'')||null:null})}/>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={share}>{t('xi.share')}</button>}
+    {kind==='best'&&complete?<ShareComposer label={t('xi.share')} draft={xiShare(club,{formation:xi.formation,lines:cardLines(xi,byId,label),captain:xi.captain?label(byId.get(xi.captain)?.name||'')||null:null})}/>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={share}>{t('xi.share')}</button>}
     <button type="button" className={`min-h-tap ${css.tool}`} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
    <div className={css.poster} data-testid="xi-poster">
     <div className={css.posterHead}><p className={css.posterKicker}>{clubName} · {xi.formation}</p><h2 className={css.posterTitle}>{t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}</h2></div>
-    <div className={css.posterRows}>{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p&&<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{shortName(p.name)}</span></div>})}</div>)}
-     {xi.twelfth&&byId.get(xi.twelfth)&&<div className={css.posterRow}><div className={css.posterMan}><span className={css.shirt}><ClubShirt player={byId.get(xi.twelfth)!} wardrobe={wardrobe} side={side}/></span><span className={css.plate} lang={contentLocale} dir="auto">{shortName(byId.get(xi.twelfth)!.name)}</span><span className={css.chairTag}>{t('xi.twelfth')}</span></div></div>}</div>
+    <div className={css.posterRows}>{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p&&<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{label(p.name)}</span></div>})}</div>)}
+     {xi.twelfth&&byId.get(xi.twelfth)&&<div className={css.posterRow}><div className={css.posterMan}><span className={css.shirt}><ClubShirt player={byId.get(xi.twelfth)!} wardrobe={wardrobe} side={side}/></span><span className={css.plate} lang={contentLocale} dir="auto">{label(byId.get(xi.twelfth)!.name)}</span><span className={css.chairTag}>{t('xi.twelfth')}</span></div></div>}</div>
     {Object.keys(spread).length>0&&<div className={css.spread}><p className={css.posterKicker}>{t('xi.poster.spread')}</p>{Object.entries(spread).sort((a,b)=>Number(a[0])-Number(b[0])).map(([d,n])=><div key={d} className={css.spreadRow}><span>{d}s</span><span className={css.spreadBar}><i style={{width:`${(n/maxSpread)*100}%`}}/></span><span>{n}</span></div>)}</div>}
     <p className={css.fine}>{kind==='worst'?t('xi.worstNote'):copy.localOnly}</p>
     <p className={css.status} role="status">{notice}</p>

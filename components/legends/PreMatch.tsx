@@ -3,13 +3,14 @@ import type {CareerView} from '@/lib/legends/view'
 import {Stars} from './Brand'
 import {Sheet} from './Sheet'
 import {ClubMark} from './Shirts'
+import {familyLabel} from '@/lib/clubs/display-name'
 
 /**
  * Before the whistle (owner, 14.10.2026): Kick off → the eleven to confirm or change → the dressing room → "Send them to the pitch!"
  * → this card: both crests and names as a VS, the ground, the city, the country. The ground's name appears only where a sourced
  * club world names it; a play-off is on neutral ground and says so. Nothing here is a number the manager is not meant to see.
  */
-const surname=(n:string)=>{const p=n.trim().split(/\s+/);return p.length>1?p[p.length-1]!:n}
+const surname=familyLabel
 
 export function LineupConfirm({v,onConfirm,onEdit,onClose}:{v:CareerView;onConfirm:()=>void;onEdit:()=>void;onClose:()=>void}){
  const by=new Map(v.squad.map(s=>[s.id,s])),xi=v.lineup.xi.map(id=>by.get(id)).filter((x):x is NonNullable<typeof x>=>!!x)

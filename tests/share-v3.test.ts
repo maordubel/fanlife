@@ -3,7 +3,7 @@ import {SHARE_TEMPLATES} from '@/lib/share/v3/templates'
 import {renderShare,shareCaption,SHARE_FORMATS,type ShareAssets,type ShareFormat} from '@/lib/share/v3/render'
 import {sharePalette,shareClubs,shareClub,auditColours,SHARE_PAPER} from '@/lib/share/v3/theme'
 import {contrast} from '@/lib/clubs/theme'
-import {archiveShare,blindCowShare,coverShare,kitShare,lineupShare,memoryShare,onThisDayShare,terraceShare,timelineShare,triviaShare,validateDraft,xiShare,dailyShare,goalShare,rumbleShare} from '@/lib/share/v3/adapters'
+import {archiveShare,blindCowShare,coverShare,kitShare,lineupShare,memoryShare,onThisDayShare,terraceShare,timelineShare,triviaShare,validateDraft,xiShare,dailyShare,goalShare,rumbleShare,callShare} from '@/lib/share/v3/adapters'
 import {REGISTRY} from '@/lib/master/registry'
 import {existsSync} from 'node:fs'
 
@@ -112,4 +112,24 @@ describe('story frame (8.10.2026)',()=>{
   for(const y of ys){expect(y).toBeGreaterThan(260);expect(y).toBeLessThan(1920-200)}
   expect(svg).toContain('“');expect(svg).toContain('Nine from twelve, on the bus.')
  })
+})
+
+describe('share links keep their context (audit F20–F22)', () => {
+  const club = 'hapoel-tel-aviv'
+  const param = (link: string, k: string) => new URL(link).searchParams.get(k)
+  it('a lineup link opens the same match', () => {
+    const d = lineupShare(club, { title: 'T', on: null, competition: 'C', correct: 5, forbidden: [], matchId: 'm_abc' })
+    expect(param(d.data.link, 'm')).toBe('m_abc')
+  })
+  it('a derby call link carries a rival that is not the first in the list', () => {
+    const d = callShare(club, { seed: 1, cursor: 0, correct: 3, asked: 5, rival: 'Maccabi', rivalId: 'maccabi-tel-aviv' })
+    expect(param(d.data.link, 'rival')).toBe('maccabi-tel-aviv')
+  })
+  it('a 5x5 link keeps the rival club or the friend duel', () => {
+    const base = { seed: 7, us: 1, them: 2, five: [], bill: '€15M' }
+    expect(param(rumbleShare(club, { ...base, vs: 'celtic' }).data.link, 'vs')).toBe('celtic')
+    const duel = rumbleShare(club, { ...base, vs: 'celtic', duel: 'tok' }).data.link
+    expect(param(duel, 'duel')).toBe('tok')
+    expect(param(duel, 'vs')).toBeNull()
+  })
 })

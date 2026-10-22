@@ -1,5 +1,6 @@
 'use client'
 import {useCallback,useEffect,useRef,useState} from 'react'
+import {familyLabel} from '@/lib/clubs/display-name'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {Pos,RumbleCard} from '@/lib/clubs/rumble'
 import {kitFor,type RumbleWardrobe} from '@/lib/clubs/rumble-kit'
@@ -10,11 +11,12 @@ export function tr(copy:GameCopy,key:string,vars:Record<string,string|number>={}
  const raw=(copy as Record<string,string>)[key]??key
  return raw.replace(/\{(\w+)\}/g,(_,k:string)=>k in vars?String(vars[k]):`{${k}}`)
 }
+export {nameLabeler} from '@/lib/clubs/display-name'
 export const money=(m:number)=>`€${m}M`
 export const posName=(copy:GameCopy,p:Pos)=>tr(copy,`rr.pos.${p}`)
 export const posShort=(copy:GameCopy,p:Pos)=>tr(copy,`rr.short.${p}`)
 /** the name a shirt carries on the pitch: the last word, as the terraces say it */
-export const shortName=(name:string)=>{const parts=name.trim().split(/\s+/);return parts.length>1?parts[parts.length-1]!:name}
+export const shortName=(name:string,label:(n:string)=>string=familyLabel)=>label(name)
 export function years(copy:GameCopy,c:Pick<RumbleCard,'fromYear'|'toYear'>):string{
  if(c.fromYear===null&&c.toYear===null)return tr(copy,'rr.yearsUnknown')
  if(c.fromYear===c.toYear)return String(c.fromYear)

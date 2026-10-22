@@ -42,8 +42,8 @@ export function xiShare(clubId:string,x:{formation:string;lines:string[][];capta
  return draft('02-all-time-xi',clubId,'xi','prompt',{main:x.formation,rows,detail:x.captain?`Captain: ${x.captain}`:'One fan’s eleven.',statement:'These are the eleven I’d pick.',link:clubUrl(clubId,`/clubs/${clubId}/xi`,{lang:'en'})})
 }
 /** 04 — the match the round named (already disclosed) and how many starters were found; never the eleven */
-export function lineupShare(clubId:string,x:{title:string;on:string|null;competition:string;correct:number;forbidden:string[]}){
- return draft('04-lineup-programme',clubId,'lineup','prompt',{main:`${x.correct}/11`,rows:['MATCH PROGRAMME',x.title,[x.competition,x.on].filter(Boolean).join(' · ')],detail:'How many of that team can you name?',statement:`I remembered ${x.correct} of the eleven.`,link:clubUrl(clubId,`/clubs/${clubId}/lineup`,{lang:'en'})},{forbidden:x.forbidden,origin:'server-verified'})
+export function lineupShare(clubId:string,x:{title:string;on:string|null;competition:string;correct:number;forbidden:string[];/** the canonical match id: the link opens THIS match (F20) */matchId?:string}){
+ return draft('04-lineup-programme',clubId,'lineup','prompt',{main:`${x.correct}/11`,rows:['MATCH PROGRAMME',x.title,[x.competition,x.on].filter(Boolean).join(' · ')],detail:'How many of that team can you name?',statement:`I remembered ${x.correct} of the eleven.`,link:clubUrl(clubId,`/clubs/${clubId}/lineup`,{m:x.matchId,lang:'en'})},{forbidden:x.forbidden,origin:'server-verified'})
 }
 /** 05 — how many of the three details were right; never the shirt's season, maker or design */
 export function kitShare(clubId:string,x:{right:number;forbidden:string[]}){
@@ -79,8 +79,8 @@ export function goalShare(clubId:string,r:{seed:number;points:number;max:number;
  return draft('09-goal-freeze',clubId,'goal','prompt',{main:`${r.points}/${r.max}`,statement:r.points*2>=r.max?'That is how I remembered the move.':'I rebuilt it as I remembered it.',link:clubUrl(clubId,`/clubs/${clubId}/goal`,{seed:r.seed,lang:'en'})},{forbidden:r.forbidden,origin:'server-verified'})
 }
 /** 10 — the five this person picked and the simulated score; the played draft's own seed, labelled a simulation */
-export function rumbleShare(clubId:string,x:{seed:number;us:number;them:number;five:{position:string;name:string}[];bill:string}){
- return draft('10-rumble-five',clubId,'rumble','same-run',{main:`${x.us}–${x.them}`,rows:x.five.map(p=>`${p.position} · ${p.name}`),detail:`My bill: ${x.bill} · a simulated match`,statement:'These are my five.',link:clubUrl(clubId,`/clubs/${clubId}/royal-rumble`,{seed:x.seed,lang:'en'})},{origin:'server-verified'})
+export function rumbleShare(clubId:string,x:{/** the AI rival club (`vs`) or the friend's locked five (`duel`) this round was played against — same seed against another side is another challenge (F22) */vs?:string|null;duel?:string|null;seed:number;us:number;them:number;five:{position:string;name:string}[];bill:string}){
+ return draft('10-rumble-five',clubId,'rumble','same-run',{main:`${x.us}–${x.them}`,rows:x.five.map(p=>`${p.position} · ${p.name}`),detail:`My bill: ${x.bill} · a simulated match`,statement:'These are my five.',link:clubUrl(clubId,`/clubs/${clubId}/royal-rumble`,{vs:x.duel?undefined:x.vs,duel:x.duel,seed:x.seed,lang:'en'})},{origin:'server-verified'})
 }
 /** 10 — an eleven-a-side round: the shape, the rival, the score and the bill; the link replays the same match (same seed, clubs and shape) */
 export function rumbleXIShare(clubId:string,x:{seed:number;us:number;them:number;formation:string;rival:string;rivalName:string;bill:string}){
@@ -91,8 +91,8 @@ export function wallShare(clubId:string,x:{holder:string;rounds:number;revenge:b
  return draft('12-derby-file',clubId,'hate','prompt',{main:'MY WALL',rows:[x.holder,`${x.rounds} ROUNDS`,x.revenge?'ONE REVENGE USED':'NO REVENGE USED'],detail:'My choices, not a vote.',statement:`The one I kept on the wall: ${x.holder}.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'wall',lang:'en'})})
 }
 /** 12 — a finished "call it" round on the meetings; the same meetings, the same seed and cursor */
-export function callShare(clubId:string,r:Run&{correct:number;asked:number;rival:string}){
- return draft('12-derby-file',clubId,'hate','same-run',{main:`${r.correct}/${r.asked}`,rows:['THE MEETINGS',`VS ${r.rival.toUpperCase()}`,'CALL IT'],detail:'Same meetings. Your call.',statement:`I called ${r.correct} of ${r.asked}.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'meetings',play:1,seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
+export function callShare(clubId:string,r:Run&{correct:number;asked:number;rival:string;/** the rival's id — a club with several approved rivals must open the same meetings (F21) */rivalId?:string}){
+ return draft('12-derby-file',clubId,'hate','same-run',{main:`${r.correct}/${r.asked}`,rows:['THE MEETINGS',`VS ${r.rival.toUpperCase()}`,'CALL IT'],detail:'Same meetings. Your call.',statement:`I called ${r.correct} of ${r.asked}.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'meetings',rival:r.rivalId,play:1,seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
 }
 /** 12 — the Black File: correct / asked with the real denominators and a subtotal per module; no answers, no paths */
 export function blackFileShare(clubId:string,r:Run&{correct:number;asked:number;binary:{correct:number;asked:number};order:{correct:number;asked:number}}){

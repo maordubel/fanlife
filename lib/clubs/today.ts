@@ -1,3 +1,4 @@
+import {clubTimeZone,dayKey} from './mystery-model'
 import {chronologyPool} from './chronology'
 import type {ClubData} from './contract'
 
@@ -9,8 +10,10 @@ import type {ClubData} from './contract'
 export type Moment={id:string;title:string;on:string;yearsAgo:number;offset:number}
 export const WINDOW=14
 const DAY=86_400_000
-export function momentFor(data:Pick<ClubData,'timeline'>,now:Date):Moment|null {
- const pool=chronologyPool(data.timeline),year=now.getUTCFullYear(),today=Date.UTC(year,now.getUTCMonth(),now.getUTCDate())
+export function momentFor(data:Pick<ClubData,'timeline'>&{identity?:{country?:string}},now:Date):Moment|null {
+ // the calendar day AT THE CLUB (audit F18): after midnight in Tel Aviv or Athens, UTC would still read yesterday
+ const [cy,cm,cd]=dayKey(now,clubTimeZone(data.identity?.country??'')).split('-').map(Number) as [number,number,number]
+ const pool=chronologyPool(data.timeline),year=cy,today=Date.UTC(cy,cm-1,cd)
  let best:Moment|null=null
  for(const c of pool){
   const [y,m,d]=c.on.split('-').map(Number) as [number,number,number]

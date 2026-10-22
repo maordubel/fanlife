@@ -1,3 +1,4 @@
+import { clubTimeZone, dayKey } from '@/lib/clubs/mystery-model'
 import { createHash } from 'node:crypto'
 
 import type { ClubData } from '@/lib/clubs/contract'
@@ -126,11 +127,7 @@ export function buildEdition(data: ClubData, date: string): EditionSecret | null
   return { answers: [a.answer, b.answer, c.answer], edition }
 }
 
-const ZONE: Record<string, string> = { Israel: 'Asia/Jerusalem', Greece: 'Europe/Athens', Scotland: 'Europe/London', Germany: 'Europe/Berlin', 'Bosnia and Herzegovina': 'Europe/Sarajevo' }
-/** the calendar day at the club's own home, `YYYY-MM-DD` */
+/** the calendar day at the club's own home, `YYYY-MM-DD` — the same zone table as every other daily (lib/clubs/mystery-model) */
 export function clubDay(country: string, now: Date = new Date()): string {
-  const timeZone = ZONE[country] ?? 'UTC'
-  const p = new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now)
-  const g = (t: string) => p.find((x) => x.type === t)?.value ?? '00'
-  return `${g('year')}-${g('month')}-${g('day')}`
+  return dayKey(now, clubTimeZone(country))
 }

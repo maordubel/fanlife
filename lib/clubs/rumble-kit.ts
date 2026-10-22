@@ -10,7 +10,10 @@ import type {RumbleCard} from './rumble'
  */
 export type RumbleKit={id:string;season:string;design:string|null;colours:string[];/** shorts and socks when the record names them (the match highlights paint them) */shortsColour?:string|null;socksColour?:string|null}
 export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[];/** a photograph of the man's own shirt of his period (Hapoel Tel Aviv, from the kit archive), by card id — worn by the side that is his club's */photos?:Record<string,{src:string;label:string}>}
-export type Worn={source:'archive';kit:RumbleKit}|{source:'livery';variant:'home'|'away'}
+/** `approx`: a documented kit of a nearby season, not one of his own years — the screen must say so. `neutral`: no documented kit near his years (or no years at all), so the shirt claims no season. */
+export type Worn={source:'archive';kit:RumbleKit;approx?:true}|{source:'livery';variant:'home'|'away';neutral?:true}
+/** seasons outside a man's recorded years a documented kit may still stand in (audit F10, 22.10.2026) */
+export const APPROX_SEASONS=3
 
 /** The colours KitPlate can paint (its token map), each with a representative swatch so the club's own colour policy can judge it.
  * yellow, maroon, skyblue, pink and orange joined on 9.10.2026 for AEK Athens, whose own colour is yellow; brown the same day for FC St. Pauli (the same grant: the club's own colours, judged per club by `forbiddenColor`). The owner said "מותר צהוב"
@@ -36,11 +39,17 @@ export function rumbleWardrobe(kits:KitView[],forbidden:(hex:string)=>boolean):R
 export const eraOf=(c:Pick<RumbleCard,'fromYear'|'toYear'>)=>c.fromYear!==null&&c.toYear!==null?Math.round((c.fromYear+c.toYear)/2):c.fromYear??c.toYear
 
 export function kitFor(card:Pick<RumbleCard,'fromYear'|'toYear'>,side:'us'|'them',w:RumbleWardrobe):Worn{
- const list=side==='us'?w.home:w.away
- if(!list.length)return {source:'livery',variant:side==='us'?'home':'away'}
- const year=eraOf(card)
- if(year===null)return {source:'archive',kit:list[list.length-1]!}
+ const list=side==='us'?w.home:w.away,variant=side==='us'?'home' as const:'away' as const
+ if(!list.length)return {source:'livery',variant}
+ const from=card.fromYear??card.toYear,to=card.toYear??card.fromYear
+ // no recorded years: a shirt must not claim a season it cannot know — the neutral livery stands in
+ if(from===null||to===null)return {source:'livery',variant,neutral:true}
+ const mid=(from+to)/2
+ const gap=(k:RumbleKit)=>{const y=seasonYear(k.season)!;return y<from?from-y:y>to?y-to:0}
  let best=list[0]!
- for(const k of list){const d=Math.abs(seasonYear(k.season)!-year),bd=Math.abs(seasonYear(best.season)!-year);if(d<bd||(d===bd&&seasonYear(k.season)!>seasonYear(best.season)!))best=k}
- return {source:'archive',kit:best}
+ for(const k of list){const d=gap(k),bd=gap(best);if(d<bd||(d===bd&&Math.abs(seasonYear(k.season)!-mid)<Math.abs(seasonYear(best.season)!-mid)))best=k}
+ const g=gap(best)
+ if(g===0)return {source:'archive',kit:best}
+ if(g<=APPROX_SEASONS)return {source:'archive',kit:best,approx:true}
+ return {source:'livery',variant,neutral:true}
 }

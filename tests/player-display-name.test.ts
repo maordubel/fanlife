@@ -77,3 +77,35 @@ describe('player names — identity', () => {
     expect(src).not.toMatch(/givenHe\s*\+\s*['"` ]*\s*\+?\s*familyHe/)
   })
 })
+
+import { familyLabel, nameLabeler, splitFamily } from '@/lib/clubs/display-name'
+
+describe('FAN LIFE display names (audit F01/F02)', () => {
+  it.each([
+    ['Ben Dayan', 'Dayan', 'Ben Dayan'],
+    ['Douglas da Silva', 'Douglas', 'da Silva'],
+    ['Edwin van der Sar', 'Edwin', 'van der Sar'],
+    ['דדי בן דיין', 'דדי', 'בן דיין'],
+    ['Messi', '', 'Messi'],
+  ])('%s keeps its particle', (name, given) => {
+    const p = splitFamily(name === 'Ben Dayan' ? 'Eli Ben Dayan' : name)
+    if (name !== 'Ben Dayan') expect(p.given).toBe(given)
+    expect(familyLabel(name === 'Ben Dayan' ? 'Eli Ben Dayan' : name)).toBe(p.family)
+  })
+  it('compound family and verified override', () => {
+    expect(familyLabel('Eli Ben Dayan')).toBe('Ben Dayan')
+    expect(familyLabel('Yair Cohen Tzedek')).toBe('Tzedek')
+    expect(familyLabel('Yair Cohen Tzedek') === 'Tzedek').toBe(true)
+    expect(splitFamily('Yair Cohen Tzedek', { 'Yair Cohen Tzedek': 'Cohen Tzedek' }).family).toBe('Cohen Tzedek')
+  })
+  it('a shared family prints in full; a unique one stays short; one man twice is not a clash', () => {
+    const l = nameLabeler(['Dan Cohen', 'Avi Cohen', 'Moshe Sinai', 'Moshe Sinai'])
+    expect(l('Dan Cohen')).toBe('Dan Cohen')
+    expect(l('Avi Cohen')).toBe('Avi Cohen')
+    expect(l('Moshe Sinai')).toBe('Sinai')
+  })
+  it('diacritics fold when comparing families', () => {
+    const l = nameLabeler(['Ivan Perišić', 'Marko Perisic'])
+    expect(l('Ivan Perišić')).toBe('Ivan Perišić')
+  })
+})
