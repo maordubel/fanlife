@@ -32,7 +32,7 @@ jobs:
           THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
         run: |
           failed=""
-          for dir in club-packs/*/; do
+          for dir in club-packs/*/ research-staging/*/; do
             id=$(basename "$dir")
             [ -f "$dir/ingest.json" ] || continue
             npm run -s club:wave -- --club "$id" || failed="$failed $id"
@@ -52,5 +52,6 @@ jobs:
           add-paths: |
             research-data/**
             club-packs/**/wave-auto.json
+            research-staging/**/wave-auto.json
             research-reports/**
           body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club.'

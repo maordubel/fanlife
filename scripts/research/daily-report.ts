@@ -36,9 +36,9 @@ async function main(){
   table.push(`${id}: ready ${rd.length}/${all}; not ready: ${Object.entries(r.gates||{}).filter(([,v])=>!v||!String(v).startsWith('READY')).map(([k,v])=>`${k} ${v}`).join('; ')}`)
  }
  // closed clubs have no compiled pack yet: report what the daily UEFA pull has collected for them
- const closed=readdirSync('club-packs',{withFileTypes:true}).filter(d=>d.isDirectory()&&!now[d.name]&&existsSync(`club-packs/${d.name}/ingest.json`)).map(d=>d.name)
+ const closed=readdirSync('research-staging',{withFileTypes:true}).filter(d=>d.isDirectory()&&!now[d.name]&&existsSync(`research-staging/${d.name}/ingest.json`)).map(d=>d.name)
  if(closed.length){lines.push('','## Clubs without a pack yet — UEFA pull','','| Club | Matches | Approved | With eleven |','|---|---|---|---|')
-  for(const id of closed){const f=`club-packs/${id}/wave-auto.json`;const m=(existsSync(f)?JSON.parse(readFileSync(f,'utf8')).matches:[]) as {status?:string;value?:{primaryOnly?:{lineup?:unknown[]}}}[]
+  for(const id of closed){const f=`research-staging/${id}/wave-auto.json`;const m=(existsSync(f)?JSON.parse(readFileSync(f,'utf8')).matches:[]) as {status?:string;value?:{primaryOnly?:{lineup?:unknown[]}}}[]
    lines.push(`| ${id} | ${m.length} | ${m.filter(x=>x.status==='approved').length} | ${m.filter(x=>x.value?.primaryOnly?.lineup?.length===11).length} |`);table.push(`${id}: no pack; UEFA matches ${m.length}`)}}
  lines.push('','## AI triage (advisory only)','',await triage(table.join('\n')))
  lines.push('','_Collected rows arrive unreviewed. Approval stays with the owner (rules 92, 93, 114)._')

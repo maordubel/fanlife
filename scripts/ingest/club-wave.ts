@@ -34,7 +34,8 @@ async function discover(names:string[],country:string|null):Promise<string|null>
 }
 async function main(){
  const club=arg('club');if(!club)throw new Error('--club <id> required')
- const cfgPath=`club-packs/${club}/ingest.json`;if(!existsSync(cfgPath))throw new Error(`missing ${cfgPath}`)
+ const home=existsSync(`club-packs/${club}/ingest.json`)?`club-packs/${club}`:`research-staging/${club}`  // unopened clubs keep their wave in staging, never wired
+ const cfgPath=`${home}/ingest.json`;if(!existsSync(cfgPath))throw new Error(`missing ${cfgPath}`)
  const cfg=JSON.parse(readFileSync(cfgPath,'utf8')) as {names:string[];country?:string;uefaTeamId?:string|null}
  const max=Number(arg('max')||80),today=new Date().toISOString().slice(0,10)
  const teamId=cfg.uefaTeamId||await discover(cfg.names,cfg.country||null)
@@ -42,7 +43,7 @@ async function main(){
  console.log(`[${club}] UEFA team id ${teamId}`)
  const matches=(await uefaMatchesForTeam(fetchJson,teamId)).slice(0,max),rows=[]
  for(const m of matches){const full=await withLineup(fetchJson,m);rows.push({m:full,second:await corroborate(fetchJson,full,process.env.THESPORTSDB_KEY||'123')})}
- const fresh=buildWave(rows,cfg.names,club,today),path=`club-packs/${club}/wave-auto.json`
+ const fresh=buildWave(rows,cfg.names,club,today),path=`${home}/wave-auto.json`
  // merge, never replace: this run reads the newest --max matches only (see mergeAutoWave)
  const wave=mergeAutoWave(existsSync(path)?JSON.parse(readFileSync(path,'utf8')):null,fresh)
  console.log(`[${club}] read ${fresh.matches.length}; wave now ${wave.matches.length} matches (${wave.matches.filter(f=>f.status==='approved').length} approved, ${wave.matches.filter(f=>f.value.primaryOnly.lineup.length===11).length} with a full eleven)`)
