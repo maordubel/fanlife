@@ -26,7 +26,7 @@ function boxFor(name: string, club: Record<string, unknown>): string {
 describe('LIFE · a club-specific name is painted only for the club that owns it', () => {
   it('Hapoel Tel Aviv keeps the Red Box; every other club gets a box in its own name', () => {
     expect(boxFor('hapoel-tel-aviv', {name: 'Hapoel Tel Aviv', short: 'Hapoel'})).toBe('The Red Box')
-    for (const [id, name] of [['aek-athens', 'AEK Athens'], ['panathinaikos', 'Panathinaikos'], ['olympiacos', 'Olympiacos'], ['celtic', 'Celtic'], ['st-pauli', 'St. Pauli'], ['zrinjski-mostar', 'Zrinjski Mostar'], ['hapoel-petah-tikva', 'Hapoel Petah Tikva']]) {
+    for (const [id, name] of [['aek-athens', 'AEK Athens'], ['panathinaikos', 'Panathinaikos'], ['olympiacos', 'Olympiacos'], ['celtic', 'Celtic'], ['st-pauli', 'St. Pauli'], ['zrinjski-mostar', 'Zrinjski Mostar'], ['hapoel-petah-tikva', 'Hapoel Petah Tikva']] as const) {
       const box = boxFor(id, {name, short: name})
       expect(box, id).toBe(`The ${name} Box`)
       expect(box, id).not.toMatch(/red box/i)
