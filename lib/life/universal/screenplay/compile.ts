@@ -2,6 +2,17 @@ import {ROOMS} from '../rooms'
 import type {Branch, Chapter, Choice, Cond, Effect, Line, Placement, Talk} from '../types'
 import type {Callback, ChapterScript, Option, SceneScript, Speech, Words} from './types'
 import {echoCallbacks} from './echo'
+
+/**
+ * An option that may only be chosen with the money in the wallet carries that same check into the act that spends
+ * it, so the spend is never read as unguarded. Only an option that already asked for the coins gets it: an act
+ * cannot ask for money its choice did not, or a poor player who chose would stand at a task he can never do.
+ */
+function paidFor(o: Option): Cond | undefined {
+  const asked = (c: Cond | undefined): number => !c ? 0 : 'min' in c && c.min[0] === 'coins' ? c.min[1] : 'all' in c ? Math.max(0, ...c.all.map(asked)) : 0
+  const spent = (o.effects ?? []).reduce((n, fx) => fx.e === 'coins' && fx.by < 0 ? n - fx.by : n, 0)
+  return spent > 0 && asked(o.when) >= spent ? {min: ['coins', spent]} : undefined
+}
 import {inTown, LABEL, pathRooms, ROLE_SLOT, SLOT_PREF, SPOT_PREF, townDoors} from './town'
 
 /** Most callbacks one scene may carry: every combination that can hold at once is a branch of its own. */
@@ -203,7 +214,7 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
         ? [{e: 'play', game: scene.game ?? null, id: `${scene.id}:${o.id}`, ...(mission ? {mission: {template: mission.template, mandatory: mission.mandatory === true, ...(mission.beat ? {beat: mission.beat} : {})}} : {}), then: done, ...(scene.reward?.good ? {good: scene.reward.good} : {}), ...(scene.reward?.slip ? {slip: scene.reward.slip} : {})}]
         : done
       actionBranches.push({
-        when: allOf(doing, {is: [pick, o.id]}, keepCond, dest ? settle(dest.when, o.effects ?? []) : undefined, wear.when, present ? (solo ? {none: [present]} : present) : undefined),
+        when: allOf(doing, {is: [pick, o.id]}, paidFor(o), keepCond, dest ? settle(dest.when, o.effects ?? []) : undefined, wear.when, present ? (solo ? {none: [present]} : present) : undefined),
         lines: lines(spoken.length ? spoken : [alone]), then: effects,
       })
     }
