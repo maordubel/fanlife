@@ -72,7 +72,7 @@ describe('the crew\'s banner: one stroke, from the workshop to the next generati
 
   for (const [pick, word] of [['stay', 'extra stroke'], ['fix', 'painted over'], ['hand', 'his call']] as const) {
     it(`a life that chose "${pick}" in the workshop hears it in the tunnel`, () => {
-      const {s, heard} = live(chap('R-TER'), {'R-TER-S1': 'hands', 'R-TER-S2': pick, 'R-TER-S3': 'pass', 'R-TER-S4': 'join'}, terrace())
+      const {s, heard} = live(chap('R-TER'), {'R-TER-S1': 'hands', 'R-TER-S2': pick, 'R-TER-S5': 'lookout', 'R-TER-S3': 'pass', 'R-TER-S4': 'join'}, terrace())
       expect(s.flags['life:banner:stroke']).toBe(pick === 'stay' ? 'kept' : pick === 'fix' ? 'fixed' : 'handed')
       expect(s.flags['story:R-TER:complete'], 'the chapter ends').toBeTruthy()
       expect(heard['R-TER-S4']!.join(' ')).toContain(word)
