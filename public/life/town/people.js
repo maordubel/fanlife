@@ -521,10 +521,53 @@ function facade(g,B,S){var J=B.J;var fx=new T.Group();fx.visible=true;g.add(fx);
    F[nm]={curl:curl,sp:sp,spA:spA,opp:opp,f:f,k:k}})});rest.hand[s]=F});
  return{u:{hips:hips,torso:torso,head:head,arms:arms,legs:legs,eyes:eyes,mouth:mouth},rest:rest}}
 
+/* ---------- a hand that holds something ----------
+   o.hold = 'cup' | 'ticket' | 'scarf' | 'bag' | 'phone' puts the thing IN the right hand: parented to the hand bone at
+   the palm, so it moves with every gesture, and the fingers close round it. o.hold=null lets it go. */
+var HOLD={cup:function(){return new T.Mesh(new T.CylinderGeometry(.034,.028,.09,14),new T.MeshStandardMaterial({color:'#f1ece2',roughness:.55}))},
+ ticket:function(){return new T.Mesh(new T.BoxGeometry(.075,.004,.04),new T.MeshStandardMaterial({color:'#efe6cf',roughness:.9}))},
+ phone:function(){return new T.Mesh(new T.BoxGeometry(.04,.008,.08),new T.MeshStandardMaterial({color:'#18191d',roughness:.35,metalness:.3}))},
+ bag:function(){var g=new T.Group(),b=new T.Mesh(new T.BoxGeometry(.2,.24,.08),new T.MeshStandardMaterial({color:'#2b2a30',roughness:.85}));b.position.y=-.16;g.add(b);return g},
+ scarf:function(o){var c=(o&&o.scarf&&o.scarf[0])||'#7a7a80',m=new T.Mesh(new T.BoxGeometry(.05,.34,.012),new T.MeshStandardMaterial({color:c,roughness:.95}));m.position.y=-.15;return m}};
+function held(g,h,b){var o=g.userData.o||{},k=o.hold||null,cur=h.held;
+ if(cur&&cur.k===k)return;
+ if(cur){if(cur.m.parent)cur.m.parent.remove(cur.m);h.held=null}
+ if(!k||!HOLD[k])return;var bone=b[BONE.hand_r];if(!bone)return;var m=HOLD[k](o);
+ // the palm sits a little forward of the hand bone, towards the fingers
+ m.position.y+=.075;m.position.z+=.02;m.traverse(function(x){if(x.isMesh)x.castShadow=true});bone.add(m);h.held={k:k,m:m,s:'r'}}
 var _q=new T.Quaternion(),_q2=new T.Quaternion(),_qi=new T.Quaternion(),_e=new T.Euler(),ID=new T.Quaternion();
 function qOf(o,out){return out.setFromEuler(o.rotation)}
 /* pour the facade into the bones */
+/* ---------- intent: the line carries a mood, the body says it ----------
+   LIFE hands the room the mood of each line (`emote`), and play.js stamps it on whoever speaks it and on whoever
+   listens: o.expr={k, t0, role}. A gesture is a beat: it rises with the line, holds while the words come and settles
+   once they are out, so a hand never waves through silence. The mood picks the shape: a hand to the chest for
+   something tender, a hand to the back of the neck before a hard thing, the head dropping on a loss, arms opening
+   on a joy. The listener answers smaller: a nod, a look down, a held breath. This rig has no smile shape, so a mood
+   is carried by the head, the shoulders, the mouth's pace and the eyes. Reduced motion keeps the pose, drops the sway. */
+var CALM=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function ease(x){x=clamp(x,0,1);return x*x*(3-2*x)}
+function mix(o,k,v,e){o[k]+=(v-o[k])*e}
+var LINE=3.4;
+P.express=function(g,t,dt){var u=g.userData,o=u.o||{},x=o.expr,m=o.mode;o._wide=0;
+ var talk=m==='talk',beat=0,since=x?t-x.t0:99;
+ if(talk){beat=x?ease(since/.35)*(1-ease((since-LINE)/1.1)):1;
+  // the doll's cyclic talking arms and jaw are the words; outside the line they fall still
+  var rest=1-beat,ar=u.arms;for(var i=0;i<2;i++){mix(ar[i].sh.rotation,'x',-.08,rest*.85);mix(ar[i].el.rotation,'x',-.28,rest*.85);mix(ar[i].sh.rotation,'z',i?-.08:.08,rest*.6)}
+  if(x)u.mouth.scale.y=1+(u.mouth.scale.y-1)*clamp(since<LINE?1:1-(since-LINE)*2,0,1)}
+ if(!x||!x.k||since>LINE+6)return;
+ var e=(x.role==='listen'?.55:1)*(talk?Math.max(beat,.35):ease(since/.5)*(1-ease((since-LINE-2)/2))),k=x.k,H=u.head.rotation,To=u.torso.rotation,A=u.arms,s=CALM?0:1;
+ if(e<=.001)return;
+ if(k==='joy'||k==='warm'){H.x-=.1*e;H.z+=Math.sin(t*2.2)*.04*e*s;if(talk&&k==='joy'){mix(A[0].sh.rotation,'x',-1.0,e*.8);mix(A[0].sh.rotation,'z',.55,e*.8);mix(A[1].sh.rotation,'z',-.55,e*.6)}
+  if(x.role==='listen')H.x+=Math.max(0,Math.sin(since*5))*.12*e*s;u.mouth.scale.y*=1+.25*e}
+ else if(k==='tender'){H.z+=.13*e;H.x+=.08*e;if(talk){mix(A[0].sh.rotation,'x',-.95,e);mix(A[0].el.rotation,'x',-1.95,e);mix(A[0].sh.rotation,'z',-.25,e)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*.7}
+ else if(k==='tense'){H.x+=.14*e;H.y+=Math.sin(clamp(since/1.6,0,1)*Math.PI)*.32*e;To.x+=.04*e;
+  if(talk){var hes=1-ease((since-1.2)/.8);mix(A[1].sh.rotation,'x',-2.15,e*hes);mix(A[1].el.rotation,'x',-2.25,e*hes);mix(A[1].sh.rotation,'z',-.35,e*hes);u.mouth.scale.y=1+(u.mouth.scale.y-1)*(since<1?.25:.6)}}
+ else if(k==='grief'){H.x+=.34*e;To.x+=.14*e;for(var j=0;j<2;j++){mix(A[j].sh.rotation,'x',.02,e);mix(A[j].el.rotation,'x',-.16,e)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*.35}
+ else if(k==='wonder'){H.x-=.2*e;if(talk){mix(A[0].sh.rotation,'z',.6,e);mix(A[1].sh.rotation,'z',-.6,e);mix(A[0].sh.rotation,'x',-.55,e);mix(A[1].sh.rotation,'x',-.55,e)}o._wide=e}
+};
 P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=h.rest;
+ P.express(g,t,dt||.03);
  var pel=b[BONE.pelvis],base=pel.userData.p0||(pel.userData.p0=pel.position.clone()),h0=u.hips.userData.p0||(u.hips.userData.p0=u.hips.position.clone());
  pel.position.set(base.x+u.hips.position.x-h0.x,base.y+u.hips.position.y-h0.y,base.z+u.hips.position.z-h0.z);
  qOf(u.hips,pel.quaternion);
@@ -540,7 +583,7 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
   // shoulders lift a little when the arm goes up
   var lift=clamp(-a.sh.rotation.x-1.2,0,1.6)*.22;b[BONE['clavicle_'+s]].quaternion.setFromAxisAngle(new T.Vector3(0,0,1),(s==='l'?1:-1)*lift);
   // the fingers: a soft cascade at rest, closing towards a grip when the arm is raised (a scarf, a flag, a fist)
-  var Fh=R.hand&&R.hand[s];if(Fh){var up=clamp((-a.sh.rotation.x-1.6)/1.1,0,1),grip=clamp(u.grip!=null?u.grip:up*.75,0,1),j=h.fj||(h.fj=.85+Math.random()*.3);
+  var Fh=R.hand&&R.hand[s];if(Fh){var up=clamp((-a.sh.rotation.x-1.6)/1.1,0,1),grip=clamp(h.held&&h.held.s===s?.92:u.grip!=null?u.grip:up*.75,0,1),j=h.fj||(h.fj=.85+Math.random()*.3);
    for(var nm in Fh){var e2=Fh[nm],bn=b[BONE[nm]];if(!bn)continue;var q=bn.quaternion.copy(ID);
     if(e2.f==='thumb'){var o2=e2.k===1?.42+grip*.25:e2.k===2?.22+grip*.35:.28+grip*.45;if(e2.opp&&e2.k===1)q.multiply(_q2.setFromAxisAngle(e2.opp,o2));else q.multiply(_q2.setFromAxisAngle(e2.curl,o2));continue}
     var cas={index:.78,middle:.95,ring:1.08,pinky:1.22}[e2.f],rel=(e2.k===1?.42:e2.k===2?.68:.38)*cas*j,fist=e2.k===1?1.35:e2.k===2?1.55:1.05;
@@ -549,11 +592,16 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
  });
  // legs, with an ankle that keeps the sole near the floor
  [['r',0],['l',1]].forEach(function(e){var s=e[0],l=u.legs[e[1]];b[BONE['thigh_'+s]].quaternion.copy(qOf(l.h,_q));b[BONE['calf_'+s]].quaternion.copy(qOf(l.kn,_q));
-  var sum=l.h.rotation.x+l.kn.rotation.x;b[BONE['foot_'+s]].quaternion.setFromAxisAngle(new T.Vector3(1,0,0),-sum*.75)});
+  var sum=l.h.rotation.x+l.kn.rotation.x,planted=l.kn.rotation.x<.25&&l.h.rotation.x>-.25;
+  // a planted foot lies flat on the floor (hip+knee taken back at the ankle); a swinging one keeps its toe down
+  b[BONE['foot_'+s]].quaternion.setFromAxisAngle(new T.Vector3(1,0,0),-sum*(planted?.98:.7))});
+ held(g,h,b);
  // face: blink + jaw
- var bl=u.eyes[0].e.scale.y<.5?1:0,inf=h.body.morphTargetInfluences;inf[0]+=(bl-inf[0])*Math.min(1,(dt||.03)*30);
+ var bl=u.eyes[0].e.scale.y<.5&&!(u.o&&u.o._wide>.5)?1:0,inf=h.body.morphTargetInfluences;inf[0]+=(bl-inf[0])*Math.min(1,(dt||.03)*30);
  var jo=clamp((u.mouth.scale.y-1)*.28,0,.55);inf[1]+=(jo-inf[1])*Math.min(1,(dt||.03)*18);
  // eyes: small saccades
- h.saccade-=dt||.03;if(h.saccade<0){h.saccade=.6+Math.random()*2.2;h.look.set((Math.random()-.5)*.25,(Math.random()-.5)*.12)}
+ var conv=u.o&&(u.o.mode==='talk'||u.o.mode==='listen');
+ // in a conversation the eyes hold the other face (the body already turned to it): small, slow saccades round centre
+ h.saccade-=dt||.03;if(h.saccade<0){h.saccade=conv?1.2+Math.random()*2.6:.6+Math.random()*2.2;var ka=conv?.28:1;h.look.set((Math.random()-.5)*.25*ka,(Math.random()-.5)*.12*ka-(conv&&u.o.expr&&u.o.expr.k==='grief'?.08:0))}
  h.eyes.forEach(function(p){p.rotation.y+=(h.look.x-p.rotation.y)*.35;p.rotation.x+=(-h.look.y-p.rotation.x)*.35})};
 })();

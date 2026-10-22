@@ -12,7 +12,7 @@ window.__err=window.__err||[];
 var IND={home:1,hall:1,school:1,work:1,'club-room':1};var K=window.__town,T=K.T,RM=window.RM,U=K.U,PI=Math.PI;
 var CELL=.5,RADIUS=.45,REACH=3.5,SPEED=5.6,RUN=1.55;
 var sink=function(){},cfg=null,grid=null,player=null,actors={},exits=[],spots=[],marks=[],decor=[],target=null,frozen=false,S=null,SKINS={};
-var FR={top:.8,bottom:-.4},axis={x:0,y:0},running=false,path=null,pending=null,graceUntil=0,lastExit=null,focusId=null,stepAcc=0,now=0,camX=0,camZ=1,fade=null;
+var lastMood=null,FR={top:.8,bottom:-.4},axis={x:0,y:0},running=false,path=null,pending=null,graceUntil=0,lastExit=null,focusId=null,stepAcc=0,now=0,camX=0,camZ=1,fade=null;
 var ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0),hit=new T.Vector3();
 function emit(e){try{sink(e)}catch(er){(window.__err=window.__err||[]).push(String(er&&er.stack||er))}}
 function err(er){(window.__err=window.__err||[]).push(String(er&&er.stack||er));emit({type:'error',message:String(er&&er.message||er)})}
@@ -120,7 +120,10 @@ function Body(def,id){
  this.g=g;this.o=g.userData.o;this.def=def;this.x=def.x;this.z=def.z;this.yaw=o.ry;this.s=o.s;this.hm=1.72*o.s;this.w=0;this.moving=false;this.path=null;this.speed=def.speed||SPEED*.8;this.wantYaw=null;
 }
 Body.prototype.place=function(){this.g.position.x=this.x*U;this.g.position.z=this.z*U;this.g.rotation.y=this.yaw};
-Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;while(d<-PI)d+=2*PI;this.yaw+=d*Math.min(1,dt*(rate||10))};
+Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;while(d<-PI)d+=2*PI;var step=d*Math.min(1,dt*(rate||10));this.yaw+=step;
+ /* turning on the spot is a few small steps, never a statue spinning on its soles: when the body is not walking,
+    the turn feeds a short shuffle into the same leg cycle the walk uses */
+ if(!this.def.sit&&(this.o.sv||0)<.5&&Math.abs(step)>.0015){this.o.sw=(this.o.sw||0)+Math.abs(step)*3.2;this.o.sv=Math.max(this.o.sv||0,Math.min(.42,Math.abs(d)*.9))}};
 Body.prototype.stride=function(dist){this.o.sw=(this.o.sw||0)+dist*U/(1.5*this.s)*2*PI;this.o.sv=1};
 Body.prototype.rest=function(dt){this.o.sv=Math.max(0,(this.o.sv||0)-dt*7)};
 Body.prototype.remove=function(){K.dropChar(this.g)};
@@ -411,13 +414,18 @@ var P=window.__vxPlay={
  tap:tap,walkTo:walkTo,goTo:goTo,
  veil:function(on){veil(!!on,250)},
  freeze:function(b){frozen=!!b;if(frozen){axis.x=axis.y=0;path=null;pending=null}else{graceUntil=now+.35;retarget(true)}},
- emote:function(){},
+ /* the mood of the line being said (LIFE sends one per line): the speaker carries it in full, the player listening
+    answers it smaller (people.js P.express). A null mood still marks a new line, so the gesture starts with it. */
+ emote:function(k){lastMood={k:k||null,t:now};var sp=focusId&&actors[focusId];if(sp)sp.o.expr={k:k||null,t0:now,role:'say'};if(player)player.o.expr=k?{k:k,t0:now,role:'listen'}:null},
+ /* something in the hand: 'cup' | 'ticket' | 'scarf' | 'bag' | 'phone', or null to put it down */
+ hold:function(id,kind){var b=id==='player'?player:actors[id];if(!b)return false;b.o.hold=kind||null;return true},
  project:function(kind,id){var b=null,x=0,y=0,z=0;
   if(kind==='actor'){b=actors[id];if(b){x=b.x*U;y=b.g.position.y+b.hm+.3;z=b.z*U}}
   else if(kind==='spot'){for(var i=0;i<spots.length;i++)if(spots[i].id===id){b=spots[i];x=b.x*U;y=(b.y==null?2.6:b.y)*U+.3;z=b.z*U}}
   else if(kind==='exit'){var xx=exitOf(id);if(xx){b=1;x=(xx.def.x+xx.def.w/2)*U;y=.9;z=(xx.def.z+xx.def.d/2)*U}}
   return b?K.screen(x,y,z):null},
- focus:function(id){focusId=id||null;if(id)faceEachOther(id)},
+ /* LIFE may name the speaker a moment after it sends the line's mood: the line still starts on whoever says it */
+ focus:function(id){focusId=id||null;if(id){faceEachOther(id);var a=actors[id];if(a&&lastMood&&now-lastMood.t<.5)a.o.expr={k:lastMood.k,t0:lastMood.t,role:'say'}}},
  mark:function(kind,id,on){marks.forEach(function(m){if(m.kind===kind&&m.id===id)m.on=!!on});retarget(true)},
  lock:function(id,locked){var x=exitOf(id);if(x){x.locked=!!locked;retarget(true)}},
  actor:function(id,patch){var a=actors[id];if(!a)return false;if(patch.yaw!=null)a.wantYaw=patch.yaw;return true},
@@ -426,7 +434,7 @@ var P=window.__vxPlay={
  where:function(){return player?{room:cfg.room,x:player.x,z:player.z,target:target,frozen:frozen,moving:!!path}:null},
  update:function(n){try{return sync(n)}catch(er){err(er);return false}},
  audit:audit,grid:gridDump,
- celebrate:function(){var set=function(b,m){if(b&&!b.def.sit){b.o.mode=m;setTimeout(function(){if(b.o.mode===m)b.o.mode=b.base},6500)}};if(player)set(player,'cheer');Object.keys(actors).forEach(function(k){set(actors[k],'cheer')})},
+ celebrate:function(){window.__crowdPulse=performance.now()/1000;var set=function(b,m){if(b&&!b.def.sit){b.o.mode=m;setTimeout(function(){if(b.o.mode===m)b.o.mode=b.base},6500)}};if(player)set(player,'cheer');Object.keys(actors).forEach(function(k){set(actors[k],'cheer')})},
  frame:function(f){if(!cfg)return;FR=f;setView()}
 };
 K.hooks.push(frame);
