@@ -14,7 +14,7 @@ export const LIFE_PREFIX = 'life:'
 
 export const emptyState = (): LifeState => ({
   v: 1, started: false, chapter: null, room: null, spawn: 'start', time: 'day',
-  flags: {}, heart: 0, coins: 0, energy: 100, standing: 10, met: [], seen: [], bonds: {}, keeps: [], wear: 'plain', done: {}, finished: false,
+  flags: {}, heart: 0, coins: 0, paid: [], envelopes: {}, funds: {}, energy: 100, standing: 10, met: [], seen: [], bonds: {}, keeps: [], wear: 'plain', done: {}, finished: false,
 })
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n))
@@ -35,6 +35,16 @@ export function apply(state: LifeState, event: LifeEvent): LifeState {
     case 'heart': return {...state, heart: clamp(state.heart + event.by, 0, 100)}
     case 'bond': return {...state, bonds: {...state.bonds, [event.who]: clamp((state.bonds[event.who] ?? 50) + event.by, 0, 100)}}
     case 'coins': return {...state, coins: Math.max(0, state.coins + event.by)}
+    case 'paid': return (state.paid ?? []).includes(event.order) ? state
+      : {...state, coins: Math.max(0, state.coins + event.by), paid: [...(state.paid ?? []), event.order]}
+    case 'envelope': {
+      // in: never more than the wallet holds; out: never more than the envelope holds — money is moved, not made
+      const env = state.envelopes?.[event.id] ?? 0
+      const moved = event.by > 0 ? Math.min(event.by, state.coins) : -Math.min(-event.by, env)
+      if (!moved) return state
+      return {...state, coins: state.coins - moved, envelopes: {...state.envelopes, [event.id]: env + moved}}
+    }
+    case 'fund': return {...state, funds: {...state.funds, [event.id]: Math.max(0, (state.funds?.[event.id] ?? 0) + event.by)}}
     case 'energy': return {...state, energy: clamp(state.energy + event.by, 0, 100)}
     case 'standing': return {...state, standing: clamp(state.standing + event.by, 0, 100)}
     case 'met': return state.met.includes(event.who) ? state
@@ -83,6 +93,9 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
       case 'heart': events.push({t: 'heart', by: fx.by}); break
       case 'bond': events.push({t: 'bond', who: fx.who, by: fx.by}); break
       case 'coins': events.push({t: 'coins', by: fx.by}); break
+      case 'pay': events.push({t: 'paid', order: orderId(state, fx.order), by: fx.by}); break
+      case 'envelope': events.push({t: 'envelope', id: fx.id, by: fx.by}); break
+      case 'fund': events.push({t: 'fund', id: fx.id, by: fx.by}); break
       case 'energy': events.push({t: 'energy', by: fx.by}); break
       case 'standing': events.push({t: 'standing', by: fx.by}); break
       case 'keep': events.push({t: 'keep', item: fx.item}); break
@@ -98,11 +111,16 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
   return {events, directives}
 }
 
+/** The id an order is paid under: the chapter it was done in, then the order. */
+export const orderId = (state: LifeState, order: string): string => `${state.chapter ?? '-'}/${order}`
+/** Has this order been paid already? (a second route to the same work asks this before it offers to pay) */
+export const isPaid = (state: LifeState, order: string): boolean => (state.paid ?? []).includes(orderId(state, order))
+
 /** What a small game does once it has been played: `then` always, then `good` (for 'good' and 'ok') or `slip`. */
 export const afterPlay = (d: Extract<Directive, {d: 'play'}>, result: PlayResult): Effect[] => [...d.then, ...(result === 'slip' ? d.slip : d.good)]
 
 /** The coins a game is about, for its tray and its target: what `then` and `good` would pay. */
-export const playAmount = (d: Extract<Directive, {d: 'play'}>): number => [...d.then, ...d.good].reduce((n, fx) => n + (fx.e === 'coins' && fx.by > 0 ? fx.by : 0), 0)
+export const playAmount = (d: Extract<Directive, {d: 'play'}>): number => [...d.then, ...d.good].reduce((n, fx) => n + ((fx.e === 'coins' || fx.e === 'pay') && fx.by > 0 ? fx.by : 0), 0)
 
 export const chapterOf = (pack: LifePack, id: string | null): Chapter | null => pack.chapters.find(c => c.id === id) ?? null
 /** The chapter after this one. With the state, chapters whose `when` does not hold for this life (a route not taken) are skipped. */

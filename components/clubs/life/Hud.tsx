@@ -15,13 +15,15 @@ type Copy = Record<string, string>
 type Story = {lang?: string; dir?: 'ltr' | 'rtl'}
 export type Meter = 'coins' | 'energy' | 'standing'
 
-export function Hud({plateRef, initials, serial, place, objective, coins, energy, standing, talking, copy, story, onMeter, onMap, onMenu}: {
+export function Hud({plateRef, initials, serial, place, objective, coins, saved = 0, energy, standing, talking, copy, story, onMeter, onMap, onMenu}: {
   plateRef: MutableRefObject<HTMLElement | null>
   initials: string
   serial: string
   place: string
   objective: string | null
   coins: number
+  /** coins put aside in envelopes: shown beside the wallet, never added to it */
+  saved?: number
   energy: number
   standing: number
   talking: boolean
@@ -36,6 +38,7 @@ export function Hud({plateRef, initials, serial, place, objective, coins, energy
       <span>{copy[`me.${m}`]}</span>
       {bar && <i aria-hidden="true"><b style={{inlineSize: `${Math.max(0, Math.min(100, value))}%`}} /></i>}
       <b><bdi>{Math.round(value)}</bdi></b>
+      {m === 'coins' && saved > 0 && <small data-life="meter-saved"> · <bdi>+{saved}</bdi> {copy['me.saved'] ?? 'aside'}</small>}
     </button>
   )
   return (

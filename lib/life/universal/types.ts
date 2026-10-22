@@ -119,6 +119,16 @@ export type Effect =
   | {e: 'heart'; by: number}
   | {e: 'bond'; who: CastId; by: number}
   | {e: 'coins'; by: number}
+  /**
+   * Wages for one piece of work, paid ONCE (owner's spec §2, §8). `order` names the job; the engine makes it
+   * `<chapter>/<order>`, so the same client's next order in another chapter is a new order and pays again,
+   * while a replay, a double tap or a second route to the same shift does not.
+   */
+  | {e: 'pay'; order: string; by: number}
+  /** money put aside in an envelope (`by` > 0, at most what the wallet holds) or taken back out of it (`by` < 0) */
+  | {e: 'envelope'; id: string; by: number}
+  /** a shared fund (the café till, the coach money, the community tin): never the wallet, never spendable as coins */
+  | {e: 'fund'; id: string; by: number}
   /** tiredness: a day has a limited amount of doing in it */
   | {e: 'energy'; by: number}
   /** how the street and the terrace see you */
@@ -285,6 +295,10 @@ export type LifeEvent =
   | {t: 'heart'; by: number}
   | {t: 'bond'; who: CastId; by: number}
   | {t: 'coins'; by: number}
+  /** wages for an order; a second row for the same order changes nothing */
+  | {t: 'paid'; order: string; by: number}
+  | {t: 'envelope'; id: string; by: number}
+  | {t: 'fund'; id: string; by: number}
   | {t: 'energy'; by: number}
   | {t: 'standing'; by: number}
   /** he has been introduced to somebody: the first conversation with them */
@@ -305,6 +319,12 @@ export type LifeState = {
   flags: Record<string, FlagValue>
   heart: number
   coins: number
+  /** orders already paid (`<chapter>/<order>`): one payment per piece of work */
+  paid: string[]
+  /** money put aside for something (`shirt`, `trip`…): out of the wallet, still his */
+  envelopes: Record<string, number>
+  /** shared money he holds or adds to and does not own (`till`, `coach`…): never part of `coins` */
+  funds: Record<string, number>
   /** rested at 100 when a day begins */
   energy: number
   standing: number
