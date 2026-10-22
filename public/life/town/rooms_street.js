@@ -15,11 +15,11 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
   if(o.plate){g.fillStyle=o.plate;c.rrect(g,2,2,cv.width-4,cv.height-4,18);g.fill()}
   var fpx=parseInt((o.font||'bold 120px').replace(/[^0-9]/g,''))||120,fw=/bold/.test(o.font||'bold')?'bold ':'';g.textAlign='center';g.textBaseline='middle';g.direction=o.dir||'ltr';var cx=cv.width/2,cy=cv.height/2+4;for(var it=0;it<30;it++){g.font=fw+fpx+'px Heebo, Arial, sans-serif';if(g.measureText(txt).width<cv.width*.86&&fpx<cv.height*.8)break;fpx-=4}
   g.shadowColor=col;g.shadowBlur=26;g.fillStyle=col;g.fillText(txt,cx,cy);g.shadowBlur=10;g.fillText(txt,cx,cy);g.shadowBlur=0;g.fillStyle=o.core||'#ffffff';g.globalAlpha=.85;g.fillText(txt,cx,cy);g.globalAlpha=1;
-  var t=c.tex(cv,1,1);var m=new T.MeshBasicMaterial({map:t,transparent:true,depthWrite:false});var p=K.plane(w,h,m,x,y,z,par);
-  if(o.back){K.box(w+.15,h+.15,.1,o.back,x,y,z-.06,par)}
+  var t=c.tex(cv,1,1);var m=new T.MeshBasicMaterial({map:t,transparent:true,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2});var p=K.plane(w,h,m,x,y,z,par);
+  if(o.back){K.box(w+.15,h+.15,.1,o.back,x,y,z-.09,par)}
   if(o.halo!==false)K.glow(x,y,z+.25,col,w*1.5,h*2.2,o.halo||.35,par);return p};
  /* sign panel */
- K.sign=function(txt,bg,fg,w,h,x,y,z,par,o){o=o||{};var spw=o.pw||512,sph=Math.round(spw*h/w),sfp=Math.min(96,Math.round(sph*.52));var sg=c.cvs(8,8).getContext('2d');while(sfp>14){sg.font='bold '+sfp+'px Heebo, Arial';if(sg.measureText(txt).width<spw*.8)break;sfp-=4}var m=new T.MeshStandardMaterial({map:c.sign(txt,bg,fg,spw,sph,o.font||('bold '+sfp+'px')),roughness:.5,emissive:o.em||'#000',emissiveIntensity:o.ei||0});if(o.em){m.emissiveMap=m.map}var b=K.box(w,h,.08,'#1a1a22',x,y,z-.04,par);var p=K.plane(w,h,m,x,y,z+.01,par);return p};
+ K.sign=function(txt,bg,fg,w,h,x,y,z,par,o){o=o||{};var spw=o.pw||512,sph=Math.round(spw*h/w),sfp=Math.min(96,Math.round(sph*.52));var sg=c.cvs(8,8).getContext('2d');while(sfp>14){sg.font='bold '+sfp+'px Heebo, Arial';if(sg.measureText(txt).width<spw*.8)break;sfp-=4}var m=new T.MeshStandardMaterial({map:c.sign(txt,bg,fg,spw,sph,o.font||('bold '+sfp+'px')),roughness:.92,envMapIntensity:.15,emissive:o.em||'#000',emissiveIntensity:o.ei||0});if(o.em){m.emissiveMap=m.map}var b=K.box(w,h,.08,'#1a1a22',x,y,z-.06,par);m.polygonOffset=true;m.polygonOffsetFactor=-2;m.polygonOffsetUnits=-2;var p=K.plane(w,h,m,x,y,z+.02,par);/* the face sits clear of its backing box: a centimetre at fourteen metres z-fought into a black band across the words */p.receiveShadow=false;return p};
  /* hanging text strip / banner on wall (no logos) */
  K.cloth=function(txt,bg,fg,w,h,x,y,z,par,ry,o){o=o||{};var cv=c.cvs(512,Math.round(512*h/w)),g=cv.getContext('2d');g.fillStyle=bg;g.fillRect(0,0,cv.width,cv.height);
   if(o.stripe){g.fillStyle=o.stripe;g.fillRect(0,cv.height*.08,cv.width,cv.height*.1);g.fillRect(0,cv.height*.82,cv.width,cv.height*.1)}
@@ -83,7 +83,7 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
   else if(o.goods==='produce'){var PC=['#d8501c','#7aa83a','#c42a2a','#e8c8a0','#5a8a3a'];for(var pc=0;pc<4;pc++){var px=gx-gw/2+.45+pc*(gw-.9)/3;K.box(.7,.3,.5,'#8a6a4a',px,.45,.75,G);for(var fq=0;fq<5;fq++)mesh(new T.SphereGeometry(.07,7,6),std(PC[pc%PC.length],{roughness:.6}),px-.24+fq*.12,.65,.75+rr(-.12,.12),G)}o.shelves=true}
   /* shelves silhouette */
   if(o.shelves){for(var s=0;s<3;s++){K.box(gw-.2,.06,.3,'#3a2a2a',gx,.7+s*.7,.3,G);for(var q=0;q<7;q++)K.box(.2,.32,.2,pick(o.shelfCols||[__CK.a,'#f4f1ff','#2a6aff','#ff7a5a','#e0e0ee'],rnd()),gx-gw/2+.4+q*(gw-.8)/6,.9+s*.7,.3,G)}}
-  if(o.sign)K.sign(o.sign,o.signBg||'#14141c',o.signFg||'#ff7a8a',Math.min(w-.2,3.2),.6,0,h+.45,.2,G,{em:o.signEm||'#ff2a3a',ei:.25});
+  if(o.sign)K.sign(o.sign,o.signBg||'#14141c',o.signFg||'#ff7a8a',Math.min(w-.2,3.2),.6,0,h+.45,.2,G,{em:'#ffffff',ei:.55});
   if(o.awning){var aw=o.awning,n=8,cv=c.stripes(aw[0],aw[1],n);var am=new T.MeshStandardMaterial({map:cv,roughness:.9,side:T.DoubleSide});var a=new T.Mesh(new T.BoxGeometry(w+.3,.06,1.1),am);a.position.set(0,h-.12,.65);a.rotation.x=.2;a.castShadow=true;G.add(a);K.box(w+.3,.2,.04,aw[0],0,h-.28,1.2,G);}
   if(o.lit!==false)K.glow(0,h/2,.9,o.glowCol||'#ffb48a',w*1.6,h*1.4,.35,G);
   return G};

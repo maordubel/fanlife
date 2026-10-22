@@ -21,7 +21,7 @@ function H(c){
  function readOn(bg,fg){try{var a=lumOf(bg),b=lumOf(fg),r=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);if(r>=2.6)return fg;return a>.35?'#10121c':'#f4f1ff'}catch(e){return fg}}
  h.signBoard=function(txt,bg,fg,W,Hh,x,y,z,ry,o){o=o||{};fg=readOn(bg,fg);var cw=512,ch=Math.max(64,Math.round(cw*Hh/W));
   var t=h.tx(cw,ch,function(g){g.fillStyle=bg;g.fillRect(0,0,cw,ch);if(o.border){g.strokeStyle=fg;g.lineWidth=ch*.05;g.strokeRect(ch*.07,ch*.07,cw-ch*.14,ch-ch*.14)}h.text(g,txt,cw/2,ch/2+ch*.04,ch*(o.k||.6),fg,'900',cw*.88)});
-  var m=new T.MeshStandardMaterial({map:t,emissive:'#ffffff',emissiveMap:t,emissiveIntensity:o.emi==null?.55:o.emi,roughness:.6});
+  var m=new T.MeshStandardMaterial({map:t,emissive:'#ffffff',emissiveMap:t,emissiveIntensity:o.emi==null?.55:o.emi,roughness:.6,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2});/* a board is mounted on something: it always wins the depth test against its own backing */
   var mm=h.plane(W,Hh,x,y,z,m,ry||0,0,o.par);if(o.glow)h.glow(o.glow,x,y,z+.25,W*1.5,Hh*2.6,.5);return mm};
  /* lighting */
  h.env=function(kind){var K={night:{sky:'night',hemi:['#8a96c8',.8,'#2a2434'],dir:['#a4b4e8',.6],fog:['#0e1432',24,80]},
@@ -101,6 +101,7 @@ function H(c){
  h.P=function(o,x,z,ry){o=o||{};if(o.s==null)o.s=.92;o.ry=ry||0;return c.person(o,{x:x/c.U,z:z/c.U,yaw:ry||0})};
  h.fan=function(x,z,ry,mode,o){var HAIR=['#1a1210','#2a1d16','#14100e','#4a3020','#8a8a90'],STY=['buzz','short','bald','spiky','slick','curly'];var i=Math.floor(rnd()*1000);
   var P={skin:SK[i%5],top:h.pick([h.c1,h.c1,h.c2,h.c3,'#2a3a6a','#4a4a56']),bot:h.pick(['#14141c','#1c2030','#2a2e3a','#2a3450']),hair:h.pick(HAIR),style:h.pick(STY),stubble:i%2===0,w:1+rnd()*.2,mode:mode||'idle',s:.88+rnd()*.08,eye:h.pick(['#3a2a1c','#2a1a10','#3a4a6a'])};
+  /* a match crowd is men and women: about three in ten fans a scene did not dress are women */if(!(o&&o.style)&&rnd()<.3){P.style=h.pick(['long','pony','bun','curlyLong','long','short']);P.lash=true;P.stubble=false;P.w=.9+rnd()*.1;P.s=.84+rnd()*.06;if(rnd()<.35)P.earring=true}
   if(rnd()<.55)P.scarf=rnd()<.5?[h.c1,h.c2]:[h.c2,h.c1];if(rnd()<.4)P.jacket=h.pick(['#14141c','#2a2e3a',h.c3,'#243a6a']);if(rnd()<.2)P.beanie=h.pick([h.c1,'#14141c']);else if(rnd()<.12)P.cap='#14141c';if(rnd()<.15)P.tat=true;
   return h.P(Object.assign(P,o||{}),x,z,ry)};
  h.cop=function(x,z,ry,mode,o){return h.P(Object.assign({skin:h.pick(SK),top:'#16203a',jacket:'#1c2a4c',bot:'#10162a',hair:'#1a1210',style:'short',cap:'#16203a',w:1.12,mode:mode||'idle',collar:"#e8eaf6",s:.92,belt:'#8a8a96'},o||{}),x,z,ry)};
@@ -220,7 +221,7 @@ RM.def('gate',{kind:'stadium',build:function(c){var h=H(c),w=c.world,S=c.skin,rn
  /* barriers channelling the queue */
  h.rail(5.15,2.2,4.6,8.5,0,1.1);h.rail(8.65,2.2,9.2,8.5,0,1.1);h.rail(-1,2.6,3.4,2.6,0,1.1);h.rail(10.6,2.6,16,2.6,0,1.1);
  /* scarf stall (left) */
- var st=new T.Group();st.position.set(1.3,0,4.2);w.add(st);
+ var st=new T.Group();st.position.set(-1.9,0,4.2);w.add(st);/* the stall stands left of the hoardings, not in front of the café's own board */
  h.bx(2.6,.9,.9,0,.45,0,h.M('#20242f'),st);h.bx(2.7,.08,1.0,0,.92,0,h.M('#5a5e70'),st);
  [-1.2,1.2].forEach(function(x){h.cyl(.04,.04,2.6,x,1.3,-.4,h.M('#2a2e3a',{metalness:.6}),st,6);h.cyl(.04,.04,2.6,x,1.3,.4,h.M('#2a2e3a',{metalness:.6}),st,6)});
  var aw=h.tx(256,64,function(g){for(var i=0;i<8;i++){g.fillStyle=i%2?S.c2:S.c1;g.fillRect(i*32,0,32,64)}},1,1);var awn=new T.Mesh(new T.PlaneGeometry(2.9,1.3),new T.MeshStandardMaterial({map:aw,side:T.DoubleSide,roughness:.9}));awn.position.set(0,2.6,0);awn.rotation.x=-Math.PI/2+.3;st.add(awn);
