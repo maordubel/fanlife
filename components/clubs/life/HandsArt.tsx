@@ -8,7 +8,7 @@
  * Inline SVG, the club's own tokens (--l-*) and mixes of them only — so a rival's colour, or a yellow on
  * Hapoel's page, cannot appear here: there is nothing to paint with but the club's own inks.
  */
-import type {CSSProperties, ReactNode} from 'react'
+import {useId, type CSSProperties, type ReactNode} from 'react'
 import g from './MiniGame.module.css'
 
 const P = 'var(--l-prime)', I = 'var(--l-ink)', PA = 'var(--l-paper)', G = 'var(--l-ground)', S = 'var(--l-soft)'
@@ -122,7 +122,21 @@ function art(k: string, tag: string): ReactNode {
 export function PlaceArt({action, id, label}: {action: string; id: string; label: string}) {
   const k = `${action}:${id}`
   // the stack: a plank of a shelf the crates sit on, full width
-  if (action === 'stack') return <span style={{position: 'absolute', insetInline: 0, insetBlockEnd: 0, blockSize: 6, background: INK.woodDark, borderBlockStart: `2px solid ${I}`}} />
+  // the stack: a bay of the storeroom shelving — the boards of the wall behind, the plank on its two brackets,
+  // and what the shelf is for chalked on the wall (heavy low, glass high), stretched to the slot it fills
+  if (action === 'stack') {
+    const chalk = id === 'bottom' ? 'HEAVY' : id === 'top' ? 'GLASS · LIGHT' : ''
+    return (
+      <svg viewBox="0 0 300 64" width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <rect x={0} y={0} width={300} height={64} fill={m(I, 9, PA)} />
+        {[0, 1, 2, 3].map(k => <path key={k} d={`M0 ${4 + k * 13}h300`} stroke={m(I, 18, PA)} strokeWidth={1} />)}
+        <rect x={0} y={50} width={300} height={8} fill={INK.wood} stroke={I} strokeWidth={1.6} />
+        <path d="M0 58h300" stroke={INK.woodDark} strokeWidth={2} />
+        {[30, 270].map(x => <path key={x} d={`M${x} 58v6M${x - 6} 58l6 6`} stroke={I} strokeWidth={2} />)}
+        {chalk && <text x={292} y={16} fontSize={9} fontWeight={700} textAnchor="end" fill={m(I, 45, PA)} letterSpacing={1}>{chalk}</text>}
+      </svg>
+    )
+  }
   if (k === 'sort:crate') return svg(100, 40, crate(INK.wood, necks(INK.glass, 6, 4, 18, 11), 76, 12))
   if (k === 'sort:bin') return svg(100, 40, <g><path d="M30 10h40l-4 28H34z" fill={m(S, 70, PA)} stroke={I} strokeWidth={2} /><rect x={26} y={6} width={48} height={6} fill={S} stroke={I} strokeWidth={2} /><path d="M44 18l6 6 6-6M50 24v8" stroke={PA} strokeWidth={2} fill="none" /></g>)
   if (action === 'tray' && id !== 'back') return svg(100, 40, <ellipse cx={50} cy={26} rx={46} ry={11} fill={/table/i.test(label) ? INK.wood : INK.steel} stroke={I} strokeWidth={2} />)
@@ -204,39 +218,95 @@ export function Car({left, mud, wet}: {left: Record<string, number>; mud: boolea
 /* ───────────── the stencil, the seam, the flags ───────────── */
 
 const WORD = 'STAND'
-/** the stencil sheet: paint builds in each letter; when every letter is full the sheet lifts off */
+/** each letter sits over its own tap column (the zones are five equal columns across the drawing) */
+const LX = (i: number) => 32 + i * 64
+/**
+ * The banner on the floor of the lock-up: a length of cloth with its hem and eyelets, the stencil plate
+ * laid on top of it, the letters cut out of the plate. Paint builds through each hole (a thin coat, then
+ * the full colour, a drip or two where the roller was heavy); the roller sits on the next letter; when
+ * every letter is full the plate is peeled back and the word stays on the cloth — with the one crooked
+ * letter the slip left, because the cloth keeps what happened to it.
+ */
 export function Stencil({fill, crooked, lifted}: {fill: number[]; crooked: number | null; lifted: boolean}) {
-  return svg(320, 120, <>
-    <rect x={8} y={14} width={304} height={96} fill={m(P, 14, PA)} stroke={I} strokeWidth={2} />
-    {WORD.split('').map((ch, i) => (
-      <g key={i} transform={i === crooked ? `translate(${4} ${3}) rotate(4 ${40 + i * 60} 64)` : undefined}>
-        <text x={40 + i * 60} y={92} fontSize={78} fontWeight={900} textAnchor="middle" fill={P} opacity={0.12 + 0.88 * (fill[i] ?? 0)} style={{transition: 'opacity .2s'}}>{ch}</text>
-        {(fill[i] ?? 0) > 0 && (fill[i] ?? 0) < 1 && <text x={40 + i * 60} y={92} fontSize={78} fontWeight={900} textAnchor="middle" fill="none" stroke={P} strokeWidth={1.5} strokeDasharray="3 4">{ch}</text>}
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '')
+  const next = fill.findIndex(f => f < 1)
+  const at = (i: number) => (i === crooked ? `translate(3 4) rotate(5 ${LX(i)} 104)` : undefined)
+  return svg(320, 190, <>
+    <defs>
+      {/* a mask is luminance, not a colour anyone sees: white keeps the plate, black cuts the letters out */}
+      <mask id={`cut${id}`}>
+        <rect x={0} y={0} width={320} height={190} fill="white" />
+        {WORD.split('').map((ch, i) => <text key={i} x={LX(i)} y={128} fontSize={68} fontWeight={900} textAnchor="middle" fill="black">{ch}</text>)}
+      </mask>
+    </defs>
+    {/* the floor and the cloth: a hem, eyelets, two soft folds */}
+    <rect x={0} y={0} width={320} height={190} fill={m(I, 12, PA)} />
+    <path d="M10 28 Q160 20 310 28 L314 176 Q160 184 6 176 Z" fill={m(P, 10, PA)} stroke={I} strokeWidth={2} />
+    <path d="M14 38 Q160 31 306 38" stroke={I} strokeWidth={1} strokeDasharray="4 3" fill="none" opacity={0.5} />
+    <path d="M12 166 Q160 173 308 166" stroke={I} strokeWidth={1} strokeDasharray="4 3" fill="none" opacity={0.5} />
+    {[24, 120, 200, 296].map(x => <circle key={x} cx={x} cy={33} r={4} fill={PA} stroke={I} strokeWidth={1.6} />)}
+    <path d="M100 30 Q104 100 98 174 M222 30 Q218 100 224 174" stroke={m(I, 10, PA)} strokeWidth={8} fill="none" opacity={0.6} />
+    {/* the paint that went through the holes: a first coat, then the colour, then a drip */}
+    {WORD.split('').map((ch, i) => {
+      const f = fill[i] ?? 0
+      return (
+        <g key={i} transform={at(i)}>
+          <text x={LX(i)} y={128} fontSize={68} fontWeight={900} textAnchor="middle" fill={P} opacity={f <= 0 ? 0 : 0.25 + 0.75 * f} style={{transition: 'opacity .25s'}}>{ch}</text>
+          {f >= 0.5 && <path d={`M${LX(i) - 8} 129 v${6 + f * 10} a3 3 0 0 0 6 0 v-${4 + f * 8}`} fill={P} opacity={0.85} />}
+          {f >= 1 && i % 2 === 0 && <path d={`M${LX(i) + 10} 129 v${7} a2.5 2.5 0 0 0 5 0 v-5`} fill={P} opacity={0.8} />}
+        </g>
+      )
+    })}
+    {/* the plate: card over the cloth with the word cut out of it, taped at two corners; peeled back at the end */}
+    <g style={{transition: 'transform .7s, opacity .7s', transformOrigin: '300px 40px', transform: lifted ? 'translate(40px, -120px) rotate(16deg)' : 'none', opacity: lifted ? 0 : 1}}>
+      <g transform={crooked !== null && !lifted ? 'rotate(-0.6 160 100)' : undefined}>
+        <rect x={8} y={64} width={304} height={82} fill={INK.card} stroke={I} strokeWidth={2} mask={`url(#cut${id})`} opacity={0.94} />
+        {WORD.split('').map((ch, i) => <text key={i} x={LX(i)} y={128} fontSize={68} fontWeight={900} textAnchor="middle" fill="none" stroke={I} strokeWidth={1.4}>{ch}</text>)}
+        <path d="M4 60l22 10M316 60l-22 10" stroke={m(S, 60, PA)} strokeWidth={9} opacity={0.85} />
       </g>
-    ))}
-    {/* the stencil sheet itself: card over the cloth, the letters cut out */}
-    <g className="hands-sheet" data-lifted={lifted ? 'true' : 'false'} style={{transition: 'transform .5s, opacity .5s', transform: lifted ? 'translateY(-70px)' : 'none', opacity: lifted ? 0 : 0.9}}>
-      <path d="M8 14h304v96H8z" fill="none" stroke={I} strokeWidth={3} strokeDasharray="10 4" />
-      {WORD.split('').map((ch, i) => <text key={i} x={40 + i * 60} y={92} fontSize={78} fontWeight={900} textAnchor="middle" fill="none" stroke={I} strokeWidth={2}>{ch}</text>)}
+      {/* the roller, resting on the next letter to paint */}
+      {next >= 0 && <g transform={`translate(${LX(next)} 74)`} style={{transition: 'transform .3s'}}>
+        <rect x={-20} y={-14} width={40} height={14} rx={6} fill={P} stroke={I} strokeWidth={2} />
+        <path d="M20 -7h8v-20h-30" stroke={I} strokeWidth={2.4} fill="none" />
+        <rect x={-10} y={-34} width={10} height={14} rx={2} fill={INK.wood} stroke={I} strokeWidth={1.6} />
+      </g>}
     </g>
   </>)
 }
 
-/** the torn cloth and its seam: a stitch stays on the cloth once it is sewn */
+/**
+ * The scarf on your knee, in the club's own colours with its fringe: the tear runs across it, and every
+ * stitch you put in stays on the cloth as a cross of thread. The needle waits on the next stitch, the
+ * thread trailing back to the spool.
+ */
 export function Seam({done, next}: {done: boolean[]; next: number}) {
-  const n = done.length, w = 300 / n
-  return svg(320, 110, <>
-    <path d="M10 10h300v90H10z" fill={INK.cloth} stroke={I} strokeWidth={2} />
-    <path d="M10 18h300M10 92h300" stroke={PA} strokeWidth={6} opacity={0.85} />
-    {/* the tear */}
-    <path d={`M10 55${Array.from({length: n * 2}, (_, i) => ` L${10 + (i + 1) * (w / 2)} ${55 + (i % 2 ? -5 : 5)}`).join('')}`} stroke={I} strokeWidth={3} fill="none" />
+  const n = done.length
+  /** each stitch sits over its own tap column (the zones are n equal columns across the drawing) */
+  const sx = (i: number) => (i + 0.5) * (320 / n)
+  return svg(320, 170, <>
+    <rect x={0} y={0} width={320} height={170} fill={m(I, 10, PA)} />
+    {/* the scarf: blocks of colour, a band of lettering, the fringe at both ends */}
+    <rect x={20} y={24} width={280} height={118} fill={P} stroke={I} strokeWidth={2} />
+    {[0, 1, 2, 3].map(k => <rect key={k} x={20 + k * 70 + 35} y={24} width={35} height={118} fill={PA} opacity={0.9} />)}
+    <path d="M20 40h280M20 126h280" stroke={I} strokeWidth={1.4} opacity={0.35} />
+    {Array.from({length: 14}, (_, k) => <path key={k} d={`M${24 + k * 20} 142v14M${30 + k * 20} 142v11`} stroke={P} strokeWidth={2.4} strokeLinecap="round" />)}
+    {Array.from({length: 14}, (_, k) => <path key={`t${k}`} d={`M${24 + k * 20} 24v-12M${30 + k * 20} 24v-9`} stroke={P} strokeWidth={2.4} strokeLinecap="round" />)}
+    {/* the tear: a ragged gap across the cloth, the floor showing through */}
+    <path d={`M20 80${Array.from({length: n * 3}, (_, i) => ` L${20 + (i + 1) * (280 / (n * 3))} ${80 + (i % 2 ? -7 : 6)}`).join('')} L300 92${Array.from({length: n * 3}, (_, i) => ` L${300 - (i + 1) * (280 / (n * 3))} ${92 + (i % 2 ? 5 : -6)}`).join('')} Z`} fill={m(I, 70, PA)} stroke={I} strokeWidth={1.2} />
+    {/* the stitches: sewn ones stay as crosses of thread; the next one is a dashed guide */}
     {done.map((d, i) => {
-      const x = 10 + i * w + w / 2
+      const x = sx(i)
       return d
-        ? <path key={i} d={`M${x - 9} 44l18 22M${x + 9} 44l-18 22`} stroke={PA} strokeWidth={3.2} strokeLinecap="round" />
-        : <path key={i} d={`M${x - 9} 44l18 22M${x + 9} 44l-18 22`} stroke={i === next ? PA : S} strokeWidth={1.4} strokeDasharray="3 3" opacity={i === next ? 1 : 0.5} />
+        ? <g key={i}><path d={`M${x - 10} 70l20 32M${x + 10} 70l-20 32`} stroke={I} strokeWidth={5} strokeLinecap="round" opacity={0.35} /><path d={`M${x - 10} 70l20 32M${x + 10} 70l-20 32`} stroke={PA} strokeWidth={3} strokeLinecap="round" /></g>
+        : <g key={i} opacity={i === next ? 1 : 0.55}><circle cx={x - 10} cy={70} r={2.2} fill={I} /><circle cx={x + 10} cy={102} r={2.2} fill={I} /><path d={`M${x - 10} 70l20 32M${x + 10} 70l-20 32`} stroke={I} strokeWidth={1.2} strokeDasharray="3 3" /></g>
     })}
-    {next < n && <g transform={`translate(${10 + next * w + w / 2} 30)`}><path d="M0 0l10-24" stroke={INK.steel} strokeWidth={2.5} /><path d="M0 0c-10 10-30 0-40 8" stroke={PA} strokeWidth={1.4} fill="none" /></g>}
+    {/* the needle on the next stitch, its thread back to the spool */}
+    {next < n && <g style={{transition: 'transform .25s'}} transform={`translate(${sx(next) + 10} 66)`}>
+      <path d="M0 0l16-44" stroke={INK.steel} strokeWidth={3} strokeLinecap="round" />
+      <ellipse cx={15} cy={-40} rx={1.4} ry={3.4} fill={m(I, 10, PA)} transform="rotate(20 15 -40)" />
+      <path d={`M15 -40c18-10 40 0 ${300 - sx(next) - 30} -14`} stroke={PA} strokeWidth={1.6} fill="none" />
+    </g>}
+    <g transform="translate(300 18)"><rect x={-12} y={-8} width={24} height={16} rx={3} fill={INK.wood} stroke={I} strokeWidth={1.6} /><rect x={-9} y={-5} width={18} height={10} fill={PA} /></g>
   </>)
 }
 

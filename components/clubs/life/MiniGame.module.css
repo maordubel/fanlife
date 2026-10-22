@@ -115,7 +115,9 @@
 .targets[data-action='stack'] .target { grid-template-rows: auto; grid-template-columns: 5.5rem 1fr; align-items: end; min-block-size: 64px; text-align: start; }
 .targets[data-action='stack'] .target b { grid-row: 1; grid-column: 1; align-self: center; }
 .targets[data-action='stack'] .pile { grid-row: 1; grid-column: 2; flex-wrap: nowrap; justify-content: flex-start; min-block-size: 30px; }
-.targets[data-action='stack'] .placeArt { inset-block: auto 4px; inset-inline: 5.5rem 6px; block-size: 18px; }
+.targets[data-action='stack'] .placeArt { inset: 0; opacity: 1; }
+.targets[data-action='stack'] .target { padding-block-end: 10px; }
+.targets[data-action='stack'] .target b, .targets[data-action='stack'] .pile { z-index: 1; }
 /* doors in a row along the street; gates on poles; folders on a desk */
 .targets[data-action='deliver'] .placeArt, .targets[data-action='direct'] .placeArt { inset-block: 6px 28px; inset-inline: 6px; }
 .targets[data-action='deliver'] .pile, .targets[data-action='direct'] .pile { align-content: flex-end; }
