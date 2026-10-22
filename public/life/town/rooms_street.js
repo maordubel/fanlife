@@ -217,9 +217,20 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
  /* tiled paving texture */
  K.paver=function(base,line,rx,ry,n,w2){function warm(h,k){var q=new T.Color(h),l=(q.r*.3+q.g*.59+q.b*.11)*k;return'#'+new T.Color(Math.min(1,l*1.05),l,l*.9).getHexString()}base=warm(base,.92);line=warm(line,.95);var cv=c.cvs(512,512),g=cv.getContext('2d');g.fillStyle=base;g.fillRect(0,0,512,512);var s=512/n;for(var i=0;i<n;i++)for(var j=0;j<n;j++){g.fillStyle='rgba('+(rnd()<.5?'255,255,255':'0,0,0')+','+(rnd()*.06)+')';g.fillRect(i*s,j*(w2?s*w2:s),s,w2?s*w2:s)}
   g.strokeStyle=line;g.lineWidth=3;for(i=0;i<=n;i++){g.beginPath();g.moveTo(i*s,0);g.lineTo(i*s,512);g.stroke();g.beginPath();g.moveTo(0,i*s*(w2||1));g.lineTo(512,i*s*(w2||1));g.stroke()}c.paint(g,512,512,260,function(){return rnd()<.5?'#0e0c0a':'#a29a8e'},.05);if(c.weather)c.weather(g,512,512,{mottle:.26,stain:.5,grime:.7,cracks:4,specks:1400,scale:.8});return c.tex(cv,rx,ry)};
+ /* the designer's graffiti for the club's city (tex/graffiti, rects.js): the club's own pieces and the city's,
+    with any city piece carrying the club's banned rival colour already left out by the cutter. Walls take turns
+    through the list, so no two walls in a room carry the same piece first. */
+ K._gi=0;K.grafs=function(){var G=window.__GRAFFITI,l=G&&__CK.ID&&G.clubs[__CK.ID];return l&&l.length?l:null};
+ K.grafPaint=function(g,pw,ph,A,t){var n=pw*ph>1024*1600?3:ph>pw*.7?2:pw>ph*1.6?2:1,pick=[],i;
+  for(i=0;i<n;i++){var e=A[(K._gi+i*3)%A.length];if(pick.indexOf(e)<0)pick.push(e)}K._gi+=n;
+  var rows=ph>pw?pick.length:1,cols=rows>1?1:pick.length,cw=pw/cols,ch=ph/rows;
+  pick.forEach(function(e,k){var R=window.__GRAFFITI.rects[e[0]][e[1]],im=new Image(),jx=rr(-.03,.03)*cw,jy=rr(-.03,.03)*ch,jr=rr(-.05,.05);/* jitter drawn now: the room's random stream never waits on a download */im.onload=function(){
+   var cx=(k%cols+.5)*cw,cy=(Math.floor(k/cols)+.5)*ch,s=Math.min(cw*.86/R[1],ch*.8/R[2]);g.save();g.translate(cx+jx,cy+jy);g.rotate(jr);g.globalAlpha=.94;
+   g.drawImage(im,-R[1]*s/2,-R[2]*s/2,R[1]*s,R[2]*s);g.restore();t.needsUpdate=true};im.src='/life/town/tex/graffiti/'+R[0]+'.webp'})};
  /* graffiti / wall-art texture, text only */
  K.graf=function(w,h,o){o=o||{};var pw=1024,ph=Math.round(1024*h/w),cv=c.cvs(pw,ph),g=cv.getContext('2d');g.fillStyle=o.bg||'#6e6e7a';g.fillRect(0,0,pw,ph);c.paint(g,pw,ph,900,function(){return pick(['#8a8a96','#5a5a66','#7a7a86'],rnd())},.09);
   for(var i=0;i<5;i++){var px=rnd()*pw*.8,py=rnd()*ph*.7,pw2=rr(90,200),ph2=rr(120,230);g.fillStyle=pick(['#e8e4ee','#d8d0d8','#c8c0cc'],rnd());g.fillRect(px,py,pw2,ph2);g.fillStyle=pick([__CK.a,'#14141c','#2a4a8a'],rnd());g.fillRect(px+8,py+10,pw2-16,ph2*.35);g.fillStyle='rgba(20,20,30,.55)';for(var k=0;k<5;k++)g.fillRect(px+10,py+ph2*.5+k*9,pw2-20-rnd()*30,4)}
+  var A=K.grafs();if(A&&!o.text){var at=c.tex(cv,1,1);K.grafPaint(g,pw,ph,A,at);return at}
   var big=o.words||[__CK.SHORT,'ULTRAS'];g.textAlign='center';g.textBaseline='middle';g.direction='ltr';g.lineJoin='round';
   g.font='900 '+Math.round(pw*.26)+'px Heebo, Arial';g.lineWidth=26;g.strokeStyle='#14141c';g.strokeText(big[0],pw*.5,ph*.36);g.fillStyle=__CK.a;g.fillText(big[0],pw*.5,ph*.36);g.lineWidth=5;g.strokeStyle='#f4f1ff';g.strokeText(big[0],pw*.5-4,ph*.36-4);
   g.font='900 '+Math.round(pw*.13)+'px Heebo, Arial';g.lineWidth=16;g.strokeStyle='#14141c';g.strokeText(big[1],pw*.5,ph*.62);g.fillStyle='#f4f1ff';g.fillText(big[1],pw*.5,ph*.62);
