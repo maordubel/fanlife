@@ -219,6 +219,11 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
       })
     }
     }
+    // the coins went on something else between choosing and doing: the choice opens again, nobody is left at a task
+    for (const o of scene.options) {
+      const paid = paidFor(o)
+      if (paid) actionBranches.push({when: allOf(doing, {is: [pick, o.id]}, {none: [paid]}), lines: [{who: null, t: he ? 'אתה סופר שוב. כבר אין מספיק. צריך לבחור מחדש.' : 'You count again. There is not enough now. Choose again.'}], then: [{e: 'flag', k: pick, v: false}]})
+    }
     talks.push({id: task, branches: [...actionBranches, {lines: sayDone}]})
   })
 
