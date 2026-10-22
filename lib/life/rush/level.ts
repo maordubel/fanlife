@@ -308,7 +308,7 @@ export function buildLevel(spec: MissionSpec): Level {
   const p = placeOf(spec)
   const base = p === 'road' ? road(spec, r) : p === 'yard' ? yard(spec, r) : p === 'crowd' ? crowd(spec, r) : street(spec, r)
   if (!base.areas.length) base.areas = [{...base.bounds}]
-  applyQuest(base, spec, rng(spec.seed ^ 0x9e3779b1))
+  applyQuest(base, spec, rng(spec.seed ^ 2654435761))
   const plan = planRoute(base)
   base.realSeconds = Math.round(plan.seconds * SLACK[spec.difficulty])
   base.length = Math.max(1, Math.round(plan.metres))
