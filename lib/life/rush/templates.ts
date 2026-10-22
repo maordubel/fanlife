@@ -117,6 +117,46 @@ export const MISSION_TEMPLATES: readonly MissionTemplate[] = [
     neutralTitle: 'The choreography', neutralBrief: 'Forty rolls of paper, two of you, and the other lot throwing whatever they hold. Get it to the stand whole.',
     weight: {derby: 2},
   },
+  {
+    id: 'bottle-run', verb: 'run', camera: 'chase', route: 'main', ages: [6, 14], clock: 300,
+    hazards: ['clock', 'traffic', 'crowd'],
+    needs: [],
+    title: 'Six short', brief: 'Six short for the shirt. Every empty bottle on these streets is worth something — and the kiosk by the gate shuts at kickoff.',
+    neutralTitle: 'Six short', neutralBrief: 'Six short for the shirt. Every empty bottle on these streets is worth something — and the kiosk by the gate shuts at kickoff.',
+    weight: {home: 0.3},
+  },
+  {
+    id: 'lead-the-way', verb: 'run', camera: 'chase', route: 'main', ages: [8, 70], clock: 300,
+    hazards: ['clock', 'traffic', 'crowd'],
+    needs: [{of: {club: 'ground'}, grade: 'decor', why: 'The gate you lead them to carries the ground\'s name.'}],
+    title: 'Lead the way', brief: 'Today you are the one who knows the way. Bring them through {city} to the gate — together, and in time.',
+    neutralTitle: 'Lead the way', neutralBrief: 'Today you are the one who knows the way. Bring them through {city} to the gate — together, and in time.',
+    weight: {home: 0.5},
+  },
+  {
+    id: 'errands', verb: 'run', camera: 'chase', route: 'main', ages: [18, 70], clock: 320,
+    hazards: ['clock', 'traffic', 'crowd'],
+    needs: [],
+    title: 'What is missing', brief: 'Paint, cloth, tape, paper — scattered over half of {city}. Gather it and get it to the club room before they open the gates.',
+    neutralTitle: 'What is missing', neutralBrief: 'Paint, cloth, tape, paper — scattered over half of {city}. Gather it and get it to the club room before they open the gates.',
+    weight: {},
+  },
+  {
+    id: 'banner-march', verb: 'carry', camera: 'chase', route: 'main', ages: [16, 70], clock: 360,
+    hazards: ['clock', 'traffic', 'crowd'],
+    needs: [{of: {anchor: ['home']}, grade: 'enriching', day: true, why: 'A march to a home match on a known day sets the kickoff it is racing.'}],
+    title: 'The march · {date}', brief: 'The big banner, at the front. Every corner on the way to {ground} has people waiting to fall in behind it.',
+    neutralTitle: 'The march', neutralBrief: 'The big banner, at the front. Every corner on the way has people waiting to fall in behind it.',
+    weight: {home: 1, derby: 0.5},
+  },
+  {
+    id: 'sticker-swap', verb: 'find', camera: 'eyes', route: 'main', ages: [8, 14], clock: 200,
+    hazards: ['clock', 'crowd'],
+    needs: [],
+    title: 'The missing square', brief: 'One square left empty in the album, and somebody in this playground has it twice. Ask around. Find them before the bell.',
+    neutralTitle: 'The missing square', neutralBrief: 'One square left empty in the album, and somebody in this playground has it twice. Ask around. Find them before the bell.',
+    weight: {},
+  },
 ]
 
 export const templateById = (id: string): MissionTemplate | null => MISSION_TEMPLATES.find(t => t.id === id) ?? null
@@ -136,4 +176,9 @@ export const TEMPLATE_HE: Readonly<Record<string, {title: string; brief: string;
   'new-ground': {title: 'היום הראשון · {date}', brief: 'אף אחד עוד לא יודע איך נכנסים. למצוא את השער ב{ground} לפני השריקה הראשונה שם.', neutralTitle: 'היום הראשון', neutralBrief: 'אף אחד עוד לא יודע איך נכנסים. למצוא את השער החדש לפני השריקה הראשונה שם.'},
   'derby-banner-raid': {title: 'הדגל שלהם · {date}', brief: 'הדגל שלהם תלוי במחסן ליד היציע של {rival}. להחזיר אותו לפני הדרבי — אף אחד לא נפגע.', neutralTitle: 'הדגל שלהם', neutralBrief: 'הדגל של החבר’ה מהצד השני תלוי במחסן ליד היציע שלהם. להחזיר אותו לפני הדרבי — אף אחד לא נפגע.'},
   'tifo-carry': {title: 'הכוראוגרפיה · {date}', brief: 'ארבעים גלילי נייר, שניים אתם, והם זורקים כל מה שיש להם ביד. להביא אותו ליציע שלם.', neutralTitle: 'הכוראוגרפיה', neutralBrief: 'ארבעים גלילי נייר, שניים אתם, והצד השני זורק כל מה שיש לו ביד. להביא אותו ליציע שלם.'},
+  'bottle-run': {title: 'חסרים שישה', brief: 'חסרים שישה לחולצה. כל בקבוק ריק ברחובות האלה שווה משהו — והקיוסק ליד השער נסגר בפתיחה.', neutralTitle: 'חסרים שישה', neutralBrief: 'חסרים שישה לחולצה. כל בקבוק ריק ברחובות האלה שווה משהו — והקיוסק ליד השער נסגר בפתיחה.'},
+  'lead-the-way': {title: 'להוביל', brief: 'היום אתה זה שיודע את הדרך. להביא אותם דרך {city} עד השער — ביחד, ובזמן.', neutralTitle: 'להוביל', neutralBrief: 'היום אתה זה שיודע את הדרך. להביא אותם דרך {city} עד השער — ביחד, ובזמן.'},
+  'errands': {title: 'מה חסר', brief: 'צבע, בד, נייר דבק, נייר — מפוזרים על חצי {city}. לאסוף הכול ולהביא לחדר המועדון לפני שפותחים את השערים.', neutralTitle: 'מה חסר', neutralBrief: 'צבע, בד, נייר דבק, נייר — מפוזרים על חצי {city}. לאסוף הכול ולהביא לחדר המועדון לפני שפותחים את השערים.'},
+  'banner-march': {title: 'הצעדה · {date}', brief: 'הדגל הגדול, בראש. בכל פינה בדרך ל{ground} מחכים אנשים להצטרף מאחוריו.', neutralTitle: 'הצעדה', neutralBrief: 'הדגל הגדול, בראש. בכל פינה בדרך מחכים אנשים להצטרף מאחוריו.'},
+  'sticker-swap': {title: 'המשבצת החסרה', brief: 'משבצת אחת ריקה באלבום, ומישהו בחצר הזאת מחזיק אותה פעמיים. לשאול מסביב. למצוא לפני הצלצול.', neutralTitle: 'המשבצת החסרה', neutralBrief: 'משבצת אחת ריקה באלבום, ומישהו בחצר הזאת מחזיק אותה פעמיים. לשאול מסביב. למצוא לפני הצלצול.'},
 }

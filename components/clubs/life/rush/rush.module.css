@@ -32,6 +32,7 @@
 .cover { position: absolute; inset: 0; display: grid; place-items: center; padding: calc(16px + var(--r-safe-t)) 14px calc(16px + var(--r-safe-b)); background: color-mix(in srgb, var(--r-deep) 70%, transparent); }
 .ticket { position: relative; inline-size: min(100%, 30rem); max-block-size: 100%; overflow: auto; padding: 22px 20px 18px; background: var(--r-paper); color: var(--r-ink); box-shadow: 3px 3px 0 var(--r-ink); border-inline-start: 10px solid var(--r-prime); }
 .ticket::before { content: ''; position: absolute; inset-inline: 0; inset-block-start: -7px; block-size: 14px; pointer-events: none; background: radial-gradient(circle at center, var(--r-deep) 4px, transparent 4.6px) 0 0 / 14px 14px repeat-x; }
+.card { display: block; inline-size: calc(100% + 40px); max-inline-size: none; block-size: auto; margin: -22px -20px 14px; aspect-ratio: 16 / 9; object-fit: cover; border-block-end: 4px solid var(--r-ink); filter: contrast(1.05); }
 .kicker { font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--r-soft); display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; }
 .title { margin: 6px 0 8px; font-family: var(--font-frank), serif; font-size: clamp(1.5rem, 6vw, 2.1rem); font-weight: 700; line-height: 1.1; }
 .brief { margin: 0; font-size: 1.0625rem; line-height: 1.45; }
@@ -87,4 +88,34 @@
 @media (prefers-reduced-motion: reduce) {
   .cut[data-on='true'], .clock[data-low='true'] b { animation: none; }
   .sub span { transition: none; }
+}
+
+/* the quest (RUSH 2): the open step, a compass to it, the little map, the extras, the stars */
+.objective { inset-block-start: calc(72px + var(--r-safe-t)); inset-inline: 0; margin-inline: auto; inline-size: max-content; max-inline-size: 70vw; display: grid; justify-items: center; gap: 2px; text-transform: none; letter-spacing: 0; font-family: var(--font-heebo), system-ui, sans-serif; text-align: center; border-block-end: 3px solid var(--r-prime); }
+.objective b { font-size: 1.0625rem; font-weight: 700; line-height: 1.2; }
+.objective[data-flash='true'] { animation: rushStep .9s ease-out both; }
+@keyframes rushStep { 0% { background: var(--r-prime); color: var(--r-on); } 100% { background: var(--r-glass); color: var(--r-light); } }
+.objStep { font-family: var(--font-courier), monospace; font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--r-light) 72%, transparent); }
+.objDist { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-courier), monospace; font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.arrow { display: inline-block; inline-size: 0; block-size: 0; border-inline: 7px solid transparent; border-block-end: 14px solid var(--r-prime); transition: opacity .2s; }
+.extras { inset-block-start: calc(104px + var(--r-safe-t)); inset-inline-start: 10px; display: flex; gap: 8px; align-items: baseline; }
+.extras b { font-family: var(--font-frank), serif; font-size: 1.1rem; letter-spacing: 0; }
+.map { position: absolute; inset-block-start: calc(62px + var(--r-safe-t)); inset-inline-end: 10px; inline-size: 120px; block-size: 120px; pointer-events: none; }
+.rush .story { inset-block-start: calc(190px + var(--r-safe-t)); }
+.rush .clues { inset-block-start: calc(130px + var(--r-safe-t)); }
+.pad[data-hot='true'] { background: var(--r-prime); color: var(--r-on); border-color: var(--r-prime); animation: rushPulse .6s ease-in-out infinite alternate; }
+.stars { margin: 8px 0 0; font-size: 2rem; letter-spacing: .12em; line-height: 1; }
+.stars span { color: color-mix(in srgb, var(--r-ink) 22%, transparent); }
+.stars span[data-on='true'] { color: var(--r-prime); text-shadow: 2px 2px 0 var(--r-ink); }
+@media (max-width: 640px) {
+  .objective { inset-block-start: calc(62px + var(--r-safe-t)); max-inline-size: 92vw; padding: 4px 10px; }
+  .objective b { font-size: .9375rem; }
+  .rush .meters { inset-block-start: calc(124px + var(--r-safe-t)); }
+  .map { inset-block-start: calc(124px + var(--r-safe-t)); inline-size: 92px; block-size: 92px; }
+  .extras { inset-block-start: calc(196px + var(--r-safe-t)); }
+  .rush .clues { inset-block-start: calc(124px + var(--r-safe-t)); inset-inline: 0; margin-inline: auto; max-inline-size: 44vw; }
+  .rush .story { inset-block-start: calc(222px + var(--r-safe-t)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .objective[data-flash='true'], .pad[data-hot='true'] { animation: none; }
 }

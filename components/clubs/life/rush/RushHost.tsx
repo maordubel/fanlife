@@ -13,10 +13,12 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {buildLevel, cluesShown, type Level} from '@/lib/life/rush/level'
-import {IDLE, resultOf, startSim, stepSim, STEP, type Input, type Sim} from '@/lib/life/rush/sim'
+import {IDLE, resultOf, startSim, stepSim, stepTarget, STEP, type Input, type Sim} from '@/lib/life/rush/sim'
 import {ASSIST_AFTER_FAILS, type MissionResult, type MissionSpec} from '@/lib/life/rush/spec'
 import {rushWord, type RushKey, type RushLocale} from '@/lib/life/rush/words'
 import type {Quality, Stage} from '@/lib/life/rush-render/stage'
+import {drawMap} from '@/lib/life/rush-render/minimap'
+import {cardFor} from '@/lib/life/rush/cards'
 import css from './rush.module.css'
 
 type Phase = 'brief' | 'play' | 'pause' | 'ending' | 'result' | 'error'
@@ -31,12 +33,14 @@ export type RushHostProps = {
   /** LIFE's own sound (the same recordings the day uses); silent when absent */
   cue?: (name: string) => void
   onDone: (result: MissionResult) => void
+  /** the QA stand only: hands the running simulation and its level to a probe (`window.__rush`) */
+  probe?: boolean
 }
 
 const fmt = (s: number) => { const v = Math.max(0, Math.round(s)); return `${Math.floor(v / 60)}:${String(v % 60).padStart(2, '0')}` }
 const ENDING_SECONDS = 2.4
 
-export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, onDone}: RushHostProps) {
+export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, onDone, probe}: RushHostProps) {
   const cueRef = useRef(cue)
   useEffect(() => { cueRef.current = cue }, [cue])
   const sfx = (name: string) => { try { cueRef.current?.(name) } catch { /* a sound that fails is silence */ } }
@@ -54,6 +58,9 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const [clueKeys, setClueKeys] = useState<string[]>([])
   const [sprintOn, setSprintOn] = useState(false)
   const [stickAt, setStickAt] = useState<{x: number; y: number; dx: number; dy: number} | null>(null)
+  const [objIx, setObjIx] = useState(0)
+  const [extras, setExtras] = useState(0)
+  const [objFlash, setObjFlash] = useState(false)
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const stageRef = useRef<Stage | null>(null)
@@ -65,7 +72,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const stick = useRef({id: -1, ox: 0, oy: 0, x: 0, y: 0})
   const endT = useRef(0)
   const introT = useRef(0)
-  const hud = {clock: useRef<HTMLElement | null>(null), clockPlate: useRef<HTMLDivElement | null>(null), legs: useRef<HTMLElement | null>(null), seen: useRef<HTMLElement | null>(null), left: useRef<HTMLElement | null>(null), progress: useRef<HTMLElement | null>(null)}
+  const hud = {clock: useRef<HTMLElement | null>(null), clockPlate: useRef<HTMLDivElement | null>(null), legs: useRef<HTMLElement | null>(null), seen: useRef<HTMLElement | null>(null), left: useRef<HTMLElement | null>(null), progress: useRef<HTMLElement | null>(null), arrow: useRef<HTMLElement | null>(null), dist: useRef<HTMLElement | null>(null), map: useRef<HTMLCanvasElement | null>(null)}
   const primary = useRef<HTMLButtonElement | null>(null)
   const done = useRef(false)
   const sprintOnRef = useRef(false)
@@ -105,19 +112,21 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
 
   const begin = useCallback((withAssist: boolean) => {
     simRef.current = startSim(level, withAssist)
+    if (probe) (window as unknown as {__rush?: unknown}).__rush = {sim: simRef.current, level}
     endT.current = 0
     introT.current = reduced ? 0 : 1.4
     setOutcome(null)
     setClueKeys(level.place === 'crowd' ? cluesShown(level, 0) : [])
+    setObjIx(0); setExtras(0)
     setCam(spec.camera)
     if (!reduced) { setCut(false); requestAnimationFrame(() => setCut(true)) }
     sfx('whistle')
     setPhase('play')
-  }, [level, reduced, spec.camera])
+  }, [level, reduced, spec.camera, probe])
 
   /* the loop: fixed steps for the simulation, one picture per frame */
   useEffect(() => {
-    let raf = 0, last = performance.now(), acc = 0, shownClues = -1, tiredSaid = false, stride = 0
+    let raf = 0, last = performance.now(), acc = 0, shownClues = -1, tiredSaid = false, stride = 0, mapTick = 0
     const pad = (): Input => {
       const k = keys.current
       let x = (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0) + stick.current.x
@@ -162,6 +171,14 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'drop') { say(w('ev.drop'), 1400); sfx('bounce') }
             else if (e.k === 'voice') { say(w(e.key), 2600); if (e.key.endsWith('.3') || e.key.endsWith('.4') || e.key.endsWith('.2')) sfx('murmur') }
             else if (e.k === 'end') { phaseRef.current = 'ending'; setPhase('ending'); endT.current = 0; sfx(e.outcome === 'slip' ? 'murmur' : 'roar') }
+            else if (e.k === 'step') { setObjIx(e.next < 0 ? level.steps.length : e.next); setObjFlash(true); window.setTimeout(() => setObjFlash(false), 900); sfx('keep') }
+            else if (e.k === 'talk') say(w(e.key), 3000)
+            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}`) } else pop(w(`got.${e.kind}`)); sfx('coin') }
+            else if (e.k === 'chant') { say(w('ev.chant'), 1800); pop(`+${e.bonus}s`); sfx('roar') }
+            else if (e.k === 'noise') { say(w('ev.noise'), 1500); sfx('bounce') }
+            else if (e.k === 'missed') { say(w('ev.missed'), 2200); cost(20); sfx('murmur') }
+            else if (e.k === 'notyet') say(w('ev.notyet'), 2000)
+            else if (e.k === 'escort') { say(w(`esc.${e.state}`), 1800); if (e.state !== 'ok') sfx('tick') }
           }
           acc -= STEP; steps++
         }
@@ -170,7 +187,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
         if (ph === 'play' && level.place !== 'road' && sim.speed > 1.5) { stride += real * (1.6 + sim.speed * 0.28); if (stride >= 1) { stride = 0; sfx('step') } }
         if (sim.stamina < 0.25 && !tiredSaid && level.place !== 'road') { tiredSaid = true; say(w('ev.tired'), 1800) }
         if (sim.stamina > 0.9) tiredSaid = false
-        if (level.place === 'crowd') { const n = cluesShown(level, sim.t).length; if (n !== shownClues) { shownClues = n; setClueKeys(cluesShown(level, sim.t)) } }
+        if (level.place === 'crowd') { const n = cluesShown(level, sim.t, sim.asked).length; if (n !== shownClues) { shownClues = n; setClueKeys(cluesShown(level, sim.t, sim.asked)) } }
         if (ph === 'ending') {
           endT.current += real
           if (endT.current > ENDING_SECONDS) {
@@ -188,13 +205,25 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
         const g = level.home && sim.back ? level.home : level.goal
         const dist = Math.hypot(g.x - sim.x, g.z - sim.z)
         if (hud.left.current) hud.left.current.textContent = level.place === 'crowd' ? '' : `${Math.round(dist)} m`
-        if (hud.progress.current) hud.progress.current.style.inlineSize = `${Math.round(Math.min(1, Math.max(0, 1 - dist / level.length)) * 100)}%`
+        // progress through the steps, and through the one that is open
+        const tg = stepTarget(level, sim)
+        const td = tg ? Math.hypot(tg.x - sim.x, tg.z - sim.z) : 0
+        if (hud.progress.current) hud.progress.current.style.inlineSize = `${Math.round(Math.min(1, (Math.min(sim.step, level.steps.length) + Math.max(0, 1 - td / 120)) / Math.max(1, level.steps.length)) * 100)}%`
+        const pointed = !!tg && !(level.place === 'crowd' && level.steps[sim.step]?.kind === 'goal')
+        if (hud.dist.current) hud.dist.current.textContent = pointed ? `${Math.round(td)} m` : ''
+        // the compass: where the next step is, from the way he faces (chase) or looks (eyes)
+        if (hud.arrow.current) {
+          hud.arrow.current.style.opacity = pointed ? '1' : '0'
+          if (tg) { const rel = Math.atan2(tg.x - sim.x, tg.z - sim.z) - sim.heading; hud.arrow.current.style.transform = `rotate(${-rel}rad)` }
+        }
+        mapTick++
+        if (hud.map.current && level.place !== 'road' && mapTick % 2 === 0) { const c = hud.map.current.getContext('2d'); if (c) drawMap(c, level, sim, skin, hud.map.current.clientWidth || 112) }
       }
       stage.render(sim, {cam: camRef.current, ending: ph === 'ending' || ph === 'result', endT: endT.current, outcome: sim.ended, intro: introT.current}, ph === 'pause' ? 0 : real)
     }
     raf = requestAnimationFrame(frame)
     return () => cancelAnimationFrame(raf)
-  }, [level, say, pop, w]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [level, say, pop, w, skin]) // eslint-disable-line react-hooks/exhaustive-deps
 
   /* the keyboard */
   useEffect(() => {
@@ -236,6 +265,12 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const deviceFailed = () => finish({outcome: 'ok', clockLeft: 0, evidence: [], assisted: true, skipped: false})
   const storyAvailable = fails >= ASSIST_AFTER_FAILS
   const verbKey = `verb.${spec.verb}`
+  const card = cardFor(spec.template)
+  const curStep = level.steps[objIx]
+  const objective = phase === 'play' || phase === 'ending' ? (curStep ? w(curStep.key) : w('hud.done')) : ''
+  const extrasOf = level.pickups.filter(p => p.step === null).length
+  const canAct = level.place === 'crowd' || level.noises.length > 0 || level.steps.some(x => x.kind === 'talk')
+  const actHot = curStep?.kind === 'talk'
   const clockKey = level.place === 'crowd' ? 'hud.clock.find' : 'hud.clock'
   const anchor = spec.anchor
 
@@ -254,6 +289,15 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             {level.place === 'yard' && <><span>{w('hud.seen')}</span><div className={css.bar} data-hot="true" aria-hidden="true"><i ref={hud.seen} style={{inlineSize: '0%'}} /></div></>}
           </div>
           {assist && <div className={`${css.plate} ${css.story}`}>{w('hud.story')}</div>}
+          {objective && (
+            <div className={`${css.plate} ${css.objective}`} data-flash={objFlash} aria-live="polite" data-life="rush-objective">
+              <span className={css.objStep}>{w('hud.step', {n: String(Math.min(objIx + 1, level.steps.length)), m: String(level.steps.length)})}</span>
+              <b>{objective}</b>
+              <span className={css.objDist}><i ref={hud.arrow} className={css.arrow} aria-hidden="true" /><bdi ref={hud.dist} /></span>
+            </div>
+          )}
+          {extrasOf > 0 && <div className={`${css.plate} ${css.extras}`}><span>{w('hud.extras')}</span><b><bdi>{extras}/{extrasOf}</bdi></b></div>}
+          {level.place !== 'road' && <canvas ref={hud.map} className={css.map} width={224} height={224} aria-label={w('hud.map')} role="img" />}
           {clueKeys.length > 0 && <div className={`${css.plate} ${css.clues}`} aria-live="polite">{w('hud.clue')}: {clueKeys.map(c => w(`clue.${c}`)).join(' · ')}</div>}
           <button type="button" className={`${css.pauseBtn} min-h-tap`} aria-label={w('hud.pause')} onClick={() => setPhase('pause')}>Ⅱ</button>
           <div className={css.sub} aria-live="polite"><span data-on={!!sub}>{sub ?? ''}</span></div>
@@ -264,7 +308,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
               {stickAt && <div className={css.stick} data-on="true" style={{insetBlockStart: stickAt.y, insetInlineStart: rtl ? window.innerWidth - stickAt.x : stickAt.x}}><i style={{transform: `translate(${stickAt.dx}px, ${stickAt.dy}px)`}} /></div>}
               <div className={css.pads}>
                 {level.place !== 'road' && <button type="button" className={`${css.pad} min-h-tap`} aria-pressed={cam === 'eyes'} onClick={() => setCam(c => c === 'chase' ? 'eyes' : 'chase')}>{w('hud.camera')}</button>}
-                {level.place === 'crowd' && <button type="button" className={`${css.pad} min-h-tap`} onPointerDown={e => { e.preventDefault(); act.current = true }}>{w('hud.act')}</button>}
+                {canAct && <button type="button" className={`${css.pad} min-h-tap`} data-hot={actHot} onPointerDown={e => { e.preventDefault(); act.current = true }}>{w(level.place === 'crowd' && level.steps[objIx]?.kind === 'goal' ? 'hud.act' : 'hud.use')}</button>}
                 <button type="button" className={`${css.pad} min-h-tap`} data-big="true" data-on={sprintOn} onPointerDown={e => { e.preventDefault(); setSprintOn(true) }} onPointerUp={() => setSprintOn(false)} onPointerLeave={() => setSprintOn(false)} onPointerCancel={() => setSprintOn(false)}>{w('hud.sprint')}</button>
               </div>
             </>
@@ -275,6 +319,8 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
       {phase === 'brief' && (
         <div className={css.cover}>
           <section className={css.ticket}>
+            {/* eslint-disable-next-line @next/next/no-img-element -- grey bytes ship as measured: a re-encode may tint them (rule 61) */}
+            {card && <img className={css.card} src={card} alt="" width={1200} height={675} decoding="async" />}
             <p className={css.kicker}><span>{w('brief.kicker')} · {w(verbKey)}</span><span>{w(spec.mandatory ? 'brief.required' : 'brief.optional')}</span></p>
             <h2 id="rush-title" className={css.title}>{spec.title}</h2>
             <p className={css.brief}>{spec.brief}</p>
@@ -311,7 +357,9 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             <p className={css.kicker}><span>{spec.title}</span></p>
             <h2 id="rush-result" className={css.big}>{w(`res.${outcome.outcome}`)}</h2>
             <p className={css.brief}>{w(`res.${outcome.outcome}.sub`)}</p>
+            {outcome.score && <p className={css.stars} aria-label={`${w('res.stars')}: ${outcome.score.stars}/3`} data-life="rush-stars">{[1, 2, 3].map(i => <span key={i} data-on={i <= outcome.score!.stars}>★</span>)}</p>}
             <p className={css.fine}>{outcome.outcome === 'slip' ? w('res.late') : `${fmt(outcome.clockLeft)} ${w('res.left')}`}</p>
+            {outcome.score && outcome.score.extrasOf > 0 && <p className={css.fine}>{w('res.extras', {n: String(outcome.score.extras), m: String(outcome.score.extrasOf)})}{outcome.score.chants ? ` · ${w('res.chants', {n: String(outcome.score.chants)})}` : ''}</p>}
             <div className={css.actions}>
               {outcome.outcome === 'slip' && storyAvailable && !assist && <button type="button" className={`${css.btn} min-h-tap`} onClick={() => { setAssist(true); begin(true) }}>{w('res.story')}</button>}
               {outcome.outcome === 'slip' && <button type="button" className={`${css.btn} min-h-tap`} onClick={() => begin(assist)}>{w('res.again')}</button>}

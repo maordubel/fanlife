@@ -224,7 +224,7 @@ export const ADULTHOOD = [
         task: t('Choose where the evening continues', 'לבחור איפה ממשיכים את הערב'),
         action: [s(null, 'You put the slip in your pocket and make room for the evening.', 'אתה מקפל את הפתק בכיס ומפנה מקום לערב.')],
         options: [
-          o('ground', t('Meet near the ground', 'להיפגש ליד המגרש'), s('friend', 'I will bring food. You bring the story that is not about the referee.', 'אני אביא אוכל. אתה תביא סיפור שלא קשור לשופט.'), [flag('life:work:evening', 'ground')]),
+          o('ground', t('Meet near the ground', 'להיפגש ליד המגרש'), s('friend', 'I will bring food. You bring the story that is not about the referee.', 'אני אביא אוכל. אתה תביא סיפור שלא קשור לשופט.'), [flag('life:work:evening', 'ground')], {mission: {template: 'kickoff-run', beat: 'shift'}}),
           o('home', t('Invite the friend home', 'להזמין את החבר הביתה'), s('friend', 'A chair with a back. We have finally made it.', 'כיסא עם משענת. סוף סוף הצלחנו בחיים.'), [flag('life:work:evening', 'home')]),
           o('quiet', t('Take an evening to yourself', 'לקחת ערב לעצמך'), s(null, 'You walk slowly. Football will still exist tomorrow.', 'אתה הולך לאט. הכדורגל יהיה שם גם מחר.'), [flag('life:work:evening', 'quiet'), energy(10)]),
           o('lend', t('Lend him the twelve for the ticket (12)', 'להלוות לו את השתים עשרה לכרטיס (12)'), s('friend', 'I will pay you back. I will pay you back in a way you will not enjoy: with a song.', 'אני אחזיר לך. אחזיר בדרך שלא תיהנה ממנה: עם שיר.'), [flag('life:work:evening', 'ground'), flag('life:lent:ticket'), coins(-12), bond('friend', 6)], {when: {min: ['coins', 12]}}),
@@ -310,7 +310,7 @@ export const ADULTHOOD = [
         task: t('Mark an actual meeting place', 'לסמן נקודת מפגש ברורה'),
         action: [s(null, 'You draw a route on the back of a receipt. There is room for a name and a meeting time.', 'אתה מצייר מסלול בגב קבלה. יש מקום לשם ולשעת מפגש.')],
         options: [
-          o('guide', t('Walk with the visitor', 'ללוות את האורח ברגל'), s(null, 'The visitor points at your scarf, then at theirs. Names become easier.', 'האורח מצביע על הצעיף שלך ואז על שלו. השמות כבר קלים יותר.'), [flag('life:visitor:route', 'guide'), energy(-10), standing(2)]),
+          o('guide', t('Walk with the visitor', 'ללוות את האורח ברגל'), s(null, 'The visitor points at your scarf, then at theirs. Names become easier.', 'האורח מצביע על הצעיף שלך ואז על שלו. השמות כבר קלים יותר.'), [flag('life:visitor:route', 'guide'), energy(-10), standing(2)], {mission: {template: 'lead-the-way', beat: 'visitor'}}),
           o('introduce', t('Introduce someone who can guide them', 'להכיר להם מישהו שיוכל ללוות'), s('friend', 'I can help. Ask them if they want company first.', 'אני יכול לעזור. קודם תשאל אם הם רוצים חברה.'), [flag('life:visitor:route', 'introduce'), bond('friend', 2)]),
           o('map', t('Give clear directions and a contact number', 'לתת הוראות ברורות ומספר קשר'), s(null, 'You check that the directions make sense from their side of the paper.', 'אתה בודק שההוראות מובנות גם מהצד שלהם של הדף.'), [flag('life:visitor:route', 'map')]),
         ],
@@ -432,7 +432,7 @@ export const ADULTHOOD = [
         action: [s(null, 'The pole is heavier than it looks. Everyone behind you lifts with you and does not say so.', 'המוט כבד ממה שנראה. כל מי שמאחוריך מרים איתך ולא אומר.')],
         reward: {good: [heart(2)]},
         options: [
-          o('front', t('Take the front pole', 'לקחת את המוט הקדמי'), s('seller', 'The front sees the road first. Do not look at your feet.', 'הקדמי רואה את הדרך ראשון. אל תסתכל על הרגליים.'), [flag('life:march:place', 'front'), energy(-20), standing(3), heart(2)]),
+          o('front', t('Take the front pole', 'לקחת את המוט הקדמי'), s('seller', 'The front sees the road first. Do not look at your feet.', 'הקדמי רואה את הדרך ראשון. אל תסתכל על הרגליים.'), [flag('life:march:place', 'front'), energy(-20), standing(3), heart(2)], {mission: {template: 'banner-march'}}),
           o('back', t('Take the back pole, where you can see them all', 'לקחת את המוט האחורי, שרואים משם את כולם'), s('seller', 'Most people want to be seen. You want to see. I like that.', 'רוב האנשים רוצים להיראות. אתה רוצה לראות. אני אוהב את זה.'), [flag('life:march:place', 'back'), energy(-10), bond('friend', 2)]),
           o('drum', t('Walk with the drum instead', 'ללכת עם התוף במקום'), s('seller', 'A drum is a banner you can hear. Do not hurry it.', 'תוף הוא דגל ששומעים. אל תמהר איתו.'), [flag('life:march:place', 'drum'), energy(-5), heart(3)]),
         ],
@@ -449,7 +449,7 @@ export const ADULTHOOD = [
         options: [
           o('fast', t('Run ahead with the young ones', 'לרוץ קדימה עם הצעירים'), s('elder', 'Go. Save me a place near the wall.', 'לך. תשמור לי מקום ליד הקיר.'), [flag('life:march:pace', 'fast'), energy(-25), heart(3), standing(2)], {mission: {template: 'kickoff-run'}}),
           o('slow', t('Stay beside him, step for step', 'להישאר לידו, צעד צעד'), s('elder', 'I will tell you who sat where in nineteen-something. You will pretend to be surprised.', 'אספר לך מי ישב איפה בשנה כלשהי. אתה תעמיד פנים שאתה מופתע.'), [flag('life:march:pace', 'slow'), energy(-5), bond('elder', 6), heart(2)]),
-          o('half', t('Run ahead, then come back for him', 'לרוץ קדימה ואז לחזור אליו'), s('elder', 'Twice the road for the same destination. That is an honest sum.', 'פעמיים הדרך לאותו יעד. זה חשבון ישר.'), [flag('life:march:pace', 'both'), energy(-30), bond('elder', 3), heart(3)], {mission: {template: 'kickoff-run'}}),
+          o('half', t('Run ahead, then come back for him', 'לרוץ קדימה ואז לחזור אליו'), s('elder', 'Twice the road for the same destination. That is an honest sum.', 'פעמיים הדרך לאותו יעד. זה חשבון ישר.'), [flag('life:march:pace', 'both'), energy(-30), bond('elder', 3), heart(3)], {mission: {template: 'kickoff-run', beat: 'march'}}),
         ],
       }),
       sc({

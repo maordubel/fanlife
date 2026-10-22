@@ -15,8 +15,8 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 import {ShaderPass} from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import {OutputPass} from 'three/examples/jsm/postprocessing/OutputPass.js'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
-import {carAt, patrolAt, walkerAt, type Level, type Look} from '@/lib/life/rush/level'
-import type {Sim} from '@/lib/life/rush/sim'
+import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/life/rush/level'
+import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
 import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
@@ -170,7 +170,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       let z = from
       while (z > to) {
         const w = 7 + rnd() * 9, zc = z - w / 2
-        if (gaps.some(c => Math.abs(zc - c) < w / 2 + 6)) { z -= 4; continue }
+        if (gaps.some(c => Math.abs(zc - c) < w / 2 + 8)) { z -= 4; continue }
         const h = 9 + Math.floor(rnd() * 6) * 3.2
         blocks.push({x: side * (walk + 5), z: zc, w, h, c: pick(plaster)})
         for (let fl = 1; fl * 3.2 + 1 < h; fl++) for (let k = 0; k < Math.floor(w / 2.6); k++) wins.push({x: side * (walk - 0.04), y: fl * 3.2 + 0.4, z: z - 1.3 - k * 2.6, lit: rnd() < (night ? 0.42 : 0.1), warm: rnd() < 0.7, side})
@@ -258,17 +258,74 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const gl = new THREE.PointLight('#e8f0ff', night ? 140 : 30, 30, 1.6); gl.position.set(0, 5, wallZ + 8); scene.add(gl)
   }
 
+
+  /** every crossing is a street you may walk down: pavements, shop fronts, windows, a barrier where the walk ends */
+  const addSideStreets = () => {
+    const w = level.walk, far = 120
+    const tileM = keep(new THREE.MeshStandardMaterial({map: tile, roughness: wet ? 0.3 : 0.8}))
+    const blocks: {x: number; z: number; w: number; h: number; c: string}[] = [], wins: {x: number; y: number; z: number; lit: boolean; warm: boolean; face: number}[] = []
+    const fronts: {x: number; z: number; face: number}[] = []
+    for (const cz of level.crossings) {
+      for (const side of [-1, 1]) for (const zz of [cz + 5.6, cz - 5.6]) {
+        const pv = new THREE.Mesh(box, tileM); pv.scale.set(far - w, 0.16, 3.2); pv.position.set(side * (w + (far - w) / 2), 0.08, zz); pv.receiveShadow = true; scene.add(pv)
+      }
+      for (const side of [-1, 1]) for (const row of [1, -1]) {
+        const zz = cz + row * 12, face = row > 0 ? Math.PI : 0, fz = cz + row * 7.02
+        let x = w + 10
+        while (x < far) {
+          const bw = 7 + rnd() * 8, h = 9 + Math.floor(rnd() * 5) * 3.2, cx = side * (x + bw / 2)
+          blocks.push({x: cx, z: zz, w: bw, h, c: pick(plaster)})
+          for (let fl = 1; fl * 3.2 + 1 < h; fl++) for (let k = 0; k < Math.floor(bw / 2.6); k++) wins.push({x: side * (x + 1.3 + k * 2.6), y: fl * 3.2 + 0.4, z: fz, lit: rnd() < (night ? 0.42 : 0.1), warm: rnd() < 0.7, face})
+          if (x < level.side + 4 && rnd() < 0.55) fronts.push({x: cx, z: fz, face})
+          x += bw + 0.3
+        }
+      }
+      // where the walk ends: a barrier across each pavement, lit
+      for (const side of [-1, 1]) for (const zz of [cz + 5.6, cz - 5.6]) {
+        const b = new THREE.Mesh(box, keep(std('#f3efe6', {emissive: C('#f3efe6'), emissiveIntensity: night ? 0.35 : 0.05}))); b.scale.set(0.12, 1.0, 3); b.position.set(side * (level.side + 0.8), 0.6, zz); scene.add(b)
+        const s2 = new THREE.Mesh(box, keep(std('#2b2f3a'))); s2.scale.set(0.14, 0.18, 3.02); s2.position.set(side * (level.side + 0.8), 0.75, zz); scene.add(s2)
+      }
+    }
+    // lamps down every side street, a warm pool under each: the way in is lit
+    const lamps: [number, number][] = []
+    for (const cz of level.crossings) for (const side of [-1, 1]) for (let x = w + 9; x < level.side + 2; x += 13) lamps.push([side * x, cz + (Math.round(x / 13) % 2 ? 6.6 : -6.6)])
+    const poles = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.06, 0.09, 5.4, 8)), keep(std('#22252c')), lamps.length)
+    const heads = new THREE.InstancedMesh(keep(new THREE.SphereGeometry(0.22, 10, 8)), keep(new THREE.MeshBasicMaterial({color: C('#ffd9b8').multiplyScalar(night ? 3.2 : 1), toneMapped: false})), lamps.length)
+    const pools = new THREE.InstancedMesh(keep(new THREE.PlaneGeometry(1, 1)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C('#ff9c5c').multiplyScalar(night ? 0.9 : 0), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})), lamps.length)
+    lamps.forEach(([x, z], i) => {
+      m4.makeTranslation(x, 2.7, z); poles.setMatrixAt(i, m4)
+      m4.makeTranslation(x, 5.45, z); heads.setMatrixAt(i, m4)
+      q.setFromAxisAngle(tmp.set(1, 0, 0), -Math.PI / 2); m4.compose(new THREE.Vector3(x, 0.03, z), q, new THREE.Vector3(8, 8, 1)); pools.setMatrixAt(i, m4)
+    })
+    scene.add(poles, heads); if (night) scene.add(pools)
+    const facade = noiseTex('#ffffff', 22, [1, 1])
+    const b = new THREE.InstancedMesh(box, keep(new THREE.MeshStandardMaterial({map: facade, roughness: 0.95})), blocks.length)
+    blocks.forEach((x, i) => { m4.makeScale(x.w, x.h, 10).setPosition(x.x, x.h / 2, x.z); b.setMatrixAt(i, m4); b.setColorAt(i, C(x.c)) }); b.receiveShadow = true; scene.add(b)
+    const winGeo = keep(new THREE.PlaneGeometry(1.2, 1.6))
+    const warm = new THREE.InstancedMesh(winGeo, keep(new THREE.MeshBasicMaterial({color: C('#ffb27a').multiplyScalar(night ? 1.6 : 0.9), toneMapped: false})), wins.length)
+    const dark = new THREE.InstancedMesh(winGeo, keep(std(night ? '#2a2f3c' : '#5d6b7d', {roughness: 0.2, metalness: 0.5})), wins.length)
+    let nw = 0, nd = 0
+    for (const x of wins) { q.setFromAxisAngle(up, x.face); m4.compose(tmp.set(x.x, x.y, x.z), q, one); if (x.lit && x.warm) warm.setMatrixAt(nw++, m4); else dark.setMatrixAt(nd++, m4) }
+    warm.count = nw; dark.count = nd; scene.add(warm, dark)
+    const words = [skin.strings.kiosk, skin.strings.cafe, skin.strings.snack, skin.strings.shop, skin.strings.news].filter((x): x is string => !!x)
+    for (const f of fronts) {
+      const shop = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.6, 2.2)), keep(new THREE.MeshBasicMaterial({color: C('#ffcf9e').multiplyScalar(night ? 1.1 : 0.7), toneMapped: false}))); shop.rotation.y = f.face; shop.position.set(f.x, 1.3, f.z + (f.face ? -0.02 : 0.02)); scene.add(shop)
+      if (words.length) { const sg = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.8, 0.95)), keep(new THREE.MeshBasicMaterial({map: signTex(pick(words), rnd() < 0.5 ? skin.t : '#101521', rnd() < 0.45 ? skin.p : '#f3efe6'), toneMapped: false}))); sg.rotation.y = f.face; sg.position.set(f.x, 3.4, f.z + (f.face ? -0.04 : 0.04)); scene.add(sg) }
+    }
+  }
+
   /* ───────────── the places ───────────── */
 
   const crossLanes: THREE.Mesh[] = []
   if (level.place === 'street') {
     addRoad(level.half, level.walk)
     for (const z of level.crossings) {
-      const cr = new THREE.Mesh(keep(new THREE.PlaneGeometry(160, 11)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: 0.4, metalness: 0.2}))); cr.rotation.x = -Math.PI / 2; cr.position.set(0, 0.004, z); cr.receiveShadow = true; scene.add(cr); crossLanes.push(cr)
+      const cr = new THREE.Mesh(keep(new THREE.PlaneGeometry(240, 8.2)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: wet ? 0.16 : 0.4, metalness: wet ? 0.5 : 0.2}))); cr.rotation.x = -Math.PI / 2; cr.position.set(0, 0.004, z); cr.receiveShadow = true; scene.add(cr); crossLanes.push(cr)
       const zeb = new THREE.InstancedMesh(box, keep(std('#d9d4c8', {roughness: 0.55})), 9)
       for (let i = 0; i < 9; i++) { m4.makeScale(0.9, 0.01, 3).setPosition(-6 + i * 1.5, 0.01, z + 7); zeb.setMatrixAt(i, m4) } scene.add(zeb)
     }
     addBuildings(level.walk, level.bounds.z1 + 16, level.goal.z + 40, level.crossings)
+    if (level.side) addSideStreets()
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
     addPennants(level.walk, -20, level.goal.z + 30)
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
@@ -306,10 +363,19 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   } else {
     // the crowd: a terrace in rising bands, crush barriers, the floodlights
     const pitchC = bannedColour('#2f5a2c', skin) ? '#2a2d36' : '#2f5a2c'
-    const isPitch = spec.template === 'title-night'
-    const floor = new THREE.Mesh(keep(new THREE.PlaneGeometry(level.half * 2 + 30, 90)), keep(isPitch ? std(pitchC, {roughness: 0.95}) : new THREE.MeshStandardMaterial({map: noiseTex('#6f6c66', 14, [4, 12]), roughness: 0.9})))
+    const isPitch = spec.template === 'title-night', school = level.kids
+    const floor = new THREE.Mesh(keep(new THREE.PlaneGeometry(level.half * 2 + 30, 90)), keep(isPitch ? std(pitchC, {roughness: 0.95}) : new THREE.MeshStandardMaterial({map: noiseTex(school ? '#585a60' : '#6f6c66', school ? 20 : 14, [4, 12], school), roughness: wet ? 0.2 : 0.9})))
     floor.rotation.x = -Math.PI / 2; floor.position.set(0, 0, -16); floor.receiveShadow = true; scene.add(floor)
-    if (!isPitch) {
+    if (school) {
+      // a playground: painted lines, a school along the far side, a wall with a net-less goal
+      const lines = new THREE.InstancedMesh(box, keep(std('#e8e3d8', {roughness: 0.6})), 4)
+      ;[[0, -16, 22, 0.1], [0, -30, 22, 0.1], [-11, -23, 0.1, 14], [11, -23, 0.1, 14]].forEach(([x, z, w2, d2], i) => { m4.makeScale(w2!, 0.01, d2!).setPosition(x!, 0.012, z!); lines.setMatrixAt(i, m4) }); scene.add(lines)
+      const sch = new THREE.Mesh(box, keep(std(pick(plaster)))); sch.scale.set(70, 13, 10); sch.position.set(0, 6.5, level.bounds.z0 - 8); sch.receiveShadow = true; scene.add(sch)
+      const ws = new THREE.InstancedMesh(keep(new THREE.PlaneGeometry(1.6, 1.8)), keep(new THREE.MeshBasicMaterial({color: C('#ffd9b0').multiplyScalar(night ? 1.4 : 0.7), toneMapped: false})), 48)
+      for (let i = 0; i < 48; i++) { m4.makeTranslation(-33 + (i % 16) * 4.4, 3 + Math.floor(i / 16) * 3.6, level.bounds.z0 - 2.98); ws.setMatrixAt(i, m4) } scene.add(ws)
+      for (const sx2 of [-1, 1]) { const wl = new THREE.Mesh(box, keep(std('#8a857c'))); wl.scale.set(0.6, 2.4, 60); wl.position.set(sx2 * (level.half + 1.5), 1.2, -20); scene.add(wl) }
+    }
+    if (!isPitch && !school) {
       const bands = new THREE.InstancedMesh(box, keep(std('#8a857c')), 24)
       for (let i = 0; i < 24; i++) { m4.makeScale(level.half * 2 + 30, 0.04, 0.12).setPosition(0, 0.02, 6 - i * 2.1); bands.setMatrixAt(i, m4) } scene.add(bands)
       const bars = new THREE.InstancedMesh(box, keep(std('#b8b3aa', {metalness: 0.5, roughness: 0.4})), 40)
@@ -323,7 +389,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       for (const sx of [-1.4, 1.4]) { const leg = new THREE.Mesh(box, keep(std('#d0cbc0'))); leg.scale.set(0.08, 1.05, 0.08); leg.position.set(tg.x + sx, 0.52, tg.z - 0.6); scene.add(leg) }
       const beam = new THREE.Mesh(keep(new THREE.ConeGeometry(2.2, 14, 24, 1, true)), keep(new THREE.MeshBasicMaterial({color: C('#e6efff').multiplyScalar(0.35), transparent: true, opacity: 0.35, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide}))); beam.position.set(tg.x, 7, tg.z); scene.add(beam)
     }
-    addGround(level.bounds.z0 - 100, level.bounds.z0 - 12)
+    if (!school) addGround(level.bounds.z0 - 100, level.bounds.z0 - 12)
   }
 
   /* ───────────── cars ───────────── */
@@ -372,6 +438,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // the crowd: one posed template, each part instanced
   const tmpl = figOf({template: true, scarf: true})
   tmpl.updateMatrixWorld(true)
+  const kidK = level.kids ? 0.78 : 1
   const tParts = (tmpl.userData as FigureData).meshes.filter(m => m.userData.role !== 'glint' && m.userData.role !== 'iris' && m.userData.role !== 'eyeW' && m.userData.role !== 'brow')
   const recolour = new Set(['skin', 'hair', 'pants', 'top', 'beard'])
   type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number}
@@ -395,6 +462,88 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
   const zero = new THREE.Matrix4().makeScale(0, 0, 0)
+
+
+  /* ───────────── the quest: who waits for you, what lies on the ground, where to go next ───────────── */
+  const rlook = (o: Partial<Look> = {}): Look => ({tone: Math.floor(rnd() * 6), hair: Math.floor(rnd() * 6), top: Math.floor(rnd() * 6), pants: Math.floor(rnd() * 5), kit: rnd() < 0.8, cap: rnd() < 0.2, scarf: true, beard: rnd() < 0.2, size: 0.95 + rnd() * 0.1, ...o})
+  const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => figOf({kit: L.kit, scarf: L.scarf, cap: L.cap, mustache: L.beard, hair: HAIR[L.hair % HAIR.length], skinTone: SKIN_TONES[L.tone % SKIN_TONES.length], top: tops[L.top % tops.length], pants: PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK, ...o})
+  const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
+  type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
+  const npcs: Npc[] = []
+  level.steps.forEach((st, i) => {
+    if (!st.npc) return
+    const px = st.kind === 'stop' ? level.half + 4.4 : st.x, pz = st.z
+    const childOf = st.joins && level.escort?.who === 'child'
+    const fig = lookFig(st.npc, {child: childOf, scale: childOf ? 0.74 : undefined, cap: st.npc.cap || level.escort?.who === 'elder' && st.joins}); fig.position.set(px, 0, pz); scene.add(fig)
+    const extra: THREE.Group[] = []
+    for (let k = 1; k < st.group; k++) { const a = (k / st.group) * Math.PI * 2; const f = lookFig(rlook({kit: true})); f.position.set(px + Math.cos(a) * 1.3, 0, pz + Math.sin(a) * 1.3); scene.add(f); extra.push(f) }
+    npcs.push({fig, step: i, extra, x: px, z: pz})
+  })
+  // the next place to go: a column of light and a ring on the ground, in the club's own colour
+  const beamTex = keep(canvasTex(16, 128, (g, w, h) => { const gr = g.createLinearGradient(0, h, 0, 0); gr.addColorStop(0, 'rgba(255,255,255,.9)'); gr.addColorStop(0.35, 'rgba(255,255,255,.35)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, w, h) }))
+  const beacon = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.85, 0.85, 26, 20, 1, true)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: tint.clone().multiplyScalar(1.4), transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, toneMapped: false, fog: false})))
+  beacon.position.y = 13; scene.add(beacon)
+  const halo = new THREE.Mesh(keep(new THREE.RingGeometry(1.15, 1.45, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: tint.clone().multiplyScalar(1.8), transparent: true, opacity: 0.8, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false})))
+  scene.add(halo)
+  // a speech mark over whoever you have to talk to
+  const tag = new THREE.Mesh(keep(new THREE.OctahedronGeometry(0.17, 0)), keep(new THREE.MeshBasicMaterial({color: tint.clone().multiplyScalar(2), toneMapped: false})))
+  scene.add(tag)
+
+  // things on the ground: each its own small object, turning, with a glow — the ones a step needs carry a thin light
+  const stickerTex = keep(canvasTex(128, 128, (g, w) => { g.fillStyle = skin.p; g.beginPath(); g.arc(w / 2, w / 2, w * 0.47, 0, Math.PI * 2); g.fill(); g.fillStyle = skin.s; g.beginPath(); g.arc(w / 2, w / 2, w * 0.3, 0, Math.PI * 2); g.fill(); g.fillStyle = skin.p; g.font = `900 ${w * 0.3}px system-ui,sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(skin.initials ?? '', w / 2, w / 2 + 2) }))
+  const scarfTex = keep(canvasTex(128, 32, (g, w, h) => { for (let i = 0; i < 8; i++) { g.fillStyle = i % 2 ? skin.s : skin.p; g.fillRect(i * w / 8, 0, w / 8, h) } }))
+  const objOf = (k: PickupKind): THREE.Object3D => {
+    const g = new THREE.Group()
+    const add = (geo: THREE.BufferGeometry, mat: THREE.Material, y = 0) => { const m = new THREE.Mesh(keep(geo), keep(mat)); m.position.y = y; m.castShadow = !lite; g.add(m); return m }
+    if (k === 'sticker') add(new THREE.PlaneGeometry(0.42, 0.42), new THREE.MeshStandardMaterial({map: stickerTex, side: THREE.DoubleSide, roughness: 0.5, emissive: C('#ffffff'), emissiveMap: stickerTex, emissiveIntensity: 0.35}))
+    else if (k === 'coin') add(new THREE.CylinderGeometry(0.15, 0.15, 0.035, 20).rotateX(Math.PI / 2), std('#d8dce4', {metalness: 0.9, roughness: 0.25}))
+    else if (k === 'bottle') { add(new THREE.CylinderGeometry(0.075, 0.075, 0.24, 14), new THREE.MeshStandardMaterial({color: '#bcd6e6', roughness: 0.08, metalness: 0.1, transparent: true, opacity: 0.75})); add(new THREE.CylinderGeometry(0.028, 0.06, 0.12, 12), new THREE.MeshStandardMaterial({color: '#bcd6e6', roughness: 0.08, transparent: true, opacity: 0.75}), 0.18) }
+    else if (k === 'roll') add(new THREE.CylinderGeometry(0.15, 0.15, 0.95, 16).rotateZ(Math.PI / 2), std('#efe9de', {roughness: 0.8}))
+    else if (k === 'bag') { add(new THREE.BoxGeometry(0.52, 0.34, 0.26), std('#2b3550', {roughness: 0.7})); add(new THREE.TorusGeometry(0.14, 0.022, 6, 16, Math.PI), std('#1c2233'), 0.17) }
+    else if (k === 'scarf') add(new THREE.BoxGeometry(0.95, 0.05, 0.2), new THREE.MeshStandardMaterial({map: scarfTex, roughness: 0.9}))
+    else if (k === 'paint') { add(new THREE.CylinderGeometry(0.15, 0.15, 0.22, 18), std('#c9cdd4', {metalness: 0.6, roughness: 0.35})); add(new THREE.CylinderGeometry(0.152, 0.152, 0.07, 18), std(skin.p), 0.02) }
+    else if (k === 'cloth') add(new THREE.BoxGeometry(0.55, 0.14, 0.4), std(skin.s, {roughness: 0.95}))
+    else add(new THREE.TorusGeometry(0.1, 0.045, 10, 20).rotateX(Math.PI / 2), std('#d9d4c8', {roughness: 0.6}))
+    return g
+  }
+  const pickups = level.pickups.map(p => {
+    const g = new THREE.Group(); g.position.set(p.x, 0, p.z); scene.add(g)
+    const item = objOf(p.kind); item.position.y = 0.55; g.add(item)
+    const glow = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: (p.step === null ? C('#ffffff') : tint.clone()).multiplyScalar(p.step === null ? 0.6 : 1.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending}))); glow.scale.set(1.3, 1.3, 1); glow.position.y = 0.55; g.add(glow)
+    if (p.step !== null) { const b2 = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.12, 0.12, 9, 8, 1, true)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: tint.clone(), transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false}))); b2.position.y = 4.5; g.add(b2) }
+    return {g, item}
+  })
+  // a knot of people singing: a ring on the ground that fills while you stand in it
+  const ringMeshes = level.rings.map(r => {
+    const m = new THREE.Mesh(keep(new THREE.RingGeometry(r.r - 0.12, r.r, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: C(skin.s).multiplyScalar(1.4), transparent: true, opacity: 0.7, depthWrite: false, toneMapped: false})))
+    m.position.set(r.x, 0.03, r.z); scene.add(m)
+    const fillM = new THREE.Mesh(keep(new THREE.CircleGeometry(r.r - 0.14, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.2), transparent: true, opacity: 0.4, depthWrite: false, toneMapped: false})))
+    fillM.position.set(r.x, 0.025, r.z); fillM.scale.setScalar(0.001); scene.add(fillM)
+    return {m, fillM}
+  })
+  // bins and shutters to bang
+  const bins = level.noises.map(n => {
+    const g = new THREE.Group(); g.position.set(n.x, 0, n.z); scene.add(g)
+    const body = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.34, 0.3, 0.95, 16)), keep(std('#4a4f59', {metalness: 0.55, roughness: 0.45}))); body.position.y = 0.48; body.castShadow = !lite; g.add(body)
+    const lid = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.37, 0.37, 0.06, 16)), keep(std('#3a3e47', {metalness: 0.6, roughness: 0.4}))); lid.position.y = 0.98; g.add(lid)
+    const wave = new THREE.Mesh(keep(new THREE.RingGeometry(0.6, 0.75, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: '#f3efe6', transparent: true, opacity: 0, depthWrite: false}))); wave.position.y = 0.05; g.add(wave)
+    return {g, lid, wave}
+  })
+  // a lay-by on the road where a mate waits
+  for (const st of level.steps) if (st.kind === 'stop') {
+    const lb = new THREE.Mesh(keep(new THREE.PlaneGeometry(4.6, st.r * 2 + 20)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: 0.5, metalness: 0.15}))); lb.rotation.x = -Math.PI / 2; lb.position.set(level.half + 2.2, 0.006, st.z); lb.receiveShadow = true; scene.add(lb)
+    const edge = new THREE.Mesh(box, keep(std('#cfc9bc'))); edge.scale.set(0.14, 0.012, st.r * 2 + 20); edge.position.set(level.half - 0.1, 0.01, st.z); scene.add(edge)
+    const pole = new THREE.Mesh(box, keep(std('#2b2f3a'))); pole.scale.set(0.08, 2.6, 0.08); pole.position.set(level.half + 4.9, 1.3, st.z - 2); scene.add(pole)
+    const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(0.9, 0.6)), keep(new THREE.MeshBasicMaterial({map: signTex('P', '#2c4d8a', '#f3efe6', 128, 96), toneMapped: false}))); sign.position.set(level.half + 4.9, 2.5, st.z - 1.94); scene.add(sign)
+  }
+  // who walks with you, and the ones who fall in behind the banner
+  const escFig = level.escort ? lookFig(level.escort.look, {child: level.escort.who === 'child', scale: level.escort.who === 'child' ? 0.74 : undefined}) : null
+  if (escFig) { escFig.visible = false; scene.add(escFig) }
+  const marchers: THREE.Group[] = []
+  const groupSteps = level.steps.filter(x => x.group > 0)
+  for (let k = 0; k < Math.min(14, groupSteps.reduce((a, b) => a + b.group, 0)); k++) { const f = lookFig(rlook({kit: true})); f.visible = false; scene.add(f); marchers.push(f) }
+  const trail: {x: number; z: number; h: number}[] = []
+  let trailT = 0
 
   // stewards and lookouts: their own figures, in a hi-vis vest (a lookout in black)
   const patrolFigs = level.patrols.map(p => { const f = figOf({kit: false, vest: p.role === 'steward', top: '#22262f', longSleeves: true, pants: '#22262f', hair: HAIR[2], hairStyle: 'short', skinTone: SKIN_TONES[3]}); scene.add(f); return f })
@@ -477,7 +626,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const standing = p.mode !== 'walk'
       pose(tmpl, {speed: standing ? 0 : level.walkers[p.idx]!.v, scarfUp: p.mode === 'stand' ? Math.sin(t * 2 + i) > -0.2 && level.place !== 'yard' : p.react > 0.6 && p.mode !== 'rival', joy: p.mode === 'rival' ? 0 : standing || p.react > 0 ? 1 : 0.2, talk: p.react > 0, effort: p.mode === 'rival' ? 0.7 : 0}, t, 0)
       tmpl.position.set(p.x, p.mode === 'stand' ? Math.abs(Math.sin(t * 3 + i)) * 0.05 : 0, p.z); tmpl.rotation.y = p.turn
-      const sc = p.look.size; tmpl.scale.set(sc, sc, sc)
+      const sc = p.look.size * kidK; tmpl.scale.set(sc, sc, sc)
       tmpl.updateMatrixWorld(true)
       tParts.forEach((m, k) => {
         const r = m.userData.role as string, L = p.look
@@ -494,9 +643,80 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       for (const m of Object.values(cars)) { m.instanceMatrix.needsUpdate = true; if (m.instanceColor) m.instanceColor.needsUpdate = true }
     }
 
+
+    // the quest: whoever waits, the way to the next step, what is still on the ground
+    npcs.forEach(n => {
+      const st = level.steps[n.step]!
+      const gone = (st.leaves || st.joins) && sim.step > n.step
+      n.fig.visible = !gone
+      const grouped = st.group > 0 && sim.step > n.step
+      n.extra.forEach(f => { f.visible = !grouped })
+      if (grouped) n.fig.visible = false
+      if (!n.fig.visible) return
+      const live = sim.step === n.step
+      n.fig.rotation.y = Math.atan2(sim.x - n.x, sim.z - n.z)
+      pose(n.fig, {speed: 0, wave: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 14, joy: 0.6, talk: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 3, scarfUp: st.group > 0 && Math.sin(t * 2.4 + n.step) > 0}, t, dt)
+      n.extra.forEach((f, k) => { if (f.visible) { f.rotation.y = Math.atan2(sim.x - f.position.x, sim.z - f.position.z); pose(f, {speed: 0, scarfUp: Math.sin(t * 2.4 + k) > -0.3, joy: 1}, t, dt) } })
+    })
+    const target = view.ending ? null : stepTarget(level, sim)
+    const curStep = level.steps[sim.step]
+    beacon.visible = halo.visible = !!target && !(level.place === 'crowd' && curStep?.kind === 'goal')
+    if (target) {
+      const bx = curStep?.kind === 'stop' ? curStep.x + 0.4 : target.x
+      beacon.position.set(bx, 13, target.z); halo.position.set(bx, 0.04, target.z)
+      const pulse = 1 + Math.sin(t * 3.2) * 0.12; halo.scale.set(pulse * (curStep?.kind === 'stop' ? 2.2 : 1), 1, pulse * (curStep?.kind === 'stop' ? 6 : 1))
+      ;(beacon.material as THREE.MeshBasicMaterial).opacity = 0.32 + Math.sin(t * 2) * 0.08
+    }
+    const talkNpc = curStep?.kind === 'talk' ? npcs.find(n => n.step === sim.step) : null
+    tag.visible = !!talkNpc && !view.ending
+    if (talkNpc) { tag.position.set(talkNpc.x, (talkNpc.fig.scale.y || 1) * 2.15 + Math.sin(t * 3) * 0.08, talkNpc.z); tag.rotation.y = t * 2 }
+    pickups.forEach((p, i) => {
+      p.g.visible = !sim.got[i]
+      if (!p.g.visible) return
+      p.item.position.y = 0.55 + Math.sin(t * 2.2 + i) * 0.09; p.item.rotation.y = t * 1.6 + i
+    })
+    ringMeshes.forEach((r, i) => {
+      const done = sim.ringDone[i]
+      r.m.visible = !done
+      const k = Math.min(1, (sim.ringT[i] ?? 0) / 1.6)
+      r.fillM.visible = !done && k > 0; r.fillM.scale.setScalar(Math.max(0.001, k))
+      ;(r.m.material as THREE.MeshBasicMaterial).opacity = 0.45 + Math.sin(t * 4 + i) * 0.25
+    })
+    bins.forEach((b, i) => {
+      const n = sim.noise, hit = n && Math.hypot(n.x - level.noises[i]!.x, n.z - level.noises[i]!.z) < 0.1 ? sim.t - n.t : 99
+      const k = hit < 1.2 ? hit / 1.2 : 1
+      b.lid.position.y = 0.98 + (hit < 0.4 ? Math.sin(hit * 40) * 0.05 : 0); b.lid.rotation.z = hit < 0.6 ? Math.sin(hit * 30) * 0.2 : 0
+      b.wave.scale.setScalar(1 + k * 9); ;(b.wave.material as THREE.MeshBasicMaterial).opacity = hit < 1.2 ? (1 - k) * 0.6 : 0
+    })
+    if (escFig) {
+      const e = sim.esc
+      escFig.visible = !!e && !(view.cam === 'eyes' && !view.ending && e && Math.hypot(e.x - sim.x, e.z - sim.z) < 0.6)
+      if (e) {
+        escFig.position.set(e.x, 0, e.z)
+        if (e.speed > 0.2) escFig.rotation.y = e.heading
+        else escFig.rotation.y = Math.atan2(sim.x - e.x, sim.z - e.z)
+        pose(escFig, view.ending ? {speed: 0, celebrate: view.outcome !== 'slip', joy: 1} : {speed: e.speed, wave: e.lost, joy: e.lost ? 0 : 0.6, talk: e.lost, panting: level.escort?.who === 'elder' && e.speed > 2.5}, t, dt)
+      }
+    }
+    if (marchers.length) {
+      trailT += dt
+      if (trailT > 0.2) { trailT = 0; trail.unshift({x: sim.x, z: sim.z, h: sim.heading}); trail.length = Math.min(trail.length, 80) }
+      const joined = level.steps.reduce((a, st2, i) => a + (st2.group > 0 && sim.step > i ? st2.group : 0), 0)
+      marchers.forEach((f, k) => {
+        f.visible = k < joined && trail.length > 3
+        if (!f.visible) return
+        const row = Math.floor(k / 3), col = (k % 3) - 1
+        const p = trail[Math.min(trail.length - 1, 4 + row * 4)]!
+        const lx = Math.cos(p.h) * col * 1.1, lz = -Math.sin(p.h) * col * 1.1
+        f.position.x += (p.x + lx - f.position.x) * Math.min(1, dt * 4); f.position.z += (p.z + lz - f.position.z) * Math.min(1, dt * 4)
+        f.rotation.y = p.h
+        pose(f, {speed: Math.min(sim.speed, 6), scarfUp: Math.sin(t * 2 + k) > 0.2, joy: 1}, t, dt)
+      })
+    }
+
     // stewards and the ground they can see
     level.patrols.forEach((p, i) => {
-      const at = patrolAt(p, sim.t), f = patrolFigs[i]!
+      const at = patrolLook(level, sim, i), f = patrolFigs[i]!
       f.position.set(at.x, 0, at.z); f.rotation.y = at.face
       pose(f, {speed: p.v, talk: sim.seenBy === i && sim.seen > 0.4}, t, dt)
       const cone = cones[i]!; cone.position.set(at.x, 0.02, at.z)

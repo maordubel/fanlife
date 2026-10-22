@@ -145,7 +145,7 @@ export type Effect =
 
 export type MiniGame = 'tune' | 'clap' | 'carry' | 'count' | 'kick' | 'chant'
 /** a RUSH mission a script asks for: the template (`lib/life/rush/templates.ts`) and whether the script lets it be skipped */
-export type MissionCall = {template: string; mandatory: boolean}
+export type MissionCall = {template: string; mandatory: boolean; beat?: string}
 /** How a small game went. 'ok' is good enough: it applies the same effects as 'good'. */
 export type PlayResult = 'good' | 'ok' | 'slip'
 export type SoundCue = 'roar' | 'murmur' | 'whistle' | 'radio' | 'door' | 'coin' | 'bus'

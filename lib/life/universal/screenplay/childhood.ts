@@ -113,7 +113,7 @@ export const CHILDHOOD = [
         task: t('Close the gap the way you chose', 'לסגור את הפער בדרך שבחרת'),
         action: [s(null, 'You finish the errand, accept the help, or carry the old shirt home. Nobody calls it a smaller shirt.', 'אתה מסיים את הסידור, מקבל את העזרה או נושא את הישנה הביתה. אף אחד לא קורא לה חולצה קטנה יותר.')],
         options: [
-          o('earned', t('Earn the difference with the crates', 'להרוויח את ההפרש עם הארגזים'), s('kiosk', 'Crates first. Shirt second. Keep the order.', 'קודם ארגזים. אחר כך חולצה. תשמור על הסדר.'), [flag('life:shirt:origin', 'earned'), standing(2), energy(-10)]),
+          o('earned', t('Earn the difference with the crates', 'להרוויח את ההפרש עם הארגזים'), s('kiosk', 'Crates first. Shirt second. Keep the order.', 'קודם ארגזים. אחר כך חולצה. תשמור על הסדר.'), [flag('life:shirt:origin', 'earned'), standing(2), energy(-10)], {mission: {template: 'bottle-run'}}),
           o('gift', t('Accept Mum’s quiet help', 'לקבל את העזרה השקטה של אמא'), s('mum', 'Count again. Slowly this time.', 'תספור שוב. הפעם לאט.'), [flag('life:shirt:origin', 'gift'), bond('mum', 3)]),
           o('handed', t('Take Dad’s old shirt', 'לקחת את הישנה של אבא'), s('dad', 'The sleeves know the way back. Roll them.', 'השרוולים מכירים את הדרך חזרה. תקפל אותם.'), [flag('life:shirt:origin', 'handed'), bond('dad', 4), heart(2)]),
         ],
@@ -179,7 +179,7 @@ export const CHILDHOOD = [
         action: [s(null, 'You take a step. Then another. The tunnel opens onto {ground}.', 'אתה עושה צעד. ועוד אחד. המנהרה נפתחת אל {ground}.')],
         options: [
           o('hand', t('Take his hand', 'לקחת את היד שלו'), s('dad', 'Like that.', 'ככה.'), [flag('life:tunnel:way', 'hand'), bond('dad', 4), heart(3)]),
-          o('lead', t('Walk a little ahead', 'ללכת קצת לפניו'), s('dad', 'I am behind you.', 'אני מאחוריך.'), [flag('life:tunnel:way', 'lead'), standing(2), heart(3)]),
+          o('lead', t('Walk a little ahead', 'ללכת קצת לפניו'), s('dad', 'I am behind you.', 'אני מאחוריך.'), [flag('life:tunnel:way', 'lead'), standing(2), heart(3)], {mission: {template: 'lead-the-way', beat: 'dad'}}),
           o('pause', t('Ask for a moment to look', 'לבקש רגע להסתכל'), s('dad', 'Good idea. I forget to do that.', 'רעיון טוב. אני שוכח לעשות את זה.'), [flag('life:tunnel:way', 'pause'), heart(4)]),
         ],
       }),
@@ -238,7 +238,7 @@ export const CHILDHOOD = [
         task: t('Make the swap, or help with the ball', 'לבצע החלפה או לעזור עם הכדור'),
         action: [s(null, 'You finish what you agreed. Nobody has to pretend it was luck.', 'אתה מבצע את מה שסיכמתם. אף אחד לא צריך להעמיד פנים שזה מזל.')],
         options: [
-          o('trade', t('Make the fair swap', 'לבצע החלפה הוגנת'), s('rival', 'Done. Keep the corners straight.', 'סגור. תשמור על הפינות ישרות.'), [flag('life:album:result', 'traded'), flag('life:rival:link', 'open'), bond('rival', 3)]),
+          o('trade', t('Make the fair swap', 'לבצע החלפה הוגנת'), s('rival', 'Done. Keep the corners straight.', 'סגור. תשמור על הפינות ישרות.'), [flag('life:album:result', 'traded'), flag('life:rival:link', 'open'), bond('rival', 3)], {mission: {template: 'sticker-swap'}}),
           o('earn', t('Fetch her ball back first', 'להחזיר לה את הכדור קודם'), s('rival', 'Five minutes. Not a debt for life.', 'חמש דקות. לא חוב לכל החיים.'), [flag('life:album:result', 'earned'), flag('life:rival:link', 'open'), energy(-10), standing(1)]),
           o('gap', t('Keep your card and leave the square empty', 'לשמור את שלך ולהשאיר משבצת ריקה'), s('rival', 'Tell me if you change your mind.', 'תגיד לי אם תשנה את דעתך.'), [flag('life:album:result', 'gap'), flag('life:rival:link', 'neutral'), heart(2)]),
         ],
@@ -433,7 +433,7 @@ export const CHILDHOOD = [
         action: [s(null, 'You count the fare and lift the bags. The coach smells of a day that has already started.', 'אתה סופר את דמי הנסיעה ומרים תיקים. האוטובוס מריח כמו יום שכבר התחיל.')],
         reward: {good: [heart(2)]},
         options: [
-          o('help', t('Help your nervous friend first', 'לעזור קודם לחבר הלחוץ'), s('friend', 'Stay till I am on. Then laugh.', 'תישאר עד שאעלה. אחר כך תצחק.'), [flag('life:away:help', 'helped'), bond('friend', 6), energy(-10)]),
+          o('help', t('Help your nervous friend first', 'לעזור קודם לחבר הלחוץ'), s('friend', 'Stay till I am on. Then laugh.', 'תישאר עד שאעלה. אחר כך תצחק.'), [flag('life:away:help', 'helped'), bond('friend', 6), energy(-10)], {mission: {template: 'kickoff-run', beat: 'coach'}}),
           o('seat', t('Take the seats before they go', 'לתפוס מושבים לפני שייעלמו'), s('friend', 'Save one that is not luggage-sized.', 'תשמור אחד שהוא לא בגודל מזוודה.'), [flag('life:away:help', 'seats'), standing(1)]),
           o('share', t('Ask somebody older to join you', 'לבקש ממישהו מבוגר להצטרף'), s('elder', 'I was waiting for somebody to ask.', 'חיכיתי שמישהו יבקש.'), [flag('life:away:help', 'elder'), heart(3), standing(1)]),
         ],

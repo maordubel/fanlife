@@ -8,5 +8,5 @@ import type { MissionResult } from '@/lib/life/rush/spec'
 export function RushQa(props: Omit<RushHostProps, 'onDone' | 'reduced'>) {
   const [result, setResult] = useState<MissionResult | null>(null)
   if (result) return <pre data-qa="rush-result">{JSON.stringify(result)}</pre>
-  return <RushHost {...props} reduced={false} onDone={setResult} />
+  return <RushHost {...props} reduced={false} onDone={setResult} probe />
 }

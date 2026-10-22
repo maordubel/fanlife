@@ -133,6 +133,8 @@ export type MissionSpec = {
   anchor: ArchiveRef | null
   title: string
   brief: string
+  /** which version of the quest the script asked for (`quest.ts`): the same template, other steps — a boy leading his father, a man leading his own child */
+  beat?: string | null
 }
 
 /** How a mission ended. `ok` = finished with help, skipped, or late but there. */
@@ -148,7 +150,12 @@ export type MissionResult = {
   /** true when story mode (assist) carried the player through */
   assisted: boolean
   skipped: boolean
+  /** how it was played, for the result card only: stars, and the optional things found on the way */
+  score?: MissionScore
 }
+
+/** The result card's score. Never a number LIFE reads: the story takes `outcome` and `evidence`, nothing else. */
+export type MissionScore = {stars: 0 | 1 | 2 | 3; extras: number; extrasOf: number; chants: number; steps: number}
 
 /** Two failures in a mandatory mission open story mode. A mandatory mission never loops forever. */
 export const ASSIST_AFTER_FAILS = 2

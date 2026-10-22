@@ -6,8 +6,8 @@
  * inside a universal chapter never prints a date. RUSH words exist in both languages.
  */
 import {describe, expect, it} from 'vitest'
-import {buildLevel, cluesShown, lookMatches} from '@/lib/life/rush/level'
-import {botInput, IDLE, resultOf, startSim, stepSim} from '@/lib/life/rush/sim'
+import {buildLevel, cluesShown, inArea, lookMatches, patrolAt} from '@/lib/life/rush/level'
+import {botInput, IDLE, patrolLook, resultOf, startSim, stepSim} from '@/lib/life/rush/sim'
 import {MAX_EVIDENCE, resultProblems, type MissionSpec} from '@/lib/life/rush/spec'
 import {MISSION_TEMPLATES, TEMPLATE_HE, templateById} from '@/lib/life/rush/templates'
 import {chapterFit, type Fit} from '@/lib/life/rush/fit'
@@ -19,10 +19,13 @@ import type {ArchiveRef, Effect} from '@/lib/life/universal/types'
 
 const SEEDS = Array.from({length: 12}, (_, i) => i + 1)
 
-function specOf(template: string, seed: number, difficulty: 0 | 1 | 2): MissionSpec {
+function specOf(template: string, seed: number, difficulty: 0 | 1 | 2, beat: string | null = null): MissionSpec {
   const t = templateById(template)!
-  return {template, verb: t.verb, camera: t.camera, route: t.route, seed, skin: 'test', age: 20, time: 'night', weather: 'clear', clock: t.clock, hazards: [...t.hazards], difficulty, mandatory: false, anchor: null, title: '', brief: ''}
+  return {template, verb: t.verb, camera: t.camera, route: t.route, seed, skin: 'test', age: 20, time: 'night', weather: 'clear', clock: t.clock, hazards: [...t.hazards], difficulty, mandatory: false, anchor: null, title: '', brief: '', beat}
 }
+
+/** every version of a quest a script can ask for (`quest.ts`) */
+const BEATS: Record<string, string[]> = {'kickoff-run': ['coach', 'shift', 'march'], 'lead-the-way': ['dad', 'child', 'elder', 'visitor', 'newcomer'], 'away-day': ['lift']}
 
 function play(spec: MissionSpec, who: 'bot' | 'idle', assist = false, limit = 60 * 900) {
   const level = buildLevel(spec), s = startSim(level, assist)
@@ -44,6 +47,106 @@ describe('RUSH · every mission can be won, and is not won by standing still', (
       expect(lost, lost.join('\n')).toEqual([])
     }, 60_000)
   }
+})
+
+describe('RUSH · every version of a quest can be won too', () => {
+  for (const [id, beats] of Object.entries(BEATS)) for (const beat of beats) for (const d of [0, 2] as const) it(`${id} · ${beat} · difficulty ${d}`, () => {
+    const lost: string[] = []
+    for (const seed of SEEDS.slice(0, 8)) {
+      const {s} = play(specOf(id, seed, d, beat), 'bot')
+      if (s.ended !== 'good') lost.push(`seed ${seed}: ${s.ended} after ${Math.round(s.t)}s, step ${s.step}`)
+    }
+    expect(lost, lost.join('\n')).toEqual([])
+  }, 60_000)
+})
+
+describe('RUSH 2 · a mission is a quest in an open place', () => {
+  it('every mission is a row of steps that ends at its goal, and every step can be done', () => {
+    for (const t of MISSION_TEMPLATES) for (const beat of [null, ...(BEATS[t.id] ?? [])]) for (const seed of [1, 2, 3]) {
+      const level = buildLevel(specOf(t.id, seed, 1, beat)), at = `${t.id}/${beat ?? '-'}/${seed}`
+      expect(level.steps.length, at).toBeGreaterThanOrEqual(1)
+      expect(level.steps.at(-1)!.kind, at).toBe('goal')
+      level.steps.forEach((st, i) => {
+        if (st.kind === 'collect') expect(level.pickups.filter(p => p.step === i).length, `${at} step ${i}`).toBeGreaterThan(0)
+        if (st.kind === 'talk') expect(st.npc && st.say, `${at} step ${i}`).toBeTruthy()
+        if (st.reveals) expect(level.place, at).toBe('crowd')
+        if (st.joins) expect(level.escort, at).not.toBeNull()
+        // nobody waits, and nothing lies, outside the walkable world
+        if (st.kind !== 'collect' && st.kind !== 'stop') expect(inArea(level, st.x, st.z), `${at} step ${i} at ${st.x},${st.z}`).toBe(true)
+      })
+      for (const p of level.pickups) expect(inArea(level, p.x, p.z), `${at} pickup at ${p.x},${p.z}`).toBe(true)
+    }
+  })
+  it('most missions are more than one thing to do', () => {
+    const many = MISSION_TEMPLATES.filter(t => buildLevel(specOf(t.id, 1, 1)).steps.length >= 2)
+    expect(many.length).toBeGreaterThanOrEqual(MISSION_TEMPLATES.length - 1)
+  })
+  it('the streets are open: side streets you can walk down, with extras that buy seconds', () => {
+    const level = buildLevel(specOf('kickoff-run', 3, 1))
+    expect(level.side).toBeGreaterThan(30)
+    expect(level.crossings.every(c => inArea(level, level.side - 1, c + 5.4) && inArea(level, -level.side + 1, c + 5.4))).toBe(true)
+    // the shops along the main street are walls, not doors
+    expect(inArea(level, level.walk + 3, (level.crossings[0]! + level.crossings[1]!) / 2)).toBe(false)
+    const extras = level.pickups.filter(p => p.step === null)
+    expect(extras.length).toBeGreaterThan(0)
+    expect(extras.some(p => Math.abs(p.x) > level.walk)).toBe(true)
+    const s = startSim(level), before = s.clock, e = extras[0]!
+    s.x = e.x; s.z = e.z; stepSim(level, s, IDLE)
+    expect(s.extras).toBe(1)
+    expect(s.clock).toBeGreaterThan(before)
+  })
+  it('the gate does not end a mission while a step is still open', () => {
+    const level = buildLevel(specOf('kickoff-run', 2, 1)), s = startSim(level)
+    s.x = level.goal.x; s.z = level.goal.z; stepSim(level, s, IDLE)
+    expect(s.ended).toBeNull()
+    expect(s.events.some(e => e.k === 'notyet')).toBe(true)
+  })
+  it('the one you lead stops when you leave him behind, and the gate waits for him', () => {
+    const level = buildLevel(specOf('lead-the-way', 4, 1, 'elder')), s = startSim(level)
+    const meet = level.steps[0]!
+    s.x = meet.x; s.z = meet.z; stepSim(level, s, {...IDLE, act: true})
+    expect(s.esc).not.toBeNull()
+    s.step = level.steps.length - 1
+    s.x = level.goal.x; s.z = level.goal.z
+    for (let i = 0; i < 30; i++) stepSim(level, s, IDLE)
+    expect(s.esc!.lost).toBe(true)
+    expect(s.ended).toBeNull()
+  })
+  it('a bang on a bin turns a steward\'s head', () => {
+    const level = buildLevel(specOf('sneak-in', 5, 1)), s = startSim(level)
+    expect(level.noises.length).toBeGreaterThan(0)
+    const n = level.noises[0]!
+    s.x = n.x; s.z = n.z; stepSim(level, s, {...IDLE, act: true})
+    expect(s.noise).not.toBeNull()
+    const turned = level.patrols.some((_, i) => patrolLook(level, s, i).face !== patrolAt(level.patrols[i]!, s.t).face)
+    expect(turned).toBe(true)
+  })
+  it('asking around gives the clues sooner', () => {
+    const level = buildLevel(specOf('europe-night', 2, 1)), s = startSim(level)
+    expect(cluesShown(level, 0, 0)).toHaveLength(1)
+    const ask = level.steps[0]!
+    s.x = ask.x; s.z = ask.z; stepSim(level, s, {...IDLE, act: true})
+    expect(s.asked).toBe(1)
+    expect(cluesShown(level, s.t, s.asked)).toHaveLength(2)
+  })
+  it('a mate in a lay-by is picked up by stopping, and a missed one costs time and never ends the drive', () => {
+    const level = buildLevel(specOf('away-day', 1, 1)), stop = level.steps[0]!
+    expect(stop.kind).toBe('stop')
+    const s = startSim(level)
+    s.z = stop.z - stop.r - 60; s.speed = 20
+    for (let i = 0; i < 5; i++) stepSim(level, s, IDLE)
+    expect(s.step).toBe(1)
+    expect(s.missed).toBe(1)
+    expect(s.ended).toBeNull()
+  })
+  it('the result card has stars, never read by the story', () => {
+    const {level, s} = play(specOf('kickoff-run', 1, 0), 'bot')
+    const r = resultOf(level, s)
+    expect(r.score!.stars).toBeGreaterThanOrEqual(1)
+    expect(r.score!.extrasOf).toBeGreaterThan(0)
+    const idle = play(specOf('kickoff-run', 1, 0), 'idle')
+    expect(resultOf(idle.level, idle.s).score!.stars).toBe(0)
+  })
 })
 
 describe('RUSH · story mode never ends in a slip', () => {
@@ -162,6 +265,15 @@ describe('RUSH · a mission inside a chapter', () => {
   })
 })
 
+describe('RUSH · the briefing cards', () => {
+  it('every card names a real template and ships as a file', async () => {
+    const {RUSH_CARDS, cardFor} = await import('@/lib/life/rush/cards')
+    const fs = await import('node:fs')
+    for (const id of RUSH_CARDS) { expect(templateById(id), id).toBeTruthy(); expect(fs.existsSync(`public${cardFor(id)}`), id).toBe(true) }
+    expect(cardFor('no-such-mission')).toBeNull()
+  })
+})
+
 describe('RUSH · words', () => {
   it('every key exists in both languages, and nothing is empty', () => {
     expect(Object.keys(RUSH_WORDS.he).sort()).toEqual(Object.keys(RUSH_WORDS.en).sort())
@@ -172,6 +284,11 @@ describe('RUSH · words', () => {
       const level = buildLevel(specOf(t.id, seed, 1))
       for (const v of level.voice) expect(RUSH_WORDS.en, v.key).toHaveProperty(v.key)
       for (const c of level.targets[0]?.clues ?? []) expect(RUSH_WORDS.en, c).toHaveProperty(`clue.${c}`)
+    }
+    for (const t of MISSION_TEMPLATES) for (const beat of [null, ...(BEATS[t.id] ?? [])]) {
+      const level = buildLevel(specOf(t.id, 1, 1, beat))
+      for (const st of level.steps) { expect(RUSH_WORDS.en, st.key).toHaveProperty(st.key); if (st.say) expect(RUSH_WORDS.en, st.say).toHaveProperty(st.say) }
+      for (const p of level.pickups) expect(RUSH_WORDS.en, p.kind).toHaveProperty(`got.${p.kind}`)
     }
   })
   it('every template has its Hebrew, and the Hebrew neutral lines keep the same rule', () => {

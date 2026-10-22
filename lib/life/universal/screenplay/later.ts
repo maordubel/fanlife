@@ -30,7 +30,7 @@ export const LATER = [
         task: t('Label the suitcase or close it', 'לסמן את המזוודה או לסגור אותה'),
         action: [s(null, 'You put a name on the luggage tag. A possible move becomes a chosen route.', 'אתה כותב שם על תג המזוודה. מעבר אפשרי הופך למסלול שנבחר.')],
         options: [
-          o('abroad', t('Take the agreed opportunity abroad', 'לקחת את ההזדמנות שסוכמה בחו״ל'), s('friend', 'Then we set a time to call. Not whenever the match ends.', 'אז קובעים זמן לשיחה. לא מתי שהמשחק ייגמר.'), [flag('life:home:place', 'abroad'), energy(-20), standing(-1)]),
+          o('abroad', t('Take the agreed opportunity abroad', 'לקחת את ההזדמנות שסוכמה בחו״ל'), s('friend', 'Then we set a time to call. Not whenever the match ends.', 'אז קובעים זמן לשיחה. לא מתי שהמשחק ייגמר.'), [flag('life:home:place', 'abroad'), energy(-20), standing(-1)], {mission: {template: 'europe-night'}}),
           o('stay', t('Stay while the friend moves', 'להישאר כשהחבר עובר'), s('friend', 'You will know the old streets. I will tell you about the new ones.', 'אתה תכיר את הרחובות הישנים. אני אספר על החדשים.'), [flag('life:home:place', 'home'), bond('friend', -1)]),
           o('defer', t('Defer the move and choose life here', 'לדחות את המעבר ולבחור בחיים כאן'), s('friend', 'Then unpack. A closed suitcase is not a life plan.', 'אז תפרוק. מזוודה סגורה היא לא תוכנית לחיים.'), [flag('life:home:place', 'home'), heart(2)]),
         ],
@@ -99,7 +99,7 @@ export const LATER = [
         options: [
           o('people', t('Organise volunteers and ask permission', 'לארגן מתנדבים ולבקש הסכמה'), s('elder', 'Names, times, consent. A crowd is not a rota.', 'שמות, שעות, הסכמה. קהל הוא לא סידור עבודה.'), [flag('life:project:role', 'people'), energy(-10)]),
           o('archive', t('Organise records and their sources', 'לסדר מסמכים ואת המקורות שלהם'), s('elder', 'Keep the source with the claim. Leave the date blank if we cannot verify it.', 'תשמור את המקור ליד הטענה. תשאיר תאריך ריק אם אי אפשר לאמת אותו.'), [flag('life:project:role', 'archive'), energy(-10)]),
-          o('materials', t('List materials and a realistic budget', 'לרשום חומרים ותקציב מציאותי'), s('elder', 'Measure before ordering. Especially when you are spending somebody else’s money.', 'תמדוד לפני שמזמינים. במיוחד כשהכסף של מישהו אחר.'), [flag('life:project:role', 'materials')]),
+          o('materials', t('List materials and a realistic budget', 'לרשום חומרים ותקציב מציאותי'), s('elder', 'Measure before ordering. Especially when you are spending somebody else’s money.', 'תמדוד לפני שמזמינים. במיוחד כשהכסף של מישהו אחר.'), [flag('life:project:role', 'materials')], {mission: {template: 'errands'}}),
         ],
       }),
       sc({
@@ -175,7 +175,7 @@ export const LATER = [
         action: [s(null, 'The agreed day arrives. The next action will determine whether this repair happened.', 'היום שסוכם מגיע. הפעולה הבאה תקבע אם התיקון הזה בוצע.')],
         reward: {good: [bond('friend', 1)]},
         options: [
-          o('ride', t('Do the errand that settles the ride', 'לבצע את הסידור שסוגר את הטרמפ'), s('friend', 'Done. Keep the note if you like. You no longer owe the lift.', 'סיימנו. תשמור את הפתק אם תרצה. את הטרמפ אתה כבר לא חייב.'), [flag('life:promise:ride', 'repaired'), flag('life:repair:done', 'ride'), bond('friend', 4), energy(-15)], {when: is('life:repair:target', 'ride')}),
+          o('ride', t('Do the errand that settles the ride', 'לבצע את הסידור שסוגר את הטרמפ'), s('friend', 'Done. Keep the note if you like. You no longer owe the lift.', 'סיימנו. תשמור את הפתק אם תרצה. את הטרמפ אתה כבר לא חייב.'), [flag('life:promise:ride', 'repaired'), flag('life:repair:done', 'ride'), bond('friend', 4), energy(-15)], {when: is('life:repair:target', 'ride'), mission: {template: 'away-day', beat: 'lift'}}),
           o('shift', t('Cover the agreed work and get paid', 'לכסות את העבודה שסוכמה ולקבל שכר'), s('mate', 'This shift happened. That is what I needed.', 'המשמרת הזו התקיימה. זה מה שהייתי צריך.'), [flag('life:promise:shift', 'repaired'), flag('life:repair:done', 'shift'), coins(24), bond('mate', 4), energy(-20)], {when: is('life:repair:target', 'shift')}),
           o('home', t('Keep the newly agreed evening', 'לקיים את הערב החדש שסוכם'), s('friend', 'You put the phone away. Now you are here.', 'הנחת את הטלפון. עכשיו אתה פה.'), [flag('life:promise:home', 'repaired'), flag('life:repair:done', 'home'), bond('friend', 4)], {when: is('life:repair:target', 'home')}),
           o('lent', t('Take the pint and the story', 'לקבל את הכוסית ואת הסיפור'), s('friend', 'It is the story about the ticket. You know how it ends. You were there.', 'זה הסיפור על הכרטיס. אתה יודע איך הוא נגמר. היית שם.'), [flag('life:lent:ticket', 'settled'), flag('life:repair:done', 'lent'), bond('friend', 5), heart(2)], {when: is('life:repair:target', 'lent')}),
@@ -239,7 +239,7 @@ export const LATER = [
         task: t('Check the exits and set the pace', 'לבדוק יציאות ולקבוע קצב'),
         action: [s(null, 'You find the quieter edge of the walkway before entering.', 'אתה מוצא את הצד השקט יותר של המעבר לפני הכניסה.')],
         options: [
-          o('slow', t('Take the walk slowly', 'לעשות את הדרך לאט'), s(null, 'The first visit is allowed to take longer than yours.', 'לביקור הראשון מותר לקחת יותר זמן משלך.'), [flag('life:newcomer:pace', 'slow'), energy(-5)]),
+          o('slow', t('Take the walk slowly', 'לעשות את הדרך לאט'), s(null, 'The first visit is allowed to take longer than yours.', 'לביקור הראשון מותר לקחת יותר זמן משלך.'), [flag('life:newcomer:pace', 'slow'), energy(-5)], {mission: {template: 'lead-the-way', beat: 'newcomer'}}),
           o('explain', t('Explain one thing and let the rest be new', 'להסביר דבר אחד ולתת לשאר להיות חדש'), s(null, 'You name the pitch. The person beside you finds the sky without help.', 'אתה נותן שם לדשא. האדם שלצידך מוצא את השמיים בלי עזרה.'), [flag('life:newcomer:pace', 'explain'), heart(3)], {when: newcomer}),
           o('outside', t('Stay outside and decide whether to enter', 'להישאר בחוץ ולהחליט אם להיכנס'), s(null, 'A first visit may be a look from the gate. Nobody takes the ticket away.', 'ביקור ראשון יכול להיות מבט מהשער. אף אחד לא לוקח את הכרטיס.'), [flag('life:newcomer:pace', 'outside')]),
         ],
@@ -334,7 +334,7 @@ export const LATER = [
         task: t('Check the route and pack the bag', 'לבדוק את הדרך ולארוז'),
         action: [s(null, 'You check the bag, the agreed pace and the backup plan.', 'אתה בודק את התיק, הקצב שסוכם ותוכנית הגיבוי.')],
         options: [
-          o('slow', t('Choose the slower route with breaks', 'לבחור דרך איטית עם הפסקות'), s('dad', 'Good. Now I do not have to pretend your pace is mine.', 'טוב. עכשיו אני לא צריך להעמיד פנים שהקצב שלך הוא שלי.'), [flag('life:trip:pace', 'slow'), flag('life:trip:prepared'), flag('life:trip:at-home', false), energy(-5)]),
+          o('slow', t('Choose the slower route with breaks', 'לבחור דרך איטית עם הפסקות'), s('dad', 'Good. Now I do not have to pretend your pace is mine.', 'טוב. עכשיו אני לא צריך להעמיד פנים שהקצב שלך הוא שלי.'), [flag('life:trip:pace', 'slow'), flag('life:trip:prepared'), flag('life:trip:at-home', false), energy(-5)], {mission: {template: 'lead-the-way', beat: 'elder'}}),
           o('direct', t('Use the direct route, with a stop available', 'לבחור בדרך הישירה עם אפשרות לעצירה'), s(null, 'A stop remains part of the plan, even if it is not needed.', 'עצירה נשארת חלק מהתוכנית גם אם לא צריך אותה.'), [flag('life:trip:pace', 'direct'), flag('life:trip:prepared'), flag('life:trip:at-home', false), energy(-15)]),
           o('home', t('Change the outing to a home evening before leaving', 'לשנות לערב בבית עוד לפני היציאה'), s('mum', 'Then we know what we are doing. No dramatic surprise at a gate.', 'אז אנחנו יודעים מה עושים. בלי הפתעה דרמטית בשער.'), [flag('life:trip:pace', 'home'), flag('life:trip:prepared'), flag('life:trip:at-home')]),
         ],
