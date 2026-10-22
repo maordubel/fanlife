@@ -172,9 +172,7 @@ export function dressCity(x: CityCtx): boolean {
   bunting(x, rnd, paint)
 
   /* ───────── the city at the end of the road ───────── */
-  if (town === 'ath') acropolis(x, paint)
-  else if (town === 'tlv') towers(x, rnd, paint)
-  else if (town === 'mos') bridge(x, rnd, paint)
+  backdrop(x, town)
 
   /* ───────── the designer's graffiti on the ground floors ───────── */
   graffiti(x, rnd, bays)
@@ -200,7 +198,7 @@ function kiosk(x: CityCtx, paint: Paint, std: Std, lit: Lit, z: number) {
     for (let r = 0; r < 6; r++) for (let k = 0; k < 7; k++) { c.fillStyle = paint(cols[(r * 3 + k) % cols.length]!, '#9a9488'); c.fillRect(8 + k * 35, 10 + r * 40, 28, 32) }
   }))
   const shelf = new THREE.Mesh(keep(new THREE.PlaneGeometry(2.4, 1.9)), lit('#ffffff', night ? 1.05 : 0.85, {map: front})); shelf.rotation.y = Math.PI / 2; shelf.position.set(0.91, 1.25, 0); g.add(shelf)
-  const sign = keep(canvas(512, 110, (c, w, h) => { c.fillStyle = '#1b1e26'; c.fillRect(0, 0, w, h); c.fillStyle = '#f3efe6'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.font = `700 70px 'Fira Sans Condensed',system-ui,sans-serif`; c.fillText('ΠΕΡΙΠΤΕΡΟ', w / 2, h / 2 + 3) }))
+  const sign = keep(canvas(512, 110, (c, w, h) => { c.fillStyle = '#1b1e26'; c.fillRect(0, 0, w, h); c.fillStyle = '#f3efe6'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.font = `700 52px 'Fira Sans Condensed',system-ui,sans-serif`; c.fillText('ΤΣΙΓΑΡΑ · ΕΦΗΜΕΡΙΔΕΣ', w / 2, h / 2 + 3) }))
   const sg = new THREE.Mesh(keep(new THREE.PlaneGeometry(2.6, 0.55)), lit('#ffffff', night ? 1.2 : 0.9, {map: sign})); sg.rotation.y = Math.PI / 2; sg.position.set(0.95, 2.85, 0); g.add(sg)
   if (night) { const l = new THREE.PointLight('#ffd6a8', 22, 8, 1.6); l.position.set(1.8, 1.8, 0); g.add(l) }
 }
@@ -331,89 +329,35 @@ function bunting(x: CityCtx, rnd: () => number, paint: Paint) {
 
 /* ───────────── what stands at the end of the road ───────────── */
 
-/** where the city's landmark stands: past the ground, high enough to clear its roof from the start of the run */
-const far = (level: Level) => level.goal.z - 175
-/** a landmark big enough to read as the city's skyline stands far behind everything, so it keeps its size
- *  through the whole run and rises between the ground's roof and the objective plate */
-const skyline = (level: Level) => level.goal.z - 950
-
-/** the Acropolis: the rock, its walls, and the Parthenon floodlit gold on top */
-function acropolis(x: CityCtx, paint: Paint) {
-  const {scene, keep, level, night} = x
-  const g = new THREE.Group(); g.position.set(30, -175, skyline(level)); g.scale.setScalar(5); scene.add(g)
-  const rockMat = keep(new THREE.MeshStandardMaterial({color: night ? '#5a4636' : '#8a7560', roughness: 1, flatShading: true, fog: false, emissive: night ? '#3a2616' : '#000000'}))
-  const rock = new THREE.Mesh(keep(new THREE.IcosahedronGeometry(1, 2)), rockMat); rock.scale.set(150, 62, 80); rock.position.y = 0; g.add(rock)
-  const wall = new THREE.Mesh(keep(new THREE.BoxGeometry(1, 1, 1)), rockMat); wall.scale.set(150, 10, 66); wall.position.y = 58; g.add(wall)
-  const gold = paint('#f2c58a', '#e8e0d0'), shade = paint('#c9925a', '#b8b0a2')
-  const lit = (c: string, k: number) => keep(new THREE.MeshBasicMaterial({color: C(c).multiplyScalar(night ? k * 0.5 : k * 0.85), toneMapped: false, fog: false}))
-  const marble = lit(gold, 0.9), deep = lit(shade, 0.55)
-  const P = new THREE.Group(); P.position.set(0, 63, 0); g.add(P)
-  const base = new THREE.Mesh(keep(new THREE.BoxGeometry(70, 4, 32)), marble); base.position.y = 2; P.add(base)
-  const col = keep(new THREE.CylinderGeometry(1.4, 1.6, 17, 10))
-  const cols = new THREE.InstancedMesh(col, marble, 26)
-  const m = new THREE.Matrix4(); let i = 0
-  for (let k = 0; k < 8; k++) for (const zz of [15, -15]) { m.makeTranslation(-31 + k * 8.85, 12.5, zz); cols.setMatrixAt(i++, m) }
-  for (let k = 1; k < 4; k++) for (const xx of [-31, 31]) { m.makeTranslation(xx, 12.5, -15 + k * 7.5); cols.setMatrixAt(i++, m) }
-  cols.count = i; P.add(cols)
-  const cella = new THREE.Mesh(keep(new THREE.BoxGeometry(56, 15, 20)), deep); cella.position.y = 11.5; P.add(cella)
-  const ent = new THREE.Mesh(keep(new THREE.BoxGeometry(70, 4, 32)), marble); ent.position.y = 23; P.add(ent)
-  const ped = new THREE.Shape(); ped.moveTo(-16, 0); ped.lineTo(16, 0); ped.lineTo(0, 6); ped.closePath()
-  const pedGeo = keep(new THREE.ExtrudeGeometry(ped, {depth: 70, bevelEnabled: false}).rotateY(Math.PI / 2).translate(-35, 25, 0))
-  P.add(new THREE.Mesh(pedGeo, deep))
-  // the broken corner, the smaller temple to the side
-  const ere = new THREE.Mesh(keep(new THREE.BoxGeometry(18, 10, 12)), deep); ere.position.set(-58, 68, 12); g.add(ere)
+/**
+ * The city at the end of the road is the owner's own painting of it (22.10.2026): the Acropolis on its rock,
+ * Tel Aviv's towers and palms, Mostar's old bridge, minaret and hills — cut from his concept frames by
+ * `scripts/life/cut-rush-backdrops.py` with the edges feathered into the game's sky. A club whose rival owns
+ * green gets the cut with no green; Hapoel gets the cut with no yellow band (rule 8). Night darkens it, and
+ * the Acropolis keeps a floodlit warmth because it is floodlit.
+ */
+/** `fx`: where across the painting the landmark itself stands, so it is the part that lines up with the road;
+ *  `lift`: how far a landmark painted low in its frame (Mostar's bridge) is raised above the roofs */
+const BACKDROP: Partial<Record<Town, {w: number; h: number; fx: number; lift: number; night: [number, number, number]}>> = {
+  ath: {w: 768, h: 448, fx: 0.62, lift: 0, night: [0.7, 0.58, 0.44]},
+  tlv: {w: 768, h: 416, fx: 0.58, lift: 0, night: [0.34, 0.4, 0.56]},
+  mos: {w: 784, h: 632, fx: 0.52, lift: 80, night: [0.4, 0.43, 0.52]},
 }
-
-/** Tel Aviv: a cluster of towers, lit floor by floor, palms in front of them */
-function towers(x: CityCtx, rnd: () => number, paint: Paint) {
+function backdrop(x: CityCtx, town: Town) {
+  const b = BACKDROP[town]
+  if (!b) return
   const {scene, keep, level, night} = x
-  const g = new THREE.Group(); g.position.set(0, 0, far(level)); scene.add(g)
-  const winTex = keep(canvas(128, 512, (c, w, h) => {
-    c.fillStyle = night ? '#1a2130' : '#8fa3b8'; c.fillRect(0, 0, w, h)
-    for (let y = 4; y < h; y += 10) for (let k = 4; k < w; k += 10) { const on = rnd() < (night ? 0.45 : 0.15); c.fillStyle = on ? (rnd() < 0.7 ? '#ffd9a8' : '#cfe3ff') : (night ? '#232b3b' : '#a9bccd'); c.fillRect(k, y, 6, 6) }
-  }))
-  const glass = keep(new THREE.MeshBasicMaterial({map: winTex, color: C('#ffffff').multiplyScalar(night ? 0.75 : 0.95), toneMapped: false, fog: false}))
-  const specs = [[-62, 130, 26], [-30, 190, 30], [0, 160, 24], [26, 220, 32], [58, 150, 26], [88, 120, 22], [-92, 110, 24]] as const
-  for (const [xx, h, w] of specs) {
-    const t = new THREE.Mesh(keep(new THREE.BoxGeometry(w, h, w)), glass); t.position.set(xx, h / 2 + 10, -20 + rnd() * 40); g.add(t)
-    const cap = new THREE.Mesh(keep(new THREE.BoxGeometry(w * 0.6, 6, w * 0.6)), keep(new THREE.MeshBasicMaterial({color: C(paint('#e8eef6', '#cfd6df')).multiplyScalar(night ? 0.6 : 0.9), toneMapped: false, fog: false}))); cap.position.set(t.position.x, h + 13, t.position.z); g.add(cap)
-    if (night) { const red = new THREE.Mesh(keep(new THREE.SphereGeometry(1.2, 8, 6)), keep(new THREE.MeshBasicMaterial({color: C(paint('#ff3b2e', '#e8eef6')).multiplyScalar(2), toneMapped: false, fog: false}))); red.position.set(t.position.x, h + 17, t.position.z); g.add(red) }
-  }
-  // a row of palms against the skyline
-  if (!x.banned('#2f5a35')) {
-    const dark = keep(new THREE.MeshBasicMaterial({color: C(night ? '#0d1410' : '#2f4a35'), fog: false}))
-    for (let k = -4; k <= 4; k++) {
-      const p = new THREE.Group(); p.position.set(k * 26 + (rnd() - 0.5) * 8, 0, 70); g.add(p)
-      const tr = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.9, 1.3, 46, 6)), dark); tr.position.y = 23; p.add(tr)
-      for (let f = 0; f < 7; f++) { const fr = new THREE.Mesh(keep(new THREE.ConeGeometry(2.2, 16, 4)), dark); fr.position.set(Math.cos(f) * 6, 45, Math.sin(f) * 6); fr.rotation.set(Math.sin(f) * 1.2, 0, -Math.cos(f) * 1.2); p.add(fr) }
-    }
-  }
-}
-
-/** Mostar: green hills, the old arched bridge over turquoise water, its two towers, a minaret, lanterns */
-function bridge(x: CityCtx, rnd: () => number, paint: Paint) {
-  const {scene, keep, level, night} = x
-  const g = new THREE.Group(); g.position.set(0, -50, skyline(level)); g.scale.setScalar(5); scene.add(g)
-  const hill = keep(new THREE.MeshStandardMaterial({color: paint(night ? '#1d2b22' : '#4a6a44', '#3a3a38'), roughness: 1, flatShading: true, fog: false, emissive: night ? '#0b120d' : '#000000'}))
-  for (const [xx, zz, sx, sy] of [[-120, -40, 120, 70], [130, -30, 130, 80], [0, -160, 220, 110], [-60, -120, 90, 60]] as const) { const h = new THREE.Mesh(keep(new THREE.IcosahedronGeometry(1, 2)), hill); h.scale.set(sx, sy, 80); h.position.set(xx, 0, zz); g.add(h) }
-  const stoneMat = keep(new THREE.MeshBasicMaterial({color: C(paint('#e6d3b0', '#d6d0c4')).multiplyScalar(night ? 0.55 : 0.95), toneMapped: false, fog: false}))
-  // banks
-  for (const side of [-1, 1]) { const b = new THREE.Mesh(keep(new THREE.BoxGeometry(70, 46, 40)), stoneMat); b.position.set(side * 58, 23, 0); g.add(b) }
-  // the arch: half a torus, thick and flattened
-  const arch = new THREE.Mesh(keep(new THREE.TorusGeometry(24, 3, 8, 32, Math.PI)), stoneMat); arch.position.set(0, 34, 0); arch.scale.set(1, 0.62, 1.4); g.add(arch)
-  const deck = new THREE.Mesh(keep(new THREE.BoxGeometry(8, 1.6, 6)), stoneMat); deck.position.set(0, 49.6, 0); g.add(deck)
-  for (const side of [-1, 1]) { const t = new THREE.Mesh(keep(new THREE.BoxGeometry(12, 22, 12)), stoneMat); t.position.set(side * 30, 57, 0); g.add(t); const r = new THREE.Mesh(keep(new THREE.ConeGeometry(9, 6, 4)), keep(new THREE.MeshBasicMaterial({color: C('#5a4a40').multiplyScalar(night ? 0.8 : 1), fog: false}))); r.rotation.y = Math.PI / 4; r.position.set(side * 30, 71, 0); g.add(r) }
-  // the water under it
-  const water = new THREE.Mesh(keep(new THREE.PlaneGeometry(46, 160)), keep(new THREE.MeshBasicMaterial({color: C(paint('#2fb5b0', '#3a6f80')).multiplyScalar(night ? 0.45 : 1), toneMapped: false, fog: false}))); water.rotation.x = -Math.PI / 2; water.position.set(0, 31, -30); g.add(water)
-  // a minaret on the hill behind
-  const mi = new THREE.Group(); mi.position.set(-46, 60, -70); g.add(mi)
-  mi.add(at(new THREE.Mesh(keep(new THREE.CylinderGeometry(2.2, 2.6, 46, 10)), stoneMat), 0, 23, 0))
-  mi.add(at(new THREE.Mesh(keep(new THREE.CylinderGeometry(3.6, 3.6, 1.6, 12)), stoneMat), 0, 38, 0))
-  mi.add(at(new THREE.Mesh(keep(new THREE.ConeGeometry(2.4, 12, 10)), keep(new THREE.MeshBasicMaterial({color: C('#4a4f58'), fog: false}))), 0, 52, 0))
-  if (night) {
-    const lamp = keep(new THREE.SpriteMaterial({map: x.glowTex, color: C(paint('#ffc27a', '#f2e8d8')).multiplyScalar(0.9), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))
-    for (let k = 0; k < 14; k++) { const s = new THREE.Sprite(lamp); s.scale.set(9, 9, 1); s.position.set(-50 + rnd() * 100, 46 + rnd() * 6, 18); g.add(s) }
-  }
+  const variant = x.clubId === 'hapoel-tel-aviv' || x.banned('#f2c500') ? '-noyellow' : x.banned('#2f8a3b') ? '-nogreen' : ''
+  const tex = keep(new THREE.TextureLoader().load(`/life/rush/backdrops/${town}${variant}.webp`))
+  tex.colorSpace = THREE.SRGBColorSpace
+  // sized to the sky between the roofs: the street is a narrow slot at its far end, so the landmark is
+  // made tall enough to fill the V of sky the roofs leave open above the road, as the owner's frames do
+  const height = 320, width = height * b.w / b.h
+  const tint = night ? new THREE.Color(...b.night) : new THREE.Color(1, 1, 1)
+  const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(width, height)), keep(new THREE.MeshBasicMaterial({map: tex, color: tint, transparent: true, depthWrite: false, fog: false, toneMapped: false})))
+  m.position.set((0.5 - b.fx) * width, height / 2 - 34 + b.lift, level.goal.z - 320)
+  m.renderOrder = -1
+  scene.add(m)
 }
 
 /** a mesh placed at x, y, z (an Object3D's position cannot be assigned) */

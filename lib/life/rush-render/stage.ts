@@ -241,7 +241,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /** the ground at the end of the road: a lit bowl, floodlights, the gate in the club's word for it */
   const towers: THREE.Sprite[] = []
   const addGround = (z: number, wallZ: number) => {
-    const stad = new THREE.Group(); stad.position.set(0, 0, z); scene.add(stad)
+    const stad = new THREE.Group(); stad.position.set(0, 0, z)
+    // a city with its landmark painted at the end of the road keeps only the gate: the bowl and its floodlights
+    // would stand exactly where the Acropolis, the towers or the bridge are
+    if (!skyline) scene.add(stad)
     const shell = new THREE.Mesh(keep(new THREE.CylinderGeometry(78, 84, 26, 48, 1, true)), keep(std('#2b2f3a', {side: THREE.DoubleSide}))); shell.position.y = 13; stad.add(shell)
     const ring = new THREE.Mesh(keep(new THREE.TorusGeometry(80, 1.2, 6, 64)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.6), toneMapped: false}))); ring.rotation.x = Math.PI / 2; ring.position.y = 26.5; stad.add(ring)
     const glow = new THREE.Mesh(keep(new THREE.PlaneGeometry(420, 200)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C(night ? '#cfe0ff' : '#ffffff').multiplyScalar((night ? 0.9 : 0.25) * (skyline ? 0.3 : 1)), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); glow.position.set(0, 50, -40); stad.add(glow)
@@ -330,7 +333,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (level.side) addSideStreets()
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
     addPennants(level.walk, -20, level.goal.z + 30)
-    // a city with a landmark at the end of the road dims the ground's glow so the landmark reads behind it
+    // a city with a landmark at the end of the road shows the gate and not the bowl, so the landmark reads behind it
     skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex})
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
     addGround(level.goal.z - 51, level.goal.z - 7)
