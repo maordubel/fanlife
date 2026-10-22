@@ -37,6 +37,15 @@
 @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes blink { 50% { background: var(--l-mark); color: var(--l-ink); } }
+/* the world-shot: a still from the club's own town, drifting in slowly; the type sits on a scrim, and the
+   code-drawn figures step aside because the world is now the picture */
+.shot { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 50% 50%; animation: drift 7s ease-out both; }
+.reel[data-shot='true'] .frame::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--l-deep) 55%, transparent), color-mix(in srgb, var(--l-deep) 15%, transparent) 38%, color-mix(in srgb, var(--l-deep) 70%, transparent)); }
+.reel[data-shot='true'] .push { z-index: 1; }
+.reel[data-shot='true'] .walker, .reel[data-shot='true'] .row, .reel[data-shot='true'] .keep { display: none; }
+.reel[data-shot='true'] .subtitle { padding: 10px 14px; background: color-mix(in srgb, var(--l-deep) 72%, transparent); }
+@keyframes drift { from { transform: scale(1.08) translate(1.5%, 1%); } to { transform: scale(1) translate(0, 0); } }
 @media (prefers-reduced-motion: reduce) {
-  .frame, .push, .grain, .vignette, .walker, .bounce, .keep, .subtitle, .reel[data-last='true'] .begin { animation: none; }
+  .frame, .push, .grain, .vignette, .walker, .bounce, .keep, .subtitle, .shot, .reel[data-last='true'] .begin { animation: none; }
 }

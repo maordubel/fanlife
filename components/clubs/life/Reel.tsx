@@ -8,7 +8,7 @@
 import {useEffect, useMemo, useRef, useState} from 'react'
 import {PixelSprite, spriteForKeep, type SpriteName} from './PixelSprite'
 import {instantText} from './Typed'
-import {reelBeats, type ReelBeat, type ReelInput} from '@/lib/life/universal/reel'
+import {reelBeats, shotFor, shotSrc, type ReelBeat, type ReelInput} from '@/lib/life/universal/reel'
 import styles from './reel.module.css'
 
 export function Reel({input, copy, ready, onBegin, onCue, storyProps, primary}: {
@@ -51,10 +51,19 @@ export function Reel({input, copy, ready, onBegin, onCue, storyProps, primary}: 
 
   const sprite = input.keep ? spriteForKeep(input.keep) : 'cup'
   const scale = 6 + Math.min(age, 60) / 14
+  // the beat stands on a still the world itself was photographed into; a club without shots (or a file that
+  // will not load) keeps the code-drawn card it always had
+  const voiceNo = beats.slice(0, at).filter(b => b.k === 'voice').length
+  const src = input.club ? shotSrc(input.club, shotFor(beat, voiceNo)) : null
+  const [broken, setBroken] = useState(false)
+  const shot = !!src && !broken
   return (
-    <div className={styles.reel} data-beat={beat.k} data-last={last ? 'true' : 'false'} data-life="reel" onClick={() => !last && setAt(beats.length - 1)}>
+    <div className={styles.reel} data-beat={beat.k} data-last={last ? 'true' : 'false'} data-shot={shot ? 'true' : 'false'} data-life="reel" onClick={() => !last && setAt(beats.length - 1)}>
       <div className={styles.frame} key={`${at}-${beat.k}`} data-k={beat.k}>
-        <div className={styles.dots} aria-hidden="true" />
+        {shot
+          // eslint-disable-next-line @next/next/no-img-element -- a still from the club's own world, measured as shipped (rule 61): no re-encode
+          ? <img className={styles.shot} src={src!} alt="" aria-hidden="true" decoding="async" onError={() => setBroken(true)} data-life="reel-shot" />
+          : <div className={styles.dots} aria-hidden="true" />}
         <div className={styles.push}>{renderBeat(beat, age, scale, sprite, input, copy, storyProps)}</div>
       </div>
       <div className={styles.grain} aria-hidden="true" />

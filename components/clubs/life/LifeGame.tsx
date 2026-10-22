@@ -769,7 +769,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null}: P
     const rooms = [...new Set(chapter.objectives.map(o => o.room).filter((r): r is string => !!r))]
     const prev = pack.chapters[chapterNo - 2]
     return {no: chapterNo, of: pack.chapters.length, age: chapter.age, prevAge: prev?.age ?? 0, title: chapter.title, kicker: chapter.kicker, intro: chapter.intro,
-      places: rooms.map(r => roomName(pack, r, chapter)), keep: chapter.keepsakes?.[0]?.id ?? null}
+      places: rooms.map(r => roomName(pack, r, chapter)), keep: chapter.keepsakes?.[0]?.id ?? null, club: pack.clubId}
   })()
   const prelude = phase === 'chapter' && cardAt < chapterCards.length ? chapterCards[cardAt]! : null
   const saved = state.started && !!chapter
