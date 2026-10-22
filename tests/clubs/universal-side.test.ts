@@ -18,7 +18,7 @@ describe('side life economy', () => {
       if (fx.e !== 'play' || !c.spots.some(s => s.talk === t.id && s.id.startsWith('job-'))) continue
       plays++
       const d = eventsOf([fx], {} as never).directives[0] as Extract<ReturnType<typeof eventsOf>['directives'][number], {d: 'play'}>
-      const coins = (l: Effect[]) => l.reduce((n, e) => n + (e.e === 'coins' ? e.by : 0), 0)
+      const coins = (l: Effect[]) => l.reduce((n, e) => n + (e.e === 'coins' || e.e === 'pay' ? e.by : 0), 0)
       expect(coins(afterPlay(d, 'slip'))).toBeLessThanOrEqual(coins(afterPlay(d, 'good')))
       expect(coins(afterPlay(d, 'ok'))).toBe(coins(afterPlay(d, 'good')))
       expect(afterPlay(d, 'slip').some(e => e.e === 'energy' && e.by < 0)).toBe(true)

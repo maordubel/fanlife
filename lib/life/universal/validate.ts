@@ -106,6 +106,41 @@ export function lifeFlagsOf(chapter: Chapter): string[] {
   return effectsOf(chapter).flatMap(fx => fx.e === 'flag' && fx.k.startsWith('life:') ? [fx.k] : [])
 }
 
+/* ───────────── money spent without a check (owner's spec §2, §8) ───────────── */
+
+/** The coins a condition guarantees the wallet holds (`min coins` reached through `all`; `any` and `none` guarantee nothing). */
+function guaranteed(c: Cond | undefined): number {
+  if (!c) return 0
+  if ('min' in c && c.min[0] === 'coins') return c.min[1]
+  if ('all' in c) return Math.max(0, ...c.all.map(guaranteed))
+  return 0
+}
+/** What a list of effects takes out of the wallet straight away (a play's `then` happens whatever the go). */
+function spendOf(list: readonly Effect[] | undefined): number {
+  let n = 0
+  for (const fx of list ?? []) {
+    if (fx.e === 'coins' && fx.by < 0) n -= fx.by
+    if (fx.e === 'play') n += spendOf(fx.then)
+  }
+  return n
+}
+
+/**
+ * Every choice (or branch) that spends coins without a condition saying the wallet holds them. The engine floors
+ * the wallet at zero, which is not a price check: the player "buys" with money he does not have. A choice that is
+ * a debt on purpose says so with a `min` of its own. `tests/life-economy-orders.test.ts` holds the list of today's
+ * offenders: it may only shrink.
+ */
+export function unguardedSpends(pack: Pick<LifePack, 'chapters'>): string[] {
+  const out: string[] = []
+  for (const ch of pack.chapters) for (const t of ch.talks) t.branches.forEach((b, i) => {
+    const has = guaranteed(b.when)
+    if (!b.choices?.length) { const n = spendOf(b.then); if (n > has) out.push(`${ch.id}:${t.id}[${i}]`) }
+    for (const c of b.choices ?? []) { const n = spendOf(c.then); if (n > Math.max(has, guaranteed(c.when))) out.push(`${ch.id}:${t.id}:${c.id}`) }
+  })
+  return out
+}
+
 export function validatePack(pack: LifePack): string[] {
   const issues: string[] = [], earlier = new Set<string>(), ids = new Set<string>()
   for (const chapter of pack.chapters) {

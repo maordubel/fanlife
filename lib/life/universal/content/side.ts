@@ -13,6 +13,11 @@
  *
  *   · a job costs 15–25 energy and pays 2–9 coins, by age (a child, a teenager and an adult are not
  *     offered the same work, nor paid the same);
+ *   · wages are paid ONCE per job (`{e: 'pay', order}`): a replay, a double tap or a second route to the same
+ *     work never pays twice, and no paid job is offered in a room where the chapter itself already pays for
+ *     work (the shift in F13 and c6-work is the job; the tins beside it are not a second wage);
+ *   · a paid job is offered full or short, the price of each said before the work starts;
+ *   · kicks, chants and swaps pay nothing: they are done for the love of it (heart, standing);
  *   · a small game is skill: `good` (and `ok`) pays in full and gives the standing, the bond and the
  *     heart; a `slip` still pays a third — the day's work was done, just not well — and costs the
  *     same energy, because tiredness is not a score;
@@ -74,11 +79,11 @@ const JOBS: readonly JobDef[] = [
     ask: 'Bucket, sponge, and not a drop on the windows from the wrong side. I will know.',
     done: 'It shines. The neighbour walks round it once, says nothing, and pays.',
     slip: 'A streak on the windscreen, and a bucket of water on your shoes. He pays for the half that shines.'},
-  {id: 'kickwall', room: 'street', spot: 'graffiti', label: 'Penalties against the wall', verb: 'use', game: 'kick', from: 8, to: 70, pay: [2, 3, 0], cost: 15, giver: 'friend', standing: 2, heart: 2,
+  {id: 'kickwall', room: 'street', spot: 'graffiti', label: 'Penalties against the wall', verb: 'use', game: 'kick', from: 8, to: 70, pay: [0, 0, 0], cost: 15, giver: 'friend', standing: 2, heart: 2,
     ask: 'The goalie is painted on. He has never once saved one. That is not the point; the point is the corner.',
     done: 'The wall takes it. Somebody leaning in a doorway claps twice, slowly, and goes back inside.',
     slip: 'You hit the painted goalie square on the head. He is, to be fair, very good at it.'},
-  {id: 'kickjackets', room: 'pitch', spot: 'jackets', label: 'Penalties between the jackets', verb: 'use', game: 'kick', from: 8, to: 70, pay: [3, 4, 0], cost: 15, giver: 'friend', standing: 2, heart: 2,
+  {id: 'kickjackets', room: 'pitch', spot: 'jackets', label: 'Penalties between the jackets', verb: 'use', game: 'kick', from: 8, to: 70, pay: [0, 0, 0], cost: 15, giver: 'friend', standing: 2, heart: 2,
     ask: 'Two jackets for posts. Whoever saves it picks the next corner. You are the keeper’s problem today.',
     done: 'Three kicks and a lot of arguing about whether the second one was in. It was in.',
     slip: 'The jacket posts moved every time you looked at them. You will say that for years.'},
@@ -90,7 +95,7 @@ const JOBS: readonly JobDef[] = [
     ask: 'A neighbour left it on your table: "if you can get a voice out of it, it is yours to charge for."',
     done: 'A voice, then music, then a man reading the weather. The neighbour pays and does not look at you.',
     slip: 'Static, static, and then, for a second, somebody laughing in another country. The neighbour pays you for the laugh.'},
-  {id: 'chant', room: 'schoolyard', spot: 'bench', label: 'Start the chant', verb: 'use', game: 'clap', from: 10, to: 17, pay: [2, 3, 0], cost: 15, giver: 'friend', standing: 2, heart: 1,
+  {id: 'chant', room: 'schoolyard', spot: 'bench', label: 'Start the chant', verb: 'use', game: 'clap', from: 10, to: 17, pay: [0, 0, 0], cost: 15, giver: 'friend', standing: 2, heart: 1,
     ask: 'Nobody will start it. Somebody has to start it. The wall is right there.',
     done: 'It catches on the third bar. By the sixth, the whole yard owns it, and nobody remembers whose it was.',
     slip: 'You started it. Nobody joined. A boy at the back clapped, once, out of pity, and that is also how it starts.'},
@@ -106,7 +111,8 @@ const JOBS: readonly JobDef[] = [
     ask: 'It is never right and it is never wrong by much. Count it, and do not tell me what it should have been. Coins only — the buttons stay.',
     done: 'Two coins short, exactly as predicted. She nods as if you had confirmed the weather.',
     slip: 'You counted it twice and got two answers. She takes the tin back and says the average is probably right.'},
-  {id: 'swap', room: 'bedroom', spot: 'desk', label: 'Swap the doubles', verb: 'use', game: 'count', from: 6, to: 13, pay: [2, 3, 0], cost: 15, giver: 'friend', standing: 1,
+  // kicks, a chant and a swap are done for the love of it: they give heart and standing, never coins (spec §2)
+  {id: 'swap', room: 'bedroom', spot: 'desk', label: 'Swap the doubles', verb: 'use', game: 'count', from: 6, to: 13, pay: [0, 0, 0], cost: 15, giver: 'friend', standing: 1, heart: 1,
     ask: 'You have six of the same one. Somebody out there has none. That is a market, whatever anyone says.',
     done: 'Swapped for two you wanted and one you will pretend you wanted. A fair day.',
     slip: 'You gave away the one you meant to keep. He is delighted. You are learning something about markets.'},
@@ -198,7 +204,7 @@ const SHOPS: readonly ShopDef[] = [
 /** The whole side economy as one table: what a day can earn, what it costs, what a coin can buy. */
 export const SIDE_ECONOMY = {
   energyPerDay: 100,
-  jobs: JOBS.map(j => ({id: j.id, ages: [j.from, j.to] as const, game: j.game, cost: j.cost, pay: j.pay, slipPay: j.pay.map(p => (p > 0 ? Math.max(1, Math.floor(p / 3)) : 0)) as unknown as ByAge, standing: j.standing, heart: j.heart ?? 0})),
+  jobs: JOBS.map(j => ({id: j.id, ages: [j.from, j.to] as const, game: j.game, cost: j.cost, pay: j.pay, shortPay: j.pay.map(p => (p > 0 ? Math.ceil(p / 2) : 0)) as unknown as ByAge, shortCost: Math.ceil(j.cost / 2), slipPay: j.pay.map(p => (p > 0 ? Math.max(1, Math.floor(p / 3)) : 0)) as unknown as ByAge, standing: j.standing, heart: j.heart ?? 0})),
   rests: REST.map(r => ({id: r.id, gain: r.gain})),
   shops: SHOPS.map(s => ({id: s.id, goods: s.goods.map(g => ({id: g.id, price: g.price, needs: g.needs ?? null}))})),
 } as const
@@ -212,6 +218,35 @@ const roomsOf = (c: Chapter): Set<string> => {
   return out
 }
 
+/**
+ * Rooms where the chapter itself already pays for work: any talk reached from a person, a spot or a beat in
+ * that room (following its `next` links) that puts coins in the wallet. A side job there would be a second
+ * wage for the same afternoon.
+ */
+export function payingRooms(c: Chapter): Set<string> {
+  const talks = new Map(c.talks.map(t => [t.id, t]))
+  const pays = (list: readonly Effect[] | undefined): boolean => (list ?? []).some(fx => ((fx.e === 'coins' || fx.e === 'pay') && fx.by > 0) || (fx.e === 'play' && (pays(fx.then) || pays(fx.good) || pays(fx.slip))))
+  const reaches = (id: string | undefined): boolean => {
+    const seen = new Set<string>(), todo = id ? [id] : []
+    while (todo.length) {
+      const t = talks.get(todo.pop()!)
+      if (!t || seen.has(t.id)) continue
+      seen.add(t.id)
+      for (const b of t.branches) {
+        if (pays(b.then)) return true
+        if (b.next) todo.push(b.next)
+        for (const ch of b.choices ?? []) { if (pays(ch.then)) return true; if (ch.next) todo.push(ch.next) }
+      }
+    }
+    return false
+  }
+  const out = new Set<string>()
+  c.cast.forEach(p => { if (reaches(p.talk)) out.add(p.room) })
+  c.spots.forEach(x => { if (reaches(x.talk)) out.add(x.room) })
+  c.beats.forEach(b => { if (reaches(b.talk)) out.add(b.room) })
+  return out
+}
+
 /** Where a chapter can have a job, a hatch or a bench: rooms it uses, on spots it does not. */
 export function sideLife(chapter: Chapter): Chapter {
   if (chapter.id === 'finale' || chapter.id.startsWith('night-')) return chapter
@@ -219,25 +254,37 @@ export function sideLife(chapter: Chapter): Chapter {
   const spots: SpotUse[] = [], talks: Talk[] = [], keepsakes: Keepsake[] = []
   const hasKeepsake = (id: string) => chapter.keepsakes?.some(k => k.id === id) || keepsakes.some(k => k.id === id)
   const free = (room: string, spot: string) => rooms.has(room) && !taken.has(`${room}:${spot}`)
-  const jobsIn = new Map<string, number>()
+  const jobsIn = new Map<string, number>(), paying = payingRooms(chapter)
 
   for (const j of JOBS) {
     if (spots.filter(x => x.id.startsWith('job-')).length >= MAX_JOBS) break
     const pay = j.pay[s], reward = j.heart ?? 0
     if (chapter.age < j.from || chapter.age > j.to || (pay <= 0 && reward <= 0) || !free(j.room, j.spot) || (jobsIn.get(j.room) ?? 0) >= MAX_JOBS_PER_ROOM) continue
+    if (pay > 0 && paying.has(j.room)) continue // the chapter already pays for the work done in this room
     jobsIn.set(j.room, (jobsIn.get(j.room) ?? 0) + 1); taken.add(`${j.room}:${j.spot}`)
     const key = `job:${j.id}`, id = `job-${j.id}`
-    const slipPay = pay > 0 ? Math.max(1, Math.floor(pay / 3)) : 0
-    const tired: Effect[] = [{e: 'energy', by: -j.cost}, flag(key)]
-    const well: Effect[] = [...(pay > 0 ? [{e: 'coins', by: pay} as Effect, {e: 'sound', cue: 'coin'} as Effect] : []), ...(j.standing ? [{e: 'standing', by: j.standing} as Effect] : []), ...(reward ? [heart(reward)] : []), ...(BONDS.has(j.giver) ? [bond(j.giver, 2)] : []), flag(`${key}:good`)]
-    const slipped: Effect[] = [...(slipPay ? [{e: 'coins', by: slipPay} as Effect] : []), flag(`${key}:slip`)]
+    // one order per job and chapter: full and short are two prices for the same order, so only one is ever paid
+    const order = id
+    const offer = (wage: number, cost: number): {good: Effect[]; slip: Effect[]; tired: Effect[]} => {
+      const slipWage = wage > 0 ? Math.max(1, Math.floor(wage / 3)) : 0
+      return {
+        tired: [{e: 'energy', by: -cost}, flag(key)],
+        good: [...(wage > 0 ? [{e: 'pay', order, by: wage} as Effect, {e: 'sound', cue: 'coin'} as Effect] : []), ...(j.standing ? [{e: 'standing', by: j.standing} as Effect] : []), ...(reward ? [heart(reward)] : []), ...(BONDS.has(j.giver) ? [bond(j.giver, 2)] : []), flag(`${key}:good`)],
+        slip: [...(slipWage ? [{e: 'pay', order, by: slipWage} as Effect] : []), flag(`${key}:slip`)],
+      }
+    }
+    const full = offer(pay, j.cost)
+    const shortPay = pay > 0 ? Math.ceil(pay / 2) : 0, shortCost = Math.ceil(j.cost / 2)
+    const short = offer(shortPay, shortCost)
     const tag = pay > 0 ? ` · ${pay} coins` : ''
     spots.push({id, room: j.room, spot: j.spot, when: {not: key}, talk: id, verb: j.verb, label: `${j.label}${tag}`})
     talks.push(
       {id, branches: [
         {when: {none: [{min: ['energy', j.cost]}]}, lines: [tell(REST_FIRST)]},
-        {lines: [say(j.giver, j.ask), tell(`${pay > 0 ? `${pay} coins if you do it well. ` : ''}It will take ${j.cost} out of you${reward ? ', and it will be worth remembering' : ''}.`)], choices: [
-          {id: 'do', t: 'Do it', then: [{e: 'play', game: j.game, id, then: tired, good: well, slip: slipped}], next: `${id}-done`},
+        // the offer before the work: who pays, what for, how much, and what it costs the body (spec §2)
+        {lines: [say(j.giver, j.ask), tell(`${pay > 0 ? `${pay} coins if you do it well, or ${shortPay} for half of it. ` : ''}It will take ${j.cost} out of you${reward ? ', and it will be worth remembering' : ''}.`)], choices: [
+          {id: 'do', t: pay > 0 ? `All of it · ${pay} coins` : 'Do it', then: [{e: 'play', game: j.game, id, then: full.tired, good: full.good, slip: full.slip}], next: `${id}-done`},
+          ...(pay > 0 ? [{id: 'short', t: `Half of it · ${shortPay} coins`, then: [{e: 'play', game: j.game, id, then: short.tired, good: short.good, slip: short.slip} as Effect], next: `${id}-done`}] : []),
           {id: 'later', t: 'Not now'},
         ]},
       ]},

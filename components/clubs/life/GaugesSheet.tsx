@@ -30,6 +30,21 @@ export function GaugesSheet({pack, chapter, state, copy, story, focus, onMe, onC
             <span className={styles.gaugeWord}>{copy['gauge.coins']}</span>
             <b className={styles.meterNum}><bdi>{state.coins}</bdi></b>
           </li>
+          {/* money put aside, and money held for others: neither is the wallet (spec §2) */}
+          {Object.entries(state.envelopes ?? {}).filter(([, v]) => v > 0).map(([id, v]) => (
+            <li key={`env-${id}`} data-meter="envelope" data-life={`envelope-${id}`}>
+              <span className={styles.meterName}>{copy['gauge.envelope'] ?? 'Put aside'}</span>
+              <span className={styles.gaugeWord}>{copy[`gauge.envelope.${id}`] ?? id}</span>
+              <b className={styles.meterNum}><bdi>{v}</bdi></b>
+            </li>
+          ))}
+          {Object.entries(state.funds ?? {}).filter(([, v]) => v > 0).map(([id, v]) => (
+            <li key={`fund-${id}`} data-meter="fund" data-life={`fund-${id}`}>
+              <span className={styles.meterName}>{copy['gauge.fund'] ?? 'Held for others'}</span>
+              <span className={styles.gaugeWord}>{copy[`gauge.fund.${id}`] ?? id}</span>
+              <b className={styles.meterNum}><bdi>{v}</bdi></b>
+            </li>
+          ))}
           {meters.map(m => (
             <li key={m.k} data-meter={m.k} data-focus={focus === m.k ? 'true' : 'false'}>
               <span className={styles.meterName}>{copy[`me.${m.k}`]}</span>
