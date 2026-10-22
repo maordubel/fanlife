@@ -11,7 +11,25 @@ export type ReelBeat =
   | {k: 'voice'; ms: number; text: string}
   | {k: 'title'; ms: number; title: string; kicker: string; keep: string | null}
 
-export type ReelInput = {no: number; of: number; age: number; prevAge: number; title: string; kicker: string; intro: string; places: readonly string[]; keep?: string | null}
+export type ReelInput = {no: number; of: number; age: number; prevAge: number; title: string; kicker: string; intro: string; places: readonly string[]; keep?: string | null
+  /** the club whose world the reel is shot in (public/life/town/shots/<club>/…); none = the code-drawn card */
+  club?: string | null}
+
+/**
+ * The world-shot each beat stands on: the scarf left at home while the age counts, then the day as a supporter
+ * walks it — the ticket in the hand, the tunnel, the stand — and the stand under the title. Shots are stills the
+ * TOWN engine photographed (`public/life/town/shots.js`, `scripts/life/capture-shots.mjs`), one set per club.
+ */
+export const SHOTS = ['scarf', 'ticket', 'tunnel', 'stand'] as const
+export type Shot = (typeof SHOTS)[number]
+const DAY: readonly Shot[] = ['ticket', 'tunnel', 'stand']
+export function shotFor(b: ReelBeat, voiceIndex = 0): Shot {
+  if (b.k === 'slate') return 'scarf'
+  if (b.k === 'place') return DAY[b.i % DAY.length]!
+  if (b.k === 'voice') return voiceIndex % 2 ? 'stand' : 'tunnel'
+  return 'stand'
+}
+export const shotSrc = (club: string, shot: Shot) => `/life/town/shots/${encodeURIComponent(club)}/${shot}.webp`
 
 export const REEL_MS = {slate: 2000, place: 1400, voice: 2600, title: 2200} as const
 export const MAX_PLACES = 3
