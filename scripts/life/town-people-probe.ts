@@ -45,7 +45,7 @@ async function main() {
     // a conversation: three lines, three moods, the speaker's hand and head and the listener's answer
     const living = 'room'
     if (scenes.includes('talk')) await enter(page, living, club)
-    const who = Object.keys(ROOMS[living as keyof typeof ROOMS].slots)[0]
+    const who = Object.keys(ROOMS[living as keyof typeof ROOMS]?.slots ?? {})[0]
     if (who && scenes.includes('talk')) {
       await page.evaluate(id => (window as unknown as W).__vxPlay.focus(id), who)
       for (const mood of ['tense', 'joy', 'grief', 'tender']) {
