@@ -194,6 +194,11 @@ try {
    assert(bank.has(id),`Unknown ${slug} question ${id}`);answer=bank.get(id).answer
    interactions.add(type)
    const values=Array.isArray(answer)?answer:[answer]
+   // a stage card that lands a beat after the board swallows the taps that place a match pair or an order/multi item
+   // (CI, 22.10.2026): give the card its beat, tap it away, and only then answer
+   if(['match','order','multi'].includes(type)){
+    await page.getByTestId('trivia-stage').waitFor({timeout:1200}).then(()=>page.getByTestId('trivia-stage').click({timeout:800}),()=>{}).catch(()=>{})
+    await page.getByTestId('trivia-stage').waitFor({state:'detached',timeout:5000}).catch(()=>{})}
    if(type==='match'){ // the first unmatched left item is active; wait for each pair to appear before the next tap
     const question=bank.get(id),columns=board.locator('[data-kind="match"] ul')
     for(let i=0;i<question.left.length;i++){
