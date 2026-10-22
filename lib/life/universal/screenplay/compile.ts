@@ -99,6 +99,8 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
   }
   const alone: Speech = [null, 'You do it by yourself.', 'אתה עושה את זה לבד.']
 
+  /** the coin minimum an option's own condition sets (0 when it sets none) */
+  const minCoins = (c: Cond | undefined): number => !c ? 0 : 'min' in c && c.min[0] === 'coins' ? c.min[1] : 'all' in c ? Math.max(0, ...c.all.map(minCoins)) : 0
   scenes.forEach((scene, n) => {
     if (!ROOMS[scene.room]) throw new Error(`STORY_ROOM:${scene.room}`)
     const root = `${scene.id}:${'choose'}`, task = `${scene.id}:act`, pick = pickF(scene.id)
@@ -136,7 +138,12 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
     }
 
     // ───── the opening conversation
-    const choices = (suffix: string): Choice[] => scene.options.map(o => ({id: o.id, t: word(o.text), when: o.when, then: [{e: 'flag' as const, k: pick, v: o.id}], next: `${scene.id}:${o.id}:${suffix}`}))
+    // an option that asks for money takes it at the moment it is chosen, while its own check still holds — not later at the act,
+    // when the same coins may have gone somewhere else in between (no spend is ever unchecked, no scene left without a way on)
+    const paysNow = (o: Option): boolean => minCoins(o.when) > 0
+    const spends = (o: Option): Effect[] => paysNow(o) ? (o.effects ?? []).filter(x => x.e === 'coins' && x.by < 0) : []
+    const kept = (o: Option): Effect[] => paysNow(o) ? (o.effects ?? []).filter(x => !(x.e === 'coins' && x.by < 0)) : (o.effects ?? [])
+    const choices = (suffix: string): Choice[] => scene.options.map(o => ({id: o.id, t: word(o.text), when: o.when, then: [{e: 'flag' as const, k: pick, v: o.id}, ...spends(o)], next: `${scene.id}:${o.id}:${suffix}`}))
     const entry = afterOf(scene, n).length === 0
     const callbacksHere: Callback[] = [...(entry ? echoCallbacks(scene.who, he) : []), ...(scene.callbacks ?? [])]
     const stacks = callbackSubsets(callbacksHere)
@@ -185,7 +192,7 @@ export function compileScript(script: ChapterScript, locale: 'en' | 'he'): Chapt
     const {next, skipped, destinations} = wayOn(o)
     const keepCond: Cond | undefined = last && keepWhen ? (keeps ? settle(keepWhen, o.effects ?? []) : {none: [settle(keepWhen, o.effects ?? [])]}) : undefined
     for (const dest of destinations) for (const wear of wearBranches(o)) for (const solo of present ? [true, false] : [false]) {
-      const done: Effect[] = [...(scene.sound ? [{e: 'sound' as const, cue: scene.sound}] : []), ...(o.effects ?? []), ...wear.fx,
+      const done: Effect[] = [...(scene.sound ? [{e: 'sound' as const, cue: scene.sound}] : []), ...kept(o), ...wear.fx,
         {e: 'flag', k: `life:decision:${scene.id}`, v: o.id}, {e: 'flag', k: doneF(scene.id)}, ...skipped.map(x => ({e: 'flag' as const, k: doneF(x.id)}))]
       if (last) for (const k of ECHO) done.push({e: 'flag', k, v: false})
       if (last) {
