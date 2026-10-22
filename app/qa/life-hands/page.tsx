@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 
+import { ClubSurface } from '@/components/clubs/ClubSurface'
 import { loadClub } from '@/lib/clubs/resolver'
 import { clubTheme, themeStyle } from '@/lib/clubs/theme'
 import { JOB_HANDS } from '@/lib/life/universal/hands'
@@ -26,5 +27,10 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
   const ids = [...Object.keys(JOB_HANDS), 'r-ter-stencil', 'scarf-stitch', 'f20-photo']
   const id = ids.includes(sp.id ?? '') ? sp.id! : ids[0]!
   const age = Number(sp.age ?? 24) || 24
-  return <Preview style={themeStyle(theme)} club={clubId} id={id} age={age} ids={ids} />
+  // dressed like every page (rule 91): the club's surface, with no tab bar on a proofing stand
+  return (
+    <ClubSurface theme={theme} clubId={clubId} tabbar={false}>
+      <Preview style={themeStyle(theme)} club={clubId} id={id} age={age} ids={ids} />
+    </ClubSurface>
+  )
 }
