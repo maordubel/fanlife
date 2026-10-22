@@ -15,6 +15,7 @@
  * Distances are metres, times seconds. Forward is −z.
  */
 import type {MissionSpec, Verb} from './spec'
+import {applyQuest} from './quest'
 
 /* ───────────── seeded randomness ───────────── */
 
@@ -53,6 +54,47 @@ export type Check = {z0: number; z1: number; max: number}
 /** a line the supporter thinks, once, when the goal is this far away */
 export type Voice = {at: number; key: string}
 
+/* ───────────── the quest layer (RUSH 2): steps, things on the ground, places to stop ───────────── */
+
+/** a walkable rectangle: the main street, a side street, a lay-by — the world is their union */
+export type Rect = {x0: number; x1: number; z0: number; z1: number}
+/**
+ * One objective of a mission, in order. `reach` a place · `talk` to somebody (act next to him) ·
+ * `collect` every pickup of this step · `stop` the car in a lay-by and wait · `goal` the mission's end.
+ */
+export type StepKind = 'reach' | 'talk' | 'collect' | 'stop' | 'goal'
+export type Step = {
+  kind: StepKind
+  x: number; z: number; r: number
+  /** words key of the objective line (`obj.*`) */
+  key: string
+  /** who stands there (talk, reach of a group, stop): drawn by the renderer, never in the crowd's lists */
+  npc: Look | null
+  /** words key of what he says when you talk to him (`npc.*`) */
+  say: string | null
+  /** game seconds the step costs (buying a ticket takes time) */
+  cost: number
+  /** seconds to hold still (stop) */
+  hold: number
+  /** how many people wait there (a group that joins the march) */
+  group: number
+  /** after this step the person walks with you (the escort) */
+  joins: boolean
+  /** after this step the person is gone (a mate gets in the car) */
+  leaves: boolean
+  /** talking to him gives one more clue (find) */
+  reveals: boolean
+}
+export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape'
+/** something on the ground: required by a step, or an extra (`step: null`) that buys a few seconds */
+export type Pickup = {x: number; z: number; kind: PickupKind; step: number | null}
+/** a knot of supporters singing: stand in it a moment and the song carries you (an extra) */
+export type Ring = {x: number; z: number; r: number}
+/** a bin, a shutter: bang it (act) and every steward near turns his head to it */
+export type Noise = {x: number; z: number}
+/** somebody who walks with you: your father, your child, a visitor, an old man. Too far and he stops. */
+export type Escort = {who: 'dad' | 'child' | 'visitor' | 'elder' | 'friend'; look: Look; pace: number; leash: number}
+
 export type Level = {
   place: Place
   verb: Verb
@@ -80,6 +122,17 @@ export type Level = {
   timeScale: number
   /** distance from start to goal, for the progress bar */
   length: number
+  /** where he may walk (the union); empty = `bounds` */
+  areas: Rect[]
+  steps: Step[]
+  pickups: Pickup[]
+  rings: Ring[]
+  noises: Noise[]
+  escort: Escort | null
+  /** how far a side street runs either side of the main street (0 = none) */
+  side: number
+  /** a playground of children (the find in a schoolyard): the renderer draws everyone smaller */
+  kids: boolean
 }
 
 /* ───────────── positions as functions of time ───────────── */
@@ -114,8 +167,12 @@ export function patrolAt(p: Patrol, t: number): {x: number; z: number; face: num
 /* ───────────── building ───────────── */
 
 const PALETTE = {tone: 6, hair: 6, top: 6, pants: 5, car: 6}
+/** a side street runs this far either side of the main street, and is this wide from its middle to the shop fronts */
+export const SIDE = 46, SIDE_W = 7
+/** the pavement of a side street on the near side (towards the start): where things lie and people wait */
+export const sidePave = (cz: number) => cz + 5.4
 
-function look(r: () => number, o: Partial<Look> = {}): Look {
+export function look(r: () => number, o: Partial<Look> = {}): Look {
   return {
     tone: Math.floor(r() * PALETTE.tone), hair: Math.floor(r() * PALETTE.hair), top: Math.floor(r() * PALETTE.top), pants: Math.floor(r() * PALETTE.pants),
     kit: r() < 0.72, cap: r() < 0.2, scarf: r() < 0.62, beard: r() < 0.22, size: 0.93 + r() * 0.14, ...o,
@@ -129,8 +186,9 @@ function placeOf(spec: MissionSpec): Place {
   return spec.verb === 'drive' ? 'road' : spec.verb === 'sneak' ? 'yard' : spec.verb === 'find' ? 'crowd' : 'street'
 }
 
-function finish(l: Omit<Level, 'timeScale'>, spec: MissionSpec): Level {
-  return {...l, timeScale: spec.clock / l.realSeconds}
+type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids'> & Partial<Pick<Level, 'areas' | 'side'>>
+function finish(l: Base): Level {
+  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, ...l, timeScale: 1}
 }
 
 function street(spec: MissionSpec, r: () => number): Level {
@@ -161,10 +219,12 @@ function street(spec: MissionSpec, r: () => number): Level {
   const pace = carry ? 4.6 : 6.2
   return finish({
     place: 'street', verb: spec.verb, seed: spec.seed, half, walk, start: {x: 0, z: 14}, goal: {x: 0, z: gateZ + 3, r: 3.5}, home: null,
-    bounds: {x0: -walk + 0.5, x1: walk - 0.5, z0: gateZ + 1, z1: 20}, crossings, cars, walkers, standers, patrols: [], targets: [], throwers, checks: [],
+    bounds: {x0: -SIDE, x1: SIDE, z0: gateZ + 1, z1: 20},
+    // open streets: the main road to the ground, and every crossing a side street you may walk down
+    side: SIDE, areas: [{x0: -walk + 0.5, x1: walk - 0.5, z0: gateZ + 1, z1: 20}, ...crossings.map(z => ({x0: -SIDE, x1: SIDE, z0: z - SIDE_W, z1: z + SIDE_W}))], crossings, cars, walkers, standers, patrols: [], targets: [], throwers, checks: [],
     voice: carry ? [{at: 190, key: 'carry.1'}, {at: 120, key: 'carry.2'}, {at: 40, key: 'carry.3'}] : [{at: 250, key: 'run.1'}, {at: 175, key: 'run.2'}, {at: 110, key: 'run.3'}, {at: 45, key: 'run.4'}],
     realSeconds: Math.round((L + 14) / pace * SLACK[spec.difficulty]), length: L + 14 - 3,
-  }, spec)
+  })
 }
 
 function road(spec: MissionSpec, r: () => number): Level {
@@ -183,10 +243,10 @@ function road(spec: MissionSpec, r: () => number): Level {
   for (const c of checks) for (const k of [-1, 1]) cars.push({axis: 'z', lane: k * (half + 1.6), dir: -1, v: 0, p0: (c.z0 + c.z1) / 2, span: [-L, 40], len: 4.6, wid: 2, police: true, colour: 0})
   return finish({
     place: 'road', verb: spec.verb, seed: spec.seed, half, walk: half + 4, start: {x: 0, z: 10}, goal: {x: 0, z: -L, r: half}, home: null,
-    bounds: {x0: -half + 1, x1: half - 1, z0: -L - 5, z1: 20}, crossings: [], cars, walkers: [], standers: [], patrols: [], targets: [], throwers: [], checks,
+    bounds: {x0: -half + 1, x1: half + 4, z0: -L - 5, z1: 20}, areas: [{x0: -half + 1, x1: half - 1, z0: -L - 5, z1: 20}], crossings: [], cars, walkers: [], standers: [], patrols: [], targets: [], throwers: [], checks,
     voice: [{at: 1200, key: 'drive.1'}, {at: 800, key: 'drive.2'}, {at: 400, key: 'drive.3'}, {at: 90, key: 'drive.4'}],
     realSeconds: Math.round(L / 19 * SLACK[spec.difficulty]), length: L + 10,
-  }, spec)
+  })
 }
 
 function yard(spec: MissionSpec, r: () => number): Level {
@@ -205,7 +265,7 @@ function yard(spec: MissionSpec, r: () => number): Level {
     bounds: {x0: -W + 0.6, x1: W - 0.6, z0: Z + 1, z1: 14}, crossings: [], cars: [], walkers: [], standers, patrols, targets: [], throwers: [], checks: [],
     voice: steal ? [{at: 60, key: 'steal.1'}, {at: 20, key: 'steal.2'}] : [{at: 60, key: 'sneak.1'}, {at: 25, key: 'sneak.2'}],
     realSeconds: Math.round(((-Z + 10) * (steal ? 2 : 1)) / 1.6 * SLACK[spec.difficulty]), length: (-Z + 10) * (steal ? 2 : 1),
-  }, spec)
+  })
 }
 
 const PERSON_CLUES: readonly Clue[][] = [['cap', 'scarf'], ['kit', 'beard'], ['plain', 'cap'], ['scarf', 'beard'], ['kit', 'tall'], ['plain', 'scarf']]
@@ -240,15 +300,85 @@ function crowd(spec: MissionSpec, r: () => number): Level {
     bounds: {x0: -W + 0.6, x1: W - 0.6, z0: Z + 1, z1: 14}, crossings: [], cars: [], walkers: [], standers, patrols: [], targets, throwers: [], checks: [],
     voice: [],
     realSeconds: Math.round(70 * SLACK[spec.difficulty]), length: -Z + 10,
-  }, spec)
+  })
 }
 
 export function buildLevel(spec: MissionSpec): Level {
   const r = rng(spec.seed ^ 2654435769)
   const p = placeOf(spec)
-  return p === 'road' ? road(spec, r) : p === 'yard' ? yard(spec, r) : p === 'crowd' ? crowd(spec, r) : street(spec, r)
+  const base = p === 'road' ? road(spec, r) : p === 'yard' ? yard(spec, r) : p === 'crowd' ? crowd(spec, r) : street(spec, r)
+  if (!base.areas.length) base.areas = [{...base.bounds}]
+  applyQuest(base, spec, rng(spec.seed ^ 0x9e3779b1))
+  const plan = planRoute(base)
+  base.realSeconds = Math.round(plan.seconds * SLACK[spec.difficulty])
+  base.length = Math.max(1, Math.round(plan.metres))
+  base.timeScale = spec.clock / base.realSeconds
+  return base
 }
 
-/** the clue a find mission gives after `n` seconds: one at the start, the next at 18 s, the last at 36 s */
-export const cluesShown = (level: Level, seconds: number): Clue[] => (level.targets[0]?.clues ?? []).slice(0, seconds < 18 ? 1 : seconds < 36 ? 2 : 3)
+/* ───────────── getting about: one routing rule shared by the planner and the bot ───────────── */
+
+export const inArea = (l: Pick<Level, 'areas'>, x: number, z: number): boolean => l.areas.some(a => x >= a.x0 && x <= a.x1 && z >= a.z0 && z <= a.z1)
+
+/** the side street a point is in (its crossing), or null on the main street */
+export function sideOf(l: Level, x: number, z: number): number | null {
+  if (!l.side) return null
+  for (const c of l.crossings) if (Math.abs(z - c) <= SIDE_W + 0.01 && Math.abs(x) > l.walk - 0.6) return c
+  return null
+}
+
+/** the next point to walk to on the way from `a` to `b`: out of one side street onto the main street, then into the other */
+export function viaPoint(l: Level, a: {x: number; z: number}, b: {x: number; z: number}): {x: number; z: number} {
+  if (l.place !== 'street' || !l.side) return b
+  const sa = sideOf(l, a.x, a.z), sb = sideOf(l, b.x, b.z)
+  const sameSide = sa !== null && sa === sb && Math.sign(a.x) === Math.sign(b.x)
+  if (sameSide) return b
+  const edge = l.walk - 2.2
+  if (sa !== null) return {x: Math.sign(a.x) * edge * 0.5, z: a.z}
+  if (sb !== null) return Math.abs(a.x) > edge - 0.3 && Math.abs(a.z - b.z) < 0.8 ? b : {x: Math.sign(b.x) * edge, z: b.z}
+  return b
+}
+
+/** walking distance through the via points */
+export function routeMetres(l: Level, a: {x: number; z: number}, b: {x: number; z: number}): number {
+  let p = a, m = 0
+  for (let i = 0; i < 4; i++) { const n = viaPoint(l, p, b); m += Math.hypot(n.x - p.x, n.z - p.z); p = n; if (n === b) break }
+  return m + Math.hypot(b.x - p.x, b.z - p.z)
+}
+
+/** the points a step sends him to, in the order a sensible player takes them */
+export function stepPoints(l: Level, i: number, from: {x: number; z: number}): {x: number; z: number}[] {
+  const st = l.steps[i]
+  if (!st) return []
+  if (st.kind !== 'collect') return [{x: st.x, z: st.z}]
+  const left = l.pickups.filter(p => p.step === i).map(p => ({x: p.x, z: p.z}))
+  const out: {x: number; z: number}[] = []
+  let at = from
+  while (left.length) { left.sort((p, q) => routeMetres(l, at, p) - routeMetres(l, at, q)); at = left.shift()!; out.push(at) }
+  return out
+}
+
+const PACE_PLAN: Record<Verb, number> = {run: 6.2, carry: 4.6, sneak: 1.6, find: 4.5, drive: 19}
+
+/** the whole mission walked once at a steady pace: metres and seconds (talks, stops and waits included) */
+export function planRoute(l: Level): {metres: number; seconds: number} {
+  let at = {...l.start}, metres = 0, seconds = 0, escort = false
+  l.steps.forEach((st, i) => {
+    const pace = Math.min(PACE_PLAN[l.verb], escort && l.escort ? l.escort.pace : 99)
+    for (const p of stepPoints(l, i, at)) { const d = l.place === 'road' ? Math.abs(p.z - at.z) : routeMetres(l, at, p); metres += d; seconds += d / pace; at = p }
+    if (st.kind === 'talk') seconds += 1.6
+    if (st.kind === 'stop') seconds += st.hold + 7
+    if (st.joins) escort = true
+  })
+  if (l.home) { const d = Math.hypot(l.home.x - l.goal.x, l.home.z - l.goal.z); metres += d; seconds += d / PACE_PLAN[l.verb] }
+  // the find: a look around the terrace before the right face
+  if (l.place === 'crowd') seconds += 58
+  return {metres, seconds}
+}
+
+/**
+ * The clues a find mission shows: one at the start, one more for every person you asked — and, for
+ * whoever asks nobody, the next at 18 s and the last at 36 s (asking is quicker, never required).
+ */
+export const cluesShown = (level: Level, seconds: number, asked = 0): Clue[] => (level.targets[0]?.clues ?? []).slice(0, Math.max(1 + asked, seconds < 18 ? 1 : seconds < 36 ? 2 : 3))
 export {matches as lookMatches}

@@ -15,7 +15,7 @@ export type Option = {
   mission?: MissionAsk
 }
 /** a RUSH mission asked for by a scene or a choice: the template id, and whether the script forbids skipping it */
-export type MissionAsk = {template: string; mandatory?: boolean}
+export type MissionAsk = {template: string; mandatory?: boolean; /** the quest's version (`lib/life/rush/quest.ts`): who you lead, what you gather */ beat?: string}
 /** When several hold at once they are told together, in the order written, ahead of the scene's own opening. */
 export type Callback = {when: Cond; lines: Speech[]; /** callbacks sharing a group never hold together (three outcomes of one thing) */ group?: string}
 export type SceneLocation = {room: string; when: Cond; slot?: string; spot?: string}

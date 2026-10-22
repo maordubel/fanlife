@@ -37,7 +37,8 @@ export function missionSpecFor(door: RushDoor | null | undefined, call: MissionC
   if (chapter.age < t.ages[0] || chapter.age > t.ages[1]) return null
   const local = chapterFit(t, fit, chapter.anchor ?? null, door.view)
   if (local.state !== 'READY' && local.state !== 'NEUTRAL') return null
-  return specFor(t, local, {...door.view, anchors: []}, {seed: seedOf(door.view.clubId, chapter.id, ctx.playId), skin: door.view.clubId, age: chapter.age, mandatory: call.mandatory, time: ctx.time, locale: ctx.locale})
+  const spec = specFor(t, local, {...door.view, anchors: []}, {seed: seedOf(door.view.clubId, chapter.id, ctx.playId), skin: door.view.clubId, age: chapter.age, mandatory: call.mandatory, time: ctx.time, locale: ctx.locale})
+  return call.beat ? {...spec, beat: call.beat} : spec
 }
 
 /** what a played mission leaves in the life: one flag for how it went, and the small proofs it carried home */

@@ -5,9 +5,13 @@
  * Nobody here is ever hurt (ADR-fanlife-0013): a car is a stumble and lost seconds, a steward is
  * "back to the start of the yard", a thrown object knocks the roll out of your arms. The clock is
  * the pressure, and in story mode the clock stops at zero instead of ending the mission.
+ *
+ * RUSH 2 adds the quest: a mission is a row of steps (meet him, collect it, stop for a mate, the gate),
+ * played in an open place — side streets you may walk down, extras that buy seconds, a knot of people
+ * singing, somebody walking with you who stops if you leave him behind, a bin that turns a steward's head.
  */
-import {carAt, cluesShown, patrolAt, walkerAt, type Level} from './level'
-import {MAX_EVIDENCE, type MissionOutcome, type MissionResult, type MissionSpec} from './spec'
+import {carAt, cluesShown, inArea, patrolAt, routeMetres, viaPoint, walkerAt, type Level, type PickupKind} from './level'
+import {MAX_EVIDENCE, type MissionOutcome, type MissionResult, type MissionScore, type MissionSpec} from './spec'
 
 export const STEP = 1 / 60
 
@@ -24,8 +28,20 @@ export type SimEvent =
   | {k: 'voice'; key: string}
   | {k: 'throw'; x: number; z: number; land: number}
   | {k: 'end'; outcome: MissionOutcome}
+  /** step `i` is done; `next` is the one that starts now (−1 = none left) */
+  | {k: 'step'; i: number; next: number}
+  /** somebody spoke to you: the words key of his line */
+  | {k: 'talk'; key: string}
+  | {k: 'pickup'; kind: PickupKind; extra: boolean; bonus: number}
+  | {k: 'chant'; bonus: number}
+  | {k: 'noise'; x: number; z: number}
+  | {k: 'missed'}
+  | {k: 'escort'; state: 'wait' | 'ok' | 'come'}
+  /** at the gate with a step still open */
+  | {k: 'notyet'}
 
 export type Throw = {x0: number; z0: number; x: number; z: number; t0: number; t1: number}
+export type EscortState = {x: number; z: number; heading: number; speed: number; lost: boolean}
 
 export type Sim = {
   t: number
@@ -36,10 +52,12 @@ export type Sim = {
   stamina: number
   stagger: number
   sprinting: boolean
-  /** carry: whether the roll is in his arms; steal: whether he has their banner */
+  /** carry: whether the load is in his arms; steal: whether he has their banner */
   holding: boolean
-  /** carry: where the roll fell */
-  dropped: {x: number; z: number} | null
+  /** carry: how many rolls he holds */
+  carried: number
+  /** carry: where the load fell, and how much of it */
+  dropped: {x: number; z: number; n: number} | null
   /** sneak: how much of him the nearest steward has seen (1 = caught) */
   seen: number
   seenBy: number
@@ -54,13 +72,29 @@ export type Sim = {
   ended: MissionOutcome | null
   assist: boolean
   events: SimEvent[]
+  /* the quest */
+  step: number
+  got: boolean[]
+  ringT: number[]
+  ringDone: boolean[]
+  extras: number
+  chants: number
+  asked: number
+  holdT: number
+  noise: {x: number; z: number; t: number} | null
+  esc: EscortState | null
+  notyetAt: number
+  missed: number
 }
 
 export function startSim(level: Level, assist = false): Sim {
+  const carry = level.verb === 'carry'
   return {
     t: 0, clock: level.realSeconds * level.timeScale, x: level.start.x, z: level.start.z, vx: 0, vz: 0, heading: Math.PI, speed: 0,
-    stamina: 1, stagger: 0, sprinting: false, holding: level.verb === 'carry', dropped: null, seen: 0, seenBy: -1, grace: 0, back: false,
+    stamina: 1, stagger: 0, sprinting: false, holding: carry, carried: carry ? 1 : 0, dropped: null, seen: 0, seenBy: -1, grace: 0, back: false,
     checkpoint: {...level.start}, hits: 0, caught: 0, wrong: 0, throws: [], said: [], ended: null, assist, events: [],
+    step: 0, got: level.pickups.map(() => false), ringT: level.rings.map(() => 0), ringDone: level.rings.map(() => false),
+    extras: 0, chants: 0, asked: 0, holdT: 0, noise: null, esc: null, notyetAt: -9, missed: 0,
   }
 }
 
@@ -71,7 +105,11 @@ const PACE: Record<Level['verb'], [number, number, number]> = {
   run: [6.2, 9.4, 4.6], carry: [4.6, 6.4, 3.4], sneak: [3.2, 6, 2.6], find: [4.5, 7, 3.6], drive: [19, 26, 19],
 }
 /** a penalty in GAME seconds: what each knock costs on the clock */
-const COST = {car: 9, throw: 8, police: 24, shove: 5, caught: 24, wrong: 12} as const
+export const COST = {car: 9, throw: 8, police: 24, shove: 5, caught: 24, wrong: 12, missed: 20} as const
+/** what an extra buys, in GAME seconds */
+export const BONUS = {pickup: 5, chant: 8} as const
+/** how long somebody looks where a bin was banged, and how far the bang carries */
+const NOISE = {seconds: 3.5, reach: 22, arm: 1.8, again: 4} as const
 
 function knock(s: Sim, level: Level, by: 'car' | 'throw' | 'police' | 'shove', away: {x: number; z: number}) {
   s.stagger = by === 'police' ? 2.4 : by === 'shove' ? 0.5 : 0.9
@@ -79,12 +117,58 @@ function knock(s: Sim, level: Level, by: 'car' | 'throw' | 'police' | 'shove', a
   if (!s.assist) s.clock -= COST[by]
   const d = Math.hypot(s.x - away.x, s.z - away.z) || 1
   s.vx = (s.x - away.x) / d * 6; s.vz = (s.z - away.z) / d * 6
-  if (level.verb === 'carry' && s.holding && by !== 'shove') { s.holding = false; s.dropped = {x: s.x, z: s.z}; s.events.push({k: 'drop'}) }
+  if (level.verb === 'carry' && s.holding && by !== 'shove') { s.holding = false; s.dropped = {x: s.x, z: s.z, n: s.carried}; s.carried = 0; s.events.push({k: 'drop'}) }
   s.events.push({k: 'hit', by})
 }
 
 function goalOf(level: Level, s: Sim): {x: number; z: number; r: number} {
   return s.back && level.home ? level.home : level.goal
+}
+
+/** where a steward is, and where he looks — his round, unless a bang turned his head */
+export function patrolLook(level: Level, s: Pick<Sim, 't' | 'noise'>, i: number): {x: number; z: number; face: number} {
+  const at = patrolAt(level.patrols[i]!, s.t)
+  const n = s.noise
+  if (n && s.t - n.t < NOISE.seconds && Math.hypot(n.x - at.x, n.z - at.z) < NOISE.reach) return {...at, face: Math.atan2(n.x - at.x, n.z - at.z)}
+  return at
+}
+
+/** the point the current step sends him to (a collect step: the nearest thing still on the ground) */
+export function stepTarget(level: Level, s: Sim): {x: number; z: number; r: number} | null {
+  const st = level.steps[s.step]
+  if (!st) return null
+  if (st.kind === 'goal') return level.place === 'crowd' ? {x: st.x, z: st.z, r: st.r} : goalOf(level, s)
+  if (st.kind === 'collect') {
+    let best: {x: number; z: number; r: number} | null = null, bd = Infinity
+    level.pickups.forEach((p, i) => { if (p.step !== s.step || s.got[i]) return; const d = routeMetres(level, s, p); if (d < bd) { bd = d; best = {x: p.x, z: p.z, r: 1.1} } })
+    return best
+  }
+  return {x: st.x, z: st.z, r: st.r}
+}
+
+const stepDone = (level: Level, s: Sim, i: number) => level.steps[i]?.kind === 'collect' && level.pickups.every((p, k) => p.step !== i || s.got[k])
+
+function advance(level: Level, s: Sim) {
+  const st = level.steps[s.step]!
+  if (st.joins && level.escort) s.esc = {x: st.x, z: st.z, heading: Math.PI, speed: 0, lost: false}
+  if (st.reveals) s.asked++
+  const i = s.step
+  s.step++
+  s.holdT = 0
+  // an open world: what was collected before its step comes up does not have to be collected again
+  while (s.step < level.steps.length - 1 && stepDone(level, s, s.step)) s.step++
+  s.events.push({k: 'step', i, next: s.step < level.steps.length ? s.step : -1})
+}
+
+/** move a body by (dx, dz) inside the walkable world: along a wall when the way is shut */
+function moveIn(level: Level, b: {x: number; z: number; vx?: number; vz?: number}, dx: number, dz: number) {
+  const nx = clamp(b.x + dx, level.bounds.x0, level.bounds.x1), nz = clamp(b.z + dz, level.bounds.z0, level.bounds.z1)
+  // already outside (a push put him there): any move is allowed, so he can never be walled in
+  if (inArea(level, nx, nz) || !inArea(level, b.x, b.z)) { b.x = nx; b.z = nz; return }
+  if (inArea(level, nx, b.z)) { b.x = nx; if (b.vz !== undefined) b.vz = 0; return }
+  if (inArea(level, b.x, nz)) { b.z = nz; if (b.vx !== undefined) b.vx = 0; return }
+  if (b.vx !== undefined) b.vx = 0
+  if (b.vz !== undefined) b.vz = 0
 }
 
 /** One step of the mission. Mutates and returns `s`; `s.events` holds what happened in this step only. */
@@ -120,8 +204,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     if (s.speed > 0.4) { const want = Math.atan2(s.vx, s.vz); let d = want - s.heading; d = Math.atan2(Math.sin(d), Math.cos(d)); s.heading += d * Math.min(dt * 10, 1) }
   }
   s.stagger = Math.max(0, s.stagger - dt)
-  s.x = clamp(s.x + s.vx * dt, level.bounds.x0, level.bounds.x1)
-  s.z = clamp(s.z + s.vz * dt, level.bounds.z0, level.bounds.z1)
+  moveIn(level, s, s.vx * dt, s.vz * dt)
 
   // traffic: across a crossing, or in your lane
   for (const c of level.cars) {
@@ -149,14 +232,15 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
   // people walking the same way: you brush past, it slows you
   for (const w of level.walkers) {
     const p = walkerAt(w, s.t), dx = s.x - p.x, dz = s.z - p.z, d2 = dx * dx + dz * dz
-    if (d2 < 0.5) { const d = Math.sqrt(d2) || 0.01; s.x += dx / d * 0.05; s.z += dz / d * 0.05; s.vx *= 0.9; s.vz *= 0.9 }
+    if (d2 < 0.5) { const d = Math.sqrt(d2) || 0.01; if (inArea(level, s.x + dx / d * 0.05, s.z + dz / d * 0.05)) { s.x += dx / d * 0.05; s.z += dz / d * 0.05 } s.vx *= 0.9; s.vz *= 0.9 }
   }
   // standing people are solid; the other lot shove
   for (const p of level.standers) {
     const dx = s.x - p.x, dz = s.z - p.z, d2 = dx * dx + dz * dz
     if (d2 < 0.36) {
       const d = Math.sqrt(d2) || 0.01
-      s.x = p.x + dx / d * 0.6; s.z = p.z + dz / d * 0.6
+      const ox = p.x + dx / d * 0.6, oz = p.z + dz / d * 0.6
+      if (inArea(level, ox, oz)) { s.x = ox; s.z = oz }
       if (p.role === 'rival' && s.stagger <= 0 && (level.verb === 'carry' || level.verb === 'sneak')) knock(s, level, 'shove', p)
     }
   }
@@ -178,14 +262,48 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     return false
   })
 
-  // carry: the roll is picked up again by walking over it
-  if (level.verb === 'carry' && !s.holding && s.dropped && Math.hypot(s.dropped.x - s.x, s.dropped.z - s.z) < 1.3) { s.holding = true; s.dropped = null; s.events.push({k: 'grab'}) }
+  // carry: the load is picked up again by walking over it
+  if (level.verb === 'carry' && !s.holding && s.dropped && Math.hypot(s.dropped.x - s.x, s.dropped.z - s.z) < 1.3) { s.holding = true; s.carried += s.dropped.n; s.dropped = null; s.events.push({k: 'grab'}) }
+
+  // things on the ground: walk over them
+  if (level.place !== 'road') level.pickups.forEach((p, i) => {
+    if (s.got[i] || Math.hypot(p.x - s.x, p.z - s.z) > 1.1) return
+    s.got[i] = true
+    const extra = p.step === null
+    if (extra) { s.extras++; s.clock += BONUS.pickup }
+    if (p.kind === 'roll' && level.verb === 'carry') { s.carried++; s.holding = true }
+    s.events.push({k: 'pickup', kind: p.kind, extra, bonus: extra ? BONUS.pickup : 0})
+  })
+  const cur = level.steps[s.step]
+  if (cur?.kind === 'collect' && stepDone(level, s, s.step)) advance(level, s)
+
+  // a knot of people singing: stand in it a moment and the song carries you
+  level.rings.forEach((g, i) => {
+    if (s.ringDone[i]) return
+    if (Math.hypot(g.x - s.x, g.z - s.z) < g.r) { s.ringT[i]! += dt; if (s.ringT[i]! >= 1.6) { s.ringDone[i] = true; s.chants++; s.clock += BONUS.chant; s.events.push({k: 'chant', bonus: BONUS.chant}) } }
+    else s.ringT[i] = 0
+  })
+
+  // the one who walks with you: he keeps up when he can, and stops when you leave him behind
+  if (s.esc && level.escort) {
+    const e = s.esc, esc = level.escort
+    const dx = s.x - e.x, dz = s.z - e.z, d = Math.hypot(dx, dz)
+    if (!e.lost && d > esc.leash) { e.lost = true; s.events.push({k: 'escort', state: 'wait'}) }
+    else if (e.lost && d < esc.leash * 0.6) { e.lost = false; s.events.push({k: 'escort', state: 'ok'}) }
+    e.speed = 0
+    if (!e.lost && d > 1.8) {
+      e.speed = Math.min(esc.pace, (d - 1.4) * 2.4)
+      moveIn(level, e, dx / d * e.speed * dt, dz / d * e.speed * dt)
+      e.heading = Math.atan2(dx, dz)
+      for (const p of level.standers) { const ex = e.x - p.x, ez = e.z - p.z, q = ex * ex + ez * ez; if (q < 0.36) { const k = Math.sqrt(q) || 0.01; const ox = p.x + ex / k * 0.6, oz = p.z + ez / k * 0.6; if (inArea(level, ox, oz)) { e.x = ox; e.z = oz } } }
+    }
+  }
 
   // sneak: the stewards see what is in front of them, nearer and faster is seen sooner
   if (level.place === 'yard') {
     let worst = 0, by = -1
     level.patrols.forEach((p, i) => {
-      const at = patrolAt(p, s.t), dx = s.x - at.x, dz = s.z - at.z, d = Math.hypot(dx, dz)
+      const at = patrolLook(level, s, i), dx = s.x - at.x, dz = s.z - at.z, d = Math.hypot(dx, dz)
       const range = p.range * (s.assist ? 0.55 : 1) * (s.sprinting ? 1.35 : 1)
       if (d > range) return
       let a = Math.atan2(dx, dz) - at.face; a = Math.atan2(Math.sin(a), Math.cos(a))
@@ -210,10 +328,33 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     }
   }
 
-  // find: press next to the one you came for
-  if (level.place === 'crowd' && input.act) {
+  // the steps that are not a place to reach
+  const st = level.steps[s.step]
+  let acted = false
+  if (st?.kind === 'talk' && input.act && Math.hypot(st.x - s.x, st.z - s.z) < st.r) {
+    acted = true
+    if (!s.assist) s.clock -= st.cost
+    if (st.say) s.events.push({k: 'talk', key: st.say})
+    advance(level, s)
+  } else if (st?.kind === 'reach' && Math.hypot(st.x - s.x, st.z - s.z) < st.r) {
+    if (st.say) s.events.push({k: 'talk', key: st.say})
+    advance(level, s)
+  } else if (st?.kind === 'stop') {
+    const inBay = Math.abs(s.x - st.x) < 2.8 && Math.abs(s.z - st.z) < st.r
+    s.holdT = inBay && s.speed < 1.5 ? s.holdT + dt : 0
+    if (s.holdT >= st.hold) { if (st.say) s.events.push({k: 'talk', key: st.say}); advance(level, s) }
+    else if (s.z < st.z - st.r - 2) { s.missed++; if (!s.assist) s.clock -= COST.missed; s.events.push({k: 'missed'}); advance(level, s) }
+  }
+  // a bang on a bin: every steward near turns his head to it
+  if (input.act && !acted && level.noises.length && (!s.noise || s.t - s.noise.t > NOISE.again)) {
+    const n = level.noises.find(q => Math.hypot(q.x - s.x, q.z - s.z) < NOISE.arm)
+    if (n) { acted = true; s.noise = {x: n.x, z: n.z, t: s.t}; s.events.push({k: 'noise', x: n.x, z: n.z}) }
+  }
+
+  // find: press next to the one you came for (asking around first is quicker, never required)
+  if (level.place === 'crowd' && input.act && !acted) {
     const tg = level.targets[0]!
-    if (Math.hypot(tg.x - s.x, tg.z - s.z) < 1.8) { s.events.push({k: 'found'}); return end(s, 'good') }
+    if (Math.hypot(tg.x - s.x, tg.z - s.z) < 1.8) { s.events.push({k: 'found'}); s.step = level.steps.length; return end(s, 'good') }
     const near = level.standers.some(p => Math.hypot(p.x - s.x, p.z - s.z) < 1.6)
     if (near) { s.wrong++; if (!s.assist) s.clock -= COST.wrong; s.events.push({k: 'wrong'}) }
   }
@@ -222,10 +363,16 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
   const g = goalOf(level, s), dist = Math.hypot(g.x - s.x, g.z - s.z)
   for (const v of level.voice) if (dist < v.at && !s.said.includes(v.key)) { s.said.push(v.key); s.events.push({k: 'voice', key: v.key}) }
 
-  // the goal
-  if (level.place !== 'crowd' && (level.place === 'road' ? s.z <= g.z : Math.hypot(g.x - s.x, g.z - s.z) < g.r)) {
-    if (level.home && !s.back) { s.back = true; s.holding = true; s.events.push({k: 'grab'}); s.checkpoint = {x: s.x, z: s.z} }
-    else if (level.verb !== 'carry' || s.holding) return end(s, 'good')
+  // the goal — only when it is the step that is open
+  const atGoal = level.place === 'road' ? s.z <= g.z : Math.hypot(g.x - s.x, g.z - s.z) < g.r
+  const last = level.steps[s.step]?.kind === 'goal'
+  if (level.place !== 'crowd' && atGoal) {
+    if (!last) {
+      if (s.t - s.notyetAt > 4) { s.notyetAt = s.t; s.events.push({k: 'notyet'}) }
+    } else if (level.home && !s.back) { s.back = true; s.holding = true; s.events.push({k: 'grab'}); s.checkpoint = {x: s.x, z: s.z} }
+    else if (s.esc && (s.esc.lost || Math.hypot(s.esc.x - s.x, s.esc.z - s.z) > 4.5)) {
+      if (s.t - s.notyetAt > 4) { s.notyetAt = s.t; s.events.push({k: 'escort', state: 'come'}) }
+    } else if (level.verb !== 'carry' || s.holding) { s.step = level.steps.length; return end(s, 'good') }
   }
 
   s.clock -= dt * level.timeScale
@@ -243,42 +390,75 @@ function end(s: Sim, outcome: MissionOutcome): Sim {
   return s
 }
 
+/** The result card's score: a slip has no stars; then one for arriving, one for a clean run, one for the extras (or the time) */
+export function scoreOf(level: Level, s: Sim): MissionScore {
+  const extrasOf = level.pickups.filter(p => p.step === null).length
+  const outcome = s.ended ?? 'slip'
+  const clean = s.hits === 0 && s.caught === 0 && s.wrong === 0 && s.missed === 0
+  const third = extrasOf ? s.extras / extrasOf >= 0.6 || s.chants >= 2 : s.clock > level.realSeconds * level.timeScale * 0.25
+  const stars = (outcome === 'slip' ? 0 : outcome === 'ok' ? 1 : 1 + (clean ? 1 : 0) + (third ? 1 : 0)) as MissionScore['stars']
+  return {stars, extras: s.extras, extrasOf, chants: s.chants, steps: Math.min(s.step, level.steps.length)}
+}
+
 /** What RUSH hands back to LIFE. */
 export function resultOf(level: Level, s: Sim, opts: {skipped?: boolean} = {}): MissionResult {
   if (opts.skipped) return {outcome: 'ok', clockLeft: Math.round(s.clock), evidence: [], assisted: s.assist, skipped: true}
   const outcome = s.ended ?? 'slip'
   const evidence: string[] = [outcome === 'slip' ? 'late' : 'made-it']
   if (outcome !== 'slip' && s.hits === 0 && s.caught === 0 && s.wrong === 0) evidence.push('clean')
-  const own = level.verb === 'drive' ? 'drove' : level.verb === 'carry' ? 'carried' : level.verb === 'sneak' ? (level.home ? 'banner' : 'unseen') : level.verb === 'find' ? 'found' : 'ran'
+  const own = level.verb === 'drive' ? 'drove' : level.verb === 'carry' ? 'carried' : level.verb === 'sneak' ? (level.home ? 'banner' : 'unseen') : level.verb === 'find' ? 'found' : level.escort && level.escort.who !== 'friend' ? 'led' : 'ran'
   if (outcome !== 'slip' && (own !== 'unseen' || s.caught === 0)) evidence.push(own)
-  return {outcome, clockLeft: Math.round(s.clock), evidence: evidence.slice(0, MAX_EVIDENCE), assisted: s.assist, skipped: false}
+  return {outcome, clockLeft: Math.round(s.clock), evidence: evidence.slice(0, MAX_EVIDENCE), assisted: s.assist, skipped: false, score: scoreOf(level, s)}
 }
 
 /* ───────────── the bot: plays a level well, to prove it can be played ───────────── */
 
 /**
  * Plays with the level's own knowledge (it reads the timetable of every car and steward). Not an
- * opponent and not story mode — it is the test that every seed of every mission is winnable.
+ * opponent and not story mode — it is the test that every seed of every mission is winnable. It does
+ * every step in order, takes no extras, and keeps to the pace of whoever walks with it.
  */
 export function botInput(level: Level, s: Sim): Input {
-  const g = level.place === 'crowd' ? level.targets[0]! : goalOf(level, s)
   if (level.verb === 'carry' && !s.holding && s.dropped) return steer(s, s.dropped.x, s.dropped.z, false, level)
   if (level.place === 'road') return driveBot(level, s)
+  const st = level.steps[s.step]
+  const g = level.place === 'crowd' && st?.kind === 'goal' ? level.targets[0]! : stepTarget(level, s) ?? goalOf(level, s)
+  const d = Math.hypot(g.x - s.x, g.z - s.z)
+  if (st?.kind === 'talk' && d < st.r * 0.7) return {...IDLE, act: true}
   if (level.place === 'crowd') {
-    const d = Math.hypot(g.x - s.x, g.z - s.z)
-    return d < 1.5 ? {...IDLE, act: true} : steer(s, g.x, g.z + 0.2, d > 6, level)
+    if (st?.kind === 'goal' && d < 1.5) return {...IDLE, act: true}
+    return steer(s, g.x, g.z + 0.2, d > 6, level)
   }
-  if (level.place === 'yard') return sneakBot(level, s, g)
+  // whoever walks with you sets the pace: never leave him behind
+  let scale = 1, sprint = s.stamina > 0.45
+  if (s.esc && level.escort) {
+    const ed = Math.hypot(s.esc.x - s.x, s.esc.z - s.z)
+    if (s.esc.lost) return steer(s, s.esc.x, s.esc.z, false, level)
+    if (ed > level.escort.leash * 0.55) return IDLE
+    scale = Math.min(1, level.escort.pace / PACE[level.verb][0] * 0.95); sprint = false
+  }
+  let next = viaPoint(level, s, g)
+  if (level.place === 'yard') return sneakBot(level, s, next)
+  // the knot of people at the gate parts down the middle: line up with it before going in
+  if (level.place === 'street' && st?.kind === 'goal' && Math.abs(s.x) > 1.3 && s.z < level.goal.z + 19 && next === g) next = {x: 0, z: level.goal.z + 18}
+  else if (level.place === 'street' && st?.kind === 'goal' && Math.abs(s.x) > 1.3 && next === g) next = {x: 0, z: level.goal.z + 18}
   // street: wait at the kerb if a car will be on the crossing when you are
+  const pace = PACE[level.verb][0] * scale
   for (const cz of level.crossings) {
     const ahead = s.z - (cz + 5)
-    if (ahead > 0 && ahead < 3) {
-      const tCross = 12 / 6
-      const busy = level.cars.some(c => c.lane > cz - 4 && c.lane < cz + 4 && [0, 0.5, 1, 1.5, 2, tCross + 0.4].some(dt => Math.abs(carAt(c, s.t + dt).x - s.x) < 5.5))
+    if (ahead > 0 && ahead < 3 && next.z < cz - 3.9) {
+      // walk the crossing in the head first: where will he be, and where will each car be, every quarter second
+      const v = Math.max(2.5, pace * 0.92), tCross = (s.z - (cz - 4.6)) / v
+      let busy = false
+      for (let dt = 0; dt <= tCross + 0.3 && !busy; dt += 0.25) {
+        const z = s.z - v * Math.max(0, dt - 0.15)
+        busy = level.cars.some(c => c.axis === 'x' && Math.abs(c.lane - z) < c.wid / 2 + 0.9 && Math.abs(carAt(c, s.t + dt).x - s.x) < c.len / 2 + 1.6)
+      }
       if (busy) return IDLE
     }
   }
-  return steer(s, g.x, g.z, s.stamina > 0.45, level)
+  const out = steer(s, next.x, next.z, sprint, level)
+  return {...out, x: out.x * scale, z: out.z * scale}
 }
 
 /** head for a point, walking round anybody standing in the way */
@@ -303,8 +483,8 @@ function steer(s: Sim, x: number, z: number, sprint: boolean, level?: Level): In
 function sneakBot(level: Level, s: Sim, g: {x: number; z: number}): Input {
   const want = steer(s, g.x, g.z, false, level)
   // look one second ahead along the way it wants to go: if any steward would see it there, hold still — or back off if seen now
-  const seenAt = (x: number, z: number, t: number) => level.patrols.some(p => {
-    const at = patrolAt(p, t), dx = x - at.x, dz = z - at.z, d = Math.hypot(dx, dz)
+  const seenAt = (x: number, z: number, t: number) => level.patrols.some((p, i) => {
+    const at = patrolLook(level, {t, noise: s.noise}, i), dx = x - at.x, dz = z - at.z, d = Math.hypot(dx, dz)
     if (d > p.range * 1.15) return false
     let a = Math.atan2(dx, dz) - at.face; a = Math.atan2(Math.sin(a), Math.cos(a))
     return Math.abs(a) < p.fov / 2 + 0.25
@@ -318,21 +498,46 @@ function sneakBot(level: Level, s: Sim, g: {x: number; z: number}): Input {
 
 function driveBot(level: Level, s: Sim): Input {
   const lanes = [-4.2, 0, 4.2]
-  const inCheck = level.checks.some(c => s.z < c.z0 + 30 && s.z > c.z1)
+  const check = level.checks.find(c => s.z < c.z0 + 55 && s.z > c.z1)
+  /** the pedal for a speed (the stick is the pedal: −1 full, 0 off) — and the brake when over it */
+  const hold = (v: number): number => s.speed > v + 0.4 ? 0.5 : -Math.min(1, v / 19 / 1.25)
+  const capped = (z: number) => check && s.speed > check.max - 1.6 ? 0.5 : check ? Math.max(z, -0.45) : z
   const gap = (lane: number) => {
     let best = 999
     for (const c of level.cars) { if (c.lane !== lane) continue; const p = carAt(c, s.t); const d = s.z - p.z; if (d > -7 && d < best) best = d < 5 ? -100 : d }
     return best
+  }
+  /** nothing coming up behind in this lane for a while */
+  const clearBehind = (lane: number) => level.cars.every(c => { if (c.lane !== lane) return true; const p = carAt(c, s.t); return p.z < s.z - 7 || p.z > s.z + 30 })
+  const SLOW = 8
+  const st = level.steps[s.step]
+  // a mate waits in the lay-by: get into the slow lane at its pace, turn in, stop, wait for him to get in
+  if (st?.kind === 'stop' && s.z > st.z - st.r + 3 && s.z - st.z < 220) {
+    const near = s.z - st.z
+    if (Math.abs(s.x - st.x) < 2.8) return {x: clamp((st.x - s.x) * 0.8, -1, 1), z: near < 5 ? 1 : -0.3, sprint: false, act: false}
+    const inRight = Math.abs(s.x - 4.2) < 1
+    if (inRight || near < st.r + 4) {
+      const z = gap(4.2) < 9 ? 0.6 : hold(SLOW)
+      return {x: clamp(((near < st.r + 6 ? st.x : 4.2) - s.x) * 0.7, -1, 1), z: capped(z), sprint: false, act: false}
+    }
+    if (clearBehind(4.2) && gap(4.2) > 14) return {x: clamp((4.2 - s.x) * 0.6, -1, 1), z: capped(hold(Math.max(SLOW, s.speed - 1))), sprint: false, act: false}
+  }
+  // still in the lay-by after he got in: roll along it, then back out at the slow lane's pace when it is clear
+  if (s.x > 5.4) {
+    const prev = level.steps.slice(0, s.step).reverse().find(x => x.kind === 'stop')
+    const end = prev ? prev.z - 18 : s.z - 1
+    if (s.z > end || !clearBehind(4.2) || gap(4.2) < 12) return {x: clamp((7.8 - s.x) * 0.8, -1, 1), z: s.z > end ? hold(SLOW) : 1, sprint: false, act: false}
+    return {x: -1, z: capped(hold(SLOW)), sprint: false, act: false}
   }
   const cur = lanes.reduce((a, b) => Math.abs(b - s.x) < Math.abs(a - s.x) ? b : a)
   const pick = lanes.reduce((a, b) => gap(b) - Math.abs(b - s.x) * 2 > gap(a) - Math.abs(a - s.x) * 2 ? b : a, cur)
   const ahead = gap(cur)
   // too close to the car in front and nowhere to go: ease off until a lane opens
   const brake = ahead < 9 + s.speed * 0.4 && gap(pick) < 20
-  return {x: clamp((pick - s.x) * 0.6, -1, 1), z: brake ? 1 : inCheck ? -0.45 : -1, sprint: !inCheck && ahead > 40, act: false}
+  return {x: clamp((pick - s.x) * 0.6, -1, 1), z: brake ? 1 : capped(-1), sprint: !check && ahead > 40, act: false}
 }
 
 /** the clues on screen right now (find) */
-export const cluesNow = (level: Level, s: Sim) => cluesShown(level, s.t)
+export const cluesNow = (level: Level, s: Sim) => cluesShown(level, s.t, s.asked)
 
 export type {MissionSpec}

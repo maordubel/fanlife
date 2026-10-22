@@ -18,6 +18,22 @@ Camera: `chase` by default; `eyes` for sneaking, finding, tunnels.
   Rival ultras groups are invented and wear nothing the club page bans.
 - `clock` is in every mission.
 
+## 2b. The quest (RUSH 2) — every mission is steps, in an open place
+A mission is not one dash. `lib/life/rush/quest.ts` gives every template a recipe, and a script may ask for a
+version of it with `mission: {template, beat}`. Build it from these parts only:
+- **steps**, in order, the last always `goal`: `reach` (a place, or a group that falls in) · `talk` (act next to him;
+  `cost` = game seconds, `say` = his line) · `collect` (every pickup of the step; open world: picked early counts) ·
+  `stop` (the car in a lay-by, `hold` s; passing it costs time, never ends the drive);
+- **escort** (`joins`): somebody walks with you at his pace; too far and he stops; the gate waits for him;
+- **extras**: `pickups` with `step: null` (+5 s each) and singing `rings` (+8 s) — optional, never required;
+- **noises** (sneak): a bin that turns every steward's head for 3.5 s;
+- **clues by asking** (find): `talk` steps with `reveals`.
+Every key a step prints (`obj.*`, `npc.*`, `got.*`) needs words in both languages. The bot must win every beat on
+every seed (`tests/life-rush-sim.test.ts`): if it cannot, fix the level or the bot, never loosen the test.
+Place things on the near side-street pavement (`sidePave`) or the main pavements — never in a car lane.
+A script asks for missions only on EXISTING options (a new option multiplies the exhaustive LIFE sim).
+Briefing cards: `public/life/rush/cards/<template>.webp` (`cards.ts`), grey, fiction, English title printed in.
+
 ## 3. Needs — what the mission asks of each club's archive
 For each fact the mission prints or depends on, add a `Need`:
 - `of: {anchor: [kinds]}` (match, home, away, derby, final, europe, title, relegation, promotion, ground, founding)
