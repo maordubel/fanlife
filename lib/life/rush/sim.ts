@@ -32,7 +32,7 @@ export type SimEvent =
   | {k: 'step'; i: number; next: number}
   /** somebody spoke to you: the words key of his line */
   | {k: 'talk'; key: string}
-  | {k: 'pickup'; kind: PickupKind; extra: boolean; bonus: number}
+  | {k: 'pickup'; kind: PickupKind; extra: boolean; bonus: number; streak: number}
   | {k: 'chant'; bonus: number}
   | {k: 'noise'; x: number; z: number}
   | {k: 'missed'}
@@ -85,6 +85,14 @@ export type Sim = {
   esc: EscortState | null
   notyetAt: number
   missed: number
+  /** game seconds the knocks cost (shown on the result card) */
+  lost: number
+  /** extras taken within STREAK.gap of each other: each one in a row is worth more */
+  streak: number
+  streakAt: number
+  streakBest: number
+  /** times the one walking with him fell behind */
+  escLost: number
 }
 
 export function startSim(level: Level, assist = false): Sim {
@@ -95,6 +103,7 @@ export function startSim(level: Level, assist = false): Sim {
     checkpoint: {...level.start}, hits: 0, caught: 0, wrong: 0, throws: [], said: [], ended: null, assist, events: [],
     step: 0, got: level.pickups.map(() => false), ringT: level.rings.map(() => 0), ringDone: level.rings.map(() => false),
     extras: 0, chants: 0, asked: 0, holdT: 0, noise: null, esc: null, notyetAt: -9, missed: 0,
+    lost: 0, streak: 0, streakAt: -99, streakBest: 0, escLost: 0,
   }
 }
 
@@ -108,13 +117,18 @@ const PACE: Record<Level['verb'], [number, number, number]> = {
 export const COST = {car: 9, throw: 8, police: 24, shove: 5, caught: 24, wrong: 12, missed: 20} as const
 /** what an extra buys, in GAME seconds */
 export const BONUS = {pickup: 5, chant: 8} as const
+/** a run of extras: each one taken within `gap` seconds of the last adds `step` more, up to `max` in a row */
+export const STREAK = {gap: 6, step: 2, max: 3} as const
+
+/** every clock penalty goes through here, so the result card can say what the knocks cost */
+function charge(s: Sim, n: number) { if (s.assist) return; s.clock -= n; s.lost += n; s.streak = 0 }
 /** how long somebody looks where a bin was banged, and how far the bang carries */
 const NOISE = {seconds: 3.5, reach: 22, arm: 1.8, again: 4} as const
 
 function knock(s: Sim, level: Level, by: 'car' | 'throw' | 'police' | 'shove', away: {x: number; z: number}) {
   s.stagger = by === 'police' ? 2.4 : by === 'shove' ? 0.5 : 0.9
   s.hits++
-  if (!s.assist) s.clock -= COST[by]
+  charge(s, COST[by])
   const d = Math.hypot(s.x - away.x, s.z - away.z) || 1
   s.vx = (s.x - away.x) / d * 6; s.vz = (s.z - away.z) / d * 6
   if (level.verb === 'carry' && s.holding && by !== 'shove') { s.holding = false; s.dropped = {x: s.x, z: s.z, n: s.carried}; s.carried = 0; s.events.push({k: 'drop'}) }
@@ -218,7 +232,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
         s.speed = c.v * (behind ? 0.6 : 1)
         s.z = behind ? p.z + reachZ + 0.05 : p.z - reachZ - 0.05
         s.stagger = 0.5; s.hits++
-        if (!s.assist) s.clock -= COST.car
+        charge(s, COST.car)
         s.events.push({k: 'hit', by: 'car'})
         continue
       }
@@ -270,9 +284,16 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     if (s.got[i] || Math.hypot(p.x - s.x, p.z - s.z) > 1.1) return
     s.got[i] = true
     const extra = p.step === null
-    if (extra) { s.extras++; s.clock += BONUS.pickup }
+    let bonus = 0, streak = 0
+    if (extra) {
+      s.streak = s.t - s.streakAt <= STREAK.gap ? s.streak + 1 : 1
+      s.streakAt = s.t; s.streakBest = Math.max(s.streakBest, s.streak)
+      streak = s.streak
+      bonus = BONUS.pickup + STREAK.step * Math.min(s.streak - 1, STREAK.max)
+      s.extras++; s.clock += bonus
+    }
     if (p.kind === 'roll' && level.verb === 'carry') { s.carried++; s.holding = true }
-    s.events.push({k: 'pickup', kind: p.kind, extra, bonus: extra ? BONUS.pickup : 0})
+    s.events.push({k: 'pickup', kind: p.kind, extra, bonus, streak})
   })
   const cur = level.steps[s.step]
   if (cur?.kind === 'collect' && stepDone(level, s, s.step)) advance(level, s)
@@ -288,7 +309,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
   if (s.esc && level.escort) {
     const e = s.esc, esc = level.escort
     const dx = s.x - e.x, dz = s.z - e.z, d = Math.hypot(dx, dz)
-    if (!e.lost && d > esc.leash) { e.lost = true; s.events.push({k: 'escort', state: 'wait'}) }
+    if (!e.lost && d > esc.leash) { e.lost = true; s.escLost++; s.events.push({k: 'escort', state: 'wait'}) }
     else if (e.lost && d < esc.leash * 0.6) { e.lost = false; s.events.push({k: 'escort', state: 'ok'}) }
     e.speed = 0
     if (!e.lost && d > 1.8) {
@@ -316,7 +337,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     s.seen = clamp(s.seen + (worst > 0 && s.grace <= 0 ? worst * dt * 1.6 : -dt * 0.8), 0, 1)
     if (s.seen >= 1) {
       s.caught++; s.seen = 0; s.grace = 2.5
-      if (!s.assist) s.clock -= COST.caught
+      charge(s, COST.caught)
       s.x = s.checkpoint.x; s.z = s.checkpoint.z; s.vx = s.vz = 0
       s.events.push({k: 'caught'})
     }
@@ -333,7 +354,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
   let acted = false
   if (st?.kind === 'talk' && input.act && Math.hypot(st.x - s.x, st.z - s.z) < st.r) {
     acted = true
-    if (!s.assist) s.clock -= st.cost
+    charge(s, st.cost)
     if (st.say) s.events.push({k: 'talk', key: st.say})
     advance(level, s)
   } else if (st?.kind === 'reach' && Math.hypot(st.x - s.x, st.z - s.z) < st.r) {
@@ -343,7 +364,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     const inBay = Math.abs(s.x - st.x) < 2.8 && Math.abs(s.z - st.z) < st.r
     s.holdT = inBay && s.speed < 1.5 ? s.holdT + dt : 0
     if (s.holdT >= st.hold) { if (st.say) s.events.push({k: 'talk', key: st.say}); advance(level, s) }
-    else if (s.z < st.z - st.r - 2) { s.missed++; if (!s.assist) s.clock -= COST.missed; s.events.push({k: 'missed'}); advance(level, s) }
+    else if (s.z < st.z - st.r - 2) { s.missed++; charge(s, COST.missed); s.events.push({k: 'missed'}); advance(level, s) }
   }
   // a bang on a bin: every steward near turns his head to it
   if (input.act && !acted && level.noises.length && (!s.noise || s.t - s.noise.t > NOISE.again)) {
@@ -356,7 +377,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     const tg = level.targets[0]!
     if (Math.hypot(tg.x - s.x, tg.z - s.z) < 1.8) { s.events.push({k: 'found'}); s.step = level.steps.length; return end(s, 'good') }
     const near = level.standers.some(p => Math.hypot(p.x - s.x, p.z - s.z) < 1.6)
-    if (near) { s.wrong++; if (!s.assist) s.clock -= COST.wrong; s.events.push({k: 'wrong'}) }
+    if (near) { s.wrong++; charge(s, COST.wrong); s.events.push({k: 'wrong'}) }
   }
 
   // the inner voice: once each, as the goal comes closer
@@ -395,9 +416,13 @@ export function scoreOf(level: Level, s: Sim): MissionScore {
   const extrasOf = level.pickups.filter(p => p.step === null).length
   const outcome = s.ended ?? 'slip'
   const clean = s.hits === 0 && s.caught === 0 && s.wrong === 0 && s.missed === 0
-  const third = extrasOf ? s.extras / extrasOf >= 0.6 || s.chants >= 2 : s.clock > level.realSeconds * level.timeScale * 0.25
+  // the third star asks for what this mission is about: whoever walks with you never left behind,
+  // or the extras and songs of an open street, or else time to spare
+  const third = level.escort ? s.escLost === 0 && (extrasOf ? s.extras / extrasOf >= 0.4 : true)
+    : extrasOf ? s.extras / extrasOf >= 0.6 || s.chants >= 2 || s.streakBest >= 3
+    : s.clock > level.realSeconds * level.timeScale * 0.25
   const stars = (outcome === 'slip' ? 0 : outcome === 'ok' ? 1 : 1 + (clean ? 1 : 0) + (third ? 1 : 0)) as MissionScore['stars']
-  return {stars, extras: s.extras, extrasOf, chants: s.chants, steps: Math.min(s.step, level.steps.length)}
+  return {stars, extras: s.extras, extrasOf, chants: s.chants, steps: Math.min(s.step, level.steps.length), lost: Math.round(s.lost), knocks: s.hits + s.caught + s.wrong + s.missed, streak: s.streakBest}
 }
 
 /** What RUSH hands back to LIFE. */

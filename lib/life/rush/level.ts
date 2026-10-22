@@ -194,7 +194,10 @@ function finish(l: Base): Level {
 function street(spec: MissionSpec, r: () => number): Level {
   const carry = spec.verb === 'carry'
   const L = carry ? 220 : 300, half = 7, walk = 11, gateZ = -L
-  const crossings = carry ? [-70, -150] : [-70, -150, -225]
+  // the side streets move with the seed (their own stream, so nothing else in the level shifts):
+  // the same mission, a different walk to the ground every time
+  const jr = rng(spec.seed + 7919)
+  const crossings = (carry ? [-70, -150] : [-70, -150, -225]).map(z => z + Math.round((jr() - 0.5) * 18))
   const traffic = spec.hazards.includes('traffic') || spec.hazards.includes('police')
   const cars: Car[] = []
   if (traffic) crossings.forEach((z, ci) => {
