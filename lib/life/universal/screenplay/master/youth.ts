@@ -1,6 +1,7 @@
 import type {ChapterScript} from '../types'
 import {chapter, o, s, sc, t} from '../write'
 import {bond, coins, energy, flag, heart, is} from '../types'
+import type {Effect} from '../../types'
 
 /**
  * Master screenplay F09–F13 (bible §16, 15.10.2026): the years of choosing your own place, your first journey,
@@ -11,6 +12,12 @@ import {bond, coins, energy, flag, heart, is} from '../types'
  * always set before F15 — and F13-S1 holds the one explicit "what if" small business (`life:route:owner`).
  * An earlier version of the same life may have gone another way; the business option says so in the text.
  */
+/**
+ * F13's shift is choice → work → pay: the choice is the agreement, the work is a small game played on the bench
+ * (sort, fit, carry), and the agreed pay is counted in only after it, once. Nothing is paid for saying yes.
+ */
+const shift = (id: string, pay: number, tired: number): Effect => ({e: 'play', game: 'count', id: `F13-shift-${id}`, then: [flag('life:master:F13:paid', id), coins(pay), energy(-tired)]})
+
 export const MASTER_YOUTH: ChapterScript[] = [
   // ───────────────────────────────────────────────────────────────────────── F09 · my place
   chapter({
@@ -182,12 +189,13 @@ export const MASTER_YOUTH: ChapterScript[] = [
           {group: 'who', when: is('life:master:F10:cost', 'loan'), lines: [s(null, 'You already owe him something. A late ride will not be his to carry too.', 'אתה כבר חייב לו משהו. נסיעה מאוחרת לא תהיה גם על הכתפיים שלו.')]},
         ],
         task: t('Decide how to get home', 'להחליט איך חוזרים הביתה'),
-        action: [s(null, 'A light turns on somewhere above you, and goes off again. It is not about you.', 'אור נדלק איפשהו מעליך, ונכבה שוב. זה לא עליך.')],
+        action: [s(null, 'You run a finger down the timetable twice, counting what still leaves tonight. A light turns on somewhere above you, and goes off again. It is not about you.', 'אתה מעביר אצבע על לוח הזמנים פעמיים, סופר מה עוד יוצא הלילה. אור נדלק איפשהו מעליך, ונכבה שוב. זה לא עליך.')],
+        game: 'count',
         options: [
           o('call', t('Call someone you know who is awake', 'להתקשר למישהו מוכר שער'), s('friend', 'Who? Think about whose number you actually know by heart. That is the answer, usually.', 'מי? תחשוב על מי את המספר שלו אתה באמת יודע בעל פה. זו בדרך כלל התשובה.'),
             [flag('life:master:F11:way', 'call'), bond('dad', 2)]),
           o('pay', t('Look for another way, with what is free', 'לחפש דרך אחרת בכסף פנוי'), s('friend', 'It will cost. And it will not arrive on time. Both, probably.', 'זה יעלה. וזה לא יגיע בזמן. כנראה שניהם.'),
-            [flag('life:master:F11:way', 'paid'), flag('life:inclin', 'way'), coins(-3)]),
+            [flag('life:master:F11:way', 'paid'), flag('life:inclin', 'way'), coins(-3)], {when: {min: ['coins', 3]}}),
           o('wait', t('Stay together until it is safe', 'להישאר ביחד עד שיהיה בטוח'), s('friend', 'Then we wait. It is not a failure. It is a long evening with a friend. Do not say it like that.', 'אז מחכים. זו לא כישלון. זה ערב ארוך עם חבר. אל תגיד את זה ככה.'),
             [flag('life:master:F11:way', 'waited'), bond('friend', 3), energy(-8)]),
         ],
@@ -277,7 +285,8 @@ export const MASTER_YOUTH: ChapterScript[] = [
         ],
         callbacks: [{when: is('life:master:F12:stand', 'defended'), lines: [s('dad', 'You are standing in front of that poster like a person guarding a door.', 'אתה עומד מול הפוסטר הזה כמו מי ששומר על דלת.')]}],
         task: t('Decide what happens to it', 'להחליט מה יהיה איתו'),
-        action: [s(null, 'The wall has a pale rectangle where it has hung. You can see it even with the poster still there.', 'על הקיר יש מלבן חיוור איפה שהוא תלוי. אפשר לראות אותו גם כשהפוסטר עדיין שם.')],
+        action: [s(null, 'The wall has a pale rectangle where it has hung. You work the pins out one at a time, the loose one last, and hold the corners so the paper does not tear.', 'על הקיר יש מלבן חיוור איפה שהוא תלוי. אתה מוציא את הנעצים אחד אחד, את הרופף אחרון, ומחזיק את הפינות כדי שהנייר לא ייקרע.')],
+        game: 'carry',
         options: [
           o('leave', t('Leave it where it is', 'להשאיר במקום'), s('dad', 'Leave it. It is not done being yours.', 'תשאיר. זה עוד לא גמר להיות שלך.'),
             [flag('life:master:F12:item', 'wall'), bond('dad', 2)]),
@@ -325,6 +334,7 @@ export const MASTER_YOUTH: ChapterScript[] = [
         lines: [
           s('boss', 'I have a shift. Four hours, start to finish. It is not a mystery, it is a broom and a ladder.', 'יש לי משמרת. ארבע שעות, מההתחלה עד הסוף. זה לא תעלומה, זה מטאטא וסולם.'),
           s(null, 'Your friend already asked if you are coming out tonight. And a shirt in a window, not far away, has been looking at you.', 'החבר שלך כבר שאל אם אתה בא הערב. וחולצה בחלון, לא רחוק, מסתכלת עליך.'),
+          s(null, 'The shift ends at nine. The evening starts at eight. On the calendar by the door the two overlap by one hour, in two different handwritings.', 'המשמרת נגמרת בתשע. הערב מתחיל בשמונה. בלוח שליד הדלת שניהם חופפים בשעה אחת, בשני כתבי יד שונים.'),
         ],
         callbacks: [
           {group: 'before', when: is('life:master:F03:source', 'work'), lines: [s(null, 'You have done this before, a small job with a clear start. It is the same muscle.', 'עשית את זה כבר, עבודה קטנה עם התחלה ברורה. זו אותה שריר.')]},
@@ -333,10 +343,10 @@ export const MASTER_YOUTH: ChapterScript[] = [
         task: t('Answer the boss', 'לענות לבוס'),
         action: [s(null, 'The workshop smells of dust and paint. The radio is on, low, and nobody turns it off.', 'בסדנה ריח של אבק וצבע. הרדיו דלוק, חלש, ואף אחד לא מכבה.')],
         options: [
-          o('full', t('Take the whole shift', 'לקחת את המשמרת המלאה'), s('boss', 'Four hours. Do not be late. I mean it kindly. Someone will be here, you will meet them.', 'ארבע שעות. אל תאחר. אני אומר את זה בטוב. יהיה כאן מישהו, תכיר אותו.'),
-            [flag('life:master:F13:shift', 'full'), coins(5), energy(-10), bond('mate', 2)]),
-          o('swap', t('Ask for a swap or a shorter shift', 'לבקש החלפה או משמרת קצרה'), s('boss', 'Two hours, and you tell me what changes. It is a request, not a right. But the answer is yes.', 'שעתיים, ואתה מספר לי מה משתנה. זו בקשה, לא זכות. אבל התשובה כן.'),
-            [flag('life:master:F13:shift', 'short'), coins(2), energy(-5), bond('mate', 1)]),
+          o('full', t('Take the whole shift, and be late tonight', 'לקחת את המשמרת המלאה, ולאחר הערב'), [s('boss', 'Four hours. Do not be late. I mean it kindly. Someone will be here, you will meet them.', 'ארבע שעות. אל תאחר. אני אומר את זה בטוב. יהיה כאן מישהו, תכיר אותו.'), s('boss', 'Screws into the tins by size, the frame fitted, the frame at the door. I look at the frame, not the clock. Then five.', 'ברגים לפחיות לפי גודל, המסגרת מורכבת, המסגרת ליד הדלת. אני מסתכל על המסגרת, לא על השעון. ואז חמש.')],
+            [flag('life:master:F13:shift', 'full'), bond('mate', 2), shift('full', 5, 10)]),
+          o('swap', t('Ask {mate} to take your last hour, and leave at eight', 'לבקש מ{mate} לקחת את השעה האחרונה שלך, ולצאת בשמונה'), [s('mate', 'Your last hour for my Saturday morning. Deal. Write it on the calendar so neither of us gets clever later.', 'השעה האחרונה שלך תמורת שבת בבוקר שלי. סגור. תכתוב בלוח כדי שאף אחד מאיתנו לא יתחכם אחר כך.'), s('boss', 'Three hours of work, three coins, after the bench is clear. Not a coin for the hour you traded.', 'שלוש שעות עבודה, שלושה מטבעות, אחרי שהספסל נקי. לא מטבע על השעה שהחלפת.')],
+            [flag('life:master:F13:shift', 'short'), bond('mate', 1), shift('short', 3, 7)]),
           o('refuse', t('Refuse this time, and think about a small thing of your own (what if)', 'לסרב הפעם, ולחשוב על משהו קטן משלך (מה אם)'), s('boss', 'Fine, no hard feelings. A small thing of your own would be yours alone. If it had been different, who knows. Today it is a daydream, and I will not call it history.', 'בסדר, בלי טינה. משהו קטן משלך היה רק שלך. אם הדברים היו אחרת, מי יודע. היום זו חלימה, ואני לא אקרא לזה היסטוריה.'),
             [flag('life:master:F13:shift', 'no'), flag('life:route:owner', true), flag('life:master:F13:business', 'whatif'), heart(2)]),
         ],
@@ -349,6 +359,10 @@ export const MASTER_YOUTH: ChapterScript[] = [
           s('mate', 'Could you cover me for a bit? I need to go. I will make it up. I always do.', 'תוכל לכסות אותי קצת? אני חייב ללכת. אפצה. תמיד מפצה.'),
         ],
         presence: {any: [is('life:master:F13:shift', 'full'), is('life:master:F13:shift', 'short')]},
+        callbacks: [
+          {group: 'deal', when: is('life:master:F13:paid', 'full'), lines: [s(null, 'Five coins in your pocket and four hours in your arms. The light outside has changed twice.', 'חמישה מטבעות בכיס וארבע שעות בידיים. האור בחוץ התחלף פעמיים.'), s('friend', 'A message: You missed the start. You said you would, and you did, so I am not even angry. Mostly.', 'הודעה: פספסת את ההתחלה. אמרת שתפספס, ופספסת, אז אני אפילו לא כועס. בעיקר.'), s(null, 'At home a plate will be left covered on the counter, because you had said nine.', 'בבית תחכה צלחת מכוסה על השיש, כי אמרת תשע.')]},
+          {group: 'deal', when: is('life:master:F13:paid', 'short'), lines: [s('mate', 'Seven fifty. On the calendar it says Saturday is mine. I checked twice, I trust nobody.', 'שבע וחמישים. בלוח כתוב ששבת שלי. בדקתי פעמיים, אני לא סומך על אף אחד.'), s('friend', 'A message: Eight, you said. {mate} took your hour? Then you owe a Saturday, and I am coming to watch you pay it.', 'הודעה: שמונה, אמרת. {mate} לקח לך את השעה? אז אתה חייב שבת, ואני בא לראות אותך משלם.'), s(null, 'At home you eat first, on time. On the calendar by the door: one hour crossed out, one Saturday written in.', 'בבית אתה אוכל קודם, בזמן. בלוח שליד הדלת: שעה אחת מחוקה, שבת אחת כתובה.')]},
+        ],
         solo: [
           s('friend', 'You did not work. I need to ask for something else: can the evening change? A bit. Not a lot.', 'לא עבדת. אני צריך לבקש משהו אחר: אפשר לשנות קצת את הערב? לא הרבה.'),
         ],
@@ -382,11 +396,11 @@ export const MASTER_YOUTH: ChapterScript[] = [
         action: [s(null, 'The drawer is the one thing in the kitchen that can keep a secret.', 'המגירה היא הדבר היחיד במטבח שיכול לשמור סוד.')],
         options: [
           o('buy', t('Buy something for the collection', 'לקנות משהו לאוסף'), s('friend', 'It will have a source: this shift, these hours, those coins. Remember that when you tell the story.', 'יהיה לו מקור: המשמרת הזאת, השעות האלה, המטבעות האלה. תזכור את זה כשתספר את הסיפור.'),
-            [flag('life:master:F13:spend', 'collection'), coins(-3), heart(2)]),
+            [flag('life:master:F13:spend', 'collection'), coins(-3), heart(2)], {when: {min: ['coins', 3]}}),
           o('save', t('Save for a trip or a home', 'לשמור לנסיעה או לבית'), s('friend', 'A goal, not a purchase. Put a name on it so it does not turn into groceries.', 'יעד, לא קנייה. תן לו שם כדי שלא יהפוך לקניות.'),
             [flag('life:master:F13:spend', 'saved'), flag('life:master:F13:goal', 'trip'), flag('life:inclin', 'way'), heart(1)]),
           o('debt', t('Close an old debt', 'לסגור חוב קיים'), s('friend', 'The creditor and the terms were agreed when the debt was made. Pay what was agreed, not more, not less.', 'הנושה והתנאים סוכמו כשנוצר החוב. שלם מה שסוכם, לא יותר ולא פחות.'),
-            [flag('life:master:F13:spend', 'debt'), coins(-3), bond('friend', 3)]),
+            [flag('life:master:F13:spend', 'debt'), coins(-3), bond('friend', 3)], {when: {min: ['coins', 3]}}),
         ],
       }),
     ],
