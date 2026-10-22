@@ -133,11 +133,27 @@ function spendOf(list: readonly Effect[] | undefined): number {
  */
 export function unguardedSpends(pack: Pick<LifePack, 'chapters'>): string[] {
   const out: string[] = []
-  for (const ch of pack.chapters) for (const t of ch.talks) t.branches.forEach((b, i) => {
-    const has = guaranteed(b.when)
+  for (const ch of pack.chapters) {
+  // A screenplay option is chosen in one talk and done in another (`<scene>:act`): the choice sets a pick
+  // flag, and the branch that spends is gated on that pick. The wallet was checked when the choice was
+  // offered, so a branch gated on a guarded pick is guarded too (#275's F03 shirt is bought that way).
+  const picked = new Map<string, number>()
+  for (const t of ch.talks) for (const b of t.branches) for (const c of b.choices ?? []) {
+    const g = Math.max(guaranteed(b.when), guaranteed(c.when))
+    for (const fx of c.then ?? []) if (fx.e === 'flag' && typeof fx.v === 'string') picked.set(`${fx.k}=${fx.v}`, Math.max(picked.get(`${fx.k}=${fx.v}`) ?? 0, g))
+  }
+  const viaPick = (c: Cond | undefined): number => {
+    if (!c) return 0
+    if ('is' in c && Array.isArray(c.is)) return picked.get(`${c.is[0]}=${String(c.is[1])}`) ?? 0
+    if ('all' in c) return Math.max(0, ...c.all.map(viaPick))
+    return 0
+  }
+  for (const t of ch.talks) t.branches.forEach((b, i) => {
+    const has = Math.max(guaranteed(b.when), viaPick(b.when))
     if (!b.choices?.length) { const n = spendOf(b.then); if (n > has) out.push(`${ch.id}:${t.id}[${i}]`) }
     for (const c of b.choices ?? []) { const n = spendOf(c.then); if (n > Math.max(has, guaranteed(c.when))) out.push(`${ch.id}:${t.id}:${c.id}`) }
   })
+  }
   return out
 }
 
