@@ -108,6 +108,9 @@
 .kicker { font-family: var(--font-courier), monospace; font-size: .875rem; color: var(--l-mark); }
 .ageBig { float: inline-end; margin-inline-start: 12px; font-family: var(--font-poster), var(--font-frank), serif; font-size: 5.5rem; line-height: .8; color: var(--l-mark); font-variant-numeric: tabular-nums; }
 .lede { font-size: 1.0625rem; line-height: 1.55; max-inline-size: 60ch; }
+/* the club's own name for itself and its ground: the one line on the title card that is this club's and no other's */
+.heart { margin-block-start: 6px; font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: var(--l-prime); }
+.attract [data-life='begin']:focus-visible, .attract [data-life='continue-life']:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 3px; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-block-start: 20px; clear: both; }
 .button { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: var(--l-prime); color: var(--l-on); border: 2px solid var(--l-prime); font-weight: 700; text-decoration: none; }
 .button:disabled { background: var(--l-ground); color: var(--l-soft); border-color: var(--l-soft); cursor: default; }

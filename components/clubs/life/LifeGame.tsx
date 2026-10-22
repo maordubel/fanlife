@@ -55,6 +55,8 @@ type Props = {
   pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}
   /** RUSH for this club (the missions its archive can hold), or null where the switch is off: a mission's choice then plays its small game, or simply happens */
   rush?: RushDoor | null
+  /** the club's own name for itself and its ground, from its researched world (sourced); absent when the world is not researched */
+  heart?: {nickname?: string; ground?: string} | null
 }
 
 /* where the room sits on the glass: on a phone it takes the upper part and lifts clear of the page while somebody is speaking */
@@ -95,7 +97,7 @@ function browserStore(): LifeStore {
 
 const pad2 = (n: number) => String(n).padStart(2, '0')
 
-export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null}: Props) {
+export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, heart = null}: Props) {
   const [state, setState] = useState<LifeState | null>(null)
   const [phase, setPhase] = useState<Phase>('boot')
   const [cardAt, setCardAt] = useState(0)
@@ -891,6 +893,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null}: P
             <p className={styles.serial}>{pack.club.name} · {pack.club.city}</p>
             <h1 id="life-title" className={styles.poster}>{copy.title}</h1>
             <p className={styles.lede}>{copy.tagline}</p>
+            {heart && (heart.nickname || heart.ground) && <p className={styles.heart} data-life="heart">{[heart.nickname, heart.ground].filter(Boolean).join(' · ')}</p>}
             <div className={styles.pixRow} aria-hidden="true"><PixelSprite name="kid" scale={5} /><PixelSprite name="ball" scale={5} className={styles.pixBall} /><PixelSprite name="cup" scale={4} /></div>
             <div className={styles.actions}>
               {saved && <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => begin(false)} data-life="continue-life">{copy.continue} · {copy.chapter} {chapterNo} {copy.of} {pack.chapters.length}</button>}

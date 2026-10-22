@@ -8,6 +8,7 @@ import {rushDoor} from '@/lib/clubs/life/rush'
 import {door} from '@/lib/features-server'
 import {uiLocale} from '@/lib/clubs/locale'
 import {loadClub, resolveClubId} from '@/lib/clubs/resolver'
+import {clubWorld} from '@/lib/clubs/world'
 import {evaluationMode} from '@/lib/master/mode'
 import {readState} from '@/lib/master/store'
 import en from '@/messages/life-universal/en.json'
@@ -34,10 +35,13 @@ export default async function Page({params, searchParams}: {params: {slug: strin
   if (!pack.readiness.playable) notFound()
   // RUSH missions: the switch (or the owner's preview), and the missions this club's own archive can hold
   const rush = rushSwitch.open ? rushDoor(club.data, pack.skin) : null
+  // the title card names the club the way its own people do, only from its researched (sourced) world
+  const world = clubWorld(id)
+  const heart = world ? {nickname: world.nicknames[0]?.text, ground: world.ground?.name} : null
   return (
     <ClubSurface theme={club.data.theme} clubId={id} locale={locale} tabbar={false}>
       <main id="main">
-        <LifeGame key={`${id}:${locale}`} pack={pack} locale={locale} copy={copy} hubHref={`${base}?lang=${locale}`} langHref={{en: `${base}/life?lang=en`, he: `${base}/life?lang=he`}} rush={rush} />
+        <LifeGame key={`${id}:${locale}`} pack={pack} locale={locale} copy={copy} hubHref={`${base}?lang=${locale}`} langHref={{en: `${base}/life?lang=en`, he: `${base}/life?lang=he`}} rush={rush} heart={heart} />
       </main>
     </ClubSurface>
   )
