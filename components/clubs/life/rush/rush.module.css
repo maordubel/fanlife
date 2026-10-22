@@ -38,6 +38,8 @@
 .brief { margin: 0; font-size: 1.0625rem; line-height: 1.45; }
 .fine { margin: 12px 0 0; font-size: .875rem; color: var(--r-soft); line-height: 1.4; }
 .archive { margin: 12px 0 0; padding: 8px 10px; border: 1px dashed color-mix(in srgb, var(--r-ink) 40%, transparent); font-size: .875rem; }
+.recordMeta { display: block; margin-block-start: 4px; font-size: .75rem; color: var(--r-soft); }
+.recordMeta a { color: inherit; text-decoration: underline; }
 .archive b { display: block; font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--r-soft); }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-block-start: 18px; }
 .btn { min-block-size: 44px; padding: 0 18px; border: 2px solid var(--r-ink); background: var(--r-paper); color: var(--r-ink); font-weight: 700; }
@@ -51,6 +53,9 @@
 .clock { inset-block-start: calc(10px + var(--r-safe-t)); inset-inline: 0; margin-inline: auto; inline-size: max-content; text-align: center; }
 .clock b { display: block; font-family: var(--font-frank), serif; font-size: 1.9rem; letter-spacing: 0; line-height: 1; font-variant-numeric: tabular-nums; }
 .clock[data-low='true'] b { color: var(--r-prime); animation: rushPulse .5s ease-in-out infinite alternate; }
+/* low time is said in words too, never by colour alone */
+.low { display: none; font-style: normal; font-family: var(--font-courier), monospace; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; }
+.clock[data-low='true'] .low { display: block; }
 @keyframes rushPulse { to { opacity: .55; } }
 .meters { inset-block-start: calc(10px + var(--r-safe-t)); inset-inline-start: 10px; display: grid; gap: 6px; min-inline-size: 8.5rem; }
 .bar { position: relative; block-size: 6px; background: color-mix(in srgb, var(--r-light) 22%, transparent); }
@@ -69,6 +74,10 @@
 .stickZone { position: absolute; inset-block: 30% 0; inset-inline-start: 0; inline-size: 55%; pointer-events: auto; }
 .stick { position: absolute; inline-size: 110px; block-size: 110px; margin-block-start: -55px; margin-inline-start: -55px; border: 2px solid color-mix(in srgb, var(--r-light) 55%, transparent); border-radius: 50%; opacity: 0; pointer-events: none; }
 .stick[data-on='true'] { opacity: 1; }
+.ghost { position: absolute; inset-block-end: calc(140px + var(--r-safe-b, 0px)); inset-inline-start: 28px; display: grid; justify-items: center; gap: 6px; pointer-events: none; }
+.ghost i { inline-size: 84px; block-size: 84px; border: 2px dashed color-mix(in srgb, var(--r-light) 60%, transparent); border-radius: 50%; animation: rushGhost 1.4s ease-in-out infinite alternate; }
+.ghost span { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .06em; color: var(--r-light); }
+@keyframes rushGhost { to { translate: 14px -10px; } }
 .stick > i { position: absolute; inset: 30px; border-radius: 50%; background: color-mix(in srgb, var(--r-light) 70%, transparent); }
 .pads { position: absolute; inset-inline-end: 14px; inset-block-end: calc(18px + var(--r-safe-b)); display: grid; gap: 10px; justify-items: end; pointer-events: auto; }
 .pad { min-inline-size: 64px; min-block-size: 64px; border: 2px solid color-mix(in srgb, var(--r-light) 70%, transparent); background: var(--r-glass); color: var(--r-light); font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
@@ -86,7 +95,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cut[data-on='true'], .clock[data-low='true'] b { animation: none; }
+  .cut[data-on='true'], .clock[data-low='true'] b, .ghost i { animation: none; opacity: 1; }
   .sub span { transition: none; }
 }
 

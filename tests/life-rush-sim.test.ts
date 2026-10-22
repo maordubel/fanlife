@@ -330,3 +330,57 @@ describe('RUSH · the screenplay asks for missions that exist', () => {
     for (const a of asked) if (['title-night', 'cup-final-trip', 'new-ground'].includes(a.template)) expect(MASTER_IDS.includes(a.chapter), a.template).toBe(true)
   })
 })
+
+describe('RUSH 3 · a run of extras pays more, a knock says what it cost, the streets move', () => {
+  const withExtras = () => {
+    for (const t of MISSION_TEMPLATES) for (const seed of SEEDS) {
+      const level = buildLevel(specOf(t.id, seed, 1))
+      const ex = level.pickups.filter(p => p.step === null)
+      if (ex.length >= 3 && level.place !== 'road') return {level, ex}
+    }
+    throw new Error('no level with three extras')
+  }
+  const take = (level: ReturnType<typeof buildLevel>, s: ReturnType<typeof startSim>, p: {x: number; z: number}) => { s.x = p.x; s.z = p.z; s.vx = 0; s.vz = 0; stepSim(level, s, IDLE, 1 / 60) }
+
+  it('extras taken one after another are each worth more, and the run is remembered', () => {
+    const {level, ex} = withExtras(), s = startSim(level)
+    const bonuses: number[] = []
+    for (const p of ex.slice(0, 3)) { take(level, s, p); const e = s.events.find(v => v.k === 'pickup'); if (e?.k === 'pickup') bonuses.push(e.bonus) }
+    expect(bonuses).toEqual([5, 7, 9])
+    expect(s.streakBest).toBe(3)
+  })
+
+  it('the result card gets what went wrong: knocks and the seconds they cost', () => {
+    for (const t of MISSION_TEMPLATES) {
+      const {level, s} = play(specOf(t.id, 3, 2), 'bot')
+      const r = resultOf(level, s)
+      expect(r.score, t.id).toBeDefined()
+      expect(r.score!.knocks, t.id).toBe(s.hits + s.caught + s.wrong + s.missed)
+      expect(r.score!.lost, t.id).toBe(Math.round(s.lost))
+      expect(s.lost, t.id).toBeGreaterThanOrEqual(0)
+    }
+  })
+
+  it('the side streets move with the seed, and the same seed always builds the same street', () => {
+    const at = (seed: number) => buildLevel(specOf('kickoff-run', seed, 1)).crossings.join(',')
+    expect(at(4)).toBe(at(4))
+    expect(new Set(SEEDS.map(at)).size).toBeGreaterThan(SEEDS.length / 2)
+    for (const seed of SEEDS) for (const z of buildLevel(specOf('kickoff-run', seed, 1)).crossings) expect(z).toBeLessThan(-40)
+  })
+
+  it('with someone at your side, the third star asks that he was never left behind', () => {
+    const {level, s} = play(specOf('lead-the-way', 2, 0, 'elder'), 'bot')
+    expect(level.escort).not.toBeNull()
+    const r = resultOf(level, s)
+    if (s.escLost === 0) expect(r.score!.stars).toBeGreaterThanOrEqual(2)
+    s.escLost = 1
+    expect(resultOf(level, s).score!.stars).toBeLessThanOrEqual(2)
+  })
+
+  it('every template that rewrites its result line has it in both languages', () => {
+    for (const k of Object.keys(RUSH_WORDS.en).filter(k => /^res\.(good|ok)\.sub\./.test(k))) {
+      expect(templateById(k.split('.').slice(3).join('.')), k).toBeDefined()
+      expect((RUSH_WORDS.he as Record<string, string>)[k], k).toBeTruthy()
+    }
+  })
+})

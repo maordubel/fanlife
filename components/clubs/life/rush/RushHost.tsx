@@ -57,6 +57,8 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const [touch, setTouch] = useState(false)
   const [clueKeys, setClueKeys] = useState<string[]>([])
   const [sprintOn, setSprintOn] = useState(false)
+  /** the first time the thumb has not touched the stick yet: a ghost stick shows where it lives */
+  const [ghost, setGhost] = useState(true)
   const [stickAt, setStickAt] = useState<{x: number; y: number; dx: number; dy: number} | null>(null)
   const [objIx, setObjIx] = useState(0)
   const [extras, setExtras] = useState(0)
@@ -173,7 +175,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'end') { phaseRef.current = 'ending'; setPhase('ending'); endT.current = 0; sfx(e.outcome === 'slip' ? 'murmur' : 'roar') }
             else if (e.k === 'step') { setObjIx(e.next < 0 ? level.steps.length : e.next); setObjFlash(true); window.setTimeout(() => setObjFlash(false), 900); sfx('keep') }
             else if (e.k === 'talk') say(w(e.key), 3000)
-            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}`) } else pop(w(`got.${e.kind}`)); sfx('coin') }
+            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}${e.streak > 1 ? ` · ${w('ev.streak', {n: String(e.streak)})}` : ''}`) } else pop(w(`got.${e.kind}`)); sfx('coin') }
             else if (e.k === 'chant') { say(w('ev.chant'), 1800); pop(`+${e.bonus}s`); sfx('roar') }
             else if (e.k === 'noise') { say(w('ev.noise'), 1500); sfx('bounce') }
             else if (e.k === 'missed') { say(w('ev.missed'), 2200); cost(20); sfx('murmur') }
@@ -246,6 +248,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   /* the thumb stick */
   const rtl = locale === 'he'
   const onStickDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    setGhost(false)
     if (phaseRef.current !== 'play') return
     stick.current = {id: e.pointerId, ox: e.clientX, oy: e.clientY, x: 0, y: 0}
     ;(e.target as HTMLElement).setPointerCapture?.(e.pointerId)
@@ -281,7 +284,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
 
       {(phase === 'play' || phase === 'ending') && (
         <div className={css.hud}>
-          <div ref={hud.clockPlate} className={`${css.plate} ${css.clock}`} data-low="false"><span>{w(clockKey)}</span><b ref={hud.clock}>{fmt(level.realSeconds * level.timeScale)}</b></div>
+          <div ref={hud.clockPlate} className={`${css.plate} ${css.clock}`} data-low="false"><span>{w(clockKey)}</span><b ref={hud.clock}>{fmt(level.realSeconds * level.timeScale)}</b><em className={css.low}>{w('hud.low')}</em></div>
           <div className={`${css.plate} ${css.meters}`}>
             <span>{w(verbKey)} · <bdi ref={hud.left} /></span>
             <div className={css.bar} aria-hidden="true"><i ref={hud.progress} /></div>
@@ -301,9 +304,10 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
           {clueKeys.length > 0 && <div className={`${css.plate} ${css.clues}`} aria-live="polite">{w('hud.clue')}: {clueKeys.map(c => w(`clue.${c}`)).join(' · ')}</div>}
           <button type="button" className={`${css.pauseBtn} min-h-tap`} aria-label={w('hud.pause')} onClick={() => setPhase('pause')}>Ⅱ</button>
           <div className={css.sub} aria-live="polite"><span data-on={!!sub}>{sub ?? ''}</span></div>
-          {toast && <div className={css.toast} aria-hidden="true"><span>{toast}</span></div>}
+          {toast && <div className={css.toast} role="status" aria-live="polite"><span>{toast}</span></div>}
           {touch ? (
             <>
+              {ghost && phase === 'play' && <div className={css.ghost} aria-hidden="true"><i /><span>{w('hud.drag')}</span></div>}
               <div className={css.stickZone} onPointerDown={onStickDown} onPointerMove={onStickMove} onPointerUp={onStickUp} onPointerCancel={onStickUp} />
               {stickAt && <div className={css.stick} data-on="true" style={{insetBlockStart: stickAt.y, insetInlineStart: rtl ? window.innerWidth - stickAt.x : stickAt.x}}><i style={{transform: `translate(${stickAt.dx}px, ${stickAt.dy}px)`}} /></div>}
               <div className={css.pads}>
@@ -356,10 +360,12 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
           <section className={css.ticket} aria-labelledby="rush-result" data-life="rush-result" data-outcome={outcome.outcome}>
             <p className={css.kicker}><span>{spec.title}</span></p>
             <h2 id="rush-result" className={css.big}>{w(`res.${outcome.outcome}`)}</h2>
-            <p className={css.brief}>{w(`res.${outcome.outcome}.sub`)}</p>
+            <p className={css.brief}>{w(`res.${outcome.outcome}.sub.${spec.template}`) || w(`res.${outcome.outcome}.sub`)}</p>
             {outcome.score && <p className={css.stars} aria-label={`${w('res.stars')}: ${outcome.score.stars}/3`} data-life="rush-stars">{[1, 2, 3].map(i => <span key={i} data-on={i <= outcome.score!.stars}>★</span>)}</p>}
             <p className={css.fine}>{outcome.outcome === 'slip' ? w('res.late') : `${fmt(outcome.clockLeft)} ${w('res.left')}`}</p>
-            {outcome.score && outcome.score.extrasOf > 0 && <p className={css.fine}>{w('res.extras', {n: String(outcome.score.extras), m: String(outcome.score.extrasOf)})}{outcome.score.chants ? ` · ${w('res.chants', {n: String(outcome.score.chants)})}` : ''}</p>}
+            {outcome.score && outcome.score.extrasOf > 0 && <p className={css.fine}>{w('res.extras', {n: String(outcome.score.extras), m: String(outcome.score.extrasOf)})}{outcome.score.chants ? ` · ${w('res.chants', {n: String(outcome.score.chants)})}` : ''}{outcome.score.streak > 1 ? ` · ${w('res.streak', {n: String(outcome.score.streak)})}` : ''}</p>}
+            {outcome.score && outcome.outcome !== 'slip' && !assist && <p className={css.fine} data-life="rush-knocks">{outcome.score.knocks ? w('res.knocks', {n: String(outcome.score.knocks), s: String(outcome.score.lost)}) : w('res.clean')}</p>}
+            {anchor && <RecordedNight anchor={anchor} locale={locale} label={w('res.record')} source={w('res.source')} />}
             <div className={css.actions}>
               {outcome.outcome === 'slip' && storyAvailable && !assist && <button type="button" className={`${css.btn} min-h-tap`} onClick={() => { setAssist(true); begin(true) }}>{w('res.story')}</button>}
               {outcome.outcome === 'slip' && <button type="button" className={`${css.btn} min-h-tap`} onClick={() => begin(assist)}>{w('res.again')}</button>}
@@ -378,6 +384,25 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
           </section>
         </div>
       )}
+    </div>
+  )
+}
+
+/**
+ * The night the mission stands on, printed exactly as the archive recorded it: the row's own title in its
+ * own language, the day only when the archive knows the day (else the year), and who recorded it. Nothing
+ * here is composed — a NEUTRAL or HELD mission has no anchor and shows nothing.
+ */
+function RecordedNight({anchor, locale, label, source}: {anchor: NonNullable<MissionSpec['anchor']>; locale: string; label: string; source: string}) {
+  const when = anchor.precision === 'day' && anchor.on
+    ? new Intl.DateTimeFormat(locale, {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(new Date(`${anchor.on}T00:00:00Z`))
+    : String(anchor.year)
+  const src = anchor.sources[0]
+  return (
+    <div className={css.archive} data-life="rush-record">
+      <b>{label}</b>
+      <span lang={anchor.locale} dir="auto">{anchor.title}</span>
+      <span className={css.recordMeta}><bdi>{when}</bdi>{src ? <> · {source}: {src.url ? <a href={src.url} target="_blank" rel="noopener noreferrer">{src.publisher || src.title}</a> : <bdi>{src.publisher || src.title}</bdi>}</> : null}</span>
     </div>
   )
 }

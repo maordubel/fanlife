@@ -30,8 +30,10 @@ export function drawMap(ctx: CanvasRenderingContext2D, level: Level, sim: Sim, s
   // the gate
   ctx.fillStyle = skin.p; ctx.fillRect(X(level.goal.x) - 4, Y(level.goal.z) - 2, 8, 4)
   // the knots of people singing
-  ctx.strokeStyle = skin.s; ctx.lineWidth = 1.4
+  // dashed, so a ring never reads as a step by colour alone
+  ctx.strokeStyle = skin.s; ctx.lineWidth = 1.4; ctx.setLineDash([3, 2])
   level.rings.forEach((r, i) => { if (sim.ringDone[i]) return; ctx.beginPath(); ctx.arc(X(r.x), Y(r.z), Math.max(2.5, r.r * k), 0, Math.PI * 2); ctx.stroke() })
+  ctx.setLineDash([])
   // what lies on the ground: the ones a step needs are bigger
   level.pickups.forEach((p, i) => {
     if (sim.got[i]) return
@@ -51,7 +53,7 @@ export function drawMap(ctx: CanvasRenderingContext2D, level: Level, sim: Sim, s
     ctx.fillStyle = skin.p; ctx.strokeStyle = EDGE; ctx.lineWidth = 1.5
     ctx.beginPath()
     if (off) { const a = Math.atan2(dy, dx); ctx.moveTo(tx + Math.cos(a) * 6, ty + Math.sin(a) * 6); ctx.lineTo(tx + Math.cos(a + 2.4) * 5, ty + Math.sin(a + 2.4) * 5); ctx.lineTo(tx + Math.cos(a - 2.4) * 5, ty + Math.sin(a - 2.4) * 5) }
-    else ctx.arc(tx, ty, 4.2, 0, Math.PI * 2)
+    else { ctx.moveTo(tx, ty - 5); ctx.lineTo(tx + 5, ty); ctx.lineTo(tx, ty + 5); ctx.lineTo(tx - 5, ty) } // a diamond: the step, by shape
     ctx.closePath(); ctx.fill(); ctx.stroke()
   }
   // the one who walks with you
