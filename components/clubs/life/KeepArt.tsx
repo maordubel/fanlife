@@ -8,6 +8,12 @@ const ART: Record<string, string> = {
   sheet: 'propPaperFolded',
   armband: 'propNote',
   programme: 'propNewspaper',
+  // the paper things of the first chapters: a swap written down, an envelope's page, a note from the table, a plan
+  'swap-note': 'propNote',
+  'envelope-things': 'propPaperFolded',
+  'table-note': 'propNote',
+  'open-page': 'propPaperFolded',
+  'plan-for-two': 'propNote',
 }
 
 export const keepArt = (id: string): string | null => (ART[id] ? `/life/art/${ART[id]}.webp` : null)

@@ -1,6 +1,10 @@
 import type {ChapterScript} from '../types'
 import {chapter, o, s, sc, t} from '../write'
 import {bond, coins, energy, flag, heart, is, standing} from '../types'
+import type {Effect} from '../../types'
+
+/** hands, not words (spec 22.10.2026 §3): `id` names the action for the hands layer; `game` is what plays today */
+const hands = (game: 'carry' | 'count' | 'clap' | 'tune', id: string, then: Effect[] = []): Effect => ({e: 'play', game, id, then})
 
 /**
  * Master screenplay F04–F08 (bible §16, 15.10.2026): the day of the big match, the day after, the first
@@ -183,7 +187,7 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'The envelopes do not tell you anything. That is why they are sold.', 'המעטפות לא מספרות לך כלום. בגלל זה מוכרים אותן.')],
         options: [
           o('buy', t('Pay for one', 'לשלם על אחת'), s('kiosk', 'Sealed, and you do not choose. That is the whole thing. Good luck.', 'סגורה, ואתה לא בוחר. זה כל העניין. בהצלחה.'),
-            [flag('life:master:F06:path', 'bought'), coins(-3), heart(1)]),
+            [flag('life:master:F06:path', 'bought'), coins(-3), heart(1)], {when: {min: ['coins', 3]}}),
           o('watch', t('Save and watch {friend} open one', 'לחסוך ולהסתכל על {friend}'), s('friend', 'You are going to watch? Fine, then I get to be the one who knows the ending.', 'אתה תסתכל? בסדר, אז אני זה שיודע את הסוף.'),
             [flag('life:master:F06:path', 'watched'), bond('friend', 3)]),
           o('page', t('Start a page from things you own', 'להתחיל דף מדברים שיש לך'), s('friend', 'A page. With only stuff that is really yours. Strict. I like it.', 'דף. רק עם דברים שבאמת שלך. קפדני. מוצא חן בעיני.'),
@@ -202,9 +206,10 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'What is inside will be exactly what is inside. Nothing more, nothing as a punishment.', 'מה שבפנים יהיה בדיוק מה שבפנים. לא יותר, ולא כעונש.')],
         options: [
           o('careful', t('Open it carefully', 'לפתוח בזהירות'), s('friend', 'Slow! Look at each one before you turn it. Who is that, where is it from?', 'לאט! תסתכל על כל אחד לפני שאתה הופך. מי זה, מאיפה זה?'),
-            [flag('life:master:F06:open', 'careful'), heart(2)]),
+            [flag('life:master:F06:open', 'careful'), heart(2), hands('count', 'packet-open')],
+            {action: [s(null, 'The tab gives. One by one, face down, then turned. Two of them you already have; you put those to one side.', 'הלשונית נכנעת. אחד אחד, עם הפנים למטה, ואז הופכים. שניים מהם כבר יש לך; אתה שם אותם בצד.')]}),
           o('quick', t('Tear it open, or mix the page up', 'לקרוע מהר או לערבב את הדף'), s('friend', 'Ha! Everything on the bench. Pick them up, pick them up, nobody sit down.', 'הא! הכול על הספסל. תאסוף, תאסוף, אף אחד לא יושב.'),
-            [flag('life:master:F06:open', 'quick'), energy(-5), bond('friend', 2)]),
+            [flag('life:master:F06:open', 'quick'), energy(-5), bond('friend', 2), hands('clap', 'packet-tear')]),
           o('later', t('Keep it closed for now', 'להשאיר סגור לעכשיו'), s('friend', 'You are going to wait? Who waits? Fine, I will not look. I will look.', 'אתה מחכה? מי מחכה? בסדר, לא אסתכל. אסתכל.'),
             [flag('life:master:F06:open', 'sealed'), bond('friend', 1)]),
         ],
@@ -277,11 +282,12 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'A bus goes by without stopping. Neither of you looks up.', 'אוטובוס עובר בלי לעצור. אף אחד מכם לא מרים מבט.')],
         options: [
           o('copy', t('Offer a copy you have', 'להציע עותק שיש לך'), s('child', 'I have that one. Twice, actually. Show me what else.', 'את זה יש לי. פעמיים, בעצם. תראה לי מה עוד.'),
-            [flag('life:master:F07:offer', 'copy'), bond('child', 2)]),
+            [flag('life:master:F07:offer', 'copy'), bond('child', 2), hands('count', 'swap-check')],
+            {action: [s(null, 'Two piles on the bench: what he has twice, what you have twice. You check his against your page, square by square.', 'שתי ערימות על הספסל: מה שיש לו פעמיים, מה שיש לך פעמיים. אתה בודק את שלו מול הדף שלך, משבצת אחרי משבצת.')]}),
           o('mine', t('Offer the only one you love', 'להציע את היחיד שאתה אוהב'), s('child', 'That one? You would give that? Then it is a real offer. I need time.', 'את זה? אתה היית נותן את זה? אז זו הצעה אמיתית. אני צריך זמן.'),
             [flag('life:master:F07:offer', 'dear'), heart(-1), bond('child', 3)]),
           o('help', t('Offer to help with something', 'להציע לעזור במשהו'), s('child', 'My little sister has a hole in her bike tyre. Fix it, and we will talk.', 'לאחות הקטנה שלי יש חור בצמיג של האופניים. תתקן, ונדבר.'),
-            [flag('life:master:F07:offer', 'promise'), bond('child', 2), energy(-5)]),
+            [flag('life:master:F07:offer', 'promise'), bond('child', 2), energy(-5), hands('tune', 'tyre-fix')]),
         ],
       }),
       sc({

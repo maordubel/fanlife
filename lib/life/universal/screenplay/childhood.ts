@@ -77,7 +77,8 @@ export const CHILDHOOD = [
   chapter({
     id: 'c2-shirt', age: 8, act: 1, title: t('The Shirt', 'החולצה'),
     intro: t('The shirt in the window has taken up your whole week.', 'החולצה בחלון תפסה לך את כל השבוע.'),
-    keep: {id: 'shirt', name: t('The first shirt', 'החולצה הראשונה'), note: t('How you got it matters as much as its colour.', 'איך היא הגיעה אליך חשוב כמו הצבע שלה.')},
+    // a life still saving for it gets the shirt a year later, in F03, and its keepsake there: nobody keeps a shirt they do not have yet
+    keep: {id: 'shirt', name: t('The first shirt', 'החולצה הראשונה'), note: t('How you got it matters as much as its colour.', 'איך היא הגיעה אליך חשוב כמו הצבע שלה.'), when: {not: 'life:shirt:saving'}},
     scenes: [
       sc({
         id: 'S04', room: 'bedroom', who: 'mum', game: 'count', spot: 'desk', verb: 'take',
@@ -113,7 +114,10 @@ export const CHILDHOOD = [
         task: t('Close the gap the way you chose', 'לסגור את הפער בדרך שבחרת'),
         action: [s(null, 'You finish the errand, accept the help, or carry the old shirt home. Nobody calls it a smaller shirt.', 'אתה מסיים את הסידור, מקבל את העזרה או נושא את הישנה הביתה. אף אחד לא קורא לה חולצה קטנה יותר.')],
         options: [
-          o('earned', t('Earn the difference with the crates', 'להרוויח את ההפרש עם הארגזים'), s('kiosk', 'Crates first. Shirt second. Keep the order.', 'קודם ארגזים. אחר כך חולצה. תשמור על הסדר.'), [flag('life:shirt:origin', 'earned'), standing(2), energy(-10)], {mission: {template: 'bottle-run'}}),
+          // the crates START the money, they do not finish it: six short is more than one afternoon. The coins go in the tin,
+          // the shirt stays in the window, and F03 (a year on) is where it is counted again, worked for and bought — asked once.
+          o('earned', t('Start on the crates: the kiosk pays into your tin', 'להתחיל עם הארגזים: הקיוסק משלם לקופסה'), [s('kiosk', 'Crates first. Shirt second. Keep the order.', 'קודם ארגזים. אחר כך חולצה. תשמור על הסדר.'), s('kiosk', 'Four today, into the tin. The window is patient. So am I.', 'ארבעה היום, לקופסה. החלון סבלני. גם אני.')],
+            [flag('life:shirt:origin', 'saving'), flag('life:shirt:saving'), flag('life:shirt:paid:c2', 'crates'), coins(4), standing(2), energy(-10)], {mission: {template: 'bottle-run'}}),
           o('gift', t('Accept Mum’s quiet help', 'לקבל את העזרה השקטה של אמא'), s('mum', 'Count again. Slowly this time.', 'תספור שוב. הפעם לאט.'), [flag('life:shirt:origin', 'gift'), bond('mum', 3)]),
           o('handed', t('Take Dad’s old shirt', 'לקחת את הישנה של אבא'), s('dad', 'The sleeves know the way back. Roll them.', 'השרוולים מכירים את הדרך חזרה. תקפל אותם.'), [flag('life:shirt:origin', 'handed'), bond('dad', 4), heart(2)]),
         ],
@@ -121,21 +125,22 @@ export const CHILDHOOD = [
       sc({
         id: 'S06', room: 'street', who: 'friend', slot: 'kerb',
         title: t('Too big', 'גדולה מדי'),
-        lines: [
-          s('friend', 'It is enormous.', 'היא ענקית.'),
-          s('me', 'I am growing.', 'אני גדל.'),
-          s('friend', 'Quickly, then. We need a goalkeeper.', 'אז מהר. חסר לנו שוער.'),
-        ],
+        // the same kerb for a boy with the shirt on and a boy with four coins in a tin: what is said depends on which he is
+        lines: [s('friend', 'Quickly. We need a goalkeeper.', 'מהר. חסר לנו שוער.')],
         callbacks: [
-          {group: 'origin', when: is('life:shirt:origin', 'earned'), lines: [s('friend', 'The crates one? Everybody knows. It counts double.', 'זאת מהארגזים? כולם יודעים. היא נחשבת כפול.')]},
+          {group: 'have', when: {not: 'life:shirt:saving'}, lines: [s('friend', 'It is enormous.', 'היא ענקית.'), s('me', 'I am growing.', 'אני גדל.')]},
+          {group: 'have', when: {flag: 'life:shirt:saving'}, lines: [s('friend', 'No shirt?', 'בלי חולצה?'), s('me', 'Four in the tin. The rest is crates.', 'ארבעה בקופסה. השאר זה ארגזים.')]},
+          {group: 'origin', when: is('life:shirt:origin', 'gift'), lines: [s('friend', 'Your mum counted it into your hand, I bet. Twice. Mine does that.', 'אמא שלך ספרה לך את זה ליד, אני בטוח. פעמיים. אצלי גם.')]},
           {group: 'origin', when: is('life:shirt:origin', 'handed'), lines: [s('friend', 'It has a repair by the sleeve. That is a proper one.', 'יש לה תיקון ליד השרוול. זאת אמיתית.')]},
         ],
-        task: t('Put it on and step out', 'ללבוש אותה ולצאת'),
-        action: [s(null, 'You roll the sleeves. The street sees the shirt before it sees you.', 'אתה מקפל שרוולים. הרחוב רואה את החולצה לפני שהוא רואה אותך.')],
+        task: t('Step out to the kerb', 'לצאת אל המדרכה'),
+        action: [s(null, 'The street is the same street. You step into it.', 'הרחוב הוא אותו רחוב. אתה נכנס אליו.')],
         options: [
-          o('proud', t('Walk out first', 'לצאת ראשון'), s(null, 'You remember the walk as well as the shirt.', 'אתה זוכר גם את ההליכה, לא רק את החולצה.'), [flag('life:shirt:show', 'proud'), heart(3), standing(2)], {wearAdd: 'shirt'}),
-          o('together', t('Ask your friend to come with you', 'לבקש מהחבר לצאת איתך'), s('friend', 'I was coming anyway. I just wanted to be asked.', 'בכל מקרה באתי. רק רציתי שתבקש.'), [flag('life:shirt:show', 'together'), bond('friend', 5)], {wearAdd: 'shirt'}),
-          o('quiet', t('Wear it under your coat today', 'ללבוש אותה היום מתחת למעיל'), s('mum', 'There is no deadline for showing everybody.', 'אין מועד אחרון להראות לכולם.'), [flag('life:shirt:show', 'quiet'), heart(1)], {wearAdd: 'shirt'}),
+          o('proud', t('Walk out first', 'לצאת ראשון'), s(null, 'You remember the walk as well as the shirt.', 'אתה זוכר גם את ההליכה, לא רק את החולצה.'), [flag('life:shirt:show', 'proud'), heart(3), standing(2)], {action: [s(null, 'You roll the sleeves. The street sees the shirt before it sees you.', 'אתה מקפל שרוולים. הרחוב רואה את החולצה לפני שהוא רואה אותך.')], when: {not: 'life:shirt:saving'}, wearAdd: 'shirt'}),
+          o('together', t('Ask your friend to come with you', 'לבקש מהחבר לצאת איתך'), s('friend', 'I was coming anyway. I just wanted to be asked.', 'בכל מקרה באתי. רק רציתי שתבקש.'), [flag('life:shirt:show', 'together'), bond('friend', 5)], {action: [s(null, 'You roll the sleeves. The street sees the shirt before it sees you.', 'אתה מקפל שרוולים. הרחוב רואה את החולצה לפני שהוא רואה אותך.')], when: {not: 'life:shirt:saving'}, wearAdd: 'shirt'}),
+          o('quiet', t('Wear it under your coat today', 'ללבוש אותה היום מתחת למעיל'), s('mum', 'There is no deadline for showing everybody.', 'אין מועד אחרון להראות לכולם.'), [flag('life:shirt:show', 'quiet'), heart(1)], {action: [s(null, 'You roll the sleeves. The street sees the shirt before it sees you.', 'אתה מקפל שרוולים. הרחוב רואה את החולצה לפני שהוא רואה אותך.')], when: {not: 'life:shirt:saving'}, wearAdd: 'shirt'}),
+          // always there, shirt or no shirt: a kerb needs a goalkeeper more than it needs a colour
+          o('tin', t('Go in goal as you are', 'לעמוד בשער כמו שאתה'), s('friend', 'In goal, then. Whatever you are wearing, you are wearing it in goal.', 'בשער, אז. מה שאתה לובש, אתה לובש בשער.'), [flag('life:shirt:show', 'tin'), bond('friend', 3), heart(1)]),
         ],
       }),
     ],
@@ -478,3 +483,18 @@ export const CHILDHOOD = [
     ],
   }),
 ]
+
+/**
+ * Where the first shirt came from, as a sentence the box can print beside it (`MeSheet`): read from what the life recorded,
+ * never guessed. `null` when the life has no first shirt (it is still saving, or it chose to manage without).
+ */
+export function shirtFrom(flags: Record<string, string | number | boolean>): readonly [en: string, he: string] | null {
+  const origin = flags['life:shirt:origin'], source = flags['life:master:F03:source']
+  if (origin === 'handed') return ['Your father\'s first, sleeves rolled. The repair by the cuff is older than you.', 'של אבא קודם, שרוולים מקופלים. התיקון ליד השרוול ישן ממך.']
+  if (origin === 'gift') return ['A present. Your mother counted the coins into your hand, twice.', 'מתנה. אמא ספרה לך את המטבעות ליד, פעמיים.']
+  if (origin === 'bought' && source === 'work') return [flags['life:shirt:paid:c2'] ? 'Paid for with crates: the kiosk\'s four into the tin, then a delivery stacked for the rest.' : 'Paid for with a delivery you stacked at the kiosk.', flags['life:shirt:paid:c2'] ? 'שולמה בארגזים: ארבעה מהקיוסק לקופסה, ואחר כך משלוח שסידרת בשביל השאר.' : 'שולמה במשלוח שסידרת בקיוסק.']
+  if (origin === 'bought' && source === 'gift') return ['Bought with a present of coins, and your own tin to make up the rest.', 'נקנתה במתנה של מטבעות, והקופסה שלך השלימה את השאר.']
+  if (origin === 'bought') return ['Bought with what the tin held.', 'נקנתה במה שהיה בקופסה.']
+  if (origin === 'earned') return ['Earned at the kiosk, crate by crate.', 'הורווחה בקיוסק, ארגז אחרי ארגז.']
+  return null
+}

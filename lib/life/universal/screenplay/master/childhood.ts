@@ -1,5 +1,11 @@
 import {chapter, o, s, sc, t} from '../write'
 import {bond, coins, flag, heart, is} from '../types'
+import type {Effect} from '../../types'
+
+/** hands, not words (spec 22.10.2026 §3): a small thing done in the room. `id` names the action for the hands layer; `game` is what plays today */
+const hands = (game: 'carry' | 'count' | 'clap' | 'tune', id: string, then: Effect[] = []): Effect => ({e: 'play', game, id, then})
+/** the first shirt's price, in the same coins the tin counts */
+const SHIRT_PRICE = 6
 
 /**
  * Master screenplay F01–F03 (bible §16, 15.10.2026): the first three chapters of the shared life.
@@ -31,7 +37,7 @@ export const MASTER_CHILDHOOD = [
         action: [s(null, 'It gives all at once, the way stuck things do, and something small slides to the front.', 'היא נפתחת בבת אחת, כמו כל מה שתקוע, ומשהו קטן גולש קדימה.')],
         options: [
           o('open', t('Help him pull', 'לעזור לו למשוך'), s('dad', 'On three. No, on two, I never get to three.', 'על שלוש. לא, על שתיים, אני אף פעם לא מגיע לשלוש.'),
-            [flag('life:master:F01:drawer', 'together'), bond('dad', 3), heart(1)]),
+            [flag('life:master:F01:drawer', 'together'), bond('dad', 3), heart(1), hands('clap', 'drawer-pull')]),
           o('tool', t('Fetch a spoon from the table', 'להביא כף מהשולחן'), s('dad', 'A spoon. Of course. Why did nobody in this family think of a spoon?', 'כף. ברור. למה אף אחד במשפחה הזאת לא חשב על כף?'),
             [flag('life:master:F01:drawer', 'tool'), flag('life:master:F01:own', 'found'), bond('dad', 2)]),
           o('play', t('Go back to your game', 'לחזור למשחק'), s('dad', 'Go. I will tell you when it is open.', 'לך. אני אגיד לך כשזה ייפתח.'),
@@ -100,9 +106,9 @@ export const MASTER_CHILDHOOD = [
         action: [s(null, 'The chair creaks, the way furniture does when it has seen this kind of decision before.', 'הכיסא חורק, כמו שרהיטים עושים כשהם כבר ראו החלטה כזאת.')],
         options: [
           o('wear', t('Put it on', 'ללבוש'), s('dad', 'Borrowed. Say it out loud so we both remember. Borrowed.', 'בהשאלה. תגיד את זה בקול שנזכור שניינו. בהשאלה.'),
-            [flag('life:master:F02:scarf', 'worn'), heart(2)], {wearAdd: 'scarf'}),
+            [flag('life:master:F02:scarf', 'worn'), heart(2), hands('tune', 'scarf-tie')], {wearAdd: 'scarf'}),
           o('carry', t('Carry it in your hand', 'לשאת ביד'), s('dad', 'You want it, but not the looks yet. That is a sensible order.', 'אתה רוצה אותו, אבל עוד לא את המבטים. זה סדר הגיוני.'),
-            [flag('life:master:F02:scarf', 'carried')]),
+            [flag('life:master:F02:scarf', 'carried'), hands('carry', 'scarf-carry')]),
           o('leave', t('Leave it on the chair', 'להשאיר בכיסא'), s('dad', 'The chair will keep it. It is a very loyal chair.', 'הכיסא ישמור אותו. הוא כיסא נאמן מאוד.'),
             [flag('life:master:F02:scarf', 'left')]),
         ],
@@ -152,6 +158,9 @@ export const MASTER_CHILDHOOD = [
   // ───────────────────────────────────────────────────────────────────────── F03 · the shirt in the window
   chapter({
     id: 'F03', age: 9, act: 1, title: t('The Shirt in the Window', 'החולצה בחלון'),
+    // asked once in a life: a boy who already has his first shirt (a gift, his father's, a year ago at eight) does not stand
+    // at the window again. A boy still saving — or one who never stood there — comes back to it here, and finishes it.
+    when: {any: [{flag: 'life:shirt:saving'}, {not: 'life:shirt:origin'}]},
     intro: t('It has been there all month. You have walked past it nineteen times, and you did not count.', 'היא שם כבר חודש. עברת לידה תשע־עשרה פעמים, ולא ספרת.'),
     keep: {id: 'window-shirt', name: t('What you did about the shirt', 'מה שעשית בקשר לחולצה'), note: t('A shirt, an old one, or something you made. Not a shirt you only wished for.', 'חולצה, חולצה ישנה, או משהו שעשית. לא חולצה שרק איחלת לעצמך.')},
     scenes: [
@@ -159,11 +168,18 @@ export const MASTER_CHILDHOOD = [
         id: 'F03-S1', room: 'street', who: 'seller', after: [], spot: 'window', verb: 'look',
         title: t('How much is missing', 'כמה חסר'),
         lines: [
-          s(null, 'You stop in front of the shirt. The price is on a card in the window. You read it twice.', 'אתה עוצר מול החולצה. המחיר על כרטיס בחלון. אתה קורא אותו פעמיים.'),
+          s(null, 'You stop in front of the shirt. The price is on a card in the window: six. You read it twice.', 'אתה עוצר מול החולצה. המחיר על כרטיס בחלון: שישה. אתה קורא אותו פעמיים.'),
           s('seller', 'Trying it on is free. Stopping thinking about it costs extra.', 'למדוד לא עולה. להפסיק לחשוב עליה עולה.'),
         ],
-        task: t('Decide what you do about it', 'להחליט מה עושים בקשר לזה'),
-        action: [s(null, 'The glass shows you your own reflection, with the shirt on it. It is a good reflection.', 'הזכוכית מראה לך את ההשתקפות שלך, עם החולצה עליה. זו השתקפות טובה.')],
+        callbacks: [
+          // what the tin holds is what this life put in it (a year of crates, or nothing yet): read from the coins, never assumed
+          {group: 'tin', when: {min: ['coins', 1]}, lines: [s(null, 'In your pocket, the tin. It rattles: there is already something in it, and you know exactly where each coin came from.', 'בכיס, הקופסה. היא מקשקשת: כבר יש בה משהו, ואתה יודע בדיוק מאיפה כל מטבע הגיע.')]},
+          {when: {flag: 'life:shirt:saving'}, lines: [s(null, 'Four of them are from the kiosk\'s crates, a year ago. You have not spent one.', 'ארבעה מהם מהארגזים של הקיוסק, לפני שנה. לא הוצאת אף אחד.')]},
+          {group: 'tin', when: {none: [{min: ['coins', 1]}]}, lines: [s(null, 'In your pocket, a tin. It rattles less than you would like.', 'בכיס, קופסה. היא מקשקשת פחות ממה שהיית רוצה.')]},
+        ],
+        task: t('Tip out the tin on the sill and count it against the card', 'לרוקן את הקופסה על אדן החלון ולספור מול הכרטיס'),
+        action: [s(null, 'Coins on the sill, in a row, against the price on the card. The gap is not a feeling any more. It is a number.', 'מטבעות על האדן, בשורה, מול המחיר שעל הכרטיס. הפער כבר לא תחושה. הוא מספר.'), s(null, 'The glass shows you your own reflection, with the shirt on it. It is a good reflection.', 'הזכוכית מראה לך את ההשתקפות שלך, עם החולצה עליה. זו השתקפות טובה.')],
+        game: 'count',
         options: [
           o('try', t('Try it on and ask the price', 'למדוד ולברר מחיר'), s('seller', 'It fits like a small flag. Come back when the number is shorter.', 'היא יושבת כמו דגל קטן. תחזור כשהמספר יהיה קצר יותר.'),
             [flag('life:master:F03:route', 'saving'), heart(1)]),
@@ -178,15 +194,17 @@ export const MASTER_CHILDHOOD = [
         title: t('Money that can do something', 'כסף שאפשר לעשות איתו משהו'),
         lines: [
           s('friend', 'I have an afternoon idea. A good one. A short one.', 'יש לי רעיון לאחר הצהריים. טוב. קצר.'),
-          s(null, 'At home there is also a small job. The kind with a clear start and a clear end.', 'בבית יש גם עבודה קטנה. מהסוג עם התחלה ברורה וסוף ברור.'),
+          s(null, 'The kiosk has a delivery on the pavement: crates to stack, heavy at the bottom, glass at the top. Six for the lot, agreed before you lift one.', 'לקיוסק יש משלוח על המדרכה: ארגזים לסדר, הכבדים למטה, הזכוכית למעלה. שישה על הכול, מוסכם לפני שמרימים אחד.'),
         ],
         task: t('Choose how to spend the afternoon', 'לבחור איך לבלות את אחר הצהריים'),
         action: [s(null, 'Afternoons only come in one size. You have to pick what goes into it.', 'אחר צהריים בא רק במידה אחת. צריך לבחור מה נכנס בו.')],
         options: [
-          o('work', t('Work toward the shirt', 'לעבוד לקראת החולצה'), s('friend', 'You will be late for my idea. My idea can wait a week. I will complain.', 'תאחר לרעיון שלי. הרעיון שלי יכול לחכות שבוע. אתלונן.'),
-            [flag('life:master:F03:source', 'work'), coins(3)]),
+          // one job, paid once: the six arrive when the last crate is up, never before, never twice
+          o('work', t('Stack the kiosk\'s delivery for the gap (pays 6)', 'לסדר את המשלוח של הקיוסק בשביל הפער (משלם 6)'), s('friend', 'You will be late for my idea. My idea can wait a week. I will complain.', 'תאחר לרעיון שלי. הרעיון שלי יכול לחכות שבוע. אתלונן.'),
+            [flag('life:master:F03:source', 'work'), hands('carry', 'kiosk-stack', [coins(SHIRT_PRICE), flag('life:shirt:paid:F03', 'kiosk')])],
+            {action: [s('kiosk', 'Heavy at the bottom. Good. Six, as agreed. Count them in front of me.', 'כבדים למטה. טוב. שישה, כמו שסיכמנו. תספור מולי.')]}),
           o('gift', t('Accept a gift, if one is offered', 'לקבל מתנה אם הוצעה'), s('friend', 'A present is not a loan and not a prize. Say thank you and sit down.', 'מתנה היא לא הלוואה ולא פרס. תגיד תודה ותשב.'),
-            [flag('life:master:F03:source', 'gift'), bond('friend', 1)]),
+            [flag('life:master:F03:source', 'gift'), bond('friend', 1), coins(SHIRT_PRICE)]),
           o('keep', t('Keep the money for something else', 'לשמור את הכסף למשהו אחר'), s('friend', 'Fine. The shirt will be there. Windows are patient.', 'בסדר. החולצה תהיה שם. חלונות סבלניים.'),
             [flag('life:master:F03:source', 'kept'), bond('friend', 2)]),
         ],
@@ -198,12 +216,17 @@ export const MASTER_CHILDHOOD = [
           s(null, 'You get ready to go out. Whatever you have, it is on you, or in your bag, or in your head.', 'אתה מתכונן לצאת. מה שיש לך, הוא עליך, או בתיק, או בראש.'),
           s('friend', 'Well? Are you going to show me or do I have to guess?', 'נו? תראה לי או שאצטרך לנחש?'),
         ],
-        callbacks: [{when: is('life:master:F02:told', 'kept'), lines: [s(null, 'At home nobody asked and you did not say. The details of this one are yours alone.', 'בבית אף אחד לא שאל ואתה לא סיפרת. הפרטים של זה שלך בלבד.')]}],
+        callbacks: [
+          {when: is('life:master:F02:told', 'kept'), lines: [s(null, 'At home nobody asked and you did not say. The details of this one are yours alone.', 'בבית אף אחד לא שאל ואתה לא סיפרת. הפרטים של זה שלך בלבד.')]},
+          {group: 'paid', when: is('life:shirt:paid:F03', 'kiosk'), lines: [s('friend', 'Your hands smell of cardboard. You did the crates, didn\'t you? Six of them are in your fist.', 'הידיים שלך מריחות מקרטון. עשית את הארגזים, נכון? שישה מהם באגרוף שלך.')]},
+          {group: 'paid', when: is('life:master:F03:route', 'heirloom'), lines: [s('friend', 'Is that your dad\'s? The old kind, with the stitching? Lucky.', 'זאת של אבא שלך? מהסוג הישן, עם התפרים? מזל.')]},
+        ],
         task: t('Step out', 'לצאת החוצה'),
         action: [s(null, 'The street is exactly the same street. You are not, quite, exactly the same you.', 'הרחוב הוא בדיוק אותו רחוב. אתה לא בדיוק אותו אתה.')],
         options: [
-          o('show', t('Go out and show {friend}', 'לצאת ולהראות ל{friend}'), s('friend', 'It looks like it was made for you. It was not, but it looks like it.', 'זה נראה כאילו נעשה בשבילך. לא, אבל זה נראה ככה.'),
-            [flag('life:master:F03:shown', 'friend'), bond('friend', 3), heart(2)]),
+          // bought here or not at all: the six leave the hand only when the hand holds six
+          o('show', t('Buy it, put it on, and go out to {friend} (6)', 'לקנות, ללבוש ולצאת ל{friend} (6)'), [s('seller', 'Six. Exactly six. Try it on here, the mirror is honest.', 'שישה. בדיוק שישה. תמדוד כאן, המראה ישרה.'), s('friend', 'It looks like it was made for you. It was not, but it looks like it.', 'זה נראה כאילו נעשה בשבילך. לא, אבל זה נראה ככה.')],
+            [flag('life:master:F03:shown', 'friend'), flag('life:shirt:origin', 'bought'), flag('life:shirt:saving', false), coins(-SHIRT_PRICE), bond('friend', 3), heart(2)], {when: {min: ['coins', SHIRT_PRICE]}, wearAdd: 'shirt'}),
           o('quiet', t('Wear it quietly, or pick other clothes', 'ללבוש בשקט או לבחור בגד אחר'), s('friend', 'Quietly is fine. I will notice anyway, I always do.', 'בשקט זה בסדר. אשים לב בכל זאת, תמיד שמים.'),
             [flag('life:master:F03:shown', 'quiet'), heart(1)]),
           o('home', t('Show them at home what you made', 'להראות בבית מה עשית'), s('friend', 'Come back and tell me what they said. Do not leave anything out.', 'תחזור ותספר מה אמרו. אל תשמיט כלום.'),
