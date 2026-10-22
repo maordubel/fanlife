@@ -134,8 +134,7 @@ describe('rumble kits — every club, never a rival colour',()=>{
 import { roundsOf, RUN_GATES, ROUND_GATES } from '@/lib/clubs/activity'
 describe('passport rounds come from one gate list (audit F16)',()=>{
  it('counts goal, lineup and royal-rumble; the archive is a deed, not a round',()=>{
-  const a=Object.fromEntries(RUN_GATES.map(g=>[g,{completed:0,best:0}])) as never
-  ;(a as Record<string,{completed:number}>).goal.completed=2;(a as Record<string,{completed:number}>).lineup.completed=1;(a as Record<string,{completed:number}>)['royal-rumble'].completed=3;(a as Record<string,{completed:number}>).archive.completed=9
+  const a=Object.fromEntries(RUN_GATES.map(g=>[g,{completed:{goal:2,lineup:1,'royal-rumble':3,archive:9}[g as string]??0,best:0}])) as never
   expect(roundsOf(a)).toBe(6)
   expect(ROUND_GATES).not.toContain('archive')
  })
