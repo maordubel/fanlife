@@ -1,0 +1,57 @@
+name: research-daily
+# Every day: pull fresh data for every club (archives, UEFA matches/elevens), measure what each club now holds,
+# write a short report (with an optional AI triage), and open ONE pull request. Nothing is approved or published here
+# (rules 92, 93, 114); collected rows arrive unreviewed. Click "Run workflow" to run it now.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 3 * * *'
+permissions:
+  contents: write
+  pull-requests: write
+concurrency: {group: research-daily, cancel-in-progress: false}
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - run: npm ci
+      - name: Archives (polite, small batch per club)
+        continue-on-error: true
+        run: |
+          for f in research-profiles/*.json; do
+            id=$(basename "$f" .json)
+            node -e "process.exit((JSON.parse(require('fs').readFileSync('$f','utf8')).archive||[]).length?0:1)" || continue
+            npm run -s research:collect -- "$id" --max-requests 20 || echo "::warning::$id archive pull failed"
+          done
+      - name: UEFA matches and elevens (every club that has ingest.json)
+        env:
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+        run: |
+          failed=""
+          for dir in club-packs/*/ research-staging/*/; do
+            id=$(basename "$dir")
+            [ -f "$dir/ingest.json" ] || continue
+            npm run -s club:wave -- --club "$id" || failed="$failed $id"
+          done
+          [ -z "$failed" ] || echo "::warning::club:wave failed for:$failed"
+      - name: Census
+        run: npm run -s research:census -- --out census.json
+      - name: Report (+ AI triage when the key exists)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run -s research:daily-report -- --census census.json
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: research-daily/auto
+          title: 'research-daily: fresh data and report'
+          commit-message: 'research-daily: collected data, wave-auto and report'
+          add-paths: |
+            research-data/**
+            club-packs/**/wave-auto.json
+            research-staging/**/wave-auto.json
+            research-reports/**
+          body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club.'
