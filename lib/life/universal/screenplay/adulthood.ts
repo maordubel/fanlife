@@ -371,7 +371,7 @@ export const ADULTHOOD = [
         task: t('Send an invitation with room to refuse', 'לשלוח הזמנה שאפשר גם לסרב לה'),
         action: [s(null, 'You take the accusation out of the message before sending it.', 'אתה מוציא את ההאשמה מההודעה לפני שאתה שולח.')],
         options: [
-          o('seat', t('Keep a place when he wants to return', 'לשמור מקום כשירצה לחזור'), s(null, 'His answer comes at half-time: “That helps. Just do not sell it as a rescue operation.”', 'התשובה שלו מגיעה במחצית: ״זה עוזר. רק אל תמכור את זה כמבצע חילוץ.״'), [flag('life:friend:distance', 'seat'), heart(3)]),
+          o('seat', t('Keep a place when he wants to return', 'לשמור מקום כשירצה לחזור'), s(null, 'His answer comes at half-time: “That helps. Just do not sell it as a rescue operation.”', 'התשובה שלו מגיעה במחצית: ״זה עוזר. רק אל תמכור את זה כמבצע חילוץ.״'), [flag('life:friend:distance', 'seat'), heart(3)], {mission: {template: 'where-you-stood'}}),
           o('home', t('Offer a visit away from football', 'להציע ביקור שלא קשור לכדורגל'), s(null, 'His answer comes in four words: “Thursday. Tea. No commentary.”', 'התשובה שלו מגיעה בארבע מילים: ״חמישי. תה. בלי פרשנות.״'), [flag('life:friend:distance', 'visit')]),
           o('space', t('Give space and a clear way to reconnect', 'לתת מרחב ודרך ברורה לחזור לקשר'), s(null, 'His answer is a thumb, then a line: “I will call. Thank you for not making the silence louder.”', 'התשובה שלו היא אגודל, ואז שורה: ״אני אתקשר. תודה שלא הפכת את השקט לרועש יותר.״'), [flag('life:friend:distance', 'space'), energy(5)]),
         ],
