@@ -11,6 +11,8 @@ export default defineConfig({
     },
   },
   test: {
+    // in CI a failing test becomes a check annotation, readable through the checks API (the job log is not)
+    reporters: process.env.GITHUB_ACTIONS ? ['default', 'github-actions'] : ['default'],
     environment: 'node',
     env: { NEXT_PUBLIC_FAN_LIFE_EVALUATION: 'false' },
     include: ['tests/**/*.test.ts'],
