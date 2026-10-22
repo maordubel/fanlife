@@ -13,6 +13,7 @@ import type {MiniGame as Game, PlayResult} from '@/lib/life/universal/types'
 import {handsFor, limitMs, plan, score, type HandsPlan} from '@/lib/life/universal/hands'
 import styles from './life.module.css'
 import g from './MiniGame.module.css'
+import {Car, Flags, Person, PlaceArt, Radio, Seam, Stencil, Thing} from './HandsArt'
 
 type Copy = Record<string, string>
 export type MiniGameProps = {
@@ -119,6 +120,7 @@ function Tune({id, copy, cue, reduced, finish}: Inner) {
   return (
     <div className={g.stage}>
       <Meter fill={bar} copy={copy} />
+      <div className={g.radio}><Radio value={value} clear={clear} /></div>
       <div className={g.dial} aria-hidden="true" data-clear={clear ? 'true' : 'false'}>
         {Array.from({length: 12}, (_, i) => <span key={i} data-on={strength > i ? 'true' : 'false'} style={{blockSize: `${22 + i * 6}%`}} />)}
       </div>
@@ -570,13 +572,20 @@ function Place({work, cue, slip, say, end}: Common) {
   return (
     <>
       <div className={g.hand} aria-live="polite" data-mark={hand?.mark ?? ''}>
-        <small>In your hands</small><b>{hand ? hand.label : '—'}</b>
+        <small>In your hands</small>
+        {hand && <span key={hand.id} className={g.handThing}><Thing label={hand.label} big /></span>}
+        <b>{hand ? hand.label : '—'}</b>
         <span className={g.handLeft}><bdi>{queue.length}</bdi> to go</span>
       </div>
-      <div className={g.targets} style={{['--n' as string]: work.targets.length}}>
+      <div className={g.targets} data-action={work.action} style={{['--n' as string]: work.targets.length}}>
         {work.targets.map((t, i) => (
           <button key={t.id} type="button" className={g.target} data-shake={shake === t.id ? 'true' : 'false'} data-full={(placed[t.id]?.length ?? 0) > 0 ? 'true' : 'false'} {...tapProps(() => put(t.id))} aria-label={`${t.label} (${i + 1})`}>
-            <span className={g.pile} aria-hidden="true">{(placed[t.id] ?? []).map((l, k) => <i key={k} title={l}>{l}</i>)}</span>
+            <span className={g.placeArt} aria-hidden="true"><PlaceArt action={work.action} id={t.id} label={t.label} /></span>
+            <span className={g.pile} aria-hidden="true">{(placed[t.id] ?? []).map((l, k) => <i key={k} title={l}><Thing label={l} /></i>)}</span>
+            {work.action === 'sort' && t.id === 'crate' && (placed[t.id]?.length ?? 0) > 0 && (
+              // the deposit slip prints a line for every bottle the crate takes
+              <span className={g.receipt} aria-hidden="true">{(placed[t.id] ?? []).map((_, k) => <i key={k} />)}</span>
+            )}
             <b>{t.label}</b>
           </button>
         ))}
@@ -589,6 +598,7 @@ function Place({work, cue, slip, say, end}: Common) {
 function Zones({work, cue, slip, say, end}: Common) {
   const [left, setLeft] = useState<Record<string, number>>(() => Object.fromEntries(work.zones.map(z => [z.id, z.need])))
   const [crooked, setCrooked] = useState<string | null>(null)
+  const [wet, setWet] = useState<Record<string, boolean>>({})
   const last = useRef<Record<string, number>>({}), interrupted = useRef(false)
   const ordered = work.action === 'stitch'
   const total = work.zones.reduce((n, z) => n + z.need, 0)
@@ -596,6 +606,8 @@ function Zones({work, cue, slip, say, end}: Common) {
     const now = performance.now()
     if (fromDrag && now - (last.current[zid] ?? 0) < 140) return
     last.current[zid] = now
+    // water runs down the panel the sponge just passed over (drawn only; the count is below)
+    if (work.action === 'wash') { setWet(w => ({...w, [zid]: true})); window.setTimeout(() => setWet(w => ({...w, [zid]: false})), 700) }
     setLeft(cur => {
       if ((cur[zid] ?? 0) <= 0) return cur
       if (ordered) { const next = work.zones.find(z => (cur[z.id] ?? 0) > 0); if (next && next.id !== zid) { if (!fromDrag) slip(); return cur } }
@@ -618,13 +630,21 @@ function Zones({work, cue, slip, say, end}: Common) {
     const el = document.elementFromPoint(e.clientX, e.clientY)?.closest('[data-zone]') as HTMLElement | null
     if (el?.dataset.zone) rub(el.dataset.zone, true)
   }
+  const share = Object.fromEntries(work.zones.map(z => [z.id, Math.max(0, left[z.id] ?? 0) / z.need]))
+  const idx = work.zones.findIndex(z => z.id === crooked)
+  const art = work.action === 'wash' ? <Car left={share} mud={work.variant === 'mud'} wet={wet} />
+    : work.action === 'stencil' ? <Stencil fill={work.zones.map(z => 1 - share[z.id]!)} crooked={idx >= 0 ? idx : null} lifted={work.zones.every(z => share[z.id]! <= 0)} />
+    : work.action === 'stitch' ? <Seam done={work.zones.map(z => share[z.id]! <= 0)} next={Math.max(0, work.zones.findIndex(z => share[z.id]! > 0))} />
+    : work.action === 'hang' ? <Flags tilt={work.zones.map((z, i) => share[z.id]! * (i % 2 ? -1 : 1))} />
+    : null
   return (
-    <div className={g.zones} data-action={work.action} data-variant={work.variant} onPointerMove={drag} style={{['--n' as string]: work.zones.length}}>
-      {work.zones.map(z => {
+    <div className={g.zones} dir={art ? 'ltr' : undefined} data-action={work.action} data-variant={work.variant} data-art={art ? 'true' : 'false'} onPointerMove={drag} style={{['--n' as string]: work.zones.length}}>
+      {art && <div className={g.zonesArt} aria-hidden="true">{art}</div>}
+      {work.zones.map((z, i) => {
         const v = left[z.id] ?? 0
         return (
           <button key={z.id} type="button" className={g.zone} data-zone={z.id} data-done={v <= 0 ? 'true' : 'false'} data-crooked={crooked === z.id ? 'true' : 'false'}
-            style={{['--left' as string]: String(v / z.need)}} aria-label={`${z.label}: ${v <= 0 ? 'done' : `${v} to go`}`} {...tapProps(() => rub(z.id))}>
+            style={{['--left' as string]: String(v / z.need), ...(art && work.action !== 'wash' ? {gridColumn: i + 1, gridRow: 1} : {})}} aria-label={`${z.label}: ${v <= 0 ? 'done' : `${v} to go`}`} {...tapProps(() => rub(z.id))}>
             <span className={g.zoneArt} aria-hidden="true" />
             <small>{z.label}</small>
           </button>
@@ -658,11 +678,12 @@ function Frame({work, reduced, cue, slip, say, end}: Common) {
   return (
     <>
       <div className={g.photo} data-shot={shot ? 'true' : 'false'}>
+        <i className={g.finder} aria-hidden="true" />
         {people.map(p => {
           const i = work.items.indexOf(p)
           return (
             <span key={p.id} className={g.face} data-away={away === i ? 'true' : 'false'}>
-              <i aria-hidden="true" /><small>{p.label}</small>
+              <span className={g.person} aria-hidden="true"><Person away={away === i} i={i} /></span><small>{p.label}</small>
               {asked && p.to === 'out' && !shot && <button type="button" className={g.stepOut} {...tapProps(() => setOut(o => ({...o, [p.id]: true})))}>Step out</button>}
             </span>
           )

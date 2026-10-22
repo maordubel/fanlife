@@ -91,58 +91,99 @@
 .wave polyline { fill: none; stroke: var(--l-soft); stroke-width: 2.4; stroke-linejoin: round; }
 .wave[data-clear='true'] polyline { stroke: var(--l-prime); stroke-width: 3; }
 
-/* hands · place: what is in your hands, and the places it can go — each place shows what is in it */
+/* hands · place: what is in your hands, drawn, and the places it can go — each place shows what is in it */
 .hand { display: grid; justify-items: center; gap: 2px; inline-size: 100%; padding: 10px 12px; border: 2px solid var(--l-ink); background: var(--l-ground); }
 .hand small { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--l-soft); }
-.hand b { font-size: 1.15rem; }
-.hand[data-mark='heavy'] b, .hand[data-mark='long'] b { letter-spacing: .02em; text-decoration: underline 3px var(--l-ink); }
-.hand[data-mark='light'] b { font-style: italic; }
+.hand b { font-size: 1.05rem; }
+.handThing { display: block; animation: lift .22s ease-out both; }
+.hand[data-mark='heavy'] .handThing { animation-name: heavy; }
 .handLeft { font-size: .8rem; color: var(--l-soft); }
 .targets { display: grid; grid-template-columns: repeat(min(var(--n), 3), 1fr); gap: 8px; inline-size: 100%; }
-.target { display: grid; grid-template-rows: 1fr auto; gap: 6px; min-block-size: 112px; padding: 8px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); cursor: pointer; touch-action: manipulation; text-align: center; }
-.target b { font-size: .95rem; }
+.target { position: relative; display: grid; grid-template-rows: 1fr auto; gap: 4px; min-block-size: 112px; padding: 6px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); cursor: pointer; touch-action: manipulation; text-align: center; overflow: hidden; }
+.target b { position: relative; font-size: .9rem; }
 .target:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 2px; }
-.target[data-full='true'] { background: color-mix(in srgb, var(--l-prime) 10%, var(--l-paper)); }
+.target[data-full='true'] { background: color-mix(in srgb, var(--l-prime) 8%, var(--l-paper)); }
 .target[data-shake='true'] { animation: shake .24s linear; border-style: dashed; }
-.pile { display: flex; flex-direction: column-reverse; justify-content: flex-start; gap: 3px; min-block-size: 64px; }
-.pile i { display: block; padding: 2px 4px; font-style: normal; font-size: .68rem; line-height: 1.2; background: var(--l-ink); color: var(--l-paper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: drop .18s ease-out both; }
-[data-action='stack'] .pile i { block-size: 18px; border-inline: 3px solid var(--l-prime); }
-[data-action='sort'] .pile i, [data-action='tray'] .pile i { border-radius: 10px; }
+.placeArt { position: absolute; inset-block: 6px 26px; inset-inline: 6px; display: block; opacity: .9; }
+.pile { position: relative; display: flex; flex-wrap: wrap-reverse; align-content: flex-start; justify-content: center; gap: 2px; min-block-size: 64px; }
+.pile i { display: block; font-style: normal; line-height: 0; animation: drop .2s ease-out both; }
+.receipt { position: absolute; inset-block-start: 4px; inset-inline-end: 4px; display: grid; gap: 3px; inline-size: 26px; padding: 4px 3px 6px; background: var(--l-paper); border: 1px solid var(--l-ink); }
+.receipt i { display: block; block-size: 2px; background: var(--l-ink); animation: drop .2s ease-out both; }
+.receipt i:nth-child(odd) { inline-size: 70%; }
+/* the stack: three shelves, one above the other, crates sitting on them with their weight */
+.targets[data-action='stack'] { grid-template-columns: 1fr; }
+.targets[data-action='stack'] .target { grid-template-rows: auto; grid-template-columns: 5.5rem 1fr; align-items: end; min-block-size: 64px; text-align: start; }
+.targets[data-action='stack'] .target b { grid-row: 1; grid-column: 1; align-self: center; }
+.targets[data-action='stack'] .pile { grid-row: 1; grid-column: 2; flex-wrap: nowrap; justify-content: flex-start; min-block-size: 30px; }
+.targets[data-action='stack'] .placeArt { inset-block: auto 4px; inset-inline: 5.5rem 6px; block-size: 18px; }
+/* doors in a row along the street; gates on poles; folders on a desk */
+.targets[data-action='deliver'] .placeArt, .targets[data-action='direct'] .placeArt { inset-block: 6px 28px; inset-inline: 6px; }
+.targets[data-action='deliver'] .pile, .targets[data-action='direct'] .pile { align-content: flex-end; }
 
-/* hands · zones: the dirt, the bare cloth, the tilt — each goes as you work it */
-.zones { display: grid; grid-template-columns: repeat(min(var(--n), 5), 1fr); gap: 8px; inline-size: 100%; touch-action: none; user-select: none; -webkit-user-select: none; }
-[data-action='wash'] .zones, .zones[data-action='wash'] { grid-template-columns: 2fr 2fr 1.4fr; }
+/* hands · zones: the material, drawn, with the places your hands work laid over it */
+.zones { position: relative; display: grid; grid-template-columns: repeat(min(var(--n), 5), 1fr); gap: 8px; inline-size: 100%; touch-action: none; user-select: none; -webkit-user-select: none; }
 .zone { position: relative; display: grid; align-content: end; min-block-size: 96px; padding: 6px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); cursor: pointer; overflow: hidden; touch-action: none; }
 .zone small { position: relative; z-index: 1; font-size: .72rem; font-weight: 700; }
 .zone:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 2px; }
 .zoneArt { position: absolute; inset: 0; transition: opacity .18s, transform .18s; }
-/* wash: a panel under dirt; the dirt thins with every pass and the panel shines */
-.zones[data-action='wash'] .zone { background: linear-gradient(160deg, var(--l-paper) 0 40%, color-mix(in srgb, var(--l-prime) 18%, var(--l-paper)) 41% 60%, var(--l-paper) 61%); }
-.zones[data-action='wash'] .zoneArt { opacity: var(--left); background: radial-gradient(circle at 20% 30%, var(--l-soft) 0 8px, transparent 9px), radial-gradient(circle at 70% 60%, var(--l-soft) 0 11px, transparent 12px), radial-gradient(circle at 45% 80%, var(--l-soft) 0 6px, transparent 7px), color-mix(in srgb, var(--l-soft) 55%, transparent); }
-.zones[data-action='wash'][data-variant='mud'] .zoneArt { background: radial-gradient(circle at 30% 40%, var(--l-ink) 0 10px, transparent 11px), radial-gradient(circle at 75% 70%, var(--l-ink) 0 13px, transparent 14px), color-mix(in srgb, var(--l-ink) 50%, transparent); }
-/* hang: a flag hangs crooked until it is levelled */
-.zones[data-action='hang'] .zoneArt { inset: 14px 16% auto; block-size: 46px; background: var(--l-prime); clip-path: polygon(0 0, 100% 0, 50% 100%); transform: rotate(calc(var(--left) * 28deg)); transform-origin: 50% 0; }
-/* stencil: the letter fills with paint; the slipped one keeps its crooked edge */
-.zones[data-action='stencil'] .zoneArt { inset: 12px 18%; background: var(--l-prime); opacity: calc(1 - var(--left)); clip-path: polygon(10% 0, 90% 0, 90% 22%, 62% 22%, 62% 100%, 38% 100%, 38% 22%, 10% 22%); }
-.zones[data-action='stencil'] .zone[data-crooked='true'] .zoneArt { transform: translate(4px, 3px) rotate(4deg); }
-/* stitch: a dashed line becomes a seam, stitch by stitch, in order */
-.zones[data-action='stitch'] { grid-template-columns: repeat(var(--n), 1fr); gap: 0; }
-.zones[data-action='stitch'] .zone { min-block-size: 72px; border-inline-width: 1px; }
-.zones[data-action='stitch'] .zoneArt { inset: 50% 0 auto; block-size: 0; border-block-start: 3px dashed var(--l-soft); }
-.zones[data-action='stitch'] .zone[data-done='true'] .zoneArt { border-block-start: 4px solid var(--l-prime); }
 .zone[data-done='true'] small::after { content: ' ✓'; }
+/* a drawn scene: the hit areas are see-through, the picture shows the work */
+.zonesArt { grid-row: 1; grid-column: 1 / -1; display: block; inline-size: 100%; pointer-events: none; }
+.zonesArt svg { display: block; }
+.zones[data-art='true'] { gap: 0; grid-template-columns: repeat(var(--n), 1fr); }
+.zones[data-art='true'] .zone { grid-row: 1; min-block-size: 0; background: transparent; border: 0; border-inline-start: 1px dashed color-mix(in srgb, var(--l-ink) 18%, transparent); }
+.zones[data-art='true'] .zone:first-of-type { border-inline-start: 0; }
+.zones[data-art='true'] .zoneArt { display: none; }
+.zones[data-action='stencil'] .zone small { font-size: 0; }
+.zones[data-action='stencil'] .zone[data-done='true'] small::after { font-size: .9rem; }
+.zones[data-art='true'] .zone small { justify-self: center; padding: 1px 6px; background: color-mix(in srgb, var(--l-paper) 85%, transparent); }
+/* wash: the panels sit where the bonnet, the door and the window are on the drawn car (a picture: always laid out ltr) */
+.zones[data-action='wash'] { display: block; }
+.zones[data-action='wash'] .zone { position: absolute; border: 2px dashed transparent; }
+.zones[data-action='wash'] .zone:focus-visible { border-color: var(--l-ink); outline: none; }
+.zones[data-action='wash'] [data-zone='bonnet'] { inset-block: 44% 18%; inset-inline: 4% 63%; }
+.zones[data-action='wash'] [data-zone='door'] { inset-block: 49% 18%; inset-inline: 37% 28%; }
+.zones[data-action='wash'] [data-zone='window'] { inset-block: 18% 52%; inset-inline: 38% 26%; }
+.zones[data-action='wash'] [data-zone='window'] small { align-self: start; }
+/* stitch: the needle walks the seam; stitch lines up with its own hit area */
+.zones[data-action='stitch'] .zone small { align-self: end; }
 
-/* hands · frame: faces in a row; one looks away now and then */
-.photo { display: flex; justify-content: center; gap: 8px; inline-size: 100%; min-block-size: 132px; padding: 10px; border: 2px solid var(--l-ink); background: var(--l-ground); }
-.photo[data-shot='true'] { border-width: 8px; border-color: var(--l-paper); outline: 2px solid var(--l-ink); }
-.face { position: relative; display: grid; justify-items: center; gap: 4px; inline-size: 25%; }
-.face i { inline-size: 46px; block-size: 46px; border-radius: 50%; border: 2px solid var(--l-ink); background: radial-gradient(circle at 35% 42%, var(--l-ink) 0 3px, transparent 4px), radial-gradient(circle at 65% 42%, var(--l-ink) 0 3px, transparent 4px), var(--l-paper); transition: transform .15s; }
-.face[data-away='true'] i { background: radial-gradient(circle at 18% 42%, var(--l-ink) 0 3px, transparent 4px), radial-gradient(circle at 40% 42%, var(--l-ink) 0 3px, transparent 4px), var(--l-paper); transform: rotate(-14deg); }
+/* hands · frame: the viewfinder; the gang in it; one looks away now and then; the shutter prints it */
+.photo { position: relative; display: flex; justify-content: center; align-items: flex-end; gap: 4px; inline-size: 100%; min-block-size: 168px; padding-block: 18px 8px; padding-inline: 12px; border: 2px solid var(--l-ink); background: color-mix(in srgb, var(--l-ground) 70%, var(--l-paper)); }
+.finder { position: absolute; inset: 8px; pointer-events: none; background:
+  linear-gradient(var(--l-ink), var(--l-ink)) 0 0 / 18px 2px no-repeat, linear-gradient(var(--l-ink), var(--l-ink)) 0 0 / 2px 18px no-repeat,
+  linear-gradient(var(--l-ink), var(--l-ink)) 100% 0 / 18px 2px no-repeat, linear-gradient(var(--l-ink), var(--l-ink)) 100% 0 / 2px 18px no-repeat,
+  linear-gradient(var(--l-ink), var(--l-ink)) 0 100% / 18px 2px no-repeat, linear-gradient(var(--l-ink), var(--l-ink)) 0 100% / 2px 18px no-repeat,
+  linear-gradient(var(--l-ink), var(--l-ink)) 100% 100% / 18px 2px no-repeat, linear-gradient(var(--l-ink), var(--l-ink)) 100% 100% / 2px 18px no-repeat; }
+.photo[data-shot='true'] { border-width: 10px; border-block-end-width: 34px; border-color: var(--l-paper); outline: 2px solid var(--l-ink); animation: flash .5s ease-out; }
+.photo[data-shot='true'] .finder { display: none; }
+.face { position: relative; display: grid; justify-items: center; gap: 2px; inline-size: 25%; }
+.person { display: block; inline-size: 100%; max-inline-size: 72px; aspect-ratio: 60 / 80; }
 .face small { font-size: .7rem; text-align: center; }
-.stepOut { min-block-size: 48px; padding: 4px 8px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); font-size: .75rem; cursor: pointer; }
+.stepOut { min-block-size: 44px; padding: 4px 8px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); font-size: .75rem; cursor: pointer; }
 
-[data-still='true'] .pile i, [data-still='true'] .zoneArt, [data-still='true'] .target, [data-still='true'] .face i { transition: none; animation: none; }
-@media (prefers-reduced-motion: reduce) { .pile i, .zoneArt, .target, .face i { transition: none; animation: none; } }
+/* tune: the radio on the shelf */
+.radio { inline-size: 100%; }
+.radio svg { display: block; }
+.dial { block-size: 40px; }
+
+/* the desk: a wider stage, the scene next to the places on a large screen */
+@media (min-width: 720px) {
+  .targets { grid-template-columns: repeat(min(var(--n), 4), 1fr); }
+  .target { min-block-size: 132px; }
+  .targets[data-action='stack'] .target { min-block-size: 72px; }
+  .photo { min-block-size: 200px; }
+}
+
+.drip { animation: drip .7s ease-in both; }
+.steam { animation: steam 1.6s ease-in-out infinite alternate; }
+[data-still='true'] .pile i, [data-still='true'] .zoneArt, [data-still='true'] .target, [data-still='true'] .handThing, [data-still='true'] .photo, [data-still='true'] .drip, [data-still='true'] .steam { transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .pile i, .zoneArt, .target, .handThing, .photo, .drip, .steam { transition: none; animation: none; } }
 @keyframes drop { from { transform: translateY(-10px); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes pop { from { transform: scale(.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes lift { from { transform: translateY(14px) scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes heavy { 0% { transform: translateY(14px); opacity: 0; } 70% { transform: translateY(3px); opacity: 1; } 100% { transform: none; } }
+@keyframes flash { 0% { filter: brightness(2.2); } 100% { filter: none; } }
+@keyframes drip { from { transform: translateY(-4px); opacity: 1; } to { transform: translateY(14px); opacity: 0; } }
+@keyframes steam { from { opacity: .3; transform: translateY(2px); } to { opacity: .9; transform: translateY(-2px); } }
 @keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
