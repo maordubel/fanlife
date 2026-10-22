@@ -7,7 +7,8 @@ import {scoringConfig,secondsLabel,weightedTimeMs} from '@/lib/game/blind-cow/sc
 
 // ------------------------------------------------------------------ the club's day
 /** The declared time zone of a club's daily. A club we have no zone for plays on UTC, and the screen says so. */
-const ZONES:Record<string,string>={'Israel':'Asia/Jerusalem','Greece':'Europe/Athens','Bosnia and Herzegovina':'Europe/Sarajevo','Cyprus':'Asia/Nicosia','Serbia':'Europe/Belgrade','Croatia':'Europe/Zagreb','Turkey':'Europe/Istanbul'}
+const ZONES:Record<string,string>={'Israel':'Asia/Jerusalem','Greece':'Europe/Athens','Bosnia and Herzegovina':'Europe/Sarajevo','Cyprus':'Asia/Nicosia','Serbia':'Europe/Belgrade','Croatia':'Europe/Zagreb','Turkey':'Europe/Istanbul','Scotland':'Europe/London','England':'Europe/London','United Kingdom':'Europe/London','Germany':'Europe/Berlin','Austria':'Europe/Vienna','Hungary':'Europe/Budapest','Italy':'Europe/Rome','Spain':'Europe/Madrid','France':'Europe/Paris','Netherlands':'Europe/Amsterdam','Portugal':'Europe/Lisbon'}
+/** the one country → IANA zone table; today, the daily, the terrace edition and the streak all read it (audit F19) */
 export const clubTimeZone=(country:string):string=>ZONES[country]??'UTC'
 /** `2026-10-08` in the club's own zone — the day a daily belongs to. */
 export function dayKey(at:Date|number,zone:string):string{

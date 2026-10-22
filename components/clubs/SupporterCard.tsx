@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import {useEffect,useState} from 'react'
-import {readActivity,RUN_GATES} from '@/lib/clubs/activity'
+import {readActivity,roundsOf,RUN_GATES} from '@/lib/clubs/activity'
 import {readBeen} from '@/lib/fanlife/been'
 import {clubHref} from '@/lib/clubs/club-href'
 import type {UiLocale} from '@/lib/clubs/locale'
@@ -12,7 +12,7 @@ type Mine={walked:string[];rounds:number;been:number;since:string}
 function readMine(clubId:string):Mine{
  const a=readActivity(clubId),walked=RUN_GATES.filter(g=>a[g].completed>0) as string[]
  if(a.xi)walked.push('xi')
- const rounds=RUN_GATES.reduce((n,g)=>n+a[g].completed,0)
+ const rounds=roundsOf(a)
  const been=Object.values(readBeen()).filter(r=>r.club===clubId&&r.b).length
  const k=`fan-life:club:${clubId}:since`;let since=''
  try{since=localStorage.getItem(k)||'';if(!since){since=String(new Date().getFullYear());localStorage.setItem(k,since)}}catch{since=String(new Date().getFullYear())}

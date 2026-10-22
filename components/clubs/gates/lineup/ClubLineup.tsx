@@ -218,7 +218,7 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
    footer={<div className={css.actionsGrid}>
     <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={()=>{setSheet(null);onNext()}} data-testid="lineup-sheet-next">{total>1?tx('lu.next'):tx('lu.again')} →</button>
         <button type="button" className={`min-h-tap ${css.btn}`} onClick={close}>{tx('lu.result.review')}</button>
-    {grade&&<ShareComposer label={tx('lu.result.share')} draft={lineupShare(club,{title:m.title,on:m.on,competition:m.competition,correct:grade.correct,forbidden:[...m.pool.filter(x=>!grade.wrong.includes(x)&&picksOf(board).includes(x)),...grade.missed]})}/>}</div>}>
+    {grade&&<ShareComposer label={tx('lu.result.share')} draft={lineupShare(club,{matchId:m.id,title:m.title,on:m.on,competition:m.competition,correct:grade.correct,forbidden:[...m.pool.filter(x=>!grade.wrong.includes(x)&&picksOf(board).includes(x)),...grade.missed]})}/>}</div>}>
    {sheetData&&grade&&<div className={css.sheetBody} data-testid="lineup-result">
     <div className={`wk-panel wk-lift wk-sky ${css.score}`}>
      <span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'78%',['--sy' as string]:'30%'}}/>

@@ -12,6 +12,7 @@ import s from '@/components/clubs/rumble/rumble.module.css'
 import {Stars} from './Brand'
 import {money,posName,years,GAME_VALUES} from './LegendCard'
 import {BudgetDraw} from './BudgetDraw'
+import {familyLabel} from '@/lib/clubs/display-name'
 
 /**
  * The founding draft as the Royal Rumble's slot machine (owner, 12.10.2026: "the same slot system and graphics as the Royal
@@ -30,7 +31,7 @@ const SHORT:Record<string,string>={GK:'GK',DF:'DEF',MF:'MID',FW:'FWD'}
 const QUESTION:Record<string,string>={GK:'Who keeps goal?',DF:'Who holds the line?',MF:'Who runs the middle?',FW:'Who scores the goals?'}
 const TIER:Record<string,string>={premium:'Premium',mid:'Squad',budget:'Bargain'}
 const SPINS=LEGENDS_RULES.rerollsPerDraft
-const surname=(n:string)=>{const p=n.trim().split(/\s+/);return p.length>1?p[p.length-1]!:n}
+const surname=familyLabel
 const asCard=(c:Pick<CardView,'id'|'from'|'to'>)=>({id:c.id,fromYear:c.from,toYear:c.to})
 const tenths=(n:number)=>Math.round(n*10)/10
 

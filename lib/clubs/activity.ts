@@ -7,6 +7,9 @@ import {touchStreak} from '@/lib/clubs/streak'
  */
 export const RUN_GATES=['trivia','memory','polls','blind-cow','lineup','goal','kit-builder','royal-rumble','timeline','derby','archive'] as const
 export type RunGate=(typeof RUN_GATES)[number]
+/** gates whose finished run is a ROUND for the passport and standing; the archive is a deed (an entry read), counted apart. One list — no screen keeps its own sum (audit F16). */
+export const ROUND_GATES=RUN_GATES.filter(g=>g!=='archive') as readonly Exclude<RunGate,'archive'>[]
+export const roundsOf=(a:Pick<Activity,RunGate>)=>ROUND_GATES.reduce((n,g)=>n+(a[g]?.completed??0),0)
 type Counter={completed:number;best:number}
 export type Activity=Record<RunGate,Counter>&{xi:boolean;recent:string[];seen:string[]}
 const blank=():Activity=>({...Object.fromEntries(RUN_GATES.map(g=>[g,{completed:0,best:0}])) as Record<RunGate,Counter>,xi:false,recent:[],seen:[]})

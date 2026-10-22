@@ -13,7 +13,7 @@ import {rumbleShare,rumbleXIShare} from '@/lib/share/v3/adapters'
 export type RecentRound={seed:number;cost:number;us:number;them:number;r:'W'|'D'|'L'}
 
 /** The full-time board (port of RumbleFullTime): score, who scored and when, man of the match, two lines of story — all read from the script. */
-export function RumbleFullTime({script,copy,wardrobe,againHref,recent,club,seed,xi}:{xi?:{formation:string;rival:string;rivalName:string};script:ShowScript;copy:GameCopy;wardrobe:RumbleWardrobe;againHref:string;recent:RecentRound[];club?:string;seed?:number}){
+export function RumbleFullTime({script,copy,wardrobe,againHref,recent,club,seed,xi,vs,duel}:{vs?:string;duel?:string;xi?:{formation:string;rival:string;rivalName:string};script:ShowScript;copy:GameCopy;wardrobe:RumbleWardrobe;againHref:string;recent:RecentRound[];club?:string;seed?:number}){
  const f=script.final,goals=script.events.filter(e=>e.type==='goal')
  const verdict=f.winner==='us'?'won':f.winner==='draw'?'drew':'lost'
  const mvp=findPlayer(script,script.motm.side,script.motm.id)
@@ -42,7 +42,7 @@ export function RumbleFullTime({script,copy,wardrobe,againHref,recent,club,seed,
    {top.length>0&&<div className={s.ftTop}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.mc.top')}</p><ol>{top.map(x=><li key={x.side+x.p.id} data-side={x.side}><b dir="auto">{shortName(x.p.name)}</b><span className={s.grade} data-hi={x.g>=8||undefined}>{x.g.toFixed(1)}</span></li>)}</ol></div>}
    <p className={s.secret}>{tr(copy,'rr.secret')}</p>
    {club&&seed!==undefined&&xi&&<ShareComposer draft={rumbleXIShare(club,{seed,us:f.us,them:f.them,formation:xi.formation,rival:xi.rival,rivalName:xi.rivalName,bill:money(script.bills.us)})}/>}
-   {club&&seed!==undefined&&!xi&&<ShareComposer draft={rumbleShare(club,{seed,us:f.us,them:f.them,five:script.us.map(p=>({position:String(p.position),name:shortName(p.name)})),bill:money(script.bills.us)})}/>}
+   {club&&seed!==undefined&&!xi&&<ShareComposer draft={rumbleShare(club,{vs,duel,seed,us:f.us,them:f.them,five:script.us.map(p=>({position:String(p.position),name:shortName(p.name)})),bill:money(script.bills.us)})}/>}
   </section>
   <div className={s.fives}>
    <section className={s.five} data-side="us"><div className={s.fiveHead}><p><span className={`${s.mono} ${s.stageKicker}`} style={{display:'block'}}>{tr(copy,'rr.bill')} {money(script.bills.us)}</span><b>{tr(copy,script.format==='eleven'?'rr.xi.yourEleven':'rr.yourFive')}</b></p></div>{script.us.map(row)}</section>

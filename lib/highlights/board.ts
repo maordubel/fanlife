@@ -1,5 +1,6 @@
 import type {ClothSpec} from '@/lib/clubs/kit-model'
 import type {PixelKit,ReelPlayer,ReelTeam} from './types'
+import {familyLabel} from '@/lib/clubs/display-name'
 
 /**
  * What the theatre's boards print for a side (owner, 13.10.2026: "the club crests, and the nice shirts with the logo and the
@@ -20,4 +21,4 @@ export function shirtArt(team:Pick<ReelTeam,'cloth'|'crest'|'kit'>,player?:Pick<
  if(cloth)return {kind:'cloth',spec:{...cloth,crest:!!team.crest&&cloth.crest,name,number},crest:team.crest??null}
  return {kind:'pixel',kit:player?.kit??team.kit,number,name}
 }
-export const surname=(n:string)=>{const p=n.trim().split(/\s+/);return (p.length>1?p[p.length-1]!:p[0]??'').toUpperCase()}
+export const surname=(n:string)=>familyLabel(n).toUpperCase()

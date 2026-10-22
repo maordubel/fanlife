@@ -12,7 +12,7 @@ import {Icon} from '@/components/weekly/Icon'
 import css from './derby.module.css'
 
 type Tab='wall'|'call'|'record'
-export type ClubDerbyProps={club:string;clubName:string;rival:string;rivalNote:string|null;meetings:WallMeeting[];version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;initialTab:Tab;autoStart:boolean;/** the gate's shared number, printed on the "Call it!" plate */gateNo?:number|null}
+export type ClubDerbyProps={rivalId?:string;club:string;clubName:string;rival:string;rivalNote:string|null;meetings:WallMeeting[];version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;initialTab:Tab;autoStart:boolean;/** the gate's shared number, printed on the "Call it!" plate */gateNo?:number|null}
 
 /**
  * Gate 11 · Rivalry Wall (a generic template — every club, every approved rival).
@@ -24,7 +24,7 @@ export function ClubDerby(p:ClubDerbyProps){
  const {club,clubName,rival,rivalNote,meetings,version,seed,cursor,locale,contentLocale,copy}=p
  const t=useMemo(()=>makeT(copy),[copy]),rtl=localeDirection(locale)==='rtl'
  const [tab,setTab]=useState<Tab>(p.initialTab),[open,setOpen]=useState<WallMeeting|null>(null),opener=useRef<HTMLElement|null>(null)
- const s:Shared={t,locale,contentLocale,club,clubName,rival}
+ const s:Shared={t,locale,contentLocale,club,clubName,rival,rivalId:p.rivalId}
  const playable=canPlay(meetings)
  const onOpen=(m:WallMeeting,el:HTMLElement|null)=>{opener.current=el;setOpen(m)}
  const close=()=>{setOpen(null);window.requestAnimationFrame(()=>opener.current?.focus?.())}

@@ -6,6 +6,7 @@ import {Stars} from './Brand'
 import {LegendCard,money,posName,years} from './LegendCard'
 import {LegendShirt} from './Shirts'
 import {Portal,Sheet} from './Sheet'
+import {familyLabel,nameLabeler} from '@/lib/clubs/display-name'
 
 /**
  * The team sheet (owner, 13.10.2026: "make choosing and arranging the eleven comfortable"). Two ways to do everything, and the
@@ -22,7 +23,7 @@ const APPROACH=[['defensive','Defensive'],['balanced','Balanced'],['attacking','
 const PRESS=[['low','Sit off'],['medium','Press'],['high','High press']] as const
 const TEMPO=[['slow','Patient'],['normal','Normal'],['fast','Fast']] as const
 const BENCH=7
-export const surname=(n:string)=>{const p=n.trim().split(/\s+/);return p.length>1?p[p.length-1]!:n}
+export const surname=familyLabel
 type Man={id:string;name:string;pos:string;stars:number;fit:boolean;note:string;from:number|null;to:number|null;squad:SquadView|null}
 type Place={z:'xi';i:number}|{z:'bench';i:number}|{z:'rest';id?:string}
 type Sheet={xi:string[];bench:string[];t:Tactics;cap:string|null;vice:string|null}
@@ -42,6 +43,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
   for(const e of v.emergency)m.set(e.id,{id:e.id,name:e.name,pos:e.pos,stars:0,fit:true,from:null,to:null,squad:null,note:'Emergency cover'})
   return m},[v.squad,v.emergency])
  const slots=v.lineup.slots
+ const surname=useMemo(()=>nameLabeler([...men.values()].map(m=>m.name)),[men])
  const change=(next:Sheet)=>{setPast(p=>[...p.slice(-30),s]);setS(next)}
  const at=(p:Place)=>p.z==='xi'?s.xi[p.i]||'':p.z==='bench'?s.bench[p.i]||'':p.id??''
  /** one move: the man at `from` goes to `to`; whoever stood at `to` goes back where he came from (or to the reserves) */

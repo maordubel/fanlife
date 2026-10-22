@@ -108,8 +108,12 @@ describe('rumble kits — every club, never a rival colour',()=>{
   expect(w.home.map(k=>k.id)).toEqual(['h1','h2'])
   expect(kitFor({fromYear:1993,toYear:1998},'us',w)).toEqual({source:'archive',kit:w.home[0]})
   expect(kitFor({fromYear:2012,toYear:2020},'us',w)).toEqual({source:'archive',kit:w.home[1]})
-  expect(kitFor({fromYear:null,toYear:null},'us',w)).toEqual({source:'archive',kit:w.home[1]})
-  expect(kitFor({fromYear:1990,toYear:1991},'them',w)).toEqual({source:'archive',kit:w.away[0]})
+  expect(kitFor({fromYear:null,toYear:null},'us',w)).toEqual({source:'livery',variant:'home',neutral:true})
+  expect(kitFor({fromYear:1995,toYear:1995},'us',w)).toEqual({source:'archive',kit:w.home[0]})
+  expect(kitFor({fromYear:1997,toYear:1998},'us',w)).toEqual({source:'archive',kit:w.home[0],approx:true})
+  expect(kitFor({fromYear:1930,toYear:1935},'us',w)).toEqual({source:'livery',variant:'home',neutral:true})
+  expect(kitFor({fromYear:2015,toYear:2018},'them',w)).toEqual({source:'archive',kit:w.away[0]})
+  expect(kitFor({fromYear:1990,toYear:1991},'them',w)).toEqual({source:'livery',variant:'away',neutral:true})
  })
  it('a club with no documented kit wears its livery — never an empty box',()=>{
   const w=rumbleWardrobe([],()=>false)
@@ -124,5 +128,34 @@ describe('rumble kits — every club, never a rival colour',()=>{
  it('the rumble components hold no raw colour and no Worker (Hebrew) strings',()=>{
   const dir=join(process.cwd(),'components/clubs/rumble')
   for(const f of readdirSync(dir)){const t=readFileSync(join(dir,f),'utf8');expect(/#[0-9a-f]{3,8}\b/i.test(t),f).toBe(false);expect(/[֐-׿]/.test(t),f).toBe(false);expect(/yellow|gold/i.test(t.replace(/\/\*[\s\S]*?\*\//g,'')),f).toBe(false);expect(t.includes('royal-rumble/i18n'),f).toBe(false)}
+ })
+})
+
+import { roundsOf, RUN_GATES, ROUND_GATES } from '@/lib/clubs/activity'
+describe('passport rounds come from one gate list (audit F16)',()=>{
+ it('counts goal, lineup and royal-rumble; the archive is a deed, not a round',()=>{
+  const a=Object.fromEntries(RUN_GATES.map(g=>[g,{completed:{goal:2,lineup:1,'royal-rumble':3,archive:9}[g as string]??0,best:0}])) as never
+  expect(roundsOf(a)).toBe(6)
+  expect(ROUND_GATES).not.toContain('archive')
+ })
+})
+
+import { clubTimeZone, dayKey } from '@/lib/clubs/mystery-model'
+import { clubDay } from '@/lib/terrace/edition'
+import { momentFor } from '@/lib/clubs/today'
+describe('one club calendar day (audit F18/F19)',()=>{
+ it('Scotland and Germany have their own zones, and every daily reads the same table',()=>{
+  expect(clubTimeZone('Scotland')).toBe('Europe/London')
+  expect(clubTimeZone('Germany')).toBe('Europe/Berlin')
+  const at=new Date('2026-12-31T23:30:00Z') // 00:30 on 1 Jan in Berlin and Athens, still 31 Dec in Glasgow
+  expect(clubDay('Germany',at)).toBe('2027-01-01')
+  expect(clubDay('Scotland',at)).toBe('2026-12-31')
+  expect(clubDay('Germany',at)).toBe(dayKey(at,clubTimeZone('Germany')))
+ })
+ it('the "on this day" moment reads the club day, not UTC',()=>{
+  const timeline=[{value:{id:'a',title:'x',on:'2000-01-01'}}] as never
+  const at=new Date('2026-12-31T23:30:00Z')
+  expect(momentFor({timeline,identity:{country:'Greece'}},at)?.offset).toBe(0)
+  expect(momentFor({timeline,identity:{country:'Scotland'}},at)?.offset).toBe(1)
  })
 })

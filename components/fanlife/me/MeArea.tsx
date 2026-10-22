@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import { activityKey, readActivity, xiKey } from '@/lib/clubs/activity'
+import { activityKey, readActivity, roundsOf, xiKey } from '@/lib/clubs/activity'
 import { closetMine } from '@/lib/collector/api'
 import type { Closet } from '@/lib/collector/types'
 import { wearLivery } from '@/lib/club-livery'
@@ -45,7 +45,7 @@ function played(clubs: MeClub[], been: BeenRow[]): Played[] {
     try { has = localStorage.getItem(activityKey(club.id)) !== null || localStorage.getItem(xiKey(club.id)) !== null } catch { /* no storage */ }
     const a = readActivity(club.id)
     const life = lifeOf(club.id)
-    const rounds = a.trivia.completed + a.memory.completed + a.polls.completed + a['blind-cow'].completed
+    const rounds = roundsOf(a)
     return { club, rounds: has ? rounds : 0, best: a.trivia.best, xi: a.xi, life: life.chapters, lifeAt: life.at, been: been.filter((b) => b.club === club.id).length }
   })
 }

@@ -54,7 +54,7 @@ export const view:GateView=async({club,locale,copy,round,searchParams})=>{
   if(!rival||info.state==='locked')body=<ModeLocked mode={modes[0]!} clubName={club.identity.name} copy={copy} otherHref={hrefs.meetings}/>
   else{
    const tab=searchParams.play==='1'?'call':(['wall','call','record'] as const).find(k=>k===searchParams.tab)??'wall'
-   body=<ClubDerby key={rival.id} gateNo={sharedGate('derby')?.number??null} club={club.identity.id} clubName={club.identity.name} rival={rival.name} rivalNote={[rival.type,rival.period,rival.note].filter(Boolean).join(' · ')||null} meetings={meetings} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={contentLocale} copy={copy} initialTab={tab} autoStart={searchParams.play==='1'}/>
+   body=<ClubDerby key={rival.id} rivalId={rival.id} gateNo={sharedGate('derby')?.number??null} club={club.identity.id} clubName={club.identity.name} rival={rival.name} rivalNote={[rival.type,rival.period,rival.note].filter(Boolean).join(' · ')||null} meetings={meetings} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={contentLocale} copy={copy} initialTab={tab} autoStart={searchParams.play==='1'}/>
   }
  }else if(mode==='wall'){
   body=info.state==='open'

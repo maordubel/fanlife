@@ -6,6 +6,7 @@ import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
 import {useRumbleSound} from '@/components/clubs/rumble/shared'
 import {KitChip,Portal} from './Sheet'
 import {MatchBoard} from './MatchBoard'
+import {familyLabel} from '@/lib/clubs/display-name'
 
 /**
  * The match, LIVE (owner, 12.10.2026: "a live experience — you don't know the result"; 13.10.2026: "at 65 and 70 only pop a
@@ -19,7 +20,7 @@ export type Watch={id:string;from:number}
 const APPROACH=[['defensive','Defensive'],['balanced','Balanced'],['attacking','Attacking']] as const
 const PRESS=[['low','Sit off'],['medium','Press'],['high','High press']] as const
 const TEMPO=[['slow','Patient'],['normal','Normal'],['fast','Fast']] as const
-const surname=(n:string)=>{const p=n.trim().split(/\s+/);return p.length>1?p[p.length-1]!:n}
+const surname=familyLabel
 
 /** F01: the minute a Tactics stop would be asked for — the minute on screen, never before the last stop, never at or past the next one */
 export const tacticsMinute=(L:{minute:number;prevStop:number},shown:number)=>Math.min(L.minute-1,Math.max(shown,L.prevStop+1))
