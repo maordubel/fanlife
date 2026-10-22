@@ -205,7 +205,11 @@ describe('RUSH · the screenplay asks for missions that exist', () => {
     for (const ch of [...screenplayChapters('en'), ...masterChapters(MASTER_IDS, 'en')]) for (const talk of ch.talks) for (const b of talk.branches) for (const p of [...plays(b.then), ...(b.choices ?? []).flatMap(c => plays(c.then))]) if (p.mission) asked.push({chapter: ch.id, template: p.mission.template, mandatory: p.mission.mandatory})
     for (const a of asked) if (templateById(a.template)!.route === 'ultras') expect(a.chapter, a.template).toBe('R-TER')
     expect(asked.some(a => a.mandatory)).toBe(true)
-    // sneak waits for a scene in the bible (the banner raid): the owner's script decides where it goes
-    expect(new Set(asked.map(a => templateById(a.template)!.verb))).toEqual(new Set(['run', 'carry', 'drive', 'find']))
+    expect(new Set(asked.map(a => templateById(a.template)!.verb))).toEqual(new Set(['run', 'carry', 'drive', 'find', 'sneak']))
+    // the sneak a boy makes through the fence is asked for; the banner raid waits for a scene in the owner's bible
+    expect(asked.some(a => a.template === 'sneak-in')).toBe(true)
+    expect(asked.some(a => a.template === 'derby-banner-raid')).toBe(false)
+    // a mission that would print a fact about the club (a title, a final, a new ground) is never asked by a universal chapter
+    for (const a of asked) if (['title-night', 'cup-final-trip', 'new-ground'].includes(a.template)) expect(MASTER_IDS.includes(a.chapter), a.template).toBe(true)
   })
 })

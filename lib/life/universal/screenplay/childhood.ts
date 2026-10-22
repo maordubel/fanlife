@@ -387,6 +387,7 @@ export const CHILDHOOD = [
           o('stay', t('Stay for the last game', 'להישאר למשחק האחרון'), s('elder', 'Good. That is how anyone becomes anything.', 'יפה. ככה כולם הופכים למשהו.'), [flag('life:kick:last', 'stayed'), energy(-10), heart(4)]),
           o('home', t('Go home before dark', 'ללכת הביתה לפני שחשוך'), s('mum', 'Right on the stroke. I only counted twice.', 'בדיוק בזמן. ספרתי רק פעמיים.'), [flag('life:kick:last', 'home'), bond('mum', 3)]),
           o('ref', t('Referee the last game', 'לשפוט את המשחק האחרון'), s('friend', 'Fair. Hated. Fair.', 'הוגן. שנוא. הוגן.'), [flag('life:kick:last', 'ref'), standing(2), bond('friend', -1)]),
+          o('fence', t('Follow the floodlights to the gap in the fence', 'ללכת אחרי הפנסים אל הפרצה בגדר'), s('elder', 'Second half over there. They open the gates for the last ten minutes anyway — but you will not wait, will you?', 'שם כבר המחצית השנייה. בעשר הדקות האחרונות ממילא פותחים את השערים — אבל אתה לא תחכה, נכון?'), [flag('life:kick:last', 'fence'), energy(-15), heart(3)], {mission: {template: 'sneak-in'}}),
         ],
       }),
     ],
