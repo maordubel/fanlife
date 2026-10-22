@@ -177,6 +177,8 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'talk') say(w(e.key), 3000)
             else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}${e.streak > 1 ? ` · ${w('ev.streak', {n: String(e.streak)})}` : ''}`) } else pop(w(`got.${e.kind}`)); sfx('coin') }
             else if (e.k === 'chant') { say(w('ev.chant'), 1800); pop(`+${e.bonus}s`); sfx('roar') }
+            else if (e.k === 'favour') { say(w(`fav.${e.kind}`), 2400); pop(`+${e.bonus}s`); sfx('keep') }
+            else if (e.k === 'surge') { say(w('ev.surge'), 2200); sfx('murmur') }
             else if (e.k === 'noise') { say(w('ev.noise'), 1500); sfx('bounce') }
             else if (e.k === 'missed') { say(w('ev.missed'), 2200); cost(20); sfx('murmur') }
             else if (e.k === 'notyet') say(w('ev.notyet'), 2000)
@@ -272,7 +274,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const curStep = level.steps[objIx]
   const objective = phase === 'play' || phase === 'ending' ? (curStep ? w(curStep.key) : w('hud.done')) : ''
   const extrasOf = level.pickups.filter(p => p.step === null).length
-  const canAct = level.place === 'crowd' || level.noises.length > 0 || level.steps.some(x => x.kind === 'talk')
+  const canAct = level.place === 'crowd' || level.noises.length > 0 || level.favours.length > 0 || level.steps.some(x => x.kind === 'talk')
   const actHot = curStep?.kind === 'talk'
   const clockKey = level.place === 'crowd' ? 'hud.clock.find' : 'hud.clock'
   const anchor = spec.anchor
@@ -364,6 +366,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             {outcome.score && <p className={css.stars} aria-label={`${w('res.stars')}: ${outcome.score.stars}/3`} data-life="rush-stars">{[1, 2, 3].map(i => <span key={i} data-on={i <= outcome.score!.stars}>★</span>)}</p>}
             <p className={css.fine}>{outcome.outcome === 'slip' ? w('res.late') : `${fmt(outcome.clockLeft)} ${w('res.left')}`}</p>
             {outcome.score && outcome.score.extrasOf > 0 && <p className={css.fine}>{w('res.extras', {n: String(outcome.score.extras), m: String(outcome.score.extrasOf)})}{outcome.score.chants ? ` · ${w('res.chants', {n: String(outcome.score.chants)})}` : ''}{outcome.score.streak > 1 ? ` · ${w('res.streak', {n: String(outcome.score.streak)})}` : ''}</p>}
+            {outcome.score && outcome.score.favours > 0 && <p className={css.fine}>{w('res.favours', {n: String(outcome.score.favours)})}</p>}
             {outcome.score && outcome.outcome !== 'slip' && !assist && <p className={css.fine} data-life="rush-knocks">{outcome.score.knocks ? w('res.knocks', {n: String(outcome.score.knocks), s: String(outcome.score.lost)}) : w('res.clean')}</p>}
             {anchor && <RecordedNight anchor={anchor} locale={locale} label={w('res.record')} source={w('res.source')} />}
             <div className={css.actions}>

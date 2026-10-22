@@ -10,7 +10,7 @@
  * played in an open place — side streets you may walk down, extras that buy seconds, a knot of people
  * singing, somebody walking with you who stops if you leave him behind, a bin that turns a steward's head.
  */
-import {carAt, cluesShown, inArea, patrolAt, routeMetres, viaPoint, walkerAt, type Level, type PickupKind} from './level'
+import {carAt, cluesShown, FAVOUR_BONUS, inArea, patrolAt, routeMetres, SURGE_DAMP, viaPoint, walkerAt, type FavourKind, type Level, type PickupKind} from './level'
 import {MAX_EVIDENCE, type MissionOutcome, type MissionResult, type MissionScore, type MissionSpec} from './spec'
 
 export const STEP = 1 / 60
@@ -21,6 +21,8 @@ export const IDLE: Input = {x: 0, z: 0, sprint: false, act: false}
 export type SimEvent =
   | {k: 'hit'; by: 'car' | 'throw' | 'police' | 'shove'}
   | {k: 'caught'}
+  | {k: 'favour'; kind: FavourKind; bonus: number}
+  | {k: 'surge'}
   | {k: 'wrong'}
   | {k: 'found'}
   | {k: 'grab'}
@@ -93,6 +95,9 @@ export type Sim = {
   streakBest: number
   /** times the one walking with him fell behind */
   escLost: number
+  /** the good turns done (RUSH 4), and the surges already announced */
+  favoured: boolean[]
+  surged: boolean[]
 }
 
 export function startSim(level: Level, assist = false): Sim {
@@ -104,6 +109,7 @@ export function startSim(level: Level, assist = false): Sim {
     step: 0, got: level.pickups.map(() => false), ringT: level.rings.map(() => 0), ringDone: level.rings.map(() => false),
     extras: 0, chants: 0, asked: 0, holdT: 0, noise: null, esc: null, notyetAt: -9, missed: 0,
     lost: 0, streak: 0, streakAt: -99, streakBest: 0, escLost: 0,
+    favoured: level.favours.map(() => false), surged: level.surges.map(() => false),
   }
 }
 
@@ -202,7 +208,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     // the stick is the pedal: how far up is how fast (a light touch is a crawl through a police check), down is the brake
     const want = s.stagger > 0 ? 0 : -iz > 0.1 ? (s.sprinting ? sprint : walk * Math.min(1, -iz * 1.25)) : 0
     // off the pedal the car rolls to a stop; the brake stops it hard
-    const accel = want > s.speed ? 7 : iz > 0.2 ? 12 : 3
+    const accel = want > s.speed ? 7 * level.grip : iz > 0.2 ? 12 * level.grip : 3
     s.speed += clamp(want - s.speed, -accel * dt, accel * dt)
     s.vz = -s.speed
     s.vx += (ix * 7 - s.vx) * Math.min(dt * 4, 1)
@@ -212,8 +218,9 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     const drain = level.verb === 'carry' && s.holding ? 0.42 : 0.3
     s.stamina = clamp(s.stamina + (s.sprinting ? -drain : 0.16) * dt, 0, 1)
     const top = (s.sprinting ? sprint : s.stamina < 0.25 ? tired : walk) * (s.stagger > 0 ? 0.35 : 1)
-    s.vx += (ix * top - s.vx) * Math.min(dt * 7, 1)
-    s.vz += (iz * top - s.vz) * Math.min(dt * 7, 1)
+    // the grip is how fast he gets up to pace (wet ground is slower), never the pace itself
+    s.vx += (ix * top - s.vx) * Math.min(dt * 7 * level.grip, 1)
+    s.vz += (iz * top - s.vz) * Math.min(dt * 7 * level.grip, 1)
     s.speed = Math.hypot(s.vx, s.vz)
     if (s.speed > 0.4) { const want = Math.atan2(s.vx, s.vz); let d = want - s.heading; d = Math.atan2(Math.sin(d), Math.cos(d)); s.heading += d * Math.min(dt * 10, 1) }
   }
@@ -248,6 +255,13 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     const p = walkerAt(w, s.t), dx = s.x - p.x, dz = s.z - p.z, d2 = dx * dx + dz * dz
     if (d2 < 0.5) { const d = Math.sqrt(d2) || 0.01; if (inArea(level, s.x + dx / d * 0.05, s.z + dz / d * 0.05)) { s.x += dx / d * 0.05; s.z += dz / d * 0.05 } s.vx *= 0.9; s.vz *= 0.9 }
   }
+
+  // a surge: for a while, on one stretch, the crowd pushes and every step is slower — never a wall
+  level.surges.forEach((u, i) => {
+    if (s.t < u.t0 || s.t > u.t1) return
+    if (!s.surged[i] && s.z <= u.z0 + 10 && s.z >= u.z1 - 10) { s.surged[i] = true; s.events.push({k: 'surge'}) }
+    if (s.z <= u.z0 && s.z >= u.z1) { const k = Math.pow(SURGE_DAMP, dt * 60); s.vx *= k; s.vz *= k }
+  })
   // standing people are solid; the other lot shove
   for (const p of level.standers) {
     const dx = s.x - p.x, dz = s.z - p.z, d2 = dx * dx + dz * dz
@@ -372,6 +386,12 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
     if (n) { acted = true; s.noise = {x: n.x, z: n.z, t: s.t}; s.events.push({k: 'noise', x: n.x, z: n.z}) }
   }
 
+  // a good turn: act next to it — never needed, always worth it
+  if (input.act && !acted && level.favours.length) {
+    const i = level.favours.findIndex((f, k) => !s.favoured[k] && Math.hypot(f.x - s.x, f.z - s.z) < 1.9)
+    if (i >= 0) { acted = true; s.favoured[i] = true; s.clock += FAVOUR_BONUS; s.events.push({k: 'favour', kind: level.favours[i]!.kind, bonus: FAVOUR_BONUS}) }
+  }
+
   // find: press next to the one you came for (asking around first is quicker, never required)
   if (level.place === 'crowd' && input.act && !acted) {
     const tg = level.targets[0]!
@@ -418,11 +438,12 @@ export function scoreOf(level: Level, s: Sim): MissionScore {
   const clean = s.hits === 0 && s.caught === 0 && s.wrong === 0 && s.missed === 0
   // the third star asks for what this mission is about: whoever walks with you never left behind,
   // or the extras and songs of an open street, or else time to spare
-  const third = level.escort ? s.escLost === 0 && (extrasOf ? s.extras / extrasOf >= 0.4 : true)
+  const favours = s.favoured.filter(Boolean).length
+  const third = favours > 0 || (level.escort ? s.escLost === 0 && (extrasOf ? s.extras / extrasOf >= 0.4 : true)
     : extrasOf ? s.extras / extrasOf >= 0.6 || s.chants >= 2 || s.streakBest >= 3
-    : s.clock > level.realSeconds * level.timeScale * 0.25
+    : s.clock > level.realSeconds * level.timeScale * 0.25)
   const stars = (outcome === 'slip' ? 0 : outcome === 'ok' ? 1 : 1 + (clean ? 1 : 0) + (third ? 1 : 0)) as MissionScore['stars']
-  return {stars, extras: s.extras, extrasOf, chants: s.chants, steps: Math.min(s.step, level.steps.length), lost: Math.round(s.lost), knocks: s.hits + s.caught + s.wrong + s.missed, streak: s.streakBest}
+  return {stars, extras: s.extras, extrasOf, chants: s.chants, steps: Math.min(s.step, level.steps.length), lost: Math.round(s.lost), knocks: s.hits + s.caught + s.wrong + s.missed, streak: s.streakBest, favours}
 }
 
 /** What RUSH hands back to LIFE. */

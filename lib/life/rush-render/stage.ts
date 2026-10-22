@@ -536,6 +536,14 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const wave = new THREE.Mesh(keep(new THREE.RingGeometry(0.6, 0.75, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: '#f3efe6', transparent: true, opacity: 0, depthWrite: false}))); wave.position.y = 0.05; g.add(wave)
     return {g, lid, wave}
   })
+  // a good turn: a small boy alone, or a bag left on the pavement with its owner looking about
+  const favourFigs = level.favours.map(f => {
+    const g = new THREE.Group(); g.position.set(f.x, 0, f.z); scene.add(g)
+    const who = lookFig(rlook({kit: f.kind === 'lost-kid'}), {child: f.kind === 'lost-kid', scale: f.kind === 'lost-kid' ? 0.68 : undefined}); g.add(who)
+    if (f.kind === 'bag') { const bag = objOf('bag'); bag.position.set(0.7, 0.17, 0.2); g.add(bag) }
+    const mark = new THREE.Mesh(keep(new THREE.OctahedronGeometry(0.13, 0)), keep(new THREE.MeshBasicMaterial({color: '#f3efe6', toneMapped: false}))); mark.position.y = f.kind === 'lost-kid' ? 1.55 : 2.15; g.add(mark)
+    return {g, mark}
+  })
   // a lay-by on the road where a mate waits
   for (const st of level.steps) if (st.kind === 'stop') {
     const lb = new THREE.Mesh(keep(new THREE.PlaneGeometry(4.6, st.r * 2 + 20)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: 0.5, metalness: 0.15}))); lb.rotation.x = -Math.PI / 2; lb.position.set(level.half + 2.2, 0.006, st.z); lb.receiveShadow = true; scene.add(lb)
@@ -689,6 +697,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       r.fillM.visible = !done && k > 0; r.fillM.scale.setScalar(Math.max(0.001, k))
       ;(r.m.material as THREE.MeshBasicMaterial).opacity = 0.45 + Math.sin(t * 4 + i) * 0.25
     })
+    favourFigs.forEach((f, i) => { const done = sim.favoured[i]; f.mark.visible = !done; f.mark.rotation.y = t * 2; f.mark.position.y += Math.sin(t * 3 + i) * 0.004 })
     bins.forEach((b, i) => {
       const n = sim.noise, hit = n && Math.hypot(n.x - level.noises[i]!.x, n.z - level.noises[i]!.z) < 0.1 ? sim.t - n.t : 99
       const k = hit < 1.2 ? hit / 1.2 : 1

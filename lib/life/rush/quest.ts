@@ -172,9 +172,22 @@ export function applyQuest(l: Level, spec: MissionSpec, r: () => number): void {
     default:
       steps.push(goalStep('obj.gate'))
   }
+  // a good turn nobody asked for (RUSH 4): at the far end of a side street, or at the edge of a crowd —
+  // never on the route the planner and the bot walk, never a step
+  if (l.place === 'street' && cs.length) {
+    const cz = cs[Math.floor(r() * cs.length)]!, x = sx() * (l.side - 4), z = sidePave(cz)
+    if (l.side && free(x, z, 8)) l.favours.push({...mark(x, z), kind: r() < 0.5 ? 'lost-kid' : 'bag'})
+  } else if (l.place === 'crowd') {
+    for (let k = 0; k < 20; k++) {
+      const x = sx() * (l.half - 2.5), z = l.goal.z + 4 + r() * Math.max(4, l.start.z - 6 - l.goal.z - 4)
+      if (!free(x, z, 7)) continue
+      l.favours.push({...mark(x, z), kind: r() < 0.5 ? 'lost-kid' : 'bag'})
+      break
+    }
+  }
   l.steps = steps
   l.pickups = pickups
   // nobody stands where somebody waits for you, or on top of a thing you have to pick up
-  const keepClear = [...steps.filter(x => x.npc).map(x => ({x: x.x, z: x.z, d: 1.6})), ...pickups.map(p => ({x: p.x, z: p.z, d: 1.2}))]
+  const keepClear = [...steps.filter(x => x.npc).map(x => ({x: x.x, z: x.z, d: 1.6})), ...pickups.map(p => ({x: p.x, z: p.z, d: 1.2})), ...l.favours.map(f => ({x: f.x, z: f.z, d: 1.8}))]
   l.standers = l.standers.filter(p => keepClear.every(c => Math.hypot(c.x - p.x, c.z - p.z) > c.d))
 }

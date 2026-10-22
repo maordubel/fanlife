@@ -156,7 +156,7 @@ export type MissionResult = {
 
 /** The result card's score. Never a number LIFE reads: the story takes `outcome` and `evidence`, nothing else. */
 /** Display only: LIFE never reads it. `lost` = game seconds the knocks cost, `streak` = the longest run of extras. */
-export type MissionScore = {stars: 0 | 1 | 2 | 3; extras: number; extrasOf: number; chants: number; steps: number; lost: number; knocks: number; streak: number}
+export type MissionScore = {stars: 0 | 1 | 2 | 3; extras: number; extrasOf: number; chants: number; steps: number; lost: number; knocks: number; streak: number; favours: number}
 
 /** Two failures in a mandatory mission open story mode. A mandatory mission never loops forever. */
 export const ASSIST_AFTER_FAILS = 2

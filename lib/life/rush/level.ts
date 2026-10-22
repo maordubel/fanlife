@@ -133,7 +133,22 @@ export type Level = {
   side: number
   /** a playground of children (the find in a schoolyard): the renderer draws everyone smaller */
   kids: boolean
+  /** an optional good turn off the route (RUSH 4): never a step, never on the planned route */
+  favours: Favour[]
+  /** a stretch of street where the crowd pushes for a while: slows, never blocks */
+  surges: Surge[]
+  /** how well the feet grip: 1 dry, less in rain (the time it takes to get up to pace, never the pace itself) */
+  grip: number
 }
+
+export type FavourKind = 'lost-kid' | 'bag'
+export type Favour = {x: number; z: number; kind: FavourKind}
+/** between z0 (nearer the start) and z1 (nearer the goal), from t0 to t1 in sim seconds */
+export type Surge = {z0: number; z1: number; t0: number; t1: number}
+/** what a favour gives back, in GAME seconds */
+export const FAVOUR_BONUS = 10
+/** how much a surge holds you back (per step at 60 Hz, like brushing a walker) */
+export const SURGE_DAMP = 0.94
 
 /* ───────────── positions as functions of time ───────────── */
 
@@ -186,9 +201,9 @@ function placeOf(spec: MissionSpec): Place {
   return spec.verb === 'drive' ? 'road' : spec.verb === 'sneak' ? 'yard' : spec.verb === 'find' ? 'crowd' : 'street'
 }
 
-type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids'> & Partial<Pick<Level, 'areas' | 'side'>>
+type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids' | 'favours' | 'surges' | 'grip'> & Partial<Pick<Level, 'areas' | 'side'>>
 function finish(l: Base): Level {
-  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, ...l, timeScale: 1}
+  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, favours: [], surges: [], grip: 1, ...l, timeScale: 1}
 }
 
 function street(spec: MissionSpec, r: () => number): Level {
@@ -312,11 +327,39 @@ export function buildLevel(spec: MissionSpec): Level {
   const base = p === 'road' ? road(spec, r) : p === 'yard' ? yard(spec, r) : p === 'crowd' ? crowd(spec, r) : street(spec, r)
   if (!base.areas.length) base.areas = [{...base.bounds}]
   applyQuest(base, spec, rng(spec.seed ^ 2654435761))
+  conditions(base, spec, rng(spec.seed + 104729))
   const plan = planRoute(base)
-  base.realSeconds = Math.round(plan.seconds * SLACK[spec.difficulty])
+  // a surge on the way costs time it would be unfair to bill: the clock carries it
+  const held = base.surges.reduce((n, u) => n + (u.t1 - u.t0) * 0.45, 0)
+  base.realSeconds = Math.round((plan.seconds + held) * SLACK[spec.difficulty])
   base.length = Math.max(1, Math.round(plan.metres))
   base.timeScale = spec.clock / base.realSeconds
   return base
+}
+
+/**
+ * The hour and the weather, read once and deterministically (their own random stream: nothing else in
+ * the level moves). Night: the stewards see less and the street is emptier. Day: they see further. Rain:
+ * the feet take longer to get up to pace and the stewards see a little less. Pace itself never changes,
+ * so the planned clock stays fair. A street with a crowd gets a surge: somewhere ahead, for a while,
+ * the crowd pushes.
+ */
+function conditions(l: Level, spec: MissionSpec, r: () => number): void {
+  const night = spec.time === 'night', rain = spec.weather === 'rain'
+  const sight = (night ? -1 : 1) + (rain ? -0.5 : 0)
+  l.patrols = l.patrols.map(p => ({...p, range: Math.max(5, p.range + sight)}))
+  if (night) l.walkers = l.walkers.filter((_, i) => i % 4 !== 3)
+  if (rain) l.grip = 0.75
+  if (l.place === 'street' && spec.hazards.includes('crowd')) {
+    const n = spec.difficulty === 2 ? 2 : 1
+    const far = l.goal.z + 30, near = -40
+    for (let i = 0; i < n; i++) {
+      const mid = near + (far - near) * ((i + 0.5) / n) + (r() - 0.5) * 20
+      // when somebody walking at pace would be there, give or take
+      const t0 = Math.max(4, Math.abs(mid - l.start.z) / PACE_PLAN[l.verb] * (0.6 + r() * 0.3))
+      l.surges.push({z0: mid + 12, z1: mid - 12, t0, t1: t0 + 9 + r() * 4})
+    }
+  }
 }
 
 /* ───────────── getting about: one routing rule shared by the planner and the bot ───────────── */
