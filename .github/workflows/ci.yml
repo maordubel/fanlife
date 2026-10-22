@@ -79,8 +79,13 @@ jobs:
       - name: Club identity and color policy
         run: npm run master:identity
 
+      # the LIFE simulator walks up to 400k states per chapter (~3 GB in one worker): beside another worker it ran
+      # the runner out of memory and the worker was killed with no test named (22.10.2026), so it runs alone
       - name: Tests
-        run: npm test -- --maxWorkers=2 --minWorkers=1
+        run: npm test -- --maxWorkers=2 --minWorkers=1 --exclude tests/clubs/universal-life.test.ts
+
+      - name: Tests — LIFE simulator, alone
+        run: npx vitest run tests/clubs/universal-life.test.ts --maxWorkers=1 --minWorkers=1
 
       - name: Local database
         run: npm run master:local-db
