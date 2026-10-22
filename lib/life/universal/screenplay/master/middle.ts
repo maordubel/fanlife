@@ -48,7 +48,8 @@ export const MASTER_MIDDLE: ChapterScript[] = [
           {group: 'photo', when: is('life:master:F20:photo', 'skipped'), lines: [s('friend', 'You said no to a picture. Now we are only arguing about who would have held it.', 'אמרת לא לתמונה. עכשיו רק מתווכחים מי היה מחזיק אותה.')]},
         ],
         task: t('Sort out who takes it', 'לסדר מי מצלם'),
-        action: [s(null, 'Phones and a borrowed little camera go round the group like a plate of something nobody wants to finish.', 'טלפונים ומצלמה קטנה שהושאלה עוברים בחבורה כמו צלחת שאף אחד לא רוצה לגמור.')],
+        action: [s(null, 'Phones and a borrowed little camera go round the group like a plate of something nobody wants to finish. Everyone in? Three, two — someone blinks. Again. Wait for the look.', 'טלפונים ומצלמה קטנה שהושאלה עוברים בחבורה כמו צלחת שאף אחד לא רוצה לגמור. כולם בפנים? שלוש, שתיים — מישהו ממצמץ. שוב. לחכות למבט.')],
+        game: 'clap',
         options: [
           o('self', t('Take it yourself, at arm\'s length', 'לצלם בעצמך, ביד מושטת'), s('friend', 'Your thumb is in it. It is a very honest thumb.', 'האגודל שלך בפנים. זה אגודל ישר מאוד.'),
             [flag('life:master:F20:camera', 'self'), heart(1)]),
@@ -345,7 +346,8 @@ export const MASTER_MIDDLE: ChapterScript[] = [
           {group: 'path', when: {flag: 'life:route:abroad'}, lines: [s('friend', 'Your hours are not our hours. I counted. I am still calling.', 'השעות שלך לא השעות שלנו. ספרתי. אני מתקשר בכל זאת.')]},
         ],
         task: t('Decide how to take the call', 'להחליט איך לקבל את השיחה'),
-        action: [s(null, 'There is a gap on the line, and you decide not to fill it with an apology.', 'יש רווח בקו, ואתה מחליט לא למלא אותו בהתנצלות.')],
+        action: [s(null, 'The line crackles. You turn towards the window, then a little to the left, until the voices at home hold steady. There is a gap on the line, and you decide not to fill it with an apology.', 'הקו מרשרש. אתה מסתובב לכיוון החלון, ואז קצת שמאלה, עד שהקולות מהבית מתייצבים. יש רווח בקו, ואתה מחליט לא למלא אותו בהתנצלות.')],
+        game: 'tune',
         options: [
           o('now', t('Be in touch right now', 'להיות בקשר עכשיו'), s('friend', 'Tell me about the place. I mean the real one, not the postcard.', 'ספר לי על המקום. את האמיתי, לא את הגלויה.'),
             [flag('life:master:F24:call', 'now'), bond('friend', 3), heart(1)]),
