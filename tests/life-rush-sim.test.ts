@@ -384,3 +384,79 @@ describe('RUSH 3 · a run of extras pays more, a knock says what it cost, the st
     }
   })
 })
+
+describe('RUSH 4 · the hour and the weather, a good turn, a surge in the crowd', () => {
+  const at = (template: string, seed: number, d: 0 | 1 | 2, time: 'day' | 'night', weather: MissionSpec['weather']) => ({...specOf(template, seed, d), time, weather})
+
+  for (const t of MISSION_TEMPLATES) for (const d of [0, 2] as const) it(`${t.id} · difficulty ${d} · day and rain can still be won`, () => {
+    const lost: string[] = []
+    for (const seed of SEEDS.slice(0, 6)) for (const [time, weather] of [['day', 'rain'], ['day', 'clear'], ['night', 'rain']] as const) {
+      const {s} = play(at(t.id, seed, d, time, weather), 'bot')
+      if (s.ended !== 'good') lost.push(`seed ${seed} ${time}/${weather}: ${s.ended} after ${Math.round(s.t)}s, step ${s.step}`)
+    }
+    expect(lost, lost.join('\n')).toEqual([])
+  }, 120_000)
+
+  it('the stewards see further by day than by night, and a little less in the rain', () => {
+    const range = (time: 'day' | 'night', weather: MissionSpec['weather']) => buildLevel(at('sneak-in', 3, 1, time, weather)).patrols[0]!.range
+    expect(range('day', 'clear')).toBeGreaterThan(range('night', 'clear'))
+    expect(range('day', 'rain')).toBeLessThan(range('day', 'clear'))
+  })
+
+  it('the street is emptier at night, and wet ground is slower to get going on — never slower at pace', () => {
+    expect(buildLevel(at('kickoff-run', 3, 1, 'night', 'clear')).walkers.length).toBeLessThan(buildLevel(at('kickoff-run', 3, 1, 'day', 'clear')).walkers.length)
+    const wet = buildLevel(at('kickoff-run', 3, 1, 'day', 'rain')), dry = buildLevel(at('kickoff-run', 3, 1, 'day', 'clear'))
+    expect(wet.grip).toBeLessThan(1)
+    expect(dry.grip).toBe(1)
+    const go = (l: typeof wet) => { const s = startSim(l); for (let i = 0; i < 12; i++) stepSim(l, s, {...IDLE, z: -1}); return s.speed }
+    expect(go(wet)).toBeLessThan(go(dry))
+  })
+
+  it('a good turn sits off the route: never a step, and doing it gives time back and counts for the third star', () => {
+    let seen = 0
+    for (const t of MISSION_TEMPLATES) for (const seed of SEEDS.slice(0, 4)) {
+      const level = buildLevel(specOf(t.id, seed, 1))
+      if (level.place === 'road' || level.place === 'yard') { expect(level.favours, t.id).toEqual([]); continue }
+      for (const f of level.favours) {
+        seen++
+        expect(inArea(level, f.x, f.z), `${t.id} ${seed}`).toBe(true)
+        for (const st of level.steps) expect(Math.hypot(st.x - f.x, st.z - f.z), `${t.id} ${seed}`).toBeGreaterThan(3)
+        const s = startSim(level)
+        s.x = f.x; s.z = f.z
+        const clock = s.clock
+        stepSim(level, s, {...IDLE, act: true})
+        expect(s.events.some(e => e.k === 'favour'), `${t.id} ${seed}`).toBe(true)
+        expect(s.clock).toBeGreaterThan(clock)
+        const done = {...s, ended: 'good' as const}
+        expect(resultOf(level, done).score!.favours).toBe(1)
+        expect(resultOf(level, done).score!.stars).toBeGreaterThanOrEqual(2)
+      }
+    }
+    expect(seen).toBeGreaterThan(10)
+  })
+
+  it('a surge slows whoever is in it while it lasts, says so once, and is not a wall', () => {
+    const level = buildLevel(specOf('kickoff-run', 5, 2))
+    expect(level.surges.length).toBe(2)
+    const u = level.surges[0]!
+    const run = (inside: boolean) => {
+      const s = startSim(level)
+      s.t = inside ? u.t0 + 0.5 : u.t1 + 1; s.x = 0; s.z = u.z0 - 1
+      for (let i = 0; i < 90; i++) stepSim(level, s, {...IDLE, z: -1})
+      return s
+    }
+    const held = run(true), loose = run(false)
+    expect(held.z).toBeGreaterThan(loose.z) // went less far
+    expect(held.z).toBeLessThan(u.z0 - 3) // but still went
+    const s = startSim(level)
+    s.t = u.t0 + 0.1; s.z = u.z0
+    let said = 0
+    for (let i = 0; i < 60; i++) { stepSim(level, s, IDLE); said += s.events.filter(e => e.k === 'surge').length }
+    expect(said).toBe(1)
+  })
+
+  it('the hour and the weather are read the same way every time', () => {
+    const a = buildLevel(at('kickoff-run', 9, 2, 'day', 'rain')), b = buildLevel(at('kickoff-run', 9, 2, 'day', 'rain'))
+    expect(JSON.stringify({s: a.surges, f: a.favours, g: a.grip, w: a.walkers.length})).toBe(JSON.stringify({s: b.surges, f: b.favours, g: b.grip, w: b.walkers.length}))
+  })
+})

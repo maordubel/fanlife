@@ -90,6 +90,8 @@ const EN = {
   'res.knocks': '{n} knocks on the way · {s}s lost', 'res.clean': 'Not a scratch.', 'res.streak': 'Best run: {n} in a row',
   'res.record': 'The night, as recorded', 'res.source': 'Source',
   'ev.streak': 'Streak ×{n}', 'hud.low': 'Low', 'hud.drag': 'Drag here to move',
+  'ev.surge': 'The crowd surges — hold on', 'fav.lost-kid': '“Thanks — he was looking for his dad.” · a good turn',
+  'fav.bag': '“My bag! You’re a star.” · a good turn', 'res.favours': '{n} good turn(s)',
   // fallbacks
   'err.webgl': 'This device could not open the mission’s picture. The day carries on without it.',
   'loading': 'The street is loading…',
@@ -169,6 +171,8 @@ const HE: Record<RushKey, string> = {
   'res.knocks': '{n} תקלות בדרך · {s} שנ׳ אבדו', 'res.clean': 'בלי שריטה.', 'res.streak': 'הרצף הכי ארוך: {n} ברצף',
   'res.record': 'הערב, כפי שתועד', 'res.source': 'מקור',
   'ev.streak': 'רצף ×{n}', 'hud.low': 'מעט זמן', 'hud.drag': 'לגרור כאן כדי לזוז',
+  'ev.surge': 'הקהל דוחף — להחזיק מעמד', 'fav.lost-kid': '„תודה — הוא חיפש את אבא שלו.” · מעשה טוב',
+  'fav.bag': '„התיק שלי! אתה אלוף.” · מעשה טוב', 'res.favours': 'מעשים טובים: {n}',
   'err.webgl': 'המכשיר לא הצליח לפתוח את התמונה של המשימה. היום ממשיך בלעדיה.',
   'loading': 'הרחוב נטען…',
 }

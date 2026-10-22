@@ -40,6 +40,9 @@ export function drawMap(ctx: CanvasRenderingContext2D, level: Level, sim: Sim, s
     ctx.fillStyle = p.step === null ? DIM : ITEM
     ctx.beginPath(); ctx.arc(X(p.x), Y(p.z), p.step === null ? 1.6 : 2.6, 0, Math.PI * 2); ctx.fill()
   })
+  // a good turn off the route: a hollow ring, by shape
+  ctx.strokeStyle = ITEM; ctx.lineWidth = 1.2
+  level.favours.forEach((f, i) => { if (sim.favoured[i]) return; ctx.beginPath(); ctx.arc(X(f.x), Y(f.z), 2.4, 0, Math.PI * 2); ctx.stroke() })
   // bins to bang (sneak)
   ctx.fillStyle = DIM
   for (const n of level.noises) { ctx.fillRect(X(n.x) - 1.5, Y(n.z) - 1.5, 3, 3) }
