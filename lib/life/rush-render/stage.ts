@@ -18,6 +18,7 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/life/rush/level'
 import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
+import {dressCity} from './city'
 import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
@@ -243,7 +244,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const stad = new THREE.Group(); stad.position.set(0, 0, z); scene.add(stad)
     const shell = new THREE.Mesh(keep(new THREE.CylinderGeometry(78, 84, 26, 48, 1, true)), keep(std('#2b2f3a', {side: THREE.DoubleSide}))); shell.position.y = 13; stad.add(shell)
     const ring = new THREE.Mesh(keep(new THREE.TorusGeometry(80, 1.2, 6, 64)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.6), toneMapped: false}))); ring.rotation.x = Math.PI / 2; ring.position.y = 26.5; stad.add(ring)
-    const glow = new THREE.Mesh(keep(new THREE.PlaneGeometry(420, 200)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C(night ? '#cfe0ff' : '#ffffff').multiplyScalar(night ? 0.9 : 0.25), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); glow.position.set(0, 50, -40); stad.add(glow)
+    const glow = new THREE.Mesh(keep(new THREE.PlaneGeometry(420, 200)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C(night ? '#cfe0ff' : '#ffffff').multiplyScalar((night ? 0.9 : 0.25) * (skyline ? 0.3 : 1)), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); glow.position.set(0, 50, -40); stad.add(glow)
     for (const [x, zz] of [[-70, 40], [70, 40], [-70, -40], [70, -40]] as const) {
       const tw = new THREE.Mesh(box, keep(new THREE.MeshStandardMaterial({color: '#30343e', fog: false}))); tw.scale.set(2.2, 82, 2.2); tw.position.set(x, 41, zz); stad.add(tw)
       const lamp = new THREE.Mesh(box, keep(new THREE.MeshBasicMaterial({color: C('#eaf2ff').multiplyScalar(night ? 7 : 1.5), toneMapped: false, fog: false}))); lamp.scale.set(12, 6, 1.2); lamp.position.set(x, 84, zz); lamp.lookAt(0, 0, 0); stad.add(lamp)
@@ -317,6 +318,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /* ───────────── the places ───────────── */
 
   const crossLanes: THREE.Mesh[] = []
+  let skyline = false
   if (level.place === 'street') {
     addRoad(level.half, level.walk)
     for (const z of level.crossings) {
@@ -328,6 +330,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (level.side) addSideStreets()
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
     addPennants(level.walk, -20, level.goal.z + 30)
+    // a city with a landmark at the end of the road dims the ground's glow so the landmark reads behind it
+    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex})
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
     addGround(level.goal.z - 51, level.goal.z - 7)
   } else if (level.place === 'road') {
