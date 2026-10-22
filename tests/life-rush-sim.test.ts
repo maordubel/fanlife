@@ -323,9 +323,9 @@ describe('RUSH · the screenplay asks for missions that exist', () => {
     for (const a of asked) if (templateById(a.template)!.route === 'ultras') expect(a.chapter, a.template).toBe('R-TER')
     expect(asked.some(a => a.mandatory)).toBe(true)
     expect(new Set(asked.map(a => templateById(a.template)!.verb))).toEqual(new Set(['run', 'carry', 'drive', 'find', 'sneak']))
-    // the sneak a boy makes through the fence is asked for; the banner raid waits for a scene in the owner's bible
+    // the sneak a boy makes through the fence is asked for; the banner raid has its scene since the owner approved it (22.10.2026)
     expect(asked.some(a => a.template === 'sneak-in')).toBe(true)
-    expect(asked.some(a => a.template === 'derby-banner-raid')).toBe(false)
+    expect(asked.some(a => a.template === 'derby-banner-raid')).toBe(true)
     // a mission that would print a fact about the club (a title, a final, a new ground) is never asked by a universal chapter
     for (const a of asked) if (['title-night', 'cup-final-trip', 'new-ground'].includes(a.template)) expect(MASTER_IDS.includes(a.chapter), a.template).toBe(true)
   })

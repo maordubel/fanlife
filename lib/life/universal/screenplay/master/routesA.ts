@@ -1,5 +1,5 @@
 import {chapter, o, s, sc, t} from '../write'
-import {bond, coins, energy, flag, heart, is} from '../types'
+import {bond, coins, energy, flag, heart, is, standing} from '../types'
 import type {ChapterScript} from '../types'
 
 /**
@@ -150,6 +150,30 @@ export const MASTER_ROUTES_A: ChapterScript[] = [
             [flag('life:master:R-TER:mistake', 'kept'), flag('life:banner:stroke', 'kept'), bond('friend', 3), heart(1)]),
           o('hand', t('Let somebody else decide', 'לתת למישהו אחר להחליט'), s('mate', 'Me? You are giving me the call? All right. Then it is not just my work, it is my word.', 'אני? אתה נותן לי את ההחלטה? בסדר. אז זה לא רק העבודה שלי, זו המילה שלי.'),
             [flag('life:master:R-TER:mistake', 'handed'), flag('life:banner:stroke', 'handed'), bond('mate', 3)]),
+        ],
+      }),
+      sc({
+        id: 'R-TER-S5', room: 'gate', who: 'boss', slot: 'far', spot: 'flag', verb: 'look', night: true, cut: true,
+        title: t('Their storeroom', 'המחסן שלהם'),
+        lines: [
+          s(null, 'The lane behind their end smells of paint and old rain. A shutter is half-open, the light inside a dim blue.', 'הסמטה מאחורי היציע שלהם מריחה צבע וגשם ישן. תריס חצי פתוח, והאור בפנים כחול ועמום.'),
+          s('boss', 'Their banner hangs in there. We are not here to hurt anybody. We are here to borrow something.', 'הדגל שלהם תלוי שם. לא באנו לפגוע באף אחד. באנו לשאול משהו.'),
+          s(null, 'Two of the Lower Gate lads are laughing round the corner, forty steps away.', 'שניים מהחבר’ה של השער התחתון צוחקים מעבר לפינה, ארבעים צעד משם.'),
+          s('boss', 'If someone sees you, you walk. You do not fight. A shove at most, to get past a door.', 'אם מישהו רואה אותך, אתה הולך. לא נלחמים. דחיפה לכל היותר, כדי לעבור דלת.'),
+          s('boss', 'And it goes back before kickoff. A banner is for showing. We want them to know we could.', 'והוא חוזר לפני שריקת הפתיחה. דגל נועד להראות. אנחנו רוצים שידעו שיכולנו.'),
+        ],
+        callbacks: [
+          {when: is('life:master:R-TER:role', 'organise'), lines: [s('boss', 'You made the list. Nobody on it is here to fight. Keep it that way tonight.', 'אתה עשית את הרשימה. אף אחד ממנה לא בא לריב. תשמור על זה ככה הערב.')]},
+        ],
+        task: t('Decide how to go in', 'להחליט איך נכנסים'),
+        action: [s(null, 'You count the steps to the shutter and the steps back. Both numbers matter.', 'אתה סופר את הצעדים עד התריס ואת הצעדים חזרה. שני המספרים חשובים.')],
+        options: [
+          o('go', t('Go in quietly and take it', 'להיכנס בשקט ולקחת אותו'), s('boss', 'Quietly. Breathe through your nose.', 'בשקט. תנשום דרך האף.'),
+            [flag('life:banner:raid', 'go'), energy(-20), standing(3), heart(2)], {mission: {template: 'derby-banner-raid'}}),
+          o('lookout', t('Keep watch at the lane\'s mouth', 'לשמור בפתח הסמטה'), s('boss', 'Good. A whistle if anyone comes.', 'טוב. שריקה אם מישהו מגיע.'),
+            [flag('life:banner:raid', 'lookout'), bond('boss', 3)]),
+          o('declined', t('Walk away, it is not for you', 'ללכת, זה לא בשבילך'), s('boss', 'No hard feelings. Go and sing.', 'בלי טינה. לך לשיר.'),
+            [flag('life:banner:raid', 'declined'), heart(1)]),
         ],
       }),
       sc({

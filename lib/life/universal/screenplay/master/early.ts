@@ -64,7 +64,31 @@ export const MASTER_EARLY: ChapterScript[] = [
           o('help', t('Ask someone you met for help', 'לבקש עזרה ממישהו שפגשת'), s('kiosk', 'Go on, sit here. I will call someone who is going that way, and he will walk you to the corner.', 'בוא, שב כאן. אקרא למישהו שהולך לשם, והוא ילווה אותך עד הפינה.'),
             [flag('life:master:F04:way', 'favour'), flag('life:master:F04:owed', 'kiosk'), bond('kiosk', 3)]),
           o('skip', t('Give up on getting there today', 'לוותר על ההגעה היום'), s('friend', 'All right. We are not going. We are staying, and staying is something too.', 'בסדר. לא הולכים. נשארים, וגם נשארים זה משהו.'),
-            [flag('life:master:F04:way', 'stay'), bond('friend', 2)]),
+            [flag('life:master:F04:way', 'stay'), bond('friend', 2)], {skip: ['F04-S4']}),
+        ],
+      }),
+      sc({
+        id: 'F04-S4', room: 'terrace', who: 'dad', slot: 'fence', spot: 'pitch', verb: 'look', sound: 'roar',
+        title: t('Lost on the grass', 'אבוד על הדשא'),
+        lines: [
+          s(null, 'The whistle goes. For a second nobody moves. Then the fence is just a fence nobody is guarding, and the whole crowd is on the grass.', 'השריקה נשמעת. לרגע אף אחד לא זז. ואז הגדר היא סתם גדר שאף אחד לא שומר עליה, וכל הקהל על הדשא.'),
+          s('dad', 'Hold on to my sleeve. Do not let go of my sleeve.', 'תחזיק לי בשרוול. אל תעזוב את השרוול.'),
+          s(null, 'You hold it for eleven steps. Someone lifts a stranger onto their shoulders and the sleeve is gone.', 'אתה מחזיק אחד־עשר צעדים. מישהו מרים זר על הכתפיים, והשרוול נעלם.'),
+          s(null, 'All you can see is knees, scarves and the floodlights. Everyone is shouting, and none of them is him.', 'כל מה שאתה רואה זה ברכיים, צעיפים ופנסים. כולם צועקים, ואף אחד מהם הוא לא הוא.'),
+          s('steward', 'You are not in trouble, little one. Everyone is lost tonight. Which way is your father?', 'אתה לא בצרות, קטן. כולם אבודים הערב. לאיזה כיוון אבא שלך?'),
+        ],
+        callbacks: [
+          {group: 'way', when: is('life:master:F04:way', 'favour'), lines: [s('kiosk', 'The man from the kiosk is somewhere behind you, still pretending he only walked you to the corner.', 'האיש מהקיוסק נמצא איפשהו מאחוריך, עדיין מעמיד פנים שרק ליווה אותך עד הפינה.')]},
+        ],
+        task: t('Find your father on the pitch', 'למצוא את אבא על המגרש'),
+        action: [s(null, 'You stand where the grass meets the touchline and choose which way to be brave.', 'אתה עומד איפה שהדשא פוגש את קו האורך ובוחר לאיזה כיוון להיות אמיץ.')],
+        options: [
+          o('search', t('Go and find him', 'ללכת ולמצוא אותו'), s('steward', 'Stay low and follow the loudest singing. Fathers drift towards it.', 'תישאר נמוך ותלך אחרי השירה הכי חזקה. אבות נסחפים אליה.'),
+            [flag('life:title:night', 'search'), energy(-15), heart(3), standing(1)], {mission: {template: 'title-night'}}),
+          o('waited', t('Stay by the goalpost and wait', 'להישאר ליד הקורה ולחכות'), s(null, 'You hold the post and count to a hundred, twice. He finds you on the third count, out of breath and laughing.', 'אתה מחזיק בקורה וסופר עד מאה, פעמיים. בספירה השלישית הוא מוצא אותך, מתנשף וצוחק.'),
+            [flag('life:title:night', 'waited'), heart(2), bond('dad', 2)]),
+          o('steward', t('Ask the steward to call for him', 'לבקש מהסדרן לקרוא לו'), s('steward', 'Name? … Good. I will say it into the radio as if it mattered. It does.', 'שם? … טוב. אגיד אותו בקשר כאילו זה חשוב. זה חשוב.'),
+            [flag('life:title:night', 'steward'), heart(1)]),
         ],
       }),
       sc({
@@ -77,6 +101,8 @@ export const MASTER_EARLY: ChapterScript[] = [
         ],
         callbacks: [
           {group: 'way', when: is('life:master:F04:way', 'favour'), lines: [s('dad', 'I heard someone walked you to the corner. We owe him something small.', 'שמעתי שמישהו ליווה אותך עד הפינה. אנחנו חייבים לו משהו קטן.')]},
+          {group: 'sleeve', when: is('life:title:night', 'search'), lines: [s('dad', 'You let go of my sleeve and then you found me. I am not sure which of us was lost.', 'עזבת לי את השרוול ואז מצאת אותי. אני לא בטוח מי מאיתנו היה אבוד.')]},
+          {group: 'sleeve', when: is('life:title:night', 'waited'), lines: [s('dad', 'A hundred, twice. You kept your head better than I kept my sleeve.', 'מאה, פעמיים. שמרת על הראש טוב יותר משאני שמרתי על השרוול.')]},
           {group: 'way', when: is('life:master:F04:way', 'stay'), lines: [s('dad', 'I would have liked you there. I am also glad you said so out loud.', 'הייתי רוצה שתהיה שם. ואני גם שמח שאמרת את זה בקול.')]},
         ],
         task: t('Answer him', 'לענות לו'),
