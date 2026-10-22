@@ -248,7 +248,31 @@ export const MASTER_GROWN: ChapterScript[] = [
           o('small', t('Keep the evening small', 'לשמור את הערב קטן'), s('elder', 'Small. Good. Small is how you keep it from shattering.', 'קטן. טוב. ככה שומרים שלא ישבר.'),
             [flag('life:master:F17:wait', 'small'), bond('elder', 3)]),
           o('life', t('Prepare the next thing in your life', 'להכין את הדבר הבא בחיים'), s('friend', 'You are going to do your errands tonight? Fine. I will tell you everything when it is over.', 'אתה תעשה סידורים הערב? בסדר. אספר לך הכול כשזה ייגמר.'),
-            [flag('life:master:F17:wait', 'life'), heart(1)], {skip: ['F17-S2']}),
+            [flag('life:master:F17:wait', 'life'), heart(1)], {skip: ['F17-S4', 'F17-S2']}),
+        ],
+      }),
+      sc({
+        id: 'F17-S4', room: 'route', who: 'friend', slot: 'lamp', spot: 'sign', verb: 'look', sound: 'murmur',
+        title: t('The lay-by', 'חניון הדרך'),
+        lines: [
+          s(null, 'Four of you in a car built for three. The flag is out of one window and the rest of the city is out of the others.', 'ארבעה במכונית לשלושה. הדגל יוצא מחלון אחד, ושאר העיר יוצאת מהאחרים.'),
+          s('friend', 'Lay-by in two hundred metres. Someone needs the toilet, and someone else needs a sandwich. I will not say who.', 'חניון בעוד מאתיים מטר. מישהו צריך שירותים ומישהו אחר צריך כריך. לא אגיד מי.'),
+          s(null, 'The queue ahead is not moving. The clock on the dashboard says you have time, but not much of it.', 'התור מלפנים לא זז. השעון על הלוח אומר שיש זמן, אבל לא הרבה.'),
+          s('friend', 'Five minutes. Honestly. Five.', 'חמש דקות. באמת. חמש.'),
+          s(null, 'The engine is still warm. The road, for the first time all morning, is clear.', 'המנוע עוד חם. הכביש, בפעם הראשונה כל הבוקר, פנוי.'),
+        ],
+        callbacks: [
+          {group: 'wait', when: is('life:master:F17:wait', 'swept'), lines: [s('friend', 'I have the whole night planned and none of it includes this queue.', 'תכננתי את כל הלילה, ושום דבר מזה לא כולל את התור הזה.')]},
+        ],
+        task: t('Decide what to do with the stop', 'להחליט מה עושים עם העצירה'),
+        action: [s(null, 'Your hands are on the wheel. Three faces wait for you to say it.', 'הידיים שלך על ההגה. שלושה פרצופים מחכים שתגיד.')],
+        options: [
+          o('drive', t('Skip the stop and drive', 'לוותר על העצירה ולנסוע'), s('friend', 'Fine. But if I explode, I explode in the stadium.', 'בסדר. אבל אם אני מתפוצץ, אני מתפוצץ באצטדיון.'),
+            [flag('life:final:trip', 'drive'), energy(-15), heart(2)], {mission: {template: 'cup-final-trip'}}),
+          o('stop', t('Take the lay-by, five minutes', 'לעצור בחניון, חמש דקות'), s('friend', 'Five. I am timing you. I am timing myself.', 'חמש. אני מודד לך. אני מודד לעצמי.'),
+            [flag('life:final:trip', 'stop'), bond('friend', 3)]),
+          o('passenger', t('Let someone else drive and rest', 'לתת למישהו אחר לנהוג ולנוח'), s(null, 'You hand over the keys and watch the road go past from the passenger side for once.', 'אתה מוסר את המפתחות ורואה את הכביש עובר מהמושב שליד, לשם שינוי.'),
+            [flag('life:final:trip', 'passenger'), energy(10)]),
         ],
       }),
       sc({

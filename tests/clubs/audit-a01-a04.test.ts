@@ -43,7 +43,7 @@ function live(c: Chapter, picks: Record<string, string>, seed: LifeState = empty
 }
 
 describe('A01 — declining is kept in the world', () => {
-  for (const [id, first, decline, skipped, after] of [['F26', 'F26-S1', 'not', 'F26-S2', 'F26-S3'], ['F17', 'F17-S1', 'life', 'F17-S2', 'F17-S3']] as const) {
+  for (const [id, first, decline, skipped, after] of [['F26', 'F26-S1', 'not', 'F26-S2', 'F26-S3'], ['F17', 'F17-S1', 'life', 'F17-S4', 'F17-S3']] as const) {
     it(`${id}: "${decline}" leaves ${skipped} out, and the way on is the next errand`, () => {
       const c = chap(id)
       let s = start(c)
