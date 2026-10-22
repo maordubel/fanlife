@@ -90,6 +90,7 @@
     "research:collect": "tsx scripts/research/cli.ts collect",
     "research:export": "tsx scripts/research/cli.ts export",
     "research:census": "node --require ./scripts/master/server-only.cjs --import tsx scripts/research/attach-census.ts",
+    "research:daily-report": "tsx scripts/research/daily-report.ts",
     "research:history:check": "python3 scripts/club-research/test-history-2026-10-18.py",
     "rumble:prices": "node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-prices-v3.ts",
     "rumble:names": "node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-names-en.ts",
