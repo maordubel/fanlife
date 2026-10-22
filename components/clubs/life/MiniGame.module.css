@@ -85,5 +85,64 @@
   .clapCue { transform: none; opacity: 1; }
   .clapCue, .btn, .coin, .beat::after, .dial span, .verdict, .flash, .dud { transition: none; animation: none; }
 }
+
+/* tune: the voice as a wave */
+.wave { inline-size: 100%; block-size: 46px; }
+.wave polyline { fill: none; stroke: var(--l-soft); stroke-width: 2.4; stroke-linejoin: round; }
+.wave[data-clear='true'] polyline { stroke: var(--l-prime); stroke-width: 3; }
+
+/* hands · place: what is in your hands, and the places it can go — each place shows what is in it */
+.hand { display: grid; justify-items: center; gap: 2px; inline-size: 100%; padding: 10px 12px; border: 2px solid var(--l-ink); background: var(--l-ground); }
+.hand small { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--l-soft); }
+.hand b { font-size: 1.15rem; }
+.hand[data-mark='heavy'] b, .hand[data-mark='long'] b { letter-spacing: .02em; text-decoration: underline 3px var(--l-ink); }
+.hand[data-mark='light'] b { font-style: italic; }
+.handLeft { font-size: .8rem; color: var(--l-soft); }
+.targets { display: grid; grid-template-columns: repeat(min(var(--n), 3), 1fr); gap: 8px; inline-size: 100%; }
+.target { display: grid; grid-template-rows: 1fr auto; gap: 6px; min-block-size: 112px; padding: 8px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); cursor: pointer; touch-action: manipulation; text-align: center; }
+.target b { font-size: .95rem; }
+.target:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 2px; }
+.target[data-full='true'] { background: color-mix(in srgb, var(--l-prime) 10%, var(--l-paper)); }
+.target[data-shake='true'] { animation: shake .24s linear; border-style: dashed; }
+.pile { display: flex; flex-direction: column-reverse; justify-content: flex-start; gap: 3px; min-block-size: 64px; }
+.pile i { display: block; padding: 2px 4px; font-style: normal; font-size: .68rem; line-height: 1.2; background: var(--l-ink); color: var(--l-paper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: drop .18s ease-out both; }
+[data-action='stack'] .pile i { block-size: 18px; border-inline: 3px solid var(--l-prime); }
+[data-action='sort'] .pile i, [data-action='tray'] .pile i { border-radius: 10px; }
+
+/* hands · zones: the dirt, the bare cloth, the tilt — each goes as you work it */
+.zones { display: grid; grid-template-columns: repeat(min(var(--n), 5), 1fr); gap: 8px; inline-size: 100%; touch-action: none; user-select: none; -webkit-user-select: none; }
+[data-action='wash'] .zones, .zones[data-action='wash'] { grid-template-columns: 2fr 2fr 1.4fr; }
+.zone { position: relative; display: grid; align-content: end; min-block-size: 96px; padding: 6px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); cursor: pointer; overflow: hidden; touch-action: none; }
+.zone small { position: relative; z-index: 1; font-size: .72rem; font-weight: 700; }
+.zone:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 2px; }
+.zoneArt { position: absolute; inset: 0; transition: opacity .18s, transform .18s; }
+/* wash: a panel under dirt; the dirt thins with every pass and the panel shines */
+.zones[data-action='wash'] .zone { background: linear-gradient(160deg, var(--l-paper) 0 40%, color-mix(in srgb, var(--l-prime) 18%, var(--l-paper)) 41% 60%, var(--l-paper) 61%); }
+.zones[data-action='wash'] .zoneArt { opacity: var(--left); background: radial-gradient(circle at 20% 30%, var(--l-soft) 0 8px, transparent 9px), radial-gradient(circle at 70% 60%, var(--l-soft) 0 11px, transparent 12px), radial-gradient(circle at 45% 80%, var(--l-soft) 0 6px, transparent 7px), color-mix(in srgb, var(--l-soft) 55%, transparent); }
+.zones[data-action='wash'][data-variant='mud'] .zoneArt { background: radial-gradient(circle at 30% 40%, var(--l-ink) 0 10px, transparent 11px), radial-gradient(circle at 75% 70%, var(--l-ink) 0 13px, transparent 14px), color-mix(in srgb, var(--l-ink) 50%, transparent); }
+/* hang: a flag hangs crooked until it is levelled */
+.zones[data-action='hang'] .zoneArt { inset: 14px 16% auto; block-size: 46px; background: var(--l-prime); clip-path: polygon(0 0, 100% 0, 50% 100%); transform: rotate(calc(var(--left) * 28deg)); transform-origin: 50% 0; }
+/* stencil: the letter fills with paint; the slipped one keeps its crooked edge */
+.zones[data-action='stencil'] .zoneArt { inset: 12px 18%; background: var(--l-prime); opacity: calc(1 - var(--left)); clip-path: polygon(10% 0, 90% 0, 90% 22%, 62% 22%, 62% 100%, 38% 100%, 38% 22%, 10% 22%); }
+.zones[data-action='stencil'] .zone[data-crooked='true'] .zoneArt { transform: translate(4px, 3px) rotate(4deg); }
+/* stitch: a dashed line becomes a seam, stitch by stitch, in order */
+.zones[data-action='stitch'] { grid-template-columns: repeat(var(--n), 1fr); gap: 0; }
+.zones[data-action='stitch'] .zone { min-block-size: 72px; border-inline-width: 1px; }
+.zones[data-action='stitch'] .zoneArt { inset: 50% 0 auto; block-size: 0; border-block-start: 3px dashed var(--l-soft); }
+.zones[data-action='stitch'] .zone[data-done='true'] .zoneArt { border-block-start: 4px solid var(--l-prime); }
+.zone[data-done='true'] small::after { content: ' ✓'; }
+
+/* hands · frame: faces in a row; one looks away now and then */
+.photo { display: flex; justify-content: center; gap: 8px; inline-size: 100%; min-block-size: 132px; padding: 10px; border: 2px solid var(--l-ink); background: var(--l-ground); }
+.photo[data-shot='true'] { border-width: 8px; border-color: var(--l-paper); outline: 2px solid var(--l-ink); }
+.face { position: relative; display: grid; justify-items: center; gap: 4px; inline-size: 25%; }
+.face i { inline-size: 46px; block-size: 46px; border-radius: 50%; border: 2px solid var(--l-ink); background: radial-gradient(circle at 35% 42%, var(--l-ink) 0 3px, transparent 4px), radial-gradient(circle at 65% 42%, var(--l-ink) 0 3px, transparent 4px), var(--l-paper); transition: transform .15s; }
+.face[data-away='true'] i { background: radial-gradient(circle at 18% 42%, var(--l-ink) 0 3px, transparent 4px), radial-gradient(circle at 40% 42%, var(--l-ink) 0 3px, transparent 4px), var(--l-paper); transform: rotate(-14deg); }
+.face small { font-size: .7rem; text-align: center; }
+.stepOut { min-block-size: 48px; padding: 4px 8px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); font-size: .75rem; cursor: pointer; }
+
+[data-still='true'] .pile i, [data-still='true'] .zoneArt, [data-still='true'] .target, [data-still='true'] .face i { transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .pile i, .zoneArt, .target, .face i { transition: none; animation: none; } }
+@keyframes drop { from { transform: translateY(-10px); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes pop { from { transform: scale(.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }

@@ -10,6 +10,7 @@
  */
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import type {MiniGame as Game, PlayResult} from '@/lib/life/universal/types'
+import {handsFor, limitMs, plan, score, type HandsPlan} from '@/lib/life/universal/hands'
 import styles from './life.module.css'
 import g from './MiniGame.module.css'
 
@@ -23,6 +24,8 @@ export type MiniGameProps = {
   reduced: boolean
   cue: (name: string) => void
   onDone: (result: PlayResult) => void
+  /** the player's age: a child stacks a smaller delivery than a grown man (hands.ts variations) */
+  age?: number
 }
 type Inner = MiniGameProps & {finish: (r: PlayResult) => void}
 
@@ -119,11 +122,22 @@ function Tune({id, copy, cue, reduced, finish}: Inner) {
       <div className={g.dial} aria-hidden="true" data-clear={clear ? 'true' : 'false'}>
         {Array.from({length: 12}, (_, i) => <span key={i} data-on={strength > i ? 'true' : 'false'} style={{blockSize: `${22 + i * 6}%`}} />)}
       </div>
+      <svg className={g.wave} viewBox="0 0 200 40" aria-hidden="true" data-clear={clear ? 'true' : 'false'}><polyline points={wave(off, flick, reduced)} /></svg>
       <p className={g.status} role="status">{clear ? T(copy, 'game.tune.clear') || 'There. Hold it.' : near ? T(copy, 'game.tune.near') || 'Almost' : T(copy, 'game.tune.static') || 'Static'}</p>
       <input className={g.range} type="range" min={0} max={100} step={1} value={value} aria-label={T(copy, 'game.tune.dial') || 'Dial'}
         onChange={e => { setValue(Number(e.target.value)); cue('tick') }} />
     </div>
   )
+}
+
+/** the voice as a wave: ragged far from the station, a clean sine on it (sight, not only sound) */
+function wave(off: number, flick: number, still: boolean): string {
+  const rough = Math.min(1, off / 30), pts: string[] = []
+  for (let x = 0; x <= 200; x += 5) {
+    const j = still ? 0 : Math.sin(x * 1.7 + flick * 2.3) * Math.cos(x * 0.61 + flick)
+    pts.push(`${x},${(20 + Math.sin(x / 9) * 12 * (1 - rough * 0.6) + j * 14 * rough).toFixed(1)}`)
+  }
+  return pts.join(' ')
 }
 
 /* ───────────── clap ───────────── */
@@ -476,6 +490,189 @@ function Chant({id, copy, cue, reduced, finish}: Inner) {
   )
 }
 
+/* ───────────── hands: the work itself (hands.ts) ───────────── */
+
+/**
+ * One job, done with the hands it needs. The plan (hands.ts) says what is in your hands, where it goes,
+ * what interrupts and what it looks like after; this draws it and counts. The verdict is `score()`:
+ * finished or not, and how many mistakes — never the clock, never the still mode.
+ */
+function Hands({work, reduced, cue, finish}: Inner & {work: HandsPlan}) {
+  const LIMIT = limitMs(work, reduced)
+  const bar = useRef<HTMLSpanElement>(null), began = useRef(0), over = useRef(false)
+  const [mistakes, setMistakes] = useState(0)
+  const [news, setNews] = useState<string | null>(null)
+  const [done, setDone] = useState(false)
+  const live = useLatest({finish, mistakes, cue})
+  const end = useCallback((ok: boolean) => {
+    if (over.current) return
+    over.current = true
+    setDone(ok)
+    live.current.finish(score(ok, live.current.mistakes))
+  }, [live])
+  useEffect(() => {
+    began.current = performance.now()
+    let raf = 0
+    const tick = (now: number) => {
+      const spent = now - began.current
+      setMeter(bar.current, 1 - spent / LIMIT)
+      if (spent >= LIMIT) { end(false); return }
+      if (!over.current) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [LIMIT, end])
+  const slip = useCallback(() => { setMistakes(n => n + 1); live.current.cue('tick'); buzz(10) }, [live])
+  const say = useCallback((t: string) => { setNews(t); live.current.cue('tick') }, [live])
+  const common = {work, reduced, cue, slip, say, end}
+  return (
+    <div className={g.stage} data-kind={work.kind} data-action={work.action}>
+      <Meter fill={bar} copy={{}} />
+      {work.kind === 'place' && <Place {...common} />}
+      {work.kind === 'zones' && <Zones {...common} />}
+      {work.kind === 'frame' && <Frame {...common} />}
+      <p className={g.status} role="status" aria-live="polite">{done ? work.after : news ?? work.variant}</p>
+    </div>
+  )
+}
+
+type Common = {work: HandsPlan; reduced: boolean; cue: (n: string) => void; slip: () => void; say: (t: string) => void; end: (ok: boolean) => void}
+
+/** place: one thing in your hands at a time; tap where it belongs; a wrong place shakes and you keep it */
+function Place({work, cue, slip, say, end}: Common) {
+  const [queue, setQueue] = useState(() => work.items)
+  const [placed, setPlaced] = useState<Record<string, string[]>>({})
+  const [shake, setShake] = useState<string | null>(null)
+  const interrupted = useRef(false)
+  const total = useRef(work.items.length)
+  const hand = queue[0]
+  const put = (to: string) => {
+    if (!hand) return
+    if (hand.to !== to) { slip(); setShake(to); window.setTimeout(() => setShake(null), 260); return }
+    cue('keep'); buzz(8)
+    const rest = queue.slice(1)
+    const next = {...placed, [to]: [...(placed[to] ?? []), hand.label]}
+    setPlaced(next)
+    const share = Object.values(next).reduce((n, l) => n + l.length, 0) / total.current
+    if (!interrupted.current && work.interrupt.item && share >= work.interrupt.at) {
+      interrupted.current = true; total.current += 1
+      say(work.interrupt.say)
+      setQueue([work.interrupt.item, ...rest]); return
+    }
+    setQueue(rest)
+    if (!rest.length) end(true)
+  }
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => { const n = Number(e.key); if (n >= 1 && n <= work.targets.length) { e.preventDefault(); put(work.targets[n - 1]!.id) } }
+    window.addEventListener('keydown', key)
+    return () => window.removeEventListener('keydown', key)
+  })
+  return (
+    <>
+      <div className={g.hand} aria-live="polite" data-mark={hand?.mark ?? ''}>
+        <small>In your hands</small><b>{hand ? hand.label : '—'}</b>
+        <span className={g.handLeft}><bdi>{queue.length}</bdi> to go</span>
+      </div>
+      <div className={g.targets} style={{['--n' as string]: work.targets.length}}>
+        {work.targets.map((t, i) => (
+          <button key={t.id} type="button" className={g.target} data-shake={shake === t.id ? 'true' : 'false'} data-full={(placed[t.id]?.length ?? 0) > 0 ? 'true' : 'false'} {...tapProps(() => put(t.id))} aria-label={`${t.label} (${i + 1})`}>
+            <span className={g.pile} aria-hidden="true">{(placed[t.id] ?? []).map((l, k) => <i key={k} title={l}>{l}</i>)}</span>
+            <b>{t.label}</b>
+          </button>
+        ))}
+      </div>
+    </>
+  )
+}
+
+/** zones: rub, paint, sew or level until each area is done — drag across, tap, or arrows and Space */
+function Zones({work, cue, slip, say, end}: Common) {
+  const [left, setLeft] = useState<Record<string, number>>(() => Object.fromEntries(work.zones.map(z => [z.id, z.need])))
+  const [crooked, setCrooked] = useState<string | null>(null)
+  const last = useRef<Record<string, number>>({}), interrupted = useRef(false)
+  const ordered = work.action === 'stitch'
+  const total = work.zones.reduce((n, z) => n + z.need, 0)
+  const rub = (zid: string, fromDrag = false) => {
+    const now = performance.now()
+    if (fromDrag && now - (last.current[zid] ?? 0) < 140) return
+    last.current[zid] = now
+    setLeft(cur => {
+      if ((cur[zid] ?? 0) <= 0) return cur
+      if (ordered) { const next = work.zones.find(z => (cur[z.id] ?? 0) > 0); if (next && next.id !== zid) { if (!fromDrag) slip(); return cur } }
+      cue('tick'); buzz(5)
+      let nx = {...cur, [zid]: (cur[zid] ?? 1) - 1}
+      const doneShare = 1 - Object.values(nx).reduce((n, v) => n + v, 0) / total
+      if (!interrupted.current && doneShare >= work.interrupt.at && work.interrupt.zone) {
+        interrupted.current = true
+        say(work.interrupt.say)
+        const z = work.zones.find(q => q.id === work.interrupt.zone)!
+        if (work.action === 'stencil') setCrooked(z.id)
+        else nx = {...nx, [z.id]: Math.max(nx[z.id] ?? 0, Math.ceil(z.need / 2))}
+      }
+      if (Object.values(nx).every(v => v <= 0)) window.setTimeout(() => end(true), 0)
+      return nx
+    })
+  }
+  const drag = (e: React.PointerEvent) => {
+    if (e.buttons === 0 && e.pointerType === 'mouse') return
+    const el = document.elementFromPoint(e.clientX, e.clientY)?.closest('[data-zone]') as HTMLElement | null
+    if (el?.dataset.zone) rub(el.dataset.zone, true)
+  }
+  return (
+    <div className={g.zones} data-action={work.action} data-variant={work.variant} onPointerMove={drag} style={{['--n' as string]: work.zones.length}}>
+      {work.zones.map(z => {
+        const v = left[z.id] ?? 0
+        return (
+          <button key={z.id} type="button" className={g.zone} data-zone={z.id} data-done={v <= 0 ? 'true' : 'false'} data-crooked={crooked === z.id ? 'true' : 'false'}
+            style={{['--left' as string]: String(v / z.need)}} aria-label={`${z.label}: ${v <= 0 ? 'done' : `${v} to go`}`} {...tapProps(() => rub(z.id))}>
+            <span className={g.zoneArt} aria-hidden="true" />
+            <small>{z.label}</small>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+/** frame: wait for every face; whoever would rather not be in it steps out; then the shutter */
+function Frame({work, reduced, cue, slip, say, end}: Common) {
+  const [away, setAway] = useState<number>(-1)
+  const [out, setOut] = useState<Record<string, boolean>>({})
+  const [asked, setAsked] = useState(false)
+  const [shot, setShot] = useState(false)
+  const r = useMemo(() => rng(`${work.action}|${work.variant}`), [work])
+  useEffect(() => {
+    const ask = window.setTimeout(() => { setAsked(true); say(work.interrupt.say) }, 2500)
+    const t = window.setInterval(() => setAway(cur => (cur >= 0 ? -1 : Math.floor(r() * work.items.length))), reduced ? 2600 : 1500)
+    return () => { window.clearTimeout(ask); window.clearInterval(t) }
+  }, [r, reduced, say, work])
+  const people = work.items.filter(p => !out[p.id])
+  const press = () => {
+    if (shot) return
+    const lookingAway = away >= 0 && !out[work.items[away]!.id]
+    const unwilling = work.items.some(p => p.to === 'out' && !out[p.id])
+    if (lookingAway || (asked && unwilling)) { slip(); say(lookingAway ? 'Somebody looked away. Again.' : 'He asked to step out first.'); return }
+    if (!asked) { slip(); say('Wait — somebody wants a word first.'); return }
+    cue('keep'); setShot(true); end(true)
+  }
+  return (
+    <>
+      <div className={g.photo} data-shot={shot ? 'true' : 'false'}>
+        {people.map(p => {
+          const i = work.items.indexOf(p)
+          return (
+            <span key={p.id} className={g.face} data-away={away === i ? 'true' : 'false'}>
+              <i aria-hidden="true" /><small>{p.label}</small>
+              {asked && p.to === 'out' && !shot && <button type="button" className={g.stepOut} {...tapProps(() => setOut(o => ({...o, [p.id]: true})))}>Step out</button>}
+            </span>
+          )
+        })}
+      </div>
+      <button type="button" className={g.btn} {...tapProps(press)}>Take it</button>
+    </>
+  )
+}
+
 /* ───────────── the frame ───────────── */
 
 export function MiniGame(props: MiniGameProps) {
@@ -500,17 +697,24 @@ export function MiniGame(props: MiniGameProps) {
   const verdictRef = useRef<PlayResult | null>(null)
   verdictRef.current = verdict
   const inner: Inner = {...props, finish}
-  const help = copy[`game.${game}.help2`] ?? EN[`game.${game}.help2`] ?? copy[`game.${game}.help`] ?? EN[`game.${game}.help`] ?? ''
+  // a job you do with your hands opens its own work, not the shared game it used to borrow (hands.ts)
+  const action = handsFor(props.id)
+  const work = useMemo(() => (action && action !== 'tune' ? plan(action, props.id, props.age ?? 0) : null), [action, props.id, props.age])
+  const help = work ? work.help : copy[`game.${game}.help2`] ?? EN[`game.${game}.help2`] ?? copy[`game.${game}.help`] ?? EN[`game.${game}.help`] ?? ''
   return (
-    <section className={`${styles.game} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-game-title" data-game={game} data-still={reduced ? 'true' : 'false'}>
-      <h2 id="life-game-title" className={styles.cardTitle}>{copy[`game.${game}.title`] ?? EN[`game.${game}.title`]}</h2>
+    <section className={`${styles.game} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-game-title" data-game={game} data-hands={work ? work.action : undefined} data-still={reduced ? 'true' : 'false'}>
+      <h2 id="life-game-title" className={styles.cardTitle}>{work ? work.title : copy[`game.${game}.title`] ?? EN[`game.${game}.title`]}</h2>
       <p className={styles.help}>{help}</p>
-      {game === 'tune' && <Tune {...inner} />}
-      {game === 'clap' && <Clap {...inner} />}
-      {game === 'carry' && <Carry {...inner} />}
-      {game === 'count' && <Count {...inner} />}
-      {game === 'kick' && <Kick {...inner} />}
-      {game === 'chant' && <Chant {...inner} />}
+      {work ? <Hands {...inner} work={work} /> : <>
+        {action === 'tune' ? <Tune {...inner} /> : <>
+          {game === 'tune' && <Tune {...inner} />}
+          {game === 'clap' && <Clap {...inner} />}
+          {game === 'carry' && <Carry {...inner} />}
+          {game === 'count' && <Count {...inner} />}
+          {game === 'kick' && <Kick {...inner} />}
+          {game === 'chant' && <Chant {...inner} />}
+        </>}
+      </>}
       <button type="button" className={`${styles.quiet} min-h-tap`} onClick={leave} data-life="game-skip" hidden={!skip}>{T(copy, 'game.skip')}</button>
       {verdict && (
         <div className={g.verdict} data-result={verdict} role="status" data-life="game-result">
