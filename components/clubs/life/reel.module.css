@@ -19,15 +19,15 @@
 
 .slateLabel { margin: 0 0 10px; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: color-mix(in srgb, var(--l-paper) 70%, transparent); }
 .reelNo { margin: 0; font-size: .85rem; letter-spacing: .2em; color: var(--l-mark); }
-.ageNum { margin: 0; font-family: var(--font-poster), var(--font-frank), serif; font-size: clamp(6rem, 34vw, 11rem); line-height: .9; color: var(--l-paper); font-variant-numeric: tabular-nums; text-shadow: 4px 4px 0 var(--l-prime); }
+.ageNum { margin: 0; font-family: var(--lw-goal, var(--mag-goal)); font-size: clamp(6rem, 34vw, 11rem); line-height: .9; color: var(--l-paper); font-variant-numeric: tabular-nums; text-shadow: 4px 4px 0 var(--l-prime); }
 .ageWord { margin: 0 0 18px; font-size: .9rem; letter-spacing: .4em; text-transform: uppercase; }
 .walker { display: grid; place-items: center; animation: walk 2.3s steps(8) both; }
-.placeName { margin: 0 0 26px; padding: 8px 14px; background: var(--l-prime); color: var(--l-on); display: inline-block; transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--l-paper); font-family: var(--font-poster), var(--font-frank), serif; font-size: clamp(2rem, 9vw, 3.4rem); line-height: 1.05; }
+.placeName { margin: 0 0 26px; padding: 8px 14px; background: var(--l-prime); color: var(--l-on); display: inline-block; transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--l-paper); font-family: var(--lw-brand, var(--mag-brand)); font-weight: 400; font-size: clamp(2rem, 9vw, 3.4rem); line-height: 1.05; }
 .row { display: flex; align-items: flex-end; justify-content: center; gap: 26px; padding-block-end: 6px; border-block-end: 4px solid color-mix(in srgb, var(--l-paper) 45%, transparent); }
 .bounce { animation: bounce .55s ease-in-out infinite alternate; }
 .subtitle { margin: 0; font-size: clamp(1.25rem, 5.4vw, 1.9rem); line-height: 1.35; animation: fadeUp .7s ease both; text-wrap: balance; }
 .titleCard { display: grid; gap: 14px; justify-items: center; }
-.bigTitle { margin: 0; font-family: var(--font-poster), var(--font-frank), serif; font-size: clamp(2.2rem, 10vw, 3.8rem); line-height: 1.02; text-shadow: 3px 3px 0 var(--l-prime); text-wrap: balance; }
+:global(.club-surface) .bigTitle, .bigTitle { text-transform: none; margin: 0; font-family: var(--lw-brand, var(--mag-brand)); font-weight: 400; color: var(--mag-white); -webkit-text-stroke: 3px var(--mag-ink); paint-order: stroke fill; font-size: clamp(2.2rem, 10vw, 3.8rem); line-height: 1.02; text-shadow: 3px 3px 0 var(--l-prime); text-wrap: balance; }
 .keep { animation: bounce .9s ease-in-out infinite alternate; }
 
 @keyframes cut { from { opacity: 0; filter: brightness(2); } to { opacity: 1; filter: none; } }
@@ -50,3 +50,10 @@
 @media (prefers-reduced-motion: reduce) {
   .frame, .push, .grain, .vignette, .walker, .bounce, .keep, .subtitle, .shot, .reel[data-last='true'] .begin { animation: none; }
 }
+
+/* THE WEEKLY (rule 124): the slate is a front page — caps labels, the button a club plate with an ink edge */
+.begin { border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); font-family: var(--mag-display); font-weight: 400; font-size: 1.125rem; text-transform: uppercase; letter-spacing: .02em; }
+.begin:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--mag-ink); }
+.slateLabel, .reelNo, .ageWord { font-family: var(--mag-mono); }
+.placeName { border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.subtitle { font-family: var(--mag-body); }
