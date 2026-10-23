@@ -30,7 +30,7 @@ async function main() {
       frame: {top: 0.84, bottom: -0.72}, player: {h: 4.6, shirt: '#5a7a9a', pants: '#3a4560'}, blocks: room.blocks, clear: room.clear,
       actors: [], spots: Object.entries(room.spots).map(([sid, s]) => ({id: sid, ...s})), exits: Object.entries(room.doors).map(([did, d]) => ({id: did, ...d})),
       made: withIt ? made : []}
-    const drawn = await page.evaluate(c => { const w = window as unknown as {__vxPlay: {enter(c: unknown): boolean}; __artefacts?: {drawn: number}}; w.__artefacts = undefined; w.__vxPlay.enter(c); return w.__artefacts?.drawn ?? 0 }, cfg)
+    const drawn = await page.evaluate(c => { const w = window as unknown as {__vxPlay: {enter(c: unknown): boolean}; __artefacts?: {drawn: number}}; w.__artefacts = undefined; w.__vxPlay.enter(c); return (w.__artefacts as {drawn: number} | undefined)?.drawn ?? 0 }, cfg)
     await page.waitForTimeout(1500)
     const file = `${out}/${club}-${id}-${withIt ? 'with' : 'without'}.png`
     await page.screenshot({path: file, timeout: 180000})

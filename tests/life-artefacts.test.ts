@@ -33,7 +33,7 @@ describe('the fold', () => {
     expect(s.made).toEqual({car: b})
   })
   it('an old save without a single `made` event folds exactly as before', () => {
-    const events: LifeEvent[] = [{t: 'started'}, {t: 'chapter', id: 'F01'}, {t: 'flag', k: 'life:x', v: true}]
+    const events: LifeEvent[] = [{t: 'started', pack: 'p'}, {t: 'chapter', id: 'F01'}, {t: 'flag', k: 'life:x', v: true}]
     const s = fold(events)
     expect(s.made).toBeUndefined()
     expect(worldArtefacts(s)).toEqual([])
