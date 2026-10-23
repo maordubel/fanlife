@@ -482,6 +482,64 @@ export function Tied({subject, p}: {subject: string; p: number}) {
   </>)
 }
 
+/**
+ * Repair: the broken thing before and mended after — `p` is the share of the movements done. A tyre is
+ * levered off, the tube goes in the bowl until the bubbles show the hole, the patch goes on, the tyre goes
+ * back and the gauge's needle climbs to its mark; a chair leg comes out, is glued and tied; a chain goes back.
+ */
+export function Mended({subject, p}: {subject: string; p: number}) {
+  const k = Math.max(0, Math.min(1, p))
+  const floor = <rect x={0} y={140} width={320} height={30} fill={INK.wood} />
+  if (subject === 'chair') {
+    const out = k < 0.2 ? k * 120 : k < 0.7 ? 24 : 24 - (k - 0.7) * 80
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{floor}
+      {/* upside down: the seat on the floor, three legs up and the loose one coming out */}
+      <rect x={100} y={118} width={120} height={22} fill={INK.wood} stroke={I} strokeWidth={2} />
+      {[112, 196].map(x => <rect key={x} x={x} y={40} width={10} height={78} fill={INK.woodDark} stroke={I} strokeWidth={1.4} />)}
+      <rect x={154} y={40} width={10} height={78} fill={INK.woodDark} stroke={I} strokeWidth={1.4} />
+      <g transform={`translate(${Math.max(0, out)} ${-Math.max(0, out) * 0.6})`}>
+        <rect x={208} y={56} width={10} height={62} fill={INK.woodDark} stroke={I} strokeWidth={1.4} transform="rotate(10 213 118)" />
+      </g>
+      {k > 0.45 && k < 0.85 && <path d="M214 116c2 6-2 10 0 14" stroke={PA} strokeWidth={4} strokeLinecap="round" fill="none" />}
+      {k > 0.8 && <path d="M110 70c40 10 70 10 110 0" stroke={P} strokeWidth={3} fill="none" />}
+      <Hand x={k < 0.7 ? 226 + Math.max(0, out) : 168} y={k < 0.7 ? 80 - Math.max(0, out) * 0.6 : 66} />
+    </>)
+  }
+  if (subject === 'chain') {
+    const on = k > 0.55
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{floor}
+      {/* the bike upside down on its saddle: two wheels up, the chain between the cogs */}
+      <circle cx={90} cy={70} r={44} fill="none" stroke={I} strokeWidth={4} transform={`rotate(${k * 300} 90 70)`} strokeDasharray={k >= 1 ? '18 6' : undefined} />
+      <circle cx={232} cy={70} r={44} fill="none" stroke={I} strokeWidth={4} />
+      <path d="M90 70L160 108L232 70M160 108v32" stroke={INK.steel} strokeWidth={6} fill="none" />
+      <circle cx={160} cy={108} r={13} fill="none" stroke={I} strokeWidth={2} />
+      <circle cx={90} cy={70} r={7} fill="none" stroke={I} strokeWidth={2} />
+      <path d={on ? 'M90 63L160 95M90 77L160 121' : `M90 ${77 + 20 * (1 - k)}Q120 ${140 - k * 30} 160 121`} stroke={P} strokeWidth={3} fill="none" strokeDasharray="3 2" />
+      <Hand x={on ? 160 : 120} y={on ? 108 : 120 - k * 20} />
+    </>)
+  }
+  // the tyre: off the rim, into the bowl, patched, back on, pumped to the gauge's mark
+  const tube = k > 0.12 && k < 0.7, bubbles = k > 0.25 && k < 0.5, patched = k > 0.5, pumped = k > 0.75 ? (k - 0.75) / 0.25 : 0
+  return svg(320, 170, <>
+    <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{floor}
+    <circle cx={92} cy={86} r={52} fill="none" stroke={I} strokeWidth={k < 0.12 || k >= 0.7 ? 12 - (k >= 0.7 ? 0 : 6) : 3} />
+    <circle cx={92} cy={86} r={6} fill={I} />
+    {Array.from({length: 8}, (_, i) => <path key={i} d={`M92 86l${Math.cos(i * 0.785) * 46} ${Math.sin(i * 0.785) * 46}`} stroke={INK.steel} strokeWidth={1.2} />)}
+    {/* the bowl of water: the tube goes in and the bubbles show where the air comes out */}
+    <path d="M168 112h96l-8 28h-80z" fill={INK.glass} stroke={I} strokeWidth={2} />
+    {tube && <path d={`M176 ${bubbles ? 116 : 96}q40 -24 80 0`} stroke={INK.woodDark} strokeWidth={10} fill="none" strokeLinecap="round" />}
+    {bubbles && [0, 1, 2].map(i => <circle key={i} cx={214 + i * 4} cy={104 - i * 9} r={3 - i * 0.6} fill="none" stroke={I} strokeWidth={1.2} />)}
+    {tube && patched && <rect x={208} y={84} width={14} height={10} fill={P} stroke={I} strokeWidth={1.4} />}
+    {/* the gauge: the needle climbs to the mark as you pump */}
+    <circle cx={196} cy={36} r={22} fill={PA} stroke={I} strokeWidth={2} />
+    <path d="M210 26l6-4" stroke={P} strokeWidth={4} />
+    <path d={`M196 36l${Math.cos(Math.PI * (1 - pumped * 0.78)) * 16} ${-Math.sin(Math.PI * (1 - pumped * 0.78)) * 16}`} stroke={I} strokeWidth={2.4} strokeLinecap="round" />
+    <Hand x={k < 0.12 ? 92 : k < 0.7 ? 214 : 150} y={k < 0.12 ? 36 : k < 0.7 ? 80 : 120 - pumped * 30} />
+  </>)
+}
+
 /** Compare: one of the pair — a sticker, a ticket, a shirt or a sheet — face up, or face down showing its back */
 export function PairCard({subject, down}: {subject: string; down: boolean}) {
   const face = subject === 'tickets'

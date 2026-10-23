@@ -7,7 +7,7 @@ import {JOB_HANDS, handsFor, limitMs, plan, score, type HandsAction} from '@/lib
 
 const side = readFileSync('lib/life/universal/content/side.ts', 'utf8')
 const jobIds = [...side.matchAll(/\{id: '([a-z-]+)', room: '/g)].map(m => `job-${m[1]}`)
-const ACTIONS = ['stack', 'sort', 'wash', 'tray', 'deliver', 'direct', 'invoice', 'assemble', 'unpack', 'hang', 'stencil', 'stitch', 'frame', 'tune', 'open', 'tie', 'compare'] as const
+const ACTIONS = ['stack', 'sort', 'wash', 'tray', 'deliver', 'direct', 'invoice', 'assemble', 'unpack', 'hang', 'stencil', 'stitch', 'frame', 'tune', 'open', 'tie', 'compare', 'repair'] as const
 /** how much a plan asks of the hands: things to place, rubs to make, movements, pairs to check */
 const effort = (p: ReturnType<typeof plan>) => p.items.length + p.zones.reduce((n, z) => n + z.need, 0) + p.steps.length
 
@@ -84,6 +84,27 @@ describe('LIFE · hands', () => {
     expect(plan('open', 'wardrobe-lend', 40).subject).toBe('wardrobe')
     expect(plan('tie', 'scarf-tie', 8).subject).toBe('scarf')
     expect(plan('compare', 'S07:me', 8).subject).toBe('tickets')
+  })
+
+  it('a repair in the story is done with the hands, not a radio dial', () => {
+    for (const id of ['tyre-fix', 'puncture', 'chair-leg-fix', 'chain-fix']) expect(handsFor(id), id).toBe('repair')
+    expect(handsFor('scarf-mend')).toBe('stitch')
+    const tyre = plan('repair', 'tyre-fix', 12)
+    expect(tyre.kind).toBe('motion'); expect(tyre.subject).toBe('tyre')
+    const words = tyre.steps.map(s => s.label.toLowerCase()).join(' | ')
+    for (const w of ['lever', 'bubbles', 'sand', 'patch', 'rim', 'mark']) expect(words, w).toContain(w)
+    expect(tyre.interrupt.step).toBeTruthy()
+    expect(plan('repair', 'chair-leg-fix', 30).subject).toBe('chair')
+    expect(plan('repair', 'chain-fix', 14).subject).toBe('chain')
+    // short is the same repair, fewer movements — still levered, patched and pumped
+    const short = plan('repair', 'tyre-fix', 12, {scope: 'short'})
+    expect(short.steps.map(s => s.verb)).toEqual(['lever', 'dip', 'patch', 'pump'])
+    // F07 no longer borrows the radio for the tyre
+    const early = readFileSync('lib/life/universal/screenplay/master/early.ts', 'utf8')
+    expect(early).not.toMatch(/hands\('tune', 'tyre-fix'\)/)
+    expect(early).toMatch(/hands\('[a-z]+', 'tyre-fix'\)/)
+    const tsx = readFileSync('components/clubs/life/MiniGame.tsx', 'utf8')
+    expect(tsx).toMatch(/work\.action === 'repair' \? <Mended/)
   })
 
   it('the short version asks clearly less of the same work, and feels the same', () => {

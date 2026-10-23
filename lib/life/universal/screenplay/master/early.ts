@@ -314,7 +314,7 @@ export const MASTER_EARLY: ChapterScript[] = [
           o('mine', t('Offer the only one you love', 'להציע את היחיד שאתה אוהב'), s('child', 'That one? You would give that? Then it is a real offer. I need time.', 'את זה? אתה היית נותן את זה? אז זו הצעה אמיתית. אני צריך זמן.'),
             [flag('life:master:F07:offer', 'dear'), lend('favourite', 'child'), heart(-1), bond('child', 3)]),
           o('help', t('Offer to help with something', 'להציע לעזור במשהו'), s('child', 'My little sister has a hole in her bike tyre. Fix it, and we will talk.', 'לאחות הקטנה שלי יש חור בצמיג של האופניים. תתקן, ונדבר.'),
-            [flag('life:master:F07:offer', 'promise'), bond('child', 2), energy(-5), hands('tune', 'tyre-fix')]),
+            [flag('life:master:F07:offer', 'promise'), bond('child', 2), energy(-5), hands('carry', 'tyre-fix')]),
         ],
       }),
       sc({

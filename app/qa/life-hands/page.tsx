@@ -25,7 +25,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
   if (!reg) notFound()
   const core = await loadClub(clubId)
   const theme = core?.data.theme || clubTheme(reg)
-  const ids = [...Object.keys(JOB_HANDS), 'r-ter-stencil', 'scarf-stitch', 'f20-photo', 'drawer-pull', 'packet-open', 'packet-tear', 'letter-open', 'wardrobe-lend', 'S02:wear', 'scarf-tie', 'laces-tie', 'armband-tie', 'swap-check', 'S07:me', 'S38:check']
+  const ids = [...Object.keys(JOB_HANDS), 'r-ter-stencil', 'scarf-stitch', 'f20-photo', 'drawer-pull', 'packet-open', 'packet-tear', 'letter-open', 'wardrobe-lend', 'S02:wear', 'scarf-tie', 'laces-tie', 'armband-tie', 'swap-check', 'S07:me', 'S38:check', 'tyre-fix', 'chair-leg-fix', 'chain-fix']
   const id = ids.includes(sp.id ?? '') ? sp.id! : ids[0]!
   const age = Number(sp.age ?? 24) || 24
   const scope = sp.scope === 'short' ? 'short' : 'full'
