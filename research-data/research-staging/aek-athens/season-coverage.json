@@ -6,7 +6,7 @@
    {
     "collection": "posts",
     "state": "partial_budget",
-    "pagesRead": 12,
+    "pagesRead": 16,
     "observedTotalDocuments": 762,
     "observedTotalPages": 31,
     "queue": null,
@@ -22,8 +22,8 @@
     "lastError": null
    }
   ],
-  "documents": 305,
-  "historicalRecordsExtracted": 299,
+  "documents": 405,
+  "historicalRecordsExtracted": 399,
   "seasonReviews": [
    "1959/60",
    "1960/61",

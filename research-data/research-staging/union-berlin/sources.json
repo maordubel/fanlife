@@ -8,11 +8,11 @@
   "sourceFamilyId": "immer-unioner",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-10-20",
-  "retrievedAt": "2026-10-20T08:44:10.468Z",
+  "checkedAt": "2026-10-23",
+  "retrievedAt": "2026-10-23T08:43:17.705Z",
   "collected": {
-   "documents": 9,
-   "observedTotalDocuments": 141,
+   "documents": 12,
+   "observedTotalDocuments": 165,
    "state": "partial_budget",
    "parser": null
   },
@@ -29,8 +29,8 @@
   "sourceFamilyId": "union-institutional",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-10-20",
-  "retrievedAt": "2026-10-20T08:44:10.468Z",
+  "checkedAt": "2026-10-23",
+  "retrievedAt": "2026-10-23T08:43:17.705Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -50,8 +50,8 @@
   "sourceFamilyId": "dfb-datacenter",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-10-20",
-  "retrievedAt": "2026-10-20T08:44:10.468Z",
+  "checkedAt": "2026-10-23",
+  "retrievedAt": "2026-10-23T08:43:17.705Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -71,8 +71,8 @@
   "sourceFamilyId": "footballhistory-org",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-10-20",
-  "retrievedAt": "2026-10-20T08:44:10.468Z",
+  "checkedAt": "2026-10-23",
+  "retrievedAt": "2026-10-23T08:43:17.705Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,

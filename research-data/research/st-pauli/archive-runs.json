@@ -210,5 +210,55 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-23T08-42-33-218Z-50c6a3",
+  "clubId": "st-pauli",
+  "startedAt": "2026-10-23T08:42:33.219Z",
+  "finishedAt": "2026-10-23T08:42:59.282Z",
+  "providers": [
+   "millernton",
+   "fcstpauli-museum"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 8,
+   "documentsRead": 155,
+   "newDocuments": 75,
+   "changedDocuments": 9,
+   "unchangedDocuments": 71,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 4
+  },
+  "diagnostics": [
+   {
+    "code": "SOURCE_SCHEMA_CHANGED",
+    "providerId": "millernton",
+    "url": null,
+    "message": "posts: the site now reports 4419 documents (was 4414) — pages may have shifted; duplicates are merged by id."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "millernton",
+    "url": null,
+    "message": "No tested parser for MillernTon yet (millernton-stats-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "fcstpauli-museum",
+    "url": null,
+    "message": "No tested parser for FC St. Pauli Museum yet (stpauli-museum-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

@@ -228,5 +228,63 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-23T08-42-59-680Z-a18865",
+  "clubId": "union-berlin",
+  "startedAt": "2026-10-23T08:42:59.680Z",
+  "finishedAt": "2026-10-23T08:43:17.699Z",
+  "providers": [
+   "immer-unioner",
+   "union-official",
+   "dfb-union",
+   "footballhistory-union"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 6,
+   "documentsRead": 6,
+   "newDocuments": 3,
+   "changedDocuments": 1,
+   "unchangedDocuments": 2,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 6
+  },
+  "diagnostics": [
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "immer-unioner",
+    "url": null,
+    "message": "No tested parser for Immer Unioner yet (immerunioner-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "union-official",
+    "url": null,
+    "message": "No tested parser for 1. FC Union Berlin yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "dfb-union",
+    "url": null,
+    "message": "No tested parser for Deutscher Fußball-Bund yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "footballhistory-union",
+    "url": null,
+    "message": "No tested parser for footballhistory.org yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

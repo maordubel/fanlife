@@ -1,0 +1,64 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-23T08-41-56-985Z-196eb4",
+ "clubId": "hajduk-split",
+ "startedAt": "2026-10-23T08:41:56.985Z",
+ "finishedAt": "2026-10-23T08:42:07.505Z",
+ "providers": [
+  "hajduk-official",
+  "torcida",
+  "wikipedia-hajduk-records",
+  "hajduk-official-history-en"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 5,
+  "documentsRead": 68,
+  "newDocuments": 50,
+  "changedDocuments": 2,
+  "unchangedDocuments": 16,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 1,
+  "budgetLeft": 7
+ },
+ "diagnostics": [
+  {
+   "code": "SOURCE_BLOCKED",
+   "providerId": "hajduk-official",
+   "url": "https://hajduk.hr/povijest/1991-2000",
+   "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "hajduk-official",
+   "url": null,
+   "message": "No tested parser for HNK Hajduk Split yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "torcida",
+   "url": null,
+   "message": "No tested parser for Torcida Split yet (torcida-history-v1 is planned): documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "wikipedia-hajduk-records",
+   "url": null,
+   "message": "No tested parser for Wikipedia yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "hajduk-official-history-en",
+   "url": null,
+   "message": "No tested parser for HNK Hajduk yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

@@ -32,6 +32,14 @@
   "owner": null
  },
  {
+  "id": "blocked-hajduk-official-/povijest/1991-2000",
+  "priority": "P2",
+  "task": "HNK Hajduk Split: /povijest/1991-2000 answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "HNK Hajduk Split: /povijest/1991-2000 חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-hajduk-official-0",
   "priority": "P3",
   "task": "Direct access answered 403 in one sampling and some pages need rendering — check access before writing a parser; a 403 is recorded, never bypassed.",
@@ -50,8 +58,8 @@
  {
   "id": "continue-torcida-posts",
   "priority": "P3",
-  "task": "Torcida Split posts: 6 page(s) read of 27; the scheduled task continues from the checkpoint.",
-  "taskHe": "Torcida Split posts: נקראו 6 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Torcida Split posts: 8 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 8 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },

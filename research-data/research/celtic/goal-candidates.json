@@ -178,6 +178,15 @@
     "bodyHash": "dffae77a98fc846d6e77fffecf88769d3739ea52e64c00ff76cac66617c559b9",
     "fetchedAt": "2026-10-20T08:42:32.368Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1891-2/1891-12-12-celtic-7-1-clyde-glasgow-cup/",
+    "locator": "p21",
+    "quote": "Goals: 1-0 McCallum (20 min.), 2-0 Brady (30 min.), 3-1 McMahon, 4-1 Kelly, 5-1 Madden, 6-1 Campbell, 7-1 Madden.",
+    "bodyHash": "bf25ec611b713ae557d926cf51ccf753fe6d4d5b681fbd6686e2ebe0a5112469",
+    "fetchedAt": "2026-10-23T08:41:33.974Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -185,8 +194,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-20T08:42:32.368Z",
-  "updatedAt": "2026-10-20T08:42:32.368Z"
+  "createdAt": "2026-10-23T08:41:33.974Z",
+  "updatedAt": "2026-10-23T08:41:33.974Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -217,5 +226,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-20T08:42:32.368Z",
   "updatedAt": "2026-10-20T08:42:32.368Z"
+ },
+ {
+  "id": "ga-e80e624d137927ed",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "47",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1891-2/1891-12-12-celtic-7-1-clyde-glasgow-cup/",
+    "locator": "p24",
+    "quote": "Goal: 2-1 Bowie (47 min.),",
+    "bodyHash": "bf25ec611b713ae557d926cf51ccf753fe6d4d5b681fbd6686e2ebe0a5112469",
+    "fetchedAt": "2026-10-23T08:41:33.974Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:41:33.974Z",
+  "updatedAt": "2026-10-23T08:41:33.974Z"
  }
 ]

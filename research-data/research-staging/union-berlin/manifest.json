@@ -1,7 +1,7 @@
 {
  "club": "union-berlin",
- "snapshotAsOf": "2026-10-20",
- "researchVersion": 4,
+ "snapshotAsOf": "2026-10-23",
+ "researchVersion": 5,
  "approvedForProduction": 0,
  "counts": {
   "sources": 4,
@@ -11,11 +11,11 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-10-20T08-43-53-867Z-73996b",
+  "runId": "2026-10-23T08-42-59-680Z-a18865",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
-  "documents": 12,
-  "needsParser": 12
+  "documents": 15,
+  "needsParser": 15
  }
 }

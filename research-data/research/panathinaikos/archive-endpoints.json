@@ -5,7 +5,7 @@
   "state": "schema-changed",
   "status": 200,
   "reason": "rows lack id/link",
-  "checkedAt": "2026-10-20T08:43:02.227Z"
+  "checkedAt": "2026-10-23T08:42:09.349Z"
  },
  "paopedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-20T08:43:07.631Z"
+  "checkedAt": "2026-10-23T08:42:15.142Z"
  },
  "pao-official-history:/en/history/": {
   "endpoint": "/en/history/",
@@ -126,5 +126,21 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-10-20T08:43:16.071Z"
+ },
+ "pao-official-history:/en/historyitem/all-time-foreigners/": {
+  "endpoint": "/en/historyitem/all-time-foreigners/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-23T08:42:16.932Z"
+ },
+ "pao-official-history:/historyitem/all-time-roster/": {
+  "endpoint": "/historyitem/all-time-roster/",
+  "providerId": "pao-official-history",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-23T08:42:20.907Z"
  }
 }
