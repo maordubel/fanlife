@@ -5,6 +5,7 @@
  * is standing where, what can be touched, and which doors lead out. `Runner` plays one
  * conversation. Both are pure; the simulator in the tests uses them as they are.
  */
+import {lookAt} from './cast'
 import {eventsOf, meets, type Directive} from './engine'
 import type {Beat, Branch, Chapter, Choice, DoorGeo, LifeEvent, LifePack, LifeState, Line, Look, Objective, RoomId, Slot, SpotGeo, Talk, Tx, Verb} from './types'
 
@@ -34,7 +35,7 @@ export function sceneOf(pack: LifePack, chapter: Chapter, state: LifeState, room
     if (p.room !== room) continue
     const slot = geo.slots[p.slot], member = pack.cast[p.who]
     if (!slot || !member) continue
-    actors.push({id: p.who, name: nameOf(pack, chapter, p.who), slot, look: {...member.look, ...p.look}, talk: p.talk ?? null, follow: !!p.follow, mark: p.mark !== false && !!p.talk})
+    actors.push({id: p.who, name: nameOf(pack, chapter, p.who), slot, look: {...lookAt(p.who, member.look, chapter.age), ...p.look}, talk: p.talk ?? null, follow: !!p.follow, mark: p.mark !== false && !!p.talk})
   }
   const spots: SceneSpot[] = []
   if (geo) for (const s of chapter.spots) {

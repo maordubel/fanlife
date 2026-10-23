@@ -50,3 +50,40 @@ export function buildCast(manifest: CastManifest | null): Record<CastId, CastMem
   }
   return out
 }
+
+/* ───────────── the people around you grow old with you ───────────── */
+
+/**
+ * The cast is drawn as the supporter first meets them, at about nine (`MET_AT`). From there everybody who stays in his
+ * life ages with him, and looks it: grey hair from 58, reading glasses from 62, a stick from 78. Written exceptions:
+ * - **peers** (the friend, the classmate) are his own age, never younger than drawn;
+ * - **passers-by** (workmate, driver, stranger) are a different person each time they appear and keep their drawn age;
+ * - **the little one** is his own child and is drawn by the scene that has him, not aged from the start;
+ * - **roles** (the old supporter, the kiosk, the steward, the scarf seller) are held by whoever holds them then: they age
+ *   with him but never past `ROLE_CAP` — the old man by the barrier at forty is another old man by the same barrier.
+ */
+export const MET_AT = 9
+const PEERS = new Set<CastId>(['friend', 'rival'])
+const PASSERS = new Set<CastId>(['mate', 'driver', 'stranger', 'child'])
+const ROLES = new Set<CastId>(['elder', 'kiosk', 'steward', 'seller'])
+export const ROLE_CAP = 84
+const GREY = '#8a8a90'
+
+/** how old somebody is when the supporter is `age`, by the rules above */
+export function ageAt(id: CastId, drawn: number | undefined, age: number): number | undefined {
+  if (drawn == null || PASSERS.has(id)) return drawn
+  if (PEERS.has(id)) return Math.max(drawn, age)
+  const grown = drawn + (age - MET_AT)
+  return ROLES.has(id) ? Math.min(Math.max(drawn, grown), Math.max(drawn, ROLE_CAP)) : Math.max(drawn - MET_AT, grown)
+}
+
+/** a cast member's look at the supporter's `age`: the years on the face, the hair, the eyes and the stick */
+export function lookAt(id: CastId, look: Look, age: number): Look {
+  const now = ageAt(id, look.age, age)
+  if (now == null || now === look.age) return look
+  const out: Look = {...look, age: now}
+  if (now >= 58 && (look.age ?? 0) < 58) out.hair = GREY
+  if (now >= 62) out.glasses = true
+  if (now >= 78) out.cane = true
+  return out
+}

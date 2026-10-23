@@ -356,7 +356,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       } else if (d.d === 'play') {
         // a RUSH mission where this club, this age and this site can play it; otherwise the script's own small game, or nothing at all
         const ch = chapterOf(pack, l.state.chapter)
-        const spec = d.mission && ch ? missionSpecFor(rush, d.mission, ch, {time: l.state.time === 'night' ? 'night' : 'day', locale, playId: d.id}) : null
+        const spec = d.mission && ch ? missionSpecFor(rush, d.mission, ch, {time: l.state.time === 'night' ? 'night' : 'day', locale, playId: d.id, cast: pack.cast}) : null
         let result: Result
         if (spec) {
           const mission = await new Promise<MissionResult | null>(res => { missionDone.current = res; dismiss.current = () => res(null); setOverlay({k: 'mission', spec}) })
