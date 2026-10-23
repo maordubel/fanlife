@@ -6,7 +6,7 @@
  * `Life` and the simulator in the test suite holds the very same functions, which is the point:
  * what the tests walk is what the player walks.
  */
-import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, MiniGame, MissionCall, PlayResult, SaveFile, Wear} from './types'
+import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, MiniGame, MissionCall, PlayResult, SaveFile, Wear, WorkScope, CollectionEntry} from './types'
 
 export const SAVE_VERSION = 1
 /** A flag with this prefix is part of the person and outlives the chapter that raised it. */
@@ -14,7 +14,7 @@ export const LIFE_PREFIX = 'life:'
 
 export const emptyState = (): LifeState => ({
   v: 1, started: false, chapter: null, room: null, spawn: 'start', time: 'day',
-  flags: {}, heart: 0, coins: 0, paid: [], envelopes: {}, funds: {}, energy: 100, standing: 10, met: [], seen: [], bonds: {}, keeps: [], wear: 'plain', done: {}, finished: false,
+  flags: {}, heart: 0, coins: 0, paid: [], envelopes: {}, funds: {}, collection: {}, energy: 100, standing: 10, met: [], seen: [], bonds: {}, keeps: [], wear: 'plain', done: {}, finished: false,
 })
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n))
@@ -45,6 +45,23 @@ export function apply(state: LifeState, event: LifeEvent): LifeState {
       return {...state, coins: state.coins - moved, envelopes: {...state.envelopes, [event.id]: env + moved}}
     }
     case 'fund': return {...state, funds: {...state.funds, [event.id]: Math.max(0, (state.funds?.[event.id] ?? 0) + event.by)}}
+    // the collection: a copy given or lent must be at hand; a copy back must be out. Nothing is made from nothing.
+    case 'collected': {
+      const e = entryOf(state, event.item)
+      return event.n > 0 ? withEntry(state, event.item, {...e, n: e.n + event.n}) : state
+    }
+    case 'gave': {
+      const e = entryOf(state, event.item)
+      return atHand(e) > 0 ? withEntry(state, event.item, {...e, n: e.n - 1}) : state
+    }
+    case 'lent': {
+      const e = entryOf(state, event.item)
+      return atHand(e) > 0 ? withEntry(state, event.item, {...e, lent: [...e.lent, event.to]}) : state
+    }
+    case 'returned': {
+      const e = entryOf(state, event.item)
+      return e.lent.length ? withEntry(state, event.item, {...e, lent: e.lent.slice(1)}) : state
+    }
     case 'energy': return {...state, energy: clamp(state.energy + event.by, 0, 100)}
     case 'standing': return {...state, standing: clamp(state.standing + event.by, 0, 100)}
     case 'met': return state.met.includes(event.who) ? state
@@ -56,6 +73,13 @@ export function apply(state: LifeState, event: LifeEvent): LifeState {
     default: return state
   }
 }
+
+const entryOf = (state: LifeState, item: string): CollectionEntry => state.collection?.[item] ?? {n: 0, lent: []}
+const withEntry = (state: LifeState, item: string, e: CollectionEntry): LifeState => ({...state, collection: {...state.collection, [item]: e}})
+/** copies he can put his hand on: owned and not out on loan */
+export const atHand = (e: CollectionEntry | undefined): number => e ? Math.max(0, e.n - e.lent.length) : 0
+/** doubles: copies beyond the first that are at hand */
+export const doublesOf = (state: LifeState, item: string): number => Math.max(0, atHand(state.collection?.[item]) - 1)
 
 export const fold = (events: readonly LifeEvent[]): LifeState => events.reduce(apply, emptyState())
 
@@ -73,13 +97,18 @@ export function meets(state: LifeState, c: Cond | undefined): boolean {
   if ('bond' in c) return (state.bonds[c.bond[0]] ?? 50) >= c.bond[1]
   if ('has' in c) return state.keeps.includes(c.has)
   if ('wears' in c) return WEARS[c.wears].includes(state.wear)
+  if ('fund' in c) return (state.funds?.[c.fund[0]] ?? 0) >= c.fund[1]
+  if ('saved' in c) return (state.envelopes?.[c.saved[0]] ?? 0) >= c.saved[1]
+  if ('owns' in c) return atHand(state.collection?.[c.owns[0]]) >= c.owns[1]
+  // a returning client: the order was paid in a chapter that is not this one
+  if ('worked' in c) return (state.paid ?? []).some(p => p.endsWith(`/${c.worked}`) && !p.startsWith(`${state.chapter}/`))
   return false
 }
 
 /** What the shell has to DO after a conversation, as opposed to what the log has to remember. */
 export type Directive =
   | {d: 'goto'; room: string; spawn: string; time?: 'day' | 'night'}
-  | {d: 'play'; game: MiniGame | null; id: string; mission?: MissionCall; then: Effect[]; good: Effect[]; slip: Effect[]}
+  | {d: 'play'; game: MiniGame | null; id: string; mission?: MissionCall; scope: WorkScope; then: Effect[]; good: Effect[]; slip: Effect[]}
   | {d: 'card'; card: string}
   | {d: 'sound'; cue: string}
   | {d: 'end'; ending: string}
@@ -96,13 +125,19 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
       case 'pay': events.push({t: 'paid', order: orderId(state, fx.order), by: fx.by}); break
       case 'envelope': events.push({t: 'envelope', id: fx.id, by: fx.by}); break
       case 'fund': events.push({t: 'fund', id: fx.id, by: fx.by}); break
+      // out of the envelope and into the till: back to the wallet for a moment, then gone (never more than it held)
+      case 'spend': { const n = Math.min(fx.by, state.envelopes?.[fx.from] ?? 0); if (n > 0) events.push({t: 'envelope', id: fx.from, by: -n}, {t: 'coins', by: -n}); break }
+      case 'collect': events.push({t: 'collected', item: fx.item, n: fx.n ?? 1}); break
+      case 'give': events.push({t: 'gave', item: fx.item, to: fx.to}); break
+      case 'lend': events.push({t: 'lent', item: fx.item, to: fx.to}); break
+      case 'back': events.push({t: 'returned', item: fx.item}); break
       case 'energy': events.push({t: 'energy', by: fx.by}); break
       case 'standing': events.push({t: 'standing', by: fx.by}); break
       case 'keep': events.push({t: 'keep', item: fx.item}); break
       case 'wear': events.push({t: 'wear', what: fx.what}); break
       case 'time': events.push({t: 'time', to: fx.to}); break
       case 'goto': directives.push({d: 'goto', room: fx.room, spawn: fx.spawn, time: fx.time}); break
-      case 'play': directives.push({d: 'play', game: fx.game, id: fx.id, ...(fx.mission ? {mission: fx.mission} : {}), then: fx.then ?? [], good: fx.good ?? [], slip: fx.slip ?? []}); break
+      case 'play': directives.push({d: 'play', game: fx.game, id: fx.id, ...(fx.mission ? {mission: fx.mission} : {}), scope: fx.scope ?? 'full', then: fx.then ?? [], good: fx.good ?? [], slip: fx.slip ?? []}); break
       case 'card': directives.push({d: 'card', card: fx.card}); break
       case 'sound': directives.push({d: 'sound', cue: fx.cue}); break
       case 'end': if (state.chapter) directives.push({d: 'end', ending: fx.ending}); break

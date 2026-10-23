@@ -6,7 +6,7 @@
  * state from which it no longer can. The second is the one that matters: "you cannot get stuck"
  * is a property of the whole graph, not of the path the author had in mind.
  */
-import {afterPlay, apply, eventsOf, fold, openChapter, type Directive} from './engine'
+import {afterPlay, apply, atHand, eventsOf, fold, openChapter, type Directive} from './engine'
 import type {Chapter, Cond, Effect, LifeEvent, LifePack, LifeState} from './types'
 import {beatFlag, beatFor, branchOf, choicesOf, sceneOf, talkOf, throughDoor} from './world'
 
@@ -18,11 +18,12 @@ export type SimResult = {chapter: string; states: number; endings: string[]; stu
  * value: the exact value only ever matters through a comparison, and a hatch, four jobs and a bench would otherwise
  * make the same afternoon a million different ones.
  */
-type Cuts = {coins: number[]; heart: number[]; energy: number[]; standing: number[]; bond: Map<string, number[]>; flags: Set<string>; has: Set<string>}
+type Cuts = {coins: number[]; heart: number[]; energy: number[]; standing: number[]; bond: Map<string, number[]>; flags: Set<string>; has: Set<string>; fund: Map<string, number[]>; saved: Map<string, number[]>; owns: Map<string, number[]>}
 /** The side of a day (jobs, benches, the hatch) is done once and read by nothing but itself: it makes no state of its own. */
 const SIDE_FLAG = /^(job|rest|shop):/
 function cutsOf(chapter: Chapter): Cuts {
-  const cuts: Cuts = {coins: [], heart: [], energy: [], standing: [], bond: new Map(), flags: new Set(), has: new Set()}
+  const cuts: Cuts = {coins: [], heart: [], energy: [], standing: [], bond: new Map(), flags: new Set(), has: new Set(), fund: new Map(), saved: new Map(), owns: new Map()}
+  const cut = (m: Map<string, number[]>, [k, v]: [string, number]) => m.set(k, [...(m.get(k) ?? []), v])
   const walk = (c: Cond | undefined) => {
     if (!c) return
     if ('flag' in c) cuts.flags.add(c.flag)
@@ -30,7 +31,11 @@ function cutsOf(chapter: Chapter): Cuts {
     else if ('is' in c) cuts.flags.add(c.is[0])
     else if ('has' in c) cuts.has.add(c.has)
     else if ('min' in c) cuts[c.min[0]].push(c.min[1])
-    else if ('bond' in c) cuts.bond.set(c.bond[0], [...(cuts.bond.get(c.bond[0]) ?? []), c.bond[1]])
+    else if ('bond' in c) cut(cuts.bond, c.bond)
+    // money held for others, money put aside and copies at hand are only ever read through a threshold, like a gauge
+    else if ('fund' in c) cut(cuts.fund, c.fund)
+    else if ('saved' in c) cut(cuts.saved, c.saved)
+    else if ('owns' in c) cut(cuts.owns, c.owns)
     else if ('all' in c) c.all.forEach(walk)
     else if ('any' in c) c.any.forEach(walk)
     else if ('none' in c) c.none.forEach(walk)
@@ -41,7 +46,9 @@ function cutsOf(chapter: Chapter): Cuts {
   return cuts
 }
 const rank = (cuts: readonly number[], v: number) => cuts.reduce((n, c) => n + (v >= c ? 1 : 0), 0)
-const keyOf = (cuts: Cuts) => (s: LifeState) => JSON.stringify([s.room, s.spawn, s.time, Object.entries(s.flags).filter(([k]) => !SIDE_FLAG.test(k)).sort(([a], [b]) => a < b ? -1 : 1), rank(cuts.coins, s.coins), rank(cuts.energy, s.energy), rank(cuts.standing, s.standing), s.wear, s.keeps.filter(k => !k.startsWith('shop-') || cuts.has.has(k)).sort(), rank(cuts.heart, s.heart), [...cuts.bond].sort(([a], [b]) => a < b ? -1 : 1).map(([who, at]) => [who, rank(at, s.bonds[who] ?? 50)])])
+const ranks = (m: Map<string, number[]>, at: (k: string) => number) => [...m].sort(([a], [b]) => a < b ? -1 : 1).map(([k, cs]) => [k, rank(cs, at(k))])
+const keyOf = (cuts: Cuts) => (s: LifeState) => JSON.stringify([s.room, s.spawn, s.time, Object.entries(s.flags).filter(([k]) => !SIDE_FLAG.test(k)).sort(([a], [b]) => a < b ? -1 : 1), rank(cuts.coins, s.coins), rank(cuts.energy, s.energy), rank(cuts.standing, s.standing), s.wear, s.keeps.filter(k => !k.startsWith('shop-') || cuts.has.has(k)).sort(), rank(cuts.heart, s.heart), [...cuts.bond].sort(([a], [b]) => a < b ? -1 : 1).map(([who, at]) => [who, rank(at, s.bonds[who] ?? 50)]),
+  ranks(cuts.fund, k => s.funds?.[k] ?? 0), ranks(cuts.saved, k => s.envelopes?.[k] ?? 0), ranks(cuts.owns, k => atHand(s.collection?.[k]))])
 
 /** `left`: the player closed the box before the conversation had finished (what was already applied stays applied). */
 type Outcome = {state: LifeState; ended: string | null; left?: boolean}

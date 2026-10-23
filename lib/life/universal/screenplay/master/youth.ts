@@ -1,7 +1,10 @@
 import type {ChapterScript} from '../types'
 import {chapter, o, s, sc, t} from '../write'
-import {bond, coins, energy, flag, heart, is} from '../types'
+import {bond, coins, energy, envelope, flag, heart, is, spend} from '../types'
 import type {Effect} from '../../types'
+
+/** F10: the fare he puts aside when he says he is going; the cost on the road is paid out of that envelope, or not at all */
+const TRIP_FARE = 4
 
 /**
  * Master screenplay F09–F13 (bible §16, 15.10.2026): the years of choosing your own place, your first journey,
@@ -116,9 +119,9 @@ export const MASTER_YOUTH: ChapterScript[] = [
         action: [s(null, 'A bus pulls out behind you. It is not yours, and still you feel it leave.', 'אוטובוס יוצא מאחוריך. הוא לא שלך, ובכל זאת אתה מרגיש אותו עוזב.')],
         options: [
           o('keep', t('Keep the seat for the friend you promised', 'לשמור את המקום לחבר שהבטחת לו'), s('friend', 'You told me first and you kept it for me. Someone else is still standing there. I know.', 'אמרת לי ראשון ושמרת לי. מישהו אחר עדיין עומד שם. אני יודע.'),
-            [flag('life:master:F10:seat', 'kept'), flag('life:inclin', 'comm'), bond('friend', 3)]),
+            [flag('life:master:F10:seat', 'kept'), flag('life:inclin', 'comm'), bond('friend', 3), envelope('trip', TRIP_FARE)]),
           o('add', t('Ask to bring the new person too', 'לבקש לצרף גם את האדם החדש'), s('friend', 'We can try. It depends on who agrees, and it is not magic. Go ask the driver.', 'אפשר לנסות. זה תלוי במי שמסכים, וזה לא קסם. לך תשאל את הנהג.'),
-            [flag('life:master:F10:seat', 'added'), flag('life:inclin', 'way'), bond('friend', 1), bond('driver', 2)]),
+            [flag('life:master:F10:seat', 'added'), flag('life:inclin', 'way'), bond('friend', 1), bond('driver', 2), envelope('trip', TRIP_FARE)]),
           o('stay', t('Stay and build an evening at home', 'להישאר ולבנות ערב במקום'), s('friend', 'You really want to do the local thing. Good. Someone has to tell me how it went.', 'אתה באמת רוצה לעשות את הדבר המקומי. טוב. מישהו צריך לספר לי איך היה.'),
             [flag('life:master:F10:seat', 'stayed'), flag('life:inclin', 'comm'), heart(1)]),
         ],
@@ -138,12 +141,12 @@ export const MASTER_YOUTH: ChapterScript[] = [
         task: t('Deal with the cost', 'להתמודד עם העלות'),
         action: [s(null, 'The sign says nothing useful. Signs usually do not, at moments like this.', 'השלט לא אומר שום דבר שימושי. שלטים בדרך כלל לא, ברגעים כאלה.')],
         options: [
-          o('pay', t('Pay from what is free', 'לשלם ממה שפנוי'), s('friend', 'Then it will not be in your hand later. I know. I did not say it was free.', 'אז זה לא יהיה לך ביד אחר כך. אני יודע. לא אמרתי שזה בחינם.'),
-            [flag('life:master:F10:cost', 'paid'), coins(-4), bond('friend', 2)]),
+          o('pay', t('Pay from what is free', 'לשלם ממה שפנוי'), s('friend', 'Out of the envelope you put aside for this. Then it will not be in your hand later. I know. I did not say it was free.', 'מהמעטפה ששמת בצד בשביל זה. אז זה לא יהיה לך ביד אחר כך. אני יודע. לא אמרתי שזה בחינם.'),
+            [flag('life:master:F10:cost', 'paid'), spend('trip', TRIP_FARE), bond('friend', 2)], {when: {saved: ['trip', TRIP_FARE]}}),
           o('loan', t('Ask for a clear loan', 'לבקש הלוואה ברורה'), s('friend', 'Three coins, from me, back before the next time. Say it out loud so we both remember.', 'שלושה מטבעות, ממני, בחזרה לפני הפעם הבאה. תגיד בקול כדי שנזכור שנינו.'),
-            [flag('life:master:F10:cost', 'loan'), flag('life:master:F10:lender', 'friend'), flag('life:master:F10:owed', 3), coins(3), bond('friend', 1)]),
+            [flag('life:master:F10:cost', 'loan'), flag('life:master:F10:lender', 'friend'), flag('life:master:F10:owed', 3), coins(3), envelope('trip', -TRIP_FARE), bond('friend', 1)]),
           o('change', t('Change the way before you promise more', 'לשנות את הדרך לפני שמבטיחים עוד'), s('friend', 'You will be late. Or you will come later and from further away. It still counts. Mostly.', 'תאחר. או שתגיע מאוחר יותר ומרחוק יותר. זה עדיין נחשב. בעיקר.'),
-            [flag('life:master:F10:cost', 'changed'), energy(5)]),
+            [flag('life:master:F10:cost', 'changed'), envelope('trip', -TRIP_FARE), energy(5)]),
         ],
       }),
       sc({
@@ -161,9 +164,9 @@ export const MASTER_YOUTH: ChapterScript[] = [
         action: [s(null, 'It is not a big thing to carry. The not-big things are the ones that stay.', 'זה לא דבר גדול לשאת. הדברים שאינם גדולים הם אלה שנשארים.')],
         options: [
           o('buy', t('Buy something from the road, if there is one', 'לקנות משהו מהדרך אם יש'), s('seller', 'Programme, scarf, a pin. Its story starts with this trip. Nothing older, nothing borrowed.', 'תוכנייה, צעיף, סיכה. הסיפור שלו מתחיל בנסיעה הזאת. שום דבר ישן, שום דבר מושאל.'),
-            [flag('life:master:F10:back', 'item'), flag('life:master:F10:item', 'road'), coins(-2), heart(1)]),
+            [flag('life:master:F10:back', 'item'), flag('life:master:F10:item', 'road'), coins(-2), heart(1)], {when: {min: ['coins', 2]}}),
           o('return', t('Give back part of the favour', 'להחזיר חלק מהטובה'), s('seller', 'Only if there is something to give, and only if they take it. Some people will not.', 'רק אם יש מה לתת, ורק אם הם לוקחים. יש אנשים שלא.'),
-            [flag('life:master:F10:back', 'returned'), coins(-2), bond('friend', 3)]),
+            [flag('life:master:F10:back', 'returned'), coins(-2), bond('friend', 3)], {when: {min: ['coins', 2]}}),
           o('story', t('Bring a story instead of an object', 'להביא סיפור במקום חפץ'), s('seller', 'It does not need buying and it does not get lost on the way home. It gets better, usually.', 'לא צריך לקנות אותו והוא לא הולך לאיבוד בדרך הביתה. הוא משתפר, בדרך כלל.'),
             [flag('life:master:F10:back', 'story'), flag('life:inclin', 'story'), heart(2)]),
         ],

@@ -1,5 +1,5 @@
 import {chapter, o, s, sc, t} from './write'
-import {bond, coins, energy, flag, heart, is, standing} from './types'
+import {bond, coins, energy, envelope, flag, heart, is, standing} from './types'
 
 /**
  * Ages six to sixteen. A flat, a street, a schoolyard, a pitch, a bus.
@@ -117,7 +117,7 @@ export const CHILDHOOD = [
           // the crates START the money, they do not finish it: six short is more than one afternoon. The coins go in the tin,
           // the shirt stays in the window, and F03 (a year on) is where it is counted again, worked for and bought — asked once.
           o('earned', t('Start on the crates: the kiosk pays into your tin', 'להתחיל עם הארגזים: הקיוסק משלם לקופסה'), [s('kiosk', 'Crates first. Shirt second. Keep the order.', 'קודם ארגזים. אחר כך חולצה. תשמור על הסדר.'), s('kiosk', 'Four today, into the tin. The window is patient. So am I.', 'ארבעה היום, לקופסה. החלון סבלני. גם אני.')],
-            [flag('life:shirt:origin', 'saving'), flag('life:shirt:saving'), flag('life:shirt:paid:c2', 'crates'), coins(4), standing(2), energy(-10)], {mission: {template: 'bottle-run'}}),
+            [flag('life:shirt:origin', 'saving'), flag('life:shirt:saving'), flag('life:shirt:paid:c2', 'crates'), coins(4), envelope('shirt', 4), standing(2), energy(-10)], {mission: {template: 'bottle-run'}}),
           o('gift', t('Accept Mum’s quiet help', 'לקבל את העזרה השקטה של אמא'), s('mum', 'Count again. Slowly this time.', 'תספור שוב. הפעם לאט.'), [flag('life:shirt:origin', 'gift'), bond('mum', 3)]),
           o('handed', t('Take Dad’s old shirt', 'לקחת את הישנה של אבא'), s('dad', 'The sleeves know the way back. Roll them.', 'השרוולים מכירים את הדרך חזרה. תקפל אותם.'), [flag('life:shirt:origin', 'handed'), bond('dad', 4), heart(2)]),
         ],

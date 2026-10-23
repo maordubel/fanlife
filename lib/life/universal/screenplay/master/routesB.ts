@@ -1,6 +1,9 @@
 import {chapter, o, s, sc, t} from '../write'
-import {bond, coins, energy, flag, heart, is} from '../types'
+import {bond, coins, energy, flag, fund, heart, is} from '../types'
 import type {ChapterScript} from '../types'
+
+/** R-COMM: what the regulars have put in the tin by the time it is opened. The tin is theirs, never his wallet. */
+const COMM_TIN = 5
 
 /**
  * Master screenplay route chapters R-STORY, R-COMM, R-ABROAD, R-DIST, R-OWNER (bible §17, 15.10.2026).
@@ -116,14 +119,14 @@ export const MASTER_ROUTES_B: ChapterScript[] = [
           s(null, 'The hours here are only the game\'s own, and nobody outside it will ever check them.', 'השעות כאן הן של המשחק בלבד, ואף אחד מבחוץ לא יבדוק אותן.'),
         ],
         task: t('Say what part you take', 'לומר איזה חלק אתה לוקח'),
-        action: [s(null, 'The board by the door has more names scratched off than written on.', 'על הלוח ליד הדלת יש יותר שמות שנמחקו מאשר כתובים.')],
+        action: [s(null, 'The board by the door has more names scratched off than written on.', 'על הלוח ליד הדלת יש יותר שמות שנמחקו מאשר כתובים.'), s(null, 'Under it, a tin. The regulars drop in what they can; it is not yours, and you are the one who will carry it.', 'מתחתיו, קופסת פח. הוותיקים זורקים פנימה מה שאפשר; היא לא שלך, ואתה זה שיישא אותה.')],
         options: [
           o('key', t('Hold the key and the kit on loan', 'להחזיק מפתח וציוד בהשאלה'), s('elder', 'On loan. It goes back to me, or to whoever I say. Say it so we both remember.', 'בהשאלה. זה חוזר אליי, או למי שאגיד. תגיד את זה שנזכור שניינו.'),
-            [flag('life:master:R-COMM:opening', 'key'), flag('life:master:R-COMM:key', 'borrowed'), bond('elder', 2), heart(1)]),
+            [flag('life:master:R-COMM:opening', 'key'), flag('life:master:R-COMM:key', 'borrowed'), bond('elder', 2), heart(1), fund('comm-tin', COMM_TIN)]),
           o('help', t('Be there and help, without a key', 'להיות שם ולעזור בלי מפתח'), s('elder', 'Chairs, kettle, who comes in first. A smaller job, and every bit as real.', 'כיסאות, קומקום, מי נכנס ראשון. תפקיד קטן יותר, ואמיתי באותה מידה.'),
-            [flag('life:master:R-COMM:opening', 'helper'), bond('elder', 1), energy(-5)]),
+            [flag('life:master:R-COMM:opening', 'helper'), bond('elder', 1), energy(-5), fund('comm-tin', COMM_TIN)]),
           o('friend', t('Come only as a friend', 'לבוא רק כחבר'), s('elder', 'Nobody asked you to have a title. The door is not closed to people without one.', 'אף אחד לא ביקש ממך תפקיד. הדלת לא סגורה בפני מי שאין לו.'),
-            [flag('life:master:R-COMM:opening', 'friend'), bond('elder', 3)]),
+            [flag('life:master:R-COMM:opening', 'friend'), bond('elder', 3), fund('comm-tin', COMM_TIN)]),
         ],
       }),
       sc({
@@ -159,12 +162,12 @@ export const MASTER_ROUTES_B: ChapterScript[] = [
         task: t('Decide what the tin may be used for', 'להחליט למה מותר להשתמש בקופסה'),
         action: [s(null, 'The lid is stiff. It does not want to be opened by one person alone.', 'המכסה קשה. הוא לא רוצה להיפתח בידי אדם אחד לבד.')],
         options: [
-          o('agreed', t('Spend it as agreed', 'להוציא לפי הייעוד שסוכם'), s('friend', 'Kettle and chairs. The roof gets a bucket for now. It is a bucket, not a solution, but it is honest.', 'קומקום וכיסאות. לגג יש דלי בינתיים. דלי, לא פתרון, אבל כן.'),
-            [flag('life:master:R-COMM:tin', 'as-agreed'), bond('friend', 1), coins(-1)]),
+          o('agreed', t('Spend it as agreed', 'להוציא לפי הייעוד שסוכם'), s('friend', 'Kettle and chairs, out of the tin, to the last coin. The roof gets a bucket for now. It is a bucket, not a solution, but it is honest.', 'קומקום וכיסאות, מהקופסה, עד המטבע האחרון. לגג יש דלי בינתיים. דלי, לא פתרון, אבל כן.'),
+            [flag('life:master:R-COMM:tin', 'as-agreed'), bond('friend', 1), fund('comm-tin', -COMM_TIN)], {when: {fund: ['comm-tin', COMM_TIN]}}),
           o('ask', t('Ask for a change and wait for the decision', 'לבקש שינוי ולהמתין להחלטה'), s('friend', 'Then we ask them all. It will take a week. Nobody gets to say yes afterwards if they did not say it now.', 'אז נשאל את כולם. זה ייקח שבוע. אף אחד לא יגיד כן בדיעבד אם לא אמר עכשיו.'),
             [flag('life:master:R-COMM:tin', 'asked'), flag('life:master:R-COMM:voice', 'asked-all'), energy(-5), bond('friend', 2)]),
-          o('own', t('Give from your own pocket, or drop part of the plan', 'לתרום ממה שלך או לוותר על חלק מהתוכנית'), s('friend', 'This one is on you alone. Nobody else has to carry it, and nobody should feel they owe you.', 'את זה אתה לבד. אף אחד אחר לא חייב לשאת, ואף אחד לא צריך להרגיש שהוא חייב לך.'),
-            [flag('life:master:R-COMM:tin', 'own-pocket'), coins(-4), heart(2)]),
+          o('own', t('Give from your own pocket, or drop part of the plan', 'לתרום ממה שלך או לוותר על חלק מהתוכנית'), s('friend', 'Four of yours into the tin, under a line of its own: the roof. This one is on you alone. Nobody else has to carry it, and nobody should feel they owe you.', 'ארבעה משלך לקופסה, בשורה משלה: הגג. את זה אתה לבד. אף אחד אחר לא חייב לשאת, ואף אחד לא צריך להרגיש שהוא חייב לך.'),
+            [flag('life:master:R-COMM:tin', 'own-pocket'), coins(-4), fund('comm-tin', 4), heart(2)], {when: {min: ['coins', 4]}}),
         ],
       }),
       sc({
@@ -273,7 +276,7 @@ export const MASTER_ROUTES_B: ChapterScript[] = [
           o('life', t('Show him the life you built', 'להראות לו את החיים שבנית'), s('elder', 'It is a home. A real one. And on the wall is the club, as if it just moved in with you.', 'זה בית. אמיתי. ועל הקיר המועדון, כאילו פשוט עבר לגור איתך.'),
             [flag('life:master:R-ABROAD:welcome', 'showed-life'), heart(2), bond('elder', 2)]),
           o('game', t('Go out together to a match that suits the plan', 'לצאת יחד למשחק מאושר שמתאים לתוכנית'), s('elder', 'A match that is actually possible from here, with tickets that actually exist. We do not invent a trip nobody can make.', 'משחק שבאמת אפשרי מכאן, עם כרטיסים שבאמת קיימים. לא ממציאים נסיעה שאף אחד לא יכול לעשות.'),
-            [flag('life:master:R-ABROAD:welcome', 'went-out'), energy(-10), coins(-3), bond('elder', 3)], {mission: {template: 'europe-night'}}),
+            [flag('life:master:R-ABROAD:welcome', 'went-out'), energy(-10), coins(-3), bond('elder', 3)], {when: {min: ['coins', 3]}, mission: {template: 'europe-night'}}),
           o('stay', t('Stay in with him', 'להישאר בבית איתו'), s('elder', 'In, then. Soup, the colours on the wall, no ticket. That is the nearest we have been in years.', 'פנימה, אם כך. מרק, הצבעים על הקיר, בלי כרטיס. זו הפעם הכי קרובה שהיינו בשנים.'),
             [flag('life:master:R-ABROAD:welcome', 'stayed-in'), bond('elder', 2), heart(1)]),
         ],
@@ -409,7 +412,7 @@ export const MASTER_ROUTES_B: ChapterScript[] = [
         action: [s(null, 'The tools on the wall are drawn in outline, each with its owner\'s name pencilled beside it.', 'הכלים על הקיר מצוירים בקווי מתאר, ליד כל אחד שם הבעלים בעיפרון.')],
         options: [
           o('budget', t('Build a real budget and team inside the simulation', 'לבנות תקציב וצוות אמיתיים בתוך הסימולציה'), s('mate', 'Control for as long as the money covers it and the people who agreed stay agreed. A thin kind of control, but yours.', 'שליטה כל עוד הכסף מכסה ואלה שהסכימו נשארים מסכימים. שליטה דקה, אבל שלך.'),
-            [flag('life:master:R-OWNER:team', 'own-budget'), coins(-3), energy(-10), bond('mate', 2)]),
+            [flag('life:master:R-OWNER:team', 'own-budget'), coins(-3), energy(-10), bond('mate', 2)], {when: {min: ['coins', 3]}}),
           o('partner', t('Bring in a partner and keep less control', 'להכניס שותף ולהקטין שליטה'), s('mate', 'More can be done, and you decide less alone. When two people hold a lever, one of them sometimes lets go early.', 'אפשר לעשות יותר, ואתה מחליט פחות לבד. כששני אנשים מחזיקים מנוף, לפעמים אחד מהם עוזב מוקדם.'),
             [flag('life:master:R-OWNER:team', 'partner'), bond('mate', 3), heart(1)]),
           o('stop', t('Stop the window', 'לעצור את החלון'), s('mate', 'Stop it, then. The attempt stays on the record, and nobody asks you to own what you did not take.', 'לעצור, אם כך. הניסיון נשאר בתיעוד, ואף אחד לא מבקש ממך להחזיק במה שלא לקחת.'),
@@ -431,7 +434,7 @@ export const MASTER_ROUTES_B: ChapterScript[] = [
         action: [s(null, 'The shutter goes up with a sound like a held breath finally let out.', 'התריס עולה בקול של נשימה עצורה שסוף סוף משתחררת.')],
         options: [
           o('service', t('Invest in a project that serves people', 'להשקיע בפרויקט שמשרת אנשים'), s('mate', 'The neighbours will come for it. And the thing you did not spend on waits, and some of it will not wait long.', 'השכנים יבואו בשבילו. ומה שלא הוצאת עליו מחכה, וחלקו לא יחכה הרבה.'),
-            [flag('life:master:R-OWNER:monday', 'service'), flag('life:master:R-OWNER:fiction-result', 'service-in-what-if'), coins(-4), heart(2)]),
+            [flag('life:master:R-OWNER:monday', 'service'), flag('life:master:R-OWNER:fiction-result', 'service-in-what-if'), coins(-4), heart(2)], {when: {min: ['coins', 4]}}),
           o('reserve', t('Keep a reserve and slow down', 'לשמור עתודה ולהאט'), s('mate', 'Slower. People wait outside, and they grumble. But there is room for the bad Tuesday that is surely coming.', 'לאט יותר. אנשים מחכים בחוץ, ומתלוננים. אבל יש מקום ליום שלישי הרע שוודאי יגיע.'),
             [flag('life:master:R-OWNER:monday', 'reserve'), flag('life:master:R-OWNER:fiction-result', 'reserve-in-what-if'), coins(2), energy(5)]),
           o('delegate', t('Hand authority to the management', 'להעביר סמכות להנהלה'), s('mate', 'They will make decisions. Some of them you would not have made, and you will hear about them last.', 'הם יקבלו החלטות. חלקן לא היית מקבל, ותשמע עליהן אחרון.'),

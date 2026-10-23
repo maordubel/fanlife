@@ -138,7 +138,7 @@ export const MASTER_LATE: ChapterScript[] = [
         action: [s(null, 'The board changes a letter at a time, the way a patient person counts.', 'הלוח משתנה אות אחרי אות, כמו אדם סבלני שסופר.')],
         options: [
           o('fit', t('Adjust the plan and pay what it costs', 'להתאים את התוכנית ולשלם את המחיר'), s('friend', 'It will cost you an afternoon, or a little money. I will not hide that.', 'זה יעלה לך אחר צהריים, או קצת כסף. לא אסתיר.'),
-            [flag('life:master:F27:plan', 'adjusted'), coins(-3), energy(-8), bond('friend', 2)]),
+            [flag('life:master:F27:plan', 'adjusted'), coins(-3), energy(-8), bond('friend', 2)], {when: {min: ['coins', 3]}}),
           o('share', t('Ask for a partner, or hand a part over', 'לבקש שותף או למסור חלק'), s('child', 'I can take that part. If you tell me what it is for.', 'אני יכול לקחת את החלק הזה. אם תגיד לי בשביל מה זה.'),
             [flag('life:master:F27:plan', 'shared'), bond('friend', 3), heart(1)]),
           o('small', t('Promise less, so you can keep it', 'להבטיח פחות, כדי שתוכל לעמוד בזה'), s('friend', 'A smaller promise, kept. Better than a big one that vanishes at the door.', 'הבטחה קטנה שמתקיימת. עדיפה על גדולה שנעלמת בכניסה.'),

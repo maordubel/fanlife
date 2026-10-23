@@ -32,7 +32,7 @@
  * is offered only in a room the chapter already uses, only on a spot the chapter does not, and only
  * at the ages it makes sense for. Nothing here is a fact about history.
  */
-import type {Chapter, Cond, Effect, Keepsake, MiniGame, Placement, SpotUse, Talk, Verb} from '../types'
+import type {Chapter, Choice, Cond, Effect, Keepsake, MiniGame, Placement, SpotUse, Talk, Verb} from '../types'
 import {bond, flag, heart, keep, say, tell} from './kit'
 
 /** child (under 13) · teen (13–19) · adult */
@@ -56,6 +56,10 @@ type JobDef = {
   slip: string
   standing: number
   heart?: number
+  /** the job needs something in hand to be offered at all (a double to swap) */
+  needs?: Cond
+  /** what a good go also does, besides the pay (the swap: a double out, two new ones in) */
+  gives?: Effect[]
 }
 
 const stage = (age: number): 0 | 1 | 2 => (age < 13 ? 0 : age < 20 ? 1 : 2)
@@ -63,6 +67,25 @@ const stage = (age: number): 0 | 1 | 2 => (age < 13 ? 0 : age < 20 ? 1 : 2)
 export const ENERGY_COST = 25
 const BONDS = new Set(['kiosk', 'friend', 'boss', 'elder', 'mum', 'dad', 'steward'])
 const MAX_JOBS = 4, MAX_JOBS_PER_ROOM = 2
+/**
+ * A returning client: somebody he has worked for in an earlier chapter remembers it, and asks for something a little
+ * different this time. Only jobs that pay keep a record (`paid` holds the order), so only they have a second ask.
+ */
+const AGAIN: Record<string, string> = {
+  crates: 'You stacked them right last time, heavy at the bottom. Today the glass ones as well — the delivery man counts those.',
+  bottles: 'Back again? Last time you found the deposit on every one. Today the crate behind the bins too; nobody has dared.',
+  carwash: 'You did the windows from the right side last time. Today the inside as well: crumbs, a map, and something under the seat.',
+  flags: 'You straightened them last time and they stayed straight a week. Today the big one on the corner, and it needs two knots.',
+  radio: 'The one you fixed still talks. My brother has one that only hums. Same deal: get a voice out of it.',
+  tins: 'You did my tins once and I did not check, and I was right not to. Today the shelf behind them as well.',
+  table: 'You laid it last time without a fork on the floor. Today there are guests: two more plates, and the good glasses.',
+  drawer: 'You counted it last time and I believed you. Count it again, and the jar on top of the fridge this time too.',
+  queue: 'You held the board last time and nobody went through the wrong gate. Today the side gate as well: it is the one they try.',
+  leaflets: 'You knew who was going last time. The times changed this morning: say the new one out loud as you hand them out.',
+  invoice: 'You did the last batch clean. There are more this month, and one of them has to go out tonight.',
+  boxes: 'You opened the first one at last. Two more are under the bed, and one says "fragile" in your mother\'s writing.',
+}
+
 const REST_FIRST = 'You are running on empty. Sit down somewhere — a bench, a table, something to eat — then come back to this.'
 
 /** In the order they are offered: a chapter gets the first few that fit it. */
@@ -113,7 +136,8 @@ const JOBS: readonly JobDef[] = [
     slip: 'You counted it twice and got two answers. She takes the tin back and says the average is probably right.'},
   // kicks, a chant and a swap are done for the love of it: they give heart and standing, never coins (spec §2)
   {id: 'swap', room: 'bedroom', spot: 'desk', label: 'Swap the doubles', verb: 'use', game: 'count', from: 6, to: 13, pay: [0, 0, 0], cost: 15, giver: 'friend', standing: 1, heart: 1,
-    ask: 'You have six of the same one. Somebody out there has none. That is a market, whatever anyone says.',
+    needs: {owns: ['doubles', 1]}, gives: [{e: 'give', item: 'doubles', to: 'friend'}, {e: 'collect', item: 'stickers', n: 2}],
+    ask: 'You have a double. Somebody out there has none of it. That is a market, whatever anyone says.',
     done: 'Swapped for two you wanted and one you will pretend you wanted. A fair day.',
     slip: 'You gave away the one you meant to keep. He is delighted. You are learning something about markets.'},
   {id: 'queue', room: 'gate', spot: 'board', label: 'Hold the queue board', verb: 'use', game: 'carry', from: 15, to: 70, pay: [0, 4, 7], cost: 25, giver: 'steward', standing: 2,
@@ -191,7 +215,7 @@ const SHOPS: readonly ShopDef[] = [
       keepsake: {id: 'shop-patch', name: 'A woven patch', note: 'Sold to you because the hatch had seen you at the ground more than once.'}},
   ]},
   {id: 'stall', at: [['gate', 'flag'], ['gate', 'board'], ['route', 'sign'], ['route', 'flags'], ['street', 'car'], ['bus-station', 'board'], ['tunnel', 'sign']], label: 'The match-day stall', giver: 'stranger', hello: 'Scarves, stickers, a few good seats for people I know. Take your time; I am not going anywhere until the whistle.', goods: [
-    {id: 'stickers', label: 'A pack of stickers', price: [4, 5, 6], once: 'life:stickers', gives: [heart(1), {e: 'standing', by: 1}, keep('shop-stickers'), flag('life:stickers')],
+    {id: 'stickers', label: 'A pack of stickers', price: [4, 5, 6], once: 'life:stickers', gives: [heart(1), {e: 'standing', by: 1}, keep('shop-stickers'), {e: 'collect', item: 'stickers', n: 4}, {e: 'collect', item: 'doubles', n: 1}, flag('life:stickers')],
       say: 'Five in a packet and you always want the one you do not get. That is the business.',
       keepsake: {id: 'shop-stickers', name: 'A pack of stickers', note: 'Five in a packet. The one you wanted is not in it.'}},
     {id: 'ticket', label: 'A ticket for the good side', price: [5, 8, 12], once: 'life:ticket', gives: [heart(4), {e: 'standing', by: 2}, keep('shop-ticket'), flag('life:ticket')],
@@ -269,7 +293,7 @@ export function sideLife(chapter: Chapter): Chapter {
       const slipWage = wage > 0 ? Math.max(1, Math.floor(wage / 3)) : 0
       return {
         tired: [{e: 'energy', by: -cost}, flag(key)],
-        good: [...(wage > 0 ? [{e: 'pay', order, by: wage} as Effect, {e: 'sound', cue: 'coin'} as Effect] : []), ...(j.standing ? [{e: 'standing', by: j.standing} as Effect] : []), ...(reward ? [heart(reward)] : []), ...(BONDS.has(j.giver) ? [bond(j.giver, 2)] : []), flag(`${key}:good`)],
+        good: [...(wage > 0 ? [{e: 'pay', order, by: wage} as Effect, {e: 'sound', cue: 'coin'} as Effect] : []), ...(j.standing ? [{e: 'standing', by: j.standing} as Effect] : []), ...(reward ? [heart(reward)] : []), ...(BONDS.has(j.giver) ? [bond(j.giver, 2)] : []), ...(j.gives ?? []), flag(`${key}:good`)],
         slip: [...(slipWage ? [{e: 'pay', order, by: slipWage} as Effect] : []), flag(`${key}:slip`)],
       }
     }
@@ -277,16 +301,24 @@ export function sideLife(chapter: Chapter): Chapter {
     const shortPay = pay > 0 ? Math.ceil(pay / 2) : 0, shortCost = Math.ceil(j.cost / 2)
     const short = offer(shortPay, shortCost)
     const tag = pay > 0 ? ` · ${pay} coins` : ''
-    spots.push({id, room: j.room, spot: j.spot, when: {not: key}, talk: id, verb: j.verb, label: `${j.label}${tag}`})
+    spots.push({id, room: j.room, spot: j.spot, when: j.needs ? {all: [{not: key}, j.needs]} : {not: key}, talk: id, verb: j.verb, label: `${j.label}${tag}`})
+    // The full shift and the short one are two different pieces of work: the play says which (`scope`), so the
+    // hands game deals a smaller board for half of it, and each is offered only while the body still has it in it.
+    const doIt: Choice = {id: 'do', t: pay > 0 ? `All of it · ${pay} coins` : 'Do it', when: {min: ['energy', j.cost]}, then: [{e: 'play', game: j.game, id, scope: 'full', then: full.tired, good: full.good, slip: full.slip}], next: `${id}-done`}
+    const halfIt: Choice[] = pay > 0 ? [{id: 'short', t: `Half of it · ${shortPay} coins`, when: {min: ['energy', shortCost]}, then: [{e: 'play', game: j.game, id, scope: 'short', then: short.tired, good: short.good, slip: short.slip} as Effect], next: `${id}-done`}] : []
+    const choices: Choice[] = [doIt, ...halfIt, {id: 'later', t: 'Not now'}]
+    // the offer before the work: who pays, what for, how much, and what it costs the body (spec §2)
+    const price = tell(`${pay > 0 ? `${pay} coins if you do it well, or ${shortPay} for half of it. ` : ''}It will take ${j.cost} out of you${reward ? ', and it will be worth remembering' : ''}.`)
+    const least = pay > 0 ? shortCost : j.cost
+    const again = AGAIN[j.id]
     talks.push(
       {id, branches: [
-        {when: {none: [{min: ['energy', j.cost]}]}, lines: [tell(REST_FIRST)]},
-        // the offer before the work: who pays, what for, how much, and what it costs the body (spec §2)
-        {lines: [say(j.giver, j.ask), tell(`${pay > 0 ? `${pay} coins if you do it well, or ${shortPay} for half of it. ` : ''}It will take ${j.cost} out of you${reward ? ', and it will be worth remembering' : ''}.`)], choices: [
-          {id: 'do', t: pay > 0 ? `All of it · ${pay} coins` : 'Do it', then: [{e: 'play', game: j.game, id, then: full.tired, good: full.good, slip: full.slip}], next: `${id}-done`},
-          ...(pay > 0 ? [{id: 'short', t: `Half of it · ${shortPay} coins`, then: [{e: 'play', game: j.game, id, then: short.tired, good: short.good, slip: short.slip} as Effect], next: `${id}-done`}] : []),
-          {id: 'later', t: 'Not now'},
-        ]},
+        {when: {none: [{min: ['energy', least]}]}, lines: [tell(REST_FIRST)]},
+        // enough in him for half of it, not for all of it: the short shift is still there, and he is told why the long one is not
+        ...(pay > 0 ? [{when: {none: [{min: ['energy', j.cost]}]} as Cond, lines: [say(j.giver, j.ask), price, tell(`Not all of it today: you have about half of it left in you.`)], choices}] : []),
+        // a returning client remembers the last job and asks for something a little different (`worked`: an earlier chapter's order)
+        ...(again ? [{when: {worked: id} as Cond, lines: [say(j.giver, again), price], choices}] : []),
+        {lines: [say(j.giver, j.ask), price], choices},
       ]},
       {id: `${id}-done`, branches: [{when: {flag: `${key}:slip`}, lines: [tell(j.slip)]}, {lines: [tell(j.done)]}]},
     )
