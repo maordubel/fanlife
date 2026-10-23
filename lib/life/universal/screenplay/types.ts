@@ -64,6 +64,16 @@ export const is = (k: string, v: string | number | boolean): Cond => ({is: [k, v
 export const bond = (who: string, by: number): Effect => ({e: 'bond', who, by})
 export const heart = (by: number): Effect => ({e: 'heart', by})
 export const coins = (by: number): Effect => ({e: 'coins', by})
+/** money held for others (`coach`, `comm-tin`): never the wallet */
+export const fund = (id: string, by: number): Effect => ({e: 'fund', id, by})
+/** money put aside (`by` > 0) or taken back into the wallet (`by` < 0, at most what the envelope holds) */
+export const envelope = (id: string, by: number): Effect => ({e: 'envelope', id, by})
+/** money spent straight out of an envelope: guard it with `{saved: [id, by]}` */
+export const spend = (from: string, by: number): Effect => ({e: 'spend', from, by})
+/** the collection: copies in, a copy given for good, a copy lent */
+export const collect = (item: string, n = 1): Effect => ({e: 'collect', item, n})
+export const give = (item: string, to: string): Effect => ({e: 'give', item, to})
+export const lend = (item: string, to: string): Effect => ({e: 'lend', item, to})
 export const energy = (by: number): Effect => ({e: 'energy', by})
 export const standing = (by: number): Effect => ({e: 'standing', by})
 export const speech = (who: string | null, en: string, he: string): Speech => [who, en, he]

@@ -108,50 +108,61 @@ export function lifeFlagsOf(chapter: Chapter): string[] {
 
 /* ───────────── money spent without a check (owner's spec §2, §8) ───────────── */
 
-/** The coins a condition guarantees the wallet holds (`min coins` reached through `all`; `any` and `none` guarantee nothing). */
-function guaranteed(c: Cond | undefined): number {
+/**
+ * The purses a spend can come out of: the wallet (`coins`) and every fund held for others (`fund:coach`). A fund is
+ * floored at zero exactly like the wallet, so spending it needs the same check.
+ */
+type Purse = string
+/** What a condition guarantees a purse holds (`min coins` / `fund` reached through `all`; `any` and `none` guarantee nothing). */
+function guaranteed(c: Cond | undefined, purse: Purse = 'coins'): number {
   if (!c) return 0
-  if ('min' in c && c.min[0] === 'coins') return c.min[1]
-  if ('all' in c) return Math.max(0, ...c.all.map(guaranteed))
+  if (purse === 'coins' && 'min' in c && c.min[0] === 'coins') return c.min[1]
+  if ('fund' in c && purse === `fund:${c.fund[0]}`) return c.fund[1]
+  if ('saved' in c && purse === `saved:${c.saved[0]}`) return c.saved[1]
+  if ('all' in c) return Math.max(0, ...c.all.map(x => guaranteed(x, purse)))
   return 0
 }
-/** What a list of effects takes out of the wallet straight away (a play's `then` happens whatever the go). */
-function spendOf(list: readonly Effect[] | undefined): number {
-  let n = 0
+/** What a list of effects takes out of each purse straight away (a play's `then` happens whatever the go). */
+function spendOf(list: readonly Effect[] | undefined, into: Map<Purse, number> = new Map()): Map<Purse, number> {
   for (const fx of list ?? []) {
-    if (fx.e === 'coins' && fx.by < 0) n -= fx.by
-    if (fx.e === 'play') n += spendOf(fx.then)
+    if (fx.e === 'coins' && fx.by < 0) into.set('coins', (into.get('coins') ?? 0) - fx.by)
+    if (fx.e === 'fund' && fx.by < 0) into.set(`fund:${fx.id}`, (into.get(`fund:${fx.id}`) ?? 0) - fx.by)
+    if (fx.e === 'spend' && fx.by > 0) into.set(`saved:${fx.from}`, (into.get(`saved:${fx.from}`) ?? 0) + fx.by)
+    if (fx.e === 'play') spendOf(fx.then, into)
   }
-  return n
+  return into
 }
 
 /**
- * Every choice (or branch) that spends coins without a condition saying the wallet holds them. The engine floors
- * the wallet at zero, which is not a price check: the player "buys" with money he does not have. A choice that is
- * a debt on purpose says so with a `min` of its own. `tests/life-economy-orders.test.ts` holds the list of today's
- * offenders: it may only shrink.
+ * Every choice (or branch) that spends coins — or money held for others — without a condition saying the purse
+ * holds it. The engine floors both at zero, which is not a price check: the player "buys" with money he does not
+ * have. `tests/fixtures/life-unguarded-spends.json` holds today's offenders: it may only shrink (it is empty).
  */
 export function unguardedSpends(pack: Pick<LifePack, 'chapters'>): string[] {
   const out: string[] = []
   for (const ch of pack.chapters) {
   // A screenplay option is chosen in one talk and done in another (`<scene>:act`): the choice sets a pick
-  // flag, and the branch that spends is gated on that pick. The wallet was checked when the choice was
+  // flag, and the branch that spends is gated on that pick. The purse was checked when the choice was
   // offered, so a branch gated on a guarded pick is guarded too (#275's F03 shirt is bought that way).
-  const picked = new Map<string, number>()
+  const picked = new Map<string, Cond[]>()
   for (const t of ch.talks) for (const b of t.branches) for (const c of b.choices ?? []) {
-    const g = Math.max(guaranteed(b.when), guaranteed(c.when))
-    for (const fx of c.then ?? []) if (fx.e === 'flag' && typeof fx.v === 'string') picked.set(`${fx.k}=${fx.v}`, Math.max(picked.get(`${fx.k}=${fx.v}`) ?? 0, g))
+    for (const fx of c.then ?? []) if (fx.e === 'flag' && typeof fx.v === 'string') {
+      const k = `${fx.k}=${fx.v}`
+      picked.set(k, [...(picked.get(k) ?? []), {all: [b.when ?? {all: []}, c.when ?? {all: []}]}])
+    }
   }
-  const viaPick = (c: Cond | undefined): number => {
+  const viaPick = (c: Cond | undefined, purse: Purse): number => {
     if (!c) return 0
-    if ('is' in c && Array.isArray(c.is)) return picked.get(`${c.is[0]}=${String(c.is[1])}`) ?? 0
-    if ('all' in c) return Math.max(0, ...c.all.map(viaPick))
+    if ('is' in c && Array.isArray(c.is)) return Math.max(0, ...(picked.get(`${c.is[0]}=${String(c.is[1])}`) ?? []).map(x => guaranteed(x, purse)))
+    if ('all' in c) return Math.max(0, ...c.all.map(x => viaPick(x, purse)))
     return 0
   }
+  const over = (spent: Map<Purse, number>, ...holds: Cond[]): boolean =>
+    [...spent].some(([purse, n]) => n > Math.max(0, ...holds.map(h => Math.max(guaranteed(h, purse), viaPick(h, purse)))))
   for (const t of ch.talks) t.branches.forEach((b, i) => {
-    const has = Math.max(guaranteed(b.when), viaPick(b.when))
-    if (!b.choices?.length) { const n = spendOf(b.then); if (n > has) out.push(`${ch.id}:${t.id}[${i}]`) }
-    for (const c of b.choices ?? []) { const n = spendOf(c.then); if (n > Math.max(has, guaranteed(c.when))) out.push(`${ch.id}:${t.id}:${c.id}`) }
+    const bw = b.when ?? {all: []}
+    if (!b.choices?.length) { if (over(spendOf(b.then), bw)) out.push(`${ch.id}:${t.id}[${i}]`) }
+    for (const c of b.choices ?? []) if (over(spendOf(c.then), bw, c.when ?? {all: []})) out.push(`${ch.id}:${t.id}:${c.id}`)
   })
   }
   return out

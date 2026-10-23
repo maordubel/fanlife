@@ -1,6 +1,10 @@
 import {chapter, o, s, sc, t} from '../write'
-import {bond, coins, energy, flag, heart, is, standing} from '../types'
+import {bond, coins, energy, flag, fund, heart, is, standing} from '../types'
 import type {ChapterScript} from '../types'
+
+/** R-WAY: each of the five on the organiser's list puts in a share; the delay is paid out of that coach money, not his pocket */
+const COACH_SHARE = 2
+const COACH_DELAY = 3
 
 /**
  * Master screenplay, routes R-REG, R-TER, R-WAY, R-CREATE (bible §17, 15.10.2026).
@@ -242,8 +246,8 @@ export const MASTER_ROUTES_A: ChapterScript[] = [
         task: t('Say how many seats', 'להגיד כמה מקומות'),
         action: [s(null, 'There is a pencil on a string beside the board. Everyone uses it. It is down to a stub.', 'יש עיפרון על חוט ליד הלוח. כולם משתמשים בו. הוא נשאר גדם.')],
         options: [
-          o('group', t('Organise a small group', 'לארגן קבוצה קטנה'), s('friend', 'Five names and one spare seat. Real people. Okay. I trust a list that is short.', 'חמישה שמות ומקום אחד פנוי. אנשים אמיתיים. אוקיי. אני סומך על רשימה קצרה.'),
-            [flag('life:master:R-WAY:role', 'organiser'), bond('friend', 2), coins(-3)]),
+          o('group', t('Organise a small group', 'לארגן קבוצה קטנה'), s('friend', 'Five names and one spare seat. Two coins each into the coach money, yours first. Okay. I trust a list that is short.', 'חמישה שמות ומקום אחד פנוי. שני מטבעות כל אחד לכסף של ההסעה, שלך ראשון. אוקיי. אני סומך על רשימה קצרה.'),
+            [flag('life:master:R-WAY:role', 'organiser'), bond('friend', 2), coins(-COACH_SHARE), fund('coach', COACH_SHARE * 5)], {when: {min: ['coins', COACH_SHARE]}}),
           o('rider', t('Be a rider and solve only part of it', 'להיות נוסע ולפתור רק חלק'), s('friend', 'You sort the sandwiches and the seat by the window. I will take everything else.', 'אתה מסדר את הסנדוויצ׳ים ואת המקום ליד החלון. את כל השאר אני לוקח.'),
             [flag('life:master:R-WAY:role', 'rider'), bond('friend', 3)]),
           o('stay', t('Stay behind and meet the ones who are not going', 'להישאר ולפגוש את מי שלא נוסע'), s('friend', 'Someone should. Go to the ones who cannot. It is not a failure to stay.', 'מישהו צריך. לך אל אלה שלא יכולים. זה לא כישלון להישאר.'),
@@ -265,7 +269,7 @@ export const MASTER_ROUTES_A: ChapterScript[] = [
         action: [s(null, 'The timetable behind him says nothing. Timetables rarely do.', 'לוח הזמנים שמאחוריו לא אומר דבר. לוחות זמנים כמעט אף פעם לא.')],
         options: [
           o('alt', t('Find a workable alternative and pay for it', 'למצוא חלופה אפשרית ולשלם מחירה'), s('stranger', 'A later bus and I pay the difference? You would do that? Okay. I will be there.', 'אוטובוס מאוחר יותר ואני משלם את ההפרש? היית עושה את זה? אוקיי. אהיה שם.'),
-            [flag('life:master:R-WAY:late', 'alternative'), coins(-5), bond('stranger', 3)]),
+            [flag('life:master:R-WAY:late', 'alternative'), coins(-5), bond('stranger', 3)], {when: {min: ['coins', 5]}}),
           o('guard', t('Keep faith with those already invited', 'לשמור על מי שכבר הוזמן'), s('stranger', 'I understand. You gave me an answer, which is more than a lot of people do. I will not forget it.', 'אני מבין. נתת לי תשובה, וזה יותר ממה שהרבה אנשים עושים. לא אשכח.'),
             [flag('life:master:R-WAY:late', 'kept-list'), bond('stranger', 1), heart(1)]),
           o('yield', t('Give up your own place if there is a fair solution', 'לוותר על המקום שלך אם יש פתרון ראוי'), s('stranger', 'You are giving me your seat? Then what will you do?', 'אתה נותן לי את המקום שלך? אז מה תעשה אתה?'),
@@ -286,8 +290,8 @@ export const MASTER_ROUTES_A: ChapterScript[] = [
         task: t('Decide what the delay costs', 'להחליט מה העיכוב עולה'),
         action: [s(null, 'Someone has taken out a map. The route on it looks tidier than the road.', 'מישהו הוציא מפה. המסלול עליה נראה מסודר יותר מהדרך.')],
         options: [
-          o('go', t('Carry on with a workable plan', 'להמשיך לפי תוכנית ישימה'), s('friend', 'The plan costs time and costs money, and we are saying so out loud. All right. That is honest.', 'התוכנית עולה זמן ועולה כסף, ואנחנו אומרים את זה בקול. בסדר. זה כנה.'),
-            [flag('life:master:R-WAY:delay', 'continued'), coins(-3), energy(-10)], {mission: {template: 'away-day', mandatory: true}}),
+          o('go', t('Carry on with a workable plan', 'להמשיך לפי תוכנית ישימה'), s('friend', 'The plan costs time and costs money, out of the coach money, and we are saying so out loud. All right. That is honest.', 'התוכנית עולה זמן ועולה כסף, מכסף ההסעה, ואנחנו אומרים את זה בקול. בסדר. זה כנה.'),
+            [flag('life:master:R-WAY:delay', 'continued'), fund('coach', -COACH_DELAY), energy(-10)], {when: {fund: ['coach', COACH_DELAY]}, mission: {template: 'away-day', mandatory: true}}),
           o('watch', t('Change how you are there and watch from a valid alternative', 'לשנות נוכחות ולראות ממקום חלופי תקף'), s('friend', 'No magic arrival at the gate. We will see it from a window, with a bad view. That is allowed.', 'בלי הגעה קסומה לשער. נראה את זה מחלון, עם נוף גרוע. זה מותר.'),
             [flag('life:master:R-WAY:delay', 'watched'), heart(1), bond('friend', 2)]),
           o('cancel', t('Cancel your part and look after the one who counted on you', 'לבטל את חלקך ולדאוג למי שסמך עליך'), s('friend', 'You are sitting down in the cold with a person who needed you more than the evening did. I will remember that.', 'אתה מתיישב בקור עם אדם שהיה צריך אותך יותר ממה שהערב היה צריך. אזכור את זה.'),

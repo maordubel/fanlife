@@ -64,7 +64,9 @@ describe('the first shirt is asked once in a life', () => {
   it('at eight: the crates start the money — four into the tin, no shirt yet, no shirt keepsake, and the kerb still plays', () => {
     const c = universal('c2-shirt')
     const mid = live(c, {S04: 'ask', S05: 'earned'})
-    expect(mid.coins).toBe(4)
+    // the four are SAVINGS now: in the shirt envelope, out of the wallet, so nothing else in the year can spend them
+    expect(mid.coins).toBe(0)
+    expect(mid.envelopes.shirt).toBe(4)
     expect(mid.flags['life:shirt:saving']).toBe(true)
     expect(choicesAt(c, 'S06', mid)).toEqual(['tin'])
     const s = live(c, {S04: 'ask', S05: 'earned', S06: 'tin'})
@@ -120,6 +122,16 @@ describe('F03 — every road ends, and the shirt is bought only with the coins i
     const s = live(c, {'F03-S1': 'manage', 'F03-S2': 'keep', 'F03-S3': 'home'})
     expect(s.done['F03']).toBeTruthy()
     expect(s.keeps).toContain('window-shirt')
+  })
+
+  it('a year of saving: the tin is tipped out on the sill, and the four join the six at the counter', () => {
+    const seed = {...emptyState(), envelopes: {shirt: 4}, flags: {'life:shirt:saving': true, 'life:shirt:origin': 'saving'}}
+    const mid = live(c, {'F03-S1': 'try', 'F03-S2': 'work'}, seed)
+    expect(mid.envelopes.shirt, 'the envelope is empty once the tin is on the sill').toBe(0)
+    expect(mid.coins, 'four saved and six earned').toBe(10)
+    const s = live(c, {'F03-S1': 'try', 'F03-S2': 'work', 'F03-S3': 'show'}, seed)
+    expect(s.coins, 'six spent, four left').toBe(4)
+    expect(s.wear).toBe('shirt')
   })
 
   it('a gift of coins buys it too, and the box says so', () => {

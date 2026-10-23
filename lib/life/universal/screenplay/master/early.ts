@@ -1,6 +1,6 @@
 import type {ChapterScript} from '../types'
 import {chapter, o, s, sc, t} from '../write'
-import {bond, coins, energy, flag, heart, is, standing} from '../types'
+import {bond, coins, collect, energy, flag, give, heart, is, lend, standing} from '../types'
 import type {Effect} from '../../types'
 
 /** hands, not words (spec 22.10.2026 §3): `id` names the action for the hands layer; `game` is what plays today */
@@ -10,8 +10,9 @@ const hands = (game: 'carry' | 'count' | 'clap' | 'tune', id: string, then: Effe
  * Master screenplay F04–F08 (bible §16, 15.10.2026): the day of the big match, the day after, the first
  * envelope, the one who has what you are missing, and the other side of the table.
  *
- * Fiction only. No year, no score, no opponent, no real person. The collection layer does not exist yet, so the
- * envelope, the album page and the swap are recorded as flags; nothing is added to a player's collection here.
+ * Fiction only. No year, no score, no opponent, no real person. The story is told in flags; what he actually holds
+ * goes in the collection ledger (`state.collection`): the envelope's stickers and doubles, the favourite, a double
+ * given to the one who has it, the favourite lent while he decides. Nothing in the ledger is made from nothing.
  * What F29 and F19 read: F06 `fav`, F07 `deal` and `gap`.
  */
 export const MASTER_EARLY: ChapterScript[] = [
@@ -213,7 +214,7 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'The envelopes do not tell you anything. That is why they are sold.', 'המעטפות לא מספרות לך כלום. בגלל זה מוכרים אותן.')],
         options: [
           o('buy', t('Pay for one', 'לשלם על אחת'), s('kiosk', 'Sealed, and you do not choose. That is the whole thing. Good luck.', 'סגורה, ואתה לא בוחר. זה כל העניין. בהצלחה.'),
-            [flag('life:master:F06:path', 'bought'), coins(-3), heart(1)], {when: {min: ['coins', 3]}}),
+            [flag('life:master:F06:path', 'bought'), coins(-3), collect('stickers', 3), collect('doubles', 2), heart(1)], {when: {min: ['coins', 3]}}),
           o('watch', t('Save and watch {friend} open one', 'לחסוך ולהסתכל על {friend}'), s('friend', 'You are going to watch? Fine, then I get to be the one who knows the ending.', 'אתה תסתכל? בסדר, אז אני זה שיודע את הסוף.'),
             [flag('life:master:F06:path', 'watched'), bond('friend', 3)]),
           o('page', t('Start a page from things you own', 'להתחיל דף מדברים שיש לך'), s('friend', 'A page. With only stuff that is really yours. Strict. I like it.', 'דף. רק עם דברים שבאמת שלך. קפדני. מוצא חן בעיני.'),
@@ -255,9 +256,9 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'It is not a ranking. It is closer to naming a pet.', 'זה לא דירוג. זה יותר כמו לתת שם לחיית מחמד.')],
         options: [
           o('fav', t('Choose a favourite of your own', 'לבחור מועדף משלך'), s('friend', 'That one? It is so plain. Fine. It is yours, I will stop talking.', 'זה? הוא כל כך פשוט. בסדר. הוא שלך, אפסיק לדבר.'),
-            [flag('life:master:F06:fav', 'chosen'), heart(3)]),
+            [flag('life:master:F06:fav', 'chosen'), collect('favourite'), heart(3)]),
           o('double', t('Offer a double, if you have one', 'להציע כפול אם יש'), s('friend', 'A double! That is a trade. Name the one you want, and I will say a number.', 'כפול! זו עסקה. תגיד איזה אתה רוצה, ואני אגיד מספר.'),
-            [flag('life:master:F06:fav', 'trade'), bond('friend', 2)]),
+            [flag('life:master:F06:fav', 'trade'), give('doubles', 'friend'), collect('stickers'), bond('friend', 2)], {when: {owns: ['doubles', 1]}}),
           o('mess', t('Leave the page as it is', 'להשאיר את הדף לא מסודר'), s('friend', 'You are not going to finish it? Good. Finishing it ends the game.', 'אתה לא הולך להשלים אותו? טוב. להשלים אותו זה סוף המשחק.'),
             [flag('life:master:F06:fav', 'loose'), flag('life:master:F06:finish', 'none'), heart(1)]),
         ],
@@ -308,10 +309,10 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'A bus goes by without stopping. Neither of you looks up.', 'אוטובוס עובר בלי לעצור. אף אחד מכם לא מרים מבט.')],
         options: [
           o('copy', t('Offer a copy you have', 'להציע עותק שיש לך'), s('child', 'I have that one. Twice, actually. Show me what else.', 'את זה יש לי. פעמיים, בעצם. תראה לי מה עוד.'),
-            [flag('life:master:F07:offer', 'copy'), bond('child', 2), hands('count', 'swap-check')],
+            [flag('life:master:F07:offer', 'copy'), give('doubles', 'child'), bond('child', 2), hands('count', 'swap-check')],
             {action: [s(null, 'Two piles on the bench: what he has twice, what you have twice. You check his against your page, square by square.', 'שתי ערימות על הספסל: מה שיש לו פעמיים, מה שיש לך פעמיים. אתה בודק את שלו מול הדף שלך, משבצת אחרי משבצת.')]}),
           o('mine', t('Offer the only one you love', 'להציע את היחיד שאתה אוהב'), s('child', 'That one? You would give that? Then it is a real offer. I need time.', 'את זה? אתה היית נותן את זה? אז זו הצעה אמיתית. אני צריך זמן.'),
-            [flag('life:master:F07:offer', 'dear'), heart(-1), bond('child', 3)]),
+            [flag('life:master:F07:offer', 'dear'), lend('favourite', 'child'), heart(-1), bond('child', 3)]),
           o('help', t('Offer to help with something', 'להציע לעזור במשהו'), s('child', 'My little sister has a hole in her bike tyre. Fix it, and we will talk.', 'לאחות הקטנה שלי יש חור בצמיג של האופניים. תתקן, ונדבר.'),
             [flag('life:master:F07:offer', 'promise'), bond('child', 2), energy(-5), hands('tune', 'tyre-fix')]),
         ],

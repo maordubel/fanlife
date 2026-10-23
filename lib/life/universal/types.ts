@@ -111,6 +111,14 @@ export type Cond =
   | {bond: [CastId, number]}
   | {has: string}
   | {wears: Wear}
+  /** shared money held for others (`coach`, `comm-tin`) is at least this much */
+  | {fund: [string, number]}
+  /** an envelope of his own (`shirt`, `trip`) holds at least this much */
+  | {saved: [string, number]}
+  /** he has done this order (`job-crates`) for this person before, in an earlier chapter: a returning client */
+  | {worked: string}
+  /** copies of a collection item he has at hand (owned and not lent out) */
+  | {owns: [string, number]}
 
 export type Wear = 'plain' | 'shirt' | 'scarf' | 'both'
 
@@ -127,6 +135,8 @@ export type Effect =
   | {e: 'pay'; order: string; by: number}
   /** money put aside in an envelope (`by` > 0, at most what the wallet holds) or taken back out of it (`by` < 0) */
   | {e: 'envelope'; id: string; by: number}
+  /** money spent straight out of an envelope (`by` > 0): it was put aside for exactly this. Guard it with `saved`. */
+  | {e: 'spend'; from: string; by: number}
   /** a shared fund (the café till, the coach money, the community tin): never the wallet, never spendable as coins */
   | {e: 'fund'; id: string; by: number}
   /** tiredness: a day has a limited amount of doing in it */
@@ -148,11 +158,18 @@ export type Effect =
    * A small game, or a RUSH mission (ADR-fanlife-0013). `game` is what plays when RUSH is not open on this site or
    * device; `null` means the option simply happens without a game then. A mission never fails the day either.
    */
-  | {e: 'play'; game: MiniGame | null; id: string; mission?: MissionCall; then?: Effect[]; good?: Effect[]; slip?: Effect[]}
+  | {e: 'play'; game: MiniGame | null; id: string; mission?: MissionCall; scope?: WorkScope; then?: Effect[]; good?: Effect[]; slip?: Effect[]}
+  /** the collection: copies come in, go to somebody for good, go out on loan and come back */
+  | {e: 'collect'; item: string; n?: number}
+  | {e: 'give'; item: string; to: string}
+  | {e: 'lend'; item: string; to: string}
+  | {e: 'back'; item: string}
   | {e: 'card'; card: string}
   | {e: 'sound'; cue: SoundCue}
   | {e: 'end'; ending: string}
 
+/** how much of the job this go is: 'short' plays a smaller board (fewer crates, fewer customers). Absent = 'full'. */
+export type WorkScope = 'short' | 'full'
 export type MiniGame = 'tune' | 'clap' | 'carry' | 'count' | 'kick' | 'chant'
 /** a RUSH mission a script asks for: the template (`lib/life/rush/templates.ts`) and whether the script lets it be skipped */
 export type MissionCall = {template: string; mandatory: boolean; beat?: string}
@@ -299,6 +316,10 @@ export type LifeEvent =
   | {t: 'paid'; order: string; by: number}
   | {t: 'envelope'; id: string; by: number}
   | {t: 'fund'; id: string; by: number}
+  | {t: 'collected'; item: string; n: number}
+  | {t: 'gave'; item: string; to: string}
+  | {t: 'lent'; item: string; to: string}
+  | {t: 'returned'; item: string}
   | {t: 'energy'; by: number}
   | {t: 'standing'; by: number}
   /** he has been introduced to somebody: the first conversation with them */
@@ -343,6 +364,8 @@ export type LifeState = {
   envelopes: Record<string, number>
   /** shared money he holds or adds to and does not own (`till`, `coach`…): never part of `coins` */
   funds: Record<string, number>
+  /** the collection (stickers, doubles, a favourite): how many he owns and who has one on loan. Old saves fold to {} */
+  collection: Record<string, CollectionEntry>
   /** rested at 100 when a day begins */
   energy: number
   standing: number
@@ -359,5 +382,8 @@ export type LifeState = {
   /** what he made, by id (a life, not a day; absent in a save from before artefacts) */
   made?: Record<string, Artefact>
 }
+
+/** `n` copies owned; `lent` names who holds one of them right now (one entry per copy out) */
+export type CollectionEntry = {n: number; lent: string[]}
 
 export type SaveFile = {v: 1; club: string; pack: string; events: LifeEvent[]; savedAt: string}

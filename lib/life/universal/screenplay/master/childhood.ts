@@ -1,11 +1,13 @@
 import {chapter, o, s, sc, t} from '../write'
-import {bond, coins, flag, heart, is} from '../types'
+import {bond, coins, envelope, flag, heart, is} from '../types'
 import type {Effect} from '../../types'
 
 /** hands, not words (spec 22.10.2026 §3): a small thing done in the room. `id` names the action for the hands layer; `game` is what plays today */
 const hands = (game: 'carry' | 'count' | 'clap' | 'tune', id: string, then: Effect[] = []): Effect => ({e: 'play', game, id, then})
 /** the first shirt's price, in the same coins the tin counts */
 const SHIRT_PRICE = 6
+/** tipping the tin out on the sill: everything the shirt envelope holds goes back into the hand (the engine moves no more than it holds) */
+const TIP_OUT = envelope('shirt', -100)
 
 /**
  * Master screenplay F01–F03 (bible §16, 15.10.2026): the first three chapters of the shared life.
@@ -173,20 +175,20 @@ export const MASTER_CHILDHOOD = [
         ],
         callbacks: [
           // what the tin holds is what this life put in it (a year of crates, or nothing yet): read from the coins, never assumed
-          {group: 'tin', when: {min: ['coins', 1]}, lines: [s(null, 'In your pocket, the tin. It rattles: there is already something in it, and you know exactly where each coin came from.', 'בכיס, הקופסה. היא מקשקשת: כבר יש בה משהו, ואתה יודע בדיוק מאיפה כל מטבע הגיע.')]},
+          {group: 'tin', when: {any: [{min: ['coins', 1]}, {saved: ['shirt', 1]}]}, lines: [s(null, 'In your pocket, the tin. It rattles: there is already something in it, and you know exactly where each coin came from.', 'בכיס, הקופסה. היא מקשקשת: כבר יש בה משהו, ואתה יודע בדיוק מאיפה כל מטבע הגיע.')]},
           {when: {flag: 'life:shirt:saving'}, lines: [s(null, 'Four of them are from the kiosk\'s crates, a year ago. You have not spent one.', 'ארבעה מהם מהארגזים של הקיוסק, לפני שנה. לא הוצאת אף אחד.')]},
-          {group: 'tin', when: {none: [{min: ['coins', 1]}]}, lines: [s(null, 'In your pocket, a tin. It rattles less than you would like.', 'בכיס, קופסה. היא מקשקשת פחות ממה שהיית רוצה.')]},
+          {group: 'tin', when: {none: [{min: ['coins', 1]}, {saved: ['shirt', 1]}]}, lines: [s(null, 'In your pocket, a tin. It rattles less than you would like.', 'בכיס, קופסה. היא מקשקשת פחות ממה שהיית רוצה.')]},
         ],
         task: t('Tip out the tin on the sill and count it against the card', 'לרוקן את הקופסה על אדן החלון ולספור מול הכרטיס'),
         action: [s(null, 'Coins on the sill, in a row, against the price on the card. The gap is not a feeling any more. It is a number.', 'מטבעות על האדן, בשורה, מול המחיר שעל הכרטיס. הפער כבר לא תחושה. הוא מספר.'), s(null, 'The glass shows you your own reflection, with the shirt on it. It is a good reflection.', 'הזכוכית מראה לך את ההשתקפות שלך, עם החולצה עליה. זו השתקפות טובה.')],
         game: 'count',
         options: [
           o('try', t('Try it on and ask the price', 'למדוד ולברר מחיר'), s('seller', 'It fits like a small flag. Come back when the number is shorter.', 'היא יושבת כמו דגל קטן. תחזור כשהמספר יהיה קצר יותר.'),
-            [flag('life:master:F03:route', 'saving'), heart(1)]),
+            [flag('life:master:F03:route', 'saving'), TIP_OUT, heart(1)]),
           o('home', t('Ask at home about an old one', 'לשאול בבית על חולצה ישנה'), s('seller', 'Old ones are the best ones. Go. If they ask, I never said that.', 'הישנות הן הכי טובות. לך. אם ישאלו, לא אמרתי.'),
-            [flag('life:master:F03:route', 'heirloom')]),
+            [flag('life:master:F03:route', 'heirloom'), TIP_OUT]),
           o('manage', t('Decide to manage without', 'להחליט להסתדר בלעדיה'), s('seller', 'Without is a style too. You will see.', 'בלי זה גם סגנון. תראה.'),
-            [flag('life:master:F03:route', 'personal'), heart(1)]),
+            [flag('life:master:F03:route', 'personal'), TIP_OUT, heart(1)]),
         ],
       }),
       sc({
