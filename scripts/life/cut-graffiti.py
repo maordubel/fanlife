@@ -11,8 +11,12 @@ colour (Olympiacos bans green, Panathinaikos bans red) is never offered to that 
 never sees another club's own sheet.
 
     python3 -I scripts/life/cut-graffiti.py <street> <tags> <athens> <aek> <pao> <olympiacos> <zrinjski>
+    python3 -I scripts/life/cut-graffiti.py --assign     # re-decide who carries what from the pieces on disk
+
+Every club the portal knows gets a list, not only the clubs with a pack: a club with no LIFE file still has a
+street (Maccabi Haifa, PAOK), and its walls carry the street and tag sheets until it has a sheet of its own.
 """
-import colorsys, json, os, sys
+import colorsys, json, os, re, sys
 import numpy as np
 from PIL import Image
 from scipy import ndimage
@@ -43,7 +47,9 @@ ONLY = {('street', 3): 'st-pauli'}
 
 
 def clubs_all():
-    return sorted(d for d in os.listdir(os.path.join(ROOT, 'club-packs')) if os.path.isdir(os.path.join(ROOT, 'club-packs', d)))
+    packs = {d for d in os.listdir(os.path.join(ROOT, 'club-packs')) if os.path.isdir(os.path.join(ROOT, 'club-packs', d))}
+    reg = open(os.path.join(ROOT, 'lib', 'master', 'registry.ts'), encoding='utf-8').read()
+    return sorted(packs | set(re.findall(r"^\s*c\('([a-z0-9-]+)'", reg, re.M)))
 
 
 def banned_hues(club):
@@ -121,9 +127,25 @@ def carries(piece, band):
     return inside.sum() / max(1, piece['n']) > 0.01
 
 
+def on_disk():
+    """The pieces already cut, measured again from their own files: the same pixels the cutter measured."""
+    sets = {}
+    for name, _ in SHEETS:
+        k = 0
+        while os.path.exists(os.path.join(OUT, f'{name}-{k}.webp')):
+            im = Image.open(os.path.join(OUT, f'{name}-{k}.webp')).convert('RGBA')
+            a = np.asarray(im)
+            ink = a[..., 3] > 128
+            hsv = np.asarray(im.convert('RGB').convert('HSV')).astype(np.float32)
+            m = ink & (hsv[..., 1] > 90) & (hsv[..., 2] > 60)
+            sets.setdefault(name, []).append({'f': f'{name}-{k}', 'wh': [im.width, im.height], 'hues': hsv[..., 0][m] * 360 / 255, 'n': int(ink.sum())})
+            k += 1
+    return sets
+
+
 def main(*files):
     os.makedirs(OUT, exist_ok=True)
-    sets = {name: cut(f, name) for (name, _), f in zip(SHEETS, files)}
+    sets = on_disk() if files == ('--assign',) else {name: cut(f, name) for (name, _), f in zip(SHEETS, files)}
     clubs = {}
     for club in clubs_all():
         bans = banned_hues(club)

@@ -54,6 +54,9 @@ export type VoxelSkin = {
   lang?: string | null
   /** the city the street is built as: its facades, roofs, trees, sky and skyline (tlv · ath · mos · ham · gla), or null for the generic town */
   town?: 'tlv' | 'ath' | 'mos' | 'ham' | 'gla' | null
+  /** the city layer over that build: a city that shares its country's street but not its view or its signs —
+   *  Petah Tikva and Haifa on Tel Aviv's street, Thessaloniki on Athens'. Null where the town is the city itself */
+  city?: 'pt' | 'hfa' | 'thes' | null
   policy: {hue: [number, number]; minSaturation: number; minValue: number}[]
   /** colour families an owner-approved rivalry takes away (red · green · blue): the town never paints them */
   rivals?: string[]

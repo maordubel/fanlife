@@ -27,7 +27,7 @@ function clubKit(sk){var S=(sk&&sk.club)||null,p=(sk&&sk.c1)||'#d8283e',short=S&
   /* the club's own founding year (sourced), and whether this street is Tel Aviv's — only then may a sign name Tel Aviv places */
   /* the keepsake box on the bedroom floor: Hapoel's is the Red Box (The Worker's name for it); every other club's box carries its own name */
   BOX:(sk&&sk.name)==='hapoel-tel-aviv'?'The Red Box':('The '+(S&&S.name?S.name:short)+' Box'),
-  YEAR:S&&S.founded?String(S.founded):'',TOWN:(S&&S.town)||null,ID:(sk&&sk.name)||null,LANG:(S&&S.lang)||'en',TLV:/tel[\s-]?aviv/i.test(city),INIT:S&&S.initials?S.initials:short.slice(0,2),n1:S&&S.nums?S.nums[0]:4,n2:S&&S.nums?S.nums[1]:5,n3:S&&S.nums?S.nums[2]:6}}
+  YEAR:S&&S.founded?String(S.founded):'',TOWN:(S&&S.town)||null,CITYL:(S&&S.city)||null,ID:(sk&&sk.name)||null,LANG:(S&&S.lang)||'en',TLV:/tel[\s-]?aviv/i.test(city),INIT:S&&S.initials?S.initials:short.slice(0,2),n1:S&&S.nums?S.nums[0]:4,n2:S&&S.nums?S.nums[1]:5,n3:S&&S.nums?S.nums[2]:6}}
 window.__CK=clubKit(null);
 /* a sign is lettered for whichever club stands under it: a longer name never runs off the board */
 (function(){var P=CanvasRenderingContext2D.prototype,f=P.fillText,sF=P.strokeText;function fit(ctx,t,x,mw){if(mw!=null)return mw;var W=ctx.canvas.width,a=ctx.textAlign,av=a==='center'?2*Math.min(x,W-x):(a==='right'||a==='end')?x:W-x;av=Math.max(8,av*.96);return ctx.measureText(t).width>av?av:undefined}
@@ -85,14 +85,6 @@ brick=tagged(brick,'stone');cobble=tagged(cobble,'stone');asphalt=tagged(asphalt
  g.strokeStyle='rgba(12,12,14,.55)';for(i=0;i<9;i++){g.lineWidth=rr(1.5,3.5);g.beginPath();var cx=rnd()*1024,cy=rnd()*1024;g.moveTo(cx,cy);for(var k=0;k<8;k++){cx+=rr(-40,40);cy+=rr(-40,40);g.lineTo(cx,cy)}g.stroke()}
  for(i=0;i<14;i++){var gr=g.createRadialGradient(0,0,0,0,0,1);gr.addColorStop(0,'rgba(8,8,10,.35)');gr.addColorStop(1,'rgba(8,8,10,0)');g.save();g.translate(rnd()*1024,rnd()*1024);g.scale(rr(15,45),rr(8,20));g.fillStyle=gr;g.beginPath();g.arc(0,0,1,0,7);g.fill();g.restore()}
  weather(g,1024,1024,{mottle:.3,stain:.4,scale:.6});return tex(c,8,4)}
-function graffiti(){var c=cvs(1024,512),g=c.getContext('2d');g.fillStyle='#6a6a74';g.fillRect(0,0,1024,512);paint(g,1024,512,1500,function(){return['#8a8a92','#555560','#7a7a84'][Math.floor(rnd()*3)]},.1);
- g.textAlign='center';g.direction='ltr';g.font='900 220px Heebo, Arial';g.lineJoin='round';g.lineWidth=22;g.strokeStyle='#14141c';g.strokeText(__CK.SHORT,380,250);g.fillStyle=__CK.a;g.fillText(__CK.SHORT,380,250);g.lineWidth=0;g.strokeStyle='#fff';g.lineWidth=5;g.strokeText(__CK.SHORT,376,246);
- g.font='900 120px Heebo, Arial';g.lineWidth=14;g.strokeStyle='#14141c';g.strokeText('ULTRAS',760,430);g.fillStyle='#f4f1ff';g.fillText('ULTRAS',760,430);
- g.fillStyle=__CK.a;for(var i=0;i<6;i++){g.beginPath();var x=120+i*40;g.moveTo(x,60);g.lineTo(x+13,100);g.lineTo(x-13,100);g.fill()}
- g.strokeStyle='#4a6aff';g.lineWidth=8;g.beginPath();g.moveTo(640,80);g.bezierCurveTo(700,20,780,140,860,60);g.stroke();g.strokeStyle=__CK.a;g.beginPath();g.moveTo(680,120);g.bezierCurveTo(740,60,820,180,900,100);g.stroke();
- g.fillStyle='rgba(224,36,58,.8)';for(i=0;i<30;i++){g.fillRect(300+rnd()*180,258,3,rr(20,110))}
- g.fillStyle='#f4f1ff';g.font='bold 44px Heebo, Arial';g.fillText(__CK.CITY,270,330);
- var d=g.getImageData(0,0,1024,512),p=d.data;for(i=0;i<p.length;i+=4){var n=(rnd()-.5)*18;p[i]+=n;p[i+1]+=n;p[i+2]+=n}g.putImageData(d,0,0);return tex(c,1,1)}
 function rollerShutter(){var c=cvs(256,256),g=c.getContext('2d');for(var i=0;i<32;i++){g.fillStyle=i%2?'#6a6a74':'#7a7a86';g.fillRect(0,i*8,256,8);g.fillStyle='rgba(0,0,0,.25)';g.fillRect(0,i*8+7,256,1)}g.strokeStyle=__CK.a;g.lineWidth=14;g.lineCap='round';g.beginPath();g.moveTo(30,200);g.bezierCurveTo(80,40,160,260,226,70);g.stroke();return tex(c,1,1)}
 function win(g,x,y,lit,col){var w=mesh(rbox(1.0,1.5,.14,.04,3),std('#2a2a34'),x,y,2.55,g);var gl=mesh(new T.PlaneGeometry(.82,1.32),new T.MeshStandardMaterial({color:lit?col:'#1a2030',emissive:lit?col:'#0a0e18',emissiveIntensity:lit?1.1:.3,roughness:.2}),x,y,2.64,g);gl.castShadow=false;if(lit){var sp=new T.Sprite(new T.SpriteMaterial({color:col,map:glowTex(),blending:T.AdditiveBlending,transparent:true,opacity:.35,depthWrite:false}));sp.scale.set(2.6,2.6,1);sp.position.set(x,y,2.9);g.add(sp);anim.glow.push(sp)}mesh(rbox(1.3,.1,.4,.03,2),std('#5a5a64'),x,y-.82,2.7,g)}
 function lamp(x,z){var g=new T.Group();g.position.set(x,0,z);world.add(g);mesh(new T.CylinderGeometry(.08,.12,6.2,10),std('#2a2e3a',{metalness:.6,roughness:.4}),0,3.1,0,g);var arm=mesh(rbox(1.5,.1,.1,.03,2),std('#2a2e3a',{metalness:.6}),.7,6.1,0,g);var hd=mesh(rbox(.8,.14,.3,.05,2),std('#2a2e3a'),1.4,6.0,0,g);var l=mesh(new T.PlaneGeometry(.7,.24),new T.MeshBasicMaterial({color:'#ffb890'}),1.4,5.92,0,g);l.rotation.x=Math.PI/2;var sp=new T.Sprite(new T.SpriteMaterial({color:'#ff9a64',map:glowTex(),blending:T.AdditiveBlending,transparent:true,opacity:.75,depthWrite:false}));sp.scale.setScalar(5);sp.position.set(1.4,5.85,0);g.add(sp);anim.glow.push(sp);var pl=new T.PointLight('#ff9a64',1.2,16,1.6);pl.position.set(1.4,5.6,0);g.add(pl);var cone=mesh(new T.CylinderGeometry(.2,2.8,5.6,18,1,true),new T.MeshBasicMaterial({color:'#ff9a64',transparent:true,opacity:.07,blending:T.AdditiveBlending,depthWrite:false,side:T.DoubleSide}),1.4,2.9,0,g);cone.castShadow=false}
@@ -259,7 +251,7 @@ function skyDome(kind){var P={night:['#050914','#141a3a','#3a2650'],dusk:['#0c12
 function mkctx(def,geo,o){var g=new T.Group();g.scale.setScalar(U);world.add(g);
  var c={T:T,Q:Q,g:g,world:world,geo:geo,o:o||{},U:U,skin:(o&&o.skinSet)||{name:(o&&o.club)||'FC',c1:'#d8283e',c2:'#f4f1ff',c3:'#14141c'},
   std:std,mesh:mesh,rbox:rbox,capsule:capsule,loft:loft,cvs:cvs,tex:tex,paint:paint,wall:wall,brick:brick,planks:planks,cobble:cobble,stripes:stripes,sign:sign,chalk:chalk,rrect:rrect,rnd:rnd,rr:rr,glowTex:glowTex,weather:weather,
-  concrete:concrete,asphalt:asphalt,graffiti:graffiti,rollerShutter:rollerShutter,lamp:lamp,car:car,banner:banner,dumpster:dumpster,flare:flare,SK:SK,anim:anim,
+  concrete:concrete,asphalt:asphalt,rollerShutter:rollerShutter,lamp:lamp,car:car,banner:banner,dumpster:dumpster,flare:flare,SK:SK,anim:anim,
   m:function(v){return v*U},
   /** metre position of a room-unit point */
   P:function(x,z){return[x*U,z*U]},
