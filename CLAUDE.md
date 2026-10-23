@@ -3208,3 +3208,11 @@ Owner: the day stays Sims (TOWN, voxel); a mission switches to GTA/DOOM (RUSH). 
 2. **No pilot club.** A mission is a template whose `needs` are graded critical / enriching / decor; the Fitter answers per club READY (one approved night, printed as recorded) · NEUTRAL (no date, no name) · HELD (a research task: what, why, where to look) · IRRELEVANT. Never an invented date to make a mission READY.
 3. **The main route harms nobody.** Only the ultras route may throw objects, shove or "steal" a rival group's gear — never blood, weapons or injury; rival ultras groups are invented and obey the club's rival-colour bans.
 4. **Mandatory is the script's call**, and a mandatory mission never dead-ends: story mode after two failures, `slip` continues the chapter.
+
+## 126 · A wall never letters a word of ours; a city stands in its own years (23.10.2026)
+
+Owner: *"I saw graffiti of yours in red text in the school yard."*
+1. **A wall in LIFE carries the designer's graffiti (`public/life/town/tex/graffiti`, `rects.js`) or bare paint** — never a word drawn by code (`K.graf` has no text path; `tests/life-town-walls.test.ts`).
+2. **A city that shares its country's street gets a city layer** (`skin.cityLayer`, `cityOf()` in `lib/clubs/life/skins.ts`): its own view, signs and street plate. No other city's landmark, no national flag outside its country.
+3. **What a city built or lost stands only in the years it stood** (`c.o.year` / `?year=`).
+4. **Render target depth is 24-bit** (`stencilBuffer:true`): three r128's depth-only target is 16-bit and flickers on phones (`tests/life-town-depth.test.ts`).
