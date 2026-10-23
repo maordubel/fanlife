@@ -1002,7 +1002,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
 
       {overlay?.k === 'game' && (
         <div className={`${styles.cover} z-[60]`} data-clear="true" data-life="game">
-          <MiniGame game={overlay.d.game} id={overlay.d.id} amount={playAmount(overlay.d) || 8} copy={copy} reduced={reduced} cue={cue} onDone={(r?: unknown) => closeOverlay(r === 'good' || r === 'slip' || r === 'ok' ? r : undefined)} />
+          <MiniGame game={overlay.d.game} id={overlay.d.id} amount={playAmount(overlay.d) || 8} copy={copy} reduced={reduced} cue={cue}
+            age={chapter?.age} scope={(overlay.d as {scope?: unknown}).scope === 'short' ? 'short' : 'full'} people={scene?.actors.map(a => a.name)} onDone={(r?: unknown) => closeOverlay(r === 'good' || r === 'slip' || r === 'ok' ? r : undefined)} />
         </div>
       )}
 

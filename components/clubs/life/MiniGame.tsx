@@ -10,10 +10,10 @@
  */
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import type {MiniGame as Game, PlayResult} from '@/lib/life/universal/types'
-import {handsFor, limitMs, plan, score, type HandsPlan} from '@/lib/life/universal/hands'
+import {handsFor, limitMs, plan, score, type Dir, type HandsPlan} from '@/lib/life/universal/hands'
 import styles from './life.module.css'
 import g from './MiniGame.module.css'
-import {Car, Flags, Person, PlaceArt, Radio, Seam, Stencil, Thing} from './HandsArt'
+import {Car, Flags, Opened, PairCard, Person, PlaceArt, Radio, Seam, Stencil, Thing, Tied} from './HandsArt'
 
 type Copy = Record<string, string>
 export type MiniGameProps = {
@@ -27,6 +27,10 @@ export type MiniGameProps = {
   onDone: (result: PlayResult) => void
   /** the player's age: a child stacks a smaller delivery than a grown man (hands.ts variations) */
   age?: number
+  /** how much of the job (the play effect's `scope`, read defensively): 'short' asks for clearly less */
+  scope?: 'short' | 'full'
+  /** the people present in the scene, by name — the photograph frames them, not a stock gang */
+  people?: readonly string[]
 }
 type Inner = MiniGameProps & {finish: (r: PlayResult) => void}
 
@@ -505,6 +509,7 @@ function Hands({work, reduced, cue, finish}: Inner & {work: HandsPlan}) {
   const [mistakes, setMistakes] = useState(0)
   const [news, setNews] = useState<string | null>(null)
   const [done, setDone] = useState(false)
+  const [tail, setTail] = useState('')
   const live = useLatest({finish, mistakes, cue})
   const end = useCallback((ok: boolean) => {
     if (over.current) return
@@ -526,19 +531,21 @@ function Hands({work, reduced, cue, finish}: Inner & {work: HandsPlan}) {
   }, [LIMIT, end])
   const slip = useCallback(() => { setMistakes(n => n + 1); live.current.cue('tick'); buzz(10) }, [live])
   const say = useCallback((t: string) => { setNews(t); live.current.cue('tick') }, [live])
-  const common = {work, reduced, cue, slip, say, end}
+  const common = {work, reduced, cue, slip, say, end, note: setTail}
   return (
     <div className={g.stage} data-kind={work.kind} data-action={work.action}>
       <Meter fill={bar} copy={{}} />
       {work.kind === 'place' && <Place {...common} />}
       {work.kind === 'zones' && <Zones {...common} />}
       {work.kind === 'frame' && <Frame {...common} />}
-      <p className={g.status} role="status" aria-live="polite">{done ? work.after : news ?? work.variant}</p>
+      {work.kind === 'motion' && <Motion {...common} />}
+      {work.kind === 'compare' && <Compare {...common} />}
+      <p className={g.status} role="status" aria-live="polite">{done ? `${work.after}${tail}` : news ?? work.variant}</p>
     </div>
   )
 }
 
-type Common = {work: HandsPlan; reduced: boolean; cue: (n: string) => void; slip: () => void; say: (t: string) => void; end: (ok: boolean) => void}
+type Common = {work: HandsPlan; reduced: boolean; cue: (n: string) => void; slip: () => void; say: (t: string) => void; end: (ok: boolean) => void; note: (t: string) => void}
 
 /** place: one thing in your hands at a time; tap where it belongs; a wrong place shakes and you keep it */
 function Place({work, cue, slip, say, end}: Common) {
@@ -655,8 +662,10 @@ function Zones({work, cue, slip, say, end}: Common) {
 }
 
 /** frame: wait for every face; whoever would rather not be in it steps out; then the shutter */
-function Frame({work, reduced, cue, slip, say, end}: Common) {
+function Frame({work, reduced, cue, slip, say, end, note}: Common) {
   const [away, setAway] = useState<number>(-1)
+  // how you frame them is yours to choose, and it shows in the print: close on the faces, or wide with the place
+  const [close, setClose] = useState(true)
   const [out, setOut] = useState<Record<string, boolean>>({})
   const [asked, setAsked] = useState(false)
   const [shot, setShot] = useState(false)
@@ -673,11 +682,15 @@ function Frame({work, reduced, cue, slip, say, end}: Common) {
     const unwilling = work.items.some(p => p.to === 'out' && !out[p.id])
     if (lookingAway || (asked && unwilling)) { slip(); say(lookingAway ? 'Somebody looked away. Again.' : 'He asked to step out first.'); return }
     if (!asked) { slip(); say('Wait — somebody wants a word first.'); return }
-    cue('keep'); setShot(true); end(true)
+    cue('keep'); setShot(true); note(close ? ' Close on the faces.' : ' Wide, with the place behind them.'); end(true)
   }
   return (
     <>
-      <div className={g.photo} data-shot={shot ? 'true' : 'false'}>
+      <div className={g.framing} role="group" aria-label="Framing">
+        <button type="button" className={g.chip} aria-pressed={close} disabled={shot} {...tapProps(() => setClose(true))}>Close</button>
+        <button type="button" className={g.chip} aria-pressed={!close} disabled={shot} {...tapProps(() => setClose(false))}>Wide</button>
+      </div>
+      <div className={g.photo} data-shot={shot ? 'true' : 'false'} data-framing={close ? 'close' : 'wide'}>
         <i className={g.finder} aria-hidden="true" />
         {people.map(p => {
           const i = work.items.indexOf(p)
@@ -690,6 +703,160 @@ function Frame({work, reduced, cue, slip, say, end}: Common) {
         })}
       </div>
       <button type="button" className={g.btn} {...tapProps(press)}>Take it</button>
+    </>
+  )
+}
+
+const ARROW: Record<Dir, string> = {up: '↑', down: '↓', left: '←', right: '→'}
+const KEY_DIR: Record<string, Dir> = {ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right'}
+/** the direction of a short drag, or null when it was only a touch */
+function dirOf(dx: number, dy: number): Dir | null {
+  if (Math.hypot(dx, dy) < 28) return null
+  return Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : (dy > 0 ? 'down' : 'up')
+}
+/** a short drag on a surface: follows the finger a little (clamped), reports the direction on release */
+function useDrag(onDir: (d: Dir) => void) {
+  const start = useRef<{x: number; y: number} | null>(null)
+  const [pull, setPull] = useState({x: 0, y: 0})
+  const clamp = (v: number) => Math.max(-36, Math.min(36, v))
+  return {
+    pull,
+    props: {
+      onPointerDown: (e: React.PointerEvent) => { if (e.pointerType === 'mouse' && e.button !== 0) return; start.current = {x: e.clientX, y: e.clientY}; (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId) },
+      onPointerMove: (e: React.PointerEvent) => { const s = start.current; if (s) setPull({x: clamp(e.clientX - s.x), y: clamp(e.clientY - s.y)}) },
+      onPointerUp: (e: React.PointerEvent) => { const s = start.current; start.current = null; setPull({x: 0, y: 0}); if (!s) return; const d = dirOf(e.clientX - s.x, e.clientY - s.y); if (d) onDir(d) },
+      onPointerCancel: () => { start.current = null; setPull({x: 0, y: 0}) },
+    },
+  }
+}
+
+/**
+ * motion: open & fold, tie & wear — a short real movement for every step. Drag the thing the way the arrow
+ * points; or press and HOLD the step button (no drag needed); or the arrow key. A pull the wrong way is a
+ * slip and the step waits. The picture changes with every movement (before → after).
+ */
+function Motion({work, reduced, cue, slip, say, end}: Common) {
+  const [queue, setQueue] = useState(() => work.steps)
+  const [made, setMade] = useState(0)
+  const [shake, setShake] = useState(false)
+  const [holding, setHolding] = useState(false)
+  const interrupted = useRef(false), total = useRef(work.steps.length), hold = useRef<number | undefined>(undefined)
+  const live = useLatest({queue, made, slip, say, end, cue})
+  const step = queue[0]
+  const move = useCallback((d: Dir) => {
+    const {queue: q, made: n0} = live.current
+    const s = q[0]
+    if (!s) return
+    if (d !== s.dir) { live.current.slip(); setShake(true); window.setTimeout(() => setShake(false), 260); return }
+    live.current.cue('keep'); buzz(8)
+    const n = n0 + 1
+    let rest = q.slice(1)
+    if (!interrupted.current && work.interrupt.step && n / total.current >= work.interrupt.at) {
+      interrupted.current = true; total.current += 1
+      live.current.say(work.interrupt.say)
+      rest = [work.interrupt.step, ...rest]
+    }
+    setMade(n); setQueue(rest)
+    live.current.queue = rest; live.current.made = n
+    if (!rest.length) live.current.end(true)
+  }, [live, work])
+  const drag = useDrag(move)
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => { const d = KEY_DIR[e.key]; if (d && !e.repeat) { e.preventDefault(); move(d) } }
+    window.addEventListener('keydown', key)
+    return () => { window.removeEventListener('keydown', key); window.clearTimeout(hold.current) }
+  }, [move])
+  const HOLD = reduced ? 300 : 450
+  const press = () => { setHolding(true); window.clearTimeout(hold.current); hold.current = window.setTimeout(() => { setHolding(false); const s = live.current.queue[0]; if (s) move(s.dir) }, HOLD) }
+  const release = () => { setHolding(false); window.clearTimeout(hold.current) }
+  const p = made / total.current
+  const art = work.action === 'tie' ? <Tied subject={work.subject} p={p} /> : <Opened subject={work.subject} p={p} quick={work.variant === 'in a hurry'} />
+  const nudge = reduced ? undefined : {transform: `translate(${drag.pull.x * 0.5}px, ${drag.pull.y * 0.5}px)`}
+  return (
+    <>
+      <div className={g.motion} dir="ltr" data-shake={shake ? 'true' : 'false'} data-subject={work.subject} {...drag.props}
+        role="img" aria-label={step ? `${step.label} — ${step.dir}` : work.after}>
+        <div className={g.motionArt} aria-hidden="true" style={nudge}>{art}</div>
+        {step && <span className={g.arrow} data-dir={step.dir} aria-hidden="true">{ARROW[step.dir]}</span>}
+      </div>
+      <ol className={g.steps} aria-hidden="true">
+        {Array.from({length: total.current}, (_, i) => <li key={i} data-done={i < made ? 'true' : i === made ? 'now' : 'false'} />)}
+      </ol>
+      <button type="button" className={g.hold} data-holding={holding ? 'true' : 'false'} disabled={!step}
+        onPointerDown={e => { if (e.pointerType === 'mouse' && e.button !== 0) return; press() }} onPointerUp={release} onPointerLeave={release} onPointerCancel={release}
+        onKeyDown={e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); const s = live.current.queue[0]; if (s) move(s.dir) } }}
+        onClick={e => { if (e.detail === 0) { const s = live.current.queue[0]; if (s) move(s.dir) } }}
+        style={{['--hold' as string]: `${HOLD}ms`}}>
+        <span aria-hidden="true">{step ? ARROW[step.dir] : '✓'}</span> {step ? step.label : 'Done'}<small>{step ? 'drag, or hold' : ''}</small>
+      </button>
+    </>
+  )
+}
+
+/**
+ * compare: the pair side by side — yours face up, theirs face down. Turn theirs over (drag it sideways,
+ * tap Turn over, or T), then put the pair on its pile (drag it towards the pile, tap the pile, or 1 / 2).
+ * Deciding before you have looked is a slip.
+ */
+function Compare({work, cue, slip, say, end}: Common) {
+  const [queue, setQueue] = useState(() => work.items)
+  const [flipped, setFlipped] = useState(false)
+  const [shake, setShake] = useState<string | null>(null)
+  const [piles, setPiles] = useState<Record<string, number>>({})
+  const interrupted = useRef(false), total = useRef(work.items.length)
+  const live = useLatest({queue, flipped, piles, slip, say, end, cue})
+  const pair = queue[0]
+  const turn = useCallback(() => { if (live.current.flipped || !live.current.queue[0]) return; live.current.cue('tick'); buzz(5); setFlipped(true); live.current.flipped = true }, [live])
+  const put = useCallback((to: string) => {
+    const {queue: q, flipped: f, piles: pl} = live.current
+    const hand = q[0]
+    if (!hand) return
+    if (!f) { live.current.slip(); live.current.say('Look first — turn it over.'); return }
+    if (hand.to !== to) { live.current.slip(); setShake(to); window.setTimeout(() => setShake(null), 260); return }
+    live.current.cue('keep'); buzz(8)
+    if (hand.back) live.current.say(hand.back)
+    const next = {...pl, [to]: (pl[to] ?? 0) + 1}
+    setPiles(next); live.current.piles = next
+    let rest = q.slice(1)
+    const share = Object.values(next).reduce((n, v) => n + v, 0) / total.current
+    if (!interrupted.current && work.interrupt.item && share >= work.interrupt.at) { interrupted.current = true; total.current += 1; live.current.say(work.interrupt.say); rest = [work.interrupt.item, ...rest] }
+    setQueue(rest); live.current.queue = rest
+    setFlipped(false); live.current.flipped = false
+    if (!rest.length) live.current.end(true)
+  }, [live, work])
+  const drag = useDrag(d => { if (!live.current.flipped) { if (d === 'left' || d === 'right') turn() } else if (d === 'left') put(work.targets[0]!.id); else if (d === 'right') put(work.targets[1]!.id) })
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => {
+      if (e.repeat) return
+      if (e.key === 't' || e.key === 'T') { e.preventDefault(); turn() }
+      const n = Number(e.key); if (n >= 1 && n <= work.targets.length) { e.preventDefault(); put(work.targets[n - 1]!.id) }
+    }
+    window.addEventListener('keydown', key)
+    return () => window.removeEventListener('keydown', key)
+  }, [put, turn, work])
+  const nudge = {transform: `translate(${drag.pull.x * 0.5}px, ${drag.pull.y * 0.3}px)`}
+  return (
+    <>
+      <div className={g.compare} dir="ltr">
+        <figure className={g.card}>
+          <span className={g.cardArt} aria-hidden="true"><PairCard subject={work.subject} down={false} /></span>
+          <figcaption>{pair?.pair?.[0] ?? '—'}</figcaption>
+        </figure>
+        <figure className={g.card} data-flipped={flipped ? 'true' : 'false'} style={nudge} {...drag.props}>
+          <span className={g.cardArt} aria-hidden="true"><PairCard subject={work.subject} down={!flipped} /></span>
+          <figcaption>{pair ? (flipped ? pair.pair?.[1] ?? '' : 'Face down') : '—'}</figcaption>
+        </figure>
+      </div>
+      <button type="button" className={g.chip} disabled={!pair || flipped} {...tapProps(turn)}>Turn it over</button>
+      <div className={g.targets} style={{['--n' as string]: work.targets.length}}>
+        {work.targets.map((t, i) => (
+          <button key={t.id} type="button" className={g.target} data-compact="true" data-shake={shake === t.id ? 'true' : 'false'} data-full={(piles[t.id] ?? 0) > 0 ? 'true' : 'false'} {...tapProps(() => put(t.id))} aria-label={`${t.label} (${i + 1})`}>
+            <span className={g.pile} aria-hidden="true">{Array.from({length: piles[t.id] ?? 0}, (_, k) => <i key={k} className={g.chit} />)}</span>
+            <b>{t.label}</b>
+          </button>
+        ))}
+      </div>
+      <span className={g.handLeft}><bdi>{queue.length}</bdi> to go</span>
     </>
   )
 }
@@ -720,7 +887,8 @@ export function MiniGame(props: MiniGameProps) {
   const inner: Inner = {...props, finish}
   // a job you do with your hands opens its own work, not the shared game it used to borrow (hands.ts)
   const action = handsFor(props.id)
-  const work = useMemo(() => (action && action !== 'tune' ? plan(action, props.id, props.age ?? 0) : null), [action, props.id, props.age])
+  const peopleKey = (props.people ?? []).join('|')
+  const work = useMemo(() => (action && action !== 'tune' ? plan(action, props.id, props.age ?? 0, {scope: props.scope, people: peopleKey ? peopleKey.split('|') : []}) : null), [action, props.id, props.age, props.scope, peopleKey])
   const help = work ? work.help : copy[`game.${game}.help2`] ?? EN[`game.${game}.help2`] ?? copy[`game.${game}.help`] ?? EN[`game.${game}.help`] ?? ''
   return (
     <section className={`${styles.game} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-game-title" data-game={game} data-hands={work ? work.action : undefined} data-still={reduced ? 'true' : 'false'}>

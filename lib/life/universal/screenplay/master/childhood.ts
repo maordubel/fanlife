@@ -39,7 +39,7 @@ export const MASTER_CHILDHOOD = [
         action: [s(null, 'It gives all at once, the way stuck things do, and something small slides to the front.', 'היא נפתחת בבת אחת, כמו כל מה שתקוע, ומשהו קטן גולש קדימה.')],
         options: [
           o('open', t('Help him pull', 'לעזור לו למשוך'), s('dad', 'On three. No, on two, I never get to three.', 'על שלוש. לא, על שתיים, אני אף פעם לא מגיע לשלוש.'),
-            [flag('life:master:F01:drawer', 'together'), bond('dad', 3), heart(1), hands('clap', 'drawer-pull')]),
+            [flag('life:master:F01:drawer', 'together'), bond('dad', 3), heart(1), hands('carry', 'drawer-pull')]),
           o('tool', t('Fetch a spoon from the table', 'להביא כף מהשולחן'), s('dad', 'A spoon. Of course. Why did nobody in this family think of a spoon?', 'כף. ברור. למה אף אחד במשפחה הזאת לא חשב על כף?'),
             [flag('life:master:F01:drawer', 'tool'), flag('life:master:F01:own', 'found'), bond('dad', 2)]),
           o('play', t('Go back to your game', 'לחזור למשחק'), s('dad', 'Go. I will tell you when it is open.', 'לך. אני אגיד לך כשזה ייפתח.'),
@@ -108,7 +108,7 @@ export const MASTER_CHILDHOOD = [
         action: [s(null, 'The chair creaks, the way furniture does when it has seen this kind of decision before.', 'הכיסא חורק, כמו שרהיטים עושים כשהם כבר ראו החלטה כזאת.')],
         options: [
           o('wear', t('Put it on', 'ללבוש'), s('dad', 'Borrowed. Say it out loud so we both remember. Borrowed.', 'בהשאלה. תגיד את זה בקול שנזכור שניינו. בהשאלה.'),
-            [flag('life:master:F02:scarf', 'worn'), heart(2), hands('tune', 'scarf-tie')], {wearAdd: 'scarf'}),
+            [flag('life:master:F02:scarf', 'worn'), heart(2), hands('carry', 'scarf-tie')], {wearAdd: 'scarf'}),
           o('carry', t('Carry it in your hand', 'לשאת ביד'), s('dad', 'You want it, but not the looks yet. That is a sensible order.', 'אתה רוצה אותו, אבל עוד לא את המבטים. זה סדר הגיוני.'),
             [flag('life:master:F02:scarf', 'carried'), hands('carry', 'scarf-carry')]),
           o('leave', t('Leave it on the chair', 'להשאיר בכיסא'), s('dad', 'The chair will keep it. It is a very loyal chair.', 'הכיסא ישמור אותו. הוא כיסא נאמן מאוד.'),
