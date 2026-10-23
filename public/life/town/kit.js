@@ -296,6 +296,7 @@ RM.load=function(id,opts){opts=opts||{};PLAYMODE=!!opts.play&&({home:1,hall:1,sc
  sc.background=new T.Color('#080c22').convertSRGBToLinear();
  window.__CK=clubKit(c.skin);
  def.build(c);
+ if(window.ARTEFACTS)window.ARTEFACTS.place(c,id,opts.made||[]);
  sc.traverse(function(o){var ms=o.material?(Array.isArray(o.material)?o.material:[o.material]):[];ms.forEach(function(m){if(conv.has(m))return;conv.add(m);if(m.isShaderMaterial)return;if(m.color)m.color.convertSRGBToLinear();if(m.emissive)m.emissive.convertSRGBToLinear()})});
  var inside=({home:1,hall:1,school:1,work:1,'club-room':1})[def.kind]===1;sc.environment=QL==='low'?null:envFor(inside?'in':'out');var EI=SOBER?(inside?.24:.22):(inside?.42:.32);sc.traverse(function(o){var ms=o.material?(Array.isArray(o.material)?o.material:[o.material]):[];ms.forEach(function(m){if(m.isMeshStandardMaterial&&m.envMapIntensity===1)m.envMapIntensity=EI;if(QL!=='low'&&!Q.get('nowx'))weatherMat(m,o,inside)})});window.__EI=EI;if(SOBER)sober(sc,inside);post.exposure(SOBER?(inside?.84:.86):(inside?.84:.92));if(inside&&QL!=='low')sc.traverse(function(o){if(o.isHemisphereLight)o.intensity*=.72});
  atmos(sc,inside,opts);

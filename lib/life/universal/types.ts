@@ -307,6 +307,24 @@ export type LifeEvent =
   | {t: 'wear'; what: Wear}
   | {t: 'time'; to: TimeOfDay}
   | {t: 'ended'; chapter: string; ending: string}
+  /** a thing he made or changed (a washed car, a stitched scarf, the crew's banner): seen in the world, never a condition */
+  | {t: 'made'; a: Artefact}
+
+/** What a finished small game leaves in the world — `artefacts.ts` makes it, TOWN draws it. */
+export type ArtefactKind = 'car' | 'scarf' | 'banner' | 'poster' | 'shirt' | 'photo'
+export type ArtefactMark = {type: 'crooked-stroke' | 'painted-over' | 'own-star' | 'patch' | 'crease' | 'streak'; at?: string}
+export type Artefact = {
+  /** one per thing in a life: a second wash of the same car replaces the first */
+  id: string
+  kind: ArtefactKind
+  /** how it came out: the minigame's own variant (`mud`, `one coat`…) or the choice that shaped it */
+  variant: string
+  /** share of the work done, 0..1 — a car washed in a hurry keeps a streak */
+  zonesDone: number
+  marks: ArtefactMark[]
+  /** the chapter it was made in */
+  madeIn: string
+}
 
 export type LifeState = {
   v: 1
@@ -338,6 +356,8 @@ export type LifeState = {
   /** chapter id → the ending it reached */
   done: Record<string, string>
   finished: boolean
+  /** what he made, by id (a life, not a day; absent in a save from before artefacts) */
+  made?: Record<string, Artefact>
 }
 
 export type SaveFile = {v: 1; club: string; pack: string; events: LifeEvent[]; savedAt: string}

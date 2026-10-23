@@ -209,7 +209,7 @@ function enter(c){
  if(K.colourGuard)K.colourGuard(S)
  FR=c.frame||{};
  var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c',club:S}:null;
- RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true,weather:c.weather||null,mood:c.mood||'normal',age:c.age==null?null:c.age,year:c.year==null?null:c.year});
+ RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true,weather:c.weather||null,mood:c.mood||'normal',age:c.age==null?null:c.age,year:c.year==null?null:c.year,made:c.made||[]});
  var def=RM.defs[c.room];pruneDecor(c,def&&def.kind);
  if(window.__gnd)window.__sc.remove(window.__gnd);if(def&&IND[def.kind]){var gm=new T.Mesh(new T.PlaneGeometry(300,300),new T.MeshBasicMaterial({color:new T.Color('#1e1a17').convertSRGBToLinear()}));gm.rotation.x=-PI/2;gm.position.set(12*U,-.06,8*U);window.__sc.add(gm);window.__gnd=gm}
  if(window.__fill)window.__sc.remove(window.__fill);var fi=new T.DirectionalLight('#fff0e0',def&&IND[def.kind]?.3:.15);fi.position.set(0,6,14);window.__sc.add(fi);window.__fill=fi;
