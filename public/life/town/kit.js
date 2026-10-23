@@ -27,7 +27,7 @@ function clubKit(sk){var S=(sk&&sk.club)||null,p=(sk&&sk.c1)||'#d8283e',short=S&
   /* the club's own founding year (sourced), and whether this street is Tel Aviv's — only then may a sign name Tel Aviv places */
   /* the keepsake box on the bedroom floor: Hapoel's is the Red Box (The Worker's name for it); every other club's box carries its own name */
   BOX:(sk&&sk.name)==='hapoel-tel-aviv'?'The Red Box':('The '+(S&&S.name?S.name:short)+' Box'),
-  YEAR:S&&S.founded?String(S.founded):'',TOWN:(S&&S.town)||null,CITYL:(S&&S.city)||null,ID:(sk&&sk.name)||null,LANG:(S&&S.lang)||'en',TLV:/tel[\s-]?aviv/i.test(city),INIT:S&&S.initials?S.initials:short.slice(0,2),n1:S&&S.nums?S.nums[0]:4,n2:S&&S.nums?S.nums[1]:5,n3:S&&S.nums?S.nums[2]:6}}
+  YEAR:S&&S.founded?String(S.founded):'',TOWN:(S&&S.town)||null,CITYL:(S&&S.cityLayer)||null,ID:(sk&&sk.name)||null,LANG:(S&&S.lang)||'en',TLV:/tel[\s-]?aviv/i.test(city),INIT:S&&S.initials?S.initials:short.slice(0,2),n1:S&&S.nums?S.nums[0]:4,n2:S&&S.nums?S.nums[1]:5,n3:S&&S.nums?S.nums[2]:6}}
 window.__CK=clubKit(null);
 /* a sign is lettered for whichever club stands under it: a longer name never runs off the board */
 (function(){var P=CanvasRenderingContext2D.prototype,f=P.fillText,sF=P.strokeText;function fit(ctx,t,x,mw){if(mw!=null)return mw;var W=ctx.canvas.width,a=ctx.textAlign,av=a==='center'?2*Math.min(x,W-x):(a==='right'||a==='end')?x:W-x;av=Math.max(8,av*.96);return ctx.measureText(t).width>av?av:undefined}

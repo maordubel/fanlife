@@ -70,7 +70,8 @@ describe('every city its own street', () => {
     ['st-pauli', 'ham', null], ['celtic', 'gla', null],
   ] as const)('%s builds as %s, layer %s', (id, town, city) => {
     expect(skins[id]!.town).toBe(town)
-    expect(skins[id]!.city ?? null).toBe(city)
+    expect(skins[id]!.cityLayer ?? null).toBe(city)
+    expect(typeof skins[id]!.city).toBe('string')
   })
   it('each city has its signs and its own view through the gap', () => {
     const table = body(street, ' K.CITY=({', '})[CK]||null;')
