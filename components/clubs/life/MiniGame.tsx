@@ -13,7 +13,7 @@ import type {MiniGame as Game, PlayResult} from '@/lib/life/universal/types'
 import {handsFor, limitMs, plan, score, type Dir, type HandsPlan} from '@/lib/life/universal/hands'
 import styles from './life.module.css'
 import g from './MiniGame.module.css'
-import {Car, Flags, Opened, PairCard, Person, PlaceArt, Radio, Seam, Stencil, Thing, Tied} from './HandsArt'
+import {Car, Flags, Mended, Opened, PairCard, Person, PlaceArt, Radio, Seam, Stencil, Thing, Tied} from './HandsArt'
 
 type Copy = Record<string, string>
 export type MiniGameProps = {
@@ -770,7 +770,7 @@ function Motion({work, reduced, cue, slip, say, end}: Common) {
   const press = () => { setHolding(true); window.clearTimeout(hold.current); hold.current = window.setTimeout(() => { setHolding(false); const s = live.current.queue[0]; if (s) move(s.dir) }, HOLD) }
   const release = () => { setHolding(false); window.clearTimeout(hold.current) }
   const p = made / total.current
-  const art = work.action === 'tie' ? <Tied subject={work.subject} p={p} /> : <Opened subject={work.subject} p={p} quick={work.variant === 'in a hurry'} />
+  const art = work.action === 'tie' ? <Tied subject={work.subject} p={p} /> : work.action === 'repair' ? <Mended subject={work.subject} p={p} /> : <Opened subject={work.subject} p={p} quick={work.variant === 'in a hurry'} />
   const nudge = reduced ? undefined : {transform: `translate(${drag.pull.x * 0.5}px, ${drag.pull.y * 0.5}px)`}
   return (
     <>

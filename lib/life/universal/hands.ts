@@ -14,6 +14,8 @@
  *   · `motion` — a short real movement, step by step: grip, pull, turn, fold, pass, place (open & fold a
  *     drawer, an envelope, a packet, a letter; tie & wear a scarf, laces, an armband). Drag the thing in
  *     the direction the step asks, or press and hold, or the arrow key; a wrong pull is a slip.
+ *   · `motion` also carries `repair` — mend a thing with your hands: a bicycle tyre (lever it off, find the
+ *     hole by its bubbles, sand, patch, refit, pump to the mark), a loose chair leg, a slipped chain.
  *   · `compare` — two things side by side: turn the second one over, then decide (a double or a new
  *     one, the right ticket or the wrong one). Deciding before you have looked is a slip.
  *
@@ -34,7 +36,7 @@ export type HandsKind = 'zones' | 'place' | 'frame' | 'tune' | 'motion' | 'compa
 export type HandsAction =
   | 'stack' | 'sort' | 'wash' | 'tray' | 'deliver' | 'direct' | 'invoice' | 'assemble' | 'unpack'
   | 'hang' | 'stencil' | 'stitch' | 'frame' | 'tune'
-  | 'open' | 'tie' | 'compare'
+  | 'open' | 'tie' | 'compare' | 'repair'
 
 /** what a job resolves to: one of the hands actions, or one of the games that were already its own */
 export type JobPlay = HandsAction | MiniGame
@@ -76,6 +78,8 @@ const BY_WORD: readonly [RegExp, HandsAction][] = [
   [/crate|stack/, 'stack'],
   [/drawer|envelope|packet|letter|wardrobe|unfold|fold|-open\b|open-/, 'open'],
   [/swap|double|compare|ticket-check|-check\b/, 'compare'],
+  // a thing that is mended (a scarf is sewn, above): a tyre, a chair leg, a chain
+  [/tyre|tire|puncture|repair|-fix\b|fix-|chain|chair/, 'repair'],
 ]
 
 /**
@@ -90,7 +94,7 @@ export const SCENE_HANDS: Readonly<Record<string, HandsAction>> = {
   S38: 'compare',  // "Check the record before closing it"
 }
 
-const HANDS = new Set<string>(['stack', 'sort', 'wash', 'tray', 'deliver', 'direct', 'invoice', 'assemble', 'unpack', 'hang', 'stencil', 'stitch', 'frame', 'tune', 'open', 'tie', 'compare'])
+const HANDS = new Set<string>(['stack', 'sort', 'wash', 'tray', 'deliver', 'direct', 'invoice', 'assemble', 'unpack', 'hang', 'stencil', 'stitch', 'frame', 'tune', 'open', 'tie', 'compare', 'repair'])
 
 /** the hands action a play id opens, or null when the play keeps its own game */
 export function handsFor(id: string): HandsAction | null {
@@ -311,6 +315,24 @@ export function plan(action: HandsAction, id: string, age = 0, opt: PlanOptions 
         interrupt: {at: 0.5, say: subject === 'scarf' ? 'Too tight — loosen it a finger.' : subject === 'laces' ? 'One end slips out. Again.' : 'It is upside down. Turn it.',
           step: {id: 'mx', verb: 'loosen', label: subject === 'scarf' ? 'Loosen it a finger' : subject === 'laces' ? 'Catch the end' : 'Turn it the right way up', dir: subject === 'scarf' ? 'up' : subject === 'laces' ? 'left' : 'right'}},
         after: subject === 'scarf' ? 'The scarf is on, with room to breathe.' : subject === 'laces' ? 'Double knot. They will hold until the final whistle.' : 'The armband is on, letters facing out.'}
+    }
+    case 'repair': {
+      // what is mended, read from the play id: a chair leg, a bike chain, or (the default) a punctured tyre
+      const subject = /chair|leg/.test(low) ? 'chair' : /chain/.test(low) ? 'chain' : 'tyre'
+      const S = (verb: string, label: string, dir: Dir, i: number): Step => ({id: `m${i}`, verb, label, dir})
+      const all: Step[] = subject === 'chair'
+        ? [S('turn', 'Turn the chair over', 'down', 0), S('pull', 'Pull the loose leg out', 'right', 1), S('scrape', 'Scrape off the old glue', 'left', 2), S('glue', 'Glue the joint', 'down', 3), S('push', 'Push the leg home', 'up', 4), S('tie', 'Tie it tight while it sets', 'right', 5)]
+        : subject === 'chain'
+        ? [S('turn', 'Turn the bike upside down', 'down', 0), S('lift', 'Lift the slack chain', 'up', 1), S('hook', 'Hook it on the back cog', 'right', 2), S('hook', 'Hook it on the front ring', 'left', 3), S('turn', 'Turn the pedal slowly', 'down', 4), S('check', 'Spin the wheel', 'right', 5)]
+        : [S('lever', 'Lever the tyre off the rim', 'up', 0), S('pull', 'Pull the tube out', 'right', 1), S('dip', 'Dip it in the bowl — watch for bubbles', 'down', 2), S('sand', 'Sand round the hole', 'left', 3), S('patch', 'Press the patch on', 'down', 4), S('refit', 'Tuck the tyre back under the rim', 'up', 5), S('pump', 'Pump', 'down', 6), S('pump', 'Pump to the mark', 'down', 7)]
+      // the short version: the same repair, only the movements that mend it
+      const steps = short ? (subject === 'tyre' ? [all[0]!, all[2]!, all[4]!, all[7]!] : [all[1]!, all[3]!, all[4]!]) : all
+      const what = subject === 'chair' ? 'the chair leg' : subject === 'chain' ? 'the chain' : 'the tyre'
+      return {...base, kind: 'motion', variant: subject === 'tyre' ? (b === 0 ? 'a small bike' : 'a puncture') : subject, subject, steps, title: `Fix ${what}`,
+        help: 'Do each movement with your hands: drag the way the arrow points, or press and hold, or use the arrow keys.', limit: 40,
+        interrupt: {at: 0.6, say: subject === 'tyre' ? 'The patch lifts at one edge.' : subject === 'chair' ? 'The glue runs down the leg.' : 'The chain slips off the cog again.',
+          step: {id: 'mx', verb: 'press', label: subject === 'tyre' ? 'Press it flat, hard' : subject === 'chair' ? 'Wipe it before it sets' : 'Hook it back on', dir: subject === 'tyre' ? 'down' : subject === 'chair' ? 'left' : 'right'}},
+        after: subject === 'tyre' ? 'The tyre is hard to the thumb and the needle sits on the mark. The patch holds.' : subject === 'chair' ? 'The chair stands on four legs and does not rock.' : 'The chain runs round and the wheel spins clean.'}
     }
     case 'compare': {
       // what is laid side by side, read from the play id (or the scene: S07 tickets, S38 a record, the rest stickers)
