@@ -57,6 +57,8 @@ export type VoxelSkin = {
   policy: {hue: [number, number]; minSaturation: number; minValue: number}[]
   /** colour families an owner-approved rivalry takes away (red · green · blue): the town never paints them */
   rivals?: string[]
+  /** the club's matchday as its city lives it, for the town to dress (`ritual.ts` → `townCulture`): meet-ups, food, drink, ways to the ground, eras */
+  culture?: import('./ritual').TownCulture | null
   /** fictional names a sign may carry (the kiosk keeper's shop) */
   cast?: Partial<Record<string, string>>
 }

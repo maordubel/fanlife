@@ -19,8 +19,8 @@ export type SimResult = {chapter: string; states: number; endings: string[]; stu
  * make the same afternoon a million different ones.
  */
 type Cuts = {coins: number[]; heart: number[]; energy: number[]; standing: number[]; bond: Map<string, number[]>; flags: Set<string>; has: Set<string>; fund: Map<string, number[]>; saved: Map<string, number[]>; owns: Map<string, number[]>}
-/** The side of a day (jobs, benches, the hatch) is done once and read by nothing but itself: it makes no state of its own. */
-const SIDE_FLAG = /^(job|rest|shop):/
+/** The side of a day (jobs, benches, the hatch, the club's matchday meet-up and the morning paper) is done once and read by nothing but itself: it makes no state of its own. */
+const SIDE_FLAG = /^(job|rest|shop|ritual):|^life:ritual:/
 function cutsOf(chapter: Chapter): Cuts {
   const cuts: Cuts = {coins: [], heart: [], energy: [], standing: [], bond: new Map(), flags: new Set(), has: new Set(), fund: new Map(), saved: new Map(), owns: new Map()}
   const cut = (m: Map<string, number[]>, [k, v]: [string, number]) => m.set(k, [...(m.get(k) ?? []), v])

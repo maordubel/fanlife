@@ -296,7 +296,7 @@ RM.load=function(id,opts){opts=opts||{};PLAYMODE=!!opts.play&&({home:1,hall:1,sc
  sc.background=new T.Color('#080c22').convertSRGBToLinear();
  window.__CK=clubKit(c.skin);
  def.build(c);
- if(window.ARTEFACTS)window.ARTEFACTS.place(c,id,opts.made||[]);
+ if(window.ARTEFACTS)window.ARTEFACTS.place(c,id,opts.made||[]);if(window.CULTURE)window.CULTURE.place(c,id);
  /* no flicker (owner, 23.10.2026: the living-room floor shimmered, the stand crawled with black squares): a thing that lies
     flat on a surface — a rug, a sun patch, chalk, a decal — casts no shadow onto what it lies on, and the crowd's thousand
     bobbing people cast none either: each was a texel-sized shadow that changed every frame */

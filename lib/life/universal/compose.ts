@@ -20,6 +20,8 @@ import {nightChapter} from './content/night'
 import {centrepieceOf, readMatch} from './match'
 import {ROOMS} from './rooms'
 import {sideLife} from './content/side'
+import {ritualLife} from './content/ritual'
+import type {MatchdayRitual} from './ritual'
 import type {VoxelSkin} from './skin'
 import {fillChapter, type Vars} from './text'
 import type {ArchiveRef, CardDef, Chapter, LifeCulture, LifeCultureKind, LifePack, LifeReadiness, MatchDetail} from './types'
@@ -47,6 +49,8 @@ export type ComposeInput = {
   details?: Record<string, MatchDetail>
   /** the club's sourced matchday culture (world.json, already validated); omitted or empty means none is recorded */
   culture?: LifeCulture[]
+  /** the club's matchday as its city lives it (`ritual.ts`, every element sourced); omitted or null means none */
+  ritual?: MatchdayRitual | null
   /** the club's data version: a new archive is a new pack */
   dataVersion: string
   /** the language the club's life is told in; default English */
@@ -149,7 +153,8 @@ export function composeLife(input: ComposeInput): LifePack {
     preludes.set(host.id, list)
   }
 
-  const built: Chapter[] = ordered.map(c => fillChapter({...sideLife(c), prelude: preludes.get(c.id)}, vars))
+  // the side of each day, then the club's own matchday (the meet-up, the morning paper after a night), then the club's words
+  const built: Chapter[] = ritualLife(ordered.map(c => ({...sideLife(c), prelude: preludes.get(c.id)})), input.ritual ?? null, birthYear, locale).map(c => fillChapter(c, vars))
   // A night may echo a choice from an ordinary day, but only when that day came first in THIS life (the order is by age,
   // and the archive's nights decide it): an echo of a day not yet lived is dropped, and the unconditional line stays.
   const raisedBefore = new Set<string>()
@@ -181,7 +186,7 @@ export function composeLife(input: ComposeInput): LifePack {
   return {
     schemaVersion: 1,
     storyLocale: locale,
-    version: hash(JSON.stringify({v: input.dataVersion, chapters: chapters.map(c => c.id), locale, skin, cast, birthYear, text: chapters, culture})),
+    version: hash(JSON.stringify({v: input.dataVersion, ritual: input.ritual ?? null, chapters: chapters.map(c => c.id), locale, skin, cast, birthYear, text: chapters, culture})),
     clubId: club.id,
     club: {name: club.name, short: skin.short, city: club.city, country: club.country},
     skin, cast,

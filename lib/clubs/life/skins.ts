@@ -2,6 +2,7 @@ import {REGISTRY, type RegistryClub} from '@/lib/master/registry'
 import {clubTheme} from '@/lib/clubs/theme'
 import {buildSkin, type SignKey, type StreetKey, type VoxelSkin} from '@/lib/life/universal/skin'
 import {clubWorld} from '@/lib/clubs/world'
+import {ritualFor, townCulture} from '@/lib/life/universal/ritual'
 import {LIFE_CAST, LIFE_SKINS} from './packs'
 
 /**
@@ -58,6 +59,7 @@ export function clubSkin(club: RegistryClub): {skin: VoxelSkin; issues: string[]
       town: townOf(club),
       founded: (() => { const y = /\b(1[89]\d\d|20[0-2]\d)\b/.exec(world?.founded?.line ?? ''); return y ? Number(y[1]) : null })(),
       ...(nums ? {nums} : {}),
+      ...(() => { const c = townCulture(ritualFor(club.id, world)); return c ? {culture: c} : {} })(),
     },
   }
 }
