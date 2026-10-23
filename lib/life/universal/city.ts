@@ -124,6 +124,8 @@ export type City = {
 
 export function cityOf(pack: LifePack, chapter: Chapter, state: LifeState): City {
   const objective = chapter.objectives.find(o => !meets(state, o.done)) ?? null
+  // the supporter's neighbourhood, only when the club's own record names one
+  const homeName = (pack.culture ?? []).find(c => c.kind === 'home')?.name ?? null
   const adjacent = new Set(chapter.doors.filter(d => d.room === state.room && meets(state, d.when)).map(d => d.to))
   const seen = new Set(state.seen)
   // the places today is made of: anything a door, a person or an errand of this chapter touches
@@ -139,7 +141,7 @@ export function cityOf(pack: LifePack, chapter: Chapter, state: LifeState): City
           : sp.id.startsWith('rest-') ? [{id: sp.id, label: sp.label, kind: 'rest'}] : [])
     return {
       ...s,
-      name: roomName(pack, s.id, chapter),
+      name: s.kind === 'home' && homeName ? `${roomName(pack, s.id, chapter)} · ${homeName}` : roomName(pack, s.id, chapter),
       status,
       goal: objective?.room === s.id,
       errand: objective?.room === s.id ? objective.t : null,

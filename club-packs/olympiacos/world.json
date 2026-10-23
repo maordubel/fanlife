@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "olympiacos",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the founding-meeting date (Wikipedia says 1924, the press says 1925, so the line says 'officially established'), the 'eternal teenager' epithet (one article read), any motto (none found), anything about the 1981 tragedy. Culture research still open: food, habit, meetup.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the founding-meeting date (Wikipedia says 1924, the press says 1925, so the line says 'officially established'), the 'eternal teenager' epithet (one article read), any motto (none found), anything about the 1981 tragedy. Some culture lines are the owner's first-hand knowledge (rule 18), cited under the neutral label. Culture research still open: habit, meetup.",
  "voice": {
   "welcome": "Welcome to the Legend's house.",
   "kicker": "Piraeus · Red and white"
@@ -229,6 +229,32 @@
     {
      "publisher": "CNN Greece",
      "url": "https://www.cnn.gr/sports/story/53436/se-exelixi-to-ntermpi-ton-aionion"
+    }
+   ]
+  },
+  {
+   "id": "olympiacos-food-gyros",
+   "kind": "food",
+   "line": "Gyros and souvlaki are the matchday food.",
+   "local": "γύρος · σουβλάκι",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "olympiacos-food-alfa",
+   "kind": "food",
+   "line": "A bottle of Alfa, the Greek lager, goes with it.",
+   "local": "Άλφα",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
     }
    ]
   }

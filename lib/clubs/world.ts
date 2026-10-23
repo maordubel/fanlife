@@ -7,6 +7,7 @@ import aekAthens from '@/club-packs/aek-athens/world.json'
 import celtic from '@/club-packs/celtic/world.json'
 import stPauli from '@/club-packs/st-pauli/world.json'
 import type {RegistryClub} from '@/lib/master/registry'
+import {OWNER_KNOWLEDGE_LABEL} from '@/lib/credits/groups'
 
 /** A club's own flavour for its app: nicknames, ground, terrace, a few facts. Every sourced line carries its sources. */
 export type WorldSource={publisher:string;url:string}
@@ -19,9 +20,22 @@ export type FlavourKind='place'|'heritage'|'language'|'moment'
 export type WorldFlavour=WorldLine&{id:string;kind:FlavourKind;local?:string;script?:string}
 export type WorldFact=WorldLine&{id:string;local?:string;script?:string}
 /** Matchday culture: what is eaten, done, laughed at, where people meet, how they get to the ground. */
-export type CultureKind='food'|'habit'|'humour'|'meetup'|'route'
+export type CultureKind='food'|'habit'|'humour'|'meetup'|'route'|'home'
+/** The five matchday kinds a club's research is measured against; `home` (the supporter's own neighbourhood) is extra. */
 export const CULTURE_KINDS:readonly CultureKind[]=['food','habit','humour','meetup','route']
-export type WorldCulture=WorldLine&{id:string;kind:CultureKind;local?:string;script?:string}
+const ALL_CULTURE_KINDS:readonly CultureKind[]=[...CULTURE_KINDS,'home']
+/** A culture source is a publisher with an https page, or the owner's first-hand knowledge (rule 18): `owner: true`, no URL, the neutral label, never a name. */
+export type CultureSource={publisher:string;url:string;owner?:undefined}|{publisher:string;owner:true;url?:undefined}
+export type WorldCulture={id:string;kind:CultureKind;line:string;local?:string;
+ /** a `home` line names its neighbourhood in a few words, for the map */
+ name?:string;script?:string;confidence:number;sources:CultureSource[]
+ /** era-bound lines: shown only in chapters whose year sits inside the range */
+ fromYear?:number;untilYear?:number}
+/** The neutral label an owner source carries, with the day he said it. */
+export const OWNER_SOURCE=new RegExp(`^${OWNER_KNOWLEDGE_LABEL}, \\d{1,2}\\.\\d{1,2}\\.\\d{4}$`)
+/** Hapoel Tel Aviv's one allowed political word: the taunt rival fans throw at its supporters. Anywhere else in culture it is refused. */
+export const TAUNT_WORDS=['leftie','lefties','political left','left-wing','שמאלני']
+export const TAUNT_SCOPE={clubId:'hapoel-tel-aviv',kind:'humour'} as const
 export type ClubWorld={
  schemaVersion:1;clubId:string;review:string;note:string
  voice:{welcome:string;kicker:string}
@@ -117,31 +131,52 @@ export function validateWorld(w:unknown,clubId?:string):string[]{
  return out
 }
 
-/** Problems with one culture line; empty means it may be shown. Same bar as every other line: two publishers, confidence 2–3, https, 220 characters, no forbidden word. */
-export function cultureIssues(c:unknown,label='culture'):string[]{
+/** Problems with one culture line; empty means it may be shown. Same bar as every other line — two publishers, confidence 2–3, https, 220 characters, no forbidden word — except a line the owner sourced: one owner source (rule 18) is enough, at confidence 2. */
+export function cultureIssues(c:unknown,label='culture',clubId?:string):string[]{
  const out:string[]=[]
- sourcedIssues(label,c,2,out)
- if(isRec(c)){
-  textIssues(`${label}.line`,c.line,LINE_MAX,out)
-  if(!CULTURE_KINDS.includes(c.kind as CultureKind))out.push(`${label}: kind`)
-  if(typeof c.id!=='string'||!c.id)out.push(`${label}: id missing`)
-  if(c.local!==undefined)textIssues(`${label}.local`,c.local,LINE_MAX,out)
- }
+ if(!isRec(c))return [`${label}: not an object`]
+ const src=Array.isArray(c.sources)?c.sources as unknown[]:[]
+ const owners=src.filter(s=>isRec(s)&&s.owner===true)
+ if(owners.length){
+  if(c.confidence!==2)out.push(`${label}: an owner-sourced line is confidence 2`)
+  for(const s of owners){
+   if(!isRec(s))continue
+   if(s.url!==undefined)out.push(`${label}: an owner source carries no URL`)
+   if(typeof s.publisher!=='string'||!OWNER_SOURCE.test(s.publisher))out.push(`${label}: an owner source carries the neutral label and a date, never a name`)
+  }
+  for(const s of src.filter(s=>!owners.includes(s))){
+   if(!isRec(s)||typeof s.publisher!=='string'||!s.publisher||typeof s.url!=='string')out.push(`${label}: malformed source`)
+   else if(!host(s.url))out.push(`${label}: source is not https (${s.publisher})`)
+  }
+ }else sourcedIssues(label,c,2,out)
+ textIssues(`${label}.line`,c.line,LINE_MAX,out)
+ if(!ALL_CULTURE_KINDS.includes(c.kind as CultureKind))out.push(`${label}: kind`)
+ if(typeof c.id!=='string'||!c.id)out.push(`${label}: id missing`)
+ if(c.local!==undefined)textIssues(`${label}.local`,c.local,LINE_MAX,out)
+ if(c.kind==='home')textIssues(`${label}.name`,c.name,48,out)
+ for(const k of ['fromYear','untilYear'] as const)if(c[k]!==undefined&&!Number.isInteger(c[k]))out.push(`${label}.${k}: not a year`)
+ if(typeof c.fromYear==='number'&&typeof c.untilYear==='number'&&c.fromYear>c.untilYear)out.push(`${label}: fromYear after untilYear`)
+ const text=`${c.line} ${c.local??''}`.toLowerCase()
+ const inScope=clubId===TAUNT_SCOPE.clubId&&c.kind===TAUNT_SCOPE.kind
+ if(!inScope)for(const w of TAUNT_WORDS)if(text.includes(w))out.push(`${label}: political word "${w}" is allowed only as the taunt in Hapoel Tel Aviv humour`)
  return out
 }
 /** The culture lines that pass, ids unique (the first wins). */
-export function validCulture(list:unknown):WorldCulture[]{
+export function validCulture(list:unknown,clubId?:string):WorldCulture[]{
  if(!Array.isArray(list))return []
  const ids=new Set<string>()
- return list.filter((c,i)=>{if(cultureIssues(c,`culture[${i}]`).length)return false;const id=(c as WorldCulture).id;if(ids.has(id))return false;ids.add(id);return true}) as WorldCulture[]
+ return list.filter((c,i)=>{if(cultureIssues(c,`culture[${i}]`,clubId).length)return false;const id=(c as WorldCulture).id;if(ids.has(id))return false;ids.add(id);return true}) as WorldCulture[]
 }
+/** Whether an era-bound line holds in a given year; a line with no range holds always. */
+export const cultureInYear=(c:Pick<WorldCulture,'fromYear'|'untilYear'>,year:number|null|undefined):boolean=>
+ year===null||year===undefined?c.fromYear===undefined&&c.untilYear===undefined:(c.fromYear===undefined||year>=c.fromYear)&&(c.untilYear===undefined||year<=c.untilYear)
 
 /** The researched world for a club, or null. A file that fails validation is treated as absent — the app never shows a half-checked line. */
 export function clubWorld(id:string):ClubWorld|null{
  const w=raw[id]
  if(!w||validateWorld(w,id).length)return null
  const world=w as ClubWorld
- return world.culture===undefined?world:{...world,culture:validCulture(world.culture)}
+ return world.culture===undefined?world:{...world,culture:validCulture(world.culture,id)}
 }
 export const WORLD_IDS=Object.keys(raw)
 
@@ -159,8 +194,8 @@ export function worldFor(club:Pick<RegistryClub,'id'|'name'|'city'|'country'>):R
 export const nicknameLine=(w:ClubWorld):string=>w.nicknames.map(n=>n.text).join(' · ')
 /** Every distinct publisher behind what a club's History page shows, for the small "Sources" credit. */
 export function worldPublishers(w:ClubWorld):string[]{
- const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[]),...(w.culture??[])]
- return [...new Set(blocks.flatMap(b=>b.sources.map(s=>s.publisher)))].sort()
+ const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[])]
+ return [...new Set([...blocks,...(w.culture??[])].flatMap(b=>b.sources.map(s=>s.publisher)))].sort()
 }
 
 /** The flavour line for a given day, rotating through the list; `offset` picks a different one for a second spot on the same page. Deterministic, so server and client agree. */

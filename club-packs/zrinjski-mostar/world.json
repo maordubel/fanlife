@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "zrinjski-mostar",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Correction found in research: the home shirt is WHITE with a RED sash (RSSSF, Footy Headlines), not red and blue. Left out on purpose, by the sensitivity rules: the 1945 history, anything about supporters' politics or identity, derbies, incidents. No motto, stadium nickname or crest description is confirmed by two publishers. Culture research still open: food, humour, meetup.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Correction found in research: the home shirt is WHITE with a RED sash (RSSSF, Footy Headlines), not red and blue. Left out on purpose, by the sensitivity rules: the 1945 history, anything about supporters' politics or identity, derbies, incidents. No motto, stadium nickname or crest description is confirmed by two publishers. Some culture lines are the owner's first-hand knowledge (rule 18), cited under the neutral label. Culture research still open: humour.",
  "voice": {
   "welcome": "Come in under the white hill.",
   "kicker": "Mostar · Bijeli Brijeg"
@@ -219,6 +219,42 @@
     {
      "publisher": "Libero Guide",
      "url": "https://liberoguide.com/zrinjski-mostar"
+    }
+   ]
+  },
+  {
+   "id": "zrinjski-mostar-meetup-bars",
+   "kind": "meetup",
+   "line": "Supporters meet at the bar right by the stadium and at the café-bar Taco.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "zrinjski-mostar-habit-beer",
+   "kind": "habit",
+   "line": "A lot of beer and a real Balkan atmosphere on matchday, with a strongly Croatian feel.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "zrinjski-mostar-food-doner",
+   "kind": "food",
+   "line": "A Turkish döner shop near the stadium and the many bakeries feed the crowd.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
     }
    ]
   }

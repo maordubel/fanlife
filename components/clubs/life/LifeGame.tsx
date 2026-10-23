@@ -12,7 +12,7 @@
  * button next to somebody) into the engine's own calls. What the simulator in the test suite
  * walks is therefore exactly what is walked here.
  */
-import {cultureLineFor} from '@/lib/life/universal/culture'
+import {cultureLineFor, homeOf} from '@/lib/life/universal/culture'
 import {KeepArt, keepArt} from './KeepArt'
 import {artefactOf} from '@/lib/life/universal/artefacts'
 import {Reel} from './Reel'
@@ -899,6 +899,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
             <h1 id="life-title" className={styles.poster}>{copy.title}</h1>
             <p className={styles.lede}>{copy.tagline}</p>
             {heart && (heart.nickname || heart.ground) && <p className={styles.heart} data-life="heart">{[heart.nickname, heart.ground].filter(Boolean).join(' · ')}</p>}
+            {homeOf(pack) && <p className={styles.heart} data-life="home" lang="en" dir="auto">{homeOf(pack)!.line}</p>}
             <div className={styles.pixRow} aria-hidden="true"><PixelSprite name="kid" scale={5} /><PixelSprite name="ball" scale={5} className={styles.pixBall} /><PixelSprite name="cup" scale={4} /></div>
             <div className={styles.actions}>
               {saved && <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => begin(false)} data-life="continue-life">{copy.continue} · {copy.chapter} {chapterNo} {copy.of} {pack.chapters.length}</button>}

@@ -1,7 +1,8 @@
 import {readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vitest'
-import {clubWorld, cultureIssues, cultureMissing, cultureOf, validCulture, validateWorld, WORLD_IDS, CULTURE_KINDS} from '@/lib/clubs/world'
-import {cultureLineFor} from '@/lib/life/universal/culture'
+import {clubWorld, cultureInYear, cultureIssues, cultureMissing, cultureOf, validCulture, validateWorld, WORLD_IDS, CULTURE_KINDS} from '@/lib/clubs/world'
+import {cultureLineFor, homeOf} from '@/lib/life/universal/culture'
+import {OWNER_KNOWLEDGE_LABEL} from '@/lib/credits/groups'
 
 const good = {id: 'x-route', kind: 'route', line: 'Fans take the tram to the ground.', confidence: 2, sources: [{publisher: 'A', url: 'https://a.example.com/p'}, {publisher: 'B', url: 'https://b.example.org/q'}]}
 
@@ -39,15 +40,15 @@ describe('matchday culture in world.json', () => {
 })
 
 describe('LIFE reads culture from world.json only', () => {
-  const pack = (culture: never[] | ReturnType<typeof validCulture>) => ({culture, chapters: [{id: 'u1'}, {id: 'night-a', anchor: {}}, {id: 'night-b', anchor: {}}]} as never)
+  const pack = (culture: never[] | ReturnType<typeof validCulture>) => ({culture, chapters: [{id: 'u1'}, {id: 'night-a', anchor: {year: 2000}}, {id: 'night-b', anchor: {year: 2000}}]} as never)
   it('a night closes on a recorded line; a universal chapter gets none', () => {
     const lines = validCulture([good, {...good, id: 'x-food', kind: 'food', line: 'Pies.'}])
-    expect(cultureLineFor(pack(lines), {id: 'night-a', anchor: {} as never})?.id).toBe('x-route')
-    expect(cultureLineFor(pack(lines), {id: 'night-b', anchor: {} as never})?.id).toBe('x-food')
+    expect(cultureLineFor(pack(lines), {id: 'night-a', anchor: {year: 2000} as never})?.id).toBe('x-route')
+    expect(cultureLineFor(pack(lines), {id: 'night-b', anchor: {year: 2000} as never})?.id).toBe('x-food')
     expect(cultureLineFor(pack(lines), {id: 'u1'})).toBeNull()
   })
   it('a club with no culture gets nothing invented', () => {
-    expect(cultureLineFor(pack([]), {id: 'night-a', anchor: {} as never})).toBeNull()
+    expect(cultureLineFor(pack([]), {id: 'night-a', anchor: {year: 2000} as never})).toBeNull()
     expect(cultureOf(null, 'food')).toEqual([])
     expect(cultureMissing(null)).toEqual([...CULTURE_KINDS])
   })
@@ -58,5 +59,58 @@ describe('LIFE reads culture from world.json only', () => {
       const src = readFileSync(f, 'utf8')
       for (const line of shipped) expect(src.includes(line.slice(0, 40)), `${f} types "${line}"`).toBe(false)
     }
+  })
+})
+
+const OWNER = {publisher: `${OWNER_KNOWLEDGE_LABEL}, 23.10.2026`, owner: true as const}
+const owned = {id: 'o-1', kind: 'meetup', line: 'Supporters meet by the bar.', confidence: 2, sources: [OWNER]}
+
+describe('owner-sourced culture (rule 18)', () => {
+  it('one owner source is enough, at confidence 2, with the neutral label and no URL', () => {
+    expect(cultureIssues(owned)).toEqual([])
+    expect(cultureIssues({...owned, confidence: 3}).join()).toMatch(/confidence 2/)
+    expect(cultureIssues({...owned, sources: [{...OWNER, url: 'https://x.example.com'}]}).join()).toMatch(/no URL/)
+    expect(cultureIssues({...owned, sources: [{publisher: 'מאור הראל', owner: true}]}).join()).toMatch(/never a name/)
+    expect(cultureIssues({...owned, sources: [{publisher: OWNER_KNOWLEDGE_LABEL, owner: true}]}).join()).toMatch(/never a name/)
+    // without the marker, a source with no URL is just malformed and one publisher is not enough
+    expect(cultureIssues({...owned, sources: [{publisher: OWNER.publisher}]})).not.toEqual([])
+  })
+  it('no shipped source names the owner, and every no-URL source is an owner source', () => {
+    for (const id of WORLD_IDS) for (const c of clubWorld(id)?.culture ?? []) for (const s of c.sources) {
+      expect(s.publisher).not.toMatch(/מאור|Maor|Harel|הראל/)
+      if (!s.url) expect(s.owner, `${id}/${c.id}`).toBe(true)
+    }
+  })
+  it('the political taunt is allowed only in Hapoel Tel Aviv humour', () => {
+    const taunt = {...owned, kind: 'humour', line: 'Rival fans call them lefties.'}
+    expect(cultureIssues(taunt, 'x', 'hapoel-tel-aviv')).toEqual([])
+    expect(cultureIssues(taunt, 'x', 'hapoel-petah-tikva').join()).toMatch(/political word/)
+    expect(cultureIssues({...taunt, kind: 'habit'}, 'x', 'hapoel-tel-aviv').join()).toMatch(/political word/)
+    expect(cultureIssues({...taunt, line: 'They call them ultras.'}, 'x', 'hapoel-tel-aviv').join()).toMatch(/forbidden/)
+    expect(clubWorld('hapoel-tel-aviv')!.culture!.some(c => c.id === 'hapoel-tel-aviv-humour-leftie')).toBe(true)
+  })
+  it('era-bound lines follow the chapter year: the French Kiss until 2015, the light rail from 2023', () => {
+    const w = clubWorld('hapoel-tel-aviv')!
+    const byId = (id: string) => w.culture!.find(c => c.id === id)!
+    expect(cultureInYear(byId('hapoel-tel-aviv-meetup-french-kiss'), 2010)).toBe(true)
+    expect(cultureInYear(byId('hapoel-tel-aviv-meetup-french-kiss'), 2016)).toBe(false)
+    expect(cultureInYear(byId('hapoel-tel-aviv-meetup-home-center'), 2016)).toBe(true)
+    const rail = w.culture!.find(c => c.kind === 'route' && /light rail has/.test(c.line))!
+    expect(rail.fromYear).toBe(2023)
+    expect(cultureInYear(byId('hapoel-tel-aviv-route-promenade'), 2020)).toBe(true)
+    expect(cultureInYear(rail, 2020)).toBe(false)
+    const pack = {culture: w.culture, chapters: [{id: 'night-a', anchor: {year: 1999}}]} as never
+    for (let i = 0; i < 1; i++) {
+      const line = cultureLineFor(pack, {id: 'night-a', anchor: {year: 1999} as never})!
+      expect(cultureInYear(line, 1999)).toBe(true)
+    }
+    const all = [0, 1, 2, 3, 4, 5, 6, 7].map(n => cultureLineFor({culture: w.culture, chapters: Array.from({length: 8}, (_, k) => ({id: `n${k}`, anchor: {year: 1999}}))} as never, {id: `n${n}`, anchor: {year: 1999} as never})!.id)
+    expect(all).not.toContain('hapoel-tel-aviv-meetup-home-center')
+    expect(all.some(id => /light-rail|redline|red-line/.test(id))).toBe(false)
+  })
+  it('AEK lives in Kypseli; a club without a recorded home has none', () => {
+    expect(homeOf({culture: clubWorld('aek-athens')!.culture})?.name).toBe('Kypseli')
+    expect(homeOf({culture: clubWorld('celtic')!.culture})).toBeNull()
+    expect(cultureLineFor({culture: clubWorld('aek-athens')!.culture, chapters: [{id: 'n', anchor: {year: 2000}}]} as never, {id: 'n', anchor: {year: 2000} as never})?.kind).not.toBe('home')
   })
 })
