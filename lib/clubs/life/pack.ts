@@ -12,6 +12,7 @@ import type {ArchiveRef, LifePack} from '@/lib/life/universal/types'
 import {LIFE_ANCHORS, LIFE_CAST, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs'
 import {clubSkin} from './skins'
 import {clubWorld} from '@/lib/clubs/world'
+import {ritualFor} from '@/lib/life/universal/ritual'
 
 const scriptOf = (s: string, fallback: string) => /[֐-׿]/.test(s) ? 'he' : /[Ͱ-Ͽ]/.test(s) ? 'el' : fallback === 'he' || fallback === 'el' ? 'en' : fallback
 
@@ -54,6 +55,7 @@ export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): Li
     anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, dataVersion: data.version,
     storyLocale: story.locale,
     culture: clubWorld(id)?.culture ?? [],
+    ritual: ritualFor(id),
   })
   cache.set(key, pack)
   return pack
