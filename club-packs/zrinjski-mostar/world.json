@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "zrinjski-mostar",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Correction found in research: the home shirt is WHITE with a RED sash (RSSSF, Footy Headlines), not red and blue. Left out on purpose, by the sensitivity rules: the 1945 history, anything about supporters' politics or identity, derbies, incidents. No motto, stadium nickname or crest description is confirmed by two publishers.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Correction found in research: the home shirt is WHITE with a RED sash (RSSSF, Footy Headlines), not red and blue. Left out on purpose, by the sensitivity rules: the 1945 history, anything about supporters' politics or identity, derbies, incidents. No motto, stadium nickname or crest description is confirmed by two publishers. Culture research still open: food, humour, meetup.",
  "voice": {
   "welcome": "Come in under the white hill.",
   "kicker": "Mostar · Bijeli Brijeg"
@@ -185,6 +185,42 @@
     }
    ],
    "confidence": 2
+  }
+ ],
+ "culture": [
+  {
+   "id": "zrinjski-mostar-habit-east-stand",
+   "kind": "habit",
+   "line": "The home support stands together in the lower East Stand, the standing terrace closest to the pitch.",
+   "local": "Istočna tribina",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/zrinjski-mostar"
+    },
+    {
+     "publisher": "Crystal Palace FC",
+     "url": "https://www.cpfc.co.uk/news/club/palace-on-tour-get-to-know-zrinjski-mostar-stadium/"
+    }
+   ]
+  },
+  {
+   "id": "zrinjski-mostar-route-uphill-walk",
+   "kind": "route",
+   "line": "From the west bank of the Neretva it is an uphill walk of about 15 minutes to Bijeli Brijeg, with Kralja Petra Krešimira IV leading up towards the ground.",
+   "local": "Ulica kralja Petra Krešimira IV",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Crystal Palace FC",
+     "url": "https://www.cpfc.co.uk/news/information/palace-on-tour-important-information-for-fans-going-to-mostar/"
+    },
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/zrinjski-mostar"
+    }
+   ]
   }
  ]
 }

@@ -11,6 +11,7 @@ import {composeLife} from '@/lib/life/universal/compose'
 import type {ArchiveRef, LifePack} from '@/lib/life/universal/types'
 import {LIFE_ANCHORS, LIFE_CAST, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs'
 import {clubSkin} from './skins'
+import {clubWorld} from '@/lib/clubs/world'
 
 const scriptOf = (s: string, fallback: string) => /[֐-׿]/.test(s) ? 'he' : /[Ͱ-Ͽ]/.test(s) ? 'el' : fallback === 'he' || fallback === 'el' ? 'en' : fallback
 
@@ -28,7 +29,6 @@ export function lifeAnchors(data: Pick<ClubData, 'archive' | 'timeline' | 'sourc
     .map(f => ({factId: f.id, title: f.value.name, on: null, year: f.value.year!, precision: 'year' as const, hint: f.value.hint, locale: scriptOf(f.value.name, data.locales.content), sources: sourcesOf(f.sources)}))
   return [...dated, ...yearly]
 }
-
 const cache = new Map<string, LifePack>()
 
 export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): LifePack {
@@ -53,6 +53,7 @@ export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): Li
     cast, timeline: has(LIFE_TIMELINE), selection,
     anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, dataVersion: data.version,
     storyLocale: story.locale,
+    culture: clubWorld(id)?.culture ?? [],
   })
   cache.set(key, pack)
   return pack

@@ -18,6 +18,10 @@ export type WorldTerrace=WorldLine&{name:string;local?:string;script?:string;tab
 export type FlavourKind='place'|'heritage'|'language'|'moment'
 export type WorldFlavour=WorldLine&{id:string;kind:FlavourKind;local?:string;script?:string}
 export type WorldFact=WorldLine&{id:string;local?:string;script?:string}
+/** Matchday culture: what is eaten, done, laughed at, where people meet, how they get to the ground. */
+export type CultureKind='food'|'habit'|'humour'|'meetup'|'route'
+export const CULTURE_KINDS:readonly CultureKind[]=['food','habit','humour','meetup','route']
+export type WorldCulture=WorldLine&{id:string;kind:CultureKind;local?:string;script?:string}
 export type ClubWorld={
  schemaVersion:1;clubId:string;review:string;note:string
  voice:{welcome:string;kicker:string}
@@ -26,6 +30,8 @@ export type ClubWorld={
  facts:WorldFact[]
  /** Small local touches the club page rotates through — place, heritage, speech, a moment. Extra seasoning, never the main content. */
  flavour?:WorldFlavour[]
+ /** Matchday culture from the record. Each line is checked on its own: a failing line is dropped, never the whole file. */
+ culture?:WorldCulture[]
 }
 /** What the app shows for a club that has no researched world yet: its name and place, nothing invented. */
 export type ResolvedWorld=ClubWorld&{researched:boolean;terraceTab:string}
@@ -107,13 +113,35 @@ export function validateWorld(w:unknown,clubId?:string):string[]{
    })
   }
  }
+ if(w.culture!==undefined&&!Array.isArray(w.culture))out.push('culture must be a list')
  return out
+}
+
+/** Problems with one culture line; empty means it may be shown. Same bar as every other line: two publishers, confidence 2–3, https, 220 characters, no forbidden word. */
+export function cultureIssues(c:unknown,label='culture'):string[]{
+ const out:string[]=[]
+ sourcedIssues(label,c,2,out)
+ if(isRec(c)){
+  textIssues(`${label}.line`,c.line,LINE_MAX,out)
+  if(!CULTURE_KINDS.includes(c.kind as CultureKind))out.push(`${label}: kind`)
+  if(typeof c.id!=='string'||!c.id)out.push(`${label}: id missing`)
+  if(c.local!==undefined)textIssues(`${label}.local`,c.local,LINE_MAX,out)
+ }
+ return out
+}
+/** The culture lines that pass, ids unique (the first wins). */
+export function validCulture(list:unknown):WorldCulture[]{
+ if(!Array.isArray(list))return []
+ const ids=new Set<string>()
+ return list.filter((c,i)=>{if(cultureIssues(c,`culture[${i}]`).length)return false;const id=(c as WorldCulture).id;if(ids.has(id))return false;ids.add(id);return true}) as WorldCulture[]
 }
 
 /** The researched world for a club, or null. A file that fails validation is treated as absent — the app never shows a half-checked line. */
 export function clubWorld(id:string):ClubWorld|null{
  const w=raw[id]
- return w&&validateWorld(w,id).length===0?w as ClubWorld:null
+ if(!w||validateWorld(w,id).length)return null
+ const world=w as ClubWorld
+ return world.culture===undefined?world:{...world,culture:validCulture(world.culture)}
 }
 export const WORLD_IDS=Object.keys(raw)
 
@@ -131,7 +159,7 @@ export function worldFor(club:Pick<RegistryClub,'id'|'name'|'city'|'country'>):R
 export const nicknameLine=(w:ClubWorld):string=>w.nicknames.map(n=>n.text).join(' · ')
 /** Every distinct publisher behind what a club's History page shows, for the small "Sources" credit. */
 export function worldPublishers(w:ClubWorld):string[]{
- const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[])]
+ const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[]),...(w.culture??[])]
  return [...new Set(blocks.flatMap(b=>b.sources.map(s=>s.publisher)))].sort()
 }
 
@@ -140,3 +168,8 @@ export function flavourFor(w:ClubWorld,dayIndex:number,offset=0):WorldFlavour|nu
  const f=w.flavour??[]
  return f.length?f[((dayIndex+offset)%f.length+f.length)%f.length]!:null
 }
+
+/** The culture lines of one kind — empty when the record has none; nothing is ever invented to fill a kind. */
+export const cultureOf=(w:ClubWorld|null,kind:CultureKind):WorldCulture[]=>(w?.culture??[]).filter(c=>c.kind===kind)
+/** Kinds the record has not yet given this club. */
+export const cultureMissing=(w:ClubWorld|null):CultureKind[]=>CULTURE_KINDS.filter(k=>!cultureOf(w,k).length)

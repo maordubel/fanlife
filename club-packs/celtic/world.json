@@ -156,5 +156,123 @@
    ],
    "confidence": 2
   }
+ ],
+ "culture": [
+  {
+   "id": "celtic-food-kiosk-pies",
+   "kind": "food",
+   "line": "Concourse kiosks at Celtic Park sell pies and hot dogs; no alcohol is sold inside the ground on matchday.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Football Ground Guide",
+     "url": "https://footballgroundguide.com/leagues/scottish-spl-premier-and-football-league-clubs/scottish-premier-league/celtic-football-club-parkhead-glasgow.html"
+    },
+    {
+     "publisher": "Away Grounds",
+     "url": "https://www.awaygrounds.com/?p=18355"
+    }
+   ]
+  },
+  {
+   "id": "celtic-habit-huddle",
+   "kind": "habit",
+   "line": "Supporters copy the players' pre-match huddle with a mass Huddle of their own in the stands.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "The Celtic Wiki",
+     "url": "https://www.thecelticwiki.com/?p=212"
+    },
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/The_Pozna%C5%84"
+    }
+   ]
+  },
+  {
+   "id": "celtic-humour-paradise",
+   "kind": "humour",
+   "line": "The ground is called Paradise because a journalist said the move to the current site was like leaving the graveyard to enter paradise.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_Park"
+    },
+    {
+     "publisher": "The Celtic Wiki",
+     "url": "https://www.thecelticwiki.com/about-celtic/celtic-slang/paradise/"
+    }
+   ]
+  },
+  {
+   "id": "celtic-humour-jungle",
+   "kind": "humour",
+   "line": "The old north terrace, once the Hayshed, was known to fans as the Jungle until it was demolished in 1994.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_Park"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/celticpark/"
+    }
+   ]
+  },
+  {
+   "id": "celtic-meetup-gallowgate",
+   "kind": "meetup",
+   "line": "Most of the pubs near the ground are on the Gallowgate, north of Celtic Park, and they fill with home supporters before games.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/celticpark/"
+    },
+    {
+     "publisher": "Away Grounds",
+     "url": "https://www.awaygrounds.com/?p=18355"
+    }
+   ]
+  },
+  {
+   "id": "celtic-route-dalmarnock",
+   "kind": "route",
+   "line": "Dalmarnock is the closest station, a short train ride from Glasgow Central and about a ten-minute walk from the ground.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_Park"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/celticpark/"
+    },
+    {
+     "publisher": "Away Grounds",
+     "url": "https://www.awaygrounds.com/?p=18355"
+    }
+   ]
+  },
+  {
+   "id": "celtic-route-bus",
+   "kind": "route",
+   "line": "Buses 43 and 64 run from the city centre to Celtic Park, the 43 along London Road to the Main Stand side.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "The Celtic Wiki",
+     "url": "https://www.thecelticwiki.com/?p=2547"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/celticpark/"
+    }
+   ]
+  }
  ]
 }

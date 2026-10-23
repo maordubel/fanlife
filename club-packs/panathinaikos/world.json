@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "panathinaikos",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the exact founding day and the opening year of Leoforos (sources conflict), white as a second colour (one publisher), any motto (none found), the new Votanikos ground (status not verified), anything about violence. Panathinaikos plays at Leoforos, not at OPAP Arena (that is AEK's).",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the exact founding day and the opening year of Leoforos (sources conflict), white as a second colour (one publisher), any motto (none found), the new Votanikos ground (status not verified), anything about violence. Panathinaikos plays at Leoforos, not at OPAP Arena (that is AEK's). Culture research still open: food, meetup.",
  "voice": {
   "welcome": "Green, and proud of the shamrock.",
   "kicker": "Athens · Ampelokipoi"
@@ -211,6 +211,62 @@
     }
    ],
    "confidence": 2
+  }
+ ],
+ "culture": [
+  {
+   "id": "panathinaikos-route-ampelokipi",
+   "kind": "route",
+   "line": "The nearest metro stop is Ampelokipi; the ground stands at 160 Alexandras Avenue.",
+   "local": "Αμπελόκηποι",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "App Savvy Traveller",
+     "url": "https://appsavvytraveller.com/getting-to-the-stadiums-of-athens/"
+    },
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Leoforos_Alexandras_Stadium"
+    },
+    {
+     "publisher": "Football Ground Guide",
+     "url": "https://footballgroundguide.com/news/athens-football-teams"
+    }
+   ]
+  },
+  {
+   "id": "panathinaikos-habit-green-streets",
+   "kind": "habit",
+   "line": "On matchday the streets around Leoforos fill with supporters in green making their way to the ground.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "App Savvy Traveller",
+     "url": "https://appsavvytraveller.com/getting-to-the-stadiums-of-athens/"
+    },
+    {
+     "publisher": "Neos Kosmos",
+     "url": "https://neoskosmos.com/en/2023/05/19/sport/sport-opinion/live-football-in-greece-the-agony-and-the-ecstasy"
+    }
+   ]
+  },
+  {
+   "id": "panathinaikos-humour-eternals",
+   "kind": "humour",
+   "line": "The match with Olympiacos is known as the Derby of the Eternal Enemies, or simply the derby of the eternals.",
+   "local": "Ντέρμπι των αιωνίων",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Derby_of_the_eternal_enemies"
+    },
+    {
+     "publisher": "CNN Greece",
+     "url": "https://www.cnn.gr/sports/story/53436/se-exelixi-to-ntermpi-ton-aionion"
+    }
+   ]
   }
  ]
 }
