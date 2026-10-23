@@ -52,7 +52,7 @@ var FS_COMP=[
 function mk(fs,u){return new T.ShaderMaterial({vertexShader:VS,fragmentShader:fs,uniforms:u,depthTest:false,depthWrite:false})}
 function hasFloat(gl){return !!(gl.getExtension('EXT_color_buffer_float')||gl.getExtension('EXT_color_buffer_half_float'))}
 function target(w,h,msaa,float,depth){
- var o={minFilter:T.LinearFilter,magFilter:T.LinearFilter,format:T.RGBAFormat,type:float?T.HalfFloatType:T.UnsignedByteType,depthBuffer:!!depth,stencilBuffer:false};
+ var o={minFilter:T.LinearFilter,magFilter:T.LinearFilter,format:T.RGBAFormat,type:float?T.HalfFloatType:T.UnsignedByteType,depthBuffer:!!depth,stencilBuffer:!!depth};/* a depth target asks for stencil too: three r128 makes a depth-only target 16-bit, which flickers on phones */
  if(msaa){var m=new T.WebGLMultisampleRenderTarget(w,h,o);m.samples=4;return m}
  return new T.WebGLRenderTarget(w,h,o);
 }
