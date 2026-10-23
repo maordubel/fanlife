@@ -605,7 +605,7 @@ RM.def('schoolyard',{kind:'school',build:function(c){var L=lib(c),rr=c.rr,rnd=c.
  // four-square
  var fs=P(33.5,18.0);k.strokeRect(fs[0]-2*pu,fs[1]-1.4*pu,4*pu,2.8*pu);k.beginPath();k.moveTo(fs[0],fs[1]-1.4*pu);k.lineTo(fs[0],fs[1]+1.4*pu);k.moveTo(fs[0]-2*pu,fs[1]);k.lineTo(fs[0]+2*pu,fs[1]);k.stroke();
  // chalk scribbles
- line(4,'rgba(255,170,170,.7)');k.font='900 54px Heebo, Arial';k.fillStyle='rgba(255,180,180,.65)';k.direction='ltr';var cs=P(12.5,21.5);k.fillText((__CK.SHORT+'!'),cs[0],cs[1]);line(3,'rgba(190,210,255,.65)');k.beginPath();var cp=P(17,22);k.moveTo(cp[0],cp[1]);k.bezierCurveTo(cp[0]+40,cp[1]-60,cp[0]+80,cp[1]+30,cp[0]+140,cp[1]-20);k.stroke();
+ /* a child's chalk loop, and no word: the yard does not write the club's name for him (owner, 23.10.2026) */line(3,'rgba(190,210,255,.65)');k.beginPath();var cp=P(17,22);k.moveTo(cp[0],cp[1]);k.bezierCurveTo(cp[0]+40,cp[1]-60,cp[0]+80,cp[1]+30,cp[0]+140,cp[1]-20);k.stroke();
  // football pitch lines (kids' marks between the bag goalposts)
  line(3,'rgba(244,241,238,.5)');var gp=P(18.5,15.5);k.setLineDash([14,10]);k.beginPath();k.moveTo(gp[0],gp[1]-90);k.lineTo(gp[0],gp[1]+90);k.stroke();k.setLineDash([]);
  L.nz(k,PW,PH,9);var gt=c.tex(cv,1,1);
@@ -618,9 +618,8 @@ RM.def('schoolyard',{kind:'school',build:function(c){var L=lib(c),rr=c.rr,rnd=c.
   function X1(x){return(x-(cx-FW/2))*u}function Y1(y){return ph-y*u}
   // handball goal on the wall (x 15-23)
   q.strokeStyle='rgba(244,241,238,.9)';q.lineWidth=.22*u;q.strokeRect(X1(15.6),Y1(4.4),7.6*u,4.4*u-1.6*u*0+0);q.fillStyle='rgba(90,70,60,.12)';for(i=0;i<22;i++){q.beginPath();q.arc(X1(16+rnd()*7),Y1(1+rnd()*3.2),rr(8,24),0,7);q.fill()}
-  q.fillStyle='rgba(190,40,50,.55)';q.font='900 '+(1.7*u)+'px Heebo, Arial';q.direction='ltr';q.textAlign='center';q.fillText(__CK.SHORT,X1(19.4),Y1(2.4));q.font='bold '+(.7*u)+'px Heebo, Arial';q.fillStyle='rgba(60,60,70,.6)';q.fillText('1 : 0',X1(19.4),Y1(1.3));
   // sign
-  q.fillStyle='#2e4a6a';q.fillRect(X1(1.0),Y1(11.4),9.4*u,1.6*u);q.fillStyle='#f4f1ee';q.font='900 '+(.9*u)+'px Heebo, Arial';q.fillText((__CK.TLV?'Primary School  "Achdut"':__CK.W.school),X1(5.7),Y1(10.3),9.0*u);
+  q.fillStyle='#2e4a6a';q.fillRect(X1(1.0),Y1(11.4),9.4*u,1.6*u);q.fillStyle='#f4f1ee';q.font='900 '+(.9*u)+'px Heebo, Arial';q.direction='ltr';q.textAlign='center';/* the school is a school: the street's own word for it, never a name the archive does not hold */q.fillText(__CK.W.school,X1(5.7),Y1(10.3),9.0*u);
   var tx=c.tex(cv2,1,1);var fp=new THREE.Mesh(new THREE.PlaneGeometry(FW,FH),L.M('#fff',{map:tx,rough:.95}));fp.position.set(cx,FH/2,FZ+.01);fp.receiveShadow=true;g.add(fp);
   // windows
   [5.2,10.8,16.4,22.0,27.6,33.2,38.8,44.4].forEach(function(x){[[7.2,3.0],[3.2,2.6]].forEach(function(r,ri){if(ri==1&&(x<7&&x>1||(x>14&&x<25)))return;var y=r[0],h=r[1],w=3.0;L.box(w+.5,h+.5,.4,'#efe8dc',x,y-.25,FZ+.2,{r:.06});var gl=L.box(w,h,.1,'#9ab4cc',x,y,FZ+.42,{r:.02,metal:.3,rough:.15});L.box(.14,h,.12,'#efe8dc',x,y,FZ+.48,{r:.02,ns:1});L.box(w,.14,.12,'#efe8dc',x,y+h*.55,FZ+.48,{r:.02,ns:1});L.box(w+.8,.3,.7,'#d8cdbd',x,y-.5,FZ+.5,{r:.06});if(ri==0){L.box(.9,h-.1,.1,'#4f7f78',x-w/2-.55,y,FZ+.42,{r:.03,ns:1});L.box(.9,h-.1,.1,'#4f7f78',x+w/2+.55,y,FZ+.42,{r:.03,ns:1})}else{for(var bi=0;bi<5;bi++)L.box(.08,h,.08,'#3a3a40',x-1.2+bi*.6,y,FZ+.6,{ns:1,r:.02})}})});

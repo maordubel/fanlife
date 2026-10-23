@@ -29,6 +29,13 @@ function townOf(club: RegistryClub): VoxelSkin['town'] {
   if (club.city === 'Glasgow') return 'gla'
   return null
 }
+/** the city layer: a city that builds on its country's street but has its own landmark, signs and street plate */
+function cityOf(club: RegistryClub): VoxelSkin['cityLayer'] {
+  if (club.city === 'Petah Tikva') return 'pt'
+  if (club.city === 'Haifa') return 'hfa'
+  if (club.city === 'Thessaloniki') return 'thes'
+  return null
+}
 const LANG: Record<string, keyof typeof STREET> = {Israel: 'he', Greece: 'el', Croatia: 'hr', 'Bosnia and Herzegovina': 'hr', Serbia: 'sr', Germany: 'de', Italy: 'it', Turkey: 'tr', England: 'en', Scotland: 'en'}
 
 /** One club's skin. A club with no LIFE file still gets one — from its registry row, its theme and its sourced world file. */
@@ -57,6 +64,7 @@ export function clubSkin(club: RegistryClub): {skin: VoxelSkin; issues: string[]
       // the founding year as the sourced world file states it (two publishers, rule 100) — never another club's
       lang: lang ?? null,
       town: townOf(club),
+      cityLayer: cityOf(club),
       founded: (() => { const y = /\b(1[89]\d\d|20[0-2]\d)\b/.exec(world?.founded?.line ?? ''); return y ? Number(y[1]) : null })(),
       ...(nums ? {nums} : {}),
       ...(() => { const c = townCulture(ritualFor(club.id, world)); return c ? {culture: c} : {} })(),
