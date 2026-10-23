@@ -281,7 +281,11 @@ export type LifePack = {
   anchors: ArchiveRef[]
   /** honest about what it is: composed from universal beats and this club's approved archive */
   provenance: {kind: 'generated-from-anchors'; universalChapters: number; anchoredChapters: number; cultureDna: 'pending' | 'approved'}
+  /** the club's matchday culture, read from its sourced world.json only — never typed in code; a kind the record lacks is absent */
+  culture?: LifeCulture[]
 }
+export type LifeCultureKind = 'food' | 'habit' | 'humour' | 'meetup' | 'route'
+export type LifeCulture = {id: string; kind: LifeCultureKind; line: string; local?: string}
 
 /* ───────────── the save ───────────── */
 

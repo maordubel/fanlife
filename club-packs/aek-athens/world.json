@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "aek-athens",
  "review": "cross-source-2026-10-09",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found). Corrected 13.10.2026: a 2002 Roma-ultras match preview (never names Gate 21) and Brighton's match-preview article were dropped as sources; every line keeps two independent publishers.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found). Corrected 13.10.2026: a 2002 Roma-ultras match preview (never names Gate 21) and Brighton's match-preview article were dropped as sources; every line keeps two independent publishers. Culture research still open: food, habit, humour, meetup.",
  "voice": {
   "welcome": "Welcome to the Union's house.",
   "kicker": "Athens · The double-headed eagle"
@@ -192,6 +192,29 @@
     }
    ],
    "confidence": 2
+  }
+ ],
+ "culture": [
+  {
+   "id": "aek-athens-route-perissos",
+   "kind": "route",
+   "line": "Supporters take Metro Line 1 to Perissos and walk the last stretch to the ground, about ten to fifteen minutes.",
+   "local": "Περισσός",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "App Savvy Traveller",
+     "url": "https://appsavvytraveller.com/getting-to-the-stadiums-of-athens/"
+    },
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Agia_Sophia_Stadium"
+    },
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/athens/"
+    }
+   ]
   }
  ]
 }

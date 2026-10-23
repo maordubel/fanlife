@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "olympiacos",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the founding-meeting date (Wikipedia says 1924, the press says 1925, so the line says 'officially established'), the 'eternal teenager' epithet (one article read), any motto (none found), anything about the 1981 tragedy.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the founding-meeting date (Wikipedia says 1924, the press says 1925, so the line says 'officially established'), the 'eternal teenager' epithet (one article read), any motto (none found), anything about the 1981 tragedy. Culture research still open: food, habit, meetup.",
  "voice": {
   "welcome": "Welcome to the Legend's house.",
   "kicker": "Piraeus · Red and white"
@@ -175,6 +175,62 @@
     }
    ],
    "confidence": 2
+  }
+ ],
+ "culture": [
+  {
+   "id": "olympiacos-route-faliro",
+   "kind": "route",
+   "line": "Supporters take Metro Line 1 to Faliro station, a few minutes' walk from Karaiskakis.",
+   "local": "Φάληρο",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "App Savvy Traveller",
+     "url": "https://appsavvytraveller.com/getting-to-the-stadiums-of-athens/"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/?p=652"
+    },
+    {
+     "publisher": "Forza Garibaldi",
+     "url": "https://www.forzagaribaldi.com/?p=24979"
+    }
+   ]
+  },
+  {
+   "id": "olympiacos-route-tram",
+   "kind": "route",
+   "line": "The tram also serves the Karaiskakis ground in Neo Faliro.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Forza Garibaldi",
+     "url": "https://www.forzagaribaldi.com/?p=24979"
+    },
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/athens/"
+    }
+   ]
+  },
+  {
+   "id": "olympiacos-humour-eternals",
+   "kind": "humour",
+   "line": "The match with Panathinaikos is known as the Derby of the Eternal Enemies, or simply the derby of the eternals.",
+   "local": "Ντέρμπι των αιωνίων",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Derby_of_the_eternal_enemies"
+    },
+    {
+     "publisher": "CNN Greece",
+     "url": "https://www.cnn.gr/sports/story/53436/se-exelixi-to-ntermpi-ton-aionion"
+    }
+   ]
   }
  ]
 }

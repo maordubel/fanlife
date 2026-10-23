@@ -169,5 +169,136 @@
    ],
    "confidence": 2
   }
+ ],
+ "culture": [
+  {
+   "id": "st-pauli-food-aufstiegsrasen",
+   "kind": "food",
+   "line": "After promotion in 2024, Astra's St. Pauli brewery on the Reeperbahn brewed a limited beer with grass cut from the Millerntor pitch.",
+   "local": "Astra Aufstiegsrasen",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Horizont",
+     "url": "https://www.horizont.net/marketing/nachrichten/bundesliga-rueckkehr-der-kiezkicker-astra-braut-aufstiegsbier-mit-heiligem-rasen-fuer-den-fc-st.-pauli-219905"
+    },
+    {
+     "publisher": "about-drinks",
+     "url": "https://www.about-drinks.com/nach-bundesliga-aufstieg-astra-braut-bier-mit-aufstiegsrasen-des-fc-st-pauli/"
+    }
+   ]
+  },
+  {
+   "id": "st-pauli-food-wurst",
+   "kind": "food",
+   "line": "Wurst stalls stand outside the Millerntor on matchdays, and a pre-match beer and sausage is part of the day.",
+   "local": "Currywurst",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Football Foyer",
+     "url": "https://footballfoyer.com/2018/03/03/fc-st-pauli-the-glastonbury-of-football/"
+    },
+    {
+     "publisher": "Football Ground Map",
+     "url": "https://www.footballgroundmap.com/review/facebook-user-57590/millerntor/st-pauli"
+    }
+   ]
+  },
+  {
+   "id": "st-pauli-habit-hells-bells",
+   "kind": "habit",
+   "line": "The teams walk out at the Millerntor to the slow bell intro of AC/DC's Hells Bells, played before every home game.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Football Ground Guide",
+     "url": "https://footballgroundguide.com/leagues/europe-1/germany/st-pauli-millerntor-stadion.html"
+    },
+    {
+     "publisher": "Football Ground Map",
+     "url": "https://www.footballgroundmap.com/review/facebook-user-57590/millerntor/st-pauli"
+    },
+    {
+     "publisher": "Football Foyer",
+     "url": "https://footballfoyer.com/2018/03/03/fc-st-pauli-the-glastonbury-of-football/"
+    }
+   ]
+  },
+  {
+   "id": "st-pauli-habit-skull-flags",
+   "kind": "habit",
+   "line": "Skull-and-crossbones flags fill the terraces at home games, the fans' own symbol since the 1980s.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/?p=65"
+    },
+    {
+     "publisher": "Football Foyer",
+     "url": "https://footballfoyer.com/2018/03/03/fc-st-pauli-the-glastonbury-of-football/"
+    },
+    {
+     "publisher": "Bundesliga",
+     "url": "https://www.bundesliga.com/en/bundesliga/news/st-pauli-hamburg-cult-club-explained-max-kruse-reeperbahn-song-2-millerntor-2896-1471"
+    }
+   ]
+  },
+  {
+   "id": "st-pauli-humour-weltpokalsiegerbesieger",
+   "kind": "humour",
+   "line": "After beating Bayern 2-1 in February 2002, weeks after Bayern won the Intercontinental Cup, fans printed shirts calling St. Pauli the beaters of the world club champions.",
+   "local": "Weltpokalsiegerbesieger",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Bundesliga",
+     "url": "https://bundesliga.com/en/bundesliga/news/st-pauli-relationship-bayern-munich-opposites-saviour-weltpokalsiegerbesieger-29616"
+    },
+    {
+     "publisher": "ZDFheute",
+     "url": "https://www.zdfheute.de/sport/bundesliga-pauli-bayern-100.html"
+    }
+   ]
+  },
+  {
+   "id": "st-pauli-meetup-jolly-roger",
+   "kind": "meetup",
+   "line": "The Jolly Roger bar on Budapester Strasse, beside the ground, is the best-known pre-match bar.",
+   "local": "Jolly Roger, Budapester Straße",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/?p=65"
+    },
+    {
+     "publisher": "Football Ground Guide",
+     "url": "https://footballgroundguide.com/leagues/europe-1/germany/st-pauli-millerntor-stadion.html"
+    },
+    {
+     "publisher": "Football Foyer",
+     "url": "https://footballfoyer.com/2018/03/03/fc-st-pauli-the-glastonbury-of-football/"
+    }
+   ]
+  },
+  {
+   "id": "st-pauli-route-ubahn",
+   "kind": "route",
+   "line": "Fans ride the U-Bahn to St. Pauli station; visiting fans are sent one stop on to Feldstrasse, nearer the away entrance.",
+   "local": "U St. Pauli · U Feldstraße",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Football Ground Guide",
+     "url": "https://footballgroundguide.com/leagues/europe-1/germany/st-pauli-millerntor-stadion.html"
+    },
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/?p=65"
+    }
+   ]
+  }
  ]
 }

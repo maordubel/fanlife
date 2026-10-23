@@ -22,7 +22,9 @@ import {ROOMS} from './rooms'
 import {sideLife} from './content/side'
 import type {VoxelSkin} from './skin'
 import {fillChapter, type Vars} from './text'
-import type {ArchiveRef, CardDef, Chapter, LifePack, LifeReadiness, MatchDetail} from './types'
+import type {ArchiveRef, CardDef, Chapter, LifeCulture, LifeCultureKind, LifePack, LifeReadiness, MatchDetail} from './types'
+
+const CULTURE_KINDS: LifeCultureKind[] = ['food', 'habit', 'humour', 'meetup', 'route']
 import {validateChapter, lifeFlagsOf} from './validate'
 
 export type TimelineManifest = {schemaVersion: 1; clubId: string; birthYear: number; status: string; note?: string}
@@ -43,6 +45,8 @@ export type ComposeInput = {
   anchors: ArchiveRef[]
   /** the club's own match record by ISO day: starters, bench and goals, where it has them */
   details?: Record<string, MatchDetail>
+  /** the club's sourced matchday culture (world.json, already validated); omitted or empty means none is recorded */
+  culture?: LifeCulture[]
   /** the club's data version: a new archive is a new pack */
   dataVersion: string
   /** the language the club's life is told in; default English */
@@ -164,7 +168,11 @@ export function composeLife(input: ComposeInput): LifePack {
   if (issues.length) reasons.push(`${issues.length} chapter fault(s): ${issues[0]}`)
   if (input.skinIssues.length) reasons.push(`Club skin: ${input.skinIssues.join(', ')}`)
   if (dated.length < ANCHOR_TARGET) reasons.push(`${ANCHOR_TARGET - dated.length} more approved, exact-date archive rows needed for a full life (${dated.length} of ${ANCHOR_TARGET}).`)
-  reasons.push('Club culture (matchday habits, food, songs, the way to the ground) is not written yet: the life is told in universal beats and awaits a culture pass and owner approval.')
+  const culture = (input.culture ?? []).map(c => ({id: c.id, kind: c.kind, line: c.line, ...(c.local ? {local: c.local} : {})}))
+  const cultureGaps = CULTURE_KINDS.filter(k => !culture.some(c => c.kind === k))
+  reasons.push(culture.length
+    ? `Club culture is partly recorded (${culture.length} sourced line(s))${cultureGaps.length ? `; still open: ${cultureGaps.join(', ')}` : ''}. It awaits owner approval.`
+    : 'Club culture (matchday habits, food, humour, meet-ups, the way to the ground) is not recorded yet: the life is told in universal beats and awaits a culture pass and owner approval.')
   for (const p of input.skinPending) reasons.push(p)
   if (!timelineOk) reasons.push(birthYear === null ? 'No archive row with a date: the life has no nights from history yet.' : 'The supporter\'s birth year is the composer\'s default; the pack has not set one.')
   const broken = !universal.length || issues.length > 0 || input.skinIssues.length > 0
@@ -173,7 +181,7 @@ export function composeLife(input: ComposeInput): LifePack {
   return {
     schemaVersion: 1,
     storyLocale: locale,
-    version: hash(JSON.stringify({v: input.dataVersion, chapters: chapters.map(c => c.id), locale, skin, cast, birthYear, text: chapters})),
+    version: hash(JSON.stringify({v: input.dataVersion, chapters: chapters.map(c => c.id), locale, skin, cast, birthYear, text: chapters, culture})),
     clubId: club.id,
     club: {name: club.name, short: skin.short, city: club.city, country: club.country},
     skin, cast,
@@ -181,5 +189,6 @@ export function composeLife(input: ComposeInput): LifePack {
     chapters, rooms, readiness,
     anchors: [...nightRows, ...yearly.filter(a => { const age = ageAt(a.year); return age !== null && age >= FIRST_AGE })],
     provenance: {kind: 'generated-from-anchors', universalChapters: universal.length, anchoredChapters: nights.length, cultureDna: 'pending'},
+    ...(culture.length ? {culture} : {}),
   }
 }

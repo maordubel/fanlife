@@ -12,6 +12,7 @@
  * button next to somebody) into the engine's own calls. What the simulator in the test suite
  * walks is therefore exactly what is walked here.
  */
+import {cultureLineFor} from '@/lib/life/universal/culture'
 import {KeepArt, keepArt} from './KeepArt'
 import {artefactOf} from '@/lib/life/universal/artefacts'
 import {Reel} from './Reel'
@@ -945,6 +946,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
             <p className={styles.serial}>{copy.ending} · {copy.age} <bdi>{chapter.age}</bdi></p>
             <h2 id="life-card-title" className={styles.cardTitle} {...story}>{ending.title}</h2>
             <p className={styles.lede} {...story}>{ending.body}</p>
+            {(() => { const c = cultureLineFor(pack, chapter); return c && <p className={styles.heart} data-life="culture" data-kind={c.kind} lang="en" dir="auto">{c.line}</p> })()}
             {keepsake(ending.keep) && state.keeps.includes(ending.keep!) && <div className={styles.kept}><KeepArt id={ending.keep!} tilt={-3} /><p className={styles.stamp}>{copy.kept}</p><p className={styles.keptName} {...story}>{keepsake(ending.keep)!.name}</p><p {...story}>{keepsake(ending.keep)!.note}</p></div>}
             <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={toNext} data-life="next-chapter">{nextChapter(pack, chapter.id, life.current?.state) ? copy.nextChapter : copy.theEnd}</button></div>
           </div>

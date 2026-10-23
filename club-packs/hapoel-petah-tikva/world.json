@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "hapoel-petah-tikva",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: any motto (none found), the crest (single source), the origin of 'Malabs' (unconfirmed), the old fan groups (owner-era, status unknown).",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: any motto (none found), the crest (single source), the origin of 'Malabs' (unconfirmed), the old fan groups (owner-era, status unknown). Culture research still open: habit, humour, meetup, route.",
  "voice": {
   "welcome": "Blue, and run by the people who stand on its terraces.",
   "kicker": "Petah Tikva · Mother of the Moshavot"
@@ -180,6 +180,25 @@
     }
    ],
    "confidence": 2
+  }
+ ],
+ "culture": [
+  {
+   "id": "hapoel-petah-tikva-food-garinim",
+   "kind": "food",
+   "line": "Cracking sunflower seeds through the match is part of a day at an Israeli ground, and the shells pile up on the terraces by full time.",
+   "local": "גרעינים",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "The Jewish Chronicle",
+     "url": "https://www.thejc.com/opinion/luzon-my-religion-israels-not-so-beautiful-game-roytoe63"
+    },
+    {
+     "publisher": "Jüdische Allgemeine",
+     "url": "https://www.juedische-allgemeine.de/israel/mehr-als-ein-spiel/"
+    }
+   ]
   }
  ]
 }
