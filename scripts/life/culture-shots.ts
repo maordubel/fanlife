@@ -23,7 +23,7 @@ async function main() {
     const cfg = {room: id, club, time: 'day', year: Number(year), floorY: room.floorY, walk: room.walk, viewH: room.viewH, surface: room.surface, spawn: Object.values(room.spawns)[0],
       frame: {top: 0.84, bottom: -0.72}, player: {h: 4.6, shirt: '#5a7a9a', pants: '#3a4560'}, blocks: room.blocks, clear: room.clear,
       actors: [], spots: Object.entries(room.spots).map(([sid, s]) => ({id: sid, ...s})), exits: Object.entries(room.doors).map(([did, d]) => ({id: did, ...d})), made: []}
-    const drawn = await page.evaluate(c => { const w = window as unknown as {__vxPlay: {enter(c: unknown): boolean}; __culture?: {drawn: number}}; w.__culture = undefined; w.__vxPlay.enter(c); return w.__culture?.drawn ?? 0 }, cfg)
+    const drawn = await page.evaluate(c => { const w = window as unknown as {__vxPlay: {enter(c: unknown): boolean}; __culture?: {drawn: number}}; delete w.__culture; w.__vxPlay.enter(c); const got = w.__culture as {drawn: number} | undefined; return got?.drawn ?? 0 }, cfg)
     await page.waitForTimeout(1500)
     const file = `${out}/${club}-${year}-${id}.png`
     await page.screenshot({path: file, timeout: 180000})
