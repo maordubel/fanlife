@@ -6,6 +6,7 @@
  * the handful of things the runtime says back.
  */
 import type {Chapter, LifePack, LifeState, Look, RoomId} from '@/lib/life/universal/types'
+import {worldArtefacts, type Artefact} from '@/lib/life/universal/artefacts'
 import {heroLook, sceneOf, type Scene} from '@/lib/life/universal/world'
 
 export type PlayTarget = {kind: 'actor' | 'spot' | 'exit'; id: string; locked?: boolean} | null
@@ -30,6 +31,8 @@ export type PlayConfig = PlayPeople & {
   /** how old he is in this chapter, and the year it is when the pack knows his birth year: the room dresses for it (TV, phone, the wall over the bed) */
   age?: number; year?: number | null
   spawn: {x: number; z: number; yaw?: number}; frame: {top: number; bottom: number}; blocks?: number[][]; clear?: number[][]; frozen?: boolean
+  /** what he made, for the room to show: the washed car, the stitched scarf, the banner with its stroke */
+  made?: Artefact[]
 }
 
 export type PlayRuntime = {
@@ -73,6 +76,6 @@ export function roomConfig(pack: LifePack, chapter: Chapter, state: LifeState, f
   const spawn = at ?? geo.spawns[state.spawn] ?? Object.values(geo.spawns)[0] ?? {x: (geo.walk[0] + geo.walk[2]) / 2, z: (geo.walk[1] + geo.walk[3]) / 2}
   return {
     scene,
-    config: {...play, room, club: pack.clubId, time: state.time, age: chapter.age, year: pack.hero.birthYear == null ? null : pack.hero.birthYear + chapter.age, floorY: geo.floorY, walk: geo.walk, viewH: geo.viewH, surface: geo.surface, spawn, frame, blocks: geo.blocks, clear: geo.clear, frozen: true},
+    config: {...play, room, club: pack.clubId, time: state.time, age: chapter.age, year: pack.hero.birthYear == null ? null : pack.hero.birthYear + chapter.age, floorY: geo.floorY, walk: geo.walk, viewH: geo.viewH, surface: geo.surface, spawn, frame, blocks: geo.blocks, clear: geo.clear, frozen: true, made: worldArtefacts(state)},
   }
 }

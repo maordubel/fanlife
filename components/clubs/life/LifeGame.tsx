@@ -13,6 +13,7 @@
  * walks is therefore exactly what is walked here.
  */
 import {KeepArt, keepArt} from './KeepArt'
+import {artefactOf} from '@/lib/life/universal/artefacts'
 import {Reel} from './Reel'
 import {PixelSprite, spriteForKeep} from './PixelSprite'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
@@ -370,6 +371,9 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
         // the game's own outcome adds to what the directive always does
         const after = eventsOf(afterPlay(d, result), l.state)
         l.dispatch(...after.events)
+        // what his hands made stays in the world: the room draws it from the record (lib/life/universal/artefacts.ts)
+        const made = d.game && ch ? artefactOf(d.id, result, ch.id, ch.age) : null
+        if (made) l.dispatch({t: 'made', a: made})
         queue.unshift(...after.directives)
       } else if (d.d === 'goto') {
         l.dispatch({t: 'moved', room: d.room, spawn: d.spawn, time: d.time ?? l.state.time})

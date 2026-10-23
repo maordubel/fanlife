@@ -53,6 +53,7 @@ export function apply(state: LifeState, event: LifeEvent): LifeState {
     case 'wear': return {...state, wear: event.what}
     case 'time': return {...state, time: event.to}
     case 'ended': return {...state, done: {...state.done, [event.chapter]: event.ending}}
+    case 'made': return {...state, made: {...state.made, [event.a.id]: event.a}}
     default: return state
   }
 }
