@@ -179,14 +179,18 @@ export const ROOMS: Record<RoomId, RoomPlay> = {
     id: 'terrace', floorY: 0.05, walk: [8.4, 23.4, 49.4, 27.4], viewH: 16, surface: 'grass',
     spawns: {start: {x: 30, z: 24.6, yaw: 0}, fromTunnel: {x: 30, z: 24.6, yaw: 0}},
     slots: {fence: {x: 33, z: 24.2, yaw: 0}, left: {x: 21, z: 24.3, yaw: 0.2}, right: {x: 40.4, z: 24.4, yaw: -0.2}, steward: {x: 46.4, z: 24.8, yaw: -PI / 2}},
-    spots: {pitch: {x: 27, z: 25.9, y: 2}, banner: {x: 36, z: 23.4, y: 5}},
+    spots: {pitch: {x: 27, z: 25.9, y: 2}, banner: {x: 36, z: 23.4, y: 5},
+      // the front rail of the stand, above the walkway's heads: where the crew's banner hangs and a scarf is tied (artefacts.js)
+      rail: {x: 42.2, z: 23.7, y: 12.4}, scarf: {x: 20, z: 23.7, y: 12.4}},
     doors: {tunnel: {x: 28.6, z: 23.4, w: 2.6, d: 0.8, dir: 'n'}},
   },
   'away-end': {
     id: 'away-end', floorY: 0.05, walk: [34.4, 23.4, 49.4, 27.4], viewH: 16, surface: 'grass',
     spawns: {start: {x: 41, z: 24.6, yaw: 0}},
     slots: {fence: {x: 43.6, z: 24.2, yaw: 0}, left: {x: 37.4, z: 24.3, yaw: 0.3}, steward: {x: 47.8, z: 25, yaw: -PI / 2}},
-    spots: {pitch: {x: 40, z: 25.9, y: 2}},
+    spots: {pitch: {x: 40, z: 25.9, y: 2},
+      // the travelling crew hang theirs on the cage rail above the visitors' own banner; a scarf tied at the end
+      rail: {x: 46.7, z: 23.7, y: 12.4}, scarf: {x: 35.2, z: 23.7, y: 12.4}},
     doors: {out: {x: 45.4, z: 23.4, w: 2.6, d: 0.8, dir: 'n'}},
   },
   'bus-stop': {
