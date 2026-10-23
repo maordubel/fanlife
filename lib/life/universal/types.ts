@@ -301,8 +301,9 @@ export type LifePack = {
   /** the club's matchday culture, read from its sourced world.json only — never typed in code; a kind the record lacks is absent */
   culture?: LifeCulture[]
 }
-export type LifeCultureKind = 'food' | 'habit' | 'humour' | 'meetup' | 'route'
-export type LifeCulture = {id: string; kind: LifeCultureKind; line: string; local?: string}
+export type LifeCultureKind = 'food' | 'habit' | 'humour' | 'meetup' | 'route' | 'home'
+/** `home` names the supporter's own neighbourhood; `fromYear`/`untilYear` bind a line to the years it was true */
+export type LifeCulture = {id: string; kind: LifeCultureKind; line: string; local?: string; name?: string; fromYear?: number; untilYear?: number}
 
 /* ───────────── the save ───────────── */
 

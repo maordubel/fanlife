@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "aek-athens",
  "review": "cross-source-2026-10-09",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found). Corrected 13.10.2026: a 2002 Roma-ultras match preview (never names Gate 21) and Brighton's match-preview article were dropped as sources; every line keeps two independent publishers. Culture research still open: food, habit, humour, meetup.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found). Corrected 13.10.2026: a 2002 Roma-ultras match preview (never names Gate 21) and Brighton's match-preview article were dropped as sources; every line keeps two independent publishers. Some culture lines are the owner's first-hand knowledge (rule 18), cited under the neutral label. Culture research still open: humour.",
  "voice": {
   "welcome": "Welcome to the Union's house.",
   "kicker": "Athens · The double-headed eagle"
@@ -213,6 +213,92 @@
     {
      "publisher": "Libero Guide",
      "url": "https://liberoguide.com/athens/"
+    }
+   ]
+  },
+  {
+   "id": "aek-athens-home-kypseli",
+   "kind": "home",
+   "line": "Kypseli is the supporter's neighbourhood, where most of life happens.",
+   "local": "Κυψέλη",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ],
+   "name": "Kypseli"
+  },
+  {
+   "id": "aek-athens-food-theios-fanis",
+   "kind": "food",
+   "line": "The Theios Fanis bakery has served pies to AEK fans since 1970.",
+   "local": "Θείος Φάνης",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/aek-athens/"
+    },
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "aek-athens-meetup-dekelias",
+   "kind": "meetup",
+   "line": "Before the match fans gather at the junction of Fokon and Dekelias Avenue, and at Nea Vyzantini Gonia further along.",
+   "local": "Νέα Βυζαντινή Γωνία",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Libero Guide",
+     "url": "https://liberoguide.com/aek-athens/"
+    },
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "aek-athens-habit-scooters",
+   "kind": "habit",
+   "line": "Inside the city, plenty of supporters ride to the match on scooters.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "aek-athens-food-gyros",
+   "kind": "food",
+   "line": "Gyros and souvlaki are the matchday food.",
+   "local": "γύρος · σουβλάκι",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "aek-athens-food-alfa",
+   "kind": "food",
+   "line": "A bottle of Alfa, the Greek lager, goes with it.",
+   "local": "Άλφα",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
     }
    ]
   }

@@ -168,7 +168,7 @@ export function composeLife(input: ComposeInput): LifePack {
   if (issues.length) reasons.push(`${issues.length} chapter fault(s): ${issues[0]}`)
   if (input.skinIssues.length) reasons.push(`Club skin: ${input.skinIssues.join(', ')}`)
   if (dated.length < ANCHOR_TARGET) reasons.push(`${ANCHOR_TARGET - dated.length} more approved, exact-date archive rows needed for a full life (${dated.length} of ${ANCHOR_TARGET}).`)
-  const culture = (input.culture ?? []).map(c => ({id: c.id, kind: c.kind, line: c.line, ...(c.local ? {local: c.local} : {})}))
+  const culture: LifeCulture[] = (input.culture ?? []).map(c => ({id: c.id, kind: c.kind, line: c.line, ...(c.local ? {local: c.local} : {}), ...(c.name ? {name: c.name} : {}), ...(c.fromYear !== undefined ? {fromYear: c.fromYear} : {}), ...(c.untilYear !== undefined ? {untilYear: c.untilYear} : {})}))
   const cultureGaps = CULTURE_KINDS.filter(k => !culture.some(c => c.kind === k))
   reasons.push(culture.length
     ? `Club culture is partly recorded (${culture.length} sourced line(s))${cultureGaps.length ? `; still open: ${cultureGaps.join(', ')}` : ''}. It awaits owner approval.`

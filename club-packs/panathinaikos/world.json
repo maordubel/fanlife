@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "panathinaikos",
  "review": "cross-source-2026-10-08",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the exact founding day and the opening year of Leoforos (sources conflict), white as a second colour (one publisher), any motto (none found), the new Votanikos ground (status not verified), anything about violence. Panathinaikos plays at Leoforos, not at OPAP Arena (that is AEK's). Culture research still open: food, meetup.",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the exact founding day and the opening year of Leoforos (sources conflict), white as a second colour (one publisher), any motto (none found), the new Votanikos ground (status not verified), anything about violence. Panathinaikos plays at Leoforos, not at OPAP Arena (that is AEK's). Some culture lines are the owner's first-hand knowledge (rule 18), cited under the neutral label. Culture research still open: meetup.",
  "voice": {
   "welcome": "Green, and proud of the shamrock.",
   "kicker": "Athens · Ampelokipoi"
@@ -265,6 +265,32 @@
     {
      "publisher": "CNN Greece",
      "url": "https://www.cnn.gr/sports/story/53436/se-exelixi-to-ntermpi-ton-aionion"
+    }
+   ]
+  },
+  {
+   "id": "panathinaikos-food-gyros",
+   "kind": "food",
+   "line": "Gyros and souvlaki are the matchday food.",
+   "local": "γύρος · σουβλάκι",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
+    }
+   ]
+  },
+  {
+   "id": "panathinaikos-food-alfa",
+   "kind": "food",
+   "line": "A bottle of Alfa, the Greek lager, goes with it.",
+   "local": "Άλφα",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "ידע אישי — צוות The Worker, 23.10.2026",
+     "owner": true
     }
    ]
   }
