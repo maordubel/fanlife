@@ -1,0 +1,2652 @@
+{
+ "sources": [
+  {
+   "id": "a-src-uefa-2039167",
+   "title": "UEFA: Union Berlin 2-3 Real Madrid, 2023-12-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039167--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039159",
+   "title": "UEFA: Braga 1-1 Union Berlin, 2023-11-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039159--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039138",
+   "title": "UEFA: Napoli 1-1 Union Berlin, 2023-11-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039138--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039120",
+   "title": "UEFA: Union Berlin 0-1 Napoli, 2023-10-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039120--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039098",
+   "title": "UEFA: Union Berlin 2-3 Braga, 2023-10-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039098--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039183",
+   "title": "UEFA: Real Madrid 1-0 Union Berlin, 2023-09-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039183--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2037614",
+   "title": "UEFA: Union SG 3-0 Union Berlin, 2023-03-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2037614--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2037606",
+   "title": "UEFA: Union Berlin 3-3 Union SG, 2023-03-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2037606--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2036612",
+   "title": "UEFA: Union Berlin 3-1 Ajax, 2023-02-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2036612--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2036600",
+   "title": "UEFA: Ajax 0-0 Union Berlin, 2023-02-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2036600--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035999",
+   "title": "UEFA: Union SG 0-1 Union Berlin, 2022-11-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035999--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035998",
+   "title": "UEFA: Union Berlin 1-0 Braga, 2022-10-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035998--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035996",
+   "title": "UEFA: Union Berlin 1-0 Malmö, 2022-10-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035996--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035994",
+   "title": "UEFA: Malmö 0-1 Union Berlin, 2022-10-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035994--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035992",
+   "title": "UEFA: Braga 1-0 Union Berlin, 2022-09-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035992--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035990",
+   "title": "UEFA: Union Berlin 0-1 Union SG, 2022-09-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035990--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033355",
+   "title": "UEFA: Union Berlin 1-1 Slavia Praha, 2021-12-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033355--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033342",
+   "title": "UEFA: Maccabi Haifa 0-1 Union Berlin, 2021-11-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033342--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033323",
+   "title": "UEFA: Union Berlin 1-2 Feyenoord, 2021-11-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033323--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033311",
+   "title": "UEFA: Feyenoord 3-1 Union Berlin, 2021-10-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033311--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033295",
+   "title": "UEFA: Union Berlin 3-0 Maccabi Haifa, 2021-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033295--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033274",
+   "title": "UEFA: Slavia Praha 3-1 Union Berlin, 2021-09-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033274--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033156",
+   "title": "UEFA: Union Berlin 0-0 KuPS Kuopio, 2021-08-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033156--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033134",
+   "title": "UEFA: KuPS Kuopio 0-4 Union Berlin, 2021-08-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033134--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-68523",
+   "title": "UEFA: Litex 0-0 Union Berlin, 2001-10-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/68523--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-68522",
+   "title": "UEFA: Union Berlin 0-2 Litex, 2001-10-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/68522--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-68340",
+   "title": "UEFA: Union Berlin 3-0 Haka, 2001-09-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/68340--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-68339",
+   "title": "UEFA: Haka 1-1 Union Berlin, 2001-09-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/68339--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2023-12-12-union-berlin-real-madrid",
+   "value": {
+    "name": "Union Berlin 2-3 Real Madrid",
+    "on": "2023-12-12",
+    "competition": "UEFA Champions League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Diogo Leite",
+     "Robin Gosens",
+     "Rani Khedira",
+     "Kevin Volland",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Janik Haberer",
+     "Jérôme Roussillon",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Alexander Schwolow",
+     "Yannic Stein",
+     "Brenden Aaronson",
+     "David Fofana",
+     "Aïssa Laïdouni",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Alex Král",
+     "Laurenz Dehl"
+    ],
+    "scorers": [
+     {
+      "name": "Kevin Volland",
+      "minute": 45
+     },
+     {
+      "name": "Alex Král",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039167",
+     "scorers": [
+      {
+       "name": "Kevin Volland",
+       "minute": 45
+      },
+      {
+       "name": "Alex Král",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Diogo Leite",
+      "Robin Gosens",
+      "Rani Khedira",
+      "Kevin Volland",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Janik Haberer",
+      "Jérôme Roussillon",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Alexander Schwolow",
+      "Yannic Stein",
+      "Brenden Aaronson",
+      "David Fofana",
+      "Aïssa Laïdouni",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Alex Král",
+      "Laurenz Dehl"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039167"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-29-braga-union-berlin",
+   "value": {
+    "name": "Braga 1-1 Union Berlin",
+    "on": "2023-11-29",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Robin Gosens",
+     "Rani Khedira",
+     "Kevin Volland",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Aïssa Laïdouni",
+     "Jérôme Roussillon",
+     "Lucas Tousart",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Alexander Schwolow",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Brenden Aaronson",
+     "David Fofana",
+     "Janik Haberer",
+     "Leonardo Bonucci",
+     "Christopher Trimmel",
+     "Alex Král",
+     "Laurenz Dehl"
+    ],
+    "scorers": [
+     {
+      "name": "Robin Gosens",
+      "minute": 42
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039159",
+     "scorers": [
+      {
+       "name": "Robin Gosens",
+       "minute": 42
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Robin Gosens",
+      "Rani Khedira",
+      "Kevin Volland",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Aïssa Laïdouni",
+      "Jérôme Roussillon",
+      "Lucas Tousart",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Alexander Schwolow",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Brenden Aaronson",
+      "David Fofana",
+      "Janik Haberer",
+      "Leonardo Bonucci",
+      "Christopher Trimmel",
+      "Alex Král",
+      "Laurenz Dehl"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039159"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-08-napoli-union-berlin",
+   "value": {
+    "name": "Napoli 1-1 Union Berlin",
+    "on": "2023-11-08",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Diogo Leite",
+     "Rani Khedira",
+     "David Fofana",
+     "Josip Juranović",
+     "Janik Haberer",
+     "Aïssa Laïdouni",
+     "Leonardo Bonucci",
+     "Jérôme Roussillon",
+     "Sheraldo Becker"
+    ],
+    "bench": [
+     "Alexander Schwolow",
+     "Yannic Stein",
+     "Robin Gosens",
+     "Brenden Aaronson",
+     "Kevin Volland",
+     "Kevin Behrens",
+     "Christopher Trimmel",
+     "Lucas Tousart",
+     "Robin Knoche",
+     "Alex Král",
+     "Laurenz Dehl"
+    ],
+    "scorers": [
+     {
+      "name": "David Fofana",
+      "minute": 52
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039138",
+     "scorers": [
+      {
+       "name": "David Fofana",
+       "minute": 52
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Diogo Leite",
+      "Rani Khedira",
+      "David Fofana",
+      "Josip Juranović",
+      "Janik Haberer",
+      "Aïssa Laïdouni",
+      "Leonardo Bonucci",
+      "Jérôme Roussillon",
+      "Sheraldo Becker"
+     ],
+     "bench": [
+      "Alexander Schwolow",
+      "Yannic Stein",
+      "Robin Gosens",
+      "Brenden Aaronson",
+      "Kevin Volland",
+      "Kevin Behrens",
+      "Christopher Trimmel",
+      "Lucas Tousart",
+      "Robin Knoche",
+      "Alex Král",
+      "Laurenz Dehl"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039138"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-24-union-berlin-napoli",
+   "value": {
+    "name": "Union Berlin 0-1 Napoli",
+    "on": "2023-10-24",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Robin Gosens",
+     "Brenden Aaronson",
+     "Rani Khedira",
+     "David Fofana",
+     "Janik Haberer",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Alexander Schwolow",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Kevin Volland",
+     "Kevin Behrens",
+     "Aïssa Laïdouni",
+     "Leonardo Bonucci",
+     "Lucas Tousart",
+     "Alex Král",
+     "Laurenz Dehl"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039120",
+     "scorers": [],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Robin Gosens",
+      "Brenden Aaronson",
+      "Rani Khedira",
+      "David Fofana",
+      "Janik Haberer",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Alexander Schwolow",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Kevin Volland",
+      "Kevin Behrens",
+      "Aïssa Laïdouni",
+      "Leonardo Bonucci",
+      "Lucas Tousart",
+      "Alex Král",
+      "Laurenz Dehl"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039120"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-03-union-berlin-braga",
+   "value": {
+    "name": "Union Berlin 2-3 Braga",
+    "on": "2023-10-03",
+    "competition": "UEFA Champions League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Robin Gosens",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Janik Haberer",
+     "Leonardo Bonucci",
+     "Sheraldo Becker",
+     "Lucas Tousart",
+     "Alex Král"
+    ],
+    "bench": [
+     "Alexander Schwolow",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Brenden Aaronson",
+     "Kevin Volland",
+     "Aïssa Laïdouni",
+     "Jérôme Roussillon",
+     "Christopher Trimmel",
+     "Aljoscha Kemlein"
+    ],
+    "scorers": [
+     {
+      "name": "Sheraldo Becker",
+      "minute": 30
+     },
+     {
+      "name": "Sheraldo Becker",
+      "minute": 37
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039098",
+     "scorers": [
+      {
+       "name": "Sheraldo Becker",
+       "minute": 30
+      },
+      {
+       "name": "Sheraldo Becker",
+       "minute": 37
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Robin Gosens",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Janik Haberer",
+      "Leonardo Bonucci",
+      "Sheraldo Becker",
+      "Lucas Tousart",
+      "Alex Král"
+     ],
+     "bench": [
+      "Alexander Schwolow",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Brenden Aaronson",
+      "Kevin Volland",
+      "Aïssa Laïdouni",
+      "Jérôme Roussillon",
+      "Christopher Trimmel",
+      "Aljoscha Kemlein"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039098"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-09-20-real-madrid-union-berlin",
+   "value": {
+    "name": "Real Madrid 1-0 Union Berlin",
+    "on": "2023-09-20",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Robin Gosens",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Aïssa Laïdouni",
+     "Leonardo Bonucci",
+     "Sheraldo Becker",
+     "Lucas Tousart",
+     "Alex Král"
+    ],
+    "bench": [
+     "Alexander Schwolow",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Brenden Aaronson",
+     "Kevin Volland",
+     "David Fofana",
+     "Jérôme Roussillon",
+     "Christopher Trimmel",
+     "Aljoscha Kemlein"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039183",
+     "scorers": [],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Robin Gosens",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Aïssa Laïdouni",
+      "Leonardo Bonucci",
+      "Sheraldo Becker",
+      "Lucas Tousart",
+      "Alex Král"
+     ],
+     "bench": [
+      "Alexander Schwolow",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Brenden Aaronson",
+      "Kevin Volland",
+      "David Fofana",
+      "Jérôme Roussillon",
+      "Christopher Trimmel",
+      "Aljoscha Kemlein"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039183"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-03-16-union-sg-union-berlin",
+   "value": {
+    "name": "Union SG 3-0 Union Berlin",
+    "on": "2023-03-16",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Morten Thorsby",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Rani Khedira",
+     "Sven Michel",
+     "Josip Juranović",
+     "Aïssa Laïdouni",
+     "Jérôme Roussillon",
+     "Sheraldo Becker",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Tim Maciejewski",
+     "Janik Haberer",
+     "Niko Giesselmann",
+     "Christopher Trimmel",
+     "Aljoscha Kemlein",
+     "Jamie Leweling",
+     "Jordan Siebatcheu"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2037614",
+     "scorers": [],
+     "lineup": [
+      "Frederik Rønnow",
+      "Morten Thorsby",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Rani Khedira",
+      "Sven Michel",
+      "Josip Juranović",
+      "Aïssa Laïdouni",
+      "Jérôme Roussillon",
+      "Sheraldo Becker",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Tim Maciejewski",
+      "Janik Haberer",
+      "Niko Giesselmann",
+      "Christopher Trimmel",
+      "Aljoscha Kemlein",
+      "Jamie Leweling",
+      "Jordan Siebatcheu"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2037614"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-03-09-union-berlin-union-sg",
+   "value": {
+    "name": "Union Berlin 3-3 Union SG",
+    "on": "2023-03-09",
+    "competition": "UEFA Europa League",
+    "score": "3-3",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Morten Thorsby",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Rani Khedira",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Janik Haberer",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Sven Michel",
+     "Tim Maciejewski",
+     "Aïssa Laïdouni",
+     "Niko Giesselmann",
+     "Aljoscha Kemlein",
+     "Jamie Leweling",
+     "Jordan Siebatcheu"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Juranović",
+      "minute": 42
+     },
+     {
+      "name": "Robin Knoche",
+      "minute": 69
+     },
+     {
+      "name": "Sven Michel",
+      "minute": 89
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2037606",
+     "scorers": [
+      {
+       "name": "Josip Juranović",
+       "minute": 42
+      },
+      {
+       "name": "Robin Knoche",
+       "minute": 69
+      },
+      {
+       "name": "Sven Michel",
+       "minute": 89
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Morten Thorsby",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Rani Khedira",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Janik Haberer",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Sven Michel",
+      "Tim Maciejewski",
+      "Aïssa Laïdouni",
+      "Niko Giesselmann",
+      "Aljoscha Kemlein",
+      "Jamie Leweling",
+      "Jordan Siebatcheu"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2037606"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-02-23-union-berlin-ajax",
+   "value": {
+    "name": "Union Berlin 3-1 Ajax",
+    "on": "2023-02-23",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Rani Khedira",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Janik Haberer",
+     "Aïssa Laïdouni",
+     "Jérôme Roussillon",
+     "Sheraldo Becker",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Morten Thorsby",
+     "Paul Jaeckel",
+     "Sven Michel",
+     "Tim Maciejewski",
+     "Niko Giesselmann",
+     "Christopher Trimmel",
+     "Aljoscha Kemlein",
+     "Jamie Leweling",
+     "Jordan Siebatcheu"
+    ],
+    "scorers": [
+     {
+      "name": "Robin Knoche",
+      "minute": 20
+     },
+     {
+      "name": "Josip Juranović",
+      "minute": 44
+     },
+     {
+      "name": "Danilho Doekhi",
+      "minute": 50
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2036612",
+     "scorers": [
+      {
+       "name": "Robin Knoche",
+       "minute": 20
+      },
+      {
+       "name": "Josip Juranović",
+       "minute": 44
+      },
+      {
+       "name": "Danilho Doekhi",
+       "minute": 50
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Rani Khedira",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Janik Haberer",
+      "Aïssa Laïdouni",
+      "Jérôme Roussillon",
+      "Sheraldo Becker",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Morten Thorsby",
+      "Paul Jaeckel",
+      "Sven Michel",
+      "Tim Maciejewski",
+      "Niko Giesselmann",
+      "Christopher Trimmel",
+      "Aljoscha Kemlein",
+      "Jamie Leweling",
+      "Jordan Siebatcheu"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2036612"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-02-16-ajax-union-berlin",
+   "value": {
+    "name": "Ajax 0-0 Union Berlin",
+    "on": "2023-02-16",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Morten Thorsby",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Rani Khedira",
+     "Kevin Behrens",
+     "Josip Juranović",
+     "Aïssa Laïdouni",
+     "Jérôme Roussillon",
+     "Sheraldo Becker",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Sven Michel",
+     "Tim Maciejewski",
+     "Niko Giesselmann",
+     "Malick Sanogo",
+     "Aljoscha Kemlein",
+     "Jamie Leweling",
+     "Jordan Siebatcheu"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2036600",
+     "scorers": [],
+     "lineup": [
+      "Frederik Rønnow",
+      "Morten Thorsby",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Rani Khedira",
+      "Kevin Behrens",
+      "Josip Juranović",
+      "Aïssa Laïdouni",
+      "Jérôme Roussillon",
+      "Sheraldo Becker",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Sven Michel",
+      "Tim Maciejewski",
+      "Niko Giesselmann",
+      "Malick Sanogo",
+      "Aljoscha Kemlein",
+      "Jamie Leweling",
+      "Jordan Siebatcheu"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2036600"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-11-03-union-sg-union-berlin",
+   "value": {
+    "name": "Union SG 0-1 Union Berlin",
+    "on": "2022-11-03",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Julian Ryerson",
+     "Rani Khedira",
+     "Sven Michel",
+     "Janik Haberer",
+     "Genki Haraguchi",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Morten Thorsby",
+     "Paul Jaeckel",
+     "András Schäfer",
+     "Kevin Behrens",
+     "Tim Skarke",
+     "Niko Giesselmann",
+     "Tymoteusz Puchacz",
+     "Aljoscha Kemlein",
+     "Jamie Leweling",
+     "Jordan Siebatcheu"
+    ],
+    "scorers": [
+     {
+      "name": "Sven Michel",
+      "minute": 6
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035999",
+     "scorers": [
+      {
+       "name": "Sven Michel",
+       "minute": 6
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Julian Ryerson",
+      "Rani Khedira",
+      "Sven Michel",
+      "Janik Haberer",
+      "Genki Haraguchi",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Morten Thorsby",
+      "Paul Jaeckel",
+      "András Schäfer",
+      "Kevin Behrens",
+      "Tim Skarke",
+      "Niko Giesselmann",
+      "Tymoteusz Puchacz",
+      "Aljoscha Kemlein",
+      "Jamie Leweling",
+      "Jordan Siebatcheu"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035999"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-27-union-berlin-braga",
+   "value": {
+    "name": "Union Berlin 1-0 Braga",
+    "on": "2022-10-27",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Morten Thorsby",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Julian Ryerson",
+     "Rani Khedira",
+     "Janik Haberer",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche",
+     "Jordan Siebatcheu"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "András Schäfer",
+     "Tim Maciejewski",
+     "Kevin Behrens",
+     "Tim Skarke",
+     "Niko Giesselmann",
+     "Genki Haraguchi",
+     "Tymoteusz Puchacz",
+     "Aljoscha Kemlein",
+     "Jamie Leweling"
+    ],
+    "scorers": [
+     {
+      "name": "Robin Knoche",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035998",
+     "scorers": [
+      {
+       "name": "Robin Knoche",
+       "minute": 68
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Morten Thorsby",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Julian Ryerson",
+      "Rani Khedira",
+      "Janik Haberer",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche",
+      "Jordan Siebatcheu"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "András Schäfer",
+      "Tim Maciejewski",
+      "Kevin Behrens",
+      "Tim Skarke",
+      "Niko Giesselmann",
+      "Genki Haraguchi",
+      "Tymoteusz Puchacz",
+      "Aljoscha Kemlein",
+      "Jamie Leweling"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035998"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-13-union-berlin-malmo",
+   "value": {
+    "name": "Union Berlin 1-0 Malmö",
+    "on": "2022-10-13",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Diogo Leite",
+     "Julian Ryerson",
+     "Rani Khedira",
+     "Janik Haberer",
+     "Genki Haraguchi",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche",
+     "Jordan Siebatcheu"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Morten Thorsby",
+     "Danilho Doekhi",
+     "Sven Michel",
+     "Tim Maciejewski",
+     "Kevin Behrens",
+     "Tim Skarke",
+     "Niko Giesselmann",
+     "Tymoteusz Puchacz",
+     "Aljoscha Kemlein",
+     "Jamie Leweling"
+    ],
+    "scorers": [
+     {
+      "name": "Robin Knoche",
+      "minute": 89
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035996",
+     "scorers": [
+      {
+       "name": "Robin Knoche",
+       "minute": 89
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Diogo Leite",
+      "Julian Ryerson",
+      "Rani Khedira",
+      "Janik Haberer",
+      "Genki Haraguchi",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche",
+      "Jordan Siebatcheu"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Morten Thorsby",
+      "Danilho Doekhi",
+      "Sven Michel",
+      "Tim Maciejewski",
+      "Kevin Behrens",
+      "Tim Skarke",
+      "Niko Giesselmann",
+      "Tymoteusz Puchacz",
+      "Aljoscha Kemlein",
+      "Jamie Leweling"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035996"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-06-malmo-union-berlin",
+   "value": {
+    "name": "Malmö 0-1 Union Berlin",
+    "on": "2022-10-06",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Diogo Leite",
+     "Danilho Doekhi",
+     "Julian Ryerson",
+     "Rani Khedira",
+     "András Schäfer",
+     "Janik Haberer",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche",
+     "Jordan Siebatcheu"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Morten Thorsby",
+     "Paul Jaeckel",
+     "Kevin Behrens",
+     "Tim Skarke",
+     "Niko Giesselmann",
+     "Genki Haraguchi",
+     "Tymoteusz Puchacz",
+     "Aljoscha Kemlein",
+     "Jamie Leweling"
+    ],
+    "scorers": [
+     {
+      "name": "Sheraldo Becker",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035994",
+     "scorers": [
+      {
+       "name": "Sheraldo Becker",
+       "minute": 68
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Diogo Leite",
+      "Danilho Doekhi",
+      "Julian Ryerson",
+      "Rani Khedira",
+      "András Schäfer",
+      "Janik Haberer",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche",
+      "Jordan Siebatcheu"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Morten Thorsby",
+      "Paul Jaeckel",
+      "Kevin Behrens",
+      "Tim Skarke",
+      "Niko Giesselmann",
+      "Genki Haraguchi",
+      "Tymoteusz Puchacz",
+      "Aljoscha Kemlein",
+      "Jamie Leweling"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035994"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-09-15-braga-union-berlin",
+   "value": {
+    "name": "Braga 1-0 Union Berlin",
+    "on": "2022-09-15",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Diogo Leite",
+     "Julian Ryerson",
+     "Rani Khedira",
+     "András Schäfer",
+     "Janik Haberer",
+     "Tymoteusz Puchacz",
+     "Sheraldo Becker",
+     "Robin Knoche",
+     "Jordan Siebatcheu"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Tim Maciejewski",
+     "Kevin Behrens",
+     "Tim Skarke",
+     "Niko Giesselmann",
+     "Genki Haraguchi",
+     "Christopher Trimmel",
+     "Aljoscha Kemlein",
+     "Jamie Leweling"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035992",
+     "scorers": [],
+     "lineup": [
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Diogo Leite",
+      "Julian Ryerson",
+      "Rani Khedira",
+      "András Schäfer",
+      "Janik Haberer",
+      "Tymoteusz Puchacz",
+      "Sheraldo Becker",
+      "Robin Knoche",
+      "Jordan Siebatcheu"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Tim Maciejewski",
+      "Kevin Behrens",
+      "Tim Skarke",
+      "Niko Giesselmann",
+      "Genki Haraguchi",
+      "Christopher Trimmel",
+      "Aljoscha Kemlein",
+      "Jamie Leweling"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035992"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-09-08-union-berlin-union-sg",
+   "value": {
+    "name": "Union Berlin 0-1 Union SG",
+    "on": "2022-09-08",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Danilho Doekhi",
+     "Rani Khedira",
+     "Kevin Behrens",
+     "Janik Haberer",
+     "Niko Giesselmann",
+     "Genki Haraguchi",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Lennart Grill",
+     "Yannic Stein",
+     "Morten Thorsby",
+     "Julian Ryerson",
+     "Sven Michel",
+     "András Schäfer",
+     "Tim Skarke",
+     "Tymoteusz Puchacz",
+     "Aljoscha Kemlein",
+     "Jamie Leweling"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035990",
+     "scorers": [],
+     "lineup": [
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Danilho Doekhi",
+      "Rani Khedira",
+      "Kevin Behrens",
+      "Janik Haberer",
+      "Niko Giesselmann",
+      "Genki Haraguchi",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Lennart Grill",
+      "Yannic Stein",
+      "Morten Thorsby",
+      "Julian Ryerson",
+      "Sven Michel",
+      "András Schäfer",
+      "Tim Skarke",
+      "Tymoteusz Puchacz",
+      "Aljoscha Kemlein",
+      "Jamie Leweling"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035990"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-12-09-union-berlin-slavia-praha",
+   "value": {
+    "name": "Union Berlin 1-1 Slavia Praha",
+    "on": "2021-12-09",
+    "competition": "UEFA Conference League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Marvin Friedrich",
+     "Rani Khedira",
+     "Max Kruse",
+     "Taiwo Awoniyi",
+     "Grischa Prömel",
+     "Niko Giesselmann",
+     "Timo Baumgartl",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Andreas Luthe",
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Julian Ryerson",
+     "Levin Öztunali",
+     "Andreas Voglsammer",
+     "Kevin Behrens",
+     "Genki Haraguchi",
+     "Tymoteusz Puchacz",
+     "Kevin Möhwald",
+     "Fabio Schneider",
+     "Cedric Teuchert"
+    ],
+    "scorers": [
+     {
+      "name": "Max Kruse",
+      "minute": 64
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033355",
+     "scorers": [
+      {
+       "name": "Max Kruse",
+       "minute": 64
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Marvin Friedrich",
+      "Rani Khedira",
+      "Max Kruse",
+      "Taiwo Awoniyi",
+      "Grischa Prömel",
+      "Niko Giesselmann",
+      "Timo Baumgartl",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Andreas Luthe",
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Julian Ryerson",
+      "Levin Öztunali",
+      "Andreas Voglsammer",
+      "Kevin Behrens",
+      "Genki Haraguchi",
+      "Tymoteusz Puchacz",
+      "Kevin Möhwald",
+      "Fabio Schneider",
+      "Cedric Teuchert"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033355"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-25-maccabi-haifa-union-berlin",
+   "value": {
+    "name": "Maccabi Haifa 0-1 Union Berlin",
+    "on": "2021-11-25",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Marvin Friedrich",
+     "Julian Ryerson",
+     "Rani Khedira",
+     "Max Kruse",
+     "Taiwo Awoniyi",
+     "Genki Haraguchi",
+     "Timo Baumgartl",
+     "Tymoteusz Puchacz",
+     "Kevin Möhwald",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Yannic Stein",
+     "Paul Jaeckel",
+     "Levin Öztunali",
+     "Andreas Voglsammer",
+     "Grischa Prömel",
+     "Niko Giesselmann",
+     "Sheraldo Becker",
+     "Fabio Schneider"
+    ],
+    "scorers": [
+     {
+      "name": "Julian Ryerson",
+      "minute": 66
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033342",
+     "scorers": [
+      {
+       "name": "Julian Ryerson",
+       "minute": 66
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Marvin Friedrich",
+      "Julian Ryerson",
+      "Rani Khedira",
+      "Max Kruse",
+      "Taiwo Awoniyi",
+      "Genki Haraguchi",
+      "Timo Baumgartl",
+      "Tymoteusz Puchacz",
+      "Kevin Möhwald",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Yannic Stein",
+      "Paul Jaeckel",
+      "Levin Öztunali",
+      "Andreas Voglsammer",
+      "Grischa Prömel",
+      "Niko Giesselmann",
+      "Sheraldo Becker",
+      "Fabio Schneider"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033342"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-04-union-berlin-feyenoord",
+   "value": {
+    "name": "Union Berlin 1-2 Feyenoord",
+    "on": "2021-11-04",
+    "competition": "UEFA Conference League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Andreas Luthe",
+     "Paul Jaeckel",
+     "Marvin Friedrich",
+     "Levin Öztunali",
+     "Rani Khedira",
+     "Kevin Behrens",
+     "Genki Haraguchi",
+     "Tymoteusz Puchacz",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Frederik Rønnow",
+     "Yannic Stein",
+     "Julian Ryerson",
+     "Andreas Voglsammer",
+     "Taiwo Awoniyi",
+     "Grischa Prömel",
+     "Niko Giesselmann",
+     "Timo Baumgartl",
+     "Laurenz Dehl",
+     "Kevin Möhwald",
+     "Fabio Schneider",
+     "Cedric Teuchert"
+    ],
+    "scorers": [
+     {
+      "name": "Christopher Trimmel",
+      "minute": 41
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033323",
+     "scorers": [
+      {
+       "name": "Christopher Trimmel",
+       "minute": 41
+      }
+     ],
+     "lineup": [
+      "Andreas Luthe",
+      "Paul Jaeckel",
+      "Marvin Friedrich",
+      "Levin Öztunali",
+      "Rani Khedira",
+      "Kevin Behrens",
+      "Genki Haraguchi",
+      "Tymoteusz Puchacz",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Frederik Rønnow",
+      "Yannic Stein",
+      "Julian Ryerson",
+      "Andreas Voglsammer",
+      "Taiwo Awoniyi",
+      "Grischa Prömel",
+      "Niko Giesselmann",
+      "Timo Baumgartl",
+      "Laurenz Dehl",
+      "Kevin Möhwald",
+      "Fabio Schneider",
+      "Cedric Teuchert"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033323"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-10-21-feyenoord-union-berlin",
+   "value": {
+    "name": "Feyenoord 3-1 Union Berlin",
+    "on": "2021-10-21",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Andreas Luthe",
+     "Paul Jaeckel",
+     "Rani Khedira",
+     "Max Kruse",
+     "Taiwo Awoniyi",
+     "Grischa Prömel",
+     "Timo Baumgartl",
+     "Tymoteusz Puchacz",
+     "Christopher Trimmel",
+     "Kevin Möhwald",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Frederik Rønnow",
+     "Yannic Stein",
+     "Julian Ryerson",
+     "Levin Öztunali",
+     "Andreas Voglsammer",
+     "Kevin Behrens",
+     "Niko Giesselmann",
+     "Genki Haraguchi",
+     "Sheraldo Becker",
+     "Laurenz Dehl",
+     "Cedric Teuchert"
+    ],
+    "scorers": [
+     {
+      "name": "Taiwo Awoniyi",
+      "minute": 35
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033311",
+     "scorers": [
+      {
+       "name": "Taiwo Awoniyi",
+       "minute": 35
+      }
+     ],
+     "lineup": [
+      "Andreas Luthe",
+      "Paul Jaeckel",
+      "Rani Khedira",
+      "Max Kruse",
+      "Taiwo Awoniyi",
+      "Grischa Prömel",
+      "Timo Baumgartl",
+      "Tymoteusz Puchacz",
+      "Christopher Trimmel",
+      "Kevin Möhwald",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Frederik Rønnow",
+      "Yannic Stein",
+      "Julian Ryerson",
+      "Levin Öztunali",
+      "Andreas Voglsammer",
+      "Kevin Behrens",
+      "Niko Giesselmann",
+      "Genki Haraguchi",
+      "Sheraldo Becker",
+      "Laurenz Dehl",
+      "Cedric Teuchert"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033311"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-30-union-berlin-maccabi-haifa",
+   "value": {
+    "name": "Union Berlin 3-0 Maccabi Haifa",
+    "on": "2021-09-30",
+    "competition": "UEFA Conference League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Rønnow",
+     "Marvin Friedrich",
+     "Rani Khedira",
+     "Andreas Voglsammer",
+     "Kevin Behrens",
+     "Niko Giesselmann",
+     "Genki Haraguchi",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Kevin Möhwald",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Andreas Luthe",
+     "Yannic Stein",
+     "Julian Ryerson",
+     "Levin Öztunali",
+     "Max Kruse",
+     "Taiwo Awoniyi",
+     "Grischa Prömel",
+     "Tymoteusz Puchacz",
+     "Laurenz Dehl",
+     "Fabio Schneider"
+    ],
+    "scorers": [
+     {
+      "name": "Andreas Voglsammer",
+      "minute": 33
+     },
+     {
+      "name": "Kevin Behrens",
+      "minute": 48
+     },
+     {
+      "name": "Taiwo Awoniyi",
+      "minute": 76
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033295",
+     "scorers": [
+      {
+       "name": "Andreas Voglsammer",
+       "minute": 33
+      },
+      {
+       "name": "Kevin Behrens",
+       "minute": 48
+      },
+      {
+       "name": "Taiwo Awoniyi",
+       "minute": 76
+      }
+     ],
+     "lineup": [
+      "Frederik Rønnow",
+      "Marvin Friedrich",
+      "Rani Khedira",
+      "Andreas Voglsammer",
+      "Kevin Behrens",
+      "Niko Giesselmann",
+      "Genki Haraguchi",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Kevin Möhwald",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Andreas Luthe",
+      "Yannic Stein",
+      "Julian Ryerson",
+      "Levin Öztunali",
+      "Max Kruse",
+      "Taiwo Awoniyi",
+      "Grischa Prömel",
+      "Tymoteusz Puchacz",
+      "Laurenz Dehl",
+      "Fabio Schneider"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033295"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-16-slavia-praha-union-berlin",
+   "value": {
+    "name": "Slavia Praha 3-1 Union Berlin",
+    "on": "2021-09-16",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Andreas Luthe",
+     "Paul Jaeckel",
+     "Marvin Friedrich",
+     "Levin Öztunali",
+     "Rani Khedira",
+     "Max Kruse",
+     "Taiwo Awoniyi",
+     "Genki Haraguchi",
+     "Tymoteusz Puchacz",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Frederik Rønnow",
+     "Niklas Petzsch",
+     "Julian Ryerson",
+     "Andreas Voglsammer",
+     "Kevin Behrens",
+     "Grischa Prömel",
+     "Niko Giesselmann",
+     "Timo Baumgartl",
+     "Sheraldo Becker",
+     "Laurenz Dehl",
+     "Cedric Teuchert"
+    ],
+    "scorers": [
+     {
+      "name": "Kevin Behrens",
+      "minute": 70
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033274",
+     "scorers": [
+      {
+       "name": "Kevin Behrens",
+       "minute": 70
+      }
+     ],
+     "lineup": [
+      "Andreas Luthe",
+      "Paul Jaeckel",
+      "Marvin Friedrich",
+      "Levin Öztunali",
+      "Rani Khedira",
+      "Max Kruse",
+      "Taiwo Awoniyi",
+      "Genki Haraguchi",
+      "Tymoteusz Puchacz",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Frederik Rønnow",
+      "Niklas Petzsch",
+      "Julian Ryerson",
+      "Andreas Voglsammer",
+      "Kevin Behrens",
+      "Grischa Prömel",
+      "Niko Giesselmann",
+      "Timo Baumgartl",
+      "Sheraldo Becker",
+      "Laurenz Dehl",
+      "Cedric Teuchert"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033274"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-26-union-berlin-kups-kuopio",
+   "value": {
+    "name": "Union Berlin 0-0 KuPS Kuopio",
+    "on": "2021-08-26",
+    "competition": "UEFA Conference League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Andreas Luthe",
+     "Marvin Friedrich",
+     "Rani Khedira",
+     "Taiwo Awoniyi",
+     "Genki Haraguchi",
+     "Timo Baumgartl",
+     "Tymoteusz Puchacz",
+     "Sheraldo Becker",
+     "Christopher Trimmel",
+     "Robin Knoche",
+     "Cedric Teuchert"
+    ],
+    "bench": [
+     "Jakob Busk",
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Julian Ryerson",
+     "Levin Öztunali",
+     "Andreas Voglsammer",
+     "Max Kruse",
+     "Kevin Behrens",
+     "Niko Giesselmann",
+     "Laurenz Dehl",
+     "Marcus Ingvartsen"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033156",
+     "scorers": [],
+     "lineup": [
+      "Andreas Luthe",
+      "Marvin Friedrich",
+      "Rani Khedira",
+      "Taiwo Awoniyi",
+      "Genki Haraguchi",
+      "Timo Baumgartl",
+      "Tymoteusz Puchacz",
+      "Sheraldo Becker",
+      "Christopher Trimmel",
+      "Robin Knoche",
+      "Cedric Teuchert"
+     ],
+     "bench": [
+      "Jakob Busk",
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Julian Ryerson",
+      "Levin Öztunali",
+      "Andreas Voglsammer",
+      "Max Kruse",
+      "Kevin Behrens",
+      "Niko Giesselmann",
+      "Laurenz Dehl",
+      "Marcus Ingvartsen"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033156"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-19-kups-kuopio-union-berlin",
+   "value": {
+    "name": "KuPS Kuopio 0-4 Union Berlin",
+    "on": "2021-08-19",
+    "competition": "UEFA Conference League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Andreas Luthe",
+     "Marvin Friedrich",
+     "Levin Öztunali",
+     "Rani Khedira",
+     "Max Kruse",
+     "Taiwo Awoniyi",
+     "Genki Haraguchi",
+     "Timo Baumgartl",
+     "Tymoteusz Puchacz",
+     "Christopher Trimmel",
+     "Robin Knoche"
+    ],
+    "bench": [
+     "Jakob Busk",
+     "Frederik Rønnow",
+     "Paul Jaeckel",
+     "Julian Ryerson",
+     "Andreas Voglsammer",
+     "Kevin Behrens",
+     "Niko Giesselmann",
+     "Sheraldo Becker",
+     "Marcus Ingvartsen",
+     "Cedric Teuchert"
+    ],
+    "scorers": [
+     {
+      "name": "Taiwo Awoniyi",
+      "minute": 7
+     },
+     {
+      "name": "Max Kruse",
+      "minute": 29
+     },
+     {
+      "name": "Taiwo Awoniyi",
+      "minute": 31
+     },
+     {
+      "name": "Andreas Voglsammer",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033134",
+     "scorers": [
+      {
+       "name": "Taiwo Awoniyi",
+       "minute": 7
+      },
+      {
+       "name": "Max Kruse",
+       "minute": 29
+      },
+      {
+       "name": "Taiwo Awoniyi",
+       "minute": 31
+      },
+      {
+       "name": "Andreas Voglsammer",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Andreas Luthe",
+      "Marvin Friedrich",
+      "Levin Öztunali",
+      "Rani Khedira",
+      "Max Kruse",
+      "Taiwo Awoniyi",
+      "Genki Haraguchi",
+      "Timo Baumgartl",
+      "Tymoteusz Puchacz",
+      "Christopher Trimmel",
+      "Robin Knoche"
+     ],
+     "bench": [
+      "Jakob Busk",
+      "Frederik Rønnow",
+      "Paul Jaeckel",
+      "Julian Ryerson",
+      "Andreas Voglsammer",
+      "Kevin Behrens",
+      "Niko Giesselmann",
+      "Sheraldo Becker",
+      "Marcus Ingvartsen",
+      "Cedric Teuchert"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033134"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2001-10-30-litex-union-berlin",
+   "value": {
+    "name": "Litex 0-0 Union Berlin",
+    "on": "2001-10-30",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Sven Beuckert",
+     "Ronny Nikol",
+     "Steffen Menze",
+     "Kostadin Vidolov",
+     "Ferdinand Chifon",
+     "Daniel Ernemann",
+     "Harun Isa",
+     "Hristo Koilov",
+     "Cristian Fiel",
+     "Emil Kremenliev",
+     "Tom Persich"
+    ],
+    "bench": [
+     "Robert Wulnikowski",
+     "Chibuike Okeke",
+     "Ivan Kozak",
+     "Jirí Balcarek",
+     "Bozidar Djurkovic",
+     "Sreto Ristic",
+     "Gert Müller"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-68523",
+     "scorers": [],
+     "lineup": [
+      "Sven Beuckert",
+      "Ronny Nikol",
+      "Steffen Menze",
+      "Kostadin Vidolov",
+      "Ferdinand Chifon",
+      "Daniel Ernemann",
+      "Harun Isa",
+      "Hristo Koilov",
+      "Cristian Fiel",
+      "Emil Kremenliev",
+      "Tom Persich"
+     ],
+     "bench": [
+      "Robert Wulnikowski",
+      "Chibuike Okeke",
+      "Ivan Kozak",
+      "Jirí Balcarek",
+      "Bozidar Djurkovic",
+      "Sreto Ristic",
+      "Gert Müller"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-68523"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2001-10-18-union-berlin-litex",
+   "value": {
+    "name": "Union Berlin 0-2 Litex",
+    "on": "2001-10-18",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Sven Beuckert",
+     "Ronny Nikol",
+     "Steffen Menze",
+     "Ivan Kozak",
+     "Kostadin Vidolov",
+     "Harun Isa",
+     "Hristo Koilov",
+     "Cristian Fiel",
+     "Sreto Ristic",
+     "Emil Kremenliev",
+     "Tom Persich"
+    ],
+    "bench": [
+     "Robert Wulnikowski",
+     "Chibuike Okeke",
+     "Michael Zechner",
+     "Ferdinand Chifon",
+     "Daniel Ernemann",
+     "Manuel Benthin",
+     "Jirí Balcarek"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-68522",
+     "scorers": [],
+     "lineup": [
+      "Sven Beuckert",
+      "Ronny Nikol",
+      "Steffen Menze",
+      "Ivan Kozak",
+      "Kostadin Vidolov",
+      "Harun Isa",
+      "Hristo Koilov",
+      "Cristian Fiel",
+      "Sreto Ristic",
+      "Emil Kremenliev",
+      "Tom Persich"
+     ],
+     "bench": [
+      "Robert Wulnikowski",
+      "Chibuike Okeke",
+      "Michael Zechner",
+      "Ferdinand Chifon",
+      "Daniel Ernemann",
+      "Manuel Benthin",
+      "Jirí Balcarek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-68522"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2001-09-27-union-berlin-haka",
+   "value": {
+    "name": "Union Berlin 3-0 Haka",
+    "on": "2001-09-27",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Sven Beuckert",
+     "Ronny Nikol",
+     "Steffen Menze",
+     "Kostadin Vidolov",
+     "Ferdinand Chifon",
+     "Daniel Ernemann",
+     "Hristo Koilov",
+     "Bozidar Djurkovic",
+     "Sreto Ristic",
+     "Emil Kremenliev",
+     "Tom Persich"
+    ],
+    "bench": [
+     "Robert Wulnikowski",
+     "Harun Isa",
+     "Jirí Balcarek",
+     "Cristian Fiel",
+     "Chibuike Okeke",
+     "Ivan Kozak",
+     "Manuel Benthin"
+    ],
+    "scorers": [
+     {
+      "name": "Bozidar Djurkovic",
+      "minute": 36
+     },
+     {
+      "name": "Ferdinand Chifon",
+      "minute": 43
+     },
+     {
+      "name": "Hristo Koilov",
+      "minute": 89
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-68340",
+     "scorers": [
+      {
+       "name": "Bozidar Djurkovic",
+       "minute": 36
+      },
+      {
+       "name": "Ferdinand Chifon",
+       "minute": 43
+      },
+      {
+       "name": "Hristo Koilov",
+       "minute": 89
+      }
+     ],
+     "lineup": [
+      "Sven Beuckert",
+      "Ronny Nikol",
+      "Steffen Menze",
+      "Kostadin Vidolov",
+      "Ferdinand Chifon",
+      "Daniel Ernemann",
+      "Hristo Koilov",
+      "Bozidar Djurkovic",
+      "Sreto Ristic",
+      "Emil Kremenliev",
+      "Tom Persich"
+     ],
+     "bench": [
+      "Robert Wulnikowski",
+      "Harun Isa",
+      "Jirí Balcarek",
+      "Cristian Fiel",
+      "Chibuike Okeke",
+      "Ivan Kozak",
+      "Manuel Benthin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-68340"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2001-09-20-haka-union-berlin",
+   "value": {
+    "name": "Haka 1-1 Union Berlin",
+    "on": "2001-09-20",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Sven Beuckert",
+     "Ronny Nikol",
+     "Steffen Menze",
+     "Kostadin Vidolov",
+     "Ferdinand Chifon",
+     "Daniel Ernemann",
+     "Hristo Koilov",
+     "Bozidar Djurkovic",
+     "Sreto Ristic",
+     "Emil Kremenliev",
+     "Tom Persich"
+    ],
+    "bench": [
+     "Robert Wulnikowski",
+     "Chibuike Okeke",
+     "Ivan Kozak",
+     "Manuel Benthin",
+     "Jirí Balcarek",
+     "Cristian Fiel",
+     "Michael Zechner"
+    ],
+    "scorers": [
+     {
+      "name": "Sreto Ristic",
+      "minute": 71
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-68339",
+     "scorers": [
+      {
+       "name": "Sreto Ristic",
+       "minute": 71
+      }
+     ],
+     "lineup": [
+      "Sven Beuckert",
+      "Ronny Nikol",
+      "Steffen Menze",
+      "Kostadin Vidolov",
+      "Ferdinand Chifon",
+      "Daniel Ernemann",
+      "Hristo Koilov",
+      "Bozidar Djurkovic",
+      "Sreto Ristic",
+      "Emil Kremenliev",
+      "Tom Persich"
+     ],
+     "bench": [
+      "Robert Wulnikowski",
+      "Chibuike Okeke",
+      "Ivan Kozak",
+      "Manuel Benthin",
+      "Jirí Balcarek",
+      "Cristian Fiel",
+      "Michael Zechner"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-68339"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

@@ -1,0 +1,8038 @@
+{
+ "sources": [
+  {
+   "id": "a-src-uefa-2050328",
+   "title": "UEFA: Ajax 2-0 Atalanta, 2026-10-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2050328--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2050309",
+   "title": "UEFA: Atalanta 3-1 Pafos, 2026-10-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2050309--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049284",
+   "title": "UEFA: H. Tel-Aviv 0-1 Atalanta, 2026-08-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049284--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049260",
+   "title": "UEFA: Atalanta 0-0 H. Tel-Aviv, 2026-08-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049260--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048058",
+   "title": "UEFA: Bayern München 4-1 Atalanta, 2026-03-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048058--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048050",
+   "title": "UEFA: Atalanta 1-6 Bayern München, 2026-03-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048050--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2047772",
+   "title": "UEFA: Atalanta 4-1 B. Dortmund, 2026-02-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2047772--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2047764",
+   "title": "UEFA: B. Dortmund 2-0 Atalanta, 2026-02-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2047764--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046044",
+   "title": "UEFA: Union SG 1-0 Atalanta, 2026-01-28",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046044--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046021",
+   "title": "UEFA: Atalanta 2-3 Athletic Club, 2026-01-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046021--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045996",
+   "title": "UEFA: Atalanta 2-1 Chelsea, 2025-12-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045996--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045988",
+   "title": "UEFA: Frankfurt 0-3 Atalanta, 2025-11-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045988--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045971",
+   "title": "UEFA: Marseille 0-1 Atalanta, 2025-11-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045971--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045949",
+   "title": "UEFA: Atalanta 0-0 Slavia Praha, 2025-10-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045949--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045924",
+   "title": "UEFA: Atalanta 2-1 Club Brugge, 2025-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045924--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045909",
+   "title": "UEFA: Paris 4-0 Atalanta, 2025-09-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045909--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2044481",
+   "title": "UEFA: Atalanta 1-3 Club Brugge, 2025-02-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2044481--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2044473",
+   "title": "UEFA: Club Brugge 2-1 Atalanta, 2025-02-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2044473--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042070",
+   "title": "UEFA: Barcelona 2-2 Atalanta, 2025-01-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042070--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042056",
+   "title": "UEFA: Atalanta 5-0 Sturm Graz, 2025-01-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042056--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042009",
+   "title": "UEFA: Atalanta 2-3 Real Madrid, 2024-12-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042009--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041995",
+   "title": "UEFA: Young Boys 1-6 Atalanta, 2024-11-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041995--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041988",
+   "title": "UEFA: Stuttgart 0-2 Atalanta, 2024-11-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041988--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041966",
+   "title": "UEFA: Atalanta 0-0 Celtic, 2024-10-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041966--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041947",
+   "title": "UEFA: Shakhtar 0-3 Atalanta, 2024-10-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041947--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042030",
+   "title": "UEFA: Atalanta 0-0 Arsenal, 2024-09-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042030--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040798",
+   "title": "UEFA: Real Madrid 2-0 Atalanta, 2024-08-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040798--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039971",
+   "title": "UEFA: Atalanta 3-0 Leverkusen, 2024-05-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039971--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040526",
+   "title": "UEFA: Atalanta 3-0 Marseille, 2024-05-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040526--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040524",
+   "title": "UEFA: Marseille 1-1 Atalanta, 2024-05-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040524--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040521",
+   "title": "UEFA: Atalanta 0-1 Liverpool, 2024-04-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040521--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040517",
+   "title": "UEFA: Liverpool 0-3 Atalanta, 2024-04-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040517--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040323",
+   "title": "UEFA: Atalanta 2-1 Sporting CP, 2024-03-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040323--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040315",
+   "title": "UEFA: Sporting CP 1-1 Atalanta, 2024-03-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040315--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039289",
+   "title": "UEFA: Raków 0-4 Atalanta, 2023-12-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039289--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039262",
+   "title": "UEFA: Atalanta 1-1 Sporting CP, 2023-11-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039262--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039255",
+   "title": "UEFA: Atalanta 1-0 Sturm Graz, 2023-11-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039255--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039231",
+   "title": "UEFA: Sturm Graz 2-2 Atalanta, 2023-10-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039231--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039216",
+   "title": "UEFA: Sporting CP 1-2 Atalanta, 2023-10-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039216--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039208",
+   "title": "UEFA: Atalanta 2-0 Raków, 2023-09-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039208--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033430",
+   "title": "UEFA: Atalanta 0-2 Leipzig, 2022-04-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033430--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033426",
+   "title": "UEFA: Leipzig 1-1 Atalanta, 2022-04-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033426--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033405",
+   "title": "UEFA: Leverkusen 0-1 Atalanta, 2022-03-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033405--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033397",
+   "title": "UEFA: Atalanta 3-2 Leverkusen, 2022-03-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033397--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033371",
+   "title": "UEFA: Olympiacos 0-3 Atalanta, 2022-02-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033371--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033363",
+   "title": "UEFA: Atalanta 2-1 Olympiacos, 2022-02-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033363--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032674",
+   "title": "UEFA: Atalanta 2-3 Villarreal, 2021-12-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032674--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032731",
+   "title": "UEFA: Young Boys 3-3 Atalanta, 2021-11-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032731--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032706",
+   "title": "UEFA: Atalanta 2-2 Man Utd, 2021-11-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032706--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032650",
+   "title": "UEFA: Man Utd 3-2 Atalanta, 2021-10-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032650--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032659",
+   "title": "UEFA: Atalanta 1-0 Young Boys, 2021-09-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032659--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032698",
+   "title": "UEFA: Villarreal 2-2 Atalanta, 2021-09-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032698--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029479",
+   "title": "UEFA: Real Madrid 3-1 Atalanta, 2021-03-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029479--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029473",
+   "title": "UEFA: Atalanta 0-1 Real Madrid, 2021-02-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029473--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029461",
+   "title": "UEFA: Ajax 0-1 Atalanta, 2020-12-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029461--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029452",
+   "title": "UEFA: Atalanta 1-1 Midtjylland, 2020-12-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029452--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029428",
+   "title": "UEFA: Liverpool 0-2 Atalanta, 2020-11-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029428--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029420",
+   "title": "UEFA: Atalanta 0-5 Liverpool, 2020-11-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029420--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029405",
+   "title": "UEFA: Atalanta 2-2 Ajax, 2020-10-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029405--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2029281",
+   "title": "UEFA: Midtjylland 0-4 Atalanta, 2020-10-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2029281--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030147",
+   "title": "UEFA: Atalanta 1-2 Paris, 2020-08-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030147--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027134",
+   "title": "UEFA: Valencia 3-4 Atalanta, 2020-03-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027134--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027124",
+   "title": "UEFA: Atalanta 4-1 Valencia, 2020-02-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027124--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027108",
+   "title": "UEFA: Shakhtar 0-3 Atalanta, 2019-12-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027108--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027101",
+   "title": "UEFA: Atalanta 2-0 GNK Dinamo, 2019-11-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027101--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027076",
+   "title": "UEFA: Atalanta 1-1 Man City, 2019-11-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027076--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027068",
+   "title": "UEFA: Man City 5-1 Atalanta, 2019-10-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027068--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027052",
+   "title": "UEFA: Atalanta 1-2 Shakhtar, 2019-10-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027052--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027029",
+   "title": "UEFA: GNK Dinamo 4-0 Atalanta, 2019-09-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027029--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2025433",
+   "title": "UEFA: Copenhagen 0-0 Atalanta, 2018-08-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2025433--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2025412",
+   "title": "UEFA: Atalanta 0-0 Copenhagen, 2018-08-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2025412--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2025369",
+   "title": "UEFA: Atalanta 2-0 H. Haifa, 2018-08-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2025369--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2025333",
+   "title": "UEFA: H. Haifa 1-4 Atalanta, 2018-08-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2025333--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2024844",
+   "title": "UEFA: Sarajevo 0-8 Atalanta, 2018-08-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2024844--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2024798",
+   "title": "UEFA: Atalanta 2-2 Sarajevo, 2018-07-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2024798--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2022174",
+   "title": "UEFA: Atalanta 1-1 B. Dortmund, 2018-02-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2022174--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2022158",
+   "title": "UEFA: B. Dortmund 3-2 Atalanta, 2018-02-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2022158--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2022142",
+   "title": "UEFA: Atalanta 1-0 Lyon, 2017-12-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2022142--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2022118",
+   "title": "UEFA: Everton 1-5 Atalanta, 2017-11-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2022118--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2022095",
+   "title": "UEFA: Apollon 1-1 Atalanta, 2017-11-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2022095--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-10-22-ajax-atalanta",
+   "value": {
+    "name": "Ajax 2-0 Atalanta",
+    "on": "2026-10-22",
+    "competition": "UEFA Conference League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Gianluca Scamacca",
+     "Éderson",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Thomas Kristensen",
+     "Relja Obrić",
+     "Nicola Zalewski",
+     "Gianluca Gaetano",
+     "Davide Zappacosta",
+     "Eljif Elmas"
+    ],
+    "bench": [
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Mario Pašalić",
+     "Lazar Vujadin Samardžić",
+     "Jonathan Rowe",
+     "Javison Idele",
+     "Sergej Levak",
+     "Lorenzo Bernasconi",
+     "Andrea Bonanomi",
+     "Isaac Isoa",
+     "Nikola Krstović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2050328",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Gianluca Scamacca",
+      "Éderson",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Thomas Kristensen",
+      "Relja Obrić",
+      "Nicola Zalewski",
+      "Gianluca Gaetano",
+      "Davide Zappacosta",
+      "Eljif Elmas"
+     ],
+     "bench": [
+      "Mattia Sonzogni",
+      "Marco Sportiello",
+      "Mario Pašalić",
+      "Lazar Vujadin Samardžić",
+      "Jonathan Rowe",
+      "Javison Idele",
+      "Sergej Levak",
+      "Lorenzo Bernasconi",
+      "Andrea Bonanomi",
+      "Isaac Isoa",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2050328"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-10-15-atalanta-pafos",
+   "value": {
+    "name": "Atalanta 3-1 Pafos",
+    "on": "2026-10-15",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Giacomo Raspadori",
+     "Sead Kolašinac",
+     "Thomas Kristensen",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Gianluca Gaetano",
+     "Davide Zappacosta",
+     "Eljif Elmas"
+    ],
+    "bench": [
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Lazar Vujadin Samardžić",
+     "Jonathan Rowe",
+     "Éderson",
+     "Charles De Ketelaere",
+     "Relja Obrić",
+     "Javison Idele",
+     "Nikola Krstović"
+    ],
+    "scorers": [
+     {
+      "name": "Eljif Elmas",
+      "minute": 1
+     },
+     {
+      "name": "Giacomo Raspadori",
+      "minute": 18
+     },
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 44
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2050309",
+     "scorers": [
+      {
+       "name": "Eljif Elmas",
+       "minute": 1
+      },
+      {
+       "name": "Giacomo Raspadori",
+       "minute": 18
+      },
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 44
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Giacomo Raspadori",
+      "Sead Kolašinac",
+      "Thomas Kristensen",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Gianluca Gaetano",
+      "Davide Zappacosta",
+      "Eljif Elmas"
+     ],
+     "bench": [
+      "Mattia Sonzogni",
+      "Marco Sportiello",
+      "Lazar Vujadin Samardžić",
+      "Jonathan Rowe",
+      "Éderson",
+      "Charles De Ketelaere",
+      "Relja Obrić",
+      "Javison Idele",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2050309"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-27-h-tel-aviv-atalanta",
+   "value": {
+    "name": "H. Tel-Aviv 0-1 Atalanta",
+    "on": "2026-08-27",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Lazar Vujadin Samardžić",
+     "Éderson",
+     "Raoul Bellanova",
+     "Giacomo Raspadori",
+     "Sead Kolašinac",
+     "Giorgio Scalvini",
+     "Nicola Zalewski",
+     "Gianluca Gaetano",
+     "Nikola Krstović"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Paolo Vismara",
+     "Ibrahim Sulemana",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Relja Obrić",
+     "Lorenzo Bernasconi",
+     "Federico Cassa",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 72
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049284",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 72
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Lazar Vujadin Samardžić",
+      "Éderson",
+      "Raoul Bellanova",
+      "Giacomo Raspadori",
+      "Sead Kolašinac",
+      "Giorgio Scalvini",
+      "Nicola Zalewski",
+      "Gianluca Gaetano",
+      "Nikola Krstović"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Paolo Vismara",
+      "Ibrahim Sulemana",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Relja Obrić",
+      "Lorenzo Bernasconi",
+      "Federico Cassa",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049284"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-20-atalanta-h-tel-aviv",
+   "value": {
+    "name": "Atalanta 0-0 H. Tel-Aviv",
+    "on": "2026-08-20",
+    "competition": "UEFA Conference League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Gianluca Scamacca",
+     "Lazar Vujadin Samardžić",
+     "Éderson",
+     "Raoul Bellanova",
+     "Giacomo Raspadori",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Gianluca Gaetano"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Paolo Vismara",
+     "Ibrahim Sulemana",
+     "Mario Pašalić",
+     "Marten de Roon",
+     "Sead Kolašinac",
+     "Thomas Kristensen",
+     "Relja Obrić",
+     "Federico Cassa",
+     "Alberto Manzoni",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049260",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Gianluca Scamacca",
+      "Lazar Vujadin Samardžić",
+      "Éderson",
+      "Raoul Bellanova",
+      "Giacomo Raspadori",
+      "Giorgio Scalvini",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Gianluca Gaetano"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Paolo Vismara",
+      "Ibrahim Sulemana",
+      "Mario Pašalić",
+      "Marten de Roon",
+      "Sead Kolašinac",
+      "Thomas Kristensen",
+      "Relja Obrić",
+      "Federico Cassa",
+      "Alberto Manzoni",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049260"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-03-18-bayern-munchen-atalanta",
+   "value": {
+    "name": "Bayern München 4-1 Atalanta",
+    "on": "2026-03-18",
+    "competition": "UEFA Champions League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Isak Hien",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Éderson",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Mitchel Bakker",
+     "Lazar Vujadin Samardžić",
+     "Marten de Roon",
+     "Giacomo Raspadori",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Nicola Zalewski",
+     "Honest Ahanor",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "scorers": [
+     {
+      "name": "Lazar Vujadin Samardžić",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048058",
+     "scorers": [
+      {
+       "name": "Lazar Vujadin Samardžić",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "Odilon Kossounou",
+      "Isak Hien",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Éderson",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Giorgio Scalvini",
+      "Lorenzo Bernasconi"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Mitchel Bakker",
+      "Lazar Vujadin Samardžić",
+      "Marten de Roon",
+      "Giacomo Raspadori",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Nicola Zalewski",
+      "Honest Ahanor",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048058"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-03-10-atalanta-bayern-munchen",
+   "value": {
+    "name": "Atalanta 1-6 Bayern München",
+    "on": "2026-03-10",
+    "competition": "UEFA Champions League",
+    "score": "1-6",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Marten de Roon",
+     "Sead Kolašinac",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Mitchel Bakker",
+     "Yunus Musah",
+     "Lazar Vujadin Samardžić",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Dominic Vavassori",
+     "Federico Cassa",
+     "Honest Ahanor"
+    ],
+    "scorers": [
+     {
+      "name": "Mario Pašalić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048050",
+     "scorers": [
+      {
+       "name": "Mario Pašalić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Marten de Roon",
+      "Sead Kolašinac",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Odilon Kossounou",
+      "Mitchel Bakker",
+      "Yunus Musah",
+      "Lazar Vujadin Samardžić",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Dominic Vavassori",
+      "Federico Cassa",
+      "Honest Ahanor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048050"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-02-25-atalanta-b-dortmund",
+   "value": {
+    "name": "Atalanta 4-1 B. Dortmund",
+    "on": "2026-02-25",
+    "competition": "UEFA Champions League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Lazar Vujadin Samardžić",
+     "Marten de Roon",
+     "Sead Kolašinac",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Mitchel Bakker",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Éderson",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Dominic Vavassori",
+     "Honest Ahanor",
+     "Nikola Krstović"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 5
+     },
+     {
+      "name": "Davide Zappacosta",
+      "minute": 45
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 57
+     },
+     {
+      "name": "Lazar Vujadin Samardžić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2047772",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 5
+      },
+      {
+       "name": "Davide Zappacosta",
+       "minute": 45
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 57
+      },
+      {
+       "name": "Lazar Vujadin Samardžić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Lazar Vujadin Samardžić",
+      "Marten de Roon",
+      "Sead Kolašinac",
+      "Giorgio Scalvini",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Odilon Kossounou",
+      "Mitchel Bakker",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Éderson",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Dominic Vavassori",
+      "Honest Ahanor",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2047772"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-02-17-b-dortmund-atalanta",
+   "value": {
+    "name": "B. Dortmund 2-0 Atalanta",
+    "on": "2026-02-17",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Isak Hien",
+     "Mitchel Bakker",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Lazar Vujadin Samardžić",
+     "Raoul Bellanova",
+     "Giorgio Scalvini",
+     "Dominic Vavassori",
+     "Honest Ahanor",
+     "Nikola Krstović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2047764",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Isak Hien",
+      "Mitchel Bakker",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Lazar Vujadin Samardžić",
+      "Raoul Bellanova",
+      "Giorgio Scalvini",
+      "Dominic Vavassori",
+      "Honest Ahanor",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2047764"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-01-28-union-sg-atalanta",
+   "value": {
+    "name": "Union SG 1-0 Atalanta",
+    "on": "2026-01-28",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Isak Hien",
+     "Yunus Musah",
+     "Lazar Vujadin Samardžić",
+     "Ademola Lookman",
+     "Éderson",
+     "Lorenzo Bernasconi",
+     "Honest Ahanor",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Giorgio Scalvini",
+     "Nicola Zalewski"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046044",
+     "scorers": [],
+     "lineup": [
+      "Marco Sportiello",
+      "Odilon Kossounou",
+      "Isak Hien",
+      "Yunus Musah",
+      "Lazar Vujadin Samardžić",
+      "Ademola Lookman",
+      "Éderson",
+      "Lorenzo Bernasconi",
+      "Honest Ahanor",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Giorgio Scalvini",
+      "Nicola Zalewski"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046044"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-01-21-atalanta-athletic-club",
+   "value": {
+    "name": "Atalanta 2-3 Athletic Club",
+    "on": "2026-01-21",
+    "competition": "UEFA Champions League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Gianluca Scamacca",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Isak Hien",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Lazar Vujadin Samardžić",
+     "Ademola Lookman",
+     "Giorgio Scalvini",
+     "Honest Ahanor",
+     "Daniel Maldini",
+     "Nikola Krstović"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 16
+     },
+     {
+      "name": "Nikola Krstović",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046021",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 16
+      },
+      {
+       "name": "Nikola Krstović",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Gianluca Scamacca",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Isak Hien",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Lazar Vujadin Samardžić",
+      "Ademola Lookman",
+      "Giorgio Scalvini",
+      "Honest Ahanor",
+      "Daniel Maldini",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046021"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-12-09-atalanta-chelsea",
+   "value": {
+    "name": "Atalanta 2-1 Chelsea",
+    "on": "2025-12-09",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Gianluca Scamacca",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Lorenzo Bernasconi"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Isak Hien",
+     "Yunus Musah",
+     "Mario Pašalić",
+     "Lazar Vujadin Samardžić",
+     "Giorgio Scalvini",
+     "Marco Brescianini",
+     "Nicola Zalewski",
+     "Honest Ahanor",
+     "Daniel Maldini",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 55
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 83
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045996",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 55
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 83
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Gianluca Scamacca",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Lorenzo Bernasconi"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Isak Hien",
+      "Yunus Musah",
+      "Mario Pašalić",
+      "Lazar Vujadin Samardžić",
+      "Giorgio Scalvini",
+      "Marco Brescianini",
+      "Nicola Zalewski",
+      "Honest Ahanor",
+      "Daniel Maldini",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045996"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-11-26-frankfurt-atalanta",
+   "value": {
+    "name": "Frankfurt 0-3 Atalanta",
+    "on": "2025-11-26",
+    "competition": "UEFA Champions League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Isak Hien",
+     "Gianluca Scamacca",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Lazar Vujadin Samardžić",
+     "Sead Kolašinac",
+     "Marco Brescianini",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Honest Ahanor",
+     "Daniel Maldini",
+     "Nikola Krstović"
+    ],
+    "scorers": [
+     {
+      "name": "Ademola Lookman",
+      "minute": 60
+     },
+     {
+      "name": "Éderson",
+      "minute": 62
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 65
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045988",
+     "scorers": [
+      {
+       "name": "Ademola Lookman",
+       "minute": 60
+      },
+      {
+       "name": "Éderson",
+       "minute": 62
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 65
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Isak Hien",
+      "Gianluca Scamacca",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Lazar Vujadin Samardžić",
+      "Sead Kolašinac",
+      "Marco Brescianini",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Honest Ahanor",
+      "Daniel Maldini",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045988"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-11-05-marseille-atalanta",
+   "value": {
+    "name": "Marseille 0-1 Atalanta",
+    "on": "2025-11-05",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Honest Ahanor",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Isak Hien",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Lazar Vujadin Samardžić",
+     "Sead Kolašinac",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Daniel Maldini"
+    ],
+    "scorers": [
+     {
+      "name": "Lazar Vujadin Samardžić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045971",
+     "scorers": [
+      {
+       "name": "Lazar Vujadin Samardžić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Honest Ahanor",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Isak Hien",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Lazar Vujadin Samardžić",
+      "Sead Kolašinac",
+      "Lorenzo Bernasconi",
+      "Nicola Zalewski",
+      "Daniel Maldini"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045971"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-10-22-atalanta-slavia-praha",
+   "value": {
+    "name": "Atalanta 0-0 Slavia Praha",
+    "on": "2025-10-22",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Isak Hien",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Lorenzo Bernasconi",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Mario Pašalić",
+     "Gianluca Scamacca",
+     "Lazar Vujadin Samardžić",
+     "Raoul Bellanova",
+     "Marco Brescianini",
+     "Nicola Zalewski",
+     "Honest Ahanor",
+     "Daniel Maldini"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045949",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Isak Hien",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Lorenzo Bernasconi",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Mario Pašalić",
+      "Gianluca Scamacca",
+      "Lazar Vujadin Samardžić",
+      "Raoul Bellanova",
+      "Marco Brescianini",
+      "Nicola Zalewski",
+      "Honest Ahanor",
+      "Daniel Maldini"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045949"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-09-30-atalanta-club-brugge",
+   "value": {
+    "name": "Atalanta 2-1 Club Brugge",
+    "on": "2025-09-30",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Mario Pašalić",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Lorenzo Bernasconi",
+     "Honest Ahanor",
+     "Nikola Krstović"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Lazar Vujadin Samardžić",
+     "Relja Obrić",
+     "Marco Brescianini",
+     "Daniel Maldini",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Lazar Vujadin Samardžić",
+      "minute": 74
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 87
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045924",
+     "scorers": [
+      {
+       "name": "Lazar Vujadin Samardžić",
+       "minute": 74
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 87
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Mario Pašalić",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Lorenzo Bernasconi",
+      "Honest Ahanor",
+      "Nikola Krstović"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Yunus Musah",
+      "Kamaldeen Sulemana",
+      "Lazar Vujadin Samardžić",
+      "Relja Obrić",
+      "Marco Brescianini",
+      "Daniel Maldini",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045924"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-09-17-paris-atalanta",
+   "value": {
+    "name": "Paris 4-0 Atalanta",
+    "on": "2025-09-17",
+    "competition": "UEFA Champions League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Isak Hien",
+     "Yunus Musah",
+     "Mario Pašalić",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Lorenzo Bernasconi",
+     "Daniel Maldini"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Kamaldeen Sulemana",
+     "Lazar Vujadin Samardžić",
+     "Relja Obrić",
+     "Henry Camara",
+     "Giorgio Scalvini",
+     "Marco Brescianini",
+     "Nicola Zalewski",
+     "Honest Ahanor",
+     "Davide Zappacosta",
+     "Nikola Krstović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045909",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Isak Hien",
+      "Yunus Musah",
+      "Mario Pašalić",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Lorenzo Bernasconi",
+      "Daniel Maldini"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Kamaldeen Sulemana",
+      "Lazar Vujadin Samardžić",
+      "Relja Obrić",
+      "Henry Camara",
+      "Giorgio Scalvini",
+      "Marco Brescianini",
+      "Nicola Zalewski",
+      "Honest Ahanor",
+      "Davide Zappacosta",
+      "Nikola Krstović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045909"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-02-18-atalanta-club-brugge",
+   "value": {
+    "name": "Atalanta 1-3 Club Brugge",
+    "on": "2025-02-18",
+    "competition": "UEFA Champions League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Rafael Tolói",
+     "Juan Cuadrado",
+     "Mario Pašalić",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Stefan Posch",
+     "Ibrahim Sulemana",
+     "Ademola Lookman",
+     "Raoul Bellanova",
+     "Matteo Ruggeri",
+     "Lazar Vujadin Samardžić",
+     "Federico Cassa",
+     "Marco Palestra",
+     "Marco Brescianini",
+     "Vanja Vlahović"
+    ],
+    "scorers": [
+     {
+      "name": "Ademola Lookman",
+      "minute": 46
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2044481",
+     "scorers": [
+      {
+       "name": "Ademola Lookman",
+       "minute": 46
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Rafael Tolói",
+      "Juan Cuadrado",
+      "Mario Pašalić",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Stefan Posch",
+      "Ibrahim Sulemana",
+      "Ademola Lookman",
+      "Raoul Bellanova",
+      "Matteo Ruggeri",
+      "Lazar Vujadin Samardžić",
+      "Federico Cassa",
+      "Marco Palestra",
+      "Marco Brescianini",
+      "Vanja Vlahović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2044481"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-02-12-club-brugge-atalanta",
+   "value": {
+    "name": "Club Brugge 2-1 Atalanta",
+    "on": "2025-02-12",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Rui Patrício",
+     "Isak Hien",
+     "Stefan Posch",
+     "Mario Pašalić",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Ibrahim Sulemana",
+     "Juan Cuadrado",
+     "Lazar Vujadin Samardžić",
+     "Federico Cassa",
+     "Marco Palestra",
+     "Marco Brescianini",
+     "Vanja Vlahović",
+     "Tommaso Del Lungo"
+    ],
+    "scorers": [
+     {
+      "name": "Mario Pašalić",
+      "minute": 41
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2044473",
+     "scorers": [
+      {
+       "name": "Mario Pašalić",
+       "minute": 41
+      }
+     ],
+     "lineup": [
+      "Rui Patrício",
+      "Isak Hien",
+      "Stefan Posch",
+      "Mario Pašalić",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Ibrahim Sulemana",
+      "Juan Cuadrado",
+      "Lazar Vujadin Samardžić",
+      "Federico Cassa",
+      "Marco Palestra",
+      "Marco Brescianini",
+      "Vanja Vlahović",
+      "Tommaso Del Lungo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2044473"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-01-29-barcelona-atalanta",
+   "value": {
+    "name": "Barcelona 2-2 Atalanta",
+    "on": "2025-01-29",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Juan Cuadrado",
+     "Nicolò Zaniolo",
+     "Matteo Ruggeri",
+     "Lazar Vujadin Samardžić",
+     "Federico Cassa",
+     "Marco Palestra",
+     "Giorgio Scalvini",
+     "Marco Brescianini",
+     "Vanja Vlahović"
+    ],
+    "scorers": [
+     {
+      "name": "Éderson",
+      "minute": 67
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042070",
+     "scorers": [
+      {
+       "name": "Éderson",
+       "minute": 67
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Juan Cuadrado",
+      "Nicolò Zaniolo",
+      "Matteo Ruggeri",
+      "Lazar Vujadin Samardžić",
+      "Federico Cassa",
+      "Marco Palestra",
+      "Giorgio Scalvini",
+      "Marco Brescianini",
+      "Vanja Vlahović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042070"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-01-21-atalanta-sturm-graz",
+   "value": {
+    "name": "Atalanta 5-0 Sturm Graz",
+    "on": "2025-01-21",
+    "competition": "UEFA Champions League",
+    "score": "5-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Rafael Tolói",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Sead Kolašinac",
+     "Lazar Vujadin Samardžić",
+     "Marco Palestra",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Juan Cuadrado",
+     "Ademola Lookman",
+     "Éderson",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Giorgio Scalvini",
+     "Marco Brescianini",
+     "Vanja Vlahović"
+    ],
+    "scorers": [
+     {
+      "name": "Mateo Retegui",
+      "minute": 12
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 58
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 63
+     },
+     {
+      "name": "Ademola Lookman",
+      "minute": 90
+     },
+     {
+      "name": "Marco Brescianini",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042056",
+     "scorers": [
+      {
+       "name": "Mateo Retegui",
+       "minute": 12
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 58
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 63
+      },
+      {
+       "name": "Ademola Lookman",
+       "minute": 90
+      },
+      {
+       "name": "Marco Brescianini",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Rafael Tolói",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Sead Kolašinac",
+      "Lazar Vujadin Samardžić",
+      "Marco Palestra",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Juan Cuadrado",
+      "Ademola Lookman",
+      "Éderson",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Giorgio Scalvini",
+      "Marco Brescianini",
+      "Vanja Vlahović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042056"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-12-10-atalanta-real-madrid",
+   "value": {
+    "name": "Atalanta 2-3 Real Madrid",
+    "on": "2024-12-10",
+    "competition": "UEFA Champions League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Odilon Kossounou",
+     "Ben Godfrey",
+     "Nicolò Zaniolo",
+     "Lazar Vujadin Samardžić",
+     "Marco Palestra",
+     "Mateo Retegui",
+     "Marco Brescianini",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 45
+     },
+     {
+      "name": "Ademola Lookman",
+      "minute": 65
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042009",
+     "scorers": [
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 45
+      },
+      {
+       "name": "Ademola Lookman",
+       "minute": 65
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Odilon Kossounou",
+      "Ben Godfrey",
+      "Nicolò Zaniolo",
+      "Lazar Vujadin Samardžić",
+      "Marco Palestra",
+      "Mateo Retegui",
+      "Marco Brescianini",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042009"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-11-26-young-boys-atalanta",
+   "value": {
+    "name": "Young Boys 1-6 Atalanta",
+    "on": "2024-11-26",
+    "competition": "UEFA Champions League",
+    "score": "1-6",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Isak Hien",
+     "Juan Cuadrado",
+     "Mario Pašalić",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Mateo Retegui",
+     "Marco Brescianini"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Ben Godfrey",
+     "Nicolò Zaniolo",
+     "Ademola Lookman",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Lazar Vujadin Samardžić",
+     "Marco Palestra",
+     "Alberto Manzoni"
+    ],
+    "scorers": [
+     {
+      "name": "Mateo Retegui",
+      "minute": 9
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 28
+     },
+     {
+      "name": "Sead Kolašinac",
+      "minute": 32
+     },
+     {
+      "name": "Mateo Retegui",
+      "minute": 39
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 56
+     },
+     {
+      "name": "Lazar Vujadin Samardžić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041995",
+     "scorers": [
+      {
+       "name": "Mateo Retegui",
+       "minute": 9
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 28
+      },
+      {
+       "name": "Sead Kolašinac",
+       "minute": 32
+      },
+      {
+       "name": "Mateo Retegui",
+       "minute": 39
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 56
+      },
+      {
+       "name": "Lazar Vujadin Samardžić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Isak Hien",
+      "Juan Cuadrado",
+      "Mario Pašalić",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Mateo Retegui",
+      "Marco Brescianini"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Ben Godfrey",
+      "Nicolò Zaniolo",
+      "Ademola Lookman",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Lazar Vujadin Samardžić",
+      "Marco Palestra",
+      "Alberto Manzoni"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041995"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-11-06-stuttgart-atalanta",
+   "value": {
+    "name": "Stuttgart 0-2 Atalanta",
+    "on": "2024-11-06",
+    "competition": "UEFA Champions League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Odilon Kossounou",
+     "Ben Godfrey",
+     "Juan Cuadrado",
+     "Nicolò Zaniolo",
+     "Charles De Ketelaere",
+     "Matteo Ruggeri",
+     "Lazar Vujadin Samardžić",
+     "Marco Palestra",
+     "Marco Brescianini"
+    ],
+    "scorers": [
+     {
+      "name": "Ademola Lookman",
+      "minute": 51
+     },
+     {
+      "name": "Nicolò Zaniolo",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041988",
+     "scorers": [
+      {
+       "name": "Ademola Lookman",
+       "minute": 51
+      },
+      {
+       "name": "Nicolò Zaniolo",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Odilon Kossounou",
+      "Ben Godfrey",
+      "Juan Cuadrado",
+      "Nicolò Zaniolo",
+      "Charles De Ketelaere",
+      "Matteo Ruggeri",
+      "Lazar Vujadin Samardžić",
+      "Marco Palestra",
+      "Marco Brescianini"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041988"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-10-23-atalanta-celtic",
+   "value": {
+    "name": "Atalanta 0-0 Celtic",
+    "on": "2024-10-23",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Ben Godfrey",
+     "Juan Cuadrado",
+     "Nicolò Zaniolo",
+     "Charles De Ketelaere",
+     "Matteo Ruggeri",
+     "Lazar Vujadin Samardžić",
+     "Marco Palestra",
+     "Alberto Manzoni",
+     "Vanja Vlahović",
+     "Tommaso Del Lungo"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041966",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Ben Godfrey",
+      "Juan Cuadrado",
+      "Nicolò Zaniolo",
+      "Charles De Ketelaere",
+      "Matteo Ruggeri",
+      "Lazar Vujadin Samardžić",
+      "Marco Palestra",
+      "Alberto Manzoni",
+      "Vanja Vlahović",
+      "Tommaso Del Lungo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041966"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-10-02-shakhtar-atalanta",
+   "value": {
+    "name": "Shakhtar 0-3 Atalanta",
+    "on": "2024-10-02",
+    "competition": "UEFA Champions League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Odilon Kossounou",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Raoul Bellanova",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Sead Kolašinac",
+     "Lazar Vujadin Samardžić",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Ben Godfrey",
+     "Juan Cuadrado",
+     "Mario Pašalić",
+     "Nicolò Zaniolo",
+     "Marco Palestra",
+     "Mateo Retegui",
+     "Pietro Comi",
+     "Alberto Manzoni",
+     "Vanja Vlahović",
+     "Tommaso Del Lungo"
+    ],
+    "scorers": [
+     {
+      "name": "Berat Djimsiti",
+      "minute": 21
+     },
+     {
+      "name": "Ademola Lookman",
+      "minute": 44
+     },
+     {
+      "name": "Raoul Bellanova",
+      "minute": 48
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041947",
+     "scorers": [
+      {
+       "name": "Berat Djimsiti",
+       "minute": 21
+      },
+      {
+       "name": "Ademola Lookman",
+       "minute": 44
+      },
+      {
+       "name": "Raoul Bellanova",
+       "minute": 48
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Odilon Kossounou",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Raoul Bellanova",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Sead Kolašinac",
+      "Lazar Vujadin Samardžić",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Ben Godfrey",
+      "Juan Cuadrado",
+      "Mario Pašalić",
+      "Nicolò Zaniolo",
+      "Marco Palestra",
+      "Mateo Retegui",
+      "Pietro Comi",
+      "Alberto Manzoni",
+      "Vanja Vlahović",
+      "Tommaso Del Lungo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041947"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-09-19-atalanta-arsenal",
+   "value": {
+    "name": "Atalanta 0-0 Arsenal",
+    "on": "2024-09-19",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Isak Hien",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Mateo Retegui",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Rui Patrício",
+     "Francesco Rossi",
+     "Odilon Kossounou",
+     "Juan Cuadrado",
+     "Mario Pašalić",
+     "Nicolò Zaniolo",
+     "Raoul Bellanova",
+     "Lazar Vujadin Samardžić",
+     "Marco Palestra",
+     "Marco Brescianini",
+     "Vanja Vlahović",
+     "Tommaso Del Lungo"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042030",
+     "scorers": [],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Isak Hien",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Mateo Retegui",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Rui Patrício",
+      "Francesco Rossi",
+      "Odilon Kossounou",
+      "Juan Cuadrado",
+      "Mario Pašalić",
+      "Nicolò Zaniolo",
+      "Raoul Bellanova",
+      "Lazar Vujadin Samardžić",
+      "Marco Palestra",
+      "Marco Brescianini",
+      "Vanja Vlahović",
+      "Tommaso Del Lungo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042030"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-14-real-madrid-atalanta",
+   "value": {
+    "name": "Real Madrid 2-0 Atalanta",
+    "on": "2024-08-14",
+    "competition": "UEFA Super Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Isak Hien",
+     "Mario Pašalić",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Ben Godfrey",
+     "Ibrahim Sulemana",
+     "Mitchel Bakker",
+     "Federico Cassa",
+     "Marco Palestra",
+     "Mateo Retegui",
+     "Pietro Comi",
+     "Pietro Tornaghi",
+     "Alberto Manzoni",
+     "Dominic Vavassori"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040798",
+     "scorers": [],
+     "lineup": [
+      "Juan Musso",
+      "Isak Hien",
+      "Mario Pašalić",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Ben Godfrey",
+      "Ibrahim Sulemana",
+      "Mitchel Bakker",
+      "Federico Cassa",
+      "Marco Palestra",
+      "Mateo Retegui",
+      "Pietro Comi",
+      "Pietro Tornaghi",
+      "Alberto Manzoni",
+      "Dominic Vavassori"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040798"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-05-22-atalanta-leverkusen",
+   "value": {
+    "name": "Atalanta 3-0 Leverkusen",
+    "on": "2024-05-22",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Isak Hien",
+     "Teun Koopmeiners",
+     "Ademola Lookman",
+     "Éderson",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Davide Zappacosta",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Emil Holm",
+     "Mario Pašalić",
+     "El Bilal Touré",
+     "Marten de Roon",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk"
+    ],
+    "scorers": [
+     {
+      "name": "Ademola Lookman",
+      "minute": 12
+     },
+     {
+      "name": "Ademola Lookman",
+      "minute": 26
+     },
+     {
+      "name": "Ademola Lookman",
+      "minute": 75
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039971",
+     "scorers": [
+      {
+       "name": "Ademola Lookman",
+       "minute": 12
+      },
+      {
+       "name": "Ademola Lookman",
+       "minute": 26
+      },
+      {
+       "name": "Ademola Lookman",
+       "minute": 75
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Isak Hien",
+      "Teun Koopmeiners",
+      "Ademola Lookman",
+      "Éderson",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Davide Zappacosta",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Emil Holm",
+      "Mario Pašalić",
+      "El Bilal Touré",
+      "Marten de Roon",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039971"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-05-09-atalanta-marseille",
+   "value": {
+    "name": "Atalanta 3-0 Marseille",
+    "on": "2024-05-09",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Isak Hien",
+     "Teun Koopmeiners",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Davide Zappacosta",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Mario Pašalić",
+     "El Bilal Touré",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Giovanni Bonfanti",
+     "Marco Palestra",
+     "Pietro Comi",
+     "Aleksei Miranchuk"
+    ],
+    "scorers": [
+     {
+      "name": "Ademola Lookman",
+      "minute": 30
+     },
+     {
+      "name": "Matteo Ruggeri",
+      "minute": 52
+     },
+     {
+      "name": "El Bilal Touré",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040526",
+     "scorers": [
+      {
+       "name": "Ademola Lookman",
+       "minute": 30
+      },
+      {
+       "name": "Matteo Ruggeri",
+       "minute": 52
+      },
+      {
+       "name": "El Bilal Touré",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Isak Hien",
+      "Teun Koopmeiners",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Davide Zappacosta",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Mario Pašalić",
+      "El Bilal Touré",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Giovanni Bonfanti",
+      "Marco Palestra",
+      "Pietro Comi",
+      "Aleksei Miranchuk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040526"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-05-02-marseille-atalanta",
+   "value": {
+    "name": "Marseille 1-1 Atalanta",
+    "on": "2024-05-02",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Teun Koopmeiners",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Giorgio Scalvini",
+     "Davide Zappacosta",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Mario Pašalić",
+     "El Bilal Touré",
+     "Ademola Lookman",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giovanni Bonfanti",
+     "Marco Palestra",
+     "Pietro Comi",
+     "Aleksei Miranchuk"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 11
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040524",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 11
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Teun Koopmeiners",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Giorgio Scalvini",
+      "Davide Zappacosta",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Mario Pašalić",
+      "El Bilal Touré",
+      "Ademola Lookman",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giovanni Bonfanti",
+      "Marco Palestra",
+      "Pietro Comi",
+      "Aleksei Miranchuk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040524"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-04-18-atalanta-liverpool",
+   "value": {
+    "name": "Atalanta 0-1 Liverpool",
+    "on": "2024-04-18",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Isak Hien",
+     "Teun Koopmeiners",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Aleksei Miranchuk",
+     "Davide Zappacosta",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Emil Holm",
+     "Mario Pašalić",
+     "El Bilal Touré",
+     "Ademola Lookman",
+     "Charles De Ketelaere",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giovanni Bonfanti"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040521",
+     "scorers": [],
+     "lineup": [
+      "Juan Musso",
+      "Isak Hien",
+      "Teun Koopmeiners",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Aleksei Miranchuk",
+      "Davide Zappacosta",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Emil Holm",
+      "Mario Pašalić",
+      "El Bilal Touré",
+      "Ademola Lookman",
+      "Charles De Ketelaere",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giovanni Bonfanti"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040521"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-04-11-liverpool-atalanta",
+   "value": {
+    "name": "Liverpool 0-3 Atalanta",
+    "on": "2024-04-11",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Isak Hien",
+     "Teun Koopmeiners",
+     "Mario Pašalić",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Davide Zappacosta",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Emil Holm",
+     "El Bilal Touré",
+     "Ademola Lookman",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Marco Carnesecchi",
+     "Hans Hateboer",
+     "Giovanni Bonfanti",
+     "Aleksei Miranchuk"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 38
+     },
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 60
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 83
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040517",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 38
+      },
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 60
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 83
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Isak Hien",
+      "Teun Koopmeiners",
+      "Mario Pašalić",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Davide Zappacosta",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Emil Holm",
+      "El Bilal Touré",
+      "Ademola Lookman",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Marco Carnesecchi",
+      "Hans Hateboer",
+      "Giovanni Bonfanti",
+      "Aleksei Miranchuk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040517"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-03-14-atalanta-sporting-cp",
+   "value": {
+    "name": "Atalanta 2-1 Sporting CP",
+    "on": "2024-03-14",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Emil Holm",
+     "Isak Hien",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Mitchel Bakker",
+     "Sead Kolašinac",
+     "Aleksei Miranchuk",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Teun Koopmeiners",
+     "Mario Pašalić",
+     "El Bilal Touré",
+     "Charles De Ketelaere",
+     "Matteo Ruggeri",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Ademola Lookman",
+      "minute": 46
+     },
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 59
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040323",
+     "scorers": [
+      {
+       "name": "Ademola Lookman",
+       "minute": 46
+      },
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 59
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Emil Holm",
+      "Isak Hien",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Mitchel Bakker",
+      "Sead Kolašinac",
+      "Aleksei Miranchuk",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Teun Koopmeiners",
+      "Mario Pašalić",
+      "El Bilal Touré",
+      "Charles De Ketelaere",
+      "Matteo Ruggeri",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040323"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-03-06-sporting-cp-atalanta",
+   "value": {
+    "name": "Sporting CP 1-1 Atalanta",
+    "on": "2024-03-06",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Emil Holm",
+     "Isak Hien",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Aleksei Miranchuk",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Paolo Vismara",
+     "Rafael Tolói",
+     "Teun Koopmeiners",
+     "Mario Pašalić",
+     "El Bilal Touré",
+     "Charles De Ketelaere",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 39
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040315",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 39
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Emil Holm",
+      "Isak Hien",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Aleksei Miranchuk",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Paolo Vismara",
+      "Rafael Tolói",
+      "Teun Koopmeiners",
+      "Mario Pašalić",
+      "El Bilal Touré",
+      "Charles De Ketelaere",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040315"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-12-14-rakow-atalanta",
+   "value": {
+    "name": "Raków 0-4 Atalanta",
+    "on": "2023-12-14",
+    "competition": "UEFA Europa League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Emil Holm",
+     "Mario Pašalić",
+     "Luis Muriel",
+     "Charles De Ketelaere",
+     "Nadir Zortea",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giovanni Bonfanti",
+     "Tommaso Del Lungo",
+     "Aleksei Miranchuk"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Paolo Vismara",
+     "Leonardo Mendicino",
+     "Marco Palestra",
+     "Matteo Colombo",
+     "Alberto Manzoni",
+     "Andrea Ceresoli",
+     "Andrea Bonanomi",
+     "Tommaso De Nipoti",
+     "Moustapha Cisse"
+    ],
+    "scorers": [
+     {
+      "name": "Luis Muriel",
+      "minute": 14
+     },
+     {
+      "name": "Giovanni Bonfanti",
+      "minute": 27
+     },
+     {
+      "name": "Luis Muriel",
+      "minute": 72
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039289",
+     "scorers": [
+      {
+       "name": "Luis Muriel",
+       "minute": 14
+      },
+      {
+       "name": "Giovanni Bonfanti",
+       "minute": 27
+      },
+      {
+       "name": "Luis Muriel",
+       "minute": 72
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Marco Carnesecchi",
+      "Emil Holm",
+      "Mario Pašalić",
+      "Luis Muriel",
+      "Charles De Ketelaere",
+      "Nadir Zortea",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giovanni Bonfanti",
+      "Tommaso Del Lungo",
+      "Aleksei Miranchuk"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Paolo Vismara",
+      "Leonardo Mendicino",
+      "Marco Palestra",
+      "Matteo Colombo",
+      "Alberto Manzoni",
+      "Andrea Ceresoli",
+      "Andrea Bonanomi",
+      "Tommaso De Nipoti",
+      "Moustapha Cisse"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039289"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-30-atalanta-sporting-cp",
+   "value": {
+    "name": "Atalanta 1-1 Sporting CP",
+    "on": "2023-11-30",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Teun Koopmeiners",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Emil Holm",
+     "Mario Pašalić",
+     "Luis Muriel",
+     "Mitchel Bakker",
+     "Nadir Zortea",
+     "Michel Adopo",
+     "Giovanni Bonfanti",
+     "Tommaso Del Lungo",
+     "Aleksei Miranchuk",
+     "Moustapha Cisse"
+    ],
+    "scorers": [
+     {
+      "name": "Gianluca Scamacca",
+      "minute": 23
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039262",
+     "scorers": [
+      {
+       "name": "Gianluca Scamacca",
+       "minute": 23
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Teun Koopmeiners",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Emil Holm",
+      "Mario Pašalić",
+      "Luis Muriel",
+      "Mitchel Bakker",
+      "Nadir Zortea",
+      "Michel Adopo",
+      "Giovanni Bonfanti",
+      "Tommaso Del Lungo",
+      "Aleksei Miranchuk",
+      "Moustapha Cisse"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039262"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-09-atalanta-sturm-graz",
+   "value": {
+    "name": "Atalanta 1-0 Sturm Graz",
+    "on": "2023-11-09",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Teun Koopmeiners",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Mitchel Bakker",
+     "Sead Kolašinac",
+     "Davide Zappacosta",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Emil Holm",
+     "Mario Pašalić",
+     "Luis Muriel",
+     "Nadir Zortea",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giovanni Bonfanti",
+     "Leonardo Mendicino",
+     "Aleksei Miranchuk"
+    ],
+    "scorers": [
+     {
+      "name": "Berat Djimsiti",
+      "minute": 50
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039255",
+     "scorers": [
+      {
+       "name": "Berat Djimsiti",
+       "minute": 50
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Teun Koopmeiners",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Mitchel Bakker",
+      "Sead Kolašinac",
+      "Davide Zappacosta",
+      "Gianluca Scamacca"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Emil Holm",
+      "Mario Pašalić",
+      "Luis Muriel",
+      "Nadir Zortea",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giovanni Bonfanti",
+      "Leonardo Mendicino",
+      "Aleksei Miranchuk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039255"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-26-sturm-graz-atalanta",
+   "value": {
+    "name": "Sturm Graz 2-2 Atalanta",
+    "on": "2023-10-26",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Emil Holm",
+     "Mario Pašalić",
+     "Charles De Ketelaere",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Giovanni Bonfanti",
+     "Aleksei Miranchuk",
+     "Gianluca Scamacca"
+    ],
+    "scorers": [
+     {
+      "name": "Luis Muriel",
+      "minute": 34
+     },
+     {
+      "name": "Luis Muriel",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039231",
+     "scorers": [
+      {
+       "name": "Luis Muriel",
+       "minute": 34
+      },
+      {
+       "name": "Luis Muriel",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Emil Holm",
+      "Mario Pašalić",
+      "Charles De Ketelaere",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Giovanni Bonfanti",
+      "Aleksei Miranchuk",
+      "Gianluca Scamacca"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039231"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-05-sporting-cp-atalanta",
+   "value": {
+    "name": "Sporting CP 1-2 Atalanta",
+    "on": "2023-10-05",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Teun Koopmeiners",
+     "Ademola Lookman",
+     "Éderson",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Sead Kolašinac",
+     "Giorgio Scalvini",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Emil Holm",
+     "José Luis Palomino",
+     "Mario Pašalić",
+     "Luis Muriel",
+     "Mitchel Bakker",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Aleksei Miranchuk",
+     "Gianluca Scamacca"
+    ],
+    "scorers": [
+     {
+      "name": "Giorgio Scalvini",
+      "minute": 33
+     },
+     {
+      "name": "Matteo Ruggeri",
+      "minute": 43
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039216",
+     "scorers": [
+      {
+       "name": "Giorgio Scalvini",
+       "minute": 33
+      },
+      {
+       "name": "Matteo Ruggeri",
+       "minute": 43
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Teun Koopmeiners",
+      "Ademola Lookman",
+      "Éderson",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Sead Kolašinac",
+      "Giorgio Scalvini",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Emil Holm",
+      "José Luis Palomino",
+      "Mario Pašalić",
+      "Luis Muriel",
+      "Mitchel Bakker",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Aleksei Miranchuk",
+      "Gianluca Scamacca"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039216"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-09-21-atalanta-rakow",
+   "value": {
+    "name": "Atalanta 2-0 Raków",
+    "on": "2023-09-21",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Ademola Lookman",
+     "Marten de Roon",
+     "Charles De Ketelaere",
+     "Berat Djimsiti",
+     "Matteo Ruggeri",
+     "Giorgio Scalvini",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Emil Holm",
+     "José Luis Palomino",
+     "Mario Pašalić",
+     "Éderson",
+     "Mitchel Bakker",
+     "Nadir Zortea",
+     "Sead Kolašinac",
+     "Michel Adopo",
+     "Hans Hateboer",
+     "Aleksei Miranchuk"
+    ],
+    "scorers": [
+     {
+      "name": "Charles De Ketelaere",
+      "minute": 49
+     },
+     {
+      "name": "Éderson",
+      "minute": 66
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039208",
+     "scorers": [
+      {
+       "name": "Charles De Ketelaere",
+       "minute": 49
+      },
+      {
+       "name": "Éderson",
+       "minute": 66
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Ademola Lookman",
+      "Marten de Roon",
+      "Charles De Ketelaere",
+      "Berat Djimsiti",
+      "Matteo Ruggeri",
+      "Giorgio Scalvini",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Marco Carnesecchi",
+      "Francesco Rossi",
+      "Emil Holm",
+      "José Luis Palomino",
+      "Mario Pašalić",
+      "Éderson",
+      "Mitchel Bakker",
+      "Nadir Zortea",
+      "Sead Kolašinac",
+      "Michel Adopo",
+      "Hans Hateboer",
+      "Aleksei Miranchuk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039208"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-04-14-atalanta-leipzig",
+   "value": {
+    "name": "Atalanta 0-2 Leipzig",
+    "on": "2022-04-14",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "José Luis Palomino",
+     "Teun Koopmeiners",
+     "Jeremie Boga",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Merih Demiral",
+     "Hans Hateboer",
+     "Davide Zappacosta",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Luis Muriel",
+     "Giuseppe Pezzella",
+     "Berat Djimsiti",
+     "Valentin Mihăilă",
+     "Matteo Pessina",
+     "Giorgio Scalvini",
+     "Giorgio Cittadini",
+     "Aleksei Miranchuk",
+     "Mario Pašalić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033430",
+     "scorers": [],
+     "lineup": [
+      "Juan Musso",
+      "José Luis Palomino",
+      "Teun Koopmeiners",
+      "Jeremie Boga",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Merih Demiral",
+      "Hans Hateboer",
+      "Davide Zappacosta",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Luis Muriel",
+      "Giuseppe Pezzella",
+      "Berat Djimsiti",
+      "Valentin Mihăilă",
+      "Matteo Pessina",
+      "Giorgio Scalvini",
+      "Giorgio Cittadini",
+      "Aleksei Miranchuk",
+      "Mario Pašalić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033430"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-04-07-leipzig-atalanta",
+   "value": {
+    "name": "Leipzig 1-1 Atalanta",
+    "on": "2022-04-07",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "José Luis Palomino",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Merih Demiral",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Davide Zappacosta",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Jeremie Boga",
+     "Giuseppe Pezzella",
+     "Ruslan Malinovskyi",
+     "Valentin Mihăilă",
+     "Giorgio Scalvini",
+     "Giorgio Cittadini",
+     "Aleksei Miranchuk",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "Luis Muriel",
+      "minute": 17
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033426",
+     "scorers": [
+      {
+       "name": "Luis Muriel",
+       "minute": 17
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "José Luis Palomino",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Merih Demiral",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Davide Zappacosta",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Jeremie Boga",
+      "Giuseppe Pezzella",
+      "Ruslan Malinovskyi",
+      "Valentin Mihăilă",
+      "Giorgio Scalvini",
+      "Giorgio Cittadini",
+      "Aleksei Miranchuk",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033426"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-03-17-leverkusen-atalanta",
+   "value": {
+    "name": "Leverkusen 0-1 Atalanta",
+    "on": "2022-03-17",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "José Luis Palomino",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Merih Demiral",
+     "Hans Hateboer",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Joakim Mæhle",
+     "Jeremie Boga",
+     "Giuseppe Pezzella",
+     "Berat Djimsiti",
+     "Valentin Mihăilă",
+     "Matteo Pessina",
+     "Giorgio Scalvini",
+     "Mario Pašalić"
+    ],
+    "scorers": [
+     {
+      "name": "Jeremie Boga",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033405",
+     "scorers": [
+      {
+       "name": "Jeremie Boga",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "José Luis Palomino",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Merih Demiral",
+      "Hans Hateboer",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Joakim Mæhle",
+      "Jeremie Boga",
+      "Giuseppe Pezzella",
+      "Berat Djimsiti",
+      "Valentin Mihăilă",
+      "Matteo Pessina",
+      "Giorgio Scalvini",
+      "Mario Pašalić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033405"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-03-10-atalanta-leverkusen",
+   "value": {
+    "name": "Atalanta 3-2 Leverkusen",
+    "on": "2022-03-10",
+    "competition": "UEFA Europa League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Merih Demiral",
+     "Hans Hateboer",
+     "Davide Zappacosta"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Joakim Mæhle",
+     "José Luis Palomino",
+     "Jeremie Boga",
+     "Giuseppe Pezzella",
+     "Valentin Mihăilă",
+     "Matteo Pessina",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Mario Pašalić"
+    ],
+    "scorers": [
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": 23
+     },
+     {
+      "name": "Luis Muriel",
+      "minute": 25
+     },
+     {
+      "name": "Luis Muriel",
+      "minute": 49
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033397",
+     "scorers": [
+      {
+       "name": "Ruslan Malinovskyi",
+       "minute": 23
+      },
+      {
+       "name": "Luis Muriel",
+       "minute": 25
+      },
+      {
+       "name": "Luis Muriel",
+       "minute": 49
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Merih Demiral",
+      "Hans Hateboer",
+      "Davide Zappacosta"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Joakim Mæhle",
+      "José Luis Palomino",
+      "Jeremie Boga",
+      "Giuseppe Pezzella",
+      "Valentin Mihăilă",
+      "Matteo Pessina",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Mario Pašalić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033397"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-02-24-olympiacos-atalanta",
+   "value": {
+    "name": "Olympiacos 0-3 Atalanta",
+    "on": "2022-02-24",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Joakim Mæhle",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Merih Demiral",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Teun Koopmeiners",
+     "Jeremie Boga",
+     "Giuseppe Pezzella",
+     "Valentin Mihăilă",
+     "Giorgio Scalvini",
+     "Giorgio Cittadini",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Joakim Mæhle",
+      "minute": 40
+     },
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": 67
+     },
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": 69
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033371",
+     "scorers": [
+      {
+       "name": "Joakim Mæhle",
+       "minute": 40
+      },
+      {
+       "name": "Ruslan Malinovskyi",
+       "minute": 67
+      },
+      {
+       "name": "Ruslan Malinovskyi",
+       "minute": 69
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Joakim Mæhle",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Merih Demiral",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Teun Koopmeiners",
+      "Jeremie Boga",
+      "Giuseppe Pezzella",
+      "Valentin Mihăilă",
+      "Giorgio Scalvini",
+      "Giorgio Cittadini",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033371"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-02-17-atalanta-olympiacos",
+   "value": {
+    "name": "Atalanta 2-1 Olympiacos",
+    "on": "2022-02-17",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Joakim Mæhle",
+     "Luis Muriel",
+     "Giuseppe Pezzella",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Merih Demiral",
+     "Matteo Pessina",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Teun Koopmeiners",
+     "Jeremie Boga",
+     "Remo Freuler",
+     "Valentin Mihăilă",
+     "Hans Hateboer",
+     "Giorgio Scalvini",
+     "Davide Zappacosta"
+    ],
+    "scorers": [
+     {
+      "name": "Berat Djimsiti",
+      "minute": 61
+     },
+     {
+      "name": "Berat Djimsiti",
+      "minute": 63
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033363",
+     "scorers": [
+      {
+       "name": "Berat Djimsiti",
+       "minute": 61
+      },
+      {
+       "name": "Berat Djimsiti",
+       "minute": 63
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Joakim Mæhle",
+      "Luis Muriel",
+      "Giuseppe Pezzella",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Merih Demiral",
+      "Matteo Pessina",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Teun Koopmeiners",
+      "Jeremie Boga",
+      "Remo Freuler",
+      "Valentin Mihăilă",
+      "Hans Hateboer",
+      "Giorgio Scalvini",
+      "Davide Zappacosta"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033363"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-12-09-atalanta-villarreal",
+   "value": {
+    "name": "Atalanta 2-3 Villarreal",
+    "on": "2021-12-09",
+    "competition": "UEFA Champions League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Joakim Mæhle",
+     "José Luis Palomino",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Merih Demiral",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Giuseppe Pezzella",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Aleksei Miranchuk",
+     "Matteo Lovato",
+     "Davide Zappacosta",
+     "Mario Pašalić",
+     "Roberto Piccoli"
+    ],
+    "scorers": [
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": 71
+     },
+     {
+      "name": "Duván Zapata",
+      "minute": 80
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032674",
+     "scorers": [
+      {
+       "name": "Ruslan Malinovskyi",
+       "minute": 71
+      },
+      {
+       "name": "Duván Zapata",
+       "minute": 80
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Joakim Mæhle",
+      "José Luis Palomino",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Merih Demiral",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Giuseppe Pezzella",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Aleksei Miranchuk",
+      "Matteo Lovato",
+      "Davide Zappacosta",
+      "Mario Pašalić",
+      "Roberto Piccoli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032674"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-23-young-boys-atalanta",
+   "value": {
+    "name": "Young Boys 3-3 Atalanta",
+    "on": "2021-11-23",
+    "competition": "UEFA Champions League",
+    "score": "3-3",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Joakim Mæhle",
+     "José Luis Palomino",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Merih Demiral",
+     "Davide Zappacosta",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Giuseppe Pezzella",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Josip Iličić",
+     "Roberto Piccoli"
+    ],
+    "scorers": [
+     {
+      "name": "Duván Zapata",
+      "minute": 10
+     },
+     {
+      "name": "José Luis Palomino",
+      "minute": 51
+     },
+     {
+      "name": "Luis Muriel",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032731",
+     "scorers": [
+      {
+       "name": "Duván Zapata",
+       "minute": 10
+      },
+      {
+       "name": "José Luis Palomino",
+       "minute": 51
+      },
+      {
+       "name": "Luis Muriel",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Joakim Mæhle",
+      "José Luis Palomino",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Merih Demiral",
+      "Davide Zappacosta",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Giuseppe Pezzella",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Josip Iličić",
+      "Roberto Piccoli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032731"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-02-atalanta-man-utd",
+   "value": {
+    "name": "Atalanta 2-2 Man Utd",
+    "on": "2021-11-02",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Joakim Mæhle",
+     "José Luis Palomino",
+     "Teun Koopmeiners",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Merih Demiral",
+     "Josip Iličić",
+     "Davide Zappacosta",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Luis Muriel",
+     "Giuseppe Pezzella",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Matteo Lovato",
+     "Roberto Piccoli"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Iličić",
+      "minute": 12
+     },
+     {
+      "name": "Duván Zapata",
+      "minute": 56
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032706",
+     "scorers": [
+      {
+       "name": "Josip Iličić",
+       "minute": 12
+      },
+      {
+       "name": "Duván Zapata",
+       "minute": 56
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Joakim Mæhle",
+      "José Luis Palomino",
+      "Teun Koopmeiners",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Merih Demiral",
+      "Josip Iličić",
+      "Davide Zappacosta",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Luis Muriel",
+      "Giuseppe Pezzella",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Matteo Lovato",
+      "Roberto Piccoli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032706"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-10-20-man-utd-atalanta",
+   "value": {
+    "name": "Man Utd 3-2 Atalanta",
+    "on": "2021-10-20",
+    "competition": "UEFA Champions League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Joakim Mæhle",
+     "José Luis Palomino",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Merih Demiral",
+     "Josip Iličić",
+     "Davide Zappacosta",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Giuseppe Pezzella",
+     "Ruslan Malinovskyi",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Matteo Lovato",
+     "Duván Zapata",
+     "Roberto Piccoli"
+    ],
+    "scorers": [
+     {
+      "name": "Mario Pašalić",
+      "minute": 15
+     },
+     {
+      "name": "Merih Demiral",
+      "minute": 29
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032650",
+     "scorers": [
+      {
+       "name": "Mario Pašalić",
+       "minute": 15
+      },
+      {
+       "name": "Merih Demiral",
+       "minute": 29
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Joakim Mæhle",
+      "José Luis Palomino",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Merih Demiral",
+      "Josip Iličić",
+      "Davide Zappacosta",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Giuseppe Pezzella",
+      "Ruslan Malinovskyi",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Matteo Lovato",
+      "Duván Zapata",
+      "Roberto Piccoli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032650"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-29-atalanta-young-boys",
+   "value": {
+    "name": "Atalanta 1-0 Young Boys",
+    "on": "2021-09-29",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "Robin Gosens",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Merih Demiral",
+     "Matteo Pessina",
+     "Davide Zappacosta",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Joakim Mæhle",
+     "Teun Koopmeiners",
+     "Luis Muriel",
+     "Giuseppe Pezzella",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Matteo Lovato",
+     "Josip Iličić",
+     "Mario Pašalić",
+     "Roberto Piccoli"
+    ],
+    "scorers": [
+     {
+      "name": "Matteo Pessina",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032659",
+     "scorers": [
+      {
+       "name": "Matteo Pessina",
+       "minute": 68
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "Robin Gosens",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Merih Demiral",
+      "Matteo Pessina",
+      "Davide Zappacosta",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Joakim Mæhle",
+      "Teun Koopmeiners",
+      "Luis Muriel",
+      "Giuseppe Pezzella",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Matteo Lovato",
+      "Josip Iličić",
+      "Mario Pašalić",
+      "Roberto Piccoli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032659"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-14-villarreal-atalanta",
+   "value": {
+    "name": "Villarreal 2-2 Atalanta",
+    "on": "2021-09-14",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Juan Musso",
+     "Rafael Tolói",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Davide Zappacosta",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Joakim Mæhle",
+     "Teun Koopmeiners",
+     "Giuseppe Pezzella",
+     "Merih Demiral",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Matteo Lovato",
+     "Josip Iličić",
+     "Mario Pašalić",
+     "Roberto Piccoli"
+    ],
+    "scorers": [
+     {
+      "name": "Remo Freuler",
+      "minute": 6
+     },
+     {
+      "name": "Robin Gosens",
+      "minute": 83
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032698",
+     "scorers": [
+      {
+       "name": "Remo Freuler",
+       "minute": 6
+      },
+      {
+       "name": "Robin Gosens",
+       "minute": 83
+      }
+     ],
+     "lineup": [
+      "Juan Musso",
+      "Rafael Tolói",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Davide Zappacosta",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Joakim Mæhle",
+      "Teun Koopmeiners",
+      "Giuseppe Pezzella",
+      "Merih Demiral",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Matteo Lovato",
+      "Josip Iličić",
+      "Mario Pašalić",
+      "Roberto Piccoli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032698"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-03-16-real-madrid-atalanta",
+   "value": {
+    "name": "Real Madrid 3-1 Atalanta",
+    "on": "2021-03-16",
+    "competition": "UEFA Champions League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Rafael Tolói",
+     "Joakim Mæhle",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Marten de Roon",
+     "Cristian Romero",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Pierluigi Gollini",
+     "José Luis Palomino",
+     "Sam Lammers",
+     "Mattia Caldara",
+     "Matteo Ruggeri",
+     "Davide Ghislandi",
+     "Aleksei Miranchuk",
+     "Josip Iličić",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "Luis Muriel",
+      "minute": 83
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029479",
+     "scorers": [
+      {
+       "name": "Luis Muriel",
+       "minute": 83
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "Rafael Tolói",
+      "Joakim Mæhle",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Marten de Roon",
+      "Cristian Romero",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Pierluigi Gollini",
+      "José Luis Palomino",
+      "Sam Lammers",
+      "Mattia Caldara",
+      "Matteo Ruggeri",
+      "Davide Ghislandi",
+      "Aleksei Miranchuk",
+      "Josip Iličić",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029479"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-02-24-atalanta-real-madrid",
+   "value": {
+    "name": "Atalanta 0-1 Real Madrid",
+    "on": "2021-02-24",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Joakim Mæhle",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Cristian Romero",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Boško Šutalo",
+     "José Luis Palomino",
+     "Sam Lammers",
+     "Mattia Caldara",
+     "Ruslan Malinovskyi",
+     "Matteo Ruggeri",
+     "Aleksei Miranchuk",
+     "Josip Iličić",
+     "Mario Pašalić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029473",
+     "scorers": [],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Joakim Mæhle",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Cristian Romero",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "Boško Šutalo",
+      "José Luis Palomino",
+      "Sam Lammers",
+      "Mattia Caldara",
+      "Ruslan Malinovskyi",
+      "Matteo Ruggeri",
+      "Aleksei Miranchuk",
+      "Josip Iličić",
+      "Mario Pašalić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029473"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-12-09-ajax-atalanta",
+   "value": {
+    "name": "Ajax 0-1 Atalanta",
+    "on": "2020-12-09",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Cristian Romero",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "José Luis Palomino",
+     "Sam Lammers",
+     "Luis Muriel",
+     "Ruslan Malinovskyi",
+     "Cristiano Piccini",
+     "Johan Mojica",
+     "Fabio Depaoli",
+     "Matteo Ruggeri",
+     "Simone Panada",
+     "Josip Iličić"
+    ],
+    "scorers": [
+     {
+      "name": "Luis Muriel",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029461",
+     "scorers": [
+      {
+       "name": "Luis Muriel",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Cristian Romero",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "José Luis Palomino",
+      "Sam Lammers",
+      "Luis Muriel",
+      "Ruslan Malinovskyi",
+      "Cristiano Piccini",
+      "Johan Mojica",
+      "Fabio Depaoli",
+      "Matteo Ruggeri",
+      "Simone Panada",
+      "Josip Iličić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029461"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-12-01-atalanta-midtjylland",
+   "value": {
+    "name": "Atalanta 1-1 Midtjylland",
+    "on": "2020-12-01",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Cristian Romero",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Ludovico Gelmi",
+     "Francesco Rossi",
+     "Rafael Tolói",
+     "Marten de Roon",
+     "Cristiano Piccini",
+     "Johan Mojica",
+     "Fabio Depaoli",
+     "Matteo Ruggeri",
+     "Giorgio Scalvini",
+     "Simone Panada",
+     "Josip Iličić",
+     "Amad Diallo"
+    ],
+    "scorers": [
+     {
+      "name": "Cristian Romero",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029452",
+     "scorers": [
+      {
+       "name": "Cristian Romero",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Cristian Romero",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Ludovico Gelmi",
+      "Francesco Rossi",
+      "Rafael Tolói",
+      "Marten de Roon",
+      "Cristiano Piccini",
+      "Johan Mojica",
+      "Fabio Depaoli",
+      "Matteo Ruggeri",
+      "Giorgio Scalvini",
+      "Simone Panada",
+      "Josip Iličić",
+      "Amad Diallo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029452"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-11-25-liverpool-atalanta",
+   "value": {
+    "name": "Liverpool 0-2 Atalanta",
+    "on": "2020-11-25",
+    "competition": "UEFA Champions League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Cristian Romero",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Josip Iličić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "José Luis Palomino",
+     "Sam Lammers",
+     "Luis Muriel",
+     "Cristiano Piccini",
+     "Johan Mojica",
+     "Matteo Ruggeri",
+     "Giorgio Scalvini",
+     "Simone Panada",
+     "Aleksei Miranchuk",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Iličić",
+      "minute": 60
+     },
+     {
+      "name": "Robin Gosens",
+      "minute": 64
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029428",
+     "scorers": [
+      {
+       "name": "Josip Iličić",
+       "minute": 60
+      },
+      {
+       "name": "Robin Gosens",
+       "minute": 64
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Cristian Romero",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Josip Iličić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Marco Sportiello",
+      "José Luis Palomino",
+      "Sam Lammers",
+      "Luis Muriel",
+      "Cristiano Piccini",
+      "Johan Mojica",
+      "Matteo Ruggeri",
+      "Giorgio Scalvini",
+      "Simone Panada",
+      "Aleksei Miranchuk",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029428"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-11-03-atalanta-liverpool",
+   "value": {
+    "name": "Atalanta 0-5 Liverpool",
+    "on": "2020-11-03",
+    "competition": "UEFA Champions League",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Rafael Tolói",
+     "José Luis Palomino",
+     "Luis Muriel",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Berat Djimsiti",
+     "Johan Mojica",
+     "Hans Hateboer",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Pierluigi Gollini",
+     "Sam Lammers",
+     "Cristian Romero",
+     "Ruslan Malinovskyi",
+     "Fabio Depaoli",
+     "Matteo Pessina",
+     "Matteo Ruggeri",
+     "Giorgio Scalvini",
+     "Aleksei Miranchuk",
+     "Josip Iličić",
+     "Amad Diallo"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029420",
+     "scorers": [],
+     "lineup": [
+      "Marco Sportiello",
+      "Rafael Tolói",
+      "José Luis Palomino",
+      "Luis Muriel",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Berat Djimsiti",
+      "Johan Mojica",
+      "Hans Hateboer",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Pierluigi Gollini",
+      "Sam Lammers",
+      "Cristian Romero",
+      "Ruslan Malinovskyi",
+      "Fabio Depaoli",
+      "Matteo Pessina",
+      "Matteo Ruggeri",
+      "Giorgio Scalvini",
+      "Aleksei Miranchuk",
+      "Josip Iličić",
+      "Amad Diallo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029420"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-10-27-atalanta-ajax",
+   "value": {
+    "name": "Atalanta 2-2 Ajax",
+    "on": "2020-10-27",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Rafael Tolói",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Cristian Romero",
+     "Berat Djimsiti",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Pierluigi Gollini",
+     "José Luis Palomino",
+     "Sam Lammers",
+     "Luis Muriel",
+     "Ruslan Malinovskyi",
+     "Johan Mojica",
+     "Fabio Depaoli",
+     "Matteo Pessina",
+     "Matteo Ruggeri",
+     "Aleksei Miranchuk",
+     "Amad Diallo"
+    ],
+    "scorers": [
+     {
+      "name": "Duván Zapata",
+      "minute": 54
+     },
+     {
+      "name": "Duván Zapata",
+      "minute": 60
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029405",
+     "scorers": [
+      {
+       "name": "Duván Zapata",
+       "minute": 54
+      },
+      {
+       "name": "Duván Zapata",
+       "minute": 60
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "Rafael Tolói",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Cristian Romero",
+      "Berat Djimsiti",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Pierluigi Gollini",
+      "José Luis Palomino",
+      "Sam Lammers",
+      "Luis Muriel",
+      "Ruslan Malinovskyi",
+      "Johan Mojica",
+      "Fabio Depaoli",
+      "Matteo Pessina",
+      "Matteo Ruggeri",
+      "Aleksei Miranchuk",
+      "Amad Diallo"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029405"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-10-21-midtjylland-atalanta",
+   "value": {
+    "name": "Midtjylland 0-4 Atalanta",
+    "on": "2020-10-21",
+    "competition": "UEFA Champions League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Rafael Tolói",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Cristian Romero",
+     "Berat Djimsiti",
+     "Hans Hateboer",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "José Luis Palomino",
+     "Sam Lammers",
+     "Johan Mojica",
+     "Fabio Depaoli",
+     "Matteo Pessina",
+     "Matteo Ruggeri",
+     "Aleksei Miranchuk",
+     "Josip Iličić",
+     "Mario Pašalić"
+    ],
+    "scorers": [
+     {
+      "name": "Duván Zapata",
+      "minute": 26
+     },
+     {
+      "name": "Alejandro Gómez",
+      "minute": 36
+     },
+     {
+      "name": "Luis Muriel",
+      "minute": 42
+     },
+     {
+      "name": "Aleksei Miranchuk",
+      "minute": 89
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2029281",
+     "scorers": [
+      {
+       "name": "Duván Zapata",
+       "minute": 26
+      },
+      {
+       "name": "Alejandro Gómez",
+       "minute": 36
+      },
+      {
+       "name": "Luis Muriel",
+       "minute": 42
+      },
+      {
+       "name": "Aleksei Miranchuk",
+       "minute": 89
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "Rafael Tolói",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Cristian Romero",
+      "Berat Djimsiti",
+      "Hans Hateboer",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "José Luis Palomino",
+      "Sam Lammers",
+      "Johan Mojica",
+      "Fabio Depaoli",
+      "Matteo Pessina",
+      "Matteo Ruggeri",
+      "Aleksei Miranchuk",
+      "Josip Iličić",
+      "Mario Pašalić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2029281"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-08-12-atalanta-paris",
+   "value": {
+    "name": "Atalanta 1-2 Paris",
+    "on": "2020-08-12",
+    "competition": "UEFA Champions League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Rafael Tolói",
+     "Mattia Caldara",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Hans Hateboer",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Ludovico Gelmi",
+     "Francesco Rossi",
+     "Boško Šutalo",
+     "José Luis Palomino",
+     "Lennart Czyborra",
+     "Luis Muriel",
+     "Roberto Piccoli",
+     "Ruslan Malinovskyi",
+     "Jacopo Da Riva",
+     "Timothy Castagne",
+     "Raoul Bellanova",
+     "Ebrima Colley"
+    ],
+    "scorers": [
+     {
+      "name": "Mario Pašalić",
+      "minute": 27
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030147",
+     "scorers": [
+      {
+       "name": "Mario Pašalić",
+       "minute": 27
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "Rafael Tolói",
+      "Mattia Caldara",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Hans Hateboer",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Ludovico Gelmi",
+      "Francesco Rossi",
+      "Boško Šutalo",
+      "José Luis Palomino",
+      "Lennart Czyborra",
+      "Luis Muriel",
+      "Roberto Piccoli",
+      "Ruslan Malinovskyi",
+      "Jacopo Da Riva",
+      "Timothy Castagne",
+      "Raoul Bellanova",
+      "Ebrima Colley"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030147"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-03-10-valencia-atalanta",
+   "value": {
+    "name": "Valencia 3-4 Atalanta",
+    "on": "2020-03-10",
+    "competition": "UEFA Champions League",
+    "score": "3-4",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Mattia Caldara",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Francesco Rossi",
+     "Adrien Tameze",
+     "Lennart Czyborra",
+     "Luis Muriel",
+     "Ruslan Malinovskyi",
+     "Timothy Castagne",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Iličić",
+      "minute": 3
+     },
+     {
+      "name": "Josip Iličić",
+      "minute": 43
+     },
+     {
+      "name": "Josip Iličić",
+      "minute": 71
+     },
+     {
+      "name": "Josip Iličić",
+      "minute": 82
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027134",
+     "scorers": [
+      {
+       "name": "Josip Iličić",
+       "minute": 3
+      },
+      {
+       "name": "Josip Iličić",
+       "minute": 43
+      },
+      {
+       "name": "Josip Iličić",
+       "minute": 71
+      },
+      {
+       "name": "Josip Iličić",
+       "minute": 82
+      }
+     ],
+     "lineup": [
+      "Marco Sportiello",
+      "Mattia Caldara",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Francesco Rossi",
+      "Adrien Tameze",
+      "Lennart Czyborra",
+      "Luis Muriel",
+      "Ruslan Malinovskyi",
+      "Timothy Castagne",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027134"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-02-19-atalanta-valencia",
+   "value": {
+    "name": "Atalanta 4-1 Valencia",
+    "on": "2020-02-19",
+    "competition": "UEFA Champions League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Mattia Caldara",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Adrien Tameze",
+     "Lennart Czyborra",
+     "Luis Muriel",
+     "Ruslan Malinovskyi",
+     "Timothy Castagne",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "Hans Hateboer",
+      "minute": 16
+     },
+     {
+      "name": "Josip Iličić",
+      "minute": 42
+     },
+     {
+      "name": "Remo Freuler",
+      "minute": 57
+     },
+     {
+      "name": "Hans Hateboer",
+      "minute": 62
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027124",
+     "scorers": [
+      {
+       "name": "Hans Hateboer",
+       "minute": 16
+      },
+      {
+       "name": "Josip Iličić",
+       "minute": 42
+      },
+      {
+       "name": "Remo Freuler",
+       "minute": 57
+      },
+      {
+       "name": "Hans Hateboer",
+       "minute": 62
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Mattia Caldara",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Adrien Tameze",
+      "Lennart Czyborra",
+      "Luis Muriel",
+      "Ruslan Malinovskyi",
+      "Timothy Castagne",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027124"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-12-11-shakhtar-atalanta",
+   "value": {
+    "name": "Shakhtar 0-3 Atalanta",
+    "on": "2019-12-11",
+    "competition": "UEFA Champions League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Timothy Castagne",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Guilherme Arana",
+     "Ruslan Malinovskyi",
+     "Hans Hateboer",
+     "Roger Ibañez",
+     "Amad Diallo",
+     "Musa Barrow"
+    ],
+    "scorers": [
+     {
+      "name": "Timothy Castagne",
+      "minute": 66
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 80
+     },
+     {
+      "name": "Robin Gosens",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027108",
+     "scorers": [
+      {
+       "name": "Timothy Castagne",
+       "minute": 66
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 80
+      },
+      {
+       "name": "Robin Gosens",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Timothy Castagne",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Guilherme Arana",
+      "Ruslan Malinovskyi",
+      "Hans Hateboer",
+      "Roger Ibañez",
+      "Amad Diallo",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027108"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-11-26-atalanta-gnk-dinamo",
+   "value": {
+    "name": "Atalanta 2-0 GNK Dinamo",
+    "on": "2019-11-26",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Simon Kjær",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Hans Hateboer",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Andrea Masiello",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Timothy Castagne",
+     "Josip Iličić",
+     "Musa Barrow"
+    ],
+    "scorers": [
+     {
+      "name": "Luis Muriel",
+      "minute": 27
+     },
+     {
+      "name": "Alejandro Gómez",
+      "minute": 47
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027101",
+     "scorers": [
+      {
+       "name": "Luis Muriel",
+       "minute": 27
+      },
+      {
+       "name": "Alejandro Gómez",
+       "minute": 47
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Simon Kjær",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Hans Hateboer",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Andrea Masiello",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Timothy Castagne",
+      "Josip Iličić",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027101"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-11-06-atalanta-man-city",
+   "value": {
+    "name": "Atalanta 1-1 Man City",
+    "on": "2019-11-06",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "José Luis Palomino",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Timothy Castagne",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Mario Pašalić"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Simon Kjær",
+     "Andrea Masiello",
+     "Luis Muriel",
+     "Guilherme Arana",
+     "Ruslan Malinovskyi",
+     "Musa Barrow"
+    ],
+    "scorers": [
+     {
+      "name": "Mario Pašalić",
+      "minute": 49
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027076",
+     "scorers": [
+      {
+       "name": "Mario Pašalić",
+       "minute": 49
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "José Luis Palomino",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Timothy Castagne",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Mario Pašalić"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Simon Kjær",
+      "Andrea Masiello",
+      "Luis Muriel",
+      "Guilherme Arana",
+      "Ruslan Malinovskyi",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027076"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-10-22-man-city-atalanta",
+   "value": {
+    "name": "Man City 5-1 Atalanta",
+    "on": "2019-10-22",
+    "competition": "UEFA Champions League",
+    "score": "5-1",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti",
+     "Timothy Castagne",
+     "Josip Iličić"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Luis Muriel",
+     "Guilherme Arana",
+     "Hans Hateboer",
+     "Roger Ibañez",
+     "Mario Pašalić",
+     "Musa Barrow"
+    ],
+    "scorers": [
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": 28
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027068",
+     "scorers": [
+      {
+       "name": "Ruslan Malinovskyi",
+       "minute": 28
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti",
+      "Timothy Castagne",
+      "Josip Iličić"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Luis Muriel",
+      "Guilherme Arana",
+      "Hans Hateboer",
+      "Roger Ibañez",
+      "Mario Pašalić",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027068"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-10-01-atalanta-shakhtar",
+   "value": {
+    "name": "Atalanta 1-2 Shakhtar",
+    "on": "2019-10-01",
+    "competition": "UEFA Champions League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Alejandro Gómez",
+     "Marten de Roon",
+     "Timothy Castagne",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Simon Kjær",
+     "Robin Gosens",
+     "Luis Muriel",
+     "Remo Freuler",
+     "Ruslan Malinovskyi",
+     "Berat Djimsiti"
+    ],
+    "scorers": [
+     {
+      "name": "Duván Zapata",
+      "minute": 28
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027052",
+     "scorers": [
+      {
+       "name": "Duván Zapata",
+       "minute": 28
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Alejandro Gómez",
+      "Marten de Roon",
+      "Timothy Castagne",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "Simon Kjær",
+      "Robin Gosens",
+      "Luis Muriel",
+      "Remo Freuler",
+      "Ruslan Malinovskyi",
+      "Berat Djimsiti"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027052"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-09-18-gnk-dinamo-atalanta",
+   "value": {
+    "name": "GNK Dinamo 4-0 Atalanta",
+    "on": "2019-09-18",
+    "competition": "UEFA Champions League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Berat Djimsiti",
+     "Hans Hateboer",
+     "Josip Iličić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "José Luis Palomino",
+     "Luis Muriel",
+     "Ruslan Malinovskyi",
+     "Timothy Castagne",
+     "Mario Pašalić",
+     "Musa Barrow"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027029",
+     "scorers": [],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Berat Djimsiti",
+      "Hans Hateboer",
+      "Josip Iličić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Marco Sportiello",
+      "José Luis Palomino",
+      "Luis Muriel",
+      "Ruslan Malinovskyi",
+      "Timothy Castagne",
+      "Mario Pašalić",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027029"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-30-copenhagen-atalanta",
+   "value": {
+    "name": "Copenhagen 0-0 Atalanta",
+    "on": "2018-08-30",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Timothy Castagne",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Etrit Berisha",
+     "Andreas Cornelius",
+     "Berat Djimsiti",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Ali Adnan Khadim Al Tameemi",
+     "Musa Barrow"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2025433",
+     "scorers": [],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Timothy Castagne",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Etrit Berisha",
+      "Andreas Cornelius",
+      "Berat Djimsiti",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Ali Adnan Khadim Al Tameemi",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2025433"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-23-atalanta-copenhagen",
+   "value": {
+    "name": "Atalanta 0-0 Copenhagen",
+    "on": "2018-08-23",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Gianluca Mancini",
+     "Hans Hateboer",
+     "Mario Pašalić",
+     "Musa Barrow"
+    ],
+    "bench": [
+     "Etrit Berisha",
+     "Andreas Cornelius",
+     "Berat Djimsiti",
+     "Timothy Castagne",
+     "Matteo Pessina",
+     "Ali Adnan Khadim Al Tameemi",
+     "Duván Zapata"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2025412",
+     "scorers": [],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Gianluca Mancini",
+      "Hans Hateboer",
+      "Mario Pašalić",
+      "Musa Barrow"
+     ],
+     "bench": [
+      "Etrit Berisha",
+      "Andreas Cornelius",
+      "Berat Djimsiti",
+      "Timothy Castagne",
+      "Matteo Pessina",
+      "Ali Adnan Khadim Al Tameemi",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2025412"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-16-atalanta-h-haifa",
+   "value": {
+    "name": "Atalanta 2-0 H. Haifa",
+    "on": "2018-08-16",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Andrea Masiello",
+     "Arkadiusz Reca",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Berat Djimsiti",
+     "Timothy Castagne",
+     "Matteo Pessina",
+     "Gianluca Mancini",
+     "Mario Pašalić",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Etrit Berisha",
+     "Luca Valzania",
+     "José Luis Palomino",
+     "Andreas Cornelius",
+     "Marten de Roon",
+     "Hans Hateboer",
+     "Musa Barrow"
+    ],
+    "scorers": [
+     {
+      "name": "Duván Zapata",
+      "minute": 71
+     },
+     {
+      "name": "Andreas Cornelius",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2025369",
+     "scorers": [
+      {
+       "name": "Duván Zapata",
+       "minute": 71
+      },
+      {
+       "name": "Andreas Cornelius",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Andrea Masiello",
+      "Arkadiusz Reca",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Berat Djimsiti",
+      "Timothy Castagne",
+      "Matteo Pessina",
+      "Gianluca Mancini",
+      "Mario Pašalić",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Etrit Berisha",
+      "Luca Valzania",
+      "José Luis Palomino",
+      "Andreas Cornelius",
+      "Marten de Roon",
+      "Hans Hateboer",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2025369"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-09-h-haifa-atalanta",
+   "value": {
+    "name": "H. Haifa 1-4 Atalanta",
+    "on": "2018-08-09",
+    "competition": "UEFA Europa League",
+    "score": "1-4",
+    "venue": null,
+    "lineup": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Duván Zapata"
+    ],
+    "bench": [
+     "Etrit Berisha",
+     "Luca Valzania",
+     "Andreas Cornelius",
+     "Timothy Castagne",
+     "Gianluca Mancini",
+     "Mario Pašalić",
+     "Musa Barrow"
+    ],
+    "scorers": [
+     {
+      "name": "Hans Hateboer",
+      "minute": 18
+     },
+     {
+      "name": "Duván Zapata",
+      "minute": 20
+     },
+     {
+      "name": "Mario Pašalić",
+      "minute": 65
+     },
+     {
+      "name": "Musa Barrow",
+      "minute": 86
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2025333",
+     "scorers": [
+      {
+       "name": "Hans Hateboer",
+       "minute": 18
+      },
+      {
+       "name": "Duván Zapata",
+       "minute": 20
+      },
+      {
+       "name": "Mario Pašalić",
+       "minute": 65
+      },
+      {
+       "name": "Musa Barrow",
+       "minute": 86
+      }
+     ],
+     "lineup": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Duván Zapata"
+     ],
+     "bench": [
+      "Etrit Berisha",
+      "Luca Valzania",
+      "Andreas Cornelius",
+      "Timothy Castagne",
+      "Gianluca Mancini",
+      "Mario Pašalić",
+      "Musa Barrow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2025333"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-02-sarajevo-atalanta",
+   "value": {
+    "name": "Sarajevo 0-8 Atalanta",
+    "on": "2018-08-02",
+    "competition": "UEFA Europa League",
+    "score": "0-8",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Matteo Pessina",
+     "Hans Hateboer",
+     "Musa Barrow"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "Luca Valzania",
+     "Marco D'Alessandro",
+     "Marco Tumminello",
+     "Timothy Castagne",
+     "Gianluca Mancini",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "José Luis Palomino",
+      "minute": 4
+     },
+     {
+      "name": "Alejandro Gómez",
+      "minute": 15
+     },
+     {
+      "name": "Andrea Masiello",
+      "minute": 18
+     },
+     {
+      "name": "Alejandro Gómez",
+      "minute": 28
+     },
+     {
+      "name": "Musa Barrow",
+      "minute": 51
+     },
+     {
+      "name": "Musa Barrow",
+      "minute": 70
+     },
+     {
+      "name": "Musa Barrow",
+      "minute": 87
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2024844",
+     "scorers": [
+      {
+       "name": "José Luis Palomino",
+       "minute": 4
+      },
+      {
+       "name": "Alejandro Gómez",
+       "minute": 15
+      },
+      {
+       "name": "Andrea Masiello",
+       "minute": 18
+      },
+      {
+       "name": "Alejandro Gómez",
+       "minute": 28
+      },
+      {
+       "name": "Musa Barrow",
+       "minute": 51
+      },
+      {
+       "name": "Musa Barrow",
+       "minute": 70
+      },
+      {
+       "name": "Musa Barrow",
+       "minute": 87
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Matteo Pessina",
+      "Hans Hateboer",
+      "Musa Barrow"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "Luca Valzania",
+      "Marco D'Alessandro",
+      "Marco Tumminello",
+      "Timothy Castagne",
+      "Gianluca Mancini",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2024844"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-07-26-atalanta-sarajevo",
+   "value": {
+    "name": "Atalanta 2-2 Sarajevo",
+    "on": "2018-07-26",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Rafael Tolói",
+     "Andrea Masiello",
+     "Robin Gosens",
+     "Alejandro Gómez",
+     "Marten de Roon",
+     "Marco D'Alessandro",
+     "Matteo Pessina",
+     "Gianluca Mancini",
+     "Hans Hateboer",
+     "Musa Barrow"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "Luca Valzania",
+     "José Luis Palomino",
+     "Arkadiusz Reca",
+     "Marco Tumminello",
+     "Timothy Castagne",
+     "Duván Zapata"
+    ],
+    "scorers": [
+     {
+      "name": "Rafael Tolói",
+      "minute": 11
+     },
+     {
+      "name": "Gianluca Mancini",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2024798",
+     "scorers": [
+      {
+       "name": "Rafael Tolói",
+       "minute": 11
+      },
+      {
+       "name": "Gianluca Mancini",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Rafael Tolói",
+      "Andrea Masiello",
+      "Robin Gosens",
+      "Alejandro Gómez",
+      "Marten de Roon",
+      "Marco D'Alessandro",
+      "Matteo Pessina",
+      "Gianluca Mancini",
+      "Hans Hateboer",
+      "Musa Barrow"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "Luca Valzania",
+      "José Luis Palomino",
+      "Arkadiusz Reca",
+      "Marco Tumminello",
+      "Timothy Castagne",
+      "Duván Zapata"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2024798"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-02-22-atalanta-b-dortmund",
+   "value": {
+    "name": "Atalanta 1-1 B. Dortmund",
+    "on": "2018-02-22",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Rafael Tolói",
+     "Bryan Cristante",
+     "Andrea Masiello",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Mattia Caldara",
+     "Marten de Roon",
+     "Hans Hateboer",
+     "Leonardo Spinazzola",
+     "Josip Iličić"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Andreas Cornelius",
+     "Timothy Castagne",
+     "Andrea Petagna",
+     "Nicolas Haas"
+    ],
+    "scorers": [
+     {
+      "name": "Rafael Tolói",
+      "minute": 11
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2022174",
+     "scorers": [
+      {
+       "name": "Rafael Tolói",
+       "minute": 11
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Rafael Tolói",
+      "Bryan Cristante",
+      "Andrea Masiello",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Mattia Caldara",
+      "Marten de Roon",
+      "Hans Hateboer",
+      "Leonardo Spinazzola",
+      "Josip Iličić"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Andreas Cornelius",
+      "Timothy Castagne",
+      "Andrea Petagna",
+      "Nicolas Haas"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2022174"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-02-15-b-dortmund-atalanta",
+   "value": {
+    "name": "B. Dortmund 3-2 Atalanta",
+    "on": "2018-02-15",
+    "competition": "UEFA Europa League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Rafael Tolói",
+     "Bryan Cristante",
+     "Andrea Masiello",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Mattia Caldara",
+     "Marten de Roon",
+     "Hans Hateboer",
+     "Leonardo Spinazzola",
+     "Josip Iličić"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "José Luis Palomino",
+     "Robin Gosens",
+     "Andreas Cornelius",
+     "Timothy Castagne",
+     "Gianluca Mancini",
+     "Andrea Petagna"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Iličić",
+      "minute": 51
+     },
+     {
+      "name": "Josip Iličić",
+      "minute": 56
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2022158",
+     "scorers": [
+      {
+       "name": "Josip Iličić",
+       "minute": 51
+      },
+      {
+       "name": "Josip Iličić",
+       "minute": 56
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Rafael Tolói",
+      "Bryan Cristante",
+      "Andrea Masiello",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Mattia Caldara",
+      "Marten de Roon",
+      "Hans Hateboer",
+      "Leonardo Spinazzola",
+      "Josip Iličić"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "José Luis Palomino",
+      "Robin Gosens",
+      "Andreas Cornelius",
+      "Timothy Castagne",
+      "Gianluca Mancini",
+      "Andrea Petagna"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2022158"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-12-07-atalanta-lyon",
+   "value": {
+    "name": "Atalanta 1-0 Lyon",
+    "on": "2017-12-07",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Rafael Tolói",
+     "Bryan Cristante",
+     "Andrea Masiello",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Mattia Caldara",
+     "Andrea Petagna",
+     "Hans Hateboer",
+     "Leonardo Spinazzola",
+     "Josip Iličić"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "José Luis Palomino",
+     "Riccardo Orsolini",
+     "Andreas Cornelius",
+     "Marten de Roon",
+     "Timothy Castagne",
+     "Jasmin Kurtić"
+    ],
+    "scorers": [
+     {
+      "name": "Andrea Petagna",
+      "minute": 10
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2022142",
+     "scorers": [
+      {
+       "name": "Andrea Petagna",
+       "minute": 10
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Rafael Tolói",
+      "Bryan Cristante",
+      "Andrea Masiello",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Mattia Caldara",
+      "Andrea Petagna",
+      "Hans Hateboer",
+      "Leonardo Spinazzola",
+      "Josip Iličić"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "José Luis Palomino",
+      "Riccardo Orsolini",
+      "Andreas Cornelius",
+      "Marten de Roon",
+      "Timothy Castagne",
+      "Jasmin Kurtić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2022142"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-11-23-everton-atalanta",
+   "value": {
+    "name": "Everton 1-5 Atalanta",
+    "on": "2017-11-23",
+    "competition": "UEFA Europa League",
+    "score": "1-5",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Rafael Tolói",
+     "Bryan Cristante",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Alejandro Gómez",
+     "Remo Freuler",
+     "Marten de Roon",
+     "Timothy Castagne",
+     "Andrea Petagna",
+     "Hans Hateboer"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "Robin Gosens",
+     "Andreas Cornelius",
+     "Mattia Caldara",
+     "Jasmin Kurtić",
+     "Gianluca Mancini",
+     "Josip Iličić"
+    ],
+    "scorers": [
+     {
+      "name": "Bryan Cristante",
+      "minute": 12
+     },
+     {
+      "name": "Bryan Cristante",
+      "minute": 64
+     },
+     {
+      "name": "Robin Gosens",
+      "minute": 86
+     },
+     {
+      "name": "Andreas Cornelius",
+      "minute": 88
+     },
+     {
+      "name": "Andreas Cornelius",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2022118",
+     "scorers": [
+      {
+       "name": "Bryan Cristante",
+       "minute": 12
+      },
+      {
+       "name": "Bryan Cristante",
+       "minute": 64
+      },
+      {
+       "name": "Robin Gosens",
+       "minute": 86
+      },
+      {
+       "name": "Andreas Cornelius",
+       "minute": 88
+      },
+      {
+       "name": "Andreas Cornelius",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Rafael Tolói",
+      "Bryan Cristante",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Alejandro Gómez",
+      "Remo Freuler",
+      "Marten de Roon",
+      "Timothy Castagne",
+      "Andrea Petagna",
+      "Hans Hateboer"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "Robin Gosens",
+      "Andreas Cornelius",
+      "Mattia Caldara",
+      "Jasmin Kurtić",
+      "Gianluca Mancini",
+      "Josip Iličić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2022118"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-11-02-apollon-atalanta",
+   "value": {
+    "name": "Apollon 1-1 Atalanta",
+    "on": "2017-11-02",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Etrit Berisha",
+     "Bryan Cristante",
+     "Andrea Masiello",
+     "José Luis Palomino",
+     "Remo Freuler",
+     "Mattia Caldara",
+     "Jasmin Kurtić",
+     "Andrea Petagna",
+     "Hans Hateboer",
+     "Leonardo Spinazzola",
+     "Josip Iličić"
+    ],
+    "bench": [
+     "Pierluigi Gollini",
+     "Rafael Tolói",
+     "Riccardo Orsolini",
+     "Robin Gosens",
+     "Marten de Roon",
+     "Luca Vido",
+     "Timothy Castagne"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Iličić",
+      "minute": 35
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2022095",
+     "scorers": [
+      {
+       "name": "Josip Iličić",
+       "minute": 35
+      }
+     ],
+     "lineup": [
+      "Etrit Berisha",
+      "Bryan Cristante",
+      "Andrea Masiello",
+      "José Luis Palomino",
+      "Remo Freuler",
+      "Mattia Caldara",
+      "Jasmin Kurtić",
+      "Andrea Petagna",
+      "Hans Hateboer",
+      "Leonardo Spinazzola",
+      "Josip Iličić"
+     ],
+     "bench": [
+      "Pierluigi Gollini",
+      "Rafael Tolói",
+      "Riccardo Orsolini",
+      "Robin Gosens",
+      "Marten de Roon",
+      "Luca Vido",
+      "Timothy Castagne"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2022095"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

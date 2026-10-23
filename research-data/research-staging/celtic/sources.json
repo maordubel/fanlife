@@ -9,9 +9,9 @@
   "scope": "mixed",
   "access": "available",
   "checkedAt": "2026-10-23",
-  "retrievedAt": "2026-10-23T08:41:44.230Z",
+  "retrievedAt": "2026-10-23T08:51:07.922Z",
   "collected": {
-   "documents": 600,
+   "documents": 850,
    "observedTotalDocuments": 19307,
    "state": "partial_budget",
    "parser": null
@@ -30,7 +30,7 @@
   "scope": "club-history",
   "access": "available",
   "checkedAt": "2026-10-23",
-  "retrievedAt": "2026-10-23T08:41:44.230Z",
+  "retrievedAt": "2026-10-23T08:51:07.922Z",
   "collected": {
    "documents": 2,
    "observedTotalDocuments": 2,

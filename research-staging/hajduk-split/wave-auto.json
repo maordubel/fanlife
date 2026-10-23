@@ -1,0 +1,7508 @@
+{
+ "sources": [
+  {
+   "id": "a-src-uefa-2050342",
+   "title": "UEFA: Thun 0-1 Hajduk Split, 2026-10-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2050342--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2050323",
+   "title": "UEFA: Hajduk Split 2-1 Ajax, 2026-10-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2050323--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049280",
+   "title": "UEFA: Raków 2-3 Hajduk Split, 2026-08-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049280--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049256",
+   "title": "UEFA: Hajduk Split 2-2 Raków, 2026-08-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049256--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049180",
+   "title": "UEFA: Hajduk Split 4-0 Žalgiris, 2026-08-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049180--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049150",
+   "title": "UEFA: Žalgiris 2-5 Hajduk Split, 2026-08-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049150--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048754",
+   "title": "UEFA: Pafos 4-0 Hajduk Split, 2026-07-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048754--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048746",
+   "title": "UEFA: Hajduk Split 2-0 Pafos, 2026-07-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048746--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048657",
+   "title": "UEFA: Žilina 2-1 Hajduk Split, 2026-07-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048657--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048651",
+   "title": "UEFA: Hajduk Split 2-0 Žilina, 2026-07-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048651--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045790",
+   "title": "UEFA: Dinamo City 3-1 Hajduk Split, 2025-08-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045790--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045760",
+   "title": "UEFA: Hajduk Split 2-1 Dinamo City, 2025-08-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045760--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045503",
+   "title": "UEFA: Hajduk Split 2-1 Zire, 2025-07-31",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045503--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045453",
+   "title": "UEFA: Zire 1-1 Hajduk Split, 2025-07-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045453--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041772",
+   "title": "UEFA: Hajduk Split 0-1 Ružomberok, 2024-08-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041772--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041742",
+   "title": "UEFA: Ružomberok 0-0 Hajduk Split, 2024-08-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041742--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041181",
+   "title": "UEFA: H. Bóltfelag 0-0 Hajduk Split, 2024-08-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041181--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041132",
+   "title": "UEFA: Hajduk Split 2-0 H. Bóltfelag, 2024-07-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041132--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038972",
+   "title": "UEFA: PAOK 3-0 Hajduk Split, 2023-08-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038972--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038941",
+   "title": "UEFA: Hajduk Split 0-0 PAOK, 2023-08-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038941--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035546",
+   "title": "UEFA: Hajduk Split 0-2 Villarreal, 2022-08-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035546--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035524",
+   "title": "UEFA: Villarreal 4-2 Hajduk Split, 2022-08-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035524--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035437",
+   "title": "UEFA: Vitória SC 1-0 Hajduk Split, 2022-08-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035437--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035406",
+   "title": "UEFA: Hajduk Split 3-1 Vitória SC, 2022-08-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035406--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032908",
+   "title": "UEFA: Tobol 4-1 Hajduk Split, 2021-07-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032908--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032854",
+   "title": "UEFA: Hajduk Split 2-0 Tobol, 2021-07-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032854--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030395",
+   "title": "UEFA: Galatasaray 2-0 Hajduk Split, 2020-09-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030395--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030354",
+   "title": "UEFA: Renova 0-1 Hajduk Split, 2020-09-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030354--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027586",
+   "title": "UEFA: Hajduk Split 1-3 Gżira, 2019-07-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027586--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027539",
+   "title": "UEFA: Gżira 0-2 Hajduk Split, 2019-07-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027539--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2025374",
+   "title": "UEFA: FCSB 2-1 Hajduk Split, 2018-08-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2025374--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2025338",
+   "title": "UEFA: Hajduk Split 0-0 FCSB, 2018-08-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2025338--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2024879",
+   "title": "UEFA: Slavia Sofia 2-3 Hajduk Split, 2018-08-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2024879--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2024833",
+   "title": "UEFA: Hajduk Split 1-0 Slavia Sofia, 2018-07-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2024833--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2021991",
+   "title": "UEFA: Hajduk Split 1-1 Everton, 2017-08-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2021991--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2021960",
+   "title": "UEFA: Everton 2-0 Hajduk Split, 2017-08-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2021960--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2021939",
+   "title": "UEFA: Hajduk Split 2-0 Brøndby, 2017-08-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2021939--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2021910",
+   "title": "UEFA: Brøndby 0-0 Hajduk Split, 2017-07-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2021910--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2021867",
+   "title": "UEFA: Levski Sofia 1-2 Hajduk Split, 2017-07-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2021867--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2021827",
+   "title": "UEFA: Hajduk Split 1-0 Levski Sofia, 2017-07-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2021827--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020478",
+   "title": "UEFA: Hajduk Split 2-1 M. Tel-Aviv, 2016-08-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020478--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020456",
+   "title": "UEFA: M. Tel-Aviv 2-1 Hajduk Split, 2016-08-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020456--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020412",
+   "title": "UEFA: Hajduk Split 3-1 Olexandriya, 2016-08-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020412--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020383",
+   "title": "UEFA: Olexandriya 0-3 Hajduk Split, 2016-07-28",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020383--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020136",
+   "title": "UEFA: Hajduk Split 2-1 CSMS laşi, 2016-07-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020136--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020096",
+   "title": "UEFA: CSMS laşi 2-2 Hajduk Split, 2016-07-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020096--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2018059",
+   "title": "UEFA: Hajduk Split 0-1 Liberec, 2015-08-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2018059--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2018037",
+   "title": "UEFA: Liberec 1-0 Hajduk Split, 2015-08-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2018037--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2016859",
+   "title": "UEFA: Strømsgodset 0-2 Hajduk Split, 2015-08-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2016859--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2016830",
+   "title": "UEFA: Hajduk Split 2-0 Strømsgodset, 2015-07-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2016830--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2016796",
+   "title": "UEFA: Hajduk Split 4-1 Koper, 2015-07-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2016796--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2016763",
+   "title": "UEFA: Koper 3-2 Hajduk Split, 2015-07-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2016763--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2017142",
+   "title": "UEFA: Hajduk Split 6-2 Sillamäe, 2015-07-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2017142--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2017091",
+   "title": "UEFA: Sillamäe 1-1 Hajduk Split, 2015-07-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2017091--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2015154",
+   "title": "UEFA: Hajduk Split 0-0 Dnipro, 2014-08-28",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2015154--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2015123",
+   "title": "UEFA: Dnipro 2-1 Hajduk Split, 2014-08-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2015123--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2015004",
+   "title": "UEFA: Hajduk Split 3-0 Shakhter, 2014-08-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2015004--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2014975",
+   "title": "UEFA: Shakhter 4-2 Hajduk Split, 2014-07-31",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2014975--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2014790",
+   "title": "UEFA: Hajduk Split 1-2 Dundalk, 2014-07-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2014790--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2014750",
+   "title": "UEFA: Dundalk 0-2 Hajduk Split, 2014-07-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2014750--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012398",
+   "title": "UEFA: Dila 1-0 Hajduk Split, 2013-08-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012398--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012369",
+   "title": "UEFA: Hajduk Split 0-1 Dila, 2013-08-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012369--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012323",
+   "title": "UEFA: Turnovo 1-1 Hajduk Split, 2013-07-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012323--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012283",
+   "title": "UEFA: Hajduk Split 2-1 Turnovo, 2013-07-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012283--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2009822",
+   "title": "UEFA: Inter 0-2 Hajduk Split, 2012-08-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2009822--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2009793",
+   "title": "UEFA: Hajduk Split 0-3 Inter, 2012-08-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2009793--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2009733",
+   "title": "UEFA: Skonto 1-0 Hajduk Split, 2012-07-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2009733--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2009693",
+   "title": "UEFA: Hajduk Split 2-0 Skonto, 2012-07-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2009693--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007192",
+   "title": "UEFA: Hajduk Split 0-1 Stoke, 2011-08-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007192--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007157",
+   "title": "UEFA: Stoke 1-0 Hajduk Split, 2011-07-28",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007157--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2003033",
+   "title": "UEFA: Anderlecht 2-0 Hajduk Split, 2010-12-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2003033--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2003022",
+   "title": "UEFA: Hajduk Split 1-3 AEK Athens, 2010-12-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2003022--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2002997",
+   "title": "UEFA: Hajduk Split 2-3 Zenit, 2010-11-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2002997--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2002973",
+   "title": "UEFA: Zenit 2-0 Hajduk Split, 2010-10-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2002973--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2002949",
+   "title": "UEFA: Hajduk Split 1-0 Anderlecht, 2010-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2002949--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2002926",
+   "title": "UEFA: AEK Athens 3-1 Hajduk Split, 2010-09-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2002926--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2003099",
+   "title": "UEFA: Unirea Urziceni 1-1 Hajduk Split, 2010-08-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2003099--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2003062",
+   "title": "UEFA: Hajduk Split 4-1 Unirea Urziceni, 2010-08-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2003062--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2002807",
+   "title": "UEFA: Hajduk Split 3-0 Dinamo Bucureşti, 2010-08-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2002807--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2002772",
+   "title": "UEFA: Dinamo Bucureşti 3-1 Hajduk Split, 2010-07-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2002772--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-10-22-thun-hajduk-split",
+   "value": {
+    "name": "Thun 0-1 Hajduk Split",
+    "on": "2026-10-22",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Dennis Hadžikadunić",
+     "Abdoulie Sanyang",
+     "Khalil Fayad",
+     "Dalisson",
+     "Michele Šego",
+     "Dario Maresic",
+     "Alberto Del Moral",
+     "Mathieu Acapandie",
+     "Marin Šotiček",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Davyd Fesyuk",
+     "Roko Gabrić",
+     "Alec Van Hoorenbeeck",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Anđelo Šutalo",
+     "Dario Melnjak",
+     "Leander Dendoncker",
+     "Etnik Brruti",
+     "Adam Huram",
+     "Carlos Martín"
+    ],
+    "scorers": [
+     {
+      "name": "Dalisson",
+      "minute": 17
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2050342",
+     "scorers": [
+      {
+       "name": "Dalisson",
+       "minute": 17
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Dennis Hadžikadunić",
+      "Abdoulie Sanyang",
+      "Khalil Fayad",
+      "Dalisson",
+      "Michele Šego",
+      "Dario Maresic",
+      "Alberto Del Moral",
+      "Mathieu Acapandie",
+      "Marin Šotiček",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Davyd Fesyuk",
+      "Roko Gabrić",
+      "Alec Van Hoorenbeeck",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Anđelo Šutalo",
+      "Dario Melnjak",
+      "Leander Dendoncker",
+      "Etnik Brruti",
+      "Adam Huram",
+      "Carlos Martín"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2050342"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-10-15-hajduk-split-ajax",
+   "value": {
+    "name": "Hajduk Split 2-1 Ajax",
+    "on": "2026-10-15",
+    "competition": "UEFA Conference League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Dennis Hadžikadunić",
+     "Abdoulie Sanyang",
+     "Khalil Fayad",
+     "Dalisson",
+     "Michele Šego",
+     "Dario Maresic",
+     "Alberto Del Moral",
+     "Mathieu Acapandie",
+     "Marin Šotiček",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Davyd Fesyuk",
+     "Roko Gabrić",
+     "Alec Van Hoorenbeeck",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Anđelo Šutalo",
+     "Dario Melnjak",
+     "Leander Dendoncker",
+     "Adam Huram",
+     "Luka Hodak",
+     "Carlos Martín"
+    ],
+    "scorers": [
+     {
+      "name": "Abdoulie Sanyang",
+      "minute": 37
+     },
+     {
+      "name": "Marin Šotiček",
+      "minute": 55
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2050323",
+     "scorers": [
+      {
+       "name": "Abdoulie Sanyang",
+       "minute": 37
+      },
+      {
+       "name": "Marin Šotiček",
+       "minute": 55
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Dennis Hadžikadunić",
+      "Abdoulie Sanyang",
+      "Khalil Fayad",
+      "Dalisson",
+      "Michele Šego",
+      "Dario Maresic",
+      "Alberto Del Moral",
+      "Mathieu Acapandie",
+      "Marin Šotiček",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Davyd Fesyuk",
+      "Roko Gabrić",
+      "Alec Van Hoorenbeeck",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Anđelo Šutalo",
+      "Dario Melnjak",
+      "Leander Dendoncker",
+      "Adam Huram",
+      "Luka Hodak",
+      "Carlos Martín"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2050323"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-27-rakow-hajduk-split",
+   "value": {
+    "name": "Raków 2-3 Hajduk Split",
+    "on": "2026-08-27",
+    "competition": "UEFA Conference League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Abdoulie Sanyang",
+     "Niko Sigur",
+     "Dalisson",
+     "Michele Šego",
+     "Ron Raçi",
+     "Dario Maresic",
+     "Rokas Pukštas",
+     "Mathieu Acapandie",
+     "Marin Šotiček",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Roko Gabrić",
+     "Alec Van Hoorenbeeck",
+     "Marko Livaja",
+     "Anđelo Šutalo",
+     "Dario Melnjak",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Adam Huram",
+     "Marino Skelin",
+     "Luka Hodak"
+    ],
+    "scorers": [
+     {
+      "name": "Ron Raçi",
+      "minute": 2
+     },
+     {
+      "name": "Michele Šego",
+      "minute": 66
+     },
+     {
+      "name": "Rokas Pukštas",
+      "minute": 94
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049280",
+     "scorers": [
+      {
+       "name": "Ron Raçi",
+       "minute": 2
+      },
+      {
+       "name": "Michele Šego",
+       "minute": 66
+      },
+      {
+       "name": "Rokas Pukštas",
+       "minute": 94
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Abdoulie Sanyang",
+      "Niko Sigur",
+      "Dalisson",
+      "Michele Šego",
+      "Ron Raçi",
+      "Dario Maresic",
+      "Rokas Pukštas",
+      "Mathieu Acapandie",
+      "Marin Šotiček",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Roko Gabrić",
+      "Alec Van Hoorenbeeck",
+      "Marko Livaja",
+      "Anđelo Šutalo",
+      "Dario Melnjak",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Adam Huram",
+      "Marino Skelin",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049280"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-20-hajduk-split-rakow",
+   "value": {
+    "name": "Hajduk Split 2-2 Raków",
+    "on": "2026-08-20",
+    "competition": "UEFA Conference League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Abdoulie Sanyang",
+     "Niko Sigur",
+     "Dalisson",
+     "Michele Šego",
+     "Ron Raçi",
+     "Dario Maresic",
+     "Rokas Pukštas",
+     "Marin Šotiček",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Roko Gabrić",
+     "Alec Van Hoorenbeeck",
+     "Marko Livaja",
+     "Anđelo Šutalo",
+     "Dario Melnjak",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Adam Huram",
+     "Marino Skelin",
+     "Luka Hodak"
+    ],
+    "scorers": [
+     {
+      "name": "Michele Šego",
+      "minute": 21
+     },
+     {
+      "name": "Dalisson",
+      "minute": 48
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049256",
+     "scorers": [
+      {
+       "name": "Michele Šego",
+       "minute": 21
+      },
+      {
+       "name": "Dalisson",
+       "minute": 48
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Abdoulie Sanyang",
+      "Niko Sigur",
+      "Dalisson",
+      "Michele Šego",
+      "Ron Raçi",
+      "Dario Maresic",
+      "Rokas Pukštas",
+      "Marin Šotiček",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Roko Gabrić",
+      "Alec Van Hoorenbeeck",
+      "Marko Livaja",
+      "Anđelo Šutalo",
+      "Dario Melnjak",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Adam Huram",
+      "Marino Skelin",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049256"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-13-hajduk-split-zalgiris",
+   "value": {
+    "name": "Hajduk Split 4-0 Žalgiris",
+    "on": "2026-08-13",
+    "competition": "UEFA Conference League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Dalisson",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Dario Maresic",
+     "Anđelo Šutalo",
+     "Dario Melnjak",
+     "Alberto Del Moral",
+     "Mathieu Acapandie",
+     "Marin Šotiček"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Roko Gabrić",
+     "Alec Van Hoorenbeeck",
+     "Abdoulie Sanyang",
+     "Niko Sigur",
+     "Michele Šego",
+     "Etnik Brruti",
+     "Rokas Pukštas",
+     "Adam Huram",
+     "Šimun Hrgović",
+     "Luka Hodak"
+    ],
+    "scorers": [
+     {
+      "name": "Dario Melnjak",
+      "minute": 54
+     },
+     {
+      "name": "Adam Huram",
+      "minute": 69
+     },
+     {
+      "name": "Michele Šego",
+      "minute": 83
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049180",
+     "scorers": [
+      {
+       "name": "Dario Melnjak",
+       "minute": 54
+      },
+      {
+       "name": "Adam Huram",
+       "minute": 69
+      },
+      {
+       "name": "Michele Šego",
+       "minute": 83
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Dalisson",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Dario Maresic",
+      "Anđelo Šutalo",
+      "Dario Melnjak",
+      "Alberto Del Moral",
+      "Mathieu Acapandie",
+      "Marin Šotiček"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Roko Gabrić",
+      "Alec Van Hoorenbeeck",
+      "Abdoulie Sanyang",
+      "Niko Sigur",
+      "Michele Šego",
+      "Etnik Brruti",
+      "Rokas Pukštas",
+      "Adam Huram",
+      "Šimun Hrgović",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049180"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-06-zalgiris-hajduk-split",
+   "value": {
+    "name": "Žalgiris 2-5 Hajduk Split",
+    "on": "2026-08-06",
+    "competition": "UEFA Conference League",
+    "score": "2-5",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Alec Van Hoorenbeeck",
+     "Abdoulie Sanyang",
+     "Dalisson",
+     "Michele Šego",
+     "Dario Maresic",
+     "Rokas Pukštas",
+     "Mathieu Acapandie",
+     "Marin Šotiček",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Davyd Fesyuk",
+     "Roko Gabrić",
+     "Niko Sigur",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Anđelo Šutalo",
+     "Dario Melnjak",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Adam Huram",
+     "Luka Hodak"
+    ],
+    "scorers": [
+     {
+      "name": "Michele Šego",
+      "minute": 5
+     },
+     {
+      "name": "Michele Šego",
+      "minute": 44
+     },
+     {
+      "name": "Adrion Pajaziti",
+      "minute": 55
+     },
+     {
+      "name": "Dalisson",
+      "minute": 72
+     },
+     {
+      "name": "Rokas Pukštas",
+      "minute": 75
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049150",
+     "scorers": [
+      {
+       "name": "Michele Šego",
+       "minute": 5
+      },
+      {
+       "name": "Michele Šego",
+       "minute": 44
+      },
+      {
+       "name": "Adrion Pajaziti",
+       "minute": 55
+      },
+      {
+       "name": "Dalisson",
+       "minute": 72
+      },
+      {
+       "name": "Rokas Pukštas",
+       "minute": 75
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Alec Van Hoorenbeeck",
+      "Abdoulie Sanyang",
+      "Dalisson",
+      "Michele Šego",
+      "Dario Maresic",
+      "Rokas Pukštas",
+      "Mathieu Acapandie",
+      "Marin Šotiček",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Davyd Fesyuk",
+      "Roko Gabrić",
+      "Niko Sigur",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Anđelo Šutalo",
+      "Dario Melnjak",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Adam Huram",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049150"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-07-30-pafos-hajduk-split",
+   "value": {
+    "name": "Pafos 4-0 Hajduk Split",
+    "on": "2026-07-30",
+    "competition": "UEFA Europa League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Alec Van Hoorenbeeck",
+     "Dalisson",
+     "Michele Šego",
+     "Dario Maresic",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Mathieu Acapandie",
+     "Adam Huram",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Abdoulie Sanyang",
+     "Niko Sigur",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Anđelo Šutalo",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Marino Skelin",
+     "Noa Skoko",
+     "Luka Hodak"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048754",
+     "scorers": [],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Alec Van Hoorenbeeck",
+      "Dalisson",
+      "Michele Šego",
+      "Dario Maresic",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Mathieu Acapandie",
+      "Adam Huram",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Abdoulie Sanyang",
+      "Niko Sigur",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Anđelo Šutalo",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Marino Skelin",
+      "Noa Skoko",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048754"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-07-23-hajduk-split-pafos",
+   "value": {
+    "name": "Hajduk Split 2-0 Pafos",
+    "on": "2026-07-23",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Alec Van Hoorenbeeck",
+     "Dalisson",
+     "Michele Šego",
+     "Dario Maresic",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Mathieu Acapandie",
+     "Roko Brajković",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Abdoulie Sanyang",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Anđelo Šutalo",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Adam Huram",
+     "Marino Skelin",
+     "Noa Skoko",
+     "Luka Hodak"
+    ],
+    "scorers": [
+     {
+      "name": "Michele Šego",
+      "minute": 56
+     },
+     {
+      "name": "Dario Melnjak",
+      "minute": 64
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048746",
+     "scorers": [
+      {
+       "name": "Michele Šego",
+       "minute": 56
+      },
+      {
+       "name": "Dario Melnjak",
+       "minute": 64
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Alec Van Hoorenbeeck",
+      "Dalisson",
+      "Michele Šego",
+      "Dario Maresic",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Mathieu Acapandie",
+      "Roko Brajković",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Abdoulie Sanyang",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Anđelo Šutalo",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Adam Huram",
+      "Marino Skelin",
+      "Noa Skoko",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048746"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-07-16-zilina-hajduk-split",
+   "value": {
+    "name": "Žilina 2-1 Hajduk Split",
+    "on": "2026-07-16",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Alec Van Hoorenbeeck",
+     "Michele Šego",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Mathieu Acapandie",
+     "Roko Brajković",
+     "Šimun Hrgović",
+     "Marino Skelin",
+     "Noa Skoko"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Roko Gabrić",
+     "Abdoulie Sanyang",
+     "Dalisson",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Dario Maresic",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Adam Huram",
+     "Luka Hodak"
+    ],
+    "scorers": [
+     {
+      "name": "Alec Van Hoorenbeeck",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048657",
+     "scorers": [
+      {
+       "name": "Alec Van Hoorenbeeck",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Alec Van Hoorenbeeck",
+      "Michele Šego",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Mathieu Acapandie",
+      "Roko Brajković",
+      "Šimun Hrgović",
+      "Marino Skelin",
+      "Noa Skoko"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Roko Gabrić",
+      "Abdoulie Sanyang",
+      "Dalisson",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Dario Maresic",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Adam Huram",
+      "Luka Hodak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048657"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-07-09-hajduk-split-zilina",
+   "value": {
+    "name": "Hajduk Split 2-0 Žilina",
+    "on": "2026-07-09",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Toni Silić",
+     "Adrion Pajaziti",
+     "Alec Van Hoorenbeeck",
+     "Dalisson",
+     "Michele Šego",
+     "Dario Maresic",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Mathieu Acapandie",
+     "Roko Brajković",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Ivica Ivušić",
+     "Dante Stipica",
+     "Marko Livaja",
+     "Ron Raçi",
+     "Etnik Brruti",
+     "Alberto Del Moral",
+     "Adam Huram",
+     "Fran Karačić",
+     "Marino Skelin",
+     "Noa Skoko",
+     "Luka Hodak",
+     "Mihael Žaper"
+    ],
+    "scorers": [
+     {
+      "name": "Roko Brajković",
+      "minute": 22
+     },
+     {
+      "name": "Dalisson",
+      "minute": 49
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048651",
+     "scorers": [
+      {
+       "name": "Roko Brajković",
+       "minute": 22
+      },
+      {
+       "name": "Dalisson",
+       "minute": 49
+      }
+     ],
+     "lineup": [
+      "Toni Silić",
+      "Adrion Pajaziti",
+      "Alec Van Hoorenbeeck",
+      "Dalisson",
+      "Michele Šego",
+      "Dario Maresic",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Mathieu Acapandie",
+      "Roko Brajković",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Ivica Ivušić",
+      "Dante Stipica",
+      "Marko Livaja",
+      "Ron Raçi",
+      "Etnik Brruti",
+      "Alberto Del Moral",
+      "Adam Huram",
+      "Fran Karačić",
+      "Marino Skelin",
+      "Noa Skoko",
+      "Luka Hodak",
+      "Mihael Žaper"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048651"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-14-dinamo-city-hajduk-split",
+   "value": {
+    "name": "Dinamo City 3-1 Hajduk Split",
+    "on": "2025-08-14",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Ivica Ivušić",
+     "Adrion Pajaziti",
+     "Anthony Kalik",
+     "Marko Livaja",
+     "Branimir Mlačić",
+     "Filip Krovinović",
+     "Abdoulie Sanyang",
+     "Roko Brajković",
+     "Fran Karačić",
+     "Zvonimir Šarlija",
+     "Šimun Hrgović"
+    ],
+    "bench": [
+     "Ivan Lucic",
+     "Toni Silić",
+     "Ismaël Diallo",
+     "Niko Sigur",
+     "Ante Rebić",
+     "Michele Šego",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Bruno Durdov",
+     "Noa Skoko",
+     "Luka Hodak",
+     "Yassin Benrahou"
+    ],
+    "scorers": [
+     {
+      "name": "Fran Karačić",
+      "minute": 99
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045790",
+     "scorers": [
+      {
+       "name": "Fran Karačić",
+       "minute": 99
+      }
+     ],
+     "lineup": [
+      "Ivica Ivušić",
+      "Adrion Pajaziti",
+      "Anthony Kalik",
+      "Marko Livaja",
+      "Branimir Mlačić",
+      "Filip Krovinović",
+      "Abdoulie Sanyang",
+      "Roko Brajković",
+      "Fran Karačić",
+      "Zvonimir Šarlija",
+      "Šimun Hrgović"
+     ],
+     "bench": [
+      "Ivan Lucic",
+      "Toni Silić",
+      "Ismaël Diallo",
+      "Niko Sigur",
+      "Ante Rebić",
+      "Michele Šego",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Bruno Durdov",
+      "Noa Skoko",
+      "Luka Hodak",
+      "Yassin Benrahou"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045790"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-07-hajduk-split-dinamo-city",
+   "value": {
+    "name": "Hajduk Split 2-1 Dinamo City",
+    "on": "2025-08-07",
+    "competition": "UEFA Conference League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Ivica Ivušić",
+     "Adrion Pajaziti",
+     "Anthony Kalik",
+     "Marko Livaja",
+     "Branimir Mlačić",
+     "Filip Krovinović",
+     "Roko Brajković",
+     "Fran Karačić",
+     "Zvonimir Šarlija",
+     "Šimun Hrgović",
+     "Bruno Durdov"
+    ],
+    "bench": [
+     "Ivan Lucic",
+     "Toni Silić",
+     "Ismaël Diallo",
+     "Niko Sigur",
+     "Ante Rebić",
+     "Michele Šego",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Abdoulie Sanyang",
+     "Noa Skoko",
+     "Luka Hodak",
+     "Yassin Benrahou"
+    ],
+    "scorers": [
+     {
+      "name": "Bruno Durdov",
+      "minute": 49
+     },
+     {
+      "name": "Abdoulie Sanyang",
+      "minute": 63
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045760",
+     "scorers": [
+      {
+       "name": "Bruno Durdov",
+       "minute": 49
+      },
+      {
+       "name": "Abdoulie Sanyang",
+       "minute": 63
+      }
+     ],
+     "lineup": [
+      "Ivica Ivušić",
+      "Adrion Pajaziti",
+      "Anthony Kalik",
+      "Marko Livaja",
+      "Branimir Mlačić",
+      "Filip Krovinović",
+      "Roko Brajković",
+      "Fran Karačić",
+      "Zvonimir Šarlija",
+      "Šimun Hrgović",
+      "Bruno Durdov"
+     ],
+     "bench": [
+      "Ivan Lucic",
+      "Toni Silić",
+      "Ismaël Diallo",
+      "Niko Sigur",
+      "Ante Rebić",
+      "Michele Šego",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Abdoulie Sanyang",
+      "Noa Skoko",
+      "Luka Hodak",
+      "Yassin Benrahou"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045760"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-07-31-hajduk-split-zire",
+   "value": {
+    "name": "Hajduk Split 2-1 Zire",
+    "on": "2025-07-31",
+    "competition": "UEFA Conference League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Ivica Ivušić",
+     "Adrion Pajaziti",
+     "Anthony Kalik",
+     "Marko Livaja",
+     "Branimir Mlačić",
+     "Filip Krovinović",
+     "Roko Brajković",
+     "Fran Karačić",
+     "Zvonimir Šarlija",
+     "Šimun Hrgović",
+     "Noa Skoko"
+    ],
+    "bench": [
+     "Ivan Lucic",
+     "Toni Silić",
+     "Ismaël Diallo",
+     "Mihael Žaper",
+     "Niko Sigur",
+     "Michele Šego",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Abdoulie Sanyang",
+     "Bruno Durdov",
+     "Luka Hodak",
+     "Yassin Benrahou"
+    ],
+    "scorers": [
+     {
+      "name": "Filip Krovinović",
+      "minute": 19
+     },
+     {
+      "name": "Yassin Benrahou",
+      "minute": 95
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045503",
+     "scorers": [
+      {
+       "name": "Filip Krovinović",
+       "minute": 19
+      },
+      {
+       "name": "Yassin Benrahou",
+       "minute": 95
+      }
+     ],
+     "lineup": [
+      "Ivica Ivušić",
+      "Adrion Pajaziti",
+      "Anthony Kalik",
+      "Marko Livaja",
+      "Branimir Mlačić",
+      "Filip Krovinović",
+      "Roko Brajković",
+      "Fran Karačić",
+      "Zvonimir Šarlija",
+      "Šimun Hrgović",
+      "Noa Skoko"
+     ],
+     "bench": [
+      "Ivan Lucic",
+      "Toni Silić",
+      "Ismaël Diallo",
+      "Mihael Žaper",
+      "Niko Sigur",
+      "Michele Šego",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Abdoulie Sanyang",
+      "Bruno Durdov",
+      "Luka Hodak",
+      "Yassin Benrahou"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045503"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-07-23-zire-hajduk-split",
+   "value": {
+    "name": "Zire 1-1 Hajduk Split",
+    "on": "2025-07-23",
+    "competition": "UEFA Conference League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ivica Ivušić",
+     "Anthony Kalik",
+     "Niko Sigur",
+     "Marko Livaja",
+     "Filip Krovinović",
+     "Marko Capan",
+     "Roko Brajković",
+     "Zvonimir Šarlija",
+     "Šimun Hrgović",
+     "Marino Skelin",
+     "Noa Skoko"
+    ],
+    "bench": [
+     "Toni Silić",
+     "Ivan Pocrnjić",
+     "Adrion Pajaziti",
+     "Mihael Žaper",
+     "Michele Šego",
+     "Dario Melnjak",
+     "Rokas Pukštas",
+     "Branimir Mlačić",
+     "Fran Karačić",
+     "Bruno Durdov",
+     "Luka Hodak",
+     "Yassin Benrahou"
+    ],
+    "scorers": [
+     {
+      "name": "Anthony Kalik",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045453",
+     "scorers": [
+      {
+       "name": "Anthony Kalik",
+       "minute": 68
+      }
+     ],
+     "lineup": [
+      "Ivica Ivušić",
+      "Anthony Kalik",
+      "Niko Sigur",
+      "Marko Livaja",
+      "Filip Krovinović",
+      "Marko Capan",
+      "Roko Brajković",
+      "Zvonimir Šarlija",
+      "Šimun Hrgović",
+      "Marino Skelin",
+      "Noa Skoko"
+     ],
+     "bench": [
+      "Toni Silić",
+      "Ivan Pocrnjić",
+      "Adrion Pajaziti",
+      "Mihael Žaper",
+      "Michele Šego",
+      "Dario Melnjak",
+      "Rokas Pukštas",
+      "Branimir Mlačić",
+      "Fran Karačić",
+      "Bruno Durdov",
+      "Luka Hodak",
+      "Yassin Benrahou"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045453"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-15-hajduk-split-ruzomberok",
+   "value": {
+    "name": "Hajduk Split 0-1 Ružomberok",
+    "on": "2024-08-15",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Ivan Lucic",
+     "Aleksandar Trajkovski",
+     "Marko Livaja",
+     "Ivan Rakitić",
+     "Dario Melnjak",
+     "Fahd Moufi",
+     "Rokas Pukštas",
+     "Abdoulie Sanyang",
+     "Filip Uremović",
+     "Zvonimir Šarlija",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Dominik Prpić",
+     "Ismaël Diallo",
+     "Anthony Kalik",
+     "Josip Elez",
+     "Filip Krovinović",
+     "Marko Capan",
+     "Roko Brajković",
+     "Šimun Hrgović",
+     "Bruno Durdov",
+     "Noa Skoko",
+     "Mate Antunović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041772",
+     "scorers": [],
+     "lineup": [
+      "Ivan Lucic",
+      "Aleksandar Trajkovski",
+      "Marko Livaja",
+      "Ivan Rakitić",
+      "Dario Melnjak",
+      "Fahd Moufi",
+      "Rokas Pukštas",
+      "Abdoulie Sanyang",
+      "Filip Uremović",
+      "Zvonimir Šarlija",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Dominik Prpić",
+      "Ismaël Diallo",
+      "Anthony Kalik",
+      "Josip Elez",
+      "Filip Krovinović",
+      "Marko Capan",
+      "Roko Brajković",
+      "Šimun Hrgović",
+      "Bruno Durdov",
+      "Noa Skoko",
+      "Mate Antunović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041772"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-08-ruzomberok-hajduk-split",
+   "value": {
+    "name": "Ružomberok 0-0 Hajduk Split",
+    "on": "2024-08-08",
+    "competition": "UEFA Conference League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Ivan Lucic",
+     "Dominik Prpić",
+     "Anthony Kalik",
+     "Marko Livaja",
+     "Dario Melnjak",
+     "Fahd Moufi",
+     "Rokas Pukštas",
+     "Filip Krovinović",
+     "Abdoulie Sanyang",
+     "Filip Uremović",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Ivan Perišić",
+     "Niko Sigur",
+     "Aleksandar Trajkovski",
+     "Ivan Rakitić",
+     "Josip Elez",
+     "Roko Brajković",
+     "Šimun Hrgović",
+     "Bruno Durdov",
+     "Marino Skelin",
+     "Noa Skoko",
+     "Mate Antunović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041742",
+     "scorers": [],
+     "lineup": [
+      "Ivan Lucic",
+      "Dominik Prpić",
+      "Anthony Kalik",
+      "Marko Livaja",
+      "Dario Melnjak",
+      "Fahd Moufi",
+      "Rokas Pukštas",
+      "Filip Krovinović",
+      "Abdoulie Sanyang",
+      "Filip Uremović",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Ivan Perišić",
+      "Niko Sigur",
+      "Aleksandar Trajkovski",
+      "Ivan Rakitić",
+      "Josip Elez",
+      "Roko Brajković",
+      "Šimun Hrgović",
+      "Bruno Durdov",
+      "Marino Skelin",
+      "Noa Skoko",
+      "Mate Antunović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041742"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-01-h-boltfelag-hajduk-split",
+   "value": {
+    "name": "H. Bóltfelag 0-0 Hajduk Split",
+    "on": "2024-08-01",
+    "competition": "UEFA Conference League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Ivan Lucic",
+     "Ismaël Diallo",
+     "Anthony Kalik",
+     "Marko Livaja",
+     "Fahd Moufi",
+     "Rokas Pukštas",
+     "Filip Krovinović",
+     "Abdoulie Sanyang",
+     "Filip Uremović",
+     "Marko Capan",
+     "Zvonimir Šarlija"
+    ],
+    "bench": [
+     "Borna Buljan",
+     "Lovre Kalinić",
+     "Dominik Prpić",
+     "Ivan Perišić",
+     "Ivan Rakitić",
+     "Dario Melnjak",
+     "Josip Elez",
+     "Šimun Hrgović",
+     "Bruno Durdov",
+     "Luka Jurak",
+     "Noa Skoko",
+     "Mate Antunović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041181",
+     "scorers": [],
+     "lineup": [
+      "Ivan Lucic",
+      "Ismaël Diallo",
+      "Anthony Kalik",
+      "Marko Livaja",
+      "Fahd Moufi",
+      "Rokas Pukštas",
+      "Filip Krovinović",
+      "Abdoulie Sanyang",
+      "Filip Uremović",
+      "Marko Capan",
+      "Zvonimir Šarlija"
+     ],
+     "bench": [
+      "Borna Buljan",
+      "Lovre Kalinić",
+      "Dominik Prpić",
+      "Ivan Perišić",
+      "Ivan Rakitić",
+      "Dario Melnjak",
+      "Josip Elez",
+      "Šimun Hrgović",
+      "Bruno Durdov",
+      "Luka Jurak",
+      "Noa Skoko",
+      "Mate Antunović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041181"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-07-25-hajduk-split-h-boltfelag",
+   "value": {
+    "name": "Hajduk Split 2-0 H. Bóltfelag",
+    "on": "2024-07-25",
+    "competition": "UEFA Conference League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Ivan Lucic",
+     "Ismaël Diallo",
+     "Anthony Kalik",
+     "Marko Livaja",
+     "Fahd Moufi",
+     "Rokas Pukštas",
+     "Filip Krovinović",
+     "Filip Uremović",
+     "Marko Capan",
+     "Zvonimir Šarlija",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Dominik Prpić",
+     "Ivan Perišić",
+     "Madžid Šošić",
+     "Dario Melnjak",
+     "Josip Elez",
+     "Abdoulie Sanyang",
+     "Šimun Hrgović",
+     "Bruno Durdov",
+     "Luka Jurak",
+     "Noa Skoko",
+     "Mate Antunović"
+    ],
+    "scorers": [
+     {
+      "name": "Filip Uremović",
+      "minute": 19
+     },
+     {
+      "name": "Marko Livaja",
+      "minute": 30
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041132",
+     "scorers": [
+      {
+       "name": "Filip Uremović",
+       "minute": 19
+      },
+      {
+       "name": "Marko Livaja",
+       "minute": 30
+      }
+     ],
+     "lineup": [
+      "Ivan Lucic",
+      "Ismaël Diallo",
+      "Anthony Kalik",
+      "Marko Livaja",
+      "Fahd Moufi",
+      "Rokas Pukštas",
+      "Filip Krovinović",
+      "Filip Uremović",
+      "Marko Capan",
+      "Zvonimir Šarlija",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Dominik Prpić",
+      "Ivan Perišić",
+      "Madžid Šošić",
+      "Dario Melnjak",
+      "Josip Elez",
+      "Abdoulie Sanyang",
+      "Šimun Hrgović",
+      "Bruno Durdov",
+      "Luka Jurak",
+      "Noa Skoko",
+      "Mate Antunović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041132"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-17-paok-hajduk-split",
+   "value": {
+    "name": "PAOK 3-0 Hajduk Split",
+    "on": "2023-08-17",
+    "competition": "UEFA Conference League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Ivan Lucic",
+     "Ismaël Diallo",
+     "Vadis Odjidja-Ofoe",
+     "Marko Livaja",
+     "Dario Melnjak",
+     "Fahd Moufi",
+     "Niko Sigur",
+     "Filip Krovinović",
+     "Jan Mlakar",
+     "Zvonimir Šarlija",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Toni Silić",
+     "Ferro",
+     "Anthony Kalik",
+     "Yassin Benrahou",
+     "Josip Elez",
+     "Leon Dajaku",
+     "Dino Mikanović",
+     "Ivan Dolček",
+     "Ante Kavelj",
+     "Tino Blaž Lauš",
+     "Ivan Ćubelić",
+     "Filip Čuić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038972",
+     "scorers": [],
+     "lineup": [
+      "Ivan Lucic",
+      "Ismaël Diallo",
+      "Vadis Odjidja-Ofoe",
+      "Marko Livaja",
+      "Dario Melnjak",
+      "Fahd Moufi",
+      "Niko Sigur",
+      "Filip Krovinović",
+      "Jan Mlakar",
+      "Zvonimir Šarlija",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Toni Silić",
+      "Ferro",
+      "Anthony Kalik",
+      "Yassin Benrahou",
+      "Josip Elez",
+      "Leon Dajaku",
+      "Dino Mikanović",
+      "Ivan Dolček",
+      "Ante Kavelj",
+      "Tino Blaž Lauš",
+      "Ivan Ćubelić",
+      "Filip Čuić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038972"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-10-hajduk-split-paok",
+   "value": {
+    "name": "Hajduk Split 0-0 PAOK",
+    "on": "2023-08-10",
+    "competition": "UEFA Conference League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Ivan Lucic",
+     "Ferro",
+     "Vadis Odjidja-Ofoe",
+     "Marko Livaja",
+     "Dario Melnjak",
+     "Fahd Moufi",
+     "Niko Sigur",
+     "Filip Krovinović",
+     "Jan Mlakar",
+     "Zvonimir Šarlija",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Toni Silić",
+     "Ismaël Diallo",
+     "Anthony Kalik",
+     "Yassin Benrahou",
+     "Josip Elez",
+     "Dino Mikanović",
+     "Ivan Dolček",
+     "Roko Brajković",
+     "Ante Kavelj",
+     "Tino Blaž Lauš",
+     "Ivan Ćubelić",
+     "Filip Čuić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038941",
+     "scorers": [],
+     "lineup": [
+      "Ivan Lucic",
+      "Ferro",
+      "Vadis Odjidja-Ofoe",
+      "Marko Livaja",
+      "Dario Melnjak",
+      "Fahd Moufi",
+      "Niko Sigur",
+      "Filip Krovinović",
+      "Jan Mlakar",
+      "Zvonimir Šarlija",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Toni Silić",
+      "Ismaël Diallo",
+      "Anthony Kalik",
+      "Yassin Benrahou",
+      "Josip Elez",
+      "Dino Mikanović",
+      "Ivan Dolček",
+      "Roko Brajković",
+      "Ante Kavelj",
+      "Tino Blaž Lauš",
+      "Ivan Ćubelić",
+      "Filip Čuić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038941"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-25-hajduk-split-villarreal",
+   "value": {
+    "name": "Hajduk Split 0-2 Villarreal",
+    "on": "2022-08-25",
+    "competition": "UEFA Conference League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Marco Fossati",
+     "Marko Livaja",
+     "Lukas Grgić",
+     "Dario Melnjak",
+     "Josip Elez",
+     "Filip Krovinović",
+     "Dino Mikanović",
+     "Chidozie Awaziem",
+     "Stipe Biuk",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Danijel Subašić",
+     "Karlo Sentić",
+     "David Čolina",
+     "Josip Vuković",
+     "Toni Borevković",
+     "Stefan Simič",
+     "Nikola Kalinić",
+     "Kristian Dimitrov",
+     "Jani Atanasov",
+     "Gergő Lovrencsics",
+     "Jan Mlakar",
+     "Ivan Ćubelić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035546",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "Marco Fossati",
+      "Marko Livaja",
+      "Lukas Grgić",
+      "Dario Melnjak",
+      "Josip Elez",
+      "Filip Krovinović",
+      "Dino Mikanović",
+      "Chidozie Awaziem",
+      "Stipe Biuk",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Danijel Subašić",
+      "Karlo Sentić",
+      "David Čolina",
+      "Josip Vuković",
+      "Toni Borevković",
+      "Stefan Simič",
+      "Nikola Kalinić",
+      "Kristian Dimitrov",
+      "Jani Atanasov",
+      "Gergő Lovrencsics",
+      "Jan Mlakar",
+      "Ivan Ćubelić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035546"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-18-villarreal-hajduk-split",
+   "value": {
+    "name": "Villarreal 4-2 Hajduk Split",
+    "on": "2022-08-18",
+    "competition": "UEFA Conference League",
+    "score": "4-2",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Toni Borevković",
+     "Marko Livaja",
+     "Lukas Grgić",
+     "Dario Melnjak",
+     "Josip Elez",
+     "Filip Krovinović",
+     "Dino Mikanović",
+     "Chidozie Awaziem",
+     "Stipe Biuk",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Danijel Subašić",
+     "Karlo Sentić",
+     "David Čolina",
+     "Josip Vuković",
+     "Marco Fossati",
+     "Stefan Simič",
+     "Nikola Kalinić",
+     "Kristian Dimitrov",
+     "Jani Atanasov",
+     "Gergő Lovrencsics",
+     "Jan Mlakar",
+     "Ivan Ćubelić"
+    ],
+    "scorers": [
+     {
+      "name": "Stipe Biuk",
+      "minute": 2
+     },
+     {
+      "name": "Marco Fossati",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035524",
+     "scorers": [
+      {
+       "name": "Stipe Biuk",
+       "minute": 2
+      },
+      {
+       "name": "Marco Fossati",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Toni Borevković",
+      "Marko Livaja",
+      "Lukas Grgić",
+      "Dario Melnjak",
+      "Josip Elez",
+      "Filip Krovinović",
+      "Dino Mikanović",
+      "Chidozie Awaziem",
+      "Stipe Biuk",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Danijel Subašić",
+      "Karlo Sentić",
+      "David Čolina",
+      "Josip Vuković",
+      "Marco Fossati",
+      "Stefan Simič",
+      "Nikola Kalinić",
+      "Kristian Dimitrov",
+      "Jani Atanasov",
+      "Gergő Lovrencsics",
+      "Jan Mlakar",
+      "Ivan Ćubelić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035524"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-10-vitoria-sc-hajduk-split",
+   "value": {
+    "name": "Vitória SC 1-0 Hajduk Split",
+    "on": "2022-08-10",
+    "competition": "UEFA Conference League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "David Čolina",
+     "Josip Vuković",
+     "Stefan Simič",
+     "Marko Livaja",
+     "Lukas Grgić",
+     "Dario Melnjak",
+     "Josip Elez",
+     "Filip Krovinović",
+     "Dino Mikanović",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Danijel Subašić",
+     "Karlo Sentić",
+     "Toni Borevković",
+     "Kristian Dimitrov",
+     "Ivan Šarić",
+     "Jani Atanasov",
+     "Ivan Krolo",
+     "Chidozie Awaziem",
+     "Gergő Lovrencsics",
+     "Stipe Biuk",
+     "Jan Mlakar",
+     "Ivan Ćubelić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035437",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "David Čolina",
+      "Josip Vuković",
+      "Stefan Simič",
+      "Marko Livaja",
+      "Lukas Grgić",
+      "Dario Melnjak",
+      "Josip Elez",
+      "Filip Krovinović",
+      "Dino Mikanović",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Danijel Subašić",
+      "Karlo Sentić",
+      "Toni Borevković",
+      "Kristian Dimitrov",
+      "Ivan Šarić",
+      "Jani Atanasov",
+      "Ivan Krolo",
+      "Chidozie Awaziem",
+      "Gergő Lovrencsics",
+      "Stipe Biuk",
+      "Jan Mlakar",
+      "Ivan Ćubelić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035437"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-04-hajduk-split-vitoria-sc",
+   "value": {
+    "name": "Hajduk Split 3-1 Vitória SC",
+    "on": "2022-08-04",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Josip Vuković",
+     "Stefan Simič",
+     "Marko Livaja",
+     "Lukas Grgić",
+     "Dario Melnjak",
+     "Josip Elez",
+     "Filip Krovinović",
+     "Dino Mikanović",
+     "Stipe Biuk",
+     "Emir Sahiti"
+    ],
+    "bench": [
+     "Danijel Subašić",
+     "Karlo Sentić",
+     "David Čolina",
+     "Kristian Dimitrov",
+     "Ivan Šarić",
+     "Jani Atanasov",
+     "Ivan Krolo",
+     "Chidozie Awaziem",
+     "Gergő Lovrencsics",
+     "Jan Mlakar"
+    ],
+    "scorers": [
+     {
+      "name": "Emir Sahiti",
+      "minute": 67
+     },
+     {
+      "name": "Dario Melnjak",
+      "minute": 75
+     },
+     {
+      "name": "Filip Krovinović",
+      "minute": 87
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035406",
+     "scorers": [
+      {
+       "name": "Emir Sahiti",
+       "minute": 67
+      },
+      {
+       "name": "Dario Melnjak",
+       "minute": 75
+      },
+      {
+       "name": "Filip Krovinović",
+       "minute": 87
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Josip Vuković",
+      "Stefan Simič",
+      "Marko Livaja",
+      "Lukas Grgić",
+      "Dario Melnjak",
+      "Josip Elez",
+      "Filip Krovinović",
+      "Dino Mikanović",
+      "Stipe Biuk",
+      "Emir Sahiti"
+     ],
+     "bench": [
+      "Danijel Subašić",
+      "Karlo Sentić",
+      "David Čolina",
+      "Kristian Dimitrov",
+      "Ivan Šarić",
+      "Jani Atanasov",
+      "Ivan Krolo",
+      "Chidozie Awaziem",
+      "Gergő Lovrencsics",
+      "Jan Mlakar"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035406"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-07-29-tobol-hajduk-split",
+   "value": {
+    "name": "Tobol 4-1 Hajduk Split",
+    "on": "2021-07-29",
+    "competition": "UEFA Conference League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "David Čolina",
+     "Josip Vuković",
+     "Stefan Simič",
+     "Jairo",
+     "Filip Krovinović",
+     "Gergő Lovrencsics",
+     "Jan Mlakar",
+     "Mario Vušković",
+     "Emir Sahiti",
+     "Marin Ljubičić"
+    ],
+    "bench": [
+     "Ivan Perić",
+     "Josip Posavec",
+     "Kristian Dimitrov",
+     "Samuel Emem Eduok",
+     "Mario Čuić",
+     "Ivan Ćalušić",
+     "Dimitrios Diamantakos",
+     "Josip Elez",
+     "Jani Atanasov",
+     "Stipe Biuk",
+     "Ivan Dolček",
+     "Ivan Ćubelić"
+    ],
+    "scorers": [
+     {
+      "name": "Emir Sahiti",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032908",
+     "scorers": [
+      {
+       "name": "Emir Sahiti",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "David Čolina",
+      "Josip Vuković",
+      "Stefan Simič",
+      "Jairo",
+      "Filip Krovinović",
+      "Gergő Lovrencsics",
+      "Jan Mlakar",
+      "Mario Vušković",
+      "Emir Sahiti",
+      "Marin Ljubičić"
+     ],
+     "bench": [
+      "Ivan Perić",
+      "Josip Posavec",
+      "Kristian Dimitrov",
+      "Samuel Emem Eduok",
+      "Mario Čuić",
+      "Ivan Ćalušić",
+      "Dimitrios Diamantakos",
+      "Josip Elez",
+      "Jani Atanasov",
+      "Stipe Biuk",
+      "Ivan Dolček",
+      "Ivan Ćubelić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032908"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-07-22-hajduk-split-tobol",
+   "value": {
+    "name": "Hajduk Split 2-0 Tobol",
+    "on": "2021-07-22",
+    "competition": "UEFA Conference League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "David Čolina",
+     "Josip Vuković",
+     "Stefan Simič",
+     "Marko Livaja",
+     "Josip Elez",
+     "Filip Krovinović",
+     "Gergő Lovrencsics",
+     "Jan Mlakar",
+     "Emir Sahiti",
+     "Marin Ljubičić"
+    ],
+    "bench": [
+     "Josip Posavec",
+     "Kristian Dimitrov",
+     "Samuel Emem Eduok",
+     "Mario Čuić",
+     "Dimitrios Diamantakos",
+     "Jani Atanasov",
+     "Jairo",
+     "Luka Škaričić",
+     "Stipe Biuk",
+     "Ivan Dolček",
+     "Mario Vušković",
+     "Ivan Ćubelić"
+    ],
+    "scorers": [
+     {
+      "name": "Marin Ljubičić",
+      "minute": 21
+     },
+     {
+      "name": "Marin Ljubičić",
+      "minute": 53
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032854",
+     "scorers": [
+      {
+       "name": "Marin Ljubičić",
+       "minute": 21
+      },
+      {
+       "name": "Marin Ljubičić",
+       "minute": 53
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "David Čolina",
+      "Josip Vuković",
+      "Stefan Simič",
+      "Marko Livaja",
+      "Josip Elez",
+      "Filip Krovinović",
+      "Gergő Lovrencsics",
+      "Jan Mlakar",
+      "Emir Sahiti",
+      "Marin Ljubičić"
+     ],
+     "bench": [
+      "Josip Posavec",
+      "Kristian Dimitrov",
+      "Samuel Emem Eduok",
+      "Mario Čuić",
+      "Dimitrios Diamantakos",
+      "Jani Atanasov",
+      "Jairo",
+      "Luka Škaričić",
+      "Stipe Biuk",
+      "Ivan Dolček",
+      "Mario Vušković",
+      "Ivan Ćubelić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032854"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-09-24-galatasaray-hajduk-split",
+   "value": {
+    "name": "Galatasaray 2-0 Hajduk Split",
+    "on": "2020-09-24",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Josip Posavec",
+     "Marin Jakoliš",
+     "Mijo Caktaš",
+     "Dimitrios Diamantakos",
+     "Nihad Mujakić",
+     "Jairo",
+     "Ádám Gyurcsó",
+     "Stanko Jurić",
+     "David Čolina",
+     "Mario Vušković",
+     "Bassel Jradi"
+    ],
+    "bench": [
+     "Marin Ljubić",
+     "Kristian Dimitrov",
+     "Darko Nejašmić",
+     "Leon Kreković",
+     "Jani Atanasov",
+     "Ivan Dolček",
+     "Darko Todorović"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030395",
+     "scorers": [],
+     "lineup": [
+      "Josip Posavec",
+      "Marin Jakoliš",
+      "Mijo Caktaš",
+      "Dimitrios Diamantakos",
+      "Nihad Mujakić",
+      "Jairo",
+      "Ádám Gyurcsó",
+      "Stanko Jurić",
+      "David Čolina",
+      "Mario Vušković",
+      "Bassel Jradi"
+     ],
+     "bench": [
+      "Marin Ljubić",
+      "Kristian Dimitrov",
+      "Darko Nejašmić",
+      "Leon Kreković",
+      "Jani Atanasov",
+      "Ivan Dolček",
+      "Darko Todorović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030395"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-09-17-renova-hajduk-split",
+   "value": {
+    "name": "Renova 0-1 Hajduk Split",
+    "on": "2020-09-17",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Josip Posavec",
+     "Darko Nejašmić",
+     "Mijo Caktaš",
+     "Dimitrios Diamantakos",
+     "Nihad Mujakić",
+     "Jairo",
+     "Ádám Gyurcsó",
+     "Stanko Jurić",
+     "David Čolina",
+     "Mario Vušković",
+     "Darko Todorović"
+    ],
+    "bench": [
+     "Marin Ljubić",
+     "Kristian Dimitrov",
+     "Leon Kreković",
+     "Marin Jakoliš",
+     "Jani Atanasov",
+     "Ivan Dolček",
+     "Jurica Pršir"
+    ],
+    "scorers": [
+     {
+      "name": "Mijo Caktaš",
+      "minute": 4
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030354",
+     "scorers": [
+      {
+       "name": "Mijo Caktaš",
+       "minute": 4
+      }
+     ],
+     "lineup": [
+      "Josip Posavec",
+      "Darko Nejašmić",
+      "Mijo Caktaš",
+      "Dimitrios Diamantakos",
+      "Nihad Mujakić",
+      "Jairo",
+      "Ádám Gyurcsó",
+      "Stanko Jurić",
+      "David Čolina",
+      "Mario Vušković",
+      "Darko Todorović"
+     ],
+     "bench": [
+      "Marin Ljubić",
+      "Kristian Dimitrov",
+      "Leon Kreković",
+      "Marin Jakoliš",
+      "Jani Atanasov",
+      "Ivan Dolček",
+      "Jurica Pršir"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030354"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-07-18-hajduk-split-gzira",
+   "value": {
+    "name": "Hajduk Split 1-3 Gżira",
+    "on": "2019-07-18",
+    "competition": "UEFA Europa League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Tomislav Duka",
+     "Borja López",
+     "Hamza Barry",
+     "Oleksandr Svatok",
+     "Dino Beširović",
+     "Ivan Delić",
+     "Jairo",
+     "Josip Bašić",
+     "Ivan Dolček",
+     "Francesco Tahiraj",
+     "Bassel Jradi"
+    ],
+    "bench": [
+     "Marin Ljubić",
+     "Ádám Gyurcsó",
+     "Josip Juranović",
+     "Dario Špikić",
+     "Anthony Kalik",
+     "Stanko Jurić",
+     "Ardian Ismajli"
+    ],
+    "scorers": [
+     {
+      "name": "Bassel Jradi",
+      "minute": 7
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027586",
+     "scorers": [
+      {
+       "name": "Bassel Jradi",
+       "minute": 7
+      }
+     ],
+     "lineup": [
+      "Tomislav Duka",
+      "Borja López",
+      "Hamza Barry",
+      "Oleksandr Svatok",
+      "Dino Beširović",
+      "Ivan Delić",
+      "Jairo",
+      "Josip Bašić",
+      "Ivan Dolček",
+      "Francesco Tahiraj",
+      "Bassel Jradi"
+     ],
+     "bench": [
+      "Marin Ljubić",
+      "Ádám Gyurcsó",
+      "Josip Juranović",
+      "Dario Špikić",
+      "Anthony Kalik",
+      "Stanko Jurić",
+      "Ardian Ismajli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027586"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-07-09-gzira-hajduk-split",
+   "value": {
+    "name": "Gżira 0-2 Hajduk Split",
+    "on": "2019-07-09",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Tomislav Duka",
+     "Hamza Barry",
+     "Darko Nejašmić",
+     "Ádám Gyurcsó",
+     "Oleksandr Svatok",
+     "Ivan Delić",
+     "Jairo",
+     "Stanko Jurić",
+     "Domagoj Bradarić",
+     "Ardian Ismajli",
+     "Bassel Jradi"
+    ],
+    "bench": [
+     "Marin Ljubić",
+     "Borja López",
+     "Stefan Simič",
+     "Dino Beširović",
+     "Anthony Kalik",
+     "Ivan Dolček",
+     "Francesco Tahiraj"
+    ],
+    "scorers": [
+     {
+      "name": "Ádám Gyurcsó",
+      "minute": 44
+     },
+     {
+      "name": "Ivan Dolček",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027539",
+     "scorers": [
+      {
+       "name": "Ádám Gyurcsó",
+       "minute": 44
+      },
+      {
+       "name": "Ivan Dolček",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Tomislav Duka",
+      "Hamza Barry",
+      "Darko Nejašmić",
+      "Ádám Gyurcsó",
+      "Oleksandr Svatok",
+      "Ivan Delić",
+      "Jairo",
+      "Stanko Jurić",
+      "Domagoj Bradarić",
+      "Ardian Ismajli",
+      "Bassel Jradi"
+     ],
+     "bench": [
+      "Marin Ljubić",
+      "Borja López",
+      "Stefan Simič",
+      "Dino Beširović",
+      "Anthony Kalik",
+      "Ivan Dolček",
+      "Francesco Tahiraj"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027539"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-16-fcsb-hajduk-split",
+   "value": {
+    "name": "FCSB 2-1 Hajduk Split",
+    "on": "2018-08-16",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Josip Posavec",
+     "Borja López",
+     "Božo Mikulić",
+     "Hamza Barry",
+     "Mirko Ivanovski",
+     "Mijo Caktaš",
+     "Josip Juranović",
+     "Ahmed Said",
+     "Stanko Jurić",
+     "Stipe Vucur",
+     "Andre Fomitschow"
+    ],
+    "bench": [
+     "Marin Ljubić",
+     "Edin Šehić",
+     "Ádám Gyurcsó",
+     "Michele Šego",
+     "Ante Palaversa",
+     "Jairo",
+     "Ardian Ismajli"
+    ],
+    "scorers": [
+     {
+      "name": "Ahmed Said",
+      "minute": 82
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2025374",
+     "scorers": [
+      {
+       "name": "Ahmed Said",
+       "minute": 82
+      }
+     ],
+     "lineup": [
+      "Josip Posavec",
+      "Borja López",
+      "Božo Mikulić",
+      "Hamza Barry",
+      "Mirko Ivanovski",
+      "Mijo Caktaš",
+      "Josip Juranović",
+      "Ahmed Said",
+      "Stanko Jurić",
+      "Stipe Vucur",
+      "Andre Fomitschow"
+     ],
+     "bench": [
+      "Marin Ljubić",
+      "Edin Šehić",
+      "Ádám Gyurcsó",
+      "Michele Šego",
+      "Ante Palaversa",
+      "Jairo",
+      "Ardian Ismajli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2025374"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-09-hajduk-split-fcsb",
+   "value": {
+    "name": "Hajduk Split 0-0 FCSB",
+    "on": "2018-08-09",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Josip Posavec",
+     "Borja López",
+     "Božo Mikulić",
+     "Hamza Barry",
+     "Ádám Gyurcsó",
+     "Mirko Ivanovski",
+     "Mijo Caktaš",
+     "Josip Juranović",
+     "Stanko Jurić",
+     "Stipe Vucur",
+     "Andre Fomitschow"
+    ],
+    "bench": [
+     "Marin Ljubić",
+     "Markó Futács",
+     "Michele Šego",
+     "Ante Palaversa",
+     "Ahmed Said",
+     "Fran Tudor",
+     "Ardian Ismajli"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2025338",
+     "scorers": [],
+     "lineup": [
+      "Josip Posavec",
+      "Borja López",
+      "Božo Mikulić",
+      "Hamza Barry",
+      "Ádám Gyurcsó",
+      "Mirko Ivanovski",
+      "Mijo Caktaš",
+      "Josip Juranović",
+      "Stanko Jurić",
+      "Stipe Vucur",
+      "Andre Fomitschow"
+     ],
+     "bench": [
+      "Marin Ljubić",
+      "Markó Futács",
+      "Michele Šego",
+      "Ante Palaversa",
+      "Ahmed Said",
+      "Fran Tudor",
+      "Ardian Ismajli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2025338"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-08-02-slavia-sofia-hajduk-split",
+   "value": {
+    "name": "Slavia Sofia 2-3 Hajduk Split",
+    "on": "2018-08-02",
+    "competition": "UEFA Europa League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Marin Ljubić",
+     "Borja López",
+     "Božo Mikulić",
+     "Hamza Barry",
+     "Ádám Gyurcsó",
+     "Mijo Caktaš",
+     "Josip Juranović",
+     "Dino Beširović",
+     "Ahmed Said",
+     "Toma Bašić",
+     "Andre Fomitschow"
+    ],
+    "bench": [
+     "Davor Matijas",
+     "Mirko Ivanovski",
+     "Michele Šego",
+     "Ivan Delić",
+     "Stanko Jurić",
+     "Stipe Vucur",
+     "Ardian Ismajli"
+    ],
+    "scorers": [
+     {
+      "name": "Stanko Jurić",
+      "minute": 25
+     },
+     {
+      "name": "Mijo Caktaš",
+      "minute": 55
+     },
+     {
+      "name": "Mijo Caktaš",
+      "minute": 87
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2024879",
+     "scorers": [
+      {
+       "name": "Stanko Jurić",
+       "minute": 25
+      },
+      {
+       "name": "Mijo Caktaš",
+       "minute": 55
+      },
+      {
+       "name": "Mijo Caktaš",
+       "minute": 87
+      }
+     ],
+     "lineup": [
+      "Marin Ljubić",
+      "Borja López",
+      "Božo Mikulić",
+      "Hamza Barry",
+      "Ádám Gyurcsó",
+      "Mijo Caktaš",
+      "Josip Juranović",
+      "Dino Beširović",
+      "Ahmed Said",
+      "Toma Bašić",
+      "Andre Fomitschow"
+     ],
+     "bench": [
+      "Davor Matijas",
+      "Mirko Ivanovski",
+      "Michele Šego",
+      "Ivan Delić",
+      "Stanko Jurić",
+      "Stipe Vucur",
+      "Ardian Ismajli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2024879"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2018-07-26-hajduk-split-slavia-sofia",
+   "value": {
+    "name": "Hajduk Split 1-0 Slavia Sofia",
+    "on": "2018-07-26",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Josip Posavec",
+     "Borja López",
+     "Hamza Barry",
+     "Ádám Gyurcsó",
+     "Mirko Ivanovski",
+     "Mijo Caktaš",
+     "Ante Palaversa",
+     "Josip Juranović",
+     "Zoran Nižić",
+     "Andre Fomitschow",
+     "Fran Tudor"
+    ],
+    "bench": [
+     "Tomislav Duka",
+     "Božo Mikulić",
+     "Michele Šego",
+     "Dino Beširović",
+     "Ivan Delić",
+     "Ahmed Said",
+     "Toma Bašić"
+    ],
+    "scorers": [
+     {
+      "name": "Ahmed Said",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2024833",
+     "scorers": [
+      {
+       "name": "Ahmed Said",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Josip Posavec",
+      "Borja López",
+      "Hamza Barry",
+      "Ádám Gyurcsó",
+      "Mirko Ivanovski",
+      "Mijo Caktaš",
+      "Ante Palaversa",
+      "Josip Juranović",
+      "Zoran Nižić",
+      "Andre Fomitschow",
+      "Fran Tudor"
+     ],
+     "bench": [
+      "Tomislav Duka",
+      "Božo Mikulić",
+      "Michele Šego",
+      "Dino Beširović",
+      "Ivan Delić",
+      "Ahmed Said",
+      "Toma Bašić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2024833"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-08-24-hajduk-split-everton",
+   "value": {
+    "name": "Hajduk Split 1-1 Everton",
+    "on": "2017-08-24",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Borja López",
+     "Hamza Barry",
+     "Nikola Vlašić",
+     "Josip Radošević",
+     "Josip Juranović",
+     "Ahmed Said",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Ante Erceg",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Karlo Letica",
+     "Gustavo Rosa",
+     "Zvonimir Kožulj",
+     "Ivan Pešić",
+     "Toma Bašić",
+     "Fran Tudor",
+     "Franko Kovačević"
+    ],
+    "scorers": [
+     {
+      "name": "Josip Radošević",
+      "minute": 43
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2021991",
+     "scorers": [
+      {
+       "name": "Josip Radošević",
+       "minute": 43
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Borja López",
+      "Hamza Barry",
+      "Nikola Vlašić",
+      "Josip Radošević",
+      "Josip Juranović",
+      "Ahmed Said",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Ante Erceg",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Karlo Letica",
+      "Gustavo Rosa",
+      "Zvonimir Kožulj",
+      "Ivan Pešić",
+      "Toma Bašić",
+      "Fran Tudor",
+      "Franko Kovačević"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2021991"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-08-17-everton-hajduk-split",
+   "value": {
+    "name": "Everton 2-0 Hajduk Split",
+    "on": "2017-08-17",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Gustavo Rosa",
+     "Hamza Barry",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Josip Radošević",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Karlo Letica",
+     "Petar Bosančić",
+     "Ahmed Said",
+     "Toma Bašić",
+     "Edin Šehić",
+     "Fran Tudor",
+     "Ante Erceg"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2021960",
+     "scorers": [],
+     "lineup": [
+      "Dante Stipica",
+      "Gustavo Rosa",
+      "Hamza Barry",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Josip Radošević",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Karlo Letica",
+      "Petar Bosančić",
+      "Ahmed Said",
+      "Toma Bašić",
+      "Edin Šehić",
+      "Fran Tudor",
+      "Ante Erceg"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2021960"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-08-03-hajduk-split-br-ndby",
+   "value": {
+    "name": "Hajduk Split 2-0 Brøndby",
+    "on": "2017-08-03",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Borja López",
+     "Hamza Barry",
+     "Nikola Vlašić",
+     "Markó Futács",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Ante Erceg",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Karlo Letica",
+     "Gustavo Rosa",
+     "Franck Ohandza",
+     "Ivan Pešić",
+     "Ahmed Said",
+     "Edin Šehić",
+     "Andre Fomitschow"
+    ],
+    "scorers": [
+     {
+      "name": "Ante Erceg",
+      "minute": 59
+     },
+     {
+      "name": "Ante Erceg",
+      "minute": 63
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2021939",
+     "scorers": [
+      {
+       "name": "Ante Erceg",
+       "minute": 59
+      },
+      {
+       "name": "Ante Erceg",
+       "minute": 63
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Borja López",
+      "Hamza Barry",
+      "Nikola Vlašić",
+      "Markó Futács",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Ante Erceg",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Karlo Letica",
+      "Gustavo Rosa",
+      "Franck Ohandza",
+      "Ivan Pešić",
+      "Ahmed Said",
+      "Edin Šehić",
+      "Andre Fomitschow"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2021939"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-07-27-br-ndby-hajduk-split",
+   "value": {
+    "name": "Brøndby 0-0 Hajduk Split",
+    "on": "2017-07-27",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Borja López",
+     "Hamza Barry",
+     "Nikola Vlašić",
+     "Markó Futács",
+     "Josip Radošević",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Fran Tudor",
+     "Ante Erceg",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Karlo Letica",
+     "Gustavo Rosa",
+     "Franck Ohandza",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Ivan Pešić",
+     "Edin Šehić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2021910",
+     "scorers": [],
+     "lineup": [
+      "Dante Stipica",
+      "Borja López",
+      "Hamza Barry",
+      "Nikola Vlašić",
+      "Markó Futács",
+      "Josip Radošević",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Fran Tudor",
+      "Ante Erceg",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Karlo Letica",
+      "Gustavo Rosa",
+      "Franck Ohandza",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Ivan Pešić",
+      "Edin Šehić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2021910"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-07-20-levski-sofia-hajduk-split",
+   "value": {
+    "name": "Levski Sofia 1-2 Hajduk Split",
+    "on": "2017-07-20",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Borja López",
+     "Hamza Barry",
+     "Nikola Vlašić",
+     "Markó Futács",
+     "Josip Radošević",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Fran Tudor",
+     "Ante Erceg",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Karlo Letica",
+     "Gustavo Rosa",
+     "Franck Ohandza",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Ahmed Said",
+     "Edin Šehić"
+    ],
+    "scorers": [
+     {
+      "name": "Franck Ohandza",
+      "minute": 80
+     },
+     {
+      "name": "Ante Erceg",
+      "minute": 86
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2021867",
+     "scorers": [
+      {
+       "name": "Franck Ohandza",
+       "minute": 80
+      },
+      {
+       "name": "Ante Erceg",
+       "minute": 86
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Borja López",
+      "Hamza Barry",
+      "Nikola Vlašić",
+      "Markó Futács",
+      "Josip Radošević",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Fran Tudor",
+      "Ante Erceg",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Karlo Letica",
+      "Gustavo Rosa",
+      "Franck Ohandza",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Ahmed Said",
+      "Edin Šehić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2021867"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2017-07-13-hajduk-split-levski-sofia",
+   "value": {
+    "name": "Hajduk Split 1-0 Levski Sofia",
+    "on": "2017-07-13",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Borja López",
+     "Hamza Barry",
+     "Nikola Vlašić",
+     "Markó Futács",
+     "Josip Radošević",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Fran Tudor",
+     "Ante Erceg",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Karlo Letica",
+     "Gustavo Rosa",
+     "Franck Ohandza",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Ivan Pešić",
+     "Ahmed Said"
+    ],
+    "scorers": [
+     {
+      "name": "Markó Futács",
+      "minute": 24
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2021827",
+     "scorers": [
+      {
+       "name": "Markó Futács",
+       "minute": 24
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Borja López",
+      "Hamza Barry",
+      "Nikola Vlašić",
+      "Markó Futács",
+      "Josip Radošević",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Fran Tudor",
+      "Ante Erceg",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Karlo Letica",
+      "Gustavo Rosa",
+      "Franck Ohandza",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Ivan Pešić",
+      "Ahmed Said"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2021827"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-08-25-hajduk-split-m-tel-aviv",
+   "value": {
+    "name": "Hajduk Split 2-1 M. Tel-Aviv",
+    "on": "2016-08-25",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Lorenco Šimić",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Zvonimir Kožulj",
+     "Ahmed Said",
+     "Hysen Memolla",
+     "Tino Sušić",
+     "Ardian Ismajli",
+     "Marko Ćosić",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Maxym Biliy",
+     "Markó Futács",
+     "Franck Ohandza",
+     "Josip Juranović",
+     "Fran Tudor",
+     "Ante Erceg"
+    ],
+    "scorers": [
+     {
+      "name": "Marko Ćosić",
+      "minute": 40
+     },
+     {
+      "name": "Marko Ćosić",
+      "minute": 59
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020478",
+     "scorers": [
+      {
+       "name": "Marko Ćosić",
+       "minute": 40
+      },
+      {
+       "name": "Marko Ćosić",
+       "minute": 59
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Lorenco Šimić",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Zvonimir Kožulj",
+      "Ahmed Said",
+      "Hysen Memolla",
+      "Tino Sušić",
+      "Ardian Ismajli",
+      "Marko Ćosić",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Maxym Biliy",
+      "Markó Futács",
+      "Franck Ohandza",
+      "Josip Juranović",
+      "Fran Tudor",
+      "Ante Erceg"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020478"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-08-18-m-tel-aviv-hajduk-split",
+   "value": {
+    "name": "M. Tel-Aviv 2-1 Hajduk Split",
+    "on": "2016-08-18",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Zvonimir Kožulj",
+     "Ahmed Said",
+     "Zoran Nižić",
+     "Hysen Memolla",
+     "Tino Sušić",
+     "Ardian Ismajli",
+     "Marko Ćosić",
+     "Savvas Gentsoglou"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Maxym Biliy",
+     "Franck Ohandza",
+     "Josip Juranović",
+     "Toma Bašić",
+     "Fran Tudor",
+     "Ante Erceg"
+    ],
+    "scorers": [
+     {
+      "name": "Ahmed Said",
+      "minute": 56
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020456",
+     "scorers": [
+      {
+       "name": "Ahmed Said",
+       "minute": 56
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Zvonimir Kožulj",
+      "Ahmed Said",
+      "Zoran Nižić",
+      "Hysen Memolla",
+      "Tino Sušić",
+      "Ardian Ismajli",
+      "Marko Ćosić",
+      "Savvas Gentsoglou"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Maxym Biliy",
+      "Franck Ohandza",
+      "Josip Juranović",
+      "Toma Bašić",
+      "Fran Tudor",
+      "Ante Erceg"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020456"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-08-04-hajduk-split-olexandriya",
+   "value": {
+    "name": "Hajduk Split 3-1 Olexandriya",
+    "on": "2016-08-04",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Maxym Biliy",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Hrvoje Milić",
+     "Ahmed Said",
+     "Zoran Nižić",
+     "Tino Sušić",
+     "Marko Ćosić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Franck Ohandza",
+     "Marko Pejić",
+     "Toma Bašić",
+     "Fran Tudor",
+     "Ardian Ismajli",
+     "Ante Erceg"
+    ],
+    "scorers": [
+     {
+      "name": "Zoran Nižić",
+      "minute": 21
+     },
+     {
+      "name": "Tino Sušić",
+      "minute": 52
+     },
+     {
+      "name": "Tino Sušić",
+      "minute": 56
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020412",
+     "scorers": [
+      {
+       "name": "Zoran Nižić",
+       "minute": 21
+      },
+      {
+       "name": "Tino Sušić",
+       "minute": 52
+      },
+      {
+       "name": "Tino Sušić",
+       "minute": 56
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Maxym Biliy",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Hrvoje Milić",
+      "Ahmed Said",
+      "Zoran Nižić",
+      "Tino Sušić",
+      "Marko Ćosić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Franck Ohandza",
+      "Marko Pejić",
+      "Toma Bašić",
+      "Fran Tudor",
+      "Ardian Ismajli",
+      "Ante Erceg"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020412"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-07-28-olexandriya-hajduk-split",
+   "value": {
+    "name": "Olexandriya 0-3 Hajduk Split",
+    "on": "2016-07-28",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Maxym Biliy",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Hrvoje Milić",
+     "Ahmed Said",
+     "Zoran Nižić",
+     "Tino Sušić",
+     "Marko Ćosić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Artem Radchenko",
+     "Franck Ohandza",
+     "Ivan Mastelić",
+     "Toma Bašić",
+     "Hysen Memolla",
+     "Ante Erceg"
+    ],
+    "scorers": [
+     {
+      "name": "Marko Ćosić",
+      "minute": 52
+     },
+     {
+      "name": "Ante Erceg",
+      "minute": 82
+     },
+     {
+      "name": "Franck Ohandza",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020383",
+     "scorers": [
+      {
+       "name": "Marko Ćosić",
+       "minute": 52
+      },
+      {
+       "name": "Ante Erceg",
+       "minute": 82
+      },
+      {
+       "name": "Franck Ohandza",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Maxym Biliy",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Hrvoje Milić",
+      "Ahmed Said",
+      "Zoran Nižić",
+      "Tino Sušić",
+      "Marko Ćosić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Artem Radchenko",
+      "Franck Ohandza",
+      "Ivan Mastelić",
+      "Toma Bašić",
+      "Hysen Memolla",
+      "Ante Erceg"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020383"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-07-21-hajduk-split-csms-lasi",
+   "value": {
+    "name": "Hajduk Split 2-1 CSMS laşi",
+    "on": "2016-07-21",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Hrvoje Milić",
+     "Ahmed Said",
+     "Zoran Nižić",
+     "Tino Sušić",
+     "Fran Tudor",
+     "Marko Ćosić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Maxym Biliy",
+     "Lorenco Šimić",
+     "Franck Ohandza",
+     "Tonći Mujan",
+     "Marko Pejić",
+     "Toma Bašić"
+    ],
+    "scorers": [
+     {
+      "name": "Fran Tudor",
+      "minute": 22
+     },
+     {
+      "name": "Franck Ohandza",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020136",
+     "scorers": [
+      {
+       "name": "Fran Tudor",
+       "minute": 22
+      },
+      {
+       "name": "Franck Ohandza",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Hrvoje Milić",
+      "Ahmed Said",
+      "Zoran Nižić",
+      "Tino Sušić",
+      "Fran Tudor",
+      "Marko Ćosić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Maxym Biliy",
+      "Lorenco Šimić",
+      "Franck Ohandza",
+      "Tonći Mujan",
+      "Marko Pejić",
+      "Toma Bašić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020136"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-07-14-csms-lasi-hajduk-split",
+   "value": {
+    "name": "CSMS laşi 2-2 Hajduk Split",
+    "on": "2016-07-14",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Ivan Mastelić",
+     "Josip Juranović",
+     "Zvonimir Kožulj",
+     "Hrvoje Milić",
+     "Zoran Nižić",
+     "Toma Bašić",
+     "Fran Tudor",
+     "Marko Ćosić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Franck Ohandza",
+     "Tonći Mujan",
+     "Anthony Kalik",
+     "Ahmed Said",
+     "Marko Pejić",
+     "Ardian Ismajli"
+    ],
+    "scorers": [
+     {
+      "name": "Franck Ohandza",
+      "minute": 48
+     },
+     {
+      "name": "Ahmed Said",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020096",
+     "scorers": [
+      {
+       "name": "Franck Ohandza",
+       "minute": 48
+      },
+      {
+       "name": "Ahmed Said",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Ivan Mastelić",
+      "Josip Juranović",
+      "Zvonimir Kožulj",
+      "Hrvoje Milić",
+      "Zoran Nižić",
+      "Toma Bašić",
+      "Fran Tudor",
+      "Marko Ćosić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Franck Ohandza",
+      "Tonći Mujan",
+      "Anthony Kalik",
+      "Ahmed Said",
+      "Marko Pejić",
+      "Ardian Ismajli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020096"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-08-27-hajduk-split-liberec",
+   "value": {
+    "name": "Hajduk Split 0-1 Liberec",
+    "on": "2015-08-27",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Hrvoje Milić",
+     "Goran Milović",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Mijo Caktaš",
+     "Zoran Nižić",
+     "Tino Sušić",
+     "Fran Tudor",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Maxym Biliy",
+     "Anton Maglica",
+     "Josip Juranović",
+     "Elvir Maloku",
+     "Tomislav Kiš",
+     "Ante Roguljić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2018059",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "Hrvoje Milić",
+      "Goran Milović",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Mijo Caktaš",
+      "Zoran Nižić",
+      "Tino Sušić",
+      "Fran Tudor",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Maxym Biliy",
+      "Anton Maglica",
+      "Josip Juranović",
+      "Elvir Maloku",
+      "Tomislav Kiš",
+      "Ante Roguljić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2018059"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-08-20-liberec-hajduk-split",
+   "value": {
+    "name": "Liberec 1-0 Hajduk Split",
+    "on": "2015-08-20",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Hrvoje Milić",
+     "Maxym Biliy",
+     "Goran Milović",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Josip Juranović",
+     "Mijo Caktaš",
+     "Tino Sušić",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Anton Maglica",
+     "Tonći Mujan",
+     "Elvir Maloku",
+     "Marko Bencun",
+     "Tomislav Kiš",
+     "Ante Roguljić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2018037",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "Hrvoje Milić",
+      "Maxym Biliy",
+      "Goran Milović",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Josip Juranović",
+      "Mijo Caktaš",
+      "Tino Sušić",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Anton Maglica",
+      "Tonći Mujan",
+      "Elvir Maloku",
+      "Marko Bencun",
+      "Tomislav Kiš",
+      "Ante Roguljić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2018037"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-08-06-str-msgodset-hajduk-split",
+   "value": {
+    "name": "Strømsgodset 0-2 Hajduk Split",
+    "on": "2015-08-06",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Goran Milović",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Mijo Caktaš",
+     "Elvir Maloku",
+     "Zoran Nižić",
+     "Marko Pejić",
+     "Fran Tudor",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Maxym Biliy",
+     "Anton Maglica",
+     "Josip Juranović",
+     "Toma Bašić",
+     "Tino Sušić",
+     "Tomislav Kiš"
+    ],
+    "scorers": [
+     {
+      "name": "Mijo Caktaš",
+      "minute": 55
+     },
+     {
+      "name": "Franck Ohandza",
+      "minute": 77
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2016859",
+     "scorers": [
+      {
+       "name": "Mijo Caktaš",
+       "minute": 55
+      },
+      {
+       "name": "Franck Ohandza",
+       "minute": 77
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Goran Milović",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Mijo Caktaš",
+      "Elvir Maloku",
+      "Zoran Nižić",
+      "Marko Pejić",
+      "Fran Tudor",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Maxym Biliy",
+      "Anton Maglica",
+      "Josip Juranović",
+      "Toma Bašić",
+      "Tino Sušić",
+      "Tomislav Kiš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2016859"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-07-30-hajduk-split-str-msgodset",
+   "value": {
+    "name": "Hajduk Split 2-0 Strømsgodset",
+    "on": "2015-07-30",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Goran Milović",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Mijo Caktaš",
+     "Zoran Nižić",
+     "Marko Pejić",
+     "Fran Tudor",
+     "Ante Roguljić",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Maxym Biliy",
+     "Anton Maglica",
+     "Elvir Maloku",
+     "Josip Bašić",
+     "Tino Sušić",
+     "Tomislav Kiš"
+    ],
+    "scorers": [
+     {
+      "name": "Andrija Balić",
+      "minute": 67
+     },
+     {
+      "name": "Tomislav Kiš",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2016830",
+     "scorers": [
+      {
+       "name": "Andrija Balić",
+       "minute": 67
+      },
+      {
+       "name": "Tomislav Kiš",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Goran Milović",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Mijo Caktaš",
+      "Zoran Nižić",
+      "Marko Pejić",
+      "Fran Tudor",
+      "Ante Roguljić",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Maxym Biliy",
+      "Anton Maglica",
+      "Elvir Maloku",
+      "Josip Bašić",
+      "Tino Sušić",
+      "Tomislav Kiš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2016830"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-07-23-hajduk-split-koper",
+   "value": {
+    "name": "Hajduk Split 4-1 Koper",
+    "on": "2015-07-23",
+    "competition": "UEFA Europa League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Goran Milović",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Mijo Caktaš",
+     "Zoran Nižić",
+     "Marko Pejić",
+     "Fran Tudor",
+     "Tomislav Kiš",
+     "Ante Roguljić",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Artem Radchenko",
+     "Anton Maglica",
+     "Franck Ohandza",
+     "Elvir Maloku",
+     "Josip Bašić",
+     "Tino Sušić"
+    ],
+    "scorers": [
+     {
+      "name": "Tomislav Kiš",
+      "minute": 2
+     },
+     {
+      "name": "Jefferson",
+      "minute": 40
+     },
+     {
+      "name": "Mijo Caktaš",
+      "minute": 62
+     },
+     {
+      "name": "Anton Maglica",
+      "minute": 69
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2016796",
+     "scorers": [
+      {
+       "name": "Tomislav Kiš",
+       "minute": 2
+      },
+      {
+       "name": "Jefferson",
+       "minute": 40
+      },
+      {
+       "name": "Mijo Caktaš",
+       "minute": 62
+      },
+      {
+       "name": "Anton Maglica",
+       "minute": 69
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Goran Milović",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Mijo Caktaš",
+      "Zoran Nižić",
+      "Marko Pejić",
+      "Fran Tudor",
+      "Tomislav Kiš",
+      "Ante Roguljić",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Artem Radchenko",
+      "Anton Maglica",
+      "Franck Ohandza",
+      "Elvir Maloku",
+      "Josip Bašić",
+      "Tino Sušić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2016796"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-07-16-koper-hajduk-split",
+   "value": {
+    "name": "Koper 3-2 Hajduk Split",
+    "on": "2015-07-16",
+    "competition": "UEFA Europa League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Goran Milović",
+     "Jefferson",
+     "Nikola Vlašić",
+     "Anton Maglica",
+     "Mijo Caktaš",
+     "Zoran Nižić",
+     "Marko Pejić",
+     "Fran Tudor",
+     "Ante Roguljić",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Maxym Biliy",
+     "Artem Radchenko",
+     "Josip Juranović",
+     "Elvir Maloku",
+     "Tino Sušić",
+     "Tomislav Kiš"
+    ],
+    "scorers": [
+     {
+      "name": "Goran Milović",
+      "minute": 29
+     },
+     {
+      "name": "Zoran Nižić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2016763",
+     "scorers": [
+      {
+       "name": "Goran Milović",
+       "minute": 29
+      },
+      {
+       "name": "Zoran Nižić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Goran Milović",
+      "Jefferson",
+      "Nikola Vlašić",
+      "Anton Maglica",
+      "Mijo Caktaš",
+      "Zoran Nižić",
+      "Marko Pejić",
+      "Fran Tudor",
+      "Ante Roguljić",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Maxym Biliy",
+      "Artem Radchenko",
+      "Josip Juranović",
+      "Elvir Maloku",
+      "Tino Sušić",
+      "Tomislav Kiš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2016763"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-07-09-hajduk-split-sillamae",
+   "value": {
+    "name": "Hajduk Split 6-2 Sillamäe",
+    "on": "2015-07-09",
+    "competition": "UEFA Europa League",
+    "score": "6-2",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Goran Milović",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Mijo Caktaš",
+     "Elvir Maloku",
+     "Zoran Nižić",
+     "Marko Pejić",
+     "Fran Tudor",
+     "Ante Roguljić",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Maxym Biliy",
+     "Artem Radchenko",
+     "Anton Maglica",
+     "Josip Bašić",
+     "Tino Sušić",
+     "Tomislav Kiš"
+    ],
+    "scorers": [
+     {
+      "name": "Andrija Balić",
+      "minute": 15
+     },
+     {
+      "name": "Mijo Caktaš",
+      "minute": 45
+     },
+     {
+      "name": "Franck Ohandza",
+      "minute": 56
+     },
+     {
+      "name": "Franck Ohandza",
+      "minute": 63
+     },
+     {
+      "name": "Nikola Vlašić",
+      "minute": 72
+     },
+     {
+      "name": "Anton Maglica",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2017142",
+     "scorers": [
+      {
+       "name": "Andrija Balić",
+       "minute": 15
+      },
+      {
+       "name": "Mijo Caktaš",
+       "minute": 45
+      },
+      {
+       "name": "Franck Ohandza",
+       "minute": 56
+      },
+      {
+       "name": "Franck Ohandza",
+       "minute": 63
+      },
+      {
+       "name": "Nikola Vlašić",
+       "minute": 72
+      },
+      {
+       "name": "Anton Maglica",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Goran Milović",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Mijo Caktaš",
+      "Elvir Maloku",
+      "Zoran Nižić",
+      "Marko Pejić",
+      "Fran Tudor",
+      "Ante Roguljić",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Maxym Biliy",
+      "Artem Radchenko",
+      "Anton Maglica",
+      "Josip Bašić",
+      "Tino Sušić",
+      "Tomislav Kiš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2017142"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2015-07-02-sillamae-hajduk-split",
+   "value": {
+    "name": "Sillamäe 1-1 Hajduk Split",
+    "on": "2015-07-02",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Goran Milović",
+     "Nikola Vlašić",
+     "Franck Ohandza",
+     "Mijo Caktaš",
+     "Elvir Maloku",
+     "Zoran Nižić",
+     "Fran Tudor",
+     "Ante Roguljić",
+     "Andrija Balić"
+    ],
+    "bench": [
+     "Ivo Grbić",
+     "Maxym Biliy",
+     "Artem Radchenko",
+     "Anton Maglica",
+     "Toma Bašić",
+     "Josip Bašić",
+     "Tomislav Kiš"
+    ],
+    "scorers": [
+     {
+      "name": "Mijo Caktaš",
+      "minute": 6
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2017091",
+     "scorers": [
+      {
+       "name": "Mijo Caktaš",
+       "minute": 6
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Goran Milović",
+      "Nikola Vlašić",
+      "Franck Ohandza",
+      "Mijo Caktaš",
+      "Elvir Maloku",
+      "Zoran Nižić",
+      "Fran Tudor",
+      "Ante Roguljić",
+      "Andrija Balić"
+     ],
+     "bench": [
+      "Ivo Grbić",
+      "Maxym Biliy",
+      "Artem Radchenko",
+      "Anton Maglica",
+      "Toma Bašić",
+      "Josip Bašić",
+      "Tomislav Kiš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2017091"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2014-08-28-hajduk-split-dnipro",
+   "value": {
+    "name": "Hajduk Split 0-0 Dnipro",
+    "on": "2014-08-28",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Antonio Milić",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Mislav Andjelković",
+     "Anton Maglica",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Tino Sušić",
+     "Jean Evrard Kouassi",
+     "Dejan Mezga"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Sandro Gotal",
+     "Ivan Anton Vasilj",
+     "Zoran Nižić",
+     "Josip Vuković",
+     "Josip Bašić",
+     "Marko Bencun"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2015154",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "Antonio Milić",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Mislav Andjelković",
+      "Anton Maglica",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Tino Sušić",
+      "Jean Evrard Kouassi",
+      "Dejan Mezga"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Sandro Gotal",
+      "Ivan Anton Vasilj",
+      "Zoran Nižić",
+      "Josip Vuković",
+      "Josip Bašić",
+      "Marko Bencun"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2015154"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2014-08-20-dnipro-hajduk-split",
+   "value": {
+    "name": "Dnipro 2-1 Hajduk Split",
+    "on": "2014-08-20",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Antonio Milić",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Mislav Andjelković",
+     "Anton Maglica",
+     "Sandro Gotal",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Tino Sušić",
+     "Jean Evrard Kouassi"
+    ],
+    "bench": [
+     "Fabjan Tomić",
+     "Dino Mikanović",
+     "Nikola Vlašić",
+     "Goran Jozinović",
+     "Zoran Nižić",
+     "Dejan Mezga",
+     "Artem Milevskiy"
+    ],
+    "scorers": [
+     {
+      "name": "Tino Sušić",
+      "minute": 47
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2015123",
+     "scorers": [
+      {
+       "name": "Tino Sušić",
+       "minute": 47
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Antonio Milić",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Mislav Andjelković",
+      "Anton Maglica",
+      "Sandro Gotal",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Tino Sušić",
+      "Jean Evrard Kouassi"
+     ],
+     "bench": [
+      "Fabjan Tomić",
+      "Dino Mikanović",
+      "Nikola Vlašić",
+      "Goran Jozinović",
+      "Zoran Nižić",
+      "Dejan Mezga",
+      "Artem Milevskiy"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2015123"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2014-08-07-hajduk-split-shakhter",
+   "value": {
+    "name": "Hajduk Split 3-0 Shakhter",
+    "on": "2014-08-07",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Antonio Milić",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Mislav Andjelković",
+     "Nikola Vlašić",
+     "Anton Maglica",
+     "Sandro Gotal",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Tino Sušić"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Dino Mikanović",
+     "Ivan Anton Vasilj",
+     "Elvir Maloku",
+     "Zoran Nižić",
+     "Marko Bencun",
+     "Jean Evrard Kouassi"
+    ],
+    "scorers": [
+     {
+      "name": "Tino Sušić",
+      "minute": 14
+     },
+     {
+      "name": "Anton Maglica",
+      "minute": 36
+     },
+     {
+      "name": "Sandro Gotal",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2015004",
+     "scorers": [
+      {
+       "name": "Tino Sušić",
+       "minute": 14
+      },
+      {
+       "name": "Anton Maglica",
+       "minute": 36
+      },
+      {
+       "name": "Sandro Gotal",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Antonio Milić",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Mislav Andjelković",
+      "Nikola Vlašić",
+      "Anton Maglica",
+      "Sandro Gotal",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Tino Sušić"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Dino Mikanović",
+      "Ivan Anton Vasilj",
+      "Elvir Maloku",
+      "Zoran Nižić",
+      "Marko Bencun",
+      "Jean Evrard Kouassi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2015004"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2014-07-31-shakhter-hajduk-split",
+   "value": {
+    "name": "Shakhter 4-2 Hajduk Split",
+    "on": "2014-07-31",
+    "competition": "UEFA Europa League",
+    "score": "4-2",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Dino Mikanović",
+     "Antonio Milić",
+     "Mislav Andjelković",
+     "Nikola Vlašić",
+     "Sandro Gotal",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Filip Bradarić",
+     "Jean Evrard Kouassi"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Andrija Balić",
+     "Ivan Anton Vasilj",
+     "Elvir Maloku",
+     "Zvonimir Milić",
+     "Marko Bencun"
+    ],
+    "scorers": [
+     {
+      "name": "Sandro Gotal",
+      "minute": 2
+     },
+     {
+      "name": "Mijo Caktaš",
+      "minute": 78
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2014975",
+     "scorers": [
+      {
+       "name": "Sandro Gotal",
+       "minute": 2
+      },
+      {
+       "name": "Mijo Caktaš",
+       "minute": 78
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Dino Mikanović",
+      "Antonio Milić",
+      "Mislav Andjelković",
+      "Nikola Vlašić",
+      "Sandro Gotal",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Filip Bradarić",
+      "Jean Evrard Kouassi"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Andrija Balić",
+      "Ivan Anton Vasilj",
+      "Elvir Maloku",
+      "Zvonimir Milić",
+      "Marko Bencun"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2014975"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2014-07-24-hajduk-split-dundalk",
+   "value": {
+    "name": "Hajduk Split 1-2 Dundalk",
+    "on": "2014-07-24",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Goran Milović",
+     "Mislav Andjelković",
+     "Nikola Vlašić",
+     "Sandro Gotal",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Zoran Nižić",
+     "Marko Bencun",
+     "Jean Evrard Kouassi"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Antonio Milić",
+     "Anton Maglica",
+     "Elvir Maloku",
+     "Filip Bradarić",
+     "Josip Bašić"
+    ],
+    "scorers": [
+     {
+      "name": "Jean Evrard Kouassi",
+      "minute": 25
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2014790",
+     "scorers": [
+      {
+       "name": "Jean Evrard Kouassi",
+       "minute": 25
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Goran Milović",
+      "Mislav Andjelković",
+      "Nikola Vlašić",
+      "Sandro Gotal",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Zoran Nižić",
+      "Marko Bencun",
+      "Jean Evrard Kouassi"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Antonio Milić",
+      "Anton Maglica",
+      "Elvir Maloku",
+      "Filip Bradarić",
+      "Josip Bašić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2014790"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2014-07-17-dundalk-hajduk-split",
+   "value": {
+    "name": "Dundalk 0-2 Hajduk Split",
+    "on": "2014-07-17",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Dante Stipica",
+     "Antonio Milić",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Nikola Vlašić",
+     "Anton Maglica",
+     "Sandro Gotal",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Filip Bradarić",
+     "Jean Evrard Kouassi"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Mislav Andjelković",
+     "Goran Jozinović",
+     "Elvir Maloku",
+     "Zoran Nižić",
+     "Josip Bašić"
+    ],
+    "scorers": [
+     {
+      "name": "Mijo Caktaš",
+      "minute": 9
+     },
+     {
+      "name": "Nikola Vlašić",
+      "minute": 75
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2014750",
+     "scorers": [
+      {
+       "name": "Mijo Caktaš",
+       "minute": 9
+      },
+      {
+       "name": "Nikola Vlašić",
+       "minute": 75
+      }
+     ],
+     "lineup": [
+      "Dante Stipica",
+      "Antonio Milić",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Nikola Vlašić",
+      "Anton Maglica",
+      "Sandro Gotal",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Filip Bradarić",
+      "Jean Evrard Kouassi"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Mislav Andjelković",
+      "Goran Jozinović",
+      "Elvir Maloku",
+      "Zoran Nižić",
+      "Josip Bašić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2014750"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-08-08-dila-hajduk-split",
+   "value": {
+    "name": "Dila 1-0 Hajduk Split",
+    "on": "2013-08-08",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Mislav Andjelković",
+     "Anton Maglica",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Filip Bradarić",
+     "Tino Sušić",
+     "Marko Bencun"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Mario Pašalić",
+     "Franko Andrijašević",
+     "Tonći Mujan",
+     "Matej Jonjić",
+     "Tomislav Kiš",
+     "Luka Lučić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012398",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Mislav Andjelković",
+      "Anton Maglica",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Filip Bradarić",
+      "Tino Sušić",
+      "Marko Bencun"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Mario Pašalić",
+      "Franko Andrijašević",
+      "Tonći Mujan",
+      "Matej Jonjić",
+      "Tomislav Kiš",
+      "Luka Lučić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012398"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-08-01-hajduk-split-dila",
+   "value": {
+    "name": "Hajduk Split 0-1 Dila",
+    "on": "2013-08-01",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Mario Pašalić",
+     "Anton Maglica",
+     "Franko Andrijašević",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Tino Sušić"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Antonio Milić",
+     "Tonći Mujan",
+     "Steven Luštica",
+     "Filip Bradarić",
+     "Marko Bencun",
+     "Tomislav Kiš"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012369",
+     "scorers": [],
+     "lineup": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Mario Pašalić",
+      "Anton Maglica",
+      "Franko Andrijašević",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Tino Sušić"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Antonio Milić",
+      "Tonći Mujan",
+      "Steven Luštica",
+      "Filip Bradarić",
+      "Marko Bencun",
+      "Tomislav Kiš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012369"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-07-25-turnovo-hajduk-split",
+   "value": {
+    "name": "Turnovo 1-1 Hajduk Split",
+    "on": "2013-07-25",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Antonio Milić",
+     "Mislav Andjelković",
+     "Mario Pašalić",
+     "Anton Maglica",
+     "Tonći Mujan",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Tino Sušić"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Goran Milović",
+     "Ivan Tomičić",
+     "Filip Bradarić",
+     "Tomislav Kiš",
+     "Luka Lučić",
+     "Jean Evrard Kouassi"
+    ],
+    "scorers": [
+     {
+      "name": "Mijo Caktaš",
+      "minute": 60
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012323",
+     "scorers": [
+      {
+       "name": "Mijo Caktaš",
+       "minute": 60
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Antonio Milić",
+      "Mislav Andjelković",
+      "Mario Pašalić",
+      "Anton Maglica",
+      "Tonći Mujan",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Tino Sušić"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Goran Milović",
+      "Ivan Tomičić",
+      "Filip Bradarić",
+      "Tomislav Kiš",
+      "Luka Lučić",
+      "Jean Evrard Kouassi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012323"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-07-18-hajduk-split-turnovo",
+   "value": {
+    "name": "Hajduk Split 2-1 Turnovo",
+    "on": "2013-07-18",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Lovre Kalinić",
+     "Dino Mikanović",
+     "Antonio Milić",
+     "Mislav Andjelković",
+     "Mario Pašalić",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Tino Sušić",
+     "Marko Bencun",
+     "Jean Evrard Kouassi"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Goran Milović",
+     "Anton Maglica",
+     "Tonći Mujan",
+     "Filip Bradarić",
+     "Tomislav Kiš",
+     "Luka Lučić"
+    ],
+    "scorers": [
+     {
+      "name": "Marko Bencun",
+      "minute": 8
+     },
+     {
+      "name": "Mario Maloča",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012283",
+     "scorers": [
+      {
+       "name": "Marko Bencun",
+       "minute": 8
+      },
+      {
+       "name": "Mario Maloča",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Lovre Kalinić",
+      "Dino Mikanović",
+      "Antonio Milić",
+      "Mislav Andjelković",
+      "Mario Pašalić",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Tino Sušić",
+      "Marko Bencun",
+      "Jean Evrard Kouassi"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Goran Milović",
+      "Anton Maglica",
+      "Tonći Mujan",
+      "Filip Bradarić",
+      "Tomislav Kiš",
+      "Luka Lučić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012283"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2012-08-09-inter-hajduk-split",
+   "value": {
+    "name": "Inter 0-2 Hajduk Split",
+    "on": "2012-08-09",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Goran Blažević",
+     "Antonio Milić",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Franko Andrijašević",
+     "Mirko Oremuš",
+     "Ante Vukušić",
+     "Josip Radošević",
+     "Goran Jozinović",
+     "Mario Maloča",
+     "Ivan Vuković"
+    ],
+    "bench": [
+     "Pavao Vugdelija",
+     "Danijel Stojanović",
+     "Anton Maglica",
+     "Steven Luštica",
+     "Mijo Caktaš",
+     "Filip Ozobić",
+     "Matej Jonjić"
+    ],
+    "scorers": [
+     {
+      "name": "Ante Vukušić",
+      "minute": 23
+     },
+     {
+      "name": "Ivan Vuković",
+      "minute": 58
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2009822",
+     "scorers": [
+      {
+       "name": "Ante Vukušić",
+       "minute": 23
+      },
+      {
+       "name": "Ivan Vuković",
+       "minute": 58
+      }
+     ],
+     "lineup": [
+      "Goran Blažević",
+      "Antonio Milić",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Franko Andrijašević",
+      "Mirko Oremuš",
+      "Ante Vukušić",
+      "Josip Radošević",
+      "Goran Jozinović",
+      "Mario Maloča",
+      "Ivan Vuković"
+     ],
+     "bench": [
+      "Pavao Vugdelija",
+      "Danijel Stojanović",
+      "Anton Maglica",
+      "Steven Luštica",
+      "Mijo Caktaš",
+      "Filip Ozobić",
+      "Matej Jonjić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2009822"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2012-08-02-hajduk-split-inter",
+   "value": {
+    "name": "Hajduk Split 0-3 Inter",
+    "on": "2012-08-02",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Goran Blažević",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Franko Andrijašević",
+     "Mirko Oremuš",
+     "Ante Vukušić",
+     "Josip Radošević",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Filip Ozobić",
+     "Mario Maloča"
+    ],
+    "bench": [
+     "Pavao Vugdelija",
+     "Antonio Milić",
+     "Anton Maglica",
+     "Steven Luštica",
+     "Ivan Vuković",
+     "Matej Jonjić",
+     "Ivo-Valentino Tomaš"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2009793",
+     "scorers": [],
+     "lineup": [
+      "Goran Blažević",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Franko Andrijašević",
+      "Mirko Oremuš",
+      "Ante Vukušić",
+      "Josip Radošević",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Filip Ozobić",
+      "Mario Maloča"
+     ],
+     "bench": [
+      "Pavao Vugdelija",
+      "Antonio Milić",
+      "Anton Maglica",
+      "Steven Luštica",
+      "Ivan Vuković",
+      "Matej Jonjić",
+      "Ivo-Valentino Tomaš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2009793"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2012-07-26-skonto-hajduk-split",
+   "value": {
+    "name": "Skonto 1-0 Hajduk Split",
+    "on": "2012-07-26",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Goran Blažević",
+     "Danijel Stojanović",
+     "Goran Milović",
+     "Avdija Vršajević",
+     "Mirko Oremuš",
+     "Ante Vukušić",
+     "Josip Radošević",
+     "Steven Luštica",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Anton Maglica"
+    ],
+    "bench": [
+     "Dante Stipica",
+     "Antonio Milić",
+     "Goran Jozinović",
+     "Filip Ozobić",
+     "Ivan Vuković",
+     "Matej Jonjić",
+     "Ivo-Valentino Tomaš"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2009733",
+     "scorers": [],
+     "lineup": [
+      "Goran Blažević",
+      "Danijel Stojanović",
+      "Goran Milović",
+      "Avdija Vršajević",
+      "Mirko Oremuš",
+      "Ante Vukušić",
+      "Josip Radošević",
+      "Steven Luštica",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Anton Maglica"
+     ],
+     "bench": [
+      "Dante Stipica",
+      "Antonio Milić",
+      "Goran Jozinović",
+      "Filip Ozobić",
+      "Ivan Vuković",
+      "Matej Jonjić",
+      "Ivo-Valentino Tomaš"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2009733"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2012-07-19-hajduk-split-skonto",
+   "value": {
+    "name": "Hajduk Split 2-0 Skonto",
+    "on": "2012-07-19",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Goran Blažević",
+     "Avdija Vršajević",
+     "Franko Andrijašević",
+     "Ante Vukušić",
+     "Josip Radošević",
+     "Goran Jozinović",
+     "Mijo Caktaš",
+     "Mario Maloča",
+     "Matej Jonjić",
+     "Dinko Trebotić",
+     "Tino Sušić"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Danijel Stojanović",
+     "Goran Milović",
+     "Filip Ozobić",
+     "Anton Maglica",
+     "Tomislav Kiš",
+     "Tonci Kukoć"
+    ],
+    "scorers": [
+     {
+      "name": "Ante Vukušić",
+      "minute": 34
+     },
+     {
+      "name": "Dinko Trebotić",
+      "minute": 58
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2009693",
+     "scorers": [
+      {
+       "name": "Ante Vukušić",
+       "minute": 34
+      },
+      {
+       "name": "Dinko Trebotić",
+       "minute": 58
+      }
+     ],
+     "lineup": [
+      "Goran Blažević",
+      "Avdija Vršajević",
+      "Franko Andrijašević",
+      "Ante Vukušić",
+      "Josip Radošević",
+      "Goran Jozinović",
+      "Mijo Caktaš",
+      "Mario Maloča",
+      "Matej Jonjić",
+      "Dinko Trebotić",
+      "Tino Sušić"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Danijel Stojanović",
+      "Goran Milović",
+      "Filip Ozobić",
+      "Anton Maglica",
+      "Tomislav Kiš",
+      "Tonci Kukoć"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2009693"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-08-04-hajduk-split-stoke",
+   "value": {
+    "name": "Hajduk Split 0-1 Stoke",
+    "on": "2011-08-04",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Ljubo Miličević",
+     "Dinko Trebotić",
+     "Srdjan Andrić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Ivan Vuković",
+     "Mario Brkljača",
+     "Mario Maloča",
+     "Ruben Lima",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Krešo Ljubičić",
+     "Ahmad Sharbini",
+     "Tonci Kukoć",
+     "Mirko Oremuš",
+     "Masahiko Inoha",
+     "Nikola Sarić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007192",
+     "scorers": [],
+     "lineup": [
+      "Danijel Subašić",
+      "Ljubo Miličević",
+      "Dinko Trebotić",
+      "Srdjan Andrić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Ivan Vuković",
+      "Mario Brkljača",
+      "Mario Maloča",
+      "Ruben Lima",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Krešo Ljubičić",
+      "Ahmad Sharbini",
+      "Tonci Kukoć",
+      "Mirko Oremuš",
+      "Masahiko Inoha",
+      "Nikola Sarić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007192"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-07-28-stoke-hajduk-split",
+   "value": {
+    "name": "Stoke 1-0 Hajduk Split",
+    "on": "2011-07-28",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Hrvoje Vejić",
+     "Srdjan Andrić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Mirko Oremuš",
+     "Masahiko Inoha",
+     "Mario Brkljača",
+     "Mario Maloča",
+     "Ruben Lima",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Krešo Ljubičić",
+     "Ahmad Sharbini",
+     "Tonci Kukoć",
+     "Ivan Vuković",
+     "James Dens",
+     "Nikola Sarić"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007157",
+     "scorers": [],
+     "lineup": [
+      "Danijel Subašić",
+      "Hrvoje Vejić",
+      "Srdjan Andrić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Mirko Oremuš",
+      "Masahiko Inoha",
+      "Mario Brkljača",
+      "Mario Maloča",
+      "Ruben Lima",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Krešo Ljubičić",
+      "Ahmad Sharbini",
+      "Tonci Kukoć",
+      "Ivan Vuković",
+      "James Dens",
+      "Nikola Sarić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007157"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-12-16-anderlecht-hajduk-split",
+   "value": {
+    "name": "Anderlecht 2-0 Hajduk Split",
+    "on": "2010-12-16",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Božidar Radošević",
+     "Jurica Buljat",
+     "Hrvoje Vejić",
+     "Senijad Ibričić",
+     "Srdjan Andrić",
+     "Ante Vukušić",
+     "Goran Jozinović",
+     "Ivan Strinić",
+     "Mirko Oremuš",
+     "Matej Jonjić",
+     "Dinko Trebotić"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Marin Ljubičić",
+     "Marin Tomasov",
+     "Franko Andrijašević",
+     "Ervin Bulku"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2003033",
+     "scorers": [],
+     "lineup": [
+      "Božidar Radošević",
+      "Jurica Buljat",
+      "Hrvoje Vejić",
+      "Senijad Ibričić",
+      "Srdjan Andrić",
+      "Ante Vukušić",
+      "Goran Jozinović",
+      "Ivan Strinić",
+      "Mirko Oremuš",
+      "Matej Jonjić",
+      "Dinko Trebotić"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Marin Ljubičić",
+      "Marin Tomasov",
+      "Franko Andrijašević",
+      "Ervin Bulku"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2003033"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-12-01-hajduk-split-aek-athens",
+   "value": {
+    "name": "Hajduk Split 1-3 AEK Athens",
+    "on": "2010-12-01",
+    "competition": "UEFA Europa League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Božidar Radošević",
+     "Marin Ljubičić",
+     "Jurica Buljat",
+     "Senijad Ibričić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Goran Jozinović",
+     "Ivan Strinić",
+     "Mirko Oremuš",
+     "Mario Maloča",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Hrvoje Vejić",
+     "Ahmad Sharbini",
+     "Srdjan Andrić",
+     "Mario Brkljača",
+     "Dinko Trebotić",
+     "Duje Čop"
+    ],
+    "scorers": [
+     {
+      "name": "Jurica Buljat",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2003022",
+     "scorers": [
+      {
+       "name": "Jurica Buljat",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Božidar Radošević",
+      "Marin Ljubičić",
+      "Jurica Buljat",
+      "Senijad Ibričić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Goran Jozinović",
+      "Ivan Strinić",
+      "Mirko Oremuš",
+      "Mario Maloča",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Hrvoje Vejić",
+      "Ahmad Sharbini",
+      "Srdjan Andrić",
+      "Mario Brkljača",
+      "Dinko Trebotić",
+      "Duje Čop"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2003022"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-11-04-hajduk-split-zenit",
+   "value": {
+    "name": "Hajduk Split 2-3 Zenit",
+    "on": "2010-11-04",
+    "competition": "UEFA Europa League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Marin Ljubičić",
+     "Jurica Buljat",
+     "Hrvoje Vejić",
+     "Senijad Ibričić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Ivan Strinić",
+     "Mario Maloča",
+     "Ervin Bulku",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Goran Jozinović",
+     "Mirko Oremuš",
+     "Ante Režić",
+     "Mario Brkljača",
+     "Matej Jonjić",
+     "Dinko Trebotić"
+    ],
+    "scorers": [
+     {
+      "name": "Marin Ljubičić",
+      "minute": 68
+     },
+     {
+      "name": "Ante Vukušić",
+      "minute": 82
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2002997",
+     "scorers": [
+      {
+       "name": "Marin Ljubičić",
+       "minute": 68
+      },
+      {
+       "name": "Ante Vukušić",
+       "minute": 82
+      }
+     ],
+     "lineup": [
+      "Danijel Subašić",
+      "Marin Ljubičić",
+      "Jurica Buljat",
+      "Hrvoje Vejić",
+      "Senijad Ibričić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Ivan Strinić",
+      "Mario Maloča",
+      "Ervin Bulku",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Goran Jozinović",
+      "Mirko Oremuš",
+      "Ante Režić",
+      "Mario Brkljača",
+      "Matej Jonjić",
+      "Dinko Trebotić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2002997"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-10-21-zenit-hajduk-split",
+   "value": {
+    "name": "Zenit 2-0 Hajduk Split",
+    "on": "2010-10-21",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Marin Ljubičić",
+     "Jurica Buljat",
+     "Senijad Ibričić",
+     "Ante Vukušić",
+     "Ivan Strinić",
+     "Mirko Oremuš",
+     "Mario Brkljača",
+     "Mario Maloča",
+     "Ervin Bulku",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Hrvoje Vejić",
+     "Goran Jozinović",
+     "Ante Režić",
+     "Matej Jonjić",
+     "Dinko Trebotić",
+     "Duje Čop"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2002973",
+     "scorers": [],
+     "lineup": [
+      "Danijel Subašić",
+      "Marin Ljubičić",
+      "Jurica Buljat",
+      "Senijad Ibričić",
+      "Ante Vukušić",
+      "Ivan Strinić",
+      "Mirko Oremuš",
+      "Mario Brkljača",
+      "Mario Maloča",
+      "Ervin Bulku",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Hrvoje Vejić",
+      "Goran Jozinović",
+      "Ante Režić",
+      "Matej Jonjić",
+      "Dinko Trebotić",
+      "Duje Čop"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2002973"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-09-30-hajduk-split-anderlecht",
+   "value": {
+    "name": "Hajduk Split 1-0 Anderlecht",
+    "on": "2010-09-30",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Marin Ljubičić",
+     "Jurica Buljat",
+     "Hrvoje Vejić",
+     "Senijad Ibričić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Ivan Strinić",
+     "Mario Brkljača",
+     "Mario Maloča",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Ahmad Sharbini",
+     "Goran Jozinović",
+     "Mirko Oremuš",
+     "Dinko Trebotić",
+     "Ervin Bulku",
+     "Duje Čop"
+    ],
+    "scorers": [
+     {
+      "name": "Ante Vukušić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2002949",
+     "scorers": [
+      {
+       "name": "Ante Vukušić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Danijel Subašić",
+      "Marin Ljubičić",
+      "Jurica Buljat",
+      "Hrvoje Vejić",
+      "Senijad Ibričić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Ivan Strinić",
+      "Mario Brkljača",
+      "Mario Maloča",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Ahmad Sharbini",
+      "Goran Jozinović",
+      "Mirko Oremuš",
+      "Dinko Trebotić",
+      "Ervin Bulku",
+      "Duje Čop"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2002949"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-09-16-aek-athens-hajduk-split",
+   "value": {
+    "name": "AEK Athens 3-1 Hajduk Split",
+    "on": "2010-09-16",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Marin Ljubičić",
+     "Jurica Buljat",
+     "Hrvoje Vejić",
+     "Senijad Ibričić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Ivan Strinić",
+     "Mario Maloča",
+     "Ervin Bulku",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Goran Jozinović",
+     "Mirko Oremuš",
+     "Ante Režić",
+     "Matej Jonjić",
+     "Dinko Trebotić",
+     "Duje Čop"
+    ],
+    "scorers": [
+     {
+      "name": "Senijad Ibričić",
+      "minute": 29
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2002926",
+     "scorers": [
+      {
+       "name": "Senijad Ibričić",
+       "minute": 29
+      }
+     ],
+     "lineup": [
+      "Danijel Subašić",
+      "Marin Ljubičić",
+      "Jurica Buljat",
+      "Hrvoje Vejić",
+      "Senijad Ibričić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Ivan Strinić",
+      "Mario Maloča",
+      "Ervin Bulku",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Goran Jozinović",
+      "Mirko Oremuš",
+      "Ante Režić",
+      "Matej Jonjić",
+      "Dinko Trebotić",
+      "Duje Čop"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2002926"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-08-26-unirea-urziceni-hajduk-split",
+   "value": {
+    "name": "Unirea Urziceni 1-1 Hajduk Split",
+    "on": "2010-08-26",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Jurica Buljat",
+     "Senijad Ibričić",
+     "Srdjan Andrić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Goran Jozinović",
+     "Mirko Oremuš",
+     "Mario Brkljača",
+     "Mario Maloča",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Hrvoje Vejić",
+     "Ahmad Sharbini",
+     "Ante Režić",
+     "Matej Jonjić",
+     "Dinko Trebotić",
+     "Duje Čop"
+    ],
+    "scorers": [
+     {
+      "name": "Ante Vukušić",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2003099",
+     "scorers": [
+      {
+       "name": "Ante Vukušić",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Danijel Subašić",
+      "Jurica Buljat",
+      "Senijad Ibričić",
+      "Srdjan Andrić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Goran Jozinović",
+      "Mirko Oremuš",
+      "Mario Brkljača",
+      "Mario Maloča",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Hrvoje Vejić",
+      "Ahmad Sharbini",
+      "Ante Režić",
+      "Matej Jonjić",
+      "Dinko Trebotić",
+      "Duje Čop"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2003099"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-08-19-hajduk-split-unirea-urziceni",
+   "value": {
+    "name": "Hajduk Split 4-1 Unirea Urziceni",
+    "on": "2010-08-19",
+    "competition": "UEFA Europa League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Božidar Radošević",
+     "Jurica Buljat",
+     "Senijad Ibričić",
+     "Srdjan Andrić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Ivan Strinić",
+     "Mirko Oremuš",
+     "Mario Maloča",
+     "Dinko Trebotić",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Lovre Kalinić",
+     "Hrvoje Vejić",
+     "Ahmad Sharbini",
+     "Goran Jozinović",
+     "Ante Režić",
+     "Mario Brkljača",
+     "Duje Čop"
+    ],
+    "scorers": [
+     {
+      "name": "Senijad Ibričić",
+      "minute": 39
+     },
+     {
+      "name": "Senijad Ibričić",
+      "minute": 66
+     },
+     {
+      "name": "Mario Brkljača",
+      "minute": 78
+     },
+     {
+      "name": "Duje Čop",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2003062",
+     "scorers": [
+      {
+       "name": "Senijad Ibričić",
+       "minute": 39
+      },
+      {
+       "name": "Senijad Ibričić",
+       "minute": 66
+      },
+      {
+       "name": "Mario Brkljača",
+       "minute": 78
+      },
+      {
+       "name": "Duje Čop",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Božidar Radošević",
+      "Jurica Buljat",
+      "Senijad Ibričić",
+      "Srdjan Andrić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Ivan Strinić",
+      "Mirko Oremuš",
+      "Mario Maloča",
+      "Dinko Trebotić",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Lovre Kalinić",
+      "Hrvoje Vejić",
+      "Ahmad Sharbini",
+      "Goran Jozinović",
+      "Ante Režić",
+      "Mario Brkljača",
+      "Duje Čop"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2003062"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-08-05-hajduk-split-dinamo-bucuresti",
+   "value": {
+    "name": "Hajduk Split 3-0 Dinamo Bucureşti",
+    "on": "2010-08-05",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Jurica Buljat",
+     "Senijad Ibričić",
+     "Srdjan Andrić",
+     "Ante Vukušić",
+     "Marin Tomasov",
+     "Ivan Strinić",
+     "Mirko Oremuš",
+     "Mario Brkljača",
+     "Mario Maloča",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Hrvoje Vejić",
+     "Krešo Ljubičić",
+     "Ahmad Sharbini",
+     "Goran Jozinović",
+     "Ante Režić",
+     "Dinko Trebotić"
+    ],
+    "scorers": [
+     {
+      "name": "Ante Vukušić",
+      "minute": 12
+     },
+     {
+      "name": "Mario Brkljača",
+      "minute": 23
+     },
+     {
+      "name": "Marin Tomasov",
+      "minute": 38
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2002807",
+     "scorers": [
+      {
+       "name": "Ante Vukušić",
+       "minute": 12
+      },
+      {
+       "name": "Mario Brkljača",
+       "minute": 23
+      },
+      {
+       "name": "Marin Tomasov",
+       "minute": 38
+      }
+     ],
+     "lineup": [
+      "Danijel Subašić",
+      "Jurica Buljat",
+      "Senijad Ibričić",
+      "Srdjan Andrić",
+      "Ante Vukušić",
+      "Marin Tomasov",
+      "Ivan Strinić",
+      "Mirko Oremuš",
+      "Mario Brkljača",
+      "Mario Maloča",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Hrvoje Vejić",
+      "Krešo Ljubičić",
+      "Ahmad Sharbini",
+      "Goran Jozinović",
+      "Ante Režić",
+      "Dinko Trebotić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2002807"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2010-07-29-dinamo-bucuresti-hajduk-split",
+   "value": {
+    "name": "Dinamo Bucureşti 3-1 Hajduk Split",
+    "on": "2010-07-29",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Danijel Subašić",
+     "Marin Ljubičić",
+     "Jurica Buljat",
+     "Hrvoje Vejić",
+     "Senijad Ibričić",
+     "Srdjan Andrić",
+     "Ivan Strinić",
+     "Mirko Oremuš",
+     "Ante Režić",
+     "Mario Maloča",
+     "Anas Sharbini"
+    ],
+    "bench": [
+     "Božidar Radošević",
+     "Ahmad Sharbini",
+     "Marin Tomasov",
+     "Goran Jozinović",
+     "Marijan Buljat",
+     "Mario Brkljača",
+     "Dinko Trebotić"
+    ],
+    "scorers": [
+     {
+      "name": "Marin Tomasov",
+      "minute": 64
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2002772",
+     "scorers": [
+      {
+       "name": "Marin Tomasov",
+       "minute": 64
+      }
+     ],
+     "lineup": [
+      "Danijel Subašić",
+      "Marin Ljubičić",
+      "Jurica Buljat",
+      "Hrvoje Vejić",
+      "Senijad Ibričić",
+      "Srdjan Andrić",
+      "Ivan Strinić",
+      "Mirko Oremuš",
+      "Ante Režić",
+      "Mario Maloča",
+      "Anas Sharbini"
+     ],
+     "bench": [
+      "Božidar Radošević",
+      "Ahmad Sharbini",
+      "Marin Tomasov",
+      "Goran Jozinović",
+      "Marijan Buljat",
+      "Mario Brkljača",
+      "Dinko Trebotić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2002772"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}
