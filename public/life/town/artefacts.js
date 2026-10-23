@@ -53,10 +53,11 @@ function banner(c,a,K){var s=c.spot('banner');if(!s)return false;var T=c.T,cv=ca
  var crooked=has(a,'crooked-stroke'),over=has(a,'painted-over'),bad=Math.min(1,n-1);
  for(var i=0;i<n;i++){var x=36+step*(i+.5);k.save();k.translate(x,82);
   if(i===bad&&crooked&&!over){k.rotate(-.16);k.translate(7,-5)}
-  k.fillText(word[i],0,0);k.restore()}
- if(over){k.fillStyle=K.am;k.globalAlpha=.55;k.fillRect(36+step*bad,18,step,128);k.globalAlpha=1;k.fillStyle=K.s;k.fillText(word[bad],36+step*(bad+.5),82)}
+  /* kit.js fits text to the canvas from x; a letter drawn at a translated origin says its own width */
+  k.fillText(word[i],0,0,step);k.restore()}
+ if(over){k.fillStyle=K.am;k.globalAlpha=.55;k.fillRect(36+step*bad,18,step,128);k.globalAlpha=1;k.fillStyle=K.s;k.fillText(word[bad],36+step*(bad+.5),82,step)}
  if(has(a,'own-star')){var sx=36+step*(bad+1)-8,sy=34;k.fillStyle=K.s;k.beginPath();for(i=0;i<10;i++){var r=i%2?7:16,an=-Math.PI/2+i*Math.PI/5;k.lineTo(sx+r*Math.cos(an),sy+r*Math.sin(an))}k.closePath();k.fill()}
- var pl=tag(c.mesh(new T.PlaneGeometry(9,2.8,8,1),cloth(c,cv),s.x,s.y,s.z+.4,c.g),a);pl.castShadow=false}
+ var pl=tag(c.mesh(new T.PlaneGeometry(12,3.75,8,1),cloth(c,cv),s.x,s.y+.6,s.z+.4,c.g),a);pl.castShadow=false}
 
 window.ARTEFACTS={place:function(c,id,made){if(!made||!made.length||!c||!c.T)return 0;var K=window.__CK||{a:'#8a2a2a',s:'#f4f1ff',t:'#14141c',ad:'#4e4440',add:'#3a3230',am:'#8a7e74',SHORT:'FC',Name:'FC'},n=0;
  made.forEach(function(a){try{
