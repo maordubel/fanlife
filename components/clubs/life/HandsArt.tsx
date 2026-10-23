@@ -354,3 +354,144 @@ export function Radio({value, clear}: {value: number; clear: boolean}) {
     <circle cx={210} cy={68} r={5} fill={clear ? P : S} />
   </>)
 }
+
+/* ───────────── open & fold · tie & wear · compare (hands.ts `motion` and `compare`) ───────────── */
+
+/** a hand, gripping at (x, y): palm, four fingers and a thumb, drawn in skin over the club's ink */
+function Hand({x, y, flip = false}: {x: number; y: number; flip?: boolean}) {
+  return (
+    <g style={{transform: `translate(${x}px, ${y}px) scale(${flip ? -1 : 1}, 1)`, transition: 'transform .28s cubic-bezier(.2,.8,.3,1)'}}>
+      <path d="M-14 4c0-12 6-20 16-20s14 6 14 16v14c0 8-6 12-14 12h-4c-8 0-12-6-12-12z" fill={INK.skin} stroke={I} strokeWidth={1.6} />
+      {[-9, -3, 3, 9].map(k => <path key={k} d={`M${k} -14v-8`} stroke={I} strokeWidth={5.5} strokeLinecap="round" opacity={0.25} />)}
+      {[-9, -3, 3, 9].map(k => <path key={`f${k}`} d={`M${k} -14v-8`} stroke={INK.skin} strokeWidth={4} strokeLinecap="round" />)}
+      <path d="M-14 6c-6-2-9-7-8-11" stroke={I} strokeWidth={5.5} strokeLinecap="round" fill="none" opacity={0.25} />
+      <path d="M-14 6c-6-2-9-7-8-11" stroke={INK.skin} strokeWidth={4} strokeLinecap="round" fill="none" />
+    </g>
+  )
+}
+
+/**
+ * Open & fold: the thing before (shut) and after (open, its contents out) — `p` is the share of the
+ * movements done, so every movement you make moves the picture, and the hand moves with it.
+ */
+export function Opened({subject, p, quick = false}: {subject: string; p: number; quick?: boolean}) {
+  const k = Math.max(0, Math.min(1, p))
+  const table = <rect x={0} y={132} width={320} height={38} fill={INK.wood} />
+  if (subject === 'drawer') {
+    const out = k * 46
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{table}
+      <rect x={70} y={20} width={180} height={112} fill={INK.wood} stroke={I} strokeWidth={2} />
+      <rect x={82} y={30} width={156} height={36} fill={INK.woodDark} stroke={I} strokeWidth={1.4} />
+      {/* the drawer slides towards you: lower and a touch wider as it comes out */}
+      <g transform={`translate(0 ${out})`}>
+        <rect x={80 - k * 6} y={70} width={160 + k * 12} height={40} fill={INK.wood} stroke={I} strokeWidth={2} />
+        <rect x={146} y={84} width={28} height={8} rx={3} fill={I} />
+        {k > 0.55 && <rect x={150} y={64} width={22} height={10} fill={P} stroke={I} strokeWidth={1.2} transform={k >= 1 ? 'translate(78 -50)' : undefined} style={{transition: 'transform .35s'}} />}
+      </g>
+      <Hand x={160} y={92 + out} />
+    </>)
+  }
+  if (subject === 'wardrobe') {
+    const w = 70 * (1 - k)
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />
+      <rect x={90} y={10} width={140} height={150} fill={INK.woodDark} stroke={I} strokeWidth={2} />
+      <path d="M100 30h120" stroke={I} strokeWidth={2} />
+      {[0, 1, 2, 3].map(i => <g key={i} transform={`translate(${110 + i * 26 + k * 6 * i} 30)`}><path d="M10 0v6l-12 10h24z" fill="none" stroke={I} strokeWidth={1.4} /><rect x={-2} y={16} width={24} height={k > 0.75 && i === 2 ? 0 : 60} fill={i === 2 ? P : INK.card} stroke={I} strokeWidth={1} /></g>)}
+      {/* the door swings open: its face gets narrower */}
+      <rect x={90} y={10} width={70 + w} height={150} fill={INK.wood} stroke={I} strokeWidth={2} opacity={0.96} />
+      <circle cx={150 + w} cy={86} r={3} fill={I} />
+      {k > 0.75 && <rect x={250} y={60} width={40} height={64} fill={P} stroke={I} strokeWidth={1.4} />}
+      <Hand x={k > 0.75 ? 270 : 150 + w} y={90} />
+    </>)
+  }
+  if (subject === 'letter') {
+    const open = k * 34
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{table}
+      <rect x={90} y={64 - open} width={140} height={36 + open * 2} fill={PA} stroke={I} strokeWidth={1.6} />
+      {k > 0.3 && Array.from({length: 6}, (_, i) => <path key={i} d={`M104 ${74 - open + i * ((24 + open * 2) / 6)}h${90 - (i % 3) * 14}`} stroke={I} strokeWidth={1.4} opacity={0.5} />)}
+      <path d={`M90 ${64 - open + (36 + open * 2) / 3}h140M90 ${64 - open + (2 * (36 + open * 2)) / 3}h140`} stroke={I} strokeWidth={1} strokeDasharray="4 3" opacity={0.6} />
+      <Hand x={232} y={84} />
+    </>)
+  }
+  if (subject === 'envelope' || subject === 'packet') {
+    // the flap lifts (or the top tears off), and what is inside rises out face down
+    const lift = k * 34
+    const flap = quick ? `M70 50l${180 * Math.min(1, k * 1.6)} 0` : `M70 50L160 ${90 - k * 80}L250 50`
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{table}
+      {k > 0.3 && [0, 1, 2].map(i => <rect key={i} x={110 + i * 34 + (k >= 1 ? i * 8 : 0)} y={56 - lift + i * 3} width={30} height={40} fill={k > 0.7 ? INK.card : P} stroke={I} strokeWidth={1.2} />)}
+      <rect x={70} y={50} width={180} height={80} fill={subject === 'packet' ? P : INK.card} stroke={I} strokeWidth={2} />
+      {subject === 'packet' && <path d="M70 66h180M70 114h180" stroke={PA} strokeWidth={4} opacity={0.8} />}
+      <path d={flap} fill={quick ? 'none' : subject === 'packet' ? m(P, 80, I) : INK.dust} stroke={I} strokeWidth={quick ? 3 : 1.6} strokeDasharray={quick ? '6 4' : undefined} />
+      <Hand x={quick ? 70 + 180 * Math.min(1, k * 1.6) : 160} y={quick ? 46 : 90 - k * 70} />
+    </>)
+  }
+  // a box on a shelf: the lid lifts, the tissue folds back, the scarf comes up
+  return svg(320, 170, <>
+    <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />{table}
+    <rect x={80} y={70} width={160} height={62} fill={INK.card} stroke={I} strokeWidth={2} />
+    <rect x={74} y={58 - k * 40} width={172} height={14} fill={INK.woodDark} stroke={I} strokeWidth={2} transform={`rotate(${-k * 14} 74 ${58 - k * 40})`} />
+    {k > 0.4 && <path d={`M96 72q${30} ${-10 - k * 18} 64 0`} fill={PA} stroke={I} strokeWidth={1} />}
+    {k > 0.6 && <rect x={128} y={74 - k * 50} width={64} height={18} fill={P} stroke={I} strokeWidth={1.4} />}
+    <Hand x={160} y={66 - k * 46} />
+  </>)
+}
+
+/** Tie & wear: the scarf round a neck, the laces on a boot, the band on an arm — loose before, tied after */
+export function Tied({subject, p}: {subject: string; p: number}) {
+  const k = Math.max(0, Math.min(1, p))
+  if (subject === 'laces') {
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />
+      <path d="M60 140c0-40 20-90 70-100h60l10 60c40 4 70 18 70 40z" fill={m(I, 70, PA)} stroke={I} strokeWidth={2} />
+      {[0, 1, 2, 3].map(i => {
+        const y = 56 + i * 16, done = k > i / 4
+        return <path key={i} d={done ? `M140 ${y}l40 10M180 ${y}l-40 10` : `M140 ${y}l-10 ${12 + i * 4}M180 ${y}l12 ${10 + i * 5}`} stroke={PA} strokeWidth={3} strokeLinecap="round" />
+      })}
+      {k >= 1 ? <g><ellipse cx={150} cy={42} rx={16} ry={8} fill="none" stroke={PA} strokeWidth={3} /><ellipse cx={172} cy={42} rx={16} ry={8} fill="none" stroke={PA} strokeWidth={3} /></g>
+        : <path d={`M150 50c-20 ${-10 + k * 10} -30 -4 -40 ${10 - k * 10}M170 50c20 -6 30 4 40 ${14 - k * 14}`} stroke={PA} strokeWidth={3} fill="none" strokeLinecap="round" />}
+      <Hand x={110 + k * 40} y={40} />
+    </>)
+  }
+  if (subject === 'armband') {
+    const y = 130 - k * 70
+    return svg(320, 170, <>
+      <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />
+      <path d="M130 0h60l6 170h-72z" fill={INK.skin} stroke={I} strokeWidth={2} />
+      <path d="M128 0h64l2 24h-68z" fill={m(I, 30, PA)} stroke={I} strokeWidth={1.6} />
+      <rect x={124} y={y} width={74} height={26} fill={P} stroke={I} strokeWidth={2} />
+      {k > 0.4 && <path d={`M138 ${y + 13}h46`} stroke={PA} strokeWidth={5} strokeDasharray="6 4" />}
+      <Hand x={214} y={y + 14} flip />
+    </>)
+  }
+  // the scarf round the neck: the ends hang loose, cross, tuck, and come through the loop
+  const cross = Math.min(1, k * 1.4)
+  return svg(320, 170, <>
+    <rect x={0} y={0} width={320} height={170} fill={m(I, 8, PA)} />
+    <path d="M70 170c0-50 40-70 90-70s90 20 90 70z" fill={INK.cloth} opacity={0.5} stroke={I} strokeWidth={2} />
+    <rect x={142} y={44} width={36} height={56} fill={INK.skin} stroke={I} strokeWidth={2} />
+    <circle cx={160} cy={30} r={26} fill={INK.skin} stroke={I} strokeWidth={2} />
+    <path d="M130 92q30 16 60 0" stroke={P} strokeWidth={16} fill="none" strokeLinecap="round" />
+    <path d={`M136 98c${-6 + cross * 30} 20 ${-4 + cross * 26} 40 ${-14 + cross * 36} 66`} stroke={P} strokeWidth={14} fill="none" strokeLinecap="round" />
+    <path d={`M184 98c${6 - cross * 30} 20 ${4 - cross * 30} 40 ${14 - cross * 40} 66`} stroke={m(P, 85, I)} strokeWidth={14} fill="none" strokeLinecap="round" />
+    {k >= 1 && <circle cx={160} cy={110} r={9} fill={P} stroke={I} strokeWidth={1.6} />}
+    <Hand x={160 + (k < 0.5 ? -30 : 26) * (1 - k)} y={120} />
+  </>)
+}
+
+/** Compare: one of the pair — a sticker, a ticket, a shirt or a sheet — face up, or face down showing its back */
+export function PairCard({subject, down}: {subject: string; down: boolean}) {
+  const face = subject === 'tickets'
+    ? <><rect x={6} y={18} width={68} height={44} fill={PA} stroke={I} strokeWidth={1.6} /><path d="M54 18v44" stroke={I} strokeDasharray="3 3" /><rect x={12} y={26} width={34} height={6} fill={P} /><path d="M12 40h34M12 48h24" stroke={I} strokeWidth={1.4} opacity={0.5} /></>
+    : subject === 'shirts'
+      ? <path d="M22 16l-16 12 8 12 8-4v30h36V36l8 4 8-12-16-12c-4 6-10 8-14 8s-10-2-14-8z" fill={P} stroke={I} strokeWidth={1.6} />
+      : subject === 'record'
+        ? <><rect x={14} y={6} width={52} height={68} fill={PA} stroke={I} strokeWidth={1.6} />{[0, 1, 2, 3, 4].map(i => <path key={i} d={`M22 ${18 + i * 11}h${30 - (i % 2) * 10}`} stroke={I} strokeWidth={1.4} opacity={0.5} />)}</>
+        : <><rect x={14} y={6} width={52} height={68} fill={PA} stroke={I} strokeWidth={1.6} /><rect x={18} y={10} width={44} height={46} fill={m(P, 30, PA)} /><circle cx={40} cy={26} r={8} fill={INK.skin} stroke={I} /><path d="M26 56c0-12 6-16 14-16s14 4 14 16z" fill={P} stroke={I} /></>
+  const back = <><rect x={14} y={6} width={52} height={68} fill={INK.card} stroke={I} strokeWidth={1.6} />{[0, 1, 2].map(i => <path key={i} d={`M22 ${24 + i * 14}h36`} stroke={I} strokeWidth={2} opacity={0.6} />)}</>
+  // the card turns on its upright edge: it narrows to nothing and opens again on the other face
+  return svg(80, 80, <g key={down ? 'back' : 'face'} className={g.turnCard}>{down ? back : face}</g>)
+}

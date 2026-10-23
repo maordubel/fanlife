@@ -7,7 +7,7 @@ import styles from '@/components/clubs/life/life.module.css'
 import type { PlayResult } from '@/lib/life/universal/types'
 
 /** The client half: the real MiniGame for one job, and the verdict it handed back. */
-export function Preview({ style, club, id, age, ids }: { style: CSSProperties; club: string; id: string; age: number; ids: string[] }) {
+export function Preview({ style, club, id, age, ids, scope, people }: { style: CSSProperties; club: string; id: string; age: number; ids: string[]; scope: 'short' | 'full'; people: string[] }) {
   const [result, setResult] = useState<PlayResult | null>(null)
   const [run, setRun] = useState(0)
   return (
@@ -19,7 +19,7 @@ export function Preview({ style, club, id, age, ids }: { style: CSSProperties; c
         <p data-qa-result={result}>Result: {result} · <button type="button" className="min-h-tap" onClick={() => { setResult(null); setRun((n) => n + 1) }}>again</button></p>
       ) : (
         <div style={{ position: 'relative', inlineSize: 'min(100%, 26rem)' }}>
-          <MiniGame key={run} game="carry" id={id} age={age} amount={8} copy={{}} reduced={false} cue={() => {}} onDone={setResult} />
+          <MiniGame key={run} game="carry" id={id} age={age} scope={scope} people={people} amount={8} copy={{}} reduced={false} cue={() => {}} onDone={setResult} />
         </div>
       )}
     </div>

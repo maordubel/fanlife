@@ -189,3 +189,51 @@
 @keyframes drip { from { transform: translateY(-4px); opacity: 1; } to { transform: translateY(14px); opacity: 0; } }
 @keyframes steam { from { opacity: .3; transform: translateY(2px); } to { opacity: .9; transform: translateY(-2px); } }
 @keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+
+/* hands · motion: open & fold, tie & wear — the thing, drawn, that you drag the way the arrow points */
+.motion { position: relative; inline-size: 100%; aspect-ratio: 320 / 170; border: 2px solid var(--l-ink); background: var(--l-paper); touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; overflow: hidden; }
+.motion:active { cursor: grabbing; }
+.motion[data-shake='true'] { animation: shake .24s linear; border-style: dashed; }
+.motionArt { position: absolute; inset: 0; transition: transform .12s ease-out; }
+.motionArt svg { display: block; }
+.arrow { position: absolute; inset-block-start: 8px; inset-inline-end: 10px; display: grid; place-items: center; inline-size: 44px; block-size: 44px; border: 2px solid var(--l-ink); background: var(--l-prime); color: var(--l-on); font-size: 1.5rem; font-weight: 700; animation: nudge 1.1s ease-in-out infinite; }
+.arrow[data-dir='up'] { --nx: 0px; --ny: -6px; }
+.arrow[data-dir='down'] { --nx: 0px; --ny: 6px; }
+.arrow[data-dir='left'] { --nx: -6px; --ny: 0px; }
+.arrow[data-dir='right'] { --nx: 6px; --ny: 0px; }
+.steps { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.steps li { inline-size: 18px; block-size: 6px; background: var(--l-rule); }
+.steps li[data-done='true'] { background: var(--l-ink); }
+.steps li[data-done='now'] { background: var(--l-prime); }
+.hold { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; inline-size: 100%; min-block-size: 56px; padding: 8px 14px; border: 2px solid var(--l-ink); background: var(--l-ground); color: var(--l-ink); font-size: 1.05rem; font-weight: 700; text-align: start; touch-action: manipulation; user-select: none; -webkit-user-select: none; cursor: pointer; overflow: hidden; }
+.hold > span { font-size: 1.4rem; }
+.hold small { grid-column: 2; font-size: .72rem; font-weight: 400; color: var(--l-soft); }
+.hold::after { content: ''; position: absolute; inset-block-end: 0; inset-inline-start: 0; block-size: 4px; inline-size: 0; background: var(--l-prime); }
+.hold[data-holding='true']::after { inline-size: 100%; transition: inline-size var(--hold) linear; }
+.hold:focus-visible, .chip:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 3px; }
+.hold:disabled { color: var(--l-soft); }
+
+/* hands · compare: yours face up, theirs to turn over; two piles below */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; inline-size: 100%; }
+.card { display: grid; justify-items: center; gap: 4px; margin: 0; padding: 8px; border: 2px solid var(--l-ink); background: var(--l-paper); text-align: center; touch-action: none; user-select: none; -webkit-user-select: none; transition: transform .12s ease-out; }
+.card:last-child { cursor: grab; background: color-mix(in srgb, var(--l-ground) 60%, var(--l-paper)); }
+.card[data-flipped='true'] { background: color-mix(in srgb, var(--l-prime) 8%, var(--l-paper)); }
+.cardArt { display: block; inline-size: 72px; block-size: 72px; }
+.turnCard { transform-box: fill-box; transform-origin: center; animation: turnCard .32s ease-out both; }
+@keyframes turnCard { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+.card figcaption { font-size: .82rem; font-weight: 700; min-block-size: 2.4em; }
+.target[data-compact='true'] { min-block-size: 72px; }
+.chit { display: block; inline-size: 14px; block-size: 18px; border: 1px solid var(--l-ink); background: var(--l-paper); }
+.chip { min-block-size: 44px; padding: 6px 14px; border: 2px solid var(--l-ink); background: var(--l-paper); color: var(--l-ink); font-weight: 700; cursor: pointer; touch-action: manipulation; }
+.chip[aria-pressed='true'] { background: var(--l-ink); color: var(--l-paper); }
+.chip:disabled { color: var(--l-soft); background: var(--l-ground); }
+
+/* hands · frame: how you frame them */
+.framing { display: flex; gap: 8px; }
+.photo[data-framing='wide'] { padding-inline: 36px; background: linear-gradient(to top, color-mix(in srgb, var(--l-ink) 18%, var(--l-ground)) 0 22%, color-mix(in srgb, var(--l-ground) 70%, var(--l-paper)) 22%); }
+.photo[data-framing='wide'] .person { max-inline-size: 52px; }
+.photo[data-framing='close'] .person { max-inline-size: 84px; }
+
+@keyframes nudge { 50% { transform: translate(var(--nx), var(--ny)); } }
+[data-still='true'] .turnCard, [data-still='true'] .arrow, [data-still='true'] .motionArt, [data-still='true'] .card, [data-still='true'] .motion { animation: none; transition: none; }
+@media (prefers-reduced-motion: reduce) { .turnCard, .arrow, .motionArt, .card, .motion, .hold[data-holding='true']::after { animation: none; transition: none; } }

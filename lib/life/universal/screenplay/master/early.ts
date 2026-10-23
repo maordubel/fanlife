@@ -232,10 +232,10 @@ export const MASTER_EARLY: ChapterScript[] = [
         action: [s(null, 'What is inside will be exactly what is inside. Nothing more, nothing as a punishment.', 'מה שבפנים יהיה בדיוק מה שבפנים. לא יותר, ולא כעונש.')],
         options: [
           o('careful', t('Open it carefully', 'לפתוח בזהירות'), s('friend', 'Slow! Look at each one before you turn it. Who is that, where is it from?', 'לאט! תסתכל על כל אחד לפני שאתה הופך. מי זה, מאיפה זה?'),
-            [flag('life:master:F06:open', 'careful'), heart(2), hands('count', 'packet-open')],
+            [flag('life:master:F06:open', 'careful'), heart(2), hands('carry', 'packet-open')],
             {action: [s(null, 'The tab gives. One by one, face down, then turned. Two of them you already have; you put those to one side.', 'הלשונית נכנעת. אחד אחד, עם הפנים למטה, ואז הופכים. שניים מהם כבר יש לך; אתה שם אותם בצד.')]}),
           o('quick', t('Tear it open, or mix the page up', 'לקרוע מהר או לערבב את הדף'), s('friend', 'Ha! Everything on the bench. Pick them up, pick them up, nobody sit down.', 'הא! הכול על הספסל. תאסוף, תאסוף, אף אחד לא יושב.'),
-            [flag('life:master:F06:open', 'quick'), energy(-5), bond('friend', 2), hands('clap', 'packet-tear')]),
+            [flag('life:master:F06:open', 'quick'), energy(-5), bond('friend', 2), hands('carry', 'packet-tear')]),
           o('later', t('Keep it closed for now', 'להשאיר סגור לעכשיו'), s('friend', 'You are going to wait? Who waits? Fine, I will not look. I will look.', 'אתה מחכה? מי מחכה? בסדר, לא אסתכל. אסתכל.'),
             [flag('life:master:F06:open', 'sealed'), bond('friend', 1)]),
         ],
