@@ -7,6 +7,7 @@ import {describe, expect, it} from 'vitest'
 import {artefactOf, worldArtefacts} from '@/lib/life/universal/artefacts'
 import {apply, emptyState, fold} from '@/lib/life/universal/engine'
 import type {LifeEvent} from '@/lib/life/universal/types'
+import {ROOMS} from '@/lib/life/universal/rooms'
 
 const src = (p: string) => readFileSync(p, 'utf8')
 
@@ -66,10 +67,19 @@ describe('what the room is told', () => {
     expect(src('public/life/town/kit.js')).toMatch(/ARTEFACTS\.place\(c,id,opts\.made\|\|\[\]\)/)
     expect(src('public/life/town/play.html')).toMatch(/\/life\/town\/artefacts\.js/)
   })
+  it('the stands carry them where the camera reads them: the front rail above the walkway, and a scarf tied to it', () => {
+    for (const id of ['terrace', 'away-end'] as const) {
+      const r = ROOMS[id]!, rail = r.spots.rail!, scarf = r.spots.scarf!
+      expect(rail && scarf).toBeTruthy()
+      // above a standing supporter's head (≈1.8 m) and on the stand's front line, inside the room's width
+      for (const s of [rail, scarf]) { expect(s.y! * 0.27).toBeGreaterThan(2.6); expect(s.z).toBeLessThan(r.walk[1] + 0.6); expect(s.x).toBeGreaterThanOrEqual(r.walk[0]); expect(s.x).toBeLessThanOrEqual(r.walk[2]) }
+    }
+    expect(src('public/life/town/artefacts.js')).toMatch(/c\.spot\('rail'\)/)
+  })
   it('TOWN paints them only in the club\'s own colours', () => {
     const js = src('public/life/town/artefacts.js')
     const hex = js.match(/#[0-9a-f]{6}\b/gi) ?? []
     // the only literals are the fallbacks for a room with no club kit and two neutrals (a hook, a dull streak)
-    for (const h of hex) expect(['#8a2a2a', '#f4f1ff', '#14141c', '#4e4440', '#3a3230', '#8a7e74', '#3a3430', '#8a847c']).toContain(h.toLowerCase())
+    for (const h of hex) expect(['#8a2a2a', '#f4f1ff', '#14141c', '#4e4440', '#3a3230', '#8a7e74', '#3a3430', '#8a847c', '#2a2e3a']).toContain(h.toLowerCase())
   })
 })

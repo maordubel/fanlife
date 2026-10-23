@@ -48,20 +48,34 @@ function poster(c,a,K){var T=c.T,cv=canvas(256,360),k=cv.getContext('2d');k.fill
 
 /* the crew's banner: the club's colour, its short name, and the second letter painted through a stencil that slipped —
    kept crooked, painted over straight, or with the mate's star beside it, as the crew decided */
-function banner(c,a,K){var s=c.spot('banner');if(!s)return false;var T=c.T,cv=canvas(512,160),k=cv.getContext('2d');k.fillStyle=K.a;k.fillRect(0,0,512,160);
+function banner(c,a,K){var s=c.spot('rail')||c.spot('banner');if(!s)return false;var T=c.T,cv=canvas(512,160),k=cv.getContext('2d');k.fillStyle=K.a;k.fillRect(0,0,512,160);
  var word=(K.SHORT||'FC').slice(0,6),n=word.length,step=440/Math.max(n,1);k.fillStyle=K.s;k.font='900 104px Arial';k.textAlign='center';k.textBaseline='middle';
  var crooked=has(a,'crooked-stroke'),over=has(a,'painted-over'),bad=Math.min(1,n-1);
  for(var i=0;i<n;i++){var x=36+step*(i+.5);k.save();k.translate(x,82);
-  if(i===bad&&crooked&&!over){k.rotate(-.16);k.translate(7,-5)}
+  if(i===bad&&crooked&&!over){k.rotate(-.24);k.translate(10,-8)}
   /* kit.js fits text to the canvas from x; a letter drawn at a translated origin says its own width */
   k.fillText(word[i],0,0,step);k.restore()}
  if(over){k.fillStyle=K.am;k.globalAlpha=.55;k.fillRect(36+step*bad,18,step,128);k.globalAlpha=1;k.fillStyle=K.s;k.fillText(word[bad],36+step*(bad+.5),82,step)}
  if(has(a,'own-star')){var sx=36+step*(bad+1)-8,sy=34;k.fillStyle=K.s;k.beginPath();for(i=0;i<10;i++){var r=i%2?7:16,an=-Math.PI/2+i*Math.PI/5;k.lineTo(sx+r*Math.cos(an),sy+r*Math.sin(an))}k.closePath();k.fill()}
- var pl=tag(c.mesh(new T.PlaneGeometry(12,3.75,8,1),cloth(c,cv),s.x,s.y+.6,s.z+.4,c.g),a);pl.castShadow=false}
+ /* hung from the stand's front rail (`rail` spot = the rail top), in front of the first rows and above the walkway's
+    heads, facing the pitch where the default camera stands: a bar, two ties, the cloth sagging a little */
+ var W=16.4,Hh=5.2,g=tag(new T.Group(),a);g.position.set(s.x,s.y,s.z);c.g.add(g);
+ var cl=c.mesh(new T.PlaneGeometry(W,Hh,10,2),cloth(c,cv),0,-Hh/2-.15,0,g);cl.castShadow=false;
+ var ps=cl.geometry.attributes.position;for(var j=0;j<ps.count;j++){var u=ps.getX(j)/(W/2);ps.setZ(j,.18*(1-u*u)*(.5-ps.getY(j)/Hh))}ps.needsUpdate=true;cl.geometry.computeVertexNormals();
+ c.mesh(new T.CylinderGeometry(.09,.09,W+.8,8),c.std('#2a2e3a',{metalness:.5,roughness:.5}),0,0,-.05,g).rotation.z=Math.PI/2;
+ [-W/2+.5,W/2-.5].forEach(function(x){c.mesh(new T.BoxGeometry(.22,.5,.12),c.std(K.t,{roughness:.9}),x,-.2,.04,g)})}
+
+/* on match day the scarf goes with him: tied to the same rail, hanging straight, the patch out */
+function railScarf(c,a,K){var s=c.spot('scarf');if(!s)return false;var T=c.T,cv=canvas(64,512),k=cv.getContext('2d');
+ for(var i=0;i<8;i++){k.fillStyle=i%2?K.s:K.a;k.fillRect(0,i*64,64,64)}
+ if(has(a,'patch')){k.fillStyle=K.add;k.fillRect(10,200,44,58);k.strokeStyle=K.s;k.lineWidth=2;k.setLineDash([4,4]);k.strokeRect(10,200,44,58)}
+ var g=tag(new T.Group(),a);g.position.set(s.x,s.y,s.z);c.g.add(g);
+ c.mesh(new T.BoxGeometry(1.3,.32,.3),c.std(K.a,{roughness:.95}),0,-.1,.05,g);
+ var pl=c.mesh(new T.PlaneGeometry(1.1,5.6,1,6),cloth(c,cv),0,-2.95,.12,g);pl.rotation.z=.04;pl.castShadow=false}
 
 window.ARTEFACTS={place:function(c,id,made){if(!made||!made.length||!c||!c.T)return 0;var K=window.__CK||{a:'#8a2a2a',s:'#f4f1ff',t:'#14141c',ad:'#4e4440',add:'#3a3230',am:'#8a7e74',SHORT:'FC',Name:'FC'},n=0;
  made.forEach(function(a){try{
-  var f=a.kind==='car'&&STREETS[id]?car:a.kind==='scarf'&&HOMES[id]?scarf:a.kind==='poster'&&HOMES[id]?poster:a.kind==='banner'&&STANDS[id]?banner:null;
+  var f=a.kind==='car'&&STREETS[id]?car:a.kind==='scarf'&&HOMES[id]?scarf:a.kind==='scarf'&&STANDS[id]?railScarf:a.kind==='poster'&&HOMES[id]?poster:a.kind==='banner'&&STANDS[id]?banner:null;
   if(f&&f(c,a,K)!==false)n++
  }catch(e){/* a thing that cannot be drawn here is not drawn; the room itself never fails for it */}});
  window.__artefacts={room:id,drawn:n};return n}};
