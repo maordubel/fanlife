@@ -135,7 +135,13 @@ export type MissionSpec = {
   brief: string
   /** which version of the quest the script asked for (`quest.ts`): the same template, other steps — a boy leading his father, a man leading his own child */
   beat?: string | null
+  /** the person a find mission is looking for, when the player already knows him: his own look, so the father in
+   *  the crowd is the father from the kitchen (LIFE's cast, read in `call.ts`). Absent = somebody the script invents. */
+  who?: KnownLook | null
 }
+
+/** A known person's look, in RUSH's own terms: the traits a clue can name, and the colours he is drawn in. */
+export type KnownLook = {role: string; cap: boolean; scarf: boolean; kit: boolean; beard: boolean; tall: boolean; grey: boolean; hex: {skin?: string; hair?: string; top?: string; pants?: string}}
 
 /** How a mission ended. `ok` = finished with help, skipped, or late but there. */
 export type MissionOutcome = 'good' | 'ok' | 'slip'

@@ -461,10 +461,14 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const im = new THREE.InstancedMesh(m.geometry, mat, N); im.frustumCulled = false; im.castShadow = !lite; scene.add(im); return im
   })
   const tops = allowed(TOPS, skin)
+  /** a known person keeps his own hair colour; grey hair is the palette's grey, so the clue matches what is drawn */
+  const hairOf = (L: Look) => L.grey ? HAIR[4] : L.hex?.hair ?? HAIR[L.hair % HAIR.length]
+  // a known person's own colours, except one the club's page may not show (rival bans apply to every pixel)
+  for (const p of level.targets) if (p.look?.hex) p.look.hex = Object.fromEntries(Object.entries(p.look.hex).filter(([, h]) => h && !bannedColour(h, skin)))
   people.forEach((p, i) => tParts.forEach((m, k) => {
     const r = m.userData.role as string
     const rival = p.mode === 'rival'
-    const col = r === 'skin' ? SKIN_TONES[p.look.tone % SKIN_TONES.length] : r === 'hair' || r === 'beard' ? HAIR[p.look.hair % HAIR.length] : r === 'pants' ? PANTS[p.look.pants % PANTS.length] : r === 'top' ? (rival ? '#1d1f24' : tops[p.look.top % tops.length]) : null
+    const col = r === 'skin' ? (p.look.hex?.skin ?? SKIN_TONES[p.look.tone % SKIN_TONES.length]) : r === 'hair' || r === 'beard' ? hairOf(p.look) : r === 'pants' ? (p.look.hex?.pants ?? PANTS[p.look.pants % PANTS.length]) : r === 'top' ? (rival ? '#1d1f24' : p.look.hex?.top ?? tops[p.look.top % tops.length]) : null
     if (col) crowd[k]!.setColorAt(i, C(col))
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
@@ -473,7 +477,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /* ───────────── the quest: who waits for you, what lies on the ground, where to go next ───────────── */
   const rlook = (o: Partial<Look> = {}): Look => ({tone: Math.floor(rnd() * 6), hair: Math.floor(rnd() * 6), top: Math.floor(rnd() * 6), pants: Math.floor(rnd() * 5), kit: rnd() < 0.8, cap: rnd() < 0.2, scarf: true, beard: rnd() < 0.2, size: 0.95 + rnd() * 0.1, ...o})
-  const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => figOf({kit: L.kit, scarf: L.scarf, cap: L.cap, mustache: L.beard, hair: HAIR[L.hair % HAIR.length], skinTone: SKIN_TONES[L.tone % SKIN_TONES.length], top: tops[L.top % tops.length], pants: PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK, ...o})
+  const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => figOf({kit: L.kit, scarf: L.scarf, cap: L.cap, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK, ...o})
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []

@@ -14,7 +14,7 @@
  *
  * Distances are metres, times seconds. Forward is −z.
  */
-import type {MissionSpec, Verb} from './spec'
+import type {KnownLook, MissionSpec, Verb} from './spec'
 import {applyQuest} from './quest'
 
 /* ───────────── seeded randomness ───────────── */
@@ -34,7 +34,7 @@ export function rng(seed: number): () => number {
 export type Place = 'street' | 'road' | 'yard' | 'crowd'
 
 /** how a person looks: indexes into the renderer's palettes, so the sim never carries a colour */
-export type Look = {tone: number; hair: number; top: number; pants: number; kit: boolean; cap: boolean; scarf: boolean; beard: boolean; size: number}
+export type Look = {tone: number; hair: number; top: number; pants: number; kit: boolean; cap: boolean; scarf: boolean; beard: boolean; size: number; /** a known person's own colours, over the palette */ hex?: KnownLook['hex']; grey?: boolean}
 
 /** a car on a fixed line: across a crossing (`x`) or along the road (`z`) */
 export type Car = {axis: 'x' | 'z'; lane: number; dir: 1 | -1; v: number; p0: number; span: readonly [number, number]; len: number; wid: number; police: boolean; colour: number}
@@ -46,7 +46,7 @@ export type Stander = {x: number; z: number; face: number; look: Look; role: 'fa
 export type Patrol = {pts: readonly (readonly [number, number])[]; v: number; range: number; fov: number; role: 'steward' | 'lookout'}
 /** what a find mission is looking for */
 export type Target = {x: number; z: number; kind: 'person' | 'spot'; look: Look | null; clues: Clue[]}
-export type Clue = 'cap' | 'scarf' | 'kit' | 'plain' | 'beard' | 'tall' | 'barrier' | 'light'
+export type Clue = 'cap' | 'scarf' | 'kit' | 'plain' | 'beard' | 'tall' | 'grey' | 'black' | 'barrier' | 'light'
 /** somebody in the other lot throwing what they hold (ultras route only): a throw every `every` seconds */
 export type Thrower = {x: number; z: number; every: number; offset: number}
 /** a stretch of road where the police want you slow */
@@ -286,8 +286,20 @@ function yard(spec: MissionSpec, r: () => number): Level {
   })
 }
 
+/** dressed in black: a known man's own top, darker than anything the crowd is dealt (the crowd carries no colour of its own) */
+const inBlack = (hex?: string): boolean => {
+  if (!hex || !/^#[0-9a-f]{6}$/i.test(hex)) return false
+  const v = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+  return 0.2126 * v[0]! + 0.7152 * v[1]! + 0.0722 * v[2]! < 0.14
+}
 const PERSON_CLUES: readonly Clue[][] = [['cap', 'scarf'], ['kit', 'beard'], ['plain', 'cap'], ['scarf', 'beard'], ['kit', 'tall'], ['plain', 'scarf']]
-const matches = (l: Look, c: Clue): boolean => c === 'cap' ? l.cap : c === 'scarf' ? l.scarf : c === 'kit' ? l.kit : c === 'plain' ? !l.kit : c === 'beard' ? l.beard : c === 'tall' ? l.size > 1.04 : false
+const matches = (l: Look, c: Clue): boolean => c === 'cap' ? l.cap : c === 'scarf' ? l.scarf : c === 'kit' ? l.kit : c === 'plain' ? !l.kit : c === 'beard' ? l.beard : c === 'tall' ? l.size > 1.04 : c === 'grey' ? !!l.grey : c === 'black' ? inBlack(l.hex?.top) : false
+/** the clue that is true of somebody the player already knows, most telling first: what you would shout across a crowd */
+const KNOWN_ORDER: readonly Clue[] = ['grey', 'cap', 'beard', 'tall', 'scarf', 'black', 'kit', 'plain']
+function knownClues(w: KnownLook): Clue[] {
+  const has = (c: Clue) => c === 'grey' ? w.grey : c === 'cap' ? w.cap : c === 'beard' ? w.beard : c === 'tall' ? w.tall : c === 'scarf' ? w.scarf : c === 'black' ? !w.kit && inBlack(w.hex.top) : c === 'kit' ? w.kit : !w.kit
+  return KNOWN_ORDER.filter(has).slice(0, 2)
+}
 
 function crowd(spec: MissionSpec, r: () => number): Level {
   const W = 16, Z = -44, spot = spec.template === 'where-you-stood'
@@ -298,15 +310,20 @@ function crowd(spec: MissionSpec, r: () => number): Level {
     // the place he always stood: by a crush barrier, under the floodlight — the level marks it, the words describe it
     targets.push({x: Math.round((r() - 0.5) * 18), z: Z + 6 + Math.round(r() * 8), kind: 'spot', look: null, clues: ['barrier', 'light']})
   } else {
-    const clues = PERSON_CLUES[Math.floor(r() * PERSON_CLUES.length)]!
+    // the same draws are made either way, so a known face changes nothing else in the level
+    const picked = PERSON_CLUES[Math.floor(r() * PERSON_CLUES.length)]!
+    const known = spec.who ?? null, own = known ? knownClues(known) : []
+    const clues = own.length === 2 ? own : picked
     const want: Partial<Look> = {}
-    for (const c of clues) Object.assign(want, c === 'cap' ? {cap: true} : c === 'scarf' ? {scarf: true} : c === 'kit' ? {kit: true} : c === 'plain' ? {kit: false} : c === 'beard' ? {beard: true} : {size: 1.08})
-    const who = look(r, want)
+    for (const c of clues) Object.assign(want, c === 'cap' ? {cap: true} : c === 'scarf' ? {scarf: true} : c === 'kit' ? {kit: true} : c === 'plain' ? {kit: false} : c === 'beard' ? {beard: true} : c === 'grey' ? {grey: true} : c === 'black' ? {} : {size: 1.08})
+    const drawn = look(r, want)
+    // somebody the player knows wears what he always wears: every trait and colour is his, not only the two clues
+    const who: Look = known && own.length === 2 ? {...drawn, cap: known.cap, scarf: known.scarf, kit: known.kit, beard: known.beard, grey: known.grey, size: known.tall ? 1.08 : 0.99, hex: known.hex} : drawn
     targets.push({x: Math.round((r() - 0.5) * 20), z: Z + 4 + Math.round(r() * 14), kind: 'person', look: who, clues: [...clues]})
     // exactly one person in the crowd answers every clue: anybody else who does loses one of them
     for (const s of standers) if (clues.every(c => matches(s.look, c))) {
       const c = clues[0]!
-      s.look = {...s.look, ...(c === 'cap' ? {cap: false} : c === 'scarf' ? {scarf: false} : c === 'kit' ? {kit: false} : c === 'plain' ? {kit: true} : c === 'beard' ? {beard: false} : {size: 0.98})}
+      s.look = {...s.look, ...(c === 'cap' ? {cap: false} : c === 'scarf' ? {scarf: false} : c === 'kit' ? {kit: false} : c === 'plain' ? {kit: true} : c === 'beard' ? {beard: false} : c === 'grey' ? {grey: false} : c === 'black' ? {} : {size: 0.98})}
     }
   }
   // nobody stands on top of anybody, and the one you came for has room round him

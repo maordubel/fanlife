@@ -41,7 +41,7 @@ const EN = {
   'sneak.1': 'They look where they walk. Walk where they don’t.', 'sneak.2': 'The gap. Now.',
   'steal.1': 'Their storeroom. Quiet.', 'steal.2': 'Hands on it.',
   // clues
-  'clue.cap': 'a cap', 'clue.scarf': 'a scarf', 'clue.kit': 'the shirt', 'clue.plain': 'no shirt, a plain top', 'clue.beard': 'a beard', 'clue.tall': 'taller than the rest',
+  'clue.cap': 'a cap', 'clue.scarf': 'a scarf', 'clue.kit': 'the shirt', 'clue.plain': 'no shirt, a plain top', 'clue.beard': 'a beard', 'clue.tall': 'taller than the rest', 'clue.grey': 'grey hair', 'clue.black': 'dressed in black',
   'clue.barrier': 'by a crush barrier', 'clue.light': 'under the floodlight',
   // the quest (RUSH 2): objectives
   'obj.friend': 'Meet your mate at the corner', 'obj.ticket': 'Buy the ticket at the kiosk', 'obj.gate': 'To {gate}',
@@ -126,7 +126,7 @@ const HE: Record<RushKey, string> = {
   'drive.1': 'דרך ארוכה. מיכל מלא, בטן ריקה.', 'drive.2': 'מישהו מאחורה כבר שר.', 'drive.3': 'לאט במחסומים.', 'drive.4': 'זרקורים. הגענו עד כאן.',
   'sneak.1': 'הם מסתכלים לאן שהם הולכים. תלך לאן שהם לא.', 'sneak.2': 'הפרצה. עכשיו.',
   'steal.1': 'המחסן שלהם. בשקט.', 'steal.2': 'ידיים עליו.',
-  'clue.cap': 'כובע', 'clue.scarf': 'צעיף', 'clue.kit': 'החולצה', 'clue.plain': 'בלי חולצה, בגד פשוט', 'clue.beard': 'זקן', 'clue.tall': 'גבוה מכולם',
+  'clue.cap': 'כובע', 'clue.scarf': 'צעיף', 'clue.kit': 'החולצה', 'clue.plain': 'בלי חולצה, בגד פשוט', 'clue.beard': 'זקן', 'clue.tall': 'גבוה מכולם', 'clue.grey': 'שיער אפור', 'clue.black': 'לבוש שחור',
   'clue.barrier': 'ליד מעקה', 'clue.light': 'מתחת לזרקור',
   'obj.friend': 'לפגוש את החבר בפינה', 'obj.ticket': 'לקנות כרטיס בקיוסק', 'obj.gate': 'אל {gate}',
   'obj.bag': 'לקחת את התיק', 'obj.window': 'אשנב הכרטיסים', 'obj.platform': 'אל האוטובוס',
