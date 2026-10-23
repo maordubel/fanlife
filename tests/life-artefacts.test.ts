@@ -69,7 +69,7 @@ describe('what the room is told', () => {
   })
   it('the stands carry them where the camera reads them: the front rail above the walkway, and a scarf tied to it', () => {
     for (const id of ['terrace', 'away-end'] as const) {
-      const r = ROOMS[id], rail = r.spots.rail!, scarf = r.spots.scarf!
+      const r = ROOMS[id]!, rail = r.spots.rail!, scarf = r.spots.scarf!
       expect(rail && scarf).toBeTruthy()
       // above a standing supporter's head (≈1.8 m) and on the stand's front line, inside the room's width
       for (const s of [rail, scarf]) { expect(s.y! * 0.27).toBeGreaterThan(2.6); expect(s.z).toBeLessThan(r.walk[1] + 0.6); expect(s.x).toBeGreaterThanOrEqual(r.walk[0]); expect(s.x).toBeLessThanOrEqual(r.walk[2]) }
