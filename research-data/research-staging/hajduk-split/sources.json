@@ -8,10 +8,10 @@
   "sourceFamilyId": "torcida-split",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-10-23",
-  "retrievedAt": "2026-10-23T08:51:35.225Z",
+  "checkedAt": "2026-10-24",
+  "retrievedAt": "2026-10-24T08:25:35.499Z",
   "collected": {
-   "documents": 317,
+   "documents": 417,
    "observedTotalDocuments": 657,
    "state": "partial_budget",
    "parser": null
@@ -29,10 +29,10 @@
   "sourceFamilyId": "torcida-split",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-10-23",
-  "retrievedAt": "2026-10-23T08:51:35.225Z",
+  "checkedAt": "2026-10-24",
+  "retrievedAt": "2026-10-24T08:25:35.499Z",
   "collected": {
-   "documents": 317,
+   "documents": 417,
    "observedTotalDocuments": 17,
    "state": "listed",
    "parser": null
@@ -50,8 +50,8 @@
   "sourceFamilyId": "wikimedia",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-10-23",
-  "retrievedAt": "2026-10-23T08:51:35.225Z",
+  "checkedAt": "2026-10-24",
+  "retrievedAt": "2026-10-24T08:25:35.499Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,

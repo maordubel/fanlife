@@ -37,6 +37,15 @@
     "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
     "fetchedAt": "2026-10-23T08:52:17.089Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/22/lage-am-millerntor-22-05-2020/",
+    "locator": "p26",
+    "quote": "Zur detaillierteren Vorbereitung empfehlen wir nochmals das „Vor dem Spiel“-Gespräch von Yannick mit Daniel vom Hoch und Weit-Podcast und unser neues YouTube-Format, die „Wochenschau“ (30min).",
+    "bodyHash": "ad4f6ce8715b060d54d3bcc82b40a2ad239c3923b53704eda6f02ae47da93483",
+    "fetchedAt": "2026-10-24T08:26:11.356Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -44,8 +53,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:52:17.089Z",
-  "updatedAt": "2026-10-23T08:52:17.089Z"
+  "createdAt": "2026-10-24T08:26:11.356Z",
+  "updatedAt": "2026-10-24T08:26:11.356Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -97,6 +106,15 @@
     "bodyHash": "cdf5bf55ac162bc247b7976329919076ea3558406d59be84725f7bb16c9e980f",
     "fetchedAt": "2026-10-23T08:52:17.087Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/07/03/konzeptarbeit-datengetriebenes-scouting-im-fussball/",
+    "locator": "p72",
+    "quote": "Ein ganz zentraler Skill. Und in vielen Medien wird auch immer wieder mit Maximalgeschwindigkeiten hantiert. Das ist so richtig wie falsch. Denn was sagen uns schon die Maximalgeschwindigkeiten, wenn es viel wichtigere Werte im Bereich der Geschwindigkeit gibt? Ich persönlich würde beim Scouting z.B. viel mehr darauf achten, was ein Spieler auf den ersten 5, 10 und 25 Metern leisten kann, wie gut er beschleunigt. Denn wie oft werden Spieler pro Spiel überhaupt ihre maximal abrufbare Geschwindigkeit erreichen (müssen)? Eher selten. Aber kurze Beschleunigungen sind oft gefragt und daher wichtig ",
+    "bodyHash": "8f92c685f639bc475597e1485f39c0aac83bc4b27d3b9c629ca287103057b674",
+    "fetchedAt": "2026-10-24T08:26:13.810Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -104,8 +122,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:52:17.087Z",
-  "updatedAt": "2026-10-23T08:52:17.087Z"
+  "createdAt": "2026-10-24T08:26:13.810Z",
+  "updatedAt": "2026-10-24T08:26:13.810Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -157,6 +175,15 @@
     "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
     "fetchedAt": "2026-10-23T08:52:17.089Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/25/lage-am-millerntor-25-05-2020/",
+    "locator": "p29",
+    "quote": "Vereinsboss Mark Palios erzählt nun im Guardian Video (10min) wie er den Virus nicht einfach über sich und seinen Verein ergehen ließ, sondern liegen gelassene Projekte anpackte und sich Gedanken über die Rolle des Vereins für die Stadt und die wirtschaftliche Situation des Profifußball im Allgemeinen machte.",
+    "bodyHash": "e99d499dcf0bdb14e8e18aa04783cb93170d5d7f544a13c3dd3a059cc5f63354",
+    "fetchedAt": "2026-10-24T08:26:11.356Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -164,8 +191,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:52:17.089Z",
-  "updatedAt": "2026-10-23T08:52:17.089Z"
+  "createdAt": "2026-10-24T08:26:11.356Z",
+  "updatedAt": "2026-10-24T08:26:11.356Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -217,6 +244,15 @@
     "bodyHash": "d66330fe44da29a0bad37eee84190e8f8f3f0a20efb98556d784ebe09ea78f56",
     "fetchedAt": "2026-10-23T08:52:20.339Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/19/lage-am-millerntor-19-05-2020/",
+    "locator": "p30",
+    "quote": "Und wo wir gerade dabei sind, noch ein Interview mit unserem Ex-Präsidenten Reenald Koch (Eintracht Norderstedt) beim Kicker (4min), in dem er für eine zweigleisige 3.Liga wirbt.",
+    "bodyHash": "0161bf1b8109e0a91d371d5e625147ef7d4295b1ca2c06f528f98cacd6b97dd0",
+    "fetchedAt": "2026-10-24T08:26:08.823Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -224,7 +260,367 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:52:20.339Z",
-  "updatedAt": "2026-10-23T08:52:20.339Z"
+  "createdAt": "2026-10-24T08:26:08.823Z",
+  "updatedAt": "2026-10-24T08:26:08.823Z"
+ },
+ {
+  "id": "ga-d9e05cc99bd5657b",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "17",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/04/28/lage-am-millerntor-04-05-2020-kw19/",
+    "locator": "p17",
+    "quote": "Zunächst gibt es gleich zwei neue Beiträge beim NDR: Ewald Lienen gibt im Video-Interview (17min) seine Lehren aus der Corona-Krise für den Fußball preis, dabei wird wie immer recht offen gesprochen.",
+    "bodyHash": "07106c4544d53c49496a89231050328ca3e28fe752ba3ab345d52878c872d16c",
+    "fetchedAt": "2026-10-24T08:26:08.805Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:08.805Z",
+  "updatedAt": "2026-10-24T08:26:08.805Z"
+ },
+ {
+  "id": "ga-39c9baa061395123",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "8",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/12/lage-am-millerntor-12-05-2020/",
+    "locator": "p30",
+    "quote": "Waldhof Mannheim hat schon mal gesagt, dass das Hygienekonzept „kaum einzuhalten“ (DLF, Sport Aktuell, 8min) sei. Unter anderem kritisiert er, dass das damals abgefragte Meinungsbild unter den Vereinen unter falschen Voraussetzungen eingeholt worden sei, die jetzt tatsächlich anfallenden Kosten werden viel höher sein, er fordert daher eine neue Abstimmung.",
+    "bodyHash": "08031f708ac541939c61c158b3f5638667cfaa1f3b0f0c2a78a201372aa15cc7",
+    "fetchedAt": "2026-10-24T08:26:08.815Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:08.815Z",
+  "updatedAt": "2026-10-24T08:26:08.815Z"
+ },
+ {
+  "id": "ga-f0288a576187c45b",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "41",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/12/lage-am-millerntor-12-05-2020/",
+    "locator": "p36",
+    "quote": "Ist der Neustart der Bundesliga richtig? (41min)",
+    "bodyHash": "08031f708ac541939c61c158b3f5638667cfaa1f3b0f0c2a78a201372aa15cc7",
+    "fetchedAt": "2026-10-24T08:26:08.815Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:08.815Z",
+  "updatedAt": "2026-10-24T08:26:08.815Z"
+ },
+ {
+  "id": "ga-c0999359c4ca2350",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "18",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/14/lage-am-millerntor-14-05-2020/",
+    "locator": "p8",
+    "quote": "Und ähnliche Formate gibt es ja auch bei anderen Vereinen, daher verweisen wir umgekehrt auf das „Total Beglubbt“ Gespräch von Felix und Elo (18min).",
+    "bodyHash": "997f27f8b95f6666bed69eb53e5900e68d5d93e55e8543906e84d4ae9d48e488",
+    "fetchedAt": "2026-10-24T08:26:08.818Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:08.818Z",
+  "updatedAt": "2026-10-24T08:26:08.818Z"
+ },
+ {
+  "id": "ga-978d8f0184b404d5",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "60",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/14/lage-am-millerntor-14-05-2020/",
+    "locator": "p16",
+    "quote": "Unter anderem wird dort natürlich auch über Dynamo Dresden gesprochen, welches sich bekanntlich in Quarantäne befindet und damit eine „Herausforderung“ für den Spielplan der DFL darstellt. Näheres dazu, wie die DFL damit umgehen will, werden wir hoffentlich dann heute im Verlauf des Tages nach der DFL Versammlung erfahren – gestern jedenfalls hat sich Dynamo selbst schon mal an die Öffentlichkeit gewandt. ( YouTube, 60min oder in der Kicker Zusammenfassung ).",
+    "bodyHash": "997f27f8b95f6666bed69eb53e5900e68d5d93e55e8543906e84d4ae9d48e488",
+    "fetchedAt": "2026-10-24T08:26:08.818Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:08.818Z",
+  "updatedAt": "2026-10-24T08:26:08.818Z"
+ },
+ {
+  "id": "ga-c76513ad6243ab28",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "2",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/19/lage-am-millerntor-19-05-2020/",
+    "locator": "p10",
+    "quote": "Der NDR hat außerdem einen Kurzbericht (2 Min) darüber veröffentlicht, wie im Viertel das Spiel verfolgt wurde, Danke an Thomas für den Link gestern in den Kommentaren.",
+    "bodyHash": "0161bf1b8109e0a91d371d5e625147ef7d4295b1ca2c06f528f98cacd6b97dd0",
+    "fetchedAt": "2026-10-24T08:26:08.823Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:08.823Z",
+  "updatedAt": "2026-10-24T08:26:08.823Z"
+ },
+ {
+  "id": "ga-215c67467d8ebaef",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "6",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/05/28/lage-am-millerntor-28-05-2020/",
+    "locator": "p17",
+    "quote": "Apropos: Daniela Wurbs war virtuell bei Mara Pfeiffer (Wortpiratin) zu Gast und hat in einem kurzen Video (6min) das Projekt „KickIn – Beratungsstelle Inklusion im Fußball“ vorgestellt und auch noch was zu FSE (Football Supporters Europe) erzählt:",
+    "bodyHash": "6882b17cc01eff180f9f173db387b20594063ea347ba68a740613e24535b0978",
+    "fetchedAt": "2026-10-24T08:26:11.359Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:11.359Z",
+  "updatedAt": "2026-10-24T08:26:11.359Z"
+ },
+ {
+  "id": "ga-c93874bb8f6fd490",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "58",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/07/07/lage-am-millerntor-07-juli-2020/",
+    "locator": "p8",
+    "quote": "Und (in Ermangelung von Zeit leider ohne es bisher selbst gehört zu haben): Jan-Philipp Kalla war beim NDR „Anstuss-Podcast “ zu Gast (58min).",
+    "bodyHash": "aa37abf9a4b915519d3c64f05ca3f9e9c7ca71d252bf8e14a8e047fb051a5120",
+    "fetchedAt": "2026-10-24T08:26:16.866Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:16.866Z",
+  "updatedAt": "2026-10-24T08:26:16.866Z"
+ },
+ {
+  "id": "ga-03cb8fd0190b7590",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "11",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/07/09/lage-am-millerntor-09-juli-2020/",
+    "locator": "p15",
+    "quote": "Filmer Valentin Herleth hat einen Kurzfilm (11min) erstellt, in dem er mit genau dieser Frage spielt. Eine junge Frau, gelangweilt vom Job, kommt in eine kleine Hooligangruppe und mischt dann dort mit – oder will dies zumindest und kämpft eben auch gegen die üblichen Widerstände an.",
+    "bodyHash": "9c799d5bb36aed60433025c09b0df9106729ffdae939dd5cf3d56d017ac8e8ce",
+    "fetchedAt": "2026-10-24T08:26:16.867Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:16.867Z",
+  "updatedAt": "2026-10-24T08:26:16.867Z"
+ },
+ {
+  "id": "ga-be3f364aae04b426",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "12",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/07/09/lage-am-millerntor-09-juli-2020/",
+    "locator": "p17",
+    "quote": "Gleichzeitig stellte er sich aber auch die Frage, wie es denn jetzt in der Realität um diese Frage bestellt ist und sprach dazu mit der Soziologin Elena Konstantinidis , die sich in der Schweiz beruflich mit dem Thema beschäftigt hat. ( 12min, Vimeo ) Natürlich gibt es auch Frauen bei Hooligans, sie hat aber die Beobachtung gemacht, dass diese sich oftmals gar nicht selbst als Hooligan bezeichnen sondern eher „dabei“ sind.",
+    "bodyHash": "9c799d5bb36aed60433025c09b0df9106729ffdae939dd5cf3d56d017ac8e8ce",
+    "fetchedAt": "2026-10-24T08:26:16.867Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:16.867Z",
+  "updatedAt": "2026-10-24T08:26:16.867Z"
+ },
+ {
+  "id": "ga-c85bb1efc815c755",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "54",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/08/05/lage-am-millerntor-05-august-2020/",
+    "locator": "p28",
+    "quote": "Am Montag wurde dieses dann in einer gemeinsamen Pressekonferenz vorgestellt, die Ihr auf YouTube auch in voller Länge (54min) anschauen könnt:",
+    "bodyHash": "8cfea58960f13e8b4bb9968bf7b44233e80d8fc3beafa9facbb0a7b7a329b104",
+    "fetchedAt": "2026-10-24T08:26:19.770Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:19.770Z",
+  "updatedAt": "2026-10-24T08:26:19.770Z"
+ },
+ {
+  "id": "ga-adefbda210a2bea6",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "49",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/08/14/lage-am-millerntor-14-august-2020/",
+    "locator": "p42",
+    "quote": "Diese ist bereits in der Mediathek abrufbar. (49min)",
+    "bodyHash": "b652bf69606fa355e97ac3f2b01211a7825807510b1a58bff4fbc5f1e03227f6",
+    "fetchedAt": "2026-10-24T08:26:19.781Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-24T08:26:19.781Z",
+  "updatedAt": "2026-10-24T08:26:19.781Z"
  }
 ]
