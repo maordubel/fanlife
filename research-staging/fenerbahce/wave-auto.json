@@ -1,0 +1,8008 @@
+{
+ "sources": [
+  {
+   "id": "a-src-uefa-2049595",
+   "title": "UEFA: Fenerbahçe 2-2 Slavia Praha, 2026-10-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049595--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049582",
+   "title": "UEFA: Aston Villa 6-0 Fenerbahçe, 2026-10-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049582--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049568",
+   "title": "UEFA: Fenerbahçe 1-1 Roma, 2026-09-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049568--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049220",
+   "title": "UEFA: Lyon 1-2 Fenerbahçe, 2026-08-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049220--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049213",
+   "title": "UEFA: Fenerbahçe 1-1 Lyon, 2026-08-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049213--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049117",
+   "title": "UEFA: Sturm Graz 0-1 Fenerbahçe, 2026-08-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049117--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2049107",
+   "title": "UEFA: Fenerbahçe 2-0 Sturm Graz, 2026-08-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049107--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048739",
+   "title": "UEFA: Górnik Zabrze 1-1 Fenerbahçe, 2026-07-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048739--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2048725",
+   "title": "UEFA: Fenerbahçe 1-0 Górnik Zabrze, 2026-07-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2048725--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2047791",
+   "title": "UEFA: Nott'm Forest 1-2 Fenerbahçe, 2026-02-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2047791--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2047783",
+   "title": "UEFA: Fenerbahçe 0-3 Nott'm Forest, 2026-02-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2047783--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046294",
+   "title": "UEFA: FCSB 1-1 Fenerbahçe, 2026-01-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046294--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046268",
+   "title": "UEFA: Fenerbahçe 0-1 Aston Villa, 2026-01-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046268--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046262",
+   "title": "UEFA: Brann 0-4 Fenerbahçe, 2025-12-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046262--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046234",
+   "title": "UEFA: Fenerbahçe 1-1 Ferencváros, 2025-11-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046234--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046217",
+   "title": "UEFA: Viktoria Plzeň 0-0 Fenerbahçe, 2025-11-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046217--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046195",
+   "title": "UEFA: Fenerbahçe 1-0 Stuttgart, 2025-10-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046195--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046176",
+   "title": "UEFA: Fenerbahçe 2-1 Nice, 2025-10-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046176--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2046155",
+   "title": "UEFA: GNK Dinamo 3-1 Fenerbahçe, 2025-09-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2046155--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045823",
+   "title": "UEFA: Benfica 1-0 Fenerbahçe, 2025-08-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045823--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045816",
+   "title": "UEFA: Fenerbahçe 0-0 Benfica, 2025-08-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045816--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045722",
+   "title": "UEFA: Fenerbahçe 5-2 Feyenoord, 2025-08-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045722--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045712",
+   "title": "UEFA: Feyenoord 2-1 Fenerbahçe, 2025-08-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045712--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2044798",
+   "title": "UEFA: Rangers 0-2 Fenerbahçe, 2025-03-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2044798--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2044790",
+   "title": "UEFA: Fenerbahçe 1-3 Rangers, 2025-03-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2044790--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2044502",
+   "title": "UEFA: Anderlecht 2-2 Fenerbahçe, 2025-02-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2044502--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2044494",
+   "title": "UEFA: Fenerbahçe 3-0 Anderlecht, 2025-02-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2044494--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042217",
+   "title": "UEFA: Midtjylland 2-2 Fenerbahçe, 2025-01-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042217--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042195",
+   "title": "UEFA: Fenerbahçe 0-0 Lyon, 2025-01-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042195--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042169",
+   "title": "UEFA: Fenerbahçe 0-2 Athletic Club, 2024-12-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042169--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042154",
+   "title": "UEFA: Slavia Praha 1-2 Fenerbahçe, 2024-11-28",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042154--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042138",
+   "title": "UEFA: AZ Alkmaar 3-1 Fenerbahçe, 2024-11-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042138--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042124",
+   "title": "UEFA: Fenerbahçe 1-1 Man Utd, 2024-10-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042124--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042111",
+   "title": "UEFA: Twente 1-1 Fenerbahçe, 2024-10-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042111--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2042094",
+   "title": "UEFA: Fenerbahçe 2-1 Union SG, 2024-09-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2042094--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041696",
+   "title": "UEFA: Fenerbahçe 1-1 Lille, 2024-08-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041696--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041686",
+   "title": "UEFA: Lille 2-1 Fenerbahçe, 2024-08-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041686--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041083",
+   "title": "UEFA: Fenerbahçe 2-1 Lugano, 2024-07-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041083--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041069",
+   "title": "UEFA: Lugano 3-4 Fenerbahçe, 2024-07-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041069--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040509",
+   "title": "UEFA: Fenerbahçe 1-0 Olympiacos, 2024-04-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040509--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040505",
+   "title": "UEFA: Olympiacos 3-2 Fenerbahçe, 2024-04-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040505--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040305",
+   "title": "UEFA: Fenerbahçe 0-1 Union SG, 2024-03-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040305--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040297",
+   "title": "UEFA: Union SG 0-3 Fenerbahçe, 2024-03-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040297--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039377",
+   "title": "UEFA: Fenerbahçe 4-0 Spartak Trnava, 2023-12-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039377--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039368",
+   "title": "UEFA: Nordsjælland 6-1 Fenerbahçe, 2023-11-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039368--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039353",
+   "title": "UEFA: Ludogorets 2-0 Fenerbahçe, 2023-11-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039353--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039329",
+   "title": "UEFA: Fenerbahçe 3-1 Ludogorets, 2023-10-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039329--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039321",
+   "title": "UEFA: Spartak Trnava 1-2 Fenerbahçe, 2023-10-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039321--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039297",
+   "title": "UEFA: Fenerbahçe 3-1 Nordsjælland, 2023-09-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039297--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039073",
+   "title": "UEFA: Twente 0-1 Fenerbahçe, 2023-08-31",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039073--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039051",
+   "title": "UEFA: Fenerbahçe 5-1 Twente, 2023-08-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039051--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038988",
+   "title": "UEFA: Maribor 0-3 Fenerbahçe, 2023-08-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038988--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038957",
+   "title": "UEFA: Fenerbahçe 3-1 Maribor, 2023-08-10",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038957--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038723",
+   "title": "UEFA: Zimbru 0-4 Fenerbahçe, 2023-08-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038723--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038670",
+   "title": "UEFA: Fenerbahçe 5-0 Zimbru, 2023-07-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038670--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2037615",
+   "title": "UEFA: Fenerbahçe 1-0 Sevilla, 2023-03-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2037615--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2037607",
+   "title": "UEFA: Sevilla 2-0 Fenerbahçe, 2023-03-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2037607--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035975",
+   "title": "UEFA: Dynamo Kyiv 0-2 Fenerbahçe, 2022-11-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035975--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035973",
+   "title": "UEFA: Fenerbahçe 3-3 Rennes, 2022-10-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035973--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035972",
+   "title": "UEFA: AEK Larnaca 1-2 Fenerbahçe, 2022-10-13",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035972--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035970",
+   "title": "UEFA: Fenerbahçe 2-0 AEK Larnaca, 2022-10-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035970--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035968",
+   "title": "UEFA: Rennes 2-2 Fenerbahçe, 2022-09-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035968--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035966",
+   "title": "UEFA: Fenerbahçe 2-1 Dynamo Kyiv, 2022-09-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035966--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035504",
+   "title": "UEFA: Fenerbahçe 4-1 Austria Wien, 2022-08-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035504--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035494",
+   "title": "UEFA: Austria Wien 0-2 Fenerbahçe, 2022-08-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035494--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035373",
+   "title": "UEFA: Slovácko 1-1 Fenerbahçe, 2022-08-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035373--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035366",
+   "title": "UEFA: Fenerbahçe 3-0 Slovácko, 2022-08-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035366--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035059",
+   "title": "UEFA: Fenerbahçe 1-2 Dynamo Kyiv, 2022-07-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035059--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035047",
+   "title": "UEFA: Dynamo Kyiv 0-0 Fenerbahçe, 2022-07-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035047--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033388",
+   "title": "UEFA: Slavia Praha 3-2 Fenerbahçe, 2022-02-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033388--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033380",
+   "title": "UEFA: Fenerbahçe 2-3 Slavia Praha, 2022-02-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033380--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033256",
+   "title": "UEFA: Fenerbahçe 1-1 Frankfurt, 2021-12-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033256--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033245",
+   "title": "UEFA: Olympiacos 1-0 Fenerbahçe, 2021-11-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033245--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033225",
+   "title": "UEFA: Antwerp 0-3 Fenerbahçe, 2021-11-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033225--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033212",
+   "title": "UEFA: Fenerbahçe 2-2 Antwerp, 2021-10-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033212--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033197",
+   "title": "UEFA: Fenerbahçe 0-3 Olympiacos, 2021-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033197--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033176",
+   "title": "UEFA: Frankfurt 1-1 Fenerbahçe, 2021-09-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033176--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033113",
+   "title": "UEFA: HJK 2-5 Fenerbahçe, 2021-08-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033113--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033103",
+   "title": "UEFA: Fenerbahçe 1-0 HJK, 2021-08-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033103--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2026897",
+   "title": "UEFA: Zenit 3-1 Fenerbahçe, 2019-02-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2026897--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-10-20-fenerbahce-slavia-praha",
+   "value": {
+    "name": "Fenerbahçe 2-2 Slavia Praha",
+    "on": "2026-10-20",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "Mattéo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "Vedat Muriqi",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Oğuz Aydın",
+     "N'Golo Kanté"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Mert Günok",
+     "İsmail Yüksek",
+     "Romelu Lukaku",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Kojo Peprah Oppong",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Dorgeles Nene",
+     "Ognjen Mimović"
+    ],
+    "scorers": [
+     {
+      "name": "Oğuz Aydın",
+      "minute": 4
+     },
+     {
+      "name": "Mason Greenwood",
+      "minute": 11
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049595",
+     "scorers": [
+      {
+       "name": "Oğuz Aydın",
+       "minute": 4
+      },
+      {
+       "name": "Mason Greenwood",
+       "minute": 11
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "Mattéo Guendouzi",
+      "Kerem Aktürkoğlu",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "Vedat Muriqi",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Oğuz Aydın",
+      "N'Golo Kanté"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Mert Günok",
+      "İsmail Yüksek",
+      "Romelu Lukaku",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Kojo Peprah Oppong",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Dorgeles Nene",
+      "Ognjen Mimović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049595"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-10-14-aston-villa-fenerbahce",
+   "value": {
+    "name": "Aston Villa 6-0 Fenerbahçe",
+    "on": "2026-10-14",
+    "competition": "UEFA Champions League",
+    "score": "6-0",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Mattéo Guendouzi",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "İrfan Can Kahveci",
+     "Vedat Muriqi",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Oğuz Aydın"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Mert Günok",
+     "Kerem Aktürkoğlu",
+     "Romelu Lukaku",
+     "Yiğit Efe Demir",
+     "Kojo Peprah Oppong",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Dorgeles Nene",
+     "Ognjen Mimović",
+     "N'Golo Kanté"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049582",
+     "scorers": [],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Mattéo Guendouzi",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "İrfan Can Kahveci",
+      "Vedat Muriqi",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Oğuz Aydın"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Mert Günok",
+      "Kerem Aktürkoğlu",
+      "Romelu Lukaku",
+      "Yiğit Efe Demir",
+      "Kojo Peprah Oppong",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Dorgeles Nene",
+      "Ognjen Mimović",
+      "N'Golo Kanté"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049582"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-09-10-fenerbahce-roma",
+   "value": {
+    "name": "Fenerbahçe 1-1 Roma",
+    "on": "2026-09-10",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Kerem Aktürkoğlu",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "Mert Müldür",
+     "Vedat Muriqi",
+     "Bartuğ Elmaz",
+     "Milan Škriniar",
+     "N'Golo Kanté"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Mert Günok",
+     "Romelu Lukaku",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Kojo Peprah Oppong",
+     "Levent Mercan",
+     "Nélson Semedo",
+     "Dorgeles Nene",
+     "Oğuz Aydın",
+     "Ognjen Mimović"
+    ],
+    "scorers": [
+     {
+      "name": "Archie Brown",
+      "minute": 48
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049568",
+     "scorers": [
+      {
+       "name": "Archie Brown",
+       "minute": 48
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Kerem Aktürkoğlu",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "Mert Müldür",
+      "Vedat Muriqi",
+      "Bartuğ Elmaz",
+      "Milan Škriniar",
+      "N'Golo Kanté"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Mert Günok",
+      "Romelu Lukaku",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Kojo Peprah Oppong",
+      "Levent Mercan",
+      "Nélson Semedo",
+      "Dorgeles Nene",
+      "Oğuz Aydın",
+      "Ognjen Mimović"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049568"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-26-lyon-fenerbahce",
+   "value": {
+    "name": "Lyon 1-2 Fenerbahçe",
+    "on": "2026-08-26",
+    "competition": "UEFA Champions League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "Mattéo Guendouzi",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "Vedat Muriqi",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Oğuz Aydın",
+     "N'Golo Kanté",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Kuzey Sapaz",
+     "İsmail Yüksek",
+     "Romelu Lukaku",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Dorgeles Nene"
+    ],
+    "scorers": [
+     {
+      "name": "Vedat Muriqi",
+      "minute": 24
+     },
+     {
+      "name": "Archie Brown",
+      "minute": 28
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049220",
+     "scorers": [
+      {
+       "name": "Vedat Muriqi",
+       "minute": 24
+      },
+      {
+       "name": "Archie Brown",
+       "minute": 28
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "Mattéo Guendouzi",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "Vedat Muriqi",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Oğuz Aydın",
+      "N'Golo Kanté",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Kuzey Sapaz",
+      "İsmail Yüksek",
+      "Romelu Lukaku",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Dorgeles Nene"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049220"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-18-fenerbahce-lyon",
+   "value": {
+    "name": "Fenerbahçe 1-1 Lyon",
+    "on": "2026-08-18",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "Mattéo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "Vedat Muriqi",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "N'Golo Kanté",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Kuzey Sapaz",
+     "İsmail Yüksek",
+     "Romelu Lukaku",
+     "Marco Asensio",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Dorgeles Nene",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Mason Greenwood",
+      "minute": 47
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049213",
+     "scorers": [
+      {
+       "name": "Mason Greenwood",
+       "minute": 47
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "Mattéo Guendouzi",
+      "Kerem Aktürkoğlu",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "Vedat Muriqi",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "N'Golo Kanté",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Kuzey Sapaz",
+      "İsmail Yüksek",
+      "Romelu Lukaku",
+      "Marco Asensio",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Dorgeles Nene",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049213"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-11-sturm-graz-fenerbahce",
+   "value": {
+    "name": "Sturm Graz 0-1 Fenerbahçe",
+    "on": "2026-08-11",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Archie Brown",
+     "Mattéo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "Marco Asensio",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "N'Golo Kanté",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Kuzey Sapaz",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Fred",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Vedat Muriqi",
+     "Sidiki Cherif",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Talisca",
+      "minute": 66
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049117",
+     "scorers": [
+      {
+       "name": "Talisca",
+       "minute": 66
+      }
+     ],
+     "lineup": [
+      "Mert Günok",
+      "Archie Brown",
+      "Mattéo Guendouzi",
+      "Kerem Aktürkoğlu",
+      "Marco Asensio",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "N'Golo Kanté",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Kuzey Sapaz",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Fred",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Vedat Muriqi",
+      "Sidiki Cherif",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049117"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-08-05-fenerbahce-sturm-graz",
+   "value": {
+    "name": "Fenerbahçe 2-0 Sturm Graz",
+    "on": "2026-08-05",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Mattéo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "Marco Asensio",
+     "Mason Greenwood",
+     "Nathan Aké",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "N'Golo Kanté",
+     "Talisca"
+    ],
+    "bench": [
+     "Ederson",
+     "Archie Brown",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Fred",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Vedat Muriqi",
+     "Anthony Musaba",
+     "Sidiki Cherif",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Talisca",
+      "minute": 10
+     },
+     {
+      "name": "Mason Greenwood",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2049107",
+     "scorers": [
+      {
+       "name": "Talisca",
+       "minute": 10
+      },
+      {
+       "name": "Mason Greenwood",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Mert Günok",
+      "Mattéo Guendouzi",
+      "Kerem Aktürkoğlu",
+      "Marco Asensio",
+      "Mason Greenwood",
+      "Nathan Aké",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "N'Golo Kanté",
+      "Talisca"
+     ],
+     "bench": [
+      "Ederson",
+      "Archie Brown",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Fred",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Vedat Muriqi",
+      "Anthony Musaba",
+      "Sidiki Cherif",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2049107"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-07-29-gornik-zabrze-fenerbahce",
+   "value": {
+    "name": "Górnik Zabrze 1-1 Fenerbahçe",
+    "on": "2026-07-29",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Mattéo Guendouzi",
+     "Fred",
+     "Kerem Aktürkoğlu",
+     "Marco Asensio",
+     "Nathan Aké",
+     "İrfan Can Kahveci",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Ederson",
+     "Archie Brown",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Mason Greenwood",
+     "Mert Müldür",
+     "Anthony Musaba",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Talisca",
+      "minute": 12
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048739",
+     "scorers": [
+      {
+       "name": "Talisca",
+       "minute": 12
+      }
+     ],
+     "lineup": [
+      "Mert Günok",
+      "Mattéo Guendouzi",
+      "Fred",
+      "Kerem Aktürkoğlu",
+      "Marco Asensio",
+      "Nathan Aké",
+      "İrfan Can Kahveci",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Ederson",
+      "Archie Brown",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Mason Greenwood",
+      "Mert Müldür",
+      "Anthony Musaba",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048739"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-07-21-fenerbahce-gornik-zabrze",
+   "value": {
+    "name": "Fenerbahçe 1-0 Górnik Zabrze",
+    "on": "2026-07-21",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Mattéo Guendouzi",
+     "Fred",
+     "Kerem Aktürkoğlu",
+     "Nathan Aké",
+     "İrfan Can Kahveci",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Bartuğ Elmaz",
+     "Milan Škriniar",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Ederson",
+     "Archie Brown",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Marco Asensio",
+     "Mason Greenwood",
+     "Mert Müldür",
+     "Anthony Musaba",
+     "Levent Mercan",
+     "Sidiki Cherif",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Talisca",
+      "minute": 37
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2048725",
+     "scorers": [
+      {
+       "name": "Talisca",
+       "minute": 37
+      }
+     ],
+     "lineup": [
+      "Mert Günok",
+      "Mattéo Guendouzi",
+      "Fred",
+      "Kerem Aktürkoğlu",
+      "Nathan Aké",
+      "İrfan Can Kahveci",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Bartuğ Elmaz",
+      "Milan Škriniar",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Ederson",
+      "Archie Brown",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Marco Asensio",
+      "Mason Greenwood",
+      "Mert Müldür",
+      "Anthony Musaba",
+      "Levent Mercan",
+      "Sidiki Cherif",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2048725"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-02-26-nott-m-forest-fenerbahce",
+   "value": {
+    "name": "Nott'm Forest 1-2 Fenerbahçe",
+    "on": "2026-02-26",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Tarık Çetin",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Mattéo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "Yiğit Efe Demir",
+     "N'Golo Kanté",
+     "Mert Müldür",
+     "Sidiki Cherif",
+     "Dorgeles Nene",
+     "Oğuz Aydın"
+    ],
+    "bench": [
+     "Engin Can Biterge",
+     "Hulusi Ceylan",
+     "Marco Asensio",
+     "Levent Mercan",
+     "Nélson Semedo",
+     "Alaettin Ekici",
+     "Kamil Efe Üregen"
+    ],
+    "scorers": [
+     {
+      "name": "Kerem Aktürkoğlu",
+      "minute": 22
+     },
+     {
+      "name": "Kerem Aktürkoğlu",
+      "minute": 48
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2047791",
+     "scorers": [
+      {
+       "name": "Kerem Aktürkoğlu",
+       "minute": 22
+      },
+      {
+       "name": "Kerem Aktürkoğlu",
+       "minute": 48
+      }
+     ],
+     "lineup": [
+      "Tarık Çetin",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Mattéo Guendouzi",
+      "Kerem Aktürkoğlu",
+      "Yiğit Efe Demir",
+      "N'Golo Kanté",
+      "Mert Müldür",
+      "Sidiki Cherif",
+      "Dorgeles Nene",
+      "Oğuz Aydın"
+     ],
+     "bench": [
+      "Engin Can Biterge",
+      "Hulusi Ceylan",
+      "Marco Asensio",
+      "Levent Mercan",
+      "Nélson Semedo",
+      "Alaettin Ekici",
+      "Kamil Efe Üregen"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2047791"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-02-19-fenerbahce-nott-m-forest",
+   "value": {
+    "name": "Fenerbahçe 0-3 Nott'm Forest",
+    "on": "2026-02-19",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Mattéo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "N'Golo Kanté",
+     "Mert Müldür",
+     "Marco Asensio",
+     "Jayden Oosterwolde",
+     "Sidiki Cherif",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Engin Can Biterge",
+     "Archie Brown",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Fred",
+     "Yiğit Efe Demir",
+     "Levent Mercan",
+     "Dorgeles Nene",
+     "Alaettin Ekici",
+     "Oğuz Aydın"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2047783",
+     "scorers": [],
+     "lineup": [
+      "Ederson",
+      "Mattéo Guendouzi",
+      "Kerem Aktürkoğlu",
+      "N'Golo Kanté",
+      "Mert Müldür",
+      "Marco Asensio",
+      "Jayden Oosterwolde",
+      "Sidiki Cherif",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Engin Can Biterge",
+      "Archie Brown",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Fred",
+      "Yiğit Efe Demir",
+      "Levent Mercan",
+      "Dorgeles Nene",
+      "Alaettin Ekici",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2047783"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-01-29-fcsb-fenerbahce",
+   "value": {
+    "name": "FCSB 1-1 Fenerbahçe",
+    "on": "2026-01-29",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Fred",
+     "Kerem Aktürkoğlu",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Dorgeles Nene",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Engin Can Biterge",
+     "Yiğit Efe Demir",
+     "Marco Asensio",
+     "Alaettin Ekici",
+     "Kamil Efe Üregen",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "İsmail Yüksek",
+      "minute": 19
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046294",
+     "scorers": [
+      {
+       "name": "İsmail Yüksek",
+       "minute": 19
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Fred",
+      "Kerem Aktürkoğlu",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Dorgeles Nene",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Engin Can Biterge",
+      "Yiğit Efe Demir",
+      "Marco Asensio",
+      "Alaettin Ekici",
+      "Kamil Efe Üregen",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046294"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2026-01-22-fenerbahce-aston-villa",
+   "value": {
+    "name": "Fenerbahçe 0-1 Aston Villa",
+    "on": "2026-01-22",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "İsmail Yüksek",
+     "Fred",
+     "Kerem Aktürkoğlu",
+     "Jhon Durán",
+     "Mert Müldür",
+     "Marco Asensio",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Dorgeles Nene"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Engin Can Biterge",
+     "Çağlar Söyüncü",
+     "Edson Álvarez",
+     "Yiğit Efe Demir",
+     "Oğuz Aydın",
+     "Talisca",
+     "Haydar Karataş"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046268",
+     "scorers": [],
+     "lineup": [
+      "Ederson",
+      "İsmail Yüksek",
+      "Fred",
+      "Kerem Aktürkoğlu",
+      "Jhon Durán",
+      "Mert Müldür",
+      "Marco Asensio",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Dorgeles Nene"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Engin Can Biterge",
+      "Çağlar Söyüncü",
+      "Edson Álvarez",
+      "Yiğit Efe Demir",
+      "Oğuz Aydın",
+      "Talisca",
+      "Haydar Karataş"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046268"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-12-11-brann-fenerbahce",
+   "value": {
+    "name": "Brann 0-4 Fenerbahçe",
+    "on": "2025-12-11",
+    "competition": "UEFA Europa League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Fred",
+     "Kerem Aktürkoğlu",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Milan Škriniar",
+     "Dorgeles Nene",
+     "Talisca"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Tarık Çetin",
+     "Edson Álvarez",
+     "Yiğit Efe Demir",
+     "Levent Mercan",
+     "Sebastian Szymański",
+     "Kamil Efe Üregen",
+     "Oğuz Aydın",
+     "Haydar Karataş"
+    ],
+    "scorers": [
+     {
+      "name": "Kerem Aktürkoğlu",
+      "minute": 5
+     },
+     {
+      "name": "Talisca",
+      "minute": 36
+     },
+     {
+      "name": "Talisca",
+      "minute": 44
+     },
+     {
+      "name": "Talisca",
+      "minute": 65
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046262",
+     "scorers": [
+      {
+       "name": "Kerem Aktürkoğlu",
+       "minute": 5
+      },
+      {
+       "name": "Talisca",
+       "minute": 36
+      },
+      {
+       "name": "Talisca",
+       "minute": 44
+      },
+      {
+       "name": "Talisca",
+       "minute": 65
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Fred",
+      "Kerem Aktürkoğlu",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Milan Škriniar",
+      "Dorgeles Nene",
+      "Talisca"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Tarık Çetin",
+      "Edson Álvarez",
+      "Yiğit Efe Demir",
+      "Levent Mercan",
+      "Sebastian Szymański",
+      "Kamil Efe Üregen",
+      "Oğuz Aydın",
+      "Haydar Karataş"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046262"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-11-27-fenerbahce-ferencvaros",
+   "value": {
+    "name": "Fenerbahçe 1-1 Ferencváros",
+    "on": "2025-11-27",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "Kerem Aktürkoğlu",
+     "Edson Álvarez",
+     "Yiğit Efe Demir",
+     "Youssef En-Nesyri",
+     "Marco Asensio",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Oğuz Aydın",
+     "Talisca"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Tarık Çetin",
+     "Jhon Durán",
+     "Mert Müldür",
+     "Levent Mercan",
+     "Dorgeles Nene",
+     "Sebastian Szymański",
+     "Kamil Efe Üregen",
+     "Haydar Karataş"
+    ],
+    "scorers": [
+     {
+      "name": "Talisca",
+      "minute": 69
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046234",
+     "scorers": [
+      {
+       "name": "Talisca",
+       "minute": 69
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "Kerem Aktürkoğlu",
+      "Edson Álvarez",
+      "Yiğit Efe Demir",
+      "Youssef En-Nesyri",
+      "Marco Asensio",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Oğuz Aydın",
+      "Talisca"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Tarık Çetin",
+      "Jhon Durán",
+      "Mert Müldür",
+      "Levent Mercan",
+      "Dorgeles Nene",
+      "Sebastian Szymański",
+      "Kamil Efe Üregen",
+      "Haydar Karataş"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046234"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-11-06-viktoria-plzen-fenerbahce",
+   "value": {
+    "name": "Viktoria Plzeň 0-0 Fenerbahçe",
+    "on": "2025-11-06",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Edson Álvarez",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Oğuz Aydın",
+     "Talisca"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Tarık Çetin",
+     "Çağlar Söyüncü",
+     "Fred",
+     "Kerem Aktürkoğlu",
+     "Jhon Durán",
+     "Yiğit Efe Demir",
+     "Mert Müldür",
+     "Marco Asensio",
+     "Dorgeles Nene"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046217",
+     "scorers": [],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Edson Álvarez",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Oğuz Aydın",
+      "Talisca"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Tarık Çetin",
+      "Çağlar Söyüncü",
+      "Fred",
+      "Kerem Aktürkoğlu",
+      "Jhon Durán",
+      "Yiğit Efe Demir",
+      "Mert Müldür",
+      "Marco Asensio",
+      "Dorgeles Nene"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046217"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-10-23-fenerbahce-stuttgart",
+   "value": {
+    "name": "Fenerbahçe 1-0 Stuttgart",
+    "on": "2025-10-23",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Kerem Aktürkoğlu",
+     "Edson Álvarez",
+     "Youssef En-Nesyri",
+     "Marco Asensio",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Dorgeles Nene"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Tarık Çetin",
+     "Çağlar Söyüncü",
+     "Fred",
+     "Jhon Durán",
+     "Yiğit Efe Demir",
+     "Mert Müldür",
+     "Sebastian Szymański",
+     "Oğuz Aydın",
+     "Talisca"
+    ],
+    "scorers": [
+     {
+      "name": "Kerem Aktürkoğlu",
+      "minute": 34
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046195",
+     "scorers": [
+      {
+       "name": "Kerem Aktürkoğlu",
+       "minute": 34
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Kerem Aktürkoğlu",
+      "Edson Álvarez",
+      "Youssef En-Nesyri",
+      "Marco Asensio",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Dorgeles Nene"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Tarık Çetin",
+      "Çağlar Söyüncü",
+      "Fred",
+      "Jhon Durán",
+      "Yiğit Efe Demir",
+      "Mert Müldür",
+      "Sebastian Szymański",
+      "Oğuz Aydın",
+      "Talisca"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046195"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-10-02-fenerbahce-nice",
+   "value": {
+    "name": "Fenerbahçe 2-1 Nice",
+    "on": "2025-10-02",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Kerem Aktürkoğlu",
+     "Youssef En-Nesyri",
+     "Marco Asensio",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Dorgeles Nene",
+     "Talisca"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Engin Can Biterge",
+     "Çağlar Söyüncü",
+     "Fred",
+     "Edson Álvarez",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Cenk Tosun",
+     "Sebastian Szymański",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Kerem Aktürkoğlu",
+      "minute": 3
+     },
+     {
+      "name": "Kerem Aktürkoğlu",
+      "minute": 25
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046176",
+     "scorers": [
+      {
+       "name": "Kerem Aktürkoğlu",
+       "minute": 3
+      },
+      {
+       "name": "Kerem Aktürkoğlu",
+       "minute": 25
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "İsmail Yüksek",
+      "Kerem Aktürkoğlu",
+      "Youssef En-Nesyri",
+      "Marco Asensio",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Dorgeles Nene",
+      "Talisca"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Engin Can Biterge",
+      "Çağlar Söyüncü",
+      "Fred",
+      "Edson Álvarez",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Cenk Tosun",
+      "Sebastian Szymański",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046176"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-09-24-gnk-dinamo-fenerbahce",
+   "value": {
+    "name": "GNK Dinamo 3-1 Fenerbahçe",
+    "on": "2025-09-24",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Ederson",
+     "Archie Brown",
+     "Çağlar Söyüncü",
+     "Kerem Aktürkoğlu",
+     "Youssef En-Nesyri",
+     "Marco Asensio",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Dorgeles Nene",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Tarık Çetin",
+     "İsmail Yüksek",
+     "Fred",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Cenk Tosun",
+     "Oğuz Aydın"
+    ],
+    "scorers": [
+     {
+      "name": "Sebastian Szymański",
+      "minute": 25
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2046155",
+     "scorers": [
+      {
+       "name": "Sebastian Szymański",
+       "minute": 25
+      }
+     ],
+     "lineup": [
+      "Ederson",
+      "Archie Brown",
+      "Çağlar Söyüncü",
+      "Kerem Aktürkoğlu",
+      "Youssef En-Nesyri",
+      "Marco Asensio",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Milan Škriniar",
+      "Dorgeles Nene",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Tarık Çetin",
+      "İsmail Yüksek",
+      "Fred",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Cenk Tosun",
+      "Oğuz Aydın"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2046155"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-27-benfica-fenerbahce",
+   "value": {
+    "name": "Benfica 1-0 Fenerbahçe",
+    "on": "2025-08-27",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Fred",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Archie Brown",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Talisca"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Jhon Durán",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Oğuz Aydın",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045823",
+     "scorers": [],
+     "lineup": [
+      "Dominik Livaković",
+      "Fred",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Archie Brown",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Talisca"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Jhon Durán",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Oğuz Aydın",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045823"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-20-fenerbahce-benfica",
+   "value": {
+    "name": "Fenerbahçe 0-0 Benfica",
+    "on": "2025-08-20",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Fred",
+     "Jhon Durán",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Archie Brown",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Oğuz Aydın",
+     "Talisca",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045816",
+     "scorers": [],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Fred",
+      "Jhon Durán",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Archie Brown",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Levent Mercan",
+      "Bartuğ Elmaz",
+      "Oğuz Aydın",
+      "Talisca",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045816"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-12-fenerbahce-feyenoord",
+   "value": {
+    "name": "Fenerbahçe 5-2 Feyenoord",
+    "on": "2025-08-12",
+    "competition": "UEFA Champions League",
+    "score": "5-2",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Fred",
+     "Jhon Durán",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Archie Brown",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Yiğit Efe Demir",
+     "İrfan Can Kahveci",
+     "Levent Mercan",
+     "Cenk Tosun",
+     "Bartuğ Elmaz",
+     "Oğuz Aydın",
+     "Talisca",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Archie Brown",
+      "minute": 44
+     },
+     {
+      "name": "Jhon Durán",
+      "minute": 45
+     },
+     {
+      "name": "Fred",
+      "minute": 55
+     },
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 83
+     },
+     {
+      "name": "Talisca",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045722",
+     "scorers": [
+      {
+       "name": "Archie Brown",
+       "minute": 44
+      },
+      {
+       "name": "Jhon Durán",
+       "minute": 45
+      },
+      {
+       "name": "Fred",
+       "minute": 55
+      },
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 83
+      },
+      {
+       "name": "Talisca",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Fred",
+      "Jhon Durán",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Nélson Semedo",
+      "Archie Brown",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Yiğit Efe Demir",
+      "İrfan Can Kahveci",
+      "Levent Mercan",
+      "Cenk Tosun",
+      "Bartuğ Elmaz",
+      "Oğuz Aydın",
+      "Talisca",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045722"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-06-feyenoord-fenerbahce",
+   "value": {
+    "name": "Feyenoord 2-1 Fenerbahçe",
+    "on": "2025-08-06",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Fred",
+     "İrfan Can Kahveci",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Archie Brown",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Oğuz Aydın"
+    ],
+    "bench": [
+     "Tarık Çetin",
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "Alexander Djiku",
+     "Jhon Durán",
+     "Yiğit Efe Demir",
+     "Levent Mercan",
+     "Cenk Tosun",
+     "Nélson Semedo",
+     "Bartuğ Elmaz",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Sofyan Amrabat",
+      "minute": 86
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045712",
+     "scorers": [
+      {
+       "name": "Sofyan Amrabat",
+       "minute": 86
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Fred",
+      "İrfan Can Kahveci",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Archie Brown",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Oğuz Aydın"
+     ],
+     "bench": [
+      "Tarık Çetin",
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "Alexander Djiku",
+      "Jhon Durán",
+      "Yiğit Efe Demir",
+      "Levent Mercan",
+      "Cenk Tosun",
+      "Nélson Semedo",
+      "Bartuğ Elmaz",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045712"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-03-13-rangers-fenerbahce",
+   "value": {
+    "name": "Rangers 0-2 Fenerbahçe",
+    "on": "2025-03-13",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Fred",
+     "Mert Müldür",
+     "Filip Kostić",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Talisca",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Ertuğrul Çetin",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "İrfan Can Kahveci",
+     "Cenk Tosun",
+     "Şükür Toğrak"
+    ],
+    "scorers": [
+     {
+      "name": "Sebastian Szymański",
+      "minute": 45
+     },
+     {
+      "name": "Sebastian Szymański",
+      "minute": 73
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2044798",
+     "scorers": [
+      {
+       "name": "Sebastian Szymański",
+       "minute": 45
+      },
+      {
+       "name": "Sebastian Szymański",
+       "minute": 73
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Fred",
+      "Mert Müldür",
+      "Filip Kostić",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Talisca",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Ertuğrul Çetin",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "İrfan Can Kahveci",
+      "Cenk Tosun",
+      "Şükür Toğrak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2044798"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-03-06-fenerbahce-rangers",
+   "value": {
+    "name": "Fenerbahçe 1-3 Rangers",
+    "on": "2025-03-06",
+    "competition": "UEFA Europa League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Çağlar Söyüncü",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Mert Müldür",
+     "Filip Kostić",
+     "Youssef En-Nesyri",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Ertuğrul Çetin",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "İrfan Can Kahveci",
+     "Cenk Tosun",
+     "Şükür Toğrak",
+     "Talisca",
+     "Allan Saint-Maximin"
+    ],
+    "scorers": [
+     {
+      "name": "Alexander Djiku",
+      "minute": 30
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2044790",
+     "scorers": [
+      {
+       "name": "Alexander Djiku",
+       "minute": 30
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Çağlar Söyüncü",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Mert Müldür",
+      "Filip Kostić",
+      "Youssef En-Nesyri",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Ertuğrul Çetin",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "İrfan Can Kahveci",
+      "Cenk Tosun",
+      "Şükür Toğrak",
+      "Talisca",
+      "Allan Saint-Maximin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2044790"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-02-20-anderlecht-fenerbahce",
+   "value": {
+    "name": "Anderlecht 2-2 Fenerbahçe",
+    "on": "2025-02-20",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Fred",
+     "Filip Kostić",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Engin Can Biterge",
+     "Mert Hakan Yandaş",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Cenk Tosun",
+     "Yiğit Ekiz",
+     "Şükür Toğrak",
+     "Talisca"
+    ],
+    "scorers": [
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 4
+     },
+     {
+      "name": "Yusuf Akçiçek",
+      "minute": 63
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2044502",
+     "scorers": [
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 4
+      },
+      {
+       "name": "Yusuf Akçiçek",
+       "minute": 63
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Fred",
+      "Filip Kostić",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Engin Can Biterge",
+      "Mert Hakan Yandaş",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Cenk Tosun",
+      "Yiğit Ekiz",
+      "Şükür Toğrak",
+      "Talisca"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2044502"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-02-13-fenerbahce-anderlecht",
+   "value": {
+    "name": "Fenerbahçe 3-0 Anderlecht",
+    "on": "2025-02-13",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Fred",
+     "Filip Kostić",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Milan Škriniar",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Engin Can Biterge",
+     "Mert Hakan Yandaş",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Cenk Tosun",
+     "Şükür Toğrak",
+     "Talisca",
+     "Allan Saint-Maximin"
+    ],
+    "scorers": [
+     {
+      "name": "Dušan Tadić",
+      "minute": 11
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 42
+     },
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 57
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2044494",
+     "scorers": [
+      {
+       "name": "Dušan Tadić",
+       "minute": 11
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 42
+      },
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 57
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Fred",
+      "Filip Kostić",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Milan Škriniar",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Engin Can Biterge",
+      "Mert Hakan Yandaş",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Cenk Tosun",
+      "Şükür Toğrak",
+      "Talisca",
+      "Allan Saint-Maximin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2044494"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-01-30-midtjylland-fenerbahce",
+   "value": {
+    "name": "Midtjylland 2-2 Fenerbahçe",
+    "on": "2025-01-30",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Fred",
+     "Youssef En-Nesyri",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Engin Can Biterge",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Cenk Tosun",
+     "Zeki Dursun",
+     "Yiğit Ekiz",
+     "Şükür Toğrak"
+    ],
+    "scorers": [
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 39
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 47
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042217",
+     "scorers": [
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 39
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 47
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Fred",
+      "Youssef En-Nesyri",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Engin Can Biterge",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Cenk Tosun",
+      "Zeki Dursun",
+      "Yiğit Ekiz",
+      "Şükür Toğrak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042217"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-01-23-fenerbahce-lyon",
+   "value": {
+    "name": "Fenerbahçe 0-0 Lyon",
+    "on": "2025-01-23",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Çağlar Söyüncü",
+     "Alexander Djiku",
+     "Dušan Tadić",
+     "Fred",
+     "İrfan Can Kahveci",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Engin Can Biterge",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Cengiz Ünder",
+     "Cenk Tosun",
+     "Zeki Dursun",
+     "Yiğit Ekiz",
+     "Şükür Toğrak",
+     "Allan Saint-Maximin"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042195",
+     "scorers": [],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Çağlar Söyüncü",
+      "Alexander Djiku",
+      "Dušan Tadić",
+      "Fred",
+      "İrfan Can Kahveci",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Engin Can Biterge",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Cengiz Ünder",
+      "Cenk Tosun",
+      "Zeki Dursun",
+      "Yiğit Ekiz",
+      "Şükür Toğrak",
+      "Allan Saint-Maximin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042195"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-12-11-fenerbahce-athletic-club",
+   "value": {
+    "name": "Fenerbahçe 0-2 Athletic Club",
+    "on": "2024-12-11",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Samet Akaydin",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Dušan Tadić",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Sebastian Szymański",
+     "Allan Saint-Maximin"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Engin Can Biterge",
+     "Çağlar Söyüncü",
+     "Edin Džeko",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Cenk Tosun",
+     "Rodrigo Becão",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042169",
+     "scorers": [],
+     "lineup": [
+      "Dominik Livaković",
+      "Samet Akaydin",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Dušan Tadić",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Sebastian Szymański",
+      "Allan Saint-Maximin"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Engin Can Biterge",
+      "Çağlar Söyüncü",
+      "Edin Džeko",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Cenk Tosun",
+      "Rodrigo Becão",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042169"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-11-28-slavia-praha-fenerbahce",
+   "value": {
+    "name": "Slavia Praha 1-2 Fenerbahçe",
+    "on": "2024-11-28",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Samet Akaydin",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Fred",
+     "Mert Müldür",
+     "Bright Osayi-Samuel",
+     "Sebastian Szymański",
+     "Allan Saint-Maximin"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Ertuğrul Çetin",
+     "İrfan Can Kahveci",
+     "Youssef En-Nesyri",
+     "Cengiz Ünder",
+     "Cenk Tosun",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Edin Džeko",
+      "minute": 35
+     },
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042154",
+     "scorers": [
+      {
+       "name": "Edin Džeko",
+       "minute": 35
+      },
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Samet Akaydin",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Fred",
+      "Mert Müldür",
+      "Bright Osayi-Samuel",
+      "Sebastian Szymański",
+      "Allan Saint-Maximin"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Ertuğrul Çetin",
+      "İrfan Can Kahveci",
+      "Youssef En-Nesyri",
+      "Cengiz Ünder",
+      "Cenk Tosun",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042154"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-11-07-az-alkmaar-fenerbahce",
+   "value": {
+    "name": "AZ Alkmaar 3-1 Fenerbahçe",
+    "on": "2024-11-07",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Fred",
+     "Mert Müldür",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Rodrigo Becão",
+     "Allan Saint-Maximin"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Ertuğrul Çetin",
+     "Samet Akaydin",
+     "Mert Hakan Yandaş",
+     "Youssef En-Nesyri",
+     "Cenk Tosun",
+     "Zeki Dursun",
+     "Sebastian Szymański",
+     "Kaan Akyazı",
+     "Şükür Toğrak",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 70
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042138",
+     "scorers": [
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 70
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Fred",
+      "Mert Müldür",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Rodrigo Becão",
+      "Allan Saint-Maximin"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Ertuğrul Çetin",
+      "Samet Akaydin",
+      "Mert Hakan Yandaş",
+      "Youssef En-Nesyri",
+      "Cenk Tosun",
+      "Zeki Dursun",
+      "Sebastian Szymański",
+      "Kaan Akyazı",
+      "Şükür Toğrak",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042138"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-10-24-fenerbahce-man-utd",
+   "value": {
+    "name": "Fenerbahçe 1-1 Man Utd",
+    "on": "2024-10-24",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "Alexander Djiku",
+     "Dušan Tadić",
+     "Fred",
+     "Mert Müldür",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Sofyan Amrabat",
+     "Sebastian Szymański",
+     "Allan Saint-Maximin"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Ertuğrul Çetin",
+     "Samet Akaydin",
+     "İsmail Yüksek",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "İrfan Can Kahveci",
+     "Cenk Tosun",
+     "Zeki Dursun",
+     "Rodrigo Becão",
+     "Şükür Toğrak",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Youssef En-Nesyri",
+      "minute": 49
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042124",
+     "scorers": [
+      {
+       "name": "Youssef En-Nesyri",
+       "minute": 49
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "Alexander Djiku",
+      "Dušan Tadić",
+      "Fred",
+      "Mert Müldür",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Sofyan Amrabat",
+      "Sebastian Szymański",
+      "Allan Saint-Maximin"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Ertuğrul Çetin",
+      "Samet Akaydin",
+      "İsmail Yüksek",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "İrfan Can Kahveci",
+      "Cenk Tosun",
+      "Zeki Dursun",
+      "Rodrigo Becão",
+      "Şükür Toğrak",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042124"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-10-03-twente-fenerbahce",
+   "value": {
+    "name": "Twente 1-1 Fenerbahçe",
+    "on": "2024-10-03",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Alexander Djiku",
+     "Dušan Tadić",
+     "Fred",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Youssef En-Nesyri",
+     "Jayden Oosterwolde",
+     "Sofyan Amrabat",
+     "Rodrigo Becão",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Ömer Camcı",
+     "Samet Akaydin",
+     "İsmail Yüksek",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Cengiz Ünder",
+     "Cenk Tosun",
+     "Yusuf Akçiçek",
+     "Allan Saint-Maximin"
+    ],
+    "scorers": [
+     {
+      "name": "Dušan Tadić",
+      "minute": 71
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042111",
+     "scorers": [
+      {
+       "name": "Dušan Tadić",
+       "minute": 71
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Alexander Djiku",
+      "Dušan Tadić",
+      "Fred",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Youssef En-Nesyri",
+      "Jayden Oosterwolde",
+      "Sofyan Amrabat",
+      "Rodrigo Becão",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Ömer Camcı",
+      "Samet Akaydin",
+      "İsmail Yüksek",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Cengiz Ünder",
+      "Cenk Tosun",
+      "Yusuf Akçiçek",
+      "Allan Saint-Maximin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042111"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-09-26-fenerbahce-union-sg",
+   "value": {
+    "name": "Fenerbahçe 2-1 Union SG",
+    "on": "2024-09-26",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "Fred",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Youssef En-Nesyri",
+     "Cengiz Ünder",
+     "Jayden Oosterwolde",
+     "Sofyan Amrabat",
+     "Rodrigo Becão",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Ömer Camcı",
+     "Samet Akaydin",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Bright Osayi-Samuel",
+     "Cenk Tosun",
+     "Yusuf Akçiçek",
+     "Allan Saint-Maximin"
+    ],
+    "scorers": [
+     {
+      "name": "Çağlar Söyüncü",
+      "minute": 26
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2042094",
+     "scorers": [
+      {
+       "name": "Çağlar Söyüncü",
+       "minute": 26
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "Fred",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Youssef En-Nesyri",
+      "Cengiz Ünder",
+      "Jayden Oosterwolde",
+      "Sofyan Amrabat",
+      "Rodrigo Becão",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Ömer Camcı",
+      "Samet Akaydin",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Bright Osayi-Samuel",
+      "Cenk Tosun",
+      "Yusuf Akçiçek",
+      "Allan Saint-Maximin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2042094"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-13-fenerbahce-lille",
+   "value": {
+    "name": "Fenerbahçe 1-1 Lille",
+    "on": "2024-08-13",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Mert Müldür",
+     "Jayden Oosterwolde",
+     "Sebastian Szymański",
+     "Allan Saint-Maximin"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Ertuğrul Çetin",
+     "İrfan Can Kahveci",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Cenk Tosun",
+     "Miha Zajc",
+     "Bartuğ Elmaz",
+     "Rade Krunić",
+     "Rodrigo Becão",
+     "Oğuz Aydın",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041696",
+     "scorers": [],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Mert Müldür",
+      "Jayden Oosterwolde",
+      "Sebastian Szymański",
+      "Allan Saint-Maximin"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Ertuğrul Çetin",
+      "İrfan Can Kahveci",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Cenk Tosun",
+      "Miha Zajc",
+      "Bartuğ Elmaz",
+      "Rade Krunić",
+      "Rodrigo Becão",
+      "Oğuz Aydın",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041696"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-06-lille-fenerbahce",
+   "value": {
+    "name": "Lille 2-1 Fenerbahçe",
+    "on": "2024-08-06",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Mert Müldür",
+     "Jayden Oosterwolde",
+     "Rade Krunić",
+     "Sebastian Szymański",
+     "Allan Saint-Maximin"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "İrfan Can Kahveci",
+     "Youssef En-Nesyri",
+     "Bright Osayi-Samuel",
+     "Cenk Tosun",
+     "Miha Zajc",
+     "Bartuğ Elmaz",
+     "Rodrigo Becão",
+     "Oğuz Aydın",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 80
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041686",
+     "scorers": [
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 80
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Mert Müldür",
+      "Jayden Oosterwolde",
+      "Rade Krunić",
+      "Sebastian Szymański",
+      "Allan Saint-Maximin"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "İrfan Can Kahveci",
+      "Youssef En-Nesyri",
+      "Bright Osayi-Samuel",
+      "Cenk Tosun",
+      "Miha Zajc",
+      "Bartuğ Elmaz",
+      "Rodrigo Becão",
+      "Oğuz Aydın",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041686"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-07-30-fenerbahce-lugano",
+   "value": {
+    "name": "Fenerbahçe 2-1 Lugano",
+    "on": "2024-07-30",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Bright Osayi-Samuel",
+     "Jayden Oosterwolde",
+     "Rade Krunić",
+     "Fred",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Ertuğrul Çetin",
+     "İsmail Yüksek",
+     "Mert Hakan Yandaş",
+     "Ryan Kent",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Cenk Tosun",
+     "Bartuğ Elmaz",
+     "Rodrigo Becão",
+     "Oğuz Aydın",
+     "Allan Saint-Maximin"
+    ],
+    "scorers": [
+     {
+      "name": "Edin Džeko",
+      "minute": 59
+     },
+     {
+      "name": "Sebastian Szymański",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041083",
+     "scorers": [
+      {
+       "name": "Edin Džeko",
+       "minute": 59
+      },
+      {
+       "name": "Sebastian Szymański",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Bright Osayi-Samuel",
+      "Jayden Oosterwolde",
+      "Rade Krunić",
+      "Fred",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Ertuğrul Çetin",
+      "İsmail Yüksek",
+      "Mert Hakan Yandaş",
+      "Ryan Kent",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Cenk Tosun",
+      "Bartuğ Elmaz",
+      "Rodrigo Becão",
+      "Oğuz Aydın",
+      "Allan Saint-Maximin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041083"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-07-23-lugano-fenerbahce",
+   "value": {
+    "name": "Lugano 3-4 Fenerbahçe",
+    "on": "2024-07-23",
+    "competition": "UEFA Champions League",
+    "score": "3-4",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "Alexander Djiku",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Ryan Kent",
+     "Bright Osayi-Samuel",
+     "Jayden Oosterwolde",
+     "Rade Krunić",
+     "Fred",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Doğukan Demir",
+     "İsmail Yüksek",
+     "Ferdi Kadıoğlu",
+     "Mert Hakan Yandaş",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Cenk Tosun",
+     "Bartuğ Elmaz",
+     "Rodrigo Becão",
+     "Oğuz Aydın",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Edin Džeko",
+      "minute": 45
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 46
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 67
+     },
+     {
+      "name": "Ferdi Kadıoğlu",
+      "minute": 74
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041069",
+     "scorers": [
+      {
+       "name": "Edin Džeko",
+       "minute": 45
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 46
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 67
+      },
+      {
+       "name": "Ferdi Kadıoğlu",
+       "minute": 74
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "Alexander Djiku",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Ryan Kent",
+      "Bright Osayi-Samuel",
+      "Jayden Oosterwolde",
+      "Rade Krunić",
+      "Fred",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Doğukan Demir",
+      "İsmail Yüksek",
+      "Ferdi Kadıoğlu",
+      "Mert Hakan Yandaş",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Cenk Tosun",
+      "Bartuğ Elmaz",
+      "Rodrigo Becão",
+      "Oğuz Aydın",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041069"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-04-18-fenerbahce-olympiacos",
+   "value": {
+    "name": "Fenerbahçe 1-0 Olympiacos",
+    "on": "2024-04-18",
+    "competition": "UEFA Conference League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Fred",
+     "Rodrigo Becão",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Doğukan Demir",
+     "İrfan Can Eğribayat",
+     "Çağlar Söyüncü",
+     "Mert Hakan Yandaş",
+     "Ryan Kent",
+     "Joshua King",
+     "Leonardo Bonucci",
+     "Cengiz Ünder",
+     "Michy Batshuayi",
+     "Miha Zajc",
+     "Rade Krunić",
+     "Zeki Dursun"
+    ],
+    "scorers": [
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 11
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040509",
+     "scorers": [
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 11
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Fred",
+      "Rodrigo Becão",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Doğukan Demir",
+      "İrfan Can Eğribayat",
+      "Çağlar Söyüncü",
+      "Mert Hakan Yandaş",
+      "Ryan Kent",
+      "Joshua King",
+      "Leonardo Bonucci",
+      "Cengiz Ünder",
+      "Michy Batshuayi",
+      "Miha Zajc",
+      "Rade Krunić",
+      "Zeki Dursun"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040509"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-04-11-olympiacos-fenerbahce",
+   "value": {
+    "name": "Olympiacos 3-2 Fenerbahçe",
+    "on": "2024-04-11",
+    "competition": "UEFA Conference League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "Rade Krunić",
+     "Rodrigo Becão",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Doğukan Demir",
+     "İrfan Can Eğribayat",
+     "İsmail Yüksek",
+     "Ferdi Kadıoğlu",
+     "Ryan Kent",
+     "Leonardo Bonucci",
+     "Michy Batshuayi",
+     "Fred",
+     "Zeki Dursun",
+     "Efekan Karayazı",
+     "Çağrı Fedai",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Dušan Tadić",
+      "minute": 68
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 74
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040505",
+     "scorers": [
+      {
+       "name": "Dušan Tadić",
+       "minute": 68
+      },
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 74
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "Rade Krunić",
+      "Rodrigo Becão",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Doğukan Demir",
+      "İrfan Can Eğribayat",
+      "İsmail Yüksek",
+      "Ferdi Kadıoğlu",
+      "Ryan Kent",
+      "Leonardo Bonucci",
+      "Michy Batshuayi",
+      "Fred",
+      "Zeki Dursun",
+      "Efekan Karayazı",
+      "Çağrı Fedai",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040505"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-03-14-fenerbahce-union-sg",
+   "value": {
+    "name": "Fenerbahçe 0-1 Union SG",
+    "on": "2024-03-14",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Ryan Kent",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Fred",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Doğukan Demir",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Cengiz Ünder",
+     "Miha Zajc",
+     "Ahmet Aydın",
+     "Muhammet İmre",
+     "Zeki Dursun",
+     "Çağrı Fedai",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040305",
+     "scorers": [],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Ryan Kent",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Fred",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Doğukan Demir",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Cengiz Ünder",
+      "Miha Zajc",
+      "Ahmet Aydın",
+      "Muhammet İmre",
+      "Zeki Dursun",
+      "Çağrı Fedai",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040305"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-03-07-union-sg-fenerbahce",
+   "value": {
+    "name": "Union SG 0-3 Fenerbahçe",
+    "on": "2024-03-07",
+    "competition": "UEFA Conference League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Çağlar Söyüncü",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Dušan Tadić",
+     "Cengiz Ünder",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Fred",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Ferdi Kadıoğlu",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Ryan Kent",
+     "Miha Zajc",
+     "Ahmet Aydın",
+     "Rade Krunić",
+     "Muhammet İmre",
+     "Çağrı Fedai"
+    ],
+    "scorers": [
+     {
+      "name": "Michy Batshuayi",
+      "minute": 20
+     },
+     {
+      "name": "Jayden Oosterwolde",
+      "minute": 84
+     },
+     {
+      "name": "Dušan Tadić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040297",
+     "scorers": [
+      {
+       "name": "Michy Batshuayi",
+       "minute": 20
+      },
+      {
+       "name": "Jayden Oosterwolde",
+       "minute": 84
+      },
+      {
+       "name": "Dušan Tadić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Çağlar Söyüncü",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Dušan Tadić",
+      "Cengiz Ünder",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Fred",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Ferdi Kadıoğlu",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Ryan Kent",
+      "Miha Zajc",
+      "Ahmet Aydın",
+      "Rade Krunić",
+      "Muhammet İmre",
+      "Çağrı Fedai"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040297"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-12-14-fenerbahce-spartak-trnava",
+   "value": {
+    "name": "Fenerbahçe 4-0 Spartak Trnava",
+    "on": "2023-12-14",
+    "competition": "UEFA Conference League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Jayden Oosterwolde",
+     "Fred",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Furkan Akyüz",
+     "Serdar Aziz",
+     "Mert Hakan Yandaş",
+     "Ryan Kent",
+     "Joshua King",
+     "Cengiz Ünder",
+     "Umut Nayir",
+     "Michy Batshuayi",
+     "Miguel Crespo",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Ferdi Kadıoğlu",
+      "minute": 36
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 59
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 61
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039377",
+     "scorers": [
+      {
+       "name": "Ferdi Kadıoğlu",
+       "minute": 36
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 59
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 61
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Jayden Oosterwolde",
+      "Fred",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Furkan Akyüz",
+      "Serdar Aziz",
+      "Mert Hakan Yandaş",
+      "Ryan Kent",
+      "Joshua King",
+      "Cengiz Ünder",
+      "Umut Nayir",
+      "Michy Batshuayi",
+      "Miguel Crespo",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039377"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-30-nordsj-lland-fenerbahce",
+   "value": {
+    "name": "Nordsjælland 6-1 Fenerbahçe",
+    "on": "2023-11-30",
+    "competition": "UEFA Conference League",
+    "score": "6-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "İsmail Yüksek",
+     "Dušan Tadić",
+     "Ryan Kent",
+     "Cengiz Ünder",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miguel Crespo",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Edin Džeko",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Umut Nayir",
+     "Ahmet Aydın",
+     "Muhammet İmre",
+     "Efekan Karayazı",
+     "Çağrı Fedai"
+    ],
+    "scorers": [
+     {
+      "name": "Michy Batshuayi",
+      "minute": 43
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039368",
+     "scorers": [
+      {
+       "name": "Michy Batshuayi",
+       "minute": 43
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "İsmail Yüksek",
+      "Dušan Tadić",
+      "Ryan Kent",
+      "Cengiz Ünder",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miguel Crespo",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Edin Džeko",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Umut Nayir",
+      "Ahmet Aydın",
+      "Muhammet İmre",
+      "Efekan Karayazı",
+      "Çağrı Fedai"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039368"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-09-ludogorets-fenerbahce",
+   "value": {
+    "name": "Ludogorets 2-0 Fenerbahçe",
+    "on": "2023-11-09",
+    "competition": "UEFA Conference League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "İsmail Yüksek",
+     "Ferdi Kadıoğlu",
+     "Dušan Tadić",
+     "Ryan Kent",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "Miguel Crespo",
+     "Yusuf Akçiçek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Edin Džeko",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Umut Nayir",
+     "Ahmet Aydın",
+     "Muhammet İmre",
+     "Sebastian Szymański",
+     "Kaan Akyazı",
+     "Efekan Karayazı"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039353",
+     "scorers": [],
+     "lineup": [
+      "Dominik Livaković",
+      "İsmail Yüksek",
+      "Ferdi Kadıoğlu",
+      "Dušan Tadić",
+      "Ryan Kent",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "Miguel Crespo",
+      "Yusuf Akçiçek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Edin Džeko",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Umut Nayir",
+      "Ahmet Aydın",
+      "Muhammet İmre",
+      "Sebastian Szymański",
+      "Kaan Akyazı",
+      "Efekan Karayazı"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039353"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-26-fenerbahce-ludogorets",
+   "value": {
+    "name": "Fenerbahçe 3-1 Ludogorets",
+    "on": "2023-10-26",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Alexander Djiku",
+     "Dušan Tadić",
+     "Ryan Kent",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "Miguel Crespo",
+     "Fred",
+     "Rodrigo Becão"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Doğukan Demir",
+     "İsmail Yüksek",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Umut Nayir",
+     "Muhammet İmre",
+     "Sebastian Szymański",
+     "Efekan Karayazı",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Michy Batshuayi",
+      "minute": 42
+     },
+     {
+      "name": "Miha Zajc",
+      "minute": 52
+     },
+     {
+      "name": "Miha Zajc",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039329",
+     "scorers": [
+      {
+       "name": "Michy Batshuayi",
+       "minute": 42
+      },
+      {
+       "name": "Miha Zajc",
+       "minute": 52
+      },
+      {
+       "name": "Miha Zajc",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Alexander Djiku",
+      "Dušan Tadić",
+      "Ryan Kent",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "Miguel Crespo",
+      "Fred",
+      "Rodrigo Becão"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Doğukan Demir",
+      "İsmail Yüksek",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Umut Nayir",
+      "Muhammet İmre",
+      "Sebastian Szymański",
+      "Efekan Karayazı",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039329"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-05-spartak-trnava-fenerbahce",
+   "value": {
+    "name": "Spartak Trnava 1-2 Fenerbahçe",
+    "on": "2023-10-05",
+    "competition": "UEFA Conference League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Serdar Aziz",
+     "Mert Hakan Yandaş",
+     "Ryan Kent",
+     "Joshua King",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "Miguel Crespo",
+     "Rodrigo Becão"
+    ],
+    "bench": [
+     "Dominik Livaković",
+     "Furkan Akyüz",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Umut Nayir",
+     "Fred",
+     "Sebastian Szymański",
+     "Yusuf Akçiçek"
+    ],
+    "scorers": [
+     {
+      "name": "Joshua King",
+      "minute": 70
+     },
+     {
+      "name": "Joshua King",
+      "minute": 81
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039321",
+     "scorers": [
+      {
+       "name": "Joshua King",
+       "minute": 70
+      },
+      {
+       "name": "Joshua King",
+       "minute": 81
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Serdar Aziz",
+      "Mert Hakan Yandaş",
+      "Ryan Kent",
+      "Joshua King",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "Miguel Crespo",
+      "Rodrigo Becão"
+     ],
+     "bench": [
+      "Dominik Livaković",
+      "Furkan Akyüz",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Umut Nayir",
+      "Fred",
+      "Sebastian Szymański",
+      "Yusuf Akçiçek"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039321"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-09-21-fenerbahce-nordsj-lland",
+   "value": {
+    "name": "Fenerbahçe 3-1 Nordsjælland",
+    "on": "2023-09-21",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Livaković",
+     "Serdar Aziz",
+     "Alexander Djiku",
+     "Mert Hakan Yandaş",
+     "Ryan Kent",
+     "Joshua King",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miguel Crespo",
+     "Fred"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "İsmail Yüksek",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "İrfan Can Kahveci",
+     "Umut Nayir",
+     "Miha Zajc",
+     "Ahmet Aydın",
+     "Rodrigo Becão",
+     "Sebastian Szymański",
+     "Efekan Karayazı"
+    ],
+    "scorers": [
+     {
+      "name": "Miguel Crespo",
+      "minute": 24
+     },
+     {
+      "name": "Michy Batshuayi",
+      "minute": 30
+     },
+     {
+      "name": "Serdar Aziz",
+      "minute": 47
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039297",
+     "scorers": [
+      {
+       "name": "Miguel Crespo",
+       "minute": 24
+      },
+      {
+       "name": "Michy Batshuayi",
+       "minute": 30
+      },
+      {
+       "name": "Serdar Aziz",
+       "minute": 47
+      }
+     ],
+     "lineup": [
+      "Dominik Livaković",
+      "Serdar Aziz",
+      "Alexander Djiku",
+      "Mert Hakan Yandaş",
+      "Ryan Kent",
+      "Joshua King",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miguel Crespo",
+      "Fred"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "İsmail Yüksek",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "İrfan Can Kahveci",
+      "Umut Nayir",
+      "Miha Zajc",
+      "Ahmet Aydın",
+      "Rodrigo Becão",
+      "Sebastian Szymański",
+      "Efekan Karayazı"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039297"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-31-twente-fenerbahce",
+   "value": {
+    "name": "Twente 0-1 Fenerbahçe",
+    "on": "2023-08-31",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Serdar Aziz",
+     "İsmail Yüksek",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Cengiz Ünder",
+     "Bright Osayi-Samuel",
+     "Jayden Oosterwolde",
+     "Fred",
+     "Rodrigo Becão"
+    ],
+    "bench": [
+     "Doğukan Demir",
+     "Furkan Akyüz",
+     "Alexander Djiku",
+     "Ryan Kent",
+     "Joshua King",
+     "Mert Müldür",
+     "İrfan Can Kahveci",
+     "Umut Nayir",
+     "Michy Batshuayi",
+     "Bartuğ Elmaz",
+     "Ahmet Aydın",
+     "Sebastian Szymański"
+    ],
+    "scorers": [
+     {
+      "name": "Edin Džeko",
+      "minute": 72
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039073",
+     "scorers": [
+      {
+       "name": "Edin Džeko",
+       "minute": 72
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Serdar Aziz",
+      "İsmail Yüksek",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Cengiz Ünder",
+      "Bright Osayi-Samuel",
+      "Jayden Oosterwolde",
+      "Fred",
+      "Rodrigo Becão"
+     ],
+     "bench": [
+      "Doğukan Demir",
+      "Furkan Akyüz",
+      "Alexander Djiku",
+      "Ryan Kent",
+      "Joshua King",
+      "Mert Müldür",
+      "İrfan Can Kahveci",
+      "Umut Nayir",
+      "Michy Batshuayi",
+      "Bartuğ Elmaz",
+      "Ahmet Aydın",
+      "Sebastian Szymański"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039073"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-24-fenerbahce-twente",
+   "value": {
+    "name": "Fenerbahçe 5-1 Twente",
+    "on": "2023-08-24",
+    "competition": "UEFA Conference League",
+    "score": "5-1",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "İsmail Yüksek",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Dušan Tadić",
+     "Ryan Kent",
+     "Mert Müldür",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Fred",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "Altay Bayındır",
+     "Furkan Akyüz",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Cengiz Ünder",
+     "Bright Osayi-Samuel",
+     "Umut Nayir",
+     "Bartuğ Elmaz",
+     "Rodrigo Becão"
+    ],
+    "scorers": [
+     {
+      "name": "Jayden Oosterwolde",
+      "minute": 33
+     },
+     {
+      "name": "Sebastian Szymański",
+      "minute": 60
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 63
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 74
+     },
+     {
+      "name": "Dušan Tadić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039051",
+     "scorers": [
+      {
+       "name": "Jayden Oosterwolde",
+       "minute": 33
+      },
+      {
+       "name": "Sebastian Szymański",
+       "minute": 60
+      },
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 63
+      },
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 74
+      },
+      {
+       "name": "Dušan Tadić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "İsmail Yüksek",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Dušan Tadić",
+      "Ryan Kent",
+      "Mert Müldür",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Fred",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "Altay Bayındır",
+      "Furkan Akyüz",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Cengiz Ünder",
+      "Bright Osayi-Samuel",
+      "Umut Nayir",
+      "Bartuğ Elmaz",
+      "Rodrigo Becão"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039051"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-17-maribor-fenerbahce",
+   "value": {
+    "name": "Maribor 0-3 Fenerbahçe",
+    "on": "2023-08-17",
+    "competition": "UEFA Conference League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "İrfan Can Eğribayat",
+     "Samet Akaydin",
+     "Ferdi Kadıoğlu",
+     "Dušan Tadić",
+     "Luan Peres",
+     "İrfan Can Kahveci",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "Sebastian Szymański",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "Altay Bayındır",
+     "Furkan Akyüz",
+     "Alexander Djiku",
+     "Edin Džeko",
+     "Ryan Kent",
+     "Joshua King",
+     "Mert Müldür",
+     "Umut Nayir",
+     "Bartuğ Elmaz",
+     "Yusuf Kocatürk",
+     "Efekan Karayazı"
+    ],
+    "scorers": [
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 17
+     },
+     {
+      "name": "Sebastian Szymański",
+      "minute": 77
+     },
+     {
+      "name": "Dušan Tadić",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038988",
+     "scorers": [
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 17
+      },
+      {
+       "name": "Sebastian Szymański",
+       "minute": 77
+      },
+      {
+       "name": "Dušan Tadić",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "İrfan Can Eğribayat",
+      "Samet Akaydin",
+      "Ferdi Kadıoğlu",
+      "Dušan Tadić",
+      "Luan Peres",
+      "İrfan Can Kahveci",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "Sebastian Szymański",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "Altay Bayındır",
+      "Furkan Akyüz",
+      "Alexander Djiku",
+      "Edin Džeko",
+      "Ryan Kent",
+      "Joshua King",
+      "Mert Müldür",
+      "Umut Nayir",
+      "Bartuğ Elmaz",
+      "Yusuf Kocatürk",
+      "Efekan Karayazı"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038988"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-10-fenerbahce-maribor",
+   "value": {
+    "name": "Fenerbahçe 3-1 Maribor",
+    "on": "2023-08-10",
+    "competition": "UEFA Conference League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Ferdi Kadıoğlu",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Luan Peres",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Rodrigo Becão",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Samet Akaydin",
+     "Alexander Djiku",
+     "Ryan Kent",
+     "Mert Müldür",
+     "Umut Nayir",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miguel Crespo",
+     "Bartuğ Elmaz",
+     "Sebastian Szymański"
+    ],
+    "scorers": [
+     {
+      "name": "Rodrigo Becão",
+      "minute": 58
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 62
+     },
+     {
+      "name": "Dušan Tadić",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038957",
+     "scorers": [
+      {
+       "name": "Rodrigo Becão",
+       "minute": 58
+      },
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 62
+      },
+      {
+       "name": "Dušan Tadić",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Ferdi Kadıoğlu",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Luan Peres",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Rodrigo Becão",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Samet Akaydin",
+      "Alexander Djiku",
+      "Ryan Kent",
+      "Mert Müldür",
+      "Umut Nayir",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miguel Crespo",
+      "Bartuğ Elmaz",
+      "Sebastian Szymański"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038957"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-01-zimbru-fenerbahce",
+   "value": {
+    "name": "Zimbru 0-4 Fenerbahçe",
+    "on": "2023-08-01",
+    "competition": "UEFA Conference League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Serdar Aziz",
+     "Ferdi Kadıoğlu",
+     "Dušan Tadić",
+     "Luan Peres",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Miguel Crespo",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Samet Akaydin",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Ryan Kent",
+     "Serdar Dursun",
+     "Jayden Oosterwolde",
+     "Bora Aydınlık",
+     "Sebastian Szymański",
+     "Burak Kapacak",
+     "Efekan Karayazı"
+    ],
+    "scorers": [
+     {
+      "name": "Dušan Tadić",
+      "minute": 48
+     },
+     {
+      "name": "Michy Batshuayi",
+      "minute": 57
+     },
+     {
+      "name": "Michy Batshuayi",
+      "minute": 59
+     },
+     {
+      "name": "İsmail Yüksek",
+      "minute": 77
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038723",
+     "scorers": [
+      {
+       "name": "Dušan Tadić",
+       "minute": 48
+      },
+      {
+       "name": "Michy Batshuayi",
+       "minute": 57
+      },
+      {
+       "name": "Michy Batshuayi",
+       "minute": 59
+      },
+      {
+       "name": "İsmail Yüksek",
+       "minute": 77
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Serdar Aziz",
+      "Ferdi Kadıoğlu",
+      "Dušan Tadić",
+      "Luan Peres",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Miguel Crespo",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Samet Akaydin",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Ryan Kent",
+      "Serdar Dursun",
+      "Jayden Oosterwolde",
+      "Bora Aydınlık",
+      "Sebastian Szymański",
+      "Burak Kapacak",
+      "Efekan Karayazı"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038723"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-07-26-fenerbahce-zimbru",
+   "value": {
+    "name": "Fenerbahçe 5-0 Zimbru",
+    "on": "2023-07-26",
+    "competition": "UEFA Conference League",
+    "score": "5-0",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Serdar Aziz",
+     "Alexander Djiku",
+     "Ferdi Kadıoğlu",
+     "Mert Hakan Yandaş",
+     "Edin Džeko",
+     "Dušan Tadić",
+     "Ryan Kent",
+     "Bright Osayi-Samuel",
+     "Miguel Crespo",
+     "Sebastian Szymański"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Samet Akaydin",
+     "Luan Peres",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Serdar Dursun",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Burak Kapacak",
+     "İsmail Yüksek",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Ferdi Kadıoğlu",
+      "minute": 11
+     },
+     {
+      "name": "Ryan Kent",
+      "minute": 14
+     },
+     {
+      "name": "Edin Džeko",
+      "minute": 61
+     },
+     {
+      "name": "Sebastian Szymański",
+      "minute": 63
+     },
+     {
+      "name": "Joshua King",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038670",
+     "scorers": [
+      {
+       "name": "Ferdi Kadıoğlu",
+       "minute": 11
+      },
+      {
+       "name": "Ryan Kent",
+       "minute": 14
+      },
+      {
+       "name": "Edin Džeko",
+       "minute": 61
+      },
+      {
+       "name": "Sebastian Szymański",
+       "minute": 63
+      },
+      {
+       "name": "Joshua King",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Serdar Aziz",
+      "Alexander Djiku",
+      "Ferdi Kadıoğlu",
+      "Mert Hakan Yandaş",
+      "Edin Džeko",
+      "Dušan Tadić",
+      "Ryan Kent",
+      "Bright Osayi-Samuel",
+      "Miguel Crespo",
+      "Sebastian Szymański"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Samet Akaydin",
+      "Luan Peres",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Serdar Dursun",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Burak Kapacak",
+      "İsmail Yüksek",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038670"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-03-16-fenerbahce-sevilla",
+   "value": {
+    "name": "Fenerbahçe 1-0 Sevilla",
+    "on": "2023-03-16",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Samet Akaydin",
+     "Serdar Aziz",
+     "Ferdi Kadıoğlu",
+     "Arda Güler",
+     "Enner Valencia",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "İrfan Can Eğribayat",
+     "Willian Arão",
+     "Mert Hakan Yandaş",
+     "Diego Rossi",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "João Pedro",
+     "Bright Osayi-Samuel",
+     "Miguel Crespo",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Enner Valencia",
+      "minute": 41
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2037615",
+     "scorers": [
+      {
+       "name": "Enner Valencia",
+       "minute": 41
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Samet Akaydin",
+      "Serdar Aziz",
+      "Ferdi Kadıoğlu",
+      "Arda Güler",
+      "Enner Valencia",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "İrfan Can Eğribayat",
+      "Willian Arão",
+      "Mert Hakan Yandaş",
+      "Diego Rossi",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "João Pedro",
+      "Bright Osayi-Samuel",
+      "Miguel Crespo",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2037615"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-03-09-sevilla-fenerbahce",
+   "value": {
+    "name": "Sevilla 2-0 Fenerbahçe",
+    "on": "2023-03-09",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Samet Akaydin",
+     "Serdar Aziz",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Enner Valencia",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Lincoln Henrique",
+     "Miguel Crespo",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "İrfan Can Eğribayat",
+     "Mert Hakan Yandaş",
+     "Diego Rossi",
+     "Arda Güler",
+     "João Pedro",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Jayden Oosterwolde",
+     "Miha Zajc",
+     "İsmail Yüksek",
+     "Emre Mor"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2037607",
+     "scorers": [],
+     "lineup": [
+      "Altay Bayındır",
+      "Samet Akaydin",
+      "Serdar Aziz",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Enner Valencia",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Lincoln Henrique",
+      "Miguel Crespo",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "İrfan Can Eğribayat",
+      "Mert Hakan Yandaş",
+      "Diego Rossi",
+      "Arda Güler",
+      "João Pedro",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Jayden Oosterwolde",
+      "Miha Zajc",
+      "İsmail Yüksek",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2037607"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-11-03-dynamo-kyiv-fenerbahce",
+   "value": {
+    "name": "Dynamo Kyiv 0-2 Fenerbahçe",
+    "on": "2022-11-03",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Serdar Aziz",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Arda Güler",
+     "Enner Valencia",
+     "Lincoln Henrique",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Miguel Crespo",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Furkan Akyüz",
+     "Ezgjan Alioski",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "João Pedro",
+     "Miha Zajc",
+     "Yusuf Kocatürk",
+     "İsmail Yüksek",
+     "Yiğit Efe Demir",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Arda Güler",
+      "minute": 23
+     },
+     {
+      "name": "Willian Arão",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035975",
+     "scorers": [
+      {
+       "name": "Arda Güler",
+       "minute": 23
+      },
+      {
+       "name": "Willian Arão",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Serdar Aziz",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Arda Güler",
+      "Enner Valencia",
+      "Lincoln Henrique",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Miguel Crespo",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Furkan Akyüz",
+      "Ezgjan Alioski",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "João Pedro",
+      "Miha Zajc",
+      "Yusuf Kocatürk",
+      "İsmail Yüksek",
+      "Yiğit Efe Demir",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035975"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-27-fenerbahce-rennes",
+   "value": {
+    "name": "Fenerbahçe 3-3 Rennes",
+    "on": "2022-10-27",
+    "competition": "UEFA Europa League",
+    "score": "3-3",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Gustavo Henrique",
+     "Serdar Aziz",
+     "Willian Arão",
+     "Enner Valencia",
+     "İrfan Can Kahveci",
+     "Lincoln Henrique",
+     "João Pedro",
+     "Bright Osayi-Samuel",
+     "Miguel Crespo",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "İrfan Can Eğribayat",
+     "Ezgjan Alioski",
+     "Ferdi Kadıoğlu",
+     "Arda Güler",
+     "Michy Batshuayi",
+     "Miha Zajc",
+     "Yusuf Kocatürk",
+     "Yiğit Efe Demir",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Enner Valencia",
+      "minute": 42
+     },
+     {
+      "name": "Miha Zajc",
+      "minute": 82
+     },
+     {
+      "name": "Emre Mor",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035973",
+     "scorers": [
+      {
+       "name": "Enner Valencia",
+       "minute": 42
+      },
+      {
+       "name": "Miha Zajc",
+       "minute": 82
+      },
+      {
+       "name": "Emre Mor",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Gustavo Henrique",
+      "Serdar Aziz",
+      "Willian Arão",
+      "Enner Valencia",
+      "İrfan Can Kahveci",
+      "Lincoln Henrique",
+      "João Pedro",
+      "Bright Osayi-Samuel",
+      "Miguel Crespo",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "İrfan Can Eğribayat",
+      "Ezgjan Alioski",
+      "Ferdi Kadıoğlu",
+      "Arda Güler",
+      "Michy Batshuayi",
+      "Miha Zajc",
+      "Yusuf Kocatürk",
+      "Yiğit Efe Demir",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035973"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-13-aek-larnaca-fenerbahce",
+   "value": {
+    "name": "AEK Larnaca 1-2 Fenerbahçe",
+    "on": "2022-10-13",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Gustavo Henrique",
+     "Serdar Aziz",
+     "Ezgjan Alioski",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Arda Güler",
+     "Lincoln Henrique",
+     "João Pedro",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "İrfan Can Eğribayat",
+     "Enner Valencia",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Miguel Crespo",
+     "Yiğit Efe Demir",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "João Pedro",
+      "minute": 16
+     },
+     {
+      "name": "Michy Batshuayi",
+      "minute": 80
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035972",
+     "scorers": [
+      {
+       "name": "João Pedro",
+       "minute": 16
+      },
+      {
+       "name": "Michy Batshuayi",
+       "minute": 80
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Gustavo Henrique",
+      "Serdar Aziz",
+      "Ezgjan Alioski",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Arda Güler",
+      "Lincoln Henrique",
+      "João Pedro",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "İrfan Can Eğribayat",
+      "Enner Valencia",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Miguel Crespo",
+      "Yiğit Efe Demir",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035972"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-06-fenerbahce-aek-larnaca",
+   "value": {
+    "name": "Fenerbahçe 2-0 AEK Larnaca",
+    "on": "2022-10-06",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Gustavo Henrique",
+     "Ezgjan Alioski",
+     "Diego Rossi",
+     "Lincoln Henrique",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Miguel Crespo",
+     "Attila Szalai",
+     "İsmail Yüksek",
+     "Emre Mor"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "İrfan Can Eğribayat",
+     "Serdar Aziz",
+     "Ferdi Kadıoğlu",
+     "Arda Güler",
+     "Enner Valencia",
+     "İrfan Can Kahveci",
+     "João Pedro",
+     "Miha Zajc"
+    ],
+    "scorers": [
+     {
+      "name": "Michy Batshuayi",
+      "minute": 26
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035970",
+     "scorers": [
+      {
+       "name": "Michy Batshuayi",
+       "minute": 26
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Gustavo Henrique",
+      "Ezgjan Alioski",
+      "Diego Rossi",
+      "Lincoln Henrique",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Miguel Crespo",
+      "Attila Szalai",
+      "İsmail Yüksek",
+      "Emre Mor"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "İrfan Can Eğribayat",
+      "Serdar Aziz",
+      "Ferdi Kadıoğlu",
+      "Arda Güler",
+      "Enner Valencia",
+      "İrfan Can Kahveci",
+      "João Pedro",
+      "Miha Zajc"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035970"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-09-15-rennes-fenerbahce",
+   "value": {
+    "name": "Rennes 2-2 Fenerbahçe",
+    "on": "2022-09-15",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Gustavo Henrique",
+     "Mert Hakan Yandaş",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Lincoln Henrique",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Luan Peres",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Serdar Aziz",
+     "Willian Arão",
+     "Ezgjan Alioski",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Arda Güler",
+     "Enner Valencia",
+     "João Pedro",
+     "Miha Zajc",
+     "Miguel Crespo",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 60
+     },
+     {
+      "name": "Enner Valencia",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035968",
+     "scorers": [
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 60
+      },
+      {
+       "name": "Enner Valencia",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Gustavo Henrique",
+      "Mert Hakan Yandaş",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Lincoln Henrique",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Luan Peres",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Serdar Aziz",
+      "Willian Arão",
+      "Ezgjan Alioski",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Arda Güler",
+      "Enner Valencia",
+      "João Pedro",
+      "Miha Zajc",
+      "Miguel Crespo",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035968"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-09-08-fenerbahce-dynamo-kyiv",
+   "value": {
+    "name": "Fenerbahçe 2-1 Dynamo Kyiv",
+    "on": "2022-09-08",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Gustavo Henrique",
+     "Willian Arão",
+     "Ezgjan Alioski",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Joshua King",
+     "João Pedro",
+     "Miguel Crespo",
+     "Luan Peres",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Serdar Aziz",
+     "Mert Hakan Yandaş",
+     "Arda Güler",
+     "Enner Valencia",
+     "İrfan Can Kahveci",
+     "Lincoln Henrique",
+     "Bright Osayi-Samuel",
+     "Michy Batshuayi",
+     "Miha Zajc",
+     "İsmail Yüksek",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Gustavo Henrique",
+      "minute": 35
+     },
+     {
+      "name": "Michy Batshuayi",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035966",
+     "scorers": [
+      {
+       "name": "Gustavo Henrique",
+       "minute": 35
+      },
+      {
+       "name": "Michy Batshuayi",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Gustavo Henrique",
+      "Willian Arão",
+      "Ezgjan Alioski",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Joshua King",
+      "João Pedro",
+      "Miguel Crespo",
+      "Luan Peres",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Serdar Aziz",
+      "Mert Hakan Yandaş",
+      "Arda Güler",
+      "Enner Valencia",
+      "İrfan Can Kahveci",
+      "Lincoln Henrique",
+      "Bright Osayi-Samuel",
+      "Michy Batshuayi",
+      "Miha Zajc",
+      "İsmail Yüksek",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035966"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-25-fenerbahce-austria-wien",
+   "value": {
+    "name": "Fenerbahçe 4-1 Austria Wien",
+    "on": "2022-08-25",
+    "competition": "UEFA Europa League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Gustavo Henrique",
+     "Ezgjan Alioski",
+     "Diego Rossi",
+     "İrfan Can Kahveci",
+     "Serdar Dursun",
+     "Bright Osayi-Samuel",
+     "Miguel Crespo",
+     "Luan Peres",
+     "Mauricio Lemos",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Furkan Akyüz",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Mert Hakan Yandaş",
+     "Arda Güler",
+     "Enner Valencia",
+     "Lincoln Henrique",
+     "Miha Zajc",
+     "Filip Novák",
+     "Attila Szalai",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "İsmail Yüksek",
+      "minute": 12
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 44
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "minute": 70
+     },
+     {
+      "name": "Mert Hakan Yandaş",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035504",
+     "scorers": [
+      {
+       "name": "İsmail Yüksek",
+       "minute": 12
+      },
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 44
+      },
+      {
+       "name": "İrfan Can Kahveci",
+       "minute": 70
+      },
+      {
+       "name": "Mert Hakan Yandaş",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Gustavo Henrique",
+      "Ezgjan Alioski",
+      "Diego Rossi",
+      "İrfan Can Kahveci",
+      "Serdar Dursun",
+      "Bright Osayi-Samuel",
+      "Miguel Crespo",
+      "Luan Peres",
+      "Mauricio Lemos",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Furkan Akyüz",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Mert Hakan Yandaş",
+      "Arda Güler",
+      "Enner Valencia",
+      "Lincoln Henrique",
+      "Miha Zajc",
+      "Filip Novák",
+      "Attila Szalai",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035504"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-18-austria-wien-fenerbahce",
+   "value": {
+    "name": "Austria Wien 0-2 Fenerbahçe",
+    "on": "2022-08-18",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Ezgjan Alioski",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Joshua King",
+     "Serdar Dursun",
+     "Miguel Crespo",
+     "Luan Peres",
+     "Mauricio Lemos",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "İrfan Can Eğribayat",
+     "Gustavo Henrique",
+     "Willian Arão",
+     "Mert Hakan Yandaş",
+     "Arda Güler",
+     "Enner Valencia",
+     "İrfan Can Kahveci",
+     "Lincoln Henrique",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Filip Novák",
+     "Ertuğrul Çetin"
+    ],
+    "scorers": [
+     {
+      "name": "Joshua King",
+      "minute": 8
+     },
+     {
+      "name": "Serdar Dursun",
+      "minute": 89
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035494",
+     "scorers": [
+      {
+       "name": "Joshua King",
+       "minute": 8
+      },
+      {
+       "name": "Serdar Dursun",
+       "minute": 89
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Ezgjan Alioski",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Joshua King",
+      "Serdar Dursun",
+      "Miguel Crespo",
+      "Luan Peres",
+      "Mauricio Lemos",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "İrfan Can Eğribayat",
+      "Gustavo Henrique",
+      "Willian Arão",
+      "Mert Hakan Yandaş",
+      "Arda Güler",
+      "Enner Valencia",
+      "İrfan Can Kahveci",
+      "Lincoln Henrique",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Filip Novák",
+      "Ertuğrul Çetin"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035494"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-11-slovacko-fenerbahce",
+   "value": {
+    "name": "Slovácko 1-1 Fenerbahçe",
+    "on": "2022-08-11",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Diego Rossi",
+     "Arda Güler",
+     "Serdar Dursun",
+     "Bright Osayi-Samuel",
+     "Bruma",
+     "Miguel Crespo",
+     "Luan Peres",
+     "Mauricio Lemos",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "İrfan Can Eğribayat",
+     "Gustavo Henrique",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Enner Valencia",
+     "Joshua King",
+     "Lincoln Henrique",
+     "Miha Zajc",
+     "Filip Novák",
+     "Burak Kapacak",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Serdar Dursun",
+      "minute": 56
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035373",
+     "scorers": [
+      {
+       "name": "Serdar Dursun",
+       "minute": 56
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Diego Rossi",
+      "Arda Güler",
+      "Serdar Dursun",
+      "Bright Osayi-Samuel",
+      "Bruma",
+      "Miguel Crespo",
+      "Luan Peres",
+      "Mauricio Lemos",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "İrfan Can Eğribayat",
+      "Gustavo Henrique",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Enner Valencia",
+      "Joshua King",
+      "Lincoln Henrique",
+      "Miha Zajc",
+      "Filip Novák",
+      "Burak Kapacak",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035373"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-04-fenerbahce-slovacko",
+   "value": {
+    "name": "Fenerbahçe 3-0 Slovácko",
+    "on": "2022-08-04",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Ertuğrul Çetin",
+     "Gustavo Henrique",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Enner Valencia",
+     "Lincoln Henrique",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Attila Szalai",
+     "Emre Mor"
+    ],
+    "bench": [
+     "Altay Bayındır",
+     "Furkan Akyüz",
+     "Mergim Berisha",
+     "Serdar Dursun",
+     "Bruma",
+     "Arda Güler",
+     "Miguel Crespo",
+     "Luan Peres",
+     "Mauricio Lemos",
+     "Filip Novák",
+     "Burak Kapacak"
+    ],
+    "scorers": [
+     {
+      "name": "Emre Mor",
+      "minute": 16
+     },
+     {
+      "name": "Lincoln Henrique",
+      "minute": 45
+     },
+     {
+      "name": "Lincoln Henrique",
+      "minute": 81
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035366",
+     "scorers": [
+      {
+       "name": "Emre Mor",
+       "minute": 16
+      },
+      {
+       "name": "Lincoln Henrique",
+       "minute": 45
+      },
+      {
+       "name": "Lincoln Henrique",
+       "minute": 81
+      }
+     ],
+     "lineup": [
+      "Ertuğrul Çetin",
+      "Gustavo Henrique",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Enner Valencia",
+      "Lincoln Henrique",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Attila Szalai",
+      "Emre Mor"
+     ],
+     "bench": [
+      "Altay Bayındır",
+      "Furkan Akyüz",
+      "Mergim Berisha",
+      "Serdar Dursun",
+      "Bruma",
+      "Arda Güler",
+      "Miguel Crespo",
+      "Luan Peres",
+      "Mauricio Lemos",
+      "Filip Novák",
+      "Burak Kapacak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035366"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-07-27-fenerbahce-dynamo-kyiv",
+   "value": {
+    "name": "Fenerbahçe 1-2 Dynamo Kyiv",
+    "on": "2022-07-27",
+    "competition": "UEFA Champions League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Enner Valencia",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Marcel Tisserand",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Dimitris Pelkas",
+     "Lincoln Henrique",
+     "Serdar Dursun",
+     "Bruma",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Miha Zajc",
+     "Miguel Crespo",
+     "Filip Novák",
+     "Burak Kapacak",
+     "Emre Mor"
+    ],
+    "scorers": [
+     {
+      "name": "Attila Szalai",
+      "minute": 89
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035059",
+     "scorers": [
+      {
+       "name": "Attila Szalai",
+       "minute": 89
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Enner Valencia",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Marcel Tisserand",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Dimitris Pelkas",
+      "Lincoln Henrique",
+      "Serdar Dursun",
+      "Bruma",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Miha Zajc",
+      "Miguel Crespo",
+      "Filip Novák",
+      "Burak Kapacak",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035059"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-07-20-dynamo-kyiv-fenerbahce",
+   "value": {
+    "name": "Dynamo Kyiv 0-0 Fenerbahçe",
+    "on": "2022-07-20",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Serdar Aziz",
+     "Willian Arão",
+     "Ferdi Kadıoğlu",
+     "Diego Rossi",
+     "Enner Valencia",
+     "Joshua King",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Attila Szalai",
+     "İsmail Yüksek"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Lincoln Henrique",
+     "Serdar Dursun",
+     "Bruma",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Miha Zajc",
+     "Miguel Crespo",
+     "Marcel Tisserand",
+     "Filip Novák",
+     "Burak Kapacak",
+     "Emre Mor"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035047",
+     "scorers": [],
+     "lineup": [
+      "Altay Bayındır",
+      "Serdar Aziz",
+      "Willian Arão",
+      "Ferdi Kadıoğlu",
+      "Diego Rossi",
+      "Enner Valencia",
+      "Joshua King",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Attila Szalai",
+      "İsmail Yüksek"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Lincoln Henrique",
+      "Serdar Dursun",
+      "Bruma",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Miha Zajc",
+      "Miguel Crespo",
+      "Marcel Tisserand",
+      "Filip Novák",
+      "Burak Kapacak",
+      "Emre Mor"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035047"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-02-24-slavia-praha-fenerbahce",
+   "value": {
+    "name": "Slavia Praha 3-2 Fenerbahçe",
+    "on": "2022-02-24",
+    "competition": "UEFA Conference League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Serdar Aziz",
+     "José Sosa",
+     "Mert Hakan Yandaş",
+     "Enner Valencia",
+     "Dimitris Pelkas",
+     "Ferdi Kadıoğlu",
+     "Serdar Dursun",
+     "Bright Osayi-Samuel",
+     "Marcel Tisserand",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Berke Özer",
+     "Ertuğrul Çetin",
+     "Minjae Kim",
+     "Ozan Tufan",
+     "Mergim Berisha",
+     "İrfan Can Kahveci",
+     "Ruhan Arda Aksoy",
+     "Arda Güler",
+     "Bora Aydınlık",
+     "Sangaré"
+    ],
+    "scorers": [
+     {
+      "name": "Mert Hakan Yandaş",
+      "minute": 39
+     },
+     {
+      "name": "Mergim Berisha",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033388",
+     "scorers": [
+      {
+       "name": "Mert Hakan Yandaş",
+       "minute": 39
+      },
+      {
+       "name": "Mergim Berisha",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Serdar Aziz",
+      "José Sosa",
+      "Mert Hakan Yandaş",
+      "Enner Valencia",
+      "Dimitris Pelkas",
+      "Ferdi Kadıoğlu",
+      "Serdar Dursun",
+      "Bright Osayi-Samuel",
+      "Marcel Tisserand",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Berke Özer",
+      "Ertuğrul Çetin",
+      "Minjae Kim",
+      "Ozan Tufan",
+      "Mergim Berisha",
+      "İrfan Can Kahveci",
+      "Ruhan Arda Aksoy",
+      "Arda Güler",
+      "Bora Aydınlık",
+      "Sangaré"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033388"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-02-17-fenerbahce-slavia-praha",
+   "value": {
+    "name": "Fenerbahçe 2-3 Slavia Praha",
+    "on": "2022-02-17",
+    "competition": "UEFA Conference League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Minjae Kim",
+     "José Sosa",
+     "Mert Hakan Yandaş",
+     "Enner Valencia",
+     "Dimitris Pelkas",
+     "Ferdi Kadıoğlu",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Sangaré",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Berke Özer",
+     "Ertuğrul Çetin",
+     "Ozan Tufan",
+     "Mergim Berisha",
+     "Serdar Dursun",
+     "Ruhan Arda Aksoy",
+     "Arda Güler",
+     "Marcel Tisserand",
+     "Arda Çağdaş",
+     "Bora Çuha"
+    ],
+    "scorers": [
+     {
+      "name": "Dimitris Pelkas",
+      "minute": 58
+     },
+     {
+      "name": "Ferdi Kadıoğlu",
+      "minute": 83
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033380",
+     "scorers": [
+      {
+       "name": "Dimitris Pelkas",
+       "minute": 58
+      },
+      {
+       "name": "Ferdi Kadıoğlu",
+       "minute": 83
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Minjae Kim",
+      "José Sosa",
+      "Mert Hakan Yandaş",
+      "Enner Valencia",
+      "Dimitris Pelkas",
+      "Ferdi Kadıoğlu",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Sangaré",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Berke Özer",
+      "Ertuğrul Çetin",
+      "Ozan Tufan",
+      "Mergim Berisha",
+      "Serdar Dursun",
+      "Ruhan Arda Aksoy",
+      "Arda Güler",
+      "Marcel Tisserand",
+      "Arda Çağdaş",
+      "Bora Çuha"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033380"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-12-09-fenerbahce-frankfurt",
+   "value": {
+    "name": "Fenerbahçe 1-1 Frankfurt",
+    "on": "2021-12-09",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Berke Özer",
+     "Minjae Kim",
+     "Serdar Aziz",
+     "José Sosa",
+     "Mergim Berisha",
+     "Dimitris Pelkas",
+     "İrfan Can Kahveci",
+     "Miha Zajc",
+     "Sangaré",
+     "Filip Novák",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Maximilian Meyer",
+     "Diego Rossi",
+     "Mesut Özil",
+     "Ferdi Kadıoğlu",
+     "Luiz Gustavo",
+     "Bright Osayi-Samuel",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Marcel Tisserand",
+     "Fatih Şanlıtürk",
+     "Arda Kurtulan"
+    ],
+    "scorers": [
+     {
+      "name": "Mergim Berisha",
+      "minute": 42
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033256",
+     "scorers": [
+      {
+       "name": "Mergim Berisha",
+       "minute": 42
+      }
+     ],
+     "lineup": [
+      "Berke Özer",
+      "Minjae Kim",
+      "Serdar Aziz",
+      "José Sosa",
+      "Mergim Berisha",
+      "Dimitris Pelkas",
+      "İrfan Can Kahveci",
+      "Miha Zajc",
+      "Sangaré",
+      "Filip Novák",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Maximilian Meyer",
+      "Diego Rossi",
+      "Mesut Özil",
+      "Ferdi Kadıoğlu",
+      "Luiz Gustavo",
+      "Bright Osayi-Samuel",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Marcel Tisserand",
+      "Fatih Şanlıtürk",
+      "Arda Kurtulan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033256"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-25-olympiacos-fenerbahce",
+   "value": {
+    "name": "Olympiacos 1-0 Fenerbahçe",
+    "on": "2021-11-25",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Berke Özer",
+     "Minjae Kim",
+     "José Sosa",
+     "Mert Hakan Yandaş",
+     "Diego Rossi",
+     "Mergim Berisha",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Marcel Tisserand",
+     "Filip Novák"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Bartu Kulbilge",
+     "Serdar Aziz",
+     "Maximilian Meyer",
+     "Dimitris Pelkas",
+     "Ferdi Kadıoğlu",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Sangaré",
+     "Attila Szalai",
+     "Fatih Şanlıtürk",
+     "Arda Kurtulan"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033245",
+     "scorers": [],
+     "lineup": [
+      "Berke Özer",
+      "Minjae Kim",
+      "José Sosa",
+      "Mert Hakan Yandaş",
+      "Diego Rossi",
+      "Mergim Berisha",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Marcel Tisserand",
+      "Filip Novák"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Bartu Kulbilge",
+      "Serdar Aziz",
+      "Maximilian Meyer",
+      "Dimitris Pelkas",
+      "Ferdi Kadıoğlu",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Sangaré",
+      "Attila Szalai",
+      "Fatih Şanlıtürk",
+      "Arda Kurtulan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033245"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-04-antwerp-fenerbahce",
+   "value": {
+    "name": "Antwerp 0-3 Fenerbahçe",
+    "on": "2021-11-04",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Berke Özer",
+     "Minjae Kim",
+     "José Sosa",
+     "Maximilian Meyer",
+     "Mert Hakan Yandaş",
+     "Mergim Berisha",
+     "Ferdi Kadıoğlu",
+     "İrfan Can Kahveci",
+     "Bright Osayi-Samuel",
+     "Marcel Tisserand",
+     "Filip Novák"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Bartu Kulbilge",
+     "Diego Rossi",
+     "Dimitris Pelkas",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Miha Zajc",
+     "Sangaré",
+     "Attila Szalai",
+     "Arda Kurtulan"
+    ],
+    "scorers": [
+     {
+      "name": "Mert Hakan Yandaş",
+      "minute": 8
+     },
+     {
+      "name": "Maximilian Meyer",
+      "minute": 16
+     },
+     {
+      "name": "Mergim Berisha",
+      "minute": 29
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033225",
+     "scorers": [
+      {
+       "name": "Mert Hakan Yandaş",
+       "minute": 8
+      },
+      {
+       "name": "Maximilian Meyer",
+       "minute": 16
+      },
+      {
+       "name": "Mergim Berisha",
+       "minute": 29
+      }
+     ],
+     "lineup": [
+      "Berke Özer",
+      "Minjae Kim",
+      "José Sosa",
+      "Maximilian Meyer",
+      "Mert Hakan Yandaş",
+      "Mergim Berisha",
+      "Ferdi Kadıoğlu",
+      "İrfan Can Kahveci",
+      "Bright Osayi-Samuel",
+      "Marcel Tisserand",
+      "Filip Novák"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Bartu Kulbilge",
+      "Diego Rossi",
+      "Dimitris Pelkas",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Miha Zajc",
+      "Sangaré",
+      "Attila Szalai",
+      "Arda Kurtulan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033225"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-10-21-fenerbahce-antwerp",
+   "value": {
+    "name": "Fenerbahçe 2-2 Antwerp",
+    "on": "2021-10-21",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Minjae Kim",
+     "José Sosa",
+     "Mesut Özil",
+     "Mergim Berisha",
+     "Enner Valencia",
+     "Ferdi Kadıoğlu",
+     "Luiz Gustavo",
+     "Bright Osayi-Samuel",
+     "Marcel Tisserand",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Berke Özer",
+     "Ertuğrul Çetin",
+     "Maximilian Meyer",
+     "Diego Rossi",
+     "Dimitris Pelkas",
+     "Ruhan Arda Aksoy",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Miha Zajc",
+     "Sangaré",
+     "Filip Novák"
+    ],
+    "scorers": [
+     {
+      "name": "Enner Valencia",
+      "minute": 21
+     },
+     {
+      "name": "Enner Valencia",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033212",
+     "scorers": [
+      {
+       "name": "Enner Valencia",
+       "minute": 21
+      },
+      {
+       "name": "Enner Valencia",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Minjae Kim",
+      "José Sosa",
+      "Mesut Özil",
+      "Mergim Berisha",
+      "Enner Valencia",
+      "Ferdi Kadıoğlu",
+      "Luiz Gustavo",
+      "Bright Osayi-Samuel",
+      "Marcel Tisserand",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Berke Özer",
+      "Ertuğrul Çetin",
+      "Maximilian Meyer",
+      "Diego Rossi",
+      "Dimitris Pelkas",
+      "Ruhan Arda Aksoy",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Miha Zajc",
+      "Sangaré",
+      "Filip Novák"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033212"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-30-fenerbahce-olympiacos",
+   "value": {
+    "name": "Fenerbahçe 0-3 Olympiacos",
+    "on": "2021-09-30",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Minjae Kim",
+     "Mert Hakan Yandaş",
+     "Diego Rossi",
+     "Enner Valencia",
+     "Dimitris Pelkas",
+     "Ferdi Kadıoğlu",
+     "Luiz Gustavo",
+     "Bright Osayi-Samuel",
+     "Filip Novák",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Berke Özer",
+     "Ertuğrul Çetin",
+     "Maximilian Meyer",
+     "Mergim Berisha",
+     "Ruhan Arda Aksoy",
+     "Muhammed Gümüşkaya",
+     "Miha Zajc",
+     "Fatih Şanlıtürk",
+     "Arda Kurtulan"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033197",
+     "scorers": [],
+     "lineup": [
+      "Altay Bayındır",
+      "Minjae Kim",
+      "Mert Hakan Yandaş",
+      "Diego Rossi",
+      "Enner Valencia",
+      "Dimitris Pelkas",
+      "Ferdi Kadıoğlu",
+      "Luiz Gustavo",
+      "Bright Osayi-Samuel",
+      "Filip Novák",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Berke Özer",
+      "Ertuğrul Çetin",
+      "Maximilian Meyer",
+      "Mergim Berisha",
+      "Ruhan Arda Aksoy",
+      "Muhammed Gümüşkaya",
+      "Miha Zajc",
+      "Fatih Şanlıtürk",
+      "Arda Kurtulan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033197"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-16-frankfurt-fenerbahce",
+   "value": {
+    "name": "Frankfurt 1-1 Fenerbahçe",
+    "on": "2021-09-16",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Minjae Kim",
+     "Serdar Aziz",
+     "Mert Hakan Yandaş",
+     "Diego Rossi",
+     "Mesut Özil",
+     "Enner Valencia",
+     "Ferdi Kadıoğlu",
+     "Luiz Gustavo",
+     "Bright Osayi-Samuel",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Ertuğrul Çetin",
+     "Maximilian Meyer",
+     "Mergim Berisha",
+     "Dimitris Pelkas",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Berke Özer",
+     "Filip Novák",
+     "Fatih Şanlıtürk"
+    ],
+    "scorers": [
+     {
+      "name": "Mesut Özil",
+      "minute": 10
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033176",
+     "scorers": [
+      {
+       "name": "Mesut Özil",
+       "minute": 10
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Minjae Kim",
+      "Serdar Aziz",
+      "Mert Hakan Yandaş",
+      "Diego Rossi",
+      "Mesut Özil",
+      "Enner Valencia",
+      "Ferdi Kadıoğlu",
+      "Luiz Gustavo",
+      "Bright Osayi-Samuel",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Ertuğrul Çetin",
+      "Maximilian Meyer",
+      "Mergim Berisha",
+      "Dimitris Pelkas",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Berke Özer",
+      "Filip Novák",
+      "Fatih Şanlıtürk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033176"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-26-hjk-fenerbahce",
+   "value": {
+    "name": "HJK 2-5 Fenerbahçe",
+    "on": "2021-08-26",
+    "competition": "UEFA Europa League",
+    "score": "2-5",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "José Sosa",
+     "Mesut Özil",
+     "Enner Valencia",
+     "Ferdi Kadıoğlu",
+     "Luiz Gustavo",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Sangaré",
+     "Marcel Tisserand",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Berke Özer",
+     "Ertuğrul Çetin",
+     "Serdar Aziz",
+     "Mert Hakan Yandaş",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Fatih Şanlıtürk"
+    ],
+    "scorers": [
+     {
+      "name": "Enner Valencia",
+      "minute": 11
+     },
+     {
+      "name": "Enner Valencia",
+      "minute": 14
+     },
+     {
+      "name": "Enner Valencia",
+      "minute": 52
+     },
+     {
+      "name": "Fatih Şanlıtürk",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033113",
+     "scorers": [
+      {
+       "name": "Enner Valencia",
+       "minute": 11
+      },
+      {
+       "name": "Enner Valencia",
+       "minute": 14
+      },
+      {
+       "name": "Enner Valencia",
+       "minute": 52
+      },
+      {
+       "name": "Fatih Şanlıtürk",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "José Sosa",
+      "Mesut Özil",
+      "Enner Valencia",
+      "Ferdi Kadıoğlu",
+      "Luiz Gustavo",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Sangaré",
+      "Marcel Tisserand",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Berke Özer",
+      "Ertuğrul Çetin",
+      "Serdar Aziz",
+      "Mert Hakan Yandaş",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Fatih Şanlıtürk"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033113"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-19-fenerbahce-hjk",
+   "value": {
+    "name": "Fenerbahçe 1-0 HJK",
+    "on": "2021-08-19",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Altay Bayındır",
+     "Serdar Aziz",
+     "José Sosa",
+     "Mesut Özil",
+     "İrfan Can Kahveci",
+     "Luiz Gustavo",
+     "Bright Osayi-Samuel",
+     "Miha Zajc",
+     "Marcel Tisserand",
+     "Filip Novák",
+     "Attila Szalai"
+    ],
+    "bench": [
+     "Berke Özer",
+     "Ertuğrul Çetin",
+     "Ferdi Kadıoğlu",
+     "Muhammed Gümüşkaya",
+     "Arda Güler",
+     "Sangaré"
+    ],
+    "scorers": [
+     {
+      "name": "Muhammed Gümüşkaya",
+      "minute": 65
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033103",
+     "scorers": [
+      {
+       "name": "Muhammed Gümüşkaya",
+       "minute": 65
+      }
+     ],
+     "lineup": [
+      "Altay Bayındır",
+      "Serdar Aziz",
+      "José Sosa",
+      "Mesut Özil",
+      "İrfan Can Kahveci",
+      "Luiz Gustavo",
+      "Bright Osayi-Samuel",
+      "Miha Zajc",
+      "Marcel Tisserand",
+      "Filip Novák",
+      "Attila Szalai"
+     ],
+     "bench": [
+      "Berke Özer",
+      "Ertuğrul Çetin",
+      "Ferdi Kadıoğlu",
+      "Muhammed Gümüşkaya",
+      "Arda Güler",
+      "Sangaré"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033103"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-02-21-zenit-fenerbahce",
+   "value": {
+    "name": "Zenit 3-1 Fenerbahçe",
+    "on": "2019-02-21",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Harun Tekin",
+     "Hasan Ali Kaldırım",
+     "Mehmet Topal",
+     "Alper Potuk",
+     "Victor Moses",
+     "Şener Özbayraklı",
+     "André Ayew",
+     "Jailson",
+     "Martin Škrtel",
+     "Sadık Çiftpınar",
+     "Eljif Elmas"
+    ],
+    "bench": [
+     "Volkan Demirel",
+     "İsmail Köybaşı",
+     "Tolgay Arslan",
+     "Michael Frey",
+     "Islam Slimani",
+     "Roman Neustädter",
+     "Abdulcebrail Akbulut"
+    ],
+    "scorers": [
+     {
+      "name": "Mehmet Topal",
+      "minute": 43
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2026897",
+     "scorers": [
+      {
+       "name": "Mehmet Topal",
+       "minute": 43
+      }
+     ],
+     "lineup": [
+      "Harun Tekin",
+      "Hasan Ali Kaldırım",
+      "Mehmet Topal",
+      "Alper Potuk",
+      "Victor Moses",
+      "Şener Özbayraklı",
+      "André Ayew",
+      "Jailson",
+      "Martin Škrtel",
+      "Sadık Çiftpınar",
+      "Eljif Elmas"
+     ],
+     "bench": [
+      "Volkan Demirel",
+      "İsmail Köybaşı",
+      "Tolgay Arslan",
+      "Michael Frey",
+      "Islam Slimani",
+      "Roman Neustädter",
+      "Abdulcebrail Akbulut"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2026897"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

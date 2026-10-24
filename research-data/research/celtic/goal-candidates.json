@@ -187,6 +187,15 @@
     "bodyHash": "bf25ec611b713ae557d926cf51ccf753fe6d4d5b681fbd6686e2ebe0a5112469",
     "fetchedAt": "2026-10-23T08:41:33.974Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1895-2/1895-05-25-celtic-4-0-rangers-glasgow-charity-cup-final/",
+    "locator": "p14",
+    "quote": "The goals: 1-0 McMahon (20 min.), 2-0 Kelly, 3-0 McMahon (70 min.), 4-0 McMahon",
+    "bodyHash": "b5a85bc16bb4d24b3cf2efb8233dbd7db6e350465b1d480c6e0ec3e632def534",
+    "fetchedAt": "2026-10-23T08:50:48.640Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -194,8 +203,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:41:33.974Z",
-  "updatedAt": "2026-10-23T08:41:33.974Z"
+  "createdAt": "2026-10-23T08:50:48.640Z",
+  "updatedAt": "2026-10-23T08:50:48.640Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -256,5 +265,125 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-23T08:41:33.974Z",
   "updatedAt": "2026-10-23T08:41:33.974Z"
+ },
+ {
+  "id": "ga-452c9c2b8bf7f161",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "54",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-03-11-celtic-1-2-queens-park-scottish-cup-final/",
+    "locator": "p12",
+    "quote": "Scorers:- 2-1 Blessington (54 min.).",
+    "bodyHash": "22895e24b147f6d1da8c3cc5e4a7428f9f5b4d534bace7650a369927c072ef10",
+    "fetchedAt": "2026-10-23T08:50:36.560Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:50:36.560Z",
+  "updatedAt": "2026-10-23T08:50:36.560Z"
+ },
+ {
+  "id": "ga-4d6388cf4e867df9",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "10",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-03-11-celtic-1-2-queens-park-scottish-cup-final/",
+    "locator": "p15",
+    "quote": "Scorers: 1-0 Sellar (10 min.), 2-0 Sellar (30 min.)",
+    "bodyHash": "22895e24b147f6d1da8c3cc5e4a7428f9f5b4d534bace7650a369927c072ef10",
+    "fetchedAt": "2026-10-23T08:50:36.560Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:50:36.560Z",
+  "updatedAt": "2026-10-23T08:50:36.560Z"
+ },
+ {
+  "id": "ga-5359cb1bdfb22aae",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "75",
+  "scorerAlias": "Cassidy",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-12-09-celtic-4-3-queens-park-friendly/",
+    "locator": "p5",
+    "quote": "A very welcome conciliation between Scotland`s two leading clubs in this, their first organised friendly encounter. Once Celtic had started playing League games in 1890, they had declined offers to play Queen`s Park who hadn`t joined and all eight previous meetings had been in cup competitions. The odd peek of sunshine couldn`t lift the gloom and snow flurries nipped at fingers but on a heavy pitch the two teams gave the meagre crowd a fitting game. Johnny Madden opened the scoring for the home XI when he slickly scored from close range and with both sides attacking in turn, it took the Spider",
+    "bodyHash": "d54a28d562c89d1d551f29f9e7b1dd6de476e064f99e68533a462f3367d971cb",
+    "fetchedAt": "2026-10-23T08:50:39.511Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:50:39.511Z",
+  "updatedAt": "2026-10-23T08:50:39.511Z"
+ },
+ {
+  "id": "ga-f4d5a95a2097e7e6",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "30",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-04-16-celtic-1-1-sheffield-utd-friendly/",
+    "locator": "p15",
+    "quote": "The goals: 1-0 McMahon (30 min.), 1-1 Almond (87 min.).",
+    "bodyHash": "e6d4cca676a3519f9f26b6a5efcda7cc35945ffc00ef783455ae319667293ae6",
+    "fetchedAt": "2026-10-23T08:51:00.695Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:51:00.695Z",
+  "updatedAt": "2026-10-23T08:51:00.695Z"
  }
 ]

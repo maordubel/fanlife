@@ -19,6 +19,24 @@
     "bodyHash": "833903d1c65fb424616c4754a97c1a017656bace50d30058a44037a40f73850a",
     "fetchedAt": "2026-10-16T08:21:24.044Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/02/05/lage-am-millerntor-05-02-2020/",
+    "locator": "p30",
+    "quote": "Vom Hessischen Rundfunk gibt es außerdem eine sehenswerte Doku über „ Gewalt gegen Schiedsrichter “ (30min).",
+    "bodyHash": "06da88e2a5def715a598e94450dc44b0ef6eb89fad9003f1215539caf5475ea6",
+    "fetchedAt": "2026-10-23T08:52:15.248Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/02/27/lage-am-millerntor-27-02-2020/",
+    "locator": "p14",
+    "quote": "„ Hass und Gewalt im Fußball – Wie Neonazis Vereine unterwandern “ (30min)",
+    "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
+    "fetchedAt": "2026-10-23T08:52:17.089Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -26,8 +44,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-16T08:21:24.044Z",
-  "updatedAt": "2026-10-16T08:21:24.044Z"
+  "createdAt": "2026-10-23T08:52:17.089Z",
+  "updatedAt": "2026-10-23T08:52:17.089Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -58,5 +76,155 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-20T08:43:37.067Z",
   "updatedAt": "2026-10-20T08:43:37.067Z"
+ },
+ {
+  "id": "ga-841148b1b6e631c5",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/02/25/lage-am-millerntor-25-02-2020/",
+    "locator": "p13",
+    "quote": "4. Über die, die 90 Min. den Mund nicht aufkriegen, redet niemand.?‍♀️ #SGEFCU",
+    "bodyHash": "cdf5bf55ac162bc247b7976329919076ea3558406d59be84725f7bb16c9e980f",
+    "fetchedAt": "2026-10-23T08:52:17.087Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:52:17.087Z",
+  "updatedAt": "2026-10-23T08:52:17.087Z"
+ },
+ {
+  "id": "ga-a41e98643556d4b1",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "13",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/02/25/lage-am-millerntor-25-02-2020/",
+    "locator": "p62",
+    "quote": "Gary Neville , ehemaliger Englischer Nationalspieler und inzwischen Experte bei Sky UK tat dies in einem 1:13Min Interview … welches bei Sky DE leider hinter einen 30-Sekündigen Werbespot gepackt ist. Er ist zumindest guter Dinge, dass sich in der Premier League etwas ändern wird, weil die Spieler dies selbst in die Hand nehmen werden. Gleichzeitig kritisiert er aber die FA und die Premier League, da diese die Spieler im Stich lassen und selbst nicht aktiv werden.",
+    "bodyHash": "cdf5bf55ac162bc247b7976329919076ea3558406d59be84725f7bb16c9e980f",
+    "fetchedAt": "2026-10-23T08:52:17.087Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:52:17.087Z",
+  "updatedAt": "2026-10-23T08:52:17.087Z"
+ },
+ {
+  "id": "ga-394aed08aa3f879b",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "10",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/02/27/lage-am-millerntor-27-02-2020/",
+    "locator": "p15",
+    "quote": "„ Polizeigewalt – Besonders im Fußball ein Problem “ (10min)",
+    "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
+    "fetchedAt": "2026-10-23T08:52:17.089Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:52:17.089Z",
+  "updatedAt": "2026-10-23T08:52:17.089Z"
+ },
+ {
+  "id": "ga-51b4860bcfa8ab6d",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "39",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/02/27/lage-am-millerntor-27-02-2020/",
+    "locator": "p60",
+    "quote": "Ihr erinnert Euch vielleicht an den Vorfall in Frankfurt, bei dem ein Fan im Februar 2019 durch einen Polizisten einen Lendenwirbelbruch erlitt ( im Video hier etwa bei 0:39min ).",
+    "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
+    "fetchedAt": "2026-10-23T08:52:17.089Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:52:17.089Z",
+  "updatedAt": "2026-10-23T08:52:17.089Z"
+ },
+ {
+  "id": "ga-ee3d885becb3b388",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "4",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/04/06/lage-am-millerntor-06-04-2020-kw-15/",
+    "locator": "p83",
+    "quote": "Ob Genk nächste Saison europäisch spielen darf ist unklar und aktuell aufgrund der Tabellensituation eher unwahrscheinlich. Im Interview mit dem ZDF-Sportstudio äußerte sich UEFA-Präsident Aleksander Ceferin (4min) u.a. auch zum Saisonende in Belgien und sagte, mit dem Saisonende gefährde der Belgische Verband auch die Teilnahme seiner Vereine an den Wettbewerben der nächsten Saison, leider fehlte hier dann die Nachfrage wie er das meine, denn eigentlich nominieren die Verbände ja jeweils die eigenen Teilnehmer dafür. Nach dem Interview gab es dann aber wohl noch ein Gespräch zwischen Ceferin ",
+    "bodyHash": "d66330fe44da29a0bad37eee84190e8f8f3f0a20efb98556d784ebe09ea78f56",
+    "fetchedAt": "2026-10-23T08:52:20.339Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-23T08:52:20.339Z",
+  "updatedAt": "2026-10-23T08:52:20.339Z"
  }
 ]

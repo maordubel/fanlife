@@ -9,7 +9,7 @@
     "pagesRead": 0,
     "observedTotalDocuments": 5,
     "observedTotalPages": null,
-    "queue": 1,
+    "queue": 0,
     "lastError": "HTTP 403 — a refusal is an answer"
    }
   ],
@@ -25,7 +25,7 @@
    {
     "collection": "posts",
     "state": "partial_budget",
-    "pagesRead": 8,
+    "pagesRead": 12,
     "observedTotalDocuments": 657,
     "observedTotalPages": 27,
     "queue": null,
@@ -41,7 +41,7 @@
     "lastError": null
    }
   ],
-  "documents": 217,
+  "documents": 317,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."

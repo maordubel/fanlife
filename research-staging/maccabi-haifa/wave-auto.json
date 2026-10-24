@@ -1,0 +1,7838 @@
+{
+ "sources": [
+  {
+   "id": "a-src-uefa-2045798",
+   "title": "UEFA: Maccabi Haifa 0-2 Raków, 2025-08-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045798--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045768",
+   "title": "UEFA: Raków 0-1 Maccabi Haifa, 2025-08-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045768--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045508",
+   "title": "UEFA: Maccabi Haifa 3-0 Torpedo-Belaz, 2025-07-31",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045508--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2045458",
+   "title": "UEFA: Torpedo-Belaz 1-1 Maccabi Haifa, 2025-07-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2045458--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041197",
+   "title": "UEFA: Sabah 3-6 Maccabi Haifa, 2024-08-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041197--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2041148",
+   "title": "UEFA: Maccabi Haifa 0-3 Sabah, 2024-07-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2041148--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040308",
+   "title": "UEFA: Fiorentina 1-1 Maccabi Haifa, 2024-03-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040308--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2040300",
+   "title": "UEFA: Maccabi Haifa 3-4 Fiorentina, 2024-03-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2040300--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039961",
+   "title": "UEFA: Gent 1-1 Maccabi Haifa, 2024-02-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039961--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039953",
+   "title": "UEFA: Maccabi Haifa 1-0 Gent, 2024-02-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039953--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039277",
+   "title": "UEFA: Panathinaikos 1-2 Maccabi Haifa, 2023-12-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039277--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039237",
+   "title": "UEFA: Villarreal 0-0 Maccabi Haifa, 2023-12-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039237--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039264",
+   "title": "UEFA: Maccabi Haifa 0-3 Rennes, 2023-11-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039264--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039246",
+   "title": "UEFA: Maccabi Haifa 1-2 Villarreal, 2023-11-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039246--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039221",
+   "title": "UEFA: Maccabi Haifa 0-0 Panathinaikos, 2023-10-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039221--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039196",
+   "title": "UEFA: Rennes 3-0 Maccabi Haifa, 2023-09-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039196--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2039004",
+   "title": "UEFA: Young Boys 3-0 Maccabi Haifa, 2023-08-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2039004--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038998",
+   "title": "UEFA: Maccabi Haifa 0-0 Young Boys, 2023-08-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038998--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038909",
+   "title": "UEFA: Maccabi Haifa 3-1 S. Bratislava, 2023-08-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038909--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038899",
+   "title": "UEFA: S. Bratislava 1-2 Maccabi Haifa, 2023-08-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038899--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038614",
+   "title": "UEFA: Maccabi Haifa 4-1 Sheriff, 2023-08-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038614--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038602",
+   "title": "UEFA: Sheriff 1-0 Maccabi Haifa, 2023-07-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038602--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038383",
+   "title": "UEFA: Maccabi Haifa 2-1 Hamrun Spartans, 2023-07-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038383--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2038368",
+   "title": "UEFA: Hamrun Spartans 0-4 Maccabi Haifa, 2023-07-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2038368--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035736",
+   "title": "UEFA: Maccabi Haifa 1-6 Benfica, 2022-11-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035736--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035719",
+   "title": "UEFA: Paris 7-2 Maccabi Haifa, 2022-10-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035719--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035703",
+   "title": "UEFA: Maccabi Haifa 2-0 Juventus, 2022-10-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035703--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035687",
+   "title": "UEFA: Juventus 3-1 Maccabi Haifa, 2022-10-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035687--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035672",
+   "title": "UEFA: Maccabi Haifa 1-3 Paris, 2022-09-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035672--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035656",
+   "title": "UEFA: Benfica 2-0 Maccabi Haifa, 2022-09-06",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035656--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035488",
+   "title": "UEFA: Crvena Zvezda 2-2 Maccabi Haifa, 2022-08-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035488--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035482",
+   "title": "UEFA: Maccabi Haifa 3-2 Crvena Zvezda, 2022-08-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035482--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035384",
+   "title": "UEFA: Apollon 2-0 Maccabi Haifa, 2022-08-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035384--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035374",
+   "title": "UEFA: Maccabi Haifa 4-0 Apollon, 2022-08-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035374--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035056",
+   "title": "UEFA: Olympiacos 0-4 Maccabi Haifa, 2022-07-27",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035056--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2035044",
+   "title": "UEFA: Maccabi Haifa 1-1 Olympiacos, 2022-07-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2035044--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033354",
+   "title": "UEFA: Feyenoord 2-1 Maccabi Haifa, 2021-12-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033354--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033342",
+   "title": "UEFA: Maccabi Haifa 0-1 Union Berlin, 2021-11-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033342--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033322",
+   "title": "UEFA: Slavia Praha 1-0 Maccabi Haifa, 2021-11-04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033322--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033310",
+   "title": "UEFA: Maccabi Haifa 1-0 Slavia Praha, 2021-10-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033310--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033295",
+   "title": "UEFA: Union Berlin 3-0 Maccabi Haifa, 2021-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033295--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033275",
+   "title": "UEFA: Maccabi Haifa 0-0 Feyenoord, 2021-09-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033275--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033143",
+   "title": "UEFA: Maccabi Haifa 4-0 Neftchi, 2021-08-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033143--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033121",
+   "title": "UEFA: Neftchi 3-3 Maccabi Haifa, 2021-08-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033121--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033063",
+   "title": "UEFA: H. Bóltfelag 1-0 Maccabi Haifa, 2021-08-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033063--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2033032",
+   "title": "UEFA: Maccabi Haifa 7-2 H. Bóltfelag, 2021-08-05",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2033032--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032858",
+   "title": "UEFA: Maccabi Haifa 5-1 Dinamo Tbilisi, 2021-07-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032858--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032804",
+   "title": "UEFA: Dinamo Tbilisi 1-2 Maccabi Haifa, 2021-07-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032804--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032574",
+   "title": "UEFA: Kairat Almaty 2-0 Maccabi Haifa, 2021-07-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032574--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2032558",
+   "title": "UEFA: Maccabi Haifa 1-1 Kairat Almaty, 2021-07-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2032558--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030548",
+   "title": "UEFA: Tottenham 7-2 Maccabi Haifa, 2020-10-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030548--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030387",
+   "title": "UEFA: Rostov 1-2 Maccabi Haifa, 2020-09-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030387--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030330",
+   "title": "UEFA: Maccabi Haifa 2-1 Kairat Almaty, 2020-09-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030330--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2030287",
+   "title": "UEFA: Maccabi Haifa 3-1 Željezničar, 2020-09-09",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2030287--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027696",
+   "title": "UEFA: Maccabi Haifa 2-1 Strasbourg, 2019-08-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027696--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027650",
+   "title": "UEFA: Strasbourg 3-1 Maccabi Haifa, 2019-07-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027650--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027588",
+   "title": "UEFA: Mura 2-3 Maccabi Haifa, 2019-07-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027588--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2027541",
+   "title": "UEFA: Maccabi Haifa 2-0 Mura, 2019-07-11",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2027541--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020114",
+   "title": "UEFA: Kalju 1-1 Maccabi Haifa, 2016-07-21",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020114--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2020074",
+   "title": "UEFA: Maccabi Haifa 1-1 Kalju, 2016-07-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2020074--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012619",
+   "title": "UEFA: Maccabi Haifa 2-1 Shakhter, 2013-12-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012619--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012595",
+   "title": "UEFA: AZ Alkmaar 2-0 Maccabi Haifa, 2013-11-28",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012595--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012571",
+   "title": "UEFA: Maccabi Haifa 0-0 PAOK, 2013-11-07",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012571--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012547",
+   "title": "UEFA: PAOK 3-2 Maccabi Haifa, 2013-10-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012547--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012523",
+   "title": "UEFA: Shakhter 2-2 Maccabi Haifa, 2013-10-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012523--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012499",
+   "title": "UEFA: Maccabi Haifa 0-1 AZ Alkmaar, 2013-09-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012499--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012470",
+   "title": "UEFA: Astra 1-1 Maccabi Haifa, 2013-08-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012470--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012439",
+   "title": "UEFA: Maccabi Haifa 2-0 Astra, 2013-08-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012439--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012387",
+   "title": "UEFA: Maccabi Haifa 3-0 Ventspils, 2013-08-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012387--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012358",
+   "title": "UEFA: Ventspils 0-0 Maccabi Haifa, 2013-08-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012358--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012322",
+   "title": "UEFA: Xäzär Länkäran 0-8 Maccabi Haifa, 2013-07-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012322--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2012282",
+   "title": "UEFA: Maccabi Haifa 2-0 Xäzär Länkäran, 2013-07-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2012282--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007397",
+   "title": "UEFA: Maccabi Haifa 0-3 Schalke, 2011-12-14",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007397--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007390",
+   "title": "UEFA: AEK Larnaca 2-1 Maccabi Haifa, 2011-12-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007390--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007367",
+   "title": "UEFA: Steaua București 4-2 Maccabi Haifa, 2011-11-03",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007367--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007343",
+   "title": "UEFA: Maccabi Haifa 5-0 Steaua București, 2011-10-20",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007343--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007318",
+   "title": "UEFA: Schalke 3-1 Maccabi Haifa, 2011-09-29",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007318--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007293",
+   "title": "UEFA: Maccabi Haifa 1-0 AEK Larnaca, 2011-09-15",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007293--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007560",
+   "title": "UEFA: Genk 2-1 Maccabi Haifa, 2011-08-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007560--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  },
+  {
+   "id": "a-src-uefa-2007550",
+   "title": "UEFA: Maccabi Haifa 2-1 Genk, 2011-08-17",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2007550--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-23"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2025-08-14-maccabi-haifa-rakow",
+   "value": {
+    "name": "Maccabi Haifa 0-2 Raków",
+    "on": "2025-08-14",
+    "competition": "UEFA Conference League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Georgiy Yermakov",
+     "Sean Goldberg",
+     "Goni Naor",
+     "Dolev Haziza",
+     "Ethane Azoulay",
+     "Trivante Stewart",
+     "Lisav Eissat",
+     "Jelle Bataille",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Djordje Jovanović"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Ali Mohamed",
+     "Severina Xander",
+     "Nahuel Leiva",
+     "Lior Kassa",
+     "Kenneth Saief",
+     "Suf Podgoreanu",
+     "Guy Melamed",
+     "Michael Ohana",
+     "Amit Arazi",
+     "Iyad Khalaili",
+     "Roey Elimelech"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045798",
+     "scorers": [],
+     "lineup": [
+      "Georgiy Yermakov",
+      "Sean Goldberg",
+      "Goni Naor",
+      "Dolev Haziza",
+      "Ethane Azoulay",
+      "Trivante Stewart",
+      "Lisav Eissat",
+      "Jelle Bataille",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Djordje Jovanović"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Ali Mohamed",
+      "Severina Xander",
+      "Nahuel Leiva",
+      "Lior Kassa",
+      "Kenneth Saief",
+      "Suf Podgoreanu",
+      "Guy Melamed",
+      "Michael Ohana",
+      "Amit Arazi",
+      "Iyad Khalaili",
+      "Roey Elimelech"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045798"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-08-07-rakow-maccabi-haifa",
+   "value": {
+    "name": "Raków 0-1 Maccabi Haifa",
+    "on": "2025-08-07",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Georgiy Yermakov",
+     "Goni Naor",
+     "Severina Xander",
+     "Kenneth Saief",
+     "Ethane Azoulay",
+     "Trivante Stewart",
+     "Lisav Eissat",
+     "Jelle Bataille",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Djordje Jovanović"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Lior Kassa",
+     "Suf Podgoreanu",
+     "Guy Melamed",
+     "Michael Ohana",
+     "Ilai Hagag",
+     "Amit Arazi",
+     "Iyad Khalaili",
+     "Roey Elimelech"
+    ],
+    "scorers": [
+     {
+      "name": "Ethane Azoulay",
+      "minute": 61
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045768",
+     "scorers": [
+      {
+       "name": "Ethane Azoulay",
+       "minute": 61
+      }
+     ],
+     "lineup": [
+      "Georgiy Yermakov",
+      "Goni Naor",
+      "Severina Xander",
+      "Kenneth Saief",
+      "Ethane Azoulay",
+      "Trivante Stewart",
+      "Lisav Eissat",
+      "Jelle Bataille",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Djordje Jovanović"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Lior Kassa",
+      "Suf Podgoreanu",
+      "Guy Melamed",
+      "Michael Ohana",
+      "Ilai Hagag",
+      "Amit Arazi",
+      "Iyad Khalaili",
+      "Roey Elimelech"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045768"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-07-31-maccabi-haifa-torpedo-belaz",
+   "value": {
+    "name": "Maccabi Haifa 3-0 Torpedo-Belaz",
+    "on": "2025-07-31",
+    "competition": "UEFA Conference League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Georgiy Yermakov",
+     "Goni Naor",
+     "Severina Xander",
+     "Dolev Haziza",
+     "Diaa Sabia",
+     "Ethane Azoulay",
+     "Lisav Eissat",
+     "Jelle Bataille",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Djordje Jovanović"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Kenji Gorre",
+     "Kenneth Saief",
+     "Suf Podgoreanu",
+     "Guy Melamed",
+     "Trivante Stewart",
+     "Michael Ohana",
+     "Amit Arazi",
+     "Iyad Khalaili",
+     "Roey Elimelech"
+    ],
+    "scorers": [
+     {
+      "name": "Diaa Sabia",
+      "minute": 14
+     },
+     {
+      "name": "Dolev Haziza",
+      "minute": 22
+     },
+     {
+      "name": "Trivante Stewart",
+      "minute": 78
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045508",
+     "scorers": [
+      {
+       "name": "Diaa Sabia",
+       "minute": 14
+      },
+      {
+       "name": "Dolev Haziza",
+       "minute": 22
+      },
+      {
+       "name": "Trivante Stewart",
+       "minute": 78
+      }
+     ],
+     "lineup": [
+      "Georgiy Yermakov",
+      "Goni Naor",
+      "Severina Xander",
+      "Dolev Haziza",
+      "Diaa Sabia",
+      "Ethane Azoulay",
+      "Lisav Eissat",
+      "Jelle Bataille",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Djordje Jovanović"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Kenji Gorre",
+      "Kenneth Saief",
+      "Suf Podgoreanu",
+      "Guy Melamed",
+      "Trivante Stewart",
+      "Michael Ohana",
+      "Amit Arazi",
+      "Iyad Khalaili",
+      "Roey Elimelech"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045508"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2025-07-24-torpedo-belaz-maccabi-haifa",
+   "value": {
+    "name": "Torpedo-Belaz 1-1 Maccabi Haifa",
+    "on": "2025-07-24",
+    "competition": "UEFA Conference League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Georgiy Yermakov",
+     "Goni Naor",
+     "Severina Xander",
+     "Dolev Haziza",
+     "Diaa Sabia",
+     "Ethane Azoulay",
+     "Lisav Eissat",
+     "Jelle Bataille",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Djordje Jovanović"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Kenji Gorre",
+     "Lior Kassa",
+     "Kenneth Saief",
+     "Suf Podgoreanu",
+     "Trivante Stewart",
+     "Michael Ohana",
+     "Amit Arazi",
+     "Iyad Khalaili",
+     "Roey Elimelech"
+    ],
+    "scorers": [
+     {
+      "name": "Abdoulaye Seck",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2045458",
+     "scorers": [
+      {
+       "name": "Abdoulaye Seck",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Georgiy Yermakov",
+      "Goni Naor",
+      "Severina Xander",
+      "Dolev Haziza",
+      "Diaa Sabia",
+      "Ethane Azoulay",
+      "Lisav Eissat",
+      "Jelle Bataille",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Djordje Jovanović"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Kenji Gorre",
+      "Lior Kassa",
+      "Kenneth Saief",
+      "Suf Podgoreanu",
+      "Trivante Stewart",
+      "Michael Ohana",
+      "Amit Arazi",
+      "Iyad Khalaili",
+      "Roey Elimelech"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2045458"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-08-01-sabah-maccabi-haifa",
+   "value": {
+    "name": "Sabah 3-6 Maccabi Haifa",
+    "on": "2024-08-01",
+    "competition": "UEFA Conference League",
+    "score": "3-6",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Gadi Kinda",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Oleksandr Syrota",
+     "Lorenco Šimić",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Tomas Sultani",
+     "Lior Refaelov",
+     "Kenneth Saief",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Din David",
+     "Maor Kandil",
+     "Ilai Hagag",
+     "Abdoulaye Seck",
+     "Hamza Shibli",
+     "Roey Elimelech",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Dolev Haziza",
+      "minute": 17
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 67
+     },
+     {
+      "name": "Lorenco Šimić",
+      "minute": 70
+     },
+     {
+      "name": "Lior Refaelov",
+      "minute": 73
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 90
+     },
+     {
+      "name": "Din David",
+      "minute": 112
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041197",
+     "scorers": [
+      {
+       "name": "Dolev Haziza",
+       "minute": 17
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 67
+      },
+      {
+       "name": "Lorenco Šimić",
+       "minute": 70
+      },
+      {
+       "name": "Lior Refaelov",
+       "minute": 73
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 90
+      },
+      {
+       "name": "Din David",
+       "minute": 112
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Gadi Kinda",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Oleksandr Syrota",
+      "Lorenco Šimić",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Tomas Sultani",
+      "Lior Refaelov",
+      "Kenneth Saief",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Din David",
+      "Maor Kandil",
+      "Ilai Hagag",
+      "Abdoulaye Seck",
+      "Hamza Shibli",
+      "Roey Elimelech",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041197"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-07-25-maccabi-haifa-sabah",
+   "value": {
+    "name": "Maccabi Haifa 0-3 Sabah",
+    "on": "2024-07-25",
+    "competition": "UEFA Conference League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Lior Refaelov",
+     "Din David",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Oleksandr Syrota",
+     "Lorenco Šimić"
+    ],
+    "bench": [
+     "Tomas Sultani",
+     "Gadi Kinda",
+     "Kenneth Saief",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Ilai Hagag",
+     "Abdoulaye Seck",
+     "Hamza Shibli",
+     "Omer David Dahan",
+     "Roey Elimelech",
+     "Rami Gershon",
+     "Diaa Sabia"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2041148",
+     "scorers": [],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Lior Refaelov",
+      "Din David",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Oleksandr Syrota",
+      "Lorenco Šimić"
+     ],
+     "bench": [
+      "Tomas Sultani",
+      "Gadi Kinda",
+      "Kenneth Saief",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Ilai Hagag",
+      "Abdoulaye Seck",
+      "Hamza Shibli",
+      "Omer David Dahan",
+      "Roey Elimelech",
+      "Rami Gershon",
+      "Diaa Sabia"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2041148"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-03-14-fiorentina-maccabi-haifa",
+   "value": {
+    "name": "Fiorentina 1-1 Maccabi Haifa",
+    "on": "2024-03-14",
+    "competition": "UEFA Conference League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Frantzdy Pierrot",
+     "Lior Refaelov",
+     "Suf Podgoreanu",
+     "Ilay Feingold",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Lorenco Šimić"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Gadi Kinda",
+     "Kenneth Saief",
+     "Goni Naor",
+     "Maor Kandil",
+     "Anan Khalaili",
+     "Ziv Ben Shimol",
+     "Omer David Dahan",
+     "Yarin Levi",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Anan Khalaili",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040308",
+     "scorers": [
+      {
+       "name": "Anan Khalaili",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Frantzdy Pierrot",
+      "Lior Refaelov",
+      "Suf Podgoreanu",
+      "Ilay Feingold",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Lorenco Šimić"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Gadi Kinda",
+      "Kenneth Saief",
+      "Goni Naor",
+      "Maor Kandil",
+      "Anan Khalaili",
+      "Ziv Ben Shimol",
+      "Omer David Dahan",
+      "Yarin Levi",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040308"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-03-07-maccabi-haifa-fiorentina",
+   "value": {
+    "name": "Maccabi Haifa 3-4 Fiorentina",
+    "on": "2024-03-07",
+    "competition": "UEFA Conference League",
+    "score": "3-4",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Ali Mohamed",
+     "Manuel Cafumana",
+     "Gadi Kinda",
+     "Frantzdy Pierrot",
+     "Maor Kandil",
+     "Anan Khalaili",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Lorenco Šimić",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Sean Goldberg",
+     "Lior Refaelov",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Ilay Feingold",
+     "Daniil Lesovoy",
+     "Ziv Ben Shimol",
+     "Omer David Dahan"
+    ],
+    "scorers": [
+     {
+      "name": "Abdoulaye Seck",
+      "minute": 12
+     },
+     {
+      "name": "Gadi Kinda",
+      "minute": 29
+     },
+     {
+      "name": "Anan Khalaili",
+      "minute": 67
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2040300",
+     "scorers": [
+      {
+       "name": "Abdoulaye Seck",
+       "minute": 12
+      },
+      {
+       "name": "Gadi Kinda",
+       "minute": 29
+      },
+      {
+       "name": "Anan Khalaili",
+       "minute": 67
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Ali Mohamed",
+      "Manuel Cafumana",
+      "Gadi Kinda",
+      "Frantzdy Pierrot",
+      "Maor Kandil",
+      "Anan Khalaili",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Lorenco Šimić",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Sean Goldberg",
+      "Lior Refaelov",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Ilay Feingold",
+      "Daniil Lesovoy",
+      "Ziv Ben Shimol",
+      "Omer David Dahan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2040300"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-02-21-gent-maccabi-haifa",
+   "value": {
+    "name": "Gent 1-1 Maccabi Haifa",
+    "on": "2024-02-21",
+    "competition": "UEFA Conference League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Manuel Cafumana",
+     "Frantzdy Pierrot",
+     "Lior Refaelov",
+     "Kenneth Saief",
+     "Ilay Feingold",
+     "Anan Khalaili",
+     "Abdoulaye Seck",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Sean Goldberg",
+     "Gadi Kinda",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Pierre Cornud",
+     "Daniil Lesovoy",
+     "Ziv Ben Shimol",
+     "Omer David Dahan",
+     "Lorenco Šimić"
+    ],
+    "scorers": [
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 4
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039961",
+     "scorers": [
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 4
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Manuel Cafumana",
+      "Frantzdy Pierrot",
+      "Lior Refaelov",
+      "Kenneth Saief",
+      "Ilay Feingold",
+      "Anan Khalaili",
+      "Abdoulaye Seck",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Sean Goldberg",
+      "Gadi Kinda",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Pierre Cornud",
+      "Daniil Lesovoy",
+      "Ziv Ben Shimol",
+      "Omer David Dahan",
+      "Lorenco Šimić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039961"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2024-02-15-maccabi-haifa-gent",
+   "value": {
+    "name": "Maccabi Haifa 1-0 Gent",
+    "on": "2024-02-15",
+    "competition": "UEFA Conference League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Ali Mohamed",
+     "Manuel Cafumana",
+     "Gadi Kinda",
+     "Frantzdy Pierrot",
+     "Suf Podgoreanu",
+     "Ilay Feingold",
+     "Maor Kandil",
+     "Abdoulaye Seck",
+     "Daniil Lesovoy",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Daniel Sundgren",
+     "Lior Refaelov",
+     "Kenneth Saief",
+     "Goni Naor",
+     "Anan Khalaili",
+     "Ziv Ben Shimol",
+     "Omer David Dahan",
+     "Yarin Levi",
+     "Lorenco Šimić"
+    ],
+    "scorers": [
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 65
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039953",
+     "scorers": [
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 65
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Ali Mohamed",
+      "Manuel Cafumana",
+      "Gadi Kinda",
+      "Frantzdy Pierrot",
+      "Suf Podgoreanu",
+      "Ilay Feingold",
+      "Maor Kandil",
+      "Abdoulaye Seck",
+      "Daniil Lesovoy",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Daniel Sundgren",
+      "Lior Refaelov",
+      "Kenneth Saief",
+      "Goni Naor",
+      "Anan Khalaili",
+      "Ziv Ben Shimol",
+      "Omer David Dahan",
+      "Yarin Levi",
+      "Lorenco Šimić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039953"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-12-14-panathinaikos-maccabi-haifa",
+   "value": {
+    "name": "Panathinaikos 1-2 Maccabi Haifa",
+    "on": "2023-12-14",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Manuel Cafumana",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Pierre Cornud",
+     "Ilai Hagag",
+     "Abdoulaye Seck",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Lior Refaelov",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Ilay Feingold",
+     "Anan Khalaili",
+     "Mahmoud Jaber",
+     "Hamza Shibli",
+     "Lorenco Šimić"
+    ],
+    "scorers": [
+     {
+      "name": "Din David",
+      "minute": 20
+     },
+     {
+      "name": "Tjaronn Chery",
+      "minute": 74
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039277",
+     "scorers": [
+      {
+       "name": "Din David",
+       "minute": 20
+      },
+      {
+       "name": "Tjaronn Chery",
+       "minute": 74
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Manuel Cafumana",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Pierre Cornud",
+      "Ilai Hagag",
+      "Abdoulaye Seck",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Lior Refaelov",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Ilay Feingold",
+      "Anan Khalaili",
+      "Mahmoud Jaber",
+      "Hamza Shibli",
+      "Lorenco Šimić"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039277"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-12-06-villarreal-maccabi-haifa",
+   "value": {
+    "name": "Villarreal 0-0 Maccabi Haifa",
+    "on": "2023-12-06",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Manuel Cafumana",
+     "Lior Refaelov",
+     "Din David",
+     "Maor Kandil",
+     "Anan Khalaili",
+     "Ilai Hagag",
+     "Lorenco Šimić",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Frantzdy Pierrot",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Ilay Feingold",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Hamza Shibli"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039237",
+     "scorers": [],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Manuel Cafumana",
+      "Lior Refaelov",
+      "Din David",
+      "Maor Kandil",
+      "Anan Khalaili",
+      "Ilai Hagag",
+      "Lorenco Šimić",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Frantzdy Pierrot",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Ilay Feingold",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Hamza Shibli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039237"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-30-maccabi-haifa-rennes",
+   "value": {
+    "name": "Maccabi Haifa 0-3 Rennes",
+    "on": "2023-11-30",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Manuel Cafumana",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Suf Podgoreanu",
+     "Din David",
+     "Maor Kandil",
+     "Mahmoud Jaber",
+     "Abdoulaye Seck",
+     "Lorenco Šimić",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Lior Refaelov",
+     "Goni Naor",
+     "Ilay Feingold",
+     "Anan Khalaili",
+     "Pierre Cornud",
+     "Ilai Hagag",
+     "Hamza Shibli"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039264",
+     "scorers": [],
+     "lineup": [
+      "Shareef Keouf",
+      "Manuel Cafumana",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Suf Podgoreanu",
+      "Din David",
+      "Maor Kandil",
+      "Mahmoud Jaber",
+      "Abdoulaye Seck",
+      "Lorenco Šimić",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Lior Refaelov",
+      "Goni Naor",
+      "Ilay Feingold",
+      "Anan Khalaili",
+      "Pierre Cornud",
+      "Ilai Hagag",
+      "Hamza Shibli"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039264"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-11-09-maccabi-haifa-villarreal",
+   "value": {
+    "name": "Maccabi Haifa 1-2 Villarreal",
+    "on": "2023-11-09",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Ali Mohamed",
+     "Manuel Cafumana",
+     "Frantzdy Pierrot",
+     "Lior Refaelov",
+     "Anan Khalaili",
+     "Pierre Cornud",
+     "Ilai Hagag",
+     "Abdoulaye Seck",
+     "Lorenco Šimić"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Royie Fucs",
+     "Sean Goldberg",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Din David",
+     "Maor Kandil",
+     "Mahmoud Jaber",
+     "Hamza Shibli",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Abdoulaye Seck",
+      "minute": 30
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039246",
+     "scorers": [
+      {
+       "name": "Abdoulaye Seck",
+       "minute": 30
+      }
+     ],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Ali Mohamed",
+      "Manuel Cafumana",
+      "Frantzdy Pierrot",
+      "Lior Refaelov",
+      "Anan Khalaili",
+      "Pierre Cornud",
+      "Ilai Hagag",
+      "Abdoulaye Seck",
+      "Lorenco Šimić"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Royie Fucs",
+      "Sean Goldberg",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Din David",
+      "Maor Kandil",
+      "Mahmoud Jaber",
+      "Hamza Shibli",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039246"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-10-05-maccabi-haifa-panathinaikos",
+   "value": {
+    "name": "Maccabi Haifa 0-0 Panathinaikos",
+    "on": "2023-10-05",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Manuel Cafumana",
+     "Erik Shuranov",
+     "Din David",
+     "Anan Khalaili",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Lorenco Šimić",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Itamar Nitzan",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Lior Refaelov",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Maor Kandil",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Rami Gershon"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039221",
+     "scorers": [],
+     "lineup": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Manuel Cafumana",
+      "Erik Shuranov",
+      "Din David",
+      "Anan Khalaili",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Lorenco Šimić",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Itamar Nitzan",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Lior Refaelov",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Maor Kandil",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039221"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-09-21-rennes-maccabi-haifa",
+   "value": {
+    "name": "Rennes 3-0 Maccabi Haifa",
+    "on": "2023-09-21",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Manuel Cafumana",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Anan Khalaili",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Abdoulaye Seck"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Ali Mohamed",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Ilay Feingold",
+     "Maor Kandil",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Lorenco Šimić",
+     "Rami Gershon",
+     "Diaa Sabia"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039196",
+     "scorers": [],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Manuel Cafumana",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Anan Khalaili",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Abdoulaye Seck"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Ali Mohamed",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Ilay Feingold",
+      "Maor Kandil",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Lorenco Šimić",
+      "Rami Gershon",
+      "Diaa Sabia"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039196"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-29-young-boys-maccabi-haifa",
+   "value": {
+    "name": "Young Boys 3-0 Maccabi Haifa",
+    "on": "2023-08-29",
+    "competition": "UEFA Champions League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Anan Khalaili",
+     "Mahmoud Jaber",
+     "Abdoulaye Seck"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Royie Fucs",
+     "Lior Refaelov",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Maor Kandil",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Lorenco Šimić",
+     "Rami Gershon",
+     "Diaa Sabia"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2039004",
+     "scorers": [],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Anan Khalaili",
+      "Mahmoud Jaber",
+      "Abdoulaye Seck"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Royie Fucs",
+      "Lior Refaelov",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Maor Kandil",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Lorenco Šimić",
+      "Rami Gershon",
+      "Diaa Sabia"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2039004"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-23-maccabi-haifa-young-boys",
+   "value": {
+    "name": "Maccabi Haifa 0-0 Young Boys",
+    "on": "2023-08-23",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Lior Refaelov",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Din David",
+     "Maor Kandil",
+     "Anan Khalaili",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Lorenco Šimić",
+     "Rami Gershon"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038998",
+     "scorers": [],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Lior Refaelov",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Din David",
+      "Maor Kandil",
+      "Anan Khalaili",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Lorenco Šimić",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038998"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-15-maccabi-haifa-s-bratislava",
+   "value": {
+    "name": "Maccabi Haifa 3-1 S. Bratislava",
+    "on": "2023-08-15",
+    "competition": "UEFA Champions League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Lior Refaelov",
+     "Ori Dahan",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Din David",
+     "Maor Kandil",
+     "Anan Khalaili",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 29
+     },
+     {
+      "name": "Diaa Sabia",
+      "minute": 45
+     },
+     {
+      "name": "Din David",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038909",
+     "scorers": [
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 29
+      },
+      {
+       "name": "Diaa Sabia",
+       "minute": 45
+      },
+      {
+       "name": "Din David",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Lior Refaelov",
+      "Ori Dahan",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Din David",
+      "Maor Kandil",
+      "Anan Khalaili",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038909"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-09-s-bratislava-maccabi-haifa",
+   "value": {
+    "name": "S. Bratislava 1-2 Maccabi Haifa",
+    "on": "2023-08-09",
+    "competition": "UEFA Champions League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Anan Khalaili",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Lior Refaelov",
+     "Ori Dahan",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Din David",
+     "Maor Kandil",
+     "Ilai Hagag",
+     "Roey Elimelech",
+     "Hamza Shibli",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 5
+     },
+     {
+      "name": "Diaa Sabia",
+      "minute": 15
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038899",
+     "scorers": [
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 5
+      },
+      {
+       "name": "Diaa Sabia",
+       "minute": 15
+      }
+     ],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Anan Khalaili",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Lior Refaelov",
+      "Ori Dahan",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Din David",
+      "Maor Kandil",
+      "Ilai Hagag",
+      "Roey Elimelech",
+      "Hamza Shibli",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038899"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-08-02-maccabi-haifa-sheriff",
+   "value": {
+    "name": "Maccabi Haifa 4-1 Sheriff",
+    "on": "2023-08-02",
+    "competition": "UEFA Champions League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Lior Refaelov",
+     "Anan Khalaili",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Aviel Zargary",
+     "Ori Dahan",
+     "Suf Podgoreanu",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Din David",
+     "Maor Kandil",
+     "Mahmoud Jaber",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Tjaronn Chery",
+      "minute": 33
+     },
+     {
+      "name": "Mahmoud Jaber",
+      "minute": 85
+     },
+     {
+      "name": "Din David",
+      "minute": 105
+     },
+     {
+      "name": "Erik Shuranov",
+      "minute": 107
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038614",
+     "scorers": [
+      {
+       "name": "Tjaronn Chery",
+       "minute": 33
+      },
+      {
+       "name": "Mahmoud Jaber",
+       "minute": 85
+      },
+      {
+       "name": "Din David",
+       "minute": 105
+      },
+      {
+       "name": "Erik Shuranov",
+       "minute": 107
+      }
+     ],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Lior Refaelov",
+      "Anan Khalaili",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Aviel Zargary",
+      "Ori Dahan",
+      "Suf Podgoreanu",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Din David",
+      "Maor Kandil",
+      "Mahmoud Jaber",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038614"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-07-26-sheriff-maccabi-haifa",
+   "value": {
+    "name": "Sheriff 1-0 Maccabi Haifa",
+    "on": "2023-07-26",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Goni Naor",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Lior Refaelov",
+     "Aviel Zargary",
+     "Ori Dahan",
+     "Suf Podgoreanu",
+     "Erik Shuranov",
+     "Din David",
+     "Maor Kandil",
+     "Mahmoud Jaber",
+     "Ilai Hagag",
+     "Roey Elimelech",
+     "Rami Gershon"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038602",
+     "scorers": [],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Goni Naor",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Lior Refaelov",
+      "Aviel Zargary",
+      "Ori Dahan",
+      "Suf Podgoreanu",
+      "Erik Shuranov",
+      "Din David",
+      "Maor Kandil",
+      "Mahmoud Jaber",
+      "Ilai Hagag",
+      "Roey Elimelech",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038602"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-07-18-maccabi-haifa-hamrun-spartans",
+   "value": {
+    "name": "Maccabi Haifa 2-1 Hamrun Spartans",
+    "on": "2023-07-18",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Lior Refaelov",
+     "Ori Dahan",
+     "Goni Naor",
+     "Erik Shuranov",
+     "Maor Kandil",
+     "Mahmoud Jaber",
+     "Pierre Cornud",
+     "Ilai Hagag",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Aviel Zargary",
+     "Suf Podgoreanu",
+     "Din David",
+     "Anan Khalaili",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Erik Shuranov",
+      "minute": 69
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 84
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038383",
+     "scorers": [
+      {
+       "name": "Erik Shuranov",
+       "minute": 69
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 84
+      }
+     ],
+     "lineup": [
+      "Itamar Nitzan",
+      "Lior Refaelov",
+      "Ori Dahan",
+      "Goni Naor",
+      "Erik Shuranov",
+      "Maor Kandil",
+      "Mahmoud Jaber",
+      "Pierre Cornud",
+      "Ilai Hagag",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Aviel Zargary",
+      "Suf Podgoreanu",
+      "Din David",
+      "Anan Khalaili",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038383"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2023-07-11-hamrun-spartans-maccabi-haifa",
+   "value": {
+    "name": "Hamrun Spartans 0-4 Maccabi Haifa",
+    "on": "2023-07-11",
+    "competition": "UEFA Champions League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Itamar Nitzan",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Goni Naor",
+     "Din David",
+     "Pierre Cornud",
+     "Abdoulaye Seck",
+     "Diaa Sabia"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Lior Refaelov",
+     "Aviel Zargary",
+     "Ori Dahan",
+     "Suf Podgoreanu",
+     "Erik Shuranov",
+     "Maor Kandil",
+     "Anan Khalaili",
+     "Mahmoud Jaber",
+     "Ilai Hagag",
+     "Hamza Shibli",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 41
+     },
+     {
+      "name": "Din David",
+      "minute": 45
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 57
+     },
+     {
+      "name": "Anan Khalaili",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2038368",
+     "scorers": [
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 41
+      },
+      {
+       "name": "Din David",
+       "minute": 45
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 57
+      },
+      {
+       "name": "Anan Khalaili",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Itamar Nitzan",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Goni Naor",
+      "Din David",
+      "Pierre Cornud",
+      "Abdoulaye Seck",
+      "Diaa Sabia"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Lior Refaelov",
+      "Aviel Zargary",
+      "Ori Dahan",
+      "Suf Podgoreanu",
+      "Erik Shuranov",
+      "Maor Kandil",
+      "Anan Khalaili",
+      "Mahmoud Jaber",
+      "Ilai Hagag",
+      "Hamza Shibli",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2038368"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-11-02-maccabi-haifa-benfica",
+   "value": {
+    "name": "Maccabi Haifa 1-6 Benfica",
+    "on": "2022-11-02",
+    "competition": "UEFA Champions League",
+    "score": "1-6",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Neta Lavi",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Yosef Raz Meir",
+     "Pierre Cornud",
+     "Abdoulaye Seck"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Omer Atzili",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Tjaronn Chery",
+      "minute": 26
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035736",
+     "scorers": [
+      {
+       "name": "Tjaronn Chery",
+       "minute": 26
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Neta Lavi",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Yosef Raz Meir",
+      "Pierre Cornud",
+      "Abdoulaye Seck"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Omer Atzili",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035736"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-25-paris-maccabi-haifa",
+   "value": {
+    "name": "Paris 7-2 Maccabi Haifa",
+    "on": "2022-10-25",
+    "competition": "UEFA Champions League",
+    "score": "7-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Mohammad Abu Fani",
+     "Dylan Batubinsika",
+     "Pierre Cornud",
+     "Abdoulaye Seck"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Din David",
+     "Yosef Raz Meir",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Abdoulaye Seck",
+      "minute": 38
+     },
+     {
+      "name": "Abdoulaye Seck",
+      "minute": 50
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035719",
+     "scorers": [
+      {
+       "name": "Abdoulaye Seck",
+       "minute": 38
+      },
+      {
+       "name": "Abdoulaye Seck",
+       "minute": 50
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Mohammad Abu Fani",
+      "Dylan Batubinsika",
+      "Pierre Cornud",
+      "Abdoulaye Seck"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Din David",
+      "Yosef Raz Meir",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035719"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-11-maccabi-haifa-juventus",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Juventus",
+    "on": "2022-10-11",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Dylan Batubinsika",
+     "Din David",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Yosef Raz Meir",
+     "Abdoulaye Seck",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Omer Atzili",
+      "minute": 7
+     },
+     {
+      "name": "Omer Atzili",
+      "minute": 42
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035703",
+     "scorers": [
+      {
+       "name": "Omer Atzili",
+       "minute": 7
+      },
+      {
+       "name": "Omer Atzili",
+       "minute": 42
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Dylan Batubinsika",
+      "Din David",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Yosef Raz Meir",
+      "Abdoulaye Seck",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035703"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-10-05-juventus-maccabi-haifa",
+   "value": {
+    "name": "Juventus 3-1 Maccabi Haifa",
+    "on": "2022-10-05",
+    "competition": "UEFA Champions League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Mavis Tchibota",
+     "Mohammad Abu Fani",
+     "Dylan Batubinsika",
+     "Pierre Cornud",
+     "Abdoulaye Seck"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Din David",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Din David",
+      "minute": 75
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035687",
+     "scorers": [
+      {
+       "name": "Din David",
+       "minute": 75
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Mavis Tchibota",
+      "Mohammad Abu Fani",
+      "Dylan Batubinsika",
+      "Pierre Cornud",
+      "Abdoulaye Seck"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Din David",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035687"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-09-14-maccabi-haifa-paris",
+   "value": {
+    "name": "Maccabi Haifa 1-3 Paris",
+    "on": "2022-09-14",
+    "competition": "UEFA Champions League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Mohammad Abu Fani",
+     "Dylan Batubinsika",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Roi Mishpati",
+     "Ali Mohamed",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Din David",
+     "Yosef Raz Meir",
+     "Abdoulaye Seck",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Tjaronn Chery",
+      "minute": 24
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035672",
+     "scorers": [
+      {
+       "name": "Tjaronn Chery",
+       "minute": 24
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Mohammad Abu Fani",
+      "Dylan Batubinsika",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Roi Mishpati",
+      "Ali Mohamed",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Din David",
+      "Yosef Raz Meir",
+      "Abdoulaye Seck",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035672"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-09-06-benfica-maccabi-haifa",
+   "value": {
+    "name": "Benfica 2-0 Maccabi Haifa",
+    "on": "2022-09-06",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Dylan Batubinsika",
+     "Din David",
+     "Abdoulaye Seck"
+    ],
+    "bench": [
+     "Roi Mishpati",
+     "Omer Atzili",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Suf Podgoreanu",
+     "Pierre Cornud",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035656",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Dylan Batubinsika",
+      "Din David",
+      "Abdoulaye Seck"
+     ],
+     "bench": [
+      "Roi Mishpati",
+      "Omer Atzili",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Suf Podgoreanu",
+      "Pierre Cornud",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035656"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-23-crvena-zvezda-maccabi-haifa",
+   "value": {
+    "name": "Crvena Zvezda 2-2 Maccabi Haifa",
+    "on": "2022-08-23",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Omer Atzili",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Ori Dahan",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Daniel Sundgren",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035488",
+     "scorers": [
+      {
+       "name": "Daniel Sundgren",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Omer Atzili",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Ori Dahan",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035488"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-17-maccabi-haifa-crvena-zvezda",
+   "value": {
+    "name": "Maccabi Haifa 3-2 Crvena Zvezda",
+    "on": "2022-08-17",
+    "competition": "UEFA Champions League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Omer Atzili",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Ori Dahan",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 18
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 51
+     },
+     {
+      "name": "Tjaronn Chery",
+      "minute": 61
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035482",
+     "scorers": [
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 18
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 51
+      },
+      {
+       "name": "Tjaronn Chery",
+       "minute": 61
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Omer Atzili",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Ori Dahan",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035482"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-09-apollon-maccabi-haifa",
+   "value": {
+    "name": "Apollon 2-0 Maccabi Haifa",
+    "on": "2022-08-09",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Frantzdy Pierrot",
+     "Sun Menachem",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Din David"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Mavis Tchibota",
+     "Nikita Rukavytsya",
+     "Ori Dahan",
+     "Pierre Cornud",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035384",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Frantzdy Pierrot",
+      "Sun Menachem",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Din David"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Mavis Tchibota",
+      "Nikita Rukavytsya",
+      "Ori Dahan",
+      "Pierre Cornud",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035384"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-08-03-maccabi-haifa-apollon",
+   "value": {
+    "name": "Maccabi Haifa 4-0 Apollon",
+    "on": "2022-08-03",
+    "competition": "UEFA Champions League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Omer Atzili",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Ori Dahan",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Ali Mohamed",
+      "minute": 54
+     },
+     {
+      "name": "Ali Mohamed",
+      "minute": 62
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035374",
+     "scorers": [
+      {
+       "name": "Ali Mohamed",
+       "minute": 54
+      },
+      {
+       "name": "Ali Mohamed",
+       "minute": 62
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Omer Atzili",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Ori Dahan",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035374"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-07-27-olympiacos-maccabi-haifa",
+   "value": {
+    "name": "Olympiacos 0-4 Maccabi Haifa",
+    "on": "2022-07-27",
+    "competition": "UEFA Champions League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Frantzdy Pierrot",
+     "Tjaronn Chery",
+     "Din David",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Omer Atzili",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Ori Dahan",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Tjaronn Chery",
+      "minute": 5
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 61
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "minute": 65
+     },
+     {
+      "name": "Mohammad Abu Fani",
+      "minute": 87
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035056",
+     "scorers": [
+      {
+       "name": "Tjaronn Chery",
+       "minute": 5
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 61
+      },
+      {
+       "name": "Frantzdy Pierrot",
+       "minute": 65
+      },
+      {
+       "name": "Mohammad Abu Fani",
+       "minute": 87
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Frantzdy Pierrot",
+      "Tjaronn Chery",
+      "Din David",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Omer Atzili",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Ori Dahan",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035056"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2022-07-20-maccabi-haifa-olympiacos",
+   "value": {
+    "name": "Maccabi Haifa 1-1 Olympiacos",
+    "on": "2022-07-20",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Daniel Sundgren",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Din David",
+     "Pierre Cornud"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Frantzdy Pierrot",
+     "Mavis Tchibota",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Maor Levi",
+     "Inon Eliyahu",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Dolev Haziza",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2035044",
+     "scorers": [
+      {
+       "name": "Dolev Haziza",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Daniel Sundgren",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Din David",
+      "Pierre Cornud"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Frantzdy Pierrot",
+      "Mavis Tchibota",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Maor Levi",
+      "Inon Eliyahu",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2035044"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-12-09-feyenoord-maccabi-haifa",
+   "value": {
+    "name": "Feyenoord 2-1 Maccabi Haifa",
+    "on": "2021-12-09",
+    "competition": "UEFA Conference League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Roi Mishpati",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "José Rodríguez",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Taleb Tawatha",
+     "Yuval Ashkenazi",
+     "Yosef Raz Meir",
+     "Maor Levi",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Joshua Cohen",
+     "Royie Fucs",
+     "Ryan Strain",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Omer Atzili",
+     "Godsway Donyoh",
+     "Din David",
+     "Adar Azruel"
+    ],
+    "scorers": [
+     {
+      "name": "Din David",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033354",
+     "scorers": [
+      {
+       "name": "Din David",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Roi Mishpati",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "José Rodríguez",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Taleb Tawatha",
+      "Yuval Ashkenazi",
+      "Yosef Raz Meir",
+      "Maor Levi",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Joshua Cohen",
+      "Royie Fucs",
+      "Ryan Strain",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Omer Atzili",
+      "Godsway Donyoh",
+      "Din David",
+      "Adar Azruel"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033354"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-25-maccabi-haifa-union-berlin",
+   "value": {
+    "name": "Maccabi Haifa 0-1 Union Berlin",
+    "on": "2021-11-25",
+    "competition": "UEFA Conference League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Sean Goldberg",
+     "Bogdan Planić",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Godsway Donyoh",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Ali Mohamed",
+     "Omer Atzili",
+     "Ben Sahar",
+     "Ofri Arad",
+     "Taleb Tawatha",
+     "Yuval Ashkenazi",
+     "Ori Dahan",
+     "Maor Levi"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033342",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Sean Goldberg",
+      "Bogdan Planić",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Godsway Donyoh",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Ali Mohamed",
+      "Omer Atzili",
+      "Ben Sahar",
+      "Ofri Arad",
+      "Taleb Tawatha",
+      "Yuval Ashkenazi",
+      "Ori Dahan",
+      "Maor Levi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033342"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-11-04-slavia-praha-maccabi-haifa",
+   "value": {
+    "name": "Slavia Praha 1-0 Maccabi Haifa",
+    "on": "2021-11-04",
+    "competition": "UEFA Conference League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Din David",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Godsway Donyoh",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Taleb Tawatha",
+     "Yuval Ashkenazi",
+     "Maor Levi"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033322",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Din David",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Godsway Donyoh",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Taleb Tawatha",
+      "Yuval Ashkenazi",
+      "Maor Levi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033322"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-10-21-maccabi-haifa-slavia-praha",
+   "value": {
+    "name": "Maccabi Haifa 1-0 Slavia Praha",
+    "on": "2021-10-21",
+    "competition": "UEFA Conference League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Godsway Donyoh",
+     "José Rodríguez",
+     "Taleb Tawatha",
+     "Din David",
+     "Yosef Raz Meir",
+     "Mahmoud Jaber"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Ryan Strain",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Ori Dahan",
+     "Maor Levi",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Godsway Donyoh",
+      "minute": 24
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033310",
+     "scorers": [
+      {
+       "name": "Godsway Donyoh",
+       "minute": 24
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Godsway Donyoh",
+      "José Rodríguez",
+      "Taleb Tawatha",
+      "Din David",
+      "Yosef Raz Meir",
+      "Mahmoud Jaber"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Ryan Strain",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Ori Dahan",
+      "Maor Levi",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033310"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-30-union-berlin-maccabi-haifa",
+   "value": {
+    "name": "Union Berlin 3-0 Maccabi Haifa",
+    "on": "2021-09-30",
+    "competition": "UEFA Conference League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Tjaronn Chery",
+     "Godsway Donyoh",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Ori Dahan",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Sean Goldberg",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "Ofri Arad",
+     "Taleb Tawatha",
+     "Yuval Ashkenazi",
+     "Din David",
+     "Mahmoud Jaber",
+     "Maor Levi"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033295",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Tjaronn Chery",
+      "Godsway Donyoh",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Ori Dahan",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Sean Goldberg",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "Ofri Arad",
+      "Taleb Tawatha",
+      "Yuval Ashkenazi",
+      "Din David",
+      "Mahmoud Jaber",
+      "Maor Levi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033295"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-09-14-maccabi-haifa-feyenoord",
+   "value": {
+    "name": "Maccabi Haifa 0-0 Feyenoord",
+    "on": "2021-09-14",
+    "competition": "UEFA Conference League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Yosef Raz Meir",
+     "Mahmoud Jaber"
+    ],
+    "bench": [
+     "Royie Fucs",
+     "Roi Mishpati",
+     "Sean Goldberg",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Godsway Donyoh",
+     "Yuval Ashkenazi",
+     "Ori Dahan",
+     "Maor Levi",
+     "Rami Gershon"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033275",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Yosef Raz Meir",
+      "Mahmoud Jaber"
+     ],
+     "bench": [
+      "Royie Fucs",
+      "Roi Mishpati",
+      "Sean Goldberg",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Godsway Donyoh",
+      "Yuval Ashkenazi",
+      "Ori Dahan",
+      "Maor Levi",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033275"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-26-maccabi-haifa-neftchi",
+   "value": {
+    "name": "Maccabi Haifa 4-0 Neftchi",
+    "on": "2021-08-26",
+    "competition": "UEFA Conference League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Ryan Strain",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Ori Dahan"
+    ],
+    "bench": [
+     "Ariel Bardugo",
+     "Royie Fucs",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Ben Sahar",
+     "Godsway Donyoh",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Yosef Raz Meir",
+     "Mahmoud Jaber",
+     "Maor Levi",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Sun Menachem",
+      "minute": 20
+     },
+     {
+      "name": "Omer Atzili",
+      "minute": 45
+     },
+     {
+      "name": "Dolev Haziza",
+      "minute": 52
+     },
+     {
+      "name": "Mohammad Abu Fani",
+      "minute": 69
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033143",
+     "scorers": [
+      {
+       "name": "Sun Menachem",
+       "minute": 20
+      },
+      {
+       "name": "Omer Atzili",
+       "minute": 45
+      },
+      {
+       "name": "Dolev Haziza",
+       "minute": 52
+      },
+      {
+       "name": "Mohammad Abu Fani",
+       "minute": 69
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Ryan Strain",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Ori Dahan"
+     ],
+     "bench": [
+      "Ariel Bardugo",
+      "Royie Fucs",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Ben Sahar",
+      "Godsway Donyoh",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Yosef Raz Meir",
+      "Mahmoud Jaber",
+      "Maor Levi",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033143"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-19-neftchi-maccabi-haifa",
+   "value": {
+    "name": "Neftchi 3-3 Maccabi Haifa",
+    "on": "2021-08-19",
+    "competition": "UEFA Conference League",
+    "score": "3-3",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Ori Dahan",
+     "Yosef Raz Meir"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Ryan Strain",
+     "Sean Goldberg",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Mahmoud Jaber",
+     "Maor Levi",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Omer Atzili",
+      "minute": 9
+     },
+     {
+      "name": "Tjaronn Chery",
+      "minute": 78
+     },
+     {
+      "name": "Tjaronn Chery",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033121",
+     "scorers": [
+      {
+       "name": "Omer Atzili",
+       "minute": 9
+      },
+      {
+       "name": "Tjaronn Chery",
+       "minute": 78
+      },
+      {
+       "name": "Tjaronn Chery",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Ori Dahan",
+      "Yosef Raz Meir"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Ryan Strain",
+      "Sean Goldberg",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Mahmoud Jaber",
+      "Maor Levi",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033121"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-12-h-boltfelag-maccabi-haifa",
+   "value": {
+    "name": "H. Bóltfelag 1-0 Maccabi Haifa",
+    "on": "2021-08-12",
+    "competition": "UEFA Conference League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Ryan Strain",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "Tjaronn Chery",
+     "Yuval Ashkenazi",
+     "Ori Dahan",
+     "Maor Levi",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Yosef Raz Meir",
+     "Mahmoud Jaber",
+     "Timothy Muzie"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033063",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Ryan Strain",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "Tjaronn Chery",
+      "Yuval Ashkenazi",
+      "Ori Dahan",
+      "Maor Levi",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Yosef Raz Meir",
+      "Mahmoud Jaber",
+      "Timothy Muzie"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033063"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-08-05-maccabi-haifa-h-boltfelag",
+   "value": {
+    "name": "Maccabi Haifa 7-2 H. Bóltfelag",
+    "on": "2021-08-05",
+    "competition": "UEFA Conference League",
+    "score": "7-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Ori Dahan",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Ryan Strain",
+     "Sean Goldberg",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Ben Sahar",
+     "Yuval Ashkenazi",
+     "Mahmoud Jaber",
+     "Timothy Muzie",
+     "Maor Levi"
+    ],
+    "scorers": [
+     {
+      "name": "Din David",
+      "minute": 6
+     },
+     {
+      "name": "Din David",
+      "minute": 24
+     },
+     {
+      "name": "Dolev Haziza",
+      "minute": 45
+     },
+     {
+      "name": "Rami Gershon",
+      "minute": 62
+     },
+     {
+      "name": "Ben Sahar",
+      "minute": 74
+     },
+     {
+      "name": "Omer Atzili",
+      "minute": 82
+     },
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 90
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2033032",
+     "scorers": [
+      {
+       "name": "Din David",
+       "minute": 6
+      },
+      {
+       "name": "Din David",
+       "minute": 24
+      },
+      {
+       "name": "Dolev Haziza",
+       "minute": 45
+      },
+      {
+       "name": "Rami Gershon",
+       "minute": 62
+      },
+      {
+       "name": "Ben Sahar",
+       "minute": 74
+      },
+      {
+       "name": "Omer Atzili",
+       "minute": 82
+      },
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 90
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Ori Dahan",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Ryan Strain",
+      "Sean Goldberg",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Ben Sahar",
+      "Yuval Ashkenazi",
+      "Mahmoud Jaber",
+      "Timothy Muzie",
+      "Maor Levi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2033032"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-07-29-maccabi-haifa-dinamo-tbilisi",
+   "value": {
+    "name": "Maccabi Haifa 5-1 Dinamo Tbilisi",
+    "on": "2021-07-29",
+    "competition": "UEFA Conference League",
+    "score": "5-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Godsway Donyoh",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Ori Dahan",
+     "Yosef Raz Meir",
+     "Maor Levi"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Ryan Strain",
+     "Sean Goldberg",
+     "Ben Sahar",
+     "Yuval Ashkenazi",
+     "Din David",
+     "Mahmoud Jaber",
+     "Timothy Muzie",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Maor Levi",
+      "minute": 17
+     },
+     {
+      "name": "Omer Atzili",
+      "minute": 75
+     },
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 81
+     },
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 85
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032858",
+     "scorers": [
+      {
+       "name": "Maor Levi",
+       "minute": 17
+      },
+      {
+       "name": "Omer Atzili",
+       "minute": 75
+      },
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 81
+      },
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 85
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Godsway Donyoh",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Ori Dahan",
+      "Yosef Raz Meir",
+      "Maor Levi"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Ryan Strain",
+      "Sean Goldberg",
+      "Ben Sahar",
+      "Yuval Ashkenazi",
+      "Din David",
+      "Mahmoud Jaber",
+      "Timothy Muzie",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032858"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-07-22-dinamo-tbilisi-maccabi-haifa",
+   "value": {
+    "name": "Dinamo Tbilisi 1-2 Maccabi Haifa",
+    "on": "2021-07-22",
+    "competition": "UEFA Conference League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Godsway Donyoh",
+     "Sun Menachem",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Sean Goldberg",
+     "Ben Sahar",
+     "Yuval Ashkenazi",
+     "Din David",
+     "Ori Dahan",
+     "Mahmoud Jaber",
+     "Maor Levi",
+     "Rony Laufer"
+    ],
+    "scorers": [
+     {
+      "name": "Omer Atzili",
+      "minute": 8
+     },
+     {
+      "name": "Din David",
+      "minute": 66
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032804",
+     "scorers": [
+      {
+       "name": "Omer Atzili",
+       "minute": 8
+      },
+      {
+       "name": "Din David",
+       "minute": 66
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Godsway Donyoh",
+      "Sun Menachem",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Sean Goldberg",
+      "Ben Sahar",
+      "Yuval Ashkenazi",
+      "Din David",
+      "Ori Dahan",
+      "Mahmoud Jaber",
+      "Maor Levi",
+      "Rony Laufer"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032804"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-07-14-kairat-almaty-maccabi-haifa",
+   "value": {
+    "name": "Kairat Almaty 2-0 Maccabi Haifa",
+    "on": "2021-07-14",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Sean Goldberg",
+     "Bogdan Planić",
+     "Omer Atzili",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "José Rodríguez",
+     "Mohammad Abu Fani",
+     "Din David",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Ali Mohamed",
+     "Ben Sahar",
+     "Godsway Donyoh",
+     "Sun Menachem",
+     "Yuval Ashkenazi",
+     "Ori Dahan",
+     "Mahmoud Jaber",
+     "Maor Levi",
+     "Rony Laufer"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032574",
+     "scorers": [],
+     "lineup": [
+      "Joshua Cohen",
+      "Sean Goldberg",
+      "Bogdan Planić",
+      "Omer Atzili",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "José Rodríguez",
+      "Mohammad Abu Fani",
+      "Din David",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Ali Mohamed",
+      "Ben Sahar",
+      "Godsway Donyoh",
+      "Sun Menachem",
+      "Yuval Ashkenazi",
+      "Ori Dahan",
+      "Mahmoud Jaber",
+      "Maor Levi",
+      "Rony Laufer"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032574"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2021-07-07-maccabi-haifa-kairat-almaty",
+   "value": {
+    "name": "Maccabi Haifa 1-1 Kairat Almaty",
+    "on": "2021-07-07",
+    "competition": "UEFA Champions League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Ali Mohamed",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Omer Atzili",
+     "Tjaronn Chery",
+     "Godsway Donyoh",
+     "Sun Menachem",
+     "Mohammad Abu Fani",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "bench": [
+     "Itamar Israeli",
+     "Royie Fucs",
+     "Sean Goldberg",
+     "Dolev Haziza",
+     "Ben Sahar",
+     "José Rodríguez",
+     "Yuval Ashkenazi",
+     "Din David",
+     "Ori Dahan",
+     "Mahmoud Jaber",
+     "Maor Levi",
+     "Rony Laufer"
+    ],
+    "scorers": [
+     {
+      "name": "Omer Atzili",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2032558",
+     "scorers": [
+      {
+       "name": "Omer Atzili",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Ali Mohamed",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Omer Atzili",
+      "Tjaronn Chery",
+      "Godsway Donyoh",
+      "Sun Menachem",
+      "Mohammad Abu Fani",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ],
+     "bench": [
+      "Itamar Israeli",
+      "Royie Fucs",
+      "Sean Goldberg",
+      "Dolev Haziza",
+      "Ben Sahar",
+      "José Rodríguez",
+      "Yuval Ashkenazi",
+      "Din David",
+      "Ori Dahan",
+      "Mahmoud Jaber",
+      "Maor Levi",
+      "Rony Laufer"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2032558"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-10-01-tottenham-maccabi-haifa",
+   "value": {
+    "name": "Tottenham 7-2 Maccabi Haifa",
+    "on": "2020-10-01",
+    "competition": "UEFA Europa League",
+    "score": "7-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Ayad Habashi",
+     "Ernest Mabouka"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "José Rodríguez",
+     "Yuval Ashkenazi",
+     "Stav Nachmani",
+     "Godsway Donyoh",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Tjaronn Chery",
+      "minute": 17
+     },
+     {
+      "name": "Nikita Rukavytsya",
+      "minute": 52
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030548",
+     "scorers": [
+      {
+       "name": "Tjaronn Chery",
+       "minute": 17
+      },
+      {
+       "name": "Nikita Rukavytsya",
+       "minute": 52
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Ayad Habashi",
+      "Ernest Mabouka"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "José Rodríguez",
+      "Yuval Ashkenazi",
+      "Stav Nachmani",
+      "Godsway Donyoh",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030548"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-09-24-rostov-maccabi-haifa",
+   "value": {
+    "name": "Rostov 1-2 Maccabi Haifa",
+    "on": "2020-09-24",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Bogdan Planić",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Ayad Habashi",
+     "Ernest Mabouka"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "José Rodríguez",
+     "Saikou Touray",
+     "Yuval Ashkenazi",
+     "Stav Nachmani",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Nikita Rukavytsya",
+      "minute": 20
+     },
+     {
+      "name": "Mohammad Abu Fani",
+      "minute": 60
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030387",
+     "scorers": [
+      {
+       "name": "Nikita Rukavytsya",
+       "minute": 20
+      },
+      {
+       "name": "Mohammad Abu Fani",
+       "minute": 60
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Bogdan Planić",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Ayad Habashi",
+      "Ernest Mabouka"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "José Rodríguez",
+      "Saikou Touray",
+      "Yuval Ashkenazi",
+      "Stav Nachmani",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030387"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-09-17-maccabi-haifa-kairat-almaty",
+   "value": {
+    "name": "Maccabi Haifa 2-1 Kairat Almaty",
+    "on": "2020-09-17",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Neta Lavi",
+     "Yanic Wildschut",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Yuval Ashkenazi",
+     "Ayad Habashi",
+     "Ernest Mabouka"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Bogdan Planić",
+     "Dolev Haziza",
+     "Yarden Shua",
+     "José Rodríguez",
+     "Stav Nachmani",
+     "Yosef Raz Meir"
+    ],
+    "scorers": [
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 31
+     },
+     {
+      "name": "Nikita Rukavytsya",
+      "minute": 72
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030330",
+     "scorers": [
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 31
+      },
+      {
+       "name": "Nikita Rukavytsya",
+       "minute": 72
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Neta Lavi",
+      "Yanic Wildschut",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Yuval Ashkenazi",
+      "Ayad Habashi",
+      "Ernest Mabouka"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Bogdan Planić",
+      "Dolev Haziza",
+      "Yarden Shua",
+      "José Rodríguez",
+      "Stav Nachmani",
+      "Yosef Raz Meir"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030330"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2020-09-09-maccabi-haifa-zeljeznicar",
+   "value": {
+    "name": "Maccabi Haifa 3-1 Željezničar",
+    "on": "2020-09-09",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Joshua Cohen",
+     "Neta Lavi",
+     "Yanic Wildschut",
+     "Tjaronn Chery",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Mohammad Abu Fani",
+     "Yuval Ashkenazi",
+     "Ayad Habashi",
+     "Ernest Mabouka"
+    ],
+    "bench": [
+     "Shareef Keouf",
+     "Dolev Haziza",
+     "Yarden Shua",
+     "Saikou Touray",
+     "Stav Nachmani",
+     "Yosef Raz Meir",
+     "Rami Gershon"
+    ],
+    "scorers": [
+     {
+      "name": "Tjaronn Chery",
+      "minute": 38
+     },
+     {
+      "name": "Nikita Rukavytsya",
+      "minute": 59
+     },
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 66
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2030287",
+     "scorers": [
+      {
+       "name": "Tjaronn Chery",
+       "minute": 38
+      },
+      {
+       "name": "Nikita Rukavytsya",
+       "minute": 59
+      },
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 66
+      }
+     ],
+     "lineup": [
+      "Joshua Cohen",
+      "Neta Lavi",
+      "Yanic Wildschut",
+      "Tjaronn Chery",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Mohammad Abu Fani",
+      "Yuval Ashkenazi",
+      "Ayad Habashi",
+      "Ernest Mabouka"
+     ],
+     "bench": [
+      "Shareef Keouf",
+      "Dolev Haziza",
+      "Yarden Shua",
+      "Saikou Touray",
+      "Stav Nachmani",
+      "Yosef Raz Meir",
+      "Rami Gershon"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2030287"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-08-01-maccabi-haifa-strasbourg",
+   "value": {
+    "name": "Maccabi Haifa 2-1 Strasbourg",
+    "on": "2019-08-01",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Guy Haimov",
+     "Allyson",
+     "Rami Gershon",
+     "Neta Lavi",
+     "Yarden Shua",
+     "Sun Menachem",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Yosef Raz Meir",
+     "Maxim Plakushchenko"
+    ],
+    "bench": [
+     "Joshua Cohen",
+     "Dolev Haziza",
+     "Mohammad Awwad",
+     "Mohammad Abu Fani",
+     "Shay Pinhas Ben David",
+     "Ernest Mabouka",
+     "Yanic Wildschut"
+    ],
+    "scorers": [
+     {
+      "name": "Yarden Shua",
+      "minute": 25
+     },
+     {
+      "name": "Nikita Rukavytsya",
+      "minute": 40
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027696",
+     "scorers": [
+      {
+       "name": "Yarden Shua",
+       "minute": 25
+      },
+      {
+       "name": "Nikita Rukavytsya",
+       "minute": 40
+      }
+     ],
+     "lineup": [
+      "Guy Haimov",
+      "Allyson",
+      "Rami Gershon",
+      "Neta Lavi",
+      "Yarden Shua",
+      "Sun Menachem",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Yosef Raz Meir",
+      "Maxim Plakushchenko"
+     ],
+     "bench": [
+      "Joshua Cohen",
+      "Dolev Haziza",
+      "Mohammad Awwad",
+      "Mohammad Abu Fani",
+      "Shay Pinhas Ben David",
+      "Ernest Mabouka",
+      "Yanic Wildschut"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027696"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-07-25-strasbourg-maccabi-haifa",
+   "value": {
+    "name": "Strasbourg 3-1 Maccabi Haifa",
+    "on": "2019-07-25",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Guy Haimov",
+     "Rami Gershon",
+     "Neta Lavi",
+     "Yarden Shua",
+     "Nikita Rukavytsya",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Ayad Habashi",
+     "Yosef Raz Meir",
+     "Ernest Mabouka",
+     "Maxim Plakushchenko"
+    ],
+    "bench": [
+     "Joshua Cohen",
+     "Allyson",
+     "Dolev Haziza",
+     "Mohammad Awwad",
+     "Sun Menachem",
+     "Mohammad Abu Fani",
+     "Yanic Wildschut"
+    ],
+    "scorers": [
+     {
+      "name": "Maxim Plakushchenko",
+      "minute": 39
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027650",
+     "scorers": [
+      {
+       "name": "Maxim Plakushchenko",
+       "minute": 39
+      }
+     ],
+     "lineup": [
+      "Guy Haimov",
+      "Rami Gershon",
+      "Neta Lavi",
+      "Yarden Shua",
+      "Nikita Rukavytsya",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Ayad Habashi",
+      "Yosef Raz Meir",
+      "Ernest Mabouka",
+      "Maxim Plakushchenko"
+     ],
+     "bench": [
+      "Joshua Cohen",
+      "Allyson",
+      "Dolev Haziza",
+      "Mohammad Awwad",
+      "Sun Menachem",
+      "Mohammad Abu Fani",
+      "Yanic Wildschut"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027650"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-07-18-mura-maccabi-haifa",
+   "value": {
+    "name": "Mura 2-3 Maccabi Haifa",
+    "on": "2019-07-18",
+    "competition": "UEFA Europa League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Guy Haimov",
+     "Ikowem Utin",
+     "Rami Gershon",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Mohammad Awwad",
+     "Yarden Shua",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Ayad Habashi",
+     "Ernest Mabouka"
+    ],
+    "bench": [
+     "Omri Glazer",
+     "Allyson",
+     "Nikita Rukavytsya",
+     "Mohammad Abu Fani",
+     "Yosef Raz Meir",
+     "Maxim Plakushchenko",
+     "Yanic Wildschut"
+    ],
+    "scorers": [
+     {
+      "name": "Mohammad Awwad",
+      "minute": 31
+     },
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 35
+     },
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 76
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027588",
+     "scorers": [
+      {
+       "name": "Mohammad Awwad",
+       "minute": 31
+      },
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 35
+      },
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 76
+      }
+     ],
+     "lineup": [
+      "Guy Haimov",
+      "Ikowem Utin",
+      "Rami Gershon",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Mohammad Awwad",
+      "Yarden Shua",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Ayad Habashi",
+      "Ernest Mabouka"
+     ],
+     "bench": [
+      "Omri Glazer",
+      "Allyson",
+      "Nikita Rukavytsya",
+      "Mohammad Abu Fani",
+      "Yosef Raz Meir",
+      "Maxim Plakushchenko",
+      "Yanic Wildschut"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027588"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2019-07-11-maccabi-haifa-mura",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Mura",
+    "on": "2019-07-11",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Guy Haimov",
+     "Rami Gershon",
+     "Neta Lavi",
+     "Dolev Haziza",
+     "Yarden Shua",
+     "Ofri Arad",
+     "Yuval Ashkenazi",
+     "Ayad Habashi",
+     "Yosef Raz Meir",
+     "Ernest Mabouka",
+     "Maxim Plakushchenko"
+    ],
+    "bench": [
+     "Omri Glazer",
+     "Allyson",
+     "Ikowem Utin",
+     "Mohammad Awwad",
+     "Sun Menachem",
+     "Mohammad Abu Fani",
+     "Gil Itzhak"
+    ],
+    "scorers": [
+     {
+      "name": "Yuval Ashkenazi",
+      "minute": 64
+     },
+     {
+      "name": "Mohammad Awwad",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2027541",
+     "scorers": [
+      {
+       "name": "Yuval Ashkenazi",
+       "minute": 64
+      },
+      {
+       "name": "Mohammad Awwad",
+       "minute": 68
+      }
+     ],
+     "lineup": [
+      "Guy Haimov",
+      "Rami Gershon",
+      "Neta Lavi",
+      "Dolev Haziza",
+      "Yarden Shua",
+      "Ofri Arad",
+      "Yuval Ashkenazi",
+      "Ayad Habashi",
+      "Yosef Raz Meir",
+      "Ernest Mabouka",
+      "Maxim Plakushchenko"
+     ],
+     "bench": [
+      "Omri Glazer",
+      "Allyson",
+      "Ikowem Utin",
+      "Mohammad Awwad",
+      "Sun Menachem",
+      "Mohammad Abu Fani",
+      "Gil Itzhak"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2027541"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-07-21-kalju-maccabi-haifa",
+   "value": {
+    "name": "Kalju 1-1 Maccabi Haifa",
+    "on": "2016-07-21",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ohad Levita",
+     "Marc Valiente",
+     "Iyad Abu Abaid",
+     "Gary Kagelmacher",
+     "Ludovic Obraniak",
+     "Nikita Rukavytsya",
+     "Gil Vermouth",
+     "Sun Menachem",
+     "Feras Magharbeh",
+     "Eyal Meshumar",
+     "Neta Lavi"
+    ],
+    "bench": [
+     "Omri Glazer",
+     "Ayad Habashi",
+     "Shoval Gozlan",
+     "Dekel Keinan",
+     "Yaniv Brik",
+     "Mohammad Awwad",
+     "Amit Zenati"
+    ],
+    "scorers": [
+     {
+      "name": "Nikita Rukavytsya",
+      "minute": 34
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020114",
+     "scorers": [
+      {
+       "name": "Nikita Rukavytsya",
+       "minute": 34
+      }
+     ],
+     "lineup": [
+      "Ohad Levita",
+      "Marc Valiente",
+      "Iyad Abu Abaid",
+      "Gary Kagelmacher",
+      "Ludovic Obraniak",
+      "Nikita Rukavytsya",
+      "Gil Vermouth",
+      "Sun Menachem",
+      "Feras Magharbeh",
+      "Eyal Meshumar",
+      "Neta Lavi"
+     ],
+     "bench": [
+      "Omri Glazer",
+      "Ayad Habashi",
+      "Shoval Gozlan",
+      "Dekel Keinan",
+      "Yaniv Brik",
+      "Mohammad Awwad",
+      "Amit Zenati"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020114"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2016-07-14-maccabi-haifa-kalju",
+   "value": {
+    "name": "Maccabi Haifa 1-1 Kalju",
+    "on": "2016-07-14",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ohad Levita",
+     "Marc Valiente",
+     "Iyad Abu Abaid",
+     "Gary Kagelmacher",
+     "Ludovic Obraniak",
+     "Nikita Rukavytsya",
+     "Gil Vermouth",
+     "Sun Menachem",
+     "Feras Magharbeh",
+     "Eyal Meshumar",
+     "Neta Lavi"
+    ],
+    "bench": [
+     "Omri Glazer",
+     "Ayad Habashi",
+     "Shay Pinhas Ben David",
+     "Ismail Raiyan",
+     "Shoval Gozlan",
+     "Yaniv Brik",
+     "Amit Zenati"
+    ],
+    "scorers": [
+     {
+      "name": "Gil Vermouth",
+      "minute": 70
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2020074",
+     "scorers": [
+      {
+       "name": "Gil Vermouth",
+       "minute": 70
+      }
+     ],
+     "lineup": [
+      "Ohad Levita",
+      "Marc Valiente",
+      "Iyad Abu Abaid",
+      "Gary Kagelmacher",
+      "Ludovic Obraniak",
+      "Nikita Rukavytsya",
+      "Gil Vermouth",
+      "Sun Menachem",
+      "Feras Magharbeh",
+      "Eyal Meshumar",
+      "Neta Lavi"
+     ],
+     "bench": [
+      "Omri Glazer",
+      "Ayad Habashi",
+      "Shay Pinhas Ben David",
+      "Ismail Raiyan",
+      "Shoval Gozlan",
+      "Yaniv Brik",
+      "Amit Zenati"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2020074"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-12-12-maccabi-haifa-shakhter",
+   "value": {
+    "name": "Maccabi Haifa 2-1 Shakhter",
+    "on": "2013-12-12",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Ran Abukrat",
+     "Shlomi Azulay",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Ismail Raiyan",
+     "El'ad Gabai",
+     "Shoval Gozlan",
+     "Edin Cocalić",
+     "Andriy Pylyavskyi"
+    ],
+    "bench": [
+     "Ron Shushan",
+     "Ayad Habashi",
+     "Sari Falach",
+     "Rayo",
+     "Dino Ndlovu",
+     "Alon Turgeman",
+     "Shimon Abuhazira"
+    ],
+    "scorers": [
+     {
+      "name": "Shoval Gozlan",
+      "minute": 72
+     },
+     {
+      "name": "Shimon Abuhazira",
+      "minute": 80
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012619",
+     "scorers": [
+      {
+       "name": "Shoval Gozlan",
+       "minute": 72
+      },
+      {
+       "name": "Shimon Abuhazira",
+       "minute": 80
+      }
+     ],
+     "lineup": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Ran Abukrat",
+      "Shlomi Azulay",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Ismail Raiyan",
+      "El'ad Gabai",
+      "Shoval Gozlan",
+      "Edin Cocalić",
+      "Andriy Pylyavskyi"
+     ],
+     "bench": [
+      "Ron Shushan",
+      "Ayad Habashi",
+      "Sari Falach",
+      "Rayo",
+      "Dino Ndlovu",
+      "Alon Turgeman",
+      "Shimon Abuhazira"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012619"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-11-28-az-alkmaar-maccabi-haifa",
+   "value": {
+    "name": "AZ Alkmaar 2-0 Maccabi Haifa",
+    "on": "2013-11-28",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Ran Abukrat",
+     "Rayo",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "El'ad Gabai",
+     "Shimon Abuhazira",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Avihay Yadin"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Sari Falach",
+     "Gustavo Boccoli",
+     "Shlomi Azulay",
+     "Dino Ndlovu",
+     "Shoval Gozlan"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012595",
+     "scorers": [],
+     "lineup": [
+      "Bojan Šaranov",
+      "Ran Abukrat",
+      "Rayo",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "El'ad Gabai",
+      "Shimon Abuhazira",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Avihay Yadin"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Sari Falach",
+      "Gustavo Boccoli",
+      "Shlomi Azulay",
+      "Dino Ndlovu",
+      "Shoval Gozlan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012595"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-11-07-maccabi-haifa-paok",
+   "value": {
+    "name": "Maccabi Haifa 0-0 PAOK",
+    "on": "2013-11-07",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Sari Falach",
+     "Ran Abukrat",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Idan Vered",
+     "Dino Ndlovu",
+     "Taleb Tawatha",
+     "Dekel Keinan",
+     "Shoval Gozlan",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Rayo",
+     "Ismail Raiyan",
+     "Alon Turgeman",
+     "El'ad Gabai",
+     "Shimon Abuhazira",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012571",
+     "scorers": [],
+     "lineup": [
+      "Bojan Šaranov",
+      "Sari Falach",
+      "Ran Abukrat",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Idan Vered",
+      "Dino Ndlovu",
+      "Taleb Tawatha",
+      "Dekel Keinan",
+      "Shoval Gozlan",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Rayo",
+      "Ismail Raiyan",
+      "Alon Turgeman",
+      "El'ad Gabai",
+      "Shimon Abuhazira",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012571"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-10-24-paok-maccabi-haifa",
+   "value": {
+    "name": "PAOK 3-2 Maccabi Haifa",
+    "on": "2013-10-24",
+    "competition": "UEFA Europa League",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Dino Ndlovu",
+     "Taleb Tawatha",
+     "Eyal Golasa",
+     "Edin Cocalić",
+     "Avihay Yadin",
+     "Eyal Meshumar",
+     "Andriy Pylyavskyi"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Ran Abukrat",
+     "Shlomi Azulay",
+     "El'ad Gabai",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan"
+    ],
+    "scorers": [
+     {
+      "name": "Dino Ndlovu",
+      "minute": 13
+     },
+     {
+      "name": "Eyal Golasa",
+      "minute": 21
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012547",
+     "scorers": [
+      {
+       "name": "Dino Ndlovu",
+       "minute": 13
+      },
+      {
+       "name": "Eyal Golasa",
+       "minute": 21
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Dino Ndlovu",
+      "Taleb Tawatha",
+      "Eyal Golasa",
+      "Edin Cocalić",
+      "Avihay Yadin",
+      "Eyal Meshumar",
+      "Andriy Pylyavskyi"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Ran Abukrat",
+      "Shlomi Azulay",
+      "El'ad Gabai",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012547"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-10-03-shakhter-maccabi-haifa",
+   "value": {
+    "name": "Shakhter 2-2 Maccabi Haifa",
+    "on": "2013-10-03",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Rayo",
+     "Dino Ndlovu",
+     "Taleb Tawatha",
+     "Eyal Golasa",
+     "Ismail Raiyan",
+     "El'ad Gabai",
+     "Shimon Abuhazira",
+     "Edin Cocalić",
+     "Avihay Yadin",
+     "Andriy Pylyavskyi"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Idan Vered",
+     "Alon Turgeman",
+     "Dekel Keinan",
+     "Eyal Meshumar"
+    ],
+    "scorers": [
+     {
+      "name": "Hen Ezra",
+      "minute": 54
+     },
+     {
+      "name": "Alon Turgeman",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012523",
+     "scorers": [
+      {
+       "name": "Hen Ezra",
+       "minute": 54
+      },
+      {
+       "name": "Alon Turgeman",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Rayo",
+      "Dino Ndlovu",
+      "Taleb Tawatha",
+      "Eyal Golasa",
+      "Ismail Raiyan",
+      "El'ad Gabai",
+      "Shimon Abuhazira",
+      "Edin Cocalić",
+      "Avihay Yadin",
+      "Andriy Pylyavskyi"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Idan Vered",
+      "Alon Turgeman",
+      "Dekel Keinan",
+      "Eyal Meshumar"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012523"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-09-19-maccabi-haifa-az-alkmaar",
+   "value": {
+    "name": "Maccabi Haifa 0-1 AZ Alkmaar",
+    "on": "2013-09-19",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Shmuel Scheimann",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Alon Turgeman",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Ran Abukrat",
+     "Idan Vered",
+     "Dino Ndlovu",
+     "El'ad Gabai",
+     "Avihay Yadin",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012499",
+     "scorers": [],
+     "lineup": [
+      "Bojan Šaranov",
+      "Shmuel Scheimann",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Alon Turgeman",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Ran Abukrat",
+      "Idan Vered",
+      "Dino Ndlovu",
+      "El'ad Gabai",
+      "Avihay Yadin",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012499"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-08-29-astra-maccabi-haifa",
+   "value": {
+    "name": "Astra 1-1 Maccabi Haifa",
+    "on": "2013-08-29",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Idan Vered",
+     "Dino Ndlovu",
+     "Eyal Golasa",
+     "Avihay Yadin",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [
+     {
+      "name": "Rayo",
+      "minute": 34
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012470",
+     "scorers": [
+      {
+       "name": "Rayo",
+       "minute": 34
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Idan Vered",
+      "Dino Ndlovu",
+      "Eyal Golasa",
+      "Avihay Yadin",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012470"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-08-22-maccabi-haifa-astra",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Astra",
+    "on": "2013-08-22",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Idan Vered",
+     "Dino Ndlovu",
+     "Eyal Golasa",
+     "El'ad Gabai",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [
+     {
+      "name": "Rayo",
+      "minute": 30
+     },
+     {
+      "name": "Alon Turgeman",
+      "minute": 61
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012439",
+     "scorers": [
+      {
+       "name": "Rayo",
+       "minute": 30
+      },
+      {
+       "name": "Alon Turgeman",
+       "minute": 61
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Idan Vered",
+      "Dino Ndlovu",
+      "Eyal Golasa",
+      "El'ad Gabai",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012439"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-08-08-maccabi-haifa-ventspils",
+   "value": {
+    "name": "Maccabi Haifa 3-0 Ventspils",
+    "on": "2013-08-08",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Ran Abukrat",
+     "Sintayehu Sallalich",
+     "Ismail Raiyan",
+     "El'ad Gabai",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [
+     {
+      "name": "Rayo",
+      "minute": 41
+     },
+     {
+      "name": "Rayo",
+      "minute": 53
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012387",
+     "scorers": [
+      {
+       "name": "Rayo",
+       "minute": 41
+      },
+      {
+       "name": "Rayo",
+       "minute": 53
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Ran Abukrat",
+      "Sintayehu Sallalich",
+      "Ismail Raiyan",
+      "El'ad Gabai",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012387"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-08-01-ventspils-maccabi-haifa",
+   "value": {
+    "name": "Ventspils 0-0 Maccabi Haifa",
+    "on": "2013-08-01",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Ran Abukrat",
+     "Sintayehu Sallalich",
+     "Eyal Golasa",
+     "El'ad Gabai",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012358",
+     "scorers": [],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Ran Abukrat",
+      "Sintayehu Sallalich",
+      "Eyal Golasa",
+      "El'ad Gabai",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012358"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-07-25-xazar-lankaran-maccabi-haifa",
+   "value": {
+    "name": "Xäzär Länkäran 0-8 Maccabi Haifa",
+    "on": "2013-07-25",
+    "competition": "UEFA Europa League",
+    "score": "0-8",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "El'ad Gabai",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Sintayehu Sallalich",
+     "Eyal Golasa",
+     "Ismail Raiyan",
+     "Avihay Yadin",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [
+     {
+      "name": "Alon Turgeman",
+      "minute": 7
+     },
+     {
+      "name": "Yaniv Katan",
+      "minute": 10
+     },
+     {
+      "name": "Rayo",
+      "minute": 13
+     },
+     {
+      "name": "Shimon Abuhazira",
+      "minute": 26
+     },
+     {
+      "name": "Hen Ezra",
+      "minute": 41
+     },
+     {
+      "name": "Shimon Abuhazira",
+      "minute": 44
+     },
+     {
+      "name": "Rayo",
+      "minute": 62
+     },
+     {
+      "name": "Eyal Golasa",
+      "minute": 76
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012322",
+     "scorers": [
+      {
+       "name": "Alon Turgeman",
+       "minute": 7
+      },
+      {
+       "name": "Yaniv Katan",
+       "minute": 10
+      },
+      {
+       "name": "Rayo",
+       "minute": 13
+      },
+      {
+       "name": "Shimon Abuhazira",
+       "minute": 26
+      },
+      {
+       "name": "Hen Ezra",
+       "minute": 41
+      },
+      {
+       "name": "Shimon Abuhazira",
+       "minute": 44
+      },
+      {
+       "name": "Rayo",
+       "minute": 62
+      },
+      {
+       "name": "Eyal Golasa",
+       "minute": 76
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "El'ad Gabai",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Sintayehu Sallalich",
+      "Eyal Golasa",
+      "Ismail Raiyan",
+      "Avihay Yadin",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012322"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2013-07-18-maccabi-haifa-xazar-lankaran",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Xäzär Länkäran",
+    "on": "2013-07-18",
+    "competition": "UEFA Europa League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Gustavo Boccoli",
+     "Hen Ezra",
+     "Rayo",
+     "Taleb Tawatha",
+     "Alon Turgeman",
+     "Shimon Abuhazira",
+     "Yaniv Katan",
+     "Dekel Keinan",
+     "Edin Cocalić",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Shmuel Scheimann",
+     "Sintayehu Sallalich",
+     "Eyal Golasa",
+     "Ismail Raiyan",
+     "El'ad Gabai",
+     "Andriy Pylyavskyi"
+    ],
+    "scorers": [
+     {
+      "name": "Hen Ezra",
+      "minute": 37
+     },
+     {
+      "name": "Alon Turgeman",
+      "minute": 55
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2012282",
+     "scorers": [
+      {
+       "name": "Hen Ezra",
+       "minute": 37
+      },
+      {
+       "name": "Alon Turgeman",
+       "minute": 55
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Gustavo Boccoli",
+      "Hen Ezra",
+      "Rayo",
+      "Taleb Tawatha",
+      "Alon Turgeman",
+      "Shimon Abuhazira",
+      "Yaniv Katan",
+      "Dekel Keinan",
+      "Edin Cocalić",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Shmuel Scheimann",
+      "Sintayehu Sallalich",
+      "Eyal Golasa",
+      "Ismail Raiyan",
+      "El'ad Gabai",
+      "Andriy Pylyavskyi"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2012282"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-12-14-maccabi-haifa-schalke",
+   "value": {
+    "name": "Maccabi Haifa 0-3 Schalke",
+    "on": "2011-12-14",
+    "competition": "UEFA Europa League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Sari Falach",
+     "Jurica Buljat",
+     "Seidu Yahaya",
+     "Vladimer Dvalishvili",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Yaniv Katan",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Nir Davidovitch",
+     "Orel Dgani",
+     "Itzhak Cohen",
+     "Gustavo Boccoli",
+     "Alon Turgeman",
+     "Hen Azriel",
+     "Dela Yampolsky"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007397",
+     "scorers": [],
+     "lineup": [
+      "Bojan Šaranov",
+      "Sari Falach",
+      "Jurica Buljat",
+      "Seidu Yahaya",
+      "Vladimer Dvalishvili",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Yaniv Katan",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Nir Davidovitch",
+      "Orel Dgani",
+      "Itzhak Cohen",
+      "Gustavo Boccoli",
+      "Alon Turgeman",
+      "Hen Azriel",
+      "Dela Yampolsky"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007397"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-12-01-aek-larnaca-maccabi-haifa",
+   "value": {
+    "name": "AEK Larnaca 2-1 Maccabi Haifa",
+    "on": "2011-12-01",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Jurica Buljat",
+     "Orel Dgani",
+     "Itzhak Cohen",
+     "Gustavo Boccoli",
+     "Vladimer Dvalishvili",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Yaniv Katan",
+     "Tamir Cohen"
+    ],
+    "bench": [
+     "Nir Davidovitch",
+     "Sari Falach",
+     "Seidu Yahaya",
+     "Idan Vered",
+     "Ali Osman",
+     "Hen Azriel",
+     "Dela Yampolsky"
+    ],
+    "scorers": [
+     {
+      "name": "Jurica Buljat",
+      "minute": 75
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007390",
+     "scorers": [
+      {
+       "name": "Jurica Buljat",
+       "minute": 75
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Jurica Buljat",
+      "Orel Dgani",
+      "Itzhak Cohen",
+      "Gustavo Boccoli",
+      "Vladimer Dvalishvili",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Yaniv Katan",
+      "Tamir Cohen"
+     ],
+     "bench": [
+      "Nir Davidovitch",
+      "Sari Falach",
+      "Seidu Yahaya",
+      "Idan Vered",
+      "Ali Osman",
+      "Hen Azriel",
+      "Dela Yampolsky"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007390"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-11-03-steaua-bucuresti-maccabi-haifa",
+   "value": {
+    "name": "Steaua București 4-2 Maccabi Haifa",
+    "on": "2011-11-03",
+    "competition": "UEFA Europa League",
+    "score": "4-2",
+    "venue": null,
+    "lineup": [
+     "Nir Davidovitch",
+     "Sari Falach",
+     "Jurica Buljat",
+     "Seidu Yahaya",
+     "Gustavo Boccoli",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Yaniv Katan",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Bojan Šaranov",
+     "Orel Dgani",
+     "Vladimer Dvalishvili",
+     "Alon Turgeman",
+     "Tamir Cohen",
+     "Hen Azriel",
+     "Dela Yampolsky"
+    ],
+    "scorers": [
+     {
+      "name": "Eyal Meshumar",
+      "minute": 36
+     },
+     {
+      "name": "Yaniv Katan",
+      "minute": 40
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007367",
+     "scorers": [
+      {
+       "name": "Eyal Meshumar",
+       "minute": 36
+      },
+      {
+       "name": "Yaniv Katan",
+       "minute": 40
+      }
+     ],
+     "lineup": [
+      "Nir Davidovitch",
+      "Sari Falach",
+      "Jurica Buljat",
+      "Seidu Yahaya",
+      "Gustavo Boccoli",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Yaniv Katan",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Bojan Šaranov",
+      "Orel Dgani",
+      "Vladimer Dvalishvili",
+      "Alon Turgeman",
+      "Tamir Cohen",
+      "Hen Azriel",
+      "Dela Yampolsky"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007367"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-10-20-maccabi-haifa-steaua-bucuresti",
+   "value": {
+    "name": "Maccabi Haifa 5-0 Steaua București",
+    "on": "2011-10-20",
+    "competition": "UEFA Europa League",
+    "score": "5-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Jurica Buljat",
+     "Orel Dgani",
+     "Seidu Yahaya",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Yaniv Katan",
+     "Tamir Cohen",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Nir Davidovitch",
+     "Gustavo Boccoli",
+     "Vladimer Dvalishvili",
+     "Alon Turgeman",
+     "Ali Osman",
+     "Hen Azriel",
+     "Dela Yampolsky"
+    ],
+    "scorers": [
+     {
+      "name": "Weaam Amasha",
+      "minute": 10
+     },
+     {
+      "name": "Weaam Amasha",
+      "minute": 20
+     },
+     {
+      "name": "Yaniv Katan",
+      "minute": 38
+     },
+     {
+      "name": "Taleb Tawatha",
+      "minute": 72
+     },
+     {
+      "name": "Idan Vered",
+      "minute": 79
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007343",
+     "scorers": [
+      {
+       "name": "Weaam Amasha",
+       "minute": 10
+      },
+      {
+       "name": "Weaam Amasha",
+       "minute": 20
+      },
+      {
+       "name": "Yaniv Katan",
+       "minute": 38
+      },
+      {
+       "name": "Taleb Tawatha",
+       "minute": 72
+      },
+      {
+       "name": "Idan Vered",
+       "minute": 79
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Jurica Buljat",
+      "Orel Dgani",
+      "Seidu Yahaya",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Yaniv Katan",
+      "Tamir Cohen",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Nir Davidovitch",
+      "Gustavo Boccoli",
+      "Vladimer Dvalishvili",
+      "Alon Turgeman",
+      "Ali Osman",
+      "Hen Azriel",
+      "Dela Yampolsky"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007343"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-09-29-schalke-maccabi-haifa",
+   "value": {
+    "name": "Schalke 3-1 Maccabi Haifa",
+    "on": "2011-09-29",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Sari Falach",
+     "Jurica Buljat",
+     "Seidu Yahaya",
+     "Gustavo Boccoli",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Ali Osman",
+     "Marlon De Jesus"
+    ],
+    "bench": [
+     "Nir Davidovitch",
+     "Orel Dgani",
+     "Itzhak Cohen",
+     "Vladimer Dvalishvili",
+     "Mohammad Ghadir",
+     "Alon Turgeman",
+     "Tamir Cohen"
+    ],
+    "scorers": [
+     {
+      "name": "Idan Vered",
+      "minute": 35
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007318",
+     "scorers": [
+      {
+       "name": "Idan Vered",
+       "minute": 35
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Sari Falach",
+      "Jurica Buljat",
+      "Seidu Yahaya",
+      "Gustavo Boccoli",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Ali Osman",
+      "Marlon De Jesus"
+     ],
+     "bench": [
+      "Nir Davidovitch",
+      "Orel Dgani",
+      "Itzhak Cohen",
+      "Vladimer Dvalishvili",
+      "Mohammad Ghadir",
+      "Alon Turgeman",
+      "Tamir Cohen"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007318"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-09-15-maccabi-haifa-aek-larnaca",
+   "value": {
+    "name": "Maccabi Haifa 1-0 AEK Larnaca",
+    "on": "2011-09-15",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Bojan Šaranov",
+     "Sari Falach",
+     "Orel Dgani",
+     "Seidu Yahaya",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Mohammad Ghadir",
+     "Yaniv Katan",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Amir Edri",
+     "Gustavo Boccoli",
+     "Ali Osman",
+     "Tamir Cohen",
+     "Hen Azriel",
+     "Dela Yampolsky",
+     "Marlon De Jesus"
+    ],
+    "scorers": [
+     {
+      "name": "Mohammad Ghadir",
+      "minute": 54
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007293",
+     "scorers": [
+      {
+       "name": "Mohammad Ghadir",
+       "minute": 54
+      }
+     ],
+     "lineup": [
+      "Bojan Šaranov",
+      "Sari Falach",
+      "Orel Dgani",
+      "Seidu Yahaya",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Mohammad Ghadir",
+      "Yaniv Katan",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Amir Edri",
+      "Gustavo Boccoli",
+      "Ali Osman",
+      "Tamir Cohen",
+      "Hen Azriel",
+      "Dela Yampolsky",
+      "Marlon De Jesus"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007293"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-08-23-genk-maccabi-haifa",
+   "value": {
+    "name": "Genk 2-1 Maccabi Haifa",
+    "on": "2011-08-23",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nir Davidovitch",
+     "Sari Falach",
+     "Itzhak Cohen",
+     "Seidu Yahaya",
+     "Gustavo Boccoli",
+     "Vladimer Dvalishvili",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Bojan Šaranov",
+     "Mohammad Ghadir",
+     "Ali Osman",
+     "Yaniv Katan",
+     "Tamir Cohen",
+     "Hen Azriel",
+     "Dela Yampolsky"
+    ],
+    "scorers": [
+     {
+      "name": "Eyal Golasa",
+      "minute": 37
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007560",
+     "scorers": [
+      {
+       "name": "Eyal Golasa",
+       "minute": 37
+      }
+     ],
+     "lineup": [
+      "Nir Davidovitch",
+      "Sari Falach",
+      "Itzhak Cohen",
+      "Seidu Yahaya",
+      "Gustavo Boccoli",
+      "Vladimer Dvalishvili",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Bojan Šaranov",
+      "Mohammad Ghadir",
+      "Ali Osman",
+      "Yaniv Katan",
+      "Tamir Cohen",
+      "Hen Azriel",
+      "Dela Yampolsky"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007560"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2011-08-17-maccabi-haifa-genk",
+   "value": {
+    "name": "Maccabi Haifa 2-1 Genk",
+    "on": "2011-08-17",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nir Davidovitch",
+     "Sari Falach",
+     "Itzhak Cohen",
+     "Seidu Yahaya",
+     "Gustavo Boccoli",
+     "Vladimer Dvalishvili",
+     "Idan Vered",
+     "Taleb Tawatha",
+     "Weaam Amasha",
+     "Eyal Golasa",
+     "Eyal Meshumar"
+    ],
+    "bench": [
+     "Bojan Šaranov",
+     "Haim Magralashvili",
+     "Mohammad Ghadir",
+     "Shlomi Azulay",
+     "Tamir Cohen",
+     "Hen Azriel",
+     "Dela Yampolsky"
+    ],
+    "scorers": [
+     {
+      "name": "Weaam Amasha",
+      "minute": 8
+     },
+     {
+      "name": "Vladimer Dvalishvili",
+      "minute": 28
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-2007550",
+     "scorers": [
+      {
+       "name": "Weaam Amasha",
+       "minute": 8
+      },
+      {
+       "name": "Vladimer Dvalishvili",
+       "minute": 28
+      }
+     ],
+     "lineup": [
+      "Nir Davidovitch",
+      "Sari Falach",
+      "Itzhak Cohen",
+      "Seidu Yahaya",
+      "Gustavo Boccoli",
+      "Vladimer Dvalishvili",
+      "Idan Vered",
+      "Taleb Tawatha",
+      "Weaam Amasha",
+      "Eyal Golasa",
+      "Eyal Meshumar"
+     ],
+     "bench": [
+      "Bojan Šaranov",
+      "Haim Magralashvili",
+      "Mohammad Ghadir",
+      "Shlomi Azulay",
+      "Tamir Cohen",
+      "Hen Azriel",
+      "Dela Yampolsky"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-2007550"
+   ],
+   "researchedAt": "2026-10-23",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-23",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}
