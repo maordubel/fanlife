@@ -1,0 +1,54 @@
+# TODAY'S FOOTBALL: every morning at 05:00 Athens the day's matches of the Fan Life clubs are drawn as stories and posts
+# and sent to the owner's Telegram chat (the same chat as Final Whistle). OFF until the owner switches it on in the control room
+# (Operations → Today's Football), and it starts as a dry run. The site decides what is due; an idle run is one cheap request.
+name: Today's Football
+on:
+  schedule:
+    # the site holds a job until its send time (05:00 Athens); these runs only collect data early and deliver the moment it is due
+    - cron: '30 4 * * *'
+      timezone: Europe/Athens
+    - cron: '0 5 * * *'
+      timezone: Europe/Athens
+    - cron: '20 5 * * *'
+      timezone: Europe/Athens
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Draw and check only, send nothing
+        type: boolean
+        default: true
+      day:
+        description: Athens day to draw (YYYY-MM-DD, dry run only; empty = today)
+        type: string
+        default: ''
+permissions: {}
+concurrency:
+  group: daily-matchday
+  cancel-in-progress: false
+jobs:
+  run:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+      DAY: ${{ github.event_name == 'workflow_dispatch' && inputs.day || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install the image library
+        run: npm install --no-save --no-package-lock --ignore-scripts "sharp@0.34.5" && npm rebuild sharp
+      - name: Collect, draw and deliver
+        run: node scripts/matchday/run.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: matchday-images
+          path: out/
+          retention-days: 7
+          if-no-files-found: ignore
