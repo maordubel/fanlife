@@ -7,15 +7,10 @@
   "parserVersion": "immerunioner-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 199,
+  "observedTotalDocuments": 230,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/spieler.php?getid=409",
-   "/spieler.php?getid=376",
-   "/spieler.php?getid=208",
-   "/spieler.php?getid=351",
-   "/spieler.php?getid=468",
    "/spieler.php?getid=583",
    "/spieler.php?getid=544",
    "/spieler.php?getid=587",
@@ -192,7 +187,38 @@
    "/spieler.php?getid=589",
    "/spieler.php?getid=591",
    "/spieler.php?getid=592",
-   "/spieler.php?getid=593"
+   "/spieler.php?getid=593",
+   "/nummern.php?getid=2",
+   "/spieler.php?getid=409&zahl=1",
+   "/spieler.php?getid=406",
+   "/spieler.php?getid=407",
+   "/spieler.php?getid=408",
+   "/spieler.php?getid=411",
+   "/spieler.php?getid=412",
+   "/nummern.php?getid=16",
+   "/spieler.php?getid=376&zahl=1",
+   "/spieler.php?getid=373",
+   "/spieler.php?getid=374",
+   "/spieler.php?getid=375",
+   "/spieler.php?getid=377",
+   "/spieler.php?getid=378",
+   "/nummern.php?getid=19",
+   "/spieler.php?getid=208&zahl=1",
+   "/spieler.php?getid=193",
+   "/nummern.php?getid=22",
+   "/spieler.php?getid=405",
+   "/spieler.php?getid=351&zahl=1",
+   "/spieler.php?getid=344",
+   "/spieler.php?getid=345",
+   "/spieler.php?getid=349",
+   "/nummern.php?getid=18",
+   "/spieler.php?getid=509",
+   "/spieler.php?getid=468&zahl=1",
+   "/spieler.php?getid=465",
+   "/spieler.php?getid=466",
+   "/spieler.php?getid=467",
+   "/spieler.php?getid=469",
+   "/spieler.php?getid=470"
   ],
   "seen": [
    "/listen.php",
@@ -211,10 +237,15 @@
    "/spieler.php?getid=574",
    "/spieler.php?getid=273",
    "/spieler.php?getid=531",
-   "/spieler.php?getid=590"
+   "/spieler.php?getid=590",
+   "/spieler.php?getid=409",
+   "/spieler.php?getid=376",
+   "/spieler.php?getid=208",
+   "/spieler.php?getid=351",
+   "/spieler.php?getid=468"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-23T08:52:52.886Z",
+  "updatedAt": "2026-10-24T08:26:53.209Z",
   "lastError": null
  },
  "union-official:html": {
@@ -233,7 +264,7 @@
    "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-23T08:52:54.864Z",
+  "updatedAt": "2026-10-24T08:26:55.318Z",
   "lastError": null
  },
  "dfb-union:html": {
@@ -252,7 +283,7 @@
    "/en/clubs/1-fc-union-berlin"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-23T08:52:59.513Z",
+  "updatedAt": "2026-10-24T08:26:59.839Z",
   "lastError": null
  },
  "footballhistory-union:html": {
@@ -271,7 +302,7 @@
    "/club/union-berlin.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-23T08:53:00.756Z",
+  "updatedAt": "2026-10-24T08:27:01.044Z",
   "lastError": null
  }
 }
