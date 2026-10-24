@@ -44,7 +44,7 @@ export const linkDestination = (chatId: string, now: Date) => updateDoc<Destinat
 const watchName = (clubId: string, eventId: string) => `watch/${clubId}~${eventId}.json`
 const jobName = (id: string) => `jobs/${id}.json`
 
-async function teamIdFor(clubId: string, deps: Deps): Promise<string | null> {
+export async function teamIdFor(clubId: string, deps: Deps): Promise<string | null> {
   const known = (await readDoc<Record<string, string>>('teams.json', {})).value[clubId]
   if (known) return known
   const team = FIXTURE_TEAMS.find(t => t.clubId === clubId)
