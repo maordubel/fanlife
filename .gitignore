@@ -26,3 +26,4 @@ playwright-report/
 
 # pre-compiled club packs, written by `npm run build` (lib/clubs/precompiled.ts)
 content/compiled/
+/scripts/marketing/kit/node_modules
