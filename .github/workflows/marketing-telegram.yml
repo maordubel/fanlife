@@ -1,0 +1,27 @@
+# DUBEL TEAM social plan (25.10.2026): every two hours, 08:00–22:00 Israel time, one ready post to the owner's Telegram.
+# The site holds the plan (schema marketing on Football Master) and claims each due post once; this run only sends it.
+# Idle runs are one cheap request.
+name: DUBEL TEAM plan
+on:
+  schedule:
+    - cron: '2-59/5 5-21 * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: marketing-telegram
+  cancel-in-progress: false
+jobs:
+  run:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/marketing/telegram-send.mjs
