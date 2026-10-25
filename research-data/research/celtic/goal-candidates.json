@@ -19,6 +19,15 @@
     "bodyHash": "0ab5118ef031f43e4b1611f0966a5f8c1ab430c2eede0d47b75f039bb428c268",
     "fetchedAt": "2026-10-16T08:19:58.572Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1905-2/1905-05-06-celtic-2-1-rangers-league-division-1-championship-play-off/",
+    "locator": "p23",
+    "quote": "Celtic Scorers: McMenemy 60′, Hamitlon 61′",
+    "bodyHash": "b6081924edda6322fadad4c2a49a4434bb30c4c78db1719ad3fed09c00c7bb50",
+    "fetchedAt": "2026-10-25T08:43:55.335Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -26,8 +35,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-16T08:19:58.572Z",
-  "updatedAt": "2026-10-16T08:19:58.572Z"
+  "createdAt": "2026-10-25T08:43:55.335Z",
+  "updatedAt": "2026-10-25T08:43:55.335Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -196,6 +205,15 @@
     "bodyHash": "b5a85bc16bb4d24b3cf2efb8233dbd7db6e350465b1d480c6e0ec3e632def534",
     "fetchedAt": "2026-10-23T08:50:48.640Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1901-2/1901-03-23-celtic-1-0-st-mirren-scottish-cup/",
+    "locator": "p8",
+    "quote": "Right half Bobby Davidson was knocked unconscious in the 20th minute, and insisted on playing on when he recovered.",
+    "bodyHash": "cefdacc01ed11927489e6731c430069a5fce10b358ac0bc0de606a74d7217c6e",
+    "fetchedAt": "2026-10-25T08:43:37.217Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -203,8 +221,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:50:48.640Z",
-  "updatedAt": "2026-10-23T08:50:48.640Z"
+  "createdAt": "2026-10-25T08:43:37.217Z",
+  "updatedAt": "2026-10-25T08:43:37.217Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -385,5 +403,74 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-23T08:51:00.695Z",
   "updatedAt": "2026-10-23T08:51:00.695Z"
+ },
+ {
+  "id": "ga-83acbc41412b298f",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "75",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1901-2/1901-01-12-celtic-1-0-rangers-scottish-cup/",
+    "locator": "p7",
+    "quote": "Dan McArthur, Celtic's goalkeeper was carried off unconscious in the 75th minute.",
+    "bodyHash": "981980d9ce861cc616c6740ba7c8fe7106efbe3cb84715e1577a6f00646c9352",
+    "fetchedAt": "2026-10-25T08:43:37.212Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1902-2/1902-04-26-celtic-0-1-hibernian-scottish-cup/",
+    "locator": "p34",
+    "quote": "McGeachan Goal 75'",
+    "bodyHash": "2f6a48817e7c71bfe531de30e02735d2bc4490b0a6c8592e98e083d74bd73015",
+    "fetchedAt": "2026-10-25T08:43:40.333Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-25T08:43:40.333Z",
+  "updatedAt": "2026-10-25T08:43:40.333Z"
+ },
+ {
+  "id": "ga-93c8b19a7ed75ec1",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "66",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1905-2/1905-05-06-celtic-2-1-rangers-league-division-1-championship-play-off/",
+    "locator": "p26",
+    "quote": "Rangers Scorer: Robertson 66′",
+    "bodyHash": "b6081924edda6322fadad4c2a49a4434bb30c4c78db1719ad3fed09c00c7bb50",
+    "fetchedAt": "2026-10-25T08:43:55.335Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-25T08:43:55.335Z",
+  "updatedAt": "2026-10-25T08:43:55.335Z"
  }
 ]
