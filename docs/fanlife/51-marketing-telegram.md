@@ -12,9 +12,12 @@ Telegram: the hook, the caption, the link to the right app, the hashtags and a v
   delivers Final Whistle to; not committed, the repo is public).
 - **SQL:** `supabase/marketing/0001..0004`. 0002 is generated: edit `scripts/marketing/content.py`,
   run `python3 scripts/marketing/gen.py`, apply 0002, then rebuild unsent rows if needed.
-- **Delivery:** pg_cron `marketing:telegram` every 2 minutes → `marketing.dispatch()` → pg_net
-  `sendMessage`. No edge function. The bot token is the Vault secret `telegram_bot_token`;
-  without it dispatch answers `no telegram_bot_token in Vault` and sends nothing.
+- **Delivery:** GitHub Actions `marketing-telegram.yml` (every 5 minutes, 05–21 UTC) uses the bot token that already
+  lives in Actions (`TELEGRAM_BOT_TOKEN`, the Final Whistle bot). It asks `POST /api/master/marketing` (CRON_SECRET) to
+  claim the due posts — `public.worker_marketing_claim()`, each post claimed once — sends them, and reports Telegram's
+  answer (`worker_marketing_report`: sent · refused → retried up to 3 times · unknown → never resent). Nobody copies
+  the token anywhere. A second, dormant path exists: pg_cron `marketing:telegram` → `marketing.dispatch()` sends by
+  itself only if a Vault secret `telegram_bot_token` is ever added; both paths take only `pending` rows.
 
 ## The day
 | time | format | what |
