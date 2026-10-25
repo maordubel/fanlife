@@ -49,7 +49,7 @@ begin
   fmt := p.format; it := p.main;
 
   if p.kind = 'pre' then
-    select * into fx from marketing.pick_fixture(p.send_at - interval '1 hour', day_start + interval '24 hours', used);
+    select * into fx from marketing.pick_fixture(p.send_at - interval '10 minutes', day_start + interval '24 hours', used);
   elsif p.kind = 'live' then
     select * into fx from marketing.pick_fixture(p.send_at - interval '45 minutes', p.send_at + interval '75 minutes', used);
   elsif p.kind = 'night' then

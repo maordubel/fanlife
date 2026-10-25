@@ -24,7 +24,7 @@ Telegram: the hook, the caption, the link to the right app, the hashtags and a v
 | 12:00 | post | DUBID / OFFSIDES matchday |
 | 14:00 | reel / TikTok | 15–30s script |
 | 16:00 | story | poll / quiz / slider |
-| 18:00 | post | **tonight's real match** (core.fixtures, 17:00–24:00); none → a deep post |
+| 18:00 | post | **tonight's real match** (core.fixtures, kicking off 18:00–24:00); none → a deep post |
 | 20:00 | story | **the match on now** (19:15–21:15); none → a wallpaper |
 | 22:00 | text | night, emotional; on an **Israeli derby** day → FUCK YOU |
 
