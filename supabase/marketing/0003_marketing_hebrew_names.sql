@@ -47,6 +47,8 @@ begin
   select coalesce(array_agg(x.fixture_id), '{}') into used from marketing.posts x
    where x.fixture_id is not null and x.send_at >= day_start and x.send_at < p.send_at;
   fmt := p.format; it := p.main;
+  -- give fx its shape even when no match is looked up (fixed posts): no rows → every field null
+  select * into fx from marketing.pick_fixture('infinity'::timestamptz, 'infinity'::timestamptz);
 
   if p.kind = 'pre' then
     select * into fx from marketing.pick_fixture(p.send_at - interval '10 minutes', day_start + interval '24 hours', used);
