@@ -22,3 +22,10 @@ alter table storage.objects enable row level security;
 grant select,insert,update,delete on storage.objects to anon,authenticated;
 create or replace function storage.foldername(name text) returns text[] language sql immutable as $$ select (string_to_array(name,'/'))[1:array_length(string_to_array(name,'/'),1)-1] $$;
 grant execute on function storage.foldername(text) to anon,authenticated;
+
+-- Local evaluation only: the marketing schema lives in supabase/marketing/ (it needs pg_net and pg_cron,
+-- which PGlite does not have). The delivery migration alters marketing.posts, so a bare stand-in of the
+-- two tables lets every migration in supabase/migrations/ apply here. Production never reads this file.
+create schema if not exists marketing;
+create table if not exists marketing.settings(key text primary key,value jsonb not null,updated_at timestamptz not null default now());
+create table if not exists marketing.posts(id bigserial primary key,day int not null,send_at timestamptz not null unique,format text not null,kind text not null,main jsonb,variants jsonb,fallback jsonb,fallback_format text,status text not null default 'pending' check (status in ('pending','sent','failed','skipped')),attempts int not null default 0,request_id bigint,sent_at timestamptz,rendered text,fixture_id text,error text);
