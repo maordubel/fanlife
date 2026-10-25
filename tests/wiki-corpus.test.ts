@@ -1,6 +1,6 @@
 import { createServer, type Server } from 'node:http'
 import { AddressInfo } from 'node:net'
-import { mkdtempSync, readFileSync, readdirSync } from 'node:fs'
+import { mkdtempSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
@@ -437,8 +437,6 @@ describe('ויקיפועל — the offline route', () => {
 })
 
 function writeDump(path: string, xml: string): void {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { writeFileSync } = require('node:fs') as typeof import('node:fs')
   writeFileSync(path, xml, 'utf8')
 }
 
