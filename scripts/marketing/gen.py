@@ -12,13 +12,14 @@ PLATFORM = {
  'background': 'Instagram Story · TikTok photo · Facebook Story',
  'text': 'Facebook · Instagram (text on background) · TikTok text post',
 }
-FORMAT_HE = {'post': 'פוסט', 'carousel': 'קרוסלה', 'reel': 'רילס / טיקטוק', 'story': 'סטורי',
-             'background': 'רקע / וולפייפר', 'text': 'טקסט רגשי'}
+FORMAT_HE = {'post': 'Post', 'carousel': 'Carousel', 'reel': 'Reel / TikTok', 'story': 'Story',
+             'background': 'Wallpaper / background', 'text': 'Text post'}  # key name kept; labels are English
 it = lambda t: dict(zip(['app', 'hook', 'body', 'visual'], t))
 pools = {k: [it(t) for t in getattr(c, k)] for k in
          ['MORNING', 'CAROUSEL', 'GAMEDAY', 'REELS', 'STORIES', 'DEEP', 'WALLPAPER', 'NIGHT', 'DERBY_NIGHT']}
 pools['PRE'] = [{k: it(v) for k, v in t.items()} for t in c.PRE]
 pools['LIVE'] = [{k: it(v) for k, v in t.items()} for t in c.LIVE]
+pools['LAUNCH'] = {k: it(v) for k, v in c.LAUNCH.items()}
 meta = {'urls': c.URL, 'names': c.NAME, 'tags': c.TAGS, 'platform': PLATFORM, 'format_he': FORMAT_HE,
         'clubs': c.CLUBS, 'derby_pairs': c.DERBY_PAIRS, 'big_names': c.BIG_NAMES}
 J = lambda x: "'" + json.dumps(x, ensure_ascii=False, separators=(',', ':')).replace("'", "''") + "'::jsonb"

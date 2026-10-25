@@ -1,5 +1,5 @@
 -- The real match of the moment (core.fixtures, read-only) and the Telegram message for one post.
--- Team names print in Hebrew (core.teams.name_he); matching uses name_en.
+-- Everything prints in English (owner, 25.10.2026): team names are core.teams.name_en, the league its English name.
 
 drop function if exists marketing.pick_fixture(timestamptz, timestamptz, text[]);
 create function marketing.pick_fixture(p_from timestamptz, p_to timestamptz, p_exclude text[] default '{}')
@@ -8,7 +8,7 @@ language sql stable security definer set search_path = '' as $$
   with m as (select value from marketing.settings where key = 'meta'),
   f as (
     select fx.id::text fid, h.name_en home, a.name_en away,
-           coalesce(l.names->'he'->>'full', l.names->'en'->>'full') league, fx.kickoff_at,
+           coalesce(l.names->'en'->>'full', '') league, fx.kickoff_at,
            coalesce(nullif(h.name_he,''), h.name_en) home_he, coalesce(nullif(a.name_he,''), a.name_en) away_he,
            (l.names->'en'->>'full') league_en
     from core.fixtures fx
@@ -47,6 +47,8 @@ begin
   select coalesce(array_agg(x.fixture_id), '{}') into used from marketing.posts x
    where x.fixture_id is not null and x.send_at >= day_start and x.send_at < p.send_at;
   fmt := p.format; it := p.main;
+  -- give fx its shape even when no match is looked up (fixed posts): no rows → every field null
+  select * into fx from marketing.pick_fixture('infinity'::timestamptz, 'infinity'::timestamptz);
 
   if p.kind = 'pre' then
     select * into fx from marketing.pick_fixture(p.send_at - interval '10 minutes', day_start + interval '24 hours', used);
@@ -72,21 +74,21 @@ begin
   hook := it->>'hook'; body := it->>'body';
   if fx.fixture_id is not null then
     ko := to_char(fx.kickoff at time zone 'Asia/Jerusalem', 'HH24:MI');
-    hook := replace(replace(replace(replace(hook, '{home}', fx.home_he), '{away}', fx.away_he), '{league}', coalesce(fx.league,'')), '{kickoff}', ko);
-    body := replace(replace(replace(replace(body, '{home}', fx.home_he), '{away}', fx.away_he), '{league}', coalesce(fx.league,'')), '{kickoff}', ko);
+    hook := replace(replace(replace(replace(hook, '{home}', fx.home), '{away}', fx.away), '{league}', coalesce(fx.league,'')), '{kickoff}', ko);
+    body := replace(replace(replace(replace(body, '{home}', fx.home), '{away}', fx.away), '{league}', coalesce(fx.league,'')), '{kickoff}', ko);
   end if;
 
-  msg := '🗓 <b>' || case when p.day = 0 then 'השקה' else 'יום ' || p.day || '/' || total end
+  msg := '🗓 <b>' || case when p.day = 0 then 'Launch day' else 'Day ' || p.day || '/' || total end
       || ' · ' || to_char(p.send_at at time zone 'Asia/Jerusalem', 'DD.MM · HH24:MI') || '</b>'
       || E'\n📌 ' || marketing.esc(m->'format_he'->>fmt) || ' · <b>' || marketing.esc(m->'names'->>(it->>'app')) || '</b>'
       || E'\n📱 ' || marketing.esc(m->'platform'->>fmt)
-      || case when fx.fixture_id is not null then E'\n⚽ משחק אמיתי: ' || marketing.esc(fx.home_he || ' – ' || fx.away_he)
+      || case when fx.fixture_id is not null then E'\n⚽ Real match: ' || marketing.esc(fx.home || ' – ' || fx.away)
               || ' · ' || to_char(fx.kickoff at time zone 'Asia/Jerusalem', 'DD.MM HH24:MI') else '' end
       || E'\n\n🪝 <b>HOOK</b>\n<b>' || marketing.esc(hook) || '</b>'
-      || E'\n\n✍️ <b>הפוסט</b>\n' || marketing.esc(hook) || E'\n\n' || marketing.esc(body)
+      || E'\n\n✍️ <b>POST</b>\n' || marketing.esc(hook) || E'\n\n' || marketing.esc(body)
       || E'\n\n👉 ' || marketing.esc(url)
       || E'\n\n' || marketing.esc(m->'tags'->>(it->>'app'))
-      || E'\n\n🎨 <i>ויזואל: ' || marketing.esc(it->>'visual') || '</i>';
+      || E'\n\n🎨 <i>Visual: ' || marketing.esc(it->>'visual') || '</i>';
   fixture_id := fx.fixture_id;
   return next;
 end $$;

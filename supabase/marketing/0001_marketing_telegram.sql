@@ -87,7 +87,7 @@ begin
             url := 'https://api.telegram.org/bot' || tok || '/sendMessage',
             headers := '{"Content-Type":"application/json"}'::jsonb,
             body := jsonb_build_object('chat_id', chat, 'parse_mode', 'HTML', 'text',
-              '✅ <b>DUBEL TEAM מחובר.</b>' || E'\n' || 'מכאן כל שעתיים, 08:00–22:00, מגיע פוסט מוכן: HOOK, הפוסט, הלינק, ההאשטגים והוויזואל.' || E'\n\n' || 'הבא בתור: ' ||
+              '✅ <b>DUBEL TEAM is connected.</b>' || E'\n' || 'Every two hours, 08:00–22:00, a ready post arrives here: hook, caption, link, hashtags and visual.' || E'\n\n' || 'Next up: ' ||
               coalesce((select to_char(min(send_at) at time zone 'Asia/Jerusalem','DD.MM HH24:MI') from marketing.posts where status='pending' and send_at > now()), '—')));
         end if;
       end if;

@@ -3,14 +3,14 @@
 with c as (select value v from marketing.settings where key = 'content'),
 d0 as (
   select 0 as dd, '14:00'::time as t, 'reel' as fmt, 'fixed' as kind,
-         '{"app":"all","hook":"פתחנו עמוד. חמש אפליקציות, אוהד אחד.","body":"0-3: \"אם אתה אוהד — תעצור\".\n3-20: מעבר מהיר בין FAN LIFE, THE WORKER, DUBID, OFFSIDES ו-FUCK YOU.\n20-25: \"עקוב. מחר מתחילים חודש שלם\".","visual":"מונטאז׳ מהיר של 5 מסכים, מוזיקת יציע, 25 ש׳."}'::jsonb as main,
+         (select c.v->'LAUNCH'->'reel' from c) as main,
          null::jsonb as variants, null::jsonb as fallback, null::text as ffmt
   union all select 0, '16:00', 'story', 'fixed',
-         '{"app":"all","hook":"סקר פתיחה: איזה סוג אוהד אתה?","body":"סקר 4 אפשרויות: מנחש / מנהל / היסטוריון / נוסטלגי.\nשקף 2: \"יש אפליקציה לכל אחד\" + סטיקר קישור.","visual":"ארבעה אייקונים קומיקס."}'::jsonb, null, null, null
+         (select c.v->'LAUNCH'->'story' from c), null, null, null
   union all select 0, '18:00', 'post', 'pre', null, c.v->'PRE'->0, c.v->'DEEP'->29, null from c
   union all select 0, '20:00', 'story', 'live', null, c.v->'LIVE'->0, c.v->'WALLPAPER'->0, 'background' from c
   union all select 0, '22:00', 'text', 'night',
-         '{"app":"all","hook":"לילה ראשון של העמוד. תודה שאתה פה.","body":"מחר בשמונה בבוקר — הפוסט הראשון של חודש שלם.\nהפעל התראות.","visual":"טקסט לבן על שחור."}'::jsonb, null, c.v->'DERBY_NIGHT'->0, null from c
+         c.v->'LAUNCH'->'night', null, c.v->'DERBY_NIGHT'->0, null from c
 ),
 dn as (
   select g.n as dd, s.t, s.fmt, s.kind,

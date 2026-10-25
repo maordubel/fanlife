@@ -33,10 +33,12 @@ Telegram: the hook, the caption, the link to the right app, the hashtags and a v
 
 Match choice: Israeli derby › a FAN LIFE club (links to `/clubs/<slug>`) › Israeli league (DUBID /
 OFFSIDES) › the biggest other game. A fixture used earlier that day is not used again. Team names
-print in Hebrew (`core.teams.name_he`). Nothing states a score, a date or a fixture the database
+print in English (`core.teams.name_en`). Nothing states a score, a date or a fixture the database
 does not hold.
 
 ## Rules
+- Everything is English (owner, 25.10.2026): copy, the Telegram message, team names (`core.teams.name_en`) and league names.
+- Every visual brief names a template T1–T8 — `docs/fanlife/52-marketing-templates.md`.
 - A post more than 90 minutes late is skipped, never flooded.
 - A refused send retries up to 3 times, then `failed` with Telegram's answer in `error`.
 - OFFSIDES copy always says it is a free simulation with no real money.
