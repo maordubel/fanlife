@@ -1705,7 +1705,7 @@
         "baseExplanation": "Fanis Kofinas: Goalkeeper · Petros Ravousis: Defender · Paylos Papaioannou: Midfielder."
       },
       {
-        "questionId": "q_4f950c6989f07ce4",
+        "questionId": "q_95faa5c44c71f256",
         "answer": [
           "Goalkeeper",
           "Defender",
@@ -1714,13 +1714,13 @@
         "factIds": [
           "pos:aek-athens:p-dh-519ff79b62d7",
           "pos:aek-athens:p-dh-608f81ea29f9",
-          "pos:aek-athens:p-dh-80f758c370c3"
+          "pos:aek-athens:p-dh-64648930d0f9"
         ],
         "sourceUrl": "https://aekdata.gr/paiktis/516-stelios-konstantinidis",
         "prompt": "Fill the AEK Athens team sheet: match each player to his position.",
-        "explanation": "Stelios Konstantinidis: Goalkeeper · Lakis Nikolaou: Defender · Giorgos Mageiras: Midfielder.",
+        "explanation": "Stelios Konstantinidis: Goalkeeper · Lakis Nikolaou: Defender · Milen Petkov: Midfielder.",
         "basePrompt": "Fill the AEK Athens team sheet: match each player to his position.",
-        "baseExplanation": "Stelios Konstantinidis: Goalkeeper · Lakis Nikolaou: Defender · Giorgos Mageiras: Midfielder."
+        "baseExplanation": "Stelios Konstantinidis: Goalkeeper · Lakis Nikolaou: Defender · Milen Petkov: Midfielder."
       },
       {
         "questionId": "q_771bffb3bb2751e2",

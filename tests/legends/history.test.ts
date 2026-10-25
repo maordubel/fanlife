@@ -7,7 +7,9 @@ import {deleteArchived,flushArchives,insertCareer,readCareer,readSeasonArchive,s
 import type {Career} from '@/lib/legends/types'
 import {LEAGUE} from './fixtures'
 
-afterEach(()=>{useDurableStore(undefined as unknown as null)})
+afterEach(()=>{// eslint-disable-next-line react-hooks/rules-of-hooks
+useDurableStore(undefined as unknown as null)})
+// eslint-disable-next-line react-hooks/rules-of-hooks -- `useDurableStore` is a store setter, not a React hook
 const fake=()=>useDurableStore({...memoryStore(),kind:'vercel-blob'} as never)
 let played:Career|null=null
 const two=()=>{if(!played){const r=autopilot(LEAGUE[0]!,LEAGUE.slice(1,4),2,'hist');expect(r.error).toBeNull();played=r.career!}return played}
