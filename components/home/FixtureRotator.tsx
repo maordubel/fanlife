@@ -53,11 +53,12 @@ export function FixtureRotator({items, copy, locale}: {items: RotatorItem[]; cop
   }, [items, locale])
   useEffect(() => {
     if (!open) return
+    const opener = btn.current
     const root = document.documentElement, prev = root.style.overflow
     root.style.overflow = 'hidden'; closeRef.current?.focus()
     const key = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
     window.addEventListener('keydown', key)
-    return () => { root.style.overflow = prev; window.removeEventListener('keydown', key); btn.current?.focus() }
+    return () => { root.style.overflow = prev; window.removeEventListener('keydown', key); opener?.focus() }
   }, [open])
 
   const line = (f: RotatorItem, i: number, onPick?: () => void) => (

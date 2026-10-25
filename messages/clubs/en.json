@@ -551,8 +551,6 @@
   "terraceDailyBoardYou": "You're on today's board — #{n}.",
   "terraceDailyBoardOff": "Optional. Only your name and today’s score are shown. Nothing else is stored.",
   "wkhUvK": "Matchday",
-  "wkhAfK": "Arcade",
-  "wkhAfSub": "One game, every club — mixed trivia, timelines and memory.",
   "wkhLmK": "The hall of fame edition",
   "wkhLmTitle": "Legends Manager",
   "wkhLmSub": "Draft one club’s immortals and build a dynasty, season after season.",
@@ -632,6 +630,5 @@
   "terraceDailyClosed": "Daily Terrace is not open for this club.",
   "terraceDailyLoading": "Dealing today's edition…",
   "terraceDailyGone": "That answer could not be taken. Reload the page.",
-  "wkhHeroDaily": "Play today's Daily Terrace",
-  "wkhAfTitle": "ALL FOOTBALL"
+  "wkhHeroDaily": "Play today's Daily Terrace"
 }
