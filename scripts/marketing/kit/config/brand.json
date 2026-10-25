@@ -1,0 +1,12 @@
+{
+  "brand": "DUBEL TEAM",
+  "palette": {"ink":"#121412","paper":"#F2EDE3","vermilion":"#D8401C","green":"#1E5A38","night":"#0D1B2A"},
+  "apps": {
+    "fanlife":{"label":"FAN LIFE","accent":"#D8401C","url":"fanlife.dubelteam.com"},
+    "worker":{"label":"THE WORKER","accent":"#9E1B0E","secondary":"#1C2B4A","url":"theworker.dubelteam.com"},
+    "dubid":{"label":"DUBID","accent":"#2546C9","url":"dubid.dubelteam.com"},
+    "offsides":{"label":"OFFSIDES","accent":"#EE7A1F","url":"offsides.dubelteam.com"},
+    "fuckyou":{"label":"FUCK YOU","accent":"#000000","url":"fuckyou.dubelteam.com","monochrome":true},
+    "dubel":{"label":"DUBEL TEAM","accent":"#1E5A38","url":"dubelteam.com"}
+  }
+}

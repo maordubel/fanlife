@@ -1,0 +1,178 @@
+{
+  "T1": {
+    "hook": [
+      "NINETY MINUTES.",
+      "A LIFETIME."
+    ],
+    "body": "The final whistle is never the end.",
+    "photo": "assets/stadium-original.png"
+  },
+  "T2": {
+    "fanlife": {
+      "feature": [
+        "YOUR CLUB.",
+        "YOUR",
+        "HISTORY."
+      ],
+      "body": [
+        "Go beyond the score.",
+        "Play your club’s story."
+      ]
+    },
+    "worker": {
+      "feature": [
+        "LIVE",
+        "THE",
+        "STORY."
+      ],
+      "body": [
+        "Step into the archive.",
+        "Take your own journey."
+      ]
+    },
+    "dubid": {
+      "feature": [
+        "PICK.",
+        "CAPTAIN.",
+        "COMPETE."
+      ],
+      "body": [
+        "Build your squad.",
+        "Make every pick count."
+      ]
+    },
+    "offsides": {
+      "feature": [
+        "FREE",
+        "MATCH",
+        "SIMS."
+      ],
+      "body": [
+        "A football simulation.",
+        "Free to play."
+      ]
+    },
+    "fuckyou": {
+      "feature": [
+        "PICK",
+        "YOUR",
+        "SIDE."
+      ],
+      "body": [
+        "A derby debate.",
+        "Make your choice."
+      ]
+    }
+  },
+  "T3": {
+    "masthead": "FAN LIFE",
+    "line": "Same club. Different journeys. One universe.",
+    "ringColours": [
+      "#9E1B0E",
+      "#2546C9",
+      "#D8401C",
+      "#1E5A38",
+      "#1C2B4A",
+      "#121412",
+      "#EE7A1F",
+      "#0D1B2A"
+    ],
+    "crests": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "T4": {
+    "shirt": null,
+    "season": "YOUR SEASON",
+    "maker": "YOUR MAKER",
+    "sponsor": "YOUR SPONSOR"
+  },
+  "T5-A": {
+    "home": [
+      "HOME"
+    ],
+    "away": [
+      "AWAY"
+    ],
+    "time": "20:00",
+    "competition": "COMPETITION / MATCHDAY",
+    "homeCrest": null,
+    "awayCrest": null
+  },
+  "T5-B": {
+    "hook": [
+      "WHO MAKES",
+      "YOUR ALL-TIME",
+      "STARTING XI?"
+    ]
+  },
+  "T5-C": {
+    "hook": [
+      "THE NEXT",
+      "CHAPTER."
+    ]
+  },
+  "T5-D": {
+    "hook": [
+      "FOOTBALL.",
+      "FOREVER."
+    ]
+  },
+  "T6": {
+    "hook": "THIS OR THAT?",
+    "left": "HOME END",
+    "right": "AWAY DAY",
+    "bubble": "ONE MORE GAME.",
+    "illustration": null
+  },
+  "T7": {
+    "app": "fanlife",
+    "cover": [
+      "ONE CLUB.",
+      "MORE WAYS",
+      "TO PLAY."
+    ],
+    "slides": [
+      {
+        "headline": [
+          "CHOOSE",
+          "YOUR CLUB."
+        ],
+        "body": "Start with the badge that means something."
+      },
+      {
+        "headline": [
+          "FIND",
+          "YOUR GAME."
+        ],
+        "body": "Choose a feature. Make it your own."
+      },
+      {
+        "headline": [
+          "MAKE",
+          "A MEMORY."
+        ],
+        "body": "Keep your story. Share it your way."
+      }
+    ]
+  },
+  "T8": {
+    "hook": [
+      "THE GAME",
+      "NEVER ENDS."
+    ],
+    "frame": "assets/stadium-original.png",
+    "lowerThird": [
+      "BEING A SUPPORTER",
+      "IS A LIFETIME."
+    ],
+    "centreWord": "LIFETIME."
+  }
+}

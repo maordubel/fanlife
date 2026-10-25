@@ -19,6 +19,17 @@ Telegram: the hook, the caption, the link to the right app, the hashtags and a v
   the token anywhere. A second, dormant path exists: pg_cron `marketing:telegram` → `marketing.dispatch()` sends by
   itself only if a Vault secret `telegram_bot_token` is ever added; both paths take only `pending` rows.
 
+## The pictures (25.10.2026)
+Every post now arrives with its picture first: the owner's **DUBEL TEAM Social Kit v1** is vendored in
+`scripts/marketing/kit/` (renderer `source/design.mjs`, brand/content JSON, font outlines, the original stadium
+artwork) and `kit/visual.mjs` reads the post back out of its own message — app, hook, `Visual: T<n>`, the real match —
+and draws the matching template with that copy. A real match → T5-A poster with the teams and kick-off; T4 → a real
+archive shirt (THE WORKER's photographed fronts) with the season, maker and sponsor the Kit Master records; T7 → the
+five slides from the post's own `Slide n:` lines. Emoji and anything the kit fonts cannot print are dropped, never
+guessed. If a picture cannot be drawn or Telegram refuses it, the text still goes out — only the text counts as
+delivered. Actions installs only `sharp` into `kit/` (cached). T5-B/T5-C keep their empty frame on purpose: that is
+where the Instagram poll/countdown sticker goes.
+
 ## The day
 | time | format | what |
 |---|---|---|
