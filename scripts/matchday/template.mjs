@@ -3,12 +3,18 @@
 import {readFileSync, existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import {tmpdir} from 'node:os';
+import {crestSlug} from '../../ecosystem/crests/index.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 // club crests are the project's own files (public/crests), never a second copy
 const CREST_DIR = path.join(ROOT, '..', '..', 'public', 'crests');
 const crestFile = id => path.join(CREST_DIR, id + '.png');
 export const hasCrest = id => /^[a-z0-9-]+$/.test(id) && existsSync(crestFile(id));
+// every other team's crest comes from the universe's one library (OFFSIDES, ecosystem/crests); run.mjs fetches the
+// day's crests into this folder before drawing, so the template itself still makes no network call
+export const LIB_CACHE = process.env.MATCHDAY_CREST_CACHE || path.join(tmpdir(), 'fanlife-crests');
+export const libCrestFile = name => { const s = crestSlug(name); return s ? path.join(LIB_CACHE, s + '.png') : null; };
 export const ZONE = 'Europe/Athens';
 export const SIZES = {story: {width:1080,height:1920}, post: {width:1080,height:1350}};
 const esc = x => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -68,6 +74,8 @@ function crest(team,x,y,size){
  if(!/^[a-z0-9-]+$/.test(team.id))throw Error('Invalid team ID');
  const file=`crests/${team.id}.png`;
  if(hasCrest(team.id))return img(file,x,y,size,size);
+ const lib=libCrestFile(team.name);
+ if(lib&&existsSync(lib))return `<image href="data:image/png;base64,${readFileSync(lib).toString('base64')}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>`;
  const initials=team.name.split(/\s+/).slice(0,3).map(w=>[...w][0]).join('');
  return `<circle cx="${x+size/2}" cy="${y+size/2}" r="${size/2-2}" fill="none" stroke="${P.ink}" stroke-width="2"/>`+textPath(initials,x+size/2,y+size*.6,25,'Caps',P.ink,'middle',size-10);
 }

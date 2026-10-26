@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto'
 import {crestFor} from '@/lib/clubs/crest'
+import {crestSlug} from '@/ecosystem/crests/index.mjs'
 import {finalStatusOf, parseEvents, providerUrl, type ProviderEvent} from '@/lib/fixtures/provider'
 import {afterDay, belongsToDay} from './day'
 import {TEMPLATE_VERSION, type ClubDay, type FixtureStatus, type ProviderDayEvent, type Snapshot, type TemplateFixture} from './types'
@@ -76,7 +77,9 @@ export function buildSnapshot(o: {day: string; now: Date; clubs: ClubDay[]; unma
   const allBad = o.clubs.length > 0 && o.clubs.every(c => c.coverage === 'error')
   const coverage = allBad || o.clubs.length === 0 ? 'unavailable' : missingClubIds.length ? 'partial' : 'complete'
   const teams = fixtures.flatMap(f => [f.home.id, f.away.id])
-  const missingCrests = [...new Set(teams.filter(id => !crestFor(id)))].sort()
+  // a crest is on file when the club holds its own or the universe's crest library (OFFSIDES, ecosystem/crests) names one
+  const named = new Map(fixtures.flatMap(f => [[f.home.id, f.home.name], [f.away.id, f.away.name]] as [string, string][]))
+  const missingCrests = [...new Set(teams.filter(id => !crestFor(id) && !crestSlug(named.get(id) ?? '')))].sort()
   const updatedAt = o.clubs.map(c => c.fetchedAt).sort().at(-1) ?? o.now.toISOString()
   const core = {day: o.day, coverage, fixtures: fixtures.map(f => ({...f, source: f.source.url})), missingClubIds, templateVersion: TEMPLATE_VERSION}
   const hash = createHash('sha256').update(JSON.stringify(core)).digest('hex').slice(0, 20)

@@ -12,6 +12,8 @@ export type RotatorItem = {
   clubId: string
   club: string
   opponent: string
+  /** the opponent's crest from the universe's library (OFFSIDES, ecosystem/crests); null = name only */
+  opponentCrest?: string | null
   initials: string
   primary: string
   on: string
@@ -70,7 +72,7 @@ export function FixtureRotator({items, copy, locale}: {items: RotatorItem[]; cop
           <b>{f.club}</b>
           {f.tag === 'tbc'
             ? <small>{copy.vs} <span className="wkh-blank" aria-hidden="true"/> {copy.tbc}</small>
-            : <small>{f.clubSide === 'home' ? copy.home : copy.away} · {copy.vs} {f.opponent}<br/><time dateTime={f.kickoff}>{when ? when[i] : f.kickoff.slice(0, 10)}</time>{f.competition ? <> · {f.competition}</> : null}</small>}
+            : <small>{f.clubSide === 'home' ? copy.home : copy.away} · {copy.vs} {f.opponentCrest ? <img className="wkh-fx-opp" src={f.opponentCrest} alt="" width={16} height={16} loading="lazy" decoding="async"/> : null}{f.opponent}<br/><time dateTime={f.kickoff}>{when ? when[i] : f.kickoff.slice(0, 10)}</time>{f.competition ? <> · {f.competition}</> : null}</small>}
         </span>
         <span className={`wk-lamp wkh-fx-lamp${f.tag === 'live' ? ' red' : ''}`}>{f.tag === 'tbc' ? copy.tbcLamp : copy[f.tag]}</span>
       </Link>

@@ -34,14 +34,14 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Panathinaikos 0–2 CSKA Sofia",
-       "ago": "54 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "54 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1988,
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Celtic 0–1 Bremen",
-       "ago": "38 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "38 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 2023,
@@ -99,7 +99,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
    "hook": "Nerds only. Celtic — no Googling.",
-   "body": "Celtic rewind: 21 Dec 1935 in the League Division 1. A 5-3 win — against which club?\n\nA) Hearts\nB) Aberdeen\nC) Hibernian\nD) Livingston\n\nAnswer in the first comment (or the next story frame): Aberdeen. Celtic 5-3 Aberdeen, League Division 1, 21 Dec 1935.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
+   "body": "Place this result in its season: Celtic beat Aberdeen 3-0 in the Scottish Premiership. Which campaign was it?\n\nA) 1983/84\nB) 2026/27\nC) 1980/81\nD) 1890/91\n\nAnswer in the first comment (or the next story frame): 2026/27. Celtic 3-0 Aberdeen, Scottish Premiership, 2 Sept 2026.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -109,12 +109,12 @@
       "name": "Celtic"
      },
      "crestName": "Celtic",
-     "question": "Celtic rewind: 21 Dec 1935 in the League Division 1. A 5-3 win — against which club?",
+     "question": "Place this result in its season: Celtic beat Aberdeen 3-0 in the Scottish Premiership. Which campaign was it?",
      "options": [
-      "Hearts",
-      "Aberdeen",
-      "Hibernian",
-      "Livingston"
+      "1983/84",
+      "2026/27",
+      "1980/81",
+      "1890/91"
      ],
      "level": "EXPERT"
     }
@@ -173,7 +173,7 @@
      "homeCrestName": "Tre Penne",
      "awayCrestName": "Zrinjski Mostar",
      "date": "22 JULY 2010 · UEFA EUROPA LEAGUE",
-     "line": "7 goals clear. Zrinjski Mostar were not in the mood to be polite."
+     "line": "7 goals clear."
     }
    }
   }
@@ -290,7 +290,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva/trivia",
    "hook": "Nerds only. Hapoel Petah Tikva — no Googling.",
-   "body": "Place this result in its season: Hapoel Petah Tikva drew 2-2 with Hapoel Kfar Saba in the Toto Cup. Which campaign was it?\n\nA) 2011/12\nB) 1969/70\nC) 1990/91\nD) 2012/13\n\nAnswer in the first comment (or the next story frame): 2012/13. Hapoel Kfar Saba 2-2 Hapoel Petah Tikva, Toto Cup, 18 Aug 2012.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
+   "body": "Hapoel Petah Tikva rewind: 26 Feb 1988 in the Toto Cup. A 1-2 defeat — against which club?\n\nA) Bnei Yehuda\nB) Tzafririm Holon\nC) Maccabi Herzliya\nD) Hapoel Haifa\n\nAnswer in the first comment (or the next story frame): Tzafririm Holon. Tzafririm Holon 2-1 Hapoel Petah Tikva, Toto Cup, 26 Feb 1988.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -300,12 +300,12 @@
       "name": "Hapoel Petah Tikva"
      },
      "crestName": "Hapoel Petah Tikva",
-     "question": "Place this result in its season: Hapoel Petah Tikva drew 2-2 with Hapoel Kfar Saba in the Toto Cup. Which campaign was it?",
+     "question": "Hapoel Petah Tikva rewind: 26 Feb 1988 in the Toto Cup. A 1-2 defeat — against which club?",
      "options": [
-      "2011/12",
-      "1969/70",
-      "1990/91",
-      "2012/13"
+      "Bnei Yehuda",
+      "Tzafririm Holon",
+      "Maccabi Herzliya",
+      "Hapoel Haifa"
      ],
      "level": "EXPERT"
     }
@@ -364,7 +364,7 @@
      "homeCrestName": "Hapoel Petah Tikva",
      "awayCrestName": "Maccabi Tel Aviv",
      "date": "9 JUNE 1992 · ISRAEL STATE CUP FINAL",
-     "line": "Final. Hapoel Petah Tikva. Some days the archive just glows."
+     "line": "A final to frame."
     }
    }
   }
@@ -481,7 +481,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/aek-athens/trivia",
    "hook": "Nerds only. AEK Athens — no Googling.",
-   "body": "AEK Athens rewind: 16 Nov 1980 in the Greek league. A 4-0 win — against which club?\n\nA) PAOK\nB) Egaleo\nC) Iraklis\nD) Korinthos\n\nAnswer in the first comment (or the next story frame): Korinthos. AEK Athens 4-0 Korinthos, Greek league, 16 Nov 1980.\n\nThousands more like this — Expert level, AEK Athens trivia on FAN LIFE.",
+   "body": "AEK Athens rewind: 29 Nov 1959 in the Greek league. A 2-0 win — against which club?\n\nA) Olympiakos Nicosia\nB) Doxa Drama\nC) Ethnikos Piraeus\nD) AE Nikaia\n\nAnswer in the first comment (or the next story frame): AE Nikaia. AEK Athens 2-0 AE Nikaia, Greek league, 29 Nov 1959.\n\nThousands more like this — Expert level, AEK Athens trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -491,12 +491,12 @@
       "name": "AEK Athens"
      },
      "crestName": "AEK Athens",
-     "question": "AEK Athens rewind: 16 Nov 1980 in the Greek league. A 4-0 win — against which club?",
+     "question": "AEK Athens rewind: 29 Nov 1959 in the Greek league. A 2-0 win — against which club?",
      "options": [
-      "PAOK",
-      "Egaleo",
-      "Iraklis",
-      "Korinthos"
+      "Olympiakos Nicosia",
+      "Doxa Drama",
+      "Ethnikos Piraeus",
+      "AE Nikaia"
      ],
      "level": "EXPERT"
     }
@@ -554,9 +554,9 @@
       "text": "From the shirt rail: Celtic, 2015/16, third. Which sponsor was on the front?"
      },
      "home": "CELTIC, 2015/16, THIRD",
-     "sponsor": "Magners was on the front of Celtic's 2015/16 third shirt.",
+     "sponsor": "On the front: Magners",
      "date": "THE SHIRT ARCHIVE",
-     "line": "Magners was on the front of Celtic's 2015/16 third shirt."
+     "line": "On the front: Magners"
     }
    }
   }
@@ -673,7 +673,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
    "hook": "Nerds only. Zrinjski Mostar — no Googling.",
-   "body": "Zrinjski Mostar rewind: 18 Nov 2000 in the Bosnia and Herzegovina League. A 0-0 draw — against which club?\n\nA) Kiseljak\nB) Slavija\nC) Travnik\nD) Ljubuski\n\nAnswer in the first comment (or the next story frame): Ljubuski. Zrinjski Mostar 0-0 Ljubuski, Bosnia and Herzegovina League, 18 Nov 2000.\n\nThousands more like this — Expert level, Zrinjski Mostar trivia on FAN LIFE.",
+   "body": "Place this result in its season: Zrinjski Mostar lost 0-3 to GOŠK in the Bosnia and Herzegovina League. Which campaign was it?\n\nA) 2019/20\nB) 2016/17\nC) 2007/08\nD) 2012/13\n\nAnswer in the first comment (or the next story frame): 2012/13. Zrinjski Mostar 0-3 GOŠK, Bosnia and Herzegovina League, 21 Apr 2013.\n\nThousands more like this — Expert level, Zrinjski Mostar trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -683,12 +683,12 @@
       "name": "Zrinjski Mostar"
      },
      "crestName": "Zrinjski Mostar",
-     "question": "Zrinjski Mostar rewind: 18 Nov 2000 in the Bosnia and Herzegovina League. A 0-0 draw — against which club?",
+     "question": "Place this result in its season: Zrinjski Mostar lost 0-3 to GOŠK in the Bosnia and Herzegovina League. Which campaign was it?",
      "options": [
-      "Kiseljak",
-      "Slavija",
-      "Travnik",
-      "Ljubuski"
+      "2019/20",
+      "2016/17",
+      "2007/08",
+      "2012/13"
      ],
      "level": "EXPERT"
     }
@@ -747,7 +747,7 @@
      "homeCrestName": "FC St. Pauli",
      "awayCrestName": "Stuttgarter Kickers",
      "date": "17 JUNE 1999 · 2. BUNDESLIGA",
-     "line": "8 goals in one afternoon. FC St. Pauli supporters went home hoarse."
+     "line": "8 goals in one afternoon."
     }
    }
   }
@@ -863,7 +863,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
    "hook": "Nerds only. FC St. Pauli — no Googling.",
-   "body": "Place this result in its season: FC St. Pauli drew 1-1 with SC Viktoria Köln in the 2. Bundesliga. Which campaign was it?\n\nA) 1996/97\nB) 1974/75\nC) 1978/79\nD) 1986/87\n\nAnswer in the first comment (or the next story frame): 1978/79. FC St. Pauli 1-1 SC Viktoria Köln, 2. Bundesliga, 29 Oct 1978.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
+   "body": "Place this result in its season: FC St. Pauli lost 0-4 to Karlsruher SC in the Bundesliga. Which campaign was it?\n\nA) 1996/97\nB) 1974/75\nC) 1995/96\nD) 1984/85\n\nAnswer in the first comment (or the next story frame): 1996/97. Karlsruher SC 4-0 FC St. Pauli, Bundesliga, 28 Aug 1996.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -873,12 +873,12 @@
       "name": "FC St. Pauli"
      },
      "crestName": "FC St. Pauli",
-     "question": "Place this result in its season: FC St. Pauli drew 1-1 with SC Viktoria Köln in the 2. Bundesliga. Which campaign was it?",
+     "question": "Place this result in its season: FC St. Pauli lost 0-4 to Karlsruher SC in the Bundesliga. Which campaign was it?",
      "options": [
       "1996/97",
       "1974/75",
-      "1978/79",
-      "1986/87"
+      "1995/96",
+      "1984/85"
      ],
      "level": "EXPERT"
     }
@@ -937,7 +937,7 @@
      "homeCrestName": "AEK Athens",
      "awayCrestName": "Olympiacos",
      "date": "30 MARCH 2008 · GREEK LEAGUE",
-     "line": "Derby memory AEK Athens fans never let the neighbours forget."
+     "line": "A derby they still talk about."
     }
    }
   }
@@ -996,14 +996,14 @@
        "club": "Olympiacos",
        "crestName": "Olympiacos",
        "line": "Olympiacos 2–1 Sevilla",
-       "ago": "31 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "31 YEARS AGO · UEFA CUP"
       },
       {
        "year": 2002,
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Fenerbahçe 1–1 Panathinaikos",
-       "ago": "24 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "24 YEARS AGO · UEFA CUP"
       }
      ]
     }
@@ -1054,7 +1054,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/panathinaikos/trivia",
    "hook": "Nerds only. Panathinaikos — no Googling.",
-   "body": "Place this result in its season: Panathinaikos beat Volos Nfc 2-0 in the Greek Cup. Which campaign was it?\n\nA) 2022/23\nB) 1961/62\nC) 1991/92\nD) 2003/04\n\nAnswer in the first comment (or the next story frame): 2022/23. Volos Nfc 0-2 Panathinaikos, Greek Cup, 11 Jan 2023.\n\nThousands more like this — Expert level, Panathinaikos trivia on FAN LIFE.",
+   "body": "Place this result in its season: Panathinaikos beat PAOK 3-2 in the Super League play-offs. Which campaign was it?\n\nA) 2016/17\nB) 1961/62\nC) 1991/92\nD) 2003/04\n\nAnswer in the first comment (or the next story frame): 2016/17. PAOK 2-3 Panathinaikos, Super League play-offs, 31 May 2017.\n\nThousands more like this — Expert level, Panathinaikos trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -1064,9 +1064,9 @@
       "name": "Panathinaikos"
      },
      "crestName": "Panathinaikos",
-     "question": "Place this result in its season: Panathinaikos beat Volos Nfc 2-0 in the Greek Cup. Which campaign was it?",
+     "question": "Place this result in its season: Panathinaikos beat PAOK 3-2 in the Super League play-offs. Which campaign was it?",
      "options": [
-      "2022/23",
+      "2016/17",
       "1961/62",
       "1991/92",
       "2003/04"
@@ -1128,7 +1128,7 @@
      "homeCrestName": "Lamia",
      "awayCrestName": "Olympiacos",
      "date": "13 DECEMBER 2020 · GREEK SUPER LEAGUE 2020/21",
-     "line": "6 goals clear. Olympiacos were not in the mood to be polite."
+     "line": "6 goals clear."
     }
    }
   }
@@ -1245,7 +1245,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
    "hook": "Nerds only. FC St. Pauli — no Googling.",
-   "body": "Place this result in its season: FC St. Pauli drew 0-0 with SC Freiburg in the 2. Bundesliga. Which campaign was it?\n\nA) 2024/25\nB) 1997/98\nC) 2019/20\nD) 2014/15\n\nAnswer in the first comment (or the next story frame): 1997/98. SC Freiburg 0-0 FC St. Pauli, 2. Bundesliga, 27 Apr 1998.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
+   "body": "Place this result in its season: FC St. Pauli lost 0-5 to Arminia Bielefeld in the 2. Bundesliga. Which campaign was it?\n\nA) 2013/14\nB) 2024/25\nC) 2019/20\nD) 2017/18\n\nAnswer in the first comment (or the next story frame): 2017/18. Arminia Bielefeld 5-0 FC St. Pauli, 2. Bundesliga, 1 Dec 2017.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -1255,12 +1255,12 @@
       "name": "FC St. Pauli"
      },
      "crestName": "FC St. Pauli",
-     "question": "Place this result in its season: FC St. Pauli drew 0-0 with SC Freiburg in the 2. Bundesliga. Which campaign was it?",
+     "question": "Place this result in its season: FC St. Pauli lost 0-5 to Arminia Bielefeld in the 2. Bundesliga. Which campaign was it?",
      "options": [
+      "2013/14",
       "2024/25",
-      "1997/98",
       "2019/20",
-      "2014/15"
+      "2017/18"
      ],
      "level": "EXPERT"
     }
@@ -1319,7 +1319,7 @@
      "homeCrestName": "Panathinaikos",
      "awayCrestName": "Olympiacos",
      "date": "28 MAY 1986 · GREEK CUP FINAL",
-     "line": "Final. Panathinaikos. Some days the archive just glows."
+     "line": "A final to frame."
     }
    }
   }
@@ -1364,14 +1364,14 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Panathinaikos 1–0 Club Brugge",
-       "ago": "49 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "49 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1983,
        "club": "Olympiacos",
        "crestName": "Olympiacos",
        "line": "Benfica 3–0 Olympiacos",
-       "ago": "43 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "43 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 2023,
@@ -1436,7 +1436,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
    "hook": "Nerds only. FC St. Pauli — no Googling.",
-   "body": "FC St. Pauli rewind: 18 Aug 2000 in the 2. Bundesliga. A 5-0 win — against which club?\n\nA) TuS Koblenz\nB) SV Waldhof Mannheim\nC) Tennis Borussia Berlin\nD) VfL Bochum\n\nAnswer in the first comment (or the next story frame): SV Waldhof Mannheim. FC St. Pauli 5-0 SV Waldhof Mannheim, 2. Bundesliga, 18 Aug 2000.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
+   "body": "FC St. Pauli rewind: 4 May 1985 in the 2. Bundesliga. A 1-1 draw — against which club?\n\nA) Karlsruher SC\nB) VfL Wolfsburg\nC) Fortuna Köln\nD) Chemnitzer FC\n\nAnswer in the first comment (or the next story frame): Fortuna Köln. FC St. Pauli 1-1 Fortuna Köln, 2. Bundesliga, 4 May 1985.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -1446,12 +1446,12 @@
       "name": "FC St. Pauli"
      },
      "crestName": "FC St. Pauli",
-     "question": "FC St. Pauli rewind: 18 Aug 2000 in the 2. Bundesliga. A 5-0 win — against which club?",
+     "question": "FC St. Pauli rewind: 4 May 1985 in the 2. Bundesliga. A 1-1 draw — against which club?",
      "options": [
-      "TuS Koblenz",
-      "SV Waldhof Mannheim",
-      "Tennis Borussia Berlin",
-      "VfL Bochum"
+      "Karlsruher SC",
+      "VfL Wolfsburg",
+      "Fortuna Köln",
+      "Chemnitzer FC"
      ],
      "level": "EXPERT"
     }
@@ -1509,9 +1509,9 @@
       "text": "From the shirt rail: Hapoel Tel Aviv, 1978/79, home. Which sponsor was on the front?"
      },
      "home": "HAPOEL TEL AVIV, 1978/79, HOME",
-     "sponsor": "Ata was on the front of Hapoel Tel Aviv's 1978/79 home shirt.",
+     "sponsor": "On the front: Ata",
      "date": "THE SHIRT ARCHIVE",
-     "line": "Ata was on the front of Hapoel Tel Aviv's 1978/79 home shirt."
+     "line": "On the front: Ata"
     }
    }
   }
@@ -1563,7 +1563,7 @@
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Sliema 1–2 Celtic",
-       "ago": "55 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "55 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1994,
@@ -1628,7 +1628,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
    "hook": "Nerds only. Olympiacos — no Googling.",
-   "body": "Place this result in its season: Olympiacos beat Panetolikos 1-0 in the Super League Greece. Which campaign was it?\n\nA) 1999/00\nB) 2001/02\nC) 2002/03\nD) 2011/12\n\nAnswer in the first comment (or the next story frame): 2011/12. Panetolikos 0-1 Olympiacos, Super League Greece, 1 Apr 2012.\n\nThousands more like this — Expert level, Olympiacos trivia on FAN LIFE.",
+   "body": "Place this result in its season: Olympiacos lost 0-2 to PAOK in the Greece Cup - Quarter Finals. Which campaign was it?\n\nA) 2025/26\nB) 1999/00\nC) 2001/02\nD) 2002/03\n\nAnswer in the first comment (or the next story frame): 2025/26. Olympiacos 0-2 PAOK, Greece Cup - Quarter Finals, 14 Jan 2026.\n\nThousands more like this — Expert level, Olympiacos trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -1638,12 +1638,12 @@
       "name": "Olympiacos"
      },
      "crestName": "Olympiacos",
-     "question": "Place this result in its season: Olympiacos beat Panetolikos 1-0 in the Super League Greece. Which campaign was it?",
+     "question": "Place this result in its season: Olympiacos lost 0-2 to PAOK in the Greece Cup - Quarter Finals. Which campaign was it?",
      "options": [
+      "2025/26",
       "1999/00",
       "2001/02",
-      "2002/03",
-      "2011/12"
+      "2002/03"
      ],
      "level": "EXPERT"
     }
@@ -1702,7 +1702,7 @@
      "homeCrestName": "Celtic",
      "awayCrestName": "Hibernian",
      "date": "26 OCTOBER 1974 · LEAGUE CUP",
-     "line": "9 goals in one afternoon. Celtic supporters went home hoarse."
+     "line": "9 goals in one afternoon."
     }
    }
   }
@@ -1754,14 +1754,14 @@
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Celtic 3–2 Waterford",
-       "ago": "56 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "56 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1993,
        "club": "Olympiacos",
        "crestName": "Olympiacos",
        "line": "Olympiacos 4–3 Tenerife",
-       "ago": "33 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "33 YEARS AGO · UEFA CUP"
       },
       {
        "year": 2008,
@@ -1819,7 +1819,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva/trivia",
    "hook": "Nerds only. Hapoel Petah Tikva — no Googling.",
-   "body": "Hapoel Petah Tikva rewind: 7 Apr 1990 in the Israeli League. A 0-1 defeat — against which club?\n\nA) Bnei Yehuda\nB) Maccabi Netanya\nC) Tzafririm Holon\nD) Hapoel Acre\n\nAnswer in the first comment (or the next story frame): Bnei Yehuda. Hapoel Petah Tikva 0-1 Bnei Yehuda, Israeli League, 7 Apr 1990.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
+   "body": "Hapoel Petah Tikva rewind: 8 Oct 1966 in the Israeli League. A 2-0 win — against which club?\n\nA) SC Ness Ziona\nB) Hapoel Kfar Saba\nC) Hapoel Be'er Sheva\nD) Hapoel Mahane Yehuda\n\nAnswer in the first comment (or the next story frame): Hapoel Mahane Yehuda. Hapoel Petah Tikva 2-0 Hapoel Mahane Yehuda, Israeli League, 8 Oct 1966.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -1829,12 +1829,12 @@
       "name": "Hapoel Petah Tikva"
      },
      "crestName": "Hapoel Petah Tikva",
-     "question": "Hapoel Petah Tikva rewind: 7 Apr 1990 in the Israeli League. A 0-1 defeat — against which club?",
+     "question": "Hapoel Petah Tikva rewind: 8 Oct 1966 in the Israeli League. A 2-0 win — against which club?",
      "options": [
-      "Bnei Yehuda",
-      "Maccabi Netanya",
-      "Tzafririm Holon",
-      "Hapoel Acre"
+      "SC Ness Ziona",
+      "Hapoel Kfar Saba",
+      "Hapoel Be'er Sheva",
+      "Hapoel Mahane Yehuda"
      ],
      "level": "EXPERT"
     }
@@ -1893,7 +1893,7 @@
      "homeCrestName": "Maccabi Petah Tikva",
      "awayCrestName": "Hapoel Petah Tikva",
      "date": "8 DECEMBER 1973 · ISRAELI LEAGUE",
-     "line": "Derby memory Hapoel Petah Tikva fans never let the neighbours forget."
+     "line": "A derby they still talk about."
     }
    }
   }
@@ -1930,7 +1930,7 @@
        "year": 1949,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Hapoel Petah Tikva 7–0 Hapoel Rishon LeZion",
+       "line": "7–0 v Hapoel Rishon LeZion",
        "ago": "77 YEARS AGO · ISRAELI LEAGUE"
       },
       {
@@ -2010,7 +2010,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/panathinaikos/trivia",
    "hook": "Nerds only. Panathinaikos — no Googling.",
-   "body": "Place this result in its season: Panathinaikos lost 0-2 to Kavala in the Super League. Which campaign was it?\n\nA) 1975/76\nB) 2009/10\nC) 1962/63\nD) 2004/05\n\nAnswer in the first comment (or the next story frame): 2009/10. Panathinaikos 0-2 Kavala, Super League, 14 Feb 2010.\n\nThousands more like this — Expert level, Panathinaikos trivia on FAN LIFE.",
+   "body": "Place this result in its season: Panathinaikos lost 2-3 to AEK Athens in the Super League. Which campaign was it?\n\nA) 1975/76\nB) 1962/63\nC) 2004/05\nD) 2025/26\n\nAnswer in the first comment (or the next story frame): 2025/26. Panathinaikos 2-3 AEK Athens, Super League, 30 Nov 2025.\n\nThousands more like this — Expert level, Panathinaikos trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -2020,12 +2020,12 @@
       "name": "Panathinaikos"
      },
      "crestName": "Panathinaikos",
-     "question": "Place this result in its season: Panathinaikos lost 0-2 to Kavala in the Super League. Which campaign was it?",
+     "question": "Place this result in its season: Panathinaikos lost 2-3 to AEK Athens in the Super League. Which campaign was it?",
      "options": [
       "1975/76",
-      "2009/10",
       "1962/63",
-      "2004/05"
+      "2004/05",
+      "2025/26"
      ],
      "level": "EXPERT"
     }
@@ -2084,7 +2084,7 @@
      "homeCrestName": "Celtic",
      "awayCrestName": "Motherwell",
      "date": "15 MAY 2016 · SCOTTISH PREMIERSHIP",
-     "line": "7 goals clear. Celtic were not in the mood to be polite."
+     "line": "7 goals clear."
     }
    }
   }
@@ -2129,21 +2129,21 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Hradec Kralove 1–0 Panathinaikos",
-       "ago": "66 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "66 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1973,
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "VB 0–1 Celtic",
-       "ago": "53 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "53 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1974,
        "club": "Olympiacos",
        "crestName": "Olympiacos",
        "line": "Olympiacos 3–0 Anderlecht",
-       "ago": "52 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "52 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 2000,
@@ -2200,7 +2200,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv/trivia",
    "hook": "Nerds only. Hapoel Tel Aviv — no Googling.",
-   "body": "Hapoel Tel Aviv rewind: 9 Oct 1999 in the Toto Cup. A 0-3 defeat — against which club?\n\nA) Maccabi Kiryat Gat\nB) Maccabi Petah Tikva\nC) Maccabi Yavne\nD) Tzafririm Holon\n\nAnswer in the first comment (or the next story frame): Maccabi Petah Tikva. Maccabi Petah Tikva 3-0 Hapoel Tel Aviv, Toto Cup, 9 Oct 1999.\n\nThousands more like this — Expert level, Hapoel Tel Aviv trivia on FAN LIFE.",
+   "body": "Hapoel Tel Aviv rewind: 14 Nov 1986 in the Liga Leumit. A 2-1 win — against which club?\n\nA) Maccabi Petah Tikva\nB) Beitar Netanya\nC) Maccabi Haifa\nD) Ironi Ashdod\n\nAnswer in the first comment (or the next story frame): Maccabi Petah Tikva. Maccabi Petah Tikva 1-2 Hapoel Tel Aviv, Liga Leumit, 14 Nov 1986.\n\nThousands more like this — Expert level, Hapoel Tel Aviv trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -2210,12 +2210,12 @@
       "name": "Hapoel Tel Aviv"
      },
      "crestName": "Hapoel Tel Aviv",
-     "question": "Hapoel Tel Aviv rewind: 9 Oct 1999 in the Toto Cup. A 0-3 defeat — against which club?",
+     "question": "Hapoel Tel Aviv rewind: 14 Nov 1986 in the Liga Leumit. A 2-1 win — against which club?",
      "options": [
-      "Maccabi Kiryat Gat",
       "Maccabi Petah Tikva",
-      "Maccabi Yavne",
-      "Tzafririm Holon"
+      "Beitar Netanya",
+      "Maccabi Haifa",
+      "Ironi Ashdod"
      ],
      "level": "EXPERT"
     }
@@ -2274,7 +2274,7 @@
      "homeCrestName": "Celtic",
      "awayCrestName": "Queen’s Park",
      "date": "9 APRIL 1892 · SCOTTISH CUP FINAL",
-     "line": "Final. Celtic. Some days the archive just glows."
+     "line": "A final to frame."
     }
    }
   }
@@ -2333,7 +2333,7 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Linfield 3–3 Panathinaikos",
-       "ago": "42 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "42 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 2000,
@@ -2391,7 +2391,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
    "hook": "Nerds only. FC St. Pauli — no Googling.",
-   "body": "FC St. Pauli rewind: 19 Sept 1987 in the 2. Bundesliga. A 1-1 draw — against which club?\n\nA) Rot-Weiss Essen\nB) Union Solingen\nC) SV Meppen\nD) SpVgg Erkenschwick\n\nAnswer in the first comment (or the next story frame): SV Meppen. SV Meppen 1-1 FC St. Pauli, 2. Bundesliga, 19 Sept 1987.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
+   "body": "FC St. Pauli rewind: 20 Apr 1996 in the Bundesliga. A 0-1 defeat — against which club?\n\nA) 1. FC Köln\nB) VfL Wolfsburg\nC) VfB Stuttgart\nD) Arminia Bielefeld\n\nAnswer in the first comment (or the next story frame): 1. FC Köln. 1. FC Köln 1-0 FC St. Pauli, Bundesliga, 20 Apr 1996.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -2401,12 +2401,12 @@
       "name": "FC St. Pauli"
      },
      "crestName": "FC St. Pauli",
-     "question": "FC St. Pauli rewind: 19 Sept 1987 in the 2. Bundesliga. A 1-1 draw — against which club?",
+     "question": "FC St. Pauli rewind: 20 Apr 1996 in the Bundesliga. A 0-1 defeat — against which club?",
      "options": [
-      "Rot-Weiss Essen",
-      "Union Solingen",
-      "SV Meppen",
-      "SpVgg Erkenschwick"
+      "1. FC Köln",
+      "VfL Wolfsburg",
+      "VfB Stuttgart",
+      "Arminia Bielefeld"
      ],
      "level": "EXPERT"
     }
@@ -2464,9 +2464,9 @@
       "text": "From the shirt rail: Celtic, 2003/04, third. Which sponsor was on the front?"
      },
      "home": "CELTIC, 2003/04, THIRD",
-     "sponsor": "Carling was on the front of Celtic's 2003/04 third shirt.",
+     "sponsor": "On the front: Carling",
      "date": "THE SHIRT ARCHIVE",
-     "line": "Carling was on the front of Celtic's 2003/04 third shirt."
+     "line": "On the front: Carling"
     }
    }
   }
@@ -2511,7 +2511,7 @@
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Újpest 3–0 Celtic",
-       "ago": "54 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "54 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 2000,
@@ -2583,7 +2583,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
    "hook": "Nerds only. Olympiacos — no Googling.",
-   "body": "Place this result in its season: Olympiacos drew 1-1 with Kifisia in the Super League. Which campaign was it?\n\nA) 2019/20\nB) 2020/21\nC) 2021/22\nD) 2025/26\n\nAnswer in the first comment (or the next story frame): 2025/26. Olympiacos 1-1 Kifisia, Super League, 20 Dec 2025.\n\nThousands more like this — Expert level, Olympiacos trivia on FAN LIFE.",
+   "body": "Place this result in its season: Olympiacos beat AE Lárissa 2-0 in the Super League. Which campaign was it?\n\nA) 2019/20\nB) 2020/21\nC) 2021/22\nD) 2025/26\n\nAnswer in the first comment (or the next story frame): 2025/26. AE Lárissa 0-2 Olympiacos, Super League, 18 Oct 2025.\n\nThousands more like this — Expert level, Olympiacos trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -2593,7 +2593,7 @@
       "name": "Olympiacos"
      },
      "crestName": "Olympiacos",
-     "question": "Place this result in its season: Olympiacos drew 1-1 with Kifisia in the Super League. Which campaign was it?",
+     "question": "Place this result in its season: Olympiacos beat AE Lárissa 2-0 in the Super League. Which campaign was it?",
      "options": [
       "2019/20",
       "2020/21",
@@ -2657,7 +2657,7 @@
      "homeCrestName": "Panathinaikos",
      "awayCrestName": "Steaua București",
      "date": "26 AUGUST 1998 · UEFA CHAMPIONS LEAGUE",
-     "line": "9 goals in one afternoon. Panathinaikos supporters went home hoarse."
+     "line": "9 goals in one afternoon."
     }
    }
   }
@@ -2709,7 +2709,7 @@
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Celtic 1–2 Bordeaux",
-       "ago": "26 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "26 YEARS AGO · UEFA CUP"
       },
       {
        "year": 2015,
@@ -2774,7 +2774,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
    "hook": "Nerds only. FC St. Pauli — no Googling.",
-   "body": "FC St. Pauli rewind: 26 May 1976 in the 2. Bundesliga. A 1-1 draw — against which club?\n\nA) Alemannia Aachen\nB) Arminia Hannover\nC) SC Herford\nD) VfL Wolfsburg\n\nAnswer in the first comment (or the next story frame): Alemannia Aachen. FC St. Pauli 1-1 Alemannia Aachen, 2. Bundesliga, 26 May 1976.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
+   "body": "FC St. Pauli rewind: 11 Mar 1997 in the Bundesliga. A 1-2 defeat — against which club?\n\nA) Werder Bremen\nB) Bayern München\nC) Borussia Dortmund\nD) VfB Stuttgart\n\nAnswer in the first comment (or the next story frame): Werder Bremen. Werder Bremen 2-1 FC St. Pauli, Bundesliga, 11 Mar 1997.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -2784,12 +2784,12 @@
       "name": "FC St. Pauli"
      },
      "crestName": "FC St. Pauli",
-     "question": "FC St. Pauli rewind: 26 May 1976 in the 2. Bundesliga. A 1-1 draw — against which club?",
+     "question": "FC St. Pauli rewind: 11 Mar 1997 in the Bundesliga. A 1-2 defeat — against which club?",
      "options": [
-      "Alemannia Aachen",
-      "Arminia Hannover",
-      "SC Herford",
-      "VfL Wolfsburg"
+      "Werder Bremen",
+      "Bayern München",
+      "Borussia Dortmund",
+      "VfB Stuttgart"
      ],
      "level": "EXPERT"
     }
@@ -2848,7 +2848,7 @@
      "homeCrestName": "Maccabi Petah Tikva",
      "awayCrestName": "Hapoel Petah Tikva",
      "date": "9 JUNE 1945 · ISRAELI LEAGUE",
-     "line": "Derby memory Hapoel Petah Tikva fans never let the neighbours forget."
+     "line": "A derby they still talk about."
     }
    }
   }
@@ -2893,7 +2893,7 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Ferencváros 0–0 Panathinaikos",
-       "ago": "61 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "61 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1973,
@@ -2978,7 +2978,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
    "hook": "Nerds only. Celtic — no Googling.",
-   "body": "Celtic rewind: 21 Apr 1951. A 1-0 win — against which club?\n\nA) St. Mirren FC\nB) Heart of Midlothian\nC) Ross County FC\nD) Motherwell. Scottish Cup Final\n\nAnswer in the first comment (or the next story frame): Motherwell. Scottish Cup Final. Celtic 1-0 Motherwell. Scottish Cup Final, 21 Apr 1951.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
+   "body": "Place this result in its season: Celtic beat Heart of Midlothian 3-1 in the Scottish Premiership. Which campaign was it?\n\nA) 2018/19\nB) 2025/26\nC) 2015/16\nD) 1965/66\n\nAnswer in the first comment (or the next story frame): 2025/26. Celtic 3-1 Heart of Midlothian, Scottish Premiership, 16 May 2026.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -2988,12 +2988,12 @@
       "name": "Celtic"
      },
      "crestName": "Celtic",
-     "question": "Celtic rewind: 21 Apr 1951. A 1-0 win — against which club?",
+     "question": "Place this result in its season: Celtic beat Heart of Midlothian 3-1 in the Scottish Premiership. Which campaign was it?",
      "options": [
-      "St. Mirren FC",
-      "Heart of Midlothian",
-      "Ross County FC",
-      "Motherwell. Scottish Cup Final"
+      "2018/19",
+      "2025/26",
+      "2015/16",
+      "1965/66"
      ],
      "level": "EXPERT"
     }
@@ -3052,7 +3052,7 @@
      "homeCrestName": "Hapoel Tel Aviv",
      "awayCrestName": "Hapoel Petah Tikva",
      "date": "21 NOVEMBER 2009 · ISRAELI PREMIER LEAGUE",
-     "line": "6 goals clear. Hapoel Tel Aviv were not in the mood to be polite."
+     "line": "6 goals clear."
     }
    }
   }
@@ -3104,7 +3104,7 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Panathinaikos 1–1 Köln",
-       "ago": "62 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "62 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 2013,
@@ -3169,7 +3169,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/aek-athens/trivia",
    "hook": "Nerds only. AEK Athens — no Googling.",
-   "body": "AEK Athens rewind: 25 Sept 1993 in the Greek league. A 0-0 draw — against which club?\n\nA) Kavala\nB) PAOK\nC) Olympiacos\nD) Proodeftiki\n\nAnswer in the first comment (or the next story frame): PAOK. PAOK 0-0 AEK Athens, Greek league, 25 Sept 1993.\n\nThousands more like this — Expert level, AEK Athens trivia on FAN LIFE.",
+   "body": "AEK Athens rewind: 6 Sept 1967 in the Balkan Cup. A 1-1 draw — against which club?\n\nA) Vardar\nB) Kastoria\nC) Irodotos\nD) Flamurtari\n\nAnswer in the first comment (or the next story frame): Vardar. Vardar 1-1 AEK Athens, Balkan Cup, 6 Sept 1967.\n\nThousands more like this — Expert level, AEK Athens trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -3179,12 +3179,12 @@
       "name": "AEK Athens"
      },
      "crestName": "AEK Athens",
-     "question": "AEK Athens rewind: 25 Sept 1993 in the Greek league. A 0-0 draw — against which club?",
+     "question": "AEK Athens rewind: 6 Sept 1967 in the Balkan Cup. A 1-1 draw — against which club?",
      "options": [
-      "Kavala",
-      "PAOK",
-      "Olympiacos",
-      "Proodeftiki"
+      "Vardar",
+      "Kastoria",
+      "Irodotos",
+      "Flamurtari"
      ],
      "level": "EXPERT"
     }
@@ -3243,7 +3243,7 @@
      "homeCrestName": "Celtic",
      "awayCrestName": "St. Mirren",
      "date": "18 APRIL 1908 · SCOTTISH CUP FINAL",
-     "line": "Final. Celtic. Some days the archive just glows."
+     "line": "A final to frame."
     }
    }
   }
@@ -3288,7 +3288,7 @@
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Celtic 3–0 Benfica",
-       "ago": "57 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "57 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1978,
@@ -3308,7 +3308,7 @@
        "year": 2005,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Hapoel Petah Tikva 2–1 Maccabi Petah Tikva",
+       "line": "2–1 v Maccabi Petah Tikva",
        "ago": "21 YEARS AGO · ISRAELI LEAGUE"
       }
      ]
@@ -3374,7 +3374,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
    "hook": "Nerds only. Celtic — no Googling.",
-   "body": "Place this result in its season: Celtic beat St. Mirren 3-0 in the League Division 1. Which campaign was it?\n\nA) 1950/51\nB) 1897/98\nC) 2006/07\nD) 2009/10\n\nAnswer in the first comment (or the next story frame): 1897/98. Celtic 3-0 St. Mirren, League Division 1, 12 Feb 1898.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
+   "body": "Place this result in its season: Celtic lost 0-2 to Dundee United in the Scottish Premiership. Which campaign was it?\n\nA) 2005/06\nB) 2025/26\nC) 1947/48\nD) 2008/09\n\nAnswer in the first comment (or the next story frame): 2025/26. Dundee United 2-0 Celtic, Scottish Premiership, 22 Mar 2026.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -3384,12 +3384,12 @@
       "name": "Celtic"
      },
      "crestName": "Celtic",
-     "question": "Place this result in its season: Celtic beat St. Mirren 3-0 in the League Division 1. Which campaign was it?",
+     "question": "Place this result in its season: Celtic lost 0-2 to Dundee United in the Scottish Premiership. Which campaign was it?",
      "options": [
-      "1950/51",
-      "1897/98",
-      "2006/07",
-      "2009/10"
+      "2005/06",
+      "2025/26",
+      "1947/48",
+      "2008/09"
      ],
      "level": "EXPERT"
     }
@@ -3447,9 +3447,9 @@
       "text": "From the shirt rail: Panathinaikos, 2008/09, third. Which sponsor was on the front?"
      },
      "home": "PANATHINAIKOS, 2008/09, THIRD",
-     "sponsor": "Cosmote was on the front of Panathinaikos's 2008/09 third shirt.",
+     "sponsor": "On the front: Cosmote",
      "date": "THE SHIRT ARCHIVE",
-     "line": "Cosmote was on the front of Panathinaikos's 2008/09 third shirt."
+     "line": "On the front: Cosmote"
     }
    }
   }
@@ -3493,7 +3493,7 @@
        "year": 1965,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Shimshon Tel Aviv 1–1 Hapoel Petah Tikva",
+       "line": "1–1 at Shimshon Tel Aviv",
        "ago": "61 YEARS AGO · ISRAELI LEAGUE"
       },
       {
@@ -3565,7 +3565,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/panathinaikos/trivia",
    "hook": "Nerds only. Panathinaikos — no Googling.",
-   "body": "Place this result in its season: Panathinaikos lost 0-2 to AEK Athens in the Super League play-offs. Which campaign was it?\n\nA) 2011/12\nB) 1999/00\nC) 1970/71\nD) 2026/27\n\nAnswer in the first comment (or the next story frame): 2011/12. AEK Athens 2-0 Panathinaikos, Super League play-offs, 7 May 2012.\n\nThousands more like this — Expert level, Panathinaikos trivia on FAN LIFE.",
+   "body": "Place this result in its season: Panathinaikos beat Hraklis 1-0 in the Super League. Which campaign was it?\n\nA) 2009/10\nB) 1999/00\nC) 1970/71\nD) 2026/27\n\nAnswer in the first comment (or the next story frame): 2009/10. Hraklis 0-1 Panathinaikos, Super League, 12 Dec 2009.\n\nThousands more like this — Expert level, Panathinaikos trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -3575,9 +3575,9 @@
       "name": "Panathinaikos"
      },
      "crestName": "Panathinaikos",
-     "question": "Place this result in its season: Panathinaikos lost 0-2 to AEK Athens in the Super League play-offs. Which campaign was it?",
+     "question": "Place this result in its season: Panathinaikos beat Hraklis 1-0 in the Super League. Which campaign was it?",
      "options": [
-      "2011/12",
+      "2009/10",
       "1999/00",
       "1970/71",
       "2026/27"
@@ -3639,7 +3639,7 @@
      "homeCrestName": "Hapoel Tel Aviv",
      "awayCrestName": "YMCA Jerusalem",
      "date": "5 OCTOBER 1963 · ISRAEL STATE CUP",
-     "line": "10 goals in one afternoon. Hapoel Tel Aviv supporters went home hoarse."
+     "line": "10 goals in one afternoon."
     }
    }
   }
@@ -3684,14 +3684,14 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Panathinaikos 4–1 Fenerbahçe",
-       "ago": "24 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "24 YEARS AGO · UEFA CUP"
       },
       {
        "year": 2002,
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Blackburn 0–2 Celtic",
-       "ago": "24 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "24 YEARS AGO · UEFA CUP"
       },
       {
        "year": 2002,
@@ -3769,7 +3769,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
    "hook": "Nerds only. Celtic — no Googling.",
-   "body": "Place this result in its season: Celtic beat Livingston 4-2 in the Scottish Premiership. Which campaign was it?\n\nA) 1899/00\nB) 1982/83\nC) 1892/93\nD) 2025/26\n\nAnswer in the first comment (or the next story frame): 2025/26. Livingston 2-4 Celtic, Scottish Premiership, 27 Dec 2025.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
+   "body": "Place this result in its season: Celtic lost 1-3 to Inverness Caledonian Thistle in the Scottish Cup. Which campaign was it?\n\nA) 1899/00\nB) 1999/00\nC) 1982/83\nD) 1892/93\n\nAnswer in the first comment (or the next story frame): 1999/00. Celtic 1-3 Inverness Caledonian Thistle, Scottish Cup, 8 Feb 2000.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -3779,12 +3779,12 @@
       "name": "Celtic"
      },
      "crestName": "Celtic",
-     "question": "Place this result in its season: Celtic beat Livingston 4-2 in the Scottish Premiership. Which campaign was it?",
+     "question": "Place this result in its season: Celtic lost 1-3 to Inverness Caledonian Thistle in the Scottish Cup. Which campaign was it?",
      "options": [
       "1899/00",
+      "1999/00",
       "1982/83",
-      "1892/93",
-      "2025/26"
+      "1892/93"
      ],
      "level": "EXPERT"
     }
@@ -3843,7 +3843,7 @@
      "homeCrestName": "AEK Athens",
      "awayCrestName": "Olympiacos",
      "date": "4 JUNE 1961 · GREEK LEAGUE",
-     "line": "Derby memory AEK Athens fans never let the neighbours forget."
+     "line": "A derby they still talk about."
     }
    }
   }
@@ -3894,7 +3894,7 @@
        "year": 1947,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Hapoel Petah Tikva 2–1 Hapoel Rishon LeZion",
+       "line": "2–1 v Hapoel Rishon LeZion",
        "ago": "79 YEARS AGO · ISRAELI LEAGUE"
       },
       {
@@ -3960,7 +3960,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/aek-athens/trivia",
    "hook": "Nerds only. AEK Athens — no Googling.",
-   "body": "AEK Athens rewind: 11 Feb 1973 in the Greek league. A 0-2 defeat — against which club?\n\nA) Kastoria\nB) Korinthos\nC) Panserraikos\nD) Panetolikos\n\nAnswer in the first comment (or the next story frame): Panserraikos. Panserraikos 2-0 AEK Athens, Greek league, 11 Feb 1973.\n\nThousands more like this — Expert level, AEK Athens trivia on FAN LIFE.",
+   "body": "AEK Athens rewind: 30 Aug 1998 in the Greek league. A 3-1 win — against which club?\n\nA) AEL Larissa\nB) PAS Giannina\nC) Apollon Smyrnis\nD) Apollon Kalamarias\n\nAnswer in the first comment (or the next story frame): Apollon Smyrnis. AEK Athens 3-1 Apollon Smyrnis, Greek league, 30 Aug 1998.\n\nThousands more like this — Expert level, AEK Athens trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -3970,12 +3970,12 @@
       "name": "AEK Athens"
      },
      "crestName": "AEK Athens",
-     "question": "AEK Athens rewind: 11 Feb 1973 in the Greek league. A 0-2 defeat — against which club?",
+     "question": "AEK Athens rewind: 30 Aug 1998 in the Greek league. A 3-1 win — against which club?",
      "options": [
-      "Kastoria",
-      "Korinthos",
-      "Panserraikos",
-      "Panetolikos"
+      "AEL Larissa",
+      "PAS Giannina",
+      "Apollon Smyrnis",
+      "Apollon Kalamarias"
      ],
      "level": "EXPERT"
     }
@@ -4034,7 +4034,7 @@
      "homeCrestName": "Čelik Zenica",
      "awayCrestName": "Zrinjski Mostar",
      "date": "2 NOVEMBER 2023 · BOSNIA AND HERZEGOVINA CUP",
-     "line": "6 goals clear. Zrinjski Mostar were not in the mood to be polite."
+     "line": "6 goals clear."
     }
    }
   }
@@ -4078,7 +4078,7 @@
        "year": 1946,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Maccabi Tel Aviv 2–0 Hapoel Petah Tikva",
+       "line": "0–2 at Maccabi Tel Aviv",
        "ago": "80 YEARS AGO · ISRAELI LEAGUE"
       },
       {
@@ -4157,7 +4157,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
    "hook": "Nerds only. Zrinjski Mostar — no Googling.",
-   "body": "Zrinjski Mostar rewind: 5 Oct 2003 in the Bosnia and Herzegovina League. A 2-1 win — against which club?\n\nA) Rudar\nB) Slavija\nC) Sarajevo\nD) Žepče\n\nAnswer in the first comment (or the next story frame): Rudar. Rudar 1-2 Zrinjski Mostar, Bosnia and Herzegovina League, 5 Oct 2003.\n\nThousands more like this — Expert level, Zrinjski Mostar trivia on FAN LIFE.",
+   "body": "Place this result in its season: Zrinjski Mostar lost 2-3 to GOŠK in the Bosnia and Herzegovina League. Which campaign was it?\n\nA) 2006/07\nB) 2022/23\nC) 2003/04\nD) 2024/25\n\nAnswer in the first comment (or the next story frame): 2024/25. GOŠK 3-2 Zrinjski Mostar, Bosnia and Herzegovina League, 31 May 2025.\n\nThousands more like this — Expert level, Zrinjski Mostar trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -4167,12 +4167,12 @@
       "name": "Zrinjski Mostar"
      },
      "crestName": "Zrinjski Mostar",
-     "question": "Zrinjski Mostar rewind: 5 Oct 2003 in the Bosnia and Herzegovina League. A 2-1 win — against which club?",
+     "question": "Place this result in its season: Zrinjski Mostar lost 2-3 to GOŠK in the Bosnia and Herzegovina League. Which campaign was it?",
      "options": [
-      "Rudar",
-      "Slavija",
-      "Sarajevo",
-      "Žepče"
+      "2006/07",
+      "2022/23",
+      "2003/04",
+      "2024/25"
      ],
      "level": "EXPERT"
     }
@@ -4231,7 +4231,7 @@
      "homeCrestName": "Olympiacos",
      "awayCrestName": "Aris",
      "date": "21 MAY 2005 · GREEK CUP FINAL",
-     "line": "Final. Olympiacos. Some days the archive just glows."
+     "line": "A final to frame."
     }
    }
   }
@@ -4283,7 +4283,7 @@
        "club": "Panathinaikos",
        "crestName": "Panathinaikos",
        "line": "Panathinaikos 1–3 Ferencváros",
-       "ago": "61 YEARS AGO · UEFA CHAMPIONS LEAGUE"
+       "ago": "61 YEARS AGO · EUROPEAN CUP"
       },
       {
        "year": 1995,
@@ -4361,7 +4361,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
    "hook": "Nerds only. Olympiacos — no Googling.",
-   "body": "Place this result in its season: Olympiacos beat Levadiakos 4-0 in the Super League Greece. Which campaign was it?\n\nA) 2006/07\nB) 2014/15\nC) 2003/04\nD) 2005/06\n\nAnswer in the first comment (or the next story frame): 2014/15. Olympiacos 4-0 Levadiakos, Super League Greece, 19 Apr 2015.\n\nThousands more like this — Expert level, Olympiacos trivia on FAN LIFE.",
+   "body": "Place this result in its season: Olympiacos beat AEK Athens 1-0 in the Super League Greece. Which campaign was it?\n\nA) 2006/07\nB) 2024/25\nC) 2003/04\nD) 2005/06\n\nAnswer in the first comment (or the next story frame): 2024/25. Olympiacos 1-0 AEK Athens, Super League Greece, 13 Apr 2025.\n\nThousands more like this — Expert level, Olympiacos trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -4371,10 +4371,10 @@
       "name": "Olympiacos"
      },
      "crestName": "Olympiacos",
-     "question": "Place this result in its season: Olympiacos beat Levadiakos 4-0 in the Super League Greece. Which campaign was it?",
+     "question": "Place this result in its season: Olympiacos beat AEK Athens 1-0 in the Super League Greece. Which campaign was it?",
      "options": [
       "2006/07",
-      "2014/15",
+      "2024/25",
       "2003/04",
       "2005/06"
      ],
@@ -4434,9 +4434,9 @@
       "text": "From the shirt rail: Panathinaikos, 2020/21, away. Which sponsor was on the front?"
      },
      "home": "PANATHINAIKOS, 2020/21, AWAY",
-     "sponsor": "Pame Stoixima was on the front of Panathinaikos's 2020/21 away shirt.",
+     "sponsor": "On the front: Pame Stoixima",
      "date": "THE SHIRT ARCHIVE",
-     "line": "Pame Stoixima was on the front of Panathinaikos's 2020/21 away shirt."
+     "line": "On the front: Pame Stoixima"
     }
    }
   }
@@ -4480,7 +4480,7 @@
        "year": 1967,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Hapoel Petah Tikva 3–2 Hapoel Be'er Sheva",
+       "line": "3–2 v Hapoel Be'er Sheva",
        "ago": "59 YEARS AGO · ISRAELI LEAGUE"
       },
       {
@@ -4553,7 +4553,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv/trivia",
    "hook": "Nerds only. Hapoel Tel Aviv — no Googling.",
-   "body": "Hapoel Tel Aviv rewind: 8 May 1999 in the Liga Leumit. A 3-0 win — against which club?\n\nA) Hapoel Jerusalem\nB) Hapoel Tayibe\nC) Maccabi Herzliya\nD) Bnei Yehuda\n\nAnswer in the first comment (or the next story frame): Hapoel Jerusalem. Hapoel Tel Aviv 3-0 Hapoel Jerusalem, Liga Leumit, 8 May 1999.\n\nThousands more like this — Expert level, Hapoel Tel Aviv trivia on FAN LIFE.",
+   "body": "Hapoel Tel Aviv rewind: 29 Mar 1958 in the Liga Leumit. A 0-4 defeat — against which club?\n\nA) Hapoel Haifa\nB) Hapoel Lod\nC) Maccabi Netanya\nD) Maccabi Haifa\n\nAnswer in the first comment (or the next story frame): Maccabi Haifa. Maccabi Haifa 4-0 Hapoel Tel Aviv, Liga Leumit, 29 Mar 1958.\n\nThousands more like this — Expert level, Hapoel Tel Aviv trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -4563,12 +4563,12 @@
       "name": "Hapoel Tel Aviv"
      },
      "crestName": "Hapoel Tel Aviv",
-     "question": "Hapoel Tel Aviv rewind: 8 May 1999 in the Liga Leumit. A 3-0 win — against which club?",
+     "question": "Hapoel Tel Aviv rewind: 29 Mar 1958 in the Liga Leumit. A 0-4 defeat — against which club?",
      "options": [
-      "Hapoel Jerusalem",
-      "Hapoel Tayibe",
-      "Maccabi Herzliya",
-      "Bnei Yehuda"
+      "Hapoel Haifa",
+      "Hapoel Lod",
+      "Maccabi Netanya",
+      "Maccabi Haifa"
      ],
      "level": "EXPERT"
     }
@@ -4627,7 +4627,7 @@
      "homeCrestName": "FC St. Pauli",
      "awayCrestName": "Rot-Weiß Oberhausen",
      "date": "14 MARCH 2010 · 2. BUNDESLIGA",
-     "line": "8 goals in one afternoon. FC St. Pauli supporters went home hoarse."
+     "line": "8 goals in one afternoon."
     }
    }
   }
@@ -4664,7 +4664,7 @@
        "year": 1955,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Hapoel Petah Tikva 1–3 Maccabi Tel Aviv",
+       "line": "1–3 v Maccabi Tel Aviv",
        "ago": "71 YEARS AGO · ISRAEL STATE CUP"
       },
       {
@@ -4757,7 +4757,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
    "hook": "Nerds only. Zrinjski Mostar — no Googling.",
-   "body": "Place this result in its season: Zrinjski Mostar beat Sloga Doboj 3-0 in the Bosnia and Herzegovina Cup. Which campaign was it?\n\nA) 2023/24\nB) 2002/03\nC) 2018/19\nD) 2010/11\n\nAnswer in the first comment (or the next story frame): 2023/24. Zrinjski Mostar 3-0 Sloga Doboj, Bosnia and Herzegovina Cup, 17 Apr 2024.\n\nThousands more like this — Expert level, Zrinjski Mostar trivia on FAN LIFE.",
+   "body": "Place this result in its season: Zrinjski Mostar beat Sloboda 3-0 in the Bosnia and Herzegovina Cup. Which campaign was it?\n\nA) 2004/05\nB) 2019/20\nC) 2011/12\nD) 2002/03\n\nAnswer in the first comment (or the next story frame): 2004/05. Zrinjski Mostar 3-0 Sloboda, Bosnia and Herzegovina Cup, 22 Sept 2004.\n\nThousands more like this — Expert level, Zrinjski Mostar trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -4767,12 +4767,12 @@
       "name": "Zrinjski Mostar"
      },
      "crestName": "Zrinjski Mostar",
-     "question": "Place this result in its season: Zrinjski Mostar beat Sloga Doboj 3-0 in the Bosnia and Herzegovina Cup. Which campaign was it?",
+     "question": "Place this result in its season: Zrinjski Mostar beat Sloboda 3-0 in the Bosnia and Herzegovina Cup. Which campaign was it?",
      "options": [
-      "2023/24",
-      "2002/03",
-      "2018/19",
-      "2010/11"
+      "2004/05",
+      "2019/20",
+      "2011/12",
+      "2002/03"
      ],
      "level": "EXPERT"
     }
@@ -4831,7 +4831,7 @@
      "homeCrestName": "Panathinaikos",
      "awayCrestName": "Olympiacos",
      "date": "16 MAY 2021 · GREEK SUPER LEAGUE 2020/21",
-     "line": "Derby memory Olympiacos fans never let the neighbours forget."
+     "line": "A derby they still talk about."
     }
    }
   }
@@ -4947,7 +4947,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
    "hook": "Nerds only. Celtic — no Googling.",
-   "body": "Celtic rewind: 24 Apr 1954 in the Scottish Cup. A 2-1 win — against which club?\n\nA) Airdrieonians\nB) Dundee\nC) Hearts\nD) Aberdeen\n\nAnswer in the first comment (or the next story frame): Aberdeen. Celtic 2-1 Aberdeen, Scottish Cup, 24 Apr 1954.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
+   "body": "Place this result in its season: Celtic beat Dunfermline 3-2 in the Scottish Cup. Which campaign was it?\n\nA) 1964/65\nB) 1935/36\nC) 2008/09\nD) 1945/46\n\nAnswer in the first comment (or the next story frame): 1964/65. Celtic 3-2 Dunfermline, Scottish Cup, 24 Apr 1965.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -4957,12 +4957,12 @@
       "name": "Celtic"
      },
      "crestName": "Celtic",
-     "question": "Celtic rewind: 24 Apr 1954 in the Scottish Cup. A 2-1 win — against which club?",
+     "question": "Place this result in its season: Celtic beat Dunfermline 3-2 in the Scottish Cup. Which campaign was it?",
      "options": [
-      "Airdrieonians",
-      "Dundee",
-      "Hearts",
-      "Aberdeen"
+      "1964/65",
+      "1935/36",
+      "2008/09",
+      "1945/46"
      ],
      "level": "EXPERT"
     }
@@ -5021,7 +5021,7 @@
      "homeCrestName": "HSV Barmbek-Uhlenhorst",
      "awayCrestName": "FC St. Pauli",
      "date": "26 APRIL 1975 · 2. BUNDESLIGA",
-     "line": "6 goals clear. FC St. Pauli were not in the mood to be polite."
+     "line": "6 goals clear."
     }
    }
   }
@@ -5151,7 +5151,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
    "hook": "Nerds only. Celtic — no Googling.",
-   "body": "Place this result in its season: Celtic beat St. Johnstone 2-0 in the Premier Division. Which campaign was it?\n\nA) 2003/04\nB) 1997/98\nC) 1926/27\nD) 2006/07\n\nAnswer in the first comment (or the next story frame): 1997/98. Celtic 2-0 St. Johnstone, Premier Division, 9 May 1998.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
+   "body": "Place this result in its season: Celtic lost 0-2 to Dundee in the Scottish Premiership. Which campaign was it?\n\nA) 2002/03\nB) 1926/27\nC) 2005/06\nD) 2025/26\n\nAnswer in the first comment (or the next story frame): 2025/26. Dundee 2-0 Celtic, Scottish Premiership, 19 Oct 2025.\n\nThousands more like this — Expert level, Celtic trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -5161,12 +5161,12 @@
       "name": "Celtic"
      },
      "crestName": "Celtic",
-     "question": "Place this result in its season: Celtic beat St. Johnstone 2-0 in the Premier Division. Which campaign was it?",
+     "question": "Place this result in its season: Celtic lost 0-2 to Dundee in the Scottish Premiership. Which campaign was it?",
      "options": [
-      "2003/04",
-      "1997/98",
+      "2002/03",
       "1926/27",
-      "2006/07"
+      "2005/06",
+      "2025/26"
      ],
      "level": "EXPERT"
     }
@@ -5225,7 +5225,7 @@
      "homeCrestName": "Celtic",
      "awayCrestName": "East Fife",
      "date": "16 APRIL 1927 · SCOTTISH CUP FINAL",
-     "line": "Final. Celtic. Some days the archive just glows."
+     "line": "A final to frame."
     }
    }
   }
@@ -5262,7 +5262,7 @@
        "year": 1941,
        "club": "Hapoel Petah Tikva",
        "crestName": "Hapoel Petah Tikva",
-       "line": "Degel Zion Tel Aviv 0–7 Hapoel Petah Tikva",
+       "line": "7–0 at Degel Zion Tel Aviv",
        "ago": "85 YEARS AGO · ISRAELI LEAGUE"
       },
       {
@@ -5291,7 +5291,7 @@
        "club": "Celtic",
        "crestName": "Celtic",
        "line": "Valencia 1–0 Celtic",
-       "ago": "25 YEARS AGO · UEFA EUROPA LEAGUE"
+       "ago": "25 YEARS AGO · UEFA CUP"
       }
      ]
     }
@@ -5342,7 +5342,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
    "hook": "Nerds only. FC St. Pauli — no Googling.",
-   "body": "Place this result in its season: FC St. Pauli lost 1-2 to SpVgg Unterhaching in the 2. Bundesliga. Which campaign was it?\n\nA) 1974/75\nB) 1998/99\nC) 2022/23\nD) 2017/18\n\nAnswer in the first comment (or the next story frame): 1998/99. SpVgg Unterhaching 2-1 FC St. Pauli, 2. Bundesliga, 1 Apr 1999.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
+   "body": "FC St. Pauli rewind: 8 Oct 1978 in the 2. Bundesliga. A 2-2 draw — against which club?\n\nA) Rot-Weiss Essen\nB) VfL Osnabrück\nC) Kickers Offenbach\nD) VfL Wolfsburg\n\nAnswer in the first comment (or the next story frame): VfL Osnabrück. FC St. Pauli 2-2 VfL Osnabrück, 2. Bundesliga, 8 Oct 1978.\n\nThousands more like this — Expert level, FC St. Pauli trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -5352,12 +5352,12 @@
       "name": "FC St. Pauli"
      },
      "crestName": "FC St. Pauli",
-     "question": "Place this result in its season: FC St. Pauli lost 1-2 to SpVgg Unterhaching in the 2. Bundesliga. Which campaign was it?",
+     "question": "FC St. Pauli rewind: 8 Oct 1978 in the 2. Bundesliga. A 2-2 draw — against which club?",
      "options": [
-      "1974/75",
-      "1998/99",
-      "2022/23",
-      "2017/18"
+      "Rot-Weiss Essen",
+      "VfL Osnabrück",
+      "Kickers Offenbach",
+      "VfL Wolfsburg"
      ],
      "level": "EXPERT"
     }
@@ -5415,9 +5415,9 @@
       "text": "From the shirt rail: Celtic, 2006/07, away. Which sponsor was on the front?"
      },
      "home": "CELTIC, 2006/07, AWAY",
-     "sponsor": "Carling was on the front of Celtic's 2006/07 away shirt.",
+     "sponsor": "On the front: Carling",
      "date": "THE SHIRT ARCHIVE",
-     "line": "Carling was on the front of Celtic's 2006/07 away shirt."
+     "line": "On the front: Carling"
     }
    }
   }
@@ -5475,7 +5475,7 @@
        "year": 2006,
        "club": "Hapoel Tel Aviv",
        "crestName": "Hapoel Tel Aviv",
-       "line": "Paris Saint-Germain 2–4 Hapoel Tel Aviv",
+       "line": "4–2 at Paris Saint-Germain",
        "ago": "20 YEARS AGO · UEFA CUP"
       },
       {
@@ -5547,7 +5547,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva/trivia",
    "hook": "Nerds only. Hapoel Petah Tikva — no Googling.",
-   "body": "Place this result in its season: Hapoel Petah Tikva beat Beitar Jerusalem 4-0 in the Toto Cup. Which campaign was it?\n\nA) 1986/87\nB) 1938/39\nC) 1990/91\nD) 2008/09\n\nAnswer in the first comment (or the next story frame): 1990/91. Beitar Jerusalem 0-4 Hapoel Petah Tikva, Toto Cup, 22 Sept 1990.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
+   "body": "Hapoel Petah Tikva rewind: 14 Jan 1984 in the Israel State Cup. A 1-0 win — against which club?\n\nA) Hapoel Ashdod\nB) Maccabi Petah Tikva\nC) Maccabi Tel Aviv\nD) Maccabi Ramat Amidar\n\nAnswer in the first comment (or the next story frame): Maccabi Ramat Amidar. Hapoel Petah Tikva 1-0 Maccabi Ramat Amidar, Israel State Cup, 14 Jan 1984.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -5557,12 +5557,12 @@
       "name": "Hapoel Petah Tikva"
      },
      "crestName": "Hapoel Petah Tikva",
-     "question": "Place this result in its season: Hapoel Petah Tikva beat Beitar Jerusalem 4-0 in the Toto Cup. Which campaign was it?",
+     "question": "Hapoel Petah Tikva rewind: 14 Jan 1984 in the Israel State Cup. A 1-0 win — against which club?",
      "options": [
-      "1986/87",
-      "1938/39",
-      "1990/91",
-      "2008/09"
+      "Hapoel Ashdod",
+      "Maccabi Petah Tikva",
+      "Maccabi Tel Aviv",
+      "Maccabi Ramat Amidar"
      ],
      "level": "EXPERT"
     }
@@ -5621,7 +5621,7 @@
      "homeCrestName": "Celtic",
      "awayCrestName": "Rangers",
      "date": "27 AUGUST 2000 · PREMIER LEAGUE",
-     "line": "8 goals in one afternoon. Celtic supporters went home hoarse."
+     "line": "8 goals in one afternoon."
     }
    }
   }
@@ -5751,7 +5751,7 @@
    "app": "fanlife",
    "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva/trivia",
    "hook": "Nerds only. Hapoel Petah Tikva — no Googling.",
-   "body": "Hapoel Petah Tikva rewind: 22 Nov 1952 in the Israeli League. A 2-1 win — against which club?\n\nA) Maccabi Ness Ziona\nB) Hapoel Ramat Gan\nC) Hapoel Tel Aviv\nD) Hapoel Herzliya\n\nAnswer in the first comment (or the next story frame): Hapoel Tel Aviv. Hapoel Petah Tikva 2-1 Hapoel Tel Aviv, Israeli League, 22 Nov 1952.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
+   "body": "Hapoel Petah Tikva rewind: 5 Nov 1949 in the Israeli League. A 7-0 win — against which club?\n\nA) Hakoah Tel Aviv\nB) Degel Zion Tel Aviv\nC) Hapoel Rishon LeZion\nD) Maccabi Jaffa\n\nAnswer in the first comment (or the next story frame): Hapoel Rishon LeZion. Hapoel Petah Tikva 7-0 Hapoel Rishon LeZion, Israeli League, 5 Nov 1949.\n\nThousands more like this — Expert level, Hapoel Petah Tikva trivia on FAN LIFE.",
    "visual": "T10-NERDS Nerds only: the question and four answers, the club crest.",
    "kit": {
     "t": "T10-NERDS",
@@ -5761,12 +5761,12 @@
       "name": "Hapoel Petah Tikva"
      },
      "crestName": "Hapoel Petah Tikva",
-     "question": "Hapoel Petah Tikva rewind: 22 Nov 1952 in the Israeli League. A 2-1 win — against which club?",
+     "question": "Hapoel Petah Tikva rewind: 5 Nov 1949 in the Israeli League. A 7-0 win — against which club?",
      "options": [
-      "Maccabi Ness Ziona",
-      "Hapoel Ramat Gan",
-      "Hapoel Tel Aviv",
-      "Hapoel Herzliya"
+      "Hakoah Tel Aviv",
+      "Degel Zion Tel Aviv",
+      "Hapoel Rishon LeZion",
+      "Maccabi Jaffa"
      ],
      "level": "EXPERT"
     }
@@ -5825,7 +5825,7 @@
      "homeCrestName": "AEK Athens",
      "awayCrestName": "Olympiacos",
      "date": "10 MARCH 1940 · GREEK LEAGUE",
-     "line": "Derby memory AEK Athens fans never let the neighbours forget."
+     "line": "A derby they still talk about."
     }
    }
   }

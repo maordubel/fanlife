@@ -1,6 +1,7 @@
 import 'server-only'
 import type {ReactNode} from 'react'
 import {FixtureRotator,type RotatorItem,type RotatorCopy} from '@/components/home/FixtureRotator'
+import {crestUrl} from '@/ecosystem/crests/index.mjs'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery} from '@/lib/club-livery'
@@ -19,7 +20,7 @@ async function itemsFor(open:readonly Club[],locale:string):Promise<RotatorItem[
  const items:RotatorItem[]=(feed?rotationOrder(feed.fixtures,now):[]).flatMap(f=>{
   const l=livery(f.clubId)
   if(!l)return []
-  return [{clubId:f.clubId,club:l.name,opponent:f.opponent,initials:l.initials,primary:l.primary,on:l.on,type:l.type,pattern:l.pattern,kickoff:f.kickoff,dateOnly:f.dateOnly,clubSide:f.clubSide,competition:f.competition,venue:f.venue,href:`/clubs/${f.clubId}/meetings?vs=${encodeURIComponent(f.opponent)}&lang=${locale}`,tag:f.phase}]
+  return [{clubId:f.clubId,club:l.name,opponent:f.opponent,opponentCrest:crestUrl(f.opponent),initials:l.initials,primary:l.primary,on:l.on,type:l.type,pattern:l.pattern,kickoff:f.kickoff,dateOnly:f.dateOnly,clubSide:f.clubSide,competition:f.competition,venue:f.venue,href:`/clubs/${f.clubId}/meetings?vs=${encodeURIComponent(f.opponent)}&lang=${locale}`,tag:f.phase}]
  })
  // every club is on the roll (owner, 7.10.2026): a club with no confirmed match says so, nothing is guessed
  for(const c of open)if(!items.some(x=>x.clubId===c.id)){const l=livery(c.id);if(l)items.push({clubId:c.id,club:l.name,opponent:'',initials:l.initials,primary:l.primary,on:l.on,type:l.type,pattern:l.pattern,kickoff:'',dateOnly:true,clubSide:'home',competition:null,venue:null,href:`/clubs/${c.id}?lang=${locale}`,tag:'tbc'})}

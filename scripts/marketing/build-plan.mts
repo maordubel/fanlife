@@ -71,6 +71,14 @@ for (const c of clubs) for (const q of c.qs) {
 const h = (s: string) => { let x = 2166136261; for (const ch of s) x = Math.imul(x ^ ch.charCodeAt(0), 16777619) >>> 0; return x }
 const weight = (e: Ev) => (e.derby && e.won ? 50 : 0) + (e.final ? 40 : 0) + (e.europe ? 20 : 0) + (e.won ? e.margin * 4 : 0) + (e.margin === 0 && e.goals === 0 ? 0 : 0) + (2026 - e.y) / 10
 
+// a row line that fits the ticket: the full result, or — for long names — the score from the club's side and the opponent
+function shortLine(e: Ev) {
+  if (!e.home) return e.text.length <= 42 ? e.text : e.text.slice(0, 39).replace(/\s+\S*$/, '') + '...'
+  const full = `${e.home} ${e.score} ${e.away}`
+  if (full.length <= 38 || !e.opp) return full
+  const [a, b] = e.score!.split('–'), home = e.home.includes(e.name)
+  return `${home ? a : b}–${home ? b : a} ${home ? 'v' : 'at'} ${e.opp}`
+}
 function onThisDay(y: number, m: number, d: number): Item {
   const pick = (list: Ev[]) => {
     const per = new Map<string, Ev>()
@@ -90,7 +98,7 @@ function onThisDay(y: number, m: number, d: number): Item {
     body: `${rows.map(line).join('\n')}\n\nWhich one would you have been at? Every one of these clubs has its own archive in FAN LIFE.`,
     visual: `T9-OTD On this day: ${rows.length} clubs as ticket stubs, crests from the shared library.`,
     kit: {t: 'T9-OTD', data: {date: `${d} ${MONTH[m].slice(0, 3).toUpperCase()}`, exact, footerLabel: 'FROM THE FAN LIFE ARCHIVE',
-      rows: rows.map(e => ({year: e.y, club: e.name, crestName: e.name, line: e.home ? `${e.home} ${e.score} ${e.away}` : e.text,
+      rows: rows.map(e => ({year: e.y, club: e.name, crestName: e.name, line: shortLine(e),
         ago: (exact ? `${y - e.y} YEARS AGO` : `${e.d} ${MONTH[e.m].slice(0, 3).toUpperCase()} ${e.y}`) + (e.comp ? ` · ${e.comp.toUpperCase()}` : '')}))}}}
 }
 
@@ -136,7 +144,7 @@ function nerds(n: number): Item {
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`n${n}${a}`) - h(`n${n}${b}`))
   let got: {q: Q; c: Club} | null = null, opts: string[] | null = null
   for (let t = 0; t < 30 && !opts; t++) {
-    got = qPick(q => L(q) === 4 && MC(q) && !/derby/i.test(q.prompt) && (has(q, 'editorial:2026-10-21') || has(q, 'archive-depth')) && q.prompt.length < 170, `nerd${n}.${t}`, used, order)
+    got = qPick(q => L(q) === 4 && MC(q) && !/derby/i.test(q.prompt) && (has(q, 'editorial:2026-10-21') || has(q, 'archive-depth')) && q.prompt.length < 130, `nerd${n}.${t}`, used, order)
     if (got) opts = optionsFor(got.q, got.c, `nerd${n}`)
   }
   if (!got || !opts) throw Error('no nerds question for day ' + n)
@@ -172,7 +180,7 @@ function spicy(n: number): Item {
       hook: `Spicy one for the shirt collectors: who was on the front?`,
       body: `${got.q.prompt.replace(/^From the shirt rail: /, '')}\n\nAnswer: ${got.q.explanation}\n\nEvery shirt, every season — the kit archive and the shirt market are on FAN LIFE.`,
       visual: 'T11-SPICY with the archive shirt and its sponsor.',
-      kit: {t: 'T11-SPICY', data: {club: {id: got.c.id, name: got.c.name}, shirtFor: {club: got.c.id, text: got.q.prompt}, home: got.q.prompt.replace(/^From the shirt rail: /, '').replace(/\. Which sponsor.*$/, '').toUpperCase(), sponsor: got.q.explanation, date: 'THE SHIRT ARCHIVE', line: got.q.explanation}}}
+      kit: {t: 'T11-SPICY', data: {club: {id: got.c.id, name: got.c.name}, shirtFor: {club: got.c.id, text: got.q.prompt}, home: got.q.prompt.replace(/^From the shirt rail: /, '').replace(/\. Which sponsor.*$/, '').toUpperCase(), sponsor: `On the front: ${got.q.answer}`, date: 'THE SHIRT ARCHIVE', line: `On the front: ${got.q.answer}`}}}
   }
   for (const cid of order) {
     const pool = events.filter(e => e.club === cid && !spicyUsed.has(e.fact) && e.won === true &&
@@ -190,7 +198,8 @@ function spicy(n: number): Item {
       hook, body: `${when}: ${e.text}.\n\nWere you there — or is it a story your dad still tells? Tell us in the comments.\nThe whole archive, match by match, is on FAN LIFE.`,
       visual: 'T11-SPICY: the score on split-flap tiles, both crests, the date on a ticket stub.',
       kit: {t: 'T11-SPICY', data: {club: {id: e.club, name: e.name}, home: (e.home || '').toUpperCase(), away: (e.away || '').toUpperCase(), score: e.score, homeCrestName: e.home, awayCrestName: e.away,
-        date: `${when.toUpperCase()}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`, line: hook}}}
+        date: `${when.toUpperCase()}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`,
+        line: kind === 'derby' ? 'A derby they still talk about.' : kind === 'rout' ? `${e.margin} goals clear.` : kind === 'final' ? 'A final to frame.' : `${e.goals} goals in one afternoon.`}}}
   }
   return nerds(100 + n)
 }
@@ -270,7 +279,12 @@ function eraNames(text: string) {
     return l
   }).join('\n')
 }
-for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body) }
+const eraUpper = (t: string, y: number) => y && y < 1992 ? t.replace(/UEFA CHAMPIONS LEAGUE/g, 'EUROPEAN CUP') : y && y < 2009 ? t.replace(/UEFA EUROPA LEAGUE/g, 'UEFA CUP') : t
+const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
+  ? eraUpper(eraNames(year && !YR.test(x) ? `${year} ${x}` : x).replace(year && !YR.test(x) ? `${year} ` : '', ''), Number(x.match(YR)?.[1] || year))
+  : Array.isArray(x) ? x.map(v => eraDeep(v, year))
+  : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, eraDeep(v, Number((x as {year?: number}).year) || year)])) : x
+for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); if (r.main.kit) r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown> }
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
 const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v2 (26.10.2026).`,
   `-- Fixed plan: every row is 'fixed'; matches and results moved to Final Whistle and Today's Football.`,
