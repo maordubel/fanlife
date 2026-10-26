@@ -472,5 +472,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-25T08:43:55.335Z",
   "updatedAt": "2026-10-25T08:43:55.335Z"
+ },
+ {
+  "id": "ga-a84a7245a669c816",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "1",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1906-2/1906-10-06-celtic-3-2-third-lanark-glasgow-cup-final/",
+    "locator": "p13",
+    "quote": "The goals: 0-1 Fairfoull (1 min.), 1-1 Orr (penalty, 15 min.), 1-2 Fairfoull (44 min.), 2-2 Young, 3-2 Somers.",
+    "bodyHash": "a0b9361ceb3f0e68b81daf7f09d525654b77ee89d3e4c148f55e794c493b1486",
+    "fetchedAt": "2026-10-26T09:21:58.245Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-26T09:21:58.245Z",
+  "updatedAt": "2026-10-26T09:21:58.245Z"
+ },
+ {
+  "id": "ga-544a8ee2a77de76d",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "88",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1907-2/1907-02-23-celtic-2-1-morton-scottish-cup-2nd-replay/",
+    "locator": "p5",
+    "quote": "At long last, Jimmy Hay with a header in the 88nd minute put this painful Scottish Cup tie to bed, and this was after a rare penalty miss from Willie Orr.",
+    "bodyHash": "8c6a44e8fe1c63df31a8de0b41f41017cb0ab1dd72dc68fd4cfb9b73b88979d0",
+    "fetchedAt": "2026-10-26T09:22:01.252Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-26T09:22:01.252Z",
+  "updatedAt": "2026-10-26T09:22:01.252Z"
  }
 ]
