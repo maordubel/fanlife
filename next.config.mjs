@@ -25,7 +25,7 @@ const nextConfig = {
     // an unescaped '[...action]' is a character class and matched nothing (audit F03, 7.10.2026).
     outputFileTracingIncludes: {
       // the social plan's tick draws the kit picture with the vendored renderer (scripts/marketing/kit) and sharp
-      '/api/marketing/tick': ['./scripts/marketing/kit/**', './content/manual/kit-photos.json', './content/generated/kit-master.json', './public/kits/*.webp', './node_modules/sharp/**', './node_modules/@img/**'],
+      '/api/marketing/tick': ['./scripts/marketing/kit/**', './ecosystem/crests/**', './club-packs/*/identity.json', './public/crests/*.png', './public/club-kits/*/svg/**', './content/manual/kit-photos.json', './content/generated/kit-master.json', './public/kits/*.webp', './node_modules/sharp/**', './node_modules/@img/**'],
       '/api/telegram/welcome-card': ['./app/magazine.css', './lib/og/fonts/archivo-latin-800.ttf', './public/brand/fanlife/logo-192.png', './public/brand/weekly/plates/cheer-line.webp'],
       '/master/admin': RESEARCH_FILES,
       '/api/master/\\[...action\\]': RESEARCH_FILES,
