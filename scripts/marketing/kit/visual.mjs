@@ -102,7 +102,7 @@ export function plan(post) {
   const label = Object.keys(APPS).find(k => APPS[k] === app) || 'DUBEL TEAM'
   const h = headline(hook, 3, template === 'T1' || template === 'T8' ? 20 : 16) || (template === 'T5' ? [label] : null)
   if (!h) return []
-  const firstBody = printable(body.find(l => l !== hook) || '', 'Weekly Body').slice(0, 70)
+  const firstBody = clip(printable(body.find(l => l !== hook) || '', 'Weekly Body'), 54)
   switch (template) {
     case 'T1': return [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO}}]
     case 'T2': return [{t: 'T2', data: {feature: h, body: (wrap(firstBody, 2, 28) || []).slice(0, 2), noPlaceholders: true}}]
