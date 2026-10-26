@@ -16,14 +16,14 @@ URL = {
     'fuckyou': 'https://fuckyou.dubelteam.com',
 }
 NAME = {'fanlife': 'FAN LIFE', 'theworker': 'THE WORKER', 'dubid': 'DUBID',
-        'offsides': 'OFFSIDES', 'fuckyou': 'FUCK YOU', 'all': 'DUBEL TEAM'}
+        'offsides': 'OFFSIDES', 'fuckyou': 'FUCK YOU', 'all': 'FAN LIFE'}
 TAGS = {
     'fanlife': '#FANLIFE #FootballForever #Football #Supporters #DubelTeam',
     'theworker': '#TheWorker #HapoelTelAviv #Hapoel #FootballHistory #DubelTeam',
     'dubid': '#DUBID #Fantasy #IsraeliFootball #LigatHaAl #DubelTeam',
     'offsides': '#OFFSIDES #Predictions #Football #MatchDay #DubelTeam',
     'fuckyou': '#FUCKYOU #Derby #Terrace #DubelTeam',
-    'all': '#DubelTeam #Football #Supporters #FootballForever',
+    'all': '#FANLIFE #FootballForever #Football #Supporters #DubelTeam',
 }
 
 # ── 08:00 · morning · emotional connection (photo post) ───────────────────

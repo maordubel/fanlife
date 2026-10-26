@@ -4,6 +4,27 @@ One page (Instagram · TikTok · Facebook) markets the whole universe: FAN LIFE,
 OFFSIDES and FUCK YOU. Every two hours, 08:00–22:00 Israel time, the owner gets a ready post on
 Telegram: the hook, the caption, the link to the right app, the hashtags and a visual brief.
 
+## v2 — 26.10.2026 (owner): marketing is a fixed plan; matches and results are not marketing
+- **FAN LIFE is the lead voice.** The page is FAN LIFE; DUBID, OFFSIDES, THE WORKER and FUCK YOU are promoted on a
+  fixed weekday rotation at 12:00 (Sun THE WORKER · Mon DUBID · Tue OFFSIDES · Wed THE WORKER · Thu DUBID · Fri FUCK YOU ·
+  Sat OFFSIDES) and as every third carousel/reel/night post. A partner post says "on the FAN LIFE page".
+- **Matches and results moved out.** No slot resolves a fixture any more (every row is `kind='fixed'`). Matchday is
+  Today's Football (05:00, Operations → Today's Football) and results are Final Whistle.
+- **Four slots a day come from the archive**, through the FAN LIFE trivia forge (English, approved, exact dates —
+  rule 109), across all eight clubs: 08:00 *On this day* (one match per club on today's date, up to five clubs; if
+  fewer than two, *This week in history* with the real dates) · 16:00 *Nerds only* (an Expert question, four answers,
+  the answer for the first comment) · 18:00 *Story quiz* (an IG quiz sticker: four answers, which to mark, frame 2) ·
+  20:00 *Spicy* (derby wins, routs, finals, goal-fests, shirt-sponsor trivia). Decoys for an opponent question come
+  from the same club's opponents in the same competition and era. European competitions print under the name of
+  their year (European Cup before 1992, UEFA Cup before 2009).
+- **Built, not typed:** `node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts`
+  writes `supabase/marketing/0006_marketing_plan_v2.sql` and `scripts/marketing/plan-v2.json` (the review copy,
+  checked by `tests/marketing/plan.test.ts`). 0006 updates by `send_at` and only rows still waiting.
+- **The database is the clock.** GitHub's scheduled runs fired 4× on 25.10 and 0× on the morning of 26.10. pg_cron
+  `marketing:tick` (every 5 minutes, only when something is due) mints a one-time nonce and POSTs it to
+  `/api/marketing/tick`; the site trades it for the due posts (`worker_marketing_tick`, service role) and sends them with
+  its own `TELEGRAM_BOT_TOKEN`. No secret is stored in the database. The GitHub workflow stays as a backup.
+
 ## Where it lives
 - **Database:** schema `marketing` on Football Master (hub-owned, server only).
   `marketing.posts` = 245 rows (day 0 = 25.10 afternoon, days 1–30 = 26.10 → 24.11, 8 slots a day).
