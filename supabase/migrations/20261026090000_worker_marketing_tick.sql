@@ -8,13 +8,13 @@
 -- One nonce, one use, three minutes. A wrong, old or reused nonce gets nothing (and is told nothing more).
 create or replace function public.worker_marketing_tick(p_nonce uuid)
 returns jsonb language plpgsql security definer set search_path = '' as $$
-declare t marketing.ticks; posts jsonb;
+declare v_nonce uuid; v_probe boolean; posts jsonb;
 begin
   update marketing.ticks k set used_at = now()
    where k.nonce = p_nonce and k.used_at is null and k.made_at > now() - interval '3 minutes'
-  returning * into t;
-  if t.nonce is null then return jsonb_build_object('ok', false); end if;
-  if t.probe then
+  returning k.nonce, k.probe into v_nonce, v_probe;
+  if v_nonce is null then return jsonb_build_object('ok', false); end if;
+  if v_probe then
     return jsonb_build_object('ok', true, 'probe', true,
       'chat_id', (select s.value->>'chat_id' from marketing.settings s where s.key = 'telegram'));
   end if;
