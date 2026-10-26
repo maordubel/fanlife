@@ -7,14 +7,10 @@
   "parserVersion": "partizanopedia-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 144,
+  "observedTotalDocuments": 155,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/5960.html",
-   "/6061.html",
-   "/6162.html",
-   "/6263.html",
    "/6364.html",
    "/6465.html",
    "/6566.html",
@@ -138,7 +134,18 @@
    "/vladicakovacevic.html",
    "/veliborvasovic.html",
    "/milankranjcic.html",
-   "/dragoslavjovanovic.html"
+   "/dragoslavjovanovic.html",
+   "/velimirsombolac.html",
+   "/joakimvislavski.html",
+   "/boramilutinovic.html",
+   "/miodragbpetrovic.html",
+   "/dragomirsliskovic.html",
+   "/ljubomirmihajlovic.html",
+   "/ivanrajic.html",
+   "/mustafahasanagic.html",
+   "/antonrudinski.html",
+   "/manebajic.html",
+   "/milandamjanovic.html"
   ],
   "seen": [
    "/",
@@ -156,10 +163,14 @@
    "/5556.html",
    "/5657.html",
    "/5758.html",
-   "/5859.html"
+   "/5859.html",
+   "/5960.html",
+   "/6061.html",
+   "/6162.html",
+   "/6263.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-25T08:45:08.109Z",
+  "updatedAt": "2026-10-26T09:23:22.600Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -174,7 +185,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-10-25T08:45:08.217Z",
+  "updatedAt": "2026-10-26T09:23:23.118Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -189,7 +200,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-25T08:45:11.870Z",
+  "updatedAt": "2026-10-26T09:23:27.027Z",
   "lastError": null
  },
  "partizan-official:html": {
@@ -208,7 +219,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-25T08:45:13.199Z",
+  "updatedAt": "2026-10-26T09:23:28.907Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -227,7 +238,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-25T08:45:14.010Z",
+  "updatedAt": "2026-10-26T09:23:30.119Z",
   "lastError": null
  }
 }

@@ -5,8 +5,8 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "partial_budget",
-    "pagesRead": 28,
+    "state": "listed",
+    "pagesRead": 31,
     "observedTotalDocuments": 762,
     "observedTotalPages": 31,
     "queue": null,
@@ -22,8 +22,8 @@
     "lastError": null
    }
   ],
-  "documents": 705,
-  "historicalRecordsExtracted": 697,
+  "documents": 767,
+  "historicalRecordsExtracted": 759,
   "seasonReviews": [
    "1959/60",
    "1960/61",
@@ -89,7 +89,9 @@
    "2019/20",
    "2020/21",
    "2021/22",
-   "2022/23"
+   "2022/23",
+   "2023/24",
+   "2024/25"
   ],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  },
