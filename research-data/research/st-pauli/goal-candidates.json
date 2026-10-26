@@ -76,6 +76,15 @@
     "bodyHash": "2c64aecb0bb9bf31cd8abc1bbc7ac50c9cd0ad089c9e02f91de5f65f05ae2914",
     "fetchedAt": "2026-10-20T08:43:37.067Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/10/02/lage-am-millerntor-02-oktober-2020/",
+    "locator": "p15",
+    "quote": "Im Vereins-TV könnt Ihr die Stimmen von Leart Paqarada (der ja zu seinem Ex-Verein reist) und Philipp Ziereis hören (3min), außerdem wurde die Pressekonferenz mit Timo Schultz in Schrift und Video (16min) frei für alle veröffentlicht.",
+    "bodyHash": "60c186a28662b573d5194ecd1668a888e4518427aa3114af2178e5a879113a23",
+    "fetchedAt": "2026-10-26T09:23:39.232Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -83,8 +92,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-20T08:43:37.067Z",
-  "updatedAt": "2026-10-20T08:43:37.067Z"
+  "createdAt": "2026-10-26T09:23:39.232Z",
+  "updatedAt": "2026-10-26T09:23:39.232Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -115,6 +124,15 @@
     "bodyHash": "8f92c685f639bc475597e1485f39c0aac83bc4b27d3b9c629ca287103057b674",
     "fetchedAt": "2026-10-25T08:45:22.856Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/10/02/lage-am-millerntor-02-oktober-2020/",
+    "locator": "p54",
+    "quote": "Scores level… 90th minute… and then this happens! 😱",
+    "bodyHash": "60c186a28662b573d5194ecd1668a888e4518427aa3114af2178e5a879113a23",
+    "fetchedAt": "2026-10-26T09:23:39.232Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -122,8 +140,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:22.856Z",
-  "updatedAt": "2026-10-25T08:45:22.856Z"
+  "createdAt": "2026-10-26T09:23:39.232Z",
+  "updatedAt": "2026-10-26T09:23:39.232Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -253,6 +271,15 @@
     "bodyHash": "0161bf1b8109e0a91d371d5e625147ef7d4295b1ca2c06f528f98cacd6b97dd0",
     "fetchedAt": "2026-10-25T08:45:17.495Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/10/27/lage-am-millerntor-27-oktober-2020/",
+    "locator": "p40",
+    "quote": "Apropos unrühmliches Verhalten des DFB. Die große Razzia der Steuerfahnder beim DFB machte vor gut zwei Wochen Schlagzeilen. Und nach und nach kam dann raus, dass Präsident Keller sich zunächst von seinen Angestellten distanziert und dann, nach einigen Verwicklungen eher zögerlich doch vor sie stellt, was dann aber nicht mehr so richtig glaubwürdig rüber kam. Laut dem ehemaligen Mediendirektor Harald Stenger läuft alles auf einen Machtkampf zwischen Präsident Keller und Generalsekretär Curtius hinaus – bei dem am Ende einer auf der Strecke bleiben muss, wenn man nicht den ganzen Verband an die",
+    "bodyHash": "7f65ff374f036d59f5f759dd215f3ac7f055e3a72c2bd4fd821322556f7b3528",
+    "fetchedAt": "2026-10-26T09:23:45.248Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -260,8 +287,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.495Z",
-  "updatedAt": "2026-10-25T08:45:17.495Z"
+  "createdAt": "2026-10-26T09:23:45.248Z",
+  "updatedAt": "2026-10-26T09:23:45.248Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -433,6 +460,15 @@
     "bodyHash": "0161bf1b8109e0a91d371d5e625147ef7d4295b1ca2c06f528f98cacd6b97dd0",
     "fetchedAt": "2026-10-25T08:45:17.495Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/10/03/ich-vermisse-dich-afm-radio-oder-svs-fcsp/",
+    "locator": "p43",
+    "quote": "Sicher alles kein Beinbruch – aber ärgerlich und unnötig, denn ein Punkt wäre am Hardtwald schon drin gewesen und die Länderspielpause hätte etwas positiver begonnen werden können. Ähnlich äußerte sich Robin Himmelmann nach dem Spiel beim NDR (2min).",
+    "bodyHash": "0b7170854beeea3980f13d39f79b19ca7bf8e08a3dc9354bf0244cd3aaf230f5",
+    "fetchedAt": "2026-10-26T09:23:39.234Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -440,8 +476,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.495Z",
-  "updatedAt": "2026-10-25T08:45:17.495Z"
+  "createdAt": "2026-10-26T09:23:39.234Z",
+  "updatedAt": "2026-10-26T09:23:39.234Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -622,5 +658,104 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-25T08:45:28.824Z",
   "updatedAt": "2026-10-25T08:45:28.824Z"
+ },
+ {
+  "id": "ga-5347dfcfe7f58c5c",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "14",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/09/07/lage-am-millerntor-07-september-2020/",
+    "locator": "p57",
+    "quote": "Bei WDR Sport Inside gibt es ja wahrscheinlich den besten Sportjournalismus außerhalb von Livebreichterstattung (und vielleicht auch sogar ohne diese Einschränkung). Nun gibt es einen 14minütigen Bericht über Studien, die sich mit bleibenden Schäden für das Gehirn beschäftigen – und das Umdenken, insbesondere für den Jugendfußball. ( Sportschau )",
+    "bodyHash": "29abbf61c663cbde6b23b9e775fb1e83f939650a903c64c97fd21bce5e266cd9",
+    "fetchedAt": "2026-10-26T09:23:34.278Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/11/10/lage-am-millerntor-10-november-2020/",
+    "locator": "p6",
+    "quote": "Dann könnt Ihr Euch den Auftritt von Timo Schultz im Sportclub von Sonntagabend anschauen (14min).",
+    "bodyHash": "13f07fd5ec1b60693ff5e288eaae27c080a0d40b08c53e79c020a03cb2b051b9",
+    "fetchedAt": "2026-10-26T09:23:45.261Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-26T09:23:45.261Z",
+  "updatedAt": "2026-10-26T09:23:45.261Z"
+ },
+ {
+  "id": "ga-3d4715fe356e053e",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "20",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/09/06/endlich-wieder-auswaertsfahrt/",
+    "locator": "p2",
+    "quote": "Bereits vor zwei Wochen waren einige Fans zum Test nach Buchholz gefahren, aber eine 20minütige Regiofahrt fühlt sich natürlich nicht wirklich nach Auswärtsfahrt an.",
+    "bodyHash": "ebedb37b20b397ab42223d28790f553f892f7e1803cc6b4791c4b1a1f4952e0f",
+    "fetchedAt": "2026-10-26T09:23:36.860Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-26T09:23:36.860Z",
+  "updatedAt": "2026-10-26T09:23:36.860Z"
+ },
+ {
+  "id": "ga-c17fa246fc7afd17",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "7",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/09/18/lage-am-millerntor-18-september-2020/",
+    "locator": "p18",
+    "quote": "Die „Stadionallianz NRW“ hatten wir hier zuletzt mehrfach erwähnt, ein aus unserer Sicht völlig überzogener Deal zwischen Politik und Vereinen. Stellungnahmen der Fan-Bündnisse gab es auch schon genug, jetzt bringt die Sportschau dazu auch ein Video (7min) mit entsprechend klaren Statements seitens der Fanhilfen NRW .",
+    "bodyHash": "c74d1a3c7f105c4786f2accad91ba28e0d0be3c0cc2a0ae96f162cd4328d0e5e",
+    "fetchedAt": "2026-10-26T09:23:36.870Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-26T09:23:36.870Z",
+  "updatedAt": "2026-10-26T09:23:36.870Z"
  }
 ]

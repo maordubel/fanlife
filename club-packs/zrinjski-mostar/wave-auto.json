@@ -775,6 +775,14 @@
    "publisher": "UEFA",
    "access": "available",
    "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-tsdb-583674",
+   "title": "TheSportsDB: FC Spartak Trnava 1-0 Zrinjski, 2018-07-11",
+   "url": "https://www.thesportsdb.com/event/583674",
+   "publisher": "TheSportsDB",
+   "access": "available",
+   "checkedAt": "2026-10-26"
   }
  ],
  "matches": [
@@ -6115,16 +6123,17 @@
     }
    },
    "sources": [
-    "a-src-uefa-2024607"
+    "a-src-uefa-2024607",
+    "a-src-tsdb-583674"
    ],
    "researchedAt": "2026-10-26",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
-   "confidence": 2,
+   "notes": "Date, teams and score agree across two publishers; the eleven and the scorers are UEFA's own record (owner, 2026-10-10: UEFA is sufficient for its own competitions).",
+   "confidence": 3,
    "status": "approved",
    "approvedAt": "2026-10-26",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+   "approvedBy": "automated:cross-source-review-zrinjski-mostar-auto"
   },
   {
    "id": "a-m-2017-07-19-maribor-zrinjski",
