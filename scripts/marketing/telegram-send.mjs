@@ -18,7 +18,7 @@ try { ({visualsFor} = await import('./kit/visual.mjs')) } catch (e) { console.lo
 const tg = (method, form) => fetch(`https://api.telegram.org/bot${token}/${method}`, {method: 'POST', body: form, signal: AbortSignal.timeout(60_000)})
   .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
 async function sendVisuals(p) {
-  const pngs = await visualsFor(p.msg)
+  const pngs = await visualsFor(p.msg, p.kit || null)
   if (!pngs.length) return
   const form = new FormData()
   form.append('chat_id', p.chat_id)

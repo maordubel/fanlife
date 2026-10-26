@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vitest'
 // @ts-expect-error — plain ESM module, no types
 import {readPost, plan, visualsFor, printable} from '../../scripts/marketing/kit/visual.mjs'
@@ -25,4 +26,13 @@ describe('DUBEL TEAM kit visuals', () => {
     expect(deck).toHaveLength(5)
     expect(await visualsFor('no template here')).toEqual([])
   }, 30_000)
+  it('draws the plan\'s own Social Kit v2 posts: on this day, nerds only, story quiz, spicy, partner', async () => {
+    const rows: {at: string; main: {kit?: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v2.json', 'utf8'))
+    const kits = ['T9-OTD', 'T10-NERDS', 'T5-B', 'T11-SPICY', 'T12-PARTNER'].map(t => rows.find(r => r.main.kit?.t === t)!)
+    for (const r of kits) {
+      const png = await visualsFor('📌 Post · <b>FAN LIFE</b>', r.main.kit)
+      expect(png, r.at).toHaveLength(1)
+      expect(png[0].subarray(1, 4).toString()).toBe('PNG')
+    }
+  }, 60_000)
 })

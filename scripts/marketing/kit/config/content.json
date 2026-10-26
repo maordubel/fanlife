@@ -5,7 +5,7 @@
       "A LIFETIME."
     ],
     "body": "The final whistle is never the end.",
-    "photo": "assets/stadium-original.png"
+    "photo": "assets/stadium.jpg"
   },
   "T2": {
     "fanlife": {
@@ -68,14 +68,14 @@
     "masthead": "FAN LIFE",
     "line": "Same club. Different journeys. One universe.",
     "ringColours": [
-      "#9E1B0E",
-      "#2546C9",
-      "#D8401C",
-      "#1E5A38",
-      "#1C2B4A",
-      "#121412",
-      "#EE7A1F",
-      "#0D1B2A"
+      "#A20F18",
+      "#233C8F",
+      "#D71920",
+      "#1F8A4C",
+      "#1B9AD6",
+      "#15130F",
+      "#F26A1B",
+      "#16203F"
     ],
     "crests": [
       null,
@@ -168,11 +168,67 @@
       "THE GAME",
       "NEVER ENDS."
     ],
-    "frame": "assets/stadium-original.png",
+    "frame": "assets/stadium.jpg",
     "lowerThird": [
       "BEING A SUPPORTER",
       "IS A LIFETIME."
     ],
     "centreWord": "LIFETIME."
+  },
+  "T9-OTD": {
+    "date": "26 OCT",
+    "exact": true,
+    "rows": [
+      {
+        "year": 1988,
+        "club": "Celtic",
+        "line": "VERIFIED ARCHIVE RESULT",
+        "ago": "38 YEARS AGO"
+      },
+      {
+        "year": 2006,
+        "club": "Zrinjski Mostar",
+        "line": "VERIFIED ARCHIVE MOMENT",
+        "ago": "20 YEARS AGO"
+      },
+      {
+        "year": 2016,
+        "club": "Fenerbahçe",
+        "line": "VERIFIED ARCHIVE STORY",
+        "ago": "10 YEARS AGO"
+      }
+    ]
+  },
+  "T10-NERDS": {
+    "club": "celtic",
+    "question": "Which archive detail can only a true supporter remember?",
+    "options": [
+      "OPTION ONE",
+      "OPTION TWO",
+      "OPTION THREE",
+      "OPTION FOUR"
+    ],
+    "level": "EXPERT"
+  },
+  "T11-SPICY": {
+    "club": "panathinaikos",
+    "home": "Panathinaikos",
+    "away": "Olympiacos",
+    "score": "4–0",
+    "date": "VERIFIED MATCH DATE",
+    "line": "YOUR VERIFIED ARCHIVE FACT",
+    "shirt": null,
+    "sponsor": null
+  },
+  "T12-PARTNER": {
+    "app": "dubid",
+    "feature": [
+      "YOUR SQUAD.",
+      "YOUR CALL."
+    ],
+    "body": [
+      "Build your squad.",
+      "Make every pick count."
+    ]
   }
 }

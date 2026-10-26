@@ -149,6 +149,7 @@
 .wkh-fx-crest .mag-badge { inline-size: 38px; block-size: 38px; }
 .wkh-fx-t { display: flex; flex-direction: column; gap: 2px; min-inline-size: 0; }
 .wkh-fx-t b { font-family: var(--mag-display); font-weight: 400; font-size: 18px; line-height: 1.02; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wkh-fx-opp { inline-size: 16px; block-size: 16px; object-fit: contain; vertical-align: -3px; margin-inline-end: 4px; }
 .wkh-fx-t small { font-size: 14px; line-height: 1.25; font-weight: 600; color: var(--mag-muted); }
 .wkh-blank { display: inline-block; inline-size: 30px; border-block-end: 2px dotted var(--mag-ink); vertical-align: baseline; margin-inline: 2px; }
 .wkh-fx-lamp { font-size: 13px; max-inline-size: 104px; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; }

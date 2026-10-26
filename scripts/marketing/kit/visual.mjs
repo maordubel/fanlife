@@ -1,8 +1,10 @@
-/** DUBEL TEAM social kit → the picture that goes with a Telegram post.
- *  Reads the post as the site rendered it (app label, hook, the real match, `Visual: T<n> …`) and draws the
- *  matching kit template with that copy. Pure: message in, PNG buffers out. Anything it cannot draw → [] and the
- *  post still goes out as text. The kit itself is the owner's DUBEL TEAM Social Kit v1 (25.10.2026), vendored here. */
-import {readFileSync, writeFileSync} from 'node:fs'
+/** FAN LIFE Social Kit v2 (The Weekly, owner 26.10.2026) → the picture that goes with a Telegram post.
+ *  A post built by scripts/marketing/build-plan.mts carries its own `kit` ({t, data}): the template and the archive
+ *  data it was made from — that is drawn as is. Any other post is read back out of its message (app, hook,
+ *  `Visual: T<n> …`) and drawn with that copy. Team crests come from the one crest library of the universe
+ *  (ecosystem/crests — OFFSIDES' library), the club's own file only where the library has none. Shirts come from
+ *  the FAN LIFE kit archive (public/club-kits). Anything it cannot draw → [] and the post still goes out as text. */
+import {readFileSync, writeFileSync, existsSync, mkdirSync} from 'node:fs'
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
@@ -12,6 +14,7 @@ import {design} from './source/design.mjs'
 const ROOT = path.dirname(fileURLToPath(import.meta.url))
 const sharp = createRequire(import.meta.url)('sharp')
 const TYPE = JSON.parse(readFileSync(path.join(ROOT, 'assets/type-paths.json'), 'utf8'))
+const REPO = path.resolve(ROOT, '../../..')
 const PHOTO = path.join(ROOT, 'assets/stadium.jpg')
 
 const APPS = {'FAN LIFE': 'fanlife', 'THE WORKER': 'worker', DUBID: 'dubid', OFFSIDES: 'offsides', 'FUCK YOU': 'fuckyou', 'DUBEL TEAM': 'dubel'}
@@ -19,8 +22,8 @@ const SWAP = {'—': '-', '–': '-', '’': "'", '‘': "'", '“': '"', '”':
 const unhtml = s => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
 
 /** Keep only what the kit's fonts can print (emoji, Hebrew → gone); collapse spaces. */
-export function printable(s, font = 'Anton') {
-  const g = TYPE[font].glyphs
+export function printable(s, font = 'Weekly Head') {
+  const g = {...TYPE['Weekly Body'].glyphs, ...TYPE[font].glyphs}
   return [...String(s)].map(c => (g[c] ? c : g[SWAP[c]] ? SWAP[c] : ' ')).join('').replace(/\s+/g, ' ').trim()
 }
 
@@ -62,8 +65,8 @@ function shirtFor(seed) {
       const by = new Map(kits.map(k => [`${k.seasonLabel}|${k.variant}`, k]))
       SHIRTS = photos.filter(p => p.confidence >= 2 && !p.special && !p.seasonAmbiguous).map(p => {
         const k = by.get(`${p.seasonLabel}|${p.variant}`), f = k?.fields || {}
-        const maker = f.maker?.confidence >= 2 ? printable(f.maker.value?.name || '', 'Courier Prime') : ''
-        const sponsor = f.sponsor?.confidence >= 2 ? printable(f.sponsor.value?.name || '', 'Courier Prime') : ''
+        const maker = f.maker?.confidence >= 2 ? printable(f.maker.value?.name || '', 'Weekly Caps') : ''
+        const sponsor = f.sponsor?.confidence >= 2 ? printable(f.sponsor.value?.name || '', 'Weekly Caps') : ''
         return maker && sponsor ? {file: path.join(repo, 'public/kits', p.file), season: p.seasonLabel, maker: maker.toUpperCase(), sponsor: sponsor.toUpperCase()} : null
       }).filter(Boolean)
     } catch { SHIRTS = [] }
@@ -78,7 +81,7 @@ function shirtFor(seed) {
 export function readPost(msg) {
   const text = unhtml(msg)
   const lines = text.split('\n')
-  const app = APPS[(lines[1] || '').split('·').pop().trim()] || 'dubel'
+  const app = APPS[(String(msg).match(/📌[^<\n]*<b>([^<]+)<\/b>/)?.[1] || (lines[1] || '').split('·').pop() || '').trim()] || 'fanlife'
   const hookAt = lines.findIndex(l => l.includes('HOOK'))
   const hook = (hookAt >= 0 ? (lines[hookAt + 1] || '').trim() : '').replace(/^(Wallpaper|Story background):\s*/i, '').replace(/^[“"](.*)[”"]$/, '$1')
   const visual = (text.match(/Visual:\s*(T\d)\s*([^.\n]*)/) || [])
@@ -99,11 +102,11 @@ export function plan(post) {
   const label = Object.keys(APPS).find(k => APPS[k] === app) || 'DUBEL TEAM'
   const h = headline(hook, 3, template === 'T1' || template === 'T8' ? 20 : 16) || (template === 'T5' ? [label] : null)
   if (!h) return []
-  const firstBody = printable(body.find(l => l !== hook) || '', 'Archivo').slice(0, 70)
+  const firstBody = clip(printable(body.find(l => l !== hook) || '', 'Weekly Body'), 54)
   switch (template) {
     case 'T1': return [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO}}]
     case 'T2': return [{t: 'T2', data: {feature: h, body: (wrap(firstBody, 2, 28) || []).slice(0, 2), noPlaceholders: true}}]
-    case 'T3': return [{t: 'T3', data: {masthead: label, line: printable(hook, 'Courier Prime').slice(0, 60)}}]
+    case 'T3': return [{t: 'T3', data: {masthead: label, line: printable(hook, 'Weekly Caps').slice(0, 60)}}]
     case 'T4': { const k = shirtFor(hook); return k ? [{t: 'T4', data: k}] : [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO}}] }
     case 'T5': {
       const v = /countdown/i.test(variant) ? 'T5-C' : /wallpaper|lock/i.test(variant) ? 'T5-D' : 'T5-B'
@@ -129,11 +132,66 @@ export function plan(post) {
   }
 }
 
-/** PNG buffers for one Telegram message. Never throws. */
-export async function visualsFor(msg) {
+// ── crests and shirts ──────────────────────────────────────────────────────────────────────────────────────────────
+let LIB
+const OWN = {'AEK Athens': 'aek-athens', Celtic: 'celtic', Olympiacos: 'olympiacos', Panathinaikos: 'panathinaikos', 'FC St. Pauli': 'st-pauli',
+  'St. Pauli': 'st-pauli', 'Hapoel Petah Tikva': 'hapoel-petah-tikva', 'Hapoel Tel Aviv': 'hapoel-tel-aviv', 'Zrinjski Mostar': 'zrinjski-mostar'}
+const CACHE = path.join(tmpdir(), 'fanlife-crests')
+/** A local PNG path for a team's crest, or null. Library first; the club's own file where the library has none. */
+export async function crestPath(name) {
+  if (!name) return null
+  LIB ??= await import('../../../ecosystem/crests/index.mjs')
+  const slug = LIB.crestSlug(name)
+  if (slug) {
+    const file = path.join(CACHE, slug + '.png')
+    if (existsSync(file)) return file
+    try {
+      const r = await fetch(`${LIB.CREST_BASE}/${slug}.png`, {signal: AbortSignal.timeout(8000)})
+      const buf = r.ok ? Buffer.from(await r.arrayBuffer()) : null
+      if (buf && buf.subarray(1, 4).toString() === 'PNG') { mkdirSync(CACHE, {recursive: true}); writeFileSync(file, buf); return file }
+    } catch { /* the club's own file, or no crest */ }
+  }
+  const own = OWN[name] && path.join(REPO, 'public/crests', OWN[name] + '.png')
+  return own && existsSync(own) ? own : null
+}
+/** "Celtic, 2015/16, third" → a PNG of that shirt from the FAN LIFE kit archive, or null. */
+async function shirtPath({club, text}) {
+  const m = String(text || '').match(/(\d{4}\/\d{2}), (home|away|third|fourth|goalkeeper)/i)
+  if (!m || !/^[a-z0-9-]+$/.test(club || '')) return null
+  try {
+    const idx = JSON.parse(readFileSync(path.join(REPO, 'public/club-kits', club, 'svg/index.json'), 'utf8'))
+    const k = idx.kits.find(x => x.season === m[1] && x.type === m[2].toLowerCase())
+    if (!k) return null
+    const file = path.join(tmpdir(), `fanlife-shirt-${club}-${k.id}.png`)
+    if (!existsSync(file)) writeFileSync(file, await sharp(path.join(REPO, 'public/club-kits', club, 'svg', k.id + '.svg'), {density: 160}).resize(760, 760, {fit: 'contain', background: {r: 0, g: 0, b: 0, alpha: 0}}).png().toBuffer())
+    return file
+  } catch { return null }
+}
+async function resolveAssets(data) {
+  const d = structuredClone(data)
+  if (d.crestName) d.crest = await crestPath(d.crestName)
+  if (d.homeCrestName) d.homeCrest = await crestPath(d.homeCrestName)
+  if (d.awayCrestName) d.awayCrest = await crestPath(d.awayCrestName)
+  if (Array.isArray(d.rows)) for (const r of d.rows) if (r.crestName) r.crest = await crestPath(r.crestName)
+  if (d.shirtFor) { d.shirt = await shirtPath(d.shirtFor); if (!d.shirt) { d.score = String(d.shirtFor.text.match(/\d{4}\/\d{2}/)?.[0] || ''); d.away = 'THE SHIRT ARCHIVE' } }
+  for (const k of ['crestName', 'homeCrestName', 'awayCrestName', 'shirtFor']) delete d[k]
+  for (const k of ['crest', 'homeCrest', 'awayCrest']) if (d[k] === null) delete d[k]
+  if (Array.isArray(d.rows)) for (const r of d.rows) { delete r.crestName; if (!r.crest) delete r.crest }
+  return d
+}
+const APP_OF = {fanlife: 'fanlife', theworker: 'worker', worker: 'worker', dubid: 'dubid', offsides: 'offsides', fuckyou: 'fuckyou', all: 'fanlife'}
+
+/** PNG buffers for one Telegram message (and, when the plan made it, the post's own kit). Never throws. */
+export async function visualsFor(msg, kit = null) {
   try {
     const post = readPost(msg)
     const out = []
+    if (kit?.t && kit.data) {
+      const app = APP_OF[kit.data.app] || post.app || 'fanlife'
+      const d = design(kit.t, app, await resolveAssets(kit.data), true)
+      if (d.bounds.some(b => b.x < 0 || b.x + b.width > d.width || b.y < 0 || b.y + b.height > d.height)) return []
+      return [await sharp(Buffer.from(d.svg)).png({compressionLevel: 9}).toBuffer()]
+    }
     for (const {t, data} of plan(post)) {
       if (data.file) { data.shirt = path.join(tmpdir(), `dubel-shirt-${process.pid}.png`); writeFileSync(data.shirt, await sharp(data.file).png().toBuffer()) }
       const d = design(t, post.app, data, true)

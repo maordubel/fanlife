@@ -21,7 +21,12 @@ export async function POST(r:NextRequest){
  let b:Record<string,unknown>={};try{b=await r.json()}catch{/* empty */}
  if(b.action==='claim'){
   const got=await rpc('worker_marketing_claim',{p_limit:3})
-  return got.ok?json({posts:Array.isArray(got.data)?got.data:[]}):json({error:got.error},got.status)
+  if(!got.ok)return json({error:got.error},got.status)
+  const posts:{id:number}[]=Array.isArray(got.data)?got.data:[]
+  // each post's own kit (Social Kit v2 template + archive data), so the backup draws the same picture as the tick
+  const kits=posts.length?await rpc('worker_marketing_kits',{p_ids:posts.map(p=>p.id)}):null
+  const by=(kits?.ok&&kits.data&&typeof kits.data==='object'?kits.data:{}) as Record<string,unknown>
+  return json({posts:posts.map(p=>({...p,kit:by[String(p.id)]??null}))})
  }
  if(b.action==='report'){
   const id=Number(b.id),outcome=String(b.outcome||'')

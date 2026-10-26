@@ -16,7 +16,10 @@ import {loadClubBase, CORE_CLUB_IDS} from '../../lib/clubs/resolver'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const pools = JSON.parse(execSync(`python3 -c "import json,sys;sys.path.insert(0,'${HERE}');import content as c;print(json.dumps({k:getattr(c,k) for k in ['CAROUSEL','GAMEDAY','REELS','STORIES','DEEP','MORNING','NIGHT']},ensure_ascii=False))"`).toString())
-type Item = {app: string; hook: string; body: string; visual: string; url?: string; format?: string}
+// kit: the FAN LIFE Social Kit v2 template for this post and its data. Crest NAMES only (crestName, homeCrestName,
+// awayCrestName): the picture resolves them through the shared crest library (ecosystem/crests) when it is drawn.
+type Kit = {t: string; data: Record<string, unknown>}
+type Item = {app: string; hook: string; body: string; visual: string; url?: string; format?: string; kit?: Kit}
 const FORMAT: Record<string, string> = {CAROUSEL: 'carousel', REELS: 'reel', STORIES: 'story', NIGHT: 'text'}
 const it = (t: string[], k = ''): Item => ({app: t[0] === 'all' ? 'fanlife' : t[0], hook: t[1], body: t[2], visual: t[3], format: FORMAT[k] || 'post'})
 const usedCopy = new Set<string>()
@@ -24,7 +27,7 @@ const usedCopy = new Set<string>()
 // ── the archive, read through the forge ────────────────────────────────────────────────────────────────────────────
 type Q = {id: string; template: string; type: string; prompt: string; answer: string; explanation: string; pool?: string; topic?: string; facets?: string[]; factIds?: string[]; source?: {url?: string}}
 type Club = {id: string; name: string; qs: Q[]; pools: Record<string, string[]>}
-type Ev = {club: string; name: string; y: number; m: number; d: number; text: string; derby: boolean; final: boolean; europe: boolean; margin: number; goals: number; won: boolean | null; fact: string; comp?: string; opp?: string}
+type Ev = {club: string; name: string; y: number; m: number; d: number; text: string; derby: boolean; final: boolean; europe: boolean; margin: number; goals: number; won: boolean | null; fact: string; comp?: string; opp?: string; home?: string; away?: string; score?: string}
 const MON: Record<string, number> = {Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12}
 const MONTH = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const latin = (s: string) => !/[Ͱ-ϿЀ-ӿ֐-׿؀-ۿ]/.test(s)
@@ -55,7 +58,7 @@ for (const c of clubs) for (const q of c.qs) {
       text: `${home} ${hs}-${as} ${away}${comp ? ` (${comp})` : ''}`,
       derby: has(q, 'derby') || q.topic === 'derby', final: has(q, 'final'), europe: has(q, 'kind:europe'),
       margin: Math.abs(H - A), goals: H + A, won: us === null ? null : us === 'h' ? H > A : A > H,
-      comp: comp || '', opp: us === 'h' ? away : us === 'a' ? home : undefined})
+      comp: comp || '', opp: us === 'h' ? away : us === 'a' ? home : undefined, home, away, score: `${hs}–${as}`})
   } else if (q.template === 'event-date-check' && q.answer === 'true') {
     const m = q.explanation.match(/^(.+?) — (\d{4})-(\d{2})-(\d{2})\.?$/)
     if (!m || /\d+-\d+/.test(m[1])) continue
@@ -68,6 +71,14 @@ for (const c of clubs) for (const q of c.qs) {
 const h = (s: string) => { let x = 2166136261; for (const ch of s) x = Math.imul(x ^ ch.charCodeAt(0), 16777619) >>> 0; return x }
 const weight = (e: Ev) => (e.derby && e.won ? 50 : 0) + (e.final ? 40 : 0) + (e.europe ? 20 : 0) + (e.won ? e.margin * 4 : 0) + (e.margin === 0 && e.goals === 0 ? 0 : 0) + (2026 - e.y) / 10
 
+// a row line that fits the ticket: the full result, or — for long names — the score from the club's side and the opponent
+function shortLine(e: Ev) {
+  if (!e.home) return e.text.length <= 42 ? e.text : e.text.slice(0, 39).replace(/\s+\S*$/, '') + '...'
+  const full = `${e.home} ${e.score} ${e.away}`
+  if (full.length <= 38 || !e.opp) return full
+  const [a, b] = e.score!.split('–'), home = e.home.includes(e.name)
+  return `${home ? a : b}–${home ? b : a} ${home ? 'v' : 'at'} ${e.opp}`
+}
 function onThisDay(y: number, m: number, d: number): Item {
   const pick = (list: Ev[]) => {
     const per = new Map<string, Ev>()
@@ -85,7 +96,10 @@ function onThisDay(y: number, m: number, d: number): Item {
   return {app: 'fanlife',
     hook: exact ? `On this day, ${d} ${MONTH[m]} — ${rows.length} clubs, one date.` : `This week in history — ${rows.length} clubs.`,
     body: `${rows.map(line).join('\n')}\n\nWhich one would you have been at? Every one of these clubs has its own archive in FAN LIFE.`,
-    visual: `T1 Quote card. "ON THIS DAY" stamp, the ${rows.length} club names stacked as ticket stubs.`}
+    visual: `T9-OTD On this day: ${rows.length} clubs as ticket stubs, crests from the shared library.`,
+    kit: {t: 'T9-OTD', data: {date: `${d} ${MONTH[m].slice(0, 3).toUpperCase()}`, exact, footerLabel: 'FROM THE FAN LIFE ARCHIVE',
+      rows: rows.map(e => ({year: e.y, club: e.name, crestName: e.name, line: shortLine(e),
+        ago: (exact ? `${y - e.y} YEARS AGO` : `${e.d} ${MONTH[e.m].slice(0, 3).toUpperCase()} ${e.y}`) + (e.comp ? ` · ${e.comp.toUpperCase()}` : '')}))}}}
 }
 
 // a question whose prompt already holds its answer ("… in the Premiership 2018/19. Which campaign?") is not asked
@@ -116,6 +130,12 @@ const optionsFor = (q: Q, c: Club, seed: string) => {
   const opts = [...pickd, q.answer].sort((a, b) => h(seed + a) - h(seed + b))
   return opts
 }
+const wrapLines = (t: string, max: number) => {
+  const out: string[] = []; let line = ''
+  for (const w of t.split(' ')) { if (line && (line + ' ' + w).length > Math.ceil(t.length / max) + 6) { out.push(line); line = w } else line = line ? line + ' ' + w : w }
+  if (line) out.push(line)
+  return out.length <= max ? out : [t]
+}
 const L = (q: Q) => Number(q.facets?.find(f => f.startsWith('level:'))?.slice(6) || 0)
 const MC = (q: Q) => q.type === 'mcq' || q.type === 'year'
 const used = new Set<string>()
@@ -124,14 +144,15 @@ function nerds(n: number): Item {
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`n${n}${a}`) - h(`n${n}${b}`))
   let got: {q: Q; c: Club} | null = null, opts: string[] | null = null
   for (let t = 0; t < 30 && !opts; t++) {
-    got = qPick(q => L(q) === 4 && MC(q) && !/derby/i.test(q.prompt) && (has(q, 'editorial:2026-10-21') || has(q, 'archive-depth')) && q.prompt.length < 170, `nerd${n}.${t}`, used, order)
+    got = qPick(q => L(q) === 4 && MC(q) && !/derby/i.test(q.prompt) && (has(q, 'editorial:2026-10-21') || has(q, 'archive-depth')) && q.prompt.length < 130, `nerd${n}.${t}`, used, order)
     if (got) opts = optionsFor(got.q, got.c, `nerd${n}`)
   }
   if (!got || !opts) throw Error('no nerds question for day ' + n)
   return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}/trivia`,
     hook: `Nerds only. ${got.c.name} — no Googling.`,
     body: `${got.q.prompt}${opts ? '\n\n' + opts.map((o, i) => `${'ABCD'[i]}) ${o}`).join('\n') : ''}\n\nAnswer in the first comment (or the next story frame): ${got.q.answer}. ${got.q.explanation}\n\nThousands more like this — Expert level, ${got.c.name} trivia on FAN LIFE.`,
-    visual: 'T2 App feature card. "NERDS ONLY" stamp, the question as the feature.'}
+    visual: 'T10-NERDS Nerds only: the question and four answers, the club crest.',
+    kit: {t: 'T10-NERDS', data: {club: {id: got.c.id, name: got.c.name}, crestName: got.c.name, question: got.q.prompt, options: opts, level: 'EXPERT'}}}
 }
 function quiz(n: number): Item {
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`q${n}${a}`) - h(`q${n}${b}`))
@@ -143,7 +164,8 @@ function quiz(n: number): Item {
     return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}/trivia`,
       hook: got.q.prompt,
       body: `Instagram quiz sticker — four answers:\n${opts.map((o, i) => `${'ABCD'[i]}) ${o}`).join('\n')}\nMark the right one: ${got.q.answer}.\n\nFrame 2: "${got.q.explanation}" + link sticker → ${got.c.name} trivia on FAN LIFE.`,
-      visual: 'T5 Story frame. The question on top; the IG quiz sticker goes in the empty frame.'}
+      visual: 'T5-B Story quiz: the question, the four answers, the IG quiz sticker in the empty frame.',
+      kit: {t: 'T5-B', data: {club: got.c.id, hook: wrapLines(got.q.prompt, 3), options: opts}}}
   }
   throw Error('no quiz for day ' + n)
 }
@@ -157,7 +179,8 @@ function spicy(n: number): Item {
     if (got) return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}`,
       hook: `Spicy one for the shirt collectors: who was on the front?`,
       body: `${got.q.prompt.replace(/^From the shirt rail: /, '')}\n\nAnswer: ${got.q.explanation}\n\nEvery shirt, every season — the kit archive and the shirt market are on FAN LIFE.`,
-      visual: 'T4 Kit card. A real archive shirt; the sponsor answer in the museum label.'}
+      visual: 'T11-SPICY with the archive shirt and its sponsor.',
+      kit: {t: 'T11-SPICY', data: {club: {id: got.c.id, name: got.c.name}, shirtFor: {club: got.c.id, text: got.q.prompt}, home: got.q.prompt.replace(/^From the shirt rail: /, '').replace(/\. Which sponsor.*$/, '').toUpperCase(), sponsor: `On the front: ${got.q.answer}`, date: 'THE SHIRT ARCHIVE', line: `On the front: ${got.q.answer}`}}}
   }
   for (const cid of order) {
     const pool = events.filter(e => e.club === cid && !spicyUsed.has(e.fact) && e.won === true &&
@@ -173,7 +196,10 @@ function spicy(n: number): Item {
       : `${e.goals} goals in one afternoon. ${e.name} supporters went home hoarse.`
     return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${e.club}`,
       hook, body: `${when}: ${e.text}.\n\nWere you there — or is it a story your dad still tells? Tell us in the comments.\nThe whole archive, match by match, is on FAN LIFE.`,
-      visual: 'T1 Quote card. Big score as the hook, the date in Courier on a ticket stub.'}
+      visual: 'T11-SPICY: the score on split-flap tiles, both crests, the date on a ticket stub.',
+      kit: {t: 'T11-SPICY', data: {club: {id: e.club, name: e.name}, home: (e.home || '').toUpperCase(), away: (e.away || '').toUpperCase(), score: e.score, homeCrestName: e.home, awayCrestName: e.away,
+        date: `${when.toUpperCase()}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`,
+        line: kind === 'derby' ? 'A derby they still talk about.' : kind === 'rout' ? `${e.margin} goals clear.` : kind === 'final' ? 'A final to frame.' : `${e.goals} goals in one afternoon.`}}}
   }
   return nerds(100 + n)
 }
@@ -202,7 +228,13 @@ function partner(dow: number): Item {
   for (let k = 0; k < list.length; k++) {
     const i = partnerCount[app] = (partnerCount[app] ?? -1) + 1
     const x = list[i % list.length]
-    if (!usedCopy.has(x.hook) || k === list.length - 1) { usedCopy.add(x.hook); return x }
+    if (!usedCopy.has(x.hook) || k === list.length - 1) {
+      usedCopy.add(x.hook)
+      if ((x.format || 'post') !== 'post' || app === 'fuckyou') return x
+      const words = x.hook.toUpperCase().split(' '), half = Math.ceil(words.length / 2)
+      const body = x.body.split('\n').filter(l => l.trim() && !/^Slide/i.test(l)).slice(0, 2).map(l => l.length > 60 ? l.slice(0, 57).replace(/\s+\S*$/, '') + '...' : l)
+      return {...x, visual: 'T12-PARTNER: FAN LIFE presents the app.', kit: {t: 'T12-PARTNER', data: {app, feature: [words.slice(0, half).join(' '), words.slice(half).join(' ')].filter(Boolean), body}}}
+    }
   }
   return list[0]
 }
@@ -247,7 +279,12 @@ function eraNames(text: string) {
     return l
   }).join('\n')
 }
-for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body) }
+const eraUpper = (t: string, y: number) => y && y < 1992 ? t.replace(/UEFA CHAMPIONS LEAGUE/g, 'EUROPEAN CUP') : y && y < 2009 ? t.replace(/UEFA EUROPA LEAGUE/g, 'UEFA CUP') : t
+const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
+  ? eraUpper(eraNames(year && !YR.test(x) ? `${year} ${x}` : x).replace(year && !YR.test(x) ? `${year} ` : '', ''), Number(x.match(YR)?.[1] || year))
+  : Array.isArray(x) ? x.map(v => eraDeep(v, year))
+  : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, eraDeep(v, Number((x as {year?: number}).year) || year)])) : x
+for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); if (r.main.kit) r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown> }
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
 const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v2 (26.10.2026).`,
   `-- Fixed plan: every row is 'fixed'; matches and results moved to Final Whistle and Today's Football.`,

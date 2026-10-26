@@ -7,7 +7,19 @@
 import sharp from 'sharp'
 import {mkdir, writeFile} from 'node:fs/promises'
 import {callTelegram, pngSize, sendDocument, sendPhoto} from '../../lib/final-whistle/telegram.ts'
-import {renderSvg} from './template.mjs'
+import {renderSvg, hasCrest, libCrestFile, LIB_CACHE} from './template.mjs'
+import {existsSync} from 'node:fs'
+import {CREST_BASE, crestSlug} from '../../ecosystem/crests/index.mjs'
+// the day's crests from the universe's library, fetched once into the template's folder (a miss draws initials)
+async function fetchCrests(fixtures) {
+  await mkdir(LIB_CACHE, {recursive: true})
+  for (const t of fixtures.flatMap(f => [f.home, f.away])) {
+    if (hasCrest(t.id)) continue
+    const file = libCrestFile(t.name), slug = crestSlug(t.name)
+    if (!file || existsSync(file)) continue
+    try { const r = await fetch(`${CREST_BASE}/${slug}.png`, {signal: AbortSignal.timeout(10_000)}); if (r.ok) await writeFile(file, Buffer.from(await r.arrayBuffer())) } catch { /* initials */ }
+  }
+}
 
 const base = (process.env.FAN_LIFE_URL || '').replace(/\/$/, '')
 const secret = process.env.CRON_SECRET || ''
@@ -78,6 +90,7 @@ for (let n = 0; n < 3; n++) {
   const record = async (key, messageId) => { done[key] = messageId; await api('checkpoint', {jobId: job.id, key, messageId}) }
   try {
     const data = {sample: false, day: job.snapshot.day, coverage: job.snapshot.coverage, updatedAt: job.snapshot.updatedAt, fixtures: job.snapshot.fixtures}
+    await fetchCrests(data.fixtures)
     const pages = pagesFor(data.fixtures.length)
     const files = []
     if (job.mode === 'images') {

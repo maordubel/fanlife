@@ -21,7 +21,7 @@ const provider = (fail_ = false) => async (url: string) => {
   if (fail_) throw new Error('provider answered 500')
   const id = /id=(\w+)/.exec(url)![1]!
   if (url.includes('eventslast')) return {results: null}
-  return {events: [id === 'T1' ? ev('1', 'Celtic', 'Rangers', 'T1', 'R') : id === 'T2' ? ev('2', 'Olympiacos', 'AEK Athens', 'T2', 'T3') : ev('2', 'Olympiacos', 'AEK Athens', 'T2', 'T3'), later(id)]}
+  return {events: [id === 'T1' ? ev('1', 'Celtic', 'Tre Penne', 'T1', 'R') : id === 'T2' ? ev('2', 'Olympiacos', 'AEK Athens', 'T2', 'T3') : ev('2', 'Olympiacos', 'AEK Athens', 'T2', 'T3'), later(id)]}
 }
 const deps = (get = provider(), now = NOW) => ({get, now, key: '123', pause: async () => {}})
 const jobsOf = () => [...mem.entries()].filter(([k]) => k.startsWith('jobs/')).map(([, v]) => v as {id: string; state: string; mode: string; dryRun: boolean; delivered: Record<string, number>; notBefore: string})
@@ -44,7 +44,7 @@ describe('Today’s Football service', () => {
     expect(jobsOf()).toHaveLength(1)
     expect(await claim('r1', NOW)).toBeNull() // not yet 05:00
     const got = await claim('r1', SEND)
-    expect(got?.job.snapshot.fixtures).toHaveLength(2) // Celtic–Rangers and the shared Olympiacos–AEK match, once
+    expect(got?.job.snapshot.fixtures).toHaveLength(2) // Celtic–Tre Penne and the shared Olympiacos–AEK match, once
     expect(got?.job.state).toBe('rendering')
     expect(await claim('r2', SEND)).toBeNull() // leased
   })
@@ -52,7 +52,7 @@ describe('Today’s Football service', () => {
   it('withholds graphics and says why when a crest is missing, unless allowed', async () => {
     await setConfig({enabled: true, dryRun: false})
     const a = await prepare({deps: deps()})
-    expect(a.job?.mode).toBe('text') // Rangers has no crest on file
+    expect(a.job?.mode).toBe('text') // Tre Penne: no own crest and none in the library
     const got = await claim('r1', SEND)
     expect(got?.texts.text).toContain('TEXT ONLY')
   })

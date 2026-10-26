@@ -40,6 +40,22 @@ Telegram: the hook, the caption, the link to the right app, the hashtags and a v
   the token anywhere. A second, dormant path exists: pg_cron `marketing:telegram` → `marketing.dispatch()` sends by
   itself only if a Vault secret `telegram_bot_token` is ever added; both paths take only `pending` rows.
 
+## The pictures v2 (26.10.2026): FAN LIFE Social Kit v2 (The Weekly)
+- The owner's **FAN LIFE Social Kit v2** replaces v1 in `scripts/marketing/kit/` (source, config, plates, glyph outlines;
+  its `MIGRATION_V2.md` is kept beside it). Rival locks read the repo's own `club-packs/<club>/identity.json`.
+- Every data slot is built with its own **kit** (`main.kit = {t, data}`), so the picture is drawn from the archive data,
+  not re-read from the text: 08:00 **T9-OTD** (2–5 ticket rows, neutral inks), 16:00 **T10-NERDS** (four answers, the
+  answer never printed), 18:00 **T5-B** (the question, four answers, the empty IG sticker frame), 20:00 **T11-SPICY**
+  (the score on split-flap tiles, or a real archive shirt from `public/club-kits` and its sponsor), 12:00
+  **T12-PARTNER** ("FAN LIFE presents") for the partner apps' single posts. Other slots use T1–T8 from the message.
+- **Crests:** the one crest library of the universe — OFFSIDES' `public/logos`, resolved by `ecosystem/crests`
+  (identical in all five repos, rule 14 of the contract), images from `https://offsides.dubelteam.com/logos/<slug>.png`;
+  the club's own `public/crests` file only where the library has none. On club posts the kit prints them in its two
+  inks (rival lock). The same library now fills Today's Football (an opponent with a library crest is no longer
+  "missing") and the hub's fixture strip.
+- `worker_marketing_tick` hands each post its kit; the GitHub backup asks `worker_marketing_kits` (migration
+  20261026180000).
+
 ## The pictures (25.10.2026)
 Every post now arrives with its picture first: the owner's **DUBEL TEAM Social Kit v1** is vendored in
 `scripts/marketing/kit/` (renderer `source/design.mjs`, brand/content JSON, font outlines, the original stadium
