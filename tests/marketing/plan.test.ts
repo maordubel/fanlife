@@ -22,6 +22,14 @@ describe('FAN LIFE social plan v2', () => {
     for (const r of rows.filter(r => r.at.endsWith('16:00'))) { expect(r.main.hook).toMatch(/^Nerds only/); expect(r.main.body).toMatch(/A\) .+\nB\) .+\nC\) .+\nD\) /) }
     for (const r of rows.filter(r => r.at.endsWith('18:00'))) expect(r.main.body).toMatch(/A\) .+\nB\) .+\nC\) .+\nD\) .+\nMark the right one: /)
   })
+  it('never asks a question whose prompt already holds the answer', () => {
+    for (const r of rows.filter(r => /1[68]:00$/.test(r.at))) {
+      const ans = r.main.body.match(/(?:Mark the right one|Answer in the first comment \(or the next story frame\)): (.+?)\.(?:\s|$)/)?.[1] ?? ''
+      const q = r.at.endsWith('18:00') ? r.main.hook : r.main.body.split('\n\n')[0]
+      expect(ans.length, r.at).toBeGreaterThan(0)
+      expect(q.toLowerCase(), r.at).not.toContain(ans.toLowerCase())
+    }
+  })
   it('English only, no betting words for OFFSIDES, no Champions League before 1992', () => {
     for (const r of rows) {
       const t = r.main.hook + r.main.body

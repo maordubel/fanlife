@@ -88,10 +88,12 @@ function onThisDay(y: number, m: number, d: number): Item {
     visual: `T1 Quote card. "ON THIS DAY" stamp, the ${rows.length} club names stacked as ticket stubs.`}
 }
 
+// a question whose prompt already holds its answer ("… in the Premiership 2018/19. Which campaign?") is not asked
+const fair = (q: Q) => typeof q.answer === "string" && !q.prompt.toLowerCase().includes(q.answer.toLowerCase())
 const qPick = (filter: (q: Q, c: Club) => boolean, seed: string, used: Set<string>, clubOrder: string[]) => {
   for (const cid of clubOrder) {
     const c = clubs.find(x => x.id === cid)!
-    const list = c.qs.filter(q => !used.has(q.id) && filter(q, c))
+    const list = c.qs.filter(q => !used.has(q.id) && fair(q) && filter(q, c))
     if (!list.length) continue
     const q = list[h(seed + cid) % list.length]
     used.add(q.id)
