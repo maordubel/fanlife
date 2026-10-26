@@ -319,7 +319,6 @@ export function ArchiveApp({
             role="tab"
             onClick={() => pickChip(row)}
             aria-selected={chip === row}
-            aria-pressed={chip === row}
             className={`min-h-[40px] shrink-0 border-hair px-3 font-body text-[12px] font-extrabold leading-none transition-transform duration-press ease-stamp active:scale-[.96] motion-reduce:transition-none ${
               chip === row ? 'border-red bg-red text-paper' : 'border-ink/40 bg-paper text-ink'
             }`}

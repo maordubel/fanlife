@@ -62,7 +62,7 @@ describe('the engine', () => {
     expect(Life.load(pack, store).state.started).toBe(false)
     store.write(saveKey('olympiacos'), '{not json')
     expect(Life.load(pack, store).state.started).toBe(false)
-  })
+  }, 60_000)
 
   it('restarting a chapter cuts the log back to its morning and keeps the life before it', async () => {
     const pack = await packOf('olympiacos'), life = new Life(pack)

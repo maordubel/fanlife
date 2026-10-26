@@ -551,8 +551,6 @@
   "terraceDailyBoardYou": "אתם בלוח של היום — מקום {n}.",
   "terraceDailyBoardOff": "אופציונלי. מוצגים רק השם והציון של היום. שום דבר אחר לא נשמר.",
   "wkhUvK": "יום משחק",
-  "wkhAfK": "הארקייד",
-  "wkhAfSub": "משחק אחד על כל המועדונים — טריוויה, ציר זמן וזיכרון מעורבים.",
   "wkhLmK": "מהדורת היכל התהילה",
   "wkhLmTitle": "Legends Manager",
   "wkhLmSub": "בחרו את בני האלמוות של מועדון אחד ובנו שושלת, עונה אחרי עונה.",
@@ -632,6 +630,5 @@
   "terraceDailyClosed": "היציע היומי עדיין לא פתוח למועדון הזה.",
   "terraceDailyLoading": "מחלקים את המהדורה של היום…",
   "terraceDailyGone": "אי אפשר היה לקבל את התשובה. טענו מחדש.",
-  "wkhHeroDaily": "שחקו את היציע היומי",
-  "wkhAfTitle": "ALL FOOTBALL"
+  "wkhHeroDaily": "שחקו את היציע היומי"
 }
