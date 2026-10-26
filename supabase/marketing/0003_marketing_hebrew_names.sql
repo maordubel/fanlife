@@ -65,7 +65,7 @@ begin
     it := p.fallback;                                  -- Israeli derby night → FUCK YOU
   end if;
 
-  url := coalesce(m->'urls'->>(it->>'app'), m->'urls'->>'fanlife');
+  url := coalesce(it->>'url', m->'urls'->>(it->>'app'), m->'urls'->>'fanlife');
   if it->>'app' = 'fanlife' and fx.fixture_id is not null and fx.cat = 'club' then
     slug := coalesce(m->'clubs'->>fx.home, m->'clubs'->>fx.away);
     if slug is not null then url := url || '/clubs/' || slug; end if;
@@ -81,6 +81,7 @@ begin
   msg := '🗓 <b>' || case when p.day = 0 then 'Launch day' else 'Day ' || p.day || '/' || total end
       || ' · ' || to_char(p.send_at at time zone 'Asia/Jerusalem', 'DD.MM · HH24:MI') || '</b>'
       || E'\n📌 ' || marketing.esc(m->'format_he'->>fmt) || ' · <b>' || marketing.esc(m->'names'->>(it->>'app')) || '</b>'
+      || case when coalesce(it->>'app','fanlife') not in ('fanlife','all') then ' · on the FAN LIFE page' else '' end
       || E'\n📱 ' || marketing.esc(m->'platform'->>fmt)
       || case when fx.fixture_id is not null then E'\n⚽ Real match: ' || marketing.esc(fx.home || ' – ' || fx.away)
               || ' · ' || to_char(fx.kickoff at time zone 'Asia/Jerusalem', 'DD.MM HH24:MI') else '' end

@@ -501,6 +501,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261012090000_worker_fanlife_files.sql', // FAN LIFE's server store, off the Blob cap (supabase/tests/77-fanlife-files.sql)
       '20261019090000_worker_hub_vote.sql', // 19.10.2026: "which club opens next" — standalone (PR #240)
       '20261025090000_worker_marketing_delivery.sql', // 25.10.2026: DUBEL TEAM social plan delivery — standalone (docs/fanlife/51-marketing-telegram.md)
+      '20261026090000_worker_marketing_tick.sql', // 26.10.2026: the plan ticks from pg_cron — standalone (docs/fanlife/51-marketing-telegram.md)
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue
