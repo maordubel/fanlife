@@ -39,7 +39,7 @@ async function sendVisuals(token: string, chat: string, msg: string) {
   form.append('chat_id', chat)
   form.append('disable_notification', 'true')
   if (pngs.length === 1) {
-    form.append('photo', new Blob([new Uint8Array(pngs[0])], {type: 'image/png'}), 'post.png')
+    form.append('photo', new Blob([new Uint8Array(pngs[0]!)], {type: 'image/png'}), 'post.png')
     form.append('caption', '🎨 Ready-made visual — the post follows.')
   } else {
     form.append('media', JSON.stringify(pngs.map((_, i) => ({type: 'photo', media: `attach://s${i}`, ...(i ? {} : {caption: `🎨 Ready-made carousel — ${pngs.length} slides. The post follows.`})}))))

@@ -25,7 +25,7 @@ describe('FAN LIFE social plan v2', () => {
   it('never asks a question whose prompt already holds the answer', () => {
     for (const r of rows.filter(r => /1[68]:00$/.test(r.at))) {
       const ans = r.main.body.match(/(?:Mark the right one|Answer in the first comment \(or the next story frame\)): (.+?)\.(?:\s|$)/)?.[1] ?? ''
-      const q = r.at.endsWith('18:00') ? r.main.hook : r.main.body.split('\n\n')[0]
+      const q = r.at.endsWith('18:00') ? r.main.hook : r.main.body.split('\n\n')[0] ?? ''
       expect(ans.length, r.at).toBeGreaterThan(0)
       expect(q.toLowerCase(), r.at).not.toContain(ans.toLowerCase())
     }
