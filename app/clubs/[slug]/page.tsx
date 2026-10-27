@@ -132,7 +132,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
 
   {/* ═════ the rest of the issue ═════ */}
   {core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
-  <ClubLifeCard href={life.href} state={life.state} copy={copy}/>
+  <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id}/>
   {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 

@@ -1,7 +1,7 @@
 /* The owner's slide-up banner (rule: one transient 320×50 strip; never over a game, a dialog or the control room). */
 .promo{position:fixed;inset-inline:0;inset-block-end:calc(76px + env(safe-area-inset-bottom, 0px) + 8px);z-index:45;margin-inline:auto;inline-size:320px;block-size:50px;max-inline-size:calc(100vw - 16px);
  transform:translateY(calc(100% + 76px + env(safe-area-inset-bottom, 0px) + 24px));opacity:0;transition:transform .42s cubic-bezier(.2,.8,.2,1),opacity .3s;pointer-events:none}
-.promo[data-up]{transform:translateY(0);opacity:1;pointer-events:auto}
+.promo[data-up="true"]{transform:translateY(0);opacity:1;pointer-events:auto}
 .promo-link{display:block;inline-size:100%;block-size:100%;border:2px solid var(--mag-ink,#111);background:var(--mag-paper,#fff);box-shadow:3px 3px 0 var(--mag-ink,#111);overflow:hidden}
 .promo-link img{display:block;inline-size:100%;block-size:100%;object-fit:cover}
 .promo-x{position:absolute;inset-block-start:-14px;inset-inline-end:-6px;inline-size:44px;block-size:44px;display:grid;place-items:center;background:none;border:0;padding:0;cursor:pointer;font:700 0/0 var(--mag-body,sans-serif);color:var(--mag-paper,#fff)}

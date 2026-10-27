@@ -5,7 +5,9 @@ import {crestUrl} from '@/ecosystem/crests/index.mjs'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery} from '@/lib/club-livery'
-import {bestOffer} from '@/lib/universe/policy'
+import {companionFor} from '@/lib/universe/discovery'
+import {getCatalog} from '@/lib/universe/catalog'
+import {goHref} from '@/lib/ecosystem/links'
 import {StopRotator,type StopItem} from '@/components/home/StopRotator'
 
 /**
@@ -64,18 +66,22 @@ export function HubNextUpWaiting({title,kicker}:{title:string;kicker:string}){
 }
 
 /**
- * The matchday card (Universe bridge): ONE companion offer — DUBID before the round or OFFSIDES near kick-off — for the soonest
- * verified fixture of a club on the roll. Nothing is shown without a verified fixture; a failing feed shows nothing.
+ * The matchday card (Connected Football, 27.10.2026): ONE companion action, and only one the target can really do —
+ * the same match on OFFSIDES near kick-off, or the club's DUBID league with an open round (lib/universe/discovery.ts).
+ * The match is context; the promise names the league and the round. Nothing true to offer, or a catalog that did not
+ * answer → no card at all.
  */
 export async function HubMatchday({open,locale,kicker}:{open:readonly Club[];locale:string;kicker:string}){
- const now=new Date(),feed=await getFixtureFeed(now).catch(()=>null)
- const ids=new Set(open.map(c=>c.id)),hit=bestOffer((feed?.fixtures??[]).filter(f=>ids.has(f.clubId)),now)
+ const now=new Date(),[feed,cat]=await Promise.all([getFixtureFeed(now).catch(()=>null),getCatalog().catch(()=>null)])
+ if(!feed||!cat)return null
+ const ids=new Set(open.map(c=>c.id)),hit=companionFor(feed.fixtures.filter(f=>ids.has(f.clubId)),cat,now)
  if(!hit)return null
- const l=livery(hit.fixture.clubId)
- return <section className="wkh-lm wkh-uv" aria-label={hit.offer.name} data-testid="hub-matchday">
-  <p className="wk-banner wkh-red">{kicker}</p>
+ const l=livery(hit.fixture.clubId),a=hit.action
+ const href=goHref(a.href,`matchday-${a.family}`,hit.fixture.clubId)??a.href
+ return <section className="wkh-lm wkh-uv" aria-label={a.copy.title} data-testid="hub-matchday" data-family={a.family} data-reason={a.reasonCode}>
+  <p className="wk-banner wkh-red">{a.family==='dubid'?a.copy.kicker:kicker}</p>
   <p className="wkh-uv-line"><b>{l?.name??hit.fixture.clubId}</b> {hit.fixture.home} – {hit.fixture.away}</p>
-  <p className="wkh-uv-line">{hit.offer.line}</p>
-  <a className="wk-btn min-h-tap" href={hit.offer.href} rel="noopener" data-moment={hit.offer.moment}>{hit.offer.cta}</a>
+  <p className="wkh-uv-line"><b>{a.copy.title}</b> {a.copy.line}</p>
+  <a className="wk-btn min-h-tap" href={href} data-moment={a.family==='dubid'?'before_round':'kickoff_live'}>{a.copy.cta}</a>
  </section>
 }

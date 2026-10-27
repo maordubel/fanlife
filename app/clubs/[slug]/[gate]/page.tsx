@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import {Suspense} from 'react'
+import {NextStep} from '@/components/universe/NextStep'
 import {REGISTRY} from '@/lib/master/registry'
 import {notFound} from 'next/navigation'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
@@ -29,6 +31,7 @@ export default async function Page({params,searchParams}:{params:{slug:string;ga
   {!readiness.playable?<section className="game-panel wga-locked" data-testid="gate-locked"><h2>{copy.locked}</h2><p>{copy.lockedNote}</p><Link className="game-button" href={`/clubs/${club.identity.id}?lang=${locale}`}>{copy.backToClub}</Link></section>:<>
    {readiness.state==='PARTIAL'&&<p className="wk-cap white wga-partial">{copy.partial}</p>}
    {await View({club,locale,copy:copy as never,round,gameKey,searchParams,state:readiness.state})}
+   {!compact&&<Suspense fallback={null}><NextStep gate={gate.key} club={club.identity.id} name={club.identity.name} locale={locale}/></Suspense>}
   </>}
  </main></ClubSurface>
 }
