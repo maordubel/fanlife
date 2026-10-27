@@ -62,3 +62,12 @@ describe('the boards and the radar (owner, 27.10.2026)',()=>{
   expect(readFileSync('components/highlights/Theatre.tsx','utf8')).toMatch(/drawRadar\(rc/)
  })
 })
+
+describe('the players (owner, 27.10.2026: polish)',()=>{
+ it('a man is drawn in half pixels: 15 px tall on the screen, the run cycle has four frames and a body that rises',async()=>{
+  const {readFileSync}=await import('node:fs'),src=readFileSync('components/highlights/sprite.ts','utf8')
+  expect(src).toMatch(/const CW=32,CH=40,FX=16,FY=35/)
+  expect(src).toMatch(/c\.scale\(k\/2,k\/2\)/)
+  expect(src).toMatch(/function outline\(/)
+ })
+})
