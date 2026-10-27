@@ -53,7 +53,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  if(section==='more')return shell(<MoreMenu owner={owner}/>)
  if(section==='players')return shell(<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>)
  if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features} lab={(['trivia','timeline','memory','league'] as const).find(g=>g===searchParams.lab)??null}/>:view==='missions'?<Suspense fallback={<p className="desk-state" role="status">Fitting every mission to every club…</p>}><MissionsDesk features={features}/></Suspense>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<><ExperienceCard features={features}/><div className="crm-exps"><MissionsCard features={features}/></div></>}/>)
- if(section==='advertising'){const named=state.clubs.map(c=>({id:c.id,name:c.name})).sort((a,b)=>a.name.localeCompare(b.name));return shell(<><Suspense fallback={<p className="desk-state" role="status">Checking DUBID and OFFSIDES…</p>}><ConnectedDesk clubs={named}/></Suspense><AdsDesk initial={await readPromo()} clubs={named}/></>)}
+ if(section==='advertising'){const named=state.clubs.map(c=>({id:c.id,name:c.name,status:c.status})).sort((a,b)=>a.name.localeCompare(b.name));return shell(<><Suspense fallback={<p className="desk-state" role="status">Checking DUBID and OFFSIDES…</p>}><ConnectedDesk clubs={named}/></Suspense><AdsDesk initial={await readPromo()} clubs={named}/></>)}
  if(section==='market')return shell(<MarketDesk/>)
  if(section==='community')return shell(<CommunityDesk/>)
  const runs=await readRuns()

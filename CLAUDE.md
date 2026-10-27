@@ -3229,3 +3229,13 @@ Every FAN LIFE picture carries the real FAN LIFE badge (never the word set in ty
 way its shirt does (`scripts/marketing/kit/poster.mjs`, `config/clubs.json` from `livery()`); the club's own colour is
 never a rival ban of itself. 19:00 daily is a carousel for one open club — its nights since 1980, its gates, or love for
 its fans — with the club's own tags (`carousel()` in build-plan). New art is ordered from docs/fanlife/52-social-art-prompts.md. Launch phase (owner, 27.10.2026): 17:00 a second gate and 21:00 a second story quiz, each for another club; the 15:00 OFFSIDES slot is its own "Today's Central Arenas" (gold plate, JOIN THE BATTLE, QR to offsides.dubelteam.com — the only OFFSIDES address).
+
+## 128 · A discovery unit promises only what the target can do, and shows only when it may (27.10.2026)
+
+Owner's audit `FANLIFE_CONNECTED_CODE_AUDIT_2026-10-27` (CF-01…CF-10).
+1. **One decision, three readers:** `lib/universe/hub.ts → hubDecision` (matchday card, `/api/universe/companion` re-check, the Advertising desk). `matchdayDecision` returns every candidate with a stage — eligible · selected · suppressed · ineligible; the desk never says "shown" for a card the hub did not draw, and says the visitor's own snooze is invisible to it.
+2. **Every discovery surface is a `components/universe/DiscoveryUnit`:** snooze per family (× = 7 days, shared with the banner and the DUBID strip), `data-discovery-unit`/`data-up` (one unit on screen), `expiresAt` = the real deadline (DUBID lock − 15 min, OFFSIDES kick-off), re-check when a tab returns. A unit with `after={club,gate}` stays hidden until `completeRun` announces a result (`fanlife:run-complete`) — the next step after a game never appears over a board in play.
+3. **The promise follows the capability:** DUBID copy and `format=` follow which of five/full can submit; OFFSIDES is JOIN only when an open public arena exists (`worker_marketing_live_data.arenas` counts public + open + not archived + no password), otherwise START one. Links carry `lang` and `src` for the way back.
+4. **Switches:** `features.universeOff` ('dubid' · 'offsides' · 'legends' · 'life' · 'club:<id>' · '<product>:<id>') plus `registry.ts` `enabled/heldOut` hold a product out of every unit and of the social plan's live slots.
+5. **LIFE Continue** asks `lib/life/universal/compat.ts` — the same rule `Life.load` uses — so a door never says Continue for a save the engine would refuse.
+6. **Outcome:** companions report `reportOutcome` → `shared.handoff_outcome` (ecosystem 0006, contract v9); `shared.v_handoff_outcome` is the funnel (service role).

@@ -18,7 +18,7 @@ import {worldFor} from '@/lib/clubs/world'
 import {Suspense} from 'react'
 import {LegendsBanner} from '@/components/legends/ClubBanner'
 import {ClubLifeCard} from '@/components/clubs/ClubLifeCard'
-import {lifeEntry} from '@/lib/clubs/life/entry'
+import {lifeEntry,lifeCompatFor} from '@/lib/clubs/life/entry'
 import {todayInIsrael} from '@/lib/date/israel'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
@@ -47,7 +47,7 @@ export default async function Play({params,searchParams}:{params:{slug:string};s
     copy={{soon:c.status==='paused'?copy.paused:games.comingSoon,gateWord:copy.wallGate,all:copy.wkkAll,quick:copy.playQuick,deep:copy.playDeep,archive:copy.wkkArchiveShort,quickNote:copy.playQuickNote,deepNote:copy.playDeepNote,archiveNote:copy.playArchiveNote,show:copy.wkkShowGates,pick:copy.homeToday,mark:{best:games.best,played:copy.wkkPlayed,fresh:copy.wkkFresh,xi:games.xiSaved}}}/>}
  {core&&anyOpen&&<div className="wkk-playextras">
    <div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>
-   <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id}/>
+   <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} compat={life.href&&core?lifeCompatFor(core.data):null}/>
   </div>}
  </main></ClubSurface>
 }

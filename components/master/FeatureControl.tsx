@@ -2,6 +2,7 @@
 import {useState} from 'react'
 import {EXPERIENCE_GATES,FEATURE_TEXT,type ExperienceGate,type Features} from '@/lib/features'
 
+const UNIVERSE_PRODUCTS:[string,string][]=[['dubid','DUBID'],['offsides','OFFSIDES'],['legends','LEGENDS MANAGER'],['life','LIFE']]
 const GATE_LABEL:Record<ExperienceGate,string>={trivia:'Gate 2 · Trivia',timeline:'Gate 13 · Timeline',memory:'Gate 6 · Memory'}
 /**
  * Control room → Settings → Features (ADR-fanlife-0012). Each switch opens a door for fans; while it is off only your
@@ -25,7 +26,9 @@ export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{
    {row('friendlies')}
    {row('highlights')}
    {row('peoplesChoice')}
-   {row('universe')}
+   {row('universe',<fieldset className="crm-gates"><legend>Shown in discovery (matchday card, next step after a game)</legend>{UNIVERSE_PRODUCTS.map(([id,label])=>{const on=!f.universeOff.includes(id);return <label key={id} className="pcc-chip" data-on={on||undefined}><input type="checkbox" className="sr-only" checked={on} disabled={api.busy} onChange={()=>{const next=on?[...f.universeOff,id]:f.universeOff.filter(x=>x!==id);void save({universeOff:next},`${label} ${on?'switched off in':'back in'} discovery.`)}}/>{label}</label>})}
+    {clubs.length?<><p className="desk-fine">Clubs held out of every discovery card:</p>{clubs.map(c=>{const key=`club:${c.id}`,on=!f.universeOff.includes(key);return <label key={c.id} className="pcc-chip" data-on={on||undefined}><input type="checkbox" className="sr-only" checked={on} disabled={api.busy} onChange={()=>{const next=on?[...f.universeOff,key]:f.universeOff.filter(x=>x!==key);void save({universeOff:next},`${c.name} ${on?'held out of':'back in'} discovery.`)}}/>{c.name}</label>})}</>:null}
+    <p className="desk-fine">A product or club switched off here is never offered — not on the hub card, not after a game, and the Advertising desk says so. Nothing is deleted.</p></fieldset>)}
    {row('lifeRush')}
   </ul>
  </section>

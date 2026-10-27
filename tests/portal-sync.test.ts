@@ -504,6 +504,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261026090000_worker_marketing_tick.sql', // 26.10.2026: the plan ticks from pg_cron — standalone (docs/fanlife/51-marketing-telegram.md)
       '20261026180000_worker_marketing_kit.sql', // 26.10.2026: each post travels with its Social Kit v2 kit — standalone
       '20261027090000_worker_marketing_live.sql', // 27.10.2026: plan v3 — live slots (results, next up, DUBID round, OFFSIDES today) — standalone
+      '20261027170000_worker_live_open_arenas.sql', // 27.10.2026: audit CF-03 — only joinable OFFSIDES arenas count as open — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

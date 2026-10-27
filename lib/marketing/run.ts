@@ -1,6 +1,7 @@
 import 'server-only'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
+import {serverFeatures} from '@/lib/features-server'
 import {composeDubid, composeFixtures, composeOffsides, composeResults, isLiveKind, type Composed, type LiveData} from './live'
 
 /** The database side of the social plan (service role, server only). */
@@ -30,6 +31,9 @@ export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData 
       cache.data ??= await rpc<LiveData>('worker_marketing_live_data', {})
       const data = cache.data ?? {dubid: [], offsides: [], posted: []}
       out = p.kind === 'fixtures' ? composeFixtures(feed.fixtures, CORE_CLUB_IDS, data, now, NAMES) : composeResults(feed.results ?? [], CORE_CLUB_IDS, data, now, NAMES)
+    } else if ((await serverFeatures().catch(() => null))?.universeOff.includes(p.kind!)) {
+      // CF-06: a product switched off in the control room is not advertised by the social plan either
+      out = {skip: `${p.kind} is switched off in Settings → Features → Universe bridge`}
     } else {
       cache.data ??= await rpc<LiveData>('worker_marketing_live_data', {})
       out = cache.data ? (p.kind === 'dubid' ? composeDubid(cache.data, now) : composeOffsides(cache.data, now)) : {skip: 'live data unavailable'}

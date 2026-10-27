@@ -31,7 +31,8 @@ export default async function Page({params,searchParams}:{params:{slug:string;ga
   {!readiness.playable?<section className="game-panel wga-locked" data-testid="gate-locked"><h2>{copy.locked}</h2><p>{copy.lockedNote}</p><Link className="game-button" href={`/clubs/${club.identity.id}?lang=${locale}`}>{copy.backToClub}</Link></section>:<>
    {readiness.state==='PARTIAL'&&<p className="wk-cap white wga-partial">{copy.partial}</p>}
    {await View({club,locale,copy:copy as never,round,gameKey,searchParams,state:readiness.state})}
-   {!compact&&<Suspense fallback={null}><NextStep gate={gate.key} club={club.identity.id} name={club.identity.name} locale={locale}/></Suspense>}
+   {/* CF-01: rendered for every gate, shown only once the game has put its result on screen (DiscoveryUnit `after`) */}
+   <Suspense fallback={null}><NextStep gate={gate.key} club={club.identity.id} name={club.identity.name} locale={locale} floating={compact}/></Suspense>
   </>}
  </main></ClubSurface>
 }

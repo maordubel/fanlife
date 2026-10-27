@@ -5,8 +5,8 @@ import {crestUrl} from '@/ecosystem/crests/index.mjs'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery} from '@/lib/club-livery'
-import {companionFor} from '@/lib/universe/discovery'
-import {getCatalog} from '@/lib/universe/catalog'
+import {hubDecision,originLang} from '@/lib/universe/hub'
+import {DiscoveryUnit} from '@/components/universe/DiscoveryUnit'
 import {goHref} from '@/lib/ecosystem/links'
 import {StopRotator,type StopItem} from '@/components/home/StopRotator'
 
@@ -72,16 +72,17 @@ export function HubNextUpWaiting({title,kicker}:{title:string;kicker:string}){
  * answer → no card at all.
  */
 export async function HubMatchday({open,locale,kicker}:{open:readonly Club[];locale:string;kicker:string}){
- const now=new Date(),[feed,cat]=await Promise.all([getFixtureFeed(now).catch(()=>null),getCatalog().catch(()=>null)])
- if(!feed||!cat)return null
- const ids=new Set(open.map(c=>c.id)),hit=companionFor(feed.fixtures.filter(f=>ids.has(f.clubId)),cat,now)
+ const d=await hubDecision(open,new Date(),{src:'hub',lang:originLang(locale)}).catch(()=>null),hit=d?.selected
  if(!hit)return null
  const l=livery(hit.fixture.clubId),a=hit.action
  const href=goHref(a.href,`matchday-${a.family}`,hit.fixture.clubId)??a.href
- return <section className="wkh-lm wkh-uv" aria-label={a.copy.title} data-testid="hub-matchday" data-family={a.family} data-reason={a.reasonCode}>
-  <p className="wk-banner wkh-red">{a.family==='dubid'?a.copy.kicker:kicker}</p>
-  <p className="wkh-uv-line"><b>{l?.name??hit.fixture.clubId}</b> {hit.fixture.home} – {hit.fixture.away}</p>
-  <p className="wkh-uv-line"><b>{a.copy.title}</b> {a.copy.line}</p>
-  <a className="wk-btn min-h-tap" href={href} data-moment={a.family==='dubid'?'before_round':'kickoff_live'}>{a.copy.cta}</a>
- </section>
+ // CF-02/05: the card is a discovery unit — snoozes, the one-unit-on-screen rule and its own deadline apply to it too
+ return <DiscoveryUnit unit="matchday" family={a.family} actionId={a.id} expiresAt={a.expiresAt} recheck="/api/universe/companion">
+  <section className="wkh-lm wkh-uv" aria-label={a.copy.title} data-testid="hub-matchday" data-family={a.family} data-reason={a.reasonCode} data-intent={a.intent}>
+   <p className="wk-banner wkh-red">{a.family==='dubid'?a.copy.kicker:kicker}</p>
+   <p className="wkh-uv-line"><b>{l?.name??hit.fixture.clubId}</b> {hit.fixture.home} – {hit.fixture.away}</p>
+   <p className="wkh-uv-line"><b>{a.copy.title}</b> {a.copy.line}</p>
+   <a className="wk-btn min-h-tap" href={href} data-moment={a.family==='dubid'?'before_round':'kickoff_live'}>{a.copy.cta}</a>
+  </section>
+ </DiscoveryUnit>
 }
