@@ -45,13 +45,17 @@ export function drawUpright(c:Ctx,look:Look,pose:Pose,phase:number,PALETTE:Palet
  // head
  px(c,ox-1,y0,3,1,hair);px(c,ox-1,y0+1,3,2,skin);px(c,ox-1,y0+1,1,1,hair)
 }
-/** the shadow, the cell, and the pose's rotation for a dive, a slide or a man on the floor */
-export function drawMan(c:Ctx,cell:HTMLCanvasElement,look:Look,pose:Pose,phase:number,face:-1|1,x:number,y:number,dive:-1|1|undefined,PALETTE:Palette){
+/**
+ * The shadow, the cell, and the pose's rotation for a dive, a slide or a man on the floor. `k` is the camera's scale at the
+ * man's depth (a man on the far touchline is drawn smaller than one under the camera), `lift` how high a diving keeper is off the
+ * ground in pixels — his shadow stays on the grass. Positions snap to the canvas's half pixels (`RES` 2 in the theatre).
+ */
+export function drawMan(c:Ctx,cell:HTMLCanvasElement,look:Look,pose:Pose,phase:number,face:-1|1,x:number,y:number,dive:-1|1|undefined,PALETTE:Palette,k=1,lift=0){
  const g=cell.getContext('2d')!;g.clearRect(0,0,cell.width,cell.height)
- const flat=pose==='dive'||pose==='down'||pose==='slide'
+ const flat=pose==='dive'||pose==='down'||pose==='slide',snap=(v:number)=>Math.round(v*2)/2
  drawUpright(g,look,flat?'stand':pose,phase,PALETTE)
- c.fillStyle=PALETTE.shadow;c.beginPath();c.ellipse(Math.round(x),Math.round(y),flat?7:4,2,0,0,Math.PI*2);c.fill()
- c.save();c.translate(Math.round(x),Math.round(y))
+ c.fillStyle=PALETTE.shadow;c.beginPath();c.ellipse(snap(x),snap(y),(flat?7:4)*k,2*k,0,0,Math.PI*2);c.fill()
+ c.save();c.translate(snap(x),snap(y-lift));c.scale(k,k)
  if(flat){const dir=pose==='dive'?(dive??face):face,ang=(pose==='slide'?62:90)*Math.PI/180*dir;c.translate(0,pose==='dive'?-4:-1);c.rotate(ang)}
  if(face<0&&!flat)c.scale(-1,1)
  c.drawImage(cell,-8,-18);c.restore()
