@@ -6,7 +6,8 @@ import {closingFor,goalGraphicFor,sceneFor,storyOf,type Scene} from '@/lib/highl
 import {attackDir,endsChange,type Dir} from '@/lib/highlights/pitch'
 import {shirtArt,surname,teamMark} from '@/lib/highlights/board'
 import {CELEBRATIONS,type Celebration,type Moment,type Reel,type ReelPlayer,type ReelTeam} from '@/lib/highlights/types'
-import {H,NARROW,RES,WIDE,draw,drawEnds,freshCam,tagAt} from './paint'
+import {BOARDS,H,NARROW,RADAR_H,RADAR_W,RES,WIDE,draw,drawEnds,drawRadar,freshCam,tagAt} from './paint'
+import {preloadBoards} from './boards'
 import {Lineups} from './Lineups'
 import {Shirt} from './Shirt'
 import css from './theatre.module.css'
@@ -29,7 +30,7 @@ type Phase={k:'lineups'}|{k:'title';i:number}|{k:'ends';i:number;why:Ends}|{k:'s
 /** a live match is watched in parts: the moments after `from` up to the stop at `to`; only the last part has the closing card */
 export type TheatreSegment={from:number;to:number;outro:boolean}
 export type TheatreSound=(n:'kick'|'goal'|'concede'|'whistle'|'final'|'save')=>void
-export type TheatreAllow={fx:Celebration[];yellowCard:boolean;/** the paint of this page (rule 95) — `paletteFor()` on the server */palette?:Palette}
+export type TheatreAllow={fx:Celebration[];yellowCard:boolean;/** the paint of this page (rule 95) — `paletteFor()` on the server */palette?:Palette;/** a club page: the pitch-side banners print in one ink */mono?:boolean}
 const ALL:TheatreAllow={fx:[...CELEBRATIONS],yellowCard:true}
 const LETTERS:Record<Celebration,string>={goal:'Goal!',hattrick:'Hat-trick!','fire-goal':'Goal!',win:'The win',champion:'Champions!',loss:'Beaten','game-over':'Game over'}
 const ENDS:Record<Ends,string>={'half-time':'Half time · the teams change ends','extra-time':'Extra time · the teams change ends','extra-time-interval':'Extra time, second period · the teams change ends'}
@@ -49,7 +50,14 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
  // the minute the scoreboard's arrows read: which way each side is attacking now
  const [clock,setClock]=useState<number>(()=>segment?.from??0)
  useEffect(()=>{onClock?.(clock)},[clock]) // eslint-disable-line react-hooks/exhaustive-deps
- const canvas=useRef<HTMLCanvasElement>(null),raf=useRef(0),speedRef=useRef(1)
+ const canvas=useRef<HTMLCanvasElement>(null),radar=useRef<HTMLCanvasElement>(null),root=useRef<HTMLElement>(null),raf=useRef(0),speedRef=useRef(1)
+ BOARDS.mono=!!allow.mono
+ useEffect(()=>{preloadBoards()},[])
+ // full screen where the browser offers it (Android, desktop): the same element, so the page's paint and tokens travel with it
+ const [canFull,setCanFull]=useState(false),[full,setFull]=useState(false)
+ useEffect(()=>{setCanFull(!!document.fullscreenEnabled);const on=()=>setFull(document.fullscreenElement===root.current);document.addEventListener('fullscreenchange',on);return()=>document.removeEventListener('fullscreenchange',on)},[])
+ const toggleFull=()=>{const el=root.current;if(!el)return;if(document.fullscreenElement){void document.exitFullscreen().catch(()=>{});return}
+  void el.requestFullscreen?.().then(()=>{const o=screen.orientation as ScreenOrientation&{lock?:(o:string)=>Promise<void>};return o.lock?.('landscape')}).catch(()=>{})}
  speedRef.current=speed
  useEffect(()=>{setReduced(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false);const q=window.matchMedia?.('(max-width: 619px)');if(!q)return;const on=()=>setNarrow(q.matches);on();q.addEventListener?.('change',on);return()=>q.removeEventListener?.('change',on)},[])
  const closingAny=useMemo(()=>closingFor(reel),[reel]),closing=closingAny&&allow.fx.includes(closingAny)?closingAny:null
@@ -110,7 +118,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
   const step=(now:number)=>{
    const dt=Math.min(.05,(now-last)/1000)*speedRef.current;last=now;t=reduced?stopAt:Math.min(stopAt,t+dt)
    sc.cues.forEach((q,qi)=>{if(fired.has(qi)||q.t>t)return;fired.add(qi);onCue(sc,q)})
-   draw(c,sc,t,cam,allow.yellowCard,pal,reel.teams,VW)
+   draw(c,sc,t,cam,allow.yellowCard,pal,VW);const rc=radar.current?.getContext('2d');if(rc)drawRadar(rc,sc,t,cam,pal,reel.teams,VW)
    const holder=currentTag(sc,t,named);if(holder){const a=sc.actors.find(x=>x.id===holder)!,at=tagAt(sc,holder,t,cam,VW),text=`${a.no} ${surname(a.name)}`;setTag(old=>old&&old.text===text&&Math.abs(old.x-at.x)<.4&&Math.abs(old.y-at.y)<.4?old:{...at,text,side:a.team===1?1:0})}
    if(t<stopAt)raf.current=requestAnimationFrame(step)
    else window.setTimeout(()=>next(phase.i),reduced?2200:m.kind==='goal'?1300:500)
@@ -123,6 +131,8 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
     if(g?.kind==='film'){const ok=allow.fx.includes(g.film)?g.film:null;setFx(ok);setLetters(ok?null:LETTERS[g.film]);setCard({side:m.side,player:who,against:false,hattrick:g.film==='hattrick'})}
     else if(g?.kind==='against'){setFx(null);setLetters(null);setCard({side:m.side,player:who,against:true,hattrick:g.hattrick})}
     sound?.(reel.mine===null||m.side===reel.mine?'goal':'concede')
+    // a phone that can buzz feels the goal: a long buzz for ours, a short one for theirs (never under reduced motion)
+    if(!reduced&&typeof navigator!=='undefined'&&'vibrate' in navigator)try{navigator.vibrate(reel.mine===null||m.side===reel.mine?[60,40,120]:40)}catch{/* not every browser lets a page buzz */}
     setCaption(`GOAL · ${m.label??`${m.minute}′`} · ${who?`${who.no} ${who.name}`:reel.teams[m.side]!.name}${ast&&ast.id!==who?.id?` — assist ${ast.name}`:''}`)}
    else if(q.kind==='kick')sound?.('kick')
    else if(q.kind==='save'){sound?.('save');setCaption(m.kind==='block'?'Blocked!':'Saved!')}
@@ -144,7 +154,8 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
  const T=reel.teams,dir0=attackDir(clock,0),live=phase.k==='scene'||phase.k==='title'||phase.k==='ends'
  const minute=live?(scenes[(phase as {i:number}).i]?.moment.label??`${scenes[(phase as {i:number}).i]?.moment.minute??0}′`):phase.k==='break'||phase.k==='quiet'?`${segment?.to??0}′`:phase.k==='closing'||phase.k==='done'?'FT':'KO'
  const gkey=`${phase.k}:${(phase as {i?:number}).i??''}`
- return <section className={css.theatre} dir="ltr" data-testid="highlights" data-phase={phase.k} aria-label={`Highlights: ${T[0].name} v ${T[1].name}`}>
+ const at=phase.k==='scene'||phase.k==='title'||phase.k==='ends'?phase.i:phase.k==='closing'||phase.k==='done'||phase.k==='break'?scenes.length:-1
+ return <section ref={root} className={css.theatre} data-full={full||undefined} dir="ltr" data-testid="highlights" data-phase={phase.k} aria-label={`Highlights: ${T[0].name} v ${T[1].name}`}>
   {phase.k==='lineups'?<Lineups teams={T} onStart={()=>{sound?.('whistle');setPhase({k:'title',i:0})}}/>:null}
   <div className={css.screen} data-frame={narrow?'narrow':'wide'} hidden={phase.k==='lineups'}>
    <canvas ref={canvas} width={VW*RES} height={H*RES} className={css.canvas} aria-hidden="true"/>
@@ -158,15 +169,32 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
    {card&&phase.k==='scene'?(card.against?<Against key={`a:${gkey}`} team={T[card.side]} player={card.player} hattrick={card.hattrick} from={attackDir(clock,card.side)}/>:<Scorer key={`s:${gkey}`} team={T[card.side]} player={card.player}/>):null}
    {phase.k==='done'?<div className={css.final}><p className={css.finalScore}><span>{T[0].name}</span><b>{reel.final[0]} – {reel.final[1]}</b><span>{T[1].name}</span></p>{reel.pens?<p className={css.small}>{reel.pens[0]}–{reel.pens[1]} on penalties</p>:null}<p className={css.small}>Full time</p></div>:null}
   </div>
-  <p className={css.caption} role="status" aria-live="polite">{caption||' '}</p>
+  <div className={css.deck} hidden={phase.k==='lineups'}>
+   <canvas ref={radar} width={RADAR_W*RES} height={RADAR_H*RES} className={css.radar} aria-hidden="true"/>
+   <div className={css.lower}>
+    <p className={css.caption} role="status" aria-live="polite">{caption||'\u00a0'}</p>
+    <Progress scenes={scenes} at={at} teams={T}/>
+   </div>
+  </div>
   <p className={css.controls}>
    {phase.k==='break'?null:phase.k==='done'?<button type="button" className={`${css.btn} min-h-tap`} onClick={again}>Watch again</button>:<>
-    <button type="button" className={`${css.btn} min-h-tap`} onClick={skipScene}>{phase.k==='lineups'?'Kick off':'Next highlight'}</button>
-    <button type="button" className={`${css.btn} min-h-tap`} aria-pressed={speed===2} onClick={()=>setSpeed(speed===1?2:1)}>{speed===1?'×2':'×1'}</button>
-    <button type="button" className={`${css.btn} ${css.ghost} min-h-tap`} onClick={toEnd}>{outro?'Skip to full time':`Skip to ${segment!.to}′`}</button></>}
-   <span className={css.count}>{scenes.length} highlight{scenes.length===1?'':'s'}</span>
+    <button type="button" className={`${css.btn} min-h-tap`} onClick={skipScene}><span aria-hidden="true" className={css.ico}>⏭</span>{phase.k==='lineups'?'Kick off':<><span className={css.long}>Next highlight</span><span className={css.short}>Next</span></>}</button>
+    <button type="button" className={`${css.btn} min-h-tap`} aria-pressed={speed===2} aria-label={speed===1?'Double speed':'Normal speed'} onClick={()=>setSpeed(speed===1?2:1)}>{speed===1?'×2':'×1'}</button>
+    <button type="button" className={`${css.btn} ${css.ghost} min-h-tap`} onClick={toEnd}><span aria-hidden="true" className={css.ico}>⏩</span>{outro?<><span className={css.long}>Skip to full time</span><span className={css.short}>FT</span></>:`To ${segment!.to}′`}</button></>}
+   {canFull?<button type="button" className={`${css.btn} ${css.ghost} ${css.full} min-h-tap`} aria-pressed={full} aria-label={full?'Leave full screen':'Full screen'} onClick={toggleFull}><span aria-hidden="true">{full?'⤡':'⤢'}</span></button>:null}
   </p>
  </section>
+}
+/**
+ * The reel's running order: one notch per highlight — a goal stands taller in the scoring side's shirt — what has been shown
+ * filled, the one on screen lit. Nothing about the score that is still to come: a notch says a goal is coming only once it plays.
+ */
+function Progress({scenes,at,teams}:{scenes:readonly Scene[];at:number;teams:Reel['teams']}){
+ if(scenes.length<2)return null
+ return <ol className={css.progress} aria-label={`Highlight ${Math.min(scenes.length,Math.max(1,at+1))} of ${scenes.length}`}>
+  {scenes.map((sc,i)=>{const seen=i<=at,goal=seen&&sc.moment.kind==='goal'
+   return <li key={sc.id} data-state={i<at?'done':i===at?'now':'next'} data-goal={goal||undefined} style={goal?{['--seg' as string]:teams[sc.moment.side]!.kit.shirt}:undefined}/>})}
+ </ol>
 }
 /** the club's crest where the repo holds one, otherwise the colour chip */
 function Mark({t}:{t:ReelTeam}){const m=teamMark(t)

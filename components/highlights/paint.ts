@@ -3,6 +3,7 @@ import {actorAt,ballAt,type Scene} from '@/lib/highlights/scenes'
 import {LENGTH,WIDTH,attackDir,toWorld} from '@/lib/highlights/pitch'
 import type {Reel} from '@/lib/highlights/types'
 import {drawMan,type Look} from './sprite'
+import {boardRow} from './boards'
 
 /**
  * THE PICTURE — how the theatre paints one frame of a highlight (moved out of `Theatre.tsx` on 27.10.2026 so a frame can be
@@ -30,6 +31,8 @@ export const MAN_PX=15,PX_UP=MAN_PX/1.8
 let W=WIDE,VIEW_L=W/S
 const view=(w:number)=>{W=w;VIEW_L=W/S}
 export type Cam={L:number;D:number;t?:number}
+/** whether this page prints the boards in one ink (rule 95) — set by the theatre before it draws */
+export const BOARDS={mono:false}
 const lerp=(a:number,b:number,u:number)=>a+(b-a)*u
 const VIEW_D=H/(S*YS)
 const depth=(D:number)=>ZN+WIDTH-D
@@ -43,12 +46,12 @@ export const freshCam=():Cam=>({L:NaN,D:NaN,t:0})
 const snap=(v:number)=>Math.round(v*RES)/RES
 
 /** one frame of a scene at scene time `t` — the camera eases in scene time, so a slow phone and the ×2 button frame the same shot */
-export function draw(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,yellow:boolean,P:Palette,teams:Reel['teams'],w:number){
+export function draw(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,yellow:boolean,P:Palette,w:number){
  view(w);c.setTransform(RES,0,0,RES,0,0)
  const bs=ballAt(sc.ball,t),bw=toWorld(bs.x,bs.y,sc.dir)
  // the camera leads the ball a little toward the goal it is going to, keeps the goal mouth in the frame once the ball is near it,
- // and never shows past the stands
- const near=Math.max(0,1-Math.abs((sc.dir>0?LENGTH:0)-bw.L)/30),want=clampCam(bw.L+sc.dir*4,lerp(bw.D,WIDTH/2,near*.45))
+ // sits a few metres toward the far side, as a main-stand camera does (the far boards in view), and never shows past the stands
+ const near=Math.max(0,1-Math.abs((sc.dir>0?LENGTH:0)-bw.L)/30),want=clampCam(bw.L+sc.dir*4,lerp(bw.D,WIDTH/2,near*.45)-5)
  if(Number.isNaN(cam.L)){cam.L=want.L;cam.D=want.D;cam.t=t}else{const k=1-Math.exp(-Math.max(0,t-(cam.t??t))*5.5);cam.L+=(want.L-cam.L)*k;cam.D+=(want.D-cam.D)*k;cam.t=t}
  c.imageSmoothingEnabled=false
  ground(c,cam,P,t)
@@ -78,7 +81,6 @@ export function draw(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,yellow
   drawMan(c,cellOf(),look,p.pose,stride,face,s.x,s.y,a.dive?((a.dive*sc.dir) as -1|1):undefined,P,s.k,lift)
  }
  if(!ballDrawn)drawBall()
- radar(c,sc,t,cam,P,teams,bw)
 }
 /** where a man's name tag sits on the screen, as a share of the frame (it floats above his head at his depth) */
 export function tagAt(sc:Scene,id:string,t:number,cam:Cam,w:number){
@@ -91,22 +93,18 @@ function ground(c:CanvasRenderingContext2D,cam:Cam,P:Palette,t:number,s=S){
  c.fillStyle=P.ref;c.fillRect(0,0,W,H)
  const far=at(cam.L,-4),near=at(cam.L,WIDTH+4)
  // the crowd in the far stand and the near one, a little restless
- const flick=Math.floor(t*3),fy=far.y-10*far.k
+ const flick=Math.floor(t*3),fy=far.y-11*far.k*(W<WIDE?1.15:1)
  for(let y=0;y<fy;y+=3)for(let x=(y/3)%2?1:0;x<W;x+=3){const k=(x*7+y*13+((x*y+flick)%23===0?3:0))%11;c.fillStyle=k<5?P.skin[k]!:k<8?P.board:P.hair[k%5]!;c.fillRect(x,y,2,2)}
- const ny=near.y+9*near.k
+ const ny=near.y+12*near.k*(W<WIDE?1.15:1)
  for(let y=Math.ceil(ny);y<H;y+=3)for(let x=(y/3)%2?0:1;x<W;x+=3){const k=(x*5+y*11)%11;c.fillStyle=k<5?P.skin[k]!:k<8?P.board:P.hair[k%5]!;c.fillRect(x,y,2,2)}
  // grass, in bands across the length like the cut of a real pitch — each band a trapezoid, narrower at the far side
  const quad=(L0:number,L1:number,D0:number,D1:number)=>{const a=at(L0,D0),b=at(L1,D0),d=at(L1,D1),e=at(L0,D1);c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.lineTo(d.x,d.y);c.lineTo(e.x,e.y);c.closePath();c.fill()}
  c.fillStyle=P.grassB;quad(-40,LENGTH+40,-4,WIDTH+4)
  c.fillStyle=P.grassA;for(let L=-36.75,i=1;L<LENGTH+36.75;L+=5.25,i++)if(i%2)quad(L,L+5.25,-4,WIDTH+4)
- // the boards along both touchlines, the far ones smaller; they slide past with the camera, one message every 72 px of the near side
- c.fillStyle=P.board;c.fillRect(0,Math.floor(fy),W,Math.ceil(10*far.k));c.fillRect(0,Math.floor(near.y),W,Math.ceil(9*near.k)+1)
- c.fillStyle=P.boardText;c.textBaseline='top'
- const step=72,off=((cam.L*s%step)+step)%step
- c.font=`${Math.round(7*far.k*2)/2}px ${caps()}`
- for(let x=-off*far.k-step,i=Math.floor(cam.L*s/step);x<W+step;x+=step*far.k,i++)c.fillText(i%2?'ALL FOOTBALL':'FAN LIFE',snap(x),snap(fy+1))
- c.font=`${Math.round(7*near.k*2)/2}px ${caps()}`
- for(let x=-off*near.k-step,i=Math.floor(cam.L*s/step);x<W+step;x+=step*near.k,i++)c.fillText(i%2?'LEGENDS':'FAN LIFE',snap(x+20),snap(near.y+1))
+ // the boards along both touchlines: our own banners as LED panels (`boards.ts`), the far row smaller and slower
+ const fh=11*far.k*(W<WIDE?1.15:1),nh=12*near.k*(W<WIDE?1.15:1)
+ boardRow(c,{y:snap(fy),h:fh,w:W,scroll:cam.L*s*far.k,t,salt:0,mono:BOARDS.mono,ink:P.ref,bed:P.board,light:P.line})
+ boardRow(c,{y:snap(near.y),h:nh,w:W,scroll:cam.L*s*near.k,t,salt:4,mono:BOARDS.mono,ink:P.ref,bed:P.board,light:P.line})
  // lines: a 12 cm line is a pixel wide wherever it is, so it is drawn point by point along its projection
  c.fillStyle=P.line
  const dot=(p:{x:number;y:number})=>c.fillRect(snap(p.x),snap(p.y),1,1/RES+.5)
@@ -151,21 +149,30 @@ function goal(c:CanvasRenderingContext2D,cam:Cam,P:Palette,gL:number,shake:numbe
  c.fillStyle=P.net;bar(fbB,fbT,.5);bar(nbB,nbT,.5);bar(fbT,nbT,.5);bar(fpT,fbT,.5);bar(npT,nbT,.5);bar(fp,fbB,.5);bar(np,nbB,.5)
  c.fillStyle=P.post;bar(fp,fpT,1.5*fp.k);bar(fpT,npT,1.5*fp.k);bar(np,npT,2*np.k)
 }
-/** the radar: the whole ground in the corner, all twenty-two in their shirts, the ball, and the camera's window */
-function radar(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,P:Palette,teams:Reel['teams'],bw:{L:number;D:number}){
- const RW=46,RH=30,x0=W-RW-4,y0=H-RH-4,kx=RW/LENGTH,ky=RH/WIDTH
- c.globalAlpha=.62;c.fillStyle=P.ref;c.fillRect(x0-1,y0-1,RW+2,RH+2);c.globalAlpha=.5;c.fillStyle=P.grassB;c.fillRect(x0,y0,RW,RH)
- c.globalAlpha=.8;c.fillStyle=P.line;c.fillRect(x0,y0,RW,1);c.fillRect(x0,y0+RH-1,RW,1);c.fillRect(x0,y0,1,RH);c.fillRect(x0+RW-1,y0,1,RH);c.fillRect(x0+Math.round(RW/2),y0,1,RH)
- c.fillRect(x0,y0+Math.round(13.85*ky),Math.round(16.5*kx),1);c.fillRect(x0,y0+Math.round(54.15*ky),Math.round(16.5*kx),1);c.fillRect(x0+Math.round(16.5*kx),y0+Math.round(13.85*ky),1,Math.round(40.3*ky))
- c.fillRect(x0+RW-Math.round(16.5*kx),y0+Math.round(13.85*ky),Math.round(16.5*kx),1);c.fillRect(x0+RW-Math.round(16.5*kx),y0+Math.round(54.15*ky),Math.round(16.5*kx),1);c.fillRect(x0+RW-1-Math.round(16.5*kx),y0+Math.round(13.85*ky),1,Math.round(40.3*ky))
+/**
+ * The radar — its own small canvas beside the caption, never on the picture (owner, 27.10.2026: it hid players in the corner).
+ * The whole ground, all twenty-two in their shirts, the ball, and the camera's window, wider at the far touchline as the lens sees it.
+ */
+export const RADAR_W=110,RADAR_H=72
+export function drawRadar(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,P:Palette,teams:Reel['teams'],w:number){
+ view(w);c.setTransform(RES,0,0,RES,0,0);c.imageSmoothingEnabled=false
+ const bs=ballAt(sc.ball,t),bw=toWorld(bs.x,bs.y,sc.dir)
+ const pad=3,RW=RADAR_W-pad*2,RH=RADAR_H-pad*2,x0=pad,y0=pad,kx=RW/LENGTH,ky=RH/WIDTH
+ c.clearRect(0,0,RADAR_W,RADAR_H)
+ c.fillStyle=P.grassB;c.fillRect(x0,y0,RW,RH)
+ c.fillStyle=P.grassA;for(let i=1;i<20;i+=2)c.fillRect(x0+i*RW/20,y0,RW/20,RH)
+ c.globalAlpha=.85;c.fillStyle=P.line
+ const box=(L0:number,D0:number,L1:number,D1:number)=>{const l=x0+L0*kx,r=x0+L1*kx,tp=y0+D0*ky,bt=y0+D1*ky;c.fillRect(l,tp,r-l,.6);c.fillRect(l,bt,r-l,.6);c.fillRect(l,tp,.6,bt-tp);c.fillRect(r,tp,.6,bt-tp+.6)}
+ box(0,0,LENGTH,WIDTH);c.fillRect(x0+RW/2,y0,.6,RH);box(0,13.84,16.5,54.16);box(LENGTH-16.5,13.84,LENGTH,54.16)
+ c.beginPath();c.ellipse(x0+RW/2,y0+RH/2,9.15*kx,9.15*ky,0,0,Math.PI*2);c.strokeStyle=P.line;c.lineWidth=.6;c.stroke()
  c.globalAlpha=1
- for(const a of sc.actors){if(a.team<0)continue;const p=actorAt(a,t),w=toWorld(p.x,p.y,sc.dir);c.fillStyle=a.role==='gk'?(teams[a.team as 0|1].keeper.shirt):a.kit?.shirt??P.line;c.fillRect(x0+Math.round(w.L*kx)-1,y0+Math.round(w.D*ky),2,2)}
- c.fillStyle=P.ball;if(Math.floor(t*6)%2===0)c.fillRect(x0+Math.round(bw.L*kx),y0+Math.round(bw.D*ky)-1,1,1);else c.fillRect(x0+Math.round(bw.L*kx)-1,y0+Math.round(bw.D*ky)-1,2,2)
- // the camera's window: wider at the far touchline, as the lens sees it
- c.globalAlpha=.55;c.fillStyle=P.line
- const half=(D:number)=>VIEW_L/2/scaleAt(D),fD=Math.max(0,cam.D-VIEW_D*HORIZON),nD=Math.min(WIDTH,cam.D+VIEW_D*(1-HORIZON)),top=y0+Math.round(fD*ky),bot=y0+Math.round(nD*ky)
- const seg=(D:number,y:number)=>{const l=Math.max(x0,x0+Math.round((cam.L-half(D))*kx)),r=Math.min(x0+RW,x0+Math.round((cam.L+half(D))*kx));if(r>l)c.fillRect(l,y,r-l,1)}
- seg(fD,top);seg(nD,bot)
+ for(const a of sc.actors){if(a.team<0)continue;const p=actorAt(a,t),wd=toWorld(p.x,p.y,sc.dir);c.fillStyle=a.role==='gk'?(teams[a.team as 0|1].keeper.shirt):a.kit?.shirt??P.line
+  c.beginPath();c.arc(x0+wd.L*kx,y0+wd.D*ky,1.6,0,Math.PI*2);c.fill();c.lineWidth=.5;c.strokeStyle=P.ref;c.stroke()}
+ c.fillStyle=P.ball;c.beginPath();c.arc(x0+bw.L*kx,y0+bw.D*ky,Math.floor(t*6)%2?1.4:1.1,0,Math.PI*2);c.fill();c.lineWidth=.5;c.strokeStyle=P.ref;c.stroke()
+ // the camera's window
+ const half=(D:number)=>VIEW_L/2/scaleAt(D),fD=Math.max(0,cam.D-VIEW_D*HORIZON),nD=Math.min(WIDTH,cam.D+VIEW_D*(1-HORIZON))
+ c.globalAlpha=.7;c.strokeStyle=P.line;c.lineWidth=.7;c.beginPath()
+ c.moveTo(x0+(cam.L-half(fD))*kx,y0+fD*ky);c.lineTo(x0+(cam.L+half(fD))*kx,y0+fD*ky);c.lineTo(x0+(cam.L+half(nD))*kx,y0+nD*ky);c.lineTo(x0+(cam.L-half(nD))*kx,y0+nD*ky);c.closePath();c.stroke()
  c.globalAlpha=1
 }
 /** the change of ends: the whole ground at a glance, each side's arrow turning round to the other goal */
