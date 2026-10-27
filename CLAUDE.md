@@ -3216,3 +3216,11 @@ Owner: *"I saw graffiti of yours in red text in the school yard."*
 2. **A city that shares its country's street gets a city layer** (`skin.cityLayer`, `cityOf()` in `lib/clubs/life/skins.ts`): its own view, signs and street plate. No other city's landmark, no national flag outside its country.
 3. **What a city built or lost stands only in the years it stood** (`c.o.year` / `?year=`).
 4. **Render target depth is 24-bit** (`stencilBuffer:true`): three r128's depth-only target is 16-bit and flickers on phones (`tests/life-town-depth.test.ts`).
+
+## 127 · The social plan speaks in three voices, with a picture, and only from 1980 on (27.10.2026)
+
+Owner: FAN LIFE is the lead publisher (info, trivia, on this day, its gates, Royal Rumble, Legends Manager); DUBID
+(round openings, how it works) and OFFSIDES (today's arenas, how it works) speak in their own branding; matches and
+results are a separate stream. Every post carries a picture (its own layout, else its app's L-CARD); no fixed post
+names a year, season or decade before 1980. Live slots are composed at send time from real data or stay quiet —
+`lib/marketing/live.ts`, docs/fanlife/51-marketing-telegram.md (v3).

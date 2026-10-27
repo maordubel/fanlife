@@ -1,28 +1,25 @@
 /**
- * FAN LIFE social plan v2 (owner, 26.10.2026): a FIXED marketing plan, FAN LIFE as the lead voice, the other apps
- * promoted on a fixed weekday rotation, and four data slots a day drawn from the clubs' own approved archives
- * through the FAN LIFE trivia forge (English, confidence ≥ 2, exact dates — rule 109):
- *   08:00 On this day (several clubs at once) · 16:00 Nerds only · 18:00 Story quiz · 20:00 Spicy.
- * Matches and results are NOT in this plan any more: they are Final Whistle and Today's Football.
- *
- * Writes supabase/marketing/0006_marketing_plan_v2.sql (updates the 30 days in place, by send_at; a post already
- * sent is never touched). Run: node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts
+ * FAN LIFE social plan v3 (owner, 27.10.2026). Three voices, a picture on every post, nothing from before 1980.
+ *   FAN LIFE (the lead publisher) — 08 On this day · 10 a gate of the app · 14 story quiz · 16 nerds only ·
+ *     18 Royal Rumble / Legends Manager on alternate days · 20 spicy · 22 did you know; 12:00 did you know on Sun/Wed/Fri.
+ *   DUBID — how it works, in its own branding, 12:00 Mon/Thu; a round that opens: live slot 13:00.
+ *   OFFSIDES — how it works, in its own branding, 12:00 Tue/Sat; today's arenas: live slot 15:00.
+ *   Matches and results (not marketing): live slots 09:00 results · 11:00 next up — composed at send time from the
+ *   fixture feed (lib/marketing/live.ts), or quiet.
+ * The data slots come from the clubs' approved archives through the FAN LIFE trivia forge (English, confidence ≥ 2,
+ * exact dates — rule 109). Writes supabase/marketing/0007_marketing_plan_v3.sql and scripts/marketing/plan-v3.json.
+ * Run: node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts
  */
-import {execSync} from 'node:child_process'
 import {writeFileSync} from 'node:fs'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {loadClubBase, CORE_CLUB_IDS} from '../../lib/clubs/resolver'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
-const pools = JSON.parse(execSync(`python3 -c "import json,sys;sys.path.insert(0,'${HERE}');import content as c;print(json.dumps({k:getattr(c,k) for k in ['CAROUSEL','GAMEDAY','REELS','STORIES','DEEP','MORNING','NIGHT']},ensure_ascii=False))"`).toString())
-// kit: the FAN LIFE Social Kit v2 template for this post and its data. Crest NAMES only (crestName, homeCrestName,
-// awayCrestName): the picture resolves them through the shared crest library (ecosystem/crests) when it is drawn.
+// kit: the template for this post and its data. Crest NAMES only (crestName, homeCrestName, awayCrestName): the picture
+// resolves them through the shared crest library (ecosystem/crests) when it is drawn.
 type Kit = {t: string; data: Record<string, unknown>}
-type Item = {app: string; hook: string; body: string; visual: string; url?: string; format?: string; kit?: Kit}
-const FORMAT: Record<string, string> = {CAROUSEL: 'carousel', REELS: 'reel', STORIES: 'story', NIGHT: 'text'}
-const it = (t: string[], k = ''): Item => ({app: t[0] === 'all' ? 'fanlife' : t[0], hook: t[1], body: t[2], visual: t[3], format: FORMAT[k] || 'post'})
-const usedCopy = new Set<string>()
+type Item = {app: string; hook: string; body: string; visual: string; url?: string; kit: Kit}
 
 // ── the archive, read through the forge ────────────────────────────────────────────────────────────────────────────
 type Q = {id: string; template: string; type: string; prompt: string; answer: string; explanation: string; pool?: string; topic?: string; facets?: string[]; factIds?: string[]; source?: {url?: string}}
@@ -38,6 +35,9 @@ for (const id of CORE_CLUB_IDS) {
   const t = r.data.trivia as unknown as {questions: Q[]; pools: Record<string, string[]>}
   clubs.push({id, name: r.data.identity.name, qs: t.questions.filter(q => latin(q.prompt + q.answer + q.explanation)), pools: t.pools})
 }
+// Owner, 27.10.2026: nothing from before 1980. Every year a text names (and the first year of a season) is 1980 or later.
+const YEARS = /\b(1[89]\d\d|20\d\d)(?:\/\d\d)?\b|\b(1[89]\d)0s\b/g
+export const modern = (...texts: string[]) => [...texts.join(' ').matchAll(YEARS)].every(m => Number(m[1] || (m[2] + '0')) >= 1980)
 const NAME = Object.fromEntries(clubs.map(c => [c.id, c.name]))
 const has = (q: Q, f: string) => !!q.facets?.includes(f)
 
@@ -46,7 +46,7 @@ const seen = new Set<string>()
 const RX = /^(.+?) (\d+)-(\d+) (.+?), (?:(.+?), )?(\d{1,2}) ([A-Z][a-z]{2}) (\d{4})\.$/
 for (const c of clubs) for (const q of c.qs) {
   const fact = q.factIds?.[0]
-  if (!fact || seen.has(fact)) continue
+  if (!fact || seen.has(fact) || !modern(q.prompt, q.answer, q.explanation)) continue
   if (q.template === 'fl-match-score' || q.template === 'fl-match-opponent') {
     const m = q.explanation.match(RX)
     if (!m || !MON[m[7]]) continue
@@ -92,6 +92,7 @@ function onThisDay(y: number, m: number, d: number): Item {
     const t = Date.UTC(2001, m - 1, d)
     rows = pick(events.filter(e => e.y < y && Math.abs(Date.UTC(2001, e.m - 1, e.d) - t) <= 3 * 864e5))
   }
+  if (rows.length < 2) throw Error('no on-this-day rows')
   const line = (e: Ev) => exact ? `${e.y} · ${e.name}: ${e.text} — ${y - e.y} years ago` : `${e.d} ${MONTH[e.m]} ${e.y} · ${e.name}: ${e.text}`
   return {app: 'fanlife',
     hook: exact ? `On this day, ${d} ${MONTH[m]} — ${rows.length} clubs, one date.` : `This week in history — ${rows.length} clubs.`,
@@ -103,7 +104,7 @@ function onThisDay(y: number, m: number, d: number): Item {
 }
 
 // a question whose prompt already holds its answer ("… in the Premiership 2018/19. Which campaign?") is not asked
-const fair = (q: Q) => typeof q.answer === "string" && !q.prompt.toLowerCase().includes(q.answer.toLowerCase())
+const fair = (q: Q) => typeof q.answer === "string" && !q.prompt.toLowerCase().includes(q.answer.toLowerCase()) && modern(q.prompt, q.answer, q.explanation)
 const qPick = (filter: (q: Q, c: Club) => boolean, seed: string, used: Set<string>, clubOrder: string[]) => {
   for (const cid of clubOrder) {
     const c = clubs.find(x => x.id === cid)!
@@ -126,7 +127,7 @@ const optionsFor = (q: Q, c: Club, seed: string) => {
   const wrong = pool.filter(x => x !== q.answer && latin(x) && shape(x))
   const pickd: string[] = []
   for (let i = 0; pickd.length < 3 && i < wrong.length * 3 && wrong.length; i++) { const w = wrong[h(seed + i) % wrong.length]; if (!pickd.includes(w)) pickd.push(w) }
-  if (pickd.length < 3) return null
+  if (pickd.length < 3 || !modern(...pickd)) return null
   const opts = [...pickd, q.answer].sort((a, b) => h(seed + a) - h(seed + b))
   return opts
 }
@@ -144,7 +145,7 @@ function nerds(n: number): Item {
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`n${n}${a}`) - h(`n${n}${b}`))
   let got: {q: Q; c: Club} | null = null, opts: string[] | null = null
   for (let t = 0; t < 30 && !opts; t++) {
-    got = qPick(q => L(q) === 4 && MC(q) && !/derby/i.test(q.prompt) && (has(q, 'editorial:2026-10-21') || has(q, 'archive-depth')) && q.prompt.length < 130, `nerd${n}.${t}`, used, order)
+    got = qPick(q => L(q) >= (t < 15 ? 4 : 3) && MC(q) && !/derby/i.test(q.prompt) && (t >= 10 || has(q, 'editorial:2026-10-21') || has(q, 'archive-depth')) && q.prompt.length < 130, `nerd${n}.${t}`, used, order)
     if (got) opts = optionsFor(got.q, got.c, `nerd${n}`)
   }
   if (!got || !opts) throw Error('no nerds question for day ' + n)
@@ -204,66 +205,159 @@ function spicy(n: number): Item {
   return nerds(100 + n)
 }
 
-// ── the fixed rotation of the other apps (12:00), by weekday in Israel ──────────────────────────────────────────────
-const FUCKYOU: Item[] = [
-  ['Weekend list ready? Write it before kick-off, not after.', 'FUCK YOU is the list every supporter keeps in his head. The referee, the VAR room, the striker who missed from a metre.\nWrite it. Keep it. Never name a private person.', 'T6 Meme card, FUCK YOU variant: black, torn white letters.'],
-  ['Everyone has one name on the list. Only clubs, officials and bad decisions.', 'Your FUCK YOU list, saved for the season. Vent where it belongs — not in the family group chat.', 'T6 Meme card, FUCK YOU variant.'],
-  ['The 90th-minute penalty that wasn’t. Add it.', 'Some moments deserve a list. FUCK YOU keeps it for you, season after season.', 'T6 Meme card, FUCK YOU variant, speech bubble.'],
-  ['Before the derby: write it down. After the derby: read it out loud.', 'FUCK YOU — the supporter’s venting list. No private people, ever. Clubs, calls, cup draws: fair game.', 'T6 Meme card, FUCK YOU variant.'],
-  ['Top 3 on your list this season? Comment. Keep it clean of real people.', 'Make yours on FUCK YOU and share the card.', 'T6 Meme card, FUCK YOU variant.'],
-].map(([hook, body, visual]) => ({app: 'fuckyou', hook, body, visual}))
-const byApp = (app: string) => (['CAROUSEL', 'GAMEDAY', 'REELS', 'STORIES', 'DEEP', 'MORNING'] as const)
-  .flatMap(k => (pools[k] as string[][]).filter(t => t[0] === app).map(t => it(t, k)))
-  .filter(x => !/{home}|{away}|odds/i.test(x.hook + x.body))
-const PARTNER: Record<number, {app: string; why: string}> = {
-  0: {app: 'theworker', why: 'Sunday: Hapoel history day'}, 1: {app: 'dubid', why: 'Monday: the round’s points'},
-  2: {app: 'offsides', why: 'Tuesday: European nights'}, 3: {app: 'theworker', why: 'Wednesday: Hapoel archive'},
-  4: {app: 'dubid', why: 'Thursday: lock your lineup before the weekend'}, 5: {app: 'fuckyou', why: 'Friday: the weekend list'},
-  6: {app: 'offsides', why: 'Saturday: matchday predictions'},
-}
-const partnerCount: Record<string, number> = {}
-function partner(dow: number): Item {
-  const {app} = PARTNER[dow]
-  const list = app === 'fuckyou' ? FUCKYOU : byApp(app)
-  for (let k = 0; k < list.length; k++) {
-    const i = partnerCount[app] = (partnerCount[app] ?? -1) + 1
-    const x = list[i % list.length]
-    if (!usedCopy.has(x.hook) || k === list.length - 1) {
-      usedCopy.add(x.hook)
-      if ((x.format || 'post') !== 'post' || app === 'fuckyou') return x
-      const words = x.hook.toUpperCase().split(' '), half = Math.ceil(words.length / 2)
-      const body = x.body.split('\n').filter(l => l.trim() && !/^Slide/i.test(l)).slice(0, 2).map(l => l.length > 60 ? l.slice(0, 57).replace(/\s+\S*$/, '') + '...' : l)
-      return {...x, visual: 'T12-PARTNER: FAN LIFE presents the app.', kit: {t: 'T12-PARTNER', data: {app, feature: [words.slice(0, half).join(' '), words.slice(half).join(' ')].filter(Boolean), body}}}
-    }
+// ── did you know: one sourced line from the archive (heritage, goals, finishes, honours, shirts) ──────────────────────
+const FACT_TEMPLATES = ['fl-heritage-name', 'fl-heritage-origin', 'fl-heritage-connection', 'fl-heritage-crest', 'fl-heritage-ground', 'fl-goal-finisher', 'fl-season-finish', 'fl-honour-season', 'fl-match-scorer', 'fl-kit-sponsor']
+const factUsed = new Set<string>(), factTpl: Record<string, number> = {}, factClub: Record<string, number> = {}
+function fact(n: number): Item {
+  const order = [...clubs.map(c => c.id)].sort((a, b) => (factClub[a] ?? 0) - (factClub[b] ?? 0) || h(`f${n}${a}`) - h(`f${n}${b}`))
+  for (const cid of order) for (const tpl of [...FACT_TEMPLATES].sort((a, b) => (factTpl[a] ?? 0) - (factTpl[b] ?? 0) || h(`ft${n}${a}`) - h(`ft${n}${b}`))) {
+    const c = clubs.find(x => x.id === cid)!
+    const list = c.qs.filter(q => q.template === tpl && !factUsed.has(q.explanation) && modern(q.prompt, q.answer, q.explanation) && q.explanation.length >= 40 && q.explanation.length <= 170 && /\b(19[89]\d|20\d\d)\b/.test(q.explanation)
+      && (tpl !== 'fl-match-scorer' || has(q, 'final')))
+    if (!list.length) continue
+    const q = list[h(`fact${n}${cid}`) % list.length]
+    factUsed.add(q.explanation); factTpl[tpl] = (factTpl[tpl] ?? 0) + 1; factClub[cid] = (factClub[cid] ?? 0) + 1
+    const text = q.explanation.replace(/\s+/g, ' ').trim()
+    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`,
+      hook: `Did you know? ${c.name} edition.`,
+      body: `${text}\n\nOne line from the ${c.name} archive — thousands more, match by match, on FAN LIFE.`,
+      visual: 'L-FACT Did you know: the fact, the club crest.',
+      kit: {t: 'L-FACT', data: {club: {id: c.id, name: c.name}, crestName: c.name, fact: text, kicker: `${c.name.toUpperCase()} · FROM THE ARCHIVE`, label: 'FAN LIFE · DID YOU KNOW'}}}
   }
-  return list[0]
-}
-const fanFirst = (k: string, n: number) => {
-  const all = (pools[k] as string[][]).map(t => it(t, k)).filter(x => !/{home}|{away}|odds/i.test(x.hook + x.body))
-  const fl = all.filter(x => x.app === 'fanlife'), rest = all.filter(x => x.app !== 'fanlife')
-  // FAN LIFE leads: two of every three are FAN LIFE, the third goes to another app
-  const x = n % 3 === 2 && rest.length ? rest[Math.floor(n / 3) % rest.length] : fl[(n - Math.floor(n / 3)) % fl.length]
-  usedCopy.add(x.hook)
-  return x
+  throw Error('no fact for ' + n)
 }
 
-// ── the plan ───────────────────────────────────────────────────────────────────────────────────────────────────────
-type Row = {day: number; at: string; format: string; main: Item}
+// ── FAN LIFE gates (10:00) — one gate of the app, with the club it opens on ─────────────────────────────────────────
+type Gate = {key: string; gate: string; name: string; plate: string; headline: string; body: [string, string]; hook: string; post: string}
+const GATES: Gate[] = [
+  {key: 'trivia', gate: 'GATE 2', name: 'TRIVIA WING', plate: 'memo', headline: 'Four levels. One club. The real archive.', body: ['Easy, Medium, Hard, Expert.', 'Every question comes from the club’s own records.'],
+    hook: 'How well do you really know {club}?', post: 'The Trivia wing: four levels, from Easy to Expert. Every question is built from the club’s own sourced archive — no guessing, only facts.'},
+  {key: 'blind-cow', gate: 'GATE 10', name: 'BLIND COW', plate: 'keeper', headline: 'Clue after clue. Name the player.', body: ['A season, a shirt number, a match he played.', 'The fewer clues you need, the better.'],
+    hook: 'Blind Cow: who is the {club} player?', post: 'Clue after clue — season, number, a match — name the player as fast as you can. Every clue comes from the archive.'},
+  {key: 'goal', gate: 'GATE 8', name: 'GOAL RECONSTRUCTION', plate: 'kicker', headline: 'Rebuild a famous goal, touch by touch.', body: ['Drag the players, pass, shoot.', 'Then see how it really went in.'],
+    hook: 'Some {club} goals stay forever. Rebuild one.', post: 'Gate 8: rebuild a historic goal touch by touch — drag the players, pass, shoot. Then watch the original move.'},
+  {key: 'xi', gate: 'GATE 1', name: 'ALL-TIME XI', plate: 'swap', headline: 'Eleven from the whole history. Your call.', body: ['Pick the greatest eleven, any era.', 'No ratings, no referee. Just you.'],
+    hook: 'Your all-time {club} XI. Go.', post: 'Gate 1: eleven players from the club’s whole history. Build it, share it, and let the comments do the arguing.'},
+  {key: 'lineup', gate: 'GATE 3', name: 'HISTORICAL LINE-UP', plate: 'fans', headline: 'Name the eleven that started that night.', body: ['A real match, a real team sheet.', 'How many can you place?'],
+    hook: 'One {club} night. Eleven names. Can you place them?', post: 'Gate 3: a real match from the archive and its real starting eleven. Fill the team sheet, place by place.'},
+  {key: 'kit-builder', gate: 'GATE 4', name: 'KIT BUILDER', plate: 'scarf', headline: 'Build the shirt. Season, maker, sponsor.', body: ['Five parts, one shirt, one season.', 'Can you dress the team of that year?'],
+    hook: 'Can you build the {club} shirt of that season?', post: 'Gate 4: the shirt in parts — body, sleeves, sponsor, maker, crest. Put the season back together.'},
+  {key: 'memory', gate: 'GATE 6', name: 'MEMORY', plate: 'memo', headline: 'Turn two cards. Match the facts.', body: ['Pairs drawn from the club’s real archive.', 'Fewer turns, sharper memory.'],
+    hook: 'A memory game made of {club} history.', post: 'Gate 6: every pair on the board is a sourced fact from the club’s archive. Turn two, match them, clear the board.'},
+  {key: 'polls', gate: 'GATE 7', name: 'TERRACE VOTE', plate: 'fans', headline: 'Best keeper? Greatest night? You decide.', body: ['Vote with the terrace on the big debates.', 'One device, one ballot.'],
+    hook: 'The {club} terrace is voting. Where do you stand?', post: 'Gate 7: the big supporters’ debates, put to a vote. One device, one ballot — the terrace decides.'},
+  {key: 'timeline', gate: 'GATE 13', name: 'TIMELINE', plate: 'bootball', headline: 'Put the club’s big days in order.', body: ['Drop each card into its place in history.', 'How well do you know the years?'],
+    hook: 'Put {club}’s big days in the right order.', post: 'Gate 13: the club’s dates as cards. Place each one on the line — the archive checks every answer.'},
+  {key: 'derby', gate: 'GATE 11', name: 'THE DERBY', plate: 'scarf', headline: 'Every meeting with the old rival, on one wall.', body: ['Wins, draws and the nights nobody forgets.', 'Know your derby better than they do.'],
+    hook: 'The {club} derby, every meeting on one wall.', post: 'Gate 11: the rivalry as the archive records it — every meeting, every result, all in one place.'},
+  {key: 'archive', gate: 'GATE 12', name: 'LIVING ARCHIVE', plate: 'memo', headline: 'Matches, players, shirts. All of it.', body: ['The club’s history, sourced and searchable.', 'Mark the matches you were at.'],
+    hook: 'Were you there? The {club} archive remembers.', post: 'Gate 12: the living archive — matches, players and shirts, every record sourced. Stamp “I was there” on the nights you saw.'},
+  {key: 'kits', gate: 'GATE 5', name: 'SHIRT COLLECTION', plate: 'swap', headline: 'The club’s shirts, season by season.', body: ['Home, away, third — the whole rail.', 'Which one is still in your wardrobe?'],
+    hook: 'Which {club} shirt is still in your wardrobe?', post: 'Gate 5: the shirt rail — the club’s kits, season by season, drawn from the records.'},
+  {key: 'life', gate: 'A SUPPORTER’S LIFE', name: 'LIFE', plate: 'fans', headline: 'Grow up with your club, one match at a time.', body: ['Matchdays, friends, promises, choices.', 'Every choice changes the story.'],
+    hook: 'A whole life as a {club} supporter. Start with the first match.', post: 'LIFE is a supporter’s life simulation inside FAN LIFE: the first match, the friends, the promises. Every choice changes the story.'},
+]
+function gate(n: number): Item {
+  const g = GATES[(n - 1) % GATES.length]!
+  const c = clubs[(n * 3 + Math.floor((n - 1) / GATES.length)) % clubs.length]!
+  const fill = (s: string) => s.replace('{club}', c.name)
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}/${g.key}`, hook: fill(g.hook),
+    body: `${g.post}\n\nOpen it on the ${c.name} page — every club in FAN LIFE has its own. Free to play.`,
+    visual: `L-GATE ${g.name}: the gate's name, a comic plate, the club.`,
+    kit: {t: 'L-GATE', data: {gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}}}
+}
+
+// ── 18:00: the two big games of FAN LIFE, on alternate days ──────────────────────────────────────────────────────────
+type Pitch = {headline: string; body: [string, string]; hook: string; post: string}
+const RUMBLE: Pitch[] = [
+  {headline: 'Three names. One pick. Build the eleven.', body: ['Choose a line — the reels deal three players.', 'The big name, the middle price, or a bargain?'],
+    hook: 'Royal Rumble: three players, one pick, your eleven.', post: 'Choose the line you want to fill, the reels deal three men from three price tiers, you sign one. Again and again, until the eleven is done.'},
+  {headline: 'Every legend has a price. The budget won’t stretch.', body: ['An eleven on €33–35M, a five on €15M.', 'Spend on the stars, then fill the gaps smart.'],
+    hook: 'The budget is hard. The legends are expensive.', post: 'Royal Rumble gives you a hard budget — around €33–35M for an eleven, €15M for five-a-side. Every man in the club’s archive has his price.'},
+  {headline: 'Three spins per draft. Use them well.', body: ['Don’t like the trio? Spin again.', 'Three spins have to last the whole draft.'],
+    hook: 'Three spins. Twenty decisions. One eleven.', post: 'Don’t like the three men on the reels? Spin. But you get three spins for the whole draft — choose your moment.'},
+  {headline: 'Five-a-side or a full eleven?', body: ['Two formats, one archive of your club.', 'Any man in the club’s history can be dealt.'],
+    hook: 'Five-a-side or the full eleven — which suits you?', post: 'Two formats in Royal Rumble: five-a-side for a quick draft, the full eleven for the long one. Every player in the archive is in the deck.'},
+  {headline: 'Your eleven against your mate’s.', body: ['Send the link — he drafts the same deal.', 'Then the result settles it.'],
+    hook: 'Send the link. Same deal. Better eleven wins.', post: 'Draft your eleven, then send the link: your mate gets the same deal and builds his. The match settles it.'},
+  {headline: 'Keeper first, or the striker? You choose.', body: ['Pick which line to fill before every slot.', 'The game only stops a squad that can’t be finished.'],
+    hook: 'Keeper first or striker first? Royal Rumble lets you choose.', post: 'Before every pick you choose the line — goalkeeper, defence, midfield or attack. Plan the budget, keep the squad possible.'},
+]
+const LEGENDS: Pitch[] = [
+  {headline: 'Manage your club’s legends through a season.', body: ['Draft from your club’s own history.', 'Then take them through a whole league.'],
+    hook: 'Legends Manager: your club’s greatest men, one season.', post: 'Draft a squad from your club’s own legends, then manage them through a full league season against the other clubs’ legends.'},
+  {headline: 'Watch it live. Change it at half-time.', body: ['The match stops at 45, 60 and 75 minutes.', 'Your subs, your shape, your season.'],
+    hook: 'Watch the match live. Change it at half-time.', post: 'In Legends Manager the match plays live and stops at 45, 60 and 75 minutes — your changes, your decisions, then the whistle.'},
+  {headline: 'Who wears the armband?', body: ['Pick a captain — he lifts the side.', 'Stars tell you who’s who. Numbers stay hidden.'],
+    hook: 'Who wears the armband in your legends XI?', post: 'Name your captain and your vice-captain. Players are shown in stars, not numbers — trust your football, not a spreadsheet.'},
+  {headline: 'The board sets the budget. Spend it right.', body: ['Season tickets and the board fund the squad.', 'Windows after round 2 and at halfway.'],
+    hook: 'The board gave you a budget. Don’t waste it.', post: 'Season tickets and the board set your money. Transfer windows open after round 2 and again at halfway — build, sell, rebuild.'},
+  {headline: 'Know the other legends before you face them.', body: ['Every rival club plays with its own history.', 'Scout their squads, their stars, their last XI.'],
+    hook: 'Scout the other legends before kick-off.', post: 'Every club in the league plays with its own history. Open their squads, see their stars and their last eleven, then pick yours.'},
+  {headline: 'Challenge a friend to a friendly.', body: ['Send the link — your eleven against his.', 'One match. Played once.'],
+    hook: 'Your legends against your mate’s. One friendly.', post: 'Send a friendly link from your career: your eleven against his, played once by the match engine. No excuses afterwards.'},
+]
+function bigGame(n: number): Item {
+  const lm = n % 2 === 1, list = lm ? LEGENDS : RUMBLE, p = list[Math.floor((n - 1) / 2) % list.length]!
+  const c = clubs[(n * 5) % clubs.length]!
+  return {app: 'fanlife', url: lm ? 'https://fanlife.dubelteam.com/all-football/legends' : `https://fanlife.dubelteam.com/clubs/${c.id}/royal-rumble`, hook: p.hook,
+    body: `${p.post}\n\n${lm ? 'Legends Manager is on FAN LIFE — pick your club and kick off.' : `Royal Rumble is gate 9 on every club page — try it with ${c.name}.`}`,
+    visual: `L-GATE ${lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE'}: the game's name, a comic plate.`,
+    kit: {t: 'L-GATE', data: {gate: lm ? 'FAN LIFE · THE BIG GAME' : 'GATE 9', name: lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE', plate: lm ? 'dribbler' : 'bootball', shout: lm ? 'KICK OFF!' : 'SPIN!', headline: p.headline, body: p.body,
+      label: lm ? 'LEGENDS MANAGER · FAN LIFE' : `${c.name.toUpperCase()} · GATE 9`}}}
+}
+
+// ── DUBID and OFFSIDES, in their own branding: how the game works (12:00, fixed weekdays) ─────────────────────────────
+type System = {title: [string, string]; sub: string; points: [string, string][]; line: string; hook: string; post: string}
+const DUBID: System[] = [
+  {title: ['ONE FROM', 'EVERY CLUB'], sub: 'THE ONLY RULE THAT MATTERS', points: [['One player per club', 'Even from the club you can’t stand.'], ['Pick a captain', 'His points are multiplied. Choose well.'], ['Beat the lock', 'Lineups lock at the round’s first kick-off.']],
+    line: 'FANTASY, NEIGHBOURHOOD STYLE.', hook: 'One player from every club. That’s the whole rule.', post: 'DUBID is round-by-round fantasy football with one rule: one player from each club. Pick a captain, lock in before the first kick-off, climb the table.'},
+  {title: ['DUBID 5', 'OR DUBID 11'], sub: 'TWO WAYS TO PLAY EVERY ROUND', points: [['DUBID 5 · The Street', 'Five players, one budget. Pick 5, beat everyone.'], ['DUBID 11 · The League', 'A full lineup, one player from every club.'], ['Every round, a new table', 'Play one, or play both.']],
+    line: 'PICK 5. OR BUILD 11.', hook: 'Five players or a full eleven? DUBID has both.', post: 'DUBID 5: five players and a budget. DUBID 11: a full lineup with one player from every club and a captain. Every round, both tables.'},
+  {title: ['EACH LEAGUE', 'ITS OWN GAME'], sub: 'ISRAEL · GREECE', points: [['Israeli Premier League', 'Its own rounds, table and history.'], ['Greek Super League', 'Its own rounds, table and history.'], ['Pick your league', 'Then pick your players.']],
+    line: 'KNOW THE LEAGUE? PROVE IT.', hook: 'Israel or Greece? In DUBID every league is its own game.', post: 'DUBID runs the Israeli Premier League and the Greek Super League — each with its own rounds, its own table and its own history.'},
+  {title: ['YOUR MATES', 'ONE TABLE'], sub: 'PRIVATE LEAGUES', points: [['Make a private league', 'For the group chat, the office, the family.'], ['Everyone picks every round', 'One player from every club, a captain each.'], ['The table settles it', 'Round after round, all season.']],
+    line: 'SETTLE IT EVERY ROUND.', hook: 'Make a DUBID league for your mates. Settle it every round.', post: 'Open a private league in DUBID, send it to your friends, and let the table settle who really knows the league.'},
+]
+const OFFSIDES: System[] = [
+  {title: ['YOU CALLED', 'IT. PROVE IT.'], sub: 'PREDICTION ARENAS WITH YOUR MATES', points: [['Open an arena', 'Send the link to the group chat.'], ['Predict before kick-off', 'Exact score, half-time, first scorer.'], ['Flash questions live', 'A few seconds to answer, mid-match.']],
+    line: 'FREE. NO REAL MONEY.', hook: 'You always call the score. Now it counts.', post: 'OFFSIDES: open an arena, send the link, and everyone predicts before kick-off — exact score, half-time, first scorer. Flash questions pop up live.'},
+  {title: ['90 MINUTES', 'OF TOLD YOU SO'], sub: 'EVERY MATCH IS A GAME', points: [['Classic arena', 'Your calls, locked in before kick-off.'], ['Live arena', 'Questions while the match runs.'], ['The table doesn’t lie', 'Points decide who really knows.']],
+    line: 'BRAGGING RIGHTS ONLY.', hook: 'Every match is 90 minutes of “told you so”.', post: 'Two kinds of arena on OFFSIDES: classic, where every call is locked before kick-off, and live, where the questions come during the match.'},
+  {title: ['THE STREAK', 'STARTS TODAY'], sub: 'COME BACK EVERY MATCHDAY', points: [['Build a streak', 'Play matchday after matchday.'], ['Points for every call', 'Exact score, half-time, who scores first.'], ['A free simulation', 'No real money. Ever.']],
+    line: 'FREE TO PLAY.', hook: 'The streak starts with today’s match.', post: 'OFFSIDES rewards the ones who come back: points for every call and a streak that grows matchday after matchday. A free simulation — no real money.'},
+  {title: ['YOUR GROUP', 'CHAT, RANKED'], sub: 'FRIENDS · ARENAS · TABLES', points: [['Invite your mates', 'One link, one arena.'], ['Everyone predicts', 'Calls lock at the first whistle.'], ['One winner', 'The table settles the argument.']],
+    line: 'WHO KNOWS FOOTBALL?', hook: 'Your group chat, ranked by who actually knows football.', post: 'Send one link and your group is in the same arena. Everyone predicts, the calls lock at the whistle, and the table settles it.'},
+]
+const sysCount = {dubid: 0, offsides: 0}
+function system(app: 'dubid' | 'offsides'): Item {
+  const list = app === 'dubid' ? DUBID : OFFSIDES, s = list[sysCount[app]++ % list.length]!
+  return {app, hook: s.hook, body: `${s.post}\n\n${app === 'dubid' ? 'DUBID — free fantasy football. Pick before the lock.' : 'OFFSIDES — a free prediction game. No real money, only bragging rights.'}`,
+    visual: `L-${app.toUpperCase()}-SYSTEM How it works, in ${app.toUpperCase()}'s own branding.`,
+    kit: {t: `L-${app.toUpperCase()}-SYSTEM`, data: {app, title: s.title, sub: s.sub, points: s.points, line: s.line, label: app === 'dubid' ? 'DUBID · FANTASY FOOTBALL' : 'FREE PREDICTION GAME · NO REAL MONEY'}}}
+}
+
+// ── the plan: even hours fixed, odd hours live (composed at send time, or quiet) ─────────────────────────────────────
+type Row = {day: number; at: string; format: string; kind: string; main: Item}
 const rows: Row[] = []
+const LIVE: [string, string, string][] = [['09:00', 'results', 'fanlife'], ['11:00', 'fixtures', 'fanlife'], ['13:00', 'dubid', 'dubid'], ['15:00', 'offsides', 'offsides']]
+const safeOTD = (y: number, m: number, d: number, n: number) => { try { return onThisDay(y, m, d) } catch { return fact(500 + n) } }
 for (let n = 1; n <= 30; n++) {
   const dt = new Date(Date.UTC(2026, 9, 25 + n))
   const y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1, d = dt.getUTCDate(), dow = dt.getUTCDay()
   const date = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`
-  const slot = (t: string, format: string, main: Item) => rows.push({day: n, at: `${date} ${t}`, format, main})
-  const c10 = fanFirst('CAROUSEL', n - 1), r14 = fanFirst('REELS', n - 1), p12 = partner(dow)
-  slot('08:00', 'post', onThisDay(y, m, d))
-  slot('10:00', 'carousel', c10)
-  slot('12:00', p12.format || 'post', p12)
-  slot('14:00', 'reel', r14)
+  const slot = (t: string, format: string, main: Item, kind = 'fixed') => rows.push({day: n, at: `${date} ${t}`, format, kind, main})
+  const otd = safeOTD(y, m, d, n)
+  if ((otd.kit.data.rows as unknown[] | undefined)?.length === 1) throw Error('one-row OTD')
+  slot('08:00', 'post', otd)
+  slot('10:00', 'post', gate(n))
+  slot('12:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : fact(n))
+  slot('14:00', 'story', quiz(n))
   slot('16:00', 'post', nerds(n))
-  slot('18:00', 'story', quiz(n))
+  slot('18:00', 'post', bigGame(n))
   slot('20:00', 'post', spicy(n))
-  slot('22:00', 'text', fanFirst('NIGHT', n - 1))
+  slot('22:00', 'post', fact(100 + n))
+  for (const [t, kind, app] of LIVE) slot(t, 'post', {app, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
 }
 
 // The archive files European competitions under their present names; a post says what the competition was called
@@ -284,17 +378,20 @@ const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
   ? eraUpper(eraNames(year && !YR.test(x) ? `${year} ${x}` : x).replace(year && !YR.test(x) ? `${year} ` : '', ''), Number(x.match(YR)?.[1] || year))
   : Array.isArray(x) ? x.map(v => eraDeep(v, year))
   : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, eraDeep(v, Number((x as {year?: number}).year) || year)])) : x
-for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); if (r.main.kit) r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown> }
+for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown> }
+for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, JSON.stringify(r.main.kit.data))) throw Error(`pre-1980 content in ${r.at}`)
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
-const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v2 (26.10.2026).`,
-  `-- Fixed plan: every row is 'fixed'; matches and results moved to Final Whistle and Today's Football.`,
-  `-- Updates by send_at, and only rows still waiting: a post that went out is history.`,
+const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v3 (owner, 27.10.2026).`,
+  `-- Even hours: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on fixed weekdays), each post with`,
+  `-- its picture's kit. Odd hours 09/11/13/15: live slots (results, fixtures, a DUBID round, OFFSIDES today) composed at`,
+  `-- send time from real data, or skipped. Nothing from before 1980. Only rows still waiting and still ahead are touched.`,
   `insert into marketing.posts (day, send_at, format, kind, main) values`,
-  rows.map(r => `  (${r.day}, (timestamp '${r.at}') at time zone 'Asia/Jerusalem', '${r.format}', 'fixed', ${J(r.main)})`).join(',\n'),
-  `on conflict (send_at) do update set day = excluded.day, format = excluded.format, kind = 'fixed', main = excluded.main,`,
-  `  variants = null, fallback = null, fallback_format = null`,
-  `  where marketing.posts.status in ('pending', 'skipped', 'failed') and marketing.posts.send_at > now();`, ''].join('\n')
-const out = path.join(HERE, '../../supabase/marketing/0006_marketing_plan_v2.sql')
-writeFileSync(out, sql)
-writeFileSync(path.join(HERE, 'plan-v2.json'), JSON.stringify(rows, null, 1))
+  rows.map(r => `  (${r.day}, (timestamp '${r.at}') at time zone 'Asia/Jerusalem', '${r.format}', '${r.kind}', ${J(r.main)})`).join(',\n'),
+  `on conflict (send_at) do update set day = excluded.day, format = excluded.format, kind = excluded.kind, main = excluded.main,`,
+  `  variants = null, fallback = null, fallback_format = null, status = 'pending', error = null, attempts = 0`,
+  `  where marketing.posts.status in ('pending', 'skipped', 'failed') and marketing.posts.send_at > now();`,
+  `-- and a slot inserted for a moment already past is not sent late`,
+  `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes' and kind in ('fixtures','results','dubid','offsides');`, ''].join('\n')
+writeFileSync(path.join(HERE, '../../supabase/marketing/0007_marketing_plan_v3.sql'), sql)
+writeFileSync(path.join(HERE, 'plan-v3.json'), JSON.stringify(rows, null, 1))
 console.log('rows', rows.length, 'events', events.length, 'clubs', clubs.map(c => `${c.id}:${c.qs.length}`).join(' '))

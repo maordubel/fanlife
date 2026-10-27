@@ -1,41 +1,56 @@
 import {readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vitest'
 
-// The generated plan (scripts/marketing/build-plan.mts → plan-v2.json + supabase/marketing/0006).
-type Row = {day: number; at: string; format: string; main: {app: string; hook: string; body: string; visual: string; url?: string}}
-const rows: Row[] = JSON.parse(readFileSync('scripts/marketing/plan-v2.json', 'utf8'))
-const SLOTS = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+// The generated plan (scripts/marketing/build-plan.mts → plan-v3.json + supabase/marketing/0007).
+type Row = {day: number; at: string; format: string; kind: string; main: {app: string; hook: string; body: string; visual: string; url?: string; kit: {t: string; data: Record<string, unknown>}}}
+const rows: Row[] = JSON.parse(readFileSync('scripts/marketing/plan-v3.json', 'utf8'))
+const FIXED = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+const LIVE = {'09:00': 'results', '11:00': 'fixtures', '13:00': 'dubid', '15:00': 'offsides'} as Record<string, string>
+const fixed = rows.filter(r => r.kind === 'fixed')
+const YEARS = /\b(1[89]\d\d|20\d\d)(?:\/\d\d)?\b|\b(1[89]\d)0s\b/g
 
-describe('FAN LIFE social plan v2', () => {
-  it('is fixed: thirty days, the same eight slots, no match placeholders', () => {
-    expect(rows).toHaveLength(240)
-    for (let d = 1; d <= 30; d++) expect(rows.filter(r => r.day === d).map(r => r.at.slice(11))).toEqual(SLOTS)
-    for (const r of rows) expect(r.main.hook + r.main.body).not.toMatch(/\{home\}|\{away\}|\{kickoff\}/)
+describe('FAN LIFE social plan v3 (owner, 27.10.2026)', () => {
+  it('thirty days: eight fixed slots on the even hours, four live slots on the odd hours', () => {
+    expect(rows).toHaveLength(360)
+    for (let d = 1; d <= 30; d++) {
+      expect(rows.filter(r => r.day === d && r.kind === 'fixed').map(r => r.at.slice(11))).toEqual(FIXED)
+      for (const [t, kind] of Object.entries(LIVE)) expect(rows.find(r => r.day === d && r.at.endsWith(t))?.kind).toBe(kind)
+    }
   })
-  it('FAN LIFE leads; every other app gets its weekday', () => {
-    const apps = rows.map(r => r.main.app)
-    expect(apps.filter(a => a === 'fanlife').length / apps.length).toBeGreaterThan(0.7)
-    for (const a of ['dubid', 'offsides', 'theworker', 'fuckyou']) expect(apps).toContain(a)
+  it('every post carries the kit of its picture', () => {
+    for (const r of rows) { expect(r.main.kit?.t, r.at).toBeTruthy(); expect(r.main.kit.data, r.at).toBeTruthy() }
   })
-  it('the data slots come from the archive: on this day, nerds only, a four-answer quiz, spicy', () => {
-    for (const r of rows.filter(r => r.at.endsWith('08:00'))) expect(r.main.hook).toMatch(/^(On this day|This week in history)/)
-    for (const r of rows.filter(r => r.at.endsWith('16:00'))) { expect(r.main.hook).toMatch(/^Nerds only/); expect(r.main.body).toMatch(/A\) .+\nB\) .+\nC\) .+\nD\) /) }
-    for (const r of rows.filter(r => r.at.endsWith('18:00'))) expect(r.main.body).toMatch(/A\) .+\nB\) .+\nC\) .+\nD\) .+\nMark the right one: /)
+  it('three voices only: FAN LIFE leads, DUBID and OFFSIDES on their weekdays, in their own branding', () => {
+    expect(new Set(fixed.map(r => r.main.app))).toEqual(new Set(['fanlife', 'dubid', 'offsides']))
+    expect(fixed.filter(r => r.main.app === 'fanlife').length / fixed.length).toBeGreaterThan(0.85)
+    for (const r of fixed.filter(r => r.main.app !== 'fanlife')) { expect(r.at.endsWith('12:00')).toBe(true); expect(r.main.kit.t).toBe(`L-${r.main.app.toUpperCase()}-SYSTEM`) }
   })
-  it('never asks a question whose prompt already holds the answer', () => {
-    for (const r of rows.filter(r => /1[68]:00$/.test(r.at))) {
+  it('FAN LIFE sells its gates, and Royal Rumble and Legends Manager every evening', () => {
+    for (const r of fixed.filter(r => r.at.endsWith('10:00') || r.at.endsWith('18:00'))) expect(r.main.kit.t).toBe('L-GATE')
+    const evening = fixed.filter(r => r.at.endsWith('18:00')).map(r => r.main.kit.data.name)
+    expect(evening.filter(n => n === 'ROYAL RUMBLE').length).toBeGreaterThanOrEqual(14)
+    expect(evening.filter(n => n === 'LEGENDS MANAGER').length).toBeGreaterThanOrEqual(14)
+  })
+  it('nothing from before 1980 — not a year, not a season, not a decade', () => {
+    for (const r of fixed) for (const m of `${r.main.hook} ${r.main.body} ${JSON.stringify(r.main.kit.data)}`.matchAll(YEARS))
+      expect(Number(m[1] || m[2] + '0'), `${r.at}: ${m[0]}`).toBeGreaterThanOrEqual(1980)
+  })
+  it('the archive slots: on this day, a four-answer quiz, nerds only, and the answer is never in the question', () => {
+    for (const r of fixed.filter(r => r.at.endsWith('08:00'))) expect(r.main.hook).toMatch(/^(On this day|This week in history|Did you know)/)
+    for (const r of fixed.filter(r => r.at.endsWith('16:00'))) { expect(r.main.hook).toMatch(/^Nerds only/); expect(r.main.body).toMatch(/A\) .+\nB\) .+\nC\) .+\nD\) /) }
+    for (const r of fixed.filter(r => /1[46]:00$/.test(r.at))) {
       const ans = r.main.body.match(/(?:Mark the right one|Answer in the first comment \(or the next story frame\)): (.+?)\.(?:\s|$)/)?.[1] ?? ''
-      const q = r.at.endsWith('18:00') ? r.main.hook : r.main.body.split('\n\n')[0] ?? ''
+      const q = r.at.endsWith('14:00') ? r.main.hook : r.main.body.split('\n\n')[0] ?? ''
       expect(ans.length, r.at).toBeGreaterThan(0)
-      if (ans.length < 3) continue // "1. FC Saarbrücken": the capture stops at the club's own full stop
+      if (ans.length < 3) continue
       expect(q.toLowerCase(), r.at).not.toContain(ans.toLowerCase())
     }
   })
   it('English only, no betting words for OFFSIDES, no Champions League before 1992', () => {
-    for (const r of rows) {
+    for (const r of fixed) {
       const t = r.main.hook + r.main.body
       expect(t).not.toMatch(/[Ͱ-Ͽ֐-׿Ѐ-ӿ]/)
-      expect(t).not.toMatch(/\bodds\b|\bbet\b|\bwager/i)
+      if (r.main.app === 'offsides') expect(t).not.toMatch(/\bodds\b|\bbet\b|\bwager/i)
       for (const line of t.split('\n')) { const y = Number(line.match(/\b(19\d\d)\b/)?.[1] || 0); if (y && y < 1992) expect(line).not.toMatch(/UEFA Champions League/) }
     }
   })

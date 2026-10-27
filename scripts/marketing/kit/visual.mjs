@@ -10,6 +10,7 @@ import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {createRequire} from 'node:module'
 import {design} from './source/design.mjs'
+import {designLive, fits} from './live.mjs'
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url))
 const sharp = createRequire(import.meta.url)('sharp')
@@ -137,12 +138,13 @@ let LIB
 const OWN = {'AEK Athens': 'aek-athens', Celtic: 'celtic', Olympiacos: 'olympiacos', Panathinaikos: 'panathinaikos', 'FC St. Pauli': 'st-pauli',
   'St. Pauli': 'st-pauli', 'Hapoel Petah Tikva': 'hapoel-petah-tikva', 'Hapoel Tel Aviv': 'hapoel-tel-aviv', 'Zrinjski Mostar': 'zrinjski-mostar'}
 const CACHE = path.join(tmpdir(), 'fanlife-crests')
+const MISSED = new Set() // a crest the library could not hand over is not asked for twice in one run
 /** A local PNG path for a team's crest, or null. Library first; the club's own file where the library has none. */
 export async function crestPath(name) {
   if (!name) return null
   LIB ??= await import('../../../ecosystem/crests/index.mjs')
   const slug = LIB.crestSlug(name)
-  if (slug) {
+  if (slug && !MISSED.has(slug)) {
     const file = path.join(CACHE, slug + '.png')
     if (existsSync(file)) return file
     try {
@@ -150,6 +152,7 @@ export async function crestPath(name) {
       const buf = r.ok ? Buffer.from(await r.arrayBuffer()) : null
       if (buf && buf.subarray(1, 4).toString() === 'PNG') { mkdirSync(CACHE, {recursive: true}); writeFileSync(file, buf); return file }
     } catch { /* the club's own file, or no crest */ }
+    MISSED.add(slug)
   }
   const own = OWN[name] && path.join(REPO, 'public/crests', OWN[name] + '.png')
   return own && existsSync(own) ? own : null
@@ -172,38 +175,54 @@ async function resolveAssets(data) {
   if (d.crestName) d.crest = await crestPath(d.crestName)
   if (d.homeCrestName) d.homeCrest = await crestPath(d.homeCrestName)
   if (d.awayCrestName) d.awayCrest = await crestPath(d.awayCrestName)
-  if (Array.isArray(d.rows)) for (const r of d.rows) if (r.crestName) r.crest = await crestPath(r.crestName)
+  if (Array.isArray(d.rows)) for (const r of d.rows) {
+    if (r.crestName) r.crest = await crestPath(r.crestName)
+    if (r.homeCrestName) r.homeCrest = await crestPath(r.homeCrestName)
+    if (r.awayCrestName) r.awayCrest = await crestPath(r.awayCrestName)
+  }
   if (d.shirtFor) { d.shirt = await shirtPath(d.shirtFor); if (!d.shirt) { d.score = String(d.shirtFor.text.match(/\d{4}\/\d{2}/)?.[0] || ''); d.away = 'THE SHIRT ARCHIVE' } }
   for (const k of ['crestName', 'homeCrestName', 'awayCrestName', 'shirtFor']) delete d[k]
   for (const k of ['crest', 'homeCrest', 'awayCrest']) if (d[k] === null) delete d[k]
-  if (Array.isArray(d.rows)) for (const r of d.rows) { delete r.crestName; if (!r.crest) delete r.crest }
+  if (Array.isArray(d.rows)) for (const r of d.rows) { for (const k of ['crestName', 'homeCrestName', 'awayCrestName']) delete r[k]; for (const k of ['crest', 'homeCrest', 'awayCrest']) if (!r[k]) delete r[k] }
   return d
 }
 const APP_OF = {fanlife: 'fanlife', theworker: 'worker', worker: 'worker', dubid: 'dubid', offsides: 'offsides', fuckyou: 'fuckyou', all: 'fanlife'}
 
-/** PNG buffers for one Telegram message (and, when the plan made it, the post's own kit). Never throws. */
+/** PNG buffers for one Telegram message (and, when the plan made it, the post's own kit). Never throws.
+ *  Every post gets a picture (owner, 27.10.2026): when its own layout cannot be drawn, its app's L-CARD is. */
 export let lastError = null
+const png = d => sharp(Buffer.from(d.svg)).png({compressionLevel: 9}).toBuffer()
+export async function drawKit(kit, fallbackApp = 'fanlife') {
+  const app = APP_OF[kit.data.app] || fallbackApp
+  const data = await resolveAssets(kit.data)
+  const d = kit.t.startsWith('L-') ? designLive(kit.t, app, data) : design(kit.t, app, data, true)
+  if (!fits(d)) throw Error(`${kit.t}: text runs off the picture`)
+  return png(d)
+}
+async function card(post) {
+  const hook = printable(post.hook || 'Football. Forever.')
+  const app = ['dubid', 'offsides'].includes(post.app) ? post.app : 'fanlife'
+  return png(designLive('L-CARD', app, {hook: hook || 'Football. Forever.', seed: hook.length}))
+}
 export async function visualsFor(msg, kit = null) {
   lastError = null
+  const post = readPost(msg)
   try {
-    const post = readPost(msg)
+    if (kit?.t && kit.data) return [await drawKit(kit, post.app || 'fanlife')]
     const out = []
-    if (kit?.t && kit.data) {
-      const app = APP_OF[kit.data.app] || post.app || 'fanlife'
-      const d = design(kit.t, app, await resolveAssets(kit.data), true)
-      if (d.bounds.some(b => b.x < 0 || b.x + b.width > d.width || b.y < 0 || b.y + b.height > d.height)) return []
-      return [await sharp(Buffer.from(d.svg)).png({compressionLevel: 9}).toBuffer()]
-    }
     for (const {t, data} of plan(post)) {
       if (data.file) { data.shirt = path.join(tmpdir(), `dubel-shirt-${process.pid}.png`); writeFileSync(data.shirt, await sharp(data.file).png().toBuffer()) }
       const d = design(t, post.app, data, true)
-      if (d.bounds.some(b => b.x < 0 || b.x + b.width > d.width || b.y < 0 || b.y + b.height > d.height)) return []
-      out.push(await sharp(Buffer.from(d.svg)).png({compressionLevel: 9, palette: false}).toBuffer())
+      if (!fits(d)) throw Error(`${t}: text runs off the picture`)
+      out.push(await png(d))
     }
-    return out
+    if (out.length) return out
+    throw Error('no layout for this post')
   } catch (e) {
     lastError = String(e?.stack || e?.message || e).slice(0, 400)
-    console.log(`visual skipped: ${String(e?.message || e).slice(0, 160)}`)
-    return []
+    try { return [await card(post)] } catch (e2) {
+      lastError += ` · card: ${String(e2?.message || e2).slice(0, 160)}`
+      return []
+    }
   }
 }

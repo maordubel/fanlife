@@ -1,6 +1,7 @@
 import path from 'node:path'
 import {pathToFileURL} from 'node:url'
 import {NextRequest, NextResponse} from 'next/server'
+import {prepare, type Due} from '@/lib/marketing/run'
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 export const maxDuration = 60
@@ -30,13 +31,14 @@ async function visuals(msg: string, kit: unknown): Promise<{pngs: Buffer[]; why:
     const file = pathToFileURL(path.join(process.cwd(), 'scripts/marketing/kit/visual.mjs')).href
     const mod = await import(/* webpackIgnore: true */ file)
     const pngs: Buffer[] = await mod.visualsFor(msg, kit ?? null)
-    return {pngs, why: pngs.length ? null : mod.lastError || 'nothing to draw'}
+    return {pngs, why: mod.lastError || (pngs.length ? null : 'nothing to draw')}
   } catch (e) { return {pngs: [], why: `load: ${String((e as Error)?.stack || e).slice(0, 400)}`} }
 }
 /** what happened to the picture — returned in the tick's answer so a missing image says why */
 async function sendVisuals(token: string, chat: string, msg: string, kit: unknown): Promise<string> {
   const {pngs, why} = await visuals(msg, kit)
   if (!pngs.length) return `none: ${why}`
+  const note = why ? ` (own layout failed, app card sent: ${why.split('\n')[0]!.slice(0, 160)})` : ''
   const form = new FormData()
   form.append('chat_id', chat)
   form.append('disable_notification', 'true')
@@ -48,7 +50,7 @@ async function sendVisuals(token: string, chat: string, msg: string, kit: unknow
     pngs.forEach((b, i) => form.append(`s${i}`, new Blob([new Uint8Array(b)], {type: 'image/png'}), `slide-${i + 1}.png`))
   }
   const r = await tg(token, pngs.length === 1 ? 'sendPhoto' : 'sendMediaGroup', form)
-  return r.ok ? `sent ${pngs.length}` : `refused: ${String(r.description || r.status).split(token).join('[token]').slice(0, 200)}`
+  return r.ok ? `sent ${pngs.length}${note}` : `refused: ${String(r.description || r.status).split(token).join('[token]').slice(0, 200)}`
 }
 
 export async function POST(r: NextRequest) {
@@ -57,7 +59,7 @@ export async function POST(r: NextRequest) {
   const nonce = typeof b.nonce === 'string' && /^[0-9a-f-]{36}$/i.test(b.nonce) ? b.nonce : null
   if (!nonce) return json({ok: false}, 400)
   const token = process.env.TELEGRAM_BOT_TOKEN?.trim() || ''
-  const got = await rpc('worker_marketing_tick', {p_nonce: nonce}) as {ok?: boolean; probe?: boolean; chat_id?: string; posts?: {id: number; chat_id: string; msg: string; kit?: unknown}[]} | null
+  const got = await rpc('worker_marketing_tick', {p_nonce: nonce}) as {ok?: boolean; probe?: boolean; chat_id?: string; posts?: Due[]} | null
   if (!got?.ok) return json({ok: false}, 403)
   if (!token) return json({ok: false, error: 'TELEGRAM_BOT_TOKEN is not set on this deployment.'}, 503)
   if (got.probe) {
@@ -67,7 +69,11 @@ export async function POST(r: NextRequest) {
     return json({ok: true, probe: true, reachable: !!c.ok, why: c.ok ? null : String(c.description || c.status).slice(0, 120), render: sample.pngs.length ? `ok ${sample.pngs[0]!.length} bytes` : sample.why})
   }
   const done: {id: number; outcome: string; visual: string}[] = []
-  for (const p of got.posts || []) {
+  const cache = {}
+  for (const due of got.posts || []) {
+    // a live slot (matches, results, a DUBID round, OFFSIDES today) is composed now from real data, or stays quiet
+    const p = await prepare(due, new Date(), cache).catch(() => null)
+    if (!p) { done.push({id: due.id, outcome: 'skipped', visual: '-'}); continue }
     const visual = await sendVisuals(token, p.chat_id, p.msg, p.kit).catch(e => `error: ${String(e).slice(0, 200)}`)
     const sent = await tg(token, 'sendMessage', {chat_id: p.chat_id, text: p.msg, parse_mode: 'HTML', disable_web_page_preview: true})
     const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status ?? 0) >= 500 ? 'unknown' : 'refused'

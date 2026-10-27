@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vitest'
 // @ts-expect-error — plain ESM module, no types
-import {readPost, plan, visualsFor, printable} from '../../scripts/marketing/kit/visual.mjs'
+import {readPost, plan, visualsFor, printable, drawKit} from '../../scripts/marketing/kit/visual.mjs'
 
 const msg = (app: string, hook: string, visual: string, extra = '', body: string[] = []) =>
   `🗓 <b>Day 1/30 · 26.10 · 14:00</b>\n📌 Post · <b>${app}</b>\n📱 x\n${extra}\n🪝 <b>HOOK</b>\n<b>${hook}</b>\n\n✍️ <b>POST</b>\n${hook}\n\n${body.join('\n')}\n\n👉 https://x\n\n#a\n\n🎨 <i>Visual: ${visual}. x</i>`
@@ -18,21 +18,22 @@ describe('DUBEL TEAM kit visuals', () => {
     expect(w[0]).toMatchObject({t: 'T5-D', data: {hook: ['OFFSIDES']}})
     for (const t of ['T2', 'T7 Carousel']) for (const s of plan(readPost(msg('DUBID', 'How to play DUBID', t, '', ['Slide 1: a', 'Slide 2: b', 'Slide 3: c', 'Slide 4: d'])))) if (s.t !== 'T7-1') expect(s.data.noPlaceholders).toBe(true)
   })
-  it('draws PNGs: one card, a five-slide carousel, nothing for a post without a template', async () => {
+  it('draws PNGs: one card, a five-slide carousel, and the app card for a post without a template', async () => {
     const one = await visualsFor(msg('THE WORKER', 'Hapoel isn’t a team. It’s a class.', 'T1 Quote card'))
     expect(one).toHaveLength(1)
     expect(one[0].subarray(1, 4).toString()).toBe('PNG')
     const deck = await visualsFor(msg('DUBID', 'How to play DUBID in 30 seconds', 'T7 Carousel', '', ['Slide 1: Pick one player from every club', 'Slide 2: Pick a captain', 'Slide 3: Players score', 'Slide 4: A table against the whole country']))
     expect(deck).toHaveLength(5)
-    expect(await visualsFor('no template here')).toEqual([])
+    expect(await visualsFor('no template here')).toHaveLength(1)
   }, 30_000)
-  it('draws the plan\'s own Social Kit v2 posts: on this day, nerds only, story quiz, spicy, partner', async () => {
-    const rows: {at: string; main: {kit?: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v2.json', 'utf8'))
-    const kits = ['T9-OTD', 'T10-NERDS', 'T5-B', 'T11-SPICY', 'T12-PARTNER'].map(t => rows.find(r => r.main.kit?.t === t)!)
-    for (const r of kits) {
-      const png = await visualsFor('📌 Post · <b>FAN LIFE</b>', r.main.kit)
-      expect(png, r.at).toHaveLength(1)
-      expect(png[0].subarray(1, 4).toString()).toBe('PNG')
+  it('draws every layout the v3 plan uses', async () => {
+    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v3.json', 'utf8'))
+    const ts = ['T9-OTD', 'T10-NERDS', 'T5-B', 'T11-SPICY', 'L-GATE', 'L-FACT', 'L-DUBID-SYSTEM', 'L-OFFSIDES-SYSTEM']
+    for (const t of ts) {
+      const r = rows.find(x => x.main.kit.t === t)!
+      expect(r, t).toBeTruthy()
+      const png = await drawKit(r.main.kit, r.main.app)
+      expect(png.subarray(1, 4).toString(), t).toBe('PNG')
     }
-  }, 60_000)
+  }, 120_000)
 })
