@@ -1,0 +1,31 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-27T09-21-28-300Z-9db3d5",
+ "clubId": "fenerbahce",
+ "startedAt": "2026-10-27T09:21:28.301Z",
+ "finishedAt": "2026-10-27T09:21:28.304Z",
+ "providers": [
+  "fenerbahce-official"
+ ],
+ "state": "blocked",
+ "counts": {
+  "requests": 0,
+  "documentsRead": 0,
+  "newDocuments": 0,
+  "changedDocuments": 0,
+  "unchangedDocuments": 0,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 0,
+  "budgetLeft": 20
+ },
+ "diagnostics": [
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "fenerbahce-official",
+   "url": null,
+   "message": "No tested parser for Fenerbahçe SK yet: documents are kept, nothing is extracted."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

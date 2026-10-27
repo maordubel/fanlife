@@ -1,7 +1,7 @@
 {
  "club": "hajduk-split",
  "snapshotAsOf": "2026-10-27",
- "researchVersion": 9,
+ "researchVersion": 10,
  "approvedForProduction": 0,
  "counts": {
   "sources": 3,
@@ -11,11 +11,11 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-10-27T09-10-38-976Z-b864e3",
+  "runId": "2026-10-27T09-21-28-567Z-73bb40",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
-  "documents": 568,
-  "needsParser": 568
+  "documents": 668,
+  "needsParser": 668
  }
 }
