@@ -6,6 +6,7 @@
  * `Life` and the simulator in the test suite holds the very same functions, which is the point:
  * what the tests walk is what the player walks.
  */
+import {compatOf, compatible} from './compat'
 import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, MiniGame, MissionCall, PlayResult, SaveFile, Wear, WorkScope, CollectionEntry} from './types'
 
 export const SAVE_VERSION = 1
@@ -253,8 +254,7 @@ export class Life {
   }
 }
 
-/** A save is readable when every chapter and room it names still exists in the pack. */
+/** A save is readable when every chapter and room it names still exists in the pack (one rule, shared with the card: ./compat). */
 export function readable(pack: LifePack, events: readonly LifeEvent[]): boolean {
-  const chapters = new Set(pack.chapters.map(c => c.id))
-  return events.every(e => (e.t !== 'chapter' || chapters.has(e.id)) && (e.t !== 'moved' || Object.hasOwn(pack.rooms, e.room)))
+  return compatible(compatOf(pack), events)
 }

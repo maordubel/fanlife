@@ -2,6 +2,7 @@ import 'server-only'
 import {CORE_CLUB_IDS, loadClub} from '@/lib/clubs/resolver'
 import {clubLife} from './pack'
 import {readLifePlayable} from '@/lib/clubs/precompiled'
+import {compatOf} from '@/lib/life/universal/compat'
 
 /**
  * Where a visitor enters one club's LIFE — the single answer the home page, the club cards and the
@@ -31,4 +32,12 @@ export async function lifeEntry(clubId: string, opts: {evaluation: boolean; paus
 export async function lifeEntries(clubs: readonly {id: string; status: string}[], evaluation: boolean): Promise<Record<string, LifeEntry>> {
   const rows = await Promise.all(clubs.map(async c => [c.id, await lifeEntry(c.id, {evaluation, paused: c.status === 'paused', status: c.status})] as const))
   return Object.fromEntries(rows)
+}
+
+/**
+ * The club's current chapters and rooms (CF-10), for the "Continue" doors: a save that names a chapter this pack no
+ * longer has is not a life to continue. Null when the pack cannot be composed — the door then simply says Enter.
+ */
+export function lifeCompatFor(data: import('@/lib/clubs/contract').ClubData): import('@/lib/life/universal/compat').LifeCompat | null {
+  try { return compatOf(clubLife(data)) } catch { return null }
 }
