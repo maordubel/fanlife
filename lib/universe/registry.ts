@@ -7,8 +7,8 @@ import {APP_URL,ROLE,momentOf,type AppId,type Moment} from '@/ecosystem/sdk'
  */
 export type Product={id:AppId;name:string;enabled:boolean;/** clubs held out of this product's offers */heldOut:readonly string[];/** the one-line promise, English */line:string;cta:string}
 export const PRODUCTS:readonly Product[]=[
- {id:'dubid',name:'DUBID',enabled:true,heldOut:[],line:'Call the match before it starts.',cta:'Open DUBID'},
- {id:'offsides',name:'OFFSIDES',enabled:true,heldOut:[],line:'Follow the match as it happens.',cta:'Open OFFSIDES'},
+ {id:'dubid',name:'DUBID',enabled:true,heldOut:[],line:'Fantasy football, one round at a time.',cta:'Pick your XI in DUBID'},
+ {id:'offsides',name:'OFFSIDES',enabled:true,heldOut:[],line:'Play along with the match.',cta:'Open OFFSIDES'},
 ]
 export const productOf=(id:AppId):Product|null=>PRODUCTS.find(p=>p.id===id)??null
 

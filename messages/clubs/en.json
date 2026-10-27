@@ -41,6 +41,8 @@
   "paused": "This club is taking a short break.",
   "closed": "Timeline is currently closed by the administrator.",
   "lifeTitle": "Step into the life",
+  "lifeContinue": "Continue LIFE ↗",
+  "lifeWaiting": "Your story is waiting — chapter {n}.",
   "lifeOpen": "Grow up with the club: the street, the people, the match day.",
   "lifeWorkshop": "This club’s LIFE is still being written — from its own streets, songs and match days.",
   "home": "Home",
