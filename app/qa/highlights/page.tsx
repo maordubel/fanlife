@@ -13,8 +13,8 @@ import { Stand } from './Stand'
  */
 export const dynamic = 'force-dynamic'
 
-export default async function Page({ searchParams }: { searchParams: Promise<{ shape?: string; play?: string; w?: string }> }) {
+export default async function Page({ searchParams }: { searchParams: Promise<{ shape?: string; play?: string; w?: string; players?: string }> }) {
   if (!qaAllowed()) notFound()
   const sp = await searchParams
-  return <Shell><Stand shape={sp.shape === undefined ? null : Number(sp.shape)} play={sp.play === '1'} narrow={sp.w === 'narrow'} /></Shell>
+  return <Shell><Stand shape={sp.shape === undefined ? null : Number(sp.shape)} play={sp.play === '1'} narrow={sp.w === 'narrow'} players={sp.players === '1'} /></Shell>
 }

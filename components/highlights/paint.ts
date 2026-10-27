@@ -78,7 +78,7 @@ export function draw(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,yellow
   // the legs turn over faster the faster he runs: a jog and a sprint are different strides
   const stride=p.moving?Math.floor(t*(3+speed*.75))%4:0
   const lift=p.pose==='dive'&&a.lift?a.lift*Math.sin(Math.PI*Math.min(1,p.u*1.15))*PX_UP*s.k:0
-  drawMan(c,cellOf(),look,p.pose,stride,face,s.x,s.y,a.dive?((a.dive*sc.dir) as -1|1):undefined,P,s.k,lift)
+  drawMan(c,look,p.pose,stride,face,s.x,s.y,a.dive?((a.dive*sc.dir) as -1|1):undefined,P,s.k,lift)
  }
  if(!ballDrawn)drawBall()
 }
@@ -199,5 +199,3 @@ export function drawEnds(c:CanvasRenderingContext2D,teams:Reel['teams'],before:n
 /** the boards' lettering in the weekly's caps face (rule 124), read once from the page's own token; a bare canvas keeps monospace */
 let capsFace:string|null=null
 const caps=()=>capsFace??=((typeof document!=='undefined'&&getComputedStyle(document.documentElement).getPropertyValue('--mag-mono').trim())||'monospace')
-let shared:HTMLCanvasElement|null=null
-const cellOf=()=>shared??=Object.assign(document.createElement('canvas'),{width:16,height:20})
