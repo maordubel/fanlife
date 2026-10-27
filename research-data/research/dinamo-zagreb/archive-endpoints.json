@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:22:29.340Z"
+  "checkedAt": "2026-10-27T09:10:32.579Z"
  },
  "bad-blue-boys:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:22:32.242Z"
+  "checkedAt": "2026-10-27T09:10:35.122Z"
  },
  "hns-semafor:/klubovi/609/gnk-dinamo/": {
   "endpoint": "/klubovi/609/gnk-dinamo/",
@@ -29,7 +29,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:22:33.838Z"
+  "checkedAt": "2026-10-27T09:10:36.945Z"
  },
  "wikipedia-dinamo-records:/wiki/Dinamo_Zagreb_records_and_statistics": {
   "endpoint": "/wiki/Dinamo_Zagreb_records_and_statistics",
@@ -37,7 +37,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:22:33.872Z"
+  "checkedAt": "2026-10-27T09:10:37.216Z"
  },
  "nft-dinamo:/club/504/1953/Dinamo_Zagreb.html": {
   "endpoint": "/club/504/1953/Dinamo_Zagreb.html",
@@ -45,7 +45,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:22:35.078Z"
+  "checkedAt": "2026-10-27T09:10:38.302Z"
  },
  "dinamo-official:/en/club/history": {
   "endpoint": "/en/club/history",

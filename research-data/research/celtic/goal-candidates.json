@@ -532,5 +532,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-26T09:22:01.252Z",
   "updatedAt": "2026-10-26T09:22:01.252Z"
+ },
+ {
+  "id": "ga-4f8f64021f062e8e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "55",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1912-09-03-celtic-1-1-barnsley-friendly/",
+    "locator": "p27",
+    "quote": "The second half was a much more even affair especially after the Scottish side equalised in the 55th minute, Willie Loney scoring from the penalty spot after the referee spotted a handball in the penalty area. The game then flowed from box to box but try as both sets of forwards might they were unable to create sufficient chances to finish off their opponents and at the end of the 90 minutes both teams were probably content to have finished up equal with Barnsley having shown an initially sceptical Scottish crowd and press box that their FA Cup victory had been no fluke.",
+    "bodyHash": "5b0163e57a3dedd833d84e33a480e99b21ed6988cb1720f041e8bf9220b85cee",
+    "fetchedAt": "2026-10-27T09:10:16.243Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:10:16.243Z",
+  "updatedAt": "2026-10-27T09:10:16.243Z"
+ },
+ {
+  "id": "ga-3003295f1d8eb8a5",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "87",
+  "scorerAlias": "Jimmy Quinn",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1912-10-05-celtic-1-0-morton-league-division-1/",
+    "locator": "p3",
+    "quote": "Celtic on top but it took until the 87th minute before Jimmy Quinn scored a goal. Jimmy McMenemy out with a damaged arm",
+    "bodyHash": "730999603ddad7a0e09f899b49227872ddddf7033a03425a16c27e848055fc57",
+    "fetchedAt": "2026-10-27T09:10:16.248Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:10:16.248Z",
+  "updatedAt": "2026-10-27T09:10:16.248Z"
  }
 ]

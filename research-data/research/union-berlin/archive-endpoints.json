@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:24:21.596Z"
+  "checkedAt": "2026-10-27T09:11:51.980Z"
  },
  "dfb-union:/en/clubs/1-fc-union-berlin": {
   "endpoint": "/en/clubs/1-fc-union-berlin",
@@ -61,7 +61,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:24:26.732Z"
+  "checkedAt": "2026-10-27T09:11:56.254Z"
  },
  "footballhistory-union:/club/union-berlin.html": {
   "endpoint": "/club/union-berlin.html",
@@ -69,7 +69,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-26T09:24:28.047Z"
+  "checkedAt": "2026-10-27T09:11:57.480Z"
  },
  "immer-unioner:/spieler.php?getid=44": {
   "endpoint": "/spieler.php?getid=44",
@@ -238,5 +238,29 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-10-26T09:24:19.619Z"
+ },
+ "immer-unioner:/spieler.php?getid=199": {
+  "endpoint": "/spieler.php?getid=199",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-27T09:11:42.556Z"
+ },
+ "immer-unioner:/spieler.php?getid=175": {
+  "endpoint": "/spieler.php?getid=175",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-27T09:11:46.482Z"
+ },
+ "immer-unioner:/spieler.php?getid=190": {
+  "endpoint": "/spieler.php?getid=190",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-27T09:11:49.909Z"
  }
 }

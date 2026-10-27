@@ -1,0 +1,32 @@
+[
+ {
+  "id": "ga-ce2655c65b9b590b",
+  "clubId": "union-berlin",
+  "sourceIds": [
+   "immer-unioner"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "96",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "immer-unioner",
+    "url": "https://www.immerunioner.de/spieler.php?getid=190",
+    "locator": "p23",
+    "quote": "Den rumänischen Innenverteidiger holte Frank Pagelsdorf von den Amateuren Hannover 96's nach, Hans Meyer sortierte ihn 1995 aus.",
+    "bodyHash": "11ec8ad9f65c88d46471a60c3b0ce2fbc3356b221e02702b7d0e82bb99852767",
+    "fetchedAt": "2026-10-27T09:11:49.909Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:11:49.909Z",
+  "updatedAt": "2026-10-27T09:11:49.909Z"
+ }
+]

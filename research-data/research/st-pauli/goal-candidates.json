@@ -757,5 +757,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-26T09:23:36.870Z",
   "updatedAt": "2026-10-26T09:23:36.870Z"
+ },
+ {
+  "id": "ga-6fdbe5b08002270d",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "42",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/11/24/lage-am-millerntor-24-november-2020/",
+    "locator": "p24",
+    "quote": "In der ARD gibt es eine Dokumentation über ökologische Nachhaltigkeit im Profisport (42min). Schaut mal rein, macht Euch selbst ein Bild davon, wie sich der Sport der Zukunft entwickeln könnte. In jedem Fall mal wieder ein gutes Beispiel dafür, dass viele Profi-Sportler*innen ziemlich klare Gedanken haben. Nicht gut weg kommt hingegen der Profi-Fußball.",
+    "bodyHash": "f83dd5bdcaf027f9e0fbe29763a83822c6d84421480366f2f1f42f5db2ee58a1",
+    "fetchedAt": "2026-10-27T09:11:18.948Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:11:18.948Z",
+  "updatedAt": "2026-10-27T09:11:18.948Z"
+ },
+ {
+  "id": "ga-914f3c050b24fd22",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "5",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2020/12/17/lage-am-millerntor-17-dezember-2020/",
+    "locator": "p38",
+    "quote": "Thematisch passend dann auch ein Beitrag aus der Sportschau (5min) : Die „Streetboys“ aus München sind aktuell die einzige schwule Fußballmannschaft im offiziellen Spielbetrieb des DFB.",
+    "bodyHash": "113ea312114c78518c5ca443382c6094c2efb265068400a4be057d56e7264d5d",
+    "fetchedAt": "2026-10-27T09:11:24.123Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:11:24.123Z",
+  "updatedAt": "2026-10-27T09:11:24.123Z"
  }
 ]
