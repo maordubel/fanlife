@@ -182,7 +182,9 @@ async function resolveAssets(data) {
 const APP_OF = {fanlife: 'fanlife', theworker: 'worker', worker: 'worker', dubid: 'dubid', offsides: 'offsides', fuckyou: 'fuckyou', all: 'fanlife'}
 
 /** PNG buffers for one Telegram message (and, when the plan made it, the post's own kit). Never throws. */
+export let lastError = null
 export async function visualsFor(msg, kit = null) {
+  lastError = null
   try {
     const post = readPost(msg)
     const out = []
@@ -200,6 +202,7 @@ export async function visualsFor(msg, kit = null) {
     }
     return out
   } catch (e) {
+    lastError = String(e?.stack || e?.message || e).slice(0, 400)
     console.log(`visual skipped: ${String(e?.message || e).slice(0, 160)}`)
     return []
   }

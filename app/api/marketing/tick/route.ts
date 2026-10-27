@@ -25,16 +25,18 @@ const tg = (token: string, method: string, body: FormData | Record<string, unkno
     .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
 
 /** The kit renderer is plain ESM under scripts/; it is traced into this function and loaded at run time. */
-async function visuals(msg: string, kit: unknown): Promise<Buffer[]> {
+async function visuals(msg: string, kit: unknown): Promise<{pngs: Buffer[]; why: string | null}> {
   try {
     const file = pathToFileURL(path.join(process.cwd(), 'scripts/marketing/kit/visual.mjs')).href
     const mod = await import(/* webpackIgnore: true */ file)
-    return await mod.visualsFor(msg, kit ?? null)
-  } catch { return [] }
+    const pngs: Buffer[] = await mod.visualsFor(msg, kit ?? null)
+    return {pngs, why: pngs.length ? null : mod.lastError || 'nothing to draw'}
+  } catch (e) { return {pngs: [], why: `load: ${String((e as Error)?.stack || e).slice(0, 400)}`} }
 }
-async function sendVisuals(token: string, chat: string, msg: string, kit: unknown) {
-  const pngs = await visuals(msg, kit)
-  if (!pngs.length) return
+/** what happened to the picture — returned in the tick's answer so a missing image says why */
+async function sendVisuals(token: string, chat: string, msg: string, kit: unknown): Promise<string> {
+  const {pngs, why} = await visuals(msg, kit)
+  if (!pngs.length) return `none: ${why}`
   const form = new FormData()
   form.append('chat_id', chat)
   form.append('disable_notification', 'true')
@@ -45,7 +47,8 @@ async function sendVisuals(token: string, chat: string, msg: string, kit: unknow
     form.append('media', JSON.stringify(pngs.map((_, i) => ({type: 'photo', media: `attach://s${i}`, ...(i ? {} : {caption: `🎨 Ready-made carousel — ${pngs.length} slides. The post follows.`})}))))
     pngs.forEach((b, i) => form.append(`s${i}`, new Blob([new Uint8Array(b)], {type: 'image/png'}), `slide-${i + 1}.png`))
   }
-  await tg(token, pngs.length === 1 ? 'sendPhoto' : 'sendMediaGroup', form)
+  const r = await tg(token, pngs.length === 1 ? 'sendPhoto' : 'sendMediaGroup', form)
+  return r.ok ? `sent ${pngs.length}` : `refused: ${String(r.description || r.status).split(token).join('[token]').slice(0, 200)}`
 }
 
 export async function POST(r: NextRequest) {
@@ -59,16 +62,18 @@ export async function POST(r: NextRequest) {
   if (!token) return json({ok: false, error: 'TELEGRAM_BOT_TOKEN is not set on this deployment.'}, 503)
   if (got.probe) {
     const c = got.chat_id ? await tg(token, 'getChat', {chat_id: got.chat_id}) : {ok: false, description: 'no chat'}
-    return json({ok: true, probe: true, reachable: !!c.ok, why: c.ok ? null : String(c.description || c.status).slice(0, 120)})
+    // the probe also draws one sample picture (sent nowhere), so a broken renderer shows itself without waiting for a slot
+    const sample = await visuals('📌 Post · <b>FAN LIFE</b>\n\n🪝 <b>HOOK</b>\n<b>Football. Forever.</b>\n\n🎨 <i>Visual: T1 Quote card.</i>', null)
+    return json({ok: true, probe: true, reachable: !!c.ok, why: c.ok ? null : String(c.description || c.status).slice(0, 120), render: sample.pngs.length ? `ok ${sample.pngs[0]!.length} bytes` : sample.why})
   }
-  const done: {id: number; outcome: string}[] = []
+  const done: {id: number; outcome: string; visual: string}[] = []
   for (const p of got.posts || []) {
-    await sendVisuals(token, p.chat_id, p.msg, p.kit).catch(() => {})
+    const visual = await sendVisuals(token, p.chat_id, p.msg, p.kit).catch(e => `error: ${String(e).slice(0, 200)}`)
     const sent = await tg(token, 'sendMessage', {chat_id: p.chat_id, text: p.msg, parse_mode: 'HTML', disable_web_page_preview: true})
     const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status ?? 0) >= 500 ? 'unknown' : 'refused'
     const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)
     await rpc('worker_marketing_report', {p_id: p.id, p_outcome: outcome, p_error: error})
-    done.push({id: p.id, outcome})
+    done.push({id: p.id, outcome, visual})
   }
   return json({ok: true, done})
 }
