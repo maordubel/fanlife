@@ -2,6 +2,7 @@ import {describe, expect, it} from 'vitest'
 import {existsSync, readFileSync} from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
+// @ts-expect-error — plain ESM module, no types
 import {gateArt} from '../../scripts/marketing/kit/live.mjs'
 
 const A = path.join(process.cwd(), 'scripts/marketing/kit/assets')
@@ -30,6 +31,6 @@ describe('art round 2 (owner, 27.10.2026)', () => {
     const names = new Set<string>()
     for (const x of plan) for (const k of x.main.kit?.slides ?? [x.main.kit]) if (k?.t === 'L-GATE') names.add(k.data.name)
     expect(names.size).toBeGreaterThan(10)
-    for (const name of names) { const a = gateArt({name}); expect(a, name).toMatch(/^gate-/); expect(existsSync(path.join(A, a + '-line.png'))).toBe(true) }
+    for (const name of names) { const a: string = gateArt({name}); expect(a, name).toMatch(/^gate-/); expect(existsSync(path.join(A, a + '-line.png'))).toBe(true) }
   })
 })
