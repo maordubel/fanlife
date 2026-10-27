@@ -81,3 +81,47 @@
 @media (prefers-reduced-motion: reduce) { .scorer, .against { animation: none; } }
 /* the phone's own frame: squarer, so each pixel man is bigger and the camera does the travelling */
 .screen[data-frame='narrow'] { aspect-ratio: 192 / 160; }
+/* ── the broadcast deck (27.10.2026): the radar beside the caption — never on the picture — and the reel's running order ── */
+.deck { display: grid; grid-template-columns: clamp(92px, 26vw, 150px) minmax(0, 1fr); gap: 6px; align-items: stretch; }
+.deck[hidden] { display: none; }
+.radar { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 110 / 72; background: var(--hl-ink); border: 3px solid var(--hl-ink); }
+.lower { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 4px; min-inline-size: 0; }
+.lower .caption { display: flex; align-items: center; block-size: 100%; box-sizing: border-box; border-inline-start: 6px solid var(--club-primary, var(--mag-red)); overflow-wrap: anywhere; }
+.progress { list-style: none; margin: 0; padding: 0 2px; display: flex; align-items: flex-end; gap: 3px; block-size: 12px; }
+.progress li { flex: 1 1 0; min-inline-size: 3px; block-size: 6px; background: color-mix(in srgb, var(--hl-ghost, var(--hl-ink)) 22%, transparent); border-radius: 1px; transition: background-color .2s; }
+.progress li[data-state='done'] { background: var(--hl-ghost, var(--hl-ink)); }
+.progress li[data-state='now'] { background: var(--club-primary, var(--mag-red)); block-size: 9px; animation: hl-now 1s ease-in-out infinite alternate; }
+.progress li[data-goal] { block-size: 12px; background: var(--seg); box-shadow: 0 0 0 1.5px var(--hl-ink); }
+@keyframes hl-now { from { opacity: .65; } to { opacity: 1; } }
+.ico { margin-inline-end: 6px; font-size: .9em; }
+.short { display: none; }
+.full { margin-inline-start: auto; min-inline-size: 46px; padding: 0; font-size: 20px; }
+.full + .count { margin-inline-start: 8px; }
+/* the phone: one row of controls, short words, everything a thumb's width; the screen as wide as the phone */
+@media (max-width: 619px) {
+  .theatre { gap: 6px; }
+  .screen { border-width: 2px; box-shadow: 0 0 0 2px var(--mag-white), 0 0 0 4px var(--hl-ink); }
+  .hud { padding: 3px 6px; gap: 4px; font-size: clamp(13px, 4.4vw, 20px); }
+  .hudCrest { block-size: 1.1em; }
+  .long { display: none; } .short { display: inline; }
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(44px, 1fr)); gap: 6px; }
+  .controls .btn { padding: 0 8px; font-size: 15px; box-shadow: 2px 2px 0 var(--hl-ink); }
+  .controls .full { margin-inline-start: 0; }
+  .lower .caption { padding: 6px 8px; font-size: 12px; line-height: 1.25; }
+  .tag { font-size: 11px; }
+}
+/* full screen: the picture as large as the glass allows, the deck and the controls under it */
+.theatre[data-full] { max-inline-size: none; margin: 0; padding: 8px; box-sizing: border-box; background: var(--hl-ink); align-content: center; block-size: 100dvh; grid-template-rows: minmax(0, 1fr) auto auto; }
+.theatre[data-full] .screen { inline-size: auto; block-size: 100%; max-inline-size: 100%; justify-self: center; box-shadow: none; border-color: var(--hl-ink); }
+.theatre[data-full] .ghost, .theatre[data-full] .count, .theatre[data-full] .progress li[data-state='done'] { --hl-ghost: var(--hl-white); }
+@media (orientation: landscape) and (max-height: 520px) {
+  .theatre[data-full] { grid-template-columns: minmax(0, 1fr) clamp(150px, 26vw, 240px); grid-template-rows: minmax(0, 1fr) auto; }
+  .theatre[data-full] .screen { grid-row: 1 / span 2; }
+  .theatre[data-full] .deck { grid-template-columns: 1fr; align-self: start; }
+  .theatre[data-full] .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); display: grid; }
+}
+@media (prefers-reduced-motion: reduce) { .progress li { transition: none; animation: none !important; } }
+/* the scoreboard is a broadcast bug in the top middle, so the boards and the stand stay in view on both sides of it */
+.hud { inset-inline: 0; margin-inline: auto; inline-size: fit-content; max-inline-size: calc(100% - 8px); grid-template-columns: auto auto auto; gap: 10px; padding: 3px 10px 4px;
+  background: color-mix(in srgb, var(--hl-ink) 84%, transparent); border: 2px solid var(--hl-ink); border-block-start: 0; border-radius: 0 0 6px 6px; }
+@media (max-width: 619px) { .hud { gap: 6px; padding: 2px 6px 3px; } }

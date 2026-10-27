@@ -44,3 +44,21 @@ describe('the picture keeps one scale',()=>{
   expect(scaleAt(0)).toBeGreaterThan(.75)
  })
 })
+
+describe('the boards and the radar (owner, 27.10.2026)',()=>{
+ it('every pitch-side board is one of our own banners, and it exists in both sizes',async()=>{
+  const {BOARD_ADS}=await import('@/components/highlights/boards'),{existsSync}=await import('node:fs')
+  for(const id of BOARD_ADS)for(const r of ['1x','2x'])expect(existsSync(`public/ads/${id}-${r}.webp`),`${id}-${r}`).toBe(true)
+ })
+ it('a club page prints the boards in one ink (rule 95); the hub in colour',async()=>{
+  const {highlightsAllow}=await import('@/lib/highlights/page')
+  expect(highlightsAllow(undefined,{}).mono).toBe(false)
+  expect(highlightsAllow(()=>false,{}).mono).toBe(true)
+ })
+ it('the radar is its own canvas, never drawn on the picture',async()=>{
+  const {readFileSync}=await import('node:fs'),src=readFileSync('components/highlights/paint.ts','utf8')
+  const body=src.slice(src.indexOf('export function draw('),src.indexOf('/** where a man'))
+  expect(body).not.toMatch(/radar|Radar/)
+  expect(readFileSync('components/highlights/Theatre.tsx','utf8')).toMatch(/drawRadar\(rc/)
+ })
+})

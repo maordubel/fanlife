@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useMemo, useRef } from 'react'
 
+import { preloadBoards } from '@/components/highlights/boards'
 import { Theatre } from '@/components/highlights/Theatre'
 import { H, NARROW, RES, WIDE, draw, drawEnds, freshCam } from '@/components/highlights/paint'
 import { PALETTE, type Palette } from '@/lib/highlights/kit'
@@ -38,9 +39,15 @@ function Still({ sc, t, teams, w }: { sc: Scene; t: number; teams: ReturnType<ty
   useEffect(() => {
     const c = ref.current?.getContext('2d'); if (!c) return
     // the camera settles as it would in play: walk it from the start of the scene to the still
-    const cam = freshCam()
-    for (let u = 0; u < t; u += 0.05) draw(c, sc, u, cam, true, PALETTE as unknown as Palette, teams, w)
-    draw(c, sc, t, cam, true, PALETTE as unknown as Palette, teams, w)
+    const paint = () => {
+      const cam = freshCam()
+      for (let u = 0; u < t; u += 0.05) draw(c, sc, u, cam, true, PALETTE as unknown as Palette, w)
+      draw(c, sc, t, cam, true, PALETTE as unknown as Palette, w)
+    }
+    preloadBoards(); paint()
+    // the boards' banners arrive a moment later: paint the still again once they have
+    const id = window.setTimeout(paint, 900)
+    return () => window.clearTimeout(id)
   }, [sc, t, teams, w])
   return <figure style={{ margin: 0 }}><canvas ref={ref} width={w * RES} height={H * RES} style={{ inlineSize: '100%', imageRendering: 'pixelated' }} /><figcaption style={{ font: '12px monospace' }}>t={t.toFixed(2)}</figcaption></figure>
 }
