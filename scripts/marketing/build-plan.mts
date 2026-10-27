@@ -415,9 +415,11 @@ for (let n = 1; n <= 30; n++) {
   slot('12:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : fact(n))
   slot('14:00', 'story', quiz(n))
   slot('16:00', 'post', nerds(n))
+  slot('17:00', 'post', gate(n + 15)) // launch phase (owner, 27.10.2026): more exposure — a second gate, another club
   slot('18:00', 'post', bigGame(n))
   slot('19:00', 'carousel', carousel(n))
   slot('20:00', 'post', spicy(n))
+  slot('21:00', 'story', quiz(n + 40)) // a second story quiz, another club
   slot('22:00', 'post', fact(100 + n))
   for (const [t, kind, app] of LIVE) slot(t, 'post', {app, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
 }

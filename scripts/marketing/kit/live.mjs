@@ -8,7 +8,9 @@
  *  accents, never "on FAN LIFE": L-DUBID-ROUND (a round is open), L-DUBID-SYSTEM, L-OFFSIDES-TODAY (today's
  *  arenas), L-OFFSIDES-SYSTEM.
  *  L-CARD is the safety net: any post whose own picture cannot be drawn still goes out with its app's card. */
+import {createRequire} from 'node:module'
 import {Canvas, measure} from './source/weekly.mjs'
+const QR = createRequire(import.meta.url)('qrcode')
 import {clubField, crestMedal, ownColour, paintFor, ribbon, LOGOS} from './poster.mjs'
 
 export const LIVE_TEMPLATES = ['L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
@@ -178,12 +180,49 @@ export function designLive(t, app, d) {
     if (d.line) c.text(d.line, 64, 1100, 34, 'Weekly Head', c.paper, {max: 650, min: 22})
     brandFoot(c, d.label || null)
   } else if (t === 'L-OFFSIDES-TODAY') {
-    brandTop(c, 'offsides', ['TODAY’S', 'ARENAS'], d.sub || 'PREDICT BEFORE KICK-OFF')
+    // OFFSIDES' own "Today's Central Arenas" story (src/admin/CentralArenasStudio.jsx), as a post: night stage, gold
+    // foil headline, glass match cards with both crests, a gold JOIN THE BATTLE plate with the QR to the app
     const rows = d.rows || []
     if (!rows.length || rows.length > 5) throw Error('L-OFFSIDES-TODAY needs 1–5 matches')
-    const hh = Math.min(220, 640 / rows.length)
-    rows.forEach((r, i) => matchRow(c, 64, 400 + i * (hh + 12), 952, hh, r))
-    brandFoot(c, d.label || null)
+    const GOLD1 = '#F7E6AE', GOLD2 = '#D6B25E', CHALK = '#F4F1E8'
+    c.add(`<defs><linearGradient id="os-stage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1630"/><stop offset="1" stop-color="#050A18"/></linearGradient>
+      <radialGradient id="os-flood" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#2D4B8E" stop-opacity=".75"/><stop offset="1" stop-color="#0B1630" stop-opacity="0"/></radialGradient>
+      <linearGradient id="os-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${GOLD1}"/><stop offset="1" stop-color="${GOLD2}"/></linearGradient>
+      <linearGradient id="os-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121E3A" stop-opacity=".94"/><stop offset="1" stop-color="#091022" stop-opacity=".94"/></linearGradient></defs>`)
+    c.add(`<rect x="0" y="0" width="${W}" height="${H}" fill="url(#os-stage)"/><rect x="0" y="0" width="${W}" height="${H}" fill="url(#os-flood)"/>`)
+    // floodlight beams from the two top corners
+    c.add(`<path d="M-40 -40L380 700L120 760Z M${W + 40} -40L${W - 380} 700L${W - 120} 760Z" fill="${GOLD1}" opacity=".07"/>`)
+    c.halftone(0, 0, W, H, CHALK, .04)
+    c.image(LOGO.offsides, W / 2 - 110, 24, 220, 220, {contain: true, raw: true, id: 'app-logo'})
+    const head = d.headline || 'TODAY’S CENTRAL ARENAS'
+    c.text(head, W / 2, 318, 74, 'Shrikhand', GOLD1, {anchor: 'middle', max: W - 120, min: 38, stroke: 3, shadow: true, tag: 'title'})
+    c.text('PICK YOUR BATTLE · JOIN THE CHAOS', W / 2, 362, 24, 'Weekly Caps', CHALK, {anchor: 'middle', max: 900, min: 14})
+    const top = 392, bottom = H - 260, rh = Math.min(232, (bottom - top) / rows.length) - 16
+    rows.forEach((r, i) => {
+      const y = top + i * (rh + 16), x = 56, w = W - 112
+      c.add(`<rect x="${x}" y="${y}" width="${w}" height="${rh}" rx="22" fill="url(#os-glass)" stroke="${GOLD1}" stroke-opacity=".35" stroke-width="1.6"/>`)
+      const cs = Math.min(112, rh * .5), cy = y + rh * .42, lx = x + w * .15, rx = x + w * .85
+      for (const [cx, src] of [[lx, r.homeCrest], [rx, r.awayCrest]]) {
+        c.add(`<circle cx="${cx}" cy="${cy}" r="${cs * .62}" fill="${CHALK}" opacity=".96"/>`)
+        if (src) c.image(src, cx - cs / 2, cy - cs / 2, cs, cs, {contain: true, id: 'match-crest'})
+      }
+      if (r.league) c.text(String(r.league), W / 2, y + 34, 18, 'Weekly Caps', CHALK, {anchor: 'middle', max: w * .46, min: 12})
+      c.text('VS', W / 2, y + rh * .48, 42, 'Shrikhand', GOLD1, {anchor: 'middle', max: 160})
+      if (r.ko) c.text(r.ko, W / 2, y + rh * .7, 26, 'Ultra', '#7CF29A', {anchor: 'middle', max: 200, min: 14})
+      const ny = Math.min(y + rh - 18, cy + cs * .62 + 36)
+      c.text(r.home, lx, ny, 30, 'Weekly Head', CHALK, {anchor: 'middle', max: w * .3, min: 16})
+      c.text(r.away, rx, ny, 30, 'Weekly Head', CHALK, {anchor: 'middle', max: w * .3, min: 16})
+      if (r.arenas) c.text(`${r.arenas} ARENA${r.arenas === 1 ? '' : 'S'} OPEN`, W / 2, y + rh - 12, 20, 'Weekly Caps', GOLD1, {anchor: 'middle', max: w * .3, min: 12})
+    })
+    const by = H - 232
+    c.add(`<rect x="56" y="${by}" width="${W - 112}" height="160" rx="22" fill="url(#os-gold)"/>`)
+    c.text('JOIN THE BATTLE', 92, by + 76, 60, 'Shrikhand', '#2A1D04', {max: 640, min: 30})
+    c.text('OFFSIDES.DUBELTEAM.COM', 96, by + 122, 26, 'Weekly Caps', '#2A1D04', {max: 640, min: 14, tag: 'footer-url'})
+    const qr = QR.create('https://offsides.dubelteam.com').modules, qs = 128, cell = qs / qr.size, qx = W - 92 - qs, qy = by + 16
+    let path = ''
+    for (let yy = 0; yy < qr.size; yy++) for (let xx = 0; xx < qr.size; xx++) if (qr.get(yy, xx)) path += `M${(qx + xx * cell).toFixed(2)} ${(qy + yy * cell).toFixed(2)}h${cell.toFixed(2)}v${cell.toFixed(2)}h-${cell.toFixed(2)}z`
+    c.add(`<rect x="${qx - 8}" y="${qy - 8}" width="${qs + 16}" height="${qs + 16}" rx="10" fill="#FFFFFF"/><path d="${path}" fill="#000000"/>`)
+    c.text('PREDICT THE CHAOS · VIRTUAL FLAMES · NOT REAL-MONEY', W / 2, H - 34, 20, 'Weekly Caps', CHALK, {anchor: 'middle', max: 960, min: 12})
   } else if (t === 'L-CARD') {
     if (brand) {
       brandTop(c, brand, [brand === 'dubid' ? 'DUBID' : 'OFFSIDES'], null)
