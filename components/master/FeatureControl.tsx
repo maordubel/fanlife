@@ -11,7 +11,7 @@ const GATE_LABEL:Record<ExperienceGate,string>={trivia:'Gate 2 · Trivia',timeli
 export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{id:string;name:string}[];api:{busy:boolean;post:<T>(action:string,data?:unknown,message?:string)=>Promise<T|null>}}){
  const [f,setF]=useState(initial)
  const save=async(patch:Partial<Features>,msg:string)=>{const r=await api.post<Features>('features',{patch},msg);if(r)setF(r)}
- const row=(k:'allFootball'|'fanLeague'|'friendlies'|'highlights'|'peoplesChoice'|'universe'|'lifeRush',extra?:React.ReactNode)=><li key={k} data-durable={f[k]?'yes':'no'}><span className="desk-stamp">{f[k]?'On':'Off'}</span><div>
+ const row=(k:'allFootball'|'fanLeague'|'friendlies'|'highlights'|'peoplesChoice'|'universe'|'lifeRush'|'pins',extra?:React.ReactNode)=><li key={k} data-durable={f[k]?'yes':'no'}><span className="desk-stamp">{f[k]?'On':'Off'}</span><div>
   <b>{FEATURE_TEXT[k].label}</b><p>{FEATURE_TEXT[k].hint}</p>
   <p className="desk-fine">{f[k]?'Open to every visitor.':'Off for fans. Your owner session can already play it (marked “Owner preview”).'}{f.updatedAt?` Last change ${new Date(f.updatedAt).toLocaleString('en-GB')}.`:''}</p>
   {extra}
@@ -30,6 +30,7 @@ export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{
     {clubs.length?<><p className="desk-fine">Clubs held out of every discovery card:</p>{clubs.map(c=>{const key=`club:${c.id}`,on=!f.universeOff.includes(key);return <label key={c.id} className="pcc-chip" data-on={on||undefined}><input type="checkbox" className="sr-only" checked={on} disabled={api.busy} onChange={()=>{const next=on?[...f.universeOff,key]:f.universeOff.filter(x=>x!==key);void save({universeOff:next},`${c.name} ${on?'held out of':'back in'} discovery.`)}}/>{c.name}</label>})}</>:null}
     <p className="desk-fine">A product or club switched off here is never offered — not on the hub card, not after a game, and the Advertising desk says so. Nothing is deleted.</p></fieldset>)}
    {row('lifeRush')}
+   {row('pins')}
   </ul>
  </section>
 }

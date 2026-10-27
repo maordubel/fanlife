@@ -8,7 +8,9 @@ import {TabBar} from './TabBar'
 import {evaluationMode} from '@/lib/master/mode'
 import {readState} from '@/lib/master/store'
 import {Contents} from '@/components/weekly/Contents'
-import {hubSections,menuClubs,menuCopy,menuCorner,menuFanLife} from '@/lib/weekly/menu'
+import {hubSections,menuApps,menuClubs,menuCopy,menuCorner,menuFanLife} from '@/lib/weekly/menu'
+import {featuresOf} from '@/lib/features'
+import {isOwner} from '@/lib/features-server'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 
@@ -43,8 +45,8 @@ export {Mark} from './Mark'
 
 /** THE WEEKLY's menu in the masthead (rule 124): the contents page — the paper, your corner, every club. */
 async function HubMenu({locale,current,theme}:{locale:UiLocale;current:string|null;theme?:ClubTheme}) {
- const t=menuCopy(locale),state=await readState().catch(()=>null)
+ const t=menuCopy(locale),state=await readState().catch(()=>null),pins=featuresOf(state).pins||isOwner()
  return <Contents tone="paper" rivalNo={theme?rivalBans(theme).join(' ')||undefined:undefined} paint={theme?themeStyle(theme,locale) as Record<string,string>:undefined}
-  copy={{menu:t.wkMenu,title:t.wkContents,kicker:t.wkKickerHub,close:t.wkClose,corner:t.wkCorner,clubs:t.wkClubs,fanlife:t.wkFanLife,section:t.wkPaper}}
+  copy={{menu:t.wkMenu,title:t.wkContents,kicker:t.wkKickerHub,close:t.wkClose,corner:t.wkCorner,clubs:t.wkClubs,fanlife:t.wkFanLife,section:t.wkPaper,apps:t.pinApps}} pins={pins} locale={locale} apps={menuApps(locale,current)}
   sections={hubSections(locale)} corner={menuCorner(locale)} clubs={menuClubs(state?.clubs??[],current,locale,theme)} fanlife={menuFanLife(locale)}/>
 }

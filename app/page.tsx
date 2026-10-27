@@ -31,6 +31,7 @@ import he from '@/messages/clubs/he.json'
 import { Badge } from '@/components/clubs/Badge'
 import {Emblem} from '@/components/legends/Brand'
 import {door} from '@/lib/features-server'
+import {PinsRow} from '@/components/fanlife/Pins'
 export const dynamic='force-dynamic'
 
 const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -89,6 +90,9 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
 
   {/* THE FIRST SCREEN (H1): a new fan sees the crests and taps one; a returning fan continues where they were. */}
   <HubHero clubs={heroClubs} lang={locale==='en'?'':`?lang=${locale}`} copy={heroCopy} crests={<ul className="wkh-hero-crests">{live.map(c=>{const l=livery(c.id);return <li key={c.id}><Link className="wkh-hero-crest min-h-tap" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}><span className="wkh-disc">{l&&<Badge club={l}/>}</span><b>{c.name}</b></Link></li>})}</ul>}/>
+
+  {/* YOUR SHORTCUTS: what the fan pinned himself — never a suggestion (owner audit 27.10.2026 §5.5) */}
+  <div className="wkp-strip wkh-pins"><PinsRow locale={locale} where="hub"/></div>
 
   {/* THE MANAGER: LEGENDS MANAGER leads the page, above the gates (owner, 14.10.2026). */}
   {fl.open&&<section className="wkh-lm" aria-label={copy.wkhLmTitle}>

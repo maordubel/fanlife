@@ -7,6 +7,7 @@ import {LegendsReveal} from '@/components/legends/Reveal'
 import {Careers,ClaimBanner,ClubRoll,type ClubOption} from '@/components/legends/FrontDoor'
 import {GAME_VALUES} from '@/components/legends/LegendCard'
 import {door} from '@/lib/features-server'
+import {PinToggle} from '@/components/fanlife/Pins'
 import {LEGENDS_RULES as R} from '@/lib/legends/config'
 import {claimKeys,viewer} from '@/lib/legends/owner'
 import {legendsClubs} from '@/lib/legends/server'
@@ -44,6 +45,7 @@ export default async function Page({searchParams}:{searchParams?:{club?:string}}
      <h1 className="lgm-hero-name"><span>Legends</span> Manager</h1>
      <p className="lgm-motto">One club. Only the men who wore its shirt. Your dynasty.</p>
      <p className="lgm-lede">Draft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.</p>
+     <p className="wkp-under"><PinToggle href="/all-football/legends" label="Legends Manager"/></p>
      {af.open?<p className="af-back-row"><Link className="af-back" href="/all-football"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>ALL FOOTBALL</Link></p>:null}
     </header>
     <div className="wkl-lm-main">

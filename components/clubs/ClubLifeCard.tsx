@@ -1,3 +1,4 @@
+import {PinToggle} from '@/components/fanlife/Pins'
 import Link from 'next/link'
 import {Plate} from '@/components/weekly/Plate'
 import {LifeContinue} from './LifeContinue'
@@ -5,7 +6,7 @@ import type {LifeCompat} from '@/lib/life/universal/compat'
 
 type Copy={lifeGame:string;wkkLifeShout:string;lifeTitle:string;lifeOpen:string;lifeWorkshop:string;life:string;lifeContinue?:string;lifeWaiting?:string}
 /** A club's LIFE door as a banner: used on the club home and on the All gates page, so both say the same thing. */
-export function ClubLifeCard({href,state,copy,club,compat}:{href:string|null;state:string;copy:Copy;club?:string;compat?:LifeCompat|null}){
+export function ClubLifeCard({href,state,copy,club,compat,pin}:{href:string|null;state:string;copy:Copy;club?:string;compat?:LifeCompat|null;/** LIFE's Pin toggle (switch `pins`) */pin?:{href:string;label:string;locale:string}}){
  return <section className="wkk-life" id="life-block" aria-labelledby="life-h"><div className="wk-panel shadow wkk-life-in" id="life" data-life-entry={state}>
   <span className="wkk-life-art wk-clubplate" aria-hidden="true"><Plate art="fatherson" ink="ink"/></span>
   <div className="wkk-life-text">
@@ -16,6 +17,7 @@ export function ClubLifeCard({href,state,copy,club,compat}:{href:string|null;sta
     <p className="wkk-life-note">{href?copy.lifeOpen:copy.lifeWorkshop}</p>
     {href&&<Link className="wk-btn red wkk-life-cta min-h-tap" href={href}>{copy.life}</Link>}
    </>}
+   {pin&&<PinToggle href={pin.href} label={pin.label} locale={pin.locale}/>}
   </div>
  </div></section>
 }

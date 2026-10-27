@@ -2,6 +2,7 @@ import Link from 'next/link'
 import {Emblem} from '@/components/legends/Brand'
 import {notFound} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
+import {PinToggle} from '@/components/fanlife/Pins'
 import {Contributors,PreviewRibbon,modeQuery} from '@/components/experiences/AfFrame'
 import {Plate,type PlateArt,type PlateInk} from '@/components/weekly/Plate'
 import {Icon} from '@/components/weekly/Icon'
@@ -50,6 +51,7 @@ export default async function Page({searchParams}:{searchParams:{mode?:string;a?
      <Plate art="fans" ink="orange" className="wkl-af-fans"/>
     </div>
     <p className="wk-k wkl-mute wkl-af-date">{today}</p>
+    <p className="wkp-under"><PinToggle href="/all-football" label="ALL FOOTBALL"/></p>
     <p className="wk-cap white wkl-af-tag">{ALL_FOOTBALL.tagline}</p>
    </header>
    <div className="wkl-af-body">

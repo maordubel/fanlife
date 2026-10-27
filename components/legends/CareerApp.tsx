@@ -4,6 +4,7 @@ import {legendsAction,legendsMarket} from '@/app/all-football/legends/actions'
 import type {CardView,CareerView,ResultView} from '@/lib/legends/view'
 import {ATTR_LABEL,ROLE_ATTRS,type AttrKey} from '@/lib/legends/ratings'
 import {Emblem,Stars} from './Brand'
+import {PinToggle} from '@/components/fanlife/Pins'
 import {DraftRoom} from './DraftRoom'
 import {LegendCard,money,posName,years,GAME_VALUES} from './LegendCard'
 import {CareerFriendlies} from './Friendlies'
@@ -56,7 +57,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
  return <ShirtProvider value={{shirts,wardrobe,colours:v.colours??{}}}><div className="lgm-app tl-app" data-meet={meet||undefined}>
   <header className="lgm-head">
    <Emblem size={56}/>
-   <div><p className="lgm-kicker">Legends Manager · season {v.season}</p><h1><ClubMark club={v.clubId} name={v.clubName} size={34}/> {v.clubName}</h1></div>
+   <div><p className="lgm-kicker">Legends Manager · season {v.season}</p><h1><ClubMark club={v.clubId} name={v.clubName} size={34}/> {v.clubName}</h1><PinToggle href={`/all-football/legends/career/${v.id}`} label={`Legends Manager · ${v.clubName}`}/></div>
    <dl className="lgm-meter">
     <div><dt>{v.phase==='draft'?'Draft':'Round'}</dt><dd>{v.phase==='draft'?'Open':<>{Math.min(v.played+1,v.rounds)}<small>/{v.rounds}</small></>}</dd></div>
     <div><dt>Cash</dt><dd>{v.phase==='draft'?money(v.draft?.left??v.draft?.budget??52):money(v.cash)}</dd></div>

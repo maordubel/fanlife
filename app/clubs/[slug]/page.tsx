@@ -40,6 +40,7 @@ import {todayInIsrael} from '@/lib/date/israel'
 import {Suspense} from 'react'
 import {clubMetadata} from '@/lib/seo/club'
 import {LegendsBanner} from '@/components/legends/ClubBanner'
+import {PinToggle,PinsRow} from '@/components/fanlife/Pins'
 export const dynamic='force-dynamic'
 export async function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);if(!c)return {};const st=await readState().then(s=>s.clubs.find(x=>x.id===c.id)?.status).catch(()=>undefined);return clubMetadata({id:c.id,name:c.name,city:c.city,description:nicknameLine(worldFor(c)),status:st})}
 
@@ -89,6 +90,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
    <div className="wkk-mast-line">
     <span className="wk-k">{copy.wkkEveryDay}</span>
     <span className="wk-k"><time dateTime={today}>{localizedDate(today,locale)}</time></span>
+    <PinToggle href={`/clubs/${id}`} label={c.name} locale={locale}/>
     {beloved&&beloved.number!==null&&<Link className="wk-roundel wkk-mast-gate" href={clubHref(id,'terrace',locale)} aria-label={`${world.terrace?.name??copy.homeTerrace} — ${world.terraceTab}`}><span className="wk-k" lang={world.terrace?.script}>{word}</span><b className="wk-num" dir="ltr">{beloved.number}</b></Link>}
    </div>
    <div className="wkk-mast-voice">
@@ -96,6 +98,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     {world.nicknames.length>0&&<p className="wkk-aka" data-testid="club-aka">{world.nicknames.map(n=><span key={n.text} className="wk-tag ink">{n.text}{n.local&&<> <bdi lang={n.script} dir="auto">{n.local}</bdi></>}</span>)}</p>}
    </div>
   </header>
+  <div className="wkk-span wkp-strip"><PinsRow locale={locale} where="club"/></div>
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<p className="wk-cap wkk-span">{copy.fallback}</p>}
 
   {/* ═════ the cover story: today's pick ═════ */}
@@ -132,7 +135,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
 
   {/* ═════ the rest of the issue ═════ */}
   {core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
-  <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} compat={life.href&&core?lifeCompatFor(core.data):null}/>
+  <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} pin={life.href?{href:`/clubs/${id}/life`,label:`${c.name} · LIFE`,locale}:undefined} compat={life.href&&core?lifeCompatFor(core.data):null}/>
   {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 

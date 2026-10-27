@@ -7,6 +7,7 @@ const P:Record<string,string>={
  menu:'M4 6h16M4 12h16M4 18h11',close:'M6 6l12 12M18 6L6 18',chev:'M6 9l6 6 6-6',search:'M10.5 4.5a6 6 0 1 0 0 12a6 6 0 1 0 0-12M15 15l5 5',
  plane:'M3 13l7-2 4-7h2l-2 7 6 1 1 2-7 1-3 5h-2l1-5-7-1z',book:'M5 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H5zM19 4h-4a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h4z',life:'M6 4h12v16l-6-4-6 4z',
  terrace:'M3 20h18M5 20v-5h4v5M10 20v-9h4v9M15 20v-7h4v7',vote:'M4 12h16v8H4zM8 12V4h8v8M10 8l1.5 1.5L14 7',star:'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z',
+ pin:'M9 3h6l-1 6 3 3H7l3-3zM12 12v9',
  sources:'M4 5h7v14H4zM13 5h7v14h-7zM6.5 9h2M15.5 9h2',
 }
 export type IconName=keyof typeof P

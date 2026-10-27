@@ -297,8 +297,9 @@
   .wkh .wkh-d-only { display: revert; }
   .wkh .wkh-m-only { display: none; }
   .wkh { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; padding: 22px 40px 72px;
-    grid-template-areas: 'mast mast mast' 'hero hero hero' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'clubs clubs letter' 'next say spec' 'back say spec';
-    grid-template-rows: auto auto auto auto auto auto auto auto auto 1fr; }
+    grid-template-areas: 'mast mast mast' 'hero hero hero' 'pins pins pins' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'clubs clubs letter' 'next say spec' 'back say spec';
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto 1fr; }
+  .wkh-pins { grid-area: pins; }
   .wkh-lm { grid-area: lm; margin-block-start: 28px; }
   .wkh-market-mini { grid-area: market; margin-block-start: 40px; }
   .wkh :is(#clubs, #next, #life, #market, #suggest) { scroll-margin-top: 92px; }
