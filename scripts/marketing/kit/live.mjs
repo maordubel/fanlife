@@ -9,6 +9,9 @@
  *  arenas), L-OFFSIDES-SYSTEM.
  *  L-CARD is the safety net: any post whose own picture cannot be drawn still goes out with its app's card. */
 import {createRequire} from 'node:module'
+import {existsSync} from 'node:fs'
+import path from 'node:path'
+import {fileURLToPath} from 'node:url'
 import {Canvas, measure} from './source/weekly.mjs'
 const QR = createRequire(import.meta.url)('qrcode')
 import {clubField, crestMedal, ownColour, paintFor, ribbon, LOGOS} from './poster.mjs'
@@ -16,6 +19,19 @@ import {clubField, crestMedal, ownColour, paintFor, ribbon, LOGOS} from './poste
 export const LIVE_TEMPLATES = ['L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
 const W = 1080, H = 1350
 const PLATES = ['kicker', 'keeper', 'dribbler', 'fans', 'memo', 'scarf', 'swap', 'bootball']
+// art round 2 (owner, 27.10.2026): one drawing per gate, found by the gate's printed name — the plan already in the
+// database names its gates this way, so a post scheduled before the art arrived gets it without being rebuilt.
+const KIT = path.dirname(fileURLToPath(import.meta.url))
+const has = name => existsSync(path.join(KIT, 'assets', name + '-line.png'))
+const GATE_ART = {'ALL-TIME XI': 'gate-xi', 'TRIVIA WING': 'gate-trivia', 'HISTORICAL LINE-UP': 'gate-lineup', 'KIT BUILDER': 'gate-kit-builder',
+  'SHIRT COLLECTION': 'gate-kits', MEMORY: 'gate-memory', 'TERRACE VOTE': 'gate-polls', 'GOAL RECONSTRUCTION': 'gate-goal',
+  'ROYAL RUMBLE': 'gate-royal-rumble', 'BLIND COW': 'gate-blind-cow', 'THE DERBY': 'gate-derby', 'LIVING ARCHIVE': 'gate-archive',
+  TIMELINE: 'gate-timeline', LIFE: 'gate-life', 'LEGENDS MANAGER': 'gate-legends'}
+export const gateArt = d => [GATE_ART[String(d.name || '').toUpperCase()], d.plate].find(n => n && has(n)) || 'kicker'
+/** which of the three covers a carousel's first slide wears (gates · a club's nights · love for the fans) */
+const coverArt = d => { const k = /YOUR GAMES/i.test(d.kicker || '') ? 'cover-gates' : /\bnights?\b/i.test(d.title || '') ? 'cover-history' : 'cover-love'; return has(k) ? k : null }
+// the FAN LIFE safety-net card: its 840 × 500 window is the moments' own shape (2048 × 1250)
+const CARD_ART = ['moment-goal', 'moment-final', 'moment-away', 'moment-derby', 'moment-kid', 'moment-radio'].filter(has)
 const LOGO = {dubid: 'assets/brand/dubid-logo.png', offsides: 'assets/brand/offsides-logo.png'}
 // brand grounds: DUBID's night navy with its cream line-art; OFFSIDES' stadium navy with its orange
 const GROUND = {dubid: '#16203F', offsides: '#0E1A33'}
@@ -74,7 +90,16 @@ export function designLive(t, app, d) {
     if (d.s === 'cover' || d.s === 'cta') {
       const f = clubField(c, paint, 0, 0, W, H)
       c.header()
-      if (d.s === 'cover') {
+      const art = d.s === 'cover' ? coverArt(d) : null
+      if (d.s === 'cover' && art) {
+        // the cover drawing fills the top two thirds (its bottom third is empty by brief); the crest goes small
+        c.plate(art, 60, 100, W - 120, 1170)
+        if (d.crest) crestMedal(c, d.crest, W - 150, 210, 110)
+        if (d.kicker) { const kw = Math.min(900, measure(String(d.kicker).toUpperCase(), 30, 'Weekly Caps') + 80); c.rect(W / 2 - kw / 2, 822, kw, 58, c.ink, {border: false}); c.text(d.kicker, W / 2, 862, 30, 'Weekly Caps', c.paper, {anchor: 'middle', max: 860, min: 16}) }
+        c.rect(64, 880, 952, 300, c.paper, {sw: 4})
+        c.fitted(d.title, 104, 980, {n: 76, min: 40, max: 872, maxLines: 3, step: 1.08})
+        c.burst(910, 1210, 96, 'SWIPE!', {fill: c.P.cyan, n: 34})
+      } else if (d.s === 'cover') {
         crestMedal(c, d.crest, W / 2, 520, 230)
         if (d.kicker) { const kw = Math.min(900, measure(String(d.kicker).toUpperCase(), 30, 'Weekly Caps') + 80); c.rect(W / 2 - kw / 2, 790, kw, 58, c.ink, {border: false}); c.text(d.kicker, W / 2, 830, 30, 'Weekly Caps', c.paper, {anchor: 'middle', max: 860, min: 16}) }
         c.rect(64, 880, 952, 300, c.paper, {sw: 4})
@@ -126,7 +151,7 @@ export function designLive(t, app, d) {
       c.text('GATE', 70, 330, 40, 'Weekly Caps', f.on, {max: 300})
       c.text(num, 58, 600, num.length > 1 ? 290 : 330, 'Ultra', f.on, {max: 420, min: 120, stroke: 8, shadow: true, tag: 'gate-number'})
     } else c.text(String(d.gate || ''), 70, 330, 34, 'Weekly Caps', f.on, {max: 560, min: 18})
-    c.plate(PLATES.includes(d.plate) ? d.plate : 'kicker', num ? 430 : 300, 250, num ? 600 : 720, 470)
+    c.plate(gateArt(d), num ? 430 : 300, 250, num ? 600 : 720, 470)
     ribbon(c, d.name, 760, {fill: c.accent, text: c.paper})
     c.burst(925, 905, 104, d.shout || 'PLAY FREE!', {fill: c.P.cyan, n: 36})
     c.fitted(d.headline, 64, 990, {n: 62, min: 38, max: 760, maxLines: 2, step: 1.05})
@@ -232,7 +257,7 @@ export function designLive(t, app, d) {
     } else {
       clubField(c, paintFor(d), 0, 0, W, 760)
       c.header()
-      c.plate(PLATES[(d.seed || 0) % PLATES.length], 120, 230, 840, 500)
+      { const pool = app === 'fanlife' && CARD_ART.length ? CARD_ART : PLATES; c.plate(pool[(d.seed || 0) % pool.length], 120, 230, 840, 500) }
       c.burst(930, 300, 100, 'FAN LIFE', {fill: c.P.cyan, n: 34})
       c.fitted(d.hook, 64, 880, {n: 74, min: 40, max: 952, maxLines: 4, step: 1.08})
       c.footer()

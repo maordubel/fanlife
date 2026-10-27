@@ -17,6 +17,26 @@ const sharp = createRequire(import.meta.url)('sharp')
 const TYPE = JSON.parse(readFileSync(path.join(ROOT, 'assets/type-paths.json'), 'utf8'))
 const REPO = path.resolve(ROOT, '../../..')
 const PHOTO = path.join(ROOT, 'assets/stadium.jpg')
+// art round 2 (owner, 27.10.2026): the T1 window wears one of six drawn moments instead of the one stadium photo,
+// chosen by what the post is about. The tone layer prints under the line; the template's two inks colour both.
+const MOMENTS = ['moment-goal', 'moment-final', 'moment-away', 'moment-derby', 'moment-kid', 'moment-radio']
+  .filter(n => existsSync(path.join(ROOT, 'assets', n + '-line.png')))
+export function momentFor(hook) {
+  if (!MOMENTS.length) return null
+  const h = String(hook || '').toLowerCase(), pick = n => MOMENTS.includes(n) ? n : null
+  return (/derby/.test(h) && pick('moment-derby')) || (/final|cup|trophy|title|champion|double/.test(h) && pick('moment-final'))
+    || (/away|trip|travel|abroad|road/.test(h) && pick('moment-away')) || (/radio|listen|heard/.test(h) && pick('moment-radio'))
+    || (/kid|child|first|young|father|son|daughter/.test(h) && pick('moment-kid')) || (/goal|scor|net/.test(h) && pick('moment-goal'))
+    || MOMENTS[[...h].reduce((a, c) => a + c.charCodeAt(0), 0) % MOMENTS.length]
+}
+async function momentPng(name) {
+  const file = path.join(tmpdir(), `fanlife-${name}.png`)
+  if (!existsSync(file)) {
+    const at = s => path.join(ROOT, 'assets', `${name}-${s}.png`)
+    writeFileSync(file, await sharp(at('tone')).composite([{input: at('line')}]).png().toBuffer())
+  }
+  return file
+}
 
 const APPS = {'FAN LIFE': 'fanlife', 'THE WORKER': 'worker', DUBID: 'dubid', OFFSIDES: 'offsides', 'FUCK YOU': 'fuckyou', 'DUBEL TEAM': 'dubel'}
 const SWAP = {'—': '-', '–': '-', '’': "'", '‘': "'", '“': '"', '”': '"', '→': '>', '×': 'x', '…': '...'}
@@ -105,10 +125,10 @@ export function plan(post) {
   if (!h) return []
   const firstBody = clip(printable(body.find(l => l !== hook) || '', 'Weekly Body'), 54)
   switch (template) {
-    case 'T1': return [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO}}]
+    case 'T1': return [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO, moment: momentFor(hook)}}]
     case 'T2': return [{t: 'T2', data: {feature: h, body: (wrap(firstBody, 2, 28) || []).slice(0, 2), noPlaceholders: true}}]
     case 'T3': return [{t: 'T3', data: {masthead: label, line: printable(hook, 'Weekly Caps').slice(0, 60)}}]
-    case 'T4': { const k = shirtFor(hook); return k ? [{t: 'T4', data: k}] : [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO}}] }
+    case 'T4': { const k = shirtFor(hook); return k ? [{t: 'T4', data: k}] : [{t: 'T1', data: {hook: h, body: firstBody, photo: PHOTO, moment: momentFor(hook)}}] }
     case 'T5': {
       const v = /countdown/i.test(variant) ? 'T5-C' : /wallpaper|lock/i.test(variant) ? 'T5-D' : 'T5-B'
       return [{t: v, data: {hook: h}}]
@@ -213,6 +233,8 @@ export async function visualsFor(msg, kit = null) {
     if (kit?.t && kit.data) return [await drawKit(kit, post.app || 'fanlife')]
     const out = []
     for (const {t, data} of plan(post)) {
+      if (data.moment) data.photo = await momentPng(data.moment)
+      delete data.moment
       if (data.file) { data.shirt = path.join(tmpdir(), `dubel-shirt-${process.pid}.png`); writeFileSync(data.shirt, await sharp(data.file).png().toBuffer()) }
       const d = design(t, post.app, data, true)
       if (!fits(d)) throw Error(`${t}: text runs off the picture`)
