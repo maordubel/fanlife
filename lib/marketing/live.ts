@@ -106,7 +106,7 @@ export function composeOffsides(d: LiveData, now: Date): Composed {
   const extra = all.length > top.length ? `\n…and ${all.length - top.length} more on OFFSIDES.` : ''
   return {refs: all.map(m => `os:${m.id}`), msg: message({app: 'offsides', sendAt: now, label: 'OFFSIDES today', hook,
     body: `${top.map(m => `${hhmm(m.kickoff)} (Israel time) · ${m.home} v ${m.away} · ${m.league}${m.arenas ? ` · ${m.arenas} arena${m.arenas === 1 ? '' : 's'}` : ''}`).join('\n')}${extra}\n\nPredict before kick-off: the exact score, half-time, the first scorer. Flash questions live during the match.\nA free simulation game — no real money, only bragging rights.`,
-    visual: 'L-OFFSIDES-TODAY Today\'s arenas: OFFSIDES logo, the matches with both crests.'}),
-  kit: {t: 'L-OFFSIDES-TODAY', data: {app: 'offsides', rows: top.map(m => ({home: m.home, away: m.away, line: `${hhmm(m.kickoff)} · ${m.league.toUpperCase()}${m.arenas ? ` · ${m.arenas} ARENA${m.arenas === 1 ? '' : 'S'}` : ''}`, homeCrestName: m.home, awayCrestName: m.away})),
+    visual: 'L-OFFSIDES-TODAY Today\'s Central Arenas: OFFSIDES logo, the matches with both crests, JOIN THE BATTLE + QR.'}),
+  kit: {t: 'L-OFFSIDES-TODAY', data: {app: 'offsides', rows: top.map(m => ({home: m.home, away: m.away, ko: hhmm(m.kickoff), league: m.league.toUpperCase(), arenas: m.arenas, line: `${hhmm(m.kickoff)} · ${m.league.toUpperCase()}${m.arenas ? ` · ${m.arenas} ARENA${m.arenas === 1 ? '' : 'S'}` : ''}`, homeCrestName: m.home, awayCrestName: m.away})),
     label: 'FREE PREDICTION GAME · NO REAL MONEY'}}}
 }

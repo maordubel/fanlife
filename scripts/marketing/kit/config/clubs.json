@@ -1,0 +1,110 @@
+{
+ "hapoel-tel-aviv": {
+  "name": "Hapoel Tel Aviv",
+  "primary": "#B02D10",
+  "on": "#FFFFFF",
+  "pattern": "solid"
+ },
+ "hapoel-petah-tikva": {
+  "name": "Hapoel Petah Tikva",
+  "primary": "#1F4E9C",
+  "on": "#FFFFFF",
+  "pattern": "solid"
+ },
+ "maccabi-haifa": {
+  "name": "Maccabi Haifa",
+  "primary": "#0B7A3B",
+  "on": "#FFFFFF",
+  "pattern": "stripes"
+ },
+ "zrinjski-mostar": {
+  "name": "Zrinjski Mostar",
+  "primary": "#C92D39",
+  "on": "#FFFFFF",
+  "pattern": "sash"
+ },
+ "olympiacos": {
+  "name": "Olympiacos",
+  "primary": "#D71920",
+  "on": "#FFFFFF",
+  "pattern": "stripes"
+ },
+ "panathinaikos": {
+  "name": "Panathinaikos",
+  "primary": "#0B7A3B",
+  "on": "#FFFFFF",
+  "pattern": "solid"
+ },
+ "aek-athens": {
+  "name": "AEK Athens",
+  "primary": "#F3C613",
+  "on": "#151515",
+  "pattern": "hoops"
+ },
+ "paok": {
+  "name": "PAOK Thessaloniki",
+  "primary": "#1F1F1F",
+  "on": "#FFFFFF",
+  "pattern": "stripes"
+ },
+ "dinamo-zagreb": {
+  "name": "Dinamo Zagreb",
+  "primary": "#1F4E9C",
+  "on": "#FFFFFF",
+  "pattern": "halves"
+ },
+ "hajduk-split": {
+  "name": "Hajduk Split",
+  "primary": "#1F4E9C",
+  "on": "#FFFFFF",
+  "pattern": "checks"
+ },
+ "st-pauli": {
+  "name": "FC St. Pauli",
+  "primary": "#5A3A22",
+  "on": "#FFFFFF",
+  "pattern": "hoops"
+ },
+ "borussia-dortmund": {
+  "name": "Borussia Dortmund",
+  "primary": "#FCDD09",
+  "on": "#151515",
+  "pattern": "stripes"
+ },
+ "leicester-city": {
+  "name": "Leicester City",
+  "primary": "#1F4E9C",
+  "on": "#FFFFFF",
+  "pattern": "solid"
+ },
+ "atalanta": {
+  "name": "Atalanta",
+  "primary": "#1F4E9C",
+  "on": "#FFFFFF",
+  "pattern": "hoops"
+ },
+ "celtic": {
+  "name": "Celtic",
+  "primary": "#0B7A3B",
+  "on": "#FFFFFF",
+  "pattern": "checks"
+ },
+ "partizan-belgrade": {
+  "name": "Partizan Belgrade",
+  "primary": "#1F1F1F",
+  "on": "#FFFFFF",
+  "pattern": "stripes"
+ },
+ "union-berlin": {
+  "name": "1. FC Union Berlin",
+  "primary": "#C92D39",
+  "on": "#FFFFFF",
+  "pattern": "solid"
+ },
+ "fenerbahce": {
+  "name": "Fenerbahçe",
+  "primary": "#1B2A5C",
+  "on": "#FFFFFF",
+  "pattern": "halves"
+ }
+}

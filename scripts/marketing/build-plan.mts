@@ -10,7 +10,7 @@
  * exact dates — rule 109). Writes supabase/marketing/0007_marketing_plan_v3.sql and scripts/marketing/plan-v3.json.
  * Run: node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts
  */
-import {writeFileSync} from 'node:fs'
+import {readFileSync, writeFileSync} from 'node:fs'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {loadClubBase, CORE_CLUB_IDS} from '../../lib/clubs/resolver'
@@ -264,7 +264,7 @@ function gate(n: number): Item {
   return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}/${g.key}`, hook: fill(g.hook),
     body: `${g.post}\n\nOpen it on the ${c.name} page — every club in FAN LIFE has its own. Free to play.`,
     visual: `L-GATE ${g.name}: the gate's name, a comic plate, the club.`,
-    kit: {t: 'L-GATE', data: {gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}}}
+    kit: {t: 'L-GATE', data: {club: {id: c.id, name: c.name}, crestName: c.name, gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}}}
 }
 
 // ── 18:00: the two big games of FAN LIFE, on alternate days ──────────────────────────────────────────────────────────
@@ -303,7 +303,7 @@ function bigGame(n: number): Item {
   return {app: 'fanlife', url: lm ? 'https://fanlife.dubelteam.com/all-football/legends' : `https://fanlife.dubelteam.com/clubs/${c.id}/royal-rumble`, hook: p.hook,
     body: `${p.post}\n\n${lm ? 'Legends Manager is on FAN LIFE — pick your club and kick off.' : `Royal Rumble is gate 9 on every club page — try it with ${c.name}.`}`,
     visual: `L-GATE ${lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE'}: the game's name, a comic plate.`,
-    kit: {t: 'L-GATE', data: {gate: lm ? 'FAN LIFE · THE BIG GAME' : 'GATE 9', name: lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE', plate: lm ? 'dribbler' : 'bootball', shout: lm ? 'KICK OFF!' : 'SPIN!', headline: p.headline, body: p.body,
+    kit: {t: 'L-GATE', data: {...(lm ? {brand: 'legends'} : {club: {id: c.id, name: c.name}, crestName: c.name}), gate: lm ? 'FAN LIFE · THE BIG GAME' : 'GATE 9', name: lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE', plate: lm ? 'dribbler' : 'bootball', shout: lm ? 'KICK OFF!' : 'SPIN!', headline: p.headline, body: p.body,
       label: lm ? 'LEGENDS MANAGER · FAN LIFE' : `${c.name.toUpperCase()} · GATE 9`}}}
 }
 
@@ -337,6 +337,67 @@ function system(app: 'dubid' | 'offsides'): Item {
     kit: {t: `L-${app.toUpperCase()}-SYSTEM`, data: {app, title: s.title, sub: s.sub, points: s.points, line: s.line, label: app === 'dubid' ? 'DUBID · FANTASY FOOTBALL' : 'FREE PREDICTION GAME · NO REAL MONEY'}}}
 }
 
+// ── 19:00: one carousel a day for one open club (owner, 27.10.2026) — its history, its gates in FAN LIFE, or plain
+//    love for its supporters. Every line from the club's own sourced world file or archive, nothing before 1980. ─────
+type World = {voice?: {welcome?: string; kicker?: string}; nicknames?: {text: string}[]; ground?: {name?: string; line?: string}; colours?: {line?: string}; flavour?: {line?: string; text?: string}[]; facts?: {line: string}[]}
+const world = (id: string): World => { try { return JSON.parse(readFileSync(path.join(HERE, '../../club-packs', id, 'world.json'), 'utf8')) } catch { return {} } }
+const TAGS: Record<string, string> = {
+  'hapoel-tel-aviv': '#HapoelTelAviv #Hapoel #TheReds #IsraeliFootball',
+  'hapoel-petah-tikva': '#HapoelPetahTikva #HPT #IsraeliFootball',
+  olympiacos: '#Olympiacos #OlympiacosFC #Thrylos #SuperLeagueGreece',
+  panathinaikos: '#Panathinaikos #PAO #Trifylli #SuperLeagueGreece',
+  'aek-athens': '#AEK #AEKAthens #AEKFC #SuperLeagueGreece',
+  celtic: '#Celtic #CelticFC #TheBhoys #COYBIG',
+  'st-pauli': '#FCStPauli #StPauli #FCSP #Bundesliga',
+  'zrinjski-mostar': '#Zrinjski #HSKZrinjski #ZrinjskiMostar',
+}
+const lineOf = (f: {line?: string; text?: string}) => f.line || f.text || ''
+type Slide = {t: string; data: Record<string, unknown>}
+function carousel(n: number): Item {
+  const c = clubs[(n * 5 + 3) % clubs.length]!, w = world(c.id), theme = ['history', 'gates', 'love'][n % 3]!
+  const nickFull = w.nicknames?.[0]?.text || c.name, nick = nickFull.replace(/^The /, ''), club = {id: c.id, name: c.name}, base = {club, crestName: c.name}
+  const tags = `${TAGS[c.id] || ''} #FANLIFE #FootballForever`.trim()
+  const slides: Slide[] = []
+  let hook = '', body = ''
+  if (theme === 'history') {
+    const mine = events.filter(e => e.club === c.id && e.home && e.won && e.y >= 1980).sort((a, b) => weight(b) - weight(a) || b.y - a.y)
+    const pick: Ev[] = []
+    for (const e of mine) if (pick.length < 4 && !pick.some(p => p.y === e.y)) pick.push(e)
+    if (pick.length < 3) return carouselGates(n, c, w, tags)
+    pick.sort((a, b) => a.y - b.y)
+    const of = pick.length + 2
+    hook = `${pick.length} nights every ${c.name} fan still talks about. Which one were you at?`
+    slides.push({t: 'L-SLIDE', data: {...base, s: 'cover', n: 1, of, kicker: (w.voice?.kicker || c.name).toUpperCase(), title: `${pick.length} nights every ${nick} fan remembers`}})
+    pick.forEach((e, i) => slides.push({t: 'L-SLIDE', data: {...base, s: 'night', n: i + 2, of, year: e.y, score: e.score, teams: `${e.home} v ${e.away}`,
+      line: `${e.d} ${MONTH[e.m]!.toUpperCase()} ${e.y}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`, note: e.derby ? 'A DERBY TO REMEMBER.' : e.final ? 'A FINAL TO FRAME.' : e.europe ? 'A EUROPEAN NIGHT.' : e.margin >= 3 ? `${e.margin} GOALS CLEAR.` : 'THE NIGHT IT WENT OUR WAY.', label: `${c.name.toUpperCase()} · FROM THE ARCHIVE`}}))
+    slides.push({t: 'L-SLIDE', data: {...base, s: 'cta', n: of, of, title: `Every ${c.name} night, match by match — on FAN LIFE.`}})
+    body = `${pick.map(e => `${e.y} · ${e.home} ${e.score} ${e.away}${e.comp ? ` (${e.comp})` : ''}`).join('\n')}\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole ${c.name} archive, match by match, is on FAN LIFE (link in bio).\n\n${tags}`
+  } else if (theme === 'gates') return carouselGates(n, c, w, tags)
+  else {
+    const lines = [w.ground?.line, w.colours?.line, ...(w.flavour || []).map(lineOf), ...(w.facts || []).map(f => f.line)].filter((x): x is string => !!x && modern(x))
+    if (lines.length < 2) return carouselGates(n, c, w, tags)
+    const of = Math.min(lines.length, 3) + 2
+    hook = `${w.voice?.welcome || `This one is for the ${c.name} fans.`} A love letter to ${nickFull.replace(/^The /, 'the ')}.`
+    slides.push({t: 'L-SLIDE', data: {...base, s: 'cover', n: 1, of, kicker: (w.voice?.kicker || c.name).toUpperCase(), title: w.voice?.welcome || `For the ${c.name} fans.`}})
+    const bigs = [w.ground?.name || nickFull, nickFull, (w.nicknames?.[1]?.text || c.name)]
+    lines.slice(0, 3).forEach((l, i) => slides.push({t: 'L-SLIDE', data: {...base, s: 'love', n: i + 2, of, big: bigs[i] || c.name, line: l, shout: ['HOME!', 'OURS!', 'FOREVER!'][i], label: `${c.name.toUpperCase()} · FAN LIFE`}}))
+    slides.push({t: 'L-SLIDE', data: {...base, s: 'cta', n: of, of, title: `${c.name} has its own home on FAN LIFE. Come in.`}})
+    body = `${lines.slice(0, 3).join('\n\n')}\n\nTag the ${c.name} fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n${tags}`
+  }
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, hook, body, visual: `Carousel · ${theme} · ${c.name}: ${slides.length} slides in the club's colours.`, kit: {t: 'L-CAROUSEL', data: {club}, slides} as unknown as Kit}
+}
+function carouselGates(n: number, c: Club, w: World, tags: string): Item {
+  const club = {id: c.id, name: c.name}, base = {club, crestName: c.name}
+  const pick = [0, 1, 2, 3].map(i => GATES[(n + i * 3) % GATES.length]!)
+  const of = pick.length + 2, slides: Slide[] = []
+  slides.push({t: 'L-SLIDE', data: {...base, s: 'cover', n: 1, of, kicker: 'FAN LIFE · YOUR CLUB, YOUR GAMES', title: `4 ways to be ${/^[AEIOU]/.test(c.name) ? 'an' : 'a'} ${c.name} fan today`}})
+  for (const g of pick) slides.push({t: 'L-GATE', data: {...base, gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}})
+  slides.push({t: 'L-SLIDE', data: {...base, s: 'cta', n: of, of, title: `All ${GATES.length} gates are open on the ${c.name} page. Free.`}})
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, hook: `${c.name} fans: 4 games built from your own club's history.`,
+    body: `${pick.map(g => `${g.name.charAt(0)}${g.name.slice(1).toLowerCase()} — ${g.headline}`).join('\n')}\n\nWhich one are you starting with? Every question, card and shirt comes from the ${c.name} archive.\nFree on FAN LIFE (link in bio).\n\n${tags}`,
+    visual: `Carousel · gates · ${c.name}: ${slides.length} slides.`, kit: {t: 'L-CAROUSEL', data: {club}, slides} as unknown as Kit}
+}
+
 // ── the plan: even hours fixed, odd hours live (composed at send time, or quiet) ─────────────────────────────────────
 type Row = {day: number; at: string; format: string; kind: string; main: Item}
 const rows: Row[] = []
@@ -354,8 +415,11 @@ for (let n = 1; n <= 30; n++) {
   slot('12:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : fact(n))
   slot('14:00', 'story', quiz(n))
   slot('16:00', 'post', nerds(n))
+  slot('17:00', 'post', gate(n + 15)) // launch phase (owner, 27.10.2026): more exposure — a second gate, another club
   slot('18:00', 'post', bigGame(n))
+  slot('19:00', 'carousel', carousel(n))
   slot('20:00', 'post', spicy(n))
+  slot('21:00', 'story', quiz(n + 40)) // a second story quiz, another club
   slot('22:00', 'post', fact(100 + n))
   for (const [t, kind, app] of LIVE) slot(t, 'post', {app, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
 }
@@ -378,8 +442,8 @@ const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
   ? eraUpper(eraNames(year && !YR.test(x) ? `${year} ${x}` : x).replace(year && !YR.test(x) ? `${year} ` : '', ''), Number(x.match(YR)?.[1] || year))
   : Array.isArray(x) ? x.map(v => eraDeep(v, year))
   : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, eraDeep(v, Number((x as {year?: number}).year) || year)])) : x
-for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown> }
-for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, JSON.stringify(r.main.kit.data))) throw Error(`pre-1980 content in ${r.at}`)
+for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown>; const sl = (r.main.kit as {slides?: Kit[]}).slides; if (sl) for (const k of sl) k.data = eraDeep(k.data) as Record<string, unknown> }
+for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, JSON.stringify(r.main.kit))) throw Error(`pre-1980 content in ${r.at}`)
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
 const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v3 (owner, 27.10.2026).`,
   `-- Even hours: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on fixed weekdays), each post with`,
@@ -391,7 +455,7 @@ const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit b
   `  variants = null, fallback = null, fallback_format = null, status = 'pending', error = null, attempts = 0`,
   `  where marketing.posts.status in ('pending', 'skipped', 'failed') and marketing.posts.send_at > now();`,
   `-- and a slot inserted for a moment already past is not sent late`,
-  `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes' and kind in ('fixtures','results','dubid','offsides');`, ''].join('\n')
+  `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes';`, ''].join('\n')
 writeFileSync(path.join(HERE, '../../supabase/marketing/0007_marketing_plan_v3.sql'), sql)
 writeFileSync(path.join(HERE, 'plan-v3.json'), JSON.stringify(rows, null, 1))
 console.log('rows', rows.length, 'events', events.length, 'clubs', clubs.map(c => `${c.id}:${c.qs.length}`).join(' '))
