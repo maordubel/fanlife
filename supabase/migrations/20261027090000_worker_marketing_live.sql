@@ -51,8 +51,11 @@ grant execute on function public.worker_marketing_meta(bigint[]) to service_role
 --   offsides — today's visible football matches (Israel day, not yet kicked off) and their live arenas
 --   posted   — what earlier live posts already announced (a round, a match, a result is announced once)
 create or replace function public.worker_marketing_live_data()
-returns jsonb language sql stable security definer set search_path = '' as $$
-  with today as (select (now() at time zone 'Asia/Jerusalem')::date d)
+returns jsonb language plpgsql stable security definer set search_path = '' as $$
+-- plpgsql, not sql: DUBID's and OFFSIDES' schemas live in the shared project and are bound at run time, so this
+-- file also installs on a database that does not carry them (CI, a fresh branch).
+begin
+  return (with today as (select (now() at time zone 'Asia/Jerusalem')::date d)
   select jsonb_build_object(
     'dubid', coalesce((select jsonb_agg(jsonb_build_object('id', g.id, 'round', g.number,
         'league', coalesce(l.names->'en'->>'full', l.code), 'code', l.code, 'lock_at', g.lock_at,
@@ -70,8 +73,8 @@ returns jsonb language sql stable security definer set search_path = '' as $$
     'posted', coalesce((select jsonb_agg(distinct r) from marketing.posts p,
         unnest(string_to_array(p.fixture_id, ',')) r
       where p.kind in ('fixtures','results','dubid','offsides') and p.status in ('sent','sending')
-        and p.send_at > now() - interval '21 days' and p.fixture_id is not null), '[]'::jsonb))
-$$;
+        and p.send_at > now() - interval '21 days' and p.fixture_id is not null), '[]'::jsonb)));
+end $$;
 revoke all on function public.worker_marketing_live_data() from public, anon, authenticated;
 grant execute on function public.worker_marketing_live_data() to service_role;
 
