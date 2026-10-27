@@ -3225,3 +3225,7 @@ results are a separate stream. Every post carries a picture (its own layout, els
 names a year, season or decade before 1980. Crests and shirts print in their own colours — never turned into
 two-ink black and white (owner, 27.10.2026; `Canvas.image` in the kit). Live slots are composed at send time from real data or stay quiet —
 `lib/marketing/live.ts`, docs/fanlife/51-marketing-telegram.md (v3).
+Every FAN LIFE picture carries the real FAN LIFE badge (never the word set in type) and wears the club's own colours the
+way its shirt does (`scripts/marketing/kit/poster.mjs`, `config/clubs.json` from `livery()`); the club's own colour is
+never a rival ban of itself. 19:00 daily is a carousel for one open club — its nights since 1980, its gates, or love for
+its fans — with the club's own tags (`carousel()` in build-plan). New art is ordered from docs/fanlife/52-social-art-prompts.md.

@@ -208,6 +208,8 @@ export async function visualsFor(msg, kit = null) {
   lastError = null
   const post = readPost(msg)
   try {
+    // a carousel: one picture per slide, in order, sent as one album (owner, 27.10.2026)
+    if (Array.isArray(kit?.slides) && kit.slides.length) { const out = []; for (const k of kit.slides.slice(0, 10)) out.push(await drawKit(k, post.app || 'fanlife')); return out }
     if (kit?.t && kit.data) return [await drawKit(kit, post.app || 'fanlife')]
     const out = []
     for (const {t, data} of plan(post)) {

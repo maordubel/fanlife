@@ -70,6 +70,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     },
+     "crestName": "Panathinaikos",
      "gate": "GATE 2",
      "name": "TRIVIA WING",
      "plate": "memo",
@@ -197,6 +202,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -208,6 +214,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 1,
+  "at": "2026-10-26 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv",
+   "hook": "Hapoel Tel Aviv fans: 4 games built from your own club's history.",
+   "body": "Blind cow — Clue after clue. Name the player.\nHistorical line-up — Name the eleven that started that night.\nTerrace vote — Best keeper? Greatest night? You decide.\nLiving archive — Matches, players, shirts. All of it.\n\nWhich one are you starting with? Every question, card and shirt comes from the Hapoel Tel Aviv archive.\nFree on FAN LIFE (link in bio).\n\n#HapoelTelAviv #Hapoel #TheReds #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Hapoel Tel Aviv: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a Hapoel Tel Aviv fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 10",
+       "name": "BLIND COW",
+       "plate": "keeper",
+       "headline": "Clue after clue. Name the player.",
+       "body": [
+        "A season, a shirt number, a match he played.",
+        "The fewer clues you need, the better."
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 10"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 3",
+       "name": "HISTORICAL LINE-UP",
+       "plate": "fans",
+       "headline": "Name the eleven that started that night.",
+       "body": [
+        "A real match, a real team sheet.",
+        "How many can you place?"
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 3"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 7",
+       "name": "TERRACE VOTE",
+       "plate": "fans",
+       "headline": "Best keeper? Greatest night? You decide.",
+       "body": [
+        "Vote with the terrace on the big debates.",
+        "One device, one ballot."
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 7"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 12",
+       "name": "LIVING ARCHIVE",
+       "plate": "memo",
+       "headline": "Matches, players, shirts. All of it.",
+       "body": [
+        "The club’s history, sourced and searchable.",
+        "Mark the matches you were at."
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 12"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Hapoel Tel Aviv page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -409,6 +544,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 10",
      "name": "BLIND COW",
      "plate": "keeper",
@@ -536,6 +676,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     },
+     "crestName": "Hapoel Petah Tikva",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -547,6 +692,93 @@
      ],
      "label": "HAPOEL PETAH TIKVA · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 2,
+  "at": "2026-10-27 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/celtic",
+   "hook": "Welcome to Paradise. A love letter to the Bhoys.",
+   "body": "In Parkhead, in Glasgow's east end, with room for 60,411. Fans call it Paradise.\n\nFans call Celtic Park 'Paradise' — the story goes it began as a joke about leaving the old ground behind.\n\nTag the Celtic fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#Celtic #CelticFC #TheBhoys #COYBIG #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Celtic: 4 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "celtic",
+      "name": "Celtic"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cover",
+       "n": 1,
+       "of": 4,
+       "kicker": "GLASGOW · GREEN AND WHITE",
+       "title": "Welcome to Paradise."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "love",
+       "n": 2,
+       "of": 4,
+       "big": "Celtic Park",
+       "line": "In Parkhead, in Glasgow's east end, with room for 60,411. Fans call it Paradise.",
+       "shout": "HOME!",
+       "label": "CELTIC · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "love",
+       "n": 3,
+       "of": 4,
+       "big": "The Bhoys",
+       "line": "Fans call Celtic Park 'Paradise' — the story goes it began as a joke about leaving the old ground behind.",
+       "shout": "OURS!",
+       "label": "CELTIC · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cta",
+       "n": 4,
+       "of": 4,
+       "title": "Celtic has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -748,6 +980,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     },
+     "crestName": "Zrinjski Mostar",
      "gate": "GATE 8",
      "name": "GOAL RECONSTRUCTION",
      "plate": "kicker",
@@ -862,6 +1099,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -873,6 +1111,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 3,
+  "at": "2026-10-28 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva",
+   "hook": "4 nights every Hapoel Petah Tikva fan still talks about. Which one were you at?",
+   "body": "1988 · Maccabi Petah Tikva 1–3 Hapoel Petah Tikva (Israel State Cup)\n1993 · Hapoel Petah Tikva 5–0 Maccabi Petah Tikva (Israeli League)\n1995 · Maccabi Petah Tikva 1–3 Hapoel Petah Tikva (Israeli League)\n1998 · Hapoel Petah Tikva 2–0 Maccabi Petah Tikva (Israeli League)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Hapoel Petah Tikva archive, match by match, is on FAN LIFE (link in bio).\n\n#HapoelPetahTikva #HPT #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Hapoel Petah Tikva: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "PETAH TIKVA · MOTHER OF THE MOSHAVOT",
+       "title": "4 nights every Malabs fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1988,
+       "score": "1–3",
+       "teams": "Maccabi Petah Tikva v Hapoel Petah Tikva",
+       "line": "26 APRIL 1988 · ISRAEL STATE CUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 1993,
+       "score": "5–0",
+       "teams": "Hapoel Petah Tikva v Maccabi Petah Tikva",
+       "line": "27 MARCH 1993 · ISRAELI LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 1995,
+       "score": "1–3",
+       "teams": "Maccabi Petah Tikva v Hapoel Petah Tikva",
+       "line": "11 FEBRUARY 1995 · ISRAELI LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 1998,
+       "score": "2–0",
+       "teams": "Hapoel Petah Tikva v Maccabi Petah Tikva",
+       "line": "14 FEBRUARY 1998 · ISRAELI LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Hapoel Petah Tikva night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -1075,6 +1442,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 1",
      "name": "ALL-TIME XI",
      "plate": "swap",
@@ -1202,6 +1574,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -1213,6 +1590,135 @@
      ],
      "label": "AEK ATHENS · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 4,
+  "at": "2026-10-29 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/olympiacos",
+   "hook": "Olympiacos fans: 4 games built from your own club's history.",
+   "body": "Historical line-up — Name the eleven that started that night.\nTerrace vote — Best keeper? Greatest night? You decide.\nLiving archive — Matches, players, shirts. All of it.\nTrivia wing — Four levels. One club. The real archive.\n\nWhich one are you starting with? Every question, card and shirt comes from the Olympiacos archive.\nFree on FAN LIFE (link in bio).\n\n#Olympiacos #OlympiacosFC #Thrylos #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Olympiacos: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be an Olympiacos fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 3",
+       "name": "HISTORICAL LINE-UP",
+       "plate": "fans",
+       "headline": "Name the eleven that started that night.",
+       "body": [
+        "A real match, a real team sheet.",
+        "How many can you place?"
+       ],
+       "label": "OLYMPIACOS · GATE 3"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 7",
+       "name": "TERRACE VOTE",
+       "plate": "fans",
+       "headline": "Best keeper? Greatest night? You decide.",
+       "body": [
+        "Vote with the terrace on the big debates.",
+        "One device, one ballot."
+       ],
+       "label": "OLYMPIACOS · GATE 7"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 12",
+       "name": "LIVING ARCHIVE",
+       "plate": "memo",
+       "headline": "Matches, players, shirts. All of it.",
+       "body": [
+        "The club’s history, sourced and searchable.",
+        "Mark the matches you were at."
+       ],
+       "label": "OLYMPIACOS · GATE 12"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 2",
+       "name": "TRIVIA WING",
+       "plate": "memo",
+       "headline": "Four levels. One club. The real archive.",
+       "body": [
+        "Easy, Medium, Hard, Expert.",
+        "Every question comes from the club’s own records."
+       ],
+       "label": "OLYMPIACOS · GATE 2"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Olympiacos page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -1414,6 +1920,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     },
+     "crestName": "Olympiacos",
      "gate": "GATE 3",
      "name": "HISTORICAL LINE-UP",
      "plate": "fans",
@@ -1528,6 +2039,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -1539,6 +2051,110 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 5,
+  "at": "2026-10-30 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/aek-athens",
+   "hook": "Welcome to the Union's house. A love letter to the Double-Headed Eagle.",
+   "body": "Opened in September 2022 in Nea Filadelfeia and known to supporters as Hagia Sophia.\n\nOn 30 September 2022 the new stadium opened on the same Nea Filadelfeia ground, shaped to recall the club's Constantinople roots.\n\nBetween 2003 and 2022 the club played at the Athens Olympic Stadium.\n\nTag the AEK Athens fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#AEK #AEKAthens #AEKFC #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · love · AEK Athens: 5 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cover",
+       "n": 1,
+       "of": 5,
+       "kicker": "ATHENS · THE DOUBLE-HEADED EAGLE",
+       "title": "Welcome to the Union's house."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "love",
+       "n": 2,
+       "of": 5,
+       "big": "Agia Sophia Stadium",
+       "line": "Opened in September 2022 in Nea Filadelfeia and known to supporters as Hagia Sophia.",
+       "shout": "HOME!",
+       "label": "AEK ATHENS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "love",
+       "n": 3,
+       "of": 5,
+       "big": "The Double-Headed Eagle",
+       "line": "On 30 September 2022 the new stadium opened on the same Nea Filadelfeia ground, shaped to recall the club's Constantinople roots.",
+       "shout": "OURS!",
+       "label": "AEK ATHENS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "love",
+       "n": 4,
+       "of": 5,
+       "big": "The Union",
+       "line": "Between 2003 and 2022 the club played at the Athens Olympic Stadium.",
+       "shout": "FOREVER!",
+       "label": "AEK ATHENS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cta",
+       "n": 5,
+       "of": 5,
+       "title": "AEK Athens has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -1740,6 +2356,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     },
+     "crestName": "Hapoel Petah Tikva",
      "gate": "GATE 4",
      "name": "KIT BUILDER",
      "plate": "scarf",
@@ -1867,6 +2488,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -1878,6 +2504,135 @@
      ],
      "label": "FC ST. PAULI · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 6,
+  "at": "2026-10-31 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar",
+   "hook": "4 nights every Zrinjski Mostar fan still talks about. Which one were you at?",
+   "body": "2010 · Tre Penne 2–9 Zrinjski Mostar (UEFA Europa League)\n2023 · FK Velež Mostar 0–1 Zrinjski Mostar (Bosnia and Herzegovina Cup Final)\n2024 · Borac 0–1 Zrinjski Mostar (Bosnia and Herzegovina Cup Final, Second Leg)\n2026 · Zrinjski Mostar 1–0 Velež (Bosnia and Herzegovina Cup Final, First Leg)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Zrinjski Mostar archive, match by match, is on FAN LIFE (link in bio).\n\n#Zrinjski #HSKZrinjski #ZrinjskiMostar #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Zrinjski Mostar: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "MOSTAR · BIJELI BRIJEG",
+       "title": "4 nights every Nobles fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 2010,
+       "score": "2–9",
+       "teams": "Tre Penne v Zrinjski Mostar",
+       "line": "22 JULY 2010 · UEFA EUROPA LEAGUE",
+       "note": "A EUROPEAN NIGHT.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 2023,
+       "score": "0–1",
+       "teams": "FK Velež Mostar v Zrinjski Mostar",
+       "line": "17 MAY 2023 · BOSNIA AND HERZEGOVINA CUP FINAL",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2024,
+       "score": "0–1",
+       "teams": "Borac v Zrinjski Mostar",
+       "line": "23 MAY 2024 · BOSNIA AND HERZEGOVINA CUP FINAL, SECOND LEG",
+       "note": "A FINAL TO FRAME.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2026,
+       "score": "1–0",
+       "teams": "Zrinjski Mostar v Velež",
+       "line": "6 MAY 2026 · BOSNIA AND HERZEGOVINA CUP FINAL, FIRST LEG",
+       "note": "A FINAL TO FRAME.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Zrinjski Mostar night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -2079,6 +2834,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "celtic",
+      "name": "Celtic"
+     },
+     "crestName": "Celtic",
      "gate": "GATE 6",
      "name": "MEMORY",
      "plate": "memo",
@@ -2193,6 +2953,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -2204,6 +2965,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 7,
+  "at": "2026-11-01 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/st-pauli",
+   "hook": "FC St. Pauli fans: 4 games built from your own club's history.",
+   "body": "Terrace vote — Best keeper? Greatest night? You decide.\nLiving archive — Matches, players, shirts. All of it.\nTrivia wing — Four levels. One club. The real archive.\nAll-time xi — Eleven from the whole history. Your call.\n\nWhich one are you starting with? Every question, card and shirt comes from the FC St. Pauli archive.\nFree on FAN LIFE (link in bio).\n\n#FCStPauli #StPauli #FCSP #Bundesliga #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · FC St. Pauli: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a FC St. Pauli fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "gate": "GATE 7",
+       "name": "TERRACE VOTE",
+       "plate": "fans",
+       "headline": "Best keeper? Greatest night? You decide.",
+       "body": [
+        "Vote with the terrace on the big debates.",
+        "One device, one ballot."
+       ],
+       "label": "FC ST. PAULI · GATE 7"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "gate": "GATE 12",
+       "name": "LIVING ARCHIVE",
+       "plate": "memo",
+       "headline": "Matches, players, shirts. All of it.",
+       "body": [
+        "The club’s history, sourced and searchable.",
+        "Mark the matches you were at."
+       ],
+       "label": "FC ST. PAULI · GATE 12"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "gate": "GATE 2",
+       "name": "TRIVIA WING",
+       "plate": "memo",
+       "headline": "Four levels. One club. The real archive.",
+       "body": [
+        "Easy, Medium, Hard, Expert.",
+        "Every question comes from the club’s own records."
+       ],
+       "label": "FC ST. PAULI · GATE 2"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "gate": "GATE 1",
+       "name": "ALL-TIME XI",
+       "plate": "swap",
+       "headline": "Eleven from the whole history. Your call.",
+       "body": [
+        "Pick the greatest eleven, any era.",
+        "No ratings, no referee. Just you."
+       ],
+       "label": "FC ST. PAULI · GATE 1"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the FC St. Pauli page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -2405,6 +3295,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     },
+     "crestName": "Hapoel Tel Aviv",
      "gate": "GATE 7",
      "name": "TERRACE VOTE",
      "plate": "fans",
@@ -2532,6 +3427,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     },
+     "crestName": "Hapoel Tel Aviv",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -2543,6 +3443,110 @@
      ],
      "label": "HAPOEL TEL AVIV · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 8,
+  "at": "2026-11-02 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/panathinaikos",
+   "hook": "Green, and proud of the shamrock. A love letter to the Greens.",
+   "body": "The Apostolos Nikolaidis Stadium on Alexandras Avenue, in Ampelokipoi. Called the oldest football ground in Greece still in use.\n\nGreen.\n\nEveryone calls the ground 'Leoforos' — the avenue, because it stands on Alexandras Avenue.\n\nTag the Panathinaikos fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#Panathinaikos #PAO #Trifylli #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Panathinaikos: 5 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "cover",
+       "n": 1,
+       "of": 5,
+       "kicker": "ATHENS · AMPELOKIPOI",
+       "title": "Green, and proud of the shamrock."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "love",
+       "n": 2,
+       "of": 5,
+       "big": "Leoforos",
+       "line": "The Apostolos Nikolaidis Stadium on Alexandras Avenue, in Ampelokipoi. Called the oldest football ground in Greece still in use.",
+       "shout": "HOME!",
+       "label": "PANATHINAIKOS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "love",
+       "n": 3,
+       "of": 5,
+       "big": "The Greens",
+       "line": "Green.",
+       "shout": "OURS!",
+       "label": "PANATHINAIKOS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "love",
+       "n": 4,
+       "of": 5,
+       "big": "The Shamrock",
+       "line": "Everyone calls the ground 'Leoforos' — the avenue, because it stands on Alexandras Avenue.",
+       "shout": "FOREVER!",
+       "label": "PANATHINAIKOS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "cta",
+       "n": 5,
+       "of": 5,
+       "title": "Panathinaikos has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -2745,6 +3749,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     },
+     "crestName": "Panathinaikos",
      "gate": "GATE 13",
      "name": "TIMELINE",
      "plate": "bootball",
@@ -2872,6 +3881,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -2883,6 +3893,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 9,
+  "at": "2026-11-03 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv",
+   "hook": "4 nights every Hapoel Tel Aviv fan still talks about. Which one were you at?",
+   "body": "1980 · Hapoel Tel Aviv 3–0 Maccabi Tel Aviv (Liga Leumit)\n1998 · Maccabi Tel Aviv 0–3 Hapoel Tel Aviv (Liga Leumit)\n2005 · Maccabi Tel Aviv 0–3 Hapoel Tel Aviv (Toto Cup)\n2006 · Hapoel Tel Aviv 3–0 Maccabi Tel Aviv (Toto Cup)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Hapoel Tel Aviv archive, match by match, is on FAN LIFE (link in bio).\n\n#HapoelTelAviv #Hapoel #TheReds #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Hapoel Tel Aviv: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "TEL AVIV · JAFFA",
+       "title": "4 nights every Reds fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1980,
+       "score": "3–0",
+       "teams": "Hapoel Tel Aviv v Maccabi Tel Aviv",
+       "line": "29 NOVEMBER 1980 · LIGA LEUMIT",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL TEL AVIV · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 1998,
+       "score": "0–3",
+       "teams": "Maccabi Tel Aviv v Hapoel Tel Aviv",
+       "line": "28 MARCH 1998 · LIGA LEUMIT",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL TEL AVIV · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2005,
+       "score": "0–3",
+       "teams": "Maccabi Tel Aviv v Hapoel Tel Aviv",
+       "line": "20 AUGUST 2005 · TOTO CUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL TEL AVIV · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2006,
+       "score": "3–0",
+       "teams": "Hapoel Tel Aviv v Maccabi Tel Aviv",
+       "line": "10 JANUARY 2006 · TOTO CUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL TEL AVIV · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Hapoel Tel Aviv night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -3084,6 +4223,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 11",
      "name": "THE DERBY",
      "plate": "scarf",
@@ -3198,6 +4342,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     },
+     "crestName": "Hapoel Petah Tikva",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -3209,6 +4358,135 @@
      ],
      "label": "HAPOEL PETAH TIKVA · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 10,
+  "at": "2026-11-04 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/celtic",
+   "hook": "Celtic fans: 4 games built from your own club's history.",
+   "body": "Living archive — Matches, players, shirts. All of it.\nTrivia wing — Four levels. One club. The real archive.\nAll-time xi — Eleven from the whole history. Your call.\nMemory — Turn two cards. Match the facts.\n\nWhich one are you starting with? Every question, card and shirt comes from the Celtic archive.\nFree on FAN LIFE (link in bio).\n\n#Celtic #CelticFC #TheBhoys #COYBIG #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Celtic: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "celtic",
+      "name": "Celtic"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a Celtic fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "gate": "GATE 12",
+       "name": "LIVING ARCHIVE",
+       "plate": "memo",
+       "headline": "Matches, players, shirts. All of it.",
+       "body": [
+        "The club’s history, sourced and searchable.",
+        "Mark the matches you were at."
+       ],
+       "label": "CELTIC · GATE 12"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "gate": "GATE 2",
+       "name": "TRIVIA WING",
+       "plate": "memo",
+       "headline": "Four levels. One club. The real archive.",
+       "body": [
+        "Easy, Medium, Hard, Expert.",
+        "Every question comes from the club’s own records."
+       ],
+       "label": "CELTIC · GATE 2"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "gate": "GATE 1",
+       "name": "ALL-TIME XI",
+       "plate": "swap",
+       "headline": "Eleven from the whole history. Your call.",
+       "body": [
+        "Pick the greatest eleven, any era.",
+        "No ratings, no referee. Just you."
+       ],
+       "label": "CELTIC · GATE 1"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "gate": "GATE 6",
+       "name": "MEMORY",
+       "plate": "memo",
+       "headline": "Turn two cards. Match the facts.",
+       "body": [
+        "Pairs drawn from the club’s real archive.",
+        "Fewer turns, sharper memory."
+       ],
+       "label": "CELTIC · GATE 6"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Celtic page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -3410,6 +4688,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     },
+     "crestName": "Zrinjski Mostar",
      "gate": "GATE 12",
      "name": "LIVING ARCHIVE",
      "plate": "memo",
@@ -3537,6 +4820,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -3548,6 +4832,93 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 11,
+  "at": "2026-11-05 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva",
+   "hook": "Blue, and run by the people who stand on its terraces. A love letter to the Malabs.",
+   "body": "HaMoshava has been home since 2011. Before that came the old municipal ground, known as The Stable.\n\nBlue.\n\nTag the Hapoel Petah Tikva fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#HapoelPetahTikva #HPT #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Hapoel Petah Tikva: 4 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cover",
+       "n": 1,
+       "of": 4,
+       "kicker": "PETAH TIKVA · MOTHER OF THE MOSHAVOT",
+       "title": "Blue, and run by the people who stand on its terraces."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "love",
+       "n": 2,
+       "of": 4,
+       "big": "HaMoshava Stadium",
+       "line": "HaMoshava has been home since 2011. Before that came the old municipal ground, known as The Stable.",
+       "shout": "HOME!",
+       "label": "HAPOEL PETAH TIKVA · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "love",
+       "n": 3,
+       "of": 4,
+       "big": "The Malabs",
+       "line": "Blue.",
+       "shout": "OURS!",
+       "label": "HAPOEL PETAH TIKVA · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cta",
+       "n": 4,
+       "of": 4,
+       "title": "Hapoel Petah Tikva has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -3749,6 +5120,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 5",
      "name": "SHIRT COLLECTION",
      "plate": "swap",
@@ -3863,6 +5239,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -3874,6 +5255,135 @@
      ],
      "label": "AEK ATHENS · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 12,
+  "at": "2026-11-06 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/olympiacos",
+   "hook": "4 nights every Olympiacos fan still talks about. Which one were you at?",
+   "body": "1999 · Panathinaikos 0–2 Olympiacos (Greek Cup final)\n2019 · Panathinaikos 0–3 Olympiacos (Greek Super League 2018/19)\n2020 · Olympiacos 3–0 Panathinaikos (Super League Greece)\n2026 · Panathinaikos 0–2 Olympiacos (Super League - Championship Group)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Olympiacos archive, match by match, is on FAN LIFE (link in bio).\n\n#Olympiacos #OlympiacosFC #Thrylos #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Olympiacos: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "PIRAEUS · RED AND WHITE",
+       "title": "4 nights every Legend fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1999,
+       "score": "0–2",
+       "teams": "Panathinaikos v Olympiacos",
+       "line": "5 MAY 1999 · GREEK CUP FINAL",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "OLYMPIACOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 2019,
+       "score": "0–3",
+       "teams": "Panathinaikos v Olympiacos",
+       "line": "17 MARCH 2019 · GREEK SUPER LEAGUE 2018/19",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "OLYMPIACOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2020,
+       "score": "3–0",
+       "teams": "Olympiacos v Panathinaikos",
+       "line": "21 JUNE 2020 · SUPER LEAGUE GREECE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "OLYMPIACOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2026,
+       "score": "0–2",
+       "teams": "Panathinaikos v Olympiacos",
+       "line": "19 APRIL 2026 · SUPER LEAGUE - CHAMPIONSHIP GROUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "OLYMPIACOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Olympiacos night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -4075,6 +5585,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     },
+     "crestName": "Olympiacos",
      "gate": "A SUPPORTER’S LIFE",
      "name": "LIFE",
      "plate": "fans",
@@ -4202,6 +5717,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -4213,6 +5729,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 13,
+  "at": "2026-11-07 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/aek-athens",
+   "hook": "AEK Athens fans: 4 games built from your own club's history.",
+   "body": "Trivia wing — Four levels. One club. The real archive.\nAll-time xi — Eleven from the whole history. Your call.\nMemory — Turn two cards. Match the facts.\nThe derby — Every meeting with the old rival, on one wall.\n\nWhich one are you starting with? Every question, card and shirt comes from the AEK Athens archive.\nFree on FAN LIFE (link in bio).\n\n#AEK #AEKAthens #AEKFC #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · AEK Athens: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be an AEK Athens fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "gate": "GATE 2",
+       "name": "TRIVIA WING",
+       "plate": "memo",
+       "headline": "Four levels. One club. The real archive.",
+       "body": [
+        "Easy, Medium, Hard, Expert.",
+        "Every question comes from the club’s own records."
+       ],
+       "label": "AEK ATHENS · GATE 2"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "gate": "GATE 1",
+       "name": "ALL-TIME XI",
+       "plate": "swap",
+       "headline": "Eleven from the whole history. Your call.",
+       "body": [
+        "Pick the greatest eleven, any era.",
+        "No ratings, no referee. Just you."
+       ],
+       "label": "AEK ATHENS · GATE 1"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "gate": "GATE 6",
+       "name": "MEMORY",
+       "plate": "memo",
+       "headline": "Turn two cards. Match the facts.",
+       "body": [
+        "Pairs drawn from the club’s real archive.",
+        "Fewer turns, sharper memory."
+       ],
+       "label": "AEK ATHENS · GATE 6"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "gate": "GATE 11",
+       "name": "THE DERBY",
+       "plate": "scarf",
+       "headline": "Every meeting with the old rival, on one wall.",
+       "body": [
+        "Wins, draws and the nights nobody forgets.",
+        "Know your derby better than they do."
+       ],
+       "label": "AEK ATHENS · GATE 11"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the AEK Athens page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -4415,6 +6060,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     },
+     "crestName": "Panathinaikos",
      "gate": "GATE 2",
      "name": "TRIVIA WING",
      "plate": "memo",
@@ -4529,6 +6179,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -4540,6 +6195,110 @@
      ],
      "label": "FC ST. PAULI · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 14,
+  "at": "2026-11-08 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar",
+   "hook": "Come in under the white hill. A love letter to the Nobles.",
+   "body": "A white shirt with a red sash across the chest.\n\nThe name honours the Zrinski noble family, and the emblem carries the Croatian chequerboard.\n\nThe club's home support is on the west bank of the Neretva, the Croatian side of Mostar.\n\nTag the Zrinjski Mostar fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#Zrinjski #HSKZrinjski #ZrinjskiMostar #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Zrinjski Mostar: 5 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cover",
+       "n": 1,
+       "of": 5,
+       "kicker": "MOSTAR · BIJELI BRIJEG",
+       "title": "Come in under the white hill."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "love",
+       "n": 2,
+       "of": 5,
+       "big": "Stadion pod Bijelim Brijegom",
+       "line": "A white shirt with a red sash across the chest.",
+       "shout": "HOME!",
+       "label": "ZRINJSKI MOSTAR · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "love",
+       "n": 3,
+       "of": 5,
+       "big": "The Nobles",
+       "line": "The name honours the Zrinski noble family, and the emblem carries the Croatian chequerboard.",
+       "shout": "OURS!",
+       "label": "ZRINJSKI MOSTAR · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "love",
+       "n": 4,
+       "of": 5,
+       "big": "Zrinjski Mostar",
+       "line": "The club's home support is on the west bank of the Neretva, the Croatian side of Mostar.",
+       "shout": "FOREVER!",
+       "label": "ZRINJSKI MOSTAR · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cta",
+       "n": 5,
+       "of": 5,
+       "title": "Zrinjski Mostar has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -4741,6 +6500,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 10",
      "name": "BLIND COW",
      "plate": "keeper",
@@ -4868,6 +6632,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -4879,6 +6644,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 15,
+  "at": "2026-11-09 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/st-pauli",
+   "hook": "4 nights every FC St. Pauli fan still talks about. Which one were you at?",
+   "body": "2011 · Hamburger SV 0–1 FC St. Pauli (Bundesliga)\n2020 · Hamburger SV 0–2 FC St. Pauli (2. Bundesliga)\n2022 · FC St. Pauli 3–0 Hamburger SV (2. Bundesliga)\n2025 · Hamburger SV 0–2 FC St. Pauli (Bundesliga)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole FC St. Pauli archive, match by match, is on FAN LIFE (link in bio).\n\n#FCStPauli #StPauli #FCSP #Bundesliga #FANLIFE #FootballForever",
+   "visual": "Carousel · history · FC St. Pauli: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "HAMBURG · BROWN AND WHITE",
+       "title": "4 nights every Kiezkicker fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 2011,
+       "score": "0–1",
+       "teams": "Hamburger SV v FC St. Pauli",
+       "line": "16 FEBRUARY 2011 · BUNDESLIGA",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "FC ST. PAULI · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 2020,
+       "score": "0–2",
+       "teams": "Hamburger SV v FC St. Pauli",
+       "line": "22 FEBRUARY 2020 · 2. BUNDESLIGA",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "FC ST. PAULI · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2022,
+       "score": "3–0",
+       "teams": "FC St. Pauli v Hamburger SV",
+       "line": "14 OCTOBER 2022 · 2. BUNDESLIGA",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "FC ST. PAULI · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2025,
+       "score": "0–2",
+       "teams": "Hamburger SV v FC St. Pauli",
+       "line": "29 AUGUST 2025 · BUNDESLIGA",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "FC ST. PAULI · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every FC St. Pauli night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -5080,6 +6974,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     },
+     "crestName": "Zrinjski Mostar",
      "gate": "GATE 8",
      "name": "GOAL RECONSTRUCTION",
      "plate": "kicker",
@@ -5207,6 +7106,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     },
+     "crestName": "Hapoel Tel Aviv",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -5218,6 +7122,135 @@
      ],
      "label": "HAPOEL TEL AVIV · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 16,
+  "at": "2026-11-10 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/panathinaikos",
+   "hook": "Panathinaikos fans: 4 games built from your own club's history.",
+   "body": "All-time xi — Eleven from the whole history. Your call.\nMemory — Turn two cards. Match the facts.\nThe derby — Every meeting with the old rival, on one wall.\nLife — Grow up with your club, one match at a time.\n\nWhich one are you starting with? Every question, card and shirt comes from the Panathinaikos archive.\nFree on FAN LIFE (link in bio).\n\n#Panathinaikos #PAO #Trifylli #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Panathinaikos: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a Panathinaikos fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "gate": "GATE 1",
+       "name": "ALL-TIME XI",
+       "plate": "swap",
+       "headline": "Eleven from the whole history. Your call.",
+       "body": [
+        "Pick the greatest eleven, any era.",
+        "No ratings, no referee. Just you."
+       ],
+       "label": "PANATHINAIKOS · GATE 1"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "gate": "GATE 6",
+       "name": "MEMORY",
+       "plate": "memo",
+       "headline": "Turn two cards. Match the facts.",
+       "body": [
+        "Pairs drawn from the club’s real archive.",
+        "Fewer turns, sharper memory."
+       ],
+       "label": "PANATHINAIKOS · GATE 6"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "gate": "GATE 11",
+       "name": "THE DERBY",
+       "plate": "scarf",
+       "headline": "Every meeting with the old rival, on one wall.",
+       "body": [
+        "Wins, draws and the nights nobody forgets.",
+        "Know your derby better than they do."
+       ],
+       "label": "PANATHINAIKOS · GATE 11"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "gate": "A SUPPORTER’S LIFE",
+       "name": "LIFE",
+       "plate": "fans",
+       "headline": "Grow up with your club, one match at a time.",
+       "body": [
+        "Matchdays, friends, promises, choices.",
+        "Every choice changes the story."
+       ],
+       "label": "PANATHINAIKOS · A SUPPORTER’S LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Panathinaikos page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -5419,6 +7452,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 1",
      "name": "ALL-TIME XI",
      "plate": "swap",
@@ -5533,6 +7571,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -5544,6 +7583,110 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 17,
+  "at": "2026-11-11 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv",
+   "hook": "The Worker's club. Red from the first whistle. A love letter to the Reds.",
+   "body": "Home is Bloomfield, in the south of Tel Aviv-Jaffa, near the old port of Jaffa.\n\nRed shirt, red badge: the Reds.\n\nThe ground is named for the brothers Bernard and Lewis Bloomfield, whose family foundation helped pay for it.\n\nTag the Hapoel Tel Aviv fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#HapoelTelAviv #Hapoel #TheReds #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Hapoel Tel Aviv: 5 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cover",
+       "n": 1,
+       "of": 5,
+       "kicker": "TEL AVIV · JAFFA",
+       "title": "The Worker's club. Red from the first whistle."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "love",
+       "n": 2,
+       "of": 5,
+       "big": "Bloomfield Stadium",
+       "line": "Home is Bloomfield, in the south of Tel Aviv-Jaffa, near the old port of Jaffa.",
+       "shout": "HOME!",
+       "label": "HAPOEL TEL AVIV · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "love",
+       "n": 3,
+       "of": 5,
+       "big": "The Reds",
+       "line": "Red shirt, red badge: the Reds.",
+       "shout": "OURS!",
+       "label": "HAPOEL TEL AVIV · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "love",
+       "n": 4,
+       "of": 5,
+       "big": "The Worker",
+       "line": "The ground is named for the brothers Bernard and Lewis Bloomfield, whose family foundation helped pay for it.",
+       "shout": "FOREVER!",
+       "label": "HAPOEL TEL AVIV · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cta",
+       "n": 5,
+       "of": 5,
+       "title": "Hapoel Tel Aviv has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -5745,6 +7888,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     },
+     "crestName": "Olympiacos",
      "gate": "GATE 3",
      "name": "HISTORICAL LINE-UP",
      "plate": "fans",
@@ -5872,6 +8020,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     },
+     "crestName": "Hapoel Petah Tikva",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -5883,6 +8036,135 @@
      ],
      "label": "HAPOEL PETAH TIKVA · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 18,
+  "at": "2026-11-12 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/celtic",
+   "hook": "4 nights every Celtic fan still talks about. Which one were you at?",
+   "body": "1998 · Celtic 5–1 Rangers (Scottish Premier League)\n2000 · Celtic 6–2 Rangers (Premier League)\n2025 · Celtic 3–1 Rangers (League Cup - Semi Finals)\n2026 · Celtic 3–1 Rangers (Scottish Premiership - Playoffs - Championship Group)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Celtic archive, match by match, is on FAN LIFE (link in bio).\n\n#Celtic #CelticFC #TheBhoys #COYBIG #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Celtic: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "celtic",
+      "name": "Celtic"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "GLASGOW · GREEN AND WHITE",
+       "title": "4 nights every Bhoys fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1998,
+       "score": "5–1",
+       "teams": "Celtic v Rangers",
+       "line": "21 NOVEMBER 1998 · SCOTTISH PREMIER LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "CELTIC · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 2000,
+       "score": "6–2",
+       "teams": "Celtic v Rangers",
+       "line": "27 AUGUST 2000 · PREMIER LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "CELTIC · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2025,
+       "score": "3–1",
+       "teams": "Celtic v Rangers",
+       "line": "2 NOVEMBER 2025 · LEAGUE CUP - SEMI FINALS",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "CELTIC · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2026,
+       "score": "3–1",
+       "teams": "Celtic v Rangers",
+       "line": "10 MAY 2026 · SCOTTISH PREMIERSHIP - PLAYOFFS - CHAMPIONSHIP GROUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "CELTIC · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Celtic night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -6085,6 +8367,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     },
+     "crestName": "Hapoel Petah Tikva",
      "gate": "GATE 4",
      "name": "KIT BUILDER",
      "plate": "scarf",
@@ -6199,6 +8486,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -6210,6 +8498,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 19,
+  "at": "2026-11-13 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva",
+   "hook": "Hapoel Petah Tikva fans: 4 games built from your own club's history.",
+   "body": "Memory — Turn two cards. Match the facts.\nThe derby — Every meeting with the old rival, on one wall.\nLife — Grow up with your club, one match at a time.\nGoal reconstruction — Rebuild a famous goal, touch by touch.\n\nWhich one are you starting with? Every question, card and shirt comes from the Hapoel Petah Tikva archive.\nFree on FAN LIFE (link in bio).\n\n#HapoelPetahTikva #HPT #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Hapoel Petah Tikva: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a Hapoel Petah Tikva fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "gate": "GATE 6",
+       "name": "MEMORY",
+       "plate": "memo",
+       "headline": "Turn two cards. Match the facts.",
+       "body": [
+        "Pairs drawn from the club’s real archive.",
+        "Fewer turns, sharper memory."
+       ],
+       "label": "HAPOEL PETAH TIKVA · GATE 6"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "gate": "GATE 11",
+       "name": "THE DERBY",
+       "plate": "scarf",
+       "headline": "Every meeting with the old rival, on one wall.",
+       "body": [
+        "Wins, draws and the nights nobody forgets.",
+        "Know your derby better than they do."
+       ],
+       "label": "HAPOEL PETAH TIKVA · GATE 11"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "gate": "A SUPPORTER’S LIFE",
+       "name": "LIFE",
+       "plate": "fans",
+       "headline": "Grow up with your club, one match at a time.",
+       "body": [
+        "Matchdays, friends, promises, choices.",
+        "Every choice changes the story."
+       ],
+       "label": "HAPOEL PETAH TIKVA · A SUPPORTER’S LIFE"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "gate": "GATE 8",
+       "name": "GOAL RECONSTRUCTION",
+       "plate": "kicker",
+       "headline": "Rebuild a famous goal, touch by touch.",
+       "body": [
+        "Drag the players, pass, shoot.",
+        "Then see how it really went in."
+       ],
+       "label": "HAPOEL PETAH TIKVA · GATE 8"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Hapoel Petah Tikva page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -6411,6 +8828,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "celtic",
+      "name": "Celtic"
+     },
+     "crestName": "Celtic",
      "gate": "GATE 6",
      "name": "MEMORY",
      "plate": "memo",
@@ -6538,6 +8960,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -6549,6 +8976,93 @@
      ],
      "label": "AEK ATHENS · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 20,
+  "at": "2026-11-14 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/olympiacos",
+   "hook": "Welcome to the Legend's house. A love letter to the Legend.",
+   "body": "Red and white: red for passion, white for purity.\n\nThe Karaiskakis Stadium carries the name of the War of Independence commander mortally wounded in the area; it stands on the Faliro coast.\n\nTag the Olympiacos fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#Olympiacos #OlympiacosFC #Thrylos #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Olympiacos: 4 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cover",
+       "n": 1,
+       "of": 4,
+       "kicker": "PIRAEUS · RED AND WHITE",
+       "title": "Welcome to the Legend's house."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "love",
+       "n": 2,
+       "of": 4,
+       "big": "Karaiskakis Stadium",
+       "line": "Red and white: red for passion, white for purity.",
+       "shout": "HOME!",
+       "label": "OLYMPIACOS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "love",
+       "n": 3,
+       "of": 4,
+       "big": "The Legend",
+       "line": "The Karaiskakis Stadium carries the name of the War of Independence commander mortally wounded in the area; it stands on the Faliro coast.",
+       "shout": "OURS!",
+       "label": "OLYMPIACOS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cta",
+       "n": 4,
+       "of": 4,
+       "title": "Olympiacos has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -6750,6 +9264,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     },
+     "crestName": "Hapoel Tel Aviv",
      "gate": "GATE 7",
      "name": "TERRACE VOTE",
      "plate": "fans",
@@ -6864,6 +9383,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -6875,6 +9395,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 21,
+  "at": "2026-11-15 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/aek-athens",
+   "hook": "4 nights every AEK Athens fan still talks about. Which one were you at?",
+   "body": "1988 · AEK Athens 2–0 Olympiacos (Greek league)\n2000 · AEK Athens 3–0 Olympiacos (Greek Cup)\n2008 · AEK Athens 4–0 Olympiacos (Greek league)\n2023 · AEK Athens 3–0 Olympiacos (Greek Cup)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole AEK Athens archive, match by match, is on FAN LIFE (link in bio).\n\n#AEK #AEKAthens #AEKFC #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · history · AEK Athens: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "ATHENS · THE DOUBLE-HEADED EAGLE",
+       "title": "4 nights every Double-Headed Eagle fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1988,
+       "score": "2–0",
+       "teams": "AEK Athens v Olympiacos",
+       "line": "31 JANUARY 1988 · GREEK LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "AEK ATHENS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 2000,
+       "score": "3–0",
+       "teams": "AEK Athens v Olympiacos",
+       "line": "8 MARCH 2000 · GREEK CUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "AEK ATHENS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2008,
+       "score": "4–0",
+       "teams": "AEK Athens v Olympiacos",
+       "line": "30 MARCH 2008 · GREEK LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "AEK ATHENS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2023,
+       "score": "3–0",
+       "teams": "AEK Athens v Olympiacos",
+       "line": "9 FEBRUARY 2023 · GREEK CUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "AEK ATHENS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every AEK Athens night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -7069,6 +9718,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     },
+     "crestName": "Panathinaikos",
      "gate": "GATE 13",
      "name": "TIMELINE",
      "plate": "bootball",
@@ -7196,6 +9850,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -7207,6 +9866,135 @@
      ],
      "label": "FC ST. PAULI · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 22,
+  "at": "2026-11-16 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar",
+   "hook": "Zrinjski Mostar fans: 4 games built from your own club's history.",
+   "body": "The derby — Every meeting with the old rival, on one wall.\nLife — Grow up with your club, one match at a time.\nGoal reconstruction — Rebuild a famous goal, touch by touch.\nKit builder — Build the shirt. Season, maker, sponsor.\n\nWhich one are you starting with? Every question, card and shirt comes from the Zrinjski Mostar archive.\nFree on FAN LIFE (link in bio).\n\n#Zrinjski #HSKZrinjski #ZrinjskiMostar #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Zrinjski Mostar: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a Zrinjski Mostar fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "gate": "GATE 11",
+       "name": "THE DERBY",
+       "plate": "scarf",
+       "headline": "Every meeting with the old rival, on one wall.",
+       "body": [
+        "Wins, draws and the nights nobody forgets.",
+        "Know your derby better than they do."
+       ],
+       "label": "ZRINJSKI MOSTAR · GATE 11"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "gate": "A SUPPORTER’S LIFE",
+       "name": "LIFE",
+       "plate": "fans",
+       "headline": "Grow up with your club, one match at a time.",
+       "body": [
+        "Matchdays, friends, promises, choices.",
+        "Every choice changes the story."
+       ],
+       "label": "ZRINJSKI MOSTAR · A SUPPORTER’S LIFE"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "gate": "GATE 8",
+       "name": "GOAL RECONSTRUCTION",
+       "plate": "kicker",
+       "headline": "Rebuild a famous goal, touch by touch.",
+       "body": [
+        "Drag the players, pass, shoot.",
+        "Then see how it really went in."
+       ],
+       "label": "ZRINJSKI MOSTAR · GATE 8"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "gate": "GATE 4",
+       "name": "KIT BUILDER",
+       "plate": "scarf",
+       "headline": "Build the shirt. Season, maker, sponsor.",
+       "body": [
+        "Five parts, one shirt, one season.",
+        "Can you dress the team of that year?"
+       ],
+       "label": "ZRINJSKI MOSTAR · GATE 4"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Zrinjski Mostar page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -7401,6 +10189,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 11",
      "name": "THE DERBY",
      "plate": "scarf",
@@ -7528,6 +10321,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -7539,6 +10333,110 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 23,
+  "at": "2026-11-17 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/st-pauli",
+   "hook": "Welcome to the Kiez. A love letter to the Kiezkicker.",
+   "body": "Beside the Heiligengeistfeld, close to the Reeperbahn. Once named the Wilhelm-Koch-Stadion, it was rebuilt stand by stand from 2006.\n\nThe Millerntor stands in Hamburg's St. Pauli harbour district, a few minutes from the Reeperbahn.\n\nThe skull and crossbones started as a pirate flag on a broomstick at the Millerntor in the 1980s; the club bought the rights to the design in 1999.\n\nTag the FC St. Pauli fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#FCStPauli #StPauli #FCSP #Bundesliga #FANLIFE #FootballForever",
+   "visual": "Carousel · love · FC St. Pauli: 5 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "cover",
+       "n": 1,
+       "of": 5,
+       "kicker": "HAMBURG · BROWN AND WHITE",
+       "title": "Welcome to the Kiez."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "love",
+       "n": 2,
+       "of": 5,
+       "big": "Millerntor-Stadion",
+       "line": "Beside the Heiligengeistfeld, close to the Reeperbahn. Once named the Wilhelm-Koch-Stadion, it was rebuilt stand by stand from 2006.",
+       "shout": "HOME!",
+       "label": "FC ST. PAULI · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "love",
+       "n": 3,
+       "of": 5,
+       "big": "The Kiezkicker",
+       "line": "The Millerntor stands in Hamburg's St. Pauli harbour district, a few minutes from the Reeperbahn.",
+       "shout": "OURS!",
+       "label": "FC ST. PAULI · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "love",
+       "n": 4,
+       "of": 5,
+       "big": "FC St. Pauli",
+       "line": "The skull and crossbones started as a pirate flag on a broomstick at the Millerntor in the 1980s; the club bought the rights to the design in 1999.",
+       "shout": "FOREVER!",
+       "label": "FC ST. PAULI · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "st-pauli",
+        "name": "FC St. Pauli"
+       },
+       "crestName": "FC St. Pauli",
+       "s": "cta",
+       "n": 5,
+       "of": 5,
+       "title": "FC St. Pauli has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -7741,6 +10639,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     },
+     "crestName": "Zrinjski Mostar",
      "gate": "GATE 12",
      "name": "LIVING ARCHIVE",
      "plate": "memo",
@@ -7855,6 +10758,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     },
+     "crestName": "Hapoel Tel Aviv",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -7866,6 +10774,135 @@
      ],
      "label": "HAPOEL TEL AVIV · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 24,
+  "at": "2026-11-18 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/panathinaikos",
+   "hook": "4 nights every Panathinaikos fan still talks about. Which one were you at?",
+   "body": "1986 · Panathinaikos 4–0 Olympiacos (Greek Cup final)\n1993 · Panathinaikos 1–0 Olympiacos (Greek Cup final)\n2004 · Panathinaikos 3–1 Olympiacos (Greek Cup final)\n2014 · Olympiacos 0–3 Panathinaikos (Super League)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Panathinaikos archive, match by match, is on FAN LIFE (link in bio).\n\n#Panathinaikos #PAO #Trifylli #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Panathinaikos: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "ATHENS · AMPELOKIPOI",
+       "title": "4 nights every Greens fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1986,
+       "score": "4–0",
+       "teams": "Panathinaikos v Olympiacos",
+       "line": "28 MAY 1986 · GREEK CUP FINAL",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "PANATHINAIKOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 1993,
+       "score": "1–0",
+       "teams": "Panathinaikos v Olympiacos",
+       "line": "12 MAY 1993 · GREEK CUP FINAL",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "PANATHINAIKOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2004,
+       "score": "3–1",
+       "teams": "Panathinaikos v Olympiacos",
+       "line": "8 MAY 2004 · GREEK CUP FINAL",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "PANATHINAIKOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2014,
+       "score": "0–3",
+       "teams": "Olympiacos v Panathinaikos",
+       "line": "2 MARCH 2014 · SUPER LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "PANATHINAIKOS · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "panathinaikos",
+        "name": "Panathinaikos"
+       },
+       "crestName": "Panathinaikos",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Panathinaikos night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -8067,6 +11104,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 5",
      "name": "SHIRT COLLECTION",
      "plate": "swap",
@@ -8194,6 +11236,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -8205,6 +11248,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 25,
+  "at": "2026-11-19 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv",
+   "hook": "Hapoel Tel Aviv fans: 4 games built from your own club's history.",
+   "body": "Life — Grow up with your club, one match at a time.\nGoal reconstruction — Rebuild a famous goal, touch by touch.\nKit builder — Build the shirt. Season, maker, sponsor.\nTimeline — Put the club’s big days in order.\n\nWhich one are you starting with? Every question, card and shirt comes from the Hapoel Tel Aviv archive.\nFree on FAN LIFE (link in bio).\n\n#HapoelTelAviv #Hapoel #TheReds #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Hapoel Tel Aviv: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-tel-aviv",
+      "name": "Hapoel Tel Aviv"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be a Hapoel Tel Aviv fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "A SUPPORTER’S LIFE",
+       "name": "LIFE",
+       "plate": "fans",
+       "headline": "Grow up with your club, one match at a time.",
+       "body": [
+        "Matchdays, friends, promises, choices.",
+        "Every choice changes the story."
+       ],
+       "label": "HAPOEL TEL AVIV · A SUPPORTER’S LIFE"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 8",
+       "name": "GOAL RECONSTRUCTION",
+       "plate": "kicker",
+       "headline": "Rebuild a famous goal, touch by touch.",
+       "body": [
+        "Drag the players, pass, shoot.",
+        "Then see how it really went in."
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 8"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 4",
+       "name": "KIT BUILDER",
+       "plate": "scarf",
+       "headline": "Build the shirt. Season, maker, sponsor.",
+       "body": [
+        "Five parts, one shirt, one season.",
+        "Can you dress the team of that year?"
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 4"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "gate": "GATE 13",
+       "name": "TIMELINE",
+       "plate": "bootball",
+       "headline": "Put the club’s big days in order.",
+       "body": [
+        "Drop each card into its place in history.",
+        "How well do you know the years?"
+       ],
+       "label": "HAPOEL TEL AVIV · GATE 13"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv"
+       },
+       "crestName": "Hapoel Tel Aviv",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Hapoel Tel Aviv page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -8406,6 +11578,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     },
+     "crestName": "Olympiacos",
      "gate": "A SUPPORTER’S LIFE",
      "name": "LIFE",
      "plate": "fans",
@@ -8520,6 +11697,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     },
+     "crestName": "Hapoel Petah Tikva",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -8531,6 +11713,93 @@
      ],
      "label": "HAPOEL PETAH TIKVA · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 26,
+  "at": "2026-11-20 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/celtic",
+   "hook": "Welcome to Paradise. A love letter to the Bhoys.",
+   "body": "In Parkhead, in Glasgow's east end, with room for 60,411. Fans call it Paradise.\n\nFans call Celtic Park 'Paradise' — the story goes it began as a joke about leaving the old ground behind.\n\nTag the Celtic fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#Celtic #CelticFC #TheBhoys #COYBIG #FANLIFE #FootballForever",
+   "visual": "Carousel · love · Celtic: 4 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "celtic",
+      "name": "Celtic"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cover",
+       "n": 1,
+       "of": 4,
+       "kicker": "GLASGOW · GREEN AND WHITE",
+       "title": "Welcome to Paradise."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "love",
+       "n": 2,
+       "of": 4,
+       "big": "Celtic Park",
+       "line": "In Parkhead, in Glasgow's east end, with room for 60,411. Fans call it Paradise.",
+       "shout": "HOME!",
+       "label": "CELTIC · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "love",
+       "n": 3,
+       "of": 4,
+       "big": "The Bhoys",
+       "line": "Fans call Celtic Park 'Paradise' — the story goes it began as a joke about leaving the old ground behind.",
+       "shout": "OURS!",
+       "label": "CELTIC · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "celtic",
+        "name": "Celtic"
+       },
+       "crestName": "Celtic",
+       "s": "cta",
+       "n": 4,
+       "of": 4,
+       "title": "Celtic has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -8732,6 +12001,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "panathinaikos",
+      "name": "Panathinaikos"
+     },
+     "crestName": "Panathinaikos",
      "gate": "GATE 2",
      "name": "TRIVIA WING",
      "plate": "memo",
@@ -8859,6 +12133,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -8870,6 +12145,135 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 27,
+  "at": "2026-11-21 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva",
+   "hook": "4 nights every Hapoel Petah Tikva fan still talks about. Which one were you at?",
+   "body": "1988 · Maccabi Petah Tikva 1–3 Hapoel Petah Tikva (Israel State Cup)\n1993 · Hapoel Petah Tikva 5–0 Maccabi Petah Tikva (Israeli League)\n1995 · Maccabi Petah Tikva 1–3 Hapoel Petah Tikva (Israeli League)\n1998 · Hapoel Petah Tikva 2–0 Maccabi Petah Tikva (Israeli League)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Hapoel Petah Tikva archive, match by match, is on FAN LIFE (link in bio).\n\n#HapoelPetahTikva #HPT #IsraeliFootball #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Hapoel Petah Tikva: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "hapoel-petah-tikva",
+      "name": "Hapoel Petah Tikva"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "PETAH TIKVA · MOTHER OF THE MOSHAVOT",
+       "title": "4 nights every Malabs fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 1988,
+       "score": "1–3",
+       "teams": "Maccabi Petah Tikva v Hapoel Petah Tikva",
+       "line": "26 APRIL 1988 · ISRAEL STATE CUP",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 1993,
+       "score": "5–0",
+       "teams": "Hapoel Petah Tikva v Maccabi Petah Tikva",
+       "line": "27 MARCH 1993 · ISRAELI LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 1995,
+       "score": "1–3",
+       "teams": "Maccabi Petah Tikva v Hapoel Petah Tikva",
+       "line": "11 FEBRUARY 1995 · ISRAELI LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 1998,
+       "score": "2–0",
+       "teams": "Hapoel Petah Tikva v Maccabi Petah Tikva",
+       "line": "14 FEBRUARY 1998 · ISRAELI LEAGUE",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "HAPOEL PETAH TIKVA · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva"
+       },
+       "crestName": "Hapoel Petah Tikva",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Hapoel Petah Tikva night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },
@@ -9071,6 +12475,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 10",
      "name": "BLIND COW",
      "plate": "keeper",
@@ -9185,6 +12594,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -9196,6 +12610,135 @@
      ],
      "label": "AEK ATHENS · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 28,
+  "at": "2026-11-22 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/olympiacos",
+   "hook": "Olympiacos fans: 4 games built from your own club's history.",
+   "body": "Goal reconstruction — Rebuild a famous goal, touch by touch.\nKit builder — Build the shirt. Season, maker, sponsor.\nTimeline — Put the club’s big days in order.\nShirt collection — The club’s shirts, season by season.\n\nWhich one are you starting with? Every question, card and shirt comes from the Olympiacos archive.\nFree on FAN LIFE (link in bio).\n\n#Olympiacos #OlympiacosFC #Thrylos #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · gates · Olympiacos: 6 slides.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "olympiacos",
+      "name": "Olympiacos"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "FAN LIFE · YOUR CLUB, YOUR GAMES",
+       "title": "4 ways to be an Olympiacos fan today"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 8",
+       "name": "GOAL RECONSTRUCTION",
+       "plate": "kicker",
+       "headline": "Rebuild a famous goal, touch by touch.",
+       "body": [
+        "Drag the players, pass, shoot.",
+        "Then see how it really went in."
+       ],
+       "label": "OLYMPIACOS · GATE 8"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 4",
+       "name": "KIT BUILDER",
+       "plate": "scarf",
+       "headline": "Build the shirt. Season, maker, sponsor.",
+       "body": [
+        "Five parts, one shirt, one season.",
+        "Can you dress the team of that year?"
+       ],
+       "label": "OLYMPIACOS · GATE 4"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 13",
+       "name": "TIMELINE",
+       "plate": "bootball",
+       "headline": "Put the club’s big days in order.",
+       "body": [
+        "Drop each card into its place in history.",
+        "How well do you know the years?"
+       ],
+       "label": "OLYMPIACOS · GATE 13"
+      }
+     },
+     {
+      "t": "L-GATE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "gate": "GATE 5",
+       "name": "SHIRT COLLECTION",
+       "plate": "swap",
+       "headline": "The club’s shirts, season by season.",
+       "body": [
+        "Home, away, third — the whole rail.",
+        "Which one is still in your wardrobe?"
+       ],
+       "label": "OLYMPIACOS · GATE 5"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "olympiacos",
+        "name": "Olympiacos"
+       },
+       "crestName": "Olympiacos",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "All 13 gates are open on the Olympiacos page. Free."
+      }
+     }
+    ]
    }
   }
  },
@@ -9398,6 +12941,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     },
+     "crestName": "Zrinjski Mostar",
      "gate": "GATE 8",
      "name": "GOAL RECONSTRUCTION",
      "plate": "kicker",
@@ -9525,6 +13073,7 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "brand": "legends",
      "gate": "FAN LIFE · THE BIG GAME",
      "name": "LEGENDS MANAGER",
      "plate": "dribbler",
@@ -9536,6 +13085,110 @@
      ],
      "label": "LEGENDS MANAGER · FAN LIFE"
     }
+   }
+  }
+ },
+ {
+  "day": 29,
+  "at": "2026-11-23 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/aek-athens",
+   "hook": "Welcome to the Union's house. A love letter to the Double-Headed Eagle.",
+   "body": "Opened in September 2022 in Nea Filadelfeia and known to supporters as Hagia Sophia.\n\nOn 30 September 2022 the new stadium opened on the same Nea Filadelfeia ground, shaped to recall the club's Constantinople roots.\n\nBetween 2003 and 2022 the club played at the Athens Olympic Stadium.\n\nTag the AEK Athens fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n#AEK #AEKAthens #AEKFC #SuperLeagueGreece #FANLIFE #FootballForever",
+   "visual": "Carousel · love · AEK Athens: 5 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cover",
+       "n": 1,
+       "of": 5,
+       "kicker": "ATHENS · THE DOUBLE-HEADED EAGLE",
+       "title": "Welcome to the Union's house."
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "love",
+       "n": 2,
+       "of": 5,
+       "big": "Agia Sophia Stadium",
+       "line": "Opened in September 2022 in Nea Filadelfeia and known to supporters as Hagia Sophia.",
+       "shout": "HOME!",
+       "label": "AEK ATHENS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "love",
+       "n": 3,
+       "of": 5,
+       "big": "The Double-Headed Eagle",
+       "line": "On 30 September 2022 the new stadium opened on the same Nea Filadelfeia ground, shaped to recall the club's Constantinople roots.",
+       "shout": "OURS!",
+       "label": "AEK ATHENS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "love",
+       "n": 4,
+       "of": 5,
+       "big": "The Union",
+       "line": "Between 2003 and 2022 the club played at the Athens Olympic Stadium.",
+       "shout": "FOREVER!",
+       "label": "AEK ATHENS · FAN LIFE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "aek-athens",
+        "name": "AEK Athens"
+       },
+       "crestName": "AEK Athens",
+       "s": "cta",
+       "n": 5,
+       "of": 5,
+       "title": "AEK Athens has its own home on FAN LIFE. Come in."
+      }
+     }
+    ]
    }
   }
  },
@@ -9737,6 +13390,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "aek-athens",
+      "name": "AEK Athens"
+     },
+     "crestName": "AEK Athens",
      "gate": "GATE 1",
      "name": "ALL-TIME XI",
      "plate": "swap",
@@ -9864,6 +13522,11 @@
    "kit": {
     "t": "L-GATE",
     "data": {
+     "club": {
+      "id": "st-pauli",
+      "name": "FC St. Pauli"
+     },
+     "crestName": "FC St. Pauli",
      "gate": "GATE 9",
      "name": "ROYAL RUMBLE",
      "plate": "bootball",
@@ -9875,6 +13538,135 @@
      ],
      "label": "FC ST. PAULI · GATE 9"
     }
+   }
+  }
+ },
+ {
+  "day": 30,
+  "at": "2026-11-24 19:00",
+  "format": "carousel",
+  "kind": "fixed",
+  "main": {
+   "app": "fanlife",
+   "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar",
+   "hook": "4 nights every Zrinjski Mostar fan still talks about. Which one were you at?",
+   "body": "2010 · Tre Penne 2–9 Zrinjski Mostar (UEFA Europa League)\n2023 · FK Velež Mostar 0–1 Zrinjski Mostar (Bosnia and Herzegovina Cup Final)\n2024 · Borac 0–1 Zrinjski Mostar (Bosnia and Herzegovina Cup Final, Second Leg)\n2026 · Zrinjski Mostar 1–0 Velež (Bosnia and Herzegovina Cup Final, First Leg)\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole Zrinjski Mostar archive, match by match, is on FAN LIFE (link in bio).\n\n#Zrinjski #HSKZrinjski #ZrinjskiMostar #FANLIFE #FootballForever",
+   "visual": "Carousel · history · Zrinjski Mostar: 6 slides in the club's colours.",
+   "kit": {
+    "t": "L-CAROUSEL",
+    "data": {
+     "club": {
+      "id": "zrinjski-mostar",
+      "name": "Zrinjski Mostar"
+     }
+    },
+    "slides": [
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cover",
+       "n": 1,
+       "of": 6,
+       "kicker": "MOSTAR · BIJELI BRIJEG",
+       "title": "4 nights every Nobles fan remembers"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 2,
+       "of": 6,
+       "year": 2010,
+       "score": "2–9",
+       "teams": "Tre Penne v Zrinjski Mostar",
+       "line": "22 JULY 2010 · UEFA EUROPA LEAGUE",
+       "note": "A EUROPEAN NIGHT.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 3,
+       "of": 6,
+       "year": 2023,
+       "score": "0–1",
+       "teams": "FK Velež Mostar v Zrinjski Mostar",
+       "line": "17 MAY 2023 · BOSNIA AND HERZEGOVINA CUP FINAL",
+       "note": "A DERBY TO REMEMBER.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 4,
+       "of": 6,
+       "year": 2024,
+       "score": "0–1",
+       "teams": "Borac v Zrinjski Mostar",
+       "line": "23 MAY 2024 · BOSNIA AND HERZEGOVINA CUP FINAL, SECOND LEG",
+       "note": "A FINAL TO FRAME.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "night",
+       "n": 5,
+       "of": 6,
+       "year": 2026,
+       "score": "1–0",
+       "teams": "Zrinjski Mostar v Velež",
+       "line": "6 MAY 2026 · BOSNIA AND HERZEGOVINA CUP FINAL, FIRST LEG",
+       "note": "A FINAL TO FRAME.",
+       "label": "ZRINJSKI MOSTAR · FROM THE ARCHIVE"
+      }
+     },
+     {
+      "t": "L-SLIDE",
+      "data": {
+       "club": {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar"
+       },
+       "crestName": "Zrinjski Mostar",
+       "s": "cta",
+       "n": 6,
+       "of": 6,
+       "title": "Every Zrinjski Mostar night, match by match — on FAN LIFE."
+      }
+     }
+    ]
    }
   }
  },

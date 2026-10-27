@@ -9,8 +9,9 @@
  *  arenas), L-OFFSIDES-SYSTEM.
  *  L-CARD is the safety net: any post whose own picture cannot be drawn still goes out with its app's card. */
 import {Canvas, measure} from './source/weekly.mjs'
+import {clubField, crestMedal, ownColour, paintFor, ribbon, LOGOS} from './poster.mjs'
 
-export const LIVE_TEMPLATES = ['L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
+export const LIVE_TEMPLATES = ['L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
 const W = 1080, H = 1350
 const PLATES = ['kicker', 'keeper', 'dribbler', 'fans', 'memo', 'scarf', 'swap', 'bootball']
 const LOGO = {dubid: 'assets/brand/dubid-logo.png', offsides: 'assets/brand/offsides-logo.png'}
@@ -65,25 +66,82 @@ export function designLive(t, app, d) {
   if (brand) c.accent = c.color(brand === 'dubid' ? c.P.cyan : c.P.orange)
   else c.halftone()
 
-  if (t === 'L-GATE') {
+  if (t === 'L-SLIDE') {
+    // one slide of a club carousel (owner, 27.10.2026): cover · a night · a line of love · the way in
+    const paint = paintFor(d), count = d.of ? `${d.n}/${d.of}` : null
+    if (d.s === 'cover' || d.s === 'cta') {
+      const f = clubField(c, paint, 0, 0, W, H)
+      c.header()
+      if (d.s === 'cover') {
+        crestMedal(c, d.crest, W / 2, 520, 230)
+        if (d.kicker) { const kw = Math.min(900, measure(String(d.kicker).toUpperCase(), 30, 'Weekly Caps') + 80); c.rect(W / 2 - kw / 2, 790, kw, 58, c.ink, {border: false}); c.text(d.kicker, W / 2, 830, 30, 'Weekly Caps', c.paper, {anchor: 'middle', max: 860, min: 16}) }
+        c.rect(64, 880, 952, 300, c.paper, {sw: 4})
+        c.fitted(d.title, 104, 980, {n: 76, min: 40, max: 872, maxLines: 3, step: 1.08})
+        c.burst(910, 1210, 96, 'SWIPE!', {fill: c.P.cyan, n: 34})
+      } else {
+        c.circle(W / 2, 470, 236, c.ink, {border: false})
+        c.image('assets/brand/fanlife-logo.png', W / 2 - 230, 240, 460, 460, {contain: true, raw: true, id: 'fanlife-logo-big'})
+        if (d.crest) crestMedal(c, d.crest, W - 170, 640, 104)
+        c.rect(64, 790, 952, 300, c.paper, {sw: 4})
+        c.fitted(d.title, 104, 890, {n: 66, min: 38, max: 872, maxLines: 3, step: 1.08})
+        c.footer({label: d.label || null})
+      }
+    } else if (d.s === 'night') {
+      const f = clubField(c, paint, 0, 0, W, 560)
+      c.header()
+      if (d.crest) crestMedal(c, d.crest, W - 150, 150, 110)
+      c.text(String(d.year), 64, 520, 230, 'Ultra', f.on, {max: 700, min: 110, stroke: 8, shadow: true, tag: 'night-year'})
+      if (d.score) { c.lamp(d.score, 64, 610, 952, 200); c.fitted(d.teams, 64, 880, {n: 52, min: 30, max: 952, maxLines: 2, step: 1.1}) }
+      else c.fitted(d.teams, 64, 680, {n: 64, min: 34, max: 952, maxLines: 4, step: 1.1})
+      c.ticket(64, 1000, 952, 80)
+      c.text(d.line || '', 121, 1052, 28, 'Weekly Caps', c.ink, {max: 875, min: 16})
+      if (d.note) c.text(d.note, 64, 1150, 34, 'Weekly Head', c.accent, {max: 952, min: 22})
+      c.footer({label: d.label || null})
+    } else if (d.s === 'love') {
+      clubField(c, paint, 0, 0, W, 640)
+      c.header()
+      if (d.crest) crestMedal(c, d.crest, W - 175, 400, 150)
+      c.burst(200, 380, 120, d.shout || 'WE LOVE IT!', {fill: c.P.cyan, n: 30})
+      // the name on an ink tag, so it reads on any shirt — white, yellow or green
+      const bw = Math.min(952, measure(String(d.big || ''), 76, 'Shrikhand') + 70)
+      c.rect(48, 520, bw, 104, c.ink, {border: false})
+      c.text(d.big || '', 80, 598, 76, 'Shrikhand', c.paper, {max: 900, min: 34, tag: 'love-big'})
+      c.rect(64, 700, 952, 390, c.paper, {sw: 4})
+      c.add(`<rect x="64" y="700" width="24" height="390" fill="${ownColour(c, paint)}"/>`)
+      c.fitted(d.line, 120, 800, {n: 56, min: 34, max: 860, maxLines: 5, step: 1.16})
+      c.footer({label: d.label || null})
+    } else throw Error('Unknown slide ' + d.s)
+    if (count && d.s !== 'cover') c.text(count, W - 70, H - 150, 26, 'Weekly Caps', d.s === 'cover' || d.s === 'cta' ? c.paper : c.ink, {anchor: 'end', max: 120})
+  } else if (t === 'L-GATE') {
+    // the club's colours, its crest, the gate's number big, the comic plate, the name on a ribbon
+    const paint = d.brand === 'legends' ? null : paintFor(d)
+    const f = clubField(c, paint, 0, 0, W, 820)
     c.header()
-    c.text(String(d.gate), 64, 238, 30, 'Weekly Caps', c.ink, {max: 640})
-    c.text(d.name, 64, 372, 104, 'Shrikhand', c.accent, {max: 760, min: 46, stroke: 4, shadow: true, tag: 'gate-name'})
-    c.rect(64, 430, 952, 470, c.paper, {sw: 3})
-    c.halftone(70, 436, 940, 458)
-    c.plate(PLATES.includes(d.plate) ? d.plate : 'kicker', 78, 444, 924, 442)
-    c.burst(900, 470, 118, d.shout || 'PLAY FREE!', {n: 40})
-    c.fitted(d.headline, 64, 984, {n: 64, min: 40, max: 952, maxLines: 2, step: 1.05})
+    if (d.brand === 'legends') c.image(LOGOS.legends, W - 360, 20, 330, 330, {contain: true, raw: true, id: 'legends-logo'})
+    else if (d.crest) crestMedal(c, d.crest, W - 150, 150, 118)
+    const num = String(d.gate || '').match(/\d+/)?.[0]
+    if (num) {
+      c.text('GATE', 70, 330, 40, 'Weekly Caps', f.on, {max: 300})
+      c.text(num, 58, 600, num.length > 1 ? 290 : 330, 'Ultra', f.on, {max: 420, min: 120, stroke: 8, shadow: true, tag: 'gate-number'})
+    } else c.text(String(d.gate || ''), 70, 330, 34, 'Weekly Caps', f.on, {max: 560, min: 18})
+    c.plate(PLATES.includes(d.plate) ? d.plate : 'kicker', num ? 430 : 300, 250, num ? 600 : 720, 470)
+    ribbon(c, d.name, 760, {fill: c.accent, text: c.paper})
+    c.burst(925, 905, 104, d.shout || 'PLAY FREE!', {fill: c.P.cyan, n: 36})
+    c.fitted(d.headline, 64, 990, {n: 62, min: 38, max: 760, maxLines: 2, step: 1.05})
     ;(d.body || []).slice(0, 2).forEach((s, i) => c.text(s, 64, 1124 + i * 42, 31, 'Weekly Body 600', c.ink, {max: 952, min: 30, tag: 'reading'}))
     c.footer({label: d.label || null})
   } else if (t === 'L-FACT') {
+    // the year huge on the club's colours, the crest on a medal, the fact on a paper card
+    const paint = paintFor(d), f = clubField(c, paint, 0, 0, W, 620)
     c.header()
-    c.burst(250, 360, 176, 'DID YOU KNOW?', {fill: c.P.cyan, n: 40})
-    if (d.crest) c.image(d.crest, 770, 250, 220, 220, {contain: true, id: 'club-crest'})
-    c.rect(64, 580, 952, 520, c.paper, {sw: 3})
-    c.halftone(70, 586, 940, 508)
-    c.fitted(d.fact, 96, 690, {n: 66, min: 40, max: 888, maxLines: 5, step: 1.12})
-    if (d.kicker) c.text(d.kicker, 64, 1166, 30, 'Weekly Caps', c.ink, {max: 952, min: 18})
+    if (d.crest) crestMedal(c, d.crest, W - 175, 360, 150)
+    c.burst(190, 335, 116, 'DID YOU KNOW?', {fill: c.P.cyan, n: 30})
+    const year = String(d.fact || '').match(/(19[89]\d|20\d\d)(\/\d\d)?/)?.[0]
+    if (year) c.text(year, 64, 590, year.length > 4 ? 150 : 190, 'Ultra', f.on, {max: 700, min: 90, stroke: 7, shadow: true, tag: 'fact-year'})
+    c.rect(64, 690, 952, 400, c.paper, {sw: 4})
+    c.add(`<rect x="64" y="690" width="24" height="400" fill="${ownColour(c, paint)}"/>`)
+    c.fitted(d.fact, 120, 800, {n: 78, min: 40, max: 860, maxLines: 4, step: 1.14})
+    if (d.kicker) c.text(d.kicker, 64, 1170, 30, 'Weekly Caps', c.ink, {max: 952, min: 18})
     c.footer({label: d.label || null})
   } else if (t === 'L-FIXTURES' || t === 'L-RESULTS') {
     const rows = d.rows || []
@@ -133,11 +191,11 @@ export function designLive(t, app, d) {
       c.fitted(d.hook, 96, 540, {n: 74, min: 40, max: 888, maxLines: 5, step: 1.1})
       brandFoot(c, null)
     } else {
+      clubField(c, paintFor(d), 0, 0, W, 760)
       c.header()
-      c.rect(64, 260, 952, 470, c.paper, {sw: 3})
-      c.halftone(70, 266, 940, 458)
-      c.plate(PLATES[(d.seed || 0) % PLATES.length], 78, 274, 924, 442)
-      c.fitted(d.hook, 64, 840, {n: 72, min: 40, max: 952, maxLines: 4, step: 1.08})
+      c.plate(PLATES[(d.seed || 0) % PLATES.length], 120, 230, 840, 500)
+      c.burst(930, 300, 100, 'FAN LIFE', {fill: c.P.cyan, n: 34})
+      c.fitted(d.hook, 64, 880, {n: 74, min: 40, max: 952, maxLines: 4, step: 1.08})
       c.footer()
     }
   } else throw Error('Unknown live template ' + t)
