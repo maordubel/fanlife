@@ -66,8 +66,8 @@
  {
   "id": "continue-torcida-posts",
   "priority": "P3",
-  "task": "Torcida Split posts: 22 page(s) read of 27; the scheduled task continues from the checkpoint.",
-  "taskHe": "Torcida Split posts: נקראו 22 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Torcida Split posts: 26 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 26 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },

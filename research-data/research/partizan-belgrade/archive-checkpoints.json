@@ -7,14 +7,10 @@
   "parserVersion": "partizanopedia-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 161,
+  "observedTotalDocuments": 179,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/6566.html",
-   "/6667.html",
-   "/6768.html",
-   "/6869.html",
    "/6970.html",
    "/7071.html",
    "/7172.html",
@@ -149,7 +145,25 @@
    "/jovancurcic.html",
    "/dimitrijedavidovic.html",
    "/ivancurkovic.html",
-   "/brankorasovic.html"
+   "/brankorasovic.html",
+   "/miodragjpetrovic.html",
+   "/milosradakovic.html",
+   "/boradjordjevic.html",
+   "/milosvidovic.html",
+   "/blagojepaunovic.html",
+   "/idrizhosic.html",
+   "/miloradjeremic.html",
+   "/ljuanprekazi.html",
+   "/slobodanpetrovic.html",
+   "/zarkoolarevic.html",
+   "/miloradtosic.html",
+   "/vojislavmarkovic.html",
+   "/momcilovukotic.html",
+   "/nikolabudisic.html",
+   "/vladapejovic.html",
+   "/zoransmileski.html",
+   "/svemirdjordjic.html",
+   "/latifcicic.html"
   ],
   "seen": [
    "/",
@@ -173,10 +187,14 @@
    "/6162.html",
    "/6263.html",
    "/6364.html",
-   "/6465.html"
+   "/6465.html",
+   "/6566.html",
+   "/6667.html",
+   "/6768.html",
+   "/6869.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-27T09:11:09.213Z",
+  "updatedAt": "2026-10-27T09:22:05.873Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -191,7 +209,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-10-27T09:11:09.695Z",
+  "updatedAt": "2026-10-27T09:22:06.015Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -200,14 +218,14 @@
   "collection": "pages",
   "queryFingerprint": "802301f5b060892d",
   "parserVersion": "cbn-history-v1",
-  "nextPage": 1,
+  "nextPage": 2,
   "lastCommittedPage": 1,
   "observedTotalDocuments": 5,
   "observedTotalPages": 1,
   "perPage": 25,
-  "state": "blocked",
-  "updatedAt": "2026-10-27T09:11:12.726Z",
-  "lastError": "HTTP 403 — a refusal is an answer"
+  "state": "listed",
+  "updatedAt": "2026-10-27T09:22:09.762Z",
+  "lastError": null
  },
  "partizan-official:html": {
   "schemaVersion": 1,
@@ -225,7 +243,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-27T09:11:14.240Z",
+  "updatedAt": "2026-10-27T09:22:11.451Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -244,7 +262,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-27T09:11:15.297Z",
+  "updatedAt": "2026-10-27T09:22:12.409Z",
   "lastError": null
  }
 }

@@ -46,6 +46,15 @@
     "bodyHash": "ad4f6ce8715b060d54d3bcc82b40a2ad239c3923b53704eda6f02ae47da93483",
     "fetchedAt": "2026-10-25T08:45:20.322Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/03/lage-am-millerntor-03-maerz-2021/",
+    "locator": "p46",
+    "quote": "NDR.de, 30min",
+    "bodyHash": "a6bdf8ebfc0e1b5d4003b9637054916f7f8f72a955df8ea5542986547f3ba305",
+    "fetchedAt": "2026-10-27T09:22:27.442Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -53,8 +62,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:20.322Z",
-  "updatedAt": "2026-10-25T08:45:20.322Z"
+  "createdAt": "2026-10-27T09:22:27.442Z",
+  "updatedAt": "2026-10-27T09:22:27.442Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -85,6 +94,15 @@
     "bodyHash": "60c186a28662b573d5194ecd1668a888e4518427aa3114af2178e5a879113a23",
     "fetchedAt": "2026-10-26T09:23:39.232Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/01/18/lage-am-millerntor-18-januar-2021/",
+    "locator": "p20",
+    "quote": "In einem Bericht des NDR (3min) wurde mit Beteiligten der RL Nord (m) gesprochen.",
+    "bodyHash": "348b49e2e1974acdaa600bd73ab8c04bd9691c5fd5f97e1f63560d0e2b1b12d9",
+    "fetchedAt": "2026-10-27T09:22:18.693Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -92,8 +110,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:39.232Z",
-  "updatedAt": "2026-10-26T09:23:39.232Z"
+  "createdAt": "2026-10-27T09:22:18.693Z",
+  "updatedAt": "2026-10-27T09:22:18.693Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -133,6 +151,33 @@
     "bodyHash": "60c186a28662b573d5194ecd1668a888e4518427aa3114af2178e5a879113a23",
     "fetchedAt": "2026-10-26T09:23:39.232Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/01/23/vorbericht-fc-st-pauli-ssv-jahn-regensburg-17-spieltag-20-21/",
+    "locator": "p27",
+    "quote": "Sein Kollege auf der Doppel-Sechs Benedikt Gimber ist dabei geradezu der klassische „Ausputzer“, der neben einem doch eher kreativen Spieler wie Besuschkow gut aufgehoben ist. Er ist mit 11,3 Defensivduellen pro 90min Spitzenreiter der gesamten Liga, zählt zu den Top20 der Liga in der Kategorie „Interceptions“ und gewinnt sehr gute 65% seiner Kopfballduelle. Das ist schon ein richtig gutes und auch gut abgestimmtes Duo im Zentrum.",
+    "bodyHash": "8e7060397cf130847e0793984a3b9376022ae3a39cbd9e8bac52c4c028eadd01",
+    "fetchedAt": "2026-10-27T09:22:18.696Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/02/09/lage-am-millerntor-09-februar-2020/",
+    "locator": "p14",
+    "quote": "Wenn Ihr also wissen wollt, wer Paul eigentlich ist und was er so tut (und außerdem seit langer Zeit mal wieder hören wollt, warum man als FCSP-Fan auch gute Laune haben kann) dann ladet Euch die aktuelle Folge (knapp 90min) in Euren Podcatcher.",
+    "bodyHash": "0941e8ebb8cc422f750a6614af09665a5ffe420826795cd686a6e7df3dfe4054",
+    "fetchedAt": "2026-10-27T09:22:24.178Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/02/23/plus-minus-statistik-des-fc-st-pauli/",
+    "locator": "p58",
+    "quote": "Interessant ist auch das untere Ende der Tabelle: Wenn Simon Makienok auf dem Platz stand, hat der FC St. Pauli durchschnittlich 1.02 Tore pro 90 Minuten erzielt (nur Brodersen hat mit genau einem Tor pro 90min einen schlechteren Wert). Das ist, gerade für einen Stürmer, ein schwacher Wert.",
+    "bodyHash": "ececbb544cd13d627e6cd6b1057318e7d6df0eb2eeb67180b2094834a6f3c34b",
+    "fetchedAt": "2026-10-27T09:22:27.439Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -140,8 +185,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:39.232Z",
-  "updatedAt": "2026-10-26T09:23:39.232Z"
+  "createdAt": "2026-10-27T09:22:27.439Z",
+  "updatedAt": "2026-10-27T09:22:27.439Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -202,6 +247,15 @@
     "bodyHash": "e99d499dcf0bdb14e8e18aa04783cb93170d5d7f544a13c3dd3a059cc5f63354",
     "fetchedAt": "2026-10-25T08:45:20.322Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/05/lage-am-millerntor-05-maerz-2021/",
+    "locator": "p40",
+    "quote": "Vielleicht wäre es doch am einfachsten, alle Teams die noch im Europapokal vertreten sind, für ein Wochenende nach Budapest zu schicken… und dann spielen die halt in so ’nem Kleinfeld Turnier (4vs4, 10Min, bei Unentschieden entscheidet Stein/Schere/Papier) den Sieger aus.",
+    "bodyHash": "023088beddda48c07ae026ca09a42d38349ff3995c6ef5eb049b45e81cf3e99c",
+    "fetchedAt": "2026-10-27T09:22:27.444Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -209,8 +263,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:20.322Z",
-  "updatedAt": "2026-10-25T08:45:20.322Z"
+  "createdAt": "2026-10-27T09:22:27.444Z",
+  "updatedAt": "2026-10-27T09:22:27.444Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -340,6 +394,15 @@
     "bodyHash": "08031f708ac541939c61c158b3f5638667cfaa1f3b0f0c2a78a201372aa15cc7",
     "fetchedAt": "2026-10-25T08:45:17.488Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/08/lage-am-millerntor-8-maerz-2021/",
+    "locator": "p7",
+    "quote": "Guido Burgstaller war am Sonntag im NDR-Sportclub bei Valeska Homburg zu Gast. (8min)",
+    "bodyHash": "3671670333c92f6e25fd1ece6ce1599832b726d926eb48f7a3ec3b40a2d2d3e3",
+    "fetchedAt": "2026-10-27T09:22:27.445Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -347,8 +410,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.488Z",
-  "updatedAt": "2026-10-25T08:45:17.488Z"
+  "createdAt": "2026-10-27T09:22:27.445Z",
+  "updatedAt": "2026-10-27T09:22:27.445Z"
  },
  {
   "id": "ga-f0288a576187c45b",
@@ -559,6 +622,15 @@
     "bodyHash": "9c799d5bb36aed60433025c09b0df9106729ffdae939dd5cf3d56d017ac8e8ce",
     "fetchedAt": "2026-10-25T08:45:25.855Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/01/15/lage-am-millerntor-15-januar-2021/",
+    "locator": "p35",
+    "quote": "Bibiana Steinhaus hat bekanntlich ihre Karriere als Schiedsrichterin beendet, so wurde für den DFB auch ein Platz auf der FIFA-Liste frei. Dieser wurde jetzt mit Franziska Wildfeuer aus Schleswig-Holstein besetzt, die am Sonntag im N3 Sportclub (11min) zu Gast war.",
+    "bodyHash": "4bbe36c92c0129febb925141994247769b6c6447786bab3ef4f15dc6842a7f64",
+    "fetchedAt": "2026-10-27T09:22:18.692Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -566,8 +638,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:25.855Z",
-  "updatedAt": "2026-10-25T08:45:25.855Z"
+  "createdAt": "2026-10-27T09:22:18.692Z",
+  "updatedAt": "2026-10-27T09:22:18.692Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -589,6 +661,15 @@
     "bodyHash": "9c799d5bb36aed60433025c09b0df9106729ffdae939dd5cf3d56d017ac8e8ce",
     "fetchedAt": "2026-10-25T08:45:25.855Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/01/06/lage-am-millerntor-06-januar-2021/",
+    "locator": "p31",
+    "quote": "Ein neuer Vorstoß dazu kommt angeblich von Investoren aus den USA (JP Morgan) und WDR Sport Inside hat dazu einen knapp 12minütigen Videobeitrag erstellt.",
+    "bodyHash": "db1e9b825120ffadb587566cde43c999f77a18b938138da10eb7fefa9da37790",
+    "fetchedAt": "2026-10-27T09:22:15.914Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -596,8 +677,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:25.855Z",
-  "updatedAt": "2026-10-25T08:45:25.855Z"
+  "createdAt": "2026-10-27T09:22:15.914Z",
+  "updatedAt": "2026-10-27T09:22:15.914Z"
  },
  {
   "id": "ga-c85bb1efc815c755",
@@ -748,6 +829,15 @@
     "bodyHash": "c74d1a3c7f105c4786f2accad91ba28e0d0be3c0cc2a0ae96f162cd4328d0e5e",
     "fetchedAt": "2026-10-26T09:23:36.870Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/01/19/lage-am-millerntor-19-januar-2021/",
+    "locator": "p8",
+    "quote": "Allerdings gönnen wir, wenn denn da schon jemand Tore schießen muss, es immerhin Bakery Jatta , dass er dies tut. Im NDR gab es jetzt einen 7minütigen Beitrag über die Kampagne BILD und Sport-Bild gegen ihn. Ein Presseerzeugnis, welches leider auch weiterhin im offiziellen Pressespiegel unseres Vereins mit verlinkt wird.",
+    "bodyHash": "81c11f2732fffcda584c76aab709a623775b1ac915feeeb6fa852d7ca3796eba",
+    "fetchedAt": "2026-10-27T09:22:18.694Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -755,8 +845,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:36.870Z",
-  "updatedAt": "2026-10-26T09:23:36.870Z"
+  "createdAt": "2026-10-27T09:22:18.694Z",
+  "updatedAt": "2026-10-27T09:22:18.694Z"
  },
  {
   "id": "ga-6fdbe5b08002270d",
@@ -808,6 +898,15 @@
     "bodyHash": "113ea312114c78518c5ca443382c6094c2efb265068400a4be057d56e7264d5d",
     "fetchedAt": "2026-10-27T09:11:24.123Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/02/03/lage-am-millerntor-03-februar-2021/",
+    "locator": "p37",
+    "quote": "Völlig abstrus wurde es dann am Freitag, als heraus kam, dass die Kommission aber nur zwölf Menschen zur Wahl vorschlägt, und damit bewusst mindestens vier Personen bewusst von der Wahl ausschließt. Unter anderem darunter auch die aktuelle Aufsichtsrätin Eva-Maria Federhenn, die ihre „Irritation“ darüber beim SWR (5min Audio) äußert.",
+    "bodyHash": "3b6ccdb3b82b342f63489ce19917bd8411fa37ff3256e5908824766baf9d2925",
+    "fetchedAt": "2026-10-27T09:22:21.180Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -815,7 +914,97 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:11:24.123Z",
-  "updatedAt": "2026-10-27T09:11:24.123Z"
+  "createdAt": "2026-10-27T09:22:21.180Z",
+  "updatedAt": "2026-10-27T09:22:21.180Z"
+ },
+ {
+  "id": "ga-0b008b51fb1b193a",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "53",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/01/13/lage-am-millerntor-13-januar-2021/",
+    "locator": "p44",
+    "quote": "Dementsprechend könnt Ihr die Doku (53min) auch ohne DAZN Account frei zugänglich auf UEFA.TV schauen.",
+    "bodyHash": "d302a9681ec6156f01c262b7d54cf0791d68a4030b22d9db34fa24ef193c412e",
+    "fetchedAt": "2026-10-27T09:22:18.690Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:22:18.690Z",
+  "updatedAt": "2026-10-27T09:22:18.690Z"
+ },
+ {
+  "id": "ga-0ca8402e929e8694",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "35",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/02/16/lage-am-millerntor-16-februar-2021/",
+    "locator": "p44",
+    "quote": "Und genau diese „Ausnahmen“ wie Sandra, Katja Kraus (ehemals HSV), Helen breit (Unsere Kurve) oder Bibiana Steinhaus kommen in der Reportage des ZDF (35min) von Claudia Neumann zu Wort und es wird darüber gesprochen, warum das aktuell so ist und wie sich das vielleicht langfristig ändern ließe.",
+    "bodyHash": "5f1df6e0545a74fdf9bff84ddf3dbcc4a9fde77c5e468c6b5c98da4c629f5284",
+    "fetchedAt": "2026-10-27T09:22:24.181Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:22:24.181Z",
+  "updatedAt": "2026-10-27T09:22:24.181Z"
+ },
+ {
+  "id": "ga-f4ca32025f2ce9d5",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "9",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/08/lage-am-millerntor-8-maerz-2021/",
+    "locator": "p65",
+    "quote": "Detaillierter nachzulesen ist dies wahlweise in der gleich folgenden Tweetkette des Ingolstädter Fans Martin – oder hier im Beitrag bei WDR Sport Inside (9min)",
+    "bodyHash": "3671670333c92f6e25fd1ece6ce1599832b726d926eb48f7a3ec3b40a2d2d3e3",
+    "fetchedAt": "2026-10-27T09:22:27.445Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:22:27.445Z",
+  "updatedAt": "2026-10-27T09:22:27.445Z"
  }
 ]

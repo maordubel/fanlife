@@ -9,9 +9,9 @@
   "scope": "mixed",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:11:40.327Z",
+  "retrievedAt": "2026-10-27T09:22:44.914Z",
   "collected": {
-   "documents": 770,
+   "documents": 895,
    "observedTotalDocuments": 4424,
    "state": "partial_budget",
    "parser": null
@@ -30,9 +30,9 @@
   "scope": "mixed",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:11:40.327Z",
+  "retrievedAt": "2026-10-27T09:22:44.914Z",
   "collected": {
-   "documents": 770,
+   "documents": 895,
    "observedTotalDocuments": 20,
    "state": "listed",
    "parser": null
@@ -51,7 +51,7 @@
   "scope": "club-history",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:11:40.327Z",
+  "retrievedAt": "2026-10-27T09:22:44.914Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 31,
@@ -72,7 +72,7 @@
   "scope": "club-history",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:11:40.327Z",
+  "retrievedAt": "2026-10-27T09:22:44.914Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 29,

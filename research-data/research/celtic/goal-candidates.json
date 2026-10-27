@@ -214,6 +214,15 @@
     "bodyHash": "cefdacc01ed11927489e6731c430069a5fce10b358ac0bc0de606a74d7217c6e",
     "fetchedAt": "2026-10-25T08:43:37.217Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1914-2/1914-05-21-burnley-fc-1-1-celtic-tour-of-hungary-austria-germany-budapest-cup/",
+    "locator": "p6",
+    "quote": "The match was a hard and ill tempered contest. Jimmy McMenemy put Celtic in front through a 20th minute penalty. Burnley equalised from the penalty mark in the second half when Sunny Jim Young handled. Contemporary reports suggest that Celtic declined to play extra time. They agreed to travel to Burnley at a later date for a replay and the Hungarians were to forward the trophy.",
+    "bodyHash": "dc0ad3936ba0c56b6b6af3a474ce75ab238d349340f8c3f85469378149ba8ed1",
+    "fetchedAt": "2026-10-27T09:20:49.527Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -221,8 +230,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:43:37.217Z",
-  "updatedAt": "2026-10-25T08:43:37.217Z"
+  "createdAt": "2026-10-27T09:20:49.527Z",
+  "updatedAt": "2026-10-27T09:20:49.527Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -523,6 +532,15 @@
     "bodyHash": "8c6a44e8fe1c63df31a8de0b41f41017cb0ab1dd72dc68fd4cfb9b73b88979d0",
     "fetchedAt": "2026-10-26T09:22:01.252Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1914-2/1914-08-15-heart-of-midlothian-2-0-celtic-league-division-1/",
+    "locator": "p17",
+    "quote": "Scorers: H. Wattie, T. Gracie (88min).",
+    "bodyHash": "b32ca4b6a8dec9e1db443e5277228ee74f1816682347a3fdb75ff61693e08f7f",
+    "fetchedAt": "2026-10-27T09:20:49.529Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -530,8 +548,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:22:01.252Z",
-  "updatedAt": "2026-10-26T09:22:01.252Z"
+  "createdAt": "2026-10-27T09:20:49.529Z",
+  "updatedAt": "2026-10-27T09:20:49.529Z"
  },
  {
   "id": "ga-4f8f64021f062e8e",
@@ -592,5 +610,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-27T09:10:16.248Z",
   "updatedAt": "2026-10-27T09:10:16.248Z"
+ },
+ {
+  "id": "ga-ee3253ea3bb050a0",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "11",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1914-2/1914-04-16-celtic-4-1-hibernian-scottish-cup-final-replay/",
+    "locator": "p3",
+    "quote": "In the one change from the first game McColl started in place of Ebenzer Owers and immediately justified his selection with goals in the 8th and 11th minutes to put Celtic 2-0 up and in total control. Winger Browning would add two more as the Bhoys strolled to victory.",
+    "bodyHash": "794596e7f4e851fce1fe0dfa3450a76e889395a0c348b7f55cf269666667a2fe",
+    "fetchedAt": "2026-10-27T09:20:46.527Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:20:46.527Z",
+  "updatedAt": "2026-10-27T09:20:46.527Z"
+ },
+ {
+  "id": "ga-c124564e6e507253",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "8",
+  "scorerAlias": "McMenemy",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1914-2/1914-05-17-ferencvaros-tc-2-2-celtic-tour-of-hungary-austria-germany/",
+    "locator": "p40",
+    "quote": "McMenemy scored in the 8th minute for Celtic following the third corner of its team. Dr. Borbás equalized in the 28th minute with a sharp shoot. In the early minutes of the second half, one Celtic player touched the ball with his hands at a corner situation and scored a goal and took the lead again. Soon after in a similar situation, Payer equalized from a penalty.",
+    "bodyHash": "fdcad9d4d553e2f053cbfcf5f25c0bd64e304accd3b20a9ac8628517ab248206",
+    "fetchedAt": "2026-10-27T09:20:49.526Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-27T09:20:49.526Z",
+  "updatedAt": "2026-10-27T09:20:49.526Z"
  }
 ]

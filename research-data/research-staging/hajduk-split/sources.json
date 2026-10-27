@@ -9,9 +9,9 @@
   "scope": "fan-culture",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:10:55.072Z",
+  "retrievedAt": "2026-10-27T09:21:44.704Z",
   "collected": {
-   "documents": 567,
+   "documents": 667,
    "observedTotalDocuments": 657,
    "state": "partial_budget",
    "parser": null
@@ -30,9 +30,9 @@
   "scope": "fan-culture",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:10:55.072Z",
+  "retrievedAt": "2026-10-27T09:21:44.704Z",
   "collected": {
-   "documents": 567,
+   "documents": 667,
    "observedTotalDocuments": 17,
    "state": "listed",
    "parser": null
@@ -51,7 +51,7 @@
   "scope": "results",
   "access": "available",
   "checkedAt": "2026-10-27",
-  "retrievedAt": "2026-10-27T09:10:55.072Z",
+  "retrievedAt": "2026-10-27T09:21:44.704Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,

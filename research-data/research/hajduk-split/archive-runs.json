@@ -566,5 +566,63 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-27T09-21-28-567Z-73bb40",
+  "clubId": "hajduk-split",
+  "startedAt": "2026-10-27T09:21:28.567Z",
+  "finishedAt": "2026-10-27T09:21:44.696Z",
+  "providers": [
+   "hajduk-official",
+   "torcida",
+   "wikipedia-hajduk-records",
+   "hajduk-official-history-en"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 6,
+   "documentsRead": 118,
+   "newDocuments": 100,
+   "changedDocuments": 1,
+   "unchangedDocuments": 17,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 14
+  },
+  "diagnostics": [
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "hajduk-official",
+    "url": null,
+    "message": "No tested parser for HNK Hajduk Split yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "torcida",
+    "url": null,
+    "message": "No tested parser for Torcida Split yet (torcida-history-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "wikipedia-hajduk-records",
+    "url": null,
+    "message": "No tested parser for Wikipedia yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "hajduk-official-history-en",
+    "url": null,
+    "message": "No tested parser for HNK Hajduk yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]
