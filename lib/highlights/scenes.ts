@@ -23,7 +23,7 @@ import {attackDir,type Dir} from './pitch'
  */
 export type Pose='stand'|'run'|'kick'|'head'|'dive'|'slide'|'down'|'celebrate'|'card'|'flag'|'walk'|'catch'
 export type Key={t:number;x:number;y:number;pose:Pose}
-export type Actor={id:string;team:0|1|-1;role:'gk'|'out'|'ref'|'lino';no:number;name:string;kit:PixelKit|null;skin:number;hair:number;keys:Key[];dive?:-1|1;/** the reel player he is (none for the officials) */pid?:string;/** a man filling the ground, away from the move */extra?:true}
+export type Actor={id:string;team:0|1|-1;role:'gk'|'out'|'ref'|'lino';no:number;name:string;kit:PixelKit|null;skin:number;hair:number;keys:Key[];dive?:-1|1;/** how high a keeper's dive reaches, metres — the height of the ball he goes for */lift?:number;/** the reel player he is (none for the officials) */pid?:string;/** a man filling the ground, away from the move */extra?:true}
 export type BallKey={t:number;x:number;y:number;z:number;arc?:number}
 export type CueKind='tag'|'net'|'whistle'|'card-yellow'|'card-red'|'flag'|'goal'|'kick'|'post'|'save'|'caption'
 export type Cue={t:number;kind:CueKind;actor?:string;text?:string}
@@ -35,11 +35,24 @@ const lerp=(a:number,b:number,u:number)=>a+(b-a)*u
 const ease=(u:number)=>u<.5?2*u*u:1-2*(1-u)*(1-u)
 
 /* ───────── sampling (the theatre reads these) ───────── */
-export function actorAt(a:Actor,t:number):{x:number;y:number;pose:Pose;face:-1|1;moving:boolean}{
- const k=a.keys;if(!k.length)return {x:GX,y:20,pose:'stand',face:1,moving:false}
- if(t<=k[0]!.t)return {...k[0]!,face:1,moving:false}
- for(let i=1;i<k.length;i++){const p=k[i-1]!,n=k[i]!;if(t<=n.t){const u=n.t>p.t?ease((t-p.t)/(n.t-p.t)):1,moving=Math.hypot(n.x-p.x,n.y-p.y)>.2;return {x:lerp(p.x,n.x,u),y:lerp(p.y,n.y,u),pose:moving&&n.pose==='stand'?'run':n.pose,face:n.x<p.x-.05?-1:1,moving}}}
- const l=k[k.length-1]!;return {x:l.x,y:l.y,pose:l.pose==='run'?'stand':l.pose,face:1,moving:false}
+export function actorAt(a:Actor,t:number):{x:number;y:number;pose:Pose;face:-1|1;moving:boolean;/** how far through the stretch he is in, 0–1 */u:number}{
+ const k=a.keys;if(!k.length)return {x:GX,y:20,pose:'stand',face:1,moving:false,u:1}
+ if(t<=k[0]!.t)return {...k[0]!,face:1,moving:false,u:0}
+ for(let i=1;i<k.length;i++){const p=k[i-1]!,n=k[i]!;if(t<=n.t){
+  const h=n.t-p.t,u=h>0?(t-p.t)/h:1,moving=Math.hypot(n.x-p.x,n.y-p.y)>.2
+  // a run that carries on through a key keeps its pace (a cubic with the neighbours' slope); a man who starts or stops eases
+  // in or out — a player does not halt at every waypoint of his run (13.10 drew him stopping dead at each one)
+  const tp=tangent(k,i-1),tn=tangent(k,i),h00=2*u*u*u-3*u*u+1,h10=u*u*u-2*u*u+u,h01=-2*u*u*u+3*u*u,h11=u*u*u-u*u
+  return {x:h00*p.x+h10*h*tp.x+h01*n.x+h11*h*tn.x,y:h00*p.y+h10*h*tp.y+h01*n.y+h11*h*tn.y,pose:moving&&n.pose==='stand'?'run':n.pose,face:n.x<p.x-.05?-1:1,moving,u}}}
+ const l=k[k.length-1]!;return {x:l.x,y:l.y,pose:l.pose==='run'?'stand':l.pose,face:1,moving:false,u:1}
+}
+/** the slope through a key: the neighbours' chord when he is running both into and out of it, standing still otherwise */
+function tangent(k:readonly Key[],i:number):{x:number;y:number}{
+ const p=k[i-1],c=k[i]!,n=k[i+1]
+ if(!p||!n||n.t<=p.t)return {x:0,y:0}
+ const into=Math.hypot(c.x-p.x,c.y-p.y)>.2,out=Math.hypot(n.x-c.x,n.y-c.y)>.2
+ if(!into||!out||['dive','slide','down','kick','head','catch','card','flag'].includes(c.pose))return {x:0,y:0}
+ return {x:(n.x-p.x)/(n.t-p.t),y:(n.y-p.y)/(n.t-p.t)}
 }
 export function ballAt(b:readonly BallKey[],t:number):{x:number;y:number;z:number}{
  if(!b.length)return {x:GX,y:20,z:0}
@@ -85,23 +98,24 @@ function finish(s:Sb,shooter:string,t:number,f:Finish,gk:string,blocker?:string)
  switch(f.outcome){
   case 'goal':{
    const tx=GX+side*(2.3+r()*1.1),dv=(f.wrong?-side:side) as -1|1
-   s.b(t+fly,tx,-.4,z,arc);s.go(gk,t+fly*.85,f.wrong?GX+dv*2.6:clamp(lerp(gkAt.x,tx,.6),GX-3,GX+3),.9,'dive');s.actors.get(gk)!.dive=dv
+   s.b(t+fly,tx,-.4,z,arc);s.go(gk,t+fly*.85,f.wrong?GX+dv*2.6:clamp(lerp(gkAt.x,tx,.6),GX-3,GX+3),.9,'dive');s.actors.get(gk)!.dive=dv;s.actors.get(gk)!.lift=f.wrong?.3:clamp(z-.4,0,1.5)
    s.cue(t+fly,'net');s.cue(t+fly,'goal',shooter);s.b(t+fly+.35,tx-side*.4,-1.6,0);s.hold(gk,t+fly+1.4,'down')
    // the scorer wheels away to the corner flag; his mates follow him
-   const flag=from.x<GX?3:65,end=t+fly+2.6
-   s.go(shooter,end,flag,3,'celebrate')
-   for(const a of s.actors.values())if(a.team===s.actors.get(shooter)!.team&&a.id!==shooter&&a.role==='out')s.go(a.id,end+.3,flag+(a.keys[0]!.x<GX?2:-2)*(.5+r()),4+r()*3,'celebrate')
+   // nobody celebrates before the ball is in: they hold where they are until it crosses the line
+   const flag=from.x<GX?3:65,end=t+fly+2.6,inNet=t+fly+.15
+   s.hold(shooter,inNet);s.go(shooter,end,flag,3,'celebrate')
+   for(const a of s.actors.values())if(a.team===s.actors.get(shooter)!.team&&a.id!==shooter&&a.role==='out'){s.hold(a.id,inNet);s.go(a.id,end+.3,flag+(a.keys[0]!.x<GX?2:-2)*(.5+r()),4+r()*3,'celebrate')}
    return end+.6
   }
   case 'save':{
    const tx=GX+side*(1.4+r()*1.6),catchIt=low&&r()<.5
-   s.b(t+fly,tx,.9,z,arc);s.go(gk,t+fly,tx,.9,catchIt?'catch':'dive');s.actors.get(gk)!.dive=side as -1|1;s.cue(t+fly,'save',gk)
+   s.b(t+fly,tx,.9,z,arc);s.go(gk,t+fly,tx,.9,catchIt?'catch':'dive');s.actors.get(gk)!.dive=side as -1|1;s.actors.get(gk)!.lift=clamp(z-.4,0,1.5);s.cue(t+fly,'save',gk)
    if(catchIt){s.b(t+fly+1.2,tx,1,.8);s.hold(gk,t+fly+1.3,'catch');return t+fly+1.6}
    s.b(t+fly+.7,tx+side*7,-2.5,0,1.6);s.hold(gk,t+fly+1.2,'down');return t+fly+1.6
   }
   case 'post':{
    const px=side<0?POST_L:POST_R
-   s.b(t+fly,px,0,z,arc);s.cue(t+fly,'post');s.b(t+fly+.6,px-side*(3+r()*3),7+r()*4,0,.6);s.go(gk,t+fly,clamp(lerp(gkAt.x,px,.5),GX-3,GX+3),1,'dive');s.actors.get(gk)!.dive=side as -1|1
+   s.b(t+fly,px,0,z,arc);s.cue(t+fly,'post');s.b(t+fly+.6,px-side*(3+r()*3),7+r()*4,0,.6);s.go(gk,t+fly,clamp(lerp(gkAt.x,px,.5),GX-3,GX+3),1,'dive');s.actors.get(gk)!.dive=side as -1|1;s.actors.get(gk)!.lift=clamp(z-.4,0,1.5)
    return t+fly+1.4
   }
   case 'block':{
@@ -267,6 +281,52 @@ function offsideScene(s:Sb,R:Roles):{end:number;variant:string}{
  return {end:3,variant:'offside'}
 }
 
+/* ───────── human pace ───────── */
+/**
+ * A footballer sprints at about nine metres a second, and a scene written in round numbers asked men for twenty and thirty
+ * (measured 27.10.2026: the through ball's runner at 32 m/s, the cutback's provider at 44). Two corrections, both deterministic:
+ * 1. the BUILD-UP is played at a man's pace — every tenth of a second before the shot is slowed by however much the men on the
+ *    ball would otherwise outrun a sprinter, so a pass, a carry and a run onto a ball still meet exactly where they were written;
+ *    the shot itself, and everything after it, keeps its own speed;
+ * 2. everybody else simply cannot get there: a man asked to cover more ground than a sprint allows runs as far as he can.
+ */
+export const SPRINT=9.2
+const PACE:Partial<Record<Pose,number>>={walk:2.6,stand:SPRINT,run:SPRINT,celebrate:8,card:3,flag:7,head:SPRINT,kick:SPRINT,catch:7,slide:10.5,dive:12,down:12}
+function govern(s:Sb):(t:number)=>number{
+ const touch=new Set(s.cues.filter(q=>q.actor&&(q.kind==='tag'||q.kind==='kick')).map(q=>q.actor!))
+ const runners=[...s.actors.values()].filter(a=>touch.has(a.id)&&a.role==='out')
+ const shotOf=()=>{const kicks=s.cues.filter(q=>q.kind==='kick');return kicks.length?kicks[kicks.length-1]!.t:s.end}
+ // a run is drawn between keys, so slowing the tenths of a second inside it slows the whole run by their average: a few
+ // passes settle it (each one measures again what the last one left)
+ const warps:((t:number)=>number)[]=[]
+ for(let pass=0;pass<8;pass++){
+  const shotT=shotOf(),STEP=.1,cut:number[]=[0];let worst=1
+  for(let t=0;t<shotT-1e-9;t+=STEP){
+   const t1=Math.min(shotT,t+STEP);let v=0
+   for(const a of runners)for(let u=t;u<t1-1e-9;u+=.025){const p=actorAt(a,u),q=actorAt(a,u+.025);if(!['dive','slide','down'].includes(q.pose))v=Math.max(v,Math.hypot(q.x-p.x,q.y-p.y)/.025)}
+   const f=clamp(v/SPRINT,1,2.6);worst=Math.max(worst,f);cut.push(cut[cut.length-1]!+(t1-t)*f)
+  }
+  if(worst<=1.02)break
+  const warp=(t:number)=>{if(t>=shotT)return cut[cut.length-1]!+(t-shotT);const i=Math.floor(t/STEP),f=(t-i*STEP)/STEP;return lerp(cut[i]!,cut[i+1]??cut[i]!,Math.min(1,f))}
+  for(const a of s.actors.values())for(const k of a.keys)k.t=warp(k.t)
+  for(const b of s.ball)b.t=warp(b.t)
+  for(const q of s.cues)q.t=warp(q.t)
+  s.end=warp(s.end);warps.push(warp)
+ }
+ const warp=(t:number)=>warps.reduce((x,w)=>w(x),t),shot=shotOf()
+ // the men not on the ball (and anyone after the shot) run as far as a man can, never further
+ for(const a of s.actors.values()){
+  const k=a.keys;for(let i=1;i<k.length;i++){
+   if(touch.has(a.id)&&a.role==='out'&&k[i]!.t<=shot+1e-9)continue
+   // a run that starts or stops inside the stretch peaks above its average (a cubic from rest tops out at 1.5×)
+   const p=k[i-1]!,n=k[i]!,still=(j:number)=>{const g=tangent(k,j);return g.x===0&&g.y===0},peak=1+(still(i-1)?.25:0)+(still(i)?.25:0)
+   const d=Math.hypot(n.x-p.x,n.y-p.y),most=(PACE[n.pose]??SPRINT)/peak*Math.max(.01,n.t-p.t)
+   if(d>most){const f=most/d;n.x=p.x+(n.x-p.x)*f;n.y=p.y+(n.y-p.y)*f}
+  }
+ }
+ return warp
+}
+
 /* ───────── the rest of the ground ───────── */
 /**
  * Everybody the move does not need, standing where his side would be: the attacking side's keeper in his own goal (y ≈ 101 is
@@ -324,6 +384,7 @@ export function sceneFor(reel:Reel,m:Moment,index:number):Scene{
   if(!m.shape&&!m.header){const total=GOAL_SHAPES.reduce((a,x)=>a+WEIGHTS[x],0);let x=r()*total;for(const g of GOAL_SHAPES){x-=WEIGHTS[g];if(x<0){shape=g;break}}}
   const o=BUILDS[shape](s,R,{outcome:m.kind,height:'low',power:1});end=o.end;variant=o.variant;spectacular=o.spectacular
  }
+ end=govern(s)(end)
  fillGround(s,reel,Math.max(end,s.end))
  // a mirror half the time: the same move down the other wing
  if(r()<.5){for(const a of s.actors.values())for(const k of a.keys)k.x=68-k.x;for(const b of s.ball)b.x=68-b.x;for(const a of s.actors.values())if(a.dive)a.dive=(-a.dive) as -1|1}
