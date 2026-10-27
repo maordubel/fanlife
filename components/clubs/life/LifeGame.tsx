@@ -44,6 +44,7 @@ import {people, roomConfig, type PlayEvent, type PlayRuntime, type PlayTarget} f
 import {LifeSound} from './sound'
 import {finishVisit, track} from '@/lib/analytics/meter'
 import styles from './life.module.css'
+import {PinToggle} from '@/components/fanlife/Pins'
 
 type Copy = Record<string, string>
 type Phase = 'boot' | 'title' | 'chapter' | 'play' | 'ending' | 'finished'
@@ -918,6 +919,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
             </details>
             <nav className={styles.links} aria-label={copy.language}>
               <Link className="min-h-tap" href={hubHref}>{copy.backToClub}</Link>
+              <PinToggle href={`/clubs/${pack.clubId}/life`} label={`${pack.club.name} · LIFE`} locale={locale}/>
                             {ENABLED_LOCALES.length>1&&<Link className="min-h-tap" href={langHref.he} hrefLang="he" lang="he">{copy.hebrew}</Link>}
             </nav>
             <a className={`${styles.credit} min-h-tap`} href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit}</a>

@@ -632,5 +632,18 @@
   "terraceDailyClosed": "Daily Terrace is not open for this club.",
   "terraceDailyLoading": "Dealing today's edition…",
   "terraceDailyGone": "That answer could not be taken. Reload the page.",
-  "wkhHeroDaily": "Play today's Daily Terrace"
+  "wkhHeroDaily": "Play today's Daily Terrace",
+  "pinShortcuts": "Your shortcuts",
+  "pinYours": "Chosen by you",
+  "pinEmpty": "Pin a club, a gate or a game with its Pin button — up to two. They wait for you here.",
+  "pinPin": "Pin",
+  "pinPinned": "Pinned",
+  "pinPinAria": "Pin {label} to your shortcuts",
+  "pinUnpinAria": "Unpin {label} from your shortcuts",
+  "pinFull": "Two shortcuts already. Swap one for {label}?",
+  "pinSwap": "Swap out {label}",
+  "pinKeep": "Keep both",
+  "pinApps": "Also from FAN LIFE",
+  "pinDubidSub": "Predict the round",
+  "pinOffsidesSub": "Football arenas"
 }

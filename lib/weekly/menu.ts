@@ -7,6 +7,8 @@ import type {UiLocale} from '@/lib/clubs/locale'
 import type {ContentsClub,ContentsItem} from '@/components/weekly/Contents'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import {APP_URL} from '@/ecosystem/sdk'
+import {goHref} from '@/lib/ecosystem/links'
 
 /**
  * The data behind THE WEEKLY's menu (rule 124). The hub's menu and a club's menu list the same corner and the same
@@ -67,4 +69,13 @@ export function clubSections(clubId:string,locale:UiLocale,o:{terrace:string;awa
  if(o.kitArchive)rows.push({href:clubHref(clubId,'kit-archive',locale),title:t.wkKitArchive,sub:t.wkKitArchiveSub,icon:'shirt'})
  if(o.away)rows.push({href:o.away,title:t.wkAwayDays,sub:t.wkAwayDaysSub,icon:'plane'})
  return rows
+}
+
+/** The companion apps, always through the tracked door (/go). Shown in the menu with the shortcuts (switch `pins`). */
+export function menuApps(locale:UiLocale,clubId?:string|null):ContentsItem[]{
+ const t=menuCopy(locale)
+ return [
+  {href:goHref(APP_URL.dubid,'menu',clubId)!,title:'DUBID',sub:t.pinDubidSub,icon:'star',pin:goHref(APP_URL.dubid,'pin')!},
+  {href:goHref(APP_URL.offsides,'menu',clubId)!,title:'OFFSIDES',sub:t.pinOffsidesSub,icon:'terrace',pin:goHref(APP_URL.offsides,'pin')!},
+ ]
 }

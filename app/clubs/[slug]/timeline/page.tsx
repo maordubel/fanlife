@@ -66,8 +66,8 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  const wide=mode!=='chronology'
  return <ClubSurface theme={club.theme} clubId={club.identity.id} locale={locale} tabbar={!compact}><main id="main" dir={localeDirection(locale)} lang={locale} data-mode={compact?modeOf('timeline'):'reading'} data-view={mode} className={`mag-game mx-auto min-h-screen ${wide?'max-w-4xl':'max-w-2xl'} px-gutter py-8`}>
   {compact
-   ?<PlayHeader clubId={club.identity.id} clubName={name} title={copy.title} locale={locale} help={String(games['tl.help'])} copy={{back:games['play.back'],help:games['play.help'],close:games['play.close'],fanlife:games['play.fanlife'],language:games['play.language']}} langLinks={langLinks} gateNo="13" gateWord={String(games.ticketGate)}/>
-   :<><GateHead clubId={club.identity.id} clubName={name} hubLabel={games.hub} gateNo="13" gateNoLabel={games.gateNo} title={copy.title} locale={locale} langLinks={langLinks}/><p>{copy.sub}</p></>}
+   ?<PlayHeader clubId={club.identity.id} clubName={name} title={copy.title} locale={locale} help={String(games['tl.help'])} copy={{back:games['play.back'],help:games['play.help'],close:games['play.close'],fanlife:games['play.fanlife'],language:games['play.language']}} langLinks={langLinks} gateNo="13" gateWord={String(games.ticketGate)} pin={{href:`/clubs/${club.identity.id}/timeline`,label:`${name} · ${copy.title}`}}/>
+   :<><GateHead clubId={club.identity.id} clubName={name} hubLabel={games.hub} gateNo="13" gateNoLabel={games.gateNo} title={copy.title} locale={locale} langLinks={langLinks} pin={{href:`/clubs/${club.identity.id}/timeline`,label:`${name} · ${copy.title}`}}/><p>{copy.sub}</p></>}
   {fallback}{tabs}{body}
  </main></ClubSurface>
 }

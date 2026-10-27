@@ -5,6 +5,7 @@ import {SlideSheet} from '@/components/stage/SlideSheet'
 import {livery} from '@/lib/club-livery'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import { Badge } from '@/components/clubs/Badge'
+import {PinToggle} from '@/components/fanlife/Pins'
 
 export type PlayHeaderProps={
  clubId:string;clubName:string;title:string;locale:string
@@ -16,6 +17,8 @@ export type PlayHeaderProps={
  aside?:ReactNode
  /** the gate's printed number ("02") and its word ("Gate"), for the tag beside the name */
  gateNo?:string;gateWord?:string
+ /** the route and name a Pin toggle pins (switch `pins`) */
+ pin?:{href:string;label:string}
 }
 
 /**
@@ -25,7 +28,7 @@ export type PlayHeaderProps={
  * The masthead stays for the reading gates (`GateHead`). Targets are ≥44px, the sheet traps focus and closes on
  * Escape (`useDialog`), and nothing here animates.
  */
-export function PlayHeader({clubId,clubName,title,locale,help,copy,langLinks,aside,gateNo,gateWord}:PlayHeaderProps){
+export function PlayHeader({clubId,clubName,title,locale,help,copy,langLinks,aside,gateNo,gateWord,pin}:PlayHeaderProps){
  const [open,setOpen]=useState(false),lv=livery(clubId),langs=langLinks.filter(x=>ENABLED_LOCALES.includes(x.l as 'en'))
  return <header className="wk-hud wga-hud" data-testid="play-header">
   <Link className="wga-hud-back" href={`/clubs/${clubId}?lang=${locale}`} aria-label={`${copy.back}: ${clubName}`}>
@@ -41,6 +44,7 @@ export function PlayHeader({clubId,clubName,title,locale,help,copy,langLinks,asi
    {gateNo&&<span className="wga-hud-gate" aria-hidden="true">{gateWord} {gateNo}</span>}
   </div>
   {aside&&<div className="wga-hud-aside">{aside}</div>}
+  {pin&&<PinToggle href={pin.href} label={pin.label} locale={locale} tone="ink" compact/>}
   <Link className="wga-hud-mark" href="/" aria-label={copy.fanlife}>{/* eslint-disable-next-line @next/next/no-img-element -- 28px mark, shipped as measured */}<img src="/brand/fanlife/logo-mono.webp" alt="" width={28} height={28}/></Link>
   <button type="button" className="wga-hud-help min-h-tap" aria-haspopup="dialog" aria-expanded={open} onClick={()=>setOpen(true)}><span aria-hidden="true">?</span><span className="sr-only">{copy.help}</span></button>
   <SlideSheet open={open} onClose={()=>setOpen(false)} title={copy.help} closeLabel={copy.close}>

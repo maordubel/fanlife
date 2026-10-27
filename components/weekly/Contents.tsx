@@ -4,17 +4,18 @@ import {useEffect,useRef,useState} from 'react'
 import {createPortal} from 'react-dom'
 import {Icon} from './Icon'
 import type {ContentsGate} from '@/lib/weekly/contents'
+import {PinToggle,PinsRow,PinsSwitch} from '@/components/fanlife/Pins'
 
-export type ContentsItem={href:string;title:string;sub?:string;icon:string;current?:boolean}
+export type ContentsItem={href:string;title:string;sub?:string;icon:string;current?:boolean;/** the route a Pin toggle beside it pins (lib/fanlife/pins.ts) */pin?:string}
 export type ContentsClub={id:string;name:string;city:string;crest:string|null;initials:string;href:string;current?:boolean;rival?:boolean}
-type Copy={menu:string;title:string;kicker:string;close:string;gates?:string;quick?:string;deep?:string;archive?:string;corner:string;clubs:string;fanlife:string;section:string}
+type Copy={menu:string;title:string;kicker:string;close:string;gates?:string;quick?:string;deep?:string;archive?:string;corner:string;clubs:string;fanlife:string;section:string;apps?:string}
 
 /**
  * THE WEEKLY's menu (rule 124): one button opens the contents page — every section, all thirteen gates, your corner and
  * every club, one tap each. Nothing scrolls sideways. A sheet on a phone, a dropped spread on a desktop; portalled to
  * <body> (a page wrapper is a stacking context), Escape and the scrim close it, focus goes back to the button.
  */
-export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',rivalNo,paint}:{copy:Copy;sections:ContentsItem[];gates?:ContentsGate[];corner:ContentsItem[];clubs:ContentsClub[];fanlife:ContentsItem[];tone?:'dark'|'paper';/** the page's rival lock, carried into the portal (rule 95) */rivalNo?:string;/** the page's club tokens, carried into the portal */paint?:Record<string,string>}) {
+export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',rivalNo,paint,pins=false,apps=[],locale='en'}:{copy:Copy;sections:ContentsItem[];gates?:ContentsGate[];corner:ContentsItem[];clubs:ContentsClub[];fanlife:ContentsItem[];tone?:'dark'|'paper';/** the page's rival lock, carried into the portal (rule 95) */rivalNo?:string;/** the page's club tokens, carried into the portal */paint?:Record<string,string>;/** door('pins') for this request (owner preview included) */pins?:boolean;/** DUBID and OFFSIDES through /go — shown with the shortcuts */apps?:ContentsItem[];locale?:string}) {
  const [open,setOpen]=useState(false),btn=useRef<HTMLButtonElement>(null),closeRef=useRef<HTMLButtonElement>(null)
  useEffect(()=>{
   if(!open)return
@@ -33,6 +34,7 @@ export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',r
     <div><p className="wk-banner" style={{fontSize:14}}>{copy.kicker}</p><h2 id="wk-menu-h" className="wk-logo red wk-tilt" style={{fontSize:44}}>{copy.title}</h2></div>
     <button ref={closeRef} type="button" className="wk-icon min-h-tap" onClick={shut} aria-label={copy.close}><Icon name="close"/></button>
    </div>
+   <PinsRow locale={locale} where="menu" onPick={shut}/>
    <div className="wk-menu-spread">
     <section className="wk-menu-col" aria-label={copy.section}>
      <h3 className="wk-head" style={{fontSize:20}}>{copy.section}</h3>
@@ -59,11 +61,14 @@ export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',r
      </Link>)}</nav>
      <h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.fanlife}</h3>
      <nav className="wk-tiles two">{fanlife.map(f=><Link key={f.href} href={f.href} onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</Link>)}</nav>
+     {pins&&apps.length>0&&<><h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.apps}</h3>
+      <ul className="wkp-apps">{apps.map(a=><li key={a.href}><a href={a.href} onClick={shut}><Icon name={a.icon}/><span><b>{a.title}</b>{a.sub&&<small>{a.sub}</small>}</span></a>{a.pin&&<PinToggle href={a.pin} label={a.title} locale={locale}/>}</li>)}</ul></>}
     </section>
    </div>
   </div>
  </>:null
  return <>
+  <PinsSwitch on={pins}/>
   <button ref={btn} type="button" className={`wk-menu-btn min-h-tap${tone==='paper'?' paper':''}`} onClick={()=>setOpen(true)} aria-haspopup="dialog" aria-expanded={open}><Icon name="menu"/>{copy.menu}</button>
   {sheet&&typeof document!=='undefined'?createPortal(<div className="wk-portal" data-rival-no={rivalNo||undefined} style={paint}>{sheet}</div>,document.body):null}
  </>
