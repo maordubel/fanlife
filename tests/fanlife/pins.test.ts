@@ -81,10 +81,13 @@ describe('pinned shortcuts — device storage',()=>{
 })
 
 describe('the pins switch',()=>{
- it('ships off, reads strictly, and is in the control room',()=>{
-  expect(DEFAULT_FEATURES.pins).toBe(false)
-  expect(featuresOf(null).pins).toBe(false)
-  expect(featuresOf({features:{pins:true}} as never).pins).toBe(true)
+ // shipped off, then the owner turned it on for everyone: "תפעיל אותם אני מאשר" (27.10.2026) — flipped, not deleted
+ it('is on by default, still turns off, reads strictly, and is in the control room',()=>{
+  expect(DEFAULT_FEATURES.pins).toBe(true)
+  expect(featuresOf(null).pins).toBe(true)
+  expect(featuresOf({features:{}} as never).pins).toBe(true)
+  expect(featuresOf({features:{pins:false}} as never).pins).toBe(false)
+  expect(validateFeaturePatch({pins:false})).toEqual({ok:true,patch:{pins:false}})
   expect(validateFeaturePatch({pins:true})).toEqual({ok:true,patch:{pins:true}})
   expect(validateFeaturePatch({pins:'on'})).toEqual({ok:false,error:'pins must be true or false.'})
   expect(FEATURE_TEXT.pins.label).toBe('Pinned shortcuts')
