@@ -3222,5 +3222,6 @@ Owner: *"I saw graffiti of yours in red text in the school yard."*
 Owner: FAN LIFE is the lead publisher (info, trivia, on this day, its gates, Royal Rumble, Legends Manager); DUBID
 (round openings, how it works) and OFFSIDES (today's arenas, how it works) speak in their own branding; matches and
 results are a separate stream. Every post carries a picture (its own layout, else its app's L-CARD); no fixed post
-names a year, season or decade before 1980. Live slots are composed at send time from real data or stay quiet —
+names a year, season or decade before 1980. Crests and shirts print in their own colours — never turned into
+two-ink black and white (owner, 27.10.2026; `Canvas.image` in the kit). Live slots are composed at send time from real data or stay quiet —
 `lib/marketing/live.ts`, docs/fanlife/51-marketing-telegram.md (v3).

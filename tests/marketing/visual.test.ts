@@ -36,4 +36,12 @@ describe('DUBEL TEAM kit visuals', () => {
       expect(png.subarray(1, 4).toString(), t).toBe('PNG')
     }
   }, 120_000)
+  it('marketing rule: crests and shirts keep their own colours — never two-ink black and white', async () => {
+    // @ts-expect-error — plain ESM module, no types
+    const {Canvas} = await import('../../scripts/marketing/kit/source/weekly.mjs')
+    const c = new Canvas(1080, 1350, 'fanlife', true, {club: 'celtic'}, 'T10-NERDS')
+    c.image('assets/stadium.jpg', 0, 0, 100, 100, {id: 'club-crest'})
+    c.image('assets/stadium.jpg', 0, 0, 100, 100, {id: 'shirt-slot'})
+    for (const id of ['club-crest', 'shirt-slot']) expect(c.items.find((x: string) => x.includes(`id="${id}"`))).not.toContain('filter=')
+  })
 })
