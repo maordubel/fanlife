@@ -1,5 +1,6 @@
 import {NextRequest, NextResponse} from 'next/server'
 import {cronAuthorized} from '@/lib/master/request'
+import {prepare, type Due} from '@/lib/marketing/run'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
@@ -22,11 +23,13 @@ export async function POST(r:NextRequest){
  if(b.action==='claim'){
   const got=await rpc('worker_marketing_claim',{p_limit:3})
   if(!got.ok)return json({error:got.error},got.status)
-  const posts:{id:number}[]=Array.isArray(got.data)?got.data:[]
-  // each post's own kit (Social Kit v2 template + archive data), so the backup draws the same picture as the tick
-  const kits=posts.length?await rpc('worker_marketing_kits',{p_ids:posts.map(p=>p.id)}):null
-  const by=(kits?.ok&&kits.data&&typeof kits.data==='object'?kits.data:{}) as Record<string,unknown>
-  return json({posts:posts.map(p=>({...p,kit:by[String(p.id)]??null}))})
+  const posts:Due[]=Array.isArray(got.data)?got.data:[]
+  // each post's own kit, kind and slot, so the backup draws the same picture as the tick and composes live slots the same way
+  const meta=posts.length?await rpc('worker_marketing_meta',{p_ids:posts.map(p=>p.id)}):null
+  const by=(meta?.ok&&meta.data&&typeof meta.data==='object'?meta.data:{}) as Record<string,{kit?:unknown;kind?:string;send_at?:string}>
+  const cache={},out:Due[]=[]
+  for(const p of posts){const m=by[String(p.id)]||{};const ready=await prepare({...p,kit:m.kit??null,kind:m.kind,send_at:m.send_at},new Date(),cache).catch(()=>null);if(ready)out.push(ready)}
+  return json({posts:out})
  }
  if(b.action==='report'){
   const id=Number(b.id),outcome=String(b.outcome||'')

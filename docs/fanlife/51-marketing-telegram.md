@@ -4,6 +4,27 @@ One page (Instagram · TikTok · Facebook) markets the whole universe: FAN LIFE,
 OFFSIDES and FUCK YOU. Every two hours, 08:00–22:00 Israel time, the owner gets a ready post on
 Telegram: the hook, the caption, the link to the right app, the hashtags and a visual brief.
 
+## v3 — 27.10.2026 (owner): three voices, a picture on every post, nothing before 1980
+- **FAN LIFE — the lead publisher (fixed plan, even hours):** 08 On this day · 10 a gate of the app (L-GATE) ·
+  12 Did you know (Sun/Wed/Fri) · 14 story quiz · 16 nerds only · 18 Royal Rumble / Legends Manager on alternate days ·
+  20 spicy · 22 Did you know. Every row carries its picture's kit.
+- **DUBID — in its own branding** (its logo, night ground; never "on the FAN LIFE page"): 12:00 Mon/Thu "how it works"
+  (L-DUBID-SYSTEM); 13:00 live: a round that opened (status `open`, lock still ahead) is announced once (L-DUBID-ROUND).
+- **OFFSIDES — in its own branding** (its dial logo): 12:00 Tue/Sat "how it works" (L-OFFSIDES-SYSTEM); 15:00 live:
+  today's matches and their arenas (L-OFFSIDES-TODAY).
+- **Matches and results (not marketing), live:** 09:00 FULL TIME (FAN LIFE clubs' results of the last 36 hours) ·
+  11:00 NEXT UP (FAN LIFE clubs playing today or tomorrow) — from the fixture feed.
+- **A live slot is a slot, not a post** (kinds `results`, `fixtures`, `dubid`, `offsides`): `lib/marketing/live.ts`
+  composes it at send time from real data (`worker_marketing_live_data` + the fixture feed), records it
+  (`worker_marketing_compose`, refs in `fixture_id` so nothing is announced twice) or skips it (`worker_marketing_skip`).
+  Both delivery paths (the tick and the GitHub backup) call the same `prepare()`.
+- **Nothing from before 1980:** every year a fixed post names, the first year of every season and every decade is
+  ≥ 1980 (`modern()` in build-plan, asserted in `tests/marketing/plan.test.ts`).
+- **A picture on every post:** the post's own layout first; if it cannot be drawn, its app's L-CARD
+  (`scripts/marketing/kit/live.mjs`). On Vercel sharp needs `detect-libc` and `semver` traced into the route.
+- **Build:** `node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts` →
+  `supabase/marketing/0007_marketing_plan_v3.sql` + `scripts/marketing/plan-v3.json`.
+
 ## v2 — 26.10.2026 (owner): marketing is a fixed plan; matches and results are not marketing
 - **FAN LIFE is the lead voice.** The page is FAN LIFE; DUBID, OFFSIDES, THE WORKER and FUCK YOU are promoted on a
   fixed weekday rotation at 12:00 (Sun THE WORKER · Mon DUBID · Tue OFFSIDES · Wed THE WORKER · Thu DUBID · Fri FUCK YOU ·
