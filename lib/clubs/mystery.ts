@@ -1,4 +1,5 @@
 import 'server-only'
+import {englishPlayer} from './rumble-xi/names'
 import {randomInt} from 'node:crypto'
 import type {ClubData} from './contract'
 import {createSoloEngine,newRun,type RunState} from '@/lib/game/blind-cow/solo-engine'
@@ -42,7 +43,7 @@ export function clubMystery(data:ClubData){
   if(s.status!=='playing'&&s.finished!==null){
    const t=players.get(q.targetPlayerId)!,rawElapsedMs=s.finished-s.started,refs=[...new Set([...t.sources,...q.clues.flatMap(c=>c.sources)])]
    const reveal:RevealClue[]=q.clues.map((c,i)=>({n:i+1,label:c.label,value:c.value,sources:pub(c.sources),caveat:[c.scope?.season?`season ${c.scope.season}`:'',c.scope?.competition?`scope: ${c.scope.competition}`:''].filter(Boolean).join(' · ')||null,remaining:ev.ladder[i]?.remaining??null}))
-   v.result={playerId:t.value.id,name:t.value.name,rawElapsedMs,weightedTimeMs:weighted({rawElapsedMs,cluesShown:s.shown,wrongGuesses:s.wrong},s.sv)!,sources:pub(refs),reveal,coverage:ev.finalCandidates===1?'unique-in-archive':ev.finalCandidates!==null?'few-candidates':'unproven'}
+   v.result={playerId:t.value.id,name:englishPlayer(data.identity.id,t.value).name,rawElapsedMs,weightedTimeMs:weighted({rawElapsedMs,cluesShown:s.shown,wrongGuesses:s.wrong},s.sv)!,sources:pub(refs),reveal,coverage:ev.finalCandidates===1?'unique-in-archive':ev.finalCandidates!==null?'few-candidates':'unproven'}
   }
   return v
  }

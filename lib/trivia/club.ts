@@ -14,12 +14,17 @@ import {isLatin} from './names'
  * for trivia by the owner's "English, always", 12.10.2026).
  */
 const reports=new Map<string,ForgeReport>()
+const SCOREBOARD_ENOUGH=60
 export const forgeReport=(club:string)=>reports.get(club)??null
 export function withForgedTrivia(data:ClubData):ClubData{
  const hapoel=data.identity.id==='hapoel-tel-aviv'
  const {trivia,report}=forgeTrivia(data,hapoel?hapoelExtras():{})
  reports.set(data.identity.id,report)
- const kept=hapoel?[]:data.trivia.questions.filter(q=>isLatin(q.prompt)&&isLatin(q.explanation)&&!SOMBRE.test(q.prompt))
+ // A date check on a match line ("Maccabi Haifa 3-2 Hapoel Petah Tikva — 13 May 1978") repeats, as a bare date, what the
+ // forge asks four better ways about the club's nights. Where the forge already reads the club's matches (a scoreboard of
+ // its own), those bare-date lines step aside; a club whose matches the forge cannot read keeps them.
+ const scoreboard=trivia.questions.filter(q=>q.template==='fl-match-opponent').length>=SCOREBOARD_ENOUGH
+ const kept=hapoel?[]:data.trivia.questions.filter(q=>isLatin(q.prompt)&&isLatin(q.explanation)&&!SOMBRE.test(q.prompt)&&!(q.template==='event-date-check'&&/\d\s*[-–:]\s*\d/.test(q.prompt.split(' — ')[0]!)&&scoreboard))
  const questions=curateQuestions(data.identity.id,[...kept.map(q=>({...q,facets:[`club:${data.identity.id}`,`template:${q.template}`,'level:1']})),...trivia.questions])
  const pools={...(hapoel?{}:data.trivia.pools),...trivia.pools}
  return {...data,trivia:{questions,pools},gates:{...data.gates,trivia:gateReadiness(questions.length,T.trivia.target,T.trivia.minimum,T.trivia.unit)}}

@@ -24053,12 +24053,12 @@
   },
   "celtic": {
    "quotaMode": "full",
-   "size": 1373,
+   "size": 1351,
    "quota": {
-    "1": 497,
-    "2": 481,
-    "3": 275,
-    "4": 110,
+    "1": 490,
+    "2": 473,
+    "3": 270,
+    "4": 108,
     "5": 10
    },
    "players": {
@@ -24206,14 +24206,6 @@
      "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:p-8e37c19671bfaf": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €3M. owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:p-4c519397e2cdbd": {
      "priceM": 5,
      "priceTier": "ICON",
@@ -24231,12 +24223,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:wv-2ddae9cc82": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": true,
      "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €2M. owner pricing review (8-club consolidated CSV) (proportional)",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:p-a572cf73ebe8ee": {
      "priceM": 4,
@@ -24244,14 +24236,6 @@
      "locked": true,
      "assignment": "owner-pinned",
      "rationale": "economy v2 (approved 2026-10-10): was €3M. owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-df487ec420": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
      "reviewedAt": "2026-10-10"
     },
     "celtic:p-dh-e5cf9441409b": {
@@ -24281,14 +24265,6 @@
     "celtic:p-f9f9d9206e0593": {
      "priceM": 5,
      "priceTier": "ICON",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-56796f2aed": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
      "locked": true,
      "assignment": "owner-pinned",
      "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -24422,14 +24398,6 @@
      "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-05d545a1d6": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:wv-4507e3cf71": {
      "priceM": 3,
      "priceTier": "LEADING",
@@ -24550,14 +24518,6 @@
      "rationale": "economy v2 (approved 2026-10-10): was €3M. owner pricing review (8-club consolidated CSV) (proportional)",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-4bcbf2dc20": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:p-10312c3e5265d5": {
      "priceM": 4,
      "priceTier": "STAR",
@@ -24598,14 +24558,6 @@
      "rationale": "economy v2 (approved 2026-10-10): was €3M. owner pricing review (8-club consolidated CSV) (proportional)",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-0b4e42b9a6": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:p-914ba9df56e7f1": {
      "priceM": 4,
      "priceTier": "STAR",
@@ -24617,14 +24569,6 @@
     "celtic:p-dh-ed10e1aa6b8f": {
      "priceM": 2,
      "priceTier": "REGULAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:p-3a33b5ac68f9ba": {
-     "priceM": 3,
-     "priceTier": "LEADING",
      "locked": true,
      "assignment": "owner-pinned",
      "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -25535,20 +25479,20 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:p-dh-699eb6b329aa": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.858 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €3M. economy v2 (approved 2026-10-10): was €1M. score 0.858 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:p-dh-7067b352a7cf": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.858 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €3M. economy v2 (approved 2026-10-10): was €1M. score 0.858 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:p-dh-7ee6f366369b": {
      "priceM": 3,
@@ -25775,12 +25719,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:p-dh-39606aaa622b": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.832 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €3M. economy v2 (approved 2026-10-10): was €1M. score 0.832 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:p-dh-44c2ad5ead28": {
      "priceM": 3,
@@ -25799,12 +25743,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:p-dh-4e013ac9e40f": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.832 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €3M. economy v2 (approved 2026-10-10): was €1M. score 0.832 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:p-dh-5829b4e648b2": {
      "priceM": 3,
@@ -29214,14 +29158,6 @@
      "rationale": "score 0.392 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:p-dh-ad33ab8ed2b7": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.392 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:p-dh-b95d7f5674bd": {
      "priceM": 1,
      "priceTier": "REST",
@@ -31910,14 +31846,6 @@
      "rationale": "score 0.120 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:p-dh-edf0d0e0ccf7": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.120 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:p-dh-f01ad993795c": {
      "priceM": 1,
      "priceTier": "REST",
@@ -32575,12 +32503,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:wv-16df7d8d5d": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:wv-3902f2ebe8": {
      "priceM": 1,
@@ -32638,22 +32566,6 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-8f8c7050a9": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-5534ea5a14": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:wv-273e776870": {
      "priceM": 2,
      "priceTier": "REGULAR",
@@ -32689,14 +32601,6 @@
     "celtic:wv-a434dffea0": {
      "priceM": 2,
      "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-2f56973cda": {
-     "priceM": 4,
-     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
@@ -32886,22 +32790,6 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-7a4507a3e9": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-d8f3538719": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:wv-969fec9ab3": {
      "priceM": 1,
      "priceTier": "REST",
@@ -32958,21 +32846,13 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-f5eb029b8d": {
-     "priceM": 4,
-     "priceTier": "STAR",
+    "celtic:wv-294ee9b674": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-294ee9b674": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:wv-0d4195f8b8": {
      "priceM": 2,
@@ -33097,14 +32977,6 @@
     "celtic:wv-b231c18494": {
      "priceM": 2,
      "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-ba1077a477": {
-     "priceM": 3,
-     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
@@ -33278,14 +33150,6 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-393c5ce2e8": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:wv-4b1c694996": {
      "priceM": 1,
      "priceTier": "REST",
@@ -33302,21 +33166,13 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-f00777d4cc": {
-     "priceM": 4,
-     "priceTier": "STAR",
+    "celtic:wv-322213b9fd": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-322213b9fd": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:wv-ed0c2e4bce": {
      "priceM": 3,
@@ -33697,14 +33553,6 @@
     "celtic:wv-64e9e87327": {
      "priceM": 4,
      "priceTier": "STAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-8f897e1005": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
      "locked": false,
      "assignment": "owner-pinned",
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
@@ -34742,23 +34590,7 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-3201940dd5": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:wv-7d474ccab7": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "celtic:wv-e6958d305f": {
      "priceM": 2,
      "priceTier": "REGULAR",
      "locked": false,
@@ -34830,14 +34662,6 @@
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     },
-    "celtic:wv-13f2db0a05": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
     "celtic:wv-b732ea038c": {
      "priceM": 1,
      "priceTier": "REST",
@@ -34855,12 +34679,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:wv-3588d17954": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 22 men left the archive (2026-10-28): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-28"
     },
     "celtic:wv-705749c1df": {
      "priceM": 2,

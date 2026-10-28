@@ -34,7 +34,7 @@ function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gat
 /** A club with no repository pack is played from its DESK PACK — built in the control room from the owner's approvals,
  * compiled by the same compiler. It can change at any time, so it is re-read after a minute (and at once after a build). */
 const DESK_TTL_MS=60_000
-async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);if(!pack)return null;const m=await compilePath(),r=m.compilePackEuro(pack,reg);return {...r,data:m.withForgedTrivia(r.data)}}
+async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);if(!pack)return null;const m=await compilePath(),r=m.compilePackEuro(pack,reg);return {...r,data:m.withArchiveMysteries(m.withForgedTrivia(r.data))}}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
 export async function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
  const isStatic=isStaticId(id)

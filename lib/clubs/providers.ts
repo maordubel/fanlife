@@ -16,6 +16,7 @@ import {withHistorical} from './history-wave'
 import {withGoalWave} from './goal-wave'
 import {withRosterWave} from './roster-wave'
 import {withForgedTrivia} from '@/lib/trivia/club'
+import {withArchiveMysteries} from './mystery-forge'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>{
  const history=withHistorical(pack,club.id),result=compilePackBase(withGoalWave(withEuro(history.pack,club.id),club.id) as never,club)
  return {...result,diagnostics:[...result.diagnostics,...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
@@ -45,5 +46,5 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  olympiacos:async()=>compilePackEuro(withCatalogue(mergeWave(mergeWave(mergeWave((await import('@/club-packs/olympiacos/core.json')).default,(await import('@/club-packs/olympiacos/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/olympiacos/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/olympiacos/wave-auto.json')).default as never)),(await import('@/club-packs/olympiacos/wave-kits-photos-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='olympiacos')!),REGISTRY.find(c=>c.id==='olympiacos')!),
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
-export {withForgedTrivia}
-export const withBaseWaves=(id:string,r:{data:ClubData;diagnostics:Diagnostic[]})=>({...r,data:withForgedTrivia(withRosterWave(id,r.data))})
+export {withForgedTrivia,withArchiveMysteries}
+export const withBaseWaves=(id:string,r:{data:ClubData;diagnostics:Diagnostic[]})=>({...r,data:withArchiveMysteries(withForgedTrivia(withRosterWave(id,r.data)))})
