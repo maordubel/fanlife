@@ -442,6 +442,15 @@
     "bodyHash": "2f6a48817e7c71bfe531de30e02735d2bc4490b0a6c8592e98e083d74bd73015",
     "fetchedAt": "2026-10-25T08:43:40.333Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1921-1930/1921-12-03-celtic-1-0-airdrieonians-league-division-1/",
+    "locator": "p7",
+    "quote": "A 75th minute winner from Celtic inside-left Joe Cassidy proves the difference between the teams in a hard fought game.",
+    "bodyHash": "cd063535f0f3a161bd4ee5956c6ca10c5d2701e18800eb904c213a1f59ae2cdc",
+    "fetchedAt": "2026-10-28T10:01:11.588Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -449,8 +458,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:43:40.333Z",
-  "updatedAt": "2026-10-25T08:43:40.333Z"
+  "createdAt": "2026-10-28T10:01:11.588Z",
+  "updatedAt": "2026-10-28T10:01:11.588Z"
  },
  {
   "id": "ga-93c8b19a7ed75ec1",
@@ -670,5 +679,44 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-27T09:20:49.526Z",
   "updatedAt": "2026-10-27T09:20:49.526Z"
+ },
+ {
+  "id": "ga-49554fcd5dd86a09",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "5",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1921-1930/1921-05-28-cercle-athletique-de-paris-0-6-celtic-tour-of-france/",
+    "locator": "p10",
+    "quote": "The following day , Sunday May 29th, there were 5,000 present (a healthy crowd for the whitsun weekend holiday) at the same stadium to see Celtic beat newcastle united 3 – 0 in a match refereed by mr. Jandin. Mcinally opened the scoring in the 5th minute and added a second ‘just before half – time’. Mcfarlane rounded off the scoring in the second half (timing not specified).",
+    "bodyHash": "22588e18a73b13390124c2afdf6e9dd2373b1986a008bd0d0a00924c61b57f13",
+    "fetchedAt": "2026-10-28T10:01:08.564Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1921-1930/1921-05-29-newcastle-united-0-3-celtic-tour-of-france/",
+    "locator": "p7",
+    "quote": "The following day , Sunday May 29th, there were 5,000 present (a healthy crowd for the whitsun weekend holiday) at the same stadium to see Celtic beat newcastle united 3 – 0 in a match refereed by mr. Jandin. Mcinally opened the scoring in the 5th minute and added a second ‘just before half – time’. Mcfarlane rounded off the scoring in the second half (timing not specified).",
+    "bodyHash": "cf4da22d2a70c8c713dd08ad38c408b221958a14558dad162d095d61f3d7a8db",
+    "fetchedAt": "2026-10-28T10:01:08.570Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-28T10:01:08.570Z",
+  "updatedAt": "2026-10-28T10:01:08.570Z"
  }
 ]
