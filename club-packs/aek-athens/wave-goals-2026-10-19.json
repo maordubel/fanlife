@@ -42,6 +42,86 @@
       "checkedAt": "2026-10-19",
       "access": "available",
       "locator": "Paragraph beginning Grci su pobjedu dohvatili; scorers list"
+    },
+    {
+      "id": "gr-sky-aek-celtic-2018",
+      "url": "https://www.skysports.com/football/news/11945/11472796/aek-athens-2-1-celtic-agg-3-2-goals-in-either-half-end-champions-league-dream-for-brendan-rodgers",
+      "title": "AEK Athens 2-1 Celtic (agg 3-2): Goals in either half end Champions League dream for Brendan Rodgers",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Opening paragraphs and match report body: Galo opener after six minutes from Hult's cut-back; Livaja nod-in from Lampropoulos' flick-on from a free-kick five minutes into the second half"
+    },
+    {
+      "id": "gr-sportsmole-aek-celtic-2018",
+      "url": "https://www.sportsmole.co.uk/football/celtic/champions-league/result/celtic-cl-journey-ends-at-hands-of-aek_333479.html",
+      "title": "Celtic consigned to Europa League playoffs after AEK Athens defeat",
+      "publisher": "Sports Mole",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Match report paragraphs on the 6th-minute opener (Hult byline cut-back, Galo close range) and the 50th-minute header (Livaja unmarked in six-yard box)"
+    },
+    {
+      "id": "gr-fft-aek-celtic-2018",
+      "url": "https://fourfourtwo.com/news/aek-athens-2-celtic-1-3-2-agg-rodgers-men-dumped-out-champions-league",
+      "title": "AEK Athens 2 Celtic 1 (3-2 agg): Rodgers' men dumped out of Champions League",
+      "publisher": "FourFourTwo",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Goal paragraphs: Galo from centre of the area after Hult cut-back (6th minute); Livaja close-range header after Lambropoulos headed a free-kick down"
+    },
+    {
+      "id": "gr-flashscore-aek-craiova-2025",
+      "url": "https://www.flashscore.com/news/conference-league-aek-athens-univ-craiova-report-december-18/MZ0LP3I0",
+      "title": "AEK Athens break CS Universitatea Craiova hearts in 105th minute to stun the Romanians",
+      "publisher": "Flashscore",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Late-goals paragraph: curling Eliasson cross met at the back post by Kutesa header in the final minute of stoppage time"
+    },
+    {
+      "id": "gr-digi24-aek-craiova-2025",
+      "url": "https://www.digi24.ro/stiri/sport/fotbal/universitatea-craiova-a-ratat-dramatic-calificarea-in-play-off-ul-conference-league-echipa-din-banie-invinsa-de-aek-atena-3553275",
+      "title": "Universitatea Craiova a ratat dramatic calificarea în play-off-ul Conference League. Echipa din Bănie, învinsă de AEK Atena",
+      "publisher": "Digi24",
+      "language": "ro",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Match summary paragraph: Kutesa equaliser in the eighth minute of added time from Eliasson's cross"
+    },
+    {
+      "id": "gr-espn-aek-craiova-2025",
+      "url": "https://score-origin.espn.com/soccer/commentary/_/gameId/758056",
+      "title": "AEK Athens v CSU Craiova - Commentary",
+      "publisher": "ESPN",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Commentary entry 90'+8': Kutesa header from very close range, assisted by Eliasson cross"
+    },
+    {
+      "id": "gr-aberdeenfc-aek-2025",
+      "url": "https://www.afc.co.uk/en/news/a-painful-night-in-athens",
+      "title": "A painful night in Athens",
+      "publisher": "Aberdeen FC (official)",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Match report, 11th-minute paragraph: Koita shimmies into space and places a left-foot shot inside the far post"
+    },
+    {
+      "id": "gr-flashscore-aek-aberdeen-2025",
+      "url": "https://www.flashscore.com/news/soccer-conference-league-aek-athens-subject-woeful-aberdeen-to-biggest-ever-european-defeat/bFGPAWY2",
+      "title": "AEK Athens subject woeful Aberdeen to biggest ever European defeat",
+      "publisher": "Flashscore",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Opening paragraph: 11th-minute lead, Koita takes Pineda's pass and strikes from the edge of the box into the far corner"
     }
   ],
   "goals": [
@@ -177,6 +257,140 @@
       "approvedAt": "2026-10-19",
       "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
       "notes": "Final three recorded contacts only. Reports disagree on the earlier supplier; no assist or preceding pass is asserted here."
+    },
+    {
+      "id": "goal-2018-08-14-marko-livaja-50",
+      "value": {
+        "name": "50' · Marko Livaja v Celtic",
+        "subtitle": "2018-08-14 · 50'",
+        "on": "2018-08-14",
+        "competition": "UEFA Champions League qualifying",
+        "opponent": "Celtic",
+        "score": "2-1",
+        "narrative": "Vasilios Lampropoulos: wins the header from a free-kick and nods it on across goal. Marko Livaja: left free in the six-yard box, heads in.",
+        "sequence": [
+          {
+            "actor": "Vasilios Lampropoulos",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "penalty area, from a free-kick delivery",
+            "note": "Flicks the free-kick on towards goal."
+          },
+          {
+            "actor": "Marko Livaja",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "six-yard box",
+            "note": "Unmarked after Hendry is beaten to the ball, heads home from close range."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-sky-aek-celtic-2018",
+        "gr-sportsmole-aek-celtic-2018"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Free-kick taker not named in any source, so the replay starts at Lampropoulos' header (Sky: flick-on / header back across goal; FourFourTwo: headed down). Sky gives 'five minutes into the second half', Sports Mole 50'. Lampropoulos' header uses action 'header' as a non-final touch."
+    },
+    {
+      "id": "goal-2025-12-18-dereck-kutesa-98",
+      "value": {
+        "name": "90+8' · Dereck Kutesa v Universitatea Craiova",
+        "subtitle": "2025-12-18 · 90+8'",
+        "on": "2025-12-18",
+        "competition": "UEFA Conference League",
+        "opponent": "Universitatea Craiova",
+        "score": "3-2",
+        "narrative": "Niclas Eliasson: whips in a curling cross. Dereck Kutesa: meets it at the back post with a powerful header from close range to make it 2-2.",
+        "sequence": [
+          {
+            "actor": "Niclas Eliasson",
+            "side": "club",
+            "action": "cross",
+            "zone": "C3",
+            "position": "wide delivery (flank not stated)",
+            "note": "Delivers a curling cross into the box."
+          },
+          {
+            "actor": "Dereck Kutesa",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "back post",
+            "note": "Thumping header from very close range for the equaliser."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-flashscore-aek-craiova-2025",
+        "gr-digi24-aek-craiova-2025"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Minute 90+8 from Digi24 ('eighth minute of added time') and ESPN commentary (gr-espn-aek-craiova-2025, also confirms header + Eliasson cross); Flashscore says final minute of stoppage time. Score field is the final 3-2 (goal made it 2-2; Jovic penalty won it). Cross origin zone not stated; C3 is a neutral anchor. Id suffix 98 = 90+8."
+    },
+    {
+      "id": "goal-2025-10-23-aboubakary-koita-11",
+      "value": {
+        "name": "11' · Aboubakary Koita v Aberdeen",
+        "subtitle": "2025-10-23 · 11'",
+        "on": "2025-10-23",
+        "competition": "UEFA Conference League",
+        "opponent": "Aberdeen",
+        "score": "6-0",
+        "narrative": "Orbelin Pineda: finds Koita with a precise pass. Aboubakary Koita: shifts into space and curls a left-footed strike from the edge of the box inside the far post.",
+        "sequence": [
+          {
+            "actor": "Orbelin Pineda",
+            "side": "club",
+            "action": "pass",
+            "zone": "C3",
+            "position": "in front of the box",
+            "note": "Precise pass into Koita."
+          },
+          {
+            "actor": "Aboubakary Koita",
+            "side": "club",
+            "action": "dribble",
+            "zone": "C2",
+            "position": "edge of the box",
+            "note": "Shimmies away from his marker into space."
+          },
+          {
+            "actor": "Aboubakary Koita",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "edge of the box",
+            "note": "Left-foot shot across goal, just inside the far post."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-aberdeenfc-aek-2025",
+        "gr-flashscore-aek-aberdeen-2025"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Pineda pass stated by Flashscore only, not contradicted by Aberdeen FC (which names no assist). Dribble stated by Aberdeen FC only. Both give 11th minute; both put the finish at the far post/far corner. Pass origin zone not stated; C3 is a neutral anchor."
     }
   ]
 }
