@@ -4400,12 +4400,14 @@
   {
    "id": "p-mg-5320daec0424",
    "value": {
-    "name": "Mohamed Farouk",
+    "name": "Mohamed Farouk (1998)",
     "sport": "football",
     "positions": [],
     "fromYear": 1998,
     "toYear": 2000,
-    "aliases": []
+    "aliases": [
+     "Mohamed Farouk"
+    ]
    },
    "sources": [
     "mg-ahly"
@@ -4664,12 +4666,14 @@
   {
    "id": "p-mg-c60e2b71349e",
    "value": {
-    "name": "Mohamed Farouk",
+    "name": "Mohamed Farouk (2014)",
     "sport": "football",
     "positions": [],
     "fromYear": 2014,
     "toYear": 2014,
-    "aliases": []
+    "aliases": [
+     "Mohamed Farouk"
+    ]
    },
    "sources": [
     "mg-ahly"
@@ -6121,28 +6125,6 @@
     "positions": [],
     "fromYear": 2007,
     "toYear": 2009,
-    "aliases": []
-   },
-   "sources": [
-    "mg-ahly"
-   ],
-   "confidence": 2,
-   "status": "approved",
-   "researchedAt": "2026-10-28",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "approvedAt": "2026-10-28",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-28)",
-   "notes": "Approved by the owner in chat on 2026-10-28 (Raja/Al Ahly/Wydad expanded research package). One source; years as the source lists them; appearances and goals not imported."
-  },
-  {
-   "id": "p-mg-6c85ac7f281d",
-   "value": {
-    "name": "سمير زاهر",
-    "sport": "football",
-    "positions": [],
-    "fromYear": 1964,
-    "toYear": 1973,
     "aliases": []
    },
    "sources": [

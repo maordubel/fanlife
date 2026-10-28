@@ -56,7 +56,18 @@ describe('Original, source-backed club trivia',()=>{
    expect(q.prompt).not.toMatch(/did not|never played|season was/)
   }
  })
- for(const club of CORE_CLUB_IDS)it(`${club}: 12 seeds preserve the Standard experience and shared-seed determinism`,()=>{
+ // Raja, Wydad and Al Ahly (opened 28.10.2026) have no kits, goals or moments yet: their banks cannot field four topics in every
+// band, so Standard stays shut BY NAME and the honest History round opens instead. A research wave that opens Standard fails here (rule 65).
+const STANDARD_NOT_YET=new Set(['raja-casablanca','wydad-casablanca','al-ahly'])
+for(const club of CORE_CLUB_IDS)if(STANDARD_NOT_YET.has(club))it(`${club}: Standard is shut by name and History deals a full, fact-unique round`,()=>{
+  const bank=banks.get(club)!
+  for(let seed=1;seed<=12;seed++){
+   const s=dealMode(bank,{mode:'standard'},seed,0);expect('blocked' in s&&s.blocked.code).toBe('TRIVIA_DECK_UNVERIFIED')
+   const d=dealMode(bank,{mode:'history'},seed,0);if('blocked' in d)throw new Error(JSON.stringify(d))
+   expect(d.ids).toHaveLength(12);const facts=d.ids.map(id=>bank.byId.get(id)!).flatMap(factsOf);expect(new Set(facts).size).toBe(facts.length)
+  }
+ })
+for(const club of CORE_CLUB_IDS.filter(c=>!STANDARD_NOT_YET.has(c)))it(`${club}: 12 seeds preserve the Standard experience and shared-seed determinism`,()=>{
   const bank=banks.get(club)!
   for(let seed=1;seed<=12;seed++){
    const d=dealMode(bank,{mode:'standard'},seed,0);if('blocked' in d)throw new Error(JSON.stringify(d))

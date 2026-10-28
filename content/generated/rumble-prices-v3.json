@@ -46605,6 +46605,14 @@
      "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
+    "raja-casablanca:p-mg-8f6624c23b58": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-28"
+    },
     "raja-casablanca:p-mg-9091377f7e1c": {
      "priceM": 2,
      "priceTier": "REGULAR",
@@ -46654,14 +46662,6 @@
      "reviewedAt": "2026-10-28"
     },
     "raja-casablanca:p-mg-f207065abcf9": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-28"
-    },
-    "raja-casablanca:p-mg-f82e3a358d02": {
      "priceM": 2,
      "priceTier": "REGULAR",
      "locked": false,
@@ -50918,9 +50918,9 @@
   },
   "al-ahly": {
    "quotaMode": "full",
-   "size": 235,
+   "size": 234,
    "quota": {
-    "1": 76,
+    "1": 75,
     "2": 82,
     "3": 47,
     "4": 20,
@@ -50940,7 +50940,7 @@
      "priceTier": "ICON",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.954 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.953 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6c729421b5f9": {
@@ -50948,7 +50948,7 @@
      "priceTier": "ICON",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.954 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.953 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-64c361d8286b": {
@@ -51084,7 +51084,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.926 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-1e4b4e559abf": {
@@ -51092,7 +51092,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.926 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-479de91c753d": {
@@ -51100,7 +51100,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.926 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-4a4c78368a16": {
@@ -51108,7 +51108,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.926 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-dc61b183396d": {
@@ -51116,7 +51116,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.926 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-e83cba87f867": {
@@ -51124,7 +51124,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.926 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-13db74f9b94b": {
@@ -51164,7 +51164,7 @@
      "priceTier": "STAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-306997ec0750": {
@@ -51172,7 +51172,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-584bc7470272": {
@@ -51180,7 +51180,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-60ac6c7935e8": {
@@ -51188,7 +51188,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-924a837da149": {
@@ -51196,7 +51196,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9d5d0e950db4": {
@@ -51204,7 +51204,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b2d1b81af203": {
@@ -51212,7 +51212,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d67b8d252c0b": {
@@ -51220,7 +51220,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.807 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.808 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-41c98e79eb40": {
@@ -51228,15 +51228,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-28"
-    },
-    "al-ahly:p-mg-6c85ac7f281d": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-78f2cc1c01d8": {
@@ -51244,7 +51236,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-95369348a7a5": {
@@ -51252,7 +51244,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-ae7e25fb7dd3": {
@@ -51260,7 +51252,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c84f973ea3cd": {
@@ -51268,7 +51260,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d08639cfc7e3": {
@@ -51276,7 +51268,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d236af3f3512": {
@@ -51284,7 +51276,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.799 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-0d2631ae220c": {
@@ -51292,7 +51284,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.792 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.794 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2acedf7224df": {
@@ -51300,7 +51292,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.792 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.794 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-8cfa2f66e638": {
@@ -51308,7 +51300,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.792 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.794 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a5e913082fa6": {
@@ -51316,7 +51308,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.792 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.794 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-31a1ed80e268": {
@@ -51324,7 +51316,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-44accce045d7": {
@@ -51332,7 +51324,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-463beb93077e": {
@@ -51340,7 +51332,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5361147090f5": {
@@ -51348,7 +51340,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-53cca4695d8e": {
@@ -51356,7 +51348,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-62359e1e0214": {
@@ -51364,7 +51356,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-77359b7e2826": {
@@ -51372,7 +51364,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a5e0c2d1da56": {
@@ -51380,7 +51372,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-aa7730c5a28a": {
@@ -51388,7 +51380,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c02a98b85b08": {
@@ -51396,7 +51388,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-ff87ffae7921": {
@@ -51404,7 +51396,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.779 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.781 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2f3422a982f7": {
@@ -51412,7 +51404,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-3988596238ff": {
@@ -51420,7 +51412,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-4a8e32a97cbc": {
@@ -51428,7 +51420,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6d38be48e085": {
@@ -51436,7 +51428,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-993baa3c4354": {
@@ -51444,7 +51436,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9a327ed9781d": {
@@ -51452,7 +51444,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c99e1b93829b": {
@@ -51460,7 +51452,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.770 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-040023bca0d1": {
@@ -51468,7 +51460,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-0ef42fe7a42b": {
@@ -51476,7 +51468,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2163ad7c976d": {
@@ -51484,7 +51476,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-3b0f65748275": {
@@ -51492,7 +51484,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-4a51a40eb447": {
@@ -51500,7 +51492,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6373333a1076": {
@@ -51508,7 +51500,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-712a32dc7c54": {
@@ -51516,7 +51508,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b1d56bcc60e9": {
@@ -51524,7 +51516,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b380b2971785": {
@@ -51532,7 +51524,7 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b5c971bc7b1d": {
@@ -51540,15 +51532,15 @@
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-bd2469d0c605": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c94b638310e4": {
@@ -51556,7 +51548,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-fbfe4d08a75c": {
@@ -51564,7 +51556,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.646 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.649 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-02993c74ed32": {
@@ -51572,7 +51564,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-1540b98de6f7": {
@@ -51580,7 +51572,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2e9f0df5cfda": {
@@ -51588,7 +51580,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-30ec30f2b979": {
@@ -51596,7 +51588,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-3ab3e318944a": {
@@ -51604,7 +51596,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-422c8c7f5624": {
@@ -51612,7 +51604,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-42f160c50abc": {
@@ -51620,7 +51612,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-53fce192b323": {
@@ -51628,7 +51620,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6d146fa51b9f": {
@@ -51636,7 +51628,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-916a01463128": {
@@ -51644,7 +51636,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9b948c830340": {
@@ -51652,7 +51644,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a17984bb57c9": {
@@ -51660,7 +51652,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a6c401f93f98": {
@@ -51668,7 +51660,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-bc0715cd47e7": {
@@ -51676,7 +51668,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c6f87a3cf423": {
@@ -51684,7 +51676,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-cb8284147745": {
@@ -51692,7 +51684,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-dd690a203745": {
@@ -51700,7 +51692,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-fa4ebc082142": {
@@ -51708,7 +51700,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.624 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-34ac4b7390cd": {
@@ -51716,7 +51708,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-41ce6c3f92ee": {
@@ -51724,7 +51716,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-7c876943210e": {
@@ -51732,7 +51724,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-851e85f61624": {
@@ -51740,7 +51732,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9a93dbe33d74": {
@@ -51748,7 +51740,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9fb3b6449c5c": {
@@ -51756,7 +51748,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a57859ecbf62": {
@@ -51764,7 +51756,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a9c81dadbc2b": {
@@ -51772,7 +51764,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-ada9a170e077": {
@@ -51780,7 +51772,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b0a7c10994cf": {
@@ -51788,7 +51780,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-cc71c8356f4f": {
@@ -51796,7 +51788,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-e6182f4fd3da": {
@@ -51804,7 +51796,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-fffab0fa9d13": {
@@ -51812,7 +51804,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.475 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.477 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2b8c105ad9ae": {
@@ -51820,7 +51812,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2f21f9606f0e": {
@@ -51828,7 +51820,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-4e31a177f531": {
@@ -51836,7 +51828,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-678fa86a1dad": {
@@ -51844,7 +51836,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6f330393abe8": {
@@ -51852,7 +51844,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-73b8f24406dc": {
@@ -51860,7 +51852,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-7f89fcf33699": {
@@ -51868,7 +51860,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-8097d1fc7643": {
@@ -51876,7 +51868,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-970e6626231d": {
@@ -51884,7 +51876,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9ef883e1b1f5": {
@@ -51892,7 +51884,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-ab2abe182da6": {
@@ -51900,7 +51892,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c66c5727fbbf": {
@@ -51908,7 +51900,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d0e416dea288": {
@@ -51916,7 +51908,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d22d9879b419": {
@@ -51924,7 +51916,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-ee6dc331663b": {
@@ -51932,7 +51924,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-efc39e11348a": {
@@ -51940,7 +51932,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.468 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.470 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-01857a085627": {
@@ -51948,7 +51940,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-07deabccee6d": {
@@ -51956,7 +51948,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-0c7ba8ccbdf8": {
@@ -51964,7 +51956,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-0d132d9f9fbc": {
@@ -51972,7 +51964,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2df1b32e207d": {
@@ -51980,7 +51972,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2e5b973b9a6f": {
@@ -51988,7 +51980,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-35bfeb0e65d2": {
@@ -51996,7 +51988,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-42967130494c": {
@@ -52004,7 +51996,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-42a014f1bddf": {
@@ -52012,7 +52004,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-4eee0a0ebcde": {
@@ -52020,7 +52012,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5320daec0424": {
@@ -52028,7 +52020,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5a3dc4980e7f": {
@@ -52036,7 +52028,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5cb897ffe8d4": {
@@ -52044,7 +52036,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6d31b9f82a6e": {
@@ -52052,7 +52044,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-7588e6ad20c8": {
@@ -52060,7 +52052,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-7dc2a15c36c0": {
@@ -52068,7 +52060,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-837c27744b96": {
@@ -52076,7 +52068,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-8991b1aa48d5": {
@@ -52084,7 +52076,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-9c339b4c2cfc": {
@@ -52092,7 +52084,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b83415ce0e59": {
@@ -52100,7 +52092,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c1d5ccb03610": {
@@ -52108,7 +52100,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d2ff897cb019": {
@@ -52116,7 +52108,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-d324b234b5d4": {
@@ -52124,7 +52116,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-e9be9bc3c99c": {
@@ -52132,7 +52124,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-f55a4020903a": {
@@ -52140,7 +52132,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.445 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.447 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-059f66037720": {
@@ -52148,7 +52140,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-14be5c9d5998": {
@@ -52156,7 +52148,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-1f5f8b59f4eb": {
@@ -52164,7 +52156,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-21ac9084695e": {
@@ -52172,7 +52164,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-2ea3e6c1d9f9": {
@@ -52180,7 +52172,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-355b07f43db4": {
@@ -52188,7 +52180,7 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-3b384039f2f6": {
@@ -52196,15 +52188,15 @@
      "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-558ad0f332a6": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5863e5344e44": {
@@ -52212,7 +52204,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5c6f786166ee": {
@@ -52220,7 +52212,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-5f6766bd8a0f": {
@@ -52228,7 +52220,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-6acd901d4739": {
@@ -52236,7 +52228,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-7d40e3526f8c": {
@@ -52244,7 +52236,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-893fbed25f32": {
@@ -52252,7 +52244,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-8c659aecaf96": {
@@ -52260,7 +52252,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-8e590419d2a8": {
@@ -52268,7 +52260,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-96f6050849d5": {
@@ -52276,7 +52268,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-a96ed68124be": {
@@ -52284,7 +52276,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-b0205e54ccde": {
@@ -52292,7 +52284,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c4f9fc7b39b0": {
@@ -52300,7 +52292,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-c7a37fb57c3a": {
@@ -52308,7 +52300,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-cee1c24d45a6": {
@@ -52316,7 +52308,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-dc83bdea9ee6": {
@@ -52324,7 +52316,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-e4bb3b031148": {
@@ -52332,7 +52324,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-e4dc28496937": {
@@ -52340,7 +52332,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-e5196696cb98": {
@@ -52348,7 +52340,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-eb7d128a45fa": {
@@ -52356,7 +52348,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-f6ccb5c9597a": {
@@ -52364,7 +52356,7 @@
      "priceTier": "REST",
      "locked": false,
      "assignment": "auto",
-     "rationale": "score 0.282 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "rationale": "score 0.283 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
     },
     "al-ahly:p-mg-035556f03af8": {

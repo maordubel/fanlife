@@ -1,13 +1,13 @@
 {
  "package": "FanLife_Raja_AlAhly_Wydad_Expanded_Research (28.10.2026)",
  "rows": 1489,
- "imported": 1337,
- "percent": 89.8,
+ "imported": 1336,
+ "percent": 89.7,
  "files": {
   "players_staging.csv": {
    "rows": 961,
-   "imported": 961,
-   "note": "exact duplicate rows folded; a row with no readable name skipped"
+   "imported": 960,
+   "note": "exact duplicate rows folded; a row with no readable name, or a name only in Arabic script, skipped"
   },
   "season_matches_staging.csv": {
    "rows": 147,
@@ -61,7 +61,7 @@
    "sources": 8
   },
   "al-ahly": {
-   "players": 235,
+   "players": 234,
    "matches": 48,
    "archive": 48,
    "trophies": 16,

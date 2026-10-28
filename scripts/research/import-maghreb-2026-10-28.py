@@ -84,7 +84,10 @@ P = rows('players_staging.csv'); kept = 0
 seen = {c: {} for c in NAMES}
 for r in P:
     club = CLUBS[r['club_id']]; name = re.sub(r'\s+', ' ', r['name_as_source']).strip()
-    if not name or re.search(r'\d', name): continue
+    # a scraped interlanguage marker ("Salif Diagne (en)†en.wikipedia.org") is page furniture, not part of the name
+    name = re.sub(r'\s*\([a-z]{2}\)\s*†.*$', '', name).strip()
+    # a name only in Arabic script is not transliterated here (rule 11): reported as skipped
+    if not name or re.search(r'\d', name) or re.search(r'[\u0600-\u06ff]', name): continue
     pos = next((code for k, code in POS if k in r['position_as_source'].lower()), None)
     fy, ty = years(r['years_as_source'])
     key = (name.lower(), fy, ty)
@@ -93,7 +96,16 @@ for r in P:
     v = {'name': name, 'sport': 'football', 'positions': [pos] if pos else [], 'fromYear': fy, 'toYear': ty, 'aliases': []}
     packs[club]['players'].append(fact(f"p-mg-{h(club + name + str(fy) + str(ty))}", v, [use(club, r['source_id'])], 'One source; years as the source lists them; appearances and goals not imported.'))
     kept += 1
-count('players_staging.csv', len(P), kept, 'exact duplicate rows folded; a row with no readable name skipped')
+# two different men under one name (different years) keep both rows; the card prints the first year so a reader can tell them apart
+for club in NAMES:
+    by = {}
+    for f in packs[club]['players']: by.setdefault(f['value']['name'].lower(), []).append(f)
+    for fs in by.values():
+        if len(fs) > 1:
+            for f in fs:
+                v = f['value']
+                if v['fromYear']: v['aliases'] = [v['name']]; v['name'] = f"{v['name']} ({v['fromYear']})"
+count('players_staging.csv', len(P), kept, 'exact duplicate rows folded; a row with no readable name, or a name only in Arabic script, skipped')
 
 # ── season matches: only a competitive night the cited season page places in a section
 S = rows('season_matches_staging.csv'); kept = 0; unplaced = 0; friendly = 0
