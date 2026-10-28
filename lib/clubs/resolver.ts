@@ -15,7 +15,7 @@ import {getSnapshot} from '@/lib/players/effective'
 export const REVIEW_CLUB_IDS:string[]=[]
 /** The repository packs, in the order `providers` (lib/clubs/providers.ts) declares them — checked against it in tests/clubs/providers-index.test.ts.
  * Kept here so the heavy compile path (about 9 MB of wave JSON) is imported only when a pre-compiled club is missing. */
-export const STATIC_CLUB_IDS:readonly string[]=['hapoel-tel-aviv','zrinjski-mostar','hapoel-petah-tikva','panathinaikos','aek-athens','celtic','st-pauli','olympiacos']
+export const STATIC_CLUB_IDS:readonly string[]=['hapoel-tel-aviv','zrinjski-mostar','hapoel-petah-tikva','panathinaikos','aek-athens','celtic','st-pauli','olympiacos','raja-casablanca','wydad-casablanca','al-ahly']
 const isStaticId=(id:string)=>STATIC_CLUB_IDS.includes(id)
 const compilePath=()=>import('./providers')
 export const CORE_CLUB_IDS=STATIC_CLUB_IDS.filter(id=>!REVIEW_CLUB_IDS.includes(id))

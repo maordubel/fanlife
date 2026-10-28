@@ -1,0 +1,148 @@
+﻿source_row_id,club,date_iso,source_date_and_round,home,away,home_score,away_score,location,source_id,source_line,status
+SEASON-001,raja,2023-07-21,21 July 2023 Friendly,Al-Sadd SC,Raja CA,2,2,"Al Rayyan, Qatar",RS,314,unverified; competition must be classified from section
+SEASON-002,raja,2023-08-20,20 August 2023 Friendly,Raja CA,RCA Zemamra,1,0,"Casablanca, Morocco",RS,326,unverified; competition must be classified from section
+SEASON-003,raja,2023-10-13,13 October 2023 Friendly,Raja CA,RCA Zemamra,2,0,"Casablanca, Morocco",RS,333,unverified; competition must be classified from section
+SEASON-004,raja,2023-10-18,18 October 2023 Friendly,Raja CA,Tihad AS,2,0,"Casablanca, Morocco",RS,342,unverified; competition must be classified from section
+SEASON-005,raja,2023-10-21,21 October 2023 Friendly,Raja CA,IR Tanger,3,2,"Casablanca, Morocco",RS,350,unverified; competition must be classified from section
+SEASON-006,raja,2024-01-23,23 January 2024 Friendly,Al-Ahli,Raja CA,0,1,"Dubai, UAE",RS,359,unverified; competition must be classified from section
+SEASON-008,raja,2024-01-28,28 January 2024 Dubai Challenge Cup,Wuhan Three Towns,Raja CA,0,1,"Dubai, UAE",RS,384,unverified; competition must be classified from section
+SEASON-009,raja,2023-08-27,27 August 2023 Round 1,Youssoufia Berrechid,Raja CA,1,3,Berrechid,RS,451,unverified; competition must be classified from section
+SEASON-010,raja,2023-09-03,3 September 2023 Round 2,Raja CA,FAR Rabat,2,2,Casablanca,RS,463,unverified; competition must be classified from section
+SEASON-011,raja,2023-09-17,17 September 2023 Round 3,Maghreb de Fès,Raja CA,1,1,Fez,RS,476,unverified; competition must be classified from section
+SEASON-012,raja,2023-09-24,24 September 2023 Round 4,Raja CA,Union Touarga,1,0,Casablanca,RS,488,unverified; competition must be classified from section
+SEASON-013,raja,2023-10-01,1 October 2023 Round 5,Hassania Agadir,Raja CA,1,1,Agadir,RS,496,unverified; competition must be classified from section
+SEASON-014,raja,2023-10-08,8 October 2023 Round 6,Raja CA,Moghreb Tétouan,1,0,Casablanca,RS,507,unverified; competition must be classified from section
+SEASON-015,raja,2023-10-28,28 October 2023 Round 7,OC Safi,Raja CA,2,2,Marrakesh,RS,516,unverified; competition must be classified from section
+SEASON-016,raja,2023-11-06,6 November 2023 Round 8,Raja CA,Fath Union Sport,2,0,Casablanca,RS,529,unverified; competition must be classified from section
+SEASON-017,raja,2023-11-11,11 November 2023 Round 9,JS Soualem,Raja CA,0,0,Mohammedia,RS,537,unverified; competition must be classified from section
+SEASON-018,raja,2023-11-26,26 November 2023 Round 10,Raja CA,SCC Mohammédia,1,0,El Jadida,RS,542,unverified; competition must be classified from section
+SEASON-019,raja,2023-12-09,9 December 2023 Round 11,Raja CA,RCA Zemamra,2,1,Berrechid,RS,551,unverified; competition must be classified from section
+SEASON-020,raja,2023-12-24,24 December 2023 Round 12,RS Berkane,Raja CA,1,1,Berkane,RS,563,unverified; competition must be classified from section
+SEASON-021,raja,2023-12-28,28 December 2023 Round 13,Raja CA,IR Tanger,6,1,Berrechid,RS,574,unverified; competition must be classified from section
+SEASON-022,raja,2024-01-03,3 January 2024 Round 14,Wydad AC,Raja CA,0,2,Mohammedia,RS,584,unverified; competition must be classified from section
+SEASON-023,raja,2024-01-06,6 January 2024 Round 15,Raja CA,MC Oujda,2,0,Berrechid,RS,594,unverified; competition must be classified from section
+SEASON-024,raja,2024-02-08,8 February 2024 Round 16,Raja CA,Youssoufia Berrechid,2,0,Berrechid,RS,603,unverified; competition must be classified from section
+SEASON-025,raja,2024-02-11,11 February 2024 Round 17,FAR Rabat,Raja CA,1,1,Kenitra,RS,612,unverified; competition must be classified from section
+SEASON-026,raja,2024-02-14,14 February 2024 Round 18,Raja CA,Maghreb de Fès,1,0,Berrechid,RS,623,unverified; competition must be classified from section
+SEASON-027,raja,2024-02-17,17 February 2024 Round 19,Union Touarga,Raja CA,0,0,Rabat,RS,632,unverified; competition must be classified from section
+SEASON-028,raja,2024-02-20,20 February 2024 Round 20,Raja CA,Hassania Agadir,2,0,Berrechid,RS,638,unverified; competition must be classified from section
+SEASON-029,raja,2024-02-24,24 February 2024 Round 21,Moghreb Tétouan,Raja CA,1,1,Tétouan,RS,647,unverified; competition must be classified from section
+SEASON-030,raja,2024-03-03,3 March 2024 Round 22,Raja CA,OC Safi,1,0,Berrechid,RS,658,unverified; competition must be classified from section
+SEASON-031,raja,2024-03-10,10 March 2024 Round 23,Fath Union Sport,Raja CA,0,1,Rabat,RS,666,unverified; competition must be classified from section
+SEASON-032,raja,2024-03-16,16 March 2024 Round 24,Raja CA,JS Soualem,3,1,Berrechid,RS,675,unverified; competition must be classified from section
+SEASON-033,raja,2024-04-14,14 April 2024 Round 25,SCC Mohammédia,Raja CA,0,2,Mohammedia,RS,687,unverified; competition must be classified from section
+SEASON-034,raja,2024-04-21,21 April 2024 Round 26,RCA Zemamra,Raja CA,1,2,Zemamra,RS,697,unverified; competition must be classified from section
+SEASON-035,raja,2024-05-24,24 May 2024 Round 27,Raja CA,RS Berkane,3,0,Berrechid,RS,709,unverified; competition must be classified from section
+SEASON-036,raja,2024-05-28,28 May 2024 Round 28,IR Tanger,Raja CA,1,2,Tétouan,RS,718,unverified; competition must be classified from section
+SEASON-037,raja,2024-06-02,2 June 2024 Round 29,Raja CA,Wydad AC,1,0,Berrechid,RS,730,unverified; competition must be classified from section
+SEASON-038,raja,2024-06-14,14 June 2024 Round 30,MC Oujda,Raja CA,0,3,Oujda,RS,742,unverified; competition must be classified from section
+SEASON-039,raja,2024-03-30,30 March 2024 Round of 32,Raja CA,OC Safi,2,0,Berrechid,RS,756,unverified; competition must be classified from section
+SEASON-040,raja,2024-04-06,6 April 2024 Round of 16,SCC Mohammédia,Raja CA,0,1,Mohammedia,RS,765,unverified; competition must be classified from section
+SEASON-041,raja,2024-05-11,11 May 2024 Quarter-finals,Hassania Agadir,Raja CA,2,4,Agadir,RS,774,unverified; competition must be classified from section
+SEASON-042,raja,2024-06-25,25 June 2024 Semi-finals,Raja CA,MC Oujda,4,3,Agadir,RS,788,unverified; competition must be classified from section
+SEASON-043,raja,2023-07-28,28 July 2023 (2023-07-28) 1,CR Belouizdad,Raja CA,1,2,"Abha, Saudi Arabia",RS,828,unverified; competition must be classified from section
+SEASON-044,raja,2023-07-31,31 July 2023 (2023-07-31) 2,Raja CA,Kuwait SC,2,0,"Abha, Saudi Arabia",RS,840,unverified; competition must be classified from section
+SEASON-045,raja,2023-08-03,3 August 2023 (2023-08-03) 3,Al-Wahda,Raja CA,0,1,"Abha, Saudi Arabia",RS,849,unverified; competition must be classified from section
+SEASON-046,raja,2023-08-06,6 August 2023 (2023-08-06) Quarter-finals,Raja CA,Al Nassr,1,3,"Abha, Saudi Arabia",RS,860,unverified; competition must be classified from section
+SEASON-047,wydad,2021-08-22,22 August 2021,Wydad AC,Youssoufia Berrechid,1,0,Berkane,WS,228,unverified; competition must be classified from section
+SEASON-048,wydad,2021-08-25,25 August 2021,Racing de Casablanca,Wydad AC,1,2,Berkane,WS,232,unverified; competition must be classified from section
+SEASON-049,wydad,2021-08-28,28 August 2021,Wydad AC,RS Berkane,1,1,Berkane,WS,240,unverified; competition must be classified from section
+SEASON-050,wydad,2021-09-02,2 September 2021,Wydad AC,TP Mazembe,0,0,Berrechid,WS,244,unverified; competition must be classified from section
+SEASON-051,wydad,2021-09-12,12 September 2021 1,Wydad AC,Ittihad Tanger,2,0,Casablanca,WS,308,unverified; competition must be classified from section
+SEASON-052,wydad,2021-09-19,19 September 2021 2,Rapide Oued Zem,Wydad AC,0,2,Khouribga,WS,322,unverified; competition must be classified from section
+SEASON-053,wydad,2021-09-26,26 September 2021 3,Hassania Agadir,Wydad AC,0,1,Agadir,WS,333,unverified; competition must be classified from section
+SEASON-054,wydad,2021-09-29,29 September 2021 4,Wydad AC,Youssoufia Berrechid,3,2,Casablanca,WS,348,unverified; competition must be classified from section
+SEASON-055,wydad,2021-10-03,3 October 2021 5,SCC Mohammédia,Wydad AC,0,0,Mohammédia,WS,362,unverified; competition must be classified from section
+SEASON-056,wydad,2021-10-21,21 October 2021 (2021-10-21) 6,Wydad AC,Olympic Club de Safi,1,0,Casablanca,WS,367,unverified; competition must be classified from section
+SEASON-057,wydad,2021-10-28,28 October 2021 (2021-10-28) 7,AS FAR,Wydad AC,0,1,Rabat,WS,378,unverified; competition must be classified from section
+SEASON-058,wydad,2021-10-31,31 October 2021 (2021-10-31) 8,Wydad AC,Maghreb de Fès,1,0,Casablanca,WS,392,unverified; competition must be classified from section
+SEASON-059,wydad,2021-11-03,3 November 2021 (2021-11-03) 9,Olympique Club de Khouribga,Wydad AC,0,3,Khouribga,WS,406,unverified; competition must be classified from section
+SEASON-060,wydad,2021-11-06,6 November 2021 (2021-11-06) 10,Wydad AC,Raja CA,1,1,Casablanca,WS,421,unverified; competition must be classified from section
+SEASON-061,wydad,2021-11-19,19 November 2021 (2021-11-19) 11,Jeunesse Sportive Soualem,Wydad AC,3,4,Zemamra,WS,436,unverified; competition must be classified from section
+SEASON-062,wydad,2021-11-23,23 November 2021 (2021-11-23) 12,Wydad AC,RS Berkane,2,0,Casablanca,WS,453,unverified; competition must be classified from section
+SEASON-063,wydad,2021-12-18,18 December 2021 (2021-12-18) 13,Difaâ Hassani El Jadidi,Wydad AC,2,1,El Jadida,WS,467,unverified; competition must be classified from section
+SEASON-064,wydad,2021-12-24,24 December 2021 (2021-12-24) 14,Wydad AC,MC Oujda,3,2,Casablanca,WS,483,unverified; competition must be classified from section
+SEASON-065,wydad,2021-12-28,28 December 2021 (2021-12-28) 15,Fath Union Sport,Wydad AC,3,2,Rabat,WS,500,unverified; competition must be classified from section
+SEASON-066,wydad,2022-02-05,5 February 2022 (2022-02-05) 16,Ittihad Tanger,Wydad AC,0,0,Tangier,WS,516,unverified; competition must be classified from section
+SEASON-067,wydad,2022-02-15,15 February 2022 (2022-02-15) 17,Wydad AC,Rapide Oued Zem,2,0,Casablanca,WS,530,unverified; competition must be classified from section
+SEASON-068,wydad,2022-02-23,23 February 2022 (2022-02-23) 18,Wydad AC,Hassania Agadir,0,2,Casablanca,WS,544,unverified; competition must be classified from section
+SEASON-069,wydad,2022-03-01,1 March 2022 (2022-03-01) 19,Youssoufia Berrechid,Wydad AC,0,0,Berrechid,WS,556,unverified; competition must be classified from section
+SEASON-070,wydad,2022-03-05,5 March 2022 (2022-03-05) 20,Wydad AC,SCC Mohammédia,2,1,Casablanca,WS,568,unverified; competition must be classified from section
+SEASON-071,wydad,2022-04-26,26 April 2022 (2022-04-26) 21,Olympic Club de Safi,Wydad AC,0,1,Safi,WS,582,unverified; competition must be classified from section
+SEASON-072,wydad,2022-04-29,29 April 2022 (2022-04-29) 22,Wydad AC,ASFAR,3,0,Casablanca,WS,594,unverified; competition must be classified from section
+SEASON-073,wydad,2022-05-18,18 May 2022 (2022-05-18) 23,Maghreb de Fès,Wydad AC,1,1,Fez,WS,607,unverified; competition must be classified from section
+SEASON-074,wydad,2022-05-22,22 May 2022 (2022-05-22) 24,Wydad AC,Olympique Club de Khouribga,1,0,Casablanca,WS,619,unverified; competition must be classified from section
+SEASON-075,wydad,2022-06-16,16 June 2022 (2022-06-16) 25,Raja CA,Wydad AC,2,0,Casablanca,WS,631,unverified; competition must be classified from section
+SEASON-076,wydad,2022-06-19,19 June 2022 (2022-06-19) 26,Wydad AC,Jeunesse Sportive Soualem,3,0,Casablanca,WS,649,unverified; competition must be classified from section
+SEASON-077,wydad,2022-06-22,22 June 2022 (2022-06-22) 27,RS Berkane,Wydad AC,0,1,Berkane,WS,662,unverified; competition must be classified from section
+SEASON-078,wydad,2022-06-25,25 June 2022 (2022-06-25) 28,Wydad AC,Difaâ Hassani El Jadidi,2,1,Casablanca,WS,676,unverified; competition must be classified from section
+SEASON-079,wydad,2022-06-29,29 June 2022 (2022-06-29) 29,MC Oujda,Wydad AC,2,2,Oujda,WS,692,unverified; competition must be classified from section
+SEASON-080,wydad,2022-07-04,4 July 2022 (2022-07-04) 30,Wydad AC,Fath Union Sport,1,2,Casablanca,WS,705,unverified; competition must be classified from section
+SEASON-081,wydad,2022-04-05,5 April 2022 (2022-04-05) Round of 32,Club Ittifaq Sportif Marrakech,Wydad AC,1,4,Marrakesh,WS,723,unverified; competition must be classified from section
+SEASON-082,wydad,2022-04-09,9 April 2022 (2022-04-09) Round of 16,Wydad AC,SCC Mohammédia,3,2,Casablanca,WS,736,unverified; competition must be classified from section
+SEASON-083,wydad,2022-07-07,7 July 2022 (2022-07-07) Quarter-finals,Wydad AC,Raja CA,2,0,Casablanca,WS,748,unverified; competition must be classified from section
+SEASON-086,wydad,2021-10-17,17 October 2021 (2021-10-17) First leg,Hearts of Oak,Wydad AC,1,0,"Accra, Ghana",WS,804,unverified; competition must be classified from section
+SEASON-088,wydad,2022-02-11,11 February 2022 (2022-02-11) Matchday 1,Wydad AC,Sagrada Esperança,3,0,"Casablanca, Morocco",WS,852,unverified; competition must be classified from section
+SEASON-089,wydad,2022-02-19,19 February 2022 (2022-02-19) Matchday 2,Petro de Luanda,Wydad AC,2,1,"Luanda, Angola",WS,867,unverified; competition must be classified from section
+SEASON-090,wydad,2022-02-26,26 February 2022 (2022-02-26) Matchday 3,Wydad AC,Zamalek,3,1,"Casablanca, Morocco",WS,881,unverified; competition must be classified from section
+SEASON-091,wydad,2022-03-11,11 March 2022 (2022-03-11) Matchday 4,Zamalek,Wydad AC,0,1,"Cairo, Egypt",WS,898,unverified; competition must be classified from section
+SEASON-092,wydad,2022-03-19,19 March 2022 (2022-03-19) Matchday 5,Sagrada Esperança,Wydad AC,1,2,"Luanda^{[note 2]}, Angola",WS,913,unverified; competition must be classified from section
+SEASON-093,wydad,2022-04-02,2 April 2022 (2022-04-02) Matchday 6,Wydad AC,Petro de Luanda,5,1,"Casablanca, Morocco",WS,925,unverified; competition must be classified from section
+SEASON-094,wydad,2022-04-16,16 April 2022 (2022-04-16) First leg,CR Belouizdad,Wydad AC,0,1,"Algiers^{[note 3]}, Algeria",WS,950,unverified; competition must be classified from section
+SEASON-096,wydad,2022-05-07,7 May 2022 (2022-05-07) First leg,Petro de Luanda,Wydad AC,1,3,"Luanda, Angola",WS,981,unverified; competition must be classified from section
+SEASON-098,wydad,2022-05-30,30 May 2022 (2022-05-30) Final,Al Ahly,Wydad AC,0,2,"Casablanca, Morocco",WS,1021,unverified; competition must be classified from section
+SEASON-099,ahly,2019-07-03,3 July 2019 (2019-07-03),Al Ahly,El Motaheda HR,0,0,"Cairo, Egypt",AS,313,unverified; competition must be classified from section
+SEASON-100,ahly,2019-07-08,8 July 2019 (2019-07-08),Soccer Smart Academy,Al Ahly,0,9,"Alicante, Spain",AS,316,unverified; competition must be classified from section
+SEASON-101,ahly,2019-07-11,11 July 2019 (2019-07-11),Newport County,Al Ahly,1,1,"Murcia, Spain",AS,327,unverified; competition must be classified from section
+SEASON-102,ahly,2019-07-15,15 July 2019 (2019-07-15),UCAM Murcia,Al Ahly,0,7,"Murcia, Spain",AS,336,unverified; competition must be classified from section
+SEASON-103,ahly,2019-07-19,19 July 2019 (2019-07-19),Al Ahly,Plastic Shubra El Kheima,4,0,"Cairo, Egypt",AS,345,unverified; competition must be classified from section
+SEASON-104,ahly,2019-10-14,14 October 2019 (2019-10-14),Al Ahly,Media,1,0,"Cairo, Egypt",AS,353,unverified; competition must be classified from section
+SEASON-105,ahly,2020-07-24,24 July 2020 (2020-07-24),Al Ahly,Smouha,4,0,"Cairo, Egypt",AS,360,unverified; competition must be classified from section
+SEASON-106,ahly,2020-07-28,28 July 2020 (2020-07-28),Al Ahly,El Gouna,5,2,"Cairo, Egypt",AS,368,unverified; competition must be classified from section
+SEASON-107,ahly,2019-09-23,23 September 2019 (2019-09-23) 1,Smouha,Al Ahly,0,1,Alexandria,AS,445,unverified; competition must be classified from section
+SEASON-108,ahly,2019-10-02,2 October 2019 (2019-10-02) 2,Al Ahly,El Entag El Harby,4,0,Cairo,AS,457,unverified; competition must be classified from section
+SEASON-109,ahly,2019-10-05,5 October 2019 (2019-10-05) 3,Aswan,Al Ahly,1,5,Aswan,AS,471,unverified; competition must be classified from section
+SEASON-110,ahly,2019-11-25,25 November 2019 (2019-11-25)^{[B]} 5,El Gouna,Al Ahly,0,4,El Gouna,AS,486,unverified; competition must be classified from section
+SEASON-111,ahly,2019-12-11,11 December 2019 (2019-12-11) 7,Wadi Degla,Al Ahly,0,3,Cairo,AS,498,unverified; competition must be classified from section
+SEASON-112,ahly,2019-12-15,15 December 2019 (2019-12-15) 8,Al Ahly,Haras El Hodoud,1,0,Cairo,AS,510,unverified; competition must be classified from section
+SEASON-113,ahly,2019-12-19,19 December 2019 (2019-12-19) 9,Ismaily,Al Ahly,0,1,Alexandria^{[D]},AS,518,unverified; competition must be classified from section
+SEASON-114,ahly,2019-12-23,23 December 2019 (2019-12-23) 10,Al Ahly,Al Ittihad,4,0,Cairo,AS,529,unverified; competition must be classified from section
+SEASON-115,ahly,2020-01-01,1 January 2020 (2020-01-01) 11,Misr Lel Makkasa,Al Ahly,0,2,Cairo^{[E]},AS,545,unverified; competition must be classified from section
+SEASON-116,ahly,2020-01-05,5 January 2020 (2020-01-05) 12,Al Ahly,FC Masr,3,1,Cairo,AS,559,unverified; competition must be classified from section
+SEASON-117,ahly,2020-01-15,15 January 2020 (2020-01-15) 13,Al Ahly,Tanta,5,0,Cairo,AS,573,unverified; competition must be classified from section
+SEASON-118,ahly,2020-01-19,19 January 2020 (2020-01-19) 14,Al Mokawloon Al Arab,Al Ahly,0,2,Cairo,AS,585,unverified; competition must be classified from section
+SEASON-119,ahly,2020-02-06,6 February 2020 (2020-02-06) 16,Pyramids,Al Ahly,1,2,Cairo,AS,598,unverified; competition must be classified from section
+SEASON-120,ahly,2020-02-10,10 February 2020 (2020-02-10) 17,Al Ahly,Tala'ea El Gaish,3,0,Cairo,AS,614,unverified; competition must be classified from section
+SEASON-121,ahly,2020-02-14,14 February 2020 (2020-02-14)^{[B]} 6,Al Ahly,Al Masry,3,0,Alexandria^{[G]},AS,628,unverified; competition must be classified from section
+SEASON-123,ahly,2020-03-11,11 March 2020 (2020-03-11) 18,Al Ahly,Smouha,1,1,Cairo,AS,649,unverified; competition must be classified from section
+SEASON-124,ahly,2020-08-09,9 August 2020 (2020-08-09)^{[I]} 15,Al Ahly,ENPPI,2,0,Cairo,AS,659,unverified; competition must be classified from section
+SEASON-125,ahly,2020-08-14,14 August 2020 (2020-08-14) 19,El Entag El Harby,Al Ahly,1,1,Cairo,AS,672,unverified; competition must be classified from section
+SEASON-126,ahly,2020-08-17,17 August 2020 (2020-08-17) 20,Al Ahly,Aswan,3,0,Cairo,AS,683,unverified; competition must be classified from section
+SEASON-127,ahly,2020-08-22,22 August 2020 (2020-08-22) 21,Zamalek,Al Ahly,3,1,Cairo,AS,691,unverified; competition must be classified from section
+SEASON-128,ahly,2020-08-26,26 August 2020 (2020-08-26) 22,Al Ahly,El Gouna,1,0,Cairo,AS,704,unverified; competition must be classified from section
+SEASON-129,ahly,2020-08-29,29 August 2020 (2020-08-29) 23,Al Masry,Al Ahly,0,2,Alexandria,AS,718,unverified; competition must be classified from section
+SEASON-130,ahly,2020-09-04,4 September 2020 (2020-09-04) 24,Al Ahly,Wadi Degla,2,0,Cairo,AS,729,unverified; competition must be classified from section
+SEASON-131,ahly,2020-09-07,7 September 2020 (2020-09-07) 25,Haras El Hodoud,Al Ahly,0,2,Alexandria,AS,741,unverified; competition must be classified from section
+SEASON-132,ahly,2020-09-11,11 September 2020 (2020-09-11) 26,Al Ahly,Ismaily,3,0,Alexandria,AS,748,unverified; competition must be classified from section
+SEASON-133,ahly,2020-09-14,14 September 2020 (2020-09-14) 27,Al Ittihad,Al Ahly,0,0,Alexandria,AS,760,unverified; competition must be classified from section
+SEASON-134,ahly,2020-09-19,19 September 2020 (2020-09-19) 28,Al Ahly,Misr Lel Makkasa,0,0,Cairo,AS,772,unverified; competition must be classified from section
+SEASON-135,ahly,2020-09-23,23 September 2020 (2020-09-23) 29,FC Masr,Al Ahly,0,3,Cairo,AS,783,unverified; competition must be classified from section
+SEASON-136,ahly,2020-09-27,27 September 2020 (2020-09-27) 30,Tanta,Al Ahly,0,1,Cairo,AS,798,unverified; competition must be classified from section
+SEASON-137,ahly,2020-10-04,4 October 2020 (2020-10-04) 31,Al Ahly,Al Mokawloon,1,0,Cairo,AS,805,unverified; competition must be classified from section
+SEASON-138,ahly,2020-10-07,7 October 2020 (2020-10-07) 32,Enppi,Al Ahly,0,3,Cairo,AS,819,unverified; competition must be classified from section
+SEASON-139,ahly,2020-10-11,11 October 2020 (2020-10-11) 33,Al Ahly,Pyramids,0,0,Cairo,AS,827,unverified; competition must be classified from section
+SEASON-140,ahly,2020-10-31,31 October 2020 (2020-10-31) 34,Tala'ea El Gaish,Al Ahly,0,3,Cairo,AS,840,unverified; competition must be classified from section
+SEASON-141,ahly,2019-12-03,3 December 2019 (2019-12-03) Round of 32,Al Ahly,Beni Suef,3,1,Cairo,AS,857,unverified; competition must be classified from section
+SEASON-142,ahly,2020-09-30,30 September 2020 (2020-09-30) Round of 16,Al Ahly,Tersana,2,1,Cairo,AS,873,unverified; competition must be classified from section
+SEASON-143,ahly,2020-11-21,21 November 2020 (2020-11-21) Quarter-finals,Al Ahly,Abou Qir Fertilizers,2,1,Alexandria,AS,882,unverified; competition must be classified from section
+SEASON-144,ahly,2020-12-01,1 December 2020 (2020-12-01) Semi-finals,Al Ahly,Al Ittihad,2,1,Suez,AS,892,unverified; competition must be classified from section
+SEASON-147,ahly,2019-08-11,11 August 2019 (2019-08-11) First leg,Atlabara,Al Ahly,0,4,"Alexandria, Egypt^{[J]}",AS,970,unverified; competition must be classified from section
+SEASON-149,ahly,2019-09-14,14 September 2019 (2019-09-14) First leg,Cano Sport,Al Ahly,0,2,"Malabo, Equatorial Guinea",AS,1002,unverified; competition must be classified from section
+SEASON-151,ahly,2019-11-29,29 November 2019 (2019-11-29) 1,Étoile du Sahel,Al Ahly,1,0,"Radès, Tunisia",AS,1038,unverified; competition must be classified from section
+SEASON-152,ahly,2019-12-06,6 December 2019 (2019-12-06) 2,Al Ahly,Al Hilal,2,1,"Cairo, Egypt",AS,1051,unverified; competition must be classified from section
+SEASON-153,ahly,2019-12-28,28 December 2019 (2019-12-28) 3,Al Ahly,FC Platinum,2,0,"Cairo, Egypt",AS,1064,unverified; competition must be classified from section
+SEASON-154,ahly,2020-01-11,11 January 2020 (2020-01-11) 4,FC Platinum,Al Ahly,1,1,"Bulawayo, Zimbabwe",AS,1077,unverified; competition must be classified from section
+SEASON-155,ahly,2020-01-26,26 January 2020 (2020-01-26)^{[K]} 5,Al Ahly,Étoile du Sahel,1,0,"Cairo, Egypt",AS,1089,unverified; competition must be classified from section
+SEASON-156,ahly,2020-02-01,1 February 2020 (2020-02-01) 6,Al Hilal,Al Ahly,1,1,"Omdurman, Sudan",AS,1102,unverified; competition must be classified from section
+SEASON-157,ahly,2020-02-29,29 February 2020 (2020-02-29) First leg,Al Ahly,Mamelodi Sundowns,2,0,"Cairo, Egypt",AS,1124,unverified; competition must be classified from section
+SEASON-159,ahly,2020-10-17,17 October 2020 (2020-10-17) First leg,Wydad Casablanca,Al-Ahly,0,2,Casablanca,AS,1148,unverified; competition must be classified from section

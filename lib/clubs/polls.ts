@@ -45,14 +45,16 @@ export function pollEvents(data:ClubData,max=48):ClubData['timeline']{
 export function pollChoices(data:ClubData):ClubPollChoice[]{
  const fromTimeline=pollEvents(data).map(f=>{const y=yearOfOn(f.value.on);return {id:f.id,name:`${englishTitle(f.value.title)} · ${localizedDate(f.value.on,'en')}`,from:y,to:y}})
  if(fromTimeline.length>=24)return fromTimeline
- const nights:ClubPollChoice[]=readNights(data).filter(n=>n.us!==null&&n.them!==null&&(n.kind==='europe'||n.derby||/final/i.test(n.comp))).map(n=>{
-  const y=yearOfOn(n.on),line=n.home===false?`${n.opp} ${n.them}-${n.us} ${data.identity.name}`:`${data.identity.name} ${n.us}-${n.them} ${n.opp}`
-  return {id:n.id,name:`${line} — ${n.comp} · ${localizedDate(n.on,'en')}`,from:y,to:y}
+ // a night is offered under the club's own timeline card for that day (a poll vote is kept against a timeline id)
+ const card=new Map(englishTimeline(data.timeline).map(f=>[f.value.on,f] as const))
+ const nights:ClubPollChoice[]=readNights(data).filter(n=>n.us!==null&&n.them!==null&&(n.kind==='europe'||n.derby||/final/i.test(n.comp))&&card.has(n.on)&&/\d\s*[-–]\s*\d/.test(card.get(n.on)!.value.title)).map(n=>{
+  const f=card.get(n.on)!,y=yearOfOn(n.on)
+  return {id:f.id,name:`${f.value.title} — ${n.comp} · ${localizedDate(n.on,'en')}`,from:y,to:y}
  })
  const byDecade=new Map<number,ClubPollChoice[]>();for(const n of nights){const d=Math.floor((n.from??0)/10)*10;byDecade.set(d,[...(byDecade.get(d)??[]),n])}
  const out:ClubPollChoice[]=[],lanes=[...byDecade.values()]
  for(let i=0;out.length<48&&lanes.some(l=>l.length>i);i++)for(const l of lanes){const n=l[l.length-1-i];if(n&&out.length<48)out.push(n)}
- const all=[...fromTimeline,...out]
+ const all=[...fromTimeline,...out.filter(n=>!fromTimeline.some(t=>t.id===n.id))]
  // a club with neither: its latest recorded rows, as before
  if(all.length<12)for(const f of data.timeline.slice(-48).reverse()){if(all.length>=48)break;if(SOMBRE.test(f.value.title)||!LATIN.test(englishTitle(f.value.title))||all.some(c=>c.id===f.id))continue;const y=yearOfOn(f.value.on);all.push({id:f.id,name:`${englishTitle(f.value.title)} · ${localizedDate(f.value.on,'en')}`,from:y,to:y})}
  return all.slice(0,48).sort((a,b)=>(a.from??0)-(b.from??0))

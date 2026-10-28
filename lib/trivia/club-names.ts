@@ -53,6 +53,10 @@ const ALIASES:Readonly<Record<string,readonly string[]>>={
  'Široki Brijeg':['Siroki Brijeg'],
  // elsewhere (UEFA prints short forms: Atleti, Celta, GNK Dinamo)
  'Rangers':['TheRangers','The Rangers'],
+ 'Raja Casablanca':['Raja CA','Raja Club Athletic','Raja'],
+ 'Wydad Casablanca':['Wydad AC','WAC Casablanca','Wydad'],
+ 'Al Ahly':['Al-Ahly','Al Ahly SC'],
+ 'Zamalek':['Zamalek SC'],
  'Borussia Dortmund':['B. Dortmund','BV Borussia 09 Dortmund'],
  'Hapoel Beer Sheva':['H. Beer-Sheva','Hapoel Beer-Sheva',"Hapoel Be'er Sheva"],
  'Hapoel Tel Aviv':['H. Tel-Aviv','Hapoel Tel-Aviv'],
