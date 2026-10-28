@@ -3,7 +3,7 @@ import {describe,it,expect,vi} from 'vitest'
 vi.setConfig({testTimeout:300_000})
 import {readFileSync} from 'node:fs'
 import {loadClub,CORE_CLUB_IDS} from '@/lib/clubs/resolver'
-import {play,ratedPool,rawPool,dealDraft,fits,FIVE,type Rated} from '@/lib/clubs/rumble'
+import {play,ratedPool,rawPool,dealDraft,fits,FIVE,rumbleReadiness,type Rated} from '@/lib/clubs/rumble'
 import {canAfford,stageMatch,affordableSeed} from '@/lib/clubs/rumble-show'
 import {hasBuyableIcon,floorOf} from '@/lib/clubs/rumble-economy'
 import {FORMATIONS,FORMATION_IDS,countFamily} from '@/lib/clubs/rumble-xi/formations'
@@ -103,8 +103,10 @@ describe('the board always holds a €5M man who can be bought',()=>{
  it('five a side: the same rule at €15M',async()=>{
   const P=await pools()
   for(const id of CORE_CLUB_IDS){const pool=P[id]!;let ok=0,n=0
+   // a club without enough placed men has the gate shut, with the reason printed (Wydad, Al Ahly: the owner package carries no positions)
+   const ready=rumbleReadiness(pool);if(!ready.playable){expect(ready.short.length,id).toBeGreaterThan(0);continue}
    for(let s=1;s<=120;s++){const seed=affordableSeed(x=>dealDraft(pool,x),s);const board=dealDraft(pool,seed);if(floorOf(board)>FIVE.budget)continue;n++;if(hasBuyableIcon(board,FIVE.budget))ok++}
-   expect(ok,`${id}`).toBe(n);expect(n).toBeGreaterThan(20)}
+   expect(ok,`${id}`).toBe(n);expect(n,id).toBeGreaterThan(20)}
  })
  it('a club that cannot field a legal board says so instead of raising the budget',async()=>{
   const P=await pools();for(const id of CORE_CLUB_IDS)for(const f of FORMATION_IDS){const r=xiReadiness(P[id]!,f);if(!r.ready)expect(r.reasons[0]).toMatch(/.+/)}
