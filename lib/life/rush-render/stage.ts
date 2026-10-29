@@ -19,6 +19,8 @@ import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/lif
 import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
 import {dressCity} from './city'
+import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
+import {loadProps, propCopy} from './props'
 import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
@@ -142,6 +144,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /* ground + the shared street pieces */
   const wet = spec.weather === 'rain'
+  // the ground's materials, by surface: the loom tiles replace the canvas ones when they arrive (surfaces.ts)
+  const grounds: Record<SurfaceName, THREE.MeshStandardMaterial[]> = {asphalt: [], slabs: [], concrete: []}
+  const ground = (name: SurfaceName, m: THREE.MeshStandardMaterial) => { grounds[name].push(m); return m }
   const asphalt = noiseTex('#202227', 26, [3, 80], true)
   const tile = keep(canvasTex(256, 256, (g, w) => { g.fillStyle = '#6b6a6e'; g.fillRect(0, 0, w, w); for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { const v = 95 + rnd() * 25; g.fillStyle = `rgb(${v},${v - 2},${v - 4})`; g.fillRect(x * 64 + 2, y * 64 + 2, 60, 60) } }, [2, 40]))
   const plaster = ['#e9e3d6', '#ddd5c5', '#efe7d7', '#cfc8bb', '#e4d8c3', '#d8cfbf']
@@ -151,10 +156,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const zStart = level.bounds.z1 + 30, zEnd = level.goal.z - 60, span = zStart - zEnd, zMid = (zStart + zEnd) / 2
 
   const addRoad = (half: number, walk: number) => {
-    const road = new THREE.Mesh(keep(new THREE.PlaneGeometry(half * 2, span)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: wet ? 0.16 : 0.38, metalness: wet ? 0.5 : 0.2})))
+    const road = new THREE.Mesh(keep(new THREE.PlaneGeometry(half * 2, span)), keep(ground('asphalt', new THREE.MeshStandardMaterial({map: asphalt, roughness: wet ? 0.16 : 0.38, metalness: wet ? 0.5 : 0.2}))))
     road.rotation.x = -Math.PI / 2; road.position.set(0, 0, zMid); road.receiveShadow = true; scene.add(road)
     for (const side of [-1, 1]) {
-      const pave = new THREE.Mesh(box, keep(new THREE.MeshStandardMaterial({map: tile, roughness: wet ? 0.3 : 0.8})))
+      const pave = new THREE.Mesh(box, keep(ground('slabs', new THREE.MeshStandardMaterial({map: tile, roughness: wet ? 0.3 : 0.8}))))
       pave.scale.set(walk - half, 0.16, span); pave.position.set(side * (half + (walk - half) / 2), 0.08, zMid); pave.receiveShadow = true; scene.add(pave)
       const kerb = new THREE.Mesh(box, keep(std('#9a958c'))); kerb.scale.set(0.22, 0.18, span); kerb.position.set(side * half, 0.09, zMid); scene.add(kerb)
     }
@@ -266,7 +271,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /** every crossing is a street you may walk down: pavements, shop fronts, windows, a barrier where the walk ends */
   const addSideStreets = () => {
     const w = level.walk, far = 120
-    const tileM = keep(new THREE.MeshStandardMaterial({map: tile, roughness: wet ? 0.3 : 0.8}))
+    const tileM = keep(ground('slabs', new THREE.MeshStandardMaterial({map: tile, roughness: wet ? 0.3 : 0.8})))
     const blocks: {x: number; z: number; w: number; h: number; c: string}[] = [], wins: {x: number; y: number; z: number; lit: boolean; warm: boolean; face: number}[] = []
     const fronts: {x: number; z: number; face: number}[] = []
     for (const cz of level.crossings) {
@@ -325,7 +330,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   if (level.place === 'street') {
     addRoad(level.half, level.walk)
     for (const z of level.crossings) {
-      const cr = new THREE.Mesh(keep(new THREE.PlaneGeometry(240, 8.2)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: wet ? 0.16 : 0.4, metalness: wet ? 0.5 : 0.2}))); cr.rotation.x = -Math.PI / 2; cr.position.set(0, 0.004, z); cr.receiveShadow = true; scene.add(cr); crossLanes.push(cr)
+      const cr = new THREE.Mesh(keep(new THREE.PlaneGeometry(240, 8.2)), keep(ground('asphalt', new THREE.MeshStandardMaterial({map: asphalt, roughness: wet ? 0.16 : 0.4, metalness: wet ? 0.5 : 0.2})))); cr.rotation.x = -Math.PI / 2; cr.position.set(0, 0.004, z); cr.receiveShadow = true; scene.add(cr); crossLanes.push(cr)
       const zeb = new THREE.InstancedMesh(box, keep(std('#d9d4c8', {roughness: 0.55})), 9)
       for (let i = 0; i < 9; i++) { m4.makeScale(0.9, 0.01, 3).setPosition(-6 + i * 1.5, 0.01, z + 7); zeb.setMatrixAt(i, m4) } scene.add(zeb)
     }
@@ -350,7 +355,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
     addGround(level.goal.z - 120, level.goal.z - 60)
   } else if (level.place === 'yard') {
-    const floor = new THREE.Mesh(keep(new THREE.PlaneGeometry(level.half * 2 + 20, 120)), keep(new THREE.MeshStandardMaterial({map: noiseTex('#55575c', 18, [6, 18]), roughness: wet ? 0.2 : 0.85}))); floor.rotation.x = -Math.PI / 2; floor.position.set(0, 0, -25); floor.receiveShadow = true; scene.add(floor)
+    const floor = new THREE.Mesh(keep(new THREE.PlaneGeometry(level.half * 2 + 20, 120)), keep(ground('concrete', new THREE.MeshStandardMaterial({map: noiseTex('#55575c', 18, [6, 18]), roughness: wet ? 0.2 : 0.85})))); floor.rotation.x = -Math.PI / 2; floor.position.set(0, 0, -25); floor.receiveShadow = true; scene.add(floor)
     // the fence at the back with one gap, the wall of the stand behind it
     const fz = level.goal.z - 2
     const fence = new THREE.InstancedMesh(box, keep(std('#2a2d33', {metalness: 0.5, roughness: 0.5})), 160)
@@ -371,7 +376,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     // the crowd: a terrace in rising bands, crush barriers, the floodlights
     const pitchC = bannedColour('#2f5a2c', skin) ? '#2a2d36' : '#2f5a2c'
     const isPitch = spec.template === 'title-night', school = level.kids
-    const floor = new THREE.Mesh(keep(new THREE.PlaneGeometry(level.half * 2 + 30, 90)), keep(isPitch ? std(pitchC, {roughness: 0.95}) : new THREE.MeshStandardMaterial({map: noiseTex(school ? '#585a60' : '#6f6c66', school ? 20 : 14, [4, 12], school), roughness: wet ? 0.2 : 0.9})))
+    const floor = new THREE.Mesh(keep(new THREE.PlaneGeometry(level.half * 2 + 30, 90)), keep(isPitch ? std(pitchC, {roughness: 0.95}) : ground('concrete', new THREE.MeshStandardMaterial({map: noiseTex(school ? '#585a60' : '#6f6c66', school ? 20 : 14, [4, 12], school), roughness: wet ? 0.2 : 0.9}))))
     floor.rotation.x = -Math.PI / 2; floor.position.set(0, 0, -16); floor.receiveShadow = true; scene.add(floor)
     if (school) {
       // a playground: painted lines, a school along the far side, a wall with a net-less goal
@@ -538,7 +543,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const body = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.34, 0.3, 0.95, 16)), keep(std('#4a4f59', {metalness: 0.55, roughness: 0.45}))); body.position.y = 0.48; body.castShadow = !lite; g.add(body)
     const lid = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.37, 0.37, 0.06, 16)), keep(std('#3a3e47', {metalness: 0.6, roughness: 0.4}))); lid.position.y = 0.98; g.add(lid)
     const wave = new THREE.Mesh(keep(new THREE.RingGeometry(0.6, 0.75, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: '#f3efe6', transparent: true, opacity: 0, depthWrite: false}))); wave.position.y = 0.05; g.add(wave)
-    return {g, lid, wave}
+    return {g, lid: lid as THREE.Object3D, wave}
   })
   // a good turn: a small boy alone, or a bag left on the pavement with its owner looking about
   const favourFigs = level.favours.map(f => {
@@ -550,7 +555,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   })
   // a lay-by on the road where a mate waits
   for (const st of level.steps) if (st.kind === 'stop') {
-    const lb = new THREE.Mesh(keep(new THREE.PlaneGeometry(4.6, st.r * 2 + 20)), keep(new THREE.MeshStandardMaterial({map: asphalt, roughness: 0.5, metalness: 0.15}))); lb.rotation.x = -Math.PI / 2; lb.position.set(level.half + 2.2, 0.006, st.z); lb.receiveShadow = true; scene.add(lb)
+    const lb = new THREE.Mesh(keep(new THREE.PlaneGeometry(4.6, st.r * 2 + 20)), keep(ground('asphalt', new THREE.MeshStandardMaterial({map: asphalt, roughness: 0.5, metalness: 0.15})))); lb.rotation.x = -Math.PI / 2; lb.position.set(level.half + 2.2, 0.006, st.z); lb.receiveShadow = true; scene.add(lb)
     const edge = new THREE.Mesh(box, keep(std('#cfc9bc'))); edge.scale.set(0.14, 0.012, st.r * 2 + 20); edge.position.set(level.half - 0.1, 0.01, st.z); scene.add(edge)
     const pole = new THREE.Mesh(box, keep(std('#2b2f3a'))); pole.scale.set(0.08, 2.6, 0.08); pole.position.set(level.half + 4.9, 1.3, st.z - 2); scene.add(pole)
     const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(0.9, 0.6)), keep(new THREE.MeshBasicMaterial({map: signTex('P', '#2c4d8a', '#f3efe6', 128, 96), toneMapped: false}))); sign.position.set(level.half + 4.9, 2.5, st.z - 1.94); scene.add(sign)
@@ -838,7 +843,30 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     return {x: (pv.x * 0.5 + 0.5) * w, y: (-pv.y * 0.5 + 0.5) * h, visible: pv.z < 1}
   }
 
+  // the loom ground (surfaces.ts): laid on when it arrives, never waited for; textures are shared by every run, so not disposed here
+  let gone = false
+  for (const name of Object.keys(grounds) as SurfaceName[]) if (grounds[name].length) void loadSurface(name).then(s2 => { if (s2 && !gone) grounds[name].forEach(m => dressSurface(m, name, s2, wet)) })
+  // the kiln models (props.ts) take the place of the drawn pickups and bins when they arrive; the sticker keeps its printed face
+  void loadProps().then(lib => {
+    if (!lib || gone) return
+    const mats = new Map<string, THREE.Material>(), paint2 = {p: skin.p, s: skin.s}
+    pickups.forEach((p, i) => {
+      const kind = level.pickups[i]?.kind, src = kind && kind !== 'sticker' ? lib.items.get(kind) : undefined
+      if (!src) return
+      p.item.clear(); p.item.add(propCopy(src, paint2, mats, keep, !lite))
+    })
+    if (lib.bin) bins.forEach(b => {
+      const copy = propCopy(lib.bin!, paint2, mats, keep, !lite), lidSrc = copy.getObjectByName('binlid') ?? copy.children[0]
+      if (!lidSrc) return
+      b.g.children.filter(c => c !== b.wave).forEach(c => b.g.remove(c))
+      const holder = new THREE.Group(); holder.position.y = 0.98
+      lidSrc.removeFromParent(); lidSrc.position.y -= 0.98; holder.add(lidSrc)
+      b.g.add(copy, holder); b.lid = holder
+    })
+  })
+
   function dispose() {
+    gone = true
     scene.traverse(o2 => { const m = o2 as THREE.Mesh; if (m.isMesh) { m.geometry?.dispose?.() } })
     disposables.forEach(d => { try { d.dispose() } catch { /* already gone */ } })
     crowd.forEach(im => im.dispose())

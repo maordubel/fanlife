@@ -91,16 +91,31 @@ export function BarkBubble({x, y, text}: {x: number; y: number; text: string}) {
 }
 
 /** The episode's title card. On the first episode of a new life it also asks his name. */
-export function EpisodeOpen({no, of, age, title, logline, askName, name, onName, onPlay, ready, copy, texts = [], box = null}: {
+/** sounds that follow the cards (the shell's cue: real files first, a synthesised stand-in while one loads) */
+type Cue = (name: string) => void
+const calm = () => { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches } catch { return false } }
+
+export function EpisodeOpen({no, of, age, title, logline, askName, name, onName, onPlay, ready, copy, texts = [], box = null, onCue}: {
   no: number; of: number; age: number; title: string; logline: string
   askName: boolean; name: string; onName: (v: string) => void; onPlay: () => void; ready: boolean; copy: Copy
   /** the season's first seconds: messages on a phone, 2026 */
   texts?: {from: string; t: string}[]
   /** the thing out of the box this episode is about */
   box?: {item: string; line: string; img?: string | null} | null
+  onCue?: Cue
 }) {
   const btn = useRef<HTMLButtonElement | null>(null), field = useRef<HTMLInputElement | null>(null)
   useEffect(() => { (askName ? field.current : btn.current)?.focus({preventScroll: true}) }, [askName])
+  // each message buzzes as it lands (the CSS lands them every .9s), then the box is opened; with reduced motion all at once, once
+  const cueRef = useRef(onCue); cueRef.current = onCue
+  const nTexts = texts.length, hasBox = !!box
+  useEffect(() => {
+    const play = (n: string) => cueRef.current?.(n)
+    if (calm()) { if (nTexts) play('phone-text'); else if (hasBox) play('box-lid'); return }
+    const ts = Array.from({length: nTexts}, (_, i) => window.setTimeout(() => play('phone-text'), (i * 0.9 + 0.4) * 1000))
+    if (hasBox) ts.push(window.setTimeout(() => play('box-lid'), (nTexts * 0.9 + 0.5) * 1000))
+    return () => ts.forEach(t => window.clearTimeout(t))
+  }, [nTexts, hasBox])
   return (
     <section className={`${s.card} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="s1-title" data-life="episode-open" style={{'--s1-after': `${texts.length * 0.9}s`} as React.CSSProperties}>
       {texts.length > 0 && (
@@ -134,7 +149,7 @@ export function EpisodeOpen({no, of, age, title, logline, askName, name, onName,
 }
 
 /** The end of an episode: what happened (done and missed, in order), what he kept, and what is next. */
-export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, secrets = {found: [], total: 0}, tease = null, letter = null}: {
+export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, secrets = {found: [], total: 0}, tease = null, letter = null, onCue}: {
   no: number; title: string; ledger: {kind: StampKind; text: string}[]; kept: {name: string; note: string; img?: string | null} | null; next: string | null
   onNext: () => void; last: boolean; copy: Copy
   /** the secrets the interviews told him, out of all this episode holds: the rest are on the roads he did not take */
@@ -143,13 +158,15 @@ export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, s
   tease?: string | null
   /** the season's envelope, opened on the last card */
   letter?: {head: string; lines: string[]; sign: string; after: string} | null
+  onCue?: Cue
 }) {
   const [opened, setOpened] = useState(false)
   const btn = useRef<HTMLButtonElement | null>(null)
   const [shown, setShown] = useState(0)
   useEffect(() => { btn.current?.focus({preventScroll: true}) }, [])
   // the ledger is read out one row at a time, like a scoreline coming in
-  useEffect(() => { if (shown >= ledger.length) return; const t = window.setTimeout(() => setShown(n => n + 1), 380); return () => window.clearTimeout(t) }, [shown, ledger.length])
+  useEffect(() => { if (shown >= ledger.length) return; const t = window.setTimeout(() => { setShown(n => n + 1); onCue?.('ledger') }, 380); return () => window.clearTimeout(t) }, [shown, ledger.length, onCue])
+  const open = () => { onCue?.('envelope-tear'); window.setTimeout(() => onCue?.('letter'), calm() ? 0 : 420); setOpened(true) }
   return (
     <section className={`${s.card} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="s1-end" data-life="episode-end">
       <p className={s.kick}><b>{word(copy, 's1.episode', 'Episode')} <bdi>{no}</bdi></b> {word(copy, 's1.over', 'is over')}</p>
@@ -178,7 +195,7 @@ export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, s
           <p className={s.letterAfter}>{letter.after}</p>
         </div>
       ) : (
-        <button type="button" className={`${s.envelope} min-h-tap`} onClick={() => setOpened(true)} data-life="envelope"><img className={s.envImg} src="/life/season/box/envelope.webp" alt="" width={72} height={52} decoding="async" />{word(copy, 's1.envelope', 'Open the envelope')}</button>
+        <button type="button" className={`${s.envelope} min-h-tap`} onClick={open} data-life="envelope"><img className={s.envImg} src="/life/season/box/envelope.webp" alt="" width={72} height={52} decoding="async" />{word(copy, 's1.envelope', 'Open the envelope')}</button>
       ))}
       {!letter && !last && <p className={s.sealed} data-life="sealed">{word(copy, 's1.sealed', 'The envelope stays sealed. Not until the last one.')}</p>}
       {next && <p className={s.next}>{word(copy, 's1.next.episode', 'Next')} · <b>{next}</b></p>}

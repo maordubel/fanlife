@@ -166,20 +166,20 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             // what a knock cost, in the clock's own seconds — nothing in story mode
             const cost = (n: number) => { if (!sim.assist) pop(`−${n}s`) }
             if (e.k === 'hit') { say(w(`ev.${e.by}`), 1400); cost(e.by === 'car' ? 9 : e.by === 'throw' ? 8 : e.by === 'police' ? 24 : 5); sfx(e.by === 'police' ? 'whistle' : 'bounce') }
-            else if (e.k === 'caught') { say(w('ev.caught'), 1800); cost(24); sfx('whistle') }
+            else if (e.k === 'caught') { say(w('ev.caught'), 1800); cost(24); sfx('whistle'); sfx('caught') }
             else if (e.k === 'wrong') { say(w('ev.wrong'), 1200); cost(12); sfx('tick') }
             else if (e.k === 'found') { say(w('ev.found'), 1600); sfx('reveal') }
             else if (e.k === 'grab') { say(w('ev.grab'), 1200); sfx('keep') }
             else if (e.k === 'drop') { say(w('ev.drop'), 1400); sfx('bounce') }
             else if (e.k === 'voice') { say(w(e.key), 2600); if (e.key.endsWith('.3') || e.key.endsWith('.4') || e.key.endsWith('.2')) sfx('murmur') }
             else if (e.k === 'end') { phaseRef.current = 'ending'; setPhase('ending'); endT.current = 0; sfx(e.outcome === 'slip' ? 'murmur' : 'roar') }
-            else if (e.k === 'step') { setObjIx(e.next < 0 ? level.steps.length : e.next); setObjFlash(true); window.setTimeout(() => setObjFlash(false), 900); sfx('keep') }
+            else if (e.k === 'step') { setObjIx(e.next < 0 ? level.steps.length : e.next); setObjFlash(true); window.setTimeout(() => setObjFlash(false), 900); sfx('objective') }
             else if (e.k === 'talk') say(w(e.key), 3000)
-            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}${e.streak > 1 ? ` · ${w('ev.streak', {n: String(e.streak)})}` : ''}`) } else pop(w(`got.${e.kind}`)); sfx('coin') }
+            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}${e.streak > 1 ? ` · ${w('ev.streak', {n: String(e.streak)})}` : ''}`) } else pop(w(`got.${e.kind}`)); sfx(e.kind === 'coin' ? 'coin' : e.kind === 'paint' ? 'spray' : 'pickup') }
             else if (e.k === 'chant') { say(w('ev.chant'), 1800); pop(`+${e.bonus}s`); sfx('roar') }
             else if (e.k === 'favour') { say(w(`fav.${e.kind}`), 2400); pop(`+${e.bonus}s`); sfx('keep') }
             else if (e.k === 'surge') { say(w('ev.surge'), 2200); sfx('murmur') }
-            else if (e.k === 'noise') { say(w('ev.noise'), 1500); sfx('bounce') }
+            else if (e.k === 'noise') { say(w('ev.noise'), 1500); sfx('clang') }
             else if (e.k === 'missed') { say(w('ev.missed'), 2200); cost(20); sfx('murmur') }
             else if (e.k === 'notyet') say(w('ev.notyet'), 2000)
             else if (e.k === 'escort') { say(w(`esc.${e.state}`), 1800); if (e.state !== 'ok') sfx('tick') }

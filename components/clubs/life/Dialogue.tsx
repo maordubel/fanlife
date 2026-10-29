@@ -42,6 +42,8 @@ type Props = {
   typed: boolean
   /** Season One: a moment, not a menu — the choices stand for `s` seconds, then `pick` is taken */
   timer?: {s: number; pick: string} | null
+  /** a sound for the moment (the fuse catching when a timed choice stands) */
+  onCue?: (name: string) => void
 }
 
 /** the ballot arms on the first frame after the gesture that revealed it has been released */
@@ -79,7 +81,7 @@ function useSide(who: string | null, me: boolean, conversation: string): 'start'
   return side
 }
 
-export function Dialogue({text, who, speaker, me, choices, asking, serial, story, handle, sheetRef, primaryRef, armedRef, copy, onAdvance, onChoose, onLeave, onTyped, typed, timer = null}: Props) {
+export function Dialogue({text, who, speaker, me, choices, asking, serial, story, handle, sheetRef, primaryRef, armedRef, copy, onAdvance, onChoose, onLeave, onTyped, typed, timer = null, onCue}: Props) {
   // his own voice is a caption, like narration, but it is his
   const thought = who === 'think'
   const narration = who === null || thought
@@ -92,8 +94,11 @@ export function Dialogue({text, who, speaker, me, choices, asking, serial, story
   // the moment passes: silence is an answer of its own
   const chooseRef = useRef(onChoose)
   chooseRef.current = onChoose
+  const cueRef = useRef(onCue)
+  cueRef.current = onCue
   useEffect(() => {
     if (!showChoices || !timer) return
+    cueRef.current?.('fuse')
     const id = window.setTimeout(() => chooseRef.current(timer.pick), timer.s * 1000)
     return () => window.clearTimeout(id)
   }, [showChoices, timer, serial])
