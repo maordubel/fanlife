@@ -505,6 +505,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261026180000_worker_marketing_kit.sql', // 26.10.2026: each post travels with its Social Kit v2 kit — standalone
       '20261027090000_worker_marketing_live.sql', // 27.10.2026: plan v3 — live slots (results, next up, DUBID round, OFFSIDES today) — standalone
       '20261027170000_worker_live_open_arenas.sql', // 27.10.2026: audit CF-03 — only joinable OFFSIDES arenas count as open — standalone
+      '20261029090000_worker_marketing_copybox.sql', // 29.10.2026: plan v4 — render() writes the caption into a copy box — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue
