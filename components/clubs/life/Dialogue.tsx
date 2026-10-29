@@ -111,7 +111,7 @@ export function Dialogue({text, who, speaker, me, choices, asking, serial, story
       <button type="button" className={`${styles.dlgLeave} min-h-tap`} onClick={e => { e.stopPropagation(); onLeave() }} aria-label={copy.leave} data-life="leave">×</button>
       <div className={styles.dlgBody}>
         <Typed className={styles.dlgLine} aria-live="polite" data-life="line" key={serial} text={text} handle={handle} onDone={onTyped} {...story} />
-        {showChoices && timer && <Fuse key={serial} seconds={timer.s} />}
+        {showChoices && timer && <Fuse key={`fuse-${serial}`} seconds={timer.s} />}
         {showChoices ? (
           <ol className={styles.dlgChoices} data-life="choices" data-armed={armed ? 'true' : 'false'}>
             {choices.map((c, i) => (

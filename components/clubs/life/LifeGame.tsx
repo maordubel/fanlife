@@ -66,6 +66,9 @@ type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d
   | null
 /** the year the interviews are filmed: the present day of the documentary, not a fact about the past */
 const DOC_YEAR = 2026
+/** the photographed keepsake for an episode's object out of the box (public/life/season/box, R8 of the realism pack) */
+const BOX_IMG = new Set(['scarf', 'shirt', 'ticket', 'album', 'fence', 'away-ticket'])
+const boxImg = (ch: {keepsakes?: {id: string}[]} | null | undefined): string | null => { const id = ch?.keepsakes?.[0]?.id; return id && BOX_IMG.has(id) ? `/life/season/box/${id}.webp` : null }
 type Props = {
   pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}
   /** RUSH for this club (the missions its archive can hold), or null where the switch is off: a mission's choice then plays its small game, or simply happens */
@@ -221,7 +224,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     const p = geo?.slots[name] ?? geo?.spots[name]
     return p ? {x: p.x, z: p.z} : null
   }, [pack])
-  type SeasonRuntime = PlayRuntime & {shot?: (o: {cam: string; on: string[]; ms: number} | null) => boolean; cineAct?: (a: Record<string, unknown>) => boolean; studio?: (o: {look: unknown} | null) => boolean; studioSay?: (mood: string | false) => boolean; celebrate?: () => void}
+  type SeasonRuntime = PlayRuntime & {shot?: (o: {cam: string; on: string[]; ms: number} | null) => boolean; cineAct?: (a: Record<string, unknown>) => boolean; studio?: (o: {look: unknown; who?: string} | null) => boolean; studioSay?: (mood: string | false) => boolean; celebrate?: () => void}
   const srt = useCallback(() => rt.current as SeasonRuntime | null, [])
 
   /** a staged scene: the camera cuts between people while they move, turn, hold things and cheer */
@@ -258,7 +261,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     if (!lines.length) return
     skipAll.current = false
     const now = pack.hero.birthYear ? DOC_YEAR - pack.hero.birthYear : Math.max(ch.age + 30, 40)
-    const studio = !!srt()?.studio?.({look: lookAt(def.who, member.look, now)})
+    const studio = !!srt()?.studio?.({look: lookAt(def.who, member.look, now), who: def.who})
     const name = pack.given?.[def.who] ?? nameOf(pack, ch, def.who)
     for (const [i, x] of lines.entries()) {
       if (skipAll.current) break
@@ -1175,7 +1178,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
             </div>
           ) : episode ? (
             <EpisodeOpen no={episode.no} of={episode.of} age={chapter.age} title={chapter.title} logline={heroize(episode.logline)} ready={ready}
-              texts={episode.no === 1 && typeof state.flags['life:name'] !== 'string' ? (episode.texts ?? []).map(m => ({from: heroize(m.from), t: heroize(m.t)})) : []} box={episode.box ? {item: heroize(episode.box.item), line: heroize(episode.box.line)} : null}
+              texts={episode.no === 1 && typeof state.flags['life:name'] !== 'string' ? (episode.texts ?? []).map(m => ({from: heroize(m.from), t: heroize(m.t)})) : []} box={episode.box ? {item: heroize(episode.box.item), line: heroize(episode.box.line), img: boxImg(chapter)} : null}
               askName={episode.no === 1 && typeof state.flags['life:name'] !== 'string'} name={nameDraft} onName={setNameDraft} copy={copy}
               onPlay={() => { const n = nameDraft.trim(); if (episode.no === 1 && typeof state.flags['life:name'] !== 'string' && n) life.current?.dispatch({t: 'flag', k: 'life:name', v: n.slice(0, 18)}); beginDay() }} />
           ) : (
@@ -1188,7 +1191,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
         <div data-life="ending" data-ending={state.done[chapter.id]}>
           <EpisodeEnd no={episode.no} title={chapter.title} ledger={ledger} next={episode.next ? heroize(episode.next) : null} last={episode.no >= episode.of} copy={copy}
             secrets={secrets} tease={episode.tease ? heroize(episode.tease) : null} letter={episode.letter ? {head: heroize(episode.letter.head), lines: episode.letter.lines.map(heroize), sign: heroize(episode.letter.sign), after: heroize(episode.letter.after)} : null}
-            kept={keepsake(ending.keep) && state.keeps.includes(ending.keep!) ? {name: heroize(keepsake(ending.keep)!.name), note: heroize(keepsake(ending.keep)!.note)} : null} onNext={toNext} />
+            kept={keepsake(ending.keep) && state.keeps.includes(ending.keep!) ? {name: heroize(keepsake(ending.keep)!.name), note: heroize(keepsake(ending.keep)!.note), img: boxImg(chapter)} : null} onNext={toNext} />
         </div>
       )}
       {phase === 'ending' && chapter && ending && !episode && (

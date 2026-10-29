@@ -403,7 +403,16 @@ function envFor(kind){if(ENV[kind])return ENV[kind];var es=new T.Scene(),box=new
  var fl=new T.Mesh(new T.PlaneGeometry(12,12),new T.MeshBasicMaterial({color:kind==='in'?'#6a5444':'#6c6660'}));fl.rotation.x=-Math.PI/2;fl.position.y=-.9;es.add(fl);
  if(kind==='in'){panel('#fff1dc',5,-5.9,2.4,0,.1,2.4,3.4);panel('#ffe2c0',2.2,0,4.9,0,4,.1,4);panel('#fff6ea',1.6,5.9,1.8,-2,.1,1.6,2)}
  else{panel('#ffffff',3,0,4.9,0,12,.1,12);panel('#fff0d8',9,-4,4.5,-3,1.6,.1,1.6)}
- ENV[kind]=pmrem.fromScene(es,.04).texture;return ENV[kind]}
+ ENV[kind]=pmrem.fromScene(es,.04).texture;hdrEnv(kind);return ENV[kind]}
+/* a photographed environment (R7 of the realism pack: Poly Haven, CC0), downsampled to 512×256 and stored as an RGBM
+   PNG (sqrt-encoded, range 16) so it ships at ~170 KB: when it arrives it replaces the drawn box room above, and the
+   scene that was lit by the drawn one is lit by the photograph instead. */
+var HDR_OF={in:'room',out:'day'},HDR_K=1.15,hdrAsk={};
+function hdrEnv(kind){var name=HDR_OF[kind];if(!name||hdrAsk[kind])return;hdrAsk[kind]=1;var im=new Image();im.onload=function(){try{
+  var c=document.createElement('canvas');c.width=im.width;c.height=im.height;var g=c.getContext('2d');g.drawImage(im,0,0);var px=g.getImageData(0,0,c.width,c.height).data,n=c.width*c.height,half=!!(T.DataUtils&&T.DataUtils.toHalfFloat),f=half?new Uint16Array(n*4):new Float32Array(n*4),hf=half?T.DataUtils.toHalfFloat:function(v){return v};
+  var W=c.width,H=c.height;for(var i=0;i<n;i++){var y=(i/W)|0,o=((H-1-y)*W+(i-y*W))*4,m=px[i*4+3]/255;for(var k=0;k<3;k++){var x=px[i*4+k]/255*m;f[o+k]=hf(x*x*16*HDR_K)}f[o+3]=hf(1)}/* (rows flipped here: a data texture's first row is its bottom) */
+  /* half floats: filterable everywhere a phone runs WebGL2 */var t=new T.DataTexture(f,c.width,c.height,T.RGBAFormat,half?T.HalfFloatType:T.FloatType);t.minFilter=t.magFilter=T.LinearFilter;t.generateMipmaps=false;t.mapping=T.EquirectangularReflectionMapping;t.needsUpdate=true;
+  var old=ENV[kind],env=pmrem.fromEquirectangular(t).texture;t.dispose();ENV[kind]=env;if(sc.environment===old)sc.environment=env}catch(er){/* the drawn room stays */}};im.src='/life/town/env/'+name+'.png'}
 window.__sc=sc;window.RM=RM;var hooks=[];window.__town={step:step,render:function(){post.render()},ready:false,T:T,world:world,cam:cam,ren:ren,quality:QL,hooks:hooks,
  makeChar:makeChar,dropChar:function(g){if(g.parent)g.parent.remove(g);var i=anim.chars.indexOf(g);if(i>=0)anim.chars.splice(i,1)},
  cur:function(){return cur},U:U,

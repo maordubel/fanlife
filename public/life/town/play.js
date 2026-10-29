@@ -447,6 +447,7 @@ function cineAct(a){
  return false}
 /* the interview: a dark room, a chair, one warm lamp, and the person — older now — talking to somebody just off camera */
 function studioOff(){if(!STU)return;var S=STU;STU=null;window.__sc.remove(S.g);if(S.who)K.dropChar(S.who);S.hidden.forEach(function(e){e[0].visible=e[1]});window.__sc.background=S.bg;window.__sc.fog=S.fog;window.__sc.environment=S.env;window.__noAO=false;K.cineCam(null);if(player)trackCam(0,true)}
+var STUDIO_PLATE={mum:1,dad:1,friend:1,rival:1,wild:1,neighbour:1};
 function studioOn(o){
  studioOff();var sc_=window.__sc,g=new T.Group(),X=60,Z=60;g.position.set(X,0,Z);
  var hidden=[];sc_.children.forEach(function(c){hidden.push([c,c.visible]);c.visible=false});
@@ -454,6 +455,8 @@ function studioOn(o){
  for(var i=0;i<14;i++){var bx=40+Math.random()*440,by=40+Math.random()*120,br=6+Math.random()*16,bg=x.createRadialGradient(bx,by,0,bx,by,br);bg.addColorStop(0,'rgba(255,214,170,.32)');bg.addColorStop(1,'rgba(255,214,170,0)');x.fillStyle=bg;x.fillRect(bx-br,by-br,br*2,br*2)}
  var tx=new T.CanvasTexture(cv);tx.encoding=T.sRGBEncoding;
  var back=new T.Mesh(new T.PlaneGeometry(9,5.6),new T.MeshBasicMaterial({map:tx}));back.position.set(0,2.2,-2.6);g.add(back);
+ /* the person's own place behind them (public/life/town/studio, R5 of the realism pack): photographed out of focus, a little darker than the face */
+ var plate=o.who&&STUDIO_PLATE[o.who];if(plate)new T.TextureLoader().load('/life/town/studio/'+o.who+'.webp',function(t){if(!STU||STU.g!==g)return;t.encoding=T.sRGBEncoding;back.material.map=t;back.material.color.setScalar(.8);back.material.needsUpdate=true;pole.visible=shade.visible=fl.visible=false;/* sized so the room reads as a room behind the head, not one corner of it */var wide=innerWidth>innerHeight;back.geometry.dispose();back.geometry=wide?new T.PlaneGeometry(10,6.25):new T.PlaneGeometry(6.4,4);back.position.set(wide?-1.4:0,wide?1.9:1.4,-2.6)});
  var fl=new T.Mesh(new T.PlaneGeometry(12,8),new T.MeshStandardMaterial({color:new T.Color('#1c1714'),roughness:.9}));fl.rotation.x=-PI/2;fl.receiveShadow=true;g.add(fl);
  /* the chair: dark wood, a curved back */
  /* (the chair is sized to the sitter: a boy of eleven does not sit at an adult's chair as if at a table) */
@@ -476,9 +479,10 @@ function studioOn(o){
  STU={g:g,who:who,hidden:hidden,bg:sc_.background,fog:sc_.fog,env:sc_.environment,t0:now};sc_.background=new T.Color('#0b0908');sc_.fog=null;sc_.environment=null;window.__noAO=true;
  studioCam(0);return true}
 var _hv=new T.Vector3();
-function studioCam(k){if(!STU)return;var X=STU.g.position.x,Z=STU.g.position.z,asp=innerWidth/Math.max(1,innerHeight),far=asp<1?.74:.6,d=(1-.06*Math.min(1,k))*far;
+function studioCam(k){if(!STU)return;var X=STU.g.position.x,Z=STU.g.position.z,asp=innerWidth/Math.max(1,innerHeight),far=asp<1?.68:.6,d=(1-.06*Math.min(1,k))*far;
  /* framed on the person's own head, so a child of eleven and a man of sixty both sit with the eyes where an interview puts them */
- var hy=1.3;if(STU.who){var hp=window.PEOPLE&&PEOPLE.headPos&&PEOPLE.headPos(STU.who,_hv);if(!hp&&STU.who.userData.head)hp=STU.who.userData.head.getWorldPosition(_hv);if(hp)hy=STU.hy=STU.hy==null?hp.y:STU.hy+(hp.y-STU.hy)*.15}
+ var hy=1.3,doll=false;if(STU.who){var hp=window.PEOPLE&&PEOPLE.headPos&&PEOPLE.headPos(STU.who,_hv);if(!hp&&STU.who.userData.head){doll=true;hp=STU.who.userData.head.getWorldPosition(_hv)}if(hp)hy=STU.hy=STU.hy==null?hp.y:STU.hy+(hp.y-STU.hy)*.15}
+ /* (the light figures of the lite look have big heads: they are framed a step further back) */if(doll)d*=1.6;
  /* a documentary interview: head and shoulders, the eyes on the upper third (phone and desktop alike) */K.cineCam({p:[X+1.15*d,hy-.03,Z+1.62*d],l:[X+(asp<1?.0:-.14),hy-.1,Z],fov:asp<1?34:28})}
 K.hooks.push(function(t){if(STU)studioCam((now-STU.t0)/14)});
 

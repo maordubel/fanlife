@@ -51,11 +51,13 @@ async function main(): Promise<number> {
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox', '--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist']})
   const context = await browser.newContext({viewport: {width: size[0], height: size[1]}, deviceScaleFactor: 1, hasTouch: phone, isMobile: phone})
   // --look=lite|blocks: a machine without a GPU renders the full picture at a frame or two a second, too slow to click through
+  // --seed=S1E6: start the life at that episode (a save with the name given and the episode opened), to look at its own cards
+  if (arg('seed')) await context.addInitScript(([c, id, room]: string[]) => { try { if (!localStorage.getItem('seeded')) { localStorage.setItem('seeded', '1'); localStorage.setItem(`fan-life:club:${c}:life:season1`, JSON.stringify({v: 1, club: c, pack: 'probe', events: [{t: 'started', pack: 'probe'}, {t: 'flag', k: 'life:name', v: 'Yoni'}, {t: 'chapter', id}, {t: 'moved', room, spawn: 'start', time: 'day'}], savedAt: ''})) } } catch { /* no storage */ } }, [club, arg('seed'), arg('seedRoom', 'bedroom')])
   await context.addInitScript((look: string) => { try { window.localStorage.setItem('fan-life:life:probe', '1'); window.localStorage.setItem('fan-life:life:sound', 'off'); if (look) window.localStorage.setItem('the-worker:life:look', look) } catch { /* no storage */ } }, arg('look'))
   const page = await context.newPage()
   const faults: string[] = []
   page.on('pageerror', e => faults.push(`page error: ${e.message}`))
-  page.on('console', m => { if (m.type() === 'error' && !/favicon|Failed to load resource.*(40[34])|net::ERR/.test(m.text())) faults.push(`console: ${m.text().slice(0, 200)}`) })
+  page.on('console', m => { if (m.type() === 'error' && !/favicon|Failed to load resource.*(40[34])|net::ERR/.test(m.text())) faults.push(`console: ${m.text().includes('same key') ? m.text().slice(m.text().indexOf('identity'), m.text().indexOf('identity') + 900) : m.text().slice(0, 200)}`) })
   page.on('response', r => { if (r.status() >= 400 && new URL(r.url()).origin === new URL(base).origin && !/favicon/.test(r.url())) faults.push(`${r.status()} ${r.url()}`) })
   await page.goto(`${base}/clubs/${club}/life?lang=${lang}`, {waitUntil: 'load', timeout: 300000})
   await page.waitForSelector('[data-life="title"]', {timeout: 120000})
@@ -80,13 +82,15 @@ async function main(): Promise<number> {
     if (await visible(page, '[data-life="hero-name"]')) { const v = await page.locator('[data-life="hero-name"]').inputValue(); if (!v) await page.locator('[data-life="hero-name"]').fill('Yoni') }
     if (await visible(page, '[data-life="cine"]')) { cineShots++; if (cineShots <= 40) { await page.waitForTimeout(900); await shot(`${String(chaptersDone + 1).padStart(2, '0')}-${s.chapter}-cine-${String(cineShots).padStart(2, '0')}`) } await press(page, '[data-life="cine-next"]'); await page.waitForTimeout(250); continue }
     if (await visible(page, '[data-life="doc"]')) { docShots++; if (docShots <= 30) { await page.waitForTimeout(1400); await shot(`${String(chaptersDone + 1).padStart(2, '0')}-${s.chapter}-doc-${String(docShots).padStart(2, '0')}`) } await press(page, '[data-life="doc-next"]'); await page.waitForTimeout(250); continue }
+    if (await visible(page, '[data-life="rush-skip"]')) { await once('rush'); await press(page, '[data-life="rush-skip"]'); await page.waitForTimeout(600); continue }
+    if (await visible(page, '[data-life="rush-back"]')) { await press(page, '[data-life="rush-back"]'); await page.waitForTimeout(600); continue }
     if (await visible(page, '[data-life="time-card"]')) { await once('time-card'); await page.waitForTimeout(300); continue }
     if (await visible(page, '[data-life="envelope"]')) { await once('envelope'); await press(page, '[data-life="envelope"]'); await page.waitForTimeout(9000); await once('letter'); continue }
     if (await visible(page, '[data-life="phone"]')) await page.waitForTimeout(4500)
     if (await visible(page, '[data-life="stamp"]')) { await once(`stamp-${stamps++}`); await page.waitForTimeout(400); continue }
     if (await visible(page, '[data-life="live-done"]')) { await once('live-over'); await press(page, '[data-life="live-done"]'); await page.waitForTimeout(300); continue }
     if (await visible(page, '[data-life="live"]')) { await once('live'); for (let i = 0; i < 6; i++) await press(page, '[data-life="live-noise"]'); await page.waitForTimeout(4000); await once('live-later'); await press(page, '[data-life="live-skip"]'); await page.waitForTimeout(500); continue }
-    if (await visible(page, '[data-life="game"]')) { await once(`game-${await page.locator('[data-game]').first().getAttribute('data-game')}`); await page.waitForSelector('[data-life="game-skip"]:not([hidden])', {timeout: 8000}).catch(() => null); await press(page, '[data-life="game-skip"]'); await page.waitForTimeout(250); continue }
+    if (await visible(page, '[data-life="game"]')) { await once(`game-${await page.locator('[data-game]').first().getAttribute('data-game', {timeout: 3000}).catch(() => 'hands')}`); await page.waitForSelector('[data-life="game-skip"]:not([hidden])', {timeout: 8000}).catch(() => null); await press(page, '[data-life="game-skip"]'); await page.waitForTimeout(250); continue }
     if (await visible(page, '[data-life="card-close"]')) { await once('archive'); await press(page, '[data-life="card-close"]'); await page.waitForTimeout(250); continue }
     if (await visible(page, '[data-life="card-next"]')) { await once('prelude'); await press(page, '[data-life="card-next"]'); await page.waitForTimeout(250); continue }
     if (s.phase === 'chapter') { await once('card'); await page.waitForSelector('[data-life="begin-day"]:not([disabled]), [data-life="episode-play"]:not([disabled])', {timeout: 120000}); await press(page, '[data-life="begin-day"], [data-life="episode-play"]'); tried.clear(); exhausted.clear(); lastProgress = Date.now(); await page.waitForTimeout(600); continue }

@@ -97,12 +97,12 @@ export function EpisodeOpen({no, of, age, title, logline, askName, name, onName,
   /** the season's first seconds: messages on a phone, 2026 */
   texts?: {from: string; t: string}[]
   /** the thing out of the box this episode is about */
-  box?: {item: string; line: string} | null
+  box?: {item: string; line: string; img?: string | null} | null
 }) {
   const btn = useRef<HTMLButtonElement | null>(null), field = useRef<HTMLInputElement | null>(null)
   useEffect(() => { (askName ? field.current : btn.current)?.focus({preventScroll: true}) }, [askName])
   return (
-    <section className={s.card} role="dialog" aria-modal="true" aria-labelledby="s1-title" data-life="episode-open" style={{'--s1-after': `${texts.length * 0.9}s`} as React.CSSProperties}>
+    <section className={`${s.card} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="s1-title" data-life="episode-open" style={{'--s1-after': `${texts.length * 0.9}s`} as React.CSSProperties}>
       {texts.length > 0 && (
         <ol className={s.phone} data-life="phone" aria-label={word(copy, 's1.phone', 'Messages')}>
           <li className={s.phoneHead}><span>{texts[0]!.from}</span><span>2026</span></li>
@@ -111,6 +111,7 @@ export function EpisodeOpen({no, of, age, title, logline, askName, name, onName,
       )}
       {box && (
         <div className={s.box} data-life="box">
+          {box.img && <img className={s.boxImg} src={box.img} alt="" width={160} height={160} decoding="async" />}
           <p className={s.boxKick}>{word(copy, 's1.box', 'From the box')}</p>
           <p className={s.boxItem}>{box.item}</p>
           <p className={s.boxLine}>{box.line}</p>
@@ -134,7 +135,7 @@ export function EpisodeOpen({no, of, age, title, logline, askName, name, onName,
 
 /** The end of an episode: what happened (done and missed, in order), what he kept, and what is next. */
 export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, secrets = {found: [], total: 0}, tease = null, letter = null}: {
-  no: number; title: string; ledger: {kind: StampKind; text: string}[]; kept: {name: string; note: string} | null; next: string | null
+  no: number; title: string; ledger: {kind: StampKind; text: string}[]; kept: {name: string; note: string; img?: string | null} | null; next: string | null
   onNext: () => void; last: boolean; copy: Copy
   /** the secrets the interviews told him, out of all this episode holds: the rest are on the roads he did not take */
   secrets?: {found: string[]; total: number}
@@ -150,7 +151,7 @@ export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, s
   // the ledger is read out one row at a time, like a scoreline coming in
   useEffect(() => { if (shown >= ledger.length) return; const t = window.setTimeout(() => setShown(n => n + 1), 380); return () => window.clearTimeout(t) }, [shown, ledger.length])
   return (
-    <section className={s.card} role="dialog" aria-modal="true" aria-labelledby="s1-end" data-life="episode-end">
+    <section className={`${s.card} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="s1-end" data-life="episode-end">
       <p className={s.kick}><b>{word(copy, 's1.episode', 'Episode')} <bdi>{no}</bdi></b> {word(copy, 's1.over', 'is over')}</p>
       <h2 id="s1-end" className={s.big}>{title}</h2>
       {ledger.length > 0 && (
@@ -158,7 +159,7 @@ export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, s
           {ledger.slice(0, shown).map((r, i) => <li key={i} data-kind={r.kind}><span>{r.kind === 'failed' ? word(copy, 's1.stamp.failed', 'Missed it') : r.kind === 'new' ? word(copy, 's1.remember', 'Remember') : word(copy, 's1.stamp.passed', 'Job done')}</span><span>{r.text}</span></li>)}
         </ol>
       )}
-      {kept && <p className={s.log}><b>{word(copy, 'kept', 'Kept')}:</b> {kept.name} — {kept.note}</p>}
+      {kept && <div className={s.kept}>{kept.img && <img className={s.keptImg} src={kept.img} alt="" width={120} height={120} decoding="async" />}<p className={s.log}><b>{word(copy, 'kept', 'Kept')}:</b> {kept.name} — {kept.note}</p></div>}
       {secrets.total > 0 && (
         <div className={s.secrets} data-life="secrets" data-found={secrets.found.length} data-total={secrets.total}>
           <p className={s.secretsHead}><b>{word(copy, 's1.secrets', 'Secrets heard')}</b> <bdi>{secrets.found.length}</bdi>/<bdi>{secrets.total}</bdi></p>
@@ -177,7 +178,7 @@ export function EpisodeEnd({no, title, ledger, kept, next, onNext, last, copy, s
           <p className={s.letterAfter}>{letter.after}</p>
         </div>
       ) : (
-        <button type="button" className={`${s.envelope} min-h-tap`} onClick={() => setOpened(true)} data-life="envelope">{word(copy, 's1.envelope', 'Open the envelope')}</button>
+        <button type="button" className={`${s.envelope} min-h-tap`} onClick={() => setOpened(true)} data-life="envelope"><img className={s.envImg} src="/life/season/box/envelope.webp" alt="" width={72} height={52} decoding="async" />{word(copy, 's1.envelope', 'Open the envelope')}</button>
       ))}
       {!letter && !last && <p className={s.sealed} data-life="sealed">{word(copy, 's1.sealed', 'The envelope stays sealed. Not until the last one.')}</p>}
       {next && <p className={s.next}>{word(copy, 's1.next.episode', 'Next')} · <b>{next}</b></p>}

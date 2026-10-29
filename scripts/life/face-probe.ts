@@ -31,6 +31,7 @@ async function main() {
     const viewport = size === 'phone' ? {width: 390, height: 844} : {width: 1280, height: 800}
     const page = await (await browser.newContext({viewport, deviceScaleFactor: 1})).newPage()
     page.on('pageerror', e => { errors++; console.log('PAGE ERROR', e.message) })
+    page.on('response', r => { if (r.status() >= 400) console.log('HTTP', r.status(), r.url()) })
     page.on('console', m => { if (m.type() === 'warning' || m.type() === 'error') console.log('console', m.type(), m.text().slice(0, 300)) })
     await page.goto(`${base}/life/town/play.html?play=1&q=med&capture=1`, {waitUntil: 'load'})
     await page.waitForFunction(() => (window as unknown as W).__ready, null, {timeout: 240000})
@@ -40,7 +41,7 @@ async function main() {
     for (const id of who) {
       const role = CAST_ROLES.find(r => r.id === id)
       if (!role) { console.log('no role', id); continue }
-      const ok = await page.evaluate(look => (window as unknown as W).__vxPlay.studio({look}), role.look)
+      const ok = await page.evaluate(([look, w]) => (window as unknown as W).__vxPlay.studio({look, who: w}), [role.look, id] as const)
       if (!ok) { console.log('studio refused', id); continue }
       await page.waitForTimeout(2500)
       for (const mood of moods) {
