@@ -8,6 +8,8 @@ const FILL: Record<string, string> = {
   c: 'var(--l-prime)', k: 'var(--l-ink)', w: 'var(--l-paper)', s: 'var(--l-ground)', n: 'var(--l-deep)', m: 'var(--l-mark)',
 }
 
+import {KEEP_SPRITES} from './pixelKeeps'
+
 export const SPRITES = {
   kid: [
     '....kkkkkk....', '...kkkkkkkk...', '...kssssssk...', '...ksksskss...', '...kssssssk...', '....kssssk....', '..kcccccccck..', '.kcccccccccck.',
@@ -24,6 +26,8 @@ export const SPRITES = {
   scarf: [
     '..kkkkkkkkkk..', '.kcccwcccwccck', 'kcccwcccwcccck', 'kkkkkkkkkkkkkk', '...kcwck......', '...kcwck......', '...kcwck......', '...kcwck......', '...kkkkk......',
   ],
+  // the keepsake stickers, drawn with pxl (scripts/life/sprites/keeps.px.js → pixelKeeps.ts)
+  ...KEEP_SPRITES,
 } as const
 
 export type SpriteName = keyof typeof SPRITES
@@ -38,5 +42,10 @@ export function PixelSprite({name, scale = 4, className}: {name: SpriteName; sca
 }
 
 const FALLBACK: SpriteName[] = ['cup', 'ball', 'scarf']
-/** a keepsake with no painted prop still gets a sticker: a stable pick from its id */
-export const spriteForKeep = (id: string): SpriteName => FALLBACK[[...id].reduce((a, c) => a + c.charCodeAt(0), 0) % FALLBACK.length]!
+/** what the keepsake IS decides its sticker (a shirt is never drawn as a cup); only a thing with no kind falls back to a stable pick */
+const KIND: [RegExp, SpriteName][] = [
+  [/shirt|jacket/, 'shirt'], [/ticket|stub|receipt|card/, 'ticket'], [/key/, 'key'], [/pin|badge|patch|armband/, 'pin'],
+  [/album|shelf|book|programme/, 'album'], [/coin|earning|money/, 'coins'], [/scarf|cloth|colour|flag|thread|fence/, 'scarf'],
+  [/note|page|list|letter|diary|map|calendar|plan|ledger|label|napkin|sheet|sketch|slip|tally|score|told|picture|scrap/, 'note'],
+]
+export const spriteForKeep = (id: string): SpriteName => KIND.find(([re]) => re.test(id))?.[1] ?? FALLBACK[[...id].reduce((a, c) => a + c.charCodeAt(0), 0) % FALLBACK.length]!

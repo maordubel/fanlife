@@ -3,6 +3,12 @@
  * Woken by the first gesture, silent until then, and off the moment the supporter says so.
  */
 const KEY = 'fan-life:life:sound'
+/** the chirp-made cues and the level each plays at (files are peak-normalised, like the recordings) */
+const CHIRP: Record<string, number> = {
+  'phone-text': 0.42, 'box-lid': 0.5, flash: 0.5, rewind: 0.42, 'stamp-pass': 0.5, 'stamp-miss': 0.5, 'stamp-new': 0.48,
+  secret: 0.42, 'envelope-tear': 0.5, letter: 0.38, 'clock-hot': 0.5, 'clock-tick': 0.28, ledger: 0.28, fuse: 0.3,
+  clang: 0.55, pickup: 0.42, objective: 0.45, caught: 0.5, spray: 0.4,
+}
 
 export class LifeSound {
   private ctx: AudioContext | null = null
@@ -33,7 +39,7 @@ export class LifeSound {
         this.noise = buf
       }
       if (this.ctx.state === 'suspended') void this.ctx.resume()
-      this.preload(['door', 'page', 'coins', 'tick', 'step-floor-1', 'step-floor-2', 'step-floor-3', 'step-street-1', 'step-street-2', 'step-street-3', 'reveal'])
+      this.preload(['door', 'page', 'coins', 'tick', 'step-floor-1', 'step-floor-2', 'step-floor-3', 'step-street-1', 'step-street-2', 'step-street-3', 'reveal', ...Object.keys(CHIRP)])
     } catch { this.ctx = null; this.bedGain = null }
   }
 
@@ -123,7 +129,11 @@ export class LifeSound {
       case 'bounce': return this.sample('ball-bounce', 0.5, jit)
       case 'bell': return this.sample('bell-shop', 0.5)
       case 'heart': return this.sample('heart', 0.5)
-      default: return false
+      default: {
+        // Season One and RUSH cues synthesised with chirp (scripts/life/audio/life-cues.cx.js): one file each, named as the cue
+        const g = CHIRP[cue]
+        return g === undefined ? false : this.sample(cue, g, cue === 'ledger' || cue === 'clock-tick' || cue === 'pickup' ? jit : 1)
+      }
     }
   }
 

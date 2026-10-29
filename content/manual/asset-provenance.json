@@ -1520,6 +1520,41 @@
       "noteHe": "שישים ושלושה צלילים שסונתזו כאן מרעש וסינוסים: צעדים, דלתות, שריקות, דרבוקה, לחיצות. ב־6.9.2026 אמרת \"כל הסאונדים האחרים נשמעים נורא ואיום\" וצדקת, ולכן אף אחד מהם אינו מתנגן: רשימת ההיתר ב־lib/life/runtime/audio.ts מכילה רק את שתים־עשרה ההקלטות שלך. הקבצים נשארים בדיסק כדי שביום שתקליט דלת אמיתית יהיה לה שם מוכן."
     },
     {
+      "key": "sfx-chirp",
+      "kind": "audio",
+      "origin": "procedural",
+      "folder": "public/life/sfx",
+      "match": [
+        "phone-text.*",
+        "box-lid.*",
+        "flash.*",
+        "rewind.*",
+        "stamp-pass.*",
+        "stamp-miss.*",
+        "stamp-new.*",
+        "secret.*",
+        "envelope-tear.*",
+        "letter.*",
+        "clock-hot.*",
+        "clock-tick.*",
+        "ledger.*",
+        "fuse.*",
+        "clang.*",
+        "pickup.*",
+        "objective.*",
+        "caught.*",
+        "spray.*"
+      ],
+      "sourceUrl": null,
+      "sourceTitle": "סונתז ב־chirp מתוך scripts/life/audio/life-cues.cx.js, קודד ב־scripts/life/audio/encode-cues.py, 29.10.2026",
+      "treatment": [
+        "normalise",
+        "encode-ogg-m4a"
+      ],
+      "confidence": 2,
+      "noteHe": "צלילי Season One (טלפון, הקופסה, פלאש, הריוויינד, חותמות, סוד, המעטפה, השעון, המצת) ו־RUSH (פח, איסוף, משימה, נתפס, ספריי). אין בהם הקלטה: הכול סינתזה מקוד שבריפו, ולכן אין זכויות לסדר."
+    },
+    {
       "key": "sfx-index",
       "kind": "generated",
       "origin": "procedural",
