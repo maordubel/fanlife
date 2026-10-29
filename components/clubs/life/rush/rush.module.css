@@ -158,3 +158,13 @@
 .objective { border: 2px solid var(--mag-ink); border-block-end: 4px solid var(--r-prime); }
 .objective b { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; letter-spacing: .02em; }
 .extras b { font-family: var(--r-goal); font-weight: 400; }
+
+/* the briefing over the place itself: no card — the crane shows where you are, the ticket sits low */
+.cover[data-scene='true'] { place-items: end center; background: linear-gradient(180deg, transparent 0 38%, color-mix(in srgb, var(--r-deep) 72%, transparent) 78%); }
+@media (min-width: 900px) { .cover[data-scene='true'] { place-items: center end; padding-inline-end: 5vw; background: linear-gradient(90deg, transparent 0 40%, color-mix(in srgb, var(--r-deep) 70%, transparent)); } }
+/* 3 · 2 · 1 · GO: one number at a time, slammed in, while the camera comes down */
+.count { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; z-index: 3; }
+.count span { font-family: var(--r-goal); font-size: clamp(5rem, 26vw, 12rem); line-height: 1; color: var(--r-light); text-shadow: 6px 6px 0 var(--r-ink), -2px -2px 0 var(--r-prime); animation: rushCount .6s cubic-bezier(.2,1.6,.4,1) both; }
+.count[data-go='true'] span { color: var(--r-prime); text-shadow: 6px 6px 0 var(--r-ink); font-size: clamp(4rem, 20vw, 10rem); }
+@keyframes rushCount { 0% { transform: scale(2.4) rotate(-6deg); opacity: 0; } 35% { transform: scale(.92) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: .92; } }
+@media (prefers-reduced-motion: reduce) { .count span { animation: none; } }

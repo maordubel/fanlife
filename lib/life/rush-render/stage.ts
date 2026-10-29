@@ -19,12 +19,13 @@ import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/lif
 import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
 import {dressCity} from './city'
+import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
 import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
-export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number}
+export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean}
 export type Stage = {
   render(sim: Sim, view: View, dt: number): void
   resize(w: number, h: number): void
@@ -113,7 +114,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /* sky, light, weather */
   const skyTop = night ? '#03050b' : '#4f7fb8', skyMid = night ? '#121a33' : '#a9c4dc', glowC = night ? '#2a1a33' : '#f3d9b8'
-  scene.fog = new THREE.FogExp2(night ? '#0b0f1d' : '#b8c8d6', level.place === 'road' ? 0.0035 : 0.0075)
+  scene.fog = new THREE.FogExp2(night ? '#0b0f1d' : '#b8c8d6', level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
   const skyMat = keep(new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: {uTop: {value: C(skyTop)}, uMid: {value: C(skyMid)}, uGlow: {value: C(glowC)}},
     vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
@@ -372,6 +373,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     addLamps(level.half - 1, 8, fz + 6, 14)
     // the bowl stands well behind the fence: a 78 m shell placed close would swallow the yard
     addGround(fz - 100, fz - 6)
+  } else if (level.place === 'flat') {
+    // the flat is dressed once the people are known (below): it seats Dad and sends Mum and the cat on their rounds
   } else {
     // the crowd: a terrace in rising bands, crush barriers, the floodlights
     const pitchC = bannedColour('#2f5a2c', skin) ? '#2a2d36' : '#2f5a2c'
@@ -463,7 +466,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const crowd = tParts.map(m => {
     const mat = (m.material as THREE.MeshStandardMaterial).clone(); if (recolour.has(m.userData.role)) mat.color.set('#ffffff')
     keep(mat)
-    const im = new THREE.InstancedMesh(m.geometry, mat, N); im.frustumCulled = false; im.castShadow = !lite; scene.add(im); return im
+    const im = new THREE.InstancedMesh(m.geometry, mat, N); im.count = people.length; im.frustumCulled = false; im.castShadow = !lite; scene.add(im); return im
   })
   const tops = allowed(TOPS, skin)
   /** a known person keeps his own hair colour; grey hair is the palette's grey, so the clue matches what is drawn */
@@ -484,6 +487,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const rlook = (o: Partial<Look> = {}): Look => ({tone: Math.floor(rnd() * 6), hair: Math.floor(rnd() * 6), top: Math.floor(rnd() * 6), pants: Math.floor(rnd() * 5), kit: rnd() < 0.8, cap: rnd() < 0.2, scarf: true, beard: rnd() < 0.2, size: 0.95 + rnd() * 0.1, ...o})
   const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => figOf({kit: L.kit, scarf: L.scarf, cap: L.cap, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK, ...o})
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
+  const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin),
+    person: f => figOf({kit: false, longSleeves: true, hairStyle: f.curly ? 'curly' : 'short', top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94})}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -570,9 +575,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   let trailT = 0
 
   // stewards and lookouts: their own figures, in a hi-vis vest (a lookout in black)
-  const patrolFigs = level.patrols.map(p => { const f = figOf({kit: false, vest: p.role === 'steward', top: '#22262f', longSleeves: true, pants: '#22262f', hair: HAIR[2], hairStyle: 'short', skinTone: SKIN_TONES[3]}); scene.add(f); return f })
+  const patrolFigs = (level.place === 'flat' ? [] : level.patrols).map(p => { const f = figOf({kit: false, vest: p.role === 'steward', top: '#22262f', longSleeves: true, pants: '#22262f', hair: HAIR[2], hairStyle: 'short', skinTone: SKIN_TONES[3]}); scene.add(f); return f })
   const coneMat = keep(new THREE.MeshBasicMaterial({color: '#f3efe6', transparent: true, opacity: 0.12, depthWrite: false, side: THREE.DoubleSide}))
-  const cones = level.patrols.map(p => {
+  const cones = (level.place === 'flat' ? [] : level.patrols).map(p => {
     const g = keep(new THREE.CircleGeometry(p.range, 24, Math.PI / 2 - p.fov / 2, p.fov)); const m = new THREE.Mesh(g, coneMat.clone()); keep(m.material as THREE.Material)
     m.rotation.x = -Math.PI / 2; scene.add(m); return m
   })
@@ -687,7 +692,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     beacon.visible = halo.visible = !!target && !(level.place === 'crowd' && curStep?.kind === 'goal')
     if (target) {
       const bx = curStep?.kind === 'stop' ? curStep.x + 0.4 : target.x
-      beacon.position.set(bx, 13, target.z); halo.position.set(bx, 0.04, target.z)
+      beacon.position.set(bx, level.place === 'flat' ? 2.1 : 13, target.z); beacon.scale.y = level.place === 'flat' ? 0.16 : 1; halo.position.set(bx, 0.04, target.z)
       const pulse = 1 + Math.sin(t * 3.2) * 0.12; halo.scale.set(pulse * (curStep?.kind === 'stop' ? 2.2 : 1), 1, pulse * (curStep?.kind === 'stop' ? 6 : 1))
       ;(beacon.material as THREE.MeshBasicMaterial).opacity = 0.32 + Math.sin(t * 2) * 0.08
     }
@@ -739,8 +744,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       })
     }
 
+    flat?.update(sim, t, dt, view.ending, view.outcome)
     // stewards and the ground they can see
-    level.patrols.forEach((p, i) => {
+    if (level.place !== 'flat') level.patrols.forEach((p, i) => {
       const at = patrolLook(level, sim, i), f = patrolFigs[i]!
       f.position.set(at.x, 0, at.z); f.rotation.y = at.face
       pose(f, {speed: p.v, talk: sim.seenBy === i && sim.seen > 0.4}, t, dt)
@@ -756,7 +762,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       hero.position.set(sim.x, 0, sim.z); hero.rotation.y = heading
       const carrying = (level.verb === 'carry' && sim.holding) || (level.home !== null && sim.back)
       if (view.ending) { hero.rotation.y += (0 - hero.rotation.y) * 0.1; pose(hero, view.outcome === 'slip' ? {speed: 0, knees: true, panting: true, effort: 0.6} : {speed: 0, celebrate: true, joy: 1}, t, dt) }
-      else if (view.intro > 0) pose(hero, {speed: 0, joy: 0.4, ticket: level.verb === 'run'}, t, dt)
+      else if (view.intro > 0 || view.brief) pose(hero, {speed: 0, joy: 0.4, ticket: level.verb === 'run' && level.place !== 'flat'}, t, dt)
       else pose(hero, {speed: sim.stagger > 0 ? 1 : sp, effort: sim.sprinting ? 0.9 : tired ? 0.7 : Math.min(sp / 9, 0.5), panting: tired, stumble: sim.stagger > 0.5, lean: sim.sprinting ? 0.1 : 0, carry: carrying, crouch: level.place === 'yard' && !sim.sprinting ? 0.55 : 0}, t, dt)
       const hd = hero.userData as FigureData
       if (hd.J.roll) hd.J.roll.visible = level.verb === 'carry' && sim.holding
@@ -792,7 +798,26 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     shake = Math.max(0, shake - dt * 1.5)
     const jx = (Math.random() - 0.5) * shake * shake, jy = (Math.random() - 0.5) * shake * shake
     const breath = reduced ? 0 : Math.sin(t * (tired ? 7 : 2.2)) * (tired ? 0.03 : 0.008)
-    if (view.ending && !heroCar) {
+    if (view.brief) {
+      // the briefing: a slow crane round the place, high, so you see where you are before you are in it
+      const a = t * 0.12, R = level.place === 'flat' ? 15 : 22, cx = level.place === 'flat' ? (level.bounds.x0 + level.bounds.x1) / 2 : sim.x, cz = level.place === 'flat' ? (level.bounds.z0 + level.bounds.z1) / 2 : sim.z - 10
+      camPos.set(cx + Math.sin(a) * R, level.place === 'flat' ? 17 : 14, cz + Math.cos(a) * R)
+      cam.position.copy(camPos); camLook.set(cx, 0, cz); cam.lookAt(camLook)
+      cam.fov += (50 - cam.fov) * Math.min(1, dt * 3)
+    } else if (level.place === 'flat' && !heroCar) {
+      // home: from above, the ceiling off, the way up the screen always the same (the stick never turns with him);
+      // the intro comes down from the crane, the ending leans in on his face
+      const k = view.ending ? Math.min(view.endT / 1.2, 1) : 0, e = k * k * (3 - 2 * k)
+      const drop = Math.max(0, view.intro) / 2.4
+      // the distance that shows about a room's width across the screen, a phone held upright or a monitor
+      const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(cam.fov) / 2) * cam.aspect), want = cam.aspect < 1 ? 7.5 : 13
+      const dist = Math.min(22, Math.max(9, want / 2 / Math.tan(hf / 2))) * (1 - e * 0.45) + drop * drop * 12
+      const high = dist * 0.86, back = dist * 0.5
+      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
+      cam.position.copy(camPos)
+      camLook.lerp(new THREE.Vector3(sim.x, 0.5 + e * 0.6, sim.z - 0.6), Math.min(1, dt * 6)); cam.lookAt(camLook)
+      const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
+    } else if (view.ending && !heroCar) {
       const k = Math.min(view.endT / 1.2, 1), e = k * k * (3 - 2 * k)
       camPos.lerp(tmp.set(sim.x + 0.6, child ? 1.2 : 1.55, sim.z - 2.4), Math.min(1, dt * (2 + e * 4)))
       cam.position.copy(camPos)
@@ -808,7 +833,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const fx = Math.sin(heading), fz = Math.cos(heading)
       // over the right shoulder, behind the way he faces
       // his right hand is (−fz, fx)
-      const target = tmp.set(sim.x - fx * back - fz * side + jx, high + jy + breath, sim.z - fz * back + fx * side)
+      const drop = Math.max(0, view.intro) / 2.4
+      const target = tmp.set(sim.x - fx * (back + drop * 6) - fz * side + jx, high + jy + breath + drop * drop * 10, sim.z - fz * (back + drop * 6) + fx * side)
       camPos.lerp(target, Math.min(dt * 5, 1)); cam.position.copy(camPos)
       camLook.lerp(new THREE.Vector3(sim.x + fx * 7 - fz * side * 0.4, 1.45, sim.z + fz * 7 + fx * side * 0.4), Math.min(dt * 6, 1)); cam.lookAt(camLook)
       const fov = (view.intro > 0 ? 48 : 54) + Math.min(sp, 10) * 1.2; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)

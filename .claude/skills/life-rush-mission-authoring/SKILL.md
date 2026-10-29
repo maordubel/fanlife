@@ -34,6 +34,12 @@ Place things on the near side-street pavement (`sidePave`) or the main pavements
 A script asks for missions only on EXISTING options (a new option multiplies the exhaustive LIFE sim).
 Briefing cards: `public/life/rush/cards/<template>.webp` (`cards.ts`), grey, fiction, English title printed in.
 
+## 2c. A run at home (place `flat`, rule 130)
+`flat-run` builds `lib/life/rush/flat.ts`: rooms + `FLAT_DOORS` (walk through by the two approach points — `flatVia`),
+furniture `blocks`, toy `trips` (fall only at a sprint), Mum and the cat as patrols (`role: 'mum' | 'cat'`), voices on
+a time (`Voice.t`). A new home mission reuses this place; a new room is a row in `FLAT_ROOMS` + a door, and the bot test
+must still win every seed. The camera there never turns with the stick.
+
 ## 3. Needs — what the mission asks of each club's archive
 For each fact the mission prints or depends on, add a `Need`:
 - `of: {anchor: [kinds]}` (match, home, away, derby, final, europe, title, relegation, promotion, ground, founding)

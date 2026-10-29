@@ -10,12 +10,14 @@
  *  · `street` — run and carry: a city street to the ground, crossings with traffic, people walking the same way;
  *  · `road`   — drive: a long road with traffic in your lanes and police checks that want you slow;
  *  · `yard`   — sneak: the outside of the ground, a fence, stewards (or their lookouts) on their rounds;
- *  · `crowd`  — find: a terrace, a plaza or a pitch full of people, one of them the one you came for.
+ *  · `crowd`  — find: a terrace, a plaza or a pitch full of people, one of them the one you came for;
+ *  · `flat`   — a run at home: rooms, doors, furniture, a cat and a mother in the way (`flat.ts`).
  *
  * Distances are metres, times seconds. Forward is −z.
  */
 import type {KnownLook, MissionSpec, Verb} from './spec'
 import {applyQuest} from './quest'
+import {flatLevel, flatVia} from './flat'
 
 /* ───────────── seeded randomness ───────────── */
 
@@ -31,7 +33,7 @@ export function rng(seed: number): () => number {
 
 /* ───────────── what is on the level ───────────── */
 
-export type Place = 'street' | 'road' | 'yard' | 'crowd'
+export type Place = 'street' | 'road' | 'yard' | 'crowd' | 'flat'
 
 /** how a person looks: indexes into the renderer's palettes, so the sim never carries a colour */
 export type Look = {tone: number; hair: number; top: number; pants: number; kit: boolean; cap: boolean; scarf: boolean; beard: boolean; size: number; /** a known person's own colours, over the palette */ hex?: KnownLook['hex']; grey?: boolean}
@@ -43,7 +45,7 @@ export type Walker = {x: number; z0: number; v: number; span: readonly [number, 
 /** somebody standing: a fan at the gate, a face in the crowd */
 export type Stander = {x: number; z: number; face: number; look: Look; role: 'fan' | 'rival'}
 /** a steward (or a rival group's lookout) walking a round and looking where he walks */
-export type Patrol = {pts: readonly (readonly [number, number])[]; v: number; range: number; fov: number; role: 'steward' | 'lookout'}
+export type Patrol = {pts: readonly (readonly [number, number])[]; v: number; range: number; fov: number; role: 'steward' | 'lookout' | 'mum' | 'cat'}
 /** what a find mission is looking for */
 export type Target = {x: number; z: number; kind: 'person' | 'spot'; look: Look | null; clues: Clue[]}
 export type Clue = 'cap' | 'scarf' | 'kit' | 'plain' | 'beard' | 'tall' | 'grey' | 'black' | 'barrier' | 'light'
@@ -52,7 +54,7 @@ export type Thrower = {x: number; z: number; every: number; offset: number}
 /** a stretch of road where the police want you slow */
 export type Check = {z0: number; z1: number; max: number}
 /** a line the supporter thinks, once, when the goal is this far away */
-export type Voice = {at: number; key: string}
+export type Voice = {at: number; key: string; /** said at this many seconds into the run instead of by distance (a shout from the next room) */ t?: number}
 
 /* ───────────── the quest layer (RUSH 2): steps, things on the ground, places to stop ───────────── */
 
@@ -85,7 +87,7 @@ export type Step = {
   /** talking to him gives one more clue (find) */
   reveals: boolean
 }
-export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape'
+export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape' | 'battery'
 /** something on the ground: required by a step, or an extra (`step: null`) that buys a few seconds */
 export type Pickup = {x: number; z: number; kind: PickupKind; step: number | null}
 /** a knot of supporters singing: stand in it a moment and the song carries you (an extra) */
@@ -93,6 +95,12 @@ export type Ring = {x: number; z: number; r: number}
 /** a bin, a shutter: bang it (act) and every steward near turns his head to it */
 export type Noise = {x: number; z: number}
 /** somebody who walks with you: your father, your child, a visitor, an old man. Too far and he stops. */
+/** a room of a home (place `flat`), and what its floor is */
+export type Room = {id: string; rect: Rect; floor: 'wood' | 'tile' | 'carpet'}
+/** furniture: nobody walks through it (a body's width kept off it) */
+export type Block = Rect & {kind: string; h: number}
+/** a toy on the floor: walk over it and nothing happens; sprint over it and you go flying */
+export type Trip = {x: number; z: number; kind: 'blocks' | 'car' | 'ball'}
 export type Escort = {who: 'dad' | 'child' | 'visitor' | 'elder' | 'friend'; look: Look; pace: number; leash: number}
 
 export type Level = {
@@ -139,6 +147,12 @@ export type Level = {
   surges: Surge[]
   /** how well the feet grip: 1 dry, less in rain (the time it takes to get up to pace, never the pace itself) */
   grip: number
+  /** a home (place `flat`): its rooms, its furniture, the toys on its floor */
+  rooms: Room[]
+  blocks: Block[]
+  trips: Trip[]
+  /** every pace in this level is this share of the verb's own (a flat is not a street: 1 elsewhere) */
+  pace: number
 }
 
 export type FavourKind = 'lost-kid' | 'bag'
@@ -198,12 +212,13 @@ export function look(r: () => number, o: Partial<Look> = {}): Look {
 const SLACK = [1.95, 1.65, 1.45] as const
 
 function placeOf(spec: MissionSpec): Place {
+  if (spec.template === 'flat-run') return 'flat'
   return spec.verb === 'drive' ? 'road' : spec.verb === 'sneak' ? 'yard' : spec.verb === 'find' ? 'crowd' : 'street'
 }
 
-type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids' | 'favours' | 'surges' | 'grip'> & Partial<Pick<Level, 'areas' | 'side'>>
+type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids' | 'favours' | 'surges' | 'grip' | 'rooms' | 'blocks' | 'trips' | 'pace'> & Partial<Pick<Level, 'areas' | 'side'>>
 function finish(l: Base): Level {
-  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, favours: [], surges: [], grip: 1, ...l, timeScale: 1}
+  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, favours: [], surges: [], grip: 1, rooms: [], blocks: [], trips: [], pace: 1, ...l, timeScale: 1}
 }
 
 function street(spec: MissionSpec, r: () => number): Level {
@@ -341,9 +356,10 @@ function crowd(spec: MissionSpec, r: () => number): Level {
 export function buildLevel(spec: MissionSpec): Level {
   const r = rng(spec.seed ^ 2654435769)
   const p = placeOf(spec)
-  const base = p === 'road' ? road(spec, r) : p === 'yard' ? yard(spec, r) : p === 'crowd' ? crowd(spec, r) : street(spec, r)
+  const base: Level = p === 'flat' ? {...flatLevel(spec, r), timeScale: 1} : p === 'road' ? road(spec, r) : p === 'yard' ? yard(spec, r) : p === 'crowd' ? crowd(spec, r) : street(spec, r)
   if (!base.areas.length) base.areas = [{...base.bounds}]
-  applyQuest(base, spec, rng(spec.seed ^ 2654435761))
+  // a home carries its own steps (flat.ts); every other place gets its quest here
+  if (p !== 'flat') applyQuest(base, spec, rng(spec.seed ^ 2654435761))
   conditions(base, spec, rng(spec.seed + 104729))
   const plan = planRoute(base)
   // a surge on the way costs time it would be unfair to bill: the clock carries it
@@ -381,7 +397,10 @@ function conditions(l: Level, spec: MissionSpec, r: () => number): void {
 
 /* ───────────── getting about: one routing rule shared by the planner and the bot ───────────── */
 
-export const inArea = (l: Pick<Level, 'areas'>, x: number, z: number): boolean => l.areas.some(a => x >= a.x0 && x <= a.x1 && z >= a.z0 && z <= a.z1)
+/** a body's width kept off the furniture */
+export const BLOCK_PAD = 0.3
+export const inArea = (l: Pick<Level, 'areas'> & Partial<Pick<Level, 'blocks'>>, x: number, z: number): boolean =>
+  l.areas.some(a => x >= a.x0 && x <= a.x1 && z >= a.z0 && z <= a.z1) && !(l.blocks ?? []).some(b => x > b.x0 - BLOCK_PAD && x < b.x1 + BLOCK_PAD && z > b.z0 - BLOCK_PAD && z < b.z1 + BLOCK_PAD)
 
 /** the side street a point is in (its crossing), or null on the main street */
 export function sideOf(l: Level, x: number, z: number): number | null {
@@ -392,6 +411,7 @@ export function sideOf(l: Level, x: number, z: number): number | null {
 
 /** the next point to walk to on the way from `a` to `b`: out of one side street onto the main street, then into the other */
 export function viaPoint(l: Level, a: {x: number; z: number}, b: {x: number; z: number}): {x: number; z: number} {
+  if (l.place === 'flat') return flatVia(a, b)
   if (l.place !== 'street' || !l.side) return b
   const sa = sideOf(l, a.x, a.z), sb = sideOf(l, b.x, b.z)
   const sameSide = sa !== null && sa === sb && Math.sign(a.x) === Math.sign(b.x)
@@ -405,7 +425,7 @@ export function viaPoint(l: Level, a: {x: number; z: number}, b: {x: number; z: 
 /** walking distance through the via points */
 export function routeMetres(l: Level, a: {x: number; z: number}, b: {x: number; z: number}): number {
   let p = a, m = 0
-  for (let i = 0; i < 4; i++) { const n = viaPoint(l, p, b); m += Math.hypot(n.x - p.x, n.z - p.z); p = n; if (n === b) break }
+  for (let i = 0; i < 8; i++) { const n = viaPoint(l, p, b); m += Math.hypot(n.x - p.x, n.z - p.z); p = n; if (n === b) break }
   return m + Math.hypot(b.x - p.x, b.z - p.z)
 }
 
@@ -427,7 +447,7 @@ const PACE_PLAN: Record<Verb, number> = {run: 6.2, carry: 4.6, sneak: 1.6, find:
 export function planRoute(l: Level): {metres: number; seconds: number} {
   let at = {...l.start}, metres = 0, seconds = 0, escort = false
   l.steps.forEach((st, i) => {
-    const pace = Math.min(PACE_PLAN[l.verb], escort && l.escort ? l.escort.pace : 99)
+    const pace = Math.min(PACE_PLAN[l.verb] * l.pace, escort && l.escort ? l.escort.pace : 99)
     for (const p of stepPoints(l, i, at)) { const d = l.place === 'road' ? Math.abs(p.z - at.z) : routeMetres(l, at, p); metres += d; seconds += d / pace; at = p }
     if (st.kind === 'talk') seconds += 1.6
     if (st.kind === 'stop') seconds += st.hold + 7

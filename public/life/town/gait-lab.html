@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>gait lab</title><style>html,body{margin:0;background:#20242c}</style></head><body>
+<script src="/life/voxel/three.r128.min.js"></script>
+<script src="/life/town/people.js"></script>
+<script>
+// QA only: one person in profile, posed at one phase of the captured walk or run (not linked from anywhere).
+// ?w=0..1 (phase of the stride) · run=0..1 · age · g=f · drawn=1 (the old drawn cycle, for comparison)
+var Q=new URLSearchParams(location.search),T=THREE;
+var ren=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});ren.setSize(innerWidth,innerHeight);ren.outputEncoding=T.sRGBEncoding;document.body.appendChild(ren.domElement);
+var sc=new T.Scene();sc.background=new T.Color('#3a3f4a');var cam=new T.PerspectiveCamera(30,innerWidth/innerHeight,.01,50);
+sc.add(new T.HemisphereLight('#ffffff','#556',1.1));var d=new T.DirectionalLight('#fff',1.4);d.position.set(2,3,3);sc.add(d);
+var fl=new T.Mesh(new T.PlaneGeometry(6,6),new T.MeshStandardMaterial({color:'#4a505c'}));fl.rotation.x=-Math.PI/2;sc.add(fl);
+function drawn(u,w){var ar=u.arms,lg=u.legs;lg[0].h.rotation.x=Math.sin(w)*.55;lg[1].h.rotation.x=-Math.sin(w)*.55;lg[0].kn.rotation.x=Math.max(0,-Math.sin(w+.6))*.9;lg[1].kn.rotation.x=Math.max(0,Math.sin(w+.6))*.9;ar[0].sh.rotation.x=-Math.sin(w)*.5;ar[1].sh.rotation.x=Math.sin(w)*.5;u.hips.position.y=.95+Math.abs(Math.sin(w))*.035;u.torso.rotation.y=Math.sin(w)*.08}
+function go(){PEOPLE.load().then(function(){var tries=0;(function wait(){if(!PEOPLE.mocap&&tries++<50)return setTimeout(wait,100);
+ var g=PEOPLE.make({age:Number(Q.get('age')||35),sex:Q.get('g')==='f'?'f':'m',top:'#3d4558',skin:'#c99470',_id:'lab'},{own:function(m){return m}});sc.add(g);
+ var u=g.userData;u.o=u.o||{};u.o.run=Number(Q.get('run')||0);var w=Number(Q.get('w')||0)*Math.PI*2;
+ for(var i=0;i<6;i++){if(Q.get('drawn'))drawn(u,w);else PEOPLE.gait(u,w,1,.08);PEOPLE.sync(g,i*.03,.03)}
+ var v=Q.get('view')||'side';if(v==='front'){cam.position.set(0,1,4.2);cam.lookAt(0,.9,0)}else{cam.position.set(4.2,1,0);cam.lookAt(0,.9,0)}
+ g.updateMatrixWorld(true);ren.render(sc,cam);window.__done=true})()})}go();
+</script></body></html>

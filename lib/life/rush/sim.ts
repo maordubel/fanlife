@@ -19,7 +19,7 @@ export type Input = {x: number; z: number; sprint: boolean; act: boolean}
 export const IDLE: Input = {x: 0, z: 0, sprint: false, act: false}
 
 export type SimEvent =
-  | {k: 'hit'; by: 'car' | 'throw' | 'police' | 'shove'}
+  | {k: 'hit'; by: Knock}
   | {k: 'caught'}
   | {k: 'favour'; kind: FavourKind; bonus: number}
   | {k: 'surge'}
@@ -42,6 +42,8 @@ export type SimEvent =
   /** at the gate with a step still open */
   | {k: 'notyet'}
 
+/** what can knock him: on the street, and at home (a toy underfoot, the cat, Mum in the hall) */
+export type Knock = 'car' | 'throw' | 'police' | 'shove' | 'trip' | 'cat' | 'mum'
 export type Throw = {x0: number; z0: number; x: number; z: number; t0: number; t1: number}
 export type EscortState = {x: number; z: number; heading: number; speed: number; lost: boolean}
 
@@ -98,6 +100,8 @@ export type Sim = {
   /** the good turns done (RUSH 4), and the surges already announced */
   favoured: boolean[]
   surged: boolean[]
+  /** the last time something at home knocked him (a toy, the cat, Mum): never twice in one stumble */
+  bumpAt: number
 }
 
 export function startSim(level: Level, assist = false): Sim {
@@ -109,7 +113,7 @@ export function startSim(level: Level, assist = false): Sim {
     step: 0, got: level.pickups.map(() => false), ringT: level.rings.map(() => 0), ringDone: level.rings.map(() => false),
     extras: 0, chants: 0, asked: 0, holdT: 0, noise: null, esc: null, notyetAt: -9, missed: 0,
     lost: 0, streak: 0, streakAt: -99, streakBest: 0, escLost: 0,
-    favoured: level.favours.map(() => false), surged: level.surges.map(() => false),
+    favoured: level.favours.map(() => false), surged: level.surges.map(() => false), bumpAt: -9,
   }
 }
 
@@ -120,7 +124,7 @@ const PACE: Record<Level['verb'], [number, number, number]> = {
   run: [6.2, 9.4, 4.6], carry: [4.6, 6.4, 3.4], sneak: [3.2, 6, 2.6], find: [4.5, 7, 3.6], drive: [19, 26, 19],
 }
 /** a penalty in GAME seconds: what each knock costs on the clock */
-export const COST = {car: 9, throw: 8, police: 24, shove: 5, caught: 24, wrong: 12, missed: 20} as const
+export const COST = {car: 9, throw: 8, police: 24, shove: 5, caught: 24, wrong: 12, missed: 20, trip: 3, cat: 3, mum: 4} as const
 /** what an extra buys, in GAME seconds */
 export const BONUS = {pickup: 5, chant: 8} as const
 /** a run of extras: each one taken within `gap` seconds of the last adds `step` more, up to `max` in a row */
@@ -131,8 +135,8 @@ function charge(s: Sim, n: number) { if (s.assist) return; s.clock -= n; s.lost 
 /** how long somebody looks where a bin was banged, and how far the bang carries */
 const NOISE = {seconds: 3.5, reach: 22, arm: 1.8, again: 4} as const
 
-function knock(s: Sim, level: Level, by: 'car' | 'throw' | 'police' | 'shove', away: {x: number; z: number}) {
-  s.stagger = by === 'police' ? 2.4 : by === 'shove' ? 0.5 : 0.9
+function knock(s: Sim, level: Level, by: Knock, away: {x: number; z: number}) {
+  s.stagger = by === 'police' ? 2.4 : by === 'shove' || by === 'mum' ? 0.5 : by === 'trip' || by === 'cat' ? 0.7 : 0.9
   s.hits++
   charge(s, COST[by])
   const d = Math.hypot(s.x - away.x, s.z - away.z) || 1
@@ -196,7 +200,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
   s.events = []
   if (s.ended) return s
   s.t += dt
-  const [walk, sprint, tired] = PACE[level.verb]
+  const [walk, sprint, tired] = PACE[level.verb].map(v => v * level.pace) as [number, number, number]
   let ix = input.x, iz = input.z
   const il = Math.hypot(ix, iz)
   if (il > 1) { ix /= il; iz /= il }
@@ -270,6 +274,23 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
       const ox = p.x + dx / d * 0.6, oz = p.z + dz / d * 0.6
       if (inArea(level, ox, oz)) { s.x = ox; s.z = oz }
       if (p.role === 'rival' && s.stagger <= 0 && (level.verb === 'carry' || level.verb === 'sneak')) knock(s, level, 'shove', p)
+    }
+  }
+
+  // at home: the cat and Mum are in the way — brush past at a walk, but sprint into them and down you go;
+  // a toy is nothing underfoot at a walk and a fall at a sprint
+  if (level.place === 'flat') {
+    for (const p of level.patrols) {
+      const at = patrolAt(p, s.t), dx = s.x - at.x, dz = s.z - at.z, d = Math.hypot(dx, dz), rr = p.role === 'cat' ? 0.5 : 0.62
+      if (d >= rr) continue
+      const k = d || 0.01, ox = at.x + dx / k * rr, oz = at.z + dz / k * rr
+      if (inArea(level, ox, oz)) { s.x = ox; s.z = oz }
+      if (s.sprinting && s.stagger <= 0 && s.t - s.bumpAt > 1.2) { s.bumpAt = s.t; knock(s, level, p.role === 'cat' ? 'cat' : 'mum', at) }
+    }
+    for (const tr of level.trips) if (s.sprinting && s.stagger <= 0 && s.t - s.bumpAt > 1.2 && Math.hypot(tr.x - s.x, tr.z - s.z) < 0.55) {
+      s.bumpAt = s.t
+      // he goes over it, forwards: the push comes from behind him
+      knock(s, level, 'trip', {x: s.x - Math.sin(s.heading), z: s.z - Math.cos(s.heading)})
     }
   }
 
@@ -402,7 +423,7 @@ export function stepSim(level: Level, s: Sim, input: Input, dt = STEP): Sim {
 
   // the inner voice: once each, as the goal comes closer
   const g = goalOf(level, s), dist = Math.hypot(g.x - s.x, g.z - s.z)
-  for (const v of level.voice) if (dist < v.at && !s.said.includes(v.key)) { s.said.push(v.key); s.events.push({k: 'voice', key: v.key}) }
+  for (const v of level.voice) if ((v.t !== undefined ? s.t >= v.t : dist < v.at) && !s.said.includes(v.key)) { s.said.push(v.key); s.events.push({k: 'voice', key: v.key}) }
 
   // the goal — only when it is the step that is open
   const atGoal = level.place === 'road' ? s.z <= g.z : Math.hypot(g.x - s.x, g.z - s.z) < g.r
@@ -485,6 +506,8 @@ export function botInput(level: Level, s: Sim): Input {
   }
   let next = viaPoint(level, s, g)
   if (level.place === 'yard') return sneakBot(level, s, next)
+  // at home: never sprint (a toy, the cat, Mum), and step round whoever is in the way
+  if (level.place === 'flat') return steer(s, next.x, next.z, false, level)
   // the knot of people at the gate parts down the middle: line up with it before going in
   if (level.place === 'street' && st?.kind === 'goal' && Math.abs(s.x) > 1.3 && s.z < level.goal.z + 19 && next === g) next = {x: 0, z: level.goal.z + 18}
   else if (level.place === 'street' && st?.kind === 'goal' && Math.abs(s.x) > 1.3 && next === g) next = {x: 0, z: level.goal.z + 18}
@@ -512,7 +535,8 @@ function steer(s: Sim, x: number, z: number, sprint: boolean, level?: Level): In
   let dx = x - s.x, dz = z - s.z
   const d = Math.hypot(dx, dz) || 1
   dx /= d; dz /= d
-  if (level) for (const p of level.standers) {
+  const inWay = level ? [...level.standers, ...(level.place === 'flat' ? level.patrols.map(p => patrolAt(p, s.t + 0.4)) : [])] : []
+  for (const p of inWay) {
     const px = p.x - s.x, pz = p.z - s.z, along = px * dx + pz * dz
     if (along < 0 || along > 2.4 || along > d) continue
     const side = px * dz - pz * dx

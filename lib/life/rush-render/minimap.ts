@@ -20,13 +20,16 @@ export function drawMap(ctx: CanvasRenderingContext2D, level: Level, sim: Sim, s
   ctx.save()
   ctx.beginPath(); ctx.arc(size / 2, size / 2, size / 2 - 3, 0, Math.PI * 2); ctx.clip()
   // the window: around him on a long street, the whole place when it is small
-  const small = level.place === 'yard' || level.place === 'crowd'
+  const small = level.place === 'yard' || level.place === 'crowd' || level.place === 'flat'
   const span = small ? Math.max(level.bounds.x1 - level.bounds.x0, level.bounds.z1 - level.bounds.z0) + 8 : 110
   const k = size / span
   const cx = small ? (level.bounds.x0 + level.bounds.x1) / 2 : sim.x, cz = small ? (level.bounds.z0 + level.bounds.z1) / 2 : sim.z
   const X = (x: number) => size / 2 + (x - cx) * k, Y = (z: number) => size / 2 + (z - cz) * k
   ctx.fillStyle = STREET
   for (const a of level.areas) ctx.fillRect(X(a.x0), Y(a.z0), (a.x1 - a.x0) * k, (a.z1 - a.z0) * k)
+  // at home: the furniture, darker than the floor
+  ctx.fillStyle = INK
+  for (const b of level.blocks) ctx.fillRect(X(b.x0), Y(b.z0), (b.x1 - b.x0) * k, (b.z1 - b.z0) * k)
   // the gate
   ctx.fillStyle = skin.p; ctx.fillRect(X(level.goal.x) - 4, Y(level.goal.z) - 2, 8, 4)
   // the knots of people singing

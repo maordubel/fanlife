@@ -310,6 +310,11 @@ export type CineAct =
   | {who: CastId | 'me'; do: 'hold'; item: 'cup' | 'ticket' | 'scarf' | 'bag' | 'phone' | null}
   | {who: CastId | 'me'; do: 'emote'; mood: Mood}
   | {who: 'all'; do: 'cheer'}
+  /** he sits down beside somebody seated (the sofa next to his father); undone when the scene ends */
+  | {who: 'me'; do: 'sit'; by: CastId; side?: 1 | -1}
+  | {who: 'me'; do: 'stand'}
+  /** somebody stands and lifts him up (a goal); undone when the scene ends */
+  | {who: CastId; do: 'lift'}
 /** One shot: where the camera looks, what is said under it (a caption), what people do while it runs. */
 export type Shot = {
   cam: 'wide' | 'two' | 'close' | 'over'

@@ -92,6 +92,14 @@ const EN = {
   'ev.streak': 'Streak ×{n}', 'hud.low': 'Low', 'hud.drag': 'Drag here to move',
   'ev.surge': 'The crowd surges — hold on', 'fav.lost-kid': '“Thanks — he was looking for his dad.” · a good turn',
   'fav.bag': '“My bag! You’re a star.” · a good turn', 'res.favours': '{n} good turn(s)',
+  // at home (place flat)
+  'obj.flat.both': 'The scarf and the batteries — any order', 'obj.flat.radio': 'To the radio — Dad is waiting',
+  'got.battery': 'A battery',
+  'ev.trip': 'Whoa — a toy underfoot.', 'ev.cat': 'The cat! Sorry, sorry.', 'ev.mum': '“Do NOT run in this house!”',
+  'flat.1': '“Two minutes!” — Dad, from the sofa.', 'flat.2': '“They are walking out! I can hear them walking out!”', 'flat.3': '“Is it coming? Whatever it is — is it COMING?”',
+  'res.good.sub.flat-run': 'Batteries in his hand, scarf round your neck. He looks at you like you scored.', 'res.ok.sub.flat-run': 'Not pretty. But it is all here.',
+  'res.slip.sub.flat-run': 'Through the wall, somebody else’s radio gets there first.',
+  'hud.clock.flat': 'Kick-off in',
   // fallbacks
   'err.webgl': 'This device could not open the mission’s picture. The day carries on without it.',
   'loading': 'The street is loading…',
@@ -173,6 +181,13 @@ const HE: Record<RushKey, string> = {
   'ev.streak': 'רצף ×{n}', 'hud.low': 'מעט זמן', 'hud.drag': 'לגרור כאן כדי לזוז',
   'ev.surge': 'הקהל דוחף — להחזיק מעמד', 'fav.lost-kid': '„תודה — הוא חיפש את אבא שלו.” · מעשה טוב',
   'fav.bag': '„התיק שלי! אתה אלוף.” · מעשה טוב', 'res.favours': 'מעשים טובים: {n}',
+  'obj.flat.both': 'הצעיף והבטריות — באיזה סדר שתרצה', 'obj.flat.radio': 'לרדיו — אבא מחכה',
+  'got.battery': 'בטריה',
+  'ev.trip': 'אופס — צעצוע מתחת לרגל.', 'ev.cat': 'החתול! סליחה, סליחה.', 'ev.mum': '„לא רצים בבית הזה!”',
+  'flat.1': '„שתי דקות!” — אבא, מהספה.', 'flat.2': '„הם יוצאים למגרש! אני שומע אותם יוצאים!”', 'flat.3': '„זה בדרך? מה שזה לא יהיה — זה בדרך?”',
+  'res.good.sub.flat-run': 'הבטריות ביד שלו, הצעיף על הצוואר שלך. הוא מסתכל עליך כאילו הבקעת.', 'res.ok.sub.flat-run': 'לא יפה. אבל הכול כאן.',
+  'res.slip.sub.flat-run': 'מבעד לקיר, הרדיו של מישהו אחר מגיע לשם קודם.',
+  'hud.clock.flat': 'עד שריקת הפתיחה',
   'err.webgl': 'המכשיר לא הצליח לפתוח את התמונה של המשימה. היום ממשיך בלעדיה.',
   'loading': 'הרחוב נטען…',
 }

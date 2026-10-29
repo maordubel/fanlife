@@ -6,6 +6,7 @@
  * `template: true` builds every optional part so the crowd can be drawn by instancing each part of
  * one posed rig (`crowd.ts`), switching a cap or a beard per person by scaling it to nothing.
  */
+import {gaitPose} from '@/lib/life/motion/gait'
 import * as THREE from 'three'
 
 export type Cloth = {primary: string; secondary: string; trim: string; pattern: string; inverse?: boolean}
@@ -234,20 +235,21 @@ export function pose(fig: THREE.Object3D, st: Pose, t: number, dt: number): void
   const {J, face} = u
   const sp = st.speed ?? 0, k = clamp(sp / 7, 0, 1.25)
   const ph = (u.phase += dt * (sp > 0.3 ? 4.2 + sp * 1.05 : 0))
-  const s = Math.sin(ph), c = Math.cos(ph)
   const idle = 1 - clamp(sp / 1.5, 0, 1)
   const breath = Math.sin(t * (st.panting ? 7 : 2.2)) * (st.panting ? 1 : 0.4)
   const crouch = st.crouch ?? 0
-  J.hipL!.rotation.x = -s * 0.95 * k - crouch * 0.5; J.hipR!.rotation.x = s * 0.95 * k - crouch * 0.5
-  J.kneeL!.rotation.x = (Math.max(0, Math.sin(ph + 1.3)) * 1.55 + 0.1) * k + crouch * 0.9; J.kneeR!.rotation.x = (Math.max(0, Math.sin(ph + 1.3 + Math.PI)) * 1.55 + 0.1) * k + crouch * 0.9
+  // real motion: the captured stride (lib/life/motion/gait.ts, CMU motion capture), walk blended to run by pace
+  const run = clamp((sp - 2.5) / 3.5, 0, 1), amp = clamp(sp / 1.5, 0, 1), g = gaitPose(ph / (Math.PI * 2), run)
+  J.hipL!.rotation.x = g.hipL * amp - crouch * 0.5; J.hipR!.rotation.x = g.hipR * amp - crouch * 0.5
+  J.kneeL!.rotation.x = g.kneeL * amp + crouch * 0.9; J.kneeR!.rotation.x = g.kneeR * amp + crouch * 0.9
   J.ankleL!.rotation.x = -J.hipL!.rotation.x * 0.2; J.ankleR!.rotation.x = -J.hipR!.rotation.x * 0.2
-  J.pelvis!.position.y = 0.9 + Math.abs(c) * 0.055 * k - k * 0.04 + breath * 0.002 - crouch * 0.16
-  J.pelvis!.rotation.y = s * 0.14 * k; J.spine!.rotation.y = -s * 0.26 * k
-  J.spine!.rotation.x = 0.2 * k + (st.lean ?? 0) + crouch * 0.35
+  J.pelvis!.position.y = 0.9 + g.bob * 0.9 * amp - run * 0.03 + breath * 0.002 - crouch * 0.16
+  J.pelvis!.rotation.y = g.pelvisYaw * amp; J.pelvis!.rotation.z = g.pelvisRoll * amp; J.spine!.rotation.y = g.spineYaw * amp
+  J.spine!.rotation.x = g.lean * amp * 0.9 + (st.lean ?? 0) + crouch * 0.35
   J.chest!.scale.set(1 + breath * 0.012, 1 + breath * 0.008, 1 + breath * 0.02)
-  J.shoulderL!.rotation.x = s * 1.0 * k + idle * Math.sin(t * 1.1) * 0.03; J.shoulderR!.rotation.x = -s * 1.0 * k - idle * Math.sin(t * 1.1) * 0.03
+  J.shoulderL!.rotation.x = g.shoulderL * amp + idle * Math.sin(t * 1.1) * 0.03; J.shoulderR!.rotation.x = g.shoulderR * amp - idle * Math.sin(t * 1.1) * 0.03
   J.shoulderL!.rotation.z = -0.1 - 0.08 * k; J.shoulderR!.rotation.z = 0.1 + 0.08 * k
-  J.elbowL!.rotation.x = -(0.35 + 1.15 * k); J.elbowR!.rotation.x = -(0.35 + 1.15 * k)
+  J.elbowL!.rotation.x = g.elbowL * amp - 0.35 * idle; J.elbowR!.rotation.x = g.elbowR * amp - 0.35 * idle
   J.head!.rotation.x = -(J.spine!.rotation.x * 0.7) + (st.lookDown ?? 0); J.head!.rotation.y = -J.spine!.rotation.y * 0.7 + (st.lookY ?? 0)
   if (st.carry) { J.shoulderL!.rotation.x = -1.05; J.shoulderR!.rotation.x = -1.05; J.shoulderL!.rotation.z = 0.35; J.shoulderR!.rotation.z = -0.35; J.elbowL!.rotation.x = -0.9; J.elbowR!.rotation.x = -0.9; J.spine!.rotation.x = 0.05 + k * 0.08 }
   if (st.ticket) { J.shoulderR!.rotation.x = -1.05; J.shoulderR!.rotation.z = 0.25; J.elbowR!.rotation.x = -1.2; J.head!.rotation.x = 0.38; J.head!.rotation.y = -0.15 }
