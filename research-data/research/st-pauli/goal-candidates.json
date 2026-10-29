@@ -55,6 +55,15 @@
     "bodyHash": "a6bdf8ebfc0e1b5d4003b9637054916f7f8f72a955df8ea5542986547f3ba305",
     "fetchedAt": "2026-10-27T09:22:27.442Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/05/03/lage-am-millerntor-03-mai-2021/",
+    "locator": "p55",
+    "quote": "Ach, ich weiß es doch auch nicht, was man da noch zu schreiben soll. Und eigentlich ist mir meine Zeit auch zu schade dafür. Zum Glück gibt es also den Deutschlandfunk , wo Maximilian Rieger mit ARD-Sportreporterin Martina Knief und SZ-Journalist Thomas Kistner gestern im Sportgespräch (30min) über die gestrige Rücktrittsforderung der Landesverbände gegen DFB-Präsident Fritz Keller – und natürlich auch über die Abstimmung über Vize-Rainer Koch, der sich nur mit den ihm zur Verfügung stehenden vier Stimmen seines eigenen Landesverbandes retten konnte.",
+    "bodyHash": "68e0d382b6eb85f01b3967d824f69b835a29a65dc593250ed6ec2b63ee5fdadc",
+    "fetchedAt": "2026-10-28T10:02:37.271Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -62,8 +71,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:27.442Z",
-  "updatedAt": "2026-10-27T09:22:27.442Z"
+  "createdAt": "2026-10-28T10:02:37.271Z",
+  "updatedAt": "2026-10-28T10:02:37.271Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -178,6 +187,24 @@
     "bodyHash": "ececbb544cd13d627e6cd6b1057318e7d6df0eb2eeb67180b2094834a6f3c34b",
     "fetchedAt": "2026-10-27T09:22:27.439Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/10/torhueter/",
+    "locator": "p17",
+    "quote": "mitte: expected Goals against pro 90min",
+    "bodyHash": "e701d2db43aade8a70f88c2053597b649a69066d6b5f1fb566f1fac3585e7a65",
+    "fetchedAt": "2026-10-28T10:02:29.166Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/27/say-hello-to-xg-differenz-der-spieler-beim-fc-st-pauli/",
+    "locator": "p32",
+    "quote": "Boris Tashchy weist nahezu unfassbare Werte auf. Mit ihm auf dem Platz hat der FC St. Pauli mit Abstand die größte Torwahrscheinlichkeit (3.1 Tore pro 90 Minuten!). Und auch defensiv scheint es mit Tashchy auf dem Platz besser zu laufen: 1.4 Gegentore pro 90min bedeuten den viertbesten Wert im gesamten Kader. Donnerwetter.",
+    "bodyHash": "0ebff51808af71e24e7c57f8679ce59dcfbd07f1a165977fbb53bbc7061369e6",
+    "fetchedAt": "2026-10-28T10:02:29.184Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -185,8 +212,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:27.439Z",
-  "updatedAt": "2026-10-27T09:22:27.439Z"
+  "createdAt": "2026-10-28T10:02:29.184Z",
+  "updatedAt": "2026-10-28T10:02:29.184Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -256,6 +283,15 @@
     "bodyHash": "023088beddda48c07ae026ca09a42d38349ff3995c6ef5eb049b45e81cf3e99c",
     "fetchedAt": "2026-10-27T09:22:27.444Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/04/14/lage-am-millerntor-14-april-2021/",
+    "locator": "p21",
+    "quote": "Auch die Proteste gegen Dietmar Hopp sind natürlich Thema. WDR-Mediathek (10min)",
+    "bodyHash": "a3cc70841e1d85e592d5a6681fe42a1757caf9d6f8c1412fe983cd0724017290",
+    "fetchedAt": "2026-10-28T10:02:34.148Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -263,8 +299,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:27.444Z",
-  "updatedAt": "2026-10-27T09:22:27.444Z"
+  "createdAt": "2026-10-28T10:02:34.148Z",
+  "updatedAt": "2026-10-28T10:02:34.148Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -631,6 +667,15 @@
     "bodyHash": "4bbe36c92c0129febb925141994247769b6c6447786bab3ef4f15dc6842a7f64",
     "fetchedAt": "2026-10-27T09:22:18.692Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/04/06/lage-am-millerntor-06-april-2021/",
+    "locator": "p41",
+    "quote": "Ein sehr lesenswertes Interview mit dem US-amerikanischen Sportwissenschaftler Joseph N. Cooper gibt es beim Deutschlandfunk . Wie so häufig wahlweise zu lesen oder zu hören (11min).",
+    "bodyHash": "8a7cb38354e92229c3b991e33e766d1d00a07c43b0908620aaf5181ed73e3c33",
+    "fetchedAt": "2026-10-28T10:02:31.924Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -638,8 +683,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:18.692Z",
-  "updatedAt": "2026-10-27T09:22:18.692Z"
+  "createdAt": "2026-10-28T10:02:31.924Z",
+  "updatedAt": "2026-10-28T10:02:31.924Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -799,6 +844,15 @@
     "bodyHash": "ebedb37b20b397ab42223d28790f553f892f7e1803cc6b4791c4b1a1f4952e0f",
     "fetchedAt": "2026-10-26T09:23:36.860Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/04/26/lage-am-millerntor-26-april-2021/",
+    "locator": "p10",
+    "quote": "Den gestrigen Auftritt (20min) könnt Ihr hier nochmal anschauen.",
+    "bodyHash": "eef0ac37f4325662a6d7f1dced56151166e37b2029c22f62b5f9fd3c66fa704b",
+    "fetchedAt": "2026-10-28T10:02:37.266Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -806,8 +860,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:36.860Z",
-  "updatedAt": "2026-10-26T09:23:36.860Z"
+  "createdAt": "2026-10-28T10:02:37.266Z",
+  "updatedAt": "2026-10-28T10:02:37.266Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1006,5 +1060,155 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-27T09:22:27.445Z",
   "updatedAt": "2026-10-27T09:22:27.445Z"
+ },
+ {
+  "id": "ga-b034321cdb0cc0d5",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "40",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/23/lage-am-millerntor-23-maerz-2021/",
+    "locator": "p36",
+    "quote": "Es gibt einen englischsprachigen Podcast mit dem wunderschönen Namen „Outside Write // football culture – history – travel“ . In der aktuellen Episode ist Andrew Lawn zu Gast, der das Buch „We lose every week – The history of football chants“ geschrieben hat. Als offizieller Musikpodcast mit gelegentlichen Fußballinhalten ist es mir eine Pflicht und ein Vergnügen, Euch auf diese Folge hinzuweisen (40min).",
+    "bodyHash": "296cad65fb66c340172ce490e7cf960b36fd5dd84775e2468832a50ab15d9249",
+    "fetchedAt": "2026-10-28T10:02:29.186Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-28T10:02:29.186Z",
+  "updatedAt": "2026-10-28T10:02:29.186Z"
+ },
+ {
+  "id": "ga-c61079b9040fc062",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "45",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/03/30/lage-am-millerntor-30-maerz-2021/",
+    "locator": "p18",
+    "quote": "Ja, auch das war gestern schon Thema, auch ausführlich, aber so viel ist ja aktuell nicht los, daher sei auf die gestrige Lage nochmals verwiesen und generell die Dokumentation des ZDF (45min) erneut empfohlen.",
+    "bodyHash": "133ebf71a98a47dce244900232213a94897eac12a2a7b339186e92c93bd344c4",
+    "fetchedAt": "2026-10-28T10:02:31.919Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-28T10:02:31.919Z",
+  "updatedAt": "2026-10-28T10:02:31.919Z"
+ },
+ {
+  "id": "ga-d8e2dac9b5d75d90",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "55",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/04/14/lage-am-millerntor-14-april-2021/",
+    "locator": "p24",
+    "quote": "Ja, nee, keine Angst, ich werde in diesem Blog vorerst keine Ausflüge in die wunderbare Welt der Schlager unternehmen. Das fantastische „Das ist alles von der Kunstfreiheit gedeckt“ -Video von Danger Dan (Antilopen Gang) habt Ihr wahrscheinlich alle schon gesehen, auch die ZDF Magazin Royale – Version mit Igor Levit sollte bekannt sein. Aber wenn Ihr dann noch etwas Zeit habt, schaut doch in der ZDF Mediathek auch gerne in diese „Stay Live“ Sendung (55min) aus dem Übel & Gefährlich hinein, in der Thees Uhlmann und Danger Dan über Musik, Pandemie, Gott und die Welt sprechen.",
+    "bodyHash": "a3cc70841e1d85e592d5a6681fe42a1757caf9d6f8c1412fe983cd0724017290",
+    "fetchedAt": "2026-10-28T10:02:34.148Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-28T10:02:34.148Z",
+  "updatedAt": "2026-10-28T10:02:34.148Z"
+ },
+ {
+  "id": "ga-288016b5c0b2dce9",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "34",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/05/04/lage-am-millerntor-04-mai-2021/",
+    "locator": "p8",
+    "quote": "Wenn Ihr Interesse daran habt, den kompletten kommunikativen Zusammenbruch des Vereins in Persona Jonas Boldt nochmal in Ruhe nachzuvollziehen, sei Euch die gestrige Pressekonferenz (34min) empfohlen.",
+    "bodyHash": "6969b07d5e3e70a0d2cf872416d5ec82a6b9f9d50f8e716e9a4eb2ce7f4c5f21",
+    "fetchedAt": "2026-10-28T10:02:37.273Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-28T10:02:37.273Z",
+  "updatedAt": "2026-10-28T10:02:37.273Z"
+ },
+ {
+  "id": "ga-63f41d8e36a414eb",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "38",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/05/10/lage-am-millerntor-10-mai-2021/",
+    "locator": "p65",
+    "quote": "Am Samstag war DFB-Vize Rainer Koch zu Gast im Aktuellen Sportstudio bei Katrin Müller-Hohenstein ( ZDF Mediathek, 38min ). Präsident Keller, Generalsekretär Curtius und DFL-Chef Seiffert waren ebenfalls angefragt, haben aber abgesagt, u.a. im Fall von Keller, weil man dem Fußball „nicht durch eine TV-Debatte noch weiter schaden wolle“. Die Besetzung von Müller-Hohenstein für dieses Interview wurde schon vorab sehr stark kritisiert, war sie doch in der Vergangenheit insbesondere im Bereich DFB und Nationalmannschaft eher nicht durch besonders kritisches Nachfragen aufgefallen.",
+    "bodyHash": "9c9eb7eb17783c80db56d7032038fa2f9a7ddc250281f61d19931725e60781e8",
+    "fetchedAt": "2026-10-28T10:02:40.073Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-28T10:02:40.073Z",
+  "updatedAt": "2026-10-28T10:02:40.073Z"
  }
 ]

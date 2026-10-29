@@ -24,8 +24,8 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "partial_budget",
-    "pagesRead": 26,
+    "state": "listed",
+    "pagesRead": 27,
     "observedTotalDocuments": 657,
     "observedTotalPages": 27,
     "queue": null,
@@ -41,7 +41,7 @@
     "lastError": null
    }
   ],
-  "documents": 667,
+  "documents": 674,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
