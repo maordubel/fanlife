@@ -53,15 +53,16 @@ begin
   caption := left(hook || E'\n\n' || body || E'\n\n👉 ' || url || E'\n\n'
              || coalesce(it->>'tags', m->'tags'->>(it->>'app'), '#FANLIFE'), 2200);
   msg := '📅 <b>' || to_char(p.send_at at time zone 'Asia/Jerusalem', 'Dy DD.MM · HH24:MI') || '</b>'
-      || coalesce(' · ' || marketing.esc(it->>'label'), '')
+      -- marketing.esc() turns null into '', so every optional line is guarded by its own field, not by coalesce
+      || case when it->>'label' is not null then ' · ' || marketing.esc(it->>'label') else '' end
       || E'\n📌 ' || marketing.esc(m->'format_he'->>fmt) || ' · <b>' || marketing.esc(m->'names'->>(it->>'app')) || '</b> · '
       || marketing.esc(m->'platform'->>fmt)
       || case when fx.fixture_id is not null then E'\n⚽ Real match: ' || marketing.esc(fx.home || ' – ' || fx.away)
               || ' · ' || to_char(fx.kickoff at time zone 'Asia/Jerusalem', 'DD.MM HH24:MI') else '' end
-      || coalesce(E'\n🎬 ' || marketing.esc(it->>'how'), '')
+      || case when it->>'how' is not null then E'\n🎬 ' || marketing.esc(it->>'how') else '' end
       || E'\n\n👇 <b>Caption</b> — tap the box to copy\n<pre>' || marketing.esc(caption) || '</pre>'
-      || coalesce(E'\n💬 <b>' || marketing.esc(coalesce(it->>'comment_label', 'First comment')) || '</b> — tap to copy\n<pre>'
-                  || marketing.esc(left(it->>'comment', 900)) || '</pre>', '');
+      || case when coalesce(it->>'comment', '') <> '' then E'\n💬 <b>' || marketing.esc(coalesce(it->>'comment_label', 'First comment'))
+              || '</b> — tap to copy\n<pre>' || marketing.esc(left(it->>'comment', 900)) || '</pre>' else '' end;
   fixture_id := fx.fixture_id;
   return next;
 end $$;
