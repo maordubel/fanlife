@@ -40,6 +40,8 @@
   "hub.reason.justListed": "Just listed",
   "hub.empty.title": "Nothing open matches that yet.",
   "hub.empty.body": "Save the search and we'll tell you when a copy opens — or put up a request so the people who hold one can find you.",
+  "hub.more.failed": "Could not load more. Try again",
+  "hub.searches.wordsNote": "A saved search watches your filters. The words you typed are not part of it.",
   "hub.searches.cta": "Tell me when one opens",
   "hub.searches.guestHint": "Sign in and we'll tell you when a match opens.",
   "hub.searches.nameLabel": "Name this search",
