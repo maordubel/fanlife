@@ -4,6 +4,7 @@ import {ratedPool} from '@/lib/clubs/rumble'
 import {norm} from '@/lib/fixtures/names'
 import {mergesFor} from '@/lib/clubs/rumble-xi/merges'
 
+const NO_WAVE_YET=new Set(['raja-casablanca','wydad-casablanca','al-ahly'])
 describe('roster wave (10.10.2026): researched men are in the archive and in the game',()=>{
  for(const id of CORE_CLUB_IDS)it(`${id}: every wave man is sourced, unreviewed (confidence 1), unique, and dealt`,{timeout:60000},async()=>{
   const d=(await loadClub(id))!.data,wave=d.players!.filter(p=>/[:_]wv-/.test(p.id))
@@ -16,6 +17,7 @@ describe('roster wave (10.10.2026): researched men are in the archive and in the
    if(!p.value.positions.length)expect(p.value.fromYear===null||typeof p.value.fromYear==='number').toBe(true)}
   // Hapoel Tel Aviv reads THE WORKER's canonical player master only: the 47 unapproved wave men were removed (e7cafbb, 11.10.2026).
   // The guard flips rather than goes: a wave man reappearing for Hapoel fails here (rule 65).
-  if(id==='hapoel-tel-aviv')expect(wave).toHaveLength(0);else expect(wave.length).toBeGreaterThan(0)
+  // Raja, Wydad and Al Ahly opened on 28.10.2026 from the owner's package (approved, confidence 2) and have had no research wave yet
+  if(id==='hapoel-tel-aviv'||NO_WAVE_YET.has(id))expect(wave).toHaveLength(0);else expect(wave.length).toBeGreaterThan(0)
  })
 })

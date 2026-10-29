@@ -1,0 +1,121 @@
+﻿club,season_as_source,source_table_row,source_id,status
+raja,1949–50,1949–50 | Raja CA did not compete in competitive football and played only friendly matches.,RAH,needs column normalization and independent check
+raja,1950–51,1950–51 | Division Promotion (Groupe Chaouia-Nord) | 1st | – | 12 | – | – | – | – | – | – | North African Cup | R1 | — | — | — | —,RAH,needs column normalization and independent check
+raja,1951–52,1951–52 | First Division | 2nd | – | 16 | – | – | – | – | – | – | North African Cup | R1 | — | — | — | —,RAH,needs column normalization and independent check
+raja,1952–53,1952–53 | Pré-honneur | 6th | – | 22 | – | – | – | – | – | – | North African Cup | R3 | — | — | — | —,RAH,needs column normalization and independent check
+raja,1960–61,1960–61 | D1 | 5th | 54 | 26 | 8 | 12 | 6 | 35 | 35 | R16 | — | — | — | — | Hanoun†fr.wikipedia.org | 11,RAH,needs column normalization and independent check
+raja,1961–62,1961–62 | D1 | 7th | 53 | 26 | 10 | 7 | 9 | 35 | 28 | R16 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1962–63,1962–63 | D1 | 3rd | 54 | 26 | 9 | 10 | 7 | 35 | 28 | QF | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1972–73,1972–73 | D1 | 3th | 63 | 30 | 11 | 11 | 8 | 36 | 31 | R16 | — | — | — | — | Petchou | 13,RAH,needs column normalization and independent check
+raja,1973–74,1973–74 | D1 | 2nd | 63 | 30 | 12 | 9 | 9 | 34 | 26 | W | — | — | — | — | Petchou | 9,RAH,needs column normalization and independent check
+raja,1974–75,1974–75 | D1 | 3th | 66 | 30 | 10 | 16 | 4 | 47 | 28 | R32 | — | — | — | — | Ghandi | 10,RAH,needs column normalization and independent check
+raja,1975–76,1975–76 | D1 | 3th | 66 | 30 | 10 | 16 | 4 | 34 | 29 | SF | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1976–77,1976–77 | D1 | 4th | 64 | 30 | 14 | 6 | 10 | 33 | 25 | W | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1977–78,1977–78 | D1 | 10th | 58 | 30 | 9 | 10 | 11 | 43 | 40 | R32 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1978–79,1978–79 | D1^{[d]} | 9th | 39 | 30 | 9 | 12 | 9 | 30 | 28 | R32 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1979–80,1979–80 | D1 | 9th | 59 | 30 | 8 | 13 | 9 | 29 | 26 | QF | — | — | — | — | Lâarabi | 11,RAH,needs column normalization and independent check
+raja,1980–81,1980–81 | D1 | 3rd | 83 | 38 | 16 | 13 | 9 | 45 | 24 | R16 | — | — | — | — | Lâarabi | 10,RAH,needs column normalization and independent check
+raja,1981–82,1981–82 | D1 | 5th | 71 | 34 | 13 | 11 | 10 | 28 | 24 | W | Cup Winners' Cup | R1 | — | — | — | —,RAH,needs column normalization and independent check
+raja,1982–83,1982–83 | D1 | 5th | 63 | 30 | 12 | 9 | 9 | 27 | 19 | RU | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1983–84,1983–84 | D1 | 3rd | 63 | 30 | 10 | 13 | 7 | 29 | 21 | QF | — | — | — | — | Ouhammouch | 9,RAH,needs column normalization and independent check
+raja,1984–85,1984–85 | D1 | 6th | 62 | 30 | 12 | 8 | 10 | 32 | 25 | R16 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1985–86,1985–86 | D1 | 2nd | 91 | 38 | 20 | 13 | 5 | 48 | 17 | R16 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1986–87,1986–87 | D1 (Group B) | 3rd | 49 | 22 | 10 | 7 | 5 | 27 | 15 | R32 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1987–88,1987–88 | D1 | 1st | 79 | 34 | 18 | 9 | 7 | 30 | 14 | QF | — | — | Arab Club Champions Cup | PR | — | —,RAH,needs column normalization and independent check
+raja,1988–89,"1988–89 | D1 | 9th | 60 | 30 | 8 | 14 | 8 | 29 | 29 | R32 | African Cup | W | — | — | Jamal, Ouldmou, Diagne | 7",RAH,needs column normalization and independent check
+raja,1989–90,1989–90 | D1 | 5th | 63 | 30 | 11 | 11 | 8 | 34 | 29 | QF | African Cup | R2^{[e]} | — | — | — | —,RAH,needs column normalization and independent check
+raja,1990–91,1990–91 | D1 | 9th | 60 | 30 | 9 | 12 | 9 | 29 | 28 | QF | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1991–92,1991–92 | D1 | 2nd | 66 | 30 | 11 | 14 | 5 | 25 | 17 | RU | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1992–93,1992–93 | D1 | 2nd | 64 | 30 | 9 | 16 | 5 | 26 | 14 | SF | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1993–94,1993–94 | D1 | 4th | 64 | 30 | 12 | 10 | 8 | 21 | 15 | R32 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1994–95,1994–95 | D1 | 8th | 59 | 30 | 9 | 12 | 9 | 26 | 23 | R16 | — | — | — | — | — | —,RAH,needs column normalization and independent check
+raja,1995–96,1995–96 | D1^{[f]} | 1st | 57 | 30 | 16 | 9 | 5 | 43 | 16 | W | — | — | Arab Club Champions Cup | RU | — | —,RAH,needs column normalization and independent check
+raja,1996–97,1996–97 | D1 | 1st | 55 | 30 | 15 | 10 | 5 | 45 | 24 | R16 | Champions League | W | Arab Super Cup | GS | — | —,RAH,needs column normalization and independent check
+raja,1997–98,1997–98 | GNF1 | 1st | 67 | 30 | 19 | 10 | 1 | 51 | 13 | QF | Super Cup | RU | — | — | — | —,RAH,needs column normalization and independent check
+raja,1998–99,1998–99 | GNF1 | 1st | 62 | 30 | 17 | 11 | 2 | 42 | 14 | R32 | Afro-Asian Championship | W | — | — | — | —,RAH,needs column normalization and independent check
+raja,1999–2000,1999–2000 | GNF1 | 1st | 59 | 30 | 16 | 11 | 3 | 45 | 22 | QF | FIFA Club World Championship | GS | — | — | — | —,RAH,needs column normalization and independent check
+raja,2000–01,2000–01 | GNF1 | 1st | 64 | 30 | 19 | 7 | 4 | 33 | 12 | SF | Champions League | R2 | — | — | — | —,RAH,needs column normalization and independent check
+raja,2001–02,2001–02 | GNF1 | 3rd | 55 | 30 | 16 | 7 | 7 | 42 | 18 | W | Champions League | RU | — | — | Diallo | 15,RAH,needs column normalization and independent check
+raja,2002–03,2002–03 | GNF1 | 2nd | 52 | 30 | 13 | 13 | 4 | 36 | 18 | SF | CAF Cup | W | Arab Unified Club Championship | SF | Aboucherouane | 23^{[g]},RAH,needs column normalization and independent check
+raja,2003–04,2003–04 | GNF1 | 1st | 56 | 30 | 15 | 11 | 4 | 40 | 19 | QF | Champions League | R1 | — | — | Bidoudane | 15,RAH,needs column normalization and independent check
+raja,2004–05,2004–05 | GNF1 | 2nd | 60 | 30 | 18 | 6 | 6 | 42 | 17 | W | Champions League | SF | — | — | Alloudi | 16,RAH,needs column normalization and independent check
+raja,2005–06,2005–06 | GNF1 | 4th | 51 | 30 | 13 | 12 | 5 | 34 | 24 | QF ^{[h]} | Champions League | R2 | — | — | Bidoudane | 12,RAH,needs column normalization and independent check
+raja,2006–07,2006–07 | GNF1 | 11th | 35 | 30 | 7 | 14 | 9 | 23 | 20 | QF | — | — | Arab Champions League | R16 | Alloudi | 17,RAH,needs column normalization and independent check
+raja,2007–08,2007–08 | GNF1 | 3rd | 48 | 30 | 12 | 12 | 6 | 32 | 23 | QF | — | — | Arab Champions League | GS | Senghor | 9,RAH,needs column normalization and independent check
+raja,2008–09,2008–09 | GNF1 | 1st | 61 | 30 | 17 | 10 | 3 | 44 | 17 | R32 | — | — | Arab Champions League | R16 | Moutouali | 10,RAH,needs column normalization and independent check
+raja,2009–10,2009–10 | Botola 1 | 2nd | 52 | 30 | 14 | 10 | 6 | 39 | 26 | R16 | Champions League | R2 | North African Cup of Champions | SF | Najdi | 13,RAH,needs column normalization and independent check
+raja,2010–11,2010–11 | Botola 1 | 1st | 60 | 30 | 18 | 6 | 6 | 45 | 23 | R32 | Champions League | GS | — | — | Taïr | 8,RAH,needs column normalization and independent check
+raja,2011–12,2011–12 | Botola Pro | 4th | 51 | 30 | 14 | 9 | 7 | 34 | 24 | W | Champions League | R2 | — | — | Salhi | 16,RAH,needs column normalization and independent check
+raja,2012–13,2012–13 | Botola Pro | 1st | 66 | 30 | 19 | 9 | 2 | 56 | 24 | RU | — | — | UAFA Cup | SF | Iajour | 12,RAH,needs column normalization and independent check
+raja,2013–14,2013–14 | Botola Pro | 2nd | 55 | 30 | 16 | 7 | 7 | 40 | 15 | R16 | 2013 Club World Cup | RU | — | — | Iajour | 16^{[i]},RAH,needs column normalization and independent check
+raja,2014–15,2014–15 | Botola Pro | 8th | 38 | 30 | 9 | 11 | 10 | 37 | 34 | SF | Champions League | R3 | — | — | Hafidi | 9,RAH,needs column normalization and independent check
+raja,2015–16,2015–16 | Botola Pro | 5th | 47 | 30 | 13 | 8 | 9 | 48 | 30 | R32^{[j]} | — | — | — | — | Hafidi | 12,RAH,needs column normalization and independent check
+raja,2016–17,2016–17 | Botola Pro | 3rd | 57 | 30 | 15 | 12 | 3 | 42 | 17 | W | — | — | UNAF Cup | W | Erraki | 10,RAH,needs column normalization and independent check
+raja,2017–18,2017–18 | Botola Pro | 6th | 48 | 30 | 13 | 9 | 8 | 45 | 31 | SF | Confederation Cup | W | — | — | Iajour | 25,RAH,needs column normalization and independent check
+raja,2018–19,2018–19 | Botola Pro | 2nd | 55 | 30 | 15 | 10 | 5 | 56 | 36 | R32 | Confederation Cup | GS | — | — | Iajour^{[27]} | 29,RAH,needs column normalization and independent check
+raja,2019–20,2019–20 | Botola Pro | 1st | 60 | 30 | 17 | 9 | 4 | 43 | 23 | QF | Champions League | SF | Arab Club Champions Cup | W | Moutouali | 15,RAH,needs column normalization and independent check
+raja,2020–21,2020–21 | Botola Pro | 2nd | 59 | 30 | 17 | 8 | 5 | 48 | 26 | Champions League | R1 | — | — | Malango | 24^{[k]},RAH,needs column normalization and independent check
+raja,2021–22,2021–22 | Botola Pro | 2nd | 60 | 30 | 17 | 9 | 4 | 41 | 21 | QF | Super Cup | RU | — | — | Ahaddad | 12,RAH,needs column normalization and independent check
+raja,2022–23,2022–23 | Botola Pro | 5th | 44 | 30 | 11 | 11 | 8 | 31 | 26 | RU | Champions League | QF | — | — | Khabba | 8,RAH,needs column normalization and independent check
+raja,2023–24,2023–24 | Botola Pro | 1st | 72 | 30 | 21 | 9 | 0 | 52 | 15 | W | — | — | Arab Club Champions Cup | QF | Bouzok | 16,RAH,needs column normalization and independent check
+raja,2024–25,2024–25 | Botola Pro | 5th | 48 | 30 | 12 | 12 | 6 | 38 | 25 | R16 | Champions League | GS | — | — | Ennafati | 13,RAH,needs column normalization and independent check
+raja,2025–26,2025–26 | Botola Pro | 3rd | 56 | 30 | 16 | 8 | 6 | 39 | 19 | — | — | — | — | — | Ennafati | 6,RAH,needs column normalization and independent check
+raja,2026–27,2026–27 | Botola Pro | – | – | 30 | – | – | – | – | – | — | Confederation Cup | — | — | — | — | —,RAH,needs column normalization and independent check
+wydad,1939–40,1939–40 | Critérium de guerre (Groupe Chaouia) ^{[note 3]} | 18 | 11 | 2 | 5 | 48 | 21 | +27 | 40 | 3rd ∆ | RU | – | — | – | – | – | |,WAH,needs column normalization and independent check
+wydad,1940–41,1940–41 | Critérium de guerre (Groupe Chaouia) | 11 | 1 | 6 | 49 | 22 | +27 | 41 | 3rd ∆ | | – | – | – | – | |,WAH,needs column normalization and independent check
+wydad,1941–42 ^{[note 4]},1941–42 ^{[note 4]} | Division de Promotion (Groupe Centre) | ? | ? | ? | ? | ? | ? | ? | ? | 1st ∆ | W ∆ | North African Cup | R2 | – | – | |,WAH,needs column normalization and independent check
+wydad,1942–43,1942–43 | ~~Division Honneur~~ ^{[note 5]} | ~~4~~ | ~~3~~ | ~~1~~ | ~~0~~ | ~~11~~ | ~~1~~ | ~~+10~~ | ~~11~~ | ~~1st~~ | – | | | | | |,WAH,needs column normalization and independent check
+wydad,1943–44,1943–44 | Critérium de guerre (Groupe Chaouia) | ? | ? | ? | ? | ? | ? | ? | ? | ? | | – | – | – | – | |,WAH,needs column normalization and independent check
+wydad,1944–45,1944–45 | Critérium de guerre (Groupe Chaouia) | 18 | ? | ? | ? | ? | ? | +27 | 43 | 3rd ∆ | QF | – | – | – | – | |,WAH,needs column normalization and independent check
+wydad,1945–46,1945–46 | Critérium de guerre (Groupe Sud) | 22 | 19 | 2 | 1 | 54 | 14 | +40 | 62 | 1st ∆ | RU | – | – | – | | |,WAH,needs column normalization and independent check
+wydad,1946–47,1946–47 | Division Honneur | 26 | 14 | 3 | 9 | 57 | 32 | +25 | 57 | 5th | – | North African Cup | R3 | | | Abdesselem | 13,WAH,needs column normalization and independent check
+wydad,1947–48,1947–48 | Division Honneur | 18 | 14 | 2 | 2 | 47 | 20 | +27 | 48 | 1st | North African Championship | W | | | 12,WAH,needs column normalization and independent check
+wydad,1948–49,1948–49 | Division Honneur | 22 | 18 | 3 | 1 | 62 | 14 | +48 | 61 | 1st | North African Championship | W | | | 21,WAH,needs column normalization and independent check
+wydad,1949–50,1949–50 | Division Honneur | 17 | 4 | 1 | 61 | 16 | +46 | 60 | 1st | North African Championship | W | | | Driss | 20^{‡},WAH,needs column normalization and independent check
+wydad,1950–51,1950–51 | Division Honneur | 12 | 8 | 2 | 40 | 18 | +22 | 54 | 1st | North African Championship | SF | | | Abdesselem | 11,WAH,needs column normalization and independent check
+wydad,1951–52,1951–52 | Division Honneur | 12 | 8 | 2 | 34 | 19 | +15 | 54 | 2nd | North African Cup | R32 | | | Abdesselem,WAH,needs column normalization and independent check
+wydad,1952–53,1952–53 | Division Honneur | 12 | 1 | 9 | 37 | 32 | +5 | 47 | 4th | North African Cup | RU | — | | Driss | 7,WAH,needs column normalization and independent check
+wydad,1953–54,1953–54 | Division Honneur | 7 | 10 | 5 | 23 | 26 | +4 | 48 | 5th | North African Cup | R32 | | | Gomez | 11,WAH,needs column normalization and independent check
+wydad,1954–55,1954–55 | Division Honneur | 11 | 6 | 5 | 30 | 18 | +12 | 50 | 1st | North African Championship | RU†fr.wikipedia.org | | | 6,WAH,needs column normalization and independent check
+wydad,1955–56,1955–56 | No national competitions were played in 1955–56 season due to political conflicts during the French Protectorate | North African Cup | R32 | – | | – | –,WAH,needs column normalization and independent check
+wydad,1956–57 ^{[note 6]},1956–57 ^{[note 6]} | Division Nationale I | 30 | 18 | 7 | 5 | 51 | 23 | +28 | 73 | 1st | RU | — | — | Independence Cup | W | Gomez | 15,WAH,needs column normalization and independent check
+wydad,1957–58,1957–58 | Division Nationale I | 28 | 15 | 11 | 2 | 34 | 16 | +18 | 69 | 2nd | RU | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1958–59,1958–59 | Division Nationale I | 26 | 12 | 8 | 6 | 50 | 22 | +28 | 58 | 2nd | R16 | — | — | — | — | Khalfi | 21^{‡},WAH,needs column normalization and independent check
+wydad,1959–60,1959–60 | Division Nationale I | 24 | 10 | 9 | 5 | 28 | 20 | +8 | 53 | 4th | QF | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1960–61,1960–61 | Division Nationale I | 26 | 9 | 9 | 8 | 30 | 25 | +5 | 53 | 7th | RU | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1961–62,1961–62 | Division Nationale I | 10 | 8 | 8 | 29 | 26 | +3 | 54 | 6th | R16 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1962–63,1962–63 | Division Nationale I | 8 | 10 | 8 | 26 | 22 | +4 | 52 | 6th | SF | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1963–64,1963–64 | Division Nationale I | 7 | 12 | 7 | 26 | 26 | 0 | 52 | 6th | RU | — | — | — | — | Khalfi | 9,WAH,needs column normalization and independent check
+wydad,1964–65,1964–65 | Division Nationale I | 9 | 10 | 7 | 27 | 21 | +6 | 54 | 5th | QF | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1965–66,1965–66 | Division Nationale I | 11 | 9 | 6 | 26 | 18 | +8 | 57 | 1st | R16 | — | — | Mohammed V Cup | 4th | Khalfi | 6,WAH,needs column normalization and independent check
+wydad,1966–67,1966–67 | Division Nationale I | 30 | 9 | 16 | 5 | 35 | 23 | +12 | 64 | 4th | QF | — | — | — | — | Zahid | 13,WAH,needs column normalization and independent check
+wydad,1967–68,1967–68 | Division Nationale I | 34 | 12 | 11 | 11 | 34 | 29 | +5 | 69 | 8th | R16 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1968–69,1968–69 | Division Nationale I | 30 | 16 | 11 | 3 | 34 | 17 | +17 | 73 | 1st | R32 | — | — | Mohammed V Cup | 4th | Abbes | 10,WAH,needs column normalization and independent check
+wydad,1969–70,1969–70 | Division Nationale I | 11 | 11 | 8 | 23 | 17 | +6 | 63 | 5th | W | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1970–71,1970–71 | Division Nationale I | 8 | 14 | 8 | 17 | 20 | −3 | 60 | 7th | R32 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1971–72,1971–72 | Division Nationale I | 13 | 12 | 5 | 39 | 26 | +13 | 68 | 2nd | R16 | — | — | — | — | Samrhouni | 6,WAH,needs column normalization and independent check
+wydad,1972–73,1972–73 | Division Nationale I | 10 | 10 | 10 | 22 | 22 | 0 | 61 | 9th | R32 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1973–74,1973–74 | Division Nationale I | 8 | 15 | 7 | 20 | 20 | 0 | 61 | 5th | SF | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1974–75,1974–75 | Division Nationale I | 9 | 13 | 8 | 25 | 27 | −2 | 61 | 9th | R32 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1975–76,1975–76 | Division Nationale I | 17 | 9 | 4 | 52 | 22 | +30 | 73 | 1st | R16 | — | — | Mohammed V Cup | 4th | Lecheheb | 16,WAH,needs column normalization and independent check
+wydad,1976–77,1976–77 | Division Nationale I | 14 | 11 | 5 | 50 | 27 | +23 | 69 | 1st | QF | — | — | Mohammed V Cup | 3rd | |,WAH,needs column normalization and independent check
+wydad,1977–78,1977–78 | Division Nationale I | 16 | 13 | 1 | 42 | 20 | +22 | 75 | 1st | W | — | — | — | — | Cherif | 16^{‡},WAH,needs column normalization and independent check
+wydad,1978–79,1978–79 | Division Nationale I | 14 | 9 | 7 | 33 | 26 | +7 | 67 | 3rd | W | — | — | Mohammed V Cup | W | |,WAH,needs column normalization and independent check
+wydad,1979–80,1979–80 | Division Nationale I | 12 | 13 | 5 | 38 | 25 | +13 | 67 | 2nd | R16 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1980–81,1980–81 | Division Nationale I | 38 | 17 | 9 | 12 | 44 | 32 | +12 | 81 | 4th | W | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1981–82,1981–82 | Division Nationale I | 34 | 12 | 15 | 7 | 41 | 31 | +10 | 73 | 2nd | R16 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1982–83,1982–83 | Division Nationale I | 30 | 9 | 18 | 3 | 31 | 19 | +12 | 66 | 3rd | R16 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1983–84,1983–84 | Division Nationale I | 11 | 10 | 9 | 30 | 29 | +1 | 62 | 5th | R32 | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,1984–85,1984–85 | Division Nationale I | 14 | 13 | 3 | 31 | 13 | +18 | 71 | 4th | R16 | — | — | — | — | M'jidou | 11^{‡},WAH,needs column normalization and independent check
+wydad,1985–86,1985–86 | Division Nationale I | 38 | 23 | 9 | 6 | 55 | 16 | +39 | 93 | 1st | R32 | — | — | — | — | Fakhreddine | 15,WAH,needs column normalization and independent check
+wydad,1986–87,1986–87 | Division Nationale I (Group A) | 22 | 10 | 6 | 6 | 35 | 15 | +20 | 48 | 4th ∆ | R32 | African Cup of Champions Clubs | R2 | — | — | Nader | 13^{‡},WAH,needs column normalization and independent check
+wydad,1987–88,1987–88 | Division Nationale I | 30 | 14 | 10 | 10 | 41 | 30 | +11 | 72 | 4th | SF | — | — | — | — | |,WAH,needs column normalization and independent check
+wydad,2016–17,2016–17 | Botola Pro 1 | 19 | 9 | 2 | 50 | 24 | +26 | 66 | 1st | R16 | CAF Champions League | W | — | — | Jebor | 19^{‡},WAH,needs column normalization and independent check
+wydad,2017–18,2017–18 | Botola Pro 1 | 14 | 9 | 7 | 44 | 26 | +18 | 51 | 2nd | SF | CAF Super Cup | W | FIFA Club World Cup | Fifth place | Nahiri | 9,WAH,needs column normalization and independent check
+wydad,2018–19,2018–19 | Botola Pro 1 | 17 | 8 | 5 | 56 | 30 | +26 | 59 | 1st | R32 | CAF Champions League | RU | Arab Club Champions Cup | R2 | Babatunde | 8,WAH,needs column normalization and independent check
+wydad,2019–20,2019–20 | Botola Pro 1 | 17 | 8 | 5 | 52 | 28 | +24 | 59 | 2nd | SF | CAF Champions League | SF | Arab Club Champions Cup | R2 | Jabrane,WAH,needs column normalization and independent check
+wydad,2020–21,2020–21 | Botola Pro 1 | 20 | 7 | 3 | 58 | 26 | +32 | 67 | 1st | CAF Champions League | SF | — | — | El Kaabi | 18^{‡},WAH,needs column normalization and independent check
+wydad,2021–22,2021–22 | Botola Pro 1 | 19 | 6 | 5 | 46 | 24 | +22 | 63 | 1st | RU | CAF Champions League | W | — | — | Mbenza | 16^{‡},WAH,needs column normalization and independent check
+wydad,2022–23,2022–23 | Botola Pro 1 | 19 | 9 | 2 | 47 | 21 | +26 | 66 | 2nd | SF | CAF Super Cup | RU | FIFA Club World Cup | R2 | Sambou | 13^{‡},WAH,needs column normalization and independent check
+wydad,2023–24,2023–24 | Botola Pro 1 | 12 | 8 | 10 | 31 | 27 | +4 | 44 | 6th | R32 | African Football League | RU | Arab Club Champions Cup | GS | Ade Oguns | 6,WAH,needs column normalization and independent check
+wydad,2024–25,2024–25 | Botola Pro 1 | 14 | 12 | 4 | 45 | 27 | +18 | 54 | 3rd | R16 | — | — | FIFA Club World Cup | GS | Rayhi | 11,WAH,needs column normalization and independent check

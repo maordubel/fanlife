@@ -56,7 +56,9 @@ describe('checked historical goal recovery',()=>{
   expect(withGoalWave(first,reviewed.goals[0]!.clubId)).toEqual(first)
   for(const [id,count] of [['hapoel-tel-aviv',21],['olympiacos',6]] as const)expect(clubGoals((await loadClub(id))!.data)).toHaveLength(count)
   const zr=clubGoals((await loadClub('zrinjski-mostar'))!.data)
-  expect(zr).toHaveLength(5)
+  // five from the 19.10 ledger and the 21.10 package, two from the 28.10 content round (Lincoln Red Imps, 2 Oct 2025)
+  expect(zr).toHaveLength(7)
+  expect(zr.filter(g=>g.id.startsWith('zrinjski-mostar:goal-2025-10-02-'))).toHaveLength(2)
   expect(zr.some(g=>g.id==='zrinjski-mostar:goal-2023-09-21-kozulj-winner-az')).toBe(true)
  },60000)
 

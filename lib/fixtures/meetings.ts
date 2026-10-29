@@ -60,7 +60,8 @@ export async function meetingsBetween(clubId: string, opponent: string, aliases:
       if (!m || !m.us) continue
       const other = m.us === 'home' ? m.away : m.home
       if (!isRival(other)) continue
-      const key = `${m.on ?? '?'}|${m.homeGoals}-${m.awayGoals}|${m.us === 'home' ? club.name : other}`
+      // keyed by day, score and side, never by a spelling: the archive line prints the rival in English, the match row in its own script
+      const key = `${m.on ?? '?'}|${m.homeGoals}-${m.awayGoals}|${m.us}`
       if (!found.has(key)) found.set(key, {on: m.on, year: m.on ? Number(m.on.slice(0, 4)) : null, home: m.home, away: m.away, homeGoals: m.homeGoals, awayGoals: m.awayGoals, competition: m.competition, from: [club.name], us: m.us as 'home' | 'away', shootout: m.shootout})
     }
     for (const f of eligibleArchive(pack.data)) {
@@ -70,7 +71,7 @@ export async function meetingsBetween(clubId: string, opponent: string, aliases:
       const target = id === clubId ? opponent : REGISTRY.find(c => c.id === clubId)!.name
       if (id === clubId ? !isRival(other) : !sameClub(other, target)) continue
       // one meeting per day and pairing, wherever it was recorded
-      const key = `${f.value.on ?? f.value.year ?? '?'}|${m.homeGoals}-${m.awayGoals}|${m.us === 'home' ? club.name : other}`
+      const key = `${f.value.on ?? f.value.year ?? '?'}|${m.homeGoals}-${m.awayGoals}|${id === clubId ? m.us : (m.us === 'home' ? 'away' : 'home')}`
       const have = found.get(key)
       if (have) { if (!have.from.includes(club.name)) have.from.push(club.name); continue }
       found.set(key, {on: f.value.on, year: f.value.year, home: m.home, away: m.away, homeGoals: m.homeGoals, awayGoals: m.awayGoals, competition: f.value.hint, from: [club.name], us: id === clubId ? m.us : (m.us === 'home' ? 'away' : 'home')})

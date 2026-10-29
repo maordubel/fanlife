@@ -1,0 +1,12 @@
+match,club,scorer,minute,event,source_id,status
+2019-11-23 Raja v Wydad,wydad,Mohamed Nahiri,12,penalty,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,raja,Mohcine Mitouali,50,penalty,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,wydad,Ayman El Hassouni,55,goal,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,wydad,Ayoub El Kaabi,57,goal,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,wydad,Badie Aouk,71,goal,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,raja,Hamid Ahadad,73,goal,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,raja,Mohcine Mitouali,88,penalty,DERBY19,source-reported; verify
+2019-11-23 Raja v Wydad,raja,Ben Malengo,90+4,goal,DERBY19,source-reported; verify
+2013-12-21 Bayern v Raja,bayern,Dante,7,goal,FINAL13,source-reported
+2013-12-21 Bayern v Raja,bayern,Thiago,22,goal,FINAL13,source-reported
+2022-05-30 Wydad v Al Ahly,wydad,Zouheir El Moutaraji,,two goals in final,CAF22,minute not verified

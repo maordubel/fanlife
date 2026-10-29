@@ -30,7 +30,8 @@ describe('Hapoel Tel Aviv — Worker parity in the hub',()=>{
   const ms=await meetingsBetween('hapoel-tel-aviv','Maccabi Tel Aviv',['מכבי תל אביב']),t=tallyOf(ms)
   expect(ms.length).toBeGreaterThan(150)
   expect(t.won+t.drawn+t.lost).toBe(t.played)
-  for(const m of ms)expect(m.home.includes('מכבי תל אביב')||m.away.includes('מכבי תל אביב')).toBe(true)
+  // the archive line is printed in English (28.10.2026), the match row in Hebrew: either spelling of the one rival, nobody else
+  for(const m of ms)expect([m.home,m.away].some(n=>n.includes('מכבי תל אביב')||n.includes('Maccabi Tel Aviv'))).toBe(true)
  })
  it('goal gate deals every eligible native goal, hides the answer, and grades in the reporter\'s terms',async()=>{
   const d=(await loadClub('hapoel-tel-aviv'))!.data,goals=clubGoals(d)
