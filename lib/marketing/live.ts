@@ -149,6 +149,16 @@ export function composeBriefing(fixtures: readonly Fixture[], results: readonly 
     sec('🏁 Latest results — FAN LIFE clubs', done.map(r => `${r.home} ${r.homeScore}-${r.awayScore} ${r.away}${r.competition ? ` · ${comp(r.competition)}` : ''}`), 'No FAN LIFE club played since yesterday morning.'), '',
     sec('🧩 DUBID — rounds open', rounds.slice(0, 6).map(r => `${r.league} · Round ${r.round} · locks ${weekday(r.lock_at).slice(0, 1)}${weekday(r.lock_at).slice(1).toLowerCase()} ${hhmm(r.lock_at)}`), 'No DUBID round is open.'),
   ].join('\n')
+  // the pictures (owner, 29.10.2026: "with the relevant graphics"): one card per part that has something in it,
+  // sent as one album before the text — the same layouts the live posts use
+  const slides: Kit[] = []
+  if (arenas.length) slides.push({t: 'L-OFFSIDES-TODAY', data: {app: 'offsides', rows: arenas.slice(0, 5).map(m => ({home: m.home, away: m.away, ko: hhmm(m.kickoff), league: m.league.toUpperCase(), arenas: m.arenas,
+    line: `${hhmm(m.kickoff)} · ${m.league.toUpperCase()} · ${m.arenas} ARENA${m.arenas === 1 ? '' : 'S'}`, homeCrestName: m.home, awayCrestName: m.away})), label: 'FREE PREDICTION GAME · NO REAL MONEY'}})
+  if (clubToday.length) slides.push({t: 'L-FIXTURES', data: {clubs: [...new Set(clubToday.map(f => f.clubId))], dayTop: 'TODAY', dayBottom: dayMonth(now),
+    rows: clubToday.slice(0, 6).map(f => ({home: f.home, away: f.away, line: `TODAY${f.dateOnly ? '' : ' ' + hhmm(f.kickoff)}${f.competition ? ' · ' + comp(f.competition).toUpperCase() : ''}`, homeCrestName: f.home, awayCrestName: f.away}))}})
+  if (done.length) slides.push({t: 'L-RESULTS', data: {clubs: [...new Set(done.map(r => r.clubId))], dayTop: weekday(done[done.length - 1]!.kickoff), dayBottom: dayMonth(done[done.length - 1]!.kickoff),
+    rows: done.slice(-6).map(r => ({home: r.home, away: r.away, score: `${r.homeScore}-${r.awayScore}`, line: comp(r.competition).toUpperCase() || 'FULL TIME', homeCrestName: r.home, awayCrestName: r.away}))}})
+  if (rounds.length) slides.push({t: 'L-DUBID-ROUND', data: {app: 'dubid', round: rounds[0]!.round, leagues: rounds.slice(0, 4).map(r => ({name: r.league, round: r.round, line: `LINEUPS LOCK ${weekday(r.lock_at)} ${dayMonth(r.lock_at)} · ${hhmm(r.lock_at)}`})), label: 'DUBID · FANTASY FOOTBALL'}})
   void names
-  return {refs: [`brief:${today}`], msg: msg.slice(0, 4000), kit: {t: 'none', data: {}}}
+  return {refs: [`brief:${today}`], msg: msg.slice(0, 4000), kit: slides.length ? {t: 'L-CAROUSEL', data: {briefing: true}, slides} as unknown as Kit : {t: 'none', data: {}}}
 }

@@ -85,7 +85,8 @@ describe('the morning briefing (owner, 29.10.2026): operations, not marketing', 
   it('reports arenas, today’s matches, results and DUBID — even what a post already announced — with no picture', () => {
     const out = composeBriefing(fixtures as never, results as never, ['celtic', 'olympiacos'], data, now, {})
     if ('skip' in out) throw Error('skipped')
-    expect(out.kit.t).toBe('none')
+    const slides = (out.kit as unknown as {slides: {t: string}[]}).slides
+    expect(slides.map(k => k.t)).toEqual(['L-OFFSIDES-TODAY', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND'])
     expect(out.msg).toContain('Morning briefing')
     expect(out.msg).toContain('21:00 Arsenal v Chelsea · Premier League · 3 arenas')
     expect(out.msg).toContain('21:45 Celtic v Rangers')
@@ -97,6 +98,7 @@ describe('the morning briefing (owner, 29.10.2026): operations, not marketing', 
   it('says plainly when a part is empty, and never skips', () => {
     const out = composeBriefing([], [], ['celtic'], {dubid: [], offsides: [], posted: []}, now, {})
     if ('skip' in out) throw Error('skipped')
+    expect(out.kit.t).toBe('none')
     expect(out.msg).toContain('No active arena today.')
     expect(out.msg).toContain('No FAN LIFE club plays today.')
   })

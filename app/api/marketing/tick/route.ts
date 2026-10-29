@@ -36,6 +36,7 @@ async function visuals(msg: string, kit: unknown): Promise<{pngs: Buffer[]; why:
 }
 /** what happened to the picture — returned in the tick's answer so a missing image says why */
 async function sendVisuals(token: string, chat: string, msg: string, kit: unknown): Promise<string> {
+  const brief = (kit as {data?: {briefing?: boolean}} | null)?.data?.briefing === true
   const {pngs, why} = await visuals(msg, kit)
   if (!pngs.length) return `none: ${why}`
   const note = why ? ` (own layout failed, app card sent: ${why.split('\n')[0]!.slice(0, 160)})` : ''
@@ -44,9 +45,9 @@ async function sendVisuals(token: string, chat: string, msg: string, kit: unknow
   form.append('disable_notification', 'true')
   if (pngs.length === 1) {
     form.append('photo', new Blob([new Uint8Array(pngs[0]!)], {type: 'image/png'}), 'post.png')
-    form.append('caption', '🎨 Ready-made visual — the post follows.')
+    form.append('caption', brief ? '☀️ Morning briefing — today at a glance. Details follow.' : '🎨 Ready-made visual — the post follows.')
   } else {
-    form.append('media', JSON.stringify(pngs.map((_, i) => ({type: 'photo', media: `attach://s${i}`, ...(i ? {} : {caption: `🎨 Ready-made carousel — ${pngs.length} slides. The post follows.`})}))))
+    form.append('media', JSON.stringify(pngs.map((_, i) => ({type: 'photo', media: `attach://s${i}`, ...(i ? {} : {caption: brief ? '☀️ Morning briefing — today at a glance. Details follow.' : `🎨 Ready-made carousel — ${pngs.length} slides. The post follows.`})}))))
     pngs.forEach((b, i) => form.append(`s${i}`, new Blob([new Uint8Array(b)], {type: 'image/png'}), `slide-${i + 1}.png`))
   }
   const r = await tg(token, pngs.length === 1 ? 'sendPhoto' : 'sendMediaGroup', form)
