@@ -23,8 +23,8 @@ import {Dye} from '@/components/master/Dye'
 import {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react'
 import {BOOT_START, BOOT_TIMEOUT_MS, bootReducer, failureCopyKey, probeWebgl, voxelFailure} from './boot'
 import type {ReelInput} from '@/lib/life/universal/reel'
-import {afterPlay, chapterOf, eventsOf, Life, meets, nextChapter, openChapter, playAmount, untold, type Directive, type LifeStore} from '@/lib/life/universal/engine'
-import type {CardDef, Chapter, Effect, LifePack, LifeState} from '@/lib/life/universal/types'
+import {afterPlay, chapterOf, clockRunning, eventsOf, Life, meets, nextChapter, openChapter, playAmount, untold, type Directive, type LifeStore} from '@/lib/life/universal/engine'
+import type {CardDef, Chapter, CineDef, ClockDef, DocDef, Effect, LifePack, LifeState, Line, LiveDef, StampKind} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {CityMap} from './CityMap'
@@ -36,6 +36,9 @@ import {Hud, type Meter} from './Hud'
 import {TapChip} from './TapChip'
 import {MiniGame} from './MiniGame'
 import {RushHost} from './rush/RushHost'
+import {BarkBubble, CineLayer, DocLayer, EpisodeEnd, EpisodeOpen, MissionBar, StampLayer, TimeCard} from './season/Cinema'
+import {MatchLive, type LiveResult} from './season/MatchLive'
+import {lookAt} from '@/lib/life/universal/cast'
 import {missionFlags, missionSpecFor, type RushDoor} from '@/lib/life/rush/call'
 import type {MissionResult, MissionSpec} from '@/lib/life/rush/spec'
 import {instantText, Typed, type TypedHandle} from './Typed'
@@ -53,7 +56,19 @@ type Result = 'good' | 'ok' | 'slip'
 /** the room changes through one machine: idle → leaving (he reached a door) → entering (the next room is being built) → idle */
 type Transit = 'idle' | 'leaving' | 'entering'
 type Delta = {id: number; text: string; tone: 'up' | 'down'}
-type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d: 'play'}> & {game: NonNullable<Extract<Directive, {d: 'play'}>['game']>}} | {k: 'mission'; spec: MissionSpec} | null
+type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d: 'play'}> & {game: NonNullable<Extract<Directive, {d: 'play'}>['game']>}} | {k: 'mission'; spec: MissionSpec}
+  /* Season One: a staged scene, an interview, the live night, a stamp */
+  | {k: 'cine'; caption: {who: string | null; text: string; kind: 'say' | 'think' | 'room'} | null}
+  | {k: 'doc'; name: string; role: string; line: string; index: number; total: number; studio: boolean}
+  | {k: 'live'; def: LiveDef}
+  | {k: 'stamp'; kind: StampKind; text: string}
+  | {k: 'time'; text: string}
+  | null
+/** the year the interviews are filmed: the present day of the documentary, not a fact about the past */
+const DOC_YEAR = 2026
+/** the photographed keepsake for an episode's object out of the box (public/life/season/box, R8 of the realism pack) */
+const BOX_IMG = new Set(['scarf', 'shirt', 'ticket', 'album', 'fence', 'away-ticket'])
+const boxImg = (ch: {keepsakes?: {id: string}[]} | null | undefined): string | null => { const id = ch?.keepsakes?.[0]?.id; return id && BOX_IMG.has(id) ? `/life/season/box/${id}.webp` : null }
 type Props = {
   pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}
   /** RUSH for this club (the missions its archive can hold), or null where the switch is off: a mission's choice then plays its small game, or simply happens */
@@ -150,6 +165,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   const prevStat = useRef<{chapter: string | null; coins: number; energy: number; standing: number; heart: number; bonds: Record<string, number>} | null>(null)
   const deltaId = useRef(0)
   const [intro, setIntro] = useState<{id: string; name: string; role: string; blurb: string} | null>(null)
+  const [nameDraft, setNameDraft] = useState(() => pack.hero.name ?? '')
 
   const life = useRef<Life | null>(null)
   const rt = useRef<PlayRuntime | null>(null)
@@ -163,6 +179,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   const timers = useRef<number[]>([])
   const keys = useRef(new Set<string>())
   const holding = useRef(false)
+  const opening = useRef(false)
   const primary = useRef<HTMLButtonElement | null>(null)
 
   const chapter = useMemo<Chapter | null>(() => (state ? chapterOf(pack, state.chapter) : null), [pack, state])
@@ -179,6 +196,118 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   const cue = useCallback((name: string) => { sound.current?.play(name) }, [])
   const later = useCallback((fn: () => void, ms: number) => { const t = window.setTimeout(fn, ms); timers.current.push(t); return t }, [])
   const say = useCallback((text: string) => { setToast(text); later(() => setToast(cur => (cur === text ? null : cur)), 4200) }, [later])
+
+  /* ───────────── Season One: his name, and the director that stages what the episode asks for ───────────── */
+  const heroOf = useCallback((): string => { const n = life.current?.state.flags['life:name']; return (typeof n === 'string' && n.trim()) || pack.hero.name || copy['s1.defaultName'] || 'Alex' }, [copy, pack])
+  const heroize = useCallback((t: string): string => t.split('{hero}').join(heroOf()), [heroOf])
+  /** who a line belongs to, as the screen names them */
+  const who = useCallback((id: string | null): string | null => {
+    if (id === null) return null
+    if (id === 'me' || id === 'think') return heroOf()
+    const ch = chapterOf(pack, life.current?.state.chapter ?? null)
+    return ch ? nameOf(pack, ch, id) : pack.cast[id]?.name ?? id
+  }, [heroOf, pack])
+  /** a pause the player can cut short with a tap (and Skip cuts short for good) */
+  const tapNext = useRef<(() => void) | null>(null)
+  const skipAll = useRef(false)
+  const wait = useCallback((ms: number) => new Promise<void>(res => {
+    let over = false
+    const go = () => { if (over) return; over = true; if (tapNext.current === go) tapNext.current = null; res() }
+    tapNext.current = go
+    if (skipAll.current) go(); else later(go, ms)
+  }), [later])
+  const tap = useCallback(() => { tapNext.current?.() }, [])
+  const skip = useCallback(() => { skipAll.current = true; tapNext.current?.() }, [])
+  /** the room's own named places, as coordinates a body can walk to */
+  const roomPoint = useCallback((name: string) => {
+    const room = life.current?.state.room, geo = room ? pack.rooms[room] : undefined
+    const p = geo?.slots[name] ?? geo?.spots[name]
+    return p ? {x: p.x, z: p.z} : null
+  }, [pack])
+  type SeasonRuntime = PlayRuntime & {shot?: (o: {cam: string; on: string[]; ms: number} | null) => boolean; cineAct?: (a: Record<string, unknown>) => boolean; studio?: (o: {look: unknown; who?: string} | null) => boolean; studioSay?: (mood: string | false) => boolean; celebrate?: () => void}
+  const srt = useCallback(() => rt.current as SeasonRuntime | null, [])
+
+  /** a staged scene: the camera cuts between people while they move, turn, hold things and cheer */
+  const playCine = useCallback(async (def: CineDef) => {
+    const l = life.current
+    if (!l) return
+    skipAll.current = false
+    for (const sh of def.shots) {
+      if (skipAll.current) break
+      if (sh.when && !meets(l.state, sh.when)) continue
+      srt()?.shot?.({cam: sh.cam, on: sh.on ?? [], ms: sh.ms})
+      for (const a of sh.act ?? []) {
+        if (a.do === 'walk') { const p = roomPoint(a.to); if (p) srt()?.cineAct?.({who: a.who, do: 'walk', x: p.x, z: p.z}) }
+        else srt()?.cineAct?.(a as unknown as Record<string, unknown>)
+      }
+      const line = sh.say
+      if (line?.who && line.who !== 'think' && line.mood) srt()?.cineAct?.({who: line.who, do: 'emote', mood: line.mood})
+      const caption = line ? {who: line.who === null ? null : who(line.who), text: heroize(line.t), kind: (line.who === 'think' ? 'think' : line.who === null ? 'room' : 'say') as 'say' | 'think' | 'room'} : null
+      setOverlay({k: 'cine', caption})
+      await wait(Math.max(sh.ms, caption ? 900 + caption.text.length * 42 : 0))
+    }
+    srt()?.shot?.(null)
+    setOverlay(null)
+    skipAll.current = false
+  }, [heroize, roomPoint, srt, wait, who])
+
+  /** an interview, 2026: the person, older, in the studio; each line only if what it remembers happened */
+  const playDoc = useCallback(async (def: DocDef) => {
+    const l = life.current, ch = l && chapterOf(pack, l.state.chapter), member = pack.cast[def.who]
+    if (!l || !ch || !member) return
+    const held = def.lines.map((x, i) => ({...x, i})).filter(x => meets(l.state, x.when))
+    // what he did comes first (two at most), then one thing that is always true; in the order they were written
+    const lines = [...held.filter(x => x.when).slice(0, 2), ...held.filter(x => !x.when).slice(0, 1)].sort((a, b) => a.i - b.i)
+    if (!lines.length) return
+    skipAll.current = false
+    const now = pack.hero.birthYear ? DOC_YEAR - pack.hero.birthYear : Math.max(ch.age + 30, 40)
+    const studio = !!srt()?.studio?.({look: lookAt(def.who, member.look, now), who: def.who})
+    const name = pack.given?.[def.who] ?? nameOf(pack, ch, def.who)
+    for (const [i, x] of lines.entries()) {
+      if (skipAll.current) break
+      setOverlay({k: 'doc', name, role: heroize(def.role), line: heroize(x.t), index: i, total: lines.length, studio})
+      srt()?.studioSay?.('warm')
+      await wait(Math.max(3400, 1400 + x.t.length * 50))
+      srt()?.studioSay?.(false)
+      // a secret: something he did not know then. It is counted on the end card, out of all the episode holds
+      const key = `s1:secret:${ch.id}:${def.id}:${x.i}`
+      if (x.secret && !skipAll.current && !l.state.flags[key]) {
+        l.dispatch({t: 'flag', k: key, v: x.secret})
+        cue('reveal')
+        setOverlay({k: 'stamp', kind: 'secret', text: heroize(x.secret)})
+        await wait(1500)
+      }
+    }
+    srt()?.studio?.(null)
+    setOverlay(null)
+    skipAll.current = false
+  }, [cue, heroize, pack, srt, wait])
+
+  /** the archive night, around him */
+  const liveDone = useRef<((r: LiveResult) => void) | null>(null)
+  const playLive = useCallback(async (def: LiveDef) => {
+    const l = life.current, ch = l && chapterOf(pack, l.state.chapter)
+    if (!l || !ch?.anchor) return
+    const r = await new Promise<LiveResult>(res => { liveDone.current = res; setOverlay({k: 'live', def}) })
+    liveDone.current = null
+    setOverlay(null)
+    // the noise he made is his: a little heart for it, and the people beside him noticed
+    const loud = Math.min(5, Math.floor(r.noise / 8))
+    l.dispatch(...(loud ? [{t: 'heart' as const, by: loud}] : []), ...def.with.slice(0, 1).map(w => ({t: 'bond' as const, who: w, by: r.held ? 3 : 1})), {t: 'flag', k: `life:s1:${ch.id}:noise`, v: r.noise})
+  }, [pack])
+
+  /** a stamp across the screen; it is also written down for the episode's end card */
+  const playStamp = useCallback(async (kind: StampKind, text: string) => {
+    const l = life.current
+    if (!l) return
+    const n = Object.keys(l.state.flags).filter(k => k.startsWith('s1:log:stamp')).length
+    if (kind === 'passed' || kind === 'failed') l.dispatch({t: 'flag', k: `s1:log:stamp${n}`, v: `${kind}|${text}`})
+    cue(kind === 'failed' ? 'whistle' : 'reveal')
+    setOverlay({k: 'stamp', kind, text: heroize(text)})
+    skipAll.current = false
+    await wait(1700)
+    setOverlay(null)
+  }, [cue, heroize, wait])
 
   /* ───────────── the life ───────────── */
   useEffect(() => {
@@ -256,11 +385,29 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   }, [])
 
   /** After anything happened: redraw who is here, play the beat that is waiting, or hand the room back. */
-  const settle = useCallback(async () => {
+  const settle = useCallback(async (): Promise<void> => {
     const l = life.current, r = rt.current
     if (!l || !r || live.current.phase !== 'play') return
     const ch = chapterOf(pack, l.state.chapter), room = l.state.room
     if (!ch || !room) return
+    // Season One: the cold open plays once, as the day begins — the interview, the room coming to life, the job
+    if (opening.current) return
+    const open = ch.episode?.open
+    if (open && !l.state.flags['s1:open']) {
+      opening.current = true; holding.current = true; r.freeze(true)
+      l.dispatch({t: 'flag', k: 's1:open', v: true})
+      try {
+        // the hook: a few seconds from later in the day, then the card that takes us back
+        const flash = ch.episode?.flash, fc = flash ? ch.cines?.find(x => x.id === flash.cine) : undefined
+        if (flash && fc) { await playCine(fc); if (!skipAll.current) { cue('page'); setOverlay({k: 'time', text: heroize(flash.card)}); await wait(1700); setOverlay(null) } }
+        const d = open.doc ? ch.docs?.find(x => x.id === open.doc) : undefined
+        if (d) await playDoc(d)
+        const c = open.cine ? ch.cines?.find(x => x.id === open.cine) : undefined
+        if (c) await playCine(c)
+        if (open.mission) await playStamp('unlocked', open.mission)
+      } finally { opening.current = false; holding.current = false }
+      return settleRef.current()
+    }
     // "after the shift": the same room at another hour is drawn again, with him standing where he stood
     if (l.state.time !== live.current.time) { const w = r.where(); await enterRoom(w ? {x: w.x, z: w.z} : undefined) }
     const now = people(pack, ch, l.state, room)
@@ -272,7 +419,9 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     syncFreeze()
     // a beat that was closed before its end comes back by itself — nothing in a day can be lost by closing a box
     if (beat) later(() => { skipped.current.delete(beat.id); if (!live.current.talk && !live.current.overlay && !live.current.menu) void settle() }, 6000)
-  }, [enterRoom, later, pack, startTalk, syncFreeze])
+  }, [cue, enterRoom, heroize, later, pack, playCine, playDoc, playStamp, startTalk, syncFreeze, wait])
+  const settleRef = useRef<() => Promise<void>>(settle)
+  settleRef.current = settle
 
   /* ───────────── room transitions: one machine ───────────── */
   const clearWatch = useCallback(() => { if (watch.current !== null) { window.clearTimeout(watch.current); watch.current = null } }, [])
@@ -380,10 +529,19 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       } else if (d.d === 'goto') {
         l.dispatch({t: 'moved', room: d.room, spawn: d.spawn, time: d.time ?? l.state.time})
         await enterRoom()
-      } else if (d.d === 'end') { finishChapter(d.ending); return true }
+      } else if (d.d === 'cine') { const def = chapterOf(pack, l.state.chapter)?.cines?.find(c => c.id === d.id); if (def) await playCine(def) }
+      else if (d.d === 'doc') { const def = chapterOf(pack, l.state.chapter)?.docs?.find(c => c.id === d.id); if (def) await playDoc(def) }
+      else if (d.d === 'live') { const def = chapterOf(pack, l.state.chapter)?.lives?.find(c => c.id === d.id); if (def) await playLive(def) }
+      else if (d.d === 'stamp') await playStamp(d.kind, d.text)
+      else if (d.d === 'end') {
+        // an episode ends on its interviews: the people of his life, older, about what he just did
+        const ch = chapterOf(pack, l.state.chapter)
+        for (const id of ch?.episode?.close ?? []) { const def = ch?.docs?.find(x => x.id === id); if (def) await playDoc(def) }
+        finishChapter(d.ending); return true
+      }
     }
     return false
-  }, [cue, enterRoom, finishChapter, locale, pack, rush])
+  }, [cue, enterRoom, finishChapter, locale, pack, playCine, playDoc, playLive, playStamp, rush])
 
   const closeTalk = useCallback(async (completed: boolean) => {
     const run = runner.current, ctx = live.current.talk, l = life.current
@@ -760,6 +918,70 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     hinted.current = true; setHint(true); later(() => setHint(false), 7000)
   }, [later, playing, roomUp, touch])
 
+  /* ───────────── Season One: the clock against him, and the street talking as he passes ───────────── */
+  const roomUpRef = useRef(false)
+  roomUpRef.current = roomUp
+  const clocks = useRef<{chapter: string | null; left: Record<string, number>}>({chapter: null, left: {}})
+  const [clockView, setClockView] = useState<{left: number; label: string} | null>(null)
+  const runOut = useCallback((c: ClockDef) => {
+    const l = life.current
+    if (!l) return
+    l.dispatch({t: 'flag', k: c.fail, v: true})
+    cue('whistle')
+    if (c.talk) startTalk(c.talk, {actor: null, beat: null}); else void settle()
+  }, [cue, settle, startTalk])
+  const chapterClocks = chapter?.clocks ?? null
+  useEffect(() => {
+    if (phase !== 'play' || !chapterClocks?.length) { setClockView(null); return }
+    const step = 0.25
+    const id = window.setInterval(() => {
+      const l = life.current
+      if (!l) return
+      if (clocks.current.chapter !== l.state.chapter) clocks.current = {chapter: l.state.chapter, left: {}}
+      const c = chapterClocks.find(x => clockRunning(x, l.state))
+      if (!c) { setClockView(null); return }
+      // the clock stands still while anybody talks, a card or a game is open, the menu is up or a room is being built
+      const L = live.current, paused = !!L.talk || L.overlay || L.menu || L.sheet || trans.current !== 'idle' || holding.current || opening.current || !roomUpRef.current
+      const left = (clocks.current.left[c.id] ?? c.s) - (paused ? 0 : step)
+      clocks.current.left[c.id] = left
+      setClockView({left: Math.max(0, left), label: heroize(c.label)})
+      if (left <= 0 && !paused) runOut(c)
+    }, step * 1000)
+    return () => window.clearInterval(id)
+  }, [chapterClocks, heroize, phase, runOut])
+
+  const [bark, setBark] = useState<{x: number; y: number; text: string; key: number} | null>(null)
+  const barkSeen = useRef<{at: Record<string, number>; n: Record<string, number>; key: number}>({at: {}, n: {}, key: 0})
+  const chapterBarks = chapter?.barks ?? null
+  useEffect(() => {
+    if (phase !== 'play' || !chapterBarks?.length) return
+    const id = window.setInterval(() => {
+      const l = life.current, r = rt.current, sc = live.current.scene, L = live.current
+      if (!l || !r || !sc || L.talk || L.overlay || L.menu || L.sheet || trans.current !== 'idle') return
+      const w = r.where()
+      if (!w) return
+      const now = Date.now(), seen = barkSeen.current
+      for (const b of chapterBarks) {
+        if (b.room !== l.state.room || !meets(l.state, b.when) || now - (seen.at[b.id] ?? 0) < 9000) continue
+        const a = sc.actors.find(x => x.id === b.who)
+        if (!a || Math.hypot(a.slot.x - w.x, a.slot.z - w.z) > 5.5) continue
+        const p = r.project('actor', a.id), host = stageEl
+        if (!p || !host) continue
+        const fraction = p.x <= 1.5 && p.y <= 1.5, W = host.clientWidth, H = host.clientHeight
+        const x = fraction ? p.x * W : p.x, y = (fraction ? p.y * H : p.y) - 12
+        if (x < 40 || x > W - 40 || y < 90) continue
+        const k = seen.n[b.id] ?? 0
+        seen.n[b.id] = k + 1; seen.at[b.id] = now
+        const text = heroize(b.lines[k % b.lines.length]!)
+        const key = ++seen.key
+        setBark({x, y, text, key})
+        later(() => setBark(cur => (cur?.key === key ? null : cur)), 2800)
+        break
+      }
+    }, 900)
+    return () => window.clearInterval(id)
+  }, [chapterBarks, heroize, later, phase, stageEl])
+
   /* ───────────── what is drawn ───────────── */
   if (!state) return <div className={styles.life} data-phase="boot"><p className={styles.loading} role="status">{copy.loading}</p></div>
 
@@ -767,7 +989,19 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   const firstOpen = chapter && state ? objectives.findIndex(o => !doneObjective(o.done, state)) : -1
   const current = firstOpen >= 0 ? objectives[firstOpen]! : null
   const lastLine = !!talk && talk.view.index >= talk.view.lines.length - 1
-  const speaker = !line || line.who === null ? null : line.who === 'me' ? copy.you! : chapter ? nameOf(pack, chapter, line.who) : line.who
+  const speaker = !line || line.who === null ? null : line.who === 'me' || line.who === 'think' ? heroOf() : chapter ? nameOf(pack, chapter, line.who) : line.who
+  const episode = chapter?.episode ?? null
+  const sideIds = new Set(chapter?.side ?? [])
+  const mainOpen = episode ? objectives.find(o => !sideIds.has(o.id) && !doneObjective(o.done, state)) ?? null : null
+  // jobs that are open together are named together: what is still left of them, in either order
+  const jobText = !mainOpen ? null : mainOpen.hub ? objectives.filter(o => o.hub === mainOpen.hub && !doneObjective(o.done, state)).map(o => heroize(o.t)).join(' + ') : heroize(mainOpen.t)
+  const sidesOpen = episode ? objectives.filter(o => sideIds.has(o.id) && !doneObjective(o.done, state)).length : 0
+  // the episode's log, in the order it happened: jobs done and missed, and the moments it remembers
+  const secrets = episode && chapter ? {
+    found: Object.entries(state.flags).filter(([k]) => k.startsWith(`s1:secret:${chapter.id}:`)).map(([, v]) => heroize(String(v))),
+    total: (chapter.docs ?? []).reduce((n, d) => n + d.lines.filter(x => x.secret).length, 0),
+  } : {found: [], total: 0}
+  const ledger = episode ? Object.entries(state.flags).filter(([k]) => k.startsWith('s1:log:')).flatMap(([, v]) => { const [kind, ...rest] = String(v).split('|'); return kind === 'passed' || kind === 'failed' || kind === 'new' ? [{kind: kind as StampKind, text: heroize(rest.join('|'))}] : [] }) : []
   const newChapters = phase === 'finished' ? untold(pack, state) : []
   const ending = chapter && state.done[chapter.id] ? chapter.endings[state.done[chapter.id]!] : null
   const keepsake = (id: string | undefined) => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return k } return null }
@@ -824,7 +1058,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       <div className={styles.stage} ref={setStageEl}>
         {failed !== 'webgl' && <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />}
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
-        <div className={styles.notes} data-life="notes">
+        <div className={styles.notes} data-life="notes" hidden={overlay?.k === 'cine' || overlay?.k === 'doc' || overlay?.k === 'live'}>
           {place && (
             <div className={styles.place} role="status" data-life="place" data-first={place.first ? 'true' : 'false'} key={place.id}><small>{place.first ? copy['place.new'] : copy['place.now']}</small><b {...story}>{place.name}</b></div>
           )}
@@ -860,10 +1094,15 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       {playing && chapter && (
         <Hud
           plateRef={hudEl} initials={pack.skin.initials} serial={`№ ${pad2(chapterNo)} · ${copy.age} ${chapter.age}`} place={state.room ? roomName(pack, state.room, chapter) : chapter.title}
-          objective={current ? current.t : null} coins={state.coins} energy={state.energy} standing={state.standing} talking={!!talk} copy={copy} story={story}
+          objective={episode ? null : current ? heroize(current.t) : null} coins={state.coins} energy={state.energy} standing={state.standing} talking={!!talk} copy={copy} story={story}
           onMeter={m => { setGaugeFocus(m); setSheet('gauges') }} onMap={() => setSheet('map')} onMenu={() => setMenu('menu')}
         />
       )}
+
+      {playing && episode && roomUp && !talk && !overlay && (
+        <MissionBar label={`${copy['s1.episode'] ?? 'Episode'} ${episode.no} · ${chapter!.title}`} job={jobText} main={!!mainOpen && episode.main.includes(mainOpen.id)} clock={clockView} sides={sidesOpen} copy={copy} />
+      )}
+      {playing && bark && !talk && !overlay && <BarkBubble key={bark.key} x={bark.x} y={bark.y} text={bark.text} />}
 
       {playing && chapter && (
         <aside className={styles.programme} aria-label={copy.objective}>
@@ -886,7 +1125,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
 
       {playing && talk && line && (
         <Dialogue
-          text={line.t} who={line.who} speaker={speaker} me={line.who === 'me'} choices={talk.view.choices} asking={lastLine && talk.view.choices.length > 0} typed={typed}
+          text={heroize(line.t)} who={line.who} speaker={speaker} me={line.who === 'me'} choices={talk.view.choices.map(c => ({...c, t: heroize(c.t)}))} asking={lastLine && talk.view.choices.length > 0} typed={typed} timer={talk.view.timer ?? null}
           serial={`${talk.view.talk}:${talk.view.index}`} story={story} handle={typing} sheetRef={sheetEl} primaryRef={primary} armedRef={armed} copy={copy}
           onAdvance={advance} onChoose={choose} onLeave={() => void closeTalk(false)} onTyped={typedDone}
         />
@@ -937,13 +1176,25 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
               {archiveBlock(prelude)}
               <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => { cue('page'); setCardAt(n => n + 1) }} data-life="card-next">{copy.next}</button></div>
             </div>
+          ) : episode ? (
+            <EpisodeOpen no={episode.no} of={episode.of} age={chapter.age} title={chapter.title} logline={heroize(episode.logline)} ready={ready}
+              texts={episode.no === 1 && typeof state.flags['life:name'] !== 'string' ? (episode.texts ?? []).map(m => ({from: heroize(m.from), t: heroize(m.t)})) : []} box={episode.box ? {item: heroize(episode.box.item), line: heroize(episode.box.line), img: boxImg(chapter)} : null}
+              askName={episode.no === 1 && typeof state.flags['life:name'] !== 'string'} name={nameDraft} onName={setNameDraft} copy={copy}
+              onPlay={() => { const n = nameDraft.trim(); if (episode.no === 1 && typeof state.flags['life:name'] !== 'string' && n) life.current?.dispatch({t: 'flag', k: 'life:name', v: n.slice(0, 18)}); beginDay() }} />
           ) : (
             <Reel key={chapter.id} input={reelInput!} copy={copy} ready={ready} onBegin={beginDay} onCue={cue} storyProps={story} primary={primary} />
           )}
         </section>
       )}
 
-      {phase === 'ending' && chapter && ending && (
+      {phase === 'ending' && chapter && ending && episode && (
+        <div data-life="ending" data-ending={state.done[chapter.id]}>
+          <EpisodeEnd no={episode.no} title={chapter.title} ledger={ledger} next={episode.next ? heroize(episode.next) : null} last={episode.no >= episode.of} copy={copy}
+            secrets={secrets} tease={episode.tease ? heroize(episode.tease) : null} letter={episode.letter ? {head: heroize(episode.letter.head), lines: episode.letter.lines.map(heroize), sign: heroize(episode.letter.sign), after: heroize(episode.letter.after)} : null}
+            kept={keepsake(ending.keep) && state.keeps.includes(ending.keep!) ? {name: heroize(keepsake(ending.keep)!.name), note: heroize(keepsake(ending.keep)!.note), img: boxImg(chapter)} : null} onNext={toNext} />
+        </div>
+      )}
+      {phase === 'ending' && chapter && ending && !episode && (
         <section className={`${styles.cover} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-card-title" data-life="ending" data-ending={state.done[chapter.id]}>
           <div className={styles.ticket}>
             <p className={styles.serial}>{copy.ending} · {copy.age} <bdi>{chapter.age}</bdi></p>
@@ -1003,6 +1254,15 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
           <RushHost spec={overlay.spec} skin={pack.skin} locale={locale} reduced={reduced} gateLabel={rush.gateLabel} cue={soundOn ? cue : undefined}
             onDone={r => { const done = missionDone.current; missionDone.current = null; dismiss.current = null; setOverlay(null); done?.(r) }} />
         </div>
+      )}
+
+      {overlay?.k === 'cine' && <CineLayer caption={overlay.caption} onTap={tap} onSkip={skip} copy={copy} />}
+      {overlay?.k === 'doc' && <DocLayer name={overlay.name} role={overlay.role} when={String(DOC_YEAR)} line={overlay.line} index={overlay.index} total={overlay.total} studio={overlay.studio} onNext={tap} onSkip={skip} copy={copy} />}
+      {overlay?.k === 'stamp' && <StampLayer kind={overlay.kind} text={overlay.text} copy={copy} />}
+      {overlay?.k === 'time' && <TimeCard text={overlay.text} />}
+      {overlay?.k === 'live' && chapter?.anchor && (
+        <MatchLive anchor={chapter.anchor} def={overlay.def} nameOf={id => who(id) ?? id} heroize={heroize} reduced={reduced} cue={cue} locale={locale} copy={copy}
+          celebrate={() => srt()?.celebrate?.()} onDone={r => liveDone.current?.(r)} />
       )}
 
       {overlay?.k === 'game' && (

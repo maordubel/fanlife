@@ -1,5 +1,6 @@
 import {describe, expect, it} from 'vitest'
-import {MASTER_IDS} from '@/lib/life/universal/screenplay/master'
+import {MASTER_IDS, masterChapters} from '@/lib/life/universal/screenplay/master'
+import {SEASON_ONE_UNTIL} from '@/lib/life/universal/season'
 import {SCREENPLAY, screenplayChapters} from '@/lib/life/universal/screenplay'
 import {apply, emptyState, eventsOf, Life, meets, openChapter, saveKey, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import {Runner, sceneOf} from '@/lib/life/universal/world'
@@ -140,9 +141,9 @@ describe('universal screenplay 2',()=>{
  it('has one script and one save: the first edition is gone, its saves are ignored, never read or deleted',async()=>{
   const data=(await loadClub('hapoel-tel-aviv'))!.data
   const he=clubLife(data,{locale:'he'}),en=clubLife(data,{locale:'en'})
-  expect(he.provenance.universalChapters).toBe(21 + MASTER_IDS.length);expect(he.readiness.playable).toBe(true);expect(he.storyLocale).toBe('he')
+  expect(he.provenance.universalChapters).toBe([...screenplayChapters('en'),...masterChapters(MASTER_IDS,'en')].filter(c=>c.id==='finale'||c.age>SEASON_ONE_UNTIL).length);expect(clubLife(data,{locale:'he',season:false}).provenance.universalChapters).toBe(21 + MASTER_IDS.length);expect(he.readiness.playable).toBe(true);expect(he.storyLocale).toBe('he')
   expect(he.cast.dad!.name).toBe('אבא');expect(en.cast.dad!.name).toBe('Dad')
-  expect(saveKey('hapoel-tel-aviv')).toMatch(/:story2$/)
+  expect(saveKey('hapoel-tel-aviv')).toMatch(/:season1$/)
   const map=new Map<string,string>();const store:LifeStore={read:k=>map.get(k)??null,write:(k,v)=>{map.set(k,v)},clear:k=>{map.delete(k)}}
   const old=`fan-life:club:${en.clubId}:life`
   map.set(old,JSON.stringify({v:1,club:en.clubId,pack:en.version,events:[{t:'started',pack:en.version},{t:'chapter',id:en.chapters[0]!.id}],savedAt:''}))

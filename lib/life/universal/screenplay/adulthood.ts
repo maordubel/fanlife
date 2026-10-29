@@ -86,7 +86,7 @@ export const ADULTHOOD = [
           s('mum', 'I know. I have the same radio you do. Choose, and tell him yourself.', 'אני יודעת. יש לי אותו רדיו כמוך. תבחר, ותגיד לו בעצמך.'),
         ],
         callbacks: [
-          {group: 'past', when: {flag: 'life:away:stayed'}, lines: [s('mum', 'Last time you stayed for the lunch. I did not forget that, and he will not either.', 'בפעם הקודמת נשארת לארוחה. אני לא שכחתי, והוא לא ישכח.')]},
+          {group: 'past', when: {flag: 'life:away:stayed'}, lines: [s('mum', 'Last time you heard it on a radio instead. I did not forget that, and he will not either.', 'בפעם הקודמת שמעת את זה ברדיו במקום. אני לא שכחתי, והוא לא ישכח.')]},
           {group: 'past', when: is('life:home:trust', 'hidden'), lines: [s('mum', 'Whatever you decide, say where you are going. I am not asking twice.', 'מה שלא תחליט, תגיד לאן אתה הולך. אני לא שואלת פעמיים.')]},
         ],
         task: t('Tell your parents what you chose', 'להגיד להורים מה בחרת'),

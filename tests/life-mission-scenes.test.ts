@@ -49,7 +49,7 @@ describe('LIFE · three scenes that hand you the big nights', () => {
   it('a life that stayed home in F04 never meets the pitch, and both chapters still finish however they are played', async () => {
     const stay = MASTER.find(c => c.id === 'F04')!.scenes.find(x => x.id === 'F04-S2')!.options.find(o => o.id === 'skip')!
     expect(stay.skip, 'staying home skips the pitch').toContain('F04-S4')
-    const pack = clubLife((await loadClub('aek-athens'))!.data)
+    const pack = clubLife((await loadClub('aek-athens'))!.data, {season: false})   // F04/F17 are master chapters of the ages Season One replaces in a new life
     for (const id of ['F04', 'F17']) {
       const ch = pack.chapters.find(c => c.id === id)!
       const r = simulate(pack, ch, [], id === 'F04' ? 400000 : undefined)

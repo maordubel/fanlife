@@ -841,3 +841,7 @@ button.tapChip:active { transform: translate(2px, 2px); box-shadow: none; }
   .button, .big, .dlgChoice { transition: none; }
   .cover[data-life='menu'] > .ticket, .cover > .mapSheet { animation: none; }
 }
+
+/* Season One: his own voice — a caption in italics, marked in the club's colour, never a speech balloon */
+.dlg[data-think='true'] .dlgLine { font-style: italic; font-family: var(--mag-display); }
+.dlg[data-think='true'] { border-inline-start: 6px solid var(--l-prime); }

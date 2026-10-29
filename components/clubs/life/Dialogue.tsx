@@ -13,6 +13,7 @@
 import {useEffect, useMemo, useRef, useState, type MutableRefObject} from 'react'
 import {createArmGate, installPointerWatch, isPointerDown, onPointerChange} from '@/lib/life/inputArm'
 import {Typed, type TypedHandle} from './Typed'
+import {Fuse} from './season/Cinema'
 import styles from './life.module.css'
 
 type Choice = {id: string; t: string}
@@ -39,6 +40,8 @@ type Props = {
   onLeave: () => void
   onTyped: () => void
   typed: boolean
+  /** Season One: a moment, not a menu — the choices stand for `s` seconds, then `pick` is taken */
+  timer?: {s: number; pick: string} | null
 }
 
 /** the ballot arms on the first frame after the gesture that revealed it has been released */
@@ -76,17 +79,27 @@ function useSide(who: string | null, me: boolean, conversation: string): 'start'
   return side
 }
 
-export function Dialogue({text, who, speaker, me, choices, asking, serial, story, handle, sheetRef, primaryRef, armedRef, copy, onAdvance, onChoose, onLeave, onTyped, typed}: Props) {
-  const narration = who === null
+export function Dialogue({text, who, speaker, me, choices, asking, serial, story, handle, sheetRef, primaryRef, armedRef, copy, onAdvance, onChoose, onLeave, onTyped, typed, timer = null}: Props) {
+  // his own voice is a caption, like narration, but it is his
+  const thought = who === 'think'
+  const narration = who === null || thought
   const conversation = serial.split(':')[0] ?? serial
   const side = useSide(who, me, conversation)
   const showChoices = asking && choices.length > 0 && typed
   const armed = useArmed(showChoices, serial)
   armedRef.current = showChoices && armed
   const mono = useMemo(() => (speaker ? (Array.from(speaker.trim())[0] ?? '·') : '·'), [speaker])
+  // the moment passes: silence is an answer of its own
+  const chooseRef = useRef(onChoose)
+  chooseRef.current = onChoose
+  useEffect(() => {
+    if (!showChoices || !timer) return
+    const id = window.setTimeout(() => chooseRef.current(timer.pick), timer.s * 1000)
+    return () => window.clearTimeout(id)
+  }, [showChoices, timer, serial])
   return (
     <section
-      ref={sheetRef} className={styles.dlg} aria-label={speaker ?? copy.title} data-life="dialogue" data-narration={narration ? 'true' : 'false'} data-me={me ? 'true' : 'false'} data-side={narration ? 'wide' : side}
+      ref={sheetRef} className={styles.dlg} aria-label={speaker ?? copy.title} data-life="dialogue" data-narration={narration ? 'true' : 'false'} data-think={thought ? 'true' : 'false'} data-me={me ? 'true' : 'false'} data-side={narration ? 'wide' : side}
       onClick={() => onAdvance()}
     >
       {!narration && (
@@ -98,6 +111,7 @@ export function Dialogue({text, who, speaker, me, choices, asking, serial, story
       <button type="button" className={`${styles.dlgLeave} min-h-tap`} onClick={e => { e.stopPropagation(); onLeave() }} aria-label={copy.leave} data-life="leave">×</button>
       <div className={styles.dlgBody}>
         <Typed className={styles.dlgLine} aria-live="polite" data-life="line" key={serial} text={text} handle={handle} onDone={onTyped} {...story} />
+        {showChoices && timer && <Fuse key={`fuse-${serial}`} seconds={timer.s} />}
         {showChoices ? (
           <ol className={styles.dlgChoices} data-life="choices" data-armed={armed ? 'true' : 'false'}>
             {choices.map((c, i) => (

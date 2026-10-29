@@ -67,7 +67,29 @@ export function validateChapter(pack: Pick<LifePack, 'rooms' | 'cast'>, chapter:
     if (fx.e === 'card' && !chapter.cards?.some(c => c.id === fx.card)) say(`card not defined: ${fx.card}`)
     if (fx.e === 'keep' && !chapter.keepsakes?.some(k => k.id === fx.item)) say(`keepsake not defined: ${fx.item}`)
     if (fx.e === 'bond' && !Object.hasOwn(pack.cast, fx.who)) say(`bond with unknown person ${fx.who}`)
+    if (fx.e === 'cine' && !chapter.cines?.some(c => c.id === fx.id)) say(`cine not defined: ${fx.id}`)
+    if (fx.e === 'doc' && !chapter.docs?.some(c => c.id === fx.id)) say(`interview not defined: ${fx.id}`)
+    if (fx.e === 'live' && !chapter.lives?.some(c => c.id === fx.id)) say(`live night not defined: ${fx.id}`)
+    if (fx.e === 'live' && !chapter.anchor) say(`live night ${fx.id} with no archive row under it`)
   }
+  // Season One: what the screen stages has to name people who exist and say something
+  const who = (id: string, what: string) => { if (id !== 'me' && id !== 'all' && id !== 'think' && !Object.hasOwn(pack.cast, id)) say(`${what}: unknown person ${id}`) }
+  for (const c of chapter.cines ?? []) { if (!c.shots.length) say(`cine ${c.id}: no shots`); for (const sh of c.shots) { sh.on?.forEach(x => who(x, `cine ${c.id}`)); sh.act?.forEach(a => who(a.who, `cine ${c.id}`)); if (sh.say?.who && sh.say.who !== 'me') who(sh.say.who, `cine ${c.id}`) } }
+  for (const d of chapter.docs ?? []) { who(d.who, `interview ${d.id}`); if (!d.lines.some(l => !l.when)) say(`interview ${d.id}: no line that is always said`) }
+  for (const l of chapter.lives ?? []) { l.with.forEach(x => who(x, `live ${l.id}`)); if (!l.end.unread.length) say(`live ${l.id}: nothing to say over a night it cannot read`) }
+  for (const b of chapter.barks ?? []) { who(b.who, `bark ${b.id}`); room(b.room, `bark ${b.id}`); if (!b.lines.length) say(`bark ${b.id}: no lines`) }
+  for (const c of chapter.clocks ?? []) {
+    raised.add(c.fail)
+    if (c.talk && !talks.has(c.talk)) say(`clock ${c.id}: no talk ${c.talk}`)
+    if (!(c.s > 0)) say(`clock ${c.id}: no time on it`)
+  }
+  for (const id of chapter.side ?? []) if (!chapter.objectives.some(o => o.id === id)) say(`side job is not an objective: ${id}`)
+  const ep = chapter.episode
+  if (ep?.open?.doc && !chapter.docs?.some(d => d.id === ep.open!.doc)) say(`cold open: no interview ${ep.open.doc}`)
+  if (ep?.open?.cine && !chapter.cines?.some(c => c.id === ep.open!.cine)) say(`cold open: no cine ${ep.open.cine}`)
+  if (ep?.flash && !chapter.cines?.some(c => c.id === ep.flash!.cine)) say(`flash: no cine ${ep.flash.cine}`)
+  for (const id of ep?.close ?? []) if (!chapter.docs?.some(d => d.id === id)) say(`end card: no interview ${id}`)
+  for (const id of chapter.episode?.main ?? []) if (!chapter.objectives.some(o => o.id === id)) say(`main mission is not an objective: ${id}`)
   if (!endings.size) say('nothing ends the chapter')
   for (const key of Object.keys(chapter.endings)) if (!endings.has(key)) say(`ending never reached by any effect: ${key}`)
   for (const [key, e] of Object.entries(chapter.endings)) if (e.keep && !chapter.keepsakes?.some(k => k.id === e.keep)) say(`ending ${key}: keepsake not defined: ${e.keep}`)
@@ -76,7 +98,7 @@ export function validateChapter(pack: Pick<LifePack, 'rooms' | 'cast'>, chapter:
     if (t.branches[t.branches.length - 1]!.when) say(`talk ${t.id}: the last branch must have no condition — there is always something to say`)
     for (const [i, b] of t.branches.entries()) {
       if (!b.lines.length) say(`talk ${t.id}[${i}]: no lines`)
-      for (const l of b.lines) { if (!l.t.trim()) say(`talk ${t.id}[${i}]: empty line`); if (l.who && l.who !== 'me' && !Object.hasOwn(pack.cast, l.who)) say(`talk ${t.id}[${i}]: unknown speaker ${l.who}`) }
+      for (const l of b.lines) { if (!l.t.trim()) say(`talk ${t.id}[${i}]: empty line`); if (l.who && l.who !== 'me' && l.who !== 'think' && !Object.hasOwn(pack.cast, l.who)) say(`talk ${t.id}[${i}]: unknown speaker ${l.who}`) }
       if (b.next && !talks.has(b.next)) say(`talk ${t.id}[${i}]: next → missing talk ${b.next}`)
       const ids = new Set<string>()
       for (const c of b.choices ?? []) {
@@ -85,6 +107,8 @@ export function validateChapter(pack: Pick<LifePack, 'rooms' | 'cast'>, chapter:
       }
       // a question whose every answer is conditional can leave the player with a box and nothing to press
       if (b.choices?.length && b.choices.every(c => c.when)) say(`talk ${t.id}[${i}]: every choice is conditional — one must always be there`)
+      // a moment that runs out must fall on an answer that is always there
+      if (b.timer && !(b.choices ?? []).some(c => c.id === b.timer!.pick && !c.when)) say(`talk ${t.id}[${i}]: the timer's answer ${b.timer.pick} is not an unconditional choice`)
     }
   }
   const used = new Set<string>()
@@ -93,9 +117,10 @@ export function validateChapter(pack: Pick<LifePack, 'rooms' | 'cast'>, chapter:
   chapter.cast.forEach(p => read(p.when)); chapter.spots.forEach(s => read(s.when)); chapter.doors.forEach(d => { read(d.when); read(d.needs) })
   chapter.beats.forEach(b => read(b.when)); chapter.objectives.forEach(o => read(o.done))
   chapter.talks.forEach(t => t.branches.forEach(b => { read(b.when); b.choices?.forEach(c => read(c.when)) }))
+  chapter.clocks?.forEach(c => { read(c.from); read(c.until) }); chapter.barks?.forEach(b => read(b.when))
   for (const k of used) if (!raised.has(k) && !earlierFlags.has(k)) say(`flag is read and never raised: ${k}`)
   if (!chapter.objectives.length) say('no objective: the player is never told what the day wants')
-  const referenced = new Set<string>([...chapter.cast.map(p => p.talk), ...chapter.spots.map(s => s.talk), ...chapter.beats.map(b => b.talk)].filter((x): x is string => !!x))
+  const referenced = new Set<string>([...chapter.cast.map(p => p.talk), ...chapter.spots.map(s => s.talk), ...chapter.beats.map(b => b.talk), ...(chapter.clocks ?? []).map(c => c.talk)].filter((x): x is string => !!x))
   chapter.talks.forEach(t => t.branches.forEach(b => { if (b.next) referenced.add(b.next); b.choices?.forEach(c => { if (c.next) referenced.add(c.next) }) }))
   for (const t of chapter.talks) if (!referenced.has(t.id)) say(`talk is written and nothing opens it: ${t.id}`)
   return issues

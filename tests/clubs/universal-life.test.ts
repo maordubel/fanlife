@@ -16,7 +16,8 @@ import {screenplayChapters} from '@/lib/life/universal/screenplay'
 
 const UNIVERSAL_CHAPTERS = screenplayChapters('en')
 import {ANCHOR_TARGET, composeLife, MAX_NIGHTS} from '@/lib/life/universal/compose'
-import {MASTER_IDS} from '@/lib/life/universal/screenplay/master'
+import {MASTER_IDS, masterChapters} from '@/lib/life/universal/screenplay/master'
+import {SEASON_ONE_UNTIL} from '@/lib/life/universal/season'
 import {simulate} from '@/lib/life/universal/sim'
 import {catalogue, fill} from '@/lib/life/universal/text'
 import type {LifeEvent, LifePack} from '@/lib/life/universal/types'
@@ -24,10 +25,15 @@ import {validatePack} from '@/lib/life/universal/validate'
 import {beatFlag, Runner, sceneOf} from '@/lib/life/universal/world'
 
 const packs = new Map<string, LifePack>()
-async function packOf(id: string): Promise<LifePack> {
-  if (!packs.has(id)) packs.set(id, clubLife((await loadClub(id))!.data))
-  return packs.get(id)!
+/** the life as it is played (Season One, then the shared chapters); `season: false` is the shared life from the first age on — the engine's fixture */
+async function packOf(id: string, season = true): Promise<LifePack> {
+  const key = `${id}:${season}`
+  if (!packs.has(key)) packs.set(key, clubLife((await loadClub(id))!.data, {season}))
+  return packs.get(key)!
 }
+/** the shared chapters a life with Season One keeps: the season IS the childhood and the youth */
+const KEPT = (ids: readonly string[], ages: Map<string, number>) => ids.filter(id => id === 'finale' || ages.get(id)! > SEASON_ONE_UNTIL)
+const AGES = new Map([...screenplayChapters('en'), ...masterChapters(MASTER_IDS, 'en')].map(c => [c.id, c.age]))
 const memory = (): LifeStore & {data: Map<string, string>} => { const data = new Map<string, string>(); return {data, read: k => data.get(k) ?? null, write: (k, v) => { data.set(k, v) }, clear: k => { data.delete(k) }} }
 
 const HEAVY = new Set(['R-TER', 'R-CREATE', 'R-STORY', 'F17', 'F28'])
@@ -77,7 +83,7 @@ describe('the engine', () => {
   })
 
   it('leaving a conversation applies nothing; finishing it applies the branch', async () => {
-    const pack = await packOf('olympiacos'), chapter = pack.chapters[0]!
+    const pack = await packOf('olympiacos', false), chapter = pack.chapters[0]!
     let state = openChapter(chapter).reduce(apply, emptyState())
     const runner = new Runner(chapter, state, events => (state = events.reduce(apply, state)))
     let view = runner.start('S01:choose')!
@@ -91,7 +97,7 @@ describe('the engine', () => {
   })
 
   it('somebody who walks with the supporter is in the room the supporter is in', async () => {
-    const pack = await packOf('olympiacos'), chapter = pack.chapters.find(c => c.id === 'c3-saturday')!
+    const pack = await packOf('olympiacos', false), chapter = pack.chapters.find(c => c.id === 'c3-saturday')!
     let s = openChapter(chapter).reduce(apply, emptyState())
     s = apply(s, {t: 'flag', k: 'story:c3-saturday:S07:done', v: true})
     for (const room of ['room', 'street', 'route', 'gate']) {
@@ -135,7 +141,11 @@ describe('every core club gets a life', () => {
       // nothing is READY until the club's own culture is written and approved
       expect(pack.readiness.state).toBe('PARTIAL')
       expect(pack.readiness.reasons.join(' ')).toMatch(/culture/i)
-      expect(pack.provenance).toMatchObject({kind: 'generated-from-anchors', cultureDna: 'pending', universalChapters: UNIVERSAL_CHAPTERS.length + MASTER_IDS.length})
+      expect(pack.provenance).toMatchObject({kind: 'generated-from-anchors', cultureDna: 'pending', universalChapters: KEPT([...UNIVERSAL_CHAPTERS.map(c => c.id), ...MASTER_IDS], AGES).length})
+      // the life opens on Season One: six episodes, in order, ages six to sixteen
+      expect(pack.chapters.slice(0, 6).map(c => c.episode?.no)).toEqual([1, 2, 3, 4, 5, 6])
+      expect(pack.chapters.slice(0, 6).every(c => c.age <= SEASON_ONE_UNTIL)).toBe(true)
+      expect(pack.chapters.slice(6).every(c => c.age > SEASON_ONE_UNTIL)).toBe(true)
       expect(pack.readiness.target).toBe(ANCHOR_TARGET)
       expect(pack.chapters.at(-1)!.id).toBe('finale')
       expect(new Set(pack.chapters.map(c => c.id)).size).toBe(pack.chapters.length)
@@ -144,11 +154,19 @@ describe('every core club gets a life', () => {
       // every person is fiction and says so
       expect(Object.values(pack.cast).every(m => m.fictional === true)).toBe(true)
       // no token survived, in any line
-      for (const [key, text] of Object.entries(catalogue(pack.chapters))) expect(text, key).not.toMatch(/\{[a-zA-Z]+\}/)
+      // ({hero} is the one token left on purpose: the player names him, and the shell fills it)
+      for (const [key, text] of Object.entries(catalogue(pack.chapters))) expect(text, key).not.toMatch(/\{(?!hero\})[a-zA-Z]+\}/)
 
       // history: only rows of the eligible archive, quoted as recorded
       const eligible = new Map(lifeAnchors(data).map(a => [a.factId, a]))
-      const nights = pack.chapters.filter(c => c.anchor)
+      // an episode that stands on a night quotes the row as recorded, at the age he was that day
+      for (const ep of pack.chapters.filter(c => c.episode && c.anchor)) {
+        const {match, ...quoted} = ep.anchor!
+        expect(quoted).toEqual(eligible.get(ep.anchor!.factId))
+        if (match) expect(`${match.homeGoals}${match.awayGoals}`).toMatch(/^\d+$/)
+        expect(ep.age).toBe(ep.anchor!.year - pack.hero.birthYear!)
+      }
+      const nights = pack.chapters.filter(c => c.anchor && !c.episode)
       expect(nights.length).toBeLessThanOrEqual(MAX_NIGHTS)
       expect(nights.length).toBe(pack.provenance.anchoredChapters)
       for (const night of nights) {
@@ -183,7 +201,8 @@ describe('every core club gets a life', () => {
       for (const chapter of pack.chapters) {
         // the exhaustive walk is the same graph for every club (only names differ): done once, in full; the others must not get stuck within the default bound
         // five master chapters have too many reachable states to hold in one worker (R-TER, R-CREATE, R-STORY past 400k) (every callback subset of every scene): they are walked to the default bound, and master-authoring plays three roads through each
-        const full = id === CORE_CLUB_IDS[0] && !HEAVY.has(chapter.id)
+        // (an episode's clock multiplies its states: it is walked to the default bound, and its roads are played in season-one)
+        const full = id === CORE_CLUB_IDS[0] && !HEAVY.has(chapter.id) && !chapter.episode
         const r = simulate(pack, chapter, carried, full ? 400000 : undefined)
         if (full) expect(r.truncated, `${chapter.id} closes`).toBe(false)
         expect(r.stuck, chapter.id).toEqual([])
@@ -199,7 +218,9 @@ describe('every core club gets a life', () => {
   it('Hapoel is born in the year the hand-authored LIFE set, and stands on the nights its pack chose', async () => {
     const pack = await packOf('hapoel-tel-aviv')
     expect(pack.hero.birthYear).toBe(1978)
-    expect(pack.chapters.filter(c => c.anchor).map(c => c.anchor!.on)).toEqual(['1986-05-24', '1990-05-12', '2001-10-18', '2002-03-14'])
+    // the first time (8), no ticket (12) and the first away day (14) are Season One's; the two after it are nights of their own
+    expect(pack.chapters.filter(c => c.anchor).map(c => c.anchor!.on)).toEqual(['1986-05-24', '1990-05-12', '1992-01-31', '2001-10-18', '2002-03-14'])
+    expect(pack.chapters.filter(c => c.anchor && c.episode).map(c => c.id)).toEqual(['S1E3', 'S1E5', 'S1E6'])
     expect(pack.skin.crest).toBe('real')
     expect(pack.cast.dad!.name).toBe('Dad')
     expect(pack.cast.friend!.name).toBe('Ofir')
@@ -212,8 +233,11 @@ describe('every core club gets a life', () => {
     expect(pack.readiness.playable).toBe(true)
     expect(pack.hero.birthYear).toBeNull()
     // every club, including one with no pack, carries the whole master screenplay beside the shared life
-    expect(pack.chapters.map(c => c.id).filter(id => !MASTER_IDS.includes(id))).toEqual(UNIVERSAL_CHAPTERS.map(c => c.id))
-    for (const id of MASTER_IDS) expect(pack.chapters.map(c => c.id), id).toContain(id)
+    // (after Season One, which every club plays — on no night at all when there is no archive)
+    expect(pack.chapters.slice(0, 6).map(c => c.id)).toEqual(['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6'])
+    expect(pack.chapters.filter(c => c.episode).every(c => !c.anchor)).toBe(true)
+    expect(pack.chapters.map(c => c.id).filter(id => !MASTER_IDS.includes(id) && !id.startsWith('S1E'))).toEqual(KEPT(UNIVERSAL_CHAPTERS.map(c => c.id), AGES))
+    for (const id of KEPT(MASTER_IDS, AGES)) expect(pack.chapters.map(c => c.id), id).toContain(id)
     expect(pack.readiness.reasons.join(' ')).toMatch(/no nights from history/i)
     expect(pack.skin.crest).toBe('monogram')
   })

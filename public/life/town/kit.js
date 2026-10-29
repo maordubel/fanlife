@@ -232,8 +232,9 @@ function animDoll(g,t,dt){var u=g.userData,o=u.o,m=o.mode||'idle',ph=u.ph;var T_
  else if(m==='flare'){var fz=Math.sin(T_*1.4)*.12;ar[1].sh.rotation.x=-2.7+fz;ar[1].sh.rotation.z=-.3;ar[0].sh.rotation.x=-.3;u.head.rotation.x=-.25;u.head.rotation.y=Math.sin(T_*.5)*.2;u.mouth.scale.y=2;u.hips.position.y=.95+Math.max(0,Math.sin(T_*3))*.02}
  else if(m==='sing'){var c2=Math.sin(T_*4);ar[0].sh.rotation.x=-2.5+c2*.15;ar[1].sh.rotation.x=-2.5-c2*.15;ar[0].sh.rotation.z=.35;ar[1].sh.rotation.z=-.35;u.torso.rotation.z=Math.sin(T_*2)*.06;u.head.rotation.x=-.3;u.mouth.scale.y=2.4;u.hips.position.y=.95+Math.abs(Math.sin(T_*2))*.03}
  else if(m==='lean'){u.torso.rotation.z=.08;ar[0].sh.rotation.x=-.2;ar[1].sh.rotation.x=-.5;ar[1].el.rotation.x=-1.4;u.head.rotation.y=(o.look||0);u.head.rotation.x=.05;lg[0].h.rotation.z=.15}
- else if(m==='sit'){lg[0].h.rotation.x=lg[1].h.rotation.x=-1.5;lg[0].kn.rotation.x=lg[1].kn.rotation.x=1.5;u.hips.position.y=.55;/* a child sits on the same bench as a grown-up: the seat keeps its height and his feet hang */if(u.o&&u.o.s&&u.o.s<.95)u.hips.position.y=.55/u.o.s;/* seated, the hands rest on the thighs (they used to hover in front of the chest, as if praying) */ar[0].sh.rotation.x=ar[1].sh.rotation.x=-.52+Math.sin(T_*.4)*.02;ar[0].el.rotation.x=ar[1].el.rotation.x=-.62;ar[0].sh.rotation.z=.14;ar[1].sh.rotation.z=-.14;u.head.rotation.x=.12+Math.sin(T_*.6)*.04;u.head.rotation.y=Math.sin(T_*.3)*.1;
+ else if(m==='sit'){lg[0].h.rotation.x=lg[1].h.rotation.x=-1.5;lg[0].kn.rotation.x=lg[1].kn.rotation.x=1.5;u.hips.position.y=.55;/* a child sits on the same bench as a grown-up: the seat keeps its height and his feet hang */if(u.o&&u.o.s&&u.o.s<.95)u.hips.position.y=.55/u.o.s;/* seated, the hands rest on the thighs (they used to hover in front of the chest, as if praying) *//* elbows by the body, forearms along the thighs, the hands resting where the thighs end — the way a person sits for an interview */ar[0].sh.rotation.x=ar[1].sh.rotation.x=-.3+Math.sin(T_*.4)*.015;ar[0].el.rotation.x=ar[1].el.rotation.x=-1.02;ar[0].sh.rotation.z=.05;ar[1].sh.rotation.z=-.05;u.head.rotation.x=.12+Math.sin(T_*.6)*.04;u.head.rotation.y=Math.sin(T_*.3)*.1;
   if(u.human){lg[0].h.rotation.z=.09;lg[1].h.rotation.z=-.09;lg[0].kn.rotation.x=1.42;lg[1].kn.rotation.x=1.58;u.torso.rotation.x=-.05;ar[0].sh.rotation.x=-.38;ar[1].sh.rotation.x=-.34;ar[0].el.rotation.x=-.55;ar[1].el.rotation.x=-.62;ar[0].sh.rotation.z=.2;ar[1].sh.rotation.z=-.2;u.grip=.35;u.head.rotation.x=.12+Math.sin(T_*.6)*.03;u.head.rotation.y=Math.sin(T_*.25+u.ph)*.25}}
+ else if(m==='sittalk'){u.o.mode='sit';animDoll(g,t,0);u.o.mode='sittalk';/* seated, a talking hand lifts off the thigh and settles again — it never travels up to the face */var gx2=Math.max(0,Math.sin(T_*1.3));ar[1].sh.rotation.x=-.3-gx2*.08;ar[1].el.rotation.x=-1.02-gx2*.22;ar[1].sh.rotation.z=-.05;u.mouth.scale.y=.5+Math.abs(Math.sin(T_*9))*1.3;u.head.rotation.y=Math.sin(T_*.7)*.14}
  else if(m==='arrange'){var b=Math.sin(T_*1.4);ar[0].sh.rotation.x=-.9+b*.2;ar[1].sh.rotation.x=-1.1-b*.2;ar[0].el.rotation.x=-.6;ar[1].el.rotation.x=-.6;u.torso.rotation.x=.35;u.head.rotation.x=.2;u.head.rotation.y=Math.sin(T_*.7)*.3}
  else {ar[0].sh.rotation.z=.1;ar[1].sh.rotation.z=-.1;ar[0].el.rotation.x=ar[1].el.rotation.x=-.28;ar[0].sh.rotation.x=Math.sin(T_*1.2)*.04;ar[1].sh.rotation.x=-Math.sin(T_*1.2)*.04;u.head.rotation.y=Math.sin(T_*.4)*.25+(o.look||0);u.mouth.scale.y=1}
  u.blink-=dt;if(u.blink<0){u.blink=2+rnd()*4;u._bl=.12}if(u._bl>0){u._bl-=dt;u.eyes.forEach(function(e){e.e.scale.y=.1})}else u.eyes.forEach(function(e){e.e.scale.y=1})}
@@ -329,8 +330,9 @@ function atmos(S,inside,o){o=o||{};var rain=o.weather==='rain'||o.mood==='rain'|
   var rg=new T.BufferGeometry();rg.setAttribute('position',new T.BufferAttribute(pos,3));var rl=new T.LineSegments(rg,new T.LineBasicMaterial({color:new T.Color(.72,.78,.86),transparent:true,opacity:.42,depthWrite:false}));rl.frustumCulled=false;world.add(rl);extras.push(rl);
   anim.tick.push(function(t,dt){var K=cur&&cur.cam;if(K)rl.position.set(K.l[0]+(VW.fx||0),0,K.l[2]+1.5);var a=rg.attributes.position.array;for(var k=0;k<N;k++){var d=sp[k]*dt,o=k*6;a[o+1]-=d;a[o+4]-=d;if(a[o+4]<0){var l2=a[o+1]-a[o+4];a[o+1]=H;a[o+4]=H-l2}}rg.attributes.position.needsUpdate=true})}
 }
-var VW={top:.8,bottom:-.4,fx:0,zoom:1,fov:null,on:false};
-function size(){var W=innerWidth,H=innerHeight;ren.setSize(W,H,false);var sx=VW.on?(VW.top-VW.bottom)/2:1,a=W/(H*sx);cam.aspect=a;var K=(cur&&cur.cam)||{p:[3,3.4,9],l:[3,1.2,1],fov:38,fovP:56};
+var VW={top:.8,bottom:-.4,fx:0,zoom:1,fov:null,on:false},CC=null;
+function applyCC(){var W=innerWidth,H=innerHeight;cam.aspect=W/H;cam.fov=CC.fov||32;cam.position.set(CC.p[0],CC.p[1],CC.p[2]);cam.lookAt(CC.l[0],CC.l[1],CC.l[2]);cam.clearViewOffset();cam.updateProjectionMatrix()}
+function size(){var W=innerWidth,H=innerHeight;ren.setSize(W,H,false);if(CC){applyCC();return}var sx=VW.on?(VW.top-VW.bottom)/2:1,a=W/(H*sx);cam.aspect=a;var K=(cur&&cur.cam)||{p:[3,3.4,9],l:[3,1.2,1],fov:38,fovP:56};
  var fN=Q.get('face');if(fN!==null&&anim.chars[+fN]){var cc=anim.chars[+fN],h=new T.Vector3();cc.userData.head.getWorldPosition(h);var f=new T.Vector3(Math.sin(cc.rotation.y),0,Math.cos(cc.rotation.y));cam.fov=26;cam.position.set(h.x+f.x*2+.3,h.y+.05,h.z+f.z*2);cam.lookAt(h.x,h.y+.02,h.z);cam.updateProjectionMatrix();return}
  cam.fov=VW.fov||(a<.8?K.fovP:K.fov);var fx=VW.fx||0,zm=VW.zoom||1;var pdy=K.p[1]-K.l[1],pdz=K.p[2]-K.l[2];if(PLAYMODE&&a<.8){var pr_=Math.hypot(pdy,pdz),pa_=Math.min(1.1,Math.atan2(pdy,pdz)+.3);pdy=pr_*Math.sin(pa_);pdz=pr_*Math.cos(pa_)}cam.position.set(K.l[0]+fx+(K.p[0]-K.l[0])/zm,K.l[1]+pdy/zm,K.l[2]+pdz/zm);cam.lookAt(K.l[0]+fx,K.l[1],K.l[2]);
  if(VW.on){var c=(VW.top+VW.bottom)/2,fh=H*sx;cam.setViewOffset(W,fh,0,fh/2-H*(1-c)/2,W,H)}else cam.clearViewOffset();cam.updateProjectionMatrix()}
@@ -370,7 +372,7 @@ var post=(function(){var w=innerWidth,h=innerHeight,pr=ren.getPixelRatio();/* st
   var bg=sc.background,fog=sc.fog;sc.background=null;sc.overrideMaterial=depthMat;ren.setRenderTarget(dRT);ren.clear();ren.render(sc,cam);sc.overrideMaterial=null;sc.background=bg;hid.forEach(function(o){o.visible=true})}
  return{ao:function(on){aoOn=!!on},bands:function(list){var v=mc.uniforms.gb.value;for(var i=0;i<4;i++){var b=list[i];if(b)v[i].set(b[0],b[1],b[2]);else v[i].set(0,0,0)}},exposure:function(e){mc.uniforms.ex.value=e},render:function(){var pr2=ren.getPixelRatio(),W=ren.domElement.width,H=ren.domElement.height;if(rt.width!==W||rt.height!==H){rt.setSize(W,H);b1.setSize(W/4|0,H/4|0);b2.setSize(W/4|0,H/4|0);mc.uniforms.px.value.set(1/W,1/H);if(AO){dRT.setSize(W/AOD|0,H/AOD|0);aRT.setSize(W/AOD|0,H/AOD|0);aRT2.setSize(W/AOD|0,H/AOD|0)}}
   ren.toneMapping=T.NoToneMapping;ren.outputEncoding=T.LinearEncoding;
-  if(AO&&aoOn&&cur){depthPass();ma.uniforms.pi.value.copy(cam.projectionMatrixInverse);ma.uniforms.px.value.set(1/dRT.width,1/dRT.height);ma.uniforms.sc.value=cam.projectionMatrix.elements[5]*.5;pass(ma,aRT);
+  /* (the interview studio turns it off: its depth pre-pass misplaces a seated skinned body, and the obscurance printed a ghost of the sitter on the wall and smears across the face) */if(AO&&aoOn&&cur&&!window.__noAO){depthPass();ma.uniforms.pi.value.copy(cam.projectionMatrixInverse);ma.uniforms.px.value.set(1/dRT.width,1/dRT.height);ma.uniforms.sc.value=cam.projectionMatrix.elements[5]*.5;pass(ma,aRT);
    mab.uniforms.t.value=aRT.texture;mab.uniforms.d.value.set(1/aRT.width,0);pass(mab,aRT2);mab.uniforms.t.value=aRT2.texture;mab.uniforms.d.value.set(0,1/aRT.height);pass(mab,aRT);mc.uniforms.ao.value=aRT.texture;mc.uniforms.aoK.value=1}else mc.uniforms.aoK.value=0;
   ren.setRenderTarget(rt);ren.render(sc,cam);
   mt.uniforms.t.value=rt.texture;pass(mt,b1);mb.uniforms.t.value=b1.texture;mb.uniforms.d.value.set(1/b1.width,0);pass(mb,b2);mb.uniforms.t.value=b2.texture;mb.uniforms.d.value.set(0,1/b1.height);pass(mb,b1);
@@ -401,13 +403,23 @@ function envFor(kind){if(ENV[kind])return ENV[kind];var es=new T.Scene(),box=new
  var fl=new T.Mesh(new T.PlaneGeometry(12,12),new T.MeshBasicMaterial({color:kind==='in'?'#6a5444':'#6c6660'}));fl.rotation.x=-Math.PI/2;fl.position.y=-.9;es.add(fl);
  if(kind==='in'){panel('#fff1dc',5,-5.9,2.4,0,.1,2.4,3.4);panel('#ffe2c0',2.2,0,4.9,0,4,.1,4);panel('#fff6ea',1.6,5.9,1.8,-2,.1,1.6,2)}
  else{panel('#ffffff',3,0,4.9,0,12,.1,12);panel('#fff0d8',9,-4,4.5,-3,1.6,.1,1.6)}
- ENV[kind]=pmrem.fromScene(es,.04).texture;return ENV[kind]}
+ ENV[kind]=pmrem.fromScene(es,.04).texture;hdrEnv(kind);return ENV[kind]}
+/* a photographed environment (R7 of the realism pack: Poly Haven, CC0), downsampled to 512×256 and stored as an RGBM
+   PNG (sqrt-encoded, range 16) so it ships at ~170 KB: when it arrives it replaces the drawn box room above, and the
+   scene that was lit by the drawn one is lit by the photograph instead. */
+var HDR_OF={in:'room',out:'day'},HDR_K=1.15,hdrAsk={};
+function hdrEnv(kind){var name=HDR_OF[kind];if(!name||hdrAsk[kind])return;hdrAsk[kind]=1;var im=new Image();im.onload=function(){try{
+  var c=document.createElement('canvas');c.width=im.width;c.height=im.height;var g=c.getContext('2d');g.drawImage(im,0,0);var px=g.getImageData(0,0,c.width,c.height).data,n=c.width*c.height,half=!!(T.DataUtils&&T.DataUtils.toHalfFloat),f=half?new Uint16Array(n*4):new Float32Array(n*4),hf=half?T.DataUtils.toHalfFloat:function(v){return v};
+  var W=c.width,H=c.height;for(var i=0;i<n;i++){var y=(i/W)|0,o=((H-1-y)*W+(i-y*W))*4,m=px[i*4+3]/255;for(var k=0;k<3;k++){var x=px[i*4+k]/255*m;f[o+k]=hf(x*x*16*HDR_K)}f[o+3]=hf(1)}/* (rows flipped here: a data texture's first row is its bottom) */
+  /* half floats: filterable everywhere a phone runs WebGL2 */var t=new T.DataTexture(f,c.width,c.height,T.RGBAFormat,half?T.HalfFloatType:T.FloatType);t.minFilter=t.magFilter=T.LinearFilter;t.generateMipmaps=false;t.mapping=T.EquirectangularReflectionMapping;t.needsUpdate=true;
+  var old=ENV[kind],env=pmrem.fromEquirectangular(t).texture;t.dispose();ENV[kind]=env;if(sc.environment===old)sc.environment=env}catch(er){/* the drawn room stays */}};im.src='/life/town/env/'+name+'.png'}
 window.__sc=sc;window.RM=RM;var hooks=[];window.__town={step:step,render:function(){post.render()},ready:false,T:T,world:world,cam:cam,ren:ren,quality:QL,hooks:hooks,
  makeChar:makeChar,dropChar:function(g){if(g.parent)g.parent.remove(g);var i=anim.chars.indexOf(g);if(i>=0)anim.chars.splice(i,1)},
  cur:function(){return cur},U:U,
  view:function(top,bottom,fov){VW.top=top;VW.bottom=bottom;VW.fov=fov||null;VW.on=true;size()},
  bg:function(c0,c1){var c=cvs(4,256),g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,c0);gr.addColorStop(1,c1);g.fillStyle=gr;g.fillRect(0,0,4,256);var t=new T.CanvasTexture(c);t.encoding=T.sRGBEncoding;sc.background=t},
  follow:function(fx,zm){zm=zm||1;if(Math.abs(fx-VW.fx)>1e-4||zm!==VW.zoom){VW.fx=fx;VW.zoom=zm;size()}},
+ cineCam:function(c){CC=c||null;if(CC)applyCC();else size()},
  camInfo:function(){var K=cur&&cur.cam;return K?{p:K.p,l:K.l,fov:cam.fov,aspect:cam.aspect}:null},
  screen:function(x,y,z){var v=new T.Vector3(x,y,z).project(cam),r=ren.domElement.getBoundingClientRect();return{x:r.left+(v.x+1)/2*r.width,y:r.top+(1-v.y)/2*r.height}},
  time:function(){return TT},

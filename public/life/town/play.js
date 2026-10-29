@@ -287,7 +287,8 @@ function faceEachOther(id){var a=actors[id];if(!a)return;player.wantYaw=Math.ata
 function goTo(kind,id,then){
  var p=reachOf(kind,id);if(!p||frozen)return false;
  if(kind==='exit'){var x=exitOf(id);if(!x)return false;if(x.locked){emit({type:'locked',id:id});return true}lastExit=null;path=route(player.x,player.z,p[0],p[1]);pending=null;if(path&&!path.length){path=null;leave(x)}return !!path||frozen}
- var c=nearestFree(p[0]+(player.x>p[0]?1.2:-1.2),p[1]+1.3,5)||nearestFree(p[0],p[1],6);if(!c)return false;
+ /* somebody seated has their legs out in front of them: stand off past the knees, not inside them */var seat=kind==='actor'&&actors[id]&&actors[id].def.sit,dz=seat?2.4:1.3,dx=seat?1.5:1.2;
+ var c=nearestFree(p[0]+(player.x>p[0]?dx:-dx),p[1]+dz,5)||nearestFree(p[0],p[1],6);if(!c)return false;
  var q=centre(c[0],c[1]);path=route(player.x,player.z,q[0],q[1]);pending=then===false?null:{kind:kind,id:id};
  if(!path){pending=null;return false}return true;
 }
@@ -372,7 +373,7 @@ function frame(t,dt){
  exits.forEach(function(x,i){var hot=target&&target.kind==='exit'&&target.id===x.def.id,k=x.locked?.1:(.24+.12*Math.sin(t*2.4+i)+(hot?.18:0));x.vis.mat.opacity=k;x.vis.a.material.opacity=x.locked?.25:.9;x.vis.a.visible=!frozen;
   var bob=Math.sin(t*3+i)*.06,dir=x.def.dir||'n',cx=(x.def.x+x.def.w/2)*U,cz=(x.def.z+x.def.d/2)*U;x.vis.a.position.set(cx+(dir==='e'?bob:dir==='w'?-bob:0),.62,cz+(dir==='s'?bob:dir==='n'?-bob:0))});
  swingDoors(t,dt);kickProps(dt);
- trackCam(dt,false);
+ if(CINE)cineTick(t,dt);else trackCam(dt,false);
 }
 /* a ball is a ball: walk into it and it goes, rolls, slows, comes off the furniture and the walls */
 var lastPP=null;
@@ -408,6 +409,83 @@ function audit(){
 }
 function gridDump(){return grid?{nx:grid.nx,nz:grid.nz,cell:CELL,x0:grid.x0,z0:grid.z0,rows:Array.from({length:grid.nz},function(_,j){var s='';for(var i=0;i<grid.nx;i++)s+=grid.b[j*grid.nx+i]?'#':'.';return s})}:null}
 
+
+/* ---------- Season One: the camera cuts, people act, and the interview studio (LIFE sends a shot; this frames it) ----------
+   A shot holds the camera on one or two people for a while and pushes in a little; a cut is a hard cut. Nothing here
+   decides the story: LIFE asks for 'close' on dad, 'two' on dad and the boy, 'wide' on the room, and gets it. */
+var CINE=null,STU=null;
+function bodyOf(id){return id==='me'||id==='player'?player:actors[id]}
+function headOf(b){var y=b.g.position.y+(b.o.mode==='sit'||b.o.mode==='sittalk'||b.def&&b.def.sit?b.hm*.72:b.hm*.93);return new T.Vector3(b.x*U,y,b.z*U)}
+function cineTick(t,dt){
+ var c=CINE;if(!c)return;c.el+=dt;var k=Math.min(1,c.el/Math.max(.5,c.ms/1000));
+ /* people walking for the scene keep walking while the shot runs */
+ if(player&&player.cpath){player.path=player.cpath;var m=follow(player,dt);player.cpath=player.path;if(m>0)player.stride(m);else player.rest(dt);if(player.wantYaw!=null)player.turn(player.wantYaw,dt,10);player.place()}
+ var info=K.camInfo();if(!info)return;
+ var subs=(c.on||[]).map(bodyOf).filter(Boolean);
+ if(c.cam==='wide'||!subs.length){K.cineCam(null);K.follow(camX,1+.06*k);return}
+ var dir=new T.Vector3(info.p[0]-info.l[0],0,info.p[2]-info.l[2]).normalize(),side=new T.Vector3(dir.z,0,-dir.x);
+ var heads=subs.map(headOf),mid=heads.reduce(function(a,h){return a.add(h)},new T.Vector3()).multiplyScalar(1/heads.length);
+ /* a phone held upright sees a narrow slice: the camera stands further back so a close-up is a face and shoulders, not an eye */
+ var asp=innerWidth/Math.max(1,innerHeight),back=asp<1?Math.pow(Math.min(2.2,.9/asp),.75):1;
+ var p,l,fov;
+ if(c.cam==='close'){var h=heads[0],hm=subs[0].hm,d=(.55+hm*.42)*back*(1-.08*k);p=h.clone().add(dir.clone().multiplyScalar(d)).add(side.clone().multiplyScalar(d*.22));p.y=h.y+.02;l=h.clone();l.y-=.06;fov=30}
+ else if(c.cam==='over'&&heads.length>1){var a=heads[0],b=heads[1],ab=a.clone().sub(b);ab.y=0;ab.normalize();var sd=new T.Vector3(ab.z,0,-ab.x);p=a.clone().add(ab.multiplyScalar(.75)).add(sd.multiplyScalar(.32));p.y=a.y+.1;l=b.clone();l.y-=.08;fov=34}
+ else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);p=mid.clone().add(dir.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
+ K.cineCam({p:[p.x,p.y,p.z],l:[l.x,l.y,l.z],fov:fov});
+}
+function cineShot(o){
+ if(!o){CINE=null;window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
+ CINE={cam:o.cam||'wide',on:o.on||[],ms:o.ms||2000,el:0};/* a close shot has the wall half a metre behind a face: screen-space obscurance prints a dark cloud round the head there */window.__noAO=CINE.cam==='close'||CINE.cam==='over';cineTick(now,0);return true}
+function cineAct(a){
+ if(!a)return false;
+ if(a.who==='all'&&a.do==='cheer'){P.celebrate();return true}
+ var b=bodyOf(a.who);if(!b)return false;
+ if(a.do==='walk'&&a.x!=null){if(b===player){player.cpath=route(player.x,player.z,a.x,a.z)}else{b.path=route(b.x,b.z,a.x,a.z);b.speed=SPEED*.7}return true}
+ if(a.do==='face'){var o=bodyOf(a.to);if(o)b.wantYaw=Math.atan2(o.x-b.x,o.z-b.z);return true}
+ if(a.do==='hold'){b.o.hold=a.item||null;return true}
+ if(a.do==='emote'){b.o.expr={k:a.mood||null,t0:now,role:'say'};return true}
+ return false}
+/* the interview: a dark room, a chair, one warm lamp, and the person — older now — talking to somebody just off camera */
+function studioOff(){if(!STU)return;var S=STU;STU=null;window.__sc.remove(S.g);if(S.who)K.dropChar(S.who);S.hidden.forEach(function(e){e[0].visible=e[1]});window.__sc.background=S.bg;window.__sc.fog=S.fog;window.__sc.environment=S.env;window.__noAO=false;K.cineCam(null);if(player)trackCam(0,true)}
+var STUDIO_PLATE={mum:1,dad:1,friend:1,rival:1,wild:1,neighbour:1};
+function studioOn(o){
+ studioOff();var sc_=window.__sc,g=new T.Group(),X=60,Z=60;g.position.set(X,0,Z);
+ var hidden=[];sc_.children.forEach(function(c){hidden.push([c,c.visible]);c.visible=false});
+ var cv=document.createElement('canvas');cv.width=512;cv.height=320;var x=cv.getContext('2d'),gr=x.createRadialGradient(300,150,10,256,170,330);gr.addColorStop(0,o.warm||'#5a4a40');gr.addColorStop(.55,'#241c18');gr.addColorStop(1,'#0b0908');x.fillStyle=gr;x.fillRect(0,0,512,320);
+ for(var i=0;i<14;i++){var bx=40+Math.random()*440,by=40+Math.random()*120,br=6+Math.random()*16,bg=x.createRadialGradient(bx,by,0,bx,by,br);bg.addColorStop(0,'rgba(255,214,170,.32)');bg.addColorStop(1,'rgba(255,214,170,0)');x.fillStyle=bg;x.fillRect(bx-br,by-br,br*2,br*2)}
+ var tx=new T.CanvasTexture(cv);tx.encoding=T.sRGBEncoding;
+ var back=new T.Mesh(new T.PlaneGeometry(9,5.6),new T.MeshBasicMaterial({map:tx}));back.position.set(0,2.2,-2.6);g.add(back);
+ /* the person's own place behind them (public/life/town/studio, R5 of the realism pack): photographed out of focus, a little darker than the face */
+ var plate=o.who&&STUDIO_PLATE[o.who];if(plate)new T.TextureLoader().load('/life/town/studio/'+o.who+'.webp',function(t){if(!STU||STU.g!==g)return;t.encoding=T.sRGBEncoding;back.material.map=t;back.material.color.setScalar(.8);back.material.needsUpdate=true;pole.visible=shade.visible=fl.visible=false;/* sized so the room reads as a room behind the head, not one corner of it */var wide=innerWidth>innerHeight;back.geometry.dispose();back.geometry=wide?new T.PlaneGeometry(10,6.25):new T.PlaneGeometry(6.4,4);back.position.set(wide?-1.4:0,wide?1.9:1.4,-2.6)});
+ var fl=new T.Mesh(new T.PlaneGeometry(12,8),new T.MeshStandardMaterial({color:new T.Color('#1c1714'),roughness:.9}));fl.rotation.x=-PI/2;fl.receiveShadow=true;g.add(fl);
+ /* the chair: dark wood, a curved back */
+ /* (the chair is sized to the sitter: a boy of eleven does not sit at an adult's chair as if at a table) */
+ var chair=new T.Group(),ch_=o.look&&o.look.h?Math.min(1,Math.max(.6,o.look.h/6.4)):1;chair.scale.setScalar(ch_);g.add(chair);
+ var wood=new T.MeshStandardMaterial({color:new T.Color('#3a2418'),roughness:.55});[[-.2,-.2],[.2,-.2],[-.2,.2],[.2,.2]].forEach(function(q){var leg=new T.Mesh(new T.CylinderGeometry(.018,.022,.46,8),wood);leg.position.set(q[0],.23,q[1]);leg.castShadow=true;chair.add(leg)});
+ var seat=new T.Mesh(new T.BoxGeometry(.46,.045,.44),wood);seat.position.set(0,.47,0);seat.castShadow=true;chair.add(seat);
+ var bk=new T.Mesh(new T.BoxGeometry(.46,.36,.03),wood);bk.position.set(0,.74,-.21);bk.rotation.x=.08;bk.castShadow=true;chair.add(bk);
+ /* a practical lamp behind, out of the way, warm */
+ var pole=new T.Mesh(new T.CylinderGeometry(.012,.012,1.5,6),new T.MeshStandardMaterial({color:new T.Color('#2a2420'),roughness:.4,metalness:.5}));pole.position.set(-2.5,.75,-2.2);g.add(pole);
+ var shade=new T.Mesh(new T.CylinderGeometry(.13,.2,.22,18,1,true),new T.MeshStandardMaterial({color:new T.Color('#b88a62'),emissive:new T.Color('#ff9a5a'),emissiveIntensity:.32,side:T.DoubleSide}));shade.position.set(-2.5,1.55,-2.2);g.add(shade);
+ /* the key comes in from the other side of the lens (about 60° off the camera) so a face has a lit side and a shadow side, the way an interview is lit */
+ var key=new T.SpotLight(new T.Color('#ffe2c2'),2.8,9,.55,.6,1.4);key.position.set(-1.2,2.4,2.5);key.target.position.set(0,.9,0);g.add(key);g.add(key.target);/* no cast shadows in the studio: at this distance a shadow map smears hair across a face; the lamps model the face, the chair and floor stay dark anyway */key.castShadow=false;
+ var fill=new T.HemisphereLight(new T.Color('#9aa4c0'),new T.Color('#2a2018'),.2);g.add(fill);
+ var bounce=new T.PointLight(new T.Color('#ffd2b0'),.35,4,2);bounce.position.set(1.2,.6,1.4);g.add(bounce);
+ var rim=new T.DirectionalLight(new T.Color('#c8d4ff'),1.1);rim.position.set(1.4,2.3,-2.4);g.add(rim);
+ var lamp=new T.PointLight(new T.Color('#ffb877'),.7,4,2);lamp.position.set(-2.5,1.5,-2.15);g.add(lamp);
+ sc_.add(g);
+ var who=null;if(o.look){var lk=lookOf(o.look,'studio');lk.x=X;lk.z=Z+.06;lk.ry=.62;lk.mode='sit';who=K.makeChar(lk);if(who.parent)who.parent.remove(who);who.position.set(0,0,.06);who.rotation.y=.62;who.userData.o.mode='sit';g.add(who)}
+ /* no sky light in a studio: the room's environment would light a face evenly from everywhere; here only the lamps do */
+ STU={g:g,who:who,hidden:hidden,bg:sc_.background,fog:sc_.fog,env:sc_.environment,t0:now};sc_.background=new T.Color('#0b0908');sc_.fog=null;sc_.environment=null;window.__noAO=true;
+ studioCam(0);return true}
+var _hv=new T.Vector3();
+function studioCam(k){if(!STU)return;var X=STU.g.position.x,Z=STU.g.position.z,asp=innerWidth/Math.max(1,innerHeight),far=asp<1?.68:.6,d=(1-.06*Math.min(1,k))*far;
+ /* framed on the person's own head, so a child of eleven and a man of sixty both sit with the eyes where an interview puts them */
+ var hy=1.3,doll=false;if(STU.who){var hp=window.PEOPLE&&PEOPLE.headPos&&PEOPLE.headPos(STU.who,_hv);if(!hp&&STU.who.userData.head){doll=true;hp=STU.who.userData.head.getWorldPosition(_hv)}if(hp)hy=STU.hy=STU.hy==null?hp.y:STU.hy+(hp.y-STU.hy)*.15}
+ /* (the light figures of the lite look have big heads: they are framed a step further back) */if(doll)d*=1.6;
+ /* a documentary interview: head and shoulders, the eyes on the upper third (phone and desktop alike) */K.cineCam({p:[X+1.15*d,hy-.03,Z+1.62*d],l:[X+(asp<1?.0:-.14),hy-.1,Z],fov:asp<1?34:28})}
+K.hooks.push(function(t){if(STU)studioCam((now-STU.t0)/14)});
+
 var P=window.__vxPlay={
  engine:'town',
  on:function(fn){sink=fn||function(){}},
@@ -439,7 +517,13 @@ var P=window.__vxPlay={
  update:function(n){try{return sync(n)}catch(er){err(er);return false}},
  audit:audit,grid:gridDump,
  celebrate:function(){window.__crowdPulse=performance.now()/1000;var set=function(b,m){if(b&&!b.def.sit){b.o.mode=m;setTimeout(function(){if(b.o.mode===m)b.o.mode=b.base},6500)}};if(player)set(player,'cheer');Object.keys(actors).forEach(function(k){set(actors[k],'cheer')})},
- frame:function(f){if(!cfg)return;FR=f;setView()}
+ frame:function(f){if(!cfg)return;FR=f;if(!CINE&&!STU)setView()},
+ /* Season One: a shot (null ends the scene and gives the camera back), an act inside it, and the interview studio */
+ shot:function(o){try{return cineShot(o)}catch(er){err(er);return false}},
+ cineAct:function(a){try{return cineAct(a)}catch(er){err(er);return false}},
+ studio:function(o){try{if(!o){studioOff();return true}return studioOn(o)}catch(er){err(er);return false}},
+ studioSay:function(mood){if(!STU||!STU.who)return false;var oo=STU.who.userData.o;oo.mode=mood===false?'sit':'sittalk';oo.expr=mood===false?null:{k:mood||null,t0:now,role:'say'};return true},
+ seats:function(){var out={};Object.keys(actors).forEach(function(k){out[k]={x:actors[k].x,z:actors[k].z}});if(player)out.me={x:player.x,z:player.z};return out}
 };
 K.hooks.push(frame);
 
