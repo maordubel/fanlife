@@ -20,13 +20,13 @@ describe('chirp cues', () => {
   const sound = read('components/clubs/life/sound.ts')
   const table = sound.slice(sound.indexOf('const CHIRP'), sound.indexOf('}', sound.indexOf('const CHIRP')))
   const names = [...table.matchAll(/'?([a-z-]+)'?:\s*0\.\d+/g)].map(m => m[1]!)
-  it('every cue in the table ships as .ogg and .m4a, and is recorded in the manifest and the provenance', () => {
+  it('every cue in the table ships as .ogg and .m4a and is recorded in the provenance (the sfx manifest is his recordings only)', () => {
     expect(names.length).toBeGreaterThanOrEqual(19)
-    const man = JSON.parse(read('public/life/sfx/manifest.json')) as Record<string, {source: string}>
+    const man = JSON.parse(read('public/life/sfx/manifest.json')) as Record<string, unknown>
     const prov = read('content/manual/asset-provenance.json')
     for (const n of names) {
       for (const ext of ['ogg', 'm4a']) expect(existsSync(`public/life/sfx/${n}.${ext}`), `${n}.${ext}`).toBe(true)
-      expect(man[n]?.source, n).toBe('chirp-2026-10-29')
+      expect(man[n], `${n} is not a recording`).toBeUndefined()
       expect(prov, n).toContain(`"${n}.*"`)
     }
   })

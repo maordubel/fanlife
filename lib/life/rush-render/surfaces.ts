@@ -29,8 +29,8 @@ function wrap<T extends THREE.Texture>(t: T, srgb = false): T {
 }
 
 /** a tangent-space normal (green up) from a tiling height map: central differences, wrapping at the edges */
-export function normalFromHeight(px: Uint8ClampedArray, w: number, h: number, strength: number): Uint8Array {
-  const out = new Uint8Array(w * h * 4), at = (x: number, y: number) => px[(((y + h) % h) * w + ((x + w) % w)) * 4]! / 255
+export function normalFromHeight(px: Uint8ClampedArray, w: number, h: number, strength: number): Uint8Array<ArrayBuffer> {
+  const out = new Uint8Array(new ArrayBuffer(w * h * 4)), at = (x: number, y: number) => px[(((y + h) % h) * w + ((x + w) % w)) * 4]! / 255
   for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
     const dx = (at(x + 1, y) - at(x - 1, y)) * strength, dy = (at(x, y + 1) - at(x, y - 1)) * strength
     const nx = -dx, ny = dy, nz = 1, l = Math.hypot(nx, ny, nz), i = (y * w + x) * 4
