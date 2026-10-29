@@ -284,6 +284,10 @@ function Plate({
 
 const DECK_ART = '/life/deck'
 
+/** the words the host speaks in: FAN LIFE hands its own (English or Hebrew), the Worker falls back to its catalogue */
+let DECK_WORDS: Readonly<Record<string, string>> | null = null
+const tt = (k: string): string => DECK_WORDS?.[k] ?? t(k as MessageKey)
+
 export function ControlDeck({
   top,
   height,
@@ -296,7 +300,10 @@ export function ControlDeck({
   onAction,
   onCancel,
   pulse = false,
+  words,
 }: {
+  /** the host's own words for the deck's labels (life.deck.*, life.verb.short.*); absent = the Worker's catalogue */
+  words?: Readonly<Record<string, string>>
   /**
    * The first-mission cue (27.9.2026, plan §2.2 Cue 2): the action button pulses ONCE,
    * while the player is in reach of his first thing and has not yet pressed. Not a light
@@ -327,6 +334,7 @@ export function ControlDeck({
   /** B, and the stick's outer ring: run while walking, leave while talking */
   onCancel: (down: boolean) => void
 }) {
+  DECK_WORDS = words ?? null
   const [nub, setNub] = useState({ x: 0, y: 0 })
   const [dragging, setDragging] = useState(false)
   const [running, setRunning] = useState(false)
@@ -429,7 +437,7 @@ export function ControlDeck({
           }`}
         >
           <bdi>{label}</bdi>
-          {locked ? <bdi> · {t('life.deck.locked')}</bdi> : null}
+          {locked ? <bdi> · {tt('life.deck.locked')}</bdi> : null}
         </span>
       ) : (
         <span
@@ -437,7 +445,7 @@ export function ControlDeck({
             floating ? 'text-sheet/70' : 'text-concrete'
           }`}
         >
-          <bdi>{t('life.deck.nothing')}</bdi>
+          <bdi>{tt('life.deck.nothing')}</bdi>
         </span>
       )}
     </div>
@@ -459,7 +467,7 @@ export function ControlDeck({
             <Cap>→</Cap>
           </span>
           <span className={`font-body text-[11px] leading-none ${muted}`} dir="rtl">
-            <bdi>{t('life.deck.move')}</bdi>
+            <bdi>{tt('life.deck.move')}</bdi>
           </span>
         </div>
 
@@ -469,11 +477,11 @@ export function ControlDeck({
           {/* Shift is still run on a keyboard. Losing the second BUTTON on a phone does not
               cost a key on a desk, where a modifier is free. */}
           <span className={`font-body text-[11px] leading-none ${muted}`} dir="rtl">
-            <bdi>{t('life.deck.run')}</bdi>
+            <bdi>{tt('life.deck.run')}</bdi>
           </span>
           <Cap>Shift</Cap>
           <span className={`font-body text-[11px] leading-none ${muted}`} dir="rtl">
-            <bdi>{verb ? t(`life.verb.short.${verb}` as MessageKey) : t('life.deck.act')}</bdi>
+            <bdi>{verb ? tt(`life.verb.short.${verb}` as MessageKey) : tt('life.deck.act')}</bdi>
           </span>
           <span className={pulse ? 'life-teach-pulse relative inline-flex items-center gap-1.5' : 'relative inline-flex items-center gap-1.5'} data-teach={pulse ? '1' : undefined}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -522,7 +530,7 @@ export function ControlDeck({
             aria-hidden="true"
           >
             <span className="border-hair border-red bg-ink px-1.5 py-1 font-sign text-[11px] leading-none text-red">
-              <bdi>{t('life.deck.run')}</bdi>
+              <bdi>{tt('life.deck.run')}</bdi>
             </span>
           </span>
 
@@ -531,7 +539,7 @@ export function ControlDeck({
             data-deck="stick"
             // both jobs in the accessible name, built from keys the catalogue already
             // carries — a console is not worth a new string nobody can add here
-            aria-label={`${t('life.deck.stick')} · ${t('life.deck.run')}`}
+            aria-label={`${tt('life.deck.stick')} · ${tt('life.deck.run')}`}
             className="pointer-events-auto relative touch-none"
             style={{ width: padSize, height: padSize }}
             onPointerDown={(event) => {
@@ -603,7 +611,7 @@ export function ControlDeck({
                   at={0.31}
                   mark="b"
                   letter="B"
-                  caption={second === 'leave' ? t('life.deck.bLeave') : t('life.deck.bRun')}
+                  caption={second === 'leave' ? tt('life.deck.bLeave') : tt('life.deck.bRun')}
                   live={false}
                   warn
                   onDown={() => onCancel(true)}
@@ -614,7 +622,7 @@ export function ControlDeck({
                 at={second !== 'none' ? 0.69 : 0.5}
                 mark="a"
                 letter="A"
-                caption={verb ? t(`life.verb.short.${verb}` as MessageKey) : t('life.deck.act')}
+                caption={verb ? tt(`life.verb.short.${verb}` as MessageKey) : tt('life.deck.act')}
                 // In a football match A is ALWAYS the ball — tackle, shot, pass — and there is
                 // no prompt system to name it, so it drew itself grey for ninety minutes and
                 // said the game was not listening. A console that lies about being live is the
@@ -732,7 +740,7 @@ export function TapChip({
         </span>
         <span className="relative truncate">
           <bdi>{label}</bdi>
-          {locked ? <bdi> · {t('life.deck.locked')}</bdi> : null}
+          {locked ? <bdi> · {tt('life.deck.locked')}</bdi> : null}
         </span>
       </button>
     </div>

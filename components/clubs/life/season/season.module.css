@@ -189,7 +189,8 @@
   .timecode { inset-inline-start: 28px; font-size: .8125rem; }
   .stampWord { font-size: 4rem; }
   .stampText { font-size: 1.25rem; }
-  .mission { inset-inline: auto 24px; inset-block-start: calc(var(--l-hud) + 10px); justify-content: flex-end; max-inline-size: 520px; }
+  /* on a desktop the HUD is the side panel: the job sits on the picture, top corner, like a game's mission text */
+  .mission { inset-inline: 24px auto; inset-block-start: 20px; justify-content: flex-start; max-inline-size: 560px; }
   .missionJob { font-size: 1.0625rem; }
   .card { justify-items: center; text-align: center; padding-inline: 10vw; }
   .big { font-size: clamp(4rem, 8vw, 7.5rem); }
@@ -209,3 +210,27 @@
   .keptImg { inline-size: 96px; block-size: 96px; }
   .timeCard p { font-size: 4.5rem; }
 }
+
+/* ───── the cold open, one beat at a time: the phone, the box, the title ───── */
+.card[data-stage='phone'], .card[data-stage='box'] { justify-items: center; cursor: pointer; }
+.card[data-stage='phone'] .phone { inline-size: min(100%, 380px); animation: s1-phoneIn .45s cubic-bezier(.2, 1.3, .4, 1) both; }
+@keyframes s1-phoneIn { from { opacity: 0; transform: translateY(40px) rotate(-3deg) scale(.94); } }
+.box[data-big='true'] { padding: 18px 20px; max-inline-size: 440px; transform: rotate(-2deg); animation: s1-boxOpen .7s cubic-bezier(.2, 1.4, .35, 1) both; }
+.box[data-big='true'] .boxItem { font-size: clamp(1.5rem, 7vw, 2.2rem); }
+.box[data-big='true'] .boxImg { inline-size: 120px; block-size: 120px; }
+@keyframes s1-boxOpen { 0% { opacity: 0; transform: translateY(30px) scale(.7) rotate(6deg); } 60% { opacity: 1; transform: rotate(-3deg) scale(1.04); } 100% { transform: rotate(-2deg); } }
+.card > .openHint { position: absolute; inset-block-end: calc(var(--l-safe-b) + 22px); inset-inline: 0; margin: 0; text-align: center; font-family: var(--mag-mono); font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: color-mix(in srgb, var(--l-paper) 70%, transparent); animation: s1-blink 1.6s ease-in-out infinite; }
+@keyframes s1-blink { 50% { opacity: .35; } }
+.slam { animation: s1-slam .6s cubic-bezier(.2, 1.5, .35, 1) both; }
+@keyframes s1-slam { 0% { opacity: 0; transform: scale(1.7) skewX(-6deg); filter: blur(6px); } 55% { opacity: 1; transform: scale(.96); filter: none; } 100% { transform: none; } }
+.card[data-stage='title'] > :not(.big) { animation: s1-in .45s ease-out .35s both; }
+.go { min-inline-size: 12rem; font-size: 1.25rem; animation: s1-pulse 1.8s ease-in-out 1.2s infinite; }
+@keyframes s1-pulse { 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--l-prime) 45%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .slam, .go, .openHint, .box[data-big='true'], .card[data-stage='phone'] .phone, .card[data-stage='title'] > :not(.big) { animation: none; } }
+
+/* a job done lands like a goal: a white flash through the glass and the stamp shaking the picture */
+.stampWrap[data-kind='passed']::before { content: ''; position: fixed; inset: 0; background: radial-gradient(circle at center, color-mix(in srgb, var(--l-paper) 70%, transparent), transparent 70%); animation: s1-flash .55s ease-out both; pointer-events: none; }
+.stampWrap[data-kind='passed'] .stamp { animation: s1-stamp .5s cubic-bezier(.2, 1.6, .4, 1) both, s1-shake .38s linear .42s both; }
+@keyframes s1-flash { from { opacity: 1; } to { opacity: 0; } }
+@keyframes s1-shake { 20% { translate: -5px 2px; } 40% { translate: 4px -3px; } 60% { translate: -3px 1px; } 80% { translate: 2px -1px; } 100% { translate: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .stampWrap[data-kind='passed']::before { display: none; } .stampWrap[data-kind='passed'] .stamp { animation: none; } }

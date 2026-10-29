@@ -6,7 +6,7 @@
  * (a shot, an act, the interview studio). Nothing here decides what happens: the shell hands each piece what to show
  * and what to call when the player taps, skips or runs out of time.
  */
-import {useEffect, useRef, useState} from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 import type {StampKind} from '@/lib/life/universal/types'
 import s from './season.module.css'
 
@@ -104,46 +104,64 @@ export function EpisodeOpen({no, of, age, title, logline, askName, name, onName,
   box?: {item: string; line: string; img?: string | null} | null
   onCue?: Cue
 }) {
-  const btn = useRef<HTMLButtonElement | null>(null), field = useRef<HTMLInputElement | null>(null)
-  useEffect(() => { (askName ? field.current : btn.current)?.focus({preventScroll: true}) }, [askName])
-  // each message buzzes as it lands (the CSS lands them every .9s), then the box is opened; with reduced motion all at once, once
-  const cueRef = useRef(onCue); cueRef.current = onCue
+  /* a cold open is three beats, one at a time, the way a film opens — never a page to scroll:
+     the phone buzzes and the messages land; the box comes open; the title hits. A tap moves to the next beat;
+     each beat also moves on by itself. With reduced motion it is one still card, everything on it. */
   const nTexts = texts.length, hasBox = !!box
+  const first = (): Stage => (calm() ? 'title' : nTexts ? 'phone' : hasBox ? 'box' : 'title')
+  type Stage = 'phone' | 'box' | 'title'
+  const [stage, setStage] = useState<Stage>(first)
+  const next = useCallback(() => setStage(st => (st === 'phone' ? (hasBox ? 'box' : 'title') : 'title')), [hasBox])
+  const btn = useRef<HTMLButtonElement | null>(null), field = useRef<HTMLInputElement | null>(null)
+  useEffect(() => { if (stage === 'title') (askName ? field.current : btn.current)?.focus({preventScroll: true}) }, [askName, stage])
+  const cueRef = useRef(onCue); cueRef.current = onCue
   useEffect(() => {
     const play = (n: string) => cueRef.current?.(n)
-    if (calm()) { if (nTexts) play('phone-text'); else if (hasBox) play('box-lid'); return }
-    const ts = Array.from({length: nTexts}, (_, i) => window.setTimeout(() => play('phone-text'), (i * 0.9 + 0.4) * 1000))
-    if (hasBox) ts.push(window.setTimeout(() => play('box-lid'), (nTexts * 0.9 + 0.5) * 1000))
+    const ts: number[] = []
+    if (stage === 'phone') {
+      for (let i = 0; i < nTexts; i++) ts.push(window.setTimeout(() => play('phone-text'), (i * 0.9 + 0.4) * 1000))
+      ts.push(window.setTimeout(next, (nTexts * 0.9 + 1.8) * 1000))
+    } else if (stage === 'box') {
+      ts.push(window.setTimeout(() => play('box-lid'), 250))
+      ts.push(window.setTimeout(next, 3200))
+    } else if (!calm()) ts.push(window.setTimeout(() => play('stamp-new'), 180))
+    else { if (nTexts) play('phone-text'); else if (hasBox) play('box-lid') }
     return () => ts.forEach(t => window.clearTimeout(t))
-  }, [nTexts, hasBox])
+  }, [stage, nTexts, hasBox, next])
+  const still = stage === 'title' && calm()
+  const onBackdrop = (e: React.MouseEvent) => { if (stage !== 'title' && !(e.target as HTMLElement).closest('input, button')) next() }
   return (
-    <section className={`${s.card} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="s1-title" data-life="episode-open" style={{'--s1-after': `${texts.length * 0.9}s`} as React.CSSProperties}>
-      {texts.length > 0 && (
+    <section className={`${s.card} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="s1-title" data-life="episode-open" data-stage={stage} onClick={onBackdrop}>
+      {texts.length > 0 && (stage === 'phone' || still) && (
         <ol className={s.phone} data-life="phone" aria-label={word(copy, 's1.phone', 'Messages')}>
           <li className={s.phoneHead}><span>{texts[0]!.from}</span><span>2026</span></li>
           {texts.map((m, i) => <li key={i} className={s.text} style={{'--s1-i': i} as React.CSSProperties}>{m.t}</li>)}
         </ol>
       )}
-      {box && (
-        <div className={s.box} data-life="box">
+      {box && (stage === 'box' || still) && (
+        <div className={s.box} data-life="box" data-big={stage === 'box' ? 'true' : 'false'}>
           {box.img && <img className={s.boxImg} src={box.img} alt="" width={160} height={160} decoding="async" />}
           <p className={s.boxKick}>{word(copy, 's1.box', 'From the box')}</p>
           <p className={s.boxItem}>{box.item}</p>
           <p className={s.boxLine}>{box.line}</p>
         </div>
       )}
-      <p className={s.kick}><b>{word(copy, 's1.season', 'Season One')}</b> {word(copy, 's1.episode', 'Episode')} <bdi>{no}</bdi>/<bdi>{of}</bdi> · {word(copy, 'age', 'Age')} <bdi>{age}</bdi></p>
-      <h2 id="s1-title" className={s.big}>{title}</h2>
-      <p className={s.log}>{logline}</p>
-      {askName && (
-        <div className={s.nameField}>
-          <label htmlFor="s1-name">{word(copy, 's1.name', 'His name')}</label>
-          <input id="s1-name" ref={field} value={name} maxLength={18} autoComplete="off" spellCheck={false} onChange={e => onName(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && ready && name.trim()) onPlay() }} data-life="hero-name" />
+      {stage !== 'title' && <p className={s.openHint} aria-hidden="true">{word(copy, 's1.tap', 'Tap to go on')}</p>}
+      {stage !== 'title' && <button type="button" className="sr-only" onClick={next}>{word(copy, 's1.tap', 'Tap to go on')}</button>}
+      {stage === 'title' && <>
+        <p className={s.kick}><b>{word(copy, 's1.season', 'Season One')}</b> {word(copy, 's1.episode', 'Episode')} <bdi>{no}</bdi>/<bdi>{of}</bdi> · {word(copy, 'age', 'Age')} <bdi>{age}</bdi></p>
+        <h2 id="s1-title" className={`${s.big} ${s.slam}`}>{title}</h2>
+        <p className={s.log}>{logline}</p>
+        {askName && (
+          <div className={s.nameField}>
+            <label htmlFor="s1-name">{word(copy, 's1.name', 'His name')}</label>
+            <input id="s1-name" ref={field} value={name} maxLength={18} autoComplete="off" spellCheck={false} onChange={e => onName(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && ready && name.trim()) onPlay() }} data-life="hero-name" />
+          </div>
+        )}
+        <div className={s.row}>
+          <button type="button" ref={btn} className={`${s.btn} ${s.go} min-h-tap`} disabled={!ready || (askName && !name.trim())} onClick={onPlay} data-life="episode-play">{ready ? word(copy, 's1.play', 'Play') : word(copy, 'loading', 'Loading…')}</button>
         </div>
-      )}
-      <div className={s.row}>
-        <button type="button" ref={btn} className={`${s.btn} min-h-tap`} disabled={!ready || (askName && !name.trim())} onClick={onPlay} data-life="episode-play">{ready ? word(copy, 's1.play', 'Play') : word(copy, 'loading', 'Loading…')}</button>
-      </div>
+      </>}
     </section>
   )
 }

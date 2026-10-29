@@ -27,6 +27,7 @@ import {afterPlay, chapterOf, clockRunning, eventsOf, Life, meets, nextChapter, 
 import type {CardDef, Chapter, CineDef, ClockDef, DocDef, Effect, LifePack, LifeState, Line, LiveDef, StampKind} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
+import {goalOf} from '@/lib/life/universal/gps'
 import {CityMap} from './CityMap'
 import {ControlDeck} from '@/components/life/ControlDeck'
 import {MeSheet} from './MeSheet'
@@ -125,6 +126,10 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   const [roomUp, setRoomUp] = useState(false)
   const [scene, setScene] = useState<Scene | null>(null)
   const [target, setTarget] = useState<PlayTarget>(null)
+  /** walking into a room: the film bars come in while the camera pushes in, then leave the picture to him */
+  const [bars, setBars] = useState(0)
+  /** the GPS button's action, for the keyboard (G) */
+  const gpsRef = useRef<() => void>(() => {})
   const [talk, setTalk] = useState<(TalkContext & {view: RunnerView}) | null>(null)
   const [overlay, setOverlay] = useState<Overlay>(null)
   /** the open mission's answer: RUSH hands back a whole MissionResult, not a game's three-way result */
@@ -592,6 +597,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   useEffect(() => { rt.current?.emote(lineMood, 30) }, [lineMood, talk?.view.talk, talk?.view.index])
   /* the town sounds like where it is: a crowd that is far away, nearer the closer he walks to the ground */
   useEffect(() => {
+    /* the opening and the closing card of an episode carry the theme — Maor's own recording — under them, low */
+    if (phase === 'chapter' || phase === 'ending') { sound.current?.bed(0); sound.current?.ambience('amb-theme', 0.32); return }
     if (phase !== 'play' || !roomNow) { sound.current?.bed(0); sound.current?.ambience(null); return }
     const me = SITES[roomNow], grounds = Object.values(SITES).filter(x => x.kind === 'stadium')
     if (!me) { sound.current?.bed(0); sound.current?.ambience(null); return }
@@ -627,6 +634,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       const at = arrival.current
       arrival.current = null
       if (at) { setPlace(at); if (at.first) { cue('reveal'); rt.current?.emote('wonder', 3) } later(() => setPlace(cur => (cur?.id === at.id ? null : cur)), 3800) }
+      { const n = Date.now(); setBars(n); later(() => setBars(cur => (cur === n ? 0 : cur)), 2100) }
       const done = entered.current; entered.current = null; done?.(); return
     }
     if (e.type === 'target') { setTarget(e.target); return }
@@ -772,6 +780,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       }
       if (field) return
       if (MOVE[k] || k === 'shift') { keys.current.add(k); axis(); if (MOVE[k]) e.preventDefault(); return }
+      if (k === 'g') { e.preventDefault(); gpsRef.current(); return }
       if (k === 'e' || k === 'enter' || k === ' ') { if ((e.target as HTMLElement | null)?.tagName === 'BUTTON') return; e.preventDefault(); sound.current?.wake(); rt.current?.act() }
     }
     const up = (e: KeyboardEvent) => { keys.current.delete(e.key.toLowerCase()); axis() }
@@ -826,7 +835,24 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     const d = scene.doors.find(x => x.id === target.id)
     return d ? {verb: d.locked ? copy.locked! : copy.go!, name: d.label} : null
   })()
+  /* the GPS: the job's light in the room, and one button that walks him to it (to the door on the way, when it is elsewhere) */
+  const goal = useMemo(() => (playing && chapter && scene ? goalOf(chapter, state!, scene) : null), [playing, chapter, scene, state])
+  useEffect(() => { if (roomUp) rt.current?.goal?.(goal?.kind ?? null, goal?.id ?? null) }, [roomUp, goal?.kind, goal?.id])
+  const goalText = !goal || !chapter || !scene ? null
+    : !goal.here ? {verb: copy['gps.to'] ?? 'To', name: roomName(pack, goal.room, chapter)}
+    : goal.kind === 'actor' ? {verb: copy['gps.go'] ?? 'Go', name: scene.actors.find(a => a.id === goal.id)?.name ?? ''}
+    : {verb: copy['gps.go'] ?? 'Go', name: scene.spots.find(x => x.id === goal.id)?.label ?? heroize(goal.objective.t)}
+  const followGoal = useCallback(() => { if (!goal) return; sound.current?.wake(); rt.current?.goTo?.(goal.kind, goal.id) }, [goal])
+  gpsRef.current = followGoal
   const deckVerb = !target ? null : target.kind === 'actor' ? 'talk' : target.kind === 'exit' ? 'enter' : (scene?.spots.find(x => x.id === target.id)?.verb ?? 'look')
+  /* the deck speaks this life's language (it used to fall back to the Worker's Hebrew catalogue in English) */
+  const deckWords = useMemo(() => {
+    const out: Record<string, string> = {}
+    for (const k of ['move', 'run', 'act', 'stick', 'locked', 'nothing', 'bLeave', 'bRun']) if (copy[`deck.${k}`]) out[`life.deck.${k}`] = copy[`deck.${k}`]!
+    for (const v of ['talk', 'look', 'take', 'use', 'buy', 'listen', 'go', 'sit', 'open']) if (copy[`verb.${v}`]) out[`life.verb.short.${v}`] = copy[`verb.${v}`]!
+    out['life.verb.short.enter'] = copy['verb.go'] ?? copy.go ?? 'Go'
+    return out
+  }, [copy])
   const deckLabel = targetText ? `${targetText.verb} ${targetText.name}` : null
   /* the line is set down a letter at a time; the choices arrive when it has finished */
   useEffect(() => { setTyped(instantText()) }, [talk?.view.talk, talk?.view.index])
@@ -838,7 +864,9 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     const loop = () => {
       const el = actEl.current, r = rt.current
       if (el && r) {
-        const p = r.project(target.kind, target.id), par = el.offsetParent as HTMLElement | null
+        const raw = r.project(target.kind, target.id), par = el.offsetParent as HTMLElement | null
+        // the town answers in pixels, the block engine in fractions of the glass
+        const p = !raw || !par ? raw : raw.x <= 1.5 && raw.y <= 1.5 ? raw : {x: raw.x / (par.clientWidth || 1), y: raw.y / (par.clientHeight || 1)}
         if (p && par && p.x > 0.03 && p.x < 0.97 && p.y > 0.14 && p.y < 0.88) {
           const W = par.clientWidth, H = par.clientHeight, w = el.offsetWidth, h = el.offsetHeight, rtl = getComputedStyle(el).direction === 'rtl'
           const want = p.x * W, c = Math.min(W - w / 2 - 8, Math.max(w / 2 + 8, want)), ty = Math.max(64, p.y * H - h - 14)
@@ -859,6 +887,28 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     const btn = actEl.current
     return () => { window.cancelAnimationFrame(raf); if (btn) { btn.dataset.float = 'false'; btn.style.transform = '' } }
   }, [idle, target, targetText])
+  /* the GPS blip: when the job's light is off the glass, an arrow on the edge of the picture points at it */
+  const blipEl = useRef<HTMLSpanElement | null>(null)
+  useEffect(() => {
+    if (!idle || !goal) return
+    let raf = 0
+    const loop = () => {
+      const el = blipEl.current, r = rt.current, par = el?.parentElement
+      if (el && r && par) {
+        const raw = r.project(goal.kind, goal.id), W = par.clientWidth || 1, H = par.clientHeight || 1
+        // the town answers in pixels, the block engine in fractions of the glass
+        const p = !raw ? null : raw.x <= 1.5 && raw.y <= 1.5 ? raw : {x: raw.x / W, y: raw.y / H}
+        if (p && (p.x < 0.05 || p.x > 0.95 || p.y < 0.17 || p.y > 0.84)) {
+          const x = Math.min(0.93, Math.max(0.07, p.x)) * W, y = Math.min(0.8, Math.max(0.22, p.y)) * H
+          el.style.display = 'block'
+          el.style.transform = `translate(${x}px, ${y}px) rotate(${Math.atan2(p.y - 0.5, p.x - 0.5)}rad)`
+        } else el.style.display = 'none'
+      }
+      raf = window.requestAnimationFrame(loop)
+    }
+    raf = window.requestAnimationFrame(loop)
+    return () => window.cancelAnimationFrame(raf)
+  }, [idle, goal])
   /* the tail of the speech box points at whoever is talking */
   const talkWho = line?.who ?? null
   useEffect(() => {
@@ -1061,6 +1111,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       <div className={styles.stage} ref={setStageEl}>
         {failed !== 'webgl' && <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />}
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
+        {bars > 0 && playing && <div key={bars} className={styles.bars} data-life="letterbox" aria-hidden="true" />}
         <div className={styles.notes} data-life="notes" hidden={overlay?.k === 'cine' || overlay?.k === 'doc' || overlay?.k === 'live'}>
           {place && (
             <div className={styles.place} role="status" data-life="place" data-first={place.first ? 'true' : 'false'} key={place.id}><small>{place.first ? copy['place.new'] : copy['place.now']}</small><b {...story}>{place.name}</b></div>
@@ -1080,11 +1131,18 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
             <span className={styles.actVerb}>{targetText.verb}</span><span className={styles.actName} {...(target?.kind === 'actor' ? {} : story)}><bdi>{targetText.name}</bdi></span><kbd aria-hidden="true">E</kbd>
           </button>
         )}
-        {idle && touch && !deckOn && (
+        {idle && goal && <div className={styles.blipFrame} dir="ltr" aria-hidden="true"><span ref={blipEl} className={styles.blip} data-life="gps-blip" /></div>}
+        {idle && !targetText && goalText && hint && touch && <p className={styles.gpsHint} role="status" data-life="tap-hint">{copy.tapHint}</p>}
+        {idle && goalText && (!target || target.kind !== goal!.kind || target.id !== goal!.id) && (
+          <button type="button" className={`${styles.gps} min-h-tap`} data-life="gps" data-far={goal && !goal.here ? 'true' : 'false'} data-stack={targetText ? 'true' : 'false'} onClick={followGoal}>
+            <span className={styles.gpsPin} aria-hidden="true" /><span className={styles.tapVerb}>{goalText.verb}</span><span className={styles.tapName} {...story}><bdi>{goalText.name}</bdi></span>{!touch && <kbd aria-hidden="true">G</kbd>}<span className={styles.tapGo} aria-hidden="true">▸</span>
+          </button>
+        )}
+        {idle && touch && !deckOn && (targetText || !goalText) && (
           <TapChip verb={targetText?.verb ?? null} name={targetText?.name ?? null} locked={!!target?.locked} hint={hint ? copy.tapHint ?? null : null} story={story} onAct={() => { sound.current?.wake(); rt.current?.act() }} />
         )}
         {idle && stageH > 0 && (!touch || deckOn) && (
-          <ControlDeck top={stageH} height={0} touch={touch} verb={deckVerb} label={deckLabel} locked={!!target?.locked} onAxis={onAxis} onAction={onAction} onCancel={onCancel} />
+          <ControlDeck top={stageH} height={0} touch={touch} verb={deckVerb} label={deckLabel} locked={!!target?.locked} onAxis={onAxis} onAction={onAction} onCancel={onCancel} words={deckWords} />
         )}
         {debug && (
           <aside className={styles.debug} data-life="debug" aria-label="debug">
@@ -1097,7 +1155,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       {playing && chapter && (
         <Hud
           plateRef={hudEl} initials={pack.skin.initials} serial={`№ ${pad2(chapterNo)} · ${copy.age} ${chapter.age}`} place={state.room ? roomName(pack, state.room, chapter) : chapter.title}
-          objective={episode ? null : current ? heroize(current.t) : null} coins={state.coins} energy={state.energy} standing={state.standing} talking={!!talk} copy={copy} story={story}
+          objective={episode ? null : current ? heroize(current.t) : null} coins={state.coins} energy={state.energy} standing={state.standing} talking={!!talk} quiet={!!episode} copy={copy} story={story}
           onMeter={m => { setGaugeFocus(m); setSheet('gauges') }} onMap={() => setSheet('map')} onMenu={() => setMenu('menu')}
         />
       )}

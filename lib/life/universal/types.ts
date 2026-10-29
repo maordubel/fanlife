@@ -207,7 +207,7 @@ export type SpotUse = {id: string; room: RoomId; spot: string; when?: Cond; talk
 export type DoorUse = {id: string; room: RoomId; door: string; to: RoomId; spawn: string; label: Tx; time?: TimeOfDay; when?: Cond; needs?: Cond; blocked?: Tx}
 /** Plays by itself, once, the first time its room is entered while `when` holds. */
 export type Beat = {id: string; room: RoomId; when?: Cond; talk: string}
-export type Objective = {id: string; t: Tx; done: Cond; room?: RoomId; /** Season One: jobs open together share a hub; the HUD names the ones still to do */ hub?: string}
+export type Objective = {id: string; t: Tx; done: Cond; room?: RoomId; /** Season One: jobs open together share a hub; the HUD names the ones still to do */ hub?: string; /** what the job is done at, in its room — the GPS stands its light on it */ at?: {kind: 'actor' | 'spot'; id: string}}
 export type Ending = {title: Tx; body: Tx; keep?: string}
 export type Keepsake = {id: string; name: Tx; note: Tx}
 /** `kickoff` names the two sides and hides the score; `result` shows it. A card with neither is a plain archive card. */

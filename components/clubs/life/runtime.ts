@@ -50,6 +50,10 @@ export type PlayRuntime = {
   project(kind: 'actor' | 'spot' | 'exit', id: string): {x: number; y: number} | null
   frame(f: {top: number; bottom: number}): void
   where(): {room: string; x: number; z: number; target: PlayTarget; frozen: boolean; moving: boolean} | null
+  /** the GPS: one goal in the room drawn louder than every other marker (the block engine may not have it) */
+  goal?(kind: 'actor' | 'spot' | 'exit' | null, id: string | null): boolean
+  /** walk to a person, a thing or a door, and do it on arrival */
+  goTo?(kind: 'actor' | 'spot' | 'exit', id: string): boolean
 }
 
 export function people(pack: LifePack, chapter: Chapter, state: LifeState, room: RoomId): {scene: Scene; play: PlayPeople} {

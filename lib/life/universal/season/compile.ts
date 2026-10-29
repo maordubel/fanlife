@@ -111,7 +111,7 @@ export function compileEpisode(ep: EpisodeScript): Chapter {
     // ── the objective
     // a step whose road was not taken (its `when` no longer holds) is not asked for
     const skipped: Cond | null = s.when ? {none: [s.when]} : null
-    const obj: Objective = {id: s.id, t: s.goal, room: at.room, done: skipped ? {any: [{flag: done(s.id)}, skipped]} : {flag: done(s.id)}, ...(s.hub ? {hub: s.hub} : {})}
+    const obj: Objective = {id: s.id, t: s.goal, room: at.room, done: skipped ? {any: [{flag: done(s.id)}, skipped]} : {flag: done(s.id)}, ...(s.hub ? {hub: s.hub} : {}), ...(at.who ? {at: {kind: 'actor' as const, id: at.who}} : at.spot ? {at: {kind: 'spot' as const, id: s.id}} : {})}
     ;(s.side ? sides : objectives).push(obj)
 
     // ── how it resolves: an answer (each its own reply and its own way on), or simply done
