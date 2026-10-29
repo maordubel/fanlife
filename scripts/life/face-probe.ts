@@ -20,6 +20,7 @@ type W = {__ready?: boolean; __vxPlay: {enter(c: unknown): boolean; studio(o: un
 // the studio is drawn inside a room's renderer: the living room is entered first (as town-people-probe does)
 function roomCfg() {
   const room = ROOMS.room
+  if (!room) throw new Error('no living room in ROOMS')
   return {room: room.id, club: 'hapoel-tel-aviv', time: 'day', floorY: room.floorY, walk: room.walk, viewH: room.viewH, surface: room.surface, spawn: Object.values(room.spawns)[0],
     frame: {top: 0.84, bottom: -0.72}, player: {h: 4.6}, blocks: room.blocks, clear: room.clear, actors: [], spots: [], exits: []}
 }
