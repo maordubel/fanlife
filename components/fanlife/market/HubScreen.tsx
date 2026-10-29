@@ -22,7 +22,7 @@ import {
   marketSearch, placeMine, searchDelete, searchList, searchNotifySet, searchSave, wantedList, wantPublicSet, wantsMine,
 } from '@/lib/fanlife/hub/api'
 import {
-  EMPTY_FILTERS, activeCount, autoName, filtersFromQuery, filtersFromSearch, filtersToSearch, slugsFor, toQuery, viewFromSearch,
+  EMPTY_FILTERS, activeCount, autoName, filtersFromQuery, filtersFromSearch, filtersToSearch, slugsFor, textFromSearch, toQuery, viewFromSearch,
   type HubFilters as Filters, type HubView,
 } from '@/lib/fanlife/hub/query'
 import type { Cursor, HubFacets, HubItem, MyWant, Place, SavedSearch, WantedRow } from '@/lib/fanlife/hub/types'
@@ -33,7 +33,7 @@ import { portalConfigured } from '@/lib/portal/env'
 import { adoptShirts } from '@/lib/fanlife/world'
 
 type Shirt = CollectorShirt & { club?: string; clubName?: string }
-type Feed<Row> = { state: 'loading' } | { state: 'off' } | { state: 'error'; message: string } | { state: 'ready'; rows: Row[]; next: Cursor | null; more?: boolean }
+type Feed<Row> = { state: 'loading' } | { state: 'off' } | { state: 'error'; message: string } | { state: 'ready'; rows: Row[]; next: Cursor | null; more?: boolean; moreFailed?: boolean }
 
 /**
  * THE SHIRT HUB (Wave 1). One screen, three tabs — Market, Wanted, For you — over the same collector database
@@ -45,6 +45,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
   const [wizard, setWizard] = useState(false)
   const [ready, setReady] = useState(false)
   const [q, setQ] = useState('')
+  const [qSent, setQSent] = useState('')
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [view, setView] = useState<HubView>('market')
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS)
@@ -67,19 +68,23 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
     const search = window.location.search
     setView(viewFromSearch(search))
     setFilters(filtersFromSearch(search, shirts))
+    const words = textFromSearch(search)
+    if (words) {
+      setQ(words)
+      setQSent(words)
+    }
     setReady(true)
   }, [shirts])
 
   useEffect(() => {
     if (!ready) return
     try {
-      window.history.replaceState(null, '', `${window.location.pathname}${filtersToSearch(filters, view)}`)
+      window.history.replaceState(null, '', `${window.location.pathname}${filtersToSearch(filters, view, view === 'market' ? qSent : '')}`)
     } catch {
       // the address bar is a convenience
     }
-  }, [ready, filters, view])
+  }, [ready, filters, view, qSent])
 
-  const [qSent, setQSent] = useState('')
   useEffect(() => {
     const id = window.setTimeout(() => setQSent(q.trim().length >= 2 ? q.trim() : ''), 300)
     return () => window.clearTimeout(id)
@@ -113,12 +118,12 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
   const moreMarket = useCallback(() => {
     if (market.state !== 'ready' || !market.next || market.more) return
-    setMarket({ ...market, more: true })
+    setMarket({ ...market, more: true, moreFailed: false })
     const asked = queryKey
     void marketSearch(query, market.next).then((out) => {
       setMarket((now) => {
         if (now.state !== 'ready' || asked !== queryRef.current) return now
-        if (!out.ok) return { ...now, more: false }
+        if (!out.ok) return { ...now, more: false, moreFailed: true }
         return { state: 'ready', rows: [...now.rows, ...out.items.filter((i) => !now.rows.some((h) => h.id === i.id))], next: out.next }
       })
     })
@@ -166,7 +171,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
     }
   }, [loadMine])
 
-  const nextHref = `/market${filtersToSearch(filters, view)}`
+  const nextHref = `/market${filtersToSearch(filters, view, view === 'market' ? qSent : '')}`
   const signIn = <MarketSignIn next={nextHref} />
   const flash = (message: string) => {
     setNote(message)
@@ -239,6 +244,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
                   <input id="hub-save-name" value={saving.name} maxLength={40} onChange={(e) => setSaving({ name: e.target.value })} />
                   <button type="submit" className="wk-btn min-h-tap">{h('hub.searches.save')}</button>
                   <button type="button" onClick={() => setSaving(null)} className="wk-btn paper min-h-tap">{h('hub.cancel')}</button>
+                  {qSent ? <p className="wk-small wk-muted">{h('hub.searches.wordsNote')}</p> : null}
                 </form>
               ) : (
                 <div className="wkc-savesearch">
@@ -306,9 +312,12 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             <>
               <HubListings items={market.rows} shirts={shirts} wants={wants} focused={Boolean(focus)} onFocus={(slug) => setFilters((f) => ({ ...f, slug }))} />
               {market.next ? (
-                <button type="button" onClick={moreMarket} disabled={market.more} className="wk-seeall min-h-tap">
-                  {t('market.table.more')} <span aria-hidden="true">↓</span>
-                </button>
+                <>
+                  {market.moreFailed ? <p className="wk-small" role="alert">{h('hub.more.failed')}</p> : null}
+                  <button type="button" onClick={moreMarket} disabled={market.more} className="wk-seeall min-h-tap">
+                    {t('market.table.more')} <span aria-hidden="true">{market.moreFailed ? '↻' : '↓'}</span>
+                  </button>
+                </>
               ) : null}
             </>
           )}
