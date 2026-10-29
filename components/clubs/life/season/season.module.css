@@ -135,7 +135,7 @@
 
 /* ───── the hooks: the phone, the box, the flash card, the secrets, the envelope ───── */
 /* the season's first seconds: a phone, three messages arriving; the card itself waits until they have */
-.phone { display: grid; gap: 8px; margin: 0; padding: 12px; list-style: none; inline-size: min(100%, 360px); background: color-mix(in srgb, var(--l-ink) 92%, black); border: 2px solid color-mix(in srgb, var(--l-paper) 30%, transparent); border-radius: 22px; box-shadow: 0 18px 40px rgb(0 0 0 / .45); }
+.phone { display: grid; gap: 8px; margin: 0; padding: 12px; list-style: none; inline-size: min(100%, 360px); background: color-mix(in srgb, var(--l-ink) 92%, black); border: 2px solid color-mix(in srgb, var(--l-paper) 30%, transparent); border-radius: 22px; box-shadow: 0 18px 40px color-mix(in srgb, black 45%, transparent); }
 .phoneHead { display: flex; justify-content: space-between; padding: 2px 6px 6px; border-block-end: 1px solid color-mix(in srgb, var(--l-paper) 18%, transparent); font-family: var(--mag-mono); font-size: .6875rem; letter-spacing: .16em; text-transform: uppercase; color: color-mix(in srgb, var(--l-paper) 70%, transparent); }
 .text { justify-self: start; max-inline-size: 86%; padding: 9px 12px; background: color-mix(in srgb, var(--l-paper) 92%, transparent); color: var(--l-ink); border-radius: 16px 16px 16px 4px; font-size: .9375rem; line-height: 1.3; text-align: start; opacity: 0; animation: s1-text .32s cubic-bezier(.2, 1.4, .4, 1) calc(var(--s1-i) * .9s + .4s) forwards; }
 @keyframes s1-text { from { opacity: 0; transform: translateY(10px) scale(.92); } to { opacity: 1; transform: none; } }
@@ -143,9 +143,9 @@
 .box { display: grid; gap: 2px; padding: 10px 14px; max-inline-size: 420px; background: color-mix(in srgb, var(--l-paper) 94%, transparent); color: var(--l-ink); border: 2px solid var(--l-ink); box-shadow: 5px 5px 0 var(--l-prime); transform: rotate(-1.5deg); text-align: start; }
 .box:has(.boxImg) { grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; }
 .box:has(.boxImg) > :not(.boxImg) { grid-column: 2; }
-.boxImg { grid-row: 1 / span 3; inline-size: 88px; block-size: 88px; object-fit: contain; filter: drop-shadow(0 6px 10px rgb(0 0 0 / .35)); transform: rotate(-4deg); }
+.boxImg { grid-row: 1 / span 3; inline-size: 88px; block-size: 88px; object-fit: contain; filter: drop-shadow(0 6px 10px color-mix(in srgb, black 35%, transparent)); transform: rotate(-4deg); }
 .kept { display: flex; gap: 12px; align-items: center; max-inline-size: 460px; }
-.keptImg { flex: none; inline-size: 72px; block-size: 72px; object-fit: contain; filter: drop-shadow(0 4px 8px rgb(0 0 0 / .45)); transform: rotate(3deg); }
+.keptImg { flex: none; inline-size: 72px; block-size: 72px; object-fit: contain; filter: drop-shadow(0 4px 8px color-mix(in srgb, black 45%, transparent)); transform: rotate(3deg); }
 .envImg { inline-size: 44px; block-size: auto; margin-inline-end: 10px; vertical-align: middle; }
 .boxKick { font-family: var(--mag-mono); font-size: .625rem; letter-spacing: .18em; text-transform: uppercase; color: var(--l-prime); }
 .boxItem { font-family: var(--mag-display); font-size: 1.25rem; font-weight: 900; line-height: 1.1; text-transform: uppercase; }
@@ -164,7 +164,7 @@
 .tease { max-inline-size: 32ch; font-family: var(--mag-display); font-size: 1.125rem; font-weight: 800; line-height: 1.25; }
 .envelope { display: inline-flex; align-items: center; min-block-size: 52px; padding: 0 20px; background: var(--l-paper); color: var(--l-ink); border: 2px solid var(--l-ink); box-shadow: 5px 5px 0 var(--l-prime); font-family: var(--mag-display); font-size: 1.0625rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; animation: s1-pulse 1.6s ease-in-out infinite; }
 @keyframes s1-pulse { 50% { transform: rotate(-1.5deg) scale(1.03); } }
-.letter { display: grid; gap: 10px; inline-size: 100%; max-inline-size: 460px; padding: 18px 18px 16px; background: color-mix(in srgb, var(--l-paper) 96%, transparent); color: var(--l-ink); border: 1px solid var(--l-ink); box-shadow: 4px 6px 0 rgb(0 0 0 / .4); transform: rotate(.6deg); text-align: start; font-family: var(--mag-display); font-style: italic; font-size: 1.0625rem; line-height: 1.4; }
+.letter { display: grid; gap: 10px; inline-size: 100%; max-inline-size: 460px; padding: 18px 18px 16px; background: color-mix(in srgb, var(--l-paper) 96%, transparent); color: var(--l-ink); border: 1px solid var(--l-ink); box-shadow: 4px 6px 0 color-mix(in srgb, black 40%, transparent); transform: rotate(.6deg); text-align: start; font-family: var(--mag-display); font-style: italic; font-size: 1.0625rem; line-height: 1.4; }
 .letter p { opacity: 0; animation: s1-in .6s ease-out calc(var(--s1-i, 0) * 1.1s + .3s) forwards; }
 .letterHead { opacity: 1 !important; animation: none !important; font-family: var(--mag-mono); font-style: normal; font-size: .625rem; letter-spacing: .16em; text-transform: uppercase; color: var(--l-prime); }
 .letterSign { justify-self: end; font-weight: 900; animation-delay: 5.8s !important; }
