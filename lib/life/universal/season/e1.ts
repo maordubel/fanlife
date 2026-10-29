@@ -48,20 +48,34 @@ export const E1: EpisodeScript = {
   ],
   barks: [
     {who: 'dad', room: 'room', when: not(done('radio')), lines: ['Two minutes. TWO.', 'Who moves batteries? Who does that?', 'Do not touch the aerial. Nobody touches the aerial.']},
-    {who: 'mum', room: 'kitchen', lines: ['Don’t run.', 'You’re running.', 'Fine. Run.']},
+    {who: 'mum', room: 'room', when: has(done('radio')), lines: ['Don’t run.', 'You’re running.', 'Fine. Run.']},
   ],
 
   steps: [
-    // ───── the two jobs, either order
+    // ───── the two jobs, either order: one run through the flat (RUSH `flat-run`), or the small game where RUSH cannot play
     {
-      id: 'scarf', goal: 'Get the scarf down from the top shelf', main: true, hub: 'prep', when: not(LATE),
-      at: {room: 'bedroom', spot: 'box'}, verb: 'take',
-      lines: [think('The box. Dad calls it the archive. Mum calls it the shoebox. Top shelf, obviously.')],
+      id: 'prep', goal: 'Batteries and the scarf — before kick-off', main: true, when: not(LATE),
+      at: {room: 'room', who: 'dad', slot: 'sofa'}, verb: 'talk',
+      lines: [
+        say('dad', 'Scarf: top of the wardrobe, in the box. Batteries: kitchen drawer — ask your mother. GO!', 'tense'),
+        me('Going!'),
+      ],
+      mission: {template: 'flat-run'},
       game: 'carry',
-      react: [room('The lid gives. Inside: a scarf longer than you are, and the smell of every Saturday before you were born.')],
-      slip: [room('The box comes down lid first. The scarf is fine. The lamp is less fine.'), room('From the kitchen: “What was THAT?”'), me('Gravity!')],
-      reward: {good: [heart(1)]},
+      show: [cine('e1-delivered')],
+      react: [
+        room('String. A key nobody can explain. A birthday candle shaped like a seven. Two batteries.'),
+        think('Nobody in this house is seven. Mysteries.'),
+      ],
+      slip: [
+        room('Through the wall, faintly: a roar. Somebody else’s radio got there first.'),
+        say('dad', 'No. No no no no.', 'tense'),
+        say('dad', 'Shoes. Now. We are going to {neighbour}’s.', 'tense'),
+      ],
+      fx: [flag(`s1:${E}:batteries`), standing(1)],
+      reward: {good: [heart(1)], slip: [flag(LATE), failed('Kick-off missed')]},
       ask: {
+        lines: [room('The scarf is longer than you are. It smells of every Saturday before you were born.')],
         timer: 7, silent: 'wrap',
         options: [
           opt('wrap', 'Wrap it round twice', think('Twice round. Still touches the floor. Perfect.'), [flag('life:scarf:way', 'worn'), heart(2)], {wear: 'scarf'}),
@@ -69,20 +83,6 @@ export const E1: EpisodeScript = {
           opt('dad', 'Save it for Dad', think('Dad first. He has been waiting longer.'), [flag('life:scarf:way', 'shared'), bond('dad', 5), remember('shared', 'Kept the scarf for Dad first.')]),
         ],
       },
-    },
-    {
-      id: 'batteries', goal: 'Find the batteries', main: true, hub: 'prep', when: not(LATE),
-      at: {room: 'kitchen', spot: 'drawer'}, verb: 'open',
-      lines: [
-        say('mum', 'If you want the batteries, they are where your father hid them from himself.'),
-        me('Where is that?'),
-        say('mum', 'The drawer. Behind the string. Under the key nobody can explain.'),
-      ],
-      react: [
-        room('String. A key nobody can explain. A birthday candle shaped like a seven. Two batteries.'),
-        think('Nobody in this house is seven. Mysteries.'),
-      ],
-      fx: [flag(`s1:${E}:batteries`), standing(1)],
     },
 
     // ───── the radio: both jobs done, before the clock runs out
@@ -100,8 +100,8 @@ export const E1: EpisodeScript = {
       id: 'listen', goal: 'Sit next to Dad', main: true, when: not(LATE),
       at: {room: 'room', who: 'dad', slot: 'sofa'}, verb: 'sit',
       lines: [say('dad', 'Sit. Here. That is your seat now. It is in the contract.'), me('What contract?'), say('dad', 'Shh. SHH.')],
-      game: 'clap',
-      show: [cine('e1-goal')],
+      // the match, lived on a sofa: a scene of the two of them (directed, not played), the goal, and then his moment
+      show: [cine('e1-together'), cine('e1-goal')],
       react: [room('The flat is suddenly very small for this much noise.')],
       ask: {
         lines: [room('He lifts you up. The ceiling comes very close.')],
@@ -175,9 +175,27 @@ export const E1: EpisodeScript = {
       {cam: 'two', on: ['me', 'dad'], ms: 2600, act: [{who: 'dad', do: 'face', to: 'me'}], say: say('dad', 'Batteries. Scarf. Go. We are nearly on.')},
       {cam: 'close', on: ['me'], ms: 2000, say: think('Two jobs. How hard can it be.')},
     ]},
+    // after the run: he comes round the door with both, and his father sees him do it
+    {id: 'e1-delivered', shots: [
+      {cam: 'two', on: ['me', 'dad'], ms: 2300, when: not(LATE), act: [{who: 'me', do: 'hold', item: 'scarf'}, {who: 'dad', do: 'face', to: 'me'}], say: room('You come round the door like a goal kick.')},
+      {cam: 'close', on: ['dad'], ms: 2300, when: not(LATE), act: [{who: 'dad', do: 'emote', mood: 'joy'}], say: say('dad', 'Batteries. Scarf. Under two minutes. Who taught you that?', 'joy')},
+      {cam: 'close', on: ['me'], ms: 1700, when: not(LATE), act: [{who: 'me', do: 'emote', mood: 'joy'}], say: me('You did.')},
+      {cam: 'over', on: ['me', 'dad'], ms: 2300, when: not(LATE), act: [{who: 'me', do: 'hold', item: null}, {who: 'dad', do: 'emote', mood: 'tender'}], say: room('He takes the batteries from you like they are made of glass.')},
+      {cam: 'close', on: ['dad'], ms: 2200, when: has(LATE), act: [{who: 'dad', do: 'emote', mood: 'grief'}], say: room('He has the batteries. He has the scarf. He is listening to the wall.')},
+    ]},
+    // the match on a sofa: the two of them, before anything happens
+    {id: 'e1-together', shots: [
+      {cam: 'wide', ms: 2800, act: [{who: 'me', do: 'sit', by: 'dad', side: -1}], say: room('The sofa is too big for you. Dad makes it the right size by sitting very close.')},
+      {cam: 'two', on: ['dad', 'me'], ms: 2800, act: [{who: 'dad', do: 'face', to: 'me'}, {who: 'dad', do: 'emote', mood: 'warm'}], say: say('dad', 'Hear that, under the man talking? That is our end. Singing.', 'warm')},
+      {cam: 'close', on: ['me'], ms: 2400, act: [{who: 'me', do: 'emote', mood: 'wonder'}], say: think('You do not know the words yet. You hum anyway.')},
+      {cam: 'close', on: ['dad'], ms: 2200, act: [{who: 'dad', do: 'emote', mood: 'tense'}], say: room('His knee goes up and down. Then yours does too.')},
+      {cam: 'two', on: ['me', 'dad'], ms: 2300, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: say('dad', 'Come on… come on… come ON…', 'tense')},
+      {cam: 'over', on: ['dad', 'mum'], ms: 2000, act: [{who: 'mum', do: 'face', to: 'dad'}], say: say('mum', 'Are you two breathing?')},
+      {cam: 'close', on: ['dad'], ms: 1600, say: say('dad', 'Not until they score.', 'tense')},
+    ]},
     {id: 'e1-goal', shots: [
-      {cam: 'close', on: ['dad'], ms: 1500, act: [{who: 'dad', do: 'emote', mood: 'tense'}], say: room('The man on the radio stops breathing.')},
-      {cam: 'wide', ms: 2600, act: [{who: 'all', do: 'cheer'}], say: room('Then the whole radio explodes.')},
+      {cam: 'two', on: ['dad', 'me'], ms: 1500, act: [{who: 'me', do: 'sit', by: 'dad', side: -1}, {who: 'dad', do: 'emote', mood: 'tense'}], say: room('The man on the radio stops breathing.')},
+      {cam: 'wide', ms: 2600, act: [{who: 'all', do: 'cheer'}, {who: 'dad', do: 'lift'}], say: room('Then the whole radio explodes.')},
       {cam: 'two', on: ['dad', 'me'], ms: 2300, act: [{who: 'dad', do: 'emote', mood: 'joy'}], say: say('dad', 'YES! YES! YES!')},
       {cam: 'close', on: ['mum'], ms: 1900, act: [{who: 'mum', do: 'emote', mood: 'tense'}], say: say('mum', 'The neighbours!')},
       {cam: 'two', on: ['dad', 'mum'], ms: 2200, say: say('dad', 'They have got radios!')},

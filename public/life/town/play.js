@@ -124,7 +124,8 @@ Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;wh
  /* turning on the spot is a few small steps, never a statue spinning on its soles: when the body is not walking,
     the turn feeds a short shuffle into the same leg cycle the walk uses */
  if(!this.def.sit&&(this.o.sv||0)<.5&&Math.abs(step)>.0015){this.o.sw=(this.o.sw||0)+Math.abs(step)*3.2;this.o.sv=Math.max(this.o.sv||0,Math.min(.42,Math.abs(d)*.9))}};
-Body.prototype.stride=function(dist){this.o.sw=(this.o.sw||0)+dist*U/(1.5*this.s)*2*PI;this.o.sv=1};
+/* one stride (two steps) is 1.5 body-scales of floor at a walk and longer at a run, so the captured feet stay planted */
+Body.prototype.stride=function(dist){this.o.sw=(this.o.sw||0)+dist*U/((1.5+.9*(this.o.run||0))*this.s)*2*PI;this.o.sv=1};
 Body.prototype.rest=function(dt){this.o.sv=Math.max(0,(this.o.sv||0)-dt*7)};
 Body.prototype.remove=function(){K.dropChar(this.g)};
 
@@ -258,7 +259,9 @@ function trackCam(dt,snap){
  var x0=(cfg.walk[0]-.6)*U,x1=(cfg.walk[2]+.6)*U,xm=ux*U,fx=0;
  if(x1-x0>2*half)fx=Math.max(x0+half,Math.min(x1-half,xm))-info.l[0];
  else if(fa)fx=Math.max(-.6,Math.min(.6,(xm-info.l[0])*.55));
- var e=now-ENTRY_T,k=snap?1:Math.min(1,dt*(e<2.2?1.25:4.5));camX+=(fx-camX)*k;camZ+=(zm-camZ)*k;K.follow(camX,camZ);
+ /* a mission starts: the camera dives at him (the cut to RUSH happens at the bottom of the dive) */
+ var dv=now-DIVE_T;if(dv>=0&&dv<1.4){var dp=Math.min(1,dv/.75);zm=1+dp*dp*1.9;fx=Math.max(-2.5,Math.min(2.5,xm-info.l[0]));snap=false}
+ var e=now-ENTRY_T,k=snap?1:Math.min(1,dt*(dv>=0&&dv<1.4?6:e<2.2?1.25:4.5));camX+=(fx-camX)*k;camZ+=(zm-camZ)*k;K.follow(camX,camZ);
 }
 
 /* ---------- targets ---------- */
@@ -344,9 +347,10 @@ function frame(t,dt){
    if(!path&&pending){var pd=pending;pending=null;retarget(true);var pr=reachOf(pd.kind,pd.id),pm=marks.filter(function(m){return m.kind===pd.kind&&m.id===pd.id})[0];if(target&&target.kind===pd.kind&&target.id===pd.id)act(pd);else if(pr&&pm&&pm.on&&(pr[0]-player.x)*(pr[0]-player.x)+(pr[1]-player.z)*(pr[1]-player.z)<pm.reach*pm.reach)act(pd);else{faceEachOther(pd.id)}}
   }
  }
+ player.o.run=(player.o.run||0)+(((running&&moved>0)?1:0)-(player.o.run||0))*Math.min(1,dt*5);
  if(moved>0){player.stride(moved);stepAcc+=moved;if(stepAcc>2.6*player.s){stepAcc=0;emit({type:'step',surface:cfg.surface||'floor'})}}else player.rest(dt);
  if(player.wantYaw!=null)player.turn(player.wantYaw,dt,moved>0?12:7);
- player.o.mode=focusId&&!moved?'listen':'ctrl';player.place();
+ player.o.mode=POSED.me?POSED.me.mode:(focusId&&!moved?'listen':'ctrl');player.place();
  Object.keys(actors).forEach(function(id){var a=actors[id];
   if(a.path){var m=follow(a,dt);if(m>0)a.stride(m);if(!a.path){a.rest(dt);emit({type:'arrived',id:id})}}
   else if(a.def.follow&&!frozen){
@@ -354,7 +358,7 @@ function frame(t,dt){
    if(dd>1.1){var st2=Math.min(dd-.6,SPEED*1.05*dt),o1=a.x,o2=a.z;if(slide(a,ddx/dd*st2,ddz/dd*st2)){var mv=Math.hypot(a.x-o1,a.z-o2);a.stride(mv);a.wantYaw=Math.atan2(a.x-o1,a.z-o2)}else a.rest(dt)}else{a.rest(dt);a.wantYaw=player.yaw}
   }else a.rest(dt);
   if(a.wantYaw!=null&&!a.def.sit)a.turn(a.wantYaw,dt,6);
-  if(id===focusId&&a.base!=='sit')a.o.mode='talk';else a.o.mode=a.base;
+  if(POSED[id])a.o.mode=POSED[id].mode;else if(id===focusId&&a.base!=='sit')a.o.mode='talk';else a.o.mode=a.base;
   /* a head that notices who walked in */
   if(a.def.head==null||focusId===id){var dxp=player.x-a.x,dzp=player.z-a.z,near=dxp*dxp+dzp*dzp<64;
    if((near&&a.def.notice!==false)||focusId===id){var want=Math.atan2(dxp,dzp)-a.yaw;while(want>PI)want-=2*PI;while(want<-PI)want+=2*PI;a.o.look=Math.max(-1.0,Math.min(1.0,want))}else a.o.look=0}else a.o.look=a.def.head;
@@ -436,10 +440,18 @@ function cineTick(t,dt){
  K.cineCam({p:[p.x,p.y,p.z],l:[l.x,l.y,l.z],fov:fov});
 }
 function cineShot(o){
- if(!o){CINE=null;window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
+ if(!o){CINE=null;unpose();window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
  CINE={cam:o.cam||'wide',on:o.on||[],ms:o.ms||2000,el:0};/* a close shot has the wall half a metre behind a face: screen-space obscurance prints a dark cloud round the head there */window.__noAO=CINE.cam==='close'||CINE.cam==='over';cineTick(now,0);return true}
+/* a scene may put people where the walk cannot: him on the sofa beside his father, his father on his feet lifting him to
+   the ceiling. Every such pose is undone when the scene ends, so the day picks up where it left them. */
+var POSED={};
+function poseBody(id,b,mode,x,z,yaw,y){if(!POSED[id])POSED[id]={keep:{x:b.x,z:b.z,yaw:b.yaw,y:b.g.position.y}};POSED[id].mode=mode;if(b===player)player.cpath=null;else b.path=null;if(x!=null){b.x=x;b.z=z}if(yaw!=null){b.yaw=yaw;b.wantYaw=yaw}if(y!=null)b.g.position.y=y;b.o.mode=mode;b.place()}
+function unpose(){Object.keys(POSED).forEach(function(id){var b=bodyOf(id),k=POSED[id].keep;if(b){b.x=k.x;b.z=k.z;b.yaw=k.yaw;b.wantYaw=null;b.g.position.y=k.y;b.o.mode=b===player?'ctrl':b.base;b.place()}});POSED={}}
 function cineAct(a){
  if(!a)return false;
+ if(a.do==='sit'&&a.who==='me'&&player){var o=bodyOf(a.by);if(!o)return false;var yw=o.yaw,off=.6/U,sd=a.side||-1;/* the free seat of the flat's sofa is on the father's left (−x); a scene in another room names its side */poseBody('me',player,'sit',o.x+Math.cos(yw)*off*sd,o.z-Math.sin(yw)*off*sd,yw,o.g.position.y);return true}
+ if(a.do==='stand'&&a.who==='me'){var kp=POSED.me;if(kp){player.x=kp.keep.x;player.z=kp.keep.z;player.g.position.y=kp.keep.y;delete POSED.me;player.o.mode='ctrl';player.place()}return true}
+ if(a.do==='lift'&&player){var lb=bodyOf(a.who);if(!lb||lb===player)return false;var ly=lb.yaw,fx=Math.sin(ly)*.34/U,fz=Math.cos(ly)*.34/U;poseBody(a.who,lb,'cheer',null,null,ly,0);poseBody('me',player,'cheer',lb.x+fx,lb.z+fz,ly+PI,.42);return true}
  if(a.who==='all'&&a.do==='cheer'){P.celebrate();return true}
  var b=bodyOf(a.who);if(!b)return false;
  if(a.do==='walk'&&a.x!=null){if(b===player){player.cpath=route(player.x,player.z,a.x,a.z)}else{b.path=route(b.x,b.z,a.x,a.z);b.speed=SPEED*.7}return true}
@@ -492,7 +504,7 @@ K.hooks.push(function(t){if(STU)studioCam((now-STU.t0)/14)});
    GTA never makes anybody wonder where the job is. The shell names ONE goal in this room — the person, the thing, or the
    door on the way — and it is drawn louder than every other marker: a column of the club's colour standing on it, a
    chevron bobbing over it, a ring breathing on the floor. The cream markers stay for everything else that can be touched. */
-var GOAL=null,GB=null,ENTRY_T=-9;
+var GOAL=null,GB=null,ENTRY_T=-9,DIVE_T=-9;
 function goalColour(){var c=S&&S.p?new T.Color(S.p):null;if(c){var h={};c.getHSL(h);if(h.s<.28||h.l>.82||h.l<.12)c=null}if(!c)c=new T.Color('#fff6e6');c.convertSRGBToLinear();return c}
 function goalBuild(){
  var col=goalColour(),g=new T.Group();
@@ -548,6 +560,9 @@ var P=window.__vxPlay={
  /* LIFE may name the speaker a moment after it sends the line's mood: the line still starts on whoever says it */
  focus:function(id){focusId=id||null;if(id){faceEachOther(id);var a=actors[id];if(a&&lastMood&&now-lastMood.t<.5)a.o.expr={k:lastMood.k,t0:lastMood.t,role:'say'}}},
  /* the GPS: one goal ({kind,id}) or null */
+ /* the engine change: dive in before a mission, land back out of it after (camera only — the day is untouched) */
+ dive:function(){DIVE_T=now;return true},
+ land:function(){DIVE_T=-9;ENTRY_T=now;camZ=2.2;return true},
  goal:function(kind,id){GOAL=kind&&id?{kind:kind,id:id}:null;return true},
  goalState:function(){return{goal:GOAL,shown:!!(GB&&GB.g.visible&&GB.g.parent),at:GB?GB.g.position.toArray():null,cine:!!CINE,stu:!!STU}},
  mark:function(kind,id,on){marks.forEach(function(m){if(m.kind===kind&&m.id===id)m.on=!!on});retarget(true)},

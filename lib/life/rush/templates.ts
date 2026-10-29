@@ -150,6 +150,14 @@ export const MISSION_TEMPLATES: readonly MissionTemplate[] = [
     weight: {home: 1, derby: 0.5},
   },
   {
+    id: 'flat-run', verb: 'run', camera: 'chase', route: 'main', ages: [4, 12], clock: 75,
+    hazards: ['clock'],
+    needs: [],
+    title: 'Before kick-off', brief: 'The scarf is on top of the wardrobe. The batteries are somewhere in the kitchen. Dad is on the sofa with a dead radio, and the whistle will not wait.',
+    neutralTitle: 'Before kick-off', neutralBrief: 'The scarf is on top of the wardrobe. The batteries are somewhere in the kitchen. Dad is on the sofa with a dead radio, and the whistle will not wait.',
+    weight: {},
+  },
+  {
     id: 'sticker-swap', verb: 'find', camera: 'eyes', route: 'main', ages: [8, 14], clock: 200,
     hazards: ['clock', 'crowd'],
     needs: [],
@@ -180,5 +188,6 @@ export const TEMPLATE_HE: Readonly<Record<string, {title: string; brief: string;
   'lead-the-way': {title: 'להוביל', brief: 'היום אתה זה שיודע את הדרך. להביא אותם דרך {city} עד השער — ביחד, ובזמן.', neutralTitle: 'להוביל', neutralBrief: 'היום אתה זה שיודע את הדרך. להביא אותם דרך {city} עד השער — ביחד, ובזמן.'},
   'errands': {title: 'מה חסר', brief: 'צבע, בד, נייר דבק, נייר — מפוזרים על חצי {city}. לאסוף הכול ולהביא לחדר המועדון לפני שפותחים את השערים.', neutralTitle: 'מה חסר', neutralBrief: 'צבע, בד, נייר דבק, נייר — מפוזרים על חצי {city}. לאסוף הכול ולהביא לחדר המועדון לפני שפותחים את השערים.'},
   'banner-march': {title: 'הצעדה · {date}', brief: 'הדגל הגדול, בראש. בכל פינה בדרך ל{ground} מחכים אנשים להצטרף מאחוריו.', neutralTitle: 'הצעדה', neutralBrief: 'הדגל הגדול, בראש. בכל פינה בדרך מחכים אנשים להצטרף מאחוריו.'},
+  'flat-run': {title: 'לפני שריקת הפתיחה', brief: 'הצעיף למעלה על הארון. הבטריות איפשהו במטבח. אבא על הספה עם רדיו מת, והשריקה לא תחכה.', neutralTitle: 'לפני שריקת הפתיחה', neutralBrief: 'הצעיף למעלה על הארון. הבטריות איפשהו במטבח. אבא על הספה עם רדיו מת, והשריקה לא תחכה.'},
   'sticker-swap': {title: 'המשבצת החסרה', brief: 'משבצת אחת ריקה באלבום, ומישהו בחצר הזאת מחזיק אותה פעמיים. לשאול מסביב. למצוא לפני הצלצול.', neutralTitle: 'המשבצת החסרה', neutralBrief: 'משבצת אחת ריקה באלבום, ומישהו בחצר הזאת מחזיק אותה פעמיים. לשאול מסביב. למצוא לפני הצלצול.'},
 }

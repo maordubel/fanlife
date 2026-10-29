@@ -1,6 +1,6 @@
 """LIFE · RUSH — loom's ground tiles into what ships: colour as lossy WebP, height and roughness as grey WebP
 (a grey image has no chroma for the encoder to subsample). The normal is rebuilt from the height in the browser.
-    python3 scripts/life/rush/pack-surfaces.py <loom out dir>
+    python3 scripts/life/rush/pack-surfaces.py <loom out dir> [names…]   (default: the street's three)
 """
 import sys
 from pathlib import Path
@@ -9,7 +9,7 @@ from PIL import Image
 
 src, dst = Path(sys.argv[1]), Path('public/life/rush/tex')
 dst.mkdir(parents=True, exist_ok=True)
-for name in ('asphalt', 'slabs', 'concrete'):
+for name in (sys.argv[2:] or ['asphalt', 'slabs', 'concrete']):
     d = src / name
     Image.open(d / f'{name}_albedo.png').convert('RGB').save(dst / f'{name}-albedo.webp', 'WEBP', quality=86, method=6)
     h = np.asarray(Image.open(d / f'{name}_height.png')).astype(np.float64)

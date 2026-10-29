@@ -883,3 +883,25 @@ button.gps:active { transform: translate(2px, 2px); box-shadow: none; }
 @media (prefers-reduced-motion: reduce) { .blip::before { animation: none; } }
 /* on a desktop the key legend runs along the foot of the picture: the GPS stands above it */
 .life:not([data-touch='true']) .gps { z-index: 5; inset-block-end: calc(var(--l-foot) + 72px); }
+
+/* the change of engine (delta 90-E): IN — speed lines burst from the middle, the paper flashes, the mission's name is slammed
+   down like a stamp; OUT — the day opens out of the paper in a widening circle, the result still written across it */
+.warp { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; overflow: hidden; }
+.warpBurst { position: absolute; inset: -20%; background: repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--mag-ink) 85%, transparent) 0 2deg, transparent 2deg 9deg); opacity: 0; }
+.warp[data-dir='in'] .warpBurst { animation: warpBurst .95s ease-in both; }
+.warp[data-dir='in']::after { content: ''; position: absolute; inset: 0; background: var(--mag-card); animation: warpFlash .95s ease-in both; }
+.warpCard { position: relative; z-index: 1; margin: 0; display: grid; gap: 4px; justify-items: center; padding: 14px 22px; max-inline-size: 86vw; text-align: center;
+  background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-ink); border-block-start: 12px solid var(--club-primary); }
+.warpCard span { font-family: var(--mag-mono); font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; }
+.warpCard b { font-family: var(--mag-brand); font-weight: 400; font-size: clamp(1.6rem, 7vw, 2.6rem); line-height: 1.05; }
+.warp[data-dir='in'] .warpCard { animation: warpSlam .55s cubic-bezier(.2,1.5,.4,1) .12s both; }
+.warp[data-dir='out'] { background: var(--mag-card); -webkit-mask: radial-gradient(circle at 50% 55%, transparent var(--warp-r, 0%), var(--mag-ink) calc(var(--warp-r, 0%) + 1%)); mask: radial-gradient(circle at 50% 55%, transparent var(--warp-r, 0%), var(--mag-ink) calc(var(--warp-r, 0%) + 1%)); animation: warpOpen 1.3s ease-in-out both; }
+.warp[data-dir='out'] .warpCard { animation: warpOut 1.3s ease-in both; }
+.warp[data-outcome='slip'] .warpCard { border-block-start-color: var(--mag-ink); }
+@property --warp-r { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@keyframes warpBurst { 0% { opacity: 0; transform: scale(1.6) rotate(0); } 60% { opacity: .55; } 100% { opacity: .9; transform: scale(.7) rotate(8deg); } }
+@keyframes warpFlash { 0%, 55% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes warpSlam { 0% { transform: scale(2.6) rotate(-5deg); opacity: 0; } 60% { transform: scale(.94) rotate(1.5deg); opacity: 1; } 100% { transform: scale(1) rotate(-1deg); opacity: 1; } }
+@keyframes warpOpen { 0%, 25% { --warp-r: 0%; } 100% { --warp-r: 90%; } }
+@keyframes warpOut { 0%, 40% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(.86) translateY(-12px); } }
+@media (prefers-reduced-motion: reduce) { .warp { display: none; } }

@@ -42,6 +42,7 @@ import {MatchLive, type LiveResult} from './season/MatchLive'
 import {lookAt} from '@/lib/life/universal/cast'
 import {missionFlags, missionSpecFor, type RushDoor} from '@/lib/life/rush/call'
 import type {MissionResult, MissionSpec} from '@/lib/life/rush/spec'
+import {rushWord} from '@/lib/life/rush/words'
 import {instantText, Typed, type TypedHandle} from './Typed'
 import {skyOf} from '@/lib/life/universal/sky'
 import {people, roomConfig, type PlayEvent, type PlayRuntime, type PlayTarget} from './runtime'
@@ -148,6 +149,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
   const [wide, setWide] = useState(false)
   const [touch, setTouch] = useState(false)
   const [reduced, setReduced] = useState(false)
+  /** the change of engine, directed: a dive into the mission's name on the way in, the day opening out of the result on the way back */
+  const [warp, setWarp] = useState<{dir: 'in' | 'out'; kicker: string; title: string; outcome?: string} | null>(null)
   const [reload, setReload] = useState(0)
   /* the picture: the smooth 3D engine (high / lite) or the block engine, kept per device */
   const [look, setLook] = useState<Look3d>('high')
@@ -229,7 +232,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
     const p = geo?.slots[name] ?? geo?.spots[name]
     return p ? {x: p.x, z: p.z} : null
   }, [pack])
-  type SeasonRuntime = PlayRuntime & {shot?: (o: {cam: string; on: string[]; ms: number} | null) => boolean; cineAct?: (a: Record<string, unknown>) => boolean; studio?: (o: {look: unknown; who?: string} | null) => boolean; studioSay?: (mood: string | false) => boolean; celebrate?: () => void}
+  type SeasonRuntime = PlayRuntime & {dive?: () => boolean; land?: () => boolean; shot?: (o: {cam: string; on: string[]; ms: number} | null) => boolean; cineAct?: (a: Record<string, unknown>) => boolean; studio?: (o: {look: unknown; who?: string} | null) => boolean; studioSay?: (mood: string | false) => boolean; celebrate?: () => void}
   const srt = useCallback(() => rt.current as SeasonRuntime | null, [])
 
   /** a staged scene: the camera cuts between people while they move, turn, hold things and cheer */
@@ -516,10 +519,15 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
         const spec = d.mission && ch ? missionSpecFor(rush, d.mission, ch, {time: l.state.time === 'night' ? 'night' : 'day', locale, playId: d.id, cast: pack.cast}) : null
         let result: Result
         if (spec) {
-          const mission = await new Promise<MissionResult | null>(res => { missionDone.current = res; dismiss.current = () => res(null); setOverlay({k: 'mission', spec}) })
+          const lw = locale === 'he' ? 'he' : 'en'
+          // into the mission: the day's camera dives at him, the frame flashes and the mission's name slams in — then RUSH comes up out of the white
+          if (!reduced) { srt()?.dive?.(); cue('flash'); setWarp({dir: 'in', kicker: rushWord(lw, 'brief.kicker'), title: spec.title}); await new Promise(r => window.setTimeout(r, 950)) }
+          const mission = await new Promise<MissionResult | null>(res => { missionDone.current = res; dismiss.current = () => res(null); setOverlay({k: 'mission', spec}); setWarp(null) })
           missionDone.current = null
           result = mission ? mission.outcome : 'ok'
           if (mission && d.mission) l.dispatch(...missionFlags(d.mission.template, mission).map(f => ({t: 'flag' as const, k: f.k, v: f.v})))
+          // and back: the day opens out of the mission's last frame, pulled out from close on him, the result still on the glass
+          if (!reduced && mission && !mission.skipped) { srt()?.land?.(); cue(mission.outcome === 'slip' ? 'stamp-miss' : 'stamp-pass'); setWarp({dir: 'out', kicker: spec.title, title: rushWord(lw, `res.${mission.outcome}`), outcome: mission.outcome}); await new Promise(r => window.setTimeout(r, 1300)); setWarp(null) }
         } else if (d.game) {
           const game = d.game
           result = await new Promise<Result>(res => { dismiss.current = r => res(r ?? 'ok'); setOverlay({k: 'game', d: {...d, game}}) })
@@ -546,7 +554,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
       }
     }
     return false
-  }, [cue, enterRoom, finishChapter, locale, pack, playCine, playDoc, playLive, playStamp, rush])
+  }, [cue, enterRoom, finishChapter, locale, pack, playCine, playDoc, playLive, playStamp, reduced, rush, srt])
 
   const closeTalk = useCallback(async (completed: boolean) => {
     const run = runner.current, ctx = live.current.talk, l = life.current
@@ -1310,6 +1318,12 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
         </section>
       )}
 
+      {warp && (
+        <div className={`${styles.warp} z-[61]`} data-dir={warp.dir} data-outcome={warp.outcome ?? ''} aria-hidden="true" data-life="warp">
+          <div className={styles.warpBurst} />
+          <p className={styles.warpCard}><span>{warp.kicker}</span><b>{warp.title}</b></p>
+        </div>
+      )}
       {overlay?.k === 'mission' && rush && (
         <div data-clear="true" data-life="mission">
           <RushHost spec={overlay.spec} skin={pack.skin} locale={locale} reduced={reduced} gateLabel={rush.gateLabel} cue={soundOn ? cue : undefined}

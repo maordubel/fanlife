@@ -223,7 +223,9 @@ function humanTalk(u,T_,o){humanStand(u,T_,o);var ar=u.arms,ph=u.ph||0,lead=Math
  u.grip=.04;u.torso.rotation.x=.025+Math.sin(T_*.5)*.01;u.head.rotation.x=.02+Math.pow(Math.max(0,Math.sin(T_*2.05+ph)),3)*.07;u.head.rotation.y=(o.look||0)+Math.sin(T_*.6)*.12}
 /* a walk says who walks: a woman's steps fall on one line, her hips tilt and her arms swing close; a man's shoulders
    counter-swing wider; a child bounces and swings big; an old man shortens everything and leans into it */
-function humanGait(u,w,sv){var ar=u.arms,lg=u.legs,hp=(u.human&&u.human.ph)||{},fem=!!hp.fem,age=hp.age||35,kid=age<13,old=age>68;
+/* real motion first (people.js P.gait, CMU motion capture); the drawn cycle below is the fallback */
+function humanGait(u,w,sv){var PP=window.PEOPLE;if(PP&&PP.mocap&&PP.gait&&!Q.has('nomocap')){PP.gait(u,w,sv,armOut(u));return}
+ var ar=u.arms,lg=u.legs,hp=(u.human&&u.human.ph)||{},fem=!!hp.fem,age=hp.age||35,kid=age<13,old=age>68;
  if(old)sv*=.72;var swE=fem?.42:kid?.3:.35,shZ=fem?.045:kid?.1:.085,legIn=fem?.035:0;
  for(var i=0;i<2;i++){var a=ar[i],sg=i?-1:1;a.el.rotation.x=-.32-(fem?.06:0)-Math.max(0,(i?1:-1)*Math.sin(w))*swE*sv;a.sh.rotation.z=sg*shZ;lg[i].h.rotation.z=-sg*legIn}
  u.hips.rotation.y=Math.sin(w)*(fem?.07:.1)*sv;u.torso.rotation.y=-Math.sin(w)*(fem?.09:kid?.12:.16)*sv;u.hips.rotation.z=Math.cos(w)*(fem?.065:.03)*sv;u.torso.rotation.z=-Math.cos(w)*(fem?.035:.02)*sv;u.head.rotation.y-=u.torso.rotation.y*.6;u.head.rotation.x=old?.12:.03;if(old)u.torso.rotation.x=.07;

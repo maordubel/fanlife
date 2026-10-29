@@ -11,6 +11,9 @@ window.PEOPLE=P;
 var D=null,H=null,BONE={},NB=0;
 function sec(name){var s=H.sections[name];if(!s)return null;var C={f4:Float32Array,u2:Uint16Array,u1:Uint8Array,i2:Int16Array}[s.t];return new C(D,s.o,s.n)}
 P.load=function(base){base=base||'/life/town/people/';
+ // real motion (CMU motion capture, scripts/life/mocap-clips.py): one averaged walk and one run, read by kit.js humanGait.
+ // Never waited for and never fatal — without it the people walk on the drawn cycle they always had.
+ fetch('/life/town/mocap.json').then(function(r){return r.ok?r.json():null}).then(function(m){if(m&&m.clips&&m.clips.walk)P.mocap=m}).catch(function(){});
  return Promise.all([fetch(base+'body.json').then(function(r){if(!r.ok)throw new Error('body.json '+r.status);return r.json()}),fetch(base+'body.bin').then(function(r){if(!r.ok)throw new Error('body.bin '+r.status);return r.arrayBuffer()}),new Promise(function(res,rej){var im=new Image();im.onload=function(){res(im)};im.onerror=rej;im.src=base+'skin.png'})])
  .then(function(a){H=a[0];D=a[1];NB=H.nb;H.bones.forEach(function(b,i){BONE[b]=i});
   P.pos=sec('pos');P.uv=sec('uv');P.split=sec('split');P.tri=sec('tri');P.otri=sec('otri');P.ski=sec('ski');P.skw=sec('skw');P.hair=sec('hair');P.cav=sec('cav');P.limb=sec('limb')||new Uint8Array(NB);P.stache=sec('stache')||new Uint8Array(NB);P.joints=sec('joints');P.extra=sec('extra');
@@ -663,6 +666,28 @@ function seated(k,e,H,To,A,u,t,since,s){
  else if(k==='tense'){H.x+=.08*e;To.x+=.05*e;for(var j=0;j<2;j++)mix(A[j].sh.rotation,'z',j?-.02:.02,e*.8)}
  else if(k==='grief'){H.x+=.16*e;To.x+=.08*e;u.mouth.scale.y=1+(u.mouth.scale.y-1)*.35}
  else if(k==='wonder'){H.x-=.12*e;To.x-=.03*e}}
+/* real motion: a captured stride (public/life/town/mocap.json — CMU motion capture, averaged over every stride of ten
+   walks and a dozen runs) read by phase, and blended walk→run by how fast the body goes. The drawn sine below stays
+   as the fallback, and the person's own walk (a woman's line, a child's bounce, an old man's short step) still shapes it. */
+function mcAt(c,k,ph){var v=c[k],n=v.length,x=ph*n,i=Math.floor(x),f=x-i;i=((i%n)+n)%n;return v[i]+(v[(i+1)%n]-v[i])*f}
+P.gait=function(u,w,sv,out){var M=P.mocap;var ar=u.arms,lg=u.legs,hp=(u.human&&u.human.ph)||{},fem=!!hp.fem,age=hp.age||35,kid=age<13,old=age>68,
+ run=Math.max(0,Math.min(1,u.o.run||0)),W=M.clips.walk,Rn=M.clips.run||W,ph=((w/(2*Math.PI))%1+1)%1+.25,
+ g=function(k){var a=mcAt(W,k,ph);return run>0?a+(mcAt(Rn,k,ph)-a)*run:a};
+ if(old)sv*=.72;var amp=sv*(old?.8:1),armA=sv*(kid?1.3:fem?.85:1)*(old?.7:1);
+ // the facade's sides: arms[0]/legs[0] are the right side, [1] the left
+ lg[0].h.rotation.x=-g('thigh_r')*amp;lg[1].h.rotation.x=-g('thigh_l')*amp;
+ lg[0].kn.rotation.x=Math.max(0,g('knee_r')-(1-run)*.22)*amp;lg[1].kn.rotation.x=Math.max(0,g('knee_l')-(1-run)*.22)*amp;
+ lg[0].h.rotation.z=-(g('thighOut_r')-mcMean(W,'thighOut_r'))*amp-(fem?.035:0);lg[1].h.rotation.z=(g('thighOut_l')-mcMean(W,'thighOut_l'))*amp+(fem?.035:0);
+ ar[0].sh.rotation.x=-g('arm_r')*armA;ar[1].sh.rotation.x=-g('arm_l')*armA;
+ ar[0].el.rotation.x=-g('elbow_r')*Math.max(.55,armA);ar[1].el.rotation.x=-g('elbow_l')*Math.max(.55,armA);
+ ar[0].sh.rotation.z=out+(fem?-.02:kid?.03:0)+run*.06;ar[1].sh.rotation.z=-ar[0].sh.rotation.z;
+ u.hips.rotation.y=-g('pelvisYaw')*amp*(fem?1.4:1);u.torso.rotation.y=-g('torsoYaw')*amp*(kid?1.2:1);
+ u.hips.rotation.z=g('pelvisRoll')*amp*(fem?1.6:1);u.torso.rotation.z=g('torsoRoll')*.6*amp;
+ u.torso.rotation.x=g('torsoLean')*(.6+run*.5)+(old?.08:0);
+ u.hips.position.y=.95+g('bob')*.9*amp*(kid?1.4:1)-run*.03;
+ u.head.rotation.y-=u.torso.rotation.y*.7;u.head.rotation.x=(old?.12:.02)-u.torso.rotation.x*.5;
+ if(u.hips.userData.x0!=null)u.hips.position.x=u.hips.userData.x0};
+function mcMean(c,k){return c['_m_'+k]!=null?c['_m_'+k]:(c['_m_'+k]=c[k].reduce(function(a,b){return a+b},0)/c[k].length)}
 P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=h.rest;
  P.express(g,t,dt||.03);
  var pel=b[BONE.pelvis],base=pel.userData.p0||(pel.userData.p0=pel.position.clone()),h0=u.hips.userData.p0||(u.hips.userData.p0=u.hips.position.clone());
