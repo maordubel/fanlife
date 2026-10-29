@@ -24,8 +24,8 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "listed",
-    "pagesRead": 27,
+    "state": "partial_budget",
+    "pagesRead": 4,
     "observedTotalDocuments": 657,
     "observedTotalPages": 27,
     "queue": null,
