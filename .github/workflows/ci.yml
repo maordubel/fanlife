@@ -26,7 +26,7 @@ concurrency:
 jobs:
   doctor:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     env:
       NODE_OPTIONS: --max-old-space-size=6144
     steps:
