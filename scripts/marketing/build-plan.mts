@@ -1,5 +1,9 @@
 /**
- * FAN LIFE social plan v3 (owner, 27.10.2026). Three voices, a picture on every post, nothing from before 1980.
+ * FAN LIFE social plan v4 (owner, 29.10.2026): 45 days from 29.10, 17 slots a day, "easier text, smarter tags, real
+ * copy-paste". Every post carries its own smart tags (lib/marketing/tags.ts), a short label, and — where there is an
+ * answer — a first comment, so the caption never gives the answer away and the comments do the talking.
+ * New in v4: 17:30 Guess the score and 22:30 Guess the year (both from the approved archive).
+ * Built on plan v3 (owner, 27.10.2026). Three voices, a picture on every post, nothing from before 1980.
  *   FAN LIFE (the lead publisher) — 08 On this day · 10 a gate of the app · 14 story quiz · 16 nerds only ·
  *     18 Royal Rumble / Legends Manager on alternate days · 20 spicy · 22 did you know; 12:00 did you know on Sun/Wed/Fri.
  *   DUBID — how it works, in its own branding, 12:00 Mon/Thu; a round that opens: live slot 13:00.
@@ -7,19 +11,23 @@
  *   Matches and results (not marketing): live slots 09:00 results · 11:00 next up — composed at send time from the
  *   fixture feed (lib/marketing/live.ts), or quiet.
  * The data slots come from the clubs' approved archives through the FAN LIFE trivia forge (English, confidence ≥ 2,
- * exact dates — rule 109). Writes supabase/marketing/0007_marketing_plan_v3.sql and scripts/marketing/plan-v3.json.
+ * exact dates — rule 109). Writes supabase/marketing/0008_marketing_plan_v4.sql and scripts/marketing/plan-v4.json.
  * Run: node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts
  */
 import {readFileSync, writeFileSync} from 'node:fs'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {loadClubBase, CORE_CLUB_IDS} from '../../lib/clubs/resolver'
+import {smartTags, type Topic} from '../../lib/marketing/tags'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 // kit: the template for this post and its data. Crest NAMES only (crestName, homeCrestName, awayCrestName): the picture
 // resolves them through the shared crest library (ecosystem/crests) when it is drawn.
 type Kit = {t: string; data: Record<string, unknown>}
-type Item = {app: string; hook: string; body: string; visual: string; url?: string; kit: Kit}
+// tags: smart hashtags · label: the one-word header line · comment: the first comment (answers live here, never in the
+// caption) · comment_label: when the second box is not a comment (a story's second frame) · how: one line for stories
+type Item = {app: string; hook: string; body: string; visual: string; url?: string; kit: Kit; tags?: string; label?: string; comment?: string; comment_label?: string; how?: string}
+const pickOf = <T,>(list: readonly T[], seed: string) => list[h(seed) % list.length]!
 
 // ── the archive, read through the forge ────────────────────────────────────────────────────────────────────────────
 type Q = {id: string; template: string; type: string; prompt: string; answer: string; explanation: string; pool?: string; topic?: string; facets?: string[]; factIds?: string[]; source?: {url?: string}}
@@ -94,9 +102,10 @@ function onThisDay(y: number, m: number, d: number): Item {
   }
   if (rows.length < 2) throw Error('no on-this-day rows')
   const line = (e: Ev) => exact ? `${e.y} · ${e.name}: ${e.text} — ${y - e.y} years ago` : `${e.d} ${MONTH[e.m]} ${e.y} · ${e.name}: ${e.text}`
-  return {app: 'fanlife',
-    hook: exact ? `On this day, ${d} ${MONTH[m]} — ${rows.length} clubs, one date.` : `This week in history — ${rows.length} clubs.`,
-    body: `${rows.map(line).join('\n')}\n\nWhich one would you have been at? Every one of these clubs has its own archive in FAN LIFE.`,
+  const big = rows.find(r => r.derby) || rows.find(r => r.final) || rows.find(r => r.europe)
+  return {app: 'fanlife', label: 'On this day', tags: smartTags({clubs: rows.map(r => r.club), topics: ['otd', ...(big?.derby ? ['derby' as Topic] : big?.europe ? ['europe' as Topic] : [])]}),
+    hook: exact ? pickOf([`On this day: ${rows.length} clubs, ${rows.length} nights nobody forgets. 🗓`, `On this day, ${d} ${MONTH[m]}. Which of these were you at?`, `On this day: ${rows.length} clubs, one date in the archive. 🗓`], `otd${m}.${d}`) : `This week in history — ${rows.length} clubs, one week. 🗓`,
+    body: `${rows.map(line).join('\n')}\n\nWhich one were you at? Comment the year 👇\nEvery club here has its whole archive on FAN LIFE (link in bio).`,
     visual: `T9-OTD On this day: ${rows.length} clubs as ticket stubs, crests from the shared library.`,
     kit: {t: 'T9-OTD', data: {date: `${d} ${MONTH[m].slice(0, 3).toUpperCase()}`, exact, footerLabel: 'FROM THE FAN LIFE ARCHIVE',
       rows: rows.map(e => ({year: e.y, club: e.name, crestName: e.name, line: shortLine(e),
@@ -149,9 +158,11 @@ function nerds(n: number): Item {
     if (got) opts = optionsFor(got.q, got.c, `nerd${n}`)
   }
   if (!got || !opts) throw Error('no nerds question for day ' + n)
-  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}/trivia`,
-    hook: `Nerds only. ${got.c.name} — no Googling.`,
-    body: `${got.q.prompt}${opts ? '\n\n' + opts.map((o, i) => `${'ABCD'[i]}) ${o}`).join('\n') : ''}\n\nAnswer in the first comment (or the next story frame): ${got.q.answer}. ${got.q.explanation}\n\nThousands more like this — Expert level, ${got.c.name} trivia on FAN LIFE.`,
+  const url = `https://fanlife.dubelteam.com/clubs/${got.c.id}/trivia`
+  return {app: 'fanlife', url, label: 'Nerds only', tags: smartTags({clubs: [got.c.id], topics: ['nerds']}),
+    hook: pickOf([`Nerds only. ${got.c.name} — no Googling. 🤓`, `Only proper ${got.c.name} fans get this one.`, `Expert level. ${got.c.name}. Ten seconds. Go.`, `${got.c.name} fans: this one splits the terrace.`], `nh${n}`),
+    body: `${got.q.prompt}\n\n${opts!.map((o, i) => `${'ABCD'[i]}) ${o}`).join('\n')}\n\nComment A, B, C or D 👇 The answer is in the comments.`,
+    comment: `✅ ${got.q.answer}. ${got.q.explanation}\n\nThousands more like this, Expert level: ${url}`,
     visual: 'T10-NERDS Nerds only: the question and four answers, the club crest.',
     kit: {t: 'T10-NERDS', data: {club: {id: got.c.id, name: got.c.name}, crestName: got.c.name, question: got.q.prompt, options: opts, level: 'EXPERT'}}}
 }
@@ -162,9 +173,12 @@ function quiz(n: number): Item {
     if (!got) break
     const opts = optionsFor(got.q, got.c, `quiz${n}`)
     if (!opts || opts.some(o => o.length > 24)) continue
-    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}/trivia`,
+    const url = `https://fanlife.dubelteam.com/clubs/${got.c.id}/trivia`
+    return {app: 'fanlife', url, label: 'Story quiz', tags: smartTags({clubs: [got.c.id], topics: ['quiz'], max: 4}),
+      how: `Story: add the Quiz sticker with these four answers, tick ✅ ${got.q.answer}. Frame 2: paste the second box + a link sticker.`,
       hook: got.q.prompt,
-      body: `Instagram quiz sticker — four answers:\n${opts.map((o, i) => `${'ABCD'[i]}) ${o}`).join('\n')}\nMark the right one: ${got.q.answer}.\n\nFrame 2: "${got.q.explanation}" + link sticker → ${got.c.name} trivia on FAN LIFE.`,
+      body: `${opts.map((o, i) => `${'ABCD'[i]}) ${o}`).join('\n')}\n✅ ${got.q.answer}`,
+      comment_label: 'Frame 2', comment: `${got.q.explanation}\n\nMore ${got.c.name} questions on FAN LIFE 👆`,
       visual: 'T5-B Story quiz: the question, the four answers, the IG quiz sticker in the empty frame.',
       kit: {t: 'T5-B', data: {club: got.c.id, hook: wrapLines(got.q.prompt, 3), options: opts}}}
   }
@@ -177,11 +191,14 @@ function spicy(n: number): Item {
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`s${n}${a}`) - h(`s${n}${b}`))
   if (kind === 'kit') {
     const got = qPick(q => q.template === 'fl-kit-sponsor', `kit${n}`, used, order)
-    if (got) return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}`,
-      hook: `Spicy one for the shirt collectors: who was on the front?`,
-      body: `${got.q.prompt.replace(/^From the shirt rail: /, '')}\n\nAnswer: ${got.q.explanation}\n\nEvery shirt, every season — the kit archive and the shirt market are on FAN LIFE.`,
-      visual: 'T11-SPICY with the archive shirt and its sponsor.',
-      kit: {t: 'T11-SPICY', data: {club: {id: got.c.id, name: got.c.name}, shirtFor: {club: got.c.id, text: got.q.prompt}, home: got.q.prompt.replace(/^From the shirt rail: /, '').replace(/\. Which sponsor.*$/, '').toUpperCase(), sponsor: `On the front: ${got.q.answer}`, date: 'THE SHIRT ARCHIVE', line: `On the front: ${got.q.answer}`}}}
+    // the picture shows the shirt, sponsor and all — so the question is the SEASON, and the season stays off the picture
+    const sm = got?.q.prompt.match(/^From the shirt rail: (.+?), (\d{4}\/\d{2}), (\w+)\./)
+    if (got && sm) return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${got.c.id}`, label: 'Shirt quiz', tags: smartTags({clubs: [got.c.id], topics: ['shirt']}),
+      hook: pickOf([`Name the season. ${sm[1]}, ${sm[3]} shirt. 👕`, `Shirt collectors: which season is this ${sm[1]} ${sm[3]}?`, `Still got this one in the wardrobe? Which season?`], `sq${n}`),
+      body: `${sm[1]} · ${sm[3]} shirt · sponsor: ${got.q.answer}\n\nComment the season 👇 Answer in the comments.`,
+      comment: `✅ ${sm[2]}. ${got.q.explanation}\n\nEvery shirt, every season — the kit archive is on FAN LIFE.`,
+      visual: 'T11-SPICY with the archive shirt, the season hidden.',
+      kit: {t: 'T11-SPICY', data: {club: {id: got.c.id, name: got.c.name}, shirtFor: {club: got.c.id, text: got.q.prompt}, home: `${sm[1]} · ${sm[3]} shirt`.toUpperCase(), sponsor: 'Which season? Answer in the comments.', boxTitle: 'SHIRT QUIZ', date: 'THE SHIRT ARCHIVE · NAME THE SEASON', sticker: 'yours', line: 'Which season? Answer in the comments.'}}}
   }
   for (const cid of order) {
     const pool = events.filter(e => e.club === cid && !spicyUsed.has(e.fact) && e.won === true &&
@@ -195,11 +212,14 @@ function spicy(n: number): Item {
       : kind === 'rout' ? `${e.margin} goals clear. ${e.name} were not in the mood to be polite.`
       : kind === 'final' ? `Final. ${e.name}. Some days the archive just glows.`
       : `${e.goals} goals in one afternoon. ${e.name} supporters went home hoarse.`
-    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${e.club}`,
-      hook, body: `${when}: ${e.text}.\n\nWere you there — or is it a story your dad still tells? Tell us in the comments.\nThe whole archive, match by match, is on FAN LIFE.`,
+    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${e.club}`, label: 'Spicy',
+      tags: smartTags({clubs: [e.club], topics: [kind === 'derby' ? 'derby' : kind === 'final' ? 'final' : 'goals', ...(e.europe ? ['europe' as Topic] : [])]}),
+      hook, body: `${when}: ${e.text}.\n\nWere you there — or is it a story your dad still tells? 👇\nThe whole archive, match by match, is on FAN LIFE (link in bio).`,
       visual: 'T11-SPICY: the score on split-flap tiles, both crests, the date on a ticket stub.',
       kit: {t: 'T11-SPICY', data: {club: {id: e.club, name: e.name}, home: (e.home || '').toUpperCase(), away: (e.away || '').toUpperCase(), score: e.score, homeCrestName: e.home, awayCrestName: e.away,
         date: `${when.toUpperCase()}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`,
+        moment: kind === 'derby' ? 'moment-derby' : kind === 'final' ? 'moment-final' : e.europe ? 'moment-away' : 'moment-goal',
+        sticker: kind === 'derby' ? 'derby' : kind === 'goalfest' ? 'goal' : 'wow',
         line: kind === 'derby' ? 'A derby they still talk about.' : kind === 'rout' ? `${e.margin} goals clear.` : kind === 'final' ? 'A final to frame.' : `${e.goals} goals in one afternoon.`}}}
   }
   return nerds(100 + n)
@@ -218,13 +238,58 @@ function fact(n: number): Item {
     const q = list[h(`fact${n}${cid}`) % list.length]
     factUsed.add(q.explanation); factTpl[tpl] = (factTpl[tpl] ?? 0) + 1; factClub[cid] = (factClub[cid] ?? 0) + 1
     const text = q.explanation.replace(/\s+/g, ' ').trim()
-    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`,
-      hook: `Did you know? ${c.name} edition.`,
-      body: `${text}\n\nOne line from the ${c.name} archive — thousands more, match by match, on FAN LIFE.`,
+    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, label: 'Did you know', tags: smartTags({clubs: [c.id], topics: [tpl === 'fl-kit-sponsor' ? 'shirt' : 'fact']}),
+      hook: pickOf([`Did you know? ${c.name} edition. 💡`, `Save this for your next pub quiz: ${c.name}.`, `${c.name} fans — who knew this one?`, `One for the ${c.name} archive nerds.`], `fh${n}`),
+      body: `${text}\n\nTag a ${c.name} fan who didn't know this 👇\nThousands more, match by match, on FAN LIFE (link in bio).`,
       visual: 'L-FACT Did you know: the fact, the club crest.',
       kit: {t: 'L-FACT', data: {club: {id: c.id, name: c.name}, crestName: c.name, fact: text, kicker: `${c.name.toUpperCase()} · FROM THE ARCHIVE`, label: 'FAN LIFE · DID YOU KNOW'}}}
   }
   throw Error('no fact for ' + n)
+}
+
+
+// ── v4 engagement: Guess the score (17:30) and Guess the year (22:30) — the answer only in the first comment ─────────
+const guessUsed = new Set<string>(), matchKey = (e: Ev) => `${e.y}-${e.m}-${e.d}-${e.home}-${e.away}`
+function guessScore(n: number): Item {
+  const order = [...clubs.map(c => c.id)].sort((a, b) => h(`g${n}${a}`) - h(`g${n}${b}`))
+  for (const cid of order) {
+    const pool = events.filter(e => e.club === cid && e.home && e.score && !guessUsed.has(matchKey(e)) && !spicyUsed.has(e.fact) && (e.derby || e.final || e.europe || e.margin >= 3) && e.goals <= 9)
+    if (!pool.length) continue
+    pool.sort((a, b) => weight(b) - weight(a) || a.fact.localeCompare(b.fact))
+    const e = pool[h(`gs${n}`) % Math.min(pool.length, 10)]!
+    guessUsed.add(matchKey(e))
+    const when = `${e.d} ${MONTH[e.m]} ${e.y}`
+    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${e.club}`, label: 'Guess the score',
+      tags: smartTags({clubs: [e.club], topics: ['guess', ...(e.derby ? ['derby' as Topic] : e.europe ? ['europe' as Topic] : e.final ? ['final' as Topic] : [])]}),
+      hook: pickOf([`Guess the score. ${e.home} v ${e.away}. ⚽`, `${e.home} v ${e.away}, ${e.y}. What was the score?`, `Proper ${e.name} fans know this score by heart.`], `gh${n}`),
+      body: `${when}${e.comp ? ` · ${e.comp}` : ''}\n${e.home} ?–? ${e.away}\n\nComment your guess 👇 Exact score = bragging rights. Answer in the comments.`,
+      comment: `✅ It finished ${e.home} ${e.score} ${e.away} — ${when}.\n\nThe whole ${e.name} archive, match by match, on FAN LIFE.`,
+      visual: 'T11-SPICY Guess the score: both crests, the score hidden.',
+      kit: {t: 'T11-SPICY', data: {club: {id: e.club, name: e.name}, home: e.home!.toUpperCase(), away: e.away!.toUpperCase(), score: '?–?', homeCrestName: e.home, awayCrestName: e.away,
+        date: `${when.toUpperCase()}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`, shout: 'GUESS!', boxTitle: 'GUESS THE SCORE', moment: pickOf(['moment-radio', 'moment-kid', 'moment-goal'], `gm${n}`), line: 'Comment your guess. Answer in the comments.'}}}
+  }
+  return nerds(300 + n)
+}
+function guessYear(n: number): Item {
+  const order = [...clubs.map(c => c.id)].sort((a, b) => (factClub[a] ?? 0) - (factClub[b] ?? 0) || h(`y${n}${a}`) - h(`y${n}${b}`))
+  for (const cid of order) {
+    const c = clubs.find(x => x.id === cid)!
+    const list = c.qs.filter(q => FACT_TEMPLATES.includes(q.template) && !factUsed.has(q.explanation) && modern(q.prompt, q.answer, q.explanation)
+      && q.explanation.length >= 40 && q.explanation.length <= 160 && (q.explanation.match(/\b(19[89]\d|20[0-2]\d)\b/g) || []).length === 1 && !/\d{4}\/\d{2}/.test(q.explanation))
+    if (!list.length) continue
+    const q = list[h(`year${n}${cid}`) % list.length]!
+    factUsed.add(q.explanation); factClub[cid] = (factClub[cid] ?? 0) + 1
+    const text = eraNames(q.explanation.replace(/\s+/g, ' ').trim()), year = text.match(/\b(19[89]\d|20[0-2]\d)\b/)![1]!
+    const blank = text.replace(year, '____')
+    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, label: 'Guess the year',
+      tags: smartTags({clubs: [c.id], topics: ['year']}),
+      hook: pickOf([`Guess the year. ${c.name} fans only. 🗓`, `Fill the gap — what year was it?`, `${c.name} fans: name the year without Googling.`], `yh${n}`),
+      body: `${blank}\n\nComment the year 👇 Answer in the comments.`,
+      comment: `✅ ${year}. ${text}\n\nThousands more from the ${c.name} archive on FAN LIFE.`,
+      visual: 'L-FACT Guess the year: the line with the year blanked, the club crest.',
+      kit: {t: 'L-FACT', data: {club: {id: c.id, name: c.name}, crestName: c.name, fact: blank, kicker: `${c.name.toUpperCase()} · GUESS THE YEAR`, label: 'FAN LIFE · COMMENT THE YEAR', shout: 'WHAT YEAR?'}}}
+  }
+  return fact(700 + n)
 }
 
 // ── FAN LIFE gates (10:00) — one gate of the app, with the club it opens on ─────────────────────────────────────────
@@ -261,8 +326,9 @@ function gate(n: number): Item {
   const g = GATES[(n - 1) % GATES.length]!
   const c = clubs[(n * 3 + Math.floor((n - 1) / GATES.length)) % clubs.length]!
   const fill = (s: string) => s.replace('{club}', c.name)
-  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}/${g.key}`, hook: fill(g.hook),
-    body: `${g.post}\n\nOpen it on the ${c.name} page — every club in FAN LIFE has its own. Free to play.`,
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}/${g.key}`, hook: fill(g.hook), label: `Gate · ${g.name.charAt(0)}${g.name.slice(1).toLowerCase()}`,
+    tags: smartTags({clubs: [c.id], topics: [g.key === 'kits' || g.key === 'kit-builder' ? 'shirt' : g.key === 'derby' ? 'derby' : g.key === 'trivia' || g.key === 'memory' ? 'quiz' : 'gate']}),
+    body: `${g.post}\n\nFree, on the ${c.name} page — link in bio. Tell us your score 👇`,
     visual: `L-GATE ${g.name}: the gate's name, a comic plate, the club.`,
     kit: {t: 'L-GATE', data: {club: {id: c.id, name: c.name}, crestName: c.name, gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}}}
 }
@@ -301,7 +367,8 @@ function bigGame(n: number): Item {
   const lm = n % 2 === 1, list = lm ? LEGENDS : RUMBLE, p = list[Math.floor((n - 1) / 2) % list.length]!
   const c = clubs[(n * 5) % clubs.length]!
   return {app: 'fanlife', url: lm ? 'https://fanlife.dubelteam.com/all-football/legends' : `https://fanlife.dubelteam.com/clubs/${c.id}/royal-rumble`, hook: p.hook,
-    body: `${p.post}\n\n${lm ? 'Legends Manager is on FAN LIFE — pick your club and kick off.' : `Royal Rumble is gate 9 on every club page — try it with ${c.name}.`}`,
+    label: lm ? 'Legends Manager' : 'Royal Rumble', tags: smartTags({clubs: lm ? [] : [c.id], topics: [lm ? 'legends' : 'rumble']}),
+    body: `${p.post}\n\n${lm ? 'Legends Manager — free on FAN LIFE. Pick your club and kick off (link in bio).' : `Royal Rumble is gate 9 on every club page — try it with ${c.name} (link in bio).`}\nShow us your eleven 👇`,
     visual: `L-GATE ${lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE'}: the game's name, a comic plate.`,
     kit: {t: 'L-GATE', data: {...(lm ? {brand: 'legends'} : {club: {id: c.id, name: c.name}, crestName: c.name}), gate: lm ? 'FAN LIFE · THE BIG GAME' : 'GATE 9', name: lm ? 'LEGENDS MANAGER' : 'ROYAL RUMBLE', plate: lm ? 'dribbler' : 'bootball', shout: lm ? 'KICK OFF!' : 'SPIN!', headline: p.headline, body: p.body,
       label: lm ? 'LEGENDS MANAGER · FAN LIFE' : `${c.name.toUpperCase()} · GATE 9`}}}
@@ -332,7 +399,7 @@ const OFFSIDES: System[] = [
 const sysCount = {dubid: 0, offsides: 0}
 function system(app: 'dubid' | 'offsides'): Item {
   const list = app === 'dubid' ? DUBID : OFFSIDES, s = list[sysCount[app]++ % list.length]!
-  return {app, hook: s.hook, body: `${s.post}\n\n${app === 'dubid' ? 'DUBID — free fantasy football. Pick before the lock.' : 'OFFSIDES — a free prediction game. No real money, only bragging rights.'}`,
+  return {app, hook: s.hook, label: 'How it works', tags: app === 'dubid' ? '#DUBID #FantasyFootball #FPL #IsraeliFootball #SuperLeagueGreece' : '#OFFSIDES #FootballPredictions #PredictTheScore #MatchDay', body: `${s.post}\n\n${app === 'dubid' ? 'DUBID — free fantasy football. Pick before the lock.' : 'OFFSIDES — a free prediction game. No real money, only bragging rights.'}`,
     visual: `L-${app.toUpperCase()}-SYSTEM How it works, in ${app.toUpperCase()}'s own branding.`,
     kit: {t: `L-${app.toUpperCase()}-SYSTEM`, data: {app, title: s.title, sub: s.sub, points: s.points, line: s.line, label: app === 'dubid' ? 'DUBID · FANTASY FOOTBALL' : 'FREE PREDICTION GAME · NO REAL MONEY'}}}
 }
@@ -341,22 +408,12 @@ function system(app: 'dubid' | 'offsides'): Item {
 //    love for its supporters. Every line from the club's own sourced world file or archive, nothing before 1980. ─────
 type World = {voice?: {welcome?: string; kicker?: string}; nicknames?: {text: string}[]; ground?: {name?: string; line?: string}; colours?: {line?: string}; flavour?: {line?: string; text?: string}[]; facts?: {line: string}[]}
 const world = (id: string): World => { try { return JSON.parse(readFileSync(path.join(HERE, '../../club-packs', id, 'world.json'), 'utf8')) } catch { return {} } }
-const TAGS: Record<string, string> = {
-  'hapoel-tel-aviv': '#HapoelTelAviv #Hapoel #TheReds #IsraeliFootball',
-  'hapoel-petah-tikva': '#HapoelPetahTikva #HPT #IsraeliFootball',
-  olympiacos: '#Olympiacos #OlympiacosFC #Thrylos #SuperLeagueGreece',
-  panathinaikos: '#Panathinaikos #PAO #Trifylli #SuperLeagueGreece',
-  'aek-athens': '#AEK #AEKAthens #AEKFC #SuperLeagueGreece',
-  celtic: '#Celtic #CelticFC #TheBhoys #COYBIG',
-  'st-pauli': '#FCStPauli #StPauli #FCSP #Bundesliga',
-  'zrinjski-mostar': '#Zrinjski #HSKZrinjski #ZrinjskiMostar',
-}
 const lineOf = (f: {line?: string; text?: string}) => f.line || f.text || ''
 type Slide = {t: string; data: Record<string, unknown>}
 function carousel(n: number): Item {
   const c = clubs[(n * 5 + 3) % clubs.length]!, w = world(c.id), theme = ['history', 'gates', 'love'][n % 3]!
   const nickFull = w.nicknames?.[0]?.text || c.name, nick = nickFull.replace(/^The /, ''), club = {id: c.id, name: c.name}, base = {club, crestName: c.name}
-  const tags = `${TAGS[c.id] || ''} #FANLIFE #FootballForever`.trim()
+  const tags = smartTags({clubs: [c.id], topics: [theme === 'love' ? 'love' : theme === 'history' ? 'otd' : 'gate']})
   const slides: Slide[] = []
   let hook = '', body = ''
   if (theme === 'history') {
@@ -371,7 +428,7 @@ function carousel(n: number): Item {
     pick.forEach((e, i) => slides.push({t: 'L-SLIDE', data: {...base, s: 'night', n: i + 2, of, year: e.y, score: e.score, teams: `${e.home} v ${e.away}`,
       line: `${e.d} ${MONTH[e.m]!.toUpperCase()} ${e.y}${e.comp ? ' · ' + e.comp.toUpperCase() : ''}`, note: e.derby ? 'A DERBY TO REMEMBER.' : e.final ? 'A FINAL TO FRAME.' : e.europe ? 'A EUROPEAN NIGHT.' : e.margin >= 3 ? `${e.margin} GOALS CLEAR.` : 'THE NIGHT IT WENT OUR WAY.', label: `${c.name.toUpperCase()} · FROM THE ARCHIVE`}}))
     slides.push({t: 'L-SLIDE', data: {...base, s: 'cta', n: of, of, title: `Every ${c.name} night, match by match — on FAN LIFE.`}})
-    body = `${pick.map(e => `${e.y} · ${e.home} ${e.score} ${e.away}${e.comp ? ` (${e.comp})` : ''}`).join('\n')}\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole ${c.name} archive, match by match, is on FAN LIFE (link in bio).\n\n${tags}`
+    body = `${pick.map(e => `${e.y} · ${e.home} ${e.score} ${e.away}${e.comp ? ` (${e.comp})` : ''}`).join('\n')}\n\nSwipe through, then tell us in the comments: which one were you at — and who were you with?\nThe whole ${c.name} archive, match by match, is on FAN LIFE (link in bio).`
   } else if (theme === 'gates') return carouselGates(n, c, w, tags)
   else {
     const lines = [w.ground?.line, w.colours?.line, ...(w.flavour || []).map(lineOf), ...(w.facts || []).map(f => f.line)].filter((x): x is string => !!x && modern(x))
@@ -382,9 +439,9 @@ function carousel(n: number): Item {
     const bigs = [w.ground?.name || nickFull, nickFull, (w.nicknames?.[1]?.text || c.name)]
     lines.slice(0, 3).forEach((l, i) => slides.push({t: 'L-SLIDE', data: {...base, s: 'love', n: i + 2, of, big: bigs[i] || c.name, line: l, shout: ['HOME!', 'OURS!', 'FOREVER!'][i], label: `${c.name.toUpperCase()} · FAN LIFE`}}))
     slides.push({t: 'L-SLIDE', data: {...base, s: 'cta', n: of, of, title: `${c.name} has its own home on FAN LIFE. Come in.`}})
-    body = `${lines.slice(0, 3).join('\n\n')}\n\nTag the ${c.name} fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).\n\n${tags}`
+    body = `${lines.slice(0, 3).join('\n\n')}\n\nTag the ${c.name} fan who needs to see this. ❤️\nYour club has its own home on FAN LIFE — trivia, the archive, the shirts, a supporter's life (link in bio).`
   }
-  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, hook, body, visual: `Carousel · ${theme} · ${c.name}: ${slides.length} slides in the club's colours.`, kit: {t: 'L-CAROUSEL', data: {club}, slides} as unknown as Kit}
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, hook, body, tags, label: `Carousel · ${theme}`, visual: `Carousel · ${theme} · ${c.name}: ${slides.length} slides in the club's colours.`, kit: {t: 'L-CAROUSEL', data: {club}, slides} as unknown as Kit}
 }
 function carouselGates(n: number, c: Club, w: World, tags: string): Item {
   const club = {id: c.id, name: c.name}, base = {club, crestName: c.name}
@@ -393,37 +450,12 @@ function carouselGates(n: number, c: Club, w: World, tags: string): Item {
   slides.push({t: 'L-SLIDE', data: {...base, s: 'cover', n: 1, of, kicker: 'FAN LIFE · YOUR CLUB, YOUR GAMES', title: `4 ways to be ${/^[AEIOU]/.test(c.name) ? 'an' : 'a'} ${c.name} fan today`}})
   for (const g of pick) slides.push({t: 'L-GATE', data: {...base, gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}})
   slides.push({t: 'L-SLIDE', data: {...base, s: 'cta', n: of, of, title: `All ${GATES.length} gates are open on the ${c.name} page. Free.`}})
-  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, hook: `${c.name} fans: 4 games built from your own club's history.`,
-    body: `${pick.map(g => `${g.name.charAt(0)}${g.name.slice(1).toLowerCase()} — ${g.headline}`).join('\n')}\n\nWhich one are you starting with? Every question, card and shirt comes from the ${c.name} archive.\nFree on FAN LIFE (link in bio).\n\n${tags}`,
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, tags, label: 'Carousel · gates', hook: `${c.name} fans: 4 games built from your own club's history.`,
+    body: `${pick.map(g => `${g.name.charAt(0)}${g.name.slice(1).toLowerCase()} — ${g.headline}`).join('\n')}\n\nWhich one are you starting with? Every question, card and shirt comes from the ${c.name} archive.\nFree on FAN LIFE (link in bio).`,
     visual: `Carousel · gates · ${c.name}: ${slides.length} slides.`, kit: {t: 'L-CAROUSEL', data: {club}, slides} as unknown as Kit}
 }
 
 // ── the plan: even hours fixed, odd hours live (composed at send time, or quiet) ─────────────────────────────────────
-type Row = {day: number; at: string; format: string; kind: string; main: Item}
-const rows: Row[] = []
-const LIVE: [string, string, string][] = [['09:00', 'results', 'fanlife'], ['11:00', 'fixtures', 'fanlife'], ['13:00', 'dubid', 'dubid'], ['15:00', 'offsides', 'offsides']]
-const safeOTD = (y: number, m: number, d: number, n: number) => { try { return onThisDay(y, m, d) } catch { return fact(500 + n) } }
-for (let n = 1; n <= 30; n++) {
-  const dt = new Date(Date.UTC(2026, 9, 25 + n))
-  const y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1, d = dt.getUTCDate(), dow = dt.getUTCDay()
-  const date = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`
-  const slot = (t: string, format: string, main: Item, kind = 'fixed') => rows.push({day: n, at: `${date} ${t}`, format, kind, main})
-  const otd = safeOTD(y, m, d, n)
-  if ((otd.kit.data.rows as unknown[] | undefined)?.length === 1) throw Error('one-row OTD')
-  slot('08:00', 'post', otd)
-  slot('10:00', 'post', gate(n))
-  slot('12:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : fact(n))
-  slot('14:00', 'story', quiz(n))
-  slot('16:00', 'post', nerds(n))
-  slot('17:00', 'post', gate(n + 15)) // launch phase (owner, 27.10.2026): more exposure — a second gate, another club
-  slot('18:00', 'post', bigGame(n))
-  slot('19:00', 'carousel', carousel(n))
-  slot('20:00', 'post', spicy(n))
-  slot('21:00', 'story', quiz(n + 40)) // a second story quiz, another club
-  slot('22:00', 'post', fact(100 + n))
-  for (const [t, kind, app] of LIVE) slot(t, 'post', {app, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
-}
-
 // The archive files European competitions under their present names; a post says what the competition was called
 // in that year (European Cup before 1992/93, UEFA Cup before 2009/10). Same competition, the name of its time.
 const YR = /\b(1[89]\d\d|20\d\d)\b/
@@ -437,25 +469,56 @@ function eraNames(text: string) {
     return l
   }).join('\n')
 }
+type Row = {day: number; at: string; format: string; kind: string; main: Item}
+const rows: Row[] = []
+// v4: 45 days from 29.10.2026, 17 slots a day. Live slots on 09/11/13/15 (composed at send time, or quiet).
+export const DAYS = 45
+const LIVE: [string, string, string, string][] = [['09:00', 'results', 'fanlife', 'Results'], ['11:00', 'fixtures', 'fanlife', 'Next up'], ['13:00', 'dubid', 'dubid', 'DUBID round'], ['15:00', 'offsides', 'offsides', 'OFFSIDES today']]
+const safeOTD = (y: number, m: number, d: number, n: number) => { try { return onThisDay(y, m, d) } catch { return fact(500 + n) } }
+for (let n = 1; n <= DAYS; n++) {
+  const dt = new Date(Date.UTC(2026, 9, 28 + n))
+  const y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1, d = dt.getUTCDate(), dow = dt.getUTCDay()
+  const date = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`
+  const slot = (t: string, format: string, main: Item, kind = 'fixed') => rows.push({day: n, at: `${date} ${t}`, format, kind, main})
+  const otd = safeOTD(y, m, d, n)
+  if ((otd.kit.data.rows as unknown[] | undefined)?.length === 1) throw Error('one-row OTD')
+  slot('08:00', 'post', otd)
+  slot('10:00', 'post', gate(n))
+  slot('12:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : fact(n))
+  slot('14:00', 'story', quiz(n))
+  slot('16:00', 'post', nerds(n))
+  slot('17:00', 'post', gate(n + 15)) // launch phase (owner, 27.10.2026): more exposure — a second gate, another club
+  slot('17:30', 'post', guessScore(n))
+  slot('18:00', 'post', bigGame(n))
+  slot('19:00', 'carousel', carousel(n))
+  slot('20:00', 'post', spicy(n))
+  slot('21:00', 'story', quiz(n + 60)) // a second story quiz, another club
+  slot('22:00', 'post', fact(100 + n))
+  slot('22:30', 'post', guessYear(n))
+  for (const [t, kind, app, label] of LIVE) slot(t, 'post', {app, label, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
+}
+for (const r of rows) if (r.kind === 'fixed' && (!r.main.tags || r.main.tags.split(' ').length > 8)) throw Error(`tags: ${r.at}`)
+
 const eraUpper = (t: string, y: number) => y && y < 1992 ? t.replace(/UEFA CHAMPIONS LEAGUE/g, 'EUROPEAN CUP') : y && y < 2009 ? t.replace(/UEFA EUROPA LEAGUE/g, 'UEFA CUP') : t
 const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
   ? eraUpper(eraNames(year && !YR.test(x) ? `${year} ${x}` : x).replace(year && !YR.test(x) ? `${year} ` : '', ''), Number(x.match(YR)?.[1] || year))
   : Array.isArray(x) ? x.map(v => eraDeep(v, year))
   : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, eraDeep(v, Number((x as {year?: number}).year) || year)])) : x
-for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown>; const sl = (r.main.kit as {slides?: Kit[]}).slides; if (sl) for (const k of sl) k.data = eraDeep(k.data) as Record<string, unknown> }
-for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, JSON.stringify(r.main.kit))) throw Error(`pre-1980 content in ${r.at}`)
+for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); if (r.main.comment) r.main.comment = eraNames(r.main.comment); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown>; const sl = (r.main.kit as {slides?: Kit[]}).slides; if (sl) for (const k of sl) k.data = eraDeep(k.data) as Record<string, unknown> }
+for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, r.main.comment || '', JSON.stringify(r.main.kit))) throw Error(`pre-1980 content in ${r.at}`)
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
-const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v3 (owner, 27.10.2026).`,
-  `-- Even hours: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on fixed weekdays), each post with`,
-  `-- its picture's kit. Odd hours 09/11/13/15: live slots (results, fixtures, a DUBID round, OFFSIDES today) composed at`,
-  `-- send time from real data, or skipped. Nothing from before 1980. Only rows still waiting and still ahead are touched.`,
+const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v4 (owner, 29.10.2026).`,
+  `-- 45 days from 29.10.2026, 17 slots a day: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on`,
+  `-- fixed weekdays), each post with its picture's kit, its smart tags and — where there is an answer — a first comment.`,
+  `-- Live slots 09/11/13/15 are composed at send time from real data, or skipped. Nothing from before 1980.`,
+  `-- Every row still waiting and still ahead is replaced; what was already sent is never touched.`,
+  `begin;`,
+  `delete from marketing.posts where status in ('pending', 'skipped', 'failed') and send_at > now();`,
   `insert into marketing.posts (day, send_at, format, kind, main) values`,
   rows.map(r => `  (${r.day}, (timestamp '${r.at}') at time zone 'Asia/Jerusalem', '${r.format}', '${r.kind}', ${J(r.main)})`).join(',\n'),
-  `on conflict (send_at) do update set day = excluded.day, format = excluded.format, kind = excluded.kind, main = excluded.main,`,
-  `  variants = null, fallback = null, fallback_format = null, status = 'pending', error = null, attempts = 0`,
-  `  where marketing.posts.status in ('pending', 'skipped', 'failed') and marketing.posts.send_at > now();`,
+  `on conflict (send_at) do nothing;`,
   `-- and a slot inserted for a moment already past is not sent late`,
-  `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes';`, ''].join('\n')
-writeFileSync(path.join(HERE, '../../supabase/marketing/0007_marketing_plan_v3.sql'), sql)
-writeFileSync(path.join(HERE, 'plan-v3.json'), JSON.stringify(rows, null, 1))
-console.log('rows', rows.length, 'events', events.length, 'clubs', clubs.map(c => `${c.id}:${c.qs.length}`).join(' '))
+  `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes';`,
+  `commit;`, ''].join('\n')
+writeFileSync(path.join(HERE, '../../supabase/marketing/0008_marketing_plan_v4.sql'), sql)
+writeFileSync(path.join(HERE, 'plan-v4.json'), JSON.stringify(rows, null, 1))

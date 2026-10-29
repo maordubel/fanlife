@@ -53,3 +53,23 @@ describe('live slots (owner, 27.10.2026): real data or quiet', () => {
     expect(composeOffsides(data(), now)).toHaveProperty('skip')
   })
 })
+
+describe('plan v4 message (owner, 29.10.2026): a real copy-paste', async () => {
+  const {message} = await import('../../lib/marketing/live')
+  it('prints the hook once, the caption in a copy box, the tags inside it, no Visual line', () => {
+    const m = message({app: 'fanlife', sendAt: new Date('2026-10-29T16:00:00Z'), label: 'Results', hook: 'Full time: Celtic win it.', body: 'Celtic 2-0 Rangers', visual: 'x', tags: '#FANLIFE #Celtic', comment: '✅ answer'})
+    expect(m.match(/Full time: Celtic win it\./g)).toHaveLength(1)
+    expect(m).toMatch(/<pre>Full time: Celtic win it\.\n\nCeltic 2-0 Rangers\n\n👉 https:\/\/fanlife\.dubelteam\.com\n\n#FANLIFE #Celtic<\/pre>/)
+    expect(m).toContain('<pre>✅ answer</pre>')
+    expect(m).not.toMatch(/Visual:|HOOK/)
+    expect(m).toContain('📌 Post · <b>FAN LIFE</b>')
+  })
+  it('never breaks the HTML with a long caption: the box always closes', () => {
+    const m = message({app: 'dubid', sendAt: new Date(), label: 'x', hook: 'h', body: 'a & <b> '.repeat(900), visual: 'x'})
+    // Telegram's 4096 limit counts the text after the HTML is parsed
+    expect(m.replace(/<[^>]+>/g, '').replace(/&(amp|lt|gt);/g, '_').length).toBeLessThan(4096)
+    expect(m.match(/<pre>/g)).toHaveLength(1)
+    expect(m.trim().endsWith('</pre>')).toBe(true)
+    expect(m).not.toContain('<b> ')
+  })
+})

@@ -27,7 +27,7 @@ describe('DUBEL TEAM kit visuals', () => {
     expect(await visualsFor('no template here')).toHaveLength(1)
   }, 30_000)
   it('draws every layout the v3 plan uses', async () => {
-    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v3.json', 'utf8'))
+    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v4.json', 'utf8'))
     const ts = ['T9-OTD', 'T10-NERDS', 'T5-B', 'T11-SPICY', 'L-GATE', 'L-FACT', 'L-DUBID-SYSTEM', 'L-OFFSIDES-SYSTEM']
     for (const t of ts) {
       const r = rows.find(x => x.main.kit.t === t)!

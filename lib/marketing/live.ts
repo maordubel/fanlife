@@ -8,6 +8,7 @@
  * Pure: the data comes in, the message and the picture's kit come out. lib/marketing/run.ts fetches the data.
  */
 import type {Fixture, Result} from '@/lib/fixtures/types'
+import {smartTags} from './tags'
 
 export const LIVE_KINDS = ['fixtures', 'results', 'dubid', 'offsides'] as const
 export type LiveKind = typeof LIVE_KINDS[number]
@@ -22,10 +23,11 @@ export type Composed = {msg: string; kit: Kit; refs: string[]} | {skip: string}
 const TZ = 'Asia/Jerusalem'
 const URL: Record<string, string> = {fanlife: 'https://fanlife.dubelteam.com', dubid: 'https://dubid.dubelteam.com', offsides: 'https://offsides.dubelteam.com'}
 const NAME: Record<string, string> = {fanlife: 'FAN LIFE', dubid: 'DUBID', offsides: 'OFFSIDES'}
+// Smart tags (plan v4, owner 29.10.2026): one brand tag, then the topic — never a wall of generic ones.
 const TAGS: Record<string, string> = {
-  fanlife: '#FANLIFE #FootballForever #Football #Supporters #DubelTeam',
-  dubid: '#DUBID #FantasyFootball #IsraeliFootball #SuperLeagueGreece #DubelTeam',
-  offsides: '#OFFSIDES #Predictions #Football #MatchDay #DubelTeam',
+  fanlife: '#FANLIFE #Football #FootballFans',
+  dubid: '#DUBID #FantasyFootball #FPL #IsraeliFootball #SuperLeagueGreece',
+  offsides: '#OFFSIDES #FootballPredictions #MatchDay #PredictTheScore',
 }
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const part = (at: Date | string, o: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('en-GB', {timeZone: TZ, ...o}).format(new Date(at))
@@ -35,12 +37,17 @@ const weekday = (at: Date | string) => part(at, {weekday: 'short'}).toUpperCase(
 const dayMonth = (at: Date | string) => part(at, {day: 'numeric', month: 'short'}).toUpperCase()
 const longDay = (at: Date | string) => part(at, {weekday: 'long', day: 'numeric', month: 'long'})
 
-/** the Telegram message, in the same shape marketing.render() writes for the fixed plan */
-export function message(o: {app: 'fanlife' | 'dubid' | 'offsides'; sendAt: Date; label: string; hook: string; body: string; url?: string; visual: string}) {
-  return [`🗓 <b>${esc(o.label)} · ${part(o.sendAt, {day: '2-digit', month: '2-digit'}).replace('/', '.')} · ${hhmm(o.sendAt)}</b>`,
-    `📌 Post · <b>${NAME[o.app]}</b>`, '📱 Instagram · Facebook · TikTok (photo)', '',
-    '🪝 <b>HOOK</b>', `<b>${esc(o.hook)}</b>`, '', '✍️ <b>POST</b>', esc(o.hook), '', esc(o.body), '',
-    `👉 ${esc(o.url || URL[o.app]!)}`, '', TAGS[o.app], '', `🎨 <i>Visual: ${esc(o.visual)}</i>`].join('\n').slice(0, 4000)
+/** the Telegram message, in the same shape marketing.render() writes for the fixed plan (v4, owner 29.10.2026): a short
+ *  header, then the caption in a <pre> block — Telegram gives a block a one-tap copy — and, when there is one, the first
+ *  comment in a second block. The picture went out just before; nothing else to read. */
+export const CAPTION_MAX = 2200
+export function message(o: {app: 'fanlife' | 'dubid' | 'offsides'; sendAt: Date; label: string; hook: string; body: string; url?: string; visual: string; tags?: string; comment?: string}) {
+  const caption = [o.hook, '', o.body, '', `👉 ${o.url || URL[o.app]!}`, '', o.tags || TAGS[o.app]!].join('\n').slice(0, CAPTION_MAX)
+  return [`📅 <b>${part(o.sendAt, {weekday: 'short'})} ${part(o.sendAt, {day: '2-digit', month: '2-digit'}).replace('/', '.')} · ${hhmm(o.sendAt)}</b> · ${esc(o.label)}`,
+    `📌 Post · <b>${NAME[o.app]}</b> · Instagram · Facebook · TikTok`, '',
+    '👇 <b>Caption</b> — tap the box to copy', `<pre>${esc(caption)}</pre>`,
+    ...(o.comment ? ['💬 <b>First comment</b> — tap to copy', `<pre>${esc(o.comment.slice(0, 900))}</pre>`] : []),
+  ].join('\n')
 }
 
 const comp = (s: string | null) => (s || '').replace(/\s+/g, ' ').trim()
@@ -58,6 +65,7 @@ export function composeResults(results: readonly Result[], liveClubs: readonly s
   const hook = one ? (won ? `Full time: ${names[one.clubId] || one.home} win it.` : `Full time for ${names[one.clubId] || (one.clubSide === 'home' ? one.home : one.away)}.`) : `Full time — ${rows.length} FAN LIFE clubs in action.`
   return {refs: rows.map(r => `res:${r.providerEventId}`), msg: message({app: 'fanlife', sendAt: now, label: 'Results', hook,
     body: `${lines.join('\n')}\n\nHow did yours go? Tell us in the comments.\nEvery club's whole history is on FAN LIFE.`, url: one ? clubLink(one.clubId) : URL.fanlife,
+    tags: smartTags({clubs: [...new Set(rows.map(r => r.clubId))], topics: ['results']}),
     visual: 'L-RESULTS Full time: the scores on split-flap tiles, both crests.'}),
   kit: {t: 'L-RESULTS', data: {clubs: [...new Set(rows.map(r => r.clubId))], dayTop: weekday(rows[rows.length - 1]!.kickoff), dayBottom: dayMonth(rows[rows.length - 1]!.kickoff),
     rows: rows.map(r => ({home: r.home, away: r.away, score: `${r.homeScore}-${r.awayScore}`, line: comp(r.competition).toUpperCase() || 'FULL TIME', homeCrestName: r.home, awayCrestName: r.away}))}}}
@@ -76,7 +84,7 @@ export function composeFixtures(fixtures: readonly Fixture[], liveClubs: readonl
   const hook = one ? `${names[one.clubId] || one.home} play ${dayKey(one.kickoff) === today ? 'today' : 'tomorrow'}. Ready?` : `${rows.length} FAN LIFE clubs, ${allToday ? 'one day' : 'two days'}. Next up.`
   return {refs: rows.map(f => `fx:${f.providerEventId}`), msg: message({app: 'fanlife', sendAt: now, label: 'Next up', hook,
     body: `${rows.map(f => `${when(f)} (Israel time) · ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`).join('\n')}\n\nWho are you with? Before kick-off, warm up on your club's trivia on FAN LIFE.`,
-    url: one ? clubLink(one.clubId) : URL.fanlife, visual: 'L-FIXTURES Next up: the matches as tickets, both crests, the kick-off times.'}),
+    url: one ? clubLink(one.clubId) : URL.fanlife, tags: smartTags({clubs: [...new Set(rows.map(f => f.clubId))], topics: ['fixtures']}), visual: 'L-FIXTURES Next up: the matches as tickets, both crests, the kick-off times.'}),
   kit: {t: 'L-FIXTURES', data: {clubs: [...new Set(rows.map(f => f.clubId))], dayTop: allToday ? 'TODAY' : weekday(rows[0]!.kickoff), dayBottom: dayMonth(rows[0]!.kickoff),
     rows: rows.map(f => ({home: f.home, away: f.away, line: `${when(f).toUpperCase()}${f.competition ? ' · ' + comp(f.competition).toUpperCase() : ''}`, homeCrestName: f.home, awayCrestName: f.away}))}}}
 }
