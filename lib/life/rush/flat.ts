@@ -32,26 +32,27 @@ export const FLAT_DOORS: readonly {rect: Rect; a: string; b: string; ax: number;
 function pts(a: {x: number; z: number}, b: {x: number; z: number}) { return {ax: a.x, az: a.z, bx: b.x, bz: b.z} }
 
 export const FLAT_BLOCKS: readonly Block[] = [
+  // each block is its model's own footprint (`scripts/life/rush/home.kx.js`) at the flat's scale, against its wall
   // the living room: the sofa Dad sits on, the low table, the armchair, the sideboard with the radio
-  {...R(-8, -6.8, -0.5, 3.5), kind: 'sofa', h: 0.9},
-  {...R(-5.4, -4, 2.6, 4.4), kind: 'table-low', h: 0.45},
-  {...R(-1.8, -0.4, 4.6, 6), kind: 'armchair', h: 0.9},
-  {...R(-4.5, -1.5, -3, -2.3), kind: 'sideboard', h: 0.85},
+  {...R(-8, -7.1, -0.6, 1.66), kind: 'sofa', h: 0.88},
+  {...R(-6.2, -4.8, 2.6, 3.35), kind: 'table-low', h: 0.54},
+  {...R(-1.6, -0.65, 5.15, 6), kind: 'armchair', h: 0.89},
+  {...R(-4.52, -2.48, -3, -2.44), kind: 'sideboard', h: 0.84},
   // the hall: shoes by the door
-  {...R(3.9, 4.6, 4, 5.2), kind: 'shoes', h: 0.5},
-  // the kitchen: the counter along the wall, the table, the fridge
-  {...R(10.2, 11, -7, 1), kind: 'counter', h: 0.95},
-  {...R(6.6, 8.4, -5.6, -3.8), kind: 'table', h: 0.78},
-  {...R(5, 6, -7, -6), kind: 'fridge', h: 1.9},
+  {...R(4, 4.6, 4, 5.2), kind: 'shoes', h: 0.5},
+  // the kitchen: the counter with the drawer, the fridge beside it, the table
+  {...R(10.35, 11, -2.5, 0.54), kind: 'counter', h: 0.94},
+  {...R(10.29, 11, -3.36, -2.64), kind: 'fridge', h: 1.86},
+  {...R(6.6, 8.2, -5.6, -4.5), kind: 'table', h: 0.79},
   // his room: the bed, the wardrobe with the box on top, the desk
-  {...R(-6, -3.6, -10.5, -6.8), kind: 'bed', h: 0.55},
-  {...R(-6, -3, -14, -13.3), kind: 'wardrobe', h: 2.2},
-  {...R(0, 2, -14, -12.6), kind: 'desk', h: 0.75},
+  {...R(-6, -4.9, -10.4, -8.33), kind: 'bed', h: 0.6},
+  {...R(-5, -2.56, -14, -13.33), kind: 'wardrobe', h: 2.2},
+  {...R(0.3, 1.8, -14, -13.38), kind: 'desk', h: 0.77},
 ]
 
 /** where Dad sits, and the radio he is waiting for */
-export const FLAT_SEAT = {...P(-7.2, 1.5), face: Math.PI / 2}
-export const FLAT_RADIO = P(-3, -2.65)
+export const FLAT_SEAT = {...P(-7.32, 0.75), face: Math.PI / 2}
+export const FLAT_RADIO = P(-3.5, -2.72)
 
 /** which rooms a point is in: a room's own floor, or both rooms of the door it stands in */
 export function flatRoomsAt(x: number, z: number): string[] {
@@ -128,13 +129,13 @@ const step = (o: Partial<Step> & Pick<Step, 'kind' | 'x' | 'z' | 'key'>): Step =
 export function flatLevel(spec: MissionSpec, r: () => number): Omit<Level, 'timeScale'> {
   const start = P(-2.6 + (r() - 0.5) * 0.6, 1.6)
   const pickups: Pickup[] = [
-    {...P(-4.5, -12.6), kind: 'scarf', step: 0},
+    {...P(-4.1, -12.7), kind: 'scarf', step: 0},
     {...P(9.6, -0.6 - r() * 1.2), kind: 'battery', step: 0},
     {...P(7.5 + (r() - 0.5) * 1.4, -6.35), kind: 'battery', step: 0},
     // extras: pocket money down the side of the armchair, a coin by the shoes, a sticker under his bed
     {...P(-2.4, 5.3), kind: 'coin', step: null},
     {...P(3.2, 4.6 - r() * 0.8), kind: 'coin', step: null},
-    {...P(-3.1, -11.3), kind: 'sticker', step: null},
+    {...P(-5.2, -10.95), kind: 'sticker', step: null},
   ]
   const steps: Step[] = [
     step({kind: 'collect', x: 0, z: 0, key: 'obj.flat.both'}),

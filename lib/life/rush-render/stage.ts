@@ -146,7 +146,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /* ground + the shared street pieces */
   const wet = spec.weather === 'rain'
   // the ground's materials, by surface: the loom tiles replace the canvas ones when they arrive (surfaces.ts)
-  const grounds: Record<SurfaceName, THREE.MeshStandardMaterial[]> = {asphalt: [], slabs: [], concrete: []}
+  const grounds: Record<SurfaceName, THREE.MeshStandardMaterial[]> = {asphalt: [], slabs: [], concrete: [], boards: [], tiles: [], carpet: []}
   const ground = (name: SurfaceName, m: THREE.MeshStandardMaterial) => { grounds[name].push(m); return m }
   const asphalt = noiseTex('#202227', 26, [3, 80], true)
   const tile = keep(canvasTex(256, 256, (g, w) => { g.fillStyle = '#6b6a6e'; g.fillRect(0, 0, w, w); for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { const v = 95 + rnd() * 25; g.fillStyle = `rgb(${v},${v - 2},${v - 4})`; g.fillRect(x * 64 + 2, y * 64 + 2, 60, 60) } }, [2, 40]))
@@ -487,7 +487,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const rlook = (o: Partial<Look> = {}): Look => ({tone: Math.floor(rnd() * 6), hair: Math.floor(rnd() * 6), top: Math.floor(rnd() * 6), pants: Math.floor(rnd() * 5), kit: rnd() < 0.8, cap: rnd() < 0.2, scarf: true, beard: rnd() < 0.2, size: 0.95 + rnd() * 0.1, ...o})
   const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => figOf({kit: L.kit, scarf: L.scarf, cap: L.cap, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK, ...o})
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
-  const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin),
+  const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), ground, glowTex,
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.curly ? 'curly' : 'short', top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94})}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
@@ -523,6 +523,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     else if (k === 'bag') { add(new THREE.BoxGeometry(0.52, 0.34, 0.26), std('#2b3550', {roughness: 0.7})); add(new THREE.TorusGeometry(0.14, 0.022, 6, 16, Math.PI), std('#1c2233'), 0.17) }
     else if (k === 'scarf') add(new THREE.BoxGeometry(0.95, 0.05, 0.2), new THREE.MeshStandardMaterial({map: scarfTex, roughness: 0.9}))
     else if (k === 'paint') { add(new THREE.CylinderGeometry(0.15, 0.15, 0.22, 18), std('#c9cdd4', {metalness: 0.6, roughness: 0.35})); add(new THREE.CylinderGeometry(0.152, 0.152, 0.07, 18), std(skin.p), 0.02) }
+    else if (k === 'battery') { add(new THREE.CylinderGeometry(0.06, 0.06, 0.24, 14), std('#26272b', {roughness: 0.4}), 0); add(new THREE.CylinderGeometry(0.061, 0.061, 0.08, 14), std(skin.p, {roughness: 0.4}), 0.08); add(new THREE.CylinderGeometry(0.02, 0.02, 0.03, 8), std('#d9dce2', {metalness: 0.9, roughness: 0.2}), 0.135) }
     else if (k === 'cloth') add(new THREE.BoxGeometry(0.55, 0.14, 0.4), std(skin.s, {roughness: 0.95}))
     else add(new THREE.TorusGeometry(0.1, 0.045, 10, 20).rotateX(Math.PI / 2), std('#d9d4c8', {roughness: 0.6}))
     return g
@@ -533,6 +534,14 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const glow = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: (p.step === null ? C('#ffffff') : tint.clone()).multiplyScalar(p.step === null ? 0.6 : 1.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending}))); glow.scale.set(1.3, 1.3, 1); glow.position.y = 0.55; g.add(glow)
     if (p.step !== null) { const b2 = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.12, 0.12, 9, 8, 1, true)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: tint.clone(), transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false}))); b2.position.y = 4.5; g.add(b2) }
     return {g, item}
+  })
+  // the burst when something is picked up (three in the air at once is plenty)
+  const gotSeen = level.pickups.map(() => false)
+  const bursts = [0, 1, 2].map(() => {
+    const ring = new THREE.Mesh(keep(new THREE.RingGeometry(0.42, 0.5, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: tint.clone().multiplyScalar(2), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false})))
+    const flash = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: tint.clone().multiplyScalar(1.6), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})))
+    ring.visible = flash.visible = false; scene.add(ring, flash)
+    return {ring, flash, t: 9}
   })
   // a knot of people singing: a ring on the ground that fills while you stand in it
   const ringMeshes = level.rings.map(r => {
@@ -699,6 +708,15 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const talkNpc = curStep?.kind === 'talk' ? npcs.find(n => n.step === sim.step) : null
     tag.visible = !!talkNpc && !view.ending
     if (talkNpc) { tag.position.set(talkNpc.x, (talkNpc.fig.scale.y || 1) * 2.15 + Math.sin(t * 3) * 0.08, talkNpc.z); tag.rotation.y = t * 2 }
+    // something picked up bursts: a ring and a flash in the club's colour where it was
+    pickups.forEach((p, i) => { if (sim.got[i] && !gotSeen[i]) { gotSeen[i] = true; const b = bursts.find(x => x.t > 0.7); if (b) { b.t = 0; b.ring.position.set(p.g.position.x, 0.05, p.g.position.z); b.flash.position.set(p.g.position.x, 0.6, p.g.position.z) } } else if (!sim.got[i]) gotSeen[i] = false })
+    bursts.forEach(b => {
+      b.t += dt; const k = Math.min(1, b.t / 0.7), on = k < 1
+      b.ring.visible = b.flash.visible = on
+      if (!on) return
+      b.ring.scale.setScalar(0.3 + k * 2.6); (b.ring.material as THREE.MeshBasicMaterial).opacity = (1 - k) * 0.9
+      b.flash.scale.setScalar(0.6 + k * 2.2); (b.flash.material as THREE.SpriteMaterial).opacity = (1 - k) * 0.9; b.flash.position.y = 0.6 + k * 0.8
+    })
     pickups.forEach((p, i) => {
       p.g.visible = !sim.got[i]
       if (!p.g.visible) return
@@ -810,12 +828,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const k = view.ending ? Math.min(view.endT / 1.2, 1) : 0, e = k * k * (3 - 2 * k)
       const drop = Math.max(0, view.intro) / 2.4
       // the distance that shows about a room's width across the screen, a phone held upright or a monitor
-      const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(cam.fov) / 2) * cam.aspect), want = cam.aspect < 1 ? 7.5 : 13
+      const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(cam.fov) / 2) * cam.aspect), want = cam.aspect < 1 ? 6.4 : 12
       const dist = Math.min(22, Math.max(9, want / 2 / Math.tan(hf / 2))) * (1 - e * 0.45) + drop * drop * 12
       const high = dist * 0.86, back = dist * 0.5
       camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x, 0.5 + e * 0.6, sim.z - 0.6), Math.min(1, dt * 6)); cam.lookAt(camLook)
+      camLook.lerp(new THREE.Vector3(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)), Math.min(1, dt * 6)); cam.lookAt(camLook)
       const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     } else if (view.ending && !heroCar) {
       const k = Math.min(view.endT / 1.2, 1), e = k * k * (3 - 2 * k)

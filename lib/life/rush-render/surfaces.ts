@@ -9,12 +9,17 @@
  */
 import * as THREE from 'three'
 
-export type SurfaceName = 'asphalt' | 'slabs' | 'concrete'
+export type SurfaceName = 'asphalt' | 'slabs' | 'concrete' | 'boards' | 'tiles' | 'carpet'
 /** metres one tile covers on the ground, how hard the relief reads, and the tone the tile is laid at (night streets are dark) */
-const SPEC: Record<SurfaceName, {tile: number; relief: number; tone: string}> = {
+/** `own`: an indoor floor carries its own colour and its own sheen (the street's tiles are grey and dull when dry) */
+const SPEC: Record<SurfaceName, {tile: number; relief: number; tone: string; own?: boolean}> = {
   asphalt: {tile: 12, relief: 0.35, tone: '#8f9094'},
   slabs: {tile: 2.4, relief: 1, tone: '#d4d4d4'},
   concrete: {tile: 4, relief: 0.5, tone: '#cfcfcf'},
+  // the flat (rule 130): oak boards, the kitchen's checker, his carpet — `scripts/life/rush/home.tx.js`
+  boards: {tile: 3.6, relief: 0.6, tone: '#d9cbbd', own: true},
+  tiles: {tile: 2.6, relief: 0.8, tone: '#e6e1d8', own: true},
+  carpet: {tile: 1.6, relief: 0.5, tone: '#cdbcad', own: true},
 }
 
 type Loaded = {map: THREE.Texture; normal: THREE.Texture; rough: THREE.Texture}
@@ -63,7 +68,8 @@ export function loadSurface(name: SurfaceName, base = '/life/rush/tex'): Promise
  */
 export function dressSurface(mat: THREE.MeshStandardMaterial, name: SurfaceName, s: Loaded, wet: boolean) {
   mat.map = s.map; mat.normalMap = s.normal; mat.normalScale.set(1, 1)
-  if (wet) { mat.roughnessMap = s.rough; mat.roughness = 1; mat.metalness = Math.min(mat.metalness, 0.12) } else { mat.roughnessMap = null; mat.roughness = Math.max(mat.roughness, 0.78) }
+  if (SPEC[name].own) { mat.roughnessMap = s.rough; mat.roughness = 1; mat.metalness = 0 }
+  else if (wet) { mat.roughnessMap = s.rough; mat.roughness = 1; mat.metalness = Math.min(mat.metalness, 0.12) } else { mat.roughnessMap = null; mat.roughness = Math.max(mat.roughness, 0.78) }
   mat.color.set(SPEC[name].tone)
   const k = 1 / SPEC[name].tile
   mat.onBeforeCompile = sh => {

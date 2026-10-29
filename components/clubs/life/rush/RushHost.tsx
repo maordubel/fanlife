@@ -337,7 +337,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
                 <button type="button" className={`${css.pad} min-h-tap`} data-big="true" data-on={sprintOn} onPointerDown={e => { e.preventDefault(); setSprintOn(true) }} onPointerUp={() => setSprintOn(false)} onPointerLeave={() => setSprintOn(false)} onPointerCancel={() => setSprintOn(false)}>{w('hud.sprint')}</button>
               </div>
             </>
-          ) : <p className={css.keys}>{w(level.place === 'road' ? 'brief.controls.drive' : 'brief.controls.keys')}</p>}
+          ) : <p className={css.keys}>{w(level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? 'brief.controls.keys.flat' : 'brief.controls.keys')}</p>}
         </div>
       )}
 
@@ -352,7 +352,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             {anchor ? (
               <div className={css.archive}><b>{w('brief.archive')}</b><span lang={anchor.locale} dir="auto">{anchor.title}</span></div>
             ) : <p className={css.fine}>{w('brief.neutral')}</p>}
-            <p className={css.fine}>{w(touch ? 'brief.controls.touch' : level.place === 'road' ? 'brief.controls.drive' : 'brief.controls.keys')}</p>
+            <p className={css.fine}>{w(touch ? 'brief.controls.touch' : level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? 'brief.controls.keys.flat' : 'brief.controls.keys')}</p>
             <div className={css.actions}>
               {!spec.mandatory && <button type="button" className={`${css.btn} min-h-tap`} onClick={skip} data-life="rush-skip">{w('brief.skip')}</button>}
               <button type="button" ref={primary} className={`${css.btn} min-h-tap`} data-primary="true" onClick={() => begin(assist)} data-life="rush-go">{w('brief.go')}</button>

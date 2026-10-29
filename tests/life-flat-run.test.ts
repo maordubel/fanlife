@@ -103,6 +103,18 @@ describe('Episode 1 is played, then filmed', () => {
   })
 })
 
+describe('the flat is drawn, not boxed', () => {
+  it('ships its furniture as kiln models and its floors as loom tiles, every block a model of its own footprint', () => {
+    const glb = readFileSync('public/life/rush/models/home.glb').toString('latin1')
+    for (const m of ['sofa', 'armchair', 'table_low', 'sideboard', 'radio', 'counter', 'fridge', 'table', 'chair', 'bed', 'wardrobe', 'desk', 'shoes', 'lamp_floor', 'plant', 'bookshelf']) expect(glb, m).toContain(`"name":"${m}"`)
+    for (const t of ['boards', 'tiles', 'carpet']) for (const k of ['albedo', 'height', 'rough']) expect(readFileSync(`public/life/rush/tex/${t}-${k}.webp`).length, `${t}-${k}`).toBeGreaterThan(0)
+    const flat = read('lib/life/rush-render/flat.ts')
+    for (const b of buildLevel(spec()).blocks) expect(flat, b.kind).toContain(`${/-/.test(b.kind) ? `'${b.kind}'` : b.kind}: {m:`)
+    // the floor, the walls and the club colours: no tile carries a rival's colour (the kitchen checker is neutral)
+    expect(read('scripts/life/rush/home.tx.js')).not.toMatch(/#b9573c/i)
+  })
+})
+
 describe('the change of engine is directed', () => {
   it('TOWN dives at him before RUSH and lands back after; RUSH counts down while the camera comes down from the crane', () => {
     const play = read('public/life/town/play.js'), game = read('components/clubs/life/LifeGame.tsx'), host = read('components/clubs/life/rush/RushHost.tsx')

@@ -185,7 +185,7 @@ export const E1: EpisodeScript = {
     ]},
     // the match on a sofa: the two of them, before anything happens
     {id: 'e1-together', shots: [
-      {cam: 'wide', ms: 2800, act: [{who: 'me', do: 'sit', by: 'dad'}], say: room('The sofa is too big for you. Dad makes it the right size by sitting very close.')},
+      {cam: 'wide', ms: 2800, act: [{who: 'me', do: 'sit', by: 'dad', side: -1}], say: room('The sofa is too big for you. Dad makes it the right size by sitting very close.')},
       {cam: 'two', on: ['dad', 'me'], ms: 2800, act: [{who: 'dad', do: 'face', to: 'me'}, {who: 'dad', do: 'emote', mood: 'warm'}], say: say('dad', 'Hear that, under the man talking? That is our end. Singing.', 'warm')},
       {cam: 'close', on: ['me'], ms: 2400, act: [{who: 'me', do: 'emote', mood: 'wonder'}], say: think('You do not know the words yet. You hum anyway.')},
       {cam: 'close', on: ['dad'], ms: 2200, act: [{who: 'dad', do: 'emote', mood: 'tense'}], say: room('His knee goes up and down. Then yours does too.')},
@@ -194,7 +194,7 @@ export const E1: EpisodeScript = {
       {cam: 'close', on: ['dad'], ms: 1600, say: say('dad', 'Not until they score.', 'tense')},
     ]},
     {id: 'e1-goal', shots: [
-      {cam: 'two', on: ['dad', 'me'], ms: 1500, act: [{who: 'me', do: 'sit', by: 'dad'}, {who: 'dad', do: 'emote', mood: 'tense'}], say: room('The man on the radio stops breathing.')},
+      {cam: 'two', on: ['dad', 'me'], ms: 1500, act: [{who: 'me', do: 'sit', by: 'dad', side: -1}, {who: 'dad', do: 'emote', mood: 'tense'}], say: room('The man on the radio stops breathing.')},
       {cam: 'wide', ms: 2600, act: [{who: 'all', do: 'cheer'}, {who: 'dad', do: 'lift'}], say: room('Then the whole radio explodes.')},
       {cam: 'two', on: ['dad', 'me'], ms: 2300, act: [{who: 'dad', do: 'emote', mood: 'joy'}], say: say('dad', 'YES! YES! YES!')},
       {cam: 'close', on: ['mum'], ms: 1900, act: [{who: 'mum', do: 'emote', mood: 'tense'}], say: say('mum', 'The neighbours!')},

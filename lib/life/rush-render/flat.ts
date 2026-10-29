@@ -12,6 +12,22 @@ import {FLAT_DOORS, FLAT_RADIO, FLAT_SEAT} from '@/lib/life/rush/flat'
 import type {Sim} from '@/lib/life/rush/sim'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {pose, type FigureData} from './figure'
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
+import {propCopy} from './props'
+import type {SurfaceName} from './surfaces'
+
+/** the furniture as models (kiln: `scripts/life/rush/home.kx.js`) — loaded once, the drawn boxes stand in until then */
+let homeLib: Promise<Map<string, THREE.Object3D> | null> | null = null
+function loadHome(): Promise<Map<string, THREE.Object3D> | null> {
+  if (!homeLib) homeLib = new GLTFLoader().loadAsync('/life/rush/models/home.glb').then(g => new Map(g.scene.children.map(o => [o.name, o] as const))).catch(() => { homeLib = null; return null })
+  return homeLib
+}
+/** which model a block is, which way it faces (radians about y, the model faces +z), and the things set beside it */
+const MODEL: Record<string, {m: string; yaw: number}> = {
+  sofa: {m: 'sofa', yaw: Math.PI / 2}, armchair: {m: 'armchair', yaw: Math.PI}, 'table-low': {m: 'table_low', yaw: 0}, sideboard: {m: 'sideboard', yaw: 0},
+  counter: {m: 'counter', yaw: -Math.PI / 2}, table: {m: 'table', yaw: 0}, fridge: {m: 'fridge', yaw: 0}, bed: {m: 'bed', yaw: 0},
+  wardrobe: {m: 'wardrobe', yaw: 0}, desk: {m: 'desk', yaw: 0}, shoes: {m: 'shoes', yaw: -Math.PI / 2},
+}
 
 type Ctx = {
   scene: THREE.Scene
@@ -23,6 +39,9 @@ type Ctx = {
   banned: (hex: string) => boolean
   /** a person in a look the stage already knows how to draw */
   person: (o: {curly?: boolean; top: string; pants: string; hair: string; beard?: boolean; scale?: number}) => THREE.Group
+  /** a floor material the stage lays its loom tile on when it arrives (world-space, `surfaces.ts`) */
+  ground: (name: SurfaceName, m: THREE.MeshStandardMaterial) => THREE.MeshStandardMaterial
+  glowTex: THREE.Texture
 }
 
 const WALL_H = 2.55, WALL_T = 0.18
@@ -39,9 +58,16 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   const std = (color: THREE.ColorRepresentation, o: THREE.MeshStandardMaterialParameters = {}) => keep(new THREE.MeshStandardMaterial({color, roughness: 0.8, metalness: 0, ...o}))
   const box = keep(new THREE.BoxGeometry(1, 1, 1))
   const pick = (list: string[], fallback: string) => list.find(h => !c.banned(h)) ?? fallback
+  let into: THREE.Object3D = scene
   const put = (mat: THREE.Material, x: number, y: number, z: number, sx: number, sy: number, sz: number, shadow = true) => {
-    const m = new THREE.Mesh(box, mat); m.position.set(x, y, z); m.scale.set(sx, sy, sz); m.castShadow = shadow && !lite; m.receiveShadow = true; scene.add(m); return m
+    const m = new THREE.Mesh(box, mat); m.position.set(x, y, z); m.scale.set(sx, sy, sz); m.castShadow = shadow && !lite; m.receiveShadow = true; into.add(m); return m
   }
+  // a soft dark patch under whatever stands on the floor: what makes it stand ON the floor, shadows or no shadows (phones)
+  const blobTex = keep(canvasTex(64, 64, (g, w) => { const r = g.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w / 2); r.addColorStop(0, 'rgba(0,0,0,.55)'); r.addColorStop(0.6, 'rgba(0,0,0,.28)'); r.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = r; g.fillRect(0, 0, w, w) }, [1, 1]))
+  blobTex.wrapS = blobTex.wrapT = THREE.ClampToEdgeWrapping; blobTex.repeat.set(1, 1)
+  const blobMat = keep(new THREE.MeshBasicMaterial({map: blobTex, transparent: true, depthWrite: false, opacity: lite ? 0.85 : 0.6}))
+  const blobGeo = keep(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2))
+  const blob = (x: number, z: number, w: number, d: number, k = 1) => { const m = new THREE.Mesh(blobGeo, blobMat); m.position.set(x, 0.012, z); m.scale.set(w * 1.35 * k, 1, d * 1.35 * k); m.renderOrder = 1; scene.add(m); return m }
 
   /* the world outside the flat: dark, so the house reads as a cut-away */
   const under = new THREE.Mesh(keep(new THREE.PlaneGeometry(400, 400)), std(night ? '#0d0f14' : '#2a2622', {roughness: 1}))
@@ -60,7 +86,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
     const w = r.rect.x1 - r.rect.x0 + WALL_T, d = r.rect.z1 - r.rect.z0 + WALL_T
     const map = (r.floor === 'tile' ? tiles : r.floor === 'carpet' ? carpet : boards).clone(); keep(map)
     map.repeat.set(w / (r.floor === 'tile' ? 1.6 : 2.4), d / (r.floor === 'tile' ? 1.6 : 2.4)); map.needsUpdate = true
-    const f = new THREE.Mesh(keep(new THREE.PlaneGeometry(w, d)), std('#ffffff', {map, roughness: r.floor === 'tile' ? 0.35 : 0.75}))
+    const f = new THREE.Mesh(keep(new THREE.PlaneGeometry(w, d)), c.ground(r.floor === 'tile' ? 'tiles' : r.floor === 'carpet' ? 'carpet' : 'boards', std('#ffffff', {map, roughness: r.floor === 'tile' ? 0.35 : 0.75})))
     f.rotation.x = -Math.PI / 2; f.position.set((r.rect.x0 + r.rect.x1) / 2, 0.002, (r.rect.z0 + r.rect.z1) / 2); f.receiveShadow = true; scene.add(f)
   }
   for (const d of FLAT_DOORS) {
@@ -105,7 +131,8 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   for (const d of FLAT_DOORS) {
     const across = d.rect.x1 - d.rect.x0 < d.rect.z1 - d.rect.z0
     const cx = (d.rect.x0 + d.rect.x1) / 2
-    for (const end of across ? [d.rect.z0, d.rect.z1] : [d.rect.x0, d.rect.x1]) across ? put(frame, cx, WALL_H / 2, end, 0.42, WALL_H, 0.08) : put(frame, end, WALL_H / 2, (d.rect.z0 + d.rect.z1) / 2, 0.08, WALL_H, 0.42)
+    // two slim posts and a threshold: a doorway, not a gap
+    for (const end of across ? [d.rect.z0, d.rect.z1] : [d.rect.x0, d.rect.x1]) across ? put(frame, cx, WALL_H / 2, end, 0.3, WALL_H, 0.07) : put(frame, end, WALL_H / 2, (d.rect.z0 + d.rect.z1) / 2, 0.07, WALL_H, 0.3)
   }
 
   /* windows: on the far walls, full of the afternoon (or of the street lamps) */
@@ -126,7 +153,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   /* lamps: one warm light a room */
   for (const r of level.rooms) {
     if (lite && r.id === 'hall') continue
-    const l = new THREE.PointLight('#ffd2a0', night ? 22 : 6, 11, 1.6); l.position.set((r.rect.x0 + r.rect.x1) / 2, 2.35, (r.rect.z0 + r.rect.z1) / 2); scene.add(l)
+    const l = new THREE.PointLight('#ffd2a0', night ? 18 : 3.5, 11, 1.6); l.position.set((r.rect.x0 + r.rect.x1) / 2, 2.35, (r.rect.z0 + r.rect.z1) / 2); scene.add(l)
   }
 
   /* the furniture: every block of the level, as what it is */
@@ -134,8 +161,11 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   const fabric = std(pick(['#6f5a4c', '#5d6b7a', '#7a6a58'], '#6f6a66'), {roughness: 0.95}), fabricD = std(new THREE.Color(fabric.color).multiplyScalar(0.8))
   const white = std('#efece4', {roughness: 0.4}), steel = std('#a9adb3', {metalness: 0.6, roughness: 0.35})
   const blanket = std(skin.p, {roughness: 0.95}), blanketB = std(skin.s, {roughness: 0.95})
+  const stands: {b: typeof level.blocks[number]; g: THREE.Group}[] = []
   for (const b of level.blocks) {
     const w = b.x1 - b.x0, d = b.z1 - b.z0, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2
+    const g = new THREE.Group(); scene.add(g); into = g; stands.push({b, g})
+    blob(cx, cz, w, d)
     if (b.kind === 'sofa') {
       put(fabric, cx + 0.1, 0.22, cz, w - 0.2, 0.44, d)
       put(fabricD, b.x0 + 0.16, 0.55, cz, 0.32, 0.7, d)
@@ -176,14 +206,72 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
       for (let k = 0; k < 4; k++) put(std(['#2b2f3a', '#6a4a32', '#efece4', '#3a3f4f'][k]!), b.x0 + 0.2, b.h + 0.05, b.z0 + 0.25 + k * 0.32, 0.26, 0.1, 0.12, false)
     } else put(wood, cx, b.h / 2, cz, w, b.h, d)
   }
+  into = scene
   // the radio on the sideboard: the thing the whole afternoon is about
   const radio = new THREE.Group(); radio.position.set(FLAT_RADIO.x, 0.85, FLAT_RADIO.z); scene.add(radio)
   { const body = new THREE.Mesh(box, std('#4a3024', {roughness: 0.5})); body.scale.set(0.7, 0.42, 0.3); body.position.y = 0.21; body.castShadow = !lite; radio.add(body)
     const grille = new THREE.Mesh(box, std('#cbb994', {roughness: 0.9})); grille.scale.set(0.36, 0.3, 0.01); grille.position.set(-0.13, 0.21, 0.152); radio.add(grille)
     const ant = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.008, 0.008, 0.8)), steel); ant.position.set(0.25, 0.75, 0); ant.rotation.z = -0.35; radio.add(ant) }
   const dial = new THREE.Mesh(keep(new THREE.CircleGeometry(0.07, 20)), keep(new THREE.MeshBasicMaterial({color: '#3a2a20', toneMapped: false}))); dial.position.set(0.2, 1.06, FLAT_RADIO.z + 0.155); dial.position.x += FLAT_RADIO.x; scene.add(dial)
+  /* the furniture as models: each replaces its drawn stand-in when the file arrives (at the flat's own scale), and the
+     small things of a lived-in home are set about: a lamp by the sofa, plants, books, chairs round the tables */
+  const S = 1.3
+  const decor: {m: string; x: number; z: number; yaw: number}[] = [
+    {m: 'lamp_floor', x: -9.75, z: -3.25, yaw: 0}, {m: 'bookshelf', x: -8.4, z: -3.69, yaw: 0}, {m: 'plant', x: 1.75, z: 7.05, yaw: 0.6},
+    {m: 'plant', x: 5.25, z: -17.55, yaw: 2}, {m: 'chair', x: 9.62, z: -7.75, yaw: 0}, {m: 'chair', x: 9.62, z: -5.4, yaw: Math.PI},
+    {m: 'chair', x: 1.36, z: -16.45, yaw: Math.PI}, {m: 'bookshelf', x: 2.07, z: -9.6, yaw: -Math.PI / 2}, {m: 'radio', x: FLAT_RADIO.x, z: FLAT_RADIO.z, yaw: 0},
+  ]
+  const mats = new Map<string, THREE.Material>()
+  void loadHome().then(lib => {
+    if (!lib) return
+    const copy = (name: string) => { const src = lib.get(name); return src ? propCopy(src, {p: skin.p, s: skin.s}, mats, keep, !lite) : null }
+    for (const st of stands) {
+      const def = MODEL[st.b.kind], o = def && copy(def.m)
+      if (!o) continue
+      o.scale.setScalar(S); o.rotation.y = def.yaw; o.position.set((st.b.x0 + st.b.x1) / 2, 0, (st.b.z0 + st.b.z1) / 2)
+      o.traverse(n => { const m = n as THREE.Mesh; if (m.isMesh) { m.receiveShadow = true; m.castShadow = !lite } })
+      scene.remove(st.g); scene.add(o)
+    }
+    for (const d of decor) {
+      const o = copy(d.m)
+      if (!o) continue
+      o.scale.setScalar(S); o.rotation.y = d.yaw; o.position.set(d.x, d.m === 'radio' ? 0.84 * S : 0, d.z)
+      scene.add(o)
+      if (d.m === 'radio') { radio.visible = false; dial.position.set(d.x + 0.17 * S, (0.84 + 0.2) * S, d.z + 0.15 * S) }
+      else blob(d.x, d.z, d.m === 'bookshelf' ? 1.1 : 0.5, d.m === 'bookshelf' ? 0.4 : 0.5, 0.9)
+    }
+  })
+
+  /* the afternoon through the windows: shafts of light on the floor, and dust turning in them */
+  const beams: THREE.Mesh[] = []
+  if (!night) {
+    const beamTex = keep(canvasTex(64, 256, (g, w, h) => { const gr = g.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, 'rgba(255,236,200,.0)'); gr.addColorStop(0.25, 'rgba(255,236,200,.55)'); gr.addColorStop(1, 'rgba(255,236,200,0)'); g.fillStyle = gr; g.fillRect(0, 0, w, h) }, [1, 1]))
+    beamTex.wrapS = beamTex.wrapT = THREE.ClampToEdgeWrapping
+    const beamMat = keep(new THREE.MeshBasicMaterial({map: beamTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.32, toneMapped: false}))
+    for (const r of level.rooms) {
+      if (r.id === 'hall') continue
+      const w = r.rect.x1 - r.rect.x0
+      for (const k of w > 9 ? [0.3, 0.7] : [0.5]) {
+        // a slanting sheet from the window down to a lit patch on the floor
+        const x = r.rect.x0 + w * k, z = r.rect.z0
+        const sheet = new THREE.Mesh(keep(new THREE.PlaneGeometry(1.5, 3.4)), beamMat); sheet.position.set(x, 1.15, z + 1.5); sheet.rotation.x = -1.0; scene.add(sheet); beams.push(sheet)
+        const patch = new THREE.Mesh(keep(new THREE.PlaneGeometry(1.7, 1.6).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({map: c.glowTex, color: new THREE.Color('#ffe6bf').multiplyScalar(0.55), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false})))
+        patch.position.set(x, 0.015, z + 2.9); patch.scale.set(1, 1, 1.6); scene.add(patch)
+      }
+    }
+  }
+  const DUST = lite ? 120 : 320, dustPos = new Float32Array(DUST * 3), dustSeed = new Float32Array(DUST)
+  for (let i = 0; i < DUST; i++) { const r = level.rooms[i % level.rooms.length]!.rect; dustPos[i * 3] = r.x0 + seeded() * (r.x1 - r.x0); dustPos[i * 3 + 1] = 0.3 + seeded() * 2; dustPos[i * 3 + 2] = r.z0 + seeded() * (r.z1 - r.z0); dustSeed[i] = seeded() * 6.28 }
+  const dustGeo = keep(new THREE.BufferGeometry()); dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3))
+  const dust = new THREE.Points(dustGeo, keep(new THREE.PointsMaterial({map: c.glowTex, color: night ? '#9fb0d8' : '#fff0d6', size: 0.06, transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending})))
+  scene.add(dust)
+  // a soft shadow under everybody who moves (the boy, Dad, Mum, the cat)
+  const heroBlob = blob(0, 0, 0.5, 0.5, 1)
+  // and a ring of his club's colour round his feet: from above, in a busy room, you always know which one is you
+  const heroRing = new THREE.Mesh(keep(new THREE.RingGeometry(0.36, 0.46, 36).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: new THREE.Color(skin.p).multiplyScalar(1.3), transparent: true, opacity: 0.85, depthWrite: false, toneMapped: false})))
+  heroRing.renderOrder = 2; scene.add(heroRing)
   // a rug under the low table, in the club's own colour
-  const rug = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.4, 2.8)), std(new THREE.Color(skin.p).multiplyScalar(0.62), {roughness: 1})); rug.rotation.x = -Math.PI / 2; rug.position.set(-6, 0.006, 4.4); rug.receiveShadow = true; scene.add(rug)
+  const rug = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.4, 2.8)), std(new THREE.Color(skin.p).multiplyScalar(0.62), {roughness: 1})); rug.rotation.x = -Math.PI / 2; rug.position.set(-7.0, 0.006, 3.9); rug.receiveShadow = true; scene.add(rug)
 
   /* the toys: where he left them */
   const toys = level.trips.map((tr, i) => {
@@ -197,6 +285,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   /* the people: Dad on the sofa, Mum going about, the cat */
   const dad = c.person({top: pick(['#5d6b7a', '#6a6f7a'], '#6a6f7a'), pants: '#2c3446', hair: '#2a1d16', beard: true, scale: 1.02})
   dad.position.set(FLAT_SEAT.x, 0, FLAT_SEAT.z); dad.rotation.y = FLAT_SEAT.face; scene.add(dad)
+  const walkerBlobs = level.patrols.map(p => blob(0, 0, p.role === 'cat' ? 0.3 : 0.5, p.role === 'cat' ? 0.55 : 0.5))
   const patrolFigs = level.patrols.map(p => {
     if (p.role === 'cat') {
       const g = new THREE.Group(), fur = std('#3a302a', {roughness: 0.95})
@@ -215,6 +304,13 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
 
   return {
     update(sim, t, dt, ending, outcome) {
+      heroBlob.position.set(sim.x, 0.013, sim.z); heroRing.position.set(sim.x, 0.016, sim.z); heroRing.visible = !ending; heroRing.scale.setScalar(1 + Math.sin(t * 5) * 0.06)
+      level.patrols.forEach((p, i) => { const at = patrolAt(p, sim.t); walkerBlobs[i]!.position.set(at.x, 0.013, at.z) })
+      // the dust turns slowly in the air; the shafts breathe
+      const a = dustGeo.attributes.position as THREE.BufferAttribute
+      for (let i = 0; i < DUST; i++) { const k = dustSeed[i]!; a.setY(i, a.getY(i) + Math.sin(t * 0.4 + k) * 0.0015); a.setX(i, a.getX(i) + Math.cos(t * 0.3 + k) * 0.001) }
+      a.needsUpdate = true
+      beams.forEach((b, i) => { (b.material as THREE.MeshBasicMaterial).opacity = 0.26 + Math.sin(t * 0.7 + i) * 0.05 })
       // the walls between the camera and him turn to glass: walls along x that stand nearer the camera than he does
       for (const w of walls) {
         const front = w.alongX && w.z > sim.z + 0.3 && sim.x > w.x0 - 3 && sim.x < w.x1 + 3

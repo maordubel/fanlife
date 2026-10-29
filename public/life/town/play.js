@@ -449,7 +449,7 @@ function poseBody(id,b,mode,x,z,yaw,y){if(!POSED[id])POSED[id]={keep:{x:b.x,z:b.
 function unpose(){Object.keys(POSED).forEach(function(id){var b=bodyOf(id),k=POSED[id].keep;if(b){b.x=k.x;b.z=k.z;b.yaw=k.yaw;b.wantYaw=null;b.g.position.y=k.y;b.o.mode=b===player?'ctrl':b.base;b.place()}});POSED={}}
 function cineAct(a){
  if(!a)return false;
- if(a.do==='sit'&&a.who==='me'&&player){var o=bodyOf(a.by);if(!o)return false;var yw=o.yaw,sd=a.side||1,off=.6/U;poseBody('me',player,'sit',o.x+Math.cos(yw)*off*sd,o.z-Math.sin(yw)*off*sd,yw,o.g.position.y);return true}
+ if(a.do==='sit'&&a.who==='me'&&player){var o=bodyOf(a.by);if(!o)return false;var yw=o.yaw,off=.6/U,sd=a.side||-1;/* the free seat of the flat's sofa is on the father's left (−x); a scene in another room names its side */poseBody('me',player,'sit',o.x+Math.cos(yw)*off*sd,o.z-Math.sin(yw)*off*sd,yw,o.g.position.y);return true}
  if(a.do==='stand'&&a.who==='me'){var kp=POSED.me;if(kp){player.x=kp.keep.x;player.z=kp.keep.z;player.g.position.y=kp.keep.y;delete POSED.me;player.o.mode='ctrl';player.place()}return true}
  if(a.do==='lift'&&player){var lb=bodyOf(a.who);if(!lb||lb===player)return false;var ly=lb.yaw,fx=Math.sin(ly)*.34/U,fz=Math.cos(ly)*.34/U;poseBody(a.who,lb,'cheer',null,null,ly,0);poseBody('me',player,'cheer',lb.x+fx,lb.z+fz,ly+PI,.42);return true}
  if(a.who==='all'&&a.do==='cheer'){P.celebrate();return true}

@@ -895,7 +895,7 @@ button.gps:active { transform: translate(2px, 2px); box-shadow: none; }
 .warpCard span { font-family: var(--mag-mono); font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; }
 .warpCard b { font-family: var(--mag-brand); font-weight: 400; font-size: clamp(1.6rem, 7vw, 2.6rem); line-height: 1.05; }
 .warp[data-dir='in'] .warpCard { animation: warpSlam .55s cubic-bezier(.2,1.5,.4,1) .12s both; }
-.warp[data-dir='out'] { background: var(--mag-card); -webkit-mask: radial-gradient(circle at 50% 55%, transparent var(--warp-r, 0%), #000 calc(var(--warp-r, 0%) + 1%)); mask: radial-gradient(circle at 50% 55%, transparent var(--warp-r, 0%), #000 calc(var(--warp-r, 0%) + 1%)); animation: warpOpen 1.3s ease-in-out both; }
+.warp[data-dir='out'] { background: var(--mag-card); -webkit-mask: radial-gradient(circle at 50% 55%, transparent var(--warp-r, 0%), var(--mag-ink) calc(var(--warp-r, 0%) + 1%)); mask: radial-gradient(circle at 50% 55%, transparent var(--warp-r, 0%), var(--mag-ink) calc(var(--warp-r, 0%) + 1%)); animation: warpOpen 1.3s ease-in-out both; }
 .warp[data-dir='out'] .warpCard { animation: warpOut 1.3s ease-in both; }
 .warp[data-outcome='slip'] .warpCard { border-block-start-color: var(--mag-ink); }
 @property --warp-r { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
