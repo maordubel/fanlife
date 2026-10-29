@@ -167,6 +167,15 @@ export type Effect =
   | {e: 'card'; card: string}
   | {e: 'sound'; cue: SoundCue}
   | {e: 'end'; ending: string}
+  /* ── Season One: what the screen shows, never what the life remembers (each is a directive only) ── */
+  /** a staged scene in the room: people move, turn, hold and cheer while the camera cuts (`Chapter.cines`) */
+  | {e: 'cine'; id: string}
+  /** an interview, 2026: somebody of his life, older, talks to the camera about what he did (`Chapter.docs`) */
+  | {e: 'doc'; id: string}
+  /** the archive night happens around him: the board, the count, the people beside him (`Chapter.lives`) */
+  | {e: 'live'; id: string}
+  /** a stamp across the screen: a mission passed, a mission lost, a new place, a new person */
+  | {e: 'stamp'; kind: StampKind; text: Tx}
 
 /** how much of the job this go is: 'short' plays a smaller board (fewer crates, fewer customers). Absent = 'full'. */
 export type WorkScope = 'short' | 'full'
@@ -183,7 +192,9 @@ export type SoundCue = 'roar' | 'murmur' | 'whistle' | 'radio' | 'door' | 'coin'
 export type Mood = 'tender' | 'warm' | 'tense' | 'grief' | 'joy' | 'wonder'
 export type Line = {who: CastId | 'me' | null; t: Tx; mood?: Mood}
 export type Choice = {id: string; t: Tx; when?: Cond; then?: Effect[]; next?: string}
-export type Branch = {when?: Cond; lines: Line[]; choices?: Choice[]; then?: Effect[]; next?: string}
+export type Branch = {when?: Cond; lines: Line[]; choices?: Choice[]; then?: Effect[]; next?: string
+  /** a moment, not a menu: the choices stand for `s` seconds and then `pick` is taken for him (silence is an answer) */
+  timer?: {s: number; pick: string}}
 /** The first branch whose `when` holds is the one that plays. The last branch carries no `when`: there is always something to say. */
 export type Talk = {id: string; branches: Branch[]}
 
@@ -196,7 +207,7 @@ export type SpotUse = {id: string; room: RoomId; spot: string; when?: Cond; talk
 export type DoorUse = {id: string; room: RoomId; door: string; to: RoomId; spawn: string; label: Tx; time?: TimeOfDay; when?: Cond; needs?: Cond; blocked?: Tx}
 /** Plays by itself, once, the first time its room is entered while `when` holds. */
 export type Beat = {id: string; room: RoomId; when?: Cond; talk: string}
-export type Objective = {id: string; t: Tx; done: Cond; room?: RoomId}
+export type Objective = {id: string; t: Tx; done: Cond; room?: RoomId; /** Season One: jobs open together share a hub; the HUD names the ones still to do */ hub?: string}
 export type Ending = {title: Tx; body: Tx; keep?: string}
 export type Keepsake = {id: string; name: Tx; note: Tx}
 /** `kickoff` names the two sides and hides the score; `result` shows it. A card with neither is a plain archive card. */
@@ -232,6 +243,103 @@ export type Chapter = {
   centrepiece?: boolean
   /** the chapter is part of this life only while this holds when its turn comes (a route the player was invited into); otherwise it is skipped, never dead-ended */
   when?: Cond
+  /* ── Season One (all optional: a chapter without them plays as before) ── */
+  /** an episode of a season: its number, its line, and what the HUD calls the main job */
+  episode?: EpisodeMeta
+  /** a clock against him: it runs only while he can move, and running out is a different life, not a lost one */
+  clocks?: ClockDef[]
+  /** what people say as he walks past them: never stops him */
+  barks?: Bark[]
+  /** staged scenes (`{e:'cine'}`) */
+  cines?: CineDef[]
+  /** interviews, 2026 (`{e:'doc'}`) */
+  docs?: DocDef[]
+  /** the archive night, played around him (`{e:'live'}`) */
+  lives?: LiveDef[]
+  /** objectives that are his to take or leave: side jobs, shown apart from the main job */
+  side?: string[]
+}
+
+/* ───────────── Season One ───────────── */
+
+export type StampKind = 'passed' | 'failed' | 'new' | 'unlocked' | 'secret'
+export type EpisodeMeta = {
+  season: number; no: number; of: number
+  /** one line under the title card: what this episode is about, never a fact */
+  logline: Tx
+  /** the objective ids that are THE mission (the rest are steps on the way or side jobs) */
+  main: string[]
+  /** what is coming next, for the end card ("Next: Six Short") */
+  next?: Tx
+  /** the cold open, played once as the day begins: an interview first, then the room comes to life; `mission` is the banner after it */
+  open?: {doc?: string; cine?: string; mission?: Tx}
+  /** the interviews played over the end card, in order */
+  close?: string[]
+  /** HOOKS — what makes a player press "next" before he has decided to.
+   * `texts`: the season's first seconds, messages on a phone in 2026 (episode one only).
+   * `box`: the object out of the box this episode is about, shown on the title card before anything is played.
+   * `flash`: a few seconds from later in the day, played first, then a card ("Two hours earlier").
+   * `tease`: one line under "Next" on the end card — a question, never an answer.
+   * `letter`: the season's sealed envelope, opened on the last end card; `after` is what lies under it. */
+  texts?: {from: Tx; t: Tx}[]
+  box?: {item: Tx; line: Tx}
+  flash?: {cine: string; card: Tx}
+  tease?: Tx
+  letter?: {head: Tx; lines: Tx[]; sign: Tx; after: Tx}
+}
+export type ClockDef = {
+  id: string
+  /** seconds of play (the clock stands still while anybody talks, a card is open, or a game is played) */
+  s: number
+  /** what it counts down to: "Kick-off" */
+  label: Tx
+  /** it runs while this holds (default: from the start of the chapter) */
+  from?: Cond
+  /** it stops for good once this holds — the job is done in time */
+  until: Cond
+  /** raised when it runs out */
+  fail: string
+  /** said when it runs out, then the life goes on another way */
+  talk?: string
+}
+export type Bark = {id: string; who: CastId; room: RoomId; when?: Cond; lines: Tx[]}
+
+export type CineAct =
+  | {who: CastId | 'me'; do: 'walk'; to: string}
+  | {who: CastId | 'me'; do: 'face'; to: CastId | 'me'}
+  | {who: CastId | 'me'; do: 'hold'; item: 'cup' | 'ticket' | 'scarf' | 'bag' | 'phone' | null}
+  | {who: CastId | 'me'; do: 'emote'; mood: Mood}
+  | {who: 'all'; do: 'cheer'}
+/** One shot: where the camera looks, what is said under it (a caption), what people do while it runs. */
+export type Shot = {
+  cam: 'wide' | 'two' | 'close' | 'over'
+  /** who the camera holds: one person (close), two (two-shot, over the shoulder) */
+  on?: (CastId | 'me')[]
+  /** how long it holds, in milliseconds, before the cut (a caption may hold it longer for reading) */
+  ms: number
+  say?: Line
+  act?: CineAct[]
+  when?: Cond
+}
+export type CineDef = {id: string; shots: Shot[]}
+
+/** An interview: who, how much older, and what they say — each line only if what it remembers happened. */
+/** `secret`: a line that tells him something he did not know then — the end card counts the ones he heard, out of all the episode holds */
+export type DocLine = {t: Tx; when?: Cond; secret?: Tx}
+export type DocDef = {id: string; who: CastId; /** what the lower third calls them: "Your mother", "Your best friend" */ role: Tx; lines: DocLine[]}
+
+/** The archive night, live: fiction around a recorded row. The row says what happened; these lines are only the room. */
+export type LiveDef = {
+  id: string
+  /** who is beside him (the room's people react) */
+  with: CastId[]
+  /** where he lives it: on the radio at home, on the terrace, on a screen */
+  at: 'radio' | 'terrace' | 'screen'
+  /** said by the people beside him; never a fact about the match */
+  before: Line[]
+  goal: Line[]
+  against: Line[]
+  end: {won: Line[]; lost: Line[]; drew: Line[]; unread: Line[]}
 }
 
 /* ───────────── history (only what the archive holds) ───────────── */
@@ -290,12 +398,14 @@ export type LifePack = {
   skin: VoxelSkin
   cast: Record<CastId, CastMember>
   /** the supporter, at the ages the chapters visit */
-  hero: {birthYear: number | null; looks: Record<'child' | 'teen' | 'adult' | 'elder', Look>}
+  hero: {birthYear: number | null; looks: Record<'child' | 'teen' | 'adult' | 'elder', Look>; /** the name the pack suggests for him (fiction); the player may give another */ name?: string}
   chapters: Chapter[]
   rooms: Record<RoomId, RoomPlay>
   readiness: LifeReadiness
   /** archive rows that became nights of this life */
   anchors: ArchiveRef[]
+  /** the names the pack gives its people (Mum and Dad included, which the cast keeps as roles): for an interview's lower third */
+  given?: Record<CastId, string>
   /** honest about what it is: composed from universal beats and this club's approved archive */
   provenance: {kind: 'generated-from-anchors'; universalChapters: number; anchoredChapters: number; cultureDna: 'pending' | 'approved'}
   /** the club's matchday culture, read from its sourced world.json only — never typed in code; a kind the record lacks is absent */

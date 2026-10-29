@@ -20,6 +20,8 @@ P.load=function(base){base=base||'/life/town/people/';
   var mn=1e9;for(var i=1;i<NB*3;i+=3)if(P.pos[i]<mn)mn=P.pos[i];P.y0=mn;P.hc=new T.Vector3(P.joints[BONE.head*3],P.joints[BONE.head*3+1]-mn,P.joints[BONE.head*3+2]);P.adj=adjacency();P.ready=true;P.q.forEach(function(f){f()});P.q=[]})
  .catch(function(e){P.failed=true;console.warn('[people] falling back to the procedural figures:',e)})};
 P.whenReady=function(f){if(P.ready)f();else P.q.push(f)};
+/* where a person's head is right now (the head bone, in world space): a camera that frames a face asks this, so a child and a grown man are both framed at the eyes */
+P.headPos=function(g,v){var h=g&&g.userData&&g.userData.human;if(!h||!h.bones)return null;h.bones[BONE.head].getWorldPosition(v);return v};
 /* terrace crowd: the same body, three static poses, ~1.1k triangles each (scripts/life/build-crowd.py). Each region —
    skin, shirt, trousers, shoes, hair — takes its colour per instance, so a stand of six hundred is six hundred people. */
 P.loadCrowd=function(base){base=base||'/life/town/people/';if(P.crowdP)return P.crowdP;
@@ -101,11 +103,12 @@ function skinMat(look,ctx){var m=new T.MeshStandardMaterial({color:0xffffff,roug
    'float red=smoothstep(.05,.5,sk.g);c=mix(c,c*vec3(1.1,.84,.82),red*(.45+uBlush));',
    'float lip=smoothstep(.55,.95,sk.g);c=mix(c,mix(c*vec3(.86,.6,.6),uLip,uMake),lip*.85);',
    'c=mix(c,uBeard,sk.a*uBeardAmt);c=mix(c,uBrow*.75,smoothstep(.12,.55,vStc)*uStache*(.75+.25*sk.a));',
-   'float hz=smoothstep(.42,.62,vHf);c=mix(c,uBrow*.85,hz*uBuzz);',
+   'float hz=smoothstep(.36,.58,vHf);c=mix(c,uBrow*.85,hz*uBuzz);',
    'c=mix(c,uBrow*.7,sk.b*uBrowAmt);',
    'float lc=dot(c,vec3(.3,.59,.11));c=mix(vec3(lc),c,1.28-.3*uAge)*(.93-.04*uAge);',
    'diffuseColor.rgb*=c;'].join('\n'))
-   .replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance+=diffuseColor.rgb*vec3(.12,.04,.018);')};
+   .replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nroughnessFactor=mix(roughnessFactor,.3,lip*.8);')
+   .replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance+=diffuseColor.rgb*vec3(.08,.026,.012);')};
  m.skinning=true;ctx.own(m);return m}
 var CLOTH_HEAD='uniform vec3 uA,uB,uC;uniform float uPat,uWeave,uSheen,uY;varying vec3 vBind;varying float vEdge;varying float vAo;varying vec3 vLimb;\n';
 /* pat: 0 plain · 1 stripes · 2 hoops · 3 halves · 4 sash · 5 pinstripe · 6 sole band (shoes) · 7 side stripe (trousers) · 8 denim · 9 track · 10 knit
@@ -134,7 +137,7 @@ function clothMat(o,ctx){o=Object.assign({},o,{a:capA(o.a),b:o.b&&capA(o.b),c:o.
    'if(uPat>9.5&&uPat<10.5){float rib=sin(b.x*520.)*.5+.5;c*=.9+rib*.14;}',
    'if(uPat>5.5&&uPat<6.5)c=mix(c,uC,step(b.y,.009));',
    'float w=(sin(b.x*900.)*sin(b.y*900.)+sin((b.x+b.z)*620.))*.5;c*=1.+w*.035*uWeave;',
-   'c*=mix(.55,1.,vAo);c*=mix(.86,1.,smoothstep(0.,.014,vEdge));',
+   'c*=mix(.7,1.,vAo);c*=mix(.86,1.,smoothstep(0.,.014,vEdge));',
    'diffuseColor.rgb*=c;'].join('\n'))
    .replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\nfloat fr=pow(1.-clamp(dot(normalize(vNormal),normalize(vViewPosition)),0.,1.),3.);totalEmissiveRadiance+=diffuseColor.rgb*fr*uSheen;')};
  m.skinning=true;ctx.own(m);return m}
@@ -149,8 +152,8 @@ function hairMat(col,gloss,ctx,curl){var m=new T.MeshStandardMaterial({color:0xf
    .replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\nfloat fr=pow(1.-clamp(dot(normalize(vNormal),normalize(vViewPosition)),0.,1.),2.);totalEmissiveRadiance+=uA*fr*.12;')};
  m.skinning=true;ctx.own(m);return m}
 var EYE_TEX={};function eyeTex(col){if(EYE_TEX[col])return EYE_TEX[col];var c=document.createElement('canvas');c.width=c.height=128;var g=c.getContext('2d');
- g.fillStyle='#ece6e0';g.fillRect(0,0,128,128);var cx=64,cy=64;var gr=g.createRadialGradient(cx,cy,4,cx,cy,30);var C=new T.Color(col);
- gr.addColorStop(0,'#0a0807');gr.addColorStop(.28,'#0a0807');gr.addColorStop(.32,C.clone().multiplyScalar(.7).getStyle());gr.addColorStop(.75,C.getStyle());gr.addColorStop(.92,C.clone().multiplyScalar(.45).getStyle());gr.addColorStop(1,'rgba(40,30,30,.0)');
+ var cx=64,cy=64,sc=g.createRadialGradient(cx,cy,20,cx,cy,64);sc.addColorStop(0,'#f2ede8');sc.addColorStop(.55,'#e6ddd6');sc.addColorStop(1,'#b8a59e');g.fillStyle=sc;g.fillRect(0,0,128,128);var gr=g.createRadialGradient(cx,cy,4,cx,cy,30);var C=new T.Color(col);
+ /* an iris is lighter near the pupil and darker at its rim (the limbal ring): that ring is what makes an eye read as an eye at a distance */var Li=C.clone().lerp(new T.Color('#c89a5a'),.35).multiplyScalar(1.7);gr.addColorStop(0,'#0a0807');gr.addColorStop(.27,'#0a0807');gr.addColorStop(.31,Li.getStyle());gr.addColorStop(.6,C.clone().multiplyScalar(1.35).getStyle());gr.addColorStop(.84,C.getStyle());gr.addColorStop(.93,'#1a1210');gr.addColorStop(1,'rgba(40,30,30,.0)');
  g.fillStyle=gr;g.beginPath();g.arc(cx,cy,30,0,7);g.fill();g.strokeStyle='rgba(255,255,255,.12)';for(var i=0;i<60;i++){var a=i/60*6.283;g.beginPath();g.moveTo(cx+Math.cos(a)*10,cy+Math.sin(a)*10);g.lineTo(cx+Math.cos(a)*27,cy+Math.sin(a)*27);g.stroke()}
  var t=new T.CanvasTexture(c);t.encoding=T.sRGBEncoding;EYE_TEX[col]=t;return t}
 
@@ -252,7 +255,40 @@ function shared(){if(P.sh)return P.sh;var ns=H.ns,sp=P.split,uv=new Float32Array
  for(var i=0;i<ns;i++){var v=sp[i];uv[i*2]=P.uv[i*2]/65535;uv[i*2+1]=1-P.uv[i*2+1]/65535;for(var j=0;j<4;j++){si[i*4+j]=P.ski[v*4+j];sw[i*4+j]=P.skw[v*4+j]/255}hf[i]=P.hair[v]/255}
  var stc=new Float32Array(ns);for(i=0;i<ns;i++)stc[i]=P.stache[sp[i]]/255;
  var mt=[];['blink','jaw'].forEach(function(k){var m=P.morph[k],d=new Float32Array(ns*3),tmp=new Float32Array(NB*3);if(m.i){for(var q=0;q<m.i.length;q++){tmp[m.i[q]*3]=m.d[q*3]*m.s;tmp[m.i[q]*3+1]=m.d[q*3+1]*m.s;tmp[m.i[q]*3+2]=m.d[q*3+2]*m.s}}else for(q=0;q<NB*3;q++)tmp[q]=m.d[q]*m.s;for(i=0;i<ns;i++){d[i*3]=tmp[sp[i]*3];d[i*3+1]=tmp[sp[i]*3+1];d[i*3+2]=tmp[sp[i]*3+2]}mt.push(new T.BufferAttribute(d,3))});
+ // the face's own shapes (smile, brows up, frown, sad): grown from the base mesh's landmarks, see faceShapes()
+ faceShapes().forEach(function(tmp){var d=new Float32Array(ns*3);for(var i2=0;i2<ns;i2++){d[i2*3]=tmp[sp[i2]*3];d[i2*3+1]=tmp[sp[i2]*3+1];d[i2*3+2]=tmp[sp[i2]*3+2]}mt.push(new T.BufferAttribute(d,3))});
  P.sh={stache:new T.BufferAttribute(stc,1),uv:new T.BufferAttribute(uv,2),si:new T.BufferAttribute(si,4),sw:new T.BufferAttribute(sw,4),hf:new T.BufferAttribute(hf,1),morph:mt};return P.sh}
+/* ---------- the face that moves ----------
+   The rig blinks and opens its jaw; a person also smiles, lifts the brows, frowns and lets the corners of the mouth fall.
+   Those four shapes are grown here, once, from the base mesh's own landmarks (the eyes, the mouth joint, the lip mask
+   painted in skin.png) as soft displacement fields on the face — no new asset, the same for every body, carried by each
+   body's own vertices so a child's face smiles at a child's scale. Order: smile, brows up, frown, sad (influences 2..5). */
+var FACE=['smile','browUp','frown','sad'];
+function faceShapes(){var n=NB,X=P.extra,pos=P.pos,out=FACE.map(function(){return new Float32Array(n*3)}),HB=BONE.head,i;
+ var eL=[X[0],X[1],X[2]],eR=[X[3],X[4],X[5]],mo=[X[9],X[10],X[11]],cx=(eL[0]+eR[0])/2,eyeY=(eL[1]+eR[1])/2,eyeZ=(eL[2]+eR[2])/2,eyeX=Math.abs(eL[0]-eR[0])/2;
+ // the lips: where skin.png paints them (green channel), read once off the texture
+ var lip=null;try{var im=P.skinTex.image,cv=document.createElement('canvas');cv.width=im.width;cv.height=im.height;var cg=cv.getContext('2d');cg.drawImage(im,0,0);var px=cg.getImageData(0,0,im.width,im.height).data;lip=function(v){var u=P.uv[v*2]/65535,w=P.uv[v*2+1]/65535,x=Math.min(im.width-1,Math.floor(u*im.width)),y=Math.min(im.height-1,Math.floor(w*im.height));return px[(y*im.width+x)*4+1]/255}}catch(e){lip=null}
+ var hw=new Float32Array(n);for(i=0;i<n;i++)for(var j=0;j<4;j++)if(P.ski[i*4+j]===HB)hw[i]+=P.skw[i*4+j]/255;
+ // mouth corners: the widest lip vertices either side of the mouth joint (falls back to the joint ± a mouth's width)
+ var cL=null,cR=null;if(lip)for(i=0;i<n;i++){if(hw[i]<.5)continue;var x=pos[i*3],y=pos[i*3+1],z=pos[i*3+2];if(Math.abs(y-mo[1])>.02||z<mo[2]-.03)continue;if(lip(i)<.55)continue;
+  if(x>cx&&(!cL||x>cL[0]))cL=[x,y,z];if(x<cx&&(!cR||x<cR[0]))cR=[x,y,z]}
+ var mw=eyeX*.78;if(!cL||Math.abs(cL[0]-cx)<eyeX*.4||Math.abs(cL[0]-cx)>eyeX*1.3)cL=[cx+mw,mo[1],mo[2]-.006];if(!cR||Math.abs(cR[0]-cx)<eyeX*.4||Math.abs(cR[0]-cx)>eyeX*1.3)cR=[cx-mw,mo[1],mo[2]-.006];
+ function G(d,s){return Math.exp(-d*d/(2*s*s))}
+ var u=eyeX/.032; /* the shapes are drawn for an adult face; a smaller face moves less */
+ for(i=0;i<n;i++){var w0=hw[i];if(w0<.05)continue;x=pos[i*3];y=pos[i*3+1];z=pos[i*3+2];var front=sstep(eyeZ-.06*u,eyeZ-.02*u,z)*w0;if(front<=0)continue;
+  var sd=x>cx?1:-1,cor=sd>0?cL:cR,dc=Math.hypot(x-cor[0],y-cor[1],(z-cor[2])*.6),e=sd>0?eL:eR;
+  // smile: the corners go out, up and back; the cheeks lift; the lower lids rise a little
+  var ws=G(dc,.016*u)*front,wc=G(Math.hypot(x-(cor[0]+sd*.008*u),y-(cor[1]+.022*u)),.016*u)*front,wl=G(Math.hypot(x-e[0],y-(eyeY-.013*u)),.008*u)*front;
+  var S=out[0];S[i*3]=sd*.0032*u*ws;S[i*3+1]=(.0042*ws+.0024*wc+.0011*wl)*u;S[i*3+2]=(-.0022*ws+.0014*wc)*u;
+  // brows up: the band over each eye lifts, the forehead with it
+  var wb=G(x-e[0],.024*u)*G(y-(eyeY+.03*u),.014*u)*front,wf=G(x-cx,.05*u)*sstep(eyeY+.035*u,eyeY+.07*u,y)*front*.4;
+  var B=out[1];B[i*3+1]=(.0042*wb+.0016*wf)*u;B[i*3+2]=.0006*wb*u;
+  // frown: the inner brows pull down and together
+  var wi=G(x-(cx+sd*.014*u),.012*u)*G(y-(eyeY+.024*u),.011*u)*front;
+  var F=out[2];F[i*3]=-sd*.0022*wi*u;F[i*3+1]=-.0028*wi*u;F[i*3+2]=.0012*wi*u;
+  // sad: the corners fall and the inner brows rise
+  var Sd=out[3];Sd[i*3]=-sd*.0012*ws*u;Sd[i*3+1]=(-.0034*ws+.0026*wi)*u;Sd[i*3+2]=-.0006*ws*u}
+ return out}
 function r2(v){return Math.round(v*50)/50}
 /* the street is not a cast list: anybody the story did not author (no sex given) gets a body and a look of their own —
    heavy or thin, shaved or not, cap, glasses, a jacket or a track top — decided by their id, so the same person is the
@@ -302,7 +338,7 @@ P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress
  bg.setAttribute('skinIndex',SH.si);bg.setAttribute('skinWeight',SH.sw);bg.setAttribute('hf',SH.hf);bg.setAttribute('stc',SH.stache);bg.setIndex(new T.BufferAttribute(new Uint16Array(idx),1));
  bg.morphAttributes.position=SH.morph;bg.morphTargetsRelative=true;bg.computeBoundingSphere();return bg})());
  var smat=skinMat(look,ctx);smat.morphTargets=true;
- var body=new T.SkinnedMesh(bg,smat);body.morphTargetInfluences=[0,0];body.castShadow=true;body.receiveShadow=true;body.frustumCulled=false;g.add(body);body.bind(S.sk,new T.Matrix4());
+ var body=new T.SkinnedMesh(bg,smat);body.morphTargetInfluences=[0,0,0,0,0,0];body.castShadow=true;body.receiveShadow=true;body.frustumCulled=false;g.add(body);body.bind(S.sk,new T.Matrix4());
  function addGarment(geo,mat){var m=new T.SkinnedMesh(geo,mat);m.castShadow=true;m.receiveShadow=true;m.frustumCulled=false;g.add(m);m.bind(S.sk,new T.Matrix4());garments.push(m);return m}
  // ----- top
  var J=B.J,pelv=jv(J,'pelvis'),neck=jv(J,'neck_01'),sp3=jv(J,'spine_03'),hipY=jv(J,'thigh_l').y;
@@ -317,13 +353,15 @@ P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress
    if(y<bust&&z>sp3.z&&bins[k]!=null){var tz=bins[k]-(bust-y)*.18;if(tz>z)p[i*3+2]=z+(tz-z)*.85}
    if(y<blade&&z<sp3.z&&bb[k]!=null){var tb=bb[k]+(blade-y)*.1;if(tb<z)p[i*3+2]=z+(tb-z)*.7}}};
  var TORSOB={};[BONE.pelvis,BONE.spine_01,BONE.spine_02,BONE.spine_03,BONE.clavicle_l,BONE.clavicle_r,BONE.neck_01].forEach(function(x){TORSOB[x]=1});
- var shapeTop=function(p,n,R,ln,bnd){var list=[],all=[],inSet=new Uint8Array(n);for(var i=0;i<n;i++){var v=R.list[i];if(!TORSOB[P.ski[v*4]])continue;all.push(i);if(!bnd[i]||p[i*3+1]<sp3.y-.1){list.push(i);inSet[i]=1}}
-  var spz=function(y){return sp3.z};smoothSet(p,list,ln,inSet,6);clothEnvelope(p,list,spz,.32,.06);smoothSet(p,list,ln,inSet,10);sliceHull(p,list,function(){return 0},.014,.0);smoothSet(p,list,ln,inSet,4)};
+ /* a shirt used to be hulled slice by slice over the whole torso, shoulders included: lowered from the A-pose, the hulled shoulder
+    swelled into a pad and the whole shirt read as a balloon with the arms inside it. A shirt here only softens the
+    anatomy under it, hangs straight from the chest and the shoulder blades (drapeTop), and keeps its line: the arms stay arms. */
+ var shapeSoft=function(p,n,R,ln,bnd){var list=[],inSet=new Uint8Array(n);for(var i=0;i<n;i++){var v=R.list[i];if(!TORSOB[P.ski[v*4]]||bnd[i])continue;if(P.ski[v*4]===BONE.clavicle_l||P.ski[v*4]===BONE.clavicle_r)continue;list.push(i);inSet[i]=1}smoothSet(p,list,ln,inSet,6);if(ph.fem&&ph.age>14)drapeTop(p,n,R);smoothSet(p,list,ln,inSet,4)};
  function centroid(ti){var k=ti*3,a=P.otri[k],b=P.otri[k+1],c=P.otri[k+2];return[(B.pos[a*3]+B.pos[b*3]+B.pos[c*3])/3,(B.pos[a*3+1]+B.pos[b*3+1]+B.pos[c*3+1])/3,(B.pos[a*3+2]+B.pos[b*3+2]+B.pos[c*3+2])/3]}
  function innerTris(){var t=P.tmpl[topT];if(!look.outer)return t;var keep=[],open=look.outer!=='track';for(var i=0;i<t.length;i++){var q=centroid(t[i]),k3=P.otri[t[i]*3];if(!TORSOB[P.ski[k3*4]])continue;if(q[2]<sp3.z-.01&&q[1]<neck.y-.03)continue;
    if(open){var gp=.05+.035*sstep(sp3.y-.05,neck.y,q[1])+.03;if((q[2]>sp3.z-.01&&(Math.abs(q[0]-pelv.x)<gp||(look.outer!=='cardigan'&&q[1]<hipY+.04)))||q[1]>neck.y-.05)keep.push(t[i])}
    else if(q[1]>neck.y-.05)keep.push(t[i])}return new Uint16Array(keep)}
- var gT=C.top||(C.top=grow(B,trisOf(innerTris()),{aoK:P.dbg==='noao'?0:45,loose:true,shape:shapeTop,thick:function(v,x,y,z){var t=TORSOB[P.ski[v*4]]?thickTop:thickTop*.6;
+ var gT=C.top||(C.top=grow(B,trisOf(innerTris()),{aoK:P.dbg==='noao'?0:look.outer?18:45,loose:true,shape:shapeSoft,thick:function(v,x,y,z){/* a sleeve lies on the arm: a loose one, lowered from the A-pose, swells the shoulder into a pad */var t=TORSOB[P.ski[v*4]]?thickTop:thickTop*.3;
    // a shirt stands off the chest and hangs straight from it; tighter at the shoulders
    if(y<sp3.y&&y>hipY-.05)t+=.008*(1-sstep(sp3.y-.05,sp3.y+.05,y));if(z<0)t+=.002;return t},relax:jacket?14:10,min:jacket?.012:.005,folds:jacket?.0035:.0026}));
  addGarment(gT.geo,clothMat({a:topCol,b:o.top2||topCol,pat:jacket?0:pat,rough:jacket?.72:.88,sheen:jacket?.08:.12},ctx));
@@ -334,7 +372,7 @@ P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress
     if(look.outer!=='cardigan'&&cy<hipY+.02)continue;
     if(open&&cz>sp3.z&&cy<nY-.02){var gap=.05+.035*sstep(s3-.05,nY,cy);if(Math.abs(cx-pelv.x)<gap)continue}
     keep.push(t[i])}
-   return grow(B,trisOf(keep),{aoK:40,loose:true,shape:shapeTop,thick:function(v,x,y,z){var t2=TORSOB[P.ski[v*4]]?thickTop+.009:.007;if(TORSOB[P.ski[v*4]]&&y<sp3.y&&y>hipY-.05)t2+=.008*(1-sstep(sp3.y-.05,sp3.y+.05,y));if(z<0)t2+=.004;return t2},relax:14,min:.014,folds:.004,hemSmooth:10})})());
+   return grow(B,trisOf(keep),{aoK:40,loose:true,shape:shapeSoft,thick:function(v,x,y,z){var t2=TORSOB[P.ski[v*4]]?thickTop+.009:.0045;if(TORSOB[P.ski[v*4]]&&y<sp3.y&&y>hipY-.05)t2+=.008*(1-sstep(sp3.y-.05,sp3.y+.05,y));if(z<0)t2+=.004;return t2},relax:14,min:.014,folds:.004,hemSmooth:10})})());
   var oc=look.outerCol||'#3a4a6a',den=!!o.denimJacket;
   addGarment(gO.geo,clothMat({a:oc,b:o.yoke||'#f2ede4',c:'#f2ede4',y:sp3.y+.035,pat:look.outer==='track'?(o.yoke?11:9):look.outer==='cardigan'?10:den?8:0,rough:look.outer==='track'?.55:look.outer==='cardigan'?.95:.8,sheen:look.outer==='track'?.18:.06,weave:den?1.4:1},ctx))}
  // ----- legs
@@ -361,7 +399,11 @@ P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress
   em.material.emissive=new T.Color(.05,.045,.04);
   // UV sphere: put the iris at +z
   var gu=em.geometry.attributes.uv,gp=em.geometry.attributes.position;for(var q=0;q<gp.count;q++){var x=gp.getX(q)/r,y=gp.getY(q)/r,zz=gp.getZ(q)/r;var ang=Math.acos(clamp(zz,-1,1));var k=ang/PI;var phi=Math.atan2(y,x);gu.setXY(q,.5+Math.cos(phi)*k*.55*2,.5+Math.sin(phi)*k*.55*2)}gu.needsUpdate=true;
-  var pivot=new T.Group();pivot.position.copy(e).sub(headJ);pivot.position.z-=r*.18;headB.add(pivot);pivot.add(em);eyes.push(pivot)});
+  var pivot=new T.Group();pivot.position.copy(e).sub(headJ);pivot.position.z-=r*.18;headB.add(pivot);pivot.add(em);
+  var cm=new T.MeshStandardMaterial({color:0x000000,roughness:.03,metalness:0,transparent:true,opacity:.2,depthWrite:false,envMapIntensity:1.4});ctx.own(cm);var co=new T.Mesh(new T.SphereGeometry(r*1.03,20,14,0,PI*2,0,PI*.42),cm);co.rotation.x=PI/2;co.renderOrder=2;pivot.add(co);
+  /* the catchlight: the one white point that makes a face look back at you */
+  var cl=new T.Mesh(new T.SphereGeometry(r*.13,8,6),new T.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.85}));ctx.own(cl.material);cl.position.set(r*-.3,r*.32,r*.93);cl.renderOrder=3;pivot.add(cl);
+  eyes.push(pivot)});
  // ----- accessories (bind-space, on bones)
  accessories(o,look,B,S,ctx,ph);
  // contact shadow
@@ -550,13 +592,15 @@ function ease(x){x=clamp(x,0,1);return x*x*(3-2*x)}
 function mix(o,k,v,e){o[k]+=(v-o[k])*e}
 var LINE=3.4;
 P.express=function(g,t,dt){var u=g.userData,o=u.o||{},x=o.expr,m=o.mode;o._wide=0;
- var talk=m==='talk',beat=0,since=x?t-x.t0:99;
+ var talk=m==='talk'||m==='sittalk',beat=0,since=x?t-x.t0:99;
  if(talk){beat=x?ease(since/.35)*(1-ease((since-LINE)/1.1)):1;
   // the doll's cyclic talking arms and jaw are the words; outside the line they fall still
   var rest=1-beat,ar=u.arms;for(var i=0;i<2;i++){mix(ar[i].sh.rotation,'x',-.08,rest*.85);mix(ar[i].el.rotation,'x',-.28,rest*.85);mix(ar[i].sh.rotation,'z',i?-.08:.08,rest*.6)}
   if(x)u.mouth.scale.y=1+(u.mouth.scale.y-1)*clamp(since<LINE?1:1-(since-LINE)*2,0,1)}
  if(!x||!x.k||since>LINE+6)return;
  var e=(x.role==='listen'?.55:1)*(talk?Math.max(beat,.35):ease(since/.5)*(1-ease((since-LINE-2)/2))),k=x.k,H=u.head.rotation,To=u.torso.rotation,A=u.arms,s=CALM?0:1;
+ /* seated (an interview, a sofa) the mood is said with the face, the head and a small hand: an arm thrown up from a chair reads as a puppet */
+ if(m==='sit'||m==='sittalk'){seated(k,e,H,To,A,u,t,since,s);return}
  if(e<=.001)return;
  if(k==='joy'||k==='warm'){H.x-=.1*e;H.z+=Math.sin(t*2.2)*.04*e*s;if(talk&&k==='joy'){mix(A[0].sh.rotation,'x',-1.0,e*.8);mix(A[0].sh.rotation,'z',.55,e*.8);mix(A[1].sh.rotation,'z',-.55,e*.6)}
   if(x.role==='listen')H.x+=Math.max(0,Math.sin(since*5))*.12*e*s;u.mouth.scale.y*=1+.25*e}
@@ -566,6 +610,23 @@ P.express=function(g,t,dt){var u=g.userData,o=u.o||{},x=o.expr,m=o.mode;o._wide=
  else if(k==='grief'){H.x+=.34*e;To.x+=.14*e;for(var j=0;j<2;j++){mix(A[j].sh.rotation,'x',.02,e);mix(A[j].el.rotation,'x',-.16,e)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*.35}
  else if(k==='wonder'){H.x-=.2*e;if(talk){mix(A[0].sh.rotation,'z',.6,e);mix(A[1].sh.rotation,'z',-.6,e);mix(A[0].sh.rotation,'x',-.55,e);mix(A[1].sh.rotation,'x',-.55,e)}o._wide=e}
 };
+/* what the face wants now: the line's mood (speaker full, listener smaller), the room's mode, and a resting face of
+   the person's own — some people's faces rest on a smile. [smile, browUp, frown, sad] */
+function faceWant(u,t,h){var o=u.o||{},m=o.mode,x=o.expr,w=[0,0,0,0],rest=h.restFace!=null?h.restFace:(h.restFace=hashf((o._id||'')+'face')*.16);
+ w[0]=rest;if(m==='cheer'||m==='sing'||m==='flare'){w[0]=.9;w[1]=.45;return w}
+ if(m==='talk'||m==='sittalk')w[0]=rest+.08;
+ var since=x?t-x.t0:99;if(!x||!x.k||since>LINE+6)return w;
+ var e=(x.role==='listen'?.6:1)*ease(since/.4)*(1-ease((since-LINE-3)/3)),k=x.k;
+ if(k==='joy'){w[0]=Math.max(w[0],.95*e);w[1]=.3*e}else if(k==='warm'){w[0]=Math.max(w[0],.6*e)}else if(k==='tender'){w[0]=.4*e;w[3]=.18*e;w[1]=.12*e}
+ else if(k==='tense'){w[2]=.75*e;w[0]*=1-e}else if(k==='grief'){w[3]=.85*e;w[1]=.3*e;w[0]*=1-e}else if(k==='wonder'){w[1]=.95*e;w[0]=Math.max(w[0]*.5,.15*e)}
+ return w}
+function seated(k,e,H,To,A,u,t,since,s){
+ /* the hands stay in the lap: the face, the head and the shoulders carry the mood */
+ if(k==='joy'||k==='warm'){H.x-=.06*e;H.z+=Math.sin(t*2.2)*.03*e*s;To.x-=.02*e}
+ else if(k==='tender'){H.z+=.1*e;H.x+=.05*e}
+ else if(k==='tense'){H.x+=.08*e;To.x+=.05*e;for(var j=0;j<2;j++)mix(A[j].sh.rotation,'z',j?-.02:.02,e*.8)}
+ else if(k==='grief'){H.x+=.16*e;To.x+=.08*e;u.mouth.scale.y=1+(u.mouth.scale.y-1)*.35}
+ else if(k==='wonder'){H.x-=.12*e;To.x-=.03*e}}
 P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=h.rest;
  P.express(g,t,dt||.03);
  var pel=b[BONE.pelvis],base=pel.userData.p0||(pel.userData.p0=pel.position.clone()),h0=u.hips.userData.p0||(u.hips.userData.p0=u.hips.position.clone());
@@ -581,13 +642,13 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
   b[BONE['lowerarm_'+s]].quaternion.copy(_qi.copy(Wu).invert()).multiply(qOf(a.el,_q)).multiply(Wl);
   b[BONE['hand_'+s]].quaternion.copy(_qi.copy(Wl).invert()).multiply(qOf(a.hand,_q)).multiply(Wh);
   // shoulders lift a little when the arm goes up
-  var lift=clamp(-a.sh.rotation.x-1.2,0,1.6)*.22;b[BONE['clavicle_'+s]].quaternion.setFromAxisAngle(new T.Vector3(0,0,1),(s==='l'?1:-1)*lift);
+  /* and they settle a little when the arm hangs: a shoulder held at its rest height reads as a shoulder pad */var lift=clamp(-a.sh.rotation.x-1.2,0,1.6)*.22,drop=.11*(1-clamp(-a.sh.rotation.x/.9,0,1))*(1-clamp(Math.abs(a.sh.rotation.z)/.6,0,1));lift-=drop;b[BONE['clavicle_'+s]].quaternion.setFromAxisAngle(new T.Vector3(0,0,1),(s==='l'?1:-1)*lift);
   // the fingers: a soft cascade at rest, closing towards a grip when the arm is raised (a scarf, a flag, a fist)
   var Fh=R.hand&&R.hand[s];if(Fh){var up=clamp((-a.sh.rotation.x-1.6)/1.1,0,1),grip=clamp(h.held&&h.held.s===s?.92:u.grip!=null?u.grip:up*.75,0,1),j=h.fj||(h.fj=.85+Math.random()*.3);
    for(var nm in Fh){var e2=Fh[nm],bn=b[BONE[nm]];if(!bn)continue;var q=bn.quaternion.copy(ID);
     if(e2.f==='thumb'){var o2=e2.k===1?.42+grip*.25:e2.k===2?.22+grip*.35:.28+grip*.45;if(e2.opp&&e2.k===1)q.multiply(_q2.setFromAxisAngle(e2.opp,o2));else q.multiply(_q2.setFromAxisAngle(e2.curl,o2));continue}
-    var cas={index:.78,middle:.95,ring:1.08,pinky:1.22}[e2.f],rel=(e2.k===1?.42:e2.k===2?.68:.38)*cas*j,fist=e2.k===1?1.35:e2.k===2?1.55:1.05;
-    if(e2.spA)q.multiply(_q2.setFromAxisAngle(e2.sp,e2.spA*(1-grip*.5)));
+    var cas={index:.78,middle:.95,ring:1.08,pinky:1.22}[e2.f],rel=(e2.k===1?.5:e2.k===2?.78:.45)*cas*j,fist=e2.k===1?1.35:e2.k===2?1.55:1.05;
+    if(e2.spA)q.multiply(_q2.setFromAxisAngle(e2.sp,e2.spA*.45*(1-grip*.5)));
     q.multiply(_q2.setFromAxisAngle(e2.curl,rel+(fist-rel)*grip))}}
  });
  // legs, with an ankle that keeps the sole near the floor
@@ -599,6 +660,7 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
  // face: blink + jaw
  var bl=u.eyes[0].e.scale.y<.5&&!(u.o&&u.o._wide>.5)?1:0,inf=h.body.morphTargetInfluences;inf[0]+=(bl-inf[0])*Math.min(1,(dt||.03)*30);
  var jo=clamp((u.mouth.scale.y-1)*.28,0,.55);inf[1]+=(jo-inf[1])*Math.min(1,(dt||.03)*18);
+ if(inf.length>5){var fw=faceWant(u,t,h),fk=Math.min(1,(dt||.03)*5);for(var fi=0;fi<4;fi++)inf[2+fi]+=(fw[fi]-inf[2+fi])*fk}
  // eyes: small saccades
  var conv=u.o&&(u.o.mode==='talk'||u.o.mode==='listen');
  // in a conversation the eyes hold the other face (the body already turned to it): small, slow saccades round centre

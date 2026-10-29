@@ -15,6 +15,7 @@
  */
 import {buildCast, HERO_LOOKS, type CastManifest} from './cast'
 import {screenplayChapters} from './screenplay'
+import {SEASON_ONE_UNTIL, seasonNights, seasonOne} from './season'
 import {MASTER_IDS, masterChapters} from './screenplay/master'
 import {nightChapter} from './content/night'
 import {centrepieceOf, readMatch} from './match'
@@ -24,7 +25,7 @@ import {ritualLife} from './content/ritual'
 import type {MatchdayRitual} from './ritual'
 import type {VoxelSkin} from './skin'
 import {fillChapter, type Vars} from './text'
-import type {ArchiveRef, CardDef, Chapter, LifeCulture, LifeCultureKind, LifePack, LifeReadiness, MatchDetail} from './types'
+import type {ArchiveRef, CardDef, Chapter, LifeCulture, LifeCultureKind, LifePack, LifeReadiness, MatchDetail, MatchFacts} from './types'
 
 const CULTURE_KINDS: LifeCultureKind[] = ['food', 'habit', 'humour', 'meetup', 'route']
 import {validateChapter, lifeFlagsOf} from './validate'
@@ -47,6 +48,8 @@ export type ComposeInput = {
   anchors: ArchiveRef[]
   /** the club's own match record by ISO day: starters, bench and goals, where it has them */
   details?: Record<string, MatchDetail>
+  /** the club's own recorded match by ISO day (one match on that day, approved): for a CURATED night whose title is not a scoreline */
+  matches?: Record<string, MatchFacts>
   /** the club's sourced matchday culture (world.json, already validated); omitted or empty means none is recorded */
   culture?: LifeCulture[]
   /** the club's matchday as its city lives it (`ritual.ts`, every element sourced); omitted or null means none */
@@ -57,6 +60,8 @@ export type ComposeInput = {
   storyLocale?: 'en' | 'he'
   /** master-screenplay chapters (bible §16) this life adds to the shared ones; default: all of them, for every club; pass [] to opt out */
   master?: readonly string[]
+  /** Season One (29.10.2026) plays ages 6–16 in place of the childhood and youth chapters; false keeps the old ones */
+  season?: boolean
 }
 
 export const ANCHOR_TARGET = 8
@@ -108,12 +113,23 @@ export function composeLife(input: ComposeInput): LifePack {
     ground: skin.stadium ?? (locale === 'he' ? 'המגרש' : 'the ground'),
     friend: cast.friend!.name, kiosk: cast.kiosk!.name, elder: cast.elder!.name, rival: cast.rival!.name, teacher: cast.teacher!.name,
     boss: cast.boss!.name, mate: cast.mate!.name, seller: cast.seller!.name, child: cast.child!.name,
+    wild: cast.wild!.name, neighbour: cast.neighbour!.name,
+    // the name he is given on the title screen: kept as a token here and filled by the shell, line by line
+    hero: '{hero}',
     dadName: given('dad', locale === 'he' ? 'אבא שלך' : 'your father'), mumName: given('mum', locale === 'he' ? 'אמא שלך' : 'your mother'),
   }
 
   // the short name is never used to read a scoreline: "Hapoel" is half the league
   const names = [club.name, ...(input.aliases ?? [])]
-  const withMatch = (a: ArchiveRef): ArchiveRef => { const m = a.precision === 'day' ? readMatch(a.title, names) : null; const d = m && a.on ? input.details?.[a.on] : undefined; return m ? {...a, match: d ? {...m, detail: d} : m} : a }
+  // a night the pack chose by hand stands on the club's recorded match of that day even when its own title is not a scoreline
+  const curated = new Set(input.selection?.clubId === club.id ? input.selection.nights : [])
+  const withMatch = (a: ArchiveRef): ArchiveRef => {
+    const read = a.precision === 'day' ? readMatch(a.title, names) : null
+    const recorded = !read && a.on && (curated.has(a.on) || curated.has(a.factId)) ? input.matches?.[a.on] ?? null : null
+    const m = read ?? recorded
+    const d = m && a.on ? input.details?.[a.on] ?? (recorded ? recorded.detail : undefined) : undefined
+    return m ? {...a, match: d ? {...m, detail: d} : m} : a
+  }
   const dated = input.anchors.filter(a => a.precision === 'day' && a.on).map(withMatch).sort((a, b) => a.on!.localeCompare(b.on!))
   const yearly = input.anchors.filter(a => a.precision === 'year').sort((a, b) => a.year - b.year)
   const timelineOk = input.timeline?.clubId === club.id && Number.isInteger(input.timeline.birthYear)
@@ -132,14 +148,22 @@ export function composeLife(input: ComposeInput): LifePack {
     else nightRows = [...nightRows, centre]
     nightRows = nightRows.filter((a, i) => nightRows.findIndex(b => b.factId === a.factId) === i)
   }
-  const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId, locale))
+  // Season One: the childhood and youth as six episodes; a night it stands on is not played again as a night of its own
+  const withSeason = input.season !== false
+  const season = withSeason ? seasonOne({birthYear, nights: dated, chosen: chosen.map(a => a.factId)}) : []
+  const seasonUsed = seasonNights(season)
+  // the season IS the childhood and the youth: the life's own chapters and nights of those ages give way to it
+  const afterSeason = (age: number) => !season.length || age > SEASON_ONE_UNTIL
+  const nights = nightRows.filter(a => !seasonUsed.has(a.factId) && afterSeason(ageAt(a.year)!)).map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId, locale))
 
-  const universal = [...screenplayChapters(locale), ...masterChapters(input.master ?? MASTER_IDS, locale)]
+  const universal = [...screenplayChapters(locale), ...masterChapters(input.master ?? MASTER_IDS, locale)].filter(c => c.id === 'finale' || afterSeason(c.age))
   const lastAge = Math.max(...universal.map(c => c.age), ...nights.map(c => c.age), 0)
   // one life, in the order it was lived: by age, a night after the ordinary day of the same age
   const ordered = [...universal.map((c, i) => ({c, k: c.age, o: i, night: 0})), ...nights.map((c, i) => ({c, k: c.age, o: i, night: 1}))]
     .sort((a, b) => a.c.id === 'finale' ? 1 : b.c.id === 'finale' ? -1 : a.k - b.k || a.night - b.night || a.o - b.o)
     .map(x => x.c.id === 'finale' ? {...x.c, age: Math.max(x.c.age, lastAge)} : x.c)
+  // (the season's own episodes come first; the life's chapters follow it)
+  ordered.unshift(...season)
 
   // a year the archive knows only as a year becomes a card before the chapter of that age — a line from the club's book, not a scene
   const preludes = new Map<string, CardDef[]>()
@@ -190,8 +214,9 @@ export function composeLife(input: ComposeInput): LifePack {
     clubId: club.id,
     club: {name: club.name, short: skin.short, city: club.city, country: club.country},
     skin, cast,
-    hero: {birthYear, looks: HERO_LOOKS},
+    hero: {birthYear, looks: HERO_LOOKS, ...(given('hero', '') ? {name: given('hero', '')} : {})},
     chapters, rooms, readiness,
+    ...(input.cast?.clubId === club.id ? {given: Object.fromEntries(Object.entries(input.cast.names).filter(([k, v]) => k !== 'hero' && typeof v === 'string' && v.trim()).map(([k, v]) => [k, v.trim().slice(0, 24)]))} : {}),
     anchors: [...nightRows, ...yearly.filter(a => { const age = ageAt(a.year); return age !== null && age >= FIRST_AGE })],
     provenance: {kind: 'generated-from-anchors', universalChapters: universal.length, anchoredChapters: nights.length, cultureDna: 'pending'},
     ...(culture.length ? {culture} : {}),

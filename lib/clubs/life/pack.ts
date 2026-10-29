@@ -8,7 +8,7 @@
 import type {ClubData} from '@/lib/clubs/contract'
 import {REGISTRY} from '@/lib/master/registry'
 import {composeLife} from '@/lib/life/universal/compose'
-import type {ArchiveRef, LifePack} from '@/lib/life/universal/types'
+import type {ArchiveRef, LifePack, MatchFacts} from '@/lib/life/universal/types'
 import {LIFE_ANCHORS, LIFE_CAST, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs'
 import {clubSkin} from './skins'
 import {clubWorld} from '@/lib/clubs/world'
@@ -30,10 +30,52 @@ export function lifeAnchors(data: Pick<ClubData, 'archive' | 'timeline' | 'sourc
     .map(f => ({factId: f.id, title: f.value.name, on: null, year: f.value.year!, precision: 'year' as const, hint: f.value.hint, locale: scriptOf(f.value.name, data.locales.content), sources: sourcesOf(f.sources)}))
   return [...dated, ...yearly]
 }
+/**
+ * The club's own match on a day, from its approved match records (`ClubData.matches`, confidence ≥ 2): the two sides as
+ * recorded, the score, the side the club was on, and — where the records hold them — who scored for the club and when
+ * (its own match row, or the goal records of that day when they account for every goal). Only a day with exactly ONE
+ * recorded match is answered: two matches on one day is a question, not a fact. Used for the nights the pack curated
+ * whose own title is not a scoreline (a row called "Minute 86" still stands on a recorded match).
+ */
+export function lifeMatches(data: Pick<ClubData, 'matches' | 'goals'>): Record<string, MatchFacts> {
+  type Row = {on?: string; home?: string; away?: string; homeGoals?: number; awayGoals?: number; us?: string | null; scorers?: {name: string; minute: number | null}[]; lineup?: string[]}
+  const byDay = new Map<string, Row[]>()
+  for (const f of data.matches ?? []) {
+    const v = f.value as unknown as Row
+    if (f.status !== 'approved' || f.confidence < 2 || !v.on || !/^\d{4}-\d{2}-\d{2}$/.test(v.on)) continue
+    if (!v.home || !v.away || !Number.isInteger(v.homeGoals) || !Number.isInteger(v.awayGoals) || (v.us !== 'home' && v.us !== 'away')) continue
+    byDay.set(v.on, [...(byDay.get(v.on) ?? []), v])
+  }
+  // the goal records of a day: the club's scorer is the last man of the club to touch it, the minute what the record says
+  type Goal = {on?: string; name?: string; subtitle?: string; sequence?: {actor: string | null; side: string; action: string}[]}
+  const FINISH = /shot|header|volley|finish|penalty|tap|lob|chip/i
+  const goalsOn = new Map<string, {name: string; minute: number | null}[]>()
+  for (const f of data.goals ?? []) {
+    const g = f.value as unknown as Goal
+    if (f.status !== 'approved' || f.confidence < 2 || !g.on) continue
+    const last = [...(g.sequence ?? [])].reverse().find(x => x.side === 'club' && x.actor && FINISH.test(x.action))
+    if (!last?.actor) continue
+    const m = /(?:דקה|minute)\s*(\d{1,3})|(\d{1,3})\s*['′]/i.exec(`${g.subtitle ?? ''} ${g.name ?? ''}`)
+    goalsOn.set(g.on, [...(goalsOn.get(g.on) ?? []), {name: last.actor, minute: m ? Number(m[1] ?? m[2]) : null}])
+  }
+  const out: Record<string, MatchFacts> = {}
+  for (const [day, rows] of byDay) {
+    if (rows.length !== 1) continue
+    const v = rows[0]!, us = v.us as 'home' | 'away', ours = us === 'home' ? v.homeGoals! : v.awayGoals!, theirs = us === 'home' ? v.awayGoals! : v.homeGoals!
+    const own = (v.scorers ?? []).filter(x => x && typeof x.name === 'string')
+    const fromGoals = goalsOn.get(day) ?? []
+    const scorers = own.length === ours ? own.map(x => ({name: x.name, minute: Number.isInteger(x.minute) ? x.minute : null})) : fromGoals.length === ours ? fromGoals : []
+    out[day] = {home: v.home!, away: v.away!, homeGoals: v.homeGoals!, awayGoals: v.awayGoals!, us, result: ours > theirs ? 'won' : ours < theirs ? 'lost' : 'drew', note: null,
+      ...(scorers.length || (v.lineup?.length ?? 0) === 11 ? {detail: {scorers, lineup: (v.lineup?.length ?? 0) === 11 ? v.lineup! : [], bench: []}} : {})}
+  }
+  return out
+}
+
 const cache = new Map<string, LifePack>()
 
-export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): LifePack {
-  const key = `${data.identity.id}:${data.version}:${story.locale ?? 'en'}`
+/** `season: false` composes the life without Season One — the shared chapters from the first age on (tests and tools only). */
+export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'; season?: boolean} = {}): LifePack {
+  const key = `${data.identity.id}:${data.version}:${story.locale ?? 'en'}:${story.season === false ? 'no-season' : 'season'}`
   const hit = cache.get(key)
   if (hit) return hit
   const club = REGISTRY.find(c => c.id === data.identity.id)
@@ -52,8 +94,9 @@ export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): Li
     aliases: selection?.aliases ?? [],
     skin, skinIssues: issues, skinPending: pending,
     cast, timeline: has(LIFE_TIMELINE), selection,
-    anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, dataVersion: data.version,
+    anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, matches: lifeMatches(data), dataVersion: data.version,
     storyLocale: story.locale,
+    ...(story.season === false ? {season: false} : {}),
     culture: clubWorld(id)?.culture ?? [],
     ritual: ritualFor(id),
   })

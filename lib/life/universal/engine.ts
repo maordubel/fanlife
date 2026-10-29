@@ -107,6 +107,10 @@ export function meets(state: LifeState, c: Cond | undefined): boolean {
   return false
 }
 
+/** A clock is running when its start holds, its job is not done, and it has not already run out. */
+export const clockRunning = (c: import('./types').ClockDef, state: LifeState): boolean =>
+  meets(state, c.from) && !meets(state, c.until) && !meets(state, {flag: c.fail})
+
 /** What the shell has to DO after a conversation, as opposed to what the log has to remember. */
 export type Directive =
   | {d: 'goto'; room: string; spawn: string; time?: 'day' | 'night'}
@@ -114,6 +118,10 @@ export type Directive =
   | {d: 'card'; card: string}
   | {d: 'sound'; cue: string}
   | {d: 'end'; ending: string}
+  | {d: 'cine'; id: string}
+  | {d: 'doc'; id: string}
+  | {d: 'live'; id: string}
+  | {d: 'stamp'; kind: import('./types').StampKind; text: string}
 
 /** Effects become log rows (what happened) and directives (what the screen does next). */
 export function eventsOf(effects: readonly Effect[] | undefined, state: LifeState): {events: LifeEvent[]; directives: Directive[]} {
@@ -143,6 +151,10 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
       case 'card': directives.push({d: 'card', card: fx.card}); break
       case 'sound': directives.push({d: 'sound', cue: fx.cue}); break
       case 'end': if (state.chapter) directives.push({d: 'end', ending: fx.ending}); break
+      case 'cine': directives.push({d: 'cine', id: fx.id}); break
+      case 'doc': directives.push({d: 'doc', id: fx.id}); break
+      case 'live': directives.push({d: 'live', id: fx.id}); break
+      case 'stamp': directives.push({d: 'stamp', kind: fx.kind, text: fx.text}); break
     }
   }
   return {events, directives}
@@ -182,10 +194,11 @@ export function openChapter(chapter: Chapter): LifeEvent[] {
 
 export type LifeStore = {read(key: string): string | null; write(key: string, value: string): void; clear(key: string): void}
 /**
- * The one save key. The second-edition script is THE script; a save written by the first edition
- * lives under `fan-life:club:<id>:life` and is never read, so it is silently ignored (left in place, not deleted).
+ * The one save key. Season One (29.10.2026) is THE script: a life saved by the second edition (`…:life:story2`) or the
+ * first (`…:life`) is never read, so it is silently ignored — left in place, not deleted — and the supporter starts
+ * the new season from its first episode.
  */
-export const saveKey = (clubId: string) => `fan-life:club:${clubId}:life:story2`
+export const saveKey = (clubId: string) => `fan-life:club:${clubId}:life:season1`
 
 export class Life {
   private log: LifeEvent[]

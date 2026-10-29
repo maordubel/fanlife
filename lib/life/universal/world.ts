@@ -76,7 +76,7 @@ export function throughDoor(door: {to: RoomId; spawn: string; time?: 'day' | 'ni
 
 /* ───────────── one conversation ───────────── */
 
-export type RunnerView = {talk: string; lines: Line[]; index: number; choices: Choice[]; done: boolean}
+export type RunnerView = {talk: string; lines: Line[]; index: number; choices: Choice[]; done: boolean; /** a timed moment: the choices stand this long, then `pick` is taken */ timer?: {s: number; pick: string} | null}
 
 /**
  * Plays a conversation line by line. Leaving is always allowed and applies NOTHING — so a box
@@ -105,7 +105,10 @@ export class Runner {
 
   view(): RunnerView {
     const b = this.branch!, last = this.i >= b.lines.length - 1
-    return {talk: this.talk!.id, lines: b.lines, index: Math.min(this.i, Math.max(0, b.lines.length - 1)), choices: last ? choicesOf(b, this.state) : [], done: false}
+    const choices = last ? choicesOf(b, this.state) : []
+    // a timer stands only while its own answer is on offer
+    const timer = last && b.timer && choices.some(c => c.id === b.timer!.pick) ? b.timer : null
+    return {talk: this.talk!.id, lines: b.lines, index: Math.min(this.i, Math.max(0, b.lines.length - 1)), choices, done: false, timer}
   }
 
   private settle(effects: readonly import('./types').Effect[] | undefined) {

@@ -6,7 +6,7 @@
  * state from which it no longer can. The second is the one that matters: "you cannot get stuck"
  * is a property of the whole graph, not of the path the author had in mind.
  */
-import {afterPlay, apply, atHand, eventsOf, fold, openChapter, type Directive} from './engine'
+import {afterPlay, apply, atHand, clockRunning, eventsOf, fold, openChapter, type Directive} from './engine'
 import type {Chapter, Cond, Effect, LifeEvent, LifePack, LifeState} from './types'
 import {beatFlag, beatFor, branchOf, choicesOf, sceneOf, talkOf, throughDoor} from './world'
 
@@ -43,6 +43,7 @@ function cutsOf(chapter: Chapter): Cuts {
   chapter.cast.forEach(p => walk(p.when)); chapter.spots.forEach(x => walk(x.when)); chapter.doors.forEach(d => { walk(d.when); walk(d.needs) })
   chapter.beats.forEach(b => walk(b.when)); chapter.objectives.forEach(o => walk(o.done))
   chapter.talks.forEach(t => t.branches.forEach(b => { walk(b.when); b.choices?.forEach(c => walk(c.when)) }))
+  chapter.clocks?.forEach(c => { walk(c.from); walk(c.until); cuts.flags.add(c.fail) })
   return cuts
 }
 const rank = (cuts: readonly number[], v: number) => cuts.reduce((n, c) => n + (v >= c ? 1 : 0), 0)
@@ -128,6 +129,11 @@ export function simulate(pack: LifePack, chapter: Chapter, seedEvents: readonly 
     for (const a of scene.actors) if (a.talk) then(outcomes(chapter, s, a.talk))
     for (const sp of scene.spots) then(outcomes(chapter, s, sp.talk))
     for (const d of scene.doors) { const r = throughDoor(d, s); if (r.ok) settle(chapter, r.events.reduce(apply, s)).forEach(o => add(k, o)) }
+    // a clock can always run out while he is still on his way: the life goes on another way, and that way must end too
+    for (const c of chapter.clocks ?? []) if (clockRunning(c, s)) {
+      const late = apply(s, {t: 'flag', k: c.fail, v: true})
+      then(c.talk ? outcomes(chapter, late, c.talk) : [{state: late, ended: null}])
+    }
   }
   // a state is alive when an ending can still be reached from it
   const alive = new Set<string>(ends)

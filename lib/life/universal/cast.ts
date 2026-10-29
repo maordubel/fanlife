@@ -27,6 +27,8 @@ export const CAST_ROLES: readonly CastRole[] = [
   {id: 'mate', label: 'Workmate', look: {h: 6.3, kit: true, pants: '#4a4f5c', skin: skin[2], hair: hair[0]}, blurb: 'Asked you a month ago. Will mention it exactly once.'},
   {id: 'driver', label: 'Driver', look: {h: 6.3, shirt: '#3a5a7a', pants: '#2c3345', skin: skin[1], hair: hair[2], cap: '#2c3345'}, blurb: 'The fare is in coins, exact. That is the whole conversation.'},
   {id: 'stranger', label: 'Stranger', look: {h: 6.3, shirt: '#6b7686', pants: '#3a3f48', skin: skin[3], hair: hair[1], stubble: true, jacket: '#3a3a3e'}, blurb: 'Nobody you know yet. Somebody you will half-remember.'},
+  {id: 'wild', label: 'Mate', look: {h: 4.7, shirt: '#3a5a3a', pants: '#2c3345', skin: skin[2], hair: hair[0], sex: 'm', age: 11, style: 'spiky', build: 0.4, denim: true, shoe: '#ece7de'}, blurb: 'Climbs first, asks never, eats whatever is dared.'},
+  {id: 'neighbour', label: 'Neighbour', look: {h: 5.6, shirt: '#b8a6c8', pants: '#3a3f48', skin: skin[3], hair: hair[3], sex: 'f', age: 64, style: 'bun', glasses: true, cardigan: '#6a5a7a', skirt: '#3a3446'}, blurb: 'Has a radio, a balcony and an opinion about all three of you.'},
   {id: 'child', label: 'The little one', look: {h: 4.2, kit: true, pants: '#3a4560', skin: skin[0], hair: hair[1]}, blurb: 'Wears the shirt too big and asks the question you stopped asking.'},
 ]
 
@@ -63,9 +65,9 @@ export function buildCast(manifest: CastManifest | null): Record<CastId, CastMem
  *   with him but never past `ROLE_CAP` — the old man by the barrier at forty is another old man by the same barrier.
  */
 export const MET_AT = 9
-const PEERS = new Set<CastId>(['friend', 'rival'])
+const PEERS = new Set<CastId>(['friend', 'rival', 'wild'])
 const PASSERS = new Set<CastId>(['mate', 'driver', 'stranger', 'child'])
-const ROLES = new Set<CastId>(['elder', 'kiosk', 'steward', 'seller'])
+const ROLES = new Set<CastId>(['elder', 'kiosk', 'steward', 'seller', 'neighbour'])
 export const ROLE_CAP = 84
 const GREY = '#8a8a90'
 
