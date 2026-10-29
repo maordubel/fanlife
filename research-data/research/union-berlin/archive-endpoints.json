@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-27T09:23:04.103Z"
+  "checkedAt": "2026-10-29T10:26:48.677Z"
  },
  "dfb-union:/en/clubs/1-fc-union-berlin": {
   "endpoint": "/en/clubs/1-fc-union-berlin",
@@ -61,7 +61,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-27T09:23:09.344Z"
+  "checkedAt": "2026-10-29T10:26:52.726Z"
  },
  "footballhistory-union:/club/union-berlin.html": {
   "endpoint": "/club/union-berlin.html",
@@ -69,7 +69,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-27T09:23:10.477Z"
+  "checkedAt": "2026-10-29T10:26:53.493Z"
  },
  "immer-unioner:/spieler.php?getid=44": {
   "endpoint": "/spieler.php?getid=44",
@@ -302,5 +302,85 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-10-27T09:23:02.413Z"
+ },
+ "immer-unioner:/spieler.php?getid=380": {
+  "endpoint": "/spieler.php?getid=380",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-28T10:02:58.365Z"
+ },
+ "immer-unioner:/spieler.php?getid=566": {
+  "endpoint": "/spieler.php?getid=566",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-28T10:03:02.713Z"
+ },
+ "immer-unioner:/spieler.php?getid=454": {
+  "endpoint": "/spieler.php?getid=454",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-28T10:03:06.058Z"
+ },
+ "immer-unioner:/spieler.php?getid=224": {
+  "endpoint": "/spieler.php?getid=224",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-28T10:03:10.124Z"
+ },
+ "immer-unioner:/spieler.php?getid=220": {
+  "endpoint": "/spieler.php?getid=220",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-28T10:03:14.045Z"
+ },
+ "immer-unioner:/spieler.php?getid=217": {
+  "endpoint": "/spieler.php?getid=217",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-29T10:26:31.307Z"
+ },
+ "immer-unioner:/spieler.php?getid=144": {
+  "endpoint": "/spieler.php?getid=144",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-29T10:26:35.426Z"
+ },
+ "immer-unioner:/spieler.php?getid=565": {
+  "endpoint": "/spieler.php?getid=565",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-29T10:26:38.952Z"
+ },
+ "immer-unioner:/spieler.php?getid=148": {
+  "endpoint": "/spieler.php?getid=148",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-29T10:26:42.979Z"
+ },
+ "immer-unioner:/spieler.php?getid=341": {
+  "endpoint": "/spieler.php?getid=341",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-29T10:26:46.914Z"
  }
 }

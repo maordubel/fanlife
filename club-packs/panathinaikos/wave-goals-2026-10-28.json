@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "clubId": "panathinaikos",
+  "contentLocale": "en",
+  "note": "Content round 28.10.2026: goals whose final touches two independent publishers describe (agent review, owner research instruction 2026-10-19).",
+  "sources": [
+    {
+      "id": "gr-uefa-barca-pao-2010",
+      "url": "https://www.uefa.com/uefachampionsleague/news/01e9-0e756d2e74ab-4e54b45ba57e-1000--messi-makes-merry-in-barca-stroll",
+      "title": "Messi makes merry in Barça stroll",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Paragraph on the 20th-minute opener (Tzorvas long kick, Cissé heel, Govou finish)"
+    },
+    {
+      "id": "gr-sky-barca-pao-2010",
+      "url": "https://www.skysports.com/football/barcelona-vs-panathinaikos/report/227465",
+      "title": "Five-star Barca fire warning",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Early paragraphs, 20th-minute Govou goal"
+    },
+    {
+      "id": "gr-fox-barca-pao-2010",
+      "url": "https://amp.foxsports.com/stories/soccer/messi-leads-barcelona-to-5-1-win",
+      "title": "Messi leads Barcelona to 5-1 win",
+      "publisher": "Fox Sports",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Paragraph on Govou's 20th-minute goal"
+    },
+    {
+      "id": "gr-uefa-roma-pao-2010",
+      "url": "https://www.uefa.com/uefaeuropaleague/news/01e2-0e73e8aa5bb9-9198e071d121-1000--panathinaikos-ease-past-roma",
+      "title": "Panathinaikos ease past Roma",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Paragraph on the three-goal spell before half-time (third goal)"
+    },
+    {
+      "id": "gr-fox-roma-pao-2010",
+      "url": "https://www.foxsports.com/stories/soccer/panathinaikos-sends-roma-out-of-europe",
+      "title": "Panathinaikos sends Roma out of Europe",
+      "publisher": "Fox Sports",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Paragraph on Cisse's injury-time goal and Cisse quote on Ninis' pass"
+    },
+    {
+      "id": "gr-pao-roma-pao-2010",
+      "url": "https://pao.gr/en/archive/1029-838464e2-a4b9-4df0-8c74-720039699e67",
+      "title": "AS Roma-PAO 2-3",
+      "publisher": "Panathinaikos FC (pao.gr)",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Match summary: Cisse third goal at 45+2"
+    },
+    {
+      "id": "gr-uefa-bremen-pao-2008",
+      "url": "https://www.uefa.com/uefachampionsleague/season=2009/matches/round=15276/match=302748/postmatch/report/index.html",
+      "title": "Panathinaikos too strong for Bremen",
+      "publisher": "UEFA",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Paragraph on the 58th-minute opener (Tziolis pass, Mantzios beats Pasanen)"
+    },
+    {
+      "id": "gr-wf-bremen-pao-2008",
+      "url": "https://www.worldfootball.net/report/champions-league-2008-2009-gruppe-b-werder-bremen-panathinaikos/liveticker/",
+      "title": "Werder Bremen - Panathinaikos (Champions League 2008/2009, Group B) live ticker",
+      "publisher": "worldfootball.net",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Event log, 58' goal entry (Mantzios right foot, assist Tziolis)"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2010-09-14-sidney-govou-20",
+      "value": {
+        "name": "20' · Sidney Govou v Barcelona",
+        "subtitle": "2010-09-14 · 20'",
+        "on": "2010-09-14",
+        "competition": "UEFA Champions League",
+        "opponent": "Barcelona",
+        "score": "1-5",
+        "narrative": "Djibril Cissé: flicks on goalkeeper Tzorvas' long kick with his heel. Sidney Govou: runs onto it free of Abidal and fires past Valdés from inside the box.",
+        "sequence": [
+          {
+            "actor": "Djibril Cissé",
+            "side": "club",
+            "action": "pass",
+            "zone": "C3",
+            "position": "central, receiving Tzorvas' long kick",
+            "note": "Heel flick that releases Govou."
+          },
+          {
+            "actor": "Sidney Govou",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "inside the penalty area",
+            "note": "Gets clear of Abidal and beats Valdés."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-barca-pao-2010",
+        "gr-sky-barca-pao-2010",
+        "gr-fox-barca-pao-2010"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Upstream contact: goalkeeper Alexandros Tzorvas' long kick (Sky/Fox: goal kick) from his own half, outside the board. Score is the final result, Panathinaikos first; goal made it 1-0."
+    },
+    {
+      "id": "goal-2010-02-25-djibril-cisse-45",
+      "value": {
+        "name": "45+2' · Djibril Cissé v Roma",
+        "subtitle": "2010-02-25 · 45+2'",
+        "on": "2010-02-25",
+        "competition": "UEFA Europa League",
+        "opponent": "Roma",
+        "score": "3-2",
+        "narrative": "Sotiris Ninis: plays Cissé clear with a pass. Djibril Cissé: takes the ball round goalkeeper Doni. Djibril Cissé: finishes from a tight angle.",
+        "sequence": [
+          {
+            "actor": "Sotiris Ninis",
+            "side": "club",
+            "action": "throughBall",
+            "zone": "C3",
+            "position": "central approach",
+            "note": "Pass that sends Cissé through."
+          },
+          {
+            "actor": "Djibril Cissé",
+            "side": "club",
+            "action": "dribble",
+            "zone": "C1",
+            "position": "inside the box, at the keeper",
+            "note": "Rounds Doni."
+          },
+          {
+            "actor": "Djibril Cissé",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "tight angle near the goal line",
+            "note": "Finishes from an acute angle."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-roma-pao-2010",
+        "gr-fox-roma-pao-2010",
+        "gr-pao-roma-pao-2010"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Minute: pao.gr gives 45+2; Fox says first-half injury time; UEFA gives no minute. Side of the tight angle not stated, so central columns used. Away leg in Rome; goal made it 3-1, final 3-2 (agg 6-4)."
+    },
+    {
+      "id": "goal-2008-11-04-vangelis-mantzios-58",
+      "value": {
+        "name": "58' · Vangelis Mantzios v Werder Bremen",
+        "subtitle": "2008-11-04 · 58'",
+        "on": "2008-11-04",
+        "competition": "UEFA Champions League",
+        "opponent": "Werder Bremen",
+        "score": "3-0",
+        "narrative": "Alexandros Tziolis: finds Mantzios on the edge of the area with a clever pass. Vangelis Mantzios: gets past Pasanen. Vangelis Mantzios: finishes past Wiese with his right foot.",
+        "sequence": [
+          {
+            "actor": "Alexandros Tziolis",
+            "side": "club",
+            "action": "pass",
+            "zone": "C3",
+            "position": "central midfield",
+            "note": "Clever pass to the edge of the area."
+          },
+          {
+            "actor": "Vangelis Mantzios",
+            "side": "club",
+            "action": "dribble",
+            "zone": "C2",
+            "position": "edge of the area",
+            "note": "Beats Pasanen."
+          },
+          {
+            "actor": "Vangelis Mantzios",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "edge of the area",
+            "note": "Right-footed finish past Wiese."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-uefa-bremen-pao-2008",
+        "gr-wf-bremen-pao-2008"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Away win at the Weserstadion; goal made it 1-0. worldfootball.net is an event log (58', Tziolis assist, right foot) confirming UEFA's narrative; beating Pasanen is from UEFA only and is not contradicted."
+    }
+  ]
+}

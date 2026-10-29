@@ -216,6 +216,26 @@
       "keep": "celtic:p-dh-d17673391d10",
       "drop": "celtic:p-dh-2801a3bcc418",
       "why": "\"John Divers\" and \"John Patrick Divers\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-10312c3e5265d5",
+      "drop": "celtic:p-dh-edf0d0e0ccf7",
+      "why": "\"Scott Brown\" twice: the Celtic Wiki register index form (\"Surname, First\") is the same man as the core record (identical name once the index form is printed, years compatible) — 2026-10-28"
+    },
+    {
+      "keep": "celtic:p-c96ae91376dc7a",
+      "drop": "celtic:p-dh-ad33ab8ed2b7",
+      "why": "\"Bobby Lennox\" twice: the Celtic Wiki register index form (\"Surname, First\") is the same man as the core record (identical name once the index form is printed, years compatible) — 2026-10-28"
+    },
+    {
+      "keep": "celtic:p-dh-b259348ec483",
+      "drop": "celtic:p-8e37c19671bfaf",
+      "why": "\"Daniel Doyle\" twice: the Celtic Wiki register index form (\"Surname, First\") is the same man as the core record (identical name once the index form is printed, years compatible) — 2026-10-28"
+    },
+    {
+      "keep": "celtic:p-dh-5c54fe9194a7",
+      "drop": "celtic:p-3a33b5ac68f9ba",
+      "why": "\"Tom Boyd\" twice: the Celtic Wiki register index form (\"Surname, First\") is the same man as the core record (identical name once the index form is printed, years compatible) — 2026-10-28"
     }
   ],
   "st-pauli": [

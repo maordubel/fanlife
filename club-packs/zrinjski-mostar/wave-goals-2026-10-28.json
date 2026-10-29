@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "contentLocale": "en",
+  "note": "Content round 28.10.2026: goals whose final touches two independent publishers describe (agent review, owner research instruction 2026-10-19).",
+  "sources": [
+    {
+      "id": "gr-zrm-sky-lri-2025",
+      "url": "https://www.skysports.com/football/zrinjski-mostar-vs-lincoln-red-imps/548324",
+      "title": "Live Commentary - Zrinjski vs L Red Imps | 02.10.2025",
+      "publisher": "Sky Sports",
+      "language": "en",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Live commentary entries at 12', 22' and 85' (goal lines with assist notes)"
+    },
+    {
+      "id": "gr-zrm-tportal-lri-2025",
+      "url": "https://www.tportal.hr/sport/clanak/stimac-i-zrinjski-razbili-protivnika-u-prvom-kolu-konferencijske-lige-20251002",
+      "title": "Štimac i Zrinjski razbili protivnika u prvom kolu Konferencijske lige",
+      "publisher": "tportal.hr",
+      "language": "hr",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Match narrative paragraphs on the 12' and 22' goals"
+    },
+    {
+      "id": "gr-zrm-bljesak-lri-2025",
+      "url": "https://bljesak.info/sport/nogomet/uzivo-zrinjski-nastavlja-s-europskim-pohodom-lincoln-na-otvaranju-europske-jeseni/534977",
+      "title": "UŽIVO | Zrinjski na vrhu Konferencijske lige: Lincoln ispraćen s pet komada!",
+      "publisher": "Bljesak.info",
+      "language": "hr",
+      "checkedAt": "2026-10-28",
+      "access": "available",
+      "locator": "Live-blog entries 18:57 (1:0), 19:07 (2:0) and 20:32 (5:0)"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2025-10-02-nemanja-bilbija-12",
+      "value": {
+        "name": "12' · Nemanja Bilbija v Lincoln Red Imps",
+        "subtitle": "2025-10-02 · 12'",
+        "on": "2025-10-02",
+        "competition": "UEFA Conference League",
+        "opponent": "Lincoln Red Imps",
+        "score": "1-0",
+        "narrative": "Marko Vranjković: crosses from the right into the six-yard box. Nemanja Bilbija: finishes from point-blank range with his left foot.",
+        "sequence": [
+          {
+            "actor": "Marko Vranjković",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right flank",
+            "note": "Delivers a cross from the right side towards the six-yard box."
+          },
+          {
+            "actor": "Nemanja Bilbija",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "six-yard box",
+            "note": "Left-footed finish from very close range into the middle of the goal."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-zrm-sky-lri-2025",
+        "gr-zrm-tportal-lri-2025",
+        "gr-zrm-bljesak-lri-2025"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Sky: left-foot shot from very close range, assisted by Vranjković cross. tportal: cross from the right into the six-yard box. Bljesak: Vranjković cross, Bilbija pushes it in."
+    },
+    {
+      "id": "goal-2025-10-02-leo-mikic-85",
+      "value": {
+        "name": "85' · Leo Mikić v Lincoln Red Imps",
+        "subtitle": "2025-10-02 · 85'",
+        "on": "2025-10-02",
+        "competition": "UEFA Conference League",
+        "opponent": "Lincoln Red Imps",
+        "score": "5-0",
+        "narrative": "Matej Šakota: feeds Mikić after Lincoln lose the ball near their own goal. Leo Mikić: fires a right-footed shot from the middle of the box.",
+        "sequence": [
+          {
+            "actor": "Matej Šakota",
+            "side": "club",
+            "action": "pass",
+            "zone": "C2",
+            "position": "near Lincoln's box",
+            "note": "Supplies the assist after Lincoln give the ball away close to their goal."
+          },
+          {
+            "actor": "Leo Mikić",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "centre of the box",
+            "note": "Right-footed finish from the centre of the area into the middle of the net."
+          }
+        ],
+        "reconstructionScope": "Final documented contacts; not the entire possession.",
+        "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+      },
+      "sources": [
+        "gr-zrm-sky-lri-2025",
+        "gr-zrm-bljesak-lri-2025"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-28",
+      "approvedAt": "2026-10-28",
+      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "notes": "Assist type not specified beyond 'assisted by' (Sky) / 'asistent' (Bljesak); recorded as a pass. Minute 85' from Sky, RTÉ, NFSBiH."
+    }
+  ]
+}

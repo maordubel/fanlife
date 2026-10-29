@@ -13,7 +13,7 @@
         "sourceUrl": "https://wiki.red-fans.com/",
         "prompt": "Salim Toama belongs on the Hapoel Tel Aviv team sheet. Which position was his?",
         "explanation": "Salim Toama played as a midfielder for Hapoel Tel Aviv (recorded 1998–2014).",
-        "basePrompt": "Salim Toama is on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "basePrompt": "Where did Salim Toama line up for Hapoel Tel Aviv?",
         "baseExplanation": "Salim Toama played as a midfielder for Hapoel Tel Aviv (recorded 1998–2014)."
       },
       {
@@ -25,7 +25,7 @@
         "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
         "prompt": "Gili Landau belongs on the Hapoel Tel Aviv team sheet. Which position was his?",
         "explanation": "Gili Landau played as a forward for Hapoel Tel Aviv (recorded 1974–1990).",
-        "basePrompt": "Gili Landau is on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "basePrompt": "Picture Gili Landau in a Hapoel Tel Aviv shirt. What was his position?",
         "baseExplanation": "Gili Landau played as a forward for Hapoel Tel Aviv (recorded 1974–1990)."
       },
       {
@@ -37,7 +37,7 @@
         "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
         "prompt": "Shavit Elimelech belongs on the Hapoel Tel Aviv team sheet. Which position was his?",
         "explanation": "Shavit Elimelech played as a goalkeeper for Hapoel Tel Aviv (recorded 1996–2007).",
-        "basePrompt": "Shavit Elimelech is on the Hapoel Tel Aviv team sheet. Which position was his?",
+        "basePrompt": "Picture Shavit Elimelech in a Hapoel Tel Aviv shirt. What was his position?",
         "baseExplanation": "Shavit Elimelech played as a goalkeeper for Hapoel Tel Aviv (recorded 1996–2007)."
       },
       {
@@ -182,9 +182,9 @@
           "span:p_98a480c32b"
         ],
         "sourceUrl": "https://wiki.red-fans.com/",
-        "prompt": "Turn back to Walid Badir's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "prompt": "Walid Badir in the Hapoel Tel Aviv record: in which decade is he first listed?",
         "explanation": "Walid Badir's recorded years at Hapoel Tel Aviv: 2005–2013.",
-        "basePrompt": "Turn back to Walid Badir's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Walid Badir in the Hapoel Tel Aviv record: in which decade is he first listed?",
         "baseExplanation": "Walid Badir's recorded years at Hapoel Tel Aviv: 2005–2013."
       },
       {
@@ -194,9 +194,9 @@
           "span:p_d5b6d6ee0a"
         ],
         "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
-        "prompt": "Turn back to Moshe Sinai's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "prompt": "Moshe Sinai joins the Hapoel Tel Aviv story. In which decade does he first appear?",
         "explanation": "Moshe Sinai's recorded years at Hapoel Tel Aviv: 1979–1993.",
-        "basePrompt": "Turn back to Moshe Sinai's Hapoel Tel Aviv years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Moshe Sinai joins the Hapoel Tel Aviv story. In which decade does he first appear?",
         "baseExplanation": "Moshe Sinai's recorded years at Hapoel Tel Aviv: 1979–1993."
       },
       {
@@ -338,9 +338,9 @@
           "hapoel-tel-aviv:match-m_67a2f41af253"
         ],
         "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
-        "prompt": "Place this result in its season: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which campaign was it?",
+        "prompt": "Find the year on the ticket stub: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which season?",
         "explanation": "Hapoel Tel Aviv 2-0 Chelsea, UEFA Cup, 18 Oct 2001.",
-        "basePrompt": "Place this result in its season: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which campaign was it?",
+        "basePrompt": "Find the year on the ticket stub: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which season?",
         "baseExplanation": "Hapoel Tel Aviv 2-0 Chelsea, UEFA Cup, 18 Oct 2001."
       },
       {
@@ -350,9 +350,9 @@
           "hapoel-tel-aviv:match-m_73bc1426d0e3"
         ],
         "sourceUrl": "https://wiki.red-fans.com/",
-        "prompt": "Place this result in its season: Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which campaign was it?",
+        "prompt": "Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which season does that result belong to?",
         "explanation": "Chelsea 1-1 Hapoel Tel Aviv, UEFA Cup, 1 Nov 2001.",
-        "basePrompt": "Place this result in its season: Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which campaign was it?",
+        "basePrompt": "Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which season does that result belong to?",
         "baseExplanation": "Chelsea 1-1 Hapoel Tel Aviv, UEFA Cup, 1 Nov 2001."
       },
       {
@@ -362,9 +362,9 @@
           "hapoel-tel-aviv:match-m_50b241094fed"
         ],
         "sourceUrl": "https://wiki.red-fans.com/",
-        "prompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Nov 1967 in the Israel State Cup. How did it finish? (Hapoel Tel Aviv first)",
+        "prompt": "Full time, 1 Nov 1967: Hapoel Tel Aviv v Maccabi Tel Aviv in the Israel State Cup. What did the scoreboard say? (Hapoel Tel Aviv first)",
         "explanation": "Maccabi Tel Aviv 2-1 Hapoel Tel Aviv, Israel State Cup, 1 Nov 1967.",
-        "basePrompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Nov 1967 in the Israel State Cup. How did it finish? (Hapoel Tel Aviv first)",
+        "basePrompt": "Full time, 1 Nov 1967: Hapoel Tel Aviv v Maccabi Tel Aviv in the Israel State Cup. What did the scoreboard say? (Hapoel Tel Aviv first)",
         "baseExplanation": "Maccabi Tel Aviv 2-1 Hapoel Tel Aviv, Israel State Cup, 1 Nov 1967."
       },
       {
@@ -386,9 +386,9 @@
           "hapoel-tel-aviv:match-m_d9908525390f"
         ],
         "sourceUrl": "https://wiki.red-fans.com/",
-        "prompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Mar 1986 in the Liga Leumit. How did it finish? (Hapoel Tel Aviv first)",
+        "prompt": "Full time, 1 Mar 1986: Hapoel Tel Aviv v Maccabi Tel Aviv in the Liga Leumit. What did the scoreboard say? (Hapoel Tel Aviv first)",
         "explanation": "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv, Liga Leumit, 1 Mar 1986.",
-        "basePrompt": "Remember the scoreline: Hapoel Tel Aviv v Maccabi Tel Aviv, 1 Mar 1986 in the Liga Leumit. How did it finish? (Hapoel Tel Aviv first)",
+        "basePrompt": "Full time, 1 Mar 1986: Hapoel Tel Aviv v Maccabi Tel Aviv in the Liga Leumit. What did the scoreboard say? (Hapoel Tel Aviv first)",
         "baseExplanation": "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv, Liga Leumit, 1 Mar 1986."
       },
       {
@@ -398,9 +398,9 @@
           "hapoel-tel-aviv:match-m_c4fdcf7a9b56"
         ],
         "sourceUrl": "https://wiki.red-fans.com/",
-        "prompt": "Remember the scoreline: Hapoel Tel Aviv v Teplice, 20 Aug 2009 in the UEFA Europa League. How did it finish? (Hapoel Tel Aviv first)",
+        "prompt": "Hapoel Tel Aviv v Teplice in the UEFA Europa League, 20 Aug 2009. Name the final score (Hapoel Tel Aviv first).",
         "explanation": "Teplice 1-2 Hapoel Tel Aviv, UEFA Europa League, 20 Aug 2009.",
-        "basePrompt": "Remember the scoreline: Hapoel Tel Aviv v Teplice, 20 Aug 2009 in the UEFA Europa League. How did it finish? (Hapoel Tel Aviv first)",
+        "basePrompt": "Hapoel Tel Aviv v Teplice in the UEFA Europa League, 20 Aug 2009. Name the final score (Hapoel Tel Aviv first).",
         "baseExplanation": "Teplice 1-2 Hapoel Tel Aviv, UEFA Europa League, 20 Aug 2009."
       }
     ],
@@ -426,7 +426,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
         "prompt": "Nemanja Bilbija belongs on the Zrinjski Mostar team sheet. Which position was his?",
         "explanation": "Nemanja Bilbija played as a forward for Zrinjski Mostar (recorded 2016).",
-        "basePrompt": "Nemanja Bilbija is on the Zrinjski Mostar team sheet. Which position was his?",
+        "basePrompt": "Picture Nemanja Bilbija in a Zrinjski Mostar shirt. What was his position?",
         "baseExplanation": "Nemanja Bilbija played as a forward for Zrinjski Mostar (recorded 2016)."
       },
       {
@@ -436,10 +436,10 @@
           "zrinjski-mostar:w-m-cup-final-2024-second-leg"
         ],
         "sourceUrl": "https://www.nfsbih.ba/vijesti/nogomet-m/kup-bih-m/hsk-zrinjski-po-treci-put-osvojio-kup-bosne-i-hercegovine/",
-        "prompt": "Zrinjski Mostar rewind: 23 May 2024 in the Bosnia and Herzegovina Cup Final, Second Leg. A 1-0 win — against which club?",
-        "explanation": "Borac 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, Second Leg, 23 May 2024.",
-        "basePrompt": "Zrinjski Mostar rewind: 23 May 2024 in the Bosnia and Herzegovina Cup Final, Second Leg. A 1-0 win — against which club?",
-        "baseExplanation": "Borac 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, Second Leg, 23 May 2024."
+        "prompt": "Zrinjski Mostar final rewind: 23 May 2024 in the Bosnian Cup Final, Second Leg. A 1-0 win — against which club?",
+        "explanation": "Borac 0-1 Zrinjski Mostar, Bosnian Cup Final, Second Leg, 23 May 2024.",
+        "basePrompt": "Zrinjski Mostar final rewind: 23 May 2024 in the Bosnian Cup Final, Second Leg. A 1-0 win — against which club?",
+        "baseExplanation": "Borac 0-1 Zrinjski Mostar, Bosnian Cup Final, Second Leg, 23 May 2024."
       },
       {
         "questionId": "q_7a13bcde7e324918",
@@ -448,22 +448,22 @@
           "zrinjski-mostar:w-m-cup-2026-first-leg"
         ],
         "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/cup-bih-m/zrinjski-wins-first-leg-of-the-bih-cup-final/",
-        "prompt": "Zrinjski Mostar rewind: 6 May 2026 in the Bosnia and Herzegovina Cup Final, First Leg. A 1-0 win — against which club?",
-        "explanation": "Zrinjski Mostar 1-0 Velež, Bosnia and Herzegovina Cup Final, First Leg, 6 May 2026.",
-        "basePrompt": "Zrinjski Mostar rewind: 6 May 2026 in the Bosnia and Herzegovina Cup Final, First Leg. A 1-0 win — against which club?",
-        "baseExplanation": "Zrinjski Mostar 1-0 Velež, Bosnia and Herzegovina Cup Final, First Leg, 6 May 2026."
+        "prompt": "Zrinjski Mostar derby rewind: 6 May 2026 in the Bosnian Cup Final, First Leg. A 1-0 win — against which club?",
+        "explanation": "Zrinjski Mostar 1-0 Velež, Bosnian Cup Final, First Leg, 6 May 2026.",
+        "basePrompt": "Zrinjski Mostar derby rewind: 6 May 2026 in the Bosnian Cup Final, First Leg. A 1-0 win — against which club?",
+        "baseExplanation": "Zrinjski Mostar 1-0 Velež, Bosnian Cup Final, First Leg, 6 May 2026."
       },
       {
         "questionId": "q_a8d97cf6b5e83dd0",
-        "answer": "FK Velež Mostar",
+        "answer": "Velež",
         "factIds": [
           "zrinjski-mostar:w-m-cup-final-2023"
         ],
         "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/cup-bih-m/hsk-zrinjski-won-the-bh-cup-and-the-double-crown",
-        "prompt": "Zrinjski Mostar derby rewind: 17 May 2023 in the Bosnia and Herzegovina Cup Final. A 1-0 win — against which club?",
-        "explanation": "FK Velež Mostar 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, 17 May 2023.",
-        "basePrompt": "Zrinjski Mostar derby rewind: 17 May 2023 in the Bosnia and Herzegovina Cup Final. A 1-0 win — against which club?",
-        "baseExplanation": "FK Velež Mostar 0-1 Zrinjski Mostar, Bosnia and Herzegovina Cup Final, 17 May 2023."
+        "prompt": "Zrinjski Mostar derby rewind: 17 May 2023 in the Bosnian Cup Final, Zrinjski Mostar 1-0. Who were the opponents?",
+        "explanation": "Velež 0-1 Zrinjski Mostar, Bosnian Cup Final, 17 May 2023.",
+        "basePrompt": "Zrinjski Mostar derby rewind: 17 May 2023 in the Bosnian Cup Final, Zrinjski Mostar 1-0. Who were the opponents?",
+        "baseExplanation": "Velež 0-1 Zrinjski Mostar, Bosnian Cup Final, 17 May 2023."
       },
       {
         "questionId": "q_f73785bcbbdc58bc",
@@ -585,9 +585,9 @@
           "span:zrinjski-mostar:nemanja-bilbija"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
-        "prompt": "Turn back to Nemanja Bilbija's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "prompt": "Nemanja Bilbija joins the Zrinjski Mostar story. In which decade does he first appear?",
         "explanation": "Nemanja Bilbija's recorded years at Zrinjski Mostar: 2016.",
-        "basePrompt": "Turn back to Nemanja Bilbija's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Nemanja Bilbija joins the Zrinjski Mostar story. In which decade does he first appear?",
         "baseExplanation": "Nemanja Bilbija's recorded years at Zrinjski Mostar: 2016."
       },
       {
@@ -687,10 +687,10 @@
           "zrinjski-mostar:a-m-2025-10-02-zrinjski-l-red-imps"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2046309--",
-        "prompt": "Who opened Zrinjski Mostar's scoring against L. Red Imps in the UEFA Conference League on 2 Oct 2025?",
-        "explanation": "Zrinjski Mostar 5-0 L. Red Imps, UEFA Conference League, 2 Oct 2025. Nemanja Bilbija opened the scoring for Zrinjski Mostar.",
-        "basePrompt": "Who opened Zrinjski Mostar's scoring against L. Red Imps in the UEFA Conference League on 2 Oct 2025?",
-        "baseExplanation": "Zrinjski Mostar 5-0 L. Red Imps, UEFA Conference League, 2 Oct 2025. Nemanja Bilbija opened the scoring for Zrinjski Mostar."
+        "prompt": "Who opened Zrinjski Mostar's scoring against Lincoln Red Imps in the UEFA Conference League on 2 Oct 2025?",
+        "explanation": "Zrinjski Mostar 5-0 Lincoln Red Imps, UEFA Conference League, 2 Oct 2025. Nemanja Bilbija opened the scoring for Zrinjski Mostar.",
+        "basePrompt": "Who opened Zrinjski Mostar's scoring against Lincoln Red Imps in the UEFA Conference League on 2 Oct 2025?",
+        "baseExplanation": "Zrinjski Mostar 5-0 Lincoln Red Imps, UEFA Conference League, 2 Oct 2025. Nemanja Bilbija opened the scoring for Zrinjski Mostar."
       },
       {
         "questionId": "q_66dfe6328838be91",
@@ -703,10 +703,10 @@
           "zrinjski-mostar:a-m-2025-12-18-zrinjski-sk-rapid"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2046402--",
-        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against SK Rapid in the UEFA Conference League on 18 Dec 2025?",
-        "explanation": "Zrinjski Mostar 1-1 SK Rapid, UEFA Conference League, 18 Dec 2025. Starting eleven: Goran Karačić, Hrvoje Barišić, Ilija Mašić, Leo Mikić, Petar Mamić, Antonio Ivančić, Igor Savić, Mario Ćuže, Kerim Memija, Duje Dujmović, Nemanja Bilbija.",
-        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against SK Rapid in the UEFA Conference League on 18 Dec 2025?",
-        "baseExplanation": "Zrinjski Mostar 1-1 SK Rapid, UEFA Conference League, 18 Dec 2025. Starting eleven: Goran Karačić, Hrvoje Barišić, Ilija Mašić, Leo Mikić, Petar Mamić, Antonio Ivančić, Igor Savić, Mario Ćuže, Kerim Memija, Duje Dujmović, Nemanja Bilbija."
+        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against Rapid in the UEFA Conference League on 18 Dec 2025?",
+        "explanation": "Zrinjski Mostar 1-1 Rapid, UEFA Conference League, 18 Dec 2025. Starting eleven: Goran Karačić, Hrvoje Barišić, Ilija Mašić, Leo Mikić, Petar Mamić, Antonio Ivančić, Igor Savić, Mario Ćuže, Kerim Memija, Duje Dujmović, Nemanja Bilbija.",
+        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against Rapid in the UEFA Conference League on 18 Dec 2025?",
+        "baseExplanation": "Zrinjski Mostar 1-1 Rapid, UEFA Conference League, 18 Dec 2025. Starting eleven: Goran Karačić, Hrvoje Barišić, Ilija Mašić, Leo Mikić, Petar Mamić, Antonio Ivančić, Igor Savić, Mario Ćuže, Kerim Memija, Duje Dujmović, Nemanja Bilbija."
       },
       {
         "questionId": "q_deca13b05ec582a7",
@@ -747,10 +747,10 @@
           "zrinjski-mostar:a-m-2025-07-22-s-bratislava-zrinjski"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2045376--",
-        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against S. Bratislava in the UEFA Champions League on 22 Jul 2025?",
-        "explanation": "S. Bratislava 4-0 Zrinjski Mostar, UEFA Champions League, 22 Jul 2025. Starting eleven: Goran Karačić, Ilija Mašić, Mateo Sušić, Antonio Ivančić, Igor Savić, Jakov Pranjić, Stefano Surdanović, Kerim Memija, Duje Dujmović, Karlo Abramović, Nemanja Bilbija.",
-        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against S. Bratislava in the UEFA Champions League on 22 Jul 2025?",
-        "baseExplanation": "S. Bratislava 4-0 Zrinjski Mostar, UEFA Champions League, 22 Jul 2025. Starting eleven: Goran Karačić, Ilija Mašić, Mateo Sušić, Antonio Ivančić, Igor Savić, Jakov Pranjić, Stefano Surdanović, Kerim Memija, Duje Dujmović, Karlo Abramović, Nemanja Bilbija."
+        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against Slovan Bratislava in the UEFA Champions League on 22 Jul 2025?",
+        "explanation": "Slovan Bratislava 4-0 Zrinjski Mostar, UEFA Champions League, 22 Jul 2025. Starting eleven: Goran Karačić, Ilija Mašić, Mateo Sušić, Antonio Ivančić, Igor Savić, Jakov Pranjić, Stefano Surdanović, Kerim Memija, Duje Dujmović, Karlo Abramović, Nemanja Bilbija.",
+        "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against Slovan Bratislava in the UEFA Champions League on 22 Jul 2025?",
+        "baseExplanation": "Slovan Bratislava 4-0 Zrinjski Mostar, UEFA Champions League, 22 Jul 2025. Starting eleven: Goran Karačić, Ilija Mašić, Mateo Sušić, Antonio Ivančić, Igor Savić, Jakov Pranjić, Stefano Surdanović, Kerim Memija, Duje Dujmović, Karlo Abramović, Nemanja Bilbija."
       },
       {
         "questionId": "q_0763213e600ed2dd",
@@ -801,9 +801,9 @@
           "span:zrinjski-mostar:aldin-hrvanovic"
         ],
         "sourceUrl": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039291_FR.pdf",
-        "prompt": "Turn back to Aldin Hrvanović's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "prompt": "Aldin Hrvanović in the Zrinjski Mostar record: in which decade is he first listed?",
         "explanation": "Aldin Hrvanović's recorded years at Zrinjski Mostar: 2023–2024.",
-        "basePrompt": "Turn back to Aldin Hrvanović's Zrinjski Mostar years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Aldin Hrvanović in the Zrinjski Mostar record: in which decade is he first listed?",
         "baseExplanation": "Aldin Hrvanović's recorded years at Zrinjski Mostar: 2023–2024."
       },
       {
@@ -815,7 +815,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
         "prompt": "Daniel Graovac belongs on the Zrinjski Mostar team sheet. Which position was his?",
         "explanation": "Daniel Graovac played as a defender for Zrinjski Mostar (recorded 2012–2016).",
-        "basePrompt": "Daniel Graovac is on the Zrinjski Mostar team sheet. Which position was his?",
+        "basePrompt": "Picture Daniel Graovac in a Zrinjski Mostar shirt. What was his position?",
         "baseExplanation": "Daniel Graovac played as a defender for Zrinjski Mostar (recorded 2012–2016)."
       }
     ],
@@ -829,7 +829,7 @@
         "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=NirLevin",
         "prompt": "Nir Levin belongs on the Hapoel Petah Tikva team sheet. Which position was his?",
         "explanation": "Nir Levin played as a forward for Hapoel Petah Tikva (recorded 1984–1993).",
-        "basePrompt": "Nir Levin is on the Hapoel Petah Tikva team sheet. Which position was his?",
+        "basePrompt": "Picture Nir Levin in a Hapoel Petah Tikva shirt. What was his position?",
         "baseExplanation": "Nir Levin played as a forward for Hapoel Petah Tikva (recorded 1984–1993)."
       },
       {
@@ -947,9 +947,9 @@
           "hapoel-petah-tikva:history-hpt-2503"
         ],
         "sourceUrl": "https://hpt.co.il/seasons/2012",
-        "prompt": "Hapoel Petah Tikva derby rewind: 10 Aug 2011 in the Toto Cup. A 0-1 defeat — against which club?",
+        "prompt": "Derby day, 10 Aug 2011 in the Toto Cup: a 0-1 defeat. Who was across the pitch?",
         "explanation": "Hapoel Petah Tikva 0-1 Maccabi Petah Tikva, Toto Cup, 10 Aug 2011.",
-        "basePrompt": "Hapoel Petah Tikva derby rewind: 10 Aug 2011 in the Toto Cup. A 0-1 defeat — against which club?",
+        "basePrompt": "Derby day, 10 Aug 2011 in the Toto Cup: a 0-1 defeat. Who was across the pitch?",
         "baseExplanation": "Hapoel Petah Tikva 0-1 Maccabi Petah Tikva, Toto Cup, 10 Aug 2011."
       },
       {
@@ -1154,9 +1154,9 @@
           "hapoel-petah-tikva:r26-mt-1991-final"
         ],
         "sourceUrl": "https://rsssf.org/tablesi/isra91.html",
-        "prompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Haifa, 4 Jun 1991 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "prompt": "Hapoel Petah Tikva v Maccabi Haifa in the Israel State Cup final, 4 Jun 1991. Name the final score (Hapoel Petah Tikva first).",
         "explanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991.",
-        "basePrompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Haifa, 4 Jun 1991 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "basePrompt": "Hapoel Petah Tikva v Maccabi Haifa in the Israel State Cup final, 4 Jun 1991. Name the final score (Hapoel Petah Tikva first).",
         "baseExplanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991."
       },
       {
@@ -1166,9 +1166,9 @@
           "hapoel-petah-tikva:r26-mt-1992-final"
         ],
         "sourceUrl": "https://rsssf.org/tablesi/isra92.html",
-        "prompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Tel Aviv, 9 Jun 1992 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "prompt": "Full time, 9 Jun 1992: Hapoel Petah Tikva v Maccabi Tel Aviv in the Israel State Cup final. What did the scoreboard say? (Hapoel Petah Tikva first)",
         "explanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992.",
-        "basePrompt": "Remember the scoreline: Hapoel Petah Tikva v Maccabi Tel Aviv, 9 Jun 1992 in the Israel State Cup final. How did it finish? (Hapoel Petah Tikva first)",
+        "basePrompt": "Full time, 9 Jun 1992: Hapoel Petah Tikva v Maccabi Tel Aviv in the Israel State Cup final. What did the scoreboard say? (Hapoel Petah Tikva first)",
         "baseExplanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992."
       },
       {
@@ -1178,9 +1178,9 @@
           "hapoel-petah-tikva:r26-mt-1957-final"
         ],
         "sourceUrl": "https://rsssf.org/tablesi/isra57.html",
-        "prompt": "Place this result in its season: Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which campaign was it?",
+        "prompt": "Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which season does that result belong to?",
         "explanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957.",
-        "basePrompt": "Place this result in its season: Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which campaign was it?",
+        "basePrompt": "Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which season does that result belong to?",
         "baseExplanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957."
       },
       {
@@ -1190,9 +1190,9 @@
           "hapoel-petah-tikva:r26-mt-2005-toto"
         ],
         "sourceUrl": "https://rsssf.org/tablesi/isratotocup05.html",
-        "prompt": "Place this result in its season: Hapoel Petah Tikva drew 3-3 with MS Ashdod in the Toto Cup final. Which campaign was it?",
+        "prompt": "Find the year on the ticket stub: Hapoel Petah Tikva drew 3-3 with MS Ashdod in the Toto Cup final. Which season?",
         "explanation": "Hapoel Petah Tikva 3-3 MS Ashdod, Toto Cup final, 6 Apr 2005.",
-        "basePrompt": "Place this result in its season: Hapoel Petah Tikva drew 3-3 with MS Ashdod in the Toto Cup final. Which campaign was it?",
+        "basePrompt": "Find the year on the ticket stub: Hapoel Petah Tikva drew 3-3 with MS Ashdod in the Toto Cup final. Which season?",
         "baseExplanation": "Hapoel Petah Tikva 3-3 MS Ashdod, Toto Cup final, 6 Apr 2005."
       },
       {
@@ -1220,9 +1220,9 @@
           "span:hapoel-petah-tikva:r26-eli-abarbanel"
         ],
         "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=EliAbarbanel",
-        "prompt": "Turn back to Eli Abarbanel's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "prompt": "Eli Abarbanel joins the Hapoel Petah Tikva story. In which decade does he first appear?",
         "explanation": "Eli Abarbanel's recorded years at Hapoel Petah Tikva: 1993–2010.",
-        "basePrompt": "Turn back to Eli Abarbanel's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Eli Abarbanel joins the Hapoel Petah Tikva story. In which decade does he first appear?",
         "baseExplanation": "Eli Abarbanel's recorded years at Hapoel Petah Tikva: 1993–2010."
       },
       {
@@ -1260,7 +1260,7 @@
         "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
         "prompt": "Giorgos Karagounis belongs on the Panathinaikos team sheet. Which position was his?",
         "explanation": "Giorgos Karagounis played as a midfielder for Panathinaikos (recorded 1995–2012).",
-        "basePrompt": "Giorgos Karagounis is on the Panathinaikos team sheet. Which position was his?",
+        "basePrompt": "Picture Giorgos Karagounis in a Panathinaikos shirt. What was his position?",
         "baseExplanation": "Giorgos Karagounis played as a midfielder for Panathinaikos (recorded 1995–2012)."
       },
       {
@@ -1272,7 +1272,7 @@
         "sourceUrl": "https://match.uefa.com/v5/matches/52922/lineups",
         "prompt": "Nikos Liberopoulos belongs on the Panathinaikos team sheet. Which position was his?",
         "explanation": "Nikos Liberopoulos played as a forward for Panathinaikos.",
-        "basePrompt": "Nikos Liberopoulos is on the Panathinaikos team sheet. Which position was his?",
+        "basePrompt": "Picture Nikos Liberopoulos in a Panathinaikos shirt. What was his position?",
         "baseExplanation": "Nikos Liberopoulos played as a forward for Panathinaikos."
       },
       {
@@ -1284,7 +1284,7 @@
         "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
         "prompt": "Mimis Domazos belongs on the Panathinaikos team sheet. Which position was his?",
         "explanation": "Mimis Domazos played as a midfielder for Panathinaikos (recorded 1959–1980).",
-        "basePrompt": "Mimis Domazos is on the Panathinaikos team sheet. Which position was his?",
+        "basePrompt": "Where did Mimis Domazos line up for Panathinaikos?",
         "baseExplanation": "Mimis Domazos played as a midfielder for Panathinaikos (recorded 1959–1980)."
       },
       {
@@ -1312,9 +1312,9 @@
           "panathinaikos:ec-final-1971-ajax"
         ],
         "sourceUrl": "https://rsssf.org/ec/ec197071det.html",
-        "prompt": "Panathinaikos rewind: 2 Jun 1971 in the European Cup final. A 0-2 defeat — against which club?",
+        "prompt": "Panathinaikos final rewind: 2 Jun 1971 in the European Cup final, Panathinaikos 0-2. Who were the opponents?",
         "explanation": "Ajax 2-0 Panathinaikos, European Cup final, 2 Jun 1971.",
-        "basePrompt": "Panathinaikos rewind: 2 Jun 1971 in the European Cup final. A 0-2 defeat — against which club?",
+        "basePrompt": "Panathinaikos final rewind: 2 Jun 1971 in the European Cup final, Panathinaikos 0-2. Who were the opponents?",
         "baseExplanation": "Ajax 2-0 Panathinaikos, European Cup final, 2 Jun 1971."
       },
       {
@@ -1409,9 +1409,9 @@
           "span:panathinaikos:gilberto-silva"
         ],
         "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
-        "prompt": "Turn back to Gilberto Silva's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "prompt": "Gilberto Silva in the Panathinaikos record: in which decade is he first listed?",
         "explanation": "Gilberto Silva's recorded years at Panathinaikos: 2008–2011.",
-        "basePrompt": "Turn back to Gilberto Silva's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Gilberto Silva in the Panathinaikos record: in which decade is he first listed?",
         "baseExplanation": "Gilberto Silva's recorded years at Panathinaikos: 2008–2011."
       },
       {
@@ -1433,9 +1433,9 @@
           "span:panathinaikos:dimitris-saravakos"
         ],
         "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
-        "prompt": "Turn back to Dimitris Saravakos's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "prompt": "Dimitris Saravakos joins the Panathinaikos story. In which decade does he first appear?",
         "explanation": "Dimitris Saravakos's recorded years at Panathinaikos: 1985–1998.",
-        "basePrompt": "Turn back to Dimitris Saravakos's Panathinaikos years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Dimitris Saravakos joins the Panathinaikos story. In which decade does he first appear?",
         "baseExplanation": "Dimitris Saravakos's recorded years at Panathinaikos: 1985–1998."
       },
       {
@@ -1683,7 +1683,7 @@
         "sourceUrl": "https://aekdata.gr/paiktis/215-dusan-bajevic",
         "prompt": "Dusan Bajevic belongs on the AEK Athens team sheet. Which position was his?",
         "explanation": "Dusan Bajevic played as a forward for AEK Athens (recorded 1977–1981).",
-        "basePrompt": "Dusan Bajevic is on the AEK Athens team sheet. Which position was his?",
+        "basePrompt": "Picture Dusan Bajevic in an AEK Athens shirt. What was his position?",
         "baseExplanation": "Dusan Bajevic played as a forward for AEK Athens (recorded 1977–1981)."
       },
       {
@@ -1747,10 +1747,10 @@
           "aek-athens:a-m-2026-08-12-aek-athens-ofi-crete"
         ],
         "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4730040",
-        "prompt": "AEK Athens rewind: 12 Aug 2026 in the Super Cup - Final. A 2-2 draw — against which club?",
-        "explanation": "AEK Athens 2-2 OFI Crete, Super Cup - Final, 12 Aug 2026.",
-        "basePrompt": "AEK Athens rewind: 12 Aug 2026 in the Super Cup - Final. A 2-2 draw — against which club?",
-        "baseExplanation": "AEK Athens 2-2 OFI Crete, Super Cup - Final, 12 Aug 2026."
+        "prompt": "AEK Athens final rewind: 12 Aug 2026 in the Super Cup final. A 2-2 draw — against which club?",
+        "explanation": "AEK Athens 2-2 OFI Crete, Super Cup final, 12 Aug 2026.",
+        "basePrompt": "AEK Athens final rewind: 12 Aug 2026 in the Super Cup final. A 2-2 draw — against which club?",
+        "baseExplanation": "AEK Athens 2-2 OFI Crete, Super Cup final, 12 Aug 2026."
       },
       {
         "questionId": "q_1c58e0db4aafbb58",
@@ -1860,7 +1860,7 @@
         "sourceUrl": "https://aekdata.gr/paiktis/714-levi-garcia",
         "prompt": "Levi Garcia belongs on the AEK Athens team sheet. Which position was his?",
         "explanation": "Levi Garcia played as a forward for AEK Athens (recorded 2020–2025).",
-        "basePrompt": "Levi Garcia is on the AEK Athens team sheet. Which position was his?",
+        "basePrompt": "Where did Levi Garcia line up for AEK Athens?",
         "baseExplanation": "Levi Garcia played as a forward for AEK Athens (recorded 2020–2025)."
       },
       {
@@ -1872,7 +1872,7 @@
         "sourceUrl": "https://www.aekpedia.com/season-2002-03/",
         "prompt": "Demis Nikolaidis belongs on the AEK Athens team sheet. Which position was his?",
         "explanation": "Demis Nikolaidis played as a forward for AEK Athens (recorded 1996–2003).",
-        "basePrompt": "Demis Nikolaidis is on the AEK Athens team sheet. Which position was his?",
+        "basePrompt": "Picture Demis Nikolaidis in an AEK Athens shirt. What was his position?",
         "baseExplanation": "Demis Nikolaidis played as a forward for AEK Athens (recorded 1996–2003)."
       },
       {
@@ -1960,10 +1960,10 @@
           "aek-athens:m-dh-8bfe07ed9603"
         ],
         "sourceUrl": "https://aekdata.gr/agonas/1464-futura-humenne-aek-1-2",
-        "prompt": "Who opened AEK Athens's scoring against Futura Humenne in the Cup Winners' Cup on 26 Sept 1996?",
-        "explanation": "Futura Humenne 1-2 AEK Athens, Cup Winners' Cup, 26 Sept 1996. Demis Nikolaidis opened the scoring for AEK Athens.",
-        "basePrompt": "Who opened AEK Athens's scoring against Futura Humenne in the Cup Winners' Cup on 26 Sept 1996?",
-        "baseExplanation": "Futura Humenne 1-2 AEK Athens, Cup Winners' Cup, 26 Sept 1996. Demis Nikolaidis opened the scoring for AEK Athens."
+        "prompt": "Who opened AEK Athens's scoring against Futura Humenne in the European Cup Winners' Cup on 26 Sept 1996?",
+        "explanation": "Futura Humenne 1-2 AEK Athens, European Cup Winners' Cup, 26 Sept 1996. Demis Nikolaidis opened the scoring for AEK Athens.",
+        "basePrompt": "Who opened AEK Athens's scoring against Futura Humenne in the European Cup Winners' Cup on 26 Sept 1996?",
+        "baseExplanation": "Futura Humenne 1-2 AEK Athens, European Cup Winners' Cup, 26 Sept 1996. Demis Nikolaidis opened the scoring for AEK Athens."
       },
       {
         "questionId": "q_cb9fecd1549044ae",
@@ -2004,10 +2004,10 @@
           "aek-athens:m-dh-7b36f690bfff"
         ],
         "sourceUrl": "https://aekdata.gr/agonas/1306-ferencvaros-aek-4-2",
-        "prompt": "Who opened AEK Athens's scoring against Ferencvaros in the UEFA Cup on 11 Aug 1998?",
-        "explanation": "Ferencvaros 4-2 AEK Athens, UEFA Cup, 11 Aug 1998. Demis Nikolaidis opened the scoring for AEK Athens.",
-        "basePrompt": "Who opened AEK Athens's scoring against Ferencvaros in the UEFA Cup on 11 Aug 1998?",
-        "baseExplanation": "Ferencvaros 4-2 AEK Athens, UEFA Cup, 11 Aug 1998. Demis Nikolaidis opened the scoring for AEK Athens."
+        "prompt": "Who opened AEK Athens's scoring against Ferencváros in the UEFA Cup on 11 Aug 1998?",
+        "explanation": "Ferencváros 4-2 AEK Athens, UEFA Cup, 11 Aug 1998. Demis Nikolaidis opened the scoring for AEK Athens.",
+        "basePrompt": "Who opened AEK Athens's scoring against Ferencváros in the UEFA Cup on 11 Aug 1998?",
+        "baseExplanation": "Ferencváros 4-2 AEK Athens, UEFA Cup, 11 Aug 1998. Demis Nikolaidis opened the scoring for AEK Athens."
       },
       {
         "questionId": "q_2c008f61f32ac4ce",
@@ -2032,10 +2032,10 @@
           "aek-athens:m-dh-cceb7f6ef2fa"
         ],
         "sourceUrl": "https://aekdata.gr/agonas/1311-dinaburg-aek-2-4",
-        "prompt": "Who opened AEK Athens's scoring against Dinaburg in the Cup Winners' Cup on 2 Oct 1997?",
-        "explanation": "Dinaburg 2-4 AEK Athens, Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens.",
-        "basePrompt": "Who opened AEK Athens's scoring against Dinaburg in the Cup Winners' Cup on 2 Oct 1997?",
-        "baseExplanation": "Dinaburg 2-4 AEK Athens, Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens."
+        "prompt": "Who opened AEK Athens's scoring against Dinaburg in the European Cup Winners' Cup on 2 Oct 1997?",
+        "explanation": "Dinaburg 2-4 AEK Athens, European Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens.",
+        "basePrompt": "Who opened AEK Athens's scoring against Dinaburg in the European Cup Winners' Cup on 2 Oct 1997?",
+        "baseExplanation": "Dinaburg 2-4 AEK Athens, European Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens."
       },
       {
         "questionId": "q_b26c1c50304988e8",
@@ -2062,9 +2062,9 @@
           "span:aek-athens:p-2cef59e24a5992"
         ],
         "sourceUrl": "https://www.aekpedia.com/thomas-mavros/",
-        "prompt": "Turn back to Thomas Mavros's AEK Athens years. In which decade does the archive first place him at the club?",
+        "prompt": "Thomas Mavros joins the AEK Athens story. In which decade does he first appear?",
         "explanation": "Thomas Mavros's recorded years at AEK Athens: 1976–1987.",
-        "basePrompt": "Turn back to Thomas Mavros's AEK Athens years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Thomas Mavros joins the AEK Athens story. In which decade does he first appear?",
         "baseExplanation": "Thomas Mavros's recorded years at AEK Athens: 1976–1987."
       },
       {
@@ -2102,7 +2102,7 @@
         "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcneill-billy-1958-75/",
         "prompt": "Billy McNeill belongs on the Celtic team sheet. Which position was his?",
         "explanation": "Billy McNeill played as a defender for Celtic (recorded 1957–1975).",
-        "basePrompt": "Billy McNeill is on the Celtic team sheet. Which position was his?",
+        "basePrompt": "Picture Billy McNeill in a Celtic shirt. What was his position?",
         "baseExplanation": "Billy McNeill played as a defender for Celtic (recorded 1957–1975)."
       },
       {
@@ -2130,58 +2130,58 @@
         "baseExplanation": "Scott Brown played as a midfielder for Celtic (recorded 2007–2021)."
       },
       {
-        "questionId": "q_5b8bc6d7732ac17f",
+        "questionId": "q_15cc83a47d62047e",
         "answer": [
           "Goalkeeper",
           "Defender",
           "Midfielder"
         ],
         "factIds": [
-          "pos:celtic:p-dh-8038dedf73cd",
-          "pos:celtic:p-dh-5dd4eb0107c8",
-          "pos:celtic:p-10312c3e5265d5"
+          "pos:celtic:p-dh-301d3c83fe72",
+          "pos:celtic:p-8566217ec75cbe",
+          "pos:celtic:p-dh-699eb6b329aa"
         ],
-        "sourceUrl": "https://www.thecelticwiki.com/players/first-team-squad/forster-fraser/",
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/bonner-pat/",
         "prompt": "Fill the Celtic team sheet: match each player to his position.",
-        "explanation": "Fraser Gerard Forster: Goalkeeper · James Brogan: Defender · Scott Brown: Midfielder.",
+        "explanation": "Pat Bonner: Goalkeeper · Tommy Gemmell: Defender · James Forrest: Midfielder.",
         "basePrompt": "Fill the Celtic team sheet: match each player to his position.",
-        "baseExplanation": "Fraser Gerard Forster: Goalkeeper · James Brogan: Defender · Scott Brown: Midfielder."
+        "baseExplanation": "Pat Bonner: Goalkeeper · Tommy Gemmell: Defender · James Forrest: Midfielder."
       },
       {
-        "questionId": "q_ee73bfd553283ec0",
+        "questionId": "q_2366053170e9294b",
         "answer": [
           "Goalkeeper",
           "Defender",
           "Midfielder"
         ],
         "factIds": [
-          "pos:celtic:p-dh-66da601aeeb7",
-          "pos:celtic:p-dh-a45c95e7a9dc",
-          "pos:celtic:p-dh-afd52717f3ca"
+          "pos:celtic:p-14fe337856e5d5",
+          "pos:celtic:p-dh-2a1ceea7e695",
+          "pos:celtic:p-dh-8d12be1cd643"
         ],
-        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/miller-willie/",
+        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/f/fallon-john/",
         "prompt": "Fill the Celtic team sheet: match each player to his position.",
-        "explanation": "William Miller: Goalkeeper · John Robert Peacock MBE: Defender · Thomas Burns: Midfielder.",
+        "explanation": "John Fallon: Goalkeeper · Nir Bitton: Defender · Jimmy Johnstone: Midfielder.",
         "basePrompt": "Fill the Celtic team sheet: match each player to his position.",
-        "baseExplanation": "William Miller: Goalkeeper · John Robert Peacock MBE: Defender · Thomas Burns: Midfielder."
+        "baseExplanation": "John Fallon: Goalkeeper · Nir Bitton: Defender · Jimmy Johnstone: Midfielder."
       },
       {
-        "questionId": "q_a7df818be09a1ad4",
+        "questionId": "q_7d990fa6e123bdc1",
         "answer": [
           "Goalkeeper",
           "Defender",
           "Midfielder"
         ],
         "factIds": [
-          "pos:celtic:p-dh-0ce9a3aed813",
-          "pos:celtic:p-dh-518061ec13c1",
-          "pos:celtic:p-dh-dac0fb6b360e"
+          "pos:celtic:p-dh-3f6fb96bbd40",
+          "pos:celtic:p-dh-007f2a74a77b",
+          "pos:celtic:p-dh-4e013ac9e40f"
         ],
-        "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/marshall-gordon-jnr/",
+        "sourceUrl": "https://www.thecelticwiki.com/shaw-charlie/",
         "prompt": "Fill the Celtic team sheet: match each player to his position.",
-        "explanation": "Gordon George Banks Marshall: Goalkeeper · John Morrison: Defender · George Denholm Paterson: Midfielder.",
+        "explanation": "Charles Shaw: Goalkeeper · Robert Sime 'Roy' Aitken: Defender · Kris Commons: Midfielder.",
         "basePrompt": "Fill the Celtic team sheet: match each player to his position.",
-        "baseExplanation": "Gordon George Banks Marshall: Goalkeeper · John Morrison: Defender · George Denholm Paterson: Midfielder."
+        "baseExplanation": "Charles Shaw: Goalkeeper · Robert Sime 'Roy' Aitken: Defender · Kris Commons: Midfielder."
       },
       {
         "questionId": "q_ec3aef30c27c16c8",
@@ -2190,22 +2190,22 @@
           "celtic:a-m-2026-05-23-celtic-dunfermline"
         ],
         "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4704260",
-        "prompt": "Celtic rewind: 23 May 2026 in the FA Cup - Final - Final. A 3-1 win — against which club?",
-        "explanation": "Celtic 3-1 Dunfermline, FA Cup - Final - Final, 23 May 2026.",
-        "basePrompt": "Celtic rewind: 23 May 2026 in the FA Cup - Final - Final. A 3-1 win — against which club?",
-        "baseExplanation": "Celtic 3-1 Dunfermline, FA Cup - Final - Final, 23 May 2026."
+        "prompt": "Celtic final rewind: 23 May 2026 in the Scottish Cup final, Celtic 3-1. Who were the opponents?",
+        "explanation": "Celtic 3-1 Dunfermline, Scottish Cup final, 23 May 2026.",
+        "basePrompt": "Celtic final rewind: 23 May 2026 in the Scottish Cup final, Celtic 3-1. Who were the opponents?",
+        "baseExplanation": "Celtic 3-1 Dunfermline, Scottish Cup final, 23 May 2026."
       },
       {
         "questionId": "q_5e11a6c12cebb4ac",
-        "answer": "FC Porto",
+        "answer": "Porto",
         "factIds": [
           "celtic:m-22c83ba20f"
         ],
         "sourceUrl": "https://www.uefa.com/newsfiles/uefacup/2002/71041_FR.pdf",
-        "prompt": "Celtic rewind: 21 May 2003 in the UEFA Cup final. A 2-3 defeat — against which club?",
-        "explanation": "Celtic 2-3 FC Porto, UEFA Cup final, 21 May 2003.",
-        "basePrompt": "Celtic rewind: 21 May 2003 in the UEFA Cup final. A 2-3 defeat — against which club?",
-        "baseExplanation": "Celtic 2-3 FC Porto, UEFA Cup final, 21 May 2003."
+        "prompt": "Celtic final rewind: 21 May 2003 in the UEFA Cup final, Celtic 2-3. Who were the opponents?",
+        "explanation": "Celtic 2-3 Porto, UEFA Cup final, 21 May 2003.",
+        "basePrompt": "Celtic final rewind: 21 May 2003 in the UEFA Cup final, Celtic 2-3. Who were the opponents?",
+        "baseExplanation": "Celtic 2-3 Porto, UEFA Cup final, 21 May 2003."
       },
       {
         "questionId": "q_8c405fea5a862287",
@@ -2214,16 +2214,17 @@
           "celtic:a-m-2025-12-14-st-mirren-celtic"
         ],
         "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4609959",
-        "prompt": "Celtic rewind: 14 Dec 2025 in the League Cup - Final. A 1-3 defeat — against which club?",
-        "explanation": "St. Mirren 3-1 Celtic, League Cup - Final, 14 Dec 2025.",
-        "basePrompt": "Celtic rewind: 14 Dec 2025 in the League Cup - Final. A 1-3 defeat — against which club?",
-        "baseExplanation": "St. Mirren 3-1 Celtic, League Cup - Final, 14 Dec 2025."
+        "prompt": "Celtic final rewind: 14 Dec 2025 in the League Cup final, Celtic 1-3. Who were the opponents?",
+        "explanation": "St. Mirren 3-1 Celtic, League Cup final, 14 Dec 2025.",
+        "basePrompt": "Celtic final rewind: 14 Dec 2025 in the League Cup final, Celtic 1-3. Who were the opponents?",
+        "baseExplanation": "St. Mirren 3-1 Celtic, League Cup final, 14 Dec 2025."
       },
       {
         "questionId": "q_672e212abb6f8ab6",
         "answer": "Henrik Larsson",
         "factIds": [
-          "celtic:goal-2003-05-21-henrik-larsson-47"
+          "celtic:goal-2003-05-21-henrik-larsson-47",
+          "celtic:m-22c83ba20f"
         ],
         "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0252-0cd9ce958ed0-c7a5ba88c4b5-1000--derlei-decides-dramatic-final/",
         "prompt": "Back to Celtic’s UEFA Cup night against Porto, 21 May 2003. Whose header arrives in the 47th minute?",
@@ -2264,9 +2265,9 @@
           "span:celtic:p-c96ae91376dc7a"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennox-bobby/",
-        "prompt": "Turn back to Bobby Lennox's Celtic years. In which decade does the archive first place him at the club?",
+        "prompt": "Bobby Lennox in the Celtic record: in which decade is he first listed?",
         "explanation": "Bobby Lennox's recorded years at Celtic: 1961–1980.",
-        "basePrompt": "Turn back to Bobby Lennox's Celtic years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Bobby Lennox in the Celtic record: in which decade is he first listed?",
         "baseExplanation": "Bobby Lennox's recorded years at Celtic: 1961–1980."
       },
       {
@@ -2276,9 +2277,9 @@
           "span:celtic:p-4c519397e2cdbd"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgrain-danny/",
-        "prompt": "Turn back to Danny McGrain's Celtic years. In which decade does the archive first place him at the club?",
+        "prompt": "Danny McGrain joins the Celtic story. In which decade does he first appear?",
         "explanation": "Danny McGrain's recorded years at Celtic: 1967–1987.",
-        "basePrompt": "Turn back to Danny McGrain's Celtic years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Danny McGrain joins the Celtic story. In which decade does he first appear?",
         "baseExplanation": "Danny McGrain's recorded years at Celtic: 1967–1987."
       },
       {
@@ -2304,9 +2305,9 @@
           "span:celtic:p-10312c3e5265d5"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/players/first-team-squad/brown-scott/",
-        "prompt": "Turn back to Scott Brown's Celtic years. In which decade does the archive first place him at the club?",
+        "prompt": "Scott Brown joins the Celtic story. In which decade does he first appear?",
         "explanation": "Scott Brown's recorded years at Celtic: 2007–2021.",
-        "basePrompt": "Turn back to Scott Brown's Celtic years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Scott Brown joins the Celtic story. In which decade does he first appear?",
         "baseExplanation": "Scott Brown's recorded years at Celtic: 2007–2021."
       },
       {
@@ -2402,10 +2403,10 @@
           "celtic:a-m-1971-03-24-celtic-ajax"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/63024--",
-        "prompt": "Whose name went on the scoresheet for Celtic against Ajax in the UEFA Champions League on 24 Mar 1971?",
-        "explanation": "Celtic 1-0 Ajax, UEFA Champions League, 24 Mar 1971. Jimmy Johnstone scored for Celtic.",
-        "basePrompt": "Whose name went on the scoresheet for Celtic against Ajax in the UEFA Champions League on 24 Mar 1971?",
-        "baseExplanation": "Celtic 1-0 Ajax, UEFA Champions League, 24 Mar 1971. Jimmy Johnstone scored for Celtic."
+        "prompt": "Whose name went on the scoresheet for Celtic against Ajax in the European Cup on 24 Mar 1971?",
+        "explanation": "Celtic 1-0 Ajax, European Cup, 24 Mar 1971. Jimmy Johnstone scored for Celtic.",
+        "basePrompt": "Whose name went on the scoresheet for Celtic against Ajax in the European Cup on 24 Mar 1971?",
+        "baseExplanation": "Celtic 1-0 Ajax, European Cup, 24 Mar 1971. Jimmy Johnstone scored for Celtic."
       },
       {
         "questionId": "q_513a8b03e88f1474",
@@ -2414,10 +2415,10 @@
           "celtic:a-m-2003-04-10-celtic-boavista"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/70975--",
-        "prompt": "Whose name went on the scoresheet for Celtic against Boavista in the UEFA Europa League on 10 Apr 2003?",
-        "explanation": "Celtic 1-1 Boavista, UEFA Europa League, 10 Apr 2003. Henrik Larsson scored for Celtic.",
-        "basePrompt": "Whose name went on the scoresheet for Celtic against Boavista in the UEFA Europa League on 10 Apr 2003?",
-        "baseExplanation": "Celtic 1-1 Boavista, UEFA Europa League, 10 Apr 2003. Henrik Larsson scored for Celtic."
+        "prompt": "Whose name went on the scoresheet for Celtic against Boavista in the UEFA Cup on 10 Apr 2003?",
+        "explanation": "Celtic 1-1 Boavista, UEFA Cup, 10 Apr 2003. Henrik Larsson scored for Celtic.",
+        "basePrompt": "Whose name went on the scoresheet for Celtic against Boavista in the UEFA Cup on 10 Apr 2003?",
+        "baseExplanation": "Celtic 1-1 Boavista, UEFA Cup, 10 Apr 2003. Henrik Larsson scored for Celtic."
       },
       {
         "questionId": "q_65008ca0d08ef81c",
@@ -2426,10 +2427,10 @@
           "celtic:a-m-1973-11-06-vb-celtic"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/63188--",
-        "prompt": "Whose name went on the scoresheet for Celtic against VB in the UEFA Champions League on 6 Nov 1973?",
-        "explanation": "VB 0-1 Celtic, UEFA Champions League, 6 Nov 1973. Bobby Lennox scored for Celtic.",
-        "basePrompt": "Whose name went on the scoresheet for Celtic against VB in the UEFA Champions League on 6 Nov 1973?",
-        "baseExplanation": "VB 0-1 Celtic, UEFA Champions League, 6 Nov 1973. Bobby Lennox scored for Celtic."
+        "prompt": "Whose name went on the scoresheet for Celtic against Vejle in the European Cup on 6 Nov 1973?",
+        "explanation": "Vejle 0-1 Celtic, European Cup, 6 Nov 1973. Bobby Lennox scored for Celtic.",
+        "basePrompt": "Whose name went on the scoresheet for Celtic against Vejle in the European Cup on 6 Nov 1973?",
+        "baseExplanation": "Vejle 0-1 Celtic, European Cup, 6 Nov 1973. Bobby Lennox scored for Celtic."
       },
       {
         "questionId": "q_a3192a1d86ec05b0",
@@ -2438,10 +2439,10 @@
           "celtic:m-dh-745df96d6143"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1907-2/1907-04-20-celtic-3-0-heart-of-midlothian-scottish-cup-final/",
-        "prompt": "Place this result in its season: Celtic beat Heart of Midlothian 3-0 in the Scottish Cup Final. Which campaign was it?",
-        "explanation": "Celtic 3-0 Heart of Midlothian, Scottish Cup Final, 20 Apr 1907.",
-        "basePrompt": "Place this result in its season: Celtic beat Heart of Midlothian 3-0 in the Scottish Cup Final. Which campaign was it?",
-        "baseExplanation": "Celtic 3-0 Heart of Midlothian, Scottish Cup Final, 20 Apr 1907."
+        "prompt": "Celtic beat Hearts 3-0 in the Scottish Cup Final. Which season does that result belong to?",
+        "explanation": "Celtic 3-0 Hearts, Scottish Cup Final, 20 Apr 1907.",
+        "basePrompt": "Celtic beat Hearts 3-0 in the Scottish Cup Final. Which season does that result belong to?",
+        "baseExplanation": "Celtic 3-0 Hearts, Scottish Cup Final, 20 Apr 1907."
       },
       {
         "questionId": "q_8ab7dafa4a5916e2",
@@ -2450,9 +2451,9 @@
           "celtic:m-dh-283593e0248a"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/1985-05-18-celtic-2-1-dundee-united-scottish-cup-final/",
-        "prompt": "Place this result in its season: Celtic beat Dundee United 2-1 in the Scottish Cup Final. Which campaign was it?",
+        "prompt": "Celtic beat Dundee United 2-1 in the Scottish Cup Final. Which season does that result belong to?",
         "explanation": "Celtic 2-1 Dundee United, Scottish Cup Final, 18 May 1985.",
-        "basePrompt": "Place this result in its season: Celtic beat Dundee United 2-1 in the Scottish Cup Final. Which campaign was it?",
+        "basePrompt": "Celtic beat Dundee United 2-1 in the Scottish Cup Final. Which season does that result belong to?",
         "baseExplanation": "Celtic 2-1 Dundee United, Scottish Cup Final, 18 May 1985."
       },
       {
@@ -2474,9 +2475,9 @@
           "celtic:m-a2210b09c4"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/1888-2/",
-        "prompt": "Remember the scoreline: Celtic v Cowlairs, 6 Aug 1888 in the Glasgow Exhibition Cup Final. How did it finish? (Celtic first)",
+        "prompt": "Celtic v Cowlairs in the Glasgow Exhibition Cup Final, 6 Aug 1888. Name the final score (Celtic first).",
         "explanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Aug 1888.",
-        "basePrompt": "Remember the scoreline: Celtic v Cowlairs, 6 Aug 1888 in the Glasgow Exhibition Cup Final. How did it finish? (Celtic first)",
+        "basePrompt": "Celtic v Cowlairs in the Glasgow Exhibition Cup Final, 6 Aug 1888. Name the final score (Celtic first).",
         "baseExplanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Aug 1888."
       },
       {
@@ -2614,9 +2615,9 @@
           "st-pauli:ea-match-1e37507533dc5b1c"
         ],
         "sourceUrl": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2021-22/teams/fc-st-pauli",
-        "prompt": "FC St. Pauli derby rewind: 21 Jan 2022 in the 2. Bundesliga. A 1-2 defeat — against which club?",
+        "prompt": "Derby day, 21 Jan 2022 in the 2. Bundesliga: a 1-2 defeat. Who was across the pitch?",
         "explanation": "Hamburger SV 2-1 FC St. Pauli, 2. Bundesliga, 21 Jan 2022.",
-        "basePrompt": "FC St. Pauli derby rewind: 21 Jan 2022 in the 2. Bundesliga. A 1-2 defeat — against which club?",
+        "basePrompt": "Derby day, 21 Jan 2022 in the 2. Bundesliga: a 1-2 defeat. Who was across the pitch?",
         "baseExplanation": "Hamburger SV 2-1 FC St. Pauli, 2. Bundesliga, 21 Jan 2022."
       },
       {
@@ -2679,7 +2680,7 @@
         "sourceUrl": "https://millernton.de/2021/08/10/wer-ist-marcel-hartel-ein-spielerprofil/",
         "prompt": "Marcel Hartel belongs on the FC St. Pauli team sheet. Which position was his?",
         "explanation": "Marcel Hartel played as a midfielder for FC St. Pauli.",
-        "basePrompt": "Marcel Hartel is on the FC St. Pauli team sheet. Which position was his?",
+        "basePrompt": "Picture Marcel Hartel in a FC St. Pauli shirt. What was his position?",
         "baseExplanation": "Marcel Hartel played as a midfielder for FC St. Pauli."
       },
       {
@@ -2781,7 +2782,7 @@
         "sourceUrl": "https://www.national-football-teams.com/player/52406/Max_Kruse.html",
         "prompt": "Max Kruse belongs on the FC St. Pauli team sheet. Which position was his?",
         "explanation": "Max Kruse played as a forward for FC St. Pauli (recorded 2009–2012).",
-        "basePrompt": "Max Kruse is on the FC St. Pauli team sheet. Which position was his?",
+        "basePrompt": "Where did Max Kruse line up for FC St. Pauli?",
         "baseExplanation": "Max Kruse played as a forward for FC St. Pauli (recorded 2009–2012)."
       },
       {
@@ -2851,16 +2852,16 @@
         "baseExplanation": "Walter Dzur (1945) → Klaus Emmerich (1983) → Frank Dröge (1998)"
       },
       {
-        "questionId": "q_cf3f11f373ca8b6b",
+        "questionId": "q_cbeadb596f2a6928",
         "answer": "false",
         "factIds": [
           "st-pauli:tr-dh-348f203ffb9b:1973/74:not"
         ],
         "sourceUrl": "https://datencenter.dfb.de/en/data-center/regional-league-north/2006-2007/current",
         "prompt": "True or false: FC St. Pauli won the Regionalliga Nord in 1973/74.",
-        "explanation": "Not that season. FC St. Pauli's Regionalliga Nord wins include 1972/73.",
+        "explanation": "Not in 1973/74. The Regionalliga Nord before that came in 1972/73. The next came in 2006/07.",
         "basePrompt": "True or false: FC St. Pauli won the Regionalliga Nord in 1973/74.",
-        "baseExplanation": "Not that season. FC St. Pauli's Regionalliga Nord wins include 1972/73."
+        "baseExplanation": "Not in 1973/74. The Regionalliga Nord before that came in 1972/73. The next came in 2006/07."
       },
       {
         "questionId": "q_b6e225068e282533",
@@ -2875,16 +2876,16 @@
         "baseExplanation": "4 wins: 1985/86, 2003/04, 2004/05, 2005/06."
       },
       {
-        "questionId": "q_c09b9aa1acc9ab1f",
+        "questionId": "q_efca5d94b4e73994",
         "answer": "false",
         "factIds": [
           "st-pauli:tr-dh-3672c8985c3d:1947/48:not"
         ],
         "sourceUrl": "https://www.bundesliga.com/en/bundesliga/news/hamburg-st-pauli-worlds-apart-in-germany-s-second-city-derby-16727",
         "prompt": "True or false: FC St. Pauli won the Hamburg city league in 1947/48.",
-        "explanation": "Not that season. FC St. Pauli's Hamburg city league wins include 1946/47.",
+        "explanation": "Not in 1947/48. The Hamburg city league before that came in 1946/47.",
         "basePrompt": "True or false: FC St. Pauli won the Hamburg city league in 1947/48.",
-        "baseExplanation": "Not that season. FC St. Pauli's Hamburg city league wins include 1946/47."
+        "baseExplanation": "Not in 1947/48. The Hamburg city league before that came in 1946/47."
       },
       {
         "questionId": "q_9467efb4e4f6c592",
@@ -2959,7 +2960,7 @@
         "sourceUrl": "https://www.tovima.com/sports/christian-karembeu-the-ambassador/",
         "prompt": "Christian Karembeu belongs on the Olympiacos team sheet. Which position was his?",
         "explanation": "Christian Karembeu played as a midfielder for Olympiacos (recorded 2001–2004).",
-        "basePrompt": "Christian Karembeu is on the Olympiacos team sheet. Which position was his?",
+        "basePrompt": "Picture Christian Karembeu in an Olympiacos shirt. What was his position?",
         "baseExplanation": "Christian Karembeu played as a midfielder for Olympiacos (recorded 2001–2004)."
       },
       {
@@ -2971,7 +2972,7 @@
         "sourceUrl": "https://en.wikipedia.org/wiki/Predrag_%C4%90or%C4%91evi%C4%87",
         "prompt": "Predrag Djordjevic belongs on the Olympiacos team sheet. Which position was his?",
         "explanation": "Predrag Djordjevic played as a midfielder for Olympiacos.",
-        "basePrompt": "Predrag Djordjevic is on the Olympiacos team sheet. Which position was his?",
+        "basePrompt": "Picture Predrag Djordjevic in an Olympiacos shirt. What was his position?",
         "baseExplanation": "Predrag Djordjevic played as a midfielder for Olympiacos."
       },
       {
@@ -3011,22 +3012,22 @@
           "olympiacos:r26-m-cup-asteras"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/2013_Greek_Football_Cup_final",
-        "prompt": "Olympiacos rewind: 11 May 2013 in the Greek Cup final. A 3-1 win — against which club?",
+        "prompt": "Olympiacos final rewind: 11 May 2013 in the Greek Cup final. A 3-1 win — against which club?",
         "explanation": "Olympiacos 3-1 Asteras Tripolis, Greek Cup final, 11 May 2013.",
-        "basePrompt": "Olympiacos rewind: 11 May 2013 in the Greek Cup final. A 3-1 win — against which club?",
+        "basePrompt": "Olympiacos final rewind: 11 May 2013 in the Greek Cup final. A 3-1 win — against which club?",
         "baseExplanation": "Olympiacos 3-1 Asteras Tripolis, Greek Cup final, 11 May 2013."
       },
       {
         "questionId": "q_198e30b30b3cb5b9",
-        "answer": "OFI",
+        "answer": "OFI Crete",
         "factIds": [
           "olympiacos:r26-m-cup-ofi"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/2025_Greek_Football_Cup_final",
-        "prompt": "Olympiacos rewind: 17 May 2025 in the Greek Cup final. A 2-0 win — against which club?",
-        "explanation": "OFI 0-2 Olympiacos, Greek Cup final, 17 May 2025.",
-        "basePrompt": "Olympiacos rewind: 17 May 2025 in the Greek Cup final. A 2-0 win — against which club?",
-        "baseExplanation": "OFI 0-2 Olympiacos, Greek Cup final, 17 May 2025."
+        "prompt": "Olympiacos final rewind: 17 May 2025 in the Greek Cup final, Olympiacos 2-0. Who were the opponents?",
+        "explanation": "OFI Crete Crete 0-2 Olympiacos, Greek Cup final, 17 May 2025.",
+        "basePrompt": "Olympiacos final rewind: 17 May 2025 in the Greek Cup final, Olympiacos 2-0. Who were the opponents?",
+        "baseExplanation": "OFI Crete 0-2 Olympiacos, Greek Cup final, 17 May 2025."
       },
       {
         "questionId": "q_0ac2b3d90f31eb2a",
@@ -3035,10 +3036,10 @@
           "olympiacos:a-m-2026-01-03-olympiacos-ofi-crete"
         ],
         "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4647666",
-        "prompt": "Olympiacos rewind: 3 Jan 2026 in the Super Cup - Final. A 3-0 win — against which club?",
-        "explanation": "Olympiacos 3-0 OFI Crete, Super Cup - Final, 3 Jan 2026.",
-        "basePrompt": "Olympiacos rewind: 3 Jan 2026 in the Super Cup - Final. A 3-0 win — against which club?",
-        "baseExplanation": "Olympiacos 3-0 OFI Crete, Super Cup - Final, 3 Jan 2026."
+        "prompt": "Olympiacos final rewind: 3 Jan 2026 in the Super Cup final. A 3-0 win — against which club?",
+        "explanation": "Olympiacos 3-0 OFI Crete, Super Cup final, 3 Jan 2026.",
+        "basePrompt": "Olympiacos final rewind: 3 Jan 2026 in the Super Cup final. A 3-0 win — against which club?",
+        "baseExplanation": "Olympiacos 3-0 OFI Crete, Super Cup final, 3 Jan 2026."
       },
       {
         "questionId": "q_07572fc8a5fdfdf4",
@@ -3085,9 +3086,9 @@
           "span:olympiacos:r26-fortounis"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/Kostas_Fortounis",
-        "prompt": "Turn back to Kostas Fortounis's Olympiacos years. In which decade does the archive first place him at the club?",
+        "prompt": "Kostas Fortounis in the Olympiacos record: in which decade is he first listed?",
         "explanation": "Kostas Fortounis's recorded years at Olympiacos: 2014.",
-        "basePrompt": "Turn back to Kostas Fortounis's Olympiacos years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Kostas Fortounis in the Olympiacos record: in which decade is he first listed?",
         "baseExplanation": "Kostas Fortounis's recorded years at Olympiacos: 2014."
       },
       {
@@ -3097,9 +3098,9 @@
           "span:olympiacos:r26-giovanni"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/Giovanni_(footballer,_born_1972)",
-        "prompt": "Turn back to Giovanni's Olympiacos years. In which decade does the archive first place him at the club?",
+        "prompt": "Giovanni in the Olympiacos record: in which decade is he first listed?",
         "explanation": "Giovanni's recorded years at Olympiacos: 1999–2005.",
-        "basePrompt": "Turn back to Giovanni's Olympiacos years. In which decade does the archive first place him at the club?",
+        "basePrompt": "Giovanni in the Olympiacos record: in which decade is he first listed?",
         "baseExplanation": "Giovanni's recorded years at Olympiacos: 1999–2005."
       },
       {
@@ -3211,10 +3212,10 @@
           "olympiacos:a-m-1983-09-28-olympiacos-ajax"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/933--",
-        "prompt": "Whose name went on the scoresheet for Olympiacos against Ajax in the UEFA Champions League on 28 Sept 1983?",
-        "explanation": "Olympiacos 2-0 Ajax, UEFA Champions League, 28 Sept 1983. Nikos Anastopoulos scored for Olympiacos.",
-        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Ajax in the UEFA Champions League on 28 Sept 1983?",
-        "baseExplanation": "Olympiacos 2-0 Ajax, UEFA Champions League, 28 Sept 1983. Nikos Anastopoulos scored for Olympiacos."
+        "prompt": "Whose name went on the scoresheet for Olympiacos against Ajax in the European Cup on 28 Sept 1983?",
+        "explanation": "Olympiacos 2-0 Ajax, European Cup, 28 Sept 1983. Nikos Anastopoulos scored for Olympiacos.",
+        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Ajax in the European Cup on 28 Sept 1983?",
+        "baseExplanation": "Olympiacos 2-0 Ajax, European Cup, 28 Sept 1983. Nikos Anastopoulos scored for Olympiacos."
       },
       {
         "questionId": "q_852341f81751115d",
@@ -3223,10 +3224,10 @@
           "olympiacos:w-m-pao-2020-11-21"
         ],
         "sourceUrl": "https://www.eurosport.it/calcio/campionato-greco/2020-2021/live-olympiakos-panathinaikos_mtc1222245/live-lineup.shtml",
-        "prompt": "Whose name went on the scoresheet for Olympiacos against Panathinaikos in the Super League Greece on 21 Nov 2020?",
-        "explanation": "Olympiacos 1-0 Panathinaikos, Super League Greece, 21 Nov 2020. Kostas Fortounis scored for Olympiacos.",
-        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Panathinaikos in the Super League Greece on 21 Nov 2020?",
-        "baseExplanation": "Olympiacos 1-0 Panathinaikos, Super League Greece, 21 Nov 2020. Kostas Fortounis scored for Olympiacos."
+        "prompt": "Whose name went on the scoresheet for Olympiacos against Panathinaikos in the Greek Super League on 21 Nov 2020?",
+        "explanation": "Olympiacos 1-0 Panathinaikos, Greek Super League, 21 Nov 2020. Kostas Fortounis scored for Olympiacos.",
+        "basePrompt": "Whose name went on the scoresheet for Olympiacos against Panathinaikos in the Greek Super League on 21 Nov 2020?",
+        "baseExplanation": "Olympiacos 1-0 Panathinaikos, Greek Super League, 21 Nov 2020. Kostas Fortounis scored for Olympiacos."
       },
       {
         "questionId": "q_4645f522bbc371ab",
@@ -3265,9 +3266,9 @@
           "olympiacos:r26-m-cup-aek-heraklion"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/2006_Greek_Football_Cup_final",
-        "prompt": "Remember the scoreline: Olympiacos v AEK Athens, 10 May 2006 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "prompt": "Olympiacos v AEK Athens in the Greek Cup final, 10 May 2006. Name the final score (Olympiacos first).",
         "explanation": "AEK Athens 0-3 Olympiacos, Greek Cup final, 10 May 2006.",
-        "basePrompt": "Remember the scoreline: Olympiacos v AEK Athens, 10 May 2006 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "basePrompt": "Olympiacos v AEK Athens in the Greek Cup final, 10 May 2006. Name the final score (Olympiacos first).",
         "baseExplanation": "AEK Athens 0-3 Olympiacos, Greek Cup final, 10 May 2006."
       },
       {
@@ -3277,9 +3278,9 @@
           "olympiacos:r26-m-cup-aek-pens"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/2009_Greek_Football_Cup_final",
-        "prompt": "Remember the scoreline: Olympiacos v AEK Athens, 2 May 2009 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "prompt": "Full time, 2 May 2009: Olympiacos v AEK Athens in the Greek Cup final. What did the scoreboard say? (Olympiacos first)",
         "explanation": "AEK Athens 4-4 Olympiacos, Greek Cup final, 2 May 2009.",
-        "basePrompt": "Remember the scoreline: Olympiacos v AEK Athens, 2 May 2009 in the Greek Cup final. How did it finish? (Olympiacos first)",
+        "basePrompt": "Full time, 2 May 2009: Olympiacos v AEK Athens in the Greek Cup final. What did the scoreboard say? (Olympiacos first)",
         "baseExplanation": "AEK Athens 4-4 Olympiacos, Greek Cup final, 2 May 2009."
       },
       {
@@ -3301,9 +3302,9 @@
           "olympiacos:r26-m-cup-aris-patras"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/2005_Greek_Football_Cup_final",
-        "prompt": "Place this result in its season: Olympiacos beat Aris 3-0 in the Greek Cup final. Which campaign was it?",
+        "prompt": "Olympiacos beat Aris 3-0 in the Greek Cup final. Which season does that result belong to?",
         "explanation": "Olympiacos 3-0 Aris, Greek Cup final, 21 May 2005.",
-        "basePrompt": "Place this result in its season: Olympiacos beat Aris 3-0 in the Greek Cup final. Which campaign was it?",
+        "basePrompt": "Olympiacos beat Aris 3-0 in the Greek Cup final. Which season does that result belong to?",
         "baseExplanation": "Olympiacos 3-0 Aris, Greek Cup final, 21 May 2005."
       },
       {

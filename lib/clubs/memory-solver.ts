@@ -49,8 +49,15 @@ export const minRecognisable=(size:MemSize)=>size>=6?RECOGNISABLE_MIN:size>=4?2:
 export const typeCap=(_size:MemSize)=>KIND_CAP
 
 /** a face as the eye reads it: case, accents, spacing and punctuation do not make two faces different */
+const NORM=new Map<string,string>()
+/** the same face is read thousands of times while a lap of boards is dealt (one search per board, each over the whole pool): remember the reading */
 export function normFace(face:string):string{
- return face.normalize('NFKC').toLowerCase().replace(/[֑-ׇ̀-ͯ]/g,'').replace(/[\s'"`´’‘“”״׳.,;:!?()[\]{}\-–—/\\|·•]+/g,' ').trim()
+ const hit=NORM.get(face)
+ if(hit!==undefined)return hit
+ const out=face.normalize('NFKC').toLowerCase().replace(/[֑-ׇ̀-ͯ]/g,'').replace(/[\s'"`´’‘“”״׳.,;:!?()[\]{}\-–—/\\|·•]+/g,' ').trim()
+ if(NORM.size>=200_000)NORM.clear()
+ NORM.set(face,out)
+ return out
 }
 
 /** why a candidate cannot be on a card at all, or null */

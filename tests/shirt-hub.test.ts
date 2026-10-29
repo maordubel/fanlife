@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 import {
-  EMPTY_FILTERS, MAX_SLUGS, NO_SHIRT, activeCount, autoName, filtersFromQuery, filtersFromSearch, filtersToSearch, slugsFor, toQuery, viewFromSearch,
+  EMPTY_FILTERS, MAX_SLUGS, NO_SHIRT, activeCount, autoName, filtersFromQuery, filtersFromSearch, filtersToSearch, slugsFor, textFromSearch, toQuery, viewFromSearch,
   type HubShirt,
 } from '@/lib/fanlife/hub/query'
 import { reasonsFor, routeWords } from '@/lib/fanlife/hub/reasons'
@@ -24,6 +24,16 @@ describe('hub filters ⇄ address bar', () => {
     expect(filtersFromSearch(search, shirts)).toEqual(f)
   })
   it('an empty state is an empty address', () => expect(filtersToSearch(EMPTY_FILTERS, 'market')).toBe(''))
+  it('the typed words travel in the address and come back out of it', () => {
+    const search = filtersToSearch(EMPTY_FILTERS, 'market', '  aek away 1984 ')
+    expect(search).toBe('?q=aek+away+1984')
+    expect(textFromSearch(search)).toBe('aek away 1984')
+  })
+  it('one character, or nothing, is not a search and never reaches the address', () => {
+    expect(filtersToSearch(EMPTY_FILTERS, 'market', 'a')).toBe('')
+    expect(textFromSearch('?q=a')).toBe('')
+    expect(textFromSearch('')).toBe('')
+  })
   it('keeps the tab in the address, and ignores a made-up one', () => {
     expect(viewFromSearch(filtersToSearch(EMPTY_FILTERS, 'wanted'))).toBe('wanted')
     expect(viewFromSearch('?view=nonsense')).toBe('market')

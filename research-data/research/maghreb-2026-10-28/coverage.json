@@ -1,0 +1,82 @@
+{
+ "package": "FanLife_Raja_AlAhly_Wydad_Expanded_Research (28.10.2026)",
+ "rows": 1489,
+ "imported": 1336,
+ "percent": 89.7,
+ "files": {
+  "players_staging.csv": {
+   "rows": 961,
+   "imported": 960,
+   "note": "exact duplicate rows folded; a row with no readable name, or a name only in Arabic script, skipped"
+  },
+  "season_matches_staging.csv": {
+   "rows": 147,
+   "imported": 127,
+   "note": "6 friendlies left out; 14 rows the season page does not place in a competition (or without a score)"
+  },
+  "goal_events.csv": {
+   "rows": 11,
+   "imported": 11,
+   "note": "the 2019 derby (8 goals), the 2022 final double, the 2013 final score"
+  },
+  "prior_matches.csv": {
+   "rows": 20,
+   "imported": 3,
+   "note": "undated rows (13 Al Ahly CAF 2019/20 legs, 2 Wydad 1992 finals) kept out of chronology"
+  },
+  "prior_lineup_candidates.csv": {
+   "rows": 22,
+   "imported": 22,
+   "note": "attached to the two dated 1999 final legs"
+  },
+  "cairo_derby_lineup_staging.csv": {
+   "rows": 112,
+   "imported": 11,
+   "note": "only the derby whose score the package records (23 Mar 1979); nine other lineups wait for a score"
+  },
+  "league_titles_staging.csv": {
+   "rows": 80,
+   "imported": 80,
+   "note": ""
+  },
+  "honours_source_rows.csv": {
+   "rows": 16,
+   "imported": 15,
+   "note": ""
+  },
+  "season_records_raw.csv": {
+   "rows": 120,
+   "imported": 107,
+   "note": "rows with no league finish (a season of friendlies, a division without a place) left out"
+  }
+ },
+ "perClub": {
+  "raja-casablanca": {
+   "players": 543,
+   "matches": 42,
+   "archive": 42,
+   "trophies": 1,
+   "seasons": 59,
+   "rivals": 1,
+   "sources": 8
+  },
+  "al-ahly": {
+   "players": 234,
+   "matches": 48,
+   "archive": 48,
+   "trophies": 16,
+   "seasons": 0,
+   "rivals": 1,
+   "sources": 7
+  },
+  "wydad-casablanca": {
+   "players": 183,
+   "matches": 45,
+   "archive": 45,
+   "trophies": 1,
+   "seasons": 48,
+   "rivals": 1,
+   "sources": 7
+  }
+ }
+}

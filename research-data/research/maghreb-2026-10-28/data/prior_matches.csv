@@ -1,0 +1,21 @@
+﻿match_id,club_ids,season,competition,home,away,home_goals,away_goals,date,source_ids,status
+AH2020-01,al-ahly,2019/20,CAF Champions League,Atlabara,Al Ahly,0,4,,S08,source_recorded_date_not_checked
+AH2020-02,al-ahly,2019/20,CAF Champions League,Al Ahly,Atlabara,9,0,,S08,source_recorded_date_not_checked
+AH2020-03,al-ahly,2019/20,CAF Champions League,Cano Sport,Al Ahly,0,2,,S08,source_recorded_date_not_checked
+AH2020-04,al-ahly,2019/20,CAF Champions League,Al Ahly,Cano Sport,4,0,,S08,source_recorded_date_not_checked
+AH2020-05,al-ahly,2019/20,CAF Champions League,Etoile du Sahel,Al Ahly,1,0,,S08,source_recorded_date_not_checked
+AH2020-06,al-ahly,2019/20,CAF Champions League,Al Ahly,Al Hilal,2,1,,S08,source_recorded_date_not_checked
+AH2020-07,al-ahly,2019/20,CAF Champions League,Al Ahly,FC Platinum,2,0,,S08,source_recorded_date_not_checked
+AH2020-08,al-ahly,2019/20,CAF Champions League,FC Platinum,Al Ahly,1,1,,S08,source_recorded_date_not_checked
+AH2020-09,al-ahly,2019/20,CAF Champions League,Al Ahly,Etoile du Sahel,1,0,,S08,source_recorded_date_not_checked
+AH2020-10,al-ahly,2019/20,CAF Champions League,Al Hilal,Al Ahly,1,1,,S08,source_recorded_date_not_checked
+AH2020-11,al-ahly,2019/20,CAF Champions League,Al Ahly,Mamelodi Sundowns,2,0,,S08,source_recorded_date_not_checked
+AH2020-12,al-ahly,2019/20,CAF Champions League,Mamelodi Sundowns,Al Ahly,1,1,,S08,source_recorded_date_not_checked
+AH2020-13,al-ahly|wydad,2019/20,CAF Champions League,Wydad Casablanca,Al Ahly,0,2,,S08,source_recorded_date_not_checked
+AH2020-14,al-ahly|wydad,2019/20,CAF Champions League,Al Ahly,Wydad Casablanca,3,1,,S08,source_recorded_date_not_checked
+AH2020-15,al-ahly,2019/20,CAF Champions League,Al Ahly,Zamalek,2,1,,S08,source_recorded_date_not_checked
+RAJ1999-F1,raja,1999,CAF Champions League final first leg,Raja CA,Espérance,0,0,1999-11-27,S03|S04,single secondary date; review
+RAJ1999-F2,raja,1999,CAF Champions League final second leg,Espérance,Raja CA,0,0,1999-12-12,S03|S04,Raja won shootout 4-3
+WAC1992-F1,wydad,1992,African Cup of Champions Clubs final first leg,Wydad,Al Hilal,2,0,,S05,date and lineup missing
+WAC1992-F2,wydad,1992,African Cup of Champions Clubs final second leg,Al Hilal,Wydad,0,0,,S05,date and lineup missing
+AH1979-D,al-ahly,1978/79,Cairo derby,Al Ahly,Zamalek,1,1,1979-03-23,S09,single source; competition verify

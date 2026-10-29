@@ -2,7 +2,7 @@ import 'server-only'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {serverFeatures} from '@/lib/features-server'
-import {composeDubid, composeFixtures, composeOffsides, composeResults, isLiveKind, type Composed, type LiveData} from './live'
+import {composeBriefing, composeDubid, composeFixtures, composeOffsides, composeResults, isLiveKind, type Composed, type LiveData} from './live'
 
 /** The database side of the social plan (service role, server only). */
 export async function rpc<T = unknown>(name: string, body: Record<string, unknown>): Promise<T | null> {
@@ -26,7 +26,12 @@ export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData 
   if (!isLiveKind(p.kind)) return p
   let out: Composed
   try {
-    if (p.kind === 'fixtures' || p.kind === 'results') {
+    if (p.kind === 'briefing') {
+      // the owner's morning briefing (operations): never switched off with a product, never deduplicated
+      const feed = await getFixtureFeed(now)
+      cache.data ??= await rpc<LiveData>('worker_marketing_live_data', {})
+      out = composeBriefing(feed.fixtures, feed.results ?? [], CORE_CLUB_IDS, cache.data ?? {dubid: [], offsides: [], posted: []}, now, NAMES)
+    } else if (p.kind === 'fixtures' || p.kind === 'results') {
       const feed = await getFixtureFeed(now)
       cache.data ??= await rpc<LiveData>('worker_marketing_live_data', {})
       const data = cache.data ?? {dubid: [], offsides: [], posted: []}
@@ -41,6 +46,6 @@ export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData 
   } catch (e) { out = {skip: `live data failed: ${String((e as Error)?.message || e).slice(0, 160)}`} }
   if ('skip' in out) { await rpc('worker_marketing_skip', {p_id: p.id, p_why: out.skip}); return null }
   await rpc('worker_marketing_compose', {p_id: p.id, p_msg: out.msg, p_ref: out.refs.join(',')})
-  if (cache.data) cache.data.posted.push(...out.refs)
+  if (cache.data && p.kind !== 'briefing') cache.data.posted.push(...out.refs)
   return {...p, msg: out.msg, kit: out.kit}
 }

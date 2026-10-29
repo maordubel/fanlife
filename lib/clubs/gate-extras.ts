@@ -1,4 +1,5 @@
 import 'server-only'
+import {englishTitle} from './title-en'
 import type {ClubData} from './contract'
 import {rivalsOf} from './gate-content'
 import {distinctCandidates,type WallCandidate} from './wall-engine'
@@ -32,7 +33,7 @@ export async function wallCandidates(club: ClubData): Promise<WallCandidate[]> {
 
 /** the club's dated events a pair may be built from: approved timeline facts with an exact calendar day */
 export function timelineItems(club: ClubData): DatedItem[] {
- return pairableItems(club.timeline.filter(f => f.status === 'approved' && f.confidence >= 2).map(f => ({id: f.value.id, title: f.value.title, on: f.value.on, sources: f.sources})))
+ return pairableItems(club.timeline.filter(f => f.status === 'approved' && f.confidence >= 2).map(f => ({id: f.value.id, title: englishTitle(f.value.title), on: f.value.on, sources: f.sources})))
 }
 
 export async function blackFileSource(club: ClubData): Promise<{binary: BinaryRow[]; items: DatedItem[]}> {

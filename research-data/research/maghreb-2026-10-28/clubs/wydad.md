@@ -1,0 +1,4 @@
+# Wydad AC — research brief
+WAHIS describes the 1937 club foundation, the 1939 football section and its historical background. WACH reports partial match detail since the 2012/13 league season and the 2011 CAF edition; WAP contains statistics, but pages are dynamic and the directly opened page did not return its player table in this session. WYDAD is a Wikidata-derived partial index: listed years and statistics can be incomplete or wrong. 2021/22 season matches and WAH season records are included as source-attributed candidates. RM includes title seasons. CAF22 reports El Moutaraji's two goals in the 2–0 final against Al Ahly, a cross-club timeline anchor. Wydad and Raja's 2019 4–4 match has eight goal events (DERBY19).
+
+CULTM and WAHIS are starting points for Winners supporter culture; KWA identifies kit references. LIFE proposal: a Casablanca derby matchday from a Wydad supporter's perspective, with independently researched geography and social details.

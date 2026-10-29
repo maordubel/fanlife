@@ -1,0 +1,23 @@
+﻿id,title,url,limitations
+S01,Raja player list,https://fr.wikipedia.org/wiki/Liste_des_joueurs_du_Raja_Club_Athletic,Community player list; 700+ claimed; non exhaustive; individually verify
+S02,Raja former players,https://rajacasablanca.ucoz.com/index/anciens_joueurs/0-8,Fan site; old and incomplete
+S03,Raja 1999 campaign,https://www.cafonline.com/caf-champions-league/news/raja-s-miracle-of-1999,"Competition organizer, narrative and results"
+S04,1999 final lineups,https://www.calciopedia.org/competizioni/competizioni-per-club/360-competizioni-club-africa/coppa-dei-campioni-caf-champions-league/1269-1999,Secondary; lineups require cross-check
+S05,Wydad history,https://www.wydad.net/en/history/,Independent club history; confirm claims
+S06,Wydad archive,https://www.wydad-history.com/,Archive: selected match details since 2012/13 and CAF 2011
+S07,Wydad legends,https://www.wydad-history.com/legends,Individual legends and date ranges; verify
+S08,Ahly 2020 campaign,https://www.alahlyegypt.com/en/news/article/al-ahlys-road-to-the-title,"Official club, 15 match scorelines"
+S09,Cairo derby archive,https://www.zamalek-eg.net/AhlyZamalekgames.html,Fan archive historical matches and lineups; cross-check
+S10,Ahly official,https://www.alahlyegypt.com/en,Club news and squad; dynamic
+S11,Ahly history page,https://www.alahlyegypt.com/en/club/history,History page empty when checked
+S12,Raja kit archive,https://www.footballkitarchive.com/raja-club-athletic-kits-t6501/,Community submitted; check season and usage rights
+S13,Wydad kit archive,https://www.footballkitarchive.com/wydad-athletic-club-kits-t876/,Community submitted; check season and usage rights
+S14,Ahly kit archive,https://www.footballkitarchive.com/al-ahly-sc-kits-t628/,Community submitted; check season and usage rights
+S15,Raja numbers,https://www.transfermarkt.fr/raja-casablanca/rueckennummern/verein/2068,Partial stint-specific shirt number index; check editions
+S16,Moroccan ultras,https://www.merip.org/2022/11/moroccos-marginalized-youth-and-the-rise-of-football-ultras/,Independent social and supporter context
+S17,Ultras Ahlawy thesis,https://fount.aucegypt.edu/etds/140/,Academic research on culture and rituals
+S18,Egypt ultras academic study,https://www.tandfonline.com/doi/abs/10.1080/14660970.2013.766030,Academic abstract; full text may be restricted
+S19,RSSSF historical domestic,https://www.rsssf.org/histdom.html,Results index; coverage varies by season
+S20,Wydad players Wikidata-derived,https://ssfaonline.com/clubs/wydad-athletic-club/,"183 claimed; incomplete, possible erroneous transfers; manual review"
+S21,Ahly players Wikidata-derived,https://ssfaonline.com/clubs/al-ahly-sc/,235 claimed; incomplete and stale fields; manual review
+S22,Raja 2019/20 results,https://tribuna.com/en/clubs/raja-casablanca/fixtures/2019-2020/,Season results; inspect original event details

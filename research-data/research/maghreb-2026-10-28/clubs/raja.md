@@ -1,0 +1,6 @@
+# Raja CA — research brief
+Founded in Casablanca in 1949. The historical player list (RAJA) supplies names, nationality, role and periods. The original page explicitly states that the list is not exhaustive; spelling, single-season entries, membership and chronology need verification. 2023/24 source season supplies domestic and cup match rows, including friendlies: competition classification must be checked per row. RAH supplies season-level records and RM identifies league champions. Kit reference KRA; shirt numbers RAJNUM. CAF99 gives the 1999 continental campaign and penalty shootout against Espérance. FINAL13 gives the lineups and goals of the FIFA Club World Cup final versus Bayern. DERBY19 records the 4–4 derby and goals, rich candidate for timeline and rivalry.
+
+Fan culture: CULTM discusses Green Boys and chants. LIFE proposal: Casablanca matchday anchored in the local derby; no dialogue or scenes are treated as historical fact. Local verification of geography, transport, fan traditions and multiple perspectives remains necessary.
+
+Known discrepancy: older fan list HISRA assigns Salaheddine Bassir 1994–1996, while RAJA lists 1991–1997. Do not merge either as approved until independently verified. Players' transcription variants require entity resolution.

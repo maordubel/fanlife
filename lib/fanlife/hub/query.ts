@@ -87,9 +87,17 @@ export function filtersFromSearch(search: string, shirts: Readonly<Record<string
   }
 }
 
-export function filtersToSearch(f: HubFilters, view: HubView): string {
+/** The words typed in the search box, as the address bar carries them (`?q=`); two characters or more, like the box. */
+export function textFromSearch(search: string): string {
+  const q = (new URLSearchParams(search).get('q') ?? '').trim().slice(0, 80)
+  return q.length >= 2 ? q : ''
+}
+
+/** The whole state as an address. `text` is the search box: without it a shared link or a refresh lost the words. */
+export function filtersToSearch(f: HubFilters, view: HubView, text = ''): string {
   const p = new URLSearchParams()
   if (view !== 'market') p.set('view', view)
+  if (text.trim().length >= 2) p.set('q', text.trim().slice(0, 80))
   if (f.scope !== 'all') p.set('scope', f.scope)
   if (f.slug) p.set('slug', f.slug)
   if (f.club) p.set('club', f.club)

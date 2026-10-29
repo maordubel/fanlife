@@ -29,11 +29,18 @@ export const normKey=(s:string)=>String(s).normalize('NFKD').replace(/\p{M}/gu,'
 export const factsOf=(q:Pick<MasterQuestion,'factIds'|'key'>)=>q.factIds.length?q.factIds:[`k:${q.key.slice(q.key.indexOf(':')+1)}`]
 
 const DATE=/(\d{4}-\d{2}-\d{2})/
-/** "<stem> — <date>" in a date-check statement, or in its explanation */
+const MONTHS=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']
+/** "13 May 1978" / "12 Sept 2026" (the en-GB short form the club pages print) → ISO, or null */
+function humanIso(s:string):string|null{
+ const m=/^(\d{1,2})\s+([A-Za-z]{3,9})\.?\s+(\d{4})/.exec(s);if(!m)return null
+ const mo=MONTHS.indexOf(m[2]!.slice(0,3).toLowerCase());if(mo<0)return null
+ return `${m[3]}-${String(mo+1).padStart(2,'0')}-${m[1]!.padStart(2,'0')}`
+}
+/** "<stem> — <date>" in a date-check statement, or in its explanation; the date as ISO or as a printed day */
 export function claimOf(text:string):{stem:string;date:string}|null{
- const at=text.search(/\s—\s\d{4}-\d{2}-\d{2}/)
+ const at=text.search(/\s—\s(?:\d{4}-\d{2}-\d{2}|\d{1,2}\s+[A-Za-z]{3,9}\.?\s+\d{4})/)
  if(at<0)return null
- const date=DATE.exec(text.slice(at))?.[1]
+ const rest=text.slice(at).replace(/^\s—\s/,''),date=DATE.exec(rest.slice(0,10))?.[1]??humanIso(rest)
  return date?{stem:normKey(text.slice(0,at)),date}:null
 }
 export const isDateCheck=(q:Pick<MasterQuestion,'template'|'type'>)=>q.type==='tf'&&/date-check$/.test(q.template)

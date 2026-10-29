@@ -474,5 +474,99 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-28T10-00-58-685Z-7373ab",
+  "clubId": "celtic",
+  "startedAt": "2026-10-28T10:00:58.685Z",
+  "finishedAt": "2026-10-28T10:01:31.779Z",
+  "providers": [
+   "thecelticwiki",
+   "celtic-official"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 12,
+   "documentsRead": 252,
+   "newDocuments": 250,
+   "changedDocuments": 2,
+   "unchangedDocuments": 0,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 8
+  },
+  "diagnostics": [
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "thecelticwiki",
+    "url": null,
+    "message": "No tested parser for The Celtic Wiki yet (celticwiki-football-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "celtic-official",
+    "url": null,
+    "message": "No tested parser for Celtic FC yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-29T10-24-36-845Z-5cf0f7",
+  "clubId": "celtic",
+  "startedAt": "2026-10-29T10:24:36.845Z",
+  "finishedAt": "2026-10-29T10:25:08.840Z",
+  "providers": [
+   "thecelticwiki",
+   "celtic-official"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 12,
+   "documentsRead": 252,
+   "newDocuments": 250,
+   "changedDocuments": 2,
+   "unchangedDocuments": 0,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 8
+  },
+  "diagnostics": [
+   {
+    "code": "SOURCE_SCHEMA_CHANGED",
+    "providerId": "thecelticwiki",
+    "url": null,
+    "message": "pages: the site now reports 19313 documents (was 19311) — pages may have shifted; duplicates are merged by id."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "thecelticwiki",
+    "url": null,
+    "message": "No tested parser for The Celtic Wiki yet (celticwiki-football-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "celtic-official",
+    "url": null,
+    "message": "No tested parser for Celtic FC yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

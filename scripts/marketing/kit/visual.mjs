@@ -103,12 +103,14 @@ export function readPost(msg) {
   const text = unhtml(msg)
   const lines = text.split('\n')
   const app = APPS[(String(msg).match(/📌[^<\n]*<b>([^<]+)<\/b>/)?.[1] || (lines[1] || '').split('·').pop() || '').trim()] || 'fanlife'
-  const hookAt = lines.findIndex(l => l.includes('HOOK'))
+  // v4 messages (29.10.2026) carry the caption in a copy box: its first line is the hook, the rest the post
+  const capAt = lines.findIndex(l => l.includes('Caption') && l.includes('copy'))
+  const hookAt = capAt >= 0 ? capAt : lines.findIndex(l => l.includes('HOOK'))
   const hook = (hookAt >= 0 ? (lines[hookAt + 1] || '').trim() : '').replace(/^(Wallpaper|Story background):\s*/i, '').replace(/^[“"](.*)[”"]$/, '$1')
   const visual = (text.match(/Visual:\s*(T\d)\s*([^.\n]*)/) || [])
   const real = text.match(/Real match:\s*(.+?)\s+[–-]\s+(.+?)\s+·\s+(\d{1,2}\.\d{1,2})\s+(\d{1,2}:\d{2})/)
-  const postAt = lines.findIndex(l => l.includes('✍️'))
-  const body = postAt >= 0 ? lines.slice(postAt + 2).filter(l => l.trim() && !l.startsWith('👉') && !l.startsWith('#') && !l.startsWith('🎨')) : []
+  const postAt = capAt >= 0 ? capAt : lines.findIndex(l => l.includes('✍️'))
+  const body = postAt >= 0 ? lines.slice(postAt + 2).filter(l => !l.includes('First comment')).filter(l => l.trim() && !l.startsWith('👉') && !l.startsWith('#') && !l.startsWith('🎨')) : []
   return {app, hook, template: visual[1] || null, variant: (visual[2] || '').trim(), match: real ? {home: real[1], away: real[2], date: real[3], time: real[4]} : null, body}
 }
 
@@ -226,6 +228,7 @@ async function card(post) {
 }
 export async function visualsFor(msg, kit = null) {
   lastError = null
+  if (kit?.t === 'none') return [] // the morning briefing: operations, no picture
   const post = readPost(msg)
   try {
     // a carousel: one picture per slide, in order, sent as one album (owner, 27.10.2026)

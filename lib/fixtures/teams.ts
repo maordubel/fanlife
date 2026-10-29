@@ -25,5 +25,9 @@ export const FIXTURE_TEAMS: readonly FixtureTeam[] = [
   {clubId: 'partizan-belgrade', search: 'Partizan Belgrade', names: ['partizan', 'partizan belgrade', 'fk partizan', 'partizan beograd'], countries: ['serbia']},
   {clubId: 'fenerbahce', search: 'Fenerbahce', names: ['fenerbahce', 'fenerbahce sk', 'fenerbahce istanbul'], countries: ['turkey', 'turkiye']},
   {clubId: 'union-berlin', search: 'Union Berlin', names: ['union berlin', 'fc union berlin', '1 fc union berlin'], countries: ['germany']},
+  // 28.10.2026 — the three clubs opened from the owner's research package; exact names + country still decide
+  {clubId: 'raja-casablanca', search: 'Raja Casablanca', names: ['raja casablanca', 'raja ca', 'raja club athletic'], countries: ['morocco']},
+  {clubId: 'wydad-casablanca', search: 'Wydad Casablanca', names: ['wydad casablanca', 'wydad ac', 'wydad athletic club'], countries: ['morocco']},
+  {clubId: 'al-ahly', search: 'Al Ahly', names: ['al ahly', 'al ahly sc', 'al ahly cairo'], countries: ['egypt']},
   {clubId: 'zrinjski-mostar', search: 'Zrinjski Mostar', names: ['zrinjski mostar', 'hsk zrinjski mostar', 'hsk zrinjski', 'zrinjski'], countries: ['bosnia and herzegovina', 'bosnia herzegovina', 'bosnia']},
 ]

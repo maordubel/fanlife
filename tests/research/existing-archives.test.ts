@@ -9,8 +9,8 @@ import stPauliWave from '@/club-packs/st-pauli/wave-existing-archive-2026-10-09.
 import zrinjskiWave from '@/club-packs/zrinjski-mostar/wave-existing-archive-2026-10-09.json'
 
 describe('Completion of existing archives',()=>{
- it('keeps the existing eight static clubs and offers both existing packages in the control room',()=>{
-  expect([...CORE_CLUB_IDS].sort()).toEqual(['aek-athens','celtic','hapoel-petah-tikva','hapoel-tel-aviv','olympiacos','panathinaikos','st-pauli','zrinjski-mostar'])
+ it('keeps the existing eight static clubs, plus the three opened on 28.10.2026, and offers both existing packages in the control room',()=>{
+  expect([...CORE_CLUB_IDS].sort()).toEqual(['aek-athens','al-ahly','celtic','hapoel-petah-tikva','hapoel-tel-aviv','olympiacos','panathinaikos','raja-casablanca','st-pauli','wydad-casablanca','zrinjski-mostar'])
   for(const club of ['st-pauli','zrinjski-mostar'])expect(packageAdapter.available?.(club)).toBe(true)
  })
  for(const [club,wave,total] of [['st-pauli',stPauliWave,1454],['zrinjski-mostar',zrinjskiWave,36]] as const){

@@ -1,7 +1,7 @@
 import {describe,it,expect,vi,beforeEach} from 'vitest'
 const request = vi.hoisted(() => ({host: 'hapoeltelaviv.localhost', paused: false, gates: [10], values: new Map<string, string>()}))
 vi.mock('next/headers', () => ({headers: () => new Headers({host: request.host}), cookies: () => ({get: (key: string) => request.values.has(key) ? {value: request.values.get(key)} : undefined, set: (key: string, value: string) => request.values.set(key, value)})}))
-vi.mock('@/lib/master/store', () => ({readState: async () => ({clubs: ['olympiacos', 'zrinjski-mostar', 'hapoel-tel-aviv'].map(id => ({id, status: request.paused ? 'paused' : 'live', gates: request.gates}))})}))
+vi.mock('@/lib/master/store', () => ({readState: async () => ({clubs: ['olympiacos', 'zrinjski-mostar', 'hapoel-tel-aviv', 'st-pauli'].map(id => ({id, status: request.paused ? 'paused' : 'live', gates: request.gates}))})}))
 import {startMysteryMode, moveMysteryMode} from '@/app/clubs/[slug]/[gate]/mystery-modes'
 import {startMystery, moveMystery} from '@/app/clubs/[slug]/[gate]/mystery-actions'
 import {lobbyState, modeKey, settle} from '@/lib/clubs/mystery-modes'
@@ -35,7 +35,9 @@ describe('gate 10 · the rulebook against the real banks', () => {
   expect(shirts.length).toBeGreaterThan(0); for (const c of shirts) expect(c.scope?.season).toMatch(/^\d{4}\/\d{2}$/)
  })
  it('a club whose mysteries are prose only offers practice as exploration and locks daily and duel', async () => {
-  const data = await club('olympiacos'), game = clubMystery(data), lobby = lobbyState(data, null)
+  // Olympiacos' WRITTEN puzzles are prose only (the archive forge adds counted ones beside them — see below), so the bank
+  // without the forged ones is exactly the case this guards: practice as exploration, daily and duel shut
+  const full = await club('olympiacos'), data = {...full, mysteries: full.mysteries.filter(f => !f.id.includes(':arch-m-'))}, game = clubMystery(data), lobby = lobbyState(data, null)
   expect(data.mysteries.length).toBeGreaterThan(0)
   expect(game.competitiveSize).toBe(0); expect(lobby.modes.daily.open).toBe(false); expect(lobby.modes.duel.open).toBe(false)
   expect(lobby.modes.daily.codes.map(c => c.code)).toContain('BLIND_COW_NOT_UNIQUE')
@@ -45,9 +47,11 @@ describe('gate 10 · the rulebook against the real banks', () => {
   for (const f of data.mysteries) if (f.value.clues.length < 5) expect(game.evaluations.get(f.id)?.practice.ok).toBe(false)
  })
  it('a club with no competitive pool cannot start a daily or a challenge', async () => {
-  request.host = 'olympiacos.localhost'
-  const data = await club('olympiacos')
-  expect(await startMysteryMode('olympiacos', data.version, 'duel', '5')).toBeNull()
+  // St. Pauli's archive prints no scorers and few line-ups: no puzzle of it narrows to one, so it has no competitive pool
+  request.host = 'st-pauli.localhost'
+  const data = await club('st-pauli')
+  expect(clubMystery(data).competitiveSize).toBe(0)
+  expect(await startMysteryMode('st-pauli', data.version, 'duel', '5')).toBeNull()
  }, 30000)
  it('the lobby tells how many are open and why the rest are not — numbers, never the answer', async () => {
   const data = await club(), lobby = lobbyState(data, null)

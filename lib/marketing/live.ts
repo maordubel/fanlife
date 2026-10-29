@@ -8,8 +8,9 @@
  * Pure: the data comes in, the message and the picture's kit come out. lib/marketing/run.ts fetches the data.
  */
 import type {Fixture, Result} from '@/lib/fixtures/types'
+import {smartTags} from './tags'
 
-export const LIVE_KINDS = ['fixtures', 'results', 'dubid', 'offsides'] as const
+export const LIVE_KINDS = ['fixtures', 'results', 'dubid', 'offsides', 'briefing'] as const
 export type LiveKind = typeof LIVE_KINDS[number]
 export const isLiveKind = (k: unknown): k is LiveKind => LIVE_KINDS.includes(k as LiveKind)
 
@@ -22,10 +23,11 @@ export type Composed = {msg: string; kit: Kit; refs: string[]} | {skip: string}
 const TZ = 'Asia/Jerusalem'
 const URL: Record<string, string> = {fanlife: 'https://fanlife.dubelteam.com', dubid: 'https://dubid.dubelteam.com', offsides: 'https://offsides.dubelteam.com'}
 const NAME: Record<string, string> = {fanlife: 'FAN LIFE', dubid: 'DUBID', offsides: 'OFFSIDES'}
+// Smart tags (plan v4, owner 29.10.2026): one brand tag, then the topic — never a wall of generic ones.
 const TAGS: Record<string, string> = {
-  fanlife: '#FANLIFE #FootballForever #Football #Supporters #DubelTeam',
-  dubid: '#DUBID #FantasyFootball #IsraeliFootball #SuperLeagueGreece #DubelTeam',
-  offsides: '#OFFSIDES #Predictions #Football #MatchDay #DubelTeam',
+  fanlife: '#FANLIFE #Football #FootballFans',
+  dubid: '#DUBID #FantasyFootball #FPL #IsraeliFootball #SuperLeagueGreece',
+  offsides: '#OFFSIDES #FootballPredictions #MatchDay #PredictTheScore',
 }
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const part = (at: Date | string, o: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('en-GB', {timeZone: TZ, ...o}).format(new Date(at))
@@ -35,12 +37,17 @@ const weekday = (at: Date | string) => part(at, {weekday: 'short'}).toUpperCase(
 const dayMonth = (at: Date | string) => part(at, {day: 'numeric', month: 'short'}).toUpperCase()
 const longDay = (at: Date | string) => part(at, {weekday: 'long', day: 'numeric', month: 'long'})
 
-/** the Telegram message, in the same shape marketing.render() writes for the fixed plan */
-export function message(o: {app: 'fanlife' | 'dubid' | 'offsides'; sendAt: Date; label: string; hook: string; body: string; url?: string; visual: string}) {
-  return [`🗓 <b>${esc(o.label)} · ${part(o.sendAt, {day: '2-digit', month: '2-digit'}).replace('/', '.')} · ${hhmm(o.sendAt)}</b>`,
-    `📌 Post · <b>${NAME[o.app]}</b>`, '📱 Instagram · Facebook · TikTok (photo)', '',
-    '🪝 <b>HOOK</b>', `<b>${esc(o.hook)}</b>`, '', '✍️ <b>POST</b>', esc(o.hook), '', esc(o.body), '',
-    `👉 ${esc(o.url || URL[o.app]!)}`, '', TAGS[o.app], '', `🎨 <i>Visual: ${esc(o.visual)}</i>`].join('\n').slice(0, 4000)
+/** the Telegram message, in the same shape marketing.render() writes for the fixed plan (v4, owner 29.10.2026): a short
+ *  header, then the caption in a <pre> block — Telegram gives a block a one-tap copy — and, when there is one, the first
+ *  comment in a second block. The picture went out just before; nothing else to read. */
+export const CAPTION_MAX = 2200
+export function message(o: {app: 'fanlife' | 'dubid' | 'offsides'; sendAt: Date; label: string; hook: string; body: string; url?: string; visual: string; tags?: string; comment?: string}) {
+  const caption = [o.hook, '', o.body, '', `👉 ${o.url || URL[o.app]!}`, '', o.tags || TAGS[o.app]!].join('\n').slice(0, CAPTION_MAX)
+  return [`📅 <b>${part(o.sendAt, {weekday: 'short'})} ${part(o.sendAt, {day: '2-digit', month: '2-digit'}).replace('/', '.')} · ${hhmm(o.sendAt)}</b> · ${esc(o.label)}`,
+    `📌 Post · <b>${NAME[o.app]}</b> · Instagram · Facebook · TikTok`, '',
+    '👇 <b>Caption</b> — tap the box to copy', `<pre>${esc(caption)}</pre>`,
+    ...(o.comment ? ['💬 <b>First comment</b> — tap to copy', `<pre>${esc(o.comment.slice(0, 900))}</pre>`] : []),
+  ].join('\n')
 }
 
 const comp = (s: string | null) => (s || '').replace(/\s+/g, ' ').trim()
@@ -58,6 +65,7 @@ export function composeResults(results: readonly Result[], liveClubs: readonly s
   const hook = one ? (won ? `Full time: ${names[one.clubId] || one.home} win it.` : `Full time for ${names[one.clubId] || (one.clubSide === 'home' ? one.home : one.away)}.`) : `Full time — ${rows.length} FAN LIFE clubs in action.`
   return {refs: rows.map(r => `res:${r.providerEventId}`), msg: message({app: 'fanlife', sendAt: now, label: 'Results', hook,
     body: `${lines.join('\n')}\n\nHow did yours go? Tell us in the comments.\nEvery club's whole history is on FAN LIFE.`, url: one ? clubLink(one.clubId) : URL.fanlife,
+    tags: smartTags({clubs: [...new Set(rows.map(r => r.clubId))], topics: ['results']}),
     visual: 'L-RESULTS Full time: the scores on split-flap tiles, both crests.'}),
   kit: {t: 'L-RESULTS', data: {clubs: [...new Set(rows.map(r => r.clubId))], dayTop: weekday(rows[rows.length - 1]!.kickoff), dayBottom: dayMonth(rows[rows.length - 1]!.kickoff),
     rows: rows.map(r => ({home: r.home, away: r.away, score: `${r.homeScore}-${r.awayScore}`, line: comp(r.competition).toUpperCase() || 'FULL TIME', homeCrestName: r.home, awayCrestName: r.away}))}}}
@@ -76,7 +84,7 @@ export function composeFixtures(fixtures: readonly Fixture[], liveClubs: readonl
   const hook = one ? `${names[one.clubId] || one.home} play ${dayKey(one.kickoff) === today ? 'today' : 'tomorrow'}. Ready?` : `${rows.length} FAN LIFE clubs, ${allToday ? 'one day' : 'two days'}. Next up.`
   return {refs: rows.map(f => `fx:${f.providerEventId}`), msg: message({app: 'fanlife', sendAt: now, label: 'Next up', hook,
     body: `${rows.map(f => `${when(f)} (Israel time) · ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`).join('\n')}\n\nWho are you with? Before kick-off, warm up on your club's trivia on FAN LIFE.`,
-    url: one ? clubLink(one.clubId) : URL.fanlife, visual: 'L-FIXTURES Next up: the matches as tickets, both crests, the kick-off times.'}),
+    url: one ? clubLink(one.clubId) : URL.fanlife, tags: smartTags({clubs: [...new Set(rows.map(f => f.clubId))], topics: ['fixtures']}), visual: 'L-FIXTURES Next up: the matches as tickets, both crests, the kick-off times.'}),
   kit: {t: 'L-FIXTURES', data: {clubs: [...new Set(rows.map(f => f.clubId))], dayTop: allToday ? 'TODAY' : weekday(rows[0]!.kickoff), dayBottom: dayMonth(rows[0]!.kickoff),
     rows: rows.map(f => ({home: f.home, away: f.away, line: `${when(f).toUpperCase()}${f.competition ? ' · ' + comp(f.competition).toUpperCase() : ''}`, homeCrestName: f.home, awayCrestName: f.away}))}}}
 }
@@ -109,4 +117,48 @@ export function composeOffsides(d: LiveData, now: Date): Composed {
     visual: 'L-OFFSIDES-TODAY Today\'s Central Arenas: OFFSIDES logo, the matches with both crests, JOIN THE BATTLE + QR.'}),
   kit: {t: 'L-OFFSIDES-TODAY', data: {app: 'offsides', rows: top.map(m => ({home: m.home, away: m.away, ko: hhmm(m.kickoff), league: m.league.toUpperCase(), arenas: m.arenas, line: `${hhmm(m.kickoff)} · ${m.league.toUpperCase()}${m.arenas ? ` · ${m.arenas} ARENA${m.arenas === 1 ? '' : 'S'}` : ''}`, homeCrestName: m.home, awayCrestName: m.away})),
     label: 'FREE PREDICTION GAME · NO REAL MONEY'}}}
+}
+
+/**
+ * 07:30 — the owner's morning briefing (owner, 29.10.2026: "management and a shared update of the activity, apart
+ * from the marketing"). Not a post: no picture, no caption box, nothing to copy. Four parts, each read from real data,
+ * each saying so plainly when it is empty — OFFSIDES arenas open today, today's matches (the FAN LIFE clubs and every
+ * OFFSIDES match), the FAN LIFE clubs' results since yesterday morning, and the DUBID rounds still open.
+ * Never deduplicated against the posts: a briefing reports the state of the day, every day.
+ */
+export function composeBriefing(fixtures: readonly Fixture[], results: readonly Result[], liveClubs: readonly string[], d: LiveData, now: Date, names: Record<string, string>): Composed {
+  const today = dayKey(now)
+  const uniq = <T,>(xs: T[], key: (x: T) => string) => { const s = new Set<string>(); return xs.filter(x => !s.has(key(x)) && s.add(key(x))) }
+  const os = d.offsides.filter(m => dayKey(m.kickoff) === today)
+  const arenas = os.filter(m => m.arenas > 0).sort((a, b) => b.arenas - a.arenas || a.kickoff.localeCompare(b.kickoff))
+  const clubToday = uniq(fixtures.filter(f => liveClubs.includes(f.clubId) && f.status === 'scheduled' && dayKey(f.kickoff) === today)
+    .sort((a, b) => a.kickoff.localeCompare(b.kickoff)), f => f.providerEventId)
+  const done = uniq(results.filter(r => liveClubs.includes(r.clubId) && now.getTime() > Date.parse(r.kickoff) && now.getTime() - Date.parse(r.kickoff) < 36 * 3600_000)
+    .sort((a, b) => a.kickoff.localeCompare(b.kickoff)), r => r.providerEventId)
+  const rounds = d.dubid.filter(r => Date.parse(r.lock_at) > now.getTime()).sort((a, b) => a.lock_at.localeCompare(b.lock_at))
+  const t = (f: {kickoff: string; dateOnly?: boolean}) => f.dateOnly ? 'today' : hhmm(f.kickoff)
+  const sec = (title: string, rows: string[], empty: string) => [`<b>${title}</b>`, ...(rows.length ? rows.map(r => `• ${esc(r)}`) : [`<i>${esc(empty)}</i>`])].join('\n')
+  const total = arenas.reduce((n, m) => n + m.arenas, 0)
+  const msg = [
+    `☀️ <b>Morning briefing · ${part(now, {weekday: 'short'})} ${part(now, {day: '2-digit', month: '2-digit'}).replace('/', '.')}</b>`,
+    `<i>Operations, not a post — nothing here to publish.</i>`, '',
+    sec(`🏟 OFFSIDES — arenas today${total ? ` (${total})` : ''}`, arenas.slice(0, 10).map(m => `${hhmm(m.kickoff)} ${m.home} v ${m.away} · ${m.league} · ${m.arenas} arena${m.arenas === 1 ? '' : 's'}`), 'No active arena today.'), '',
+    sec('⚽ Today’s matches — FAN LIFE clubs', clubToday.map(f => `${t(f)} ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`), 'No FAN LIFE club plays today.'), '',
+    sec(`📺 Today’s matches — OFFSIDES (${os.length})`, os.slice().sort((a, b) => a.kickoff.localeCompare(b.kickoff)).slice(0, 15).map(m => `${hhmm(m.kickoff)} ${m.home} v ${m.away} · ${m.league}`)
+      .concat(os.length > 15 ? [`…and ${os.length - 15} more`] : []), 'No OFFSIDES match today.'), '',
+    sec('🏁 Latest results — FAN LIFE clubs', done.map(r => `${r.home} ${r.homeScore}-${r.awayScore} ${r.away}${r.competition ? ` · ${comp(r.competition)}` : ''}`), 'No FAN LIFE club played since yesterday morning.'), '',
+    sec('🧩 DUBID — rounds open', rounds.slice(0, 6).map(r => `${r.league} · Round ${r.round} · locks ${weekday(r.lock_at).slice(0, 1)}${weekday(r.lock_at).slice(1).toLowerCase()} ${hhmm(r.lock_at)}`), 'No DUBID round is open.'),
+  ].join('\n')
+  // the pictures (owner, 29.10.2026: "with the relevant graphics"): one card per part that has something in it,
+  // sent as one album before the text — the same layouts the live posts use
+  const slides: Kit[] = []
+  if (arenas.length) slides.push({t: 'L-OFFSIDES-TODAY', data: {app: 'offsides', rows: arenas.slice(0, 5).map(m => ({home: m.home, away: m.away, ko: hhmm(m.kickoff), league: m.league.toUpperCase(), arenas: m.arenas,
+    line: `${hhmm(m.kickoff)} · ${m.league.toUpperCase()} · ${m.arenas} ARENA${m.arenas === 1 ? '' : 'S'}`, homeCrestName: m.home, awayCrestName: m.away})), label: 'FREE PREDICTION GAME · NO REAL MONEY'}})
+  if (clubToday.length) slides.push({t: 'L-FIXTURES', data: {clubs: [...new Set(clubToday.map(f => f.clubId))], dayTop: 'TODAY', dayBottom: dayMonth(now),
+    rows: clubToday.slice(0, 6).map(f => ({home: f.home, away: f.away, line: `TODAY${f.dateOnly ? '' : ' ' + hhmm(f.kickoff)}${f.competition ? ' · ' + comp(f.competition).toUpperCase() : ''}`, homeCrestName: f.home, awayCrestName: f.away}))}})
+  if (done.length) slides.push({t: 'L-RESULTS', data: {clubs: [...new Set(done.map(r => r.clubId))], dayTop: weekday(done[done.length - 1]!.kickoff), dayBottom: dayMonth(done[done.length - 1]!.kickoff),
+    rows: done.slice(-6).map(r => ({home: r.home, away: r.away, score: `${r.homeScore}-${r.awayScore}`, line: comp(r.competition).toUpperCase() || 'FULL TIME', homeCrestName: r.home, awayCrestName: r.away}))}})
+  if (rounds.length) slides.push({t: 'L-DUBID-ROUND', data: {app: 'dubid', round: rounds[0]!.round, leagues: rounds.slice(0, 4).map(r => ({name: r.league, round: r.round, line: `LINEUPS LOCK ${weekday(r.lock_at)} ${dayMonth(r.lock_at)} · ${hhmm(r.lock_at)}`})), label: 'DUBID · FANTASY FOOTBALL'}})
+  void names
+  return {refs: [`brief:${today}`], msg: msg.slice(0, 4000), kit: slides.length ? {t: 'L-CAROUSEL', data: {briefing: true}, slides} as unknown as Kit : {t: 'none', data: {}}}
 }
