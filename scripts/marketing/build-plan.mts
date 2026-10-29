@@ -495,6 +495,8 @@ for (let n = 1; n <= DAYS; n++) {
   slot('21:00', 'story', quiz(n + 60)) // a second story quiz, another club
   slot('22:00', 'post', fact(100 + n))
   slot('22:30', 'post', guessYear(n))
+  // the owner's morning briefing (owner, 29.10.2026): operations, not a post — composed at send time
+  slot('07:30', 'post', {app: 'fanlife', label: 'Morning briefing', hook: '(briefing: composed at send time)', body: '', visual: 'none', kit: {t: 'none', data: {}}}, 'briefing')
   for (const [t, kind, app, label] of LIVE) slot(t, 'post', {app, label, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
 }
 for (const r of rows) if (r.kind === 'fixed' && (!r.main.tags || r.main.tags.split(' ').length > 8)) throw Error(`tags: ${r.at}`)

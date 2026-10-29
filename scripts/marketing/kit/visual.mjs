@@ -228,6 +228,7 @@ async function card(post) {
 }
 export async function visualsFor(msg, kit = null) {
   lastError = null
+  if (kit?.t === 'none') return [] // the morning briefing: operations, no picture
   const post = readPost(msg)
   try {
     // a carousel: one picture per slide, in order, sent as one album (owner, 27.10.2026)

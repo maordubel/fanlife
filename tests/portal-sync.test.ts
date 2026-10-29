@@ -506,6 +506,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261027090000_worker_marketing_live.sql', // 27.10.2026: plan v3 — live slots (results, next up, DUBID round, OFFSIDES today) — standalone
       '20261027170000_worker_live_open_arenas.sql', // 27.10.2026: audit CF-03 — only joinable OFFSIDES arenas count as open — standalone
       '20261029090000_worker_marketing_copybox.sql', // 29.10.2026: plan v4 — render() writes the caption into a copy box — standalone
+      '20261029100000_worker_marketing_briefing.sql', // 29.10.2026: the owner's 07:30 morning briefing (operations, not a post) — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

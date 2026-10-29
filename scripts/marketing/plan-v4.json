@@ -561,6 +561,23 @@
  },
  {
   "day": 1,
+  "at": "2026-10-29 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 1,
   "at": "2026-10-29 09:00",
   "format": "post",
   "kind": "results",
@@ -1141,6 +1158,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 2,
+  "at": "2026-10-30 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -1784,6 +1818,23 @@
  },
  {
   "day": 3,
+  "at": "2026-10-31 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 3,
   "at": "2026-10-31 09:00",
   "format": "post",
   "kind": "results",
@@ -2411,6 +2462,23 @@
  },
  {
   "day": 4,
+  "at": "2026-11-01 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 4,
   "at": "2026-11-01 09:00",
   "format": "post",
   "kind": "results",
@@ -3017,6 +3085,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 5,
+  "at": "2026-11-02 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -3662,6 +3747,23 @@
  },
  {
   "day": 6,
+  "at": "2026-11-03 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 6,
   "at": "2026-11-03 09:00",
   "format": "post",
   "kind": "results",
@@ -4285,6 +4387,23 @@
  },
  {
   "day": 7,
+  "at": "2026-11-04 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 7,
   "at": "2026-11-04 09:00",
   "format": "post",
   "kind": "results",
@@ -4897,6 +5016,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 8,
+  "at": "2026-11-05 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -5520,6 +5656,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 9,
+  "at": "2026-11-06 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -6165,6 +6318,23 @@
  },
  {
   "day": 10,
+  "at": "2026-11-07 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 10,
   "at": "2026-11-07 09:00",
   "format": "post",
   "kind": "results",
@@ -6741,6 +6911,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 11,
+  "at": "2026-11-08 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -7386,6 +7573,23 @@
  },
  {
   "day": 12,
+  "at": "2026-11-09 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 12,
   "at": "2026-11-09 09:00",
   "format": "post",
   "kind": "results",
@@ -8024,6 +8228,23 @@
  },
  {
   "day": 13,
+  "at": "2026-11-10 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 13,
   "at": "2026-11-10 09:00",
   "format": "post",
   "kind": "results",
@@ -8621,6 +8842,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 14,
+  "at": "2026-11-11 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -9262,6 +9500,23 @@
  },
  {
   "day": 15,
+  "at": "2026-11-12 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 15,
   "at": "2026-11-12 09:00",
   "format": "post",
   "kind": "results",
@@ -9889,6 +10144,23 @@
  },
  {
   "day": 16,
+  "at": "2026-11-13 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 16,
   "at": "2026-11-13 09:00",
   "format": "post",
   "kind": "results",
@@ -10495,6 +10767,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 17,
+  "at": "2026-11-14 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -11129,6 +11418,23 @@
  },
  {
   "day": 18,
+  "at": "2026-11-15 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 18,
   "at": "2026-11-15 09:00",
   "format": "post",
   "kind": "results",
@@ -11758,6 +12064,23 @@
  },
  {
   "day": 19,
+  "at": "2026-11-16 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 19,
   "at": "2026-11-16 09:00",
   "format": "post",
   "kind": "results",
@@ -12344,6 +12667,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 20,
+  "at": "2026-11-17 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -12967,6 +13307,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 21,
+  "at": "2026-11-18 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -13612,6 +13969,23 @@
  },
  {
   "day": 22,
+  "at": "2026-11-19 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 22,
   "at": "2026-11-19 09:00",
   "format": "post",
   "kind": "results",
@@ -14207,6 +14581,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 23,
+  "at": "2026-11-20 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -14852,6 +15243,23 @@
  },
  {
   "day": 24,
+  "at": "2026-11-21 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 24,
   "at": "2026-11-21 09:00",
   "format": "post",
   "kind": "results",
@@ -15475,6 +15883,23 @@
  },
  {
   "day": 25,
+  "at": "2026-11-22 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 25,
   "at": "2026-11-22 09:00",
   "format": "post",
   "kind": "results",
@@ -16068,6 +16493,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 26,
+  "at": "2026-11-23 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -16709,6 +17151,23 @@
  },
  {
   "day": 27,
+  "at": "2026-11-24 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 27,
   "at": "2026-11-24 09:00",
   "format": "post",
   "kind": "results",
@@ -17338,6 +17797,23 @@
  },
  {
   "day": 28,
+  "at": "2026-11-25 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 28,
   "at": "2026-11-25 09:00",
   "format": "post",
   "kind": "results",
@@ -17944,6 +18420,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 29,
+  "at": "2026-11-26 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -18571,6 +19064,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 30,
+  "at": "2026-11-27 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -19212,6 +19722,23 @@
  },
  {
   "day": 31,
+  "at": "2026-11-28 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 31,
   "at": "2026-11-28 09:00",
   "format": "post",
   "kind": "results",
@@ -19809,6 +20336,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 32,
+  "at": "2026-11-29 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -20447,6 +20991,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 33,
+  "at": "2026-11-30 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -21092,6 +21653,23 @@
  },
  {
   "day": 34,
+  "at": "2026-12-01 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 34,
   "at": "2026-12-01 09:00",
   "format": "post",
   "kind": "results",
@@ -21668,6 +22246,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 35,
+  "at": "2026-12-02 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -22313,6 +22908,23 @@
  },
  {
   "day": 36,
+  "at": "2026-12-03 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 36,
   "at": "2026-12-03 09:00",
   "format": "post",
   "kind": "results",
@@ -22936,6 +23548,23 @@
  },
  {
   "day": 37,
+  "at": "2026-12-04 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 37,
   "at": "2026-12-04 09:00",
   "format": "post",
   "kind": "results",
@@ -23548,6 +24177,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 38,
+  "at": "2026-12-05 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -24171,6 +24817,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 39,
+  "at": "2026-12-06 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -24816,6 +25479,23 @@
  },
  {
   "day": 40,
+  "at": "2026-12-07 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 40,
   "at": "2026-12-07 09:00",
   "format": "post",
   "kind": "results",
@@ -25422,6 +26102,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 41,
+  "at": "2026-12-08 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -26049,6 +26746,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 42,
+  "at": "2026-12-09 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -26692,6 +27406,23 @@
  },
  {
   "day": 43,
+  "at": "2026-12-10 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
+   }
+  }
+ },
+ {
+  "day": 43,
   "at": "2026-12-10 09:00",
   "format": "post",
   "kind": "results",
@@ -27272,6 +28003,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 44,
+  "at": "2026-12-11 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },
@@ -27908,6 +28656,23 @@
      "label": "FAN LIFE · COMMENT THE YEAR",
      "shout": "WHAT YEAR?"
     }
+   }
+  }
+ },
+ {
+  "day": 45,
+  "at": "2026-12-12 07:30",
+  "format": "post",
+  "kind": "briefing",
+  "main": {
+   "app": "fanlife",
+   "label": "Morning briefing",
+   "hook": "(briefing: composed at send time)",
+   "body": "",
+   "visual": "none",
+   "kit": {
+    "t": "none",
+    "data": {}
    }
   }
  },

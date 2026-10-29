@@ -73,3 +73,31 @@ describe('plan v4 message (owner, 29.10.2026): a real copy-paste', async () => {
     expect(m).not.toContain('<b> ')
   })
 })
+
+describe('the morning briefing (owner, 29.10.2026): operations, not marketing', async () => {
+  const {composeBriefing} = await import('../../lib/marketing/live')
+  const now = new Date('2026-10-29T05:30:00Z') // 07:30 Israel
+  const data = {dubid: [{id: 'g1', round: 9, league: 'Israeli Premier League', code: 'il', lock_at: '2026-10-31T12:00:00Z', first_kickoff_at: null}],
+    offsides: [{id: 'm1', home: 'Arsenal', away: 'Chelsea', league: 'Premier League', kickoff: '2026-10-29T19:00:00Z', tier: 1, arenas: 3},
+      {id: 'm2', home: 'Roma', away: 'Lazio', league: 'Serie A', kickoff: '2026-10-29T17:00:00Z', tier: 1, arenas: 0}], posted: ['os:m1']}
+  const fixtures = [{clubId: 'celtic', kickoff: '2026-10-29T19:45:00Z', dateOnly: false, home: 'Celtic', away: 'Rangers', clubSide: 'home', opponent: 'Rangers', competition: 'Premiership', round: null, venue: null, status: 'scheduled', providerEventId: 'e1'}]
+  const results = [{clubId: 'olympiacos', kickoff: '2026-10-28T18:00:00Z', home: 'Olympiacos', away: 'AEK Athens', homeScore: 2, awayScore: 1, clubSide: 'home', opponent: 'AEK Athens', competition: 'Super League', providerEventId: 'r1'}]
+  it('reports arenas, today’s matches, results and DUBID — even what a post already announced — with no picture', () => {
+    const out = composeBriefing(fixtures as never, results as never, ['celtic', 'olympiacos'], data, now, {})
+    if ('skip' in out) throw Error('skipped')
+    expect(out.kit.t).toBe('none')
+    expect(out.msg).toContain('Morning briefing')
+    expect(out.msg).toContain('21:00 Arsenal v Chelsea · Premier League · 3 arenas')
+    expect(out.msg).toContain('21:45 Celtic v Rangers')
+    expect(out.msg).toContain('19:00 Roma v Lazio')
+    expect(out.msg).toContain('Olympiacos 2-1 AEK Athens')
+    expect(out.msg).toContain('Round 9')
+    expect(out.msg).not.toContain('<pre>')
+  })
+  it('says plainly when a part is empty, and never skips', () => {
+    const out = composeBriefing([], [], ['celtic'], {dubid: [], offsides: [], posted: []}, now, {})
+    if ('skip' in out) throw Error('skipped')
+    expect(out.msg).toContain('No active arena today.')
+    expect(out.msg).toContain('No FAN LIFE club plays today.')
+  })
+})
