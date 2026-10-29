@@ -190,7 +190,11 @@ function grow(B,otris,opt){var R=regionVerts(otris),n=R.list.length,p=new Float3
  for(r=0;r<(opt.hemSmooth==null?8:opt.hemSmooth);r++){var tp=p.slice();for(i=0;i<n;i++){if(bl[i].length!==2)continue;var A2=bl[i][0],B2=bl[i][1];for(j=0;j<3;j++)tp[i*3+j]=p[i*3+j]*.4+(p[A2*3+j]+p[B2*3+j])*.3}p=tp}
  // a hem is a straight line of stitching: along edges that run sideways, iron out the staircase the triangle cut leaves
  for(r=0;r<36;r++){var ty=p.slice();for(i=0;i<n;i++){if(bl[i].length!==2)continue;var A3=bl[i][0],B3=bl[i][1],hx=Math.hypot(p[A3*3]-p[B3*3],p[A3*3+2]-p[B3*3+2]),vy=Math.abs(p[A3*3+1]-p[B3*3+1]);if(hx<vy*1.6)continue;ty[i*3+1]=p[i*3+1]*.2+(p[A3*3+1]+p[B3*3+1])*.4}p=ty}
- if(opt.shape)opt.shape(p,n,R,ln,bnd);
+ // the shape moves the cloth but not its edges: carry each hem along with the cloth beside it, then smooth it again, or a neckline is
+ // left behind as a row of teeth
+ if(opt.shape){var pre=p.slice();opt.shape(p,n,R,ln,bnd);for(i=0;i<n;i++){if(!bnd[i])continue;var ax=0,ay=0,az=0,ac=0;for(j=0;j<ln[i].length;j++){var q3=ln[i][j];if(bnd[q3])continue;ax+=p[q3*3]-pre[q3*3];ay+=p[q3*3+1]-pre[q3*3+1];az+=p[q3*3+2]-pre[q3*3+2];ac++}if(ac){p[i*3]+=ax/ac;p[i*3+1]+=ay/ac;p[i*3+2]+=az/ac}}
+  for(r=0;r<10;r++){var tq=p.slice();for(i=0;i<n;i++){if(bl[i].length!==2)continue;var A4=bl[i][0],B4=bl[i][1];for(j=0;j<3;j++)tq[i*3+j]=p[i*3+j]*.4+(p[A4*3+j]+p[B4*3+j])*.3}p=tq}
+  for(r=0;r<24;r++){var tw=p.slice();for(i=0;i<n;i++){if(bl[i].length!==2)continue;var A5=bl[i][0],B5=bl[i][1],hx5=Math.hypot(p[A5*3]-p[B5*3],p[A5*3+2]-p[B5*3+2]),vy5=Math.abs(p[A5*3+1]-p[B5*3+1]);if(hx5<vy5*1.6)continue;tw[i*3+1]=p[i*3+1]*.2+(p[A5*3+1]+p[B5*3+1])*.4}p=tw}}
  if(opt.drape)opt.drape(p,n,R,bn,base);
  // never sink into the body (again, after the hems moved)
  var near=new Uint8Array(n);for(i=0;i<n;i++)if(bnd[i]){near[i]=2;for(j=0;j<ln[i].length;j++){var q1=ln[i][j];near[q1]=Math.max(near[q1],1);for(var j2=0;j2<ln[q1].length;j2++)if(!near[ln[q1][j2]])near[ln[q1][j2]]=1}}
@@ -363,11 +367,21 @@ P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress
   for(i=0;i<n;i++){v=R.list[i];if(!TB[P.ski[v*4]])continue;x=p[i*3];y=p[i*3+1];z=p[i*3+2];k=key(x);
    if(y<bust&&z>sp3.z&&bins[k]!=null){var tz=bins[k]-(bust-y)*.18;if(tz>z)p[i*3+2]=z+(tz-z)*.85}
    if(y<blade&&z<sp3.z&&bb[k]!=null){var tb=bb[k]+(blade-y)*.1;if(tb<z)p[i*3+2]=z+(tb-z)*.7}}};
+ var spanFront=function(p,list,y0,y1,zc){var G=.01,xs=1e9,xe=-1e9,fr=list.filter(function(i){return p[i*3+1]>y0&&p[i*3+1]<y1&&p[i*3+2]>zc});if(fr.length<20)return;
+  fr.forEach(function(i){xs=Math.min(xs,p[i*3]);xe=Math.max(xe,p[i*3])});var ix0=Math.floor(xs/G),iy0=Math.floor(y0/G),W=Math.floor(xe/G)-ix0+1,Hh=Math.floor(y1/G)-iy0+1,H=new Float32Array(W*Hh).fill(NaN);
+  function cell(i){var cx=Math.min(W-1,Math.max(0,Math.round(p[i*3]/G)-ix0)),cy=Math.min(Hh-1,Math.max(0,Math.round(p[i*3+1]/G)-iy0));return cy*W+cx}
+  fr.forEach(function(i){var c=cell(i);if(!(H[c]>=p[i*3+2]))H[c]=p[i*3+2]});
+  function pass(A,keepMax){var O=new Float32Array(A.length);for(var y=0;y<Hh;y++)for(var x=0;x<W;x++){var c=y*W+x;if(isNaN(A[c])){O[c]=NaN;continue}var s=0,k=0;for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++){var X=x+dx,Y=y+dy;if(X<0||Y<0||X>=W||Y>=Hh)continue;var v=A[Y*W+X];if(isNaN(v))continue;var wt=(dx||dy)?1:2;s+=v*wt;k+=wt}O[c]=keepMax?Math.max(H[c],s/k):s/k}return O}
+  var S=H;for(var r=0;r<20;r++)S=pass(S,true);for(r=0;r<11;r++)S=pass(S,false);
+  var xm=Math.max(Math.abs(xs),Math.abs(xe));fr.forEach(function(i){var c=cell(i);if(isNaN(S[c]))return;var w=Math.min(1,Math.max(0,1-(H[c]-p[i*3+2])/.015)),y=p[i*3+1];
+   w*=Math.min(1,(y-y0)/.04,(y1-y)/.03,(xm-Math.abs(p[i*3]))/.05);if(w<=0)return;p[i*3+2]+=(S[c]-p[i*3+2])*w*.9})};
  var TORSOB={};[BONE.pelvis,BONE.spine_01,BONE.spine_02,BONE.spine_03,BONE.clavicle_l,BONE.clavicle_r,BONE.neck_01].forEach(function(x){TORSOB[x]=1});
  /* a shirt used to be hulled slice by slice over the whole torso, shoulders included: lowered from the A-pose, the hulled shoulder
     swelled into a pad and the whole shirt read as a balloon with the arms inside it. A shirt here only softens the
     anatomy under it, hangs straight from the chest and the shoulder blades (drapeTop), and keeps its line: the arms stay arms. */
- var shapeSoft=function(p,n,R,ln,bnd){var list=[],inSet=new Uint8Array(n);for(var i=0;i<n;i++){var v=R.list[i];if(!TORSOB[P.ski[v*4]]||bnd[i])continue;if(P.ski[v*4]===BONE.clavicle_l||P.ski[v*4]===BONE.clavicle_r)continue;list.push(i);inSet[i]=1}smoothSet(p,list,ln,inSet,6);if(ph.fem&&ph.age>14)drapeTop(p,n,R);smoothSet(p,list,ln,inSet,4)};
+ var shapeSoft=function(p,n,R,ln,bnd){var list=[],inSet=new Uint8Array(n),armY=jv(J,'upperarm_l').y-.05;for(var i=0;i<n;i++){var v=R.list[i];if(!TORSOB[P.ski[v*4]]||bnd[i])continue;/* the clavicle carries the shoulder AND the chest below it: only the shoulder stays out (a hulled shoulder is a pad) */if((P.ski[v*4]===BONE.clavicle_l||P.ski[v*4]===BONE.clavicle_r)&&(p[i*3+1]>armY||p[i*3+2]<sp3.z))continue;list.push(i);inSet[i]=1}var DS=14,cy0=sp3.y-.13,cy1=jv(J,'upperarm_l').y-.03,chest=list.filter(function(i){return p[i*3+1]>cy0&&p[i*3+1]<cy1&&p[i*3+2]>sp3.z});/* a shirt does not print the nipples: the chest band is de-spiked before it is spanned */for(var r=0;r<DS;r++){var tp=p.slice();chest.forEach(function(i){var L=ln[i],sx=0,sy=0,sz=0,c=0;for(var j=0;j<L.length;j++){if(!inSet[L[j]])continue;sx+=p[L[j]*3];sy+=p[L[j]*3+1];sz+=p[L[j]*3+2];c++}if(c<3)return;sx/=c;sy/=c;sz/=c;var dx=p[i*3]-sx,dy=p[i*3+1]-sy,dz=p[i*3+2]-sz,d=Math.hypot(dx,dy,dz);if(d>.0016){var k=.75*(d-.0016)/d;tp[i*3]-=dx*k;tp[i*3+1]-=dy*k;tp[i*3+2]-=dz*k}});for(var q=0;q<p.length;q++)p[q]=tp[q]}
+  {var arm=jv(J,'upperarm_l').y-.04;sliceHull(p,list.filter(function(i){return p[i*3+1]<arm}),function(){return 0},.012,.002)}smoothSet(p,list,ln,inSet,6);/* a shirt rounds a bust, it does not come to a point: the front-most centimetre of the chest is pressed into a soft plateau */var AP=.02,AK=.3;{var zb={};chest.forEach(function(i){var k=Math.round(p[i*3]/.02);if(zb[k]==null||p[i*3+2]>zb[k])zb[k]=p[i*3+2]});chest.forEach(function(i){var k=Math.round(p[i*3]/.02),zm=Math.max(zb[k]||0,zb[k-1]||0,zb[k+1]||0),z0=zm-AP;if(p[i*3+2]>z0)p[i*3+2]=z0+(p[i*3+2]-z0)*AK})}if(ph.fem&&ph.age>14)drapeTop(p,n,R);/* and then it spans the chest the way cloth does: the front is read as a height field, the hollows under and
+ between filled, and the whole surface eased over a couple of centimetres, so a bust is one curve and a nipple is not printed */spanFront(p,list,sp3.y-.24,cy1,sp3.z);{var cin=new Uint8Array(n);chest.forEach(function(i){cin[i]=1});smoothSet(p,chest,ln,cin,40)}smoothSet(p,list,ln,inSet,4);};
  function centroid(ti){var k=ti*3,a=P.otri[k],b=P.otri[k+1],c=P.otri[k+2];return[(B.pos[a*3]+B.pos[b*3]+B.pos[c*3])/3,(B.pos[a*3+1]+B.pos[b*3+1]+B.pos[c*3+1])/3,(B.pos[a*3+2]+B.pos[b*3+2]+B.pos[c*3+2])/3]}
  function innerTris(){var t=P.tmpl[topT];if(!look.outer)return t;var keep=[],open=look.outer!=='track';for(var i=0;i<t.length;i++){var q=centroid(t[i]),k3=P.otri[t[i]*3];if(!TORSOB[P.ski[k3*4]])continue;if(q[2]<sp3.z-.01&&q[1]<neck.y-.03)continue;
    if(open){var gp=.05+.035*sstep(sp3.y-.05,neck.y,q[1])+.03;if((q[2]>sp3.z-.01&&(Math.abs(q[0]-pelv.x)<gp||(look.outer!=='cardigan'&&q[1]<hipY+.04)))||q[1]>neck.y-.05)keep.push(t[i])}
@@ -388,14 +402,25 @@ P.make=function(o,ctx){o=vary(o);var ph=physique(o),W=weights(ph);var look=dress
   addGarment(gO.geo,clothMat({a:oc,b:o.yoke||'#f2ede4',c:'#f2ede4',y:sp3.y+.035,pat:look.outer==='track'?(o.yoke?11:9):look.outer==='cardigan'?10:den?8:0,rough:look.outer==='track'?.55:look.outer==='cardigan'?.95:.8,sheen:look.outer==='track'?.18:.06,weave:den?1.4:1,fab:look.outer==='track'?'tricot':look.outer==='cardigan'?'knit':den?'denim':'tricot',fabK:look.outer==='cardigan'?.75:.5},ctx))}
  // ----- legs
  if(botT){var crotchY=pelv.y-.09,knL=jv(J,'calf_l'),anL=jv(J,'foot_l');
-  var shapeBot=function(p,n,R,ln,bnd){var list=[],all=[],inSet=new Uint8Array(n);for(var i=0;i<n;i++){if(!bnd[i]||p[i*3+1]<pelv.y-.25)all.push(i);if(!bnd[i]){list.push(i);inSet[i]=1}}
+  var shapeBot=function(p,n,R,ln,bnd){var list=[],all=[],inSet=new Uint8Array(n),o0=p.slice();for(var i=0;i<n;i++){if(!bnd[i]||p[i*3+1]<pelv.y-.25)all.push(i);if(!bnd[i]){list.push(i);inSet[i]=1}}
    smoothSet(p,list,ln,inSet,10);
    sliceHull(p,list.filter(function(i){return p[i*3+1]>=crotchY}),function(){return 0},.016,.003);
-   // straight leg: below the knee the trouser keeps the knee's width
-   var kr={};list.forEach(function(i){var y=p[i*3+1];if(y>crotchY)return;var sd=p[i*3]>pelv.x?1:2,ax=sd===1?jv(J,'calf_l'):jv(J,'calf_r');if(Math.abs(y-ax.y)<.03){var r=Math.hypot(p[i*3]-ax.x,p[i*3+2]-ax.z);kr[sd]=Math.max(kr[sd]||0,r)}});
-   all.forEach(function(i){var y=p[i*3+1],sd=p[i*3]>pelv.x?1:2,kn=sd===1?jv(J,'calf_l'):jv(J,'calf_r'),an=sd===1?jv(J,'foot_l'):jv(J,'foot_r');if(y>kn.y||!kr[sd])return;var t=(kn.y-y)/(kn.y-an.y),ax=kn.x+(an.x-kn.x)*t,az=kn.z+(an.z-kn.z)*t+.012*t,dx=p[i*3]-ax,dz=p[i*3+2]-az,d=Math.hypot(dx,dz)||1,want=kr[sd]*(1-.12*t);if(want>d){p[i*3]=ax+dx/d*want;p[i*3+2]=az+dz/d*want}});
-   smoothSet(p,list,ln,inSet,8)};
-  var gB=C.bot||(C.bot=grow(B,trisOf(P.tmpl[botT]),{loose:true,shape:shapeBot,thick:function(v,x,y,z){return .008},relax:8,min:.005,folds:.0032}));
+   /* a trouser leg hangs: from the crotch down, each leg is a tube whose radius at any height is the widest the leg
+      is within a hand's breadth above it (cloth falls from the thigh and the knee, it does not follow the calf in),
+      eased along the leg, so there is no print of the muscles and no step at the knee */
+   ['l','r'].forEach(function(sd){var th=jv(J,'thigh_'+sd),an=jv(J,'foot_'+sd),side=sd==='l'?1:2,ids=all.filter(function(i){return p[i*3+1]<crotchY-.07&&(p[i*3]>pelv.x?1:2)===side});if(!ids.length)return;
+    function axis(y){var t=clamp((th.y-y)/(th.y-an.y),0,1);return[th.x+(an.x-th.x)*t,th.z+(an.z-th.z)*t+.01*t]}
+    // per height AND per side of the leg (front, back, outside, inside): the outer hip never widens the inner thigh
+    var st=.016,NA=10,R0={},ang=function(dx,dz){return((Math.round((Math.atan2(dx,dz)+PI)/(2*PI)*NA))%NA)};
+    ids.forEach(function(i){var y=p[i*3+1],a=axis(y),dx=p[i*3]-a[0],dz=p[i*3+2]-a[1],key=Math.round(y/st)+':'+ang(dx,dz),d=Math.hypot(dx,dz);if(R0[key]==null||d>R0[key])R0[key]=d});
+    var SM={};Object.keys(R0).forEach(function(key){var q=key.split(':'),k=+q[0],aa=+q[1],m=R0[key];for(var d=1;d<=5;d++){var u=R0[(k+d)+':'+aa];if(u!=null)m=Math.max(m,u*(1-.05*d))}SM[key]=m});
+    var SS={};Object.keys(SM).forEach(function(key){var q=key.split(':'),k=+q[0],aa=+q[1],sw=0,sr=0;for(var d=-3;d<=3;d++)for(var e=-1;e<=1;e++){var u=SM[(k+d)+':'+((aa+e+NA)%NA)];if(u!=null){var w=Math.exp(-d*d/4-e*e);sw+=w;sr+=w*u}}SS[key]=sr/sw});
+    ids.forEach(function(i){var y=p[i*3+1],a=axis(y),dx=p[i*3]-a[0],dz=p[i*3+2]-a[1],d=Math.hypot(dx,dz)||1,want=SS[Math.round(y/st)+':'+ang(dx,dz)];if(want&&want>d){var f=(want*.9+d*.1)/d;p[i*3]=a[0]+dx*f;p[i*3+2]=a[1]+dz*f}})});
+   smoothSet(p,list,ln,inSet,8);
+   /* at the waist the trousers sit under the shirt: they stay on the body there, or the hulled waistband pushes out
+      through the shirt's hem and the hem reads as a saw */
+   for(var w0=0;w0<list.length;w0++){var iw=list[w0],ww=sstep(hipY-.02,hipY+.05,o0[iw*3+1]);if(ww>0)for(var c0=0;c0<3;c0++)p[iw*3+c0]+=(o0[iw*3+c0]-p[iw*3+c0])*ww}};
+  var gB=C.bot||(C.bot=grow(B,trisOf(P.tmpl[botT]),{loose:true,shape:shapeBot,thick:function(v,x,y,z){return .01-.005*sstep(hipY,hipY+.06,y)},relax:8,min:.005,folds:.0032}));
   addGarment(gB.geo,clothMat({a:look.bot,pat:o.denim?8:(o.stripe||o.trackPants)?7:0,b:'#f2ede4',rough:o.trackPants?.55:.9,sheen:o.trackPants?.15:.06,weave:o.denim?1.4:1,fab:o.denim?'denim':o.trackPants?'tricot':'jersey',fabK:o.denim?.65:.4},ctx))}
  else if(look.legs==='skirt'){var sk=C.skirt||(C.skirt=skirtGeo(B,o));addGarment(sk,clothMat({a:o.skirt,rough:.9,sheen:.1},ctx))}
  // ----- shoes
@@ -613,13 +638,13 @@ P.express=function(g,t,dt){var u=g.userData,o=u.o||{},x=o.expr,m=o.mode;o._wide=
  /* seated (an interview, a sofa) the mood is said with the face, the head and a small hand: an arm thrown up from a chair reads as a puppet */
  if(m==='sit'||m==='sittalk'){seated(k,e,H,To,A,u,t,since,s);return}
  if(e<=.001)return;
- if(k==='joy'||k==='warm'){H.x-=.1*e;H.z+=Math.sin(t*2.2)*.04*e*s;if(talk&&k==='joy'){mix(A[0].sh.rotation,'x',-1.0,e*.8);mix(A[0].sh.rotation,'z',.55,e*.8);mix(A[1].sh.rotation,'z',-.55,e*.6)}
+ if(k==='joy'||k==='warm'){H.x-=.1*e;H.z+=Math.sin(t*2.2)*.04*e*s;/* the mood is in the hands, at the waist: an arm thrown up or out to the side on a line reads as a puppet */if(talk&&k==='joy'){mix(A[0].sh.rotation,'x',-.45,e*.8);mix(A[0].el.rotation,'x',-.95,e*.8);mix(A[0].sh.rotation,'z',.15,e*.8);A[0].hand&&mix(A[0].hand.rotation,'z',.4,e*.8)}
   if(x.role==='listen')H.x+=Math.max(0,Math.sin(since*5))*.12*e*s;u.mouth.scale.y*=1+.25*e}
- else if(k==='tender'){H.z+=.13*e;H.x+=.08*e;if(talk){mix(A[0].sh.rotation,'x',-.95,e);mix(A[0].el.rotation,'x',-1.95,e);mix(A[0].sh.rotation,'z',-.25,e)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*.7}
+ else if(k==='tender'){H.z+=.13*e;H.x+=.08*e;if(talk){mix(A[0].sh.rotation,'x',-.35,e);mix(A[0].el.rotation,'x',-1.25,e);mix(A[0].sh.rotation,'z',.05,e)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*.7}
  else if(k==='tense'){H.x+=.14*e;H.y+=Math.sin(clamp(since/1.6,0,1)*Math.PI)*.32*e;To.x+=.04*e;
-  if(talk){var hes=1-ease((since-1.2)/.8);mix(A[1].sh.rotation,'x',-2.15,e*hes);mix(A[1].el.rotation,'x',-2.25,e*hes);mix(A[1].sh.rotation,'z',-.35,e*hes);u.mouth.scale.y=1+(u.mouth.scale.y-1)*(since<1?.25:.6)}}
+  if(talk){var hes=1-ease((since-1.2)/.8);for(var j2=0;j2<2;j2++){var sg2=j2?-1:1;mix(A[j2].sh.rotation,'x',-.2,e*hes);mix(A[j2].el.rotation,'x',-.6,e*hes);mix(A[j2].sh.rotation,'z',sg2*.3,e*hes);A[j2].hand&&mix(A[j2].hand.rotation,'z',sg2*.6,e*hes)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*(since<1?.25:.6)}}
  else if(k==='grief'){H.x+=.34*e;To.x+=.14*e;for(var j=0;j<2;j++){mix(A[j].sh.rotation,'x',.02,e);mix(A[j].el.rotation,'x',-.16,e)}u.mouth.scale.y=1+(u.mouth.scale.y-1)*.35}
- else if(k==='wonder'){H.x-=.2*e;if(talk){mix(A[0].sh.rotation,'z',.6,e);mix(A[1].sh.rotation,'z',-.6,e);mix(A[0].sh.rotation,'x',-.55,e);mix(A[1].sh.rotation,'x',-.55,e)}o._wide=e}
+ else if(k==='wonder'){H.x-=.2*e;if(talk){for(var j3=0;j3<2;j3++){var sg3=j3?-1:1;mix(A[j3].sh.rotation,'x',-.35,e);mix(A[j3].el.rotation,'x',-.75,e);mix(A[j3].sh.rotation,'z',sg3*.25,e);A[j3].hand&&mix(A[j3].hand.rotation,'z',sg3*.5,e)}}o._wide=e}
 };
 /* what the face wants now: the line's mood (speaker full, listener smaller), the room's mode, and a resting face of
    the person's own — some people's faces rest on a smile. [smile, browUp, frown, sad] */
@@ -657,9 +682,9 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
   // the fingers: a soft cascade at rest, closing towards a grip when the arm is raised (a scarf, a flag, a fist)
   var Fh=R.hand&&R.hand[s];if(Fh){var up=clamp((-a.sh.rotation.x-1.6)/1.1,0,1),grip=clamp(h.held&&h.held.s===s?.92:u.grip!=null?u.grip:up*.75,0,1),j=h.fj||(h.fj=.85+Math.random()*.3);
    for(var nm in Fh){var e2=Fh[nm],bn=b[BONE[nm]];if(!bn)continue;var q=bn.quaternion.copy(ID);
-    if(e2.f==='thumb'){var o2=e2.k===1?.42+grip*.25:e2.k===2?.22+grip*.35:.28+grip*.45;if(e2.opp&&e2.k===1)q.multiply(_q2.setFromAxisAngle(e2.opp,o2));else q.multiply(_q2.setFromAxisAngle(e2.curl,o2));continue}
-    var cas={index:.78,middle:.95,ring:1.08,pinky:1.22}[e2.f],rel=(e2.k===1?.5:e2.k===2?.78:.45)*cas*j,fist=e2.k===1?1.35:e2.k===2?1.55:1.05;
-    if(e2.spA)q.multiply(_q2.setFromAxisAngle(e2.sp,e2.spA*.45*(1-grip*.5)));
+    if(e2.f==='thumb'){var o2=e2.k===1?.9+grip*.25:e2.k===2?.15+grip*.35:.2+grip*.45;if(e2.opp&&e2.k===1){q.multiply(_q2.setFromAxisAngle(e2.opp,o2))}else q.multiply(_q2.setFromAxisAngle(e2.curl,o2));continue}
+    var cas={index:.78,middle:.95,ring:1.08,pinky:1.22}[e2.f],rel=(e2.k===1?.25:e2.k===2?.35:.18)*cas*j,fist=e2.k===1?1.35:e2.k===2?1.55:1.05;
+    if(e2.spA)q.multiply(_q2.setFromAxisAngle(e2.sp,e2.spA*1.4*(1-grip*.5)));
     q.multiply(_q2.setFromAxisAngle(e2.curl,rel+(fist-rel)*grip))}}
  });
  // legs, with an ankle that keeps the sole near the floor
