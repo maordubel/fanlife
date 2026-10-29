@@ -53,7 +53,8 @@ describe('כפתור אחד, חוץ מאיפה ששניים מרוויחים א�
   it('B says what it does — "ריצה" on the pitch, "לצאת" over a conversation', () => {
     // it used to say "חזרה" in both, which is wrong on a football pitch and was drawn for
     // a dialogue state the console is never on screen in
-    expect(DECK).toContain("second === 'leave' ? t('life.deck.bLeave') : t('life.deck.bRun')")
+    // (`tt` is the deck's word lookup since 29.10.2026: the host's own words first — FAN LIFE in English — then the catalogue)
+    expect(DECK).toContain("second === 'leave' ? tt('life.deck.bLeave') : tt('life.deck.bRun')")
     expect(DECK).not.toContain("t('life.deck.b')")
   })
 
