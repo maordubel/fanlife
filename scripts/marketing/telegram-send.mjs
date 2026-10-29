@@ -18,6 +18,7 @@ try { ({visualsFor} = await import('./kit/visual.mjs')) } catch (e) { console.lo
 const tg = (method, form) => fetch(`https://api.telegram.org/bot${token}/${method}`, {method: 'POST', body: form, signal: AbortSignal.timeout(60_000)})
   .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
 async function sendVisuals(p) {
+  const brief = p.kit?.data?.briefing === true
   const pngs = await visualsFor(p.msg, p.kit || null)
   if (!pngs.length) return
   const form = new FormData()
@@ -25,9 +26,9 @@ async function sendVisuals(p) {
   form.append('disable_notification', 'true')
   if (pngs.length === 1) {
     form.append('photo', new Blob([pngs[0]], {type: 'image/png'}), 'post.png')
-    form.append('caption', '🎨 Ready-made visual — the post follows.')
+    form.append('caption', brief ? '☀️ Morning briefing — today at a glance. Details follow.' : '🎨 Ready-made visual — the post follows.')
   } else {
-    form.append('media', JSON.stringify(pngs.map((_, i) => ({type: 'photo', media: `attach://s${i}`, ...(i ? {} : {caption: `🎨 Ready-made carousel — ${pngs.length} slides. The post follows.`})}))))
+    form.append('media', JSON.stringify(pngs.map((_, i) => ({type: 'photo', media: `attach://s${i}`, ...(i ? {} : {caption: brief ? '☀️ Morning briefing — today at a glance. Details follow.' : `🎨 Ready-made carousel — ${pngs.length} slides. The post follows.`})}))))
     pngs.forEach((b, i) => form.append(`s${i}`, new Blob([b], {type: 'image/png'}), `slide-${i + 1}.png`))
   }
   const r = await tg(pngs.length === 1 ? 'sendPhoto' : 'sendMediaGroup', form)

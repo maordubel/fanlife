@@ -23,7 +23,7 @@ Telegram: the hook, the caption, the link to the right app, the hashtags and a v
 - **A picture on every post:** the post's own layout first; if it cannot be drawn, its app's L-CARD
   (`scripts/marketing/kit/live.mjs`). On Vercel sharp needs `detect-libc` and `semver` traced into the route.
 - **Build:** `node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts` →
-  `supabase/marketing/0007_marketing_plan_v3.sql` + `scripts/marketing/plan-v3.json`.
+  `supabase/marketing/0008_marketing_plan_v4.sql` + `scripts/marketing/plan-v4.json` (v4, 29.10.2026 — 45 days, 17 slots a day; v3 was 0007).
 
 ## v2 — 26.10.2026 (owner): marketing is a fixed plan; matches and results are not marketing
 - **FAN LIFE is the lead voice.** The page is FAN LIFE; DUBID, OFFSIDES, THE WORKER and FUCK YOU are promoted on a
@@ -113,3 +113,18 @@ does not hold.
 - OFFSIDES copy always says it is a free simulation with no real money.
 - FUCK YOU appears only on Israeli derby days and never names a private person.
 - ALL FOOTBALL is switched off (`features.allFootball=false`), so no post promotes it.
+
+## Plan v4 (owner, 29.10.2026) — easier text, smarter tags, copy-paste
+
+- **Message:** a two-line header (date · time · label, format · app · platforms), then the caption in a `<pre>` box
+  (Telegram copies it in one tap): hook, post, link, tags. A second box holds the first comment (answers) or, for a
+  story, frame 2. No duplicated hook, no "Visual:" line — the picture is sent just before. `marketing.render()`
+  (`20261029090000_worker_marketing_copybox.sql`) and `lib/marketing/live.ts → message()` write the same shape.
+- **Tags:** `lib/marketing/tags.ts → smartTags()` — #FANLIFE, the club's own tags, the topic; 3–8 per post.
+- **Daily slots:** 08 on this day · 09 results (live) · 10 gate · 11 next up (live) · 12 fact / DUBID / OFFSIDES ·
+  13 DUBID round (live) · 14 story quiz · 15 OFFSIDES today (live) · 16 nerds only · 17 second gate ·
+  17:30 guess the score · 18 Royal Rumble / Legends Manager · 19 club carousel · 20 spicy · 21 story quiz ·
+  22 did you know · 22:30 guess the year. Answers are always in the first comment.
+- **Art round 2 in use:** 15 gate plates, 6 moments (spicy band, guess the score, matchday posts with one or two
+  matches), 3 carousel covers, 10 stickers (`c.stick()`, silhouettes from `scripts/marketing/sticker-fills.py`),
+  3 textures (`c.grain()`). `tests/marketing/art.test.ts` fails if an asset is stored but never drawn.

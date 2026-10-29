@@ -3228,7 +3228,7 @@ two-ink black and white (owner, 27.10.2026; `Canvas.image` in the kit). Live slo
 Every FAN LIFE picture carries the real FAN LIFE badge (never the word set in type) and wears the club's own colours the
 way its shirt does (`scripts/marketing/kit/poster.mjs`, `config/clubs.json` from `livery()`); the club's own colour is
 never a rival ban of itself. 19:00 daily is a carousel for one open club — its nights since 1980, its gates, or love for
-its fans — with the club's own tags (`carousel()` in build-plan). New art is ordered from docs/fanlife/52-social-art-prompts.md. Launch phase (owner, 27.10.2026): 17:00 a second gate and 21:00 a second story quiz, each for another club; the 15:00 OFFSIDES slot is its own "Today's Central Arenas" (gold plate, JOIN THE BATTLE, QR to offsides.dubelteam.com — the only OFFSIDES address).
+its fans — with the club's own tags (`carousel()` in build-plan). New art is ordered from docs/fanlife/52-social-art-prompts.md. Plan v4 (owner, 29.10.2026): 45 days, the caption in a copy box, answers only in the first comment, smart tags from `lib/marketing/tags.ts`, and every art-round-2 asset drawn (art test). Launch phase (owner, 27.10.2026): 17:00 a second gate and 21:00 a second story quiz, each for another club; the 15:00 OFFSIDES slot is its own "Today's Central Arenas" (gold plate, JOIN THE BATTLE, QR to offsides.dubelteam.com — the only OFFSIDES address).
 
 ## 128 · A discovery unit promises only what the target can do, and shows only when it may (27.10.2026)
 

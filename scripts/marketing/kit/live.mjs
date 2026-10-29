@@ -98,13 +98,13 @@ export function designLive(t, app, d) {
         if (d.kicker) { const kw = Math.min(900, measure(String(d.kicker).toUpperCase(), 30, 'Weekly Caps') + 80); c.rect(W / 2 - kw / 2, 822, kw, 58, c.ink, {border: false}); c.text(d.kicker, W / 2, 862, 30, 'Weekly Caps', c.paper, {anchor: 'middle', max: 860, min: 16}) }
         c.rect(64, 880, 952, 300, c.paper, {sw: 4})
         c.fitted(d.title, 104, 980, {n: 76, min: 40, max: 872, maxLines: 3, step: 1.08})
-        c.burst(910, 1210, 96, 'SWIPE!', {fill: c.P.cyan, n: 34})
+        c.stick('swipe', 910, 1210, 96, {fill: c.P.cyan}) || c.burst(910, 1210, 96, 'SWIPE!', {fill: c.P.cyan, n: 34})
       } else if (d.s === 'cover') {
         crestMedal(c, d.crest, W / 2, 520, 230)
         if (d.kicker) { const kw = Math.min(900, measure(String(d.kicker).toUpperCase(), 30, 'Weekly Caps') + 80); c.rect(W / 2 - kw / 2, 790, kw, 58, c.ink, {border: false}); c.text(d.kicker, W / 2, 830, 30, 'Weekly Caps', c.paper, {anchor: 'middle', max: 860, min: 16}) }
         c.rect(64, 880, 952, 300, c.paper, {sw: 4})
         c.fitted(d.title, 104, 980, {n: 76, min: 40, max: 872, maxLines: 3, step: 1.08})
-        c.burst(910, 1210, 96, 'SWIPE!', {fill: c.P.cyan, n: 34})
+        c.stick('swipe', 910, 1210, 96, {fill: c.P.cyan}) || c.burst(910, 1210, 96, 'SWIPE!', {fill: c.P.cyan, n: 34})
       } else {
         c.circle(W / 2, 470, 236, c.ink, {border: false})
         c.image('assets/brand/fanlife-logo.png', W / 2 - 230, 240, 460, 460, {contain: true, raw: true, id: 'fanlife-logo-big'})
@@ -153,7 +153,9 @@ export function designLive(t, app, d) {
     } else c.text(String(d.gate || ''), 70, 330, 34, 'Weekly Caps', f.on, {max: 560, min: 18})
     c.plate(gateArt(d), num ? 430 : 300, 250, num ? 600 : 720, 470)
     ribbon(c, d.name, 760, {fill: c.accent, text: c.paper})
-    c.burst(925, 905, 104, d.shout || 'PLAY FREE!', {fill: c.P.cyan, n: 36})
+    // the hand-drawn sticker where one says the same thing (art round 2): FREE! on a gate, LEGENDS on Legends Manager
+    { const st = d.sticker !== undefined ? d.sticker : d.name === 'LIFE' ? 'new' : !d.shout ? 'free' : d.shout === 'KICK OFF!' ? 'legends' : null
+      if (!(st && c.stick(st, 925, 905, 104, {fill: c.P.cyan}))) c.burst(925, 905, 104, d.shout || 'PLAY FREE!', {fill: c.P.cyan, n: 36}) }
     c.fitted(d.headline, 64, 990, {n: 62, min: 38, max: 760, maxLines: 2, step: 1.05})
     ;(d.body || []).slice(0, 2).forEach((s, i) => c.text(s, 64, 1124 + i * 42, 31, 'Weekly Body 600', c.ink, {max: 952, min: 30, tag: 'reading'}))
     c.footer({label: d.label || null})
@@ -162,7 +164,7 @@ export function designLive(t, app, d) {
     const paint = paintFor(d), f = clubField(c, paint, 0, 0, W, 620)
     c.header()
     if (d.crest) crestMedal(c, d.crest, W - 175, 360, 150)
-    c.burst(190, 335, 116, 'DID YOU KNOW?', {fill: c.P.cyan, n: 30})
+    c.burst(190, 335, 116, d.shout || 'DID YOU KNOW?', {fill: c.P.cyan, n: 30})
     const year = String(d.fact || '').match(/(19[89]\d|20\d\d)(\/\d\d)?/)?.[0]
     if (year) c.text(year, 64, 590, year.length > 4 ? 150 : 190, 'Ultra', f.on, {max: 700, min: 90, stroke: 7, shadow: true, tag: 'fact-year'})
     c.rect(64, 690, 952, 400, c.paper, {sw: 4})
@@ -175,11 +177,17 @@ export function designLive(t, app, d) {
     if (rows.length < 1 || rows.length > 6) throw Error(`${t} needs 1–6 rows`)
     c.header()
     c.masthead(t === 'L-RESULTS' ? 'FULL TIME' : 'NEXT UP', 64, 326, 99, 700)
-    c.circle(935, 363, 75, c.P.cyan)
-    c.text(d.dayTop, 935, 356, 34, 'Ultra', c.ink, {anchor: 'middle', max: 120, min: 18})
-    c.text(d.dayBottom, 935, 398, 23, 'Ultra', c.ink, {anchor: 'middle', max: 120, min: 14})
+    // today's matches wear the hand-drawn TONIGHT sticker (art round 2); any other day keeps the date roundel
+    if (!(t === 'L-FIXTURES' && d.dayTop === 'TODAY' && c.stick('tonight', 880, 360, 125, {fill: c.P.cyan}))) {
+      c.circle(935, 363, 75, c.P.cyan)
+      c.text(d.dayTop, 935, 356, 34, 'Ultra', c.ink, {anchor: 'middle', max: 120, min: 18})
+      c.text(d.dayBottom, 935, 398, 23, 'Ultra', c.ink, {anchor: 'middle', max: 120, min: 14})
+    }
     const start = 455, hh = Math.min(250, (1170 - start) / rows.length)
     rows.forEach((r, i) => matchRow(c, 64, start + i * hh, 952, hh - 15, r, t === 'L-RESULTS' ? r.score : null))
+    // one or two matches leave half a page: a moment drawing fills it (art round 2) — a kid at the turnstile before,
+    // the terrace going up after
+    { const free = 1170 - (start + rows.length * hh); if (free >= 360) c.plate(t === 'L-RESULTS' ? 'moment-goal' : 'moment-kid', 64, start + rows.length * hh + 10, 952, free - 30, c.P.paper) }
     c.footer({label: d.label || 'FROM THE FAN LIFE CLUBS'})
   } else if (t === 'L-DUBID-ROUND') {
     brandTop(c, 'dubid', [`ROUND ${d.round}`, 'IS OPEN'], 'PICK YOUR PLAYERS BEFORE THE LOCK')
@@ -263,6 +271,8 @@ export function designLive(t, app, d) {
       c.footer()
     }
   } else throw Error('Unknown live template ' + t)
+  // paper grain (art round 2): grass under the matchday posts, terrace concrete under the love letters, newsprint elsewhere
+  if (!c.transparent) c.grain(t === 'L-FIXTURES' || t === 'L-RESULTS' ? 'grass' : t === 'L-SLIDE' && d.s === 'love' ? 'terrace' : 'newsprint', t === 'L-FIXTURES' || t === 'L-RESULTS' ? .07 : .1)
   return c.finish(t + ' / ' + c.app.label)
 }
 
