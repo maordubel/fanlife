@@ -8,14 +8,14 @@
  * Nothing here is positioned by a pixel offset — the shell measures this plate and every other layer
  * hangs from `--l-hud`.
  */
-import type {MutableRefObject} from 'react'
+import {useEffect, useRef, useState, type MutableRefObject} from 'react'
 import styles from './life.module.css'
 
 type Copy = Record<string, string>
 type Story = {lang?: string; dir?: 'ltr' | 'rtl'}
 export type Meter = 'coins' | 'energy' | 'standing'
 
-export function Hud({plateRef, initials, serial, place, objective, coins, saved = 0, energy, standing, talking, copy, story, onMeter, onMap, onMenu}: {
+export function Hud({plateRef, initials, serial, place, objective, coins, saved = 0, energy, standing, talking, quiet = false, copy, story, onMeter, onMap, onMenu}: {
   plateRef: MutableRefObject<HTMLElement | null>
   initials: string
   serial: string
@@ -27,12 +27,22 @@ export function Hud({plateRef, initials, serial, place, objective, coins, saved 
   energy: number
   standing: number
   talking: boolean
+  /** a phone in an episode: the meters show only when one of them moves, the way a game shows money as it changes */
+  quiet?: boolean
   copy: Copy
   story: Story
   onMeter: (m: Meter) => void
   onMap: () => void
   onMenu: () => void
 }) {
+  const [flash, setFlash] = useState(false), last = useRef(`${coins}|${Math.round(energy)}|${standing}`)
+  useEffect(() => {
+    const now = `${coins}|${Math.round(energy)}|${standing}`
+    if (now === last.current) return
+    last.current = now; setFlash(true)
+    const t = window.setTimeout(() => setFlash(false), 3600)
+    return () => window.clearTimeout(t)
+  }, [coins, energy, standing])
   const chip = (m: Meter, value: number, bar: boolean) => (
     <button key={m} type="button" className={`${styles.hudChip} min-h-tap`} data-meter={m} data-low={m === 'energy' && energy < 25 ? 'true' : 'false'} onClick={() => onMeter(m)} aria-haspopup="dialog" data-life={`meter-${m}`}>
       <span>{copy[`me.${m}`]}</span>
@@ -42,7 +52,7 @@ export function Hud({plateRef, initials, serial, place, objective, coins, saved 
     </button>
   )
   return (
-    <header ref={plateRef} className={styles.hud} data-life="hud" data-talking={talking ? 'true' : 'false'}>
+    <header ref={plateRef} className={styles.hud} data-life="hud" data-talking={talking ? 'true' : 'false'} data-quiet={quiet && !flash ? 'true' : 'false'} data-flash={flash ? 'true' : 'false'}>
       <div className={styles.hudRow}>
         <span className={styles.mark} aria-hidden="true">{initials}</span>
         <div className={styles.hudText}>

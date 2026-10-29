@@ -3239,3 +3239,13 @@ Owner's audit `FANLIFE_CONNECTED_CODE_AUDIT_2026-10-27` (CF-01…CF-10).
 4. **Switches:** `features.universeOff` ('dubid' · 'offsides' · 'legends' · 'life' · 'club:<id>' · '<product>:<id>') plus `registry.ts` `enabled/heldOut` hold a product out of every unit and of the social plan's live slots.
 5. **LIFE Continue** asks `lib/life/universal/compat.ts` — the same rule `Life.load` uses — so a door never says Continue for a save the engine would refuse.
 6. **Outcome:** companions report `reportOutcome` → `shared.handoff_outcome` (ecosystem 0006, contract v9); `shared.v_handoff_outcome` is the funnel (service role).
+
+## 129 · LIFE plays like a game: one light on the job, a thumb that drives, a scene you walk into (29.10.2026)
+
+Owner, after playing: *"מאוד מכני, מאוד משעמם … תעשה את זה באמת ה GTA של האוהדים."*
+1. **The GPS** (`lib/life/universal/gps.ts → goalOf`): the job the episode asks for now (the open job in THIS room first, then the nearest by open doors) is ONE goal — the person or thing in its room (`Objective.at`, set by the season compiler), else the next unlocked door on the way. The town draws it louder than every marker (`P.goal`: a column in the club's colour, a bobbing chevron, a breathing ring), the shell gives it one button (`data-life="gps"`, key G) that walks there and does it on arrival, and an edge arrow (`gps-blip`) when it is off the glass. No light on a locked door, ever (`tests/life-gps.test.ts`).
+2. **A thumb on the picture is a stick** (play.js): drag = move, far = run, release = stop; a short touch is still a tap.
+3. **Walking into a room is a scene**: film bars + a camera that starts wide and pushes in (`ENTRY_T`). **An episode opens in three beats** — phone, box, title — never a page to scroll; the theme (Maor's recording) plays under the opening and closing cards.
+4. **A phone in an episode hides the meters** until one moves (`Hud quiet`). A job done flashes and shakes.
+5. **RUSH missions are ON by default** (owner, same message); off in Settings → Features.
+6. `town.project` answers in PIXELS, the block engine in fractions: anything reading `project()` normalises both (the name balloon never floated in the town until this).

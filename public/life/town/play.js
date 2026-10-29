@@ -224,6 +224,8 @@ function enter(c){
  player=new Body({x:pos[0],z:pos[1],yaw:sp.yaw||0,look:c.player||{}},'player');player.place();
  settleFollowers();
  camX=0;camZ=1;trackCam(0,true);
+ /* walking into a scene: the picture starts a step wide and pushes in, the way a film arrives in a room */
+ ENTRY_T=now;camZ=.8;K.follow(camX,camZ);
  graceUntil=now+.7;
  veil(false,420);
  emit({type:'entered',room:c.room,issues:audit()});
@@ -256,7 +258,7 @@ function trackCam(dt,snap){
  var x0=(cfg.walk[0]-.6)*U,x1=(cfg.walk[2]+.6)*U,xm=ux*U,fx=0;
  if(x1-x0>2*half)fx=Math.max(x0+half,Math.min(x1-half,xm))-info.l[0];
  else if(fa)fx=Math.max(-.6,Math.min(.6,(xm-info.l[0])*.55));
- var k=snap?1:Math.min(1,dt*4.5);camX+=(fx-camX)*k;camZ+=(zm-camZ)*k;K.follow(camX,camZ);
+ var e=now-ENTRY_T,k=snap?1:Math.min(1,dt*(e<2.2?1.25:4.5));camX+=(fx-camX)*k;camZ+=(zm-camZ)*k;K.follow(camX,camZ);
 }
 
 /* ---------- targets ---------- */
@@ -486,6 +488,43 @@ function studioCam(k){if(!STU)return;var X=STU.g.position.x,Z=STU.g.position.z,a
  /* a documentary interview: head and shoulders, the eyes on the upper third (phone and desktop alike) */K.cineCam({p:[X+1.15*d,hy-.03,Z+1.62*d],l:[X+(asp<1?.0:-.14),hy-.1,Z],fov:asp<1?34:28})}
 K.hooks.push(function(t){if(STU)studioCam((now-STU.t0)/14)});
 
+/* ---------- the GPS: one light on the job ----------
+   GTA never makes anybody wonder where the job is. The shell names ONE goal in this room — the person, the thing, or the
+   door on the way — and it is drawn louder than every other marker: a column of the club's colour standing on it, a
+   chevron bobbing over it, a ring breathing on the floor. The cream markers stay for everything else that can be touched. */
+var GOAL=null,GB=null,ENTRY_T=-9;
+function goalColour(){var c=S&&S.p?new T.Color(S.p):null;if(c){var h={};c.getHSL(h);if(h.s<.28||h.l>.82||h.l<.12)c=null}if(!c)c=new T.Color('#fff6e6');c.convertSRGBToLinear();return c}
+function goalBuild(){
+ var col=goalColour(),g=new T.Group();
+ var colm=new T.Mesh(new T.CylinderGeometry(.5,.5,4.2,28,1,true),new T.ShaderMaterial({transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending,uniforms:{c:{value:col},t:{value:0}},
+  vertexShader:'varying float vy;void main(){vy=position.y/4.2+.5;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+  fragmentShader:'uniform vec3 c;uniform float t;varying float vy;void main(){float a=(1.-vy)*(.62+.16*sin(t*3.))+.06;a*=smoothstep(0.,.08,vy);gl_FragColor=vec4(c*a*1.6,a);}'}));
+ colm.position.y=2.1;g.add(colm);
+ var chev=new T.Group(),cm=new T.MeshBasicMaterial({color:col,toneMapped:false});
+ var tri=new T.Mesh(new T.ConeGeometry(.26,.44,3),cm);tri.rotation.x=PI;chev.add(tri);
+ var ol=new T.Mesh(new T.ConeGeometry(.32,.54,3),new T.MeshBasicMaterial({color:new T.Color('#14141c'),side:T.BackSide}));ol.rotation.x=PI;chev.add(ol);
+ g.add(chev);
+ var ring=new T.Mesh(new T.RingGeometry(.48,.62,40),new T.MeshBasicMaterial({color:col,transparent:true,opacity:.75,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending,toneMapped:false}));ring.rotation.x=-PI/2;ring.position.y=.03;g.add(ring);
+ g.renderOrder=5;return{g:g,col:colm,chev:chev,ring:ring,key:S&&S.p};
+}
+function goalTick(t){
+ if(!GOAL||!player||STU||CINE){if(GB)GB.g.visible=false;return}
+ var p=reachOf(GOAL.kind,GOAL.id);if(!p){if(GB)GB.g.visible=false;return}
+ if(!GB||GB.key!==(S&&S.p)){if(GB&&GB.g.parent)GB.g.parent.remove(GB.g);GB=goalBuild()}
+ if(!GB.g.parent)K.world.add(GB.g);
+ var top=1.4;
+ if(GOAL.kind==='actor'){var a=actors[GOAL.id];top=a?a.g.position.y+a.hm+.62:2}
+ else if(GOAL.kind==='spot'){for(var i=0;i<spots.length;i++)if(spots[i].id===GOAL.id){top=(spots[i].y==null?2.6:spots[i].y)*U+.55}}
+ else top=1.35;
+ GB.g.visible=true;GB.g.position.set(p[0]*U,0,p[1]*U);
+ /* close enough to touch it: the column goes quiet so the person is not standing inside a light */
+ var d=Math.hypot(p[0]-player.x,p[1]-player.z),near=d<2.6;
+ GB.col.visible=!near;GB.col.material.uniforms.t.value=t;
+ GB.chev.position.y=top+Math.abs(Math.sin(t*3.2))*.14;GB.chev.rotation.y=t*1.6;
+ var k=1+.18*Math.sin(t*4);GB.ring.scale.set(k,k,k);GB.ring.material.opacity=near?.6:.8;
+}
+K.hooks.push(function(t){try{goalTick(t)}catch(er){}});
+
 var P=window.__vxPlay={
  engine:'town',
  on:function(fn){sink=fn||function(){}},
@@ -508,6 +547,9 @@ var P=window.__vxPlay={
   return b?K.screen(x,y,z):null},
  /* LIFE may name the speaker a moment after it sends the line's mood: the line still starts on whoever says it */
  focus:function(id){focusId=id||null;if(id){faceEachOther(id);var a=actors[id];if(a&&lastMood&&now-lastMood.t<.5)a.o.expr={k:lastMood.k,t0:lastMood.t,role:'say'}}},
+ /* the GPS: one goal ({kind,id}) or null */
+ goal:function(kind,id){GOAL=kind&&id?{kind:kind,id:id}:null;return true},
+ goalState:function(){return{goal:GOAL,shown:!!(GB&&GB.g.visible&&GB.g.parent),at:GB?GB.g.position.toArray():null,cine:!!CINE,stu:!!STU}},
  mark:function(kind,id,on){marks.forEach(function(m){if(m.kind===kind&&m.id===id)m.on=!!on});retarget(true)},
  lock:function(id,locked){var x=exitOf(id);if(x){x.locked=!!locked;retarget(true)}},
  actor:function(id,patch){var a=actors[id];if(!a)return false;if(patch.yaw!=null)a.wantYaw=patch.yaw;return true},
@@ -529,8 +571,23 @@ K.hooks.push(frame);
 
 /* ---------- boot ---------- */
 var q=new URLSearchParams(location.search),el=K.ren.domElement,down=null;
-el.addEventListener('pointerdown',function(e){down={x:e.clientX,y:e.clientY,t:performance.now()}});
-el.addEventListener('pointerup',function(e){if(!down)return;var d=Math.hypot(e.clientX-down.x,e.clientY-down.y),dt=performance.now()-down.t;down=null;if(d<12&&dt<600)tap(e.clientX,e.clientY)});
+/* a thumb on the picture is a stick wherever it lands (the way a phone game drives): drag and he goes that way, far and he
+   runs, let go and he stops. A short touch that does not drag is still a tap — walk there, or go to whoever was touched. */
+var STK=null,STR=62;
+function stickUi(){var d=document.createElement('div');d.setAttribute('aria-hidden','true');d.style.cssText='position:fixed;z-index:9;pointer-events:none;width:'+(STR*2)+'px;height:'+(STR*2)+'px;margin:-'+STR+'px 0 0 -'+STR+'px;border-radius:50%;border:2px solid rgba(255,246,230,.55);background:rgba(20,20,28,.22);display:none';
+ var k=document.createElement('div');k.style.cssText='position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(255,246,230,.9);box-shadow:0 2px 8px rgba(0,0,0,.35)';d.appendChild(k);document.body.appendChild(d);return{ring:d,knob:k}}
+el.addEventListener('pointerdown',function(e){down={x:e.clientX,y:e.clientY,t:performance.now(),id:e.pointerId,drag:false}});
+el.addEventListener('pointermove',function(e){
+ if(!down||e.pointerId!==down.id||frozen||e.pointerType==='mouse')return;
+ var dx=e.clientX-down.x,dy=e.clientY-down.y,d=Math.hypot(dx,dy);
+ if(!down.drag&&d<14)return;
+ if(!down.drag){down.drag=true;path=null;pending=null;if(!STK)STK=stickUi();STK.ring.style.left=down.x+'px';STK.ring.style.top=down.y+'px';STK.ring.style.display='block'}
+ var k=Math.min(1,d/STR),nx=d?dx/d*k:0,ny=d?dy/d*k:0;axis.x=nx;axis.y=ny;running=k>.92;
+ STK.knob.style.transform='translate('+(nx*STR)+'px,'+(ny*STR)+'px)';
+});
+function stickOff(){if(STK)STK.ring.style.display='none';axis.x=axis.y=0;running=false}
+el.addEventListener('pointerup',function(e){if(!down)return;var wasDrag=down.drag,d=Math.hypot(e.clientX-down.x,e.clientY-down.y),dt=performance.now()-down.t;down=null;if(wasDrag){stickOff();return}if(d<12&&dt<600)tap(e.clientX,e.clientY)});
+el.addEventListener('pointercancel',function(){if(down&&down.drag)stickOff();down=null});
 fetch('/life/voxel/skins').then(function(r){return r.ok?r.json():{skins:{}}}).catch(function(){return{skins:{}}}).then(function(d){
  SKINS=d.skins||{};
  /* the stand-alone room viewer (no ?play) dresses a room for ?club= exactly as play does: the same skin, the same colour guard */

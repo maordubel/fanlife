@@ -845,3 +845,41 @@ button.tapChip:active { transform: translate(2px, 2px); box-shadow: none; }
 /* Season One: his own voice — a caption in italics, marked in the club's colour, never a speech balloon */
 .dlg[data-think='true'] .dlgLine { font-style: italic; font-family: var(--mag-display); }
 .dlg[data-think='true'] { border-inline-start: 6px solid var(--l-prime); }
+
+/* ───── the GPS: the job's light has a button — one tap and he walks there (and does it on arrival) ───── */
+.gps { position: absolute; z-index: 3; inset-inline: 12px; inset-block-end: var(--l-foot); margin-inline: auto; max-inline-size: 26rem; min-block-size: 56px; display: flex; align-items: center; gap: 10px; padding: 8px 16px 8px 12px;
+  background: var(--l-deep); color: var(--l-paper); border: 2px solid var(--l-paper); box-shadow: 3px 3px 0 var(--l-prime); text-align: start; animation: rise .22s ease-out both; }
+.gps .tapVerb { color: var(--l-paper); opacity: .75; }
+.gps .tapName { font-size: 1.0625rem; }
+.gps kbd { font-family: var(--mag-mono); font-size: .75rem; padding: 1px 6px; border: 1px solid currentColor; opacity: .7; }
+button.gps:active { transform: translate(2px, 2px); box-shadow: none; }
+.gpsPin { position: relative; flex: none; inline-size: 14px; block-size: 14px; border-radius: 50%; background: var(--l-prime); box-shadow: 0 0 0 0 color-mix(in srgb, var(--l-prime) 70%, transparent); animation: gpsPing 1.4s ease-out infinite; }
+@keyframes gpsPing { 70% { box-shadow: 0 0 0 12px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@media (prefers-reduced-motion: reduce) { .gps, .gpsPin { animation: none; } }
+
+/* ───── walking into a scene: two film bars close in while the camera pushes in, then open the picture to him ───── */
+.bars { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.bars::before, .bars::after { content: ''; position: absolute; inset-inline: 0; block-size: 11%; background: var(--l-ink); animation: barIn 2.1s cubic-bezier(.3, .8, .25, 1) both; }
+.bars::before { inset-block-start: 0; transform-origin: top; }
+.bars::after { inset-block-end: 0; transform-origin: bottom; }
+@keyframes barIn { 0% { transform: scaleY(0); } 14% { transform: scaleY(1); } 70% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+@media (prefers-reduced-motion: reduce) { .bars { display: none; } }
+
+/* ───── a phone in an episode: the meters stay out of the picture until one of them moves ───── */
+@media (max-width: 899px) {
+  .hud[data-quiet='true'] .hudChips { display: none; }
+  .hud[data-flash='true'] .hudChips { animation: hudFlash .5s cubic-bezier(.2, 1.4, .4, 1) both; }
+}
+@keyframes hudFlash { from { opacity: 0; transform: translateY(-8px) scale(.96); } }
+@media (prefers-reduced-motion: reduce) { .hud[data-flash='true'] .hudChips { animation: none; } }
+.gpsHint { position: absolute; z-index: 3; inset-inline: 12px; inset-block-end: calc(var(--l-foot) + 66px); margin: 0 auto; max-inline-size: 26rem; padding: 8px 12px; background: color-mix(in srgb, var(--l-deep) 88%, transparent); color: var(--l-paper); font-size: .875rem; text-align: center; pointer-events: none; animation: rise .22s ease-out both; }
+/* something else is in reach: the GPS stands above its chip, so both are one tap */
+.gps[data-stack='true'] { inset-block-end: calc(var(--l-foot) + 64px); }
+/* the blip on the edge of the glass: a red arrowhead pointing at the light that is out of the picture */
+.blipFrame { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.blip { position: absolute; inset-block-start: 0; inset-inline-start: 0; display: none; inline-size: 0; block-size: 0; margin: -14px 0 0 -14px; }
+.blip::before { content: ''; position: absolute; inline-size: 28px; block-size: 28px; background: var(--l-prime); clip-path: polygon(100% 50%, 0 0, 22% 50%, 0 100%); filter: drop-shadow(0 0 2px var(--l-ink)); animation: blipPulse 1s ease-in-out infinite; }
+@keyframes blipPulse { 50% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) { .blip::before { animation: none; } }
+/* on a desktop the key legend runs along the foot of the picture: the GPS stands above it */
+.life:not([data-touch='true']) .gps { z-index: 5; inset-block-end: calc(var(--l-foot) + 72px); }
