@@ -84,6 +84,9 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const [near, setNear] = useState<SearchKind | null>(null)
   const eye = useRef<HTMLDivElement | null>(null)
   const [searching, setSearching] = useState<SearchKind | null>(null)
+  const [found, setFound] = useState<{kind: string; n: number} | null>(null)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const emptyKinds = useRef(new Set<string>())
   const stick = useRef({id: -1, ox: 0, oy: 0, x: 0, y: 0})
   const endT = useRef(0)
   const introT = useRef(0)
@@ -210,7 +213,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'search') {
               // close up: the place he is going through is named; what it gave (or did not) comes in the pop
               if (e.state === 'start') { setSearching(e.kind); sfx('tick') }
-              else { setSearching(null); if (e.state === 'empty') { emptyN.current++; pop(w(`ev.empty.${(emptyN.current % 4) + 1}` as RushKey)); sfx('tick') } }
+              else { setSearching(null); if (e.state === 'found' && e.got) { setFound(f => ({kind: String(e.got), n: (f?.n ?? 0) + 1})); sfx('keep') } if (e.state === 'empty') { emptyN.current++; /* the place answers in its own words the first time; after that, a shrug */ const own = `ev.empty.${e.kind}` as RushKey, seen = emptyKinds.current; if (!seen.has(e.kind)) { seen.add(e.kind); say(w(own), 2600) } else pop(w(`ev.empty.${(emptyN.current % 4) + 1}` as RushKey)); sfx('tick') } }
             }
             else if (e.k === 'creak') { say(w(e.loud ? 'ev.creak.loud' : 'ev.creak'), 1400); sfx(e.loud ? 'clang' : 'tick') }
           }
@@ -233,7 +236,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
         // HUD by reference: no React render per frame
         const left = Math.max(0, sim.clock)
         if (hud.clock.current) hud.clock.current.textContent = fmt(left)
-        hud.clockPlate.current?.setAttribute('data-low', String(left < level.timeScale * 15))
+        hud.clockPlate.current?.setAttribute('data-low', String(left < level.timeScale * 15)); rootRef.current?.setAttribute('data-low', String(left < level.timeScale * 10 && left > 0))
         if (hud.legs.current) hud.legs.current.style.inlineSize = `${Math.round(sim.stamina * 100)}%`
         if (hud.seen.current) hud.seen.current.style.inlineSize = `${Math.round(sim.seen * 100)}%`
         // at home at night: an eye that opens as her look comes round to where he is (only when she could see him at all)
@@ -328,9 +331,12 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const anchor = spec.anchor
 
   return (
-    <div className={`${css.rush} z-[60]`} dir={rtl ? 'rtl' : 'ltr'} lang={locale} role="dialog" aria-modal="true" aria-label={spec.title} data-life="rush" data-phase={phase}>
+    <div className={`${css.rush} z-[60]`} dir={rtl ? 'rtl' : 'ltr'} lang={locale} role="dialog" aria-modal="true" aria-label={spec.title} data-life="rush" data-phase={phase} ref={rootRef}>
       <canvas ref={canvasRef} className={css.canvas} aria-hidden="true" />
       <div className={css.cut} data-on={cut && phase === 'play'} aria-hidden="true" />
+      {/* the thing came out of the place: a beat the whole screen feels, then the hunt goes on */}
+      {found && <div className={css.found} key={found.n} aria-hidden="true"><b>{w('hud.found')}</b><span>{w(`got.${found.kind}` as RushKey)}</span></div>}
+      <div className={css.tension} aria-hidden="true" />
       {count && <div className={css.count} aria-hidden="true" key={count} data-go={count === 'GO'}><span>{count === 'GO' ? w('brief.go') : count}</span></div>}
 
       {(phase === 'play' || phase === 'ending') && (
@@ -378,7 +384,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
           <section className={css.ticket}>
             {/* eslint-disable-next-line @next/next/no-img-element -- grey bytes ship as measured: a re-encode may tint them (rule 61) */}
             {card && <img className={css.card} src={card} alt="" width={1200} height={675} decoding="async" />}
-            <p className={css.kicker}><span>{w('brief.kicker')} · {w(verbKey)}</span><span>{w(spec.mandatory ? 'brief.required' : 'brief.optional')}</span></p>
+            <p className={css.kicker}><span>{w('brief.kicker')} · {w(verbKey)}</span>{spec.mandatory && <span>{w('brief.required')}</span>}</p>
             <h2 id="rush-title" className={css.title}>{spec.title}</h2>
             <p className={css.brief}>{spec.brief}</p>
             {anchor ? (
@@ -386,9 +392,10 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             ) : <p className={css.fine}>{w('brief.neutral')}</p>}
             <p className={css.fine}>{w(touch ? 'brief.controls.touch' : level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? (level.verb === 'sneak' ? 'brief.controls.keys.night' : level.searches.length ? 'brief.controls.keys.home' : 'brief.controls.keys.flat') : 'brief.controls.keys')}</p>
             <div className={css.actions}>
-              {!spec.mandatory && <button type="button" className={`${css.btn} min-h-tap`} onClick={skip} data-life="rush-skip">{w('brief.skip')}</button>}
-              <button type="button" ref={primary} className={`${css.btn} min-h-tap`} data-primary="true" onClick={() => begin(assist)} data-life="rush-go">{w('brief.go')}</button>
+              <button type="button" ref={primary} className={`${css.btn} ${css.go} min-h-tap`} data-primary="true" onClick={() => begin(assist)} data-life="rush-go">{w('brief.go')}</button>
             </div>
+            {/* the way out is there for whoever needs it, and quiet for everybody else: the mission is the invitation */}
+            {!spec.mandatory && <button type="button" className={`${css.quiet} min-h-tap`} onClick={skip} data-life="rush-skip">{w('brief.skip')}</button>}
           </section>
         </div>
       )}

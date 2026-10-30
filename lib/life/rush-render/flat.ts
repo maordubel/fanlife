@@ -355,6 +355,52 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   // the hands' work: bits that fly out of a drawer
   const bits = Array.from({length: lite ? 6 : 12}, (_, i) => { const m = new THREE.Mesh(box, std(['#efece4', '#c9b79c', skin.p, '#8a8f99'][i % 4]!, {roughness: 0.7})); m.scale.set(0.09, 0.02, 0.07); m.visible = false; scene.add(m); return {m, t: 9, vx: 0, vy: 0, vz: 0} })
 
+  /* the places OPEN while he goes through them, and stay the way he left them: a drawer pulled half out, the wardrobe
+     door ajar, the cushion off the sofa. A room you have searched looks searched — that is what makes it a scene, and it
+     tells you where you have looked without a single mark on the screen. */
+  type Opener = {g: THREE.Group; part: THREE.Object3D; kind: string; open: number; inner?: THREE.Mesh}
+  const oWood = std('#8a5a3c', {roughness: 0.62}), oWoodIn = std('#c9a77c', {roughness: 0.8}), cloth = std(pick(['#7c2b2b', '#2c4a6b'], '#5d6b7a'), {roughness: 0.95})
+  const openers: Opener[] = level.searches.map(q => {
+    const g = new THREE.Group(); g.position.set(q.x + Math.sin(q.face) * 0.5, 0, q.z + Math.cos(q.face) * 0.5); g.rotation.y = q.face; scene.add(g)
+    const part = new THREE.Group(); g.add(part)
+    const add = (geo: THREE.BufferGeometry, m: THREE.Material, x: number, y: number, z: number, sx: number, sy: number, sz: number) => { const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); o.scale.set(sx, sy, sz); o.castShadow = !lite; part.add(o); return o }
+    let inner: THREE.Mesh | undefined
+    switch (q.kind) {
+      case 'drawer': case 'desk': case 'sideboard': case 'table':
+        // a drawer: front, two sides, a pale inside; it slides out along the face
+        part.position.set(0, q.kind === 'table' ? 0.62 : 0.72, -0.06)
+        add(box, oWood, 0, 0, 0.02, 0.5, 0.16, 0.03); add(box, oWoodIn, 0, -0.07, -0.18, 0.46, 0.02, 0.38)
+        add(box, oWood, -0.235, 0, -0.18, 0.02, 0.14, 0.38); add(box, oWood, 0.235, 0, -0.18, 0.02, 0.14, 0.38)
+        add(box, std('#d8cfbf', {roughness: 0.4, metalness: 0.4}), 0, 0, 0.045, 0.1, 0.02, 0.02)
+        break
+      case 'wardrobe': case 'fridge': {
+        // a door on a hinge at its left edge: the part turns, the panel is offset so it pivots there
+        const fr = q.kind === 'fridge'
+        part.position.set(-0.36, 0, -0.04)
+        add(box, fr ? std('#e9ece8', {roughness: 0.35}) : oWood, 0.36, fr ? 0.85 : 1.05, 0, 0.72, fr ? 1.7 : 2.1, 0.04)
+        add(box, std('#b9b9b9', {roughness: 0.3, metalness: 0.6}), 0.66, fr ? 1.05 : 1.1, 0.04, 0.03, 0.22, 0.03)
+        if (fr) { inner = new THREE.Mesh(keep(new THREE.PlaneGeometry(0.62, 1.4)), keep(new THREE.MeshBasicMaterial({color: new THREE.Color('#dff2ff').multiplyScalar(1.6), toneMapped: false, transparent: true, opacity: 0}))); inner.position.set(0, 0.85, -0.05); g.add(inner) }
+        break
+      }
+      case 'cushion': case 'armchair': case 'bed':
+        // a cushion (or the blanket's corner) lifted and tilted while he looks under it
+        part.position.set(0, q.kind === 'bed' ? 0.55 : 0.5, -0.25)
+        add(keep(new THREE.BoxGeometry(1, 1, 1, 2, 1, 2)), cloth, 0, 0, 0, q.kind === 'bed' ? 0.7 : 0.48, 0.1, 0.42)
+        break
+      case 'coat':
+        part.position.set(0, 1.75, -0.08)
+        add(keep(new THREE.CapsuleGeometry(0.14, 0.62, 4, 8)), cloth, 0, -0.45, 0, 1, 1, 0.6)
+        break
+      default:
+        // a box, a bowl, the shoe rack: a lid that tips back
+        part.position.set(0, q.kind === 'toybox' ? 0.42 : 0.3, -0.2)
+        add(box, q.kind === 'toybox' ? std(skin.p, {roughness: 0.7}) : oWood, 0, 0, -0.18, 0.5, 0.03, 0.36)
+    }
+    // shut, nothing of it shows apart from what the furniture already draws; it appears as it opens
+    part.visible = false
+    return {g, part, kind: q.kind, open: 0, inner}
+  })
+
   /* the boards that talk: a little paler, a little proud — you can see where they are, if you look */
   for (const cr of level.creaks) {
     const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(cr.x1 - cr.x0, cr.z1 - cr.z0).rotateX(-Math.PI / 2)), std('#b9895c', {roughness: 0.55, transparent: true, opacity: 0.38}))
@@ -404,6 +450,21 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
       const sq = sim.searchI >= 0 ? level.searches[sim.searchI]! : null
       const k = sq ? Math.min(1, sim.searchT / sq.secs) : -1
       fill.visible = !!sq
+      // open what he is going through, ease it, and leave it open once it has been gone through
+      level.searches.forEach((q, i) => {
+        const o = openers[i]!, want = sim.searchI === i ? Math.min(1, sim.searchT / Math.max(0.3, q.secs) * 1.6) : sim.searched[i] ? 0.55 : 0
+        o.open += (want - o.open) * Math.min(1, dt * (want > o.open ? 7 : 3))
+        o.part.visible = o.open > 0.02
+        if (!o.part.visible) return
+        const e = o.open, j = sim.searchI === i ? Math.sin(t * 22) * 0.012 * e : 0 // a hand at work rattles it a little
+        switch (o.kind) {
+          case 'drawer': case 'desk': case 'sideboard': case 'table': o.part.position.z = -0.06 + e * 0.32 + j; break
+          case 'wardrobe': case 'fridge': o.part.rotation.y = -e * 1.45 + j; if (o.inner) (o.inner.material as THREE.MeshBasicMaterial).opacity = e * 0.55; break
+          case 'cushion': case 'armchair': case 'bed': o.part.position.y = (o.kind === 'bed' ? 0.55 : 0.5) + e * 0.32; o.part.rotation.x = -e * 0.7 + j; o.part.position.z = -0.25 + e * 0.25; break
+          case 'coat': o.part.rotation.z = Math.sin(t * 6) * 0.25 * (sim.searchI === i ? 1 : 0) + e * 0.12; o.part.rotation.x = -e * 0.4; break
+          default: o.part.rotation.x = -e * 1.2 + j
+        }
+      })
       if (sq) fillGeo.setDrawRange(0, Math.max(1, Math.round(FILL_SEG * k)) * 6)
       fill.position.set(sim.x, 0.02, sim.z)
       for (const b of bits) {
