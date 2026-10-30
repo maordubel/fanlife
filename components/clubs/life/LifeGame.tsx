@@ -1258,7 +1258,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
           ) : episode ? (
             <EpisodeOpen no={episode.no} of={episode.of} age={chapter.age} title={chapter.title} logline={heroize(episode.logline)} ready={ready}
               texts={episode.no === 1 && typeof state.flags['life:name'] !== 'string' ? (episode.texts ?? []).map(m => ({from: heroize(m.from), t: heroize(m.t)})) : []} box={episode.box ? {item: heroize(episode.box.item), line: heroize(episode.box.line), img: boxImg(chapter)} : null}
-              askName={episode.no === 1 && typeof state.flags['life:name'] !== 'string'} name={nameDraft} onName={setNameDraft} copy={copy} onCue={cue}
+              askName={episode.no === 1 && typeof state.flags['life:name'] !== 'string'} name={nameDraft} onName={setNameDraft} copy={copy} onCue={cue} paper={chapter.paper ?? null} locale={locale}
               onPlay={() => { const n = nameDraft.trim(); if (episode.no === 1 && typeof state.flags['life:name'] !== 'string' && n) life.current?.dispatch({t: 'flag', k: 'life:name', v: n.slice(0, 18)}); beginDay() }} />
           ) : (
             <Reel key={chapter.id} input={reelInput!} copy={copy} ready={ready} onBegin={beginDay} onCue={cue} storyProps={story} primary={primary} />

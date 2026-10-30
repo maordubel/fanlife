@@ -239,6 +239,9 @@ export type Chapter = {
   prelude?: CardDef[]
   /** an anchored night carries the archive row it stands on; a universal chapter carries none */
   anchor?: ArchiveRef
+  /** the paper of that week: a night the archive holds in the year he is this age, shown when the episode opens (the score
+   *  as recorded, nothing more). Never a live board — the episode does not stand on it. */
+  paper?: ArchiveRef
   /** the one night of this life that is the club's own match, told with its teams, its competition and its result */
   centrepiece?: boolean
   /** the chapter is part of this life only while this holds when its turn comes (a route the player was invited into); otherwise it is skipped, never dead-ended */
