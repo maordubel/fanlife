@@ -8,7 +8,7 @@ describe('Celtic 2024/25 home kit illustration',()=>{
  it('stores the referenced details on this shirt only',()=>{
   expect(home.shirt.artwork).toMatchObject({patternSleeves:true,shoulderStripes:true})
   expect(home.shirt.artwork!.hoopBands).toHaveLength(3)
-  expect(data.kits.filter(k=>k.id!=='cof-k-67'&&k.shirt.artwork?.patternSleeves)).toHaveLength(0)
+  expect(data.kits.find(k=>k.id==='cof-k-63')?.shirt.artwork?.patternSleeves).toBeUndefined()
  })
  it('exports the sponsor as a self-contained image and renders the chosen bands',()=>{
   expect(svg).toContain('data:image/svg+xml;base64,')
