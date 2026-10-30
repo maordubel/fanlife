@@ -858,19 +858,26 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       // close up: going through a drawer, the camera comes down low beside him and looks at his hands
       const sq = sim.searchI >= 0 ? level.searches[sim.searchI] : null
       closeK += ((sq ? 1 : 0) - closeK) * Math.min(1, dt * (sq ? 3.2 : 2.2))
-      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, 0.75, sq.z + Math.cos(sq.face) * 0.55)
+      // the hands are where the place is: up on the wardrobe, at a coat on its hook, down in a drawer
+      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, sq.kind === 'wardrobe' ? 1.65 : sq.kind === 'coat' ? 1.2 : sq.kind === 'bed' || sq.kind === 'shoes' || sq.kind === 'toybox' ? 0.45 : 0.75, sq.z + Math.cos(sq.face) * 0.55)
       // beside him, a little behind, on the side the camera already is (the open side of the room): his face, his hands and the place in one frame
       // in FRONT of the place and to one side of him (about sixty degrees off its face): further round than that and the lens
       // ends up beside or behind the furniture he is going through — the armchair filled the screen. Of the two sides, the
       // one with open floor between the lens and his hands; then the one the camera is already on.
-      let side = 0
+      let side = 0, dist = 2.2
       if (sq) {
-        const sa = sq.face + Math.PI * 0.33, sb = sq.face - Math.PI * 0.33
-        const open = (a: number) => { const cx = sim.x + Math.sin(a) * 2.2, cz = sim.z + Math.cos(a) * 2.2; for (let k = 0; k <= 10; k++) { const x = cx + (closeAt.x - cx) * k / 10, z = cz + (closeAt.z - cz) * k / 10; for (const b of level.blocks) if (x > b.x0 && x < b.x1 && z > b.z0 && z < b.z1) return false } return true }
-        const oa = open(sa), ob = open(sb)
-        side = oa !== ob ? (oa ? sa : sb) : Math.cos(sa) >= Math.cos(sb) ? sa : sb
+        // the lens stays in the room he is in, and nothing stands between it and his hands
+        const room = level.rooms.find(r => sim.x >= r.rect.x0 && sim.x <= r.rect.x1 && sim.z >= r.rect.z0 && sim.z <= r.rect.z1)?.rect
+        const ok = (a: number, d: number) => { const cx = sim.x + Math.sin(a) * d, cz = sim.z + Math.cos(a) * d
+          if (room && (cx < room.x0 + 0.3 || cx > room.x1 - 0.3 || cz < room.z0 + 0.3 || cz > room.z1 - 0.3)) return false
+          for (let k = 0; k <= 10; k++) { const x = cx + (closeAt.x - cx) * k / 10, z = cz + (closeAt.z - cz) * k / 10; for (const b of level.blocks) if (x > b.x0 && x < b.x1 && z > b.z0 && z < b.z1) return false }
+          return true }
+        const pref = Math.cos(sq.face + Math.PI * 0.33) >= Math.cos(sq.face - Math.PI * 0.33) ? 1 : -1
+        let hit = false
+        found: for (const d of [2.2, 1.6, 1.15]) for (const f of [0.33, 0.2, 0.45, 0]) for (const sg of [pref, -pref]) { const a = sq.face + sg * f * Math.PI; if (ok(a, d)) { side = a; dist = d; hit = true; break found } }
+        if (!hit) { side = sq.face; dist = 1.15 }
       }
-      const near = tmp2.set(sim.x + Math.sin(side) * 2.2, child ? 1.45 : 1.7, sim.z + Math.cos(side) * 2.2)
+      const near = tmp2.set(sim.x + Math.sin(side) * dist, (child ? 1.45 : 1.7) + (sq?.kind === 'wardrobe' ? 0.35 : 0), sim.z + Math.cos(side) * dist)
       camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * 0.92), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
       camLook.lerp(tmp3.set(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
