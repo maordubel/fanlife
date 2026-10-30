@@ -311,6 +311,27 @@
     },
     "measured": {
      "hoops": 2
+    },
+    "artwork": {
+     "patternSleeves": true,
+     "shoulderStripes": true,
+     "sponsorSrc": "/club-kits/celtic/marks/dafabet-2024-illustrated.svg",
+     "reference": "https://de.store.celticfc.com/en/pages/home-kit-24-25",
+     "note": "Illustrated approximation based on the club home kit and the existing catalogue reference; sponsor symbol is a simplified illustration.",
+     "hoopBands": [
+      {
+       "y": 75,
+       "height": 50
+      },
+      {
+       "y": 150,
+       "height": 60
+      },
+      {
+       "y": 225,
+       "height": 50
+      }
+     ]
     }
    },
    "shorts": {

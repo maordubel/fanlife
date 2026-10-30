@@ -15,14 +15,18 @@ import hapoelPetahTikva from '@/content/manual/kit-archive-hapoel-petah-tikva.js
  * A kit finds its files by id (the catalogue kits of a wave keep their `cof-k-NN` id) and otherwise by season and type, so a kit the
  * club pack already held from another source still shows the catalogue's picture of the same shirt.
  */
-export type KitArtRow={id:string;season:string;type:string;euro:boolean;image?:string|null}
+export type KitArtRow={id:string;season:string;type:string;euro:boolean;image?:string|null;shirt?:{artwork?:unknown}}
 type Row=KitArtRow
-type Art={image:string|null;svg:string;icon:string}
+type Art={image:string|null;svg:string;icon:string;illustrated:boolean}
 const FILES:Record<string,Row[]>={
  'aek-athens':aek.kits as Row[],celtic:celtic.kits as Row[],panathinaikos:panathinaikos.kits as Row[],'st-pauli':stPauli.kits as Row[],
  'zrinjski-mostar':zrinjski.kits as Row[],'hapoel-petah-tikva':hapoelPetahTikva.kits as Row[],olympiacos:olympiacos.kits as Row[],'hapoel-tel-aviv':hta.kits as Row[],
 }
-const art=(club:string,r:Row):Art=>({image:r.image??null,svg:`/club-kits/${club}/svg/${r.id}.svg`,icon:`/club-kits/${club}/icons/${r.id}.svg`})
+const art=(club:string,r:Row):Art=>({image:r.image??null,svg:`/club-kits/${club}/svg/${r.id}.svg`,icon:`/club-kits/${club}/icons/${r.id}.svg`,illustrated:!!r.shirt?.artwork})
+/** Prefer a real photo; otherwise show a record-specific illustration when available. */
+export function kitArchiveImage(photo:string|null|undefined,artwork:Art|null):string|null{
+ return photo??(artwork?.illustrated?artwork.svg:artwork?.image)??null
+}
 /** An exact id wins. Fallback is safe only if the season and type identify one candidate. */
 export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:string,type:string,also:readonly string[]=[]):Row|null{
  const idOf=(s:string)=>s.startsWith(`${club}:`)?s.slice(club.length+1):s
@@ -36,6 +40,10 @@ export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:
 export function kitArt(club:string,kitId:string,season:string,type:string,also:readonly string[]=[]):Art|null{
  const rows=FILES[club];if(!rows)return null
  const hit=matchKitArt(rows,club,kitId,season,type,also)
+ // A bespoke drawing can identify a particular sponsor/competition variant. A
+ // unique season/type candidate alone does not prove that it is the same shirt.
+ const idOf=(s:string)=>s.startsWith(`${club}:`)?s.slice(club.length+1):s
+ if(hit?.shirt?.artwork&&idOf(kitId)!==hit.id&&!also.some(id=>idOf(id)===hit.id))return null
  return hit?art(club,hit):null
 }
 export const clubHasKitArt=(club:string)=>Object.hasOwn(FILES,club)

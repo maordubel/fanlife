@@ -1,0 +1,3 @@
+# 2025/26 home illustration
+
+The white shamrock is recoloured from the existing `shamrock-from-crest.svg`, whose source is documented in this directory's README. `a-little-shelter-illustrated.svg` is a simplified hand-drawn approximation, not the sponsor's official artwork. The drawing follows the existing `gre_panath_1_2526.png` catalogue image and the [club's home kit announcement](https://www.pao.gr/commercial/h-proti-emfanisi-tis-sezon-2025-26/). The club announced [A Little Shelter as the shirt sponsor from November 2025 until the end of February 2026](https://www.pao.gr/fc/xorigos-sti-fanela-o-organismos-a-little-shelter/); this illustration represents that sponsor variant, not every shirt used in that season.
