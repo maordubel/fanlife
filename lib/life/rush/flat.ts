@@ -322,9 +322,13 @@ export function flatLevel(spec: MissionSpec, r: () => number): Built {
  */
 export function flatSight(a: {x: number; z: number}, b: {x: number; z: number}): boolean {
   const n = Math.ceil(Math.hypot(b.x - a.x, b.z - a.z) / 0.25)
-  for (let k = 1; k < n; k++) {
-    const x = a.x + (b.x - a.x) * k / n, z = a.z + (b.z - a.z) * k / n
-    if (!flatRoomsAt(x, z).length) return false
-  }
+  for (let k = 1; k < n; k++) if (!onFlatFloor(a.x + (b.x - a.x) * k / n, a.z + (b.z - a.z) * k / n)) return false
   return true
+}
+
+/** whether a point is floor (a room or a doorway) — the allocation-free question a look asks every frame */
+export function onFlatFloor(x: number, z: number): boolean {
+  for (const r of FLAT_ROOMS) if (x >= r.rect.x0 && x <= r.rect.x1 && z >= r.rect.z0 && z <= r.rect.z1) return true
+  for (const d of FLAT_DOORS) if (x >= d.rect.x0 && x <= d.rect.x1 && z >= d.rect.z0 && z <= d.rect.z1) return true
+  return false
 }

@@ -8,7 +8,7 @@
  */
 import * as THREE from 'three'
 import {patrolAt, type Level} from '@/lib/life/rush/level'
-import {FLAT_DOORS, FLAT_RADIO, FLAT_SEAT, FLAT_WINDOW, flatRoomsAt} from '@/lib/life/rush/flat'
+import {FLAT_DOORS, FLAT_RADIO, FLAT_SEAT, FLAT_WINDOW, onFlatFloor} from '@/lib/life/rush/flat'
 import type {Sim} from '@/lib/life/rush/sim'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {pose, type FigureData} from './figure'
@@ -348,9 +348,10 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
     sp.scale.setScalar(0.42); sp.renderOrder = 4; scene.add(sp); return sp
   })
   // the ring at his feet fills while he goes through a place
-  const fillGeo = (k: number) => new THREE.RingGeometry(0.5, 0.6, 40, 1, Math.PI / 2, -Math.PI * 2 * Math.max(0.001, k)).rotateX(-Math.PI / 2)
-  const fill = new THREE.Mesh(fillGeo(0.001), keep(new THREE.MeshBasicMaterial({color: new THREE.Color('#fff4e0'), transparent: true, opacity: 0.95, depthWrite: false, toneMapped: false, side: THREE.DoubleSide})))
-  fill.renderOrder = 3; scene.add(fill); let fillK = -1
+  // one ring, built once; how much of it shows is its draw range (nothing is allocated while he searches)
+  const FILL_SEG = 48, fillGeo = keep(new THREE.RingGeometry(0.5, 0.6, FILL_SEG, 1, Math.PI / 2, -Math.PI * 2).rotateX(-Math.PI / 2))
+  const fill = new THREE.Mesh(fillGeo, keep(new THREE.MeshBasicMaterial({color: new THREE.Color('#fff4e0'), transparent: true, opacity: 0.95, depthWrite: false, toneMapped: false, side: THREE.DoubleSide})))
+  fill.renderOrder = 3; scene.add(fill)
   // the hands' work: bits that fly out of a drawer
   const bits = Array.from({length: lite ? 6 : 12}, (_, i) => { const m = new THREE.Mesh(box, std(['#efece4', '#c9b79c', skin.p, '#8a8f99'][i % 4]!, {roughness: 0.7})); m.scale.set(0.09, 0.02, 0.07); m.visible = false; scene.add(m); return {m, t: 9, vx: 0, vy: 0, vz: 0} })
 
@@ -383,14 +384,14 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
   const RAYS = 22
   const cones = level.patrols.map(p => {
     if (!p.range) return null
-    const geo = new THREE.BufferGeometry(), pos = new Float32Array((RAYS + 2) * 3), idx: number[] = []
+    const geo = keep(new THREE.BufferGeometry()), pos = new Float32Array((RAYS + 2) * 3), idx: number[] = []
     for (let k = 1; k <= RAYS; k++) idx.push(0, k, k + 1)
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3)); geo.setIndex(idx)
     const mat = keep(new THREE.MeshBasicMaterial({color: '#ffe9c4', transparent: true, opacity: 0.18, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false, side: THREE.DoubleSide}))
     const m = new THREE.Mesh(geo, mat); m.renderOrder = 2; m.frustumCulled = false; scene.add(m)
     return {m, pos, mat}
   })
-  const rayLen = (x: number, z: number, a: number, max: number) => { for (let d = 0.25; d < max; d += 0.25) if (!flatRoomsAt(x + Math.sin(a) * d, z + Math.cos(a) * d).length) return d; return max }
+  const rayLen = (x: number, z: number, a: number, max: number) => { const sx = Math.sin(a), sz = Math.cos(a); for (let d = 0.25; d < max; d += 0.25) if (!onFlatFloor(x + sx * d, z + sz * d)) return d; return max }
 
   return {
     update(sim, t, dt, ending, outcome, cam) {
@@ -403,8 +404,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
       const sq = sim.searchI >= 0 ? level.searches[sim.searchI]! : null
       const k = sq ? Math.min(1, sim.searchT / sq.secs) : -1
       fill.visible = !!sq
-      if (sq && Math.abs(k - fillK) > 0.02) { fill.geometry.dispose(); fill.geometry = fillGeo(k); fillK = k }
-      if (!sq) fillK = -1
+      if (sq) fillGeo.setDrawRange(0, Math.max(1, Math.round(FILL_SEG * k)) * 6)
       fill.position.set(sim.x, 0.02, sim.z)
       for (const b of bits) {
         if (sq && b.t > 0.6 && Math.random() < dt * 6) { b.t = 0; b.m.position.set(sq.x + Math.sin(sq.face) * 0.6, 0.8, sq.z + Math.cos(sq.face) * 0.6); b.vx = (Math.random() - 0.5) * 1.6; b.vy = 1.2 + Math.random(); b.vz = (Math.random() - 0.5) * 1.6 }

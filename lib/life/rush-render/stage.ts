@@ -152,7 +152,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const asphalt = noiseTex('#202227', 26, [3, 80], true)
   const tile = keep(canvasTex(256, 256, (g, w) => { g.fillStyle = '#6b6a6e'; g.fillRect(0, 0, w, w); for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { const v = 95 + rnd() * 25; g.fillStyle = `rgb(${v},${v - 2},${v - 4})`; g.fillRect(x * 64 + 2, y * 64 + 2, 60, 60) } }, [2, 40]))
   const plaster = ['#e9e3d6', '#ddd5c5', '#efe7d7', '#cfc8bb', '#e4d8c3', '#d8cfbf']
-  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0), one = new THREE.Vector3(1, 1, 1), tmp = new THREE.Vector3(), tmp2 = new THREE.Vector3(), closeAt = new THREE.Vector3()
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0), one = new THREE.Vector3(1, 1, 1), tmp = new THREE.Vector3(), tmp2 = new THREE.Vector3(), tmp3 = new THREE.Vector3(), closeAt = new THREE.Vector3()
   let closeK = 0
   const lampLights: THREE.PointLight[] = []
   const lampZ: number[] = []
@@ -864,7 +864,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const near = tmp2.set(sim.x + Math.sin(side) * 2.4, child ? 1.5 : 1.75, sim.z + Math.cos(side) * 2.4 + 0.5)
       camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * 0.92), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
+      camLook.lerp(tmp3.set(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
       const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6 - closeK * 8; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     } else if (view.ending && !heroCar) {
       const k = Math.min(view.endT / 1.2, 1), e = k * k * (3 - 2 * k)

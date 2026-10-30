@@ -57,7 +57,7 @@ export const E2: EpisodeScript = {
     {
       id: 'tin', goal: 'Find your savings tin — Mum tidied', main: true, when: not(GONE),
       at: {room: 'bedroom', spot: 'desk'}, verb: 'take',
-      lines: [think('The tin. Every coin you have ever found under a sofa is in here. Was in here. The desk is empty.'), say('mum', 'I tidied your room! Everything is somewhere sensible!'), think('Somewhere sensible. That could be anywhere.')],
+      lines: [think('The tin. Every coin you have ever found under a sofa is in here. Was in here. The desk is empty.'), room('From the kitchen: “I tidied your room! Everything is somewhere sensible!”'), think('Somewhere sensible. That could be anywhere.')],
       // close up: the flat gone through drawer by drawer (RUSH `tin-hunt`); the counting game where RUSH cannot play
       mission: {template: 'tin-hunt'},
       game: 'count',

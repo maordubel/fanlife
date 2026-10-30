@@ -84,7 +84,7 @@ export const ROOM_CATALOGUE: readonly CatalogueRoom[] = [
 export const ROOMS: Record<RoomId, RoomPlay> = {
   room: {
     id: 'room', floorY: 0, walk: [0.5, 1, 23.5, 12.5], surface: 'floor',
-    spawns: {start: {x: 11.5, z: 9.6, yaw: PI}, fromStreet: {x: 19.2, z: 2.8, yaw: 0}, fromKitchen: {x: 21.4, z: 6.6, yaw: -PI / 2}, fromBedroom: {x: 3.4, z: 10.8, yaw: 0}},
+    spawns: {start: {x: 11.5, z: 9.6, yaw: PI}, fromStreet: {x: 19.2, z: 2.8, yaw: 0}, fromKitchen: {x: 21.4, z: 6.6, yaw: -PI / 2}, fromBedroom: {x: 4.3, z: 10.75, yaw: 0}},
     slots: {
       sofa: {x: 9.9, z: 3.4, yaw: 0, sit: {seat: 2}, head: -1.1},
       sofaEnd: {x: 7.7, z: 3.4, yaw: 0, sit: {seat: 2}},
@@ -98,7 +98,7 @@ export const ROOMS: Record<RoomId, RoomPlay> = {
   },
   bedroom: {
     id: 'bedroom', floorY: 0, walk: [0.5, 1, 23.5, 12.5], surface: 'wood',
-    spawns: {start: {x: 9, z: 8.4, yaw: PI}, fromLiving: {x: 22, z: 2.8, yaw: 0}, bed: {x: 6.4, z: 6.2, yaw: 0}},
+    spawns: {start: {x: 9, z: 8.4, yaw: PI}, fromLiving: {x: 22, z: 2.8, yaw: 0}, bed: {x: 6.8, z: 6.25, yaw: 0}},
     slots: {bed: {x: 5.6, z: 3.2, yaw: PI / 2, sit: {seat: 2}}, byDoor: {x: 19.4, z: 6.2, yaw: PI}, byDesk: {x: 18.6, z: 5.2, yaw: PI}, rug: {x: 13.4, z: 8.4, yaw: -0.4}},
     spots: {wardrobe: {x: 11.8, z: 2.6, y: 6}, desk: {x: 15.4, z: 3.3, y: 4.4}, box: {x: 4.6, z: 5.4, y: 1.8}, ball: {x: 11.9, z: 7.8, y: 1.8}, flag: {x: 3.6, z: 5.3, y: 6.6}, window: {x: 20, z: 3.4, y: 6.4}},
     doors: {door: {x: 20.9, z: 1, w: 2.2, d: 1.1, dir: 'n'}},

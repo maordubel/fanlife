@@ -3266,6 +3266,8 @@ Owner: *"the characters still collide with objects."* Measured, not guessed: `np
 2. **Where the shoulder cuts a way off, the pieces on that way are SQUEEZED first** (`SQUEEZE`: a body turning sideways), and only then the smallest of them is given back. The way is the route walked in quarter-cell steps — a route is its corners, the furniture is between them.
 3. **Floor nobody can walk to is sealed** (the strip behind a desk): a target there sent the player to a place he could see and never reach.
 4. **A standing person whose feet are in a piece steps out of it** to the nearest free floor when the room is entered.
+5. **A chair is a piece.** Parts too thin to count alone (legs, a seat, a back) are added up by the object they belong to, when that object is chair-sized; such a group keeps a hand's width off it, so a body brushes past a chair and never walks through it. Before anything is given back it is squeezed, then brushed (no padding) — and only then dropped.
+6. **"Reachable" means what `audit()` means**: a person or spot whose nearest standing place is out of arm's reach counts as cut off. The probe checks every spawn of every room for it.
 
 ## 132 · A mission is a scene you walk into (30.10.2026)
 
