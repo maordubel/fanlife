@@ -40,6 +40,19 @@ furniture `blocks`, toy `trips` (fall only at a sprint), Mum and the cat as patr
 a time (`Voice.t`). A new home mission reuses this place; a new room is a row in `FLAT_ROOMS` + a door, and the bot test
 must still win every seed. The camera there never turns with the stick.
 
+## 2d. Close-up missions at home (rule 132)
+A home mission is a SCENE, not a race: add a builder to `flatLevel` and its id to `HOME_TEMPLATES`.
+- `Scene.hide(kind, step, among, r)` hides a step's thing in one of several places (`SearchKind`, stand-points in
+  `SPOT`); `Scene.tuck` puts an extra in a place nobody needs; `Scene.look` adds an empty place.
+- Search = tap act by the place and keep still (`Search.secs`); the camera comes down to his hands. Never show or point
+  at a hidden thing — the compass points at the places it might be (`Search.for`).
+- Night stealth: `verb: 'sneak'`, a seated watcher is a patrol with `sweep`, `creaks` are loud boards, sight stops at
+  walls (`flatSight`). The bot (`homeSneakBot`) must never be caught; a straight walker must be.
+- `house` = who sits on the sofa, the hour, the television, his window. Words: `obj.*`, voices, `res.*.sub.<id>`,
+  `hud.clock.<id>`, `got.<kind>`, `search.<kind>` in EN and HE.
+- Wire it in the season step whose story it is (`mission: {template}`, keep a `game` fallback) and pay it off with a
+  `show: [cine(...)]`. `tests/life-closeup-missions.test.ts` holds all of it.
+
 ## 3. Needs — what the mission asks of each club's archive
 For each fact the mission prints or depends on, add a `Need`:
 - `of: {anchor: [kinds]}` (match, home, away, derby, final, europe, title, relegation, promotion, ground, founding)

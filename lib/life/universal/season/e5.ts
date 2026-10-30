@@ -87,9 +87,12 @@ export function e5(anchor: ArchiveRef | null, age: number): EpisodeScript {
       {
         id: 'window', goal: 'Out through the window', main: true,
         at: {room: 'bedroom', spot: 'window'}, verb: 'open',
-        lines: [think('Window. Ledge. Drainpipe. Mum’s television is loud. Good. Louder, Mum.')],
+        lines: [think('Shoes: by the front door, at the far end of the hall. Mum: on the sofa, the door open, the television loud.'), think('Get the shoes. Come back. Window. Ledge. Drainpipe. Louder, Mum.')],
+        // close up: the flat at night, in the gaps between her looks (RUSH `night-window`)
+        mission: {template: 'night-window'},
         game: 'carry',
-        react: [room('You are out. One shoe is still in your room. You go anyway.')],
+        show: [cine('e5-ledge')],
+        react: [room('You are out. Shoes in your hand until the bottom of the drainpipe. You go anyway.')],
         slip: [room('The drainpipe makes a noise like a cow. Mum turns the television up. Thank you, Mum.')],
         cut: {room: 'street', spawn: 'fromHome', night: true},
       },
@@ -177,6 +180,11 @@ export function e5(anchor: ArchiveRef | null, age: number): EpisodeScript {
     ],
 
     cines: [
+      // the ledge: one look back at the room before the drainpipe
+      {id: 'e5-ledge', shots: [
+        {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: room('Through the wall, the television laughs at something.')},
+        {cam: 'wide', ms: 2400, say: think('If they score and you are not there, you will never forgive yourself. Down you go.')},
+      ]},
       {id: 'e5-flash', shots: [
         {cam: 'close', on: ['me'], ms: 2800, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: think('This is going well. This is going very well. Somebody is holding your ankle.')},
       ]},

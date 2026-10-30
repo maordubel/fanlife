@@ -55,10 +55,13 @@ export const E2: EpisodeScript = {
   steps: [
     // ───── his fortune
     {
-      id: 'tin', goal: 'Get your savings tin from your room', main: true, when: not(GONE),
+      id: 'tin', goal: 'Find your savings tin — Mum tidied', main: true, when: not(GONE),
       at: {room: 'bedroom', spot: 'desk'}, verb: 'take',
-      lines: [think('The tin. Every coin you have ever found under a sofa is in here.')],
+      lines: [think('The tin. Every coin you have ever found under a sofa is in here. Was in here. The desk is empty.'), room('From the kitchen: “I tidied your room! Everything is somewhere sensible!”'), think('Somewhere sensible. That could be anywhere.')],
+      // close up: the flat gone through drawer by drawer (RUSH `tin-hunt`); the counting game where RUSH cannot play
+      mission: {template: 'tin-hunt'},
       game: 'count',
+      show: [cine('e2-tin')],
       react: [room('Fourteen coins. Counted three ways. Fourteen three times.'), think('Fourteen. Six short. You could cry, but crying pays nothing.')],
       slip: [room('You count fourteen. Then fifteen. Then thirteen. You go with fourteen.'), think('Six short. Maths is a scam.')],
       fx: [coins(14), flag(`s1:${E}:tin`)],
@@ -226,6 +229,11 @@ export const E2: EpisodeScript = {
   ],
 
   cines: [
+    // after the hunt: the tin in both hands, and the arithmetic
+    {id: 'e2-tin', shots: [
+      {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'emote', mood: 'joy'}], say: room('The lid comes off with the noise only that lid makes.')},
+      {cam: 'close', on: ['me'], ms: 2400, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: think('One, two… fourteen. Fourteen. The shirt is twenty.')},
+    ]},
     {id: 'e2-flash', shots: [
       {cam: 'close', on: ['me'], ms: 2600, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: think('Six short. Six coins between you and the rest of your life.')},
     ]},

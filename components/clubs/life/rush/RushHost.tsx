@@ -12,8 +12,10 @@
  */
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
-import {buildLevel, cluesShown, type Level} from '@/lib/life/rush/level'
-import {COST, IDLE, resultOf, startSim, stepSim, stepTarget, STEP, type Input, type Sim} from '@/lib/life/rush/sim'
+import {buildLevel, cluesShown, patrolAt, type Level} from '@/lib/life/rush/level'
+import {flatSight} from '@/lib/life/rush/flat'
+import {COST, IDLE, nearSearch, resultOf, startSim, stepSim, stepTarget, STEP, type Input, type Sim} from '@/lib/life/rush/sim'
+import type {SearchKind} from '@/lib/life/rush/level'
 import {ASSIST_AFTER_FAILS, type MissionResult, type MissionSpec} from '@/lib/life/rush/spec'
 import {rushWord, type RushKey, type RushLocale} from '@/lib/life/rush/words'
 import type {Quality, Stage} from '@/lib/life/rush-render/stage'
@@ -77,6 +79,11 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const camRef = useRef(spec.camera)
   const keys = useRef<Record<string, boolean>>({})
   const act = useRef(false)
+  /* close up: the place within reach of his hands, and the one he is going through */
+  const nearKind = useRef<SearchKind | null>(null), emptyN = useRef(0)
+  const [near, setNear] = useState<SearchKind | null>(null)
+  const eye = useRef<HTMLDivElement | null>(null)
+  const [searching, setSearching] = useState<SearchKind | null>(null)
   const stick = useRef({id: -1, ox: 0, oy: 0, x: 0, y: 0})
   const endT = useRef(0)
   const introT = useRef(0)
@@ -200,6 +207,12 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'missed') { say(w('ev.missed'), 2200); cost(20); sfx('murmur') }
             else if (e.k === 'notyet') say(w('ev.notyet'), 2000)
             else if (e.k === 'escort') { say(w(`esc.${e.state}`), 1800); if (e.state !== 'ok') sfx('tick') }
+            else if (e.k === 'search') {
+              // close up: the place he is going through is named; what it gave (or did not) comes in the pop
+              if (e.state === 'start') { setSearching(e.kind); sfx('tick') }
+              else { setSearching(null); if (e.state === 'empty') { emptyN.current++; pop(w(`ev.empty.${(emptyN.current % 4) + 1}` as RushKey)); sfx('tick') } }
+            }
+            else if (e.k === 'creak') { say(w(e.loud ? 'ev.creak.loud' : 'ev.creak'), 1400); sfx(e.loud ? 'clang' : 'tick') }
           }
           acc -= STEP; steps++
         }
@@ -223,6 +236,20 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
         hud.clockPlate.current?.setAttribute('data-low', String(left < level.timeScale * 15))
         if (hud.legs.current) hud.legs.current.style.inlineSize = `${Math.round(sim.stamina * 100)}%`
         if (hud.seen.current) hud.seen.current.style.inlineSize = `${Math.round(sim.seen * 100)}%`
+        // at home at night: an eye that opens as her look comes round to where he is (only when she could see him at all)
+        if (eye.current && level.place === 'flat' && level.verb === 'sneak') {
+          let k = 0
+          for (const p of level.patrols) {
+            if (!p.range) continue
+            const at = patrolAt(p, sim.t), d = Math.hypot(sim.x - at.x, sim.z - at.z)
+            if (d > p.range || !flatSight(at, sim)) continue
+            let a = Math.atan2(sim.x - at.x, sim.z - at.z) - at.face; a = Math.abs(Math.atan2(Math.sin(a), Math.cos(a)))
+            k = Math.max(k, 1 - Math.min(1, Math.max(0, a - p.fov / 2) / 1.1))
+          }
+          const st = k >= 0.98 ? 'on' : k > 0.45 ? 'turning' : k > 0 ? 'away' : 'off'
+          if (eye.current.dataset.state !== st) { eye.current.dataset.state = st; eye.current.textContent = st === 'off' ? '' : w(`hud.eye.${st}` as RushKey) }
+          eye.current.style.setProperty('--open', String(k))
+        }
         const g = level.home && sim.back ? level.home : level.goal
         const dist = Math.hypot(g.x - sim.x, g.z - sim.z)
         if (hud.left.current) hud.left.current.textContent = level.place === 'crowd' ? '' : `${Math.round(dist)} m`
@@ -238,6 +265,9 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
           // at home the camera never turns with him, so the arrow points on the screen; elsewhere it points from the way he faces
           if (tg) { const rel = Math.atan2(tg.x - sim.x, tg.z - sim.z) - (level.place === 'flat' ? Math.PI : sim.heading); hud.arrow.current.style.transform = `rotate(${-rel}rad)` }
         }
+        // the place within reach of his hands: the act button names it
+        const ns = sim.searchI < 0 ? nearSearch(level, sim) : -1, nk = ns >= 0 ? level.searches[ns]!.kind : null
+        if (nk !== nearKind.current) { nearKind.current = nk; setNear(nk) }
         mapTick++
         if (hud.map.current && level.place !== 'road' && mapTick % 2 === 0) { const c = hud.map.current.getContext('2d'); if (c) drawMap(c, level, sim, skin, hud.map.current.clientWidth || 112) }
       }
@@ -292,9 +322,9 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const curStep = level.steps[objIx]
   const objective = phase === 'play' || phase === 'ending' ? (curStep ? w(curStep.key) : w('hud.done')) : ''
   const extrasOf = level.pickups.filter(p => p.step === null).length
-  const canAct = level.place === 'crowd' || level.noises.length > 0 || level.favours.length > 0 || level.steps.some(x => x.kind === 'talk')
-  const actHot = curStep?.kind === 'talk'
-  const clockKey = level.place === 'crowd' ? 'hud.clock.find' : 'hud.clock'
+  const canAct = level.place === 'crowd' || level.noises.length > 0 || level.favours.length > 0 || level.steps.some(x => x.kind === 'talk') || level.searches.length > 0
+  const actHot = curStep?.kind === 'talk' || !!near
+  const clockKey = level.place === 'crowd' ? 'hud.clock.find' : level.place === 'flat' && ['tin-hunt', 'ticket-hunt', 'pack-bag', 'night-window'].includes(spec.template) ? (`hud.clock.${spec.template}` as RushKey) : 'hud.clock'
   const anchor = spec.anchor
 
   return (
@@ -310,7 +340,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             <span>{w(verbKey)} · <bdi ref={hud.left} /></span>
             <div className={css.bar} aria-hidden="true"><i ref={hud.progress} /></div>
             {level.place !== 'road' && <><span>{w('hud.legs')}</span><div className={css.bar} aria-hidden="true"><i ref={hud.legs} style={{inlineSize: '100%'}} /></div></>}
-            {level.place === 'yard' && <><span>{w('hud.seen')}</span><div className={css.bar} data-hot="true" aria-hidden="true"><i ref={hud.seen} style={{inlineSize: '0%'}} /></div></>}
+            {(level.place === 'yard' || level.verb === 'sneak') && <><span>{w('hud.seen')}</span><div className={css.bar} data-hot="true" aria-hidden="true"><i ref={hud.seen} style={{inlineSize: '0%'}} /></div></>}
           </div>
           {assist && <div className={`${css.plate} ${css.story}`}>{w('hud.story')}</div>}
           {objective && (
@@ -320,10 +350,12 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
               <span className={css.objDist}><i ref={hud.arrow} className={css.arrow} aria-hidden="true" /><bdi ref={hud.dist} /></span>
             </div>
           )}
-          {extrasOf > 0 && <div className={`${css.plate} ${css.extras}`}><span>{w('hud.extras')}</span><b><bdi>{extras}/{extrasOf}</bdi></b></div>}
+          {extrasOf > 0 && <div className={`${css.plate} ${css.extras}`} data-low={level.place === 'yard' || level.verb === 'sneak'}><span>{w('hud.extras')}</span><b><bdi>{extras}/{extrasOf}</bdi></b></div>}
           {level.place !== 'road' && <canvas ref={hud.map} className={css.map} width={224} height={224} aria-label={w('hud.map')} role="img" />}
           {clueKeys.length > 0 && <div className={`${css.plate} ${css.clues}`} aria-live="polite">{w('hud.clue')}: {clueKeys.map(c => w(`clue.${c}`)).join(' · ')}</div>}
           <button type="button" className={`${css.pauseBtn} min-h-tap`} aria-label={w('hud.pause')} onClick={() => setPhase('pause')}>Ⅱ</button>
+          {level.place === 'flat' && level.verb === 'sneak' && <div ref={eye} className={css.eye} data-state="off" aria-live="polite" />}
+          {(searching || (near && phase === 'play')) && <div className={css.prompt} data-on={!!searching} aria-live="polite">{searching ? <>{w('hud.searching')} <b>{w(`search.${searching}` as RushKey)}</b></> : <>{!touch && <kbd>E</kbd>} {w('hud.search')} · <b>{w(`search.${near}` as RushKey)}</b></>}</div>}
           <div className={css.sub} aria-live="polite"><span data-on={!!sub}>{sub ?? ''}</span></div>
           {toast && <div className={css.toast} role="status" aria-live="polite"><span>{toast}</span></div>}
           {touch ? (
@@ -333,11 +365,11 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
               {stickAt && <div className={css.stick} data-on="true" style={{insetBlockStart: stickAt.y, insetInlineStart: rtl ? window.innerWidth - stickAt.x : stickAt.x}}><i style={{transform: `translate(${stickAt.dx}px, ${stickAt.dy}px)`}} /></div>}
               <div className={css.pads}>
                 {level.place !== 'road' && level.place !== 'flat' && <button type="button" className={`${css.pad} min-h-tap`} aria-pressed={cam === 'eyes'} onClick={() => setCam(c => c === 'chase' ? 'eyes' : 'chase')}>{w('hud.camera')}</button>}
-                {canAct && <button type="button" className={`${css.pad} min-h-tap`} data-hot={actHot} onPointerDown={e => { e.preventDefault(); act.current = true }}>{w(level.place === 'crowd' && level.steps[objIx]?.kind === 'goal' ? 'hud.act' : 'hud.use')}</button>}
+                {canAct && <button type="button" className={`${css.pad} min-h-tap`} data-hot={actHot} onPointerDown={e => { e.preventDefault(); act.current = true }}>{near ? w('hud.search') : w(level.place === 'crowd' && level.steps[objIx]?.kind === 'goal' ? 'hud.act' : 'hud.use')}</button>}
                 <button type="button" className={`${css.pad} min-h-tap`} data-big="true" data-on={sprintOn} onPointerDown={e => { e.preventDefault(); setSprintOn(true) }} onPointerUp={() => setSprintOn(false)} onPointerLeave={() => setSprintOn(false)} onPointerCancel={() => setSprintOn(false)}>{w('hud.sprint')}</button>
               </div>
             </>
-          ) : <p className={css.keys}>{w(level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? 'brief.controls.keys.flat' : 'brief.controls.keys')}</p>}
+          ) : <p className={css.keys}>{w(level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? (level.verb === 'sneak' ? 'brief.controls.keys.night' : level.searches.length ? 'brief.controls.keys.home' : 'brief.controls.keys.flat') : 'brief.controls.keys')}</p>}
         </div>
       )}
 
@@ -352,7 +384,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             {anchor ? (
               <div className={css.archive}><b>{w('brief.archive')}</b><span lang={anchor.locale} dir="auto">{anchor.title}</span></div>
             ) : <p className={css.fine}>{w('brief.neutral')}</p>}
-            <p className={css.fine}>{w(touch ? 'brief.controls.touch' : level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? 'brief.controls.keys.flat' : 'brief.controls.keys')}</p>
+            <p className={css.fine}>{w(touch ? 'brief.controls.touch' : level.place === 'road' ? 'brief.controls.drive' : level.place === 'flat' ? (level.verb === 'sneak' ? 'brief.controls.keys.night' : level.searches.length ? 'brief.controls.keys.home' : 'brief.controls.keys.flat') : 'brief.controls.keys')}</p>
             <div className={css.actions}>
               {!spec.mandatory && <button type="button" className={`${css.btn} min-h-tap`} onClick={skip} data-life="rush-skip">{w('brief.skip')}</button>}
               <button type="button" ref={primary} className={`${css.btn} min-h-tap`} data-primary="true" onClick={() => begin(assist)} data-life="rush-go">{w('brief.go')}</button>

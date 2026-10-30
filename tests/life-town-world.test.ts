@@ -15,9 +15,10 @@ describe('the town world', () => {
   it('makes furniture solid from the meshes the room actually built, and never cuts anybody off', () => {
     expect(play).toMatch(/function autoBlocks\(/)
     expect(play).toMatch(/function settleBlocks\(/)
-    expect(play).toContain('AUTO.forEach(function(r){block(')
+    // every piece is blocked with its own padding (a shoulder, a squeeze, a brush — rule 131)
+    expect(play).toContain('AUTO.forEach(function(r){var p=r[4]==null?BODY:r[4];block(')
     // whatever was reachable before the furniture was made solid must still be reachable after
-    expect(play).toMatch(/base\.every\(function\(v,i\)\{return!v\|\|now\[i\]\}\)/)
+    expect(play).toMatch(/return base\.map\(function\(v,i\)\{return v&&!now\[i\]\?i:-1\}\)/)
   })
 
   it('swings the door at an exit open when somebody walks up, and only rattles a locked one', () => {
