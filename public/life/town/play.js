@@ -475,12 +475,14 @@ function cineTick(t,dt){
  /* a phone held upright sees a narrow slice: the camera stands further back so a close-up is a face and shoulders, not an eye */
  var asp=innerWidth/Math.max(1,innerHeight),back=asp<1?Math.pow(Math.min(2.2,.9/asp),.75):1;
  var p,l,fov;
+ /* two people side by side (on a sofa, at a bar) have no shoulder to film over: the lens goes in front of the pair */
+ if(c.cam==='over'&&heads.length>1&&sideBySide(subs[0],subs[1]))c.cam='two';
  if(c.cam==='close'){var h=heads[0],b0=subs[0],hm=b0.hm,d=(.55+hm*.42)*back*(1-.08*k);
   /* a close-up stands in front of the FACE: the room's camera may be behind a person who faces the wall, and a close-up from there is the back of a head */
   var fw=new T.Vector3(Math.sin(b0.yaw),0,Math.cos(b0.yaw));if(fw.dot(dir)<-.35)fw.lerp(dir,.35).normalize();var sd0=new T.Vector3(fw.z,0,-fw.x);if(sd0.dot(side)<0)sd0.negate();
   p=h.clone().add(fw.clone().multiplyScalar(d)).add(sd0.multiplyScalar(d*.22));p.y=h.y+.02;l=h.clone();l.y-=.06;fov=30}
  else if(c.cam==='over'&&heads.length>1){var a=heads[0],b=heads[1],ab=a.clone().sub(b);ab.y=0;ab.normalize();var sd=new T.Vector3(ab.z,0,-ab.x);p=a.clone().add(ab.multiplyScalar(.75)).add(sd.multiplyScalar(.32));p.y=a.y+.1;l=b.clone();l.y-=.08;fov=34}
- else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);p=mid.clone().add(dir.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
+ else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);var fw2=dir;if(c.cam==='two'){fw2=new T.Vector3(Math.sin(subs[0].yaw)+Math.sin(subs[1].yaw),0,Math.cos(subs[0].yaw)+Math.cos(subs[1].yaw));if(fw2.lengthSq()<.01)fw2=dir;else fw2.normalize()}p=mid.clone().add(fw2.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
  /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
     lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
  var tg=c.cam==='over'&&heads.length>1?heads[1]:heads[0];/* the face the lens is pointed at — over a shoulder, that is the OTHER person */
@@ -496,6 +498,7 @@ function blocking(o){for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.o||q.u
 function hitOn(from,to){if(!K.world)return null;_ray=_ray||new T.Raycaster();var v=to.clone().sub(from),len=v.length();_ray.set(from,v.normalize());_ray.far=len;
  /* only solid meshes: a Sprite cannot be raycast without a camera (r128 throws), and a person, a light or glass is not in the way */
  var solid=[];K.world.traverse(function(o){if(o.isMesh&&!o.isSprite&&!o.isSkinnedMesh&&!o.isInstancedMesh&&blocking(o))solid.push(o)});var hs=_ray.intersectObjects(solid,false);for(var i=0;i<hs.length;i++)if(hs[i].distance>.12)return hs[i].distance;return null}
+function sideBySide(a,b){var dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz)||1,fa=Math.sin(a.yaw)*dx/d+Math.cos(a.yaw)*dz/d,fb=Math.sin(b.yaw)*-dx/d+Math.cos(b.yaw)*-dz/d;return Math.abs(fa)<.5&&Math.abs(fb)<.5}
 function segDist(a,b,c){var ab=b.clone().sub(a),t=Math.max(0,Math.min(1,c.clone().sub(a).dot(ab)/Math.max(1e-6,ab.lengthSq())));return a.clone().add(ab.multiplyScalar(t)).distanceTo(c)}
 /* other people are in the way too: a head and a chest each, as spheres, for everybody who is not in the shot */
 function peopleOn(from,to,subs){var all=[player].concat(Object.keys(actors).map(function(k){return actors[k]}));for(var i=0;i<all.length;i++){var b=all[i];if(!b||subs.indexOf(b)>=0||!b.g.visible)continue;var hd=headOf(b);if(segDist(from,to,hd)<.3)return true;hd.y-=.55*b.s;if(segDist(from,to,hd)<.4)return true}return false}
