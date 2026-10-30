@@ -29,6 +29,7 @@ export const TOPIC_TAGS = {
   rumble: ['#FantasyFootball', '#DreamTeam', '#FootballGames'],
   legends: ['#FootballManager', '#Legends', '#FootballGames'],
   love: ['#Ultras', '#FootballFans', '#Terrace'],
+  family: ['#FatherAndSon', '#FootballFamily', '#FootballMemories'],
   results: ['#FullTime', '#MatchDay'],
   fixtures: ['#MatchDay', '#NextUp'],
 } as const

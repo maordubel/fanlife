@@ -1,3 +1,4 @@
+import {clubSubMetadata} from '@/lib/seo/club'
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
@@ -28,7 +29,7 @@ import {GoogleAccount} from '@/components/fanlife/me/GoogleAccount'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
-export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return {title:c?`${worldFor(c).terraceTab} · ${c.name}`:en.terraceTitle}}
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'terrace',title:worldFor(c).terraceTab}):{title:en.terraceTitle}}
 
 /**
  * The terrace — the issue's pull-out poster (rule 124): the club's loudest end in big type with the fan on the plate, the

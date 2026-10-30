@@ -1,3 +1,5 @@
+import {clubSubMetadata} from '@/lib/seo/club'
+import {REGISTRY as REGISTRY_SEO} from '@/lib/master/registry'
 import {notFound} from 'next/navigation'
 import {requestClub} from '@/lib/clubs/request'
 import {clubTimeline} from '@/lib/clubs/timeline'
@@ -22,7 +24,7 @@ import {bindThread,publicPlan} from '@/lib/clubs/thread-data'
 import {FULL_DATES,MIN_DATES,chronologyShape,runKey} from '@/lib/clubs/chronology'
 import {ClubTimelineBoard} from './ClubTimelineBoard'
 export const dynamic='force-dynamic'
-export const metadata={title:'Timeline'}
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY_SEO.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'timeline'}):{title:'Timeline'}}
 type Search={seed?:string;r?:string;lang?:string;mode?:string;at?:string;dec?:string;play?:string;[k:string]:string|undefined}
 
 /**

@@ -1,3 +1,4 @@
+import {clubSubMetadata} from '@/lib/seo/club'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
@@ -23,7 +24,7 @@ import {todayInIsrael} from '@/lib/date/israel'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
-export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return {title:c?`${en.playTitle} · ${c.name}`:en.playTitle}}
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'play'}):{title:en.playTitle}}
 
 /** Play: the gate wall — thirteen comic covers, the beloved gate big at the top, grouped Quick, Deep and the archive shelf. */
 export default async function Play({params,searchParams}:{params:{slug:string};searchParams:{lang?:string}}) {

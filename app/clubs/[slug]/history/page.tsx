@@ -1,3 +1,4 @@
+import {clubSubMetadata} from '@/lib/seo/club'
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
@@ -25,7 +26,7 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
-export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return {title:c?`${en.historyTitle} · ${c.name}`:en.historyTitle}}
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'history'}):{title:en.historyTitle}}
 
 const pad=(n:number)=>String(n).padStart(2,'0')
 /** A year the sourced line itself prints — never computed, never guessed. */

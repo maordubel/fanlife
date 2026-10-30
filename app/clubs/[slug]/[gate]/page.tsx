@@ -1,3 +1,4 @@
+import {clubSubMetadata,GATE_DESCRIPTION} from '@/lib/seo/club'
 import Link from 'next/link'
 import {Suspense} from 'react'
 import {NextStep} from '@/components/universe/NextStep'
@@ -15,7 +16,7 @@ import {modeOf,isPlayMode} from '@/lib/clubs/layout-mode'
 import {GATE_VIEWS} from '@/components/clubs/gates/registry'
 import type {GateSearch,ViewKey} from '@/components/clubs/gates/types'
 export const dynamic='force-dynamic'
-export async function generateMetadata({params}:{params:{slug:string;gate:string}}){const c=REGISTRY.find(r=>r.id===params.slug),g=sharedGate(params.gate),name=g?(gameCopy('en') as Record<string,string>)[`gate.${g.key}`]:null;return {title:[name,c?.name].filter(Boolean).join(' · ')||'Club games'}}
+export async function generateMetadata({params}:{params:{slug:string;gate:string}}){const c=REGISTRY.find(r=>r.id===params.slug),g=sharedGate(params.gate),name=g?(gameCopy('en') as Record<string,string>)[`gate.${g.key}`]:null;if(!c||!g)return {title:[name,c?.name].filter(Boolean).join(' · ')||'Club games'};return clubSubMetadata({id:c.id,name:c.name,sub:g.key,title:name||g.name,description:GATE_DESCRIPTION[g.key]?.(c.name)})}
 export default async function Page({params,searchParams}:{params:{slug:string;gate:string};searchParams:GateSearch}){
  const gate=sharedGate(params.gate)
  if(!gate||gate.key==='timeline')notFound()

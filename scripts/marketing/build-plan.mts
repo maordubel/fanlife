@@ -1,5 +1,5 @@
 /**
- * FAN LIFE social plan v4 (owner, 29.10.2026): 45 days from 29.10, 17 slots a day, "easier text, smarter tags, real
+ * FAN LIFE social plan v4 (owner, 29.10.2026): 45 days from 29.10, 18 slots a day, "easier text, smarter tags, real
  * copy-paste". Every post carries its own smart tags (lib/marketing/tags.ts), a short label, and — where there is an
  * answer — a first comment, so the caption never gives the answer away and the comments do the talking.
  * New in v4: 17:30 Guess the score and 22:30 Guess the year (both from the approved archive).
@@ -37,7 +37,11 @@ const MON: Record<string, number> = {Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun
 const MONTH = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const latin = (s: string) => !/[Ͱ-ϿЀ-ӿ֐-׿؀-ۿ]/.test(s)
 const clubs: Club[] = []
-for (const id of CORE_CLUB_IDS) {
+// Only PUBLISHED clubs are marketed (30.10.2026): CORE_CLUB_IDS grew to clubs still in research (Raja, Wydad, Al Ahly…),
+// whose pages are a 404 to the public — a post must never send a fan there. The list is the control room's `live` set
+// as read from production on 30.10.2026; publish a club in the control room, then add it here and rebuild the plan.
+export const PUBLISHED = ['hapoel-tel-aviv', 'zrinjski-mostar', 'hapoel-petah-tikva', 'olympiacos', 'panathinaikos', 'aek-athens', 'st-pauli', 'celtic']
+for (const id of CORE_CLUB_IDS.filter(x => PUBLISHED.includes(x))) {
   const r = await loadClubBase(id)
   if (!r) continue
   const t = r.data.trivia as unknown as {questions: Q[]; pools: Record<string, string[]>}
@@ -292,6 +296,45 @@ function guessYear(n: number): Item {
   return fact(700 + n)
 }
 
+// ── 19:30 GENERATIONS (owner, 30.10.2026): the audience is 15–55, and the club passes from father to son. One post a
+//    day made to be SENT between generations — the same round for both, "your dad's era vs yours", or the question
+//    a kid asks his dad. Short words, one action, the answer only in the first comment. Nothing before 1980. ──────────
+const genUsed = new Set<string>()
+function generations(n: number): Item {
+  const c = clubs[(n * 7 + 2) % clubs.length]!, kind = n % 3
+  const tags = smartTags({clubs: [c.id], topics: ['family', 'quiz']})
+  if (kind === 0) {
+    // the same seeded round for two people: a link is the whole challenge (lib/rotation/round.ts reads ?seed=)
+    const seed = 100000 + (h(`gen${n}${c.id}`) % 900000)
+    return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}/trivia?seed=${seed}`, label: 'Generations · same round',
+      hook: pickOf([`Same ${c.name} quiz. You vs your dad. Who wins?`, `Send this to your dad. Same questions. No excuses.`, `Kid vs dad: the same ${c.name} round. Go.`], `gnh${n}`),
+      body: `One link, the same questions for both of you — easy ones for the young, hard ones for the old.\n\nPlay it, send it to your dad (or your son), and post both scores in the comments 👇\nFree on FAN LIFE, no sign-up (link in bio).`,
+      tags, visual: 'L-GATE TRIVIA: "kid vs dad", the club.', how: 'Pin the link in bio to this exact round for 24 hours.',
+      kit: {t: 'L-GATE', data: {club: {id: c.id, name: c.name}, crestName: c.name, gate: 'GATE 2 · KID VS DAD', name: 'TRIVIA WING', plate: 'memo', shout: 'SAME ROUND!', headline: 'One link. Same questions. Two generations.', body: ['Play it, then send it to your dad.', 'Post both scores in the comments.'], label: `${c.name.toUpperCase()} · KID VS DAD`}}}
+  }
+  if (kind === 1) {
+    // your dad's era vs yours: one night from 1980–1999 and one from 2010 on, same club; years answered in the comment
+    const old = events.filter(e => e.club === c.id && e.home && e.score && e.y >= 1980 && e.y <= 1999 && !genUsed.has(matchKey(e))).sort((a, b) => weight(b) - weight(a))
+    const now = events.filter(e => e.club === c.id && e.home && e.score && e.y >= 2010 && !genUsed.has(matchKey(e))).sort((a, b) => weight(b) - weight(a))
+    if (old.length && now.length) {
+      const a = old[h(`go${n}`) % Math.min(old.length, 6)]!, b = now[h(`gn${n}`) % Math.min(now.length, 6)]!
+      genUsed.add(matchKey(a)); genUsed.add(matchKey(b))
+      return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}/timeline`, label: 'Generations · dad’s era vs yours',
+        hook: pickOf([`Dad's ${c.name} vs yours. Name both years.`, `One for your dad, one for you. ${c.name} edition.`, `Two ${c.name} nights. Two generations. What years?`], `geh${n}`),
+        body: `👴 Dad's question: ${a.home} ${a.score} ${a.away}${a.comp ? ` (${a.comp})` : ''} — what year?\n🧒 Your question: ${b.home} ${b.score} ${b.away}${b.comp ? ` (${b.comp})` : ''} — what year?\n\nTag your dad. Answers in the comments 👇`,
+        comment: `✅ Dad's: ${a.d} ${MONTH[a.m]} ${a.y}.\n✅ Yours: ${b.d} ${MONTH[b.m]} ${b.y}.\n\nPut every ${c.name} night in order in the Timeline game on FAN LIFE.`,
+        tags, visual: 'L-FACT: two scorelines, "dad\'s era / your era".',
+        kit: {t: 'L-FACT', data: {club: {id: c.id, name: c.name}, crestName: c.name, fact: `${a.home} ${a.score} ${a.away} — your dad’s year? ${b.home} ${b.score} ${b.away} — yours?`, kicker: `${c.name.toUpperCase()} · TWO GENERATIONS`, label: 'FAN LIFE · NAME BOTH YEARS', shout: 'WHAT YEARS?'}}}
+    }
+  }
+  // the question a kid asks his dad — memories in the comments, the club's home page as the way in
+  return {app: 'fanlife', url: `https://fanlife.dubelteam.com/clubs/${c.id}`, label: 'Generations · ask your dad',
+    hook: pickOf([`Ask your dad: what was your first ${c.name} match?`, `Who took you to your first ${c.name} game?`, `${c.name} fans: who passed the club on to you?`], `gah${n}`),
+    body: `Every ${c.name} fan got it from someone — a dad, a grandad, an uncle, a mate.\n\nTell us in the comments: your first match, and who took you. Then tag them 👇\nYour club's whole story, from the first night to tonight, on FAN LIFE (link in bio).`,
+    tags: smartTags({clubs: [c.id], topics: ['family', 'love']}), visual: 'L-FACT: "who took you to your first match?", the club.',
+    kit: {t: 'L-FACT', data: {club: {id: c.id, name: c.name}, crestName: c.name, fact: `Your first ${c.name} match. Who took you?`, kicker: `${c.name.toUpperCase()} · FROM FATHER TO SON`, label: 'FAN LIFE · TELL US IN THE COMMENTS', shout: 'FIRST MATCH!'}}}
+}
+
 // ── FAN LIFE gates (10:00) — one gate of the app, with the club it opens on ─────────────────────────────────────────
 type Gate = {key: string; gate: string; name: string; plate: string; headline: string; body: [string, string]; hook: string; post: string}
 const GATES: Gate[] = [
@@ -471,7 +514,7 @@ function eraNames(text: string) {
 }
 type Row = {day: number; at: string; format: string; kind: string; main: Item}
 const rows: Row[] = []
-// v4: 45 days from 29.10.2026, 17 slots a day. Live slots on 09/11/13/15 (composed at send time, or quiet).
+// v4: 45 days from 29.10.2026, 18 slots a day. Live slots on 09/11/13/15 (composed at send time, or quiet).
 export const DAYS = 45
 const LIVE: [string, string, string, string][] = [['09:00', 'results', 'fanlife', 'Results'], ['11:00', 'fixtures', 'fanlife', 'Next up'], ['13:00', 'dubid', 'dubid', 'DUBID round'], ['15:00', 'offsides', 'offsides', 'OFFSIDES today']]
 const safeOTD = (y: number, m: number, d: number, n: number) => { try { return onThisDay(y, m, d) } catch { return fact(500 + n) } }
@@ -491,6 +534,7 @@ for (let n = 1; n <= DAYS; n++) {
   slot('17:30', 'post', guessScore(n))
   slot('18:00', 'post', bigGame(n))
   slot('19:00', 'carousel', carousel(n))
+  slot('19:30', 'post', generations(n)) // GENERATIONS (owner, 30.10.2026): 15–55, from father to son
   slot('20:00', 'post', spicy(n))
   slot('21:00', 'story', quiz(n + 60)) // a second story quiz, another club
   slot('22:00', 'post', fact(100 + n))
@@ -510,7 +554,7 @@ for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNa
 for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, r.main.comment || '', JSON.stringify(r.main.kit))) throw Error(`pre-1980 content in ${r.at}`)
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
 const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v4 (owner, 29.10.2026).`,
-  `-- 45 days from 29.10.2026, 17 slots a day: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on`,
+  `-- 45 days from 29.10.2026, 18 slots a day: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on`,
   `-- fixed weekdays), each post with its picture's kit, its smart tags and — where there is an answer — a first comment.`,
   `-- Live slots 09/11/13/15 are composed at send time from real data, or skipped. Nothing from before 1980.`,
   `-- Every row still waiting and still ahead is replaced; what was already sent is never touched.`,

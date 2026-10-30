@@ -6,15 +6,15 @@ import {describe, expect, it} from 'vitest'
 type Main = {app: string; hook: string; body: string; visual: string; url?: string; tags?: string; label?: string; comment?: string; comment_label?: string; how?: string; kit: {t: string; data: Record<string, unknown>}}
 type Row = {day: number; at: string; format: string; kind: string; main: Main}
 const rows: Row[] = JSON.parse(readFileSync('scripts/marketing/plan-v4.json', 'utf8'))
-const FIXED = ['08:00', '10:00', '12:00', '14:00', '16:00', '17:00', '17:30', '18:00', '19:00', '20:00', '21:00', '22:00', '22:30']
+const FIXED = ['08:00', '10:00', '12:00', '14:00', '16:00', '17:00', '17:30', '18:00', '19:00', '19:30', '20:00', '21:00', '22:00', '22:30']
 const LIVE = {'07:30': 'briefing', '09:00': 'results', '11:00': 'fixtures', '13:00': 'dubid', '15:00': 'offsides'} as Record<string, string>
 const fixed = rows.filter(r => r.kind === 'fixed')
 const YEARS = /\b(1[89]\d\d|20\d\d)(?:\/\d\d)?\b|\b(1[89]\d)0s\b/g
 const at = (t: string) => fixed.filter(r => r.at.endsWith(t))
 
 describe('FAN LIFE social plan v4 (owner, 29.10.2026)', () => {
-  it('45 days from 29.10.2026: thirteen fixed slots, four live slots and the morning briefing a day', () => {
-    expect(rows).toHaveLength(45 * 18)
+  it('45 days from 29.10.2026: fourteen fixed slots (19:30 GENERATIONS), four live slots and the morning briefing a day', () => {
+    expect(rows).toHaveLength(45 * 19)
     expect(rows[0]!.at.slice(0, 10)).toBe('2026-10-29')
     expect(rows.filter(r => r.kind === 'briefing')).toHaveLength(45)
     expect(rows.at(-1)!.at.slice(0, 10)).toBe('2026-12-12')
@@ -81,7 +81,7 @@ describe('FAN LIFE social plan v4 (owner, 29.10.2026)', () => {
   it('no repeated archive item: each guess-the-score match and each fact once', () => {
     const score = at('17:30').filter(r => r.main.label === 'Guess the score').map(r => r.main.comment)
     expect(new Set(score).size).toBe(score.length)
-    const facts = fixed.filter(r => r.main.kit.t === 'L-FACT').map(r => r.main.comment || r.main.body.split('\n\n')[0])
+    const facts = fixed.filter(r => r.main.kit.t === 'L-FACT' && r.main.label !== 'Generations · ask your dad') // an engagement prompt, not an archive item.map(r => r.main.comment || r.main.body.split('\n\n')[0])
     expect(new Set(facts).size).toBe(facts.length)
   })
   it('English only, no betting words for OFFSIDES, competitions under the name of their time', () => {
