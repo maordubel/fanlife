@@ -58,7 +58,7 @@ const cmpColours=(c:string[])=>[...new Set(c.map(x=>SAME_COLOUR[x]??x))]
 const coloursOk=(a0:string[],b0:string[])=>{const a=cmpColours(a0),b=cmpColours(b0);return !a.length||!b.length||subset(a,b)||subset(b,a)}
 const makerOk=(a:string|null,b:string|null)=>!a||!b||a.toLowerCase()===b.toLowerCase()
 /** Different documented sponsors distinguish shirt variants even when the cut and colours match. */
-const sponsorOk=(a:string|null,b:string|null)=>!a||!b||a.trim().toLowerCase()===b.trim().toLowerCase()
+const sponsorOk=(a:string|null|undefined,b:string|null|undefined)=>!a||!b||a.trim().toLowerCase()===b.trim().toLowerCase()
 const typeKey=(t:string)=>{const v=t.toLowerCase();return v==='gk'||v==='goalkeeper'?'gk':v}
 const score=(k:KitView)=>(k.maker?3:0)+(k.sponsor?3:0)+(k.shorts?2:0)+(k.socks?2:0)+(k.design&&k.design!=='graphic'?1:0)+Math.min(k.colours.length,3)+Math.min(k.sources.length,3)*0.1-(/-v\d+$/.test(k.id)?5:0)-(/uefa-/.test(k.id)?4:0)
 /**
