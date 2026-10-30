@@ -31,6 +31,8 @@ export default async function About(){
    :<p>The list of published clubs is loading. You can always start from the <Link href="/">front page</Link>.</p>}
   {f.allFootball?<p>Beyond the club gates there is <Link href="/all-football">ALL FOOTBALL</Link>, which mixes questions from every published club.</p>:null}
   {f.fanLeague?<p><Link href="/all-football/legends">Legends Manager</Link> lets you run one club with only the players who wore its shirt, season after season.</p>:null}
+  <h2>For every generation</h2>
+  <p>A club is usually handed down: someone took you to your first match. FAN LIFE is built so that a fifteen-year-old and the father who took him can play the same thing. Every trivia round has four levels, from Easy to Expert, so the questions about last season and the questions about the eighties sit in the same game. Nothing needs an account, and a round can be shared: <Link href="/today">today’s page</Link> gives every club a round for two, the same questions for both of you, so you can compare scores at the end.</p>
   <h2>Where the facts come from</h2>
   <p>Every fact carries a source and a confidence level. Matches, scores, line-ups and kits are taken from published records — club archives, competition sites, contemporary newspapers and reference works — and cross-checked where two sources exist. When two sources disagree, the disagreement is recorded instead of quietly settled, and a fact with an open conflict is not used as a quiz answer. The full list of sources, club by club, is on the <Link href="/sources">sources &amp; credits</Link> page.</p>
   <h2>Who makes it</h2>

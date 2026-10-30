@@ -26,7 +26,7 @@ describe('SEO: the publisher pages and the club pages',()=>{
   }
  })
  it('the four pages are FAN LIFE pages (English layout), and the sitemap lists them',()=>{
-  expect(read('app/layout.tsx')).toMatch(/FAN_PATHS=\['\/about','\/privacy','\/terms','\/contact'/)
+  expect(read('app/layout.tsx')).toMatch(/FAN_PATHS=\['\/today','\/about','\/privacy','\/terms','\/contact'/)
   const sm=read('app/sitemap.ts')
   for(const p of ['/about','/privacy','/terms','/contact'])expect(sm).toContain(`'${p}'`)
   expect(sm).toContain('clubPages(')
@@ -38,5 +38,13 @@ describe('SEO: the publisher pages and the club pages',()=>{
   expect(m.alternates?.canonical).toMatch(/\/clubs\/celtic\/timeline$/)
   for(const g of SHARED_GATES)expect(GATE_DESCRIPTION[g.key]?.('Celtic'),g.key).toContain('Celtic')
   for(const sub of ['[gate]','history','timeline','away-days','kit-archive','play','terrace'])expect(read(`app/clubs/[slug]/${sub}/page.tsx`),sub).toContain('clubSubMetadata(')
+ })
+ it('/today is the link in bio: answers never leave the database, and the page is a door (noindex, follow)',()=>{
+  const sql=read('supabase/migrations/20261030090000_worker_marketing_today.sql')
+  expect(sql).not.toMatch(/->>'comment'|p\.rendered/)
+  expect(sql).toMatch(/revoke all on function public\.worker_marketing_today\(\) from public, anon, authenticated/)
+  const page=read('app/today/page.tsx')
+  expect(page).toMatch(/robots:\{index:false,follow:true\}/)
+  expect(read('app/layout.tsx')).toContain("'/today'")
  })
 })
