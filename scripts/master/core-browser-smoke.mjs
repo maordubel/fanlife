@@ -235,7 +235,10 @@ try {
   await page.getByTestId('archive-board').waitFor()
   // Today: the supporter's own day, or the next day on file — either way a card the drawer can open
   await page.getByTestId('archive-entry').first().waitFor()
-  await page.getByTestId('archive-entry').first().getByRole('button',{name:/^Open:/}).click()
+  const openBtn=page.getByTestId('archive-entry').first().getByRole('button',{name:/^Open:/})
+  /* today's card can sit under the fixed club tab bar (it moves with the calendar day): bring it to the middle before the tap */
+  await openBtn.evaluate(el=>el.scrollIntoView({block:'center'}))
+  await openBtn.click()
   await page.getByTestId('archive-detail').waitFor();await page.waitForFunction(()=>location.search.includes('event='))
   assert((await page.getByTestId('archive-detail').innerText()).toLowerCase().includes('documented:'))
   assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>0)
