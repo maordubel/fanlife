@@ -40,6 +40,10 @@ export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:
 export function kitArt(club:string,kitId:string,season:string,type:string,also:readonly string[]=[]):Art|null{
  const rows=FILES[club];if(!rows)return null
  const hit=matchKitArt(rows,club,kitId,season,type,also)
+ // A bespoke drawing can identify a particular sponsor/competition variant. A
+ // unique season/type candidate alone does not prove that it is the same shirt.
+ const idOf=(s:string)=>s.startsWith(`${club}:`)?s.slice(club.length+1):s
+ if(hit?.shirt?.artwork&&idOf(kitId)!==hit.id&&!also.some(id=>idOf(id)===hit.id))return null
  return hit?art(club,hit):null
 }
 export const clubHasKitArt=(club:string)=>Object.hasOwn(FILES,club)
