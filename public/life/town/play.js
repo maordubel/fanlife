@@ -459,7 +459,10 @@ function gridDump(){return grid?{nx:grid.nx,nz:grid.nz,cell:CELL,x0:grid.x0,z0:g
    decides the story: LIFE asks for 'close' on dad, 'two' on dad and the boy, 'wide' on the room, and gets it. */
 var CINE=null,STU=null;
 function bodyOf(id){return id==='me'||id==='player'?player:actors[id]}
-function headOf(b){var y=b.g.position.y+(b.o.mode==='sit'||b.o.mode==='sittalk'||b.def&&b.def.sit?b.hm*.72:b.hm*.93);return new T.Vector3(b.x*U,y,b.z*U)}
+function headOf(b){var y=b.g.position.y+(b.o.mode==='sit'||b.o.mode==='sittalk'||b.def&&b.def.sit?b.hm*.72:b.hm*.93);
+ /* where the head really is, when the body has one: a guessed height aims a close-up over the head of anybody seated, posed or small */
+ var hu=b.g.userData&&b.g.userData.human;if(hu&&hu.bones){var hb=b._hb||(b._hb=hu.bones.filter(function(x){return x.name==='head'})[0]);if(hb){var v=new T.Vector3();hb.getWorldPosition(v);v.y+=.07*(b.s||1)*U;if(Math.abs(v.x-b.x*U)<1.5*U&&Math.abs(v.z-b.z*U)<1.5*U)return v}}
+ return new T.Vector3(b.x*U,y,b.z*U)}
 function cineTick(t,dt){
  var c=CINE;if(!c)return;c.el+=dt;var k=Math.min(1,c.el/Math.max(.5,c.ms/1000));
  /* people walking for the scene keep walking while the shot runs */
@@ -480,9 +483,10 @@ function cineTick(t,dt){
  else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);p=mid.clone().add(dir.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
  /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
     lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
- var key=(c.on||[]).join()+'|'+Math.round(heads[0].x*3)+','+Math.round(heads[0].z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(heads[0],p,subs)}catch(e){c.fix=null}}
+ var tg=c.cam==='over'&&heads.length>1?heads[1]:heads[0];/* the face the lens is pointed at — over a shoulder, that is the OTHER person */
+ var key=(c.on||[]).join()+'|'+Math.round(tg.x*3)+','+Math.round(tg.z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(tg,p,subs)}catch(e){c.fix=null}}
  if(c.fix&&c.fix.wide){K.cineCam(null);K.follow(camX,1+.06*k);return}
- if(c.fix&&c.fix.p)p=heads[0].clone().add(c.fix.p)
+ if(c.fix&&c.fix.p)p=tg.clone().add(c.fix.p)
  /* and the lens gets there like a camera operator would, not in one jump: every frame used to place it afresh */
  if(!c.cp){c.cp=p.clone();c.cl=l.clone()}else{var ck=Math.min(1,dt*4.5);c.cp.lerp(p,ck);c.cl.lerp(l,ck)}
  K.cineCam({p:[c.cp.x,c.cp.y,c.cp.z],l:[c.cl.x,c.cl.y,c.cl.z],fov:fov});
