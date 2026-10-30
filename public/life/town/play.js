@@ -504,11 +504,11 @@ function segDist(a,b,c){var ab=b.clone().sub(a),t=Math.max(0,Math.min(1,c.clone(
 function peopleOn(from,to,subs){var all=[player].concat(Object.keys(actors).map(function(k){return actors[k]}));for(var i=0;i<all.length;i++){var b=all[i];if(!b||subs.indexOf(b)>=0||!b.g.visible)continue;var hd=headOf(b);if(segDist(from,to,hd)<.3)return true;hd.y-=.55*b.s;if(segDist(from,to,hd)<.4)return true}return false}
 function clearShot(h,p,subs){var off=p.clone().sub(h),len=off.length(),best=null,bestD=0;
  /* round the face a few ways, and a little higher (over a sofa back); the first lens with nothing in front of it wins */
- var turns=[0,.6,-.6,1.1,-1.1],lifts=[0,.35];
+ var turns=[0,.6,-.6,1.1,-1.1],lifts=[0,.35,.9];/* .9: a high lens looking down over a sofa back or an armchair, the way a crew shoots a room full of furniture */
  for(var li=0;li<lifts.length;li++)for(var ti=0;ti<turns.length;ti++){var a=turns[ti],o=new T.Vector3(off.x*Math.cos(a)-off.z*Math.sin(a),off.y+lifts[li],off.x*Math.sin(a)+off.z*Math.cos(a)),q=h.clone().add(o);
   if(peopleOn(h,q,subs))continue;var at=hitOn(h,q);if(at==null){if(!a&&!lifts[li])return null;return{p:o}}if(at>bestD){bestD=at;best=o}}
  /* nothing clear: the nearest-to-clear lens only if it still frames a face and shoulders; otherwise the room's own camera */
- if(best&&bestD>len*.7)return{p:best.multiplyScalar((bestD-.1)/len)};return{wide:true}}
+ if(best&&bestD>len*.85)return{p:best.multiplyScalar((bestD-.1)/len)};return{wide:true}}
 function cineShot(o){
  if(!o){CINE=null;unpose();window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
  CINE={cam:o.cam||'wide',on:o.on||[],ms:o.ms||2000,el:0};/* a close shot has the wall half a metre behind a face: screen-space obscurance prints a dark cloud round the head there */window.__noAO=CINE.cam==='close'||CINE.cam==='over';cineTick(now,0);return true}
