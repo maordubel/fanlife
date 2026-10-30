@@ -15,17 +15,27 @@ import hapoelPetahTikva from '@/content/manual/kit-archive-hapoel-petah-tikva.js
  * A kit finds its files by id (the catalogue kits of a wave keep their `cof-k-NN` id) and otherwise by season and type, so a kit the
  * club pack already held from another source still shows the catalogue's picture of the same shirt.
  */
-type Row={id:string;season:string;type:string;euro:boolean;image?:string|null}
+export type KitArtRow={id:string;season:string;type:string;euro:boolean;image?:string|null}
+type Row=KitArtRow
 type Art={image:string|null;svg:string;icon:string}
 const FILES:Record<string,Row[]>={
  'aek-athens':aek.kits as Row[],celtic:celtic.kits as Row[],panathinaikos:panathinaikos.kits as Row[],'st-pauli':stPauli.kits as Row[],
  'zrinjski-mostar':zrinjski.kits as Row[],'hapoel-petah-tikva':hapoelPetahTikva.kits as Row[],olympiacos:olympiacos.kits as Row[],'hapoel-tel-aviv':hta.kits as Row[],
 }
 const art=(club:string,r:Row):Art=>({image:r.image??null,svg:`/club-kits/${club}/svg/${r.id}.svg`,icon:`/club-kits/${club}/icons/${r.id}.svg`})
-export function kitArt(club:string,kitId:string,season:string,type:string):Art|null{
+/** An exact id wins. Fallback is safe only if the season and type identify one candidate. */
+export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:string,type:string,also:readonly string[]=[]):Row|null{
+ const idOf=(s:string)=>s.startsWith(`${club}:`)?s.slice(club.length+1):s
+ const exact=rows.find(r=>r.id===idOf(kitId))
+ if(exact)return exact
+ const ids=new Set(also.map(idOf)),aliased=rows.filter(r=>ids.has(r.id))
+ if(aliased.length)return aliased.length===1?aliased[0]!:null
+ const candidates=rows.filter(r=>r.season===season&&r.type.toLowerCase()===type.toLowerCase()&&!r.euro&&r.image)
+ return candidates.length===1?candidates[0]!:null
+}
+export function kitArt(club:string,kitId:string,season:string,type:string,also:readonly string[]=[]):Art|null{
  const rows=FILES[club];if(!rows)return null
- const id=kitId.replace(`${club}:`,'')
- const hit=rows.find(r=>r.id===id)??rows.find(r=>r.season===season&&r.type===type.toLowerCase()&&!r.euro&&r.image)
+ const hit=matchKitArt(rows,club,kitId,season,type,also)
  return hit?art(club,hit):null
 }
 export const clubHasKitArt=(club:string)=>Object.hasOwn(FILES,club)
