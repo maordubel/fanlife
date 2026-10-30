@@ -40,14 +40,16 @@ describe('Season One', () => {
       for (const c of episodes(pack).filter(x => x.anchor)) {
         expect(c.lives?.length, c.id).toBeGreaterThan(0)
         const us = c.anchor!.match?.us
+        // E6 is an away day, E3 and E5 are nights in the ground; E1 is the radio, which carried home and away alike
         if (c.id === 'S1E6') expect(us, `${id} ${c.id}`).toBe('away')
-        else expect(us, `${id} ${c.id}`).toBe('home')
+        else if (c.id !== 'S1E1') expect(us, `${id} ${c.id}`).toBe('home')
+        if (c.id === 'S1E1') expect(c.lives?.[0]?.at, `${id} E1 is heard, not seen`).toBe('radio')
       }
       // an episode with no night plays no live board
       for (const c of episodes(pack).filter(x => !x.anchor)) expect(c.lives ?? [], c.id).toEqual([])
     }
     const hapoel = await packOf('hapoel-tel-aviv')
-    expect(episodes(hapoel).filter(c => c.anchor).map(c => `${c.id}@${c.anchor!.on}`)).toEqual(['S1E3@1986-05-24', 'S1E5@1990-05-12', 'S1E6@1992-01-31'])
+    expect(episodes(hapoel).filter(c => c.anchor).map(c => `${c.id}@${c.anchor!.on}`)).toEqual(['S1E1@1984-01-07', 'S1E3@1986-05-24', 'S1E5@1990-05-12', 'S1E6@1992-01-31'])
   }, 300000)
 
   it('hooks the player from the first second to the last card', async () => {
