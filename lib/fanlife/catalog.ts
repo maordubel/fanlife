@@ -8,7 +8,7 @@ import { CORE_CLUB_IDS, loadClub } from '@/lib/clubs/resolver'
 import { REGISTRY } from '@/lib/master/registry'
 import { cfsFor, cfsPhoto } from '@/lib/clubs/kit-cfs'
 import { clubKitPhotoOf } from '@/lib/clubs/kitArchive'
-import { variantOf } from '@/lib/clubs/kit-model'
+import { kitTypeKey } from '@/lib/clubs/kit-model'
 
 /**
  * FAN LIFE's shirt catalogue: every club's shirts in one list, for the closet, the market and the
@@ -83,9 +83,9 @@ export function fanShirts(): Promise<FanShirt[]> {
       const club = REGISTRY.find((c) => c.id === id)
       const set = cfsFor(id)
       if (!club || !set) continue
-      const have = new Set(out.filter((s) => s.club === id).map((s) => `${s.seasonLabel}|${variantOf(s.variant)}`))
+      const have = new Set(out.filter((s) => s.club === id).map((s) => `${s.seasonLabel}|${kitTypeKey(s.variant)}`))
       for (const k of set.kits) {
-        const key = `${k.season}|${variantOf(k.type)}`
+        const key = `${k.season}|${kitTypeKey(k.type)}`
         if (have.has(key)) continue
         have.add(key)
         const year = yearOf(k.season)
@@ -128,8 +128,9 @@ export async function shirtSlugFor(clubId: string, kit: { id: string; season: st
   const all = await fanShirts()
   const byId = all.find((s) => s.club === clubId && s.kit?.id === kit.id)
   if (byId) return byId.slug
-  const v = variantOf(kit.type)
-  return all.find((s) => s.club === clubId && s.seasonLabel === kit.season && variantOf(s.variant) === v)?.slug ?? null
+  const v = kitTypeKey(kit.type)
+  const candidates = all.filter((s) => s.club === clubId && s.seasonLabel === kit.season && kitTypeKey(s.variant) === v)
+  return candidates.length === 1 ? candidates[0]!.slug : null
 }
 
 /** the catalogue slug of a Club Football Shirts photograph (an extra shirt, or the photograph of a documented kit) */

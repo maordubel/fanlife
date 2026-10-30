@@ -47,6 +47,13 @@ export const BLANK:ClothSpec=Object.freeze({base:null,trim:null,pattern:'solid',
 export type Variant='home'|'away'|'third'|'special'
 export const variantOf=(type:string|undefined):Variant=>{const t=(type||'home').toLowerCase();return t==='away'||t==='third'||t==='special'?t:'home'}
 
+/** Identity matching must not treat goalkeeper, fourth or unknown shirts as home shirts. */
+export function kitTypeKey(type:string|undefined):string {
+ const t=(type??'').trim().toLowerCase()
+ if(t==='goalkeeper'||t==='keeper'||t==='gk')return 'gk'
+ return t
+}
+
 /** "red/cream" → red body, cream second colour. Any colour the archive names that cannot be painted safely makes the shirt undrawable. */
 export function paintOf(colours:string[],forbidden:(hex:string)=>boolean):{base:ColourKey;trim:ColourKey|null}|null{
  if(colours.length<1||colours.length>2)return null

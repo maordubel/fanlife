@@ -14,7 +14,7 @@ import shopOlympiacos from '@/content/manual/kit-shop-olympiacos.json'
 import shopPao from '@/content/manual/kit-shop-panathinaikos.json'
 import shopStPauli from '@/content/manual/kit-shop-st-pauli.json'
 import shopZrinjski from '@/content/manual/kit-shop-zrinjski-mostar.json'
-import {variantOf} from '@/lib/clubs/kit-model'
+import {kitTypeKey} from '@/lib/clubs/kit-model'
 
 /** Shirt photographs from Club Football Shirts' archive pages (owner's approval, chat 2026-10-10). Type and season are what the file name states. */
 export type CfsKit={id:string;type:string;season:string;image:string;width:number;height:number;page?:string;/** a retailer's photograph: the shop and its product page, and the product title's own words */credit?:{publisher:string;url:string;page?:string};title?:string;maker?:string|null;longSleeve?:boolean;spans?:string|null;seasonAmbiguous?:boolean}
@@ -30,6 +30,6 @@ const SETS:Record<string,CfsSet>=Object.fromEntries([...new Set([...Object.keys(
 export const cfsFor=(club:string):CfsSet|null=>SETS[club]??null
 /** the photograph of a season's shirt of one type, when the publisher's archive shows it */
 export const cfsPhoto=(club:string,season:string,type:string):string|null=>{
-  const same=(SETS[club]?.kits??[]).filter(k=>k.season===season&&variantOf(k.type)===variantOf(type))
+  const same=(SETS[club]?.kits??[]).filter(k=>k.season===season&&kitTypeKey(k.type)===kitTypeKey(type))
   return (same.find(k=>!k.longSleeve)??same[0])?.image??null // a long-sleeved shirt stands in only when the season has no short-sleeved photograph
 }
