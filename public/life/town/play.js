@@ -158,7 +158,7 @@ function Body(def,id){
  this.g=g;this.o=g.userData.o;this.def=def;this.x=def.x;this.z=def.z;this.yaw=o.ry;this.s=o.s;this.hm=1.72*o.s;this.w=0;this.moving=false;this.path=null;this.speed=def.speed||SPEED*.8;this.wantYaw=null;
 }
 Body.prototype.place=function(){this.g.position.x=this.x*U;this.g.position.z=this.z*U;this.g.rotation.y=this.yaw};
-Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;while(d<-PI)d+=2*PI;var step=d*Math.min(1,dt*(rate||10));this.yaw+=step;
+Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;while(d<-PI)d+=2*PI;var step=d*Math.min(1,dt*(rate||10)),cap=9*dt;step=step>cap?cap:step<-cap?-cap:step;this.yaw+=step;if(this.yaw>PI)this.yaw-=2*PI;else if(this.yaw<-PI)this.yaw+=2*PI;
  /* turning on the spot is a few small steps, never a statue spinning on its soles: when the body is not walking,
     the turn feeds a short shuffle into the same leg cycle the walk uses */
  if(!this.def.sit&&(this.o.sv||0)<.5&&Math.abs(step)>.0015){this.o.sw=(this.o.sw||0)+Math.abs(step)*3.2;this.o.sv=Math.max(this.o.sv||0,Math.min(.42,Math.abs(d)*.9))}};
@@ -379,7 +379,7 @@ function frame(t,dt){
   if(mag>.12){
    path=null;pending=null;if(mag>1){ax/=mag;ay/=mag;mag=1}
    var sp=SPEED*(running?RUN:1)*Math.min(1,mag*1.15)*dt,dx=ax/mag*sp,dz=ay/mag*sp;
-   var ox=player.x,oz=player.z;if(slide(player,dx,dz)){moved=Math.hypot(player.x-ox,player.z-oz);player.wantYaw=Math.atan2(player.x-ox,player.z-oz)}
+   var ox=player.x,oz=player.z;if(slide(player,dx,dz)){moved=Math.hypot(player.x-ox,player.z-oz);player.wantYaw=moved>sp*.35?Math.atan2(player.x-ox,player.z-oz):Math.atan2(dx,dz)}
   }else if(path){
    player.path=path;player.speed=SPEED*(running?RUN:1);moved=follow(player,dt);path=player.path;
    if(!path&&pending){var pd=pending;pending=null;retarget(true);var pr=reachOf(pd.kind,pd.id),pm=marks.filter(function(m){return m.kind===pd.kind&&m.id===pd.id})[0];if(target&&target.kind===pd.kind&&target.id===pd.id)act(pd);else if(pr&&pm&&pm.on&&(pr[0]-player.x)*(pr[0]-player.x)+(pr[1]-player.z)*(pr[1]-player.z)<pm.reach*pm.reach)act(pd);else{faceEachOther(pd.id)}}
@@ -393,7 +393,7 @@ function frame(t,dt){
   if(a.path){var m=follow(a,dt);if(m>0)a.stride(m);if(!a.path){a.rest(dt);emit({type:'arrived',id:id})}}
   else if(a.def.follow&&!frozen){
    var gx=player.x-Math.sin(player.yaw)*2.1+(a.def.side||1)*Math.cos(player.yaw)*1.5,gz=player.z-Math.cos(player.yaw)*2.1-(a.def.side||1)*Math.sin(player.yaw)*1.5,ddx=gx-a.x,ddz=gz-a.z,dd=Math.hypot(ddx,ddz);
-   if(dd>1.1){var st2=Math.min(dd-.6,SPEED*1.05*dt),o1=a.x,o2=a.z;if(slide(a,ddx/dd*st2,ddz/dd*st2)){var mv=Math.hypot(a.x-o1,a.z-o2);a.stride(mv);a.wantYaw=Math.atan2(a.x-o1,a.z-o2)}else a.rest(dt)}else{a.rest(dt);a.wantYaw=player.yaw}
+   if(dd>1.1){var st2=Math.min(dd-.6,SPEED*1.05*dt),o1=a.x,o2=a.z;if(slide(a,ddx/dd*st2,ddz/dd*st2)){var mv=Math.hypot(a.x-o1,a.z-o2);a.stride(mv);if(mv>st2*.35)a.wantYaw=Math.atan2(a.x-o1,a.z-o2)}else a.rest(dt)}else{a.rest(dt);a.wantYaw=player.yaw}
   }else a.rest(dt);
   if(a.wantYaw!=null&&!a.def.sit)a.turn(a.wantYaw,dt,6);
   if(POSED[id])a.o.mode=POSED[id].mode;else if(id===focusId&&a.base!=='sit')a.o.mode='talk';else a.o.mode=a.base;
@@ -472,11 +472,28 @@ function cineTick(t,dt){
  /* a phone held upright sees a narrow slice: the camera stands further back so a close-up is a face and shoulders, not an eye */
  var asp=innerWidth/Math.max(1,innerHeight),back=asp<1?Math.pow(Math.min(2.2,.9/asp),.75):1;
  var p,l,fov;
- if(c.cam==='close'){var h=heads[0],hm=subs[0].hm,d=(.55+hm*.42)*back*(1-.08*k);p=h.clone().add(dir.clone().multiplyScalar(d)).add(side.clone().multiplyScalar(d*.22));p.y=h.y+.02;l=h.clone();l.y-=.06;fov=30}
+ if(c.cam==='close'){var h=heads[0],b0=subs[0],hm=b0.hm,d=(.55+hm*.42)*back*(1-.08*k);
+  /* a close-up stands in front of the FACE: the room's camera may be behind a person who faces the wall, and a close-up from there is the back of a head */
+  var fw=new T.Vector3(Math.sin(b0.yaw),0,Math.cos(b0.yaw));if(fw.dot(dir)<-.35)fw.lerp(dir,.35).normalize();var sd0=new T.Vector3(fw.z,0,-fw.x);if(sd0.dot(side)<0)sd0.negate();
+  p=h.clone().add(fw.clone().multiplyScalar(d)).add(sd0.multiplyScalar(d*.22));p.y=h.y+.02;l=h.clone();l.y-=.06;fov=30}
  else if(c.cam==='over'&&heads.length>1){var a=heads[0],b=heads[1],ab=a.clone().sub(b);ab.y=0;ab.normalize();var sd=new T.Vector3(ab.z,0,-ab.x);p=a.clone().add(ab.multiplyScalar(.75)).add(sd.multiplyScalar(.32));p.y=a.y+.1;l=b.clone();l.y-=.08;fov=34}
  else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);p=mid.clone().add(dir.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
- K.cineCam({p:[p.x,p.y,p.z],l:[l.x,l.y,l.z],fov:fov});
+ /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
+    lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
+ var key=(c.on||[]).join()+'|'+Math.round(heads[0].x*3)+','+Math.round(heads[0].z*3);if(c.key!==key){c.key=key;c.fix=clearShot(heads[0],p,subs)}
+ if(c.fix){p=c.fix.p?heads[0].clone().add(c.fix.p):p}
+ /* and the lens gets there like a camera operator would, not in one jump: every frame used to place it afresh */
+ if(!c.cp){c.cp=p.clone();c.cl=l.clone()}else{var ck=Math.min(1,dt*4.5);c.cp.lerp(p,ck);c.cl.lerp(l,ck)}
+ K.cineCam({p:[c.cp.x,c.cp.y,c.cp.z],l:[c.cl.x,c.cl.y,c.cl.z],fov:fov});
 }
+var _ray=null;
+function blocking(o){for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.o||q.userData.human||q.userData.noBlock))return false;if(!q.visible)return false}var m=o.material;if(Array.isArray(m))m=m[0];return !!(o.isMesh&&!o.isSprite&&m&&!m.isMeshBasicMaterial&&!(m.transparent&&m.opacity<.6))}
+function hitOn(from,to){if(!K.world)return null;_ray=_ray||new T.Raycaster();var v=to.clone().sub(from),len=v.length();_ray.set(from,v.normalize());_ray.far=len;var hs=_ray.intersectObject(K.world,true);for(var i=0;i<hs.length;i++)if(hs[i].distance>.12&&blocking(hs[i].object))return hs[i].distance;return null}
+function clearShot(h,p,subs){var off=p.clone().sub(h),len=off.length(),at=hitOn(h,p);if(at==null)return null;
+ if(at>len*.6)return{p:off.multiplyScalar((at-.12)/len)};
+ var m=off.clone();m.x=-off.x;m.z=-off.z;var mir=new T.Vector3(off.z,off.y,-off.x);/* the other side of the face, then a quarter turn either way */
+ var tries=[new T.Vector3(-off.z,off.y,off.x),mir];for(var i=0;i<tries.length;i++){var q=h.clone().add(tries[i]),a2=hitOn(h,q);if(a2==null)return{p:tries[i]};if(a2>len*.6)return{p:tries[i].multiplyScalar((a2-.12)/len)}}
+ return{p:off.multiplyScalar(Math.max(.3,at-.12)/len)}}
 function cineShot(o){
  if(!o){CINE=null;unpose();window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
  CINE={cam:o.cam||'wide',on:o.on||[],ms:o.ms||2000,el:0};/* a close shot has the wall half a metre behind a face: screen-space obscurance prints a dark cloud round the head there */window.__noAO=CINE.cam==='close'||CINE.cam==='over';cineTick(now,0);return true}

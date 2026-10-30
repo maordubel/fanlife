@@ -22,7 +22,7 @@ import {dressCity} from './city'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
-import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
+import {HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
 export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean}
@@ -696,9 +696,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       if (grouped) n.fig.visible = false
       if (!n.fig.visible) return
       const live = sim.step === n.step
-      n.fig.rotation.y = Math.atan2(sim.x - n.x, sim.z - n.z)
-      pose(n.fig, {speed: 0, wave: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 14, joy: 0.6, talk: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 3, scarfUp: st.group > 0 && Math.sin(t * 2.4 + n.step) > 0}, t, dt)
-      n.extra.forEach((f, k) => { if (f.visible) { f.rotation.y = Math.atan2(sim.x - f.position.x, sim.z - f.position.z); pose(f, {speed: 0, scarfUp: Math.sin(t * 2.4 + k) > -0.3, joy: 1}, t, dt) } })
+      const nh = lookAt(n.fig, Math.atan2(sim.x - n.x, sim.z - n.z), dt)
+      pose(n.fig, {speed: 0, wave: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 14, joy: 0.6, talk: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 3, scarfUp: st.group > 0 && Math.sin(t * 2.4 + n.step) > 0, lookY: nh}, t, dt)
+      n.extra.forEach((f, k) => { if (f.visible) { const fh = lookAt(f, Math.atan2(sim.x - f.position.x, sim.z - f.position.z), dt); pose(f, {speed: 0, scarfUp: Math.sin(t * 2.4 + k) > -0.3, joy: 1, lookY: fh}, t, dt) } })
     })
     const target = view.ending ? null : stepTarget(level, sim)
     const curStep = level.steps[sim.step]
@@ -870,12 +870,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const k = Math.min(view.endT / 1.2, 1), e = k * k * (3 - 2 * k)
       camPos.lerp(tmp.set(sim.x + 0.6, child ? 1.2 : 1.55, sim.z - 2.4), Math.min(1, dt * (2 + e * 4)))
       cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x, view.outcome === 'slip' ? 1.0 : 1.4, sim.z), Math.min(1, dt * 5)); cam.lookAt(camLook)
+      camLook.lerp(tmp3.set(sim.x, view.outcome === 'slip' ? 1.0 : 1.4, sim.z), Math.min(1, dt * 5)); cam.lookAt(camLook)
       cam.fov += (42 - cam.fov) * Math.min(1, dt * 3)
     } else if (heroCar) {
       const target = tmp.set(sim.x * 0.6 + jx, 3.4 + jy, sim.z + 8.5)
       camPos.lerp(target, Math.min(dt * 5, 1)); cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x * 0.8, 1.2, sim.z - 14), Math.min(dt * 6, 1)); cam.lookAt(camLook)
+      camLook.lerp(tmp3.set(sim.x * 0.8, 1.2, sim.z - 14), Math.min(dt * 6, 1)); cam.lookAt(camLook)
       const fov = 58 + Math.min(sim.speed, 30) * 0.5; cam.fov += (fov - cam.fov) * Math.min(dt * 3, 1)
     } else if (view.cam === 'chase') {
       const back = 3.1 + sp * 0.1, high = (child ? 1.55 : 1.85) + sp * 0.02, side = 0.75

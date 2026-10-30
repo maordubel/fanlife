@@ -11,7 +11,7 @@ import {patrolAt, type Level} from '@/lib/life/rush/level'
 import {FLAT_DOORS, FLAT_RADIO, FLAT_SEAT, FLAT_WINDOW, onFlatFloor} from '@/lib/life/rush/flat'
 import type {Sim} from '@/lib/life/rush/sim'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
-import {pose, type FigureData} from './figure'
+import {pose, turnTo, type FigureData} from './figure'
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
 import {propCopy} from './props'
 import type {SurfaceName} from './surfaces'
@@ -445,7 +445,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
       const near = Math.hypot(sim.x - FLAT_SEAT.x, sim.z - FLAT_SEAT.z) < 4.5
       const haveAll = sim.step >= 1
       const looking = Math.atan2(sim.x - FLAT_SEAT.x, sim.z - FLAT_SEAT.z)
-      dad.rotation.y += ((near || ending ? looking : FLAT_SEAT.face) - dad.rotation.y) * Math.min(1, dt * 3)
+      turnTo(dad, near || ending ? looking : FLAT_SEAT.face, dt, 3, 3)
       pose(dad, ending ? (outcome === 'slip' ? {speed: 0, knees: true} : {speed: 0, celebrate: true, joy: 1}) : {speed: 0, wave: near && haveAll, talk: near, joy: haveAll ? 1 : 0, effort: haveAll ? 0 : 0.6}, t, dt)
       if (!(ending && outcome !== 'slip')) {
         const J = (dad.userData as FigureData).J
@@ -466,7 +466,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
           return
         }
         const moved = Math.hypot(at.x - f.position.x, at.z - f.position.z)
-        if (moved > 0.0005) f.rotation.y = Math.atan2(at.x - f.position.x, at.z - f.position.z)
+        if (moved > 0.002) turnTo(f, Math.atan2(at.x - f.position.x, at.z - f.position.z), dt, 9, 6)
         f.position.set(at.x, 0, at.z)
         if (p.role === 'cat') {
           const legs = f.userData.legs as THREE.Mesh[]
@@ -474,7 +474,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
           const tail = f.getObjectByName('tail'); if (tail) tail.rotation.z = Math.sin(t * 3) * 0.4
         } else {
           const close = Math.hypot(sim.x - at.x, sim.z - at.z) < 3
-          if (close && sim.sprinting) f.rotation.y = Math.atan2(sim.x - at.x, sim.z - at.z)
+          if (close && sim.sprinting) turnTo(f, Math.atan2(sim.x - at.x, sim.z - at.z), dt, 8, 6)
           pose(f, {speed: close && sim.sprinting ? 0 : p.v, talk: close && sim.sprinting, wave: close && sim.sprinting}, t, dt)
         }
       })

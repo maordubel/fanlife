@@ -103,13 +103,14 @@ function skinMat(look,ctx){var m=new T.MeshStandardMaterial({color:0xffffff,roug
   s.fragmentShader=SKIN_FS_HEAD+s.fragmentShader.replace('#include <map_fragment>',[
    'vec4 sk=texture2D(map,vUv);',
    /* age reads in the skin: the folds the texture already carries deepen, the colour loses a little of its saturation */
-   'vec3 c=uSkin*mix(.66-.17*uAge,1.06,sk.r);',
+   /* the folds deepen with age but the face keeps the neck's colour: the old curve took an old face two shades below its own neck and read as dirt */
+   'vec3 c=uSkin*mix(.8-.1*uAge,1.04,sk.r);',
    'float red=smoothstep(.05,.5,sk.g);c=mix(c,c*vec3(1.1,.84,.82),red*(.45+uBlush));',
    'float lip=smoothstep(.55,.95,sk.g);c=mix(c,mix(c*vec3(.86,.6,.6),uLip,uMake),lip*.85);',
    'c=mix(c,uBeard,sk.a*uBeardAmt);c=mix(c,uBrow*.75,smoothstep(.12,.55,vStc)*uStache*(.75+.25*sk.a));',
    'float hz=smoothstep(.36,.58,vHf);c=mix(c,uBrow*.85,hz*uBuzz);',
    'c=mix(c,uBrow*.7,sk.b*uBrowAmt);',
-   'float lc=dot(c,vec3(.3,.59,.11));c=mix(vec3(lc),c,1.28-.3*uAge)*(.93-.04*uAge);',
+   'float lc=dot(c,vec3(.3,.59,.11));c=mix(vec3(lc),c,1.2-.14*uAge)*(.95-.02*uAge);',
    'diffuseColor.rgb*=c;'].join('\n'))
    .replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nroughnessFactor=mix(roughnessFactor,.3,lip*.8);')
    /* the pores tile at about four centimetres; the skin map itself stays on the body's own UV */
@@ -696,6 +697,8 @@ P.sync=function(g,t,dt){var u=g.userData,h=u.human;if(!h)return;var b=h.bones,R=
  // torso split across three spine bones (and a breath)
  qOf(u.torso,_q);var br=(u.torso.scale.y-1)*2.2;
  ['spine_01','spine_02','spine_03'].forEach(function(n,i){var q=b[BONE[n]].quaternion;q.copy(ID).slerp(_q,1/3);if(i===2)q.multiply(_q2.setFromAxisAngle(new T.Vector3(1,0,0),-br))});
+ /* a neck turns so far and no further: whatever the layers above added up to, the head stays on a human neck */var Hr=u.head.rotation;Hr.x=clamp(Hr.x,-.55,.6);Hr.y=clamp(Hr.y,-1.1,1.1);Hr.z=clamp(Hr.z,-.35,.35);
+ /* and it gets there at the speed a head turns: a new thing to look at used to swing the head across in one frame */var hs=u._hs||(u._hs={x:Hr.x,y:Hr.y,z:Hr.z}),hk=Math.min(1,(dt||.03)*9);hs.x+=(Hr.x-hs.x)*hk;hs.y+=(Hr.y-hs.y)*hk;hs.z+=(Hr.z-hs.z)*hk;Hr.set(hs.x,hs.y,hs.z);
  qOf(u.head,_q);b[BONE.neck_01].quaternion.copy(ID).slerp(_q,.38);b[BONE.head].quaternion.copy(ID).slerp(_q,.62);
  // arms
  [['r',0],['l',1]].forEach(function(e){var s=e[0],a=u.arms[e[1]],Wu=R['ua_'+s],Wl=R['la_'+s],Wh=R['hd_'+s];

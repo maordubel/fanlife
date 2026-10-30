@@ -232,6 +232,8 @@ function humanGait(u,w,sv){var PP=window.PEOPLE;if(PP&&PP.mocap&&PP.gait&&!Q.has
  if(u.hips.userData.x0!=null)u.hips.position.x=u.hips.userData.x0}
 function animDoll(g,t,dt){var u=g.userData,o=u.o,m=o.mode||'idle',ph=u.ph;var T_=t+ph;
  u.torso.scale.y=1+Math.sin(T_*1.7)*.012;
+ /* every frame starts from a still head and an upright torso: the walk cycle and the expressions ADD to these (-=, +=), and a mode that does not set them (a walker, a sitter) used to carry last frame's turn into this one — the head kept turning until it spun */
+ u.head.rotation.set(0,0,0);if(m!=='sit'&&m!=='sittalk')u.torso.rotation.set(0,0,0);
  var ar=u.arms,lg=u.legs;
  if(u.human){u.grip=null;ar.forEach(function(a){a.hand&&a.hand.rotation.set(0,0,0)})}if(u.human&&m!=='ctrl'){u.hips.rotation.z=0;u.torso.rotation.z=0;lg[0].h.rotation.z=lg[1].h.rotation.z=0;if(m!=='sit')u.torso.rotation.x=0}
  if(m==='walk'){var sp=o.spd||1.1;o._d=(o._d||0)+dt*sp;var w=T_*5.2*sp/1.1;lg[0].h.rotation.x=Math.sin(w)*.55;lg[1].h.rotation.x=-Math.sin(w)*.55;lg[0].kn.rotation.x=Math.max(0,-Math.sin(w+.6))*.9;lg[1].kn.rotation.x=Math.max(0,Math.sin(w+.6))*.9;ar[0].sh.rotation.x=-Math.sin(w)*.5;ar[1].sh.rotation.x=Math.sin(w)*.5;u.hips.position.y=.95+Math.abs(Math.sin(w))*.035;u.torso.rotation.y=Math.sin(w)*.08;
