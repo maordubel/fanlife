@@ -238,7 +238,7 @@ export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
       ]},
       {id: 'e6-pen-lost', shots: [
         {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'grief'}], say: say('wild', 'There you are. Long way home. We sing anyway. We sing louder.', 'grief')},
-        {cam: 'close', on: ['me'], ms: 2300, say: think('Three hundred people singing at a scoreboard. It is the proudest you have ever been of losing.')},
+        {cam: 'close', on: ['me'], ms: 2300, say: think('A whole end singing at a scoreboard. It is the proudest you have ever been of losing.')},
       ]},
       {id: 'e6-pen-drew', shots: [
         {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'warm'}], say: say('wild', 'There you are. A point. Away. Tell your grandchildren.')},
