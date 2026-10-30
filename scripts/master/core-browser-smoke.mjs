@@ -29,7 +29,18 @@ async function playMemoryWall(page){
  await page.waitForFunction(()=>document.querySelector('[data-testid="memory-run"]')?.getAttribute('data-phase')==='play')
  const total=await page.locator('[data-testid="memory-board"] button').count()/2
  // the wall can end before every pair is turned (the clock, or the last pair): the result screen replaces the counter, and that is a finished wall
- const found=async()=>{await page.getByTestId('memory-pairs').or(page.getByTestId('memory-result')).first().waitFor();if(await page.getByTestId('memory-result').count())return total;return Number((await page.getByTestId('memory-pairs').innerText()).split('/')[0])}
+ const found=async()=>{
+  // Read the result and counter in one browser task: the result can replace the counter
+  // between separate locator calls, leaving innerText waiting for an element that is gone.
+  const state=await page.waitForFunction(total=>{
+   if(document.querySelector('[data-testid="memory-result"]'))return {count:total}
+   const pairs=document.querySelector('[data-testid="memory-pairs"]')
+   if(!pairs)return false
+   const count=Number(pairs.textContent?.split('/')[0])
+   return Number.isFinite(count)?{count}:false
+  },total)
+  return (await state.jsonValue()).count
+ }
  const closed=()=>page.locator('[data-testid="memory-board"] button[data-state="closed"]')
  while(await found()<total){
   const before=await found(),first=(await closed().first().getAttribute('data-card-id'))
