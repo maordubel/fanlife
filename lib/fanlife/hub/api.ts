@@ -5,6 +5,7 @@ import { normaliseWorld } from '@/lib/fanlife/world'
 import { createClient } from '@/lib/supabase/client'
 import type { CollectorError, Fail, Result } from '@/lib/collector/types'
 
+import { publishPayload, type ListingDraft, type ListingRow } from './listing'
 import type {
   Cursor,
   DealExtras,
@@ -143,3 +144,12 @@ export const worldHave = (i: WorldHaveInput) =>
   call<{ created: boolean; item: import('@/lib/collector/types').OwnerItem }>('worker_world_have', {
     p_club_key: i.clubKey, p_club_name: i.clubName, p_country: i.country, p_season: i.season, p_variant: i.variant, p_maker: i.maker,
   })
+
+// ------------------------------------------------------------------ direct listing (30.10.2026)
+
+/** One transaction on the server: the copy, its photos and its terms. The same key always answers with the same listing. */
+export const marketPublish = (key: string, draft: ListingDraft) =>
+  call<{ created: boolean; listingId: string; status: 'live'; item: import('@/lib/collector/types').OwnerItem }>('worker_market_publish', { p_key: key, p_data: publishPayload(draft) })
+export const listingsMine = () => call<{ listings: ListingRow[] }>('worker_listings_mine')
+export const listingSet = (item: string, action: 'pause' | 'resume' | 'sold' | 'traded' | 'remove' | 'closet_add') =>
+  call<{ item: ListingRow }>('worker_listing_set', { p_item: item, p_action: action })
