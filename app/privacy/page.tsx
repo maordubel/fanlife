@@ -13,7 +13,7 @@ export const metadata:Metadata={
 export default function Privacy(){
  return <DocShell kicker="The small print" title="Privacy" lede="FAN LIFE is built to work without an account. This page explains what is kept on your device, what we measure, and how to remove it.">
   <h2>What stays on your device</h2>
-  <p>Your game progress, the shirts you have collected, your saved line-ups, your terrace votes and your settings are kept in your browser's local storage. They never leave your device unless you sign in. Clearing your browser's site data for fanlife.dubelteam.com removes them completely.</p>
+  <p>Your game progress, the shirts you have collected, your saved line-ups, your terrace votes and your settings are kept in your browser’s local storage. They never leave your device unless you sign in. Clearing your browser’s site data for fanlife.dubelteam.com removes them completely.</p>
   <h2>Accounts</h2>
   <p>Signing in is optional. If you create an account, we store your account identifier and the progress you choose to sync, so that the same file follows you between devices. We do not show your email address to other users; on public pages you appear only by a nickname you choose or by an anonymous supporter number. Votes in the terrace ballot are counted without being linked to your account.</p>
   <h2>What we measure</h2>

@@ -22,8 +22,8 @@ export default function Contact(){
   <ul>
    <li>the club, the gate and the exact question, card or shirt you saw;</li>
    <li>what the page says, and what you believe is right;</li>
-   <li>a source we can read — a club archive, a competition's official match page, a newspaper of the time or a reference book with its page number;</li>
-   <li>whether you were there, if you were — supporters' memories are welcome, and we record them as what they are.</li>
+   <li>a source we can read — a club archive, a competition’s official match page, a newspaper of the time or a reference book with its page number;</li>
+   <li>whether you were there, if you were — supporters’ memories are welcome, and we record them as what they are.</li>
   </ul>
   <p>When two good sources disagree, we keep both and say so instead of choosing one quietly, and a fact under dispute is taken out of the quiz until it is settled.</p>
   <h2>Suggest a club</h2>

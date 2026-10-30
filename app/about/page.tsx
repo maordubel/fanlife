@@ -21,7 +21,7 @@ export default async function About(){
  const live=REGISTRY.filter(r=>state?.clubs.find(c=>c.id===r.id)?.status==='live').sort((a,b)=>a.name.localeCompare(b.name))
  return <DocShell kicker="About this paper" title="About FAN LIFE" lede="FAN LIFE is a football site where every club is a world of its own: games, an archive and a supporter's life, all built from that club's recorded history.">
   <h2>What it is</h2>
-  <p>FAN LIFE treats each club as its own small app. You choose your club and walk in through thirteen gates — trivia rounds, line-up puzzles, kit games, a timeline, a living archive and more. Every question, shirt and date inside a gate comes from that club's own records, so a round for one club never borrows a fact from another. The site is written in English; some club archives keep names and titles in the language they were published in.</p>
+  <p>FAN LIFE treats each club as its own small app. You choose your club and walk in through thirteen gates — trivia rounds, line-up puzzles, kit games, a timeline, a living archive and more. Every question, shirt and date inside a gate comes from that club’s own records, so a round for one club never borrows a fact from another. The site is written in English; some club archives keep names and titles in the language they were published in.</p>
   <h2>The thirteen gates</h2>
   <p>Each gate is a different way into the same history. A gate opens for a club only when there is enough checked material to play it properly; until then it stays closed rather than padded with guesses.</p>
   <ol>{SHARED_GATES.map(g=><li key={g.key}><b>{g.name}</b></li>)}</ol>
