@@ -10,9 +10,14 @@ describe('one shirt is one card',()=>{
   const out=dedupeKits([kit('a-v2',{sponsor:null}),kit('a',{sponsor:'Stoiximan',shorts:{colour:'white',trim:null}}),kit('uefa-a',{design:null,colours:['red'],maker:null})])
   expect(out).toHaveLength(1);expect(out[0]!.id).toBe('a');expect(out[0]!.sponsor).toBe('Stoiximan');expect(out[0]!.also?.sort()).toEqual(['a-v2','uefa-a'])
  })
- it('ignores colour order and spelling, and sees stripes and pinstripes as one family',()=>{
-  expect(dedupeKits([kit('a'),kit('b',{colours:['white','red'],design:'pinstripes'})])).toHaveLength(1)
+ it('ignores colour order and spelling but keeps pinstripes distinct from stripes',()=>{
+  expect(dedupeKits([kit('a'),kit('b',{colours:['white','red'],design:'pinstripes'})])).toHaveLength(2)
   expect(dedupeKits([kit('a',{colours:['grey']}),kit('b',{colours:['gray']})])).toHaveLength(1)
+ })
+ it('keeps different known sponsors apart, including when a record with an unknown sponsor is present',()=>{
+  const out=dedupeKits([kit('a',{sponsor:'Unicef'}),kit('b',{sponsor:null}),kit('c',{sponsor:'Stoixima'})])
+  expect(out).toHaveLength(2)
+  expect(out.map(k=>k.sponsor).sort()).toEqual(['Stoixima','Unicef'])
  })
  it('keeps two shirts that differ in design, maker, type or season',()=>{
   expect(dedupeKits([kit('a',{design:'plain'}),kit('b',{design:'contrasting sleeves'})])).toHaveLength(2)
@@ -25,7 +30,7 @@ describe('one shirt is one card',()=>{
   for(const id of ['aek-athens','celtic','olympiacos','panathinaikos','st-pauli','zrinjski-mostar','hapoel-petah-tikva','hapoel-tel-aviv']){
    const seen=new Set<string>()
    for(const k of kitViews((await loadClub(id))!.data)){
-    const key=`${k.season}|${k.type}|${k.design}|${[...k.colours].sort().join('+')}|${(k.maker??'').toLowerCase()}`
+    const key=`${k.season}|${k.type}|${k.design}|${[...k.colours].sort().join('+')}|${(k.maker??'').toLowerCase()}|${(k.sponsor??'').toLowerCase()}`
     expect(seen.has(key),`${id} ${key}`).toBe(false);seen.add(key)
    }
   }

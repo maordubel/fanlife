@@ -67,7 +67,7 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
  const typeHref=(t:string)=>`${clubHref(id,'kit-archive',locale)}${t==='all'?'':`${locale==='en'?'?':'&'}type=${t}`}`
  const longest=Math.max(6,...c.name.split(/\s+/).map(w=>w.length))
  const Card=({k}:{k:KitView})=>{
-  const photo=clubKitPhotoOf(id,k)??catSrc[k.id]??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type),img=photo??a?.image,v=variantOf(k.type)
+  const photo=clubKitPhotoOf(id,k)??catSrc[k.id]??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type,k.also),img=photo??a?.image,v=variantOf(k.type)
   return <li className="wk-sticker wkk-kit" data-testid="kit-archive-kit" data-type={v}>
    <span className={`wkk-kit-art ${SURFACE[v]}`}>
     {img?<img className="wkk-kit-img" data-archive-photo={photo?'':undefined} src={img} alt={`${k.season} ${label(k.type)}`} width={160} height={215} loading="lazy" decoding="async"/>:<KitPlate kit={k} label={false}/>}

@@ -45,12 +45,11 @@ export function kitViews(data:ClubData):KitView[] {
 
 const COLOUR_WORD:Record<string,string>={gray:'grey','sky blue':'skyblue','light blue':'skyblue'}
 const norm=(c:string)=>COLOUR_WORD[c]??c
-const STRIPES=new Set(['stripes','pinstripes'])
 const SASHES=new Set(['sash','diagonal'])
 const PLAINISH=new Set(['plain','solid'])
 const designOk=(a0:string|null,b0:string|null)=>{
  const a=a0?.toLowerCase()??null,b=b0?.toLowerCase()??null,x=a&&PLAINISH.has(a)?'plain':a,y=b&&PLAINISH.has(b)?'plain':b
- return x===y||x===null||y===null||x==='graphic'||y==='graphic'||(STRIPES.has(x)&&STRIPES.has(y))||(SASHES.has(x)&&SASHES.has(y))
+ return x===y||x===null||y===null||x==='graphic'||y==='graphic'||(SASHES.has(x)&&SASHES.has(y))
 }
 const subset=(a:string[],b:string[])=>a.every(c=>b.includes(c))
 /** for comparison only: the Kit Master says cream and ink where a catalogue says white and black */
@@ -58,12 +57,14 @@ const SAME_COLOUR:Record<string,string>={cream:'white',ink:'black'}
 const cmpColours=(c:string[])=>[...new Set(c.map(x=>SAME_COLOUR[x]??x))]
 const coloursOk=(a0:string[],b0:string[])=>{const a=cmpColours(a0),b=cmpColours(b0);return !a.length||!b.length||subset(a,b)||subset(b,a)}
 const makerOk=(a:string|null,b:string|null)=>!a||!b||a.toLowerCase()===b.toLowerCase()
+/** Different documented sponsors distinguish shirt variants even when the cut and colours match. */
+const sponsorOk=(a:string|null,b:string|null)=>!a||!b||a.trim().toLowerCase()===b.trim().toLowerCase()
 const typeKey=(t:string)=>{const v=t.toLowerCase();return v==='gk'||v==='goalkeeper'?'gk':v}
 const score=(k:KitView)=>(k.maker?3:0)+(k.sponsor?3:0)+(k.shorts?2:0)+(k.socks?2:0)+(k.design&&k.design!=='graphic'?1:0)+Math.min(k.colours.length,3)+Math.min(k.sources.length,3)*0.1-(/-v\d+$/.test(k.id)?5:0)-(/uefa-/.test(k.id)?4:0)
 /**
  * One shirt is one card. A season and type the archive records more than once is folded when the records can be the SAME shirt:
  * compatible colours (equal, or one a subset of the other, order ignored — sources disagree on base and trim), compatible design
- * (a "graphic" or missing design says nothing; stripes and pinstripes are one family) and a maker that is not contradicted.
+ * (a "graphic" or missing design says nothing) and a maker and sponsor that are not contradicted.
  * Two shirts that differ in design or maker (AEK 2005/06 home: plain vs contrasting sleeves) stay two. The richest record leads and
  * lends what it lacks; the others' ids ride along in `also` so a photograph keyed to any of them still finds the card.
  */
@@ -76,7 +77,7 @@ export function dedupeKits(list:KitView[]):KitView[]{
   const sorted=[...members].sort((a,b)=>score(b)-score(a)||a.id.localeCompare(b.id)),clusters:KitView[][]=[]
   for(const k of sorted){
    const stub=k.design===null&&k.colours.length<=1 // a source's bare twin (UEFA's FKA record: no design, one colour) says only that the shirt exists
-   const home=clusters.find(c=>{const lead=c[0]!;return makerOk(lead.maker,k.maker)&&(stub||(coloursOk(lead.colours,k.colours)&&designOk(lead.design,k.design)))})
+   const home=clusters.find(c=>{const lead=c[0]!;return c.every(other=>sponsorOk(other.sponsor,k.sponsor))&&makerOk(lead.maker,k.maker)&&(stub||(coloursOk(lead.colours,k.colours)&&designOk(lead.design,k.design)))})
    if(home)home.push(k);else clusters.push([k])
   }
   for(const c of clusters){
