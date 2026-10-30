@@ -1,5 +1,6 @@
 import type {KitPart,KitView} from '@/lib/clubs/gate-content'
 import {SWATCH} from '@/lib/clubs/rumble-kit'
+import {useId} from 'react'
 /** Colour names the club archive may carry → magazine tokens. Anything unmapped is NOT painted (never guessed). The five club-only colours (yellow, maroon, skyblue, pink, orange) come from the lib swatch, not from a token. */
 const TOKEN:Record<string,string>={red:'--mag-vermilion',white:'--mag-white',cream:'--mag-paper',blue:'--mag-navy',navy:'--mag-navy',green:'--mag-green',black:'--mag-ink',purple:'--mag-purple',grey:'--mag-muted',gray:'--mag-muted'}
 const CLUB_ONLY=['yellow','maroon','skyblue','pink','orange','brown']
@@ -17,14 +18,15 @@ function Shorts({p,id}:{p:KitPart;id:string}){const a=paint(p.colour);if(!a)retu
 function Socks({p,id}:{p:KitPart;id:string}){const a=paint(p.colour);if(!a)return null;const t=p.trim?paint(p.trim):null
  return <g transform="translate(336 128)">{[0,24].map(dx=><g key={dx} transform={`translate(${dx} 0)`}><clipPath id={`${id}k${dx}`}><path d={SOCK}/></clipPath><g clipPath={`url(#${id}k${dx})`}><rect x="-10" width="60" height="200" fill={a}/>{t&&<><rect x="-8" y="12" width="52" height="12" fill={t}/><rect x="-8" y="34" width="52" height="12" fill={t}/></>}</g><path d={SOCK} fill="none" stroke="var(--mag-ink)" strokeWidth="5"/></g>)}</g>}
 export function KitPlate({kit,label=true,paints,decorative=false,className='kit-plate'}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>&Partial<Pick<KitView,'shorts'|'socks'>>;label?:boolean;paints?:{a:string;b?:string|null};decorative?:boolean;className?:string}) {
- const a=paints?.a??paint(kit.colours[0]),b=(paints?paints.b:paint(kit.colours[1]))||a,id=`kp-${kit.id.replace(/[^a-z0-9]/gi,'')}`,design=(kit.design||'').toLowerCase()
+ const instance=useId().replace(/:/g,'')
+ const a=paints?.a??paint(kit.colours[0]),b=(paints?paints.b:paint(kit.colours[1]))||a,id=`kp-${instance}`,design=(kit.design||'').toLowerCase()
  const painted=!!a,whole=painted&&!!(kit.shorts||kit.socks)
  return <svg viewBox={whole?'0 0 430 470':'0 0 340 320'} role={decorative?undefined:'img'} aria-hidden={decorative||undefined} aria-label={decorative?undefined:`${kit.season} ${kit.design||''} ${kit.colours.join('/')}`.trim()} className={className} data-painted={painted}>
   <defs><clipPath id={id}><path d={BODY}/></clipPath></defs>
   <g clipPath={`url(#${id})`}>
    <rect width="340" height="320" fill={a||'var(--mag-card)'}/>
    {painted&&design.includes('hoop')&&Array.from({length:6},(_,i)=><rect key={i} x="0" y={20+i*48} width="340" height="24" fill={b!}/>)}
-   {painted&&design.includes('stripe')&&Array.from({length:6},(_,i)=><rect key={i} x={30+i*52} y="0" width="26" height="320" fill={b!}/>)}
+   {painted&&design.includes('stripe')&&!design.includes('pinstripe')&&Array.from({length:6},(_,i)=><rect key={i} x={30+i*52} y="0" width="26" height="320" fill={b!}/>)}
    {painted&&design.includes('check')&&Array.from({length:48},(_,i)=>{const x=i%8,y=Math.floor(i/8);return (x+y)%2===0?<rect key={i} x={28+x*35} y={y*52} width="35" height="52" fill={b!}/>:null})}
    {painted&&design.includes('half')&&<rect x="170" y="0" width="170" height="320" fill={b!}/>}
    {painted&&design.includes('sash')&&<polygon points="60,40 130,40 290,300 220,300" fill={b!}/>}
