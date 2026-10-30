@@ -860,8 +860,17 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       closeK += ((sq ? 1 : 0) - closeK) * Math.min(1, dt * (sq ? 3.2 : 2.2))
       if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, 0.75, sq.z + Math.cos(sq.face) * 0.55)
       // beside him, a little behind, on the side the camera already is (the open side of the room): his face, his hands and the place in one frame
-      const sa = sq ? sq.face + Math.PI * 0.58 : 0, sb = sq ? sq.face - Math.PI * 0.58 : 0, side = Math.cos(sa) >= Math.cos(sb) ? sa : sb
-      const near = tmp2.set(sim.x + Math.sin(side) * 2.4, child ? 1.5 : 1.75, sim.z + Math.cos(side) * 2.4 + 0.5)
+      // in FRONT of the place and to one side of him (about sixty degrees off its face): further round than that and the lens
+      // ends up beside or behind the furniture he is going through — the armchair filled the screen. Of the two sides, the
+      // one with open floor between the lens and his hands; then the one the camera is already on.
+      let side = 0
+      if (sq) {
+        const sa = sq.face + Math.PI * 0.33, sb = sq.face - Math.PI * 0.33
+        const open = (a: number) => { const cx = sim.x + Math.sin(a) * 2.2, cz = sim.z + Math.cos(a) * 2.2; for (let k = 0; k <= 10; k++) { const x = cx + (closeAt.x - cx) * k / 10, z = cz + (closeAt.z - cz) * k / 10; for (const b of level.blocks) if (x > b.x0 && x < b.x1 && z > b.z0 && z < b.z1) return false } return true }
+        const oa = open(sa), ob = open(sb)
+        side = oa !== ob ? (oa ? sa : sb) : Math.cos(sa) >= Math.cos(sb) ? sa : sb
+      }
+      const near = tmp2.set(sim.x + Math.sin(side) * 2.2, child ? 1.45 : 1.7, sim.z + Math.cos(side) * 2.2)
       camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * 0.92), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
       camLook.lerp(tmp3.set(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
