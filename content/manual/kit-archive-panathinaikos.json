@@ -196,11 +196,22 @@
      "white"
     ],
     "hex": {
-     "green": "#2c8a66",
+     "green": "#034843",
      "white": "#ffffff"
     },
     "measured": {
      "stripes": 2
+    },
+    "artwork": {
+     "centralPanel": {"x": 124, "width": 92},
+     "shoulderStripes": true,
+     "plainCuffs": true,
+     "makerInk": "#034843",
+     "makerHalo": "#ffffff",
+     "crestSrc": "/club-kits/panathinaikos/marks/shamrock-from-crest.svg",
+     "sponsorSrc": "/club-kits/panathinaikos/marks/stoiximan-2024.svg",
+     "reference": "https://www.footballkitarchive.com/panathinaikos-fc-2024-25-home-kit-271467/",
+     "note": "Illustrated approximation, not a traced complete shirt: shape and placement adjusted from the referenced shirt; the shamrock is traced from the existing club crest."
     }
    },
    "shorts": {
