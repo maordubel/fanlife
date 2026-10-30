@@ -3298,3 +3298,15 @@ Owner: *"the characters' heads turn by themselves — improve the graphics criti
    a coat swings). A find is a stamp (`.found`), the last ten seconds beat (`.tension`), every place answers in its own
    words the first time (`ev.empty.<kind>`). The search lens stands IN FRONT of the place inside his room, tries angles and
    distances for a clear line to his hands, aims between his chest and his hands, and stays half way down when no lens is clean.
+
+## 134 · A night from the archive is filmed on its own stock and opens on its own record (30.10.2026)
+
+Owner: *"attach them to matches from the archive, give them historical credibility, realism, the feeling of a real life."*
+1. **E1 stands on a real night** when the archive holds one in the year he is six (`e1(anchor)`, `e1Ages`, last in
+   `ANCHORED` so the ground nights choose first): the radio plays it through `MatchLive` at `'radio'`. The radio carried
+   home and away alike, so E1 alone takes either. Hapoel: 7.1.1984, 1–0 v Shimshon (Liga Leumit). No night → E1 as it was.
+2. **A live night opens on the archive slate** (`MatchLive` `slate`): date, the two sides as recorded, the competition, where
+   he hears it, the first source. The clock does not start until it has been read or tapped through.
+3. **Films are shot on the decade's stock** (`CineLayer era`, `eraFor` in `LifeGame.tsx`): a soft-light grade, grain and
+   gate weave by decade, and — only on a night the archive dates to the day — that date burned in the corner. The year is
+   the anchor's, else his birth year plus his age. The skip in a film is quiet, as in a mission (rule 133 §6).
