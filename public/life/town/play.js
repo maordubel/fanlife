@@ -481,7 +481,8 @@ function cineTick(t,dt){
  /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
     lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
  var key=(c.on||[]).join()+'|'+Math.round(heads[0].x*3)+','+Math.round(heads[0].z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(heads[0],p,subs)}catch(e){c.fix=null}}
- if(c.fix){p=c.fix.p?heads[0].clone().add(c.fix.p):p}
+ if(c.fix&&c.fix.wide){K.cineCam(null);K.follow(camX,1+.06*k);return}
+ if(c.fix&&c.fix.p)p=heads[0].clone().add(c.fix.p)
  /* and the lens gets there like a camera operator would, not in one jump: every frame used to place it afresh */
  if(!c.cp){c.cp=p.clone();c.cl=l.clone()}else{var ck=Math.min(1,dt*4.5);c.cp.lerp(p,ck);c.cl.lerp(l,ck)}
  K.cineCam({p:[c.cp.x,c.cp.y,c.cp.z],l:[c.cl.x,c.cl.y,c.cl.z],fov:fov});
@@ -491,11 +492,16 @@ function blocking(o){for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.o||q.u
 function hitOn(from,to){if(!K.world)return null;_ray=_ray||new T.Raycaster();var v=to.clone().sub(from),len=v.length();_ray.set(from,v.normalize());_ray.far=len;
  /* only solid meshes: a Sprite cannot be raycast without a camera (r128 throws), and a person, a light or glass is not in the way */
  var solid=[];K.world.traverse(function(o){if(o.isMesh&&!o.isSprite&&!o.isSkinnedMesh&&!o.isInstancedMesh&&blocking(o))solid.push(o)});var hs=_ray.intersectObjects(solid,false);for(var i=0;i<hs.length;i++)if(hs[i].distance>.12)return hs[i].distance;return null}
-function clearShot(h,p,subs){var off=p.clone().sub(h),len=off.length(),at=hitOn(h,p);if(at==null)return null;
- if(at>len*.6)return{p:off.multiplyScalar((at-.12)/len)};
- var m=off.clone();m.x=-off.x;m.z=-off.z;var mir=new T.Vector3(off.z,off.y,-off.x);/* the other side of the face, then a quarter turn either way */
- var tries=[new T.Vector3(-off.z,off.y,off.x),mir];for(var i=0;i<tries.length;i++){var q=h.clone().add(tries[i]),a2=hitOn(h,q);if(a2==null)return{p:tries[i]};if(a2>len*.6)return{p:tries[i].multiplyScalar((a2-.12)/len)}}
- return{p:off.multiplyScalar(Math.max(.3,at-.12)/len)}}
+function segDist(a,b,c){var ab=b.clone().sub(a),t=Math.max(0,Math.min(1,c.clone().sub(a).dot(ab)/Math.max(1e-6,ab.lengthSq())));return a.clone().add(ab.multiplyScalar(t)).distanceTo(c)}
+/* other people are in the way too: a head and a chest each, as spheres, for everybody who is not in the shot */
+function peopleOn(from,to,subs){var all=[player].concat(Object.keys(actors).map(function(k){return actors[k]}));for(var i=0;i<all.length;i++){var b=all[i];if(!b||subs.indexOf(b)>=0||!b.g.visible)continue;var hd=headOf(b);if(segDist(from,to,hd)<.3)return true;hd.y-=.55*b.s;if(segDist(from,to,hd)<.4)return true}return false}
+function clearShot(h,p,subs){var off=p.clone().sub(h),len=off.length(),best=null,bestD=0;
+ /* round the face a few ways, and a little higher (over a sofa back); the first lens with nothing in front of it wins */
+ var turns=[0,.6,-.6,1.1,-1.1],lifts=[0,.35];
+ for(var li=0;li<lifts.length;li++)for(var ti=0;ti<turns.length;ti++){var a=turns[ti],o=new T.Vector3(off.x*Math.cos(a)-off.z*Math.sin(a),off.y+lifts[li],off.x*Math.sin(a)+off.z*Math.cos(a)),q=h.clone().add(o);
+  if(peopleOn(h,q,subs))continue;var at=hitOn(h,q);if(at==null){if(!a&&!lifts[li])return null;return{p:o}}if(at>bestD){bestD=at;best=o}}
+ /* nothing clear: the nearest-to-clear lens only if it still frames a face and shoulders; otherwise the room's own camera */
+ if(best&&bestD>len*.7)return{p:best.multiplyScalar((bestD-.1)/len)};return{wide:true}}
 function cineShot(o){
  if(!o){CINE=null;unpose();window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
  CINE={cam:o.cam||'wide',on:o.on||[],ms:o.ms||2000,el:0};/* a close shot has the wall half a metre behind a face: screen-space obscurance prints a dark cloud round the head there */window.__noAO=CINE.cam==='close'||CINE.cam==='over';cineTick(now,0);return true}
