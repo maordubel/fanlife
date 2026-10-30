@@ -50,6 +50,12 @@ describe('Season One', () => {
     }
     const hapoel = await packOf('hapoel-tel-aviv')
     expect(episodes(hapoel).filter(c => c.anchor).map(c => `${c.id}@${c.anchor!.on}`)).toEqual(['S1E1@1984-01-07', 'S1E3@1986-05-24', 'S1E5@1990-05-12', 'S1E6@1992-01-31'])
+    // the episodes that stand on no night open on the paper of that week: a recorded night of the year he is that age,
+    // never one an episode already stands on
+    const papers = episodes(hapoel).filter(c => c.paper)
+    expect(papers.map(c => c.id)).toEqual(['S1E2', 'S1E4'])
+    const stood = new Set(episodes(hapoel).flatMap(c => c.anchor ? [c.anchor.factId] : []))
+    for (const c of papers) { expect(stood.has(c.paper!.factId)).toBe(false); expect(c.paper!.precision).toBe('day'); expect(c.paper!.year).toBe(hapoel.hero.birthYear! + c.age) }
   }, 300000)
 
   it('hooks the player from the first second to the last card', async () => {
