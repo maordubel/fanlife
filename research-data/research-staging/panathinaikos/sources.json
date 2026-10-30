@@ -8,8 +8,8 @@
   "sourceFamilyId": "paopedia-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-10-29",
-  "retrievedAt": "2026-10-29T10:25:39.849Z",
+  "checkedAt": "2026-10-30",
+  "retrievedAt": "2026-10-30T10:14:16.500Z",
   "collected": {
    "documents": 33,
    "observedTotalDocuments": 33,
@@ -29,8 +29,8 @@
   "sourceFamilyId": "panathinaikos-institutional",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-10-29",
-  "retrievedAt": "2026-10-29T10:25:39.849Z",
+  "checkedAt": "2026-10-30",
+  "retrievedAt": "2026-10-30T10:14:16.500Z",
   "collected": {
    "documents": 11,
    "observedTotalDocuments": 11,
@@ -50,8 +50,8 @@
   "sourceFamilyId": "rsssf",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-10-29",
-  "retrievedAt": "2026-10-29T10:25:39.849Z",
+  "checkedAt": "2026-10-30",
+  "retrievedAt": "2026-10-30T10:14:16.500Z",
   "collected": {
    "documents": 5,
    "observedTotalDocuments": 5,

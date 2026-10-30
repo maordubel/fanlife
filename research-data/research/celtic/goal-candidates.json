@@ -28,6 +28,24 @@
     "bodyHash": "b6081924edda6322fadad4c2a49a4434bb30c4c78db1719ad3fed09c00c7bb50",
     "fetchedAt": "2026-10-25T08:43:55.335Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/vhs-champions-the-glory-bhoys/",
+    "locator": "p18",
+    "quote": "The camera&rsquo;s return to Celtic Park for the final time and the most important substitution of the season takes place as Brattbakk replaces Donnelly in the 60th minute. Cometh the hour, cometh the man. Tom Boyd picks up the ball deep in the Celtic half and moves forward looking for a runner, he gets one in the shape of McNamara and Boyd&rsquo;s pass releases him in behind the defender. At the bottom of the screen you can see Brattbakk sprinting into the box and his date with destiny. McNamara&rsquo;s slides an inch perfect cross and Harald doesn&rsquo;t even need to break stride as he stro",
+    "bodyHash": "fdeec826f9fdcf5ee338707266af5df4d5d8235e13515706f85ffe10fba792eb",
+    "fetchedAt": "2026-10-30T10:13:43.283Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/dvd-the-celtic-collection/",
+    "locator": "p6",
+    "quote": "A box set of 5 programmes showing the Old Firm in all its glory. ' Magic Moments ' shows 8 classic games from 1981 through to 1998; ' Celtic Dream Team ' shows the selection both past and present of some of the greatest Celtic players; ' Great Celtic Action From the 60's ' highlights the Jock Stein era and the skills of the 'Lisbon Lions'; ' 5 Star Bhoys ' shows a part of recent Celtic history that has become folklore amongst the fans – November 21st 1998; and finally (exclusively for this collection) 'Martin O'Neill – Mine's a Treble ' is an in-depth interview with the man who led Celtic to w",
+    "bodyHash": "04c9cf942b4e36e5adb1d33319be1c63046a801f30de8aa2c4211bd8c7b9d895",
+    "fetchedAt": "2026-10-30T10:13:43.289Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -35,8 +53,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:43:55.335Z",
-  "updatedAt": "2026-10-25T08:43:55.335Z"
+  "createdAt": "2026-10-30T10:13:43.289Z",
+  "updatedAt": "2026-10-30T10:13:43.289Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -580,6 +598,15 @@
     "bodyHash": "5b0163e57a3dedd833d84e33a480e99b21ed6988cb1720f041e8bf9220b85cee",
     "fetchedAt": "2026-10-27T09:10:16.243Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/dvd-celtic-dragon-2-the-john-hartson-story-2010/",
+    "locator": "p22",
+    "quote": "Running Time: 55 min (disk 1); 80 mins (disk 2)",
+    "bodyHash": "1f1c8fc2fbf6d512d3bcfed75294783dc9be32bbf8d51d2eab3c5f5efa0d44fc",
+    "fetchedAt": "2026-10-30T10:13:43.285Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -587,8 +614,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:10:16.243Z",
-  "updatedAt": "2026-10-27T09:10:16.243Z"
+  "createdAt": "2026-10-30T10:13:43.285Z",
+  "updatedAt": "2026-10-30T10:13:43.285Z"
  },
  {
   "id": "ga-3003295f1d8eb8a5",
@@ -718,5 +745,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-28T10:01:08.570Z",
   "updatedAt": "2026-10-28T10:01:08.570Z"
+ },
+ {
+  "id": "ga-eae2397426bed908",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "92",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/dvd-green-whitewash/",
+    "locator": "p11",
+    "quote": "Game 6 Sutton's chip. That's all you really need to say about this game. Celtic should have had this wrapped up long before the 92nd minute but in many ways it made victory all the sweeter. As the hun hordes were celebrating a draw Stephen Thompson chickened out of a challenge with Marshall and Celtic had a goal kick. The game was all but over and the referee was checking his watch. The huns were singing 'We love you rangers, we do' as they sensed they'd survived and were going home with a point and denying Celtic a clean sweep of league wins and a 6th straight win overall.",
+    "bodyHash": "3c22f0b8126481c3f6ca57b761dc1cd03458638e82762588ebf9412440ea4320",
+    "fetchedAt": "2026-10-30T10:13:40.311Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:13:40.311Z",
+  "updatedAt": "2026-10-30T10:13:40.311Z"
+ },
+ {
+  "id": "ga-c1fe350bec999947",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "92",
+  "scorerAlias": "Miller",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/dvd-untouchable-season-review-2006-2007/",
+    "locator": "p7",
+    "quote": "Despite the high of the european triumph in the league the team had lost the swagger it had the year before and grindong outresults came the norm rather than the exception. There was no denying the fighting spirit of the team as it came back from being behind a number of times but the entertainment factor was starting go missing. The team were well ahead in the league as rangers and Hearts fell away. hearts were further weakened in January as Strachan brought Paul Hartley and more controversially Steven Pressley along the M8. Not long after Pressley was to return to Tynecastle as Celtic capt, ",
+    "bodyHash": "b1d62c3ecfdd45edf1811d30734487367315c23601bdfd36429468839d39397d",
+    "fetchedAt": "2026-10-30T10:13:43.285Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:13:43.285Z",
+  "updatedAt": "2026-10-30T10:13:43.285Z"
  }
 ]

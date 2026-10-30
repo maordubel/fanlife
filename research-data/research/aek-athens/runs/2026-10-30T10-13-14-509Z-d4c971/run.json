@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-30T10-13-14-509Z-d4c971",
+ "clubId": "aek-athens",
+ "startedAt": "2026-10-30T10:13:14.509Z",
+ "finishedAt": "2026-10-30T10:13:27.211Z",
+ "providers": [
+  "aekpedia",
+  "aek-official-history"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 5,
+  "documentsRead": 105,
+  "newDocuments": 0,
+  "changedDocuments": 0,
+  "unchangedDocuments": 105,
+  "recordsExtracted": 98,
+  "blockedEndpoints": 0,
+  "budgetLeft": 7
+ },
+ "diagnostics": [
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "aek-official-history",
+   "url": null,
+   "message": "No tested parser for AEK FC yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

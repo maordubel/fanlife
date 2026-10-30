@@ -29,15 +29,15 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-10-29T10:25:53.373Z"
+  "checkedAt": "2026-10-30T10:14:22.316Z"
  },
  "crno-bela-nostalgija:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
   "providerId": "crno-bela-nostalgija",
-  "state": "ok",
-  "status": 200,
-  "reason": null,
-  "checkedAt": "2026-10-29T10:25:57.174Z"
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-30T10:14:25.335Z"
  },
  "partizan-official:/vesti/istorijat": {
   "endpoint": "/vesti/istorijat",
@@ -45,7 +45,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-29T10:25:58.533Z"
+  "checkedAt": "2026-10-30T10:14:26.897Z"
  },
  "nft-partizan:/club/2156/1963/Partizan_Beograd.html": {
   "endpoint": "/club/2156/1963/Partizan_Beograd.html",
@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-29T10:25:59.336Z"
+  "checkedAt": "2026-10-30T10:14:27.726Z"
  },
  "partizanopedia:/4647.html": {
   "endpoint": "/4647.html",
@@ -302,5 +302,21 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-10-29T10:25:53.047Z"
+ },
+ "partizanopedia:/7778.html": {
+  "endpoint": "/7778.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-30T10:14:17.858Z"
+ },
+ "partizanopedia:/7879.html": {
+  "endpoint": "/7879.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-30T10:14:21.940Z"
  }
 }

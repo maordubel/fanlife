@@ -1069,6 +1069,15 @@
     "bodyHash": "3671670333c92f6e25fd1ece6ce1599832b726d926eb48f7a3ec3b40a2d2d3e3",
     "fetchedAt": "2026-10-27T09:22:27.445Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/10/05/lage-am-millerntor-5-oktober-2021/",
+    "locator": "p13",
+    "quote": "Den Besuch von Jackson Irvine im NDR Sportclub hatten wir ja gestern schon, Andreas Bornemann war hingegen bei den Kollegen von NDR 90,3 und machte dort klar, dass aktuell noch gar nichts erreicht sei. Er sprach u.a. über das aktuelle Team, die Pandemie und den Trainer (9min).",
+    "bodyHash": "418a8476d8a953a5058bbe1bba6db4c7af2fdc761731fab8a9b395d927950b28",
+    "fetchedAt": "2026-10-30T10:14:34.029Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1076,8 +1085,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:27.445Z",
-  "updatedAt": "2026-10-27T09:22:27.445Z"
+  "createdAt": "2026-10-30T10:14:34.029Z",
+  "updatedAt": "2026-10-30T10:14:34.029Z"
  },
  {
   "id": "ga-b034321cdb0cc0d5",
