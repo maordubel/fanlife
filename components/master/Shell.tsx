@@ -36,6 +36,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
    <img className="mag-foot-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-192.png'} alt="FAN LIFE — Football. Forever." width={96} height={96} loading="lazy"/>
    <div className="mag-barcode" aria-hidden="true"/>
    <div className="mag-mono"><Link className="mag-credit" href="/sources">{copy.credits}</Link><br/><Link className="mag-credit" href="/master/admin">{copy.administration}</Link></div>
+   <nav className="mag-mono mag-foot-legal" aria-label="FAN LIFE"><Link className="mag-credit" href="/about">About</Link> · <Link className="mag-credit" href="/privacy">Privacy</Link> · <Link className="mag-credit" href="/terms">Terms</Link> · <Link className="mag-credit" href="/contact">Contact</Link> · <a className="mag-credit" href="https://www.dubelteam.com/games.html">More games ↗</a></nav>
    <a className="mag-credit" href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit} ↗</a>
   </div></footer>
   <TabBar locale={locale}/>

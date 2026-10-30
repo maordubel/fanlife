@@ -635,3 +635,18 @@
 /* H2 tile extras */
 .wkh-stk-streak, .wkh-stk-otd { display: block; font-size: 11px; line-height: 1.2; margin-block-start: 2px; }
 .wkh-stk-otd { color: var(--mag-red); }
+
+/* ───────── .wkh-doc — about · privacy · terms · contact (ADSENSE-APPROVAL §3) ───────── */
+.wkh-doc { color: var(--mag-ink); max-inline-size: 760px; margin-inline: auto; padding: 24px 16px 48px; display: flex; flex-direction: column; gap: 22px; }
+.wkh-doc .wkh-title { font-size: 44px; transform: rotate(-3deg); transform-origin: 0 100%; margin-block: 6px 10px; }
+.wkh-doc-head { display: flex; flex-direction: column; gap: 6px; }
+.wkh-doc-lede { font-size: 19px; line-height: 1.45; margin: 0; }
+.wkh-doc-body { font-size: 17px; line-height: 1.6; }
+.wkh-doc-body h2 { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; font-size: 24px; margin-block: 26px 8px; }
+.wkh-doc-body p { margin-block: 0 12px; }
+.wkh-doc-body :is(ul, ol) { margin-block: 0 12px; padding-inline-start: 24px; }
+.wkh-doc-body a, .wkh-doc-nav a { color: var(--mag-ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.wkh-doc-mail { font-family: var(--mag-display); font-size: 26px; overflow-wrap: anywhere; }
+.wkh-doc-nav { display: flex; flex-wrap: wrap; gap: 10px 18px; border-block-start: 3px solid var(--mag-ink); padding-block-start: 14px; font-family: var(--mag-mono); text-transform: uppercase; font-size: 13px; }
+.wkh-doc-nav a { min-block-size: 44px; display: inline-flex; align-items: center; }
+.mag-foot-legal { line-height: 2; }

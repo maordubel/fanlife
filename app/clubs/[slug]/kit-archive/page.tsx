@@ -1,3 +1,4 @@
+import {clubSubMetadata} from '@/lib/seo/club'
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
@@ -24,7 +25,7 @@ import {KitOwnBar,KitOwnProvider,type OwnCopy} from '@/components/clubs/KitOwn'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
-export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return {title:c?`${en.kitArchiveTitle} · ${c.name}`:en.kitArchiveTitle}}
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'kit-archive'}):{title:en.kitArchiveTitle}}
 
 const TYPES=['home','away','third','special'] as const
 const SURFACE:Record<string,string>={home:'wk-clubplate',away:'wk-sky',third:'wk-navyplate',special:'wk-orangeplate'}

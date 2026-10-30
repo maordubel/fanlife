@@ -1,3 +1,5 @@
+import {clubSubMetadata} from '@/lib/seo/club'
+import {REGISTRY as REGISTRY_SEO} from '@/lib/master/registry'
 import {notFound} from 'next/navigation'
 import Link from 'next/link'
 import type {CSSProperties} from 'react'
@@ -16,7 +18,7 @@ import clubEn from '@/messages/clubs/en.json'
 import clubHe from '@/messages/clubs/he.json'
 
 export const dynamic='force-dynamic'
-export const metadata={title:'Away Days'}
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY_SEO.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'away-days'}):{title:'Away Days'}}
 
 /** The team bus (decorative): the club's colour, sky windows, ink outline. */
 function Bus(){return <svg className="wkk-bus" viewBox="0 0 120 60" aria-hidden="true"><path className="body" d="M8 12h96a8 8 0 0 1 8 8v26H8z"/><path className="win" d="M18 18h14v12H18zM36 18h14v12H36zM54 18h14v12H54zM72 18h14v12H72zM90 18h12v12H90z"/><path className="band" d="M8 36h104"/><circle className="wheel" cx="30" cy="48" r="7"/><circle className="wheel" cx="88" cy="48" r="7"/><path className="speed" d="M0 22h4M0 30h6M0 38h4"/></svg>}

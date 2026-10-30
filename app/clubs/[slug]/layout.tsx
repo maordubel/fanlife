@@ -80,7 +80,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
   <div className="club-body">{children}</div>
   <footer className="club-foot"><div className="club-foot-in">
    <span>FAN LIFE · {c.name}</span>
-   <span><Link href="/sources">{copy.credits}</Link> · <Link href="/master/admin">{copy.administration}</Link></span>
+   <span><Link href="/sources">{copy.credits}</Link> · <Link href="/about">About</Link> · <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link> · <Link href="/contact">Contact</Link> · <a href="https://www.dubelteam.com/games.html">More games ↗</a> · <Link href="/master/admin">{copy.administration}</Link></span>
    <a href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit} ↗</a>
   </div></footer>
   <RememberClub clubId={id}/>
