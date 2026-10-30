@@ -629,3 +629,28 @@
 
 /* ME: the supporter belongs to no club — a black-and-white fan on orange (owner, 14.10.2026) */
 .wkc-mast[data-corner-mast='me'] .wkc-mast-art { filter: grayscale(1) contrast(1.05); }
+
+/* direct listing (30.10.2026): the list-a-shirt form and My listings. Ink and paper only; nothing slides sideways. */
+.ls-card { max-inline-size: 640px; margin-inline: auto; animation: none; }
+.ls-photos { list-style: none; margin: 8px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+.ls-photos li { position: relative; }
+.ls-photos li button { position: absolute; inset-block-start: 2px; inset-inline-end: 2px; inline-size: 28px; block-size: 28px; border: 1.5px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); cursor: pointer; padding: 0; min-height: 0; }
+.ls-photos li small { position: absolute; inset-block-end: 2px; inset-inline-start: 2px; padding: 0 4px; background: var(--mag-ink); color: var(--mag-paper); font-size: 10px; }
+.ls-thumb { inline-size: 100%; block-size: auto; aspect-ratio: 1; object-fit: cover; border: 1.5px solid var(--mag-ink); }
+.ls-row .ls-thumb { inline-size: 72px; }
+.ls-add { display: inline-flex; align-items: center; cursor: pointer; }
+.ls-price { align-items: stretch; flex-wrap: nowrap; margin-top: 0; }
+.ls-price select { max-inline-size: 110px; }
+.ls-check { display: flex; align-items: center; gap: 8px; margin-top: 12px; min-block-size: 44px; font-weight: 700; flex-wrap: wrap; }
+.ls-check input { inline-size: 22px; block-size: 22px; }
+.ls-check small { font-weight: 400; color: var(--mag-muted); }
+.ls-more { margin-top: 14px; }
+.ls-more summary { min-block-size: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 700; }
+.ls-preview { border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 12px; }
+.ls-preview p { margin: 4px 0; }
+.ls-cover { inline-size: 100%; max-block-size: 260px; object-fit: cover; border: 1.5px solid var(--mag-ink); }
+.ls-mine { display: grid; gap: 12px; max-inline-size: 720px; margin-inline: auto; }
+.ls-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.ls-row { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; max-inline-size: none; }
+.ls-row .fl-wiz-chips { grid-column: 1 / -1; }
+.ls-row .fl-wiz-chips button { min-height: 44px; }
