@@ -7,15 +7,10 @@
   "parserVersion": "immerunioner-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 370,
+  "observedTotalDocuments": 390,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/spieler.php?getid=176",
-   "/spieler.php?getid=164",
-   "/spieler.php?getid=189",
-   "/spieler.php?getid=168",
-   "/spieler.php?getid=105",
    "/spieler.php?getid=283",
    "/spieler.php?getid=202",
    "/spieler.php?getid=18",
@@ -332,7 +327,27 @@
    "/spieler.php?getid=153",
    "/trainerseite.php?getid=21",
    "/trainerseite.php?trainerid=21",
-   "/spieler.php?getid=173&zahl=1"
+   "/spieler.php?getid=173&zahl=1",
+   "/spieler.php?getid=176&zahl=1",
+   "/spieler.php?getid=179",
+   "/spieler.php?getid=164&zahl=1",
+   "/spieler.php?getid=161",
+   "/spieler.php?getid=162",
+   "/spieler.php?getid=163",
+   "/spieler.php?getid=165",
+   "/spieler.php?getid=166",
+   "/spieler.php?getid=167",
+   "/spieler.php?getid=189&zahl=1",
+   "/spieler.php?getid=185",
+   "/spieler.php?getid=186",
+   "/spieler.php?getid=168&zahl=1",
+   "/spieler.php?getid=169",
+   "/spieler.php?getid=105&zahl=1",
+   "/spieler.php?getid=102",
+   "/spieler.php?getid=103",
+   "/spieler.php?getid=492",
+   "/spieler.php?getid=106",
+   "/spieler.php?getid=107"
   ],
   "seen": [
    "/listen.php",
@@ -382,10 +397,15 @@
    "/spieler.php?getid=341",
    "/spieler.php?getid=172",
    "/spieler.php?getid=151",
-   "/spieler.php?getid=173"
+   "/spieler.php?getid=173",
+   "/spieler.php?getid=176",
+   "/spieler.php?getid=164",
+   "/spieler.php?getid=189",
+   "/spieler.php?getid=168",
+   "/spieler.php?getid=105"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-30T10:15:00.776Z",
+  "updatedAt": "2026-10-30T10:29:37.129Z",
   "lastError": null
  },
  "union-official:html": {
@@ -404,7 +424,7 @@
    "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-30T10:15:02.529Z",
+  "updatedAt": "2026-10-30T10:29:38.591Z",
   "lastError": null
  },
  "dfb-union:html": {
@@ -423,7 +443,7 @@
    "/en/clubs/1-fc-union-berlin"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-30T10:15:07.804Z",
+  "updatedAt": "2026-10-30T10:29:42.837Z",
   "lastError": null
  },
  "footballhistory-union:html": {
@@ -442,7 +462,7 @@
    "/club/union-berlin.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-30T10:15:08.771Z",
+  "updatedAt": "2026-10-30T10:29:43.740Z",
   "lastError": null
  }
 }

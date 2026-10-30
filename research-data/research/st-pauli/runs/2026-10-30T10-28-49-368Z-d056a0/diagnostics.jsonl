@@ -1,0 +1,3 @@
+{"code":"NEEDS_PARSER","providerId":"millernton","url":null,"message":"No tested parser for MillernTon yet (millernton-stats-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"fcstpauli-museum","url":null,"message":"No tested parser for FC St. Pauli Museum yet (stpauli-museum-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

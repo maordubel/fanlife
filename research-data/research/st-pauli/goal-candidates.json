@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2018/09/24/verein-am-wochenende-38-2018/",
-    "locator": "p29",
-    "quote": "In einem Spiel auf Augenhöhe gewannen wir mit 2:1 gegen den Tabellen-Nachbarn Billstedt-Horn II. Die Kiezkicker ließen kaum Chancen zu und dominierten in den ersten 30min. Ein Kopfballtor in der 23. Minute vom unserem Funkturm Block, führte zum 1:0. Dies war auch der Halbzeitstand.",
-    "bodyHash": "833903d1c65fb424616c4754a97c1a017656bace50d30058a44037a40f73850a",
-    "fetchedAt": "2026-10-16T08:21:24.044Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2020/02/05/lage-am-millerntor-05-02-2020/",
     "locator": "p30",
     "quote": "Vom Hessischen Rundfunk gibt es außerdem eine sehenswerte Doku über „ Gewalt gegen Schiedsrichter “ (30min).",
@@ -64,6 +55,33 @@
     "bodyHash": "68e0d382b6eb85f01b3967d824f69b835a29a65dc593250ed6ec2b63ee5fdadc",
     "fetchedAt": "2026-10-28T10:02:37.271Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/10/25/fc-st-pauli-hansa-rostock-40-vier-treffer-versenkt/",
+    "locator": "p26",
+    "quote": "FC St. Pauli gegen Hansa Rostock ist ein besonderes Spiel. Ein Spiel, bei dem sich alle Fans wünschen oder besser gesagt erwarten, dass ihr Team vor allem körperlich alles reinlegt, in jeden Zweikampf mit vollem Einsatz geht, jeden notwendigen Meter läuft, bis gar nichts mehr geht. Dem FC St. Pauli ist das gelungen: Nur ein einziger Spieler auf dem Platz (mit mehr als 30min Spielzeit) hat weniger als zwei Drittel seiner Defensiv-Zweikämpfe gewonnen (Maximilian Dittgen hat „nur“ 50% gewonnen). Alle andere Spieler haben erheblich höhere Quoten. Knapp 3 von 4 Duellen (genauer: 74%) hat der FCSP g",
+    "bodyHash": "2928b5e57020dd4b9f7ac604482016575ec8e9d757d683dc002f4d20cc7b6bd9",
+    "fetchedAt": "2026-10-30T10:28:52.385Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/11/29/lage-am-millerntor-29-november-2021/",
+    "locator": "p68",
+    "quote": "„ Gefahr aus der Luft – Kopfverletzungen im Fußball“ , so heißt eine Dokumentation im NDR Sportclub (30min). Neben den Kopfbällen sind natürlich auch die oft aus Kopfballduellen resultierenden Zusammenstöße ein großes Risiko.",
+    "bodyHash": "0275a62f2b08138d871add08773b63b9fc20b79fc1ff07dd07a10f3efab85406",
+    "fetchedAt": "2026-10-30T10:28:57.786Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/11/30/lage-am-millerntor-30-november-2021/",
+    "locator": "p47",
+    "quote": "Vielen Dank an Michael für den Tipp, den ich Euch hiermit gerne weiterreiche. Arte.tv (30min)",
+    "bodyHash": "170ea1f6b279a7aadbb953773e5fa295bcb25cb401302035987c36083b1071a7",
+    "fetchedAt": "2026-10-30T10:28:57.788Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -71,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:02:37.271Z",
-  "updatedAt": "2026-10-28T10:02:37.271Z"
+  "createdAt": "2026-10-30T10:28:57.788Z",
+  "updatedAt": "2026-10-30T10:28:57.788Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -1078,6 +1096,15 @@
     "bodyHash": "418a8476d8a953a5058bbe1bba6db4c7af2fdc761731fab8a9b395d927950b28",
     "fetchedAt": "2026-10-30T10:14:34.029Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2021/11/08/lage-am-millerntor-08-november-2021/",
+    "locator": "p9",
+    "quote": "Der Anlass wäre sicher am besten die Tabellenführung gewesen, die blieb es ja dann auch trotz Spielabsage. Über das Spiel gegen Sandhausen konnte Philipp Ziereis im Sportclub daher logischerweise nicht sprechen, so ging es eher allgemein um die aktuelle sportliche Lage, den vielleicht besten Kader, seine Verletzungen und vieles mehr. ( NDR, 9min )",
+    "bodyHash": "8335a622f94063f96013be718ba0fdf150d41d862e9f6eed02fae23716b532b1",
+    "fetchedAt": "2026-10-30T10:28:52.406Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1085,8 +1112,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:14:34.029Z",
-  "updatedAt": "2026-10-30T10:14:34.029Z"
+  "createdAt": "2026-10-30T10:28:52.406Z",
+  "updatedAt": "2026-10-30T10:28:52.406Z"
  },
  {
   "id": "ga-b034321cdb0cc0d5",
