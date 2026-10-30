@@ -24,7 +24,7 @@ import {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'rea
 import {BOOT_START, BOOT_TIMEOUT_MS, bootReducer, failureCopyKey, probeWebgl, voxelFailure} from './boot'
 import type {ReelInput} from '@/lib/life/universal/reel'
 import {afterPlay, chapterOf, clockRunning, eventsOf, Life, meets, nextChapter, openChapter, playAmount, untold, type Directive, type LifeStore} from '@/lib/life/universal/engine'
-import type {CardDef, Chapter, CineDef, ClockDef, DocDef, Effect, LifePack, LifeState, Line, LiveDef, StampKind} from '@/lib/life/universal/types'
+import type {ArchiveRef, CardDef, Chapter, CineDef, ClockDef, DocDef, Effect, LifePack, LifeState, Line, LiveDef, StampKind} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {goalOf} from '@/lib/life/universal/gps'
@@ -37,7 +37,7 @@ import {Hud, type Meter} from './Hud'
 import {TapChip} from './TapChip'
 import {MiniGame} from './MiniGame'
 import {RushHost} from './rush/RushHost'
-import {BarkBubble, CineLayer, DocLayer, EpisodeEnd, EpisodeOpen, MissionBar, StampLayer, TimeCard} from './season/Cinema'
+import {BarkBubble, CineLayer, DocLayer, type Era, EpisodeEnd, EpisodeOpen, MissionBar, StampLayer, TimeCard} from './season/Cinema'
 import {MatchLive, type LiveResult} from './season/MatchLive'
 import {lookAt} from '@/lib/life/universal/cast'
 import {missionFlags, missionSpecFor, type RushDoor} from '@/lib/life/rush/call'
@@ -116,6 +116,16 @@ function browserStore(): LifeStore {
 }
 
 const pad2 = (n: number) => String(n).padStart(2, '0')
+
+/** the stock a chapter is filmed on: the archive night's year (and its date, burned in the corner), else the year he is that age */
+function eraFor(ch: {age: number; anchor?: ArchiveRef} | null | undefined, birthYear: number | null, locale: string): Era | null {
+  if (!ch) return null
+  const year = ch.anchor?.year ?? (birthYear ? birthYear + ch.age : null)
+  if (year === null) return null
+  const on = ch.anchor?.on ?? null
+  const stamp = on ? new Intl.DateTimeFormat(locale, {weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'}).format(new Date(`${on}T00:00:00Z`)) : null
+  return {year, stamp}
+}
 
 export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, heart = null}: Props) {
   const [state, setState] = useState<LifeState | null>(null)
@@ -1331,7 +1341,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, rush = null, he
         </div>
       )}
 
-      {overlay?.k === 'cine' && <CineLayer caption={overlay.caption} onTap={tap} onSkip={skip} copy={copy} />}
+      {overlay?.k === 'cine' && <CineLayer caption={overlay.caption} onTap={tap} onSkip={skip} copy={copy} era={eraFor(chapter, pack.hero.birthYear, locale)} />}
       {overlay?.k === 'doc' && <DocLayer name={overlay.name} role={overlay.role} when={String(DOC_YEAR)} line={overlay.line} index={overlay.index} total={overlay.total} studio={overlay.studio} onNext={tap} onSkip={skip} copy={copy} />}
       {overlay?.k === 'stamp' && <StampLayer kind={overlay.kind} text={overlay.text} copy={copy} />}
       {overlay?.k === 'time' && <TimeCard text={overlay.text} />}

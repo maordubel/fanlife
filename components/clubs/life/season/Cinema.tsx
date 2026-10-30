@@ -14,15 +14,22 @@ type Copy = Record<string, string>
 const word = (copy: Copy, k: string, en: string) => copy[k] ?? en
 
 /** A staged scene: letterbox, grain, one caption at a time. A tap moves the scene on; Skip ends it. */
-export function CineLayer({caption, onTap, onSkip, copy}: {caption: {who: string | null; text: string; kind: 'say' | 'think' | 'room'} | null; onTap: () => void; onSkip: () => void; copy: Copy}) {
+/** The period a scene is shot in: the decade sets the stock (warm and soft in the seventies, the magenta cast and video
+ *  bloom of the eighties, the cooler grain of the nineties); `stamp` is the archive's own date for a night it holds. */
+export type Era = {year: number; stamp: string | null}
+export const eraOf = (year: number | null) => year === null ? null : year < 1980 ? '70s' : year < 1990 ? '80s' : year < 2000 ? '90s' : year < 2010 ? '00s' : 'now'
+
+export function CineLayer({caption, onTap, onSkip, copy, era = null}: {caption: {who: string | null; text: string; kind: 'say' | 'think' | 'room'} | null; onTap: () => void; onSkip: () => void; copy: Copy; era?: Era | null}) {
   const skip = useRef<HTMLButtonElement | null>(null)
   useEffect(() => { skip.current?.focus({preventScroll: true}) }, [])
   return (
-    <div className={`${s.layer} ${s.bars}`} data-life="cine" role="region" aria-label={word(copy, 's1.scene', 'Scene')}>
+    <div className={`${s.layer} ${s.bars}`} data-life="cine" role="region" aria-label={word(copy, 's1.scene', 'Scene')} data-era={era ? eraOf(era.year) : undefined}>
       <div className={s.vignette} aria-hidden="true" />
       <div className={s.grain} aria-hidden="true" />
+      {era && <div className={s.stock} aria-hidden="true" />}
+      {era?.stamp && <span className={s.stamp} aria-hidden="true"><bdi>{era.stamp}</bdi></span>}
       <button type="button" className={s.tapNext} onClick={onTap} aria-label={word(copy, 's1.next', 'Next')} data-life="cine-next" />
-      <button type="button" ref={skip} className={s.skip} onClick={onSkip} data-life="cine-skip">{word(copy, 's1.skip', 'Skip')} ›</button>
+      <button type="button" ref={skip} className={`${s.skip} ${s.skipQuiet}`} onClick={onSkip} data-life="cine-skip">{word(copy, 's1.skip', 'Skip')} ›</button>
       {caption && (
         <div className={s.caption} data-think={caption.kind === 'think' ? 'true' : 'false'} data-room={caption.kind === 'room' ? 'true' : 'false'} aria-live="polite" key={caption.text}>
           {caption.who && <b><bdi>{caption.who}</bdi></b>}

@@ -5,7 +5,8 @@
  * life does not stop — it goes next door, to the neighbour's balcony, and she will tell that story for thirty years.
  * No match fact: nobody names who is playing. It is the noise a six-year-old remembers, not the fixture.
  */
-import {all, any, bond, cine, failed, flag, has, heart, is, me, not, opt, passed, remember, room, say, standing, think, type EpisodeScript} from './write'
+import {all, any, bond, cine, failed, flag, has, heart, is, live, me, not, opt, passed, remember, room, say, standing, think, type EpisodeScript} from './write'
+import type {ArchiveRef, LiveDef} from '../types'
 
 const E = 'S1E1'
 const done = (s: string) => `s1:${E}:${s}:done`
@@ -227,3 +228,29 @@ export const E1: EpisodeScript = {
 }
 
 export const E1_DONE = all(has(`s1:${E}:complete`))
+
+/* ───── the night on the radio is a real one, where the club's archive holds a night in the year he is six ─────
+   The sofa, the batteries and the scarf stay fiction; what comes out of the radio is the record — the date, the two
+   sides, the score and, where the club's own record lists them, the scorers. Nobody in the flat states a fact about it. */
+export const e1Ages: [number, number] = [6, 6]
+const E1_LIVE: LiveDef = {
+  id: 'e1-live', with: ['dad'], at: 'radio',
+  before: [
+    say('dad', 'Shh. Listen. That is the ground. That is the whole ground, in a box.'),
+    think('A man on the radio is talking very fast about people you have never met. Dad knows every one of them.'),
+    say('dad', 'Come on. Come on, come on, come on.', 'tense'),
+  ],
+  goal: [say('dad', 'YES! YES! Did you hear that? That was us!', 'joy'), room('The radio is shouting. Dad is louder.')],
+  against: [say('dad', 'No. No no no. It is fine.', 'tense'), room('He turns the radio down, as if it helps. Then up again.')],
+  end: {
+    won: [say('dad', 'That. Remember that. Whatever else happens, we had that.', 'joy')],
+    lost: [say('dad', 'Next week. There is always next week. That is the deal.', 'grief')],
+    drew: [say('dad', 'A point. A point is a point. Do not tell your mother I said it like that.')],
+    unread: [say('dad', 'Whatever the paper says tomorrow, we were listening.')],
+  },
+}
+export function e1(anchor: ArchiveRef | null): EpisodeScript {
+  if (!anchor) return E1
+  const steps = E1.steps.map(st => st.id === 'listen' ? {...st, show: [cine('e1-together'), live('e1-live'), cine('e1-goal')]} : st)
+  return {...E1, steps, anchor, lives: [E1_LIVE]}
+}

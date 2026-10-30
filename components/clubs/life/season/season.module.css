@@ -234,3 +234,33 @@
 @keyframes s1-flash { from { opacity: 1; } to { opacity: 0; } }
 @keyframes s1-shake { 20% { translate: -5px 2px; } 40% { translate: 4px -3px; } 60% { translate: -3px 1px; } 80% { translate: 2px -1px; } 100% { translate: 0 0; } }
 @media (prefers-reduced-motion: reduce) { .stampWrap[data-kind='passed']::before { display: none; } .stampWrap[data-kind='passed'] .stamp { animation: none; } }
+
+/* ── period stock (owner, 30.10.2026: "historical credibility, realism, the feeling of a real life") ──
+   A scene is shot on the film of its decade. Every value is a blend over the 3D picture, in the club's own tokens where
+   a colour is needed; nothing here is a hex. Off under reduced motion except the still tint. */
+.stock { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light; opacity: .55; }
+[data-era='70s'] .stock { background: radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--club-primary) 18%, transparent), transparent 70%), linear-gradient(color-mix(in srgb, var(--mag-paper, var(--club-surface)) 55%, transparent), transparent); opacity: .7; filter: blur(.4px); }
+[data-era='80s'] .stock { background: linear-gradient(180deg, color-mix(in srgb, var(--club-primary) 14%, transparent), transparent 60%); opacity: .6; }
+[data-era='90s'] .stock { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--club-secondary, var(--club-primary)) 12%, transparent)); opacity: .45; }
+[data-era='70s'] .grain, [data-era='80s'] .grain { opacity: .5; animation: cineWeave 2.4s steps(6) infinite; }
+@keyframes cineWeave { 0%, 100% { transform: translate(0, 0); } 33% { transform: translate(.6px, -.8px); } 66% { transform: translate(-.5px, .5px); } }
+/* the archive's date, burned into the corner the way a camera of the time printed it */
+.stamp { position: absolute; inset-block-end: calc(18% + env(safe-area-inset-bottom)); inset-inline-end: 6%; font-family: var(--mag-mono, monospace); font-size: clamp(.8rem, 3.4vw, 1.05rem); letter-spacing: .08em; color: var(--club-on-primary, currentColor); opacity: .82; text-transform: uppercase; mix-blend-mode: screen; pointer-events: none; }
+[data-era='70s'] .stamp { font-family: var(--mag-display); letter-spacing: .02em; }
+/* the way past a scene is there, and quiet */
+.skipQuiet { opacity: .55; font-size: .78rem; background: none; border-color: transparent; }
+.skipQuiet:hover, .skipQuiet:focus-visible { opacity: .95; }
+@media (prefers-reduced-motion: reduce) { [data-era] .grain { animation: none; } }
+
+/* the archive slate: a caption card printed on the night's own stock, before a single line of fiction */
+.slate { position: absolute; inset: 0; z-index: 5; display: grid; place-content: center; justify-items: center; gap: 10px; padding: 24px; border: 0; text-align: center; color: var(--club-on-primary, var(--mag-paper)); background: radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--club-primary) 60%, var(--mag-ink)), var(--mag-ink) 78%); animation: slateIn 4.2s ease-out both; cursor: pointer; }
+.slate::after { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(0deg, color-mix(in srgb, currentColor 6%, transparent) 0 1px, transparent 1px 3px); mix-blend-mode: overlay; }
+.slate small { font-family: var(--mag-mono, monospace); letter-spacing: .18em; text-transform: uppercase; opacity: .75; }
+.slateDate { font-family: var(--mag-display); font-size: clamp(2rem, 9vw, 3.6rem); line-height: 1; text-transform: uppercase; }
+.slateTeams { font-family: var(--mag-display); font-size: clamp(1.15rem, 5vw, 1.8rem); }
+.slateTeams i { font-style: normal; opacity: .6; }
+.slateHint { font-size: .95rem; opacity: .85; }
+.slateWhere { font-style: italic; opacity: .8; }
+.slateSource { font-size: .72rem; opacity: .6; }
+@keyframes slateIn { 0% { opacity: 0; letter-spacing: .02em; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .slate { animation: none; } }

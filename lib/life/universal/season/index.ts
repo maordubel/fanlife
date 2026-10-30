@@ -8,7 +8,7 @@
  */
 import type {ArchiveRef, Chapter} from '../types'
 import {compileEpisode} from './compile'
-import {E1} from './e1'
+import {e1, e1Ages} from './e1'
 import {E2} from './e2'
 import {e3, e3Ages} from './e3'
 import {E4} from './e4'
@@ -24,9 +24,9 @@ export type SeasonInput = {birthYear: number | null; nights: readonly ArchiveRef
 /** An episode that may stand on a night: the ages it can span, and the night chosen for it among the pack's rows. */
 type Anchored = {script: (anchor: ArchiveRef | null, age: number) => EpisodeScript; ages: [number, number]; /** what kind of night the episode can stand on at all */ need?: (r: ArchiveRef) => boolean}
 
-const FIXED: EpisodeScript[] = [E1, E2, E4]
+const FIXED: EpisodeScript[] = [E2, E4]
 const home = (r: ArchiveRef) => r.match?.us === 'home'
-const ANCHORED: Anchored[] = [{script: e3, ages: e3Ages, need: home}, {script: e5, ages: e5Ages, need: home}, {script: e6, ages: e6Ages, need: r => r.match?.us === 'away'}]
+const ANCHORED: Anchored[] = [{script: e3, ages: e3Ages, need: home}, {script: e5, ages: e5Ages, need: home}, {script: e6, ages: e6Ages, need: r => r.match?.us === 'away'}, /* last: the radio night takes what the ground nights left */ {script: e1, ages: e1Ages}]
 
 /** Season One for one club: the fixed episodes, and the anchored ones on the club's own nights where it has them. */
 export function seasonOne(input: SeasonInput): Chapter[] {
