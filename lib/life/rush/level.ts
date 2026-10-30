@@ -91,7 +91,7 @@ export type Step = {
   /** talking to him gives one more clue (find) */
   reveals: boolean
 }
-export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape' | 'battery' | 'tin' | 'ticket' | 'shoes' | 'sandwich' | 'money' | 'phonecard'
+export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape' | 'battery' | 'tin' | 'ticket' | 'shoes' | 'sandwich' | 'money' | 'phonecard' | 'paper' | 'scissors' | 'glue'
 /**
  * something on the ground: required by a step, or an extra (`step: null`) that buys a few seconds.
  * `inside`: it is hidden in that search (a drawer, a coat pocket) and is his only when the search is done.
@@ -348,8 +348,11 @@ function knownClues(w: KnownLook): Clue[] {
   return KNOWN_ORDER.filter(has).slice(0, 2)
 }
 
+/** the finds whose answer is a PLACE, not a person: where he always stood, the step on the terrace he has just lost */
+export const SPOT_FINDS: readonly string[] = ['where-you-stood', 'lost-scarf']
+
 function crowd(spec: MissionSpec, r: () => number): Level {
-  const W = 16, Z = -44, spot = spec.template === 'where-you-stood'
+  const W = 16, Z = -44, spot = SPOT_FINDS.includes(spec.template)
   const standers: Stander[] = []
   for (let i = 0; i < 80; i++) standers.push({x: (r() - 0.5) * (W * 2 - 3), z: 4 - r() * (-Z), face: Math.PI + (r() - 0.5) * 1.4, look: look(r), role: 'fan'})
   const targets: Target[] = []

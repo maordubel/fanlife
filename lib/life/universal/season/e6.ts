@@ -15,6 +15,8 @@ const done = (s: string) => `s1:${E}:${s}:done`
 const MISSED = `s1:${E}:missed`
 const CREW = `life:s1:${E}:crew`
 const both: Cond = {flag: done('ofir')}
+/** the bus home went without him (the away pen's clock ran out): never a dead end, only a later kitchen */
+const LATE_HOME = `s1:${E}:pen:late`
 
 export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
   const result = anchor?.match?.result ?? 'unread'
@@ -168,6 +170,19 @@ export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
         react: anchor
           ? won ? [room('The away end jumps. The concrete is not built for jumping. It jumps anyway.')] : lost ? [room('Three hundred people sing louder than when they were winning. Nobody decides to. It just happens.')] : [room('The away end exhales.')]
           : [room('You will forget the score. You will not forget the bus, the pen, the song from the wrong side.')],
+      },
+      {
+        id: 'pen', goal: 'Back on the bus — ticket and crew', main: true, after: ['night'],
+        at: {room: 'away-end', who: 'wild', slot: 'left'}, verb: 'talk',
+        lines: [say('wild', 'BUS! Twenty minutes! They are holding the end and the driver is not your father!'), think('The way-back half of your ticket. It was in your pocket before the jumping started.')],
+        // close up: the away end after this night's whistle — the half that takes you home, then the crew (RUSH `away-pen`, rule 135).
+        // The night's own result, from the archive row, is how the end sounds while you look: never a score, never a name.
+        mission: {template: 'away-pen', beat: result},
+        game: 'count',
+        show: [cine(`e6-pen-${result}`)],
+        react: [think('Both halves. There and back. You will keep the back half longer.')],
+        slip: [room('The bus pulls out with its windows full of scarves. The last one home has seats to spare.')],
+        reward: {slip: [flag(LATE_HOME), remember('latehome', 'Missed the bus home from the away end. Got the last one.')]},
         cut: {room: 'kitchen', spawn: 'fromLiving', night: true},
       },
       {
@@ -179,12 +194,13 @@ export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
         fx: [bond('mum', 4), flag('life:s1:phoned'), remember('phoned', 'Phoned Mum from the away end.')],
       },
       {
-        id: 'home', goal: 'Home by midnight', main: true, final: true, after: ['night'],
+        id: 'home', goal: 'Home by midnight', main: true, final: true, after: ['pen'],
         at: {room: 'kitchen', who: 'mum', slot: 'table'}, verb: 'talk',
         callbacks: [
           {when: has('life:s1:phoned'), lines: [say('mum', 'You phoned. You actually phoned.')], group: 'phone'},
           {when: not('life:s1:phoned'), lines: [say('mum', 'You did not phone.'), think('You did not phone.')], group: 'phone'},
           {when: has(MISSED), lines: [say('mum', 'Twenty past twelve. The clock in this kitchen is never wrong.')], group: 'time'},
+          {when: has(LATE_HOME), lines: [say('mum', 'The last bus. I heard it turn the corner. I hear every bus.')], group: 'time'},
         ],
         lines: [room('The kitchen light is on. It is always on, on away days, for the rest of your life.')],
         ask: {
@@ -214,6 +230,22 @@ export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
       {id: 'e6-bus', shots: [
         {cam: 'wide', ms: 2600, act: [{who: 'all', do: 'cheer'}], say: room('The away bus leaves the city with its windows open and every scarf out of them.')},
         {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'joy'}], say: say('wild', 'From the top! Everybody! From the TOP!')},
+      ]},
+      // the away end after the whistle, as THIS night ended (the archive's result, never its score)
+      {id: 'e6-pen-won', shots: [
+        {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'joy'}], say: say('wild', 'THERE you are! Did you SEE it? Nobody sleeps on the way home tonight.', 'joy')},
+        {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'emote', mood: 'joy'}], say: think('Their end is empty already. Ours has not stopped jumping. The concrete was not built for it.')},
+      ]},
+      {id: 'e6-pen-lost', shots: [
+        {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'grief'}], say: say('wild', 'There you are. Long way home. We sing anyway. We sing louder.', 'grief')},
+        {cam: 'close', on: ['me'], ms: 2300, say: think('Three hundred people singing at a scoreboard. It is the proudest you have ever been of losing.')},
+      ]},
+      {id: 'e6-pen-drew', shots: [
+        {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'warm'}], say: say('wild', 'There you are. A point. Away. Tell your grandchildren.')},
+        {cam: 'close', on: ['me'], ms: 2200, say: think('Not nothing. Not everything. A whole bus of people arguing about the last ten minutes.')},
+      ]},
+      {id: 'e6-pen-unread', shots: [
+        {cam: 'two', on: ['wild', 'me'], ms: 2400, act: [{who: 'wild', do: 'emote', mood: 'joy'}], say: say('wild', 'There you are. Whatever the paper says tomorrow, we were the loudest thing in this town.')},
       ]},
       {id: 'e6-night', shots: [
         {cam: 'wide', ms: 2600, act: [{who: 'all', do: 'cheer'}], say: room('Twelve thousand of them. Three hundred of you. It sounds like the other way round.')},

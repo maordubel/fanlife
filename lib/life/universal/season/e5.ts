@@ -127,9 +127,13 @@ export function e5(anchor: ArchiveRef | null, age: number): EpisodeScript {
       {
         id: 'dad', goal: 'Find a spot on the terrace', main: true, when: inside,
         at: {room: 'terrace', who: 'dad', slot: 'right'}, verb: 'talk',
-        lines: [room('You find a spot. You look left. You look right.')],
-        show: [cine('e5-dad')],
+        lines: [room('Inside. Your scarf is not: the fence took it, and the terrace swallowed it.'), think('Scarf first. Then a spot by a barrier, where nobody who knows you is looking.')],
+        // close up: the terrace on this night — the scarf back off the concrete, then a spot nobody who knows you would look at (RUSH `lost-scarf`, rule 135)
+        mission: {template: 'lost-scarf'},
+        game: 'count',
+        show: [cine('e5-scarf'), cine('e5-dad')],
         react: [think('Night shift. NIGHT SHIFT.')],
+        slip: [room('Kick-off finds you still on the steps, the scarf in your fist. You stand where you are.'), think('Night shift. NIGHT SHIFT.')],
         ask: {
           timer: 6, silent: 'hide',
           options: [
@@ -192,6 +196,11 @@ export function e5(anchor: ArchiveRef | null, age: number): EpisodeScript {
         {cam: 'close', on: ['me'], ms: 2300, say: think('Grounded. Tonight of all nights.')},
         {cam: 'wide', ms: 2600, say: room('Downstairs, Mum’s television. Somewhere across the city, a crowd you can almost hear.')},
         {cam: 'close', on: ['me'], ms: 2400, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: think('Dad is on a night shift. Dad will never know.')},
+      ]},
+      // the scarf back round his neck, a thread shorter — the fence kept the thread, he keeps the rest
+      {id: 'e5-scarf', shots: [
+        {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'hold', item: 'scarf'}, {who: 'me', do: 'emote', mood: 'joy'}], say: room('Trodden on, a hole in one end, a thread of it still on the fence outside. Yours.')},
+        {cam: 'close', on: ['me'], ms: 2200, act: [{who: 'me', do: 'hold', item: null}], say: think('A barrier to lean on. A floodlight. Nobody here knows you. Perfect.')},
       ]},
       {id: 'e5-dad', shots: [
         {cam: 'close', on: ['dad'], ms: 2400, act: [{who: 'dad', do: 'emote', mood: 'wonder'}], say: room('Three steps down. A familiar jacket. A familiar back of a head.')},

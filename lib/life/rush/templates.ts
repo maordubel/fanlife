@@ -197,6 +197,48 @@ export const MISSION_TEMPLATES: readonly MissionTemplate[] = [
     neutralTitle: 'The away bag', neutralBrief: 'Scarf, money, the sandwiches, the phonecard for the call you promised. All of it somewhere in this flat, and Mum has conditions.',
     weight: {},
   },
+  // the zoom missions: close up, on the archive's own night — the night is printed as recorded, and nothing else is
+  {
+    id: 'clipping-hunt', verb: 'find', camera: 'chase', route: 'main', ages: [8, 14], clock: 95,
+    hazards: ['clock'],
+    needs: [
+      {of: {anchor: ['match']}, grade: 'enriching', day: true, why: 'The clipping is the paper of a recorded night dated to the day: the album keeps that row as it was printed.'},
+    ],
+    title: 'The clipping · {date}', brief: 'This morning’s paper has the night of {date} on its back page, and Dad takes the paper to work. Find it, the scissors and the glue, and get it into the album before the school bus.',
+    neutralTitle: 'The clipping', neutralBrief: 'This morning’s paper has last night on its back page, and Dad takes the paper to work. Find it, the scissors and the glue, and get it into the album before the school bus.',
+    weight: {match: 0.3},
+  },
+  {
+    id: 'first-step', verb: 'find', camera: 'eyes', route: 'main', ages: [5, 10], clock: 210,
+    hazards: ['clock', 'crowd'],
+    needs: [
+      {of: {anchor: ['home']}, grade: 'enriching', day: true, why: 'The first time on the terrace is a home night on a known day; the half-ticket he keeps is from it.'},
+      {of: {club: 'ground'}, grade: 'decor', why: 'The terrace he loses his father on carries the ground\'s name.'},
+    ],
+    title: 'Third from the fence · {date}', brief: 'The turnstile took half your ticket and the crowd took the other half out of your hand. Get it back, then find Dad: he is keeping a step at {ground} with his elbows.',
+    neutralTitle: 'Third from the fence', neutralBrief: 'The turnstile took half your ticket and the crowd took the other half out of your hand. Get it back, then find Dad: he is keeping a step with his elbows.',
+    weight: {home: 1, title: 1, final: 0.5},
+  },
+  {
+    id: 'lost-scarf', verb: 'find', camera: 'eyes', route: 'main', ages: [9, 15], clock: 200,
+    hazards: ['clock', 'crowd'],
+    needs: [
+      {of: {anchor: ['home']}, grade: 'enriching', day: true, why: 'The night he got in over the fence is a home night on a known day.'},
+    ],
+    title: 'Over the fence · {date}', brief: 'You are in. Your scarf is not: the fence took it, and somebody kicked it down the terrace. Get it back, then a spot by a barrier where nobody who knows you will look.',
+    neutralTitle: 'Over the fence', neutralBrief: 'You are in. Your scarf is not: the fence took it, and somebody kicked it down the terrace. Get it back, then a spot by a barrier where nobody who knows you will look.',
+    weight: {home: 1, derby: 1},
+  },
+  {
+    id: 'away-pen', verb: 'find', camera: 'eyes', route: 'main', ages: [12, 18], clock: 200,
+    hazards: ['clock', 'crowd'],
+    needs: [
+      {of: {anchor: ['away']}, grade: 'enriching', day: true, why: 'The away end stands on a recorded away night dated to the day — the one the bus came home from.'},
+    ],
+    title: 'The away end · {date}', brief: 'The whistle has gone, the stewards are holding the end, and the bus home goes without anybody who is late. The way-back half of your ticket is somewhere on this concrete. So is your crew.',
+    neutralTitle: 'The away end', neutralBrief: 'The whistle has gone, the stewards are holding the end, and the bus home goes without anybody who is late. The way-back half of your ticket is somewhere on this concrete. So is your crew.',
+    weight: {away: 1, europe: 0.5},
+  },
 ]
 
 export const templateById = (id: string): MissionTemplate | null => MISSION_TEMPLATES.find(t => t.id === id) ?? null
@@ -225,5 +267,9 @@ export const TEMPLATE_HE: Readonly<Record<string, {title: string; brief: string;
   'night-window': {title: 'מרותק', brief: 'אבא במשחק. אמא על הספה מול הטלוויזיה, והדלת פתוחה. הנעליים שלך ליד דלת הכניסה, והחלון שלך הוא הדרך היחידה החוצה.', neutralTitle: 'מרותק', neutralBrief: 'אבא במשחק. אמא על הספה מול הטלוויזיה, והדלת פתוחה. הנעליים שלך ליד דלת הכניסה, והחלון שלך הוא הדרך היחידה החוצה.'},
   'pack-bag': {title: 'התיק למשחק החוץ', brief: 'צעיף, כסף, הכריכים, הטלכרט לשיחה שהבטחת. הכול איפשהו בדירה, ולאמא יש תנאים.', neutralTitle: 'התיק למשחק החוץ', neutralBrief: 'צעיף, כסף, הכריכים, הטלכרט לשיחה שהבטחת. הכול איפשהו בדירה, ולאמא יש תנאים.'},
   'flat-run': {title: 'לפני שריקת הפתיחה', brief: 'הצעיף בקופסה למעלה על הארון. בטריה אחת באיזו מגירה, אחת התגלגלה מתחת לשולחן במטבח. אבא על הספה עם רדיו מת, והשריקה לא תחכה.', neutralTitle: 'לפני שריקת הפתיחה', neutralBrief: 'הצעיף בקופסה למעלה על הארון. בטריה אחת באיזו מגירה, אחת התגלגלה מתחת לשולחן במטבח. אבא על הספה עם רדיו מת, והשריקה לא תחכה.'},
+  'clipping-hunt': {title: 'הגזיר · {date}', brief: 'בעיתון של הבוקר יש את הלילה של {date} בעמוד האחרון, ואבא לוקח את העיתון לעבודה. למצוא אותו, את המספריים ואת הדבק, ולהכניס אותו לאלבום לפני ההסעה לבית הספר.', neutralTitle: 'הגזיר', neutralBrief: 'בעיתון של הבוקר יש את אתמול בלילה בעמוד האחרון, ואבא לוקח את העיתון לעבודה. למצוא אותו, את המספריים ואת הדבק, ולהכניס אותו לאלבום לפני ההסעה לבית הספר.'},
+  'first-step': {title: 'שלישית מהגדר · {date}', brief: 'הקרוסלה לקחה חצי כרטיס, והקהל לקח לך את החצי השני מהיד. להחזיר אותו, ואז למצוא את אבא: הוא שומר מדרגה ב{ground} עם המרפקים.', neutralTitle: 'שלישית מהגדר', neutralBrief: 'הקרוסלה לקחה חצי כרטיס, והקהל לקח לך את החצי השני מהיד. להחזיר אותו, ואז למצוא את אבא: הוא שומר מדרגה עם המרפקים.'},
+  'lost-scarf': {title: 'מעל הגדר · {date}', brief: 'אתה בפנים. הצעיף שלך לא: הגדר לקחה אותו, ומישהו בעט אותו במורד היציע. להחזיר אותו, ואז מקום ליד מעקה שאף אחד שמכיר אותך לא יסתכל עליו.', neutralTitle: 'מעל הגדר', neutralBrief: 'אתה בפנים. הצעיף שלך לא: הגדר לקחה אותו, ומישהו בעט אותו במורד היציע. להחזיר אותו, ואז מקום ליד מעקה שאף אחד שמכיר אותך לא יסתכל עליו.'},
+  'away-pen': {title: 'יציע האורחים · {date}', brief: 'השריקה נשמעה, הסדרנים מחזיקים את היציע, והאוטובוס הביתה יוצא בלי מי שמאחר. חצי הכרטיס של הדרך חזרה נמצא איפשהו על הבטון הזה. גם החבר’ה שלך.', neutralTitle: 'יציע האורחים', neutralBrief: 'השריקה נשמעה, הסדרנים מחזיקים את היציע, והאוטובוס הביתה יוצא בלי מי שמאחר. חצי הכרטיס של הדרך חזרה נמצא איפשהו על הבטון הזה. גם החבר’ה שלך.'},
   'sticker-swap': {title: 'המשבצת החסרה', brief: 'משבצת אחת ריקה באלבום, ומישהו בחצר הזאת מחזיק אותה פעמיים. לשאול מסביב. למצוא לפני הצלצול.', neutralTitle: 'המשבצת החסרה', neutralBrief: 'משבצת אחת ריקה באלבום, ומישהו בחצר הזאת מחזיק אותה פעמיים. לשאול מסביב. למצוא לפני הצלצול.'},
 }

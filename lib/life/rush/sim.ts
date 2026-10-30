@@ -480,8 +480,11 @@ export function stepSim(level: Level, s: Sim, input0: Input, dt = STEP): Sim {
   // find: press next to the one you came for (asking around first is quicker, never required)
   if (level.place === 'crowd' && input.act && !acted) {
     const tg = level.targets[0]!
-    if (Math.hypot(tg.x - s.x, tg.z - s.z) < 1.8) { s.events.push({k: 'found'}); s.step = level.steps.length; return end(s, 'good') }
-    const near = level.standers.some(p => Math.hypot(p.x - s.x, p.z - s.z) < 1.6)
+    // what he came back for has to be in his hand first (a zoom mission: the half-ticket, the scarf): the find waits for it
+    const owed = level.pickups.some((p, k) => p.step !== null && !s.got[k] && level.steps[p.step]?.kind === 'collect')
+    if (Math.hypot(tg.x - s.x, tg.z - s.z) < 1.8 && owed) { if (s.t - s.notyetAt > 4) { s.notyetAt = s.t; s.events.push({k: 'notyet'}) } }
+    else if (Math.hypot(tg.x - s.x, tg.z - s.z) < 1.8) { s.events.push({k: 'found'}); s.step = level.steps.length; return end(s, 'good') }
+    const near = Math.hypot(tg.x - s.x, tg.z - s.z) >= 1.8 && level.standers.some(p => Math.hypot(p.x - s.x, p.z - s.z) < 1.6)
     if (near) { s.wrong++; charge(s, COST.wrong); s.events.push({k: 'wrong'}) }
   }
 

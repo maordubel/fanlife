@@ -29,7 +29,7 @@ export type ClubArchiveView = {
 const FINAL = /\bfinals?\b|גמר|τελικ|endspiel|finale\b|finalu\b/i
 /** a semi-final, a quarter-final, the "final round" of a group or a league phase is not a final */
 const NOT_FINAL = /semi[-\s]?finals?|quarter[-\s]?finals?|\bfinal\b[^,.;]{0,32}\b(round|tournament|group|stage|matchday|phase)\b|\bfinal (league )?match(day)?\b|phase final|חצי[-\s]?גמר|רבע[-\s]?גמר|שמינית[-\s]?הגמר|ημιτελ|halbfinal|viertelfinal|polufinal/i
-const EUROPE = /european cup|champions league|uefa|cup winners|intertoto|europa league|conference league|fairs cup|גביעי? אירופה|ליגת האלופות|κύπελλο πρωταθλητριών|champions-league/i
+const EUROPE = /european cup|champions league|uefa|cup winners|intertoto|europa league|conference league|fairs cup|גביעי? אירופה|ליגת האלופות|גביע אופ["״]א|ליגה האירופית|κύπελλο πρωταθλητριών|champions-league/i
 /** a title is read from the row's own title; its hint counts only when it says the title was won on this night */
 const TITLE = /\btitle\b|\bchampions\b(?! league)|\bchampionship\b(?![\s-]play)|league winners|won the league|אליפות|κατέκτησε το πρωτάθλημα|meisterschaft|deutscher meister|prvak/i
 const TITLE_HINT = /title (secured|sealed|clinched|won)|(clinch|seal|secur)\w* the (league )?title|championship,? sealed|won the (league|title|championship)/i

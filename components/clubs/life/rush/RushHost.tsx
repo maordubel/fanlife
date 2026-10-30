@@ -17,7 +17,7 @@ import {flatSight} from '@/lib/life/rush/flat'
 import {COST, IDLE, nearSearch, resultOf, startSim, stepSim, stepTarget, STEP, type Input, type Sim} from '@/lib/life/rush/sim'
 import type {SearchKind} from '@/lib/life/rush/level'
 import {ASSIST_AFTER_FAILS, type MissionResult, type MissionSpec} from '@/lib/life/rush/spec'
-import {rushWord, type RushKey, type RushLocale} from '@/lib/life/rush/words'
+import {RUSH_WORDS, rushWord, type RushKey, type RushLocale} from '@/lib/life/rush/words'
 import type {Quality, Stage} from '@/lib/life/rush-render/stage'
 import {drawMap} from '@/lib/life/rush-render/minimap'
 import {cardFor} from '@/lib/life/rush/cards'
@@ -327,7 +327,9 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
   const extrasOf = level.pickups.filter(p => p.step === null).length
   const canAct = level.place === 'crowd' || level.noises.length > 0 || level.favours.length > 0 || level.steps.some(x => x.kind === 'talk') || level.searches.length > 0
   const actHot = curStep?.kind === 'talk' || !!near
-  const clockKey = level.place === 'crowd' ? 'hud.clock.find' : level.place === 'flat' && ['tin-hunt', 'ticket-hunt', 'pack-bag', 'night-window'].includes(spec.template) ? (`hud.clock.${spec.template}` as RushKey) : 'hud.clock'
+  // a mission whose clock is its own (the school bus, the bus home) says so; else the place's own clock
+  const ownClock = `hud.clock.${spec.template}` as RushKey
+  const clockKey: RushKey = ownClock in RUSH_WORDS.en ? ownClock : level.place === 'crowd' ? 'hud.clock.find' : 'hud.clock'
   const anchor = spec.anchor
 
   return (
