@@ -51,8 +51,10 @@ function sponsorSVG(name,base,opt){
 }
 function shirtG(k,id){
   const b=hex(k,0),t=k.shirt.colours.length>1?hex(k,1):shade(hex(k,0),-.14),m=k.shirt.measured||{},d=k.shirt.design;
+  const art=k.shirt.artwork||{};
   let pat='',sleeveInk=b;
-  if(d==='stripes'){const n=Math.max(1,m.stripes||4),w=176/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="${82+w*(2*i+1)}" y="20" width="${w}" height="290" fill="${t}"/>`}
+  if(art.centralPanel){pat=`<rect x="${art.centralPanel.x}" y="20" width="${art.centralPanel.width}" height="290" fill="${t}"/>`}
+  else if(d==='stripes'){const n=Math.max(1,m.stripes||4),w=176/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="${82+w*(2*i+1)}" y="20" width="${w}" height="290" fill="${t}"/>`}
   else if(d==='hoops'){const n=Math.max(1,m.hoops||3),h=240/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="0" y="${64+h*(2*i+1)}" width="340" height="${h}" fill="${t}"/>`}
   else if(d==='pinstripes'){for(let x=94;x<258;x+=17)pat+=`<rect x="${x}" y="20" width="3.5" height="290" fill="${t}" opacity=".9"/>`}
   else if(d==='half-and-half'){pat=`<rect x="0" y="20" width="170" height="290" fill="${t}"/>`}
@@ -64,9 +66,10 @@ function shirtG(k,id){
   else if(d==='graphic'){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=d==='contrasting sleeves'?b:t;
-  const sp=k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
+  const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
+  const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="96" y="158" width="148" height="48" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
   const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
-  const mk=k.maker?(mm?markG(mm,132,95,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),ink,light?'#fff':'#000'):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
+  const mk=k.maker?(mm?markG(mm,132,95,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),art.makerInk||ink,art.makerHalo||(light?'#fff':'#000')):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
   return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
 <pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>
 <filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
@@ -77,7 +80,7 @@ function shirtG(k,id){
 <ellipse cx="170" cy="304" rx="104" ry="9" fill="#000" opacity=".16" filter="url(#${id}b)"/>
 <g clip-path="url(#${id}c)"><rect width="340" height="320" fill="${b}"/>${pat}
 <path d="${SL_L}" fill="${sleeveInk}"/><path d="${SL_R}" fill="${sleeveInk}"/>
-<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 124 310 98Z" fill="${d==='contrasting sleeves'?b:t}" opacity=".96"/>
+${art.plainCuffs?'':`<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 124 310 98Z" fill="${d==='contrasting sleeves'?b:t}" opacity=".96"/>`}${art.shoulderStripes?`\n<g fill="none" stroke="${t}" stroke-width="3.2" stroke-linecap="round"><path d="M111 30Q79 38 56 61"/><path d="M114 35Q82 43 59 66"/><path d="M117 40Q85 48 62 71"/><path d="M229 30Q261 38 284 61"/><path d="M226 35Q258 43 281 66"/><path d="M223 40Q255 48 278 71"/></g>`:''}
 <path d="M30 98 76 124M310 98 264 124" stroke="#000" stroke-opacity=".28" stroke-width="1"/>
 <rect width="340" height="320" fill="url(#${id}f)"/><rect width="340" height="320" fill="url(#${id}v)"/>
 <g filter="url(#${id}b)" fill="none" stroke="#000" stroke-linecap="round"><path d="M84 128C80 150 82 176 86 200" stroke-opacity=".11" stroke-width="10"/><path d="M256 128C260 150 258 176 254 200" stroke-opacity=".11" stroke-width="10"/><path d="M64 52L84 124M276 52L256 124" stroke-opacity=".14" stroke-width="7"/></g>
@@ -90,7 +93,7 @@ function shirtG(k,id){
 <path d="M120 22C136 36 154 42 170 42S204 36 220 22" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/><path d="M112 30C130 47 150 55 170 55S210 47 228 30" stroke="#fff" stroke-opacity=".22" stroke-width="1" fill="none"/>
 <path d="${BODY}" fill="none" stroke="${edge}" stroke-width="2" stroke-linejoin="round"/>
 <path d="M82 120V290M258 120V290M64 46L82 120M276 46L258 120" stroke="#000" stroke-opacity=".3" stroke-width="1.1" stroke-dasharray="4 3" fill="none"/>
-${k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
+${art.crestSrc?`<image href="${esc(asset(art.crestSrc))}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
 }
 function shortsG(sh,id){
   const b=sh.hex,t=sh.trimHex||shade(b,-.2),light=lum(b)>150;
