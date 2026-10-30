@@ -13,10 +13,11 @@ CLUBS=[
  dict(id='hapoel-petah-tikva',name='Hapoel Petah Tikva',accent='#4c8dff',data='content/manual/kit-archive-hapoel-petah-tikva.json',man='content/manual/kit-cof-hapoel-petah-tikva.json'),
 ]
 def fold(kits):
-    # one shirt is one card: the catalogue's second image of the same shirt ("-v2") and records with the same season, type, design, colours and maker are folded; the extra images ride along
+    # Fold only records with matching known identity fields; a different (or missing)
+    # sponsor is not evidence that two otherwise similar shirts are the same.
     seen={};out=[]
     for k in kits:
-        sh=k['shirt'];key=(k['season'],k['type'],sh['design'],tuple(sorted(sh['colours'])),(k.get('maker') or '').lower())
+        sh=k['shirt'];key=(k['season'],k['type'],sh['design'],tuple(sorted(sh['colours'])),(k.get('maker') or '').strip().lower(),(k.get('sponsor') or '').strip().lower(),bool(k.get('euro')))
         base=seen.get(key)
         if base is None:
             seen[key]=k;out.append(k)
@@ -45,12 +46,16 @@ for c in CLUBS:
         cf=dict(source=base['source'],count=len(base['kits'])+len(shop['kits']),kits=base['kits']+[dict(k,page=k['credit'].get('page')) for k in shop['kits']])
     if cf:
         data['cfs']=cf
-        ph={}
+        ph={};variants={}
         for q in cf['kits']:
-            if not q.get('longSleeve'):ph.setdefault((q['season'],q['type']),q['image'])
+            if not q.get('longSleeve'):ph.setdefault((q['season'],q['type']),set()).add(q['image'])
         for k in data['kits']:
-            u=ph.get((k['season'],k['type']))
-            if u:k['photo']=u
+            key=(k['season'],k['type']);variants[key]=variants.get(key,0)+1
+        for k in data['kits']:
+            key=(k['season'],k['type']);images=ph.get(key,set())
+            # Neither the photo nor the catalogue identifies a particular variant.
+            # Never attach the first of several photos to every shirt in the season.
+            if variants[key]==1 and len(images)==1:k['photo']=next(iter(images))
     out=(tpl.replace('/*__TITLE__*/',f"ארכיון מדים {c['name']}").replace('/*__DESC__*/',f"ארכיון המדים של {c['name']}: {j['kitCount']} מערכות, ציורי SVG ותמונות מקור, עם כל המקורות.").replace('/*__ACCENT__*/',c['accent']).replace('/*__DATA__*/null',json.dumps(data,ensure_ascii=False,separators=(',',':'))))
     os.makedirs(f"public/kit-archive/{c['id']}",exist_ok=True);open(f"public/kit-archive/{c['id']}/index.html",'w',encoding='utf8').write(out)
     hub.append((c,j['kitCount'],len({k['season'] for k in j['kits']})));print(c['id'],j['kitCount'],len(out))
