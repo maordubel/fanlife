@@ -1,32 +1,64 @@
 /**
- * Season One · Episode 4 — THE MISSING SQUARE. Age ten. The schoolyard, an album with one square empty, and the bell.
+ * Season One · Episode 4 — THE MISSING SQUARE. Age ten. The morning paper, the schoolyard, an album with one square
+ * empty, and the bell.
  *
- * The job: find the sticker before the bell. Everybody has doubles, nobody has THE one — except the girl two desks
+ * The morning: the paper of the week (rule 134 §4) has the club's night on its back page — the archive's own row —
+ * and the album's back page is where a night like that goes. The zoom mission (RUSH `clipping-hunt`, rule 135) is the
+ * flat gone through for the paper, the scissors and the glue before Dad takes the paper to work; the film after it
+ * reads the clipping as recorded, and names a scorer only when the club's own match record lists him for that day.
+ *
+ * Then the job: find the sticker before the bell. Everybody has doubles, nobody has THE one — except the girl two desks
  * over, who has it three times and supports the other lot. Trade with her and you pay her price. Miss the bell and the
  * page stays empty, which is also an ending: an empty square is still yours.
  */
-import {bond, cine, failed, flag, has, heart, is, me, not, opt, passed, remember, room, say, standing, think, type EpisodeScript} from './write'
+import type {ArchiveRef, CineDef} from '../types'
+import {bond, cine, failed, flag, has, heart, is, me, not, opt, passed, remember, room, say, standing, think, type EpisodeScript, type Say} from './write'
 
 const E = 'S1E4'
 const done = (s: string) => `s1:${E}:${s}:done`
 const BELL = `s1:${E}:bell`
 
-export const E4: EpisodeScript = {
+/** the scorers the paper prints: only when the club's own record lists every goal of that day, by name (never a minute) */
+export function clippingNames(paper: ArchiveRef | null): string[] {
+  const m = paper?.match, d = m?.detail
+  if (!m || !d || !d.scorers.length) return []
+  const ours = m.us === 'home' ? m.homeGoals : m.awayGoals
+  if (d.scorers.length !== ours) return []
+  return [...new Set(d.scorers.map(x => x.name.trim()).filter(Boolean))]
+}
+
+/** the film after the clipping: the cut, the glue, the page — and the paper's own words, only what it printed */
+function clipFilm(paper: ArchiveRef | null): CineDef {
+  const names = clippingNames(paper)
+  const read: Say = !paper ? think('Last night, cut out round the edge. The back page of the album is not empty any more.')
+    : paper.match?.result === 'won' ? think('Cut out round the edge: the night they won. You read it twice. You read it a third time, for the shape of the words.')
+    : paper.match?.result === 'lost' ? think('Cut out round the edge: the night they lost. It goes in anyway. The album keeps all of them.')
+    : paper.match?.result === 'drew' ? think('Cut out round the edge: the night nobody won. It goes in anyway. It is still theirs.')
+    : think('Cut out round the edge, exactly as the paper printed it. The album keeps it now.')
+  return {id: 'e4-clip', shots: [
+    {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'emote', mood: 'wonder'}], say: read},
+    ...(names.length ? [{cam: 'close' as const, on: ['me'], ms: 2400, say: think(`The paper names who scored: ${names.join(', ')}. You say ${names.length > 1 ? 'the names' : 'the name'} out loud, once, to the empty room.`)}] : []),
+    {cam: 'wide', ms: 2200, act: [{who: 'me', do: 'emote', mood: 'joy'}], say: room('Glue on the back, palm flat for a count of ten. The album shuts on it like a door.')},
+  ]}
+}
+
+export function e4(paper: ArchiveRef | null): EpisodeScript { return {
   id: E, no: 4, age: 10, act: 1,
   title: 'The Missing Square',
   logline: 'One empty square in the album. Twelve minutes of break.',
   next: 'No Ticket',
   intro: 'Two hundred and thirty-nine stickers. One empty square. It is the only square you can see.',
   keep: {id: 'album', name: 'The album', note: 'Every page full but one. Or every page full. Depends which life.'},
-  start: {room: 'schoolyard', spawn: 'fromClass'},
-  open: {doc: 'e4-cold', cine: 'e4-open', mission: 'Find the last sticker before the bell.'},
+  start: {room: 'bedroom'},
+  ...(paper ? {paper} : {}),
+  open: {doc: 'e4-cold', cine: 'e4-open', mission: 'The clipping into the album. Then the last sticker, before the bell.'},
   close: ['e4-tal', 'e4-dudu'],
   box: {item: 'A sticker album', line: 'Page twelve has a square you still cannot look at without smiling.'},
   flash: {cine: 'e4-flash', card: 'Earlier that break'},
   tease: 'Grounded. No ticket. The one night that matters.',
 
   clock: {
-    id: 'bell', s: 150, label: 'The bell', fail: BELL,
+    id: 'bell', s: 150, label: 'The bell', fail: BELL, from: has(done('clip')),
     until: any2(`s1:${E}:sticker`, 'life:s1:biro'),
     lines: [room('The bell. Everybody runs in. The schoolyard is suddenly just a yard.'), think('The square is still empty. The square will always have been empty, at least today.')],
     fx: [failed('The last sticker'), flag('life:master:F07:deal', 'empty'), flag('life:master:F07:gap', 'kept')],
@@ -46,9 +78,24 @@ export const E4: EpisodeScript = {
 
   steps: [
     {
+      id: 'clip', goal: 'The clipping into the album', main: true,
+      at: {room: 'bedroom', spot: 'desk'}, verb: 'use',
+      lines: paper
+        ? [think('The back page of this morning’s paper has last night on it. The back page of the album is where last night goes.'), think('Dad takes the paper to work at eight. Paper. Scissors. Glue. Go.')]
+        : [think('The back page of the album is for the nights. It is still empty.'), think('Dad takes the paper to work at eight. Paper. Scissors. Glue. Go.')],
+      // close up: the flat gone through for this morning's paper, the scissors and the glue (RUSH `clipping-hunt`, rule 135)
+      mission: {template: 'clipping-hunt'},
+      game: 'count',
+      show: [cine('e4-clip')],
+      react: [room('The album goes in the bag, the bag goes on your back, and the bus waits for nobody.')],
+      slip: [room('Not before the bus, though: Dad took the paper to work. It came home in his coat, the back page folded small and saved for you. You glued it in that night.')],
+      fx: [flag('life:s1:clipping'), remember('clip', 'Cut last night out of the paper for the back of the album.')],
+      cut: {room: 'schoolyard', spawn: 'fromClass'},
+    },
+    {
       id: 'doubles', goal: 'Sort your doubles on the bench', main: true,
       at: {room: 'schoolyard', spot: 'bench'}, verb: 'use',
-      lines: [think('Your doubles. The currency of this schoolyard. Spend them wisely.')],
+      lines: [room('Break. Twelve minutes. The yard is a market.'), think('Your doubles. The currency of this schoolyard. Spend them wisely.')],
       game: 'count',
       react: [room('Three doubles worth anything. One goalkeeper nobody wants. A badge, slightly bent.')],
       fx: [{e: 'collect', item: 'double', n: 3}, flag('life:master:F06:fav', 'loose')],
@@ -116,10 +163,11 @@ export const E4: EpisodeScript = {
       {cam: 'close', on: ['me'], ms: 2600, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: think('Two minutes of break left. One square. Everybody in this yard is a dealer.')},
     ]},
     {id: 'e4-open', shots: [
-      {cam: 'wide', ms: 2200, say: room('Break. Twelve minutes. The yard is a market.')},
+      {cam: 'wide', ms: 2200, say: room('Morning. The album on the desk, open at the page that is not finished.')},
       {cam: 'close', on: ['me'], ms: 2200, say: think('One-four-four. The last square. You can see it with your eyes closed.')},
-      {cam: 'close', on: ['rival'], ms: 2500, act: [{who: 'rival', do: 'emote', mood: 'warm'}], say: say('rival', 'Looking for something, {hero}?')},
+      {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'emote', mood: 'tense'}], say: think('And somewhere in this flat, the paper. Before Dad takes it to work.')},
     ]},
+    clipFilm(paper),
     {id: 'e4-page', shots: [
       {cam: 'close', on: ['me'], ms: 2600, act: [{who: 'me', do: 'emote', mood: 'wonder'}], say: think('There.')},
     ]},
@@ -138,6 +186,6 @@ export const E4: EpisodeScript = {
       {t: 'I ate four stickers that day. Gum flavour. Every one of them.'},
     ]},
   ],
-}
+}}
 
 function any2(...flags: string[]) { return {any: flags.map(f => ({flag: f}))} }

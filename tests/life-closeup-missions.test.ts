@@ -33,7 +33,7 @@ const naive = (l: Level, s: ReturnType<typeof startSim>): Input => {
 
 describe('close-up home missions', () => {
   it('one template per scene, each its own job', () => {
-    expect([...HOME_TEMPLATES]).toEqual(['flat-run', 'tin-hunt', 'ticket-hunt', 'night-window', 'pack-bag'])
+    expect([...HOME_TEMPLATES]).toEqual(['flat-run', 'tin-hunt', 'ticket-hunt', 'night-window', 'pack-bag', 'clipping-hunt'])
     for (const id of HOME_TEMPLATES) expect(buildLevel(spec(id, 1)).place).toBe('flat')
   })
 
@@ -97,13 +97,13 @@ describe('close-up home missions', () => {
     const kinds: SearchKind[] = ['drawer', 'fridge', 'table', 'sideboard', 'cushion', 'armchair', 'shoes', 'coat', 'bed', 'wardrobe', 'desk', 'toybox', 'bowl']
     for (const lang of ['en', 'he'] as const) {
       for (const k of kinds) expect(rushWord(lang, `search.${k}` as never)).not.toMatch(/^search\./)
-      for (const k of ['tin', 'ticket', 'shoes', 'sandwich', 'money', 'phonecard']) expect(rushWord(lang, `got.${k}` as never)).not.toMatch(/^got\./)
+      for (const k of ['tin', 'ticket', 'shoes', 'sandwich', 'money', 'phonecard', 'paper', 'scissors', 'glue']) expect(rushWord(lang, `got.${k}` as never)).not.toMatch(/^got\./)
       for (const id of HOME_TEMPLATES) for (const o of ['good', 'ok', 'slip']) expect(rushWord(lang, `res.${o}.sub.${id}` as never)).not.toMatch(/^res\./)
     }
   })
 
   it('each episode plays its scene where the story is, and a film follows it', () => {
-    const at: [string, string, string][] = [['e1', 'flat-run', 'e1-delivered'], ['e2', 'tin-hunt', 'e2-tin'], ['e3', 'ticket-hunt', 'e3-envelope'], ['e5', 'night-window', 'e5-ledge'], ['e6', 'pack-bag', 'e6-packed']]
+    const at: [string, string, string][] = [['e1', 'flat-run', 'e1-delivered'], ['e2', 'tin-hunt', 'e2-tin'], ['e3', 'ticket-hunt', 'e3-envelope'], ['e5', 'night-window', 'e5-ledge'], ['e6', 'pack-bag', 'e6-packed'], ['e4', 'clipping-hunt', 'e4-clip']]
     for (const [ep, tpl, cine] of at) {
       const src = readFileSync(`lib/life/universal/season/${ep}.ts`, 'utf8')
       expect(src, `${ep} plays ${tpl}`).toContain(`mission: {template: '${tpl}'}`)

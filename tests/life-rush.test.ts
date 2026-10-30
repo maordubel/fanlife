@@ -66,6 +66,8 @@ describe('reading the archive', () => {
 
   it('Europe, title, relegation, founding and ground are read from the row\'s own words', () => {
     expect(kindsOf(ref('e', 'Hradec Králové 1–0 Test', 'European Cup, first round'), v)).toContain('europe')
+    // the Worker's Hebrew archive writes the UEFA Cup as the club's own paper did (the 2001 Chelsea night)
+    expect(kindsOf(ref('e2', 'הפועל תל אביב 2 — צ\'לסי 0', 'גביע אופ"א'), v)).toContain('europe')
     expect(kindsOf(ref('f', 'Test beat Iraklis 1-0 to reclaim the league title', ''), v)).toContain('title')
     expect(kindsOf(ref('g', 'Test 1-0 Real', 'Champions League group stage'), v)).not.toContain('title')
     expect(kindsOf(ref('h', 'Test were relegated', ''), v)).toContain('relegation')

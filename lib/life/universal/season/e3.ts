@@ -126,7 +126,13 @@ export function e3(anchor: ArchiveRef | null, age: number): EpisodeScript {
       {
         id: 'step', goal: 'Find your step on the terrace', main: true,
         at: {room: 'terrace', who: 'dad', slot: 'left'}, verb: 'talk',
-        lines: [say('dad', 'Here. This step. Third from the fence. It is ours now. Nobody else stands here.'), think('Third from the fence. You will be able to find it blind.')],
+        lines: [room('Out of the tunnel the crowd closes round you like water. Somebody’s elbow, somebody’s scarf, and your half of the ticket is gone out of your hand.'), say('dad', 'Third from the fence! I will be on it! Find me!')],
+        // close up: the terrace on this night, a wall of backs — the half-ticket first, then Dad on his step (RUSH `first-step`, rule 135)
+        mission: {template: 'first-step'},
+        game: 'count',
+        show: [cine('e3-step')],
+        react: [think('Third from the fence. You will be able to find it blind.')],
+        slip: [room('A steward walks you up the steps by the hand.'), think('Third from the fence. You will be able to find it blind. Next time.')],
         fx: [flag(`s1:${E}:step`), remember('step', 'Third step from the fence. Ours.')],
       },
       {
@@ -190,6 +196,11 @@ export function e3(anchor: ArchiveRef | null, age: number): EpisodeScript {
         {cam: 'two', on: ['me', 'dad'], ms: 2400, act: [{who: 'me', do: 'hold', item: 'ticket'}, {who: 'dad', do: 'face', to: 'me'}], say: room('You hold it up. He takes it like it might go off.')},
         {cam: 'close', on: ['dad'], ms: 2300, act: [{who: 'dad', do: 'emote', mood: 'joy'}, {who: 'me', do: 'hold', item: null}], say: say('dad', 'Two. Both. Good. Never tell anybody about this.', 'joy')},
         {cam: 'close', on: ['mum'], ms: 2000, act: [{who: 'mum', do: 'emote', mood: 'warm'}], say: say('mum', 'I will tell everybody about this.')},
+      ]},
+      // the step: the half-ticket back in his fist, and the place that will be his for thirty years
+      {id: 'e3-step', shots: [
+        {cam: 'two', on: ['me', 'dad'], ms: 2400, act: [{who: 'me', do: 'hold', item: 'ticket'}, {who: 'dad', do: 'face', to: 'me'}], say: say('dad', 'Here. This step. Third from the fence. It is ours now. Nobody else stands here.', 'tender')},
+        {cam: 'close', on: ['me'], ms: 2300, act: [{who: 'me', do: 'hold', item: null}, {who: 'me', do: 'emote', mood: 'wonder'}], say: think('Half a ticket, warm and folded small. You will keep it longer than anything you own.')},
       ]},
       {id: 'e3-flash', shots: [
         {cam: 'close', on: ['me'], ms: 2600, act: [{who: 'me', do: 'emote', mood: 'wonder'}], say: think('In an hour you will see it for the first time. The green. Nobody warns you about the green.')},

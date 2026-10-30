@@ -128,7 +128,7 @@ function floorAreas(): Rect[] {
 const step = (o: Partial<Step> & Pick<Step, 'kind' | 'x' | 'z' | 'key'>): Step => ({r: 1.4, npc: null, say: null, cost: 0, hold: 0, group: 0, joins: false, leaves: false, reveals: false, ...o})
 
 /** the home missions: each one a scene of its own in the same flat */
-export const HOME_TEMPLATES = ['flat-run', 'tin-hunt', 'ticket-hunt', 'night-window', 'pack-bag'] as const
+export const HOME_TEMPLATES = ['flat-run', 'tin-hunt', 'ticket-hunt', 'night-window', 'pack-bag', 'clipping-hunt'] as const
 export type HomeTemplate = typeof HOME_TEMPLATES[number]
 export const isHome = (t: string): t is HomeTemplate => (HOME_TEMPLATES as readonly string[]).includes(t)
 
@@ -305,6 +305,31 @@ function packBag(spec: MissionSpec, r: () => number): Built {
   })
 }
 
+/**
+ * E4 · the clipping (a zoom mission on the archive's night). The morning after a night the archive records, the
+ * paper is somewhere in the flat — Dad read it at breakfast and put it down — and he takes it to work. The paper
+ * (the armchair, the sideboard, the kitchen table or the fruit bowl), the scissors (a kitchen drawer or the
+ * sideboard), the glue (the toybox or the box on the wardrobe), then his desk: the night goes into the album.
+ * Dad walks the hall patting his pockets for the paper he cannot find either.
+ */
+function clippingHunt(spec: MissionSpec, r: () => number): Built {
+  const sc = new Scene()
+  sc.hide('paper', 0, ['armchair', 'sideboard', 'table', 'bowl'], r)
+  sc.hide('scissors', 0, ['drawer', 'cushion'], r)
+  sc.hide('glue', 0, ['toybox', 'wardrobe'], r)
+  sc.tuck('coin', 'coat'); sc.look('bed', null)
+  const pace = [0.75, 1, 1.2][spec.difficulty]!
+  const [dx, dz] = SPOT.desk
+  return home(spec, {
+    start: P(-1.6, -8.4), scene: sc,
+    steps: [step({kind: 'collect', x: 0, z: 0, key: 'obj.clip.find'}), step({kind: 'goal', x: dx * S, z: dz * S, r: 1.1, key: 'obj.clip.desk'})],
+    patrols: [{pts: [[3.5 * S, 4.4 * S], [3.5 * S, -2.6 * S], [8.6 * S, -2.6 * S]], v: 0.8 * pace, range: 0, fov: 0, role: 'dad'}, CAT(pace)],
+    trips: toyAt(r).slice(0, 3),
+    voice: [{at: 0, t: 3, key: 'clip.1'}, {at: 0, t: 16, key: 'clip.2'}, {at: 0, t: 30, key: 'clip.3'}],
+    house: {sofa: null, night: false, tv: false, window: false},
+  })
+}
+
 /** The home mission for this spec. The seed moves the small things — which drawer, which toy where — never the rooms. */
 export function flatLevel(spec: MissionSpec, r: () => number): Built {
   switch (spec.template as HomeTemplate) {
@@ -312,6 +337,7 @@ export function flatLevel(spec: MissionSpec, r: () => number): Built {
     case 'ticket-hunt': return ticketHunt(spec, r)
     case 'night-window': return nightWindow(spec, r)
     case 'pack-bag': return packBag(spec, r)
+    case 'clipping-hunt': return clippingHunt(spec, r)
     default: return flatRun(spec, r)
   }
 }

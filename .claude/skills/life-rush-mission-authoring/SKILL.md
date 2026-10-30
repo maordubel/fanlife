@@ -53,6 +53,13 @@ A home mission is a SCENE, not a race: add a builder to `flatLevel` and its id t
 - Wire it in the season step whose story it is (`mission: {template}`, keep a `game` fallback) and pay it off with a
   `show: [cine(...)]`. `tests/life-closeup-missions.test.ts` holds all of it.
 
+## 2e. Zoom missions on the archive's night (rule 135)
+A zoom mission is a close-up tied to the episode's own task AND its night: `clipping-hunt` (flat), `first-step`,
+`lost-scarf`, `away-pen` (crowd). Give it an `enriching` + `day` anchor need so it is READY on the chapter's night (or
+its `paper`) and prints the row only through `{date}` and the result card. A crowd zoom puts a `collect` step before
+its find (the find waits for it). The payoff film may follow the row's result; it never prints a score, a minute or a
+date, and names a scorer only through `clippingNames` (every goal of the day listed). `tests/life-zoom-missions.test.ts`.
+
 ## 3. Needs — what the mission asks of each club's archive
 For each fact the mission prints or depends on, add a `Need`:
 - `of: {anchor: [kinds]}` (match, home, away, derby, final, europe, title, relegation, promotion, ground, founding)

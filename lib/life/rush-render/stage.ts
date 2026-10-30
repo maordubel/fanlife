@@ -72,6 +72,9 @@ function seeded(seed: number) { let s = (seed >>> 0) % 2147483647 || 1984; retur
 
 /* ───────────── the stage ───────────── */
 
+/** the missions played at another club's ground: no sign of ours goes up there (rule 135) */
+const AWAY_GROUNDS: readonly string[] = ['away-pen', 'europe-night']
+
 export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: MissionSpec; skin: VoxelSkin; quality: Quality; reduced: boolean; gateLabel: string}): Stage {
   const {canvas, level, spec, skin, quality, reduced} = o
   const lite = quality === 'lite'
@@ -264,8 +267,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const wall = new THREE.Mesh(box, keep(std('#3c3f48'))); wall.scale.set(46, 10, 2); wall.position.set(0, 5, wallZ); wall.receiveShadow = true; scene.add(wall)
     const frame = new THREE.Mesh(box, keep(std(skin.t))); frame.scale.set(8.6, 7, 2.4); frame.position.set(0, 3.5, wallZ + 0.1); scene.add(frame)
     const hole = new THREE.Mesh(keep(new THREE.PlaneGeometry(6, 5.4)), keep(new THREE.MeshBasicMaterial({color: C('#f4f7ff').multiplyScalar(2.2), toneMapped: false}))); hole.position.set(0, 2.7, wallZ + 1.35); scene.add(hole)
-    const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(8, 2)), keep(new THREE.MeshBasicMaterial({map: signTex(o.gateLabel, skin.p, '#ffffff'), toneMapped: false}))); sign.position.set(0, 8.2, wallZ + 1.3); scene.add(sign)
-    const ground = skin.stadium ?? skin.strings.ground
+    // somebody else's ground (the away end, a night abroad) carries neither our gate nor our ground's name
+    const theirs = AWAY_GROUNDS.includes(spec.template)
+    if (!theirs) { const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(8, 2)), keep(new THREE.MeshBasicMaterial({map: signTex(o.gateLabel, skin.p, '#ffffff'), toneMapped: false}))); sign.position.set(0, 8.2, wallZ + 1.3); scene.add(sign) }
+    const ground = theirs ? null : skin.stadium ?? skin.strings.ground
     if (ground) { const gs = new THREE.Mesh(keep(new THREE.PlaneGeometry(26, 3.2)), keep(new THREE.MeshBasicMaterial({map: signTex(ground, '#0d1018', '#f3efe6', 1024, 128), toneMapped: false}))); gs.position.set(0, 12.2, wallZ - 1.2); scene.add(gs) }
     const gl = new THREE.PointLight('#e8f0ff', night ? 140 : 30, 30, 1.6); gl.position.set(0, 5, wallZ + 8); scene.add(gl)
   }
@@ -527,6 +532,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     else if (k === 'paint') { add(new THREE.CylinderGeometry(0.15, 0.15, 0.22, 18), std('#c9cdd4', {metalness: 0.6, roughness: 0.35})); add(new THREE.CylinderGeometry(0.152, 0.152, 0.07, 18), std(skin.p), 0.02) }
     else if (k === 'battery') { add(new THREE.CylinderGeometry(0.06, 0.06, 0.24, 14), std('#26272b', {roughness: 0.4}), 0); add(new THREE.CylinderGeometry(0.061, 0.061, 0.08, 14), std(skin.p, {roughness: 0.4}), 0.08); add(new THREE.CylinderGeometry(0.02, 0.02, 0.03, 8), std('#d9dce2', {metalness: 0.9, roughness: 0.2}), 0.135) }
     else if (k === 'cloth') add(new THREE.BoxGeometry(0.55, 0.14, 0.4), std(skin.s, {roughness: 0.95}))
+    // the morning paper, folded to its back page; the kitchen scissors; a stick of glue
+    else if (k === 'paper') { add(new THREE.BoxGeometry(0.56, 0.035, 0.4), std('#e8e3d6', {roughness: 0.95})); add(new THREE.BoxGeometry(0.4, 0.004, 0.06), std('#5d5a54', {roughness: 0.9}), 0.02) }
+    else if (k === 'scissors') { add(new THREE.BoxGeometry(0.05, 0.03, 0.34).rotateY(0.22), std('#c8ccd2', {metalness: 0.8, roughness: 0.3})); add(new THREE.BoxGeometry(0.05, 0.03, 0.34).rotateY(-0.22), std('#c8ccd2', {metalness: 0.8, roughness: 0.3})); add(new THREE.TorusGeometry(0.06, 0.018, 8, 16).rotateX(Math.PI / 2), std(skin.p, {roughness: 0.5}), 0) }
+    else if (k === 'glue') { add(new THREE.CylinderGeometry(0.055, 0.055, 0.22, 14), std('#f1efe9', {roughness: 0.6})); add(new THREE.CylinderGeometry(0.058, 0.058, 0.07, 14), std(skin.p, {roughness: 0.5}), 0.12) }
     else add(new THREE.TorusGeometry(0.1, 0.045, 10, 20).rotateX(Math.PI / 2), std('#d9d4c8', {roughness: 0.6}))
     return g
   }

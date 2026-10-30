@@ -14,6 +14,7 @@ import { RushQa } from './RushQa'
  * LIFE · RUSH test stand — any mission, any club, any age, without a save or a chapter.
  *
  * `?club=olympiacos&mission=kickoff-run&beat=coach&age=27&time=night&lang=he&quality=lite&weather=rain`.
+ * `&episode=S1E3` stands the mission on that episode's own night (or the paper of its week), as LIFE does (rule 135).
  * The same host LIFE opens, fitted from the same door the club's LIFE page builds. `notFound()` on
  * the live site, like every stand under `app/qa/` (rule 19).
  */
@@ -25,8 +26,9 @@ export default async function RushQaPage({ searchParams }: { searchParams: Recor
   const locale = searchParams.lang === 'he' ? 'he' : 'en'
   const pack = clubLife(club.data, { locale })
   const door = rushDoor(club.data, pack.skin)
-  const age = Number(searchParams.age ?? (template.ages[0] + template.ages[1]) / 2 | 0)
-  const spec = missionSpecFor(door, { template: template.id, mandatory: searchParams.mandatory === '1', ...(searchParams.beat ? { beat: searchParams.beat } : {}) }, { id: 'qa', age }, { time: searchParams.time === 'day' ? 'day' : 'night', locale, playId: searchParams.seed ?? '1' })
+  const chapter = searchParams.episode ? pack.chapters.find((c) => c.id === searchParams.episode) : undefined
+  const age = Number(searchParams.age ?? chapter?.age ?? (template.ages[0] + template.ages[1]) / 2 | 0)
+  const spec = missionSpecFor(door, { template: template.id, mandatory: searchParams.mandatory === '1', ...(searchParams.beat ? { beat: searchParams.beat } : {}) }, { id: chapter?.id ?? 'qa', age, ...(chapter?.anchor ? { anchor: chapter.anchor } : {}), ...(chapter?.paper ? { paper: chapter.paper } : {}) }, { time: searchParams.time === 'day' ? 'day' : 'night', locale, playId: searchParams.seed ?? '1' })
   if (!spec) return <p>{template.id} is not playable for {club.data.identity.id} at age {age}.</p>
   const weather = searchParams.weather === 'rain' || searchParams.weather === 'cold' || searchParams.weather === 'heat' ? searchParams.weather : spec.weather
   return (

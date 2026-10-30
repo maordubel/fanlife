@@ -149,6 +149,31 @@ export function applyQuest(l: Level, spec: MissionSpec, r: () => number): void {
       steps.push(goalStep(steal ? 'obj.storeroom' : 'obj.gap'))
       break
     }
+    // the zoom missions at the ground: something of his own is lost on the concrete, then the one he came with (or the
+    // spot he wanted) — the night itself is the archive's, printed on the briefing and the result card, never here
+    case 'first-step':
+    case 'lost-scarf':
+    case 'away-pen': {
+      const tg = l.targets[0]!
+      const inCrowd = (near: boolean) => {
+        let x = 0, z = 0
+        for (let k = 0; k < 24; k++) {
+          x = (r() - 0.5) * (l.half * 2 - 6)
+          z = near ? l.start.z - 6 - r() * Math.max(6, (l.start.z - tg.z) * 0.45) : tg.z + 6 + r() * Math.max(6, (l.start.z - tg.z) * 0.4)
+          if (free(x, z, 5)) break
+        }
+        l.standers = l.standers.filter(p => Math.hypot(p.x - x, p.z - z) > 1.3)
+        return mark(x, z)
+      }
+      const what: PickupKind = spec.template === 'lost-scarf' ? 'scarf' : 'ticket'
+      need(what, inCrowd(spec.template !== 'away-pen'))
+      steps.push(step({kind: 'collect', x: 0, z: 0, key: `obj.${spec.template}.get`}))
+      const ask = inCrowd(true)
+      const words = spec.template === 'away-pen' ? `npc.away-pen.${beat === 'won' || beat === 'lost' || beat === 'drew' ? beat : 'unread'}` : `npc.${spec.template}`
+      steps.push(step({kind: 'talk', ...ask, key: `obj.${spec.template}.ask`, say: words, reveals: true, npc: person({kit: spec.template !== 'first-step', cap: spec.template === 'first-step', scarf: true, size: 1})}))
+      steps.push(step({kind: 'goal', x: tg.x, z: tg.z, r: 1.8, key: `obj.${spec.template}.goal`}))
+      break
+    }
     case 'europe-night':
     case 'title-night':
     case 'where-you-stood':

@@ -31,7 +31,7 @@ export function seedOf(...parts: string[]): number {
 }
 
 /** who a find mission is looking for, when the player already knows him: the father on the pitch, the friend abroad */
-export const KNOWN_FOR: Readonly<Record<string, string>> = {'title-night': 'dad', 'europe-night': 'friend'}
+export const KNOWN_FOR: Readonly<Record<string, string>> = {'title-night': 'dad', 'europe-night': 'friend', 'first-step': 'dad', 'away-pen': 'wild'}
 
 /** a LIFE cast member as RUSH draws him, at the age the supporter is now (so a father of seventy is grey in the crowd) */
 export function knownLook(role: string, look: Look, age: number): KnownLook {
@@ -41,13 +41,14 @@ export function knownLook(role: string, look: Look, age: number): KnownLook {
     hex: {...(l.skin ? {skin: l.skin} : {}), ...(l.hair && !grey ? {hair: l.hair} : {}), ...(l.shirt && !l.kit ? {top: l.shirt} : {}), ...(l.pants ? {pants: l.pants} : {})}}
 }
 
-export function missionSpecFor(door: RushDoor | null | undefined, call: MissionCall, chapter: {id: string; age: number; anchor?: ArchiveRef}, ctx: {time: 'day' | 'night'; locale: 'en' | 'he'; playId: string; cast?: Readonly<Record<string, Pick<CastMember, 'look'>>>}): MissionSpec | null {
+export function missionSpecFor(door: RushDoor | null | undefined, call: MissionCall, chapter: {id: string; age: number; anchor?: ArchiveRef; paper?: ArchiveRef}, ctx: {time: 'day' | 'night'; locale: 'en' | 'he'; playId: string; cast?: Readonly<Record<string, Pick<CastMember, 'look'>>>}): MissionSpec | null {
   if (!door) return null
   const t = templateById(call.template)
   const fit = door.fits.find(f => f.template === call.template)
   if (!t || !fit) return null
   if (chapter.age < t.ages[0] || chapter.age > t.ages[1]) return null
-  const local = chapterFit(t, fit, chapter.anchor ?? null, door.view)
+  // a chapter that stands on no night lends the paper of its week (rule 134 §4) — only to a mission that asks for that kind of night
+  const local = chapterFit(t, fit, chapter.anchor ?? chapter.paper ?? null, door.view)
   if (local.state !== 'READY' && local.state !== 'NEUTRAL') return null
   const spec = specFor(t, local, {...door.view, anchors: []}, {seed: seedOf(door.view.clubId, chapter.id, ctx.playId), skin: door.view.clubId, age: chapter.age, mandatory: call.mandatory, time: ctx.time, locale: ctx.locale})
   const role = KNOWN_FOR[call.template], member = role ? ctx.cast?.[role] : undefined
