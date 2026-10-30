@@ -507,6 +507,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261027170000_worker_live_open_arenas.sql', // 27.10.2026: audit CF-03 — only joinable OFFSIDES arenas count as open — standalone
       '20261029090000_worker_marketing_copybox.sql', // 29.10.2026: plan v4 — render() writes the caption into a copy box — standalone
       '20261029100000_worker_marketing_briefing.sql', // 29.10.2026: the owner's 07:30 morning briefing (operations, not a post) — standalone
+      '20261030090000_worker_market_direct_listing.sql', // 30.10.2026: list a shirt without a closet copy (supabase/tests/79-direct-listing.sql)
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

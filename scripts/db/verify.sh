@@ -51,3 +51,5 @@ ff=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/77-fanlife-files.sql 2>&
 echo "$ff" | grep -c PASS | xargs -I{} echo "db verify: {} FAN LIFE files (server-only store) assertions — clean"
 hv=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/78-hub-vote.sql 2>&1) || { echo "$hv" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$hv" | grep -c PASS | xargs -I{} echo "db verify: {} hub ballot (worker_hub_vote) assertions — clean"
+dl=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/79-direct-listing.sql 2>&1) || { echo "$dl" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$dl" | grep -c PASS | xargs -I{} echo "db verify: {} direct listing (worker_market_publish, my listings) assertions — clean"
