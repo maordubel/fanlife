@@ -486,7 +486,7 @@ function cineTick(t,dt){
  /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
     lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
  var tg=c.cam==='over'&&heads.length>1?heads[1]:heads[0];/* the face the lens is pointed at — over a shoulder, that is the OTHER person */
- var key=(c.on||[]).join()+'|'+Math.round(tg.x*3)+','+Math.round(tg.z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(tg,p,subs)}catch(e){c.fix=null}}
+ var key=(c.on||[]).join()+'|'+Math.round(tg.x*3)+','+Math.round(tg.z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(tg,p,subs,heads.filter(function(x){return x!==tg}))}catch(e){c.fix=null}}
  if(c.fix&&c.fix.wide){K.cineCam(null);K.follow(camX,1+.06*k);return}
  if(c.fix&&c.fix.p)p=tg.clone().add(c.fix.p)
  /* and the lens gets there like a camera operator would, not in one jump: every frame used to place it afresh */
@@ -502,11 +502,12 @@ function sideBySide(a,b){var dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz)||1,fa=Mat
 function segDist(a,b,c){var ab=b.clone().sub(a),t=Math.max(0,Math.min(1,c.clone().sub(a).dot(ab)/Math.max(1e-6,ab.lengthSq())));return a.clone().add(ab.multiplyScalar(t)).distanceTo(c)}
 /* other people are in the way too: a head and a chest each, as spheres, for everybody who is not in the shot */
 function peopleOn(from,to,subs){var all=[player].concat(Object.keys(actors).map(function(k){return actors[k]}));for(var i=0;i<all.length;i++){var b=all[i];if(!b||subs.indexOf(b)>=0||!b.g.visible)continue;var hd=headOf(b);if(segDist(from,to,hd)<.3)return true;hd.y-=.55*b.s;if(segDist(from,to,hd)<.4)return true}return false}
-function clearShot(h,p,subs){var off=p.clone().sub(h),len=off.length(),best=null,bestD=0;
+function clearShot(h,p,subs,others){var off=p.clone().sub(h),len=off.length(),best=null,bestD=0;others=others||[];
+ /* every face in the shot must see the lens, not just the first one */var seen=function(q){for(var i=0;i<others.length;i++){if(hitOn(others[i],q)!=null||peopleOn(others[i],q,subs))return false}return true};
  /* round the face a few ways, and a little higher (over a sofa back); the first lens with nothing in front of it wins */
  var turns=[0,.6,-.6,1.1,-1.1],lifts=[0,.35,.9];/* .9: a high lens looking down over a sofa back or an armchair, the way a crew shoots a room full of furniture */
  for(var li=0;li<lifts.length;li++)for(var ti=0;ti<turns.length;ti++){var a=turns[ti],o=new T.Vector3(off.x*Math.cos(a)-off.z*Math.sin(a),off.y+lifts[li],off.x*Math.sin(a)+off.z*Math.cos(a)),q=h.clone().add(o);
-  if(peopleOn(h,q,subs))continue;var at=hitOn(h,q);if(at==null){if(!a&&!lifts[li])return null;return{p:o}}if(at>bestD){bestD=at;best=o}}
+  if(peopleOn(h,q,subs))continue;var at=hitOn(h,q);if(at==null&&seen(q)){if(!a&&!lifts[li])return null;return{p:o}}if(at!=null&&at>bestD&&seen(h.clone().add(o.clone().multiplyScalar((at-.1)/len)))){bestD=at;best=o}}
  /* nothing clear: the nearest-to-clear lens only if it still frames a face and shoulders; otherwise the room's own camera */
  if(best&&bestD>len*.85)return{p:best.multiplyScalar((bestD-.1)/len)};return{wide:true}}
 function cineShot(o){
