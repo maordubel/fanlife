@@ -4,6 +4,13 @@ One page (Instagram · TikTok · Facebook) markets the whole universe: FAN LIFE,
 OFFSIDES and FUCK YOU. Every two hours, 08:00–22:00 Israel time, the owner gets a ready post on
 Telegram: the hook, the caption, the link to the right app, the hashtags and a visual brief.
 
+## v4.1 — 30.10.2026 (owner): 15–55, and the club passes from father to son
+- **19:30 GENERATIONS**, every day, rotating: *same round* (a seeded `/clubs/<club>/trivia?seed=` link — kid vs dad,
+  the same questions for both), *dad's era vs yours* (one night from 1980–1999 and one from 2010 on, same club, both
+  years in the first comment), *ask your dad* (who took you to your first match). Tags `#FatherAndSon #FootballFamily`.
+- **Only published clubs are marketed** (`PUBLISHED` in build-plan): CORE_CLUB_IDS grew to clubs still in research,
+  whose pages are a 404 to the public. Publish a club in the control room, then add it there and rebuild.
+
 ## v3 — 27.10.2026 (owner): three voices, a picture on every post, nothing before 1980
 - **FAN LIFE — the lead publisher (fixed plan, even hours):** 08 On this day · 10 a gate of the app (L-GATE) ·
   12 Did you know (Sun/Wed/Fri) · 14 story quiz · 16 nerds only · 18 Royal Rumble / Legends Manager on alternate days ·
