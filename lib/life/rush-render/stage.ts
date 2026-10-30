@@ -72,6 +72,9 @@ function seeded(seed: number) { let s = (seed >>> 0) % 2147483647 || 1984; retur
 
 /* ───────────── the stage ───────────── */
 
+/** the missions played at another club's ground: no sign of ours goes up there (rule 135) */
+const AWAY_GROUNDS: readonly string[] = ['away-pen', 'europe-night']
+
 export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: MissionSpec; skin: VoxelSkin; quality: Quality; reduced: boolean; gateLabel: string}): Stage {
   const {canvas, level, spec, skin, quality, reduced} = o
   const lite = quality === 'lite'
@@ -264,8 +267,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const wall = new THREE.Mesh(box, keep(std('#3c3f48'))); wall.scale.set(46, 10, 2); wall.position.set(0, 5, wallZ); wall.receiveShadow = true; scene.add(wall)
     const frame = new THREE.Mesh(box, keep(std(skin.t))); frame.scale.set(8.6, 7, 2.4); frame.position.set(0, 3.5, wallZ + 0.1); scene.add(frame)
     const hole = new THREE.Mesh(keep(new THREE.PlaneGeometry(6, 5.4)), keep(new THREE.MeshBasicMaterial({color: C('#f4f7ff').multiplyScalar(2.2), toneMapped: false}))); hole.position.set(0, 2.7, wallZ + 1.35); scene.add(hole)
-    const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(8, 2)), keep(new THREE.MeshBasicMaterial({map: signTex(o.gateLabel, skin.p, '#ffffff'), toneMapped: false}))); sign.position.set(0, 8.2, wallZ + 1.3); scene.add(sign)
-    const ground = skin.stadium ?? skin.strings.ground
+    // somebody else's ground (the away end, a night abroad) carries neither our gate nor our ground's name
+    const theirs = AWAY_GROUNDS.includes(spec.template)
+    if (!theirs) { const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(8, 2)), keep(new THREE.MeshBasicMaterial({map: signTex(o.gateLabel, skin.p, '#ffffff'), toneMapped: false}))); sign.position.set(0, 8.2, wallZ + 1.3); scene.add(sign) }
+    const ground = theirs ? null : skin.stadium ?? skin.strings.ground
     if (ground) { const gs = new THREE.Mesh(keep(new THREE.PlaneGeometry(26, 3.2)), keep(new THREE.MeshBasicMaterial({map: signTex(ground, '#0d1018', '#f3efe6', 1024, 128), toneMapped: false}))); gs.position.set(0, 12.2, wallZ - 1.2); scene.add(gs) }
     const gl = new THREE.PointLight('#e8f0ff', night ? 140 : 30, 30, 1.6); gl.position.set(0, 5, wallZ + 8); scene.add(gl)
   }
