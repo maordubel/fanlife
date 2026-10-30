@@ -40,7 +40,7 @@ describe('SEO: the publisher pages and the club pages',()=>{
   for(const sub of ['[gate]','history','timeline','away-days','kit-archive','play','terrace'])expect(read(`app/clubs/[slug]/${sub}/page.tsx`),sub).toContain('clubSubMetadata(')
  })
  it('/today is the link in bio: answers never leave the database, and the page is a door (noindex, follow)',()=>{
-  const sql=read('supabase/migrations/20261030090000_worker_marketing_today.sql')
+  const sql=read('supabase/migrations/20261030100000_worker_marketing_today.sql')
   expect(sql).not.toMatch(/->>'comment'|p\.rendered/)
   expect(sql).toMatch(/revoke all on function public\.worker_marketing_today\(\) from public, anon, authenticated/)
   const page=read('app/today/page.tsx')
