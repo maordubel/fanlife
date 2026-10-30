@@ -373,7 +373,12 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
         add(box, oWood, -0.235, 0, -0.18, 0.02, 0.14, 0.38); add(box, oWood, 0.235, 0, -0.18, 0.02, 0.14, 0.38)
         add(box, std('#d8cfbf', {roughness: 0.4, metalness: 0.4}), 0, 0, 0.045, 0.1, 0.02, 0.02)
         break
-      case 'wardrobe': case 'fridge': {
+      case 'wardrobe':
+        // the box on top of the wardrobe (that is where the story keeps it): the lid lifts, the door stays shut
+        part.position.set(0, 2.12, -0.3)
+        add(box, std('#b08a5c', {roughness: 0.85}), 0, 0, -0.17, 0.5, 0.03, 0.36)
+        break
+      case 'fridge': {
         // a door on a hinge at its left edge: the part turns, the panel is offset so it pivots there
         const fr = q.kind === 'fridge'
         part.position.set(-0.36, 0, -0.04)
@@ -459,7 +464,7 @@ export function dressFlat(c: Ctx): {update(sim: Sim, t: number, dt: number, endi
         const e = o.open, j = sim.searchI === i ? Math.sin(t * 22) * 0.012 * e : 0 // a hand at work rattles it a little
         switch (o.kind) {
           case 'drawer': case 'desk': case 'sideboard': case 'table': o.part.position.z = -0.06 + e * 0.32 + j; break
-          case 'wardrobe': case 'fridge': o.part.rotation.y = -e * 1.45 + j; if (o.inner) (o.inner.material as THREE.MeshBasicMaterial).opacity = e * 0.55; break
+          case 'fridge': o.part.rotation.y = -e * 1.45 + j; if (o.inner) (o.inner.material as THREE.MeshBasicMaterial).opacity = e * 0.55; break
           case 'cushion': case 'armchair': case 'bed': o.part.position.y = (o.kind === 'bed' ? 0.55 : 0.5) + e * 0.32; o.part.rotation.x = -e * 0.7 + j; o.part.position.z = -0.25 + e * 0.25; break
           case 'coat': o.part.rotation.z = Math.sin(t * 6) * 0.25 * (sim.searchI === i ? 1 : 0) + e * 0.12; o.part.rotation.x = -e * 0.4; break
           default: o.part.rotation.x = -e * 1.2 + j

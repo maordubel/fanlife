@@ -859,26 +859,29 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const sq = sim.searchI >= 0 ? level.searches[sim.searchI] : null
       closeK += ((sq ? 1 : 0) - closeK) * Math.min(1, dt * (sq ? 3.2 : 2.2))
       // the hands are where the place is: up on the wardrobe, at a coat on its hook, down in a drawer
-      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, sq.kind === 'wardrobe' ? 1.65 : sq.kind === 'coat' ? 1.2 : sq.kind === 'bed' || sq.kind === 'shoes' || sq.kind === 'toybox' ? 0.45 : 0.75, sq.z + Math.cos(sq.face) * 0.55)
+      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, sq.kind === 'wardrobe' ? 1.25 : sq.kind === 'coat' ? 1.2 : sq.kind === 'bed' || sq.kind === 'shoes' || sq.kind === 'toybox' ? 0.45 : 0.75, sq.z + Math.cos(sq.face) * 0.55)
+      // the boy is the subject and the place is what he is doing: aim between his chest and his hands, not at the furniture
+      if (sq) closeAt.lerp(tmp3.set(sim.x, child ? 0.85 : 1.05, sim.z), 0.45)
       // beside him, a little behind, on the side the camera already is (the open side of the room): his face, his hands and the place in one frame
       // in FRONT of the place and to one side of him (about sixty degrees off its face): further round than that and the lens
       // ends up beside or behind the furniture he is going through — the armchair filled the screen. Of the two sides, the
       // one with open floor between the lens and his hands; then the one the camera is already on.
-      let side = 0, cdist = 2.2
+      let side = 0, cdist = 2.2, closeCap = 0.92
       if (sq) {
         // the lens stays in the room he is in, and nothing stands between it and his hands
         const room = level.rooms.find(r => sim.x >= r.rect.x0 && sim.x <= r.rect.x1 && sim.z >= r.rect.z0 && sim.z <= r.rect.z1)?.rect
         const ok = (a: number, d: number) => { const cx = sim.x + Math.sin(a) * d, cz = sim.z + Math.cos(a) * d
-          if (room && (cx < room.x0 + 0.3 || cx > room.x1 - 0.3 || cz < room.z0 + 0.3 || cz > room.z1 - 0.3)) return false
+          if (room && (cx < room.x0 + 0.12 || cx > room.x1 - 0.12 || cz < room.z0 + 0.12 || cz > room.z1 - 0.12)) return false
           for (let k = 0; k <= 10; k++) { const x = cx + (closeAt.x - cx) * k / 10, z = cz + (closeAt.z - cz) * k / 10; for (const b of level.blocks) if (x > b.x0 && x < b.x1 && z > b.z0 && z < b.z1) return false }
           return true }
         const pref = Math.cos(sq.face + Math.PI * 0.33) >= Math.cos(sq.face - Math.PI * 0.33) ? 1 : -1
         let hit = false
-        found: for (const d of [2.2, 1.6, 1.15]) for (const f of [0.33, 0.2, 0.45, 0]) for (const sg of [pref, -pref]) { const a = sq.face + sg * f * Math.PI; if (ok(a, d)) { side = a; cdist = d; hit = true; break found } }
-        if (!hit) { side = sq.face; cdist = 1.15 }
+        found: for (const d of [2.2, 1.8, 1.5, 1.15]) for (const f of [0.33, 0.2, 0.45, 0]) for (const sg of [pref, -pref]) { const a = sq.face + sg * f * Math.PI; if (ok(a, d)) { side = a; cdist = d; hit = true; break found } }
+        // no clean lens in a room this small: stay half way down — a mid shot from above beats a wall of wardrobe doors
+        if (!hit) { side = sq.face; cdist = 2.2; closeCap = 0.45 }
       }
-      const near = tmp2.set(sim.x + Math.sin(side) * cdist, (child ? 1.45 : 1.7) + (sq?.kind === 'wardrobe' ? 0.35 : 0), sim.z + Math.cos(side) * cdist)
-      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * 0.92), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
+      const near = tmp2.set(sim.x + Math.sin(side) * cdist, (child ? 1.45 : 1.7) + (sq?.kind === 'wardrobe' ? 0.75 : 0), sim.z + Math.cos(side) * cdist)
+      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * closeCap), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
       camLook.lerp(tmp3.set(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
       const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6 - closeK * 8; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)

@@ -3292,3 +3292,9 @@ Owner: *"the characters' heads turn by themselves — improve the graphics criti
    keeps furniture and walls out (`clearShot`: closer, then the other side), and the lens eases in (`c.cp.lerp`).
 5. Measured, not eyeballed: `npx tsx scripts/life/town-head-probe.ts <static url>` (every room, every person: past the
    neck, a spin, a jump) — 6 faults before, 0 after. Tests: `tests/life-heads-stable.test.ts`.
+6. **RUSH close-up (owner, 30.10.2026: "the skip should be understated; more fun, more realistic"):** GO is the one big
+   button, skip is a quiet link under it (`.quiet`, after 1.6s). A searched place OPENS and stays open (`openers` in
+   `rush-render/flat.ts`: a drawer slides, the fridge door swings, a cushion lifts, the box on the wardrobe tips its lid,
+   a coat swings). A find is a stamp (`.found`), the last ten seconds beat (`.tension`), every place answers in its own
+   words the first time (`ev.empty.<kind>`). The search lens stands IN FRONT of the place inside his room, tries angles and
+   distances for a clear line to his hands, aims between his chest and his hands, and stays half way down when no lens is clean.
