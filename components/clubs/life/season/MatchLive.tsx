@@ -63,13 +63,17 @@ export function MatchLive({anchor, def, nameOf, heroize, reduced, cue, celebrate
   const [over, setOver] = useState(false)
   const [noise, setNoise] = useState(0)
   const [held, setHeld] = useState(false)
+  /* the night opens on the record itself: the archive's slate, the way a broadcast opened on its caption card. The
+     clock does not start until it has been read (or tapped through). */
+  const [slate, setSlate] = useState(true)
+  useEffect(() => { if (!slate) return; const id = window.setTimeout(() => setSlate(false), reduced ? 2200 : 4200); return () => window.clearTimeout(id) }, [slate, reduced])
   const next = useRef(0), hold = useRef(0), started = useRef(false)
   const doneBtn = useRef<HTMLButtonElement | null>(null)
 
-  useEffect(() => { if (!started.current) { started.current = true; cue('whistle') } }, [cue])
+  useEffect(() => { if (!slate && !started.current) { started.current = true; cue('whistle') } }, [cue, slate])
   // the night's own clock: it stands while a goal is being shouted
   useEffect(() => {
-    if (over) return
+    if (over || slate) return
     let raf = 0, last = performance.now()
     const tick = (now: number) => {
       const dt = Math.min(.1, (now - last) / 1000); last = now
@@ -79,7 +83,7 @@ export function MatchLive({anchor, def, nameOf, heroize, reduced, cue, celebrate
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [over, reduced])
+  }, [over, reduced, slate])
   useEffect(() => {
     while (next.current < plan.length && plan[next.current]!.at <= t) {
       const e = plan[next.current++]!
@@ -108,6 +112,16 @@ export function MatchLive({anchor, def, nameOf, heroize, reduced, cue, celebrate
 
   return (
     <section className={s.live} data-at={def.at} data-life="live" role="region" aria-label={word(copy, 's1.live', 'Live')} data-over={over ? 'true' : 'false'}>
+      {slate && (
+        <button type="button" className={s.slate} onClick={() => setSlate(false)} data-life="live-slate" data-at={def.at}>
+          <small>{word(copy, 'archive', 'From the archive')}</small>
+          <b className={s.slateDate}><bdi>{date}</bdi></b>
+          {m ? <span className={s.slateTeams} lang={anchor.locale} dir="auto"><bdi>{m.home}</bdi> <i>–</i> <bdi>{m.away}</bdi></span> : <span className={s.slateTeams} lang={anchor.locale} dir="auto">{anchor.title}</span>}
+          {anchor.hint && <span className={s.slateHint} lang={anchor.locale} dir="auto">{anchor.hint}</span>}
+          <em className={s.slateWhere}>{word(copy, `s1.at.${def.at}`, def.at === 'radio' ? 'On the radio, at home' : def.at === 'screen' ? 'On the screen' : 'In the ground')}</em>
+          {anchor.sources[0] && <span className={s.slateSource}>{word(copy, 'sources', 'Sources')}: <bdi>{anchor.sources[0].publisher}</bdi></span>}
+        </button>
+      )}
       <div className={s.board} data-life="live-board">
         <div className={s.boardTop}>
           <span><bdi>{date}</bdi>{anchor.hint ? <> · <bdi lang={anchor.locale} dir="auto">{anchor.hint}</bdi></> : null}</span>
