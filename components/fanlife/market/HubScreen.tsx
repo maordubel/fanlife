@@ -11,7 +11,6 @@ import { ForYouPanel } from '@/components/fanlife/market/ForYouPanel'
 import { MarketCurtain } from './MarketCurtain'
 import { MarketSignIn } from '@/components/fanlife/market/MarketSignIn'
 import type { MatchesState } from '@/components/fanlife/market/MatchesPanel'
-import { WorldHaveSheet } from '@/components/fanlife/market/WorldHaveSheet'
 import { RequestSheet } from '@/components/fanlife/market/RequestSheet'
 import { WantedBoard } from '@/components/fanlife/market/WantedBoard'
 import { Notice, buttonPlain, buttonPrimary } from '@/components/fanlife/market/HubParts'
@@ -42,7 +41,6 @@ type Feed<Row> = { state: 'loading' } | { state: 'off' } | { state: 'error'; mes
  */
 export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> }) {
   adoptShirts(shirts)
-  const [wizard, setWizard] = useState(false)
   const [ready, setReady] = useState(false)
   const [q, setQ] = useState('')
   const [qSent, setQSent] = useState('')
@@ -296,7 +294,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
           ) : market.rows.length === 0 ? (
             filters.scope === 'world' && !qSent && activeCount(filters) === 1 ? (
               <Notice title={h('hub.world.empty.title')} body={h('hub.world.empty.body')}>
-                <button type="button" onClick={() => setWizard(true)} className={buttonPrimary}>{h('hub.world.list')}</button>
+                <button type="button" onClick={() => window.location.assign('/market/list/new')} className={buttonPrimary}>{h('hub.world.list')}</button>
               </Notice>
             ) : narrowed || qSent ? (
               <Notice title={h('hub.empty.title')} body={qSent && !narrowed ? h('hub.search.empty', { q: qSent }) : h('hub.empty.body')}>
@@ -304,7 +302,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
               </Notice>
             ) : (
               <Notice title={t('market.empty.title')} body={t('market.empty.body')}>
-                <Link href="/closet" className={buttonPrimary}>{t('market.toCloset')}</Link>
+                <Link href="/market/list/new" className={buttonPrimary}>{h('hub.list.cta')}</Link>
                 <Link href="/shirts" className="wk-link">{t('market.toArchive')}</Link>
               </Notice>
             )
@@ -327,7 +325,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             <span aria-hidden="true" className="wkc-wantedstrip-go">→</span>
           </button>
           {filters.scope !== 'game' ? (
-            <button type="button" className="wk-coupon wkc-anyclub min-h-tap" onClick={() => setWizard(true)}>
+            <button type="button" className="wk-coupon wkc-anyclub min-h-tap" onClick={() => window.location.assign('/market/list/new')}>
               <span className="wk-scissors" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="3" /><circle cx="6" cy="17" r="3" /><path d="M8.5 8.5L20 18M8.5 15.5L20 6" /></svg></span>
               <svg className="wkc-anyclub-globe" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" /></svg>
               <b className="wk-head">{h('hub.world.list')}</b>
@@ -406,18 +404,10 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       ) : null}
 
       <div className="wkc-listcta">
-        <Link href="/closet" className="wk-btn red lg block">{h('hub.list.cta')}</Link>
+        <Link href="/market/list/new" className="wk-btn red lg block">{h('hub.list.cta')}</Link>
       </div>
       </div>
 
-      {wizard ? (
-        <WorldHaveSheet
-          signedIn={signedIn}
-          signIn={signIn}
-          onClose={() => setWizard(false)}
-          onDone={() => { window.location.assign('/closet') }}
-        />
-      ) : null}
 
       {sheet && signedIn === false ? (
         <div className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/60 sm:items-center" role="dialog" aria-modal="true" aria-label={h('hub.request.title')}>
