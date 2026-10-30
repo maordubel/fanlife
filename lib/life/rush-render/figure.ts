@@ -230,6 +230,26 @@ export type Pose = {
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v))
 
 /** the body: run cycle, idle, celebrate, stumble, hands on knees, wave, carry; then the face */
+/** Turn a body (or a head) towards an angle the SHORT way round, at a turning rate — never a snap, never a spin.
+ *  `rate` is how quickly it closes the gap (per second); `max` caps the turn speed in radians a second. */
+export function turnTo(o: THREE.Object3D, want: number, dt: number, rate = 8, max = 7): void {
+  let d = want - o.rotation.y
+  d = Math.atan2(Math.sin(d), Math.cos(d))
+  const step = d * Math.min(1, dt * rate), cap = max * dt
+  o.rotation.y = Math.atan2(Math.sin(o.rotation.y + Math.max(-cap, Math.min(cap, step))), Math.cos(o.rotation.y + Math.max(-cap, Math.min(cap, step))))
+}
+
+/** A person who wants to look at something turns the head first, and the body only when the head would go past
+ *  the neck. Returns the head's share, which the caller adds to the neck after `pose` ran. */
+export function lookAt(o: THREE.Object3D, want: number, dt: number, neck = 0.9): number {
+  let d = want - o.rotation.y
+  d = Math.atan2(Math.sin(d), Math.cos(d))
+  if (Math.abs(d) > neck) turnTo(o, o.rotation.y + (d - Math.sign(d) * neck), dt, 6, 4)
+  let h = want - o.rotation.y
+  h = Math.atan2(Math.sin(h), Math.cos(h))
+  return Math.max(-neck, Math.min(neck, h))
+}
+
 export function pose(fig: THREE.Object3D, st: Pose, t: number, dt: number): void {
   const u = fig.userData as FigureData
   const {J, face} = u

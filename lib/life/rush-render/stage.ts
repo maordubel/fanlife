@@ -22,7 +22,7 @@ import {dressCity} from './city'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
-import {HAIR, kitTexture, makeFigure, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
+import {HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
 export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean}
@@ -696,9 +696,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       if (grouped) n.fig.visible = false
       if (!n.fig.visible) return
       const live = sim.step === n.step
-      n.fig.rotation.y = Math.atan2(sim.x - n.x, sim.z - n.z)
-      pose(n.fig, {speed: 0, wave: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 14, joy: 0.6, talk: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 3, scarfUp: st.group > 0 && Math.sin(t * 2.4 + n.step) > 0}, t, dt)
-      n.extra.forEach((f, k) => { if (f.visible) { f.rotation.y = Math.atan2(sim.x - f.position.x, sim.z - f.position.z); pose(f, {speed: 0, scarfUp: Math.sin(t * 2.4 + k) > -0.3, joy: 1}, t, dt) } })
+      const nh = lookAt(n.fig, Math.atan2(sim.x - n.x, sim.z - n.z), dt)
+      pose(n.fig, {speed: 0, wave: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 14, joy: 0.6, talk: live && Math.hypot(sim.x - n.x, sim.z - n.z) < 3, scarfUp: st.group > 0 && Math.sin(t * 2.4 + n.step) > 0, lookY: nh}, t, dt)
+      n.extra.forEach((f, k) => { if (f.visible) { const fh = lookAt(f, Math.atan2(sim.x - f.position.x, sim.z - f.position.z), dt); pose(f, {speed: 0, scarfUp: Math.sin(t * 2.4 + k) > -0.3, joy: 1, lookY: fh}, t, dt) } })
     })
     const target = view.ending ? null : stepTarget(level, sim)
     const curStep = level.steps[sim.step]
@@ -858,11 +858,30 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       // close up: going through a drawer, the camera comes down low beside him and looks at his hands
       const sq = sim.searchI >= 0 ? level.searches[sim.searchI] : null
       closeK += ((sq ? 1 : 0) - closeK) * Math.min(1, dt * (sq ? 3.2 : 2.2))
-      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, 0.75, sq.z + Math.cos(sq.face) * 0.55)
+      // the hands are where the place is: up on the wardrobe, at a coat on its hook, down in a drawer
+      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, sq.kind === 'wardrobe' ? 1.25 : sq.kind === 'coat' ? 1.2 : sq.kind === 'bed' || sq.kind === 'shoes' || sq.kind === 'toybox' ? 0.45 : 0.75, sq.z + Math.cos(sq.face) * 0.55)
+      // the boy is the subject and the place is what he is doing: aim between his chest and his hands, not at the furniture
+      if (sq) closeAt.lerp(tmp3.set(sim.x, child ? 0.85 : 1.05, sim.z), 0.45)
       // beside him, a little behind, on the side the camera already is (the open side of the room): his face, his hands and the place in one frame
-      const sa = sq ? sq.face + Math.PI * 0.58 : 0, sb = sq ? sq.face - Math.PI * 0.58 : 0, side = Math.cos(sa) >= Math.cos(sb) ? sa : sb
-      const near = tmp2.set(sim.x + Math.sin(side) * 2.4, child ? 1.5 : 1.75, sim.z + Math.cos(side) * 2.4 + 0.5)
-      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * 0.92), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
+      // in FRONT of the place and to one side of him (about sixty degrees off its face): further round than that and the lens
+      // ends up beside or behind the furniture he is going through — the armchair filled the screen. Of the two sides, the
+      // one with open floor between the lens and his hands; then the one the camera is already on.
+      let side = 0, cdist = 2.2, closeCap = 0.92
+      if (sq) {
+        // the lens stays in the room he is in, and nothing stands between it and his hands
+        const room = level.rooms.find(r => sim.x >= r.rect.x0 && sim.x <= r.rect.x1 && sim.z >= r.rect.z0 && sim.z <= r.rect.z1)?.rect
+        const ok = (a: number, d: number) => { const cx = sim.x + Math.sin(a) * d, cz = sim.z + Math.cos(a) * d
+          if (room && (cx < room.x0 + 0.12 || cx > room.x1 - 0.12 || cz < room.z0 + 0.12 || cz > room.z1 - 0.12)) return false
+          for (let k = 0; k <= 10; k++) { const x = cx + (closeAt.x - cx) * k / 10, z = cz + (closeAt.z - cz) * k / 10; for (const b of level.blocks) if (x > b.x0 && x < b.x1 && z > b.z0 && z < b.z1) return false }
+          return true }
+        const pref = Math.cos(sq.face + Math.PI * 0.33) >= Math.cos(sq.face - Math.PI * 0.33) ? 1 : -1
+        let hit = false
+        found: for (const d of [2.2, 1.8, 1.5, 1.15]) for (const f of [0.33, 0.2, 0.45, 0]) for (const sg of [pref, -pref]) { const a = sq.face + sg * f * Math.PI; if (ok(a, d)) { side = a; cdist = d; hit = true; break found } }
+        // no clean lens in a room this small: stay half way down — a mid shot from above beats a wall of wardrobe doors
+        if (!hit) { side = sq.face; cdist = 2.2; closeCap = 0.45 }
+      }
+      const near = tmp2.set(sim.x + Math.sin(side) * cdist, (child ? 1.45 : 1.7) + (sq?.kind === 'wardrobe' ? 0.75 : 0), sim.z + Math.cos(side) * cdist)
+      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * closeCap), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
       camLook.lerp(tmp3.set(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
       const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6 - closeK * 8; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
@@ -870,12 +889,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const k = Math.min(view.endT / 1.2, 1), e = k * k * (3 - 2 * k)
       camPos.lerp(tmp.set(sim.x + 0.6, child ? 1.2 : 1.55, sim.z - 2.4), Math.min(1, dt * (2 + e * 4)))
       cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x, view.outcome === 'slip' ? 1.0 : 1.4, sim.z), Math.min(1, dt * 5)); cam.lookAt(camLook)
+      camLook.lerp(tmp3.set(sim.x, view.outcome === 'slip' ? 1.0 : 1.4, sim.z), Math.min(1, dt * 5)); cam.lookAt(camLook)
       cam.fov += (42 - cam.fov) * Math.min(1, dt * 3)
     } else if (heroCar) {
       const target = tmp.set(sim.x * 0.6 + jx, 3.4 + jy, sim.z + 8.5)
       camPos.lerp(target, Math.min(dt * 5, 1)); cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x * 0.8, 1.2, sim.z - 14), Math.min(dt * 6, 1)); cam.lookAt(camLook)
+      camLook.lerp(tmp3.set(sim.x * 0.8, 1.2, sim.z - 14), Math.min(dt * 6, 1)); cam.lookAt(camLook)
       const fov = 58 + Math.min(sim.speed, 30) * 0.5; cam.fov += (fov - cam.fov) * Math.min(dt * 3, 1)
     } else if (view.cam === 'chase') {
       const back = 3.1 + sp * 0.1, high = (child ? 1.55 : 1.85) + sp * 0.02, side = 0.75

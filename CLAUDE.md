@@ -3277,3 +3277,24 @@ Owner: *"by RUN missions I do not mean running every time — I mean close-up mi
 3. **The plan and the bot are honest**: they search nearest-first without knowing which drawer, so the clock is fair for a player who does not know either.
 4. **At night a look is a cone on the floor that stops at walls** (`flatSight`), a seated watcher turns her head (`Patrol.sweep`), loud boards (`Level.creaks`) are heard, and an eye on the HUD opens as her look comes round. A player who walks straight through is sent back to his room; the bot never is (`tests/life-closeup-missions.test.ts`).
 5. **Every home mission sits where the episode's story is and is followed by a film** (`show: [cine(...)]`): a step's lines set it up, the mission plays it, the film pays it off. A mission's slip never dead-ends the story.
+
+## 133 · Heads stay on necks, bodies turn the short way, a close-up sees a face (30.10.2026)
+
+Owner: *"the characters' heads turn by themselves — improve the graphics critically."*
+1. **TOWN: every frame starts from a still head** (`animDoll` → `u.head.rotation.set(0,0,0)`). The walk cycle (`-=`) and the
+   expressions (`H.x+=`) ADD to it; a walker or a sitter never set it, so the head carried last frame's turn and spun.
+2. **A neck has limits and a speed** (`P.sync`): clamp x −.55….6, y ±1.1, z ±.35, then damp towards it (9/s). A new thing
+   to look at used to swing the head across in one frame.
+3. **Bodies turn the short way at a capped rate.** TOWN `Body.turn` caps 9 rad/s and wraps yaw; a step that only slid
+   along a wall keeps the stick's direction. RUSH uses `turnTo`/`lookAt` (`lib/life/rush-render/figure.ts`): never a raw
+   `rotation.y +=` lerp (it went 340° the long way) and never a per-frame `atan2` snap. `lookAt` turns the head first.
+4. **A close-up stands in front of the FACE** (the subject's yaw, not the room camera), a ray from the face to the lens
+   keeps furniture and walls out (`clearShot`: closer, then the other side), and the lens eases in (`c.cp.lerp`).
+5. Measured, not eyeballed: `npx tsx scripts/life/town-head-probe.ts <static url>` (every room, every person: past the
+   neck, a spin, a jump) — 6 faults before, 0 after. Tests: `tests/life-heads-stable.test.ts`.
+6. **RUSH close-up (owner, 30.10.2026: "the skip should be understated; more fun, more realistic"):** GO is the one big
+   button, skip is a quiet link under it (`.quiet`, after 1.6s). A searched place OPENS and stays open (`openers` in
+   `rush-render/flat.ts`: a drawer slides, the fridge door swings, a cushion lifts, the box on the wardrobe tips its lid,
+   a coat swings). A find is a stamp (`.found`), the last ten seconds beat (`.tension`), every place answers in its own
+   words the first time (`ev.empty.<kind>`). The search lens stands IN FRONT of the place inside his room, tries angles and
+   distances for a clear line to his hands, aims between his chest and his hands, and stays half way down when no lens is clean.

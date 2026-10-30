@@ -158,7 +158,7 @@ function Body(def,id){
  this.g=g;this.o=g.userData.o;this.def=def;this.x=def.x;this.z=def.z;this.yaw=o.ry;this.s=o.s;this.hm=1.72*o.s;this.w=0;this.moving=false;this.path=null;this.speed=def.speed||SPEED*.8;this.wantYaw=null;
 }
 Body.prototype.place=function(){this.g.position.x=this.x*U;this.g.position.z=this.z*U;this.g.rotation.y=this.yaw};
-Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;while(d<-PI)d+=2*PI;var step=d*Math.min(1,dt*(rate||10));this.yaw+=step;
+Body.prototype.turn=function(to,dt,rate){var d=to-this.yaw;while(d>PI)d-=2*PI;while(d<-PI)d+=2*PI;var step=d*Math.min(1,dt*(rate||10)),cap=9*dt;step=step>cap?cap:step<-cap?-cap:step;this.yaw+=step;if(this.yaw>PI)this.yaw-=2*PI;else if(this.yaw<-PI)this.yaw+=2*PI;
  /* turning on the spot is a few small steps, never a statue spinning on its soles: when the body is not walking,
     the turn feeds a short shuffle into the same leg cycle the walk uses */
  if(!this.def.sit&&(this.o.sv||0)<.5&&Math.abs(step)>.0015){this.o.sw=(this.o.sw||0)+Math.abs(step)*3.2;this.o.sv=Math.max(this.o.sv||0,Math.min(.42,Math.abs(d)*.9))}};
@@ -379,7 +379,7 @@ function frame(t,dt){
   if(mag>.12){
    path=null;pending=null;if(mag>1){ax/=mag;ay/=mag;mag=1}
    var sp=SPEED*(running?RUN:1)*Math.min(1,mag*1.15)*dt,dx=ax/mag*sp,dz=ay/mag*sp;
-   var ox=player.x,oz=player.z;if(slide(player,dx,dz)){moved=Math.hypot(player.x-ox,player.z-oz);player.wantYaw=Math.atan2(player.x-ox,player.z-oz)}
+   var ox=player.x,oz=player.z;if(slide(player,dx,dz)){moved=Math.hypot(player.x-ox,player.z-oz);player.wantYaw=moved>sp*.35?Math.atan2(player.x-ox,player.z-oz):Math.atan2(dx,dz)}
   }else if(path){
    player.path=path;player.speed=SPEED*(running?RUN:1);moved=follow(player,dt);path=player.path;
    if(!path&&pending){var pd=pending;pending=null;retarget(true);var pr=reachOf(pd.kind,pd.id),pm=marks.filter(function(m){return m.kind===pd.kind&&m.id===pd.id})[0];if(target&&target.kind===pd.kind&&target.id===pd.id)act(pd);else if(pr&&pm&&pm.on&&(pr[0]-player.x)*(pr[0]-player.x)+(pr[1]-player.z)*(pr[1]-player.z)<pm.reach*pm.reach)act(pd);else{faceEachOther(pd.id)}}
@@ -393,7 +393,7 @@ function frame(t,dt){
   if(a.path){var m=follow(a,dt);if(m>0)a.stride(m);if(!a.path){a.rest(dt);emit({type:'arrived',id:id})}}
   else if(a.def.follow&&!frozen){
    var gx=player.x-Math.sin(player.yaw)*2.1+(a.def.side||1)*Math.cos(player.yaw)*1.5,gz=player.z-Math.cos(player.yaw)*2.1-(a.def.side||1)*Math.sin(player.yaw)*1.5,ddx=gx-a.x,ddz=gz-a.z,dd=Math.hypot(ddx,ddz);
-   if(dd>1.1){var st2=Math.min(dd-.6,SPEED*1.05*dt),o1=a.x,o2=a.z;if(slide(a,ddx/dd*st2,ddz/dd*st2)){var mv=Math.hypot(a.x-o1,a.z-o2);a.stride(mv);a.wantYaw=Math.atan2(a.x-o1,a.z-o2)}else a.rest(dt)}else{a.rest(dt);a.wantYaw=player.yaw}
+   if(dd>1.1){var st2=Math.min(dd-.6,SPEED*1.05*dt),o1=a.x,o2=a.z;if(slide(a,ddx/dd*st2,ddz/dd*st2)){var mv=Math.hypot(a.x-o1,a.z-o2);a.stride(mv);if(mv>st2*.35)a.wantYaw=Math.atan2(a.x-o1,a.z-o2)}else a.rest(dt)}else{a.rest(dt);a.wantYaw=player.yaw}
   }else a.rest(dt);
   if(a.wantYaw!=null&&!a.def.sit)a.turn(a.wantYaw,dt,6);
   if(POSED[id])a.o.mode=POSED[id].mode;else if(id===focusId&&a.base!=='sit')a.o.mode='talk';else a.o.mode=a.base;
@@ -459,7 +459,10 @@ function gridDump(){return grid?{nx:grid.nx,nz:grid.nz,cell:CELL,x0:grid.x0,z0:g
    decides the story: LIFE asks for 'close' on dad, 'two' on dad and the boy, 'wide' on the room, and gets it. */
 var CINE=null,STU=null;
 function bodyOf(id){return id==='me'||id==='player'?player:actors[id]}
-function headOf(b){var y=b.g.position.y+(b.o.mode==='sit'||b.o.mode==='sittalk'||b.def&&b.def.sit?b.hm*.72:b.hm*.93);return new T.Vector3(b.x*U,y,b.z*U)}
+function headOf(b){var y=b.g.position.y+(b.o.mode==='sit'||b.o.mode==='sittalk'||b.def&&b.def.sit?b.hm*.72:b.hm*.93);
+ /* where the head really is, when the body has one: a guessed height aims a close-up over the head of anybody seated, posed or small */
+ var hu=b.g.userData&&b.g.userData.human;if(hu&&hu.bones){var hb=b._hb||(b._hb=hu.bones.filter(function(x){return x.name==='head'})[0]);if(hb){var v=new T.Vector3();hb.getWorldPosition(v);v.y+=.07*(b.s||1)*U;if(Math.abs(v.x-b.x*U)<1.5*U&&Math.abs(v.z-b.z*U)<1.5*U)return v}}
+ return new T.Vector3(b.x*U,y,b.z*U)}
 function cineTick(t,dt){
  var c=CINE;if(!c)return;c.el+=dt;var k=Math.min(1,c.el/Math.max(.5,c.ms/1000));
  /* people walking for the scene keep walking while the shot runs */
@@ -472,11 +475,41 @@ function cineTick(t,dt){
  /* a phone held upright sees a narrow slice: the camera stands further back so a close-up is a face and shoulders, not an eye */
  var asp=innerWidth/Math.max(1,innerHeight),back=asp<1?Math.pow(Math.min(2.2,.9/asp),.75):1;
  var p,l,fov;
- if(c.cam==='close'){var h=heads[0],hm=subs[0].hm,d=(.55+hm*.42)*back*(1-.08*k);p=h.clone().add(dir.clone().multiplyScalar(d)).add(side.clone().multiplyScalar(d*.22));p.y=h.y+.02;l=h.clone();l.y-=.06;fov=30}
+ /* two people side by side (on a sofa, at a bar) have no shoulder to film over: the lens goes in front of the pair */
+ if(c.cam==='over'&&heads.length>1&&sideBySide(subs[0],subs[1]))c.cam='two';
+ if(c.cam==='close'){var h=heads[0],b0=subs[0],hm=b0.hm,d=(.55+hm*.42)*back*(1-.08*k);
+  /* a close-up stands in front of the FACE: the room's camera may be behind a person who faces the wall, and a close-up from there is the back of a head */
+  var fw=new T.Vector3(Math.sin(b0.yaw),0,Math.cos(b0.yaw));if(fw.dot(dir)<-.35)fw.lerp(dir,.35).normalize();var sd0=new T.Vector3(fw.z,0,-fw.x);if(sd0.dot(side)<0)sd0.negate();
+  p=h.clone().add(fw.clone().multiplyScalar(d)).add(sd0.multiplyScalar(d*.22));p.y=h.y+.02;l=h.clone();l.y-=.06;fov=30}
  else if(c.cam==='over'&&heads.length>1){var a=heads[0],b=heads[1],ab=a.clone().sub(b);ab.y=0;ab.normalize();var sd=new T.Vector3(ab.z,0,-ab.x);p=a.clone().add(ab.multiplyScalar(.75)).add(sd.multiplyScalar(.32));p.y=a.y+.1;l=b.clone();l.y-=.08;fov=34}
- else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);p=mid.clone().add(dir.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
- K.cineCam({p:[p.x,p.y,p.z],l:[l.x,l.y,l.z],fov:fov});
+ else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);var fw2=dir;if(c.cam==='two'){fw2=new T.Vector3(Math.sin(subs[0].yaw)+Math.sin(subs[1].yaw),0,Math.cos(subs[0].yaw)+Math.cos(subs[1].yaw));if(fw2.lengthSq()<.01)fw2=dir;else fw2.normalize()}p=mid.clone().add(fw2.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
+ /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
+    lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
+ var tg=c.cam==='over'&&heads.length>1?heads[1]:heads[0];/* the face the lens is pointed at — over a shoulder, that is the OTHER person */
+ var key=(c.on||[]).join()+'|'+Math.round(tg.x*3)+','+Math.round(tg.z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(tg,p,subs,heads.filter(function(x){return x!==tg}))}catch(e){c.fix=null}}
+ if(c.fix&&c.fix.wide){K.cineCam(null);K.follow(camX,1+.06*k);return}
+ if(c.fix&&c.fix.p)p=tg.clone().add(c.fix.p)
+ /* and the lens gets there like a camera operator would, not in one jump: every frame used to place it afresh */
+ if(!c.cp){c.cp=p.clone();c.cl=l.clone()}else{var ck=Math.min(1,dt*4.5);c.cp.lerp(p,ck);c.cl.lerp(l,ck)}
+ K.cineCam({p:[c.cp.x,c.cp.y,c.cp.z],l:[c.cl.x,c.cl.y,c.cl.z],fov:fov});
 }
+var _ray=null;
+function blocking(o){for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.o||q.userData.human||q.userData.noBlock))return false;if(!q.visible)return false}var m=o.material;if(Array.isArray(m))m=m[0];return !!(o.isMesh&&!o.isSprite&&m&&!m.isMeshBasicMaterial&&!(m.transparent&&m.opacity<.6))}
+function hitOn(from,to){if(!K.world)return null;_ray=_ray||new T.Raycaster();var v=to.clone().sub(from),len=v.length();_ray.set(from,v.normalize());_ray.far=len;
+ /* only solid meshes: a Sprite cannot be raycast without a camera (r128 throws), and a person, a light or glass is not in the way */
+ var solid=[];K.world.traverse(function(o){if(o.isMesh&&!o.isSprite&&!o.isSkinnedMesh&&!o.isInstancedMesh&&blocking(o))solid.push(o)});var hs=_ray.intersectObjects(solid,false);for(var i=0;i<hs.length;i++)if(hs[i].distance>.12)return hs[i].distance;return null}
+function sideBySide(a,b){var dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz)||1,fa=Math.sin(a.yaw)*dx/d+Math.cos(a.yaw)*dz/d,fb=Math.sin(b.yaw)*-dx/d+Math.cos(b.yaw)*-dz/d;return Math.abs(fa)<.5&&Math.abs(fb)<.5}
+function segDist(a,b,c){var ab=b.clone().sub(a),t=Math.max(0,Math.min(1,c.clone().sub(a).dot(ab)/Math.max(1e-6,ab.lengthSq())));return a.clone().add(ab.multiplyScalar(t)).distanceTo(c)}
+/* other people are in the way too: a head and a chest each, as spheres, for everybody who is not in the shot */
+function peopleOn(from,to,subs){var all=[player].concat(Object.keys(actors).map(function(k){return actors[k]}));for(var i=0;i<all.length;i++){var b=all[i];if(!b||subs.indexOf(b)>=0||!b.g.visible)continue;var hd=headOf(b);if(segDist(from,to,hd)<.3)return true;hd.y-=.55*b.s;if(segDist(from,to,hd)<.4)return true}return false}
+function clearShot(h,p,subs,others){var off=p.clone().sub(h),len=off.length(),best=null,bestD=0;others=others||[];
+ /* every face in the shot must see the lens, not just the first one */var seen=function(q){for(var i=0;i<others.length;i++){if(hitOn(others[i],q)!=null||peopleOn(others[i],q,subs))return false}return true};
+ /* round the face a few ways, and a little higher (over a sofa back); the first lens with nothing in front of it wins */
+ var turns=[0,.6,-.6,1.1,-1.1],lifts=[0,.35,.9];/* .9: a high lens looking down over a sofa back or an armchair, the way a crew shoots a room full of furniture */
+ for(var li=0;li<lifts.length;li++)for(var ti=0;ti<turns.length;ti++){var a=turns[ti],o=new T.Vector3(off.x*Math.cos(a)-off.z*Math.sin(a),off.y+lifts[li],off.x*Math.sin(a)+off.z*Math.cos(a)),q=h.clone().add(o);
+  if(peopleOn(h,q,subs))continue;var at=hitOn(h,q);if(at==null&&seen(q)){if(!a&&!lifts[li])return null;return{p:o}}if(at!=null&&at>bestD&&seen(h.clone().add(o.clone().multiplyScalar((at-.1)/len)))){bestD=at;best=o}}
+ /* nothing clear: the nearest-to-clear lens only if it still frames a face and shoulders; otherwise the room's own camera */
+ if(best&&bestD>len*.85)return{p:best.multiplyScalar((bestD-.1)/len)};return{wide:true}}
 function cineShot(o){
  if(!o){CINE=null;unpose();window.__noAO=!!STU;K.cineCam(null);if(player){player.cpath=null}camX=0;trackCam(0,true);return true}
  CINE={cam:o.cam||'wide',on:o.on||[],ms:o.ms||2000,el:0};/* a close shot has the wall half a metre behind a face: screen-space obscurance prints a dark cloud round the head there */window.__noAO=CINE.cam==='close'||CINE.cam==='over';cineTick(now,0);return true}

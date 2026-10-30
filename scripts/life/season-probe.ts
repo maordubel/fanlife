@@ -35,7 +35,7 @@ const visible = async (page: Page, sel: string) => (await page.locator(sel).coun
 // a machine without a GPU answers a click slowly enough that Playwright's actionability wait times out; the event itself still lands
 const press = async (page: Page, sel: string) => { try { await page.locator(sel).first().click({timeout: 4000}); return true } catch {
   // an animated button never settles for Playwright's actionability check: the DOM click is what a thumb does
-  return page.evaluate(s => { const b = document.querySelector(s) as HTMLElement | null; if (!b || !b.offsetParent) return false; b.click(); return true }, sel).catch(() => false) } }
+  return page.evaluate(s => { const b = document.querySelector(s) as HTMLElement | null; if (!b || !b.getClientRects().length) return false; b.click(); return true }, sel).catch(() => false) } }
 const goTo = (page: Page, kind: string, id: string) => page.evaluate(([k, i]) => (window as unknown as {__lifeProbe: {runtime(): {goTo(k: string, i: string): boolean} | null}}).__lifeProbe.runtime()?.goTo(k!, i!) ?? false, [kind, id])
 
 /** The next door on a way of unlocked doors from `from` to `to`. */
