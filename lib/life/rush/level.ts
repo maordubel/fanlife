@@ -17,7 +17,7 @@
  */
 import type {KnownLook, MissionSpec, Verb} from './spec'
 import {applyQuest} from './quest'
-import {flatLevel, flatVia} from './flat'
+import {flatLevel, flatVia, isHome} from './flat'
 
 /* ───────────── seeded randomness ───────────── */
 
@@ -45,7 +45,11 @@ export type Walker = {x: number; z0: number; v: number; span: readonly [number, 
 /** somebody standing: a fan at the gate, a face in the crowd */
 export type Stander = {x: number; z: number; face: number; look: Look; role: 'fan' | 'rival'}
 /** a steward (or a rival group's lookout) walking a round and looking where he walks */
-export type Patrol = {pts: readonly (readonly [number, number])[]; v: number; range: number; fov: number; role: 'steward' | 'lookout' | 'mum' | 'cat'}
+export type Patrol = {
+  pts: readonly (readonly [number, number])[]; v: number; range: number; fov: number; role: 'steward' | 'lookout' | 'mum' | 'cat' | 'dad'
+  /** somebody who stays put and turns his head (Dad on the sofa): his face swings from `a` to `b` and back every `period` seconds, resting `rest` of it on `a` */
+  sweep?: {a: number; b: number; period: number; rest: number}
+}
 /** what a find mission is looking for */
 export type Target = {x: number; z: number; kind: 'person' | 'spot'; look: Look | null; clues: Clue[]}
 export type Clue = 'cap' | 'scarf' | 'kit' | 'plain' | 'beard' | 'tall' | 'grey' | 'black' | 'barrier' | 'light'
@@ -87,9 +91,28 @@ export type Step = {
   /** talking to him gives one more clue (find) */
   reveals: boolean
 }
-export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape' | 'battery'
-/** something on the ground: required by a step, or an extra (`step: null`) that buys a few seconds */
-export type Pickup = {x: number; z: number; kind: PickupKind; step: number | null}
+export type PickupKind = 'sticker' | 'coin' | 'bottle' | 'roll' | 'bag' | 'scarf' | 'paint' | 'cloth' | 'tape' | 'battery' | 'tin' | 'ticket' | 'shoes' | 'sandwich' | 'money' | 'phonecard'
+/**
+ * something on the ground: required by a step, or an extra (`step: null`) that buys a few seconds.
+ * `inside`: it is hidden in that search (a drawer, a coat pocket) and is his only when the search is done.
+ */
+export type Pickup = {x: number; z: number; kind: PickupKind; step: number | null; inside?: number}
+/**
+ * A place to search, close up (place `flat`): tap act next to it, keep still, and for `secs` he goes through it
+ * — the camera comes down to his hands. Whatever is `inside` is his; often nothing is. `for` is the step it might
+ * answer (where the compass points while that step is open), null for a place only worth a look.
+ */
+export type SearchKind = 'drawer' | 'fridge' | 'table' | 'sideboard' | 'cushion' | 'armchair' | 'shoes' | 'coat' | 'bed' | 'wardrobe' | 'desk' | 'toybox' | 'bowl'
+export type Search = {x: number; z: number; kind: SearchKind; secs: number; face: number; for: number | null}
+/** the people at home in this scene, and the hour: what the renderer dresses (a home only) */
+export type House = {
+  /** who sits on the sofa and is not part of the play (a watcher who turns his head is a patrol with a `sweep`) */
+  sofa: 'dad' | null
+  night: boolean
+  /** the television on the sideboard (its light on the walls at night); the window in his room open at the end */
+  tv: boolean
+  window: boolean
+}
 /** a knot of supporters singing: stand in it a moment and the song carries you (an extra) */
 export type Ring = {x: number; z: number; r: number}
 /** a bin, a shutter: bang it (act) and every steward near turns his head to it */
@@ -153,6 +176,10 @@ export type Level = {
   trips: Trip[]
   /** every pace in this level is this share of the verb's own (a flat is not a street: 1 elsewhere) */
   pace: number
+  /** a home's close-up places to search, its loud boards, and who is in it */
+  searches: Search[]
+  creaks: Rect[]
+  house: House | null
 }
 
 export type FavourKind = 'lost-kid' | 'bag'
@@ -179,6 +206,11 @@ export function walkerAt(w: Walker, t: number): {x: number; z: number} {
 
 /** where a patrol is and which way he faces: the round is walked out and back, at a steady pace */
 export function patrolAt(p: Patrol, t: number): {x: number; z: number; face: number} {
+  if (p.sweep) {
+    // he sits where he sits; his head goes to the door and back, and rests on the television most of the time
+    const w = p.sweep, u = wrap(t, 0, w.period) / w.period, k = u < w.rest ? 0 : Math.sin((u - w.rest) / (1 - w.rest) * Math.PI)
+    return {x: p.pts[0]![0], z: p.pts[0]![1], face: w.a + (w.b - w.a) * k}
+  }
   const legs: number[] = []
   let total = 0
   for (let i = 0; i < p.pts.length - 1; i++) { const d = Math.hypot(p.pts[i + 1]![0] - p.pts[i]![0], p.pts[i + 1]![1] - p.pts[i]![1]); legs.push(d); total += d }
@@ -212,13 +244,13 @@ export function look(r: () => number, o: Partial<Look> = {}): Look {
 const SLACK = [1.95, 1.65, 1.45] as const
 
 function placeOf(spec: MissionSpec): Place {
-  if (spec.template === 'flat-run') return 'flat'
+  if (isHome(spec.template)) return 'flat'
   return spec.verb === 'drive' ? 'road' : spec.verb === 'sneak' ? 'yard' : spec.verb === 'find' ? 'crowd' : 'street'
 }
 
-type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids' | 'favours' | 'surges' | 'grip' | 'rooms' | 'blocks' | 'trips' | 'pace'> & Partial<Pick<Level, 'areas' | 'side'>>
+type Base = Omit<Level, 'timeScale' | 'areas' | 'steps' | 'pickups' | 'rings' | 'noises' | 'escort' | 'side' | 'kids' | 'favours' | 'surges' | 'grip' | 'rooms' | 'blocks' | 'trips' | 'pace' | 'searches' | 'creaks' | 'house'> & Partial<Pick<Level, 'areas' | 'side'>>
 function finish(l: Base): Level {
-  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, favours: [], surges: [], grip: 1, rooms: [], blocks: [], trips: [], pace: 1, ...l, timeScale: 1}
+  return {areas: [], steps: [], pickups: [], rings: [], noises: [], escort: null, side: 0, kids: false, favours: [], surges: [], grip: 1, rooms: [], blocks: [], trips: [], pace: 1, searches: [], creaks: [], house: null, ...l, timeScale: 1}
 }
 
 function street(spec: MissionSpec, r: () => number): Level {
@@ -378,7 +410,7 @@ export function buildLevel(spec: MissionSpec): Level {
  * the crowd pushes.
  */
 function conditions(l: Level, spec: MissionSpec, r: () => number): void {
-  const night = spec.time === 'night', rain = spec.weather === 'rain'
+  const night = l.house ? l.house.night : spec.time === 'night', rain = spec.weather === 'rain'
   const sight = (night ? -1 : 1) + (rain ? -0.5 : 0)
   l.patrols = l.patrols.map(p => ({...p, range: Math.max(5, p.range + sight)}))
   if (night) l.walkers = l.walkers.filter((_, i) => i % 4 !== 3)
@@ -434,10 +466,22 @@ export function stepPoints(l: Level, i: number, from: {x: number; z: number}): {
   const st = l.steps[i]
   if (!st) return []
   if (st.kind !== 'collect') return [{x: st.x, z: st.z}]
-  const left = l.pickups.filter(p => p.step === i).map(p => ({x: p.x, z: p.z}))
+  // in the order a player who does not know which drawer it is in takes them: the nearest of what is on the floor
+  // and of the places it might be, until everything this step wants has turned up (the same walk the bot does)
+  const want = new Set(l.pickups.map((p, k) => p.step === i ? k : -1).filter(k => k >= 0))
+  const left: {x: number; z: number; pk: number | null; sk: number | null}[] = [
+    ...l.pickups.map((p, k) => ({x: p.x, z: p.z, pk: k, sk: null})).filter(q => want.has(q.pk) && l.pickups[q.pk]!.inside === undefined),
+    ...l.searches.map((q, k) => ({x: q.x, z: q.z, pk: null, sk: k})).filter(q => l.searches[q.sk]!.for === i),
+  ]
   const out: {x: number; z: number}[] = []
   let at = from
-  while (left.length) { left.sort((p, q) => routeMetres(l, at, p) - routeMetres(l, at, q)); at = left.shift()!; out.push(at) }
+  while (want.size && left.length) {
+    left.sort((p, q) => routeMetres(l, at, p) - routeMetres(l, at, q))
+    const n = left.shift()!
+    at = {x: n.x, z: n.z}; out.push(at)
+    if (n.pk !== null) want.delete(n.pk)
+    else l.pickups.forEach((p, k) => { if (p.inside === n.sk) want.delete(k) })
+  }
   return out
 }
 
@@ -448,7 +492,11 @@ export function planRoute(l: Level): {metres: number; seconds: number} {
   let at = {...l.start}, metres = 0, seconds = 0, escort = false
   l.steps.forEach((st, i) => {
     const pace = Math.min(PACE_PLAN[l.verb] * l.pace, escort && l.escort ? l.escort.pace : 99)
-    for (const p of stepPoints(l, i, at)) { const d = l.place === 'road' ? Math.abs(p.z - at.z) : routeMetres(l, at, p); metres += d; seconds += d / pace; at = p }
+    for (const p of stepPoints(l, i, at)) {
+      const d = l.place === 'road' ? Math.abs(p.z - at.z) : routeMetres(l, at, p); metres += d; seconds += d / pace; at = p
+      const q = l.searches.find(x => x.x === p.x && x.z === p.z)
+      if (q) seconds += q.secs + 0.6
+    }
     if (st.kind === 'talk') seconds += 1.6
     if (st.kind === 'stop') seconds += st.hold + 7
     if (st.joins) escort = true

@@ -84,8 +84,11 @@ export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
       {
         id: 'bag', goal: 'Pack for the away day', main: true,
         at: {room: 'bedroom', spot: 'wardrobe'}, verb: 'open',
-        lines: [think('Scarf. Sandwiches. Coins for the phone. The scarf. Did you pack the scarf. You packed the scarf.')],
+        lines: [think('Scarf. Money. Sandwiches. The phonecard for the call you promised. All of it somewhere in this flat.'), think('Did you pack the scarf. You have not packed anything yet.')],
+        // close up: the flat gone through for an away day (RUSH `pack-bag`); Mum's conditions come after, in the kitchen
+        mission: {template: 'pack-bag'},
         game: 'carry',
+        show: [cine('e6-packed')],
         react: [room('One bag. Everything a person needs to be away from home for fourteen hours.')],
         slip: [room('The sandwiches are in the bag. The bag is on the sandwiches. It will be fine. It will be flat.')],
         cut: {room: 'kitchen', spawn: 'fromLiving'},
@@ -196,6 +199,11 @@ export function e6(anchor: ArchiveRef | null, age: number): EpisodeScript {
     ],
 
     cines: [
+      // the bag zipped: the last look round a room he is leaving for fourteen hours
+      {id: 'e6-packed', shots: [
+        {cam: 'close', on: ['me'], ms: 2200, act: [{who: 'me', do: 'hold', item: 'bag'}, {who: 'me', do: 'emote', mood: 'joy'}], say: room('The zip goes all the way round on the third try.')},
+        {cam: 'wide', ms: 2300, act: [{who: 'me', do: 'hold', item: null}], say: think('First away day. No parents. You check the scarf is in there. It is in there.')},
+      ]},
       {id: 'e6-flash', shots: [
         {cam: 'close', on: ['me'], ms: 2800, act: [{who: 'me', do: 'emote', mood: 'joy'}], say: think('Two hours from home. Three hundred of you. It sounds like twelve thousand.')},
       ]},

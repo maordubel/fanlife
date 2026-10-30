@@ -168,3 +168,23 @@
 .count[data-go='true'] span { color: var(--r-prime); text-shadow: 6px 6px 0 var(--r-ink); font-size: clamp(4rem, 20vw, 10rem); }
 @keyframes rushCount { 0% { transform: scale(2.4) rotate(-6deg); opacity: 0; } 35% { transform: scale(.92) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: .92; } }
 @media (prefers-reduced-motion: reduce) { .count span { animation: none; } }
+
+/* close up: the place within reach of his hands, and the one he is going through (rule 132) */
+.prompt { position: absolute; inset-inline: 0; inset-block-end: calc(172px + var(--r-safe-b)); margin-inline: auto; inline-size: max-content; max-inline-size: 86vw; padding: 7px 14px; background: var(--r-paper); color: var(--r-ink); border-inline-start: 6px solid var(--r-prime); box-shadow: 3px 3px 0 var(--r-ink); font-family: var(--mag-mono); font-size: .9375rem; letter-spacing: .03em; pointer-events: none; animation: rushPrompt .22s ease-out; }
+.prompt b { font-weight: 700; }
+.prompt kbd { display: inline-block; min-inline-size: 1.6em; padding: 0 5px; margin-inline-end: 4px; border: 2px solid var(--r-ink); font-family: inherit; font-weight: 700; text-align: center; }
+.prompt[data-on='true'] { background: var(--r-prime); color: var(--r-on); border-inline-start-color: var(--r-ink); }
+@keyframes rushPrompt { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@media (min-width: 900px) { .prompt { inset-block-end: 96px; } }
+@media (prefers-reduced-motion: reduce) { .prompt { animation: none; } }
+/* the eye: her look coming round to the door (a home at night) */
+.eye { inset-block-end: calc(222px + var(--r-safe-b)); inset-inline: 0; margin-inline: auto; inline-size: max-content; max-inline-size: 86vw; padding: 6px 12px 6px 34px; background: var(--r-glass); color: var(--r-light); font-family: var(--mag-mono); font-size: .875rem; letter-spacing: .04em; pointer-events: none; position: absolute; }
+.eye::before { content: ''; position: absolute; inset-inline-start: 10px; inset-block-start: 50%; inline-size: 16px; block-size: calc(2px + 10px * var(--open, 0)); translate: 0 -50%; border-radius: 50%; background: var(--r-light); box-shadow: 0 0 0 2px var(--r-ink); transition: block-size .12s; }
+.eye[data-state='off'] { display: none; }
+.eye[data-state='turning'] { background: var(--r-paper); color: var(--r-ink); }
+.eye[data-state='on'] { background: var(--r-prime); color: var(--r-on); animation: rushEye .5s ease-in-out infinite alternate; }
+@keyframes rushEye { from { scale: 1; } to { scale: 1.06; } }
+@media (min-width: 900px) { .eye { inset-block-end: 140px; } }
+@media (prefers-reduced-motion: reduce) { .eye[data-state='on'] { animation: none; } }
+/* the seen bar sits under the legs when somebody can see him: the extras plate steps down for it */
+.extras[data-low='true'] { translate: 0 34px; }

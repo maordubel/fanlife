@@ -105,7 +105,7 @@ export const ROOMS: Record<RoomId, RoomPlay> = {
   },
   kitchen: {
     id: 'kitchen', floorY: 0, walk: [0.5, 1, 23.5, 12.5], surface: 'floor',
-    spawns: {start: {x: 18, z: 7.4, yaw: PI}, fromLiving: {x: 21.8, z: 2.8, yaw: 0}},
+    spawns: {start: {x: 19.4, z: 8.4, yaw: PI}, fromLiving: {x: 21.8, z: 2.8, yaw: 0}},
     slots: {table: {x: 10.6, z: 8.6, yaw: PI, sit: {seat: 1.7}}, counter: {x: 5.2, z: 4.4, yaw: PI * 0.9}, fridge: {x: 12.2, z: 3.4, yaw: 0.4}, tableEnd: {x: 16.4, z: 7, yaw: -PI / 2}},
     spots: {radio: {x: 16.8, z: 3.3, y: 5.4}, fridge: {x: 9.3, z: 3.5, y: 6}, drawer: {x: 3.4, z: 3.4, y: 3.8}, table: {x: 15.4, z: 6.6, y: 3.8}, window: {x: 12.6, z: 3.4, y: 7}, shelf: {x: 18.6, z: 3.3, y: 7.4}},
     doors: {door: {x: 20.7, z: 1, w: 2.2, d: 1.1, dir: 'n'}},

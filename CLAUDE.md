@@ -3258,3 +3258,20 @@ Owner: *"a RUN mission inside the house already for the batteries and the scarf 
 3. **The engine change is a scene:** TOWN `dive()` + a slammed mission card (LifeGame `warp`) → RUSH briefing over the place itself from a crane (no card) → 3·2·1·GO while the camera comes down (the clock does not run) → result → `land()` and the day opens out of the paper with the result on it.
 4. **After the doing, a film:** cine acts `sit` (him beside somebody seated), `lift`, `stand`, undone when the scene ends (`unpose`). E1: `e1-delivered` after the run, `e1-together` + `e1-goal` on the sofa.
 5. **Captured motion:** `public/life/town/mocap.json` (CMU mocap, `scripts/life/mocap-clips.py`, credit in `public/life/town/REALISM-ASSETS.md`) drives TOWN (`people.js` P.gait; `?nomocap` shows the old drawn cycle) and RUSH (`lib/life/motion/gait.ts`). Angles are measured from joint positions, never read off BVH channels. Labs: `public/life/town/gait-lab.html`.
+
+## 131 · Nobody walks through the furniture (30.10.2026)
+
+Owner: *"the characters still collide with objects."* Measured, not guessed: `npx tsx scripts/life/town-collision-probe.ts <url>` opens every TOWN room and reports furniture the grid leaves walkable (`open`) and anybody standing inside a piece (`inside`). It found 153 and now finds none.
+1. **A piece keeps a whole shoulder off it** (`BODY` .55 units in `play.js`), not a quarter of one. A piece is never dropped because a door, a person or the spawn stands near it.
+2. **Where the shoulder cuts a way off, the pieces on that way are SQUEEZED first** (`SQUEEZE`: a body turning sideways), and only then the smallest of them is given back. The way is the route walked in quarter-cell steps — a route is its corners, the furniture is between them.
+3. **Floor nobody can walk to is sealed** (the strip behind a desk): a target there sent the player to a place he could see and never reach.
+4. **A standing person whose feet are in a piece steps out of it** to the nearest free floor when the room is entered.
+
+## 132 · A mission is a scene you walk into (30.10.2026)
+
+Owner: *"by RUN missions I do not mean running every time — I mean close-up missions, where you enter the mission; special missions for each subject, GTA-style."* ADR-fanlife-0013 still holds; skill `life-rush-mission-authoring` §2d.
+1. **Home missions are scenes in the flat** (`lib/life/rush/flat.ts`, `HOME_TEMPLATES`): `flat-run` (E1), `tin-hunt` (E2), `ticket-hunt` (E3), `night-window` (E5), `pack-bag` (E6). Each its own job, people and hour (`Level.house`); a home keeps its own hour.
+2. **Search is the close-up verb**: tap act by a place (`Search`), keep still, and he goes through it while the camera comes down beside him to his hands. What is hidden (`Pickup.inside`) is in one of several places the seed picks, and is NEVER on show or pointed at: the compass points at the places it might be (`Search.for`). Walking over a place gives nothing.
+3. **The plan and the bot are honest**: they search nearest-first without knowing which drawer, so the clock is fair for a player who does not know either.
+4. **At night a look is a cone on the floor that stops at walls** (`flatSight`), a seated watcher turns her head (`Patrol.sweep`), loud boards (`Level.creaks`) are heard, and an eye on the HUD opens as her look comes round. A player who walks straight through is sent back to his room; the bot never is (`tests/life-closeup-missions.test.ts`).
+5. **Every home mission sits where the episode's story is and is followed by a film** (`show: [cine(...)]`): a step's lines set it up, the mission plays it, the film pays it off. A mission's slip never dead-ends the story.

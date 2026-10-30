@@ -75,9 +75,12 @@ export function e3(anchor: ArchiveRef | null, age: number): EpisodeScript {
         id: 'tickets', goal: 'Check the tickets with Dad', main: true,
         at: {room: 'room', who: 'dad', slot: 'sofa'}, verb: 'talk',
         callbacks: [{when: has('life:s1:repair'), lines: [say('dad', 'And the shirt. The one with the repair. It knows the way.')]}],
-        lines: [say('dad', 'Tickets. Two. One. Two. Yes. Two.'), say('mum', 'You have counted them eleven times.'), say('dad', 'Twelve is a good number. Count with me.')],
+        lines: [say('dad', 'Tickets. Two. One. Two— where are they?', 'tense'), say('mum', 'You have counted them eleven times.'), say('dad', 'And now I have lost them a twelfth. Find them! Bus in ten!', 'tense')],
+        // close up: the flat gone through for one envelope while he pats every pocket he owns (RUSH `ticket-hunt`)
+        mission: {template: 'ticket-hunt'},
         game: 'count',
-        react: [room('Two tickets. Counted together. Twelve times, in the end.')],
+        show: [cine('e3-envelope')],
+        react: [room('Two tickets. Counted together, on the stairs. Twelve times, in the end.')],
         ask: {
           timer: 7, silent: 'dad',
           options: [
@@ -182,6 +185,12 @@ export function e3(anchor: ArchiveRef | null, age: number): EpisodeScript {
     ],
 
     cines: [
+      // the envelope in his hand: the father and son, and the mother who saw it coming
+      {id: 'e3-envelope', shots: [
+        {cam: 'two', on: ['me', 'dad'], ms: 2400, act: [{who: 'me', do: 'hold', item: 'ticket'}, {who: 'dad', do: 'face', to: 'me'}], say: room('You hold it up. He takes it like it might go off.')},
+        {cam: 'close', on: ['dad'], ms: 2300, act: [{who: 'dad', do: 'emote', mood: 'joy'}, {who: 'me', do: 'hold', item: null}], say: say('dad', 'Two. Both. Good. Never tell anybody about this.', 'joy')},
+        {cam: 'close', on: ['mum'], ms: 2000, act: [{who: 'mum', do: 'emote', mood: 'warm'}], say: say('mum', 'I will tell everybody about this.')},
+      ]},
       {id: 'e3-flash', shots: [
         {cam: 'close', on: ['me'], ms: 2600, act: [{who: 'me', do: 'emote', mood: 'wonder'}], say: think('In an hour you will see it for the first time. The green. Nobody warns you about the green.')},
       ]},

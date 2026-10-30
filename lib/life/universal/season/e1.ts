@@ -57,7 +57,7 @@ export const E1: EpisodeScript = {
       id: 'prep', goal: 'Batteries and the scarf — before kick-off', main: true, when: not(LATE),
       at: {room: 'room', who: 'dad', slot: 'sofa'}, verb: 'talk',
       lines: [
-        say('dad', 'Scarf: top of the wardrobe, in the box. Batteries: kitchen drawer — ask your mother. GO!', 'tense'),
+        say('dad', 'Scarf: top of the wardrobe, in the box. Batteries: a drawer. One of them rolled under the kitchen table, I heard it. GO!', 'tense'),
         me('Going!'),
       ],
       mission: {template: 'flat-run'},

@@ -78,13 +78,14 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const renderer = new THREE.WebGLRenderer({canvas, antialias: !lite, powerPreference: 'high-performance'})
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 2))
   renderer.toneMapping = THREE.ACESFilmicToneMapping
-  renderer.toneMappingExposure = spec.time === 'night' ? 1.08 : 1.0
+  // a home mission keeps its own hour (a grounded boy goes out at night whatever the day's clock says)
+  const night = level.house ? level.house.night : spec.time === 'night'
+  renderer.toneMappingExposure = night ? 1.08 : 1.0
   renderer.outputColorSpace = THREE.SRGBColorSpace
   renderer.shadowMap.enabled = !lite
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   const rnd = seeded(spec.seed ^ 0x51ed)
   const pick = <T,>(a: readonly T[]) => a[Math.floor(rnd() * a.length)]!
-  const night = spec.time === 'night'
   const disposables: {dispose(): void}[] = []
   const keep = <T extends {dispose(): void}>(x: T) => { disposables.push(x); return x }
 
@@ -151,7 +152,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const asphalt = noiseTex('#202227', 26, [3, 80], true)
   const tile = keep(canvasTex(256, 256, (g, w) => { g.fillStyle = '#6b6a6e'; g.fillRect(0, 0, w, w); for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { const v = 95 + rnd() * 25; g.fillStyle = `rgb(${v},${v - 2},${v - 4})`; g.fillRect(x * 64 + 2, y * 64 + 2, 60, 60) } }, [2, 40]))
   const plaster = ['#e9e3d6', '#ddd5c5', '#efe7d7', '#cfc8bb', '#e4d8c3', '#d8cfbf']
-  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0), one = new THREE.Vector3(1, 1, 1), tmp = new THREE.Vector3()
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0), one = new THREE.Vector3(1, 1, 1), tmp = new THREE.Vector3(), tmp2 = new THREE.Vector3(), closeAt = new THREE.Vector3()
+  let closeK = 0
   const lampLights: THREE.PointLight[] = []
   const lampZ: number[] = []
   const zStart = level.bounds.z1 + 30, zEnd = level.goal.z - 60, span = zStart - zEnd, zMid = (zStart + zEnd) / 2
@@ -532,11 +534,13 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const g = new THREE.Group(); g.position.set(p.x, 0, p.z); scene.add(g)
     const item = objOf(p.kind); item.position.y = 0.55; g.add(item)
     const glow = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: (p.step === null ? C('#ffffff') : tint.clone()).multiplyScalar(p.step === null ? 0.6 : 1.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending}))); glow.scale.set(1.3, 1.3, 1); glow.position.y = 0.55; g.add(glow)
-    if (p.step !== null) { const b2 = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.12, 0.12, 9, 8, 1, true)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: tint.clone(), transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false}))); b2.position.y = 4.5; g.add(b2) }
+    if (p.inside !== undefined) glow.visible = false
+    if (p.step !== null && p.inside === undefined) { const b2 = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.12, 0.12, 9, 8, 1, true)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: tint.clone(), transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false}))); b2.position.y = 4.5; g.add(b2) }
     return {g, item}
   })
   // the burst when something is picked up (three in the air at once is plenty)
   const gotSeen = level.pickups.map(() => false)
+  const revealT: number[] = level.pickups.map(() => -1)
   const bursts = [0, 1, 2].map(() => {
     const ring = new THREE.Mesh(keep(new THREE.RingGeometry(0.42, 0.5, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: tint.clone().multiplyScalar(2), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false})))
     const flash = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: tint.clone().multiplyScalar(1.6), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})))
@@ -718,7 +722,16 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       b.flash.scale.setScalar(0.6 + k * 2.2); (b.flash.material as THREE.SpriteMaterial).opacity = (1 - k) * 0.9; b.flash.position.y = 0.6 + k * 0.8
     })
     pickups.forEach((p, i) => {
-      p.g.visible = !sim.got[i]
+      // what is hidden in a drawer is never on show: when he finds it, it comes up out of the place into the light
+      const hidden = level.pickups[i]!.inside !== undefined
+      if (hidden && sim.got[i]) {
+        revealT[i] = (revealT[i] ?? -1) < 0 ? 0 : revealT[i]! + dt
+        const k = revealT[i]!, on = k < 1.3
+        p.g.visible = on
+        if (on) { const e = Math.min(1, k / 0.5); p.item.position.y = 0.7 + e * 1.1 + Math.max(0, k - 0.5) * 0.25; p.item.rotation.y = k * 7; p.item.scale.setScalar(0.6 + e * 0.9 - Math.max(0, k - 1) * 3) }
+        return
+      }
+      p.g.visible = !sim.got[i] && !hidden
       if (!p.g.visible) return
       p.item.position.y = 0.55 + Math.sin(t * 2.2 + i) * 0.09; p.item.rotation.y = t * 1.6 + i
     })
@@ -762,7 +775,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       })
     }
 
-    flat?.update(sim, t, dt, view.ending, view.outcome)
+    flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
     if (level.place !== 'flat') level.patrols.forEach((p, i) => {
       const at = patrolLook(level, sim, i), f = patrolFigs[i]!
@@ -783,6 +796,17 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       else if (view.intro > 0 || view.brief) pose(hero, {speed: 0, joy: 0.4, ticket: level.verb === 'run' && level.place !== 'flat'}, t, dt)
       else pose(hero, {speed: sim.stagger > 0 ? 1 : sp, effort: sim.sprinting ? 0.9 : tired ? 0.7 : Math.min(sp / 9, 0.5), panting: tired, stumble: sim.stagger > 0.5, lean: sim.sprinting ? 0.1 : 0, carry: carrying, crouch: level.place === 'yard' && !sim.sprinting ? 0.55 : 0}, t, dt)
       const hd = hero.userData as FigureData
+      // going through a place: he faces it, bends to it, and his hands go through it (a drawer is pulled, a coat patted)
+      if (sim.searchI >= 0 && !view.ending) {
+        const sq = level.searches[sim.searchI]!, low = sq.kind === 'bed' || sq.kind === 'table' || sq.kind === 'shoes' || sq.kind === 'toybox' || sq.kind === 'cushion'
+        let dy = sq.face - hero.rotation.y; dy = Math.atan2(Math.sin(dy), Math.cos(dy)); hero.rotation.y += dy * Math.min(1, dt * 10)
+        const J = hd.J, w = Math.sin(t * 11), up = sq.kind === 'wardrobe'
+        J.spine!.rotation.x = low ? 0.55 : up ? -0.18 : 0.22
+        if (low) { J.hipL!.rotation.x = J.hipR!.rotation.x = -0.9; J.kneeL!.rotation.x = J.kneeR!.rotation.x = 1.5; J.pelvis!.position.y *= 0.72 }
+        J.shoulderL!.rotation.x = (up ? -2.6 : -1.15) + w * 0.25; J.shoulderR!.rotation.x = (up ? -2.5 : -1.05) - w * 0.25
+        J.elbowL!.rotation.x = J.elbowR!.rotation.x = up ? -0.2 : -0.5 + Math.abs(w) * 0.3
+        J.head!.rotation.x = low ? 0.35 : up ? -0.4 : 0.25
+      }
       if (hd.J.roll) hd.J.roll.visible = level.verb === 'carry' && sim.holding
       hero.visible = view.cam === 'chase' || view.ending
       loot.visible = !!level.home && sim.back
@@ -831,10 +855,17 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(cam.fov) / 2) * cam.aspect), want = cam.aspect < 1 ? 6.4 : 12
       const dist = Math.min(22, Math.max(9, want / 2 / Math.tan(hf / 2))) * (1 - e * 0.45) + drop * drop * 12
       const high = dist * 0.86, back = dist * 0.5
-      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
+      // close up: going through a drawer, the camera comes down low beside him and looks at his hands
+      const sq = sim.searchI >= 0 ? level.searches[sim.searchI] : null
+      closeK += ((sq ? 1 : 0) - closeK) * Math.min(1, dt * (sq ? 3.2 : 2.2))
+      if (sq) closeAt.set(sq.x + Math.sin(sq.face) * 0.55, 0.75, sq.z + Math.cos(sq.face) * 0.55)
+      // beside him, a little behind, on the side the camera already is (the open side of the room): his face, his hands and the place in one frame
+      const sa = sq ? sq.face + Math.PI * 0.58 : 0, sb = sq ? sq.face - Math.PI * 0.58 : 0, side = Math.cos(sa) >= Math.cos(sb) ? sa : sb
+      const near = tmp2.set(sim.x + Math.sin(side) * 2.4, child ? 1.5 : 1.75, sim.z + Math.cos(side) * 2.4 + 0.5)
+      camPos.lerp(tmp.set(sim.x + jx, high + jy, sim.z + back).lerp(near, closeK * 0.92), Math.min(1, dt * (view.intro > 0 ? 3 : 4.5)))
       cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)), Math.min(1, dt * 6)); cam.lookAt(camLook)
-      const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
+      camLook.lerp(new THREE.Vector3(sim.x, 0.5 + e * 0.6, sim.z - (cam.aspect < 1 ? 1.4 : 0.6) * (1 - e)).lerp(closeAt, closeK), Math.min(1, dt * 6)); cam.lookAt(camLook)
+      const fov = 50 + Math.min(sp, 6) * 0.8 - e * 6 - closeK * 8; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     } else if (view.ending && !heroCar) {
       const k = Math.min(view.endT / 1.2, 1), e = k * k * (3 - 2 * k)
       camPos.lerp(tmp.set(sim.x + 0.6, child ? 1.2 : 1.55, sim.z - 2.4), Math.min(1, dt * (2 + e * 4)))

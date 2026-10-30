@@ -10,7 +10,7 @@
 "use strict";
 window.__err=window.__err||[];
 var IND={home:1,hall:1,school:1,work:1,'club-room':1};var K=window.__town,T=K.T,RM=window.RM,U=K.U,PI=Math.PI;
-var CELL=.5,RADIUS=.45,REACH=3.5,SPEED=5.6,RUN=1.55;
+var SEAL=null,CELL=.5,RADIUS=.45,BODY=.55,SQUEEZE=.2,REACH=3.5,SPEED=5.6,RUN=1.55;
 var sink=function(){},cfg=null,grid=null,player=null,actors={},exits=[],spots=[],marks=[],decor=[],target=null,frozen=false,S=null,SKINS={};
 var lastMood=null,FR={top:.8,bottom:-.4},axis={x:0,y:0},running=false,path=null,pending=null,graceUntil=0,lastExit=null,focusId=null,stepAcc=0,now=0,camX=0,camZ=1,fade=null;
 var ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0),hit=new T.Vector3();
@@ -25,34 +25,56 @@ function buildGrid(){
   for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=1;
  }
  (cfg.blocks||[]).forEach(function(r){block(r[0]-RADIUS,r[1]-RADIUS,r[2]+RADIUS,r[3]+RADIUS)});
- AUTO.forEach(function(r){block(r[0]-RADIUS*.55,r[1]-RADIUS*.55,r[2]+RADIUS*.55,r[3]+RADIUS*.55)});
+ /* a piece of furniture keeps a whole shoulder off it (rule 131): a body is half a metre wide, not a point */
+ AUTO.forEach(function(r){var p=r[4]==null?BODY:r[4];block(r[0]-p,r[1]-p,r[2]+p,r[3]+p)});
  decor.forEach(function(p){block(p.x-.8,p.z-.8,p.x+.8,p.z+.8)});
  (exits||[]).forEach(function(x){var e=x.def,i0=Math.max(0,Math.floor((e.x-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((e.x+e.w-w[0])/CELL)),j0=Math.max(0,Math.floor((e.z-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((e.z+e.d-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  Object.keys(actors).forEach(function(id){var a=actors[id];if(a.def.ghost||a.def.follow)return;var r=a.def.sit?1.0:.7;block(a.x-r,a.z-r,a.x+r,a.z+r)});
  (cfg.clear||[]).forEach(function(r){var i0=Math.max(0,Math.floor((r[0]-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((r[2]-w[0])/CELL)),j0=Math.max(0,Math.floor((r[1]-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((r[3]-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  grid={nx:nx,nz:nz,b:b,x0:w[0],z0:w[1]};
+ /* floor that cannot be walked to (the strip behind a desk, between a sofa and the wall) is not floor: a target there
+    would send the player to a place he can see and never reach, so it is sealed — measured from where he stands */
+ if(SEAL){var st=nearestFree(SEAL[0],SEAL[1],6);if(st){var seen=new Uint8Array(nx*nz),q=[st[1]*nx+st[0]];seen[q[0]]=1;
+  while(q.length){var c=q.pop(),ci=c%nx,cj=(c-ci)/nx;[[1,0],[-1,0],[0,1],[0,-1]].forEach(function(d){var i=ci+d[0],j=cj+d[1];if(i<0||j<0||i>=nx||j>=nz)return;var k=j*nx+i;if(seen[k]||b[k])return;seen[k]=1;q.push(k)})}
+  for(var k=0;k<nx*nz;k++)if(!b[k]&&!seen[k])b[k]=2}}
 }
 /* the furniture is solid: every object the room actually built that stands on the floor and is taller than a step
    becomes a block, measured from its own mesh — so a sofa, a table, a stall or a bin is walked round, never through.
    Anything that would cut the player off from a door, a person or a spot is given back (largest first). */
 var AUTO=[];
 function autoBlocks(){var out=[],w=cfg.walk,Wd=w[2]-w[0],Dd=w[3]-w[1],box=new T.Box3(),root=window.__town&&window.__town.world;if(!root)return out;root.updateMatrixWorld(true);
- root.traverse(function(o){if(!o.isMesh||o.isSkinnedMesh||o.isInstancedMesh||o.isSprite||!o.visible)return;var m=o.material;if(Array.isArray(m))m=m[0];if(!m||m.blending===T.AdditiveBlending||(m.transparent&&m.opacity<.6)||m.isShaderMaterial)return;
+ root.traverse(function(o){if(!o.isMesh||o.isSkinnedMesh||o.isInstancedMesh||o.isSprite||!o.visible)return;var m=o.material;if(Array.isArray(m))m=m[0];if(!m||m.isMeshBasicMaterial||m.blending===T.AdditiveBlending||(m.transparent&&m.opacity<.6)||m.isShaderMaterial)return;
   for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.head||q.userData.arms||q.userData.noBlock))return;if(!q.visible)return}
   box.setFromObject(o);if(box.min.y>.95||box.max.y<.3||box.max.y-box.min.y<.08)return;
   var x0=box.min.x/U,x1=box.max.x/U,z0=box.min.z/U,z1=box.max.z/U,dx=x1-x0,dz=z1-z0;
   if(dx>Wd*.55||dz>Dd*.75||dx*dz>70||(dx<.3&&dz<.3))return;
   if(x1<w[0]||x0>w[2]||z1<w[1]||z0>w[3])return;out.push([x0,z0,x1,z1])});
- var keep=[[cfg.spawn&&cfg.spawn.x,cfg.spawn&&cfg.spawn.z]].concat((cfg.exits||[]).map(function(e){return[e.x+e.w/2,e.z+e.d/2]})).concat((cfg.actors||[]).map(function(a){return[a.x,a.z]})).filter(function(p){return p[0]!=null});
- return out.filter(function(r){return!keep.some(function(p){return p[0]>r[0]-.9&&p[0]<r[2]+.9&&p[1]>r[1]-.9&&p[1]<r[3]+.9})})}
+ return out}
 function targetsOf(){var T0=[];(cfg.exits||[]).forEach(function(e){T0.push(function(){return[e.x+e.w/2,e.z+e.d/2]})});
  (cfg.actors||[]).forEach(function(a){if(a.talk===false)return;T0.push(function(){var c=nearestFree(a.x,a.z+1.2,a.reach||REACH)||nearestFree(a.x,a.z,a.reach||REACH);return c?centre(c[0],c[1]):null})});
  (cfg.spots||[]).forEach(function(t){T0.push(function(){var c=nearestFree(t.x,t.z,REACH-.4);return c?centre(c[0],c[1]):null})});return T0}
 function reachable(sp,T0){return T0.map(function(f){var p=f();return!!(p&&route(sp[0],sp[1],p[0],p[1]))})}
-function settleBlocks(sp){var all=Q0.get('noblock')?[]:autoBlocks();AUTO=[];buildGrid();var s0=freeAt(sp[0],sp[1])?sp:(function(){var c=nearestFree(sp[0],sp[1],6);return c?centre(c[0],c[1]):sp})();
- var T0=targetsOf(),base=reachable(s0,T0);AUTO=all.sort(function(a,b){return(b[2]-b[0])*(b[3]-b[1])-(a[2]-a[0])*(a[3]-a[1])});buildGrid();
- function ok(){var now=reachable(s0,T0);return base.every(function(v,i){return!v||now[i]})}
- var guard=0;while(AUTO.length&&!ok()&&guard++<80){AUTO.shift();buildGrid()}}
+/* Every piece stays solid. Where the full shoulder of padding would cut the player off from a door, a person or a
+   spot, the pieces on the way there are first squeezed (a body turns sideways past a chair), and only then — the
+   smallest first — given back. A sofa is never walked through because a lamp stood next to it. */
+function settleBlocks(sp){var all=Q0.get('noblock')?[]:autoBlocks();AUTO=[];SEAL=null;buildGrid();var s0=freeAt(sp[0],sp[1])?sp:(function(){var c=nearestFree(sp[0],sp[1],6);return c?centre(c[0],c[1]):sp})();
+ SEAL=s0;buildGrid();var T0=targetsOf(),base=reachable(s0,T0),open=T0.map(function(f){return f()}),paths=open.map(function(p){return p&&route(s0[0],s0[1],p[0],p[1])});
+ AUTO=all.map(function(r){return[r[0],r[1],r[2],r[3]]});buildGrid();
+ function fails(){var now=reachable(s0,T0);return base.map(function(v,i){return v&&!now[i]?i:-1}).filter(function(i){return i>=0})}
+ /* the way there, walked in quarter-cell steps (a route is its corners; the furniture is between them) */
+ var walks=paths.map(function(w){if(!w)return null;var pts=[[s0[0],s0[1]]].concat(w),out=[];for(var k=0;k<pts.length-1;k++){var a=pts[k],b=pts[k+1],n=Math.max(1,Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/(CELL*.25)));for(var m=0;m<=n;m++)out.push([a[0]+(b[0]-a[0])*m/n,a[1]+(b[1]-a[1])*m/n])}return out});
+ function gapTo(r,i){var w=walks[i];if(!w)return 1e9;var best=1e9;w.forEach(function(q){var dx=Math.max(r[0]-q[0],0,q[0]-r[2]),dz=Math.max(r[1]-q[1],0,q[1]-r[3]);best=Math.min(best,Math.hypot(dx,dz))});return best}
+ function onWay(r,i){return gapTo(r,i)<(r[4]==null?BODY:r[4])+CELL}
+ var area=function(r){return(r[2]-r[0])*(r[3]-r[1])},guard=0,bad=fails();
+ while(bad.length&&guard++<60){var hit=AUTO.filter(function(r){return bad.some(function(i){return onWay(r,i)})});
+  var tight=hit.filter(function(r){return r[4]==null});
+  if(tight.length){tight.forEach(function(r){r[4]=SQUEEZE});buildGrid();bad=fails();continue}
+  var near=function(r){return Math.min.apply(null,bad.map(function(i){return gapTo(r,i)}))},drop=hit.length?hit.sort(function(a,b){return area(a)-area(b)})[0]:AUTO.slice().sort(function(a,b){return near(a)-near(b)})[0];if(!drop)break;AUTO.splice(AUTO.indexOf(drop),1);(window.__settle=window.__settle||[]).push({room:cfg.room,drop:drop.slice(0,4).map(function(v){return+v.toFixed(1)}),for:bad.map(function(i){return open[i]})});buildGrid();bad=fails()}
+ /* nobody stands inside a piece: a standing person whose feet are in one steps out of it, to the nearest free floor */
+ Object.keys(actors).forEach(function(id){var a=actors[id];if(a.def.sit||a.def.ghost||a.def.follow)return;var inside=AUTO.some(function(r){return a.x>r[0]-.3&&a.x<r[2]+.3&&a.z>r[1]-.3&&a.z<r[3]+.3});if(!inside)return;
+  var best=null,bd=1e9;for(var k=0;k<48;k++){var an=k/48*PI*2;for(var d=.6;d<=3;d+=.3){var x=a.x+Math.sin(an)*d,z=a.z+Math.cos(an)*d;if(!AUTO.some(function(r){return x>r[0]-.35&&x<r[2]+.35&&z>r[1]-.35&&z<r[3]+.35})&&x>cfg.walk[0]&&x<cfg.walk[2]&&z>cfg.walk[1]&&z<cfg.walk[3]){if(d<bd){bd=d;best=[x,z]}break}}}
+  if(best){a.x=best[0];a.z=best[1];if(a.place)a.place()}});
+ buildGrid()}
 var Q0=new URLSearchParams(location.search);
 function cellOf(x,z){return[Math.floor((x-grid.x0)/CELL),Math.floor((z-grid.z0)/CELL)]}
 function free(i,j){return i>=0&&j>=0&&i<grid.nx&&j<grid.nz&&!grid.b[j*grid.nx+i]}
@@ -182,7 +204,7 @@ function sync(n){
  exits.slice().forEach(function(x){var w=keepExit[x.def.id];if(!w||sigExit(w)!==x.sig)dropExit(x)});
  (n.exits||[]).forEach(function(e){var x=exitOf(e.id);if(!x)addExit(e);else{x.def=e;x.locked=!!e.locked}});
  cfg.actors=n.actors||[];cfg.spots=n.spots||[];cfg.exits=n.exits||[];
- buildGrid();
+ SEAL=[player.x,player.z];buildGrid();
  if(!freeAt(player.x,player.z)){var c=nearestFree(player.x,player.z,6);if(c){var p=centre(c[0],c[1]);player.x=p[0];player.z=p[1];player.place()}}
  settleFollowers();
  if(n.player&&JSON.stringify(n.player)!==JSON.stringify(cfg.player||{}))P.player(n.player);
@@ -219,7 +241,7 @@ function enter(c){
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
  (c.spots||[]).forEach(addSpot);
  (c.exits||[]).forEach(addExit);
- AUTO=[];buildGrid();try{settleBlocks([sp.x,sp.z])}catch(e){AUTO=[];buildGrid()}
+ AUTO=[];SEAL=null;buildGrid();try{settleBlocks([sp.x,sp.z])}catch(e){AUTO=[];SEAL=null;buildGrid()}
  var cell=nearestFree(sp.x,sp.z,6),pos=cell?centre(cell[0],cell[1]):[sp.x,sp.z];
  if(freeAt(sp.x,sp.z))pos=[sp.x,sp.z];
  player=new Body({x:pos[0],z:pos[1],yaw:sp.yaw||0,look:c.player||{}},'player');player.place();
