@@ -480,7 +480,7 @@ function cineTick(t,dt){
  else{var span=heads.length>1?heads[0].distanceTo(heads[heads.length-1]):0,d2=(1.6+span*1.05)*back*(1-.07*k);p=mid.clone().add(dir.clone().multiplyScalar(d2));p.y=mid.y+.28;l=mid.clone();l.y-=.18;fov=34}
  /* nothing stands between the lens and the face: the first time a shot frames somebody, a ray goes from the face to the
     lens; furniture or a wall on it brings the lens in front of it, or across to the other side when that is too close */
- var key=(c.on||[]).join()+'|'+Math.round(heads[0].x*3)+','+Math.round(heads[0].z*3);if(c.key!==key){c.key=key;c.fix=clearShot(heads[0],p,subs)}
+ var key=(c.on||[]).join()+'|'+Math.round(heads[0].x*3)+','+Math.round(heads[0].z*3);if(c.key!==key){c.key=key;/* a framing aid never takes the picture down */try{c.fix=clearShot(heads[0],p,subs)}catch(e){c.fix=null}}
  if(c.fix){p=c.fix.p?heads[0].clone().add(c.fix.p):p}
  /* and the lens gets there like a camera operator would, not in one jump: every frame used to place it afresh */
  if(!c.cp){c.cp=p.clone();c.cl=l.clone()}else{var ck=Math.min(1,dt*4.5);c.cp.lerp(p,ck);c.cl.lerp(l,ck)}
@@ -488,7 +488,9 @@ function cineTick(t,dt){
 }
 var _ray=null;
 function blocking(o){for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.o||q.userData.human||q.userData.noBlock))return false;if(!q.visible)return false}var m=o.material;if(Array.isArray(m))m=m[0];return !!(o.isMesh&&!o.isSprite&&m&&!m.isMeshBasicMaterial&&!(m.transparent&&m.opacity<.6))}
-function hitOn(from,to){if(!K.world)return null;_ray=_ray||new T.Raycaster();var v=to.clone().sub(from),len=v.length();_ray.set(from,v.normalize());_ray.far=len;var hs=_ray.intersectObject(K.world,true);for(var i=0;i<hs.length;i++)if(hs[i].distance>.12&&blocking(hs[i].object))return hs[i].distance;return null}
+function hitOn(from,to){if(!K.world)return null;_ray=_ray||new T.Raycaster();var v=to.clone().sub(from),len=v.length();_ray.set(from,v.normalize());_ray.far=len;
+ /* only solid meshes: a Sprite cannot be raycast without a camera (r128 throws), and a person, a light or glass is not in the way */
+ var solid=[];K.world.traverse(function(o){if(o.isMesh&&!o.isSprite&&!o.isSkinnedMesh&&!o.isInstancedMesh&&blocking(o))solid.push(o)});var hs=_ray.intersectObjects(solid,false);for(var i=0;i<hs.length;i++)if(hs[i].distance>.12)return hs[i].distance;return null}
 function clearShot(h,p,subs){var off=p.clone().sub(h),len=off.length(),at=hitOn(h,p);if(at==null)return null;
  if(at>len*.6)return{p:off.multiplyScalar((at-.12)/len)};
  var m=off.clone();m.x=-off.x;m.z=-off.z;var mir=new T.Vector3(off.z,off.y,-off.x);/* the other side of the face, then a quarter turn either way */
