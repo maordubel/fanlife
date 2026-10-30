@@ -202,7 +202,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'end') { phaseRef.current = 'ending'; setPhase('ending'); endT.current = 0; sfx(e.outcome === 'slip' ? 'murmur' : 'roar') }
             else if (e.k === 'step') { setObjIx(e.next < 0 ? level.steps.length : e.next); setObjFlash(true); window.setTimeout(() => setObjFlash(false), 900); sfx('objective') }
             else if (e.k === 'talk') say(w(e.key), 3000)
-            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}${e.streak > 1 ? ` · ${w('ev.streak', {n: String(e.streak)})}` : ''}`) } else pop(w(`got.${e.kind}`)); sfx(e.kind === 'coin' ? 'coin' : e.kind === 'paint' ? 'spray' : 'pickup') }
+            else if (e.k === 'pickup') { if (e.extra) { setExtras(n => n + 1); pop(`+${e.bonus}s · ${w(`got.${e.kind}`)}${e.streak > 1 ? ` · ${w('ev.streak', {n: String(e.streak)})}` : ''}`) } else { /* the thing the job is for: a stamp the whole screen feels, in every mission, not a toast */ setFound(f => ({kind: String(e.kind), n: (f?.n ?? 0) + 1})) } sfx(e.kind === 'coin' ? 'coin' : e.kind === 'paint' ? 'spray' : 'pickup') }
             else if (e.k === 'chant') { say(w('ev.chant'), 1800); pop(`+${e.bonus}s`); sfx('roar') }
             else if (e.k === 'favour') { say(w(`fav.${e.kind}`), 2400); pop(`+${e.bonus}s`); sfx('keep') }
             else if (e.k === 'surge') { say(w('ev.surge'), 2200); sfx('murmur') }
@@ -213,7 +213,7 @@ export function RushHost({spec, skin, locale, reduced, gateLabel, quality, cue, 
             else if (e.k === 'search') {
               // close up: the place he is going through is named; what it gave (or did not) comes in the pop
               if (e.state === 'start') { setSearching(e.kind); sfx('tick') }
-              else { setSearching(null); if (e.state === 'found' && e.got) { setFound(f => ({kind: String(e.got), n: (f?.n ?? 0) + 1})); sfx('keep') } if (e.state === 'empty') { emptyN.current++; /* the place answers in its own words the first time; after that, a shrug */ const own = `ev.empty.${e.kind}` as RushKey, seen = emptyKinds.current; if (!seen.has(e.kind)) { seen.add(e.kind); say(w(own), 2600) } else pop(w(`ev.empty.${(emptyN.current % 4) + 1}` as RushKey)); sfx('tick') } }
+              else { setSearching(null); if (e.state === 'empty') { emptyN.current++; /* the place answers in its own words the first time; after that, a shrug */ const own = `ev.empty.${e.kind}` as RushKey, seen = emptyKinds.current; if (!seen.has(e.kind)) { seen.add(e.kind); say(w(own), 2600) } else pop(w(`ev.empty.${(emptyN.current % 4) + 1}` as RushKey)); sfx('tick') } }
             }
             else if (e.k === 'creak') { say(w(e.loud ? 'ev.creak.loud' : 'ev.creak'), 1400); sfx(e.loud ? 'clang' : 'tick') }
           }

@@ -191,6 +191,7 @@ export function compileEpisode(ep: EpisodeScript): Chapter {
     cast: [...follows, ...mains, ...extras, ...presence],
     spots, doors, beats, talks, objectives: [...objectives, ...sides], endings, keepsakes,
     ...(ep.anchor ? {anchor: ep.anchor, centrepiece: true} : {}),
+    ...(ep.paper ? {paper: ep.paper} : {}),
     ...(ep.when ? {when: ep.when} : {}),
     episode: {season: SEASON, no: ep.no, of: EPISODES_IN_SEASON, logline: ep.logline, main: steps.filter(s => s.main).map(s => s.id), ...(ep.next ? {next: ep.next} : {}), ...(ep.open ? {open: ep.open} : {}), ...(ep.close ? {close: ep.close} : {}),
       ...(ep.texts ? {texts: ep.texts} : {}), ...(ep.box ? {box: ep.box} : {}), ...(ep.flash ? {flash: ep.flash} : {}), ...(ep.tease ? {tease: ep.tease} : {}), ...(ep.letter ? {letter: ep.letter} : {})},

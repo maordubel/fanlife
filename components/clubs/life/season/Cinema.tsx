@@ -7,7 +7,7 @@
  * and what to call when the player taps, skips or runs out of time.
  */
 import {useCallback, useEffect, useRef, useState} from 'react'
-import type {StampKind} from '@/lib/life/universal/types'
+import type {ArchiveRef, StampKind} from '@/lib/life/universal/types'
 import s from './season.module.css'
 
 type Copy = Record<string, string>
@@ -102,7 +102,9 @@ export function BarkBubble({x, y, text}: {x: number; y: number; text: string}) {
 type Cue = (name: string) => void
 const calm = () => { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches } catch { return false } }
 
-export function EpisodeOpen({no, of, age, title, logline, askName, name, onName, onPlay, ready, copy, texts = [], box = null, onCue}: {
+export function EpisodeOpen({no, of, age, title, logline, askName, name, onName, onPlay, ready, copy, texts = [], box = null, onCue, paper = null, locale = 'en'}: {
+  /** the paper of that week: a recorded night of the year he is this age, printed as recorded */
+  paper?: ArchiveRef | null; locale?: string
   no: number; of: number; age: number; title: string; logline: string
   askName: boolean; name: string; onName: (v: string) => void; onPlay: () => void; ready: boolean; copy: Copy
   /** the season's first seconds: messages on a phone, 2026 */
@@ -159,6 +161,7 @@ export function EpisodeOpen({no, of, age, title, logline, askName, name, onName,
         <p className={s.kick}><b>{word(copy, 's1.season', 'Season One')}</b> {word(copy, 's1.episode', 'Episode')} <bdi>{no}</bdi>/<bdi>{of}</bdi> · {word(copy, 'age', 'Age')} <bdi>{age}</bdi></p>
         <h2 id="s1-title" className={`${s.big} ${s.slam}`}>{title}</h2>
         <p className={s.log}>{logline}</p>
+        {paper && <PaperClip paper={paper} copy={copy} locale={locale} />}
         {askName && (
           <div className={s.nameField}>
             <label htmlFor="s1-name">{word(copy, 's1.name', 'His name')}</label>
@@ -240,4 +243,23 @@ export function Fuse({seconds}: {seconds: number}) {
 /** The card between a flash-forward and the day: "Two hours earlier". */
 export function TimeCard({text}: {text: string}) {
   return <div className={s.timeCard} data-life="time-card" role="status"><p>{text}</p></div>
+}
+
+/** The paper the morning after a night the archive holds: the date, the two sides and the score as recorded, the
+ *  competition, the source. A clipping on the table when the episode opens — the year he is living, in the club's own record. */
+export function PaperClip({paper, copy, locale}: {paper: ArchiveRef; copy: Copy; locale: string}) {
+  const m = paper.match
+  const day = paper.on ? new Date(`${paper.on}T00:00:00Z`) : null
+  const after = day ? new Date(day.getTime() + 86400000) : null
+  const fmt = (d: Date) => new Intl.DateTimeFormat(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(d)
+  return (
+    <figure className={s.paper} data-life="episode-paper">
+      <figcaption className={s.paperHead}><span>{word(copy, 's1.paper', 'The morning paper')}</span>{after && <bdi>{fmt(after)}</bdi>}</figcaption>
+      {m ? (
+        <p className={s.paperScore} lang={paper.locale} dir="auto"><bdi>{m.home}</bdi> <b><bdi>{m.homeGoals}–{m.awayGoals}</bdi></b> <bdi>{m.away}</bdi></p>
+      ) : <p className={s.paperScore} lang={paper.locale} dir="auto">{paper.title}</p>}
+      <p className={s.paperHint}>{paper.hint && <bdi lang={paper.locale} dir="auto">{paper.hint}</bdi>}{day && <> · <bdi>{fmt(day)}</bdi></>}</p>
+      {paper.sources[0] && <small className={s.paperSource}>{word(copy, 'archive', 'From the archive')} · <bdi>{paper.sources[0].publisher}</bdi></small>}
+    </figure>
+  )
 }

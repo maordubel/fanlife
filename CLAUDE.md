@@ -3310,3 +3310,7 @@ Owner: *"attach them to matches from the archive, give them historical credibili
 3. **Films are shot on the decade's stock** (`CineLayer era`, `eraFor` in `LifeGame.tsx`): a soft-light grade, grain and
    gate weave by decade, and — only on a night the archive dates to the day — that date burned in the corner. The year is
    the anchor's, else his birth year plus his age. The skip in a film is quiet, as in a mission (rule 133 §6).
+4. **An episode with no night opens on the morning paper** (`Chapter.paper`, `PaperClip` in `season/Cinema.tsx`): a recorded
+   night (day precision) of the year he is that age, not one another episode stands on, printed as recorded — sides, score,
+   competition, date, source. Never a live board. Hapoel: E2 12.1.1985 (1–0 Be'er Sheva), E4 1.1.1988 (2–0 Lod).
+5. **Every mission's main find is a stamp** (`.found`), not a toast — on the street, in the crowd and at home alike.

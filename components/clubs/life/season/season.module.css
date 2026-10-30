@@ -264,3 +264,11 @@
 .slateSource { font-size: .72rem; opacity: .6; }
 @keyframes slateIn { 0% { opacity: 0; letter-spacing: .02em; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .slate { animation: none; } }
+
+/* the morning paper: newsprint, a rule under the masthead, the score set big — a clipping, not a screen */
+.paper { margin: 14px auto 0; max-inline-size: 30rem; padding: 12px 14px 10px; background: color-mix(in srgb, var(--mag-paper) 88%, var(--mag-ink)); color: var(--mag-ink); border: 1px solid color-mix(in srgb, var(--mag-ink) 35%, transparent); transform: rotate(-1.2deg); text-align: center; background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--mag-ink) 5%, transparent) 0 1px, transparent 1px 4px); }
+.paperHead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; padding-block-end: 6px; border-block-end: 3px double var(--mag-ink); font-family: var(--mag-mono, monospace); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+.paperScore { margin: 10px 0 2px; font-family: var(--mag-display); font-size: clamp(1.25rem, 5.6vw, 1.8rem); line-height: 1.1; }
+.paperScore b { padding-inline: 6px; }
+.paperHint { margin: 0; font-size: .82rem; opacity: .8; }
+.paperSource { display: block; margin-block-start: 6px; font-size: .66rem; opacity: .6; }

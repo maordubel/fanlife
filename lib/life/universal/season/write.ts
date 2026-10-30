@@ -128,6 +128,8 @@ export type EpisodeScript = {
   letter?: {head: string; lines: string[]; sign: string; after: string}
   /** the archive row the episode stands on (set by the season, never by the script) */
   anchor?: import('../types').ArchiveRef
+  /** the paper of that week (set by the season): a recorded night from the year of the episode, opened on its first screen */
+  paper?: import('../types').ArchiveRef
   when?: Cond
 }
 

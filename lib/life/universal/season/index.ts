@@ -40,7 +40,17 @@ export function seasonOne(input: SeasonInput): Chapter[] {
     if (best) used.add(best.factId)
     out.push(a.script(best, best ? ageOf(best)! : a.ages[0]))
   }
-  return out.sort((a, b) => a.no - b.no).map(compileEpisode)
+  // the episodes that stand on no night still live in a year the archive remembers: the paper of that week opens them
+  const withPaper = out.map(ep => {
+    if (ep.anchor || input.birthYear === null) return ep
+    const year = input.birthYear + ep.age
+    const night = input.nights.filter(r => !used.has(r.factId) && r.match && r.precision === 'day' && Math.abs(r.year - year) <= 0)
+      .sort((x, y) => weight(y) - weight(x) || (x.on ?? '').localeCompare(y.on ?? ''))[0]
+    if (!night) return ep
+    used.add(night.factId)
+    return {...ep, paper: night}
+  })
+  return withPaper.sort((a, b) => a.no - b.no).map(compileEpisode)
 }
 
 /** the nights that serve best: a won night, then what the row itself says about it */
@@ -48,5 +58,5 @@ const weight = (r: ArchiveRef) => (r.match?.result === 'won' ? 4 : r.match?.resu
 
 /** the archive rows Season One stands on, so the life does not play them twice */
 export function seasonNights(chapters: readonly Chapter[]): Set<string> {
-  return new Set(chapters.flatMap(c => c.anchor ? [c.anchor.factId] : []))
+  return new Set(chapters.flatMap(c => [...(c.anchor ? [c.anchor.factId] : []), ...(c.paper ? [c.paper.factId] : [])]))
 }
