@@ -218,9 +218,10 @@ describe('every core club gets a life', () => {
   it('Hapoel is born in the year the hand-authored LIFE set, and stands on the nights its pack chose', async () => {
     const pack = await packOf('hapoel-tel-aviv')
     expect(pack.hero.birthYear).toBe(1978)
-    // the first time (8), no ticket (12) and the first away day (14) are Season One's; the two after it are nights of their own
-    expect(pack.chapters.filter(c => c.anchor).map(c => c.anchor!.on)).toEqual(['1986-05-24', '1990-05-12', '1992-01-31', '2001-10-18', '2002-03-14'])
-    expect(pack.chapters.filter(c => c.anchor && c.episode).map(c => c.id)).toEqual(['S1E3', 'S1E5', 'S1E6'])
+    // the radio night (6), the first time (8), no ticket (12) and the first away day (14) are Season One's (rule 134);
+    // the two after it are nights of their own
+    expect(pack.chapters.filter(c => c.anchor).map(c => c.anchor!.on)).toEqual(['1984-01-07', '1986-05-24', '1990-05-12', '1992-01-31', '2001-10-18', '2002-03-14'])
+    expect(pack.chapters.filter(c => c.anchor && c.episode).map(c => c.id)).toEqual(['S1E1', 'S1E3', 'S1E5', 'S1E6'])
     expect(pack.skin.crest).toBe('real')
     expect(pack.cast.dad!.name).toBe('Dad')
     expect(pack.cast.friend!.name).toBe('Ofir')
