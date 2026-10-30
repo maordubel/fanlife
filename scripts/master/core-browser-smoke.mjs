@@ -46,6 +46,26 @@ async function playMemoryWall(page){
 }
 
 async function expectGate(p,url,slug,key,openId){await p.goto(url);if(await playable(slug,key)){await p.getByTestId(openId).first().waitFor()}else{await p.getByTestId('gate-locked').waitFor();assert.equal(await p.getByTestId(openId).count(),0)}}
+// A card can re-render during Today initialization on a busy CI runner. Retry a real click only
+// while its drawer is still closed, then require both the selected entry and its URL to agree.
+async function openArchiveCard(page,slug){
+ const card=page.getByTestId('archive-entry').first()
+ let lastId=null
+ for(let attempt=0;attempt<3;attempt++){
+  await card.waitFor()
+  lastId=await card.getAttribute('data-entry-id')
+  await card.getByRole('button',{name:/^Open:/}).click()
+  const detail=page.getByTestId('archive-detail')
+  if(await detail.waitFor({timeout:5000}).then(()=>true,()=>false)){
+   assert.equal(await detail.getAttribute('data-entry-id'),lastId,`${slug}: opened a different archive entry`)
+   await page.waitForFunction(id=>new URL(location.href).searchParams.get('event')===id,lastId)
+   return
+  }
+ }
+ const state=await page.evaluate(()=>({url:location.href,entry:document.querySelector('[data-testid="archive-entry"]')?.getAttribute('data-entry-id'),dialogs:document.querySelectorAll('[role="dialog"]').length,ready:document.readyState}))
+ await page.screenshot({path:`/tmp/fanlife-m1-browser/${slug}-archive-failure.png`}).catch(()=>{})
+ throw new Error(`${slug}: archive entry did not open after three clicks; selected=${lastId}; state=${JSON.stringify(state)}`)
+}
 const port=process.env.M1_BROWSER_PORT||'3217',base=`http://127.0.0.1:${port}`
 // the control room is behind the owner key (rule 97): the smoke server gets a throwaway key and the browser a session for it
 const ADMIN_KEY=randomBytes(24).toString('hex')
@@ -235,8 +255,7 @@ try {
   await page.getByTestId('archive-board').waitFor()
   // Today: the supporter's own day, or the next day on file — either way a card the drawer can open
   await page.getByTestId('archive-entry').first().waitFor()
-  await page.getByTestId('archive-entry').first().getByRole('button',{name:/^Open:/}).click()
-  await page.getByTestId('archive-detail').waitFor();await page.waitForFunction(()=>location.search.includes('event='))
+  await openArchiveCard(page,slug)
   assert((await page.getByTestId('archive-detail').innerText()).toLowerCase().includes('documented:'))
   assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>0)
   await page.keyboard.press('Escape');await page.getByTestId('archive-detail').waitFor({state:'detached'});await page.waitForFunction(()=>!location.search.includes('event='))
