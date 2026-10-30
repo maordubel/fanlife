@@ -34,6 +34,28 @@
     },
     "measured": {
      "stripes": 6
+    },
+    "artwork": {
+     "stripeBands": [
+      {
+       "x": 82,
+       "width": 26
+      },
+      {
+       "x": 151,
+       "width": 38
+      },
+      {
+       "x": 232,
+       "width": 26
+      }
+     ],
+     "shoulderStripes": true,
+     "makerInk": "#f40711",
+     "makerHalo": "#ffffff",
+     "sponsorSrc": "/club-kits/olympiacos/marks/stoiximan-red-illustrated.svg",
+     "reference": "https://www.footyheadlines.com/2025/07/olympiacos-25-26-away-kit.html",
+     "note": "Illustrated approximation from the existing catalogue drawing and the 2025/26 home-kit reference; the exact shirt construction and details are not fully reconstructed."
     }
    },
    "shorts": {

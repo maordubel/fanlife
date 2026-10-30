@@ -32,7 +32,16 @@
      "green": "#0b5a69",
      "white": "#ffffff"
     },
-    "measured": {}
+    "measured": {},
+    "artwork": {
+     "sleeveInk": "#ffffff",
+     "shoulderStripes": true,
+     "shoulderInk": "#0b5a69",
+     "crestSrc": "/club-kits/panathinaikos/marks/shamrock-white-illustrated.svg",
+     "sponsorSrc": "/club-kits/panathinaikos/marks/a-little-shelter-illustrated.svg",
+     "reference": "https://www.pao.gr/commercial/h-proti-emfanisi-tis-sezon-2025-26/",
+     "note": "Illustrated approximation from the club announcement and existing catalogue drawing. This particular sponsor placement was announced for November 2025 through February 2026."
+    }
    },
    "shorts": {
     "colour": "navy",
@@ -203,7 +212,10 @@
      "stripes": 2
     },
     "artwork": {
-     "centralPanel": {"x": 124, "width": 92},
+     "centralPanel": {
+      "x": 124,
+      "width": 92
+     },
      "shoulderStripes": true,
      "plainCuffs": true,
      "makerInk": "#034843",

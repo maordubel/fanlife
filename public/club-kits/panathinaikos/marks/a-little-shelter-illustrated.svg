@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 48" role="img" aria-label="A Little Shelter illustrated sponsor">
+ <path d="M15 8 20 13 24 7 28 14 32 8 36 14 36 26 30 32 22 31 16 26Z" fill="#fff"/>
+ <circle cx="23" cy="20" r="1.2" fill="#0b5a69"/><circle cx="30" cy="20" r="1.2" fill="#0b5a69"/>
+ <text x="42" y="21" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#fff">A Little</text>
+ <text x="42" y="41" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#fff">Shelter</text>
+</svg>
