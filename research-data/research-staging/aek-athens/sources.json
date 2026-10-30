@@ -9,11 +9,11 @@
   "scope": "mixed",
   "access": "available",
   "checkedAt": "2026-10-30",
-  "retrievedAt": "2026-10-30T10:13:27.223Z",
+  "retrievedAt": "2026-10-30T10:27:23.311Z",
   "collected": {
    "documents": 767,
    "observedTotalDocuments": 762,
-   "state": "partial_budget",
+   "state": "listed",
    "parser": "aekpedia-football-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
@@ -30,7 +30,7 @@
   "scope": "mixed",
   "access": "available",
   "checkedAt": "2026-10-30",
-  "retrievedAt": "2026-10-30T10:13:27.223Z",
+  "retrievedAt": "2026-10-30T10:27:23.311Z",
   "collected": {
    "documents": 767,
    "observedTotalDocuments": 5,

@@ -5,13 +5,13 @@
   "collection": "pages",
   "queryFingerprint": "2e9f554462350171",
   "parserVersion": "celticwiki-football-v1",
-  "nextPage": 97,
-  "lastCommittedPage": 96,
+  "nextPage": 107,
+  "lastCommittedPage": 106,
   "observedTotalDocuments": 19313,
   "observedTotalPages": 773,
   "perPage": 25,
   "state": "partial_budget",
-  "updatedAt": "2026-10-30T10:13:43.289Z",
+  "updatedAt": "2026-10-30T10:27:51.640Z",
   "lastError": null
  },
  "celtic-official:html": {
@@ -31,7 +31,7 @@
    "/history/history-timeline/"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-30T10:13:47.935Z",
+  "updatedAt": "2026-10-30T10:27:55.904Z",
   "lastError": null
  }
 }

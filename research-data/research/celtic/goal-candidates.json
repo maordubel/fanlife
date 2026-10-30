@@ -361,6 +361,15 @@
     "bodyHash": "22895e24b147f6d1da8c3cc5e4a7428f9f5b4d534bace7650a369927c072ef10",
     "fetchedAt": "2026-10-23T08:50:36.560Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-park/other-sports-at-celtic-park/celtic-park-athletics/",
+    "locator": "p88",
+    "quote": "Harry Gissing was a member of the Irish-American Athletic Club of New York and a noted middle distance runner, Ramsdell was a sprinter from the University of Pennsylvania and Cornell and JJ Flanagan was an Olympic record breaking hammer thrower who won three Olympic gold medals, the first of these being in 1900. At Parkhead Flanagan was second in the handicap hammer thgrow to Scotland’s T Nicolson who had a 10′ handicap allowance. But the Americans were indeed as good as the reporter from the ‘Herald’ said they were.",
+    "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
+    "fetchedAt": "2026-10-30T10:27:39.583Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -368,8 +377,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:50:36.560Z",
-  "updatedAt": "2026-10-23T08:50:36.560Z"
+  "createdAt": "2026-10-30T10:27:39.583Z",
+  "updatedAt": "2026-10-30T10:27:39.583Z"
  },
  {
   "id": "ga-5359cb1bdfb22aae",
@@ -529,6 +538,15 @@
     "bodyHash": "a0b9361ceb3f0e68b81daf7f09d525654b77ee89d3e4c148f55e794c493b1486",
     "fetchedAt": "2026-10-26T09:21:58.245Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-park/other-sports-at-celtic-park/celtic-park-athletics/",
+    "locator": "p95",
+    "quote": "He was written of as follows: “Homer Baker has the genius of racing in a fuller degree than any other American that has visited Glasgow. An estimate of this kind, of course, is based entirely on times accomplished, and Baker’s excel those of Melvin Sheppard, HE Gissing and others of remoter days. Baker was less favoured in the matter of weather than than were Sheppard or Gissing when they made their records at Ibrox, and when that is borne in mind, the value of his efforts is greatly enhanced. Let us recall Baker’s performances in Glasgow. At the Rangers Sports he took part in the half mile ha",
+    "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
+    "fetchedAt": "2026-10-30T10:27:39.583Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -536,8 +554,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:21:58.245Z",
-  "updatedAt": "2026-10-26T09:21:58.245Z"
+  "createdAt": "2026-10-30T10:27:39.583Z",
+  "updatedAt": "2026-10-30T10:27:39.583Z"
  },
  {
   "id": "ga-544a8ee2a77de76d",
@@ -805,5 +823,512 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-30T10:13:43.285Z",
   "updatedAt": "2026-10-30T10:13:43.285Z"
+ },
+ {
+  "id": "ga-b3ca5b923d12d7bd",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "70",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/dvd-celtic-the-official-history/",
+    "locator": "p8",
+    "quote": "The first two DVDs handle the transition of the club from its inauspicious beginnings and carries on through to the 70's/80's, educating viewers on the club's background and then onto our highs and lows through the ages. The last two DVDs concentrate more on the last 20years (Stopping the ten, Seville etc).",
+    "bodyHash": "409a577fa2d53caf0cd96a9f6b4bf6e45856fa28234c1a399ebce5aca56c214b",
+    "fetchedAt": "2026-10-30T10:27:24.315Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:24.315Z",
+  "updatedAt": "2026-10-30T10:27:24.315Z"
+ },
+ {
+  "id": "ga-e21180845e547f26",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/media/fanzines/hail-hail-fanzine/",
+    "locator": "p6",
+    "quote": "While there's nothing wrong with a bit of Hun bashing the fanzine's pro-board stance obviously did not sit well with many supporters at a time when the club was clearly suffering from the mismanagement and incompetence of the Kelly/White cartel. Consequently by the end of season 1989-90 'Hail! Hail!' disappeared from view after just four issues.",
+    "bodyHash": "0ab628dfc5540c8815d08b5be6d6f11225ca1d46af8712d47d13d5934e9baee2",
+    "fetchedAt": "2026-10-30T10:27:24.324Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/a/aitken-roy/",
+    "locator": "p38",
+    "quote": "In 1987 Hay was sacked and McNeill returned as manager. He quickly regrouped the Celtic team and with Roy as captain he led Celts to a richly deserved league and cup double. In February 1988 he assumed a captain’s responsibility by scoring a 90th minute penalty against Morton at Parkhead to give Celtic a 1-0 win and two vital league points. Dundee United were again defeated 2-1 in the Scottish Cup final and Aitken made history as Celtic’s captain in their centenary season.",
+    "bodyHash": "169f5da2c4be9617381b4dabf40d63db6bf009e42ad4a03149517a20148ef770",
+    "fetchedAt": "2026-10-30T10:27:48.705Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/a/atajic-bahrudin/",
+    "locator": "p16",
+    "quote": "Made his low-key debut as a sub in May 2013 v Dundee Utd. However, he sealed an incredible welcome to the Scottish game with a delightful debut goal against Motherwell, a chip shot over the goalkeeper in a 5-0 win in Dec 2013 in the 90th minute.",
+    "bodyHash": "efd453be8fe0e6ed63c971dbc23f7a3798fa97e88d9d02c91472dc7fff33c576",
+    "fetchedAt": "2026-10-30T10:27:51.624Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:51.624Z",
+  "updatedAt": "2026-10-30T10:27:51.624Z"
+ },
+ {
+  "id": "ga-22353df6dc5d1642",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "4",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-park/other-sports-at-celtic-park/celtic-park-athletics/",
+    "locator": "p22",
+    "quote": "“RECORDS AT PARKHEAD. Evidently the officials at the Celtic Football Club expected that new records would be created in the half and one mile at Parkhead on Saturday, as the best times on the books of the Scottish Amateur Athletic Association for these distances were given in the programme. Expectation was fulfilled, Sgt Mason lowering the half-mile time, and AG Hill that of the mile. In one way Hill’s performance was the more meritorious, as the mile was an open event and the English mile champion had a very large field to get through. In the circumstances he did remarkably well, in reducing ",
+    "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
+    "fetchedAt": "2026-10-30T10:27:39.583Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:39.583Z",
+  "updatedAt": "2026-10-30T10:27:39.583Z"
+ },
+ {
+  "id": "ga-69e09f2d8c3abf98",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "3",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-park/other-sports-at-celtic-park/celtic-park-athletics/",
+    "locator": "p24",
+    "quote": "There were about 30,000 spectators and the entries included ‘several well-known English and Colonial runners.’ The relay was won by Poly Harriers in 3 Min 32 4-5th sec, with Maryhill second and a Celtic Select third. The team was Sgt Mason, JB Bell, MC Cook and Sgt Lindsay.",
+    "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
+    "fetchedAt": "2026-10-30T10:27:39.583Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:39.583Z",
+  "updatedAt": "2026-10-30T10:27:39.583Z"
+ },
+ {
+  "id": "ga-1e511041982b2a54",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "14",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-park/other-sports-at-celtic-park/celtic-park-athletics/",
+    "locator": "p45",
+    "quote": "The result of the three miles handicap special was – 1. D McLean (Maryhill Harriers) 145 yards; 2. WH Calderwood (Maryhill Harriers) 125 yards; 3. F Stevenson (Monkland Harriers) 145 yards. Time 14 min 39 45th sec.",
+    "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
+    "fetchedAt": "2026-10-30T10:27:39.583Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:39.583Z",
+  "updatedAt": "2026-10-30T10:27:39.583Z"
+ },
+ {
+  "id": "ga-18e251a89b44a400",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "9",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-park/other-sports-at-celtic-park/celtic-park-athletics/",
+    "locator": "p51",
+    "quote": "In Smith we have one of the most promising distance runners we have had for a long time. His action is easy and his judgment good, and when allowance is made for the few opportunities he had had in Dundee for testing his strength against first-class opposition, his advance has been rapid. He has had four visits to Glasgow this season and has collected three first prizes and one second. His time on Saturday off 20 yards was 9 min 31 sec, and running out the full distance was was clocked as doing 9 min 34 2-5th sec.”",
+    "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
+    "fetchedAt": "2026-10-30T10:27:39.583Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:39.583Z",
+  "updatedAt": "2026-10-30T10:27:39.583Z"
+ },
+ {
+  "id": "ga-217b47b47c0bec0d",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "52",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/christie-ryan/",
+    "locator": "p254",
+    "quote": "A highly emotional Ryan Christie dedicated Scotland’s dramatic Euro 2020 play-off final victory over Serbia to the whole nation after a nerve-shredding night.By Mark AtkinsonThursday, 12th November 2020, 10:48 pm https://www.scotsman.com/sport/football/international/emotional-ryan-christie-dedicates-scotland-win-nation-celtic-midfielder-hopes-party-3034482 The Scots prevailed on penalties in Belgrade after a 90th-minute Luka Jovic header cancelled out Christie’s 52nd minute opener.",
+    "bodyHash": "e02fe82c5841d70a341c19f498af399469554b8418316767ac088238a4bfecd1",
+    "fetchedAt": "2026-10-30T10:27:45.836Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/welsh-stephen/",
+    "locator": "p155",
+    "quote": "Yet, in a side so patchwork it was about as unified as one of those massive charity quilts, the youngster did well to stitch together a largely error-free afternoon – unlikely his experienced back-three counterparts Shane Duffy and Kristoffer Ajer. Welsh was perhaps guilty of ball watching and remaining too static as Connor Goldson slipped between him and Duffy to be given two opportunities to bundle in his 52nd minute second that resulted in Neil Lennon’s men appearing to give up the ghost. Welsh accepts such a capitulation was unacceptable. He understands the hysteria that has witnessed Stev",
+    "bodyHash": "7e8b42d99331a044341e9a8f4ad61d36b5bb126fecb66d009146f3b7ebf20b40",
+    "fetchedAt": "2026-10-30T10:27:48.700Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:48.700Z",
+  "updatedAt": "2026-10-30T10:27:48.700Z"
+ },
+ {
+  "id": "ga-3196063ac7d6736e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "94",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/forrest-james/",
+    "locator": "p79",
+    "quote": "The most incredible moment was still to come though. A key frustration was his inability to grab a goal to continue his record of having scored in every season for the last 15 seasons. He even came so unlucky on occasion, even in the penultimate victory over Aberdeen. In the final league match of the season, and Celtic took the game too casually, only to end up one down to St Mirren. Despite coming close, the St Mirren keeper was having an excellent game. Then in the 94th minute of the game, Johnstone selflessly laid the ball off to Forrest instead of taking a risky shot at goal himself. Forre",
+    "bodyHash": "5e11bd93d026fc1e9bb437fc25cd2367e1ed521d20682df92e76bfd2c97ef357",
+    "fetchedAt": "2026-10-30T10:27:45.842Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.842Z",
+  "updatedAt": "2026-10-30T10:27:45.842Z"
+ },
+ {
+  "id": "ga-dcf6813da6dedce0",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "40",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/forrest-james/",
+    "locator": "p224",
+    "quote": "Forrest might have suspected he was set for a productive afternoon when he heard Rangers were playing a midfielder at left-back. Andy Halliday tried his best but endured another traumatic outing against Celtic. The auxiliary full-back might have wished he had been withdrawn in the 40th minute once again.",
+    "bodyHash": "5e11bd93d026fc1e9bb437fc25cd2367e1ed521d20682df92e76bfd2c97ef357",
+    "fetchedAt": "2026-10-30T10:27:45.842Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.842Z",
+  "updatedAt": "2026-10-30T10:27:45.842Z"
+ },
+ {
+  "id": "ga-7490057b10895517",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "97",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/ralston-tony/",
+    "locator": "p34",
+    "quote": "He then was a hero & man of the match in the opening play-offs v AZ Alkmaar, with a performance way beyond that even his greatest sympathisers envisaged he could achieve. An incredible goal saving interception received praise for Ralston from even the stoniest hearted cynic. He soon even won his first international cap, and then saved Celtic’s league season campaign from being derailed with a headed goal in the 97th minute to help Celtic win 2-1 v Ross County in what was a Celtic side decimated by injuries.",
+    "bodyHash": "4af7511f82ab71ddb5fe4c7a5c47853e42ab66aa3ad59bc001b4a97b0f4635c8",
+    "fetchedAt": "2026-10-30T10:27:45.863Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.863Z",
+  "updatedAt": "2026-10-30T10:27:45.863Z"
+ },
+ {
+  "id": "ga-361986d886d8ada4",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "28",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/ralston-tony/",
+    "locator": "p218",
+    "quote": "Ralston is looking forward to showing Mila, his two-year old daughter, footage of the goal, scored in the 28th minute at the far post with his head after a cross from former Parkhead teammate Stuart Armstrong.",
+    "bodyHash": "4af7511f82ab71ddb5fe4c7a5c47853e42ab66aa3ad59bc001b4a97b0f4635c8",
+    "fetchedAt": "2026-10-30T10:27:45.863Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.863Z",
+  "updatedAt": "2026-10-30T10:27:45.863Z"
+ },
+ {
+  "id": "ga-fbe91c42e5adb1a6",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "91",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/ralston-tony/",
+    "locator": "p280",
+    "quote": "He looked to be cramping up just after the hour mark in Cologne, but in the 91st minute, he delivered a cross into the Swiss box and, in the 94th minute, he delivered another.",
+    "bodyHash": "4af7511f82ab71ddb5fe4c7a5c47853e42ab66aa3ad59bc001b4a97b0f4635c8",
+    "fetchedAt": "2026-10-30T10:27:45.863Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.863Z",
+  "updatedAt": "2026-10-30T10:27:45.863Z"
+ },
+ {
+  "id": "ga-f90c3bca8d1be7ef",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "18",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/rogic-tom/",
+    "locator": "p71",
+    "quote": "He wrapped up his playing starting in the end-season 6-0 win over Motherwell in the league, but on being subbed off he clearly broke down with the emotions of the occasions getting to him. The support paid their due, singing his name through the match, giving him a minutes applause on the 18th minute, and then a deserved standing ovation when subbed off. You could see the emotions in his face, both coming on and in the post-match interviews:",
+    "bodyHash": "ae9240122c54b2e1067875d704255093eb232ff64ba6f3749ffa4ee879a76ba3",
+    "fetchedAt": "2026-10-30T10:27:45.867Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.867Z",
+  "updatedAt": "2026-10-30T10:27:45.867Z"
+ },
+ {
+  "id": "ga-f5fa00d30830a3a2",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "93",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/first-team-squad/rogic-tom/",
+    "locator": "p238",
+    "quote": "2016-17. Had it not been for his involvement in the Scottish Cup final then you wouldn’t be laughed at for thinking that the first treble may not have been secured. His 93rd minute winner along with 25,000 other celts inside Hampden that day all contributed to tumbling the wall of treble-winning doubt down to the ground with one deafening cheer on the south-side.",
+    "bodyHash": "ae9240122c54b2e1067875d704255093eb232ff64ba6f3749ffa4ee879a76ba3",
+    "fetchedAt": "2026-10-30T10:27:45.867Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:45.867Z",
+  "updatedAt": "2026-10-30T10:27:45.867Z"
+ },
+ {
+  "id": "ga-51ae2ead2c3c97d3",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "23",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/baines-roy/",
+    "locator": "p40",
+    "quote": "With Latchford out injured, Roy Banes made his Celtic league debut that day in front of a huge crowd. The official attendance was 37,000 but, as was usual at that time, there seemed a great deal many more people than that in the ground. The first incident of note took place in the 23rd minute when Danny McGrain gave away a penalty after he had fouled Paul Hegarty. At that time, United’s colourful goalkeeper, Hamish McAlpine, was the club’s nominated penalty taker, and as he came forward to take the kick it was difficult to recall any opposition goalkeeper who had previously been in this unusua",
+    "bodyHash": "31b3ce2a0b489beba610f2f6481c5f97209aaf9280eb3659497c7b4e78c983a0",
+    "fetchedAt": "2026-10-30T10:27:51.632Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:51.632Z",
+  "updatedAt": "2026-10-30T10:27:51.632Z"
+ },
+ {
+  "id": "ga-d5298ba35db99b78",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "53",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/bangura-mohamed/",
+    "locator": "p103",
+    "quote": "The striker ended 18 months of frustrationin the53rd minute of the matchby bagging his first top-team goal for the Hoops, clinically heading home from Kris Commons´ cross.",
+    "bodyHash": "e09079ae06bab2de36f34c882e1790f74d6b76202da6d8d706b93188fe1c89e0",
+    "fetchedAt": "2026-10-30T10:27:51.633Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-30T10:27:51.633Z",
+  "updatedAt": "2026-10-30T10:27:51.633Z"
  }
 ]

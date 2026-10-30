@@ -9,7 +9,7 @@
   "scope": "mixed",
   "access": "available",
   "checkedAt": "2026-10-30",
-  "retrievedAt": "2026-10-30T10:14:16.500Z",
+  "retrievedAt": "2026-10-30T10:28:29.930Z",
   "collected": {
    "documents": 33,
    "observedTotalDocuments": 33,
@@ -30,7 +30,7 @@
   "scope": "club-history",
   "access": "available",
   "checkedAt": "2026-10-30",
-  "retrievedAt": "2026-10-30T10:14:16.500Z",
+  "retrievedAt": "2026-10-30T10:28:29.930Z",
   "collected": {
    "documents": 11,
    "observedTotalDocuments": 11,
@@ -51,7 +51,7 @@
   "scope": "results",
   "access": "available",
   "checkedAt": "2026-10-30",
-  "retrievedAt": "2026-10-30T10:14:16.500Z",
+  "retrievedAt": "2026-10-30T10:28:29.930Z",
   "collected": {
    "documents": 5,
    "observedTotalDocuments": 5,
