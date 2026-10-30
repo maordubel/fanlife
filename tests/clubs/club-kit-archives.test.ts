@@ -64,7 +64,7 @@ describe.each(CLUBS)('$id: the files',({id,kits,file})=>{
  })
  it('has a built page with the same number of kits',()=>{
   const html=readFileSync(`public/kit-archive/${id}/index.html`,'utf8')
-  expect(html).toContain(`"club":{"id":"${id}"`);const folded=new Set(read<Joined>(file).kits.map(k=>[k.season,k.type,k.shirt.design,[...k.shirt.colours].sort().join('+'),(k.maker??'').toLowerCase()].join('|'))).size // one shirt is one card: repeats of the same shirt are folded onto the page
+  expect(html).toContain(`"club":{"id":"${id}"`);const folded=new Set(read<Joined>(file).kits.map(k=>[k.season,k.type,k.shirt.design,[...k.shirt.colours].sort().join('+'),(k.maker??'').trim().toLowerCase(),(k.sponsor??'').trim().toLowerCase(),Boolean(k.euro)].join('|'))).size // preserve known sponsor and competition variants
   expect(html.match(/"origin":"/g)).toHaveLength(folded);expect(folded).toBeLessThanOrEqual(read<Joined>(file).kitCount);expect(folded).toBeGreaterThan(kits-15)
  })
 })
