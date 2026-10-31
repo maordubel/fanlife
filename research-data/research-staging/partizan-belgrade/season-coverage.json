@@ -7,13 +7,13 @@
     "collection": "html",
     "state": "partial_budget",
     "pagesRead": 0,
-    "observedTotalDocuments": 246,
+    "observedTotalDocuments": 269,
     "observedTotalPages": null,
-    "queue": 206,
+    "queue": 225,
     "lastError": null
    }
   ],
-  "documents": 40,
+  "documents": 44,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
