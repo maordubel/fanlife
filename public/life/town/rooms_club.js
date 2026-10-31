@@ -57,6 +57,56 @@ function H(c,grp){var g=grp||c.g,o={},C1=c.skin.c1,C2=c.skin.c2,C3=c.skin.c3;o.C
   /* arms use torso colour: paint after */
   for(i=0;i<n;i++){var tc=new T.Color();mt.getColorAt(i,tc);ma.setColorAt(i*2,tc);ma.setColorAt(i*2+1,tc)}ma.instanceColor.needsUpdate=true;
   var fr=0;c.tick(function(t){if((fr++)%3===0)upd(t)});return mt};
+ /* ---------- 31.10.2026, the GTA round: the hour lights a club room too ----------
+    The same rule the homes got (rooms_home.js L.tod): the room files keep asking for their daytime lights, and this
+    wrapper answers for the hour — at night the sky fill is a cold trace, the "sun" a weak moon, the lamps and tubes are
+    the light. Applied once per build; every c.light call in the room passes through it. */
+ var tm=(c.o&&c.o.time)||'day';o.NIGHT=tm==='night';o.DUSK=tm==='dusk'||(c.o&&c.o.mood==='dusk');
+ if(!c.__todWrapped){c.__todWrapped=true;var rawL=c.light;c.light=function(type,col,int,x,y,z,dist,decay){var cc=col,ii=int;
+  if(o.NIGHT){if(type==='hemi'){cc='#'+new T.Color(col).lerp(new T.Color('#5a6a9a'),.7).getHexString();ii=int*.3;dist=dist||'#141218'}else if(type==='dir'){cc='#'+new T.Color(col).lerp(new T.Color('#8fa6d8'),.85).getHexString();ii=int*.24}else ii=int*1.35}
+  else if(o.DUSK){if(type==='hemi')ii=int*.85;else if(type==='dir'){cc='#'+new T.Color(col).lerp(new T.Color('#ff9a62'),.7).getHexString();ii=int*1.1}else ii=int*1.15}
+  return rawL.call(c,type,cc,ii,x,y,z,dist,decay)}}
+ /* a strip light: a steel housing, two tubes that are the light (emissive, so the bloom finds them), a diffuser glow,
+    a pool on the floor under it and a real point light with falloff. Every club room, office and classroom hangs these. */
+ o.poolTex=function(){return o._pool||(o._pool=(function(){var cv=c.cvs(128,128),k=cv.getContext('2d'),gr=k.createRadialGradient(64,64,4,64,64,62);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.5,'rgba(255,255,255,.4)');gr.addColorStop(1,'rgba(255,255,255,0)');k.clearRect(0,0,128,128);k.fillStyle=gr;k.fillRect(0,0,128,128);return c.tex(cv,1,1)})())};
+ o.pool=function(x,z,col,r,op,y){var m=new T.Mesh(new T.PlaneGeometry(r*2,r*2),new T.MeshBasicMaterial({map:o.poolTex(),color:col,transparent:true,opacity:op,blending:T.AdditiveBlending,depthWrite:false}));m.rotation.x=-Math.PI/2;m.position.set(x,(y||0)+.04,z);m.castShadow=false;m.receiveShadow=false;m.userData.noBlock=1;g.add(m);return m};
+ o.tube=function(x,z,y,len,ry,op){op=op||{};var gp=new T.Group();gp.position.set(x,y,z);gp.rotation.y=ry||0;g.add(gp);var on=op.on!==false;
+  [-len*.38,len*.38].forEach(function(dx){o.C(.025,.025,op.drop||1.6,dx,0,0,'#3a3c44',{metalness:.5},5,gp)});
+  var hb=o.B(len,.26,.62,0,-(op.drop||1.6)-.26,0,'#c9ccd2',{metalness:.55,roughness:.4},.03,gp);
+  var tm2=new T.MeshStandardMaterial({color:'#f4f6f2',emissive:op.col||'#fff3e4',emissiveIntensity:on?(o.NIGHT?2.4:1.4):.05,roughness:.3});
+  [-.14,.14].forEach(function(dz){var tb=c.mesh(new T.CylinderGeometry(.075,.075,len*.94,10),tm2,0,-(op.drop||1.6)-.3,dz,gp);tb.rotation.z=Math.PI/2;tb.castShadow=false});
+  var dif=c.mesh(new T.PlaneGeometry(len*.96,.5),new T.MeshBasicMaterial({color:op.col||'#fff3e4',transparent:true,opacity:on?.55:.08,depthWrite:false}),0,-(op.drop||1.6)-.36,0,gp);dif.rotation.x=Math.PI/2;dif.castShadow=false;
+  if(on){o.G(0,-(op.drop||1.6)-.5,0,op.col||'#ffe6cf',len*1.4,o.NIGHT?.42:.22,gp);var fl=Math.sin(x*3.1+z*1.7);
+   o.pool(x,z,op.col||'#ffe6cf',len*1.1,o.NIGHT?.2:.07);var l=c.light('point',op.col||'#ffe8d2',op.int||.9,x,y-(op.drop||1.6)-.6,z,op.dist||len*3);
+   /* one in six tubes has a tired ballast: it flickers */
+   if(fl>.72&&!op.steady){c.tick(function(t){var f=Math.sin(t*23+x)*Math.sin(t*7.3)>.86?.25:1;tm2.emissiveIntensity=(o.NIGHT?2.4:1.4)*f;dif.material.opacity=.55*f})}}
+  return gp};
+ /* years on a room: a damp band up the foot of every wall, scuffs where chairs are dragged, a drip from the ceiling line,
+    and the floor darker where feet come in. Decals only — nothing blocks. */
+ o.grimeTex=function(){return o._grime||(o._grime=(function(){var cv=c.cvs(256,64),k=cv.getContext('2d');k.clearRect(0,0,256,64);var gr=k.createLinearGradient(0,0,0,64);gr.addColorStop(0,'rgba(36,30,26,0)');gr.addColorStop(.5,'rgba(36,30,26,.22)');gr.addColorStop(1,'rgba(28,24,22,.5)');k.fillStyle=gr;k.fillRect(0,0,256,64);for(var i=0;i<40;i++){k.fillStyle='rgba(20,16,14,'+(.05+c.rnd()*.15)+')';var x=c.rnd()*256,w=4+c.rnd()*30;k.fillRect(x,40+c.rnd()*20,w,2+c.rnd()*8)}return c.tex(cv,1,1)})())};
+ o.scuffTex=function(){return o._scuff||(o._scuff=(function(){var cv=c.cvs(256,256),k=cv.getContext('2d');k.clearRect(0,0,256,256);var gr=k.createRadialGradient(128,128,10,128,128,120);gr.addColorStop(0,'rgba(30,26,24,.3)');gr.addColorStop(1,'rgba(30,26,24,0)');k.fillStyle=gr;k.fillRect(0,0,256,256);k.strokeStyle='rgba(20,18,16,.18)';k.lineWidth=2;for(var i=0;i<30;i++){k.beginPath();var a=c.rnd()*6.3,r=40+c.rnd()*70;k.arc(128,128,r,a,a+.3+c.rnd()*.8);k.stroke()}return c.tex(cv,1,1)})())};
+ o.grime=function(W,D,op){op=op||{};var dec=function(w,h,x,y,z,ry,rx,t,opa){var m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshStandardMaterial({map:t,transparent:true,opacity:opa==null?1:opa,roughness:1,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1}));m.position.set(x,y,z);m.rotation.set(rx||0,ry||0,0);m.renderOrder=1;m.castShadow=false;m.receiveShadow=true;m.userData.noBlock=1;g.add(m);return m};
+  var bandH=op.band||1.4,zf=op.zf==null?.62:op.zf,xf=op.xf==null?.62:op.xf;
+  dec(W,bandH,W/2,bandH/2,zf,0,0,o.grimeTex());dec(D,bandH,xf,bandH/2,D/2,Math.PI/2,0,o.grimeTex());if(op.right!==false)dec(D,bandH,W-xf,bandH/2,D/2,-Math.PI/2,0,o.grimeTex());
+  (op.scuffs||[[W*.5,D*.55,5],[W*.15,D*.3,3.5],[W*.85,D*.7,3]]).forEach(function(s){dec(s[2],s[2],s[0],.025,s[1],c.rnd()*3,-Math.PI/2,o.scuffTex(),op.scuffOp==null?1:op.scuffOp)});
+  /* the way in is the darkest floor */if(op.door)dec(3.2,4.4,op.door[0],.03,op.door[1],0,-Math.PI/2,o.scuffTex(),1.4)};
+ /* plastic stacking chairs, a leaning pile of n; the top ones a little askew */
+ o.stackChairs=function(x,z,ry,n,col){var gp=new T.Group();gp.position.set(x,0,z);gp.rotation.y=ry||0;g.add(gp);col=col||'#5a6474';n=n||5;var seatM={roughness:.45,metalness:.05};
+  for(var i=0;i<n;i++){var cg=new T.Group();cg.position.set(Math.sin(i*2.3)*.03,i*.28,-i*.1);cg.rotation.y=Math.sin(i*1.9)*.04;gp.add(cg);
+   o.B(1.5,.14,1.5,0,1.4,0,col,seatM,.1,cg);var bk=o.B(1.5,1.2,.12,0,1.5,-.72,col,seatM,.1,cg);bk.rotation.x=-.12;
+   [[-.68,-.6],[.68,-.6],[-.62,.62],[.62,.62]].forEach(function(p){var lg=o.C(.045,.045,1.4,p[0],0,p[1],'#a8adb6',{metalness:.8,roughness:.3},6,cg);lg.castShadow=false})}
+  return gp};
+ /* folded flags in a pile: cloth bricks in the club's colours, the top one half-open and hanging over the edge */
+ o.flagPile=function(x,y,z,ry,n){var gp=new T.Group();gp.position.set(x,y,z);gp.rotation.y=ry||0;g.add(gp);n=n||5;var cols=[C1,C2,C3,C1,'#f4f1ff'];
+  for(var i=0;i<n;i++){var w=1.9+Math.sin(i*2.1)*.15,d=1.2+Math.cos(i*1.3)*.1;var f=o.B(w,.26,d,Math.sin(i*1.7)*.08,i*.26,Math.cos(i*2.3)*.06,cols[i%cols.length],{roughness:.95},.08,gp);f.rotation.y=Math.sin(i*2.9)*.07;
+   /* a fold line down the middle */o.B(w*.98,.02,.04,0,i*.26+.26,Math.cos(i*2.3)*.06,'#'+new T.Color(cols[i%cols.length]).multiplyScalar(.6).getHexString(),{roughness:1},.005,gp).castShadow=false}
+  var tail=c.mesh(new T.PlaneGeometry(.9,1.1,1,4),c.std(cols[(n-1)%cols.length],{roughness:.95,side:T.DoubleSide}),w/2-.05,n*.26-.5,0,gp);tail.rotation.z=-.15;tail.castShadow=false;return gp};
+ /* the carton grows up: a tape strip over the seam, flap lines, a bruised corner, and the label that was there stays */
+ var rawBox=o.box;o.box=function(w,h,d,x,y,z,ry,lbl){var gp=rawBox(w,h,d,x,y,z,ry,lbl);
+  o.B(w*.18,.012,d*1.02,0,h+.05,0,'#d8c8a8',{roughness:.4,metalness:.05},.002,gp).castShadow=false;
+  o.B(w*1.02,.012,.03,0,h+.045,-d*.22,'#8a6a4e',{roughness:1},.002,gp).castShadow=false;o.B(w*1.02,.012,.03,0,h+.045,d*.22,'#8a6a4e',{roughness:1},.002,gp).castShadow=false;
+  [-1,1].forEach(function(s){o.B(.03,h*.96,.03,s*w/2,.02,d/2,'#a98068',{roughness:1},.005,gp).castShadow=false});
+  var bruise=o.B(.5,.3,.03,w*.3,h*.1,d/2+.01,'#9c7658',{roughness:1},.02,gp);bruise.castShadow=false;bruise.rotation.z=.3;return gp};
  return o}
 function SKI(c,i){return c.SK[i%5]}
 window.__H=H;
@@ -119,6 +169,8 @@ RM.def('community-room',{kind:'club-room',build:function(c){var h=H(c),g=c.g,C1=
  c.person({skin:c.SK[1],top:'#3a3a48',bot:'#1c2030',hair:'#c8c0b8',style:'short',glasses:true,w:1.2,mode:'listen',s:1.05,look:.5,jacket:'#4a4a5a'},{x:19.6,z:3.6,yaw:-.25});
  c.person({skin:c.SK[2],top:C1,bot:'#1c2030',hair:'#1a1210',style:'slick',w:1.05,mode:'sit',s:1.08,collar:C2},{x:21.3,z:8.2,yaw:-Math.PI/2}).position.y=0;/* seated the same arm's length forward of his chair as the others are of theirs */
  c.light('point','#ffd2c0',.8,5.6,2.0,2.8,8);
+ /* 31.10.2026: the years on the room — a damp band, scuffed floor at the door and under the table; a strip light over the counter; chairs stacked for the next meeting; flags folded on the sofa's end */
+ h.grime(24,14,{door:[23,7],scuffs:[[15,8.2,7],[4.6,4.6,4],[21,8,3]]});h.tube(4.6,4.2,9.0,4.4,0,{col:'#fff0dc',int:.7,steady:true});h.stackChairs(23.0,12.2,-.5,6,'#5a4a44');h.flagPile(2.2,2.2,13.4,.2,4);
  c.setCam(3.3,3.9,8.7,3.3,1.1,1.2,38,62)}});
 /* ================= storeroom ================= */
 function shirtOn(h,c,x,y,z,col,ry,col2){var gp=new T.Group();gp.position.set(x,y,z);gp.rotation.y=ry||0;c.g.add(gp);h.C(.04,.04,.5,0,.1,0,'#c9ced6',{metalness:.8},5,gp);var hg=c.mesh(new T.TorusGeometry(.3,.03,5,12,Math.PI),c.std('#c9ced6',{metalness:.8}),0,.15,0,gp);
@@ -155,8 +207,9 @@ RM.def('storeroom',{kind:'club-room',build:function(c){var h=H(c),g=c.g,C1=h.C1,
  h.B(5.5,.4,4.6,12.6,0,6.4,'#8a6a52',{roughness:.95},.04);for(i=0;i<3;i++)for(var j=0;j<2;j++){h.box(2.6,1.9,2.0,11.2+i*1.7+j*.2,.4,5.6+j*2.0,j*.15,i===1&&j===0?'Sizes':null);if(i<2)h.box(2.4,1.7,1.9,11.4+i*2.0,2.3,5.7+j*2.0,.1,null)}
  /* hand truck */
  h.B(.2,5,.2,16.2,0,5.4,C1,{metalness:.3});h.B(.2,5,.2,17.2,0,5.4,C1,{metalness:.3});h.B(1.2,.15,1.4,16.7,.0,6.0,'#7d8fa6',{metalness:.5});[-1,1].forEach(function(a){var w=c.mesh(new T.CylinderGeometry(.55,.55,.25,14),c.std('#14141a'),16.7+a*.9,.55,5.4,g);w.rotation.z=Math.PI/2});
- /* folding chairs stacked */
- for(i=0;i<5;i++)h.B(1.6,.12,1.5,21.4,.35+i*.22,10.4,'#3a3a44',{},.04);h.B(1.6,2,.12,21.4,.4,9.75,'#3a3a44');
+ /* chairs stacked for the away bus, flags folded on the pallet's corner, and the room's own years */
+ h.stackChairs(21.4,10.4,.2,7,'#3a3a44');h.flagPile(10.2,2.3,7.6,-.3,5);h.grime(24,14,{band:1.8,door:[1.6,8],scuffs:[[12,9,6],[18,8,4],[6,6,3.5]]});
+ h.tube(6,4.5,9.3,4.6,0,{col:'#eef2ff',int:.8});h.tube(18,8.5,9.3,4.6,0,{col:'#eef2ff',int:.8});
  /* bare bulb + dust motes */
  var bg=new T.Group();bg.position.set(12,9,5.5);g.add(bg);h.C(.03,.03,4,0,0,0,'#2a2a30',{},4,bg);var bb=c.mesh(new T.SphereGeometry(.3,12,8),new T.MeshBasicMaterial({color:'#fff0e4'}),0,-.1,0,bg);bb.castShadow=false;var gl=h.G(0,-.1,0,'#ffbe96',4.5,.5,bg);
  var cone=c.mesh(new T.CylinderGeometry(.3,5,9,18,1,true),new T.MeshBasicMaterial({color:'#ffc4a0',transparent:true,opacity:.07,blending:T.AdditiveBlending,depthWrite:false,side:T.DoubleSide}),12,4.6,5.5,g);cone.castShadow=false;
@@ -207,8 +260,8 @@ RM.def('workshop',{kind:'club-room',build:function(c){var h=H(c),g=c.g,C1=h.C1,C
  [[19.2,8.6,C1],[20.4,9.4,C3],[21.6,8.7,C2],[20.8,10.4,'#4a6aff'],[22.2,10.0,C1]].forEach(function(p,i){h.C(.62,.62,.9,p[0],0,p[1],'#b4bcc8',{metalness:.8,roughness:.35},16);h.C(.5,.5,.06,p[0],.9,p[1],p[2],{roughness:.35},16);h.C(.66,.66,.1,p[0],.1,p[1],'#9aa2ae',{metalness:.8},16);var dr=h.B(.12,.55,.05,p[0]+.55,.2,p[1]+.1,p[2],{roughness:.4});dr.rotation.z=.1});
  h.C(.4,.4,1.1,18.6,0,10.6,'#d8dce2',{metalness:.7},12);for(i=0;i<5;i++)h.C(.05,.07,2.1,18.6+(i-2)*.12,1.1,10.6,i%2?C1:'#6e4a3c',{},5).rotation.z=(i-2)*.14;h.B(1.8,.14,1.1,17.6,.0,9.2,'#c4ccd6',{metalness:.6});h.C(.28,.28,1.3,17.6,.14,9.2,C1,{},12).rotation.z=Math.PI/2;
  h.cloth(6.2,3.6,.5,6.0,9.0,h.fabric(C1,C2,9,true),Math.PI/2,.2);h.C(.06,.06,6.6,.4,7.9,9.0,'#2a2a30',{},5).rotation.x=Math.PI/2;g.children[g.children.length-1].position.set(.4,7.9,9.0);
- /* fluorescent tubes */
- [[8,5.5],[18,5.5]].forEach(function(p){var tg=new T.Group();tg.position.set(p[0],8.7,p[1]);g.add(tg);h.C(.02,.02,2,-1.8,0,0,'#2a2a30',{},4,tg);h.C(.02,.02,2,1.8,0,0,'#2a2a30',{},4,tg);h.B(4.6,.18,.5,0,-.2,0,'#fff2e8',{},.05,tg).material=new T.MeshBasicMaterial({color:'#fff2e8'});h.G(0,-.4,0,'#ffd6c0',7,.4,tg)});
+ /* fluorescent tubes (real fixtures since 31.10.2026), sawdust and paint on the floor, the damp foot of the brick */
+ [[8,5.5],[18,5.5],[13,10.5]].forEach(function(p){h.tube(p[0],p[1],HH,4.6,0,{col:'#fff2e8',int:.85,drop:1.2})});h.grime(W,D,{band:1.6,right:false,door:[2.4,2.2],scuffs:[[8.6,6.2,5],[17.4,6.0,4.5],[20.5,9.5,3.5]]});
  /* people */
  c.person({skin:c.SK[2],top:'#e8e0d8',bot:'#3a3a48',hair:'#14100e',style:'short',beard:true,w:1.2,mode:'talk',s:1.1,cap:C3,apron:'#8a6a52',look:-.5},{x:17.6,z:7.0,yaw:-.45});
  c.person({skin:c.SK[0],top:C1,bot:'#1c2030',hair:'#3a2418',style:'long',w:.95,mode:'arrange',s:1.0,scarf:[C1,C2]},{x:10.0,z:8.6,yaw:.5});
@@ -258,6 +311,7 @@ RM.def('rehearsal',{kind:'club-room',build:function(c){var h=H(c),g=c.g,C1=h.C1,
  var tw=c.person({skin:c.SK[1],top:'#6a7fb0',bot:'#2a2a30',hair:'#c8c0b8',style:'short',glasses:true,w:1.15,mode:'talk',s:1.08,jacket:'#4a4a5a'},{x:3.9,z:7.6,yaw:.7});
  /* guitar on stand */
  h.C(.5,.5,.9,3.0,0,10.5,'#7a2a2a',{},14).scale.set(1,1,.3);h.B(.2,3.0,.15,3.0,.8,10.5,'#3a2a24');
+ h.grime(24,14,{band:1.2,scuffs:[[9.5,8.2,6],[16.6,6.5,3]]});h.stackChairs(1.6,12.6,.3,4,'#1e1e26');h.tube(12,11.5,9.3,4.2,0,{on:false});
  /* par-can floor glows */
  [[1.5,12.5,C1],[22.5,12.8,'#6a7cff']].forEach(function(p){h.G(p[0],.6,p[1],p[2],5,.5)});
  c.tick(function(t){lg2.material.opacity=.14+Math.sin(t*3.4)*.03});
@@ -530,6 +584,7 @@ RM.def('ussishkin-end',{kind:'hall',build:function(c){var h=H(c),g=c.g,C1=h.C1,C
  var HH=14;
  c.shell({h:HH,wallMap:c.wall('#d8ccb8',['#cabea8','#e4d8c4','#bcb09a'],4,2),floorMap:c.planks(5),skirt:'#2a2a34'});
  c.light('hemi','#ffe6d4',.5,0,0,0,'#46343a');var s=c.light('dir','#ffd6b8',.85,-8,14,12);c.shadows(s,10);c.light('point','#ffb48a',1.4,3.4,2.4,2.0,10);c.light('point','#ff8a9a',1.0,6.0,2.6,2.6,9);
+ h.grime(24,14,{band:1.6,scuffs:[[12,7,6],[5,9,4],[19,8,4]]});
  /* mural on back wall */
  h.T('WE ARE HERE',16,4.6,12,9.6,.06,null,C1,0,{fs:.62,stroke:C3,weight:'900'});h.B(24.4,.3,.1,12,6.0,.05,C1);
  /* terrace steps */

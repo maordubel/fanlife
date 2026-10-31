@@ -9,6 +9,35 @@
 import {gaitPose} from '@/lib/life/motion/gait'
 import * as THREE from 'three'
 
+/* ---- shared textures (the whole app's lifetime; never disposed per stage) ----
+   the fabric swatches and the iris plates are the realism pack TOWN already ships (public/life/town, REALISM-ASSETS.md):
+   read here as bump maps and eye plates, never written to. A missing file leaves the plain material: nothing waits. */
+const TEX = new Map<string, THREE.Texture>()
+function tex(url: string, repeat: [number, number], srgb = false): THREE.Texture | null {
+  if (typeof document === 'undefined') return null
+  let t = TEX.get(url)
+  if (!t) {
+    t = new THREE.TextureLoader().load(url, () => { t!.needsUpdate = true }, undefined, () => { /* the plain material stays */ })
+    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(repeat[0], repeat[1]); t.anisotropy = 4
+    if (srgb) t.colorSpace = THREE.SRGBColorSpace
+    TEX.set(url, t)
+  }
+  return t
+}
+const FABRIC = {jersey: '/life/town/tex/fabric/jersey.webp', denim: '/life/town/tex/fabric/denim.webp', knit: '/life/town/tex/fabric/knit.webp', tricot: '/life/town/tex/fabric/tricot.webp'} as const
+const IRIS = ['/life/town/people/iris/brown-dark.webp', '/life/town/people/iris/brown.webp', '/life/town/people/iris/hazel.webp', '/life/town/people/iris/green.webp', '/life/town/people/iris/blue-grey.webp'] as const
+/** a soft dark disc: the contact shadow under every pair of feet (shadow maps or no shadow maps) */
+let BLOB: THREE.Texture | null = null
+function blobTex(): THREE.Texture | null {
+  if (BLOB || typeof document === 'undefined') return BLOB
+  const c = document.createElement('canvas'); c.width = c.height = 64
+  const g = c.getContext('2d')!, r = g.createRadialGradient(32, 32, 0, 32, 32, 32)
+  r.addColorStop(0, 'rgba(0,0,0,.6)'); r.addColorStop(0.55, 'rgba(0,0,0,.3)'); r.addColorStop(1, 'rgba(0,0,0,0)')
+  g.fillStyle = r; g.fillRect(0, 0, 64, 64)
+  BLOB = new THREE.CanvasTexture(c)
+  return BLOB
+}
+
 export type Cloth = {primary: string; secondary: string; trim: string; pattern: string; inverse?: boolean}
 
 export const SKIN_TONES = ['#e6b48f', '#c99470', '#b07a56', '#8d5a3e', '#d9a982', '#f0c7a4'] as const
@@ -62,6 +91,27 @@ function geos(): Record<string, THREE.BufferGeometry> {
     phal2: new THREE.CapsuleGeometry(0.0082, 0.02, 4, 8).translate(0, -0.01 - 0.0082, 0),
     thumb1: new THREE.CapsuleGeometry(0.011, 0.024, 4, 8).translate(0, -0.012 - 0.011, 0),
     thumb2: new THREE.CapsuleGeometry(0.0095, 0.018, 4, 8).translate(0, -0.009 - 0.0095, 0),
+    // the face has bones under it: a jaw that narrows to the chin, lids over the eyes, a lip under the mouth
+    jaw: new THREE.SphereGeometry(0.15, 24, 16, 0, Math.PI * 2, Math.PI * 0.42, Math.PI * 0.58),
+    lid: new THREE.SphereGeometry(0.03, 12, 8, 0, Math.PI * 2, 0, Math.PI * 0.42),
+    lowerLip: new THREE.CapsuleGeometry(0.009, 0.036, 3, 8).rotateZ(Math.PI / 2),
+    // hair with weight: a crown that sits proud of the skull, a fringe, a parting; long hair falls to the shoulders
+    hairCrown: new THREE.SphereGeometry(0.172, 24, 14, 0, Math.PI * 2, 0, 1.05),
+    fringe: new THREE.TorusGeometry(0.15, 0.028, 8, 20, Math.PI * 0.9),
+    hairLong: new THREE.CylinderGeometry(0.165, 0.2, 0.42, 20, 1, true, Math.PI * 0.55, Math.PI * 0.9),
+    curl: new THREE.SphereGeometry(0.036, 8, 6),
+    glassRim: new THREE.TorusGeometry(0.03, 0.004, 6, 16),
+    glassBridge: new THREE.CylinderGeometry(0.003, 0.003, 0.05, 6).rotateZ(Math.PI / 2),
+    // clothes that read as clothes: a belt, trouser cuffs, socks, a zip, a hem, a skirt
+    belt: new THREE.TorusGeometry(0.168, 0.016, 8, 28),
+    buckle: new THREE.BoxGeometry(0.04, 0.03, 0.012),
+    cuff: new THREE.CylinderGeometry(0.064, 0.07, 0.07, 12),
+    sock: new THREE.CylinderGeometry(0.058, 0.062, 0.05, 12),
+    zip: new THREE.BoxGeometry(0.012, 0.42, 0.006),
+    hem: new THREE.TorusGeometry(0.155, 0.012, 6, 28),
+    skirt: new THREE.CylinderGeometry(0.17, 0.26, 0.5, 20, 1, true),
+    pocket: new THREE.BoxGeometry(0.1, 0.11, 0.006),
+    blob: new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2),
   }
   G.torso!.computeVertexNormals()
   return G
@@ -79,6 +129,10 @@ export function kitTexture(c: Cloth): THREE.CanvasTexture {
   if (c.pattern === 'checkers') { g.fillStyle = ink; for (let y = 0; y < 4; y++) for (let x = 0; x < 8; x++) if ((x + y) % 2) g.fillRect(x * 32, y * 32, 32, 32) }
   if (c.pattern === 'sash') { g.fillStyle = c.primary; for (const off of [-256, 0, 256]) { g.beginPath(); g.moveTo(off + 220, 128); g.lineTo(off + 246, 128); g.lineTo(off + 297, 0); g.lineTo(off + 271, 0); g.closePath(); g.fill() } }
   if (c.pattern === 'solid') { g.fillStyle = ink; g.fillRect(0, 118, 256, 5) }
+  // the shirt is cloth, not paint: a fine knit weave and a little shading where the body turns away from the chest
+  const im = g.getImageData(0, 0, 256, 128), d = im.data
+  for (let y = 0; y < 128; y++) for (let x = 0; x < 256; x++) { const i = (y * 256 + x) * 4, weave = ((x & 1) ^ (y & 1)) ? 5 : -5, side = Math.cos(x / 256 * Math.PI * 2) * 7; d[i] = Math.max(0, Math.min(255, d[i]! + weave + side)); d[i + 1] = Math.max(0, Math.min(255, d[i + 1]! + weave + side)); d[i + 2] = Math.max(0, Math.min(255, d[i + 2]! + weave + side)) }
+  g.putImageData(im, 0, 0)
   const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4
   return t
 }
@@ -113,8 +167,12 @@ export function makeHand(skin: THREE.Material, grip = 0, role = 'skin', out?: TH
 
 export type FigureOptions = {
   kit?: boolean; scarf?: boolean; band?: boolean; pack?: boolean; vest?: boolean; cap?: boolean; mustache?: boolean
-  longSleeves?: boolean; hairStyle?: 'short' | 'bald' | 'curly'; skinTone?: string; hair?: string; top?: string; pants?: string; shoe?: string
+  longSleeves?: boolean; hairStyle?: 'short' | 'bald' | 'curly' | 'long' | 'bun'; skinTone?: string; hair?: string; top?: string; pants?: string; shoe?: string
   child?: boolean; scale?: number; template?: boolean; roll?: boolean
+  /** a woman's build: narrower shoulders, a skirt over the legs when asked; glasses; the eye's colour plate */
+  female?: boolean; skirt?: string; glasses?: boolean; eyes?: number; denim?: boolean; jacket?: string
+  /** no contact shadow (a figure drawn by instancing draws none; the flat draws its own) */
+  noBlob?: boolean
 }
 
 type Joints = Record<string, THREE.Object3D>
@@ -124,15 +182,26 @@ export type FigureData = {J: Joints; face: Face; meshes: THREE.Mesh[]; blink: nu
 export function makeFigure(cloth: Cloth, kitMap: THREE.Texture, o: FigureOptions = {}): THREE.Group {
   const g = geos()
   const tone = o.skinTone ?? SKIN_TONES[1], hairC = o.hair ?? HAIR[0]
+  const fem = !!o.female
+  // cloth bump maps and the eye plate from the shared realism pack (null on the server; the plain material then)
+  const jersey = tex(FABRIC.jersey, [6, 3]), denim = tex(FABRIC.denim, [4, 4]), knit = tex(FABRIC.knit, [3, 3]), tricot = tex(FABRIC.tricot, [5, 3])
+  const irisMap = tex(IRIS[(o.eyes ?? 0) % IRIS.length]!, [1, 1], true)
+  const bump = (m: THREE.MeshStandardMaterial, t: THREE.Texture | null, k: number) => { if (t) { m.bumpMap = t; m.bumpScale = k } return m }
+  // skin: a little sheen where the light grazes (a physical material's sheen reads as the oil of skin), lower roughness than cloth
+  const skinMat = new THREE.MeshPhysicalMaterial({color: tone, roughness: 0.52, metalness: 0, sheen: 0.25, sheenRoughness: 0.6, sheenColor: new THREE.Color(tone).lerp(new THREE.Color('#ffd7c0'), 0.4)})
+  const topC = o.top ?? TOPS[0], pantsC = o.pants ?? PANTS[0]
   const M = {
-    skin: std(tone, {roughness: 0.58}), hair: std(hairC, {roughness: 0.9}), pants: std(o.pants ?? PANTS[0], {roughness: 0.9}),
-    kit: new THREE.MeshStandardMaterial({map: kitMap, roughness: 0.82}), top: std(o.top ?? TOPS[0], {roughness: 0.9}),
-    shoe: std(o.shoe ?? '#f2efe8', {roughness: 0.7}), sole: std('#e7e2d8', {roughness: 0.9}), white: std('#f7f6f2', {roughness: 0.25}),
-    iris: std('#4a2e1e', {roughness: 0.3}), dark: std('#2a1612', {roughness: 0.7}), lip: std('#8a3a33', {roughness: 0.6}),
-    club: std(cloth.primary, {roughness: 0.8, emissive: new THREE.Color(cloth.primary), emissiveIntensity: 0.1}), clubB: std(cloth.secondary, {roughness: 0.85}),
+    skin: skinMat, hair: std(hairC, {roughness: 0.72}), pants: bump(std(pantsC, {roughness: 0.92}), o.denim ? denim : tricot, 0.012),
+    kit: bump(new THREE.MeshStandardMaterial({map: kitMap, roughness: 0.84}), jersey, 0.01), top: bump(std(topC, {roughness: 0.9}), o.jacket ? tricot : knit, 0.012),
+    jacket: bump(std(o.jacket ?? topC, {roughness: 0.75}), tricot, 0.014),
+    shoe: std(o.shoe ?? '#f2efe8', {roughness: 0.62}), sole: std('#d9d4c8', {roughness: 0.9}), white: std('#f4f3ef', {roughness: 0.3}),
+    iris: irisMap ? new THREE.MeshStandardMaterial({map: irisMap, roughness: 0.25, color: '#ffffff'}) : std('#4a2e1e', {roughness: 0.3}), dark: std('#2a1612', {roughness: 0.7}), lip: std(new THREE.Color(tone).lerp(new THREE.Color('#8a3a33'), fem ? 0.6 : 0.45), {roughness: 0.55}),
+    club: bump(std(cloth.primary, {roughness: 0.88, emissive: new THREE.Color(cloth.primary), emissiveIntensity: 0.08}), knit, 0.02), clubB: bump(std(cloth.secondary, {roughness: 0.88}), knit, 0.02),
     glint: new THREE.MeshBasicMaterial({color: '#ffffff'}), brow: std(hairC, {roughness: 0.9}),
     pack: std('#8a5a32', {roughness: 0.75}), vest: std('#ff7a1a', {roughness: 0.7, emissive: new THREE.Color('#ff6a10'), emissiveIntensity: 0.12}),
-    roll: std('#efe9de', {roughness: 0.8}),
+    roll: std('#efe9de', {roughness: 0.8}), belt: std('#2b2017', {roughness: 0.55}), buckle: std('#c8c2b4', {metalness: 0.8, roughness: 0.3}),
+    sock: std('#e9e6df', {roughness: 0.9}), skirt: bump(std(o.skirt ?? '#2a2a34', {roughness: 0.9}), knit, 0.015), glass: std('#3a3630', {metalness: 0.6, roughness: 0.35}),
+    blob: new THREE.MeshBasicMaterial({map: blobTex() ?? undefined, transparent: true, depthWrite: false, opacity: 0.55}),
   }
   const meshes: THREE.Mesh[] = []
   const part = (geo: THREE.BufferGeometry, mat: THREE.Material, role: string, parent: THREE.Object3D, x = 0, y = 0, z = 0) => {
@@ -141,35 +210,47 @@ export function makeFigure(cloth: Cloth, kitMap: THREE.Texture, o: FigureOptions
   const node = (parent: THREE.Object3D, x = 0, y = 0, z = 0) => { const n = new THREE.Group(); n.position.set(x, y, z); parent.add(n); return n }
   const root = new THREE.Group()
   const J: Joints = {}
+  // the contact shadow: what makes him stand on the ground rather than over it
+  if (!o.noBlob && !o.template) { const b = new THREE.Mesh(g.blob!, M.blob); b.position.y = 0.012; b.scale.set(0.62, 1, 0.5); b.renderOrder = 1; b.userData.role = 'blob'; root.add(b) }
   J.pelvis = node(root, 0, 0.9, 0)
-  part(g.hips!, M.pants, 'pants', J.pelvis).scale.set(1, 1, 0.72)
+  const legMat = o.skirt ? M.skin : M.pants
+  part(g.hips!, o.skirt ? M.skirt : M.pants, 'pants', J.pelvis).scale.set(1, 1, 0.72)
+  if (o.skirt) part(g.skirt!, M.skirt, 'pants', J.pelvis, 0, -0.3, 0).scale.set(1, 1, 0.8)
+  else { const bl = part(g.belt!, M.belt, 'belt', J.pelvis, 0, 0.04, 0); bl.rotation.x = Math.PI / 2; bl.scale.set(1, 0.74, 1); part(g.buckle!, M.buckle, 'belt', J.pelvis, 0, 0.04, 0.125)
+    for (const s of [-1, 1]) part(g.pocket!, M.pants, 'pants', J.pelvis, s * 0.1, -0.09, -0.118).rotation.x = 0.1 }
   for (const s of [-1, 1]) {
     const L = s < 0 ? 'L' : 'R'
     const hip = J['hip' + L] = node(J.pelvis, s * 0.088, -0.06, 0)
-    part(g.thigh!, M.pants, 'pants', hip)
+    part(g.thigh!, legMat, o.skirt ? 'skin' : 'pants', hip)
     const knee = J['knee' + L] = node(hip, 0, -0.34, 0)
-    part(g.shin!, M.pants, 'pants', knee)
+    part(g.shin!, legMat, o.skirt ? 'skin' : 'pants', knee)
+    if (!o.skirt) part(g.cuff!, M.pants, 'pants', knee, 0, -0.33, 0)
     const ankle = J['ankle' + L] = node(knee, 0, -0.36, 0)
+    part(g.sock!, M.sock, 'sock', ankle, 0, 0.0, 0)
     part(g.shoe!, M.shoe, 'shoe', ankle, 0, -0.03, 0.05).scale.set(1.12, 0.82, 1)
     part(g.sole!, M.sole, 'sole', ankle, 0, -0.075, 0.04)
   }
   J.spine = node(J.pelvis, 0, 0.04, 0)
   J.chest = node(J.spine, 0, 0, 0)
-  const torso = part(g.torso!, M.kit, 'kit', J.chest); torso.scale.set(1, 1, 0.7)
+  const torsoMat = o.jacket ? M.jacket : M.top
+  const torso = part(g.torso!, M.kit, 'kit', J.chest); torso.scale.set(fem ? 0.94 : 1, 1, 0.7)
   if (o.template) part(g.torso!, M.top, 'top', J.chest).scale.set(1.001, 1.001, 0.701)
-  else if (!o.kit) { torso.material = M.top; torso.userData.role = 'top' }
+  else if (!o.kit) { torso.material = torsoMat; torso.userData.role = 'top' }
+  // a shirt has a hem; a zipped top has a zip
+  part(g.hem!, o.kit || o.template ? M.kit : torsoMat, o.kit || o.template ? 'kit' : 'top', J.chest, 0, 0.005, 0).rotation.x = Math.PI / 2
+  if (o.jacket && !o.template) part(g.zip!, M.buckle, 'top', J.chest, 0, 0.3, 0.147)
   if (o.vest) part(g.vest!, M.vest, 'vest', J.chest).scale.set(1.04, 1, 0.76)
-  part(g.collar!, o.kit === false && !o.template ? M.top : M.clubB, 'collar', J.chest, 0, 0.53, 0.01).rotation.x = Math.PI / 2
+  part(g.collar!, o.kit === false && !o.template ? torsoMat : M.clubB, 'collar', J.chest, 0, 0.53, 0.01).rotation.x = Math.PI / 2
   for (const s of [-1, 1]) {
     const L = s < 0 ? 'L' : 'R'
-    const sh = J['shoulder' + L] = node(J.chest, s * 0.215, 0.455, 0)
+    const sh = J['shoulder' + L] = node(J.chest, s * (fem ? 0.2 : 0.215), 0.455, 0)
     sh.rotation.z = s * 0.1
     const kitArm = o.kit || o.template
-    part(g.sleeve!, kitArm ? M.kit : M.top, kitArm ? 'kit' : 'top', sh).scale.set(1, 1, 0.9)
+    part(g.sleeve!, kitArm ? M.kit : torsoMat, kitArm ? 'kit' : 'top', sh).scale.set(1, 1, 0.9)
     if (o.template) part(g.sleeve!, M.top, 'top', sh).scale.set(1.001, 1.001, 0.901)
-    part(g.upper!, o.longSleeves ? M.top : M.skin, o.longSleeves ? 'top' : 'skin', sh, 0, -0.02, 0)
+    part(g.upper!, o.longSleeves ? torsoMat : M.skin, o.longSleeves ? 'top' : 'skin', sh, 0, -0.02, 0)
     const el = J['elbow' + L] = node(sh, 0, -0.27, 0)
-    part(g.fore!, o.longSleeves ? M.top : M.skin, o.longSleeves ? 'top' : 'skin', el)
+    part(g.fore!, o.longSleeves ? torsoMat : M.skin, o.longSleeves ? 'top' : 'skin', el)
     const wr = J['wrist' + L] = node(el, 0, -0.22, 0)
     // the hand: palm towards the body, fingers falling into a soft curl
     const hd = makeHand(M.skin, 0, 'skin', meshes); hd.rotation.y = -s * Math.PI / 2; if (s > 0) hd.scale.x = -1; hd.position.y = 0.01; wr.add(hd); J['hand' + L] = hd
@@ -178,9 +259,11 @@ export function makeFigure(cloth: Cloth, kitMap: THREE.Texture, o: FigureOptions
   part(g.neck!, M.skin, 'skin', J.neck, 0, 0.05, 0)
   J.head = node(J.neck, 0, 0.09, 0)
   const H = J.headMesh = node(J.head, 0, 0.155, 0.005)
-  part(g.head!, M.skin, 'skin', H).scale.set(1, 1.08, 1.02)
+  part(g.head!, M.skin, 'skin', H).scale.set(fem ? 0.96 : 1, 1.08, 1.02)
+  // the jaw: the lower face narrows to a chin, which is what turns a ball into a head
+  part(g.jaw!, M.skin, 'skin', H, 0, -0.03, 0.012).scale.set(fem ? 0.84 : 0.9, 1.0, 0.92)
   for (const s of [-1, 1]) part(g.ear!, M.skin, 'skin', H, s * 0.148, -0.005, -0.005).scale.set(0.48, 1, 0.8)
-  part(g.nose!, M.skin, 'skin', H, 0, -0.02, 0.148).scale.set(0.9, 1.15, 1.05)
+  part(g.nose!, M.skin, 'skin', H, 0, -0.02, 0.148).scale.set(fem ? 0.78 : 0.9, 1.15, 1.05)
   const face: Face = {eyes: [], irises: [], brows: [], smile: null!, open: null!, tails: []}
   for (const s of [-1, 1]) {
     const e = part(g.eye!, M.white, 'eyeW', H, s * 0.056, 0.022, 0.122); e.scale.set(1, 1, 0.7); face.eyes.push(e)
@@ -188,16 +271,27 @@ export function makeFigure(cloth: Cloth, kitMap: THREE.Texture, o: FigureOptions
     part(g.iris!, M.iris, 'iris', ir).scale.set(1, 1, 0.55)
     part(g.glint!, M.glint, 'glint', ir, 0.006, 0.007, 0.009)
     face.irises.push(ir)
-    const b = part(g.brow!, M.brow, 'brow', H, s * 0.056, 0.075, 0.132); b.rotation.z = s * -0.12; face.brows.push(b)
+    // the upper lid: skin over the top of the eye, so the eye sits IN the face
+    const lid = part(g.lid!, M.skin, 'skin', H, s * 0.056, 0.028, 0.121); lid.scale.set(1.05, 0.9, 0.85); lid.rotation.x = -0.35
+    const b = part(g.brow!, M.brow, 'brow', H, s * 0.056, 0.075, 0.132); b.rotation.z = s * -0.12; b.scale.set(1, fem ? 0.7 : 1, 1); face.brows.push(b)
   }
   face.smile = part(g.smile!, M.lip, 'mouth', H, 0, -0.074, 0.128); face.smile.rotation.z = Math.PI; face.smile.scale.set(1, 0.65, 1)
+  part(g.lowerLip!, M.lip, 'skin', H, 0, -0.086, 0.136)
   face.open = part(g.mouth!, M.dark, 'mouthOpen', H, 0, -0.078, 0.124); face.open.scale.set(0.9, 0.05, 0.45)
   const style = o.hairStyle ?? 'short'
   if (o.template || style !== 'bald') {
     part(g.hairShort!, M.hair, 'hair', H, 0, 0.018, -0.012).scale.set(1, 1.08, 1.06)
     part(g.hairBack!, M.hair, 'hair', H, 0, 0.012, -0.008).scale.set(1.02, 1.08, 1.06)
+    // weight on top and a fringe: hair, not a painted cap
+    part(g.hairCrown!, M.hair, 'hair', H, 0, 0.03, -0.02).scale.set(1, 0.9, 1.04)
+    const fr = part(g.fringe!, M.hair, 'hair', H, 0, 0.095, 0.0); fr.rotation.order = 'YXZ'; fr.rotation.set(Math.PI / 2 + 0.3, -0.05 * Math.PI, 0); fr.scale.set(1, 1, 0.8)
   }
-  if (style === 'curly' && !o.template) for (let k = 0; k < 16; k++) { const a = k / 16 * Math.PI * 2; part(g.ear!, M.hair, 'hair', H, Math.cos(a) * 0.12, 0.1 + Math.sin(k * 2.3) * 0.02, Math.sin(a) * 0.12 - 0.01).scale.setScalar(1.6) }
+  if (style === 'curly' && !o.template) for (let k = 0; k < 22; k++) { const a = k / 22 * Math.PI * 2, r2 = 0.125 + (k % 3) * 0.012; part(g.curl!, M.hair, 'hair', H, Math.cos(a) * r2, 0.09 + Math.sin(k * 2.3) * 0.035, Math.sin(a) * r2 - 0.01).scale.setScalar(1 + (k % 2) * 0.3) }
+  if ((style === 'long' || style === 'bun') && !o.template) {
+    if (style === 'long') { const lg = part(g.hairLong!, M.hair, 'hair', H, 0, -0.14, -0.03); lg.scale.set(1, 1, 0.95) }
+    else part(g.curl!, M.hair, 'hair', H, 0, 0.1, -0.15).scale.set(2.2, 1.8, 1.8)
+  }
+  if (o.glasses && !o.template) for (const s of [-1, 1]) { part(g.glassRim!, M.glass, 'glass', H, s * 0.056, 0.022, 0.15); if (s > 0) part(g.glassBridge!, M.glass, 'glass', H, 0, 0.03, 0.152) }
   if (o.cap || o.template) { part(g.capTop!, M.club, 'cap', H, 0, 0.03, -0.005).scale.set(1, 0.95, 1.04); part(g.brim!, M.club, 'cap', H, 0, 0.03, 0.1).scale.set(1.05, 1, 1.3) }
   if (o.band) { const b = part(g.band!, M.club, 'band', H, 0, 0.07, -0.005); b.rotation.x = Math.PI / 2 - 0.12; b.scale.set(1, 1.06, 1) }
   if (o.mustache || o.template) part(g.mustache!, M.hair, 'beard', H, 0, -0.05, 0.145)

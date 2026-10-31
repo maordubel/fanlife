@@ -251,7 +251,7 @@ function enter(c){
  RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true,weather:c.weather||null,mood:c.mood||'normal',age:c.age==null?null:c.age,year:c.year==null?null:c.year,made:c.made||[]});
  var def=RM.defs[c.room];pruneDecor(c,def&&def.kind);
  if(window.__gnd)window.__sc.remove(window.__gnd);if(def&&IND[def.kind]){var gm=new T.Mesh(new T.PlaneGeometry(300,300),new T.MeshBasicMaterial({color:new T.Color('#1e1a17').convertSRGBToLinear()}));gm.rotation.x=-PI/2;gm.position.set(12*U,-.06,8*U);window.__sc.add(gm);window.__gnd=gm}
- if(window.__fill)window.__sc.remove(window.__fill);var fi=new T.DirectionalLight('#fff0e0',def&&IND[def.kind]?.3:.15);fi.position.set(0,6,14);window.__sc.add(fi);window.__fill=fi;
+ if(window.__fill)window.__sc.remove(window.__fill);/* (31.10.2026: a fill from the lens flattens every key; it stays only as a whisper so a face turned from the window is not black) */var fi=new T.DirectionalLight('#fff0e0',def&&IND[def.kind]?.14:.06);fi.position.set(0,6,14);window.__sc.add(fi);window.__fill=fi;
  var sp=c.spawn||{x:(c.walk[0]+c.walk[2])/2,z:(c.walk[1]+c.walk[3])/2,yaw:0};
  setView();skyOf(c.time==='night',def&&def.kind,c.weather==='rain'||c.mood==='rain',c.mood==='dusk');
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
@@ -287,7 +287,7 @@ function skyOf(night,kind,rain,dusk){
  if(!inside&&rain){K.bg(night?'#151a24':'#5d6670',night?'#0b0e14':'#8b939c');return}
  if(!inside&&dusk&&!night){K.bg('#4a4a78','#c87a6e');return}
 
- if(inside)K.bg(night?'#5a5066':'#d8c4a6',night?'#463e56':'#c8b090');
+ if(inside)K.bg(night?'#241f30':'#d8c4a6',night?'#17131f':'#c8b090');
  else if(night)K.bg('#1a2a6a','#0a1030');else K.bg('#6f9bd0','#cfd9e6');
 }
 function trackCam(dt,snap){
@@ -553,11 +553,11 @@ function studioOn(o){
  var pole=new T.Mesh(new T.CylinderGeometry(.012,.012,1.5,6),new T.MeshStandardMaterial({color:new T.Color('#2a2420'),roughness:.4,metalness:.5}));pole.position.set(-2.5,.75,-2.2);g.add(pole);
  var shade=new T.Mesh(new T.CylinderGeometry(.13,.2,.22,18,1,true),new T.MeshStandardMaterial({color:new T.Color('#b88a62'),emissive:new T.Color('#ff9a5a'),emissiveIntensity:.32,side:T.DoubleSide}));shade.position.set(-2.5,1.55,-2.2);g.add(shade);
  /* the key comes in from the other side of the lens (about 60° off the camera) so a face has a lit side and a shadow side, the way an interview is lit */
- var key=new T.SpotLight(new T.Color('#ffe2c2'),2.8,9,.55,.6,1.4);key.position.set(-1.2,2.4,2.5);key.target.position.set(0,.9,0);g.add(key);g.add(key.target);/* no cast shadows in the studio: at this distance a shadow map smears hair across a face; the lamps model the face, the chair and floor stay dark anyway */key.castShadow=false;
+ var key=new T.SpotLight(new T.Color('#ffe2c2'),2.8*7,9,.55,.6,2);key.position.set(-1.2,2.4,2.5);key.target.position.set(0,.9,0);g.add(key);g.add(key.target);/* no cast shadows in the studio: at this distance a shadow map smears hair across a face; the lamps model the face, the chair and floor stay dark anyway */key.castShadow=false;
  var fill=new T.HemisphereLight(new T.Color('#9aa4c0'),new T.Color('#2a2018'),.2);g.add(fill);
- var bounce=new T.PointLight(new T.Color('#ffd2b0'),.35,4,2);bounce.position.set(1.2,.6,1.4);g.add(bounce);
+ var bounce=new T.PointLight(new T.Color('#ffd2b0'),.35*5,4,2);bounce.position.set(1.2,.6,1.4);g.add(bounce);
  var rim=new T.DirectionalLight(new T.Color('#c8d4ff'),1.1);rim.position.set(1.4,2.3,-2.4);g.add(rim);
- var lamp=new T.PointLight(new T.Color('#ffb877'),.7,4,2);lamp.position.set(-2.5,1.5,-2.15);g.add(lamp);
+ var lamp=new T.PointLight(new T.Color('#ffb877'),.7*5,4,2);lamp.position.set(-2.5,1.5,-2.15);g.add(lamp);
  sc_.add(g);
  var who=null;if(o.look){var lk=lookOf(o.look,'studio');lk.x=X;lk.z=Z+.06;lk.ry=.62;lk.mode='sit';who=K.makeChar(lk);if(who.parent)who.parent.remove(who);who.position.set(0,0,.06);who.rotation.y=.62;who.userData.o.mode='sit';g.add(who)}
  /* no sky light in a studio: the room's environment would light a face evenly from everywhere; here only the lamps do */

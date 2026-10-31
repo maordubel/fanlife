@@ -14,6 +14,7 @@ import {RenderPass} from 'three/examples/jsm/postprocessing/RenderPass.js'
 import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
 import {ShaderPass} from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import {OutputPass} from 'three/examples/jsm/postprocessing/OutputPass.js'
+import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/life/rush/level'
 import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
@@ -22,7 +23,7 @@ import {dressCity} from './city'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
-import {HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
+import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
 export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean}
@@ -83,7 +84,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   // a home mission keeps its own hour (a grounded boy goes out at night whatever the day's clock says)
   const night = level.house ? level.house.night : spec.time === 'night'
-  renderer.toneMappingExposure = night ? 1.08 : 1.0
+  renderer.toneMappingExposure = night ? 1.0 : 0.92
   renderer.outputColorSpace = THREE.SRGBColorSpace
   renderer.shadowMap.enabled = !lite
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
@@ -117,8 +118,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   scene.add(cam)
 
   /* sky, light, weather */
-  const skyTop = night ? '#03050b' : '#4f7fb8', skyMid = night ? '#121a33' : '#a9c4dc', glowC = night ? '#2a1a33' : '#f3d9b8'
-  scene.fog = new THREE.FogExp2(night ? '#0b0f1d' : '#b8c8d6', level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
+  // a deeper sky and a warm haze band at the horizon: the air has depth (GTA's afternoons are smog-gold, its nights ink)
+  const skyTop = night ? '#02040a' : '#2f63a6', skyMid = night ? '#0f1730' : '#9fbbd4', glowC = night ? '#3a1f2e' : '#f0cfa0'
+  scene.fog = new THREE.FogExp2(night ? '#0a0d19' : '#b5c3cc', level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
   const skyMat = keep(new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: {uTop: {value: C(skyTop)}, uMid: {value: C(skyMid)}, uGlow: {value: C(glowC)}},
     vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
@@ -130,11 +132,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const g = keep(new THREE.BufferGeometry()); g.setAttribute('position', new THREE.BufferAttribute(st, 3))
     scene.add(new THREE.Points(g, keep(new THREE.PointsMaterial({color: '#cfd8ff', size: 1.6, sizeAttenuation: false, fog: false, transparent: true, opacity: 0.8}))))
   }
-  scene.add(new THREE.HemisphereLight(night ? '#6a7cb0' : '#dfe9f5', night ? '#1a1214' : '#6b5d4c', night ? 0.38 : 1.0))
-  const key = new THREE.DirectionalLight(night ? '#e6efff' : '#fff1dc', night ? 0.9 : 2.2)
+  // less fill, more key: shadows that go somewhere, a sun with a colour, a sky that is blue from above and warm from the ground
+  scene.add(new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
+  const key = new THREE.DirectionalLight(night ? '#dce8ff' : '#ffdcb0', night ? 0.8 : 2.9)
   key.castShadow = !lite; key.shadow.mapSize.set(2048, 2048)
   Object.assign(key.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18, near: 1, far: 140})
-  key.shadow.bias = -0.0005; key.shadow.normalBias = 0.02
+  key.shadow.bias = -0.0004; key.shadow.normalBias = 0.025; key.shadow.radius = 3
   scene.add(key, key.target)
   const rim = new THREE.PointLight('#ffb886', night ? 6 : 2, 6, 2); scene.add(rim)
   const fill = new THREE.PointLight('#9fb6ff', night ? 3 : 1, 7, 2); scene.add(fill)
@@ -174,6 +177,25 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     let i = 0
     for (let k = 0; k < n; k++) for (const x of level.place === 'road' ? [-2.1, 2.1] : [0]) { m4.makeScale(0.16, 0.01, 2.2).setPosition(x, 0.006, zStart - k * 5); dashes.setMatrixAt(i++, m4) }
     scene.add(dashes)
+    // a street is lived on: scraps of paper and cups on the pavement, a drain cover, bollards by the kerb
+    const nl = Math.floor(span / 2.2)
+    const litter = new THREE.InstancedMesh(keep(new THREE.PlaneGeometry(0.22, 0.3).rotateX(-Math.PI / 2)), keep(std('#e9e4d8', {roughness: 0.9, side: THREE.DoubleSide})), nl)
+    for (let k = 0; k < nl; k++) { const side = rnd() < 0.5 ? -1 : 1; const x = side * (half + 0.4 + rnd() * (walk - half - 0.8)); q.setFromAxisAngle(up, rnd() * 6.28); m4.compose(tmp.set(x, 0.17, zStart - rnd() * span), q, tmp2.set(0.6 + rnd(), 1, 0.6 + rnd())); litter.setMatrixAt(k, m4); litter.setColorAt(k, C(rnd() < 0.3 ? '#cfc4a8' : rnd() < 0.5 ? '#e9e4d8' : '#b9b4a8')) }
+    litter.receiveShadow = true; scene.add(litter)
+    const nb = Math.floor(span / 11)
+    const bollards = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.07, 0.09, 0.9, 10)), keep(std('#2d3038', {metalness: 0.4, roughness: 0.5})), nb * 2)
+    for (let k = 0; k < nb; k++) for (const [j, side] of [-1, 1].entries()) { m4.makeTranslation(side * (half + 0.45), 0.6, zStart - 6 - k * 11 + (j ? 5.5 : 0)); bollards.setMatrixAt(k * 2 + j, m4) }
+    bollards.castShadow = !lite; scene.add(bollards)
+    const drains = new THREE.InstancedMesh(box, keep(std('#3a3c42', {metalness: 0.6, roughness: 0.5})), Math.floor(span / 14))
+    for (let k = 0; k < drains.count; k++) { m4.makeScale(0.5, 0.012, 0.3).setPosition((k % 2 ? 1 : -1) * (half - 0.35), 0.006, zStart - 7 - k * 14); drains.setMatrixAt(k, m4) }
+    scene.add(drains)
+    // the rain leaves the road in mirrors: puddles along the kerb and in the camber
+    if (wet) {
+      const np = Math.floor(span / 7)
+      const puddles = new THREE.InstancedMesh(keep(new THREE.CircleGeometry(1, 24).rotateX(-Math.PI / 2)), keep(new THREE.MeshStandardMaterial({color: '#1a1d24', roughness: 0.04, metalness: 0.9, transparent: true, opacity: 0.85})), np)
+      for (let k = 0; k < np; k++) { q.setFromAxisAngle(up, rnd() * 3); m4.compose(tmp.set((rnd() - 0.5) * half * 1.6, 0.012, zStart - rnd() * span), q, tmp2.set(0.6 + rnd() * 1.6, 1, 0.4 + rnd() * 0.8)); puddles.setMatrixAt(k, m4) }
+      scene.add(puddles)
+    }
   }
 
   const addBuildings = (walk: number, from: number, to: number, gaps: number[]) => {
@@ -398,12 +420,24 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       for (const sx2 of [-1, 1]) { const wl = new THREE.Mesh(box, keep(std('#8a857c'))); wl.scale.set(0.6, 2.4, 60); wl.position.set(sx2 * (level.half + 1.5), 1.2, -20); scene.add(wl) }
     }
     if (!isPitch && !school) {
-      const bands = new THREE.InstancedMesh(box, keep(std('#8a857c')), 24)
-      for (let i = 0; i < 24; i++) { m4.makeScale(level.half * 2 + 30, 0.04, 0.12).setPosition(0, 0.02, 6 - i * 2.1); bands.setMatrixAt(i, m4) } scene.add(bands)
+      // the terrace: step nosings worn pale, with the dark line of each riser's shadow; crush barriers with their legs
+      const bands = new THREE.InstancedMesh(box, keep(std('#a9a49a', {roughness: 0.7})), 24)
+      for (let i = 0; i < 24; i++) { m4.makeScale(level.half * 2 + 30, 0.04, 0.14).setPosition(0, 0.02, 6 - i * 2.1); bands.setMatrixAt(i, m4) } scene.add(bands)
+      const risers = new THREE.InstancedMesh(box, keep(std('#4a4842', {roughness: 0.95})), 24)
+      for (let i = 0; i < 24; i++) { m4.makeScale(level.half * 2 + 30, 0.01, 0.35).setPosition(0, 0.012, 6 - i * 2.1 - 0.25); risers.setMatrixAt(i, m4) } scene.add(risers)
       const bars = new THREE.InstancedMesh(box, keep(std('#b8b3aa', {metalness: 0.5, roughness: 0.4})), 40)
+      const legs = new THREE.InstancedMesh(box, keep(std('#9a958c', {metalness: 0.5, roughness: 0.45})), 80)
       let bi = 0
-      for (let r = 0; r < 5; r++) for (let k = 0; k < 8; k++) { if (bi >= 40) break; m4.makeScale(3, 0.08, 0.08).setPosition(-14 + k * 4 + (r % 2) * 2, 1.05, -2 - r * 8); bars.setMatrixAt(bi++, m4) }
-      bars.count = bi; scene.add(bars)
+      for (let r = 0; r < 5; r++) for (let k = 0; k < 8; k++) { if (bi >= 40) break; const bx = -14 + k * 4 + (r % 2) * 2, bz = -2 - r * 8; m4.makeScale(3, 0.08, 0.08).setPosition(bx, 1.05, bz); bars.setMatrixAt(bi, m4); for (const [j, sx] of [-1.4, 1.4].entries()) { m4.makeScale(0.07, 1.05, 0.07).setPosition(bx + sx, 0.52, bz); legs.setMatrixAt(bi * 2 + j, m4) } bi++ }
+      bars.count = bi; legs.count = bi * 2; bars.castShadow = legs.castShadow = !lite; scene.add(bars, legs)
+      // the perimeter: a low wall, the hoardings in the club's two colours (plain cloth, no words of ours), the rail
+      const wallZ = level.bounds.z1 + 1.6
+      const pw = new THREE.Mesh(box, keep(std('#8f8a80', {roughness: 0.85}))); pw.scale.set(level.half * 2 + 30, 1.1, 0.3); pw.position.set(0, 0.55, wallZ); pw.receiveShadow = true; scene.add(pw)
+      const nh = Math.floor((level.half * 2 + 30) / 4)
+      const hoard = new THREE.InstancedMesh(box, keep(std('#ffffff', {roughness: 0.5})), nh)
+      for (let k = 0; k < nh; k++) { m4.makeScale(3.9, 0.9, 0.08).setPosition(-level.half - 15 + 2 + k * 4, 1.55, wallZ + 0.1); hoard.setMatrixAt(k, m4); hoard.setColorAt(k, C(k % 3 === 0 ? skin.s : k % 3 === 1 ? skin.p : '#f3efe6')) }
+      scene.add(hoard)
+      const rail = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.03, 0.03, level.half * 2 + 30, 8).rotateZ(Math.PI / 2)), keep(std('#c9c4b8', {metalness: 0.7, roughness: 0.3}))); rail.position.set(0, 2.05, wallZ + 0.1); scene.add(rail)
     }
     const tg = level.targets[0]
     if (tg?.kind === 'spot') {
@@ -461,7 +495,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const tmpl = figOf({template: true, scarf: true})
   tmpl.updateMatrixWorld(true)
   const kidK = level.kids ? 0.78 : 1
-  const tParts = (tmpl.userData as FigureData).meshes.filter(m => m.userData.role !== 'glint' && m.userData.role !== 'iris' && m.userData.role !== 'eyeW' && m.userData.role !== 'brow')
+  const tParts = (tmpl.userData as FigureData).meshes.filter(m => !['glint', 'iris', 'eyeW', 'brow', 'blob'].includes(m.userData.role as string))
   const recolour = new Set(['skin', 'hair', 'pants', 'top', 'beard'])
   type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number}
   const people: Person[] = []
@@ -492,10 +526,17 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /* ───────────── the quest: who waits for you, what lies on the ground, where to go next ───────────── */
   const rlook = (o: Partial<Look> = {}): Look => ({tone: Math.floor(rnd() * 6), hair: Math.floor(rnd() * 6), top: Math.floor(rnd() * 6), pants: Math.floor(rnd() * 5), kit: rnd() < 0.8, cap: rnd() < 0.2, scarf: true, beard: rnd() < 0.2, size: 0.95 + rnd() * 0.1, ...o})
-  const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => figOf({kit: L.kit, scarf: L.scarf, cap: L.cap, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK, ...o})
+  // a look is a person: the same numbers always dress the same way, and a crowd is not one man repeated —
+  // women with their hair down, denim, glasses, a jacket at night, eyes of their own colour
+  const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => {
+    const h = L.tone * 7 + L.hair * 3 + L.top * 5 + L.pants * 11
+    const female = !L.beard && !L.hex && h % 3 === 0
+    return figOf({kit: L.kit, scarf: L.scarf, cap: L.cap && !female, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK,
+      female, hairStyle: female ? (h % 2 ? 'long' : 'bun') : h % 5 === 0 ? 'curly' : h % 7 === 0 ? 'bald' : 'short', glasses: h % 6 === 0, denim: L.pants % 2 === 0, eyes: L.hair % 5, jacket: !L.kit && night ? (L.top % 2 ? '#2a2f3a' : '#3b3630') : undefined, ...o})
+  }
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
   const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), ground, glowTex,
-    person: f => figOf({kit: false, longSleeves: true, hairStyle: f.curly ? 'curly' : 'short', top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94})}) : null
+    person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -606,7 +647,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   // the supporter: his own figure, or his car
   const child = spec.age < 13
-  const hero = figOf({kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94})
+  const hero = figOf({kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'})
   if (!heroCar) scene.add(hero)
   // the banner he takes on the ultras route: rolled cloth in neutral grey and white, never the other club's colours
   const loot = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.14, 0.14, 1.2, 14).rotateZ(Math.PI / 2)), keep(std('#c9c5bd', {roughness: 0.85})))
@@ -615,6 +656,85 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // thrown things: a cup, a bottle-shaped plastic — drawn small and pale, never a weapon
   const throwsMesh = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.06, 0.05, 0.16, 8)), keep(std('#e8e3d8', {roughness: 0.5})), 12); throwsMesh.frustumCulled = false; scene.add(throwsMesh)
   const marks = new THREE.InstancedMesh(keep(new THREE.RingGeometry(0.5, 0.62, 24).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: '#f3efe6', transparent: true, opacity: 0.55, depthWrite: false})), 12); marks.frustumCulled = false; scene.add(marks)
+
+  /* the stand behind the terrace: hundreds of bodies on rising tiers, in the club's colours, singing. Each tier's people
+     are ONE merged geometry per pose, instanced — six draw calls for a full end — with vertex colours for skin, hair and
+     trousers and the instance colour tinting only the shirt (`aTint`), so a stand is many people and not one man. */
+  const stand: {im: THREE.InstancedMesh; ph: number}[] = []
+  if (level.place === 'crowd' && !level.kids && spec.template !== 'title-night') {
+    const skipRole = new Set(['glint', 'iris', 'eyeW', 'brow', 'blob', 'mouthOpen', 'mouth', 'belt', 'sock', 'cuff', 'hem', 'scarfB'])
+    const bake = (fig: THREE.Group, skinC: string, hairC: string, pantsC: string) => {
+      fig.updateMatrixWorld(true)
+      const parts: THREE.BufferGeometry[] = []
+      fig.traverse(o => {
+        const m = o as THREE.Mesh; if (!m.isMesh) return
+        const role = m.userData.role as string; if (skipRole.has(role)) return
+        // a man forty metres off has no fingers, lids or buckles: anything smaller than a fist is left out of the bake
+        if (!m.geometry.boundingSphere) m.geometry.computeBoundingSphere()
+        if ((m.geometry.boundingSphere?.radius ?? 1) < 0.045) return
+        const gm = m.geometry.clone().toNonIndexed(); gm.applyMatrix4(m.matrixWorld)
+        const n = gm.attributes.position!.count, col = new Float32Array(n * 3), tint = new Float32Array(n)
+        const cc = C(role === 'skin' ? skinC : role === 'hair' || role === 'beard' ? hairC : role === 'pants' ? pantsC : role === 'shoe' ? '#e8e4dc' : role === 'sole' ? '#c9c4b8' : role === 'scarf' ? skin.p : role === 'cap' ? skin.p : role === 'collar' ? skin.s : '#ffffff')
+        for (let i = 0; i < n; i++) { col[i * 3] = cc.r; col[i * 3 + 1] = cc.g; col[i * 3 + 2] = cc.b; tint[i] = role === 'kit' || role === 'top' ? 1 : 0 }
+        gm.setAttribute('color', new THREE.BufferAttribute(col, 3)); gm.setAttribute('aTint', new THREE.BufferAttribute(tint, 1))
+        for (const k of Object.keys(gm.attributes)) if (!['position', 'normal', 'color', 'aTint'].includes(k)) gm.deleteAttribute(k)
+        parts.push(gm)
+      })
+      const merged = mergeGeometries(parts, false)!; parts.forEach(pg => pg.dispose())
+      return keep(merged)
+    }
+    const standMat = keep(new THREE.MeshStandardMaterial({vertexColors: true, roughness: 0.86}))
+    standMat.onBeforeCompile = sh => {
+      sh.vertexShader = 'attribute float aTint;\n' + sh.vertexShader.replace('#include <color_vertex>', `vColor = vec3(1.0);
+        #ifdef USE_COLOR
+        vColor *= color;
+        #endif
+        #ifdef USE_INSTANCING_COLOR
+        vColor.xyz = mix(vColor.xyz, vColor.xyz * instanceColor.xyz, aTint);
+        #endif`)
+    }
+    const rows = lite ? 5 : 10, z0 = level.bounds.z0 - 2.2, xw = level.half + 16, gap = lite ? 1.05 : 0.78
+    const tiers = new THREE.InstancedMesh(box, keep(std('#7d7a72', {roughness: 0.95})), rows)
+    for (let r = 0; r < rows; r++) { m4.makeScale(xw * 2 + 6, 0.5 + r * 0.46, 1.7).setPosition(0, (0.5 + r * 0.46) / 2, z0 - r * 1.7); tiers.setMatrixAt(r, m4) }
+    tiers.receiveShadow = true; scene.add(tiers)
+    const variants: {geo: THREE.BufferGeometry; ph: number}[] = []
+    const poses: Parameters<typeof pose>[1][] = [{speed: 0, scarfUp: true, joy: 1}, {speed: 0, joy: 0.6}, {speed: 0, celebrate: true, joy: 1}]
+    poses.forEach((ps, pi) => {
+      const f = figOf({kit: pi !== 1, scarf: true, cap: pi === 2, longSleeves: pi === 1, noBlob: true, hairStyle: pi === 0 ? 'short' : pi === 1 ? 'curly' : 'bald'})
+      pose(f, ps, pi * 1.3, 0)
+      variants.push({geo: bake(f, SKIN_TONES[(pi * 2 + 1) % SKIN_TONES.length]!, HAIR[pi % HAIR.length]!, PANTS[(pi + 1) % PANTS.length]!), ph: pi * 2.1})
+      disposeFigure(f)
+    })
+    const per = Math.floor(xw * 2 / gap), total = per * rows, each = Math.ceil(total / variants.length)
+    const shirtCols = allowed([skin.p, skin.p, skin.s, '#2a2d36', '#e8e4dc', '#3a3630'], skin)
+    variants.forEach((v, vi) => {
+      const im = new THREE.InstancedMesh(v.geo, standMat, each); im.frustumCulled = false; im.castShadow = false; im.receiveShadow = true
+      let n = 0
+      for (let r = 0; r < rows; r++) for (let k = 0; k < per; k++) {
+        if ((r * per + k) % variants.length !== vi || n >= each) continue
+        const x = -xw + k * gap + (rnd() - 0.5) * 0.3, y = 0.5 + r * 0.46, z = z0 - r * 1.7 + (rnd() - 0.5) * 0.5
+        q.setFromAxisAngle(up, (rnd() - 0.5) * 0.5); const sc = 0.9 + rnd() * 0.16
+        m4.compose(tmp.set(x, y, z), q, tmp2.set(sc, sc, sc)); im.setMatrixAt(n, m4)
+        im.setColorAt(n, C(shirtCols[Math.floor(rnd() * shirtCols.length)]!)); n++
+      }
+      im.count = n; scene.add(im); stand.push({im, ph: v.ph})
+    })
+  }
+
+  // the end of a good night in the crowd: flares in the club's colour held up, smoke rolling under the floodlights
+  const flareC = bannedColour(skin.p, skin) ? '#f3efe6' : skin.p
+  const flareLights: THREE.PointLight[] = [], flareSprites: THREE.Sprite[] = [], smokeSprites: {s: THREE.Sprite; a: number; x: number; z: number}[] = []
+  let smokeMat: THREE.SpriteMaterial | null = null
+  if (level.place === 'crowd' && !lite) {
+    const fm = keep(new THREE.SpriteMaterial({map: glowTex, color: C(flareC).multiplyScalar(2.2), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0}))
+    smokeMat = keep(new THREE.SpriteMaterial({map: glowTex, color: C(flareC).lerp(C('#8a8a8a'), 0.6), transparent: true, depthWrite: false, opacity: 0}))
+    const sm = smokeMat
+    for (let k = 0; k < 4; k++) {
+      const pl = new THREE.PointLight(flareC, 0, 14, 1.8); pl.visible = false; scene.add(pl); flareLights.push(pl)
+      const sp = new THREE.Sprite(fm); sp.scale.set(2.4, 2.4, 1); sp.visible = false; scene.add(sp); flareSprites.push(sp)
+      for (let j = 0; j < 4; j++) { const sk = new THREE.Sprite(sm); sk.visible = false; scene.add(sk); smokeSprites.push({s: sk, a: j / 4 * 4, x: 0, z: 0}) }
+    }
+  }
 
   // eyes camera: his own hands, his scarf
   const hands = new THREE.Group()
@@ -632,26 +752,40 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     hands.visible = false; cam.add(hands) }
 
   /* ───────────── post ───────────── */
-  let composer: EffectComposer | null = null
-  let grade: ShaderPass | null = null
-  if (!lite) {
-    composer = new EffectComposer(renderer)
-    composer.addPass(new RenderPass(scene, cam))
-    composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), night ? 0.8 : 0.35, 0.55, 0.88))
-    grade = new ShaderPass({
-      uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}},
-      vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-      fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart; uniform vec3 uTint; varying vec2 vUv;
-        float h(float n){ return fract(sin(n)*43758.5453); }
-        void main(){ vec2 p=vUv-.5; p.x*=uAspect; float r=length(p); float ca=.0016*uSpeed*r*2.; vec2 dir=normalize(vUv-.5+1e-5);
-          vec3 c=vec3(texture2D(tDiffuse,vUv+dir*ca).r,texture2D(tDiffuse,vUv).g,texture2D(tDiffuse,vUv-dir*ca).b);
-          float a=atan(p.y,p.x); float n=h(floor(a*70.)+floor(uTime*14.)); c+=smoothstep(.93,1.,n)*smoothstep(.42,1.05,r)*uSpeed*.22*vec3(.9,.95,1.);
-          float beat=pow(max(0.,sin(uTime*7.5)),6.)*uHeart; c*=mix(1.,smoothstep(1.05,.25-beat*.15,r),.62+uHeart*.18); c=mix(c,c*uTint*1.5,beat*.25*smoothstep(.3,.9,r));
-          c+=(h(dot(vUv,vec2(12.9898,78.233))+uTime)-.5)*.035; c+=uFlash*vec3(.85,.9,1.); gl_FragColor=vec4(c,1.); }`,
-    })
-    composer.addPass(grade)
-    composer.addPass(new OutputPass())
-  }
+  // every quality gets the grade (one full-screen pass, which is what a phone can afford); bloom and MSAA only on high.
+  // The grade runs in linear light before the output pass tone-maps: a filmic S round middle grey, cool shadows and warm
+  // highlights (split tone), a touch more saturation, a vignette, grain — the GTA look, not a filter on top of it.
+  const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, {type: THREE.HalfFloatType, samples: lite ? 0 : 4}))
+  composer.addPass(new RenderPass(scene, cam))
+  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), night ? 0.55 : 0.22, 0.6, night ? 0.9 : 1.1))
+  const grade = new ShaderPass({
+    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: night ? 1 : 0}, uClose: {value: 0}},
+    vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+    fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart,uNight,uClose; uniform vec3 uTint; varying vec2 vUv;
+      float h(float n){ return fract(sin(n)*43758.5453); }
+      void main(){ vec2 p=vUv-.5; p.x*=uAspect; float r=length(p); vec2 dir=normalize(vUv-.5+1e-5);
+        // a lens: a hair of colour fringing at the edge always, more at speed
+        float ca=(.0004+.0016*uSpeed)*r*r*2.4;
+        vec3 c=vec3(texture2D(tDiffuse,vUv+dir*ca).r,texture2D(tDiffuse,vUv).g,texture2D(tDiffuse,vUv-dir*ca).b);
+        c=max(c,0.);
+        // split tone: the shadows go cool, the lights go warm (at night the shadows go ink-blue and the lights stay sodium)
+        float l=dot(c,vec3(.2126,.7152,.0722));
+        vec3 sh=mix(vec3(.86,.94,1.14),vec3(.78,.86,1.22),uNight), hi=mix(vec3(1.08,1.0,.9),vec3(1.1,.98,.84),uNight);
+        c*=mix(sh,hi,smoothstep(.03,.7,l));
+        // saturation up, then a filmic S round middle grey: blacks that are black, whites that keep their colour
+        l=dot(c,vec3(.2126,.7152,.0722)); c=mix(vec3(l),c,1.14);
+        c=pow(c/.18,vec3(1.1))*.18;
+        // speed: streaks at the rim; tired: a heartbeat that darkens the edge in the club's colour
+        float a=atan(p.y,p.x); float n=h(floor(a*70.)+floor(uTime*14.)); c+=smoothstep(.93,1.,n)*smoothstep(.42,1.05,r)*uSpeed*.22*vec3(.9,.95,1.);
+        float beat=pow(max(0.,sin(uTime*7.5)),6.)*uHeart;
+        // the vignette: a real lens falls off at the corners; a close-up tightens it
+        c*=mix(1.,smoothstep(1.12-uClose*.2,.3-beat*.15,r),.7+uHeart*.18+uClose*.1); c=mix(c,c*uTint*1.5,beat*.25*smoothstep(.3,.9,r));
+        // grain, finer in the light
+        c+=(h(dot(vUv,vec2(12.9898,78.233))+fract(uTime*7.))-.5)*mix(.035,.012,smoothstep(.0,.6,l));
+        c+=uFlash*vec3(.85,.9,1.); gl_FragColor=vec4(c,1.); }`,
+  })
+  composer.addPass(grade)
+  composer.addPass(new OutputPass())
 
   /* ───────────── the frame ───────────── */
   const camPos = new THREE.Vector3(level.start.x, 2, level.start.z + 4), camLook = new THREE.Vector3(level.start.x, 1.4, level.start.z - 6)
@@ -752,6 +886,20 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       ;(r.m.material as THREE.MeshBasicMaterial).opacity = 0.45 + Math.sin(t * 4 + i) * 0.25
     })
     favourFigs.forEach((f, i) => { const done = sim.favoured[i]; f.mark.visible = !done; f.mark.rotation.y = t * 2; f.mark.position.y += Math.sin(t * 3 + i) * 0.004 })
+    // the stand sings: each pose group rises and falls on its own beat
+    stand.forEach(sg => { sg.im.position.y = Math.abs(Math.sin(t * 2.6 + sg.ph)) * 0.06 })
+    // the flares: lit when the night is won, held among the crowd around him
+    if (flareLights.length) {
+      const on = view.ending && view.outcome !== 'slip', k = on ? Math.min(1, view.endT / 1.5) : 0
+      flareLights.forEach((pl, i) => {
+        const a = i * 1.57 + 0.6, fx = sim.x + Math.cos(a) * 3.2, fz = sim.z + Math.sin(a) * 2.6
+        pl.visible = on; pl.intensity = k * (60 + Math.sin(t * 19 + i) * 14); pl.position.set(fx, 2.6, fz)
+        const sp = flareSprites[i]!; sp.visible = on; sp.position.set(fx, 2.5, fz); sp.scale.setScalar(k * (2.2 + Math.sin(t * 23 + i) * 0.4))
+        ;(sp.material as THREE.SpriteMaterial).opacity = k * 0.9
+        for (let j = 0; j < 4; j++) { const sk = smokeSprites[i * 4 + j]!; sk.a = (sk.a + dt * 0.6) % 4; const u = sk.a / 4; sk.s.visible = on; sk.s.position.set(fx + Math.sin(sk.a * 2 + j) * 0.8 * u + u * 1.5, 2.6 + u * 3.5, fz + Math.cos(sk.a * 1.7 + i) * 0.6 * u); sk.s.scale.setScalar(1 + u * 4) }
+      })
+      if (smokeMat) smokeMat.opacity = k * 0.22
+    }
     bins.forEach((b, i) => {
       const n = sim.noise, hit = n && Math.hypot(n.x - level.noises[i]!.x, n.z - level.noises[i]!.z) < 0.1 ? sim.t - n.t : 99
       const k = hit < 1.2 ? hit / 1.2 : 1
@@ -926,17 +1074,15 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     speedFx += (((sim.sprinting || (heroCar && sim.speed > 20)) ? 1 : sp > 4 ? 0.35 : 0) * (reduced ? 0 : 1) - speedFx) * Math.min(dt * 4, 1)
     heart += ((tired && !view.ending ? 1 : 0) - heart) * Math.min(dt * 3, 1)
     flash = Math.max(0, flash - dt * 2.4)
-    if (grade && composer) {
-      grade.uniforms.uSpeed!.value = view.ending ? 0 : speedFx; grade.uniforms.uHeart!.value = reduced ? 0 : heart; grade.uniforms.uFlash!.value = flash * 0.5; grade.uniforms.uTime!.value = t
-      composer.render()
-    } else renderer.render(scene, cam)
+    grade.uniforms.uSpeed!.value = view.ending ? 0 : speedFx; grade.uniforms.uHeart!.value = reduced ? 0 : heart; grade.uniforms.uFlash!.value = flash * 0.5; grade.uniforms.uTime!.value = t; grade.uniforms.uClose!.value = Math.max(closeK, view.ending ? 1 : 0)
+    composer.render()
   }
 
   function resize(w: number, h: number) {
     renderer.setSize(w, h, false)
-    composer?.setSize(w, h)
+    composer.setSize(w, h)
     cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix()
-    if (grade) grade.uniforms.uAspect!.value = w / Math.max(1, h)
+    grade.uniforms.uAspect!.value = w / Math.max(1, h)
   }
 
   const pv = new THREE.Vector3()
@@ -973,7 +1119,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     scene.traverse(o2 => { const m = o2 as THREE.Mesh; if (m.isMesh) { m.geometry?.dispose?.() } })
     disposables.forEach(d => { try { d.dispose() } catch { /* already gone */ } })
     crowd.forEach(im => im.dispose())
-    composer?.dispose()
+    composer.dispose()
     renderer.dispose()
     try { renderer.forceContextLoss() } catch { /* a lost context is a closed one */ }
   }

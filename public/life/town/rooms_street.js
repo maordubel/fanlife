@@ -38,7 +38,42 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
   if(o.shut){var sm=new T.MeshStandardMaterial({map:c.stripes('#5a6a7a','#4a5868',14),roughness:.7});var sh=o.shut;K.box(w+.3,.2,.22,'#3a3e48',x,y+h/2+.15,z+.05,G);K.plane(w,h*sh,sm,x,y+h/2-h*sh/2,z+.13,G)}
   return p};
  /* AC unit */
- K.ac=function(G,x,y,z){K.box(.9,.55,.5,'#c8c8d0',x,y,z,G);var f=new T.Mesh(new T.CircleGeometry(.2,12),std('#4a4a55'));f.position.set(x-.18,y,z+.26);G.add(f)};
+ K.ac=function(G,x,y,z){var b=K.box(.9,.55,.5,'#c4c6cc',x,y,z,G,{roughness:.55,metalness:.3});var f=new T.Mesh(new T.CircleGeometry(.2,12),std('#3a3c44'));f.position.set(x-.18,y,z+.26);G.add(f);var ring=new T.Mesh(new T.TorusGeometry(.2,.016,6,18),std('#8a8c94',{metalness:.5}));ring.position.set(x-.18,y,z+.27);G.add(ring);
+  for(var k=0;k<4;k++){var sl=K.box(.3,.02,.02,'#6a6c74',x+.25,y-.18+k*.11,z+.26,G);sl.castShadow=false}
+  /* the bracket under it and the brown drip the condensate has left down the wall */
+  [-.3,.3].forEach(function(dx){var br=K.box(.04,.04,.5,'#4a4a50',x+dx,y-.3,z,G,{metalness:.5});br.castShadow=false;var dg=K.box(.04,.5,.04,'#4a4a50',x+dx,y-.52,z+.22,G,{metalness:.5});dg.castShadow=false});
+  K.drip(G,x-.1,y-.3,z-.2,.5,rr(1.2,2.6));return b};
+ /* a stain down a wall: rain, rust or damp — a soft dark tongue that narrows as it falls */
+ K._dripT=null;K.drip=function(G,x,ytop,z,w,len,o){o=o||{};var t=K._dripT||(K._dripT=(function(){var cv=c.cvs(64,256),g=cv.getContext('2d');g.clearRect(0,0,64,256);var gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'rgba(60,44,36,.55)');gr.addColorStop(.5,'rgba(60,44,36,.3)');gr.addColorStop(1,'rgba(60,44,36,0)');g.fillStyle=gr;g.beginPath();g.moveTo(6,0);g.lineTo(58,0);g.quadraticCurveTo(44,160,36,256);g.lineTo(28,256);g.quadraticCurveTo(20,160,6,0);g.fill();for(var i=0;i<30;i++){g.fillStyle='rgba(40,30,24,'+rr(.05,.2)+')';g.fillRect(14+rnd()*36,rnd()*256,1,rr(10,60))}return c.tex(cv,1,1)})());
+  var m=new T.Mesh(new T.PlaneGeometry(w,len),new T.MeshStandardMaterial({map:t,transparent:true,roughness:.95,color:o.col||'#ffffff',polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1,depthWrite:false}));m.position.set(x,ytop-len/2,z+(o.dz==null?.52:o.dz));m.renderOrder=1;m.castShadow=false;m.receiveShadow=true;m.userData.noBlock=1;(G||W).add(m);return m};
+ /* what forty years do to a street: tar patches and a manhole in the road, a drain and grit at the kerb, a damp band up
+    the bottom of every wall, paper and cans where the wind leaves them. Called once per street room with the road rect. */
+ K.wear=function(x0,x1,z0,z1,kerbZ,o){o=o||{};var i;var dark=new T.MeshStandardMaterial({color:'#17171b',roughness:.9,transparent:true,opacity:.55,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1,depthWrite:false});
+  /* tar patches: rounded dark slabs of newer asphalt */
+  var np=o.patches==null?5:o.patches;for(i=0;i<np;i++){var pw=rr(1.4,3.2),pl=rr(1.0,2.4),px=rr(x0+2,x1-2),pz=rr(z0+.8,z1-.8);var pm=new T.Mesh(new T.PlaneGeometry(pw,pl),dark);pm.rotation.x=-Math.PI/2;pm.rotation.z=rr(-.3,.3);pm.position.set(px,.018,pz);pm.userData.noBlock=1;pm.receiveShadow=true;W.add(pm)}
+  /* cracks: thin dark polylines */
+  var cm=new T.MeshBasicMaterial({color:'#101014',transparent:true,opacity:.55,depthWrite:false});for(i=0;i<(o.cracks==null?6:o.cracks);i++){var cx=rr(x0+1,x1-1),cz=rr(z0+.5,z1-.5),a=rnd()*6.28;for(var k=0;k<5;k++){var L=rr(.5,1.3);var seg=new T.Mesh(new T.PlaneGeometry(L,.035),cm);seg.rotation.x=-Math.PI/2;seg.rotation.z=a;seg.position.set(cx+Math.cos(a)*L/2,.02,cz-Math.sin(a)*L/2);seg.userData.noBlock=1;W.add(seg);cx+=Math.cos(a)*L;cz-=Math.sin(a)*L;a+=rr(-.7,.7)}}
+  /* a manhole cover: iron, ringed, slightly proud of the road, with a concentric pattern */
+  var mh=mesh(new T.CylinderGeometry(.42,.42,.03,24),std('#3a3c40',{metalness:.65,roughness:.5}),o.mhX==null?rr(x0+4,x1-4):o.mhX,.03,o.mhZ==null?(z0+z1)/2+rr(-1.5,1.5):o.mhZ,W);mh.castShadow=false;mh.userData.noBlock=1;
+  for(i=0;i<3;i++){var rg=new T.Mesh(new T.TorusGeometry(.12+i*.12,.012,4,24),std('#2a2c30',{metalness:.6}));rg.rotation.x=Math.PI/2;rg.position.set(mh.position.x,.05,mh.position.z);rg.castShadow=false;rg.userData.noBlock=1;W.add(rg)}
+  var mr=new T.Mesh(new T.RingGeometry(.44,.5,24),std('#2a2c30',{metalness:.5}));mr.rotation.x=-Math.PI/2;mr.position.set(mh.position.x,.025,mh.position.z);mr.userData.noBlock=1;W.add(mr);
+  /* drains at the kerb: a grating sunk in the gutter, and the dark fan where water runs to it */
+  if(kerbZ!=null){var nd=Math.max(1,Math.round((x1-x0)/14));for(i=0;i<nd;i++){var dx=x0+(x1-x0)*(i+.5)/nd+rr(-2,2),dz=kerbZ+.55;var gm=mesh(rbox(.7,.04,.4,.01,1),std('#1e2024',{metalness:.5,roughness:.6}),dx,.015,dz,W);gm.castShadow=false;gm.userData.noBlock=1;for(var b=0;b<6;b++){var bar=mesh(rbox(.08,.02,.36,.005,1),std('#4a4c52',{metalness:.6}),dx-.28+b*.11,.04,dz,W);bar.castShadow=false;bar.userData.noBlock=1}
+    var fan=new T.Mesh(new T.CircleGeometry(1.2,16,0,Math.PI),new T.MeshBasicMaterial({color:'#0e0e12',transparent:true,opacity:.28,depthWrite:false}));fan.rotation.x=-Math.PI/2;fan.rotation.z=Math.PI;fan.position.set(dx,.017,dz+.1);fan.userData.noBlock=1;W.add(fan);
+    /* grit and a leaf-drift against the kerb: one instanced mesh per drain, not fourteen */var GG=K._gritG||(K._gritG=new T.SphereGeometry(.035,5,4)),GM=K._gritM||(K._gritM=std('#6a6258',{roughness:1}));var gi=new T.InstancedMesh(GG,GM,14),gd=new T.Object3D(),gc=new T.Color();for(b=0;b<14;b++){gd.position.set(dx+rr(-1.6,1.6),.02,kerbZ+rr(.15,.5));var ss=rr(.6,1.4);gd.scale.set(ss,ss*.7,ss);gd.updateMatrix();gi.setMatrixAt(b,gd.matrix);gi.setColorAt(b,gc.set(pick(['#6a6258','#8a7a62','#4a4640','#5a5a60'],rnd())).convertSRGBToLinear())}gi.instanceColor.needsUpdate=true;gi.castShadow=false;gi.receiveShadow=true;gi.userData.noBlock=1;W.add(gi)}}
+  /* litter: a crumpled paper, a crushed can, a bottle, a bag caught on the kerb */
+  var LM=K._litM||(K._litM={paper:std('#e8e2d6',{roughness:.95}),cans:[std('#b02d10',{metalness:.6,roughness:.35}),std('#2a4a8a',{metalness:.6,roughness:.35}),std('#c8c8cc',{metalness:.6,roughness:.35})],bottle:std('#2a4a2a',{roughness:.08,metalness:.1,transparent:true,opacity:.8}),bag:std('#eceae4',{roughness:.9,side:T.DoubleSide}),gPaper:new T.DodecahedronGeometry(.11,0),gCan:new T.CylinderGeometry(.06,.06,.16,10),gBottle:new T.CylinderGeometry(.04,.055,.34,10),gBag:new T.SphereGeometry(.14,7,5)});
+  var nl=o.litter==null?7:o.litter;for(i=0;i<nl;i++){var lx=rr(x0+1,x1-1),lz=kerbZ!=null?kerbZ+rr(.1,1.4):rr(z0,z1),kind=i%4;var lm;
+   if(kind===0){lm=mesh(LM.gPaper,LM.paper,lx,.09,lz,W);lm.rotation.set(rnd()*3,rnd()*3,0)}
+   else if(kind===1){lm=mesh(LM.gCan,LM.cans[i%3],lx,.05,lz,W);lm.rotation.set(Math.PI/2,0,rnd()*3);lm.scale.y=.7}
+   else if(kind===2){lm=mesh(LM.gBottle,LM.bottle,lx,.05,lz,W);lm.rotation.set(Math.PI/2,0,rnd()*3)}
+   else{lm=mesh(LM.gBag,LM.bag,lx,.1,lz,W);lm.scale.set(1.2,.6,1)}
+   lm.castShadow=false;lm.userData.noBlock=1}
+  /* the damp band: every wall is darker for the first metre, and the kerb face is scuffed */
+  if(o.walls){o.walls.forEach(function(wl){var dm=new T.Mesh(new T.PlaneGeometry(wl[2],1.1),new T.MeshStandardMaterial({map:K._damp||(K._damp=(function(){var cv=c.cvs(256,64),g=cv.getContext('2d');g.clearRect(0,0,256,64);var gr=g.createLinearGradient(0,0,0,64);gr.addColorStop(0,'rgba(40,34,30,0)');gr.addColorStop(.55,'rgba(40,34,30,.28)');gr.addColorStop(1,'rgba(30,26,24,.5)');g.fillStyle=gr;g.fillRect(0,0,256,64);for(var q=0;q<120;q++){g.fillStyle='rgba(20,18,16,'+rr(.05,.25)+')';g.fillRect(rnd()*256,20+rnd()*44,rr(1,5),rr(1,4))}return c.tex(cv,4,1)})()),transparent:true,roughness:1,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1,depthWrite:false}));dm.position.set(wl[0],.55,wl[1]);if(wl[3])dm.rotation.y=wl[3];dm.userData.noBlock=1;dm.castShadow=false;W.add(dm)})}
+  /* at night, after rain or not, the road keeps a few puddles that hold the lamps */
+  if(night&&o.puddles!==false)for(i=0;i<4;i++)K.puddle(rr(x0+2,x1-2),rr(z0+.6,z1-.6),rr(1.2,2.6),rr(.5,1.1));
+ };
  /* building block: front face at zf, centred x, width w, height h */
  /* a Tel Aviv street is plaster, not paint: weathered limestone-cream, sand and grey, sun-bleached, with the old coat showing */
  var PLASTER_TLV=[['#cbc2b2',['#bdb3a1','#d6cfc2','#a89e8c']],['#bfb5a3',['#b0a692','#cdc5b6','#9c927f']],['#d2ccc2',['#c4bdb1','#dcd7cf','#ada69a']],['#b5ad9f',['#a69e90','#c4bcae','#948c7e']],['#c6c0b6',['#b8b1a6','#d2ccc3','#a39c90']]];
@@ -117,7 +152,58 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
  var PAL=[[__CK.a,'#14141c'],['#f4f1ff','#2a2e3a'],['#14141c','#2a2e3a'],['#2a2e3a','#14141c'],[__CK.a,'#2a2e3a'],['#3a4a6a','#14141c']];
  K.p=function(x,z,ry,mode,o){o=o||{};/* a street is men and women: a figure the scene did not dress as one is a woman about a third of the time */if(!o.style&&o._fem==null){o=Object.assign({},o);o._fem=rnd()<.36;if(o._fem){o.w=o.w&&o.w>1?.95+rnd()*.08:o.w;if(rnd()<.18&&mode!=='sit')o.skirt=pick(['#2a2a34','#3a4a6a','#6a3a3a','#4a5a4a'],rnd());if(o.stubble)o.stubble=false;o.beanie=null}}var pl=PAL[Math.floor(rnd()*PAL.length)];if(o.jacket&&!o.top2)o=Object.assign({},o,{top:o.jacket});var op={skin:o.skin||SKN[Math.floor(rnd()*5)],top:o.top||pl[0],bot:o.bot||pl[1],hair:o.hair||pick(['#1a1210','#2a1d16','#14100e','#4a3020','#8a8a90'],rnd()),style:o.style||(o._fem?pick(['long','pony','bun','curlyLong','long','short'],rnd()):pick(['short','buzz','spiky','slick','curly','bald'],rnd())),lash:o.lash||o._fem||undefined,w:o.w||(1.04+rnd()*.14),mode:mode||'idle',s:o.s||1.08,x:x,z:z,ry:ry||0,eye:'#2a1a10'};for(var k in o)op[k]=o[k];if(op.stubble===undefined)op.stubble=op._fem?false:rnd()<.45;return c.person(op)};
  /* fan scarf colours */
- K.car=function(x,z,ry,col,sc){var g=c.car(x,z,ry,col);g.scale.setScalar(sc||1);g.traverse(function(o){if(o.material&&o.material.metalness>.3&&o.material.metalness<.6&&o.material.roughness>.2){o.material.metalness=.22;o.material.roughness=.38}});return g};
+ /* 31.10.2026 — a car is a car, not a slab: the body is cut round its wheel arches, the cabin has pillars between
+    panes of real glass, the chrome is chrome, the tyres have tread and hubcaps, and at night the lamps are lit and
+    throw their own light down the road. One 1980s saloon silhouette, varied by colour, roof rack and a sun-faded
+    bonnet; parked cars keep their under-shadow so they sit on the asphalt. */
+ var CARGEO={};
+ K.car=function(x,z,ry,col,sc,o){o=o||{};var g=new T.Group();g.position.set(x,0,z);g.rotation.y=ry;W.add(g);var sgn=function(k){return Math.sin(k*12.9898+x*78.233+z*37.719)*.5+.5};
+  var L=4.4,Wd=1.7,WR=.34,AX=[-1.42,1.36];
+  function prof(pts){var sh=new T.Shape();sh.moveTo(pts[0][0],pts[0][1]);for(var i=1;i<pts.length;i++)sh.lineTo(pts[i][0],pts[i][1]);sh.closePath();return sh}
+  function geo(k,f){return CARGEO[k]||(CARGEO[k]=f())}
+  /* the body: a side profile with the two arches cut out of it */
+  var bg=geo('body',function(){var sh=prof([[-2.2,.3],[2.2,.3],[2.24,.58],[2.16,.84],[1.3,.9],[.9,.94],[-1.5,.94],[-2.14,.9],[-2.22,.62]]);
+   AX.forEach(function(ax){var h=new T.Path();h.absarc(ax,.3,WR+.09,0,Math.PI,false);h.lineTo(ax+WR+.09,.3);sh.holes.push(h)});
+   var gg=new T.ExtrudeGeometry(sh,{depth:Wd-.14,bevelEnabled:true,bevelThickness:.07,bevelSize:.06,bevelSegments:3,curveSegments:8});gg.translate(0,0,-(Wd-.14)/2);return gg});
+  var paint=std(col,{roughness:.26,metalness:.42,envMapIntensity:1.6});var bm=new T.Mesh(bg,paint);bm.castShadow=true;bm.receiveShadow=true;g.add(bm);
+  /* a dust skirt: the lower third is never clean */
+  var skirt=mesh(rbox(L-.5,.22,Wd+.02,.04,2),std('#5a564e',{roughness:.95,transparent:true,opacity:.35}),0,.42,0,g);skirt.castShadow=false;
+  /* cabin: roof + pillars, glass between them */
+  var cg=geo('cab',function(){var gg=new T.ExtrudeGeometry(prof([[-1.56,.92],[.92,.92],[.5,1.4],[-1.14,1.42],[-1.52,.98]]),{depth:Wd-.34,bevelEnabled:true,bevelThickness:.04,bevelSize:.035,bevelSegments:2});gg.translate(0,0,-(Wd-.34)/2);return gg});
+  var glass=new T.MeshStandardMaterial({color:'#0e151e',roughness:.04,metalness:.92,envMapIntensity:2.2,transparent:true,opacity:.92});
+  var cab=new T.Mesh(cg,glass);g.add(cab);
+  var roof=mesh(rbox(1.7,.07,Wd-.3,.03,2),paint,-.32,1.43,0,g);roof.castShadow=true;
+  [[-1.5,.98,1.38,.95,.25],[-.3,.98,1.4,.0,.06],[.7,.98,1.38,-.35,.28]].forEach(function(pp){[-1,1].forEach(function(s){var pil=mesh(rbox(.07,.5,.06,.02,2),paint,pp[0],1.16,s*(Wd/2-.19),g);pil.rotation.z=pp[3]*-.9;pil.castShadow=false})});
+  /* interior, seen through the glass */
+  var dark=std('#1a1714',{roughness:.95});[-.1,-.9].forEach(function(sx){[-.42,.42].forEach(function(sz){var st=mesh(rbox(.42,.5,.5,.06,2),dark,sx,1.08,sz,g);st.castShadow=false;var hr=mesh(rbox(.14,.18,.28,.04,2),dark,sx-.1,1.36,sz,g);hr.castShadow=false})});
+  var dash=mesh(rbox(.3,.16,Wd-.4,.03,2),dark,.55,.98,0,g);dash.castShadow=false;var wheel=mesh(new T.TorusGeometry(.16,.02,6,18),dark,.25,1.12,-.42,g);wheel.rotation.y=Math.PI/2;wheel.rotation.x=.3;wheel.castShadow=false;
+  /* chrome: bumpers with over-riders, a waist trim, mirrors, handles, grille */
+  var chrome=std('#d2d6dc',{metalness:.95,roughness:.14,envMapIntensity:1.8});
+  [-2.3,2.3].forEach(function(bx){var bp=mesh(rbox(.14,.17,Wd+.1,.06,3),chrome,bx,.44,0,g);[-.5,.5].forEach(function(bz){mesh(rbox(.1,.26,.12,.03,2),chrome,bx,.48,bz,g)})});
+  mesh(rbox(L-.3,.035,Wd+.03,.015,2),chrome,0,.7,0,g).castShadow=false;
+  [-1,1].forEach(function(s){var mr=mesh(rbox(.16,.1,.08,.03,2),chrome,.7,1.02,s*(Wd/2+.08),g);mr.castShadow=false;var hd=mesh(rbox(.16,.03,.03,.01,1),chrome,-.2,.8,s*(Wd/2+.005),g);hd.castShadow=false;var hd2=mesh(rbox(.16,.03,.03,.01,1),chrome,-1.3,.8,s*(Wd/2+.005),g);hd2.castShadow=false});
+  var grille=mesh(rbox(.05,.2,.86,.01,1),std('#101216',{roughness:.6,metalness:.4}),2.21,.7,0,g);grille.castShadow=false;for(var gi=0;gi<5;gi++)mesh(rbox(.06,.012,.86,.004,1),chrome,2.23,.62+gi*.04,0,g).castShadow=false;
+  /* wheels: tyre, rim, hubcap, nuts */
+  var tyre=std('#141416',{roughness:.92}),rim=std('#aab0b8',{metalness:.75,roughness:.3}),cap=std('#c8ccd2',{metalness:.9,roughness:.18});
+  var tg=geo('tyre',function(){return new T.CylinderGeometry(WR,WR,.24,24)}),rg=geo('rim',function(){return new T.CylinderGeometry(WR*.62,WR*.62,.25,18)}),hg=geo('cap',function(){return new T.CylinderGeometry(WR*.48,WR*.4,.05,16)});
+  AX.forEach(function(ax){[-1,1].forEach(function(s){var zz=s*(Wd/2-.12);var ty=mesh(tg,tyre,ax,WR,zz,g);ty.rotation.x=Math.PI/2;var rm=mesh(rg,rim,ax,WR,zz,g);rm.rotation.x=Math.PI/2;rm.castShadow=false;var hc=mesh(hg,cap,ax,WR,zz+s*.12,g);hc.rotation.x=Math.PI/2*s;hc.castShadow=false;
+   for(var n=0;n<4;n++){var nt=mesh(new T.CylinderGeometry(.018,.018,.02,6),std('#3a3c40',{metalness:.6}),ax+Math.cos(n*1.57)*.09,WR+Math.sin(n*1.57)*.09,zz+s*.15,g);nt.rotation.x=Math.PI/2;nt.castShadow=false}
+   /* the arch liner behind the tyre */var ar=mesh(new T.CylinderGeometry(WR+.08,WR+.08,.16,16,1,true,0,Math.PI),std('#0a0a0c',{side:T.DoubleSide,roughness:1}),ax,WR,zz-s*.06,g);ar.rotation.x=Math.PI/2;ar.rotation.y=Math.PI;ar.castShadow=false})});
+  /* lamps: twin rounds up front, a red-and-amberless tail cluster behind (no yellow: the indicator is pale) */
+  var lit=night&&o.lit!==false;
+  [-.6,-.36,.36,.6].forEach(function(zz,i){var outer=i===0||i===3;var hl=mesh(new T.CylinderGeometry(outer?.1:.08,outer?.1:.08,.05,14),new T.MeshStandardMaterial({color:'#dfe4ea',emissive:'#fff4e2',emissiveIntensity:lit?2.6:.12,roughness:.15,metalness:.2}),2.25,.74,zz,g);hl.rotation.z=Math.PI/2;hl.castShadow=false;mesh(new T.TorusGeometry(outer?.1:.08,.014,6,16),chrome,2.26,.74,zz,g).rotation.y=Math.PI/2});
+  [-.55,.55].forEach(function(zz){var tl=mesh(rbox(.05,.14,.36,.02,2),new T.MeshStandardMaterial({color:'#7a1218',emissive:'#c0202a',emissiveIntensity:lit?1.6:.15,roughness:.3}),-2.24,.76,zz,g);tl.castShadow=false;var rv=mesh(rbox(.05,.07,.12,.02,2),new T.MeshStandardMaterial({color:'#e8e4dc',emissive:'#fff',emissiveIntensity:.05,roughness:.3}),-2.24,.76,zz+(zz>0?-.24:.24),g);rv.castShadow=false});
+  var pl=mesh(new T.PlaneGeometry(.5,.12),std('#e8e4d4',{roughness:.6}),-2.32,.5,0,g);pl.rotation.y=-Math.PI/2;var pf=mesh(new T.PlaneGeometry(.5,.12),std('#e8e4d4',{roughness:.6}),2.32,.5,0,g);pf.rotation.y=Math.PI/2;
+  /* aerial, wipers, a roof rack on some */
+  var ant=mesh(new T.CylinderGeometry(.006,.01,.7,5),chrome,1.1,1.2,-.7,g);ant.rotation.z=.3;ant.castShadow=false;
+  [-.25,.25].forEach(function(zz){var wp=mesh(rbox(.02,.02,.42,.005,1),std('#141416'),.93,1.0,zz,g);wp.rotation.y=.35;wp.castShadow=false});
+  if(o.rack||(o.rack!==false&&sgn(3)<.3)){[-.6,.4].forEach(function(rx){mesh(rbox(.05,.05,Wd-.2,.02,1),chrome,rx,1.5,0,g);[-1,1].forEach(function(s){mesh(rbox(.05,.08,.05,.01,1),std('#2a2a30'),rx,1.47,s*(Wd/2-.18),g)})})}
+  /* the sun has had the bonnet for years on some: a matte, lighter panel */
+  if(sgn(5)<.35){var fade=mesh(rbox(1.0,.012,Wd-.4,.004,1),std('#'+new T.Color(col).lerp(new T.Color('#c8c4bc'),.35).getHexString(),{roughness:.7,metalness:.1}),1.5,.955,0,g);fade.castShadow=false}
+  /* on the ground: the shadow it sits in, and at night the light it throws */
+  var under=mesh(new T.PlaneGeometry(L,Wd),new T.MeshBasicMaterial({color:'#000',transparent:true,opacity:.6,depthWrite:false}),0,.02,0,g);under.rotation.x=-Math.PI/2;under.userData.noBlock=1;under.castShadow=false;under.receiveShadow=false;
+  if(lit){var beam=K.streak(0,0,'#ffe2c0',2.2,6,.28);beam.position.set(5.0,.03,0);W.remove(beam);g.add(beam);beam.userData.noBlock=1;[-.5,.5].forEach(function(zz){K.glow(2.3,.74,zz,'#fff0d8',1.3,1.3,.5,g,false)});var tglow=K.glow(-2.3,.76,0,'#ff3a3a',1.6,.6,.35,g,false)}
+  g.scale.setScalar(sc||1);return g};
  /* bus, side-on, facing +x (ry=Math.PI faces -x). door at local x=dx */
  K.bus=function(x,z,len,dest,col,o){o=o||{};var g=new T.Group();g.position.set(x,0,z);W.add(g);if(o.ry)g.rotation.y=o.ry;col=col||'#2a4a8a';var H=2.9,D=2.5;
   K.box(len,H-.5,D,col,0,.5+(H-.5)/2,0,g,{roughness:.4,metalness:.15});K.box(len+.04,.3,D+.04,'#d8d8e4',0,1.15,0,g);K.box(len-.1,.35,D+.02,'#14141c',0,.42,0,g);
@@ -405,7 +491,7 @@ RM.def('street',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.st
  var C=K.CITY;
  /* Mostar's old town is cobbled to the kerb and beyond it */
  K.ground(70,36,C&&__CK.TOWN==='mos'?c.cobble():c.asphalt(),0,0,0,6,12,C&&__CK.TOWN==='mos'?.8:.34,C&&__CK.TOWN==='mos'?.02:.12);
- K.pave(-5,17,FZ,3.9,.16,K.paver('#8c8890','#5a5660',5,2,6));K.curb(-5,17,3.92,.2);
+ K.pave(-5,17,FZ,3.9,.16,K.paver('#8c8890','#5a5660',5,2,6));K.curb(-5,17,3.92,.2);K.wear(-5,17,4.3,13,3.92,{walls:[[6,FZ+.03,22]]});
  /* lane markings */
  for(var i=0;i<6;i++)K.flat(-3+i*3.4,-1.8+i*3.4,8.7,8.84,.012,new T.MeshBasicMaterial({color:'#9a98a4'}));
  K.flat(-5,17,4.0,4.25,.013,new T.MeshBasicMaterial({color:'#7a1a28'}));
@@ -567,7 +653,7 @@ RM.def('route',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std
  K.env(tm==='day'?'day':'dusk',{ext:16,fn:18,ff:80});
  var FZ=.8,WID=12.8;
  K.ground(80,34,c.asphalt(),0,0,0,6,12,.45,.08);
- K.pave(-6,20,FZ,3.4,.16,K.paver('#8a8690','#555060',6,2.4,6));K.curb(-6,20,3.42,.2);
+ K.pave(-6,20,FZ,3.4,.16,K.paver('#8a8690','#555060',6,2.4,6));K.curb(-6,20,3.42,.2);K.wear(-6,20,3.8,13,3.42,{walls:[[7,FZ+.03,26]]});
  for(var i=0;i<7;i++)K.flat(-3+i*3.4,-1.9+i*3.4,8.2,8.34,.012,new T.MeshBasicMaterial({color:'#9a98a4'}));
  /* long run of facades, receding heights; far glow of the ground at right */
  var cols=['#7a7a8c','#9a8088','#6a7e8c','#8a7a90'];
@@ -611,7 +697,7 @@ RM.def('route',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std
 RM.def('bus-stop',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std,mesh=c.mesh,rnd=c.rnd,rr=c.rr,tm=c.o.time||'night',day=tm==='day';
  K.env(day?'day':'night',{ext:13});var FZ=1.2,WID=9.6;
  K.ground(60,34,c.asphalt(),0,0,0,5,12,.32,.12);
- K.pave(-5,15,FZ,4.0,.16,K.paver('#7e7a84','#4a4654',5,2,6));K.curb(-5,15,4.02,.2);
+ K.pave(-5,15,FZ,4.0,.16,K.paver('#7e7a84','#4a4654',5,2,6));K.curb(-5,15,4.02,.2);K.wear(-5,15,4.4,13,4.02,{walls:[[5,FZ+.03,20]]});
  K.flat(-5,15,4.1,4.35,.013,new T.MeshBasicMaterial({color:'#7a1a28'}));
  for(var i=0;i<6;i++)K.flat(-3+i*3.4,-1.8+i*3.4,8.0,8.14,.012,new T.MeshBasicMaterial({color:'#8a88a0'}));
  /* backdrop: pharmacy corner (left), billboard wall (right) */
@@ -649,7 +735,7 @@ RM.def('bus-stop',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.
 RM.def('bus-station',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rnd,rr=c.rr,tm=c.o.time||'night',day=tm==='day';
  K.env(day?'day':'night',{ext:14,fog:'#1a1c36',fn:12,ff:55});var WID=11.7;
  K.ground(70,30,c.asphalt(),0,0,0,5.8,8,.4,.1);
- K.pave(-3,15,-1,3.7,.2,K.paver('#7a7886','#46424f',6,2,6));K.curb(-3,15,3.72,.2);
+ K.pave(-3,15,-1,3.7,.2,K.paver('#7a7886','#46424f',6,2,6));K.curb(-3,15,3.72,.2);K.wear(-3,15,4.1,12,3.72,{patches:3});
  for(var i=0;i<6;i++)K.flat(-2.5+i*2.4,-1.5+i*2.4,3.74,3.95,.012,new T.MeshBasicMaterial({color:'#f4f1ff'}));
  /* station building back wall, concrete w/ big text */
  K.box(20,7.5,.6,'#fff',5.8,3.75,-1.8,null,{map:c.concrete('#5a5a68',6,2.5)});
@@ -742,7 +828,7 @@ RM.def('drive-in',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.
 RM.def('allenby',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std,mesh=c.mesh,rnd=c.rnd,rr=c.rr,tm=c.o.time||'night',day=tm==='day';
  K.env(day?'day':'night',{ext:15,sun:'#ffa07a'});var FZ=1.0;
  K.ground(70,36,c.asphalt(),0,0,0,6,12,.34,.12);
- K.pave(-6,18,FZ,3.9,.16,K.paver('#8e8a96','#585462',5,2,6));K.curb(-6,18,3.92,.2);
+ K.pave(-6,18,FZ,3.9,.16,K.paver('#8e8a96','#585462',5,2,6));K.curb(-6,18,3.92,.2);K.wear(-6,18,4.3,13,3.92,{walls:[[6,FZ+.03,24]]});
  K.flat(-6,18,3.99,4.2,.013,new T.MeshBasicMaterial({color:'#8a8896'}));
  /* white Bauhaus left + right, ribbon windows, curved balconies */
  bauhaus(K,c,-1.4,5.6,11,FZ,{drum:true});
@@ -775,7 +861,7 @@ RM.def('allenby',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.s
 RM.def('hatikva',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std,mesh=c.mesh,rnd=c.rnd,rr=c.rr,tm=c.o.time||'night',day=tm==='day';
  K.env(day?'day':'night',{ext:15,sun:'#ff8a6a'});var FZ=.9;
  K.ground(70,36,c.asphalt(),0,0,0,6,12,.45,.08);
- K.pave(-6,18,FZ,4.4,.14,K.paver('#7a7480','#464050',6,2,7));K.curb(-6,18,4.42,.18);
+ K.pave(-6,18,FZ,4.4,.14,K.paver('#7a7480','#464050',6,2,7));K.curb(-6,18,4.42,.18);K.wear(-6,18,4.8,13,4.42,{walls:[[6,FZ+.03,24]],litter:12});
  /* low buildings with shutters */
  K.bld(-1.2,5,8,FZ,{base:'#8a6a70',cols:2,rows:2,base0:3.2,litP:.5,balc:true,acs:1,shut:true});
  K.bld(3.8,5,9.4,FZ,{map:c.brick(6,2,3),cols:2,rows:2,base0:3.2,litP:.5,shut:true});
@@ -897,7 +983,7 @@ RM.def('jaffa-alley',{kind:'city',build:function(c){var K=kit(c),W=c.world,std=c
 RM.def('jaffa-boulevard',{kind:'city',build:function(c){var K=kit(c),W=c.world,std=c.std,mesh=c.mesh,rnd=c.rnd,rr=c.rr,tm=c.o.time||'dusk';
  K.env(tm==='night'?'night':'dusk',{ext:15,fn:24,ff:100,fog:'#4a3458'});var FZ=-.6;
  K.ground(70,40,c.asphalt(),0,0,0,6,10,.4,.08);
- K.pave(-6,18,-1,4.0,.16,K.paver('#8c8694','#585260',5,2,6));K.curb(-6,18,4.02,.2);
+ K.pave(-6,18,-1,4.0,.16,K.paver('#8c8694','#585260',5,2,6));K.curb(-6,18,4.02,.2);K.wear(-6,18,4.4,13,4.02,{walls:[[6,FZ+.03,24]]});
  K.flat(-6,18,-1,.3,.17,new T.MeshStandardMaterial({color:'#2a4a38',roughness:1}));
  /* pre-war stone houses behind, tiled roofs */
  [[-1.4,5.4,7.5],[4.2,5.6,8.8],[10.0,5.8,7],[15.6,5.6,8.4]].forEach(function(b,i){var G=K.bld(b[0],b[1],b[2],FZ,{map:K.stone(2,2.4,60,i%2?4:10),cols:0,rows:0,cornice:'#7a7480'});
