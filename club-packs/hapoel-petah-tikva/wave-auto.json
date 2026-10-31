@@ -6,7 +6,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/64923--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-64922",
@@ -14,7 +14,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/64922--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-54339",
@@ -22,7 +22,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54339--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-54338",
@@ -30,7 +30,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54338--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-54258",
@@ -38,7 +38,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54258--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-54257",
@@ -46,7 +46,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54257--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-54173",
@@ -54,7 +54,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54173--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-54172",
@@ -62,7 +62,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54172--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-51822",
@@ -70,7 +70,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51822--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-51819",
@@ -78,7 +78,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51819--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-51817",
@@ -86,7 +86,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51817--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-51815",
@@ -94,7 +94,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51815--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-6575",
@@ -102,7 +102,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6575--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-6574",
@@ -110,7 +110,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6574--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-6189",
@@ -118,7 +118,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6189--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   },
   {
    "id": "a-src-uefa-6190",
@@ -126,7 +126,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6190--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-10-30"
+   "checkedAt": "2026-10-31"
   }
  ],
  "matches": [
@@ -201,13 +201,13 @@
    "sources": [
     "a-src-uefa-64923"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -277,13 +277,13 @@
    "sources": [
     "a-src-uefa-64922"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -357,13 +357,13 @@
    "sources": [
     "a-src-uefa-54339"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -427,13 +427,13 @@
    "sources": [
     "a-src-uefa-54338"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -507,13 +507,13 @@
    "sources": [
     "a-src-uefa-54258"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -577,13 +577,13 @@
    "sources": [
     "a-src-uefa-54257"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -663,13 +663,13 @@
    "sources": [
     "a-src-uefa-54173"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -741,13 +741,13 @@
    "sources": [
     "a-src-uefa-54172"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -807,13 +807,13 @@
    "sources": [
     "a-src-uefa-51822"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -873,13 +873,13 @@
    "sources": [
     "a-src-uefa-51819"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -947,13 +947,13 @@
    "sources": [
     "a-src-uefa-51817"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1013,13 +1013,13 @@
    "sources": [
     "a-src-uefa-51815"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1097,13 +1097,13 @@
    "sources": [
     "a-src-uefa-6575"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1127,13 +1127,13 @@
    "sources": [
     "a-src-uefa-6574"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1167,13 +1167,13 @@
    "sources": [
     "a-src-uefa-6189"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1207,13 +1207,13 @@
    "sources": [
     "a-src-uefa-6190"
    ],
-   "researchedAt": "2026-10-30",
+   "researchedAt": "2026-10-31",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-10-30",
+   "approvedAt": "2026-10-31",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   }
  ],

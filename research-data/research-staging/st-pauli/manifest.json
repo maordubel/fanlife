@@ -1,7 +1,7 @@
 {
  "club": "st-pauli",
- "snapshotAsOf": "2026-10-30",
- "researchVersion": 14,
+ "snapshotAsOf": "2026-10-31",
+ "researchVersion": 15,
  "approvedForProduction": 0,
  "counts": {
   "sources": 4,
@@ -11,11 +11,11 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-10-30T10-28-49-368Z-d056a0",
+  "runId": "2026-10-31T09-59-19-577Z-6b684e",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
-  "documents": 1405,
-  "needsParser": 1405
+  "documents": 1530,
+  "needsParser": 1530
  }
 }

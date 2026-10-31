@@ -11,7 +11,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "schema-changed",
-  "updatedAt": "2026-10-30T10:28:24.292Z",
+  "updatedAt": "2026-10-31T09:58:54.315Z",
   "lastError": "schema"
  },
  "paopedia:pages": {
@@ -26,7 +26,7 @@
   "observedTotalPages": 2,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-30T10:28:29.924Z",
+  "updatedAt": "2026-10-31T09:59:00.332Z",
   "lastError": null
  },
  "pao-official-history:html": {
@@ -55,7 +55,7 @@
    "/historyitem/all-time-roster/"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-30T10:28:29.924Z",
+  "updatedAt": "2026-10-31T09:59:00.333Z",
   "lastError": null
  },
  "rsssf-greece:html": {
@@ -78,7 +78,7 @@
    "/tablesg/grkchamp.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-30T10:28:29.924Z",
+  "updatedAt": "2026-10-31T09:59:00.333Z",
   "lastError": null
  }
 }
