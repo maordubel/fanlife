@@ -13,24 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/02/05/lage-am-millerntor-05-02-2020/",
-    "locator": "p30",
-    "quote": "Vom Hessischen Rundfunk gibt es außerdem eine sehenswerte Doku über „ Gewalt gegen Schiedsrichter “ (30min).",
-    "bodyHash": "06da88e2a5def715a598e94450dc44b0ef6eb89fad9003f1215539caf5475ea6",
-    "fetchedAt": "2026-10-23T08:52:15.248Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2020/02/27/lage-am-millerntor-27-02-2020/",
-    "locator": "p14",
-    "quote": "„ Hass und Gewalt im Fußball – Wie Neonazis Vereine unterwandern “ (30min)",
-    "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
-    "fetchedAt": "2026-10-23T08:52:17.089Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2020/05/22/lage-am-millerntor-22-05-2020/",
     "locator": "p26",
     "quote": "Zur detaillierteren Vorbereitung empfehlen wir nochmals das „Vor dem Spiel“-Gespräch von Yannick mit Daniel vom Hoch und Weit-Podcast und unser neues YouTube-Format, die „Wochenschau“ (30min).",
@@ -82,6 +64,24 @@
     "bodyHash": "170ea1f6b279a7aadbb953773e5fa295bcb25cb401302035987c36083b1071a7",
     "fetchedAt": "2026-10-30T10:28:57.788Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/01/27/bericht-von-der-kollaustrasse-26-01-2022/",
+    "locator": "p11",
+    "quote": "Nach dem Aufwärmen ging es dann an die erste intensive Übung: Die Gruppe wurde in zwei Teams unterteilt, die auf jeweils einem kleinen Feld im 4vs4 antraten und zusätzlich zwei Spieler dabei hatten, die immer beim ballführenden Team spielten. Runtergebrochen also das klassische 5vs2 mit höherer Intensität. Zudem waren nur jeweils zwei Kontakte erlaubt und es gab auch wieder die Möglichkeit nach einer gewissen Anzahl an Pässen auf kleine Tore zu schießen (Dauer etwa 30min).",
+    "bodyHash": "6dc8e9fb50d6667121b45cf5616ccae8f504908115c2e18fbd50b345f1e3d0b4",
+    "fetchedAt": "2026-10-31T09:59:25.476Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/01/28/lage-am-millerntor-28-januar-2022/",
+    "locator": "p24",
+    "quote": "In der ARD Mediathek hingegen findet Ihr eine 30minütige Doku mit dem Titel „Sonny – eine Geschichte über den Holocaust, Eintracht und Frankfurt“ , über das Leben von Helmut „Sonny“ Sonneberg.",
+    "bodyHash": "bbef318e0e1f8e73a0770f4cb8d4c8a4193928c13be4df71d314950bf6f5df46",
+    "fetchedAt": "2026-10-31T09:59:25.478Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:28:57.788Z",
-  "updatedAt": "2026-10-30T10:28:57.788Z"
+  "createdAt": "2026-10-31T09:59:25.478Z",
+  "updatedAt": "2026-10-31T09:59:25.478Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -397,6 +397,15 @@
     "bodyHash": "7f65ff374f036d59f5f759dd215f3ac7f055e3a72c2bd4fd821322556f7b3528",
     "fetchedAt": "2026-10-26T09:23:45.248Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/03/02/lage-am-millerntor-02-maerz-2022/",
+    "locator": "p22",
+    "quote": "„Die Verpflichtung, als Sportler Haltung zu zeigen“ . So lautet der Titel einer Kurzdoku (4min) der Sportschau über Jackson Irvine , in der unser australischer Nationalspieler vorgestellt wird und zu Wort kommt, insbesondere mit seinen Gedanken über Verantwortung als Profisportler, u.a. zur WM in Katar .",
+    "bodyHash": "8537ce48f405ff8f21a69e44e56df2150f3a2b63a50cd7cefa28c60a297dce27",
+    "fetchedAt": "2026-10-31T09:59:34.210Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -404,8 +413,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:45.248Z",
-  "updatedAt": "2026-10-26T09:23:45.248Z"
+  "createdAt": "2026-10-31T09:59:34.210Z",
+  "updatedAt": "2026-10-31T09:59:34.210Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -466,6 +475,15 @@
     "bodyHash": "3671670333c92f6e25fd1ece6ce1599832b726d926eb48f7a3ec3b40a2d2d3e3",
     "fetchedAt": "2026-10-27T09:22:27.445Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/02/21/lage-am-millerntor-21-februar-2022/",
+    "locator": "p27",
+    "quote": "Andreas Bornemann war gestern Abend im NDR-Sportclub zu Gast und durfte natürlich zunächst einmal beantworten, woran es denn aktuell liegt… (8 Min).",
+    "bodyHash": "df4d66eea7a8b0a21b38e2cf30c9138d6785db737a00dfcf15fd9b82da46921c",
+    "fetchedAt": "2026-10-31T09:59:31.216Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -473,8 +491,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:27.445Z",
-  "updatedAt": "2026-10-27T09:22:27.445Z"
+  "createdAt": "2026-10-31T09:59:31.216Z",
+  "updatedAt": "2026-10-31T09:59:31.216Z"
  },
  {
   "id": "ga-f0288a576187c45b",
@@ -496,6 +514,15 @@
     "bodyHash": "08031f708ac541939c61c158b3f5638667cfaa1f3b0f0c2a78a201372aa15cc7",
     "fetchedAt": "2026-10-25T08:45:17.488Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/01/20/lage-am-millerntor-20-januar-2022/",
+    "locator": "p50",
+    "quote": "In der ARD-Mediathek könnt Ihr jetzt die Reportage „Milliardenspiel Amateurfußball – Wenn das Geld im Umschlag kommt“ anschauen (41min).",
+    "bodyHash": "9fd23237fc3a1e5b85f84da909d1e932c2f195ba077ef3ccdb632ac4b59dbc99",
+    "fetchedAt": "2026-10-31T09:59:22.774Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -503,8 +530,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.488Z",
-  "updatedAt": "2026-10-25T08:45:17.488Z"
+  "createdAt": "2026-10-31T09:59:22.774Z",
+  "updatedAt": "2026-10-31T09:59:22.774Z"
  },
  {
   "id": "ga-c0999359c4ca2350",
@@ -703,6 +730,15 @@
     "bodyHash": "8a7cb38354e92229c3b991e33e766d1d00a07c43b0908620aaf5181ed73e3c33",
     "fetchedAt": "2026-10-28T10:02:31.924Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/02/17/lage-am-millerntor-17-februar-2022/",
+    "locator": "p19",
+    "quote": "( Sportschau YouTube , 11min)",
+    "bodyHash": "f3ca6a30de98b2ce2616b4abec76b653d37121f444d94bf490ed53d44adfdfdb",
+    "fetchedAt": "2026-10-31T09:59:28.109Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -710,8 +746,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:02:31.924Z",
-  "updatedAt": "2026-10-28T10:02:31.924Z"
+  "createdAt": "2026-10-31T09:59:28.109Z",
+  "updatedAt": "2026-10-31T09:59:28.109Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1105,6 +1141,15 @@
     "bodyHash": "8335a622f94063f96013be718ba0fdf150d41d862e9f6eed02fae23716b532b1",
     "fetchedAt": "2026-10-30T10:28:52.406Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/01/14/lage-am-millerntor-14-januar-2022/",
+    "locator": "p50",
+    "quote": "Die Forschungsergebnisse der Uni Glasgow haben zuletzt etwas Tempo in der Diskussion um die Gefahr von Kopfbällen gebracht. Langsam nimmt die Diskussion auch hier Fahrt auf, auch wenn der DFB hier noch etwas sehr zögerlich ist. ( WDR Sport Inside, 9min )",
+    "bodyHash": "3fbc8424af14d5f4d4a5c16d7124897cb4cacb7f4e8d539da49aa71f26773ebf",
+    "fetchedAt": "2026-10-31T09:59:22.760Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1112,8 +1157,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:28:52.406Z",
-  "updatedAt": "2026-10-30T10:28:52.406Z"
+  "createdAt": "2026-10-31T09:59:22.760Z",
+  "updatedAt": "2026-10-31T09:59:22.760Z"
  },
  {
   "id": "ga-b034321cdb0cc0d5",
@@ -1165,6 +1210,15 @@
     "bodyHash": "133ebf71a98a47dce244900232213a94897eac12a2a7b339186e92c93bd344c4",
     "fetchedAt": "2026-10-28T10:02:31.919Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/01/31/lage-am-millerntor-31-januar-2022/",
+    "locator": "p62",
+    "quote": "Doch auch abgesehen davon gibt es natürlich viele Punkte, die die Vergabe der Spiele nach China unverständlich erscheinen lassen – zumindest, wenn man mal den offensichtlichen Punkt „Geld & Macht“ ausblendet. In Zusammenarbeit mit Christian Neureuther hat die ARD eine Dokumentation veröffentlicht, die heute immerhin mal zur besten Sendezeit (20.15h) ausgestrahlt wird, vorab aber auch schon in der Mediathek abrufbar ist. // ( ARD Mediathek, 45min )",
+    "bodyHash": "80bff29d26e8339372c2cfd1c0eb33d785f106f9c6c988e90342d4557c361fdd",
+    "fetchedAt": "2026-10-31T09:59:25.478Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1172,8 +1226,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:02:31.919Z",
-  "updatedAt": "2026-10-28T10:02:31.919Z"
+  "createdAt": "2026-10-31T09:59:25.478Z",
+  "updatedAt": "2026-10-31T09:59:25.478Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -1324,5 +1378,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-29T10:26:14.093Z",
   "updatedAt": "2026-10-29T10:26:14.093Z"
+ },
+ {
+  "id": "ga-c2e04b84098d4977",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "89",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/01/24/lage-am-millerntor-24-januar-2022/",
+    "locator": "p65",
+    "quote": "🥲 | Ajax were beating Excelsior 9-0 in the Dutch Cup and in the 89th minute, Devin Plank, who is still receiving chemo for cancer of the fibula, was subbed on… to a guard of honour 👏 pic.twitter.com/TL5rEMFf1f",
+    "bodyHash": "bce8bfe1f122314acdd0107203d21516db994fc34448b48f6688eb41aef72994",
+    "fetchedAt": "2026-10-31T09:59:25.472Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:59:25.472Z",
+  "updatedAt": "2026-10-31T09:59:25.472Z"
  }
 ]

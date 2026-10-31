@@ -46,6 +46,15 @@
     "bodyHash": "04c9cf942b4e36e5adb1d33319be1c63046a801f30de8aa2c4211bd8c7b9d895",
     "fetchedAt": "2026-10-30T10:13:43.289Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/biggins-wayne/",
+    "locator": "p23",
+    "quote": "Possibly the lowest moment was on 1st January 1994, the traditional New Year Derby v Rangers. It could have been a welcome shot in the arm to a then floundering club, but Celtic were to go down 2-0 after only a few minutes and 3-0 after 30mins. This was the days of ‘ Sack The Board ‘, and the supporters on the terraces were at breaking-point. The team needed a turnaround and a talisman to create it, but to highlight the lack of depth at the club, Wayne Biggins was brought on at the 60min mark, and it was a task that was far beyond him. Celtic lost the match 4-2, and Wayne Biggins despite his l",
+    "bodyHash": "9861a9883c218584b11b58914edbafb0b2f7af5ee511c2a5866eaa75ca2d2c43",
+    "fetchedAt": "2026-10-31T09:57:51.109Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -53,8 +62,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:13:43.289Z",
-  "updatedAt": "2026-10-30T10:13:43.289Z"
+  "createdAt": "2026-10-31T09:57:51.109Z",
+  "updatedAt": "2026-10-31T09:57:51.109Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -241,6 +250,15 @@
     "bodyHash": "dc0ad3936ba0c56b6b6af3a474ce75ab238d349340f8c3f85469378149ba8ed1",
     "fetchedAt": "2026-10-27T09:20:49.527Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/davidson-robert/",
+    "locator": "p22",
+    "quote": "He was to be a near ever present in the 1900/01 season, missing just the one league game, and played in the 4-3 loss to Hearts in the Scottish Cup final of 1901. As a measure of his commitment, in the semi-final v St Mirren, he was knocked unconscious in the 20th minute, and insisted on playing on when he recovered; Celtic won 1-0. Nowadays it will be seen as foolhardy in light of accumulated evidence, but shows also how much it all meant to him to play.",
+    "bodyHash": "a90d2f9d54f3661d30f6d7b396d3786477d84f826d4cf62505a4439e1a1c7823",
+    "fetchedAt": "2026-10-31T09:58:15.284Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -248,8 +266,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:20:49.527Z",
-  "updatedAt": "2026-10-27T09:20:49.527Z"
+  "createdAt": "2026-10-31T09:58:15.284Z",
+  "updatedAt": "2026-10-31T09:58:15.284Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -754,6 +772,24 @@
     "bodyHash": "cf4da22d2a70c8c713dd08ad38c408b221958a14558dad162d095d61f3d7a8db",
     "fetchedAt": "2026-10-28T10:01:08.570Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/bjarnason-theodor-elmar/",
+    "locator": "p7",
+    "quote": "Height: 5′ 10″ (178cm)",
+    "bodyHash": "46b4775d6325f0e9564aedd78e0fd34d20bfaa14971052d2750f8d83e9f2b389",
+    "fetchedAt": "2026-10-31T09:57:51.114Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/corcoran-patrick/",
+    "locator": "p60",
+    "quote": "Patsy was christened Patrick, he was known as Paddy or Pat when he played in Scotland but Argyle fans knew him as Patsy. He started his football career with his local club Albion Rovers as a right winger, despite being taller than most wingers of the era at 5′ 10′ he had excellent ball control and wasn’t afraid to shoot from any angle.",
+    "bodyHash": "af4c2c544b4ca8cf3584ea94816b219c12e0e7053c1ad02572d1017544684b38",
+    "fetchedAt": "2026-10-31T09:58:09.081Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -761,8 +797,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:01:08.570Z",
-  "updatedAt": "2026-10-28T10:01:08.570Z"
+  "createdAt": "2026-10-31T09:58:09.081Z",
+  "updatedAt": "2026-10-31T09:58:09.081Z"
  },
  {
   "id": "ga-eae2397426bed908",
@@ -892,6 +928,24 @@
     "bodyHash": "efd453be8fe0e6ed63c971dbc23f7a3798fa97e88d9d02c91472dc7fff33c576",
     "fetchedAt": "2026-10-30T10:27:51.624Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/brogan-jim/",
+    "locator": "p143",
+    "quote": "Jim Brogan was not noted for goalscoring but he will always be remembered best for one particular goal. Against Rangers on January 3rd 1972, with the game at 1-1 and in the 90th minute, Harry Hood superbly controlled a ball and lobbed it across goal, where Jim stole in to glance the ball past Peter McCloy to give Celtic a highly dramatic victory.",
+    "bodyHash": "869ceb125d62616a2e46ab8a8e291eb798f0b5eb0661711093b05f01f2cba1e1",
+    "fetchedAt": "2026-10-31T09:57:54.082Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/donati-massimo/",
+    "locator": "p117",
+    "quote": "Rarely featured under previous manager Gordon Strachan, it is easy to forget that this is a player who once cost Milan £10m. What will never be forgotten by Celtic fans is his sensational 90th minute goal against Shakhtar Donetsk in the 2007-08 Champions League that ultimately put the club into the last 16. That strike earned him an eternal place in the hearts of Celts the world over. Buona Fortuna Massimo and ‘Mon the Galletti!",
+    "bodyHash": "db2be8471dc4c6467069d84136fc21848bdf1cf8643bbeef09937a7cc2b55962",
+    "fetchedAt": "2026-10-31T09:58:18.114Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -899,8 +953,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:51.624Z",
-  "updatedAt": "2026-10-30T10:27:51.624Z"
+  "createdAt": "2026-10-31T09:58:18.114Z",
+  "updatedAt": "2026-10-31T09:58:18.114Z"
  },
  {
   "id": "ga-22353df6dc5d1642",
@@ -1330,5 +1384,620 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-30T10:27:51.633Z",
   "updatedAt": "2026-10-30T10:27:51.633Z"
+ },
+ {
+  "id": "ga-c2f6fa987939c2ce",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "27",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/blinker-regi/",
+    "locator": "p20",
+    "quote": "In that league cup final, Regi Blinker in the 27th minute became one of the few footballers ever to genuinely hit his own backside with a shot. A cross came over from the right and Blinker attempted to volley it into the net with his right foot but hit it directly downward. As his momentum carried him forward the ball came up and hit him on the backside.",
+    "bodyHash": "c010e6cba4e74451fa0841386749b8e8858e2e3beefde427481bf1d405bd9c86",
+    "fetchedAt": "2026-10-31T09:57:51.118Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:57:51.118Z",
+  "updatedAt": "2026-10-31T09:57:51.118Z"
+ },
+ {
+  "id": "ga-3e31b24b765434f3",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "80",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/boden-alec/",
+    "locator": "p20",
+    "quote": "He finally managed to score his first goals for Celtic after 11 years at the club, both in season 1954/55: once v Clyde in Dec 1954 (2-2 draw) and then once v Stirling Albion in Mar 1955 (3-2 win). His goal v Clyde was the Celtic’s first in the match and came from him being “ oddly positioned”, and Alec Boden then scored with a terrific shot after good work from Walsh and Tully. His goal v Stirling Albion was an equaliser on the 80th minute which allowed Celtic a final fight back with Stein scoring the winner.",
+    "bodyHash": "4c2adbba3e981bb09c4e37b86ddb4a5e0d5ae1788ab8f4a4a13a8bf0cfd264c0",
+    "fetchedAt": "2026-10-31T09:57:51.119Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:57:51.119Z",
+  "updatedAt": "2026-10-31T09:57:51.119Z"
+ },
+ {
+  "id": "ga-09431d5a23e77134",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "6",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/bonner-pat/",
+    "locator": "p7",
+    "quote": "Height : 6′ 2” (188cm)",
+    "bodyHash": "665ba02dda4ac18fea254ba8a6ac97e1ad9f5201b73e6288462efe5deb8b7df1",
+    "fetchedAt": "2026-10-31T09:57:54.071Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/cascarino-tony/",
+    "locator": "p21",
+    "quote": "The former Millwall man was signed by the then recently appointed Bhoys boss Liam Brady for £1.1 million from Aston Villa in July 1991; Brady was formerly his agent and felt he knew him and what he could offer to the first team. At 6′ 2″ Cascarino was brought to add presence to the Hoops forward line but his record of 12 goals in 50 games for the Midlanders was far from impressive and didn’t bode well. It was to be far worse at Celtic.",
+    "bodyHash": "2ae27dda89989389086e04989bddd3c58993a5767ceab0cfc8a3c835e53bdefa",
+    "fetchedAt": "2026-10-31T09:58:03.092Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/de-ornelas-fernando/",
+    "locator": "p11",
+    "quote": "Height : 6′ 1″ (185cm)",
+    "bodyHash": "4650bc2e828add66bd09483699d2da07e9298624bc9886a6364a29d3a9277b5e",
+    "fetchedAt": "2026-10-31T09:58:15.293Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:15.293Z",
+  "updatedAt": "2026-10-31T09:58:15.293Z"
+ },
+ {
+  "id": "ga-dbf5658ec20a795c",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "105",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/braafheid-edson/",
+    "locator": "p123",
+    "quote": "Braafheid, though, had to watch from the bench as Van Bronckhorst played every second – up until the 105th minute of the final.",
+    "bodyHash": "4e97d51eb371daebc97715d1ed520279aa28a24c7591e040ec6f1ac24a5b0a6d",
+    "fetchedAt": "2026-10-31T09:57:54.079Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:57:54.079Z",
+  "updatedAt": "2026-10-31T09:57:54.079Z"
+ },
+ {
+  "id": "ga-32c2be436a9dba15",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "13",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/brogan-frank/",
+    "locator": "p115",
+    "quote": "Sadly, however, Brogan had the misfortune to break his ankle for a second time in the 13th minute of his third match with Plymouth Argyle, an injury that ruled him out of the rest of the season.",
+    "bodyHash": "2e3411a071c54ddd334be0bf837418a88551ec51dc0d6d219a00f6e4778a8ac9",
+    "fetchedAt": "2026-10-31T09:57:54.081Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:57:54.081Z",
+  "updatedAt": "2026-10-31T09:57:54.081Z"
+ },
+ {
+  "id": "ga-b363586950220791",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "83",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/brogan-jim/",
+    "locator": "p36",
+    "quote": "1. A late winner in the 83rd minute against Aberdeen in October 1969 at Pittodrie when Celtic came from behind to win after Jim had gone up or a corner.",
+    "bodyHash": "869ceb125d62616a2e46ab8a8e291eb798f0b5eb0661711093b05f01f2cba1e1",
+    "fetchedAt": "2026-10-31T09:57:54.082Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-funeral-passing/",
+    "locator": "p48",
+    "quote": "\"To score the winning goal earned him the right to say he scored the most important goal in the history of Scottish football. He was proud to score that goal, but to him it was more important the team won. That day he ran around tirelessly, until in the 83rd minute when he ventured in and sealed the game with a winning touch.",
+    "bodyHash": "b1646a96bc5ca7fb9b999ea5fc605ac279e6e89f536380ec832118166784708e",
+    "fetchedAt": "2026-10-31T09:58:03.106Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:03.106Z",
+  "updatedAt": "2026-10-31T09:58:03.106Z"
+ },
+ {
+  "id": "ga-069d86c069a8a125",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "64",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/cassidy-joe/",
+    "locator": "p83",
+    "quote": "It was a tight game, but Cassidy – like he had done so often that season – proved to be the difference. His goal came in the 64th minute, when he planted a header beyond the reach of Hibernian goalkeeper Bill Harper. Celtic were in dreamland and Cassidy had been the inspiration for the club’s first Scottish Cup triumph since 1914.",
+    "bodyHash": "0c4bc06a0fada7bd119e1e5d3fd2d85d6c2a706568ff5fc0f2d09a8211041aab",
+    "fetchedAt": "2026-10-31T09:58:03.095Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/dalglish-kenny/dalglish-kenny-articles-player/",
+    "locator": "p15",
+    "quote": "The goal, in the 64th minute, would be all that separated the sides as Liverpool retained the trophy they had won 12 months earlier in Rome, when Kevin Keegan was the idol of the Kop and Borussia Moenchengladbach were put to the sword.",
+    "bodyHash": "895b554ef079c5344ed9dd80327709772e6c52657b385137716766b23d735d53",
+    "fetchedAt": "2026-10-31T09:58:12.074Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:12.074Z",
+  "updatedAt": "2026-10-31T09:58:12.074Z"
+ },
+ {
+  "id": "ga-1974d5b8607fb677",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "84",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-misc-articles/",
+    "locator": "p41",
+    "quote": "Chalmers suffered disappointments in football, not least in the dark blue, and although he was happy to win a Junior cap like his dear old dad, five senior appearances for Scotland is a small return for such a prolific centre-forward. On international trips he roomed with Denis Law and as the squad broke up the Lawman always thanked him in front of the others for being such a good butler &ndash; but he scored in his first two appearances only to be omitted by the selectors; he netted our first-ever goal against Brazil but was dropped for the next game; and he was down as 12th man for the &ldqu",
+    "bodyHash": "df925cb3fafbb50e36ae18eda79c1e007e55cd0460fbd387268bb961ee41a50b",
+    "fetchedAt": "2026-10-31T09:58:03.099Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:03.099Z",
+  "updatedAt": "2026-10-31T09:58:03.099Z"
+ },
+ {
+  "id": "ga-70241e56417fb439",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "85",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-misc-articles/",
+    "locator": "p116",
+    "quote": "All afternoon I had been making runs to free up space for other people and in the 85th minute &mdash; as Tommy Gemmell played Bobby Murdoch in for a shot at goal &mdash; I had the favour returned, beautifully.",
+    "bodyHash": "df925cb3fafbb50e36ae18eda79c1e007e55cd0460fbd387268bb961ee41a50b",
+    "fetchedAt": "2026-10-31T09:58:03.099Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-passing-obituaries/",
+    "locator": "p114",
+    "quote": "Chalmers' 85th minute touch onto a Bobby Murdoch shot was the goal which beat Inter Milan, in Lisbon's National Stadium in the 1967 final, and ensured immortality for him and his ten team mates &ndash; The Lisbon Lions.",
+    "bodyHash": "24f4401e2cc05f0b818ae8a620b42f4cd8fc4450cc3fe528caab5788b76bd76d",
+    "fetchedAt": "2026-10-31T09:58:03.104Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:03.104Z",
+  "updatedAt": "2026-10-31T09:58:03.104Z"
+ },
+ {
+  "id": "ga-e24879da1fce45a8",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "63",
+  "scorerAlias": "Tommy Gemmell",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-misc-articles/",
+    "locator": "p128",
+    "quote": "The goal Tommy Gemmell scored in the 63rd minute was the perfect equaliser. Everything about it was just wonderful.",
+    "bodyHash": "df925cb3fafbb50e36ae18eda79c1e007e55cd0460fbd387268bb961ee41a50b",
+    "fetchedAt": "2026-10-31T09:58:03.099Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:03.099Z",
+  "updatedAt": "2026-10-31T09:58:03.099Z"
+ },
+ {
+  "id": "ga-63454fc98c990341",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "67",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-passing-obituaries/",
+    "locator": "p161",
+    "quote": "&ldquo;Look at last weekend, too – our number five, Jozo Simunovic, scored a header that Billy himself would have been proud of, on the 67th minute. I think the big man must have some pull upstairs! Both Billy and Stevie are such a huge part of Celtic&rsquo;s history, they&rsquo;ll never be forgotten. They&rsquo;re in the history books forever, and they&rsquo;re part of the club&rsquo;s greatest history.&rdquo;",
+    "bodyHash": "24f4401e2cc05f0b818ae8a620b42f4cd8fc4450cc3fe528caab5788b76bd76d",
+    "fetchedAt": "2026-10-31T09:58:03.104Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:03.104Z",
+  "updatedAt": "2026-10-31T09:58:03.104Z"
+ },
+ {
+  "id": "ga-88685149807493b8",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": "2000-05-21",
+  "opponentHe": null,
+  "minute": "6",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/convery-john/",
+    "locator": "p6",
+    "quote": "Height: 6′ 1″ (185cm)",
+    "bodyHash": "e0a757fd6dfa8f3769dbf97c8a7a5ab7d1f69bee36ff7bb73f25da6d04dc4d78",
+    "fetchedAt": "2026-10-31T09:58:09.078Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:09.078Z",
+  "updatedAt": "2026-10-31T09:58:09.078Z"
+ },
+ {
+  "id": "ga-4bb4e56dc2d62b49",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "89",
+  "scorerAlias": "He",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/corbett-william/",
+    "locator": "p22",
+    "quote": "In season 1947/48, Celtic were threatened with relegation, he stepped up and scored a crucial penalty to win Celtic the game against Falkirk in February 1948 in the 89th minute and with the way things over coming months were to develop, it was a very valuable set of points. He scored 3 goals in the league that season, which were each invaluable taking in the paucity in goals from the players across the team in general.",
+    "bodyHash": "7944803023de12989c73af77fa6ec95e062855a2132754775cad897f1511d4f2",
+    "fetchedAt": "2026-10-31T09:58:09.080Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:09.080Z",
+  "updatedAt": "2026-10-31T09:58:09.080Z"
+ },
+ {
+  "id": "ga-62e46f4847622aee",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "89",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/corbett-william/",
+    "locator": "p55",
+    "quote": "The 1947/48 season saw Celtic struggled near to the bottom of the table and in danger of suffering relegation for the first time. But an 89th minute penalty scored by Willie gave Celtic a 1-0 win over Falkirk and finally finish in twelfth position in the sixteen team division. He made 99 appearances for Celtic, scoring 3 goals In June 1948 saw him move south from Glasgow to Deepdale for a fee of £10,000, he made his debut on the opening day of the season on 21 August in a 2-2 draw at home to Portsmouth. Willie played in 18 of the first 20 matches. The 5-3 defeat at Boltonon 4 December led to h",
+    "bodyHash": "7944803023de12989c73af77fa6ec95e062855a2132754775cad897f1511d4f2",
+    "fetchedAt": "2026-10-31T09:58:09.080Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:09.080Z",
+  "updatedAt": "2026-10-31T09:58:09.080Z"
+ },
+ {
+  "id": "ga-9b0d3052201c543d",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "65",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/crone-william/",
+    "locator": "p63",
+    "quote": "The goals: 0-1 Reid (65 min.), 1-1 McNeill (66 min.), 1-2 Reid (70 min.).",
+    "bodyHash": "62b2060000b9602d6c80dd37507202e750f29c34c638ce7fddb45afb386bd448",
+    "fetchedAt": "2026-10-31T09:58:12.067Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:12.067Z",
+  "updatedAt": "2026-10-31T09:58:12.067Z"
+ },
+ {
+  "id": "ga-a5c8540ceeb58e66",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "45",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/crone-william/",
+    "locator": "p64",
+    "quote": "Substitution: David Rollo for Scraggs (45 min.).",
+    "bodyHash": "62b2060000b9602d6c80dd37507202e750f29c34c638ce7fddb45afb386bd448",
+    "fetchedAt": "2026-10-31T09:58:12.067Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:12.067Z",
+  "updatedAt": "2026-10-31T09:58:12.067Z"
+ },
+ {
+  "id": "ga-ab6e8936b9675094",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "15",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/divers-john-1957-66/",
+    "locator": "p49",
+    "quote": "It was in the 15th minute of the opening-day league game against Dundee United at Tannadice on August 15, 1965 when he opened the scoring in a 4-0 win and so scored the very first goal of Celtic’s nine-in-a-row.",
+    "bodyHash": "fe66e88af0a8f8e984a8865d1887afe045474ce88e00c2f1c32fd315d2455da2",
+    "fetchedAt": "2026-10-31T09:58:15.300Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:15.300Z",
+  "updatedAt": "2026-10-31T09:58:15.300Z"
+ },
+ {
+  "id": "ga-3db3feff3a923f53",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "21",
+  "scorerAlias": "He",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/divers-john-1957-66/",
+    "locator": "p103",
+    "quote": "He scored in the 21st minute in a game ending 2-2. “I felt quite embarrassed, to be honest. I didn’t know what to do.",
+    "bodyHash": "fe66e88af0a8f8e984a8865d1887afe045474ce88e00c2f1c32fd315d2455da2",
+    "fetchedAt": "2026-10-31T09:58:15.300Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:15.300Z",
+  "updatedAt": "2026-10-31T09:58:15.300Z"
+ },
+ {
+  "id": "ga-448a90298a4b37e0",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "82",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/d/donnelly-simon-thomas/",
+    "locator": "p35",
+    "quote": "For their penultimate league game, Celtic had a Sunday jaunt to Dunfermline and knew victory would assure them the title after Rangers had lost to a 95th-minute Kilmarnock goal at Ibrox the previous afternoon. Celtic looked like doing enough as they headed into the final seven minutes of normal time a goal to the good. A strike netted by Simon Donnelly, whose integral role in Celtic’s famous 1998 championship success has been underplayed. Put that down to Craig Faulconbridge, who netted in the 82nd minute that afternoon at East End Park to ensure it is Brattbakk whose name is synonymous with J",
+    "bodyHash": "c3e3ab5ebd48cf4cb9ae259be74bf2a4bb70442cbb87753bd37745943561316e",
+    "fetchedAt": "2026-10-31T09:58:18.116Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-31T09:58:18.116Z",
+  "updatedAt": "2026-10-31T09:58:18.116Z"
  }
 ]

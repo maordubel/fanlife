@@ -19,7 +19,7 @@
    "/povijest/2001-danas"
   ],
   "state": "blocked",
-  "updatedAt": "2026-10-30T10:28:07.061Z",
+  "updatedAt": "2026-10-31T09:58:35.905Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "torcida:posts": {
@@ -28,13 +28,13 @@
   "collection": "posts",
   "queryFingerprint": "6e1f3e54546b55ec",
   "parserVersion": "torcida-history-v1",
-  "nextPage": 11,
-  "lastCommittedPage": 10,
+  "nextPage": 15,
+  "lastCommittedPage": 14,
   "observedTotalDocuments": 657,
   "observedTotalPages": 27,
   "perPage": 25,
   "state": "partial_budget",
-  "updatedAt": "2026-10-30T10:28:17.906Z",
+  "updatedAt": "2026-10-31T09:58:47.122Z",
   "lastError": null
  },
  "torcida:pages": {
@@ -49,7 +49,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-30T10:28:21.885Z",
+  "updatedAt": "2026-10-31T09:58:51.015Z",
   "lastError": null
  },
  "wikipedia-hajduk-records:html": {
@@ -68,7 +68,7 @@
    "/wiki/HNK_Hajduk_Split_statistics_and_records"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-30T10:28:22.374Z",
+  "updatedAt": "2026-10-31T09:58:51.593Z",
   "lastError": null
  },
  "hajduk-official-history-en:html": {
@@ -87,7 +87,7 @@
    "/eng/history"
   ],
   "state": "blocked",
-  "updatedAt": "2026-10-30T10:28:22.374Z",
+  "updatedAt": "2026-10-31T09:58:51.593Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  }
 }
