@@ -13,7 +13,7 @@ import {CAST_ROLES, HERO_LOOKS} from '../../lib/life/universal/cast'
 const base = process.argv[2] || 'http://127.0.0.1:3200'
 const out = process.argv[3] || '/tmp/cast'
 const club = process.argv[4] || 'hapoel-tel-aviv'
-const [W, H] = (process.argv[5] || '1280,800').split(',').map(Number)
+const [W, H] = (process.argv[5] || '1280,800').split(',').map(Number) as [number, number]
 mkdirSync(out, {recursive: true})
 
 type W = {__ready?: boolean; __err: string[]; __vxPlay: {enter(c: unknown): boolean; focus(id: string | null): void; shot(o: unknown): boolean; emote(k: string | null): void; actor(id: string, p: unknown): boolean; freeze(b: boolean): void}}
@@ -22,7 +22,7 @@ function cfg(roomId: string, actors: {id: string; x: number; z: number; look: un
   const room = ROOMS[roomId as keyof typeof ROOMS]!
   return {
     room: room.id, club, time: 'day', floorY: room.floorY, walk: room.walk, viewH: room.viewH, surface: room.surface, spawn,
-    frame: {top: 0.84, bottom: -0.72}, player: {h: 4.6, ...HERO_LOOKS.child}, blocks: room.blocks, clear: room.clear,
+    frame: {top: 0.84, bottom: -0.72}, player: {...HERO_LOOKS.child, h: 4.6}, blocks: room.blocks, clear: room.clear,
     actors: actors.map(a => ({id: a.id, x: a.x, z: a.z, yaw: a.yaw ?? Math.PI, look: a.look})),
     spots: [], exits: Object.entries(room.doors).map(([id, d]) => ({id, ...d})),
   }

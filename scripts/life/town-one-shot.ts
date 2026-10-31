@@ -7,8 +7,8 @@ import {chromium} from 'playwright'
 import {ROOMS} from '../../lib/life/universal/rooms'
 import {CAST_ROLES, HERO_LOOKS} from '../../lib/life/universal/cast'
 
-const [out, actorsJson, camSpec = 'wide', q = 'low', size = '960,600', roomId = 'street', time = 'day'] = process.argv.slice(2)
-const [W, H] = size.split(',').map(Number)
+const [out = 'out.png', actorsJson = '[]', camSpec = 'wide', q = 'low', size = '960,600', roomId = 'street', time = 'day'] = process.argv.slice(2)
+const [W, H] = size.split(",").map(Number) as [number, number]
 type Wn = {__ready?: boolean; __err: string[]; __vxPlay: {enter(c: unknown): boolean; shot(o: unknown): boolean; emote(k: string | null): void; focus(id: string | null): void}}
 
 function main() {
@@ -23,7 +23,7 @@ function main() {
   const spawn = roomId === 'street' ? {x: 20, z: 12.6, yaw: 0} : Object.values(room.spawns)[0]
   const cfg = {
     room: room.id, club: 'hapoel-tel-aviv', time, floorY: room.floorY, walk: room.walk, viewH: room.viewH, surface: room.surface, spawn,
-    frame: {top: 0.84, bottom: -0.72}, player: {h: 4.6, ...HERO_LOOKS.child}, blocks: room.blocks, clear: room.clear,
+    frame: {top: 0.84, bottom: -0.72}, player: {...HERO_LOOKS.child, h: 4.6}, blocks: room.blocks, clear: room.clear,
     actors, spots: [], exits: Object.entries(room.doors).map(([id, d]) => ({id, ...d})),
   }
   return (async () => {
@@ -40,7 +40,7 @@ function main() {
     console.log('enter', Date.now() - t0, 'ms'); t0 = Date.now()
     await page.waitForTimeout(1500)
     const [cam, id] = camSpec.split(':')
-    if (cam !== 'wide') { await page.evaluate(([c, i]) => (window as unknown as Wn).__vxPlay.shot({cam: c, on: [i], ms: 9000}), [cam, id || actors[0].id]); await page.waitForTimeout(900) }
+    if (cam !== 'wide') { await page.evaluate(([c, i]) => (window as unknown as Wn).__vxPlay.shot({cam: c, on: [i], ms: 9000}), [cam, id || actors[0]!.id]); await page.waitForTimeout(900) }
     await page.screenshot({path: out, timeout: 300000})
     console.log('shot', Date.now() - t0, 'ms', 'errors', errors, (await page.evaluate(() => (window as unknown as Wn).__err)).slice(0, 3))
     await browser.close()

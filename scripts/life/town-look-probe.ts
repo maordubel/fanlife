@@ -40,7 +40,7 @@ function cfgOf(s: typeof SHOTS[number]) {
     room: room.id, club, time: s.time || 'day', weather: s.weather || null, mood: s.mood || 'normal', floorY: room.floorY, walk: room.walk, viewH: room.viewH, surface: room.surface, spawn,
     frame: {top: 0.84, bottom: -0.72}, player: {h: 4.6}, blocks: room.blocks, clear: room.clear,
     actors: Object.entries(room.slots).map(([id, sl], i) => {
-      const role = roles[i % roles.length]
+      const role = roles[i % roles.length]!
       return {id, x: sl.x, z: sl.z, yaw: sl.yaw, sit: !!sl.sit, seat: sl.sit?.seat, y: sl.sit?.y, head: sl.head, reach: sl.reach, look: {...role.look}}
     }),
     spots: Object.entries(room.spots).map(([id, sp]) => ({id, ...sp})),

@@ -31,7 +31,7 @@ function cfgOf(roomId: string, time: string) {
   }
 }
 
-const SIZE = (process.env.SIZE || '1280x800').split('x').map(Number)
+const SIZE = (process.env.SIZE || "1280x800").split("x").map(Number) as [number, number]
 async function shoot(page: Page, id: string, time: string, tag: string) {
   await page.evaluate(c => (window as unknown as W).__vxPlay.enter(c), cfgOf(id, time))
   await page.waitForTimeout(2600)
