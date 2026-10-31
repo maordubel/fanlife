@@ -53,6 +53,15 @@ export type Look = {
   jacket?: string
   denimJacket?: boolean
   cardigan?: string
+  /** a hooded top (its colour), zipped, the hood down across the shoulders */
+  hoodie?: string
+  /** a long coat (its colour), open, to the thigh */
+  coat?: string
+  /** a collar on the shirt (a polo); `collar` colours it */
+  polo?: boolean
+  collar?: string
+  /** the year this person is dressed for; the room's own year when absent */
+  era?: number
   /** a zipped track top with two stripes, in the club's colour unless `trackCol` says otherwise */
   track?: boolean
   trackCol?: string

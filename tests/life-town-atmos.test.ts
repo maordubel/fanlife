@@ -19,7 +19,7 @@ describe('TOWN · the weather and the hour reach the picture', () => {
     expect(kit).toMatch(/ atmos\(sc,inside,opts\);\n cur\.cam=/)
     const body = kit.slice(kit.indexOf('function atmos('), kit.indexOf('var VW='))
     expect(body).not.toMatch(/\brnd\(\)|\brr\(/)
-    expect(body).toMatch(/l\.isPointLight\|\|l\.isSpotLight\)l\.intensity\*=1\.55/) // a room at night is lit by its lamps
+    expect(body).toMatch(/l\.isPointLight\|\|l\.isSpotLight\)l\.intensity\*=1\.35/) // a room at night is lit by its lamps
   })
 })
 
