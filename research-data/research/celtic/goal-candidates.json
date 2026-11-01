@@ -55,6 +55,15 @@
     "bodyHash": "9861a9883c218584b11b58914edbafb0b2f7af5ee511c2a5866eaa75ca2d2c43",
     "fetchedAt": "2026-10-31T09:57:51.109Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/gillan-george/",
+    "locator": "p18",
+    "quote": "“He might have been offside (certainly Rangers and Willie Woodburn in particular were convinced he was) but the referee, the sometimes controversial Mr MC Hutton, didn’t think so and Gillan ran on to a fine pass from Johnny Crum to put the ball past Jenkins in the 60th minute.”",
+    "bodyHash": "eb968979e8310e3565e8c9d5c1a2bebeb879c2799a489d1f8a9f05ac229b375f",
+    "fetchedAt": "2026-11-01T10:48:17.303Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -62,8 +71,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:57:51.109Z",
-  "updatedAt": "2026-10-31T09:57:51.109Z"
+  "createdAt": "2026-11-01T10:48:17.303Z",
+  "updatedAt": "2026-11-01T10:48:17.303Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -259,6 +268,15 @@
     "bodyHash": "a90d2f9d54f3661d30f6d7b396d3786477d84f826d4cf62505a4439e1a1c7823",
     "fetchedAt": "2026-10-31T09:58:15.284Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/j/juarez-efrain/",
+    "locator": "p104",
+    "quote": "I have no favourite. The first was a header against Braga, we were tied 1-1, and Samaras crossed the ball, I came by surprise and put it in with the head. The second was two weeks later in the Europa League qualifiers. It was the first leg at Celtic Park against Utrecht, and I opened the score around the 20th minute, they passed to me while I was entering the box, I controlled the ball, faced the goalkeeper and finished it. It was an important game, full stadium for a Europa League qualifier, awesome in every way. A unique experience, I remember that moment like it was yesterday.",
+    "bodyHash": "db46c6599d143ea2a5ca5627a1c104895144d9da394f6b9a3ea92cd397c8b94e",
+    "fetchedAt": "2026-11-01T10:48:35.299Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -266,8 +284,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:15.284Z",
-  "updatedAt": "2026-10-31T09:58:15.284Z"
+  "createdAt": "2026-11-01T10:48:35.299Z",
+  "updatedAt": "2026-11-01T10:48:35.299Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -565,6 +583,15 @@
     "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
     "fetchedAt": "2026-10-30T10:27:39.583Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/george-paul/",
+    "locator": "p20",
+    "quote": "He made his competitive debut in Sep 2011 v Ross County (as a late sub on at the 89mins mark) in a 2-0 win in the league cup. He came close to scoring late in the game but it was saved at close range by the keeper. That was sadly his only game for the first team, and so he possibly holds the record for least minutes played by any player for the first team (non-friendly matches): 3mins total (1min normal – 2min injury time). Celtic went on to win the league by a country mile, 20pts over Rangers so he got a very minor bit-part in the campaign. If he’d got that goal maybe he could have won the ar",
+    "bodyHash": "2b1d5009878769aa2d9707de5eea5bc0fbc47d97b5ec1b16f3d87071e75f2e5b",
+    "fetchedAt": "2026-11-01T10:48:17.301Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -572,8 +599,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:39.583Z",
-  "updatedAt": "2026-10-30T10:27:39.583Z"
+  "createdAt": "2026-11-01T10:48:17.301Z",
+  "updatedAt": "2026-11-01T10:48:17.301Z"
  },
  {
   "id": "ga-544a8ee2a77de76d",
@@ -790,6 +817,15 @@
     "bodyHash": "af4c2c544b4ca8cf3584ea94816b219c12e0e7053c1ad02572d1017544684b38",
     "fetchedAt": "2026-10-31T09:58:09.081Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/hutchinson-ben/",
+    "locator": "p7",
+    "quote": "Height : 5′ 11” (180cm)",
+    "bodyHash": "2406d33bc6a7e3f1d08bc27a16217cf988576d59c391b88bc70b7abc94b301fd",
+    "fetchedAt": "2026-11-01T10:48:29.320Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -797,8 +833,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:09.081Z",
-  "updatedAt": "2026-10-31T09:58:09.081Z"
+  "createdAt": "2026-11-01T10:48:29.320Z",
+  "updatedAt": "2026-11-01T10:48:29.320Z"
  },
  {
   "id": "ga-eae2397426bed908",
@@ -1066,6 +1102,15 @@
     "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
     "fetchedAt": "2026-10-30T10:27:39.583Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/herron-john/",
+    "locator": "p49",
+    "quote": "“I’ve played with Joe, Marcus and Mikey (Miller) through thick and thin since under-9′s!",
+    "bodyHash": "a3aae4eb5089327c25720a5da2aecfca4eff1c9863d19b639e0ac5c8846f9c1b",
+    "fetchedAt": "2026-11-01T10:48:26.288Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1073,8 +1118,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:39.583Z",
-  "updatedAt": "2026-10-30T10:27:39.583Z"
+  "createdAt": "2026-11-01T10:48:26.288Z",
+  "updatedAt": "2026-11-01T10:48:26.288Z"
  },
  {
   "id": "ga-217b47b47c0bec0d",
@@ -1750,6 +1795,33 @@
     "bodyHash": "24f4401e2cc05f0b818ae8a620b42f4cd8fc4450cc3fe528caab5788b76bd76d",
     "fetchedAt": "2026-10-31T09:58:03.104Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/f/fallon-john/fallon-john-miscellaneous-articles/",
+    "locator": "p76",
+    "quote": "SATURDAY’S win over Kilmarnock marked the perfect tribute to Billy McNeill, with Celtic’s current number 5, Jozo Simunovic, netting the game’s only goal on the 67th minute.",
+    "bodyHash": "6dacabe16a8389891fd90857686b4b5718bdd49553afbe2d7889f6213e11e6c5",
+    "fetchedAt": "2026-11-01T10:48:11.260Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/gemmell-tommy/",
+    "locator": "p43",
+    "quote": "In the match following his passing, Celtic defeated St Mirren 4-1 in a cup game. Appropriately for Tommy, a goal was scored in the 67th minute. Celtic had gone behind in this game to fight back and equalise (with that goal by an attacking fullback), and wave after wave of pressure after sustained defence from the opposition led to their collapse and Celtic’s victory. Interesting parallels to the European Cup final in 1967.",
+    "bodyHash": "0d8943d69929387be445ed21bd46e5d3b485c00abe0bb3a1d2d0f8ad9b752194",
+    "fetchedAt": "2026-11-01T10:48:17.295Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/gemmell-tommy/gemmell-tommy-articles/",
+    "locator": "p311",
+    "quote": "His death comes days after the family of Billy McNeill confirmed the Lisbon Lions captain has dementia, and shortly before the 50th anniversary of Celtic’s greatest triumph. Their fans have paid tribute to their most famous team in the 67th minute of each game in recent months with a light display and song, In The Heat Of Lisbon.",
+    "bodyHash": "ff296d04bc6b6e3976bb75722a0bf69add81bc99bd4bbaad154c0a5bf011c14e",
+    "fetchedAt": "2026-11-01T10:48:17.297Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1757,8 +1829,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:03.104Z",
-  "updatedAt": "2026-10-31T09:58:03.104Z"
+  "createdAt": "2026-11-01T10:48:17.297Z",
+  "updatedAt": "2026-11-01T10:48:17.297Z"
  },
  {
   "id": "ga-88685149807493b8",
@@ -1990,6 +2062,15 @@
     "bodyHash": "c3e3ab5ebd48cf4cb9ae259be74bf2a4bb70442cbb87753bd37745943561316e",
     "fetchedAt": "2026-10-31T09:58:18.116Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/henderson-liam/",
+    "locator": "p105",
+    "quote": "In Sunday’s SFA Youth Cup tie against Motherwell he was clearly the difference between the two side’s, driving forward at every opportunity and scoring a brilliantly taken goal in the 82nd minute when extra-time seemed inevitable.",
+    "bodyHash": "fe093173ae5cef020c046aab2649f55afe09f5e45c740335b574507634847c57",
+    "fetchedAt": "2026-11-01T10:48:26.284Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1997,7 +2078,187 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:18.116Z",
-  "updatedAt": "2026-10-31T09:58:18.116Z"
+  "createdAt": "2026-11-01T10:48:26.284Z",
+  "updatedAt": "2026-11-01T10:48:26.284Z"
+ },
+ {
+  "id": "ga-b61db99a8881f58e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "44",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/e/evans-bobby/",
+    "locator": "p229",
+    "quote": "I actually got on quite well with him. I used to do an article for the Sunday Dispatch – ‘My friends the footballers’ -which was quite funny. And there was a bloke who wrote with the Daily Mail. At that time the Mail was in St Vincent street they shared a building with the Sunday Dispatch. At that time Alex Cameron worked for the Mail and was a copy boy and Willie Gould and Andrew Wallace were the main reporters. But there was a bloke who worked on the Edinburgh edition called Alec Young, not the footballer at Hearts. He always did the Edinburgh sides and when Celtic went through there, Celtic",
+    "bodyHash": "7ef111bdd9533afbba0e78b548a0271be3c14b23e69af98b17d18954a80b2f9f",
+    "fetchedAt": "2026-11-01T10:48:11.255Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:48:11.255Z",
+  "updatedAt": "2026-11-01T10:48:11.255Z"
+ },
+ {
+  "id": "ga-3288d24a23be6771",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "86",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/f/foley-james/",
+    "locator": "p19",
+    "quote": "However, in his only brief run of games (a four game stretch in Dec 1935-Jan 1936) he conceded four goals in a 4-3 defeat to Rangers which likely didn’t help his case. The luck of the Irish deserted Jim Foley although the Herald reporter did state that he–together with his opposite number Jerry Dawson–was “worthy of a special mention”, but still he couldn’t stop Jimmy Smith’s 86th minute header from a corner kick giving Rangers the win.",
+    "bodyHash": "b4b28910dc2405d4dfb4af4041061e2cdaea0935cb9609a6e8ab81e41bdaf5e6",
+    "fetchedAt": "2026-11-01T10:48:14.312Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:48:14.312Z",
+  "updatedAt": "2026-11-01T10:48:14.312Z"
+ },
+ {
+  "id": "ga-6c1d11d189bd1d7a",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "63",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/gemmell-tommy/",
+    "locator": "p71",
+    "quote": "“Ultimately the element that impressed most profoundly was the massive heart of this Celtic side. Nothing symbolised it more vividly than the incredible display of Gemmell. He was almost on his knees with fatigue before scoring that thunderous equaliser in the 63rd minute but somehow his courage forced him to go on dredging up the strength to continue with the exhausting runs along the left wing that did more than any other single factor to demoralise Inter.”",
+    "bodyHash": "0d8943d69929387be445ed21bd46e5d3b485c00abe0bb3a1d2d0f8ad9b752194",
+    "fetchedAt": "2026-11-01T10:48:17.295Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:48:17.295Z",
+  "updatedAt": "2026-11-01T10:48:17.295Z"
+ },
+ {
+  "id": "ga-f2a1cba2d245faed",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "35",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/heron-gil/",
+    "locator": "p247",
+    "quote": "Rewind 60 years. Celtic Park, 18th August 1951. Celtic take the field against Morton in the League Cup before a 40,000 crowd. The star attraction is a new centre-forward fresh from Jamaica by way of Detroit. That summer Celtic had toured the United States and in Detroit they heard stories of a scoring sensation. Celtic Chairman Bob Kelly told the Daily Record: “We never saw him play but the word about him was so good that I invited him over to have a test. He satisfied and thus he was signed.” The Jamaican also satisfied in the game against Morton, living up to the pre-match hype. Despite havi",
+    "bodyHash": "9461d4aced82b02272857ab6bf460ae49ec4c35ecb7813f2bed838fef8656961",
+    "fetchedAt": "2026-11-01T10:48:26.285Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:48:26.285Z",
+  "updatedAt": "2026-11-01T10:48:26.285Z"
+ },
+ {
+  "id": "ga-22d6c8a1c584bd31",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "17",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/herron-john/",
+    "locator": "p46",
+    "quote": "Defenders Marcus Fraser, Joe Chalmers and Mikey Miller quickly came onboard with all four regulars in this season’s u-19 side after winning the Glasgow Cup last term as u-17′s.",
+    "bodyHash": "a3aae4eb5089327c25720a5da2aecfca4eff1c9863d19b639e0ac5c8846f9c1b",
+    "fetchedAt": "2026-11-01T10:48:26.288Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:48:26.288Z",
+  "updatedAt": "2026-11-01T10:48:26.288Z"
+ },
+ {
+  "id": "ga-11f6b3894befd5f8",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "79",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/hughes-john-yogi-1959-71/hughes-john-articles/",
+    "locator": "p127",
+    "quote": "The fourth goal in the 79th minute from Bobby Murdoch was a collector’s item. Not because of the awesome power and flawless accuracy from our midfielder because he displayed both qualities often enough in his exceptional career. No, it’s the role referee Tiny Wharton played in it. Jimmy Johnstone and Gallagher combined on the right before Charlie sent the ball across the Rangers defence about twenty-five yards out. The pass was actually heading for Tiny when he suddenly opened his legs and let the ball go through them. It was a consummate dummy any pro footballer would have been proud to claim",
+    "bodyHash": "13766178c25473598630c10694aebdbb52cf6e79bf84e5e83ae9b798e49df2cb",
+    "fetchedAt": "2026-11-01T10:48:29.315Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:48:29.315Z",
+  "updatedAt": "2026-11-01T10:48:29.315Z"
  }
 ]

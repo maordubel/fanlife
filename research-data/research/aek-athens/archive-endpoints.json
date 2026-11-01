@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-31T09:57:47.388Z"
+  "checkedAt": "2026-11-01T10:48:04.276Z"
  },
  "aekpedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-31T09:57:49.997Z"
+  "checkedAt": "2026-11-01T10:48:06.670Z"
  },
  "aek-official-history:/pages/history.aspx?lang=el": {
   "endpoint": "/pages/history.aspx?lang=el",
