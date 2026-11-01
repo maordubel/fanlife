@@ -154,15 +154,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/07/03/konzeptarbeit-datengetriebenes-scouting-im-fussball/",
-    "locator": "p72",
-    "quote": "Ein ganz zentraler Skill. Und in vielen Medien wird auch immer wieder mit Maximalgeschwindigkeiten hantiert. Das ist so richtig wie falsch. Denn was sagen uns schon die Maximalgeschwindigkeiten, wenn es viel wichtigere Werte im Bereich der Geschwindigkeit gibt? Ich persönlich würde beim Scouting z.B. viel mehr darauf achten, was ein Spieler auf den ersten 5, 10 und 25 Metern leisten kann, wie gut er beschleunigt. Denn wie oft werden Spieler pro Spiel überhaupt ihre maximal abrufbare Geschwindigkeit erreichen (müssen)? Eher selten. Aber kurze Beschleunigungen sind oft gefragt und daher wichtig ",
-    "bodyHash": "8f92c685f639bc475597e1485f39c0aac83bc4b27d3b9c629ca287103057b674",
-    "fetchedAt": "2026-10-25T08:45:22.856Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2020/10/02/lage-am-millerntor-02-oktober-2020/",
     "locator": "p54",
     "quote": "Scores level… 90th minute… and then this happens! 😱",
@@ -223,6 +214,15 @@
     "bodyHash": "07fdfcbf198f163648c908feba90804e3727b6940b8e1bcc882375a1a918c9ae",
     "fetchedAt": "2026-10-29T10:26:05.402Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/04/05/1-frauen-gewinnen-20-bei-jahn-delmenhorst/",
+    "locator": "p12",
+    "quote": "Die Mädels, die privat angereist sind, waren wesentlich früher als wir am Platz und haben uns ca. 90min vor Anpfiff bereits Bilder der sich aufwärmenden Gegnerinnen geschickt. Schnell war klar, dass wir weder im standesgemäßen Auswärtsdress, noch im Heimdress spielen können, weil Delmenhorst in schwarzen Hosen und Stutzen und weißem Trikot spielen wird.",
+    "bodyHash": "95693311c6e2a0940f89a9263a1cfdb5c97ab75eec487c43f07ae7d44fe7e190",
+    "fetchedAt": "2026-11-01T10:49:44.577Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -230,8 +230,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-29T10:26:05.402Z",
-  "updatedAt": "2026-10-29T10:26:05.402Z"
+  "createdAt": "2026-11-01T10:49:44.577Z",
+  "updatedAt": "2026-11-01T10:49:44.577Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -319,6 +319,15 @@
     "bodyHash": "86f400070525f39bf637fa973cb28d6b60ea9799ae3f92cb20029fd3ce06f481",
     "fetchedAt": "2026-10-29T10:26:02.883Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/04/07/lage-am-millerntor-7-april-2022/",
+    "locator": "p26",
+    "quote": "In einem Beitrag beim KiKa (10min) wurde gestern Abend kindgerecht der Blindenfußball erklärt. Der Videobeitrag ist noch für vier Wochen verfügbar und erklärt die Sportart für Neueinsteiger*innen bei einem gemeinsamen Trainingstermin des FCSP mit Spieler*innen aus Düsseldorf – und das einmalige „1. FC St. Pauli“ wird ausnahmsweise verziehen.",
+    "bodyHash": "9108f94d92e4c8cebe91768103e5c1e9b399a1b6efbbeee6413c387673832795",
+    "fetchedAt": "2026-11-01T10:49:44.579Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -326,8 +335,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-29T10:26:02.883Z",
-  "updatedAt": "2026-10-29T10:26:02.883Z"
+  "createdAt": "2026-11-01T10:49:44.579Z",
+  "updatedAt": "2026-11-01T10:49:44.579Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -406,6 +415,15 @@
     "bodyHash": "8537ce48f405ff8f21a69e44e56df2150f3a2b63a50cd7cefa28c60a297dce27",
     "fetchedAt": "2026-10-31T09:59:34.210Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/05/09/lage-am-millerntor-09-mai-2022/",
+    "locator": "p64",
+    "quote": "Denkwürdiges gab es in der Regionalliga Südwest : Vor dem letzten Spieltag hat die SV Elversberg drei Punkte und 19 Tore Vorsprung auf den SSV Ulm, ähnliches (drei Punkte und 14 Tore) gilt auf den Nicht-Abstiegsplätzen für den FSV Frankfurt – und diese Situation manifestierten beide Teams dann beim 1:1 gestern auf dem Platz, indem der Ball in den letzten 15 Minuten nur noch hin und her gespielt wurde ( Video beim Kicker , ab ca. 4min).",
+    "bodyHash": "aa2c5ba1d095917ed5499670d49ac67da80471d896c6f814e5d939581e044cc1",
+    "fetchedAt": "2026-11-01T10:49:50.593Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -413,8 +431,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:59:34.210Z",
-  "updatedAt": "2026-10-31T09:59:34.210Z"
+  "createdAt": "2026-11-01T10:49:50.593Z",
+  "updatedAt": "2026-11-01T10:49:50.593Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -739,6 +757,15 @@
     "bodyHash": "f3ca6a30de98b2ce2616b4abec76b653d37121f444d94bf490ed53d44adfdfdb",
     "fetchedAt": "2026-10-31T09:59:28.109Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/05/06/lage-am-millerntor-06-mai-2022/",
+    "locator": "p68",
+    "quote": "WDR Sport Inside hat dies versucht aufzuarbeiten und spricht mit Menschen, die bei beim Spiel dabei waren. ( Sportschau , 11min Video)",
+    "bodyHash": "5e9b8db1f4978b336f7c244e759720876b6ad423d5e009f3a25f6b7afbfb72aa",
+    "fetchedAt": "2026-11-01T10:49:50.592Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -746,8 +773,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:59:28.109Z",
-  "updatedAt": "2026-10-31T09:59:28.109Z"
+  "createdAt": "2026-11-01T10:49:50.592Z",
+  "updatedAt": "2026-11-01T10:49:50.592Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1408,5 +1435,95 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-10-31T09:59:25.472Z",
   "updatedAt": "2026-10-31T09:59:25.472Z"
+ },
+ {
+  "id": "ga-a2a95a611c188455",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "47",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/03/29/lage-am-millerntor-29-maerz-2022/",
+    "locator": "p25",
+    "quote": "Der Sport-Inside Podcast des WDR hat eine kleine Serie namens „Das perfekte Verbrechen“ erstellt, in der es um Wettbetrug im Sport geht. Nach Folge 1 (Fußball) und 2 (Tennis) geht es in der dritten Episode um die organisierte Kriminalität dahinter allgemein. Alle Folgen (47min – 63min) sind im Podcatcher Eurer Wahl zu finden, oder auf der Seite der Sportschau einmal im Überblick.",
+    "bodyHash": "4ce53edb6d4a492311a5987678e9f378b71e209a92b8855ff470eacfedac655f",
+    "fetchedAt": "2026-11-01T10:49:42.297Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:49:42.297Z",
+  "updatedAt": "2026-11-01T10:49:42.297Z"
+ },
+ {
+  "id": "ga-088195fdd4978abd",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "15",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/04/11/lage-am-millerntor-9-april-2022/",
+    "locator": "p11",
+    "quote": "Da Tim und ich gestern eh kurz im Fanladen zusammensaßen, haben wir die Diskussion über beide Szenen aber auch aufgenommen. Wer sich das anhören mag: (15min, 7,4MB)",
+    "bodyHash": "96788b8422c259f73020deff3f600c57ffbf4ca7a263158912fac9eea70b9263",
+    "fetchedAt": "2026-11-01T10:49:44.581Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:49:44.581Z",
+  "updatedAt": "2026-11-01T10:49:44.581Z"
+ },
+ {
+  "id": "ga-f11dcede79422e60",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "88",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/04/14/lage-am-millerntor-14-april-2022/",
+    "locator": "p70",
+    "quote": "– Huracan go 2-1 up, 88th minute",
+    "bodyHash": "153277491553890943ce4a5d5355a7cc0a1a245466e065f2bc85662d90991b35",
+    "fetchedAt": "2026-11-01T10:49:47.596Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-01T10:49:47.596Z",
+  "updatedAt": "2026-11-01T10:49:47.596Z"
  }
 ]
