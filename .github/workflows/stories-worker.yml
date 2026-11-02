@@ -1,0 +1,86 @@
+name: Football Stories worker
+# Makes the films queued in the owner's studio (/master/stories). No terminal: queue a film in the studio and this
+# runner picks it up within about ten minutes (or click "Run workflow" in the Actions tab to start at once).
+# One film per run. Paid answers (script, voice) are kept per job between runs, so a retry never pays twice.
+# Secrets: FAN_LIFE_CRON_SECRET (required) · ANTHROPIC_API_KEY / OPENAI_API_KEY / GEMINI_API_KEY (one writer) ·
+# ELEVENLABS_API_KEY (optional premium voice; without it the free Kokoro British voice is used).
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: stories-worker
+  cancel-in-progress: false
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+      FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+    steps:
+      - name: Anything to make?
+        id: peek
+        run: |
+          if [ ${#FAN_LIFE_CRON_SECRET} -lt 32 ]; then echo "::warning::FAN_LIFE_CRON_SECRET is not set"; echo "next=" >> "$GITHUB_OUTPUT"; exit 0; fi
+          next=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
+            -d "{\"op\":\"peek\",\"worker\":\"peek-$GITHUB_RUN_ID\"}" "$STORIES_URL/api/master/stories/worker" | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
+          echo "next=$next" >> "$GITHUB_OUTPUT"
+          [ -n "$next" ] && echo "Film waiting: $next" || echo "No film waiting."
+      - if: steps.peek.outputs.next != ''
+        uses: actions/checkout@v4
+      - if: steps.peek.outputs.next != ''
+        uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - if: steps.peek.outputs.next != ''
+        name: Map data
+        run: npm install --no-save --no-audit --no-fund world-atlas@2
+      - if: steps.peek.outputs.next != ''
+        uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - if: steps.peek.outputs.next != ''
+        name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow playwright kokoro-onnx soundfile fonttools brotli
+          python -m playwright install --with-deps chromium > /dev/null
+      - if: steps.peek.outputs.next != ''
+        name: Voice model (free, cached)
+        id: kokoro
+        uses: actions/cache@v4
+        with: {path: ~/models, key: kokoro-v1.0}
+      - if: steps.peek.outputs.next != '' && steps.kokoro.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/models
+          curl -sSL -o ~/models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          curl -sSL -o ~/models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+      - if: steps.peek.outputs.next != ''
+        name: This film's checkpoints
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            stories-jobs/${{ steps.peek.outputs.next }}/cache
+            stories-jobs/${{ steps.peek.outputs.next }}/*.json
+          key: stories-${{ steps.peek.outputs.next }}-${{ github.run_id }}
+          restore-keys: stories-${{ steps.peek.outputs.next }}-
+      - if: steps.peek.outputs.next != ''
+        name: Make the film
+        working-directory: scripts/football-stories
+        env:
+          STORIES_JOBS: ${{ github.workspace }}/stories-jobs
+          KOKORO_DIR: /home/runner/models
+          STORIES_WORKERS: '4'
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python -m studio.worker
+      - if: always() && steps.peek.outputs.next != ''
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            stories-jobs/${{ steps.peek.outputs.next }}/cache
+            stories-jobs/${{ steps.peek.outputs.next }}/*.json
+          key: stories-${{ steps.peek.outputs.next }}-${{ github.run_id }}

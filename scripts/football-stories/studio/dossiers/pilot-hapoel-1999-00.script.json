@@ -1,0 +1,1184 @@
+{
+ "title_candidates": [
+  {
+   "title": "Hapoel Tel Aviv 1999–2000: The Double, Told From the Terraces",
+   "angle": "search"
+  },
+  {
+   "title": "Hapoel Tel Aviv's Double Season 1999/2000 | Full Story",
+   "angle": "search"
+  },
+  {
+   "title": "Israeli Premier League 1999–2000: How Hapoel Tel Aviv Won the Double",
+   "angle": "search"
+  },
+  {
+   "title": "Hapoel Tel Aviv v Beitar Jerusalem, 2000 State Cup Final: The Season Behind It",
+   "angle": "search"
+  },
+  {
+   "title": "Twelve Years Without a Title. Then Five Days in May.",
+   "angle": "discovery"
+  },
+  {
+   "title": "The Season the Red Half of Tel Aviv Stopped Waiting",
+   "angle": "discovery"
+  },
+  {
+   "title": "Eighty-Five Points and a Penalty Shoot-Out",
+   "angle": "discovery"
+  },
+  {
+   "title": "Five Days in May: Hapoel Tel Aviv's Double",
+   "angle": "discovery"
+  },
+  {
+   "title": "From Yerevan to Ramat Gan: A Season of Hapoel Tel Aviv",
+   "angle": "discovery"
+  },
+  {
+   "title": "Hapoel Tel Aviv 1999/2000 — League and Cup, Match by Match",
+   "angle": "search"
+  }
+ ],
+ "selected": 7,
+ "hook": "Seventeenth of May, 2000.",
+ "chapters": [
+  {
+   "title": "Five days in May",
+   "beats": [
+    {
+     "narration": "Seventeenth of May, 2000. Extra time is over in the State Cup final, and forty thousand people are waiting for penalties.",
+     "claim_ids": [
+      "w-cupfinal-pens",
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "open",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/stadium-clock-crowd",
+      "headline": "Five Days in May",
+      "kicker": "Hapoel Tel Aviv · 1999–2000"
+     }
+    },
+    {
+     "narration": "Hapoel Tel Aviv against Beitar Jerusalem. Two each, after a hundred and twenty minutes.",
+     "claim_ids": [
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m_84f165f681f3",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/terrace-scarves-scoreboard"
+     }
+    },
+    {
+     "narration": "Two goals for Hapoel, one of them late in normal time, the other deep into extra time. Now it comes down to the spot.",
+     "claim_ids": [
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_84f165f681f3"
+     }
+    },
+    {
+     "narration": "Four days earlier, these supporters had already seen something they had waited a very long time for. Tonight, they want the second half of it.",
+     "claim_ids": [
+      "m_e550af63bd72",
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/supporter-scarf-raised",
+      "caption": "The red end, May 2000"
+     }
+    },
+    {
+     "narration": "To understand why this shoot-out mattered so much, we have to go back to the summer, and to a club that had been waiting twelve seasons.",
+     "claim_ids": [
+      "w-previous-title"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "How did they get here?",
+      "subtitle": "Back to the summer of 1999",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/desk-scarf-newspapers"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Twelve seasons",
+   "beats": [
+    {
+     "narration": "The last league title had come in 1987/88. Since then, the red half of Tel Aviv had watched the championship go elsewhere, year after year.",
+     "claim_ids": [
+      "w-previous-title"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 1,
+      "title": "Twelve seasons",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/trophy-shelf-empty"
+     }
+    },
+    {
+     "narration": "Twelve seasons is a long time on a terrace. Long enough for a child who stood there in 1988 to come back as a grown man.",
+     "claim_ids": [
+      "w-previous-title"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "12",
+      "label": "Seasons since the last title",
+      "claim": "w-previous-title",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/scarf-step-newspaper"
+     }
+    },
+    {
+     "narration": "There was one thing to hold on to. In 1998/99, Hapoel had won the State Cup. They started the new season as holders.",
+     "claim_ids": [
+      "w-cup-holders"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "Cup holders",
+      "text": "Hapoel Tel Aviv won the State Cup in 1998/99.",
+      "claim": "w-cup-holders",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/collage-certificate-scarf"
+     }
+    },
+    {
+     "narration": "A cup is not a title. But it meant the new season began with something to defend, and a reason to believe this group could win the big games.",
+     "claim_ids": [
+      "w-cup-holders"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/trophy-table-crowd",
+      "caption": "Holders"
+     }
+    },
+    {
+     "narration": "And there was a new man in charge. Dror Kashtan took over as manager on the first of July, 1999.",
+     "claim_ids": [
+      "w-coach"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "The manager",
+      "text": "Dror Kashtan · from 1 July 1999",
+      "claim": "w-coach",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/manager-tactics-board"
+     }
+    },
+    {
+     "narration": "Home was Bloomfield Stadium in Tel Aviv. Most of what follows starts and ends there.",
+     "claim_ids": [
+      "w-home"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "home",
+      "claims": [],
+      "label": "Bloomfield · Tel Aviv"
+     }
+    },
+    {
+     "narration": "The season would mean thirty-nine league matches in a fourteen-team league, the State Cup, the Toto Cup, and Europe.",
+     "claim_ids": [
+      "w-table-1999-00",
+      "summary:Israeli Premier League"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/players-bench-training",
+      "caption": "Summer 1999"
+     }
+    },
+    {
+     "narration": "Europe came first.",
+     "claim_ids": [],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/ticket-ball-turnstile"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Summer and Europe",
+   "beats": [
+    {
+     "narration": "Twelfth of August, 1999. The UEFA Cup qualifying round, away to FC Yerevan in Armenia.",
+     "claim_ids": [
+      "m_8ef74ecc34a1"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 2,
+      "title": "Summer and Europe",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/ball-pitch-ticket-night"
+     }
+    },
+    {
+     "narration": "A long journey north-east, for a club in a hurry.",
+     "claim_ids": [
+      "m_8ef74ecc34a1"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "m_8ef74ecc34a1"
+      ],
+      "label": "Tel Aviv to Yerevan"
+     }
+    },
+    {
+     "narration": "For supporters, a European night is a different kind of evening: a new country on the fixture list, and the club's name read out somewhere it has never been heard.",
+     "claim_ids": [],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/tunnel-view-pitch",
+      "caption": "A European night"
+     }
+    },
+    {
+     "narration": "Hapoel won two-nil. Ronen Harazi scored twice, two minutes apart, on fifty-eight and sixty.",
+     "claim_ids": [
+      "m_8ef74ecc34a1"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_8ef74ecc34a1",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/striker-runs-goal"
+     }
+    },
+    {
+     "narration": "Back home in the league, the opening night brought a two-nil win over Hapoel Petah Tikva. Then a first stumble: a two-one defeat at Bnei Yehuda.",
+     "claim_ids": [
+      "m_174d455334f1",
+      "m_ff814a605f97"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_174d455334f1",
+       "m_ff814a605f97"
+      ],
+      "label": "The first league week"
+     }
+    },
+    {
+     "narration": "Remember Bnei Yehuda. They will matter again at the very end of this story.",
+     "claim_ids": [
+      "m_ff814a605f97",
+      "m_e550af63bd72"
+     ],
+     "visual": {
+      "type": "ticket",
+      "claim": "m_ff814a605f97"
+     }
+    },
+    {
+     "narration": "The second leg against Yerevan was won two-one, with István Pisont scoring and Ygal Antebi adding another in the ninetieth minute.",
+     "claim_ids": [
+      "m_1c86b4ba34aa"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_1c86b4ba34aa"
+     }
+    },
+    {
+     "narration": "Then Hapoel Kfar Saba came to Tel Aviv and were beaten five-one, Sebastian Simurotić scoring twice. The first real sign of what this team could do.",
+     "claim_ids": [
+      "m_c55e037b9a0a"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_c55e037b9a0a"
+     }
+    },
+    {
+     "narration": "In the first round proper, the draw sent them to Scotland, to play Celtic.",
+     "claim_ids": [
+      "m_2cc1076dcb1b"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "m_2cc1076dcb1b",
+       "m_8ef74ecc34a1"
+      ],
+      "label": "The UEFA Cup road"
+     }
+    },
+    {
+     "narration": "Sixteenth of September, Glasgow. Celtic two, Hapoel nil.",
+     "claim_ids": [
+      "m_2cc1076dcb1b"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m_2cc1076dcb1b",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/clipboard-player-night"
+     }
+    },
+    {
+     "narration": "Two weeks later, at home, Celtic won again, one-nil. Europe was over by the end of September.",
+     "claim_ids": [
+      "m_876323f36ae8"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_876323f36ae8"
+     }
+    },
+    {
+     "narration": "The Toto Cup went the same way: out in the round of sixteen, without scoring a goal against Maccabi Petah Tikva in either leg.",
+     "claim_ids": [
+      "m_7c65791e3f94",
+      "m_da8a2b292265"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_7c65791e3f94",
+       "m_da8a2b292265"
+      ],
+      "label": "Toto Cup, round of sixteen"
+     }
+    },
+    {
+     "narration": "Two competitions gone before the autumn had really begun. What was left was the league, and the cup they were holding.",
+     "claim_ids": [
+      "m_876323f36ae8",
+      "m_da8a2b292265",
+      "w-cup-holders"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/boots-gloves-dusk"
+     }
+    }
+   ]
+  },
+  {
+   "title": "The autumn run",
+   "beats": [
+    {
+     "narration": "And in the league, something was starting to happen.",
+     "claim_ids": [],
+     "visual": {
+      "type": "chapter",
+      "number": 3,
+      "title": "The autumn run",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/ball-touchline-old-ground"
+     }
+    },
+    {
+     "narration": "A goalless draw with Maccabi Haifa. Then a win in Jerusalem, Kfir Udi scoring just before half-time.",
+     "claim_ids": [
+      "m_e6337aa9aa0f",
+      "m_8e44ee569934"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_e6337aa9aa0f",
+       "m_8e44ee569934"
+      ],
+      "label": "September"
+     }
+    },
+    {
+     "narration": "Then four-nil against Maccabi Herzliya. Five-one away at Maccabi Petah Tikva. Three-nil against Maccabi Netanya. Two-one at Ashdod.",
+     "claim_ids": [
+      "m_26d4b9b59c6e",
+      "m_9ca9691bb7e5",
+      "m_98a40e089c66",
+      "m_dc00f66692af"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_26d4b9b59c6e",
+       "m_9ca9691bb7e5",
+       "m_98a40e089c66",
+       "m_dc00f66692af"
+      ],
+      "label": "October"
+     }
+    },
+    {
+     "narration": "Four league games in October. Four wins, fourteen goals scored.",
+     "claim_ids": [
+      "m_26d4b9b59c6e",
+      "m_9ca9691bb7e5",
+      "m_98a40e089c66",
+      "m_dc00f66692af"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "14",
+      "label": "League goals in October",
+      "claim": "m_26d4b9b59c6e"
+     }
+    },
+    {
+     "narration": "Then the derby. Sixth of November, Hapoel at home to Maccabi Tel Aviv.",
+     "claim_ids": [
+      "m_e11ad73fb8c9"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m_e11ad73fb8c9",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/street-march-scarves"
+     }
+    },
+    {
+     "narration": "In a city split down the middle, nothing else counts quite like this one.",
+     "claim_ids": [
+      "m_e11ad73fb8c9"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/ball-crowd-skyline",
+      "caption": "Derby day"
+     }
+    },
+    {
+     "narration": "Ronen Harazi scored in the eighth minute. It finished one each.",
+     "claim_ids": [
+      "m_e11ad73fb8c9"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_e11ad73fb8c9",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/referee-whistle"
+     }
+    },
+    {
+     "narration": "Harazi was becoming the name of the season. He had already scored in Yerevan, at Bnei Yehuda, and now in the derby.",
+     "claim_ids": [
+      "m_8ef74ecc34a1",
+      "m_ff814a605f97",
+      "m_e11ad73fb8c9"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_8ef74ecc34a1",
+       "m_ff814a605f97",
+       "m_e11ad73fb8c9"
+      ],
+      "label": "Ronen Harazi's goals, so far"
+     }
+    },
+    {
+     "narration": "Two weeks later, Beitar Jerusalem came and lost four-one. The team that would meet them again in May was learning that it could beat them.",
+     "claim_ids": [
+      "m_d0d1732e4e72",
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_d0d1732e4e72"
+     }
+    },
+    {
+     "narration": "Three-one at Rishon LeZion. One-nil at Hapoel Petah Tikva, Harazi again. A goalless draw at Hapoel Haifa.",
+     "claim_ids": [
+      "m_ce557c38d4bf",
+      "m_cdc131259337",
+      "m_abfd38f199ca"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_ce557c38d4bf",
+       "m_cdc131259337",
+       "m_abfd38f199ca"
+      ],
+      "label": "Late autumn"
+     }
+    },
+    {
+     "narration": "Then two one-nil wins in December, against Bnei Yehuda and at Hapoel Kfar Saba. Not beautiful, but points.",
+     "claim_ids": [
+      "m_8a1cc67cce64",
+      "m_e94ed3c9d0a0"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_8a1cc67cce64",
+       "m_e94ed3c9d0a0"
+      ],
+      "label": "December"
+     }
+    },
+    {
+     "narration": "Most of the away trips were short ones. The whole league fitted inside a small country.",
+     "claim_ids": [
+      "m_ce557c38d4bf",
+      "m_cdc131259337",
+      "m_abfd38f199ca",
+      "m_e94ed3c9d0a0",
+      "m_8e44ee569934",
+      "m_dc00f66692af"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "domestic",
+      "claims": [
+       "m_ce557c38d4bf",
+       "m_cdc131259337",
+       "m_abfd38f199ca",
+       "m_e94ed3c9d0a0",
+       "m_8e44ee569934",
+       "m_dc00f66692af"
+      ],
+      "label": "Away days, autumn 1999"
+     }
+    },
+    {
+     "narration": "On Christmas Day, Hapoel went to Maccabi Haifa, their closest challengers, and lost one-nil.",
+     "claim_ids": [
+      "m_076b222cfa71"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_076b222cfa71"
+     }
+    },
+    {
+     "narration": "It was only one defeat. But it came against the club that would finish second, and it showed the race was not over.",
+     "claim_ids": [
+      "m_076b222cfa71",
+      "w-table-1999-00"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "A race, not a procession",
+      "subtitle": "Maccabi Haifa win at home on 25 December",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/stadium-model-overhead"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Winter",
+   "beats": [
+    {
+     "narration": "The new year opened with a three-nil win over Hapoel Jerusalem.",
+     "claim_ids": [
+      "m_3a7560bc1cd7"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 4,
+      "title": "Winter",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/boots-scarf-cards"
+     }
+    },
+    {
+     "narration": "On the first day of 2000, the goals came from Ronen Harazi, Salim Toama and Ilan Bakhar. Three scorers, three goals, and a team with more than one answer.",
+     "claim_ids": [
+      "m_3a7560bc1cd7"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_3a7560bc1cd7"
+     }
+    },
+    {
+     "narration": "A week later, away to Maccabi Herzliya, Ronen Harazi scored three times in fifteen minutes. Hapoel won five-nil.",
+     "claim_ids": [
+      "m_1a1cf5d6505a"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_1a1cf5d6505a",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/striker-runs-goal"
+     }
+    },
+    {
+     "narration": "Then two more Harazi goals to beat Maccabi Petah Tikva two-one. Five-two at Netanya. Four-two against Ashdod.",
+     "claim_ids": [
+      "m_ee7bc87529ba",
+      "m_f5eed6e6beae",
+      "m_d70c25ba0c8f"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_1a1cf5d6505a",
+       "m_ee7bc87529ba",
+       "m_f5eed6e6beae",
+       "m_d70c25ba0c8f"
+      ],
+      "label": "January 2000"
+     }
+    },
+    {
+     "narration": "Five games in January, five wins, nineteen goals.",
+     "claim_ids": [
+      "m_3a7560bc1cd7",
+      "m_1a1cf5d6505a",
+      "m_ee7bc87529ba",
+      "m_f5eed6e6beae",
+      "m_d70c25ba0c8f"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "19",
+      "label": "League goals in January",
+      "claim": "m_3a7560bc1cd7"
+     }
+    },
+    {
+     "narration": "And then February.",
+     "claim_ids": [],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/empty-seats-scarf-dusk"
+     }
+    },
+    {
+     "narration": "Fifth of February: the return derby, away to Maccabi Tel Aviv. Hapoel lost two-nil.",
+     "claim_ids": [
+      "m_2c740a9778aa"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_2c740a9778aa"
+     }
+    },
+    {
+     "narration": "A narrow win over Hapoel Haifa, Pisont scoring. Then a two-nil defeat in Jerusalem, to Beitar.",
+     "claim_ids": [
+      "m_4eb0bb7b2d0f",
+      "m_bdee9a03869a"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_2c740a9778aa",
+       "m_4eb0bb7b2d0f",
+       "m_bdee9a03869a"
+      ],
+      "label": "February 2000"
+     }
+    },
+    {
+     "narration": "And on the twenty-sixth, at Bloomfield, Ironi Rishon LeZion won two-one. Harazi's goal came in the eighty-sixth minute, too late.",
+     "claim_ids": [
+      "m_203f1fb578f0"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_203f1fb578f0"
+     }
+    },
+    {
+     "narration": "Three defeats in four league games. The team that had scored nineteen in January scored two in the whole of February.",
+     "claim_ids": [
+      "m_2c740a9778aa",
+      "m_4eb0bb7b2d0f",
+      "m_bdee9a03869a",
+      "m_203f1fb578f0",
+      "m_3a7560bc1cd7",
+      "m_1a1cf5d6505a",
+      "m_ee7bc87529ba",
+      "m_f5eed6e6beae",
+      "m_d70c25ba0c8f"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "February",
+      "subtitle": "Three defeats in four league games",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/empty-terrace-scarf-cup"
+     }
+    },
+    {
+     "narration": "After twelve seasons of waiting, February raised the old question. Would it go wrong again?",
+     "claim_ids": [
+      "w-previous-title"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "supporter"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Spring",
+   "beats": [
+    {
+     "narration": "The answer began three days later, in the cup, at Maccabi Acre. Hapoel won two-one.",
+     "claim_ids": [
+      "m_203f1fb578f0",
+      "m_4997204a7587"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 5,
+      "title": "Spring",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/boots-gloves-dusk"
+     }
+    },
+    {
+     "narration": "Then three-nil over Hapoel Jerusalem in the league.",
+     "claim_ids": [
+      "m_ed5ac322b24a"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_ed5ac322b24a"
+     }
+    },
+    {
+     "narration": "Three days after that, the cup draw gave the holders a derby. Hapoel against Maccabi Tel Aviv, seventh of March.",
+     "claim_ids": [
+      "m_6bc4eefce857",
+      "w-cup-holders"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m_6bc4eefce857",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/terrace-scarves-scoreboard"
+     }
+    },
+    {
+     "narration": "Ilan Bakhar scored before half-time. Omri Afek made it two. Two-nil, and Maccabi were out of the cup.",
+     "claim_ids": [
+      "m_6bc4eefce857"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_6bc4eefce857",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/crowd-behind-goal-scarves"
+     }
+    },
+    {
+     "narration": "Omri Afek was becoming a name too. He had scored against Ashdod in January, and he would score again at Hapoel Petah Tikva eleven days after the derby.",
+     "claim_ids": [
+      "m_d70c25ba0c8f",
+      "m_6bc4eefce857",
+      "m_410a3afb1355"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_d70c25ba0c8f",
+       "m_6bc4eefce857",
+       "m_410a3afb1355"
+      ],
+      "label": "Omri Afek's goals"
+     }
+    },
+    {
+     "narration": "The league went on: one each with Maccabi Haifa, three-nil at Hapoel Petah Tikva, two-one over Beitar.",
+     "claim_ids": [
+      "m_e18722d33635",
+      "m_410a3afb1355",
+      "m_ebe9c4878e1e"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_e18722d33635",
+       "m_410a3afb1355",
+       "m_ebe9c4878e1e"
+      ],
+      "label": "March 2000"
+     }
+    },
+    {
+     "narration": "In the cup quarter-final at Hapoel Be'er Sheva, Dean Računica and István Pisont scored. Two-nil.",
+     "claim_ids": [
+      "m_900469f07781"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_900469f07781"
+     }
+    },
+    {
+     "narration": "The road to the final ran the length of the country.",
+     "claim_ids": [
+      "m_4997204a7587",
+      "m_900469f07781",
+      "m_6bc4eefce857"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "domestic",
+      "claims": [
+       "m_4997204a7587",
+       "m_900469f07781",
+       "m_23dfc9c265ea"
+      ],
+      "label": "The cup road"
+     }
+    },
+    {
+     "narration": "There was still a stumble: a one-nil defeat at Maccabi Petah Tikva on the first of April. Then three-one over Hapoel Haifa.",
+     "claim_ids": [
+      "m_d0228135d565",
+      "m_9769ea1fae3b"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_d0228135d565",
+       "m_9769ea1fae3b"
+      ],
+      "label": "Early April"
+     }
+    },
+    {
+     "narration": "Eleventh of April, the cup semi-final. Maccabi Haifa again, at home. No goals in a hundred and twenty minutes.",
+     "claim_ids": [
+      "m_23dfc9c265ea",
+      "w-cupsemi-pens"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m_23dfc9c265ea",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/penalty-spot-keeper-view"
+     }
+    },
+    {
+     "narration": "Hapoel won the shoot-out two-one. The holders were in the final.",
+     "claim_ids": [
+      "w-cupsemi-pens"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_23dfc9c265ea",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/keeper-diving-save"
+     }
+    },
+    {
+     "narration": "Then a goalless draw at Ashdod, and the league derby, twenty-second of April.",
+     "claim_ids": [
+      "m_53800d6fb806",
+      "m_23e9a1efc552"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m_23e9a1efc552",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/street-march-scarves"
+     }
+    },
+    {
+     "narration": "Pisont scored at the end of the first half, Salim Toama on the hour. Two-one to Hapoel. The derby that had been lost in February was won in April.",
+     "claim_ids": [
+      "m_23e9a1efc552",
+      "m_2c740a9778aa"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_23e9a1efc552",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/striker-runs-goal"
+     }
+    },
+    {
+     "narration": "Salim Toama's goal was the winner. For the supporters who had walked away from the February derby in silence, this was the one that counted.",
+     "claim_ids": [
+      "m_23e9a1efc552",
+      "m_2c740a9778aa"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/ball-crowd-skyline",
+      "caption": "Derby, 22 April 2000"
+     }
+    },
+    {
+     "narration": "Two-one at Rishon LeZion. One-nil against Hapoel Kfar Saba, Pini Balili in the seventy-ninth minute. The title was close enough to touch.",
+     "claim_ids": [
+      "m_b35d0cef9323",
+      "m_8d214c749cef"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_b35d0cef9323",
+       "m_8d214c749cef"
+      ],
+      "label": "The run-in"
+     }
+    }
+   ]
+  },
+  {
+   "title": "The double",
+   "beats": [
+    {
+     "narration": "Thirteenth of May, 2000. Away to Bnei Yehuda, the side that had beaten them on the second night of the season.",
+     "claim_ids": [
+      "m_e550af63bd72",
+      "m_ff814a605f97"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 6,
+      "title": "The double",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/tunnel-view-pitch"
+     }
+    },
+    {
+     "narration": "It finished one each. And that was enough. Hapoel Tel Aviv were champions of Israel, with two league games still to play.",
+     "claim_ids": [
+      "m_e550af63bd72",
+      "honour-199900-israeli-premier-league",
+      "m_796aab63dc21",
+      "m_a6968759ce15"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_e550af63bd72",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/crowd-behind-goal-scarves"
+     }
+    },
+    {
+     "narration": "The first league title since 1987/88. The wait of twelve seasons was over.",
+     "claim_ids": [
+      "w-previous-title",
+      "honour-199900-israeli-premier-league",
+      "m_e550af63bd72"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/window-trophy-newspaper",
+      "caption": "Champions, 13 May 2000"
+     }
+    },
+    {
+     "narration": "Four days later came the final. Hapoel and Beitar Jerusalem, in front of forty thousand.",
+     "claim_ids": [
+      "m_84f165f681f3",
+      "w-cupfinal-pens"
+     ],
+     "visual": {
+      "type": "ticket",
+      "claim": "m_84f165f681f3",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/ticket-ball-turnstile"
+     }
+    },
+    {
+     "narration": "Dean Računica scored in the eighty-fifth minute. Into extra time, and Salim Toama scored on a hundred and fifteen. Two each at the end.",
+     "claim_ids": [
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_23dfc9c265ea",
+       "m_84f165f681f3"
+      ],
+      "label": "Semi-final and final"
+     }
+    },
+    {
+     "narration": "And so, back to where we started. Penalties.",
+     "claim_ids": [
+      "w-cupfinal-pens"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/penalty-taker-back"
+     }
+    },
+    {
+     "narration": "Hapoel Tel Aviv won the shoot-out four-two. The State Cup stayed with Hapoel, and the double was complete.",
+     "claim_ids": [
+      "w-cupfinal-pens",
+      "honour-199900-israel-state-cup"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m_84f165f681f3",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/ball-goal-line-night"
+     }
+    },
+    {
+     "narration": "Five days in May. A title after twelve seasons, and a cup kept.",
+     "claim_ids": [
+      "w-previous-title",
+      "m_e550af63bd72",
+      "m_84f165f681f3"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "The double",
+      "subtitle": "League champions and State Cup winners, 1999–2000",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/trophy-table-crowd"
+     }
+    },
+    {
+     "narration": "There was still the league to finish: two-nil at home to Maccabi Herzliya, and one each at Netanya on the final day.",
+     "claim_ids": [
+      "m_796aab63dc21",
+      "m_a6968759ce15"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_796aab63dc21",
+       "m_a6968759ce15"
+      ],
+      "label": "The last two league games"
+     }
+    },
+    {
+     "narration": "Pini Balili kept scoring to the end. At Rishon LeZion, against Kfar Saba, and on the last day of the season at Netanya.",
+     "claim_ids": [
+      "m_b35d0cef9323",
+      "m_8d214c749cef",
+      "m_a6968759ce15"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m_b35d0cef9323",
+       "m_8d214c749cef",
+       "m_a6968759ce15"
+      ],
+      "label": "Pini Balili, spring 2000"
+     }
+    },
+    {
+     "narration": "The final table: Hapoel Tel Aviv eighty-five points. Maccabi Haifa seventy-six.",
+     "claim_ids": [
+      "w-table-1999-00"
+     ],
+     "visual": {
+      "type": "table",
+      "claim": "w-table-1999-00"
+     }
+    },
+    {
+     "narration": "Thirty-nine league matches. Twenty-six wins, seven draws, six defeats. Seventy-six goals for, twenty-eight against.",
+     "claim_ids": [
+      "summary:Israeli Premier League"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "26",
+      "label": "League wins in 39 matches",
+      "claim": "summary:Israeli Premier League"
+     }
+    },
+    {
+     "narration": "Those numbers come from the archive, match by match, and they agree with the published table. Eighty-five points is exactly what those results add up to.",
+     "claim_ids": [
+      "summary:Israeli Premier League",
+      "w-table-1999-00"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "85",
+      "label": "Points, counted from the results",
+      "claim": "w-table-1999-00",
+      "backdrop": "beat:hapoel-tel-aviv-1999-00/collage-certificate-scarf"
+     }
+    },
+    {
+     "narration": "A season that lost in Europe, went out of one cup early, and wobbled badly in February. And still ended with the double.",
+     "claim_ids": [
+      "m_876323f36ae8",
+      "m_da8a2b292265",
+      "m_203f1fb578f0",
+      "honour-199900-israeli-premier-league",
+      "honour-199900-israel-state-cup"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/ball-touchline-old-ground"
+     }
+    },
+    {
+     "narration": "For the people who stood at Bloomfield through those twelve seasons, it was not a story about one team. It was a story about waiting, and about being there when the waiting ended.",
+     "claim_ids": [
+      "w-previous-title",
+      "w-home"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:hapoel-tel-aviv-1999-00/supporter-scarf-raised",
+      "caption": "Football is ninety minutes. Being a supporter is a lifetime."
+     }
+    }
+   ]
+  }
+ ],
+ "description": "In 1999–2000, Hapoel Tel Aviv had not won the Israeli league for twelve seasons. Then came five days in May: the title secured at Bnei Yehuda on 13 May, and on 17 May a State Cup final against Beitar Jerusalem that went to penalties.\n\nThis film follows the whole season from the terraces, in order: the UEFA Cup trip to Yerevan and the defeats to Celtic, the autumn run, the derbies with Maccabi Tel Aviv, the February slump that made supporters fear the worst, the cup run through Acre, Maccabi Tel Aviv, Be'er Sheva and Maccabi Haifa, and the double.\n\nEvery score, date and table on screen is printed from FanLife's archive records and the sources listed below. Where the archive does not name every scorer, the film does not name any.",
+ "tags": [
+  "Hapoel Tel Aviv",
+  "Hapoel Tel Aviv 1999-2000",
+  "Israeli Premier League",
+  "Israel State Cup",
+  "State Cup final 2000",
+  "Beitar Jerusalem",
+  "Maccabi Tel Aviv derby",
+  "Tel Aviv derby",
+  "football documentary",
+  "football history",
+  "Bloomfield Stadium",
+  "Israeli football",
+  "double winners",
+  "FanLife"
+ ],
+ "shorts": [
+  {
+   "hook": "Twelve seasons without a title. Then five days in May.",
+   "idea": "Fast cut of the 13 May draw at Bnei Yehuda and the 17 May shoot-out, ending on the 4–2 score card.",
+   "claim_ids": [
+    "m_e550af63bd72",
+    "w-cupfinal-pens",
+    "w-previous-title"
+   ]
+  },
+  {
+   "hook": "Three goals in fifteen minutes.",
+   "idea": "Ronen Harazi's hat-trick at Maccabi Herzliya, January 2000, told through the score card and the January run.",
+   "claim_ids": [
+    "m_1a1cf5d6505a"
+   ]
+  },
+  {
+   "hook": "Lose the derby in February, win it in April.",
+   "idea": "The two league derbies with Maccabi Tel Aviv and the cup derby in March, as three score cards.",
+   "claim_ids": [
+    "m_2c740a9778aa",
+    "m_6bc4eefce857",
+    "m_23e9a1efc552"
+   ]
+  }
+ ],
+ "thumbnails": [
+  {
+   "text": "Five Days in May",
+   "concept": "Packed terrace in two-tone ink, headline in Weekly type, club red stripe.",
+   "claim": "m_84f165f681f3"
+  },
+  {
+   "text": "Twelve Years Waiting",
+   "concept": "The tunnel to the pitch, light at the end.",
+   "claim": "w-previous-title"
+  },
+  {
+   "text": "The Double",
+   "concept": "Supporter from behind holding a scarf high under floodlight.",
+   "claim": "honour-199900-israel-state-cup"
+  }
+ ]
+}

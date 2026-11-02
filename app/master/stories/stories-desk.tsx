@@ -1,16 +1,161 @@
 'use client'
-import {useCallback,useEffect,useState,type FormEvent} from 'react'
-import type {Brief} from '@/lib/stories/projects'
+import {useCallback,useEffect,useMemo,useRef,useState,type FormEvent} from 'react'
+import type {Job,Privacy} from '@/lib/stories/jobs'
+import {DURATIONS,STAGES} from '@/lib/stories/jobs'
+import css from './studio.module.css'
+
+type Club={id:string;name:string}
+const ATHENS=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
+const when=(iso:string|null|undefined)=>iso?`${ATHENS.format(new Date(iso))} Athens`:''
+const mins=(d:number)=>d<1?'30 sec':`${d} min`
+const STATE_TEXT:Record<Job['state'],string>={queued:'Waiting for the worker',running:'In production',paused:'Paused',cancel_requested:'Stopping',cancelled:'Cancelled',failed:'Failed',needs_review:'Needs your review',ready:'Ready'}
+const STAGE_TEXT:Record<string,string>={research:'Research',script:'Script',voice:'Voice',graphics:'Graphics',edit:'Edit',mix:'Sound',master:'Master',package:'Package',qa:'Checks',done:'Done'}
+
+async function api(path:string,init?:RequestInit){
+ const r=await fetch(path,{cache:'no-store',...init,headers:{'Content-Type':'application/json',...(init?.headers||{})}})
+ const b=await r.json().catch(()=>({}))
+ if(!r.ok)throw new Error(b.error||`Request failed (${r.status})`)
+ return b
+}
+
 export function StoriesDesk(){
- const [briefs,setBriefs]=useState<Brief[]>([]),[error,setError]=useState(''),[busy,setBusy]=useState(false)
- const load=useCallback(async()=>{try{const r=await fetch('/api/master/stories',{cache:'no-store'}),b=await r.json();if(!r.ok)throw new Error(b.error);setBriefs(b.briefs)}catch(e){setError(e instanceof Error?e.message:'Could not load briefs.')}},[])
+ const [jobs,setJobs]=useState<Job[]>([]),[clubs,setClubs]=useState<Club[]>([]),[error,setError]=useState(''),[notice,setNotice]=useState('')
+ const [busy,setBusy]=useState(false),[open,setOpen]=useState<string|null>(null)
+ const [duration,setDuration]=useState(12),[privacy,setPrivacy]=useState<Privacy>('private')
+ const key=useRef<string>('')
+ const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
  useEffect(()=>{void load()},[load])
- async function save(e:FormEvent<HTMLFormElement>){e.preventDefault();setError('');setBusy(true);const form=e.currentTarget,data=new FormData(form);try{const r=await fetch('/api/master/stories',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({club:data.get('club'),topic:data.get('topic'),season:data.get('season'),duration:Number(data.get('duration')),visualStyle:data.get('visualStyle')})}),b=await r.json();if(!r.ok)throw new Error(b.error);form.reset();await load()}catch(err){setError(err instanceof Error?err.message:'Could not save brief.')}finally{setBusy(false)}}
- return <main style={{maxWidth:960,margin:'auto',padding:'40px 20px',fontFamily:'Arial, sans-serif',color:'#15130f',background:'#f4ecd8',minHeight:'100vh'}}>
-  <p style={{fontWeight:700,letterSpacing:2}}>FANLIFE / OWNER STUDIO</p><h1 style={{fontSize:'clamp(40px,8vw,76px)',lineHeight:1,margin:'16px 0'}}>Football<br/>Stories.</h1><p>Build a documentary brief for your channel.</p>
-  <p role="status" style={{borderLeft:'5px solid #b91c1c',padding:'12px',background:'#fff'}}>Briefs are saved only. The production worker is not connected yet; saving will not generate or upload a video.</p>
-  <form onSubmit={save} style={{display:'grid',gap:14,maxWidth:640,margin:'32px 0'}}><label>Club<input name="club" required maxLength={100} placeholder="e.g. Hapoel Tel Aviv" style={input}/></label><label>Story or topic<textarea name="topic" required maxLength={240} placeholder="e.g. The double-winning season" style={input}/></label><label>Season or event<input name="season" maxLength={100} placeholder="e.g. 1999–2000" style={input}/></label><label>Target duration in minutes<input name="duration" type="number" min={0.5} max={25} step={0.5} defaultValue={12} required style={input}/><small>30 seconds, 1, 2, 3, 5, or any whole number from 7 to 25.</small></label><label>Visual style<select name="visualStyle" defaultValue="papercut" style={input}><option value="papercut">Paper stop-motion</option><option value="weekly">FanLife football weekly</option></select></label><button disabled={busy} style={{padding:14,background:'#15130f',color:'white',border:0,fontWeight:700,cursor:'pointer'}}>{busy?'Saving…':'Save production brief'}</button></form>
-  {error&&<p role="alert">{error}</p>}<h2>Saved briefs</h2>{briefs.length===0?<p>No saved briefs yet.</p>:<ul style={{padding:0,listStyle:'none'}}>{briefs.map(b=><li key={b.id} style={{padding:'16px 0',borderTop:'1px solid #aaa'}}><strong>{b.club} · {b.season||'Season not specified'}</strong><p>{b.topic} · {b.duration} min · {b.visualStyle === 'papercut' ? 'Paper stop-motion' : 'Football weekly'}</p><small>Saved — production not started · {new Date(b.createdAt).toLocaleString()}</small></li>)}</ul>}
+ const live=jobs.some(j=>['queued','running','cancel_requested'].includes(j.state))
+ useEffect(()=>{if(!live)return;const t=setInterval(()=>void load(),15000);return()=>clearInterval(t)},[live,load])
+
+ async function create(e:FormEvent<HTMLFormElement>){
+  e.preventDefault();setError('');setNotice('');setBusy(true)
+  if(!key.current)key.current=crypto.randomUUID()
+  const d=new FormData(e.currentTarget)
+  const local=String(d.get('publish_at')||'')
+  const brief={club_id:d.get('club_id'),season:d.get('season'),topic:d.get('topic'),duration,visual_style:d.get('visual_style'),voice:d.get('voice'),review:d.get('review'),privacy,
+   publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined}
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current='';setNotice(`Queued: ${b.job.brief.club_name} ${b.job.brief.season}. The worker picks it up within about ten minutes.`);setOpen(b.job.id);await load()}
+  catch(err){setError(err instanceof Error?err.message:'Could not queue the film.')}finally{setBusy(false)}
+ }
+
+ return <main className={css.root}>
+  <header className={css.mast}><div className={css.wrap}>
+   <p className={css.kicker}><a href="/master/admin">FAN LIFE desk</a> · Owner studio</p>
+   <h1 className={css.title}>Football Stories</h1>
+   <p className={css.slogan}>Football is ninety minutes. Being a supporter is a lifetime.</p>
+  </div></header>
+  <div className={css.wrap}><div className={css.grid}>
+   <section className={`${css.panel} ${css.form}`} aria-labelledby="new-film">
+    <div className={css.bar}><span id="new-film">New film</span><span>Owner only</span></div>
+    <form className={css.body} onSubmit={create}>
+     <label>Club<select name="club_id" required defaultValue="hapoel-tel-aviv">{clubs.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
+     <div className={css.row}>
+      <label>Season<input name="season" required pattern="\d{4}/\d{2}" placeholder="1999/00" defaultValue="1999/00" inputMode="numeric"/></label>
+      <label>Visual<select name="visual_style" defaultValue="collage"><option value="collage">Collage · The Weekly</option><option value="papercut" disabled>Paper stop-motion — not in the renderer yet</option><option value="mixed" disabled>Mixed — not in the renderer yet</option></select></label>
+     </div>
+     <label>Story or angle<textarea name="topic" maxLength={240} placeholder="e.g. The double: twelve years of waiting, then five days in May"/><span className={css.hint}>Optional. The film follows the season&rsquo;s archive in order either way.</span></label>
+     <label>Length<div className={css.chips} role="group" aria-label="Length">{DURATIONS.filter(d=>[0.5,1,2,3,5,7,10,12,15,20,25].includes(d)).map(d=><button type="button" key={d} className={`${css.chip} min-h-tap`} aria-pressed={duration===d} onClick={()=>setDuration(d)}>{mins(d)}</button>)}</div><span className={css.hint}>12 minutes is the default documentary length. Any whole minute from 7 to 25 is accepted.</span></label>
+     <div className={css.row}>
+      <label>Narrator<select name="voice" defaultValue="auto"><option value="auto">Automatic</option><option value="elevenlabs">ElevenLabs (premium)</option><option value="kokoro">Free British voice</option></select><span className={css.hint}>Automatic uses ElevenLabs when its key is set, else the free voice.</span></label>
+      <label>Script review<select name="review" defaultValue="auto"><option value="auto">Automatic</option><option value="script">Stop for my approval</option></select></label>
+     </div>
+     <label>YouTube visibility<div className={css.chips} role="group" aria-label="Visibility">{(['private','unlisted','public','scheduled'] as const).map(p=><button type="button" key={p} className={`${css.chip} min-h-tap`} aria-pressed={privacy===p} onClick={()=>setPrivacy(p)}>{p}</button>)}</div>
+      <span className={css.hint}>Applied when the film is uploaded. Every film is checked before it leaves the studio.</span></label>
+     {privacy==='scheduled'&&<label>Publish at (Athens time)<input type="datetime-local" name="publish_at" required/></label>}
+     <button className={`${css.go} min-h-tap`} disabled={busy}>{busy?'Queuing…':'Make the film'}</button>
+     {error&&<p role="alert" className={css.alert}>{error}</p>}{notice&&<p role="status" className={`${css.alert} ${css.ok}`}>{notice}</p>}
+    </form>
+   </section>
+   <section aria-label="Films" className={css.list}>
+    {jobs.length===0?<div className={css.panel}><p className={css.empty}>No films yet. Queue the first one.</p></div>:jobs.map(j=><JobCard key={j.id} job={j} open={open===j.id} onOpen={()=>setOpen(open===j.id?null:j.id)} onChange={load}/>)}
+   </section>
+  </div></div>
  </main>
 }
-const input={display:'block',width:'100%',padding:'12px',marginTop:6,border:'1px solid #15130f',background:'#fffbf2',color:'#15130f',fontSize:16} as const
+
+/** A datetime-local value read as Athens wall-clock time → an ISO string with Athens' offset on that date. */
+function athensToIso(local:string){
+ const [d,t]=local.split('T');const guess=new Date(`${d}T${t}:00Z`)
+ const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',timeZoneName:'longOffset'}).formatToParts(guess)
+ const off=(parts.find(p=>p.type==='timeZoneName')?.value||'GMT+02:00').replace('GMT','')||'+00:00'
+ return `${d}T${t}:00${off}`
+}
+
+function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>void;onChange:()=>void}){
+ const [err,setErr]=useState(''),[busy,setBusy]=useState(false)
+ const b=job.brief
+ const act=async(body:Record<string,unknown>)=>{setErr('');setBusy(true);try{await api(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify(body)});onChange()}catch(e){setErr(e instanceof Error?e.message:'Failed')}finally{setBusy(false)}}
+ const si=job.stage?STAGES.indexOf(job.stage):-1
+ return <article className={`${css.panel} ${css.job}`}>
+  <div className={css.body}>
+   <div className={css.jobHead}><div><h2 className={css.jobTitle}>{(job.youtube?.title as string)||`${b.club_name} · ${b.season}`}</h2>
+    <p className={css.meta}>{b.club_name} · {b.season} · {mins(b.duration)} · {b.privacy}{b.publish_at?` ${when(b.publish_at)}`:''} · queued {when(job.createdAt)}</p></div>
+    <span className={`${css.state} ${css['s_'+job.state]}`}>{STATE_TEXT[job.state]}</span></div>
+   {['running','queued','paused','cancel_requested'].includes(job.state)&&<>
+    <div className={css.track} role="progressbar" aria-valuenow={Math.round(job.progress*100)} aria-valuemin={0} aria-valuemax={100}><div className={css.fill} style={{width:`${Math.round(job.progress*100)}%`}}/></div>
+    <p className={css.meta}>{job.message}</p>
+    <ol className={css.stages}>{STAGES.filter(s=>s!=='done').map((s,i)=><li key={s} data-on={i===si||undefined} data-done={i<si||undefined}>{STAGE_TEXT[s]}</li>)}</ol></>}
+   {job.error&&<p className={css.alert} role="alert"><b>[{job.error.code}]</b> {job.error.message} {job.error.retryable?'— safe to retry.':'— fix the cause before retrying.'}</p>}
+   {job.state==='needs_review'&&job.stage==='script'&&<p className={css.alert}>The script is written and waiting for you. Open the film to read it, then approve.</p>}
+   <div className={css.actions}>
+    {['queued','running'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'pause'})}>Pause</button>}
+    {job.state==='paused'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'resume'})}>Resume</button>}
+    {['failed','cancelled'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>Retry</button>}
+    {job.state==='needs_review'&&job.stage==='script'&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
+    {!['cancelled','cancel_requested'].includes(job.state)&&job.upload.state!=='done'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Cancel this film?'))void act({action:'cancel'})}}>Cancel</button>}
+    <button className={`${css.btn} min-h-tap`} onClick={onOpen} aria-expanded={open}>{open?'Close':'Open'}</button>
+   </div>
+   {err&&<p role="alert" className={css.alert}>{err}</p>}
+   {open&&<Detail job={job} act={act} busy={busy}/>}
+  </div>
+ </article>
+}
+
+function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<void>;busy:boolean}){
+ const [urls,setUrls]=useState<Record<string,string>>({}),[script,setScript]=useState<string>('')
+ const [vid,setVid]=useState(''),[vis,setVis]=useState<Privacy>(job.brief.privacy),[dl,setDl]=useState('')
+ const a=job.artefacts
+ useEffect(()=>{void api(`/api/master/stories/${job.id}`).then(b=>setUrls(b.urls||{})).catch(()=>{})},[job.id,job.updatedAt])
+ useEffect(()=>{const su=a?.package?urls[a.package.path]:undefined;if(job.stage==='script'&&su)void fetch(su).then(r=>r.text()).then(t=>{try{const s=JSON.parse(t);setScript(s.chapters.map((c:{title:string;beats:{narration:string}[]})=>`${c.title.toUpperCase()}\n`+c.beats.map(b=>b.narration).join('\n')).join('\n\n'))}catch{setScript(t)}})},[a,urls,job.stage])
+ const yt=job.youtube as null|{title:string;description:string;tags:string[];category:string;chapters:{time:string;title:string}[];synthetic_media:{altered_or_synthetic:boolean;reason:string};title_candidates:{title:string;angle:string}[];shorts:{hook:string;idea:string}[]}
+ const u=(p?:{path:string}|null)=>p?urls[p.path]:undefined
+ async function downloadMaster(){
+  setDl('Fetching the master…')
+  try{const b=await api(`/api/master/stories/${job.id}?master=1`);const parts:Blob[]=[]
+   for(const [i,c] of (a?.master?.chunks||[]).entries()){setDl(`Part ${i+1} of ${a!.master!.chunks.length}…`);const r=await fetch(b.urls[c.path]);if(!r.ok)throw new Error('A part could not be read');parts.push(await r.blob())}
+   const blob=new Blob(parts,{type:'video/mp4'});const href=URL.createObjectURL(blob);const x=document.createElement('a');x.href=href;x.download=`${(yt?.title||'fanlife-film').replace(/[^\w-]+/g,'-').slice(0,80)}.mp4`;x.click();setTimeout(()=>URL.revokeObjectURL(href),60000);setDl(`Downloaded ${(blob.size/1e6).toFixed(0)} MB`)}
+  catch(e){setDl(e instanceof Error?e.message:'Download failed')}
+ }
+ return <div>
+  {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
+  {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
+  {a?.thumbnails?.length?<><h3 className={css.h3}>Thumbnails</h3><div className={css.thumbs}>{a.thumbnails.map(t=>u(t)&&<img key={t.path} src={u(t)} alt="Thumbnail option"/>)}</div></>:null}
+  {job.qa&&<><h3 className={css.h3}>Checks</h3><ul className={css.checks}>{job.qa.checks.map(c=><li key={c.name}>{c.ok?'✓':'✗'} <b>{c.name}</b> — {c.detail}</li>)}</ul>
+   {job.qa.rights?.length?<p className={css.alert}>Rights gaps: {job.qa.rights.join('; ')}</p>:null}
+   {job.qa.cannot_prove?.length?<details><summary className={css.meta}>What the checks cannot prove</summary><ul>{job.qa.cannot_prove.map(x=><li key={x}>{x}</li>)}</ul></details>:null}</>}
+  {u(a?.contact)&&<><h3 className={css.h3}>Every shot</h3><img className={css.sheet} src={u(a?.contact)} alt="One frame from every shot"/></>}
+  {yt&&<><h3 className={css.h3}>YouTube package</h3>
+   <p><b>{yt.title}</b> · {yt.category} · altered/synthetic disclosure: <b>{yt.synthetic_media.altered_or_synthetic?'Yes':'No'}</b></p><p className={css.meta}>{yt.synthetic_media.reason}</p>
+   <details><summary className={css.meta}>Ten title concepts</summary><ol>{yt.title_candidates.map(t=><li key={t.title}>{t.title} <small>({t.angle})</small></li>)}</ol></details>
+   <details><summary className={css.meta}>Description</summary><div className={css.pre}>{yt.description}</div></details>
+   <p className={css.meta}>Tags: {yt.tags.join(', ')}</p>
+   <details><summary className={css.meta}>Shorts ideas</summary><ul>{yt.shorts.map(s=><li key={s.hook}><b>{s.hook}</b> — {s.idea}</li>)}</ul></details></>}
+  {a?.master&&<><h3 className={css.h3}>Files</h3><div className={css.actions}>
+   <button className={`${css.btn} min-h-tap`} onClick={()=>void downloadMaster()}>Download master ({(a.master.bytes/1e6).toFixed(0)} MB)</button>
+   {u(a.package)&&<a className={`${css.btn} min-h-tap`} href={u(a.package)}>Package (zip)</a>}
+   {u(a.captions?.srt)&&<a className={`${css.btn} min-h-tap`} href={u(a.captions?.srt)}>Captions (SRT)</a>}</div>{dl&&<p className={css.meta} role="status">{dl}</p>}</>}
+  {a?.master&&<><h3 className={css.h3}>YouTube upload</h3>
+   <p className={css.meta}>Upload state: {job.upload.state}{job.upload.videoId?` · video ${job.upload.videoId} (${job.upload.visibility})`:''}{job.upload.note?` · ${job.upload.note}`:''}</p>
+   <p style={{fontSize:14}}>The film is uploaded through YouTube Studio (not the API: YouTube locks API uploads from unaudited projects to private forever). Mark the upload as started, upload in Studio with the package above, then record the video id YouTube Studio shows.</p>
+   <div className={css.actions}>
+    {job.upload.state==='none'&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'upload_started'})}>Mark upload started</button>}
+    {(job.upload.state==='in_progress'||job.upload.state==='uncertain')&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Only reset after checking YouTube Studio shows no upload of this film.'))void act({action:'upload_reset'})}}>Reset after checking Studio</button>}
+   </div>
+   {job.upload.state!=='done'&&job.upload.state!=='none'&&<form className={css.row} onSubmit={e=>{e.preventDefault();void act({action:'upload_done',videoId:vid.trim(),visibility:vis})}} style={{marginTop:10}}>
+    <label className={css.meta}>Video id<input value={vid} onChange={e=>setVid(e.target.value)} pattern="[A-Za-z0-9_-]{11}" required placeholder="11 characters" className={css.input}/></label>
+    <label className={css.meta}>Visibility in Studio<select value={vis} onChange={e=>setVis(e.target.value as Privacy)} className={css.input}>{(['private','unlisted','public','scheduled'] as const).map(p=><option key={p}>{p}</option>)}</select></label>
+    <button className={`${css.btn} min-h-tap`} disabled={busy}>Record</button></form>}</>}
+  <h3 className={css.h3}>Log</h3><div className={css.log}>{job.log.slice().reverse().map((l,i)=><div key={i}>{when(l.at)} — {l.text}</div>)}</div>
+ </div>
+}
