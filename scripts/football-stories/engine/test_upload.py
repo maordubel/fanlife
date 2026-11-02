@@ -25,7 +25,7 @@ class UploadTest(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
         self.video=self.root/'movie.mp4';self.video.write_bytes(b'synthetic data')
-        self.meta=self.root/'meta.json';self.meta.write_text(json.dumps({'title':'Example','description':'Test','channel_id':mod.EXPECTED_CHANNEL,'contains_synthetic_media':False}))
+        self.meta=self.root/'meta.json';self.meta.write_text(json.dumps({'title':'Example','description':'Test','channel_id':mod.EXPECTED_CHANNEL,'contains_synthetic_media':False,'tags':['football history']}))
         self.state=self.root/'state.json'
     def tearDown(self):self.tmp.cleanup()
     def test_refuses_wrong_channel_without_upload(self):
@@ -36,6 +36,7 @@ class UploadTest(unittest.TestCase):
         with patch.object(mod,'request_json',return_value={'items':[{'id':mod.EXPECTED_CHANNEL}]}),patch.object(mod,'initiate',return_value=urlsplit('https://www.googleapis.com/upload?test=1')) as start,patch.object(mod.http.client,'HTTPSConnection',FakeConnection):
             self.assertEqual(mod.upload('test-token',self.video,self.meta,self.state),'demo-video')
             self.assertEqual(start.call_args.args[1]['status']['privacyStatus'],'private')
+            self.assertEqual(start.call_args.args[1]['snippet']['tags'],['football history'])
             record=json.loads(self.state.read_text());self.assertEqual(record['status'],'uploaded_private');self.assertNotIn('test-token',self.state.read_text())
             with self.assertRaisesRegex(mod.UploadError,'state exists'):mod.upload('test-token',self.video,self.meta,self.state)
             self.assertEqual(start.call_count,1)

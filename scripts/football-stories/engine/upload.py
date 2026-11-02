@@ -48,6 +48,8 @@ def upload(token,video,metadata_path,state_path):
     except (OSError,ValueError) as e:raise UploadError('Cannot read metadata JSON') from e
     title=spec.get('title');description=spec.get('description','')
     if not isinstance(title,str) or not title.strip() or len(title)>100 or not isinstance(description,str) or len(description)>5000:raise UploadError('Invalid title or description')
+    tags=spec.get('tags',[])
+    if not isinstance(tags,list) or len(tags)>25 or any(not isinstance(x,str) or not x.strip() for x in tags) or len(','.join(tags))>450:raise UploadError('Invalid or excessive tags')
     if spec.get('channel_id')!=EXPECTED_CHANNEL:raise UploadError('Metadata must identify the configured FanLife channel')
     if not isinstance(spec.get('contains_synthetic_media'),bool):raise UploadError('Explicit synthetic media disclosure is required')
     digest=hashlib.sha256()
@@ -60,7 +62,7 @@ def upload(token,video,metadata_path,state_path):
     try:
         with state_path.open('x',encoding='utf-8') as f:json.dump({'status':'attempt_started','channel_id':EXPECTED_CHANNEL,'sha256':h},f)
     except FileExistsError as e:raise UploadError('Upload state exists; inspect the channel before any retry') from e
-    meta={'snippet':{'title':title.strip(),'description':description,'categoryId':'17','defaultLanguage':'en'},'status':{'privacyStatus':'private','selfDeclaredMadeForKids':False,'containsSyntheticMedia':spec['contains_synthetic_media']}}
+    meta={'snippet':{'title':title.strip(),'description':description,'categoryId':'17','defaultLanguage':'en','tags':tags},'status':{'privacyStatus':'private','selfDeclaredMadeForKids':False,'containsSyntheticMedia':spec['contains_synthetic_media']}}
     session=initiate(token,meta,video.stat().st_size)
     path=urllib.parse.urlunsplit(('', '',session.path,session.query,''))
     conn=http.client.HTTPSConnection(session.hostname,timeout=120)
