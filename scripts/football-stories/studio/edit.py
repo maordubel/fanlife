@@ -171,6 +171,12 @@ class Editor:
             art = 'terrace-crowd'
         return self.world_image(f'art-{art}', lambda: art_backdrop(art))
 
+    def won_shootout(self, f: dict | None) -> bool:
+        if not f:
+            return False
+        pens = next((c['fact'] for c in self.ledger['claims'] if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
+        return bool(pens and pens.get('winner') == self.ledger.get('club_name'))
+
     def mood(self, b: dict) -> str:
         """What the music should feel under this beat: read from the record it shows and the words it says."""
         v, text = b['visual'], (b.get('narration') or '').lower()
@@ -178,6 +184,8 @@ class Editor:
         f = c['fact'] if c else {}
         if v['type'] == 'end':
             return 'anthem'
+        if v['type'] == 'score' and f.get('stage') == 'Final' and self.won_shootout(f):
+            return 'triumph'
         if any(w in text for w in ('penalt', 'shoot-out', 'extra time', 'eighty-fifth', 'last minute')):
             return 'tense'
         if v['type'] == 'score' and f.get('kind') == 'match':
@@ -329,7 +337,7 @@ class Editor:
                 else:
                     cues.append((0.4, 'crowd-after'))
                 layers += self.scorer_chips(sp, f, cx, cy + card.height / 2, cues)
-                layers += self.shout_for(sp, f, s, cx - card.width / 2, cy - card.height / 2, shake, cues)
+                layers += self.shout_for(sp, f, s, cx - card.width / 2, cy - card.height / 2, shake, cues, card.width)
             elif kind == 'timeline':
                 layers.append(Layer(card, reveal_lr(W / 2, H * 0.46, 0.3, dur=min(2.4, dur * 0.4)), settle=1e9))
                 cues.append((0.3, 'paper'))
@@ -443,12 +451,15 @@ class Editor:
         cues.append((0.0, 'end'))
         return wp, layers, cues
 
-    def shout_for(self, sp: SpriteFactory, f: dict | None, s: dict, x: float, y: float, shake: list, cues: list) -> list[Layer]:
+    def shout_for(self, sp: SpriteFactory, f: dict | None, s: dict, x: float, y: float, shake: list, cues: list,
+                  card_w: float = 1100) -> list[Layer]:
         """One word stamped on the corner of a result: a win shouts, a title shouts louder, a defeat says so quietly."""
         if not f or f.get('kind') != 'match':
             return []
         if f.get('title_decided'):
             word, tone = 'CHAMPIONS!', 'accent'
+        elif self.won_shootout(f):
+            word, tone = ('CUP!' if f.get('stage') == 'Final' else 'YES!'), 'accent'
         elif f.get('outcome') == 'win':
             word, tone = ('GOAL!', 'YES!', 'WIN!')[s['n'] % 3], 'accent'
         elif f.get('outcome') == 'loss':
@@ -459,7 +470,9 @@ class Editor:
         t0 = 0.6
         shake.append((t0, 12 if tone == 'accent' else 4))
         cues.append((t0, 'stamp'))
-        return [Layer(im, slam(max(im.width / 2 + 30, x + 60), max(im.height / 2 + 20, y - 10), t0, s0=2.2, rot=-4, dur=0.22), settle=1e9)]
+        # on the card's top-right corner, where the bar is empty: the date on the left stays readable
+        cx_ = min(W - im.width / 2 - 20, x + card_w - im.width / 2 + 70)
+        return [Layer(im, slam(cx_, max(im.height / 2 + 14, y - im.height * 0.30), t0, s0=2.2, rot=-4, dur=0.22), settle=1e9)]
 
     def scorer_chips(self, sp: SpriteFactory, f: dict | None, cx: float, top: float, cues: list) -> list[Layer]:
         """The club's scorers as chips under the score, one after another — only when the archive names every goal."""
