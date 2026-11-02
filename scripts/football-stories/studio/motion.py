@@ -112,8 +112,10 @@ def _grain(i: int) -> np.ndarray:
     global GRAIN
     if not GRAIN:
         rng = np.random.default_rng(11)
-        GRAIN = [rng.normal(0, 5.0, (H, W, 1)).astype('int16') for _ in range(5)]
-    return GRAIN[i % len(GRAIN)]
+        GRAIN = [rng.normal(0, 3.0, (H, W, 1)).astype('int16') for _ in range(5)]
+    # The grain changes every second frame (12.5 a second, like stop-motion film): half the noise for the encoder,
+    # which is what keeps a 25-minute master inside the storage budget (pipeline.MASTER_BUDGET_MB).
+    return GRAIN[(i // 2) % len(GRAIN)]
 
 
 class ShotRenderer:

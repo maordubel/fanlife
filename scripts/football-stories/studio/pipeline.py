@@ -19,6 +19,15 @@ from pathlib import Path
 
 from .common import STUDIO, Palette, StageError, read_json, write_json
 
+# The private bucket holds a film until it is uploaded; the free plan stores 1 GB in all, so a master is encoded to fit.
+MASTER_BUDGET_MB = 850
+
+
+def master_kbps(seconds: float) -> int:
+    """Video bitrate for the master: YouTube's 1080p ceiling (12 Mb/s) or what fits MASTER_BUDGET_MB with 192 kb/s audio."""
+    return int(max(3000, min(12000, MASTER_BUDGET_MB * 8 * 1000 / max(30.0, seconds) - 192)))
+
+
 STAGES = ['research', 'script', 'voice', 'graphics', 'edit', 'mix', 'master', 'package', 'qa']
 
 
@@ -103,7 +112,10 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     out.mkdir(exist_ok=True)
     master = out / 'master.mp4'
     if not master.exists():
-        subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(mix), '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'copy',
+        kb = master_kbps(plan['duration'])
+        subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(mix), '-map', '0:v', '-map', '1:a',
+                        '-c:v', 'libx264', '-preset', os.environ.get('STORIES_MASTER_PRESET', 'medium'), '-profile:v', 'high', '-crf', '18',
+                        '-maxrate', f'{kb}k', '-bufsize', f'{kb * 2}k', '-pix_fmt', 'yuv420p', '-g', '50', '-c:a', 'aac', '-b:a', '192k',
                         '-shortest', '-movflags', '+faststart', str(out / 'master.part.mp4')], check=True)
         (out / 'master.part.mp4').rename(master)
     preview = out / 'preview.mp4'

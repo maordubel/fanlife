@@ -41,6 +41,8 @@ def check(job_dir: Path, master: Path, plan: dict, cues: list[dict], requested_m
     want = requested_minutes * 60
     tol = tolerance(requested_minutes)
     add('duration', abs(dur - want) <= want * tol, f'{dur / 60:.2f} min for a {requested_minutes} min request (±{int(tol * 100)}%)')
+    mb = master.stat().st_size / 1e6
+    add('fits storage', mb <= 900, f'master {mb:.0f} MB (budget 850 MB: the private bucket holds 1 GB)')
     add('picture/audio sync', abs(dur - plan['duration']) < 0.25, f'master {dur:.2f}s, edit {plan["duration"]:.2f}s')
     # loudness
     r = subprocess.run(['ffmpeg', '-v', 'info', '-i', str(master), '-af', 'ebur128=peak=true', '-f', 'null', '-'], capture_output=True, text=True)
