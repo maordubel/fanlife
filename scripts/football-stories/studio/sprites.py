@@ -305,6 +305,31 @@ class SpriteFactory:
             <div class="src fit" data-fit="1050" style="padding-top:8px;font-size:20px">{esc(sources_line)}</div></div></div>'''
         return self.render(f'end-{key}', body, extra_css='.s{padding:0}')
 
+    # ---------- the closing call to the site ----------
+    def cta_headline(self, key: str, text: str, sub: str) -> Path:
+        body = f'''<div class="sh"></div><div class="box" style="background:var(--ink);border-color:var(--ink);padding:26px 44px 30px">
+          <div class="head fit" data-fit="1080" style="font-size:92px;color:var(--paper)">{esc(text)}</div>
+          <div class="caps fit" data-fit="1080" style="font-size:30px;color:var(--accent);padding-top:14px">{esc(sub)}</div></div>'''
+        return self.render(f'cta-head-{key}', body, extra_css='.sh{background:var(--accent)}')
+
+    def feature_tile(self, key: str, label: str, img: Path | None, tone: str = 'paper') -> Path:
+        pic = (f'<img src="{img.as_uri()}" style="width:100%;height:100%;object-fit:contain;display:block">' if img else '')
+        body = f'''<div class="sh" style="inset:12px 0 0 12px"></div><div class="box" style="width:330px;border-width:5px">
+          <div style="height:210px;padding:14px;background:var(--news)">{pic}</div>
+          <div class="head fit" data-fit="300" style="font-size:38px;padding:12px 14px 10px;border-top:5px solid var(--ink);background:var(--{'accent' if tone == 'accent' else 'paper'});color:var(--{'paper' if tone == 'accent' else 'ink'})">{esc(label)}</div></div>'''
+        return self.render(f'tile-{key}', body, extra_css='.s{padding:0 16px 16px 0}')
+
+    def url_banner(self, key: str, url: str, sub: str) -> Path:
+        body = f'''<div class="sh"></div><div class="box" style="display:flex;align-items:stretch">
+          <div style="background:var(--accent);color:var(--paper);border-right:6px solid var(--ink);padding:18px 30px" class="caps"><div style="font-size:30px;line-height:1.1">Play<br>the<br>archive</div></div>
+          <div style="padding:16px 40px 14px"><div class="goal fit" data-fit="1180" style="font-size:96px;letter-spacing:.01em">{esc(url)}</div>
+          <div class="caps fit" data-fit="1180" style="font-size:28px;padding-top:8px">{esc(sub)}</div></div></div>'''
+        return self.render(f'url-{key}', body)
+
+    def small_print(self, key: str, text: str) -> Path:
+        body = f'''<div class="src fit" data-fit="1760" style="color:var(--paper);opacity:.8;font-size:20px">{esc(text)}</div>'''
+        return self.render(f'small-{key}', body, extra_css='.s{padding:0}')
+
     def thumbnail(self, key: str, text: str, sub: str, art_uri: str) -> Path:
         body = f'''<div style="width:1280px;height:720px;position:relative;overflow:hidden;background:var(--ink)">
           <img src="{art_uri}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.08)">

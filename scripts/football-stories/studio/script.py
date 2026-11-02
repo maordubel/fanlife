@@ -30,6 +30,21 @@ PROPS = {'board_member', 'coach', 'football', 'generic_trophy', 'goal_net', 'mat
          'referee', 'supporter_scarf', 'supporters_bus', 'tactics_board'}
 LIBRARY_ART = {'tunnel', 'terrace-crowd', 'terrace-empty', 'supporter', 'paper'}
 
+SITE = 'fanlife.dubelteam.com'
+CTA = (f'Every match in this film is waiting in the FanLife archive, with the games, the trivia and the stories of the whole '
+       f'club. Come and play it at {SITE}.')
+
+
+def with_cta(s: dict) -> dict:
+    """Every film ends on the site: the closing beat is the narrator sending the viewer to FanLife, on the end visual."""
+    beats = s['chapters'][-1]['beats']
+    if beats and beats[-1].get('visual', {}).get('type') == 'end':
+        beats[-1]['narration'] = CTA
+        beats[-1]['claim_ids'] = []
+    else:
+        beats.append({'narration': CTA, 'claim_ids': [], 'visual': {'type': 'end'}})
+    return s
+
 
 def beat_set(ledger: dict) -> str:
     """The folder of owner beat illustrations for this film: <club id>-<season with a dash>."""

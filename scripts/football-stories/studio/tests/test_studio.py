@@ -174,6 +174,32 @@ class EnglishSources(unittest.TestCase):
                          '1999–2000 Israel State Cup — Wikipedia')
 
 
+class BurnedCaptions(unittest.TestCase):
+    def test_lines_break_where_the_narrator_breathes(self):
+        from studio.captions import MAX_CHARS, Captions
+        text = 'Dean Računica scored in the eighty-fifth minute. Into extra time, and Salim Toama.'
+        ws = [{'w': w, 'start': i * 0.3, 'end': i * 0.3 + 0.28} for i, w in enumerate(text.split())]
+        c = Captions(ws, 1.0, '#B02D10')
+        lines = [' '.join(w['w'] for w in g) for g in c.groups]
+        self.assertTrue(all(len(x) <= MAX_CHARS for x in lines))
+        self.assertTrue(lines[1].endswith('minute.'))
+        self.assertIsNone(c(0.5))                       # before the narrator speaks
+        im, x, y = c(1.0 + 0.65)
+        self.assertGreater(im.width, 200)
+        self.assertGreater(y, 800)                      # the bottom of the frame
+
+
+class ClosingCall(unittest.TestCase):
+    def test_every_film_ends_on_the_site(self):
+        from studio.script import CTA, SITE, with_cta
+        s = {'chapters': [{'title': 'x', 'beats': [{'narration': 'a', 'claim_ids': [], 'visual': {'type': 'turning'}}]}]}
+        self.assertEqual(with_cta(copy.deepcopy(s))['chapters'][-1]['beats'][-1]['narration'], CTA)
+        s['chapters'][0]['beats'].append({'narration': 'goodbye', 'claim_ids': [], 'visual': {'type': 'end'}})
+        out = with_cta(copy.deepcopy(s))
+        self.assertEqual(len(out['chapters'][0]['beats']), 2)
+        self.assertIn(SITE, out['chapters'][0]['beats'][-1]['narration'])
+
+
 class Packaging(unittest.TestCase):
     plan = {'duration': 100, 'chapters': [{'t': 0.0, 'title': 'A'}, {'t': 5.0, 'title': 'B'}, {'t': 30, 'title': 'C'}, {'t': 60, 'title': 'D'}],
             'shots': [{'voice_at': 1.0, 'words': [{'w': w, 'start': i * 0.4, 'end': i * 0.4 + 0.35} for i, w in enumerate(

@@ -30,6 +30,7 @@ SR = 24000
 # Written → spoken. Only spellings a TTS voice reads wrongly; extend per club in dossiers/<club>-pronounce.json.
 PRONOUNCE = {
     'Računica': 'Rachunitsa', 'Pisont': 'Pishont', 'Kashtan': 'Kash-tahn', 'Hapoel': 'Hap-o-el', 'Beitar': 'Bay-tar',
+    'fanlife.dubelteam.com': 'fan life dot dubel team dot com', 'FanLife': 'Fan Life',
     'Bloomfield': 'Bloomfield', "Be'er Sheva": 'Beh-er Sheva', 'Yerevan': 'Yerevan', 'Herzliya': 'Hertz-lia',
 }
 

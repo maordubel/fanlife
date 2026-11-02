@@ -16,17 +16,22 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
-from .common import FPS, H, INK, KIT, NEWSPRINT, PAPER, W, Palette, StageError, hex_rgb, read_json, write_json
+from .common import FPS, H, INK, KIT, ROOT, NEWSPRINT, PAPER, W, Palette, StageError, hex_rgb, read_json, write_json
 from .maps import city_of, pin_sprite
 from .maps import render as render_map
 from .motion import Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
-from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, piece_meta, supporter_scene
+from .captions import Captions
+from .package import sources_list
+from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, piece_meta, scrub, supporter_scene
 from .sprites import SpriteFactory, key_of
 
 LEAD = 0.35       # picture before the voice
 TAIL = 0.5        # breath after the voice
 CHAPTER_LEAD = 1.3
 CW, CH = CANVAS
+
+
+END_MIN = 14.0
 
 
 def _img(p) -> Image.Image:
@@ -176,6 +181,8 @@ class Editor:
                 lead = CHAPTER_LEAD if kind == 'chapter' else (1.0 if n == 0 else LEAD)
                 tail = TAIL + (0.4 if bi == len(ch['beats']) - 1 else 0)
                 dur = lead + v['duration'] + tail
+                if kind == 'end':
+                    dur = max(dur, END_MIN)  # the call to the site holds until every tile and the address have landed
                 start_f = round(t * FPS)
                 end_f = round((t + dur) * FPS)
                 shots.append({'n': n, 'chapter': ci, 'beat': bi, 'visual': b['visual'], 'claim_ids': b.get('claim_ids') or [],
@@ -184,9 +191,12 @@ class Editor:
                 t += dur
                 n += 1
         start_f = round(t * FPS)
-        shots.append({'n': n, 'chapter': len(self.script['chapters']) - 1, 'beat': -1, 'visual': {'type': 'end'}, 'claim_ids': [],
-                      'start': start_f / FPS, 'frames': round(6.0 * FPS), 'voice_at': None, 'voice_file': None, 'voice_dur': 0, 'words': [], 'narration': ''})
-        total = (start_f + round(6.0 * FPS)) / FPS
+        if not shots or shots[-1]['visual'].get('type') != 'end':
+            shots.append({'n': n, 'chapter': len(self.script['chapters']) - 1, 'beat': -1, 'visual': {'type': 'end'}, 'claim_ids': [],
+                          'start': start_f / FPS, 'frames': round(END_MIN * FPS), 'voice_at': None, 'voice_file': None, 'voice_dur': 0,
+                          'words': [], 'narration': ''})
+            start_f += round(END_MIN * FPS)
+        total = start_f / FPS
         chapters, last = [], None
         for s in shots:
             if s['beat'] == 0:
@@ -262,7 +272,7 @@ class Editor:
                 last = (p['x'], p['y'])
             if v.get('label'):
                 cap = fit(_img(sp.caption(k, v['label'])), 1300, 130)
-                layers.append(Layer(cap, slide_in(cap.width / 2 + 90, H - 150, 0.3, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
+                layers.append(Layer(cap, slide_in(cap.width / 2 + 90, 130, 0.3, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
             lx, ly = last
             z1 = 1.18 if len(pins) > 1 else 1.3
             cam = (lambda lx=lx, ly=ly, z1=z1: (lambda t: (1.0 + (z1 - 1) * ease_in_out(t / dur), CW / 2 + (lx - CW / 2) * 0.35 * ease_in_out(t / dur), CH / 2 + (ly - CH / 2) * 0.35 * ease_in_out(t / dur))))()
@@ -277,11 +287,11 @@ class Editor:
             world = self.backdrop(backdrop, seed, dim=0.42 if backdrop.startswith(('beat:', 'clip:')) else 0.0)
             card = self.card(sp, k, v, f, claim, s)
             target = {'matchday': (1560, 760), 'score': (1560, 760), 'ticket': (1300, 620), 'fact': (1300, 720), 'stat': (1000, 820),
-                      'table': (1480, 900), 'timeline': (1800, 640), 'turning': (1500, 560)}[kind]
+                      'table': (1480, 800), 'timeline': (1800, 620), 'turning': (1500, 540)}[kind]
             card = fit(card, *target)
             if kind not in ('timeline', 'table', 'turning'):
                 card = taped(card, seed)
-            cx, cy = W * (0.5 + ((seed % 3) - 1) * 0.04), H * 0.5
+            cx, cy = W * (0.5 + ((seed % 3) - 1) * 0.04), H * 0.45
             if kind == 'score':
                 layers.append(Layer(card, slam(cx, cy, 0.25, rot=-1.0), settle=1e9))
                 shake.append((0.25, 10))
@@ -292,8 +302,9 @@ class Editor:
                     cues.append((0.4, 'crowd-miss'))
                 else:
                     cues.append((0.4, 'crowd-after'))
+                layers += self.scorer_chips(sp, f, cx, cy + card.height / 2, cues)
             elif kind == 'timeline':
-                layers.append(Layer(card, reveal_lr(W / 2, H * 0.52, 0.3, dur=min(2.4, dur * 0.4)), settle=1e9))
+                layers.append(Layer(card, reveal_lr(W / 2, H * 0.46, 0.3, dur=min(2.4, dur * 0.4)), settle=1e9))
                 cues.append((0.3, 'paper'))
             elif kind == 'stat':
                 layers.append(Layer(card, pop(cx, cy, 0.3, dur=0.45, rot=-2), settle=1e9))
@@ -329,27 +340,96 @@ class Editor:
             cam = cam_push(d[0], d[1], d[2], d[3], dur)
             if v.get('caption'):
                 cap = fit(_img(sp.caption(k, v['caption'])), 1300, 130)
-                layers.append(Layer(cap, slide_in(cap.width / 2 + 90, H - 140, 0.7, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
+                layers.append(Layer(cap, slide_in(cap.width / 2 + 90, 130, 0.7, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
                 cues.append((0.7, 'paper'))
         elif kind == 'end':
-            srcs = sorted({(s_.get('title') or '').split('—')[0].strip() for c in self.ledger['claims'] for s_ in c.get('sources') or [] if s_.get('title')})
-            line = 'Sources: ' + '; '.join(x for x in srcs[:4] if x) + ('; and others listed in the description' if len(srcs) > 4 else '')
-            card = _img(sp.end_card('end', self.script['title_candidates'][self.script['selected']]['title'], line))
-            world_img = Image.new('RGB', CANVAS, hex_rgb(NEWSPRINT))
-            world_img.paste(card.convert('RGB'), ((CW - W) // 2, (CH - H) // 2))
-            wp = self.worlds / 'end.png'
-            world_img.save(wp)
-            world = wp
-            cam = cam_push(1.0, 1.02, 0, 0, dur)
-            entry = 'fade'
-            cues.append((0.0, 'end'))
+            world, layers, cues = self.end_cta(sp, k, dur, seed, cues)
+            cam = cam_push(1.04, 1.0, 0, 0, dur)
+            entry = 'wipe'
         else:
             raise StageError('UNKNOWN_VISUAL', kind)
 
         layers += self.props(v, s, kind, dur, cues)
         clip, self._clip = self._clip, None
+        caps = None
+        if os.environ.get('STORIES_BURN_CAPTIONS', '1') != '0' and kind != 'end' and s.get('words') and s.get('voice_at') is not None:
+            caps = Captions(s['words'], s['voice_at'] - s['start'], self.pal.accent)
         return Shot(index=s['n'], duration=dur, world=Image.open(world).convert('RGB'), camera=cam, layers=layers,
-                    entry=entry, shake=shake, cues=cues, meta={'kind': kind}, world_frames=clip)
+                    entry=entry, shake=shake, cues=cues, meta={'kind': kind}, world_frames=clip, overlay=caps)
+
+    # ---------------------------------------------------------------- the closing call to the site
+    FEATURES = (('Trivia', 'brand/weekly/plates/cheer-line.webp'), ('Timeline', 'brand/magazine/photos/memorabilia.webp'),
+                ('Shirt game', 'brand/magazine/photos/striped-shirt.webp'), ('Royal Rumble', 'brand/weekly/plates/kicker-line.webp'),
+                ('Legends Manager', 'legends/brand/logo-512.webp'), ('LIFE', 'brand/weekly/plates/fatherson-line.webp'))
+
+    def app_art(self, rel: str) -> Path:
+        """A picture from the app itself (public/), scrubbed of the club's rival family; a badge in colours the rival
+        owns is swapped for its one-ink version (rule 95)."""
+        mono = {'brand/fanlife/logo-512.png': ('brand/fanlife/logo-mono.webp', {'red', 'green', 'blue'}),
+                'legends/brand/logo-512.webp': ('legends/brand/logo-mono-512.webp', {'red', 'green', 'blue', 'yellow'})}
+        if rel in mono and set(self.pal.bans) & mono[rel][1]:
+            rel = mono[rel][0]
+        out = self.sprites_dir / ('app-' + rel.replace('/', '--').rsplit('.', 1)[0] + '.png')
+        if not out.exists():
+            im = Image.open(ROOT / 'public' / rel).convert('RGBA')
+            rgb = scrub(im.convert('RGB'), self.pal.bans).convert('RGBA')
+            rgb.putalpha(im.getchannel('A'))
+            rgb.save(out)
+        return out
+
+    def end_cta(self, sp: SpriteFactory, k: str, dur: float, seed: int, cues: list):
+        """The last shot sends the viewer to the site: the badge, what is waiting there, the address, the sources."""
+        wp = self.worlds / 'end-cta.png'
+        if not wp.exists():
+            crumpled(seed % 9, CANVAS, '#2A2620').save(wp)
+        layers: list[Layer] = []
+        badge = Image.open(self.app_art('brand/fanlife/logo-512.png')).convert('RGBA').resize((360, 360), Image.LANCZOS)
+        layers.append(Layer(badge, slam(300, 300, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
+        cues += [(0.25, 'stamp')]
+        head = fit(_img(sp.cta_headline('end', 'The whole archive is open', f"{self.ledger['club_name']} and every club on FanLife")), 1250, 230)
+        layers.append(Layer(head, slide_in(560 + head.width / 2, 210, 0.55, frm=(900, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
+        cues.append((0.55, 'whoosh'))
+        x0, y0, dx, dy = 700, 445, 380, 262
+        for i, (label, rel) in enumerate(self.FEATURES):
+            tile = fit(_img(sp.feature_tile(key_of('tile', label, self.pal.accent), label, self.app_art(rel),
+                                            'accent' if i in (0, 4) else 'paper')), 300, 238)
+            ti = 1.3 + 0.28 * i
+            cx, cy = x0 + (i % 3) * dx, y0 + (i // 3) * dy
+            layers.append(Layer(tile, pop(cx, cy, ti, dur=0.4, rot=(-3, 2, -1.5, 2.5, -2, 1)[i]), settle=1e9))
+            cues.append((ti, 'pop'))
+        url = fit(_img(sp.url_banner('end', 'fanlife.dubelteam.com', 'Every match · trivia · games · the life of a supporter')), 1500, 200)
+        layers.append(Layer(url, slam(W / 2 - 40, H - 120, 3.6, s0=1.5, rot=-1.2, dur=0.3), settle=1e9))
+        cues += [(3.6, 'stamp'), (3.7, 'crowd-goal')]
+        srcs = sorted({x['title'].split(' — ')[0].strip() for x in sources_list(self.ledger['claims'])})
+        line = 'Sources: ' + '; '.join(x for x in srcs[:4] if x) + ('; and others in the description' if len(srcs) > 4 else '')
+        sm = fit(_img(sp.small_print('end', line)), 1700, 40)
+        layers.append(Layer(sm, slide_in(W / 2, H - 22, 4.2, frm=(0, 60), rot0=0, rot1=0, dur=0.4, drift=False), settle=1e9))
+        cues.append((0.0, 'end'))
+        return wp, layers, cues
+
+    def scorer_chips(self, sp: SpriteFactory, f: dict | None, cx: float, top: float, cues: list) -> list[Layer]:
+        """The club's scorers as chips under the score, one after another — only when the archive names every goal."""
+        if not f or not f.get('scorers') or f.get('club_goals') != len(f['scorers']):
+            return []
+        by: dict[str, list[str]] = {}
+        for g in f['scorers']:
+            mark = '’' + (' pen.' if g.get('penalty') else '') + (' o.g.' if g.get('own_goal') else '')
+            by.setdefault(g['name'], []).append(f"{g['minute']}{mark}" if g.get('minute') is not None else '')
+        chips = [fit(_img(sp.label(key_of('scorer', n, *m), f"{n}  {' '.join(x for x in m if x)}".strip(), 'paper', 34)), 620, 76) for n, m in by.items()]
+        gap = 22
+        total = sum(c.width for c in chips) + gap * (len(chips) - 1)
+        if total > W - 160:
+            chips = chips[:3]
+            total = sum(c.width for c in chips) + gap * (len(chips) - 1)
+        x = W / 2 - total / 2
+        y = min(top + 64, H - 210)
+        out = []
+        for i, c in enumerate(chips):
+            ti = 0.9 + 0.32 * i
+            out.append(Layer(c, pop(x + c.width / 2, y, ti, dur=0.35, rot=(-2, 1.5, -1)[i % 3]), settle=1e9))
+            cues.append((ti, 'pop'))
+            x += c.width + gap
+        return out
 
     def prop_img(self, name: str, h: int) -> Image.Image:
         im = Image.open(KIT / 'props' / f'{name}.webp').convert('RGBA')

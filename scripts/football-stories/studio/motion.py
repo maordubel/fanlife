@@ -99,6 +99,8 @@ class Shot:
     meta: dict = field(default_factory=dict)
     # A moving world (an owner stop-motion clip): frame index → CANVAS-sized RGB. Read in order, never seeked.
     world_frames: Callable[[int], Image.Image] | None = None
+    # Drawn last, over everything (the burned-in captions): shot time → (RGBA, x, y) or None.
+    overlay: Callable[[float], tuple[Image.Image, int, int] | None] | None = None
 
     @property
     def frames(self) -> int:
@@ -169,6 +171,10 @@ class ShotRenderer:
             r = transformed(l.img, p, l._cache) if p else None
             if r:
                 frame.alpha_composite(r[0], (r[1], r[2])) if 0 <= r[1] and 0 <= r[2] and r[1] + r[0].width <= W and r[2] + r[0].height <= H else frame.paste(r[0], (r[1], r[2]), r[0])
+        if s.overlay is not None:
+            o = s.overlay(t)
+            if o:
+                frame.alpha_composite(o[0], (o[1], o[2])) if frame.mode == 'RGBA' else frame.paste(o[0], (o[1], o[2]), o[0])
         a = np.asarray(frame.convert('RGB'), dtype='int16') + _grain(global_i)
         return np.clip(a, 0, 255).astype('uint8')
 
