@@ -117,6 +117,9 @@ def english_title(title: str, url: str) -> str:
         label = HOST_LABELS.get(host, host)
         tail = [w for w in re.split(r'\s+[—-]\s+', t) if w and not HEBREW.search(w)]
         t = label + (f' — {tail[-1]}' if tail else '')
+    if ' ' not in t and url.lower().endswith('.pdf'):  # a file's internal name ("prjUCLPrint") is not a title
+        host = re.sub(r'^https?://(?:www\.)?([^/]+).*$', r'\1', url)
+        t = f"{'UEFA' if host.endswith('uefa.com') else HOST_LABELS.get(host, host)} — official match report (PDF)"
     return t
 
 
