@@ -1,0 +1,969 @@
+{
+ "set": "common",
+ "origin": "owner-upload",
+ "supplied": "2026-11-02",
+ "note": "Owner-supplied cut-outs (AI-generated): figures, crowd rows and close-ups, cut from their paper or white background (cutout.py) or cleaned from supplied alpha. Fictional people; key-red pieces are repainted into each club's colour. Motion says how the editor moves them.",
+ "pieces": [
+  {
+   "key": "cut:common/fig-celebrate-arms-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "Celebrating_football_player_running_d0998329.jpg",
+   "sha256": "a65c30767c0f7ae4",
+   "size": [
+    894,
+    931
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-child-shoulders-kr",
+   "motion": "stand",
+   "families": [],
+   "source": "Child_sitting_on_shoulders_watch#U2026_abb2705e.jpg",
+   "sha256": "eaab743c5fa6264d",
+   "size": [
+    420,
+    964
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-captain-cup-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "Football_captain_lifting_silver_#U2026_a43062e4.jpg",
+   "sha256": "9fc3e55c6e75785d",
+   "size": [
+    239,
+    930
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-captain-cup-b-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "Football_captain_lifting_trophy_85f5c683.jpg",
+   "sha256": "b59a1c7a0a5071ce",
+   "size": [
+    302,
+    936
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-defender-slide-n",
+   "motion": "dive",
+   "families": [],
+   "source": "Football_defender_executing_slid#U2026_df5ad9cd.jpg",
+   "sha256": "bf7d3c5e125937ec",
+   "size": [
+    931,
+    678
+   ]
+  },
+  {
+   "key": "cut:common/fig-defender-slide-b-n",
+   "motion": "dive",
+   "families": [],
+   "source": "Football_defender_executing_slid#U2026_f526268a.jpg",
+   "sha256": "0d095fb2c641a19b",
+   "size": [
+    917,
+    734
+   ]
+  },
+  {
+   "key": "cut:common/fig-manager-coat-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Football_manager_pointing_arm_2e70d8d6.jpg",
+   "sha256": "2cc2fd33cd471bba",
+   "size": [
+    578,
+    875
+   ]
+  },
+  {
+   "key": "cut:common/fig-manager-coat-b-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Football_manager_pointing_on_tou#U2026_10c96f6b.jpg",
+   "sha256": "380d19a775d41494",
+   "size": [
+    593,
+    942
+   ]
+  },
+  {
+   "key": "cut:common/fig-celebrate-knee-slide-kr",
+   "motion": "dive",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_celebrating_knee#U2026_17e417d1.jpg",
+   "sha256": "33965ac80f1f695a",
+   "size": [
+    862,
+    785
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-celebrate-arms-b-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_celebrating_runn#U2026_d9eafbb0.jpg",
+   "sha256": "db0fa680cfa7484f",
+   "size": [
+    931,
+    950
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-header-kr",
+   "motion": "jump",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_heading_ball_551b1ed9.jpg",
+   "sha256": "971a700d06eee83e",
+   "size": [
+    692,
+    870
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-header-b-kr",
+   "motion": "jump",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_heading_ball_fb155a6d.jpg",
+   "sha256": "0708c10ae6cb416c",
+   "size": [
+    603,
+    827
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-celebrate-knee-slide-b-kr",
+   "motion": "dive",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_knee_slide_celeb#U2026_bc84c47a.jpg",
+   "sha256": "97307883aa5adb9b",
+   "size": [
+    924,
+    805
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-kneel-despair-kr",
+   "motion": "stand",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_kneeling_in_despair_371a3afd.jpg",
+   "sha256": "35eaaf52568951db",
+   "size": [
+    627,
+    819
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-kneel-despair-b-kr",
+   "motion": "stand",
+   "families": [
+    "red"
+   ],
+   "source": "Football_player_kneeling_in_despair_569f5d53.jpg",
+   "sha256": "edef1bd6bf1eebd6",
+   "size": [
+    610,
+    851
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-striker-shoot-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "Football_striker_kicking_ball_8aef2d45.jpg",
+   "sha256": "6b1daac89cc82fa1",
+   "size": [
+    883,
+    885
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-striker-run-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "Football_striker_sprinting_0395ae04.jpg",
+   "sha256": "156e7c932b4e7551",
+   "size": [
+    608,
+    891
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-striker-run-b-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "Football_striker_sprinting_2822a137.jpg",
+   "sha256": "2fdbb146b1e28f7d",
+   "size": [
+    595,
+    879
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-striker-shoot-b-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "Football_striker_striking_football_e0e75d23.jpg",
+   "sha256": "c96d272f25dce7ac",
+   "size": [
+    770,
+    792
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-jump-kr",
+   "motion": "jump",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporter_jumping_celeb#U2026_31d04d22.jpg",
+   "sha256": "5caec852558f942c",
+   "size": [
+    524,
+    920
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-jump-b-kr",
+   "motion": "jump",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporter_jumping_celeb#U2026_c45af4df.jpg",
+   "sha256": "64fcc4ad10cca7fe",
+   "size": [
+    461,
+    937
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-scarf-up-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporter_raising_red_s#U2026_5e1bc9b4.jpg",
+   "sha256": "fb4cdc0332ff38eb",
+   "size": [
+    702,
+    922
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-scarf-up-b-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporter_raising_red_s#U2026_8984ff4f.jpg",
+   "sha256": "ae9cc4328a65ec41",
+   "size": [
+    748,
+    933
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-celebrate-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_celebrating_#U2026_a153346a.jpg",
+   "sha256": "65b6aacf695a1a8b",
+   "size": [
+    1376,
+    494
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-arms-up-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_celebrating_#U2026_a7727a38.jpg",
+   "sha256": "77f7ef98a339646b",
+   "size": [
+    1376,
+    625
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-scarves-up-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_holding_red_#U2026_45835017.jpg",
+   "sha256": "ede70436b4539363",
+   "size": [
+    1376,
+    514
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-scarves-up-b-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_holding_red_#U2026_6a1036ed.jpg",
+   "sha256": "b601cee44bed7165",
+   "size": [
+    1376,
+    476
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-umbrellas-n",
+   "motion": "row",
+   "families": [],
+   "source": "Football_supporters_holding_umbr#U2026_3cf5670e.jpg",
+   "sha256": "b379786bf7b37329",
+   "size": [
+    1286,
+    463
+   ]
+  },
+  {
+   "key": "cut:common/crowd-row-umbrellas-b-n",
+   "motion": "row",
+   "families": [],
+   "source": "Football_supporters_holding_umbr#U2026_5ce00085.jpg",
+   "sha256": "7117836692df4fb3",
+   "size": [
+    1314,
+    507
+   ]
+  },
+  {
+   "key": "cut:common/crowd-row-still-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_standing_in_row_0756391a.jpg",
+   "sha256": "bc842da6545d1861",
+   "size": [
+    1376,
+    421
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-still-b-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_standing_still_47b1263a.jpg",
+   "sha256": "0c690dd643cccee8",
+   "size": [
+    1376,
+    343
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-flags-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_waving_red_f#U2026_09b0ea1e.jpg",
+   "sha256": "d0079567498fd639",
+   "size": [
+    1376,
+    464
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-flags-b-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "Football_supporters_waving_red_f#U2026_c12e11b3.jpg",
+   "sha256": "feb93168098106f4",
+   "size": [
+    1376,
+    468
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-keeper-dive-n",
+   "motion": "dive",
+   "families": [],
+   "source": "Goalkeeper_diving_at_full_stretch_6e408e17.jpg",
+   "sha256": "267dd68ee5f97910",
+   "size": [
+    933,
+    637
+   ]
+  },
+  {
+   "key": "cut:common/fig-keeper-dive-b-n",
+   "motion": "dive",
+   "families": [],
+   "source": "Goalkeeper_diving_on_white_backg#U2026_6cdfbab2.jpg",
+   "sha256": "3d099365068a3e5c",
+   "size": [
+    945,
+    631
+   ]
+  },
+  {
+   "key": "cut:common/fig-keeper-stand-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Goalkeeper_standing_ready_31aa4711.jpg",
+   "sha256": "66cbf604742213e6",
+   "size": [
+    611,
+    910
+   ]
+  },
+  {
+   "key": "cut:common/fig-keeper-stand-b-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Goalkeeper_standing_ready_da483912.jpg",
+   "sha256": "5d81aecd5c773c5c",
+   "size": [
+    581,
+    929
+   ]
+  },
+  {
+   "key": "cut:common/fig-ballboy-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Paper-cut_documentary_style,_deep_ink_0ee3c792.jpg",
+   "sha256": "1df95e24f94499d4",
+   "size": [
+    598,
+    887
+   ]
+  },
+  {
+   "key": "cut:common/fig-ballboy-b-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Paper-cut_documentary_style,_deep_ink_cce72bfa.jpg",
+   "sha256": "231cb9d8eb6a2d89",
+   "size": [
+    612,
+    932
+   ]
+  },
+  {
+   "key": "cut:common/fig-referee-whistle-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Referee_blowing_whistle_134beaba.jpg",
+   "sha256": "0901107abb0419ad",
+   "size": [
+    412,
+    918
+   ]
+  },
+  {
+   "key": "cut:common/fig-referee-whistle-b-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Referee_blowing_whistle_6cf9c7b0.jpg",
+   "sha256": "115d628bcfe65665",
+   "size": [
+    399,
+    936
+   ]
+  },
+  {
+   "key": "cut:common/fig-referee-card-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Referee_holding_blank_card_3d3baacf.jpg",
+   "sha256": "d67f88b52144b310",
+   "size": [
+    325,
+    955
+   ]
+  },
+  {
+   "key": "cut:common/fig-referee-card-b-n",
+   "motion": "stand",
+   "families": [],
+   "source": "Referee_holding_blank_card_b5ecb486.jpg",
+   "sha256": "21d3d6a4d3066eb5",
+   "size": [
+    321,
+    939
+   ]
+  },
+  {
+   "key": "cut:common/crowd-row-away-small-kr",
+   "motion": "row",
+   "families": [],
+   "source": "Supporters_viewed_from_behind_eb968203.jpg",
+   "sha256": "26ccb6f0c57cf29d",
+   "size": [
+    1314,
+    255
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-away-small-b-kr",
+   "motion": "row",
+   "families": [],
+   "source": "Supporters_viewed_from_behind_fb9eef83.jpg",
+   "sha256": "02a235c98bc4e942",
+   "size": [
+    1376,
+    302
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-captain-cup-c-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "fig-captain-cup-kr.png",
+   "sha256": "a9a84779546e6714",
+   "size": [
+    455,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-celebrate-arms-c-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "fig-celebrate-arms-kr.png",
+   "sha256": "3d6f1d53f9e4b500",
+   "size": [
+    946,
+    1367
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-celebrate-knee-slide-c-kr",
+   "motion": "dive",
+   "families": [
+    "red"
+   ],
+   "source": "fig-celebrate-knee-slide-kr.png",
+   "sha256": "557bb14d5a654eeb",
+   "size": [
+    961,
+    1384
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-defender-slide-c-n",
+   "motion": "dive",
+   "families": [],
+   "source": "fig-defender-slide-n.png",
+   "sha256": "fdcd6d334f6d594d",
+   "size": [
+    1400,
+    910
+   ]
+  },
+  {
+   "key": "cut:common/fig-keeper-dive-c-n",
+   "motion": "dive",
+   "families": [],
+   "source": "fig-keeper-dive-n.png",
+   "sha256": "96afba94f37e3f4a",
+   "size": [
+    1400,
+    680
+   ]
+  },
+  {
+   "key": "cut:common/fig-keeper-stand-c-n",
+   "motion": "stand",
+   "families": [],
+   "source": "fig-keeper-stand-n.png",
+   "sha256": "74f0cc07294bc35b",
+   "size": [
+    887,
+    1400
+   ]
+  },
+  {
+   "key": "cut:common/fig-kneel-despair-c-kr",
+   "motion": "stand",
+   "families": [
+    "red"
+   ],
+   "source": "fig-kneel-despair-kr.png",
+   "sha256": "38456387470f5e41",
+   "size": [
+    945,
+    1351
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-referee-card-c-n",
+   "motion": "stand",
+   "families": [],
+   "source": "fig-referee-card-n.png",
+   "sha256": "20ffb37c82ebfa07",
+   "size": [
+    593,
+    1400
+   ]
+  },
+  {
+   "key": "cut:common/fig-striker-run-c-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "fig-striker-run-kr.png",
+   "sha256": "26ec52aa09ee4426",
+   "size": [
+    900,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-striker-shoot-c-kr",
+   "motion": "run",
+   "families": [
+    "red"
+   ],
+   "source": "fig-striker-shoot-kr.png",
+   "sha256": "3cbb020d4bd7a737",
+   "size": [
+    964,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-child-shoulders-c-kr",
+   "motion": "stand",
+   "families": [
+    "red"
+   ],
+   "source": "fig-supporter-child-shoulders-kr.png",
+   "sha256": "08ae6b527f5c4945",
+   "size": [
+    588,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-jump-c-kr",
+   "motion": "jump",
+   "families": [
+    "red"
+   ],
+   "source": "fig-supporter-jump-kr.png",
+   "sha256": "ea70974711674274",
+   "size": [
+    810,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-scarf-up-c-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "fig-supporter-scarf-up-kr.png",
+   "sha256": "8a28a3f74987642d",
+   "size": [
+    822,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-umbrellas-c-n",
+   "motion": "row",
+   "families": [],
+   "source": "crowd-row-umbrellas-n.png",
+   "sha256": "705aa3a2be4d1a62",
+   "size": [
+    2112,
+    316
+   ]
+  },
+  {
+   "key": "cut:common/crowd-row-arms-up-c-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "crowd-row-arms-up-kr.png",
+   "sha256": "cda93a3807c719d6",
+   "size": [
+    2113,
+    328
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-still-c-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "crowd-row-still-kr.png",
+   "sha256": "d5bd275cc83c857f",
+   "size": [
+    2107,
+    462
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-away-small-c-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "crowd-row-away-small-kr.png",
+   "sha256": "a425689727e1bcb3",
+   "size": [
+    2007,
+    384
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-scarves-up-c-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "crowd-row-scarves-up-kr.png",
+   "sha256": "4bfe16e34990335a",
+   "size": [
+    2112,
+    299
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/crowd-row-flags-c-kr",
+   "motion": "row",
+   "families": [
+    "red"
+   ],
+   "source": "crowd-row-flags-kr.png",
+   "sha256": "8810c3484176124e",
+   "size": [
+    2091,
+    454
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-armband-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-armband-kr.png",
+   "sha256": "a517baf40fd912ee",
+   "size": [
+    1378,
+    1142
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-fingers-crossed-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-fingers-crossed-kr.png",
+   "sha256": "7e6cf564d39d61d6",
+   "size": [
+    1362,
+    1096
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-hands-clasp-prayer-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-hands-clasp-prayer-kr.png",
+   "sha256": "0adf9eb0ee398638",
+   "size": [
+    1400,
+    1034
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-old-man-hands-scarf-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-old-man-hands-scarf-kr.png",
+   "sha256": "7ba35b2b44a5b6f3",
+   "size": [
+    1400,
+    930
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-ball-under-arm-c-n",
+   "motion": "pop",
+   "families": [],
+   "source": "close-ball-under-arm-n.png",
+   "sha256": "88a69123e1671ec6",
+   "size": [
+    1265,
+    1157
+   ]
+  },
+  {
+   "key": "cut:common/close-ticket-in-hand-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-ticket-in-hand-kr.png",
+   "sha256": "b7dcff37da66b8e5",
+   "size": [
+    1400,
+    867
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-hands-fence-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-hands-fence-kr.png",
+   "sha256": "63f75367db209236",
+   "size": [
+    1400,
+    933
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-scarf-over-mouth-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-scarf-over-mouth-kr.png",
+   "sha256": "1633881f98677a2c",
+   "size": [
+    1400,
+    933
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-child-hand-railing-c-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-child-hand-railing-kr.png",
+   "sha256": "88254e4cc9f8ae97",
+   "size": [
+    1400,
+    891
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-boots-tunnel-c-n",
+   "motion": "pop",
+   "families": [],
+   "source": "close-boots-tunnel-n.png",
+   "sha256": "855acc5acd31df23",
+   "size": [
+    1400,
+    896
+   ]
+  }
+ ]
+}

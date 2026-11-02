@@ -1,0 +1,39 @@
+import {adminFromRequest} from '@/lib/master/admin'
+import {StoryError,ownerAct,type Job,type OwnerAction} from '@/lib/stories/jobs'
+import {getJob,updateJob} from '@/lib/stories/store'
+import {signedDownload} from '@/lib/stories/media'
+import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
+export const dynamic='force-dynamic'
+export const runtime='nodejs'
+
+/** Signed links (one hour) to a finished film's files, for the owner's eyes only. The master's chunks only on request. */
+async function links(job:Job,master:boolean){
+ const a=job.artefacts
+ if(!a)return {}
+ const paths=[a.preview?.path,a.contact?.path,a.package?.path,a.captions?.srt.path,a.captions?.vtt.path,...(a.thumbnails??[]).map(t=>t.path),...(master?(a.master?.chunks??[]).map(c=>c.path):[])].filter((p):p is string=>!!p)
+ return signedDownload(paths)
+}
+export async function GET(r:Request,{params}:{params:{id:string}}){
+ if(!adminFromRequest(r))return json({error:'Not authorised.'},401)
+ try{
+  const cur=await getJob(params.id)
+  if(!cur)return json({error:'No such job.'},404)
+  const master=new URL(r.url).searchParams.get('master')==='1'
+  let urls:Record<string,string>={}
+  try{urls=await links(cur.job,master)}catch{urls={}}
+  return json({job:cur.job,urls})
+ }catch(e){return fail(e)}
+}
+const ACTIONS=new Set(['pause','resume','cancel','retry','approve_script','upload_started','upload_done','upload_uncertain','upload_reset'])
+export async function POST(r:Request,{params}:{params:{id:string}}){
+ const s=adminFromRequest(r)
+ if(!s)return json({error:'Not authorised.'},401)
+ if(!sameOrigin(r))return json({error:'Invalid request origin.'},403)
+ if(limited(`act:${params.id}`,30,60_000))return json({error:'Too many actions; wait a moment.'},429)
+ try{
+  const a=await body(r) as OwnerAction
+  if(!a||typeof a!=='object'||!ACTIONS.has((a as {action:string}).action))throw new StoryError('ACTION','Unknown action.')
+  const job=await updateJob(params.id,j=>ownerAct(j,a,s.actor||'owner'))
+  return json({job})
+ }catch(e){return fail(e)}
+}

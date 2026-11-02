@@ -1,0 +1,89 @@
+{
+ "source": "Owner-supplied pack FANLIFE_DOCUMENTARY_CUTOUT_ASSETS_VOL3 (2 Nov 2026): AI-generated symbolic illustrations, fictional figures seen from behind, no real person.",
+ "assets": [
+  {
+   "id": "match_ticket",
+   "sha256": "c90824b059c2e057cbb51518068c4673e532d8faf24c5eb46619b32922a90f4d",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Match entry, home and away games"
+  },
+  {
+   "id": "supporters_bus",
+   "sha256": "d7bda43905f18bb0470b18324070cf81e888993f7f462ae42c923c2a4187e50e",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Away travel and supporter journeys"
+  },
+  {
+   "id": "passenger_plane",
+   "sha256": "79d379527b575eac136988fbcba0e90cf4b14b70f6623c92763b1bb2ee29f2d8",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "European away journey"
+  },
+  {
+   "id": "supporter_scarf",
+   "sha256": "b558167a33cb61beb5408518d81ecb7614571d802f4e96661a9bd1c8e8b6907f",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Supporter identity and pre-match anticipation"
+  },
+  {
+   "id": "football",
+   "sha256": "80ac4c2c4fc58ed4dcd38dbf10889c1d458b9b216546c9de9218bda80e206edd",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Match action and penalty sequence"
+  },
+  {
+   "id": "coach",
+   "sha256": "11a4cbb801e5399f040ef3672bb182e3af6388a3d7b1c3d5749d1d7aefc35335",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Tactics, tension and coaching"
+  },
+  {
+   "id": "board_member",
+   "sha256": "a5670d2a716f32dea32d55eda2b1bfc18794b8511b3d2dda17d7fcb17fc85da8",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Club leadership and off-field decisions"
+  },
+  {
+   "id": "referee",
+   "sha256": "8f0cbe9ddeb30eabc8d36956c5f33386d5af8651af9e2c7438bd08f6ae607c66",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Kick-off, decisions, penalty shootout"
+  },
+  {
+   "id": "generic_trophy",
+   "sha256": "3d27f9454a359985ad44c1a20f90859c531680f3fbb24125317b8cdae2784b7b",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Title race, cup campaign and ending"
+  },
+  {
+   "id": "tactics_board",
+   "sha256": "690f943b8618599283ccaa8239c02fdf08fbb946d8f69c2eda0ddbd68d0df8ef",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Tactical explanations; markers are illustrative"
+  },
+  {
+   "id": "portable_radio",
+   "sha256": "e273515655c6f5bbacc4f7f93af2e94566c55ca1422c87bb021e242312158edb",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Scores arriving from another ground"
+  },
+  {
+   "id": "goal_net",
+   "sha256": "5572fc5895740689f2dd8127cc857f7cacb601fad53a32fdf8450b1a51a18b54",
+   "provenance": "AI generated original symbolic illustration",
+   "caveat": "Static single-layer illustration; no claims about historical identity or precise equipment",
+   "usage": "Scoring and penalties"
+  }
+ ]
+}

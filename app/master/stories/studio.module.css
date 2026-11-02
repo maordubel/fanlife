@@ -1,0 +1,60 @@
+/* FanLife: Football Stories — the owner's studio. The Weekly's ink, newsprint and the channel's vermilion; mobile first. */
+.root{--ink:#15130F;--news:#F4ECD8;--paper:#FFFBF2;--red:#B02D10;--navy:#1F3A5F;--green:#2F6B3A;--muted:#5d564b;
+ min-height:100dvh;background:var(--news);color:var(--ink);font-family:'Weekly Body',system-ui,sans-serif;padding:0 0 96px}
+.mast{background:var(--ink);color:var(--paper);padding:18px 18px 22px;border-bottom:8px solid var(--red)}
+.mast a{color:var(--paper)}
+.kicker{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.85}
+.title{font-family:'Shrikhand',serif;font-size:clamp(38px,11vw,84px);line-height:.95;margin:10px 0 6px}
+.slogan{font-family:'Weekly Head',sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.04em;opacity:.9}
+.wrap{max-width:1180px;margin:0 auto;padding:0 14px}
+.grid{display:grid;gap:22px;margin-top:22px}
+@media (min-width:980px){.grid{grid-template-columns:420px 1fr;align-items:start}.form{position:sticky;top:16px}}
+.panel{background:var(--paper);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);position:relative}
+.bar{background:var(--red);color:var(--paper);border-bottom:4px solid var(--ink);padding:10px 14px;font-family:'Weekly Caps',sans-serif;
+ text-transform:uppercase;letter-spacing:.08em;font-size:13px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.body{padding:16px}
+.form label{display:block;font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.08em;margin:0 0 14px}
+.form input,.form select,.form textarea{display:block;width:100%;margin-top:6px;padding:12px;border:3px solid var(--ink);background:#fff;color:var(--ink);
+ font:16px 'Weekly Body',system-ui,sans-serif;border-radius:0;min-height:48px}
+.form textarea{min-height:76px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{border:3px solid var(--ink);background:#fff;padding:8px 10px;min-height:44px;min-width:48px;font:700 15px 'Weekly Head',sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.hint{font-family:'Weekly Body',sans-serif;text-transform:none;letter-spacing:0;font-size:13px;color:var(--muted);margin-top:6px;display:block}
+.go{width:100%;min-height:56px;background:var(--red);color:var(--paper);border:4px solid var(--ink);box-shadow:6px 6px 0 var(--ink);
+ font:24px 'Weekly Head',sans-serif;text-transform:uppercase;cursor:pointer;margin-top:4px}
+.go:active{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.go:disabled{opacity:.55;cursor:wait}
+.alert{border:3px solid var(--red);background:#fff;padding:10px 12px;margin:12px 0;font-size:14px}
+.ok{border-color:var(--green)}
+.list{display:grid;gap:18px}
+.job{cursor:default}
+.jobHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.jobTitle{font-family:'Weekly Head',sans-serif;text-transform:uppercase;font-size:24px;line-height:1}
+.meta{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+.state{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.08em;padding:5px 8px;border:3px solid var(--ink);white-space:nowrap}
+.s_queued{background:#fff}.s_running{background:var(--navy);color:var(--paper)}.s_ready{background:var(--green);color:var(--paper)}
+.s_needs_review{background:var(--red);color:var(--paper)}.s_failed{background:var(--ink);color:var(--paper)}.s_paused,.s_cancelled,.s_cancel_requested{background:#d9d2c3}
+.track{height:14px;border:3px solid var(--ink);background:#fff;margin:12px 0 6px;position:relative;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;background:var(--red);transition:width .6s}
+.stages{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 0;padding:0;list-style:none}
+.stages li{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:10px;letter-spacing:.06em;padding:3px 6px;border:2px solid var(--ink);opacity:.45}
+.stages li[data-on]{opacity:1;background:var(--ink);color:var(--paper)}.stages li[data-done]{opacity:1}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{min-height:48px;padding:8px 14px;border:3px solid var(--ink);background:#fff;font:700 15px 'Weekly Head',sans-serif;text-transform:uppercase;cursor:pointer;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center}
+.btnRed{background:var(--red);color:var(--paper)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.video{width:100%;aspect-ratio:16/9;background:var(--ink);border:3px solid var(--ink);display:block}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.thumbs img{width:100%;border:3px solid var(--ink);display:block}
+.checks{list-style:none;padding:0;margin:10px 0;display:grid;gap:4px;font-size:14px}
+.checks b{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+.pre{white-space:pre-wrap;font:13px/1.45 'Courier Prime',monospace;background:#fff;border:3px solid var(--ink);padding:10px;max-height:300px;overflow:auto}
+.log{font:12px/1.4 'Courier Prime',monospace;max-height:180px;overflow:auto;background:#fff;border:2px solid var(--ink);padding:8px;margin-top:10px}
+.h3{font-family:'Weekly Head',sans-serif;text-transform:uppercase;font-size:20px;margin:18px 0 6px}
+.sheet{width:100%;border:3px solid var(--ink);display:block}
+.empty{font-family:'Weekly Head',sans-serif;text-transform:uppercase;font-size:22px;padding:28px 16px;text-align:center}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+
+.input{display:block;width:100%;min-height:48px;border:3px solid var(--mag-ink,#15130F);padding:8px;background:var(--mag-paper,#FFFBF2)}

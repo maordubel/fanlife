@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "title": "Hapoel Tel Aviv 1999–2000",
+  "subtitle": "THE SEASON OF THE DOUBLE",
+  "status": "draft preview; historical claims require editorial verification",
+  "clubColor": "#c51e30",
+  "scenes": [
+    {"label":"SUMMER 1999", "headline":"A NEW SEASON.", "detail":"A city. A club. A title worth chasing.", "duration": 5, "source":"https://www.rsssf.org/tablesi/isra00.html"},
+    {"label":"15 AUGUST 1999 · LEAGUE", "headline":"THE FIRST STEP", "detail":"HAPOEL TEL AVIV  2 — 0  HAPOEL PETAH TIKVA", "duration": 5, "source":"https://www.rsssf.org/tablesi/isra00.html"},
+    {"label":"FEBRUARY 2000 · LEAGUE", "headline":"THE PRESSURE BUILDS", "detail":"Three defeats in four league matches.", "duration": 5, "source":"https://www.rsssf.org/tablesi/isra00.html"},
+    {"label":"18 MARCH 2000 · LEAGUE", "headline":"THE RESPONSE", "detail":"HAPOEL PETAH TIKVA  0 — 3  HAPOEL TEL AVIV", "duration": 5, "source":"https://hpt.co.il/game/2000/league/29"},
+    {"label":"17 MAY 2000 · STATE CUP FINAL", "headline":"ONE LAST TEST", "detail":"HAPOEL TEL AVIV  2 — 2  BEITAR JERUSALEM", "duration": 5, "source":"https://www.rsssf.org/tablesi/isracup00.html"},
+    {"label":"FANLIFE: FOOTBALL STORIES", "headline":"THE STORY CONTINUES", "detail":"Football is ninety minutes. Being a supporter is a lifetime.", "duration": 5, "source":"https://fanlife.dubelteam.com"}
+  ]
+}

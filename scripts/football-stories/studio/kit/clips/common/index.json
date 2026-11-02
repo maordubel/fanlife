@@ -1,0 +1,170 @@
+{
+ "set": "common",
+ "origin": "owner-upload",
+ "supplied": "2026-11-02",
+ "note": "Owner-supplied stop-motion paper clips (AI-generated). 1920×1080, 24 fps, about 10 s, sound removed. A clip plays once and holds its last frame.",
+ "pieces": [
+  {
+   "key": "clip:common/corner-flag-night",
+   "description": "A corner flag in the wind on a floodlit pitch at night; the camera holds",
+   "families": [],
+   "seconds": 9.96,
+   "source": "38fcae80-Corner_flag_flutters_in_wind_9a267392_1080p.mp4",
+   "sha256": "0f94e74e93db90ee"
+  },
+  {
+   "key": "clip:common/training-ground-assembles",
+   "description": "A training ground builds itself: players, a tactics board, cones and balls",
+   "families": [
+    "green"
+   ],
+   "seconds": 9.96,
+   "source": "6021f134-Stop_motion_paper_animation_dbcd8e46_1080p.mp4",
+   "sha256": "6eb339346ff02386"
+  },
+  {
+   "key": "clip:common/fan-watching-tv",
+   "description": "A supporter in an armchair watches a match on an old television and raises a fist",
+   "families": [
+    "yellow"
+   ],
+   "seconds": 9.96,
+   "source": "c0acbb59-Fan_watching_football_match_6a318ede_1080p.mp4",
+   "sha256": "9b3fbabb12d6e3b0"
+  },
+  {
+   "key": "clip:common/floodlights-switch-on",
+   "description": "Four floodlights switch on over an empty paper stadium at night",
+   "families": [
+    "yellow"
+   ],
+   "seconds": 9.96,
+   "source": "cab3b5b9-Animate_paper_layers_into_poster_5b3bb7ad_1080p.mp4",
+   "sha256": "7b88da1a24e9c335"
+  },
+  {
+   "key": "clip:common/clip-ball-into-net-kr",
+   "description": "A paper ball flies into the net and the net bulges; the crowd behind jumps; ends on the ball resting in the net.",
+   "families": [
+    "red"
+   ],
+   "source": "clip-ball-into-net-kr.mp4",
+   "sha256": "318a266135933c6b",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "clip:common/clip-confetti-kr",
+   "description": "Red and cream confetti falls over a raised silver cup (no marks); ends with the last pieces settling.",
+   "families": [
+    "red"
+   ],
+   "source": "clip-confetti-kr.mp4",
+   "sha256": "f09b5bfa6dc36aa9",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "clip:common/clip-map-route-n",
+   "description": "A paper map unfolds on a table and a thread is pinned from one city to another (no place names).",
+   "families": [],
+   "source": "clip-map-route-n.mp4",
+   "sha256": "aa751103df5e12f4",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "clip:common/clip-newspaper-spin-n",
+   "description": "A newspaper spins towards the camera and lands flat; its columns are abstract bars.",
+   "families": [],
+   "source": "clip-newspaper-spin-n.mp4",
+   "sha256": "e1daf31691159cf2",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "clip:common/clip-plane-takeoff-n",
+   "description": "A paper plane rises from a paper runway over a city.",
+   "families": [],
+   "source": "clip-plane-takeoff-n.mp4",
+   "sha256": "8555511f7e138787",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "clip:common/clip-rain-terrace-kr",
+   "description": "Rain falls on an empty terrace with one red scarf left on a step; slow, quiet.",
+   "families": [
+    "yellow"
+   ],
+   "source": "clip-rain-terrace-kr.mp4",
+   "sha256": "4818956a4ac1a541",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "clip:common/clip-scarf-wave-kr",
+   "description": "A whole terrace raises red scarves together in a slow wave; ends with every scarf up.",
+   "families": [
+    "red"
+   ],
+   "source": "clip-scarf-wave-kr.mp4",
+   "sha256": "628fadfbabc38579",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "clip:common/clip-train-window-kr",
+   "description": "Fields pass a train window, a red scarf on the sill trembles; ends as the train slows.",
+   "families": [
+    "red"
+   ],
+   "source": "clip-train-window-kr.mp4",
+   "sha256": "b78166d8aa2cbf31",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "clip:common/clip-turnstiles-kr",
+   "description": "Supporters pass through turnstiles one after another, red scarves, the bars turning; ends on an empty turnstile.",
+   "families": [],
+   "source": "clip-turnstiles-kr.mp4",
+   "sha256": "45977c00eb977a3d",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  }
+ ]
+}

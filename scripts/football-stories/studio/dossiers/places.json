@@ -1,0 +1,19 @@
+{
+  "note": "Home towns of clubs, for map pins. A pin marks the CITY a club comes from (the label says the city), not a ground on a given night. Coordinates are the city's own, as Wikipedia gives them (degrees, rounded to 0.01). A club with no row gets no pin; nothing is geocoded at run time.",
+  "source": {"title": "Wikipedia city articles (coordinates)", "url": "https://en.wikipedia.org/wiki/Geographic_coordinate_system", "accessed": "2026-11-02"},
+  "cities": {
+    "Tel Aviv": [32.08, 34.78], "Jerusalem": [31.77, 35.21], "Haifa": [32.79, 34.99], "Petah Tikva": [32.09, 34.88],
+    "Kfar Saba": [32.18, 34.91], "Herzliya": [32.16, 34.84], "Netanya": [32.33, 34.86], "Ashdod": [31.80, 34.65],
+    "Rishon LeZion": [31.96, 34.80], "Beersheba": [31.25, 34.79], "Acre": [32.93, 35.08], "Ramat Gan": [32.07, 34.82],
+    "Yerevan": [40.18, 44.51], "Glasgow": [55.86, -4.25], "Athens": [37.98, 23.73], "Piraeus": [37.94, 23.65],
+    "Mostar": [43.34, 17.81], "Hamburg": [53.55, 9.99], "Cairo": [30.04, 31.24], "Casablanca": [33.57, -7.59]
+  },
+  "clubs": {
+    "Hapoel Tel Aviv": "Tel Aviv", "Maccabi Tel Aviv": "Tel Aviv", "Bnei Yehuda": "Tel Aviv",
+    "Beitar Jerusalem": "Jerusalem", "Hapoel Jerusalem": "Jerusalem", "Maccabi Haifa": "Haifa", "Hapoel Haifa": "Haifa",
+    "Hapoel Petah Tikva": "Petah Tikva", "Maccabi Petah Tikva": "Petah Tikva", "Hapoel Kfar Saba": "Kfar Saba",
+    "Maccabi Herzliya": "Herzliya", "Maccabi Netanya": "Netanya", "MS Ashdod": "Ashdod", "F.C. Ashdod": "Ashdod",
+    "Ironi Rishon LeZion": "Rishon LeZion", "Hapoel Rishon LeZion": "Rishon LeZion", "Hapoel Be'er Sheva": "Beersheba",
+    "Maccabi Acre": "Acre", "Hakoah Ramat Gan": "Ramat Gan", "FC Yerevan": "Yerevan", "Celtic": "Glasgow"
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "set": "hapoel-tel-aviv-1999-00",
+ "origin": "owner-upload",
+ "supplied": "2026-11-02",
+ "note": "Owner-supplied stop-motion paper clips (AI-generated). 1920×1080, 24 fps, about 10 s, sound removed. A clip plays once and holds its last frame.",
+ "pieces": [
+  {
+   "key": "clip:hapoel-tel-aviv-1999-00/stadium-assembles-tunnel",
+   "description": "A paper stadium assembles layer by layer — a red crowd, palms, the city — and the view settles in the stand entrance as supporters walk in",
+   "families": [
+    "red"
+   ],
+   "seconds": 9.96,
+   "source": "3bb9899b-Stop-motion_paper_layers_assembl__e36d394d_1080p.mp4",
+   "sha256": "e59f3f6f83a296e9"
+  }
+ ]
+}

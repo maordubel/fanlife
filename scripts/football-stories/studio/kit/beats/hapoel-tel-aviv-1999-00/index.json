@@ -1,0 +1,417 @@
+{
+ "set": "hapoel-tel-aviv-1999-00",
+ "club": "hapoel-tel-aviv",
+ "season": "1999/00",
+ "origin": "owner-upload",
+ "supplied": "2026-11-02",
+ "note": "Owner-supplied paper-cut illustrations made for the Hapoel Tel Aviv 1999/00 double film (AI-generated, supplied by the owner). Figures are fictional and seen from behind or in silhouette; no real person is depicted. Colours are kept; rival-family pixels are scrubbed at render time.",
+ "pieces": [
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/trophy-shelf-empty",
+   "description": "An empty trophy shelf by a window: a folded scarf, an old ball, the city outside",
+   "mood": "waiting",
+   "source": "Empty_trophy_shelf_paper_illustr#U2026_ba48a9b0.jpg",
+   "sha256": "c6f8cf263d2007b7",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/ball-goal-line-night",
+   "description": "A ball beside the goal line under floodlights, the red end behind the net",
+   "mood": "goal",
+   "source": "Football_beside_goal_line_and_2fba4e61.jpg",
+   "sha256": "af401ff0a8be1f0a",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/penalty-spot-keeper-view",
+   "description": "A goalkeeper from behind, facing the penalty spot",
+   "mood": "penalties",
+   "source": "Football_on_penalty_spot_e9152d25.jpg",
+   "sha256": "6e1681b0329c9674",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/ball-touchline-old-ground",
+   "description": "A ball on the touchline of an old ground, the city beyond the stand",
+   "mood": "season",
+   "source": "Football_resting_on_touchline_3a75593a.jpg",
+   "sha256": "77d9d6bed0f0abbe",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red",
+    "yellow"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/players-bench-training",
+   "description": "Three players in red waiting on a training-ground bench",
+   "mood": "summer",
+   "source": "Footballers_waiting_at_training_#U2026_8ccf7bda.jpg",
+   "sha256": "6a1e516a8306e03f",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/keeper-diving-save",
+   "description": "A goalkeeper at full stretch for the top corner",
+   "mood": "save",
+   "source": "Goalkeeper_diving_to_save_goal_f432348d.jpg",
+   "sha256": "f00945d7782a1600",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/manager-tactics-board",
+   "description": "A manager, seen from behind, facing a tactics board",
+   "mood": "manager",
+   "source": "Manager_facing_tactics_board_5603ad21.jpg",
+   "sha256": "36b644c863c8db67",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/desk-scarf-newspapers",
+   "description": "A desk with a scarf and newspapers, a figure by a window over the city",
+   "mood": "waiting",
+   "source": "Paper-cut_football_documentary_i#U2026_4a243df9.jpg",
+   "sha256": "7c4b832e1c67f20d",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/trophy-table-crowd",
+   "description": "A cup on a table with a scarf and a ball, supporters celebrating behind",
+   "mood": "trophy",
+   "source": "Paper-cut_football_documentary_i#U2026_bfbed04c.jpg",
+   "sha256": "96a37d9e61c3c66e",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/boots-gloves-dusk",
+   "description": "Gloves, boots and a ball on the grass at dusk, palms behind",
+   "mood": "dusk",
+   "source": "Paper-cut_football_equipment_ill#U2026_ce9c3528.jpg",
+   "sha256": "efedd846a1d089a8",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/stadium-model-overhead",
+   "description": "A paper stadium seen from above, the match in progress",
+   "mood": "league",
+   "source": "Paper-cut_football_illustration_#U2026_f93c6934.jpg",
+   "sha256": "a8209f9b38208270",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/boots-scarf-cards",
+   "description": "Boots on a scarf among cards and old photographs",
+   "mood": "archive",
+   "source": "Paper-cut_football_illustration_321594ad.jpg",
+   "sha256": "880868767166cf61",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/tunnel-view-pitch",
+   "description": "From under the stand to the floodlit pitch, a supporter with a scarf",
+   "mood": "matchday",
+   "source": "Paper-cut_football_pitch_illustr#U2026_11f39b86.jpg",
+   "sha256": "f150b03f1ef718cb",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/striker-runs-goal",
+   "description": "A forward in red running on to the ball in the box",
+   "mood": "goal",
+   "source": "Paper-cut_illustration_of_footba#U2026_68d9af4c.jpg",
+   "sha256": "d7505d79ce0ee3ad",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/empty-terrace-scarf-cup",
+   "description": "An empty terrace, a scarf and a small cup on the steps",
+   "mood": "doubt",
+   "source": "Paper-cut_illustration_of_footba#U2026_ae35ea6e.jpg",
+   "sha256": "9e3105475d1f9552",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/street-march-scarves",
+   "description": "Supporters walking up a city street towards the floodlights",
+   "mood": "march",
+   "source": "Paper-cut_illustration_of_footba#U2026_bf7992bc.jpg",
+   "sha256": "641519850bfba041",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/window-trophy-newspaper",
+   "description": "A figure at a window, a cup and the morning paper on the sill",
+   "mood": "morning-after",
+   "source": "Paper-cut_illustration_of_footba#U2026_d7ac62c0.jpg",
+   "sha256": "6991b13bb7378bab",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/ball-pitch-ticket-night",
+   "description": "A ball and a ticket on the pitch, the stand lit behind",
+   "mood": "night",
+   "source": "Paper-cut_illustration_of_footba#U2026_e2e9e46b.jpg",
+   "sha256": "bcf7c7e7ffc69af8",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/collage-certificate-scarf",
+   "description": "A blank certificate frame among newspapers and a scarf",
+   "mood": "record",
+   "source": "Paper-cut_illustration_of_footba#U2026_f463974e.jpg",
+   "sha256": "b1005730a91165a1",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/terrace-scarves-scoreboard",
+   "description": "A terrace of raised scarves under a blank scoreboard",
+   "mood": "crowd",
+   "source": "Paper-cut_illustration_of_footba#U2026_f91137c7.jpg",
+   "sha256": "325ca2ed32fdce6f",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/penalty-taker-back",
+   "description": "A penalty taker from behind, the goal and the keeper ahead",
+   "mood": "penalties",
+   "source": "Paper-cut_illustration_of_soccer#U2026_1004dbad.jpg",
+   "sha256": "4d5e6db275ce2367",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/stadium-clock-crowd",
+   "description": "A big stadium clock over a full ground",
+   "mood": "time",
+   "source": "Paper-cut_stadium_clock_illustra#U2026_7d9ac5cc.jpg",
+   "sha256": "d9c2bb8b4cb2aa20",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/empty-seats-scarf-dusk",
+   "description": "Empty seats at dusk, a scarf left on one",
+   "mood": "defeat",
+   "source": "Paper-cut_stadium_illustration_5462c506.jpg",
+   "sha256": "71cb9da9315c8b40",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/ball-crowd-skyline",
+   "description": "A ball over a crowd of silhouettes and the city skyline",
+   "mood": "city",
+   "source": "Paper_cut_football_illustration_b1beb41b.jpg",
+   "sha256": "ca2f4acbb803f74d",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/crowd-behind-goal-scarves",
+   "description": "Supporters behind the goal with scarves up, the ball in the net",
+   "mood": "celebration",
+   "source": "Paper_cut_football_illustration_c71f460b.jpg",
+   "sha256": "34b9fa50a3e4f205",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/clipboard-player-night",
+   "description": "A team-sheet clipboard, a player alone under the floodlights",
+   "mood": "away",
+   "source": "Paper_cut_football_illustration_ca869b03.jpg",
+   "sha256": "dcd02d7b32a1abb7",
+   "size": [
+    1376,
+    768
+   ],
+   "families": []
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/referee-whistle",
+   "description": "A referee, arm raised, in front of a full ground",
+   "mood": "referee",
+   "source": "Referee_signaling_football_match#U2026_b7e61944.jpg",
+   "sha256": "2823674263078e1f",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/scarf-step-newspaper",
+   "description": "A scarf and a newspaper on a concrete step of an empty stand",
+   "mood": "memory",
+   "source": "Scarf_on_stadium_step_ff3300a4.jpg",
+   "sha256": "7c4958259edaab64",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/supporter-scarf-raised",
+   "description": "A supporter from behind, scarf held up under the floodlights",
+   "mood": "supporter",
+   "source": "Supporter_holding_scarf_in_stadium_3cb5cf28.jpg",
+   "sha256": "82de4bc3ebf52dc4",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  },
+  {
+   "key": "beat:hapoel-tel-aviv-1999-00/ticket-ball-turnstile",
+   "description": "A ticket and a ball by an old turnstile gate",
+   "mood": "journey",
+   "source": "Ticket_and_football_by_turnstile_3483841e.jpg",
+   "sha256": "a6b0b29ad08c6707",
+   "size": [
+    1376,
+    768
+   ],
+   "families": [
+    "red"
+   ]
+  }
+ ]
+}

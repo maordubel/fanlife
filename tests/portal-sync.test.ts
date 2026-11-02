@@ -509,6 +509,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261029100000_worker_marketing_briefing.sql', // 29.10.2026: the owner's 07:30 morning briefing (operations, not a post) — standalone
       '20261030100000_worker_marketing_today.sql', // 30.10.2026: /today — the day's posts behind "link in bio" — standalone
       '20261030090000_worker_market_direct_listing.sql', // 30.10.2026: list a shirt without a closet copy (supabase/tests/79-direct-listing.sql)
+      '20261102090000_worker_stories_bucket.sql', // 2.11.2026: Football Stories — the private bucket for films (docs/fanlife/54-football-stories-studio.md) — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue
