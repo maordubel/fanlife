@@ -7,14 +7,10 @@
   "parserVersion": "partizanopedia-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 269,
+  "observedTotalDocuments": 292,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/8788.html",
-   "/8889.html",
-   "/8990.html",
-   "/9091.html",
    "/9192.html",
    "/9293.html",
    "/9394.html",
@@ -235,7 +231,30 @@
    "/sreckokatanec.html",
    "/fadiljvokri.html",
    "/aleksandardjordjevic.html",
-   "/darkomilanic.html"
+   "/darkomilanic.html",
+   "/branislavdjukanovic.html",
+   "/vladislavdjukic.html",
+   "/zoranbatrovic.html",
+   "/borcesredojevic.html",
+   "/goranmilojevic.html",
+   "/dragoljubbrnovic.html",
+   "/predragspasic.html",
+   "/gordanpetric.html",
+   "/vujadinstanojkovic.html",
+   "/budimirvujacic.html",
+   "/milandjurdjevic.html",
+   "/predragmijatovic.html",
+   "/milojekljajevic.html",
+   "/dejanjoksimovic.html",
+   "/goranpandurovic.html",
+   "/slobodanmiletic.html",
+   "/dejanmarkovic.html",
+   "/josipvisnjic.html",
+   "/slavisajokanovic.html",
+   "/bratislavmijalkovic.html",
+   "/sladjandjukic.html",
+   "/dzoninovak.html",
+   "/petarvasiljevic.html"
   ],
   "seen": [
    "/",
@@ -281,10 +300,14 @@
    "/8384.html",
    "/8485.html",
    "/8586.html",
-   "/8687.html"
+   "/8687.html",
+   "/8788.html",
+   "/8889.html",
+   "/8990.html",
+   "/9091.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-31T09:59:13.383Z",
+  "updatedAt": "2026-11-01T10:49:27.943Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -299,7 +322,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-10-31T09:59:13.469Z",
+  "updatedAt": "2026-11-01T10:49:28.484Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -314,7 +337,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-31T09:59:17.006Z",
+  "updatedAt": "2026-11-01T10:49:32.376Z",
   "lastError": null
  },
  "partizan-official:html": {
@@ -333,7 +356,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-31T09:59:18.355Z",
+  "updatedAt": "2026-11-01T10:49:34.430Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -352,7 +375,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-31T09:59:19.212Z",
+  "updatedAt": "2026-11-01T10:49:35.596Z",
   "lastError": null
  }
 }

@@ -5,13 +5,13 @@
   "collection": "posts",
   "queryFingerprint": "280807558a05e9d7",
   "parserVersion": "aekpedia-football-v1",
-  "nextPage": 7,
-  "lastCommittedPage": 6,
+  "nextPage": 13,
+  "lastCommittedPage": 12,
   "observedTotalDocuments": 762,
   "observedTotalPages": 31,
   "perPage": 25,
   "state": "partial_budget",
-  "updatedAt": "2026-10-31T09:57:47.390Z",
+  "updatedAt": "2026-11-01T10:48:04.278Z",
   "lastError": null
  },
  "aekpedia:pages": {
@@ -26,7 +26,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-31T09:57:49.998Z",
+  "updatedAt": "2026-11-01T10:48:06.670Z",
   "lastError": null
  },
  "aek-official-history:html": {
@@ -46,7 +46,7 @@
    "/c/gegonota-42826.htm?lang=en&path=-1828815320"
   ],
   "state": "blocked",
-  "updatedAt": "2026-10-31T09:57:49.998Z",
+  "updatedAt": "2026-11-01T10:48:06.671Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  }
 }

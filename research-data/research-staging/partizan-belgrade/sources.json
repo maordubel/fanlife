@@ -8,11 +8,11 @@
   "sourceFamilyId": "partizanopedia",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-10-31",
-  "retrievedAt": "2026-10-31T09:59:19.225Z",
+  "checkedAt": "2026-11-01",
+  "retrievedAt": "2026-11-01T10:49:35.608Z",
   "collected": {
-   "documents": 44,
-   "observedTotalDocuments": 269,
+   "documents": 48,
+   "observedTotalDocuments": 292,
    "state": "partial_budget",
    "parser": null
   },
@@ -29,8 +29,8 @@
   "sourceFamilyId": "crnobela-nostalgija",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-10-31",
-  "retrievedAt": "2026-10-31T09:59:19.225Z",
+  "checkedAt": "2026-11-01",
+  "retrievedAt": "2026-11-01T10:49:35.608Z",
   "collected": {
    "documents": 5,
    "observedTotalDocuments": 5,
@@ -50,8 +50,8 @@
   "sourceFamilyId": "partizan-institutional",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-10-31",
-  "retrievedAt": "2026-10-31T09:59:19.225Z",
+  "checkedAt": "2026-11-01",
+  "retrievedAt": "2026-11-01T10:49:35.608Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -71,8 +71,8 @@
   "sourceFamilyId": "national-football-teams",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-10-31",
-  "retrievedAt": "2026-10-31T09:59:19.225Z",
+  "checkedAt": "2026-11-01",
+  "retrievedAt": "2026-11-01T10:49:35.608Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
