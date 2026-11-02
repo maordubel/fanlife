@@ -1,0 +1,30 @@
+name: I WAS THERE · Telegram delivery
+# A file added or changed in scripts/football-stories/matchday/deliveries/ is sent to the owner's linked Telegram chat:
+# the reel's publish cut, then the copy-paste marketing messages. Only the delivery files changed in the push are sent.
+on:
+  push:
+    paths:
+      - 'scripts/football-stories/matchday/deliveries/*.json'
+permissions:
+  contents: read
+concurrency:
+  group: matchday-deliver
+  cancel-in-progress: false
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Send the changed deliveries
+        run: |
+          changed=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'scripts/football-stories/matchday/deliveries/*.json')
+          [ -z "$changed" ] && { echo "nothing to send"; exit 0; }
+          for f in $changed; do echo "== $f"; node scripts/football-stories/matchday/deliver.mjs "$f"; done

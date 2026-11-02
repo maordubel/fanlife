@@ -30,7 +30,18 @@ sys.path.insert(0, str(HERE.parent))
 
 from render import (SERIES, TONE, GRADE, is_hdr, orient, phonemes, probe, read_audio, resample, run, speech_in,  # noqa: E402
                     write_wav, kokoro)
+# A REEL is the same edit stood up: 1080×1920. The studio's modules read the frame size when they are imported, so
+# the size is set on studio.common first and every module after it is built for 9:16.
+CUT = 'reel' if '--reel' in sys.argv else 'film'
+import studio.common as _sc  # noqa: E402
+if CUT == 'reel':
+    _sc.W, _sc.H = 1080, 1920
 from studio.audio import CROWD, fx, score  # noqa: E402
+import studio.captions as _caps  # noqa: E402
+if CUT == 'reel':   # phone captions: bigger, shorter lines, above the platform's own buttons
+    _caps.MAX_CHARS = 16
+    _face_cls = _caps.Face
+    _caps.font = lambda name='weekly-head', size=78: _face_cls(name, size)
 from studio.captions import Captions  # noqa: E402
 from studio.common import FPS, H, INK, NEWSPRINT, PAPER, ROOT, W, Palette, hex_rgb  # noqa: E402
 from studio.edit import cam_push, fit, pop, slam, slide_in, tape  # noqa: E402
@@ -149,9 +160,12 @@ def cam_for(seed: int, dur: float, strong: bool = False) -> callable:
 
 # ── the edit ─────────────────────────────────────────────────────────────────────────────────────────────────────────
 def main() -> None:
-    ep_path, footage, out_root = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    ep_path, footage, out_root = Path(args[0]), Path(args[1]), Path(args[2])
     ep = json.loads(ep_path.read_text())
-    out = out_root / 'film'
+    out = out_root / CUT
+    tall = CUT == 'reel'
+    top = 290 if tall else 120      # the reel keeps clear of the platform's top bar
     work = out / 'work'
     keep = bool(os.environ.get('FILM_KEEP'))      # local iteration: reuse shots already cut
     if not keep:
@@ -160,7 +174,7 @@ def main() -> None:
     folder = footage / ep['folder']
     fx_ = ep['fixture']
     pal = Palette('iwt', 'I WAS THERE', ep['accent'], PAPER, [])
-    beats = ep['film']['beats']
+    beats = ep[CUT]['beats']
     report = {'episode': ep['id'], 'cut': 'film', 'voice': SERIES['voice'], 'beats': [], 'speech': {}}
 
     # 1 · narration and the timeline (the studio's rule: lead + voice + tail)
@@ -204,14 +218,26 @@ def main() -> None:
             src = folder / p['clip'] if p.get('clip') else None
             meta = probe(src) if src else None
 
-            if kind in ('clip', 'title', 'score', 'ticket'):
+            if kind in ('clip', 'title', 'score', 'ticket', 'hook'):
                 vw, vh = orient(meta)
                 speed = float(p.get('speed', 1.0))
                 left = float(meta['format']['duration']) - p.get('in', 0) - 0.1
                 if dur * speed > left:      # slow it rather than hold a frozen last frame
                     speed = max(0.55, left / dur)
                 p['speed_used'] = round(speed, 3)
-                if vh > vw:   # vertical footage, taped onto newsprint
+                if tall and vw > vh:   # wide footage in a reel: a landscape window on newsprint, headline above
+                    ww = CW - 110
+                    wh = round(ww * vh / vw)
+                    at = (int((CW - ww) / 2), int(CH * 0.52 - wh / 2))
+                    corner = (at[0], at[1] + wh)        # the clock goes on the photo's corner, not on the glass
+                    clip = prepare(src, meta, p.get('in', 0), dur, speed, (ww, wh), work / f'clip-{p["n"]:02d}.mp4')
+                    world_frames = PaperWorld(clip, (ww, wh), seed, at)
+                    if p.get('head'):
+                        hd = fit(cropped(sp.turning(key_of(k, 'turn'), p['head'], p.get('kicker', ''))), W - 230, 360)
+                        layers.append(Layer(hd, slide_in(CW / 2, at[1] - hd.height / 2 - 40, 0.3, frm=(0, -520), rot0=-2, rot1=-1,
+                                                          dur=0.5, drift=False), settle=1e9, space='world'))
+                        cues.append((0.3, 'paper'))
+                elif not tall and vh > vw:   # vertical footage in the film, taped onto newsprint
                     ww = round(WIN_H * vw / vh)
                     at = (int(CW * 0.30 - ww / 2), int((CH - WIN_H) / 2))
                     clip = prepare(src, meta, p.get('in', 0), dur, speed, (ww, WIN_H), work / f'clip-{p["n"]:02d}.mp4')
@@ -227,12 +253,15 @@ def main() -> None:
                     world_frames = ClipWorld(clip, dim=p.get('dim', 0.0), fps=FPS)
                 world = world_frames(0)
                 if p.get('clock'):     # the camera's own clock: the diary stamp
-                    lab = fit(cropped(sp.label(key_of('clock', p['clock']), p['clock'], 'ink', 46)), 400, 110)
-                    layers.append(Layer(lab, pop(110 + lab.width / 2, 120, 0.35, rot=-3), settle=1e9))
+                    lab = fit(cropped(sp.label(key_of('clock', p['clock']), p['clock'], 'ink', 52 if tall else 46)), 400, 120)
+                    if tall and vw > vh:
+                        layers.append(Layer(lab, pop(corner[0] + 40 + lab.width / 2, corner[1] + 6, 0.35, rot=-3), settle=1e9, space='world'))
+                    else:
+                        layers.append(Layer(lab, pop(80 + lab.width / 2, top, 0.35, rot=-3), settle=1e9))
                     cues.append((0.35, 'pop'))
                 if p.get('place'):
-                    pl = fit(cropped(sp.caption(key_of('place', p['place']), p['place'])), 1100, 120)
-                    layers.append(Layer(pl, slide_in(110 + pl.width / 2, 228, 0.55, frm=(-700, 0), rot0=0, rot1=0, dur=0.45, drift=False), settle=1e9))
+                    pl = fit(cropped(sp.caption(key_of('place', p['place']), p['place'])), W - 160, 120)
+                    layers.append(Layer(pl, slide_in(80 + pl.width / 2, top + 108, 0.55, frm=(-700, 0), rot0=0, rot1=0, dur=0.45, drift=False), settle=1e9))
                     cues.append((0.55, 'paper'))
                 if kind == 'title':
                     entry = 'black'
@@ -243,22 +272,31 @@ def main() -> None:
                     layers.append(Layer(st, slam(W * 0.80, H * 0.70, 1.25, s0=1.9, rot=7, dur=0.22), settle=1e9))
                     shake += [(0.55, 10), (1.25, 7)]
                     cues += [(0.0, 'whoosh'), (0.55, 'stamp'), (1.25, 'stamp')]
+                if kind == 'hook':      # the reel's first second: two lines slammed onto the loudest frame
+                    entry = 'cut'
+                    l1 = fit(cropped(sp.label(key_of(k, 'h1'), p['hook'], 'paper', 92)), W - 120, 200)
+                    l2 = fit(cropped(sp.label(key_of(k, 'h2'), p['accent_line'], 'accent', 92)), W - 120, 200)
+                    layers.append(Layer(l1, slam(60 + l1.width / 2, top + 260, 0.1, s0=1.5, rot=-3), settle=1e9))
+                    layers.append(Layer(l2, slam(90 + l2.width / 2, top + 260 + l1.height + 10, 0.55, s0=1.5, rot=-2), settle=1e9))
+                    shake += [(0.1, 12), (0.55, 10)]
+                    cues += [(0.1, 'stamp'), (0.55, 'stamp')]
                 if kind == 'ticket':
                     tk = fit(ticket, 1200, 640)
                     layers.append(Layer(tk, slide_in(W * 0.62, H * 0.47, 0.5, frm=(0, 520), rot0=-6, rot1=-2, dur=0.7), settle=1e9))
                     cues += [(0.5, 'whoosh'), (1.15, 'paper')]
                 if kind == 'score':
-                    card = fit(cropped(sp.score(k, sf, fx_.get('score_note'))), 1500, 700)
-                    cx, cy = W / 2, H * 0.44
+                    card = fit(cropped(sp.score(k, sf, fx_.get('score_note'))), W - 70, 700)
+                    cx, cy = W / 2, H * (0.40 if tall else 0.44)
                     layers.append(Layer(card, slam(cx, cy, 0.3, rot=-1.0), settle=1e9))
                     shake.append((0.3, 10))
                     cues += [(0.3, 'stamp'), (0.45, 'crowd-after')]
                     gap, chips = 22, []
                     for g in fx_['goals']:
-                        chips.append(fit(cropped(sp.label(key_of('scorer', g['name'], g['minute_label']), f"{g['name']}  {g['minute_label']}", 'paper', 34)), 620, 76))
+                        chips.append(fit(cropped(sp.label(key_of('scorer', g['name'], g['minute_label']), f"{g['name']}  {g['minute_label']}", 'paper', 34)),
+                                         int((W - 140) / 2) if tall else 620, 76))
                     tw = sum(c.width for c in chips) + gap * (len(chips) - 1)
                     x = W / 2 - tw / 2
-                    y = min(cy + card.height / 2 + 64, H - 210)
+                    y = min(cy + card.height / 2 + 64, H - (520 if tall else 210))
                     for j, c in enumerate(chips):
                         ti = 1.0 + 0.35 * j
                         layers.append(Layer(c, pop(x + c.width / 2, y, ti, dur=0.35, rot=(-2, 1.5)[j % 2]), settle=1e9))
@@ -299,29 +337,45 @@ def main() -> None:
                 world = crumpled(seed % 9, CANVAS, '#2A2620').convert('RGB')
                 cam = cam_push(1.04, 1.0, 0, 0, dur)
                 entry = 'wipe'
-                badge = img(ROOT / 'public/brand/fanlife/logo-512.png').resize((340, 340), Image.LANCZOS)
-                layers.append(Layer(badge, slam(290, 290, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
-                head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', 'Find the night in the archive · stamp your ticket')), 1250, 230)
-                layers.append(Layer(head, slide_in(540 + head.width / 2, 210, 0.55, frm=(900, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
-                cues += [(0.25, 'stamp'), (0.55, 'whoosh')]
-                x0, y0, dx, dy = 700, 455, 380, 262
-                for j, (label, rel) in enumerate(FEATURES):
-                    tile = fit(cropped(sp.feature_tile(key_of('tile', label), label, ROOT / 'public' / rel, 'accent' if j in (0, 4) else 'paper')), 300, 238)
-                    ti = 1.3 + 0.28 * j
-                    layers.append(Layer(tile, pop(x0 + (j % 3) * dx, y0 + (j // 3) * dy, ti, dur=0.4, rot=(-3, 2, -1.5, 2.5, -2, 1)[j]), settle=1e9))
-                    cues.append((ti, 'pop'))
-                url = fit(cropped(sp.url_banner('iwt-end', 'fanlife.dubelteam.com', 'Every match · trivia · games · the life of a supporter')), 1500, 200)
-                layers.append(Layer(url, slam(W / 2 - 40, H - 120, 3.6, s0=1.5, rot=-1.2, dur=0.3), settle=1e9))
-                cues += [(3.6, 'stamp'), (0.0, 'end')]
-                srcs = 'Sources: ' + '; '.join((s.get('short') or s.get('title') or s.get('file')) for s in ep['sources'])
-                sm = fit(cropped(sp.small_print('iwt-end', srcs)), 1700, 40)
-                layers.append(Layer(sm, slide_in(W / 2, H - 22, 4.2, frm=(0, 60), rot0=0, rot1=0, dur=0.4, drift=False), settle=1e9))
+                badge = img(ROOT / 'public/brand/fanlife/logo-512.png').resize((300 if tall else 340,) * 2, Image.LANCZOS)
+                if tall:
+                    layers.append(Layer(badge, slam(W / 2, top + 210, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
+                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', 'Stamp your ticket on FAN LIFE')), W - 90, 260)
+                    layers.append(Layer(head, slide_in(W / 2, top + 520, 0.55, frm=(0, 500), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
+                    for j, (label, rel) in enumerate(FEATURES):
+                        tile = fit(cropped(sp.feature_tile(key_of('tile', label), label, ROOT / 'public' / rel, 'accent' if j in (0, 4) else 'paper')), 300, 238)
+                        ti = 1.2 + 0.22 * j
+                        layers.append(Layer(tile, pop(200 + (j % 3) * 340, top + 820 + (j // 3) * 270, ti, dur=0.4, rot=(-3, 2, -1.5, 2.5, -2, 1)[j]), settle=1e9))
+                        cues.append((ti, 'pop'))
+                    url = fit(cropped(sp.url_banner('iwt-end', 'fanlife.dubelteam.com', 'Every match · trivia · games')), W - 80, 200)
+                    layers.append(Layer(url, slam(W / 2, top + 1300, 3.0, s0=1.5, rot=-1.2, dur=0.3), settle=1e9))
+                    cues += [(0.25, 'stamp'), (0.55, 'whoosh'), (3.0, 'stamp'), (0.0, 'end')]
+                else:
+                    layers.append(Layer(badge, slam(290, 290, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
+                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', 'Find the night in the archive · stamp your ticket')), 1250, 230)
+                    layers.append(Layer(head, slide_in(540 + head.width / 2, 210, 0.55, frm=(900, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
+                    cues += [(0.25, 'stamp'), (0.55, 'whoosh')]
+                    x0, y0, dx, dy = 700, 455, 380, 262
+                    for j, (label, rel) in enumerate(FEATURES):
+                        tile = fit(cropped(sp.feature_tile(key_of('tile', label), label, ROOT / 'public' / rel, 'accent' if j in (0, 4) else 'paper')), 300, 238)
+                        ti = 1.3 + 0.28 * j
+                        layers.append(Layer(tile, pop(x0 + (j % 3) * dx, y0 + (j // 3) * dy, ti, dur=0.4, rot=(-3, 2, -1.5, 2.5, -2, 1)[j]), settle=1e9))
+                        cues.append((ti, 'pop'))
+                    url = fit(cropped(sp.url_banner('iwt-end', 'fanlife.dubelteam.com', 'Every match · trivia · games · the life of a supporter')), 1500, 200)
+                    layers.append(Layer(url, slam(W / 2 - 40, H - 120, 3.6, s0=1.5, rot=-1.2, dur=0.3), settle=1e9))
+                    cues += [(3.6, 'stamp'), (0.0, 'end')]
+                    srcs = 'Sources: ' + '; '.join((s.get('short') or s.get('title') or s.get('file')) for s in ep['sources'])
+                    sm = fit(cropped(sp.small_print('iwt-end', srcs)), 1700, 40)
+                    layers.append(Layer(sm, slide_in(W / 2, H - 22, 4.2, frm=(0, 60), rot0=0, rot1=0, dur=0.4, drift=False), settle=1e9))
             else:
                 raise SystemExit(f'unknown beat kind {kind}')
 
             caps = None
             if p.get('words') and kind != 'end':
                 caps = Captions(p['words'], p['voice_at'] - p['start'], ep['accent'])
+                if tall:     # lift the plate to two-thirds down: the platform's own buttons live at the bottom
+                    lift = 300 if (meta and orient(meta)[0] > orient(meta)[1]) else 470   # under a landscape window, clear of its clock
+                    caps = (lambda c, d=lift: (lambda tt: (lambda r: r and (r[0], r[1], r[2] - d))(c(tt))))(caps)
             shot = Shot(index=p['n'], duration=dur, world=world, camera=cam, layers=layers, entry=entry, shake=shake,
                         cues=cues, meta={'kind': kind}, world_frames=world_frames, overlay=caps)
             target = work / f'shot-{p["n"]:02d}.mp4'
@@ -427,7 +481,7 @@ def main() -> None:
          f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true", '-ar', str(SR), '-ac', '2', str(final_mix)])
 
     # 4 · master (no metadata), captions file, chapters, description, thumbnail, preview, report
-    name = f"{ep['id']}-film"
+    name = f"{ep['id']}-{CUT}"
     master = out / f'{name}.mp4'
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(final_mix), '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac',
          '-b:a', '256k', '-map_metadata', '-1', '-map_chapters', '-1', '-metadata', f"title={ep['title']}", '-movflags', '+faststart',
@@ -442,14 +496,26 @@ def main() -> None:
             cues_srt.append(f"{k}\n{ts(a_)} --> {ts(b_)}\n{' '.join(w['w'] for w in gr)}\n")
             k += 1
     (out / f'{name}.en.srt').write_text('\n'.join(cues_srt))
+    if tall:
+        (out / 'marketing.txt').write_text(ep['reel'].get('post', '').strip() + '\n')
     chapters = [('0:00', 'Cold open')] + [(mmss(p['start']), p['title']) for p in plan if p.get('kind') == 'chapter']
-    desc = ep['film']['description'].strip() + '\n\n' + '\n'.join(f'{a} {b}' for a, b in chapters) + '\n\nSources\n' + \
+    desc = ep[CUT]['description'].strip() + '\n\n' + '\n'.join(f'{a} {b}' for a, b in chapters) + '\n\nSources\n' + \
         '\n'.join(f"· {s['short']}: {s.get('url') or s.get('file')}" for s in ep['sources']) + \
         '\n\nNarration is synthetic (Kokoro, Apache-2.0). Footage: FAN LIFE, from the stand. #FANLIFE #IWasThere'
-    (out / 'youtube-description.txt').write_text(desc)
+    (out / 'youtube-description.txt').write_text(desc if not tall else ep['reel']['description'].strip() + '\n\n#Shorts #FANLIFE #IWasThere')
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-c:a', 'aac', '-b:a', '128k',
          '-map_metadata', '-1', '-movflags', '+faststart', str(out / f'{name}-preview.mp4')])
-    th = ep['film'].get('thumbnail')
+    # the file that is actually published: YouTube (and Telegram, for a reel) — under 95 MB so it travels through git,
+    # under 49 MB for a reel so the bot can send it. Starts at CRF 19 and gives up quality two steps at a time.
+    cap = (49 if tall else 95) * 1024 * 1024
+    pub = out / f'{name}-publish.mp4'
+    for crf in (19, 21, 23, 25, 27):
+        run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'slow', '-crf', str(crf), '-profile:v', 'high',
+             '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-map_metadata', '-1', '-movflags', '+faststart', str(pub)])
+        if pub.stat().st_size <= cap:
+            break
+    report['publish'] = {'file': pub.name, 'mb': round(pub.stat().st_size / 1048576, 1), 'crf': crf}
+    th = ep[CUT].get('thumbnail')
     if th:
         frame = work / 'thumb-src.jpg'
         run(['ffmpeg', '-y', '-v', 'error', '-ss', f"{th['at']:.2f}", '-i', str(master), '-frames:v', '1', str(frame)])
