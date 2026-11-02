@@ -1,7 +1,7 @@
 # I WAS THERE — editing rules for the matchday series (2.11.2026)
 
 A FAN LIFE matchday diary built from the owner's own footage of matches he attended. Published as FAN LIFE, never
-as a person. This file **inherits** the Football Stories studio (PR #353): `engine/MASTER_PROMPT.md` (sourcing, the
+as a person, as a series (its own playlist) on the studio's channel, FanLife: Football Stories (owner, 2.11.2026). This file **inherits** the Football Stories studio (PR #353): `engine/MASTER_PROMPT.md` (sourcing, the
 real-person face rule, rights ledger, captions, QA honesty) and `studio/` (voice, mix to −14 LUFS / −1.5 dBTP,
 captions, packaging, QA). Where this file is stricter, it wins. Studio code is owned by the studio track: anything
 this series needs from it is asked for there, never edited from here (rule 120).
@@ -32,6 +32,9 @@ footage for it is dropped, not filled.
 - Narration covers at most 60% of the runtime. Silence of the narrator is a tool.
 - Stadium PA music, a phone playing a song, anything copyrighted → muted or cut (Content ID).
 - Added score only from the studio's synthesised score (`studio/audio.py`); never a library track without a licence row.
+- **Narration is free** (owner, 2.11.2026): a self-hosted open model with a licence that allows a monetised channel
+  (Kokoro — Apache-2.0, Chatterbox — MIT), never a paid API. `voice_audition.py` reads the same lines with each
+  candidate; the owner picks by ear and the pick is written here. XTTS-v2 (non-commercial) and F5-TTS (CC-BY-NC) are out.
 
 ## 4 · Anonymity — the owner is never in the film
 
@@ -63,7 +66,9 @@ footage for it is dropped, not filled.
 - Stabilise handheld walking shots; keep terrace shake in moments of joy (it is the feeling).
 - A vertical clip in the wide film sits in a **taped paper frame** on newsprint; a wide clip in a reel sits between
   newsprint bands with the headline — never a blurred copy of itself behind it.
-- Graphics obey the club's rival lock (rule 95). The footage is a document and is not recoloured.
+- **All colours are approved** (owner, 2.11.2026): the series is a hub product, so no rival-colour ban applies to
+  its graphics or its footage, and the studio's rival-colour frame check does not block a matchday film. Footage is
+  never recoloured.
 
 ## 8 · Signature and identity
 
