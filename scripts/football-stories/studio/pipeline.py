@@ -20,7 +20,7 @@ from pathlib import Path
 from .common import STUDIO, Palette, StageError, read_json, write_json
 
 # The private bucket holds a film until it is uploaded; the free plan stores 1 GB in all, so a master is encoded to fit.
-MASTER_BUDGET_MB = 850
+MASTER_BUDGET_MB = 800
 
 
 def master_kbps(seconds: float) -> int:
@@ -121,7 +121,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     preview = out / 'preview.mp4'
     if not preview.exists():
         # under 45 MB whatever the length (the storage plan's per-file limit): bitrate from duration
-        kbps = max(220, min(1400, int(45 * 8 * 1024 / max(30, plan['duration'])) - 96))
+        kbps = max(220, min(1400, int(40 * 8 * 1000 / max(30, plan['duration'])) - 96))
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-vf', 'scale=-2:540', '-c:v', 'libx264', '-preset', 'veryfast', '-b:v', f'{kbps}k',
                         '-maxrate', f'{kbps * 2}k', '-bufsize', f'{kbps * 2}k', '-c:a', 'aac', '-b:a', '96k', '-ac', '2', '-movflags', '+faststart', str(out / 'preview.part.mp4')], check=True)
         (out / 'preview.part.mp4').rename(preview)
@@ -156,7 +156,7 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
     rows = [
         {'id': 'kit-graphics', 'kind': 'graphics', 'owner': 'FanLife (owner-supplied kits, 2 Nov 2026)', 'origin': 'owner', 'licence': 'owned', 'photoreal': False},
         {'id': 'kit-illustrations', 'kind': 'illustration', 'owner': 'FanLife (owner-supplied, AI-generated)', 'origin': 'ai-generated', 'licence': 'owned', 'photoreal': False,
-         'note': 'Re-inked as two-tone prints; symbolic scenes, no identifiable place or person.'},
+         'note': 'Paper-cut collage (owner-supplied, AI-generated); symbolic scenes, fictional figures, no identifiable person.'},
         {'id': 'natural-earth', 'kind': 'map data', 'owner': 'Natural Earth', 'origin': 'world-atlas npm package', 'licence': 'public domain', 'photoreal': False},
         {'id': 'weekly-fonts', 'kind': 'fonts', 'owner': 'Archivo, Ultra, Shrikhand, Knewave (OFL)', 'origin': 'public/fonts', 'licence': 'SIL Open Font License', 'photoreal': False},
         {'id': 'score', 'kind': 'music', 'owner': 'FanLife', 'origin': 'synthesised by studio/audio.py for this film', 'licence': 'owned', 'photoreal': False},

@@ -101,6 +101,25 @@ def used_claims(script: dict, ledger: dict) -> list[dict]:
     return [c for c in ledger['claims'] if c['id'] in ids]
 
 
+HEBREW = re.compile(r'[\u0590-\u05FF]')
+# The archive's own source titles are often Hebrew notes; the channel is English. Known hosts get an English label.
+HOST_LABELS = {'wiki.red-fans.com': "Vikipoel, the Hapoel Tel Aviv supporters' wiki",
+               'he.wikipedia.org': 'Hebrew Wikipedia', 'www.one.co.il': 'ONE (Israeli sports site)',
+               'www.sport5.co.il': 'Sport 5', 'www.football.org.il': 'Israel Football Association'}
+
+
+def english_title(title: str, url: str) -> str:
+    """A source title fit for an English description: Hebrew notes in brackets dropped, a Hebrew title replaced by
+    the host's English name."""
+    t = re.sub(r'\s*\([^)]*[\u0590-\u05FF][^)]*\)', '', title or '').strip()
+    if HEBREW.search(t) or not t:
+        host = re.sub(r'^https?://([^/]+).*$', r'\1', url)
+        label = HOST_LABELS.get(host, host)
+        tail = [w for w in re.split(r'\s+[—-]\s+', t) if w and not HEBREW.search(w)]
+        t = label + (f' — {tail[-1]}' if tail else '')
+    return t
+
+
 def sources_list(claims: list[dict]) -> list[dict]:
     seen, out = set(), []
     for c in claims:
@@ -108,14 +127,14 @@ def sources_list(claims: list[dict]) -> list[dict]:
             u = s.get('url')
             if u and u not in seen:
                 seen.add(u)
-                out.append({'title': (s.get('title') or u), 'url': u})
+                out.append({'title': english_title(s.get('title') or u, u), 'url': u})
     return out
 
 
 def synthetic_decision(manifest: dict) -> dict:
     """YouTube's altered/synthetic disclosure, decided from the assets actually in the cut.
     Required when the film shows a REALISTIC scene that did not happen, alters real footage, or makes a real person
-    appear to say or do something. Stylised two-tone illustrations, maps and typeset graphics are not realistic;
+    appear to say or do something. Stylised paper-cut illustrations, maps and typeset graphics are not realistic;
     the narrator is a synthetic voice of no real person. A photoreal generated image or a cloned voice flips it."""
     photoreal = [a for a in manifest.get('assets', []) if a.get('photoreal')]
     cloned = manifest.get('voice', {}).get('cloned_real_person')
@@ -123,7 +142,7 @@ def synthetic_decision(manifest: dict) -> dict:
     return {'altered_or_synthetic': flag,
             'reason': ('Photoreal generated imagery or a cloned voice is present' if flag else
                        'No realistic synthetic scene, no altered footage, no real person depicted or voiced: the illustrations are '
-                       'stylised two-tone prints and the narrator is a synthetic voice of no real person.'),
+                       'stylised paper-cut collage and the narrator is a synthetic voice of no real person.'),
             'transparency_line': 'Narration voice and illustrations are AI-generated. No archive footage is shown; graphics present archive records.'}
 
 
@@ -140,7 +159,7 @@ def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
               f'• Facts: the FanLife archive and the sources above. Scores, dates and tables on screen are printed from those records.',
               f'• Narration: {manifest["voice"]["credit"]}',
               '• Score and sound effects: composed for this film; crowd atmosphere from FanLife\'s own recordings.',
-              '• Illustrations: AI-generated, re-inked for this film. They are symbolic, not photographs of the matches.',
+              '• Illustrations and stop-motion clips: AI-generated paper-cut art made for FanLife. They are symbolic: fictional figures, not photographs of the matches.',
               '• Maps: Natural Earth (public domain).',
               '• ' + synthetic_decision(manifest)['transparency_line'],
               '', SLOGAN, f'{CHANNEL_NAME} · {CHANNEL_HANDLE}']

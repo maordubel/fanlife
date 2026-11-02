@@ -165,6 +165,15 @@ class BeatArt(unittest.TestCase):
                 self.assertNotEqual(a, b)
 
 
+class EnglishSources(unittest.TestCase):
+    def test_hebrew_source_titles_become_english(self):
+        from studio.package import english_title
+        self.assertEqual(english_title('ויקיפועל — טבלת Games', 'https://wiki.red-fans.com/index.php?title=x'),
+                         "Vikipoel, the Hapoel Tel Aviv supporters' wiki")
+        self.assertEqual(english_title('1999–2000 Israel State Cup — Wikipedia (2–2, 4–2 בפנדלים)', 'https://en.wikipedia.org/wiki/x'),
+                         '1999–2000 Israel State Cup — Wikipedia')
+
+
 class Packaging(unittest.TestCase):
     plan = {'duration': 100, 'chapters': [{'t': 0.0, 'title': 'A'}, {'t': 5.0, 'title': 'B'}, {'t': 30, 'title': 'C'}, {'t': 60, 'title': 'D'}],
             'shots': [{'voice_at': 1.0, 'words': [{'w': w, 'start': i * 0.4, 'end': i * 0.4 + 0.35} for i, w in enumerate(
