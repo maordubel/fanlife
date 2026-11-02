@@ -4,7 +4,7 @@ The folder's own embedded view lists its files and sub-folders; each file is the
 download endpoint. Runs on the GitHub runner (this sandbox cannot reach Drive). A file that cannot be fetched is
 reported by name, never skipped silently.
 
-    python3 scripts/football-stories/matchday/drive_fetch.py <folder url or id> <dest>
+    python3 scripts/football-stories/matchday/drive_fetch.py <folder url or id> <dest> [only this sub-folder]
 """
 from __future__ import annotations
 
@@ -54,9 +54,11 @@ def download(fid: str, target: Path) -> int:
     return n
 
 
-def fetch(fid: str, dest: Path, report: dict, prefix: str = '') -> None:
+def fetch(fid: str, dest: Path, report: dict, prefix: str = '', only: str | None = None) -> None:
     for eid, title, is_folder in listing(fid):
         name = re.sub(r'[\\/:*?"<>|]+', '_', title)
+        if only and not prefix and name != only:
+            continue
         if is_folder:
             fetch(eid, dest / name, report, f'{prefix}{name}/')
             continue
@@ -68,10 +70,10 @@ def fetch(fid: str, dest: Path, report: dict, prefix: str = '') -> None:
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
+    if len(sys.argv) not in (3, 4):
         sys.exit(__doc__)
     rep = {'folder': folder_id(sys.argv[1]), 'files': [], 'failed': []}
-    fetch(rep['folder'], Path(sys.argv[2]), rep)
+    fetch(rep['folder'], Path(sys.argv[2]), rep, only=sys.argv[3] if len(sys.argv) == 4 else None)
     print(json.dumps({'files': len(rep['files']), 'failed': rep['failed'],
                       'gb': round(sum(f['bytes'] for f in rep['files']) / 1e9, 2)}))
     (Path(sys.argv[2]) / '_fetch.json').write_text(json.dumps(rep, indent=2, ensure_ascii=False))

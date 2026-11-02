@@ -1,0 +1,399 @@
+{
+  "id": "iwt-01-grbavica-2024",
+  "title": "I WAS THERE · Grbavica, 21 September 2024 · Željezničar v Zrinjski",
+  "folder": "Sarajevo game against Zeljeznicar",
+  "accent": "#D71920",
+  "fixture": {
+    "home": "Željezničar",
+    "away": "Zrinjski Mostar",
+    "home_short": "ŽEL",
+    "away_short": "ZRI",
+    "date_long": "21 September 2024",
+    "year": "2024",
+    "ground": "Grbavica",
+    "city": "Sarajevo",
+    "competition": "Premier League BiH · Round 7",
+    "home_score": 0,
+    "away_score": 2,
+    "goals": [
+      {
+        "side": "away",
+        "name": "Mulahusejnović",
+        "minute_label": "66'"
+      },
+      {
+        "side": "away",
+        "name": "M. Ćavar",
+        "minute_label": "90+2'"
+      }
+    ],
+    "source": "HŠK Zrinjski match report",
+    "episode": 1
+  },
+  "sources": [
+    {
+      "claim": "date, ground, kick-off 20:45, result 0–2, scorers Mulahusejnović 66' and Marijan Ćavar in the second minute of stoppage time",
+      "url": "https://hskzrinjski.ba/en/?p=3363",
+      "title": "HŠK Zrinjski — Zrinjski triumphed in the derby against Željezničar"
+    },
+    {
+      "claim": "result, round 7",
+      "file": "club-packs/zrinjski-mostar/wave-history-2026-10-18.json"
+    },
+    {
+      "claim": "attendance 13,500 (highest home attendance of the season)",
+      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_FK_%C5%BDeljezni%C4%8Dar_season",
+      "title": "Wikipedia — 2024–25 FK Željezničar season"
+    }
+  ],
+  "ipa": {
+    "Željezničar": "ʒˈɛljɛznɪtʃɑː",
+    "Zrinjski": "zɹˈɪnjskiː",
+    "Grbavica": "ɡˈɜːbɐvɪtsə",
+    "Mulahusejnović": "mʊlɐhʊsˈeɪnɒvɪtʃ",
+    "Ćavar": "tʃˈavɑː",
+    "Marijan": "mˈaɹiːjan",
+    "Nardin": "nˈɑːdɪn"
+  },
+  "film": {
+    "shots": [
+      {
+        "clip": "IMG_0113.MOV",
+        "in": 0,
+        "dur": 5.0,
+        "sound": "clip"
+      },
+      {
+        "clip": "IMG_0086.MOV",
+        "in": 0,
+        "dur": 6.0,
+        "sound": "clip",
+        "cards": [
+          {
+            "kind": "open",
+            "at": 0.3,
+            "anim": "rise"
+          }
+        ]
+      },
+      {
+        "clip": "IMG_0033.MOV",
+        "in": 0,
+        "dur": 6.0,
+        "speed": 0.75,
+        "sound": "mute",
+        "score": {
+          "mood": "minor",
+          "energy": 0.25
+        },
+        "paper": {
+          "n": 1,
+          "title": "The road",
+          "lines": [
+            "Saturday afternoon.",
+            "Through the mountains to Sarajevo."
+          ]
+        }
+      },
+      {
+        "clip": "cddae7aeb0174e8fadb92081a3c2808e.mov",
+        "in": 0,
+        "dur": 4.6,
+        "speed": 0.8,
+        "sound": "mute",
+        "score": {
+          "mood": "minor",
+          "energy": 0.3
+        },
+        "paper": {
+          "title": "The road",
+          "lines": [
+            "A trip like this",
+            "is half the match."
+          ]
+        }
+      },
+      {
+        "clip": "IMG_0053.MOV",
+        "in": 6.0,
+        "dur": 9.0,
+        "sound": "auto",
+        "score": {
+          "mood": "minor",
+          "energy": 0.35
+        },
+        "paper": {
+          "n": 2,
+          "title": "The city",
+          "lines": [
+            "Down the stone steps.",
+            "Into Sarajevo."
+          ]
+        }
+      },
+      {
+        "clip": "IMG_0055.MOV",
+        "in": 0,
+        "dur": 7.9,
+        "sound": "auto",
+        "score": {
+          "mood": "minor",
+          "energy": 0.2
+        },
+        "paper": {
+          "title": "Dusk",
+          "lines": []
+        }
+      },
+      {
+        "clip": "IMG_0075.MOV",
+        "in": 0,
+        "dur": 9.0,
+        "sound": "clip",
+        "paper": {
+          "n": 3,
+          "title": "The ground",
+          "lines": [
+            "Grbavica.",
+            "Kick-off 20:45."
+          ]
+        }
+      },
+      {
+        "clip": "IMG_0076.MOV",
+        "in": 1.0,
+        "dur": 9.0,
+        "sound": "clip",
+        "paper": {
+          "title": "Round 7",
+          "lines": [
+            "Premier League BiH.",
+            "Željezničar v Zrinjski Mostar."
+          ]
+        }
+      },
+      {
+        "clip": "IMG_0082.MOV",
+        "in": 0,
+        "dur": 7.7,
+        "sound": "clip",
+        "paper": {
+          "title": "Under the lights",
+          "lines": []
+        }
+      },
+      {
+        "clip": "IMG_0089.MOV",
+        "in": 0,
+        "dur": 4.5,
+        "sound": "clip",
+        "cards": [
+          {
+            "kind": "chapter",
+            "n": 4,
+            "title": "The noise",
+            "at": 0.2,
+            "until": 3.6
+          }
+        ]
+      },
+      {
+        "clip": "IMG_0105.MOV",
+        "in": 0,
+        "dur": 11.5,
+        "sound": "clip"
+      },
+      {
+        "clip": "IMG_0113.MOV",
+        "in": 5.0,
+        "dur": 8.5,
+        "sound": "clip"
+      },
+      {
+        "clip": "IMG_0129.MOV",
+        "in": 0,
+        "dur": 9.9,
+        "sound": "clip",
+        "cards": [
+          {
+            "kind": "chapter",
+            "n": 5,
+            "title": "Full time",
+            "at": 0.2,
+            "until": 2.6
+          },
+          {
+            "kind": "fulltime",
+            "at": 2.8
+          }
+        ]
+      },
+      {
+        "clip": "IMG_0129.MOV",
+        "still": 9.8,
+        "dim": 0.08,
+        "dur": 12.0,
+        "sound": "mute",
+        "score": {
+          "mood": "major",
+          "energy": 0.3
+        },
+        "cards": [
+          {
+            "kind": "end",
+            "at": 0.3
+          }
+        ]
+      }
+    ],
+    "lines": [
+      {
+        "shot": 2,
+        "offset": 0.5,
+        "text": "Saturday, the twenty-first of September. The road to Sarajevo runs through the mountains, and it takes its time."
+      },
+      {
+        "shot": 3,
+        "offset": 1.0,
+        "text": "Nobody minds. A trip like this is half the match."
+      },
+      {
+        "shot": 4,
+        "offset": 1.0,
+        "text": "Down the stone steps, and into the city."
+      },
+      {
+        "shot": 6,
+        "offset": 1.0,
+        "text": "Grbavica. Home of Željezničar."
+      },
+      {
+        "shot": 7,
+        "offset": 0.6,
+        "text": "Round seven of the Premier League of Bosnia and Herzegovina. Željezničar against Zrinjski Mostar, and around thirteen and a half thousand inside."
+      },
+      {
+        "shot": 9,
+        "offset": 0.6,
+        "text": "Then one end turns red."
+      },
+      {
+        "shot": 10,
+        "offset": 3.0,
+        "text": "And the other answers in blue."
+      },
+      {
+        "shot": 12,
+        "offset": 3.2,
+        "text": "Sixty-six minutes in, Nardin Mulahusejnović scored for Zrinjski. In stoppage time, Marijan Ćavar made it two."
+      },
+      {
+        "shot": 13,
+        "offset": 1.5,
+        "text": "Were you there? Stamp your ticket on FAN LIFE."
+      }
+    ]
+  },
+  "reel": {
+    "shots": [
+      {
+        "clip": "IMG_0112.MOV",
+        "in": 0,
+        "dur": 4.5,
+        "sound": "clip",
+        "cards": [
+          {
+            "kind": "hook",
+            "hook": "One end red.",
+            "accent": "One end blue.",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "clip": "IMG_0089.MOV",
+        "in": 0,
+        "dur": 4.5,
+        "sound": "clip",
+        "band": {
+          "headline": "The red end",
+          "sub": "Grbavica, Sarajevo"
+        }
+      },
+      {
+        "clip": "IMG_0105.MOV",
+        "in": 2.0,
+        "dur": 6.0,
+        "sound": "clip",
+        "band": {
+          "headline": "The answer",
+          "sub": "Željezničar v Zrinjski Mostar"
+        }
+      },
+      {
+        "clip": "IMG_0112.MOV",
+        "in": 4.5,
+        "dur": 4.7,
+        "sound": "clip"
+      },
+      {
+        "clip": "IMG_0075.MOV",
+        "in": 2.0,
+        "dur": 5.0,
+        "sound": "clip"
+      },
+      {
+        "clip": "IMG_0082.MOV",
+        "in": 1.0,
+        "dur": 4.5,
+        "sound": "clip"
+      },
+      {
+        "clip": "IMG_0076.MOV",
+        "in": 4.0,
+        "dur": 5.5,
+        "sound": "clip",
+        "cards": [
+          {
+            "kind": "fulltime",
+            "at": 0.4
+          }
+        ]
+      },
+      {
+        "clip": "IMG_0112.MOV",
+        "still": 9.0,
+        "dim": 0.05,
+        "dur": 4.5,
+        "sound": "mute",
+        "score": {
+          "mood": "major",
+          "energy": 0.3
+        },
+        "cards": [
+          {
+            "kind": "end",
+            "at": 0.2
+          }
+        ]
+      }
+    ],
+    "lines": [
+      {
+        "shot": 1,
+        "offset": 0.4,
+        "text": "One end turns red."
+      },
+      {
+        "shot": 2,
+        "offset": 1.0,
+        "text": "The other answers in blue."
+      },
+      {
+        "shot": 4,
+        "offset": 0.4,
+        "text": "Grbavica, Sarajevo. The twenty-first of September."
+      }
+    ]
+  }
+}
