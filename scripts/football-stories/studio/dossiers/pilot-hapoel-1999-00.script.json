@@ -192,7 +192,7 @@
      ],
      "visual": {
       "type": "illustration",
-      "art": "beat:hapoel-tel-aviv-1999-00/players-bench-training",
+      "art": "clip:common/training-ground-assembles",
       "caption": "Summer 1999"
      }
     },
@@ -218,7 +218,7 @@
       "type": "chapter",
       "number": 2,
       "title": "Summer and Europe",
-      "backdrop": "beat:hapoel-tel-aviv-1999-00/ball-pitch-ticket-night"
+      "backdrop": "clip:common/floodlights-switch-on"
      }
     },
     {
@@ -446,7 +446,7 @@
      ],
      "visual": {
       "type": "illustration",
-      "art": "beat:hapoel-tel-aviv-1999-00/ball-crowd-skyline",
+      "art": "clip:hapoel-tel-aviv-1999-00/stadium-assembles-tunnel",
       "caption": "Derby day"
      }
     },
@@ -645,7 +645,7 @@
      "claim_ids": [],
      "visual": {
       "type": "illustration",
-      "art": "beat:hapoel-tel-aviv-1999-00/empty-seats-scarf-dusk"
+      "art": "clip:common/corner-flag-night"
      }
     },
     {

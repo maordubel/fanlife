@@ -1,0 +1,48 @@
+{
+ "set": "common",
+ "origin": "owner-upload",
+ "supplied": "2026-11-02",
+ "note": "Owner-supplied stop-motion paper clips (AI-generated). 1920×1080, 24 fps, about 10 s, sound removed. A clip plays once and holds its last frame.",
+ "pieces": [
+  {
+   "key": "clip:common/corner-flag-night",
+   "description": "A corner flag in the wind on a floodlit pitch at night; the camera holds",
+   "families": [
+    "green"
+   ],
+   "seconds": 9.96,
+   "source": "38fcae80-Corner_flag_flutters_in_wind_9a267392_1080p.mp4",
+   "sha256": "0f94e74e93db90ee"
+  },
+  {
+   "key": "clip:common/training-ground-assembles",
+   "description": "A training ground builds itself: players, a tactics board, cones and balls",
+   "families": [
+    "green"
+   ],
+   "seconds": 9.96,
+   "source": "6021f134-Stop_motion_paper_animation_dbcd8e46_1080p.mp4",
+   "sha256": "6eb339346ff02386"
+  },
+  {
+   "key": "clip:common/fan-watching-tv",
+   "description": "A supporter in an armchair watches a match on an old television and raises a fist",
+   "families": [
+    "yellow"
+   ],
+   "seconds": 9.96,
+   "source": "c0acbb59-Fan_watching_football_match_6a318ede_1080p.mp4",
+   "sha256": "9b3fbabb12d6e3b0"
+  },
+  {
+   "key": "clip:common/floodlights-switch-on",
+   "description": "Four floodlights switch on over an empty paper stadium at night",
+   "families": [
+    "yellow"
+   ],
+   "seconds": 9.96,
+   "source": "cab3b5b9-Animate_paper_layers_into_poster_5b3bb7ad_1080p.mp4",
+   "sha256": "7b88da1a24e9c335"
+  }
+ ]
+}

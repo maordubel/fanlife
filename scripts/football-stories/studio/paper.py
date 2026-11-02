@@ -99,9 +99,116 @@ def beat_path(key: str) -> Path | None:
     return p if p.exists() else None
 
 
+CLIPS = KIT / 'clips'
+
+
+def clip_path(key: str) -> Path | None:
+    """`clip:<set>/<slug>` → an owner stop-motion clip, or None."""
+    if not isinstance(key, str) or not key.startswith('clip:'):
+        return None
+    rel = key[5:]
+    if not re.fullmatch(r'[a-z0-9-]+/[a-z0-9-]+', rel):
+        return None
+    p = CLIPS / f'{rel}.mp4'
+    return p if p.exists() else None
+
+
+def clip_index(set_id: str) -> list[dict]:
+    p = CLIPS / set_id / 'index.json'
+    return json.loads(p.read_text(encoding='utf-8'))['pieces'] if p.exists() else []
+
+
+class ClipWorld:
+    """An owner clip as a moving world: decoded once, in order, at the film's frame rate and the canvas size, each
+    frame scrubbed of the rival's family, vignetted and (behind a card) darkened. Plays once, then holds its last frame."""
+
+    def __init__(self, path: Path, bans: list[str] | None = None, dim: float = 0.0, size=CANVAS, fps: int = 25,
+                 accent: str | None = None):
+        import subprocess
+        self.w, self.h = size
+        self.bans, self.dim, self.accent = bans or [], dim, accent
+        self.proc = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', str(path), '-an', '-vf',
+                                      f'fps={fps},scale={self.w}:{self.h}:force_original_aspect_ratio=increase,crop={self.w}:{self.h}',
+                                      '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
+        self.n, self.last, self.done = -1, None, False
+        yy, xx = np.mgrid[0:self.h, 0:self.w].astype('float32')
+        r = np.sqrt(((xx - self.w / 2) / (self.w / 2)) ** 2 + ((yy - self.h / 2) / (self.h / 2)) ** 2)
+        shade = 1 - 0.3 * np.clip(r - 0.55, 0, 1) ** 1.6
+        self.mul = (shade * (1 - dim))[..., None]
+        self.add = (np.array(hex_rgb(INK), 'float32') * dim)[None, None]
+
+    def _read(self) -> Image.Image | None:
+        size = self.w * self.h * 3
+        buf = self.proc.stdout.read(size) if self.proc.stdout else b''
+        if len(buf) < size:
+            self.close()
+            return None
+        im = Image.frombuffer('RGB', (self.w, self.h), buf, 'raw', 'RGB', 0, 1)
+        if self.accent:
+            im = recolor(im, self.accent)
+        im = scrub(im, self.bans)
+        a = np.asarray(im, 'float32') * self.mul + self.add
+        return Image.fromarray(np.clip(a, 0, 255).astype('uint8'), 'RGB')
+
+    def __call__(self, i: int) -> Image.Image:
+        while self.n < i and not self.done:
+            fr = self._read()
+            if fr is None:
+                self.done = True
+                break
+            self.last, self.n = fr, self.n + 1
+        if self.last is None:
+            raise RuntimeError('clip produced no frames')
+        return self.last
+
+    def close(self):
+        if self.proc.stdout and not self.proc.stdout.closed:
+            self.proc.stdout.close()
+        try:
+            self.proc.kill()
+        except OSError:
+            pass
+        self.proc.wait()
+
+
 def beat_index(set_id: str) -> list[dict]:
     p = BEATS / set_id / 'index.json'
     return json.loads(p.read_text(encoding='utf-8'))['pieces'] if p.exists() else []
+
+
+KEY_RED = '#C8102E'
+
+
+def piece_meta(key: str) -> dict:
+    """The index entry of an owner piece (beat or clip), or {}."""
+    kind, _, rel = str(key).partition(':')
+    set_id = rel.split('/')[0]
+    for piece in (beat_index(set_id) if kind == 'beat' else clip_index(set_id) if kind == 'clip' else []):
+        if piece['key'] == key:
+            return piece
+    return {}
+
+
+def recolor(im: Image.Image, to_hex: str | None) -> Image.Image:
+    """Pieces drawn with the signal red KEY_RED as their one colour (index `"accent": "key-red"`) wear each club's own
+    colour: every red-family pixel takes the club colour's hue, and its saturation and value move by the same ratio
+    the club colour stands from KEY_RED, so the paper shading survives."""
+    if not to_hex:
+        return im
+    hsv = np.asarray(im.convert('HSV'), 'float32')
+    deg = hsv[..., 0] * (360 / 255)
+    hit = ((deg <= 20) | (deg >= 340)) & (hsv[..., 1] >= 0.25 * 255)
+    if not hit.any():
+        return im
+    key = np.asarray(Image.new('RGB', (1, 1), hex_rgb(KEY_RED)).convert('HSV'), 'float32')[0, 0]
+    to = np.asarray(Image.new('RGB', (1, 1), hex_rgb(to_hex)).convert('HSV'), 'float32')[0, 0]
+    out = hsv.copy()
+    out[..., 0] = np.where(hit, to[0], hsv[..., 0])
+    out[..., 1] = np.where(hit, np.clip(hsv[..., 1] * to[1] / max(key[1], 1), 0, 255), hsv[..., 1])
+    out[..., 2] = np.where(hit, np.clip(hsv[..., 2] * to[2] / max(key[2], 1), 0, 255), hsv[..., 2])
+    fixed = np.asarray(Image.fromarray(out.astype('uint8'), 'HSV').convert('RGB'))
+    rgb = np.asarray(im.convert('RGB'))
+    return Image.fromarray(np.where(hit[..., None], fixed, rgb).astype('uint8'), 'RGB')
 
 
 def scrub(im: Image.Image, bans: list[str]) -> Image.Image:
@@ -124,12 +231,16 @@ def scrub(im: Image.Image, bans: list[str]) -> Image.Image:
     return Image.fromarray(np.where(hit[..., None], fixed, rgb).astype('uint8'), 'RGB')
 
 
-def art_backdrop(name_or_path: str | Path, size=CANVAS, bans: list[str] | None = None, dim: float = 0.0) -> Image.Image:
+def art_backdrop(name_or_path: str | Path, size=CANVAS, bans: list[str] | None = None, dim: float = 0.0,
+                 accent: str | None = None) -> Image.Image:
     """A library piece is re-inked as a two-tone print; an owner beat illustration keeps its colours, scrubbed of the
     rival's family. `dim` darkens the picture behind a card so the card stays the thing you read."""
     bp = beat_path(name_or_path) if isinstance(name_or_path, str) else None
     if bp:
-        out = scrub(cover(Image.open(bp).convert('RGB'), size), bans or [])
+        out = cover(Image.open(bp).convert('RGB'), size)
+        if piece_meta(name_or_path).get('accent') == 'key-red':
+            out = recolor(out, accent)
+        out = scrub(out, bans or [])
         out = vignette(out, 0.3)
     else:
         src = Image.open(name_or_path).convert('RGB') if isinstance(name_or_path, Path) else library_art(name_or_path).convert('RGB')

@@ -97,6 +97,8 @@ class Shot:
     shake: list[tuple[float, float]] = field(default_factory=list)  # (time, strength px)
     cues: list[tuple[float, str]] = field(default_factory=list)  # sound cues for the mix
     meta: dict = field(default_factory=dict)
+    # A moving world (an owner stop-motion clip): frame index → CANVAS-sized RGB. Read in order, never seeked.
+    world_frames: Callable[[int], Image.Image] | None = None
 
     @property
     def frames(self) -> int:
@@ -134,6 +136,9 @@ class ShotRenderer:
     def frame(self, i: int, global_i: int = 0) -> np.ndarray:
         t = i / FPS
         s = self.s
+        if s.world_frames is not None:
+            self.base = s.world_frames(i).convert('RGBA')
+            self.baked = 0
         self._bake(t)
         world_layers = [l for l in s.layers if l.space == 'world'][self.baked:]
         if world_layers:

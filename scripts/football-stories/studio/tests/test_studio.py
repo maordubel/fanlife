@@ -125,6 +125,37 @@ class BeatArt(unittest.TestCase):
         self.assertFalse(is_banned_pixel(out[3], ['yellow']))
         self.assertEqual(out[1], (176, 45, 16))
 
+    def test_common_pieces_serve_any_club(self):
+        from studio.script import art_ok
+        celtic = {'club_id': 'celtic', 'season': '1966/67'}
+        self.assertTrue(art_ok('beat:common/tunnel-walk-out', celtic))
+        self.assertTrue(art_ok('clip:common/corner-flag-night', celtic))
+        self.assertFalse(art_ok('clip:hapoel-tel-aviv-1999-00/stadium-assembles-tunnel', celtic))
+
+    def test_key_red_takes_the_club_colour(self):
+        from PIL import Image
+        from studio.common import family
+        from studio.paper import KEY_RED, recolor
+        im = Image.new('RGB', (2, 1))
+        im.putdata([tuple(int(KEY_RED[i:i + 2], 16) for i in (1, 3, 5)), (240, 236, 220)])
+        out = list(recolor(im, '#006B3F').getdata())
+        self.assertEqual(family(out[0]), 'green')
+        self.assertEqual(out[1], (240, 236, 220))
+
+    def test_a_clip_plays_once_and_holds_its_last_frame(self):
+        import subprocess
+        from studio.paper import ClipWorld
+        with tempfile.TemporaryDirectory() as d:
+            src = Path(d) / 'c.mp4'
+            subprocess.run(['ffmpeg', '-v', 'error', '-f', 'lavfi', '-i', 'testsrc=size=320x180:rate=25:duration=0.4',
+                            '-pix_fmt', 'yuv420p', str(src)], check=True)
+            c = ClipWorld(src, ['yellow'], 0.4, size=(160, 90))
+            first, last = c(0), c(9)
+            self.assertEqual(first.size, (160, 90))
+            self.assertIs(c(40), c(60))
+            self.assertTrue(c.done)
+            self.assertFalse(any(is_banned_pixel(px, ['yellow']) for px in last.getdata()))
+
     def test_pilot_script_uses_beat_art_and_stays_valid(self):
         s = read_json(Path(__file__).parents[1] / 'dossiers' / 'pilot-hapoel-1999-00.script.json')
         keys = [b['visual'].get('art') or b['visual'].get('backdrop') for c in s['chapters'] for b in c['beats']]

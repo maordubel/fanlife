@@ -38,10 +38,16 @@ def beat_set(ledger: dict) -> str:
 
 def art_ok(key, ledger: dict, *, allow_gen: bool = False) -> bool:
     """A library piece, an owner beat piece made for THIS club and season, or (for illustrations) a generated one."""
-    from .paper import beat_path
+    from .paper import beat_path, clip_path
     if key in LIBRARY_ART or (allow_gen and key == 'gen'):
         return True
-    return isinstance(key, str) and key.startswith(f'beat:{beat_set(ledger)}/') and beat_path(key) is not None
+    if not isinstance(key, str):
+        return False
+    for kind, find in (('beat', beat_path), ('clip', clip_path)):
+        for set_id in (beat_set(ledger), 'common'):
+            if key.startswith(f'{kind}:{set_id}/') and find(key) is not None:
+                return True
+    return False
 
 
 CLAIM_VISUALS = {'matchday', 'score', 'table', 'ticket'}
@@ -71,7 +77,8 @@ SCHEMA_TEXT = '''{
         {"type":"illustration","art":"tunnel|terrace-crowd|terrace-empty|supporter|gen|beat:<key>","prompt":string (only when art is gen),"caption":string}
         {"type":"ticket","claim":match claim id}
         {"type":"end"}
-      Every "backdrop" and "art" may also be an owner beat illustration "beat:<key>" from BEAT ART when one is listed: colour
+      Every "backdrop" and "art" may also be an owner piece from BEAT ART when one is listed — a still ("beat:…") or a
+      ten-second stop-motion clip ("clip:…", it plays once and holds; use it where a moment builds or arrives). Colour
       paper-cut pictures made for this story. Prefer them — the right picture for each beat (a penalty picture for a shoot-out,
       an empty terrace for a bad run). Card visuals (matchday, score, fact, stat, timeline, table, ticket) may add "backdrop" too;
       the picture is darkened behind the card. Do not use the same piece on two beats in a row.

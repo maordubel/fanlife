@@ -1,0 +1,146 @@
+{
+ "set": "common",
+ "club": null,
+ "season": null,
+ "origin": "owner-upload",
+ "supplied": "2026-11-02",
+ "note": "Owner-supplied paper-cut illustrations for any club (AI-generated, supplied by the owner). Fictional figures, no text, no club marks. `families` are the colour families a piece prints; a club whose rival owns one of them gets that colour scrubbed to grey.",
+ "pieces": [
+  {
+   "key": "beat:common/away-bus-floodlights",
+   "description": "A supporters' coach on a country road towards a lit stadium at sunset",
+   "mood": "away",
+   "families": [
+    "green",
+    "yellow"
+   ],
+   "source": "ad7cf327-image.jpg",
+   "sha256": "1880ac9229f9174a",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:common/boots-ball-touchline",
+   "description": "Old boots and a leather ball on the touchline of an empty ground",
+   "mood": "beginnings",
+   "families": [
+    "yellow"
+   ],
+   "source": "63f39d92-image.jpg",
+   "sha256": "c41d7c418aa18721",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:common/supporter-cap-old-ground",
+   "description": "A supporter in a flat cap holding up a scarf over the terraces of an old ground",
+   "mood": "supporter",
+   "families": [
+    "blue",
+    "yellow"
+   ],
+   "source": "65f755e6-image.jpg",
+   "sha256": "7e7197b40a8bb728",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:common/corner-flag-night",
+   "description": "A corner flag in the wind on a floodlit pitch at night",
+   "mood": "tension",
+   "families": [
+    "green"
+   ],
+   "source": "8b164cc3-image.jpg",
+   "sha256": "8245218406ce7250",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:common/radio-scarf-ticket-table",
+   "description": "A transistor radio, a folded scarf and a ticket on a kitchen table",
+   "mood": "news",
+   "families": [],
+   "source": "1d83443b-image.jpg",
+   "sha256": "7e00fe0db04bf2b3",
+   "size": [
+    2048,
+    1143
+   ]
+  },
+  {
+   "key": "beat:common/archive-trophy-spotlight",
+   "description": "A trophy in a spotlight among archive shelves and boxes",
+   "mood": "archive",
+   "families": [
+    "yellow"
+   ],
+   "source": "06ff2c39-image.jpg",
+   "sha256": "82ebef0f77da52ce",
+   "size": [
+    2048,
+    1143
+   ]
+  },
+  {
+   "key": "beat:common/manager-blank-board-stadium",
+   "description": "A manager in a coat beside a blank board in an empty stadium",
+   "mood": "manager",
+   "families": [],
+   "source": "f882fdad-image.jpg",
+   "sha256": "4df26e5f68e0a4fe",
+   "size": [
+    2048,
+    1143
+   ]
+  },
+  {
+   "key": "beat:common/commentator-booth-night",
+   "description": "A radio commentator in his booth over a floodlit match",
+   "mood": "commentary",
+   "families": [
+    "blue"
+   ],
+   "source": "5ce45d97-image.jpg",
+   "sha256": "8627c409b36e96a6",
+   "size": [
+    2048,
+    1143
+   ]
+  },
+  {
+   "key": "beat:common/dugout-substitutes",
+   "description": "Substitutes on the bench in the dugout, seen from behind",
+   "mood": "bench",
+   "families": [
+    "red"
+   ],
+   "source": "29d85dc4-image.jpg",
+   "sha256": "bc0a46958f82f751",
+   "size": [
+    2048,
+    1143
+   ]
+  },
+  {
+   "key": "beat:common/tunnel-walk-out",
+   "description": "Two teams walking out of the tunnel towards the pitch",
+   "mood": "walk-out",
+   "families": [],
+   "source": "85e76909-image.jpg",
+   "sha256": "71e4c8e4d5a0bc9e",
+   "size": [
+    2048,
+    1143
+   ]
+  }
+ ]
+}

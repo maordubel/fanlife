@@ -65,7 +65,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             sc.ensure_valid(s, ledger, float(brief['duration']))
             s['_writer'] = [{'source': f'supplied file {script_file.name}'}]
         else:
-            s = writer.write_script(brief, ledger, cache, log)
+            s = writer.write_script(brief, {**ledger, 'bans': palette.bans}, cache, log)
         write_json(sp_, s)
         log(f'Script: "{sc.selected_title(s)}" · {sum(len(b["narration"].split()) for *_, b in sc.all_beats(s))} words')
     s = read_json(sp_)

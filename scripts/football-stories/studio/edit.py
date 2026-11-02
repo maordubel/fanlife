@@ -20,7 +20,7 @@ from .common import FPS, H, INK, KIT, NEWSPRINT, PAPER, W, Palette, StageError, 
 from .maps import city_of, pin_sprite
 from .maps import render as render_map
 from .motion import Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
-from .paper import CANVAS, art_backdrop, beat_path, crumpled, supporter_scene
+from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, piece_meta, supporter_scene
 from .sprites import SpriteFactory, key_of
 
 LEAD = 0.35       # picture before the voice
@@ -112,6 +112,7 @@ def fit(img: Image.Image, maxw: int, maxh: int) -> Image.Image:
 class Editor:
     def __init__(self, job_dir: Path, ledger: dict, script: dict, voice: dict, palette: Palette, art_dir: Path):
         self.dir = job_dir
+        self._clip = None
         self.ledger = ledger
         self.by = {c['id']: c for c in ledger['claims']}
         self.script = script
@@ -137,11 +138,19 @@ class Editor:
 
     def backdrop(self, art: str | None, seed: int, dim: float = 0.0) -> Path:
         art = art or 'paper'
+        if art.startswith('clip:') and clip_path(art):
+            # A clip is a moving world: build() hands the reader to the shot, and the first frame stands in as the still.
+            self._clip = ClipWorld(clip_path(art), self.pal.bans, dim, accent=self.pal.accent if piece_meta(art).get('accent') == 'key-red' else None)
+            name = art[5:].replace('/', '--')
+            first = self._clip(0)
+            return self.world_image(f'clip-{name}-{round(dim * 100)}', lambda: first)
+        if art.startswith('clip:'):
+            art = 'terrace-crowd'
         if not art.startswith('beat:'):
             dim = 0.0
         if art.startswith('beat:') and beat_path(art):
             name = art[5:].replace('/', '--')
-            return self.world_image(f'beat-{name}-{round(dim * 100)}', lambda: art_backdrop(art, bans=self.pal.bans, dim=dim))
+            return self.world_image(f'beat-{name}-{round(dim * 100)}', lambda: art_backdrop(art, bans=self.pal.bans, dim=dim, accent=self.pal.accent))
         if art.startswith('beat:'):
             art = 'terrace-crowd'
         if art == 'paper':
@@ -190,6 +199,7 @@ class Editor:
         kind = v['type']
         dur = s['frames'] / FPS
         seed = 1000 + s['n'] * 7
+        self._clip = None
         lead = s['voice_at'] - s['start'] if s['voice_at'] else 0.4
         claim = self.by.get(v.get('claim') or '')
         f = claim['fact'] if claim else None
@@ -264,7 +274,7 @@ class Editor:
                 backdrop = 'terrace-crowd'
             backdrop = v.get('backdrop') or backdrop
             # Behind a card an owner picture is darkened so the card is what the eye reads first.
-            world = self.backdrop(backdrop, seed, dim=0.42 if backdrop.startswith('beat:') else 0.0)
+            world = self.backdrop(backdrop, seed, dim=0.42 if backdrop.startswith(('beat:', 'clip:')) else 0.0)
             card = self.card(sp, k, v, f, claim, s)
             target = {'matchday': (1560, 760), 'score': (1560, 760), 'ticket': (1300, 620), 'fact': (1300, 720), 'stat': (1000, 820),
                       'table': (1480, 900), 'timeline': (1800, 640), 'turning': (1500, 560)}[kind]
@@ -337,8 +347,9 @@ class Editor:
             raise StageError('UNKNOWN_VISUAL', kind)
 
         layers += self.props(v, s, kind, dur, cues)
+        clip, self._clip = self._clip, None
         return Shot(index=s['n'], duration=dur, world=Image.open(world).convert('RGB'), camera=cam, layers=layers,
-                    entry=entry, shake=shake, cues=cues, meta={'kind': kind})
+                    entry=entry, shake=shake, cues=cues, meta={'kind': kind}, world_frames=clip)
 
     def prop_img(self, name: str, h: int) -> Image.Image:
         im = Image.open(KIT / 'props' / f'{name}.webp').convert('RGBA')
@@ -351,7 +362,7 @@ class Editor:
         prop = v.get('prop')
         # An owner beat picture already shows the scene; an automatic cut-out over it would draw a second goal or a
         # second scarf. Only a prop the script asks for goes on top of one.
-        owner_art = str(v.get('art') or v.get('backdrop') or '').startswith('beat:')
+        owner_art = str(v.get('art') or v.get('backdrop') or '').startswith(('beat:', 'clip:'))
         if not prop and not owner_art:
             if kind == 'map' and v.get('focus') == 'europe':
                 prop = 'passenger_plane'
