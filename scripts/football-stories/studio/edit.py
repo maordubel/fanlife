@@ -442,8 +442,16 @@ class Editor:
     def follow_shot(self, sp: SpriteFactory, k: str, v: dict, s: dict, dur: float, seed: int, cues: list, shake: list):
         """Once per film: a supporters' card to fill in, a JOIN US! stamp, and a subscribe button that a pointer presses
         on the very word the narrator says it — the button turns to SUBSCRIBED, the bell rings and the end cheers."""
-        world = self.backdrop(v.get('backdrop') or 'terrace-crowd', seed, dim=0.45)
+        world = self.backdrop(v.get('backdrop') or self.follow_backdrop(), seed, dim=0.45)
         layers: list[Layer] = []
+        if cut_path('cut:common/fig-supporter-wave-in-kr'):  # a supporter beckoning the viewer in, behind the card
+            fig = self.cut_img('cut:common/fig-supporter-wave-in-kr', 760)
+            def beckon(t, im=fig, t0=0.15):
+                if t < t0:
+                    return None
+                kk = ease_out_cubic(min(1.0, (t - t0) / 0.7))
+                return Pose(-im.width / 2 + (W * 0.075 + im.width / 2) * kk, H - im.height / 2 + 30, 1.0, 1.5 * math.sin(t * 1.7), 1.0)
+            layers.append(Layer(fig, beckon, settle=1e9))
         card = taped(fit(_img(sp.follow_card(k, 'Join the terrace', 'Subscribe for stories from the stands')), 1240, 640), seed)
         cx, cy = W * 0.43, H * 0.40
         layers.append(Layer(card, slide_in(cx, cy, 0.3, frm=(-900, 40), rot0=-5, rot1=-1.5, dur=0.6), settle=1e9))
@@ -481,9 +489,38 @@ class Editor:
             fade = clamp(1 - (t - t1 - 1.2) / 0.5)
             return None if fade <= 0 else Pose(bx + 120, by + 30, press, 0, fade)
         layers.append(Layer(ptr, point, settle=1e9))
+        if cut_path('cut:common/prop-handbell-n'):  # the bell rings when the button is pressed
+            bell = self.cut_img('cut:common/prop-handbell-n', 210)
+            def ring(t, t0=t_click + 0.1):
+                if t < t0:
+                    return None
+                kk = ease_out_back(min(1.0, (t - t0) / 0.3), 2.4)
+                swing = 18 * math.sin((t - t0) * 16) * max(0.0, 1 - (t - t0) / 1.6)
+                return Pose(bx + 330, by - 150, max(0.01, kk), swing, 1.0)
+            layers.append(Layer(bell, ring, settle=1e9))
+            cues.append((t_click + 0.1, 'whoosh'))
         shake.append((t_click, 7))
         cues += [(t_click, 'stamp'), (t_click + 0.1, 'crowd-goal')]
         return world, layers, cam_push(1.0, 1.06, -20, 0, dur)
+
+    FOLLOW_BACKDROPS = ('follow-seat-kept-kr', 'follow-turnstile-welcome-kr', 'follow-away-end-gap-kr', 'follow-pub-door-kr')
+
+    def follow_backdrop(self) -> str:
+        """One of the owner's follow-moment pictures, chosen by club and season, never one in the rival's colours."""
+        bans = set(self.pal.bans)
+        opts = []
+        for slug in self.FOLLOW_BACKDROPS:
+            key = f'beat:common/{slug}'
+            if not beat_path(key):
+                continue
+            meta = piece_meta(key)
+            fam = set(meta.get('families') or []) - ({'red'} if meta.get('accent') == 'key-red' else set())
+            if not bans & fam:
+                opts.append(key)
+        if not opts:
+            return 'terrace-crowd'
+        h = int(hashlib.sha256(f"{self.ledger.get('club_id')}:{self.ledger.get('season')}".encode()).hexdigest()[:8], 16)
+        return opts[h % len(opts)]
 
     # ---------------------------------------------------------------- the closing call to the site
     FEATURES = (('Trivia', 'brand/weekly/plates/cheer-line.webp'), ('Timeline', 'brand/magazine/photos/memorabilia.webp'),

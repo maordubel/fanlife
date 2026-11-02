@@ -71,3 +71,22 @@ The studio puts the subscribe button in that gap.
 Put everything in one ZIP and name each file by its key: `follow-seat-kept-kr.png`, `clip-terrace-makes-room-kr.mp4`.
 Upload it in the chat. I ingest it with `ingest-art.py` (de-yellow, cut-outs, recolour test), and from the next film
 on the follow moment uses the new pieces by itself.
+
+## Received — 2.11.2026 (drafts)
+
+In use now:
+- **Backdrops:** the four `follow-*` stills. Their torn borders are cropped and they are rescaled to 1920×1080. Each film
+  picks one by club and season.
+- **Cut-outs:** `fig-supporter-wave-in-kr` beckons from behind the card, and `prop-handbell-n` rings when the button is
+  pressed.
+
+In the library, not placed yet:
+- `fig-supporter-make-room-kr` and `close-scarf-handover-kr`.
+- `close-hand-press-n`: its own round button overlaps the studio's button. A version with the finger on empty air would
+  replace the arrow.
+- `prop-member-card-blank-n`: it carries a drawn scene, so the studio keeps printing its own card.
+
+Still wanted:
+- The three clips.
+- The three parallax layers, drawn as one picture so they line up (the drafts were generated separately).
+- Backdrops at 3840×2160 (the drafts are 1672×941).

@@ -964,6 +964,81 @@
     1400,
     896
    ]
+  },
+  {
+   "key": "cut:common/fig-supporter-wave-in-kr",
+   "motion": "stand",
+   "families": [
+    "red"
+   ],
+   "source": "fig-supporter-wave-in-kr.png",
+   "sha256": "72851a8ea96f6850",
+   "size": [
+    863,
+    1400
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/fig-supporter-make-room-kr",
+   "motion": "rise",
+   "families": [
+    "red"
+   ],
+   "source": "fig-supporter-make-room-kr.png",
+   "sha256": "f41e69d1f5b6b7e2",
+   "size": [
+    1330,
+    1023
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/close-hand-press-n",
+   "motion": "pop",
+   "families": [],
+   "source": "close-hand-press-n.png",
+   "sha256": "6b7fa8b94247ccf1",
+   "size": [
+    1503,
+    840
+   ]
+  },
+  {
+   "key": "cut:common/close-scarf-handover-kr",
+   "motion": "pop",
+   "families": [
+    "red"
+   ],
+   "source": "close-scarf-handover-kr.png",
+   "sha256": "3a41cf3649706af7",
+   "size": [
+    1879,
+    836
+   ],
+   "accent": "key-red"
+  },
+  {
+   "key": "cut:common/prop-handbell-n",
+   "motion": "pop",
+   "families": [],
+   "source": "prop-handbell-n.png",
+   "sha256": "e4e17ffdbacc90a9",
+   "size": [
+    1077,
+    1266
+   ]
+  },
+  {
+   "key": "cut:common/prop-member-card-blank-n",
+   "motion": "pop",
+   "families": [],
+   "source": "prop-member-card-blank-n.png",
+   "sha256": "a5376d111f3c40c5",
+   "size": [
+    1671,
+    851
+   ]
   }
  ]
 }
