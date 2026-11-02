@@ -34,7 +34,9 @@ footage for it is dropped, not filled.
 - Added score only from the studio's synthesised score (`studio/audio.py`); never a library track without a licence row.
 - **Narration is free** (owner, 2.11.2026): a self-hosted open model with a licence that allows a monetised channel
   (Kokoro — Apache-2.0, Chatterbox — MIT), never a paid API. `voice_audition.py` reads the same lines with each
-  candidate; the owner picks by ear and the pick is written here. XTTS-v2 (non-commercial) and F5-TTS (CC-BY-NC) are out.
+  candidate; the owner picks by ear and the pick is written here.
+  **The narrator is Kokoro `bm_lewis` (British male), speed 0.94** — take B, owner, 2.11.2026. Fixed in `series.json`;
+  every film of the series uses it, so the channel has one voice. XTTS-v2 (non-commercial) and F5-TTS (CC-BY-NC) are out.
 
 ## 4 · Anonymity — the owner is never in the film
 
