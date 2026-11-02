@@ -188,12 +188,16 @@ def t_band(P: Painter, f: F, headline: str, sub: str, out: Path) -> Path:
 
 
 def t_caption(P: Painter, words: list[str], active: int, out: Path) -> Path:
+    """The studio's caption plate (studio/captions.py), stood up for 9:16: an ink plate on an accent second plate,
+    words in capitals, the spoken word on an accent block, the words still to come in warm grey."""
     spans = ''.join(
-        f'<span class="head" style="display:inline-block;margin:4px 6px;padding:6px 12px 0;font-size:74px;'
-        + ('background:var(--acc);color:var(--onacc);border:5px solid var(--ink);box-shadow:7px 7px 0 var(--ink);transform:rotate(-2deg)'
-           if i == active else 'color:var(--paper);-webkit-text-stroke:6px var(--ink);paint-order:stroke fill')
+        f'<span class="head" style="display:inline-block;margin:2px 8px;padding:4px 10px 0;font-size:70px;text-transform:uppercase;'
+        + ('background:var(--acc);color:var(--paper)' if i == active else
+           ('color:var(--paper)' if i < active or active < 0 else 'color:#968E80'))
         + f'">{esc(w)}</span>' for i, w in enumerate(words))
-    body = f'<div style="position:absolute;left:60px;right:150px;top:1330px;text-align:center">{spans}</div>'
+    body = (f'<div style="position:absolute;left:60px;right:150px;top:1330px;text-align:center">'
+            f'<div style="display:inline-block;background:var(--ink);box-shadow:12px 12px 0 var(--acc);padding:20px 22px 14px;'
+            f'transform:rotate(-1.5deg)">{spans}</div></div>')
     return P.shoot(out, (1080, 1920), body)
 
 

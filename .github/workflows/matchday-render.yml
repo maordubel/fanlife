@@ -9,6 +9,7 @@ on:
       - 'scripts/football-stories/matchday/episodes/**'
       - 'scripts/football-stories/matchday/render.py'
       - 'scripts/football-stories/matchday/cards.py'
+      - 'scripts/football-stories/matchday/film.py'
 permissions:
   contents: write
 concurrency:
@@ -26,7 +27,8 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           ffmpeg -hide_banner -filters | grep -q zscale || { echo "::error::ffmpeg has no zscale (HDR tone map)"; exit 1; }
-          pip install -q numpy pillow playwright kokoro-onnx soundfile faster-whisper
+          pip install -q numpy pillow playwright kokoro-onnx soundfile faster-whisper fonttools brotli
+          npm install --no-save --no-audit --no-fund world-atlas@2
           python -m playwright install --with-deps chromium > /dev/null
       - name: Voice model (cached)
         id: kokoro
@@ -44,9 +46,10 @@ jobs:
           for ep in scripts/football-stories/matchday/episodes/*.json; do
             sub=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['folder'])" "$ep")
             python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/footage" "$sub"
-            for cut in film reel; do
-              python3 scripts/football-stories/matchday/render.py "$ep" "$RUNNER_TEMP/footage" "$RUNNER_TEMP/out/$(basename "$ep" .json)" --cut $cut
-            done
+            out="$RUNNER_TEMP/out/$(basename "$ep" .json)"
+            # the film is cut on the Football Stories studio engine; the reel keeps the 9:16 filter-graph cut
+            python3 scripts/football-stories/matchday/film.py "$ep" "$RUNNER_TEMP/footage" "$out"
+            python3 scripts/football-stories/matchday/render.py "$ep" "$RUNNER_TEMP/footage" "$out" --cut reel
           done
       - name: Keep the masters (artifact)
         uses: actions/upload-artifact@v4
