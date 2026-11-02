@@ -49,7 +49,7 @@ jobs:
             out="$RUNNER_TEMP/out/$(basename "$ep" .json)"
             # the film is cut on the Football Stories studio engine; the reel keeps the 9:16 filter-graph cut
             python3 scripts/football-stories/matchday/film.py "$ep" "$RUNNER_TEMP/footage" "$out"
-            python3 scripts/football-stories/matchday/render.py "$ep" "$RUNNER_TEMP/footage" "$out" --cut reel
+            python3 scripts/football-stories/matchday/film.py "$ep" "$RUNNER_TEMP/footage" "$out" --reel
           done
       - name: Keep the masters (artifact)
         uses: actions/upload-artifact@v4
@@ -57,6 +57,14 @@ jobs:
           name: masters
           path: ${{ runner.temp }}/out/**/*[!w].mp4
           retention-days: 30
+      - name: Publish files (the cut that goes to YouTube and Telegram, metadata stripped)
+        run: |
+          mkdir -p "$RUNNER_TEMP/pub" && find "$RUNNER_TEMP/out" -name '*-publish.mp4' -exec cp {} "$RUNNER_TEMP/pub/" \;
+          find "$RUNNER_TEMP/out" -name 'thumbnail.jpg' -exec sh -c 'cp "$1" "$RUNNER_TEMP/pub/$(basename "$(dirname "$(dirname "$1")")")-thumbnail.jpg"' _ {} \;
+          cd "$RUNNER_TEMP/pub" && git init -q && git checkout -q -b matchday-publish
+          git config user.name "fanlife-render" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -qm "Publish files $(date -u +%FT%TZ) from ${GITHUB_SHA::7}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" matchday-publish
       - name: Publish previews and reports (not the footage, not the masters)
         run: |
           cd "$RUNNER_TEMP/out"

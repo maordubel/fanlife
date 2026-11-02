@@ -330,111 +330,84 @@
     "description": "I WAS THERE · Grbavica, Sarajevo · 21 September 2024. Željezničar v Zrinjski Mostar, Premier League BiH, round 7. A night on the terrace in the words of the stand: the road, the city, the home end in red before half-time and in blue after it, and a late 0–2. Shot from the stand by the FAN LIFE blog."
   },
   "reel": {
-    "shots": [
+    "beats": [
       {
+        "kind": "hook",
         "clip": "IMG_0112.MOV",
         "in": 0,
-        "dur": 3.4,
+        "dur": 2.6,
+        "clock": "21:48",
         "sound": "clip",
-        "cards": [
-          {
-            "kind": "hook",
-            "hook": "One stand.",
-            "accent": "Two colours.",
-            "at": 0.0
-          }
-        ]
+        "gain": 1.2,
+        "hook": "One stand.",
+        "accent_line": "Two colours.",
+        "music": {
+          "mood": "tense",
+          "energy": 0.5
+        }
       },
       {
+        "kind": "clip",
         "clip": "IMG_0089.MOV",
         "in": 0,
-        "dur": 4.5,
+        "clock": "20:54",
         "sound": "clip",
-        "band": {
-          "headline": "20:54 · Red",
-          "sub": "First half · the home end"
-        }
+        "gain": 1.15,
+        "head": "Red",
+        "kicker": "First half · the home end",
+        "entry": "wipe",
+        "say": "First half. Željezničar's home end goes red."
       },
       {
+        "kind": "clip",
         "clip": "IMG_0105.MOV",
-        "in": 1.5,
-        "dur": 5.5,
-        "sound": "clip",
-        "band": {
-          "headline": "21:47 · Blue",
-          "sub": "After the break · the same fans"
-        }
-      },
-      {
-        "clip": "IMG_0112.MOV",
-        "in": 3.4,
-        "dur": 5.6,
-        "sound": "clip"
-      },
-      {
-        "clip": "IMG_0075.MOV",
-        "in": 2.0,
-        "dur": 5.0,
-        "sound": "clip"
-      },
-      {
-        "clip": "IMG_0082.MOV",
         "in": 1.0,
-        "dur": 4.5,
-        "sound": "clip"
-      },
-      {
-        "clip": "IMG_0076.MOV",
-        "in": 4.0,
-        "dur": 5.5,
+        "clock": "21:47",
         "sound": "clip",
-        "cards": [
-          {
-            "kind": "fulltime",
-            "at": 0.4
-          }
-        ]
+        "gain": 1.15,
+        "head": "Blue",
+        "kicker": "After the break · the same fans",
+        "entry": "wipe",
+        "say": "After the break, the same fans go blue."
       },
       {
+        "kind": "clip",
         "clip": "IMG_0112.MOV",
-        "still": 9.0,
-        "dim": 0.05,
-        "dur": 4.5,
-        "sound": "mute",
-        "score": {
+        "in": 2.6,
+        "clock": "21:48",
+        "sound": "clip",
+        "gain": 1.1,
+        "say": "Until the whole stand disappears."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0075.MOV",
+        "in": 1.0,
+        "clock": "20:37",
+        "sound": "clip",
+        "place": "Grbavica · Sarajevo",
+        "entry": "fade",
+        "say": "Grbavica, Sarajevo. Twenty-first of September, twenty twenty-four."
+      },
+      {
+        "kind": "score",
+        "clip": "IMG_0076.MOV",
+        "in": 3.0,
+        "sound": "clip",
+        "dim": 0.35,
+        "dur": 5.0
+      },
+      {
+        "kind": "end",
+        "min": 4.8,
+        "music": {
           "mood": "major",
-          "energy": 0.3
+          "energy": 0.35
         },
-        "cards": [
-          {
-            "kind": "end",
-            "at": 0.2
-          }
-        ]
+        "say": "Were you there? Stamp your ticket on FAN LIFE."
       }
     ],
-    "lines": [
-      {
-        "shot": 1,
-        "offset": 0.4,
-        "text": "First half. The home end goes red."
-      },
-      {
-        "shot": 2,
-        "offset": 0.8,
-        "text": "After the break, the same fans go blue."
-      },
-      {
-        "shot": 3,
-        "offset": 0.6,
-        "text": "Until the whole stand disappears."
-      },
-      {
-        "shot": 4,
-        "offset": 0.4,
-        "text": "Grbavica, Sarajevo. The twenty-first of September."
-      }
-    ]
+    "description": "One stand, two colours. Željezničar's home end at Grbavica, Sarajevo — red flares in the first half, blue smoke after the break. Željezničar 0–2 Zrinjski Mostar, Premier League BiH, 21 September 2024. Shot from the stand by FAN LIFE."
   },
   "story_note": "Both displays came from the home end — Željezničar's own Curva: red flares at 20:54 in the first half, blue smoke at 21:47 after the break (camera clock). Owner correction, 2.11.2026."
 }
