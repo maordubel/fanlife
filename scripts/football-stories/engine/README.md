@@ -40,3 +40,7 @@ Editorial research and approved sources, per-shot visual design, reusable animat
 ## Optional ElevenLabs voice stage
 
 `voice.py` sends one UTF-8 text file to ElevenLabs' `with-timestamps` endpoint and saves an MP3 and alignment JSON. It requires the user's `ELEVENLABS_API_KEY` environment variable and an explicitly chosen `--voice-id`; it never prints or commits credentials. Running it can incur charges. It refuses to overwrite outputs and does not retry ambiguous failures, which can otherwise generate duplicate charges. Example: `python3 scripts/football-stories/engine/voice.py narration.txt narration.mp3 --voice-id YOUR_VOICE_ID`. This integration has not been tested against a live account; the video assembler currently uses scene-level subtitle timing rather than the returned alignment.
+
+## Hapoel Tel Aviv season dossier
+
+`python3 scripts/football-stories/engine/archive.py --season 1999/00 --output /tmp/hapoel-1999-dossier.json` extracts a chronologically ordered dossier from FanLife's current Hapoel-centric generated match master. Each row keeps its match id, source ids, scorer claims, confidence and conflict references, while the dossier records a source-file SHA-256. It does not convert Hebrew names to English, identify dramatic moments, independently fact-check records, or cover other clubs. An unknown source entry remains null and requires further research. Existing output is not overwritten.
