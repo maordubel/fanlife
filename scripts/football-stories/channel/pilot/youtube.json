@@ -1,0 +1,147 @@
+{
+  "channel_id": "UC2KULoLBFCSZC4jeRGYkKfQ",
+  "title": "Five Days in May: Hapoel Tel Aviv's Double",
+  "description": "In 1999–2000, Hapoel Tel Aviv had not won the Israeli league for twelve seasons. Then came five days in May: the title secured at Bnei Yehuda on 13 May, and on 17 May a State Cup final against Beitar Jerusalem that went to penalties.\n\nThis film follows the whole season from the terraces, in order: the UEFA Cup trip to Yerevan and the defeats to Celtic, the autumn run, the derbies with Maccabi Tel Aviv, the February slump that made supporters fear the worst, the cup run through Acre, Maccabi Tel Aviv, Be'er Sheva and Maccabi Haifa, and the double.\n\nEvery score, date and table on screen is printed from FanLife's archive records and the sources listed below. Where the archive does not name every scorer, the film does not name any.\n\nChapters\n0:00 Five days in May\n0:49 Twelve seasons\n2:08 Summer and Europe\n4:05 The autumn run\n5:57 Winter\n7:28 Spring\n9:42 The double\n\nSources\n• Vikipoel, the Hapoel Tel Aviv supporters' wiki — https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games\n• 1999–2000 Israeli Premier League — Wikipedia — https://en.wikipedia.org/wiki/1999%E2%80%932000_Israeli_Premier_League\n• 1999–2000 Israel State Cup — Wikipedia — https://en.wikipedia.org/wiki/1999%E2%80%932000_Israel_State_Cup\n• Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13) — https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.\n\nCredits\n• Facts: the FanLife archive and the sources above. Scores, dates and tables on screen are printed from those records.\n• Narration: Kokoro synthetic British voice (open model, Apache-2.0)\n• Score and sound effects: composed for this film; crowd atmosphere from FanLife's own recordings.\n• Illustrations and stop-motion clips: AI-generated paper-cut art made for FanLife. They are symbolic: fictional figures, not photographs of the matches.\n• Maps: Natural Earth (public domain).\n• Narration voice and illustrations are AI-generated. No archive footage is shown; graphics present archive records.\n\nFootball is ninety minutes. Being a supporter is a lifetime.\nFanLife: Football Stories · @FanLifeFootballStories",
+  "tags": [
+    "Hapoel Tel Aviv",
+    "Hapoel Tel Aviv 1999-2000",
+    "Israeli Premier League",
+    "Israel State Cup",
+    "State Cup final 2000",
+    "Beitar Jerusalem",
+    "Maccabi Tel Aviv derby",
+    "Tel Aviv derby",
+    "football documentary",
+    "football history",
+    "Bloomfield Stadium",
+    "Israeli football",
+    "double winners",
+    "FanLife"
+  ],
+  "category": "Sports",
+  "category_id": "17",
+  "default_language": "en",
+  "made_for_kids": false,
+  "privacy_default": "private",
+  "synthetic_media": {
+    "altered_or_synthetic": false,
+    "reason": "No realistic synthetic scene, no altered footage, no real person depicted or voiced: the illustrations are stylised paper-cut collage and the narrator is a synthetic voice of no real person.",
+    "transparency_line": "Narration voice and illustrations are AI-generated. No archive footage is shown; graphics present archive records."
+  },
+  "title_candidates": [
+    {
+      "title": "Hapoel Tel Aviv 1999–2000: The Double, Told From the Terraces",
+      "angle": "search"
+    },
+    {
+      "title": "Hapoel Tel Aviv's Double Season 1999/2000 | Full Story",
+      "angle": "search"
+    },
+    {
+      "title": "Israeli Premier League 1999–2000: How Hapoel Tel Aviv Won the Double",
+      "angle": "search"
+    },
+    {
+      "title": "Hapoel Tel Aviv v Beitar Jerusalem, 2000 State Cup Final: The Season Behind It",
+      "angle": "search"
+    },
+    {
+      "title": "Twelve Years Without a Title. Then Five Days in May.",
+      "angle": "discovery"
+    },
+    {
+      "title": "The Season the Red Half of Tel Aviv Stopped Waiting",
+      "angle": "discovery"
+    },
+    {
+      "title": "Eighty-Five Points and a Penalty Shoot-Out",
+      "angle": "discovery"
+    },
+    {
+      "title": "Five Days in May: Hapoel Tel Aviv's Double",
+      "angle": "discovery"
+    },
+    {
+      "title": "From Yerevan to Ramat Gan: A Season of Hapoel Tel Aviv",
+      "angle": "discovery"
+    },
+    {
+      "title": "Hapoel Tel Aviv 1999/2000 — League and Cup, Match by Match",
+      "angle": "search"
+    }
+  ],
+  "shorts": [
+    {
+      "hook": "Twelve seasons without a title. Then five days in May.",
+      "idea": "Fast cut of the 13 May draw at Bnei Yehuda and the 17 May shoot-out, ending on the 4–2 score card.",
+      "claim_ids": [
+        "m_e550af63bd72",
+        "w-cupfinal-pens",
+        "w-previous-title"
+      ]
+    },
+    {
+      "hook": "Three goals in fifteen minutes.",
+      "idea": "Ronen Harazi's hat-trick at Maccabi Herzliya, January 2000, told through the score card and the January run.",
+      "claim_ids": [
+        "m_1a1cf5d6505a"
+      ]
+    },
+    {
+      "hook": "Lose the derby in February, win it in April.",
+      "idea": "The two league derbies with Maccabi Tel Aviv and the cup derby in March, as three score cards.",
+      "claim_ids": [
+        "m_2c740a9778aa",
+        "m_6bc4eefce857",
+        "m_23e9a1efc552"
+      ]
+    }
+  ],
+  "thumbnail_concepts": [
+    {
+      "text": "Five Days in May",
+      "concept": "Packed terrace in two-tone ink, headline in Weekly type, club red stripe.",
+      "claim": "m_84f165f681f3"
+    },
+    {
+      "text": "Twelve Years Waiting",
+      "concept": "The tunnel to the pitch, light at the end.",
+      "claim": "w-previous-title"
+    },
+    {
+      "text": "The Double",
+      "concept": "Supporter from behind holding a scarf high under floodlight.",
+      "claim": "honour-199900-israel-state-cup"
+    }
+  ],
+  "chapters": [
+    {
+      "time": "0:00",
+      "title": "Five days in May"
+    },
+    {
+      "time": "0:49",
+      "title": "Twelve seasons"
+    },
+    {
+      "time": "2:08",
+      "title": "Summer and Europe"
+    },
+    {
+      "time": "4:05",
+      "title": "The autumn run"
+    },
+    {
+      "time": "5:57",
+      "title": "Winter"
+    },
+    {
+      "time": "7:28",
+      "title": "Spring"
+    },
+    {
+      "time": "9:42",
+      "title": "The double"
+    }
+  ]
+}

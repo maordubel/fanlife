@@ -48,7 +48,9 @@ def provider() -> str:
     want = os.environ.get('STORIES_VOICE', '').strip()
     if want:
         return want
-    return 'elevenlabs' if os.environ.get('ELEVENLABS_API_KEY', '').strip() else 'kokoro'
+    # Free by default: Kokoro runs on the worker. ElevenLabs only when asked for (STORIES_VOICE=elevenlabs) — its free
+    # tier does not cover a full film and the paid one costs money.
+    return 'kokoro'
 
 
 def _wav_write(path: Path, samples, sr: int = SR) -> None:

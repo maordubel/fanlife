@@ -1,7 +1,7 @@
 import {adminFromRequest} from '@/lib/master/admin'
 import {StoryError,ownerAct,type Job,type OwnerAction} from '@/lib/stories/jobs'
 import {getJob,updateJob} from '@/lib/stories/store'
-import {signedDownload} from '@/lib/stories/media'
+import {removeFolder,signedDownload} from '@/lib/stories/media'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -34,6 +34,11 @@ export async function POST(r:Request,{params}:{params:{id:string}}){
   const a=await body(r) as OwnerAction
   if(!a||typeof a!=='object'||!ACTIONS.has((a as {action:string}).action))throw new StoryError('ACTION','Unknown action.')
   const job=await updateJob(params.id,j=>ownerAct(j,a,s.actor||'owner'))
+  // Free plan, 1 GB: once YouTube has the film, the master's chunks leave the bucket (preview and package stay).
+  if(a.action==='upload_done'&&job.artefacts?.master?.chunks.length){
+   const names=job.artefacts.master.chunks.map(c=>c.path.split('/').pop()!).filter(Boolean)
+   try{await removeFolder(job.id,names)}catch{/* the film is on YouTube either way; a later delete can retry */}
+  }
   return json({job})
  }catch(e){return fail(e)}
 }
