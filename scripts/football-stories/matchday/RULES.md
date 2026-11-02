@@ -10,10 +10,10 @@ this series needs from it is asked for there, never edited from here (rule 120).
 
 | | Film (YouTube) | Reel (Instagram · TikTok · Shorts) |
 |---|---|---|
-| frame | 1920×1080, 30 fps | 1080×1920, 30 fps |
+| frame | 1920×1080, 25 fps (the studio engine) | 1080×1920, 30 fps |
 | length | 3:00–5:00 | 15–45 s (one moment each) |
 | per matchday | 1 | 3–5, cut from the film's edit list |
-| captions | SRT/VTT, not burnt | burnt in, 3–4 words, spoken word on the club colour |
+| captions | burnt in, the studio plate (`studio/captions.py`), word-timed by Whisper on the voice; SRT too | burnt in, 3 words, the same plate stood up |
 | templates | `templates.py` → `wide-*` | `templates.py` → `tall-*` (keep `TALL_SAFE` clear) |
 | master | H.264 High, CRF 18, AAC 320k / 48 kHz | same, ≤ 50 MB so it travels by Telegram |
 
@@ -64,6 +64,21 @@ footage for it is dropped, not filled.
   pack), with its source on the full-time card and in the description. No row → no score on screen (rule 11).
 - The matchday is found by the camera's own date (`survey.py → matchday`) + the ground, then confirmed by the owner.
 - Narration never claims what the footage does not show or the archive does not hold.
+- **Whose display is it?** Pyro, smoke, a banner: the film says which stand, and only what the frame shows (the
+  banner on the curve, the end it sits on). It never invents an exchange between ends. Episode 1 said "one end turns
+  red, the other answers in blue" — both were Željezničar's own home end (owner, 2.11.2026); the edit now says so, and
+  the camera's clock (20:54 · 21:47) is printed on the clip as proof of when.
+
+## 6a · The film is cut on the studio engine
+
+`film.py` builds every shot with PR #353's own parts: `motion.Shot`/`ShotRenderer` (camera push on a 1.12× canvas,
+grain, the black/fade/accent-wipe entries), `paper.ClipWorld` (the footage as a moving world), `SpriteFactory`
+(title, chapter + date stamp, ticket, score + scorer chips, labels, turning plates, CTA tiles, URL banner),
+`maps.render` (where the two clubs are), `captions.Captions` (burnt word-by-word plates) and `audio` (score, paper /
+stamp / whoosh / pop / end cues, the real crowd recordings). A beat lasts lead + voice + tail, so picture, voice and
+captions cannot drift. The episode file is the edit: `film.beats`, one shot each. The camera's own clock goes on
+every clip as an ink chip — the diary of the night. Footage is never held on a frozen last frame: a beat longer than
+its clip slows the clip (to 0.55× at most) instead.
 
 ## 7 · Picture
 
