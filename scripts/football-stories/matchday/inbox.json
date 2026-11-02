@@ -1,4 +1,6 @@
 {
   "_": "The owner's Drive folder of matchday footage. Changing this file starts the survey (.github/workflows/matchday-survey.yml).",
-  "folder": "https://drive.google.com/drive/folders/1o0R5Z7E47gbr9S64YfNGDFq1OimK76PB"
+  "folder": "https://drive.google.com/drive/folders/1o0R5Z7E47gbr9S64YfNGDFq1OimK76PB",
+  "round": 2,
+  "note": "Sarajevo folder complete (owner, 2.11.2026 14:26)"
 }
