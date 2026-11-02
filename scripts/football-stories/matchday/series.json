@@ -1,0 +1,13 @@
+{
+  "_": "I WAS THERE — the series' fixed settings. Owner decisions, 2.11.2026.",
+  "channel": {"id": "UC2KULoLBFCSZC4jeRGYkKfQ", "handle": "@FanLifeFootballStories", "playlist": "I WAS THERE"},
+  "colours": {"rival_lock": false, "recolour_footage": false},
+  "voice": {
+    "provider": "kokoro",
+    "voice": "bm_lewis",
+    "lang": "en-gb",
+    "speed": 0.94,
+    "licence": "Kokoro-82M, Apache-2.0",
+    "chosen": "Take B of the narration audition (matchday-voice branch), owner, 2.11.2026"
+  }
+}
