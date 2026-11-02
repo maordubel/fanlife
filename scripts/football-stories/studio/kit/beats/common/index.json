@@ -2434,6 +2434,62 @@
     768
    ],
    "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/follow-away-end-gap-kr",
+   "description": "An away end in a big foreign ground, red scarves in the seats with one gap in the front row (for: the follow moment in European films)",
+   "families": [
+    "red"
+   ],
+   "source": "follow-away-end-gap-kr.png",
+   "sha256": "5bd2cd5a568166e4",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/follow-pub-door-kr",
+   "description": "The open door of a matchday bar, red scarves on hooks, an empty stool (for: the follow moment, the old days)",
+   "families": [
+    "red"
+   ],
+   "source": "follow-pub-door-kr.png",
+   "sha256": "5785b19350fc432b",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/follow-seat-kept-kr",
+   "description": "A packed terrace from behind, one empty step in the middle with a folded red scarf laid on it (for: the follow moment, a place kept for you)",
+   "families": [],
+   "source": "follow-seat-kept-kr.png",
+   "sha256": "015ead4a1e299ca9",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/follow-turnstile-welcome-kr",
+   "description": "An old iron turnstile seen from inside the ground, a steward waving the next supporter through (for: the follow moment, welcome)",
+   "families": [],
+   "source": "follow-turnstile-welcome-kr.png",
+   "sha256": "d91e3c4a6c2705bf",
+   "size": [
+    1920,
+    1080
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
   }
  ]
 }

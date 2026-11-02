@@ -185,43 +185,101 @@ def hapoel_ledger(season: str) -> dict:
     }
 
 
+def season_of(date: str) -> str | None:
+    """A European season label for a date: July–June, '2002/03'."""
+    if not isinstance(date, str) or len(date) < 7 or not date[:4].isdigit():
+        return None
+    y, mo = int(date[:4]), int(date[5:7])
+    a = y if mo >= 7 else y - 1
+    return f'{a}/{str(a + 1)[2:]}'
+
+
+def _uefa_comp(comp: str | None, season: str) -> tuple[str | None, str | None]:
+    """The competition's name IN THAT SEASON, and a stage the label carries. UEFA's archive files every UEFA Cup tie under
+    'UEFA Europa League'; before 2009/10 the competition was the UEFA Cup, and a film says what it was called then."""
+    if not comp:
+        return None, None
+    stage = None
+    c = comp.strip()
+    if c.lower().endswith(' final'):
+        c, stage = c[:-6].strip(), 'Final'
+    if c == 'UEFA Europa League' and int(season[:4]) < 2009:
+        c = 'UEFA Cup'
+    if c == 'UEFA Champions League' and int(season[:4]) < 1992:
+        c = 'European Cup'
+    return c, stage
+
+
+def _split_name(name: str, score: str) -> tuple[str, str] | None:
+    """'Celtic 5-2 Rangers' with score '5-2' → ('Celtic', 'Rangers')."""
+    if not isinstance(name, str) or not isinstance(score, str) or f' {score} ' not in name:
+        return None
+    h, a = name.split(f' {score} ', 1)
+    return h.strip(), a.strip()
+
+
 def compiled_ledger(club_id: str, season: str) -> dict:
+    """FAN LIFE club packs (content/compiled/<club>.json): every APPROVED, sourced match of the season."""
     path = COMPILED / f'{club_id}.json'
     if not path.exists():
         raise StageError('CLUB_NOT_COMPILED', f'No compiled pack for {club_id}; run the build (npm run clubs:precompile)')
     raw = path.read_bytes()
-    data = json.loads(raw)
-    club = data.get('club') or {}
-    name = club.get('name') or club_id
-    matches = data.get('matches') or data.get('data', {}).get('matches') or []
+    pack = json.loads(raw)
+    data = pack.get('data') or pack
+    ident = data.get('identity') or {}
+    name = ident.get('name') or club_id
+    srcs = {s['id']: s for s in (data.get('sources') or []) if isinstance(s, dict) and s.get('id')}
     claims, held = [], []
-    for m in matches:
-        if (m.get('season') or '') != season:
+    rows = []
+    for m in data.get('matches') or []:
+        v = m.get('value') or {}
+        if v.get('sport', 'football') != 'football' or season_of(v.get('on')) != season:
             continue
-        date, src = m.get('date'), m.get('source') or {}
-        sh, sa = m.get('homeScore', m.get('score', {}).get('home') if isinstance(m.get('score'), dict) else None), m.get('awayScore')
-        reasons = [r for r, bad in (('no date', not date), ('no score', sh is None or sa is None),
-                                    ('no source', not src.get('url')), ('unreviewed', m.get('approved') is False)) if bad]
+        rows.append(m)
+    rows.sort(key=lambda m: (m['value'].get('on') or '9999', m.get('id')))
+    for m in rows:
+        v = m['value']
+        date, score = v.get('on'), v.get('score')
+        sources = [{'id': i, 'title': (srcs.get(i) or {}).get('title'), 'url': (srcs.get(i) or {}).get('url')}
+                   for i in m.get('sources') or []]
+        sources = [x for x in sources if str(x['url'] or '').startswith('https://')]
+        sides = _split_name(v.get('name'), score)
+        reasons = [r for r, bad in (
+            ('no date', not date or len(date) < 10),
+            ('no score', not sides),
+            ('no https source', not sources),
+            ('not approved', m.get('status') != 'approved'),
+            ('confidence below 2', (m.get('confidence') or 0) < 2),
+        ) if bad]
+        if sides and name not in sides:
+            reasons.append(f'neither side is {name}')
         if reasons:
             held.append({'match_id': m.get('id'), 'date': date, 'reasons': reasons})
             continue
-        home, away = m.get('home'), m.get('away')
-        ours_home = m.get('side', 'home') == 'home'
+        home, away = sides
+        sh, sa = (int(x) for x in score.split('-'))
+        ours_home = home == name
         cg, og = (sh, sa) if ours_home else (sa, sh)
-        claims.append({'id': m.get('id'), 'type': 'match', 'fact': {
-            'kind': 'match', 'date': date, 'competition': m.get('competition'), 'stage': m.get('stage'), 'club': name,
-            'opponent': m.get('opponent'), 'side': 'home' if ours_home else 'away', 'home': home, 'away': away,
+        comp, stage = _uefa_comp(v.get('competition'), season)
+        named = [x for x in v.get('scorers') or [] if isinstance(x, dict) and x.get('name')]
+        complete = len(named) == cg
+        claims.append({'id': m['id'], 'type': 'match', 'fact': {
+            'kind': 'match', 'date': date, 'competition': comp, 'stage': v.get('stage') or stage, 'club': name,
+            'opponent': away if ours_home else home, 'side': 'home' if ours_home else 'away', 'home': home, 'away': away,
             'score_home': sh, 'score_away': sa, 'club_goals': cg, 'opponent_goals': og,
-            'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': None, 'scorers': None,
-            'scorers_note': 'Scorers not printed by the generic adapter.'},
-            'sources': [{'id': src.get('id'), 'title': src.get('title'), 'url': src.get('url')}],
-            'confidence': m.get('confidence'), 'status': 'archive', 'conflicts': []})
+            'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': None,
+            'scorers': [{'name': x['name'], 'minute': x.get('minute'), 'penalty': x.get('penalty'), 'own_goal': x.get('ownGoal')}
+                        for x in named] if complete else None,
+            'scorers_note': None if complete else 'Scorers not printed: the record does not name every goal.'},
+            'sources': sources, 'confidence': m.get('confidence'), 'status': 'archive', 'conflicts': []})
     if not claims:
         raise StageError('SEASON_NOT_IN_ARCHIVE', f'{name} {season}: no approved, sourced match records')
-    return {'version': 1, 'club_id': club_id, 'club_name': name, 'season': season,
+    return {'version': 1, 'club_id': club_id, 'club_name': name, 'country': ident.get('country'), 'season': season,
             'built_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
             'archive': {'file': f'content/compiled/{club_id}.json', 'sha256': sha256_bytes(raw)},
-            'claims': claims, 'held': held, 'note': 'Generic adapter: matches only.'}
+            'claims': claims, 'held': held,
+            'note': 'Approved club-pack records with sources and confidence. Only the matches the archive holds for the season: '
+                    'a total is the season only when the summary says complete.'}
 
 
 def build_ledger(club_id: str, season: str, extra_claims: list[dict] | None = None) -> dict:

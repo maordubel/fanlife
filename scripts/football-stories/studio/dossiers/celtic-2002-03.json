@@ -1,0 +1,431 @@
+{
+ "club_id": "celtic",
+ "season": "2002/03",
+ "researched": "2026-11-02",
+ "note": "Claims read from public pages on the date above, beside the archive (UEFA match records). Two independent readings agree: the UEFA records in the archive give the same seven ties and aggregates as the route-to-the-final table. The crowd in Seville is an ESTIMATE in every source and is said as one; the attendance inside the ground is printed nowhere because two figures exist.",
+ "claims": [
+  {
+   "id": "w-final",
+   "type": "match-detail",
+   "fact": {
+    "kind": "final",
+    "date": "2003-05-21",
+    "competition": "UEFA Cup",
+    "stage": "Final",
+    "venue": "Estadio Olímpico de Sevilla",
+    "city": "Seville",
+    "club": "Celtic",
+    "opponent": "FC Porto",
+    "score": "2–3",
+    "after_extra_time": true,
+    "deciding_minute": 115,
+    "deciding_scorer": "Derlei",
+    "opponent_scorers": [
+     "Derlei",
+     "Dmitri Alenichev",
+     "Derlei"
+    ],
+    "club_scorers": [
+     {
+      "name": "Henrik Larsson",
+      "minute": 47
+     },
+     {
+      "name": "Henrik Larsson",
+      "minute": 57
+     }
+    ],
+    "red_cards": [
+     {
+      "name": "Bobo Baldé",
+      "club": "Celtic",
+      "minute": 96
+     },
+     {
+      "name": "Nuno Valente",
+      "club": "FC Porto",
+      "minute": null
+     }
+    ],
+    "referee": "Ľuboš Micheľ",
+    "attendance": null,
+    "attendance_note": "Not printed: sources give 52,140 and 52,972.",
+    "second_porto_goal_within_minutes_of_equaliser": 5,
+    "deciding_goal_minutes_before_end_of_extra_time": 5,
+    "club_players_after_red_card": 10
+   },
+   "sources": [
+    {
+     "title": "2003 UEFA Cup final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2003_UEFA_Cup_final",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "attendance",
+     "values": [
+      52140,
+      52972
+     ],
+     "note": "Two figures in public sources; the film states neither."
+    }
+   ]
+  },
+  {
+   "id": "w-larsson-200",
+   "type": "match-detail",
+   "fact": {
+    "kind": "goal-detail",
+    "date": "2003-05-21",
+    "player": "Henrik Larsson",
+    "minute": 47,
+    "how": "header",
+    "milestone": "his 200th Celtic goal",
+    "ordinal": 200,
+    "tournament_goals": 10,
+    "season_goals_all": 44,
+    "season_goals_league": 28
+   },
+   "sources": [
+    {
+     "title": "2003 UEFA Cup final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2003_UEFA_Cup_final",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "2002–03 Celtic F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Celtic_F.C._season",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-fans-80000",
+   "type": "history",
+   "fact": {
+    "kind": "supporters",
+    "event": "2003 UEFA Cup final",
+    "city": "Seville",
+    "estimate": 80000,
+    "wording": "around",
+    "uefa_quote": "the largest travelling support to have assembled for a single game",
+    "note": "An estimate; no one counted. The ground held around 52,000, so most had no ticket.",
+    "ground_capacity": 52000
+   },
+   "sources": [
+    {
+     "title": "2003 UEFA Cup final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2003_UEFA_Cup_final",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "Celtic plc — Preliminary results for the year ended 30 June 2003 (13 August 2003)",
+     "url": "https://www.investegate.co.uk/announcement/rns/celtic--ccp/final-results-/500299",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "Irish Times — No fairytale ending for Celtic as play-acting Porto pull through",
+     "url": "https://www.irishtimes.com/sport/soccer/worst-sporting-moment-no-fairytale-ending-for-celtic-as-play-acting-porto-pull-through-1.4340296",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-fairplay",
+   "type": "honour",
+   "fact": {
+    "kind": "award",
+    "award": "FIFA Fair Play Award",
+    "year": 2003,
+    "winner": "Celtic's supporters",
+    "reason": "Exemplary behaviour in the 2003 UEFA Cup final",
+    "also": "A UEFA fair play award, presented at a home match the following season"
+   },
+   "sources": [
+    {
+     "title": "FIFA Fair Play Award — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/FIFA_Fair_Play_Award",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "2003 UEFA Cup final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2003_UEFA_Cup_final",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "Celtic F.C. supporters — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_F.C._supporters",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-route",
+   "type": "table",
+   "fact": {
+    "kind": "route",
+    "competition": "UEFA Cup",
+    "season": "2002/03",
+    "rounds": [
+     {
+      "round": "Champions League third qualifying round",
+      "opponent": "Basel",
+      "aggregate": "3–3",
+      "decided": "Basel through on away goals",
+      "legs": [
+       "3–1 (H)",
+       "0–2 (A)"
+      ]
+     },
+     {
+      "round": "First round",
+      "opponent": "Sūduva",
+      "aggregate": "10–1",
+      "legs": [
+       "8–1 (H)",
+       "2–0 (A)"
+      ]
+     },
+     {
+      "round": "Second round",
+      "opponent": "Blackburn Rovers",
+      "aggregate": "3–0",
+      "legs": [
+       "1–0 (H)",
+       "2–0 (A)"
+      ]
+     },
+     {
+      "round": "Third round",
+      "opponent": "Celta Vigo",
+      "aggregate": "2–2",
+      "decided": "Celtic through on away goals",
+      "legs": [
+       "1–0 (H)",
+       "1–2 (A)"
+      ]
+     },
+     {
+      "round": "Fourth round",
+      "opponent": "VfB Stuttgart",
+      "aggregate": "5–4",
+      "legs": [
+       "3–1 (H)",
+       "2–3 (A)"
+      ]
+     },
+     {
+      "round": "Quarter-finals",
+      "opponent": "Liverpool",
+      "aggregate": "3–1",
+      "legs": [
+       "1–1 (H)",
+       "2–0 (A)"
+      ]
+     },
+     {
+      "round": "Semi-finals",
+      "opponent": "Boavista",
+      "aggregate": "2–1",
+      "legs": [
+       "1–1 (H)",
+       "1–0 (A)"
+      ]
+     }
+    ],
+    "agg_numbers": [
+     3,
+     3,
+     10,
+     1,
+     3,
+     0,
+     2,
+     2,
+     5,
+     4,
+     3,
+     1,
+     2,
+     1
+    ],
+    "ties": 7
+   },
+   "sources": [
+    {
+     "title": "2003 UEFA Cup final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2003_UEFA_Cup_final",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "2002–03 Celtic F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Celtic_F.C._season",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-table-2002-03",
+   "type": "table",
+   "fact": {
+    "kind": "table",
+    "season": "2002/03",
+    "competition": "Scottish Premier League",
+    "rows": [
+     {
+      "pos": 1,
+      "club": "Rangers",
+      "points": 97,
+      "goal_difference": 73
+     },
+     {
+      "pos": 2,
+      "club": "Celtic",
+      "points": 97,
+      "goal_difference": 72
+     },
+     {
+      "pos": 3,
+      "club": "Heart of Midlothian",
+      "points": 63,
+      "goal_difference": 6
+     }
+    ],
+    "teams": 12,
+    "matches_each": 38,
+    "won": 31,
+    "drawn": 4,
+    "lost": 3,
+    "phrase": "the closest finish in the history of the SPL",
+    "margin_goal_difference": 1
+   },
+   "sources": [
+    {
+     "title": "2002–03 Scottish Premier League — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Scottish_Premier_League",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "2002–03 Celtic F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Celtic_F.C._season",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-last-day",
+   "type": "match-detail",
+   "fact": {
+    "kind": "final-day",
+    "date": "2003-05-25",
+    "competition": "Scottish Premier League",
+    "celtic": {
+     "opponent": "Kilmarnock",
+     "venue": "Rugby Park",
+     "score": "4–0",
+     "away": true
+    },
+    "rangers": {
+     "opponent": "Dunfermline Athletic",
+     "venue": "Ibrox Stadium",
+     "score": "6–1"
+    },
+    "result": "Rangers champions on goal difference, by one goal",
+    "days_after_final": 4
+   },
+   "sources": [
+    {
+     "title": "2002–03 Scottish Premier League — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Scottish_Premier_League",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "2002–03 Celtic F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Celtic_F.C._season",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-cups",
+   "type": "history",
+   "fact": {
+    "kind": "domestic-cups",
+    "league_cup": {
+     "stage": "Final",
+     "opponent": "Rangers",
+     "score": "1–2",
+     "date": "2003-03-16",
+     "venue": "Hampden"
+    },
+    "scottish_cup": {
+     "stage": "Quarter-final",
+     "opponent": "Inverness Caledonian Thistle",
+     "score": "0–1",
+     "date": "2003-03-23"
+    },
+    "league_cup_final_days_after_liverpool_home": 3,
+    "anfield_days_after_league_cup_final": 4,
+    "inverness_days_after_anfield": 3,
+    "days_liverpool_home_to_inverness": 10
+   },
+   "sources": [
+    {
+     "title": "2002–03 Celtic F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Celtic_F.C._season",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-managers",
+   "type": "person",
+   "fact": {
+    "kind": "managers",
+    "club": "Celtic",
+    "manager": "Martin O'Neill",
+    "opponent_manager": "José Mourinho",
+    "opponent": "FC Porto"
+   },
+   "sources": [
+    {
+     "title": "2002–03 Celtic F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_Celtic_F.C._season",
+     "accessed": "2026-11-02"
+    },
+    {
+     "title": "Irish Times — No fairytale ending for Celtic as play-acting Porto pull through",
+     "url": "https://www.irishtimes.com/sport/soccer/worst-sporting-moment-no-fairytale-ending-for-celtic-as-play-acting-porto-pull-through-1.4340296",
+     "accessed": "2026-11-02"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  }
+ ]
+}

@@ -24,6 +24,7 @@ VISUALS = {
     'turning': {'title', 'subtitle', 'backdrop'},
     'illustration': {'art', 'caption', 'prompt'},
     'ticket': {'claim', 'backdrop'},
+    'follow': {'backdrop'},
     'end': set(),
 }
 PROPS = {'board_member', 'coach', 'football', 'generic_trophy', 'goal_net', 'match_ticket', 'passenger_plane', 'portable_radio',
@@ -32,12 +33,48 @@ LIBRARY_ART = {'tunnel', 'terrace-crowd', 'terrace-empty', 'supporter', 'paper'}
 
 SITE = 'fanlife.dubelteam.com'
 CTA = (f'Every match in this film is waiting in the FanLife archive, with the games, the trivia and the stories of the whole '
-       f'club. Come and play it at {SITE}.')
+       f'club. Come and play it at {SITE}. And if this story was yours too, subscribe, and the next one will find you.')
+
+# The call to follow the channel, said once in every film by a supporter to supporters. No numbers but the free ninety,
+# no promise the channel cannot keep (no schedule), no begging: an invitation onto the terrace. Picked per club and season,
+# so two films in a row do not say the same line.
+FOLLOW = (
+    "Quick one, before we go on. If you've ever stood in the rain for ninety minutes and called it a good day, you belong here. "
+    "Subscribe to FanLife Football Stories, and take your place on the terrace.",
+    "A word from the stands. These films are made for people who still keep the ticket stub in a drawer. If that's you, "
+    "hit subscribe. There is always room in the away end.",
+    "If your club has ever broken your heart, and you went back the next week anyway, this channel is for you. "
+    "Subscribe, switch on the bell, and come to the next match with us.",
+    "Every club has supporters who remember things no record keeps. If you're one of them, subscribe, and tell us your "
+    "season in the comments. The best stories come from the terrace.",
+)
+FOLLOW_AFTER_CHAPTER = 1   # after the second chapter: the viewer has had the hook and the first act, the story is moving
 
 
-def with_cta(s: dict) -> dict:
-    """Every film ends on the site: the closing beat is the narrator sending the viewer to FanLife, on the end visual."""
-    beats = s['chapters'][-1]['beats']
+def follow_line(key: str) -> str:
+    import hashlib
+    return FOLLOW[int(hashlib.sha256(key.encode()).hexdigest(), 16) % len(FOLLOW)]
+
+
+def with_cta(s: dict, key: str = '') -> dict:
+    """Every film asks the viewer to follow the channel once, early, and ends on the site.
+    The follow beat closes the second chapter (or the first, in a one-chapter film); the closing beat sends the viewer to
+    FanLife, on the end visual. Both are added here, so no writer can forget them and no film says them twice."""
+    chapters = s['chapters']
+    if not any(b.get('visual', {}).get('type') == 'follow' for ch in chapters for b in ch.get('beats') or []):
+        ch = chapters[min(FOLLOW_AFTER_CHAPTER, len(chapters) - 1)]
+        beats = ch['beats']
+        if len(chapters) == 1:
+            at = max(1, len(beats) // 3)
+        else:
+            at = len(beats) - (1 if ch is chapters[-1] and beats and beats[-1].get('visual', {}).get('type') == 'end' else 0)
+        beats.insert(at, {'narration': follow_line(key or s.get('hook') or ''), 'claim_ids': [], 'visual': {'type': 'follow'}})
+    else:
+        for ch in chapters:
+            for b in ch['beats']:
+                if b.get('visual', {}).get('type') == 'follow':
+                    b['narration'], b['claim_ids'] = follow_line(key or s.get('hook') or ''), []
+    beats = chapters[-1]['beats']
     if beats and beats[-1].get('visual', {}).get('type') == 'end':
         beats[-1]['narration'] = CTA
         beats[-1]['claim_ids'] = []

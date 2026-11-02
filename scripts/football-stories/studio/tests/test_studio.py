@@ -217,8 +217,25 @@ class ClosingCall(unittest.TestCase):
         self.assertEqual(with_cta(copy.deepcopy(s))['chapters'][-1]['beats'][-1]['narration'], CTA)
         s['chapters'][0]['beats'].append({'narration': 'goodbye', 'claim_ids': [], 'visual': {'type': 'end'}})
         out = with_cta(copy.deepcopy(s))
-        self.assertEqual(len(out['chapters'][0]['beats']), 2)
+        self.assertEqual(out['chapters'][0]['beats'][-1]['visual']['type'], 'end')
         self.assertIn(SITE, out['chapters'][0]['beats'][-1]['narration'])
+        self.assertIn('subscribe', CTA)
+
+    def test_every_film_asks_once_to_follow_after_the_second_chapter(self):
+        from studio.script import FOLLOW, with_cta
+        beat = lambda n: {'narration': n, 'claim_ids': [], 'visual': {'type': 'turning'}}
+        s = {'chapters': [{'title': 'a', 'beats': [beat('1')]}, {'title': 'b', 'beats': [beat('2'), beat('3')]}, {'title': 'c', 'beats': [beat('4')]}]}
+        out = with_cta(copy.deepcopy(s), 'celtic-2002/03')
+        follows = [(ci, b) for ci, ch in enumerate(out['chapters']) for b in ch['beats'] if b['visual']['type'] == 'follow']
+        self.assertEqual(len(follows), 1)
+        self.assertEqual(follows[0][0], 1)
+        self.assertEqual(out['chapters'][1]['beats'][-1]['visual']['type'], 'follow')
+        self.assertIn(follows[0][1]['narration'], FOLLOW)
+        twice = with_cta(copy.deepcopy(out), 'celtic-2002/03')     # idempotent: never two calls in one film
+        self.assertEqual(sum(b['visual']['type'] == 'follow' for ch in twice['chapters'] for b in ch['beats']), 1)
+        for line in FOLLOW:                                          # a supporter's invitation: no number but one and ninety
+            self.assertIn('subscribe', line.lower())
+            self.assertTrue(numbers_in_text(line) <= {1, 90})
 
 
 class Packaging(unittest.TestCase):
@@ -374,6 +391,48 @@ class WorkerConversation(unittest.TestCase):
         bad = worker.Studio(self.st.base, 'y' * 40, 'w')
         with self.assertRaises(Exception):
             bad.call({'op': 'claim'})
+
+
+class ClubPacks(unittest.TestCase):
+    """Every other club reads its compiled FAN LIFE pack: approved, sourced rows of the season, named as they were then."""
+
+    def pack(self):
+        from studio import research
+        m = lambda i, on, name, score, comp, sc=(): {'id': i, 'value': {'name': name, 'on': on, 'competition': comp, 'score': score,
+                                                                        'scorers': [{'name': n, 'minute': mi} for n, mi in sc], 'sport': 'football'},
+                                                    'sources': ['s1'], 'confidence': 2, 'status': 'approved'}
+        data = {'identity': {'name': 'Celtic', 'country': 'Scotland'}, 'sources': [{'id': 's1', 'title': 'UEFA', 'url': 'https://www.uefa.com/x'}],
+                'matches': [m('a', '2002-11-28', 'Celtic 1-0 Celta', '1-0', 'UEFA Europa League', [('Henrik Larsson', 52)]),
+                            m('b', '2002-12-12', 'Celta 2-1 Celtic', '2-1', 'UEFA Europa League', [('John Hartson', 37)]),
+                            m('c', '2003-05-21', 'Celtic 2-3 FC Porto', '2-3', 'UEFA Cup final', [('Henrik Larsson', 47)]),
+                            m('d', '1990-01-01', 'Celtic 1-0 Rangers', '1-0', 'League')]}
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        Path(tmp.name, 'celtic.json').write_text(json.dumps({'data': data}), encoding='utf-8')
+        old = research.COMPILED
+        research.COMPILED = Path(tmp.name)
+        self.addCleanup(lambda: setattr(research, 'COMPILED', old))
+        return research.build_ledger('celtic', '2002/03')
+
+    def test_a_season_reads_its_own_rows_with_then_names(self):
+        L = self.pack()
+        f = {c['id']: c['fact'] for c in L['claims']}
+        self.assertEqual(sorted(f), ['a', 'b', 'c'])
+        self.assertEqual(f['a']['competition'], 'UEFA Cup')          # UEFA files it as the Europa League; in 2002 it was not
+        self.assertEqual((f['c']['competition'], f['c']['stage']), ('UEFA Cup', 'Final'))
+        self.assertEqual((f['b']['side'], f['b']['club_goals'], f['b']['outcome']), ('away', 1, 'loss'))
+        self.assertIsNone(f['c']['scorers'])                         # two goals, one named: nobody is printed
+        self.assertEqual(L['country'], 'Scotland')
+
+    def test_a_second_leg_knows_who_went_through(self):
+        from studio.edit import Editor
+        L = self.pack()
+        e = Editor.__new__(Editor)
+        e.ledger = L
+        f = {c['id']: c['fact'] for c in L['claims']}
+        self.assertIsNone(e.tie_through(f['a']))
+        self.assertTrue(e.tie_through(f['b']))                       # 2-2 on aggregate, one away goal to none
+        self.assertIsNone(e.tie_through(f['c']))
 
 
 if __name__ == '__main__':
