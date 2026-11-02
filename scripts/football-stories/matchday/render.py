@@ -263,7 +263,7 @@ def build_sound(plan: list[dict], lines: list[dict], total: float, sections: lis
     # two-pass loudness to −14 LUFS / −1.5 dBTP
     r = subprocess.run(['ffmpeg', '-hide_banner', '-i', str(raw), '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json',
                         '-f', 'null', '-'], capture_output=True, text=True)
-    m = json.loads(r.stderr[r.stderr.rindex('{'):])
+    m = json.loads(re.search(r'\{[^{}]*"input_i"[^{}]*\}', r.stderr).group(0))
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(raw), '-af',
          f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
          f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true", '-ar', str(SR), '-ac', '2', str(out)])
