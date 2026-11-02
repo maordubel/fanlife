@@ -146,3 +146,10 @@ Check automatically and report actual results for: factual and source coverage; 
 ### 7. Final status report
 
 Report concisely: selected story; source and rights status; script and shot count; actual duration; files created; real provider calls made; validation performed and its results; upload channel, visibility and URL only if actually verified; and outstanding blockers. Distinguish a plan, a mock/test render and a finished, published film.
+
+
+## Paper stop-motion production mode
+
+When the owner chooses paper stop-motion, each narrated sentence should contain one clear, self-contained visual beat. For each beat provide one self-contained prompt describing a hero object, up to three supporting objects, context, era, club-appropriate palette, negative space, visible cardstock layers, exposed cut edges, glue joints and directional light with layered shadows. The whole world is paper: no table, board, canvas or frame. End prompts: premium handcrafted stop-motion paper aesthetic, ultra-detailed, 8K, no text, no logos, no watermark. Generated images are symbolic reconstructions, not evidence. Overlay verified text separately. Maintain the real-person face rule.
+
+Default motion: fixed camera; layers assemble back to front over the first 70% of the shot, then hold as a living paper poster for the final 30%. On a ten-second shot this is 7 seconds plus 3. Restrict finishing movements to small deformations or lighting, with no new objects entering, no object scaling or positional displacement, and handcrafted stop-motion imperfections. Use licensed paper ASMR only when available. This mode is automated unless the owner explicitly requests staged manual approvals. Offer short formats of 30 seconds, 1, 2, 3 and 5 minutes as well as the existing 7–25 minute documentary format. Continue to time each shot to narration rather than forcing every sentence to last ten seconds.

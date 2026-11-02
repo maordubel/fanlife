@@ -63,3 +63,16 @@ Editorial research and approved sources, per-shot visual design, reusable animat
 `/master/stories` is behind the existing owner login and allows saving briefs to configured durable storage. It does not start a job, call AI services, or schedule video production. Production access uses the existing `FAN_LIFE_ADMIN_KEY`; without that key production is closed. The studio refuses to save to ephemeral memory. `MASTER_PROMPT.md` is the full requested creative brief. The existing editorial stage applies some, not all, of those instructions and now requests ten title candidates. It is not yet a full-length script or shot-manifest generator.
 
 `python3 scripts/football-stories/engine/quality.py manifest.json` validates shot count, sequential IDs, continuous timing, direction and rights-status fields. The input has `target_duration_minutes` and `shots` from the master prompt. A passing result is structural only; it does not clear facts, licences, real-person faces, narration, assets or video for release.
+
+
+## Paper stop-motion compositor
+
+`python3 scripts/football-stories/engine/papercut.py shot.json shot.mp4` renders one silent MP4 from 2–20 supplied, same-size RGBA PNG layers ordered back to front. Each layer needs a rights status (`owned`, `licensed`, `public_domain`) and evidence. Requires Pillow, FFmpeg and libx264. Example:
+
+```json
+{"size":[1280,720],"fps":24,"duration_seconds":10,"layers":[{"file":"background.png","rights":{"status":"owned","evidence":"original art"}},{"file":"foreground.png","rights":{"status":"owned","evidence":"original art"}}]}
+```
+
+The camera is fixed and layers slide into place over 70% of the shot, then hold; shadows are composited. The shot can be supplied to `render.py` with narration and documented rights. This deterministic compositor does not create paper art from text, add cloth/cloud motion, generate speech, music or ASMR, inspect likeness, or produce an entire film. It has not been evaluated for professional cinematic quality. The desk stores a visual-style choice, but does not dispatch this renderer.
+
+`paper_prompts.py beats.json prompts.json` creates one standalone image prompt for every supplied beat and one fixed-camera animation prompt. The input is `{ "club": "...", "era": "...", "palette": "...", "beats": [{ "narration": "...", "hero": "...", "setting": "...", "supporting_objects": [] }] }`. Supply sourced, manually prepared beats; it does not research or generate narration, images, motion, or fact-check its input.

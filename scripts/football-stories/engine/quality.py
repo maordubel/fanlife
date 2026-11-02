@@ -11,9 +11,9 @@ class QualityError(ValueError): pass
 def validate_manifest(manifest):
     if not isinstance(manifest,dict): raise QualityError('Manifest must be an object')
     duration=manifest.get('target_duration_minutes')
-    if isinstance(duration,bool) or not isinstance(duration,int) or not 7<=duration<=25: raise QualityError('Duration must be an integer from 7 to 25')
+    if isinstance(duration,bool) or not isinstance(duration,(int,float)) or not (duration in (0.5,1,2,3,5) or (duration==int(duration) and 7<=duration<=25)): raise QualityError('Duration must be 0.5, 1, 2, 3, 5 or an integer from 7 to 25 minutes')
     shots=manifest.get('shots')
-    if not isinstance(shots,list) or len(shots)!=duration*10: raise QualityError('Shot count must equal target minutes × 10')
+    if not isinstance(shots,list) or len(shots)!=round(duration*10): raise QualityError('Shot count must equal target minutes × 10')
     expected=0.0
     for index,shot in enumerate(shots,1):
         if not isinstance(shot,dict) or shot.get('shot_id')!=f'S{index:03}': raise QualityError('Shot IDs must be sequential')
