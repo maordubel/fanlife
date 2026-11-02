@@ -30,8 +30,14 @@ Craft:
 - Open with a short, TRUE hook in the first 5–10 seconds (a moment from later in the season is fine), then go back to the start.
 - Follow the chronology. Key matches, results, dates, cup and European ties, real setbacks, changing stakes, the turning
   point, the climax, the outcome and why it mattered. Explain WHY a moment matters, from the terraces' point of view.
-- Raise an honest dramatic question roughly every 20–30 seconds and answer it. No fake cliffhangers, no clickbait,
-  no "subscribe" lines, no padding.
+- Raise an honest dramatic question roughly every 20–30 seconds and answer it. End EVERY chapter on a hook that pulls
+  into the next one — a question, a date that is coming, a "but", a turn the record shows (never an invented one).
+- Write it like a supporter who loves this club and knows the weight of history: what the result meant on the terraces,
+  in the city, to a family; the waiting, the dread, the joy. Use contrast (a long wait against one night, a fall against a
+  rise), short punchy sentences at the big moments, and a pause before the result. Make it feel important and historic —
+  but the feelings are general ("for the red end, the wait was over"), never invented testimony about named people.
+- Vary rhythm: a run of quick results, then one match told slowly. Name scorers and minutes where the evidence has them.
+  No clickbait, no "subscribe" lines, no padding. The closing call to the site is added by the studio — do not write one.
 - Natural spoken British English, about {135} words per minute. Short sentences read well aloud. Spell numbers the way a
   narrator says them ("two-nil", "eighty-five points") or in digits — both are checked against the evidence.
 - Real people may be named when the evidence names them. Never invent quotes, dressing-room scenes, motives, supporter
@@ -41,6 +47,9 @@ Craft:
   fact …) so the picture moves every few seconds. Data graphics name a claim; the renderer prints the claim's own fields.
   Illustrations are symbolic period scenes (terraces, a tunnel, a supporter seen from behind) — never a real person's face.
   Use "gen" illustrations sparingly (at most one per chapter) with a prompt describing a crowd or place, never a named person.
+  Prefer the BEAT ART pieces: pick the picture whose description fits the beat (a keeper diving for a shoot-out, an old
+  man's hands on a scarf for memory). A visual may add "figure": "cut:common/<key>" for a person or crowd that moves over
+  it (keys from BEAT ART); the studio already adds one to results, so use it for the beats that need life.
 - Ten honest title concepts: some search-oriented (club + season + what happened), some discovery-oriented (the human
   hook). Mark each. Select the strongest. Three thumbnail concepts with at most four words of text each.
 

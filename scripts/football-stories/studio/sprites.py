@@ -305,6 +305,14 @@ class SpriteFactory:
             <div class="src fit" data-fit="1050" style="padding-top:8px;font-size:20px">{esc(sources_line)}</div></div></div>'''
         return self.render(f'end-{key}', body, extra_css='.s{padding:0}')
 
+    def shout(self, key: str, text: str, tone: str = 'accent') -> Path:
+        """The Weekly's exclamation (Knewave): GOAL!, CHAMPIONS! — printed twice, ink under, colour over."""
+        fg = {'accent': 'var(--accent)', 'paper': 'var(--paper)', 'ink': 'var(--ink)'}[tone]
+        body = f'''<div style="position:relative;font-family:'Knewave';font-size:150px;line-height:1;transform:rotate(-7deg);padding:10px 30px 30px 10px">
+          <div style="position:absolute;left:24px;top:24px;color:var(--ink)">{esc(text)}</div>
+          <div style="position:relative;color:{fg};-webkit-text-stroke:5px var(--ink)">{esc(text)}</div></div>'''
+        return self.render(f'shout-{key}', body, extra_css='.s{padding:0}')
+
     # ---------- the closing call to the site ----------
     def cta_headline(self, key: str, text: str, sub: str) -> Path:
         body = f'''<div class="sh"></div><div class="box" style="background:var(--ink);border-color:var(--ink);padding:26px 44px 30px">

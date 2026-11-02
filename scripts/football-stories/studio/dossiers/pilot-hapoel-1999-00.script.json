@@ -48,7 +48,7 @@
    "title": "Five days in May",
    "beats": [
     {
-     "narration": "Seventeenth of May, 2000. Extra time is over in the State Cup final, and forty thousand people are waiting for penalties.",
+     "narration": "Seventeenth of May, 2000. Forty thousand people. Extra time is over in the State Cup final, and it all comes down to penalties.",
      "claim_ids": [
       "w-cupfinal-pens",
       "m_84f165f681f3"
@@ -82,10 +82,11 @@
      }
     },
     {
-     "narration": "Four days earlier, these supporters had already seen something they had waited a very long time for. Tonight, they want the second half of it.",
+     "narration": "Four days earlier, these supporters had seen the thing they had waited twelve seasons for. Tonight, they want the rest of it.",
      "claim_ids": [
       "m_e550af63bd72",
-      "m_84f165f681f3"
+      "m_84f165f681f3",
+      "w-previous-title"
      ],
      "visual": {
       "type": "illustration",
@@ -94,7 +95,7 @@
      }
     },
     {
-     "narration": "To understand why this shoot-out mattered so much, we have to go back to the summer, and to a club that had been waiting twelve seasons.",
+     "narration": "How did a club that had waited twelve seasons end up here, one shoot-out from history? To find out, we have to go back to the summer of 1999.",
      "claim_ids": [
       "w-previous-title"
      ],
@@ -197,7 +198,7 @@
      }
     },
     {
-     "narration": "Europe came first.",
+     "narration": "Europe came first. And Europe would not be kind.",
      "claim_ids": [],
      "visual": {
       "type": "illustration",
@@ -353,7 +354,7 @@
      }
     },
     {
-     "narration": "Two competitions gone before the autumn had really begun. What was left was the league, and the cup they were holding.",
+     "narration": "Two competitions gone before the autumn had really begun. What was left was the league, the cup they were holding, and the old fear on the terraces: another lost year?",
      "claim_ids": [
       "m_876323f36ae8",
       "m_da8a2b292265",
@@ -556,7 +557,7 @@
      }
     },
     {
-     "narration": "It was only one defeat. But it came against the club that would finish second, and it showed the race was not over.",
+     "narration": "It was only one defeat. But it came against the club that would finish second. The race was on, and it was going to hurt.",
      "claim_ids": [
       "m_076b222cfa71",
       "w-table-1999-00"
@@ -705,7 +706,7 @@
      }
     },
     {
-     "narration": "After twelve seasons of waiting, February raised the old question. Would it go wrong again?",
+     "narration": "After twelve seasons of waiting, February raised the old question on the terraces. Was it all about to go wrong again?",
      "claim_ids": [
       "w-previous-title"
      ],
@@ -902,7 +903,7 @@
      }
     },
     {
-     "narration": "Two-one at Rishon LeZion. One-nil against Hapoel Kfar Saba, Pini Balili in the seventy-ninth minute. The title was close enough to touch.",
+     "narration": "Two-one at Rishon LeZion. One-nil against Hapoel Kfar Saba, Pini Balili in the seventy-ninth minute. The title was close enough to touch. Now it had to be taken.",
      "claim_ids": [
       "m_b35d0cef9323",
       "m_8d214c749cef"
@@ -935,7 +936,7 @@
      }
     },
     {
-     "narration": "It finished one each. And that was enough. Hapoel Tel Aviv were champions of Israel, with two league games still to play.",
+     "narration": "It finished one each. One each was enough. Hapoel Tel Aviv were champions of Israel, with two league games still to play.",
      "claim_ids": [
       "m_e550af63bd72",
       "honour-199900-israeli-premier-league",
@@ -949,7 +950,7 @@
      }
     },
     {
-     "narration": "The first league title since 1987/88. The wait of twelve seasons was over.",
+     "narration": "The first league title since 1987/88. Twelve seasons of waiting, ended on one afternoon.",
      "claim_ids": [
       "w-previous-title",
       "honour-199900-israeli-premier-league",
@@ -988,7 +989,7 @@
      }
     },
     {
-     "narration": "And so, back to where we started. Penalties.",
+     "narration": "And so, back to where we started. Forty thousand people. Extra time over. Penalties.",
      "claim_ids": [
       "w-cupfinal-pens"
      ],
@@ -1010,7 +1011,7 @@
      }
     },
     {
-     "narration": "Five days in May. A title after twelve seasons, and a cup kept.",
+     "narration": "Five days in May. A title after twelve seasons, and a cup kept. A week the red half of Tel Aviv would carry for the rest of their lives.",
      "claim_ids": [
       "w-previous-title",
       "m_e550af63bd72",
@@ -1106,7 +1107,7 @@
      }
     },
     {
-     "narration": "For the people who stood at Bloomfield through those twelve seasons, it was not a story about one team. It was a story about waiting, and about being there when the waiting ended.",
+     "narration": "For the people who stood at Bloomfield through those twelve seasons, it was never just a story about a team. It was a story about waiting. And about being there, together, when the waiting ended.",
      "claim_ids": [
       "w-previous-title",
       "w-home"

@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw
 from .common import FPS, H, INK, KIT, ROOT, NEWSPRINT, PAPER, W, Palette, StageError, hex_rgb, read_json, write_json
 from .maps import city_of, pin_sprite
 from .maps import render as render_map
-from .motion import Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
+from .motion import Confetti, Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
 from .captions import Captions
 from .package import sources_list
 from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, cut_path, cut_index, piece_meta, recolor, scrub, supporter_scene
@@ -171,6 +171,29 @@ class Editor:
             art = 'terrace-crowd'
         return self.world_image(f'art-{art}', lambda: art_backdrop(art))
 
+    def mood(self, b: dict) -> str:
+        """What the music should feel under this beat: read from the record it shows and the words it says."""
+        v, text = b['visual'], (b.get('narration') or '').lower()
+        c = self.by.get(v.get('claim') or '')
+        f = c['fact'] if c else {}
+        if v['type'] == 'end':
+            return 'anthem'
+        if any(w in text for w in ('penalt', 'shoot-out', 'extra time', 'eighty-fifth', 'last minute')):
+            return 'tense'
+        if v['type'] == 'score' and f.get('kind') == 'match':
+            if f.get('title_decided') or (f.get('outcome') == 'win' and f.get('stage') in ('Final', 'Semi-final')):
+                return 'triumph'
+            return {'win': 'joy', 'loss': 'sad', 'draw': 'minor'}.get(f.get('outcome'), 'minor')
+        if any(w in text for w in ('champions', 'the double', 'title', 'won the', 'cup stayed')):
+            return 'triumph' if v['type'] in ('turning', 'illustration', 'stat', 'table') else 'joy'
+        if any(w in text for w in ('defeat', 'lost', 'slump', 'went wrong', 'over by', 'question', 'fear')):
+            return 'sad'
+        if v['type'] in ('matchday', 'turning'):
+            return 'tense'
+        if v['type'] == 'chapter':
+            return 'build'
+        return 'minor'
+
     def plan(self) -> dict:
         """The edit decision list: timing for every shot, without rendering anything."""
         shots, t = [], 0.0
@@ -188,6 +211,7 @@ class Editor:
                 start_f = round(t * FPS)
                 end_f = round((t + dur) * FPS)
                 shots.append({'n': n, 'chapter': ci, 'beat': bi, 'visual': b['visual'], 'claim_ids': b.get('claim_ids') or [],
+                              'mood': self.mood(b),
                               'start': start_f / FPS, 'frames': end_f - start_f, 'voice_at': start_f / FPS + lead,
                               'voice_file': v['file'], 'voice_dur': v['duration'], 'words': v['words'], 'narration': b['narration']})
                 t += dur
@@ -305,6 +329,7 @@ class Editor:
                 else:
                     cues.append((0.4, 'crowd-after'))
                 layers += self.scorer_chips(sp, f, cx, cy + card.height / 2, cues)
+                layers += self.shout_for(sp, f, s, cx - card.width / 2, cy - card.height / 2, shake, cues)
             elif kind == 'timeline':
                 layers.append(Layer(card, reveal_lr(W / 2, H * 0.46, 0.3, dur=min(2.4, dur * 0.4)), settle=1e9))
                 cues.append((0.3, 'paper'))
@@ -359,8 +384,14 @@ class Editor:
         caps = None
         if os.environ.get('STORIES_BURN_CAPTIONS', '1') != '0' and kind != 'end' and s.get('words') and s.get('voice_at') is not None:
             caps = Captions(s['words'], s['voice_at'] - s['start'], self.pal.accent)
+        overlays = []
+        if s.get('mood') == 'triumph' and kind in ('score', 'turning', 'illustration', 'stat', 'table'):
+            overlays.append(Confetti(hex_rgb(self.pal.accent), t0=0.5, seed=s['n']))
+            cues.append((0.5, 'crowd-final'))
+        if caps:
+            overlays.append(caps)
         return Shot(index=s['n'], duration=dur, world=Image.open(world).convert('RGB'), camera=cam, layers=layers,
-                    entry=entry, shake=shake, cues=cues, meta={'kind': kind}, world_frames=clip, overlay=caps)
+                    entry=entry, shake=shake, cues=cues, meta={'kind': kind}, world_frames=clip, overlay=overlays)
 
     # ---------------------------------------------------------------- the closing call to the site
     FEATURES = (('Trivia', 'brand/weekly/plates/cheer-line.webp'), ('Timeline', 'brand/magazine/photos/memorabilia.webp'),
@@ -411,6 +442,24 @@ class Editor:
         layers.append(Layer(sm, slide_in(W / 2, H - 22, 4.2, frm=(0, 60), rot0=0, rot1=0, dur=0.4, drift=False), settle=1e9))
         cues.append((0.0, 'end'))
         return wp, layers, cues
+
+    def shout_for(self, sp: SpriteFactory, f: dict | None, s: dict, x: float, y: float, shake: list, cues: list) -> list[Layer]:
+        """One word stamped on the corner of a result: a win shouts, a title shouts louder, a defeat says so quietly."""
+        if not f or f.get('kind') != 'match':
+            return []
+        if f.get('title_decided'):
+            word, tone = 'CHAMPIONS!', 'accent'
+        elif f.get('outcome') == 'win':
+            word, tone = ('GOAL!', 'YES!', 'WIN!')[s['n'] % 3], 'accent'
+        elif f.get('outcome') == 'loss':
+            word, tone = 'LOST', 'paper'
+        else:
+            return []
+        im = fit(_img(sp.shout(key_of('shout', word, self.pal.accent), word, tone)), 640 if len(word) > 6 else 460, 240)
+        t0 = 0.6
+        shake.append((t0, 12 if tone == 'accent' else 4))
+        cues.append((t0, 'stamp'))
+        return [Layer(im, slam(max(im.width / 2 + 30, x + 60), max(im.height / 2 + 20, y - 10), t0, s0=2.2, rot=-4, dur=0.22), settle=1e9)]
 
     def scorer_chips(self, sp: SpriteFactory, f: dict | None, cx: float, top: float, cues: list) -> list[Layer]:
         """The club's scorers as chips under the score, one after another — only when the archive names every goal."""

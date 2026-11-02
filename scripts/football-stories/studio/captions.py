@@ -65,18 +65,65 @@ def font(name: str = 'weekly-head', size: int = SIZE) -> Face:
     return Face(name, size)
 
 
-def groups(words: list[dict]) -> list[list[dict]]:
+# A line never ends on one of these: "scored in the | eighty-fifth minute" reads as two broken halves.
+WEAK = {'a', 'an', 'the', 'of', 'in', 'at', 'to', 'on', 'for', 'by', 'from', 'with', 'and', 'but', 'or', 'as', 'into',
+        'than', 'that', 'their', 'his', 'her', 'its', 'was', 'were', 'is', 'be', 'had', 'has', 'have', 'who', 'which',
+        'two', 'three', 'four', 'five', 'six', 'one', 'no', 'not', 'it', 'they', 'he', 'she', 'we', 'this', 'these', 'those'}
+
+
+# A line likes to START on one of these: the phrase that follows reads whole.
+LEADS = {'on', 'in', 'at', 'with', 'for', 'to', 'from', 'by', 'after', 'before', 'against', 'and', 'but', 'who', 'which',
+         'when', 'while', 'until', 'than', 'that', 'into', 'over', 'under', 'without', 'because', 'as'}
+
+
+def _clauses(words: list[dict]) -> list[list[dict]]:
+    """Cut where the narrator pauses: after . ? ! : ; and after a comma or dash."""
     out: list[list[dict]] = [[]]
     for w in words:
-        cur = out[-1]
-        if cur and len(' '.join(x['w'] for x in cur + [w])) > MAX_CHARS:
-            out.append([])
-            cur = out[-1]
-        cur.append(w)
+        out[-1].append(w)
         t = w['w'].rstrip('"\'’”)')
-        if t.endswith(('.', '?', '!', ':', ';')) or (t.endswith(',') and len(cur) >= 3):
+        if t.endswith(('.', '?', '!', ':', ';', ',', '—', '–')):
             out.append([])
-    return [g for g in out if g]
+    return [c for c in out if c]
+
+
+def _width(ws: list[dict]) -> int:
+    return len(' '.join(x['w'] for x in ws))
+
+
+def _split(clause: list[dict]) -> list[list[dict]]:
+    """A clause longer than a line splits into balanced lines, never after a weak word."""
+    if _width(clause) <= MAX_CHARS or len(clause) < 2:
+        return [clause]
+    n = max(2, -(-_width(clause) // MAX_CHARS))
+    target = _width(clause) / n
+    best, best_cost = None, 1e9
+    for i in range(1, len(clause)):
+        left, right = clause[:i], clause[i:]
+        if _width(left) > MAX_CHARS:
+            break
+        last = left[-1]['w'].lower().strip('.,;:!?"\'’”()')
+        first = right[0]['w'].lower().strip('"\'‘“(')
+        cost = abs(_width(left) - target) + (60 if last in WEAK else 0) - (14 if first in LEADS else 0)
+        if cost < best_cost:
+            best, best_cost = i, cost
+    if best is None:
+        best = 1
+    return [clause[:best]] + _split(clause[best:])
+
+
+def groups(words: list[dict]) -> list[list[dict]]:
+    """Lines in reading order: clause by clause; two short clauses share a line when they fit."""
+    lines: list[list[dict]] = []
+    for c in _clauses(words):
+        for part in _split(c):
+            prev = lines[-1] if lines else None
+            ends_sentence = bool(prev) and prev[-1]['w'].rstrip('"\'’”)').endswith(('.', '?', '!'))
+            if prev and not ends_sentence and _width(prev + part) <= MAX_CHARS and len(part) <= 3:
+                prev.extend(part)
+            else:
+                lines.append(list(part))
+    return lines
 
 
 class Captions:

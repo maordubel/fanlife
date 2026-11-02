@@ -171,8 +171,8 @@ class ShotRenderer:
             r = transformed(l.img, p, l._cache) if p else None
             if r:
                 frame.alpha_composite(r[0], (r[1], r[2])) if 0 <= r[1] and 0 <= r[2] and r[1] + r[0].width <= W and r[2] + r[0].height <= H else frame.paste(r[0], (r[1], r[2]), r[0])
-        if s.overlay is not None:
-            o = s.overlay(t)
+        for ov in (s.overlay if isinstance(s.overlay, list) else [s.overlay] if s.overlay else []):
+            o = ov(t)
             if o:
                 frame.alpha_composite(o[0], (o[1], o[2])) if frame.mode == 'RGBA' else frame.paste(o[0], (o[1], o[2]), o[0])
         a = np.asarray(frame.convert('RGB'), dtype='int16') + _grain(global_i)
@@ -204,3 +204,36 @@ def blend_entry(shot: Shot, i: int, frame: np.ndarray, prev_last: np.ndarray | N
         out[inkb] = (21, 19, 15)
         return out
     return frame
+
+
+class Confetti:
+    """Paper confetti in the club colour, cream and ink, falling with a sway — for titles and cup nights.
+    Seeded, so a re-render draws the same storm."""
+
+    def __init__(self, accent_rgb, t0: float = 0.4, n: int = 150, seed: int = 9):
+        rng = np.random.default_rng(seed)
+        self.t0 = t0
+        self.p = [(rng.uniform(-40, W + 40), rng.uniform(-H * 0.9, -20), rng.uniform(150, 330), rng.uniform(0, 6.28),
+                   rng.uniform(1.5, 4.0), rng.uniform(8, 22), rng.uniform(6, 14),
+                   (accent_rgb, (244, 236, 216), (21, 19, 15))[int(rng.integers(0, 3)) if rng.random() > 0.45 else 0])
+                  for _ in range(n)]
+
+    def __call__(self, t: float):
+        if t < self.t0:
+            return None
+        from PIL import ImageDraw
+        dt = t - self.t0
+        im = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(im)
+        for (x, y, vy, ph, sw, w, h, col) in self.p:
+            yy = y + vy * dt
+            if yy > H + 30:
+                continue
+            xx = x + 40 * math.sin(ph + dt * sw)
+            flip = abs(math.cos(ph + dt * sw * 1.7))
+            hw, hh = w / 2, max(1.5, h * flip / 2)
+            ang = ph + dt * sw
+            ca, sa = math.cos(ang), math.sin(ang)
+            pts = [(xx + ca * dx - sa * dy, yy + sa * dx + ca * dy) for dx, dy in ((-hw, -hh), (hw, -hh), (hw, hh), (-hw, hh))]
+            d.polygon(pts, fill=tuple(col) + (235,))
+        return im, 0, 0

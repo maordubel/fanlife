@@ -88,15 +88,71 @@ def sentences(text: str) -> list[str]:
     return [p for p in parts if p.strip()]
 
 
+def _syllables(w: str) -> float:
+    """How long a word takes to say, roughly: its vowel groups (numbers and names count as written)."""
+    core = re.sub(r'[^a-zčćšžđ]', '', w.lower())
+    n = len(re.findall(r'[aeiouyáéíóú]+', core)) or 1
+    if core.endswith('e') and n > 1 and not core.endswith(('le', 'ee')):
+        n -= 1
+    return n + 0.35
+
+
 def _words_spread(text: str, start: float, end: float) -> list[dict]:
     ws = text.split()
-    total = sum(len(w) + 1 for w in ws) or 1
+    total = sum(_syllables(w) for w in ws) or 1
     t, out = start, []
     for w in ws:
-        d = (end - start) * (len(w) + 1) / total
+        d = (end - start) * _syllables(w) / total
         out.append({'w': w, 'start': round(t, 3), 'end': round(t + d, 3)})
         t += d
     return out
+
+
+def _pauses(a, sr: int) -> list[tuple[float, float]]:
+    """Silent stretches inside a sentence (the narrator's commas), as (start, end) seconds."""
+    import numpy as np
+    hop = int(sr * 0.01)
+    n = len(a) // hop
+    if n < 10:
+        return []
+    rms = np.sqrt(np.mean(a[: n * hop].reshape(n, hop) ** 2, axis=1))
+    quiet = rms < max(0.004, np.percentile(rms, 90) * 0.06)
+    out, i = [], 0
+    while i < n:
+        if quiet[i]:
+            j = i
+            while j < n and quiet[j]:
+                j += 1
+            if (j - i) >= 9 and i > 5 and j < n - 5:
+                out.append((i * 0.01, j * 0.01))
+            i = j
+        else:
+            i += 1
+    return out
+
+
+def _words_aligned(text: str, a, sr: int, offset: float) -> list[dict]:
+    """Words timed against the audio: clauses are pinned to the pauses the model actually left, and words are spread
+    by syllables inside each clause — closer than spreading the whole sentence, and the order can never change."""
+    ws = text.split()
+    cuts = [i + 1 for i, w in enumerate(ws[:-1]) if w.rstrip('"\'’”)').endswith((',', ';', ':', '—', '–'))]
+    gaps = _pauses(a, sr)
+    dur = len(a) / sr
+    if cuts and len(gaps) >= len(cuts):
+        chosen = sorted(sorted(gaps, key=lambda g: g[1] - g[0], reverse=True)[:len(cuts)])
+        bounds = [0] + cuts + [len(ws)]
+        spans, t0 = [], 0.0
+        for k in range(len(bounds) - 1):
+            t1 = chosen[k][0] if k < len(chosen) else dur
+            spans.append((t0, t1))
+            if k < len(chosen):
+                t0 = chosen[k][1]
+        out = []
+        for k in range(len(bounds) - 1):
+            chunk = ' '.join(ws[bounds[k]:bounds[k + 1]])
+            out += _words_spread(chunk, offset + spans[k][0], offset + spans[k][1])
+        return out
+    return _words_spread(text, offset, offset + dur)
 
 
 def kokoro_beat(text: str, out: Path, extra: dict | None) -> dict:
@@ -114,14 +170,14 @@ def kokoro_beat(text: str, out: Path, extra: dict | None) -> dict:
         if len(nz):
             a = a[max(0, nz[0] - 240): nz[-1] + 1200]
         d = len(a) / SR
-        words += _words_spread(s, t, t + d)
+        words += _words_aligned(s, a, SR, t)
         chunks.append(a)
         t += d
         if i < len(sentences(text)) - 1:
             chunks.append(gap)
             t += len(gap) / SR
     _wav_write(out, np.concatenate(chunks) * 0.92)
-    return {'words': words, 'alignment': 'sentence-exact, words spread by length', 'voice': f'kokoro:{voice}'}
+    return {'words': words, 'alignment': 'sentence-exact, clauses pinned to pauses, words spread by syllables', 'voice': f'kokoro:{voice}'}
 
 
 def eleven_beat(text: str, out: Path, extra: dict | None) -> dict:
@@ -166,7 +222,7 @@ def voice_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict 
         for bi, b in enumerate(ch['beats']):
             n += 1
             text = b['narration'].strip()
-            key = sha256_json({'p': prov, 'v': os.environ.get('STORIES_ELEVEN_VOICE' if prov == 'elevenlabs' else 'STORIES_KOKORO_VOICE'), 't': spoken(text, extra), 'r': 2})[:24]
+            key = sha256_json({'p': prov, 'v': os.environ.get('STORIES_ELEVEN_VOICE' if prov == 'elevenlabs' else 'STORIES_KOKORO_VOICE'), 't': spoken(text, extra), 'r': 3})[:24]
             wav = cache_dir / f'{key}.wav'
             meta_p = cache_dir / f'{key}.json'
             if not (wav.exists() and meta_p.exists()):
