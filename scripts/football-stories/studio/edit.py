@@ -177,6 +177,30 @@ class Editor:
         pens = next((c['fact'] for c in self.ledger['claims'] if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
         return bool(pens and pens.get('winner') == self.ledger.get('club_name'))
 
+    def tie_through(self, f: dict | None) -> bool | None:
+        """For a second leg: did the club go through? True / False, or None when this is not a two-legged tie the ledger
+        holds both legs of. Aggregate first, then away goals (as the rule stood in the season the ledger is about)."""
+        if not f or f.get('kind') != 'match' or f.get('stage') == 'Final' or not f.get('date'):
+            return None
+        import datetime as _d
+        d2 = _d.date.fromisoformat(f['date'])
+        first = None
+        for c in self.ledger['claims']:
+            g = c['fact']
+            if (g.get('kind') == 'match' and g is not f and g.get('opponent') == f.get('opponent')
+                    and g.get('competition') == f.get('competition') and g.get('date') and g.get('side') != f.get('side')):
+                d1 = _d.date.fromisoformat(g['date'])
+                if 0 < (d2 - d1).days <= 42:
+                    first = g
+        if not first:
+            return None
+        us, them = first['club_goals'] + f['club_goals'], first['opponent_goals'] + f['opponent_goals']
+        if us != them:
+            return us > them
+        away_us = first['club_goals'] if first['side'] == 'away' else f['club_goals']
+        away_them = first['opponent_goals'] if first['side'] == 'home' else f['opponent_goals']
+        return None if away_us == away_them else away_us > away_them
+
     def mood(self, b: dict) -> str:
         """What the music should feel under this beat: read from the record it shows and the words it says."""
         v, text = b['visual'], (b.get('narration') or '').lower()
@@ -288,7 +312,7 @@ class Editor:
             focus = v.get('focus') or 'domestic'
             if len(pts) < 2 and focus != 'home':
                 pts = pts or [{'name': 'Tel Aviv', 'lat': 32.08, 'lon': 34.78, 'home': True}]
-            base, pins = render_map(pts, focus, seed % 9, 'Israel' if focus != 'europe' else None)
+            base, pins = render_map(pts, focus, seed % 9, self.ledger.get('country', 'Israel' if self.ledger.get('club_id') == 'hapoel-tel-aviv' else None) if focus != 'europe' else None)
             wp = self.worlds / f'map-{s["n"]}.png'
             base.save(wp, compress_level=1)
             world = wp
@@ -460,6 +484,8 @@ class Editor:
             word, tone = 'CHAMPIONS!', 'accent'
         elif self.won_shootout(f):
             word, tone = ('CUP!' if f.get('stage') == 'Final' else 'YES!'), 'accent'
+        elif (tie := self.tie_through(f)) is not None:
+            word, tone = ('THROUGH!', 'accent') if tie else ('OUT', 'paper')
         elif f.get('outcome') == 'win':
             word, tone = ('GOAL!', 'YES!', 'WIN!')[s['n'] % 3], 'accent'
         elif f.get('outcome') == 'loss':

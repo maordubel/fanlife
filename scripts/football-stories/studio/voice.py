@@ -32,6 +32,8 @@ PRONOUNCE = {
     'Računica': 'Rachunitsa', 'Pisont': 'Pishont', 'Kashtan': 'Kash-tahn', 'Hapoel': 'Hap-o-el', 'Beitar': 'Bay-tar',
     'fanlife.dubelteam.com': 'fan life dot dubel team dot com', 'FanLife': 'Fan Life',
     'Bloomfield': 'Bloomfield', "Be'er Sheva": 'Beh-er Sheva', 'Yerevan': 'Yerevan', 'Herzliya': 'Hertz-lia',
+    'Sūduva': 'Soo-doo-vah', 'Baldé': 'Bal-day', 'Derlei': 'Der-lay', 'Alenichev': 'Al-yen-ee-chev', 'Olímpico': 'Oh-leem-pico',
+    'Sevilla': 'Seh-vee-ya', 'Mourinho': 'Mo-reen-yo', 'Valgaeren': 'Val-gah-ren', 'José': 'Ho-zay', 'Celta': 'Thel-ta',
 }
 
 

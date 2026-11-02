@@ -1,0 +1,832 @@
+{
+ "title_candidates": [
+  {
+   "title": "Celtic 2002–03: The Road to Seville, Told From the Stands",
+   "angle": "search"
+  },
+  {
+   "title": "Celtic v FC Porto, 2003 UEFA Cup Final: The Season Behind It",
+   "angle": "search"
+  },
+  {
+   "title": "Celtic's 2003 UEFA Cup Run | Basel to Seville, Match by Match",
+   "angle": "search"
+  },
+  {
+   "title": "Celtic 2002/03 Documentary: Liverpool, Stuttgart, Boavista and Seville",
+   "angle": "search"
+  },
+  {
+   "title": "Martin O'Neill's Celtic and the Road to Seville",
+   "angle": "search"
+  },
+  {
+   "title": "Eighty Thousand to Seville: Celtic's Road to the 2003 UEFA Cup Final",
+   "angle": "discovery"
+  },
+  {
+   "title": "They Lost the Final. The Supporters Won Anyway.",
+   "angle": "discovery"
+  },
+  {
+   "title": "Four Days in May: How Celtic Lost Everything and Kept Something",
+   "angle": "discovery"
+  },
+  {
+   "title": "The Biggest Away End in History",
+   "angle": "discovery"
+  },
+  {
+   "title": "One Goal in Seville, One Goal in Kilmarnock",
+   "angle": "discovery"
+  }
+ ],
+ "selected": 5,
+ "hook": "Twenty-first of May, 2003. Seville.",
+ "chapters": [
+  {
+   "title": "Seville",
+   "beats": [
+    {
+     "narration": "Twenty-first of May, 2003. Seville. The UEFA Cup final. Celtic against FC Porto, and it has gone to extra time.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "open",
+      "backdrop": "beat:common/europe-stadium-night-n",
+      "headline": "The Road to Seville",
+      "kicker": "Celtic · 2002–03"
+     }
+    },
+    {
+     "narration": "Inside the ground, a wall of green and white. Outside it, in the squares and the bars and the streets, thousands more who never had a ticket and came anyway.",
+     "claim_ids": [
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/street-matchday-crowd-kr",
+      "caption": "Seville, May 2003"
+     }
+    },
+    {
+     "narration": "How many came? Nobody counted. Every source gives the same estimate: around eighty thousand Celtic supporters, in one city, for one match.",
+     "claim_ids": [
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "80,000",
+      "label": "Celtic supporters in Seville — an estimate",
+      "claim": "w-fans-80000",
+      "backdrop": "beat:common/crowd-scarves-night-kr"
+     }
+    },
+    {
+     "narration": "In the ninety-sixth minute, Bobo Baldé is sent off. Ten men, in extra time, two goals each, and the night still not decided.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/referee-red-card-n",
+      "caption": "Ninety-sixth minute"
+     }
+    },
+    {
+     "narration": "Hold that moment there. Because to understand what this night meant to the people in those stands, we have to go back to August 2002, to a summer night in Glasgow, and a defeat that came a fortnight later.",
+     "claim_ids": [
+      "w-final",
+      "celtic:a-m-2002-08-14-celtic-basel"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "How did they get here?",
+      "subtitle": "Back to August 2002",
+      "backdrop": "beat:common/tr-page-turn-n"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Out in August",
+   "beats": [
+    {
+     "narration": "Martin O'Neill's Celtic wanted the Champions League. All that stood in the way was a qualifier against Basel.",
+     "claim_ids": [
+      "w-managers",
+      "w-route"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 1,
+      "title": "Out in August",
+      "backdrop": "beat:common/home-end-night-kr"
+     }
+    },
+    {
+     "narration": "At Celtic Park it went to plan. Henrik Larsson in the third minute, Chris Sutton after the break, then Mohamed Sylla late on. Three-one.",
+     "claim_ids": [
+      "celtic:a-m-2002-08-14-celtic-basel"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:a-m-2002-08-14-celtic-basel"
+     }
+    },
+    {
+     "narration": "A fortnight later, in Switzerland, Basel scored twice and Celtic scored none. Three each on aggregate, and Basel through on the away goal.",
+     "claim_ids": [
+      "celtic:a-m-2002-08-28-basel-celtic",
+      "w-route"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "celtic:a-m-2002-08-28-basel-celtic",
+      "backdrop": "beat:common/foreign-stadium-stands-n"
+     }
+    },
+    {
+     "narration": "So the Champions League was over before September. What was left was the competition nobody had planned the season around. The UEFA Cup.",
+     "claim_ids": [
+      "w-route"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/terrace-empty-dusk-n",
+      "caption": "End of August, 2002"
+     }
+    },
+    {
+     "narration": "For the people who had queued for those tickets, it felt like the season had ended before it began. Nobody knew yet that this defeat was the first step of the longest journey the club's supporters had ever made.",
+     "claim_ids": [
+      "w-route"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/grandfather-bench-kr",
+      "caption": "Glasgow, August 2002"
+     }
+    }
+   ]
+  },
+  {
+   "title": "The long autumn",
+   "beats": [
+    {
+     "narration": "It started gently. Sūduva, from Lithuania, came to Glasgow in September and went home beaten eight-one.",
+     "claim_ids": [
+      "celtic:a-m-2002-09-19-celtic-suduva"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 2,
+      "title": "The long autumn",
+      "backdrop": "beat:common/terrace-full-kr"
+     }
+    },
+    {
+     "narration": "Larsson scored three of them in fourteen minutes. Petrov, Sutton, Lambert, Hartson and Valgaeren added the rest.",
+     "claim_ids": [
+      "celtic:a-m-2002-09-19-celtic-suduva"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:a-m-2002-09-19-celtic-suduva"
+     }
+    },
+    {
+     "narration": "Two-nil in the return, ten-one on aggregate. Then the draw sent them south of the border, to Blackburn Rovers.",
+     "claim_ids": [
+      "celtic:a-m-2002-10-03-suduva-celtic",
+      "w-route"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "celtic:a-m-2002-10-03-suduva-celtic",
+       "celtic:a-m-2002-11-14-blackburn-celtic"
+      ],
+      "label": "Glasgow · Marijampolė · Blackburn"
+     }
+    },
+    {
+     "narration": "The first leg was tight. One goal, Larsson's, in the eighty-fifth minute.",
+     "claim_ids": [
+      "celtic:a-m-2002-10-31-celtic-blackburn"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:a-m-2002-10-31-celtic-blackburn"
+     }
+    },
+    {
+     "narration": "In England, a fortnight later, Larsson scored again in the fifteenth minute and Sutton finished it. Two-nil away, three-nil overall.",
+     "claim_ids": [
+      "celtic:a-m-2002-11-14-blackburn-celtic",
+      "w-route"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "celtic:a-m-2002-11-14-blackburn-celtic",
+      "backdrop": "beat:common/away-end-arrival-kr"
+     }
+    },
+    {
+     "narration": "Then Celta Vigo. One-nil at home, Larsson again. In Spain, two goals against, and one for: John Hartson, in the thirty-seventh minute.",
+     "claim_ids": [
+      "celtic:a-m-2002-11-28-celtic-celta",
+      "celtic:a-m-2002-12-12-celta-celtic"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "celtic:a-m-2002-11-28-celtic-celta",
+       "celtic:a-m-2002-12-12-celta-celtic"
+      ],
+      "label": "Third round · Celta Vigo"
+     }
+    },
+    {
+     "narration": "Two each on aggregate. In August, the away goal had knocked Celtic out. In December, the away goal put them through.",
+     "claim_ids": [
+      "w-route",
+      "celtic:a-m-2002-12-12-celta-celtic"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "Away goals",
+      "text": "Celta Vigo 2–2 on aggregate. Celtic through on away goals.",
+      "claim": "w-route",
+      "backdrop": "beat:common/stand-roof-rain-kr"
+     }
+    },
+    {
+     "narration": "In the away end in Vigo, those last minutes went on forever. Every Celta attack was a knife. When the whistle went, the Celtic supporters, a long way from home, made a noise you could hear across the ground.",
+     "claim_ids": [
+      "celtic:a-m-2002-12-12-celta-celtic"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/away-fence-group-kr",
+      "caption": "Vigo, December 2002"
+     }
+    },
+    {
+     "narration": "For the first time in a long while, Celtic would play European football after Christmas. The supporters started looking at maps.",
+     "claim_ids": [
+      "w-route"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:common/clip-map-route-n",
+      "caption": "Winter, 2002"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Ten days in March",
+   "beats": [
+    {
+     "narration": "February brought Stuttgart. At Celtic Park, Lambert, Shaun Maloney and Stiliyan Petrov. Three-one.",
+     "claim_ids": [
+      "celtic:a-m-2003-02-20-celtic-stuttgart",
+      "w-cups"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 3,
+      "title": "Ten days in March",
+      "backdrop": "beat:common/snow-pitch-kr"
+     }
+    },
+    {
+     "narration": "A week later in Germany, Alan Thompson scored in the ninth minute, Sutton two minutes after that. Celtic were cruising.",
+     "claim_ids": [
+      "celtic:a-m-2003-02-27-stuttgart-celtic"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:a-m-2003-02-27-stuttgart-celtic"
+     }
+    },
+    {
+     "narration": "Then Stuttgart scored three. The night ended three-two to them, and in the away end every one of those minutes felt like an hour. Five-four on aggregate. Through.",
+     "claim_ids": [
+      "celtic:a-m-2003-02-27-stuttgart-celtic",
+      "w-route"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-hands-fence-kr",
+      "caption": "Stuttgart, February 2003"
+     }
+    },
+    {
+     "narration": "The quarter-final draw gave them Liverpool. And what followed was ten days that no Celtic supporter has forgotten.",
+     "claim_ids": [
+      "w-route",
+      "celtic:a-m-2003-03-13-celtic-liverpool",
+      "w-cups"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "Celtic v Liverpool",
+      "subtitle": "Quarter-final, March 2003",
+      "backdrop": "beat:common/tr-paper-tear-n"
+     }
+    },
+    {
+     "narration": "Thirteenth of March, Celtic Park. Larsson scored in the second minute. Liverpool equalised. One each.",
+     "claim_ids": [
+      "celtic:a-m-2003-03-13-celtic-liverpool"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "celtic:a-m-2003-03-13-celtic-liverpool",
+      "backdrop": "beat:common/home-end-night-kr"
+     }
+    },
+    {
+     "narration": "Three days later, the League Cup final at Hampden. Rangers won it, two-one. The mood went from hope to grey in an afternoon.",
+     "claim_ids": [
+      "w-cups"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "League Cup final",
+      "text": "Rangers 2–1 Celtic, Hampden, 16 March 2003.",
+      "claim": "w-cups",
+      "backdrop": "beat:common/relegation-rain-kr"
+     }
+    },
+    {
+     "narration": "Four days after that, Anfield. Alan Thompson scored on the stroke of half-time. Then, in the eighty-second minute, John Hartson.",
+     "claim_ids": [
+      "celtic:a-m-2003-03-20-liverpool-celtic",
+      "w-cups"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:a-m-2003-03-20-liverpool-celtic"
+     }
+    },
+    {
+     "narration": "Two-nil at Anfield. Three-one on aggregate. Celtic were in the semi-finals of a European competition, and the away end did not want to go home.",
+     "claim_ids": [
+      "celtic:a-m-2003-03-20-liverpool-celtic",
+      "w-route"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/celebration-pile-kr",
+      "caption": "Anfield, 20 March 2003"
+     }
+    },
+    {
+     "narration": "And then, three days later, Inverness Caledonian Thistle knocked them out of the Scottish Cup. One-nil. That was football in March 2003. Glory on Thursday, misery on Sunday.",
+     "claim_ids": [
+      "w-cups"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/newspaper-stand-n",
+      "caption": "The morning after"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Eleven minutes",
+   "beats": [
+    {
+     "narration": "The semi-final was Boavista, from Porto. At Celtic Park, Larsson scored in the forty-ninth minute. It finished one each.",
+     "claim_ids": [
+      "celtic:a-m-2003-04-10-celtic-boavista"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 4,
+      "title": "Eleven minutes",
+      "backdrop": "beat:common/kick-off-centre-kr"
+     }
+    },
+    {
+     "narration": "So everything came down to the second leg, in Portugal. A goalless draw would send Boavista through.",
+     "claim_ids": [
+      "celtic:a-m-2003-04-10-celtic-boavista",
+      "celtic:a-m-2003-04-24-boavista-celtic"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-hands-clasp-prayer-kr",
+      "caption": "Porto, April 2003"
+     }
+    },
+    {
+     "narration": "There was a strange twist in that. Boavista and FC Porto share a city. Whoever won in Porto that night would meet a team from Porto in the final.",
+     "claim_ids": [
+      "celtic:a-m-2003-04-24-boavista-celtic",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/hotel-window-city-kr",
+      "caption": "Porto, April 2003"
+     }
+    },
+    {
+     "narration": "Seventy-nine minutes went by. Then Larsson. Eleven minutes from the end, he put Celtic into a European final.",
+     "claim_ids": [
+      "celtic:a-m-2003-04-24-boavista-celtic"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:a-m-2003-04-24-boavista-celtic",
+      "figure": "cut:common/fig-celebrate-knee-slide-kr"
+     }
+    },
+    {
+     "narration": "One-nil. Two-one on aggregate. The final would be in Seville, on the twenty-first of May, against FC Porto.",
+     "claim_ids": [
+      "celtic:a-m-2003-04-24-boavista-celtic",
+      "w-route",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/flags-pole-kr",
+      "caption": "Through to the final"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Everyone went",
+   "beats": [
+    {
+     "narration": "What happened next is the part of this story that belongs to the supporters. Within days, Glasgow was trying to get to the south of Spain.",
+     "claim_ids": [
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 5,
+      "title": "Everyone went",
+      "backdrop": "beat:common/airport-gate-kr"
+     }
+    },
+    {
+     "narration": "They went by plane, when they could find one. By train, by coach, by car, by ferry, through France, through Portugal, through whatever route was left.",
+     "claim_ids": [
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:common/clip-plane-takeoff-n",
+      "caption": "May 2003"
+     }
+    },
+    {
+     "narration": "The ground held around fifty-two thousand. Most of the people who made the trip had no ticket, and they knew it before they left.",
+     "claim_ids": [
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/train-supporters-kr",
+      "caption": "No ticket. Going anyway."
+     }
+    },
+    {
+     "narration": "By the day of the game, Seville belonged to them. The fountains, the plazas, the old streets by the river, all of it green and white, and all of it singing.",
+     "claim_ids": [
+      "w-fans-80000",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:common/clip-scarf-wave-kr",
+      "caption": "Seville, 21 May 2003"
+     }
+    },
+    {
+     "narration": "UEFA called it the largest travelling support ever assembled for a single game. Around eighty thousand, the estimate says. A city taken over, and not a window broken.",
+     "claim_ids": [
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "The largest travelling support",
+      "text": "UEFA's words for the Celtic support in Seville: “the largest travelling support to have assembled for a single game.”",
+      "claim": "w-fans-80000",
+      "backdrop": "beat:common/street-dusk-kr"
+     }
+    },
+    {
+     "narration": "On the other bench sat José Mourinho. Nobody in Seville that night knew yet what that name would come to mean.",
+     "claim_ids": [
+      "w-managers"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/manager-blank-board-stadium",
+      "caption": "The other dugout"
+     }
+    }
+   ]
+  },
+  {
+   "title": "The final",
+   "beats": [
+    {
+     "narration": "Twenty-first of May. Estadio Olímpico de Sevilla. On the stroke of half-time, Derlei put Porto ahead.",
+     "claim_ids": [
+      "w-final",
+      "celtic:m-22c83ba20f"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 6,
+      "title": "The final",
+      "backdrop": "beat:common/stadium-night-bowl-n"
+     }
+    },
+    {
+     "narration": "Just after the restart, Larsson rose to meet a cross and looped a header over the goalkeeper. One each. It was his two hundredth goal for Celtic.",
+     "claim_ids": [
+      "w-larsson-200",
+      "celtic:m-22c83ba20f"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/header-goalmouth-kr",
+      "caption": "Forty-seventh minute",
+      "figure": "cut:common/fig-header-kr"
+     }
+    },
+    {
+     "narration": "Within five minutes Porto were ahead again, through Dmitri Alenichev. And in the fifty-seventh minute, Larsson again. Another header. Two each.",
+     "claim_ids": [
+      "w-final",
+      "celtic:m-22c83ba20f"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/ball-in-net-kr",
+      "caption": "Two each"
+     }
+    },
+    {
+     "narration": "Ninety minutes could not separate them. Extra time. And in the ninety-sixth minute, Bobo Baldé was shown a second yellow card.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/last-minute-clock-n",
+      "caption": "Extra time"
+     }
+    },
+    {
+     "narration": "Ten men held on, and held on. Five minutes from the end of extra time, Derlei scored again.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/despair-kneeling-kr",
+      "caption": "The hundred and fifteenth minute"
+     }
+    },
+    {
+     "narration": "Celtic two, Porto three, after extra time. The final whistle went in Seville, and eighty thousand people went quiet together.",
+     "claim_ids": [
+      "celtic:m-22c83ba20f",
+      "w-final",
+      "w-fans-80000"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "celtic:m-22c83ba20f"
+     }
+    },
+    {
+     "narration": "And then something happened that people still talk about. They stayed. They sang for their team as it walked round the pitch. And the next morning, they started the long way home, having given Seville nothing to complain about.",
+     "claim_ids": [
+      "w-fans-80000",
+      "w-fairplay"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/stadium-lights-off-n",
+      "caption": "After the final whistle"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Four days later",
+   "beats": [
+    {
+     "narration": "And there was still a league title to play for. Four days after Seville, on the last day of the season, Celtic and Rangers were level on points and level on goal difference.",
+     "claim_ids": [
+      "w-last-day",
+      "w-table-2002-03"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 7,
+      "title": "Four days later",
+      "backdrop": "beat:common/radio-street-kr"
+     }
+    },
+    {
+     "narration": "Celtic, with tired legs, won four-nil at Kilmarnock. At Ibrox, Rangers beat Dunfermline six-one.",
+     "claim_ids": [
+      "w-last-day"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "25 May 2003",
+      "text": "Kilmarnock 0–4 Celtic. Rangers 6–1 Dunfermline Athletic.",
+      "claim": "w-last-day",
+      "backdrop": "beat:common/tv-shop-window-kr"
+     }
+    },
+    {
+     "narration": "Ninety-seven points each. Rangers champions by a single goal of goal difference. The closest finish the league had ever seen.",
+     "claim_ids": [
+      "w-table-2002-03"
+     ],
+     "visual": {
+      "type": "table",
+      "claim": "w-table-2002-03"
+     }
+    },
+    {
+     "narration": "A European final lost in extra time. A league lost by one goal. Four days apart. On paper, Celtic ended that season with nothing.",
+     "claim_ids": [
+      "w-last-day",
+      "w-table-2002-03",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/dressing-room-silence-kr",
+      "caption": "End of May, 2003"
+     }
+    }
+   ]
+  },
+  {
+   "title": "What they kept",
+   "beats": [
+    {
+     "narration": "But that is not how the people who went to Seville remember it.",
+     "claim_ids": [],
+     "visual": {
+      "type": "chapter",
+      "number": 8,
+      "title": "What they kept",
+      "backdrop": "beat:common/city-skyline-dawn-kr"
+     }
+    },
+    {
+     "narration": "That year, FIFA gave its Fair Play Award to Celtic's supporters, for the way they behaved in Seville. UEFA honoured them too, at Celtic Park the following season.",
+     "claim_ids": [
+      "w-fairplay"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "FIFA Fair Play Award 2003",
+      "text": "Awarded to Celtic's supporters, for their behaviour at the 2003 UEFA Cup final.",
+      "claim": "w-fairplay",
+      "backdrop": "beat:common/choreography-kr"
+     }
+    },
+    {
+     "narration": "Henrik Larsson finished the season with forty-four goals. Ten of them came in that UEFA Cup run, two of them in the final.",
+     "claim_ids": [
+      "w-larsson-200",
+      "celtic:m-22c83ba20f"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "44",
+      "label": "Henrik Larsson's goals in 2002–03",
+      "claim": "w-larsson-200",
+      "backdrop": "beat:common/volley-edge-box-kr"
+     }
+    },
+    {
+     "narration": "Seven ties, from a Lithuanian town to Anfield to Porto. The road is still told in pubs in Glasgow, round by round, as if it happened last week.",
+     "claim_ids": [
+      "w-route"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "celtic:a-m-2002-10-03-suduva-celtic",
+       "celtic:a-m-2002-11-14-blackburn-celtic",
+       "celtic:a-m-2002-12-12-celta-celtic",
+       "celtic:a-m-2003-02-27-stuttgart-celtic",
+       "celtic:a-m-2003-03-20-liverpool-celtic",
+       "celtic:a-m-2003-04-24-boavista-celtic"
+      ],
+      "label": "The road to Seville"
+     }
+    },
+    {
+     "narration": "They lost the final. They lost the league. And they came home with a story they have told ever since. Football is ninety minutes. Being a supporter is a lifetime.",
+     "claim_ids": [
+      "w-final",
+      "w-table-2002-03"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-old-man-hands-scarf-kr",
+      "caption": "Seville, 2003"
+     }
+    },
+    {
+     "narration": "end",
+     "claim_ids": [],
+     "visual": {
+      "type": "end"
+     }
+    }
+   ]
+  }
+ ],
+ "description": "In 2002–03, Celtic were knocked out of the Champions League in August and ended the season with nothing on paper: a UEFA Cup final lost to FC Porto after extra time in Seville on 21 May, and a league title lost to Rangers by one goal of goal difference four days later.\n\nThis film follows the whole road from the stands, in order: Basel in August, Sūduva, Blackburn Rovers, Celta Vigo, Stuttgart, the ten days in March around Liverpool, the semi-final against Boavista, and the journey of an estimated 80,000 supporters to Seville — the support that won FIFA's Fair Play Award that year.\n\nEvery score, date and table on screen is printed from FanLife's archive records (UEFA match records) and the sources listed below. The crowd in Seville is an estimate in every source and the film says so.",
+ "tags": [
+  "Celtic",
+  "Celtic FC",
+  "Celtic 2003",
+  "Celtic Seville",
+  "UEFA Cup final 2003",
+  "Celtic v Porto",
+  "Bhoys from Seville",
+  "Henrik Larsson",
+  "Martin O'Neill",
+  "Celtic v Liverpool 2003",
+  "Scottish football",
+  "Scottish Premier League",
+  "football documentary",
+  "football history",
+  "football supporters",
+  "FIFA Fair Play Award",
+  "FanLife",
+  "Football Stories"
+ ],
+ "shorts": [
+  {
+   "hook": "Eighty thousand. One city. Most of them without a ticket.",
+   "idea": "The road to Seville in thirty seconds: map pins from Basel to Seville, ending on the estimate card.",
+   "claim_ids": [
+    "w-fans-80000",
+    "w-route"
+   ]
+  },
+  {
+   "hook": "Glory on Thursday, misery on Sunday.",
+   "idea": "Ten days in March 2003: Liverpool at home, the League Cup final, Anfield, Inverness — four cards in a row.",
+   "claim_ids": [
+    "celtic:a-m-2003-03-13-celtic-liverpool",
+    "celtic:a-m-2003-03-20-liverpool-celtic",
+    "w-cups"
+   ]
+  },
+  {
+   "hook": "Lost the final. Lost the league. Won something else.",
+   "idea": "Seville and Kilmarnock four days apart, ending on the FIFA Fair Play Award card.",
+   "claim_ids": [
+    "w-final",
+    "w-last-day",
+    "w-fairplay"
+   ]
+  }
+ ],
+ "thumbnails": [
+  {
+   "text": "Eighty Thousand to Seville",
+   "concept": "A street packed with green scarves from behind, headline in Weekly type.",
+   "claim": "w-fans-80000"
+  },
+  {
+   "text": "The Road to Seville",
+   "concept": "A floodlit European bowl at night, a green stripe across the frame.",
+   "claim": "w-final"
+  },
+  {
+   "text": "Lost Everything. Kept This.",
+   "concept": "An old man's hands folding a green scarf.",
+   "claim": "w-fairplay"
+  }
+ ]
+}

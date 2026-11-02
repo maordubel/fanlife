@@ -20,6 +20,15 @@ Owner-only. `/master/stories` (direct link from the desk). Channel: **FanLife: F
 5. **Upload** — through **YouTube Studio**, never the API (API uploads from an unaudited project are locked private). The
    desk records only what Studio shows: started → done (video id + visibility) or uncertain.
 
+## Other clubs (2.11.2026)
+
+Every club but Hapoel Tel Aviv reads its compiled FAN LIFE pack (`content/compiled/<club>.json`, built by
+`npm run clubs:precompile`): approved rows with an https source and confidence 2, the season taken from the date
+(July–June). Competitions carry the name they had THEN — UEFA files every UEFA Cup tie as the Europa League, the film
+says UEFA Cup before 2009/10. Scorers print only when the record names every goal. A second leg knows whether the club
+went through (aggregate, then away goals) and stamps THROUGH! or OUT instead of WIN/LOST. Map pins come from
+`dossiers/places.json`; a domestic map highlights the club's own country. Film 2: Celtic 2002/03, `dossiers/celtic-2002-03*`.
+
 ## Storage
 
 Masters and previews go to the **private** Supabase Storage bucket `worker-stories` in 45 MB chunks (free plan: 50 MB per
