@@ -1,0 +1,884 @@
+{
+ "title_candidates": [
+  {
+   "title": "Olympiacos 2023–24: The Road to Athens, Told From the Stands",
+   "angle": "search"
+  },
+  {
+   "title": "Olympiacos v Fiorentina, 2024 Conference League Final: The Season Behind It",
+   "angle": "search"
+  },
+  {
+   "title": "Olympiacos' 2024 Conference League Run | Genk to Athens, Match by Match",
+   "angle": "search"
+  },
+  {
+   "title": "Olympiacos 2023/24 Documentary: Maccabi, Fenerbahçe, Aston Villa and Fiorentina",
+   "angle": "search"
+  },
+  {
+   "title": "El Kaabi, Tzolakis, Mendilibar: How Olympiacos Won Greece's First European Trophy",
+   "angle": "search"
+  },
+  {
+   "title": "Three Goals Down at Home. Then They Won the Whole Thing.",
+   "angle": "discovery"
+  },
+  {
+   "title": "The First Greek Club to Win in Europe Did It in Their Rival's Stadium",
+   "angle": "discovery"
+  },
+  {
+   "title": "370 People Saw the Comeback. A Country Saw the Final.",
+   "angle": "discovery"
+  },
+  {
+   "title": "Three Penalties in Istanbul",
+   "angle": "discovery"
+  },
+  {
+   "title": "Fifty-Three Years After Wembley: Olympiacos and the Night Greece Won in Europe",
+   "angle": "discovery"
+  }
+ ],
+ "selected": 5,
+ "hook": "Twenty-ninth of May, 2024. Athens.",
+ "chapters": [
+  {
+   "title": "Athens",
+   "beats": [
+    {
+     "narration": "Twenty-ninth of May, 2024. Athens. The final of the Europa Conference League, Olympiacos against Fiorentina. Ninety minutes have gone. Nobody has scored, and in the stands, nobody can sit down.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "open",
+      "backdrop": "beat:common/europe-stadium-night-n",
+      "headline": "The Road to Athens",
+      "kicker": "Olympiacos · 2023–24"
+     }
+    },
+    {
+     "narration": "And here is the strange part. The final is in Athens, at the Agia Sophia Stadium. The home of AEK. A rival's ground, and nine thousand tickets for each club.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/street-matchday-crowd-b-kr",
+      "caption": "Athens, 29 May 2024"
+     }
+    },
+    {
+     "narration": "No Greek club had ever won a European trophy. Only one had even reached a European final: Panathinaikos, in 1971, and they lost it to Ajax.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "Greek clubs in European finals",
+      "text": "One, before this night: Panathinaikos, European Cup final, 1971. Lost to Ajax.",
+      "claim": "w-final",
+      "backdrop": "beat:common/old-photo-wall-b-kr"
+     }
+    },
+    {
+     "narration": "This is the most successful club in the history of Greek football. A hundred years old. And in all those years, the furthest they had ever gone in Europe was a quarter-final of the Champions League, in 1999.",
+     "claim_ids": [
+      "w-club"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/old-photo-wall-kr",
+      "caption": "Piraeus · since 1924"
+     }
+    },
+    {
+     "narration": "Thirteen days before this final, Olympiacos had turned a hundred. And now, in the second half of extra time, the whole of that hundred years is sitting on one ball.",
+     "claim_ids": [
+      "w-club",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-fingers-crossed-b-kr",
+      "caption": "Extra time"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Hold that moment there. Because to understand what this night meant to the people in those stands, we have to go back to August 2023, to Piraeus, and a season that very nearly fell apart.",
+     "claim_ids": [
+      "w-final",
+      "olympiacos:a-m-2023-08-10-olympiacos-genk"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "How did they get here?",
+      "subtitle": "Back to August 2023",
+      "backdrop": "beat:common/tr-page-turn-b-n"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Down a level",
+   "beats": [
+    {
+     "narration": "The season began in the Europa League, with a new manager, Diego Martínez, appointed in June, and two qualifying rounds to get through.",
+     "claim_ids": [
+      "w-managers",
+      "olympiacos:a-m-2023-08-10-olympiacos-genk"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 1,
+      "title": "Down a level",
+      "backdrop": "beat:common/away-end-arrival-b-kr"
+     }
+    },
+    {
+     "narration": "Genk first. One-nil in Piraeus, Kostas Fortounis in the first minute. Then Belgium, one-all, and Sotiris Alexandropoulos in the ninetieth minute to see it through.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-08-10-olympiacos-genk",
+      "olympiacos:a-m-2023-08-17-genk-olympiacos"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2023-08-17-genk-olympiacos"
+     }
+    },
+    {
+     "narration": "Then Čukarički of Belgrade, three-one and three-nil. And the group: Freiburg, West Ham, and TSC, from a small Serbian town called Bačka Topola. Remember that name.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-08-24-olympiacos-cukaricki",
+      "olympiacos:a-m-2023-08-31-cukaricki-olympiacos",
+      "olympiacos:a-m-2023-10-05-tsc-olympiacos",
+      "w-route"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "olympiacos:a-m-2023-08-17-genk-olympiacos",
+       "olympiacos:a-m-2023-08-31-cukaricki-olympiacos",
+       "olympiacos:a-m-2023-11-30-freiburg-olympiacos",
+       "olympiacos:a-m-2023-10-05-tsc-olympiacos",
+       "olympiacos:a-m-2023-11-09-west-ham-olympiacos"
+      ],
+      "label": "Genk · Belgrade · Freiburg · Bačka Topola · London"
+     }
+    },
+    {
+     "narration": "West Ham came to Piraeus in October. Two-one. Fortounis, and Rodinei just before half-time. A night to tell people about.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-10-26-olympiacos-west-ham"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2023-10-26-olympiacos-west-ham"
+     }
+    },
+    {
+     "narration": "Freiburg in Piraeus, in September: two-three. El Kaabi scored twice, and it still was not enough. Then West Ham away, one-nil to them, in November.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-09-21-olympiacos-freiburg",
+      "olympiacos:a-m-2023-11-09-west-ham-olympiacos"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "olympiacos:a-m-2023-09-21-olympiacos-freiburg",
+       "olympiacos:a-m-2023-11-09-west-ham-olympiacos"
+      ],
+      "label": "Group A · Freiburg and West Ham"
+     }
+    },
+    {
+     "narration": "Then Freiburg away, at the end of November. Five-nil.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-11-30-freiburg-olympiacos"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2023-11-30-freiburg-olympiacos"
+     }
+    },
+    {
+     "narration": "The last group game, against TSC at home in December, finished five-two. It changed nothing. Third place had been settled already.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-12-14-olympiacos-tsc",
+      "w-route"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2023-12-14-olympiacos-tsc"
+     }
+    },
+    {
+     "narration": "Seven points from six games. Third in the group. Not out of Europe, just down a level, into the knockout play-offs of the Europa Conference League. The third competition.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-09-21-olympiacos-freiburg",
+      "olympiacos:a-m-2023-10-05-tsc-olympiacos",
+      "olympiacos:a-m-2023-10-26-olympiacos-west-ham",
+      "olympiacos:a-m-2023-11-09-west-ham-olympiacos",
+      "olympiacos:a-m-2023-11-30-freiburg-olympiacos",
+      "olympiacos:a-m-2023-12-14-olympiacos-tsc",
+      "w-route"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "Group A · third place",
+      "text": "Seven points. Out of the Europa League, into the Conference League knockout play-offs.",
+      "claim": "w-route",
+      "backdrop": "beat:common/stand-roof-rain-b-kr"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Martínez left in December. Carlos Carvalhal came in, and was gone by February.",
+     "claim_ids": [
+      "w-managers"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/manager-blank-board-stadium",
+      "caption": "Piraeus, winter 2023"
+     },
+     "mood": "sad"
+    }
+   ]
+  },
+  {
+   "title": "Mendilibar",
+   "beats": [
+    {
+     "narration": "On the eleventh of February, 2024, Olympiacos appointed José Luis Mendilibar. The spring before, he had won the Europa League with Sevilla.",
+     "claim_ids": [
+      "w-managers"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 2,
+      "title": "Mendilibar",
+      "backdrop": "beat:common/press-conference-b-n"
+     }
+    },
+    {
+     "narration": "Three managers in one season is not how trophies are usually won. This season was going to be different. Nobody in Piraeus knew it yet.",
+     "claim_ids": [
+      "w-managers"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/dugout-substitutes",
+      "caption": "The third manager"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "He had days, not weeks, before a knockout tie against Ferencváros of Budapest.",
+     "claim_ids": [
+      "w-managers",
+      "olympiacos:a-m-2024-02-15-olympiacos-ferencvaros"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/training-rain-b-kr",
+      "caption": "February 2024",
+      "figure": "cut:common/fig-manager-coat-n"
+     }
+    },
+    {
+     "narration": "One-nil in Piraeus. One-nil in Budapest. Both goals from the same man, the Moroccan striker Ayoub El Kaabi. Remember that name, too.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-02-15-olympiacos-ferencvaros",
+      "olympiacos:a-m-2024-02-22-ferencvaros-olympiacos"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-02-22-ferencvaros-olympiacos"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Three goals down",
+   "beats": [
+    {
+     "narration": "Round of sixteen. Maccabi Tel Aviv. The first leg in Piraeus, on the seventh of March.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 3,
+      "title": "Three goals down",
+      "backdrop": "beat:common/home-end-night-b-kr"
+     }
+    },
+    {
+     "narration": "One-four. At home. El Kaabi scored, and it hardly mattered. Three goals behind, with ninety minutes left to play.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+      "w-maccabi-2"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv"
+     }
+    },
+    {
+     "narration": "It was a long walk home from the Karaiskakis that night. Three goals is a lot to find in a second leg. Almost nobody finds them.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/relegation-rain-b-kr",
+      "caption": "Piraeus, 7 March 2024"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "The second leg was not played in Tel Aviv. Maccabi played their home games that season in Serbia, at the TSC Arena in Bačka Topola. The same small ground where Olympiacos had drawn in October.",
+     "claim_ids": [
+      "w-maccabi-2",
+      "olympiacos:a-m-2023-10-05-tsc-olympiacos"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/foreign-stadium-stands-n",
+      "caption": "Bačka Topola, 14 March 2024"
+     }
+    },
+    {
+     "narration": "In the ground that night: three hundred and seventy people. Everyone else watched from somewhere else.",
+     "claim_ids": [
+      "w-maccabi-2"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "370",
+      "label": "The crowd in Bačka Topola",
+      "claim": "w-maccabi-2",
+      "backdrop": "beat:common/tv-shop-window-b-kr"
+     }
+    },
+    {
+     "narration": "Daniel Podence after ten minutes. Fortounis. El Kaabi, just before half-time. Three-nil, and the tie was level.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/volley-edge-box-b-kr",
+      "caption": "First half",
+      "figure": "cut:common/fig-striker-shoot-kr"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "El Kaabi again. Four-nil. Then a penalty for Maccabi, and four-one. Five each on aggregate after ninety minutes.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+      "w-maccabi-2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/last-minute-clock-b-n",
+      "caption": "Ninety minutes"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Extra time. Stevan Jovetić. Youssef El-Arabi. Six-one. From three goals down to seven goals to five. Olympiacos were in the quarter-finals.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+      "w-maccabi-2",
+      "w-route"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos"
+     },
+     "mood": "triumph"
+    }
+   ]
+  },
+  {
+   "title": "Istanbul",
+   "beats": [
+    {
+     "narration": "Quarter-final. Fenerbahçe.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-04-11-olympiacos-fenerbahce"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 4,
+      "title": "Istanbul",
+      "backdrop": "beat:common/away-bus-floodlights"
+     }
+    },
+    {
+     "narration": "Three-two in Piraeus. Fortounis, Jovetić, Chiquinho. Three-nil after fifty-seven minutes, and then two Fenerbahçe goals that made the trip to Istanbul feel very long.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-04-11-olympiacos-fenerbahce"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-04-11-olympiacos-fenerbahce"
+     }
+    },
+    {
+     "narration": "The eighteenth of April. The Şükrü Saracoğlu, and 44,040 people.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+      "w-fener-2"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+      "backdrop": "beat:common/europe-stadium-night-n"
+     }
+    },
+    {
+     "narration": "İrfan Can Kahveci in the twelfth minute. Three each on aggregate. Then extra time, and nobody else scored.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+      "w-fener-2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-hands-fence-b-kr",
+      "caption": "Istanbul, 18 April 2024"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Penalties. And in goal for Olympiacos, Konstantinos Tzolakis.",
+     "claim_ids": [
+      "w-fener-2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/shootout-line-b-kr",
+      "caption": "Penalties"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Dušan Tadić. Saved. Cengiz Ünder. Saved. Leonardo Bonucci. Saved. Three penalties, in Istanbul.",
+     "claim_ids": [
+      "w-fener-2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/penalty-spot-close-b-n",
+      "caption": "Konstantinos Tzolakis",
+      "figure": "cut:common/fig-keeper-dive-n"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Three-two on penalties. For the first time in their history, Olympiacos were in a European semi-final.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+      "w-fener-2"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "When the team flew home, the supporters were waiting for them at the airport to welcome back a team that had just done something no Olympiacos side had ever done.",
+     "claim_ids": [
+      "w-fener-2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/airport-gate-b-kr",
+      "caption": "Athens, April 2024"
+     },
+     "mood": "joy"
+    }
+   ]
+  },
+  {
+   "title": "Villa Park",
+   "beats": [
+    {
+     "narration": "A few days later, in Nyon, in Switzerland, the Olympiacos youth team beat Milan three-nil in the final of the UEFA Youth League. The first Greek team ever to win a UEFA club competition.",
+     "claim_ids": [
+      "w-youth"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 5,
+      "title": "Villa Park",
+      "backdrop": "beat:common/youth-academy-b-kr"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Semi-final. Aston Villa. The first leg in Birmingham, on the second of May.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-05-02-aston-villa-olympiacos"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "olympiacos:a-m-2024-05-02-aston-villa-olympiacos",
+      "backdrop": "beat:common/foreign-stadium-stands-n"
+     }
+    },
+    {
+     "narration": "El Kaabi in the sixteenth minute. The twenty-ninth. The fifty-sixth. A hat-trick in England, and Santiago Hezze for the fourth. Four-two.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-05-02-aston-villa-olympiacos"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-05-02-aston-villa-olympiacos",
+      "figure": "cut:common/fig-celebrate-arms-kr"
+     }
+    },
+    {
+     "narration": "A week later, in Piraeus, El Kaabi twice more. Two-nil. Six-two on aggregate.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-05-09-olympiacos-aston-villa",
+      "w-route"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-05-09-olympiacos-aston-villa"
+     }
+    },
+    {
+     "narration": "Olympiacos were in a European final. And the final would be in Athens, at the home of AEK.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-05-09-olympiacos-aston-villa",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/flags-pole-b-kr",
+      "caption": "Through to the final"
+     },
+     "mood": "triumph"
+    }
+   ]
+  },
+  {
+   "title": "The final",
+   "beats": [
+    {
+     "narration": "Twenty-ninth of May, 2024. Fiorentina, beaten in the final the year before, and hungry for it.",
+     "claim_ids": [
+      "w-final",
+      "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 6,
+      "title": "The final",
+      "backdrop": "beat:common/stadium-night-bowl-n"
+     }
+    },
+    {
+     "narration": "The walk to the ground went through Nea Filadelfeia, AEK's own neighbourhood. Red and white, on the other side of the city, at a rival's front door.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/street-to-ground-cobbles-kr",
+      "caption": "Nea Filadelfeia, 29 May 2024"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Twenty-six thousand, eight hundred and forty-two inside.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "26,842",
+      "label": "The crowd at the Agia Sophia Stadium",
+      "claim": "w-final",
+      "backdrop": "beat:common/crowd-scarves-night-kr"
+     }
+    },
+    {
+     "narration": "Ninety minutes. Nothing. Extra time. Still nothing. Penalties coming.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/kick-off-centre-b-kr",
+      "caption": "Extra time"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "The hundred and sixteenth minute. Santiago Hezze crosses from the left, and Ayoub El Kaabi heads it in.",
+     "claim_ids": [
+      "w-final",
+      "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/header-goalmouth-b-kr",
+      "caption": "The hundred and sixteenth minute",
+      "figure": "cut:common/fig-header-b-kr"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "And then the wait. A long check by the video assistant referee. In the stands, nobody moved.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/offside-flag-b-n",
+      "caption": "The check"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "The goal stood. Olympiacos one, Fiorentina nil.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-05-29-olympiacos-fiorentina",
+      "w-final"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     }
+    },
+    {
+     "narration": "Players on their knees on the halfway line. And José Luis Mendilibar, a European winner for the second spring running, with a team he had met in February.",
+     "claim_ids": [
+      "w-final",
+      "w-managers"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/final-whistle-arms-b-kr",
+      "caption": "The final whistle"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "The first European trophy ever won by a Greek club. Fifty-three years after Panathinaikos lost to Ajax, a Greek team had won a European final.",
+     "claim_ids": [
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/trophy-lift-crowd-b-kr",
+      "caption": "Athens, 29 May 2024",
+      "figure": "cut:common/fig-captain-cup-kr"
+     },
+     "mood": "triumph"
+    }
+   ]
+  },
+  {
+   "title": "Piraeus",
+   "beats": [
+    {
+     "narration": "That night, several thousand supporters gathered in Piraeus.",
+     "claim_ids": [
+      "w-piraeus"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 7,
+      "title": "Piraeus",
+      "backdrop": "beat:common/street-lamp-crowd-kr"
+     },
+     "mood": "anthem"
+    },
+    {
+     "narration": "Thirteen days after the hundredth birthday, the first European trophy came home to the port.",
+     "claim_ids": [
+      "w-piraeus",
+      "w-club"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/open-top-bus-b-kr",
+      "caption": "Piraeus, night of 29 May 2024"
+     },
+     "mood": "anthem"
+    },
+    {
+     "narration": "At home, the league was not theirs. Olympiacos finished third, with seventy-four points. PAOK were champions.",
+     "claim_ids": [
+      "w-season"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "Super League Greece 2023–24",
+      "text": "Olympiacos third, 74 points. PAOK champions.",
+      "claim": "w-season",
+      "backdrop": "beat:common/newspaper-stand-b-n"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Ayoub El Kaabi finished with eleven goals in the Conference League, and thirty-three in the season. A boy from Casablanca, carried round Piraeus.",
+     "claim_ids": [
+      "w-season"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "11",
+      "label": "El Kaabi's Conference League goals, 2023–24",
+      "claim": "w-season",
+      "backdrop": "beat:common/celebration-pile-b-kr"
+     }
+    },
+    {
+     "narration": "And the youth team's trophy from Nyon, five weeks earlier, beside it. Two European trophies in one spring, for a country that had never won one.",
+     "claim_ids": [
+      "w-youth",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/archive-trophy-spotlight",
+      "caption": "Spring 2024"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Genk, Belgrade, Freiburg, Bačka Topola, London, Budapest, Istanbul, Birmingham. And Athens.",
+     "claim_ids": [
+      "olympiacos:a-m-2023-08-17-genk-olympiacos",
+      "olympiacos:a-m-2023-08-31-cukaricki-olympiacos",
+      "olympiacos:a-m-2023-11-30-freiburg-olympiacos",
+      "olympiacos:a-m-2023-10-05-tsc-olympiacos",
+      "olympiacos:a-m-2023-11-09-west-ham-olympiacos",
+      "olympiacos:a-m-2024-02-22-ferencvaros-olympiacos",
+      "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+      "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+      "olympiacos:a-m-2024-05-02-aston-villa-olympiacos",
+      "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "olympiacos:a-m-2023-08-17-genk-olympiacos",
+       "olympiacos:a-m-2023-08-31-cukaricki-olympiacos",
+       "olympiacos:a-m-2023-11-30-freiburg-olympiacos",
+       "olympiacos:a-m-2023-10-05-tsc-olympiacos",
+       "olympiacos:a-m-2023-11-09-west-ham-olympiacos",
+       "olympiacos:a-m-2024-02-22-ferencvaros-olympiacos",
+       "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+       "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+       "olympiacos:a-m-2024-05-02-aston-villa-olympiacos",
+       "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+      ],
+      "label": "The road to Athens · 2023–24"
+     }
+    },
+    {
+     "narration": "Every supporter knows a season that ended in nothing. This one went through one-four at home, three hundred and seventy people in Serbia, three penalties saved in Istanbul, and ended in the hundred and sixteenth minute, in Athens.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+      "w-maccabi-2",
+      "w-fener-2",
+      "w-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-old-man-hands-scarf-b-kr",
+      "caption": "Piraeus, 2024"
+     },
+     "mood": "anthem"
+    },
+    {
+     "narration": "end",
+     "claim_ids": [],
+     "visual": {
+      "type": "end"
+     }
+    }
+   ]
+  }
+ ],
+ "description": "On 29 May 2024, Olympiacos beat Fiorentina 1–0 after extra time in the Europa Conference League final — the first European trophy ever won by a Greek club, and it was won in Athens, at the home of AEK. Ayoub El Kaabi headed the winner in the 116th minute.\n\nThis film follows the whole road from the stands, in order: Genk and Čukarički in August, a Europa League group that ended in third place, three managers in one season, José Luis Mendilibar's arrival in February, the 1–4 home defeat to Maccabi Tel Aviv and the 6–1 comeback in Bačka Topola in front of 370 people, three penalties saved by Konstantinos Tzolakis in Istanbul, El Kaabi's hat-trick at Villa Park, and the final.\n\nEvery score, date and table on screen is printed from FanLife's archive records (UEFA match records) and the sources listed below. Crowds in the streets are given only as the sources give them.",
+ "tags": [
+  "Olympiacos",
+  "Olympiacos FC",
+  "Olympiacos 2024",
+  "Conference League final 2024",
+  "Olympiacos v Fiorentina",
+  "Ayoub El Kaabi",
+  "Mendilibar",
+  "Tzolakis",
+  "Olympiacos v Maccabi Tel Aviv",
+  "Olympiacos v Fenerbahce",
+  "Olympiacos v Aston Villa",
+  "Greek football",
+  "Piraeus",
+  "football documentary",
+  "football history",
+  "football supporters",
+  "FanLife",
+  "Football Stories"
+ ],
+ "shorts": [
+  {
+   "hook": "Three goals down at home. Three hundred and seventy people watching.",
+   "idea": "The Maccabi tie: 1–4 at home, then 6–1 in Bačka Topola after extra time.",
+   "claim_ids": [
+    "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+    "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+    "w-maccabi-2"
+   ]
+  },
+  {
+   "hook": "Three penalties. Three saves. Istanbul.",
+   "idea": "Tzolakis in the shoot-out at Fenerbahçe, ending on the first European semi-final card.",
+   "claim_ids": [
+    "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+    "w-fener-2"
+   ]
+  },
+  {
+   "hook": "The first Greek club to win in Europe did it in a rival’s stadium.",
+   "idea": "The final: the 116th minute, the VAR check, the first European trophy for a Greek club.",
+   "claim_ids": [
+    "w-final",
+    "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+   ]
+  }
+ ],
+ "thumbnails": [
+  {
+   "text": "Greece Wins Europe",
+   "concept": "A floodlit bowl at night, red and white flags, headline in Weekly type.",
+   "claim": "w-final"
+  },
+  {
+   "text": "Three Goals Down",
+   "concept": "A near-empty foreign stand, a single red scarf on the railing.",
+   "claim": "w-maccabi-2"
+  },
+  {
+   "text": "Three Penalties Saved",
+   "concept": "A keeper diving at a penalty spot under floodlights.",
+   "claim": "w-fener-2"
+  }
+ ]
+}

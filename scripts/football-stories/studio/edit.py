@@ -19,7 +19,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from .common import FPS, H, INK, KIT, ROOT, NEWSPRINT, PAPER, W, Palette, StageError, hex_rgb, read_json, write_json
-from .maps import city_of, pin_sprite
+from .maps import city_of, pin_sprite, place_of
 from .maps import render as render_map
 from .audio import MOODS as _MOODS
 from .motion import Confetti, Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
@@ -178,7 +178,8 @@ class Editor:
     def won_shootout(self, f: dict | None) -> bool:
         if not f:
             return False
-        pens = next((c['fact'] for c in self.ledger['claims'] if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
+        pens = f.get('penalties') or next((c['fact'] for c in self.ledger['claims']
+                                             if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
         return bool(pens and pens.get('winner') == self.ledger.get('club_name'))
 
     def tie_through(self, f: dict | None) -> bool | None:
@@ -201,6 +202,8 @@ class Editor:
         us, them = first['club_goals'] + f['club_goals'], first['opponent_goals'] + f['opponent_goals']
         if us != them:
             return us > them
+        if int(str(self.ledger.get('season') or '0')[:4] or 0) >= 2021:
+            return None  # UEFA dropped away goals from 2021/22: a level tie went to extra time and penalties
         away_us = first['club_goals'] if first['side'] == 'away' else f['club_goals']
         away_them = first['opponent_goals'] if first['side'] == 'home' else f['opponent_goals']
         return None if away_us == away_them else away_us > away_them
@@ -316,7 +319,7 @@ class Editor:
                 c = self.by.get(cid)
                 if not c or c['fact'].get('kind') != 'match':
                     continue
-                co = city_of(c['fact']['opponent'])
+                co = place_of(c['fact'], self.ledger['club_name'])
                 if co and co[0] not in seen:
                     pts.append({'name': co[0], 'lat': co[1][0], 'lon': co[1][1], 'home': False})
                     seen.add(co[0])
@@ -825,8 +828,11 @@ class Editor:
         if kind == 'matchday':
             return _img(sp.matchday(k, f))
         if kind == 'score':
-            pens = next((c['fact'] for c in self.ledger['claims'] if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
-            extra = f"{pens['winner']} won {pens['shootout']} on penalties" if pens else None
+            pens = f.get('penalties') or next((c['fact'] for c in self.ledger['claims']
+                                                if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
+            extra = f"{pens['winner']} won {pens.get('shootout') or pens.get('score')} on penalties" if pens else None
+            if not extra and f.get('after_extra_time'):
+                extra = 'After extra time'
             if f.get('title_decided'):
                 extra = (extra + ' · ' if extra else '') + 'The title is decided'
             return _img(sp.score(k, f, extra))
