@@ -89,8 +89,8 @@ def stub_layers(sp, key: str, kicker: str, x: float, y: float, t0: float, hold: 
     layers: list[Layer] = []
     scarf = ART / 'subscribe-scarf.png'
     if scarf.exists():
-        sc = fit(_img(scarf), int(max_w * 1.25), 520)
-        layers.append(Layer(sc, until(slide_in(x, y - ask.height * 0.55, t0 + 0.15, frm=(0, 340), rot0=-4, rot1=-1, dur=0.6, drift=True), t_out), settle=1e9))
+        sc = fit(_img(scarf), int(max_w * 1.15), 520)
+        layers.append(Layer(sc, until(slide_in(x, y - ask.height * 0.95, t0 + 0.15, frm=(0, 340), rot0=-4, rot1=-1, dur=0.6, drift=True), t_out), settle=1e9))
     layers.append(Layer(ask, until(slide_in(x, y, t0, frm=(max_w + 200, 0), rot0=3, rot1=-1.5, dur=0.55, drift=False), t_tap), settle=1e9))
 
     def flip(t):
