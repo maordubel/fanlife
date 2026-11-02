@@ -450,7 +450,7 @@ def main() -> None:
          '-c:a', 'aac', '-b:a', '256k', '-map_metadata', '-1', '-map_chapters', '-1', '-metadata', f"title={ep['title']}",
          '-movflags', '+faststart', '-shortest', str(master)])
     srt(lines, out / f'{name}.en.srt')
-        run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'veryfast',
+    run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'veryfast',
          '-crf', '25', '-c:a', 'aac', '-b:a', '128k', '-map_metadata', '-1', '-movflags', '+faststart', str(out / f'{name}-preview.mp4')])
     for k, frac in enumerate((0.05, 0.2, 0.4, 0.6, 0.8, 0.95)):
         run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{total * frac:.2f}', '-i', str(master), '-frames:v', '1', '-vf',
