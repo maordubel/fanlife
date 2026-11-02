@@ -32,6 +32,16 @@ class FilmRenderTest(unittest.TestCase):
     def test_reject_shots_shorter_than_narration(self):
         self.scene['shots']=self.scene['shots'][:1]
         with self.assertRaisesRegex(mod.ProductionError,'shorter than narration'):mod.render(self.manifest(),self.root/'out.mp4')
+    def test_alignment_timing_and_text_mismatch(self):
+        text='One two three four five six seven.'
+        chars=list(text); times=[i*.04 for i in range(len(chars))]
+        alignment={'characters':chars,'character_start_times_seconds':times,'character_end_times_seconds':[x+.03 for x in times]}
+        path=self.root/'alignment.json';path.write_text(json.dumps(alignment))
+        parts=mod.captions_for_alignment(path,text,2)
+        self.assertEqual(len(parts),2)
+        self.assertEqual(parts[0][2],'One two three four five six')
+        self.assertEqual(parts[1][2],'seven.')
+        with self.assertRaisesRegex(mod.ProductionError,'differs'):mod.captions_for_alignment(path,'Wrong narration',2)
     def test_no_overwrite(self):
         path=self.root/'out.mp4';path.write_bytes(b'existing')
         with self.assertRaisesRegex(mod.ProductionError,'already exists'):mod.render(self.manifest(),path)

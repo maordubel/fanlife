@@ -1,6 +1,6 @@
 # Football Stories — documentary assembly stage
 
-This stage assembles real video clips with one narration audio file per scene, then exports a 1280×720 MP4 and scene-timed SRT. It validates every media file, checks clip ranges and refuses shots without a documented rights status and evidence reference. It does **not** perform research, generate scripts, imagery, animation, music or speech, check the truth of claims, verify a licence, or upload/publish. The SRT timing is at scene level and requires editing; it is not word-aligned or burned in. Its output quality depends on the input footage, sound, script and creative editing. This is an early production component, not the autonomous system.
+This stage assembles real video clips with one narration audio file per scene, then exports a 1280×720 MP4 and scene-timed SRT. It validates every media file, checks clip ranges and refuses shots without a documented rights status and evidence reference. It does **not** perform research, generate scripts, imagery, animation, music or speech, check the truth of claims, verify a licence, or upload/publish. The SRT timing uses optional ElevenLabs alignment JSON, otherwise scene-level timing. Captions require review and are not burned in. Its output quality depends on the input footage, sound, script and creative editing. This is an early production component, not the autonomous system.
 
 ## Requirements
 
@@ -39,7 +39,7 @@ Editorial research and approved sources, per-shot visual design, reusable animat
 
 ## Optional ElevenLabs voice stage
 
-`voice.py` sends one UTF-8 text file to ElevenLabs' `with-timestamps` endpoint and saves an MP3 and alignment JSON. It requires the user's `ELEVENLABS_API_KEY` environment variable and an explicitly chosen `--voice-id`; it never prints or commits credentials. Running it can incur charges. It refuses to overwrite outputs and does not retry ambiguous failures, which can otherwise generate duplicate charges. Example: `python3 scripts/football-stories/engine/voice.py narration.txt narration.mp3 --voice-id YOUR_VOICE_ID`. This integration has not been tested against a live account; the video assembler currently uses scene-level subtitle timing rather than the returned alignment.
+`voice.py` sends one UTF-8 text file to ElevenLabs' `with-timestamps` endpoint and saves an MP3 and alignment JSON. It requires the user's `ELEVENLABS_API_KEY` environment variable and an explicitly chosen `--voice-id`; it never prints or commits credentials. Running it can incur charges. It refuses to overwrite outputs and does not retry ambiguous failures, which can otherwise generate duplicate charges. Example: `python3 scripts/football-stories/engine/voice.py narration.txt narration.mp3 --voice-id YOUR_VOICE_ID`. This integration has not been tested against a live account. Set a scene’s optional `alignment` path to the generated JSON for timed caption groups; the alignment text must match the narration.
 
 ## Hapoel Tel Aviv season dossier
 

@@ -44,6 +44,22 @@ def timestamp(seconds):
     ms=round(seconds*1000);h,ms=divmod(ms,3600000);m,ms=divmod(ms,60000);s,ms=divmod(ms,1000)
     return f'{h:02d}:{m:02d}:{s:02d},{ms:03d}'
 
+def captions_for_alignment(path, narration, duration):
+    try:
+        data=json.loads(path.read_text(encoding="utf-8"))
+        chars=data["characters"]; starts=data["character_start_times_seconds"]; ends=data["character_end_times_seconds"]
+        if not (isinstance(chars,list) and len(chars)==len(starts)==len(ends) and chars): raise ValueError("invalid alignment arrays")
+        if "".join(chars).strip()!=narration.strip(): raise ValueError("alignment text differs from narration")
+        if any(not isinstance(c,str) or len(c)!=1 for c in chars): raise ValueError("invalid alignment character")
+        if any(isinstance(x,bool) or not isinstance(x,(int,float)) or not math.isfinite(x) for x in starts+ends): raise ValueError("invalid timestamp")
+        if any(a<0 or b<a or b>duration+0.1 for a,b in zip(starts,ends)) or any(a>b for a,b in zip(starts,starts[1:])): raise ValueError("alignment out of range")
+        words=[]
+        for m in re.finditer(r"\S+", "".join(chars)):
+            words.append((m.group(),starts[m.start()],ends[m.end()-1]))
+        return [(group[0][1],group[-1][2]," ".join(w[0] for w in group)) for i in range(0,len(words),6) if (group:=words[i:i+6])]
+    except (OSError,ValueError,KeyError,TypeError,json.JSONDecodeError) as e:
+        raise ProductionError(f"Invalid narration alignment: {e}") from e
+
 def validate(manifest,base):
     if manifest.get('version')!=1: raise ProductionError('Expected manifest version 1')
     scenes=manifest.get('scenes')
@@ -74,7 +90,12 @@ def validate(manifest,base):
             parsed.append((video,float(start),float(length)))
         if sum(p[2] for p in parsed)+0.03<audio_duration:
             raise ProductionError(f'Scene {scene_id}: visuals shorter than narration')
-        prepared.append((scene_id,text.strip(),audio,audio_duration,parsed))
+        alignment_path=s.get('alignment')
+        if alignment_path is not None:
+            alignment=resolved(base,alignment_path,{'.json'})
+            caption_parts=captions_for_alignment(alignment,text.strip(),audio_duration)
+        else: caption_parts=[(0.0,audio_duration,text.strip())]
+        prepared.append((scene_id,text.strip(),audio,audio_duration,parsed,caption_parts))
     return prepared
 
 def render(manifest_path,output):
@@ -88,7 +109,7 @@ def render(manifest_path,output):
     if output.suffix.lower() != '.mp4': raise ProductionError('Output must use the .mp4 extension')
     with tempfile.TemporaryDirectory(prefix='fanlife-film-',dir=output.parent) as tmp:
         work=Path(tmp); segments=[]; captions=[]; offset=0.0
-        for number,(sid,text,audio,audio_duration,shots) in enumerate(scenes):
+        for number,(sid,text,audio,audio_duration,shots,caption_parts) in enumerate(scenes):
             clips=[]; remaining=audio_duration
             for j,(video,start,duration) in enumerate(shots):
                 use=min(duration,remaining)
@@ -107,7 +128,8 @@ def render(manifest_path,output):
                  '-c:v','copy','-c:a','aac','-ar','48000','-ac','2','-t',f'{audio_duration:.6f}','-movflags','+faststart',str(complete)])
             actual,streams=probe(complete)
             if not {'video','audio'}.issubset(streams): raise ProductionError(f'Scene {sid}: render lacks audio/video')
-            captions.append(f'{number+1}\n{timestamp(offset)} --> {timestamp(offset+actual)}\n{text}\n')
+            for start,end,caption in caption_parts:
+                captions.append(f'{len(captions)+1}\n{timestamp(offset+start)} --> {timestamp(offset+min(end,actual))}\n{caption}\n')
             offset+=actual; segments.append(complete)
         listing=work/'final.txt';listing.write_text(''.join(f"file '{p.name}'\n" for p in segments),encoding='utf-8')
         result=work/'final.mp4'
@@ -117,7 +139,7 @@ def render(manifest_path,output):
         # Only publish the output filenames after successful encoding and verification.
         temp_srt=work/'final.srt';temp_srt.write_text('\n'.join(captions),encoding='utf-8')
         os.replace(result,output);os.replace(temp_srt,srt_path)
-    return {'video':str(output),'subtitles':str(srt_path),'duration_seconds':duration,'scene_count':len(scenes),'subtitles_timing':'scene-level; edit before publication'}
+    return {'video':str(output),'subtitles':str(srt_path),'duration_seconds':duration,'scene_count':len(scenes),'subtitles_timing':'alignment where provided; otherwise scene-level; review before publication'}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('manifest',type=Path);p.add_argument('output',type=Path);a=p.parse_args()
