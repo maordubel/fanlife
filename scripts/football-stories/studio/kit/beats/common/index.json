@@ -1711,6 +1711,729 @@
    ],
    "supplied": "2026-11-02",
    "accent": "key-red"
+  },
+  {
+   "key": "beat:common/away-fence-group-kr",
+   "description": "A small group of away supporters behind a fence with red scarves (for: the away end)",
+   "families": [
+    "red"
+   ],
+   "source": "away-fence-group-kr.jpg",
+   "sha256": "cbbadb7d7456c6a3",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/city-rooftops-dawn-n",
+   "description": "A city of rooftops at dawn with a stadium among them (for: a new day, the club's city)",
+   "families": [],
+   "source": "city-rooftops-dawn-n.jpg",
+   "sha256": "efec27dad29f6384",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/city-sunrise-sky-n",
+   "description": "A paper sunrise behind swirling clouds (for: hope, a new season)",
+   "families": [],
+   "source": "city-sunrise-sky-n.jpg",
+   "sha256": "71854aa2d26da7cb",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/close-armband-b-kr",
+   "description": "A captain pulling on a red armband (for: captains, leadership)",
+   "families": [
+    "red"
+   ],
+   "source": "close-armband-b-kr.jpg",
+   "sha256": "8773d48c3df6718d",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-armband-kr",
+   "description": "A captain pulling on a red armband (for: captains, leadership)",
+   "families": [
+    "red"
+   ],
+   "source": "close-armband-kr.jpg",
+   "sha256": "cb8fe1562275d605",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-boots-tunnel-b-n",
+   "description": "Muddy boots walking down the tunnel (for: walk-out, a match about to start)",
+   "families": [],
+   "source": "close-boots-tunnel-b-n.jpg",
+   "sha256": "1d4c68a6b207b6ad",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/close-boots-tunnel-n",
+   "description": "Muddy boots walking down the tunnel (for: walk-out, a match about to start)",
+   "families": [],
+   "source": "close-boots-tunnel-n.jpg",
+   "sha256": "33f4518069c3681a",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/close-child-hand-railing-kr",
+   "description": "A child's hand on a terrace railing, a red sleeve (for: first match, memory)",
+   "families": [
+    "red"
+   ],
+   "source": "close-child-hand-railing-kr.jpg",
+   "sha256": "b431cdb7941cb845",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-fingers-crossed-b-kr",
+   "description": "Fingers crossed, a red cuff (for: hope, a tense finish)",
+   "families": [],
+   "source": "close-fingers-crossed-b-kr.jpg",
+   "sha256": "df5d5b0973218b6e",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-fingers-crossed-kr",
+   "description": "Fingers crossed, a red cuff (for: hope, a tense finish)",
+   "families": [
+    "red"
+   ],
+   "source": "close-fingers-crossed-kr.jpg",
+   "sha256": "ed5a830aa4258f4b",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-hands-clasp-prayer-b-kr",
+   "description": "Hands clasped in prayer, a red sleeve (for: penalties, the last minutes)",
+   "families": [
+    "red"
+   ],
+   "source": "close-hands-clasp-prayer-b-kr.jpg",
+   "sha256": "aaf00884484ce599",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-hands-clasp-prayer-kr",
+   "description": "Hands clasped in prayer, a red sleeve (for: penalties, the last minutes)",
+   "families": [
+    "red"
+   ],
+   "source": "close-hands-clasp-prayer-kr.jpg",
+   "sha256": "1796fd9e8651a1e0",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-hands-fence-b-kr",
+   "description": "Fingers gripping a wire fence (for: tension, a goal against, the away end)",
+   "families": [
+    "red"
+   ],
+   "source": "close-hands-fence-b-kr.jpg",
+   "sha256": "eb46bfe5697c4ec6",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-hands-fence-kr",
+   "description": "Fingers gripping a wire fence (for: tension, a goal against, the away end)",
+   "families": [
+    "red"
+   ],
+   "source": "close-hands-fence-kr.jpg",
+   "sha256": "bed48ea57753c0a7",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-old-man-hands-scarf-b-kr",
+   "description": "An old man's hands folding a red scarf (for: memory, endings, a lifetime of support)",
+   "families": [
+    "red"
+   ],
+   "source": "close-old-man-hands-scarf-b-kr.jpg",
+   "sha256": "ae9d2ae36911e825",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-old-man-hands-scarf-kr",
+   "description": "An old man's hands folding a red scarf (for: memory, endings, a lifetime of support)",
+   "families": [
+    "red"
+   ],
+   "source": "close-old-man-hands-scarf-kr.jpg",
+   "sha256": "8b19e871c108f50f",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-scarf-over-mouth-kr",
+   "description": "A supporter's red scarf pulled up over his mouth (for: cold nights, nerves)",
+   "families": [
+    "red"
+   ],
+   "source": "close-scarf-over-mouth-kr.jpg",
+   "sha256": "72ff43b9976fc5c1",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-ticket-in-hand-b-kr",
+   "description": "A hand holding a match ticket (for: tickets, sell-outs, the big day)",
+   "families": [
+    "red"
+   ],
+   "source": "close-ticket-in-hand-b-kr.jpg",
+   "sha256": "52ae19fed64b22ea",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/close-ticket-in-hand-kr",
+   "description": "A hand holding a match ticket (for: tickets, sell-outs, the big day)",
+   "families": [
+    "red"
+   ],
+   "source": "close-ticket-in-hand-kr.jpg",
+   "sha256": "a2aacb5b7bd40322",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/crowd-scarves-night-kr",
+   "description": "Red scarves raised against a night sky (for: anthems, big nights)",
+   "families": [
+    "red"
+   ],
+   "source": "crowd-scarves-night-kr.jpg",
+   "sha256": "1a78cb9270f280e7",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/europe-stadium-night-n",
+   "description": "A great arched European stadium at night (for: European nights, finals abroad)",
+   "families": [],
+   "source": "europe-stadium-night-n.jpg",
+   "sha256": "aaa6a010baf469e8",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/foreign-stadium-stands-n",
+   "description": "The towering stands of a foreign ground (for: away trips abroad)",
+   "families": [],
+   "source": "foreign-stadium-stands-n.jpg",
+   "sha256": "617b94d64f4cbeaa",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/home-end-night-b-kr",
+   "description": "A floodlit home end at night, red scarves in the stand (for: a big home night)",
+   "families": [
+    "green",
+    "red"
+   ],
+   "source": "home-end-night-b-kr.jpg",
+   "sha256": "fbd0d6b657e5c9e6",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/home-end-night-kr",
+   "description": "A floodlit home end at night, red scarves in the stand (for: a big home night)",
+   "families": [
+    "red"
+   ],
+   "source": "home-end-night-kr.jpg",
+   "sha256": "0df2b8e2d2c04e56",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/old-ground-chimneys-n",
+   "description": "A 1930s ground under factory chimneys and smoke (for: industrial-era beginnings)",
+   "families": [],
+   "source": "old-ground-chimneys-n.jpg",
+   "sha256": "f365e22e13228860",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/old-ground-wooden-n",
+   "description": "A 1930s wooden grandstand on a bare, worn pitch (for: a club's first ground, early history)",
+   "families": [
+    "yellow"
+   ],
+   "source": "old-ground-wooden-n.jpg",
+   "sha256": "167d33765c0de211",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/rain-pitch-n",
+   "description": "Rain falling on a stadium pitch (for: winter games, gloom)",
+   "families": [
+    "green"
+   ],
+   "source": "rain-pitch-n.jpg",
+   "sha256": "3c95c5bbcc7a531d",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/rain-stadium-n",
+   "description": "A stadium under heavy rain (for: bad days, relegation)",
+   "families": [],
+   "source": "rain-stadium-n.jpg",
+   "sha256": "79d22c8df9348731",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/stadium-green-pitch-kr",
+   "description": "A stadium from above, red seats around a green pitch (for: the home ground, a new stadium)",
+   "families": [
+    "green",
+    "red"
+   ],
+   "source": "stadium-green-pitch-kr.jpg",
+   "sha256": "efbcb854052db516",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/stadium-night-bowl-n",
+   "description": "A stadium bowl at night with the floodlights on (for: big matches)",
+   "families": [
+    "green"
+   ],
+   "source": "stadium-night-bowl-n.jpg",
+   "sha256": "0d6ad198796aee6e",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/street-dusk-kr",
+   "description": "A road to the ground at dusk under a red sky (for: matchday evening, away days)",
+   "families": [
+    "red"
+   ],
+   "source": "street-dusk-kr.jpg",
+   "sha256": "2295208182a7fd5f",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/street-lamp-crowd-kr",
+   "description": "Supporters walking past an old street lamp, red scarves (for: walking to the ground)",
+   "families": [
+    "red"
+   ],
+   "source": "street-lamp-crowd-kr.jpg",
+   "sha256": "a2ec017bd5f191ad",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/street-to-ground-cobbles-kr",
+   "description": "A cobbled street full of supporters walking to the ground (for: matchday)",
+   "families": [
+    "red"
+   ],
+   "source": "street-to-ground-cobbles-kr.jpg",
+   "sha256": "876f2ee12d2a3635",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/terrace-fence-scarves-kr",
+   "description": "A terrace behind a high fence, red scarves held up (for: home support, the old terraces)",
+   "families": [
+    "red"
+   ],
+   "source": "terrace-fence-scarves-kr.jpg",
+   "sha256": "15844266bd164b86",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/tr-confetti-cover-b-kr",
+   "description": "Red and cream confetti filling the frame (for: titles, celebrations)",
+   "families": [
+    "red"
+   ],
+   "source": "tr-confetti-cover-b-kr.jpg",
+   "sha256": "1d26dec3d259733c",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/tr-confetti-cover-kr",
+   "description": "Red and cream confetti filling the frame (for: titles, celebrations)",
+   "families": [
+    "red"
+   ],
+   "source": "tr-confetti-cover-kr.jpg",
+   "sha256": "6dbc7586e4d0fbd4",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/tr-curtain-scarf-b-kr",
+   "description": "A huge red scarf sweeping across the frame (for: a club moment, celebration)",
+   "families": [
+    "red"
+   ],
+   "source": "tr-curtain-scarf-b-kr.jpg",
+   "sha256": "6f10f305ece7db49",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/tr-curtain-scarf-kr",
+   "description": "A huge red scarf sweeping across the frame (for: a club moment, celebration)",
+   "families": [
+    "red"
+   ],
+   "source": "tr-curtain-scarf-kr.jpg",
+   "sha256": "e33b8a4674c3a3ec",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02",
+   "accent": "key-red"
+  },
+  {
+   "key": "beat:common/tr-ink-cover-n",
+   "description": "Black ink sweeping across cream paper (for: a hard cut, a dark turn)",
+   "families": [],
+   "source": "tr-ink-cover-n.jpg",
+   "sha256": "06b590d8cdcae5a0",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-ink-wipe-n",
+   "description": "An ink wipe across cream paper (for: a change of time or mood)",
+   "families": [],
+   "source": "tr-ink-wipe-n.jpg",
+   "sha256": "be56452343a0ad56",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-iris-floodlight-b-n",
+   "description": "A floodlight beam opening like an iris (for: an opening, a big night begins)",
+   "families": [],
+   "source": "tr-iris-floodlight-b-n.jpg",
+   "sha256": "3220604dda05771d",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-iris-floodlight-n",
+   "description": "A floodlight beam opening like an iris (for: an opening, a big night begins)",
+   "families": [],
+   "source": "tr-iris-floodlight-n.jpg",
+   "sha256": "a09f8b534ccc7ece",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-newspaper-cover-b-n",
+   "description": "Newspapers covering the whole frame, no readable text (for: the morning after, the press)",
+   "families": [],
+   "source": "tr-newspaper-cover-b-n.jpg",
+   "sha256": "01515fcaa3dab3d6",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-newspaper-cover-n",
+   "description": "Newspapers covering the whole frame, no readable text (for: the morning after, the press)",
+   "families": [],
+   "source": "tr-newspaper-cover-n.jpg",
+   "sha256": "c6b5eb7571b73222",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-page-turn-b-n",
+   "description": "A paper page turning (for: years passing, a new chapter)",
+   "families": [],
+   "source": "tr-page-turn-b-n.jpg",
+   "sha256": "c627ed010f18a404",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-page-turn-n",
+   "description": "A paper page turning (for: years passing, a new chapter)",
+   "families": [],
+   "source": "tr-page-turn-n.jpg",
+   "sha256": "b56b8c4768cabe5b",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-paper-tear-b-n",
+   "description": "Paper tearing to reveal black ink (for: a shock, a turning point)",
+   "families": [],
+   "source": "tr-paper-tear-b-n.jpg",
+   "sha256": "a5fe7f9a16d36dbc",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-paper-tear-n",
+   "description": "Paper tearing to reveal black ink (for: a shock, a turning point)",
+   "families": [],
+   "source": "tr-paper-tear-n.jpg",
+   "sha256": "eb1da6391c24f54b",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-tape-strip-b-n",
+   "description": "Masking tape pulled across the frame (for: archive, records, a new chapter)",
+   "families": [],
+   "source": "tr-tape-strip-b-n.jpg",
+   "sha256": "afbceebbde1a463b",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tr-tape-strip-n",
+   "description": "Masking tape pulled across the frame (for: archive, records, a new chapter)",
+   "families": [],
+   "source": "tr-tape-strip-n.jpg",
+   "sha256": "113d40b4245428ea",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tunnel-brick-n",
+   "description": "A brick and concrete players' tunnel (for: walk-out, behind the scenes)",
+   "families": [],
+   "source": "tunnel-brick-n.jpg",
+   "sha256": "1f6b2d8c06271c38",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tunnel-bright-pitch-n",
+   "description": "The view from a dark tunnel to the bright pitch (for: walk-out, a debut)",
+   "families": [],
+   "source": "tunnel-bright-pitch-n.jpg",
+   "sha256": "8f9eb530f25a36b8",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
+  },
+  {
+   "key": "beat:common/tunnel-gate-silhouette-n",
+   "description": "A player's silhouette behind a metal gate (for: waiting, exile, the return)",
+   "families": [],
+   "source": "tunnel-gate-silhouette-n.jpg",
+   "sha256": "eee53f67f314c22c",
+   "size": [
+    1376,
+    768
+   ],
+   "supplied": "2026-11-02"
   }
  ]
 }

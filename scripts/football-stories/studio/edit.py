@@ -7,7 +7,9 @@ each shot starts, so picture and voice cannot drift.
 """
 from __future__ import annotations
 
+import hashlib
 import math
+import re
 import os
 import subprocess
 from concurrent.futures import ProcessPoolExecutor
@@ -22,7 +24,7 @@ from .maps import render as render_map
 from .motion import Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
 from .captions import Captions
 from .package import sources_list
-from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, piece_meta, scrub, supporter_scene
+from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, cut_path, cut_index, piece_meta, recolor, scrub, supporter_scene
 from .sprites import SpriteFactory, key_of
 
 LEAD = 0.35       # picture before the voice
@@ -350,6 +352,9 @@ class Editor:
             raise StageError('UNKNOWN_VISUAL', kind)
 
         layers += self.props(v, s, kind, dur, cues)
+        behind, front = self.figures(v, s, kind, dur, cues, f)
+        # A person stands BEHIND the card (paper laid on paper) and a crowd row rises in FRONT, along the bottom edge.
+        layers = behind + layers + front
         clip, self._clip = self._clip, None
         caps = None
         if os.environ.get('STORIES_BURN_CAPTIONS', '1') != '0' and kind != 'end' and s.get('words') and s.get('voice_at') is not None:
@@ -436,6 +441,126 @@ class Editor:
         s_ = h / im.height
         return im.resize((max(1, round(im.width * s_)), h), Image.LANCZOS)
 
+    # ---------------------------------------------------------------- people who move
+    def cut_img(self, key: str, h: int) -> Image.Image:
+        """An owner cut-out at height h: key red repainted in the club colour, the rival's family scrubbed, alpha kept."""
+        out = self.sprites_dir / f"cut-{key[4:].replace('/', '--')}-{h}.png"
+        if not out.exists():
+            im = Image.open(cut_path(key)).convert('RGBA')
+            s_ = h / im.height
+            im = im.resize((max(1, round(im.width * s_)), h), Image.LANCZOS)
+            rgb = im.convert('RGB')
+            if piece_meta(key).get('accent') == 'key-red':
+                rgb = recolor(rgb, self.pal.accent)
+            rgb = scrub(rgb, self.pal.bans).convert('RGBA')
+            rgb.putalpha(im.getchannel('A'))
+            rgb.save(out)
+        return Image.open(out).convert('RGBA')
+
+    def pick_cut(self, base: str, salt: int) -> str | None:
+        """One of the variants of a cut-out (`fig-x-kr`, `fig-x-b-kr`, `fig-x-c-kr`), chosen by club and shot — so two
+        clubs' films, and two shots of one film, do not show the same drawing."""
+        stem, kind = base.rsplit('-', 1)
+        bans = set(self.pal.bans)
+        opts = []
+        for p in cut_index('common'):
+            if not re.fullmatch(rf'cut:common/{re.escape(stem)}(-[bc])?-{kind}', p['key']):
+                continue
+            fam = set(p.get('families') or []) - ({'red'} if p.get('accent') == 'key-red' else set())
+            if not bans & fam:
+                opts.append(p['key'])
+        if not opts:
+            return None
+        h = int(hashlib.sha256(f"{self.ledger.get('club_id')}:{salt}".encode()).hexdigest()[:8], 16)
+        return sorted(opts)[h % len(opts)]
+
+    def figures(self, v: dict, s: dict, kind: str, dur: float, cues: list, f: dict | None) -> tuple[list[Layer], list[Layer]]:
+        """Figures and crowds that move over the shot: the script's `figure`, or one chosen by what the beat is about."""
+        wanted = v.get('figure')
+        keys = [wanted] if isinstance(wanted, str) else list(wanted or [])
+        owner_illus = kind == 'illustration' and str(v.get('art') or '').startswith(('beat:', 'clip:'))
+        if not keys and not owner_illus and os.environ.get('STORIES_AUTO_FIGURES', '1') != '0':
+            text = (s.get('narration') or '').lower()
+            base = None
+            if kind == 'score' and f:
+                base = ('fig-celebrate-arms-kr', 'fig-celebrate-knee-slide-kr')[s['n'] % 2] if f.get('outcome') == 'win' else \
+                       'fig-kneel-despair-kr' if f.get('outcome') == 'loss' else 'fig-supporter-scarf-up-kr'
+                if 'penalt' in text or 'shoot-out' in text:
+                    base = 'fig-keeper-dive-n'
+            elif kind == 'matchday':
+                base = 'crowd-row-scarves-up-kr'
+            elif kind == 'chapter':
+                base = 'crowd-row-flags-kr'
+            elif kind == 'stat' and any(w in text for w in (' won', ' wins', 'goals', 'points', 'champion', 'unbeaten')):
+                base = 'fig-supporter-jump-kr'
+            elif kind == 'fact' and ('manager' in text or 'coach' in text):
+                base = 'fig-manager-coat-n'
+            elif kind == 'turning':
+                base = 'fig-supporter-scarf-up-kr' if any(w in text for w in ('double', 'champion', 'won', 'title')) else 'crowd-row-still-kr'
+            elif kind == 'ticket':
+                base = 'crowd-row-still-kr'
+            if base:
+                pk = self.pick_cut(base, s['n'])
+                keys = [pk] if pk else []
+        out: list[Layer] = []
+        rows: list[Layer] = []
+        side = 1 if (s['n'] % 2) else -1
+        for i, key in enumerate(k for k in keys if cut_path(k)):
+            motion = piece_meta(key).get('motion', 'stand')
+            if motion == 'row':
+                im = self.cut_img(key, 230)
+                if im.width < W + 120:
+                    im = im.resize((W + 120, round(im.height * (W + 120) / im.width)), Image.LANCZOS)
+                def bob(t, im=im, t0=0.15):
+                    if t < t0:
+                        return None
+                    k_ = ease_out_cubic(min(1.0, (t - t0) / 0.6))
+                    return Pose(W / 2, H + im.height / 2 - min(170, im.height * 0.75) * k_ + 6 * math.sin(t * 5.2), 1.0, 0.6 * math.sin(t * 2.1), 1.0)
+                rows.append(Layer(im, bob))
+                cues.append((0.3, 'crowd-after'))
+                continue
+            hgt = {'dive': 380, 'run': 560, 'jump': 560, 'rise': 600, 'pop': 500}.get(motion, 560)
+            im = self.cut_img(key, hgt)
+            if side > 0:
+                im = im.transpose(Image.FLIP_LEFT_RIGHT) if motion in ('run', 'dive') else im
+            x_end = W * (0.5 + side * 0.42)
+            y_end = H - 150 - im.height / 2
+            t0 = 0.7 + 0.35 * i
+            if motion == 'run':
+                def go(t, im=im, t0=t0, x_end=x_end, y_end=y_end, side=side):
+                    if t < t0:
+                        return None
+                    k_ = ease_out_cubic(min(1.0, (t - t0) / 0.9))
+                    x0 = W / 2 + side * (W / 2 + im.width)
+                    return Pose(x0 + (x_end - x0) * k_, y_end - 10 * abs(math.sin(t * 9)) * (1 - k_ * 0.7), 1.0, 0, 1.0)
+            elif motion == 'dive':
+                def go(t, im=im, t0=t0, x_end=x_end, side=side):
+                    if t < t0:
+                        return None
+                    k_ = ease_out_cubic(min(1.0, (t - t0) / 0.7))
+                    x0 = W / 2 - side * 260
+                    return Pose(x0 + (x_end - x0) * k_, H * 0.62 - 140 * math.sin(math.pi * min(1.0, k_)), 1.0, -side * 8 * k_, 1.0)
+            elif motion == 'jump':
+                def go(t, im=im, t0=t0, x_end=x_end, y_end=y_end):
+                    if t < t0:
+                        return None
+                    k_ = min(1.0, (t - t0) / 0.5)
+                    hop = abs(math.sin((t - t0) * 3.4)) * 34 * max(0.25, 1 - (t - t0) / 6)
+                    return Pose(x_end, y_end + (1 - ease_out_back(k_)) * 300 - hop, 1.0, 0, 1.0)
+            elif motion == 'rise':
+                def go(t, im=im, t0=t0, x_end=x_end, y_end=y_end):
+                    if t < t0:
+                        return None
+                    k_ = ease_out_cubic(min(1.0, (t - t0) / 0.8))
+                    return Pose(x_end, y_end + (1 - k_) * (im.height + 160) + 4 * math.sin(t * 2.6), 1.0, 0, 1.0)
+            else:
+                go = pop(x_end, y_end, t0, dur=0.4, rot=side * 1.5)
+            out.append(Layer(im, go))
+            cues.append((t0, 'whoosh' if motion in ('run', 'dive') else 'pop'))
+        if kind in ('illustration', 'map', 'end'):
+            return [], out + rows
+        return out, rows
+
     def props(self, v: dict, s: dict, kind: str, dur: float, cues: list) -> list[Layer]:
         """The owner's cut-outs, moving: chosen by the script (`prop`) or by what the beat is about."""
         kinds = {self.by[c]['fact'].get('kind') for c in s['claim_ids'] if c in self.by}
@@ -448,14 +573,8 @@ class Editor:
                 prop = 'passenger_plane'
             elif kind == 'map' and v.get('focus') == 'domestic':
                 prop = 'supporters_bus'
-            elif 'penalties' in kinds and kind in ('score', 'illustration', 'turning'):
-                prop = 'goal_net'
-            elif 'honour' in kinds and kind in ('score', 'turning', 'stat', 'illustration'):
+            elif 'honour' in kinds and kind == 'illustration':
                 prop = 'generic_trophy'
-            elif 'manager' in kinds:
-                prop = 'coach'
-            elif kind == 'chapter':
-                prop = 'supporter_scarf'
         if not prop:
             return []
         out: list[Layer] = []

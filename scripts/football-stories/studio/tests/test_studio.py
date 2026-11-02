@@ -189,6 +189,27 @@ class BurnedCaptions(unittest.TestCase):
         self.assertGreater(y, 800)                      # the bottom of the frame
 
 
+class CutOuts(unittest.TestCase):
+    def test_every_cutout_has_its_file_alpha_and_a_motion(self):
+        from PIL import Image
+        from studio.paper import cut_index, cut_path
+        pieces = cut_index('common')
+        self.assertGreater(len(pieces), 40)
+        for p in pieces:
+            path = cut_path(p['key'])
+            self.assertIsNotNone(path, p['key'])
+            self.assertIn(p['motion'], {'row', 'run', 'dive', 'jump', 'rise', 'pop', 'stand'})
+        im = Image.open(cut_path(pieces[0]['key']))
+        self.assertEqual(im.mode, 'RGBA')
+        self.assertLess(min(im.getchannel('A').getdata()), 10)
+
+    def test_a_figure_in_a_script_must_exist(self):
+        from studio.script import art_ok
+        L = {'club_id': 'celtic', 'season': '1966/67'}
+        self.assertTrue(art_ok('cut:common/fig-keeper-dive-n', L))
+        self.assertFalse(art_ok('cut:common/fig-nobody-n', L))
+
+
 class ClosingCall(unittest.TestCase):
     def test_every_film_ends_on_the_site(self):
         from studio.script import CTA, SITE, with_cta

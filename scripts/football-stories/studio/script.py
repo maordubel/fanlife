@@ -53,12 +53,12 @@ def beat_set(ledger: dict) -> str:
 
 def art_ok(key, ledger: dict, *, allow_gen: bool = False) -> bool:
     """A library piece, an owner beat piece made for THIS club and season, or (for illustrations) a generated one."""
-    from .paper import beat_path, clip_path
+    from .paper import beat_path, clip_path, cut_path
     if key in LIBRARY_ART or (allow_gen and key == 'gen'):
         return True
     if not isinstance(key, str):
         return False
-    for kind, find in (('beat', beat_path), ('clip', clip_path)):
+    for kind, find in (('beat', beat_path), ('clip', clip_path), ('cut', cut_path)):
         for set_id in (beat_set(ledger), 'common'):
             if key.startswith(f'{kind}:{set_id}/') and find(key) is not None:
                 return True
@@ -311,7 +311,10 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
                 errs.append(f'{where}: unknown visual')
                 continue
             t = v['type']
-            extra = set(v) - VISUALS[t] - {'type', 'prop'}
+            extra = set(v) - VISUALS[t] - {'type', 'prop', 'figure'}
+            for fk in ([v['figure']] if isinstance(v.get('figure'), str) else v.get('figure') or []):
+                if not (isinstance(fk, str) and fk.startswith('cut:') and art_ok(fk, ledger)):
+                    errs.append(f'{where}: unknown figure {fk}')
             if 'prop' in v and v['prop'] not in PROPS:
                 errs.append(f'{where}: unknown prop {v["prop"]}')
             if extra:

@@ -113,6 +113,25 @@ def clip_path(key: str) -> Path | None:
     return p if p.exists() else None
 
 
+CUTS = KIT / 'cutouts'
+
+
+def cut_path(key: str) -> Path | None:
+    """`cut:<set>/<slug>` → an owner cut-out (figure, crowd row, close-up) with alpha, or None."""
+    if not isinstance(key, str) or not key.startswith('cut:'):
+        return None
+    rel = key[4:]
+    if not re.fullmatch(r'[a-z0-9-]+/[a-z0-9-]+', rel):
+        return None
+    p = CUTS / f'{rel}.webp'
+    return p if p.exists() else None
+
+
+def cut_index(set_id: str) -> list[dict]:
+    p = CUTS / set_id / 'index.json'
+    return json.loads(p.read_text(encoding='utf-8'))['pieces'] if p.exists() else []
+
+
 def clip_index(set_id: str) -> list[dict]:
     p = CLIPS / set_id / 'index.json'
     return json.loads(p.read_text(encoding='utf-8'))['pieces'] if p.exists() else []
@@ -184,7 +203,8 @@ def piece_meta(key: str) -> dict:
     """The index entry of an owner piece (beat or clip), or {}."""
     kind, _, rel = str(key).partition(':')
     set_id = rel.split('/')[0]
-    for piece in (beat_index(set_id) if kind == 'beat' else clip_index(set_id) if kind == 'clip' else []):
+    for piece in (beat_index(set_id) if kind == 'beat' else clip_index(set_id) if kind == 'clip' else
+                  cut_index(set_id) if kind == 'cut' else []):
         if piece['key'] == key:
             return piece
     return {}
