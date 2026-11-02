@@ -15,7 +15,7 @@ class Response:
 class EditorialTest(unittest.TestCase):
     def setUp(self):
         self.dossier={'topic':'A season','claims':[{'id':'c1','statement':'They won 2–0.','source_url':'https://example.com/source'}]}
-        self.result={'subject':'A season','hook':'A new beginning','title_candidates':['A season: the story','A season documentary'],'selected_title':'A season: the story','description':'A documentary.','tags':['football history'],'thumbnail_text':'THE SEASON','segments':[{'label':'Start','narration':'A new beginning. A game.','visual_direction':'Animated graphic.','claim_ids':['c1']},{'label':'Match','narration':'They won 2–0.','visual_direction':'Scorecard.','claim_ids':['c1']}],'shorts':[]}
+        self.result={'subject':'A season','hook':'A new beginning','title_candidates':['A season: the story']+[f'A season documentary {i}' for i in range(9)],'selected_title':'A season: the story','description':'A documentary.','tags':['football history'],'thumbnail_text':'THE SEASON','segments':[{'label':'Start','narration':'A new beginning. A game.','visual_direction':'Animated graphic.','claim_ids':['c1']},{'label':'Match','narration':'They won 2–0.','visual_direction':'Scorecard.','claim_ids':['c1']}],'shorts':[]}
     def test_reject_unknown_claim(self):
         self.result['segments'][1]['claim_ids']=['fabricated']
         with self.assertRaisesRegex(mod.EditorialError,'unknown'):mod.validate_package(self.result,{'c1'})
