@@ -63,8 +63,8 @@ def light(hexcol: str) -> bool:
 
 def hook_card(sp, key: str, text: str, kicker: str):
     """The hook, big: cream capitals printed twice, the second plate in the club's colour."""
-    body = (f'<div style="width:960px;padding:10px 24px 20px 10px"><div class="caps" style="font-size:34px;color:var(--accent);padding-bottom:14px">{esc(kicker)}</div>'
-            f'<div class="head" style="font-size:122px;line-height:.94;color:var(--paper);text-shadow:9px 9px 0 var(--accent),9px 9px 0 var(--ink)">{esc(text)}</div></div>')
+    body = (f'<div style="width:960px;padding:10px 24px 20px 10px"><div class="caps" style="font-size:34px;color:var(--paper);opacity:.75;padding-bottom:14px">{esc(kicker)}</div>'
+            f'<div class="head" style="font-size:122px;line-height:.94;color:var(--paper);text-shadow:9px 9px 0 var(--ink)">{esc(text)}</div></div>')
     return F.cropped(sp.render(f'hook-{key}', body, extra_css='.s{padding:0 20px 20px 0}'))
 
 
@@ -99,7 +99,7 @@ def build(s: dict, idx: int, out: Path) -> dict:
     crest_p = ROOT / 'public' / 'crests' / f"{s['club']}.png"
     kind = s['kind']
     reveal_voice = {'order': 'Here is the order.', 'tf': f"It's {s['answer'].lower()}."}.get(kind, f"It's {s['answer']}.")
-    expl = ''
+    expl = sentence(s['explanation']) if kind == 'tf' and s.get('explanation') else ''   # a false claim is corrected out loud
     ask = SUB.pick('reel_voice', idx + 1)
     lines = {
         'hook': sentence(s['hook']),
@@ -143,7 +143,7 @@ def build(s: dict, idx: int, out: Path) -> dict:
         if kind != 'whoami':
             card = fit(F.cropped(sp.fact(key_of('card', s['qid'] if s.get('qid') else s['prompt']), heading, s['prompt'] if kind != 'order' else 'Oldest first — put them in order.', None)), W - 90, 720)
         opts = s.get('options') or s.get('items') or []
-        chip = lambda i, o, tone: fit(F.cropped(sp.label(key_of('opt', idx, i, tone), f"{LETTER[i]}   {o}", tone, 50 if len(o) < 26 else 40)), W - 130, 150)
+        chip = lambda i, o, tone: fit(F.cropped(sp.label(key_of('opt', idx, i, tone), f"{LETTER[i]}   {o}", tone, 64 if len(o) < 12 else 50 if len(o) < 26 else 40)), W - 130, 160)
         chips_paper = [chip(i, o, 'paper') for i, o in enumerate(opts)]
         right = []
         if kind == 'order':
@@ -223,6 +223,9 @@ def build(s: dict, idx: int, out: Path) -> dict:
                 cues.append((0.1, 'crowd-build'))
                 low = fit(F.cropped(sp.label(key_of('comment', idx), 'Answer in the comments', 'ink', 40)), W - 360, 110)
                 layers.append(Layer(low, slide_in(W / 2, H - 450, 0.3, frm=(-700, 0), rot0=0, rot1=-1, dur=0.4, drift=False), settle=1e9))
+            if name == 'reveal' and kind == 'tf' and s.get('explanation'):
+                ex = fit(F.cropped(sp.caption(key_of('ex', idx), s['explanation'])), W - 110, 200)
+                layers.append(Layer(ex, slide_in(W / 2, ys[-1] + 190 if ys else H * 0.6, 0.6, frm=(0, 300), rot0=0, rot1=-1, dur=0.4, drift=False), settle=1e9))
             if name == 'reveal':
                 cues += [(0.2, 'stamp'), (0.25, 'crowd-goal')]
                 shake.append((0.2, 10))

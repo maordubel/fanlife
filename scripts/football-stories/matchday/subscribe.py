@@ -38,7 +38,7 @@ def _img(p) -> Image.Image:
     return im.crop(box) if box else im
 
 
-def stub(sp, key: str, kicker: str, done: bool) -> Image.Image:
+def stub(sp, key: str, kicker: str, done: bool, brand: str = 'iwt') -> Image.Image:
     """The season-ticket stub, in its two states. Drawn by the studio's own sprite kit (fonts, plates, second print)."""
     btn = ('<span style="display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);'
            'border:5px solid var(--ink);padding:12px 26px 8px;font-size:46px" class="head">✓ SUBSCRIBED</span>') if done else \
@@ -48,11 +48,11 @@ def stub(sp, key: str, kicker: str, done: bool) -> Image.Image:
            'SUBSCRIBE</span>')
     body = f'''<div class="sh"></div><div class="box" style="width:760px;display:grid;grid-template-columns:1fr 120px">
       <div style="padding:0 0 26px">
-        <div class="bar" style="padding:12px 28px;font-size:24px">FAN LIFE · I WAS THERE · Season ticket</div>
+        <div class="bar" style="padding:12px 28px;font-size:24px">{'FAN LIFE · I WAS THERE' if brand == 'iwt' else 'FAN LIFE · Football Stories'} · Season ticket</div>
         <div style="padding:24px 28px 10px">{btn}</div>
         <div class="caps fit" data-fit="560" style="font-size:28px;padding:6px 30px 0">{html.escape(kicker)}</div></div>
       <div class="lines" style="border-left:6px dashed var(--ink);opacity:.9"></div></div>'''
-    return _img(sp.render(f'sub-{key}-{"done" if done else "ask"}', body))
+    return _img(sp.render(f'sub-{brand}-{key}-{"done" if done else "ask"}', body))
 
 
 def cursor(scale: float = 1.0) -> Image.Image:
@@ -78,17 +78,17 @@ def until(pose, t_end: float, fade: float = 0.25):
     return p
 
 
-def stub_layers(sp, key: str, kicker: str, x: float, y: float, t0: float, hold: float, max_w: int, cues: list) -> list[Layer]:
+def stub_layers(sp, key: str, kicker: str, x: float, y: float, t0: float, hold: float, max_w: int, cues: list, brand: str = 'iwt') -> list[Layer]:
     """Slide in · the cursor travels and taps · the stub flips to SUBSCRIBED with a stamp · slides away."""
-    ask = fit(stub(sp, key, kicker, False), max_w, 400)
-    done = fit(stub(sp, key, kicker, True), max_w, 400)
+    ask = fit(stub(sp, key, kicker, False, brand), max_w, 400)
+    done = fit(stub(sp, key, kicker, True, brand), max_w, 400)
     t_tap, t_out = t0 + 1.25, t0 + hold
     # the button sits in the stub's upper-left third; aim the cursor there (fractions of the stub, not pixels)
     bx, by = x - ask.width * 0.5 + ask.width * 0.24, y - ask.height * 0.5 + ask.height * 0.42
     cur = cursor(1.2 if max_w > 600 else 1.0)
     layers: list[Layer] = []
     scarf = ART / 'subscribe-scarf.png'
-    if scarf.exists():
+    if scarf.exists() and brand == 'iwt':     # the scarf says I WAS THERE: it belongs to that series only
         sc = fit(_img(scarf), int(max_w * 1.15), 520)
         layers.append(Layer(sc, until(slide_in(x, y - ask.height * 0.95, t0 + 0.15, frm=(0, 340), rot0=-4, rot1=-1, dur=0.6, drift=True), t_out), settle=1e9))
     layers.append(Layer(ask, until(slide_in(x, y, t0, frm=(max_w + 200, 0), rot0=3, rot1=-1.5, dur=0.55, drift=False), t_tap), settle=1e9))

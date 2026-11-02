@@ -60,19 +60,14 @@ def capture(feature: dict, clubs: list[dict], work: Path) -> tuple[dict | None, 
                     tried.append({'club': c['id'], 'url': url, 'why': f'closed ({r.status if r else "no answer"})'})
                     page.close()
                     continue
-                for label in ('Accept', 'Got it', 'OK', 'Continue', 'Skip'):
-                    try:
-                        page.get_by_role('button', name=re.compile(f'^{label}$', re.I)).first.click(timeout=800)
-                    except Exception:
-                        pass
+                page.keyboard.press('Escape')
+                for label in ('Accept', 'Got it', 'OK', 'Close'):
+                    press(page, f'^{label}$', 700)
                 shots = {}
                 for sh in feature['shots']:
                     if sh.get('click'):
-                        try:
-                            page.get_by_role('button', name=re.compile(sh['click'], re.I)).first.click(timeout=3000)
-                            page.wait_for_timeout(2500)
-                        except Exception:
-                            pass
+                        if press(page, sh['click'].replace('{club}', re.escape(c['name'])), 3000):
+                            page.wait_for_timeout(2600)
                     if sh.get('scroll'):
                         page.mouse.wheel(0, sh['scroll'])
                         page.wait_for_timeout(1200)
@@ -87,6 +82,18 @@ def capture(feature: dict, clubs: list[dict], work: Path) -> tuple[dict | None, 
                 page.close()
         b.close()
     return None, {'tried': tried}
+
+
+def press(page, rx: str, timeout: int) -> bool:
+    """Press the first visible control whose text matches: a button, then a link, then any text."""
+    pat = re.compile(rx, re.I)
+    for find in (lambda: page.get_by_role('button', name=pat), lambda: page.get_by_role('link', name=pat), lambda: page.get_by_text(pat)):
+        try:
+            find().first.click(timeout=timeout)
+            return True
+        except Exception:
+            continue
+    return False
 
 
 def phone(screen: Path, h: int = 900) -> Image.Image:
@@ -171,13 +178,13 @@ def main():
                 shake.append((0.5, 10))
             elif k == 'step':
                 world = tinted(10 + p['i'], accent)
-                ph = phone(shots[p['shot']], 900)
-                layers.append(Layer(ph, slide_in(W * 0.30, H * 0.5, 0.15, frm=(0, 700), rot0=-4, rot1=-1.2, dur=0.6), settle=1e9, space='world'))
+                ph = phone(shots[p['shot']], 860)
+                layers.append(Layer(ph, slide_in(W * 0.30, H * 0.5, 0.15, frm=(0, 700), rot0=-4, rot1=-1.2, dur=0.6), settle=1e9))
                 plate = fit(F.cropped(sp.turning(key_of('s', feat['feature'], p['n']), f"{p['n']:02d}", feat['name'])), 760, 300)
-                layers.append(Layer(plate, slide_in(W * 0.70, H * 0.36, 0.45, frm=(700, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
+                layers.append(Layer(plate, slide_in(W * 0.70, H * 0.30, 0.45, frm=(700, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
                 cues += [(0.15, 'whoosh'), (0.45, 'paper')]
                 if p['i'] == stub_at:
-                    layers += SUB.stub_layers(sp, 'fl-' + feat['feature'], SUB.pick('stub', epn), W - 450, H * 0.66, 1.0, min(4.2, dur - 1.4), 700, cues)
+                    layers += SUB.stub_layers(sp, 'fl-' + feat['feature'], SUB.pick('stub', epn), W * 0.70, H * 0.60, 1.0, min(4.2, dur - 1.4), 700, cues, brand='fl')
             elif k == 'end':
                 world, entry = crumpled(4, CANVAS, '#2A2620').convert('RGB'), 'wipe'
                 badge = F.img(ROOT / 'public/brand/fanlife/logo-512.png').resize((340, 340), Image.LANCZOS)
@@ -191,7 +198,7 @@ def main():
                 world, cam = F.glass(SUB.ART / 'endscreen-ground.jpg'), F.still
                 b2 = F.img(ROOT / 'public/brand/fanlife/logo-512.png').resize((150, 150), Image.LANCZOS)
                 layers.append(Layer(b2, pop(110, 110, 0.3, rot=-6), settle=1e9))
-                line = fit(F.cropped(sp.label('fl-next', SUB.pick('endscreen_line', epn), 'paper', 44)), 1300, 110)
+                line = fit(F.cropped(sp.label('fl-next', SUB.pick('fl_endscreen_line', epn), 'paper', 44)), 1300, 110)
                 layers.append(Layer(line, slide_in(210 + line.width / 2, 120, 0.5, frm=(0, -200), rot0=0, rot1=-1, dur=0.5, drift=False), settle=1e9))
                 cues += [(0.0, 'crowd-murmur')]
             caps = Captions(p['words'], p['voice_at'] - p['start'], accent) if p.get('words') and k == 'step' else None
