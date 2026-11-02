@@ -86,7 +86,8 @@ def place_of(fact: dict, club: str) -> tuple[str, tuple[float, float]] | None:
     """Where a match was PLAYED, for a map: the venue's city when the record names one away from the club's own city (an
     away ground, a neutral venue, a final), otherwise the opponent's city (a home match pins where the visitors came from)."""
     home = city_of(club)
-    venue = _fold(fact.get('venue') or '')
+    venue = fact.get('venue') or ''
+    venue = _fold(venue.get('name') or '' if isinstance(venue, dict) else venue)
     if venue:
         for name, ll in PLACES['cities'].items():
             if _fold(name) in venue and (not home or name != home[0]):

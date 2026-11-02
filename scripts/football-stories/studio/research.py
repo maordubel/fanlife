@@ -334,7 +334,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
             'kind': 'match', 'date': date, 'competition': comp, 'stage': v.get('stage') or stage, 'club': name,
             'opponent': away if ours_home else home, 'side': 'home' if ours_home else 'away', 'home': home, 'away': away,
             'score_home': sh, 'score_away': sa, 'club_goals': cg, 'opponent_goals': og,
-            'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': v.get('venue') or None,
+            'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': {'name': v['venue']} if v.get('venue') else None,
             'after_extra_time': aet or None,
             'penalties': {'winner': pens.group(1).strip(), 'score': f'{pens.group(2)}–{pens.group(3)}'} if pens else None,
             'scorers': [{'name': x['name'], 'minute': x.get('minute'), 'penalty': x.get('penalty'), 'own_goal': x.get('ownGoal')}

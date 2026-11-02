@@ -464,7 +464,7 @@ class ClubPacks(unittest.TestCase):
         a2 = f['a2']['fact']
         self.assertEqual(a2['opponent'], 'Maccabi Tel Aviv')            # the full name, not 'M. Tel-Aviv'
         self.assertEqual([x['minute'] for x in a2['scorers']], [10, 45])  # UEFA's own record keeps its minutes
-        self.assertEqual((a2['stage'], a2['after_extra_time'], a2['venue']), ('Round of 16, second leg', True, 'TSC Arena, Backa Topola'))
+        self.assertEqual((a2['stage'], a2['after_extra_time'], a2['venue']), ('Round of 16, second leg', True, {'name': 'TSC Arena, Backa Topola'}))
         self.assertEqual(f['a2']['also_ids'], ['r2'])
         self.assertEqual(f['a2']['confidence'], 3)
         self.assertEqual(a2['competition'], 'UEFA Europa Conference League')  # its name in 2023/24
