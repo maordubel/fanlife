@@ -71,6 +71,7 @@ New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>
 - No fake progress, uploads or success: every state is reported by the worker or by YouTube Studio.
 - Every number is sourced (`fact_guard`); a scorer is printed only when the archive names every goal.
 - No real person's face; illustrations are symbolic and the description says so.
+- Every film asks once to follow the channel (CLAUDE.md rule 136, art in doc 58).
 - Rival colours (rule 95) are checked on sampled frames of every film.
 
 ## Channel art

@@ -313,6 +313,38 @@ class SpriteFactory:
           <div style="position:relative;color:{fg};-webkit-text-stroke:5px var(--ink)">{esc(text)}</div></div>'''
         return self.render(f'shout-{key}', body, extra_css='.s{padding:0}')
 
+    # ---------- the call to follow the channel ----------
+    def follow_card(self, key: str, head: str, sub: str) -> Path:
+        """A supporters' membership card, the viewer's to fill in: the invitation to follow, in The Weekly's type."""
+        body = f'''<div class="sh"></div><div class="box" style="width:1180px">
+          <div class="bar" style="padding:14px 34px;font-size:28px;display:flex;justify-content:space-between">
+            <span>FanLife: Football Stories</span><span>Supporters' card</span></div>
+          <div style="padding:30px 44px 34px;display:grid;grid-template-columns:1fr 250px;gap:30px;align-items:center">
+            <div><div class="head fit" data-fit="800" style="font-size:104px;line-height:.95">{esc(head)}</div>
+              <div class="caps fit" data-fit="800" style="font-size:32px;padding-top:18px">{esc(sub)}</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:14px 18px;padding-top:30px;align-items:end">
+                <div class="caps" style="font-size:24px">Name</div><div style="border-bottom:4px dashed var(--ink);height:30px"></div>
+                <div class="caps" style="font-size:24px">Club</div><div style="border-bottom:4px dashed var(--ink);height:30px"></div>
+                <div class="caps" style="font-size:24px">Since</div><div style="border-bottom:4px dashed var(--ink);height:30px"></div></div></div>
+            <div style="width:250px;height:250px;border-radius:50%;border:9px solid var(--ink);background:var(--news);display:grid;place-items:center;transform:rotate(-8deg)">
+              <div style="width:206px;height:206px;border-radius:50%;border:4px solid var(--ink);display:grid;place-items:center;text-align:center">
+                <div class="head" style="font-size:40px;line-height:1">One<br>of us</div></div></div></div></div>'''
+        return self.render(f'follow-{key}', body)
+
+    def sub_button(self, key: str, done: bool) -> Path:
+        """A subscribe button in the film's own colours (not a platform's logo): SUBSCRIBE with a bell, then SUBSCRIBED."""
+        bell = ('<svg width="64" height="64" viewBox="0 0 24 24"><path d="M12 22a2.5 2.5 0 0 0 2.4-2h-4.8A2.5 2.5 0 0 0 12 22zm7-6V11a7 7 0 0 0-5.5-6.8V3.5a1.5 1.5 0 0 0-3 0v.7A7 7 0 0 0 5 11v5l-2 2v1h18v-1z" '
+                'fill="currentColor"/></svg>')
+        tick = '<svg width="60" height="60" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" stroke="currentColor" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        bg, fg, word, icon = ('var(--ink)', 'var(--paper)', 'Subscribed', tick) if done else ('var(--accent)', 'var(--paper)', 'Subscribe', bell)
+        body = f'''<div class="sh" style="border-radius:26px"></div><div style="position:relative;display:flex;align-items:center;gap:22px;background:{bg};color:{fg};
+          border:7px solid var(--ink);border-radius:26px;padding:22px 46px 22px 36px">{icon}<div class="head" style="font-size:84px;line-height:1;color:{fg}">{esc(word)}</div></div>'''
+        return self.render(f'subbtn-{key}-{int(done)}', body)
+
+    def pointer(self, key: str) -> Path:
+        body = '''<svg width="150" height="190" viewBox="0 0 30 38"><path d="M3 2l22 21-10 1 6 11-4 2-6-11-8 7z" fill="#F4EEDF" stroke="#15130F" stroke-width="2.4" stroke-linejoin="round"/></svg>'''
+        return self.render(f'pointer-{key}', body, extra_css='.s{padding:0}')
+
     # ---------- the closing call to the site ----------
     def cta_headline(self, key: str, text: str, sub: str) -> Path:
         body = f'''<div class="sh"></div><div class="box" style="background:var(--ink);border-color:var(--ink);padding:26px 44px 30px">

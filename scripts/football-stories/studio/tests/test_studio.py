@@ -217,8 +217,25 @@ class ClosingCall(unittest.TestCase):
         self.assertEqual(with_cta(copy.deepcopy(s))['chapters'][-1]['beats'][-1]['narration'], CTA)
         s['chapters'][0]['beats'].append({'narration': 'goodbye', 'claim_ids': [], 'visual': {'type': 'end'}})
         out = with_cta(copy.deepcopy(s))
-        self.assertEqual(len(out['chapters'][0]['beats']), 2)
+        self.assertEqual(out['chapters'][0]['beats'][-1]['visual']['type'], 'end')
         self.assertIn(SITE, out['chapters'][0]['beats'][-1]['narration'])
+        self.assertIn('subscribe', CTA)
+
+    def test_every_film_asks_once_to_follow_after_the_second_chapter(self):
+        from studio.script import FOLLOW, with_cta
+        beat = lambda n: {'narration': n, 'claim_ids': [], 'visual': {'type': 'turning'}}
+        s = {'chapters': [{'title': 'a', 'beats': [beat('1')]}, {'title': 'b', 'beats': [beat('2'), beat('3')]}, {'title': 'c', 'beats': [beat('4')]}]}
+        out = with_cta(copy.deepcopy(s), 'celtic-2002/03')
+        follows = [(ci, b) for ci, ch in enumerate(out['chapters']) for b in ch['beats'] if b['visual']['type'] == 'follow']
+        self.assertEqual(len(follows), 1)
+        self.assertEqual(follows[0][0], 1)
+        self.assertEqual(out['chapters'][1]['beats'][-1]['visual']['type'], 'follow')
+        self.assertIn(follows[0][1]['narration'], FOLLOW)
+        twice = with_cta(copy.deepcopy(out), 'celtic-2002/03')     # idempotent: never two calls in one film
+        self.assertEqual(sum(b['visual']['type'] == 'follow' for ch in twice['chapters'] for b in ch['beats']), 1)
+        for line in FOLLOW:                                          # a supporter's invitation: no number but one and ninety
+            self.assertIn('subscribe', line.lower())
+            self.assertTrue(numbers_in_text(line) <= {1, 90})
 
 
 class Packaging(unittest.TestCase):

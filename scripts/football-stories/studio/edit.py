@@ -21,6 +21,7 @@ from PIL import Image, ImageDraw
 from .common import FPS, H, INK, KIT, ROOT, NEWSPRINT, PAPER, W, Palette, StageError, hex_rgb, read_json, write_json
 from .maps import city_of, pin_sprite
 from .maps import render as render_map
+from .audio import MOODS as _MOODS
 from .motion import Confetti, Layer, Pose, Shot, ShotRenderer, blend_entry, clamp, ease_in_out, ease_out_back, ease_out_cubic
 from .captions import Captions
 from .package import sources_list
@@ -116,6 +117,9 @@ def fit(img: Image.Image, maxw: int, maxh: int) -> Image.Image:
     return img if s >= 0.999 else img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
 
 
+MOOD_NAMES = set(_MOODS)
+
+
 class Editor:
     def __init__(self, job_dir: Path, ledger: dict, script: dict, voice: dict, palette: Palette, art_dir: Path):
         self.dir = job_dir
@@ -203,11 +207,15 @@ class Editor:
 
     def mood(self, b: dict) -> str:
         """What the music should feel under this beat: read from the record it shows and the words it says."""
-        v, text = b['visual'], (b.get('narration') or '').lower()
+        v, text = b['visual'], (b.get('narration') or '').lower().replace('champions league', 'european cup run')
         c = self.by.get(v.get('claim') or '')
         f = c['fact'] if c else {}
         if v['type'] == 'end':
             return 'anthem'
+        if v['type'] == 'follow':
+            return 'joy'
+        if b.get('mood') in MOOD_NAMES:  # the script may say what a beat feels like when the words alone mislead
+            return b['mood']
         if v['type'] == 'score' and f.get('stage') == 'Final' and self.won_shootout(f):
             return 'triumph'
         if any(w in text for w in ('penalt', 'shoot-out', 'extra time', 'eighty-fifth', 'last minute')):
@@ -215,6 +223,9 @@ class Editor:
         if v['type'] == 'score' and f.get('kind') == 'match':
             if f.get('title_decided') or (f.get('outcome') == 'win' and f.get('stage') in ('Final', 'Semi-final')):
                 return 'triumph'
+            tie = self.tie_through(f)
+            if tie is not None:  # a second leg is about the tie, not the night: lost 3-2 and through is still a good night
+                return 'joy' if tie else 'sad'
             return {'win': 'joy', 'loss': 'sad', 'draw': 'minor'}.get(f.get('outcome'), 'minor')
         if any(w in text for w in ('champions', 'the double', 'title', 'won the', 'cup stayed')):
             return 'triumph' if v['type'] in ('turning', 'illustration', 'stat', 'table') else 'joy'
@@ -401,6 +412,8 @@ class Editor:
                 cap = fit(_img(sp.caption(k, v['caption'])), 1300, 130)
                 layers.append(Layer(cap, slide_in(cap.width / 2 + 90, 130, 0.7, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
                 cues.append((0.7, 'paper'))
+        elif kind == 'follow':
+            world, layers, cam = self.follow_shot(sp, k, v, s, dur, seed, cues, shake)
         elif kind == 'end':
             world, layers, cues = self.end_cta(sp, k, dur, seed, cues)
             cam = cam_push(1.04, 1.0, 0, 0, dur)
@@ -424,6 +437,53 @@ class Editor:
             overlays.append(caps)
         return Shot(index=s['n'], duration=dur, world=Image.open(world).convert('RGB'), camera=cam, layers=layers,
                     entry=entry, shake=shake, cues=cues, meta={'kind': kind}, world_frames=clip, overlay=overlays)
+
+    # ---------------------------------------------------------------- the call to follow the channel
+    def follow_shot(self, sp: SpriteFactory, k: str, v: dict, s: dict, dur: float, seed: int, cues: list, shake: list):
+        """Once per film: a supporters' card to fill in, a JOIN US! stamp, and a subscribe button that a pointer presses
+        on the very word the narrator says it — the button turns to SUBSCRIBED, the bell rings and the end cheers."""
+        world = self.backdrop(v.get('backdrop') or 'terrace-crowd', seed, dim=0.45)
+        layers: list[Layer] = []
+        card = taped(fit(_img(sp.follow_card(k, 'Join the terrace', 'Subscribe for stories from the stands')), 1240, 640), seed)
+        cx, cy = W * 0.43, H * 0.40
+        layers.append(Layer(card, slide_in(cx, cy, 0.3, frm=(-900, 40), rot0=-5, rot1=-1.5, dur=0.6), settle=1e9))
+        cues.append((0.3, 'paper'))
+        sh = fit(_img(sp.shout(key_of('shout', 'JOIN US!', self.pal.accent), 'JOIN US!', 'accent')), 560, 230)
+        layers.append(Layer(sh, slam(W * 0.80, H * 0.16, 1.1, s0=2.2, rot=-5, dur=0.22), settle=1e9))
+        shake.append((1.1, 10))
+        cues.append((1.1, 'stamp'))
+        lead = (s['voice_at'] - s['start']) if s.get('voice_at') is not None else 0.6
+        said = next((w['start'] for w in s.get('words') or [] if w['w'].lower().strip('.,!?;:') in ('subscribe', 'subscribe,')), None)
+        t_click = clamp(lead + (said if said is not None else (dur - lead) * 0.55) + 0.25, 2.4, dur - 2.0)
+        bx, by = W * 0.74, H * 0.80
+        off = fit(_img(sp.sub_button(k, False)), 640, 200)
+        on = fit(_img(sp.sub_button(k, True)), 640, 200)
+        def before(t, t0=1.7, t1=t_click):
+            if t < t0 or t >= t1:
+                return None
+            kk = ease_out_back(min(1.0, (t - t0) / 0.35), 2.0)
+            pulse = 1.0 + 0.035 * math.sin((t - t0) * 7.0) if t > t0 + 0.5 else 1.0
+            return Pose(bx, by, max(0.01, kk) * pulse, -2.0, 1.0)
+        def after(t, t0=t_click):
+            if t < t0:
+                return None
+            kk = ease_out_back(min(1.0, (t - t0) / 0.28), 2.6)
+            return Pose(bx, by, 0.92 + 0.08 * kk, -2.0 + 3.0 * math.sin(min(1.0, (t - t0) / 0.5) * math.pi * 3) * (1 - min(1.0, (t - t0) / 0.6)), 1.0)
+        layers += [Layer(off, before, settle=1e9), Layer(on, after, settle=1e9)]
+        ptr = fit(_img(sp.pointer('p')), 110, 140)
+        def point(t, t0=t_click - 1.0, t1=t_click):
+            if t < t0:
+                return None
+            if t < t1:
+                kk = ease_in_out((t - t0) / (t1 - t0))
+                return Pose(W + 120 - (W + 120 - (bx + 120)) * kk, H + 120 - (H + 120 - (by + 30)) * kk, 1.0, 0, 1.0)
+            press = 0.86 if t < t1 + 0.15 else 1.0
+            fade = clamp(1 - (t - t1 - 1.2) / 0.5)
+            return None if fade <= 0 else Pose(bx + 120, by + 30, press, 0, fade)
+        layers.append(Layer(ptr, point, settle=1e9))
+        shake.append((t_click, 7))
+        cues += [(t_click, 'stamp'), (t_click + 0.1, 'crowd-goal')]
+        return world, layers, cam_push(1.0, 1.06, -20, 0, dur)
 
     # ---------------------------------------------------------------- the closing call to the site
     FEATURES = (('Trivia', 'brand/weekly/plates/cheer-line.webp'), ('Timeline', 'brand/magazine/photos/memorabilia.webp'),
@@ -587,6 +647,8 @@ class Editor:
                 base = 'fig-supporter-scarf-up-kr' if any(w in text for w in ('double', 'champion', 'won', 'title')) else 'crowd-row-still-kr'
             elif kind == 'ticket':
                 base = 'crowd-row-still-kr'
+            elif kind == 'follow':
+                base = 'crowd-row-scarves-up-kr'
             if base:
                 pk = self.pick_cut(base, s['n'])
                 keys = [pk] if pk else []

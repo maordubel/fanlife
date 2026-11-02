@@ -3324,3 +3324,13 @@ Owner: *"run through the whole script, all the missions, all the routes; create 
 4. **The season stands on the big nights:** `weight()` in `season/index.ts` reads the row's kinds through the Fitter's own `kindsOf` (final, title 6 · Europe, derby 4 · promotion 3) before a won night; a wide scoreline alone does not make a night big; the pack's own choice still comes first, and no night is used twice. `kindsOf` now reads the Hebrew UEFA Cup (`גביע אופ"א`).
 5. **Somebody else's ground carries nothing of ours:** `away-pen` and `europe-night` draw neither the gate sign nor the ground's name (`AWAY_GROUNDS` in `rush-render/stage.ts`) — the browser check found Bloomfield's name over the 1992 away end. The QA stand takes `&episode=S1E3` to stand a mission on the episode's own night; `npx tsx scripts/life/rush-zoom-probe.ts <url> <out>` frames the briefing, play, the thing in hand and the find.
 6. Tests: `tests/life-zoom-missions.test.ts` (bot wins every seed/difficulty/result, the tie, the words in EN+HE, the wiring, the big-night pick).
+
+## 136 · Every Football Stories film asks once to follow, as a supporter would (2.11.2026)
+
+Owner: *"for every video, a cool, viral call to follow the channel that talks about football and real supporters."*
+`script.with_cta` adds it, so no writer can forget it and no film says it twice: one `follow` beat at the end of the
+second chapter (a third of the way into a one-chapter film) and a closing line that ends "…subscribe, and the next one
+will find you." The line is one of `script.FOLLOW`, chosen by club and season, spoken to supporters (rain, ticket stubs,
+the away end, going back after a heartbreak) — no begging, no promised schedule, no number but one and ninety. On screen
+(`edit.follow_shot`): a supporters' card to fill in (name · club · since), JOIN US!, and the film's own subscribe button
+(never a platform logo) pressed on the word "subscribe", turning to SUBSCRIBED with a cheer. Art for it: doc 58.
