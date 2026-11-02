@@ -50,7 +50,11 @@ footage for it is dropped, not filled.
 - A crowd at distance is a crowd. A face that a viewer could recognise (close, sharp, frontal) is treated: the
   series' **paper-cut patch** (halftone ink over the face, the Weekly look) — not a soft blur.
 - Children: always treated. Players from the stand: no zoom-in close-ups.
-- Pyro, fights, anything that could incriminate an identifiable fan, and hate chants or banners: not published.
+- Pyro and smoke are shown as the terrace's atmosphere only where no person in the frame can be recognised (a stand
+  under smoke, from across the ground). Fights, anything that could incriminate an identifiable fan, and hate chants
+  or banners: not published.
+- Owner footage is iPhone HDR (HLG, BT.2020) in 4K: the edit tone-maps it to SDR BT.709 once, at ingest, before the
+  house grade — never leave HDR flags on a master the platforms will re-map differently.
 
 ## 6 · Facts
 
