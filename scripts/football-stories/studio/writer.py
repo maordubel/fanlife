@@ -72,13 +72,19 @@ def _http(url: str, body: dict, headers: dict, timeout: int = 300) -> dict:
 
 def provider() -> tuple[str, str, str]:
     want = os.environ.get('STORIES_WRITER', '').strip()
-    order = [want] if want else ['anthropic', 'openai', 'gemini']
+    # Free by default (owner, 2.11.2026: "everything free, no cost to me"): only Gemini's free tier writes, unless the
+    # repository variable STORIES_ALLOW_PAID=1 lets the paid providers in.
+    paid = os.environ.get('STORIES_ALLOW_PAID', '').strip() == '1'
+    order = [want] if want else (['anthropic', 'openai', 'gemini'] if paid else ['gemini'])
+    if not paid:
+        order = [p for p in order if p == 'gemini']
     for p in order:
         key = os.environ.get({'anthropic': 'ANTHROPIC_API_KEY', 'openai': 'OPENAI_API_KEY', 'gemini': 'GEMINI_API_KEY'}.get(p, ''), '').strip()
         if key:
             model = os.environ.get(f'STORIES_{p.upper()}_MODEL') or {'anthropic': 'claude-sonnet-5-5', 'openai': 'gpt-5', 'gemini': 'gemini-2.5-pro'}[p]
             return p, model, key
-    raise StageError('WRITER_NOT_CONFIGURED', 'No writer is configured: add ANTHROPIC_API_KEY, OPENAI_API_KEY or GEMINI_API_KEY to the GitHub secrets')
+    raise StageError('WRITER_NOT_CONFIGURED', 'No free writer is configured: add a free Google AI Studio key as the GitHub secret GEMINI_API_KEY '
+                     '(or set STORIES_ALLOW_PAID=1 to use a paid key)')
 
 
 def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str, dict]:
@@ -96,9 +102,16 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
         text = ''.join(c.get('text', '') for m in r.get('output', []) if m.get('type') == 'message' for c in m.get('content', []) if c.get('type') == 'output_text')
         usage = {'input': r.get('usage', {}).get('input_tokens'), 'output': r.get('usage', {}).get('output_tokens')}
     else:
-        r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
-                  {'systemInstruction': {'parts': [{'text': system}]}, 'contents': [{'role': 'user', 'parts': [{'text': user}]}],
-                   'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': max_tokens}}, {'x-goog-api-key': key})
+        body = {'systemInstruction': {'parts': [{'text': system}]}, 'contents': [{'role': 'user', 'parts': [{'text': user}]}],
+                'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': max(max_tokens, 32000)}}
+        try:
+            r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', body, {'x-goog-api-key': key})
+        except StageError as e:
+            # the free tier's Pro quota is small; Flash has its own, larger free quota
+            if e.code != 'WRITER_HTTP_429' or 'flash' in model:
+                raise
+            model = os.environ.get('STORIES_GEMINI_FALLBACK', 'gemini-2.5-flash')
+            r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', body, {'x-goog-api-key': key})
         text = ''.join(p_.get('text', '') for c in r.get('candidates', []) for p_ in c.get('content', {}).get('parts', []))
         usage = {'input': r.get('usageMetadata', {}).get('promptTokenCount'), 'output': r.get('usageMetadata', {}).get('candidatesTokenCount')}
     if not text.strip():
