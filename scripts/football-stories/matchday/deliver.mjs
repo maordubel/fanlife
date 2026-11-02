@@ -25,6 +25,31 @@ const tg = async (method, body) => {
   return r.json().catch(() => ({ok: false, description: `HTTP ${r.status}`}))
 }
 
+async function sendVideo(video) {
+  const v = await fetch(video.url, {signal: AbortSignal.timeout(120_000)})
+  if (!v.ok) fail(`could not fetch ${video.name} (${v.status})`)
+  const bytes = Buffer.from(await v.arrayBuffer())
+  if (bytes.length > 49 * 1024 * 1024) fail(`${video.name} is ${Math.round(bytes.length / 1048576)} MB — the bot sends up to 49 MB`)
+  const form = new FormData()
+  form.append('chat_id', String(ping.chatId))
+  form.append('video', new Blob([bytes], {type: 'video/mp4'}), video.name || 'video.mp4')
+  form.append('supports_streaming', 'true')
+  if (video.width) { form.append('width', String(video.width)); form.append('height', String(video.height)) }
+  if (video.caption) { form.append('caption', video.caption); form.append('parse_mode', 'HTML') }
+  const r = await tg('sendVideo', form)
+  if (!r.ok) fail(`Telegram refused ${video.name}: ${clean(r.description)}`)
+  console.log(`video sent: ${video.name} (${Math.round(bytes.length / 1048576)} MB)`)
+}
+async function sendText(text, i) {
+  const r = await tg('sendMessage', {chat_id: ping.chatId, text, parse_mode: 'HTML', disable_web_page_preview: true})
+  if (!r.ok) fail(`Telegram refused message ${i}: ${clean(r.description)}`)
+}
+// a batch: items in order, each a video and/or its messages (the weekly FAN LIFE feature videos)
+for (const [i, it] of (d.items || []).entries()) {
+  for (const t of it.before || []) await sendText(t, `${i}.before`)
+  if (it.video) await sendVideo(it.video)
+  for (const [j, t] of (it.messages || []).entries()) await sendText(t, `${i}.${j}`)
+}
 if (d.video) {
   const v = await fetch(d.video.url, {signal: AbortSignal.timeout(120_000)})
   if (!v.ok) fail(`could not fetch the video (${v.status})`)
