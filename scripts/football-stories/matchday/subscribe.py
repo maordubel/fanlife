@@ -4,7 +4,7 @@ never "smash that like button", always football, always the stand. Three pieces,
   · the STUB   — a season-ticket stub with a SUBSCRIBE button slides in, a cursor taps it, it flips to
                  SUBSCRIBED with a stamp. Once per film, after the first chapter has earned it; never over a goal.
   · the END    — the end card's line and the narrator's last sentence ask for the follow.
-  · the SCARF  — when the owner's scarf art is in `public/brand/fanlife/iwt/` (ART-BRIEF-SUBSCRIBE.md) it is raised
+  · the SCARF  — when the owner's scarf art is in `matchday/art/` (ART-BRIEF-SUBSCRIBE.md) it is raised
                  behind the stub; until then the stub stands alone and nothing is drawn in its place.
 
 The words come from `series.json → subscribe` and rotate by episode number, so the channel does not repeat itself.
@@ -18,13 +18,13 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from studio.common import INK, PAPER, ROOT, hex_rgb
+from studio.common import INK, PAPER, hex_rgb
 from studio.edit import fit, pop, slide_in
 from studio.motion import Layer, Pose, clamp, ease_in_out, ease_out_cubic
 
 HERE = Path(__file__).resolve().parent
 COPY = json.loads((HERE / 'series.json').read_text())['subscribe']
-ART = ROOT / 'public' / 'brand' / 'fanlife' / 'iwt'
+ART = HERE / 'art'   # the owner's art (ART-BRIEF-SUBSCRIBE.md), kept out of public/: the site never serves it
 
 
 def pick(kind: str, episode: int) -> str:
