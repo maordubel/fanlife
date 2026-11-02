@@ -1,0 +1,50 @@
+name: I WAS THERE · material survey
+# Reads the owner's shared Drive folder of matchday footage and returns what it is: a contact sheet per clip, the
+# camera's dates grouped into matchdays, loudness, scene cuts, faces and identifying metadata (GPS, device).
+# No terminal: Claude writes the folder link into scripts/football-stories/matchday/inbox.json and pushes; this runs.
+# The footage itself is NEVER committed — only inventory.json/.md and small JPEG sheets, on the `matchday-survey` branch.
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: Google Drive folder link (shared as "Anyone with the link · Viewer")
+        required: false
+  push:
+    paths: ['scripts/football-stories/matchday/inbox.json']
+permissions:
+  contents: write
+concurrency:
+  group: matchday-survey
+  cancel-in-progress: true
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q numpy pillow "opencv-python-headless<5" && (command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null))
+      - name: Which folder
+        id: f
+        env: {INPUT: '${{ github.event.inputs.folder }}'}
+        run: |
+          folder="$INPUT"
+          [ -z "$folder" ] && folder=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/inbox.json')).get('folder',''))")
+          [ -z "$folder" ] && echo "::notice::inbox.json holds no folder link yet — nothing to survey"
+          echo "folder=$folder" >> "$GITHUB_OUTPUT"
+      - name: Fetch from Drive
+        if: steps.f.outputs.folder != ''
+        run: python3 scripts/football-stories/matchday/drive_fetch.py "${{ steps.f.outputs.folder }}" "$RUNNER_TEMP/raw"
+      - name: Survey
+        if: steps.f.outputs.folder != ''
+        run: python3 scripts/football-stories/matchday/survey.py "$RUNNER_TEMP/raw" "$RUNNER_TEMP/out" && cp "$RUNNER_TEMP/raw/_fetch.json" "$RUNNER_TEMP/out/"
+      - name: Publish the survey (not the footage)
+        if: steps.f.outputs.folder != ''
+        run: |
+          cd "$RUNNER_TEMP/out" && rm -rf .frames
+          git init -q && git checkout -q -b matchday-survey
+          git config user.name "fanlife-survey" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -qm "Material survey $(date -u +%FT%TZ) from ${GITHUB_SHA::7}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" matchday-survey
+          cat inventory.md >> "$GITHUB_STEP_SUMMARY"
