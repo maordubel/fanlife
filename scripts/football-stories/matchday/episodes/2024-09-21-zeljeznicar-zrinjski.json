@@ -318,7 +318,7 @@
           "mood": "major",
           "energy": 0.35
         },
-        "say": "Were you there? Find the night in the FAN LIFE archive, and stamp your ticket.",
+        "say": "Were you there? Find the night in the FAN LIFE archive.",
         "min": 7.0
       }
     ],
@@ -404,7 +404,7 @@
           "mood": "major",
           "energy": 0.35
         },
-        "say": "Were you there? Stamp your ticket on FAN LIFE."
+        "say": "Were you there?"
       }
     ],
     "description": "One stand, two colours. Željezničar's home end at Grbavica, Sarajevo — red flares in the first half, blue smoke after the break. Željezničar 0–2 Zrinjski Mostar, Premier League BiH, 21 September 2024. Shot from the stand by FAN LIFE."

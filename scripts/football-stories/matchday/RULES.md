@@ -98,6 +98,27 @@ their own: *Were you there? Stamp your ticket on FAN LIFE* → the match's archi
 (rule 124): Shrikhand for the series mark, Weekly Head for names and chapters, Ultra for numbers, Knewave for the
 fixed shout (GOAL!) only. The FAN LIFE badge, never the word set in type.
 
+## 8a · Every video asks the viewer to join — in the terrace's voice (owner, 2.11.2026)
+
+The ask is football, never YouTube-speak: no "smash the like button", no "don't forget to". It says who we are —
+fans, the stand, real nights — and it is the same ask on every video, so the channel has one voice.
+
+- **The stub (film):** once per film, a season-ticket stub with a SUBSCRIBE button slides into the free side of the
+  frame, a cursor taps it, it flips to ✓ SUBSCRIBED with a stamp, and leaves (≈4 s, `subscribe.py`). It sits on the
+  first silent clip after the first chapter (or a beat marked `"subscribe": true`) — never over a goal, a chant's peak,
+  a card or the narrator. One line under the button, from `series.json → subscribe.stub`.
+- **The end (film):** the narrator's last sentence is the spoken ask (`end_voice`), the end card's line repeats it
+  (`end_line`).
+- **The end (reel):** the last line spoken and printed is the follow (`reel_voice`, `reel_line`) — "follow", because
+  the same file goes to Instagram and TikTok.
+- **The words rotate** by episode number through the pools in `series.json`, so no two neighbouring films say the
+  same sentence. New lines go into the pools, never into a single episode.
+- **Channel-wide:** the FAN LIFE badge is the YouTube video watermark for the entire video (a clickable subscribe
+  button on desktop) — set in Studio → Customization → Branding, 2.11.2026.
+- **Art:** `ART-BRIEF-SUBSCRIBE.md` lists the assets that lift the ask (the scarf, the stamp, the end-screen ground,
+  the banner). Each one is optional: when its file is in `public/brand/fanlife/iwt/` the edit uses it; until then
+  nothing is drawn in its place.
+
 ## 9 · QA before a film reaches the desk
 
 Duration in range · loudness −14 ±1 LUFS, TP ≤ −1.5 · no ID tag in the master · face frames treated (sampled) ·

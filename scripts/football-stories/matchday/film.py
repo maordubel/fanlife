@@ -38,6 +38,7 @@ if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
 from studio.audio import CROWD, fx, score  # noqa: E402
 import studio.captions as _caps  # noqa: E402
+import subscribe as SUB  # noqa: E402
 if CUT == 'reel':   # phone captions: bigger, shorter lines, above the platform's own buttons
     _caps.MAX_CHARS = 16
     _face_cls = _caps.Face
@@ -175,7 +176,23 @@ def main() -> None:
     fx_ = ep['fixture']
     pal = Palette('iwt', 'I WAS THERE', ep['accent'], PAPER, [])
     beats = ep[CUT]['beats']
-    report = {'episode': ep['id'], 'cut': 'film', 'voice': SERIES['voice'], 'beats': [], 'speech': {}}
+    report = {'episode': ep['id'], 'cut': CUT, 'voice': SERIES['voice'], 'beats': [], 'speech': {}}
+    epn = int(ep['fixture'].get('episode', 1))
+    # RULES §8 · the subscribe call: the end beat's line gains the spoken ask; one silent clip after the first chapter
+    # (or a beat marked `subscribe`) carries the stub
+    beats = [dict(b) for b in beats]
+    if beats and beats[-1].get('kind') == 'end':
+        ask = SUB.pick('reel_voice' if tall else 'end_voice', epn)
+        beats[-1]['say'] = (beats[-1].get('say', '') + ' ' + ask).strip()
+    stub_at = next((i for i, b in enumerate(beats) if b.get('subscribe')), None)
+    if stub_at is None and not tall:
+        seen = False
+        for i, b in enumerate(beats):
+            seen = seen or b.get('kind') == 'chapter'
+            if seen and b.get('kind') == 'clip' and not b.get('say') and not b.get('head') and b.get('dur', 0) >= 4.5:
+                stub_at = i
+                break
+    report['subscribe_stub_beat'] = stub_at
 
     # 1 · narration and the timeline (the studio's rule: lead + voice + tail)
     t = 0.0
@@ -340,7 +357,7 @@ def main() -> None:
                 badge = img(ROOT / 'public/brand/fanlife/logo-512.png').resize((300 if tall else 340,) * 2, Image.LANCZOS)
                 if tall:
                     layers.append(Layer(badge, slam(W / 2, top + 210, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
-                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', 'Stamp your ticket on FAN LIFE')), W - 90, 260)
+                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', SUB.pick('reel_line', epn))), W - 90, 260)
                     layers.append(Layer(head, slide_in(W / 2, top + 520, 0.55, frm=(0, 500), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
                     for j, (label, rel) in enumerate(FEATURES):
                         tile = fit(cropped(sp.feature_tile(key_of('tile', label), label, ROOT / 'public' / rel, 'accent' if j in (0, 4) else 'paper')), 300, 238)
@@ -352,7 +369,7 @@ def main() -> None:
                     cues += [(0.25, 'stamp'), (0.55, 'whoosh'), (3.0, 'stamp'), (0.0, 'end')]
                 else:
                     layers.append(Layer(badge, slam(290, 290, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
-                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', 'Find the night in the archive · stamp your ticket')), 1250, 230)
+                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', SUB.pick('end_line', epn))), 1250, 230)
                     layers.append(Layer(head, slide_in(540 + head.width / 2, 210, 0.55, frm=(900, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
                     cues += [(0.25, 'stamp'), (0.55, 'whoosh')]
                     x0, y0, dx, dy = 700, 455, 380, 262
@@ -371,6 +388,11 @@ def main() -> None:
                 raise SystemExit(f'unknown beat kind {kind}')
 
             caps = None
+            if p['n'] == stub_at:      # the stub: in the free half of the frame, clear of the clock and the captions
+                vertical_world = isinstance(world_frames, PaperWorld) and not tall
+                sx, sy = (W * 0.70, H * 0.46) if vertical_world else ((W / 2, H * 0.36) if tall else (W - 450, 250))
+                layers += SUB.stub_layers(sp, ep['id'], SUB.pick('stub', epn), sx, sy, 0.9, max(3.0, min(4.4, dur - 1.4)),
+                                          (W - 120) if tall else 760, cues)
             if p.get('words') and kind != 'end':
                 caps = Captions(p['words'], p['voice_at'] - p['start'], ep['accent'])
                 if tall:     # lift the plate to two-thirds down: the platform's own buttons live at the bottom
