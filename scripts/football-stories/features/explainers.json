@@ -1,17 +1,50 @@
 {
-  "note": "The weekly FAN LIFE feature film (owner, 2.11.2026). One feature a week, in this order. Words are the feature's real rules (CLAUDE.md rules 21, 103, 107, 110, 112, 123, gates.ts) — never a promise the game does not keep. `shots` are captured from the live site on a phone screen; `click` is the visible text of the button pressed before that shot (skipped when it is not on the page).",
-  "order": ["trivia", "blind-cow", "timeline", "royal-rumble", "legends-manager", "memory", "away-days", "xi"],
+  "note": "The weekly FAN LIFE feature film (owner, 2.11.2026). One feature a week, in this order. Words are the feature's real rules (CLAUDE.md rules 21, 103, 107, 110, 112, 123, gates.ts) — never a promise the game does not keep. `shots` are captured from the live site on a phone screen; `click` is a regex of the visible text pressed before that shot ({club} = the club's name; read off the live pages 2.11.2026) (skipped when it is not on the page).",
+  "order": [
+    "trivia",
+    "blind-cow",
+    "timeline",
+    "royal-rumble",
+    "legends-manager",
+    "memory",
+    "away-days",
+    "xi"
+  ],
   "features": {
     "trivia": {
       "name": "Trivia",
       "title": "Only real fans get past stage three | FAN LIFE Trivia",
       "path": "/clubs/{club}/trivia",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Play|Start|Kick off|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "Kick off"
+        },
+        {
+          "name": "answer",
+          "click": "^A "
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "Every club on FAN LIFE has its own trivia wing, written from that club's own history. Not a generic quiz. Your club."},
-        {"shot": "run", "say": "The questions climb in stages, and every stage is harder than the last. You carry lives, and a wrong answer costs one."},
-        {"shot": "run", "say": "Answer quickly and your combo grows. The clock is part of the game, so thinking fast is how you score big."},
-        {"shot": "deeper", "say": "Four levels, from easy to expert. Every answer is checked against the club's archive, and every question shows its source."}
+        {
+          "shot": "door",
+          "say": "Every club on FAN LIFE has its own trivia wing, written from that club's own history. Not a generic quiz. Your club."
+        },
+        {
+          "shot": "run",
+          "say": "Twelve questions in three stages, and every stage is harder than the last. You get three lives, and a wrong answer costs one."
+        },
+        {
+          "shot": "answer",
+          "say": "Answer quickly and the combo grows, up to four times. The clock is part of the game, so thinking fast is how you score big."
+        },
+        {
+          "shot": "answer",
+          "say": "Four levels, from easy to expert. Every answer is checked against the club's archive, and every question shows its source."
+        }
       ],
       "hook": "How well do you really know your club?"
     },
@@ -19,12 +52,36 @@
       "name": "Blind Cow",
       "title": "Name the player before the last clue | FAN LIFE Blind Cow",
       "path": "/clubs/{club}/blind-cow",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Play|Start|Solo|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "QUICK MYSTERY"
+        },
+        {
+          "name": "deeper",
+          "scroll": 500
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "Blind Cow is a guessing game. One player from your club's history, hidden behind his clues."},
-        {"shot": "run", "say": "The clues come one at a time: where he's from, where he played, a season, a shirt number. Every clue is sourced."},
-        {"shot": "run", "say": "The fewer clues you need, the better your time. A wrong guess costs you seconds."},
-        {"shot": "deeper", "say": "Play it solo, or send a friend the same player and race them, clue for clue."}
+        {
+          "shot": "door",
+          "say": "Blind Cow is a guessing game. One player from your club's history, hidden behind his clues."
+        },
+        {
+          "shot": "run",
+          "say": "The clues come one at a time: where he's from, where he played, a season, a shirt number. Every clue is sourced."
+        },
+        {
+          "shot": "run",
+          "say": "The fewer clues you need, the better your time. A wrong guess costs you seconds."
+        },
+        {
+          "shot": "deeper",
+          "say": "Play it solo, or send a friend the same player and race them, clue for clue."
+        }
       ],
       "hook": "One player. Five clues. How many do you need?"
     },
@@ -32,11 +89,32 @@
       "name": "Timeline",
       "title": "Put your club's biggest nights in order | FAN LIFE Timeline",
       "path": "/clubs/{club}/timeline",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Play|Start|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "Start Chronology"
+        },
+        {
+          "name": "deeper",
+          "scroll": 400
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "Timeline takes the dates your club lived through: finals, titles, nights in Europe."},
-        {"shot": "run", "say": "Each card is a real moment from the archive. Your job is to put it in the right place in history."},
-        {"shot": "deeper", "say": "Get the order right and the line grows. Get it wrong and the archive shows you where it really belongs."}
+        {
+          "shot": "door",
+          "say": "Timeline takes the dates your club lived through: finals, titles, nights in Europe."
+        },
+        {
+          "shot": "run",
+          "say": "Each card is a real moment from the archive. Your job is to put it in the right place in history."
+        },
+        {
+          "shot": "deeper",
+          "say": "Get the order right and the line grows. Get it wrong and the archive shows you where it really belongs."
+        }
       ],
       "hook": "You remember the night. Do you remember the year?"
     },
@@ -44,12 +122,36 @@
       "name": "Royal Rumble",
       "title": "Build your club's dream team on a budget | FAN LIFE Royal Rumble",
       "path": "/clubs/{club}/royal-rumble",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Play|Start|Five|Draft|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "^GK"
+        },
+        {
+          "name": "deeper",
+          "scroll": 500
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "Royal Rumble: build a team from every player your club has ever had, from the first season to today."},
-        {"shot": "run", "say": "You pick the line, and the slot machine deals you three players from three price tiers. Pick one, and watch the budget."},
-        {"shot": "run", "say": "Three spins for the whole draft. A legend costs five million, and the budget is hard. No cheating it."},
-        {"shot": "deeper", "say": "Then your team plays, and the same link lets a friend draft against you."}
+        {
+          "shot": "door",
+          "say": "Royal Rumble: build a team from every player your club has ever had, from the first season to today."
+        },
+        {
+          "shot": "run",
+          "say": "You pick the line, and the slot machine deals you three players from three price tiers. Pick one, and watch the budget."
+        },
+        {
+          "shot": "run",
+          "say": "Three spins for the whole draft. A legend costs five million, and the budget is hard. No cheating it."
+        },
+        {
+          "shot": "deeper",
+          "say": "Then your team plays, and the same link lets a friend draft against you."
+        }
       ],
       "hook": "Your club's all-time eleven. Your budget. Your call."
     },
@@ -57,12 +159,36 @@
       "name": "Legends Manager",
       "title": "Manage your club's legends for a whole season | FAN LIFE Legends Manager",
       "path": "/all-football/legends",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Start|New career|Play|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "{club}"
+        },
+        {
+          "name": "deeper",
+          "scroll": 600
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "Legends Manager: take your club's legends, and play a full season with them."},
-        {"shot": "run", "say": "You draft the squad from the club's own history, inside a budget. Every player is rated in stars, never in numbers."},
-        {"shot": "run", "say": "Then the matches play live. At half time, on the hour and with fifteen to go, you decide what changes."},
-        {"shot": "deeper", "say": "Pick a captain, survive the injuries and the cards, and see if your legends can win the league."}
+        {
+          "shot": "door",
+          "say": "Legends Manager: take your club's legends, and play a full season with them."
+        },
+        {
+          "shot": "run",
+          "say": "You draft the squad from the club's own history, inside a budget. Every player is rated in stars, never in numbers."
+        },
+        {
+          "shot": "run",
+          "say": "Then the matches play live. At half time, on the hour and with fifteen to go, you decide what changes."
+        },
+        {
+          "shot": "deeper",
+          "say": "Pick a captain, survive the injuries and the cards, and see if your legends can win the league."
+        }
       ],
       "hook": "Your club's legends. One season. You're the manager."
     },
@@ -70,11 +196,32 @@
       "name": "Memory",
       "title": "The memory game made of your club's history | FAN LIFE Memory",
       "path": "/clubs/{club}/memory",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Play|Start|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "Light the wall"
+        },
+        {
+          "name": "deeper",
+          "scroll": 400
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "The classic memory game, but every card is a piece of your club's history."},
-        {"shot": "run", "say": "Turn two cards. If they belong together, a player and his season, a night and its score, they stay open."},
-        {"shot": "deeper", "say": "Every pair is a sourced fact. Clear the board, and you've learned something about your own club."}
+        {
+          "shot": "door",
+          "say": "The classic memory game, but every card is a piece of your club's history."
+        },
+        {
+          "shot": "run",
+          "say": "Turn two cards. If they belong together, a player and his season, a night and its score, they stay open."
+        },
+        {
+          "shot": "deeper",
+          "say": "Every pair is a sourced fact. Clear the board, and you've learned something about your own club."
+        }
       ],
       "hook": "Your club's history, face down. How fast can you match it?"
     },
@@ -82,11 +229,32 @@
       "name": "Away Days",
       "title": "Every away ground your club ever played at, on one map | FAN LIFE Away Days",
       "path": "/clubs/{club}/away-days",
-      "shots": [{"name": "door"}, {"name": "deeper", "scroll": 700}, {"name": "more", "scroll": 1400}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "deeper",
+          "click": "Play the road"
+        },
+        {
+          "name": "more",
+          "scroll": 700
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "Away Days is a map of every ground your club has played at abroad, built only from verified matches."},
-        {"shot": "deeper", "say": "Tap a ground and you get the night: the date, the score, the competition, and the stadium itself."},
-        {"shot": "more", "say": "Were you there? Stamp it. Your away days become your own map, and you can follow it trip by trip."}
+        {
+          "shot": "door",
+          "say": "Away Days is a map of every ground your club has played at abroad, built only from verified matches."
+        },
+        {
+          "shot": "deeper",
+          "say": "Tap a ground and you get the night: the date, the score, the competition, and the stadium itself."
+        },
+        {
+          "shot": "more",
+          "say": "Were you there? Stamp it. Your away days become your own map, and you can follow it trip by trip."
+        }
       ],
       "hook": "Where did your club take you?"
     },
@@ -94,11 +262,32 @@
       "name": "All-time XI",
       "title": "Pick your club's all-time eleven | FAN LIFE",
       "path": "/clubs/{club}/xi",
-      "shots": [{"name": "door"}, {"name": "run", "click": "Start|Pick|Build|Begin"}, {"name": "deeper", "scroll": 600}],
+      "shots": [
+        {
+          "name": "door"
+        },
+        {
+          "name": "run",
+          "click": "^GK$"
+        },
+        {
+          "name": "deeper",
+          "scroll": 500
+        }
+      ],
       "beats": [
-        {"shot": "door", "say": "The argument every supporter has had: who makes your club's all-time eleven?"},
-        {"shot": "run", "say": "Pick from every player in the archive, each in his real position and his real years."},
-        {"shot": "deeper", "say": "Build it, share it, and let the terrace argue about it."}
+        {
+          "shot": "door",
+          "say": "The argument every supporter has had: who makes your club's all-time eleven?"
+        },
+        {
+          "shot": "run",
+          "say": "Pick from every player in the archive, each in his real position and his real years."
+        },
+        {
+          "shot": "deeper",
+          "say": "Build it, share it, and let the terrace argue about it."
+        }
       ],
       "hook": "Your club's all-time eleven. Eleven names. Go."
     }
