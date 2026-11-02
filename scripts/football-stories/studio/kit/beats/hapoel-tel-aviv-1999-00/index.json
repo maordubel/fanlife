@@ -15,7 +15,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/ball-goal-line-night",
@@ -26,6 +27,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -37,6 +41,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -48,6 +55,10 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red",
+    "yellow"
    ]
   },
   {
@@ -59,6 +70,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -70,6 +84,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -81,6 +98,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -92,6 +112,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -103,6 +126,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -114,6 +140,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -125,7 +154,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/boots-scarf-cards",
@@ -136,6 +166,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -147,6 +180,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -158,6 +194,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -169,7 +208,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/street-march-scarves",
@@ -180,6 +220,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -191,6 +234,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -202,6 +248,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -213,6 +262,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -224,7 +276,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/penalty-taker-back",
@@ -235,7 +288,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/stadium-clock-crowd",
@@ -246,7 +300,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/empty-seats-scarf-dusk",
@@ -257,6 +312,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -268,6 +326,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -279,6 +340,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -290,7 +354,8 @@
    "size": [
     1376,
     768
-   ]
+   ],
+   "families": []
   },
   {
    "key": "beat:hapoel-tel-aviv-1999-00/referee-whistle",
@@ -301,6 +366,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -312,6 +380,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -323,6 +394,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   },
   {
@@ -334,6 +408,9 @@
    "size": [
     1376,
     768
+   ],
+   "families": [
+    "red"
    ]
   }
  ]

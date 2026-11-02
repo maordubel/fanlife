@@ -129,7 +129,8 @@ class ClipWorld:
         self.bans, self.dim, self.accent = bans or [], dim, accent
         self.proc = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', str(path), '-an', '-vf',
                                       f'fps={fps},scale={self.w}:{self.h}:force_original_aspect_ratio=increase,crop={self.w}:{self.h}',
-                                      '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
+                                      '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE,
+                                     stderr=subprocess.DEVNULL)
         self.n, self.last, self.done = -1, None, False
         yy, xx = np.mgrid[0:self.h, 0:self.w].astype('float32')
         r = np.sqrt(((xx - self.w / 2) / (self.w / 2)) ** 2 + ((yy - self.h / 2) / (self.h / 2)) ** 2)

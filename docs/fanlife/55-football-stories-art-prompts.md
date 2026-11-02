@@ -10,6 +10,15 @@ boots on the touchline, flat-cap supporter, corner flag, radio on the table, arc
 commentator booth, dugout, tunnel walk-out) and 5 clips (corner flag, stadium assembling, training ground, fan at the
 TV, floodlights switching on).
 
+**Batch 1 arrived the same day (2.11.2026)** and is in the library: every still in §4 (most in two variants, the second
+keyed `…-b-kr` / `…-b-n`) and nine clips of §5. Held back, to be generated again:
+- `signing-desk-kr` variant with the word "contract" printed on the paper (the other variant is in);
+- `clip-scoreboard-flip-n` — a digit flashes on a panel mid-flip (the studio prints every score itself);
+- `clip-pitch-builds-n` — the colour code "#15130F" is printed in the corners. **Never put a hex code in the prompt
+  text for clips** — write the colours in words ("deep ink black, cream paper").
+Still to make: `clip-stand-fills-kr`, `clip-clock-hands-n`, `clip-lights-dark-n`, every cut-out in §6, and the club sets
+of §7.
+
 ---
 
 ## 1 · The style block (paste first, every time)

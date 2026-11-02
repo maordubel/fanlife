@@ -37,10 +37,12 @@ CLIP = {'.mp4', '.mov', '.webm'}
 def families(im: Image.Image) -> list[str]:
     a = np.asarray(im.convert('HSV'), 'float32') / 255
     h, s, v = a[..., 0] * 360, a[..., 1], a[..., 2]
-    m = (s >= .30) & (v >= .30)
-    f = {'red': m & ((h <= 18) | (h >= 342)), 'yellow': m & (h >= 34) & (h <= 74),
-         'green': m & (h >= 86) & (h <= 174), 'blue': m & (h >= 186) & (h <= 264)}
-    return sorted(k for k, x in f.items() if x.mean() > 0.005)
+    # The families a piece is MADE of (the QA's band, over 2% of the picture): warm paper and olive grass graze the
+    # yellow band in a few pixels, which the render-time scrub handles; they do not make a piece a "yellow" piece.
+    m = (s >= .35) & (v >= .35)
+    f = {'red': m & ((h <= 18) | (h >= 342)), 'yellow': m & (h >= 38) & (h <= 70),
+         'green': m & (h >= 90) & (h <= 170), 'blue': m & (h >= 190) & (h <= 260)}
+    return sorted(k for k, x in f.items() if x.mean() > 0.02)
 
 
 def describe(slug: str) -> str:
