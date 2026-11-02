@@ -1,0 +1,65 @@
+name: I WAS THERE · render
+# Renders every episode in scripts/football-stories/matchday/episodes/ — the film (16:9) and the reel (9:16) — from the
+# owner's Drive footage, with the series narrator. Previews, captions, frames and the QA report go to the
+# `matchday-render` branch; the full masters are kept as this run's artifact. Footage never enters the repository.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/football-stories/matchday/episodes/**'
+      - 'scripts/football-stories/matchday/render.py'
+      - 'scripts/football-stories/matchday/cards.py'
+permissions:
+  contents: write
+concurrency:
+  group: matchday-render
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -filters | grep -q zscale || { echo "::error::ffmpeg has no zscale (HDR tone map)"; exit 1; }
+          pip install -q numpy pillow playwright kokoro-onnx soundfile faster-whisper
+          python -m playwright install --with-deps chromium > /dev/null
+      - name: Voice model (cached)
+        id: kokoro
+        uses: actions/cache@v4
+        with: {path: ~/models, key: kokoro-v1.0}
+      - if: steps.kokoro.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/models
+          curl -sSL -o ~/models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          curl -sSL -o ~/models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+      - name: Render
+        env: {KOKORO_DIR: /home/runner/models}
+        run: |
+          folder=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/inbox.json'))['folder'])")
+          for ep in scripts/football-stories/matchday/episodes/*.json; do
+            sub=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['folder'])" "$ep")
+            python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/footage" "$sub"
+            for cut in film reel; do
+              python3 scripts/football-stories/matchday/render.py "$ep" "$RUNNER_TEMP/footage" "$RUNNER_TEMP/out/$(basename "$ep" .json)" --cut $cut
+            done
+          done
+      - name: Keep the masters (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: masters
+          path: ${{ runner.temp }}/out/**/*[!w].mp4
+          retention-days: 30
+      - name: Publish previews and reports (not the footage, not the masters)
+        run: |
+          cd "$RUNNER_TEMP/out"
+          find . -name '*.mp4' ! -name '*-preview.mp4' -delete
+          git init -q && git checkout -q -b matchday-render
+          git config user.name "fanlife-render" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -qm "Render $(date -u +%FT%TZ) from ${GITHUB_SHA::7}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" matchday-render
+          for r in */*/report.json; do echo "### $r" >> "$GITHUB_STEP_SUMMARY"; python3 -c "import json,sys;d=json.load(open(sys.argv[1]));print({k:d[k] for k in ('duration','lufs','true_peak','identifying_tags_left')});print(json.dumps(d['speech'],ensure_ascii=False,indent=1))" "$r" >> "$GITHUB_STEP_SUMMARY"; done
