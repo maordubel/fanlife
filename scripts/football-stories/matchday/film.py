@@ -152,6 +152,22 @@ class PaperWorld:
         return im
 
 
+def glass(path: Path, fill=(16, 17, 17)) -> Image.Image:
+    """A full-frame piece of art placed so the still camera shows it exactly, pixel for pixel: the end-screen zones
+    YouTube's buttons sit on are measured on the art, so the art may not be scaled or pushed."""
+    art = Image.open(path).convert('RGB')
+    k = max(W / art.width, H / art.height)
+    art = art.resize((round(art.width * k), round(art.height * k)), Image.LANCZOS)
+    art = art.crop(((art.width - W) // 2, (art.height - H) // 2, (art.width - W) // 2 + W, (art.height - H) // 2 + H))
+    world = Image.new('RGB', CANVAS, fill)
+    world.paste(art, ((CW - W) // 2, (CH - H) // 2))
+    return world
+
+
+def still(t):
+    return 1.0, CW / 2, CH / 2
+
+
 def cam_for(seed: int, dur: float, strong: bool = False) -> callable:
     d = [(1.0, 1.07, 40, -16), (1.07, 1.0, -40, 16), (1.02, 1.09, -56, 0), (1.08, 1.01, 30, 20)][seed % 4]
     if strong:
@@ -184,6 +200,8 @@ def main() -> None:
     if beats and beats[-1].get('kind') == 'end':
         ask = SUB.pick('reel_voice' if tall else 'end_voice', epn)
         beats[-1]['say'] = (beats[-1].get('say', '') + ' ' + ask).strip()
+    if not tall and (SUB.ART / 'endscreen-ground.jpg').exists() and not any(b.get('kind') == 'endscreen' for b in beats):
+        beats.append({'kind': 'endscreen', 'dur': 20.0, 'music': {'mood': 'major', 'energy': 0.25}})
     stub_at = next((i for i, b in enumerate(beats) if b.get('subscribe')), None)
     if stub_at is None and not tall:
         seen = False
@@ -355,7 +373,16 @@ def main() -> None:
                 cam = cam_push(1.04, 1.0, 0, 0, dur)
                 entry = 'wipe'
                 badge = img(ROOT / 'public/brand/fanlife/logo-512.png').resize((300 if tall else 340,) * 2, Image.LANCZOS)
-                if tall:
+                follow = SUB.ART / 'reel-follow.jpg'
+                if tall and follow.exists():     # the terrace fills the lower half; the ask lives in the top 900 px
+                    world, cam = glass(follow), still
+                    layers.append(Layer(badge, slam(W / 2, top + 120, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
+                    head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', SUB.pick('reel_line', epn))), W - 90, 260)
+                    layers.append(Layer(head, slide_in(W / 2, top + 400, 0.55, frm=(0, 500), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
+                    url = fit(cropped(sp.url_banner('iwt-end', 'fanlife.dubelteam.com', 'Every match · trivia · games')), W - 80, 200)
+                    layers.append(Layer(url, slam(W / 2, top + 600, 1.6, s0=1.5, rot=-1.2, dur=0.3), settle=1e9))
+                    cues += [(0.25, 'stamp'), (0.55, 'whoosh'), (1.6, 'stamp'), (0.0, 'end')]
+                elif tall:
                     layers.append(Layer(badge, slam(W / 2, top + 210, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
                     head = fit(cropped(sp.cta_headline('iwt-end', 'Were you there?', SUB.pick('reel_line', epn))), W - 90, 260)
                     layers.append(Layer(head, slide_in(W / 2, top + 520, 0.55, frm=(0, 500), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
@@ -384,6 +411,13 @@ def main() -> None:
                     srcs = 'Sources: ' + '; '.join((s.get('short') or s.get('title') or s.get('file')) for s in ep['sources'])
                     sm = fit(cropped(sp.small_print('iwt-end', srcs)), 1700, 40)
                     layers.append(Layer(sm, slide_in(W / 2, H - 22, 4.2, frm=(0, 60), rot0=0, rot1=0, dur=0.4, drift=False), settle=1e9))
+            elif kind == 'endscreen':     # YouTube's end screen sits on this: the zones are left empty on purpose
+                world, cam, entry = glass(SUB.ART / 'endscreen-ground.jpg'), still, 'fade'
+                badge = img(ROOT / 'public/brand/fanlife/logo-512.png').resize((150, 150), Image.LANCZOS)
+                layers.append(Layer(badge, pop(110, 110, 0.3, rot=-6), settle=1e9))
+                line = fit(cropped(sp.label('iwt-next', SUB.pick('endscreen_line', epn), 'paper', 44)), 1300, 110)
+                layers.append(Layer(line, slide_in(210 + line.width / 2, 120, 0.5, frm=(0, -200), rot0=0, rot1=-1, dur=0.5, drift=False), settle=1e9))
+                cues += [(0.0, 'crowd-murmur'), (0.5, 'paper')]
             else:
                 raise SystemExit(f'unknown beat kind {kind}')
 

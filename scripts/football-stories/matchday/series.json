@@ -45,6 +45,25 @@
       "Follow for the next night from the stand",
       "Follow · the terrace is open",
       "Follow · fans, not highlights"
-    ]
+    ],
+    "endscreen_line": [
+      "Next week: another night from the stand",
+      "More nights from the stand",
+      "The next night is already waiting"
+    ],
+    "endscreen_zones": {
+      "note": "measured on art/endscreen-ground.jpg (1920×1080); place YouTube's end-screen elements on them",
+      "subscribe_circle": {
+        "cx": 372,
+        "cy": 620,
+        "d": 330
+      },
+      "video": {
+        "x0": 895,
+        "y0": 360,
+        "x1": 1742,
+        "y1": 816
+      }
+    }
   }
 }
