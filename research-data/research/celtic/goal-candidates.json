@@ -514,6 +514,15 @@
     "bodyHash": "cd063535f0f3a161bd4ee5956c6ca10c5d2701e18800eb904c213a1f59ae2cdc",
     "fetchedAt": "2026-10-28T10:01:11.588Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgowan-paul/",
+    "locator": "p18",
+    "quote": "Paul McGowan made his Champions League debut against Villareal CF on 10 December 2008, as a 75th minute substitute for Aiden McGeady. Celtic won the match 2-0 but finished bottom of their group.",
+    "bodyHash": "756db0289802ba486a84244bd21ba4f67ff5f3c3e203172aac4514f1e0fa76c8",
+    "fetchedAt": "2026-11-02T11:41:49.823Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -521,8 +530,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:01:11.588Z",
-  "updatedAt": "2026-10-28T10:01:11.588Z"
+  "createdAt": "2026-11-02T11:41:49.823Z",
+  "updatedAt": "2026-11-02T11:41:49.823Z"
  },
  {
   "id": "ga-93c8b19a7ed75ec1",
@@ -784,33 +793,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1921-1930/1921-05-28-cercle-athletique-de-paris-0-6-celtic-tour-of-france/",
-    "locator": "p10",
-    "quote": "The following day , Sunday May 29th, there were 5,000 present (a healthy crowd for the whitsun weekend holiday) at the same stadium to see Celtic beat newcastle united 3 – 0 in a match refereed by mr. Jandin. Mcinally opened the scoring in the 5th minute and added a second ‘just before half – time’. Mcfarlane rounded off the scoring in the second half (timing not specified).",
-    "bodyHash": "22588e18a73b13390124c2afdf6e9dd2373b1986a008bd0d0a00924c61b57f13",
-    "fetchedAt": "2026-10-28T10:01:08.564Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1921-1930/1921-05-29-newcastle-united-0-3-celtic-tour-of-france/",
-    "locator": "p7",
-    "quote": "The following day , Sunday May 29th, there were 5,000 present (a healthy crowd for the whitsun weekend holiday) at the same stadium to see Celtic beat newcastle united 3 – 0 in a match refereed by mr. Jandin. Mcinally opened the scoring in the 5th minute and added a second ‘just before half – time’. Mcfarlane rounded off the scoring in the second half (timing not specified).",
-    "bodyHash": "cf4da22d2a70c8c713dd08ad38c408b221958a14558dad162d095d61f3d7a8db",
-    "fetchedAt": "2026-10-28T10:01:08.570Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/bjarnason-theodor-elmar/",
-    "locator": "p7",
-    "quote": "Height: 5′ 10″ (178cm)",
-    "bodyHash": "46b4775d6325f0e9564aedd78e0fd34d20bfaa14971052d2750f8d83e9f2b389",
-    "fetchedAt": "2026-10-31T09:57:51.114Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/corcoran-patrick/",
     "locator": "p60",
     "quote": "Patsy was christened Patrick, he was known as Paddy or Pat when he played in Scotland but Argyle fans knew him as Patsy. He started his football career with his local club Albion Rovers as a right winger, despite being taller than most wingers of the era at 5′ 10′ he had excellent ball control and wasn’t afraid to shoot from any angle.",
@@ -826,6 +808,60 @@
     "bodyHash": "2406d33bc6a7e3f1d08bc27a16217cf988576d59c391b88bc70b7abc94b301fd",
     "fetchedAt": "2026-11-01T10:48:29.320Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/larsson-henrik/",
+    "locator": "p5",
+    "quote": "Height : 5′ 9″ (1.75m)",
+    "bodyHash": "53ad56eb5f797342e5f540671359b475504cbfdc489f879a9f58f7afd23b75e2",
+    "fetchedAt": "2026-11-02T11:41:28.784Z",
+    "language": "other"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lawson-paul/",
+    "locator": "p7",
+    "quote": "Height : 5′ 9″ (175cm)",
+    "bodyHash": "1e21672a26667c05b9cfab6af7838ac38daf29208130a5018332609bc947d26c",
+    "fetchedAt": "2026-11-02T11:41:28.797Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/livingstone-george/",
+    "locator": "p52",
+    "quote": "Height: 5′ 10″",
+    "bodyHash": "9aa5faa7f72a388f78bb43c3c46f1b24ef6d343a9a53e4c14df0432b9211bde1",
+    "fetchedAt": "2026-11-02T11:41:31.974Z",
+    "language": "other"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/macfarlane-robert/",
+    "locator": "p62",
+    "quote": "Height: 5′ 9",
+    "bodyHash": "f410ff5175c7295a47e341264acb67a5ca06b37b36c8854d422a12da164a518d",
+    "fetchedAt": "2026-11-02T11:41:34.776Z",
+    "language": "other"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mccarrison-dugald/",
+    "locator": "p7",
+    "quote": "Height : 5′ 8” (173cm)",
+    "bodyHash": "6fee24701af748cc437dab62d6913e7654eb1eeeb4e99dddb24f1bbb0cf8fbe9",
+    "fetchedAt": "2026-11-02T11:41:43.758Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mccondichie-andy/",
+    "locator": "p7",
+    "quote": "Height : 5′ 10.5” (179cm)",
+    "bodyHash": "cfabfc8e610409414cf8a22fdb17cbc4c698d25444d0b06ce4bf0555e02f6bdc",
+    "fetchedAt": "2026-11-02T11:41:43.764Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -833,8 +869,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:29.320Z",
-  "updatedAt": "2026-11-01T10:48:29.320Z"
+  "createdAt": "2026-11-02T11:41:43.764Z",
+  "updatedAt": "2026-11-02T11:41:43.764Z"
  },
  {
   "id": "ga-eae2397426bed908",
@@ -982,6 +1018,24 @@
     "bodyHash": "db2be8471dc4c6467069d84136fc21848bdf1cf8643bbeef09937a7cc2b55962",
     "fetchedAt": "2026-10-31T09:58:18.114Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennon-neil/",
+    "locator": "p41",
+    "quote": "Arriving in December 2000, Celtic had already got off well from the starting blocks with Celtic manager Martin O’Neill (who was also his former manager at Leicester), and Neil Lennon was brought in to build on the early success the team at that point was enjoying. Slotting into the Celtic side, he gave the attacking players a bit more comfort that he was behind them to assist, and effectively allowed the team to be more daring in attack than if he wasn’t there. Many people who only watch matches on TV don’t always appreciate the work that is done on the pitch by some players off the ball, and ",
+    "bodyHash": "dad469de121a812b6f560fb38ec0f9fcdeda28230c7f3e90f0941dddc1dd62c4",
+    "fetchedAt": "2026-11-02T11:41:28.802Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgeouch-dylan/",
+    "locator": "p17",
+    "quote": "Dylan was given his first run-out off the bench at the 90th minute in a 2-1 away win v Motherwell. Game was already won by then, but it was a start.",
+    "bodyHash": "8427924f7688c9a9e3efb9723e5e5f0fbc237c309e3347aafae6e51c436c10fb",
+    "fetchedAt": "2026-11-02T11:41:46.766Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -989,8 +1043,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:18.114Z",
-  "updatedAt": "2026-10-31T09:58:18.114Z"
+  "createdAt": "2026-11-02T11:41:46.766Z",
+  "updatedAt": "2026-11-02T11:41:46.766Z"
  },
  {
   "id": "ga-22353df6dc5d1642",
@@ -1042,6 +1096,15 @@
     "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
     "fetchedAt": "2026-10-30T10:27:39.583Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcavennie-frank/mcavennie-frank-misc-articles/",
+    "locator": "p43",
+    "quote": "The dream move to Celtic in the summer of 1987 followed a goalshy second season at West Ham, where a burgeoning relationship with ‘Page 3′ girl Jenny Blyth took his mind off the football but kept him in the headlines. As at Upton Park, success on the pitch swiftly arrived at his new club. The proud Celt secured his place in the Parkhead pantheon by scoring two late goals in the Scottish Cup Final but there were already problems. McAvennie was commuting to London and back while playing in Glasgow to spend time with his busty lovely. Agent Bill McMurdo – who also represented George Best at the t",
+    "bodyHash": "b184f57c6807b4f56e666a200760a35f7d6d78da77261cba20c215acb7d991aa",
+    "fetchedAt": "2026-11-02T11:41:40.753Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1049,8 +1112,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:39.583Z",
-  "updatedAt": "2026-10-30T10:27:39.583Z"
+  "createdAt": "2026-11-02T11:41:40.753Z",
+  "updatedAt": "2026-11-02T11:41:40.753Z"
  },
  {
   "id": "ga-1e511041982b2a54",
@@ -1300,6 +1363,15 @@
     "bodyHash": "4af7511f82ab71ddb5fe4c7a5c47853e42ab66aa3ad59bc001b4a97b0f4635c8",
     "fetchedAt": "2026-10-30T10:27:45.863Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgowan-paul/",
+    "locator": "p19",
+    "quote": "On 17 December 2009, just over a year to the day of his European debut, McGowan made his Europa League debut in a 3-3 draw away to Rapid Vienna. In all honesty the team that played that day were a reserve side. He made an impact in the 91st minute by scoring his first competitive goal for the Hoops to complete a sensational comeback from 3-0 down (after just 20mins) to draw 3-3 at the death. He was highly lauded for his efforts and performance on that day especially in the conditions (-8C temperature).",
+    "bodyHash": "756db0289802ba486a84244bd21ba4f67ff5f3c3e203172aac4514f1e0fa76c8",
+    "fetchedAt": "2026-11-02T11:41:49.823Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1307,8 +1379,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:45.863Z",
-  "updatedAt": "2026-10-30T10:27:45.863Z"
+  "createdAt": "2026-11-02T11:41:49.823Z",
+  "updatedAt": "2026-11-02T11:41:49.823Z"
  },
  {
   "id": "ga-f90c3bca8d1be7ef",
@@ -1330,6 +1402,15 @@
     "bodyHash": "ae9240122c54b2e1067875d704255093eb232ff64ba6f3749ffa4ee879a76ba3",
     "fetchedAt": "2026-10-30T10:27:45.867Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgarvey-frank/",
+    "locator": "p108",
+    "quote": "James Forrest put Celtic ahead inside nine minutes before Georgios Giakoumakis added a second in the 18th minute. Forrest went on to complete his hat-trick with Giakoumakis and Daizen Maeda completing the Hoops’ scoring late on.",
+    "bodyHash": "bff6e57fa4a038e6d5ce9abe51ef4db94d329216ecaceca74bee929194da6cd7",
+    "fetchedAt": "2026-11-02T11:41:46.758Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1337,8 +1418,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:45.867Z",
-  "updatedAt": "2026-10-30T10:27:45.867Z"
+  "createdAt": "2026-11-02T11:41:46.758Z",
+  "updatedAt": "2026-11-02T11:41:46.758Z"
  },
  {
   "id": "ga-f5fa00d30830a3a2",
@@ -1528,6 +1609,15 @@
     "bodyHash": "4650bc2e828add66bd09483699d2da07e9298624bc9886a6364a29d3a9277b5e",
     "fetchedAt": "2026-10-31T09:58:15.293Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcginn-niall/",
+    "locator": "p6",
+    "quote": "Height : 6′ (183cm)",
+    "bodyHash": "efd49f70d97d88d24817b06d29171c23ad304bf31eae660dc3343da9a586c325",
+    "fetchedAt": "2026-11-02T11:41:49.821Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1535,8 +1625,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:15.293Z",
-  "updatedAt": "2026-10-31T09:58:15.293Z"
+  "createdAt": "2026-11-02T11:41:49.821Z",
+  "updatedAt": "2026-11-02T11:41:49.821Z"
  },
  {
   "id": "ga-dbf5658ec20a795c",
@@ -2161,6 +2251,15 @@
     "bodyHash": "0d8943d69929387be445ed21bd46e5d3b485c00abe0bb3a1d2d0f8ad9b752194",
     "fetchedAt": "2026-11-01T10:48:17.295Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/macleod-murdo/",
+    "locator": "p31",
+    "quote": "His finest season was in 1981/82 when he was an ever present, scoring an excellent 14 goals in the process. He had a purple patch in August – September 1981 when he fired in eight goals in nine games. Between September 16th and 19th he scored the winner against Juventus in the European Cup at Parkhead and four days later blasted in a by now trademark free kick in Celtic’s fine 2-0 success at Ibrox against Rangers. On March 13th 1982 Celtic were going through a sticky spell but Murdo blasted in a wonderful 25 yard volley to settle a Celtic side who ran out fine 5-2 victors against St. Mirren at",
+    "bodyHash": "934dab91291e77affee11ba7a8c6b762eb3a8bcc18b1a4235b126ff12c0b0ff5",
+    "fetchedAt": "2026-11-02T11:41:34.779Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2168,8 +2267,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:17.295Z",
-  "updatedAt": "2026-11-01T10:48:17.295Z"
+  "createdAt": "2026-11-02T11:41:34.779Z",
+  "updatedAt": "2026-11-02T11:41:34.779Z"
  },
  {
   "id": "ga-f2a1cba2d245faed",
@@ -2260,5 +2359,95 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-01T10:48:29.315Z",
   "updatedAt": "2026-11-01T10:48:29.315Z"
+ },
+ {
+  "id": "ga-ec0c2d4ae7f813ef",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "62",
+  "scorerAlias": "Adam Rooney",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennon-neil/lennon-neil-miscellaneous-articles-manager-4/",
+    "locator": "p41",
+    "quote": "The Celtic manager walked out of the stadium in Edinburgh shortly after Adam Rooney scored the third goal in the 62nd minute.",
+    "bodyHash": "bb88a81d5e4ef6e1cfce07cdab7e5c0daae68906e6c9f1299b64e1bc742a53ba",
+    "fetchedAt": "2026-11-02T11:41:31.961Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-02T11:41:31.961Z",
+  "updatedAt": "2026-11-02T11:41:31.961Z"
+ },
+ {
+  "id": "ga-98d97a225b17dfed",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "78",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennox-bobby/lennox-bobby-misc-articles/",
+    "locator": "p24",
+    "quote": "Lennox&rsquo;s goal, a right-foot shot past Gordon Banks, came in the 78th minute after Moore bravely stood up to a Gemmell thundercrack and Big Tam had returned the ball into the box. &ldquo;I hit it nice and remember thinking: &lsquo;Don&rsquo;t bother diving, Banksy.&rsquo; Almost every one of my team-mates jumped on me. That really didn&rsquo;t happen back then.&rdquo; Well, it was a momentous triumph and at the final whistle Lennox sought out another Englishman he greatly admired, Jimmy Greaves. &ldquo;I said: &lsquo;Mr Greaves, can I please have your shirt?&rsquo;&rdquo; The swap happene",
+    "bodyHash": "0fd214b3e6bdb91fb372e678d317d7d8f4d25ea6dcd5e2516e8c59c070f8f8d7",
+    "fetchedAt": "2026-11-02T11:41:31.969Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-02T11:41:31.969Z",
+  "updatedAt": "2026-11-02T11:41:31.969Z"
+ },
+ {
+  "id": "ga-530c343db29ad707",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "69",
+  "scorerAlias": "He",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mccluskey-pat/",
+    "locator": "p32",
+    "quote": "He scored a fair few for a full-back, and some of Pat McCluskey’s goals were memorable ones. In October 1973, he scored two very important efforts, the first an equaliser in the 69th minute against Hibs on 20th October and the winner against Aberdeen in the League Cup quarter-final at Parkhead in a 3-2 win, on 31st October, which took Celtic through to the semis. Both goals were fine hard driven low shots from the edge of the area.",
+    "bodyHash": "923ff5249590ba474143af483536a1da012d10a0b6a220a0defb4dfda69f756a",
+    "fetchedAt": "2026-11-02T11:41:43.761Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-02T11:41:43.761Z",
+  "updatedAt": "2026-11-02T11:41:43.761Z"
  }
 ]
