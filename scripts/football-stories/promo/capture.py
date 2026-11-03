@@ -19,7 +19,7 @@ from pathlib import Path
 
 SITE = 'https://fanlife.dubelteam.com'
 UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1 FanLife-Studio'
-CARD = re.compile(r', [a-z ]+, €\dM$', re.I)
+CARD = re.compile(r'(^(?!.*locked).*, [a-z ]+, €\dM$)|(^Sign .*, €\dM$)', re.I)
 CLUB_NAME = {'olympiacos': 'OLYMPIACOS', 'panathinaikos': 'PANATHINAIKOS', 'aek-athens': 'AEK ATHENS', 'celtic': 'CELTIC',
              'st-pauli': 'FC ST. PAULI', 'hapoel-tel-aviv': 'HAPOEL TEL AVIV', 'zrinjski-mostar': 'ZRINJSKI MOSTAR'}
 
@@ -173,7 +173,7 @@ def legends(ctx, out: Path, club: str, video: bool):
     prio = [r'^pull the lever', r'^skip', r'^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)', r'^(GK|DF|MF|FW)\b']
     block = re.compile(r'^(menu|pin|←|legends manager|fewer clubs|more clubs|sound|rules|how to play|\?|close|×|delete|put away|archive|full screen|menu)', re.I)
     tries: dict[str, int] = {}
-    for k in range(40):
+    for k in range(64):
         page.wait_for_timeout(1400)
         clicked = None
         cs = cards(page)
@@ -182,7 +182,7 @@ def legends(ctx, out: Path, club: str, video: bool):
             pick = next((c for c in cs if re.search(want, c.get_attribute('aria-label'))), cs[-1])
             pick.scroll_into_view_if_needed()
             page.wait_for_timeout(500)
-            if not video and k < 24:
+            if not video:
                 r.shot(page, f'step{k:02d}-deal')
             clicked = pick.get_attribute('aria-label')
             pick.click()
@@ -234,6 +234,8 @@ def main():
         for club in clubs:
             for game, fn in (('rumble', rumble), ('legends', legends)):
                 if os.environ.get('GAMES') and game not in os.environ['GAMES'].split(','):
+                    continue
+                if game == 'legends' and os.environ.get('LEGENDS_CLUBS') and club not in os.environ['LEGENDS_CLUBS'].split(','):
                     continue
                 for video in (False, True):
                     kw = dict(viewport={'width': 390, 'height': 844}, device_scale_factor=3, is_mobile=True, has_touch=True, user_agent=UA)

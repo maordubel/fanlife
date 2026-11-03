@@ -28,7 +28,7 @@ jobs:
         run: |
           games="$(sed -n 2p scripts/football-stories/promo/capture-trigger.txt)"
           clubs="$(sed -n 3p scripts/football-stories/promo/capture-trigger.txt)"
-          GAMES="$games" python3 scripts/football-stories/promo/capture.py "$RUNNER_TEMP/cap" ${clubs:-olympiacos panathinaikos aek-athens}
+          GAMES="$games" LEGENDS_CLUBS=olympiacos python3 scripts/football-stories/promo/capture.py "$RUNNER_TEMP/cap" ${clubs:-olympiacos panathinaikos aek-athens}
       - name: Publish (branch promo-capture)
         run: |
           cd "$RUNNER_TEMP/cap" && rm -rf .git && git init -q && git checkout -q -b promo-capture

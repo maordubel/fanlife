@@ -68,13 +68,17 @@ def art_src(aid: str) -> Image.Image:
     im = Image.open(LIB / a['file']).convert('RGB')
     z = a.get('zones', {}).get('wordmark')
     if z:
-        d = round(max(z[2] - z[0], z[3] - z[1]) * 1.02)
+        reg = np.asarray(im.crop(tuple(z)), 'float32').reshape(-1, 3)
+        lum = reg.mean(1)
+        paper = tuple(int(v) for v in np.median(reg[lum >= np.percentile(lum, 60)], 0))
+        ImageDraw.Draw(im).rectangle(z, fill=paper)
+        d = round((z[3] - z[1]) * 2.3)
         badge = Image.open(LOGOS['fanlife']).convert('RGBA').resize((d, d), Image.LANCZOS)
         sh = Image.new('RGBA', badge.size, (0, 0, 0, 0))
         sh.putalpha(badge.getchannel('A'))
         ImageDraw.Draw(sh)
         cx, cy = (z[0] + z[2]) // 2, (z[1] + z[3]) // 2
-        x, y = cx - d // 2 + 6, cy - d // 2 - round(d * 0.22)
+        x, y = z[0] + 70, z[1] + 6
         ink = Image.new('RGBA', badge.size, hex_rgb(INK) + (255,))
         ink.putalpha(badge.getchannel('A'))
         im.paste(ink, (x + 10, y + 10), ink)
@@ -100,7 +104,7 @@ def card_img(aid: str, region=None, width=None) -> Image.Image:
     im = art_src(aid)
     if region:
         im = im.crop(tuple(region))
-    width = width or (W - 120 if SHORT else 1180)
+    width = width or (W - 70 if SHORT else 1180)
     im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
     pad = 16
     c = Image.new('RGBA', (im.width + pad * 2, im.height + pad * 2), hex_rgb(PAPER) + (255,))
@@ -166,29 +170,25 @@ class PhoneClip:
 
 
 # ── type ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+SS = float(__import__('os').environ.get('STORIES_SPRITE_SCALE', '1.5'))   # the sprite browser's device scale
+
+
 def headline(sp, key: str, text: str, kicker: str | None = None, size: int = 0, width: int = 0, tone: str = 'plate') -> Image.Image:
     """The campaign's voice in type. 'plate': ink capitals on a paper slab with the accent's second print (over art);
-    'shout': cream capitals printed twice, no slab (over dyed paper)."""
-    size = size or (104 if SHORT else 96)
-    width = width or (W - 140 if SHORT else 1160)
+    'shout': cream capitals printed twice, no slab (over dyed paper). Size and width are in FRAME pixels."""
+    size = size or (112 if SHORT else 124)
+    width = width or (W - 90 if SHORT else 860)
+    cs, cw = size / SS, width / SS
     lines = esc(text).replace('\n', '<br>')
-    k = f'<div class="caps" style="font-size:{round(size * 0.32)}px;padding-bottom:10px;color:var(--accent)">{esc(kicker)}</div>' if kicker else ''
+    k = f'<div class="caps" style="font-size:{cs * 0.34:.0f}px;padding-bottom:8px;color:var(--accent)">{esc(kicker)}</div>' if kicker else ''
     if tone == 'shout':
         k = k.replace('var(--accent)', 'var(--paper)')
-        body = (f'<div style="max-width:{width}px;padding:6px 18px 18px 6px">{k}<div class="head" style="font-size:{size}px;line-height:.93;'
-                f'color:var(--paper);text-shadow:{round(size * .08)}px {round(size * .08)}px 0 var(--ink)">{lines}</div></div>')
+        body = (f'<div style="max-width:{cw:.0f}px;padding:4px 12px 12px 4px">{k}<div class="head" style="font-size:{cs:.0f}px;line-height:.93;'
+                f'color:var(--paper);text-shadow:{cs * .08:.0f}px {cs * .08:.0f}px 0 var(--ink)">{lines}</div></div>')
     else:
-        body = (f'<div class="sh" style="inset:14px 0 0 14px;background:var(--accent)"></div><div class="box" style="max-width:{width}px;padding:20px 30px 22px;border-width:6px">'
-                f'{k}<div class="head" style="font-size:{size}px;line-height:.93">{lines}</div></div>')
-    return F.cropped(sp.render(f'hd-{key}', body, extra_css='.s{padding:0 18px 18px 0}'))
-
-
-def glide(z0, z1, c0, c1, dur):
-    """A camera that starts where the beat says (fractions of the canvas) — for art whose top must stay out of shot."""
-    def f(t):
-        k = ease_in_out(t / max(dur, 0.1))
-        return z0 + (z1 - z0) * k, CW * (c0[0] + (c1[0] - c0[0]) * k), CH * (c0[1] + (c1[1] - c0[1]) * k)
-    return f
+        body = (f'<div class="sh" style="inset:10px 0 0 10px;background:var(--accent)"></div><div class="box" style="max-width:{cw:.0f}px;padding:14px 22px 16px;border-width:5px">'
+                f'{k}<div class="head" style="font-size:{cs:.0f}px;line-height:.93">{lines}</div></div>')
+    return fit(F.cropped(sp.render(f'hd-{key}', body, extra_css='.s{padding:0 14px 14px 0}')), width + 40, 900)
 
 
 def game_mark(sp, game: str, width: int) -> Image.Image:
@@ -282,13 +282,13 @@ def main():
                     cues.append((p.get('head_at', 0.35), 'stamp'))
             elif k == 'card':
                 world = tinted(seq * 13 + i, p.get('ground', accent), 0.55)
-                cd = card_img(p['art'], p.get('region'))
-                cy = (H * 0.58) if SHORT else (H * 0.52)
-                cx = W / 2 if SHORT else W * 0.40
+                cd = card_img(p['art'], p.get('region'), None if SHORT else 980)
+                cy = (H * 0.58) if SHORT else (H * 0.60)
+                cx = W / 2 if SHORT else W * 0.37
                 layers.append(Layer(cd, slide_in(cx, cy, 0.1, frm=(0, 900 if SHORT else 700), rot0=-5, rot1=p.get('rot', -2), dur=0.55), settle=1e9))
                 cues.append((0.1, 'whoosh'))
                 if head:
-                    pos = (W / 2, TOP + 40 + head.height / 2) if SHORT else (W * 0.66 if head.width < 900 else W / 2, H * 0.17)
+                    pos = (W / 2, TOP + 40 + head.height / 2) if SHORT else (W - 70 - head.width / 2, 50 + head.height / 2)
                     layers.append(Layer(head, slam(pos[0], pos[1], 0.55, s0=1.4, rot=-1.5), settle=1e9))
                     cues.append((0.55, 'stamp'))
             elif k in ('phone', 'clip'):
@@ -316,19 +316,21 @@ def main():
                     cues.append((0.45, 'stamp'))
             elif k == 'title':
                 world, entry = tinted(seq * 5 + i, accent, 0.62), 'black' if i == 0 else entry
-                lw = (600 if SHORT else 560) if p.get('logo', ITEM['game']) == 'rumble' else (560 if SHORT else 520)
+                lw = (720 if SHORT else 780) if p.get('logo', ITEM['game']) == 'rumble' else (600 if SHORT else 560)
                 logo = game_mark(sp, p.get('logo', ITEM['game']), lw)
-                lpos = (W / 2, TOP + 120 + logo.height / 2) if SHORT else (W * 0.27, H * 0.47)
+                if p.get('head'):
+                    head = headline(sp, key + '-t', p['head'], p.get('kicker'), p.get('size', 170 if SHORT else 190), width=W - 120 if SHORT else 820, tone='shout')
+                lpos = (W / 2, TOP + 60 + logo.height / 2) if SHORT else (60 + logo.width / 2, H * 0.48)
                 layers.append(Layer(logo, slam(lpos[0], lpos[1], 0.25, s0=1.9, rot=-6, dur=0.35), settle=1e9))
                 cues += [(0.0, 'whoosh'), (0.25, 'stamp')]
                 shake.append((0.25, 14))
                 if head:
-                    pos = (W / 2, lpos[1] + logo.height / 2 + 60 + head.height / 2) if SHORT else (W * 0.66, H * 0.47)
+                    pos = (W / 2, lpos[1] + logo.height / 2 + 60 + head.height / 2) if SHORT else (W - 60 - head.width / 2, H * 0.50)
                     layers.append(Layer(head, slide_in(pos[0], pos[1], 0.75, frm=(0, 300) if SHORT else (700, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
                     cues.append((0.75, 'paper'))
             elif k == 'slam':
                 world = tinted(seq * 11 + i, p.get('ground', accent), 0.62)
-                h2 = headline(sp, key + '-s', p['head'], p.get('kicker'), p.get('size', 150 if SHORT else 170), width=W - 120, tone='shout')
+                h2 = headline(sp, key + '-s', p['head'], p.get('kicker'), p.get('size', 190 if SHORT else 200), width=W - 120, tone='shout')
                 layers.append(Layer(h2, slam(W / 2, (TOP + (H - FOOT)) / 2 if SHORT else H / 2, 0.2, s0=1.7, rot=-2.5, dur=0.3), settle=1e9))
                 cues.append((0.2, 'stamp'))
                 shake.append((0.2, 18))
@@ -349,7 +351,7 @@ def main():
                 for j in range(len(arts)):
                     t0, t1 = j * step, (j + 1) * step
                     if j < len(names) and names[j]:
-                        nm = headline(sp, key + f'-n{j}', names[j], None, 120 if SHORT else 110, tone='plate')
+                        nm = headline(sp, key + f'-n{j}', names[j], None, 130 if SHORT else 120, width=W - 120 if SHORT else 1200, tone='plate')
                         x = W / 2 if SHORT else 80 + nm.width / 2
                         y = H * 0.70 if SHORT else H * 0.80
                         layers.append(Layer(nm, (lambda tt, t0=t0, t1=t1, x=x, y=y: None if not (t0 + 0.05 <= tt < t1) else Pose(x, y, 1.25 - 0.25 * clamp((tt - t0) / 0.18), -2, clamp((tt - t0) / 0.06)))))
@@ -394,7 +396,7 @@ def main():
                 tx, ty = (W - 40 - tg.width / 2, TOP + 30) if SHORT else (W - 40 - tg.width / 2, 50)
                 layers.append(Layer(tg, (lambda tt, tx=tx, ty=ty: Pose(tx, ty, 1, 0, clamp(tt / 0.2)))))
             if p.get('score'):
-                sc = headline(sp, key + '-sc', p['score'], p.get('score_kicker'), 64 if SHORT else 56, tone='plate')
+                sc = headline(sp, key + '-sc', p['score'], p.get('score_kicker'), 70 if SHORT else 64, width=W - 90 if SHORT else 1100, tone='plate')
                 sx, sy = (W / 2, TOP + 160 + sc.height / 2) if SHORT else (W - 60 - sc.width / 2, 170 + sc.height / 2)
                 layers.append(Layer(sc, slam(sx, sy, p.get('score_at', 0.8), s0=1.4, rot=1.5), settle=1e9))
                 cues.append((p.get('score_at', 0.8), 'stamp'))
@@ -461,10 +463,11 @@ def main():
          f'[v][md][s]amix=inputs=3:normalize=0,afade=t=out:st={total - 1.2:.2f}:d=1.2,loudnorm=I=-14:TP=-1.5:LRA=11[a]', '-map', '[a]', '-ar', str(SR), '-ac', '2', str(mix)])
     name = ITEM['file']
     pub = out / f'{name}.mp4'
-    for crf in (20, 22, 24, 26, 28):
+    cap_mb = 45 if SHORT else 90         # a branch file must stay under GitHub's 100 MB
+    for crf in (21, 23, 25, 27, 29, 31):
         run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(mix), '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', str(crf),
              '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-map_metadata', '-1', '-movflags', '+faststart', '-shortest', str(pub)])
-        if pub.stat().st_size <= 45 * 1048576:
+        if pub.stat().st_size <= cap_mb * 1048576:
             break
     scale = 'scale=360:-2' if SHORT else 'scale=640:-2'
     for kk, p in enumerate(plan):
