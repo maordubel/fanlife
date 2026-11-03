@@ -17,7 +17,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from .captions import _face as face  # the Weekly faces, unpacked once
+from .captions import font as weekly  # the Weekly head, latin with latin-ext behind it (Kožulj keeps its Ž)
 from .common import ROOT, StageError, hex_rgb, read_json
 
 W, H = 1080, 1920
@@ -27,8 +27,15 @@ HANDLE = '@FanLifeFootballStories'
 
 
 def _font(size: int):
-    f, _ = face('weekly-head-latin.woff2', size)
-    return f
+    return weekly('weekly-head', size)
+
+
+def _len(text: str, font) -> float:
+    return font.getlength(text)
+
+
+def _text(d: ImageDraw.ImageDraw, xy, text: str, f, fill) -> None:
+    f.draw(d, xy, text, fill)
 
 
 def overlay(hook: str, kicker: str, accent: str, out: Path) -> Path:
@@ -45,13 +52,13 @@ def overlay(hook: str, kicker: str, accent: str, out: Path) -> Path:
     f = _font(size)
     y = 120
     for ln in lines[:4]:
-        d.text((66, y + 7), ln, font=f, fill=ink)
-        d.text((60, y), ln, font=f, fill=paper)
+        _text(d, (66, y + 7), ln, f, ink)
+        _text(d, (60, y), ln, f, paper)
         y += int(size * 1.02)
     kf = _font(40)
-    kw = d.textlength(kicker.upper(), font=kf)
+    kw = _len(kicker.upper(), font=kf)
     d.rectangle((60, y + 26, 60 + kw + 36, y + 90), fill=acc)
-    d.text((78, y + 34), kicker.upper(), font=kf, fill=paper)
+    _text(d, (78, y + 34), kicker.upper(), kf, paper)
     # the frame: a paper edge around the picture
     d.rectangle((0, FRAME_Y - 10, W, FRAME_Y + 608 + 10), outline=paper, width=10)
     # bottom: the call to the full film and the channel
@@ -59,15 +66,15 @@ def overlay(hook: str, kicker: str, accent: str, out: Path) -> Path:
     d.rectangle((60, by, W - 60, by + 150), fill=acc, outline=ink, width=6)
     bf = _font(68)
     t = 'FULL FILM ON THE CHANNEL'
-    tw = d.textlength(t, font=bf)
-    d.text(((W - tw) / 2, by + 30), t, font=bf, fill=paper)
+    tw = _len(t, font=bf)
+    _text(d, ((W - tw) / 2, by + 30), t, bf, paper)
     hf = _font(54)
-    hw = d.textlength(HANDLE, font=hf)
-    d.text(((W - hw) / 2, by + 200), HANDLE, font=hf, fill=paper)
+    hw = _len(HANDLE, font=hf)
+    _text(d, ((W - hw) / 2, by + 200), HANDLE, hf, paper)
     sf = _font(40)
     s = 'SUBSCRIBE · ONE OF US'
-    sw = d.textlength(s, font=sf)
-    d.text(((W - sw) / 2, by + 280), s, font=sf, fill=(244, 238, 223, 190))
+    sw = _len(s, font=sf)
+    _text(d, ((W - sw) / 2, by + 280), s, sf, (244, 238, 223, 190))
     badge = ROOT / 'public' / 'brand' / 'fanlife' / 'logo-512.png'
     if badge.exists():
         b = Image.open(badge).convert('RGBA').resize((150, 150), Image.LANCZOS)
