@@ -2,6 +2,9 @@
  "id": "iwt-02-mostar-2023",
  "title": "I WAS THERE · Mostar, 21 September 2023 · Zrinjski v AZ Alkmaar",
  "folder": "zrinjski-az",
+ "drive": "https://drive.google.com/drive/folders/10Bq1DCG4FEn9xPaxBEYfK1AAwwFzkhSJ",
+ "ci": false,
+ "ci_note": "Cut in the session: the owner's photos were made into moving clips there (photo-*.mp4), so the runner cannot re-render it from Drive alone.",
  "accent": "#C92D39",
  "music": "track:kontraa-balkan-drill",
  "fixture": {
