@@ -7,14 +7,14 @@
    "end_head": "Play Royal Rumble on FAN LIFE",
    "url_sub": "Royal Rumble · your club · your five",
    "end_say": "Royal Rumble is on FAN LIFE. Pick your club, pick your five, and send your mate the link.",
-   "call_say": "Royal Rumble. Free on FAN LIFE. Link in the bio."
+   "call_say": "Royal Rumble. Play it now on FAN LIFE."
   },
   "legends": {
    "accent": "#1F3A5F",
    "end_head": "Play Legends Manager on FAN LIFE",
    "url_sub": "Legends Manager · your club · your dynasty",
    "end_say": "Legends Manager is on FAN LIFE. Pick your club, and take the job.",
-   "call_say": "Legends Manager. Free on FAN LIFE. Link in the bio."
+   "call_say": "Legends Manager. Play it now on FAN LIFE."
   }
  },
  "items": [

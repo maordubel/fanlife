@@ -298,9 +298,10 @@ def main():
                 if p.get('c0'):
                     cam = glide(z0, z1, p['c0'], p.get('c1', p['c0']), dur)
                 if head:
-                    hy = p.get('y', 0.74 if SHORT else 0.80)
+                    # the captions own the foot of the frame, so the line sits up top
+                    hy = (TOP + 30 + head.height / 2) if SHORT else (60 + head.height / 2)
                     hx = W / 2 if SHORT else 80 + head.width / 2
-                    layers.append(Layer(head, slam(hx, H * hy, p.get('head_at', 0.35), s0=1.35, rot=p.get('rot', -1.5)), settle=1e9))
+                    layers.append(Layer(head, slam(hx, hy, p.get('head_at', 0.35), s0=1.35, rot=p.get('rot', -1.5)), settle=1e9))
                     cues.append((p.get('head_at', 0.35), 'stamp'))
             elif k == 'card':
                 world = tinted(seq * 13 + i, p.get('ground', accent), 0.55)
@@ -374,7 +375,7 @@ def main():
                     if j < len(names) and names[j]:
                         nm = headline(sp, key + f'-n{j}', names[j], None, 130 if SHORT else 120, width=W - 120 if SHORT else 1200, tone='plate')
                         x = W / 2 if SHORT else 80 + nm.width / 2
-                        y = H * 0.70 if SHORT else H * 0.80
+                        y = H * 0.60 if SHORT else 70 + nm.height / 2
                         layers.append(Layer(nm, (lambda tt, t0=t0, t1=t1, x=x, y=y: None if not (t0 + 0.05 <= tt < t1) else Pose(x, y, 1.25 - 0.25 * clamp((tt - t0) / 0.18), -2, clamp((tt - t0) / 0.06)))))
                         cues.append((t0 + 0.05, 'stamp'))
                     if j < len(crests) and crests[j]:
@@ -383,7 +384,7 @@ def main():
                             ci = F.img(cr)
                             cs = 300 if SHORT else 240
                             ci = ci.resize((cs, round(ci.height * cs / ci.width)), Image.LANCZOS)
-                            cx, cy = (W / 2, TOP + 120 + ci.height / 2) if SHORT else (W - 80 - ci.width / 2, 80 + ci.height / 2)
+                            cx, cy = (W / 2, TOP + 120 + ci.height / 2) if SHORT else (W - 80 - ci.width / 2, 60 + ci.height / 2)
                             layers.append(Layer(ci, (lambda tt, t0=t0, t1=t1, cx=cx, cy=cy: None if not (t0 + 0.12 <= tt < t1) else Pose(cx, cy, max(0.05, min(1.0, (tt - t0 - 0.12) / 0.16 * 1.15)), -6, 1))))
             elif k == 'end':
                 world, entry = crumpled(4, CANVAS, '#2A2620').convert('RGB'), 'wipe'
@@ -414,7 +415,7 @@ def main():
                 cues += [(0.2, 'stamp'), (0.45, 'whoosh'), (1.2, 'stamp'), (0.0, 'end')]
             if p.get('tag'):
                 tg = tag(sp, p['tag'])
-                tx, ty = (W - 40 - tg.width / 2, TOP + 30) if SHORT else (W - 40 - tg.width / 2, 50)
+                tx, ty = (W - 40 - tg.width / 2, TOP + 30 + (head.height + 40 if head is not None and k == 'art' else 0)) if SHORT else (W - 40 - tg.width / 2, 50)
                 layers.append(Layer(tg, (lambda tt, tx=tx, ty=ty: Pose(tx, ty, 1, 0, clamp(tt / 0.2)))))
             if p.get('score'):
                 sc = headline(sp, key + '-sc', p['score'], p.get('score_kicker'), 70 if SHORT else 64, width=W - 90 if SHORT else 1100, tone='plate')
@@ -424,9 +425,9 @@ def main():
             if p.get('stub'):
                 layers += SUB.stub_layers(sp, 'fl-' + ITEM['id'], SUB.pick('stub', seq), W * 0.70, H * 0.66, 1.2, min(4.2, dur - 1.4), 700, cues, brand='fl')
             caps_ov = None
-            if p.get('words') and p.get('captions', not SHORT and (k in ('phone', 'clip') or (k == 'art' and not p.get('head')))):
+            if p.get('words') and p.get('captions', True):     # owner, 3.11.2026: captions run through every spoken line
                 c = Captions(p['words'], p['voice_at'] - p['start'], accent)
-                caps_ov = c
+                caps_ov = c if not SHORT else (lambda tt, c=c: (lambda r: r and (r[0], r[1], r[2] - 430))(c(tt)))
             shot = Shot(index=i, duration=dur, world=world, camera=cam, layers=layers, entry=entry, shake=shake, cues=cues,
                         overlay=caps_ov, world_frames=world_frames)
             r = ShotRenderer(shot)
