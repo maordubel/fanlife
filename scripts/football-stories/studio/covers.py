@@ -86,6 +86,8 @@ def vlog(c: dict, root: Path) -> str:
               f'<div class="abs" style="inset:0;clip-path:polygon(62% 0,100% 0,100% 100%,40% 100%);background:url({frames[1]}) center/cover;filter:saturate(1.35) contrast(1.1)"></div>'
               f'<div class="abs" style="inset:0;clip-path:polygon(61% 0,63% 0,41% 100%,39% 100%);background:{PAPER}"></div>')
     line, turn = c['hook']
+    h_ = acc.lstrip('#')
+    on_acc = INK if (0.299 * int(h_[0:2], 16) + 0.587 * int(h_[2:4], 16) + 0.114 * int(h_[4:6], 16)) > 150 else PAPER   # yellow takes ink
     crest = (root / c['crest']).resolve().as_uri()
     corner = f'width:64px;height:64px;border-color:{PAPER};border-style:solid;'
     return f'''
@@ -102,12 +104,12 @@ def vlog(c: dict, root: Path) -> str:
   <div class="abs" style="left:-14px;top:-14px;width:84px;height:30px;background:rgba(255,251,242,.75);transform:rotate(-24deg)"></div>
   <div style="display:flex;border:5px solid {INK};box-shadow:10px 10px 0 {INK}">
     <div class="head" style="background:{PAPER};color:{INK};font-size:52px;padding:10px 18px 2px">I WAS THERE</div>
-    <div class="head" style="background:{acc};color:{PAPER};font-size:52px;padding:10px 16px 2px;border-left:5px solid {INK}">EP.{esc(c['episode'])}</div>
+    <div class="head" style="background:{acc};color:{on_acc};font-size:52px;padding:10px 16px 2px;border-left:5px solid {INK}">EP.{esc(c['episode'])}</div>
   </div>
 </div>
 <div class="abs" style="left:58px;bottom:58px;width:900px">
   <div class="head" data-fit="880" style="font-size:118px;color:{PAPER};-webkit-text-stroke:12px {INK};paint-order:stroke fill;white-space:nowrap;filter:drop-shadow(0 6px 0 {INK})">{esc(line)}</div>
-  <div style="margin-top:14px"><span class="head" data-fit="860" style="display:inline-block;background:{acc};color:{PAPER};border:6px solid {INK};box-shadow:10px 10px 0 {INK};padding:12px 22px 2px;font-size:96px;transform:rotate(-1.5deg);white-space:nowrap">{esc(turn)}</span></div>
+  <div style="margin-top:14px"><span class="head" data-fit="860" style="display:inline-block;background:{acc};color:{on_acc};border:6px solid {INK};box-shadow:10px 10px 0 {INK};padding:12px 22px 2px;font-size:96px;transform:rotate(-1.5deg);white-space:nowrap">{esc(turn)}</span></div>
 </div>
 <div class="abs" style="right:62px;bottom:62px;display:flex;flex-direction:column;align-items:center;gap:10px">
   <div style="width:150px;height:150px;border-radius:50%;background:{PAPER};border:7px solid {INK};box-shadow:8px 8px 0 {INK};display:flex;align-items:center;justify-content:center">

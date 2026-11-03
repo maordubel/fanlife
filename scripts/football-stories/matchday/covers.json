@@ -1,10 +1,31 @@
 [
- {"name": "vlog-ep1-grbavica", "shape": "vlog", "footage": {"sub": "Sarajevo game against Zeljeznicar"},
-  "frames": ["clip:IMG_0089.MOV@1.6", "clip:IMG_0105.MOV@3.8"], "hook": ["Red, then blue", "Their curva lit up."],
-  "episode": "1", "place": "Grbavica", "crest": "../../../public/club-kits/zrinjski-mostar/crest.png", "accent": "#C92D39",
-  "candidates": ["clip:IMG_0089.MOV@0.8", "clip:IMG_0089.MOV@1.6", "clip:IMG_0089.MOV@2.4", "clip:IMG_0105.MOV@3.2", "clip:IMG_0105.MOV@4.0", "clip:IMG_0105.MOV@4.8", "clip:IMG_0113.MOV@0.5", "clip:IMG_0113.MOV@2.5"]},
- {"name": "vlog-ep2-bloomfield", "shape": "vlog", "footage": {"drive": "https://drive.google.com/drive/folders/1xc-V9odiy-Y-975F0QvByZ4WMNh4ue_u"},
-  "frames": ["clip:IMG_5687.MOV@3.5"], "hook": ["25,550 came", "to see us go down."],
-  "episode": "2", "place": "Bloomfield", "crest": "../../../public/club-kits/hapoel-tel-aviv/crest.png", "accent": "#D71920",
-  "candidates": ["clip:IMG_5678.MOV@0.5", "clip:IMG_5678.MOV@2.0", "clip:5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4@6.5", "clip:5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4@8.0", "clip:IMG_5688.MOV@6.5", "clip:IMG_5688.MOV@8.0", "clip:IMG_5687.MOV@3.5", "clip:IMG_5687.MOV@5.5"]}
+ {
+  "name": "vlog-ep4-opap-arena",
+  "shape": "vlog",
+  "footage": {
+   "drive": "https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view"
+  },
+  "frames": [
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.0"
+  ],
+  "focus": "center 32%",
+  "hook": [
+   "We filmed 3 seconds.",
+   "It was 4–0."
+  ],
+  "episode": "4",
+  "place": "OPAP Arena",
+  "crest": "../../../public/club-kits/aek-athens/crest.png",
+  "accent": "#F2C400",
+  "candidates": [
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@0.2",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@0.8",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@1.4",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@2.0",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@2.4",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@2.7",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.0",
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.2"
+  ]
+ }
 ]
