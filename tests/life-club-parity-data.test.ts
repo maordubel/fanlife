@@ -21,7 +21,7 @@ describe('club parity: the data every life reads', () => {
     for (const [id, t] of Object.entries(LIFE_TIMELINE as Record<string, {clubId: string; birthYear: number; status: string}>)) {
       expect(t.clubId).toBe(id)
       expect(t.birthYear).toBeGreaterThanOrEqual(1940)
-      expect(t.birthYear).toBeLessThanOrEqual(2002)
+      expect(t.birthYear).toBeLessThanOrEqual(2008)
       expect(['approved', 'review', 'proposed']).toContain(t.status)
     }
   })

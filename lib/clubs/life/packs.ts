@@ -37,6 +37,10 @@ import stPauliTimeline from '@/club-packs/st-pauli/life/timeline.json'
 import celticTimeline from '@/club-packs/celtic/life/timeline.json'
 import olympiacosTimeline from '@/club-packs/olympiacos/life/timeline.json'
 import aekAthensTimeline from '@/club-packs/aek-athens/life/timeline.json'
+import petahTikvaTimeline from '@/club-packs/hapoel-petah-tikva/life/timeline.json'
+import rajaCasablancaTimeline from '@/club-packs/raja-casablanca/life/timeline.json'
+import wydadCasablancaTimeline from '@/club-packs/wydad-casablanca/life/timeline.json'
+import alAhlyTimeline from '@/club-packs/al-ahly/life/timeline.json'
 import panathinaikosTimeline from '@/club-packs/panathinaikos/life/timeline.json'
 
 export const LIFE_SKINS: Record<string, LifeSkinManifest> = {
@@ -69,6 +73,10 @@ export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
   'panathinaikos': panathinaikosTimeline as TimelineManifest,
   olympiacos: olympiacosTimeline as TimelineManifest,
   'aek-athens': aekAthensTimeline as TimelineManifest,
+  'hapoel-petah-tikva': petahTikvaTimeline as TimelineManifest,
+  'raja-casablanca': rajaCasablancaTimeline as TimelineManifest,
+  'wydad-casablanca': wydadCasablancaTimeline as TimelineManifest,
+  'al-ahly': alAhlyTimeline as TimelineManifest,
 }
 
 export const LIFE_ANCHORS: Record<string, AnchorSelection> = {
