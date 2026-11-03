@@ -1,0 +1,1051 @@
+{
+ "id": "iwt-02-bloomfield-2024",
+ "title": "I WAS THERE · Bloomfield, 11 May 2024 · Hapoel Tel Aviv v MS Ashdod",
+ "folder": "bloomfield-2024",
+ "drive": "https://drive.google.com/drive/folders/1xc-V9odiy-Y-975F0QvByZ4WMNh4ue_u",
+ "accent": "#D71920",
+ "music": {
+  "track": "dark",
+  "gain": 0.62
+ },
+ "look": {
+  "scope": 54,
+  "vignette": 0.32,
+  "paper": "#1C1A16"
+ },
+ "fixture": {
+  "home": "Hapoel Tel Aviv",
+  "away": "MS Ashdod",
+  "home_short": "HTA",
+  "away_short": "ASH",
+  "date_long": "11 May 2024",
+  "year": "2024",
+  "ground": "Bloomfield",
+  "city": "Tel Aviv",
+  "competition": "Israeli Premier League · bottom play-off, round 6",
+  "home_score": 0,
+  "away_score": 2,
+  "goals": [
+   {
+    "side": "away",
+    "name": "Robertson",
+    "minute_label": "59'"
+   },
+   {
+    "side": "away",
+    "name": "Nachmani",
+    "minute_label": "66'"
+   }
+  ],
+  "source": "FAN LIFE archive · Kan",
+  "episode": 2,
+  "date_iso": "2024-05-11",
+  "date_short": "11·5·2024",
+  "score_note": "Bloomfield · Tel Aviv",
+  "kickoff": "18:00"
+ },
+ "sources": [
+  {
+   "claim": "date, Bloomfield, Hapoel Tel Aviv 0–2 MS Ashdod, bottom play-off round 6; relegated for the third time",
+   "file": "content/manual/matches.json · content/manual/moments.json (ירידה-2024)",
+   "short": "FAN LIFE archive"
+  },
+  {
+   "claim": "scorers Clark Robertson 59′, Stav Nachmani 66′; one round left",
+   "url": "https://www.kan.org.il/content/kan-news/sport/747992/",
+   "short": "Kan Sport"
+  },
+  {
+   "claim": "half-time 0–0; kick-off 15:00 UTC (18:00 Israel)",
+   "url": "https://www.fotmob.com/match/3606542/matchfacts/fc-ashdod-vs-hapoel-tel-aviv",
+   "short": "FotMob"
+  },
+  {
+   "claim": "25,550 Hapoel supporters at the relegation match",
+   "url": "https://www.htafc.co.il/en/hapoel-vs-ashdod-all-the-details-ahead-of-the-match/",
+   "short": "Hapoel Tel Aviv FC"
+  },
+  {
+   "claim": "third relegation in the club's history, after 1988/89 and 2016/17; came back from behind once all season; attendance in the match report 25,179",
+   "url": "https://sports.walla.co.il/item/3663330",
+   "short": "Walla! Sport, 11.5.2024"
+  },
+  {
+   "claim": "the loser goes down; Bloomfield stood for Daniel Levi, a Hapoel supporter and soldier killed in Gaza the day before, who wanted to be at the match",
+   "url": "https://sports.walla.co.il/item/3711732",
+   "short": "Walla! Sport, 15.12.2024"
+  },
+  {
+   "claim": "Ashdod: a season of rocket fire on the city, moving between stadiums, written off",
+   "url": "https://sports.walla.co.il/item/3663448",
+   "short": "Walla! Sport, 11.5.2024 (Ashdod)"
+  },
+  {
+   "claim": "league suspended 7 October 2023, resumed 25 November 2023; Hapoel managers Valkanis, Lema, Abukasis, Tuama",
+   "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Israeli_Premier_League",
+   "short": "Wikipedia: 2023–24 Israeli Premier League"
+  },
+  {
+   "claim": "one point deducted (March 2024)",
+   "url": "https://sports.walla.co.il/item/3647935",
+   "short": "Walla! Sport, 3.3.2024"
+  },
+  {
+   "claim": "Hapoel Tel Aviv 1–5 Beitar Jerusalem, Bloomfield, 27 April 2024",
+   "url": "https://www.tntsports.co.uk/football/ligat-one-zero/2023-2024/live-hapoel-tel-aviv-beitar-jerusalem_mtc1445902/live-stats.shtml",
+   "short": "TNT Sports match centre"
+  },
+  {
+   "claim": "Hapoel Tel Aviv champions and promoted, Liga Leumit 2024/25",
+   "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Liga_Leumit",
+   "short": "Wikipedia: 2024–25 Liga Leumit"
+  },
+  {
+   "claim": "MS Ashdod 2–6 Hapoel Tel Aviv, 20 September 2025",
+   "url": "https://www.fotmob.com/matches/fc-ashdod-vs-hapoel-tel-aviv/27x263",
+   "short": "FotMob (2025)"
+  }
+ ],
+ "ipa": {
+  "Hapoel": "hɑːpˈoʊɛl",
+  "Nachmani": "nɑːxmˈɑːni",
+  "Ashdod": "ˈæʃdɒd",
+  "Valkanis": "vælkˈɑːnɪs",
+  "Abukasis": "ɑːbuːkˈɑːsɪs",
+  "Tuama": "tuːˈɑːmə",
+  "Beitar": "beɪtˈɑːɹ",
+  "Bloomfield": "blˈuːmfiːld",
+  "Leumit": "lɛuːmˈiːt"
+ },
+ "film": {
+  "beats": [
+   {
+    "kind": "clip",
+    "clip": "IMG_5678.MOV",
+    "in": 0.0,
+    "dur": 3.4,
+    "sound": "clip",
+    "gain": 1.35,
+    "entry": "black",
+    "level": 0.0,
+    "crowd_ok": true
+   },
+   {
+    "kind": "black",
+    "dur": 4.4,
+    "level": 0.35,
+    "entry": "cut",
+    "typed": {
+     "lines": [
+      "SATURDAY · 11 MAY 2024",
+      "BLOOMFIELD STADIUM · TEL AVIV"
+     ],
+     "accent_line": 0,
+     "at_t": 0.3
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4",
+    "in": 6.0,
+    "sound": "clip",
+    "gain": 1.0,
+    "level": 0.6,
+    "crowd_ok": true,
+    "speed_voice": 0.9,
+    "say": "More than twenty-five thousand of them came in red… One result, and Hapoel Tel Aviv would go down."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5688.MOV",
+    "in": 6.0,
+    "sound": "clip",
+    "gain": 1.0,
+    "level": 0.7,
+    "crowd_ok": true,
+    "speed_voice": 0.88,
+    "say": "This is the story of that afternoon… from the stand."
+   },
+   {
+    "kind": "title",
+    "clip": "IMG_5687.MOV",
+    "in": 3.0,
+    "dur": 4.8,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 1.0,
+    "head": "I was there",
+    "kicker": "Bloomfield · the afternoon Hapoel went down",
+    "crowd_ok": true
+   },
+   {
+    "kind": "chapter",
+    "number": 1,
+    "title": "The longest season",
+    "dur": 2.4,
+    "level": 0.8
+   },
+   {
+    "kind": "black",
+    "backdrop": "iwt-art:hapoel-pack/04-stadium-tunnel",
+    "dim": 0.78,
+    "level": 0.55,
+    "min": 5.6,
+    "typed": {
+     "lines": [
+      "7 OCTOBER 2023"
+     ],
+     "at_t": 0.2,
+     "size": 76,
+     "out": 2.6
+    },
+    "flashback": true,
+    "say": "It started with a war. On the seventh of October, the league stopped… For seven weeks, there was no football at all."
+   },
+   {
+    "kind": "black",
+    "level": 0.55,
+    "min": 6.4,
+    "entry": "fade",
+    "typed": {
+     "lines": [
+      "VALKANIS",
+      "LEMA",
+      "ABUKASIS",
+      "TUAMA"
+     ],
+     "at_t": 0.6,
+     "cps": 16,
+     "size": 64,
+     "accent_line": 3
+    },
+    "say": "When it came back, Hapoel could not find a manager who lasted. Four men in the dugout… in one season."
+   },
+   {
+    "kind": "stat",
+    "level": 0.5,
+    "min": 4.8,
+    "backdrop": "iwt-art:hapoel-pack/02-terrace-scarves-90s-inspired",
+    "dim": 0.8,
+    "stat": {
+     "value": 1,
+     "label": "POINT DEDUCTED · MARCH 2024",
+     "source": "Walla! Sport, 3.3.2024",
+     "count": 0.6
+    },
+    "say": "In March, the league took a point away."
+   },
+   {
+    "kind": "black",
+    "backdrop": "iwt-art:hapoel-pack/01-bloomfield-80s-inspired-night",
+    "dim": 0.72,
+    "flashback": true,
+    "level": 0.45,
+    "min": 6.8,
+    "typed": {
+     "lines": [
+      "27 APRIL 2024",
+      "HAPOEL 1 – 5 BEITAR"
+     ],
+     "at_t": 0.3,
+     "accent_line": 1,
+     "size": 64
+    },
+    "say": "In April, Beitar came to Bloomfield and won five–one… The next day, the coach was gone."
+   },
+   {
+    "kind": "timeline",
+    "level": 0.5,
+    "min": 7.2,
+    "timeline": {
+     "points": [
+      {
+       "date": "1988/89",
+       "text": "Relegated"
+      },
+      {
+       "date": "2016/17",
+       "text": "Relegated"
+      },
+      {
+       "date": "2023/24",
+       "text": "?"
+      }
+     ],
+     "title": "HAPOEL TEL AVIV · RELEGATIONS",
+     "at_t": 0.6,
+     "step": 1.4
+    },
+    "say": "Hapoel had gone down twice in their history. In nineteen eighty-nine… and in twenty-seventeen."
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 5.0,
+    "cues": [
+     [
+      0.2,
+      "heart"
+     ],
+     [
+      1.3,
+      "heart"
+     ]
+    ],
+    "typed": {
+     "lines": [
+      "HAPOEL TEL AVIV v MS ASHDOD",
+      "LOSE — AND GO DOWN"
+     ],
+     "at_t": 0.3,
+     "accent_line": 1,
+     "size": 60
+    },
+    "speed_voice": 0.86,
+    "say": "By May, it came down to one afternoon. Lose to Ashdod… and it would be three."
+   },
+   {
+    "kind": "chapter",
+    "number": 2,
+    "title": "The march",
+    "dur": 2.4,
+    "level": 0.9
+   },
+   {
+    "kind": "clip",
+    "clip": "5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4",
+    "in": 20.0,
+    "sound": "clip",
+    "gain": 1.15,
+    "level": 0.75,
+    "crowd_ok": true,
+    "say": "So they came. Thousands of them, marching to the ground behind two flags as long as the street."
+   },
+   {
+    "kind": "clip",
+    "clip": "ab182aef-fe7a-412a-aa58-93042813fe8d.mp4",
+    "in": 2.0,
+    "dur": 6.0,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 0.9,
+    "crowd_ok": true,
+    "subscribe": true
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5654.MOV",
+    "in": 3.0,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 0.6,
+    "crowd_ok": true,
+    "clock": "16:02",
+    "doc": "Outside Bloomfield",
+    "scope_in": true,
+    "say": "Two hours before kick-off… every street around Bloomfield was red."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5666.MOV",
+    "in": 0.0,
+    "dur": 3.3,
+    "sound": "clip",
+    "gain": 1.0,
+    "level": 0.7,
+    "crowd_ok": true,
+    "clock": "16:56",
+    "doc": "Gate 4"
+   },
+   {
+    "kind": "prop",
+    "level": 0.5,
+    "min": 5.6,
+    "entry": "fade",
+    "prop": {
+     "art": "iwt-art:hapoel-pack/02-blank-match-ticket",
+     "w": 0.66,
+     "texts": [
+      {
+       "t": "HAPOEL TEL AVIV  v  MS ASHDOD",
+       "x": 0.43,
+       "y": 0.36,
+       "size": 46,
+       "face": "head",
+       "color": "ink"
+      },
+      {
+       "t": "BLOOMFIELD · SAT 11 MAY 2024 · 18:00",
+       "x": 0.43,
+       "y": 0.55,
+       "size": 30,
+       "face": "type",
+       "color": "ink"
+      },
+      {
+       "t": "PREMIER LEAGUE · BOTTOM PLAY-OFF",
+       "x": 0.43,
+       "y": 0.7,
+       "size": 26,
+       "face": "type",
+       "color": "accent"
+      }
+     ],
+     "at_t": 0.3
+    },
+    "say": "Hapoel Tel Aviv against Ashdod. The bottom play-off. One round left after this one."
+   },
+   {
+    "kind": "black",
+    "backdrop": "iwt-art:hapoel-pack/03-jaffa-matchday-walk",
+    "dim": 0.82,
+    "level": 0.45,
+    "min": 7.0,
+    "typed": {
+     "lines": [
+      "MS ASHDOD"
+     ],
+     "at_t": 0.3,
+     "size": 72
+    },
+    "say": "And Ashdod? A season under rocket fire… moving from stadium to stadium… written off for weeks. They came with nothing left to lose."
+   },
+   {
+    "kind": "chapter",
+    "number": 3,
+    "title": "Before kick-off",
+    "dur": 2.4,
+    "level": 0.8
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5669.MOV",
+    "in": 2.0,
+    "sound": "clip",
+    "gain": 1.0,
+    "level": 0.6,
+    "crowd_ok": true,
+    "clock": "17:38",
+    "doc": "Bloomfield Stadium",
+    "scope_in": true,
+    "say": "Inside, the ground filled… stand by stand."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5669.MOV",
+    "in": 12.0,
+    "dur": 5.4,
+    "dim": 0.55,
+    "sound": "clip",
+    "gain": 1.0,
+    "level": 0.75,
+    "crowd_ok": true,
+    "stat": {
+     "value": 25550,
+     "label": "IN RED AT BLOOMFIELD",
+     "source": "Hapoel Tel Aviv FC",
+     "at_t": 0.3
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5673.MOV",
+    "in": 1.0,
+    "dur": 6.5,
+    "sound": "clip",
+    "gain": 1.3,
+    "level": 0.35,
+    "crowd_ok": true,
+    "clock": "17:47",
+    "doc": "The home end"
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 9.0,
+    "entry": "black",
+    "typed": {
+     "lines": [
+      "IN MEMORY OF",
+      "DANIEL LEVI"
+     ],
+     "at_t": 0.4,
+     "accent_line": 1,
+     "size": 66,
+     "cps": 14
+    },
+    "speed_voice": 0.86,
+    "say": "Before the game, Bloomfield stood for Daniel Levi. A Hapoel supporter, and a soldier… killed in Gaza the day before. He had wanted to be here."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5674.MOV",
+    "in": 0.0,
+    "dur": 6.5,
+    "sound": "clip",
+    "gain": 1.25,
+    "level": 0.55,
+    "crowd_ok": true,
+    "clock": "17:56",
+    "doc": "The teams"
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5675.MOV",
+    "in": 3.0,
+    "sound": "clip",
+    "gain": 1.25,
+    "level": 0.8,
+    "crowd_ok": true,
+    "say": "Then the home end lit up."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5678.MOV",
+    "in": 0.0,
+    "dur": 6.8,
+    "sound": "clip",
+    "gain": 1.35,
+    "level": 1.0,
+    "crowd_ok": true
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5686.MOV",
+    "in": 0.0,
+    "dur": 4.6,
+    "sound": "clip",
+    "gain": 1.2,
+    "level": 0.8,
+    "crowd_ok": true,
+    "clock": "18:02",
+    "doc": "Kick-off",
+    "bug": "0–0"
+   },
+   {
+    "kind": "chapter",
+    "number": 4,
+    "title": "Ninety minutes",
+    "dur": 2.4,
+    "level": 0.6
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5688.MOV",
+    "in": 2.0,
+    "sound": "clip",
+    "gain": 1.2,
+    "level": 0.45,
+    "crowd_ok": true,
+    "clock": "18:04",
+    "bug": "0–0",
+    "say": "For an hour, it held. Half-time came… nil–nil. Still alive."
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 4.6,
+    "cues": [
+     [
+      0.1,
+      "heart"
+     ],
+     [
+      1.0,
+      "heart"
+     ],
+     [
+      1.9,
+      "heart"
+     ]
+    ],
+    "typed": {
+     "lines": [
+      "59'"
+     ],
+     "at_t": 0.2,
+     "size": 150,
+     "face": "ultra-latin-400-normal.woff2",
+     "cps": 8
+    },
+    "speed_voice": 0.84,
+    "lead": 2.2,
+    "say": "Fifty-nine minutes. Clark Robertson."
+   },
+   {
+    "kind": "prop",
+    "level": 0.0,
+    "min": 3.4,
+    "entry": "cut",
+    "prop": {
+     "art": "iwt-art:hapoel-pack/05-blank-scoreboard",
+     "w": 0.56,
+     "texts": [
+      {
+       "t": "HAPOEL",
+       "x": 0.415,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "ASHDOD",
+       "x": 0.775,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "0",
+       "x": 0.435,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      },
+      {
+       "t": "1",
+       "x": 0.78,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      }
+     ],
+     "at_t": 0.1
+    },
+    "cues": [
+     [
+      0.1,
+      "boom"
+     ]
+    ]
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 4.4,
+    "cues": [
+     [
+      0.1,
+      "heart"
+     ],
+     [
+      0.9,
+      "heart"
+     ]
+    ],
+    "typed": {
+     "lines": [
+      "66'"
+     ],
+     "at_t": 0.2,
+     "size": 150,
+     "face": "ultra-latin-400-normal.woff2",
+     "cps": 8
+    },
+    "speed_voice": 0.84,
+    "lead": 1.8,
+    "say": "Seven minutes later. Stav Nachmani."
+   },
+   {
+    "kind": "prop",
+    "level": 0.2,
+    "min": 6.6,
+    "entry": "cut",
+    "prop": {
+     "art": "iwt-art:hapoel-pack/05-blank-scoreboard",
+     "w": 0.56,
+     "texts": [
+      {
+       "t": "HAPOEL",
+       "x": 0.415,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "ASHDOD",
+       "x": 0.775,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "0",
+       "x": 0.435,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      },
+      {
+       "t": "2",
+       "x": 0.78,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      }
+     ],
+     "at_t": 0.1
+    },
+    "cues": [
+     [
+      0.1,
+      "boom"
+     ]
+    ],
+    "lead": 2.0,
+    "speed_voice": 0.88,
+    "say": "All season, Hapoel had come back from behind only once."
+   },
+   {
+    "kind": "art",
+    "art": "iwt-art:hapoel-pack/02-terrace-scarves-90s-inspired",
+    "flashback": true,
+    "push": [
+     1.0,
+     1.1
+    ],
+    "level": 0.6,
+    "min": 6.0,
+    "speed_voice": 0.88,
+    "say": "Not tonight. The last minutes went by slowly… and quietly."
+   },
+   {
+    "kind": "chapter",
+    "number": 5,
+    "title": "Full time",
+    "dur": 2.4,
+    "level": 0.5
+   },
+   {
+    "kind": "prop",
+    "level": 0.5,
+    "min": 8.4,
+    "entry": "fade",
+    "prop": {
+     "art": "iwt-art:hapoel-pack/05-blank-scoreboard",
+     "w": 0.56,
+     "texts": [
+      {
+       "t": "HAPOEL",
+       "x": 0.415,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "ASHDOD",
+       "x": 0.775,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "0",
+       "x": 0.435,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      },
+      {
+       "t": "2",
+       "x": 0.78,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      }
+     ],
+     "at_t": 0.3
+    },
+    "speed_voice": 0.86,
+    "say": "Full time. Hapoel Tel Aviv, nil… Ashdod, two. Relegated… for the third time in their history."
+   },
+   {
+    "kind": "timeline",
+    "level": 0.6,
+    "min": 5.6,
+    "entry": "fade",
+    "timeline": {
+     "points": [
+      {
+       "date": "1988/89",
+       "text": "Relegated"
+      },
+      {
+       "date": "2016/17",
+       "text": "Relegated"
+      },
+      {
+       "date": "2023/24",
+       "text": "Relegated"
+      }
+     ],
+     "title": "HAPOEL TEL AVIV · RELEGATIONS",
+     "at_t": 0.3,
+     "step": 0.9
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5673.MOV",
+    "in": 8.0,
+    "sound": "clip",
+    "gain": 1.25,
+    "level": 0.7,
+    "crowd_ok": true,
+    "speed_voice": 0.88,
+    "say": "They had come to watch their club stay up. They stayed to the end anyway."
+   },
+   {
+    "kind": "black",
+    "backdrop": "iwt-art:hapoel-pack/06-home-terrace-celebration",
+    "dim": 0.7,
+    "level": 1.0,
+    "min": 6.4,
+    "typed": {
+     "lines": [
+      "2024/25 · LIGA LEUMIT",
+      "CHAMPIONS"
+     ],
+     "at_t": 0.3,
+     "accent_line": 1,
+     "size": 66
+    },
+    "say": "The next season, Hapoel won the second division… and came straight back up."
+   },
+   {
+    "kind": "prop",
+    "level": 1.0,
+    "min": 6.2,
+    "entry": "fade",
+    "prop": {
+     "art": "iwt-art:hapoel-pack/05-blank-scoreboard",
+     "w": 0.56,
+     "texts": [
+      {
+       "t": "ASHDOD",
+       "x": 0.415,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "HAPOEL",
+       "x": 0.775,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "2",
+       "x": 0.435,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      },
+      {
+       "t": "6",
+       "x": 0.78,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      }
+     ],
+     "at_t": 0.3
+    },
+    "typed": {
+     "lines": [
+      "20 SEPTEMBER 2025 · ASHDOD"
+     ],
+     "at_t": 0.9,
+     "pos": [
+      0.5,
+      0.88
+     ],
+     "size": 40
+    },
+    "say": "And in September twenty twenty-five, they went back to Ashdod… and won six–two."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5688.MOV",
+    "in": 14.0,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 0.8,
+    "crowd_ok": true,
+    "speed_voice": 0.86,
+    "say": "Football is ninety minutes. Being a supporter… is a lifetime."
+   },
+   {
+    "kind": "end",
+    "min": 5.0,
+    "level": 0.7,
+    "say": "Were you there?"
+   }
+  ],
+  "thumbnail": {
+   "at": 1.6,
+   "text": "25,550 came",
+   "sub": "to watch their club go down"
+  },
+  "description": "Saturday, 11 May 2024. More than twenty-five thousand Hapoel Tel Aviv supporters filled Bloomfield for one game: lose to MS Ashdod, and the club goes down. I WAS THERE — the afternoon told from the stand: a season that started with a war, four managers, the march to the ground, the red smoke at kick-off, 59 and 66 minutes, and what came after.\n\nHapoel Tel Aviv 0–2 MS Ashdod · Israeli Premier League, bottom play-off · Bloomfield Stadium, Tel Aviv."
+ },
+ "reel": {
+  "beats": [
+   {
+    "kind": "hook",
+    "clip": "IMG_5678.MOV",
+    "in": 0.0,
+    "dur": 2.8,
+    "sound": "clip",
+    "gain": 1.3,
+    "crowd_ok": true,
+    "hook": "25,550 in red.",
+    "accent_line": "One result from going down.",
+    "level": 0.6
+   },
+   {
+    "kind": "clip",
+    "clip": "ab182aef-fe7a-412a-aa58-93042813fe8d.mp4",
+    "in": 3.0,
+    "sound": "clip",
+    "gain": 1.1,
+    "crowd_ok": true,
+    "level": 0.8,
+    "say": "They marched to Bloomfield behind two flags as long as the street."
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_5675.MOV",
+    "in": 3.0,
+    "sound": "clip",
+    "gain": 1.25,
+    "crowd_ok": true,
+    "level": 0.9,
+    "clock": "17:56",
+    "say": "The home end lit up."
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 3.6,
+    "cues": [
+     [
+      0.1,
+      "heart"
+     ],
+     [
+      1.0,
+      "heart"
+     ]
+    ],
+    "typed": {
+     "lines": [
+      "59'",
+      "66'"
+     ],
+     "at_t": 0.2,
+     "size": 130,
+     "face": "ultra-latin-400-normal.woff2",
+     "cps": 8,
+     "gap": 0.4
+    },
+    "lead": 1.4,
+    "say": "Fifty-nine. Sixty-six."
+   },
+   {
+    "kind": "prop",
+    "level": 0.4,
+    "min": 4.6,
+    "entry": "cut",
+    "prop": {
+     "art": "iwt-art:hapoel-pack/05-blank-scoreboard",
+     "w": 0.9,
+     "texts": [
+      {
+       "t": "HAPOEL",
+       "x": 0.415,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "ASHDOD",
+       "x": 0.775,
+       "y": 0.225,
+       "size": 44,
+       "face": "caps",
+       "color": "ink"
+      },
+      {
+       "t": "0",
+       "x": 0.435,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      },
+      {
+       "t": "2",
+       "x": 0.78,
+       "y": 0.445,
+       "size": 150,
+       "face": "num",
+       "color": "cream"
+      }
+     ],
+     "at_t": 0.1
+    },
+    "cues": [
+     [
+      0.1,
+      "boom"
+     ]
+    ],
+    "say": "Relegated. For the third time in their history."
+   },
+   {
+    "kind": "black",
+    "backdrop": "iwt-art:hapoel-pack/06-home-terrace-celebration",
+    "dim": 0.65,
+    "level": 1.0,
+    "min": 4.0,
+    "typed": {
+     "lines": [
+      "ONE SEASON LATER",
+      "BACK UP"
+     ],
+     "at_t": 0.2,
+     "accent_line": 1,
+     "size": 70
+    },
+    "say": "One season later… they were back."
+   },
+   {
+    "kind": "end",
+    "min": 4.4,
+    "level": 0.7,
+    "say": "Were you there?"
+   }
+  ],
+  "description": "25,550 in red. One result from going down. Hapoel Tel Aviv 0–2 MS Ashdod, Bloomfield, 11 May 2024 — relegated for the third time. One season later, they were back.",
+  "post": "25,550 in red. One result from going down. 🔴\nHapoel Tel Aviv v Ashdod · Bloomfield · 11.5.2024\nFull film on YouTube: FanLife: Football Stories\n#HapoelTelAviv #Hapoel #Bloomfield #IWasThere #FANLIFE #football #ultras"
+ }
+}

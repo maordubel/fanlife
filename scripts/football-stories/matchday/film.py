@@ -39,6 +39,7 @@ if CUT == 'reel':
 from studio.audio import CROWD, fx, score  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
+import doc as D  # noqa: E402
 if CUT == 'reel':   # phone captions: bigger, shorter lines, above the platform's own buttons
     _caps.MAX_CHARS = 16
     _face_cls = _caps.Face
@@ -48,7 +49,7 @@ from studio.common import FPS, H, INK, NEWSPRINT, PAPER, ROOT, W, Palette, hex_r
 from studio.edit import cam_push, fit, pop, slam, slide_in, tape  # noqa: E402
 from studio.maps import pin_sprite  # noqa: E402
 from studio.maps import render as render_map  # noqa: E402
-from studio.motion import Layer, Pose, Shot, ShotRenderer, blend_entry, ease_in_out, ease_out_cubic  # noqa: E402
+from studio.motion import Layer, Pose, Shot, ShotRenderer, blend_entry, ease_in_out, ease_out_cubic  # noqa: E402,F401
 from studio.paper import CANVAS, ClipWorld, crumpled, halftone_overlay  # noqa: E402
 from studio.sprites import SpriteFactory, key_of  # noqa: E402
 
@@ -72,17 +73,25 @@ def cropped(p: Path) -> Image.Image:
 
 
 # ── narration: one file per beat, sentences synthesised one by one so their timing is exact ─────────────────────────
-def voice_beat(text: str, ipa: dict, out: Path) -> tuple[float, list[dict]]:
+PAUSE = {'…': 0.85, '...': 0.85, '—': 0.5, '.': 0.32, '?': 0.42, '!': 0.36}
+
+
+def voice_beat(text: str, ipa: dict, out: Path, speed: float | None = None) -> tuple[float, list[dict]]:
+    """One sentence at a time, so each pause is ours: a full stop breathes, an ellipsis holds (the documentary's
+    silence before the next line), a dash is a half-beat. `speed` slows a heavy beat below the series' pace."""
     v = SERIES['voice']
     k = kokoro()
-    sents = [s for s in re.split(r'(?<=[.!?])\s+', text.strip()) if s]
+    sents = [s for s in re.split(r'(?<=[.!?…—])\s+', text.strip()) if s]
     parts, words, t = [], [], 0.0
-    gap = np.zeros(int(0.28 * SR), np.float32)
     for si, s in enumerate(sents):
-        a, sr = k.create(phonemes(s, ipa, v['lang']), voice=v['voice'], speed=v['speed'], lang=v['lang'], is_phonemes=True)
+        spoken = s.rstrip('—').rstrip()
+        tail = '...' if s.endswith('...') else (s[-1] if s[-1] in PAUSE else '.')
+        gap = np.zeros(int(PAUSE[tail] * SR), np.float32)
+        a, sr = k.create(phonemes(spoken.replace('…', '.'), ipa, v['lang']), voice=v['voice'], speed=speed or v['speed'],
+                         lang=v['lang'], is_phonemes=True)
         a = resample(np.asarray(a, np.float32), sr, SR)
         d = len(a) / SR
-        ws = s.split()
+        ws = [w for w in spoken.split() if w not in ('—', '–', '-')]
         weights = [len(re.sub(r'\W', '', w)) + 2 for w in ws]
         tot = sum(weights)
         tw = t
@@ -131,9 +140,9 @@ def prepare(src: Path, meta: dict, start: float, length: float, speed: float, si
 class PaperWorld:
     """A vertical clip taped onto crumpled newsprint, playing: the studio's paper collage with a moving picture in it."""
 
-    def __init__(self, clip: Path, size: tuple[int, int], seed: int, at: tuple[int, int]):
+    def __init__(self, clip: Path, size: tuple[int, int], seed: int, at: tuple[int, int], tone: str = NEWSPRINT):
         self.cw = ClipWorld(clip, size=size, fps=FPS)
-        base = halftone_overlay(crumpled(seed, CANVAS, NEWSPRINT), cell=8, strength=0.08).convert('RGB')
+        base = halftone_overlay(crumpled(seed, CANVAS, tone), cell=8, strength=0.08).convert('RGB')
         self.x, self.y = at
         d = ImageDraw.Draw(base)
         w, h = size
@@ -219,7 +228,7 @@ def main() -> None:
         p = {**b, 'n': i, 'start': round(t * FPS) / FPS}
         if b.get('say'):
             wav = work / f'voice-{i:02d}.wav'
-            d, words = voice_beat(b['say'], ep.get('ipa', {}), wav)
+            d, words = voice_beat(b['say'], ep.get('ipa', {}), wav, b.get('speed_voice'))
             lead = b.get('lead', FIRST_LEAD if not any(x.get('say') for x in plan) else LEAD)
             p.update(voice=wav, voice_dur=d, words=words, voice_at=p['start'] + lead)
             dur = max(lead + d + b.get('tail', TAIL), b.get('min', 0))
@@ -266,7 +275,7 @@ def main() -> None:
                     at = (int((CW - ww) / 2), int(CH * 0.52 - wh / 2))
                     corner = (at[0], at[1] + wh)        # the clock goes on the photo's corner, not on the glass
                     clip = prepare(src, meta, p.get('in', 0), dur, speed, (ww, wh), work / f'clip-{p["n"]:02d}.mp4')
-                    world_frames = PaperWorld(clip, (ww, wh), seed, at)
+                    world_frames = PaperWorld(clip, (ww, wh), seed, at, ep.get('look', {}).get('paper', NEWSPRINT))
                     if p.get('head'):
                         hd = fit(cropped(sp.turning(key_of(k, 'turn'), p['head'], p.get('kicker', ''))), W - 230, 360)
                         layers.append(Layer(hd, slide_in(CW / 2, at[1] - hd.height / 2 - 40, 0.3, frm=(0, -520), rot0=-2, rot1=-1,
@@ -276,7 +285,7 @@ def main() -> None:
                     ww = round(WIN_H * vw / vh)
                     at = (int(CW * 0.30 - ww / 2), int((CH - WIN_H) / 2))
                     clip = prepare(src, meta, p.get('in', 0), dur, speed, (ww, WIN_H), work / f'clip-{p["n"]:02d}.mp4')
-                    world_frames = PaperWorld(clip, (ww, WIN_H), seed, at)
+                    world_frames = PaperWorld(clip, (ww, WIN_H), seed, at, ep.get('look', {}).get('paper', NEWSPRINT))
                     side_x = CW * 0.30 + ww / 2 + 90
                     if p.get('head'):   # the story's side of the page, next to the taped clip
                         hd = fit(cropped(sp.turning(key_of(k, 'turn'), p['head'], p.get('kicker', ''))), 880, 420)
@@ -287,7 +296,7 @@ def main() -> None:
                     clip = prepare(src, meta, p.get('in', 0), dur, speed, CANVAS, work / f'clip-{p["n"]:02d}.mp4')
                     world_frames = ClipWorld(clip, dim=p.get('dim', 0.0), fps=FPS)
                 world = world_frames(0)
-                if p.get('clock'):     # the camera's own clock: the diary stamp
+                if p.get('clock') and not p.get('doc') and not ep.get('look', {}).get('doc_clock'):     # the camera's own clock: the diary stamp
                     lab = fit(cropped(sp.label(key_of('clock', p['clock']), p['clock'], 'ink', 52 if tall else 46)), 400, 120)
                     if tall and vw > vh:
                         layers.append(Layer(lab, pop(corner[0] + 40 + lab.width / 2, corner[1] + 6, 0.35, rot=-3), settle=1e9, space='world'))
@@ -338,7 +347,7 @@ def main() -> None:
                         cues.append((ti, 'pop'))
                         x += c.width + gap
             elif kind == 'chapter':
-                world = crumpled(seed % 9, CANVAS, NEWSPRINT).convert('RGB')
+                world = crumpled(seed % 9, CANVAS, ep.get('look', {}).get('paper', NEWSPRINT)).convert('RGB')
                 card = fit(cropped(sp.chapter(k, int(p['number']), p['title'])), 1640, 460)
                 layers.append(Layer(card, slam(W * 0.47, H * 0.48, 0.4, rot=-1.5), settle=1e9))
                 st = fit(cropped(sp.stamp(key_of('date', fx_['date_short']), fx_['date_short'])), 300, 300)
@@ -418,8 +427,80 @@ def main() -> None:
                 line = fit(cropped(sp.label('iwt-next', SUB.pick('endscreen_line', epn), 'paper', 44)), 1300, 110)
                 layers.append(Layer(line, slide_in(210 + line.width / 2, 120, 0.5, frm=(0, -200), rot0=0, rot1=-1, dur=0.5, drift=False), settle=1e9))
                 cues += [(0.0, 'crowd-murmur'), (0.5, 'paper')]
+            elif kind in ('black', 'timeline', 'stat', 'prop'):     # the documentary's own cards: dark ground, typed / counted / drawn
+                world = Image.new('RGB', CANVAS, (12, 11, 9))
+                if p.get('backdrop'):          # a picture under the card, darkened (history, a scene)
+                    from studio.paper import cover
+                    bd = cover(Image.open(D.art_path(p['backdrop'])).convert('RGB'), CANVAS)
+                    world = Image.blend(world, bd, 1 - float(p.get('dim', 0.72)))
+                cam = cam_push(1.0, 1.05, 0, 0, dur)
+                entry = p.get('entry', 'black' if kind == 'black' else 'fade')
+            elif kind == 'art':      # an owner illustration as a moving set: the picture pushes, its cut-outs drift over it
+                from studio.paper import cover
+                world = cover(Image.open(D.art_path(p['art'])).convert('RGB'), CANVAS)
+                if p.get('dim'):
+                    world = Image.blend(world, Image.new('RGB', CANVAS, (8, 7, 6)), float(p['dim']))
+                z = p.get('push', [1.0, 1.08])
+                cam = cam_push(z[0], z[1], p.get('pan', [0, 0])[0], p.get('pan', [0, 0])[1], dur)
+                for j, fg in enumerate(p.get('figures', [])):
+                    fim = Image.open(D.art_path(fg['art'])).convert('RGBA')
+                    box = fim.getchannel('A').getbbox()
+                    fim = fim.crop(box) if box else fim
+                    hh = int(fg.get('h', 0.6) * H)
+                    fim = fim.resize((max(1, int(fim.width * hh / fim.height)), hh), Image.LANCZOS)
+                    if fg.get('flip'):
+                        fim = fim.transpose(Image.FLIP_LEFT_RIGHT)
+                    x0, y0 = fg.get('x', 0.5) * CW, fg.get('y', 0.6) * CH
+                    dx, dy = fg.get('drift', [40, 0])
+                    t_in = float(fg.get('at', 0.2 + 0.25 * j))
+                    def fpose(tt, x0=x0, y0=y0, dx=dx, dy=dy, t_in=t_in, dur=dur, rise=fg.get('rise', 140)):
+                        if tt < t_in:
+                            return None
+                        k = ease_out_cubic((tt - t_in) / 0.7)
+                        u = (tt - t_in) / max(0.1, dur - t_in)
+                        return Pose(x0 + dx * u, y0 + dy * u + rise * (1 - k), alpha=k)
+                    layers.append(Layer(fim, fpose, space='world'))
+                entry = p.get('entry', 'fade')
             else:
                 raise SystemExit(f'unknown beat kind {kind}')
+
+            # the documentary layer: any beat may wear these (doc.py)
+            extra = []
+            if p.get('doc') or (p.get('clock') and ep.get('look', {}).get('doc_clock')):
+                ov, cs = D.doc_line(p.get('doc', fx_.get('ground', '')), p.get('clock'), fx_.get('kickoff'), accent=ep['accent'])
+                extra.append(ov)
+                cues += cs[::3]
+            if p.get('typed'):
+                ty = p['typed']
+                ov, cs = D.typed(ty['lines'], ty.get('at_t', 0.5), cps=ty.get('cps', 20), at=tuple(ty.get('pos', (0.5, 0.48))),
+                                 size=ty.get('size', 60 if not tall else 58), accent=ep['accent'], accent_line=ty.get('accent_line'),
+                                 out_at=ty.get('out'), face=ty.get('face', D.TYPE_FACE), gap=ty.get('gap', 0.35))
+                extra.append(ov)
+                cues += cs
+            if p.get('stat'):
+                st_ = p['stat']
+                ov, cs = D.stat(int(st_['value']), st_['label'], st_.get('at_t', 0.4), source=st_.get('source'),
+                                prefix=st_.get('prefix', ''), suffix=st_.get('suffix', ''), accent=ep['accent'],
+                                at=tuple(st_.get('pos', (0.5, 0.44))), count=st_.get('count', 1.5))
+                extra.append(ov)
+                cues += cs
+            if p.get('timeline'):
+                tl = p['timeline']
+                ov, cs = D.timeline(tl['points'], tl.get('at_t', 0.5), tl.get('step', 1.1), ep['accent'], tl.get('title', ''))
+                extra.append(ov)
+                cues += cs
+            if p.get('bug'):
+                extra.append(D.bug(fx_['home_short'], fx_['away_short'], p['bug'], ep['accent']))
+            if p.get('prop'):        # an owner prop with our type on it, slid in and settled
+                pr = p['prop']
+                pim = D.prop_card(pr, ep['accent'])
+                px, py = pr.get('pos', (0.5, 0.48))
+                layers.append(Layer(pim, slide_in(W * px, H * py, pr.get('at_t', 0.3), frm=(0, 700), rot0=pr.get('rot', -4),
+                                                  rot1=pr.get('rot1', -1.2), dur=0.6, drift=False), settle=1e9))
+                cues.append((pr.get('at_t', 0.3) + 0.45, 'stamp'))
+                shake.append((pr.get('at_t', 0.3) + 0.45, 7))
+            for c in p.get('cues', []):        # a beat may ask for its own sound: a heartbeat, a boom, a tick
+                cues.append((float(c[0]), c[1]))
 
             caps = None
             if p['n'] == stub_at:      # the stub: in the free half of the frame, clear of the clock and the captions
@@ -432,8 +513,9 @@ def main() -> None:
                 if tall:     # lift the plate to two-thirds down: the platform's own buttons live at the bottom
                     lift = 300 if (meta and orient(meta)[0] > orient(meta)[1]) else 470   # under a landscape window, clear of its clock
                     caps = (lambda c, d=lift: (lambda tt: (lambda r: r and (r[0], r[1], r[2] - d))(c(tt))))(caps)
+            overlays = extra + ([caps] if caps else [])
             shot = Shot(index=p['n'], duration=dur, world=world, camera=cam, layers=layers, entry=entry, shake=shake,
-                        cues=cues, meta={'kind': kind}, world_frames=world_frames, overlay=caps)
+                        cues=cues, meta={'kind': kind}, world_frames=world_frames, overlay=overlays or None)
             target = work / f'shot-{p["n"]:02d}.mp4'
             if keep and target.exists():
                 raw = subprocess.run(['ffmpeg', '-v', 'error', '-sseof', '-0.1', '-i', str(target), '-frames:v', '1', '-f', 'rawvideo',
@@ -451,8 +533,14 @@ def main() -> None:
             g0 = round(p['start'] * FPS)
             last = None
             acc = hex_rgb(ep['accent'])
+            lk = ep.get('look', {})
+            footage = kind in ('clip', 'title', 'score', 'ticket', 'hook')
+            scope = int(lk.get('scope', 0) * (1 if not tall else 0)) if footage and not p.get('no_scope') else 0
+            vig = float(lk.get('vignette', 0)) if kind not in ('endscreen', 'end') else 0.0
             for fi in range(p['frames']):
                 fr = r.frame(fi, g0 + fi)
+                fr = D.look(fr, g0 + fi, scope=scope, vignette=vig, flashback=bool(p.get('flashback')),
+                            scope_k=ease_in_out(fi / 12) if p.get('scope_in') else 1.0)
                 fr = blend_entry(shot, fi, fr, prev_last, acc)
                 proc.stdin.write(fr.tobytes())
                 last = fr
@@ -491,7 +579,7 @@ def main() -> None:
             src = folder / p['clip']
             chk = speech_in(src, p.get('in', 0), p['dur'] * p.get('speed', 1.0))
             report['speech'][f"{p['n']:02d} {p['clip']}"] = chk
-            if chk.get('speech'):
+            if chk.get('speech') and not p.get('crowd_ok'):
                 continue
             a = read_audio(src, p.get('in', 0), p['dur'] * p.get('speed', 1.0))
             if p.get('speed', 1.0) != 1.0:
@@ -505,8 +593,17 @@ def main() -> None:
                 i = int(p['start'] * SR)
                 seg = (a * env)[: n - i]
                 amb[i:i + len(seg)] += seg
+    docfx = {'boom': D.boom(SR), 'tick': D.tick(SR), 'heart': D.heart(SR)}
     for ct, kind in all_cues:
         i = int(ct * SR)
+        if kind == 'key':
+            a = D.key_click(rng, SR)
+            sfx[i:i + len(a)] += a[: n - i] * 0.35
+            continue
+        if kind in docfx:
+            a = docfx[kind]
+            sfx[i:i + len(a)] += a[: n - i] * (0.7 if kind != 'tick' else 0.4)
+            continue
         if kind.startswith('crowd'):
             path = CROWD.get(kind)
             if path and path.exists():
@@ -516,8 +613,11 @@ def main() -> None:
             continue
         a = resample(fx(kind, rng), 32000, SR)
         sfx[i:i + len(a)] += a[: n - i] * 0.5
-    sections = [{'start': p['start'], 'end': p['start'] + p['dur'], **p['music']} for p in plan if p.get('music')]
-    music = resample(score(sections), 32000, SR)[:n] if sections else np.zeros(n, np.float32)
+    if ep.get('music', {}).get('track'):
+        music = D.music_bed(ep['music'], plan, total, SR, read_audio)
+    else:
+        sections = [{'start': p['start'], 'end': p['start'] + p['dur'], **p['music']} for p in plan if p.get('music')]
+        music = resample(score(sections), 32000, SR)[:n] if sections else np.zeros(n, np.float32)
     music = np.pad(music, (0, n - len(music)))
     for name, arr in (('voice', voice), ('amb', amb), ('music', music), ('sfx', sfx)):
         write_wav(work / f'{name}.wav', arr[: int(total * SR)])

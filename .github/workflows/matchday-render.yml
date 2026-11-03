@@ -10,6 +10,8 @@ on:
       - 'scripts/football-stories/matchday/render.py'
       - 'scripts/football-stories/matchday/cards.py'
       - 'scripts/football-stories/matchday/film.py'
+      - 'scripts/football-stories/matchday/doc.py'
+      - 'scripts/football-stories/matchday/render-only.txt'
 permissions:
   contents: write
 concurrency:
@@ -43,9 +45,18 @@ jobs:
         env: {KOKORO_DIR: /home/runner/models}
         run: |
           folder=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/inbox.json'))['folder'])")
+          only=$(cat scripts/football-stories/matchday/render-only.txt 2>/dev/null | tr -d '[:space:]')
           for ep in scripts/football-stories/matchday/episodes/*.json; do
+            id=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$ep")
+            [ -n "$only" ] && [ "$only" != "$id" ] && { echo "skip $id"; continue; }
             sub=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['folder'])" "$ep")
-            python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/footage" "$sub"
+            drive=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('drive',''))" "$ep")
+            # an episode with its own Drive folder is fetched from it into footage/<folder>; otherwise the inbox's sub-folder
+            if [ -n "$drive" ]; then
+              python3 scripts/football-stories/matchday/drive_fetch.py "$drive" "$RUNNER_TEMP/footage/$sub"
+            else
+              python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/footage" "$sub"
+            fi
             out="$RUNNER_TEMP/out/$(basename "$ep" .json)"
             # the film is cut on the Football Stories studio engine; the reel keeps the 9:16 filter-graph cut
             python3 scripts/football-stories/matchday/film.py "$ep" "$RUNNER_TEMP/footage" "$out"
