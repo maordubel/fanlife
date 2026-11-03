@@ -117,6 +117,26 @@ def vlog(c: dict, root: Path) -> str:
 '''
 
 
+def banner(c: dict, root: Path) -> str:
+    """The channel banner (2560x1440): the owner's art, and across the band every device shows, what the channel is."""
+    art = (root / c['art']).resolve().as_uri()
+    logo = (root / c['logo']).resolve().as_uri()
+    crests = ''.join(f'<div style="width:118px;height:118px;border-radius:50%;background:{PAPER};border:6px solid {INK};'
+                     f'display:flex;align-items:center;justify-content:center"><img src="{(root / x).resolve().as_uri()}" '
+                     f'style="width:76%;height:76%;object-fit:contain"></div>' for x in c['crests'])
+    return f'''
+<div class="abs" style="inset:0;background:url({art}) center/cover"></div>
+<div class="abs" style="left:0;right:0;top:500px;height:440px;background:{INK};border-block:8px solid {c.get('accent', '#D71920')}"></div>
+<div class="abs" style="left:530px;top:530px;width:1500px;height:380px;display:flex;align-items:center;gap:44px">
+  <img src="{logo}" style="width:300px;height:300px">
+  <div style="flex:1">
+    <div class="head" data-fit="1130" style="font-size:150px;color:{PAPER};white-space:nowrap;text-shadow:9px 9px 0 {c.get('accent', '#D71920')}">{esc(c['title'])}</div>
+    <div class="caps" data-fit="1130" style="font-size:44px;color:{PAPER};margin-top:16px;white-space:nowrap">{esc(c['sub'])}</div>
+    <div style="display:flex;gap:18px;margin-top:26px">{crests}</div>
+  </div>
+</div>'''
+
+
 def frame(ref: str, root: Path, out: Path) -> Path:
     """`clip:<file>@<seconds>` → a still from the owner's footage (COVERS_FOOTAGE), tone-mapped; anything else is a path."""
     if not ref.startswith('clip:'):
@@ -162,9 +182,11 @@ def render(spec: Path, out: Path) -> list[Path]:
                 made.append(sheet(c['candidates'], root, out, c['name']))
             if c['shape'] == 'vlog':
                 c = {**c, 'frames': [str(frame(f, root, out).resolve()) for f in c['frames']]}
-            body = club(c, root) if c['shape'] == 'club' else vlog(c, root)
+            body = {'club': club, 'vlog': vlog, 'banner': banner}[c['shape']](c, root)
+            size = (2560, 1440) if c['shape'] == 'banner' else (W, H)
+            p.set_viewport_size({'width': size[0], 'height': size[1]})
             page = out / f'_{c["name"]}.html'
-            page.write_text(f'<!doctype html><meta charset=utf-8><style>{_font_css()}{CSS}</style><body>{body}'
+            page.write_text(f'<!doctype html><meta charset=utf-8><style>{_font_css()}{CSS}body{{width:{size[0]}px;height:{size[1]}px}}</style><body>{body}'
                             f'<script>document.fonts.ready.then(()=>{{{FIT_JS};document.body.dataset.ok=1}})</script>')
             p.goto(page.as_uri())
             p.wait_for_selector('body[data-ok]')
@@ -172,7 +194,7 @@ def render(spec: Path, out: Path) -> list[Path]:
             p.screenshot(path=str(png))
             jpg = out / f'{c["name"]}.jpg'
             from PIL import Image
-            Image.open(png).convert('RGB').save(jpg, quality=90)
+            Image.open(png).convert('RGB').resize(size, Image.LANCZOS).save(jpg, quality=90)
             png.unlink()
             page.unlink()
             made.append(jpg)
