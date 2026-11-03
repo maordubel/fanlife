@@ -1,0 +1,13 @@
+{
+ "about": "FAN LIFE promo series (owner, 3.11.2026): Royal Rumble and Legends Manager — a film and six Shorts each, one item a day. Every on-screen word and spoken word is here. Numbers come from the live pages (capture logs, 3.11.2026): Royal Rumble 5v5 €15M, 11v11 about €35M, three cards a slot, three rerolls; Legends Manager 17 picks, €52M, quotas GK2 DF6 MF6 FW3, board +€8M, two windows a season, up to three touchline stops a match. The Olympiacos 2024 nights: UEFA match report (art-library/clubs/olympiacos/README-2024-maccabi.md).",
+ "ipa": {},
+ "games": {
+  "rumble": {"accent": "#D71920", "end_head": "Play Royal Rumble on FAN LIFE", "url_sub": "Royal Rumble · your club · your five",
+             "end_say": "Royal Rumble is on FAN LIFE. Pick your club, pick your five, and send your mate the link.",
+             "call_say": "Royal Rumble. Free on FAN LIFE. Link in the bio."},
+  "legends": {"accent": "#1F3A5F", "end_head": "Play Legends Manager on FAN LIFE", "url_sub": "Legends Manager · your club · your dynasty",
+              "end_say": "Legends Manager is on FAN LIFE. Pick your club, and take the job.",
+              "call_say": "Legends Manager. Free on FAN LIFE. Link in the bio."}
+ },
+ "items": []
+}

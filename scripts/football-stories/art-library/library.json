@@ -1,0 +1,410 @@
+{
+ "about": "FAN LIFE general art library (owner, 3.11.2026): original illustrations supplied by the owner, usable in any FAN LIFE video. Illustrations, never photographs or archive documents; artistic crests are interpretations, not official badges. Zones are in source pixels [x0,y0,x1,y1].",
+ "items": [
+  {
+   "id": "legends-manager/build-your-legacy",
+   "file": "legends-manager/build-your-legacy.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [],
+   "features": [
+    "legends-manager"
+   ],
+   "subject": "A fan places table-football figures on a pitch board, scarf on, notebook of tactics.",
+   "note": "Title text reads MANAGER OF LEGENDS / BUILD YOUR LEGACY (the product is called Legends Manager): show crops below the title or cover it.",
+   "zones": {
+    "title": [
+     0,
+     0,
+     1672,
+     420
+    ],
+    "wordmark": [
+     0,
+     0,
+     300,
+     80
+    ]
+   },
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "legends-manager/build-your-squad",
+   "file": "legends-manager/build-your-squad.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [],
+   "features": [
+    "legends-manager"
+   ],
+   "subject": "A fan holds three player cards over a clipboard.",
+   "note": "Text: BUILD YOUR SQUAD / YOUR PICKS. YOUR STORY. / MANAGER OF LEGENDS DRAFT card on the right.",
+   "zones": {
+    "title": [
+     0,
+     0,
+     1672,
+     300
+    ],
+    "wordmark": [
+     0,
+     0,
+     300,
+     80
+    ],
+    "name": [
+     1180,
+     330,
+     1672,
+     560
+    ]
+   },
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "legends-manager/make-the-call",
+   "file": "legends-manager/make-the-call.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [],
+   "features": [
+    "legends-manager"
+   ],
+   "subject": "A fan holds a scarf up; tactics board on the left, a phone on the right.",
+   "note": "Text: MAKE THE CALL / YOUR TACTICS. YOUR SEASON. The phone reads MANAGER OF LEGENDS.",
+   "zones": {
+    "title": [
+     0,
+     0,
+     1672,
+     330
+    ],
+    "wordmark": [
+     0,
+     0,
+     300,
+     80
+    ],
+    "name": [
+     1320,
+     0,
+     1672,
+     560
+    ]
+   },
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "royal-rumble/build-your-five",
+   "file": "royal-rumble/build-your-five.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [],
+   "features": [
+    "royal-rumble"
+   ],
+   "subject": "Five red and five white shirts face off on a pitch, a phone reads 5-v-5.",
+   "note": "Text: ROYAL RUMBLE / BUILD YOUR FIVE.",
+   "zones": {
+    "title": [
+     0,
+     0,
+     1672,
+     330
+    ],
+    "wordmark": [
+     0,
+     0,
+     300,
+     80
+    ]
+   },
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "royal-rumble/one-slot-your-choice",
+   "file": "royal-rumble/one-slot-your-choice.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [],
+   "features": [
+    "royal-rumble"
+   ],
+   "subject": "A fan slides a third card into a row of slots; one slot still empty.",
+   "note": "Text: ONE SLOT. YOUR CHOICE. / BUILD YOUR DREAM FIVE.",
+   "zones": {
+    "title": [
+     0,
+     0,
+     1672,
+     330
+    ],
+    "wordmark": [
+     0,
+     0,
+     300,
+     80
+    ]
+   },
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "royal-rumble/legends-one-team",
+   "file": "royal-rumble/legends-one-team.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [],
+   "features": [
+    "royal-rumble"
+   ],
+   "subject": "Five players arm in arm from behind, shirts 7 10 9 8 11 in different colours.",
+   "note": "Text: LEGENDS. ONE TEAM. / PICK YOUR FIVE. Symbolic shirts, no real club.",
+   "zones": {
+    "title": [
+     0,
+     0,
+     1672,
+     330
+    ],
+    "wordmark": [
+     0,
+     0,
+     300,
+     80
+    ]
+   },
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/panathinaikos/identity",
+   "file": "clubs/panathinaikos/identity.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "panathinaikos"
+   ],
+   "features": [],
+   "subject": "A shamrock crest (artistic, not the official file), 1908, scarves, the Acropolis.",
+   "note": "The crest is an interpretation: never present it as the badge. Torn paper space on the right for type.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/panathinaikos/gate-13",
+   "file": "clubs/panathinaikos/gate-13.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "panathinaikos"
+   ],
+   "features": [],
+   "subject": "Gate 13 banners and shamrock flags under floodlights.",
+   "note": "Programme scrap dates are decorative.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/panathinaikos/matchday-walk",
+   "file": "clubs/panathinaikos/matchday-walk.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "panathinaikos"
+   ],
+   "features": [],
+   "subject": "Fans in green scarves walking to the ground past a tram.",
+   "note": "Atmospheric, not an architectural record.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/panathinaikos/terrace",
+   "file": "clubs/panathinaikos/terrace.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "panathinaikos"
+   ],
+   "features": [],
+   "subject": "Smoky green terrace, scarves up; open sky for type.",
+   "note": "Good background plate.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/aek-athens/identity",
+   "file": "clubs/aek-athens/identity.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "aek-athens"
+   ],
+   "features": [],
+   "subject": "Double-headed eagle crest (artistic), 1924, scarves, the Acropolis.",
+   "note": "The crest is an interpretation. Torn paper space on the right for type.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/aek-athens/original-21",
+   "file": "clubs/aek-athens/original-21.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "aek-athens"
+   ],
+   "features": [],
+   "subject": "ORIGINAL 21 banner, yellow smoke, scarves up.",
+   "note": "Decorative programme scrap.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/aek-athens/matchday-walk",
+   "file": "clubs/aek-athens/matchday-walk.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "aek-athens"
+   ],
+   "features": [],
+   "subject": "Fans in yellow-black scarves walking under balconies, floodlights ahead.",
+   "note": "Atmospheric.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/aek-athens/terrace",
+   "file": "clubs/aek-athens/terrace.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "aek-athens"
+   ],
+   "features": [],
+   "subject": "A bowl of yellow-black scarves; open sky for type.",
+   "note": "Good background plate.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-piraeus-shock",
+   "file": "clubs/olympiacos/2024-piraeus-shock.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "Olympiacos fans stunned after 1-4 at home to Maccabi Tel Aviv, 7.3.2024.",
+   "note": "Illustration inspired by a verified night (UEFA report): never a photo, label it ILLUSTRATION.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-podence-early",
+   "file": "clubs/olympiacos/2024-podence-early.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "No. 56 strikes early (Podence, 10', 14.3.2024).",
+   "note": "Illustration.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-fortounis-break",
+   "file": "clubs/olympiacos/2024-fortounis-break.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "No. 7 breaks through (Fortounis, 36').",
+   "note": "Illustration.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-el-kaabi-header",
+   "file": "clubs/olympiacos/2024-el-kaabi-header.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "No. 9 heads in (El Kaabi, 45+3').",
+   "note": "Illustration.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-extra-time",
+   "file": "clubs/olympiacos/2024-extra-time.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "No. 22 scores in extra time (Jovetic, 93').",
+   "note": "Illustration.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-victory-away-end",
+   "file": "clubs/olympiacos/2024-victory-away-end.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "Players arm in arm to the away end after 1-6 a.e.t. (agg. 7-5).",
+   "note": "Illustration.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  },
+  {
+   "id": "clubs/olympiacos/2024-greek-poster",
+   "file": "clubs/olympiacos/2024-greek-poster.jpg",
+   "w": 1672,
+   "h": 941,
+   "clubs": [
+    "olympiacos"
+   ],
+   "features": [],
+   "subject": "Poster: H MEGALH ANATROPH (the great comeback) / SERBIA 2024.",
+   "note": "Illustration poster.",
+   "zones": {},
+   "kind": "illustration",
+   "received": "2026-11-03"
+  }
+ ]
+}

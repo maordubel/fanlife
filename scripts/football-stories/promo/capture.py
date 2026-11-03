@@ -11,6 +11,7 @@ Legends Manager creates a career for this throwaway browser; nothing is signed i
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -112,18 +113,24 @@ def rumble(ctx, out: Path, club: str, video: bool):
         if not video:
             r.shot(page, 'entrance')
         page.wait_for_timeout(6000)
-        r.mark('highlights')
+        r.mark('headtohead')
         if not video:
-            r.shot(page, 'highlights')
-        page.wait_for_timeout(9000 if video else 3000)
+            r.shot(page, 'headtohead')
+        page.wait_for_timeout(5000)
         if not video:
-            r.shot(page, 'highlights2')
-        if click_text(page, r'skip to full time', 3000):
-            page.wait_for_timeout(3500)
-            r.mark('fulltime')
-            if not video:
-                r.shot(page, 'fulltime')
-                r.shot(page, 'fulltime-full', full=True)
+            r.shot(page, 'teams')
+        if click_text(page, r'^KICK OFF$', 4000):
+            r.mark('kickoff')
+            for j in range(6):
+                page.wait_for_timeout(3500)
+                if not video:
+                    r.shot(page, f'match{j + 1}')
+            if click_text(page, r'(^|\s)FT$|full time', 3000):
+                page.wait_for_timeout(4000)
+                r.mark('fulltime')
+                if not video:
+                    r.shot(page, 'fulltime')
+                    r.shot(page, 'fulltime-full', full=True)
     r.save()
     vid = page.video
     page.close()
@@ -153,13 +160,18 @@ def legends(ctx, out: Path, club: str, video: bool):
     if not video:
         r.shot(page, 'found')
     found.click()
-    page.wait_for_timeout(4500)
+    try:
+        page.wait_for_url(re.compile(r'/career/'), timeout=150000)
+    except Exception:
+        pass
+    page.wait_for_timeout(3500)
+    dismiss(page)
     r.mark('founded')
     if not video:
         r.shot(page, 'founded')
     # From here the flow is read off the screen, step by step: the board's story, the line, the cards, the next line.
-    prio = [r'^skip', r'^(continue|next|go on|let.s go|start the draft|to the draft|meet)', r'^(GK|DF|MF|FW)\b', CARD.pattern]
-    for k in range(26):
+    prio = [r'^skip', r'^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)', r'^(GK|DF|MF|FW)\b']
+    for k in range(40):
         page.wait_for_timeout(1400)
         clicked = None
         cs = cards(page)
@@ -168,14 +180,14 @@ def legends(ctx, out: Path, club: str, video: bool):
             pick = next((c for c in cs if re.search(want, c.get_attribute('aria-label'))), cs[-1])
             pick.scroll_into_view_if_needed()
             page.wait_for_timeout(500)
-            if not video and k < 10:
+            if not video and k < 24:
                 r.shot(page, f'step{k:02d}-deal')
             clicked = pick.get_attribute('aria-label')
             pick.click()
             page.wait_for_timeout(2600)
         else:
-            for rx in prio[:3]:
-                if click_text(page, rx, 1200):
+            for rx in prio:
+                if click_text(page, rx, 700):
                     clicked = rx
                     break
             page.wait_for_timeout(1800)
@@ -203,6 +215,8 @@ def main():
         b = pw.chromium.launch()
         for club in clubs:
             for game, fn in (('rumble', rumble), ('legends', legends)):
+                if os.environ.get('GAMES') and game not in os.environ['GAMES'].split(','):
+                    continue
                 for video in (False, True):
                     kw = dict(viewport={'width': 390, 'height': 844}, device_scale_factor=3, is_mobile=True, has_touch=True, user_agent=UA)
                     if video:
