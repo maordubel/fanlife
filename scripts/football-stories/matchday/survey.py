@@ -214,9 +214,44 @@ def survey(src: Path, out: Path, sheet_frames: int = 12) -> dict:
             'hdr': sum(r['hdr'] for r in rows),
         },
     }
+    inv['photos'] = photos(src, out)
     (out / 'inventory.json').write_text(json.dumps(inv, indent=2, ensure_ascii=False))
-    (out / 'inventory.md').write_text(markdown(inv))
+    (out / 'inventory.md').write_text(markdown(inv) + ''.join(f"- photo {r['file']} · {r['taken'] or 'no date'} · {r['width']}×{r['height']}\n" for r in inv['photos']))
     return inv
+
+
+PHOTO = {'.jpg', '.jpeg', '.png', '.heic', '.heif'}
+
+
+def photos(src: Path, out: Path) -> list[dict]:
+    """The owner's stills from the night (HEIC from an iPhone, JPG): each one read for its own time, and written to
+    photos/ at 1600 px with no metadata, so the edit can look at it. Unreadable → reported, never skipped."""
+    from PIL import Image, ImageOps
+    try:
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
+    rows = []
+    for p in sorted(x for x in src.rglob('*') if x.is_file() and x.suffix.lower() in PHOTO):
+        rel = str(p.relative_to(src))
+        try:
+            im = Image.open(p)
+            ex = im.getexif()
+            sub = ex.get_ifd(0x8769) if hasattr(ex, 'get_ifd') else {}
+            taken = sub.get(0x9003) or ex.get(0x0132)
+            off = sub.get(0x9011)
+            im = ImageOps.exif_transpose(im).convert('RGB')
+            w, h = im.size
+            im.thumbnail((1600, 1600))
+            dst = out / 'photos' / (re.sub(r'[^\w.-]+', '_', Path(rel).stem) + '.jpg')
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            im.save(dst, quality=88)
+            rows.append({'file': rel, 'taken': f'{taken}{off or ""}' if taken else None, 'width': w, 'height': h,
+                         'still': str(dst.relative_to(out))})
+        except Exception as e:
+            rows.append({'file': rel, 'taken': None, 'width': 0, 'height': 0, 'still': None, 'error': str(e)[:160]})
+    return rows
 
 
 def markdown(inv: dict) -> str:

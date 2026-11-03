@@ -2,7 +2,7 @@
   "_": "Changing this file runs .github/workflows/matchday-intake.yml: art folders into matchday/art/<set>/, footage surveyed and scouted onto the matchday-survey branch.",
   "art": [],
   "footage": {
-    "folder": "https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view",
+    "folder": "https://drive.google.com/drive/folders/15cZJoP2flSu5J0o2c4mGm6uQUxusjf3J",
     "episode": "iwt-04-aek"
   }
 }
