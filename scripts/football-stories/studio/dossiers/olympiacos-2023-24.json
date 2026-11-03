@@ -1,0 +1,385 @@
+{
+ "club_id": "olympiacos",
+ "season": "2023/24",
+ "researched": "2026-11-03",
+ "note": "Claims read from public pages on the date above, beside the archive (UEFA match records). The archive and the route-to-the-final table agree on every tie and aggregate. Crowds in Piraeus are given only as the source gives them (\"several thousand\"), never as a number.",
+ "claims": [
+  {
+   "id": "w-final",
+   "type": "match-detail",
+   "fact": {
+    "kind": "final",
+    "date": "2024-05-29",
+    "competition": "UEFA Europa Conference League",
+    "stage": "Final",
+    "venue": "Agia Sophia Stadium",
+    "city": "Athens",
+    "venue_owner": "AEK Athens",
+    "club": "Olympiacos",
+    "opponent": "Fiorentina",
+    "score": "1–0",
+    "after_extra_time": true,
+    "deciding_minute": 116,
+    "deciding_scorer": "Ayoub El Kaabi",
+    "how": "header",
+    "assist": "Santiago Hezze",
+    "var_check": "lengthy",
+    "attendance": 26842,
+    "tickets_per_finalist": 9000,
+    "referee": "Artur Soares Dias",
+    "significance": "Olympiacos’ first European trophy; the first European trophy won by a Greek club",
+    "first_european_final": true,
+    "greek_finals_before": 1,
+    "earlier_greek_final": {
+     "club": "Panathinaikos",
+     "year": 1971,
+     "competition": "European Cup",
+     "opponent": "Ajax",
+     "result": "lost"
+    },
+    "minutes_before_end_of_extra_time": 4,
+    "assist_from": "the left",
+    "opponent_lost_previous_final": true,
+    "years_since_earlier_greek_final": 53,
+    "district": "Nea Filadelfeia"
+   },
+   "sources": [
+    {
+     "title": "2024 UEFA Europa Conference League final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Agia Sophia Stadium — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Agia_Sophia_Stadium",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Olympiacos 1-0 Fiorentina (aet): El Kaabi swoops to secure glory — UEFA.com",
+     "url": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-to-secure-g/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-managers",
+   "type": "person",
+   "fact": {
+    "kind": "managers",
+    "season": "2023/24",
+    "managers": [
+     {
+      "name": "Diego Martínez",
+      "from": "2023-06-20",
+      "to": "2023-12-04"
+     },
+     {
+      "name": "Carlos Carvalhal",
+      "from": "2023-12-05",
+      "to": "2024-02-08"
+     },
+     {
+      "name": "José Luis Mendilibar",
+      "from": "2024-02-11",
+      "to": null
+     }
+    ],
+    "count": 3,
+    "mendilibar_previous": "Won the 2023 Europa League final with Sevilla"
+   },
+   "sources": [
+    {
+     "title": "2023–24 Olympiacos F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Olympiacos_F.C._season",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "2024 UEFA Europa Conference League final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-route",
+   "type": "table",
+   "fact": {
+    "kind": "route",
+    "season": "2023/24",
+    "group": "Europa League Group A",
+    "group_position": 3,
+    "group_points": 7,
+    "dropped_into": "UEFA Europa Conference League knockout round play-offs",
+    "rounds": [
+     {
+      "round": "Knockout round play-offs",
+      "opponent": "Ferencváros",
+      "aggregate": "2–0"
+     },
+     {
+      "round": "Round of 16",
+      "opponent": "Maccabi Tel Aviv",
+      "aggregate": "7–5",
+      "note": "6–1 after extra time in the second leg"
+     },
+     {
+      "round": "Quarter-finals",
+      "opponent": "Fenerbahçe",
+      "aggregate": "3–3",
+      "decided": "Olympiacos won 3–2 on penalties"
+     },
+     {
+      "round": "Semi-finals",
+      "opponent": "Aston Villa",
+      "aggregate": "6–2"
+     }
+    ],
+    "agg_numbers": [
+     2,
+     0,
+     7,
+     5,
+     6,
+     1,
+     3,
+     3,
+     3,
+     2,
+     6,
+     2
+    ]
+   },
+   "sources": [
+    {
+     "title": "2024 UEFA Europa Conference League final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-maccabi-2",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2024-03-14",
+    "venue": "TSC Arena",
+    "city": "Bačka Topola",
+    "country": "Serbia",
+    "attendance": 370,
+    "score_after_90": "4–1",
+    "after_90": [
+     4,
+     1
+    ],
+    "aggregate_after_90": "5–5",
+    "aggregate_after_90_numbers": [
+     5,
+     5
+    ],
+    "extra_time_scorers": [
+     "Stevan Jovetić",
+     "Youssef El-Arabi"
+    ],
+    "first_leg_deficit": 3,
+    "note": "Maccabi Tel Aviv played their home matches at a neutral ground in Serbia that season."
+   },
+   "sources": [
+    {
+     "title": "Maccabi Tel-Aviv 1-6 Olympiakos — Football Web Pages",
+     "url": "https://www.footballwebpages.co.uk/maccabi-tel-aviv/match/2023-2024/europa-conference/maccabi-tel-aviv/olympiakos/485922",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "RTÉ — Robbie Keane’s Maccabi Tel Aviv out of Europa Conference League after squandering three-goal lead",
+     "url": "https://www.rte.ie/sport/soccer/2024/0315/1438038-conference-league-capitulation-for-keanes-maccabi",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Maccabi Tel Aviv FC — match report",
+     "url": "https://www.maccabi-tlv.co.il/?p=300923",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-fener-2",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2024-04-18",
+    "venue": "Şükrü Saracoğlu Stadium",
+    "city": "Istanbul",
+    "attendance": 44040,
+    "opponent_scorer": "İrfan Can Kahveci",
+    "opponent_minute": 12,
+    "after_extra_time": true,
+    "shootout": "3–2",
+    "shootout_numbers": [
+     3,
+     2
+    ],
+    "winner": "Olympiacos",
+    "goalkeeper": "Konstantinos Tzolakis",
+    "penalties_saved": 3,
+    "saved_from": [
+     "Dušan Tadić",
+     "Cengiz Ünder",
+     "Leonardo Bonucci"
+    ],
+    "milestone": "Olympiacos’ first European semi-final",
+    "homecoming": "A heroes’ welcome from supporters when the team returned to Athens"
+   },
+   "sources": [
+    {
+     "title": "Konstantinos Tzolakis — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Konstantinos_Tzolakis",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Fenerbahçe 1-0 Olympiakos — Football Web Pages",
+     "url": "https://www.footballwebpages.co.uk/match/2023-2024/europa-conference/fenerbahce/olympiakos/486740",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Neos Kosmos — Olympiacos makes history as they advance to European semi-finals for first time",
+     "url": "https://neoskosmos.com/en/2024/04/19/sport/football/olympiacos-makes-history-as-they-advance-to-european-semi-finals-for-first-time/",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Greek City Times — Olympiacos receive heroes welcome home after overcoming Fenerbahçe in Istanbul",
+     "url": "https://greekcitytimes.com/2024/04/19/olympiacos-heroes-welcome-istanbul",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-youth",
+   "type": "honour",
+   "fact": {
+    "kind": "honour",
+    "competition": "UEFA Youth League",
+    "season": "2023/24",
+    "date": "2024-04-22",
+    "venue": "Colovray Stadium",
+    "city": "Nyon",
+    "score": "3–0",
+    "numbers": [
+     3,
+     0
+    ],
+    "opponent": "Milan",
+    "winner": "Olympiacos under-19s",
+    "significance": "the first Greek team to win a UEFA club competition",
+    "weeks_before_final": 5,
+    "european_trophies_that_spring": 2
+   },
+   "sources": [
+    {
+     "title": "2023–24 UEFA Youth League — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_UEFA_Youth_League",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "2024 UEFA Europa Conference League final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-season",
+   "type": "history",
+   "fact": {
+    "kind": "season",
+    "season": "2023/24",
+    "league": "Super League Greece",
+    "league_position": 3,
+    "league_points": 74,
+    "champions": "PAOK",
+    "el_kaabi_goals_all": 33,
+    "el_kaabi_goals_league": 17,
+    "el_kaabi_goals_conference_league": 11
+   },
+   "sources": [
+    {
+     "title": "2023–24 Olympiacos F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Olympiacos_F.C._season",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-piraeus",
+   "type": "history",
+   "fact": {
+    "kind": "supporters",
+    "date": "2024-05-29",
+    "city": "Piraeus",
+    "event": "Several thousand Olympiacos supporters gathered in Piraeus to celebrate.",
+    "estimate": "several thousand"
+   },
+   "sources": [
+    {
+     "title": "2024 UEFA Europa Conference League final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-club",
+   "type": "history",
+   "fact": {
+    "kind": "club",
+    "founded": "1924-05-16",
+    "centenary": "2024-05-16",
+    "years": 100,
+    "days_from_centenary_to_final": 13,
+    "standing": "the most successful club in Greek football history",
+    "best_european_before": {
+     "competition": "UEFA Champions League",
+     "season": "1998–99",
+     "stage": "quarter-finals",
+     "year": 1999
+    },
+    "home_ground": "Karaiskakis Stadium",
+    "home_capacity": 33334
+   },
+   "sources": [
+    {
+     "title": "Olympiacos F.C. — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C.",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  }
+ ]
+}

@@ -34,6 +34,13 @@ PRONOUNCE = {
     'Bloomfield': 'Bloomfield', "Be'er Sheva": 'Beh-er Sheva', 'Yerevan': 'Yerevan', 'Herzliya': 'Hertz-lia',
     'Sūduva': 'Soo-doo-vah', 'Baldé': 'Bal-day', 'Derlei': 'Der-lay', 'Alenichev': 'Al-yen-ee-chev', 'Olímpico': 'Oh-leem-pico',
     'Sevilla': 'Seh-vee-ya', 'Mourinho': 'Mo-reen-yo', 'Valgaeren': 'Val-gah-ren', 'José': 'Ho-zay', 'Celta': 'Thel-ta',
+    'Čukarički': 'Choo-ka-reech-kee', 'Bačka Topola': 'Bach-ka Toh-po-la', 'Mendilibar': 'Men-dee-lee-bar',
+    'Fenerbahçe': 'Fener-bah-cheh', 'Şükrü Saracoğlu': 'Shook-roo Sara-joh-loo', 'Tzolakis': 'Dzo-lah-kis', 'Kahveci': 'Kah-veh-jee',
+    'İrfan': 'Ir-fan', 'Tadić': 'Tah-ditch', 'Jovetić': 'Yo-veh-titch', 'Ünder': 'Oon-der', 'El Kaabi': 'El Kah-bee', 'Hezze': 'Heh-zeh',
+    'Fortounis': 'For-too-nis', 'Rodinei': 'Ho-dee-nay', 'Piraeus': 'Pie-ree-us', 'Karaiskakis': 'Kah-rice-kah-kis',
+    'Ferencváros': 'Feh-rents-vah-rosh', 'Carvalhal': 'Car-val-yal', 'Alexandropoulos': 'Alex-an-drop-oo-los', 'Agia Sophia': 'Ah-yee-a So-fee-a',
+    'Podence': 'Po-den-seh', 'Chiquinho': 'Shee-keen-yo', 'Olympiacos': 'Oh-lim-pee-a-kos', 'Martínez': 'Mar-tee-neth', 'Nyon': 'Nee-on',
+    'El-Arabi': 'El Ah-rah-bee', 'Fiorentina': 'Fee-oh-ren-tee-na', 'Bonucci': 'Bo-noo-chee', 'Cengiz': 'Jen-giz',
 }
 
 

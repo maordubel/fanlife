@@ -434,6 +434,56 @@ class ClubPacks(unittest.TestCase):
         self.assertTrue(e.tie_through(f['b']))                       # 2-2 on aggregate, one away goal to none
         self.assertIsNone(e.tie_through(f['c']))
 
+    def modern(self):
+        from studio import research
+        def m(i, on, name, score, comp, sc=(), src='s1', conf=2):
+            return {'id': i, 'value': {'name': name, 'on': on, 'competition': comp, 'score': score, 'sport': 'football',
+                                       'venue': 'TSC Arena, Backa Topola' if i == 'r2' else None,
+                                       'scorers': [{'name': n, 'minute': mi} for n, mi in sc]},
+                    'sources': [src], 'confidence': conf, 'status': 'approved'}
+        data = {'identity': {'name': 'Olympiacos', 'country': 'Greece'},
+                'sources': [{'id': 's1', 'title': 'UEFA', 'url': 'https://www.uefa.com/match/1'}, {'id': 's2', 'title': 'Other', 'url': 'https://example.org/x'}],
+                'matches': [m('a1', '2024-03-07', 'Olympiacos 1-4 M. Tel-Aviv', '1-4', 'UEFA Conference League', [('El Kaabi', 13)]),
+                            m('r1', '2024-03-07', 'Olympiacos 1-4 Maccabi Tel Aviv', '1-4', 'UEFA Conference League round of 16, first leg', src='s2', conf=3),
+                            m('a2', '2024-03-14', 'M. Tel-Aviv 1-2 Olympiacos', '1-2', 'UEFA Conference League', [('Podence', 10), ('El Kaabi', 45)]),
+                            m('r2', '2024-03-14', 'Maccabi Tel Aviv 1-2 Olympiacos (after extra time)', '1-2', 'UEFA Conference League round of 16, second leg', [('Podence', 10), ('El Kaabi', 48)], src='s2', conf=3),
+                            m('f1', '2024-04-11', 'Olympiacos 3-2 Fenerbahçe', '3-2', 'UEFA Conference League'),
+                            m('f2', '2024-04-18', 'Fenerbahce 1-0 Olympiacos (Olympiacos won 3-2 on penalties)', '1-0', 'UEFA Conference League quarter-final, second leg', src='s2')]}
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        Path(tmp.name, 'olympiacos.json').write_text(json.dumps({'data': data}), encoding='utf-8')
+        old = research.COMPILED
+        research.COMPILED = Path(tmp.name)
+        self.addCleanup(lambda: setattr(research, 'COMPILED', old))
+        return research.build_ledger('olympiacos', '2023/24')
+
+    def test_one_match_twice_is_one_match(self):
+        L = self.modern()
+        f = {c['id']: c for c in L['claims']}
+        self.assertEqual(sorted(f), ['a1', 'a2', 'f1', 'f2'])          # two waves of one night are one night
+        a2 = f['a2']['fact']
+        self.assertEqual(a2['opponent'], 'Maccabi Tel Aviv')            # the full name, not 'M. Tel-Aviv'
+        self.assertEqual([x['minute'] for x in a2['scorers']], [10, 45])  # UEFA's own record keeps its minutes
+        self.assertEqual((a2['stage'], a2['after_extra_time'], a2['venue']), ('Round of 16, second leg', True, {'name': 'TSC Arena, Backa Topola'}))
+        self.assertEqual(f['a2']['also_ids'], ['r2'])
+        self.assertEqual(f['a2']['confidence'], 3)
+        self.assertEqual(a2['competition'], 'UEFA Europa Conference League')  # its name in 2023/24
+        self.assertEqual(L['summary']['by_competition']['UEFA Europa Conference League']['played'], 4)
+
+    def test_a_shootout_in_the_name_is_a_shootout(self):
+        from studio.edit import Editor
+        from studio.maps import place_of
+        L = self.modern()
+        f = {c['id']: c['fact'] for c in L['claims']}
+        self.assertEqual(f['f2']['opponent'], 'Fenerbahce')
+        self.assertEqual(f['f2']['penalties'], {'winner': 'Olympiacos', 'score': '3–2'})
+        e = Editor.__new__(Editor)
+        e.ledger = L
+        self.assertTrue(e.won_shootout(f['f2']))
+        self.assertIsNone(e.tie_through(f['f2']))                       # level on aggregate in 2023/24: no away goals any more
+        self.assertEqual(place_of(f['a2'], 'Olympiacos')[0], 'Bačka Topola')  # a neutral ground pins where it was played
+        self.assertEqual(place_of(f['a1'], 'Olympiacos')[0], 'Tel Aviv')
+
 
 if __name__ == '__main__':
     unittest.main()

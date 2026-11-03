@@ -77,6 +77,24 @@ def city_of(club: str) -> tuple[str, tuple[float, float]] | None:
     return c, tuple(PLACES['cities'][c])
 
 
+def _fold(s: str) -> str:
+    import unicodedata
+    return ''.join(ch for ch in unicodedata.normalize('NFKD', s) if not unicodedata.combining(ch)).lower()
+
+
+def place_of(fact: dict, club: str) -> tuple[str, tuple[float, float]] | None:
+    """Where a match was PLAYED, for a map: the venue's city when the record names one away from the club's own city (an
+    away ground, a neutral venue, a final), otherwise the opponent's city (a home match pins where the visitors came from)."""
+    home = city_of(club)
+    venue = fact.get('venue') or ''
+    venue = _fold(venue.get('name') or '' if isinstance(venue, dict) else venue)
+    if venue:
+        for name, ll in PLACES['cities'].items():
+            if _fold(name) in venue and (not home or name != home[0]):
+                return name, tuple(ll)
+    return city_of(fact.get('opponent') or '')
+
+
 def frame_for(points: list[tuple[float, float]], focus: str) -> tuple[float, float, float]:
     """(center lat, center lon, degrees of longitude across the canvas)."""
     lats = [p[0] for p in points]

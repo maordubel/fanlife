@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 from pathlib import Path
 
 from .common import ROOT, StageError, read_json, sha256_bytes
@@ -203,6 +204,11 @@ def _uefa_comp(comp: str | None, season: str) -> tuple[str | None, str | None]:
     c = comp.strip()
     if c.lower().endswith(' final'):
         c, stage = c[:-6].strip(), 'Final'
+    m = STAGE_IN_NAME.match(c)
+    if m:  # 'UEFA Conference League round of 16, first leg' — the round rides in the competition's name
+        c, stage = m.group(1).strip(), m.group(2)[:1].upper() + m.group(2)[1:]
+    if c in ('UEFA Conference League', 'UEFA Europa Conference League'):
+        c = 'UEFA Europa Conference League' if int(season[:4]) < 2024 else 'UEFA Conference League'
     if c == 'UEFA Europa League' and int(season[:4]) < 2009:
         c = 'UEFA Cup'
     if c == 'UEFA Champions League' and int(season[:4]) < 1992:
@@ -215,7 +221,65 @@ def _split_name(name: str, score: str) -> tuple[str, str] | None:
     if not isinstance(name, str) or not isinstance(score, str) or f' {score} ' not in name:
         return None
     h, a = name.split(f' {score} ', 1)
-    return h.strip(), a.strip()
+    return h.strip(), AET_NOTE.sub('', a).strip()
+
+
+AET_NOTE = re.compile(r'\s*\(([^()]*)\)\s*$')
+STAGE_IN_NAME = re.compile(r'^(UEFA [A-Za-z ]*?League)\s+((?:knockout|round of|quarter|semi|group|play-off|first|second|third).*)$', re.I)
+PENS_NOTE = re.compile(r'^(.+?) won (\d+)-(\d+) on penalties$', re.I)
+
+
+def _name_note(name: str) -> str:
+    """The words a record put in brackets after the score: '(after extra time)', '(Olympiacos won 3-2 on penalties)'."""
+    m = AET_NOTE.search(name or '')
+    return m.group(1).strip() if m else ''
+
+
+def _fold(name: str) -> str:
+    import unicodedata
+    return ''.join(ch for ch in unicodedata.normalize('NFKD', name) if not unicodedata.combining(ch)).lower().replace('-', ' ')
+
+
+def _best_name(names: list[str]) -> str:
+    """Of two spellings of one opponent, the one a reader would print: not shortened ('M. Tel-Aviv'), and with its
+    accents when the two are the same name without them ('Fenerbahçe', not 'Fenerbahce')."""
+    full = [n for n in names if not re.match(r'^\w\. ', n)] or names
+    return max(full, key=lambda n: (sum(_fold(n) == _fold(m) for m in full), sum(ord(ch) > 127 for ch in n), -len(names.index(n).__str__())))
+
+
+def _same_match(rows: list[dict]) -> list[dict]:
+    """A pack can hold one match twice (two research waves, two spellings of the opponent). A club plays once a day: rows of
+    one date with one score are one match — kept once, the row that names every goal first, the cleaner name next; the
+    other ids, stage and sources are carried on it. Two rows of one date with DIFFERENT scores are a conflict, not a merge."""
+    by: dict[str, list[dict]] = {}
+    for c in rows:
+        by.setdefault(c['fact']['date'], []).append(c)
+    out = []
+    for date, group in by.items():
+        scores = {(c['fact']['score_home'], c['fact']['score_away']) for c in group}
+        if len(group) == 1 or len(scores) > 1:
+            out.extend(group)
+            continue
+        group.sort(key=lambda c: (c['fact']['scorers'] is None,
+                                  any(x.get('minute') is None for x in c['fact']['scorers'] or []),
+                                  # UEFA's own match record decides its competitions (CLAUDE.md rule 102)
+                                  not any('uefa.com' in str(x['url']) and '/match/' in str(x['url']) for x in c['sources']),
+                                  '(' in c['fact']['opponent'], c['fact']['stage'] is None))
+        keep, rest = group[0], group[1:]
+        f = keep['fact']
+        f['opponent'] = _best_name([c['fact']['opponent'] for c in group])
+        f['home' if f['side'] == 'away' else 'away'] = f['opponent']
+        for o in rest:
+            g = o['fact']
+            f['stage'] = f['stage'] or g['stage']
+            for k in ('after_extra_time', 'penalties', 'venue'):
+                f[k] = f.get(k) or g.get(k)
+            urls = {x['url'] for x in keep['sources']}
+            keep['sources'] += [x for x in o['sources'] if x['url'] not in urls]
+            keep.setdefault('also_ids', []).append(o['id'])
+            keep['confidence'] = max(keep.get('confidence') or 0, o.get('confidence') or 0)
+        out.append(keep)
+    return out
 
 
 def compiled_ledger(club_id: str, season: str) -> dict:
@@ -257,6 +321,9 @@ def compiled_ledger(club_id: str, season: str) -> dict:
             held.append({'match_id': m.get('id'), 'date': date, 'reasons': reasons})
             continue
         home, away = sides
+        note = _name_note(v.get('name'))
+        pens = PENS_NOTE.match(note)
+        aet = bool(pens) or note.lower() in ('after extra time', 'aet', 'a.e.t.')
         sh, sa = (int(x) for x in score.split('-'))
         ours_home = home == name
         cg, og = (sh, sa) if ours_home else (sa, sh)
@@ -267,11 +334,14 @@ def compiled_ledger(club_id: str, season: str) -> dict:
             'kind': 'match', 'date': date, 'competition': comp, 'stage': v.get('stage') or stage, 'club': name,
             'opponent': away if ours_home else home, 'side': 'home' if ours_home else 'away', 'home': home, 'away': away,
             'score_home': sh, 'score_away': sa, 'club_goals': cg, 'opponent_goals': og,
-            'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': None,
+            'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': {'name': v['venue']} if v.get('venue') else None,
+            'after_extra_time': aet or None,
+            'penalties': {'winner': pens.group(1).strip(), 'score': f'{pens.group(2)}–{pens.group(3)}'} if pens else None,
             'scorers': [{'name': x['name'], 'minute': x.get('minute'), 'penalty': x.get('penalty'), 'own_goal': x.get('ownGoal')}
                         for x in named] if complete else None,
             'scorers_note': None if complete else 'Scorers not printed: the record does not name every goal.'},
             'sources': sources, 'confidence': m.get('confidence'), 'status': 'archive', 'conflicts': []})
+    claims = _same_match(claims)
     if not claims:
         raise StageError('SEASON_NOT_IN_ARCHIVE', f'{name} {season}: no approved, sourced match records')
     return {'version': 1, 'club_id': club_id, 'club_name': name, 'country': ident.get('country'), 'season': season,
