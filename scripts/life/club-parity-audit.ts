@@ -17,6 +17,7 @@ async function main() {
   const {MISSION_TEMPLATES} = await import('@/lib/life/rush/templates')
   const {LIFE_CAST, LIFE_SKINS, LIFE_TIMELINE, LIFE_ANCHORS} = await import('@/lib/clubs/life/packs')
   const {validatePack} = await import('@/lib/life/universal/validate')
+  const {simulate} = await import('@/lib/life/universal/sim')
 
   const only = process.argv.slice(2).filter(a => !a.startsWith('-'))
   const ids = only.length ? only : [...CORE_CLUB_IDS]
@@ -80,6 +81,25 @@ async function main() {
     info(`readiness ${p.readiness.state} playable=${p.readiness.playable} anchors ${p.readiness.anchors}/${p.readiness.target}`)
     if (!p.readiness.playable) fault(`not playable: ${p.readiness.reasons[0]}`)
     const issues = validatePack(p); if (issues.length) fault(`validatePack: ${issues[0]} (+${issues.length - 1})`)
+    // every chapter, not only the episodes: no stuck state, at least one ending
+    for (const c of p.chapters) { const r = simulate(p, c); if (r.stuck.length) fault(`${c.id} can get stuck (${r.stuck.length})`); if (!r.endings.length) fault(`${c.id} has no ending`) }
+    // the life agrees with the archive it stands on
+    const by = p.hero.birthYear
+    if (by === null) info('no birth year: the life has no nights from history')
+    else {
+      info(`born ${by} (${2026 - by} in 2026) · ${Object.hasOwn(LIFE_TIMELINE, id) ? 'pack-set' : 'composer default'}`)
+      if (2026 - by < 18) fault(`hero would be ${2026 - by} in 2026`)
+      for (const c of p.chapters) if (c.anchor) {
+        const age = c.anchor.year - by
+        if (age < 5) fault(`${c.id} stands on ${c.anchor.on} when he is ${age}`)
+        if (c.anchor.year > 2026) fault(`${c.id} stands on a night in the future`)
+        if (c.anchor.match && !c.anchor.match.us) fault(`${c.id} night has no side`)
+      }
+      const eps2 = p.chapters.filter((c: any) => c.episode)
+      const nights = eps2.filter((c: any) => c.anchor).length, papers = eps2.filter((c: any) => c.paper).length
+      if (p.readiness.anchors >= 100 && nights < 3) fault(`the archive holds ${p.readiness.anchors} rows but only ${nights} episode(s) stand on a night`)
+      else if (nights < 3) info(`HELD (research): only ${nights} of 4 night episodes and ${papers} paper(s) stand on the archive (${p.readiness.anchors} rows) — older history is needed`)
+    }
     rows.push({id, ok: !notes.some(n => n.startsWith('FAULT')), notes})
   }
 
