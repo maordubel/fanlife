@@ -12,6 +12,46 @@
    "mood": "Balkan, rhythmic, upbeat"
   },
   {
+   "id": "sub-clair-lofi-study",
+   "file": "lofi-sub-clair-628178.mp3",
+   "title": "Lofi Study",
+   "artist": "Sub Clair",
+   "supplied": "2026-11-03",
+   "origin": "owner-supplied (Pixabay, item 628178)",
+   "licence": "Pixabay Content License — owner-supplied",
+   "mood": "calm, reflective, talk"
+  },
+  {
+   "id": "gr0za-energy",
+   "file": "energy-gr0za-627556.mp3",
+   "title": "Energy Energy Music",
+   "artist": "Gr0za",
+   "supplied": "2026-11-03",
+   "origin": "owner-supplied (Pixabay, item 627556)",
+   "licence": "Pixabay Content License — owner-supplied",
+   "mood": "high energy, hype, Shorts"
+  },
+  {
+   "id": "atlasaudio-sports",
+   "file": "sports-atlasaudio-625740.mp3",
+   "title": "Sports",
+   "artist": "AtlasAudio",
+   "supplied": "2026-11-03",
+   "origin": "owner-supplied (Pixabay, item 625740)",
+   "licence": "Pixabay Content License — owner-supplied",
+   "mood": "drive, matchday, promo"
+  },
+  {
+   "id": "leberch-dark",
+   "file": "dark-leberch-625667.mp3",
+   "title": "Dark",
+   "artist": "leberch",
+   "supplied": "2026-11-03",
+   "origin": "owner-supplied (Pixabay, item 625667)",
+   "licence": "Pixabay Content License — owner-supplied",
+   "mood": "sombre, tension, documentary — I WAS THERE Bloomfield 2024"
+  },
+  {
    "id": "helland-a-memory-away",
    "file": "cache/helland-a-memory-away.mp3",
    "title": "A Memory Away",

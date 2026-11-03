@@ -49,8 +49,9 @@ footage for it is dropped, not filled.
 
 ## 5 · Other people's faces (MASTER_PROMPT §5 applied to real footage)
 
-- A crowd at distance is a crowd. A face that a viewer could recognise (close, sharp, frontal) is treated: the
-  series' **paper-cut patch** (halftone ink over the face, the Weekly look) — not a soft blur.
+- **Owner, 3.11.2026:** *"אנשים ופרצופים אחרים ניתן להראות."* Adults in the crowd are shown as filmed — the
+  owner's privacy is about the owner alone (§4). What stays out: children close and recognisable (treated with the
+  series' **paper-cut patch**, halftone ink — not a soft blur), and anything below that could incriminate a fan.
 - Children: always treated. Players from the stand: no zoom-in close-ups.
 - Pyro and smoke are shown as the terrace's atmosphere only where no person in the frame can be recognised (a stand
   under smoke, from across the ground). Fights, anything that could incriminate an identifiable fan, and hate chants
@@ -118,6 +119,22 @@ fans, the stand, real nights — and it is the same ask on every video, so the c
 - **Art:** `ART-BRIEF-SUBSCRIBE.md` lists the assets that lift the ask (the scarf, the stamp, the end-screen ground,
   the banner). Each one is optional: when its file is in `public/brand/fanlife/iwt/` the edit uses it; until then
   nothing is drawn in its place.
+
+## 8b · The documentary layer (3.11.2026, ep 2)
+
+The owner asked for *The Last Dance*, not a vlog: `matchday/doc.py` is the layer, and every episode may use it.
+- **Typed lines** (Courier Prime, a key click per letter, a blinking cursor): the place and the camera's own clock on
+  footage (`doc`), a date or a slate on black (`typed`). Over a picture the words sit on an ink band (`panel`).
+- **Counted numbers** (`stat`): the figure counts up, lands with a boom, its source printed under it. Every one is
+  an archive row or a cited page.
+- **A timeline** (`timeline`) draws the season as points; the last one is the night.
+- **Props** (`prop`): the owner's art pack (`matchday/art`, `iwt-art:`), lettered with the night's facts — never a
+  real ticket, which would carry a seat and a barcode (§4).
+- **Look**: scope bars ease in on footage, a vignette everywhere, `flashback` (sepia, flicker) for what is told
+  rather than filmed. A half the camera did not film is told on cards, never with someone else's footage.
+- **Voice**: pauses are written into the text (`…` 0.85 s, `—` 0.5 s); a beat may slow the reader (`speed_voice`).
+- **Music**: one track from `studio/kit/music` (owner-supplied), normalised and shaped per beat, ducked under the
+  voice, faded at the end.
 
 ## 9 · QA before a film reaches the desk
 
