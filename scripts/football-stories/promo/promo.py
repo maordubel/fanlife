@@ -20,7 +20,6 @@ Beat kinds (fields in campaign.json):
 from __future__ import annotations
 
 import json
-import re
 import shutil
 import subprocess
 import sys
@@ -74,10 +73,6 @@ def art_src(aid: str) -> Image.Image:
         ImageDraw.Draw(im).rectangle(z, fill=paper)
         d = round((z[3] - z[1]) * 2.3)
         badge = Image.open(LOGOS['fanlife']).convert('RGBA').resize((d, d), Image.LANCZOS)
-        sh = Image.new('RGBA', badge.size, (0, 0, 0, 0))
-        sh.putalpha(badge.getchannel('A'))
-        ImageDraw.Draw(sh)
-        cx, cy = (z[0] + z[2]) // 2, (z[1] + z[3]) // 2
         x, y = z[0] + 70, z[1] + 6
         ink = Image.new('RGBA', badge.size, hex_rgb(INK) + (255,))
         ink.putalpha(badge.getchannel('A'))
@@ -201,6 +196,14 @@ def game_mark(sp, game: str, width: int) -> Image.Image:
     else:
         im = F.img(LOGOS[game])
     return im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+
+
+def glide(z0, z1, c0, c1, dur):
+    """A camera that starts where the beat says (fractions of the canvas) — for art whose top must stay out of shot."""
+    def f(t):
+        k = ease_in_out(t / max(dur, 0.1))
+        return z0 + (z1 - z0) * k, CW * (c0[0] + (c1[0] - c0[0]) * k), CH * (c0[1] + (c1[1] - c0[1]) * k)
+    return f
 
 
 def tag(sp, text: str) -> Image.Image:
@@ -359,7 +362,6 @@ def main():
                 frames = [bleed(a, f) for a, f in zip(arts, p.get('focus', [(0.5, 0.5)] * len(arts)))]
                 world = frames[0]
                 per = max(1, round(step * FPS))
-                zoom_of = lambda j: 1.0 + 0.08 * (j % per) / per  # noqa: E731
 
                 def wf(j, frames=frames, per=per):
                     return frames[min(len(frames) - 1, j // per)]
