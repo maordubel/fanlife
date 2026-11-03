@@ -1,0 +1,556 @@
+{
+ "club_id": "olympiacos",
+ "season": "2023/24",
+ "film": "olympiacos-maccabi-2024",
+ "researched": "2026-11-03",
+ "art_sets": [
+  "olympiacos-maccabi-2024"
+ ],
+ "note": "The two-legged Conference League tie with Maccabi Tel Aviv, March 2024. Quotes are word for word from the cited articles. The minute of Zahavi's first goal in Piraeus is 4 in some records and 5 in others, so the film does not say it. Pictures marked illustrated are owner AI illustrations based on the match reports.",
+ "claims": [
+  {
+   "id": "w-leg1",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2024-03-07",
+    "venue": "Karaiskakis Stadium",
+    "city": "Piraeus",
+    "attendance": 31054,
+    "half_time": "1–3",
+    "referee": "Craig Pawson",
+    "opponent_scorers": [
+     "Eran Zahavi",
+     "Ido Shahar",
+     "Eran Zahavi",
+     "Dor Peretz"
+    ],
+    "opponent_minutes_known": {
+     "Ido Shahar": 9,
+     "Eran Zahavi (second)": 30,
+     "Dor Peretz": 74
+    },
+    "two_nil_after": 9,
+    "club_scorer": "Ayoub El Kaabi",
+    "club_minute": 13,
+    "assist": "Kostas Fortounis",
+    "days_since_mendilibar_appointed": 25,
+    "score_after_9": "0–2"
+   },
+   "sources": [
+    {
+     "title": "Olympiakos 1-4 Maccabi Tel-Aviv — Football Web Pages",
+     "url": "https://www.footballwebpages.co.uk/maccabi-tel-aviv/europa-conference/match/2023-2024/europa-conference/olympiakos/maccabi-tel-aviv/485921",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Olympiacos v Maccabi Tel-Aviv — ESPN",
+     "url": "https://global.espn.com/football/match/_/gameId/699159/maccabi-tel-aviv-olympiacos",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "The Jerusalem Post — Maccabi Tel Aviv jumps out to big lead over Olympiacos, Haifa drops thriller",
+     "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-791262",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "2023–24 Olympiacos F.C. season — Wikipedia (managers)",
+     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Olympiacos_F.C._season",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "Zahavi first goal minute",
+     "values": [
+      4,
+      5
+     ],
+     "note": "ESPN and Sports Mole: 4; Football Web Pages: 5. Not printed."
+    }
+   ]
+  },
+  {
+   "id": "w-records",
+   "type": "history",
+   "fact": {
+    "kind": "records",
+    "source_page": "UEFA club facts: Olympiacos",
+    "biggest_away_win_uefa": "1–6 v Maccabi Tel-Aviv (aet), 14 March 2024",
+    "heaviest_home_defeat_conference_league": "1–4 v Maccabi Tel-Aviv, 7 March 2024"
+   },
+   "sources": [
+    {
+     "title": "UEFA — Club facts: Olympiacos",
+     "url": "https://www.uefa.com/uefaconferenceleague/news/0289-19d9a5083db4-3114d3afc048-1000--club-facts-olympiacos",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-shankly",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Bill Shankly",
+    "role": "Liverpool manager",
+    "text": "Some people believe football is a matter of life and death. I'm very disappointed with that attitude. I can assure you it is much, much more important than that.",
+    "outlet": "Dawn / Reuters, 8 July 2006",
+    "poll_year": 2006,
+    "poll_supporters": 10000,
+    "poll_countries": 80,
+    "poll": "voted the most memorable football quote of all time (Plain English Campaign)"
+   },
+   "sources": [
+    {
+     "title": "Dawn — Shankly's quote best of all time (Reuters, 8 July 2006)",
+     "url": "https://www.dawn.com/news/200550/shankly-s-quote-best-of-all-time",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-club",
+   "type": "history",
+   "fact": {
+    "kind": "club",
+    "nickname": "Thrylos",
+    "nickname_meaning": "Legend",
+    "popularity": "the most popular football club in Greece",
+    "emblem": "a laurel-crowned youth"
+   },
+   "sources": [
+    {
+     "title": "Olympiacos F.C. — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C.",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-2010",
+   "type": "match-detail",
+   "fact": {
+    "kind": "history",
+    "year": 2010,
+    "competition": "UEFA Europa League third qualifying round",
+    "legs": [
+     "Olympiacos 2–1 Maccabi Tel Aviv",
+     "Maccabi Tel Aviv 1–0 Olympiacos"
+    ],
+    "aggregate": "2–2",
+    "decided": "Maccabi Tel Aviv through on away goals"
+   },
+   "sources": [
+    {
+     "title": "Maccabi Tel Aviv FC — Our record against Greek opponents",
+     "url": "https://maccabi-tlv.co.il/en/category/news/first-team/page/36",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "FBref — Olympiacos vs. Maccabi Tel Aviv head-to-head",
+     "url": "https://aws.fbref.com/en/stathead/matchup/teams/2fdb4aef/04c011d8/Olympiacos-vs-Maccabi-Tel-Aviv-FC-History",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-mendilibar-1",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "José Luis Mendilibar",
+    "role": "Olympiacos coach, after the first leg",
+    "date": "2024-03-07",
+    "text": "This was a very bad game for us. They scored three goals on three chances and the result was justified. They surprised us and could have even more so. I have a part in this loss and it's going to be very difficult to come back from this.",
+    "outlet": "The Jerusalem Post"
+   },
+   "sources": [
+    {
+     "title": "The Jerusalem Post — Maccabi Tel Aviv jumps out to big lead over Olympiacos, Haifa drops thriller",
+     "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-791262",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-keane-1",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Robbie Keane",
+    "role": "Maccabi Tel Aviv coach, after the first leg",
+    "date": "2024-03-07",
+    "text": "I don't know if this was our best game, but it was a great result. We played terrific football but we have to stay focused ahead of the next match. All in all, we are just at halftime.",
+    "outlet": "The Jerusalem Post"
+   },
+   "sources": [
+    {
+     "title": "The Jerusalem Post — Maccabi Tel Aviv jumps out to big lead over Olympiacos, Haifa drops thriller",
+     "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-791262",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-jpost-1",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "The Jerusalem Post",
+    "headline": "Maccabi Tel Aviv jumps out to big lead over Olympiacos, Haifa drops thriller",
+    "date": null
+   },
+   "sources": [
+    {
+     "title": "The Jerusalem Post — Maccabi Tel Aviv jumps out to big lead over Olympiacos, Haifa drops thriller",
+     "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-791262",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-leg2",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2024-03-14",
+    "venue": "TSC Arena",
+    "city": "Bačka Topola",
+    "country": "Serbia",
+    "attendance": 370,
+    "behind_closed_doors": "Played behind closed doors in Bačka Topola, Serbia due to the Israel-Hamas conflict (11v11)",
+    "referee": "Maurizio Mariani",
+    "maccabi_home_ground_reason": "Maccabi Tel Aviv could not stage home games in Israel because of the war",
+    "goals": [
+     {
+      "minute": 10,
+      "scorer": "Daniel Podence",
+      "night": "0–1",
+      "aggregate": "4–2"
+     },
+     {
+      "minute": 36,
+      "scorer": "Kostas Fortounis",
+      "night": "0–2",
+      "aggregate": "4–3"
+     },
+     {
+      "minute": "45+3",
+      "scorer": "Ayoub El Kaabi",
+      "how": "header",
+      "night": "0–3",
+      "aggregate": "4–4"
+     },
+     {
+      "minute": 57,
+      "scorer": "Eran Zahavi",
+      "how": "penalty",
+      "night": "1–3",
+      "aggregate": "5–4"
+     },
+     {
+      "minute": 65,
+      "scorer": "Ayoub El Kaabi",
+      "night": "1–4",
+      "aggregate": "5–5"
+     },
+     {
+      "minute": 93,
+      "scorer": "Stevan Jovetić",
+      "night": "1–5",
+      "aggregate": "5–6"
+     },
+     {
+      "minute": 103,
+      "scorer": "Youssef El-Arabi",
+      "night": "1–6",
+      "aggregate": "5–7"
+     }
+    ],
+    "after_90": "1–4",
+    "aggregate_after_90": "5–5",
+    "aggregate": "7–5",
+    "jovetic_first_european_goal_in_years": 14,
+    "zahavi_goals_in_tie": 3,
+    "first_leg_deficit": 3,
+    "el_arabi_on": 88,
+    "el_arabi_replaced": "Ayoub El Kaabi",
+    "maccabi_form": "won five of their last five outings",
+    "maccabi_aim": "a first European quarter-final in the club's history",
+    "maccabi_fans": "around 400 Maccabi fans, by the club's own report"
+   },
+   "sources": [
+    {
+     "title": "Maccabi Tel-Aviv 1-6 Olympiakos — Football Web Pages",
+     "url": "https://www.footballwebpages.co.uk/maccabi-tel-aviv/match/2023-2024/europa-conference/maccabi-tel-aviv/olympiakos/485922",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Maccabi Tel Aviv v Olympiakos, 14 March 2024 — 11v11",
+     "url": "https://www.11v11.com/matches/maccabi-tel-aviv-v-olympiakos-14-march-2024-383708/",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Maccabi Tel Aviv FC — match report, 14 March 2024",
+     "url": "https://www.maccabi-tlv.co.il/?p=300923",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "FourFourTwo — Olympiacos' Conference League win",
+     "url": "https://fourfourtwo.com/features/europa-conference-league-olympiacos-west-ham",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Sky Sport — Maccabi Tel Aviv - Olympiakos Piräus",
+     "url": "https://sport.sky.de/fussball/macc-tel-aviv-vs-piraeus/503852",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Sky Sport — match events (substitutions)",
+     "url": "https://sport.sky.de/fussball/macc-tel-aviv-vs-piraeus/503852",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-birthday",
+   "type": "person",
+   "fact": {
+    "kind": "person",
+    "name": "José Luis Mendilibar",
+    "born": "1961-03-14",
+    "age_that_night": 63
+   },
+   "sources": [
+    {
+     "title": "José Luis Mendilibar — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Mendilibar",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-zahavi",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Eran Zahavi",
+    "role": "Maccabi Tel Aviv striker, after the second leg",
+    "date": "2024-03-14",
+    "text": "This is a huge disappointment for us, we arrived with a big advantage but we didn't perform. They did what they pleased on the pitch and we didn't show up. You can't concede six goals in Europe and continue on in this competition. Instead of making history, unfortunately we went the opposite direction.",
+    "outlet": "The Jerusalem Post"
+   },
+   "sources": [
+    {
+     "title": "The Jerusalem Post — Mac TA, Mac Haifa crash out of Europe",
+     "url": "https://stgmobile.jpost.com/israel-news/sports/article-792442",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-mendilibar-2",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "José Luis Mendilibar",
+    "role": "Olympiacos coach, after the second leg",
+    "date": "2024-03-14",
+    "text": "We really thought we could play a good game and get a good result. But what we didn't talk about was qualifying. In our mind we wanted to put on a good showing and achieve a good result. We started with confidence and when the second and third goals came we were filled with confidence.",
+    "outlet": "The Jerusalem Post"
+   },
+   "sources": [
+    {
+     "title": "The Jerusalem Post — Mac TA, Mac Haifa crash out of Europe",
+     "url": "https://stgmobile.jpost.com/israel-news/sports/article-792442",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-keane-2",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Robbie Keane",
+    "role": "Maccabi Tel Aviv coach, after the second leg",
+    "date": "2024-03-14",
+    "text": "We did not expect such a defeat – congratulations to Olympiacos.",
+    "outlet": "The Jerusalem Post"
+   },
+   "sources": [
+    {
+     "title": "The Jerusalem Post — Mac TA, Mac Haifa crash out of Europe",
+     "url": "https://stgmobile.jpost.com/israel-news/sports/article-792442",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-rte",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "RTÉ",
+    "date": "2024-03-15",
+    "headline": "Robbie Keane's Maccabi Tel Aviv out of Europa Conference League after squandering three-goal lead against Olympiacos"
+   },
+   "sources": [
+    {
+     "title": "RTÉ — Robbie Keane's Maccabi Tel Aviv out of Europa Conference League",
+     "url": "https://www.rte.ie/sport/soccer/2024/0315/1438038-conference-league-capitulation-for-keanes-maccabi",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-protothema",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "Proto Thema",
+    "date": "2024-03-15",
+    "headline": "Conference League: Maccabi Tel Aviv-Olympiacos 1-6 & PAOK-Dinamo Zagreb 5-1! (videos)",
+    "claim_in_article": "the first team in the European cup history to overturn a three-goal deficit from a home defeat"
+   },
+   "sources": [
+    {
+     "title": "Proto Thema — Conference League: Maccabi Tel Aviv-Olympiacos 1-6",
+     "url": "https://en.protothema.gr/conference-league-maccabi-tel-aviv-olympiacos-1-6-paok-dinamo-zagreb-5-1-videos/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-mirror",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "Daily Mirror",
+    "date": "2024-05-09",
+    "headline": "GREAT EURO COMEBACKS",
+    "line": "Only three times in UEFA's current trio of competitions has a team lost a first leg at home by two or more goals – and has then gone on to progress",
+    "times": 3,
+    "margin_goals": 2
+   },
+   "sources": [
+    {
+     "title": "Daily Mirror, 9 May 2024 — Great Euro comebacks (PressReader)",
+     "url": "https://www.pressreader.com/uk/daily-mirror/20240509/283300347637208",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-homecoming",
+   "type": "history",
+   "fact": {
+    "kind": "supporters",
+    "date": "2024-03-15",
+    "event": "Scenes of madness when the team returned to Athens (EFE)"
+   },
+   "sources": [
+    {
+     "title": "Noticias de Navarra / EFE — El espectacular recibimiento al Olympiacos de Mendilibar",
+     "url": "https://www.noticiasdenavarra.com/futbol/2024/03/15/espectacular-recibimiento-olympiacos-mendilibar-asombrosa-8003518.html",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-mendilibar-3",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "José Luis Mendilibar",
+    "role": "Olympiacos coach, before the final, May 2024",
+    "text": "For sure that game showed everyone what we are capable of.",
+    "outlet": "Flashscore / Reuters"
+   },
+   "sources": [
+    {
+     "title": "Flashscore — Mendilibar says Olympiacos will treat Conference final like every other game",
+     "url": "https://www.flashscore.com/news/soccer-europa-conference-league-manager-mendilibar-says-olympiacos-will-treat-conference-final-like-every-other-game/AB0LpbOE",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-final-trophy",
+   "type": "honour",
+   "fact": {
+    "kind": "honour",
+    "date": "2024-05-29",
+    "city": "Athens",
+    "competition": "UEFA Europa Conference League",
+    "result": "Olympiacos 1–0 Fiorentina (aet)",
+    "significance": "the first European trophy won by a Greek club",
+    "weeks_after_backa_topola": 11
+   },
+   "sources": [
+    {
+     "title": "2024 UEFA Europa Conference League final — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  }
+ ]
+}

@@ -485,5 +485,55 @@ class ClubPacks(unittest.TestCase):
         self.assertEqual(place_of(f['a1'], 'Olympiacos')[0], 'Tel Aviv')
 
 
+
+class QuotesAndPress(unittest.TestCase):
+    """A quote is the speaker's own words and a cutting is the headline as it ran — checked against the claim, not typed."""
+
+    def ledger(self):
+        return {'club_id': 'x', 'season': '2023/24', 'summary': {}, 'claims': [
+            {'id': 'q', 'type': 'quote', 'fact': {'kind': 'quote', 'speaker': 'Robbie Keane', 'text': "All in all, we are just at halftime."},
+             'sources': [{'url': 'https://example.org/q'}]},
+            {'id': 'p', 'type': 'press', 'fact': {'kind': 'press', 'outlet': 'RTÉ', 'headline': 'Out after squandering three-goal lead'},
+             'sources': [{'url': 'https://example.org/p'}]}]}
+
+    def errs(self, v):
+        from studio import script as S
+        s = {'chapters': [{'title': 'a', 'beats': [{'narration': 'He said it.', 'claim_ids': [v['claim']], 'visual': v}]}]}
+        return [e for e in S.validate_script(s, self.ledger(), 0.1) if e.startswith('Chapter')]
+
+    def test_a_quote_must_be_word_for_word(self):
+        self.assertEqual(self.errs({'type': 'quote', 'claim': 'q', 'text': 'all in all, we are just at halftime', 'who': 'Robbie Keane'}), [])
+        self.assertTrue(any('word for word' in e for e in self.errs({'type': 'quote', 'claim': 'q', 'text': 'We are winning.', 'who': 'Robbie Keane'})))
+        self.assertTrue(any('speaker' in e for e in self.errs({'type': 'quote', 'claim': 'q', 'text': 'we are just at halftime', 'who': 'Keane'})))
+
+    def test_a_cutting_prints_the_headline_as_it_ran(self):
+        self.assertEqual(self.errs({'type': 'press', 'claim': 'p', 'outlet': 'RTÉ', 'headline': 'Out after squandering three-goal lead'}), [])
+        self.assertTrue(any('exactly' in e for e in self.errs({'type': 'press', 'claim': 'p', 'outlet': 'RTÉ', 'headline': 'Out!'})))
+
+
+class ArtDrops(unittest.TestCase):
+    def test_masked_text_is_unreadable_and_families_are_measured(self):
+        import numpy as np
+        from PIL import Image, ImageDraw
+        from studio import kit_ingest
+        im = Image.new('RGB', (400, 200), (240, 230, 210))
+        d = ImageDraw.Draw(im)
+        for y in range(20, 90, 12):
+            d.text((20, y), 'AMKA 20091303170 NAME', fill=(0, 0, 0))
+        im.paste((20, 160, 40), (0, 120, 400, 200))  # a green strip: a pitch
+        out = kit_ingest.blur_out(im, [[10, 10, 300, 100]])
+        before = np.asarray(im.crop((10, 10, 300, 100)).convert('L'), 'float32').std()
+        after = np.asarray(out.crop((10, 10, 300, 100)).convert('L'), 'float32').std()
+        self.assertLess(after, before / 4)
+        self.assertIn('green', kit_ingest.families(im))
+
+
+class ClubSpellings(unittest.TestCase):
+    def test_a_pack_name_and_a_season_label_are_read_as_the_club_and_the_competition(self):
+        from studio import research
+        self.assertIn('Olympiakos Piraeus', research._club_names('olympiacos'))
+        self.assertEqual(research._uefa_comp('Greek Super League 2023/24', '2023/24'), ('Greek Super League', None))
+
+
 if __name__ == '__main__':
     unittest.main()

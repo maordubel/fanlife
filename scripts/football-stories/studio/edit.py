@@ -28,9 +28,9 @@ from .package import sources_list
 from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, cut_path, cut_index, piece_meta, recolor, scrub, supporter_scene
 from .sprites import SpriteFactory, key_of
 
-LEAD = 0.35       # picture before the voice
-TAIL = 0.5        # breath after the voice
-CHAPTER_LEAD = 1.3
+LEAD = 0.22       # picture before the voice: cut on the word, not before it
+TAIL = 0.32       # breath after the voice
+CHAPTER_LEAD = 0.95
 CW, CH = CANVAS
 
 
@@ -348,7 +348,7 @@ class Editor:
             lx, ly = last
             z1 = 1.18 if len(pins) > 1 else 1.3
             cam = (lambda lx=lx, ly=ly, z1=z1: (lambda t: (1.0 + (z1 - 1) * ease_in_out(t / dur), CW / 2 + (lx - CW / 2) * 0.35 * ease_in_out(t / dur), CH / 2 + (ly - CH / 2) * 0.35 * ease_in_out(t / dur))))()
-        elif kind in ('matchday', 'score', 'ticket', 'fact', 'stat', 'table', 'timeline', 'turning'):
+        elif kind in ('matchday', 'score', 'ticket', 'fact', 'stat', 'table', 'timeline', 'turning', 'quote', 'press'):
             backdrop = 'paper'
             if kind == 'turning':
                 backdrop = v.get('backdrop') or 'terrace-empty'
@@ -359,7 +359,8 @@ class Editor:
             world = self.backdrop(backdrop, seed, dim=0.42 if backdrop.startswith(('beat:', 'clip:')) else 0.0)
             card = self.card(sp, k, v, f, claim, s)
             target = {'matchday': (1560, 760), 'score': (1560, 760), 'ticket': (1300, 620), 'fact': (1300, 720), 'stat': (1000, 820),
-                      'table': (1480, 800), 'timeline': (1800, 620), 'turning': (1500, 540)}[kind]
+                      'table': (1480, 800), 'timeline': (1800, 620), 'turning': (1500, 540), 'quote': (1380, 820),
+                      'press': (1420, 840)}[kind]
             card = fit(card, *target)
             if kind not in ('timeline', 'table', 'turning'):
                 card = taped(card, seed)
@@ -379,6 +380,15 @@ class Editor:
             elif kind == 'timeline':
                 layers.append(Layer(card, reveal_lr(W / 2, H * 0.46, 0.3, dur=min(2.4, dur * 0.4)), settle=1e9))
                 cues.append((0.3, 'paper'))
+            elif kind == 'press':  # a cutting dropped on the desk, then a slow read across it
+                layers.append(Layer(card, slam(cx, cy, 0.2, s0=1.35, rot=-3.5, dur=0.3), settle=1e9))
+                cues += [(0.2, 'paper'), (0.3, 'stamp')]
+                shake.append((0.3, 5))
+                cam = cam_push(1.0, 1.08, 30, -10, dur)
+            elif kind == 'quote':
+                layers.append(Layer(card, slide_in(cx, cy, 0.2, frm=(0, 260), rot0=2, rot1=-1, dur=0.55), settle=1e9))
+                cues.append((0.2, 'paper'))
+                cam = cam_push(1.0, 1.06, 0, 0, dur)
             elif kind == 'stat':
                 layers.append(Layer(card, pop(cx, cy, 0.3, dur=0.45, rot=-2), settle=1e9))
                 cues.append((0.3, 'stamp'))
@@ -415,6 +425,10 @@ class Editor:
                 cap = fit(_img(sp.caption(k, v['caption'])), 1300, 130)
                 layers.append(Layer(cap, slide_in(cap.width / 2 + 90, 130, 0.7, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
                 cues.append((0.7, 'paper'))
+            if s.get('mood') in ('joy', 'triumph'):  # a goal or a night like this one is heard from the stands
+                cues.append((0.35, 'crowd-goal'))
+            elif s.get('mood') == 'tense':
+                cues.append((0.35, 'crowd-after'))
         elif kind == 'follow':
             world, layers, cam = self.follow_shot(sp, k, v, s, dur, seed, cues, shake)
         elif kind == 'end':
@@ -424,6 +438,10 @@ class Editor:
         else:
             raise StageError('UNKNOWN_VISUAL', kind)
 
+        drawn = v.get('art') if kind == 'illustration' else v.get('backdrop')
+        if isinstance(drawn, str) and piece_meta(drawn).get('illustrated'):
+            tag = fit(_img(sp.label(key_of('illustration-tag'), 'ILLUSTRATION', 'ink', 26)), 360, 64)
+            layers.append(Layer(tag, lambda t, im=tag: Pose(W - im.width / 2 - 40, im.height / 2 + 46, 1.0, 0, 1.0), settle=1e9))
         layers += self.props(v, s, kind, dur, cues)
         behind, front = self.figures(v, s, kind, dur, cues, f)
         # A person stands BEHIND the card (paper laid on paper) and a crowd row rises in FRONT, along the bottom edge.
@@ -840,6 +858,10 @@ class Editor:
             return _img(sp.score(k, f, extra))
         if kind == 'ticket':
             return _img(sp.ticket(k, f))
+        if kind == 'quote':
+            return _img(sp.quote(k, v['text'], v['who'], v.get('role'), (claim or {}).get('fact', {}).get('outlet') or src))
+        if kind == 'press':
+            return _img(sp.press(k, v['outlet'], v.get('date') or (claim or {}).get('fact', {}).get('date'), v['headline'], v.get('standfirst')))
         if kind == 'fact':
             return _img(sp.fact(k, v.get('heading') or 'The record', v.get('text') or '', src))
         if kind == 'stat':

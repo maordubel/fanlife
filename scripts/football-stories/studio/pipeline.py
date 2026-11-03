@@ -56,11 +56,14 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     lp = job_dir / 'ledger.json'
     if not lp.exists():
         extra = []
-        d = STUDIO / 'dossiers' / f'{brief["club_id"]}-{brief["season"].replace("/", "-")}.json'
+        d = Path(brief['dossier']) if brief.get('dossier') else STUDIO / 'dossiers' / f'{brief["club_id"]}-{brief["season"].replace("/", "-")}.json'
+        art_sets: list[str] = []
         if d.exists():
-            extra = read_json(d)['claims']
+            dos = read_json(d)
+            extra, art_sets = dos['claims'], dos.get('art_sets') or []
             log(f'Research: {len(extra)} dossier claims from {d.name}')
         ledger = research.build_ledger(brief['club_id'], brief['season'], extra)
+        ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     ledger = read_json(lp)
@@ -73,11 +76,11 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             s = read_json(script_file)
             sc.ensure_valid(s, ledger, float(brief['duration']))
             s['_writer'] = [{'source': f'supplied file {script_file.name}'}]
-            s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}")
+            s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
             sc.ensure_valid(s, ledger, float(brief['duration']))
         else:
             s = writer.write_script(brief, {**ledger, 'bans': palette.bans}, cache, log)
-        s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}")
+        s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
         write_json(sp_, s)
         log(f'Script: "{sc.selected_title(s)}" · {sum(len(b["narration"].split()) for *_, b in sc.all_beats(s))} words')
     s = read_json(sp_)
@@ -168,6 +171,19 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
     ]
     for f in sorted((job_dir / 'art').glob('*.json')) if (job_dir / 'art').exists() else []:
         rows.append(read_json(f))
+    # every owner art set the script draws on beyond the common kit, with what it is
+    from .paper import beat_index
+    keys = {v.get(k) for ch in script.get('chapters') or [] for b in ch.get('beats') or [] for v in [b.get('visual') or {}]
+            for k in ('art', 'backdrop') if isinstance(v.get(k), str)}
+    for set_id in sorted({k[5:].split('/')[0] for k in keys if k and k.startswith('beat:')} - {'common'}):
+        pieces = [p for p in beat_index(set_id) if p['key'] in keys]
+        if pieces:
+            drawn = [p['key'] for p in pieces if p.get('illustrated')]
+            rows.append({'id': f'art-{set_id}', 'kind': 'illustration', 'owner': 'FanLife (owner-supplied, AI-generated)', 'origin': 'ai-generated',
+                         'licence': 'owned', 'photoreal': bool(drawn), 'pieces': len(pieces), 'illustrated': drawn,
+                         'note': ('Some pictures are AI illustrations drawn to look like photographs or documents, based on match reports; '
+                                  'marked ILLUSTRATION on screen. Personal details and newspaper marks are blurred.' if drawn else
+                                  'Owner illustrations made for this film.')})
     return rows
 
 
@@ -184,10 +200,12 @@ def main() -> int:
     ap.add_argument('--topic', default='')
     ap.add_argument('--palette', type=Path, help='JSON from scripts/football-stories/palettes.ts')
     ap.add_argument('--script', type=Path)
+    ap.add_argument('--dossier', type=Path, help='a film\'s own dossier when a season has more than one film')
     a = ap.parse_args()
     pals = read_json(a.palette) if a.palette else {}
     pal = Palette.from_json(pals.get(a.club) or {'club_id': a.club, 'club_name': a.club, 'primary': '#B02D10', 'bans': []})
-    brief = {'club_id': a.club, 'season': a.season, 'duration': a.minutes, 'topic': a.topic}
+    brief = {'club_id': a.club, 'season': a.season, 'duration': a.minutes, 'topic': a.topic,
+             **({'dossier': str(a.dossier)} if a.dossier else {})}
     try:
         r = run(a.job, brief, pal, script_file=a.script)
     except StageError as e:

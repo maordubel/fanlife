@@ -201,7 +201,7 @@ def _uefa_comp(comp: str | None, season: str) -> tuple[str | None, str | None]:
     if not comp:
         return None, None
     stage = None
-    c = comp.strip()
+    c = re.sub(r'\s+\d{4}/\d{2}$', '', comp.strip())  # 'Greek Super League 2023/24' is the competition, not the season
     if c.lower().endswith(' final'):
         c, stage = c[:-6].strip(), 'Final'
     m = STAGE_IN_NAME.match(c)
@@ -282,6 +282,18 @@ def _same_match(rows: list[dict]) -> list[dict]:
     return out
 
 
+def _club_names(club_id: str) -> list[str]:
+    """The club's own other spellings: the pack's ingest names and the studio's list (studio/dossiers/club-names.json)."""
+    out: list[str] = []
+    ing = ROOT / 'club-packs' / club_id / 'ingest.json'
+    if ing.exists():
+        out += [n for n in (json.loads(ing.read_text(encoding='utf-8')).get('names') or []) if isinstance(n, str)]
+    extra = Path(__file__).parent / 'dossiers' / 'club-names.json'
+    if extra.exists():
+        out += [n for n in (json.loads(extra.read_text(encoding='utf-8')).get(club_id) or []) if isinstance(n, str)]
+    return out
+
+
 def compiled_ledger(club_id: str, season: str) -> dict:
     """FAN LIFE club packs (content/compiled/<club>.json): every APPROVED, sourced match of the season."""
     path = COMPILED / f'{club_id}.json'
@@ -293,6 +305,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
     ident = data.get('identity') or {}
     name = ident.get('name') or club_id
     srcs = {s['id']: s for s in (data.get('sources') or []) if isinstance(s, dict) and s.get('id')}
+    own = {name, *(_club_names(club_id))}
     claims, held = [], []
     rows = []
     for m in data.get('matches') or []:
@@ -315,6 +328,8 @@ def compiled_ledger(club_id: str, season: str) -> dict:
             ('not approved', m.get('status') != 'approved'),
             ('confidence below 2', (m.get('confidence') or 0) < 2),
         ) if bad]
+        if sides:  # another spelling of the club itself is the club, printed under its own name
+            sides = tuple(name if x in own else x for x in sides)
         if sides and name not in sides:
             reasons.append(f'neither side is {name}')
         if reasons:
