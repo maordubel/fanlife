@@ -1,0 +1,761 @@
+{
+ "title_candidates": [
+  {
+   "title": "Nil–Three at Half-Time. Then This. | Zrinjski 4–3 AZ Alkmaar",
+   "angle": "discovery"
+  },
+  {
+   "title": "Zrinjski 4–3 AZ Alkmaar (2023): The Comeback Under the White Hill",
+   "angle": "search"
+  },
+  {
+   "title": "The Night Bosnia Arrived in Europe | Zrinjski v AZ Documentary",
+   "angle": "discovery"
+  },
+  {
+   "title": "0–3 Down, Their First Ever Group Game. Then Kožulj Came On.",
+   "angle": "discovery"
+  },
+  {
+   "title": "Zrinjski Mostar v AZ: Conference League 2023 Full Story",
+   "angle": "search"
+  },
+  {
+   "title": "\"There Are No Words for It\": AZ’s Night in Mostar",
+   "angle": "discovery"
+  },
+  {
+   "title": "Kožulj, Ćorluka, Hrvanović: Zrinjski’s Historic Comeback v AZ",
+   "angle": "search"
+  },
+  {
+   "title": "One in Two Hundred: The 4–3 Nobody Saw Coming",
+   "angle": "discovery"
+  },
+  {
+   "title": "The First Dutch Club Ever to Lose After Leading 3–0 in Europe",
+   "angle": "discovery"
+  },
+  {
+   "title": "Born to Be Zrinjski: Mostar’s Greatest European Night",
+   "angle": "discovery"
+  }
+ ],
+ "selected": 0,
+ "hook": "Half-time in Mostar.",
+ "chapters": [
+  {
+   "title": "Half-time",
+   "beats": [
+    {
+     "narration": "Half-time in Mostar. Zrinjski, nil. AZ Alkmaar … three.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar",
+      "w-match"
+     ],
+     "visual": {
+      "type": "open",
+      "backdrop": "clip:zrinjski-az-2023/floodlit-stand-roars",
+      "headline": "Nil–Three at Half-Time",
+      "kicker": "Zrinjski v AZ Alkmaar · 21 September 2023"
+     },
+     "mood": "tense",
+     "delivery": "hush"
+    },
+    {
+     "narration": "Forty-five minutes later, it was the greatest night a club from Bosnia and Herzegovina had ever had in Europe.",
+     "claim_ids": [
+      "w-history",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/night-stadium-collage",
+      "caption": "Mostar, 21 September 2023"
+     },
+     "mood": "triumph",
+     "delivery": "punch"
+    },
+    {
+     "narration": "Luka Modrić played for Zrinjski as a teenager. He once put it like this.",
+     "claim_ids": [
+      "q-modric"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-modric",
+      "text": "If you can play in the Bosnian league, you can play anywhere.",
+      "who": "Luka Modrić",
+      "role": "who played for Zrinjski as a teenager · translated from Croatian",
+      "backdrop": "beat:papercut-library/paper-cut-stadium-illustration-5462c506"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "This is the story of the night Zrinjski proved it.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "Earlier that day",
+      "subtitle": "Mostar · 21 September 2023",
+      "backdrop": "beat:zrinjski-az-2023/fan-shop-afternoon"
+     },
+     "mood": "build",
+     "delivery": "hush"
+    }
+   ]
+  },
+  {
+   "title": "Under the White Hill",
+   "beats": [
+    {
+     "narration": "No club from Bosnia and Herzegovina had ever played a group-stage match in Europe. Not one.",
+     "claim_ids": [
+      "w-history"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 1,
+      "title": "Under the White Hill",
+      "backdrop": "beat:zrinjski-az-2023/popcorn-street-before"
+     },
+     "mood": "minor",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Zrinjski got past Breiðablik, lost to LASK, and dropped into the Conference League. Group E. Aston Villa. Legia Warsaw. And AZ.",
+     "claim_ids": [
+      "w-history"
+     ],
+     "visual": {
+      "type": "ticket",
+      "claim": "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar",
+      "backdrop": "beat:zrinjski-az-2023/beer-stalls-crowd"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "That afternoon, the storm clouds sat on the mountains. The stalls were open hours before kick-off.",
+     "claim_ids": [
+      "w-owner"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:zrinjski-az-2023/fan-zone-storm-light",
+      "caption": "From the stand · a supporter's phone"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "The team bus rolled in behind the main stand.",
+     "claim_ids": [
+      "w-owner"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:zrinjski-az-2023/team-bus-arrives",
+      "caption": "From the stand · a supporter's phone"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "On the merchandise table, one shirt said it all.",
+     "claim_ids": [
+      "w-owner"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/born-to-be-zrinjski-shirt",
+      "caption": "Born to be Zrinjski"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "They call the ground Pod Bijelim Brijegom. The Stadium under the White Hill.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/stand-view-kickoff",
+      "caption": "From the stand · a supporter's phone"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Five thousand, one hundred inside. Most of them had waited their whole lives for this.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "5,100",
+      "label": "inside the White Hill",
+      "claim": "w-match",
+      "backdrop": "beat:zrinjski-az-2023/floodlit-terrace-half-time"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "And across the halfway line … AZ Alkmaar. Semi-finalists in this competition the season before.",
+     "claim_ids": [
+      "w-az"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:zrinjski-az-2023/teams-line-up",
+      "caption": "The teams walk out"
+     },
+     "mood": "tense",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Before kick-off, one model gave Zrinjski a thirty-four per cent chance of winning. The exact score that was coming? One in two hundred.",
+     "claim_ids": [
+      "w-odds"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "1 in 200",
+      "label": "the odds of a 4–3, before kick-off",
+      "claim": "w-odds",
+      "backdrop": "beat:papercut-library/paper-cut-stadium-clock-illustra-7d9ac5cc"
+     },
+     "mood": "tense",
+     "delivery": "tense"
+    }
+   ]
+  },
+  {
+   "title": "Forty-five minutes",
+   "beats": [
+    {
+     "narration": "Kick-off, under the floodlights.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 2,
+      "title": "Forty-five minutes",
+      "backdrop": "clip:zrinjski-az-2023/lineup-sheet-and-pitch"
+     },
+     "mood": "tense",
+     "delivery": "hush"
+    },
+    {
+     "narration": "Ten minutes. Myron van Brederode. Nil–one.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "10'",
+      "label": "VAN BREDERODE · 0–1",
+      "claim": "w-match",
+      "backdrop": "beat:papercut-library/goalkeeper-diving-to-save-goal-f432348d"
+     },
+     "mood": "tense",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Thirty-two. Sven Mijnans. Nil–two.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "32'",
+      "label": "MIJNANS · 0–2",
+      "claim": "w-match",
+      "backdrop": "beat:common/ball-in-net-kr"
+     },
+     "mood": "tense",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Forty-four. Dani de Wit … Nil–three.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "44'",
+      "label": "DE WIT · 0–3",
+      "claim": "w-match",
+      "backdrop": "beat:common/despair-kneeling-kr"
+     },
+     "mood": "sad",
+     "delivery": "hush"
+    },
+    {
+     "narration": "Half-time. Nil–three. Down at the food stalls, under the floodlights, people stood and ate and said very little.",
+     "claim_ids": [
+      "w-match",
+      "w-owner"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/half-time-food-crowd",
+      "caption": "Half-time · a supporter's phone"
+     },
+     "mood": "sad",
+     "delivery": "hush"
+    },
+    {
+     "narration": "Their first ever night in a European group, and it was over before it began. Everybody knew it.",
+     "claim_ids": [
+      "w-history",
+      "w-match"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/dressing-room-silence-kr",
+      "caption": "Half-time"
+     },
+     "mood": "sad",
+     "delivery": "hush"
+    },
+    {
+     "narration": "Everybody … except one man on the bench.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "The second half",
+      "subtitle": "46 minutes · one change",
+      "backdrop": "beat:papercut-library/manager-facing-tactics-board-5603ad21"
+     },
+     "mood": "build",
+     "delivery": "punch"
+    }
+   ]
+  },
+  {
+   "title": "The second half",
+   "beats": [
+    {
+     "narration": "Krunoslav Rendulić made one change. Andrija Balić off. Zvonimir Kožulj on.",
+     "claim_ids": [
+      "w-match",
+      "w-kozulj"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 3,
+      "title": "The second half",
+      "backdrop": "beat:common/dugout-substitutes"
+     },
+     "mood": "build",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Two minutes later, a free kick. Thirty metres out.",
+     "claim_ids": [
+      "w-match",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/free-kick-wall",
+      "caption": "48 minutes"
+     },
+     "mood": "build",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Kožulj … Over the wall. In.",
+     "claim_ids": [
+      "w-match",
+      "w-kozulj",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "48'",
+      "label": "KOŽULJ · 1–3",
+      "claim": "w-match",
+      "backdrop": "beat:zrinjski-az-2023/kozulj-cutout"
+     },
+     "mood": "joy",
+     "delivery": "excited"
+    },
+    {
+     "narration": "The first goal a Bosnian club had ever scored in a European group stage. And something in the stand changed.",
+     "claim_ids": [
+      "w-kozulj"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:zrinjski-az-2023/floodlit-stand-roars",
+      "caption": "From the stand · a supporter's phone"
+     },
+     "mood": "build",
+     "delivery": "punch"
+    },
+    {
+     "narration": "Sixty-eight. Josip Ćorluka. Two–three.",
+     "claim_ids": [
+      "w-match",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "68'",
+      "label": "ĆORLUKA · 2–3",
+      "claim": "w-match",
+      "backdrop": "beat:papercut-library/paper-cut-illustration-of-footba-68d9af4c"
+     },
+     "mood": "joy",
+     "delivery": "excited"
+    },
+    {
+     "narration": "Seventy-one. Aldin Hrvanović, from outside the box. Three–three!",
+     "claim_ids": [
+      "w-match",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "71'",
+      "label": "HRVANOVIĆ · 3–3",
+      "claim": "w-match",
+      "backdrop": "beat:common/header-goalmouth-kr"
+     },
+     "mood": "joy",
+     "delivery": "excited"
+    },
+    {
+     "narration": "Three goals in twenty-three minutes. The White Hill was shaking.",
+     "claim_ids": [
+      "w-match"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/floodlights-through-the-trees",
+      "caption": "The second half · a supporter's phone"
+     },
+     "mood": "triumph",
+     "delivery": "excited"
+    },
+    {
+     "narration": "Eighty-one. Matija Malekinušić … the post. The ball falls to Zvonimir Kožulj.",
+     "claim_ids": [
+      "w-match",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/touchline-celebration",
+      "caption": "81 minutes"
+     },
+     "mood": "tense",
+     "delivery": "tense"
+    },
+    {
+     "narration": "Four–three!",
+     "claim_ids": [
+      "w-match",
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/kozulj-arms-wide",
+      "caption": "Zvonimir Kožulj · 81 minutes"
+     },
+     "mood": "triumph",
+     "delivery": "excited"
+    },
+    {
+     "narration": "Nil–three at half-time. Four–three at the end.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar",
+      "backdrop": "clip:zrinjski-az-2023/four-three-scoreboard"
+     },
+     "mood": "triumph",
+     "delivery": "punch"
+    },
+    {
+     "narration": "And when the whistle went, Mostar sang.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar",
+      "w-owner"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:zrinjski-az-2023/full-time-terrace",
+      "caption": "Full time · a supporter's phone"
+     },
+     "mood": "anthem",
+     "delivery": "punch"
+    }
+   ]
+  },
+  {
+   "title": "The other dressing room",
+   "beats": [
+    {
+     "narration": "In the other dressing room, there was nothing to sing.",
+     "claim_ids": [
+      "q-jansen-1"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 4,
+      "title": "The other dressing room",
+      "backdrop": "beat:common/dressing-room-silence-kr"
+     },
+     "mood": "sad",
+     "delivery": "hush"
+    },
+    {
+     "narration": "The AZ coach, Pascal Jansen, that night.",
+     "claim_ids": [
+      "q-jansen-1"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-jansen-1",
+      "text": "How shameful this is? There are no words for it. Of course it was dead silent in our dressing room.",
+      "who": "Pascal Jansen",
+      "role": "AZ coach, to ESPN that night · translated from Dutch",
+      "backdrop": "beat:common/dressing-room-silence-b-kr"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "AZ became the first Dutch club ever to lose a European match after leading by three goals.",
+     "claim_ids": [
+      "w-az"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-nos",
+      "outlet": "NOS",
+      "headline": "Dramatische Europese avond voor AZ: verlies bij Zrinjski na 3-0 voorsprong",
+      "date": "2023-09-21",
+      "standfirst": "Dramatic European night for AZ: defeat at Zrinjski after a 3-0 lead"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "In Belgium, they called it a rollercoaster nobody had ever seen.",
+     "claim_ids": [
+      "p-sporza"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-sporza",
+      "outlet": "Sporza",
+      "headline": "Ongeziene achtbaan: AZ geeft 0-3-voorsprong weg en verliest met 4-3 in Bosnië",
+      "date": "2023-09-21",
+      "standfirst": "An unseen rollercoaster: AZ throw away a 0-3 lead and lose 4-3 in Bosnia"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "The Dutch football magazine did not spare them.",
+     "claim_ids": [
+      "q-vi"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-vi",
+      "text": "A gigantic disappointment. AZ makes a fool of itself on a historic evening.",
+      "who": "Voetbal International",
+      "role": "Dutch football magazine · translated from Dutch",
+      "backdrop": "beat:papercut-library/paper-cut-illustration-of-footba-f463974e"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Two months later, Jansen was asked if he had slept after Mostar.",
+     "claim_ids": [
+      "q-jansen-2"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-jansen-2",
+      "text": "Above all, the night in Bosnia itself, I didn't sleep. It is still hard to grasp what happened there.",
+      "who": "Pascal Jansen",
+      "role": "AZ coach, two months later · translated from Dutch",
+      "backdrop": "beat:papercut-library/paper-cut-illustration-of-footba-d7ac62c0"
+     },
+     "mood": "sad",
+     "delivery": "hush"
+    }
+   ]
+  },
+  {
+   "title": "First in the group",
+   "beats": [
+    {
+     "narration": "In Mostar, nobody was sleeping either.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 5,
+      "title": "First in the group",
+      "backdrop": "beat:zrinjski-az-2023/bijeli-brijeg-collage"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Rendulić, on the phone that night.",
+     "claim_ids": [
+      "q-rendulic"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-rendulic",
+      "text": "Imagine this: after the first round Zrinjski are first, and Aston Villa are last. That is the strongest story. Switch everything off, stop the group stage, let's go straight to the knockout phase.",
+      "who": "Krunoslav Rendulić",
+      "role": "Zrinjski coach · translated from Croatian",
+      "backdrop": "beat:zrinjski-az-2023/night-stadium-collage"
+     },
+     "mood": "joy",
+     "delivery": "excited"
+    },
+    {
+     "narration": "Zvonimir Kožulj, on at half-time, was named the best player of the round.",
+     "claim_ids": [
+      "w-kozulj"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/kozulj-paper-cutout",
+      "caption": "Zvonimir Kožulj"
+     },
+     "mood": "triumph",
+     "delivery": "punch"
+    },
+    {
+     "narration": "And Bosnia’s own federation wrote it down for history.",
+     "claim_ids": [
+      "p-nfsbih"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-nfsbih",
+      "outlet": "NFSBiH",
+      "headline": "Zrinjski debuted in the group stage of the Conference League and celebrated after a great turnaround",
+      "date": "2023-09-21"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "It did not last. At Villa Park they lost to a goal in stoppage time. Zrinjski finished fourth.",
+     "claim_ids": [
+      "w-after"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:papercut-library/scarf-on-stadium-step-ff3300a4",
+      "caption": "Group E"
+     },
+     "mood": "minor",
+     "delivery": "hush"
+    },
+    {
+     "narration": "But nobody in Mostar remembers the table.",
+     "claim_ids": [
+      "w-after"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:zrinjski-az-2023/full-time-terrace",
+      "caption": "Mostar"
+     },
+     "mood": "build",
+     "delivery": "hush"
+    },
+    {
+     "narration": "They remember half-time. Nil–three. And the forty-five minutes after it.",
+     "claim_ids": [
+      "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:zrinjski-az-2023/kozulj-arms-wide",
+      "caption": "Mostar · 21 September 2023"
+     },
+     "mood": "anthem",
+     "delivery": "punch"
+    }
+   ]
+  }
+ ],
+ "description": "On 21 September 2023, Zrinjski Mostar played the first European group-stage match in the history of Bosnia and Herzegovina's clubs. At half-time they were 0–3 down to AZ Alkmaar, semi-finalists of the competition the season before. Then Krunoslav Rendulić sent on Zvonimir Kožulj.\n\nThis is the story of the forty-five minutes that followed — told from the stand under the White Hill, with a supporter's own photos and clips from that night, the words of both coaches, and what the papers wrote the morning after.",
+ "tags": [
+  "Zrinjski",
+  "Zrinjski Mostar",
+  "Zrinjski AZ",
+  "Zrinjski 4-3 AZ",
+  "AZ Alkmaar",
+  "Conference League 2023",
+  "Kožulj",
+  "Bosnian football",
+  "greatest comebacks",
+  "football documentary",
+  "football supporters",
+  "FanLife",
+  "Football Stories"
+ ],
+ "shorts": [
+  {
+   "hook": "Nil–three at half-time. Then this.",
+   "idea": "The second half goal by goal, ending on 4–3.",
+   "claim_ids": [
+    "w-match",
+    "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar",
+    "w-kozulj"
+   ]
+  },
+  {
+   "hook": "\"There are no words for it.\"",
+   "idea": "AZ's coach, the Dutch press, and the record nobody wanted.",
+   "claim_ids": [
+    "q-jansen-1",
+    "w-az",
+    "p-nos",
+    "p-sporza",
+    "q-vi"
+   ]
+  },
+  {
+   "hook": "No club from Bosnia had ever played a European group game. Not one.",
+   "idea": "Before kick-off: the history, the stand, the odds.",
+   "claim_ids": [
+    "w-history",
+    "w-owner",
+    "w-odds"
+   ]
+  }
+ ],
+ "thumbnails": [
+  {
+   "text": "0–3 AT HALF-TIME",
+   "concept": "the scoreboard, the stand under floodlights",
+   "claim": "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+  },
+  {
+   "text": "THEN THIS",
+   "concept": "Kožulj arms wide",
+   "claim": "w-kozulj"
+  },
+  {
+   "text": "1 IN 200",
+   "concept": "the odds of 4–3",
+   "claim": "w-odds"
+  }
+ ]
+}

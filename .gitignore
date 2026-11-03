@@ -28,3 +28,15 @@ playwright-report/
 content/compiled/
 /scripts/marketing/kit/node_modules
 scripts/football-stories/features/weeks/
+scripts/football-stories/studio/kit/music/cache/
+# owner material is never committed (docs/fanlife/54 · Sound and look): his camera, his photos, his licensed track
+scripts/football-stories/studio/kit/clips/zrinjski-az-2023/
+scripts/football-stories/studio/kit/music/kontraa-balkan-drill.mp3
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/beer-stalls-crowd.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/born-to-be-zrinjski-shirt.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/fan-shop-afternoon.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/floodlights-through-the-trees.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/floodlit-terrace-half-time.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/half-time-food-crowd.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/popcorn-street-before.webp
+scripts/football-stories/studio/kit/beats/zrinjski-az-2023/stand-view-kickoff.webp

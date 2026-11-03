@@ -167,29 +167,61 @@ def _words_aligned(text: str, a, sr: int, offset: float) -> list[dict]:
     return _words_spread(text, offset, offset + dur)
 
 
-def kokoro_beat(text: str, out: Path, extra: dict | None) -> dict:
+# Delivery (owner, 3.11.2026: "narration that expresses emotion — pauses, tension, excitement"). A beat's delivery sets
+# the pace, the silence between sentences and inside them (an ellipsis or a dash is a held breath), and the level.
+DELIVERY = {
+    'hush':    {'speed': 0.86, 'gap': 0.62, 'breath': 0.70, 'gain': 0.82},
+    'tense':   {'speed': 0.92, 'gap': 0.48, 'breath': 0.55, 'gain': 0.90},
+    'normal':  {'speed': 1.00, 'gap': 0.30, 'breath': 0.40, 'gain': 0.92},
+    'punch':   {'speed': 0.96, 'gap': 0.55, 'breath': 0.45, 'gain': 0.98},
+    'excited': {'speed': 1.09, 'gap': 0.16, 'breath': 0.28, 'gain': 1.00},
+}
+MOOD_DELIVERY = {'sad': 'hush', 'minor': 'normal', 'build': 'tense', 'tense': 'tense', 'joy': 'excited',
+                 'triumph': 'excited', 'anthem': 'punch'}
+
+
+def delivery_of(beat: dict) -> str:
+    d = beat.get('delivery') or MOOD_DELIVERY.get(beat.get('mood') or '', 'normal')
+    return d if d in DELIVERY else 'normal'
+
+
+def clauses(sentence: str) -> list[str]:
+    """A sentence split at a held breath: '…' or a spaced dash. The voice reads each part on its own."""
+    parts = re.split(r'(?<=…)\s+|\s+[—–]\s+', sentence.strip())
+    return [p for p in parts if p.strip()]
+
+
+def kokoro_beat(text: str, out: Path, extra: dict | None, delivery: str = 'normal') -> dict:
     import numpy as np
     k = _kokoro()
     voice = os.environ.get('STORIES_KOKORO_VOICE', 'bm_george')
-    speed = float(os.environ.get('STORIES_KOKORO_SPEED', '1.0'))
+    dv = DELIVERY.get(delivery, DELIVERY['normal'])
+    speed = float(os.environ.get('STORIES_KOKORO_SPEED', '1.0')) * dv['speed']
     chunks, words, t = [], [], 0.0
-    gap = np.zeros(int(SR * 0.28), dtype='float32')
-    for i, s in enumerate(sentences(text)):
-        a, sr = k.create(spoken(s, extra), voice=voice, speed=speed, lang='en-gb')
-        a = np.asarray(a, dtype='float32')
-        # trim leading/trailing near-silence so pacing is ours, not the model's
-        nz = np.where(np.abs(a) > 0.006)[0]
-        if len(nz):
-            a = a[max(0, nz[0] - 240): nz[-1] + 1200]
-        d = len(a) / SR
-        words += _words_aligned(s, a, SR, t)
-        chunks.append(a)
-        t += d
-        if i < len(sentences(text)) - 1:
-            chunks.append(gap)
-            t += len(gap) / SR
-    _wav_write(out, np.concatenate(chunks) * 0.92)
-    return {'words': words, 'alignment': 'sentence-exact, clauses pinned to pauses, words spread by syllables', 'voice': f'kokoro:{voice}'}
+    sents = sentences(text)
+    for i, s in enumerate(sents):
+        parts = clauses(s)
+        for j, part in enumerate(parts):
+            a, sr = k.create(spoken(part, extra), voice=voice, speed=speed, lang='en-gb')
+            a = np.asarray(a, dtype='float32')
+            # trim leading/trailing near-silence so pacing is ours, not the model's
+            nz = np.where(np.abs(a) > 0.006)[0]
+            if len(nz):
+                a = a[max(0, nz[0] - 240): nz[-1] + 1200]
+            words += _words_aligned(part, a, SR, t)
+            chunks.append(a)
+            t += len(a) / SR
+            if j < len(parts) - 1:
+                g = np.zeros(int(SR * dv['breath']), dtype='float32')
+                chunks.append(g)
+                t += len(g) / SR
+        if i < len(sents) - 1:
+            g = np.zeros(int(SR * dv['gap']), dtype='float32')
+            chunks.append(g)
+            t += len(g) / SR
+    _wav_write(out, np.concatenate(chunks) * dv['gain'])
+    return {'words': words, 'alignment': 'sentence-exact, clauses pinned to pauses, words spread by syllables',
+            'voice': f'kokoro:{voice}', 'delivery': delivery}
 
 
 def eleven_beat(text: str, out: Path, extra: dict | None) -> dict:
@@ -234,12 +266,14 @@ def voice_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict 
         for bi, b in enumerate(ch['beats']):
             n += 1
             text = b['narration'].strip()
-            key = sha256_json({'p': prov, 'v': os.environ.get('STORIES_ELEVEN_VOICE' if prov == 'elevenlabs' else 'STORIES_KOKORO_VOICE'), 't': spoken(text, extra), 'r': 3})[:24]
+            dl = delivery_of(b)
+            key = sha256_json({'p': prov, 'v': os.environ.get('STORIES_ELEVEN_VOICE' if prov == 'elevenlabs' else 'STORIES_KOKORO_VOICE'),
+                               't': spoken(text, extra), 'r': 3, **({'d': dl, 's': os.environ.get('STORIES_KOKORO_SPEED')} if dl != 'normal' or os.environ.get('STORIES_KOKORO_SPEED') else {})})[:24]
             wav = cache_dir / f'{key}.wav'
             meta_p = cache_dir / f'{key}.json'
             if not (wav.exists() and meta_p.exists()):
                 try:
-                    meta = (eleven_beat if prov == 'elevenlabs' else kokoro_beat)(text, wav, extra)
+                    meta = eleven_beat(text, wav, extra) if prov == 'elevenlabs' else kokoro_beat(text, wav, extra, dl)
                 except StageError as e:
                     if e.retryable and prov == 'elevenlabs':
                         log(f'Voice: beat {n} retry after {e.code}')
