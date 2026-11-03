@@ -136,6 +136,16 @@ The owner asked for *The Last Dance*, not a vlog: `matchday/doc.py` is the layer
 - **Music**: one track from `studio/kit/music` (owner-supplied), normalised and shaped per beat, ducked under the
   voice, faded at the end.
 
+## 8c · Uploading (3.11.2026)
+
+- **Studio opens on the owner's personal channel by default.** Always open
+  `https://studio.youtube.com/channel/UC2KULoLBFCSZC4jeRGYkKfQ` and check the channel name reads
+  *FanLife: Football Stories* before the upload button is pressed. Ep 2 was first uploaded to the personal channel
+  by mistake (left private, its playlist set private) — that is what this line prevents.
+- Subtitles: Languages → Upload manual → With timing → the `.en.srt` from the `matchday-render` branch, then
+  Edit subtitles → Publish. The end screen: subscribe on the round hole, the I WAS THERE playlist on the frame.
+- Footage a friend sent (WhatsApp, no camera metadata) is usable — owner, 3.11.2026.
+
 ## 9 · QA before a film reaches the desk
 
 Duration in range · loudness −14 ±1 LUFS, TP ≤ −1.5 · no ID tag in the master · face frames treated (sampled) ·
