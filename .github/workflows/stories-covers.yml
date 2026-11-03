@@ -1,0 +1,44 @@
+name: Stories · covers
+# Draws the I WAS THERE covers (scripts/football-stories/matchday/covers.json) from the owner's Drive footage and puts
+# them, with a contact sheet of candidate frames, on the short-lived `covers-tmp` branch, to be set in YouTube Studio
+# and deleted. Footage and covers never enter main.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  covers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q pillow playwright fonttools brotli
+          python -m playwright install --with-deps chromium > /dev/null
+      - name: Footage
+        run: |
+          folder=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/inbox.json'))['folder'])")
+          python3 - "$folder" <<'PY' > fetch.sh
+          import json, sys, shlex
+          for c in json.load(open('scripts/football-stories/matchday/covers.json')):
+              f = c.get('footage') or {}
+              if f.get('drive'):
+                  print('python3 scripts/football-stories/matchday/drive_fetch.py', shlex.quote(f['drive']), shlex.quote(f"$RUNNER_TEMP/footage/{c['name']}"))
+              elif f.get('sub'):
+                  print('python3 scripts/football-stories/matchday/drive_fetch.py', shlex.quote(sys.argv[1]), '"$RUNNER_TEMP/footage"', shlex.quote(f['sub']))
+          PY
+          bash -e fetch.sh
+      - name: Covers
+        run: |
+          cd scripts/football-stories
+          COVERS_FOOTAGE="$RUNNER_TEMP/footage" python3 -m studio.covers matchday/covers.json "$RUNNER_TEMP/covers"
+      - name: Branch
+        run: |
+          cd "$RUNNER_TEMP/covers" && rm -f _src-*.jpg && git init -q && git checkout -q -b covers-tmp
+          git config user.name "fanlife-render" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -qm "covers for YouTube Studio (temporary)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" covers-tmp
