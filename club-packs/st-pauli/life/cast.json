@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "clubId": "st-pauli",
+  "status": "proposed",
+  "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+  "names": {
+    "dad": "Joerg",
+    "mum": "Birgit",
+    "friend": "Torben",
+    "kiosk": "Hinnerk",
+    "elder": "Heinz"
+  }
+}

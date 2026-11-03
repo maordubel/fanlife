@@ -3334,3 +3334,10 @@ will find you." The line is one of `script.FOLLOW`, chosen by club and season, s
 the away end, going back after a heartbreak) — no begging, no promised schedule, no number but one and ninety. On screen
 (`edit.follow_shot`): a supporters' card to fill in (name · club · since), JOIN US!, and the film's own subscribe button
 (never a platform logo) pressed on the word "subscribe", turning to SUBSCRIBED with a cheer. Art for it: doc 58.
+
+## 137 · Every club is handed the same newest LIFE; only the archive and the owner's names differ (3.11.2026)
+
+Owner: *"make sure every club gets the newest script, games, missions and graphics, and that all of them work the newest way."*
+1. **`npm run life:parity` composes all 11 core clubs** (`scripts/life/club-parity-audit.ts`) and compares them: the shared script chapters, the six Season One episodes, the mission calls inside every chapter, the home and zoom missions' Fitter rows, validity and playability. Any chapter or mission call one club has and another lacks is a FAULT (exit 1). What may differ is only what a club's own archive or the owner decides: the night an episode stands on, the cast names, the ground's name.
+2. **A club's cast is a file (`club-packs/<id>/life/cast.json`), proposed until the owner approves it** — all 11 clubs now have one (`tests/life-club-parity-data.test.ts`). A supporter's birth year (`timeline.json`) is proposed only where it puts the childhood on recorded nights (St. Pauli 1978, Celtic 1988, Panathinaikos 1978); a club whose readable archive is all recent (Olympiacos, AEK, Raja, Wydad, Al Ahly) stays without one, and its episodes stay personal matchdays with no date and no score (rule 125 §2) rather than move the life into the future.
+3. **A ground's name is never guessed.** Raja, Wydad and Al Ahly have no sourced `world.json` (two publishers, rule 100), so their signs say "the ground": a research item the audit prints as HELD, not a fault.
