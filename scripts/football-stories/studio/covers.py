@@ -10,7 +10,7 @@ on a taped label and the hook in two lines: what happened, then the turn.
     python3 -m studio.covers <covers.json> <out dir>
 
 Each entry: {"name", "shape": "club"|"vlog", ...}. club: club, hook, sub, crest, art, primary, secondary, pattern
-(stripes|hoops|sash|solid). vlog: frames [one or two paths], hook [line, turn], episode, place, crest, accent.
+(stripes|hoops|sash|solid). vlog: frames [one or two paths] (pos: a CSS background position/size per frame), hook [line, turn], episode, place, crest, accent.
 Paths are relative to the json file. Every figure on a cover comes from the film's own record; a cover prints no
 number the film does not.
 """
@@ -82,8 +82,9 @@ def vlog(c: dict, root: Path) -> str:
     if len(frames) == 1:
         bg = f'<div class="abs" style="inset:0;background:url({frames[0]}) {c.get("focus", "center")}/cover;filter:saturate(1.3) contrast(1.08)"></div>'
     else:
-        bg = (f'<div class="abs" style="inset:0;background:url({frames[0]}) center/cover;filter:saturate(1.35) contrast(1.1)"></div>'
-              f'<div class="abs" style="inset:0;clip-path:polygon(62% 0,100% 0,100% 100%,40% 100%);background:url({frames[1]}) center/cover;filter:saturate(1.35) contrast(1.1)"></div>'
+        pos = c.get('pos', ['center/cover', 'center/cover'])
+        bg = (f'<div class="abs" style="inset:0;background:url({frames[0]}) {pos[0]} no-repeat;filter:saturate(1.35) contrast(1.1)"></div>'
+              f'<div class="abs" style="inset:0;clip-path:polygon(62% 0,100% 0,100% 100%,40% 100%);background:url({frames[1]}) {pos[1]} no-repeat;filter:saturate(1.35) contrast(1.1)"></div>'
               f'<div class="abs" style="inset:0;clip-path:polygon(61% 0,63% 0,41% 100%,39% 100%);background:{PAPER}"></div>')
     line, turn = c['hook']
     crest = (root / c['crest']).resolve().as_uri()
