@@ -120,6 +120,13 @@ def fit(img: Image.Image, maxw: int, maxh: int) -> Image.Image:
 MOOD_NAMES = set(_MOODS)
 
 
+def atomic_save(im: Image.Image, out: Path) -> None:
+    """Two render workers may cache the same picture at once: write aside, then rename, so a reader never sees half a PNG."""
+    tmp = out.with_name(f'{out.stem}.{os.getpid()}.tmp{out.suffix}')
+    im.save(tmp)
+    os.replace(tmp, out)
+
+
 class Editor:
     def __init__(self, job_dir: Path, ledger: dict, script: dict, voice: dict, palette: Palette, art_dir: Path):
         self.dir = job_dir
@@ -560,7 +567,7 @@ class Editor:
             im = Image.open(ROOT / 'public' / rel).convert('RGBA')
             rgb = scrub(im.convert('RGB'), self.pal.bans).convert('RGBA')
             rgb.putalpha(im.getchannel('A'))
-            rgb.save(out)
+            atomic_save(rgb, out)
         return out
 
     def end_cta(self, sp: SpriteFactory, k: str, dur: float, seed: int, cues: list):
@@ -662,7 +669,7 @@ class Editor:
                 rgb = recolor(rgb, self.pal.accent)
             rgb = scrub(rgb, self.pal.bans).convert('RGBA')
             rgb.putalpha(im.getchannel('A'))
-            rgb.save(out)
+            atomic_save(rgb, out)
         return Image.open(out).convert('RGBA')
 
     def pick_cut(self, base: str, salt: int) -> str | None:
