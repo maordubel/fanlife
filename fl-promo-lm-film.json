@@ -1,0 +1,93 @@
+{
+ "id": "lm-film",
+ "file": "fl-promo-lm-film.mp4",
+ "seconds": 133.6,
+ "mb": 40.4,
+ "beats": [
+  {
+   "kind": "art",
+   "start": 0.0,
+   "dur": 8.0
+  },
+  {
+   "kind": "title",
+   "start": 8.0,
+   "dur": 3.2
+  },
+  {
+   "kind": "phone",
+   "start": 11.2,
+   "dur": 6.0
+  },
+  {
+   "kind": "phone",
+   "start": 17.2,
+   "dur": 3.92
+  },
+  {
+   "kind": "clip",
+   "start": 21.12,
+   "dur": 6.68
+  },
+  {
+   "kind": "phone",
+   "start": 27.8,
+   "dur": 6.6
+  },
+  {
+   "kind": "art",
+   "start": 34.4,
+   "dur": 8.12
+  },
+  {
+   "kind": "phone",
+   "start": 42.52,
+   "dur": 5.24
+  },
+  {
+   "kind": "phone",
+   "start": 47.76,
+   "dur": 5.0
+  },
+  {
+   "kind": "art",
+   "start": 52.76,
+   "dur": 9.8
+  },
+  {
+   "kind": "slam",
+   "start": 62.56,
+   "dur": 4.84
+  },
+  {
+   "kind": "art",
+   "start": 67.4,
+   "dur": 7.6
+  },
+  {
+   "kind": "art",
+   "start": 75.0,
+   "dur": 7.0
+  },
+  {
+   "kind": "card",
+   "start": 82.0,
+   "dur": 8.12
+  },
+  {
+   "kind": "montage",
+   "start": 90.12,
+   "dur": 9.96
+  },
+  {
+   "kind": "end",
+   "start": 100.08,
+   "dur": 13.48
+  },
+  {
+   "kind": "endscreen",
+   "start": 113.56,
+   "dur": 20.0
+  }
+ ]
+}
