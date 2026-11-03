@@ -586,6 +586,8 @@ class Editor:
             word, tone = ('CUP!' if f.get('stage') == 'Final' else 'YES!'), 'accent'
         elif (tie := self.tie_through(f)) is not None:
             word, tone = ('THROUGH!', 'accent') if tie else ('OUT', 'paper')
+        elif f.get('outcome') == 'win' and f.get('stage') == 'Final':
+            word, tone = 'CUP!', 'accent'
         elif f.get('outcome') == 'win':
             word, tone = ('GOAL!', 'YES!', 'WIN!')[s['n'] % 3], 'accent'
         elif f.get('outcome') == 'loss':
