@@ -1,0 +1,555 @@
+{
+  "surveyed_at": "2026-11-03T10:35:06+00:00",
+  "clips": [
+    {
+      "file": "5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4",
+      "bytes": 9185040,
+      "duration": 39.85,
+      "width": 848,
+      "height": 478,
+      "rotation": 0,
+      "fps": 30.011,
+      "codec": "h264",
+      "hdr": false,
+      "serves": "wide",
+      "shot_on": null,
+      "matchday": null,
+      "identifying_tags": {},
+      "audio": {
+        "lufs": -8.8,
+        "true_peak": 0.3
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4.jpg"
+    },
+    {
+      "file": "IMG_5647.MOV",
+      "bytes": 29789878,
+      "duration": 4.24,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.976,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T15:56:52+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "35.000…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -19.7,
+        "true_peak": -5.2
+      },
+      "scene_cuts": [],
+      "face_frames": 5,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5647.MOV.jpg"
+    },
+    {
+      "file": "IMG_5648.MOV",
+      "bytes": 10623999,
+      "duration": 1.42,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 60.0,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T15:57:41+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "22.529…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -18.6,
+        "true_peak": -7.4
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5648.MOV.jpg"
+    },
+    {
+      "file": "IMG_5651.MOV",
+      "bytes": 25011696,
+      "duration": 3.65,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.973,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T16:00:47+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "14.578…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -14.7,
+        "true_peak": -0.6
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5651.MOV.jpg"
+    },
+    {
+      "file": "IMG_5652.MOV",
+      "bytes": 17924145,
+      "duration": 2.4,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.958,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T16:01:44+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "23.101…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -30.8,
+        "true_peak": -17.5
+      },
+      "scene_cuts": [],
+      "face_frames": 1,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5652.MOV.jpg"
+    },
+    {
+      "file": "IMG_5654.MOV",
+      "bytes": 128741117,
+      "duration": 18.86,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.973,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T16:01:55+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "22.992…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -16.2,
+        "true_peak": -0.6
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5654.MOV.jpg"
+    },
+    {
+      "file": "IMG_5666.MOV",
+      "bytes": 23827863,
+      "duration": 3.45,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.971,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T16:56:21+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "26.519…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -21.0,
+        "true_peak": -5.7
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5666.MOV.jpg"
+    },
+    {
+      "file": "IMG_5667.MOV",
+      "bytes": 20761461,
+      "duration": 2.88,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.965,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T17:37:40+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "36.000…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -16.3,
+        "true_peak": -3.7
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5667.MOV.jpg"
+    },
+    {
+      "file": "IMG_5668.MOV",
+      "bytes": 26919292,
+      "duration": 3.98,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 60.0,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-05-11T17:38:34+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "30.907…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -16.4,
+        "true_peak": -2.8
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5668.MOV.jpg"
+    },
+    {
+      "file": "IMG_5669.MOV",
+      "bytes": 174072392,
+      "duration": 25.95,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.996,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-05-11T17:38:42+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "27.002…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -15.9,
+        "true_peak": -0.5
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5669.MOV.jpg"
+    },
+    {
+      "file": "IMG_5673.MOV",
+      "bytes": 109134644,
+      "duration": 16.45,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.994,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T17:47:41+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "26.817…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -16.2,
+        "true_peak": -2.5
+      },
+      "scene_cuts": [],
+      "face_frames": 4,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5673.MOV.jpg"
+    },
+    {
+      "file": "IMG_5674.MOV",
+      "bytes": 62273939,
+      "duration": 9.09,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.978,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T17:56:25+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "36.000…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -15.3,
+        "true_peak": -0.6
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5674.MOV.jpg"
+    },
+    {
+      "file": "IMG_5675.MOV",
+      "bytes": 63992150,
+      "duration": 9.17,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.978,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T17:56:47+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "28.548…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -18.1,
+        "true_peak": -5.1
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5675.MOV.jpg"
+    },
+    {
+      "file": "IMG_5678.MOV",
+      "bytes": 50387182,
+      "duration": 7.3,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.973,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-05-11T17:57:26+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "26.874…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -18.9,
+        "true_peak": -2.8
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5678.MOV.jpg"
+    },
+    {
+      "file": "IMG_5686.MOV",
+      "bytes": 36267358,
+      "duration": 5.42,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 60.0,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-05-11T18:02:07+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "35.333…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -16.3,
+        "true_peak": -1.0
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5686.MOV.jpg"
+    },
+    {
+      "file": "IMG_5687.MOV",
+      "bytes": 146783790,
+      "duration": 22.03,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.995,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-05-11T18:02:14+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "31.460…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -17.3,
+        "true_peak": -2.4
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5687.MOV.jpg"
+    },
+    {
+      "file": "IMG_5688.MOV",
+      "bytes": 186118992,
+      "duration": 27.51,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.975,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-05-11T18:04:35+0300",
+      "matchday": "2024-05-11",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "35.116…",
+        "com.apple.quicktime.location.ISO6709": "+32.05…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.4.1"
+      },
+      "audio": {
+        "lufs": -15.7,
+        "true_peak": -0.5
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/IMG_5688.MOV.jpg"
+    },
+    {
+      "file": "ab182aef-fe7a-412a-aa58-93042813fe8d.mp4",
+      "bytes": 8421473,
+      "duration": 22.11,
+      "width": 1280,
+      "height": 720,
+      "rotation": -90,
+      "fps": 29.991,
+      "codec": "h264",
+      "hdr": false,
+      "serves": "tall",
+      "shot_on": null,
+      "matchday": null,
+      "identifying_tags": {},
+      "audio": {
+        "lufs": -18.1,
+        "true_peak": -1.9
+      },
+      "scene_cuts": [],
+      "face_frames": 3,
+      "frames_sampled": 12,
+      "sheet": "sheets/ab182aef-fe7a-412a-aa58-93042813fe8d.mp4.jpg"
+    }
+  ],
+  "unreadable": [],
+  "matchdays": {
+    "2024-05-11": {
+      "clips": [
+        "IMG_5647.MOV",
+        "IMG_5648.MOV",
+        "IMG_5651.MOV",
+        "IMG_5652.MOV",
+        "IMG_5654.MOV",
+        "IMG_5666.MOV",
+        "IMG_5667.MOV",
+        "IMG_5668.MOV",
+        "IMG_5669.MOV",
+        "IMG_5673.MOV",
+        "IMG_5674.MOV",
+        "IMG_5675.MOV",
+        "IMG_5678.MOV",
+        "IMG_5686.MOV",
+        "IMG_5687.MOV",
+        "IMG_5688.MOV"
+      ],
+      "seconds": 163.8
+    },
+    "unknown": {
+      "clips": [
+        "5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4",
+        "ab182aef-fe7a-412a-aa58-93042813fe8d.mp4"
+      ],
+      "seconds": 62.0
+    }
+  },
+  "totals": {
+    "clips": 18,
+    "seconds": 225.8,
+    "wide": 6,
+    "tall": 12,
+    "with_identifying_tags": 16,
+    "with_faces": 6,
+    "hdr": 16
+  }
+}
