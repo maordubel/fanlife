@@ -1,0 +1,408 @@
+{
+  "surveyed_at": "2026-11-03T06:18:05+00:00",
+  "clips": [
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0033.MOV",
+      "bytes": 31538504,
+      "duration": 4.53,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.312,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T16:04:33+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "10.000…",
+        "com.apple.quicktime.location.ISO6709": "+43.56…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -16.1,
+        "true_peak": -4.7
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0033.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0053.MOV",
+      "bytes": 307214091,
+      "duration": 23.2,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.961,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T19:09:59+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "7.4369…",
+        "com.apple.quicktime.location.ISO6709": "+43.86…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -27.4,
+        "true_peak": -2.0
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0053.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0055.MOV",
+      "bytes": 95309072,
+      "duration": 7.92,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.962,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T19:11:18+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "4.6983…",
+        "com.apple.quicktime.location.ISO6709": "+43.86…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -31.0,
+        "true_peak": -13.7
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0055.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0075.MOV",
+      "bytes": 85448505,
+      "duration": 12.27,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.976,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T20:37:24+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "10.117…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -13.5,
+        "true_peak": -1.0
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0075.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0076.MOV",
+      "bytes": 88448557,
+      "duration": 12.7,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.976,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T20:37:40+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "18.289…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -14.5,
+        "true_peak": -3.1
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0076.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0082.MOV",
+      "bytes": 52161027,
+      "duration": 7.79,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.974,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T20:41:00+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "15.839…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -15.8,
+        "true_peak": -0.6
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0082.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0086.MOV",
+      "bytes": 45727161,
+      "duration": 6.9,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.971,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-09-21T20:43:59+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "17.727…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -18.4,
+        "true_peak": -6.5
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0086.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0089.MOV",
+      "bytes": 30629810,
+      "duration": 4.54,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.978,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-09-21T20:54:51+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "35.000…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -14.2,
+        "true_peak": -0.7
+      },
+      "scene_cuts": [],
+      "face_frames": 2,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0089.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0105.MOV",
+      "bytes": 81593150,
+      "duration": 12.35,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.976,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-09-21T21:47:32+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "9.8232…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -16.6,
+        "true_peak": -0.7
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0105.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0112.MOV",
+      "bytes": 60553094,
+      "duration": 9.22,
+      "width": 3840,
+      "height": 2160,
+      "rotation": -90,
+      "fps": 59.978,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "tall",
+      "shot_on": "2024-09-21T21:48:46+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "9.3756…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -16.1,
+        "true_peak": -2.0
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0112.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0113.MOV",
+      "bytes": 88595946,
+      "duration": 13.55,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.978,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-09-21T21:48:59+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "12.925…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -16.8,
+        "true_peak": -3.8
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0113.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/IMG_0129.MOV",
+      "bytes": 65737867,
+      "duration": 9.99,
+      "width": 3840,
+      "height": 2160,
+      "rotation": 0,
+      "fps": 59.97,
+      "codec": "hevc",
+      "hdr": true,
+      "serves": "wide",
+      "shot_on": "2024-09-21T22:34:24+0200",
+      "matchday": "2024-09-21",
+      "identifying_tags": {
+        "com.apple.quicktime.location.accuracy.horizontal": "24.739…",
+        "com.apple.quicktime.location.ISO6709": "+43.84…",
+        "com.apple.quicktime.make": "Apple",
+        "com.apple.quicktime.model": "iPhone 14",
+        "com.apple.quicktime.software": "17.6.1"
+      },
+      "audio": {
+        "lufs": -16.4,
+        "true_peak": -0.6
+      },
+      "scene_cuts": [],
+      "face_frames": 0,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_IMG_0129.MOV.jpg"
+    },
+    {
+      "file": "Sarajevo game against Zeljeznicar/cddae7aeb0174e8fadb92081a3c2808e.mov",
+      "bytes": 7629810,
+      "duration": 3.68,
+      "width": 1080,
+      "height": 1920,
+      "rotation": 0,
+      "fps": 30.462,
+      "codec": "hevc",
+      "hdr": false,
+      "serves": "tall",
+      "shot_on": "2024-09-21T14:09:31.000000Z",
+      "matchday": "2024-09-21",
+      "identifying_tags": {},
+      "audio": {
+        "lufs": -44.5,
+        "true_peak": -30.0
+      },
+      "scene_cuts": [
+        3.67
+      ],
+      "face_frames": 1,
+      "frames_sampled": 12,
+      "sheet": "sheets/Sarajevo_game_against_Zeljeznicar_cddae7aeb0174e8fadb92081a3c2808e.mov.jpg"
+    }
+  ],
+  "unreadable": [],
+  "matchdays": {
+    "2024-09-21": {
+      "clips": [
+        "Sarajevo game against Zeljeznicar/IMG_0033.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0053.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0055.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0075.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0076.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0082.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0086.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0089.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0105.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0112.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0113.MOV",
+        "Sarajevo game against Zeljeznicar/IMG_0129.MOV",
+        "Sarajevo game against Zeljeznicar/cddae7aeb0174e8fadb92081a3c2808e.mov"
+      ],
+      "seconds": 128.6
+    }
+  },
+  "totals": {
+    "clips": 13,
+    "seconds": 128.6,
+    "wide": 5,
+    "tall": 8,
+    "with_identifying_tags": 12,
+    "with_faces": 6,
+    "hdr": 12
+  }
+}
