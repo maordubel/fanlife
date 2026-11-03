@@ -93,6 +93,28 @@ New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>
   the final whistle, filtered and ducked under the narrator. Per film: soft (default) or none.
 - Rival colours (rule 95) are checked on sampled frames of every film.
 
+## Sound and look (3.11.2026)
+
+- **Music is the owner's choice of track** (`kit/music/index.json`, `--music track:<id>`, brief `music`): the editor
+  (`audio.track_score`) lays the quiet passages under tension and the full band under a goal, carried on from where
+  it stopped, crossfaded, ducked under the narrator. The synthesised score stays only as the fallback. Generated
+  "Balkan brass" was tried and rejected by the owner (3.11.2026) — never generate the music again.
+- **Delivery** per beat (`delivery`: hush · tense · normal · punch · excited, or from the beat's mood): pace, the
+  silence between sentences, a held breath at "…" or a spaced dash, and level.
+- **Look** at the master (`--look`): `archive` (warm, dense, moving grain, soft vignette — the documentary),
+  `punch`, `clean`.
+- **The owner's own footage** (photos, phone clips from the stand) can carry a documentary: clips are tone-mapped from
+  HDR and set on their own blurred frame, sound and metadata removed; the asset ledger lists them as real footage.
+  Owner footage is never committed (it lives on Drive): pull it with the encrypted `drive-pull` route. The same holds
+  for his photos (index rows flagged `owner_photo` stay; the files are gitignored) and for a licensed track he supplies
+  (Pixabay: not redistributable on its own).
+- **The music library** (owner, 3.11.2026): Tanner Helland's free-music (CC BY 4.0) — 42 original tracks in
+  `kit/music/index.json` with a `url`, fetched on first use into `kit/music/cache/` (gitignored). Every film that uses
+  one prints "Music by Tanner Helland" with the link in its description. His covers and remixes of other people's
+  works are left out. A track's mood is "listen first" until someone has listened.
+- **The publish file is one encode at the bitrate the cap allows** (`matchday/film.py`): phone footage with grain was
+  450 MB at CRF 19, and a CRF ladder meant five slow encodes.
+
 ## Craft (3.11.2026) — see doc 59
 
 Pace 148 words a minute, a cold open, one sentence per beat at the big moments, goal by goal; football as faith; a famous

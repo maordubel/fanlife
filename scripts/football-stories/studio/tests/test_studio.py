@@ -113,6 +113,8 @@ class BeatArt(unittest.TestCase):
             self.assertEqual(idx.parent.name, data['set'])
             self.assertTrue(data['pieces'])
             for p in data['pieces']:
+                if p.get('owner_photo') and beat_path(p['key']) is None:
+                    continue      # the owner's own photographs are never committed; a local render finds them
                 self.assertIsNotNone(beat_path(p['key']), p['key'])
 
     def test_scrub_removes_the_banned_family_and_keeps_the_club_red(self):
@@ -615,3 +617,43 @@ class DriveLibrary(unittest.TestCase):
         self.assertEqual([f['id'] for f in select(inv, 'A/Lib/')], ['1', '2'])
         seen: set[str] = set()
         self.assertEqual([safe_name(f, seen) for f in select(inv, 'A/Lib')], ['x.png', 'sub-x.png'])
+
+
+class MusicAndDelivery(unittest.TestCase):
+    def test_the_library_is_credited_and_has_no_covers(self):
+        import json
+        from studio import audio
+        idx = json.loads((audio.MUSIC_DIR / 'index.json').read_text(encoding='utf-8'))
+        lib = [t for t in idx['tracks'] if t.get('url')]
+        self.assertGreaterEqual(len(lib), 40)
+        for t in lib:
+            self.assertEqual(t['licence'], 'CC BY 4.0')
+            self.assertIn('Tanner Helland', t['credit'])
+            self.assertIn('github.com/tannerhelland/free-music', t['credit'])
+            self.assertTrue(t['file'].startswith('cache/'))      # fetched on use, never committed
+            for cover in ('Aerith', 'Eragon', 'Castlevania', 'Carol of the Bells', 'Final Fantasy', 'DragonFyre', 'Tiberian'):
+                self.assertNotIn(cover, t['title'])
+        self.assertEqual(len({t['id'] for t in idx['tracks']}), len(idx['tracks']))
+
+    @unittest.skipUnless((Path(__file__).parents[1] / 'kit/music/kontraa-balkan-drill.mp3').exists(), 'owner-supplied track is local only')
+    def test_the_owners_track_follows_the_story(self):
+        import numpy as np
+        from studio import audio
+        secs = [{'start': 0, 'end': 12, 'mood': 'tense'}, {'start': 12, 'end': 24, 'mood': 'triumph'}]
+        a = audio.track_score(secs, 'kontraa-balkan-drill')
+        sr = audio.SR
+        quiet = float(np.sqrt(np.mean(a[2 * sr:10 * sr] ** 2)))
+        loud = float(np.sqrt(np.mean(a[14 * sr:22 * sr] ** 2)))
+        self.assertGreater(loud, quiet)
+        t = audio.music_track('kontraa-balkan-drill')
+        self.assertTrue(t['licence'])
+        with self.assertRaises(Exception):
+            audio.music_track('nope')
+
+    def test_delivery_follows_the_mood_and_breaks_at_a_held_breath(self):
+        from studio import voice
+        self.assertEqual(voice.delivery_of({'mood': 'sad'}), 'hush')
+        self.assertEqual(voice.delivery_of({'mood': 'triumph'}), 'excited')
+        self.assertEqual(voice.delivery_of({'delivery': 'punch', 'mood': 'sad'}), 'punch')
+        self.assertEqual(voice.delivery_of({'delivery': 'shout'}), 'normal')
+        self.assertEqual(voice.clauses('Kožulj … over the wall — in.'), ['Kožulj …', 'over the wall', 'in.'])

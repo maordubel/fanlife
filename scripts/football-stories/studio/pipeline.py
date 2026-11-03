@@ -28,6 +28,16 @@ def master_kbps(seconds: float) -> int:
     return int(max(3000, min(12000, MASTER_BUDGET_MB * 8 * 1000 / max(30.0, seconds) - 192)))
 
 
+# The film's grade, applied once at the master. 'archive' is the documentary look (owner, 3.11.2026: "take inspiration
+# from The Last Dance"): a warmer, denser picture, moving film grain and a soft vignette — texture, never a filter you notice.
+LOOKS = {
+    'clean': None,
+    'archive': ("eq=contrast=1.07:saturation=0.9:gamma=0.98,"
+                "colorbalance=rs=0.03:gs=0.0:bs=-0.04:rm=0.02:bm=-0.03,"
+                "noise=c0s=9:c0f=t+u:c1s=3:c1f=t,vignette=angle=PI/5.5"),
+    'punch': "eq=contrast=1.08:saturation=1.12,unsharp=5:5:0.6",
+}
+
 STAGES = ['research', 'script', 'voice', 'graphics', 'edit', 'mix', 'master', 'package', 'qa']
 
 
@@ -126,7 +136,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     step('mix', 0.8, 'Mixing sound')
     mix = job_dir / 'mix' / 'mix.m4a'
     if not mix.exists():
-        audio.build_mix(job_dir, plan, log, brief.get('crowd') or 'soft')
+        audio.build_mix(job_dir, plan, log, brief.get('crowd') or 'soft', brief.get('music') or 'synth')
 
     # 7 master + preview
     step('master', 0.85, 'Mastering')
@@ -135,7 +145,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     master = out / 'master.mp4'
     if not master.exists():
         kb = master_kbps(plan['duration'])
+        look = LOOKS.get(brief.get('look') or 'clean')
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(mix), '-map', '0:v', '-map', '1:a',
+                        *(['-vf', look] if look else []),
                         '-c:v', 'libx264', '-preset', os.environ.get('STORIES_MASTER_PRESET', 'medium'), '-profile:v', 'high', '-crf', '18',
                         '-maxrate', f'{kb}k', '-bufsize', f'{kb * 2}k', '-pix_fmt', 'yuv420p', '-g', '50', '-c:a', 'aac', '-b:a', '192k',
                         '-shortest', '-movflags', '+faststart', str(out / 'master.part.mp4')], check=True)
@@ -157,6 +169,11 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
                   'credit': ('ElevenLabs synthetic voice' if v['provider'] == 'elevenlabs' else 'Kokoro synthetic British voice (open model, Apache-2.0)')},
         'assets': asset_ledger(job_dir, s),
     }
+    if (brief.get('music') or '').startswith('track:'):
+        t = audio.music_track(brief['music'].split(':', 1)[1])
+        manifest['assets'] = [a for a in manifest['assets'] if a['id'] != 'score'] + [
+            {'id': 'music-' + t['id'], 'kind': 'music', 'owner': f"{t['artist']} — {t['title']}", 'origin': t['origin'],
+             'licence': t['licence'], 'credit': t.get('credit'), 'photoreal': False}]
     write_json(out / 'assets.json', manifest)
     meta = package.youtube_metadata(s, plan, ledger, manifest)
     write_json(out / 'youtube.json', meta)
@@ -204,8 +221,15 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
     from .paper import beat_index
     keys = {v.get(k) for ch in script.get('chapters') or [] for b in ch.get('beats') or [] for v in [b.get('visual') or {}]
             for k in ('art', 'backdrop') if isinstance(v.get(k), str)}
+    from .paper import clip_index
+    real = [p['key'] for set_id in sorted({k.split(':', 1)[1].split('/')[0] for k in keys if k and k.startswith(('beat:', 'clip:'))})
+            for p in beat_index(set_id) + clip_index(set_id) if p['key'] in keys and (p.get('owner_photo') or p.get('owner_footage'))]
+    if real:
+        rows.append({'id': 'owner-footage', 'kind': 'photo/video', 'owner': 'FanLife (filmed by the owner in the stand)', 'origin': 'owner',
+                     'licence': 'owned', 'photoreal': False, 'pieces': real,
+                     'note': 'Real photos and phone clips from the stand that night; sound and metadata removed, no identifiable face.'})
     for set_id in sorted({k[5:].split('/')[0] for k in keys if k and k.startswith('beat:')} - {'common'}):
-        pieces = [p for p in beat_index(set_id) if p['key'] in keys]
+        pieces = [p for p in beat_index(set_id) if p['key'] in keys and not p.get('owner_photo')]
         if pieces:
             drawn = [p['key'] for p in pieces if p.get('illustrated')]
             rows.append({'id': f'art-{set_id}', 'kind': 'illustration', 'owner': 'FanLife (owner-supplied, AI-generated)', 'origin': 'ai-generated',
@@ -229,12 +253,14 @@ def main() -> int:
     ap.add_argument('--topic', default='')
     ap.add_argument('--palette', type=Path, help='JSON from scripts/football-stories/palettes.ts')
     ap.add_argument('--script', type=Path)
+    ap.add_argument('--look', choices=list(LOOKS), default='clean', help='the grade at the master: clean, archive (documentary), punch')
+    ap.add_argument('--music', default='synth', help='the score: synth, or track:<id> from kit/music/index.json')
     ap.add_argument('--crowd', choices=['soft', 'off'], default='soft', help='crowd reactions at goals: soft (default) or none')
     ap.add_argument('--dossier', type=Path, help='a film\'s own dossier when a season has more than one film')
     a = ap.parse_args()
     pals = read_json(a.palette) if a.palette else {}
     pal = Palette.from_json(pals.get(a.club) or {'club_id': a.club, 'club_name': a.club, 'primary': '#B02D10', 'bans': []})
-    brief = {'club_id': a.club, 'season': a.season, 'duration': a.minutes, 'topic': a.topic, 'crowd': a.crowd,
+    brief = {'club_id': a.club, 'season': a.season, 'duration': a.minutes, 'topic': a.topic, 'crowd': a.crowd, 'music': a.music, 'look': a.look,
              **({'dossier': str(a.dossier)} if a.dossier else {})}
     try:
         r = run(a.job, brief, pal, script_file=a.script)

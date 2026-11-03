@@ -44,6 +44,10 @@ jobs:
         run: |
           folder=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/inbox.json'))['folder'])")
           for ep in scripts/football-stories/matchday/episodes/*.json; do
+            # an episode cut in the session (owner photos made into clips there) says "ci": false and is not re-rendered
+            if [ "$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('ci', True))" "$ep")" = "False" ]; then
+              echo "skip $ep (rendered in the session)"; continue
+            fi
             sub=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['folder'])" "$ep")
             python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/footage" "$sub"
             out="$RUNNER_TEMP/out/$(basename "$ep" .json)"

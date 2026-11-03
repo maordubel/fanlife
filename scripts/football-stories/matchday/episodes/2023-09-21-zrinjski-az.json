@@ -1,0 +1,556 @@
+{
+ "id": "iwt-02-mostar-2023",
+ "title": "I WAS THERE · Mostar, 21 September 2023 · Zrinjski v AZ Alkmaar",
+ "folder": "zrinjski-az",
+ "drive": "https://drive.google.com/drive/folders/10Bq1DCG4FEn9xPaxBEYfK1AAwwFzkhSJ",
+ "ci": false,
+ "ci_note": "Cut in the session: the owner's photos were made into moving clips there (photo-*.mp4), so the runner cannot re-render it from Drive alone.",
+ "accent": "#C92D39",
+ "music": "track:kontraa-balkan-drill",
+ "fixture": {
+  "home": "Zrinjski Mostar",
+  "away": "AZ Alkmaar",
+  "home_short": "ZRI",
+  "away_short": "AZ",
+  "date_long": "21 September 2023",
+  "year": "2023",
+  "ground": "Bijeli Brijeg",
+  "city": "Mostar",
+  "competition": "Conference League · Group E",
+  "home_score": 4,
+  "away_score": 3,
+  "goals": [
+   {
+    "side": "away",
+    "name": "van Brederode",
+    "minute_label": "10'"
+   },
+   {
+    "side": "away",
+    "name": "Mijnans",
+    "minute_label": "32'"
+   },
+   {
+    "side": "away",
+    "name": "de Wit",
+    "minute_label": "44'"
+   },
+   {
+    "side": "home",
+    "name": "Kožulj",
+    "minute_label": "48'"
+   },
+   {
+    "side": "home",
+    "name": "Ćorluka",
+    "minute_label": "68'"
+   },
+   {
+    "side": "home",
+    "name": "Hrvanović",
+    "minute_label": "71'"
+   },
+   {
+    "side": "home",
+    "name": "Kožulj",
+    "minute_label": "81'"
+   }
+  ],
+  "source": "UEFA match record",
+  "episode": 2,
+  "date_iso": "2023-09-21",
+  "date_short": "21·9·2023",
+  "score_note": "Bijeli Brijeg · Mostar · 5,100"
+ },
+ "sources": [
+  {
+   "claim": "result 4–3, scorers and minutes, half-time 0–3",
+   "url": "https://www.uefa.com/uefaconferenceleague/match/2039291--zrinjski-vs-az-alkmaar/",
+   "title": "UEFA — Zrinjski v AZ Alkmaar",
+   "short": "UEFA match record"
+  },
+  {
+   "claim": "attendance 5,100",
+   "url": "https://www.espn.com/soccer/match/_/gameId/687735",
+   "title": "ESPN — Zrinjski v AZ Alkmaar",
+   "short": "ESPN"
+  },
+  {
+   "claim": "first BiH club in a European group stage; Kožulj free kick from about 30 metres; Malekinušić hit the post",
+   "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+   "title": "NFSBiH",
+   "short": "NFSBiH"
+  },
+  {
+   "claim": "result, scorers",
+   "file": "club-packs/zrinjski-mostar/wave-auto.json",
+   "short": "FAN LIFE archive"
+  }
+ ],
+ "ipa": {
+  "Zrinjski": "zɹˈɪnjskiː",
+  "Mostar": "mˈɒstɑː",
+  "Kožulj": "kˈɒʒuːlj",
+  "Ćorluka": "tʃˈɔːlʊkə",
+  "Hrvanović": "hɜːvˈanɒvɪtʃ",
+  "Alkmaar": "ˈɑːlkmɑːɹ",
+  "Herzegovina": "hˌɜːtsəɡˈɒvɪnə"
+ },
+ "film": {
+  "beats": [
+   {
+    "kind": "clip",
+    "clip": "IMG_6357.MOV",
+    "in": 1.2,
+    "dur": 2.4,
+    "clock": "20:39",
+    "sound": "clip",
+    "gain": 1.0,
+    "entry": "black",
+    "music": {
+     "mood": "joy",
+     "energy": 0.8
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "9644C986-FEFE-432F-B6EB-19521724E681.mp4",
+    "in": 3.0,
+    "dur": 2.4,
+    "clock": "20:45",
+    "sound": "clip",
+    "gain": 1.0,
+    "music": {
+     "mood": "joy",
+     "energy": 0.8
+    }
+   },
+   {
+    "kind": "title",
+    "clip": "IMG_6350.MOV",
+    "in": 0.0,
+    "dur": 4.4,
+    "head": "I was there",
+    "kicker": "Mostar · 21 September 2023",
+    "sound": "clip",
+    "gain": 0.8,
+    "music": {
+     "mood": "joy",
+     "energy": 0.7
+    }
+   },
+   {
+    "kind": "map",
+    "entry": "wipe",
+    "points": [
+     {
+      "name": "Mostar",
+      "lat": 43.3438,
+      "lon": 17.8078,
+      "home": true
+     },
+     {
+      "name": "Alkmaar",
+      "lat": 52.6324,
+      "lon": 4.7534
+     }
+    ],
+    "focus": "europe",
+    "label": "Conference League · Group E · Matchday 1",
+    "min": 5.0,
+    "say": "Mostar. The first European group game a club from Bosnia and Herzegovina had ever played. And AZ Alkmaar, up from the Netherlands.",
+    "music": {
+     "mood": "build",
+     "energy": 0.5
+    },
+    "frame": [
+     [
+      41.5,
+      2.0
+     ],
+     [
+      54.5,
+      21.0
+     ]
+    ]
+   },
+   {
+    "kind": "chapter",
+    "number": 1,
+    "title": "The afternoon",
+    "dur": 2.4,
+    "music": {
+     "mood": "joy",
+     "energy": 0.6
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-shirt.mp4",
+    "in": 0,
+    "dur": 4.6,
+    "clock": "16:48",
+    "sound": "mute",
+    "head": "Born to be",
+    "kicker": "First stop · the merchandise table",
+    "say": "We got there before five. First stop, the merchandise table. Born to be Zrinjski.",
+    "music": {
+     "mood": "joy",
+     "energy": 0.6
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6323.MOV",
+    "in": 0,
+    "clock": "17:07",
+    "sound": "clip",
+    "gain": 0.7,
+    "head": "The bus",
+    "kicker": "Behind the main stand",
+    "say": "Then the team bus rolled in behind the main stand.",
+    "music": {
+     "mood": "joy",
+     "energy": 0.6
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-fanshop.mp4",
+    "in": 0,
+    "clock": "17:10",
+    "sound": "mute",
+    "head": "Fan shop",
+    "kicker": "Storm clouds on the mountains",
+    "say": "Storm clouds sat on the mountains all afternoon. Nobody went home.",
+    "music": {
+     "mood": "build",
+     "energy": 0.5
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6337.MOV",
+    "in": 0,
+    "dur": 2.4,
+    "clock": "17:38",
+    "sound": "clip",
+    "gain": 0.7,
+    "music": {
+     "mood": "joy",
+     "energy": 0.6
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-chicken.mp4",
+    "in": 0,
+    "clock": "17:51",
+    "sound": "mute",
+    "head": "Crispy chicken",
+    "kicker": "A long night needs a plan",
+    "say": "Crispy chicken. Hot dogs. A long night needs a plan.",
+    "music": {
+     "mood": "joy",
+     "energy": 0.7
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-food.mp4",
+    "in": 0,
+    "dur": 2.2,
+    "clock": "17:51",
+    "sound": "mute",
+    "music": {
+     "mood": "joy",
+     "energy": 0.7
+    }
+   },
+   {
+    "kind": "chapter",
+    "number": 2,
+    "title": "The White Hill",
+    "dur": 2.4,
+    "music": {
+     "mood": "build",
+     "energy": 0.5
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6344.MOV",
+    "in": 0,
+    "clock": "18:42",
+    "sound": "clip",
+    "gain": 0.8,
+    "place": "Bijeli Brijeg · Mostar",
+    "head": "Group E",
+    "kicker": "Under the Conference League banner",
+    "say": "Under the Conference League banner. Zrinjski. AZ. A Thursday night in Mostar.",
+    "music": {
+     "mood": "build",
+     "energy": 0.55
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6348.MOV",
+    "in": 0.5,
+    "clock": "18:46",
+    "sound": "clip",
+    "gain": 0.8,
+    "head": "Kick-off",
+    "kicker": "The floodlights come on",
+    "say": "The team sheet in our hands. Then the floodlights came on over the White Hill.",
+    "music": {
+     "mood": "build",
+     "energy": 0.6
+    }
+   },
+   {
+    "kind": "chapter",
+    "number": 3,
+    "title": "Nil–three",
+    "dur": 2.4,
+    "music": {
+     "mood": "tense",
+     "energy": 0.5
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6350.MOV",
+    "in": 0,
+    "speed": 0.8,
+    "clock": "19:22",
+    "sound": "clip",
+    "gain": 0.7,
+    "head": "0–3",
+    "kicker": "10' · 32' · 44'",
+    "say": "First half. AZ scored after ten minutes. Then thirty-two. Then forty-four. Nil–three.",
+    "music": {
+     "mood": "tense",
+     "energy": 0.45
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-halftime.mp4",
+    "in": 0,
+    "clock": "19:31",
+    "sound": "mute",
+    "head": "Half-time",
+    "kicker": "Nil–three",
+    "say": "Half-time. Nobody sat down. Everybody went for food.",
+    "music": {
+     "mood": "sad",
+     "energy": 0.35
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-stalls-night.mp4",
+    "in": 0,
+    "dur": 2.6,
+    "clock": "19:37",
+    "sound": "mute",
+    "music": {
+     "mood": "sad",
+     "energy": 0.35
+    }
+   },
+   {
+    "kind": "chapter",
+    "number": 4,
+    "title": "Forty-five minutes",
+    "dur": 2.4,
+    "music": {
+     "mood": "build",
+     "energy": 0.6
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-floodlights.mp4",
+    "in": 0,
+    "clock": "19:42",
+    "sound": "mute",
+    "head": "48'",
+    "kicker": "Kožulj · 1–3",
+    "say": "Then Zvonimir Kožulj came on. Forty-eight minutes. A free kick from thirty metres. One–three.",
+    "music": {
+     "mood": "joy",
+     "energy": 0.75
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-floodlights-2.mp4",
+    "in": 0,
+    "clock": "19:43",
+    "sound": "mute",
+    "head": "68' · 71'",
+    "kicker": "Ćorluka · Hrvanović · 3–3",
+    "say": "Sixty-eight, Ćorluka. Seventy-one, Hrvanović. Three–three!",
+    "music": {
+     "mood": "joy",
+     "energy": 0.85
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6350.MOV",
+    "in": 2.0,
+    "speed": 0.75,
+    "sound": "clip",
+    "gain": 0.8,
+    "head": "81'",
+    "kicker": "Kožulj again · 4–3",
+    "say": "And at eighty-one minutes … Kožulj again.",
+    "music": {
+     "mood": "triumph",
+     "energy": 0.9
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6357.MOV",
+    "in": 0,
+    "clock": "20:39",
+    "sound": "clip",
+    "gain": 1.0,
+    "head": "4–3",
+    "kicker": "From nil–three",
+    "music": {
+     "mood": "triumph",
+     "energy": 1.0
+    },
+    "dur": 4.0
+   },
+   {
+    "kind": "score",
+    "clip": "9644C986-FEFE-432F-B6EB-19521724E681.mp4",
+    "in": 0,
+    "sound": "clip",
+    "gain": 0.9,
+    "dim": 0.3,
+    "dur": 6.0,
+    "music": {
+     "mood": "anthem",
+     "energy": 0.9
+    },
+    "say": "Nil–three at half-time. Four–three at the end. We were there."
+   },
+   {
+    "kind": "end",
+    "min": 4.8,
+    "music": {
+     "mood": "joy",
+     "energy": 0.5
+    },
+    "say": "Were you there?"
+   }
+  ],
+  "description": "I WAS THERE · episode 2. Mostar, 21 September 2023: the first European group game a club from Bosnia and Herzegovina had ever played — Zrinjski v AZ Alkmaar. The afternoon, the White Hill under the floodlights, nil–three at half-time, and the forty-five minutes after it. Shot from the stand by FAN LIFE."
+ },
+ "reel": {
+  "beats": [
+   {
+    "kind": "hook",
+    "clip": "IMG_6357.MOV",
+    "in": 1.0,
+    "dur": 2.4,
+    "clock": "20:39",
+    "sound": "clip",
+    "gain": 1.0,
+    "hook": "0–3 at half-time.",
+    "accent_line": "4–3 at the end.",
+    "music": {
+     "mood": "triumph",
+     "energy": 0.9
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-halftime.mp4",
+    "in": 0,
+    "clock": "19:31",
+    "sound": "mute",
+    "head": "Half-time",
+    "kicker": "Nil–three",
+    "say": "Half-time in Mostar. AZ three, Zrinjski nil.",
+    "music": {
+     "mood": "tense",
+     "energy": 0.5
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-floodlights.mp4",
+    "in": 0,
+    "clock": "19:42",
+    "sound": "mute",
+    "head": "48'",
+    "kicker": "Kožulj · 1–3",
+    "say": "Forty-eight. Kožulj, from thirty metres.",
+    "music": {
+     "mood": "joy",
+     "energy": 0.8
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "photo-floodlights-2.mp4",
+    "in": 0,
+    "sound": "mute",
+    "head": "68' · 71'",
+    "kicker": "3–3",
+    "say": "Ćorluka. Hrvanović. Three–three!",
+    "music": {
+     "mood": "joy",
+     "energy": 0.9
+    }
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_6357.MOV",
+    "in": 0,
+    "clock": "20:39",
+    "sound": "clip",
+    "gain": 1.0,
+    "head": "81'",
+    "kicker": "Kožulj · 4–3",
+    "say": "Eighty-one. Kožulj again.",
+    "music": {
+     "mood": "triumph",
+     "energy": 1.0
+    }
+   },
+   {
+    "kind": "score",
+    "clip": "9644C986-FEFE-432F-B6EB-19521724E681.mp4",
+    "in": 2.0,
+    "sound": "clip",
+    "dim": 0.35,
+    "dur": 4.0,
+    "music": {
+     "mood": "anthem",
+     "energy": 0.9
+    }
+   },
+   {
+    "kind": "end",
+    "min": 4.0,
+    "music": {
+     "mood": "joy",
+     "energy": 0.5
+    },
+    "say": "Were you there?"
+   }
+  ],
+  "description": "0–3 at half-time. 4–3 at the end. Zrinjski v AZ Alkmaar, Mostar, 21 September 2023 — shot from the stand by FAN LIFE.",
+  "post": "0–3 at half-time. 4–3 at the end. 🔴⚪\nZrinjski v AZ Alkmaar · Mostar · 21.9.2023\nShot from the stand. Were you there?\n#Zrinjski #Mostar #ConferenceLeague #IWasThere #FANLIFE"
+ },
+ "story_note": "The owner's own phone, 16:48–20:45. No footage of the goals themselves exists: the second half is told over the stand, the floodlights and the scoreboard, with the minutes from the UEFA record."
+}

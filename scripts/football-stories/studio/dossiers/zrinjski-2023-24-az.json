@@ -1,0 +1,488 @@
+{
+ "club_id": "zrinjski-mostar",
+ "season": "2023/24",
+ "film": "zrinjski-az-2023",
+ "researched": "2026-11-03",
+ "art_sets": [
+  "zrinjski-az-2023",
+  "papercut-library"
+ ],
+ "note": "Zrinjski 4–3 AZ, Conference League group E, matchday 1, Mostar, 21 September 2023. Quotes from Dutch, Croatian and Slovenian outlets are printed in English translation and say so; headlines are printed as the outlet printed them, with a translation underneath. The owner was in the stand: his photos and phone clips are marked as his.",
+ "claims": [
+  {
+   "id": "w-match",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2023-09-21",
+    "venue": "Stadion pod Bijelim Brijegom",
+    "venue_meaning": "the Stadium under the White Hill",
+    "city": "Mostar",
+    "kick_off_local": "18:45",
+    "attendance": 5100,
+    "referee": "Don Robertson",
+    "group": "E",
+    "matchday": 1,
+    "half_time": "0–3",
+    "opponent_scorers": [
+     {
+      "name": "Myron van Brederode",
+      "minute": 10
+     },
+     {
+      "name": "Sven Mijnans",
+      "minute": 32
+     },
+     {
+      "name": "Dani de Wit",
+      "minute": 44
+     }
+    ],
+    "score_after_10": "0–1",
+    "score_after_32": "0–2",
+    "score_after_44": "0–3",
+    "score_after_48": "1–3",
+    "score_after_68": "2–3",
+    "score_after_71": "3–3",
+    "score_after_81": "4–3",
+    "kozulj_on_at": 46,
+    "kozulj_replaced": "Andrija Balić",
+    "free_kick_metres": 30,
+    "post_before_winner": "Matija Malekinušić",
+    "coaches": {
+     "Zrinjski": "Krunoslav Rendulić",
+     "AZ": "Pascal Jansen"
+    },
+    "hrvanovic_shot_from": "outside the box",
+    "three_goals_in_minutes": 23
+   },
+   "sources": [
+    {
+     "title": "ESPN — Zrinjski v AZ Alkmaar, 2023–24 Europa Conference League (attendance 5,100)",
+     "url": "https://www.espn.com/soccer/match/_/gameId/687735",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "NFSBiH — Zrinjski debuted in the group stage of the Conference League and celebrated after a great turnaround",
+     "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Sky Sports — Zrinjski Mostar vs AZ Alkmaar",
+     "url": "https://www.skysports.com/football/zrinjski-mostar-vs-az-alkmaar/499086",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "UEFA — Full Time Report, match 2039291 (PDF)",
+     "url": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039291_FR.pdf",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "NH Nieuws — Bizarre nederlaag voor AZ, dat 3-0 voorsprong uit handen geeft tegen Zrinjski",
+     "url": "https://www.nhnieuws.nl/nieuws/325057/bizarre-nederlaag-voor-az-dat-3-0-voorsprong-uit-handen-geeft-tegen-zrinjski",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-history",
+   "type": "history",
+   "fact": {
+    "kind": "history",
+    "first": "the first appearance of any club from Bosnia and Herzegovina in the group stage of a European competition",
+    "first_win": "the country's first ever group-stage win",
+    "how_they_got_there": "eliminated Breiðablik in the Europa League third qualifying round, then lost to LASK and dropped into the Conference League group stage",
+    "group": [
+     "Aston Villa",
+     "Legia Warszawa",
+     "AZ Alkmaar",
+     "Zrinjski Mostar"
+    ]
+   },
+   "sources": [
+    {
+     "title": "NFSBiH — Zrinjski debuted in the group stage of the Conference League",
+     "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Wikipedia — Bosnia and Herzegovina football clubs in European competitions",
+     "url": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina_football_clubs_in_European_competitions",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Wikipedia — Krunoslav Rendulić",
+     "url": "https://en.wikipedia.org/wiki/Krunoslav_Renduli%C4%87",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-az",
+   "type": "history",
+   "fact": {
+    "kind": "opponent",
+    "club": "AZ Alkmaar",
+    "last_season": "Conference League semi-finalists",
+    "record": "the first Dutch club ever to lose a European match after leading by three goals"
+   },
+   "sources": [
+    {
+     "title": "NL Times — AZ give away 3-0 lead to start with loss in Bosnia",
+     "url": "https://nltimes.nl/2023/09/21/az-give-away-3-0-lead-start-loss-bosnia",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "NOS — Dramatische Europese avond voor AZ",
+     "url": "https://nos.nl/artikel/2491342-dramatische-europese-avond-voor-az-verlies-bij-zrinjski-na-3-0-voorsprong",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-kozulj",
+   "type": "person",
+   "fact": {
+    "kind": "person",
+    "name": "Zvonimir Kožulj",
+    "born_in": "Ljubuški",
+    "came_on": "at half-time, for Andrija Balić",
+    "goals": 2,
+    "honour": "named best player of the first round of the Conference League",
+    "first_goal": "a free kick from about 30 metres — the first goal by a Bosnian club in a European group stage"
+   },
+   "sources": [
+    {
+     "title": "Nogomania — Zrinjski's hero Zvonimir Kožulj named best player of the round in Conference League",
+     "url": "https://en.nogomania.com/read/Zrinjski-s-hero-Zvonimir-Kozulj-named-best-player-of-the-round-in-Conference-league",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Croatia Week — Zrinjski Mostar make history",
+     "url": "https://www.croatiaweek.com/?p=137416",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-odds",
+   "type": "history",
+   "fact": {
+    "kind": "prediction",
+    "by": "Sports Mole's pre-match model",
+    "zrinjski_win_percent": 34,
+    "exact_score": "4–3",
+    "exact_score_odds_one_in": 200
+   },
+   "sources": [
+    {
+     "title": "Sports Mole — Zrinjski Mostar vs AZ Alkmaar (a 4–3 predicted with a 0.5% likelihood)",
+     "url": "https://www.sportsmole.co.uk/football/europa-conference-league/zrinjski-mostar-vs-az_game_191703.html",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-after",
+   "type": "history",
+   "fact": {
+    "kind": "after",
+    "next": "Aston Villa away, 5 October 2023",
+    "villa_result": "a 1–0 defeat to a goal in stoppage time",
+    "group_finish": "fourth, with 4 points",
+    "return_leg": "AZ won the return in Alkmaar 1–0 on 30 November 2023"
+   },
+   "sources": [
+    {
+     "title": "Novi list — Zrinjski u skupini E",
+     "url": "https://www.novilist.hr/?p=1096635",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "NH Nieuws — AZ houdt dankzij zege op Zrinjski Mostar hoop",
+     "url": "https://www.nhnieuws.nl/nieuws/328503/az-houdt-dankzij-zege-op-zrinjski-mostar-hoop-op-europese-overwintering",
+     "accessed": "2026-11-03"
+    },
+    {
+     "title": "Wikipedia — Bosnia and Herzegovina football clubs in European competitions",
+     "url": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina_football_clubs_in_European_competitions",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-modric",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Luka Modrić",
+    "role": "who played for Zrinjski as a teenager · translated from Croatian",
+    "text": "If you can play in the Bosnian league, you can play anywhere.",
+    "outlet": "Index.hr"
+   },
+   "sources": [
+    {
+     "title": "Index.hr — Zrinjski preplašio Aston Villu. Englezi izvukli legendarnu izjavu Luke Modrića",
+     "url": "https://www.index.hr/sport/clanak/zrinjski-preplasio-aston-villu-englezi-izvukli-legendarnu-izjavu-luke-modrica/2501367.aspx",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-jansen-1",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Pascal Jansen",
+    "role": "AZ coach, to ESPN that night · translated from Dutch",
+    "date": "2023-09-21",
+    "text": "How shameful this is? There are no words for it. Of course it was dead silent in our dressing room.",
+    "outlet": "Sporza"
+   },
+   "sources": [
+    {
+     "title": "Sporza — Ongeziene achtbaan: AZ geeft 0-3-voorsprong weg en verliest met 4-3 in Bosnië",
+     "url": "https://sporza.be/nl/sport/voetbal/~3325378/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-jansen-2",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Pascal Jansen",
+    "role": "AZ coach, two months later · translated from Dutch",
+    "date": "2023-11-29",
+    "text": "Above all, the night in Bosnia itself, I didn't sleep. It is still hard to grasp what happened there.",
+    "outlet": "NOS",
+    "months_after_the_match": 2
+   },
+   "sources": [
+    {
+     "title": "NOS — AZ tussen hoop en vrees, ook bij zege op Zrinjski",
+     "url": "https://nos.nl/artikel/2499702-az-tussen-hoop-en-vrees-ook-bij-zege-op-zrinjski-villa-moet-handje-helpen",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-jansen-3",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Pascal Jansen",
+    "role": "AZ coach · translated from Slovenian",
+    "date": "2023-09-22",
+    "text": "We played below every level. We are all responsible for that.",
+    "outlet": "Siol.net"
+   },
+   "sources": [
+    {
+     "title": "Siol.net — Zgodovinski preobrat Zrinjskega",
+     "url": "https://siol.net/sportal/nogomet/zrinjski-az-alkmaar-616150",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-rendulic",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Krunoslav Rendulić",
+    "role": "Zrinjski coach, on the phone after the match · translated from Croatian",
+    "date": "2023-09-21",
+    "text": "Imagine this: after the first round Zrinjski are first, and Aston Villa are last. That is the strongest story. Switch everything off, stop the group stage, let's go straight to the knockout phase.",
+    "outlet": "Index.hr"
+   },
+   "sources": [
+    {
+     "title": "Index.hr — Zrinjski preplašio Aston Villu",
+     "url": "https://www.index.hr/sport/clanak/zrinjski-preplasio-aston-villu-englezi-izvukli-legendarnu-izjavu-luke-modrica/2501367.aspx",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-vi",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Voetbal International",
+    "role": "Dutch football magazine · translated from Dutch",
+    "date": "2023-09-21",
+    "text": "A gigantic disappointment. AZ makes a fool of itself on a historic evening.",
+    "outlet": "Sporza"
+   },
+   "sources": [
+    {
+     "title": "Sporza — Ongeziene achtbaan: AZ geeft 0-3-voorsprong weg",
+     "url": "https://sporza.be/nl/sport/voetbal/~3325378/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-nos",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "NOS",
+    "date": "2023-09-21",
+    "headline": "Dramatische Europese avond voor AZ: verlies bij Zrinjski na 3-0 voorsprong",
+    "translation": "Dramatic European night for AZ: defeat at Zrinjski after a 3-0 lead"
+   },
+   "sources": [
+    {
+     "title": "NOS — Dramatische Europese avond voor AZ",
+     "url": "https://nos.nl/artikel/2491342-dramatische-europese-avond-voor-az-verlies-bij-zrinjski-na-3-0-voorsprong",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-sporza",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "Sporza",
+    "date": "2023-09-21",
+    "headline": "Ongeziene achtbaan: AZ geeft 0-3-voorsprong weg en verliest met 4-3 in Bosnië",
+    "translation": "An unseen rollercoaster: AZ throw away a 0-3 lead and lose 4-3 in Bosnia"
+   },
+   "sources": [
+    {
+     "title": "Sporza",
+     "url": "https://sporza.be/nl/sport/voetbal/~3325378/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-oranje",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "Football-Oranje",
+    "date": "2023-09-21",
+    "headline": "AZ Alkmaar embarrasses themselves in Bosnia-Herzegovina with historic defeat"
+   },
+   "sources": [
+    {
+     "title": "Football-Oranje",
+     "url": "https://www.football-oranje.com/az-alkmaar-embarrasses-themselves-in-bosnia-herzegovina-with-historic-defeat/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-nfsbih",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "NFSBiH",
+    "date": "2023-09-21",
+    "headline": "Zrinjski debuted in the group stage of the Conference League and celebrated after a great turnaround"
+   },
+   "sources": [
+    {
+     "title": "NFSBiH",
+     "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-goal-it",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "GOAL Italia",
+    "date": "2023-09-22",
+    "headline": "Il Zrinjski inizia come in un sogno: perdeva 0-3, ha vinto 4-3",
+    "translation": "Zrinjski start as if in a dream: 0-3 down, they won 4-3"
+   },
+   "sources": [
+    {
+     "title": "GOAL Italia",
+     "url": "https://www.goal.com/it/liste/zrinjski-squadra-conference-league-nazione-vittoria/blt5d7093be96d1bc80",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "w-owner",
+   "type": "history",
+   "fact": {
+    "kind": "witness",
+    "who": "a FanLife supporter in the stand",
+    "photos_from": "16:48",
+    "last_clip": "20:45",
+    "note": "the owner's own phone, Mostar, 21 September 2023"
+   },
+   "sources": [
+    {
+     "title": "FanLife — the owner's own photos and clips from the stand (camera times)",
+     "url": "https://fanlife.dubelteam.com",
+     "accessed": "2026-11-03"
+    }
+   ],
+   "confidence": 2,
+   "status": "owner",
+   "conflicts": []
+  }
+ ]
+}

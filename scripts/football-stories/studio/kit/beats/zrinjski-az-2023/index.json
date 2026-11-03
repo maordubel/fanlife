@@ -1,0 +1,226 @@
+{
+ "set": "zrinjski-az-2023",
+ "club": "zrinjski-mostar",
+ "season": "2023/24",
+ "origin": "owner-upload",
+ "supplied": "2026-11-03",
+ "note": "Owner art made for Zrinjski v AZ (21.9.2023) and the owner's own photos from the stand that night.",
+ "pieces": [
+  {
+   "key": "beat:zrinjski-az-2023/beer-stalls-crowd",
+   "description": "Owner's photo: supporters gathering by the stalls before the match",
+   "families": [
+    "yellow",
+    "blue"
+   ],
+   "source": "beer-stalls-crowd.jpg",
+   "sha256": "9edc65db753af328",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/bijeli-brijeg-collage",
+   "description": "Collage: the floodlit Bijeli Brijeg ground from above, Zrinjski and AZ players, the 4–3",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "bijeli-brijeg-collage.png",
+   "sha256": "71027dad63e37499",
+   "size": [
+    1672,
+    941
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/born-to-be-zrinjski-shirt",
+   "description": "Owner's photo: a white T-shirt printed BORN TO BE ZRINJSKI",
+   "families": [
+    "red"
+   ],
+   "source": "born-to-be-zrinjski-shirt.jpg",
+   "sha256": "2f0dca37a96c4c2a",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/fan-shop-afternoon",
+   "description": "Owner's photo: the club fan shop under storm clouds, hours before kick-off",
+   "families": [],
+   "source": "fan-shop-afternoon.jpg",
+   "sha256": "93b8e2f6bb73c688",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/floodlights-through-the-trees",
+   "description": "Owner's photo: floodlights glare through the trees, second half",
+   "families": [],
+   "source": "floodlights-through-the-trees.jpg",
+   "sha256": "c10bc6dda5d7b4db",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/floodlit-terrace-half-time",
+   "description": "Owner's photo: the packed stand under floodlights, half-time",
+   "families": [
+    "blue"
+   ],
+   "source": "floodlit-terrace-half-time.jpg",
+   "sha256": "88b7129847d0f2a7",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/free-kick-wall",
+   "description": "Match action: the AZ wall and Zrinjski players, the moment before the free kick",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "free-kick-wall.png",
+   "sha256": "d9d1ee4521d3a55c",
+   "size": [
+    1672,
+    941
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/half-time-food-crowd",
+   "description": "Owner's photo: crowd at the food stalls at night, half-time",
+   "families": [
+    "yellow"
+   ],
+   "source": "half-time-food-crowd.jpg",
+   "sha256": "f2c3382f56ca8623",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/kozulj-arms-wide",
+   "description": "A Zrinjski player in white with arms wide open, celebrating on the pitch",
+   "families": [
+    "red",
+    "yellow",
+    "blue"
+   ],
+   "source": "kozulj-arms-wide.png",
+   "sha256": "987a7a6a16f97c3b",
+   "size": [
+    1672,
+    941
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/kozulj-cutout",
+   "description": "Cut-out: the Zrinjski scorer celebrating, arms raised",
+   "families": [],
+   "source": "kozulj-cutout.png",
+   "sha256": "3849321918046a2d",
+   "size": [
+    1299,
+    1211
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/kozulj-paper-cutout",
+   "description": "Paper cut-out of the hero, arms up, torn paper edge",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "kozulj-paper-cutout.png",
+   "sha256": "85cfb723e9ddfb71",
+   "size": [
+    1293,
+    1217
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/night-stadium-collage",
+   "description": "Collage: the ground at night under floodlights, players celebrating, newsprint",
+   "families": [
+    "red",
+    "yellow",
+    "blue"
+   ],
+   "source": "night-stadium-collage.png",
+   "sha256": "7bc1e0733ceff4f2",
+   "size": [
+    1672,
+    941
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/popcorn-street-before",
+   "description": "Owner's photo: the street of stalls, Croatian flags, before the match",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "popcorn-street-before.jpg",
+   "sha256": "3f5a903e82eb30c6",
+   "size": [
+    2048,
+    2731
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/stand-view-kickoff",
+   "description": "Owner's photo: the pitch from the stand at kick-off, mountains behind, floodlights on",
+   "families": [
+    "yellow",
+    "green"
+   ],
+   "source": "stand-view-kickoff.jpg",
+   "sha256": "0a82c358201703da",
+   "size": [
+    2048,
+    1152
+   ],
+   "owner_photo": true
+  },
+  {
+   "key": "beat:zrinjski-az-2023/touchline-celebration",
+   "description": "Players run to the touchline to celebrate under the floodlights",
+   "families": [
+    "red",
+    "yellow",
+    "green"
+   ],
+   "source": "touchline-celebration.png",
+   "sha256": "45d42e7547117b84",
+   "size": [
+    1672,
+    941
+   ],
+   "illustrated": true
+  }
+ ]
+}
