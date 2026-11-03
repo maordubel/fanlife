@@ -27,7 +27,7 @@ jobs:
           for c in json.load(open('scripts/football-stories/matchday/covers.json')):
               f = c.get('footage') or {}
               if f.get('drive'):
-                  print('python3 scripts/football-stories/matchday/drive_fetch.py', shlex.quote(f['drive']), shlex.quote(f"$RUNNER_TEMP/footage/{c['name']}"))
+                  print('python3 scripts/football-stories/matchday/drive_fetch.py', shlex.quote(f['drive']), '"$RUNNER_TEMP/footage/' + c['name'] + '"')
               elif f.get('sub'):
                   print('python3 scripts/football-stories/matchday/drive_fetch.py', shlex.quote(sys.argv[1]), '"$RUNNER_TEMP/footage"', shlex.quote(f['sub']))
           PY
