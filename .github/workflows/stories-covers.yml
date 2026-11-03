@@ -4,6 +4,8 @@ name: Stories · covers
 # and deleted. Footage and covers never enter main.
 on:
   workflow_dispatch:
+  push:
+    branches: ['claude/iwt-aek-cover']
 permissions:
   contents: write
 jobs:
