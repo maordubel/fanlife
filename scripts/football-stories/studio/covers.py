@@ -79,7 +79,12 @@ def club(c: dict, root: Path) -> str:
 def vlog(c: dict, root: Path) -> str:
     acc = c.get('accent', '#D71920')
     frames = [Path(f).resolve().as_uri() if Path(f).is_absolute() else (root / f).resolve().as_uri() for f in c['frames']]
-    if len(frames) == 1:
+    if c.get('phone'):      # a vertical clip: the stand behind, blurred, and the phone's own picture held up in front
+        bg = (f'<div class="abs" style="inset:-40px;background:url({frames[0]}) {c.get("focus", "center")}/cover;filter:blur(18px) saturate(1.3) brightness(.7)"></div>'
+              f'<div class="abs" style="right:150px;top:70px;width:500px;height:840px;transform:rotate(4deg);background:{INK};border-radius:46px;'
+              f'box-shadow:18px 18px 0 {INK}">'
+              f'<div class="abs" style="inset:16px;border-radius:32px;background:url({frames[-1]}) {c.get("phone_focus", "center")}/cover"></div></div>')
+    elif len(frames) == 1:
         bg = f'<div class="abs" style="inset:0;background:url({frames[0]}) {c.get("focus", "center")}/cover;filter:saturate(1.3) contrast(1.08)"></div>'
     else:
         bg = (f'<div class="abs" style="inset:0;background:url({frames[0]}) center/cover;filter:saturate(1.35) contrast(1.1)"></div>'

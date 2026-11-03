@@ -6,9 +6,10 @@
    "drive": "https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view"
   },
   "frames": [
+   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@1.6",
    "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.0"
   ],
-  "focus": "center 32%",
+  "focus": "center 40%",
   "hook": [
    "We filmed 3 seconds.",
    "It was 4–0."
@@ -17,15 +18,7 @@
   "place": "OPAP Arena",
   "crest": "../../../public/club-kits/aek-athens/crest.png",
   "accent": "#F2C400",
-  "candidates": [
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@0.2",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@0.8",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@1.4",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@2.0",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@2.4",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@2.7",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.0",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.2"
-  ]
+  "phone": true,
+  "phone_focus": "center 30%"
  }
 ]
