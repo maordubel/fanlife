@@ -171,7 +171,8 @@ def stat(value: int, label: str, t0: float = 0.3, *, source: str | None = None, 
         if key in cache:
             return cache[key]
         tw = fnum.getlength(final)
-        cw, ch = int(tw * 1.25 + 80), int(big * 2.3)
+        cw = int(max(tw * 1.25 + 80, flab.getlength(label) + 80, fsrc.getlength(source or '') + 40))
+        ch = int(big * 1.32 + 140)
         im = Image.new('RGBA', (cw, ch), (0, 0, 0, 0))
         d = ImageDraw.Draw(im)
         x = (cw - fnum.getlength(txt)) / 2

@@ -140,7 +140,7 @@ film = [
      'typed': {'lines': ['2024/25 · LIGA LEUMIT', 'CHAMPIONS'], 'at_t': 0.3, 'accent_line': 1, 'size': 66},
      'say': 'The next season, Hapoel won the second division… and came straight back up.'},
     {'kind': 'prop', 'level': 1.0, 'min': 6.2, 'entry': 'fade', 'prop': {**sb('ASHDOD', 'HAPOEL', '2', '6'), 'at_t': 0.3},
-     'typed': {'lines': ['20 SEPTEMBER 2025 · ASHDOD'], 'at_t': 0.9, 'pos': (0.5, 0.88), 'size': 40},
+     'typed': {'lines': ['20 SEPTEMBER 2025 · ASHDOD'], 'at_t': 0.9, 'pos': (0.5, 0.12), 'size': 40},
      'say': 'And in September twenty twenty-five, they went back to Ashdod… and won six–two.'},
     {'kind': 'clip', 'clip': 'IMG_5688.MOV', 'in': 14.0, 'sound': 'clip', 'gain': 1.1, 'level': 0.8, 'crowd_ok': True,
      'speed_voice': 0.86, 'say': 'Football is ninety minutes. Being a supporter… is a lifetime.'},
@@ -172,7 +172,7 @@ ep = {
     'drive': 'https://drive.google.com/drive/folders/1xc-V9odiy-Y-975F0QvByZ4WMNh4ue_u',
     'accent': ACC,
     'music': {'track': 'leberch-dark', 'gain': 0.62},
-    'look': {'scope': 54, 'vignette': 0.32, 'paper': PAPER},
+    'look': {'scope': 54, 'vignette': 0.32, 'paper': PAPER, 'vertical': 'fill'},
     'fixture': {
         'home': 'Hapoel Tel Aviv', 'away': 'MS Ashdod', 'home_short': 'HTA', 'away_short': 'ASH',
         'date_long': '11 May 2024', 'year': '2024', 'ground': 'Bloomfield', 'city': 'Tel Aviv',

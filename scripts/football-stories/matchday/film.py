@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -161,6 +161,32 @@ class PaperWorld:
         return im
 
 
+class FillWorld:
+    """A vertical clip in a documentary: the same picture, blown up, blurred and darkened, fills the frame behind it,
+    and the clip itself stands in the middle on a thin ink rule — the way a broadcast documentary carries phone footage.
+    One decode: the background is cut from the window frame itself."""
+
+    def __init__(self, clip: Path, size: tuple[int, int], at: tuple[int, int], dark: float = 0.42):
+        self.cw = ClipWorld(clip, size=size, fps=FPS)
+        self.x, self.y = at
+        self.w, self.h = size
+        self.dark = dark
+
+    def __call__(self, i: int) -> Image.Image:
+        fr = self.cw(i)
+        w, h = fr.size
+        ch = int(w * CH / CW)                                    # the 16:9 band through the middle of the picture
+        band = fr.crop((0, (h - ch) // 2, w, (h - ch) // 2 + ch)).resize((CW // 10, CH // 10), Image.BILINEAR)
+        band = band.filter(ImageFilter.GaussianBlur(3.2)).resize(CANVAS, Image.BICUBIC)
+        a = np.asarray(band, 'float32') * self.dark + np.array(hex_rgb(INK), 'float32') * (1 - self.dark) * 0.35
+        im = Image.fromarray(np.clip(a, 0, 255).astype('uint8'), 'RGB')
+        d = ImageDraw.Draw(im)
+        d.rectangle([self.x + 16, self.y + 16, self.x + w + 16, self.y + h + 16], fill=(8, 7, 6))    # its shadow, printed
+        d.rectangle([self.x - 4, self.y - 4, self.x + w + 3, self.y + h + 3], fill=hex_rgb(INK))
+        im.paste(fr, (self.x, self.y))
+        return im
+
+
 def glass(path: Path, fill=(16, 17, 17)) -> Image.Image:
     """A full-frame piece of art placed so the still camera shows it exactly, pixel for pixel: the end-screen zones
     YouTube's buttons sit on are measured on the art, so the art may not be scaled or pushed."""
@@ -281,6 +307,12 @@ def main() -> None:
                         layers.append(Layer(hd, slide_in(CW / 2, at[1] - hd.height / 2 - 40, 0.3, frm=(0, -520), rot0=-2, rot1=-1,
                                                           dur=0.5, drift=False), settle=1e9, space='world'))
                         cues.append((0.3, 'paper'))
+                elif not tall and vh > vw and not p.get('head') and ep.get('look', {}).get('vertical') == 'fill':
+                    wh = int(H * 0.86)                     # a vertical clip, documentary-style: blurred fill behind it
+                    ww = round(wh * vw / vh)
+                    at = (int((CW - ww) / 2), int((CH - wh) / 2))
+                    clip = prepare(src, meta, p.get('in', 0), dur, speed, (ww, wh), work / f'clip-{p["n"]:02d}.mp4')
+                    world_frames = FillWorld(clip, (ww, wh), at)
                 elif not tall and vh > vw:   # vertical footage in the film, taped onto newsprint
                     ww = round(WIN_H * vw / vh)
                     at = (int(CW * 0.30 - ww / 2), int((CH - WIN_H) / 2))
@@ -552,7 +584,7 @@ def main() -> None:
             prev_last = last
             if isinstance(world_frames, ClipWorld):
                 world_frames.close()
-            elif isinstance(world_frames, PaperWorld):
+            elif isinstance(world_frames, (PaperWorld, FillWorld)):
                 world_frames.cw.close()
             files.append(target)
             all_cues += [(p['start'] + ct, c) for ct, c in cues]
@@ -637,9 +669,19 @@ def main() -> None:
                        capture_output=True, text=True)
     m = json.loads(re.search(r'\{[^{}]*"input_i"[^{}]*\}', r.stderr).group(0))
     final_mix = work / 'mix-14.wav'
-    run(['ffmpeg', '-y', '-v', 'error', '-i', str(mix), '-af',
-         f"loudnorm=I=-13.6:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
-         f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true", '-ar', str(SR), '-ac', '2', str(final_mix)])
+    # a gain to −13.7, then a brickwall a little under the ceiling: linear loudnorm stops short when the booms and the
+    # crowd's peaks would cross −1.5, and the AAC encode adds back a few tenths — so the limiter, not loudnorm, holds TP
+    gain = -13.7 - float(m['input_i'])
+    for _ in range(4):        # the limiter takes some loudness back: measure, add the shortfall, again
+        run(['ffmpeg', '-y', '-v', 'error', '-i', str(mix), '-af',
+             f"volume={gain:.2f}dB,alimiter=limit=0.75:attack=3:release=120:level=false",
+             '-ar', str(SR), '-ac', '2', str(final_mix)])
+        r = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', str(final_mix), '-af', 'ebur128', '-f', 'null', '-'],
+                           capture_output=True, text=True)
+        got = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', r.stderr)[-1])
+        if abs(got + 13.9) <= 0.3:
+            break
+        gain += -13.9 - got
 
     # 4 · master (no metadata), captions file, chapters, description, thumbnail, preview, report
     name = f"{ep['id']}-{CUT}"
@@ -664,8 +706,9 @@ def main() -> None:
         '\n'.join(f"· {s['short']}: {s.get('url') or s.get('file')}" for s in ep['sources']) + \
         '\n\nNarration is synthetic (Kokoro, Apache-2.0). Footage: FAN LIFE, from the stand.' + music_credit(ep) + ' #FANLIFE #IWasThere'
     (out / 'youtube-description.txt').write_text(desc if not tall else ep['reel']['description'].strip() + '\n\n' + music_credit(ep).strip() + '\n#Shorts #FANLIFE #IWasThere')
-    run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-c:a', 'aac', '-b:a', '128k',
-         '-map_metadata', '-1', '-movflags', '+faststart', str(out / f'{name}-preview.mp4')])
+    run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-vf', "scale='if(gt(iw,ih),1280,-2)':'if(gt(iw,ih),-2,1280)'",
+         '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26', '-c:a', 'aac', '-b:a', '128k',
+         '-map_metadata', '-1', '-movflags', '+faststart', str(out / f'{name}-preview.mp4')])      # 720p: a preview travels through git (100 MB)
     # the file that is actually published: YouTube (and Telegram, for a reel) — under 95 MB so it travels through git,
     # under 49 MB for a reel so the bot can send it. Phone footage with grain is too dense for a fixed CRF (a 2.5-minute
     # film came out at 450 MB at CRF 19), so the video is given the bitrate the cap allows, at most 14 Mb/s: ONE encode.

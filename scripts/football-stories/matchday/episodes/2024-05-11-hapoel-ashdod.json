@@ -11,7 +11,8 @@
  "look": {
   "scope": 54,
   "vignette": 0.32,
-  "paper": "#1C1A16"
+  "paper": "#1C1A16",
+  "vertical": "fill"
  },
  "fixture": {
   "home": "Hapoel Tel Aviv",
@@ -875,7 +876,7 @@
      "at_t": 0.9,
      "pos": [
       0.5,
-      0.88
+      0.12
      ],
      "size": 40
     },
