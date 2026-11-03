@@ -154,15 +154,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/02/09/lage-am-millerntor-09-februar-2020/",
-    "locator": "p14",
-    "quote": "Wenn Ihr also wissen wollt, wer Paul eigentlich ist und was er so tut (und außerdem seit langer Zeit mal wieder hören wollt, warum man als FCSP-Fan auch gute Laune haben kann) dann ladet Euch die aktuelle Folge (knapp 90min) in Euren Podcatcher.",
-    "bodyHash": "0941e8ebb8cc422f750a6614af09665a5ffe420826795cd686a6e7df3dfe4054",
-    "fetchedAt": "2026-10-27T09:22:24.178Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/02/23/plus-minus-statistik-des-fc-st-pauli/",
     "locator": "p58",
     "quote": "Interessant ist auch das untere Ende der Tabelle: Wenn Simon Makienok auf dem Platz stand, hat der FC St. Pauli durchschnittlich 1.02 Tore pro 90 Minuten erzielt (nur Brodersen hat mit genau einem Tor pro 90min einen schlechteren Wert). Das ist, gerade für einen Stürmer, ein schwacher Wert.",
@@ -223,6 +214,15 @@
     "bodyHash": "e4d1cf90e440a01fb46102fee0ac4da27314bfc924a527484d8f788ef0994995",
     "fetchedAt": "2026-11-02T11:43:08.105Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/26/2-bundesliga-6-spieltag-2022-23/",
+    "locator": "p98",
+    "quote": "⏱️ 90' | 1:0 | #KSVSVS",
+    "bodyHash": "7b1150eed3592ff687cbb98444c62a9592abe7acbcb98b30c6e55aaffb90c88f",
+    "fetchedAt": "2026-11-03T11:04:09.893Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -230,8 +230,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:08.105Z",
-  "updatedAt": "2026-11-02T11:43:08.105Z"
+  "createdAt": "2026-11-03T11:04:09.893Z",
+  "updatedAt": "2026-11-03T11:04:09.893Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -367,6 +367,15 @@
     "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
     "fetchedAt": "2026-10-23T08:52:17.089Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/17/lage-am-millerntor-17-august-2022/",
+    "locator": "p4",
+    "quote": "So langsam ist dann ja auch mal gut mit dem Blick zurück, das nächste Wochenende wirft seine Schatten ja schon voraus. Aber: Zwei englischsprachige Podcasts liegen vor: „Welcome to Hell“ mit Episode 3 (39min), auch der Fell in love with a girl -Podcast sei erwähnt – ich hab die 1h13m noch nicht angehört, aber angeblich geht es auch um „cat nipples“…",
+    "bodyHash": "7fbd2847900e5b687bdc4b4e626da8467dcae67499429c23b6c55d2581604c02",
+    "fetchedAt": "2026-11-03T11:04:07.703Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -374,8 +383,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:52:17.089Z",
-  "updatedAt": "2026-10-23T08:52:17.089Z"
+  "createdAt": "2026-11-03T11:04:07.703Z",
+  "updatedAt": "2026-11-03T11:04:07.703Z"
  },
  {
   "id": "ga-ee3d885becb3b388",
@@ -442,6 +451,24 @@
     "bodyHash": "4d626c07a19d6389f128722b9ce5bdce9d0418e1b41ad92a476a36d4bd72bb09",
     "fetchedAt": "2026-11-02T11:43:03.186Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/16/lage-am-millerntor-16-august-2022/",
+    "locator": "p34",
+    "quote": "Der NDR hat das Team um Alexandra Ohm begleitet, inkl. Videobeitrag: NDR (4min)",
+    "bodyHash": "25eb05906efaca1aad09bd46d2c8619b83ac9071d6f9d5a3177dadd9e620f82c",
+    "fetchedAt": "2026-11-03T11:04:07.702Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/29/lage-am-millerntor-29-august-2022/",
+    "locator": "p48",
+    "quote": "// Yacht.de / Video (4min) beim NDR",
+    "bodyHash": "6eab3dbe50f396ffd13dc994695742f06da74a9bf438b47cd1fc76dcbda5dc52",
+    "fetchedAt": "2026-11-03T11:04:09.896Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -449,8 +476,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:03.186Z",
-  "updatedAt": "2026-11-02T11:43:03.186Z"
+  "createdAt": "2026-11-03T11:04:09.896Z",
+  "updatedAt": "2026-11-03T11:04:09.896Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -862,6 +889,15 @@
     "bodyHash": "8cfea58960f13e8b4bb9968bf7b44233e80d8fc3beafa9facbb0a7b7a329b104",
     "fetchedAt": "2026-10-25T08:45:28.814Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/09/01/lage-am-millerntor-01-september-2022/",
+    "locator": "p35",
+    "quote": "Was für eine Rolle dieses Attentat bis heute für viele spielt, um was es den Hinterbliebenen geht und vieles mehr, kann man sehr gut im Sportgespräch beim Deutschlandfunk nachhören (54min), in dem Matthias Friebe mit Anki Spitzer sprach, der Sprecherin der Hinterbliebenen.",
+    "bodyHash": "a40e66a1ab7b592f254c1b519a5ebc6b61542b494e62e46f5b5ca5b7b324e578",
+    "fetchedAt": "2026-11-03T11:04:09.899Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -869,8 +905,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:28.814Z",
-  "updatedAt": "2026-10-25T08:45:28.814Z"
+  "createdAt": "2026-11-03T11:04:09.899Z",
+  "updatedAt": "2026-11-03T11:04:09.899Z"
  },
  {
   "id": "ga-adefbda210a2bea6",
@@ -931,6 +967,24 @@
     "bodyHash": "13f07fd5ec1b60693ff5e288eaae27c080a0d40b08c53e79c020a03cb2b051b9",
     "fetchedAt": "2026-10-26T09:23:45.261Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/09/02/2-bundesliga-7-spieltag-2022-23/",
+    "locator": "p74",
+    "quote": "Bei Holstein Kiel kehrt Fiete Arp in den Kader zurück, mehr Veränderung zu den Vorwochen gibt es nicht. // „100%Holstein, der Störche Talk“ (YouTube) mit Fabian Reese (14min) / Pressekonferenz als Text und Video",
+    "bodyHash": "536969794d1ef3cba19a6e39935504f54f7ee4e6e63e349fc4b392f7380fe37c",
+    "fetchedAt": "2026-11-03T11:04:09.900Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/09/02/lage-am-millerntor-02-september-2022/",
+    "locator": "p6",
+    "quote": "Dazu haben sich nun zwei Leute ausführlich geäußert: Andreas Bornemann in einem Interview im Vereins-TV / YouTube (14min) und Tim in einer ebenso ausführlichen Einschätzung: „Aktive Inaktivität“ .",
+    "bodyHash": "27e2091e88da0a69fb63039ca0357e140661ce928ae2e98ff1a5217044c9f3fc",
+    "fetchedAt": "2026-11-03T11:04:09.901Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -938,8 +992,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:45.261Z",
-  "updatedAt": "2026-10-26T09:23:45.261Z"
+  "createdAt": "2026-11-03T11:04:09.901Z",
+  "updatedAt": "2026-11-03T11:04:09.901Z"
  },
  {
   "id": "ga-3d4715fe356e053e",
@@ -988,6 +1042,15 @@
     "bodyHash": "277e13eb9dcd0442eae703a3822b9739e529dc0aca80e9ac6ad7554200a5647e",
     "fetchedAt": "2026-11-02T11:43:12.240Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/05/lage-am-millerntor-05-august-2022/",
+    "locator": "p47",
+    "quote": "Im Winter 2020, also kurz vor der Pandemie, gab es das jährliche Saisonhighlight in Schleswig-Holstein, das Hallen-Masters in der Kieler Ostseehalle. Todesfelde hatte sich qualifiziert, reiste gefühlt mit dem gesamten Dorf an und drehte eine Doku darüber. Diese ist jetzt auf YouTube verfügbar (vier Teile a‘ ca 20min), eine Übersicht gibt es auf BlauGelbTor.de .",
+    "bodyHash": "aa7026d10f6a02a519175deaed57cbcbadcd220c68497ca5c0f34a64660abf65",
+    "fetchedAt": "2026-11-03T11:04:05.104Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -995,8 +1058,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:12.240Z",
-  "updatedAt": "2026-11-02T11:43:12.240Z"
+  "createdAt": "2026-11-03T11:04:05.104Z",
+  "updatedAt": "2026-11-03T11:04:05.104Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1096,6 +1159,15 @@
     "bodyHash": "3b6ccdb3b82b342f63489ce19917bd8411fa37ff3256e5908824766baf9d2925",
     "fetchedAt": "2026-10-27T09:22:21.180Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/26/2-bundesliga-6-spieltag-2022-23/",
+    "locator": "p42",
+    "quote": "⏰90.+5 Min.: 2:2-Endstand. Nachdem der FCH zwei Mal in Rückstand geriet, hat die Mannschaft von Frank Schmidt Moral bewiesen und konnte zwei Mal zurückkommen. Somit entführt der FCH einen Punkt aus Darmstadt!",
+    "bodyHash": "7b1150eed3592ff687cbb98444c62a9592abe7acbcb98b30c6e55aaffb90c88f",
+    "fetchedAt": "2026-11-03T11:04:09.893Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1103,8 +1175,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:21.180Z",
-  "updatedAt": "2026-10-27T09:22:21.180Z"
+  "createdAt": "2026-11-03T11:04:09.893Z",
+  "updatedAt": "2026-11-03T11:04:09.893Z"
  },
  {
   "id": "ga-0b008b51fb1b193a",
@@ -1252,6 +1324,15 @@
     "bodyHash": "1b33640543b6ad96da24742a94aba94f2d71aa213ccfc231f3f32f208326e4b9",
     "fetchedAt": "2026-11-02T11:43:03.179Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/12/lage-am-millerntor-12-august-2022/",
+    "locator": "p105",
+    "quote": "Wer das alles nochmal als Podcast hören will: HSV Talk (40min) von gestern Abend.",
+    "bodyHash": "9684d7885f6830dded38a0ecd56763d7c31d16ed3945e483ec3bf88e465d4f20",
+    "fetchedAt": "2026-11-03T11:04:07.701Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1259,8 +1340,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:03.179Z",
-  "updatedAt": "2026-11-02T11:43:03.179Z"
+  "createdAt": "2026-11-03T11:04:07.701Z",
+  "updatedAt": "2026-11-03T11:04:07.701Z"
  },
  {
   "id": "ga-c61079b9040fc062",
@@ -1300,6 +1381,15 @@
     "bodyHash": "b3b5008884a41845fa065bfff893065fa5cb00226ce6961870b042917d5756bb",
     "fetchedAt": "2026-11-02T11:43:05.212Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/22/lage-am-millerntor-22-august-2022/",
+    "locator": "p39",
+    "quote": "In der zweiten Hälfte ging der HSV mit einem Freistoß in Führung, bei dessen Verursachung ich von der Tribüne aus auch auf „Ball gespielt“ entschieden hätte – aber vielleicht hatte der Schiri da die bessere Sicht. Immerhin gelang dem körperlich sehr präsenten Max Mbodje in der 69. Minute dann der Ausgleich. Was an mir vorbei gegangen war: in der B-Jugend Bundesliga wird ab sofort wohl auch 2x45min gespielt, statt wie bisher 2×40.",
+    "bodyHash": "e154282bcde674ccce21247c1393f99b83a48bbf6228456ab87156d25c3ed644",
+    "fetchedAt": "2026-11-03T11:04:07.707Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1307,8 +1397,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:05.212Z",
-  "updatedAt": "2026-11-02T11:43:05.212Z"
+  "createdAt": "2026-11-03T11:04:07.707Z",
+  "updatedAt": "2026-11-03T11:04:07.707Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -1639,6 +1729,15 @@
     "bodyHash": "4c5fccabf3f25781af9078fef3d0dc379838f2329b6fe3f94ba03a506703f870",
     "fetchedAt": "2026-11-02T11:43:08.111Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/19/2-bundesliga-5-spieltag-saison-2022-23/",
+    "locator": "p20",
+    "quote": "Kleine TV-Empfehlung: Der kicker hat mit „Was geht, 2. Bundesliga?“ ein neues Format, in dem es in ca. 22min u.a. um den HSV und KlauMiKü und Investoren allgemein geht, zu Gast ist mit Carsten Wehlmann ein Ex-Kiezkicker und der aktuelle Sportchef der Lilien.",
+    "bodyHash": "c1960a2e1474742c37e81c7267ce5a95fc16c530457ed1e3ea7c14f4f7f92c11",
+    "fetchedAt": "2026-11-03T11:04:07.704Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1646,8 +1745,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:08.111Z",
-  "updatedAt": "2026-11-02T11:43:08.111Z"
+  "createdAt": "2026-11-03T11:04:07.704Z",
+  "updatedAt": "2026-11-03T11:04:07.704Z"
  },
  {
   "id": "ga-ddcd1ba7a0236f13",
@@ -1678,5 +1777,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-02T11:43:12.238Z",
   "updatedAt": "2026-11-02T11:43:12.238Z"
+ },
+ {
+  "id": "ga-73ea52223c3ab664",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "46",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/02/lage-am-millerntor-02-august-2022/",
+    "locator": "p6",
+    "quote": "Es ist immer wieder beeindruckend, mit wie viel Liebe und Engagement Samantha und Shawn wöchentlich aus Kanada ihren FCSP-Podcast bespielen. Einen Spieler in der Sendung zu haben ist aber natürlich auch für die beiden ein Highlight, also freut Euch auf eine Dreiviertelstunde mit Jackson Irvine: Es geht um seine neue Rolle als Kapitän, die WM in Katar, Spielergewerkschaften, die letzte Saison – und natürlich die Erwartungshaltung an die neue Saison: Fell in Love with a Girl – Podcast (46min)",
+    "bodyHash": "b26ccc3b8f53cf41e074aadb901cb4fbd8147be236b9016399dc22da71c3351d",
+    "fetchedAt": "2026-11-03T11:04:05.099Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-03T11:04:05.099Z",
+  "updatedAt": "2026-11-03T11:04:05.099Z"
+ },
+ {
+  "id": "ga-b16a6a9ec608163d",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "27",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/08/09/lage-am-millerntor-09-august-2022/",
+    "locator": "p28",
+    "quote": "Seit heute ist die erste von (aktuell geplant) sieben Episoden von @Mo_Knorr online (27min), alle 14 Tage erscheint eine weitere bei @meinsportpod .",
+    "bodyHash": "7512e0a8511eef11c51628380afba49ab0c53736f0e1381cd86b9f9d0b64102d",
+    "fetchedAt": "2026-11-03T11:04:07.698Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-03T11:04:07.698Z",
+  "updatedAt": "2026-11-03T11:04:07.698Z"
  }
 ]
