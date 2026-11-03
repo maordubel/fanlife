@@ -36,7 +36,7 @@ CUT = 'reel' if '--reel' in sys.argv else 'film'
 import studio.common as _sc  # noqa: E402
 if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
-from studio.audio import CROWD, fx, score  # noqa: E402
+from studio.audio import music_track, CROWD, fx, score, track_score  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402
@@ -613,16 +613,20 @@ def main() -> None:
             continue
         a = resample(fx(kind, rng), 32000, SR)
         sfx[i:i + len(a)] += a[: n - i] * 0.5
-    if ep.get('music', {}).get('track'):
+    sections = [{'start': p['start'], 'end': p['start'] + p['dur'], **p['music']} for p in plan if p.get('music')]
+    track = ep.get('music') if isinstance(ep.get('music'), str) else ''
+    if isinstance(ep.get('music'), dict) and ep['music'].get('track'):   # the owner's track, laid under the edit with a level per beat
         music = D.music_bed(ep['music'], plan, total, SR, read_audio)
+    elif sections and track.startswith('track:'):   # the owner's chosen track, edited to the night (studio/audio.track_score)
+        music = resample(track_score(sections, track.split(':', 1)[1]), 32000, SR)[:n]
     else:
-        sections = [{'start': p['start'], 'end': p['start'] + p['dur'], **p['music']} for p in plan if p.get('music')]
         music = resample(score(sections), 32000, SR)[:n] if sections else np.zeros(n, np.float32)
     music = np.pad(music, (0, n - len(music)))
     for name, arr in (('voice', voice), ('amb', amb), ('music', music), ('sfx', sfx)):
         write_wav(work / f'{name}.wav', arr[: int(total * SR)])
     mix = work / 'mix.wav'
-    g = ('[2:a]volume=0.5[m];[1:a]volume=0.9[am];[am][m]amix=inputs=2:normalize=0[bed];'
+    mv, av = (0.72, 0.6) if track.startswith('track:') else (0.5, 0.9)
+    g = (f'[2:a]volume={mv}[m];[1:a]volume={av}[am];[am][m]amix=inputs=2:normalize=0[bed];'
          '[bed][0:a]sidechaincompress=threshold=0.03:ratio=7:attack=25:release=420[bd];'
          '[0:a]highpass=f=70,acompressor=threshold=0.2:ratio=2.5:attack=5:release=120,volume=1.1[v];'
          '[3:a]volume=0.8[s];[v][bd][s]amix=inputs=3:normalize=0,afade=t=out:st=%.2f:d=1.5[a]' % (total - 1.6))
@@ -657,20 +661,23 @@ def main() -> None:
     chapters = [('0:00', 'Cold open')] + [(mmss(p['start']), p['title']) for p in plan if p.get('kind') == 'chapter']
     desc = ep[CUT]['description'].strip() + '\n\n' + '\n'.join(f'{a} {b}' for a, b in chapters) + '\n\nSources\n' + \
         '\n'.join(f"· {s['short']}: {s.get('url') or s.get('file')}" for s in ep['sources']) + \
-        '\n\nNarration is synthetic (Kokoro, Apache-2.0). Footage: FAN LIFE, from the stand. #FANLIFE #IWasThere'
-    (out / 'youtube-description.txt').write_text(desc if not tall else ep['reel']['description'].strip() + '\n\n#Shorts #FANLIFE #IWasThere')
+        '\n\nNarration is synthetic (Kokoro, Apache-2.0). Footage: FAN LIFE, from the stand.' + music_credit(ep) + ' #FANLIFE #IWasThere'
+    (out / 'youtube-description.txt').write_text(desc if not tall else ep['reel']['description'].strip() + '\n\n' + music_credit(ep).strip() + '\n#Shorts #FANLIFE #IWasThere')
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-c:a', 'aac', '-b:a', '128k',
          '-map_metadata', '-1', '-movflags', '+faststart', str(out / f'{name}-preview.mp4')])
     # the file that is actually published: YouTube (and Telegram, for a reel) — under 95 MB so it travels through git,
-    # under 49 MB for a reel so the bot can send it. Starts at CRF 19 and gives up quality two steps at a time.
+    # under 49 MB for a reel so the bot can send it. Phone footage with grain is too dense for a fixed CRF (a 2.5-minute
+    # film came out at 450 MB at CRF 19), so the video is given the bitrate the cap allows, at most 14 Mb/s: ONE encode.
     cap = (49 if tall else 95) * 1024 * 1024
     pub = out / f'{name}-publish.mp4'
-    for crf in (19, 21, 23, 25, 27):
-        run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'slow', '-crf', str(crf), '-profile:v', 'high',
-             '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-map_metadata', '-1', '-movflags', '+faststart', str(pub)])
+    kbps = min(14000, int(cap * 8 * 0.9 / max(total, 1) / 1000) - 192)
+    for k in (kbps, int(kbps * 0.8)):
+        run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-c:v', 'libx264', '-preset', 'medium', '-b:v', f'{k}k',
+             '-maxrate', f'{int(k * 1.5)}k', '-bufsize', f'{k * 2}k', '-profile:v', 'high', '-pix_fmt', 'yuv420p',
+             '-c:a', 'aac', '-b:a', '192k', '-map_metadata', '-1', '-movflags', '+faststart', str(pub)])
         if pub.stat().st_size <= cap:
             break
-    report['publish'] = {'file': pub.name, 'mb': round(pub.stat().st_size / 1048576, 1), 'crf': crf}
+    report['publish'] = {'file': pub.name, 'mb': round(pub.stat().st_size / 1048576, 1), 'video': f'{k}k'}
     th = ep[CUT].get('thumbnail')
     if th:
         frame = work / 'thumb-src.jpg'
@@ -702,6 +709,15 @@ def ts(t: float) -> str:
     h, r = divmod(t, 3600)
     m, s = divmod(r, 60)
     return f'{int(h):02d}:{int(m):02d}:{int(s):02d},{int((s % 1) * 1000):03d}'
+
+
+def music_credit(ep: dict) -> str:
+    """' Music: …' for the description when the episode plays a library track (CC BY needs the credit and the link)."""
+    track = str(ep.get('music') or '')
+    if not track.startswith('track:'):
+        return ''
+    t = music_track(track.split(':', 1)[1])
+    return ' Music: ' + (t.get('credit') or f"{t['artist']} — {t['title']}") + '.'
 
 
 def mmss(t: float) -> str:

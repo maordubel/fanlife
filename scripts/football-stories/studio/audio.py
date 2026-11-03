@@ -156,10 +156,13 @@ def _section(sec: dict, rng) -> np.ndarray:
     return out
 
 
-def score(sections: list[dict], seed: int = 3) -> np.ndarray:
+def score(sections: list[dict], seed: int = 3, style: str = 'synth') -> np.ndarray:
     """sections: [{start, end, mood}] in seconds. Each mood has its own harmony, tempo and instruments; sections
-    overlap by a crossfade so the music turns with the story instead of cutting."""
+    overlap by a crossfade so the music turns with the story instead of cutting. style 'balkan' plays original brass-band
+    music (studio/balkan.py, FluidSynth); without FluidSynth it falls back to the synthesiser."""
     rng = np.random.default_rng(seed)
+    if style.startswith('track:'):
+        return track_score(sections, style.split(':', 1)[1])
     total = int(max(s['end'] for s in sections) * SR) + 2 * SR
     out = np.zeros(total, 'float32')
     xf = 0.9
@@ -178,6 +181,73 @@ def score(sections: list[dict], seed: int = 3) -> np.ndarray:
     k = np.ones(5, 'float32') / 5
     out = np.convolve(out, k, mode='same')
     peak = np.max(np.abs(out)) or 1
+    return out / peak * 0.5
+
+
+MUSIC_DIR = Path(__file__).parent / 'kit' / 'music'
+LOUD_MOODS = {'joy', 'triumph', 'anthem'}
+
+
+def music_track(track_id: str) -> dict:
+    idx = json.loads((MUSIC_DIR / 'index.json').read_text(encoding='utf-8'))
+    for t in idx['tracks']:
+        if t['id'] == track_id:
+            return t
+    raise StageError('MUSIC', f'No track "{track_id}" in kit/music/index.json')
+
+
+def track_path(t: dict) -> Path:
+    """The track's file. A library track (one with a url) is fetched once into kit/music/cache/, which is not committed."""
+    path = MUSIC_DIR / t['file']
+    if not path.exists() and t.get('url'):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_suffix('.part')
+        r = subprocess.run(['curl', '-sSfL', '--retry', '2', '-o', str(tmp), t['url']], capture_output=True, text=True)
+        if r.returncode or not tmp.exists() or tmp.stat().st_size < 50_000:
+            tmp.unlink(missing_ok=True)
+            raise StageError('MUSIC', f'Could not fetch "{t["id"]}" from {t["url"]}: {r.stderr.strip()[:200]}')
+        tmp.rename(path)
+    if not path.exists():
+        raise StageError('MUSIC', f'Track file missing: kit/music/{t["file"]}')
+    return path
+
+
+def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndarray:
+    """The owner's chosen track under the whole film, edited to the story: each part of the film gets a passage of the
+    track whose loudness fits it — the quiet intro and breaks under the tension, the full band under a goal — carried on
+    from where the last passage stopped when it still fits, so the music runs rather than jumps. Joins are crossfaded."""
+    t = music_track(track_id)
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(track_path(t)), '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'],
+                         capture_output=True, check=True).stdout
+    trk = np.frombuffer(raw, 'float32').copy()
+    hop = SR // 2
+    rms = np.array([np.sqrt(np.mean(trk[i:i + hop] ** 2)) for i in range(0, len(trk) - hop, hop)])
+    rms = np.convolve(rms, np.ones(6) / 6, mode='same')
+    loud = rms >= np.percentile(rms, 55)
+    total = int(max(s['end'] for s in sections) * SR) + 2 * SR
+    out = np.zeros(total, 'float32')
+    cursor = 0  # in hops
+
+    def fits(i: int, want_loud: bool) -> bool:
+        return bool(loud[i % len(loud)] == want_loud)
+
+    for k, sec in enumerate(sections):
+        want = sec['mood'] in LOUD_MOODS
+        need = int((sec['end'] - sec['start'] + xf) * SR)
+        if not fits(cursor, want):  # find the next passage of the right kind, wrapping round the track
+            cursor = next((j % len(loud) for j in range(cursor, cursor + 2 * len(loud)) if fits(j, want)), cursor)
+        start = cursor * hop
+        piece = np.concatenate([trk[start:], trk] * (1 + need // len(trk)))[:need]
+        env = np.ones(len(piece), 'float32')
+        fi = int(xf * SR)
+        if k > 0:
+            env[:fi] = np.linspace(0, 1, fi)
+        env[-fi:] = np.minimum(env[-fi:], np.linspace(1, 0, fi))
+        a = int(sec['start'] * SR)
+        n = min(len(piece), total - a)
+        out[a:a + n] += piece[:n] * env[:n]
+        cursor = ((start + need - fi) // hop) % len(loud)
+    peak = float(np.max(np.abs(out))) or 1.0
     return out / peak * 0.5
 
 
@@ -248,7 +318,7 @@ CROWD_MAX_S = 2.6
 CROWD_GAP_S = 8.0
 
 
-def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft') -> Path:
+def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: str = 'synth') -> Path:
     total = plan['duration']
     n = int(total * SR) + SR
     rng = np.random.default_rng(5)
@@ -281,7 +351,7 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft') -> Path
                 sfx[i:i + len(a)] += a[: max(0, n - i)] * 0.5
     # the score follows the story beat by beat: tension under a shoot-out, joy on a win, sadness on a defeat
     sections = mood_sections(plan)
-    music = score(sections)[:n]
+    music = score(sections, style=music)[:n]
     music = np.pad(music, (0, n - len(music)))
     d = job_dir / 'mix'
     d.mkdir(exist_ok=True)

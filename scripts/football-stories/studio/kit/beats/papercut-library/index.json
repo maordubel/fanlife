@@ -1,0 +1,453 @@
+{
+ "set": "papercut-library",
+ "club": null,
+ "season": null,
+ "origin": "owner-upload",
+ "supplied": "2026-11-03",
+ "note": "Owner paper-cut scene library (Drive, 3.11.2026): generic scenes, red and black on paper.",
+ "pieces": [
+  {
+   "key": "beat:papercut-library/corner-flag-fluttering-on-pitch-8feb737b",
+   "description": "corner flag fluttering on pitch 8feb737b",
+   "families": [
+    "green"
+   ],
+   "source": "Corner_flag_fluttering_on_pitch_8feb737b.jpg",
+   "sha256": "f303626f335214da",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/empty-trophy-shelf-paper-illustr-ba48a9b0",
+   "description": "empty trophy shelf paper illustr ba48a9b0",
+   "families": [
+    "yellow"
+   ],
+   "source": "Empty_trophy_shelf_paper_illustr…_ba48a9b0.jpg",
+   "sha256": "90d20be5958b8675",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/football-beside-goal-line-and-2fba4e61",
+   "description": "football beside goal line and 2fba4e61",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Football_beside_goal_line_and_2fba4e61.jpg",
+   "sha256": "429f0327bea5bb3f",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/football-on-penalty-spot-e9152d25",
+   "description": "football on penalty spot e9152d25",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Football_on_penalty_spot_e9152d25.jpg",
+   "sha256": "6121d74dcdfa9cc8",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/football-resting-on-touchline-3a75593a",
+   "description": "football resting on touchline 3a75593a",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Football_resting_on_touchline_3a75593a.jpg",
+   "sha256": "afa4fc7547609ad8",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/footballers-waiting-at-training-8ccf7bda",
+   "description": "footballers waiting at training 8ccf7bda",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Footballers_waiting_at_training_…_8ccf7bda.jpg",
+   "sha256": "a8b035244d60ec8e",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/goalkeeper-diving-to-save-goal-f432348d",
+   "description": "goalkeeper diving to save goal f432348d",
+   "families": [
+    "yellow"
+   ],
+   "source": "Goalkeeper_diving_to_save_goal_f432348d.jpg",
+   "sha256": "bdfb83c70459b993",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/manager-facing-tactics-board-5603ad21",
+   "description": "manager facing tactics board 5603ad21",
+   "families": [
+    "red"
+   ],
+   "source": "Manager_facing_tactics_board_5603ad21.jpg",
+   "sha256": "70c4adfb5f40152a",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-documentary-i-4a243df9",
+   "description": "paper cut football documentary i 4a243df9",
+   "families": [],
+   "source": "Paper-cut_football_documentary_i…_4a243df9.jpg",
+   "sha256": "01a2478faf841822",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-documentary-i-bfbed04c",
+   "description": "paper cut football documentary i bfbed04c",
+   "families": [
+    "red"
+   ],
+   "source": "Paper-cut_football_documentary_i…_bfbed04c.jpg",
+   "sha256": "57c0639824eb2d58",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-equipment-ill-ce9c3528",
+   "description": "paper cut football equipment ill ce9c3528",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_football_equipment_ill…_ce9c3528.jpg",
+   "sha256": "a5e1a2b541d4a9d4",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-illustration-321594ad",
+   "description": "paper cut football illustration 321594ad",
+   "families": [
+    "red"
+   ],
+   "source": "Paper-cut_football_illustration_321594ad.jpg",
+   "sha256": "990514159eeaa4d0",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-illustration-b1beb41b",
+   "description": "paper cut football illustration b1beb41b",
+   "families": [
+    "red"
+   ],
+   "source": "Paper_cut_football_illustration_b1beb41b.jpg",
+   "sha256": "96c45742f1fd4aec",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-illustration-c71f460b",
+   "description": "paper cut football illustration c71f460b",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper_cut_football_illustration_c71f460b.jpg",
+   "sha256": "da27fea8c058e382",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-illustration-ca869b03",
+   "description": "paper cut football illustration ca869b03",
+   "families": [
+    "yellow"
+   ],
+   "source": "Paper_cut_football_illustration_ca869b03.jpg",
+   "sha256": "bccb60ae4346409e",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-illustration-f93c6934",
+   "description": "paper cut football illustration f93c6934",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_football_illustration_…_f93c6934.jpg",
+   "sha256": "8d93b097760339b3",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-football-pitch-illustr-11f39b86",
+   "description": "paper cut football pitch illustr 11f39b86",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_football_pitch_illustr…_11f39b86.jpg",
+   "sha256": "7b5c5c2457f5e897",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-68d9af4c",
+   "description": "paper cut illustration of footba 68d9af4c",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_68d9af4c.jpg",
+   "sha256": "183dddb666cbd858",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-ae35ea6e",
+   "description": "paper cut illustration of footba ae35ea6e",
+   "families": [
+    "yellow"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_ae35ea6e.jpg",
+   "sha256": "c551e400b8bddfcc",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-bf7992bc",
+   "description": "paper cut illustration of footba bf7992bc",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_bf7992bc.jpg",
+   "sha256": "c72c9bfde4eeaab5",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-d7ac62c0",
+   "description": "paper cut illustration of footba d7ac62c0",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_d7ac62c0.jpg",
+   "sha256": "7d0699c7a13d613e",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-e2e9e46b",
+   "description": "paper cut illustration of footba e2e9e46b",
+   "families": [
+    "red"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_e2e9e46b.jpg",
+   "sha256": "3f0f7ebca3780006",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-f463974e",
+   "description": "paper cut illustration of footba f463974e",
+   "families": [
+    "red"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_f463974e.jpg",
+   "sha256": "14fa3c5eaca3eebc",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-footba-f91137c7",
+   "description": "paper cut illustration of footba f91137c7",
+   "families": [
+    "yellow"
+   ],
+   "source": "Paper-cut_illustration_of_footba…_f91137c7.jpg",
+   "sha256": "166b9e0847b31879",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-illustration-of-soccer-1004dbad",
+   "description": "paper cut illustration of soccer 1004dbad",
+   "families": [
+    "yellow"
+   ],
+   "source": "Paper-cut_illustration_of_soccer…_1004dbad.jpg",
+   "sha256": "9aaa50a8a87d08b7",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-stadium-clock-illustra-7d9ac5cc",
+   "description": "paper cut stadium clock illustra 7d9ac5cc",
+   "families": [
+    "yellow"
+   ],
+   "source": "Paper-cut_stadium_clock_illustra…_7d9ac5cc.jpg",
+   "sha256": "fca6760854917aa0",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/paper-cut-stadium-illustration-5462c506",
+   "description": "paper cut stadium illustration 5462c506",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Paper-cut_stadium_illustration_5462c506.jpg",
+   "sha256": "84b9c101ae842271",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/referee-signaling-football-match-b7e61944",
+   "description": "referee signaling football match b7e61944",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Referee_signaling_football_match…_b7e61944.jpg",
+   "sha256": "5f06799676677a6b",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/scarf-on-stadium-step-ff3300a4",
+   "description": "scarf on stadium step ff3300a4",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Scarf_on_stadium_step_ff3300a4.jpg",
+   "sha256": "b536fda6c3679998",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/supporter-holding-scarf-in-stadium-3cb5cf28",
+   "description": "supporter holding scarf in stadium 3cb5cf28",
+   "families": [
+    "red"
+   ],
+   "source": "Supporter_holding_scarf_in_stadium_3cb5cf28.jpg",
+   "sha256": "83ff7944a1ffe27d",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/supporters-bus-heading-toward-st-92b40091",
+   "description": "supporters bus heading toward st 92b40091",
+   "families": [
+    "yellow",
+    "green"
+   ],
+   "source": "Supporters_bus_heading_toward_st…_92b40091.jpg",
+   "sha256": "027fbdf32851052e",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/ticket-and-football-by-turnstile-3483841e",
+   "description": "ticket and football by turnstile 3483841e",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "Ticket_and_football_by_turnstile_3483841e.jpg",
+   "sha256": "099930335ea64f4d",
+   "size": [
+    1376,
+    768
+   ]
+  },
+  {
+   "key": "beat:papercut-library/vintage-football-boots-beside-ball-0c42434f",
+   "description": "vintage football boots beside ball 0c42434f",
+   "families": [
+    "yellow"
+   ],
+   "source": "Vintage_football_boots_beside_ball_0c42434f.jpg",
+   "sha256": "f19e08ae05d91e3b",
+   "size": [
+    1376,
+    768
+   ]
+  }
+ ]
+}

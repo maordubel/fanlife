@@ -73,6 +73,7 @@ if __name__ == '__main__':
     if len(sys.argv) not in (3, 4):
         sys.exit(__doc__)
     rep = {'folder': folder_id(sys.argv[1]), 'files': [], 'failed': []}
+    Path(sys.argv[2]).mkdir(parents=True, exist_ok=True)
     fetch(rep['folder'], Path(sys.argv[2]), rep, only=sys.argv[3] if len(sys.argv) == 4 else None)
     print(json.dumps({'files': len(rep['files']), 'failed': rep['failed'],
                       'gb': round(sum(f['bytes'] for f in rep['files']) / 1e9, 2)}))

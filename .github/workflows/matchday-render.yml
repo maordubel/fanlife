@@ -49,6 +49,10 @@ jobs:
           for ep in scripts/football-stories/matchday/episodes/*.json; do
             id=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['id'])" "$ep")
             [ -n "$only" ] && [ "$only" != "$id" ] && { echo "skip $id"; continue; }
+            # an episode cut in the session (owner photos made into clips there) says "ci": false and is not re-rendered
+            if [ "$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('ci', True))" "$ep")" = "False" ]; then
+              echo "skip $ep (rendered in the session)"; continue
+            fi
             sub=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['folder'])" "$ep")
             drive=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1])).get('drive',''))" "$ep")
             # an episode with its own Drive folder is fetched from it into footage/<folder>; otherwise the inbox's sub-folder

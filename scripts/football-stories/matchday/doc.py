@@ -364,7 +364,7 @@ def music_bed(spec: dict, plan: list[dict], total: float, sr: int, read_audio) -
     'level' (0..1, default 1) — the bed follows it with 0.9 s ramps, so a drop to 0 before a moment is a held breath,
     not a cut."""
     idx = json.loads((MUSIC / 'index.json').read_text())
-    tr = next(t for t in idx['tracks'] if t['key'] == spec['track'])
+    tr = next(t for t in idx['tracks'] if spec['track'] in (t.get('id'), t.get('key')))
     a = read_audio(MUSIC / tr['file'], spec.get('offset', 0))
     if not len(a):
         return np.zeros(int(total * sr), np.float32)
