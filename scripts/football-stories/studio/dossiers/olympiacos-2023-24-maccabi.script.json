@@ -1,0 +1,734 @@
+{
+ "title_candidates": [
+  {
+   "title": "Olympiacos 1–4 Maccabi Tel Aviv… Then 6–1: The Comeback in Serbia",
+   "angle": "search"
+  },
+  {
+   "title": "Maccabi Tel Aviv v Olympiacos 1–6 (2024): The Night Behind Closed Doors",
+   "angle": "search"
+  },
+  {
+   "title": "Olympiacos vs Maccabi Tel Aviv, Conference League 2024 | Full Story of the Comeback",
+   "angle": "search"
+  },
+  {
+   "title": "El Kaabi, Jovetić, El-Arabi: How Olympiacos Overturned 1–4 Against Maccabi",
+   "angle": "search"
+  },
+  {
+   "title": "Mendilibar's Birthday: Olympiacos' Greatest European Comeback",
+   "angle": "search"
+  },
+  {
+   "title": "Three Goals Down at Home. 370 People Watching. Then This.",
+   "angle": "discovery"
+  },
+  {
+   "title": "The Legend Was Dead. Then Came Serbia.",
+   "angle": "discovery"
+  },
+  {
+   "title": "\"We Are Just at Halftime\" — The Words Maccabi Would Regret",
+   "angle": "discovery"
+  },
+  {
+   "title": "The Comeback Nobody Saw",
+   "angle": "discovery"
+  },
+  {
+   "title": "From 1–4 to 1–6: Seven Days That Made Olympiacos Champions of Europe",
+   "angle": "discovery"
+  }
+ ],
+ "selected": 5,
+ "hook": "Fourteenth of March, 2024.",
+ "chapters": [
+  {
+   "title": "Bačka Topola",
+   "beats": [
+    {
+     "narration": "Fourteenth of March, 2024. A small town in Serbia. Three hundred and seventy people in the stands. And Olympiacos, three goals down.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "open",
+      "backdrop": "beat:olympiacos-maccabi-2024/07-greek-poster",
+      "headline": "Three Goals Down",
+      "kicker": "Olympiacos v Maccabi Tel Aviv · 2024"
+     }
+    },
+    {
+     "narration": "By midnight, it was the biggest away win in the club’s whole European history.",
+     "claim_ids": [
+      "w-records"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/el-kaabi-knee-slide",
+      "caption": "Bačka Topola, 14 March 2024"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Bill Shankly said football was more important than life and death. Ten thousand supporters in eighty countries voted it the greatest thing ever said about the game.",
+     "claim_ids": [
+      "q-shankly"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-shankly",
+      "text": "I can assure you it is much, much more important than that.",
+      "who": "Bill Shankly",
+      "role": "Liverpool manager",
+      "backdrop": "beat:olympiacos-maccabi-2024/06-victory-away-end"
+     }
+    },
+    {
+     "narration": "In Piraeus, nobody needs that explained. They call this club Thrylos. The Legend.",
+     "claim_ids": [
+      "w-club"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/06-victory-away-end",
+      "caption": "Piraeus"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "But one week earlier, the Legend was dead and buried.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "One week earlier",
+      "subtitle": "Piraeus, 7 March 2024",
+      "backdrop": "beat:common/tr-paper-tear-n"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Karaiskakis",
+   "beats": [
+    {
+     "narration": "Round of sixteen, first leg. The Karaiskakis. 31,054 inside.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+      "w-leg1"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 1,
+      "title": "Karaiskakis",
+      "backdrop": "beat:olympiacos-maccabi-2024/01-piraeus-shock"
+     }
+    },
+    {
+     "narration": "Six wins in a row since José Luis Mendilibar arrived in February. And Maccabi Tel Aviv? The last time, in 2010, they had knocked Olympiacos out on away goals. Unfinished business.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-02-15-olympiacos-ferencvaros",
+      "olympiacos:research-20261020-1a31c34beac40e5b42ec",
+      "olympiacos:a-m-2024-02-22-ferencvaros-olympiacos",
+      "olympiacos:research-20261020-2330459efbbe830c5d74",
+      "olympiacos:research-20261020-d1cb1e4c4bb2bcc5105e",
+      "olympiacos:research-20261020-c564092d2fc6ea189233",
+      "w-2010"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/ticket-piraeus",
+      "caption": "First leg · 7 March 2024"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Mendilibar had been the manager for twenty-five days. A Thursday night in Piraeus, and the whole ground expected a win.",
+     "claim_ids": [
+      "w-leg1"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/03-fortounis-break",
+      "caption": "Piraeus, 7 March 2024"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Nine minutes in, it was two-nil to Maccabi. Eran Zahavi. Ido Shahar.",
+     "claim_ids": [
+      "w-leg1"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/close-hands-fence-kr",
+      "caption": "Nine minutes"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "El Kaabi pulled one back. Then Zahavi again. Then Dor Peretz.",
+     "claim_ids": [
+      "w-leg1"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/despair-kneeling-kr",
+      "caption": "Piraeus, 7 March 2024"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "One-three at half-time. A full Karaiskakis, and you could hear the Maccabi bench.",
+     "claim_ids": [
+      "w-leg1"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/terrace-empty-dusk-n",
+      "caption": "Half-time"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "One-four. At home. The heaviest home defeat Olympiacos have ever suffered in this competition.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+      "w-records"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "Mendilibar did not hide.",
+     "claim_ids": [
+      "q-mendilibar-1"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-mendilibar-1",
+      "text": "This was a very bad game for us. They scored three goals on three chances and the result was justified.",
+      "who": "José Luis Mendilibar",
+      "role": "Olympiacos coach, after the first leg"
+     }
+    },
+    {
+     "narration": "On the other bench, Robbie Keane chose his words carefully. Remember them.",
+     "claim_ids": [
+      "q-keane-1"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-keane-1",
+      "text": "All in all, we are just at halftime.",
+      "who": "Robbie Keane",
+      "role": "Maccabi Tel Aviv coach, after the first leg"
+     }
+    },
+    {
+     "narration": "In Israel, the morning papers were a party.",
+     "claim_ids": [
+      "p-jpost-1"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/press-israel",
+      "caption": "The papers, the next morning"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Maccabi Tel Aviv jumps out to big lead over Olympiacos.",
+     "claim_ids": [
+      "p-jpost-1"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-jpost-1",
+      "outlet": "The Jerusalem Post",
+      "headline": "Maccabi Tel Aviv jumps out to big lead over Olympiacos, Haifa drops thriller"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Three days later, it got worse. The derby. Panathinaikos, at the Karaiskakis.",
+     "claim_ids": [
+      "olympiacos:research-20261020-aa034a8be821299b8e57"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:research-20261020-aa034a8be821299b8e57"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "Two home defeats in one week, one of them to the eternal enemy. If football is a religion, this was the week people stopped going to church.",
+     "claim_ids": [
+      "olympiacos:research-20261020-aa034a8be821299b8e57",
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/01-piraeus-shock",
+      "caption": "Piraeus, March 2024"
+     },
+     "mood": "sad"
+    }
+   ]
+  },
+  {
+   "title": "Behind closed doors",
+   "beats": [
+    {
+     "narration": "The second leg was Maccabi’s home game, but it could not be played in Israel. Because of the war, it went to Serbia, behind closed doors, at the TSC Arena in Bačka Topola.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 2,
+      "title": "Behind closed doors",
+      "backdrop": "beat:olympiacos-maccabi-2024/ticket-backa-topola"
+     }
+    },
+    {
+     "narration": "Three hundred and seventy people. And it was José Luis Mendilibar’s sixty-third birthday.",
+     "claim_ids": [
+      "w-leg2",
+      "w-birthday"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "370",
+      "label": "In the ground in Bačka Topola",
+      "claim": "w-leg2",
+      "backdrop": "beat:olympiacos-maccabi-2024/07-greek-poster"
+     }
+    },
+    {
+     "narration": "Maccabi had won their last five. They were ninety minutes from the first European quarter-final in their history. All they had to do was not lose by three.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/ticket-backa-topola",
+      "caption": "Second leg · 14 March 2024"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Back in Piraeus, a whole city sat down in front of a screen.",
+     "claim_ids": [
+      "w-club",
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/tv-shop-window-kr",
+      "caption": "Piraeus, 14 March 2024"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Ten minutes. Daniel Podence. Four-two on aggregate.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/02-podence-early",
+      "caption": "10′ · Podence"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Thirty-six. The captain, Kostas Fortounis. Four-three.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/03-fortounis-break",
+      "caption": "36′ · Fortounis"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "First-half stoppage time. Ayoub El Kaabi, with his head. Four-four.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/04-el-kaabi-header",
+      "caption": "45+3′ · El Kaabi"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Then Zahavi, from the penalty spot. Five-four Maccabi, again.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/el-kaabi-strike",
+      "caption": "57′ · Zahavi, penalty"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Sixty-five. El Kaabi again. Four-one on the night. The exact score of Piraeus, turned upside down.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/bicycle-kick",
+      "caption": "65′ · El Kaabi"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Five each on aggregate after ninety minutes. Extra time.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/el-kaabi-volley",
+      "caption": "90′ · 5–5 on aggregate"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Ninety-three. Stevan Jovetić, his first goal in European competition for fourteen years.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/05-extra-time",
+      "caption": "93′ · Jovetić"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "A hundred and three. Youssef El-Arabi, who had only come on in the eighty-eighth minute. Six-one.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/huddle-fortounis",
+      "caption": "103′ · El-Arabi"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Seven goals to five. From three down to the quarter-finals.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Robbie Keane, a week after halftime, had one line for the other dressing room.",
+     "claim_ids": [
+      "q-keane-2"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-keane-2",
+      "text": "We did not expect such a defeat – congratulations to Olympiacos.",
+      "who": "Robbie Keane",
+      "role": "Maccabi Tel Aviv coach, after the second leg"
+     }
+    }
+   ]
+  },
+  {
+   "title": "The morning after",
+   "beats": [
+    {
+     "narration": "Proto Thema, in Athens, wrote that no team in European cup history had ever turned round a three-goal home defeat.",
+     "claim_ids": [
+      "p-protothema"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 3,
+      "title": "The morning after",
+      "backdrop": "beat:common/newspaper-stand-b-n"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Conference League: Maccabi Tel Aviv, Olympiacos, one-six.",
+     "claim_ids": [
+      "p-protothema"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-protothema",
+      "outlet": "Proto Thema",
+      "headline": "Conference League: Maccabi Tel Aviv-Olympiacos 1-6 & PAOK-Dinamo Zagreb 5-1! (videos)",
+      "date": "2024-03-15"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "In Ireland, they wrote about the other side of it.",
+     "claim_ids": [
+      "p-rte"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-rte",
+      "outlet": "RTÉ",
+      "headline": "Robbie Keane's Maccabi Tel Aviv out of Europa Conference League after squandering three-goal lead against Olympiacos",
+      "date": "2024-03-15"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Eran Zahavi had scored three of Maccabi’s five goals in the tie. He said it best.",
+     "claim_ids": [
+      "q-zahavi",
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-zahavi",
+      "text": "You can't concede six goals in Europe and continue on in this competition. Instead of making history, unfortunately we went the opposite direction.",
+      "who": "Eran Zahavi",
+      "role": "Maccabi Tel Aviv striker, after the second leg"
+     }
+    },
+    {
+     "narration": "And Mendilibar? He said they had never even talked about going through.",
+     "claim_ids": [
+      "q-mendilibar-2"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-mendilibar-2",
+      "text": "But what we didn't talk about was qualifying.",
+      "who": "José Luis Mendilibar",
+      "role": "Olympiacos coach, after the second leg"
+     }
+    },
+    {
+     "narration": "Only about a good night. Then the second goal went in, and the third, and he said they were filled with confidence.",
+     "claim_ids": [
+      "q-mendilibar-2"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-mendilibar-2",
+      "text": "We started with confidence and when the second and third goals came we were filled with confidence.",
+      "who": "José Luis Mendilibar",
+      "role": "Olympiacos coach, after the second leg",
+      "backdrop": "beat:olympiacos-maccabi-2024/huddle-fortounis"
+     }
+    },
+    {
+     "narration": "When the team landed in Athens, the supporters were there to meet them. Scenes of madness, the Spanish agency EFE called it.",
+     "claim_ids": [
+      "w-homecoming"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/airport-gate-kr",
+      "caption": "Athens, 15 March 2024"
+     },
+     "mood": "anthem"
+    },
+    {
+     "narration": "Two months later, an English paper went looking for the great comebacks. Only three times in UEFA’s three competitions had a team lost at home by two goals or more and still gone through.",
+     "claim_ids": [
+      "p-mirror"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-mirror",
+      "outlet": "Daily Mirror",
+      "headline": "GREAT EURO COMEBACKS",
+      "date": "2024-05-09"
+     },
+     "mood": "build"
+    }
+   ]
+  },
+  {
+   "title": "The Legend",
+   "beats": [
+    {
+     "narration": "The Legend. A club with a laurel-crowned youth on its badge, and a week in March it will never let anyone forget.",
+     "claim_ids": [
+      "w-club"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 4,
+      "title": "The Legend",
+      "backdrop": "beat:olympiacos-maccabi-2024/07-greek-poster"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Before the final in May, Mendilibar looked back at Bačka Topola. For sure, he said, that game showed everyone what we are capable of.",
+     "claim_ids": [
+      "q-mendilibar-3"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-mendilibar-3",
+      "text": "For sure that game showed everyone what we are capable of.",
+      "who": "José Luis Mendilibar",
+      "role": "Olympiacos coach, before the final"
+     }
+    },
+    {
+     "narration": "Eleven weeks after that night, Olympiacos won the Conference League in Athens. The first European trophy ever won by a Greek club.",
+     "claim_ids": [
+      "w-final-trophy",
+      "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Piraeus. Bačka Topola. Athens.",
+     "claim_ids": [
+      "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+      "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+      "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+       "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+       "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+      ],
+      "label": "Piraeus · Bačka Topola · Athens"
+     }
+    },
+    {
+     "narration": "Three hundred and seventy people saw it in the ground. Every Olympiacos supporter will tell you where they were when the sixth went in.",
+     "claim_ids": [
+      "w-leg2"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/el-kaabi-knee-slide",
+      "caption": "Bačka Topola, 14 March 2024"
+     },
+     "mood": "anthem"
+    },
+    {
+     "narration": "More important than life and death. Ask anyone in Piraeus about that week in March, and they will tell you Shankly was being modest.",
+     "claim_ids": [
+      "q-shankly"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:olympiacos-maccabi-2024/06-victory-away-end",
+      "caption": "Piraeus"
+     },
+     "mood": "anthem"
+    },
+    {
+     "narration": "end",
+     "claim_ids": [],
+     "visual": {
+      "type": "end"
+     }
+    }
+   ]
+  }
+ ],
+ "description": "On 7 March 2024 Olympiacos lost 1–4 at home to Maccabi Tel Aviv in the Europa Conference League round of 16. Three days later they lost the derby to Panathinaikos. One week after the first leg, in an almost empty ground in Bačka Topola, Serbia — 370 people, on José Luis Mendilibar's 63rd birthday — they won 6–1 after extra time and went through 7–5. It is still the biggest away win in the club's European history, and eleven weeks later Olympiacos won the competition.\n\nThis film tells both nights from the stands: every goal, the words of Mendilibar, Robbie Keane and Eran Zahavi as they were printed, and what the papers wrote the morning after.\n\nEvery score, date and quote on screen is printed from FanLife's archive (UEFA match records) and the sources listed below.",
+ "tags": [
+  "Olympiacos",
+  "Olympiacos Maccabi Tel Aviv",
+  "Maccabi Tel Aviv Olympiacos 1-6",
+  "Olympiacos comeback",
+  "Conference League 2024",
+  "El Kaabi",
+  "Mendilibar",
+  "Jovetic",
+  "El Arabi",
+  "Fortounis",
+  "Podence",
+  "Backa Topola",
+  "Thrylos",
+  "greatest comebacks",
+  "football documentary",
+  "football history",
+  "football supporters",
+  "FanLife",
+  "Football Stories"
+ ],
+ "shorts": [
+  {
+   "hook": "1–4 at home. Then 370 people saw this.",
+   "idea": "The second leg minute by minute, ending on the 7–5 card.",
+   "claim_ids": [
+    "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+    "w-leg2"
+   ]
+  },
+  {
+   "hook": "\"All in all, we are just at halftime.\"",
+   "idea": "Keane's words after the first leg, then the second leg.",
+   "claim_ids": [
+    "q-keane-1",
+    "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos"
+   ]
+  },
+  {
+   "hook": "The biggest away win in Olympiacos history happened behind closed doors.",
+   "idea": "370, the birthday, the record.",
+   "claim_ids": [
+    "w-records",
+    "w-leg2",
+    "w-birthday"
+   ]
+  }
+ ],
+ "thumbnails": [
+  {
+   "text": "1–4 To 6–1",
+   "concept": "El Kaabi on his knees, illustration.",
+   "claim": "w-leg2"
+  },
+  {
+   "text": "370 People Saw This",
+   "concept": "Empty stand in Serbia.",
+   "claim": "w-leg2"
+  },
+  {
+   "text": "The Legend Returns",
+   "concept": "Greek poster.",
+   "claim": "w-club"
+  }
+ ]
+}

@@ -224,6 +224,29 @@ class SpriteFactory:
           {src}<div class="dots" style="position:absolute;right:26px;bottom:24px;width:70px;height:70px"></div></div>'''
         return self.render(f'fact-{key}', body)
 
+    def quote(self, key: str, text: str, who: str, role: str | None, source: str | None) -> Path:
+        """Somebody's own words, as they were printed: a big quotation, the speaker under it, the source in the corner."""
+        src = f'<div class="src" style="padding:0 46px 30px">{esc(source)}</div>' if source else ''
+        role_ = f'<div class="caps fit" data-fit="840" style="font-size:26px;opacity:.8;padding-top:6px">{esc(role)}</div>' if role else ''
+        body = f'''<div class="sh"></div><div class="box" style="width:1040px">
+          <div class="goal" style="position:absolute;left:28px;top:-34px;font-size:220px;color:var(--accent);-webkit-text-stroke:4px var(--ink)">“</div>
+          <div data-fith="430" style="font-family:'Weekly Head';font-size:66px;line-height:1.04;padding:96px 56px 22px 56px;text-transform:none">{esc(text)}”</div>
+          <div style="padding:0 56px 24px;border-top:5px solid var(--ink);margin:0 56px 0 0;padding-top:18px">
+            <div class="head fit" data-fit="880" style="font-size:52px">— {esc(who)}</div>{role_}</div>
+          {src}<div class="dots" style="position:absolute;right:26px;bottom:24px;width:70px;height:70px"></div></div>'''
+        return self.render(f'quote-{key}', body)
+
+    def press(self, key: str, outlet: str, date: str | None, headline: str, standfirst: str | None) -> Path:
+        """A cutting from the papers, set in our own type: the outlet's name in plain caps (never its masthead), the date,
+        the headline exactly as it ran."""
+        sub = f'<div style="font-family:\'Weekly Body\';font-size:34px;line-height:1.2;padding:0 50px 30px">{esc(standfirst)}</div>' if standfirst else ''
+        body = f'''<div class="sh" style="inset:16px 0 0 16px"></div><div class="box" style="width:1080px;background:var(--news);border-width:4px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:22px 50px 14px;border-bottom:3px double var(--ink)">
+            <span class="caps fit" data-fit="640" style="font-size:34px">{esc(outlet)}</span><span class="caps" style="font-size:26px">{esc(long_date(date))}</span></div>
+          <div data-fith="380" style="font-family:'Weekly Head';font-size:84px;line-height:.98;padding:30px 50px 26px;text-transform:none">{esc(headline)}</div>
+          {sub}<div class="lines" style="height:22px;margin:0 50px 26px;opacity:.35"></div></div>'''
+        return self.render(f'press-{key}', body)
+
     def stat(self, key: str, value: str, label: str, source: str | None) -> Path:
         src = f'<div class="src" style="padding:6px 0 0">Source · {esc(source)}</div>' if source else ''
         body = f'''<div class="sh" style="inset:20px 0 0 20px"></div><div class="box" style="padding:30px 60px 40px;text-align:center;min-width:620px">

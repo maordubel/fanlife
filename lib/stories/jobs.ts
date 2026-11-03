@@ -13,19 +13,40 @@ export type JobState='queued'|'running'|'paused'|'cancel_requested'|'cancelled'|
 export type UploadState='none'|'in_progress'|'uncertain'|'done'
 export type Privacy='private'|'unlisted'|'public'|'scheduled'
 export const DURATIONS=[0.5,1,2,3,5,...Array.from({length:19},(_,i)=>i+7)] as const
+export type ArtFile={name:string;illustrated:boolean}
 export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
  visual_style:'collage'|'papercut'|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
  privacy:Privacy;publish_at:string|null
+ /** Crowd reactions at the goals: soft (default) or none (owner, 3.11.2026). */
+ crowd?:'soft'|'off'
+ /** Optional: tell one tie or one run of matches instead of the whole season (dates inclusive, YYYY-MM-DD). */
+ focus_from?:string|null;focus_to?:string|null
+ /** Optional: quotes and press headlines the owner found, one per line with its https source — they become sourced claims. */
+ notes?:string
+ /** Optional: the owner's own pictures for this film (uploaded to the job's private folder before it starts). */
+ art?:ArtFile[];hold?:boolean
+}
+export const ART_NAME=/^[a-z0-9][a-z0-9._-]{0,60}\.(png|jpe?g|webp)$/
+const DAY=/^\d{4}-\d{2}-\d{2}$/
+/** One line of owner notes: `quote | speaker | role | the exact words | https://…` or `press | outlet | YYYY-MM-DD | headline | https://…`. */
+export function noteLine(line:string):{kind:'quote'|'press';parts:string[];url:string}|null{
+ const parts=line.split('|').map(x=>x.trim())
+ const kind=parts[0]?.toLowerCase()
+ const url=parts[parts.length-1]||''
+ if((kind!=='quote'&&kind!=='press')||parts.length!==5||!/^https:\/\/\S+$/.test(url)||parts.slice(1,4).some(x=>!x))return null
+ if(kind==='press'&&parts[2]!=='-'&&!DAY.test(parts[2]??''))return null
+ return {kind,parts:parts.slice(1,4),url}
 }
 export type Palette={club_id:string;club_name:string;primary:string;on_primary:string;bans:string[]}
 export type Artefact={path:string;bytes:number;sha256?:string}
+export type ShortArtefact=Artefact&{hook:string;seconds:number;title?:string}
 export type Job={
  version:1;id:string;createdAt:string;updatedAt:string;createdBy:string;idempotencyKey:string
  brief:Brief;palette:Palette;state:JobState;stage:Stage|null;progress:number;message:string
  attempts:number;lease:{worker:string;until:string}|null
  log:{at:string;text:string}[];error:{code:string;message:string;retryable:boolean}|null
- artefacts:{master?:{chunks:Artefact[];bytes:number;sha256:string};preview?:Artefact;thumbnails?:Artefact[];captions?:{srt:Artefact;vtt:Artefact};contact?:Artefact;package?:Artefact}|null
+ artefacts:{master?:{chunks:Artefact[];bytes:number;sha256:string};preview?:Artefact;thumbnails?:Artefact[];captions?:{srt:Artefact;vtt:Artefact};contact?:Artefact;package?:Artefact;shorts?:ShortArtefact[]}|null
  youtube:Record<string,unknown>|null;qa:{ok:boolean;checks:{name:string;ok:boolean;detail:string}[];cannot_prove?:string[];rights?:string[]}|null
  upload:{state:UploadState;videoId:string|null;visibility:Privacy|null;publishAt:string|null;at:string|null;by:string|null;note:string|null}
  cost:{writer?:string;voice?:string;renderMinutes?:number}
@@ -46,18 +67,29 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  const privacy=pick('privacy',['private','unlisted','public','scheduled'] as const,'private')
  const publish_at=privacy==='scheduled'?str('publish_at',40,true):null
  if(publish_at!==null){if(!ISO.test(publish_at)||!Number.isFinite(Date.parse(publish_at)))throw new StoryError('BRIEF','Publish time must be a full date and time with its time zone.');if(Date.parse(publish_at)<Date.now()+3600_000)throw new StoryError('BRIEF','Schedule at least an hour ahead.')}
- return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',['collage','papercut','mixed'] as const,'collage'),voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at}
+ const focus_from=str('focus_from',10)||null,focus_to=str('focus_to',10)||null
+ for(const d of [focus_from,focus_to])if(d&&(!DAY.test(d)||!Number.isFinite(Date.parse(d))))throw new StoryError('BRIEF','Focus dates look like 2024-03-07.')
+ if(focus_from&&focus_to&&focus_from>focus_to)throw new StoryError('BRIEF','The focus must start before it ends.')
+ const notes=str('notes',6000)
+ const lines=notes.split('\n').map(x=>x.trim()).filter(Boolean)
+ if(lines.length>40)throw new StoryError('BRIEF','At most 40 quotes and headlines.')
+ const bad=lines.findIndex(l=>!noteLine(l))
+ if(bad>=0)throw new StoryError('BRIEF',`Quotes and headlines, line ${bad+1}: use "quote | speaker | role | exact words | https://source" or "press | outlet | YYYY-MM-DD | headline | https://source".`)
+ const hold=b.hold===true
+ return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',['collage','papercut','mixed'] as const,'collage'),voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
+  focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 
 export function newJob(id:string,brief:Brief,palette:Palette,actor:string,idempotencyKey:string,now=new Date()):Job{
  const at=now.toISOString()
- return {version:1,id,createdAt:at,updatedAt:at,createdBy:actor,idempotencyKey,brief,palette,state:'queued',stage:null,progress:0,message:'Waiting for the production worker',attempts:0,lease:null,log:[{at,text:'Queued'}],error:null,artefacts:null,youtube:null,qa:null,upload:{state:'none',videoId:null,visibility:null,publishAt:null,at:null,by:null,note:null},cost:{}}
+ const held=brief.hold===true
+ return {version:1,id,createdAt:at,updatedAt:at,createdBy:actor,idempotencyKey,brief,palette,state:held?'paused':'queued',stage:null,progress:0,message:held?'Waiting for your pictures — add them, then press Resume':'Waiting for the production worker',attempts:0,lease:null,log:[{at,text:held?'Created, held for the owner\'s pictures':'Queued'}],error:null,artefacts:null,youtube:null,qa:null,upload:{state:'none',videoId:null,visibility:null,publishAt:null,at:null,by:null,note:null},cost:{}}
 }
 
 const LOG_KEEP=120
 const pushLog=(j:Job,text:string,at:string)=>{j.log=[...j.log,{at,text:text.slice(0,400)}].slice(-LOG_KEEP)}
 
-export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}
+export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}
 export const VIDEO_ID=/^[A-Za-z0-9_-]{11}$/
 
 /** An owner's action → the next job, or a StoryError saying why it is not allowed now. */
@@ -73,6 +105,14 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'upload_started':if(j.state!=='ready'&&j.state!=='needs_review')no('Only a finished film can be uploaded.');if(j.upload.state==='done')no('This film is already uploaded.');if(j.upload.state==='in_progress'||j.upload.state==='uncertain')no('An upload was started already — check YouTube Studio, then record the result or reset.');j.upload={...j.upload,state:'in_progress',at,by:actor};pushLog(j,`Upload started by ${actor}`,at);break
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
+  case 'art_added':{
+   if(!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts (pause it first).')
+   const files=Array.isArray(a.files)?a.files:[]
+   if(!files.length||files.some(f=>!f||typeof f.name!=='string'||!ART_NAME.test(f.name)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg or .webp.')
+   const keep=new Map((j.brief.art??[]).map(f=>[f.name,f]))
+   for(const f of files)keep.set(f.name,{name:f.name,illustrated:f.illustrated===true})
+   if(keep.size>30)throw new StoryError('ART','At most 30 pictures for one film.')
+   j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} picture(s) added by ${actor}`,at);break}
   case 'upload_reset':if(j.upload.state==='done')no('A confirmed upload cannot be reset.');j.upload={state:'none',videoId:null,visibility:null,publishAt:null,at,by:actor,note:'Reset after checking YouTube Studio'};pushLog(j,`Upload state reset by ${actor} after checking YouTube Studio`,at);break
  }
  j.updatedAt=at;return j

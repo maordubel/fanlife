@@ -155,18 +155,25 @@ def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
     parts = [script['description'].strip(), '']
     if chs:
         parts += ['Chapters'] + [f'{ts_chapter(c["t"])} {c["title"]}' for c in chs] + ['']
-    parts += ['Sources'] + [f'• {s["title"]} — {s["url"]}' for s in srcs[:25]]
-    if len(srcs) > 25:
-        parts.append(f'• and {len(srcs) - 25} more archive records')
-    parts += ['', 'Credits',
+    tail = ['', 'Credits',
               f'• Facts: the FanLife archive and the sources above. Scores, dates and tables on screen are printed from those records.',
               f'• Narration: {manifest["voice"]["credit"]}',
               '• Score and sound effects: composed for this film; crowd atmosphere from FanLife\'s own recordings.',
-              '• Illustrations and stop-motion clips: AI-generated paper-cut art made for FanLife. They are symbolic: fictional figures, not photographs of the matches.',
+              ('• Illustrations: AI-generated art made for FanLife. Pictures marked ILLUSTRATION are drawn to look like photographs or '
+               'documents of real players and tickets, based on the match reports — they are not photographs, and personal details are blurred.'
+               if any(a.get('photoreal') for a in manifest.get('assets', [])) else
+               '• Illustrations and stop-motion clips: AI-generated paper-cut art made for FanLife. They are symbolic: fictional figures, not photographs of the matches.'),
               '• Maps: Natural Earth (public domain).',
               '• ' + synthetic_decision(manifest)['transparency_line'],
               '', SLOGAN, f'{CHANNEL_NAME} · {CHANNEL_HANDLE}']
-    text = '\n'.join(parts)
+    # YouTube allows 5,000 characters: drop sources from the end (never the credits or the slogan) until it fits
+    for n in range(min(25, len(srcs)), -1, -1):
+        src = ['Sources'] + [f'• {s["title"]} — {s["url"]}' for s in srcs[:n]]
+        if len(srcs) > n:
+            src.append(f'• and {len(srcs) - n} more archive records')
+        text = '\n'.join(parts + src + tail)
+        if len(text) <= 4900:
+            return text
     return text[:4900]
 
 

@@ -100,6 +100,54 @@ def cut(job: Path, first: int, last: int, hook: str, kicker: str, accent: str, o
     return {'file': str(out), 'start': round(t0, 2), 'end': round(t1, 2), 'seconds': round(t1 - t0, 1)}
 
 
+def pick_range(plan: dict, claim_ids: list[str], max_s: float = 58.0, min_s: float = 20.0,
+               used: set[int] | None = None) -> tuple[int, int] | None:
+    """The stretch of the film a Short idea is about: of every run of consecutive shots that fits a Short, the one where
+    the most seconds cite the idea's claims and the fewest repeat a Short already cut (`used`), the earliest on a tie.
+    Never the end card or the call to follow (they belong to the film)."""
+    fps = plan.get('fps', 25)
+    shots = [s for s in plan['shots'] if s['visual'].get('type') not in ('end', 'follow')]
+    want, used = set(claim_ids), used or set()
+    sec = [s['frames'] / fps for s in shots]
+    hit = [bool(want & set(s.get('claim_ids') or [])) for s in shots]
+    best, best_key = None, None
+    for i in range(len(shots)):
+        if not hit[i]:
+            continue  # a Short opens on its own subject, never on the shot before it
+        total = covered = repeat = 0.0
+        for j in range(i, len(shots)):
+            if j > i and shots[j]['n'] != shots[j - 1]['n'] + 1:
+                break
+            total += sec[j]
+            if total > max_s + 0.5:
+                break
+            covered += sec[j] if hit[j] else 0
+            repeat += sec[j] if shots[j]['n'] in used else 0
+            if total >= min_s or j == len(shots) - 1:
+                key = (covered - 1.5 * repeat, -i)
+                if best_key is None or key > best_key:
+                    best, best_key = (shots[i]['n'], shots[j]['n']), key
+    if best_key is None or best_key[0] <= 0:
+        return None
+    return best
+
+
+def auto(job: Path, script: dict, club: str, season: str, accent: str) -> list[dict]:
+    """Every Short the script proposes, cut from the finished master into out/shorts/."""
+    plan = read_json(job / 'plan.json')
+    out, used = [], set()
+    for i, sh in enumerate(script.get('shorts') or [], 1):
+        r = pick_range(plan, sh.get('claim_ids') or [], used=used)
+        if not r:
+            continue
+        used |= set(range(r[0], r[1] + 1))
+        dst = job / 'out' / 'shorts' / f'short-{i}.mp4'
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        res = cut(job, r[0], r[1], sh['hook'], f'{club} · {season}', accent, dst)
+        out.append({**res, 'hook': sh['hook'], 'idea': sh.get('idea'), 'shots': list(r), 'file': str(dst)})
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--job', type=Path, required=True)

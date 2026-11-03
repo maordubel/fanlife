@@ -1,0 +1,20 @@
+{
+ "01-piraeus-shock.png": {"description": "Olympiacos supporters at the Karaiskakis, heads in hands, after the 1–4", "illustrated": false},
+ "02-podence-early.png": {"description": "Number 56 striking early, inspired by Podence's goal in the second leg"},
+ "03-fortounis-break.png": {"description": "Number 7, the captain, breaking through — inspired by Fortounis's goal"},
+ "04-el-kaabi-header.png": {"description": "Number 9 heading in before half-time — inspired by El Kaabi"},
+ "05-extra-time.png": {"description": "Number 22 scoring in extra time — inspired by Jovetić"},
+ "06-victory-away-end.png": {"description": "Players arm in arm in front of a red-and-white end"},
+ "07-greek-poster.png": {"description": "Greek poster: Η ΜΕΓΑΛΗ ΑΝΑΤΡΟΠΗ · ΣΕΡΒΙΑ 2024"},
+ "el-kaabi-knee-slide.png": {"description": "El Kaabi on his knees, celebrating", "illustrated": true},
+ "el-kaabi-strike.png": {"description": "El Kaabi shooting between two Maccabi defenders", "illustrated": true},
+ "el-kaabi-volley.png": {"description": "El Kaabi volleying in front of the stands in Bačka Topola", "illustrated": true},
+ "bicycle-kick.png": {"description": "The overhead kick: El Kaabi's second, in the 65th minute", "illustrated": true},
+ "huddle-fortounis.png": {"description": "Olympiacos players around Fortounis, number 7", "illustrated": true},
+ "ticket-piraeus.png": {"description": "A ticket for the first leg in Piraeus, 7 March 2024 — the holder's name and numbers blurred",
+   "illustrated": true, "blur": [[205, 590, 520, 705], [628, 592, 965, 742], [1296, 392, 1486, 570], [1305, 610, 1455, 645]]},
+ "ticket-backa-topola.png": {"description": "A ticket for the second leg at the TSC Arena, 14 March 2024",
+   "illustrated": true, "blur": [[1295, 400, 1485, 590], [555, 720, 995, 765]]},
+ "press-israel.png": {"description": "Illustration of the Israeli papers the next morning — not a real newspaper page; masthead, byline, credit and text blurred",
+   "illustrated": true, "blur": [[25, 5, 730, 62], [1100, 108, 1452, 1008], [35, 618, 1100, 1008], [0, 600, 42, 1066]]}
+}

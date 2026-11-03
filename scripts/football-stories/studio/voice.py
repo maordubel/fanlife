@@ -40,7 +40,8 @@ PRONOUNCE = {
     'Fortounis': 'For-too-nis', 'Rodinei': 'Ho-dee-nay', 'Piraeus': 'Pie-ree-us', 'Karaiskakis': 'Kah-rice-kah-kis',
     'Ferencváros': 'Feh-rents-vah-rosh', 'Carvalhal': 'Car-val-yal', 'Alexandropoulos': 'Alex-an-drop-oo-los', 'Agia Sophia': 'Ah-yee-a So-fee-a',
     'Podence': 'Po-den-seh', 'Chiquinho': 'Shee-keen-yo', 'Olympiacos': 'Oh-lim-pee-a-kos', 'Martínez': 'Mar-tee-neth', 'Nyon': 'Nee-on',
-    'El-Arabi': 'El Ah-rah-bee', 'Fiorentina': 'Fee-oh-ren-tee-na', 'Bonucci': 'Bo-noo-chee', 'Cengiz': 'Jen-giz',
+    'El-Arabi': 'El Ah-rah-bee', 'Zahavi': 'Za-ha-vee', 'Shahar': 'Sha-har', 'Thrylos': 'Three-los', 'RTÉ': 'R T E', 'EFE': 'E F E',
+    'Peretz': 'Peh-rets', 'Fiorentina': 'Fee-oh-ren-tee-na', 'Bonucci': 'Bo-noo-chee', 'Cengiz': 'Jen-giz',
 }
 
 
@@ -170,7 +171,7 @@ def kokoro_beat(text: str, out: Path, extra: dict | None) -> dict:
     import numpy as np
     k = _kokoro()
     voice = os.environ.get('STORIES_KOKORO_VOICE', 'bm_george')
-    speed = float(os.environ.get('STORIES_KOKORO_SPEED', '0.94'))
+    speed = float(os.environ.get('STORIES_KOKORO_SPEED', '1.0'))
     chunks, words, t = [], [], 0.0
     gap = np.zeros(int(SR * 0.28), dtype='float32')
     for i, s in enumerate(sentences(text)):

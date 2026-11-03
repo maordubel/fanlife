@@ -1,0 +1,238 @@
+{
+ "set": "olympiacos-maccabi-2024",
+ "club": "olympiacos",
+ "season": "2023/24",
+ "origin": "owner-upload",
+ "supplied": "2026-11-03",
+ "note": "Owner-supplied art for the Olympiacos v Maccabi Tel Aviv tie, March 2024. Pieces marked illustrated are AI illustrations drawn to look like photographs or documents, based on match reports; the film prints ILLUSTRATION on them. Personal details on tickets and the masthead, byline and text of the made-up newspaper page are blurred.",
+ "pieces": [
+  {
+   "key": "beat:olympiacos-maccabi-2024/01-piraeus-shock",
+   "description": "Olympiacos supporters at the Karaiskakis, heads in hands, after the 1–4",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "01-piraeus-shock.png",
+   "sha256": "2edee0e7db05eb17",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/02-podence-early",
+   "description": "Number 56 striking early, inspired by Podence's goal in the second leg",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "02-podence-early.png",
+   "sha256": "2bc49ac2108d078a",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/03-fortounis-break",
+   "description": "Number 7, the captain, breaking through — inspired by Fortounis's goal",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "03-fortounis-break.png",
+   "sha256": "5af3c8e766150886",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/04-el-kaabi-header",
+   "description": "Number 9 heading in before half-time — inspired by El Kaabi",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "04-el-kaabi-header.png",
+   "sha256": "a456f4267e80e8e0",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/05-extra-time",
+   "description": "Number 22 scoring in extra time — inspired by Jovetić",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "05-extra-time.png",
+   "sha256": "6b1d1fdfa4ed5b04",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/06-victory-away-end",
+   "description": "Players arm in arm in front of a red-and-white end",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "06-victory-away-end.png",
+   "sha256": "f456c50b43e0adfc",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/07-greek-poster",
+   "description": "Greek poster: Η ΜΕΓΑΛΗ ΑΝΑΤΡΟΠΗ · ΣΕΡΒΙΑ 2024",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "07-greek-poster.png",
+   "sha256": "97263f4f1893a804",
+   "size": [
+    1672,
+    941
+   ]
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/bicycle-kick",
+   "description": "The overhead kick: El Kaabi's second, in the 65th minute",
+   "families": [
+    "red",
+    "yellow",
+    "blue"
+   ],
+   "source": "bicycle-kick.png",
+   "sha256": "0d33ae6140c3c02d",
+   "size": [
+    1550,
+    1015
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/el-kaabi-knee-slide",
+   "description": "El Kaabi on his knees, celebrating",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "el-kaabi-knee-slide.png",
+   "sha256": "1955df8514130302",
+   "size": [
+    1536,
+    1024
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/el-kaabi-strike",
+   "description": "El Kaabi shooting between two Maccabi defenders",
+   "families": [
+    "red",
+    "yellow"
+   ],
+   "source": "el-kaabi-strike.png",
+   "sha256": "f15eedb47cc5076e",
+   "size": [
+    1536,
+    1024
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/el-kaabi-volley",
+   "description": "El Kaabi volleying in front of the stands in Bačka Topola",
+   "families": [
+    "red",
+    "yellow",
+    "blue"
+   ],
+   "source": "el-kaabi-volley.png",
+   "sha256": "faebae4796776ec5",
+   "size": [
+    1675,
+    939
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/huddle-fortounis",
+   "description": "Olympiacos players around Fortounis, number 7",
+   "families": [
+    "red",
+    "yellow",
+    "blue"
+   ],
+   "source": "huddle-fortounis.png",
+   "sha256": "cbef0d5845dcbac7",
+   "size": [
+    1534,
+    1025
+   ],
+   "illustrated": true
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/press-israel",
+   "description": "Illustration of the Israeli papers the next morning — not a real newspaper page; masthead, byline, credit and text blurred",
+   "families": [
+    "red",
+    "yellow",
+    "blue"
+   ],
+   "source": "press-israel.png",
+   "sha256": "7127ba0fa84900b3",
+   "size": [
+    1475,
+    1066
+   ],
+   "illustrated": true,
+   "masked": 4
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/ticket-backa-topola",
+   "description": "A ticket for the second leg at the TSC Arena, 14 March 2024",
+   "families": [
+    "red",
+    "yellow",
+    "green",
+    "blue"
+   ],
+   "source": "ticket-backa-topola.png",
+   "sha256": "0a4cbf04d0d58968",
+   "size": [
+    1764,
+    892
+   ],
+   "illustrated": true,
+   "masked": 2
+  },
+  {
+   "key": "beat:olympiacos-maccabi-2024/ticket-piraeus",
+   "description": "A ticket for the first leg in Piraeus, 7 March 2024 — the holder's name and numbers blurred",
+   "families": [
+    "red",
+    "yellow",
+    "green"
+   ],
+   "source": "ticket-piraeus.png",
+   "sha256": "8d2ad4603db5da7b",
+   "size": [
+    1672,
+    941
+   ],
+   "illustrated": true,
+   "masked": 4
+  }
+ ]
+}

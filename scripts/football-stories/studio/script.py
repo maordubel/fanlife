@@ -24,6 +24,8 @@ VISUALS = {
     'turning': {'title', 'subtitle', 'backdrop'},
     'illustration': {'art', 'caption', 'prompt'},
     'ticket': {'claim', 'backdrop'},
+    'quote': {'text', 'who', 'role', 'claim', 'backdrop'},
+    'press': {'outlet', 'date', 'headline', 'standfirst', 'claim', 'backdrop'},
     'follow': {'backdrop'},
     'end': set(),
 }
@@ -96,17 +98,17 @@ def art_ok(key, ledger: dict, *, allow_gen: bool = False) -> bool:
     if not isinstance(key, str):
         return False
     for kind, find in (('beat', beat_path), ('clip', clip_path), ('cut', cut_path)):
-        for set_id in (beat_set(ledger), 'common'):
+        for set_id in (beat_set(ledger), *(ledger.get('art_sets') or []), 'common'):
             if key.startswith(f'{kind}:{set_id}/') and find(key) is not None:
                 return True
     return False
 
 
-CLAIM_VISUALS = {'matchday', 'score', 'table', 'ticket'}
+CLAIM_VISUALS = {'matchday', 'score', 'table', 'ticket', 'quote', 'press'}
 ANGLES = {'search', 'discovery'}
 DURATIONS = {0.5, 1, 2, 3, 5, *range(7, 26)}
 
-WORDS_PER_MINUTE = 135
+WORDS_PER_MINUTE = 148  # Kokoro at speed 1.0: a supporter telling it, not a lecture
 
 SCHEMA_TEXT = '''{
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
@@ -128,6 +130,8 @@ SCHEMA_TEXT = '''{
         {"type":"turning","title":string,"subtitle":string,"backdrop":"..."}
         {"type":"illustration","art":"tunnel|terrace-crowd|terrace-empty|supporter|gen|beat:<key>","prompt":string (only when art is gen),"caption":string}
         {"type":"ticket","claim":match claim id}
+        {"type":"quote","claim":quote claim id,"text":the speaker's words copied EXACTLY from the claim (≤40 words),"who":the claim's speaker,"role":string}
+        {"type":"press","claim":press claim id,"outlet":the claim's outlet,"headline":the claim's headline EXACTLY,"date":"YYYY-MM-DD" optional}
         {"type":"end"}
       Every "backdrop" and "art" may also be an owner piece from BEAT ART when one is listed — a still ("beat:…") or a
       ten-second stop-motion clip ("clip:…", it plays once and holds; use it where a moment builds or arrives). Colour
@@ -287,6 +291,12 @@ def fact_guard(text: str, ledger: dict, ids: list[str]) -> list[str]:
     return [f'number {n} is not in the cited claims {ids or "[]"}' for n in missing]
 
 
+def squash(t: str) -> str:
+    """Text compared as words: curly and straight quotes, dashes and spacing do not make a quote different."""
+    t = t.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')
+    return re.sub(r'\s+', ' ', t).strip().strip('"').lower()
+
+
 def target_words(minutes: float) -> tuple[int, int]:
     w = minutes * WORDS_PER_MINUTE
     return int(w * 0.85), int(w * 1.12)
@@ -367,6 +377,22 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
                 errs.append(f'{where}: {t} needs a match claim')
             if t == 'table' and vc and vc[0] in by and by[vc[0]]['fact'].get('kind') != 'table':
                 errs.append(f'{where}: table needs a table claim')
+            if t == 'quote' and vc and vc[0] in by:
+                qf = by[vc[0]]['fact']
+                if qf.get('kind') != 'quote':
+                    errs.append(f'{where}: a quote needs a quote claim')
+                elif not isinstance(v.get('text'), str) or squash(v['text']) not in squash(qf.get('text') or ''):
+                    errs.append(f'{where}: a quote must be the speaker\'s own words, word for word from its claim')
+                elif v.get('who') != qf.get('speaker'):
+                    errs.append(f'{where}: a quote names its speaker as the claim does ({qf.get("speaker")})')
+                elif len(v['text'].split()) > 40:
+                    errs.append(f'{where}: a quote is at most 40 words')
+            if t == 'press' and vc and vc[0] in by:
+                pf = by[vc[0]]['fact']
+                if pf.get('kind') != 'press':
+                    errs.append(f'{where}: a press cutting needs a press claim')
+                elif v.get('headline') != pf.get('headline') or v.get('outlet') != pf.get('outlet'):
+                    errs.append(f'{where}: a press cutting prints the headline and outlet exactly as its claim has them')
             if t == 'timeline' and not (2 <= len(v.get('claims') or []) <= 8):
                 errs.append(f'{where}: a timeline needs 2–8 claims')
             if 'backdrop' in v and not art_ok(v['backdrop'], ledger):
@@ -377,8 +403,10 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
                     errs.append(f'{where}: illustration art must be a library piece, an owner beat piece for this film, or gen')
                 if art == 'gen' and (not isinstance(v.get('prompt'), str) or len(v['prompt']) < 20):
                     errs.append(f'{where}: a generated illustration needs a prompt')
-            texts = [b['narration']] + [v.get(k) for k in ('headline', 'kicker', 'title', 'subtitle', 'heading', 'text', 'label', 'value', 'caption')
-                                        if isinstance(v.get(k), str)]
+            verbatim = {'quote': {'text'}, 'press': {'headline'}}.get(t, set())  # checked word for word against the claim above
+            texts = [b['narration']] + [v.get(k) for k in ('headline', 'kicker', 'title', 'subtitle', 'heading', 'text', 'label', 'value', 'caption',
+                                                           'who', 'role', 'outlet', 'standfirst')
+                                        if isinstance(v.get(k), str) and k not in verbatim]
             for tx in texts:
                 errs += [f'{where}: {e}' for e in fact_guard(tx, ledger, cites + vc)]
             if t == 'stat' and isinstance(v.get('value'), str) and not numbers_in_text(v['value']):

@@ -201,7 +201,7 @@ def _uefa_comp(comp: str | None, season: str) -> tuple[str | None, str | None]:
     if not comp:
         return None, None
     stage = None
-    c = comp.strip()
+    c = re.sub(r'\s+\d{4}/\d{2}$', '', comp.strip())  # 'Greek Super League 2023/24' is the competition, not the season
     if c.lower().endswith(' final'):
         c, stage = c[:-6].strip(), 'Final'
     m = STAGE_IN_NAME.match(c)
@@ -282,6 +282,18 @@ def _same_match(rows: list[dict]) -> list[dict]:
     return out
 
 
+def _club_names(club_id: str) -> list[str]:
+    """The club's own other spellings: the pack's ingest names and the studio's list (studio/dossiers/club-names.json)."""
+    out: list[str] = []
+    ing = ROOT / 'club-packs' / club_id / 'ingest.json'
+    if ing.exists():
+        out += [n for n in (json.loads(ing.read_text(encoding='utf-8')).get('names') or []) if isinstance(n, str)]
+    extra = Path(__file__).parent / 'dossiers' / 'club-names.json'
+    if extra.exists():
+        out += [n for n in (json.loads(extra.read_text(encoding='utf-8')).get(club_id) or []) if isinstance(n, str)]
+    return out
+
+
 def compiled_ledger(club_id: str, season: str) -> dict:
     """FAN LIFE club packs (content/compiled/<club>.json): every APPROVED, sourced match of the season."""
     path = COMPILED / f'{club_id}.json'
@@ -293,6 +305,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
     ident = data.get('identity') or {}
     name = ident.get('name') or club_id
     srcs = {s['id']: s for s in (data.get('sources') or []) if isinstance(s, dict) and s.get('id')}
+    own = {name, *(_club_names(club_id))}
     claims, held = [], []
     rows = []
     for m in data.get('matches') or []:
@@ -315,6 +328,8 @@ def compiled_ledger(club_id: str, season: str) -> dict:
             ('not approved', m.get('status') != 'approved'),
             ('confidence below 2', (m.get('confidence') or 0) < 2),
         ) if bad]
+        if sides:  # another spelling of the club itself is the club, printed under its own name
+            sides = tuple(name if x in own else x for x in sides)
         if sides and name not in sides:
             reasons.append(f'neither side is {name}')
         if reasons:
@@ -359,6 +374,57 @@ def build_ledger(club_id: str, season: str, extra_claims: list[dict] | None = No
         ledger['claims'].append(c)
     ledger['summary'] = season_summary(ledger)
     return ledger
+
+
+def note_claims(notes: str) -> list[dict]:
+    """The owner's quotes and headlines from the brief, one per line, each with its https source:
+
+        quote | speaker | role | the exact words | https://…
+        press | outlet | YYYY-MM-DD | headline | https://…
+
+    They become claims like any dossier's (confidence 2 — a source the owner read), so the script may quote them word
+    for word through the quote and press visuals and nothing else. A malformed line is refused, never guessed."""
+    out: list[dict] = []
+    for i, line in enumerate(x.strip() for x in notes.splitlines()):
+        if not line:
+            continue
+        parts = [p.strip() for p in line.split('|')]
+        kind = parts[0].lower() if parts else ''
+        if kind not in ('quote', 'press') or len(parts) != 5 or not re.fullmatch(r'https://\S+', parts[4]) or not all(parts[1:4]):
+            raise StageError('BAD_NOTE', f'Brief notes, line {i + 1}: expected "quote | speaker | role | words | https://…" '
+                                         f'or "press | outlet | YYYY-MM-DD | headline | https://…"')
+        a, b, c, url = parts[1], parts[2], parts[3], parts[4]
+        if kind == 'quote':
+            fact = {'kind': 'quote', 'speaker': a, 'role': b, 'text': c}
+        else:
+            if b != '-' and not re.fullmatch(r'\d{4}-\d{2}-\d{2}', b):
+                raise StageError('BAD_NOTE', f'Brief notes, line {i + 1}: the date is YYYY-MM-DD or -')
+            fact = {'kind': 'press', 'outlet': a, 'headline': c, **({'date': b} if b != '-' else {})}
+        out.append({'id': f'note-{len(out) + 1}', 'type': kind, 'fact': fact,
+                    'sources': [{'title': f'{a} (owner note)', 'url': url, 'accessed': dt.date.today().isoformat()}],
+                    'confidence': 2})
+    return out
+
+
+def focus(ledger: dict, start: str | None, end: str | None) -> dict:
+    """Keep only the matches inside [start, end] (dates inclusive) — a film about one tie, not the whole season.
+    Every other claim stays (quotes, records, people), and the season summary is counted again from what is left, so a
+    focused film can only say what the focused matches add up to."""
+    def inside(c: dict) -> bool:
+        f = c['fact']
+        if f.get('kind') != 'match':
+            d = f.get('date')
+            return not (f.get('kind') == 'match-detail' and d and ((start and d < start) or (end and d > end)))
+        d = f.get('date') or ''
+        return (not start or d >= start) and (not end or d <= end)
+    kept = [c for c in ledger['claims'] if inside(c)]
+    out = {**ledger, 'claims': kept, 'held': [h for h in ledger['held'] if not h.get('date') or
+                                               ((not start or h['date'] >= start) and (not end or h['date'] <= end))],
+           'focus': {'from': start, 'to': end}}
+    out['summary'] = season_summary(out)
+    if not any(c['fact'].get('kind') == 'match' for c in kept):
+        raise StageError('EMPTY_FOCUS', f'No match of {ledger["club_name"]} {ledger["season"]} falls between {start} and {end}')
+    return out
 
 
 def validate_claim(c: dict) -> None:

@@ -84,7 +84,7 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
     names = [f'master.{i:03d}.part' for i in range(len(chunks))]
     pkg = out / 'package.zip'
     with zipfile.ZipFile(pkg, 'w', zipfile.ZIP_DEFLATED) as z:
-        for f in ['youtube.json', 'description.txt', 'captions.en.srt', 'captions.en.vtt', 'qa.json', 'assets.json']:
+        for f in ['youtube.json', 'description.txt', 'captions.en.srt', 'captions.en.vtt', 'qa.json', 'assets.json', 'shorts.json']:
             if (out / f).exists():
                 z.write(out / f, f)
         for f in ['script.json', 'ledger.json', 'plan.json', 'log.txt']:
@@ -94,6 +94,9 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
              'captions.en.srt': out / 'captions.en.srt', 'captions.en.vtt': out / 'captions.en.vtt',
              **{f'thumbnail-{i}.jpg': out / f'thumbnail-{i}.jpg' for i in (1, 2, 3)}}
     files = {k: v for k, v in files.items() if v.exists()}
+    shorts = [x for x in (read_json(out / 'shorts.json') if (out / 'shorts.json').exists() else []) if Path(x['file']).exists()]
+    for i, x in enumerate(shorts, 1):
+        files[f'short-{i}.mp4'] = Path(x['file'])
     urls = st.call({'op': 'upload_urls', 'id': job_id, 'names': names + list(files)})['urls']
     prefix = f'jobs/{job_id}/'
     for n, c in zip(names, chunks):
@@ -107,14 +110,40 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
            'captions': {'srt': {'path': prefix + 'captions.en.srt', 'bytes': files['captions.en.srt'].stat().st_size},
                         'vtt': {'path': prefix + 'captions.en.vtt', 'bytes': files['captions.en.vtt'].stat().st_size}},
            'contact': {'path': prefix + 'contact-sheet.jpg', 'bytes': files['contact-sheet.jpg'].stat().st_size} if 'contact-sheet.jpg' in files else None,
-           'package': {'path': prefix + 'package.zip', 'bytes': pkg.stat().st_size}}
+           'package': {'path': prefix + 'package.zip', 'bytes': pkg.stat().st_size},
+           'shorts': [{'path': prefix + f'short-{i}.mp4', 'bytes': files[f'short-{i}.mp4'].stat().st_size,
+                       'hook': x['hook'][:120], 'seconds': x['seconds']} for i, x in enumerate(shorts, 1)] or None}
     return {k: v for k, v in art.items() if v is not None}
 
 
-def brief_for_pipeline(job: dict) -> dict:
+def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
     b = job['brief']
-    return {'club_id': b['club_id'], 'season': b['season'], 'duration': b['duration'], 'topic': b.get('topic') or '',
-            'visual_style': b.get('visual_style', 'collage'), 'stop_after': 'script' if b.get('review') == 'script' else None}
+    out = {'club_id': b['club_id'], 'season': b['season'], 'duration': b['duration'], 'topic': b.get('topic') or '',
+           'visual_style': b.get('visual_style', 'collage'), 'stop_after': 'script' if b.get('review') == 'script' else None,
+           'crowd': b.get('crowd') or 'soft', 'focus_from': b.get('focus_from') or None, 'focus_to': b.get('focus_to') or None, 'notes': b.get('notes') or ''}
+    if art_dir and b.get('art'):
+        out.update(art_dir=str(art_dir), art=b['art'], art_set='job-' + job['id'][:40])
+    return out
+
+
+def fetch_art(st: Studio, job: dict, jd: Path, log) -> Path | None:
+    """The owner's pictures named in the brief, downloaded once into the job directory."""
+    art = job['brief'].get('art') or []
+    if not art:
+        return None
+    d = jd / 'owner-art'
+    d.mkdir(parents=True, exist_ok=True)
+    missing = [a['name'] for a in art if not (d / a['name']).exists()]
+    if missing:
+        urls = st.call({'op': 'art_urls', 'id': job['id']})['urls']
+        for n in missing:
+            if n not in urls:
+                log(f'Art: {n} is named in the brief but not in storage — skipped')
+                continue
+            with urllib.request.urlopen(urls[n], timeout=300) as r:
+                (d / n).write_bytes(r.read())
+        log(f'Art: {len(art)} owner pictures ready')
+    return d
 
 
 def run_once(st: Studio, root: Path, log) -> bool:
@@ -144,7 +173,7 @@ def run_once(st: Studio, root: Path, log) -> bool:
                 raise Stop(r['control'])
 
     try:
-        pb = brief_for_pipeline(job)
+        pb = brief_for_pipeline(job, fetch_art(st, job, jd, log))
         result = pipeline.run(jd, pb, Palette.from_json(job['palette']), progress=progress)
         if result.get('state') == 'review' and result.get('stage') == 'script':
             urls = st.call({'op': 'upload_urls', 'id': jid, 'names': ['script.json']})['urls']

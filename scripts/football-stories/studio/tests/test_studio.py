@@ -485,5 +485,123 @@ class ClubPacks(unittest.TestCase):
         self.assertEqual(place_of(f['a1'], 'Olympiacos')[0], 'Tel Aviv')
 
 
+
+class QuotesAndPress(unittest.TestCase):
+    """A quote is the speaker's own words and a cutting is the headline as it ran — checked against the claim, not typed."""
+
+    def ledger(self):
+        return {'club_id': 'x', 'season': '2023/24', 'summary': {}, 'claims': [
+            {'id': 'q', 'type': 'quote', 'fact': {'kind': 'quote', 'speaker': 'Robbie Keane', 'text': "All in all, we are just at halftime."},
+             'sources': [{'url': 'https://example.org/q'}]},
+            {'id': 'p', 'type': 'press', 'fact': {'kind': 'press', 'outlet': 'RTÉ', 'headline': 'Out after squandering three-goal lead'},
+             'sources': [{'url': 'https://example.org/p'}]}]}
+
+    def errs(self, v):
+        from studio import script as S
+        s = {'chapters': [{'title': 'a', 'beats': [{'narration': 'He said it.', 'claim_ids': [v['claim']], 'visual': v}]}]}
+        return [e for e in S.validate_script(s, self.ledger(), 0.1) if e.startswith('Chapter')]
+
+    def test_a_quote_must_be_word_for_word(self):
+        self.assertEqual(self.errs({'type': 'quote', 'claim': 'q', 'text': 'all in all, we are just at halftime', 'who': 'Robbie Keane'}), [])
+        self.assertTrue(any('word for word' in e for e in self.errs({'type': 'quote', 'claim': 'q', 'text': 'We are winning.', 'who': 'Robbie Keane'})))
+        self.assertTrue(any('speaker' in e for e in self.errs({'type': 'quote', 'claim': 'q', 'text': 'we are just at halftime', 'who': 'Keane'})))
+
+    def test_a_cutting_prints_the_headline_as_it_ran(self):
+        self.assertEqual(self.errs({'type': 'press', 'claim': 'p', 'outlet': 'RTÉ', 'headline': 'Out after squandering three-goal lead'}), [])
+        self.assertTrue(any('exactly' in e for e in self.errs({'type': 'press', 'claim': 'p', 'outlet': 'RTÉ', 'headline': 'Out!'})))
+
+
+class ArtDrops(unittest.TestCase):
+    def test_masked_text_is_unreadable_and_families_are_measured(self):
+        import numpy as np
+        from PIL import Image, ImageDraw
+        from studio import kit_ingest
+        im = Image.new('RGB', (400, 200), (240, 230, 210))
+        d = ImageDraw.Draw(im)
+        for y in range(20, 90, 12):
+            d.text((20, y), 'AMKA 20091303170 NAME', fill=(0, 0, 0))
+        im.paste((20, 160, 40), (0, 120, 400, 200))  # a green strip: a pitch
+        out = kit_ingest.blur_out(im, [[10, 10, 300, 100]])
+        before = np.asarray(im.crop((10, 10, 300, 100)).convert('L'), 'float32').std()
+        after = np.asarray(out.crop((10, 10, 300, 100)).convert('L'), 'float32').std()
+        self.assertLess(after, before / 4)
+        self.assertIn('green', kit_ingest.families(im))
+
+
+class ClubSpellings(unittest.TestCase):
+    def test_a_pack_name_and_a_season_label_are_read_as_the_club_and_the_competition(self):
+        from studio import research
+        self.assertIn('Olympiakos Piraeus', research._club_names('olympiacos'))
+        self.assertEqual(research._uefa_comp('Greek Super League 2023/24', '2023/24'), ('Greek Super League', None))
+
+
 if __name__ == '__main__':
     unittest.main()
+
+
+class BriefNotesAndFocus(unittest.TestCase):
+    def test_notes_become_claims(self):
+        from studio import research
+        cs = research.note_claims('quote | Bill Shankly | Liverpool manager | Football is life. | https://example.org/a\n'
+                                  'press | The Times | 2024-03-15 | A night to remember | https://example.org/b\n')
+        self.assertEqual([c['fact']['kind'] for c in cs], ['quote', 'press'])
+        self.assertEqual(cs[0]['fact']['speaker'], 'Bill Shankly')
+        self.assertEqual(cs[1]['fact']['date'], '2024-03-15')
+        for c in cs:
+            research.validate_claim(c)
+
+    def test_bad_note_is_refused(self):
+        from studio import research
+        from studio.common import StageError
+        for bad in ('quote | a | b | c | http://insecure', 'press | x | 15/3/2024 | h | https://e.org', 'gossip | a | b | c | https://e.org'):
+            with self.assertRaises(StageError):
+                research.note_claims(bad)
+
+    def test_focus_keeps_only_the_window(self):
+        from studio import research
+        def m(i, d, o='win'):
+            return {'id': i, 'fact': {'kind': 'match', 'date': d, 'competition': 'C', 'outcome': o, 'club_goals': 1, 'opponent_goals': 0}}
+        led = {'club_name': 'X', 'season': '2023/24', 'held': [],
+               'claims': [m('a', '2024-03-01'), m('b', '2024-03-07'), m('c', '2024-03-14'), m('d', '2024-04-01'),
+                          {'id': 'q', 'fact': {'kind': 'quote', 'speaker': 's', 'text': 't'}}]}
+        f = research.focus(led, '2024-03-07', '2024-03-14')
+        self.assertEqual([c['id'] for c in f['claims']], ['b', 'c', 'q'])
+        self.assertEqual(f['summary']['by_competition']['C']['played'], 2)
+        from studio.common import StageError
+        with self.assertRaises(StageError):
+            research.focus(led, '2025-01-01', '2025-02-01')
+
+
+class LeagueIsNotATie(unittest.TestCase):
+    def test_two_league_derbies_a_month_apart_are_not_two_legs(self):
+        from studio.edit import Editor
+        def m(d, side, cg, og, comp):
+            return {'kind': 'match', 'date': d, 'side': side, 'opponent': 'Panathinaikos', 'competition': comp,
+                    'club_goals': cg, 'opponent_goals': og, 'stage': None}
+        for comp, want in (('Greek Super League', None), ('Greek Cup', True)):
+            a, b = m('2024-02-04', 'away', 0, 1, comp), m('2024-03-10', 'home', 3, 1, comp)
+            ed = Editor.__new__(Editor)
+            ed.ledger = {'season': '2023/24', 'claims': [{'fact': a}, {'fact': b}]}
+            self.assertEqual(ed.tie_through(b), want, comp)
+
+
+class ShortsDoNotRepeat(unittest.TestCase):
+    def test_two_ideas_on_the_same_night_get_two_stretches(self):
+        from studio.shorts import pick_range
+        plan = {'fps': 25, 'shots': [{'n': n, 'frames': 250, 'visual': {'type': 'art'}, 'claim_ids': c}
+                                     for n, c in enumerate([['a'], ['b'], ['b'], ['x'], ['b'], ['b'], ['b'], ['x']])]}
+        first = pick_range(plan, ['b'], max_s=30, min_s=20)
+        self.assertEqual(first, (4, 6))
+        second = pick_range(plan, ['a', 'b'], max_s=30, min_s=20, used=set(range(first[0], first[1] + 1)))
+        self.assertEqual(second, (0, 2))
+        self.assertIsNone(pick_range(plan, ['nothing']))
+
+
+class CrowdIsQuiet(unittest.TestCase):
+    def test_no_crowd_bed_and_a_switch_to_turn_it_off(self):
+        from studio import audio
+        src = Path(audio.__file__).read_text(encoding='utf-8')
+        self.assertNotIn("CROWD.get('crowd-murmur')", src)  # the continuous bed is gone
+        self.assertEqual(audio.CROWD_LEVELS['off'], 0.0)
+        self.assertLessEqual(audio.CROWD_LEVELS['soft'], 0.15)
+        self.assertLessEqual(audio.CROWD_MAX_S, 3.0)
