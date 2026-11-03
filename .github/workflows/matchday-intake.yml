@@ -1,0 +1,60 @@
+name: I WAS THERE · intake
+# Claude writes scripts/football-stories/matchday/intake.json and pushes; this runs. No terminal for the owner.
+#  · art:      each Drive folder (shared "anyone with the link") becomes matchday/art/<set>/ — WebP, transparency kept —
+#              committed back to the branch that pushed.
+#  · footage:  the folder is surveyed (survey.py: contact sheets, dates, loudness, faces, ID tags) and scouted
+#              (scout.py: a strip a second, the sound curve, Whisper's words) and published to the
+#              `matchday-survey` branch under <episode>/. The footage itself is never committed.
+on:
+  push:
+    paths: ['scripts/football-stories/matchday/intake.json']
+permissions:
+  contents: write
+concurrency:
+  group: matchday-intake-${{ github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow "opencv-python-headless<5" faster-whisper
+      - name: Art
+        run: |
+          python3 - <<'PY' > "$RUNNER_TEMP/art.tsv"
+          import json
+          j = json.load(open('scripts/football-stories/matchday/intake.json'))
+          for a in j.get('art', []):
+              print(a['folder'], a['set'], a.get('note', ''), sep='\t')
+          PY
+          while IFS=$'\t' read -r folder set note; do
+            [ -z "$folder" ] && continue
+            python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/art/$set"
+            python3 scripts/football-stories/matchday/intake.py "$RUNNER_TEMP/art/$set" "$set" --note "$note"
+          done < "$RUNNER_TEMP/art.tsv"
+          git config user.name "fanlife-intake" && git config user.email "actions@users.noreply.github.com"
+          git add scripts/football-stories/matchday/art
+          git diff --cached --quiet || { git commit -qm "I WAS THERE: owner art into matchday/art ($(cut -f2 "$RUNNER_TEMP/art.tsv" | tr '\n' ' '))"; git push -q origin "HEAD:${GITHUB_REF_NAME}"; }
+      - name: Footage
+        run: |
+          folder=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/intake.json')).get('footage',{}).get('folder',''))")
+          ep=$(python3 -c "import json;print(json.load(open('scripts/football-stories/matchday/intake.json')).get('footage',{}).get('episode',''))")
+          [ -z "$folder" ] && { echo "no footage folder"; exit 0; }
+          python3 scripts/football-stories/matchday/drive_fetch.py "$folder" "$RUNNER_TEMP/raw"
+          python3 scripts/football-stories/matchday/survey.py "$RUNNER_TEMP/raw" "$RUNNER_TEMP/pub/$ep"
+          python3 scripts/football-stories/matchday/scout.py "$RUNNER_TEMP/raw" "$RUNNER_TEMP/pub/$ep/scout"
+          cp "$RUNNER_TEMP/raw/_fetch.json" "$RUNNER_TEMP/pub/$ep/"
+          rm -rf "$RUNNER_TEMP/pub/$ep/.frames"
+          git clone -q --depth 1 -b matchday-survey "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$RUNNER_TEMP/survey" || { mkdir -p "$RUNNER_TEMP/survey"; cd "$RUNNER_TEMP/survey"; git init -q; git checkout -q -b matchday-survey; cd -; }
+          rm -rf "$RUNNER_TEMP/survey/$ep" && cp -r "$RUNNER_TEMP/pub/$ep" "$RUNNER_TEMP/survey/$ep"
+          cd "$RUNNER_TEMP/survey"
+          git config user.name "fanlife-survey" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -qm "Survey + scout: $ep $(date -u +%FT%TZ)"
+          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:matchday-survey
+          cat "$ep/inventory.md" >> "$GITHUB_STEP_SUMMARY"

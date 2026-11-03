@@ -1,0 +1,9 @@
+{
+  "_": "Music the owner supplied for the studio's films (3.11.2026: \"use one of them and keep all of them for future use\"). Every track here carries its licence row; a film names a track by key (music:<key>) and the mix ducks it under the narrator and the crowd. The file names follow the artist-title-id pattern of the Pixabay music library; the owner supplied them for use on the channel. Loudness is measured (EBU R128), not typed.",
+  "tracks": [
+    {"key": "dark", "file": "dark-leberch-625667.mp3", "artist": "leberch", "title": "Dark", "id": "625667", "mood": ["sombre", "tension", "documentary"], "seconds": 252.0, "lufs": -13.3, "origin": "owner-supplied", "supplied": "2026-11-03", "used_in": ["iwt-02-bloomfield-2024"]},
+    {"key": "sports", "file": "sports-atlasaudio-625740.mp3", "artist": "AtlasAudio", "title": "Sports", "id": "625740", "mood": ["drive", "matchday", "promo"], "seconds": 122.1, "lufs": -9.7, "origin": "owner-supplied", "supplied": "2026-11-03", "used_in": []},
+    {"key": "energy", "file": "energy-gr0za-627556.mp3", "artist": "Gr0za", "title": "Energy Energy Music", "id": "627556", "mood": ["high-energy", "hype", "shorts"], "seconds": 148.6, "lufs": -5.3, "origin": "owner-supplied", "supplied": "2026-11-03", "used_in": []},
+    {"key": "lofi", "file": "lofi-sub-clair-628178.mp3", "artist": "Sub Clair", "title": "Lofi Study", "id": "628178", "mood": ["calm", "reflective", "talk"], "seconds": 178.7, "lufs": -10.2, "origin": "owner-supplied", "supplied": "2026-11-03", "used_in": []}
+  ]
+}
