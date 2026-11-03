@@ -11,7 +11,8 @@ const src=(p:string)=>readFileSync(p,'utf8')
 describe('Football Stories — the brief',()=>{
  it('accepts the documented lengths and defaults to private, automatic, collage',()=>{
   for(const d of [0.5,1,2,3,5,7,12,25])expect(validateBrief({club_id:'olympiacos',season:'2014/15',duration:d},clubs).duration).toBe(d)
-  expect(brief).toMatchObject({privacy:'private',review:'auto',visual_style:'collage',voice:'auto',club_name:'Hapoel Tel Aviv'})
+  expect(brief).toMatchObject({privacy:'private',review:'auto',visual_style:'collage',voice:'auto',crowd:'soft',club_name:'Hapoel Tel Aviv'})
+  expect(validateBrief({club_id:'olympiacos',season:'2014/15',duration:5,crowd:'off'},clubs).crowd).toBe('off')
  })
  it('refuses an unknown club, a malformed season, an odd length and a past or zone-less schedule',()=>{
   expect(()=>validateBrief({club_id:'nobody',season:'1999/00',duration:12},clubs)).toThrow(StoryError)

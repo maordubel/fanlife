@@ -120,7 +120,7 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
     b = job['brief']
     out = {'club_id': b['club_id'], 'season': b['season'], 'duration': b['duration'], 'topic': b.get('topic') or '',
            'visual_style': b.get('visual_style', 'collage'), 'stop_after': 'script' if b.get('review') == 'script' else None,
-           'focus_from': b.get('focus_from') or None, 'focus_to': b.get('focus_to') or None, 'notes': b.get('notes') or ''}
+           'crowd': b.get('crowd') or 'soft', 'focus_from': b.get('focus_from') or None, 'focus_to': b.get('focus_to') or None, 'notes': b.get('notes') or ''}
     if art_dir and b.get('art'):
         out.update(art_dir=str(art_dir), art=b['art'], art_set='job-' + job['id'][:40])
     return out

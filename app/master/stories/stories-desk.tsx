@@ -35,7 +35,7 @@ export function StoriesDesk(){
   const local=String(d.get('publish_at')||'')
   const brief={club_id:d.get('club_id'),season:d.get('season'),topic:d.get('topic'),duration,visual_style:d.get('visual_style'),voice:d.get('voice'),review:d.get('review'),privacy,
    publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
-   focus_from:d.get('focus_from')||undefined,focus_to:d.get('focus_to')||undefined,notes:d.get('notes')||'',hold:d.get('hold')==='on'}
+   crowd:d.get('crowd'),focus_from:d.get('focus_from')||undefined,focus_to:d.get('focus_to')||undefined,notes:d.get('notes')||'',hold:d.get('hold')==='on'}
   try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current='';setNotice(b.job.state==='paused'?`Created and held: ${b.job.brief.club_name} ${b.job.brief.season}. Open it, add your pictures, then press Resume.`:`Queued: ${b.job.brief.club_name} ${b.job.brief.season}. The worker picks it up within about ten minutes.`);setOpen(b.job.id);await load()}
   catch(err){setError(err instanceof Error?err.message:'Could not queue the film.')}finally{setBusy(false)}
  }
@@ -68,6 +68,7 @@ export function StoriesDesk(){
       <label>Narrator<select name="voice" defaultValue="auto"><option value="auto">Automatic</option><option value="elevenlabs">ElevenLabs (premium)</option><option value="kokoro">Free British voice</option></select><span className={css.hint}>Automatic uses ElevenLabs when its key is set, else the free voice.</span></label>
       <label>Script review<select name="review" defaultValue="auto"><option value="auto">Automatic</option><option value="script">Stop for my approval</option></select></label>
      </div>
+     <label>Crowd sound<select name="crowd" defaultValue="soft"><option value="soft">Soft — a short, distant cheer at the goals only</option><option value="off">None</option></select></label>
      <label>YouTube visibility<div className={css.chips} role="group" aria-label="Visibility">{(['private','unlisted','public','scheduled'] as const).map(p=><button type="button" key={p} className={`${css.chip} min-h-tap`} aria-pressed={privacy===p} onClick={()=>setPrivacy(p)}>{p}</button>)}</div>
       <span className={css.hint}>Applied when the film is uploaded. Every film is checked before it leaves the studio.</span></label>
      {privacy==='scheduled'&&<label>Publish at (Athens time)<input type="datetime-local" name="publish_at" required/></label>}

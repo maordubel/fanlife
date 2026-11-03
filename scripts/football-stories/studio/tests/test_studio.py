@@ -595,3 +595,13 @@ class ShortsDoNotRepeat(unittest.TestCase):
         second = pick_range(plan, ['a', 'b'], max_s=30, min_s=20, used=set(range(first[0], first[1] + 1)))
         self.assertEqual(second, (0, 2))
         self.assertIsNone(pick_range(plan, ['nothing']))
+
+
+class CrowdIsQuiet(unittest.TestCase):
+    def test_no_crowd_bed_and_a_switch_to_turn_it_off(self):
+        from studio import audio
+        src = Path(audio.__file__).read_text(encoding='utf-8')
+        self.assertNotIn("CROWD.get('crowd-murmur')", src)  # the continuous bed is gone
+        self.assertEqual(audio.CROWD_LEVELS['off'], 0.0)
+        self.assertLessEqual(audio.CROWD_LEVELS['soft'], 0.15)
+        self.assertLessEqual(audio.CROWD_MAX_S, 3.0)

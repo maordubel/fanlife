@@ -240,12 +240,23 @@ def fx(kind: str, rng) -> np.ndarray:
     return np.zeros(1, 'float32')
 
 
-def build_mix(job_dir: Path, plan: dict, log) -> Path:
+# Crowd (owner, 3.11.2026: "I don't like the crowd sounds — soften them or take them out"): no continuous bed any more,
+# only a short reaction at a goal or a result, filtered to sound distant and ducked under the narrator.
+# CROWD_LEVELS: 'soft' (default) or 'off', set per film in the brief.
+CROWD_LEVELS = {'soft': 0.12, 'off': 0.0}
+CROWD_MAX_S = 2.6
+CROWD_GAP_S = 8.0
+
+
+def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft') -> Path:
     total = plan['duration']
     n = int(total * SR) + SR
     rng = np.random.default_rng(5)
     voice = np.zeros(n, 'float32')
     sfx = np.zeros(n, 'float32')
+    crowd = np.zeros(n, 'float32')
+    gain = CROWD_LEVELS.get(crowd_level, CROWD_LEVELS['soft'])
+    last_crowd = -1e9
     for s in plan['shots']:
         if s['voice_file']:
             a = _read(job_dir / 'voice' / s['voice_file'])
@@ -257,25 +268,19 @@ def build_mix(job_dir: Path, plan: dict, log) -> Path:
                 i = int((s['start'] + t) * SR)
                 if kind.startswith('crowd'):
                     p = CROWD.get(kind)
-                    if p and p.exists():
-                        a = _read(p)[: int(4.5 * SR)]
-                        a *= np.minimum(1, np.arange(len(a))[::-1] / (1.2 * SR))
-                        sfx[i:i + len(a)] += a[: max(0, n - i)] * 0.30
+                    at = s['start'] + t
+                    # one short reaction at the moments that earn it (a goal, the final whistle), never a wall of noise
+                    if gain and kind in ('crowd-goal', 'crowd-final') and p and p.exists() and at - last_crowd >= CROWD_GAP_S:
+                        a = _read(p)[: int(CROWD_MAX_S * SR)]
+                        k = np.arange(len(a))
+                        a = a * np.minimum(1, k / (0.25 * SR)) * np.minimum(1, k[::-1] / (1.2 * SR))
+                        crowd[i:i + len(a)] += a[: max(0, n - i)] * gain
+                        last_crowd = at
                     continue
                 a = fx(kind, rng)
                 sfx[i:i + len(a)] += a[: max(0, n - i)] * 0.5
     # the score follows the story beat by beat: tension under a shoot-out, joy on a win, sadness on a defeat
     sections = mood_sections(plan)
-    # a crowd bed from the owner's own recordings under every match moment, low, for the feel of a ground
-    bed_src = CROWD.get('crowd-murmur')
-    if bed_src and bed_src.exists():
-        bed = _read(bed_src)
-        for sec in sections:
-            if sec['mood'] in ('tense', 'joy', 'triumph', 'build'):
-                a, b = int(sec['start'] * SR), min(n, int(sec['end'] * SR))
-                reps = np.tile(bed, int((b - a) / max(1, len(bed))) + 1)[: b - a]
-                env = np.minimum(1, np.minimum(np.arange(b - a), np.arange(b - a)[::-1]) / (1.5 * SR))
-                sfx[a:b] += reps * env.astype('float32') * 0.10
     music = score(sections)[:n]
     music = np.pad(music, (0, n - len(music)))
     d = job_dir / 'mix'
@@ -283,13 +288,18 @@ def build_mix(job_dir: Path, plan: dict, log) -> Path:
     _write(d / 'voice.wav', voice)
     _write(d / 'music.wav', music)
     _write(d / 'sfx.wav', sfx)
+    _write(d / 'crowd.wav', crowd)
     out = d / 'mix.m4a'
-    fg = ('[1:a]volume=0.55[m];[m][0:a]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[md];'
-          '[0:a]volume=1.0,highpass=f=70,acompressor=threshold=0.2:ratio=2.5:attack=5:release=120[v];'
-          '[2:a]volume=0.9[s];[v][md][s]amix=inputs=3:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]')
+    fg = ('[0:a]asplit=3[v0][vk1][vk2];'
+          '[1:a]volume=0.55[m];[m][vk1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[md];'
+          '[v0]volume=1.0,highpass=f=70,acompressor=threshold=0.2:ratio=2.5:attack=5:release=120[v];'
+          '[2:a]volume=0.9[s];'
+          # the crowd sounds far away (no hiss, no boom) and steps aside whenever the narrator speaks
+          '[3:a]highpass=f=180,lowpass=f=3200,aecho=0.6:0.5:60:0.25[cf];[cf][vk2]sidechaincompress=threshold=0.02:ratio=12:attack=15:release=500[c];'
+          '[v][md][s][c]amix=inputs=4:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]')
     r = subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(d / 'voice.wav'), '-i', str(d / 'music.wav'), '-i', str(d / 'sfx.wav'),
-                        '-filter_complex', fg, '-map', '[a]', '-ac', '2', '-c:a', 'aac', '-b:a', '192k', str(out)], capture_output=True, text=True)
+                        '-i', str(d / 'crowd.wav'), '-filter_complex', fg, '-map', '[a]', '-ac', '2', '-c:a', 'aac', '-b:a', '192k', str(out)], capture_output=True, text=True)
     if r.returncode:
         raise StageError('MIX_FAILED', r.stderr[-600:])
-    log('Mix: narration, score and effects mixed to −14 LUFS')
+    log(f'Mix: narration, score and effects mixed to −14 LUFS (crowd: {crowd_level})')
     return out

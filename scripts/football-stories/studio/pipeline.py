@@ -126,7 +126,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     step('mix', 0.8, 'Mixing sound')
     mix = job_dir / 'mix' / 'mix.m4a'
     if not mix.exists():
-        audio.build_mix(job_dir, plan, log)
+        audio.build_mix(job_dir, plan, log, brief.get('crowd') or 'soft')
 
     # 7 master + preview
     step('master', 0.85, 'Mastering')
@@ -229,11 +229,12 @@ def main() -> int:
     ap.add_argument('--topic', default='')
     ap.add_argument('--palette', type=Path, help='JSON from scripts/football-stories/palettes.ts')
     ap.add_argument('--script', type=Path)
+    ap.add_argument('--crowd', choices=['soft', 'off'], default='soft', help='crowd reactions at goals: soft (default) or none')
     ap.add_argument('--dossier', type=Path, help='a film\'s own dossier when a season has more than one film')
     a = ap.parse_args()
     pals = read_json(a.palette) if a.palette else {}
     pal = Palette.from_json(pals.get(a.club) or {'club_id': a.club, 'club_name': a.club, 'primary': '#B02D10', 'bans': []})
-    brief = {'club_id': a.club, 'season': a.season, 'duration': a.minutes, 'topic': a.topic,
+    brief = {'club_id': a.club, 'season': a.season, 'duration': a.minutes, 'topic': a.topic, 'crowd': a.crowd,
              **({'dossier': str(a.dossier)} if a.dossier else {})}
     try:
         r = run(a.job, brief, pal, script_file=a.script)

@@ -85,6 +85,8 @@ New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>
 - A quote is printed word for word from a claim of kind `quote` (≤40 words, the speaker as recorded); a headline only as
   the outlet printed it, set in our own type, never a copied masthead. Neither is ever paraphrased onto the screen.
 - Every film asks once to follow the channel (CLAUDE.md rule 136, art in doc 58).
+- Crowd sound (owner, 3.11.2026): no continuous crowd bed; only a short, distant cheer (≤2.6 s, 8 s apart) at a goal or
+  the final whistle, filtered and ducked under the narrator. Per film: soft (default) or none.
 - Rival colours (rule 95) are checked on sampled frames of every film.
 
 ## Craft (3.11.2026) — see doc 59

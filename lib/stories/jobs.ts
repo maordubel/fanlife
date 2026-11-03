@@ -18,6 +18,8 @@ export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
  visual_style:'collage'|'papercut'|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
  privacy:Privacy;publish_at:string|null
+ /** Crowd reactions at the goals: soft (default) or none (owner, 3.11.2026). */
+ crowd?:'soft'|'off'
  /** Optional: tell one tie or one run of matches instead of the whole season (dates inclusive, YYYY-MM-DD). */
  focus_from?:string|null;focus_to?:string|null
  /** Optional: quotes and press headlines the owner found, one per line with its https source — they become sourced claims. */
@@ -74,7 +76,7 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  const bad=lines.findIndex(l=>!noteLine(l))
  if(bad>=0)throw new StoryError('BRIEF',`Quotes and headlines, line ${bad+1}: use "quote | speaker | role | exact words | https://source" or "press | outlet | YYYY-MM-DD | headline | https://source".`)
  const hold=b.hold===true
- return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',['collage','papercut','mixed'] as const,'collage'),voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,
+ return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',['collage','papercut','mixed'] as const,'collage'),voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
   focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 
