@@ -29,15 +29,15 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-11-03T11:03:54.788Z"
+  "checkedAt": "2026-11-03T11:21:50.870Z"
  },
  "crno-bela-nostalgija:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
   "providerId": "crno-bela-nostalgija",
-  "state": "blocked",
-  "status": 403,
-  "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-11-03T11:03:57.807Z"
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-03T11:21:54.524Z"
  },
  "partizan-official:/vesti/istorijat": {
   "endpoint": "/vesti/istorijat",
@@ -45,7 +45,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-03T11:03:59.678Z"
+  "checkedAt": "2026-11-03T11:21:56.168Z"
  },
  "nft-partizan:/club/2156/1963/Partizan_Beograd.html": {
   "endpoint": "/club/2156/1963/Partizan_Beograd.html",
@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-03T11:04:00.830Z"
+  "checkedAt": "2026-11-03T11:21:56.667Z"
  },
  "partizanopedia:/4647.html": {
   "endpoint": "/4647.html",
@@ -462,5 +462,37 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-11-03T11:03:54.212Z"
+ },
+ "partizanopedia:/9798.html": {
+  "endpoint": "/9798.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-03T11:21:38.751Z"
+ },
+ "partizanopedia:/9899.html": {
+  "endpoint": "/9899.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-03T11:21:42.728Z"
+ },
+ "partizanopedia:/9900.html": {
+  "endpoint": "/9900.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-03T11:21:46.615Z"
+ },
+ "partizanopedia:/0001.html": {
+  "endpoint": "/0001.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-03T11:21:50.518Z"
  }
 }
