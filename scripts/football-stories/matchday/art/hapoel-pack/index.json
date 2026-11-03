@@ -1,0 +1,212 @@
+{
+ "set": "hapoel-pack",
+ "supplied": "2026-11-03",
+ "origin": "owner-upload",
+ "note": "FAN LIFE Hapoel Tel Aviv graphic pack (owner, 3.11.2026): paper-cut scenes, transparent supporters/props, blank ticket and scoreboard, existing badges. Illustrations, not photographs.",
+ "pieces": [
+  {
+   "key": "iwt-art:hapoel-pack/01-bloomfield-80s-inspired-night",
+   "file": "01-bloomfield-80s-inspired-night.webp",
+   "group": "01-backgrounds-and-scenes",
+   "source": "01_Bloomfield_80s_Inspired_Night.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "bd24e77509ce856c"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/02-terrace-scarves-90s-inspired",
+   "file": "02-terrace-scarves-90s-inspired.webp",
+   "group": "01-backgrounds-and-scenes",
+   "source": "02_Terrace_Scarves_90s_Inspired.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "54a748fba1a944b8"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/03-jaffa-matchday-walk",
+   "file": "03-jaffa-matchday-walk.webp",
+   "group": "01-backgrounds-and-scenes",
+   "source": "03_Jaffa_Matchday_Walk.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "08edb7de50db7ba4"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/04-stadium-tunnel",
+   "file": "04-stadium-tunnel.webp",
+   "group": "01-backgrounds-and-scenes",
+   "source": "04_Stadium_Tunnel.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "0c2df3095d011138"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/05-european-away-end",
+   "file": "05-european-away-end.webp",
+   "group": "01-backgrounds-and-scenes",
+   "source": "05_European_Away_End.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "46a7e00a1d32db9e"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/06-home-terrace-celebration",
+   "file": "06-home-terrace-celebration.webp",
+   "group": "01-backgrounds-and-scenes",
+   "source": "06_Home_Terrace_Celebration.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "abd0bb30198b4b7a"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/01-scarf-red-white",
+   "file": "01-scarf-red-white.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "01_Scarf_Red_White.png",
+   "size": [
+    2048,
+    683
+   ],
+   "alpha": true,
+   "sha256": "89b6d3af19fa74fe"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/02-blank-match-ticket",
+   "file": "02-blank-match-ticket.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "02_Blank_Match_Ticket.png",
+   "size": [
+    2048,
+    683
+   ],
+   "alpha": true,
+   "sha256": "58ba13c452b87b74"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/03-supporters-coach",
+   "file": "03-supporters-coach.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "03_Supporters_Coach.png",
+   "size": [
+    2048,
+    683
+   ],
+   "alpha": true,
+   "sha256": "a580dac72c50b50e"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/04-football",
+   "file": "04-football.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "04_Football.png",
+   "size": [
+    1536,
+    1024
+   ],
+   "alpha": true,
+   "sha256": "7573e1c010565ca7"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/05-blank-scoreboard",
+   "file": "05-blank-scoreboard.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "05_Blank_Scoreboard.png",
+   "size": [
+    1536,
+    1024
+   ],
+   "alpha": true,
+   "sha256": "bf75c26c6822b80e"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/06-supporter-scarf-up",
+   "file": "06-supporter-scarf-up.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "06_Supporter_Scarf_Up.png",
+   "size": [
+    1024,
+    1536
+   ],
+   "alpha": true,
+   "sha256": "8bec1b80d272d5ec"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/07-player-running",
+   "file": "07-player-running.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "07_Player_Running.png",
+   "size": [
+    1024,
+    1536
+   ],
+   "alpha": true,
+   "sha256": "dd89dda48ecdeb31"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/08-manager-pointing",
+   "file": "08-manager-pointing.webp",
+   "group": "02-characters-and-props-transparent",
+   "source": "08_Manager_Pointing.png",
+   "size": [
+    1001,
+    1571
+   ],
+   "alpha": true,
+   "sha256": "8c7e5c084152f50c"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/01-hapoel-badge-80s-existing",
+   "file": "01-hapoel-badge-80s-existing.webp",
+   "group": "03-club-badges-existing",
+   "source": "01_Hapoel_Badge_80s_Existing.png",
+   "size": [
+    1254,
+    1254
+   ],
+   "alpha": true,
+   "sha256": "c94d213d5ce364fb"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/02-hapoel-badge-1927-existing",
+   "file": "02-hapoel-badge-1927-existing.webp",
+   "group": "03-club-badges-existing",
+   "source": "02_Hapoel_Badge_1927_Existing.png",
+   "size": [
+    1254,
+    1254
+   ],
+   "alpha": true,
+   "sha256": "37d1c57dd0c23631"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/03-hapoel-tel-aviv-logo-reference",
+   "file": "03-hapoel-tel-aviv-logo-reference.webp",
+   "group": "03-club-badges-existing",
+   "source": "03_Hapoel_Tel_Aviv_Logo_Reference.png",
+   "size": [
+    600,
+    600
+   ],
+   "alpha": false,
+   "sha256": "b84cd5c56275a4e8"
+  }
+ ]
+}
