@@ -490,3 +490,19 @@ def whistle(sr: int) -> np.ndarray:
         env = np.minimum(1, t / 0.01) * np.minimum(1, (dur - t) / 0.04)
         out += [a * env * 0.35, np.zeros(int(0.07 * sr))]
     return np.concatenate(out).astype(np.float32)
+
+
+def photo(path: Path, crop: list | None = None) -> Image.Image:
+    """The owner's still from the night, upright, colour as shot; no metadata travels further than this. `crop` =
+    [x, y, w, h] in fractions keeps one part of it (a scoreboard, a stand)."""
+    from PIL import ImageOps
+    try:
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
+    im = ImageOps.exif_transpose(Image.open(path)).convert('RGB')
+    if crop:
+        x, y, w, h = crop
+        im = im.crop((int(x * im.width), int(y * im.height), int((x + w) * im.width), int((y + h) * im.height)))
+    return im

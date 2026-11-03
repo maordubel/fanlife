@@ -2,7 +2,7 @@
  "id": "iwt-04-aek-paok-2023",
  "title": "I WAS THERE · OPAP Arena, 26 April 2023 · AEK Athens 4–0 PAOK",
  "folder": "aek-paok-2023",
- "drive": "https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view",
+ "drive": "https://drive.google.com/drive/folders/15cZJoP2flSu5J0o2c4mGm6uQUxusjf3J",
  "accent": "#F2C400",
  "music": {
   "track": "atlasaudio-sports",
@@ -137,64 +137,39 @@
   "beats": [
    {
     "kind": "clip",
-    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "clip": "IMG_2830.MOV",
     "in": 0.0,
-    "min": 5.6,
+    "dur": 4.2,
     "sound": "clip",
-    "gain": 1.3,
+    "gain": 1.35,
     "entry": "black",
     "level": 0.0,
     "crowd_ok": true,
-    "cues": [
-     [
-      0.1,
-      "crowd-after"
-     ]
-    ],
-    "lead": 1.4,
-    "typed": {
-     "lines": [
-      "WE FILMED THREE SECONDS."
-     ],
-     "at_t": 0.5,
-     "size": 64,
-     "pos": [
-      0.5,
-      0.13
-     ],
-     "cps": 18
-    },
-    "say": "Three seconds. That's all we have of this night."
+    "clock": "21:24"
    },
    {
-    "kind": "black",
-    "backdrop": "beat:common/home-end-night-kr",
-    "dim": 0.6,
+    "kind": "clip",
+    "clip": "IMG_2835.MOV",
+    "in": 0.2,
+    "sound": "clip",
+    "gain": 1.1,
     "level": 0.45,
-    "min": 5.2,
-    "entry": "cut",
-    "typed": {
-     "lines": [
-      "26 · 04 · 2023",
-      "OPAP ARENA · ATHENS"
-     ],
-     "at_t": 0.3,
-     "accent_line": 1,
-     "size": 60
-    },
-    "say": "Because for ninety minutes… we were too busy living it."
+    "crowd_ok": true,
+    "clock": "21:27",
+    "speed_voice": 0.92,
+    "say": "Two goals in three minutes… and Agia Sophia disappeared into smoke."
    },
    {
     "kind": "title",
-    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
-    "in": 0.4,
+    "clip": "IMG_2829.MOV",
+    "in": 2.0,
     "dur": 4.8,
     "sound": "clip",
     "gain": 1.1,
     "level": 1.0,
     "crowd_ok": true,
     "head": "I was there",
-    "kicker": "OPAP Arena · the night it was four"
+    "kicker": "OPAP Arena · AEK 4–0 PAOK"
    },
    {
     "kind": "chapter",
@@ -202,6 +177,16 @@
     "title": "A home again",
     "dur": 2.4,
     "level": 0.8
+   },
+   {
+    "kind": "clip",
+    "clip": "IMG_2798.MOV",
+    "in": 0.0,
+    "dur": 1.6,
+    "speed": 0.55,
+    "sound": "mute",
+    "level": 0.6,
+    "clock": "18:43"
    },
    {
     "kind": "art",
@@ -328,45 +313,37 @@
     "say": "Before kick-off, the floodlights went off… and the stands lit the pitch themselves."
    },
    {
-    "kind": "black",
-    "backdrop": "beat:common/choreography-kr",
-    "dim": 0.72,
+    "kind": "clip",
+    "clip": "IMG_2829.MOV",
+    "in": 7.0,
+    "dur": 5.6,
+    "dim": 0.0,
+    "sound": "clip",
+    "gain": 1.1,
     "level": 0.6,
-    "min": 5.4,
+    "crowd_ok": true,
+    "clock": "21:19",
     "stat": {
      "value": 30570,
      "label": "AT AGIA SOPHIA",
      "source": "ESPN · Wikipedia",
-     "at_t": 0.4
+     "at_t": 0.4,
+     "pos": [
+      0.5,
+      0.2
+     ]
     }
    },
    {
     "kind": "clip",
-    "kitclip": "common/floodlights-switch-on",
-    "in": 0.0,
-    "dur": 5.0,
-    "sound": "mute",
-    "no_scope": true,
-    "level": 0.8,
-    "subscribe": true,
-    "cues": [
-     [
-      3.6,
-      "whistle"
-     ]
-    ],
-    "typed": {
-     "lines": [
-      "21:00 · KICK-OFF"
-     ],
-     "at_t": 1.4,
-     "size": 56,
-     "pos": [
-      0.5,
-      0.84
-     ],
-     "panel": true
-    }
+    "clip": "IMG_2829.MOV",
+    "in": 13.0,
+    "dur": 5.4,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 0.7,
+    "crowd_ok": true,
+    "subscribe": true
    },
    {
     "kind": "chapter",
@@ -617,22 +594,65 @@
     "say": "Twenty-one minutes. Kotarski plays it short to Schwab. Jonsson takes it off him… Steven Zuber."
    },
    {
-    "kind": "black",
-    "level": 0.7,
-    "min": 3.0,
-    "entry": "cut",
-    "board": {
-     "crest": "public/club-kits/aek-athens/crest.png",
-     "away": "PAOK",
-     "score": "1 - 0",
-     "prev": "0 - 0",
-     "minute": "21'",
-     "scorers": [
-      "ZUBER 21'"
+    "kind": "clip",
+    "clip": "IMG_2830.MOV",
+    "in": 7.0,
+    "dur": 6.0,
+    "sound": "clip",
+    "gain": 1.3,
+    "level": 0.3,
+    "crowd_ok": true,
+    "clock": "21:24",
+    "doc": "Gate 21"
+   },
+   {
+    "kind": "art",
+    "photo": "IMG_2831.HEIC",
+    "push": [
+     1.0,
+     1.12
+    ],
+    "pan": [
+     0,
+     -60
+    ],
+    "level": 0.5,
+    "min": 5.8,
+    "cues": [
+     [
+      0.1,
+      "crowd-after"
+     ]
+    ],
+    "say": "And Gate 21 answered… in flares."
+   },
+   {
+    "kind": "art",
+    "photo": "IMG_2832.HEIC",
+    "crop": [
+     0.12,
+     0.3,
+     0.5,
+     0.42
+    ],
+    "push": [
+     1.0,
+     1.15
+    ],
+    "level": 0.5,
+    "min": 4.6,
+    "typed": {
+     "lines": [
+      "21:25"
      ],
-     "w": 0.6,
-     "at_t": 0.3
-    }
+     "at_t": 0.4,
+     "size": 52,
+     "pos": [
+      0.12,
+      0.12
+     ]
+    },
+    "say": "One–nil. The board says so."
    },
    {
     "kind": "black",
@@ -846,53 +866,59 @@
     "say": "Three minutes later. A corner from Hajsafi. Jonsson heads it back across… Harold Moukoudi."
    },
    {
-    "kind": "black",
-    "level": 0.7,
-    "min": 3.4,
-    "entry": "cut",
-    "board": {
-     "crest": "public/club-kits/aek-athens/crest.png",
-     "away": "PAOK",
-     "score": "2 - 0",
-     "prev": "1 - 0",
-     "minute": "24'",
-     "scorers": [
-      "ZUBER 21'",
-      "MOUKOUDI 24'"
-     ],
-     "w": 0.6,
-     "at_t": 0.3
-    }
+    "kind": "clip",
+    "clip": "IMG_2835.MOV",
+    "in": 0.0,
+    "dur": 6.4,
+    "sound": "clip",
+    "gain": 1.3,
+    "level": 0.3,
+    "crowd_ok": true,
+    "clock": "21:27",
+    "doc": "Two–nil"
    },
    {
-    "kind": "art",
-    "art": "beat:common/flags-pole-kr",
-    "push": [
-     1.0,
-     1.1
-    ],
-    "level": 0.75,
-    "min": 6.0,
-    "figures": [
-     {
-      "art": "cut:common/crowd-row-flags-kr",
-      "h": 0.36,
-      "x": 0.5,
-      "y": 0.95,
-      "drift": [
-       -30,
-       0
-      ],
-      "at": 0.4
-     }
-    ],
-    "cues": [
+    "kind": "clip",
+    "clip": "IMG_2840.MOV",
+    "in": 0.5,
+    "sound": "clip",
+    "gain": 1.0,
+    "level": 0.55,
+    "crowd_ok": true,
+    "clock": "21:36",
+    "say": "Ten minutes later, the smoke was still hanging over the pitch."
+   },
+   {
+    "kind": "clip",
+    "clip": "video_1_f40a55c92b7d4e5893301f86277b48be.MP4",
+    "in": 0.6,
+    "sound": "clip",
+    "gain": 1.15,
+    "level": 0.6,
+    "crowd_ok": true,
+    "clock": "21:47",
+    "doc": "Gate 21",
+    "blur": [
      [
-      0.2,
-      "crowd-after"
+      0.12,
+      0.8,
+      0.76,
+      0.13
      ]
     ],
-    "say": "Half-time, two–nil. And the singing never stopped… not even at the break."
+    "say": "Two–nil at the break. And Gate 21 kept singing… through half-time too."
+   },
+   {
+    "kind": "clip",
+    "clip": "1EC12267-2022-4360-9871-9BBDB3507F65.MP4",
+    "in": 0.0,
+    "dur": 5.0,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 0.6,
+    "crowd_ok": true,
+    "clock": "22:04",
+    "doc": "Second half"
    },
    {
     "kind": "black",
@@ -1088,24 +1114,16 @@
     "say": "Seventy-seven. Paolo Fernandes hits the bar… and seconds later, Levi García. Left foot, from the edge of the box."
    },
    {
-    "kind": "black",
-    "level": 0.7,
-    "min": 3.4,
-    "entry": "cut",
-    "board": {
-     "crest": "public/club-kits/aek-athens/crest.png",
-     "away": "PAOK",
-     "score": "3 - 0",
-     "prev": "2 - 0",
-     "minute": "77'",
-     "scorers": [
-      "ZUBER 21'",
-      "MOUKOUDI 24'",
-      "GARCÍA 77'"
-     ],
-     "w": 0.6,
-     "at_t": 0.3
-    }
+    "kind": "clip",
+    "clip": "5938EF8A-0F1C-417B-91B5-DC93071A3CC5.MP4",
+    "in": 0.0,
+    "dur": 6.4,
+    "sound": "clip",
+    "gain": 1.3,
+    "level": 0.3,
+    "crowd_ok": true,
+    "clock": "22:42",
+    "doc": "Gate 21"
    },
    {
     "kind": "black",
@@ -1223,22 +1241,32 @@
    {
     "kind": "chapter",
     "number": 4,
-    "title": "Three seconds",
+    "title": "Full time",
     "dur": 2.4,
     "level": 0.5
    },
    {
     "kind": "clip",
-    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "clip": "95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4",
     "in": 0.0,
-    "level": 0.55,
     "sound": "clip",
     "gain": 1.2,
+    "level": 0.55,
     "crowd_ok": true,
+    "clock": "22:58",
     "speed_voice": 0.95,
-    "clock": "22:59",
-    "doc": "OPAP Arena · full time",
-    "say": "This is what we filmed. Ninety minutes… four–nil."
+    "say": "Ninety minutes on the board… four–nil."
+   },
+   {
+    "kind": "clip",
+    "clip": "1B8C5511-7711-4822-BB2D-BF02B339D065.MP4",
+    "in": 0.0,
+    "dur": 4.4,
+    "sound": "clip",
+    "gain": 1.2,
+    "level": 0.6,
+    "crowd_ok": true,
+    "clock": "22:59"
    },
    {
     "kind": "black",
@@ -1340,14 +1368,24 @@
    },
    {
     "kind": "clip",
-    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
-    "in": 0.5,
+    "clip": "IMG_2854.MOV",
+    "in": 0.0,
+    "dur": 2.2,
+    "speed": 0.55,
+    "sound": "mute",
     "level": 0.8,
-    "sound": "clip",
-    "gain": 1.0,
-    "crowd_ok": true,
+    "clock": "23:48",
+    "blur": [
+     [
+      0.0,
+      0.36,
+      0.5,
+      0.26
+     ]
+    ],
     "speed_voice": 0.92,
-    "say": "A whole season… and we kept three seconds of it."
+    "min": 3.6,
+    "say": "And then… the ride home."
    },
    {
     "kind": "end",
@@ -1357,44 +1395,36 @@
    }
   ],
   "thumbnail": {
-   "at": 2.0,
-   "text": "We filmed 3 seconds",
-   "sub": "It was 4–0"
+   "at": 1.2,
+   "text": "Gate 21 on fire",
+   "sub": "AEK 4–0 PAOK"
   },
-  "description": "Wednesday, 26 April 2023. AEK Athens against PAOK at the new OPAP Arena, four games left in the title race. We filmed three seconds of it — the ground's own scoreboard at full time. I WAS THERE tells the rest: a club home again after nineteen years, the floodlights off before kick-off, a red card inside ten minutes, four goals re-drawn from the match reports, and what came after.\n\nAEK Athens 4–0 PAOK · Super League play-offs · OPAP Arena (Agia Sophia), Nea Filadelfeia. The goal plates are reconstructions from the reports listed below."
+  "description": "Wednesday, 26 April 2023. AEK Athens against PAOK at the new OPAP Arena, four games left in the title race. I WAS THERE — the night from the stand: a club home again after nineteen years, the floodlights off before kick-off, a red card inside ten minutes, two goals in three minutes and Gate 21 answering in flares, four goals re-drawn from the match reports, and what came after.\n\nAEK Athens 4–0 PAOK · Super League play-offs · OPAP Arena (Agia Sophia), Nea Filadelfeia. The goal plates are reconstructions from the reports listed below."
  },
  "reel": {
   "beats": [
    {
     "kind": "hook",
-    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "clip": "IMG_2830.MOV",
     "in": 0.0,
-    "dur": 3.3,
+    "dur": 3.2,
     "sound": "clip",
     "gain": 1.3,
     "crowd_ok": true,
-    "hook": "We filmed 3 seconds.",
-    "accent_line": "It was 4–0.",
+    "hook": "Gate 21 on fire.",
+    "accent_line": "AEK 4–0 PAOK.",
     "level": 0.7
    },
    {
-    "kind": "black",
-    "backdrop": "beat:common/terrace-full-kr",
-    "dim": 0.9,
-    "level": 0.4,
-    "min": 5.0,
-    "lights": {
-     "at_t": 0.3,
-     "n": 1300,
-     "build": 3.0,
-     "region": [
-      0.0,
-      0.1,
-      1.0,
-      0.6
-     ]
-    },
-    "say": "Floodlights off. The stands lit the pitch themselves."
+    "kind": "clip",
+    "clip": "IMG_2835.MOV",
+    "in": 0.0,
+    "sound": "clip",
+    "gain": 1.2,
+    "crowd_ok": true,
+    "level": 0.6,
+    "clock": "21:27",
+    "say": "Two goals in three minutes. The whole ground in smoke."
    },
    {
     "kind": "black",
@@ -1427,26 +1457,15 @@
     "say": "Twenty-one. Twenty-four. Seventy-seven. Eighty-six."
    },
    {
-    "kind": "black",
+    "kind": "clip",
+    "clip": "95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4",
+    "in": 0.5,
+    "sound": "clip",
+    "gain": 1.2,
+    "crowd_ok": true,
     "level": 0.8,
-    "min": 4.6,
-    "entry": "cut",
-    "board": {
-     "crest": "public/club-kits/aek-athens/crest.png",
-     "away": "PAOK",
-     "score": "4 - 0",
-     "prev": "3 - 0",
-     "minute": "90:00",
-     "scorers": [
-      "ZUBER 21'",
-      "MOUKOUDI 24'",
-      "GARCÍA 77'",
-      "FERNANDES 86'"
-     ],
-     "w": 0.92,
-     "at_t": 0.3
-    },
-    "say": "Four–nil. PAOK."
+    "clock": "22:58",
+    "say": "Four–nil. Level at the top."
    },
    {
     "kind": "black",
@@ -1472,7 +1491,7 @@
     "say": "Were you there?"
    }
   ],
-  "description": "We filmed 3 seconds. It was 4–0. AEK Athens 4–0 PAOK, OPAP Arena, 26 April 2023 — floodlights off before kick-off, four goals, and three weeks later the double.",
-  "post": "We filmed 3 seconds. It was 4–0. 💛🖤\nAEK v PAOK · OPAP Arena · 26.4.2023\nFull film on YouTube: FanLife: Football Stories\n#AEK #AEKFC #OPAPArena #AgiaSophia #IWasThere #FANLIFE #football"
+  "description": "Gate 21 on fire. AEK Athens 4–0 PAOK, OPAP Arena, 26 April 2023 — floodlights off before kick-off, four goals, and three weeks later the double.",
+  "post": "Gate 21 on fire. AEK 4–0 PAOK. 💛🖤\nAEK v PAOK · OPAP Arena · 26.4.2023\nFull film on YouTube: FanLife: Football Stories\n#AEK #AEKFC #OPAPArena #AgiaSophia #IWasThere #FANLIFE #football"
  }
 }

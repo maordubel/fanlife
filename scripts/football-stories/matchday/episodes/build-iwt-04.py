@@ -1,8 +1,8 @@
 """Writes episodes/2023-04-26-aek-paok.json — I WAS THERE · episode 4 · OPAP Arena, 26 April 2023.
 
-The owner's footage of this night is one clip, 3.3 seconds, filmed at 22:59 — the ground's own scoreboard at 90:00,
-4–0. So the film says so: three seconds is the hook, and everything the camera did not film is told on cards and drawn
-as reconstructions (plays.py), each one only as far as a cited report describes it. The edit lives here as code.
+The owner's footage of the night (18 clips, 7 stills) is the spine: two goals answered by Gate 21 in flares and smoke,
+the board at full time, the ride home. What the camera did not film — how the goals were scored, the red card, the
+lights before kick-off — is drawn as reconstructions (plays.py), each only as far as a cited report describes it.
     python3 scripts/football-stories/matchday/episodes/build-iwt-04.py
 """
 import json
@@ -10,7 +10,7 @@ from pathlib import Path
 
 ACC = '#F2C400'          # AEK's yellow (all colours are approved for the series, RULES §7)
 PAPER = '#1A1813'
-CLIP = '1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4'      # 3.27 s · 1080×1920 · shot 2023-04-26 22:59:19 +03:00
+CLIP = '1B8C5511-7711-4822-BB2D-BF02B339D065.MP4'   # 3.27 s · the board at 90:00 · 22:59:19 +03:00
 CREST = 'public/club-kits/aek-athens/crest.png'
 NUM = 'ultra-latin-400-normal.woff2'
 
@@ -79,20 +79,34 @@ RUN = [{'date': '30 APR', 'text': 'Panathinaikos 0–0'}, {'date': '3 MAY', 'tex
 HOME = [{'date': '2013', 'text': 'Relegated'}, {'date': '2018', 'text': 'Champions'},
         {'date': 'SEP 2022', 'text': 'A home again'}, {'date': 'APR 2023', 'text': '?'}]
 
+# the owner's material (survey 3.11.2026): 18 clips, 7 stills, all shot on the night. Camera clock → match minute: the
+# scoreboard in IMG_2832 (21:25:13) reads 1–0 at 21:54, so the clock ran ~3.5 min behind real time: Zuber's 21' ≈ 21:24
+# (IMG_2830, the board says GOAL) and Moukoudi's 24' ≈ 21:27 (IMG_2835, GOAL again). Left out on purpose: the two
+# selfies (BB9C…, 2E44…), the beer photo (a hand with a tattoo), the food counter, and the walk-out of IMG_2798 after
+# its first second (feet). Speech: IMG_2798 / 2838 / 2842 / video_1 open with a word — those clips run muted or start
+# after it.
+GOAL1, GOAL2 = 'IMG_2830.MOV', 'IMG_2835.MOV'          # 21:24 · 21:27
+WIDE = 'IMG_2829.MOV'                                    # 21:19, before the goals
+HAZE = 'IMG_2840.MOV'                                    # 21:36, the smoke still over the pitch
+GATE = 'video_1_f40a55c92b7d4e5893301f86277b48be.MP4'   # 21:47, Gate 21's banners (a typed caption is smudged)
+SECOND = '1EC12267-2022-4360-9871-9BBDB3507F65.MP4'     # 22:04
+LATE = '5938EF8A-0F1C-417B-91B5-DC93071A3CC5.MP4'       # 22:42, GOAL on the board, flares
+FT = '95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4'         # 22:58, the board at 90:00
+ACROPOLIS, HOME_RIDE = 'IMG_2798.MOV', 'IMG_2854.MOV'   # 18:43 · 23:48 (a number plate, smudged)
+PYRO, PYRO_BOARD = 'IMG_2831.HEIC', 'IMG_2832.HEIC'     # 21:25, Gate 21 in flares; the board reads 1–0
+
 film = [
-    # ── cold open: the only footage there is, and the hook ───────────────────────────────────────────────────────────
-    {'kind': 'clip', 'clip': CLIP, 'in': 0.0, 'min': 5.6, 'sound': 'clip', 'gain': 1.3, 'entry': 'black', 'level': 0.0,
-     'crowd_ok': True, 'cues': [[0.1, 'crowd-after']], 'lead': 1.4,
-     'typed': {'lines': ['WE FILMED THREE SECONDS.'], 'at_t': 0.5, 'size': 64, 'pos': (0.5, 0.13), 'cps': 18},
-     'say': "Three seconds. That's all we have of this night."},
-    {'kind': 'black', 'backdrop': 'beat:common/home-end-night-kr', 'dim': 0.6, 'level': 0.45, 'min': 5.2, 'entry': 'cut',
-     'typed': {'lines': ['26 · 04 · 2023', 'OPAP ARENA · ATHENS'], 'at_t': 0.3, 'accent_line': 1, 'size': 60},
-     'say': 'Because for ninety minutes… we were too busy living it.'},
-    {'kind': 'title', 'clip': CLIP, 'in': 0.4, 'dur': 4.8, 'sound': 'clip', 'gain': 1.1, 'level': 1.0, 'crowd_ok': True,
-     'head': 'I was there', 'kicker': 'OPAP Arena · the night it was four'},
+    # ── cold open: the loudest true moment ───────────────────────────────────────────────────────────────────────────
+    {'kind': 'clip', 'clip': GOAL1, 'in': 0.0, 'dur': 4.2, 'sound': 'clip', 'gain': 1.35, 'entry': 'black', 'level': 0.0,
+     'crowd_ok': True, 'clock': '21:24'},
+    {'kind': 'clip', 'clip': GOAL2, 'in': 0.2, 'sound': 'clip', 'gain': 1.1, 'level': 0.45, 'crowd_ok': True, 'clock': '21:27',
+     'speed_voice': 0.92, 'say': 'Two goals in three minutes… and Agia Sophia disappeared into smoke.'},
+    {'kind': 'title', 'clip': WIDE, 'in': 2.0, 'dur': 4.8, 'sound': 'clip', 'gain': 1.1, 'level': 1.0, 'crowd_ok': True,
+     'head': 'I was there', 'kicker': 'OPAP Arena · AEK 4–0 PAOK'},
 
     # ── 01 · a home again ────────────────────────────────────────────────────────────────────────────────────────────
     {'kind': 'chapter', 'number': 1, 'title': 'A home again', 'dur': 2.4, 'level': 0.8},
+    {'kind': 'clip', 'clip': ACROPOLIS, 'in': 0.0, 'dur': 1.6, 'speed': 0.55, 'sound': 'mute', 'level': 0.6, 'clock': '18:43'},
     {'kind': 'art', 'art': 'beat:common/new-stadium-wide-kr', 'push': [1.0, 1.1], 'level': 0.55, 'min': 7.0,
      'figures': [{'art': 'cut:common/crowd-row-scarves-up-kr', 'h': 0.34, 'x': 0.5, 'y': 0.93, 'drift': [30, 0], 'at': 0.6}],
      'say': 'For nineteen years, AEK had no home of its own. In September twenty twenty-two… it finally did. Agia Sophia, in Nea Filadelfeia.'},
@@ -107,11 +121,9 @@ film = [
     {'kind': 'black', 'backdrop': 'beat:common/terrace-full-kr', 'dim': 0.9, 'level': 0.35, 'min': 7.4, 'entry': 'black',
      'lights': {'at_t': 0.6, 'n': 1600, 'build': 4.5, 'region': (0.0, 0.05, 1.0, 0.7)}, 'cues': [[0.4, 'crowd-build']],
      'say': 'Before kick-off, the floodlights went off… and the stands lit the pitch themselves.'},
-    {'kind': 'black', 'backdrop': 'beat:common/choreography-kr', 'dim': 0.72, 'level': 0.6, 'min': 5.4,
-     'stat': {'value': 30570, 'label': 'AT AGIA SOPHIA', 'source': 'ESPN · Wikipedia', 'at_t': 0.4}},
-    {'kind': 'clip', 'kitclip': 'common/floodlights-switch-on', 'in': 0.0, 'dur': 5.0, 'sound': 'mute', 'no_scope': True,
-     'level': 0.8, 'subscribe': True, 'cues': [[3.6, 'whistle']],
-     'typed': {'lines': ['21:00 · KICK-OFF'], 'at_t': 1.4, 'size': 56, 'pos': (0.5, 0.84), 'panel': True}},
+    {'kind': 'clip', 'clip': WIDE, 'in': 7.0, 'dur': 5.6, 'dim': 0.0, 'sound': 'clip', 'gain': 1.1, 'level': 0.6, 'crowd_ok': True,
+     'clock': '21:19', 'stat': {'value': 30570, 'label': 'AT AGIA SOPHIA', 'source': 'ESPN · Wikipedia', 'at_t': 0.4, 'pos': (0.5, 0.2)}},
+    {'kind': 'clip', 'clip': WIDE, 'in': 13.0, 'dur': 5.4, 'sound': 'clip', 'gain': 1.1, 'level': 0.7, 'crowd_ok': True, 'subscribe': True},
 
     # ── 03 · ninety minutes ──────────────────────────────────────────────────────────────────────────────────────────
     {'kind': 'chapter', 'number': 3, 'title': 'Ninety minutes', 'dur': 2.4, 'level': 0.6},
@@ -120,17 +132,28 @@ film = [
      'say': "Inside ten minutes, PAOK were down to ten. Kargas, studs on Jonsson's ankle… Straight red."},
     {'kind': 'black', 'level': 0.45, 'min': 7.2, 'entry': 'fade', 'play': G1, 'speed_voice': 0.95,
      'say': 'Twenty-one minutes. Kotarski plays it short to Schwab. Jonsson takes it off him… Steven Zuber.'},
-    {'kind': 'black', 'level': 0.7, 'min': 3.0, 'entry': 'cut', 'board': board('1 - 0', [S1], prev='0 - 0', minute="21'")},
+    {'kind': 'clip', 'clip': GOAL1, 'in': 7.0, 'dur': 6.0, 'sound': 'clip', 'gain': 1.3, 'level': 0.3, 'crowd_ok': True,
+     'clock': '21:24', 'doc': 'Gate 21'},
+    {'kind': 'art', 'photo': PYRO, 'push': [1.0, 1.12], 'pan': [0, -60], 'level': 0.5, 'min': 5.8, 'cues': [[0.1, 'crowd-after']],
+     'say': 'And Gate 21 answered… in flares.'},
+    {'kind': 'art', 'photo': PYRO_BOARD, 'crop': [0.12, 0.30, 0.5, 0.42], 'push': [1.0, 1.15], 'level': 0.5, 'min': 4.6,
+     'typed': {'lines': ['21:25'], 'at_t': 0.4, 'size': 52, 'pos': (0.12, 0.12)},
+     'say': 'One–nil. The board says so.'},
     {'kind': 'black', 'level': 0.45, 'min': 7.0, 'entry': 'fade', 'play': G2, 'speed_voice': 0.95,
      'say': 'Three minutes later. A corner from Hajsafi. Jonsson heads it back across… Harold Moukoudi.'},
-    {'kind': 'black', 'level': 0.7, 'min': 3.4, 'entry': 'cut', 'board': board('2 - 0', [S1, S2], prev='1 - 0', minute="24'")},
-    {'kind': 'art', 'art': 'beat:common/flags-pole-kr', 'push': [1.0, 1.1], 'level': 0.75, 'min': 6.0,
-     'figures': [{'art': 'cut:common/crowd-row-flags-kr', 'h': 0.36, 'x': 0.5, 'y': 0.95, 'drift': [-30, 0], 'at': 0.4}],
-     'cues': [[0.2, 'crowd-after']],
-     'say': 'Half-time, two–nil. And the singing never stopped… not even at the break.'},
+    {'kind': 'clip', 'clip': GOAL2, 'in': 0.0, 'dur': 6.4, 'sound': 'clip', 'gain': 1.3, 'level': 0.3, 'crowd_ok': True,
+     'clock': '21:27', 'doc': 'Two–nil'},
+    {'kind': 'clip', 'clip': HAZE, 'in': 0.5, 'sound': 'clip', 'gain': 1.0, 'level': 0.55, 'crowd_ok': True, 'clock': '21:36',
+     'say': 'Ten minutes later, the smoke was still hanging over the pitch.'},
+    {'kind': 'clip', 'clip': GATE, 'in': 0.6, 'sound': 'clip', 'gain': 1.15, 'level': 0.6, 'crowd_ok': True, 'clock': '21:47',
+     'doc': 'Gate 21', 'blur': [[0.12, 0.80, 0.76, 0.13]],
+     'say': 'Two–nil at the break. And Gate 21 kept singing… through half-time too.'},
+    {'kind': 'clip', 'clip': SECOND, 'in': 0.0, 'dur': 5.0, 'sound': 'clip', 'gain': 1.1, 'level': 0.6, 'crowd_ok': True, 'clock': '22:04',
+     'doc': 'Second half'},
     {'kind': 'black', 'level': 0.45, 'min': 7.6, 'entry': 'fade', 'play': G3, 'speed_voice': 0.95,
      'say': 'Seventy-seven. Paolo Fernandes hits the bar… and seconds later, Levi García. Left foot, from the edge of the box.'},
-    {'kind': 'black', 'level': 0.7, 'min': 3.4, 'entry': 'cut', 'board': board('3 - 0', [S1, S2, S3], prev='2 - 0', minute="77'")},
+    {'kind': 'clip', 'clip': LATE, 'in': 0.0, 'dur': 6.4, 'sound': 'clip', 'gain': 1.3, 'level': 0.3, 'crowd_ok': True,
+     'clock': '22:42', 'doc': 'Gate 21'},
     {'kind': 'black', 'level': 0.0, 'min': 4.0, 'cues': [[0.1, 'heart'], [0.9, 'heart']], 'lead': 1.6, 'speed_voice': 0.9,
      'typed': {'lines': ["86'"], 'at_t': 0.2, 'size': 150, 'face': NUM, 'cps': 8},
      'say': 'And Fernandes, who had been looking for one all night…'},
@@ -144,11 +167,11 @@ film = [
      'stat': {'value': 18, 'label': 'SHOTS · PAOK HAD ONE', 'source': 'Sporting Life match centre', 'at_t': 0.4, 'count': 0.9},
      'say': 'Eighteen shots for AEK. One for PAOK.'},
 
-    # ── 04 · three seconds ───────────────────────────────────────────────────────────────────────────────────────────
-    {'kind': 'chapter', 'number': 4, 'title': 'Three seconds', 'dur': 2.4, 'level': 0.5},
-    {'kind': 'clip', 'clip': CLIP, 'in': 0.0, 'level': 0.55, 'sound': 'clip', 'gain': 1.2, 'crowd_ok': True,
-     'speed_voice': 0.95, 'clock': '22:59', 'doc': 'OPAP Arena · full time',
-     'say': 'This is what we filmed. Ninety minutes… four–nil.'},
+    # ── 04 · full time ───────────────────────────────────────────────────────────────────────────────────────────────
+    {'kind': 'chapter', 'number': 4, 'title': 'Full time', 'dur': 2.4, 'level': 0.5},
+    {'kind': 'clip', 'clip': FT, 'in': 0.0, 'sound': 'clip', 'gain': 1.2, 'level': 0.55, 'crowd_ok': True, 'clock': '22:58',
+     'speed_voice': 0.95, 'say': 'Ninety minutes on the board… four–nil.'},
+    {'kind': 'clip', 'clip': CLIP, 'in': 0.0, 'dur': 4.4, 'sound': 'clip', 'gain': 1.2, 'level': 0.6, 'crowd_ok': True, 'clock': '22:59'},
     {'kind': 'black', 'level': 0.45, 'min': 6.2, 'entry': 'fade',
      'typed': {'lines': ['AEK · PANATHINAIKOS', 'LEVEL AT THE TOP'], 'at_t': 0.3, 'accent_line': 1, 'size': 64},
      'say': 'Level on points at the top. And on Sunday… Panathinaikos, away.'},
@@ -164,22 +187,21 @@ film = [
     {'kind': 'clip', 'kitclip': 'common/clip-confetti-kr', 'in': 0.0, 'dur': 6.4, 'sound': 'mute', 'no_scope': True,
      'level': 1.0, 'typed': {'lines': ['24 MAY 2023 · CUP FINAL', 'AEK 2–0 PAOK'], 'at_t': 0.5, 'accent_line': 1, 'size': 62, 'panel': True},
      'say': 'Ten days later, PAOK again — in the cup final. Two–nil. The first double since nineteen seventy-eight.'},
-    {'kind': 'clip', 'clip': CLIP, 'in': 0.5, 'level': 0.8, 'sound': 'clip', 'gain': 1.0, 'crowd_ok': True,
-     'speed_voice': 0.92, 'say': 'A whole season… and we kept three seconds of it.'},
+    {'kind': 'clip', 'clip': HOME_RIDE, 'in': 0.0, 'dur': 2.2, 'speed': 0.55, 'sound': 'mute', 'level': 0.8, 'clock': '23:48',
+     'blur': [[0.0, 0.36, 0.5, 0.26]], 'speed_voice': 0.92, 'min': 3.6, 'say': 'And then… the ride home.'},
     {'kind': 'end', 'min': 5.0, 'level': 0.7, 'say': 'Were you there?'},
 ]
 
 reel = [
-    {'kind': 'hook', 'clip': CLIP, 'in': 0.0, 'dur': 3.3, 'sound': 'clip', 'gain': 1.3, 'crowd_ok': True,
-     'hook': 'We filmed 3 seconds.', 'accent_line': 'It was 4–0.', 'level': 0.7},
-    {'kind': 'black', 'backdrop': 'beat:common/terrace-full-kr', 'dim': 0.9, 'level': 0.4, 'min': 5.0,
-     'lights': {'at_t': 0.3, 'n': 1300, 'build': 3.0, 'region': (0.0, 0.1, 1.0, 0.6)},
-     'say': 'Floodlights off. The stands lit the pitch themselves.'},
+    {'kind': 'hook', 'clip': GOAL1, 'in': 0.0, 'dur': 3.2, 'sound': 'clip', 'gain': 1.3, 'crowd_ok': True,
+     'hook': 'Gate 21 on fire.', 'accent_line': 'AEK 4–0 PAOK.', 'level': 0.7},
+    {'kind': 'clip', 'clip': GOAL2, 'in': 0.0, 'sound': 'clip', 'gain': 1.2, 'crowd_ok': True, 'level': 0.6, 'clock': '21:27',
+     'say': 'Two goals in three minutes. The whole ground in smoke.'},
     {'kind': 'black', 'level': 0.0, 'min': 4.6, 'cues': [[0.1, 'heart'], [0.8, 'heart']],
      'typed': {'lines': ["21'", "24'", "77'", "86'"], 'at_t': 0.2, 'size': 120, 'face': NUM, 'cps': 8, 'gap': 0.3},
      'lead': 1.2, 'say': 'Twenty-one. Twenty-four. Seventy-seven. Eighty-six.'},
-    {'kind': 'black', 'level': 0.8, 'min': 4.6, 'entry': 'cut',
-     'board': board('4 - 0', [S1, S2, S3, S4], prev='3 - 0', minute='90:00', w=0.92), 'say': 'Four–nil. PAOK.'},
+    {'kind': 'clip', 'clip': FT, 'in': 0.5, 'sound': 'clip', 'gain': 1.2, 'crowd_ok': True, 'level': 0.8, 'clock': '22:58',
+     'say': 'Four–nil. Level at the top.'},
     {'kind': 'black', 'backdrop': 'beat:common/trophy-lift-crowd-kr', 'dim': 0.6, 'level': 1.0, 'min': 4.6,
      'typed': {'lines': ['THREE WEEKS LATER', 'THE DOUBLE'], 'at_t': 0.2, 'accent_line': 1, 'size': 70},
      'say': 'Three weeks later… the double.'},
@@ -190,7 +212,7 @@ ep = {
     'id': 'iwt-04-aek-paok-2023',
     'title': 'I WAS THERE · OPAP Arena, 26 April 2023 · AEK Athens 4–0 PAOK',
     'folder': 'aek-paok-2023',
-    'drive': 'https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view',
+    'drive': 'https://drive.google.com/drive/folders/15cZJoP2flSu5J0o2c4mGm6uQUxusjf3J',
     'accent': ACC,
     'music': {'track': 'atlasaudio-sports', 'gain': 0.6},
     'look': {'scope': 54, 'vignette': 0.32, 'paper': PAPER, 'vertical': 'fill'},
@@ -230,19 +252,19 @@ ep = {
             'Fernandes': 'fəɹnˈændɛs'},
     'film': {
         'beats': film,
-        'thumbnail': {'at': 2.0, 'text': 'We filmed 3 seconds', 'sub': 'It was 4–0'},
+        'thumbnail': {'at': 1.2, 'text': 'Gate 21 on fire', 'sub': 'AEK 4–0 PAOK'},
         'description': (
-            "Wednesday, 26 April 2023. AEK Athens against PAOK at the new OPAP Arena, four games left in the title race. We "
-            "filmed three seconds of it — the ground's own scoreboard at full time. I WAS THERE tells the rest: a club "
-            "home again after nineteen years, the floodlights off before kick-off, a red card inside ten minutes, four "
+            "Wednesday, 26 April 2023. AEK Athens against PAOK at the new OPAP Arena, four games left in the title race. "
+            "I WAS THERE — the night from the stand: a club home again after nineteen years, the floodlights off before "
+            "kick-off, a red card inside ten minutes, two goals in three minutes and Gate 21 answering in flares, four "
             "goals re-drawn from the match reports, and what came after.\n\nAEK Athens 4–0 PAOK · Super League play-offs · "
             "OPAP Arena (Agia Sophia), Nea Filadelfeia. The goal plates are reconstructions from the reports listed below."),
     },
     'reel': {
         'beats': reel,
-        'description': ('We filmed 3 seconds. It was 4–0. AEK Athens 4–0 PAOK, OPAP Arena, 26 April 2023 — floodlights '
+        'description': ('Gate 21 on fire. AEK Athens 4–0 PAOK, OPAP Arena, 26 April 2023 — floodlights '
                         'off before kick-off, four goals, and three weeks later the double.'),
-        'post': ('We filmed 3 seconds. It was 4–0. 💛🖤\nAEK v PAOK · OPAP Arena · 26.4.2023\n'
+        'post': ('Gate 21 on fire. AEK 4–0 PAOK. 💛🖤\nAEK v PAOK · OPAP Arena · 26.4.2023\n'
                  'Full film on YouTube: FanLife: Football Stories\n#AEK #AEKFC #OPAPArena #AgiaSophia #IWasThere #FANLIFE #football'),
     },
 }

@@ -163,6 +163,10 @@ The owner asked for visuals of the goal, the stand and the celebration "as close
 - **Red card** (`red`), **phone lights** (`lights`) — each only when a report names it.
 - **The studio kit in the club's colour**: `beat:` / `cut:` / `kitclip:` / `kitprop:` keys; anything drawn in the
   signal red (`-kr`) is recoloured to the episode's accent (`doc.art_image`, `doc.kit_clip`).
-- **Little footage is the hook, not a gap**: ep 4 has one 3.3 s clip, and the film opens on "We filmed three
-  seconds". A clip is never held frozen and never replayed backwards.
+- **The owner's footage is the spine; plates fill what it missed.** Ep 4: the camera's clock on each clip is matched to
+  the match minute through the ground's own board in a still (IMG_2832, 21:25 → 1–0 at 21:54), so a clip is called a
+  goal's only when the clock says so. A clip is never held frozen and never replayed backwards.
+- **Survey the whole folder** — stills too (`survey.py → photos`, HEIC through pillow-heif) — before writing a beat.
+  A photo is a beat (`'kind': 'art', 'photo': <file>`, optional `crop`). Text typed onto a clip, a number plate:
+  `'blur': [[x, y, w, h]]`. Selfies of the owner, his hands, tattoos: left out.
 - A single Drive FILE link works wherever a folder link does (`drive_fetch.py`).
