@@ -1,0 +1,74 @@
+{
+  "_": "I WAS THERE — the series' fixed settings. Owner decisions, 2.11.2026.",
+  "channel": {
+    "id": "UC2KULoLBFCSZC4jeRGYkKfQ",
+    "handle": "@FanLifeFootballStories",
+    "playlist": "I WAS THERE"
+  },
+  "colours": {
+    "rival_lock": false,
+    "recolour_footage": false
+  },
+  "voice": {
+    "provider": "kokoro",
+    "voice": "bm_lewis",
+    "lang": "en-gb",
+    "speed": 0.94,
+    "licence": "Kokoro-82M, Apache-2.0",
+    "chosen": "Take B of the narration audition (matchday-voice branch), owner, 2.11.2026"
+  },
+  "subscribe": {
+    "rule": "RULES §8 — every film carries the stub once and a spoken ask at the end; every reel ends on the follow. Football and the stand, never 'smash the button'.",
+    "stub": [
+      "For the terrace, not the TV.",
+      "No pundits. Just the stand.",
+      "Real fans. Real nights. Every week.",
+      "Fans, not highlights.",
+      "Your place on the terrace is free."
+    ],
+    "end_voice": [
+      "If you were there, or wish you had been, subscribe. Next week, another night from the stand.",
+      "No pundits. No highlights. Just the terrace. Subscribe, and take your place in the stand.",
+      "Football is ninety minutes. Being a fan is forever. Subscribe."
+    ],
+    "end_line": [
+      "Subscribe · take your place in the stand",
+      "Subscribe · the terrace is open",
+      "Subscribe · fans, not highlights"
+    ],
+    "reel_voice": [
+      "Follow for the next night from the stand.",
+      "Real fans follow. Next night soon.",
+      "Follow. The terrace is open."
+    ],
+    "reel_line": [
+      "Follow for the next night from the stand",
+      "Follow · the terrace is open",
+      "Follow · fans, not highlights"
+    ],
+    "endscreen_line": [
+      "Next week: another night from the stand",
+      "More nights from the stand",
+      "The next night is already waiting"
+    ],
+    "endscreen_zones": {
+      "note": "measured on art/endscreen-ground.jpg (1920×1080); place YouTube's end-screen elements on them",
+      "subscribe_circle": {
+        "cx": 372,
+        "cy": 620,
+        "d": 330
+      },
+      "video": {
+        "x0": 895,
+        "y0": 360,
+        "x1": 1742,
+        "y1": 816
+      }
+    },
+    "fl_endscreen_line": [
+      "Next week: another FAN LIFE game",
+      "Your club. Your game. Next week",
+      "More games from the stand"
+    ]
+  }
+}

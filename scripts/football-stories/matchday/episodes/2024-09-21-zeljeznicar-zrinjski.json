@@ -1,0 +1,413 @@
+{
+  "id": "iwt-01-grbavica-2024",
+  "title": "I WAS THERE · Grbavica, 21 September 2024 · Željezničar v Zrinjski",
+  "folder": "Sarajevo game against Zeljeznicar",
+  "accent": "#D71920",
+  "fixture": {
+    "home": "Željezničar",
+    "away": "Zrinjski Mostar",
+    "home_short": "ŽEL",
+    "away_short": "ZRI",
+    "date_long": "21 September 2024",
+    "year": "2024",
+    "ground": "Grbavica",
+    "city": "Sarajevo",
+    "competition": "Premier League BiH · Round 7",
+    "home_score": 0,
+    "away_score": 2,
+    "goals": [
+      {
+        "side": "away",
+        "name": "Mulahusejnović",
+        "minute_label": "66'"
+      },
+      {
+        "side": "away",
+        "name": "M. Ćavar",
+        "minute_label": "90+2'"
+      }
+    ],
+    "source": "HŠK Zrinjski match report",
+    "episode": 1,
+    "date_iso": "2024-09-21",
+    "date_short": "21·9·2024",
+    "score_note": "Grbavica · Sarajevo · 13,500"
+  },
+  "sources": [
+    {
+      "claim": "date, ground, kick-off 20:45, result 0–2, scorers Mulahusejnović 66' and Marijan Ćavar in the second minute of stoppage time",
+      "url": "https://hskzrinjski.ba/en/?p=3363",
+      "title": "HŠK Zrinjski — Zrinjski triumphed in the derby against Željezničar",
+      "short": "HŠK Zrinjski match report"
+    },
+    {
+      "claim": "result, round 7",
+      "file": "club-packs/zrinjski-mostar/wave-history-2026-10-18.json",
+      "short": "FAN LIFE archive"
+    },
+    {
+      "claim": "attendance 13,500 (highest home attendance of the season)",
+      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_FK_%C5%BDeljezni%C4%8Dar_season",
+      "title": "Wikipedia — 2024–25 FK Željezničar season",
+      "short": "Wikipedia: 2024–25 FK Željezničar season"
+    }
+  ],
+  "ipa": {
+    "Željezničar": "ʒˈɛljɛznɪtʃɑː",
+    "Zrinjski": "zɹˈɪnjskiː",
+    "Grbavica": "ɡˈɜːbɐvɪtsə",
+    "Mulahusejnović": "mʊlɐhʊsˈeɪnɒvɪtʃ",
+    "Ćavar": "tʃˈavɑː",
+    "Marijan": "mˈaɹiːjan",
+    "Nardin": "nˈɑːdɪn",
+    "život": "ʒˈiːvɒt",
+    "cijeli": "tsˈiːjɛli",
+    "Sarajevo": "sˌæɹəjˈeɪvəʊ",
+    "Mostar": "mˈɒstɑː"
+  },
+  "film": {
+    "beats": [
+      {
+        "kind": "clip",
+        "clip": "IMG_0089.MOV",
+        "in": 0.6,
+        "dur": 2.2,
+        "clock": "20:54",
+        "sound": "clip",
+        "gain": 1.2,
+        "entry": "black"
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0105.MOV",
+        "in": 3.0,
+        "dur": 2.2,
+        "clock": "21:47",
+        "sound": "clip",
+        "gain": 1.2
+      },
+      {
+        "kind": "title",
+        "clip": "IMG_0113.MOV",
+        "in": 0.0,
+        "dur": 4.6,
+        "head": "I was there",
+        "kicker": "Grbavica · Sarajevo · 21 September 2024",
+        "sound": "clip",
+        "music": {
+          "mood": "minor",
+          "energy": 0.3
+        }
+      },
+      {
+        "kind": "map",
+        "entry": "wipe",
+        "points": [
+          {
+            "name": "Sarajevo",
+            "lat": 43.8563,
+            "lon": 18.4131,
+            "home": true
+          },
+          {
+            "name": "Mostar",
+            "lat": 43.3438,
+            "lon": 17.8078
+          }
+        ],
+        "focus": "domestic",
+        "highlight": "Bosnia and Herz.",
+        "label": "Premier League BiH · Round 7",
+        "min": 5.0,
+        "say": "Bosnia and Herzegovina, round seven. Željezničar at home in Sarajevo. Zrinjski up the road from Mostar.",
+        "music": {
+          "mood": "minor",
+          "energy": 0.35
+        },
+        "frame": [
+          [
+            42.55,
+            15.72
+          ],
+          [
+            45.28,
+            19.62
+          ]
+        ]
+      },
+      {
+        "kind": "chapter",
+        "number": 1,
+        "title": "The road",
+        "dur": 2.4,
+        "music": {
+          "mood": "minor",
+          "energy": 0.35
+        }
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0033.MOV",
+        "in": 0,
+        "speed": 0.8,
+        "clock": "16:04",
+        "sound": "mute",
+        "head": "Saturday",
+        "kicker": "Through the mountains",
+        "say": "Saturday afternoon. The road to Sarajevo runs through the mountains, and it takes its time.",
+        "music": {
+          "mood": "minor",
+          "energy": 0.3
+        }
+      },
+      {
+        "kind": "clip",
+        "clip": "cddae7aeb0174e8fadb92081a3c2808e.mov",
+        "in": 0,
+        "speed": 0.75,
+        "sound": "mute",
+        "head": "Half the match",
+        "kicker": "is getting there",
+        "say": "Nobody minds. A trip like this is half the match.",
+        "music": {
+          "mood": "minor",
+          "energy": 0.3
+        }
+      },
+      {
+        "kind": "chapter",
+        "number": 2,
+        "title": "The city",
+        "dur": 2.4,
+        "music": {
+          "mood": "minor",
+          "energy": 0.35
+        }
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0053.MOV",
+        "in": 5.0,
+        "clock": "19:09",
+        "sound": "auto",
+        "head": "Sarajevo",
+        "kicker": "Down the stone steps",
+        "say": "Evening in Sarajevo. Down the stone steps, and into the city.",
+        "music": {
+          "mood": "minor",
+          "energy": 0.35
+        }
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0055.MOV",
+        "in": 0,
+        "dur": 5.0,
+        "clock": "19:11",
+        "sound": "auto",
+        "music": {
+          "mood": "minor",
+          "energy": 0.25
+        }
+      },
+      {
+        "kind": "chapter",
+        "number": 3,
+        "title": "The ground",
+        "dur": 2.4,
+        "music": {
+          "mood": "tense",
+          "energy": 0.4
+        }
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0075.MOV",
+        "in": 0.5,
+        "clock": "20:37",
+        "sound": "clip",
+        "place": "Grbavica · Sarajevo",
+        "head": "Grbavica",
+        "kicker": "Home of Željezničar",
+        "say": "Grbavica. The home of Željezničar."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0076.MOV",
+        "in": 1.0,
+        "clock": "20:37",
+        "sound": "clip",
+        "head": "13,500",
+        "kicker": "Their biggest home crowd of the season",
+        "say": "Thirteen and a half thousand inside. The biggest home crowd of their season."
+      },
+      {
+        "kind": "ticket",
+        "clip": "IMG_0086.MOV",
+        "in": 0.0,
+        "clock": "20:43",
+        "sound": "clip",
+        "dim": 0.15,
+        "say": "A quarter to nine, kick-off. Across the home end, one line. Za život cijeli. For a whole life."
+      },
+      {
+        "kind": "chapter",
+        "number": 4,
+        "title": "The home end",
+        "dur": 2.4
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0089.MOV",
+        "in": 0,
+        "clock": "20:54",
+        "sound": "clip",
+        "gain": 1.15,
+        "say": "Then the home end lights up. Red fire, from one side of the curve to the other."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0105.MOV",
+        "in": 0,
+        "clock": "21:47",
+        "sound": "clip",
+        "gain": 1.15,
+        "say": "After half-time, the same fans go again. This time, in Željezničar blue."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0112.MOV",
+        "in": 0,
+        "dur": 6.0,
+        "clock": "21:48",
+        "sound": "clip",
+        "head": "Blue",
+        "kicker": "The same stand, after the break"
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0113.MOV",
+        "in": 4.6,
+        "clock": "21:48",
+        "sound": "clip",
+        "say": "Until the pitch disappears into the smoke, and the players can only wait."
+      },
+      {
+        "kind": "chapter",
+        "number": 5,
+        "title": "Full time",
+        "dur": 2.4,
+        "music": {
+          "mood": "tense",
+          "energy": 0.45
+        }
+      },
+      {
+        "kind": "score",
+        "clip": "IMG_0129.MOV",
+        "in": 0,
+        "clock": "22:34",
+        "sound": "clip",
+        "dim": 0.35,
+        "min": 8.0,
+        "say": "The game was settled late. Sixty-six minutes in, Nardin Mulahusejnović scored for Zrinjski. In stoppage time, Marijan Ćavar made it two. Nil–two."
+      },
+      {
+        "kind": "end",
+        "music": {
+          "mood": "major",
+          "energy": 0.35
+        },
+        "say": "Were you there? Find the night in the FAN LIFE archive.",
+        "min": 7.0
+      }
+    ],
+    "thumbnail": {
+      "at": 1.3,
+      "text": "Red, then blue",
+      "sub": "Grbavica · 21.9.2024"
+    },
+    "description": "I WAS THERE · Grbavica, Sarajevo · 21 September 2024. Željezničar v Zrinjski Mostar, Premier League BiH, round 7. A night on the terrace in the words of the stand: the road, the city, the home end in red before half-time and in blue after it, and a late 0–2. Shot from the stand by the FAN LIFE blog."
+  },
+  "reel": {
+    "beats": [
+      {
+        "kind": "hook",
+        "clip": "IMG_0112.MOV",
+        "in": 0,
+        "dur": 2.6,
+        "clock": "21:48",
+        "sound": "clip",
+        "gain": 1.2,
+        "hook": "One stand.",
+        "accent_line": "Two colours.",
+        "music": {
+          "mood": "tense",
+          "energy": 0.5
+        }
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0089.MOV",
+        "in": 0,
+        "clock": "20:54",
+        "sound": "clip",
+        "gain": 1.15,
+        "head": "Red",
+        "kicker": "First half · the home end",
+        "entry": "wipe",
+        "say": "First half. Željezničar's home end goes red."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0105.MOV",
+        "in": 1.0,
+        "clock": "21:47",
+        "sound": "clip",
+        "gain": 1.15,
+        "head": "Blue",
+        "kicker": "After the break · the same fans",
+        "entry": "wipe",
+        "say": "After the break, the same fans go blue."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0112.MOV",
+        "in": 2.6,
+        "clock": "21:48",
+        "sound": "clip",
+        "gain": 1.1,
+        "say": "Until the whole stand disappears."
+      },
+      {
+        "kind": "clip",
+        "clip": "IMG_0075.MOV",
+        "in": 1.0,
+        "clock": "20:37",
+        "sound": "clip",
+        "place": "Grbavica · Sarajevo",
+        "entry": "fade",
+        "say": "Grbavica, Sarajevo. Twenty-first of September, twenty twenty-four."
+      },
+      {
+        "kind": "score",
+        "clip": "IMG_0076.MOV",
+        "in": 3.0,
+        "sound": "clip",
+        "dim": 0.35,
+        "dur": 5.0
+      },
+      {
+        "kind": "end",
+        "min": 4.8,
+        "music": {
+          "mood": "major",
+          "energy": 0.35
+        },
+        "say": "Were you there?"
+      }
+    ],
+    "description": "One stand, two colours. Željezničar's home end at Grbavica, Sarajevo — red flares in the first half, blue smoke after the break. Željezničar 0–2 Zrinjski Mostar, Premier League BiH, 21 September 2024. Shot from the stand by FAN LIFE."
+  },
+  "story_note": "Both displays came from the home end — Željezničar's own Curva: red flares at 20:54 in the first half, blue smoke at 21:47 after the break (camera clock). Owner correction, 2.11.2026."
+}
