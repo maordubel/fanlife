@@ -153,6 +153,10 @@
   "Florence": [
    43.77,
    11.26
+  ],
+  "Madrid": [
+   40.42,
+   -3.7
   ]
  },
  "clubs": {
@@ -194,6 +198,10 @@
   "Ferencváros": "Budapest",
   "Fenerbahçe": "Istanbul",
   "Aston Villa": "Birmingham",
-  "Fiorentina": "Florence"
+  "Fiorentina": "Florence",
+  "Real Madrid": "Madrid",
+  "Panathinaikos": "Athens",
+  "AEK Athens": "Athens",
+  "Chelsea": "London"
  }
 }

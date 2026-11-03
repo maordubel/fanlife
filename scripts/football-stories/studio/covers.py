@@ -118,6 +118,30 @@ def vlog(c: dict, root: Path) -> str:
 '''
 
 
+def versus(c: dict, root: Path) -> str:
+    """A film about one visitor against several clubs: the picture of the city, the hook, the clubs' crests in a row."""
+    art = (root / c['art']).resolve().as_uri()
+    hook = ''.join(f'<div data-fit="760" style="white-space:nowrap">{esc(l)}</div>' for l in c['hook'].split('\n'))
+    crests = ''.join(f'<div style="width:150px;height:150px;border-radius:50%;background:{PAPER};border:8px solid {INK};box-shadow:8px 8px 0 {INK};'
+                     f'display:flex;align-items:center;justify-content:center"><img src="{(root / x).resolve().as_uri()}" style="width:74%;height:74%;object-fit:contain"></div>'
+                     for x in c['crests'])
+    acc = c.get('accent', '#5A2D82')
+    return f'''
+<div class="abs" style="inset:0;background:url({art}) center/cover;filter:saturate(1.25) contrast(1.1) brightness(1.45)"></div>
+<div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(21,19,15,.85) 0,rgba(21,19,15,.35) 55%,rgba(21,19,15,0) 80%)"></div>
+<div class="abs" style="left:56px;top:50px;width:820px">
+  <div style="display:inline-block;position:relative;transform:rotate(-2deg)">
+    <div class="abs" style="inset:0;transform:translate(12px,12px);background:{acc};border:5px solid {INK}"></div>
+    <div class="head" data-fit="760" style="position:relative;background:{PAPER};color:{INK};border:6px solid {INK};padding:12px 22px 4px;font-size:78px;white-space:nowrap">{esc(c['club'])}</div>
+  </div>
+  <div class="head" style="margin-top:30px;font-size:132px;color:{PAPER};-webkit-text-stroke:3px {INK};paint-order:stroke fill;text-shadow:9px 9px 0 {acc}">{hook}</div>
+  <div class="caps" style="display:inline-block;margin-top:22px;background:{INK};color:{PAPER};border:4px solid {PAPER};padding:10px 18px 6px;font-size:34px">{esc(c['sub'])}</div>
+</div>
+<div class="abs" style="right:56px;top:70px;display:flex;flex-direction:column;gap:24px">{crests}</div>
+<div class="abs" style="left:58px;bottom:26px;font-family:'Shrikhand';font-size:40px;color:{PAPER}">FanLife</div>
+'''
+
+
 def banner(c: dict, root: Path) -> str:
     """The channel banner (2560x1440): the owner's art, and across the band every device shows, what the channel is."""
     art = (root / c['art']).resolve().as_uri()
@@ -183,7 +207,7 @@ def render(spec: Path, out: Path) -> list[Path]:
                 made.append(sheet(c['candidates'], root, out, c['name']))
             if c['shape'] == 'vlog':
                 c = {**c, 'frames': [str(frame(f, root, out).resolve()) for f in c['frames']]}
-            body = {'club': club, 'vlog': vlog, 'banner': banner}[c['shape']](c, root)
+            body = {'club': club, 'vlog': vlog, 'banner': banner, 'versus': versus}[c['shape']](c, root)
             size = (2560, 1440) if c['shape'] == 'banner' else (W, H)
             p.set_viewport_size({'width': size[0], 'height': size[1]})
             page = out / f'_{c["name"]}.html'
