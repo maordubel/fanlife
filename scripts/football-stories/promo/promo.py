@@ -212,15 +212,15 @@ def cap_path(caps: Path, ref: str) -> Path:
     return caps / f'{ref}.png'
 
 
-def clip_cut(caps: Path, ref: str, mark: str, length: float, work: Path, n: int) -> tuple[Path, float]:
+def clip_cut(caps: Path, ref: str, mark: str, length: float, work: Path, n: int, offset: float = 0.0) -> tuple[Path, float]:
     """A stretch of a screen recording, from a named moment in its log, cut to the studio frame rate."""
     d = caps / ref
     log = json.loads((d / 'log.json').read_text())
-    t0 = float(log['marks'].get(mark, 0.0))
+    t0 = float(log['marks'][mark]) + offset
     out = work / f'clip-{n}.mp4'
     run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{t0:.2f}', '-t', f'{length + 0.3:.2f}', '-i', str(d / 'screen.webm'), '-an',
-         '-vf', f'fps={FPS},format=yuv420p', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', str(out)])
-    return out, 1080 / 1920
+         '-vf', f'crop=540:960:0:0,fps={FPS},format=yuv420p', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', str(out)])
+    return out, 540 / 960      # Playwright records the 540×960 page 1:1 in the top-left of its 1080×1920 frame
 
 
 def main():
@@ -251,7 +251,7 @@ def main():
             d, words = F.voice_beat(b['say'], CAMP.get('ipa', {}), wav)
             lead = b.get('lead', 0.6 if i == 0 else 0.3)
             p.update(wav=wav, words=words, voice_at=t + lead)
-            dur = max(lead + d + b.get('tail', 0.45), b.get('min', 2.2), 5.5 if b['kind'] in ('end', 'call') else 0)
+            dur = max(lead + d + b.get('tail', 0.45), b.get('min', 2.9 if SHORT else 2.6), 5.5 if b['kind'] in ('end', 'call') else 0)
         else:
             dur = b.get('dur', 2.0)
         p['frames'] = round(dur * FPS)
@@ -262,6 +262,25 @@ def main():
 
     files, cues_all, prev_last = [], [], None
     with SpriteFactory(pal, work / 'sprites') as sp:
+        if not SHORT and ITEM.get('thumb'):
+            th = ITEM['thumb']
+            im = art_src(th['art'])
+            k = max(W / im.width, H / im.height)
+            im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
+            fx_, fy_ = th.get('focus', (0.5, 0.5))
+            x0 = int(clamp(fx_ * im.width - W / 2, 0, im.width - W))
+            y0 = int(clamp(fy_ * im.height - H / 2, 0, im.height - H))
+            im = im.crop((x0, y0, x0 + W, y0 + H)).convert('RGBA')
+            shade = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+            a = np.zeros((H, W), 'uint8')
+            a[:, :] = (np.clip((np.arange(W)[None, :] - W * 0.35) / (W * 0.65), 0, 1) * 170).astype('uint8')
+            shade.putalpha(Image.fromarray(a))
+            im.alpha_composite(shade)
+            hd = headline(sp, 'thumb-' + ITEM['id'], th['head'], th.get('kicker'), 150, width=1000, tone='plate')
+            im.alpha_composite(hd, (W - 50 - hd.width, H - 60 - hd.height))
+            gm = game_mark(sp, ITEM['game'], 420 if ITEM['game'] == 'rumble' else 300)
+            im.alpha_composite(gm, (W - 60 - gm.width, 50))
+            im.convert('RGB').resize((1280, 720), Image.LANCZOS).save(out / f"{ITEM['file']}-thumbnail.jpg", quality=92)
         for p in plan:
             k, dur, i = p['kind'], p['dur'], p['i']
             layers, cues, shake, world_frames = [], list(p.get('cues', [])), [], None
@@ -307,7 +326,7 @@ def main():
                     layers.append(Layer(ph, slide_in(at[0], at[1], 0.12, frm=(0, 800) if SHORT else (0, 700), rot0=-4, rot1=p.get('rot', -1.2), dur=0.55), settle=1e9))
                     cues.append((0.12, 'whoosh'))
                 else:
-                    clip, aspect = clip_cut(caps, p['clip'], p['mark'], dur + 0.2, work, i)
+                    clip, aspect = clip_cut(caps, p['clip'], p['mark'], dur + 0.2, work, i, p.get('offset', 0.0))
                     world_frames = PhoneClip(clip, world, at, ph_h, aspect)
                     cam = lambda tt: (1.0, CW / 2, CH / 2)   # noqa: E731 — the recording is the motion
                 if head:
@@ -473,7 +492,7 @@ def main():
     for kk, p in enumerate(plan):
         mid = p['start'] + min(p['dur'] * 0.7, p['dur'] - 0.1)
         run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{mid:.2f}', '-i', str(pub), '-frames:v', '1', '-vf', scale, str(out / f'{name}-frame-{kk:02d}.jpg')])
-    if not SHORT:
+    if not SHORT and not ITEM.get('thumb'):
         tt = ITEM.get('thumb_at', 2.4)
         run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{tt:.2f}', '-i', str(pub), '-frames:v', '1', '-vf', 'scale=1280:720', '-q:v', '2', str(out / f'{name}-thumbnail.jpg')])
     shutil.rmtree(work)

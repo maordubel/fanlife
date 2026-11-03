@@ -1,5 +1,5 @@
 {
- "about": "FAN LIFE promo series (owner, 3.11.2026): Royal Rumble and Legends Manager — a film and six Shorts each, one item a day. Every on-screen word and spoken word is here. Numbers come from the live pages (capture logs, 3.11.2026): Royal Rumble 5v5 €15M, 11v11 about €35M, three cards a slot, three rerolls; Legends Manager 17 picks, €52M, quotas GK2 DF6 MF6 FW3, board +€8M, two windows a season, up to three touchline stops a match. The Olympiacos 2024 nights: UEFA match report (art-library/clubs/olympiacos/README-2024-maccabi.md).",
+ "about": "FAN LIFE promo series (owner, 3.11.2026): Royal Rumble and Legends Manager — a film and six Shorts each, one item a day. Every on-screen word and spoken word is here. Numbers come from the live pages (capture logs, 3.11.2026): Royal Rumble 5v5 €15M, 11v11 about €35M, three cards a slot, three rerolls; Legends Manager 17 picks, a budget the board draws with a lever (€50–52M), quotas GK2 DF6 MF6 FW3, board +€8M, two windows a season, up to three touchline stops a match. The Olympiacos 2024 nights: UEFA match report (art-library/clubs/olympiacos/README-2024-maccabi.md).",
  "ipa": {},
  "games": {
   "rumble": {
@@ -114,6 +114,7 @@
      "kind": "clip",
      "clip": "olympiacos/rumble-video",
      "mark": "kickoff",
+     "offset": 3.0,
      "head": "Then\nthey play.",
      "say": "Then they play. Every chance, every goal, on the pitch.",
      "min": 6.5,
@@ -172,7 +173,15 @@
      ]
     }
    ],
-   "thumb_at": 7.6
+   "thumb": {
+    "art": "royal-rumble/legends-one-team",
+    "focus": [
+     0.42,
+     0.75
+    ],
+    "head": "Your all-time five.\n€15M.",
+    "kicker": "Settle the argument"
+   }
   },
   {
    "id": "lm-film",
@@ -182,7 +191,7 @@
    "file": "fl-promo-lm-film",
    "publish": "2026-11-05 13:00",
    "title": "You've shouted at the manager for years. Your turn. | FAN LIFE Legends Manager",
-   "description": "You've shouted at the manager for years — from the stand, from the sofa, from the pub. Your turn.\n\nLegends Manager: one club, only the men who wore its shirt. Draft seventeen legends from the club's whole history on €52M (GK 2 · DF 6 · MF 6 · FW 3). Before every pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft. Every legend is rated in stars, measured against his own club. Confirm the squad and the board adds €8M for the first window. Then the season: the quick result, or the touchline — up to three stops a match, three changes, tactics you can turn. Cards, bans and injuries are real and carry on. Two windows a season. Your dynasty.\n\nA signing is a time machine: a fantasy, never a transfer that happened.\n\n▶ Play Legends Manager: https://fanlife.dubelteam.com/all-football/legends\n▶ Every club on FAN LIFE: https://fanlife.dubelteam.com\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1\n\nThe Olympiacos nights: Olympiacos 1–4 Maccabi Tel Aviv (7.3.2024) and Maccabi Tel Aviv 1–6 Olympiacos a.e.t. (14.3.2024), UEFA Europa Conference League round of 16 — UEFA match report. Illustrations are artwork, not photographs. Narration is synthetic.\n\n#FANLIFE #LegendsManager #FootballManager #Olympiacos #Panathinaikos #AEK",
+   "description": "You've shouted at the manager for years — from the stand, from the sofa, from the pub. Your turn.\n\nLegends Manager: one club, only the men who wore its shirt. Draft seventeen legends from the club's whole history (GK 2 · DF 6 · MF 6 · FW 3) on a budget the board draws with a lever — between €50M and €52M. Before every pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft. Every legend is rated in stars, measured against his own club. Register the squad and the board adds €8M for the first window. Pick the shape, name your captain. Then the season: the quick result, or the touchline — up to three stops a match, three changes, tactics you can turn. Cards, bans and injuries are real and carry on. Two windows a season. Your dynasty.\n\nA signing is a time machine: a fantasy, never a transfer that happened.\n\n▶ Play Legends Manager: https://fanlife.dubelteam.com/all-football/legends\n▶ Every club on FAN LIFE: https://fanlife.dubelteam.com\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1\n\nThe Olympiacos nights: Olympiacos 1–4 Maccabi Tel Aviv (7.3.2024) and Maccabi Tel Aviv 1–6 Olympiacos a.e.t. (14.3.2024), UEFA Europa Conference League round of 16 — UEFA match report. Illustrations are artwork, not photographs. Narration is synthetic.\n\n#FANLIFE #LegendsManager #FootballManager #Olympiacos #Panathinaikos #AEK",
    "tags": [
     "FAN LIFE",
     "Legends Manager",
@@ -233,9 +242,19 @@
     {
      "kind": "phone",
      "cap": "olympiacos/legends/club",
-     "head": "17 legends.\n€52M.",
+     "head": "17 legends.",
      "kicker": "Olympiacos · 672 to choose from",
-     "say": "Seventeen legends, fifty-two million, and the club's whole history to draft from."
+     "say": "Seventeen legends, from the club's whole history."
+    },
+    {
+     "kind": "clip",
+     "clip": "olympiacos/legends-video",
+     "mark": "founded",
+     "offset": 0.6,
+     "head": "The board\npulls a lever.",
+     "kicker": "Your budget: €50M–€52M",
+     "say": "And the board pulls a lever for your budget. Somewhere between fifty and fifty-two million.",
+     "min": 5.5
     },
     {
      "kind": "phone",
@@ -263,10 +282,16 @@
     },
     {
      "kind": "phone",
-     "cap": "olympiacos/legends/last-full",
+     "cap": "olympiacos/legends/step19",
      "head": "The board\nbacks you.",
      "kicker": "+ €8M for the first window",
-     "say": "Confirm the squad, and the board adds eight million for the first window."
+     "say": "Register the squad, and the board adds eight million for the first window."
+    },
+    {
+     "kind": "phone",
+     "cap": "olympiacos/legends/step60",
+     "head": "Pick the shape.\nName the captain.",
+     "say": "Meet your squad. Pick the shape. Name your captain."
     },
     {
      "kind": "art",
@@ -359,7 +384,15 @@
      "say": "Olympiacos. Panathinaikos. AEK. Celtic, St. Pauli, Hapoel Tel Aviv, and more. Pick your club."
     }
    ],
-   "thumb_at": 4.2
+   "thumb": {
+    "art": "clubs/olympiacos/2024-victory-away-end",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "head": "You shouted\nfor years.\nYour turn.",
+    "kicker": "Legends Manager"
+   }
   },
   {
    "id": "rr-s1",
@@ -400,6 +433,7 @@
      "kind": "clip",
      "clip": "olympiacos/rumble-video",
      "mark": "kickoff",
+     "offset": 3.0,
      "head": "Lock it.\nWatch them play.",
      "say": "Lock it in, and watch them play.",
      "min": 4.5,
@@ -542,6 +576,7 @@
      "kind": "clip",
      "clip": "aek-athens/rumble-video",
      "mark": "kickoff",
+     "offset": 3.0,
      "head": "Loser buys\nthe round.",
      "say": "Loser buys the next round.",
      "min": 4.0,
@@ -604,6 +639,7 @@
      "kind": "clip",
      "clip": "panathinaikos/rumble-video",
      "mark": "kickoff",
+     "offset": 3.0,
      "head": "Then\nthey play.",
      "say": "Then they play.",
      "min": 3.6,
@@ -667,6 +703,7 @@
      "kind": "clip",
      "clip": "aek-athens/rumble-video",
      "mark": "kickoff",
+     "offset": 3.0,
      "head": "Your AEK.\nOn the pitch.",
      "say": "Your AEK, on the pitch.",
      "min": 3.6,
@@ -732,8 +769,8 @@
    "n": 10,
    "file": "fl-promo-lm-s2",
    "publish": "2026-11-09 13:00",
-   "title": "17 legends. €52M. Who do you sign first? #Shorts",
-   "description": "Legends Manager: seventeen legends from your club's whole history, €52M. Who do you sign first?\n\n▶ Play Legends Manager on FAN LIFE: https://fanlife.dubelteam.com/all-football/legends\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1\n\nNarration is synthetic.\n\n #FANLIFE #LegendsManager #FootballManager #FootballLegends #Shorts",
+   "title": "17 legends. One lever. Who do you sign first? #Shorts",
+   "description": "Legends Manager: seventeen legends from your club's whole history, and a budget the board draws with a lever — €50M to €52M. Who do you sign first?\n\n▶ Play Legends Manager on FAN LIFE: https://fanlife.dubelteam.com/all-football/legends\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1\n\nNarration is synthetic.\n\n #FANLIFE #LegendsManager #FootballManager #FootballLegends #Shorts",
    "tags": [
     "FAN LIFE",
     "Legends Manager",
@@ -744,15 +781,20 @@
    "beats": [
     {
      "kind": "slam",
-     "head": "17 legends.\n€52M.",
-     "say": "Seventeen legends. Fifty-two million.",
+     "head": "17 legends.",
+     "kicker": "From your club's whole history",
+     "say": "Seventeen legends. From your club's whole history.",
      "lead": 0.4
     },
     {
-     "kind": "phone",
-     "cap": "olympiacos/legends/club",
-     "head": "Your club's\nwhole history.",
-     "say": "Your club's whole history to draft from."
+     "kind": "clip",
+     "clip": "olympiacos/legends-video",
+     "mark": "founded",
+     "offset": 0.6,
+     "head": "The board\npulls a lever.",
+     "kicker": "€50M–€52M",
+     "say": "The board pulls a lever for your budget.",
+     "min": 4.6
     },
     {
      "kind": "phone",
@@ -800,9 +842,9 @@
     },
     {
      "kind": "phone",
-     "cap": "olympiacos/legends/last-full",
-     "head": "Three stops.\nThree changes.",
-     "say": "Up to three stops a match. Three changes. Tactics you can turn."
+     "cap": "olympiacos/legends/step60",
+     "head": "Shape. Captain.\nThree stops.",
+     "say": "Pick the shape. Name the captain. Then up to three stops a match, and three changes."
     }
    ]
   },
