@@ -71,6 +71,10 @@ address.
 **Clips** (`studio/kit/clips/<set>/*.mp4`, silent h.264, ~10 s): a moving world. Decoded in order at 25 fps, scrubbed and
 recoloured per frame, played once and held on the last frame.
 
+**The owner's Drive library** (609 files, 3.11.2026) is listed in `docs/fanlife/drive-library/` (README + inventory.json).
+Before asking for new art, look there first; bring a folder in with Actions → *Drive art into the studio*
+(`studio.drive_sync`, opens a pull request).
+
 New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>-<season>]` (names are the keys in
 `docs/fanlife/55-football-stories-art-prompts.md`).
 

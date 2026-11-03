@@ -605,3 +605,13 @@ class CrowdIsQuiet(unittest.TestCase):
         self.assertEqual(audio.CROWD_LEVELS['off'], 0.0)
         self.assertLessEqual(audio.CROWD_LEVELS['soft'], 0.15)
         self.assertLessEqual(audio.CROWD_MAX_S, 3.0)
+
+
+class DriveLibrary(unittest.TestCase):
+    def test_a_folder_selects_itself_and_below_never_a_sibling(self):
+        from studio.drive_sync import safe_name, select
+        inv = {'files': [{'id': '1', 'path': 'A/Lib', 'name': 'x.png'}, {'id': '2', 'path': 'A/Lib/sub', 'name': 'x.png'},
+                         {'id': '3', 'path': 'A/Library2', 'name': 'y.png'}]}
+        self.assertEqual([f['id'] for f in select(inv, 'A/Lib/')], ['1', '2'])
+        seen: set[str] = set()
+        self.assertEqual([safe_name(f, seen) for f in select(inv, 'A/Lib')], ['x.png', 'sub-x.png'])

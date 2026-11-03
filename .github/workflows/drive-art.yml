@@ -1,0 +1,57 @@
+name: Drive art into the studio
+# Click "Run workflow" (Actions tab): pulls the pictures of one folder of the owner's public Google Drive library
+# (docs/fanlife/drive-library/inventory.json) into the Football Stories kit as one beat set, and opens a pull request.
+# No key needed: the library is shared "anyone with the link". Nothing reaches main unreviewed.
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: 'Folder path from the library root, as in docs/fanlife/drive-library/README.md'
+        required: true
+      set:
+        description: 'Kit set id (lower-case letters, digits, dashes), e.g. papercut-library or olympiacos-2023-24'
+        required: true
+      illustrated:
+        description: 'The pictures look like photographs or documents (marked ILLUSTRATION, disclosed on YouTube)'
+        type: boolean
+        default: false
+      club:
+        description: 'Club id when the set belongs to one club (optional)'
+        default: ''
+      season:
+        description: 'Season YYYY/YY when it belongs to one season (optional)'
+        default: ''
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q numpy pillow
+      - name: Download and ingest
+        working-directory: scripts/football-stories
+        env:
+          FOLDER: ${{ github.event.inputs.folder }}
+          SET: ${{ github.event.inputs.set }}
+          ILL: ${{ github.event.inputs.illustrated }}
+          CLUB: ${{ github.event.inputs.club }}
+          SEASON: ${{ github.event.inputs.season }}
+        run: |
+          args=(--folder "$FOLDER" --set "$SET" --work "$RUNNER_TEMP/drive")
+          [ "$ILL" = "true" ] && args+=(--illustrated)
+          [ -n "$CLUB" ] && args+=(--club "$CLUB")
+          [ -n "$SEASON" ] && args+=(--season "$SEASON")
+          python3 -m studio.drive_sync "${args[@]}" | tee "$RUNNER_TEMP/summary.json"
+          { echo '```json'; cat "$RUNNER_TEMP/summary.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: drive-art/${{ github.event.inputs.set }}
+          title: 'Studio art: ${{ github.event.inputs.set }} from the Drive library'
+          commit-message: 'Studio art: ${{ github.event.inputs.set }} from ${{ github.event.inputs.folder }}'
+          add-paths: scripts/football-stories/studio/kit/beats/${{ github.event.inputs.set }}
+          body: 'Pictures from the owner''s Drive library folder `${{ github.event.inputs.folder }}`, resized to ≤2048 px WebP with measured colour families (kit_ingest). Illustrated: ${{ github.event.inputs.illustrated }}.'
