@@ -61,5 +61,19 @@
   "description": "Zrinjski v AZ Alkmaar · Mostar · 21.9.2023 · Conference League. Nil–three at half-time, four–three at the end — shot from the stand.\n\nThe full film is on the channel. Play the archive: https://fanlife.dubelteam.com\n\nMusic: Kontraa — Balkan Drill.\n#Shorts #Zrinjski #Mostar #ConferenceLeague #FANLIFE #IWasThere"
  },
  "music": "Kontraa — Balkan Drill (owner-supplied, Pixabay item 573741)",
- "published": {}
+ "published": {
+  "film": {
+   "url": "https://youtu.be/Z-m24IHgOLM",
+   "video_id": "Z-m24IHgOLM",
+   "visibility": "public",
+   "at": "2026-11-03"
+  },
+  "short": {
+   "url": "https://youtube.com/shorts/QoWTs4Mpp_k",
+   "video_id": "QoWTs4Mpp_k",
+   "visibility": "public",
+   "at": "2026-11-03"
+  },
+  "cards": "film → documentary at 1:27; end screen subscribe + best-for-viewer"
+ }
 }

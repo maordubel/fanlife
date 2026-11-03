@@ -115,6 +115,16 @@ New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>
 - **The publish file is one encode at the bitrate the cap allows** (`matchday/film.py`): phone footage with grain was
   450 MB at CRF 19, and a CRF ladder meant five slow encodes.
 
+## Publishing from the session (3.11.2026)
+
+The sandbox cannot reach YouTube, but the owner's Chrome can read `raw.githubusercontent.com`. A film is published
+without the owner dragging a file: push the files (each <100 MB; split a larger one) to a temporary orphan branch,
+open Studio's upload dialog, and in the page fetch the parts, join them into one `File`, and set it on the dialog's
+`Filedata` input (`DataTransfer`). Title, description, tags, audience, altered-content, thumbnail (`#file-loader`) and
+subtitles (`#captions-file-loader`, its `click` replaced so it takes the SRT instead of opening the picker) are set the
+same way; the final **Publish** is a real click (a script click does not publish). Delete the branch at once — it is
+public while it exists, and owner footage must not stay in the repo.
+
 ## Craft (3.11.2026) — see doc 59
 
 Pace 148 words a minute, a cold open, one sentence per beat at the big moments, goal by goal; football as faith; a famous

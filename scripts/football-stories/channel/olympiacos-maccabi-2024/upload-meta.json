@@ -32,5 +32,35 @@
   "video": "-ozy76t1ByM",
   "at": "00:03:10"
  },
- "end_screen": "import from -ozy76t1ByM"
+ "end_screen": "import from -ozy76t1ByM",
+ "published": {
+  "film": {
+   "url": "https://youtu.be/tfnc4EziPxc",
+   "video_id": "tfnc4EziPxc",
+   "visibility": "public",
+   "at": "2026-11-03"
+  },
+  "shorts": [
+   {
+    "url": "https://youtube.com/shorts/7cGCXjXyvxI",
+    "video_id": "7cGCXjXyvxI",
+    "visibility": "public",
+    "at": "2026-11-03"
+   },
+   {
+    "url": "https://youtube.com/shorts/76T4BwCfVIA",
+    "video_id": "76T4BwCfVIA",
+    "visibility": "public",
+    "at": "2026-11-03"
+   },
+   {
+    "url": "https://youtube.com/shorts/KaxGsZgj2oI",
+    "video_id": "KaxGsZgj2oI",
+    "visibility": "public",
+    "at": "2026-11-03"
+   }
+  ],
+  "subtitles": "English, uploaded",
+  "cards": "5:28 → -ozy76t1ByM; end screen subscribe + best-for-viewer"
+ }
 }
