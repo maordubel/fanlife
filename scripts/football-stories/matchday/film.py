@@ -703,7 +703,7 @@ def main() -> None:
         (out / 'marketing.txt').write_text(ep['reel'].get('post', '').strip() + '\n')
     chapters = [('0:00', 'Cold open')] + [(mmss(p['start']), p['title']) for p in plan if p.get('kind') == 'chapter']
     desc = ep[CUT]['description'].strip() + '\n\n' + '\n'.join(f'{a} {b}' for a, b in chapters) + '\n\nSources\n' + \
-        '\n'.join(f"· {s['short']}: {s.get('url') or s.get('file')}" for s in ep['sources']) + \
+        '\n'.join(f"· {s['short']}: {s.get('url') or 'https://fanlife.dubelteam.com'}" for s in ep['sources']) + \
         '\n\nNarration is synthetic (Kokoro, Apache-2.0). Footage: FAN LIFE, from the stand.' + music_credit(ep) + ' #FANLIFE #IWasThere'
     (out / 'youtube-description.txt').write_text(desc if not tall else ep['reel']['description'].strip() + '\n\n' + music_credit(ep).strip() + '\n#Shorts #FANLIFE #IWasThere')
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-vf', "scale='if(gt(iw,ih),1280,-2)':'if(gt(iw,ih),-2,1280)'",
@@ -725,7 +725,9 @@ def main() -> None:
     th = ep[CUT].get('thumbnail')
     if th:
         frame = work / 'thumb-src.jpg'
-        run(['ffmpeg', '-y', '-v', 'error', '-ss', f"{th['at']:.2f}", '-i', str(master), '-frames:v', '1', str(frame)])
+        sc = 0 if tall else int(ep.get('look', {}).get('scope', 0))    # never the scope bars on a thumbnail
+        crop = ['-vf', f'crop=iw-{sc * 32 // 9}:ih-{sc * 2},scale={W}:{H}'] if sc else []
+        run(['ffmpeg', '-y', '-v', 'error', '-ss', f"{th['at']:.2f}", '-i', str(master), '-frames:v', '1', *crop, str(frame)])
         with SpriteFactory(pal, sp_dir) as sp:
             tp = sp.thumbnail('iwt-thumb', th['text'], th['sub'], frame.as_uri())
         Image.open(tp).convert('RGB').resize((1280, 720)).save(out / 'thumbnail.jpg', quality=92)
@@ -757,10 +759,14 @@ def ts(t: float) -> str:
 
 def music_credit(ep: dict) -> str:
     """' Music: …' for the description when the episode plays a library track (CC BY needs the credit and the link)."""
-    track = str(ep.get('music') or '')
-    if not track.startswith('track:'):
+    m = ep.get('music')
+    if isinstance(m, dict) and m.get('track'):
+        tid = m['track']
+    elif str(m or '').startswith('track:'):
+        tid = str(m).split(':', 1)[1]
+    else:
         return ''
-    t = music_track(track.split(':', 1)[1])
+    t = music_track(tid)
     return ' Music: ' + (t.get('credit') or f"{t['artist']} — {t['title']}") + '.'
 
 

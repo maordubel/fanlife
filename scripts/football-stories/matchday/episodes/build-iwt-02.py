@@ -212,7 +212,7 @@ ep = {
             'Leumit': 'lɛuːmˈiːt'},
     'film': {
         'beats': film,
-        'thumbnail': {'at': 1.6, 'text': '25,550 came', 'sub': 'to watch their club go down'},
+        'thumbnail': {'at': 8.5, 'text': '25,550 came', 'sub': 'to watch their club go down'},
         'description': (
             'Saturday, 11 May 2024. More than twenty-five thousand Hapoel Tel Aviv supporters filled Bloomfield for one '
             'game: lose to MS Ashdod, and the club goes down. I WAS THERE — the afternoon told from the stand: a season '
