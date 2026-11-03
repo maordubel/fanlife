@@ -1,0 +1,67 @@
+{
+  "lines": "Some nights you can feel before you see them. The tram is full an hour early, scarves hang out of the windows, and somewhere up ahead the first song has already started. We have never stood on this ground before. But we know this walk. Ticket in hand. The gate. The steps. And then the noise \u2014 all of it, at once.",
+  "cpu": 4,
+  "takes": [
+    {
+      "take": "A-kokoro-bm_george",
+      "label": "Kokoro \u00b7 British male \"George\" (studio default)",
+      "ok": true,
+      "seconds": 23.8,
+      "render_seconds": 6.2,
+      "realtime_factor": 0.26,
+      "sample_rate": 24000
+    },
+    {
+      "take": "B-kokoro-bm_lewis",
+      "label": "Kokoro \u00b7 British male \"Lewis\"",
+      "ok": true,
+      "seconds": 21.4,
+      "render_seconds": 4.7,
+      "realtime_factor": 0.22,
+      "sample_rate": 24000
+    },
+    {
+      "take": "C-kokoro-am_michael",
+      "label": "Kokoro \u00b7 American male \"Michael\"",
+      "ok": true,
+      "seconds": 22.7,
+      "render_seconds": 4.8,
+      "realtime_factor": 0.21,
+      "sample_rate": 24000
+    },
+    {
+      "take": "D-chatterbox-default",
+      "label": "Chatterbox \u00b7 its own default voice, neutral",
+      "ok": true,
+      "seconds": 18.5,
+      "render_seconds": 199.9,
+      "realtime_factor": 10.79,
+      "sample_rate": 24000
+    },
+    {
+      "take": "E-chatterbox-default-drama",
+      "label": "Chatterbox \u00b7 default voice, more emotion, slower",
+      "ok": true,
+      "seconds": 18.6,
+      "render_seconds": 159.8,
+      "realtime_factor": 8.61,
+      "sample_rate": 24000
+    },
+    {
+      "take": "F-chatterbox-george",
+      "label": "Chatterbox \u00b7 George's timbre, documentary emotion",
+      "ok": true,
+      "seconds": 23.4,
+      "render_seconds": 240.1,
+      "realtime_factor": 10.26,
+      "sample_rate": 24000
+    },
+    {
+      "take": "G-turbo-george",
+      "label": "Chatterbox-Turbo \u00b7 George's timbre",
+      "ok": false,
+      "error": "RuntimeError: expected scalar type Double but found Float",
+      "trace": "conditionals(audio_prompt_path, exaggeration=exaggeration, norm_loudness=norm_loudness)\n  File \"/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/chatterbox/tts_turbo.py\", line 234, in prepare_conditionals\n    t3_cond_prompt_tokens, _ = s3_tokzr.forward([ref_16k_wav[:self.ENC_COND_LEN]], max_len=plen)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/torch/utils/_contextlib.py\", line 116, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/chatterbox/models/s3tokenizer/s3tokenizer.py\", line 111, in forward\n    mel = self.log_mel_spectrogram(wav)  # [B=1, F, T]\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/chatterbox/models/s3tokenizer/s3tokenizer.py\", line 163, in log_mel_spectrogram\n    mel_spec = self._mel_filters.to(self.device) @ magnitudes\n               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\nRuntimeError: expected scalar type Double but found Float\n"
+    }
+  ]
+}
