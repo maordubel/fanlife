@@ -5,6 +5,8 @@ download endpoint. Runs on the GitHub runner (this sandbox cannot reach Drive). 
 reported by name, never skipped silently.
 
     python3 scripts/football-stories/matchday/drive_fetch.py <folder url or id> <dest> [only this sub-folder]
+
+A single FILE link (…/file/d/<id>/…) is fetched as that one file — the owner often shares one clip, not a folder.
 """
 from __future__ import annotations
 
@@ -72,9 +74,18 @@ def fetch(fid: str, dest: Path, report: dict, prefix: str = '', only: str | None
 if __name__ == '__main__':
     if len(sys.argv) not in (3, 4):
         sys.exit(__doc__)
-    rep = {'folder': folder_id(sys.argv[1]), 'files': [], 'failed': []}
+    one = re.search(r'/file/d/([\w-]+)', sys.argv[1])
+    rep = {'folder': None if one else folder_id(sys.argv[1]), 'files': [], 'failed': []}
     Path(sys.argv[2]).mkdir(parents=True, exist_ok=True)
-    fetch(rep['folder'], Path(sys.argv[2]), rep, only=sys.argv[3] if len(sys.argv) == 4 else None)
+    if one:
+        fid = one.group(1)
+        try:
+            n = download(fid, Path(sys.argv[2]) / f'{fid}.mp4')
+            rep['files'].append({'path': f'{fid}.mp4', 'drive_id': fid, 'bytes': n})
+        except Exception as e:
+            rep['failed'].append({'path': fid, 'drive_id': fid, 'reason': str(e)[:200]})
+    else:
+        fetch(rep['folder'], Path(sys.argv[2]), rep, only=sys.argv[3] if len(sys.argv) == 4 else None)
     print(json.dumps({'files': len(rep['files']), 'failed': rep['failed'],
                       'gb': round(sum(f['bytes'] for f in rep['files']) / 1e9, 2)}))
     (Path(sys.argv[2]) / '_fetch.json').write_text(json.dumps(rep, indent=2, ensure_ascii=False))
