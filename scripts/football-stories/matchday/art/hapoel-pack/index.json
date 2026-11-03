@@ -207,6 +207,150 @@
    ],
    "alpha": false,
    "sha256": "b84cd5c56275a4e8"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/01-rainy-terrace-suspense",
+   "file": "01-rainy-terrace-suspense.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "01_Rainy_Terrace_Suspense.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "33b8e21f028197b3"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/02-parent-child-radio-memory",
+   "file": "02-parent-child-radio-memory.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "02_Parent_Child_Radio_Memory.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "89813bc8e603b850"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/03-half-time-dressing-room",
+   "file": "03-half-time-dressing-room.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "03_Half_Time_Dressing_Room.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "c01c4d73e367625b"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/04-away-coach-night",
+   "file": "04-away-coach-night.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "04_Away_Coach_Night.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "dae6ac4dce4900ea"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/05-goal-behind-net",
+   "file": "05-goal-behind-net.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "05_Goal_Behind_Net.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "de0ac1e3a9e33d72"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/06-terrace-after-defeat",
+   "file": "06-terrace-after-defeat.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "06_Terrace_After_Defeat.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "da04c07696bca1af"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/07-trophy-celebration",
+   "file": "07-trophy-celebration.webp",
+   "group": "01-scenes-and-backgrounds",
+   "source": "07_Trophy_Celebration.png",
+   "size": [
+    1672,
+    941
+   ],
+   "alpha": false,
+   "sha256": "56a2831ec18a0742"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/01-generic-silver-trophy",
+   "file": "01-generic-silver-trophy.webp",
+   "group": "02-individual-elements",
+   "source": "01_Generic_Silver_Trophy.png",
+   "size": [
+    1330,
+    1183
+   ],
+   "alpha": true,
+   "sha256": "f1efb5376e77c08c"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/02-goalkeeper-diving",
+   "file": "02-goalkeeper-diving.webp",
+   "group": "02-individual-elements",
+   "source": "02_Goalkeeper_Diving.png",
+   "size": [
+    1941,
+    810
+   ],
+   "alpha": true,
+   "sha256": "c44158e9550c5059"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/03-referee-whistle",
+   "file": "03-referee-whistle.webp",
+   "group": "02-individual-elements",
+   "source": "03_Referee_Whistle.png",
+   "size": [
+    1024,
+    1536
+   ],
+   "alpha": true,
+   "sha256": "e426b6c97820c1cc"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/04-generic-red-white-shirt",
+   "file": "04-generic-red-white-shirt.webp",
+   "group": "02-individual-elements",
+   "source": "04_Generic_Red_White_Shirt.png",
+   "size": [
+    1536,
+    1024
+   ],
+   "alpha": true,
+   "sha256": "8ebeb99d9acd446d"
+  },
+  {
+   "key": "iwt-art:hapoel-pack/05-red-white-flag",
+   "file": "05-red-white-flag.webp",
+   "group": "02-individual-elements",
+   "source": "05_Red_White_Flag.png",
+   "size": [
+    1536,
+    1024
+   ],
+   "alpha": true,
+   "sha256": "5c7f14e5bc4fc907"
   }
  ]
 }
