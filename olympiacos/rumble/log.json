@@ -1,0 +1,250 @@
+{
+ "marks": {
+  "door": 9.84,
+  "deal1": 11.02,
+  "deal2": 14.59,
+  "deal3": 18.15,
+  "deal4": 21.74,
+  "deal5": 25.32,
+  "lock": 29.1,
+  "entrance": 31.74,
+  "headtohead": 38.14
+ },
+ "steps": [
+  {
+   "step": "door",
+   "t": 10.04,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · vacant",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 1 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Alekos Rantos, goalkeeper, €4M",
+    "Kyriakos Tohouroglou, goalkeeper, €3M",
+    "Bobby Allain, goalkeeper, €1M",
+    "RULES",
+    "LOCK THE FIVE · €15M LEFT 5 STILL TO PICK →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n5\nM\n0 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\n?\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n1 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €5M\nSIGNING 1 OF 5 · GK\nWHO TAKES THE GOALKEEPER SPOT?\nPREMIUM\nENTRY 01\nGK\n€4M\nAlekos\nRANTOS\nAT THE CLUB\n1988–1998\nMID\nENTRY 02\nGK\n€3M\nKyriakos\nTOHOUROGLOU\nAT THE CLUB\n1994–2000\nBUDGET\nENTRY 03\nGK\n€1M\nBobby\nALLAIN\nAT THE CLUB\n2019–2020\nRULES\nLOCK THE FIVE · €15M LEFT\n5 STILL TO PICK\n→"
+  },
+  {
+   "step": "deal1",
+   "t": 11.18,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · vacant",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 1 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Alekos Rantos, goalkeeper, €4M",
+    "Kyriakos Tohouroglou, goalkeeper, €3M",
+    "Bobby Allain, goalkeeper, €1M",
+    "RULES",
+    "LOCK THE FIVE · €15M LEFT 5 STILL TO PICK →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n5\nM\n0 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\n?\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n1 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €5M\nSIGNING 1 OF 5 · GK\nWHO TAKES THE GOALKEEPER SPOT?\nPREMIUM\nENTRY 01\nGK\n€4M\nAlekos\nRANTOS\nAT THE CLUB\n1988–1998\nMID\nENTRY 02\nGK\n€3M\nKyriakos\nTOHOUROGLOU\nAT THE CLUB\n1994–2000\nBUDGET\nENTRY 03\nGK\n€1M\nBobby\nALLAIN\nAT THE CLUB\n2019–2020\nRULES\nLOCK THE FIVE · €15M LEFT\n5 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Alekos Rantos, goalkeeper, €4M"
+  },
+  {
+   "step": "deal2",
+   "t": 14.75,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Alekos Rantos · €4M",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Georgios Amanatidis, defender, €4M",
+    "Alaixys Romao, defender, €3M",
+    "Leonardo Jesus, defender, €2M",
+    "RULES",
+    "LOCK THE FIVE · €11M LEFT 4 STILL TO PICK →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n1\nM\n1 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nALEKOS RANTOS\n€4M\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €4M\nSIGNING 2 OF 5 · DEF\nWHO TAKES THE DEFENDER SPOT?\nPREMIUM\nENTRY 01\nDEF\n€4M\nGeorgios\nAMANATIDIS\nAT THE CLUB\n1993–2003\nMID\nENTRY 02\nDEF\n€3M\nAlaixys\nROMAO\nAT THE CLUB\n2016–2018\nBUDGET\nENTRY 03\nDEF\n€2M\nLeonardo\nJESUS\nAT THE CLUB\n2008–2011\nRULES\nLOCK THE FIVE · €11M LEFT\n4 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Leonardo Jesus, defender, €2M"
+  },
+  {
+   "step": "deal3",
+   "t": 18.33,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Alekos Rantos · €4M",
+    "DEF · Leonardo Jesus · €2M",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Vasilis Karapialis, midfield, €4M",
+    "Ivan Brnić, midfield, €2M",
+    "Džoni Novak, midfield, €1M",
+    "RULES",
+    "LOCK THE FIVE · €9M LEFT 3 STILL TO PICK →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n9\nM\n2 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nALEKOS RANTOS\n€4M\nDEF\nLEONARDO JESUS\n€2M\nMID\n?\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €3M\nSIGNING 3 OF 5 · MID\nWHO TAKES THE MIDFIELD SPOT?\nPREMIUM\nENTRY 01\nMID\n€4M\nVasilis\nKARAPIALIS\nAT THE CLUB\n1991–2000\nMID\nENTRY 02\nMID\n€2M\nIvan\nBRNIĆ\nAT THE CLUB\n2023–2025\nBUDGET\nENTRY 03\nMID\n€1M\nDžoni\nNOVAK\nAT THE CLUB\n2003\nRULES\nLOCK THE FIVE · €9M LEFT\n3 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Ivan Brnić, midfield, €2M"
+  },
+  {
+   "step": "deal4",
+   "t": 21.91,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Alekos Rantos · €4M",
+    "DEF · Leonardo Jesus · €2M",
+    "MID · Ivan Brnić · €2M",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 1 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Alejandro Domínguez, midfield, €4M",
+    "Abdoulaye Keita, midfield, €2M",
+    "Abdoulaye Dabo, midfield, €2M",
+    "RULES",
+    "LOCK THE FIVE · €7M LEFT 2 STILL TO PICK →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n7\nM\n3 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nALEKOS RANTOS\n€4M\nDEF\nLEONARDO JESUS\n€2M\nMID\nIVAN BRNIĆ\n€2M\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n1 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €2M\nSIGNING 4 OF 5 · MID\nWHO TAKES THE MIDFIELD SPOT?\nPREMIUM\nENTRY 01\nMID\n€4M\nAlejandro\nDOMÍNGUEZ\nAT THE CLUB\n2013–2017\nMID\nENTRY 02\nMID\n€2M\nAbdoulaye\nKEITA\nAT THE CLUB\n2019–2021\nBUDGET\nENTRY 03\nMID\n€2M\nAbdoulaye\nDABO\nAT THE CLUB\n2022–2023\nRULES\nLOCK THE FIVE · €7M LEFT\n2 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Abdoulaye Keita, midfield, €2M"
+  },
+  {
+   "step": "deal5",
+   "t": 25.51,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Alekos Rantos · €4M",
+    "DEF · Leonardo Jesus · €2M",
+    "MID · Ivan Brnić · €2M",
+    "MID · Abdoulaye Keita · €2M",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 0 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Youssef El Arabi, forward, €4M",
+    "Oleh Protasov, forward, €3M",
+    "Hwang Ui-jo, forward, €1M",
+    "RULES",
+    "LOCK THE FIVE · €5M LEFT 1 STILL TO PICK →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n5\nM\n4 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nALEKOS RANTOS\n€4M\nDEF\nLEONARDO JESUS\n€2M\nMID\nIVAN BRNIĆ\n€2M\nMID\nABDOULAYE KEITA\n€2M\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n0 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €1M\nSIGNING 5 OF 5 · ATT\nWHO TAKES THE FORWARD SPOT?\nPREMIUM\nENTRY 01\nATT\n€4M\nYoussef\nEL ARABI\nAT THE CLUB\n2019–2024\nMID\nENTRY 02\nATT\n€3M\nOleh\nPROTASOV\nAT THE CLUB\n1990–1994\nBUDGET\nENTRY 03\nATT\n€1M\nHwang\nUI-JO\nAT THE CLUB\n2022–2023\nRULES\nLOCK THE FIVE · €5M LEFT\n1 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Hwang Ui-jo, forward, €1M"
+  },
+  {
+   "step": "five-top",
+   "t": 28.91,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Alekos Rantos · €4M",
+    "DEF · Leonardo Jesus · €2M",
+    "MID · Ivan Brnić · €2M",
+    "MID · Abdoulaye Keita · €2M",
+    "ATT · Hwang Ui-jo · €1M",
+    "RULES",
+    "LOCK THE FIVE · €4M LEFT LOCK THE FIVE →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n4\nM\n5 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nALEKOS RANTOS\n€4M\nDEF\nLEONARDO JESUS\n€2M\nMID\nIVAN BRNIĆ\n€2M\nMID\nABDOULAYE KEITA\n€2M\nATT\nHWANG UI-JO\n€1M\nRULES\nLOCK THE FIVE · €4M LEFT\nLOCK THE FIVE\n→"
+  },
+  {
+   "step": "five-full",
+   "t": 29.09,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Alekos Rantos · €4M",
+    "DEF · Leonardo Jesus · €2M",
+    "MID · Ivan Brnić · €2M",
+    "MID · Abdoulaye Keita · €2M",
+    "ATT · Hwang Ui-jo · €1M",
+    "RULES",
+    "LOCK THE FIVE · €4M LEFT LOCK THE FIVE →"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n4\nM\n5 OF 5 LOCKED · 672 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nALEKOS RANTOS\n€4M\nDEF\nLEONARDO JESUS\n€2M\nMID\nIVAN BRNIĆ\n€2M\nMID\nABDOULAYE KEITA\n€2M\nATT\nHWANG UI-JO\n€1M\nRULES\nLOCK THE FIVE · €4M LEFT\nLOCK THE FIVE\n→"
+  },
+  {
+   "step": "entrance",
+   "t": 32.13,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nYOUR ENTRANCE\nThey walk out\nDEF · Leonardo Jesus\nRANTOS\nJESUS\nBRNIĆ\nKEITA\nUI-JO"
+  },
+  {
+   "step": "headtohead",
+   "t": 38.55,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nHEAD TO HEAD\nHead to head\nRANTOS\nJESUS\nBRNIĆ\nKEITA\nUI-JO\nGIANNOU\nPOTOURIDIS\nRIVALDO\nODJIDJA-OFOE\nANDRIANOPOULOS\n€11M\nVS\n€14M"
+  },
+  {
+   "step": "teams",
+   "t": 43.78,
+   "buttons": [
+    "Pin Olympiacos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "OLYMPIACOS VS YOUR OWN CLUB CHANGE ▾",
+    "⏭ NEXT",
+    "Double speed",
+    "⏩ FT",
+    "Full screen",
+    "MATCH CENTRE",
+    "SOUND ON"
+   ],
+   "text": "OLYMPIACOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · OLYMPIACOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nOLYMPIACOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nOLY\n▶\n0\n12′\n0\n◀\nOLY\n12′ · CROSS AND HEADER\n⏭\nNEXT\n×2\n⏩\nFT\n⤢\nMATCH CENTRE\nSOUND ON"
+  }
+ ]
+}

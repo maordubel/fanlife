@@ -1,0 +1,265 @@
+{
+ "marks": {
+  "door": 8.8,
+  "club": 10.4,
+  "founded": 59.67,
+  "step00": 63.51,
+  "step01": 75.82,
+  "step02": 80.41,
+  "step03": 85.08,
+  "step04": 89.68,
+  "step05": 94.56,
+  "step06": 99.2,
+  "step07": 103.81,
+  "step08": 108.43,
+  "step09": 113.03,
+  "step10": 117.66,
+  "step11": 122.26,
+  "step12": 126.86,
+  "step13": 131.48,
+  "step14": 136.08,
+  "step15": 140.69,
+  "step16": 145.29,
+  "step17": 149.89,
+  "step18": 154.53,
+  "step19": 159.13,
+  "step20": 168.55,
+  "step21": 178.03,
+  "step22": 187.53,
+  "step23": 197.02,
+  "step24": 206.5,
+  "step25": 215.98,
+  "step26": 225.46,
+  "step27": 234.95,
+  "step28": 244.43,
+  "step29": 253.91,
+  "step30": 263.4,
+  "step31": 272.88,
+  "step32": 281.01,
+  "step33": 289.2,
+  "step34": 297.38,
+  "step35": 305.53,
+  "step36": 313.68,
+  "step37": 321.9,
+  "step38": 330.08,
+  "step39": 338.25,
+  "step40": 346.45,
+  "step41": 354.65,
+  "step42": 362.84,
+  "step43": 371.04,
+  "step44": 379.22,
+  "step45": 387.43,
+  "step46": 395.63,
+  "step47": 403.86,
+  "step48": 412.07,
+  "step49": 420.27,
+  "step50": 428.5,
+  "step51": 436.72,
+  "step52": 444.95,
+  "step53": 453.18,
+  "step54": 461.4,
+  "step55": 469.64,
+  "step56": 477.87,
+  "step57": 486.1,
+  "step58": 494.33,
+  "step59": 502.58,
+  "step60": 510.9,
+  "step61": 519.23,
+  "step62": 527.57,
+  "step63": 535.9
+ },
+ "steps": [
+  {
+   "clicked": "^pull the lever"
+  },
+  {
+   "clicked": "OPEN THE DRAFT WITH €52.0M"
+  },
+  {
+   "clicked": "Sign Giannis Christofilopoulos, Defender, 1.25 stars, €1M"
+  },
+  {
+   "clicked": "Sign Mathieu Valbuena, Midfielder, 4.25 stars, €5M"
+  },
+  {
+   "clicked": "Sign Michalis Vlachos, Defender, 3.25 stars, €2M"
+  },
+  {
+   "clicked": "Sign Herbert Neumann, Midfielder, 2.75 stars, €2M"
+  },
+  {
+   "clicked": "Sign Petros Karavitis, Defender, 5 stars, €4M"
+  },
+  {
+   "clicked": "Sign Cristian Ledesma, Midfielder, 3.25 stars, €2M"
+  },
+  {
+   "clicked": "Sign David Carmo, Defender, 3 stars, €2M"
+  },
+  {
+   "clicked": "Sign Pavlos Vasiliou, Midfielder, 5 stars, €4M"
+  },
+  {
+   "clicked": "Sign Bent Christensen Arensøe, Forward, 3.25 stars, €2M"
+  },
+  {
+   "clicked": "Sign Georgios Plitsis, Goalkeeper, 1.75 stars, €1M"
+  },
+  {
+   "clicked": "Sign Dimitrios Mavrogenidis, Defender, 4.75 stars, €4M"
+  },
+  {
+   "clicked": "Sign Leandro Greco, Midfielder, 1.75 stars, €1M"
+  },
+  {
+   "clicked": "Sign Stevan Jovetić, Forward, 3.25 stars, €2M"
+  },
+  {
+   "clicked": "Sign Eleftherios Poupakis, Goalkeeper, 5 stars, €4M"
+  },
+  {
+   "clicked": "Sign Giangos Simantiris, Defender, 3.5 stars, €2M"
+  },
+  {
+   "clicked": "Sign Lajos Detari, Midfielder, 2.5 stars, €2M"
+  },
+  {
+   "clicked": "Sign Predrag Đorđević, Forward, 5 stars, €4M"
+  },
+  {
+   "clicked": "Sign Michalis Agrimakis, Goalkeeper, 1 stars, €1M"
+  },
+  {
+   "clicked": "^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)"
+  },
+  {
+   "clicked": "^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)"
+  },
+  {
+   "clicked": "^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)"
+  },
+  {
+   "clicked": "^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)"
+  },
+  {
+   "clicked": "^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)"
+  },
+  {
+   "clicked": "^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)"
+  },
+  {
+   "clicked": "^(GK|DF|MF|FW)\\b"
+  },
+  {
+   "clicked": "^(GK|DF|MF|FW)\\b"
+  },
+  {
+   "clicked": "^(GK|DF|MF|FW)\\b"
+  },
+  {
+   "clicked": "^(GK|DF|MF|FW)\\b"
+  },
+  {
+   "clicked": "^(GK|DF|MF|FW)\\b"
+  },
+  {
+   "clicked": "^(GK|DF|MF|FW)\\b"
+  },
+  {
+   "clicked": "1\nTHE MEN"
+  },
+  {
+   "clicked": "1\nTHE MEN"
+  },
+  {
+   "clicked": "2\nTHE ELEVEN"
+  },
+  {
+   "clicked": "2\nTHE ELEVEN"
+  },
+  {
+   "clicked": "4-3-3"
+  },
+  {
+   "clicked": "4-3-3"
+  },
+  {
+   "clicked": "4-4-2"
+  },
+  {
+   "clicked": "4-4-2"
+  },
+  {
+   "clicked": "3-5-2"
+  },
+  {
+   "clicked": "3-5-2"
+  },
+  {
+   "clicked": "GK: Eleftherios Poupakis, Goalkeeper"
+  },
+  {
+   "clicked": "GK: Eleftherios Poupakis, Goalkeeper"
+  },
+  {
+   "clicked": "CB: Petros Karavitis, Defender"
+  },
+  {
+   "clicked": "CB: Petros Karavitis, Defender"
+  },
+  {
+   "clicked": "CB: Dimitrios Mavrogenidis, Defender"
+  },
+  {
+   "clicked": "CB: Dimitrios Mavrogenidis, Defender"
+  },
+  {
+   "clicked": "CB: Giangos Simantiris, Defender"
+  },
+  {
+   "clicked": "CB: Giangos Simantiris, Defender"
+  },
+  {
+   "clicked": "LWB: Mathieu Valbuena, Midfielder, out of his line"
+  },
+  {
+   "clicked": "LWB: Mathieu Valbuena, Midfielder, out of his line"
+  },
+  {
+   "clicked": "CM: Cristian Ledesma, Midfielder"
+  },
+  {
+   "clicked": "CM: Cristian Ledesma, Midfielder"
+  },
+  {
+   "clicked": "DM: Herbert Neumann, Midfielder"
+  },
+  {
+   "clicked": "DM: Herbert Neumann, Midfielder"
+  },
+  {
+   "clicked": "CM: Michalis Vlachos, Defender, out of his line"
+  },
+  {
+   "clicked": "CM: Michalis Vlachos, Defender, out of his line"
+  },
+  {
+   "clicked": "RWB: David Carmo, Defender"
+  },
+  {
+   "clicked": "RWB: David Carmo, Defender"
+  },
+  {
+   "clicked": "ST: Predrag Đorđević, Forward, captain"
+  },
+  {
+   "clicked": "ST: Predrag Đorđević, Forward, captain"
+  },
+  {
+   "clicked": "ST: Pavlos Vasiliou, Midfielder, out of his line"
+  },
+  {
+   "clicked": "ST: Pavlos Vasiliou, Midfielder, out of his line"
+  }
+ ]
+}

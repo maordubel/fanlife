@@ -1,0 +1,149 @@
+{
+ "marks": {
+  "door": 38.7,
+  "club": 40.68,
+  "founded": 46.65,
+  "step00": 61.03
+ },
+ "steps": [
+  {
+   "step": "door",
+   "t": 39.12,
+   "buttons": [
+    "MENU",
+    "Pin Legends Manager to your shortcuts",
+    "01 AEK ATHENS 1,181 legends to draft from",
+    "02 AA AL AHLY Only 0 priced GK with a recorded position — the draft needs 2 and three card",
+    "03 CELTIC 1,202 legends to draft from",
+    "04 FC ST. PAULI 597 legends to draft from",
+    "05 HAPOEL PETAH TIKVA 358 legends to draft from",
+    "06 HAPOEL TEL AVIV 630 legends to draft from",
+    "07 OLYMPIACOS 672 legends to draft from",
+    "08 PANATHINAIKOS 527 legends to draft from",
+    "09 RC RAJA CASABLANCA 543 legends to draft from",
+    "10 WA WYDAD CASABLANCA Only 0 priced GK with a recorded position — the draft needs 2 and t",
+    "11 ZRINJSKI MOSTAR 252 legends to draft from",
+    "? CHOOSE A CLUB"
+   ],
+   "text": "ALL FOOTBALL PRESENTS\n9 CLUBS · THEIR IMMORTALS\nLegends\nManager\nONE CLUB. ONLY THE MEN WHO WORE ITS SHIRT. YOUR DYNASTY.\nDraft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.\nPIN\nSTEP 1 · THE CLUB\nChoose your club\nOnly men who played for the club you choose. A club opens when a full draft of seventeen fits its own price list — whatever you pick.\n01\nAEK ATHENS\n1,181\nlegends to draft from\n02\nAA\nAL AHLY\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n03\nCELTIC\n1,202\nlegends to draft from\n04\nFC ST. PAULI\n597\nlegends to draft from\n05\nHAPOEL PETAH TIKVA\n358\nlegends to draft from\n06\nHAPOEL TEL AVIV\n630\nlegends to draft from\n07\nOLYMPIACOS\n672\nlegends to draft from\n08\nPANATHINAIKOS\n527\nlegends to draft from\n09\nRC\nRAJA CASABLANCA\n543\nlegends to draft from\n10\nWA\nWYDAD CASABLANCA\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n11\nZRINJSKI MOSTAR\n252\nlegends to draft from\n?\nCHOOSE A CLUB\nUP TO 3 CAREERS AT ONCE · NOTHING IS LOST\nREAD BEFORE THE DRAFT\nTHE CODE OF THE LEGENDS\nONE CLUB, ITS OWN MEN.\nEvery legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.\nTHE FOUNDING DRAFT.\nSeventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.\n€52M\nGK 2\nDF 6\nMF 6\nFW 3\nTHE BOARD BACKS YOU.\nConfirm the squad and the board adds €8M for the first window. Every season after, a grant of €4–10M by results — smaller when the coffers are full.\nTWO WINDOWS A S"
+  },
+  {
+   "step": "club",
+   "t": 41.04,
+   "buttons": [
+    "MENU",
+    "Pin Legends Manager to your shortcuts",
+    "01 AEK ATHENS 1,181 legends to draft from",
+    "02 AA AL AHLY Only 0 priced GK with a recorded position — the draft needs 2 and three card",
+    "03 CELTIC 1,202 legends to draft from",
+    "04 FC ST. PAULI 597 legends to draft from",
+    "05 HAPOEL PETAH TIKVA 358 legends to draft from",
+    "06 HAPOEL TEL AVIV 630 legends to draft from",
+    "07 OLYMPIACOS 672 legends to draft from",
+    "08 PANATHINAIKOS 527 legends to draft from",
+    "09 RC RAJA CASABLANCA 543 legends to draft from",
+    "10 WA WYDAD CASABLANCA Only 0 priced GK with a recorded position — the draft needs 2 and t",
+    "11 ZRINJSKI MOSTAR 252 legends to draft from",
+    "Fewer clubs",
+    "More clubs",
+    "FOUND THE PANATHINAIKOS DYNASTY"
+   ],
+   "text": "ALL FOOTBALL PRESENTS\n9 CLUBS · THEIR IMMORTALS\nLegends\nManager\nONE CLUB. ONLY THE MEN WHO WORE ITS SHIRT. YOUR DYNASTY.\nDraft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.\nPIN\nSTEP 1 · THE CLUB\nChoose your club\nOnly men who played for the club you choose. A club opens when a full draft of seventeen fits its own price list — whatever you pick.\n01\nAEK ATHENS\n1,181\nlegends to draft from\n02\nAA\nAL AHLY\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n03\nCELTIC\n1,202\nlegends to draft from\n04\nFC ST. PAULI\n597\nlegends to draft from\n05\nHAPOEL PETAH TIKVA\n358\nlegends to draft from\n06\nHAPOEL TEL AVIV\n630\nlegends to draft from\n07\nOLYMPIACOS\n672\nlegends to draft from\n08\nPANATHINAIKOS\n527\nlegends to draft from\n09\nRC\nRAJA CASABLANCA\n543\nlegends to draft from\n10\nWA\nWYDAD CASABLANCA\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n11\nZRINJSKI MOSTAR\n252\nlegends to draft from\nCLUBS IN YOUR LEAGUE\n−\n9\n+\nEveryone: all 9 ready clubs play.\nFOUND THE PANATHINAIKOS DYNASTY\nUP TO 3 CAREERS AT ONCE · NOTHING IS LOST\nREAD BEFORE THE DRAFT\nTHE CODE OF THE LEGENDS\nONE CLUB, ITS OWN MEN.\nEvery legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.\nTHE FOUNDING DRAFT.\nSeventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.\n€52M\nGK 2\nDF 6\nMF 6\nFW 3\nTHE BOARD BACKS YOU.\nConfirm the squad and the board adds €8M for the first window. Every season after, a gr"
+  },
+  {
+   "step": "found",
+   "t": 42.11,
+   "buttons": [
+    "MENU",
+    "Pin Legends Manager to your shortcuts",
+    "01 AEK ATHENS 1,181 legends to draft from",
+    "02 AA AL AHLY Only 0 priced GK with a recorded position — the draft needs 2 and three card",
+    "03 CELTIC 1,202 legends to draft from",
+    "04 FC ST. PAULI 597 legends to draft from",
+    "05 HAPOEL PETAH TIKVA 358 legends to draft from",
+    "06 HAPOEL TEL AVIV 630 legends to draft from",
+    "07 OLYMPIACOS 672 legends to draft from",
+    "08 PANATHINAIKOS 527 legends to draft from",
+    "09 RC RAJA CASABLANCA 543 legends to draft from",
+    "10 WA WYDAD CASABLANCA Only 0 priced GK with a recorded position — the draft needs 2 and t",
+    "11 ZRINJSKI MOSTAR 252 legends to draft from",
+    "Fewer clubs",
+    "More clubs",
+    "FOUND THE PANATHINAIKOS DYNASTY"
+   ],
+   "text": "ALL FOOTBALL PRESENTS\n9 CLUBS · THEIR IMMORTALS\nLegends\nManager\nONE CLUB. ONLY THE MEN WHO WORE ITS SHIRT. YOUR DYNASTY.\nDraft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.\nPIN\nSTEP 1 · THE CLUB\nChoose your club\nOnly men who played for the club you choose. A club opens when a full draft of seventeen fits its own price list — whatever you pick.\n01\nAEK ATHENS\n1,181\nlegends to draft from\n02\nAA\nAL AHLY\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n03\nCELTIC\n1,202\nlegends to draft from\n04\nFC ST. PAULI\n597\nlegends to draft from\n05\nHAPOEL PETAH TIKVA\n358\nlegends to draft from\n06\nHAPOEL TEL AVIV\n630\nlegends to draft from\n07\nOLYMPIACOS\n672\nlegends to draft from\n08\nPANATHINAIKOS\n527\nlegends to draft from\n09\nRC\nRAJA CASABLANCA\n543\nlegends to draft from\n10\nWA\nWYDAD CASABLANCA\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n11\nZRINJSKI MOSTAR\n252\nlegends to draft from\nCLUBS IN YOUR LEAGUE\n−\n9\n+\nEveryone: all 9 ready clubs play.\nFOUND THE PANATHINAIKOS DYNASTY\nUP TO 3 CAREERS AT ONCE · NOTHING IS LOST\nREAD BEFORE THE DRAFT\nTHE CODE OF THE LEGENDS\nONE CLUB, ITS OWN MEN.\nEvery legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.\nTHE FOUNDING DRAFT.\nSeventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.\n€52M\nGK 2\nDF 6\nMF 6\nFW 3\nTHE BOARD BACKS YOU.\nConfirm the squad and the board adds €8M for the first window. Every season after, a gr"
+  },
+  {
+   "step": "founded",
+   "t": 47.01,
+   "buttons": [
+    "MENU",
+    "Pin Legends Manager to your shortcuts",
+    "01 AEK ATHENS 1,181 legends to draft from",
+    "02 AA AL AHLY Only 0 priced GK with a recorded position — the draft needs 2 and three card",
+    "03 CELTIC 1,202 legends to draft from",
+    "04 FC ST. PAULI 597 legends to draft from",
+    "05 HAPOEL PETAH TIKVA 358 legends to draft from",
+    "06 HAPOEL TEL AVIV 630 legends to draft from",
+    "07 OLYMPIACOS 672 legends to draft from",
+    "08 PANATHINAIKOS 527 legends to draft from",
+    "09 RC RAJA CASABLANCA 543 legends to draft from",
+    "10 WA WYDAD CASABLANCA Only 0 priced GK with a recorded position — the draft needs 2 and t",
+    "11 ZRINJSKI MOSTAR 252 legends to draft from",
+    "Fewer clubs",
+    "More clubs",
+    "THE BOARD IS MEETING…"
+   ],
+   "text": "ALL FOOTBALL PRESENTS\n9 CLUBS · THEIR IMMORTALS\nLegends\nManager\nONE CLUB. ONLY THE MEN WHO WORE ITS SHIRT. YOUR DYNASTY.\nDraft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.\nPIN\nSTEP 1 · THE CLUB\nChoose your club\nOnly men who played for the club you choose. A club opens when a full draft of seventeen fits its own price list — whatever you pick.\n01\nAEK ATHENS\n1,181\nlegends to draft from\n02\nAA\nAL AHLY\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n03\nCELTIC\n1,202\nlegends to draft from\n04\nFC ST. PAULI\n597\nlegends to draft from\n05\nHAPOEL PETAH TIKVA\n358\nlegends to draft from\n06\nHAPOEL TEL AVIV\n630\nlegends to draft from\n07\nOLYMPIACOS\n672\nlegends to draft from\n08\nPANATHINAIKOS\n527\nlegends to draft from\n09\nRC\nRAJA CASABLANCA\n543\nlegends to draft from\n10\nWA\nWYDAD CASABLANCA\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n11\nZRINJSKI MOSTAR\n252\nlegends to draft from\nCLUBS IN YOUR LEAGUE\n−\n9\n+\nEveryone: all 9 ready clubs play.\nTHE BOARD IS MEETING…\nUP TO 3 CAREERS AT ONCE · NOTHING IS LOST\nREAD BEFORE THE DRAFT\nTHE CODE OF THE LEGENDS\nONE CLUB, ITS OWN MEN.\nEvery legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.\nTHE FOUNDING DRAFT.\nSeventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.\n€52M\nGK 2\nDF 6\nMF 6\nFW 3\nTHE BOARD BACKS YOU.\nConfirm the squad and the board adds €8M for the first window. Every season after, a grant of €4–"
+  },
+  {
+   "step": "step00",
+   "t": 61.28,
+   "buttons": [
+    "MENU",
+    "Pin Legends Manager to your shortcuts",
+    "01 AEK ATHENS 1,181 legends to draft from",
+    "02 AA AL AHLY Only 0 priced GK with a recorded position — the draft needs 2 and three card",
+    "03 CELTIC 1,202 legends to draft from",
+    "04 FC ST. PAULI 597 legends to draft from",
+    "05 HAPOEL PETAH TIKVA 358 legends to draft from",
+    "06 HAPOEL TEL AVIV 630 legends to draft from",
+    "07 OLYMPIACOS 672 legends to draft from",
+    "08 PANATHINAIKOS 527 legends to draft from",
+    "09 RC RAJA CASABLANCA 543 legends to draft from",
+    "10 WA WYDAD CASABLANCA Only 0 priced GK with a recorded position — the draft needs 2 and t",
+    "11 ZRINJSKI MOSTAR 252 legends to draft from",
+    "Fewer clubs",
+    "More clubs",
+    "THE BOARD IS MEETING…"
+   ],
+   "text": "ALL FOOTBALL PRESENTS\n9 CLUBS · THEIR IMMORTALS\nLegends\nManager\nONE CLUB. ONLY THE MEN WHO WORE ITS SHIRT. YOUR DYNASTY.\nDraft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.\nPIN\nSTEP 1 · THE CLUB\nChoose your club\nOnly men who played for the club you choose. A club opens when a full draft of seventeen fits its own price list — whatever you pick.\n01\nAEK ATHENS\n1,181\nlegends to draft from\n02\nAA\nAL AHLY\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n03\nCELTIC\n1,202\nlegends to draft from\n04\nFC ST. PAULI\n597\nlegends to draft from\n05\nHAPOEL PETAH TIKVA\n358\nlegends to draft from\n06\nHAPOEL TEL AVIV\n630\nlegends to draft from\n07\nOLYMPIACOS\n672\nlegends to draft from\n08\nPANATHINAIKOS\n527\nlegends to draft from\n09\nRC\nRAJA CASABLANCA\n543\nlegends to draft from\n10\nWA\nWYDAD CASABLANCA\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n11\nZRINJSKI MOSTAR\n252\nlegends to draft from\nCLUBS IN YOUR LEAGUE\n−\n9\n+\nEveryone: all 9 ready clubs play.\nTHE BOARD IS MEETING…\nUP TO 3 CAREERS AT ONCE · NOTHING IS LOST\nREAD BEFORE THE DRAFT\nTHE CODE OF THE LEGENDS\nONE CLUB, ITS OWN MEN.\nEvery legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.\nTHE FOUNDING DRAFT.\nSeventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.\n€52M\nGK 2\nDF 6\nMF 6\nFW 3\nTHE BOARD BACKS YOU.\nConfirm the squad and the board adds €8M for the first window. Every season after, a grant of €4–"
+  },
+  {
+   "clicked": null
+  },
+  {
+   "step": "last-full",
+   "t": 63.13,
+   "buttons": [
+    "MENU",
+    "Pin Legends Manager to your shortcuts",
+    "01 AEK ATHENS 1,181 legends to draft from",
+    "02 AA AL AHLY Only 0 priced GK with a recorded position — the draft needs 2 and three card",
+    "03 CELTIC 1,202 legends to draft from",
+    "04 FC ST. PAULI 597 legends to draft from",
+    "05 HAPOEL PETAH TIKVA 358 legends to draft from",
+    "06 HAPOEL TEL AVIV 630 legends to draft from",
+    "07 OLYMPIACOS 672 legends to draft from",
+    "08 PANATHINAIKOS 527 legends to draft from",
+    "09 RC RAJA CASABLANCA 543 legends to draft from",
+    "10 WA WYDAD CASABLANCA Only 0 priced GK with a recorded position — the draft needs 2 and t",
+    "11 ZRINJSKI MOSTAR 252 legends to draft from",
+    "Fewer clubs",
+    "More clubs",
+    "THE BOARD IS MEETING…"
+   ],
+   "text": "ALL FOOTBALL PRESENTS\n9 CLUBS · THEIR IMMORTALS\nLegends\nManager\nONE CLUB. ONLY THE MEN WHO WORE ITS SHIRT. YOUR DYNASTY.\nDraft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.\nPIN\nSTEP 1 · THE CLUB\nChoose your club\nOnly men who played for the club you choose. A club opens when a full draft of seventeen fits its own price list — whatever you pick.\n01\nAEK ATHENS\n1,181\nlegends to draft from\n02\nAA\nAL AHLY\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n03\nCELTIC\n1,202\nlegends to draft from\n04\nFC ST. PAULI\n597\nlegends to draft from\n05\nHAPOEL PETAH TIKVA\n358\nlegends to draft from\n06\nHAPOEL TEL AVIV\n630\nlegends to draft from\n07\nOLYMPIACOS\n672\nlegends to draft from\n08\nPANATHINAIKOS\n527\nlegends to draft from\n09\nRC\nRAJA CASABLANCA\n543\nlegends to draft from\n10\nWA\nWYDAD CASABLANCA\nOnly 0 priced GK with a recorded position — the draft needs 2 and three cards to choose from.\n11\nZRINJSKI MOSTAR\n252\nlegends to draft from\nCLUBS IN YOUR LEAGUE\n−\n9\n+\nEveryone: all 9 ready clubs play.\nTHE BOARD IS MEETING…\nUP TO 3 CAREERS AT ONCE · NOTHING IS LOST\nREAD BEFORE THE DRAFT\nTHE CODE OF THE LEGENDS\nONE CLUB, ITS OWN MEN.\nEvery legend you sign played for your club. Nobody crosses from another — not in the draft, not in a window, not in a friendly.\nTHE FOUNDING DRAFT.\nSeventeen picks and an optional eighteenth, €52M, quotas of GK 2 · DF 6 · MF 6 · FW 3. Before each pick you choose the line; three men are offered — premium, squad and bargain — and three rerolls are yours for the whole draft.\n€52M\nGK 2\nDF 6\nMF 6\nFW 3\nTHE BOARD BACKS YOU.\nConfirm the squad and the board adds €8M for the first window. Every season after, a grant of €4–"
+  }
+ ]
+}

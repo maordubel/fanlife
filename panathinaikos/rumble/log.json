@@ -1,0 +1,256 @@
+{
+ "marks": {
+  "door": 14.67,
+  "deal1": 15.84,
+  "deal2": 19.44,
+  "deal3": 23.02,
+  "deal4": 26.6,
+  "deal5": 30.2,
+  "lock": 33.96,
+  "entrance": 36.59,
+  "headtohead": 43.01
+ },
+ "steps": [
+  {
+   "step": "door",
+   "t": 14.87,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · vacant",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 1 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Mario Galinović, goalkeeper, €4M",
+    "Christos Geitonas, goalkeeper, €2M",
+    "Nestoras Gekas, goalkeeper, €1M",
+    "RULES",
+    "LOCK THE FIVE · €15M LEFT 5 STILL TO PICK →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n5\nM\n0 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\n?\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n1 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €5M\nSIGNING 1 OF 5 · GK\nWHO TAKES THE GOALKEEPER SPOT?\nPREMIUM\nENTRY 01\nGK\n€4M\nMario\nGALINOVIĆ\nAT THE CLUB\n2004–2011\nMID\nENTRY 02\nGK\n€2M\nChristos\nGEITONAS\nAT THE CLUB\nYEARS UNDOCUMENTED\nBUDGET\nENTRY 03\nGK\n€1M\nNestoras\nGEKAS\nAT THE CLUB\n2014–2015\nRULES\nLOCK THE FIVE · €15M LEFT\n5 STILL TO PICK\n→"
+  },
+  {
+   "step": "deal1",
+   "t": 16.01,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · vacant",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 1 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Mario Galinović, goalkeeper, €4M",
+    "Christos Geitonas, goalkeeper, €2M",
+    "Nestoras Gekas, goalkeeper, €1M",
+    "RULES",
+    "LOCK THE FIVE · €15M LEFT 5 STILL TO PICK →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n5\nM\n0 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\n?\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n1 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €5M\nSIGNING 1 OF 5 · GK\nWHO TAKES THE GOALKEEPER SPOT?\nPREMIUM\nENTRY 01\nGK\n€4M\nMario\nGALINOVIĆ\nAT THE CLUB\n2004–2011\nMID\nENTRY 02\nGK\n€2M\nChristos\nGEITONAS\nAT THE CLUB\nYEARS UNDOCUMENTED\nBUDGET\nENTRY 03\nGK\n€1M\nNestoras\nGEKAS\nAT THE CLUB\n2014–2015\nRULES\nLOCK THE FIVE · €15M LEFT\n5 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Mario Galinović, goalkeeper, €4M"
+  },
+  {
+   "step": "deal2",
+   "t": 19.6,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Mario Galinović · €4M",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Kostas Mavridis, defender, €4M",
+    "Giorgos Vagiannidis, defender, €2M",
+    "Filip Mladenović, defender, €1M",
+    "RULES",
+    "LOCK THE FIVE · €11M LEFT 4 STILL TO PICK →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n1\nM\n1 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nMARIO GALINOVIĆ\n€4M\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €4M\nSIGNING 2 OF 5 · DEF\nWHO TAKES THE DEFENDER SPOT?\nPREMIUM\nENTRY 01\nDEF\n€4M\nKostas\nMAVRIDIS\nAT THE CLUB\n1982–1995\nMID\nENTRY 02\nDEF\n€2M\nGiorgos\nVAGIANNIDIS\nAT THE CLUB\nYEARS UNDOCUMENTED\nBUDGET\nENTRY 03\nDEF\n€1M\nFilip\nMLADENOVIĆ\nAT THE CLUB\nYEARS UNDOCUMENTED\nRULES\nLOCK THE FIVE · €11M LEFT\n4 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Giorgos Vagiannidis, defender, €2M"
+  },
+  {
+   "step": "deal3",
+   "t": 23.19,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Mario Galinović · €4M",
+    "DEF · Giorgos Vagiannidis · €2M",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Mimis Domazos, midfield, €5M",
+    "Adam Gnezda Čerin, midfield, €3M",
+    "Ibrahim Sissoko, midfield, €1M",
+    "RULES",
+    "LOCK THE FIVE · €9M LEFT 3 STILL TO PICK →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n9\nM\n2 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nMARIO GALINOVIĆ\n€4M\nDEF\nGIORGOS VAGIANNIDIS\n€2M\nMID\n?\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €3M\nSIGNING 3 OF 5 · MID\nWHO TAKES THE MIDFIELD SPOT?\nPREMIUM\nENTRY 01\nMID\n€5M\nCLUB LEGEND\nMimis\nDOMAZOS\nAT THE CLUB\n1959–1980\nMID\nENTRY 02\nMID\n€3M\nAdam\nGNEZDA ČERIN\nAT THE CLUB\n2022–2026\nBUDGET\nENTRY 03\nMID\n€1M\nIbrahim\nSISSOKO\nAT THE CLUB\nYEARS UNDOCUMENTED\nRULES\nLOCK THE FIVE · €9M LEFT\n3 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Ibrahim Sissoko, midfield, €1M"
+  },
+  {
+   "step": "deal4",
+   "t": 26.77,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Mario Galinović · €4M",
+    "DEF · Giorgos Vagiannidis · €2M",
+    "MID · Ibrahim Sissoko · €1M",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 1 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Gilberto Silva, midfield, €4M",
+    "Giannis Bouzoukis, midfield, €2M",
+    "Yacouba Sylla, midfield, €1M",
+    "RULES",
+    "LOCK THE FIVE · €8M LEFT 2 STILL TO PICK →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n8\nM\n3 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nMARIO GALINOVIĆ\n€4M\nDEF\nGIORGOS VAGIANNIDIS\n€2M\nMID\nIBRAHIM SISSOKO\n€1M\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n1 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €2M\nSIGNING 4 OF 5 · MID\nWHO TAKES THE MIDFIELD SPOT?\nPREMIUM\nENTRY 01\nMID\n€4M\nGilberto\nSILVA\nAT THE CLUB\n2008–2011\nMID\nENTRY 02\nMID\n€2M\nGiannis\nBOUZOUKIS\nAT THE CLUB\n2017–2022\nBUDGET\nENTRY 03\nMID\n€1M\nYacouba\nSYLLA\nAT THE CLUB\n2017\nRULES\nLOCK THE FIVE · €8M LEFT\n2 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Giannis Bouzoukis, midfield, €2M"
+  },
+  {
+   "step": "deal5",
+   "t": 30.38,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Mario Galinović · €4M",
+    "DEF · Giorgos Vagiannidis · €2M",
+    "MID · Ibrahim Sissoko · €1M",
+    "MID · Giannis Bouzoukis · €2M",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 0 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Nikos Karelis, forward, €4M",
+    "Nikos Giannitsanis, forward, €2M",
+    "Valmir Berisha, forward, €1M",
+    "RULES",
+    "LOCK THE FIVE · €6M LEFT 1 STILL TO PICK →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n6\nM\n4 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nMARIO GALINOVIĆ\n€4M\nDEF\nGIORGOS VAGIANNIDIS\n€2M\nMID\nIBRAHIM SISSOKO\n€1M\nMID\nGIANNIS BOUZOUKIS\n€2M\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n0 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €1M\nSIGNING 5 OF 5 · ATT\nWHO TAKES THE FORWARD SPOT?\nPREMIUM\nENTRY 01\nATT\n€4M\nNikos\nKARELIS\nAT THE CLUB\nYEARS UNDOCUMENTED\nMID\nENTRY 02\nATT\n€2M\nNikos\nGIANNITSANIS\nAT THE CLUB\n2012–2015\nBUDGET\nENTRY 03\nATT\n€1M\nValmir\nBERISHA\nAT THE CLUB\n2014–2015\nRULES\nLOCK THE FIVE · €6M LEFT\n1 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Nikos Giannitsanis, forward, €2M"
+  },
+  {
+   "step": "five-top",
+   "t": 33.79,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Mario Galinović · €4M",
+    "DEF · Giorgos Vagiannidis · €2M",
+    "MID · Ibrahim Sissoko · €1M",
+    "MID · Giannis Bouzoukis · €2M",
+    "ATT · Nikos Giannitsanis · €2M",
+    "RULES",
+    "LOCK THE FIVE · €4M LEFT LOCK THE FIVE →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n4\nM\n5 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nMARIO GALINOVIĆ\n€4M\nDEF\nGIORGOS VAGIANNIDIS\n€2M\nMID\nIBRAHIM SISSOKO\n€1M\nMID\nGIANNIS BOUZOUKIS\n€2M\nATT\nNIKOS GIANNITSANIS\n€2M\nRULES\nLOCK THE FIVE · €4M LEFT\nLOCK THE FIVE\n→"
+  },
+  {
+   "step": "five-full",
+   "t": 33.95,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Mario Galinović · €4M",
+    "DEF · Giorgos Vagiannidis · €2M",
+    "MID · Ibrahim Sissoko · €1M",
+    "MID · Giannis Bouzoukis · €2M",
+    "ATT · Nikos Giannitsanis · €2M",
+    "RULES",
+    "LOCK THE FIVE · €4M LEFT LOCK THE FIVE →"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n4\nM\n5 OF 5 LOCKED · 543 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nMARIO GALINOVIĆ\n€4M\nDEF\nGIORGOS VAGIANNIDIS\n€2M\nMID\nIBRAHIM SISSOKO\n€1M\nMID\nGIANNIS BOUZOUKIS\n€2M\nATT\nNIKOS GIANNITSANIS\n€2M\nRULES\nLOCK THE FIVE · €4M LEFT\nLOCK THE FIVE\n→"
+  },
+  {
+   "step": "entrance",
+   "t": 37.0,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nYOUR ENTRANCE\nThey walk out\nDEF · Giorgos Vagiannidis\nGALINOVIĆ\nVAGIANNIDIS\nSISSOKO\nBOUZOUKIS\nGIANNITSANIS"
+  },
+  {
+   "step": "headtohead",
+   "t": 43.43,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "KICK OFF",
+    "⏭ KICK OFF",
+    "Double speed",
+    "⏩ FT",
+    "MATCH CENTRE",
+    "SOUND ON"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nPANATHINAIKOS\nHOME\n1\nMARIO GALINOVIĆ\n2\nGIORGOS VAGIANNIDIS\n3\nIBRAHIM SISSOKO\n4\nGIANNIS BOUZOUKIS\n5\nNIKOS GIANNITSANIS\nPANATHINAIKOS\nAWAY\n1\nGEORGIOS SIKALIAS\n2\nDAVIDE CALABRIA\n3\nTONNY VILHENA\n4\nMEHDI ABEID\n5\nANTONIS PAPANTONIOU\nKICK OFF\n⏭\nKICK OFF\n×2\n⏩\nFT\nMATCH CENTRE\nSOUND ON"
+  },
+  {
+   "step": "teams",
+   "t": 48.68,
+   "buttons": [
+    "Pin Panathinaikos · Royal Rumble to your shortcuts",
+    "? How to play",
+    "PANATHINAIKOS VS YOUR OWN CLUB CHANGE ▾",
+    "⏭ NEXT",
+    "Double speed",
+    "⏩ FT",
+    "Full screen",
+    "MATCH CENTRE",
+    "SOUND ON"
+   ],
+   "text": "PANATHINAIKOS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · PANATHINAIKOS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nPANATHINAIKOS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nPAN\n▶\n0\n19′\n0\n◀\nPAN\n19′ · A ONE-TWO\n⏭\nNEXT\n×2\n⏩\nFT\n⤢\nMATCH CENTRE\nSOUND ON"
+  }
+ ]
+}

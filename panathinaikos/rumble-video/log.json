@@ -1,0 +1,32 @@
+{
+ "marks": {
+  "door": 15.26,
+  "deal1": 16.25,
+  "deal2": 19.67,
+  "deal3": 23.05,
+  "deal4": 26.45,
+  "deal5": 29.85,
+  "lock": 33.08,
+  "entrance": 35.71,
+  "headtohead": 41.71,
+  "kickoff": 46.74,
+  "fulltime": 71.8
+ },
+ "steps": [
+  {
+   "picked": "Mario Galinović, goalkeeper, €4M"
+  },
+  {
+   "picked": "Giorgos Koutroumbis, defender, €2M"
+  },
+  {
+   "picked": "Dimitrios Serpezis, midfield, €2M"
+  },
+  {
+   "picked": "Cleyton, midfield, €1M"
+  },
+  {
+   "picked": "Joonas Kolkka, forward, €2M"
+  }
+ ]
+}

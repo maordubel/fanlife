@@ -1,0 +1,32 @@
+{
+ "marks": {
+  "door": 8.68,
+  "deal1": 9.66,
+  "deal2": 13.06,
+  "deal3": 16.46,
+  "deal4": 19.86,
+  "deal5": 23.26,
+  "lock": 26.49,
+  "entrance": 29.12,
+  "headtohead": 35.12,
+  "kickoff": 40.15,
+  "fulltime": 65.22
+ },
+ "steps": [
+  {
+   "picked": "Antonis Nikopolidis, goalkeeper, €4M"
+  },
+  {
+   "picked": "Kostas Tsimikas, defender, €2M"
+  },
+  {
+   "picked": "Michalis Kallergis, midfield, €2M"
+  },
+  {
+   "picked": "Francisco Yeste, midfield, €1M"
+  },
+  {
+   "picked": "Georgios Xydas, forward, €2M"
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+ "marks": {
+  "door": 19.34,
+  "deal1": 20.71,
+  "deal2": 24.5,
+  "deal3": 28.3,
+  "deal4": 32.09,
+  "deal5": 35.89,
+  "lock": 40.32,
+  "entrance": 42.94,
+  "headtohead": 49.48
+ },
+ "steps": [
+  {
+   "step": "door",
+   "t": 19.74,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · vacant",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 1 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Kimon Dimitriou, goalkeeper, €4M",
+    "Giannis Fysekis, goalkeeper, €2M",
+    "Vasilis Chatziemmanouil, goalkeeper, €1M",
+    "RULES",
+    "LOCK THE FIVE · €15M LEFT 5 STILL TO PICK →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n5\nM\n0 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\n?\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n1 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €5M\nSIGNING 1 OF 5 · GK\nWHO TAKES THE GOALKEEPER SPOT?\nPREMIUM\nENTRY 01\nGK\n€4M\nKimon\nDIMITRIOU\nAT THE CLUB\nYEARS UNDOCUMENTED\nMID\nENTRY 02\nGK\n€2M\nGiannis\nFYSEKIS\nAT THE CLUB\n2006–2009\nBUDGET\nENTRY 03\nGK\n€1M\nVasilis\nCHATZIEMMANOUIL\nAT THE CLUB\nYEARS UNDOCUMENTED\nRULES\nLOCK THE FIVE · €15M LEFT\n5 STILL TO PICK\n→"
+  },
+  {
+   "step": "deal1",
+   "t": 21.07,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · vacant",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 1 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Kimon Dimitriou, goalkeeper, €4M",
+    "Giannis Fysekis, goalkeeper, €2M",
+    "Vasilis Chatziemmanouil, goalkeeper, €1M",
+    "RULES",
+    "LOCK THE FIVE · €15M LEFT 5 STILL TO PICK →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n5\nM\n0 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\n?\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n1 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €5M\nSIGNING 1 OF 5 · GK\nWHO TAKES THE GOALKEEPER SPOT?\nPREMIUM\nENTRY 01\nGK\n€4M\nKimon\nDIMITRIOU\nAT THE CLUB\nYEARS UNDOCUMENTED\nMID\nENTRY 02\nGK\n€2M\nGiannis\nFYSEKIS\nAT THE CLUB\n2006–2009\nBUDGET\nENTRY 03\nGK\n€1M\nVasilis\nCHATZIEMMANOUIL\nAT THE CLUB\nYEARS UNDOCUMENTED\nRULES\nLOCK THE FIVE · €15M LEFT\n5 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Kimon Dimitriou, goalkeeper, €4M"
+  },
+  {
+   "step": "deal2",
+   "t": 24.89,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Kimon Dimitriou · €4M",
+    "DEF · vacant",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 1 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Traianos Dellas, defender, €5M",
+    "Povertos Mallios-Galic, defender, €3M",
+    "Luis Salvador Raspo, defender, €2M",
+    "RULES",
+    "LOCK THE FIVE · €11M LEFT 4 STILL TO PICK →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n1\n1\nM\n1 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nKIMON DIMITRIOU\n€4M\nDEF\n?\nMID\n?\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n1 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €4M\nSIGNING 2 OF 5 · DEF\nWHO TAKES THE DEFENDER SPOT?\nPREMIUM\nENTRY 01\nDEF\n€5M\nCLUB LEGEND\nTraianos\nDELLAS\nAT THE CLUB\n1999–2012\nMID\nENTRY 02\nDEF\n€3M\nPovertos\nMALLIOS-GALIC\nAT THE CLUB\n1928–1934\nBUDGET\nENTRY 03\nDEF\n€2M\nLuis\nSALVADOR RASPO\nAT THE CLUB\n1971–1973\nRULES\nLOCK THE FIVE · €11M LEFT\n4 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Luis Salvador Raspo, defender, €2M"
+  },
+  {
+   "step": "deal3",
+   "t": 28.68,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Kimon Dimitriou · €4M",
+    "DEF · Luis Salvador Raspo · €2M",
+    "MID · vacant",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 2 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Mijat Gacinovic, midfield, €4M",
+    "Kostas Eleftherakis, midfield, €3M",
+    "Dimitris Markos, midfield, €2M",
+    "RULES",
+    "LOCK THE FIVE · €9M LEFT 3 STILL TO PICK →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n9\nM\n2 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nKIMON DIMITRIOU\n€4M\nDEF\nLUIS SALVADOR RASPO\n€2M\nMID\n?\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n2 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €3M\nSIGNING 3 OF 5 · MID\nWHO TAKES THE MIDFIELD SPOT?\nPREMIUM\nENTRY 01\nMID\n€4M\nMijat\nGACINOVIC\nAT THE CLUB\n2022–2027\nMID\nENTRY 02\nMID\n€3M\nKostas\nELEFTHERAKIS\nAT THE CLUB\n1980–1981\nBUDGET\nENTRY 03\nMID\n€2M\nDimitris\nMARKOS\nAT THE CLUB\n1998–2000\nRULES\nLOCK THE FIVE · €9M LEFT\n3 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Dimitris Markos, midfield, €2M"
+  },
+  {
+   "step": "deal4",
+   "t": 32.48,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Kimon Dimitriou · €4M",
+    "DEF · Luis Salvador Raspo · €2M",
+    "MID · Dimitris Markos · €2M",
+    "MID · vacant",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 1 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Orbelin Pineda, midfield, €4M",
+    "Giorgos Kavazis, midfield, €2M",
+    "El Hadji Diouf, midfield, €2M",
+    "RULES",
+    "LOCK THE FIVE · €7M LEFT 2 STILL TO PICK →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n7\nM\n3 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nKIMON DIMITRIOU\n€4M\nDEF\nLUIS SALVADOR RASPO\n€2M\nMID\nDIMITRIS MARKOS\n€2M\nMID\n?\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n1 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €2M\nSIGNING 4 OF 5 · MID\nWHO TAKES THE MIDFIELD SPOT?\nPREMIUM\nENTRY 01\nMID\n€4M\nOrbelin\nPINEDA\nAT THE CLUB\n2022–2026\nMID\nENTRY 02\nMID\n€2M\nGiorgos\nKAVAZIS\nAT THE CLUB\n1998–2000\nBUDGET\nENTRY 03\nMID\n€2M\nEl\nHADJI DIOUF\nAT THE CLUB\n2007–2009\nRULES\nLOCK THE FIVE · €7M LEFT\n2 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Giorgos Kavazis, midfield, €2M"
+  },
+  {
+   "step": "deal5",
+   "t": 36.26,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Kimon Dimitriou · €4M",
+    "DEF · Luis Salvador Raspo · €2M",
+    "MID · Dimitris Markos · €2M",
+    "MID · Giorgos Kavazis · €2M",
+    "ATT · vacant",
+    "GK 0 LEFT",
+    "DEF 0 LEFT",
+    "MID 0 LEFT",
+    "ATT 1 LEFT",
+    "REROLL (3 LEFT)",
+    "Zoran Sliskovits, forward, €4M",
+    "Dimitris Papadopoulos, forward, €2M",
+    "Kelvin Sebwe, forward, €1M",
+    "RULES",
+    "LOCK THE FIVE · €5M LEFT 1 STILL TO PICK →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n5\nM\n4 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nKIMON DIMITRIOU\n€4M\nDEF\nLUIS SALVADOR RASPO\n€2M\nMID\nDIMITRIS MARKOS\n€2M\nMID\nGIORGOS KAVAZIS\n€2M\nATT\n?\nGK\n0 LEFT\nDEF\n0 LEFT\nMID\n0 LEFT\nATT\n1 LEFT\nREROLL (3 LEFT)\nKEEP AT LEAST €1M\nSIGNING 5 OF 5 · ATT\nWHO TAKES THE FORWARD SPOT?\nPREMIUM\nENTRY 01\nATT\n€4M\nZoran\nSLISKOVITS\nAT THE CLUB\nYEARS UNDOCUMENTED\nMID\nENTRY 02\nATT\n€2M\nDimitris\nPAPADOPOULOS\nAT THE CLUB\n1978–1981\nBUDGET\nENTRY 03\nATT\n€1M\nKelvin\nSEBWE\nAT THE CLUB\n1997–1999\nRULES\nLOCK THE FIVE · €5M LEFT\n1 STILL TO PICK\n→"
+  },
+  {
+   "picked": "Dimitris Papadopoulos, forward, €2M"
+  },
+  {
+   "step": "five-top",
+   "t": 39.91,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Kimon Dimitriou · €4M",
+    "DEF · Luis Salvador Raspo · €2M",
+    "MID · Dimitris Markos · €2M",
+    "MID · Giorgos Kavazis · €2M",
+    "ATT · Dimitris Papadopoulos · €2M",
+    "RULES",
+    "LOCK THE FIVE · €3M LEFT LOCK THE FIVE →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n3\nM\n5 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nKIMON DIMITRIOU\n€4M\nDEF\nLUIS SALVADOR RASPO\n€2M\nMID\nDIMITRIS MARKOS\n€2M\nMID\nGIORGOS KAVAZIS\n€2M\nATT\nDIMITRIS PAPADOPOULOS\n€2M\nRULES\nLOCK THE FIVE · €3M LEFT\nLOCK THE FIVE\n→"
+  },
+  {
+   "step": "five-full",
+   "t": 40.32,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "GK · Kimon Dimitriou · €4M",
+    "DEF · Luis Salvador Raspo · €2M",
+    "MID · Dimitris Markos · €2M",
+    "MID · Giorgos Kavazis · €2M",
+    "ATT · Dimitris Papadopoulos · €2M",
+    "RULES",
+    "LOCK THE FIVE · €3M LEFT LOCK THE FIVE →"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nMONEY LEFT\n€\n3\nM\n5 OF 5 LOCKED · 1181 IN THE ARCHIVE\nYOUR FIVE\nTAP A SLOT TO CHANGE IT\nGK\nKIMON DIMITRIOU\n€4M\nDEF\nLUIS SALVADOR RASPO\n€2M\nMID\nDIMITRIS MARKOS\n€2M\nMID\nGIORGOS KAVAZIS\n€2M\nATT\nDIMITRIS PAPADOPOULOS\n€2M\nRULES\nLOCK THE FIVE · €3M LEFT\nLOCK THE FIVE\n→"
+  },
+  {
+   "step": "entrance",
+   "t": 43.48,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nYOUR ENTRANCE\nThey walk out\nDEF · Luis Salvador Raspo\nDIMITRIOU\nRASPO\nMARKOS\nKAVAZIS\nPAPADOPOULOS"
+  },
+  {
+   "step": "headtohead",
+   "t": 50.04,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "KICK OFF",
+    "⏭ KICK OFF",
+    "Double speed",
+    "⏩ FT",
+    "Full screen",
+    "MATCH CENTRE",
+    "SOUND ON"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nAEK ATHENS\nHOME\n1\nKIMON DIMITRIOU\n2\nLUIS SALVADOR RASPO\n3\nDIMITRIS MARKOS\n4\nGIORGOS KAVAZIS\n5\nDIMITRIS PAPADOPOULOS\nAEK ATHENS\nAWAY\n1\nDIMITRIS KONSTANTOPOULOS\n2\nDAVID MATEOS\n3\nGIANNIS-FOIVOS BOTOS\n4\nPERPARIM HETEMAJ\n5\nNORDIN AMRABAT\nKICK OFF\n⏭\nKICK OFF\n×2\n⏩\nFT\n⤢\nMATCH CENTRE\nSOUND ON"
+  },
+  {
+   "step": "teams",
+   "t": 55.46,
+   "buttons": [
+    "Pin AEK Athens · Royal Rumble to your shortcuts",
+    "? How to play",
+    "AEK ATHENS VS YOUR OWN CLUB CHANGE ▾",
+    "⏭ NEXT",
+    "Double speed",
+    "⏩ FT",
+    "Full screen",
+    "MATCH CENTRE",
+    "SOUND ON"
+   ],
+   "text": "AEK ATHENS · GATE 09\nRoyal Rumble\nPIN\n?\nHow to play\n★ CHOOSE YOUR MATCH · AEK ATHENS ★\n5 V 5 · CLASSIC\nFIVE CARDS · €15M\n11 V 11 · THE FULL XI\nELEVEN CARDS · ABOUT €35M · PICK YOUR SHAPE\nAEK ATHENS\nVS\nYOUR OWN CLUB\nCHANGE\n▾\nAEK\n▶\n0\n8′\n0\n◀\nAEK\n8′ · ON THE BREAK\n⏭\nNEXT\n×2\n⏩\nFT\n⤢\nMATCH CENTRE\nSOUND ON"
+  }
+ ]
+}

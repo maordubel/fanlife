@@ -1,0 +1,32 @@
+{
+ "marks": {
+  "door": 20.58,
+  "deal1": 21.57,
+  "deal2": 24.97,
+  "deal3": 28.37,
+  "deal4": 31.77,
+  "deal5": 35.17,
+  "lock": 38.4,
+  "entrance": 41.03,
+  "headtohead": 47.03,
+  "kickoff": 52.06,
+  "fulltime": 77.12
+ },
+ "steps": [
+  {
+   "picked": "Lakis Stergioudas, goalkeeper, €4M"
+  },
+  {
+   "picked": "Kostas Triantafyllou, defender, €2M"
+  },
+  {
+   "picked": "Liangos, midfield, €2M"
+  },
+  {
+   "picked": "Ablaye Faye, midfield, €2M"
+  },
+  {
+   "picked": "Paraschos Zouboulis, forward, €2M"
+  }
+ ]
+}
