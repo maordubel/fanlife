@@ -473,7 +473,8 @@ def main() -> None:
             if p.get('typed'):
                 ty = p['typed']
                 ov, cs = D.typed(ty['lines'], ty.get('at_t', 0.5), cps=ty.get('cps', 20), at=tuple(ty.get('pos', (0.5, 0.48))),
-                                 size=ty.get('size', 60 if not tall else 58), accent=ep['accent'], accent_line=ty.get('accent_line'),
+                                 size=ty.get('size', 68 if not tall else 60), accent=ep['accent'], accent_line=ty.get('accent_line'),
+                                 panel=bool(ty.get('panel', p.get('backdrop') or p.get('clip') or kind == 'art')),
                                  out_at=ty.get('out'), face=ty.get('face', D.TYPE_FACE), gap=ty.get('gap', 0.35))
                 extra.append(ov)
                 cues += cs

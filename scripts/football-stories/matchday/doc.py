@@ -54,7 +54,7 @@ def _rgb(hex_: str) -> tuple[int, int, int]:
 # ── typewriter ───────────────────────────────────────────────────────────────────────────────────────────────────────
 def typed(lines: list[str], t0: float, *, cps: float = 22.0, at: tuple[float, float] = (0.5, 0.5), size: int = 52,
           align: str = 'center', accent: str | None = None, hold_cursor: bool = True, out_at: float | None = None,
-          face: str = TYPE_FACE, gap: float = 0.35, accent_line: int | None = None):
+          face: str = TYPE_FACE, gap: float = 0.35, accent_line: int | None = None, panel: bool = False):
     """Lines typed on one after the other. Returns (overlay, cues): the overlay is shot time → (RGBA, x, y); the cues
     are the key clicks, one per printed character (spaces are silent)."""
     W, H = C.W, C.H
@@ -65,7 +65,7 @@ def typed(lines: list[str], t0: float, *, cps: float = 22.0, at: tuple[float, fl
     asc, desc = f.getmetrics()
     lh = int((asc + desc) * 1.28)
     widths = [f.getlength(s) for s in lines]
-    bw = int(max(widths) + size)
+    bw = int(max(widths) + size + (28 if panel else 0))
     bh = lh * len(lines) + size // 2
     # each line starts when the previous one is finished, plus a breath
     starts, t = [], t0
@@ -100,9 +100,12 @@ def typed(lines: list[str], t0: float, *, cps: float = 22.0, at: tuple[float, fl
         else:
             im = Image.new('RGBA', (bw, bh), (0, 0, 0, 0))
             d = ImageDraw.Draw(im)
+            if panel and any(shown):      # an ink band under the words, so they read over a picture
+                d.rectangle([0, 0, bw, bh], fill=(14, 12, 10, 205))
+                d.rectangle([0, 0, 10, bh], fill=acc + (255,))
             for li, s in enumerate(shown):
                 full = widths[li]
-                x = (bw - full) / 2 if align == 'center' else size / 4
+                x = (bw - full) / 2 if align == 'center' else size / 4 + (14 if panel else 0)
                 col = acc if li == accent_line else CREAM
                 d.text((x + 3, li * lh + 3), s, font=f, fill=(0, 0, 0, 170))
                 d.text((x, li * lh), s, font=f, fill=col)
@@ -131,8 +134,8 @@ def doc_line(place: str, clock: str | None, kickoff: str | None, t0: float = 0.2
             line2 = f"{clock}  ·  KICK-OFF IN {left // 60}:{left % 60:02d}" if left >= 60 else f"{clock}  ·  KICK-OFF IN {left} MIN"
     lines = [place.upper()] + ([line2] if line2 else [])
     sz = 40 if C.W > C.H else 42
-    ov, cues = typed(lines, t0, cps=30, at=(0.04, 0.125 if C.W > C.H else 0.165), size=sz, align='left',
-                     accent=accent, hold_cursor=False, accent_line=1 if len(lines) > 1 else None, gap=0.15)
+    ov, cues = typed(lines, t0, cps=30, at=(0.04, 0.16 if C.W > C.H else 0.17), size=sz, align='left',
+                     accent=accent, hold_cursor=False, accent_line=1 if len(lines) > 1 else None, gap=0.15, panel=True)
     return ov, cues
 
 
