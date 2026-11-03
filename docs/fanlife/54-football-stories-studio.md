@@ -134,3 +134,13 @@ quote or a newspaper of the day where the story turns. `studio/writer.py` carrie
 
 `python3 scripts/football-stories/channel-art.py` → `channel/banner.jpg` (2048×1152, safe area 1235×338) and
 `channel/watermark.png` (300×300).
+
+## Covers (3.11.2026)
+
+`studio/covers.py` draws the channel's covers: **club** for a documentary (the club's name on a paper plate, its colour
+over the stadium, its kit as a medallion ring round the crest, a hook of at most two short lines), **vlog** for I WAS
+THERE (a frame from the stand, viewfinder corners and REC, a taped `I WAS THERE · EP.n` label, the hook and its turn),
+and **banner** (2560×1440, the owner's art with the band every device shows). The I WAS THERE covers are drawn from the
+owner's Drive footage by `.github/workflows/stories-covers.yml` (manual) onto the short-lived `covers-tmp` branch,
+with a contact sheet of candidate frames; set in Studio, then the branch is deleted. Episodes: 1 Grbavica, 2 Bloomfield
+2024, 3 Mostar.
