@@ -18,5 +18,22 @@
  ],
  "category": "Sports",
  "visibility": "public",
- "music": "Kontraa — Balkan Drill (owner-supplied, Pixabay item 573741)"
+ "music": "Kontraa — Balkan Drill (owner-supplied, Pixabay item 573741)",
+ "published": {
+  "film": {
+   "url": "https://youtu.be/Vlbj4twpbxE",
+   "video_id": "Vlbj4twpbxE",
+   "visibility": "public",
+   "at": "2026-11-03"
+  },
+  "short": {
+   "url": "https://youtube.com/shorts/SpAE5gLJ7lY",
+   "video_id": "SpAE5gLJ7lY",
+   "visibility": "public",
+   "at": "2026-11-03"
+  },
+  "reel": "TikTok / Instagram: owner posts zrinjski-az-reel.mp4",
+  "subtitles": "English, uploaded",
+  "cards": "0:40 → I WAS THERE film; end screen subscribe + best-for-viewer"
+ }
 }
