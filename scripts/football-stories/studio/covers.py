@@ -80,7 +80,7 @@ def vlog(c: dict, root: Path) -> str:
     acc = c.get('accent', '#D71920')
     frames = [Path(f).resolve().as_uri() if Path(f).is_absolute() else (root / f).resolve().as_uri() for f in c['frames']]
     if c.get('phone'):      # a vertical clip: the stand behind, blurred, and the phone's own picture held up in front
-        bg = (f'<div class="abs" style="inset:-40px;background:url({frames[0]}) {c.get("focus", "center")}/cover;filter:blur(18px) saturate(1.3) brightness(.7)"></div>'
+        bg = (f'<div class="abs" style="inset:-40px;background:url({frames[0]}) {c.get("focus", "center")}/cover;filter:blur({c.get("bg_blur", 18)}px) saturate(1.3) brightness(.75)"></div>'
               f'<div class="abs" style="right:120px;top:52px;width:330px;height:590px;transform:rotate(4deg);background:{INK};border-radius:34px;'
               f'box-shadow:12px 12px 0 {INK}">'
               f'<div class="abs" style="inset:12px;border-radius:24px;background:url({frames[-1]}) {c.get("phone_focus", "center")}/cover"></div></div>')
@@ -126,6 +126,20 @@ def vlog(c: dict, root: Path) -> str:
 
 def frame(ref: str, root: Path, out: Path) -> Path:
     """`clip:<file>@<seconds>` → a still from the owner's footage (COVERS_FOOTAGE), tone-mapped; anything else is a path."""
+    if ref.startswith('photo:'):         # the owner's still (HEIC/JPG) from the footage folder, upright, metadata gone
+        import os
+        from PIL import Image, ImageOps
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+        name = ref[6:]
+        src = next(Path(os.environ.get('COVERS_FOOTAGE', '.')).rglob(name), None)
+        if src is None:
+            raise SystemExit(f'COVER_FOOTAGE_MISSING {name}')
+        dst = out / f'_src-{Path(name).stem}.jpg'
+        im = ImageOps.exif_transpose(Image.open(src)).convert('RGB')
+        im.thumbnail((2400, 2400))
+        im.save(dst, quality=92)
+        return dst
     if not ref.startswith('clip:'):
         return root / ref
     import os

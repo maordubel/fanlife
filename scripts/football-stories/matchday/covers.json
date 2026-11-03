@@ -3,22 +3,23 @@
   "name": "vlog-ep4-opap-arena",
   "shape": "vlog",
   "footage": {
-   "drive": "https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view"
+   "drive": "https://drive.google.com/drive/folders/15cZJoP2flSu5J0o2c4mGm6uQUxusjf3J"
   },
   "frames": [
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@1.6",
-   "clip:1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4@3.0"
+   "photo:IMG_2831.HEIC",
+   "clip:IMG_2830.MOV@0.6"
   ],
-  "focus": "center 40%",
+  "focus": "center 45%",
   "hook": [
-   "We filmed 3 seconds.",
-   "It was 4–0."
+   "Gate 21 on fire.",
+   "AEK 4–0 PAOK."
   ],
   "episode": "4",
   "place": "OPAP Arena",
   "crest": "../../../public/club-kits/aek-athens/crest.png",
   "accent": "#F2C400",
   "phone": true,
-  "phone_focus": "center 30%"
+  "phone_focus": "center 40%",
+  "bg_blur": 0
  }
 ]
