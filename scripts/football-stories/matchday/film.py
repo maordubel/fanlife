@@ -233,7 +233,7 @@ def main() -> None:
             p.update(voice=wav, voice_dur=d, words=words, voice_at=p['start'] + lead)
             dur = max(lead + d + b.get('tail', TAIL), b.get('min', 0))
         else:
-            dur = b['dur']
+            dur = b['dur'] if 'dur' in b else b['min']
         p['frames'] = round(dur * FPS)
         p['dur'] = p['frames'] / FPS
         t = p['start'] + p['dur']
