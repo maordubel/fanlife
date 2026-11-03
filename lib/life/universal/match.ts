@@ -11,7 +11,7 @@
  */
 import type {ArchiveRef, MatchFacts} from './types'
 
-const SCORE = /^(.+?)\s+(\d+)\s*[–—-]\s*(\d+)\s+(.+?)(?:\s+[·(|]\s*(.*))?$/
+const SCORE = /^(.+?)\s+(\d+)\s*[–—-]\s*(\d+)\s+(.+?)(?:\s+[·(|]\s*(.*)|\s+[—–]\s+(.*))?$/
 /** the other way an archive writes it: "A 2 — B 1" */
 const SCORE_SPLIT = /^(.+?)\s+(\d+)\s*[–—-]\s*(.+?)\s+(\d+)$/
 
@@ -24,7 +24,7 @@ const isSide = (side: string) => { const w = side.trim().split(/\s+/); return w.
 export function readMatch(title: string, clubNames: readonly string[]): MatchFacts | null {
   const t = title.trim()
   const a = SCORE.exec(t), b = a ? null : SCORE_SPLIT.exec(t)
-  const m = a ? {home: a[1]!, hg: a[2]!, ag: a[3]!, away: a[4]!, note: a[5]} : b ? {home: b[1]!, hg: b[2]!, ag: b[4]!, away: b[3]!, note: undefined} : null
+  const m = a ? {home: a[1]!, hg: a[2]!, ag: a[3]!, away: a[4]!, note: a[5] ?? a[6]} : b ? {home: b[1]!, hg: b[2]!, ag: b[4]!, away: b[3]!, note: undefined} : null
   if (!m) return null
   // a side is a club's name, not a sentence: prose such as "A beat B on penalties after losing 1-0" is not a scoreline
   if (![m.home, m.away].every(isSide)) return null
