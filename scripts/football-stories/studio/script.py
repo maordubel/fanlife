@@ -130,6 +130,8 @@ SCHEMA_TEXT = '''{
         {"type":"turning","title":string,"subtitle":string,"backdrop":"..."}
         {"type":"illustration","art":"tunnel|terrace-crowd|terrace-empty|supporter|gen|beat:<key>","prompt":string (only when art is gen),"caption":string}
         {"type":"ticket","claim":match claim id}
+        {"type":"quote","claim":quote claim id,"text":the speaker's words copied EXACTLY from the claim (≤40 words),"who":the claim's speaker,"role":string}
+        {"type":"press","claim":press claim id,"outlet":the claim's outlet,"headline":the claim's headline EXACTLY,"date":"YYYY-MM-DD" optional}
         {"type":"end"}
       Every "backdrop" and "art" may also be an owner piece from BEAT ART when one is listed — a still ("beat:…") or a
       ten-second stop-motion clip ("clip:…", it plays once and holds; use it where a moment builds or arrives). Colour

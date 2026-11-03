@@ -1,6 +1,6 @@
 import {readFileSync} from 'node:fs'
 import {describe,expect,it} from 'vitest'
-import {claim,finish,mediaPath,newJob,nextForWorker,ownerAct,report,validateBrief,StoryError,type Job} from '@/lib/stories/jobs'
+import {claim,finish,mediaPath,newJob,nextForWorker,noteLine,ownerAct,report,validateBrief,StoryError,type Job} from '@/lib/stories/jobs'
 
 const clubs=new Map([['hapoel-tel-aviv','Hapoel Tel Aviv'],['olympiacos','Olympiacos']])
 const palette={club_id:'hapoel-tel-aviv',club_name:'Hapoel Tel Aviv',primary:'#B02D10',on_primary:'#FFFFFF',bans:['yellow']}
@@ -92,6 +92,37 @@ describe('Football Stories — the worker contract',()=>{
   expect(mediaPath('job-0000001','master.000.part')).toBe('jobs/job-0000001/master.000.part')
   for(const bad of ['../x','a/b','.hidden','Master.mp4',''])expect(()=>mediaPath('job-0000001',bad)).toThrow()
   expect(()=>mediaPath('../etc','x.mp4')).toThrow()
+ })
+})
+
+describe('Football Stories — a focused film, the owner’s quotes and pictures',()=>{
+ it('accepts a focus window, refuses a backwards or malformed one',()=>{
+  expect(validateBrief({club_id:'olympiacos',season:'2023/24',duration:5,focus_from:'2024-03-07',focus_to:'2024-03-14'},clubs)).toMatchObject({focus_from:'2024-03-07',focus_to:'2024-03-14'})
+  expect(()=>validateBrief({club_id:'olympiacos',season:'2023/24',duration:5,focus_from:'2024-03-14',focus_to:'2024-03-07'},clubs)).toThrow(/before it ends/)
+  expect(()=>validateBrief({club_id:'olympiacos',season:'2023/24',duration:5,focus_from:'7.3.2024'},clubs)).toThrow(/Focus/)
+ })
+ it('takes quotes and headlines only in the documented shape, each with an https source',()=>{
+  expect(noteLine('quote | Bill Shankly | Liverpool manager | It is much more important than that. | https://example.org/x')).toMatchObject({kind:'quote'})
+  expect(noteLine('press | The Times | 2024-03-15 | A night | https://example.org/y')).toMatchObject({kind:'press'})
+  for(const bad of ['quote | a | b | c | http://x.org','press | o | 15/03/2024 | h | https://x.org','rumour | a | b | c | https://x.org','quote | a | b | https://x.org'])expect(noteLine(bad)).toBeNull()
+  expect(()=>validateBrief({club_id:'olympiacos',season:'2023/24',duration:5,notes:'quote | a | b | c | https://x.org\nwhatever'},clubs)).toThrow(/line 2/)
+ })
+ it('holds a film for the owner’s pictures, and records pictures only before it starts',()=>{
+  const held=newJob('job-0000002',validateBrief({club_id:'olympiacos',season:'2023/24',duration:5,hold:true},clubs),palette,'owner','key-00000002')
+  expect(held.state).toBe('paused')
+  expect(nextForWorker([held])).toBeNull()
+  const withArt=ownerAct(held,{action:'art_added',files:[{name:'el-kaabi-header.png',illustrated:true}]},'owner')
+  expect(withArt.brief.art).toEqual([{name:'el-kaabi-header.png',illustrated:true}])
+  expect(()=>ownerAct(held,{action:'art_added',files:[{name:'../x.png',illustrated:false}]},'owner')).toThrow(StoryError)
+  const running=claim(ownerAct(withArt,{action:'resume'},'owner'),'w-1')
+  expect(()=>ownerAct(running,{action:'art_added',files:[{name:'late.png',illustrated:false}]},'owner')).toThrow(/before the film starts/)
+  expect(mediaPath('job-0000002','art-el-kaabi-header.png')).toBe('jobs/job-0000002/art-el-kaabi-header.png')
+ })
+ it('lets the owner’s art door sign uploads only for the owner, and only before the film starts',()=>{
+  const s=src('app/api/master/stories/[id]/art/route.ts')
+  expect(s).toMatch(/if\(!adminFromRequest\(r\)\)return json/)
+  expect(s).toMatch(/sameOrigin\(r\)/)
+  expect(s).toMatch(/\['queued','paused'\]\.includes\(cur\.job\.state\)/)
  })
 })
 

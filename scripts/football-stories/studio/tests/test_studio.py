@@ -537,3 +537,36 @@ class ClubSpellings(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class BriefNotesAndFocus(unittest.TestCase):
+    def test_notes_become_claims(self):
+        from studio import research
+        cs = research.note_claims('quote | Bill Shankly | Liverpool manager | Football is life. | https://example.org/a\n'
+                                  'press | The Times | 2024-03-15 | A night to remember | https://example.org/b\n')
+        self.assertEqual([c['fact']['kind'] for c in cs], ['quote', 'press'])
+        self.assertEqual(cs[0]['fact']['speaker'], 'Bill Shankly')
+        self.assertEqual(cs[1]['fact']['date'], '2024-03-15')
+        for c in cs:
+            research.validate_claim(c)
+
+    def test_bad_note_is_refused(self):
+        from studio import research
+        from studio.common import StageError
+        for bad in ('quote | a | b | c | http://insecure', 'press | x | 15/3/2024 | h | https://e.org', 'gossip | a | b | c | https://e.org'):
+            with self.assertRaises(StageError):
+                research.note_claims(bad)
+
+    def test_focus_keeps_only_the_window(self):
+        from studio import research
+        def m(i, d, o='win'):
+            return {'id': i, 'fact': {'kind': 'match', 'date': d, 'competition': 'C', 'outcome': o, 'club_goals': 1, 'opponent_goals': 0}}
+        led = {'club_name': 'X', 'season': '2023/24', 'held': [],
+               'claims': [m('a', '2024-03-01'), m('b', '2024-03-07'), m('c', '2024-03-14'), m('d', '2024-04-01'),
+                          {'id': 'q', 'fact': {'kind': 'quote', 'speaker': 's', 'text': 't'}}]}
+        f = research.focus(led, '2024-03-07', '2024-03-14')
+        self.assertEqual([c['id'] for c in f['claims']], ['b', 'c', 'q'])
+        self.assertEqual(f['summary']['by_competition']['C']['played'], 2)
+        from studio.common import StageError
+        with self.assertRaises(StageError):
+            research.focus(led, '2025-01-01', '2025-02-01')

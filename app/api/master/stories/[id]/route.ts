@@ -10,7 +10,7 @@ export const runtime='nodejs'
 async function links(job:Job,master:boolean){
  const a=job.artefacts
  if(!a)return {}
- const paths=[a.preview?.path,a.contact?.path,a.package?.path,a.captions?.srt.path,a.captions?.vtt.path,...(a.thumbnails??[]).map(t=>t.path),...(master?(a.master?.chunks??[]).map(c=>c.path):[])].filter((p):p is string=>!!p)
+ const paths=[a.preview?.path,a.contact?.path,a.package?.path,a.captions?.srt.path,a.captions?.vtt.path,...(a.thumbnails??[]).map(t=>t.path),...(a.shorts??[]).map(x=>x.path),...(master?(a.master?.chunks??[]).map(c=>c.path):[])].filter((p):p is string=>!!p)
  return signedDownload(paths)
 }
 export async function GET(r:Request,{params}:{params:{id:string}}){
@@ -24,7 +24,7 @@ export async function GET(r:Request,{params}:{params:{id:string}}){
   return json({job:cur.job,urls})
  }catch(e){return fail(e)}
 }
-const ACTIONS=new Set(['pause','resume','cancel','retry','approve_script','upload_started','upload_done','upload_uncertain','upload_reset'])
+const ACTIONS=new Set(['pause','resume','cancel','retry','approve_script','upload_started','upload_done','upload_uncertain','upload_reset','art_added'])
 export async function POST(r:Request,{params}:{params:{id:string}}){
  const s=adminFromRequest(r)
  if(!s)return json({error:'Not authorised.'},401)

@@ -34,8 +34,9 @@ export function StoriesDesk(){
   const d=new FormData(e.currentTarget)
   const local=String(d.get('publish_at')||'')
   const brief={club_id:d.get('club_id'),season:d.get('season'),topic:d.get('topic'),duration,visual_style:d.get('visual_style'),voice:d.get('voice'),review:d.get('review'),privacy,
-   publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined}
-  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current='';setNotice(`Queued: ${b.job.brief.club_name} ${b.job.brief.season}. The worker picks it up within about ten minutes.`);setOpen(b.job.id);await load()}
+   publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
+   focus_from:d.get('focus_from')||undefined,focus_to:d.get('focus_to')||undefined,notes:d.get('notes')||'',hold:d.get('hold')==='on'}
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current='';setNotice(b.job.state==='paused'?`Created and held: ${b.job.brief.club_name} ${b.job.brief.season}. Open it, add your pictures, then press Resume.`:`Queued: ${b.job.brief.club_name} ${b.job.brief.season}. The worker picks it up within about ten minutes.`);setOpen(b.job.id);await load()}
   catch(err){setError(err instanceof Error?err.message:'Could not queue the film.')}finally{setBusy(false)}
  }
 
@@ -55,6 +56,13 @@ export function StoriesDesk(){
       <label>Visual<select name="visual_style" defaultValue="collage"><option value="collage">Collage · The Weekly</option><option value="papercut" disabled>Paper stop-motion — not in the renderer yet</option><option value="mixed" disabled>Mixed — not in the renderer yet</option></select></label>
      </div>
      <label>Story or angle<textarea name="topic" maxLength={240} placeholder="e.g. The double: twelve years of waiting, then five days in May"/><span className={css.hint}>Optional. The film follows the season&rsquo;s archive in order either way.</span></label>
+     <div className={css.row}>
+      <label>Focus from<input type="date" name="focus_from"/></label>
+      <label>Focus to<input type="date" name="focus_to"/></label>
+     </div>
+     <span className={css.hint}>Optional. One tie or one run instead of the whole season — e.g. both legs of a European tie. Leave empty for the season.</span>
+     <label>Quotes and headlines<textarea name="notes" maxLength={6000} rows={4} placeholder={'quote | Speaker | role | the exact words | https://source\npress | Outlet | 2024-03-15 | The headline as printed | https://source'}/><span className={css.hint}>Optional, one per line, each with the page you read it on. Quoted word for word on screen, never changed. Lines in any other shape are refused.</span></label>
+     <label className={css.check}><input type="checkbox" name="hold"/> I will add my own pictures first (the film waits until I press Resume)</label>
      <label>Length<div className={css.chips} role="group" aria-label="Length">{DURATIONS.filter(d=>[0.5,1,2,3,5,7,10,12,15,20,25].includes(d)).map(d=><button type="button" key={d} className={`${css.chip} min-h-tap`} aria-pressed={duration===d} onClick={()=>setDuration(d)}>{mins(d)}</button>)}</div><span className={css.hint}>12 minutes is the default documentary length. Any whole minute from 7 to 25 is accepted.</span></label>
      <div className={css.row}>
       <label>Narrator<select name="voice" defaultValue="auto"><option value="auto">Automatic</option><option value="elevenlabs">ElevenLabs (premium)</option><option value="kokoro">Free British voice</option></select><span className={css.hint}>Automatic uses ElevenLabs when its key is set, else the free voice.</span></label>
@@ -128,12 +136,15 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
   catch(e){setDl(e instanceof Error?e.message:'Download failed')}
  }
  return <div>
+  {['queued','paused'].includes(job.state)&&<Pictures job={job} act={act} busy={busy}/>}
+  {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>x.name+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
   {a?.thumbnails?.length?<><h3 className={css.h3}>Thumbnails</h3><div className={css.thumbs}>{a.thumbnails.map(t=>u(t)&&<img key={t.path} src={u(t)} alt="Thumbnail option"/>)}</div></>:null}
   {job.qa&&<><h3 className={css.h3}>Checks</h3><ul className={css.checks}>{job.qa.checks.map(c=><li key={c.name}>{c.ok?'✓':'✗'} <b>{c.name}</b> — {c.detail}</li>)}</ul>
    {job.qa.rights?.length?<p className={css.alert}>Rights gaps: {job.qa.rights.join('; ')}</p>:null}
    {job.qa.cannot_prove?.length?<details><summary className={css.meta}>What the checks cannot prove</summary><ul>{job.qa.cannot_prove.map(x=><li key={x}>{x}</li>)}</ul></details>:null}</>}
+  {a?.shorts?.length?<><h3 className={css.h3}>Shorts</h3><div className={css.shorts}>{a.shorts.map((x,i)=>u(x)&&<figure key={x.path}><video src={u(x)} controls preload="metadata" playsInline/><figcaption><b>{x.hook}</b> · {Math.round(x.seconds)} s · <a href={u(x)} download={`short-${i+1}.mp4`}>Download</a></figcaption></figure>)}</div></>:null}
   {u(a?.contact)&&<><h3 className={css.h3}>Every shot</h3><img className={css.sheet} src={u(a?.contact)} alt="One frame from every shot"/></>}
   {yt&&<><h3 className={css.h3}>YouTube package</h3>
    <p><b>{yt.title}</b> · {yt.category} · altered/synthetic disclosure: <b>{yt.synthetic_media.altered_or_synthetic?'Yes':'No'}</b></p><p className={css.meta}>{yt.synthetic_media.reason}</p>
@@ -141,6 +152,7 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
    <details><summary className={css.meta}>Description</summary><div className={css.pre}>{yt.description}</div></details>
    <p className={css.meta}>Tags: {yt.tags.join(', ')}</p>
    <details><summary className={css.meta}>Shorts ideas</summary><ul>{yt.shorts.map(s=><li key={s.hook}><b>{s.hook}</b> — {s.idea}</li>)}</ul></details></>}
+  {yt&&a?.master&&<PublishKit yt={yt} job={job}/>}
   {a?.master&&<><h3 className={css.h3}>Files</h3><div className={css.actions}>
    <button className={`${css.btn} min-h-tap`} onClick={()=>void downloadMaster()}>Download master ({(a.master.bytes/1e6).toFixed(0)} MB)</button>
    {u(a.package)&&<a className={`${css.btn} min-h-tap`} href={u(a.package)}>Package (zip)</a>}
@@ -158,4 +170,61 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
     <button className={`${css.btn} min-h-tap`} disabled={busy}>Record</button></form>}</>}
   <h3 className={css.h3}>Log</h3><div className={css.log}>{job.log.slice().reverse().map((l,i)=><div key={i}>{when(l.at)} — {l.text}</div>)}</div>
  </div>
+}
+
+/** The owner's pictures for this film, before it starts. Uploaded straight to private storage; then named in the brief. */
+function Pictures({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<void>;busy:boolean}){
+ const [msg,setMsg]=useState(''),[illustrated,setIllustrated]=useState(true),[up,setUp]=useState(false)
+ const art=job.brief.art??[]
+ const clean=(n:string)=>n.toLowerCase().replace(/\.jpeg$/,'.jpg').replace(/[^a-z0-9._-]+/g,'-').replace(/^-+/,'').slice(-64)
+ async function send(files:FileList|null){
+  if(!files?.length)return
+  const list=[...files].filter(f=>/\.(png|jpe?g|webp)$/i.test(f.name)&&f.size<=45*1024*1024)
+  if(!list.length){setMsg('PNG, JPG or WebP, at most 45 MB each.');return}
+  setUp(true);setMsg('Asking for upload links…')
+  try{
+   const names=list.map(f=>clean(f.name))
+   const {urls}=await api(`/api/master/stories/${job.id}/art`,{method:'POST',body:JSON.stringify({names})})
+   for(const [i,f] of list.entries()){const n=names[i]!;setMsg(`Uploading ${i+1} of ${list.length}: ${n}`);const r=await fetch(urls[n],{method:'PUT',body:f,headers:{'Content-Type':f.type||'application/octet-stream','x-upsert':'true'}});if(!r.ok)throw new Error(`${n} was refused (${r.status})`)}
+   await act({action:'art_added',files:names.map(name=>({name,illustrated}))})
+   setMsg(`${list.length} picture(s) added. Press Resume when everything is in.`)
+  }catch(e){setMsg(e instanceof Error?e.message:'Upload failed')}finally{setUp(false)}
+ }
+ return <div className={css.pics}>
+  <h3 className={css.h3}>Your pictures</h3>
+  <p style={{fontSize:14}}>Name each file after what it shows (<i>el-kaabi-header.png</i>) — the writer reads the name. Blur any personal details (a name or ID on a ticket, a real newspaper&rsquo;s masthead) before uploading.</p>
+  <label className={css.check}><input type="checkbox" checked={illustrated} onChange={e=>setIllustrated(e.target.checked)}/> These look like photographs or documents (the film marks them ILLUSTRATION and the upload says so)</label>
+  <input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy||up} onChange={e=>void send(e.target.files)} className={css.input}/>
+  {art.length?<p className={css.meta}>In the brief: {art.map(x=>x.name+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
+  {msg&&<p className={css.meta} role="status">{msg}</p>}
+ </div>
+}
+
+type Yt={title:string;description:string;tags:string[];category:string;synthetic_media:{altered_or_synthetic:boolean;reason:string};shorts:{hook:string;idea:string}[]}
+/** Everything YouTube Studio asks, in the order it asks it, each with a copy button. */
+function PublishKit({yt,job}:{yt:Yt;job:Job}){
+ const [copied,setCopied]=useState('')
+ const copy=async(k:string,v:string)=>{try{await navigator.clipboard.writeText(v);setCopied(k);setTimeout(()=>setCopied(''),1600)}catch{setCopied('')}}
+ const tags=yt.tags.join(', ')
+ const rows:[string,string,string][]=[
+  ['title','Title',yt.title],
+  ['desc','Description',yt.description],
+  ['tags','Tags',tags],
+ ]
+ const steps=[
+  'Upload the master in YouTube Studio → Create → Upload videos.',
+  'Paste the title and the description below.',
+  'Thumbnail: the first of the three above (or whichever reads best on a phone).',
+  'Playlist: “Seasons We Never Forget”.',
+  'Audience: “No, it’s not made for kids”.',
+  `Show more → Altered content: ${yt.synthetic_media.altered_or_synthetic?'YES':'No'} — ${yt.synthetic_media.reason}`,
+  'Tags: paste the line below. Language English, captions: upload the SRT (with timing).',
+  'Video elements → End screen: “Import from video” (a published film), Card: the club’s previous film at the halfway point.',
+  `Visibility: ${job.brief.privacy}${job.brief.publish_at?` (${job.brief.publish_at})`:''} → Save, then record the video id below.`,
+  'Shorts: upload each Short as its own video, hook as its title, #Shorts #football in the description, link to the film in the first comment.',
+ ]
+ return <><h3 className={css.h3}>Publish kit</h3>
+  <ol className={css.steps}>{steps.map(x=><li key={x}>{x}</li>)}</ol>
+  <div className={css.kit}>{rows.map(([k,label,v])=><div key={k}><div className={css.kitHead}><b>{label}</b> <span className={css.meta}>{v.length} chars</span><button type="button" className={`${css.btn} min-h-tap`} onClick={()=>void copy(k,v)}>{copied===k?'Copied':'Copy'}</button></div><div className={css.pre}>{v}</div></div>)}</div>
+ </>
 }

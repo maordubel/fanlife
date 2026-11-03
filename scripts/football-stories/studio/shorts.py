@@ -100,6 +100,50 @@ def cut(job: Path, first: int, last: int, hook: str, kicker: str, accent: str, o
     return {'file': str(out), 'start': round(t0, 2), 'end': round(t1, 2), 'seconds': round(t1 - t0, 1)}
 
 
+def pick_range(plan: dict, claim_ids: list[str], max_s: float = 58.0, min_s: float = 20.0) -> tuple[int, int] | None:
+    """The stretch of the film a Short idea is about: the longest run of consecutive shots that cite one of its claims,
+    trimmed from the front to fit a Short, extended forward when it is too short to stand alone. Never the end card or
+    the call to follow (they belong to the film)."""
+    fps = plan.get('fps', 25)
+    shots = [s for s in plan['shots'] if s['visual'].get('type') not in ('end', 'follow')]
+    want = set(claim_ids)
+    runs, cur = [], []
+    for s in shots:
+        if want & set(s.get('claim_ids') or []) and (not cur or s['n'] == cur[-1]['n'] + 1):
+            cur.append(s)
+        else:
+            if cur:
+                runs.append(cur)
+            cur = [s] if want & set(s.get('claim_ids') or []) else []
+    if cur:
+        runs.append(cur)
+    if not runs:
+        return None
+    dur = lambda r: sum(x['frames'] for x in r) / fps
+    run = max(runs, key=lambda r: (min(dur(r), max_s), -r[0]['n']))
+    while len(run) > 1 and dur(run) > max_s:
+        run = run[1:]
+    by_n = {s['n']: s for s in shots}
+    while dur(run) < min_s and run[-1]['n'] + 1 in by_n and dur(run + [by_n[run[-1]['n'] + 1]]) <= max_s:
+        run = run + [by_n[run[-1]['n'] + 1]]
+    return (run[0]['n'], run[-1]['n']) if dur(run) <= max_s + 1 else None
+
+
+def auto(job: Path, script: dict, club: str, season: str, accent: str) -> list[dict]:
+    """Every Short the script proposes, cut from the finished master into out/shorts/."""
+    plan = read_json(job / 'plan.json')
+    out = []
+    for i, sh in enumerate(script.get('shorts') or [], 1):
+        r = pick_range(plan, sh.get('claim_ids') or [])
+        if not r:
+            continue
+        dst = job / 'out' / 'shorts' / f'short-{i}.mp4'
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        res = cut(job, r[0], r[1], sh['hook'], f'{club} · {season}', accent, dst)
+        out.append({**res, 'hook': sh['hook'], 'idea': sh.get('idea'), 'shots': list(r), 'file': str(dst)})
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--job', type=Path, required=True)

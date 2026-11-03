@@ -5,10 +5,16 @@ Owner-only. `/master/stories` (direct link from the desk). Channel: **FanLife: F
 
 ## The flow
 
-1. **Brief** (desk) — club, season, length (0.5–25 min), visibility, optional scheduled time (Athens). Saved as a job in
+1. **Brief** (desk) — club, season, length (0.5–25 min), visibility, optional scheduled time (Athens). Optional (3.11.2026):
+   a **focus** window (one tie, both legs — `research.focus`, totals recounted from what is left), **quotes and
+   headlines** one per line with their https source (`quote | speaker | role | words | url`, `press | outlet | date |
+   headline | url` → `research.note_claims`), and **hold for my pictures** (the job is created paused; the owner uploads
+   pictures into `jobs/<id>/art-<name>` through `/api/master/stories/<id>/art`, then presses Resume). Saved as a job in
    the durable store (`stories/jobs/<id>.json`, compare-and-swap).
 2. **Worker** (`.github/workflows/stories-worker.yml`, every 10 min) asks `/api/master/stories/worker` (`CRON_SECRET`):
-   `peek` → `claim` (6.5 h lease) → `progress` (pause/cancel answered on every report) → `upload_urls` → `finish`.
+   `peek` → `claim` (6.5 h lease) → `art_urls` (the owner's pictures, ingested as `beat:job-<id>/…`) → `progress`
+   (pause/cancel answered on every report) → `upload_urls` → `finish`. The Shorts the script proposes are cut from the
+   master (`shorts.auto`, ≤58 s, 9:16) and uploaded beside it; the desk plays them.
 3. **Pipeline** (`scripts/football-stories/studio/`, Python):
    research ledger (archive + dossier claims, every row with a source) → script (Claude / OpenAI / Gemini, validated:
    every number in narration and on screen must come from a cited claim) → voice (ElevenLabs if the key exists, else
@@ -18,7 +24,9 @@ Owner-only. `/master/stories` (direct link from the desk). Channel: **FanLife: F
    rival colours, contact sheet).
 4. **Review** (desk) — the script, the preview, thumbnails, checks, the YouTube package. Approve, retry, cancel.
 5. **Upload** — through **YouTube Studio**, never the API (API uploads from an unaudited project are locked private). The
-   desk records only what Studio shows: started → done (video id + visibility) or uncertain.
+   desk records only what Studio shows: started → done (video id + visibility) or uncertain. The **publish kit** lists
+   every Studio step in order (playlist, audience, altered-content answer, captions, end screen, card, Shorts) with copy
+   buttons for the title, description and tags.
 
 ## Other clubs (2.11.2026)
 
@@ -70,9 +78,19 @@ New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>
 
 - No fake progress, uploads or success: every state is reported by the worker or by YouTube Studio.
 - Every number is sourced (`fact_guard`); a scorer is printed only when the archive names every goal.
-- No real person's face; illustrations are symbolic and the description says so.
+- The paper-cut kit draws no real person's face. **Owner pictures drawn to look like a photograph or a document** (owner,
+  3.11.2026: "these are drawings based on a source, they may be used") are allowed: `illustrated: true` prints
+  ILLUSTRATION on screen, the credits say so, and the upload answers YES to YouTube's altered-content question. Personal
+  details (a name or ID on a ticket) and a real newspaper's masthead are blurred before use (`kit_ingest` masks).
+- A quote is printed word for word from a claim of kind `quote` (≤40 words, the speaker as recorded); a headline only as
+  the outlet printed it, set in our own type, never a copied masthead. Neither is ever paraphrased onto the screen.
 - Every film asks once to follow the channel (CLAUDE.md rule 136, art in doc 58).
 - Rival colours (rule 95) are checked on sampled frames of every film.
+
+## Craft (3.11.2026) — see doc 59
+
+Pace 148 words a minute, a cold open, one sentence per beat at the big moments, goal by goal; football as faith; a famous
+quote or a newspaper of the day where the story turns. `studio/writer.py` carries the rules, doc 59 the reasons.
 
 ## Channel art
 

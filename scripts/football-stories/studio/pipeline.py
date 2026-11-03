@@ -62,7 +62,23 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             dos = read_json(d)
             extra, art_sets = dos['claims'], dos.get('art_sets') or []
             log(f'Research: {len(extra)} dossier claims from {d.name}')
-        ledger = research.build_ledger(brief['club_id'], brief['season'], extra)
+        notes = research.note_claims(brief.get('notes') or '')
+        if notes:
+            log(f'Research: {len(notes)} quotes and headlines from the brief')
+        ledger = research.build_ledger(brief['club_id'], brief['season'], extra + notes)
+        if brief.get('focus_from') or brief.get('focus_to'):
+            ledger = research.focus(ledger, brief.get('focus_from'), brief.get('focus_to'))
+            log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '
+                f'({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
+        if brief.get('art_dir'):
+            from . import kit_ingest
+            set_id = brief['art_set']
+            files = [Path(brief['art_dir']) / a['name'] for a in brief.get('art') or [] if (Path(brief['art_dir']) / a['name']).exists()]
+            masks = {a['name']: {'illustrated': True} for a in brief.get('art') or [] if a.get('illustrated')}
+            if files:
+                kit_ingest.ingest(set_id, files, masks, brief['club_id'], brief['season'], 'Owner pictures uploaded for this film.')
+                art_sets = [*art_sets, set_id]
+                log(f'Research: {len(files)} owner pictures as beat:{set_id}/…')
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
@@ -154,6 +170,19 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     report['rights'] = rights_gaps(manifest)
     report['render_minutes'] = round((time.time() - t_start) / 60, 1)
     write_json(out / 'qa.json', report)
+
+    # 10 shorts: every Short the script proposes, cut from the finished master (a failure costs the Shorts, not the film)
+    shorts_p = out / 'shorts.json'
+    if not shorts_p.exists():
+        step('qa', 0.97, 'Cutting the Shorts')
+        try:
+            from . import shorts
+            made = shorts.auto(job_dir, s, ledger['club_name'], ledger['season'], palette.accent)
+            write_json(shorts_p, made)
+            log(f'Shorts: {len(made)} cut')
+        except Exception as e:  # noqa: BLE001 — reported, never swallowed silently
+            log(f'Shorts: none cut ({type(e).__name__}: {e})')
+            write_json(shorts_p, [])
     step('done', 1.0, 'Ready for review')
     return {'state': 'ready' if report['ok'] and not report['rights'] else 'needs_review', 'qa': report}
 
