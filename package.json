@@ -25,6 +25,7 @@
     "life:play": "node scripts/life/playthrough.mjs",
     "life:screens": "tsx scripts/life/screens-probe.mjs",
     "life:pitch": "node scripts/life/pitch-probe.mjs",
+    "life:parity": "node --require ./scripts/master/server-only.cjs --import tsx scripts/life/club-parity-audit.ts",
     "life:deadends": "tsx scripts/life/deadend-audit.ts",
     "life:budget": "tsx scripts/life/budget-audit.ts",
     "life:orphans": "tsx scripts/life/orphan-audit.ts",

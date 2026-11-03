@@ -26,6 +26,22 @@ import olympiacosCast from '@/club-packs/olympiacos/life/cast.json'
 import aekSkin from '@/club-packs/aek-athens/life/skin.json'
 import petahTikvaSkin from '@/club-packs/hapoel-petah-tikva/life/skin.json'
 import petahTikvaCast from '@/club-packs/hapoel-petah-tikva/life/cast.json'
+import panathinaikosCast from '@/club-packs/panathinaikos/life/cast.json'
+import aekAthensCast from '@/club-packs/aek-athens/life/cast.json'
+import celticCast from '@/club-packs/celtic/life/cast.json'
+import stPauliCast from '@/club-packs/st-pauli/life/cast.json'
+import rajaCasablancaCast from '@/club-packs/raja-casablanca/life/cast.json'
+import wydadCasablancaCast from '@/club-packs/wydad-casablanca/life/cast.json'
+import alAhlyCast from '@/club-packs/al-ahly/life/cast.json'
+import stPauliTimeline from '@/club-packs/st-pauli/life/timeline.json'
+import celticTimeline from '@/club-packs/celtic/life/timeline.json'
+import olympiacosTimeline from '@/club-packs/olympiacos/life/timeline.json'
+import aekAthensTimeline from '@/club-packs/aek-athens/life/timeline.json'
+import petahTikvaTimeline from '@/club-packs/hapoel-petah-tikva/life/timeline.json'
+import rajaCasablancaTimeline from '@/club-packs/raja-casablanca/life/timeline.json'
+import wydadCasablancaTimeline from '@/club-packs/wydad-casablanca/life/timeline.json'
+import alAhlyTimeline from '@/club-packs/al-ahly/life/timeline.json'
+import panathinaikosTimeline from '@/club-packs/panathinaikos/life/timeline.json'
 
 export const LIFE_SKINS: Record<string, LifeSkinManifest> = {
   'hapoel-tel-aviv': hapoelSkin as LifeSkinManifest,
@@ -40,11 +56,27 @@ export const LIFE_CAST: Record<string, CastManifest> = {
   'zrinjski-mostar': zrinjskiCast as CastManifest,
   olympiacos: olympiacosCast as CastManifest,
   'hapoel-petah-tikva': petahTikvaCast as CastManifest,
+  'panathinaikos': panathinaikosCast as CastManifest,
+  'aek-athens': aekAthensCast as CastManifest,
+  'celtic': celticCast as CastManifest,
+  'st-pauli': stPauliCast as CastManifest,
+  'raja-casablanca': rajaCasablancaCast as CastManifest,
+  'wydad-casablanca': wydadCasablancaCast as CastManifest,
+  'al-ahly': alAhlyCast as CastManifest,
 }
 
 export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
   'hapoel-tel-aviv': hapoelTimeline as TimelineManifest,
   'zrinjski-mostar': zrinjskiTimeline as TimelineManifest,
+  'st-pauli': stPauliTimeline as TimelineManifest,
+  'celtic': celticTimeline as TimelineManifest,
+  'panathinaikos': panathinaikosTimeline as TimelineManifest,
+  olympiacos: olympiacosTimeline as TimelineManifest,
+  'aek-athens': aekAthensTimeline as TimelineManifest,
+  'hapoel-petah-tikva': petahTikvaTimeline as TimelineManifest,
+  'raja-casablanca': rajaCasablancaTimeline as TimelineManifest,
+  'wydad-casablanca': wydadCasablancaTimeline as TimelineManifest,
+  'al-ahly': alAhlyTimeline as TimelineManifest,
 }
 
 export const LIFE_ANCHORS: Record<string, AnchorSelection> = {

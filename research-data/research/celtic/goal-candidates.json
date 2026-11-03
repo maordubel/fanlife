@@ -64,6 +64,15 @@
     "bodyHash": "eb968979e8310e3565e8c9d5c1a2bebeb879c2799a489d1f8a9f05ac229b375f",
     "fetchedAt": "2026-11-01T10:48:17.303Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/coaching-and-backroom-staff/coaching-and-backroom-staff-previous/mcparland-davie/",
+    "locator": "p7",
+    "quote": "Davie McParland had begun playing football with Larkhall Thistle before joining Partick Thistle in 1953. A very good winger and player in his time with the Maryhill Magyars he was a first pick in the team when not injured for a major part of the 60's and went on to make 416 appearances and score 71 goals. As the years advanced he moved gradually towards a coaching and playing aspect and eventually into the Assistant Manager's position. When ex-Rangers manager Scott Symon was moved upstairs by the Thistle board following demotion in 1970, McParland moved into the manager's spot. He was responsi",
+    "bodyHash": "cea959d7b3da8d0863cc52d4c7bc5066d1903977edacff10e369adb2abe8d86a",
+    "fetchedAt": "2026-11-03T11:03:15.285Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -71,8 +80,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:17.303Z",
-  "updatedAt": "2026-11-01T10:48:17.303Z"
+  "createdAt": "2026-11-03T11:03:15.285Z",
+  "updatedAt": "2026-11-03T11:03:15.285Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -406,6 +415,15 @@
     "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
     "fetchedAt": "2026-10-30T10:27:39.583Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/1888-1919-pics/1911-pics/1911-04-01-heart-of-midlothian-1-1-celtic-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 2012-13 Pictures | 2012 – 2013 | 2010's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "aab4e9579df92471a91b81886fec27eddc605e52998665631127b01f70185db3",
+    "fetchedAt": "2026-11-03T11:20:42.768Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -413,8 +431,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:39.583Z",
-  "updatedAt": "2026-10-30T10:27:39.583Z"
+  "createdAt": "2026-11-03T11:20:42.768Z",
+  "updatedAt": "2026-11-03T11:20:42.768Z"
  },
  {
   "id": "ga-5359cb1bdfb22aae",
@@ -793,15 +811,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/corcoran-patrick/",
-    "locator": "p60",
-    "quote": "Patsy was christened Patrick, he was known as Paddy or Pat when he played in Scotland but Argyle fans knew him as Patsy. He started his football career with his local club Albion Rovers as a right winger, despite being taller than most wingers of the era at 5′ 10′ he had excellent ball control and wasn’t afraid to shoot from any angle.",
-    "bodyHash": "af4c2c544b4ca8cf3584ea94816b219c12e0e7053c1ad02572d1017544684b38",
-    "fetchedAt": "2026-10-31T09:58:09.081Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/h/hutchinson-ben/",
     "locator": "p7",
     "quote": "Height : 5′ 11” (180cm)",
@@ -862,6 +871,15 @@
     "bodyHash": "cfabfc8e610409414cf8a22fdb17cbc4c698d25444d0b06ce4bf0555e02f6bdc",
     "fetchedAt": "2026-11-02T11:41:43.764Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mclaughlin-paul/",
+    "locator": "p9",
+    "quote": "Height : 5′ 11″ (180cm)",
+    "bodyHash": "6ce091091a22c96af6bb94cc100c9f3853c30336335d4d2c47e35fbd152e9dc0",
+    "fetchedAt": "2026-11-03T11:03:00.510Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -869,8 +887,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:43.764Z",
-  "updatedAt": "2026-11-02T11:41:43.764Z"
+  "createdAt": "2026-11-03T11:03:00.510Z",
+  "updatedAt": "2026-11-03T11:03:00.510Z"
  },
  {
   "id": "ga-eae2397426bed908",
@@ -892,6 +910,15 @@
     "bodyHash": "3c22f0b8126481c3f6ca57b761dc1cd03458638e82762588ebf9412440ea4320",
     "fetchedAt": "2026-10-30T10:13:40.311Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/strachan-gordon/gordon-strachan-quotes/",
+    "locator": "p80",
+    "quote": "On winning the Scottish Premier League and winning game in 92nd minute of game v Killie (Apr 2007)",
+    "bodyHash": "d401140167b2e535c175559505f893d870a24a63781653237872271c6f4c0ec0",
+    "fetchedAt": "2026-11-03T11:03:12.325Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -899,8 +926,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:13:40.311Z",
-  "updatedAt": "2026-10-30T10:13:40.311Z"
+  "createdAt": "2026-11-03T11:03:12.325Z",
+  "updatedAt": "2026-11-03T11:03:12.325Z"
  },
  {
   "id": "ga-c1fe350bec999947",
@@ -952,6 +979,15 @@
     "bodyHash": "409a577fa2d53caf0cd96a9f6b4bf6e45856fa28234c1a399ebce5aca56c214b",
     "fetchedAt": "2026-10-30T10:27:24.315Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/strachan-gordon/gordon-strachan-celtic-minded/",
+    "locator": "p11",
+    "quote": "(When asked about Man Utd showing interest in getting him to manage at Old Trafford in early 70's)",
+    "bodyHash": "93c42f088a255cc71bbf45904e6e156590fa10f32c753a982c3c7790b491e8ff",
+    "fetchedAt": "2026-11-03T11:03:12.328Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -959,8 +995,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:24.315Z",
-  "updatedAt": "2026-10-30T10:27:24.315Z"
+  "createdAt": "2026-11-03T11:03:12.328Z",
+  "updatedAt": "2026-11-03T11:03:12.328Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -1303,6 +1339,15 @@
     "bodyHash": "4af7511f82ab71ddb5fe4c7a5c47853e42ab66aa3ad59bc001b4a97b0f4635c8",
     "fetchedAt": "2026-10-30T10:27:45.863Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/oneill-martin/",
+    "locator": "p157",
+    "quote": "However, surprising as it may sound in retrospect, many had actually pinpointed the Motherwell game as the key toughest match, as firstly it was away and Motherwell had more than punched their weight over the season. An unbelievably stressful evening that you would not believe. Celtic needed to win to keep their title hopes alive, but Motherwell took the lead and everyone at Celtic was deflated. A Maeda goal dragged Celtic back into the reckoning, but it took a VAR-awarded penalty in the 97th minute to take the points. It took nerves of steel for Iheanacho to take the penalty and score! The su",
+    "bodyHash": "42ab0d89d2127f07e7c836af057d485e847415487c85c20839d5b26cace0aef5",
+    "fetchedAt": "2026-11-03T11:03:12.319Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1310,8 +1355,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:45.863Z",
-  "updatedAt": "2026-10-30T10:27:45.863Z"
+  "createdAt": "2026-11-03T11:03:12.319Z",
+  "updatedAt": "2026-11-03T11:03:12.319Z"
  },
  {
   "id": "ga-361986d886d8ada4",
@@ -1372,6 +1417,15 @@
     "bodyHash": "756db0289802ba486a84244bd21ba4f67ff5f3c3e203172aac4514f1e0fa76c8",
     "fetchedAt": "2026-11-02T11:41:49.823Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mouyokolo-steven/",
+    "locator": "p20",
+    "quote": "He was given a token sub appearance v Dundee Utd on his return on 5 April 2014, coming on in the 91st minute with a minute to go. After all he had been through during the season, he much appreciated it:",
+    "bodyHash": "62bf255c872225d5e43643f3ed42f18b731ea64edd28b5f1110a9b1625a834dc",
+    "fetchedAt": "2026-11-03T11:03:09.323Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1379,8 +1433,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:49.823Z",
-  "updatedAt": "2026-11-02T11:41:49.823Z"
+  "createdAt": "2026-11-03T11:03:09.323Z",
+  "updatedAt": "2026-11-03T11:03:09.323Z"
  },
  {
   "id": "ga-f90c3bca8d1be7ef",
@@ -1411,6 +1465,15 @@
     "bodyHash": "bff6e57fa4a038e6d5ce9abe51ef4db94d329216ecaceca74bee929194da6cd7",
     "fetchedAt": "2026-11-02T11:41:46.758Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/coaching-and-backroom-staff/coaching-and-backroom-staff-previous/eric-black-head-youth-development-assistant-head-coach/",
+    "locator": "p12",
+    "quote": "Though lost to playing he made great progress as a coach and Craig Brown drafted him into the Scotland set-up with the S.F.A. In the summer of 1997 he took the Scotland U18's to Toulon and made a big impression there. He was approached by Jock Brown and offered the job of Head of Youth Development at Celtic and after a discussion on the scope and role that the position would entail Black had little hesitation in taking the job.",
+    "bodyHash": "94406068fc3143401186df10f19ea38e56466e2b0af7eb075b53fb4087e73128",
+    "fetchedAt": "2026-11-03T11:03:15.282Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1418,8 +1481,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:46.758Z",
-  "updatedAt": "2026-11-02T11:41:46.758Z"
+  "createdAt": "2026-11-03T11:03:15.282Z",
+  "updatedAt": "2026-11-03T11:03:15.282Z"
  },
  {
   "id": "ga-f5fa00d30830a3a2",
@@ -1561,6 +1624,15 @@
     "bodyHash": "4c2adbba3e981bb09c4e37b86ddb4a5e0d5ae1788ab8f4a4a13a8bf0cfd264c0",
     "fetchedAt": "2026-10-31T09:57:51.119Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/coaching-and-backroom-staff/coaching-and-backroom-staff-previous/kelman-john/",
+    "locator": "p14",
+    "quote": "The set up paid off immediately with the club, in 1978, finding itself light on central defenders – centre halfs. David Young was spotted by the Edinburgh scout playing for North Merchiston Amateurs and recruited. Also recruited at the same time was a young Jim Duffy, spotted by Peter Galletly playing for Possil YM and quickly signed after trialling. He was responsible for signing a raft of Celtic players like Paul McStay, Peter Grant and Derek Whyte for the club and was regularly seen in the Celtic View in photographs showing the manager, Kelman, a smiling parent and a new youth signing for t",
+    "bodyHash": "f0aff2e4134a46ff2828a43381a3f9f685a3b208f6dfdcc733070886885abf50",
+    "fetchedAt": "2026-11-03T11:03:15.285Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1568,8 +1640,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:57:51.119Z",
-  "updatedAt": "2026-10-31T09:57:51.119Z"
+  "createdAt": "2026-11-03T11:03:15.285Z",
+  "updatedAt": "2026-11-03T11:03:15.285Z"
  },
  {
   "id": "ga-09431d5a23e77134",
@@ -1618,6 +1690,15 @@
     "bodyHash": "efd49f70d97d88d24817b06d29171c23ad304bf31eae660dc3343da9a586c325",
     "fetchedAt": "2026-11-02T11:41:49.821Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcwilliam-ian/",
+    "locator": "p14",
+    "quote": "He was said to have had a great 1976-77 season with Queen’s Park and to be a “real personality” so seemed to be ready for the step up or giant leap to a major club. He was also the tallest player to date to play for the Celts, a massive 6′ 5″.",
+    "bodyHash": "de882a981662d1516c2ba918eb725809dfffa6cbbf3a59eb6bf8333649903272",
+    "fetchedAt": "2026-11-03T11:03:06.542Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1625,8 +1706,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:49.821Z",
-  "updatedAt": "2026-11-02T11:41:49.821Z"
+  "createdAt": "2026-11-03T11:03:06.542Z",
+  "updatedAt": "2026-11-03T11:03:06.542Z"
  },
  {
   "id": "ga-dbf5658ec20a795c",
@@ -1912,6 +1993,24 @@
     "bodyHash": "ff296d04bc6b6e3976bb75722a0bf69add81bc99bd4bbaad154c0a5bf011c14e",
     "fetchedAt": "2026-11-01T10:48:17.297Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcneill-billy-1958-75/",
+    "locator": "p117",
+    "quote": "An incredible moment happened in the following match, which clearly proved that there is a fairytale aspect about Celtic. The winner in the following match (1-0 victory v Kilmarnock 27th April 2019) was scored by a central defender (Simunovic) wearing the no.5 shirt on the 67th minute with a header (Billy McNeill’s shirt number was 5, he was a central defender and was famous for his headed goals). Incredible, as if it was destined to be so and written in the stars. Simunovic had vowed to score in McNeill’s honour, but what timing. McNeill will have been looking down with pride at what was an e",
+    "bodyHash": "09edff05602653144150a64da4e1f291391e69ddf80fddcab54b672de92604d6",
+    "fetchedAt": "2026-11-03T11:03:03.274Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcneill-billy-1958-75/mcneill-billy-passing-obituaries/",
+    "locator": "p10",
+    "quote": "&ldquo;There is a fairytale aspect about Celtic.&rdquo; : Incredibly, the winner in the following match (1-0 victory v Kilmarnock 27 April 2019) was scored by a central defender wearing no.5 on the 67th minute with a header (Billy McNeill's number was 5 and was a central defender and was famous for his headed goals). Incredible, as if written in the stars. Simunovic had vowed to score today in his honour, but what timing!",
+    "bodyHash": "c51afeaa79934f1738cbb84a954863943b6ff89ef4dc8caa7343bc07a87b22a0",
+    "fetchedAt": "2026-11-03T11:03:03.279Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1919,8 +2018,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:17.297Z",
-  "updatedAt": "2026-11-01T10:48:17.297Z"
+  "createdAt": "2026-11-03T11:03:03.279Z",
+  "updatedAt": "2026-11-03T11:03:03.279Z"
  },
  {
   "id": "ga-88685149807493b8",
@@ -2191,6 +2290,15 @@
     "bodyHash": "7ef111bdd9533afbba0e78b548a0271be3c14b23e69af98b17d18954a80b2f9f",
     "fetchedAt": "2026-11-01T10:48:11.255Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/deila-ronny/deila-ronny-misc-articles-1/",
+    "locator": "p637",
+    "quote": "44 min 30 seconds",
+    "bodyHash": "a941d2388e67a35714812726205a2244ad4114ec7ed9e3016371b3b71dfa8deb",
+    "fetchedAt": "2026-11-03T11:03:12.331Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2198,8 +2306,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:11.255Z",
-  "updatedAt": "2026-11-01T10:48:11.255Z"
+  "createdAt": "2026-11-03T11:03:12.331Z",
+  "updatedAt": "2026-11-03T11:03:12.331Z"
  },
  {
   "id": "ga-3288d24a23be6771",
@@ -2449,5 +2557,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-02T11:41:43.761Z",
   "updatedAt": "2026-11-02T11:41:43.761Z"
+ },
+ {
+  "id": "ga-f628ab39da84afa0",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "12",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcphail-john/",
+    "locator": "p24",
+    "quote": "Despite that instance, his otherwise cool head and intelligence made him an ideal captain and he skippered the side to Scottish Cup glory in 1951 when he scored the only goal of the final against Motherwell with a strong run and deft finish. In the 12th minute, he had struck what proved to be the decisive goal, breaking through the middle and lobbing the ball over Steelmen stopper Johnny Johnstone.",
+    "bodyHash": "fd2abee0c0071e121f132332a44edfb43e2b766b3303d19144c9c818a5b279d2",
+    "fetchedAt": "2026-11-03T11:03:03.286Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-03T11:03:03.286Z",
+  "updatedAt": "2026-11-03T11:03:03.286Z"
+ },
+ {
+  "id": "ga-e39da2aa7a78620f",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "93",
+  "scorerAlias": "Jo Inge",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/managers/deila-ronny/deila-ronny-misc-articles-1/",
+    "locator": "p585",
+    "quote": "Then Jo Inge Berget – of all people – scored after half-time, but we made it 3-1 and were in control. Then in 93rd minute Jo Inge scored again. After that we just couldn’t handle the pressure in Malmo. We played a terrible game and I didn’t manage to get the players to perform, maybe I picked the wrong team as well.",
+    "bodyHash": "a941d2388e67a35714812726205a2244ad4114ec7ed9e3016371b3b71dfa8deb",
+    "fetchedAt": "2026-11-03T11:03:12.331Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-03T11:03:12.331Z",
+  "updatedAt": "2026-11-03T11:03:12.331Z"
  }
 ]

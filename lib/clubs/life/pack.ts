@@ -13,11 +13,21 @@ import {LIFE_ANCHORS, LIFE_CAST, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs
 import {clubSkin} from './skins'
 import {clubWorld} from '@/lib/clubs/world'
 import {ritualFor} from '@/lib/life/universal/ritual'
+import {CLUB_SPELLINGS} from '@/lib/clubs/spellings'
 
 const scriptOf = (s: string, fallback: string) => /[֐-׿]/.test(s) ? 'he' : /[Ͱ-Ͽ]/.test(s) ? 'el' : fallback === 'he' || fallback === 'el' ? 'en' : fallback
 
 /** The archive rows a life may stand on: exact days from the dealt timeline, honours known only by year from the archive. */
-export function lifeAnchors(data: Pick<ClubData, 'archive' | 'timeline' | 'sources' | 'locales'>): ArchiveRef[] {
+/**
+ * A club whose dealt timeline holds fewer dated rows than this has its history in its MATCH record, not in its timeline: Olympiacos
+ * keeps 349 European, cup-final and play-off nights there that no timeline row names. For such a club the notable recorded matches
+ * (approved, confidence ≥ 2, an exact day, a competition that is a final, a European tie, a play-off or a super cup) are nights too —
+ * on a day the timeline does not already hold. A club with a full timeline is read exactly as before.
+ */
+export const THIN_TIMELINE = 300
+const NOTABLE_COMPETITION = /final|champions league|uefa|europa|conference|cup winners|super cup|intercontinental|play-?off|european cup|fairs/i
+
+export function lifeAnchors(data: Pick<ClubData, 'archive' | 'timeline' | 'sources' | 'locales'> & Partial<Pick<ClubData, 'matches'>>): ArchiveRef[] {
   const byId = new Map(data.sources.map(s => [s.id, s]))
   const sourcesOf = (ids: readonly string[]) => ids.flatMap(id => { const s = byId.get(id); return s ? [{title: s.title, publisher: s.publisher, url: s.url}] : [] })
   const dated: ArchiveRef[] = data.timeline.filter(f => f.status === 'approved' && f.confidence >= 2).map(f => ({
@@ -28,6 +38,18 @@ export function lifeAnchors(data: Pick<ClubData, 'archive' | 'timeline' | 'sourc
     .filter(f => f.status === 'approved' && f.confidence >= 2 && f.value.precision === 'year' && Number.isInteger(f.value.year) && f.sources.length > 0
       && f.sources.every(id => { const s = byId.get(id); return s?.access === 'available' && !!s.checkedAt }))
     .map(f => ({factId: f.id, title: f.value.name, on: null, year: f.value.year!, precision: 'year' as const, hint: f.value.hint, locale: scriptOf(f.value.name, data.locales.content), sources: sourcesOf(f.sources)}))
+  // a thin timeline is supplemented from the club's own recorded matches (see THIN_TIMELINE)
+  if (dated.length < THIN_TIMELINE && data.matches?.length) {
+    const have = new Set(dated.map(a => a.on))
+    for (const f of data.matches) {
+      const v = f.value as unknown as {name?: string; on?: string; competition?: string; sport?: string}
+      if (f.status !== 'approved' || f.confidence < 2 || !v.name || !v.on || !/^\d{4}-\d{2}-\d{2}$/.test(v.on) || have.has(v.on)) continue
+      if ((v.sport ?? 'football') !== 'football' || !NOTABLE_COMPETITION.test(v.competition ?? '')) continue
+      have.add(v.on)
+      dated.push({factId: f.id, title: v.name, on: v.on, year: Number(v.on.slice(0, 4)), precision: 'day' as const, hint: v.competition ?? '', locale: scriptOf(v.name, data.locales.content), sources: sourcesOf(f.sources)})
+    }
+    dated.sort((a, b) => a.on!.localeCompare(b.on!))
+  }
   return [...dated, ...yearly]
 }
 /**
@@ -91,7 +113,9 @@ export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'; season?: 
   const selection = has(LIFE_ANCHORS)
   const pack = composeLife({
     club: {id, name: data.identity.name, city: data.identity.city, country: data.identity.country},
-    aliases: selection?.aliases ?? [],
+    // the pack's own aliases first, then every spelling the club's archive is seen to write it by (`spellings.ts`): a title that
+    // says "AEK Athen" or "Olympiakos Piraeus" is still the club's own night
+    aliases: [...new Set([...(selection?.aliases ?? []), ...(CLUB_SPELLINGS[id] ?? [])])],
     skin, skinIssues: issues, skinPending: pending,
     cast, timeline: has(LIFE_TIMELINE), selection,
     anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, matches: lifeMatches(data), dataVersion: data.version,

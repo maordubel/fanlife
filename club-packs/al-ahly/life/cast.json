@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "clubId": "al-ahly",
+  "status": "proposed",
+  "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+  "names": {
+    "dad": "Mahmoud",
+    "mum": "Samia",
+    "friend": "Hossam",
+    "kiosk": "Amm Sayed",
+    "elder": "Hagg Fathy"
+  }
+}

@@ -19,6 +19,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "en"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p879",
+    "quote": "Yugoslavia totals 101 '''34'''</span>\"}},\"i\":0}}]}'> 34",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -26,8 +35,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-c5f153cbcb61339d",
@@ -49,6 +58,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p880",
+    "quote": "'''28'''</span>\"}},\"i\":0}}]}'> 28",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -56,8 +74,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-7bb36a7a6c30f83d",
@@ -79,6 +97,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p921",
+    "quote": "Cup 39 '''11'''</span>\"}},\"i\":0}}]}'> 11",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -86,8 +113,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-8b0b65f96b357eb6",
@@ -109,6 +136,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "en"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p900",
+    "quote": "Croatia totals 109 '''31'''</span>\"}},\"i\":0}}]}'> 31",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -116,8 +152,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-1b90cd5cf306cba3",
@@ -139,6 +175,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p901",
+    "quote": "'''27'''</span>\"}},\"i\":0}}]}'> 27",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -146,8 +191,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-5a61ce488aac0bf3",
@@ -169,6 +214,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p902",
+    "quote": "'''51'''</span>\"}},\"i\":0}}]}'> 51",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -176,8 +230,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-4118ff92bd0a80fb",
@@ -199,6 +253,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1010",
+    "quote": "'''110'''</span>\"}},\"i\":0}}]}'> 110",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -206,8 +269,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-fa7c74bcf743982d",
@@ -229,6 +292,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p907",
+    "quote": "'''47'''</span>\"}},\"i\":0}}]}'> 47",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -236,8 +308,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-98d028302d67d1e1",
@@ -259,6 +331,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p908",
+    "quote": "'''70'''</span>\"}},\"i\":0}}]}'> 70",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -266,8 +347,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-ae9fd4a4bc79aaeb",
@@ -289,6 +370,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p922",
+    "quote": "'''8'''</span>\"}},\"i\":0}}]}'> 8",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -296,8 +386,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-55ed9e2db875b042",
@@ -319,6 +409,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p923",
+    "quote": "'''20'''</span>\"}},\"i\":0}}]}'> 20",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -326,8 +425,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-463b6f9d8ff89cde",
@@ -349,6 +448,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1015",
+    "quote": "'''37'''</span>\"}},\"i\":0}}]}'> 37",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -356,8 +464,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-9e80681a7044c01c",
@@ -379,6 +487,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p925",
+    "quote": "'''61'''</span>\"}},\"i\":0}}]}'> 61",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -386,8 +503,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-73eefd96b2b18f7f",
@@ -409,6 +526,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p943",
+    "quote": "'''55'''</span>\"}},\"i\":0}}]}'> 55",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -416,8 +542,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-c0aa6bbe2fa320ae",
@@ -439,6 +565,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p944",
+    "quote": "'''90'''</span>\"}},\"i\":0}}]}'> 90",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -446,8 +581,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-8770d720efad0585",
@@ -469,6 +604,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "en"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1007",
+    "quote": "Croatia totals 84 '''31'''</span>\"}},\"i\":0}}]}'> 31",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -476,8 +620,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-1b589fe93c28bf6b",
@@ -499,6 +643,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1008",
+    "quote": "'''24'''</span>\"}},\"i\":0}}]}'> 24",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -506,8 +659,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-984c78bb76dc50d2",
@@ -529,6 +682,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1009",
+    "quote": "'''29'''</span>\"}},\"i\":0}}]}'> 29",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -536,8 +698,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-bb0050bafc9914dd",
@@ -559,6 +721,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1011",
+    "quote": "'''105'''</span>\"}},\"i\":0}}]}'> 105",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -566,8 +737,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-51404703d2260ddf",
@@ -589,6 +760,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1051",
+    "quote": "'''42'''</span>\"}},\"i\":0}}]}'> 42",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -596,8 +776,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-37ecd80c869b0952",
@@ -619,6 +799,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "en"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1028",
+    "quote": "Cup 14 '''2'''</span>\"}},\"i\":0}}]}'> 2",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -626,8 +815,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-0539d1480999c763",
@@ -649,6 +838,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1029",
+    "quote": "'''7'''</span>\"}},\"i\":0}}]}'> 7",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -656,8 +854,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-7b49f14956de7408",
@@ -679,6 +877,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1030",
+    "quote": "'''5'''</span>\"}},\"i\":0}}]}'> 5",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -686,8 +893,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-35f07d7a860c9282",
@@ -709,6 +916,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1031",
+    "quote": "'''12'''</span>\"}},\"i\":0}}]}'> 12",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -716,8 +932,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-1d876d47a2406709",
@@ -739,6 +955,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1032",
+    "quote": "'''15'''</span>\"}},\"i\":0}}]}'> 15",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -746,8 +971,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  },
  {
   "id": "ga-6bafe141011b48ba",
@@ -769,6 +994,15 @@
     "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
     "fetchedAt": "2026-10-13T10:48:05.914Z",
     "language": "other"
+   },
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1050",
+    "quote": "'''49'''</span>\"}},\"i\":0}}]}'> 49",
+    "bodyHash": "1f6de99c5963bf3e8afe2d1d0f1fbbd8aab2bb1ab4c6cbf09fb9f9ce6e91bdd3",
+    "fetchedAt": "2026-11-03T11:21:28.688Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -776,7 +1010,7 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-13T10:48:05.914Z",
-  "updatedAt": "2026-10-13T10:48:05.914Z"
+  "createdAt": "2026-11-03T11:21:28.688Z",
+  "updatedAt": "2026-11-03T11:21:28.688Z"
  }
 ]
