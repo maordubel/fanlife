@@ -183,6 +183,26 @@ def headline(sp, key: str, text: str, kicker: str | None = None, size: int = 0, 
     return F.cropped(sp.render(f'hd-{key}', body, extra_css='.s{padding:0 18px 18px 0}'))
 
 
+def glide(z0, z1, c0, c1, dur):
+    """A camera that starts where the beat says (fractions of the canvas) — for art whose top must stay out of shot."""
+    def f(t):
+        k = ease_in_out(t / max(dur, 0.1))
+        return z0 + (z1 - z0) * k, CW * (c0[0] + (c1[0] - c0[0]) * k), CH * (c0[1] + (c1[1] - c0[1]) * k)
+    return f
+
+
+def game_mark(sp, game: str, width: int) -> Image.Image:
+    if game == 'rumble':
+        body = ('<div class="sh" style="inset:16px 0 0 16px"></div><div class="box" style="padding:14px 34px 18px;border-width:7px;transform:rotate(-2deg)">'
+                '<div class="caps" style="font-size:34px;color:var(--ink);padding-bottom:4px">FAN LIFE · Gate 9</div>'
+                '<div class="head" style="font-size:150px;line-height:.86;color:var(--accent);text-shadow:8px 8px 0 var(--ink)">Royal<br>Rumble</div>'
+                '<div class="caps" style="font-size:30px;padding-top:12px">Your club · your five · your budget</div></div>')
+        im = F.cropped(sp.render('mark-rumble', body, extra_css='.s{padding:20px 30px 30px 20px}'))
+    else:
+        im = F.img(LOGOS[game])
+    return im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+
+
 def tag(sp, text: str) -> Image.Image:
     return F.cropped(sp.label(key_of('tag', text), text, 'ink', 26 if SHORT else 22))
 
@@ -253,6 +273,8 @@ def main():
                 z0, z1 = p.get('zoom', (1.0, 1.08))
                 pan = p.get('pan', (0, 0))
                 cam = cam_push(z0, z1, pan[0], pan[1], dur)
+                if p.get('c0'):
+                    cam = glide(z0, z1, p['c0'], p.get('c1', p['c0']), dur)
                 if head:
                     hy = p.get('y', 0.74 if SHORT else 0.80)
                     hx = W / 2 if SHORT else 80 + head.width / 2
@@ -271,8 +293,12 @@ def main():
                     cues.append((0.55, 'stamp'))
             elif k in ('phone', 'clip'):
                 world = tinted(seq * 7 + i, p.get('ground', accent), 0.5)
-                ph_h = p.get('ph', 1180 if SHORT else 880)
-                at = (W / 2, H - FOOT - ph_h / 2 - 30) if SHORT else (W * 0.30, H * 0.5)
+                ph_h = p.get('ph', 1000 if SHORT else 880)
+                if SHORT:
+                    y_top = TOP + 20 + (head.height + 26 if head else 120)
+                    at = (W / 2, y_top + (ph_h + 62) / 2)
+                else:
+                    at = (W * 0.30, H * 0.5)
                 if k == 'phone':
                     shot_im = Image.open(cap_path(caps, p['cap']))
                     if p.get('crop'):
@@ -285,14 +311,13 @@ def main():
                     world_frames = PhoneClip(clip, world, at, ph_h, aspect)
                     cam = lambda tt: (1.0, CW / 2, CH / 2)   # noqa: E731 — the recording is the motion
                 if head:
-                    pos = (W / 2, TOP + 30 + head.height / 2) if SHORT else (W * 0.70, H * 0.34)
+                    pos = (W / 2, TOP + 20 + head.height / 2) if SHORT else (W * 0.70, H * 0.34)
                     layers.append(Layer(head, slam(pos[0], pos[1], 0.45, s0=1.35, rot=-1.5), settle=1e9))
                     cues.append((0.45, 'stamp'))
             elif k == 'title':
                 world, entry = tinted(seq * 5 + i, accent, 0.62), 'black' if i == 0 else entry
-                logo = F.img(LOGOS[p.get('logo', ITEM['game'])])
-                lw = 560 if SHORT else 520
-                logo = logo.resize((lw, round(logo.height * lw / logo.width)), Image.LANCZOS)
+                lw = (600 if SHORT else 560) if p.get('logo', ITEM['game']) == 'rumble' else (560 if SHORT else 520)
+                logo = game_mark(sp, p.get('logo', ITEM['game']), lw)
                 lpos = (W / 2, TOP + 120 + logo.height / 2) if SHORT else (W * 0.27, H * 0.47)
                 layers.append(Layer(logo, slam(lpos[0], lpos[1], 0.25, s0=1.9, rot=-6, dur=0.35), settle=1e9))
                 cues += [(0.0, 'whoosh'), (0.25, 'stamp')]
@@ -339,9 +364,7 @@ def main():
                             layers.append(Layer(ci, (lambda tt, t0=t0, t1=t1, cx=cx, cy=cy: None if not (t0 + 0.12 <= tt < t1) else Pose(cx, cy, max(0.05, min(1.0, (tt - t0 - 0.12) / 0.16 * 1.15)), -6, 1))))
             elif k == 'end':
                 world, entry = crumpled(4, CANVAS, '#2A2620').convert('RGB'), 'wipe'
-                gl = F.img(LOGOS[ITEM['game']])
-                gw = 420 if SHORT else 380
-                gl = gl.resize((gw, round(gl.height * gw / gl.width)), Image.LANCZOS)
+                gl = game_mark(sp, ITEM['game'], 420 if SHORT else 400)
                 layers.append(Layer(gl, slam(W * 0.20, H * 0.42, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
                 hd = fit(F.cropped(sp.cta_headline(key_of('e', ITEM['id']), game['end_head'], SUB.pick('end_line', seq))), 1200, 260)
                 layers.append(Layer(hd, slide_in(560 + hd.width / 2, H * 0.36, 0.55, frm=(900, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
@@ -358,9 +381,7 @@ def main():
             else:   # call — the Short's close
                 follow = SUB.ART / 'reel-follow.jpg'
                 world, cam = (F.glass(follow), F.still) if follow.exists() else (tinted(seq, accent), cam)
-                gl = F.img(LOGOS[ITEM['game']])
-                gw = 330
-                gl = gl.resize((gw, round(gl.height * gw / gl.width)), Image.LANCZOS)
+                gl = game_mark(sp, ITEM['game'], 420 if ITEM['game'] == 'rumble' else 330)
                 layers.append(Layer(gl, slam(W / 2, TOP + 40 + gl.height / 2, 0.2, s0=1.8, rot=-8, dur=0.3), settle=1e9))
                 hd = fit(F.cropped(sp.cta_headline(key_of('call', ITEM['id']), game['end_head'], SUB.pick('reel_line', seq))), W - 80, 300)
                 y2 = TOP + 80 + gl.height + hd.height / 2
@@ -380,7 +401,7 @@ def main():
             if p.get('stub'):
                 layers += SUB.stub_layers(sp, 'fl-' + ITEM['id'], SUB.pick('stub', seq), W * 0.70, H * 0.66, 1.2, min(4.2, dur - 1.4), 700, cues, brand='fl')
             caps_ov = None
-            if p.get('words') and p.get('captions', not SHORT and k in ('phone', 'clip')):
+            if p.get('words') and p.get('captions', not SHORT and (k in ('phone', 'clip') or (k == 'art' and not p.get('head')))):
                 c = Captions(p['words'], p['voice_at'] - p['start'], accent)
                 caps_ov = c
             shot = Shot(index=i, duration=dur, world=world, camera=cam, layers=layers, entry=entry, shake=shake, cues=cues,

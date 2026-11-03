@@ -71,7 +71,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with: {path: out, pattern: 'promo-*', merge-multiple: true}
-      - name: Publish (branch promo-publish, kept: items not re-rendered stay)
+      - name: Publish to the branch promo-publish (items not re-rendered stay)
         run: |
           git clone -q --depth 1 -b promo-publish "https://github.com/${{ github.repository }}.git" pub 2>/dev/null || (mkdir pub && cd pub && git init -q && git checkout -q -b promo-publish)
           cp -r out/. pub/

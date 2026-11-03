@@ -170,7 +170,9 @@ def legends(ctx, out: Path, club: str, video: bool):
     if not video:
         r.shot(page, 'founded')
     # From here the flow is read off the screen, step by step: the board's story, the line, the cards, the next line.
-    prio = [r'^skip', r'^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)', r'^(GK|DF|MF|FW)\b']
+    prio = [r'^pull the lever', r'^skip', r'^(continue|next|go on|let.s go|start|to the draft|meet|sign|confirm|register|done|play|kick off|watch)', r'^(GK|DF|MF|FW)\b']
+    block = re.compile(r'^(menu|pin|←|legends manager|fewer clubs|more clubs|sound|rules|how to play|\?|close|×|delete|put away|archive|full screen|menu)', re.I)
+    tries: dict[str, int] = {}
     for k in range(40):
         page.wait_for_timeout(1400)
         clicked = None
@@ -187,10 +189,26 @@ def legends(ctx, out: Path, club: str, video: bool):
             page.wait_for_timeout(2600)
         else:
             for rx in prio:
-                if click_text(page, rx, 700):
+                if tries.get(rx, 0) < 6 and click_text(page, rx, 700):
                     clicked = rx
+                    tries[rx] = tries.get(rx, 0) + 1
                     break
-            page.wait_for_timeout(1800)
+            if clicked is None:     # read the screen: the first live control that is not chrome
+                for b in page.query_selector_all('button'):
+                    try:
+                        lab = ((b.get_attribute('aria-label') or b.inner_text() or '').strip())[:80]
+                    except Exception:
+                        continue
+                    if not lab or block.search(lab) or not b.is_visible() or not b.is_enabled() or tries.get(lab, 0) >= 2:
+                        continue
+                    try:
+                        b.scroll_into_view_if_needed(timeout=1500)
+                        b.click(timeout=1500)
+                    except Exception:
+                        continue
+                    clicked, tries[lab] = lab, tries.get(lab, 0) + 1
+                    break
+            page.wait_for_timeout(2400)
         r.mark(f'step{k:02d}')
         if not video:
             r.shot(page, f'step{k:02d}')
