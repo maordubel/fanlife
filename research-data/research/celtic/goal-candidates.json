@@ -415,6 +415,15 @@
     "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
     "fetchedAt": "2026-10-30T10:27:39.583Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/1888-1919-pics/1911-pics/1911-04-01-heart-of-midlothian-1-1-celtic-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 2012-13 Pictures | 2012 – 2013 | 2010's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "aab4e9579df92471a91b81886fec27eddc605e52998665631127b01f70185db3",
+    "fetchedAt": "2026-11-03T11:20:42.768Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -422,8 +431,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:39.583Z",
-  "updatedAt": "2026-10-30T10:27:39.583Z"
+  "createdAt": "2026-11-03T11:20:42.768Z",
+  "updatedAt": "2026-11-03T11:20:42.768Z"
  },
  {
   "id": "ga-5359cb1bdfb22aae",
