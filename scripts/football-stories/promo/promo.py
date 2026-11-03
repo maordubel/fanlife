@@ -73,7 +73,7 @@ def art_src(aid: str) -> Image.Image:
         ImageDraw.Draw(im).rectangle(z, fill=paper)
         d = round((z[3] - z[1]) * 2.3)
         badge = Image.open(LOGOS['fanlife']).convert('RGBA').resize((d, d), Image.LANCZOS)
-        x, y = z[0] + 70, z[1] + 6
+        x, y = z[0] + 150, z[1] + 62      # inside what a film's canvas margin leaves on screen
         ink = Image.new('RGBA', badge.size, hex_rgb(INK) + (255,))
         ink.putalpha(badge.getchannel('A'))
         im.paste(ink, (x + 10, y + 10), ink)

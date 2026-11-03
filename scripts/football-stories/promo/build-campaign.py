@@ -56,7 +56,7 @@ item('rr-film', 'rumble', 'film', 1, '2026-11-04',
        'say': 'Five-a-side for fifteen million, or the full eleven for about thirty-five. Pick your shape.', 'min': 6.0},
       {'kind': 'card', 'art': 'clubs/aek-athens/original-21', 'head': 'Send your mate\nthe link.', 'ground': AEK,
        'say': "Then send your mate the link. Same deck, same budget. Now it's not an argument. It's a result."},
-      {'kind': 'montage', 'arts': ['clubs/olympiacos/2024-victory-away-end', 'clubs/panathinaikos/terrace', 'clubs/aek-athens/terrace'],
+      {'kind': 'montage', 'arts': ['clubs/olympiacos/2024-victory-away-end', 'clubs/panathinaikos/terrace', 'clubs/aek-athens/matchday-walk'],
        'names': ['Olympiacos', 'Panathinaikos', 'AEK Athens'], 'crests': ['olympiacos', 'panathinaikos', 'aek-athens'],
        'say': 'Olympiacos. Panathinaikos. AEK. Celtic, St. Pauli, Hapoel Tel Aviv, and more. Your club is waiting.', 'cues': [[0.1, 'crowd-goal']]},
      ], thumb={'art': 'royal-rumble/legends-one-team', 'focus': [0.42, 0.75], 'head': 'Your all-time five.\n€15M.', 'kicker': 'Settle the argument'})
@@ -103,7 +103,7 @@ item('lm-film', 'legends', 'film', 2, '2026-11-05',
        'say': "A week later, they won six–one, after extra time. That's football. Now it's on you.", 'cues': [[1.2, 'crowd-goal']]},
       {'kind': 'card', 'art': 'clubs/panathinaikos/matchday-walk', 'head': 'Two windows\na season.', 'kicker': 'Buy and sell inside your club’s history',
        'say': "Two windows a season. Buy and sell inside your club's history, season after season. Your dynasty."},
-      {'kind': 'montage', 'arts': ['clubs/olympiacos/2024-greek-poster', 'clubs/panathinaikos/gate-13', 'clubs/aek-athens/original-21'],
+      {'kind': 'montage', 'arts': ['clubs/olympiacos/2024-greek-poster', 'clubs/panathinaikos/gate-13', 'clubs/aek-athens/matchday-walk'],
        'names': ['Olympiacos', 'Panathinaikos', 'AEK Athens'], 'crests': ['olympiacos', 'panathinaikos', 'aek-athens'],
        'say': 'Olympiacos. Panathinaikos. AEK. Celtic, St. Pauli, Hapoel Tel Aviv, and more. Pick your club.'},
      ], thumb={'art': 'clubs/olympiacos/2024-victory-away-end', 'focus': [0.5, 0.5], 'head': 'You shouted\nfor years.\nYour turn.', 'kicker': 'Legends Manager'})
@@ -163,7 +163,7 @@ short('rr-s6', 'rumble', 8, '2026-11-16', 'AEK fans: 1,181 players. Five places.
 
 short('lm-s1', 'legends', 9, '2026-11-07', "You've shouted at the manager for years. Your turn.",
       "You've shouted at the manager for years. Legends Manager: one club, its own legends, a whole season — on you.", [], [
-      {'kind': 'card', 'art': 'legends-manager/build-your-legacy', 'region': [0, 430, 1672, 941], 'head': "You've shouted at\nthe manager\nfor years.", 'say': "You've been shouting at the manager for years.", 'lead': 0.4},
+      {'kind': 'card', 'art': 'legends-manager/build-your-legacy', 'region': [0, 490, 1672, 941], 'head': "You've shouted at\nthe manager\nfor years.", 'say': "You've been shouting at the manager for years.", 'lead': 0.4},
       {'kind': 'title', 'logo': 'legends', 'head': 'Your turn.', 'say': 'Your turn.', 'min': 2.4},
       {'kind': 'phone', 'cap': 'olympiacos/legends/door', 'head': 'One club.\nIts own legends.', 'say': 'One club. Its own legends. A whole season, on you.'},
       ])
@@ -175,7 +175,7 @@ short('lm-s2', 'legends', 10, '2026-11-09', '17 legends. One lever. Who do you s
       ])
 short('lm-s3', 'legends', 11, '2026-11-11', 'Half-time. One down. What do you change?',
       'Half-time, one down. In Legends Manager you stand on the touchline: up to three stops a match, three changes, tactics you can turn.', [], [
-      {'kind': 'card', 'art': 'legends-manager/make-the-call', 'region': [0, 340, 1300, 941], 'head': 'Half-time.\nOne down.', 'say': "Half-time. You're one down.", 'lead': 0.4},
+      {'kind': 'card', 'art': 'legends-manager/make-the-call', 'region': [0, 395, 1300, 941], 'head': 'Half-time.\nOne down.', 'say': "Half-time. You're one down.", 'lead': 0.4},
       {'kind': 'slam', 'head': 'What do\nyou change?', 'say': 'What do you change?', 'min': 1.8},
       {'kind': 'phone', 'cap': LEG_XI, 'head': 'Shape. Captain.\nThree stops.', 'say': 'Pick the shape. Name the captain. Then up to three stops a match, and three changes.'},
       ])
@@ -188,14 +188,14 @@ short('lm-s4', 'legends', 12, '2026-11-13', '4–1 down at home. Then 6–1 away
       ], accent=OLY)
 short('lm-s5', 'legends', 13, '2026-11-15', 'No ratings out of 100. Just stars.',
       "Legends Manager rates every legend in stars, never in numbers — measured against his own club. Your club's hero is still a hero.", [], [
-      {'kind': 'card', 'art': 'legends-manager/build-your-squad', 'region': [0, 300, 1180, 941], 'head': 'No ratings\nout of 100.', 'say': 'No ratings out of a hundred.', 'lead': 0.4},
+      {'kind': 'card', 'art': 'legends-manager/build-your-squad', 'region': [0, 350, 1180, 941], 'head': 'No ratings\nout of 100.', 'say': 'No ratings out of a hundred.', 'lead': 0.4},
       {'kind': 'slam', 'head': 'Just stars.', 'say': 'Just stars.', 'min': 1.6},
       {'kind': 'phone', 'cap': LEG_DRAFT, 'head': 'Measured against\nhis own club.', 'say': "Every legend is measured against his own club. So your club's hero is still a hero."},
       ])
 short('lm-s6', 'legends', 14, '2026-11-17', 'Panathinaikos or AEK? Their legends need a manager.',
       "Panathinaikos or AEK? Olympiacos, Celtic, St. Pauli? Every club's legends need a manager — pick yours.", ['#Panathinaikos', '#AEK'], [
       {'kind': 'art', 'art': 'clubs/panathinaikos/terrace', 'focus': [0.45, 0.5], 'zoom': [1.0, 1.1], 'head': 'Panathinaikos?', 'say': 'Panathinaikos?', 'lead': 0.4, 'min': 1.8},
-      {'kind': 'art', 'art': 'clubs/aek-athens/terrace', 'focus': [0.5, 0.5], 'zoom': [1.0, 1.1], 'head': 'Or AEK?', 'say': 'Or AEK?', 'min': 1.8},
+      {'kind': 'art', 'art': 'clubs/aek-athens/original-21', 'focus': [0.55, 0.5], 'zoom': [1.0, 1.1], 'head': 'Or AEK?', 'say': 'Or AEK?', 'min': 1.8},
       {'kind': 'phone', 'cap': 'olympiacos/legends/door', 'head': 'Their legends\nneed a manager.', 'say': "Every club's legends need a manager. Pick yours."},
       ])
 

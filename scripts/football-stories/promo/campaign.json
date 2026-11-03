@@ -152,7 +152,7 @@
      "arts": [
       "clubs/olympiacos/2024-victory-away-end",
       "clubs/panathinaikos/terrace",
-      "clubs/aek-athens/terrace"
+      "clubs/aek-athens/matchday-walk"
      ],
      "names": [
       "Olympiacos",
@@ -369,7 +369,7 @@
      "arts": [
       "clubs/olympiacos/2024-greek-poster",
       "clubs/panathinaikos/gate-13",
-      "clubs/aek-athens/original-21"
+      "clubs/aek-athens/matchday-walk"
      ],
      "names": [
       "Olympiacos",
@@ -739,7 +739,7 @@
      "art": "legends-manager/build-your-legacy",
      "region": [
       0,
-      430,
+      490,
       1672,
       941
      ],
@@ -826,7 +826,7 @@
      "art": "legends-manager/make-the-call",
      "region": [
       0,
-      340,
+      395,
       1300,
       941
      ],
@@ -949,7 +949,7 @@
      "art": "legends-manager/build-your-squad",
      "region": [
       0,
-      300,
+      350,
       1180,
       941
      ],
@@ -1006,9 +1006,9 @@
     },
     {
      "kind": "art",
-     "art": "clubs/aek-athens/terrace",
+     "art": "clubs/aek-athens/original-21",
      "focus": [
-      0.5,
+      0.55,
       0.5
      ],
      "zoom": [
