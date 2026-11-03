@@ -376,3 +376,29 @@
 .wk-crest b { font-size: clamp(11px, 3.4vw, 15px); }
 .wkh-stk-nm b, .wkh-teaser b, .wkh-cont-t .wk-head { overflow-wrap: break-word; hyphens: none; }
 .wkh-stk-nm b { font-size: clamp(13px, 4.2vw, 19px); }
+
+/* TYPE FLOW (owner QA, 3.11.2026) — no word is dragged onto a line it does not need.
+   Paragraphs avoid a one-word last line; headings, labels, buttons and stamps break into even lines; a stamp never wraps. */
+body { text-wrap: pretty; }
+:where(h1, h2, h3, h4, h5, h6, summary, button, [role='tab'], [role='button'],
+  .wk-head, .wk-logo, .wk-cap, .wk-cover-name, .wk-k, .wk-btn, .wk-stamp, .wk-folders a, .wk-seg button,
+  .mag-badge, .mag-credit, .mag-ticket) { text-wrap: balance; }
+:where(.wk-stamp, .mag-badge, .mag-credit) { white-space: nowrap; }
+
+/* TAP TARGETS (owner QA, 3.11.2026) — a thumb needs 44px in both directions */
+.mag-credit, .club-who, .min-h-tap { min-width: 44px; }
+.wkh-vlink { min-height: 44px; }
+
+/* TYPE FLOW 2 — CSS-module classes and inline labels (owner QA, 3.11.2026) */
+:where(b, small, dd, figcaption, [class*='stamp'], [class*='Stamp'], [class*='coverTitle'], [class*='cover-name'],
+  [class*='shout'], [class*='_go'], [class*='cta'], [class*='chairTag'], [class*='-tag'], [class*='-mark']) { text-wrap: balance; }
+:where([class*='stamp'], [class*='Stamp'], [class*='-tag'], [class*='chairTag'], [class*='wga-mast-stamp']) { white-space: nowrap; }
+:where(bdi) { text-wrap: balance; }
+
+/* TAP TARGETS 2 — footer and legal links are real controls */
+.mag-credit { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 4px; }
+.mag-foot-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 6px; }
+.wga-hud-mark { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+.wkh-doc-nav a { display: inline-flex; align-items: center; min-height: 44px; }
+:where(.wk-tag) { white-space: nowrap; }
