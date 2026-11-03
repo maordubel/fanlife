@@ -1,0 +1,1478 @@
+{
+ "id": "iwt-04-aek-paok-2023",
+ "title": "I WAS THERE · OPAP Arena, 26 April 2023 · AEK Athens 4–0 PAOK",
+ "folder": "aek-paok-2023",
+ "drive": "https://drive.google.com/file/d/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7/view",
+ "accent": "#F2C400",
+ "music": {
+  "track": "atlasaudio-sports",
+  "gain": 0.6
+ },
+ "look": {
+  "scope": 54,
+  "vignette": 0.32,
+  "paper": "#1A1813",
+  "vertical": "fill"
+ },
+ "fixture": {
+  "home": "AEK Athens",
+  "away": "PAOK",
+  "home_short": "AEK",
+  "away_short": "PAOK",
+  "date_long": "26 April 2023",
+  "year": "2023",
+  "ground": "OPAP Arena",
+  "city": "Athens",
+  "competition": "Super League · play-offs, round 6",
+  "home_score": 4,
+  "away_score": 0,
+  "goals": [
+   {
+    "side": "home",
+    "name": "Zuber",
+    "minute_label": "21'"
+   },
+   {
+    "side": "home",
+    "name": "Moukoudi",
+    "minute_label": "24'"
+   },
+   {
+    "side": "home",
+    "name": "García",
+    "minute_label": "77'"
+   },
+   {
+    "side": "home",
+    "name": "Fernandes",
+    "minute_label": "86'"
+   }
+  ],
+  "source": "FAN LIFE archive · Sporting Life",
+  "episode": 4,
+  "date_iso": "2023-04-26",
+  "date_short": "26·4·2023",
+  "score_note": "OPAP Arena · Athens",
+  "kickoff": "21:00"
+ },
+ "sources": [
+  {
+   "claim": "date, AEK 4–0 PAOK, Super League play-offs; the play-off results after it (30.4 Panathinaikos 0–0 AEK, 3.5 AEK 0–0 Olympiacos, 8.5 Aris 1–2 AEK, 14.5 AEK 4–0 Volos) and the cup final (24.5 AEK 2–0 PAOK)",
+   "file": "club-packs/aek-athens/wave-deep-history-2026-10-08.json",
+   "short": "FAN LIFE archive"
+  },
+  {
+   "claim": "scorers Zuber 21', Moukoudi 24', García 77', Fernandes 86'; shots 18–1",
+   "url": "https://sportinglife.com/football/live/160650/aek-athens-vs-paok-salonika/stats",
+   "short": "Sporting Life"
+  },
+  {
+   "claim": "Jonsson assisted the first two goals",
+   "url": "https://www.foxsports.com/soccer/greek-super-league-aek-athens-vs-paok-apr-26-2023-game-boxscore-117509",
+   "short": "Fox Sports"
+  },
+  {
+   "claim": "Kargas sent off in the first ten minutes for studs on Jonsson's ankle; how the goals were scored; Fernandes hit the bar before García's goal; AEK and Panathinaikos level at the top after the round, Panathinaikos away next",
+   "url": "https://www.iefimerida.gr/spor/aek-paok-plei-super-league",
+   "short": "iefimerida.gr"
+  },
+  {
+   "claim": "attendance 30,570; kick-off 20:00 CEST (21:00 Athens)",
+   "url": "https://www.espn.nl/voetbal/lineups/_/wedstrijdId/667317",
+   "short": "ESPN"
+  },
+  {
+   "claim": "attendance 30,570; Agia Sophia opened 30 September 2022, AEK's own home after 19 years",
+   "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_AEK_Athens_F.C._season",
+   "short": "Wikipedia: 2022–23 AEK Athens season"
+  },
+  {
+   "claim": "before kick-off the floodlights were off and the stands lit the pitch; singing through half-time",
+   "url": "https://greekcitytimes.com/2023/04/27/american-youtuber-aek-atmosphere/",
+   "short": "Greek City Times, 27.4.2023"
+  },
+  {
+   "claim": "13th title, the first in five years",
+   "url": "https://origin01-en.protothema.gr/2023/05/15/aek-wins-greek-football-championship-photos",
+   "short": "Proto Thema"
+  },
+  {
+   "claim": "13th title, the first in the new stadium, after five years",
+   "url": "https://greekreporter.com/2023/05/15/aek-celebrates-13th-title-greece/",
+   "short": "Greek Reporter"
+  },
+  {
+   "claim": "relegated in 2013, champions ten years later, first domestic double since 1978",
+   "url": "https://www.brightonandhovealbion.com/news/3691282/who-are-aek-athens",
+   "short": "Brighton & Hove Albion FC"
+  },
+  {
+   "claim": "the 2023 cup final completed the double",
+   "url": "https://www.greekherald.com.au/sports/aek-athens-defeats-paok-to-secure-historic-double-in-greek-cup-final/",
+   "short": "The Greek Herald"
+  }
+ ],
+ "ipa": {
+  "AEK": "ˌeɪ iː kˈeɪ",
+  "PAOK": "pɑːˈɒk",
+  "Moukoudi": "muːkˈuːdi",
+  "Hajsafi": "hɑːʤsˈɑːfi",
+  "Kotarski": "kɒtˈɑːski",
+  "Schwab": "ʃvˈɑːb",
+  "Zuber": "tsˈuːbə",
+  "Kargas": "kˈɑːɹɡəs",
+  "García": "ɡɑːɹsˈiːə",
+  "Agia": "ˈɑːʝə",
+  "Sophia": "soʊfˈiːə",
+  "Filadelfeia": "filɑːðˈɛlfiə",
+  "Nea": "nˈɛə",
+  "Leoforos": "lɛˈɔfɔɹɔs",
+  "Panathinaikos": "pænæθɪnˈaɪkɒs",
+  "Olympiacos": "əlɪmpiˈɑːkɒs",
+  "Volos": "vˈɒlɒs",
+  "Jonsson": "jˈɔnsɔn",
+  "Fernandes": "fəɹnˈændɛs"
+ },
+ "film": {
+  "beats": [
+   {
+    "kind": "clip",
+    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "in": 0.0,
+    "min": 5.6,
+    "sound": "clip",
+    "gain": 1.3,
+    "entry": "black",
+    "level": 0.0,
+    "crowd_ok": true,
+    "cues": [
+     [
+      0.1,
+      "crowd-after"
+     ]
+    ],
+    "lead": 1.4,
+    "typed": {
+     "lines": [
+      "WE FILMED THREE SECONDS."
+     ],
+     "at_t": 0.5,
+     "size": 64,
+     "pos": [
+      0.5,
+      0.13
+     ],
+     "cps": 18
+    },
+    "say": "Three seconds. That's all we have of this night."
+   },
+   {
+    "kind": "black",
+    "backdrop": "beat:common/home-end-night-kr",
+    "dim": 0.6,
+    "level": 0.45,
+    "min": 5.2,
+    "entry": "cut",
+    "typed": {
+     "lines": [
+      "26 · 04 · 2023",
+      "OPAP ARENA · ATHENS"
+     ],
+     "at_t": 0.3,
+     "accent_line": 1,
+     "size": 60
+    },
+    "say": "Because for ninety minutes… we were too busy living it."
+   },
+   {
+    "kind": "title",
+    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "in": 0.4,
+    "dur": 4.8,
+    "sound": "clip",
+    "gain": 1.1,
+    "level": 1.0,
+    "crowd_ok": true,
+    "head": "I was there",
+    "kicker": "OPAP Arena · the night it was four"
+   },
+   {
+    "kind": "chapter",
+    "number": 1,
+    "title": "A home again",
+    "dur": 2.4,
+    "level": 0.8
+   },
+   {
+    "kind": "art",
+    "art": "beat:common/new-stadium-wide-kr",
+    "push": [
+     1.0,
+     1.1
+    ],
+    "level": 0.55,
+    "min": 7.0,
+    "figures": [
+     {
+      "art": "cut:common/crowd-row-scarves-up-kr",
+      "h": 0.34,
+      "x": 0.5,
+      "y": 0.93,
+      "drift": [
+       30,
+       0
+      ],
+      "at": 0.6
+     }
+    ],
+    "say": "For nineteen years, AEK had no home of its own. In September twenty twenty-two… it finally did. Agia Sophia, in Nea Filadelfeia."
+   },
+   {
+    "kind": "timeline",
+    "level": 0.5,
+    "min": 7.0,
+    "timeline": {
+     "points": [
+      {
+       "date": "2013",
+       "text": "Relegated"
+      },
+      {
+       "date": "2018",
+       "text": "Champions"
+      },
+      {
+       "date": "SEP 2022",
+       "text": "A home again"
+      },
+      {
+       "date": "APR 2023",
+       "text": "?"
+      }
+     ],
+     "title": "AEK ATHENS · TEN YEARS",
+     "at_t": 0.5,
+     "step": 1.2
+    },
+    "say": "Ten years earlier, the club had gone down. Now, in its first season back home… it was chasing a title."
+   },
+   {
+    "kind": "prop",
+    "level": 0.55,
+    "min": 6.2,
+    "entry": "fade",
+    "prop": {
+     "art": "kitprop:match_ticket",
+     "w": 0.62,
+     "texts": [
+      {
+       "t": "AEK ATHENS  v  PAOK",
+       "x": 0.42,
+       "y": 0.34,
+       "size": 64,
+       "face": "head",
+       "color": "ink"
+      },
+      {
+       "t": "OPAP ARENA · WED 26 APR 2023 · 21:00",
+       "x": 0.42,
+       "y": 0.55,
+       "size": 27,
+       "face": "type",
+       "color": "ink"
+      },
+      {
+       "t": "SUPER LEAGUE · PLAY-OFFS · ROUND 6",
+       "x": 0.42,
+       "y": 0.7,
+       "size": 27,
+       "face": "type",
+       "color": "ink"
+      }
+     ],
+     "at_t": 0.3
+    },
+    "say": "Wednesday, the twenty-sixth of April. PAOK at home. Four games left… and the title between AEK and Panathinaikos."
+   },
+   {
+    "kind": "chapter",
+    "number": 2,
+    "title": "Lights out",
+    "dur": 2.4,
+    "level": 0.6
+   },
+   {
+    "kind": "black",
+    "backdrop": "beat:common/terrace-full-kr",
+    "dim": 0.9,
+    "level": 0.35,
+    "min": 7.4,
+    "entry": "black",
+    "lights": {
+     "at_t": 0.6,
+     "n": 1600,
+     "build": 4.5,
+     "region": [
+      0.0,
+      0.05,
+      1.0,
+      0.7
+     ]
+    },
+    "cues": [
+     [
+      0.4,
+      "crowd-build"
+     ]
+    ],
+    "say": "Before kick-off, the floodlights went off… and the stands lit the pitch themselves."
+   },
+   {
+    "kind": "black",
+    "backdrop": "beat:common/choreography-kr",
+    "dim": 0.72,
+    "level": 0.6,
+    "min": 5.4,
+    "stat": {
+     "value": 30570,
+     "label": "AT AGIA SOPHIA",
+     "source": "ESPN · Wikipedia",
+     "at_t": 0.4
+    }
+   },
+   {
+    "kind": "clip",
+    "kitclip": "common/floodlights-switch-on",
+    "in": 0.0,
+    "dur": 5.0,
+    "sound": "mute",
+    "no_scope": true,
+    "level": 0.8,
+    "subscribe": true,
+    "cues": [
+     [
+      3.6,
+      "whistle"
+     ]
+    ],
+    "typed": {
+     "lines": [
+      "21:00 · KICK-OFF"
+     ],
+     "at_t": 1.4,
+     "size": 56,
+     "pos": [
+      0.5,
+      0.84
+     ],
+     "panel": true
+    }
+   },
+   {
+    "kind": "chapter",
+    "number": 3,
+    "title": "Ninety minutes",
+    "dur": 2.4,
+    "level": 0.6
+   },
+   {
+    "kind": "art",
+    "art": "beat:common/referee-red-card-n",
+    "push": [
+     1.0,
+     1.08
+    ],
+    "dim": 0.35,
+    "level": 0.4,
+    "min": 6.8,
+    "red": {
+     "name": "KARGAS",
+     "minute": "PAOK",
+     "at_t": 2.2
+    },
+    "cues": [
+     [
+      1.9,
+      "whistle"
+     ]
+    ],
+    "say": "Inside ten minutes, PAOK were down to ten. Kargas, studs on Jonsson's ankle… Straight red."
+   },
+   {
+    "kind": "black",
+    "level": 0.45,
+    "min": 7.2,
+    "entry": "fade",
+    "play": {
+     "minute": "21'",
+     "name": "STEVEN ZUBER",
+     "sub": "Kotarski to Schwab · Jonsson takes it · Zuber",
+     "source": "iefimerida.gr · Fox Sports",
+     "at_t": 0.3,
+     "theirs": [
+      {
+       "name": "KOTARSKI",
+       "keys": [
+        [
+         0,
+         34,
+         2.5
+        ],
+        [
+         1.0,
+         34.5,
+         3
+        ]
+       ]
+      },
+      {
+       "name": "SCHWAB",
+       "keys": [
+        [
+         0,
+         41,
+         13
+        ],
+        [
+         1.6,
+         40,
+         12.5
+        ],
+        [
+         2.2,
+         39,
+         12
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         25,
+         9
+        ],
+        [
+         3.0,
+         28,
+         8
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         48,
+         7
+        ],
+        [
+         3.0,
+         45,
+         6
+        ]
+       ]
+      }
+     ],
+     "ours": [
+      {
+       "name": "JONSSON",
+       "keys": [
+        [
+         0,
+         47,
+         19
+        ],
+        [
+         1.7,
+         41.5,
+         13.5
+        ],
+        [
+         2.4,
+         40,
+         12
+        ]
+       ]
+      },
+      {
+       "name": "ZUBER",
+       "keys": [
+        [
+         0,
+         31,
+         17
+        ],
+        [
+         2.4,
+         34,
+         12
+        ],
+        [
+         3.2,
+         34.5,
+         10
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         24,
+         18
+        ],
+        [
+         3.0,
+         26,
+         14
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         52,
+         20
+        ],
+        [
+         3.0,
+         50,
+         15
+        ]
+       ]
+      }
+     ],
+     "ball": [
+      {
+       "from": 0.8,
+       "to": 1.6,
+       "path": [
+        [
+         34.5,
+         3,
+         0
+        ],
+        [
+         40.5,
+         12.5,
+         0
+        ]
+       ]
+      },
+      {
+       "from": 1.9,
+       "to": 2.6,
+       "path": [
+        [
+         40.5,
+         12.5,
+         0
+        ],
+        [
+         37,
+         12,
+         0
+        ],
+        [
+         34.3,
+         11.6,
+         0
+        ]
+       ]
+      },
+      {
+       "from": 3.1,
+       "to": 3.45,
+       "path": [
+        [
+         34.3,
+         11,
+         0
+        ],
+        [
+         36.5,
+         -0.6,
+         0.4
+        ]
+       ]
+      }
+     ],
+     "goal": 3.45,
+     "callouts": [
+      [
+       0.8,
+       "KOTARSKI PLAYS IT SHORT",
+       1.0
+      ],
+      [
+       1.9,
+       "JONSSON TAKES IT OFF SCHWAB",
+       1.2
+      ]
+     ]
+    },
+    "speed_voice": 0.95,
+    "say": "Twenty-one minutes. Kotarski plays it short to Schwab. Jonsson takes it off him… Steven Zuber."
+   },
+   {
+    "kind": "black",
+    "level": 0.7,
+    "min": 3.0,
+    "entry": "cut",
+    "board": {
+     "crest": "public/club-kits/aek-athens/crest.png",
+     "away": "PAOK",
+     "score": "1 - 0",
+     "prev": "0 - 0",
+     "minute": "21'",
+     "scorers": [
+      "ZUBER 21'"
+     ],
+     "w": 0.6,
+     "at_t": 0.3
+    }
+   },
+   {
+    "kind": "black",
+    "level": 0.45,
+    "min": 7.0,
+    "entry": "fade",
+    "play": {
+     "minute": "24'",
+     "name": "HAROLD MOUKOUDI",
+     "sub": "Hajsafi corner · Jonsson heads it back · Moukoudi",
+     "source": "iefimerida.gr · Fox Sports",
+     "at_t": 0.3,
+     "ours": [
+      {
+       "name": "HAJSAFI",
+       "keys": [
+        [
+         0,
+         4,
+         1.5
+        ]
+       ]
+      },
+      {
+       "name": "JONSSON",
+       "keys": [
+        [
+         0,
+         46,
+         13
+        ],
+        [
+         1.5,
+         43,
+         7.5
+        ]
+       ]
+      },
+      {
+       "name": "MOUKOUDI",
+       "keys": [
+        [
+         0,
+         35,
+         14
+        ],
+        [
+         2.2,
+         31.5,
+         6.5
+        ],
+        [
+         2.8,
+         31.5,
+         5.5
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         26,
+         11
+        ],
+        [
+         2.0,
+         28,
+         8
+        ]
+       ]
+      }
+     ],
+     "theirs": [
+      {
+       "keys": [
+        [
+         0,
+         34,
+         1.5
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         42,
+         6
+        ],
+        [
+         1.5,
+         42,
+         7.2
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         33,
+         8
+        ],
+        [
+         2.2,
+         32.5,
+         7.5
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         28,
+         5
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         38,
+         10
+        ],
+        [
+         2,
+         36,
+         9
+        ]
+       ]
+      }
+     ],
+     "ball": [
+      {
+       "from": 0.4,
+       "to": 1.5,
+       "path": [
+        [
+         4,
+         1.5,
+         0
+        ],
+        [
+         24,
+         4,
+         9
+        ],
+        [
+         43,
+         7.5,
+         2.2
+        ]
+       ]
+      },
+      {
+       "from": 1.7,
+       "to": 2.3,
+       "path": [
+        [
+         43,
+         7.5,
+         2.2
+        ],
+        [
+         36,
+         6,
+         1.4
+        ],
+        [
+         31.8,
+         5.6,
+         0
+        ]
+       ]
+      },
+      {
+       "from": 2.75,
+       "to": 3.05,
+       "path": [
+        [
+         31.8,
+         5.6,
+         0
+        ],
+        [
+         32.6,
+         -0.6,
+         0.6
+        ]
+       ]
+      }
+     ],
+     "goal": 3.05,
+     "callouts": [
+      [
+       0.4,
+       "CORNER · HAJSAFI",
+       1.2
+      ],
+      [
+       1.7,
+       "JONSSON — BACK TO THE NEAR POST",
+       1.2
+      ]
+     ]
+    },
+    "speed_voice": 0.95,
+    "say": "Three minutes later. A corner from Hajsafi. Jonsson heads it back across… Harold Moukoudi."
+   },
+   {
+    "kind": "black",
+    "level": 0.7,
+    "min": 3.4,
+    "entry": "cut",
+    "board": {
+     "crest": "public/club-kits/aek-athens/crest.png",
+     "away": "PAOK",
+     "score": "2 - 0",
+     "prev": "1 - 0",
+     "minute": "24'",
+     "scorers": [
+      "ZUBER 21'",
+      "MOUKOUDI 24'"
+     ],
+     "w": 0.6,
+     "at_t": 0.3
+    }
+   },
+   {
+    "kind": "art",
+    "art": "beat:common/flags-pole-kr",
+    "push": [
+     1.0,
+     1.1
+    ],
+    "level": 0.75,
+    "min": 6.0,
+    "figures": [
+     {
+      "art": "cut:common/crowd-row-flags-kr",
+      "h": 0.36,
+      "x": 0.5,
+      "y": 0.95,
+      "drift": [
+       -30,
+       0
+      ],
+      "at": 0.4
+     }
+    ],
+    "cues": [
+     [
+      0.2,
+      "crowd-after"
+     ]
+    ],
+    "say": "Half-time, two–nil. And the singing never stopped… not even at the break."
+   },
+   {
+    "kind": "black",
+    "level": 0.45,
+    "min": 7.6,
+    "entry": "fade",
+    "play": {
+     "minute": "77'",
+     "name": "LEVI GARCÍA",
+     "sub": "Fernandes hits the bar · seconds later, García",
+     "source": "iefimerida.gr",
+     "at_t": 0.3,
+     "ours": [
+      {
+       "name": "FERNANDES",
+       "keys": [
+        [
+         0,
+         44,
+         22
+        ],
+        [
+         0.9,
+         42,
+         19
+        ]
+       ]
+      },
+      {
+       "name": "GARCÍA",
+       "show": 2.0,
+       "keys": [
+        [
+         0,
+         24,
+         22
+        ],
+        [
+         2.6,
+         27,
+         17.5
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         34,
+         24
+        ],
+        [
+         3.5,
+         35,
+         18
+        ]
+       ]
+      }
+     ],
+     "theirs": [
+      {
+       "keys": [
+        [
+         0,
+         34,
+         1.5
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         38,
+         12
+        ],
+        [
+         1,
+         40,
+         14
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         30,
+         11
+        ],
+        [
+         3,
+         29,
+         13
+        ]
+       ]
+      },
+      {
+       "keys": [
+        [
+         0,
+         34,
+         9
+        ]
+       ]
+      }
+     ],
+     "ball": [
+      {
+       "from": 0.6,
+       "to": 1.15,
+       "path": [
+        [
+         42,
+         19,
+         0
+        ],
+        [
+         36,
+         6,
+         1.6
+        ],
+        [
+         34,
+         0,
+         2.44
+        ]
+       ],
+       "fade": true
+      },
+      {
+       "from": 1.15,
+       "to": 1.6,
+       "path": [
+        [
+         34,
+         0,
+         2.44
+        ],
+        [
+         33,
+         8,
+         1.0
+        ],
+        [
+         32,
+         12,
+         0
+        ]
+       ],
+       "kick": false,
+       "fade": true,
+       "hide": true
+      },
+      {
+       "from": 2.7,
+       "to": 3.15,
+       "path": [
+        [
+         27.2,
+         17,
+         0
+        ],
+        [
+         33,
+         6,
+         1.5
+        ],
+        [
+         36.6,
+         -0.4,
+         2.0
+        ]
+       ]
+      }
+     ],
+     "bar": 1.15,
+     "goal": 3.15,
+     "callouts": [
+      [
+       0.6,
+       "FERNANDES — THE BAR",
+       1.3
+      ],
+      [
+       2.3,
+       "GARCÍA · LEFT FOOT · EDGE OF THE BOX",
+       1.4
+      ]
+     ]
+    },
+    "speed_voice": 0.95,
+    "say": "Seventy-seven. Paolo Fernandes hits the bar… and seconds later, Levi García. Left foot, from the edge of the box."
+   },
+   {
+    "kind": "black",
+    "level": 0.7,
+    "min": 3.4,
+    "entry": "cut",
+    "board": {
+     "crest": "public/club-kits/aek-athens/crest.png",
+     "away": "PAOK",
+     "score": "3 - 0",
+     "prev": "2 - 0",
+     "minute": "77'",
+     "scorers": [
+      "ZUBER 21'",
+      "MOUKOUDI 24'",
+      "GARCÍA 77'"
+     ],
+     "w": 0.6,
+     "at_t": 0.3
+    }
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 4.0,
+    "cues": [
+     [
+      0.1,
+      "heart"
+     ],
+     [
+      0.9,
+      "heart"
+     ]
+    ],
+    "lead": 1.6,
+    "speed_voice": 0.9,
+    "typed": {
+     "lines": [
+      "86'"
+     ],
+     "at_t": 0.2,
+     "size": 150,
+     "face": "ultra-latin-400-normal.woff2",
+     "cps": 8
+    },
+    "say": "And Fernandes, who had been looking for one all night…"
+   },
+   {
+    "kind": "clip",
+    "kitclip": "common/clip-ball-into-net-kr",
+    "in": 0.0,
+    "dur": 3.6,
+    "sound": "mute",
+    "no_scope": true,
+    "level": 1.0,
+    "cues": [
+     [
+      1.1,
+      "boom"
+     ],
+     [
+      1.15,
+      "crowd-goal"
+     ]
+    ]
+   },
+   {
+    "kind": "art",
+    "art": "beat:common/celebration-pile-kr",
+    "push": [
+     1.04,
+     1.12
+    ],
+    "level": 1.0,
+    "min": 4.6,
+    "figures": [
+     {
+      "art": "cut:common/fig-celebrate-knee-slide-kr",
+      "h": 0.62,
+      "x": 0.5,
+      "y": 0.8,
+      "drift": [
+       0,
+       0
+      ],
+      "at": 0.2,
+      "rise": 220
+     }
+    ],
+    "cues": [
+     [
+      0.2,
+      "crowd-after"
+     ]
+    ],
+    "say": "Found one."
+   },
+   {
+    "kind": "black",
+    "level": 0.8,
+    "min": 4.6,
+    "entry": "cut",
+    "board": {
+     "crest": "public/club-kits/aek-athens/crest.png",
+     "away": "PAOK",
+     "score": "4 - 0",
+     "prev": "3 - 0",
+     "minute": "86'",
+     "scorers": [
+      "ZUBER 21'",
+      "MOUKOUDI 24'",
+      "GARCÍA 77'",
+      "FERNANDES 86'"
+     ],
+     "w": 0.6,
+     "at_t": 0.3
+    }
+   },
+   {
+    "kind": "black",
+    "backdrop": "beat:common/terrace-full-kr",
+    "dim": 0.8,
+    "level": 0.5,
+    "min": 5.6,
+    "stat": {
+     "value": 18,
+     "label": "SHOTS · PAOK HAD ONE",
+     "source": "Sporting Life match centre",
+     "at_t": 0.4,
+     "count": 0.9
+    },
+    "say": "Eighteen shots for AEK. One for PAOK."
+   },
+   {
+    "kind": "chapter",
+    "number": 4,
+    "title": "Three seconds",
+    "dur": 2.4,
+    "level": 0.5
+   },
+   {
+    "kind": "clip",
+    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "in": 0.0,
+    "level": 0.55,
+    "sound": "clip",
+    "gain": 1.2,
+    "crowd_ok": true,
+    "speed_voice": 0.95,
+    "clock": "22:59",
+    "doc": "OPAP Arena · full time",
+    "say": "This is what we filmed. Ninety minutes… four–nil."
+   },
+   {
+    "kind": "black",
+    "level": 0.45,
+    "min": 6.2,
+    "entry": "fade",
+    "typed": {
+     "lines": [
+      "AEK · PANATHINAIKOS",
+      "LEVEL AT THE TOP"
+     ],
+     "at_t": 0.3,
+     "accent_line": 1,
+     "size": 64
+    },
+    "say": "Level on points at the top. And on Sunday… Panathinaikos, away."
+   },
+   {
+    "kind": "chapter",
+    "number": 5,
+    "title": "What came next",
+    "dur": 2.4,
+    "level": 0.7
+   },
+   {
+    "kind": "timeline",
+    "level": 0.6,
+    "min": 8.4,
+    "timeline": {
+     "points": [
+      {
+       "date": "30 APR",
+       "text": "Panathinaikos 0–0"
+      },
+      {
+       "date": "3 MAY",
+       "text": "Olympiacos 0–0"
+      },
+      {
+       "date": "8 MAY",
+       "text": "Aris 1–2 AEK"
+      },
+      {
+       "date": "14 MAY",
+       "text": "AEK 4–0 Volos"
+      }
+     ],
+     "title": "THE LAST FOUR",
+     "at_t": 0.6,
+     "step": 1.3
+    },
+    "say": "A draw at Leoforos. A draw with Olympiacos. A win in Thessaloniki… and then, on the last night, Volos. Four–nil."
+   },
+   {
+    "kind": "art",
+    "art": "beat:common/trophy-lift-crowd-kr",
+    "push": [
+     1.0,
+     1.1
+    ],
+    "level": 1.0,
+    "min": 6.4,
+    "typed": {
+     "lines": [
+      "14 MAY 2023",
+      "CHAMPIONS"
+     ],
+     "at_t": 0.4,
+     "accent_line": 1,
+     "size": 70
+    },
+    "cues": [
+     [
+      0.3,
+      "crowd-final"
+     ]
+    ],
+    "say": "Champions. The thirteenth title… the first in their new home."
+   },
+   {
+    "kind": "clip",
+    "kitclip": "common/clip-confetti-kr",
+    "in": 0.0,
+    "dur": 6.4,
+    "sound": "mute",
+    "no_scope": true,
+    "level": 1.0,
+    "typed": {
+     "lines": [
+      "24 MAY 2023 · CUP FINAL",
+      "AEK 2–0 PAOK"
+     ],
+     "at_t": 0.5,
+     "accent_line": 1,
+     "size": 62,
+     "panel": true
+    },
+    "say": "Ten days later, PAOK again — in the cup final. Two–nil. The first double since nineteen seventy-eight."
+   },
+   {
+    "kind": "clip",
+    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "in": 0.5,
+    "level": 0.8,
+    "sound": "clip",
+    "gain": 1.0,
+    "crowd_ok": true,
+    "speed_voice": 0.92,
+    "say": "A whole season… and we kept three seconds of it."
+   },
+   {
+    "kind": "end",
+    "min": 5.0,
+    "level": 0.7,
+    "say": "Were you there?"
+   }
+  ],
+  "thumbnail": {
+   "at": 2.0,
+   "text": "We filmed 3 seconds",
+   "sub": "It was 4–0"
+  },
+  "description": "Wednesday, 26 April 2023. AEK Athens against PAOK at the new OPAP Arena, four games left in the title race. We filmed three seconds of it — the ground's own scoreboard at full time. I WAS THERE tells the rest: a club home again after nineteen years, the floodlights off before kick-off, a red card inside ten minutes, four goals re-drawn from the match reports, and what came after.\n\nAEK Athens 4–0 PAOK · Super League play-offs · OPAP Arena (Agia Sophia), Nea Filadelfeia. The goal plates are reconstructions from the reports listed below."
+ },
+ "reel": {
+  "beats": [
+   {
+    "kind": "hook",
+    "clip": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+    "in": 0.0,
+    "dur": 3.3,
+    "sound": "clip",
+    "gain": 1.3,
+    "crowd_ok": true,
+    "hook": "We filmed 3 seconds.",
+    "accent_line": "It was 4–0.",
+    "level": 0.7
+   },
+   {
+    "kind": "black",
+    "backdrop": "beat:common/terrace-full-kr",
+    "dim": 0.9,
+    "level": 0.4,
+    "min": 5.0,
+    "lights": {
+     "at_t": 0.3,
+     "n": 1300,
+     "build": 3.0,
+     "region": [
+      0.0,
+      0.1,
+      1.0,
+      0.6
+     ]
+    },
+    "say": "Floodlights off. The stands lit the pitch themselves."
+   },
+   {
+    "kind": "black",
+    "level": 0.0,
+    "min": 4.6,
+    "cues": [
+     [
+      0.1,
+      "heart"
+     ],
+     [
+      0.8,
+      "heart"
+     ]
+    ],
+    "typed": {
+     "lines": [
+      "21'",
+      "24'",
+      "77'",
+      "86'"
+     ],
+     "at_t": 0.2,
+     "size": 120,
+     "face": "ultra-latin-400-normal.woff2",
+     "cps": 8,
+     "gap": 0.3
+    },
+    "lead": 1.2,
+    "say": "Twenty-one. Twenty-four. Seventy-seven. Eighty-six."
+   },
+   {
+    "kind": "black",
+    "level": 0.8,
+    "min": 4.6,
+    "entry": "cut",
+    "board": {
+     "crest": "public/club-kits/aek-athens/crest.png",
+     "away": "PAOK",
+     "score": "4 - 0",
+     "prev": "3 - 0",
+     "minute": "90:00",
+     "scorers": [
+      "ZUBER 21'",
+      "MOUKOUDI 24'",
+      "GARCÍA 77'",
+      "FERNANDES 86'"
+     ],
+     "w": 0.92,
+     "at_t": 0.3
+    },
+    "say": "Four–nil. PAOK."
+   },
+   {
+    "kind": "black",
+    "backdrop": "beat:common/trophy-lift-crowd-kr",
+    "dim": 0.6,
+    "level": 1.0,
+    "min": 4.6,
+    "typed": {
+     "lines": [
+      "THREE WEEKS LATER",
+      "THE DOUBLE"
+     ],
+     "at_t": 0.2,
+     "accent_line": 1,
+     "size": 70
+    },
+    "say": "Three weeks later… the double."
+   },
+   {
+    "kind": "end",
+    "min": 4.4,
+    "level": 0.7,
+    "say": "Were you there?"
+   }
+  ],
+  "description": "We filmed 3 seconds. It was 4–0. AEK Athens 4–0 PAOK, OPAP Arena, 26 April 2023 — floodlights off before kick-off, four goals, and three weeks later the double.",
+  "post": "We filmed 3 seconds. It was 4–0. 💛🖤\nAEK v PAOK · OPAP Arena · 26.4.2023\nFull film on YouTube: FanLife: Football Stories\n#AEK #AEKFC #OPAPArena #AgiaSophia #IWasThere #FANLIFE #football"
+ }
+}

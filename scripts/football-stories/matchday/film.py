@@ -40,6 +40,7 @@ from studio.audio import music_track, CROWD, fx, score, track_score  # noqa: E40
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402
+import plays as PL  # noqa: E402
 if CUT == 'reel':   # phone captions: bigger, shorter lines, above the platform's own buttons
     _caps.MAX_CHARS = 16
     _face_cls = _caps.Face
@@ -286,6 +287,8 @@ def main() -> None:
             cam = cam_for(seed, dur)
             world_frames = None
             src = folder / p['clip'] if p.get('clip') else None
+            if p.get('kitclip'):          # a studio stop-motion clip, in the club's colour
+                src = D.kit_clip(p['kitclip'], p.get('tint', ep['accent']), work)
             meta = probe(src) if src else None
 
             if kind in ('clip', 'title', 'score', 'ticket', 'hook'):
@@ -463,19 +466,19 @@ def main() -> None:
                 world = Image.new('RGB', CANVAS, (12, 11, 9))
                 if p.get('backdrop'):          # a picture under the card, darkened (history, a scene)
                     from studio.paper import cover
-                    bd = cover(Image.open(D.art_path(p['backdrop'])).convert('RGB'), CANVAS)
+                    bd = cover(D.art_image(p['backdrop'], p.get('tint', ep['accent']), 'RGB'), CANVAS)
                     world = Image.blend(world, bd, 1 - float(p.get('dim', 0.72)))
                 cam = cam_push(1.0, 1.05, 0, 0, dur)
                 entry = p.get('entry', 'black' if kind == 'black' else 'fade')
             elif kind == 'art':      # an owner illustration as a moving set: the picture pushes, its cut-outs drift over it
                 from studio.paper import cover
-                world = cover(Image.open(D.art_path(p['art'])).convert('RGB'), CANVAS)
+                world = cover(D.art_image(p['art'], p.get('tint', ep['accent']), 'RGB'), CANVAS)
                 if p.get('dim'):
                     world = Image.blend(world, Image.new('RGB', CANVAS, (8, 7, 6)), float(p['dim']))
                 z = p.get('push', [1.0, 1.08])
                 cam = cam_push(z[0], z[1], p.get('pan', [0, 0])[0], p.get('pan', [0, 0])[1], dur)
                 for j, fg in enumerate(p.get('figures', [])):
-                    fim = Image.open(D.art_path(fg['art'])).convert('RGBA')
+                    fim = D.art_image(fg['art'], fg.get('tint', ep['accent']))
                     box = fim.getchannel('A').getbbox()
                     fim = fim.crop(box) if box else fim
                     hh = int(fg.get('h', 0.6) * H)
@@ -522,6 +525,25 @@ def main() -> None:
                 ov, cs = D.timeline(tl['points'], tl.get('at_t', 0.5), tl.get('step', 1.1), ep['accent'], tl.get('title', ''))
                 extra.append(ov)
                 cues += cs
+            if p.get('play'):          # a goal re-drawn from the match reports (plays.py)
+                ov, cs = PL.play(p['play'], ep['accent'], p['play'].get('at_t', 0.2))
+                extra.append(ov)
+                cues += cs
+            if p.get('board'):         # the ground's own scoreboard, re-drawn from the owner's clip
+                bo = p['board']
+                ov, cs = PL.board(str(ROOT / bo['crest']), bo['away'], bo['score'], bo['minute'], bo.get('scorers', []), ep['accent'],
+                                  bo.get('at_t', 0.25), bo.get('w', 0.5), tuple(bo.get('pos', (0.5, 0.47))), bo.get('prev'))
+                extra.append(ov)
+                cues += cs
+            if p.get('red'):
+                ov, cs = PL.red(p['red']['name'], p['red']['minute'], p['red'].get('at_t', 0.4))
+                extra.append(ov)
+                cues += cs
+            if p.get('lights'):
+                li = p['lights']
+                ov, cs = PL.lights(li.get('at_t', 0.3), li.get('n', 1400), tuple(li.get('region', (0.0, 0.08, 1.0, 0.62))),
+                                   li.get('build', 4.0))
+                extra.append(ov)
             if p.get('bug'):
                 extra.append(D.bug(fx_['home_short'], fx_['away_short'], p['bug'], ep['accent']))
             if p.get('prop'):        # an owner prop with our type on it, slid in and settled
@@ -626,7 +648,7 @@ def main() -> None:
                 i = int(p['start'] * SR)
                 seg = (a * env)[: n - i]
                 amb[i:i + len(seg)] += seg
-    docfx = {'boom': D.boom(SR), 'tick': D.tick(SR), 'heart': D.heart(SR)}
+    docfx = {'boom': D.boom(SR), 'tick': D.tick(SR), 'heart': D.heart(SR), 'whistle': D.whistle(SR)}
     for ct, kind in all_cues:
         i = int(ct * SR)
         if kind == 'key':
