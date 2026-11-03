@@ -1,0 +1,28 @@
+{
+ "id": "rr-s3",
+ "file": "fl-promo-rr-s3.mp4",
+ "seconds": 18.2,
+ "mb": 23.0,
+ "beats": [
+  {
+   "kind": "card",
+   "start": 0.0,
+   "dur": 3.16
+  },
+  {
+   "kind": "phone",
+   "start": 3.16,
+   "dur": 3.52
+  },
+  {
+   "kind": "phone",
+   "start": 6.68,
+   "dur": 6.04
+  },
+  {
+   "kind": "call",
+   "start": 12.72,
+   "dur": 5.52
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "lm-s2",
+ "file": "fl-promo-lm-s2.mp4",
+ "seconds": 17.4,
+ "mb": 20.1,
+ "beats": [
+  {
+   "kind": "slam",
+   "start": 0.0,
+   "dur": 4.36
+  },
+  {
+   "kind": "clip",
+   "start": 4.36,
+   "dur": 4.6
+  },
+  {
+   "kind": "phone",
+   "start": 8.96,
+   "dur": 2.88
+  },
+  {
+   "kind": "call",
+   "start": 11.84,
+   "dur": 5.56
+  }
+ ]
+}

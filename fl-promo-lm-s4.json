@@ -1,0 +1,33 @@
+{
+ "id": "lm-s4",
+ "file": "fl-promo-lm-s4.mp4",
+ "seconds": 21.4,
+ "mb": 20.0,
+ "beats": [
+  {
+   "kind": "art",
+   "start": 0.0,
+   "dur": 6.04
+  },
+  {
+   "kind": "art",
+   "start": 6.04,
+   "dur": 2.88
+  },
+  {
+   "kind": "art",
+   "start": 8.92,
+   "dur": 2.96
+  },
+  {
+   "kind": "slam",
+   "start": 11.88,
+   "dur": 3.96
+  },
+  {
+   "kind": "call",
+   "start": 15.84,
+   "dur": 5.56
+  }
+ ]
+}

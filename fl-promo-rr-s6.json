@@ -1,0 +1,33 @@
+{
+ "id": "rr-s6",
+ "file": "fl-promo-rr-s6.mp4",
+ "seconds": 21.4,
+ "mb": 16.9,
+ "beats": [
+  {
+   "kind": "art",
+   "start": 0.0,
+   "dur": 6.16
+  },
+  {
+   "kind": "slam",
+   "start": 6.16,
+   "dur": 1.92
+  },
+  {
+   "kind": "phone",
+   "start": 8.08,
+   "dur": 4.2
+  },
+  {
+   "kind": "clip",
+   "start": 12.28,
+   "dur": 3.6
+  },
+  {
+   "kind": "call",
+   "start": 15.88,
+   "dur": 5.52
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "id": "rr-s2",
+ "file": "fl-promo-rr-s2.mp4",
+ "seconds": 17.5,
+ "mb": 22.0,
+ "beats": [
+  {
+   "kind": "card",
+   "start": 0.0,
+   "dur": 3.52
+  },
+  {
+   "kind": "slam",
+   "start": 3.52,
+   "dur": 1.84
+  },
+  {
+   "kind": "slam",
+   "start": 5.36,
+   "dur": 2.08
+  },
+  {
+   "kind": "phone",
+   "start": 7.44,
+   "dur": 4.52
+  },
+  {
+   "kind": "call",
+   "start": 11.96,
+   "dur": 5.52
+  }
+ ]
+}

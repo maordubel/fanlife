@@ -1,0 +1,78 @@
+{
+ "id": "rr-film",
+ "file": "fl-promo-rr-film.mp4",
+ "seconds": 120.8,
+ "mb": 37.0,
+ "beats": [
+  {
+   "kind": "art",
+   "start": 0.0,
+   "dur": 6.72
+  },
+  {
+   "kind": "card",
+   "start": 6.72,
+   "dur": 9.08
+  },
+  {
+   "kind": "title",
+   "start": 15.8,
+   "dur": 2.6
+  },
+  {
+   "kind": "phone",
+   "start": 18.4,
+   "dur": 8.92
+  },
+  {
+   "kind": "art",
+   "start": 27.32,
+   "dur": 7.36
+  },
+  {
+   "kind": "phone",
+   "start": 34.68,
+   "dur": 7.68
+  },
+  {
+   "kind": "slam",
+   "start": 42.36,
+   "dur": 5.24
+  },
+  {
+   "kind": "phone",
+   "start": 47.6,
+   "dur": 7.68
+  },
+  {
+   "kind": "clip",
+   "start": 55.28,
+   "dur": 6.48
+  },
+  {
+   "kind": "art",
+   "start": 61.76,
+   "dur": 7.0
+  },
+  {
+   "kind": "card",
+   "start": 68.76,
+   "dur": 8.24
+  },
+  {
+   "kind": "montage",
+   "start": 77.0,
+   "dur": 10.44
+  },
+  {
+   "kind": "end",
+   "start": 87.44,
+   "dur": 13.32
+  },
+  {
+   "kind": "endscreen",
+   "start": 100.76,
+   "dur": 20.0
+  }
+ ]
+}

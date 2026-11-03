@@ -1,0 +1,28 @@
+{
+ "id": "lm-s5",
+ "file": "fl-promo-lm-s5.mp4",
+ "seconds": 17.4,
+ "mb": 20.7,
+ "beats": [
+  {
+   "kind": "card",
+   "start": 0.0,
+   "dur": 3.16
+  },
+  {
+   "kind": "slam",
+   "start": 3.16,
+   "dur": 1.76
+  },
+  {
+   "kind": "phone",
+   "start": 4.92,
+   "dur": 6.96
+  },
+  {
+   "kind": "call",
+   "start": 11.88,
+   "dur": 5.56
+  }
+ ]
+}

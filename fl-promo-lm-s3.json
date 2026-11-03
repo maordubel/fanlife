@@ -1,0 +1,28 @@
+{
+ "id": "lm-s3",
+ "file": "fl-promo-lm-s3.mp4",
+ "seconds": 17.6,
+ "mb": 19.8,
+ "beats": [
+  {
+   "kind": "card",
+   "start": 0.0,
+   "dur": 3.32
+  },
+  {
+   "kind": "slam",
+   "start": 3.32,
+   "dur": 1.92
+  },
+  {
+   "kind": "phone",
+   "start": 5.24,
+   "dur": 6.84
+  },
+  {
+   "kind": "call",
+   "start": 12.08,
+   "dur": 5.56
+  }
+ ]
+}

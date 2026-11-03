@@ -1,0 +1,33 @@
+{
+ "id": "rr-s5",
+ "file": "fl-promo-rr-s5.mp4",
+ "seconds": 24.4,
+ "mb": 26.1,
+ "beats": [
+  {
+   "kind": "art",
+   "start": 0.0,
+   "dur": 4.2
+  },
+  {
+   "kind": "phone",
+   "start": 4.2,
+   "dur": 5.28
+  },
+  {
+   "kind": "phone",
+   "start": 9.48,
+   "dur": 5.8
+  },
+  {
+   "kind": "clip",
+   "start": 15.28,
+   "dur": 3.6
+  },
+  {
+   "kind": "call",
+   "start": 18.88,
+   "dur": 5.52
+  }
+ ]
+}
