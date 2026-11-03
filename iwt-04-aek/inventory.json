@@ -1,0 +1,46 @@
+{
+  "surveyed_at": "2026-11-03T15:20:43+00:00",
+  "clips": [
+    {
+      "file": "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4",
+      "bytes": 6543714,
+      "duration": 3.27,
+      "width": 1080,
+      "height": 1920,
+      "rotation": 0,
+      "fps": 30.0,
+      "codec": "h264",
+      "hdr": false,
+      "serves": "tall",
+      "shot_on": "2023-04-26T22:59:19+03:00",
+      "matchday": "2023-04-26",
+      "identifying_tags": {},
+      "audio": {
+        "lufs": -16.5,
+        "true_peak": -1.1
+      },
+      "scene_cuts": [],
+      "face_frames": 1,
+      "frames_sampled": 12,
+      "sheet": "sheets/1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4.jpg"
+    }
+  ],
+  "unreadable": [],
+  "matchdays": {
+    "2023-04-26": {
+      "clips": [
+        "1IGAwla1adU_gh1VnAV0jyT9FsybI64p7.mp4"
+      ],
+      "seconds": 3.3
+    }
+  },
+  "totals": {
+    "clips": 1,
+    "seconds": 3.3,
+    "wide": 0,
+    "tall": 1,
+    "with_identifying_tags": 0,
+    "with_faces": 1,
+    "hdr": 0
+  }
+}
