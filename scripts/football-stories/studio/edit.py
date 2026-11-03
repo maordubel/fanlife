@@ -194,6 +194,9 @@ class Editor:
         holds both legs of. Aggregate first, then away goals (as the rule stood in the season the ledger is about)."""
         if not f or f.get('kind') != 'match' or f.get('stage') == 'Final' or not f.get('date'):
             return None
+        comp = str(f.get('competition') or '')
+        if not re.search(r'cup|uefa|champions|europa|conference|intertoto|cup winners|fairs', comp, re.I):
+            return None  # a league plays each side twice, never as a tie: two derbies a month apart are not two legs
         import datetime as _d
         d2 = _d.date.fromisoformat(f['date'])
         first = None

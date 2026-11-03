@@ -570,3 +570,28 @@ class BriefNotesAndFocus(unittest.TestCase):
         from studio.common import StageError
         with self.assertRaises(StageError):
             research.focus(led, '2025-01-01', '2025-02-01')
+
+
+class LeagueIsNotATie(unittest.TestCase):
+    def test_two_league_derbies_a_month_apart_are_not_two_legs(self):
+        from studio.edit import Editor
+        def m(d, side, cg, og, comp):
+            return {'kind': 'match', 'date': d, 'side': side, 'opponent': 'Panathinaikos', 'competition': comp,
+                    'club_goals': cg, 'opponent_goals': og, 'stage': None}
+        for comp, want in (('Greek Super League', None), ('Greek Cup', True)):
+            a, b = m('2024-02-04', 'away', 0, 1, comp), m('2024-03-10', 'home', 3, 1, comp)
+            ed = Editor.__new__(Editor)
+            ed.ledger = {'season': '2023/24', 'claims': [{'fact': a}, {'fact': b}]}
+            self.assertEqual(ed.tie_through(b), want, comp)
+
+
+class ShortsDoNotRepeat(unittest.TestCase):
+    def test_two_ideas_on_the_same_night_get_two_stretches(self):
+        from studio.shorts import pick_range
+        plan = {'fps': 25, 'shots': [{'n': n, 'frames': 250, 'visual': {'type': 'art'}, 'claim_ids': c}
+                                     for n, c in enumerate([['a'], ['b'], ['b'], ['x'], ['b'], ['b'], ['b'], ['x']])]}
+        first = pick_range(plan, ['b'], max_s=30, min_s=20)
+        self.assertEqual(first, (4, 6))
+        second = pick_range(plan, ['a', 'b'], max_s=30, min_s=20, used=set(range(first[0], first[1] + 1)))
+        self.assertEqual(second, (0, 2))
+        self.assertIsNone(pick_range(plan, ['nothing']))
