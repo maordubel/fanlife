@@ -65,7 +65,7 @@ jobs:
           python3 scripts/football-stories/comic/compose.py --episode scripts/football-stories/comic/episodes/file01-demo.json \
             --panels "$RUNNER_TEMP/panels" --out "$RUNNER_TEMP/out/classified-file01-demo.mp4" --report "$RUNNER_TEMP/out/report.json"
           cat "$RUNNER_TEMP/out/report.json"
-      - if: inputs.vertical != false
+      - if: github.event_name == 'push' || inputs.vertical
         name: Render the 9:16 cut
         run: |
           python3 scripts/football-stories/comic/compose.py --episode scripts/football-stories/comic/episodes/file01-demo.json \
