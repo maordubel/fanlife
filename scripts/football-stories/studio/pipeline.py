@@ -132,7 +132,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     step('edit', 0.4, f'Rendering {len(plan["shots"])} shots')
     picture = job_dir / 'picture.mp4'
     if not picture.exists():
-        edit.render_film(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None)
+        edit.render_film(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None,
+                         tick=lambda d, t: step('edit', 0.4 + 0.38 * d / max(t, 1), f'Rendering shots: {d} of {t}'))
 
     # 6 mix
     step('mix', 0.8, 'Mixing sound')
