@@ -6,7 +6,7 @@
  "fps": 25,
  "grade": 0.45,
  "script": "docs/fanlife/classified/file01-the-bottle.script.md",
- "script_version": "draft 2, 4.11.2026",
+ "script_version": "draft 3, 4.11.2026",
  "approved": false,
  "minutes": 5.2,
  "note": "FILE 01 from the script DRAFT 2 (owner, 4.11.2026; not yet approved). Each beat's `camera` is the script's own camera direction, rendered by `move`, `transition` and the camera-life effects. Narrated beats carry `say`; their length comes from the narrator's voice (produce.py) — `dur` is only the estimate for a dry run. `cont` beats carry the previous line on another panel, sharing its time by `share`. `t0: \"word\"` lands an effect on the word in `smash_at_word` (`word2` on `smash2_at_word`); `freeze: \"word\"` stops the camera there. `@CH1` is the character sheet in the red training top, measured on each run (roles.py, owner: green = Casillas = CH2). P05 = the keeper standing in the floodlights, P15 = entering the stadium at night (owner). Chapter 3's dossier is the desk; P18 (pile-on) is not uploaded, so the shoot-out line is held. The follow line (rule 136) and the closing line are added by produce.py through studio/script.py with_cta.",
@@ -465,7 +465,7 @@
   {
    "id": "b16",
    "panel": "f01-p01-slip",
-   "say": "The one football tells: the bottle slipped, and the goalkeeper — on instinct — tried to stop it with his foot. Like a ball.",
+   "say": "The one he told the next day, back from hospital at three in the morning: he had showered, reached for the cologne, it slipped — and he put out his foot to stop it. Like a ball.",
    "dur": 7.0,
    "mood": "tense",
    "move": "slowmo",
@@ -475,13 +475,13 @@
    "share": 0.58,
    "sources": [
     5,
-    6
+    13
    ],
    "camera": "rewind tape, replay faster, version B on the right",
    "fx": [
     {
      "type": "version",
-     "text": "VERSION B · THE LEGEND",
+     "text": "VERSION B · HIS OWN WORDS",
      "side": "r",
      "ink": "navy",
      "t0": 0.3
@@ -508,7 +508,7 @@
    "fx": [
     {
      "type": "version",
-     "text": "VERSION B · THE LEGEND",
+     "text": "VERSION B · HIS OWN WORDS",
      "side": "r",
      "ink": "navy",
      "t0": 0
@@ -561,7 +561,7 @@
   {
    "id": "b18",
    "panel": "f01-p12-hospital",
-   "say": "Surgery that night at a hospital nearby. The doctors' verdict reached the camp before he did: no World Cup.",
+   "say": "Surgery that night at the general hospital in Jerez: the tendon that lifts the big toe of his right foot, cut clean through. No World Cup.",
    "dur": 14.0,
    "mood": "sad",
    "delivery": "hush",
@@ -571,7 +571,8 @@
    "transition": "fade",
    "sources": [
     1,
-    2
+    2,
+    13
    ],
    "camera": "long dolly down the corridor with the trolley",
    "fx": [
@@ -990,6 +991,10 @@
   {
    "n": 12,
    "title": "FIFA+ / Wikipedia (Gwangju World Cup Stadium) — Spain v Slovenia, Group B, 2 June 2002"
+  },
+  {
+   "n": 13,
+   "title": "EFE via Periódico de Ibiza — \"Cañizares: «Me duele no poder disputar el Mundial»\", 19 May 2002"
   }
  ],
  "package": {
