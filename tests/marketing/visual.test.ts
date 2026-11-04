@@ -26,9 +26,9 @@ describe('DUBEL TEAM kit visuals', () => {
     expect(deck).toHaveLength(5)
     expect(await visualsFor('no template here')).toHaveLength(1)
   }, 30_000)
-  it('draws every layout the v3 plan uses', async () => {
-    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v4.json', 'utf8'))
-    const ts = ['T9-OTD', 'T10-NERDS', 'T5-B', 'T11-SPICY', 'L-GATE', 'L-FACT', 'L-DUBID-SYSTEM', 'L-OFFSIDES-SYSTEM']
+  it('draws every layout the v5 plan uses', async () => {
+    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v5.json', 'utf8'))
+    const ts = ['T9-OTD', 'T10-NERDS', 'T11-SPICY', 'L-GATE', 'L-FACT', 'L-FILM', 'L-DUBID-SYSTEM', 'L-OFFSIDES-SYSTEM']
     for (const t of ts) {
       const r = rows.find(x => x.main.kit.t === t)!
       expect(r, t).toBeTruthy()
