@@ -27,7 +27,8 @@ export function StoriesDesk(){
  const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setClub(c=>c||(b.clubs.some((x:Club)=>x.id==='hapoel-tel-aviv')?'hapoel-tel-aviv':b.clubs[0]?.id||''));setHealth(b.health??null);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
  useEffect(()=>{void load()},[load])
  const live=jobs.some(j=>['queued','running','cancel_requested'].includes(j.state))
- useEffect(()=>{if(!live)return;const t=setInterval(()=>void load(),15000);return()=>clearInterval(t)},[live,load])
+ // a film in production refreshes every 15 s; otherwise once a minute, so the status lights never go stale on an open tab
+ useEffect(()=>{const t=setInterval(()=>void load(),live?15000:60000);return()=>clearInterval(t)},[live,load])
 
  async function create(e:FormEvent<HTMLFormElement>){
   e.preventDefault();setError('');setNotice('');setBusy(true)

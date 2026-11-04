@@ -22,6 +22,7 @@ from pathlib import Path
 from .common import CHANNEL_NAME, SLOGAN, StageError, read_json, sha256_json, write_json
 from .paper import beat_index, clip_index
 from .script import beat_set, SCHEMA_TEXT, WORDS_PER_MINUTE, target_words, validate_script
+from .gemini import GEMINI, gemini_candidates, suggested_model as _suggested_model
 
 SYSTEM = f'''You are the head writer of "{CHANNEL_NAME}", an English-language YouTube channel of documentary films about
 club football told through the experience of supporters. Slogan: "{SLOGAN}"
@@ -117,15 +118,23 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
     else:
         body = {'systemInstruction': {'parts': [{'text': system}]}, 'contents': [{'role': 'user', 'parts': [{'text': user}]}],
                 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': max(max_tokens, 32000)}}
-        try:
-            r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', body, {'x-goog-api-key': key})
-        except StageError as e:
-            # the free tier's Pro quota is small; Flash has its own, larger free quota
-            # (and a model the free tier no longer serves answers 404/403): fall back to Flash, never fail the film for it
-            if e.code not in ('WRITER_HTTP_429', 'WRITER_HTTP_404', 'WRITER_HTTP_403') or 'flash' in model:
-                raise
-            model = os.environ.get('STORIES_GEMINI_FALLBACK', 'gemini-2.5-flash')
-            r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', body, {'x-goog-api-key': key})
+        tries = gemini_candidates(key, os.environ.get('STORIES_GEMINI_MODEL'))
+        last: StageError | None = None
+        r = None
+        for i, model in enumerate(tries[:8]):
+            try:
+                r = _http(f'{GEMINI}/models/{model}:generateContent', body, {'x-goog-api-key': key})
+                break
+            except StageError as e:
+                # a model the free tier no longer serves (404/403) or a used-up quota (429): the next model, never a failed film
+                if e.code not in ('WRITER_HTTP_429', 'WRITER_HTTP_404', 'WRITER_HTTP_403', 'WRITER_HTTP_400'):
+                    raise
+                last = e
+                hint = _suggested_model(e)
+                if hint and hint not in tries:
+                    tries.insert(i + 1, hint)
+        if r is None:
+            raise last or StageError('WRITER_NOT_CONFIGURED', 'No Gemini model answered')
         text = ''.join(p_.get('text', '') for c in r.get('candidates', []) for p_ in c.get('content', {}).get('parts', []))
         usage = {'input': r.get('usageMetadata', {}).get('promptTokenCount'), 'output': r.get('usageMetadata', {}).get('candidatesTokenCount')}
     if not text.strip():
