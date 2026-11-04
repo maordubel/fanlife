@@ -39,4 +39,5 @@ jobs:
           cd "$RUNNER_TEMP/art" && git init -q && git checkout -q -b comic-art-tmp
           git config user.name "fanlife-render" && git config user.email "actions@users.noreply.github.com"
           git fetch -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" comic-art-tmp 2>/dev/null && git reset -q --soft FETCH_HEAD || true
-          git add -A && git commit -qm "comic art (temporary, for review)" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" comic-art-tmp
+          git add -A && git commit -qm "comic art (temporary, for review)"
+          for i in 1 2 3 4 5; do git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" comic-art-tmp && break; sleep $((i*10)); done

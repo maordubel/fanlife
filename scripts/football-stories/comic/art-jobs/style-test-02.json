@@ -1,5 +1,5 @@
 {
- "note": "Style test 02: the free FLUX endpoint (Gemini image models need billing on the key; no OpenAI key in Actions).",
+ "note": "Style test 02: the free FLUX endpoint (Gemini image models need billing on the key; no OpenAI key in Actions). (retry)",
  "models": [
   "pollinations:flux"
  ],
