@@ -32,9 +32,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
-      - run: pip install -q numpy pillow fonttools brotli && (command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null))
+      - run: pip install -q numpy pillow opencv-python-headless fonttools brotli && (command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null))
       - name: Studio tests
         run: python -m unittest discover -s scripts/football-stories/studio/tests -t scripts/football-stories -p 'test_*.py' -v
+      - name: CLASSIFIED composer tests (dummy panels — the owner's art never enters CI)
+        run: python -m unittest discover -s scripts/football-stories/comic/tests -t scripts/football-stories -p 'test_*.py' -v
       - name: Earlier engine tests
         run: cd scripts/football-stories/engine && python -m unittest discover -p 'test_*.py'
 

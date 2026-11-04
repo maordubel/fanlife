@@ -1,0 +1,30 @@
+{
+  "file": "file01",
+  "number": "01",
+  "title": "THE BOTTLE",
+  "tone": "LAUGH",
+  "fps": 25,
+  "grade": 0.45,
+  "note": "Cold open demo (≈13.6 s): the dossier and the stamp → the reach → the slip → the fall → SMASH! → the empty shelf. Facts on screen: Spain's camp at Montecastillo near Jerez, Friday 17 May 2002 (docs/fanlife/60-classified-art-brief.md). Focus points read 'subject' (the depth map's subject) so the moves follow the owner's composition.",
+  "beats": [
+    {"panel": "s02-dossier", "dur": 3.0, "move": "push", "amount": 0.12, "focus": [0.5, 0.5],
+     "fx": [{"type": "tab", "t0": 0.15},
+            {"type": "stamp", "t0": 0.75, "at": [0.5, 0.5], "rot": -9, "scale": 1.05},
+            {"type": "caption", "t0": 1.15, "label": "CASE FILE 01 · MONTECASTILLO, JEREZ", "text": "Friday, 17 May 2002. Spain's World Cup camp.", "cps": 34, "pos": "tl"}]},
+    {"panel": "f01-p08-reach", "dur": 2.4, "move": "push", "amount": 0.2, "focus": "subject", "transition": "slide",
+     "fx": [{"type": "droplets", "at": "subject", "n": 18, "spread": 0.5},
+            {"type": "glint", "at": "subject", "t0": 0.9, "size": 80, "period": 1.5}]},
+    {"panel": "f01-p01-slip", "dur": 2.8, "move": "slowmo", "focus": "subject", "speed": 0.25, "transition": "smash",
+     "fx": [{"type": "droplets", "at": "subject", "n": 34, "spread": 0.42},
+            {"type": "glint", "at": "subject", "t0": 0.5, "size": 95, "period": 2.2}]},
+    {"panel": "f01-p10-sink-smash", "dur": 2.2, "move": "push", "amount": 0.14, "ease": "out", "focus": "subject", "transition": "whip",
+     "fx": [{"type": "speedlines", "from": 0.42, "to": 0.9, "alpha": 0.8},
+            {"type": "flash", "t0": 0.42, "dur": 0.14},
+            {"type": "shards", "at": "subject", "t0": 0.42, "n": 80},
+            {"type": "stars", "at": "subject", "t0": 0.6, "n": 5, "radius": 0.15},
+            {"type": "smash", "t0": 0.44, "text": "SMASH!", "at": [0.5, 0.42]}]},
+    {"panel": "f01-p20-empty-shelf", "dur": 3.2, "move": "hold", "focus": "subject", "transition": "fade",
+     "fx": [{"type": "glint", "at": "subject", "t0": 0.3, "size": 46, "period": 2.6},
+            {"type": "title", "t0": 0.8, "at": [0.5, 0.66]}]}
+  ]
+}
