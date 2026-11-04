@@ -46,7 +46,8 @@ Added by A when it was built (4.11.2026, additive — nothing above changed mean
 (`rise | fall | rise-and-fall | fall-and-recovery | turn-up | turn-down | steady | single | tie`);
 `"turning_direction": "up|down|null"`; `"totals"` (`played, won, drawn, lost, for, against, form, gd, form_high,
 form_low`); `"note"`. Each match also carries `stage`, and `through` (true/false/null) when it is the second leg of a
-two-legged tie the ledger holds both legs of. Each moment carries `also` (its other reasons, strongest first). Each
+two-legged tie the ledger holds both legs of, with `first_leg` (the first leg's id). Each moment carries `also` (its
+other reasons, strongest first) and `score` (the raw weight before normalising — comparable across seasons). Each
 honour carries its claim `id`. The story is attached by `studio/director.py` in `pipeline.py` after any focus/pick, and
 computed again from its own claims for a ledger written before it existed (`director.story_of`).
 
@@ -135,6 +136,8 @@ disk validates exactly as before. The `follow` and `end` beats the studio adds a
 - Rule 5: the last line of every chapter but the last ends with `?`, `…` or a dash, or carries a turn word (but, until,
   then, yet, still, only, nobody, what, how, would, could, next, …). "The next chapter answers it" is the writer's craft.
 - Rule 6 is a writing rule, in the writer's prompt.
+- Also (rule 11, §1): a beat may not talk about the table, the standings, a place or points ("top of the table",
+  "second place", "five points clear") unless it cites a `table` claim. Seen in the first real Gemini script.
 
 ## 4. The cinema (B)
 
@@ -159,3 +162,22 @@ script options of a film are one per director (they replace ANGLES_V3; the optio
 director's name, and `director` its id). Each director also writes **pitches** (studio/pitch.py): the next film he
 wants to make — a club and an event no other director pitched that round and no film already made — with a title,
 a logline, the cold open and the three acts, and "Make this film" in the studio.
+
+How A built it (4.11.2026): `writer.write_options` runs the three directors in order, each with `directors.brief(d)` and
+`writer.DIRECTOR_CRAFT[d['id']]` (how that director builds a film out of the story block) in the brief; a later option
+may not repeat an earlier one's hook or chosen title (sent back like any failed check). Options carry `_angle` = name and
+`_director` = id; `option_summary` returns `director`. The busy-writer fallback is unchanged (two options are enough when
+the third must wait).
+
+For the pitch desk (studio/pitch.py, another stream):
+- `director.candidates(club_ids: list[str], seasons_per_club: int = 6) -> list[dict]` — each
+  `{club_id, club_name, kind: season|match|tie|rivalry, season, match_ids?, opponent?, story, why, score}`, one per
+  (club, kind, season or match), ranked by `score` (story-block raw weights; seasons add honours and runs). Per club: the
+  best `seasons_per_club` seasons (6+ matches), the biggest `seasons_per_club` nights, half as many two-legged ties, and a
+  rivalry per approved rival met 4+ times (`season` is `YYYY–YYYY`, ready for `research.rivalry_ledger`). Reads each
+  archive once (~5 s for a club with 3,400 matches).
+- `writer.write_pitch(director: dict, candidates: list[dict], cache_dir: Path, log) -> dict` — returns `{director,
+  club_id, kind, season, match_ids, opponent, title, logline, cold_open, acts: [3], why}`; the pick must be a candidate
+  index; title ≤ 100, logline and cold open ≤ 240, acts 3 × ≤ 160, why ≤ 300; every number, month and club name must
+  come from the picked candidate's own data. Three tries through `writer.call_model`; a busy free tier raises the same
+  wait codes as a script (`writer.WAIT_CODES`), a pitch that never passes raises `PITCH_INVALID`.
