@@ -154,24 +154,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/03/10/torhueter/",
-    "locator": "p17",
-    "quote": "mitte: expected Goals against pro 90min",
-    "bodyHash": "e701d2db43aade8a70f88c2053597b649a69066d6b5f1fb566f1fac3585e7a65",
-    "fetchedAt": "2026-10-28T10:02:29.166Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2021/03/27/say-hello-to-xg-differenz-der-spieler-beim-fc-st-pauli/",
-    "locator": "p32",
-    "quote": "Boris Tashchy weist nahezu unfassbare Werte auf. Mit ihm auf dem Platz hat der FC St. Pauli mit Abstand die größte Torwahrscheinlichkeit (3.1 Tore pro 90 Minuten!). Und auch defensiv scheint es mit Tashchy auf dem Platz besser zu laufen: 1.4 Gegentore pro 90min bedeuten den viertbesten Wert im gesamten Kader. Donnerwetter.",
-    "bodyHash": "0ebff51808af71e24e7c57f8679ce59dcfbd07f1a165977fbb53bbc7061369e6",
-    "fetchedAt": "2026-10-28T10:02:29.184Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/06/30/die-baustellen-im-kader-des-fc-st-pauli/",
     "locator": "p50",
     "quote": "Ärgerlich, sogar sehr ärgerlich ist die nun inzwischen schon langfristige Verletzung von Igor Matanović . Dem wäre es zuzutrauen trotz jungen Alters in die Startelf zu kommen. Auch deshalb, da er hinter Burgstaller der Spieler beim FCSP ist, der den höchsten xG-Wert aufweist (0.42 pro 90min, Burgstaller bei 0.55). Ob ein Duo aus Burgstaller und Matanović aber auch wirklich auf dem Platz zusammenpassen würde, ist ohnehin unklar. Es erscheint eher sinnvoll neben einem Spieler wie Burgstaller einen etwas agileren Spieler zu haben. Wenn Amenyido diese Rolle nicht übernehmen kann, dann kommt auf me",
@@ -223,6 +205,24 @@
     "bodyHash": "516e6383900cea58cffa263360928f2f9de593d07c10aeaf1a372432c1058386",
     "fetchedAt": "2026-11-03T11:22:00.372Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/18/lage-am-millerntor-18-november-2022/",
+    "locator": "p72",
+    "quote": "Lisa Vicari (Serienfans evtl. aus der Netflix-Serie „Dark“ bekannt) spielt in einem NDR-Spielfilm (90min) eine junge Polizistin in Hamburg, die in ihrem Job bei der Bereitschaftspolizei nicht unbedingt all das wiederfindet, was man sich so unter „Freund und Helfer“ in einer romantisch verklärten Vorstellung von der Polizei erhofft. Stattdessen geht es um Machtmissbrauch, Rassismus und Alkoholprobleme unter den Beamten, ein Flüchtling wird erschossen. Ja, ich hab nochmal nachgeschaut, es ist wirklich keine Doku, sondern nur ein Spielfilm.",
+    "bodyHash": "2b7f9a03e6872218a950179313325f0c787cf0876a9e74d3051508f6b47e4b18",
+    "fetchedAt": "2026-11-04T11:35:58.150Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/17/wunderdinge-aus-daenemark/",
+    "locator": "p25",
+    "quote": "90min – Daten, Daten, Daten: Der revolutionäre Aufstieg des FC Midtjylland",
+    "bodyHash": "8e34329142b444866e20a03c014310636e2f434adab3ee77fd38f67fd1ff5507",
+    "fetchedAt": "2026-11-04T11:36:09.732Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -230,8 +230,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:00.372Z",
-  "updatedAt": "2026-11-03T11:22:00.372Z"
+  "createdAt": "2026-11-04T11:36:09.732Z",
+  "updatedAt": "2026-11-04T11:36:09.732Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -337,6 +337,15 @@
     "bodyHash": "361a0642cfaf73447ed6849c05ceb5fa1aac4b90f190174e5e330b51449b62a1",
     "fetchedAt": "2026-11-02T11:43:08.110Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/02/lage-am-millerntor-2-dezember-2022/",
+    "locator": "p77",
+    "quote": "Um Politik geht es natürlich auch weiterhin im „Players“-Podcast (ca. 10min), da dann aber eher mit dem Blick auf die aktuellen Geschehnisse und die Proteste im Iran bzw. deren Auswirkungen.",
+    "bodyHash": "780ebfda69f5a5bf27a730524b808c0635f7890edb5fb0cd419b794a9fced6d1",
+    "fetchedAt": "2026-11-04T11:36:00.533Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -344,8 +353,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:08.110Z",
-  "updatedAt": "2026-11-02T11:43:08.110Z"
+  "createdAt": "2026-11-04T11:36:00.533Z",
+  "updatedAt": "2026-11-04T11:36:00.533Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -398,15 +407,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2020/04/06/lage-am-millerntor-06-04-2020-kw-15/",
-    "locator": "p83",
-    "quote": "Ob Genk nächste Saison europäisch spielen darf ist unklar und aktuell aufgrund der Tabellensituation eher unwahrscheinlich. Im Interview mit dem ZDF-Sportstudio äußerte sich UEFA-Präsident Aleksander Ceferin (4min) u.a. auch zum Saisonende in Belgien und sagte, mit dem Saisonende gefährde der Belgische Verband auch die Teilnahme seiner Vereine an den Wettbewerben der nächsten Saison, leider fehlte hier dann die Nachfrage wie er das meine, denn eigentlich nominieren die Verbände ja jeweils die eigenen Teilnehmer dafür. Nach dem Interview gab es dann aber wohl noch ein Gespräch zwischen Ceferin ",
-    "bodyHash": "d66330fe44da29a0bad37eee84190e8f8f3f0a20efb98556d784ebe09ea78f56",
-    "fetchedAt": "2026-10-23T08:52:20.339Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2020/05/19/lage-am-millerntor-19-05-2020/",
@@ -469,6 +469,15 @@
     "bodyHash": "6eab3dbe50f396ffd13dc994695742f06da74a9bf438b47cd1fc76dcbda5dc52",
     "fetchedAt": "2026-11-03T11:04:09.896Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/23/lage-am-millerntor-23-januar-2023/",
+    "locator": "p21",
+    "quote": "Und ganz nebenbei kommt auch der DFB dabei nicht sonderlich gut bei weg, u.a. sollen Spieler und Verein vor der Staatsanwaltschaft informiert gewesen sein, was in so einem Verfahren eigentlich nicht der Fall sein dürfte. // NDR (4min)",
+    "bodyHash": "59014aaa982514f7a9dc1678bfbc92ea53a5225e876213fc5c60398ba00c449e",
+    "fetchedAt": "2026-11-04T11:36:09.735Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -476,8 +485,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:04:09.896Z",
-  "updatedAt": "2026-11-03T11:04:09.896Z"
+  "createdAt": "2026-11-04T11:36:09.735Z",
+  "updatedAt": "2026-11-04T11:36:09.735Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -493,11 +502,74 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/04/28/lage-am-millerntor-04-05-2020-kw19/",
-    "locator": "p17",
-    "quote": "Zunächst gibt es gleich zwei neue Beiträge beim NDR: Ewald Lienen gibt im Video-Interview (17min) seine Lehren aus der Corona-Krise für den Fußball preis, dabei wird wie immer recht offen gesprochen.",
-    "bodyHash": "07106c4544d53c49496a89231050328ca3e28fe752ba3ab345d52878c872d16c",
-    "fetchedAt": "2026-10-25T08:45:17.479Z",
+    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
+    "fetchedAt": "2026-11-04T11:36:00.536Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
+    "fetchedAt": "2026-11-04T11:36:02.702Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "7ae458ed8099b42a9507d2d3870e903c4895ba2c2f2d47c909b87ed138b1bc72",
+    "fetchedAt": "2026-11-04T11:36:02.704Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "fbe06ee332050a946b01aa90959632c491797a675314e7c1a457d51088cb5de7",
+    "fetchedAt": "2026-11-04T11:36:02.705Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/12/lage-am-millerntor-12-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "d2f53867a2e6c43057faa78d337f1810ff1d19273bae8452b6a1dfe20d7ae2ca",
+    "fetchedAt": "2026-11-04T11:36:02.707Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/13/lage-am-millerntor-13-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "592716f441d3f1ba05ed944be81145040cdc5a46bb56870214b36fb1c69a2943",
+    "fetchedAt": "2026-11-04T11:36:02.709Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/14/lage-am-millerntor-14-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "bee183b526d94216c979ea22f98fb692e0a782fe12146069be04b7a5601676bf",
+    "fetchedAt": "2026-11-04T11:36:02.710Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/15/lage-am-millerntor-15-dezember-2022/",
+    "locator": "p12",
+    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
+    "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
+    "fetchedAt": "2026-11-04T11:36:05.651Z",
     "language": "en"
    }
   ],
@@ -506,8 +578,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.479Z",
-  "updatedAt": "2026-10-25T08:45:17.479Z"
+  "createdAt": "2026-11-04T11:36:05.651Z",
+  "updatedAt": "2026-11-04T11:36:05.651Z"
  },
  {
   "id": "ga-39c9baa061395123",
@@ -742,6 +814,24 @@
     "bodyHash": "945be9e7863d108c09ce19206f8a831f35b3ea0fcda9764abc0aa387777be542",
     "fetchedAt": "2026-11-03T11:22:12.312Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/02/lage-am-millerntor-2-dezember-2022/",
+    "locator": "p76",
+    "quote": "Gleich zweifach wurde dieses Gruppenspiel der WM im Deutschlandfunk behandelt, in beiden Fällen eher mit dem Blickwinkel auf das Drumherum. In der Serie „Fußball in Nahost“ von Ronny Blaschke ist man inzwischen bei Episode 7 (ca. 6min) angelangt und blickt dort auf die Geschichte dieses Spiels in der Vergangenheit und die politische Aufladung.",
+    "bodyHash": "780ebfda69f5a5bf27a730524b808c0635f7890edb5fb0cd419b794a9fced6d1",
+    "fetchedAt": "2026-11-04T11:36:00.533Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/13/lage-am-millerntor-13-januar-2023/",
+    "locator": "p45",
+    "quote": "Im Interview bei fussball.de berichtet er über den Weg dahin und wie er hofft, mit dieser öffentlichen Positionierung auch Vorbild zu sein. Über ihn gibt es auch einen Videobeitrag beim Hessischen Rundfunk (6min) .",
+    "bodyHash": "3e2f6a41991af8f840db90c9b76d5dde0d46b3223c6117864e10189f6879614e",
+    "fetchedAt": "2026-11-04T11:36:09.730Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -749,8 +839,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:12.312Z",
-  "updatedAt": "2026-11-03T11:22:12.312Z"
+  "createdAt": "2026-11-04T11:36:09.730Z",
+  "updatedAt": "2026-11-04T11:36:09.730Z"
  },
  {
   "id": "ga-c93874bb8f6fd490",
@@ -838,6 +928,15 @@
     "bodyHash": "5e9b8db1f4978b336f7c244e759720876b6ad423d5e009f3a25f6b7afbfb72aa",
     "fetchedAt": "2026-11-01T10:49:50.592Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/13/lage-am-millerntor-13-dezember-2022/",
+    "locator": "p47",
+    "quote": "Für die Zukunft bräuchte die DFL auch eine personell erweiterte Geschäftsführung – Themen wie 50+1, Investoren innerhalb der DFL und die Integrität des Wettbewerbs (Stichwort: TV-Geld Verteilung) stehen an. Rückblickend auf die Amtszeit von Hopfen prangert er eine „unbarmherzige Fußballkultur“ an und wünscht sich für die Zukunft „einen besseren Umgang miteinander“ … // Deutschlandfunk , Text & Audio (11min)",
+    "bodyHash": "592716f441d3f1ba05ed944be81145040cdc5a46bb56870214b36fb1c69a2943",
+    "fetchedAt": "2026-11-04T11:36:02.709Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -845,8 +944,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:49:50.592Z",
-  "updatedAt": "2026-11-01T10:49:50.592Z"
+  "createdAt": "2026-11-04T11:36:02.709Z",
+  "updatedAt": "2026-11-04T11:36:02.709Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -877,6 +976,15 @@
     "bodyHash": "db1e9b825120ffadb587566cde43c999f77a18b938138da10eb7fefa9da37790",
     "fetchedAt": "2026-10-27T09:22:15.914Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/28/lage-am-millerntor-28-november-2022/",
+    "locator": "p70",
+    "quote": "Während der WM erscheint er sogar täglich (je ca. 10-12min) und behandelt die wichtigen Themen außerhalb der rein sportlichen Berichterstattung. Aktuell also sowas wie die „One Love“-Binde, die „Mund zu“-Geste der Nationalelf und die Protestspruchbänder iranischer Fans.",
+    "bodyHash": "1faa9a1635aa1b4555d2579e29da891c463163bd3d284d9848c8d5fd040fe675",
+    "fetchedAt": "2026-11-04T11:36:00.528Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -884,8 +992,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:15.914Z",
-  "updatedAt": "2026-10-27T09:22:15.914Z"
+  "createdAt": "2026-11-04T11:36:00.528Z",
+  "updatedAt": "2026-11-04T11:36:00.528Z"
  },
  {
   "id": "ga-c85bb1efc815c755",
@@ -1012,6 +1120,24 @@
     "bodyHash": "21293448da70820741a0a31783ecaadc1a997e232874fa628e9d51f9e35fa4dd",
     "fetchedAt": "2026-11-03T11:22:03.593Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/23/lage-am-millerntor-23-november-2022/",
+    "locator": "p59",
+    "quote": "Jemand der dies aber von Berufswegen tun musste, ist Steffen Simon , früher für die Sportschau tätig und inzwischen Mediendirektor beim DFB . In dieser Funktion wurde er von Philipp May (Deutschlandfunk) interviewt (14min) .",
+    "bodyHash": "e0361a8a6aa723d1266c068e478c391e7bbecc25d8d6b71492af6f7d1a06cd01",
+    "fetchedAt": "2026-11-04T11:36:00.525Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/30/lage-am-millerntor-30-november-2022/",
+    "locator": "p47",
+    "quote": "Wenn Ihr dem Fanclub folgen wollt, habt Ihr sowohl auf Twitter und Facebook als auch Instagram die Gelegenheit dazu. // ( YouTube, ca. 14min )",
+    "bodyHash": "de2fdbb5a085968ee5761efa11ed6f060a3dfd225164fe22df89917fc86467c5",
+    "fetchedAt": "2026-11-04T11:36:00.532Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1019,8 +1145,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:03.593Z",
-  "updatedAt": "2026-11-03T11:22:03.593Z"
+  "createdAt": "2026-11-04T11:36:00.532Z",
+  "updatedAt": "2026-11-04T11:36:00.532Z"
  },
  {
   "id": "ga-3d4715fe356e053e",
@@ -1117,6 +1243,15 @@
     "bodyHash": "81c11f2732fffcda584c76aab709a623775b1ac915feeeb6fa852d7ca3796eba",
     "fetchedAt": "2026-10-27T09:22:18.694Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/05/lage-am-millerntor-05-januar-2023/",
+    "locator": "p41",
+    "quote": "Auch Sportler*innen haben sich hier teils deutlich positioniert und wurden hierfür teilweise ins Gefängnis gesteckt. SPD-Politiker Andreas Larem hat nun im Deutschlandfunk (7min) gefordert, dass die internationalen Sportverbände Sanktionen gegen den Iran aussprechen und das Land aus internationalen Wettkämpfen ausschließen.",
+    "bodyHash": "b08cc0bb84baa589a58330ead2ffd8b34fcd9297b18bf5d2a99af4ffd68d4855",
+    "fetchedAt": "2026-11-04T11:36:05.660Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1124,8 +1259,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:18.694Z",
-  "updatedAt": "2026-10-27T09:22:18.694Z"
+  "createdAt": "2026-11-04T11:36:05.660Z",
+  "updatedAt": "2026-11-04T11:36:05.660Z"
  },
  {
   "id": "ga-6fdbe5b08002270d",
@@ -1264,6 +1399,15 @@
     "bodyHash": "5f1df6e0545a74fdf9bff84ddf3dbcc4a9fde77c5e468c6b5c98da4c629f5284",
     "fetchedAt": "2026-10-27T09:22:24.181Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/25/lage-am-millerntor-25-november-2022/",
+    "locator": "p24",
+    "quote": "Wie es dazu kam und welche Bretter gebohrt werden mussten und überhaupt, könnt Ihr jetzt im Jubiläumsfilm des Museums anschauen. // YouTube (35min)",
+    "bodyHash": "e185c2845d7620f374f5af630f7d68f46cb03cf85fae45dc2b935c109f7bcb85",
+    "fetchedAt": "2026-11-04T11:36:00.527Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1271,8 +1415,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:24.181Z",
-  "updatedAt": "2026-10-27T09:22:24.181Z"
+  "createdAt": "2026-11-04T11:36:00.527Z",
+  "updatedAt": "2026-11-04T11:36:00.527Z"
  },
  {
   "id": "ga-f4ca32025f2ce9d5",
@@ -1345,38 +1489,74 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/03/23/lage-am-millerntor-23-maerz-2021/",
-    "locator": "p36",
-    "quote": "Es gibt einen englischsprachigen Podcast mit dem wunderschönen Namen „Outside Write // football culture – history – travel“ . In der aktuellen Episode ist Andrew Lawn zu Gast, der das Buch „We lose every week – The history of football chants“ geschrieben hat. Als offizieller Musikpodcast mit gelegentlichen Fußballinhalten ist es mir eine Pflicht und ein Vergnügen, Euch auf diese Folge hinzuweisen (40min).",
-    "bodyHash": "296cad65fb66c340172ce490e7cf960b36fd5dd84775e2468832a50ab15d9249",
-    "fetchedAt": "2026-10-28T10:02:29.186Z",
+    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
+    "fetchedAt": "2026-11-04T11:36:00.536Z",
     "language": "en"
    },
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/06/11/neuer-torwarttrainer/",
-    "locator": "p14",
-    "quote": "Wer sich darüber hinaus mit unserem neuen Mitglied im Trainerteam beschäftigen will, kann dies im „Gloves on“-Podcast tun, wo er im November 2021 zu Gast war (40min) und seinen Werdegang am Anfang auch erst mal selbst schildert.",
-    "bodyHash": "1b33640543b6ad96da24742a94aba94f2d71aa213ccfc231f3f32f208326e4b9",
-    "fetchedAt": "2026-11-02T11:43:03.179Z",
+    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
+    "fetchedAt": "2026-11-04T11:36:02.702Z",
     "language": "en"
    },
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/08/12/lage-am-millerntor-12-august-2022/",
-    "locator": "p105",
-    "quote": "Wer das alles nochmal als Podcast hören will: HSV Talk (40min) von gestern Abend.",
-    "bodyHash": "9684d7885f6830dded38a0ecd56763d7c31d16ed3945e483ec3bf88e465d4f20",
-    "fetchedAt": "2026-11-03T11:04:07.701Z",
+    "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "7ae458ed8099b42a9507d2d3870e903c4895ba2c2f2d47c909b87ed138b1bc72",
+    "fetchedAt": "2026-11-04T11:36:02.704Z",
     "language": "en"
    },
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/10/11/lage-am-millerntor-11-oktober-2022/",
-    "locator": "p5",
-    "quote": "Wer lieber auf Englisch zuhört kann dies beim „Welcome to Hell“-Podcast machen (40min), wer lieber auf Englisch liest findet entsprechendes beim FCSP South End Scum .",
-    "bodyHash": "8cd762ffd1211352908ba791fa9b7efdc9a2a9eaaf6390a9cbf084b46e79488a",
-    "fetchedAt": "2026-11-03T11:22:05.780Z",
+    "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "fbe06ee332050a946b01aa90959632c491797a675314e7c1a457d51088cb5de7",
+    "fetchedAt": "2026-11-04T11:36:02.705Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/12/lage-am-millerntor-12-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "d2f53867a2e6c43057faa78d337f1810ff1d19273bae8452b6a1dfe20d7ae2ca",
+    "fetchedAt": "2026-11-04T11:36:02.707Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/13/lage-am-millerntor-13-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "592716f441d3f1ba05ed944be81145040cdc5a46bb56870214b36fb1c69a2943",
+    "fetchedAt": "2026-11-04T11:36:02.709Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/14/lage-am-millerntor-14-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "bee183b526d94216c979ea22f98fb692e0a782fe12146069be04b7a5601676bf",
+    "fetchedAt": "2026-11-04T11:36:02.710Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/15/lage-am-millerntor-15-dezember-2022/",
+    "locator": "p15",
+    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
+    "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
+    "fetchedAt": "2026-11-04T11:36:05.651Z",
     "language": "en"
    }
   ],
@@ -1385,8 +1565,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:05.780Z",
-  "updatedAt": "2026-11-03T11:22:05.780Z"
+  "createdAt": "2026-11-04T11:36:05.651Z",
+  "updatedAt": "2026-11-04T11:36:05.651Z"
  },
  {
   "id": "ga-c61079b9040fc062",
@@ -1444,6 +1624,24 @@
     "bodyHash": "1c8e0b2b0a206651c842f2e5bec5a3e676eaa510325151dbc006bf2502da736f",
     "fetchedAt": "2026-11-03T11:22:05.778Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/02/lage-am-millerntor-02-januar-2022/",
+    "locator": "p28",
+    "quote": "7. Januar: Testspiel, FC St. Pauli – FC Lugano (Benidorm, 14.00h, 3x 45min)",
+    "bodyHash": "3f15cd82b9c375c3e453fcb38d6afcfe859e06c24c6b8d5dc31a21bd5fba896c",
+    "fetchedAt": "2026-11-04T11:36:05.655Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/09/fc-lugano-fc-st-pauli-27-25-ein-reisebericht/",
+    "locator": "p6",
+    "quote": "Umso erfreulicher war es (für mich persönlich), dass das Spiel gegen Werder Bremen abgesagt und das zweite Spiel (jetzt stand auch der FC Lugano als Gegner fest) auf Samstag 14:00 Uhr vorgezogen wurde. Positiv stimmte mich auch die Änderung, dass die 3x45min Spielzeit auf 2x60min „reduziert“ wurde.",
+    "bodyHash": "f84c24bcd44b684166c7b941e42dd2e4560410a3b7329a425f0c6ae30b7a8385",
+    "fetchedAt": "2026-11-04T11:36:09.724Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1451,8 +1649,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:05.778Z",
-  "updatedAt": "2026-11-03T11:22:05.778Z"
+  "createdAt": "2026-11-04T11:36:09.724Z",
+  "updatedAt": "2026-11-04T11:36:09.724Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -1564,6 +1762,15 @@
     "bodyHash": "4cdae1e26c3eb0c85d3a1d2845c800353ce8eb80d84ba0ba363320daa82c9990",
     "fetchedAt": "2026-10-29T10:26:02.880Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/01/lage-am-millerntor-01-dezember-2022/",
+    "locator": "p69",
+    "quote": "In dieser Funktion war er bei Britta Kehrhahn im „Feel Hamburg“-Podcast (37min) zu Gast, erklärte dort, warum er keine Lust verspürt das Derby zu pfeifen – und sprach auch über seine Rolle als „Verkehrskasper“.",
+    "bodyHash": "ae75443692b8f817970898ab35bbebc407330fca09e309f6e81aeee5429c0435",
+    "fetchedAt": "2026-11-04T11:36:00.532Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1571,8 +1778,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-29T10:26:02.880Z",
-  "updatedAt": "2026-10-29T10:26:02.880Z"
+  "createdAt": "2026-11-04T11:36:00.532Z",
+  "updatedAt": "2026-11-04T11:36:00.532Z"
  },
  {
   "id": "ga-0eb50d0b362777e7",
@@ -1882,6 +2089,15 @@
     "bodyHash": "7512e0a8511eef11c51628380afba49ab0c53736f0e1381cd86b9f9d0b64102d",
     "fetchedAt": "2026-11-03T11:04:07.698Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/01/12/lage-am-millerntor-12-januar-2023/",
+    "locator": "p16",
+    "quote": "Na sowas, noch ein neuer Vereinspodcast? So zumindest ließ sich eine Meldung des FC St. Pauli gestern interpretieren, in der ein Gespräch von Patrick Gensing (Leitung Medienabteilung) mit Laura Becker (Leitung Personal) und Oke Göttlich (Präsident) veröffentlicht wurde. Aktuell gibt es das Format „nur“ auf YouTube (27min) , generell ist aber geplant derartige inhaltliche Gespräche öfter zu veröffentlichen, wie uns auf Nachfrage mitgeteilt wurde.",
+    "bodyHash": "6b45026b4b1ca0e7e4fbed21728170439dc1ebc392c12ea323f3a5990c3e802a",
+    "fetchedAt": "2026-11-04T11:36:09.728Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1889,8 +2105,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:04:07.698Z",
-  "updatedAt": "2026-11-03T11:04:07.698Z"
+  "createdAt": "2026-11-04T11:36:09.728Z",
+  "updatedAt": "2026-11-04T11:36:09.728Z"
  },
  {
   "id": "ga-b6bb6a98819f2fb4",
@@ -1981,5 +2197,251 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-03T11:22:12.311Z",
   "updatedAt": "2026-11-03T11:22:12.311Z"
+ },
+ {
+  "id": "ga-288573982fa73cf2",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "43",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
+    "fetchedAt": "2026-11-04T11:36:00.536Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
+    "fetchedAt": "2026-11-04T11:36:02.702Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "7ae458ed8099b42a9507d2d3870e903c4895ba2c2f2d47c909b87ed138b1bc72",
+    "fetchedAt": "2026-11-04T11:36:02.704Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "fbe06ee332050a946b01aa90959632c491797a675314e7c1a457d51088cb5de7",
+    "fetchedAt": "2026-11-04T11:36:02.705Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/12/lage-am-millerntor-12-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "d2f53867a2e6c43057faa78d337f1810ff1d19273bae8452b6a1dfe20d7ae2ca",
+    "fetchedAt": "2026-11-04T11:36:02.707Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/13/lage-am-millerntor-13-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "592716f441d3f1ba05ed944be81145040cdc5a46bb56870214b36fb1c69a2943",
+    "fetchedAt": "2026-11-04T11:36:02.709Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/14/lage-am-millerntor-14-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "bee183b526d94216c979ea22f98fb692e0a782fe12146069be04b7a5601676bf",
+    "fetchedAt": "2026-11-04T11:36:02.710Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/15/lage-am-millerntor-15-dezember-2022/",
+    "locator": "p9",
+    "quote": "– ZDF: Geheimsache Katar (43min)",
+    "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
+    "fetchedAt": "2026-11-04T11:36:05.651Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-04T11:36:05.651Z",
+  "updatedAt": "2026-11-04T11:36:05.651Z"
+ },
+ {
+  "id": "ga-10a49ffb1dbd4dab",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "44",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
+    "fetchedAt": "2026-11-04T11:36:00.536Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
+    "fetchedAt": "2026-11-04T11:36:02.702Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "7ae458ed8099b42a9507d2d3870e903c4895ba2c2f2d47c909b87ed138b1bc72",
+    "fetchedAt": "2026-11-04T11:36:02.704Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "fbe06ee332050a946b01aa90959632c491797a675314e7c1a457d51088cb5de7",
+    "fetchedAt": "2026-11-04T11:36:02.705Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/12/lage-am-millerntor-12-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "d2f53867a2e6c43057faa78d337f1810ff1d19273bae8452b6a1dfe20d7ae2ca",
+    "fetchedAt": "2026-11-04T11:36:02.707Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/13/lage-am-millerntor-13-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "592716f441d3f1ba05ed944be81145040cdc5a46bb56870214b36fb1c69a2943",
+    "fetchedAt": "2026-11-04T11:36:02.709Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/14/lage-am-millerntor-14-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "bee183b526d94216c979ea22f98fb692e0a782fe12146069be04b7a5601676bf",
+    "fetchedAt": "2026-11-04T11:36:02.710Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/12/15/lage-am-millerntor-15-dezember-2022/",
+    "locator": "p10",
+    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
+    "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
+    "fetchedAt": "2026-11-04T11:36:05.651Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-04T11:36:05.651Z",
+  "updatedAt": "2026-11-04T11:36:05.651Z"
+ },
+ {
+  "id": "ga-468216f78ee2fc35",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "75",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/21/lage-der-liga-21-november-2022/",
+    "locator": "p49",
+    "quote": "Das 2:1 fiel zwar noch, aber trotz 75min Unterzahl reichten die Kräfte am Ende. #FCSP #FCSP1Frn pic.twitter.com/oHW86tPLfu",
+    "bodyHash": "f443b7914e92e5f210391765dbdc4f6209afa6c85d91e27fd0bd84acc32837d1",
+    "fetchedAt": "2026-11-04T11:35:58.153Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-04T11:35:58.153Z",
+  "updatedAt": "2026-11-04T11:35:58.153Z"
+ },
+ {
+  "id": "ga-fa269f9476941017",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "81",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2022/11/28/lage-am-millerntor-28-november-2022/",
+    "locator": "p84",
+    "quote": "Hanoi [2] – 0 Binh Dinh – Truong Van Thai Quy 75-meter goal 81′ [Vietnam National Cup Final]",
+    "bodyHash": "1faa9a1635aa1b4555d2579e29da891c463163bd3d284d9848c8d5fd040fe675",
+    "fetchedAt": "2026-11-04T11:36:00.528Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-04T11:36:00.528Z",
+  "updatedAt": "2026-11-04T11:36:00.528Z"
  }
 ]

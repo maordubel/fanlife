@@ -1,13 +1,5 @@
 [
  {
-  "id": "continue-aekpedia-posts",
-  "priority": "P3",
-  "task": "AEKpedia posts: 28 page(s) read of 31; the scheduled task continues from the checkpoint.",
-  "taskHe": "AEKpedia posts: נקראו 28 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
   "id": "limit-aekpedia-0",
   "priority": "P3",
   "task": "A post is not a match: season pages, player profiles and articles are mixed in posts.",
