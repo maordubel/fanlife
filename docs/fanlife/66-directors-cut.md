@@ -102,3 +102,13 @@ script options of a film are one per director (they replace ANGLES_V3; the optio
 director's name, and `director` its id). Each director also writes **pitches** (studio/pitch.py): the next film he
 wants to make — a club and an event no other director pitched that round and no film already made — with a title,
 a logline, the cold open and the three acts, and "Make this film" in the studio.
+
+## 6. The house soul (owner, 4.11.2026)
+
+*"I want the directors to really identify with me — sum up my character and the emotion I express towards football…
+so the system keeps speaking from my thinking."* `studio/soul.py` is the owner's football heart, drawn from his own words
+over months of work: football as belonging and inheritance, memory as sacred, rivalry lived with pride and wit (never
+hate for people), the fan as the hero, every club loved equally; and his demands — precision as respect, never boring,
+show don't list, emotion first, bold and original. `directors.brief(d)` puts the soul first, then the director's own
+facet of the owner (`owner_facet`), then his craft. Every script and every pitch is written from it. It is a voice, not
+a source: it adds no fact, never names the owner and never brings another club into a club's story.
