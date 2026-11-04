@@ -7,6 +7,9 @@ name: Football Stories · listener
 # provider), which the studio shows as its status lights. The hourly schedule only restarts a chain that broke.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stories-watch.yml']   # a change to the listener starts it
   schedule:
     - cron: '17 * * * *'
 permissions:
