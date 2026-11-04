@@ -121,7 +121,8 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
             r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', body, {'x-goog-api-key': key})
         except StageError as e:
             # the free tier's Pro quota is small; Flash has its own, larger free quota
-            if e.code != 'WRITER_HTTP_429' or 'flash' in model:
+            # (and a model the free tier no longer serves answers 404/403): fall back to Flash, never fail the film for it
+            if e.code not in ('WRITER_HTTP_429', 'WRITER_HTTP_404', 'WRITER_HTTP_403') or 'flash' in model:
                 raise
             model = os.environ.get('STORIES_GEMINI_FALLBACK', 'gemini-2.5-flash')
             r = _http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', body, {'x-goog-api-key': key})

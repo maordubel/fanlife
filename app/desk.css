@@ -62,7 +62,7 @@
 
 /* inbox */
 .desk-inbox { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.desk-inbox li { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 14px 16px; background: var(--mag-card); border: 2px solid var(--mag-ink); border-inline-start-width: 8px; }
+.desk-inbox li { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 14px 16px; background: var(--mag-card); border: 2px solid var(--mag-ink); border-inline-start-width: 8px; }
 .desk-inbox li[data-priority='1'] { border-inline-start-color: var(--mag-vermilion); }
 .desk-inbox li[data-priority='1'] .desk-stamp { color: var(--mag-vermilion); }
 .desk-inbox li[data-priority='2'] { border-inline-start-color: var(--mag-navy); }
@@ -313,7 +313,7 @@
 .crm-area { display: inline-flex; align-items: center; gap: 8px; font: 700 12px var(--mag-mono); text-transform: uppercase; letter-spacing: 1px; }
 .crm-area select { min-height: 44px; padding: 0 10px; border: 2px solid var(--mag-ink); background: var(--mag-paper); font: 600 14px var(--mag-body); }
 .crm-tasks, .crm-cleared { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.crm-tasks > li { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 14px 16px; background: var(--mag-card); border: 2px solid var(--mag-ink); border-inline-start-width: 8px; }
+.crm-tasks > li { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 14px 16px; background: var(--mag-card); border: 2px solid var(--mag-ink); border-inline-start-width: 8px; }
 .crm-tasks > li[data-priority='1'] { border-inline-start-color: var(--mag-vermilion); } .crm-tasks > li[data-priority='1'] > .desk-stamp { color: var(--mag-vermilion); }
 .crm-tasks > li[data-priority='2'] { border-inline-start-color: var(--mag-navy); } .crm-tasks > li[data-priority='3'] { border-inline-start-color: var(--desk-rule); }
 .crm-task-meta { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; font: 700 11px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; color: color-mix(in srgb, var(--mag-ink) 70%, transparent); }

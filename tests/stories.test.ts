@@ -129,8 +129,7 @@ describe('Football Stories — a focused film, the owner’s quotes and pictures
 
 describe('Football Stories — access',()=>{
  it('keeps the studio and its routes behind the owner login, and the worker door behind the cron secret',()=>{
-  expect(src('app/master/stories/page.tsx')).toMatch(/requireAdmin\('\/master\/stories'\)/)
-  expect(src('app/master/stories/page.tsx')).toMatch(/index:false/)
+  expect(src('app/master/admin/page.tsx')).toMatch(/requireAdmin\('\/master\/admin'\)/)
   for(const f of ['app/api/master/stories/route.ts','app/api/master/stories/[id]/route.ts']){
    const s=src(f)
    expect(s.match(/adminFromRequest\(r\)/g)?.length).toBeGreaterThanOrEqual(2)
@@ -148,3 +147,30 @@ describe('Football Stories — access',()=>{
   expect(mig).not.toMatch(/create policy/i)
  })
 })
+
+// 4.11.2026 — owner: "I don't see any video studio in the admin". The studio is an area of the desk, it starts a film
+// within a minute (the listener), and it shows whether it can work.
+it('the studio is an area of the desk, on the phone bar too',()=>{
+  expect(src('lib/master/crm/areas.ts')).toMatch(/key:'studio'/)
+  expect(src('components/master/desk/AdminShell.tsx')).toMatch(/BAR=\[[^\]]*'studio'/)
+  expect(src('app/master/admin/page.tsx')).toMatch(/section==='studio'\)return shell\(<StoriesDesk/)
+  expect(src('next.config.mjs')).toMatch(/source: '\/master\/stories', destination: '\/master\/admin\?section=studio'/)
+})
+it('the listener starts the worker and keeps itself alive',()=>{
+  const w=src('.github/workflows/stories-watch.yml')
+  expect(w).toMatch(/actions: write/)
+  expect(w).toMatch(/gh workflow run stories-worker\.yml/)
+  expect(w).toMatch(/gh workflow run stories-watch\.yml/)
+  expect(w).toMatch(/"op":\\"peek\\"|op\\":\\"peek/)
+})
+it('the worker compiles the club archives it researches from',()=>{
+  expect(src('.github/workflows/stories-worker.yml')).toMatch(/npm run clubs:precompile/)
+})
+it('a heartbeat carries only a provider, a yes/no, a model and a note',async()=>{
+  const {cleanHeartbeat}=await import('@/lib/stories/health')
+  const h=cleanHeartbeat({writer:{provider:'gemini',ok:true,model:'gemini-2.5-pro',note:'fine',key:'AIza-secret'}},'listen-1')!
+  expect(h.writer).toEqual({provider:'gemini',ok:true,model:'gemini-2.5-pro',note:'fine'})
+  expect(JSON.stringify(h)).not.toMatch(/secret/)
+  expect(cleanHeartbeat({writer:{provider:'evil'}})).toBeNull()
+})
+

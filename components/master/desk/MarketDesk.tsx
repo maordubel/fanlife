@@ -3,6 +3,7 @@ import {AdminGate} from '@/components/fanlife/admin/AdminGate'
 import {listSuggestions,tally} from '@/lib/home/suggestions'
 import {AdminContributions} from '@/components/fanlife/admin/AdminContributions'
 import {fl} from '@/lib/fanlife/copy'
+import {DbAdminGate} from './DbAdminGate'
 
 /**
  * Market and Community inside the desk frame (CRM 1 §5.5–5.6, CRM 2 §4.7): ONE frame, the SAME consoles. Who may act is
@@ -14,7 +15,7 @@ export function MarketDesk(){
   <header className="desk-head"><p className="desk-kicker">Market</p><h1 className="desk-h1">{fl('exchange.title')}</h1>
    <p className="desk-fine">{fl('exchange.sub')} Sellers appear by collector number only; contact details are never shown here.</p>
    <p className="desk-actions"><Link className="desk-btn ghost" href="/master/exchange">Open full screen ↗</Link><Link className="desk-btn ghost" href="/market" target="_blank">Public market ↗</Link></p></header>
-  <div className="fl-worker crm-embed" dir="ltr" lang="en"><AdminGate/></div>
+  <DbAdminGate what="the shirt market"><div className="fl-worker crm-embed" dir="ltr" lang="en"><AdminGate/></div></DbAdminGate>
  </div>
 }
 export async function CommunityDesk(){
@@ -29,6 +30,6 @@ export async function CommunityDesk(){
     :<><p className="desk-fine">The same name typed by several fans is one line. Most asked first.</p>
      <ol className="desk-list">{asked.map(a=><li key={a.name.toLowerCase()}><b>{a.name}</b> — {a.count} {a.count===1?'fan':'fans'} · last {a.last.slice(0,10)}</li>)}</ol></>}
   </section>
-  <div className="fl-worker crm-embed" dir="ltr" lang="en"><AdminContributions/></div>
+  <DbAdminGate what="photo contributions"><div className="fl-worker crm-embed" dir="ltr" lang="en"><AdminContributions/></div></DbAdminGate>
  </div>
 }

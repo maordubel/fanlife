@@ -21,6 +21,7 @@
     "app/kits/build/KitGameRunV3.tsx",
     "app/kits/build/KitGameRunV5.tsx",
     "app/kits/build/KitRun.tsx",
+    "app/master/stories/page.tsx",
     "app/trivia/TopicWall.tsx",
     "app/trivia/TriviaRound.tsx",
     "app/trivia/summary/ShareCard.tsx",

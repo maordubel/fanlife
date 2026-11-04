@@ -1,10 +1,11 @@
 'use client'
 import {useCallback,useEffect,useMemo,useRef,useState,type FormEvent} from 'react'
 import type {Job,Privacy} from '@/lib/stories/jobs'
+import type {Health} from '@/lib/stories/health'
 import {DURATIONS,STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
 
-type Club={id:string;name:string}
+type Club={id:string;name:string;seasons:{season:string;matches:number}[]}
 const ATHENS=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
 const when=(iso:string|null|undefined)=>iso?`${ATHENS.format(new Date(iso))} Athens`:''
 const mins=(d:number)=>d<1?'30 sec':`${d} min`
@@ -19,11 +20,11 @@ async function api(path:string,init?:RequestInit){
 }
 
 export function StoriesDesk(){
- const [jobs,setJobs]=useState<Job[]>([]),[clubs,setClubs]=useState<Club[]>([]),[error,setError]=useState(''),[notice,setNotice]=useState('')
+ const [jobs,setJobs]=useState<Job[]>([]),[clubs,setClubs]=useState<Club[]>([]),[health,setHealth]=useState<Health|null>(null),[error,setError]=useState(''),[notice,setNotice]=useState('')
  const [busy,setBusy]=useState(false),[open,setOpen]=useState<string|null>(null)
- const [duration,setDuration]=useState(12),[privacy,setPrivacy]=useState<Privacy>('private')
+ const [club,setClub]=useState(''),[duration,setDuration]=useState(12),[privacy,setPrivacy]=useState<Privacy>('private')
  const key=useRef<string>('')
- const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
+ const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setClub(c=>c||(b.clubs.some((x:Club)=>x.id==='hapoel-tel-aviv')?'hapoel-tel-aviv':b.clubs[0]?.id||''));setHealth(b.health??null);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
  useEffect(()=>{void load()},[load])
  const live=jobs.some(j=>['queued','running','cancel_requested'].includes(j.state))
  useEffect(()=>{if(!live)return;const t=setInterval(()=>void load(),15000);return()=>clearInterval(t)},[live,load])
@@ -36,23 +37,23 @@ export function StoriesDesk(){
   const brief={club_id:d.get('club_id'),season:d.get('season'),topic:d.get('topic'),duration,visual_style:d.get('visual_style'),voice:d.get('voice'),review:d.get('review'),privacy,
    publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
    crowd:d.get('crowd'),focus_from:d.get('focus_from')||undefined,focus_to:d.get('focus_to')||undefined,notes:d.get('notes')||'',hold:d.get('hold')==='on'}
-  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current='';setNotice(b.job.state==='paused'?`Created and held: ${b.job.brief.club_name} ${b.job.brief.season}. Open it, add your pictures, then press Resume.`:`Queued: ${b.job.brief.club_name} ${b.job.brief.season}. The worker picks it up within about ten minutes.`);setOpen(b.job.id);await load()}
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current='';setNotice(b.job.state==='paused'?`Created and held: ${b.job.brief.club_name} ${b.job.brief.season}. Open it, add your pictures, then press Resume.`:`Queued: ${b.job.brief.club_name} ${b.job.brief.season}. The studio starts it within about a minute.`);setOpen(b.job.id);await load()}
   catch(err){setError(err instanceof Error?err.message:'Could not queue the film.')}finally{setBusy(false)}
  }
 
- return <main className={css.root}>
+ return <div className={css.root}>
   <header className={css.mast}><div className={css.wrap}>
    <p className={css.kicker}><a href="/master/admin">FAN LIFE desk</a> · Owner studio</p>
    <h1 className={css.title}>Football Stories</h1>
    <p className={css.slogan}>Football is ninety minutes. Being a supporter is a lifetime.</p>
   </div></header>
-  <div className={css.wrap}><div className={css.grid}>
+  <div className={css.wrap}>{health&&<HealthStrip h={health}/>}<div className={css.grid}>
    <section className={`${css.panel} ${css.form}`} aria-labelledby="new-film">
     <div className={css.bar}><span id="new-film">New film</span><span>Owner only</span></div>
     <form className={css.body} onSubmit={create}>
-     <label>Club<select name="club_id" required defaultValue="hapoel-tel-aviv">{clubs.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
+     <label>Club<select name="club_id" required value={club} onChange={e=>setClub(e.target.value)}>{clubs.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
      <div className={css.row}>
-      <label>Season<input name="season" required pattern="\d{4}/\d{2}" placeholder="1999/00" defaultValue="1999/00" inputMode="numeric"/></label>
+      <label>Season<select name="season" required key={club}>{(clubs.find(c=>c.id===club)?.seasons??[]).map(s=><option key={s.season} value={s.season}>{s.season} · {s.matches} matches</option>)}</select></label>
       <label>Visual<select name="visual_style" defaultValue="collage"><option value="collage">Collage · The Weekly</option><option value="papercut" disabled>Paper stop-motion — not in the renderer yet</option><option value="mixed" disabled>Mixed — not in the renderer yet</option></select></label>
      </div>
      <label>Story or angle<textarea name="topic" maxLength={240} placeholder="e.g. The double: twelve years of waiting, then five days in May"/><span className={css.hint}>Optional. The film follows the season&rsquo;s archive in order either way.</span></label>
@@ -80,7 +81,7 @@ export function StoriesDesk(){
     {jobs.length===0?<div className={css.panel}><p className={css.empty}>No films yet. Queue the first one.</p></div>:jobs.map(j=><JobCard key={j.id} job={j} open={open===j.id} onOpen={()=>setOpen(open===j.id?null:j.id)} onChange={load}/>)}
    </section>
   </div></div>
- </main>
+ </div>
 }
 
 /** A datetime-local value read as Athens wall-clock time → an ISO string with Athens' offset on that date. */
@@ -228,4 +229,16 @@ function PublishKit({yt,job}:{yt:Yt;job:Job}){
   <ol className={css.steps}>{steps.map(x=><li key={x}>{x}</li>)}</ol>
   <div className={css.kit}>{rows.map(([k,label,v])=><div key={k}><div className={css.kitHead}><b>{label}</b> <span className={css.meta}>{v.length} chars</span><button type="button" className={`${css.btn} min-h-tap`} onClick={()=>void copy(k,v)}>{copied===k?'Copied':'Copy'}</button></div><div className={css.pre}>{v}</div></div>)}</div>
  </>
+}
+
+/** Can the studio make a film right now? Three lights, each with the one thing to do when it is off. */
+function HealthStrip({h}:{h:Health}){
+ const w=h.writer
+ const rows:[string,boolean|null,string][]=[
+  ['Studio worker',h.listener.ok,h.listener.ok?'Listening — a new film starts within about a minute':h.listener.at?`Last seen ${when(h.listener.at)} — it restarts by itself; GitHub → Actions → "Football Stories · listener" → Run workflow starts it now`:'Not started yet — GitHub → Actions → "Football Stories · listener" → Run workflow'],
+  ['Script writer',w?w.ok:null,!w?'Checked by the worker on its next round':w.provider==='none'?'No key: add GEMINI_API_KEY in GitHub → Settings → Secrets → Actions':w.ok?`${w.provider==='gemini'?'Gemini':w.provider} key works${w.model?` · ${w.model}`:''}`:`The ${w.provider} key was refused${w.note?` (${w.note})`:''} — paste it again in GitHub → Settings → Secrets → Actions`],
+  ['Film storage',h.storage.ok,h.storage.ok?'Private bucket ready':h.storage.note||'Storage is not ready'],
+  ['Narrator',true,'Kokoro George · names from the lexicon (Take B, 4.11.2026)'],
+ ]
+ return <ul className={css.health} aria-label="Studio status">{rows.map(([k,ok,text])=><li key={k} data-ok={ok===null?'wait':ok?'yes':'no'}><b>{k}</b><span>{text}</span></li>)}</ul>
 }

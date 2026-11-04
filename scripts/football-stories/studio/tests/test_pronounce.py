@@ -101,3 +101,17 @@ class Spoken(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class EnglishNames(unittest.TestCase):
+    """The research stage reads a Greek or Hebrew record through the reviewed dictionaries, and never prints what it
+    cannot read (AEK's archive is written in Greek: 15 readable matches before, 3,381 after, 4.11.2026)."""
+
+    def test_reviewed_names_and_nothing_else(self):
+        from studio import research as R
+        clubs = R._names_en('clubs')
+        self.assertEqual(R._english('ΑΕΚ', clubs), 'AEK Athens')
+        self.assertEqual(R._english('Real Madrid', clubs), 'Real Madrid')
+        self.assertIsNone(R._english('Ομάδα που δεν υπάρχει', clubs))
+        self.assertTrue(R._latin('Željezničar'))
+        self.assertFalse(R._latin('Πανιώνιος'))

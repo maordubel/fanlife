@@ -1,0 +1,68 @@
+name: Football Stories · listener
+# Starts a film within about a minute of "Make the film" (owner, 4.11.2026: "activate the studio, make sure it works").
+# GitHub runs a 10-minute schedule only every few hours, so the studio waited hours for its worker. This listener asks
+# the studio for work once a minute; when a film is waiting it starts the worker (workflow_dispatch with the run's own
+# token — the one event GITHUB_TOKEN may trigger), and before its time is up it starts its own next run, so it never
+# stops. Every round it reports a heartbeat and whether the script writer's key really works (one tiny request to the
+# provider), which the studio shows as its status lights. The hourly schedule only restarts a chain that broke.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stories-watch.yml']   # a change to the listener starts it
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: stories-watch
+  cancel-in-progress: false
+jobs:
+  listen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+      FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL || 'gemini-2.5-pro' }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Listen
+        run: |
+          set -u
+          if [ ${#FAN_LIFE_CRON_SECRET} -lt 32 ]; then echo "::error::FAN_LIFE_CRON_SECRET is not set"; exit 1; fi
+          writer_check() {
+            if [ -z "${GEMINI_API_KEY:-}" ]; then echo '{"provider":"none","ok":false,"note":"GEMINI_API_KEY is not set"}'; return; fi
+            code=$(curl -s -o /tmp/w.json -w '%{http_code}' --max-time 30 -H "x-goog-api-key: $GEMINI_API_KEY" \
+              "https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}")
+            if [ "$code" = "200" ]; then echo "{\"provider\":\"gemini\",\"ok\":true,\"model\":\"$GEMINI_MODEL\"}"; return; fi
+            code2=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -H "x-goog-api-key: $GEMINI_API_KEY" \
+              "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash")
+            if [ "$code2" = "200" ]; then echo "{\"provider\":\"gemini\",\"ok\":true,\"model\":\"gemini-2.5-flash\",\"note\":\"$GEMINI_MODEL answered $code\"}"; return; fi
+            echo "{\"provider\":\"gemini\",\"ok\":false,\"note\":\"Google answered $code2\"}"
+          }
+          worker_busy() {
+            n=$(gh run list --workflow stories-worker.yml --limit 5 --json status --jq '[.[]|select(.status!="completed")]|length' 2>/dev/null || echo 0)
+            [ "${n:-0}" -gt 0 ]
+          }
+          end=$(( $(date +%s) + 5*3600 + 40*60 ))
+          writer=$(writer_check); checked=$(date +%s)
+          echo "Writer: $writer"
+          while [ "$(date +%s)" -lt "$end" ]; do
+            if [ $(( $(date +%s) - checked )) -gt 1800 ]; then writer=$(writer_check); checked=$(date +%s); fi
+            next=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
+              -d "{\"op\":\"peek\",\"worker\":\"listen-$GITHUB_RUN_ID\",\"health\":{\"writer\":$writer}}" "$STORIES_URL/api/master/stories/worker" \
+              | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
+            if [ -n "$next" ] && ! worker_busy; then
+              echo "$(date -u +%T) film waiting: $next — starting the worker"
+              gh workflow run stories-worker.yml || echo "::warning::could not start the worker"
+              sleep 90
+            fi
+            sleep 60
+          done
+      - name: Keep listening
+        if: always()
+        run: gh workflow run stories-watch.yml || echo "::warning::could not start the next listener (the hourly schedule will)"

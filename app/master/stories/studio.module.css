@@ -67,3 +67,12 @@
 .steps{font-size:14px;padding-inline-start:20px;display:grid;gap:4px}
 .kit{display:grid;gap:12px;margin-block-start:10px}
 .kitHead{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+/* studio status: four lights under the masthead (4.11.2026) */
+.health{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
+@media (min-width:760px){.health{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.health li{background:var(--paper);border:3px solid var(--ink);border-inline-start-width:10px;padding:10px 12px;display:grid;gap:3px}
+.health li[data-ok=yes]{border-inline-start-color:var(--green)}
+.health li[data-ok=no]{border-inline-start-color:var(--red)}
+.health li[data-ok=wait]{border-inline-start-color:var(--muted)}
+.health b{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+.health span{font-size:13px;line-height:1.35;overflow-wrap:anywhere}
