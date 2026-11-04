@@ -176,7 +176,9 @@ def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
     if any(' is not in the cited claims' in e for e in errs):
         ids = ', '.join(f'summary:{k}' for k in ledger['summary']['by_competition'])
         out.append('A number may appear only if a claim you cite contains it. A count over several matches (six draws, '
-                   f'four wins) comes from a season summary: cite it ({ids}) in that beat, or say it without the number.')
+                   f'four wins) comes from a season summary: cite it ({ids}) in that beat, or say it without the number. '
+                   'A date or a year you cannot cite is REWRITTEN, never just deleted: "October second, brought…" with the '
+                   'year cut out is a broken sentence — say "That October night brought…" instead.')
     m = next((re.search(r'Narration is (\d+) words', e) for e in errs if 'Narration is' in e), None)
     if m:
         n = int(m.group(1))

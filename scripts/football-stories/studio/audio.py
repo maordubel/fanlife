@@ -285,11 +285,14 @@ def fx(kind: str, rng) -> np.ndarray:
         env = np.exp(-np.arange(n) / SR * 7)
         return ((x * 0.25 + crack) * env * 0.55).astype('float32')
     if kind == 'stamp':
-        n = int(0.35 * SR)
+        # a rubber stamp on paper, heard from across a desk: a felt knock and a short paper slap, no sub-bass boom
+        n = int(0.22 * SR)
         t = np.arange(n) / SR
-        thump = np.sin(2 * np.pi * (60 + 90 * np.exp(-t * 40)) * t) * np.exp(-t * 18)
-        click = _noise(n, rng) * np.exp(-t * 120) * 0.6
-        return ((thump + click) * 0.8).astype('float32')
+        knock = np.sin(2 * np.pi * (150 + 60 * np.exp(-t * 55)) * t) * np.exp(-t * 34)
+        slap = _noise(n, rng)
+        slap = slap - np.convolve(slap, np.ones(5) / 5, 'same')
+        slap = np.convolve(slap, np.ones(3) / 3, 'same') * np.exp(-t * 90) * 0.35
+        return ((knock * 0.55 + slap) * 0.8).astype('float32')
     if kind == 'whoosh':
         n = int(0.7 * SR)
         x = _noise(n, rng)
@@ -308,6 +311,61 @@ def fx(kind: str, rng) -> np.ndarray:
     if kind == 'end':
         return (_pluck(midi(74), int(3 * SR), 1.2) * 0.4 + _pluck(midi(78), int(3 * SR), 1.2) * 0.3 + _pluck(midi(81), int(3 * SR), 1.2) * 0.3).astype('float32')
     return np.zeros(1, 'float32')
+
+
+# Effects (owner, 4.11.2026: "the studio makes the effects too loud"). Measured on the Kokoro narrator: the old stamp was
+# 3 dB LOUDER than the voice and every card fired two of them. An effect is seasoning: each kind is levelled to its own
+# distance under the narrator's measured loudness (dB below the speech RMS), thinned so the same sound never repeats
+# within its gap, varied a little so a repeat never sounds mechanical, and ducked a few dB more while he speaks.
+FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'end': 10.0}
+FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'end': 0.0}
+FX_ANY_GAP_S = 0.3        # two different effects never land on top of each other
+FX_PER_MINUTE = 22        # a ceiling: past it, the rest of that minute is quiet
+FX_JITTER_DB = 1.5
+
+
+def _rms_db(x: np.ndarray) -> float:
+    return float(20 * np.log10(np.sqrt(np.mean(np.square(x, dtype='float64'))) + 1e-9))
+
+
+def speech_db(voice: np.ndarray) -> float:
+    """The narrator's loudness while he speaks: RMS over 100 ms windows that are not silence."""
+    w = SR // 10
+    frames = voice[: len(voice) // w * w].reshape(-1, w) if len(voice) >= w else voice.reshape(1, -1)
+    rms = np.sqrt(np.mean(np.square(frames, dtype='float64'), axis=1))
+    active = rms[rms > 10 ** (-45 / 20)]
+    return float(20 * np.log10(np.sqrt(np.mean(active ** 2)))) if len(active) else -21.0
+
+
+def level_fx(kind: str, a: np.ndarray, voice_db: float, rng) -> np.ndarray:
+    """An effect at its distance under the narrator, measured on its loudest 120 ms (the part the ear hears)."""
+    if kind not in FX_UNDER_VOICE_DB or not len(a):
+        return a
+    w = max(1, int(0.12 * SR))
+    body = max((a[i:i + w] for i in range(0, max(1, len(a) - w + 1), max(1, w // 4))), key=lambda x: float(np.mean(x * x)))
+    target = voice_db - FX_UNDER_VOICE_DB[kind] + float(rng.uniform(-FX_JITTER_DB, FX_JITTER_DB))
+    return (a * 10 ** ((target - _rms_db(body)) / 20)).astype('float32')
+
+
+def thin_cues(cues: list[tuple[float, str]], total: float) -> list[tuple[float, str]]:
+    """Effect cues, in time order, without repeats inside their gap, without collisions, under the per-minute ceiling."""
+    out: list[tuple[float, str]] = []
+    last: dict[str, float] = {}
+    per_min: dict[int, int] = {}
+    for at, kind in sorted(cues):
+        if at < 0 or at > total:
+            continue
+        if kind != 'end':
+            if at - last.get(kind, -1e9) < FX_GAP_S.get(kind, 1.0):
+                continue
+            if out and at - out[-1][0] < FX_ANY_GAP_S:
+                continue
+            if per_min.get(int(at // 60), 0) >= FX_PER_MINUTE:
+                continue
+        out.append((at, kind))
+        last[kind] = at
+        per_min[int(at // 60)] = per_min.get(int(at // 60), 0) + 1
+    return out
 
 
 # Crowd (owner, 3.11.2026: "I don't like the crowd sounds — soften them or take them out"): no continuous bed any more,
@@ -345,6 +403,7 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     crowd = np.zeros(n, 'float32')
     gain = CROWD_LEVELS.get(crowd_level, CROWD_LEVELS['soft'])
     last_crowd = -1e9
+    fx_cues: list[tuple[float, str]] = []
     for s in plan['shots']:
         if s['voice_file']:
             a = _read(job_dir / 'voice' / s['voice_file'])
@@ -365,8 +424,14 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
                         crowd[i:i + len(a)] += a[: max(0, n - i)] * gain
                         last_crowd = at
                     continue
-                a = fx(kind, rng)
-                sfx[i:i + len(a)] += a[: max(0, n - i)] * 0.5
+                fx_cues.append((s['start'] + t, kind))
+    vdb = speech_db(voice)
+    kept = thin_cues(fx_cues, total)
+    for at, kind in kept:
+        i = int(at * SR)
+        a = level_fx(kind, fx(kind, rng), vdb, rng)
+        sfx[i:i + len(a)] += a[: max(0, n - i)]
+    log(f'Mix: {len(kept)} of {len(fx_cues)} effect cues kept, levelled {min(FX_UNDER_VOICE_DB.values()):.0f}–{max(FX_UNDER_VOICE_DB.values()):.0f} dB under the narrator ({vdb:.1f} dBFS)')
     # the score follows the story beat by beat: tension under a shoot-out, joy on a win, sadness on a defeat
     sections = mood_sections(plan)
     music = score(sections, style=music)[:n]
@@ -378,13 +443,15 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     _write(d / 'sfx.wav', sfx)
     _write(d / 'crowd.wav', crowd)
     out = d / 'mix.m4a'
-    fg = ('[0:a]asplit=3[v0][vk1][vk2];'
+    fg = ('[0:a]asplit=4[v0][vk1][vk2][vk3];'
           '[1:a]volume=0.55[m];[m][vk1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[md];'
           f'[v0]volume=1.0,{narrator_fx()}[v];'
-          '[2:a]volume=0.9[s];'
+          # effects sit in the same room as the picture: rounded top, a short room, a few dB further back while he speaks
+          '[2:a]lowpass=f=9000,equalizer=f=3500:t=q:w=1.2:g=-2,aecho=0.8:0.6:28|47:0.12|0.07[sf];'
+          '[sf][vk3]sidechaincompress=threshold=0.04:ratio=3:attack=10:release=300[s];'
           # the crowd sounds far away (no hiss, no boom) and steps aside whenever the narrator speaks
           '[3:a]highpass=f=180,lowpass=f=3200,aecho=0.6:0.5:60:0.25[cf];[cf][vk2]sidechaincompress=threshold=0.02:ratio=12:attack=15:release=500[c];'
-          '[v][md][s][c]amix=inputs=4:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]')
+          '[v][md][s][c]amix=inputs=4:normalize=0,afade=t=in:d=0.4,alimiter=limit=0.89:attack=4:release=60:level=disabled,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]')
     r = subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(d / 'voice.wav'), '-i', str(d / 'music.wav'), '-i', str(d / 'sfx.wav'),
                         '-i', str(d / 'crowd.wav'), '-filter_complex', fg, '-map', '[a]', '-ac', '2', '-c:a', 'aac', '-b:a', '192k', str(out)], capture_output=True, text=True)
     if r.returncode:
