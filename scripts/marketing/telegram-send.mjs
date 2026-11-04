@@ -17,9 +17,10 @@ let visualsFor = async () => []
 try { ({visualsFor} = await import('./kit/visual.mjs')) } catch (e) { console.log(`::warning title=DUBEL TEAM plan::visuals off — ${String(e?.message || e).slice(0, 160)}`) }
 const tg = (method, form) => fetch(`https://api.telegram.org/bot${token}/${method}`, {method: 'POST', body: form, signal: AbortSignal.timeout(60_000)})
   .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
-async function sendVisuals(p) {
+let publishToMeta = async () => ({line: ''})
+try { ({publishToMeta} = await import('./meta-publish.mjs')) } catch (e) { console.log(`::warning title=DUBEL TEAM plan::Meta publisher off — ${String(e?.message || e).slice(0, 160)}`) }
+async function sendVisuals(p, pngs) {
   const brief = p.kit?.data?.briefing === true
-  const pngs = await visualsFor(p.msg, p.kit || null)
   if (!pngs.length) return
   const form = new FormData()
   form.append('chat_id', p.chat_id)
@@ -35,8 +36,11 @@ async function sendVisuals(p) {
   if (!r.ok) console.log(`::warning title=visual ${p.id}::${String(r.description || r.status).split(token).join('[token]').slice(0, 200)}`)
 }
 for (const p of posts) {
-  await sendVisuals(p).catch(() => {})
-  const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: p.chat_id, text: p.msg, parse_mode: 'HTML', disable_web_page_preview: true}), signal: AbortSignal.timeout(20_000)})
+  const pngs = await visualsFor(p.msg, p.kit || null).catch(() => [])
+  await sendVisuals(p, pngs).catch(() => {})
+  const meta = await publishToMeta(p, pngs).catch(() => ({line: ''}))
+  if (meta.facebook) console.log(`meta ${p.id}: facebook ${meta.facebook} · instagram ${meta.instagram}`)
+  const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: p.chat_id, text: meta.line ? `${meta.line}\n${p.msg}` : p.msg, parse_mode: 'HTML', disable_web_page_preview: true}), signal: AbortSignal.timeout(20_000)})
     .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
   const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status >= 500) ? 'unknown' : 'refused'
   const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)
