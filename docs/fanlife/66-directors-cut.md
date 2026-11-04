@@ -112,3 +112,8 @@ hate for people), the fan as the hero, every club loved equally; and his demands
 show don't list, emotion first, bold and original. `directors.brief(d)` puts the soul first, then the director's own
 facet of the owner (`owner_facet`), then his craft. Every script and every pitch is written from it. It is a voice, not
 a source: it adds no fact, never names the owner and never brings another club into a club's story.
+The soul also carries the owner's own storytelling craft (`SOUL['craft']`, from his novel's writing profile, 4.11.2026):
+slug lines (date + place), the parallel "meanwhile" cut, the personal moment tied to the real event of that day,
+screen-ready moments, headline montages broken into moments, a recurring motif that pays off, pathos punctured by
+irony, one strong image per moment, one quotable line, questions instead of explanations, chapters ending on a breath,
+heroes who are not clean. On the channel: terrace slang yes, profanity no; no political side; nothing graphic.
