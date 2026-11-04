@@ -52,7 +52,7 @@ export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boole
    current.current=b.id;setShown({b,page})
    window.requestAnimationFrame(()=>window.requestAnimationFrame(()=>setUp(true)))
    const record=()=>{const t=Date.now(),sn=read<Seen>('local',KEY,{}),day=(sn[b.id]?.day)
-    const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jerusalem'}).format(new Date(t))
+    const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Athens'}).format(new Date(t))
     const prev=sn[b.id];sn[b.id]={n:(prev?.n??0)+1,last:t,day:today,dn:prev&&day===today?prev.dn+1:1}
     write('local',KEY,sn)
     const ss=read<Session>('session',SKEY,blank());ss.seen[b.id]={n:(ss.seen[b.id]?.n??0)+1,last:t,day:today,dn:1};ss.fam={...ss.fam,[b.id]:b.href};ss.shown+=1;ss.last=t;ss.lastId=b.id;write('session',SKEY,ss)}

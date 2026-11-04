@@ -16,7 +16,7 @@ import {Canvas, measure} from './source/weekly.mjs'
 const QR = createRequire(import.meta.url)('qrcode')
 import {clubField, crestMedal, ownColour, paintFor, ribbon, LOGOS} from './poster.mjs'
 
-export const LIVE_TEMPLATES = ['L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
+export const LIVE_TEMPLATES = ['L-FILM', 'L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
 const W = 1080, H = 1350
 const PLATES = ['kicker', 'keeper', 'dribbler', 'fans', 'memo', 'scarf', 'swap', 'bootball']
 // art round 2 (owner, 27.10.2026): one drawing per gate, found by the gate's printed name — the plan already in the
@@ -256,6 +256,18 @@ export function designLive(t, app, d) {
     for (let yy = 0; yy < qr.size; yy++) for (let xx = 0; xx < qr.size; xx++) if (qr.get(yy, xx)) path += `M${(qx + xx * cell).toFixed(2)} ${(qy + yy * cell).toFixed(2)}h${cell.toFixed(2)}v${cell.toFixed(2)}h-${cell.toFixed(2)}z`
     c.add(`<rect x="${qx - 8}" y="${qy - 8}" width="${qs + 16}" height="${qs + 16}" rx="10" fill="#FFFFFF"/><path d="${path}" fill="#000000"/>`)
     c.text('PREDICT THE CHAOS · VIRTUAL FLAMES · NOT REAL-MONEY', W / 2, H - 34, 20, 'Weekly Caps', CHALK, {anchor: 'middle', max: 960, min: 12})
+  } else if (t === 'L-FILM') {
+    // plan v5 (owner, 4.11.2026): a film of the channel — its own thumbnail, in its own colours, framed like a screen
+    c.rect(0, 0, W, H, c.ink, {border: false, shadow: false})
+    c.halftone(0, 0, W, H, c.paper, .05)
+    c.header({dark: true})
+    ribbon(c, d.kicker || 'NOW ON YOUTUBE', 330, {fill: c.accent, text: c.paper})
+    c.rect(52, 410, 976, 551, c.paper, {sw: 6})
+    if (d.thumb) c.image(d.thumb, 64, 422, 952, 527, {raw: true, id: 'film-thumb'})
+    c.burst(940, 930, 98, d.shout || 'WATCH!', {fill: c.P.cyan, n: 34})
+    c.rect(64, 1000, 952, 190, c.paper, {sw: 4})
+    c.fitted(d.title, 96, 1072, {n: 54, min: 30, max: 888, maxLines: 3, step: 1.1})
+    c.footer({dark: true, label: d.label || 'FANLIFE: FOOTBALL STORIES · YOUTUBE'})
   } else if (t === 'L-CARD') {
     if (brand) {
       brandTop(c, brand, [brand === 'dubid' ? 'DUBID' : 'OFFSIDES'], null)

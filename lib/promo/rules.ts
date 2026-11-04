@@ -28,9 +28,9 @@ export function ruleFor(rules:readonly PageRule[],p:Page):PageRule|null{
  return p.kind==='home'?find('home'):p.kind==='club'?find(`club:${p.club}`)??find('clubs'):find('other')
 }
 
-/** Israel's clock, whatever the viewer's: schedule is judged where the audience is */
+/** Athens' clock, whatever the viewer's: the owner schedules in Athens time */
 export function israelClock(now:number):{dow:number;hour:number;day:string}{
- const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jerusalem',weekday:'short',hour:'2-digit',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date(now))
+ const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',weekday:'short',hour:'2-digit',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date(now))
  const g=(t:string)=>f.find(x=>x.type===t)?.value??''
  const dow=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday'))
  return {dow,hour:Number(g('hour')),day:`${g('year')}-${g('month')}-${g('day')}`}
@@ -60,7 +60,7 @@ export function eligible(doc:Pick<PromoDoc,'settings'|'banners'>,page:Page,now:n
  return doc.banners.filter(b=>b.enabled&&audienceAllows(b,v,page)&&pageAllows(b.targeting,page)&&inWindow(b,now)&&(!rule||rule.mode!=='only'||rule.only.includes(b.id)))
 }
 
-/** frequency caps: per session, per Israel day, and a cooldown between two showings of one banner */
+/** frequency caps: per session, per Athens day, and a cooldown between two showings of one banner */
 export function capped(b:Banner,seen:Seen,session:Seen,now:number):boolean{
  if(b.maxPerSession>0&&(session[b.id]?.n??0)>=b.maxPerSession)return true
  const s=seen[b.id],day=israelClock(now).day

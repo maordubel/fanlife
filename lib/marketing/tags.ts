@@ -32,6 +32,7 @@ export const TOPIC_TAGS = {
   family: ['#FatherAndSon', '#FootballFamily', '#FootballMemories'],
   results: ['#FullTime', '#MatchDay'],
   fixtures: ['#MatchDay', '#NextUp'],
+  film: ['#FootballStories', '#FootballDocumentary', '#FootballFans'],
 } as const
 export type Topic = keyof typeof TOPIC_TAGS
 

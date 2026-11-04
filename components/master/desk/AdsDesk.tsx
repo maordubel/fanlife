@@ -94,7 +94,7 @@ export function AdsDesk({initial,clubs}:{initial:PromoDoc;clubs:{id:string;name:
       <label>Extra page paths (one per line, e.g. /market)<textarea rows={2} value={b.targeting.paths.join('\n')} onChange={e=>setT(i,{paths:lines(e.target.value)})}/></label>
       <label>Never on these paths<textarea rows={2} value={b.targeting.exclude.join('\n')} onChange={e=>setT(i,{exclude:lines(e.target.value)})}/></label>
      </fieldset>
-     <fieldset><legend>When (Israel time)</legend>
+     <fieldset><legend>When (Athens time)</legend>
       <div className="ads-grid">
        <label>Starts<input type="datetime-local" value={local(b.startsAt)} onChange={e=>setB(i,{startsAt:iso(e.target.value)})}/></label>
        <label>Ends<input type="datetime-local" value={local(b.endsAt)} onChange={e=>setB(i,{endsAt:iso(e.target.value)})}/></label>

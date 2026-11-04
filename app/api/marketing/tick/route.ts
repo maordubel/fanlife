@@ -34,7 +34,20 @@ async function visuals(msg: string, kit: unknown): Promise<{pngs: Buffer[]; why:
     return {pngs, why: mod.lastError || (pngs.length ? null : 'nothing to draw')}
   } catch (e) { return {pngs: [], why: `load: ${String((e as Error)?.stack || e).slice(0, 400)}`} }
 }
-type Meta = {facebook: string; instagram: string; line: string}
+type Meta = {facebook: string; instagram: string; line: string; story?: boolean}
+/** published on both Facebook and Instagram, and nothing else (TikTok) asked of the owner */
+function done_everywhere(meta: Meta, kit: unknown): boolean {
+  const to = (kit as {to?: unknown} | null)?.to
+  if (Array.isArray(to) && to.includes('tiktok')) return false
+  return meta.facebook.startsWith('published') && meta.instagram.startsWith('published')
+}
+/** the one line for a post that went out by itself: what it was and where */
+function quietLine(msg: string, meta: Meta): string {
+  const head = String(msg).split('\n').find(l => l.includes('📌')) || ''
+  const what = head.replace(/<[^>]+>/g, '').replace(/^📌\s*/, '').split('·').slice(0, 2).join('·').trim()
+  const hook = (String(msg).match(/<b>HOOK<\/b>\n<b>([^<]+)<\/b>/)?.[1] || String(msg).match(/<pre>([^<\n]{1,90})/)?.[1] || '').trim()
+  return `✅ <b>Published</b> · Facebook + Instagram${meta.story ? ' stories' : ''} · ${what}${hook ? `\n<i>${hook.slice(0, 90)}</i>` : ''}`
+}
 /** docs/fanlife/53-meta-publishing.md — the same module the GitHub backup imports */
 async function publish(p: Due, pngs: Buffer[]): Promise<Meta> {
   try {
@@ -92,13 +105,17 @@ export async function POST(r: NextRequest) {
     const p = await prepare(due, new Date(), cache).catch(() => null)
     if (!p) { done.push({id: due.id, outcome: 'skipped', visual: '-'}); continue }
     const drawn = await visuals(p.msg, p.kit)
-    const visual = await sendVisuals(token, p.chat_id, p.kit, drawn).catch(e => `error: ${String(e).slice(0, 200)}`)
     // the business Page + its Instagram (off unless META_AUTOPUBLISH=1); tried once, and the result is printed on the draft
     const meta = await publish(p, drawn.pngs)
     const x = await publishX(p, drawn.pngs)
-    const head = [meta.line, x.line].filter(Boolean).join('\n')
-    const text = head ? `${head}\n${p.msg}` : p.msg
-    const sent = await tg(token, 'sendMessage', {chat_id: p.chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true})
+    // plan v5: a post published everywhere it was meant to go reaches Telegram as one quiet line; anything that still
+    // needs hands (TikTok, a refusal, Meta switched off) comes as the full copy-paste draft with its pictures
+    const quiet = done_everywhere(meta, p.kit)
+    const visual = quiet ? 'not sent (published)' : await sendVisuals(token, p.chat_id, p.kit, drawn).catch(e => `error: ${String(e).slice(0, 200)}`)
+    const tiktok = Array.isArray((p.kit as {to?: unknown} | null)?.to) && ((p.kit as {to: string[]}).to).includes('tiktok') ? '📱 <b>TikTok</b>: post these slides as a photo carousel (Photo mode); caption and tags from the box below.' : ''
+    const head = [meta.line, x.line, tiktok].filter(Boolean).join('\n')
+    const text = quiet ? quietLine(p.msg, meta) : head ? `${head}\n${p.msg}` : p.msg
+    const sent = await tg(token, 'sendMessage', {chat_id: p.chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true, disable_notification: quiet})
     const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status ?? 0) >= 500 ? 'unknown' : 'refused'
     const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)
     await rpc('worker_marketing_report', {p_id: p.id, p_outcome: outcome, p_error: error})

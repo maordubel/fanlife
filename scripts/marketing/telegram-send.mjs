@@ -39,13 +39,16 @@ async function sendVisuals(p, pngs) {
 }
 for (const p of posts) {
   const pngs = await visualsFor(p.msg, p.kit || null).catch(() => [])
-  await sendVisuals(p, pngs).catch(() => {})
   const meta = await publishToMeta(p, pngs).catch(() => ({line: ''}))
+  // plan v5: published on both, nothing left for the owner's hands → one quiet line, no pictures
+  const quiet = !(Array.isArray(p.kit?.to) && p.kit.to.includes('tiktok')) && String(meta.facebook || '').startsWith('published') && String(meta.instagram || '').startsWith('published')
+  if (!quiet) await sendVisuals(p, pngs).catch(() => {})
   if (meta.facebook) console.log(`meta ${p.id}: facebook ${meta.facebook} · instagram ${meta.instagram}`)
   const x = await publishToX(p, pngs).catch(() => ({line: ''}))
   if (x.x) console.log(`x ${p.id}: ${x.x}`)
-  const head = [meta.line, x.line].filter(Boolean).join('\n')
-  const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: p.chat_id, text: head ? `${head}\n${p.msg}` : p.msg, parse_mode: 'HTML', disable_web_page_preview: true}), signal: AbortSignal.timeout(20_000)})
+  const tiktok = Array.isArray(p.kit?.to) && p.kit.to.includes('tiktok') ? '📱 <b>TikTok</b>: post these slides as a photo carousel (Photo mode); caption and tags from the box below.' : ''
+  const head = [meta.line, x.line, tiktok].filter(Boolean).join('\n')
+  const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: p.chat_id, text: quiet ? `✅ <b>Published</b> · Facebook + Instagram${meta.story ? ' stories' : ''} · post ${p.id}` : head ? `${head}\n${p.msg}` : p.msg, parse_mode: 'HTML', disable_web_page_preview: true, disable_notification: quiet}), signal: AbortSignal.timeout(20_000)})
     .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
   const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status >= 500) ? 'unknown' : 'refused'
   const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)

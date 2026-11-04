@@ -1,8 +1,20 @@
 # DUBEL TEAM — the 30-day social plan on Telegram (25.10.2026)
 
 One page (Instagram · TikTok · Facebook) markets the whole universe: FAN LIFE, THE WORKER, DUBID,
-OFFSIDES and FUCK YOU. Every two hours, 08:00–22:00 Israel time, the owner gets a ready post on
+OFFSIDES and FUCK YOU. Every two hours, 08:00–22:00 Athens time, the owner gets a ready post on
 Telegram: the hook, the caption, the link to the right app, the hashtags and a visual brief.
+
+## v5 — 4.11.2026 (owner): Athens time, a page that publishes itself
+- **Athens time everywhere** (the plan, the live slots' "(Athens time)", the DB functions — migration
+  `20261104150000_worker_marketing_athens.sql`, the control room's ads schedule).
+- **Every row names its channels** in `kit.to`: `feed` (Facebook Page + Instagram), `story` (their stories), `tiktok`
+  (a Photo-mode draft). Four feed posts a day, five stories (+ a Wednesday film), four live stories, the briefing.
+  The full day and the reasoning: doc 61.
+- **Stories without stickers:** the quiz question at 14:00, its answer as its own story at 17:30.
+- **Films:** `L-FILM` draws a public film's own thumbnail; Friday 21:00 feed, Wednesday 20:00 story.
+- **Telegram gets quieter:** a post published on both Facebook and Instagram arrives as one silent line; anything that
+  still needs hands comes as the full draft with pictures.
+- Build: same command → `supabase/marketing/0009_marketing_plan_v5.sql` + `scripts/marketing/plan-v5.json`.
 
 ## v4.1 — 30.10.2026 (owner): 15–55, and the club passes from father to son
 - **19:30 GENERATIONS**, every day, rotating: *same round* (a seeded `/clubs/<club>/trivia?seed=` link — kid vs dad,

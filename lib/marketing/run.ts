@@ -47,5 +47,7 @@ export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData 
   if ('skip' in out) { await rpc('worker_marketing_skip', {p_id: p.id, p_why: out.skip}); return null }
   await rpc('worker_marketing_compose', {p_id: p.id, p_msg: out.msg, p_ref: out.refs.join(',')})
   if (cache.data && p.kind !== 'briefing') cache.data.posted.push(...out.refs)
-  return {...p, msg: out.msg, kit: out.kit}
+  // plan v5: the slot names its channels (kit.to); the composed picture keeps them
+  const to = (p.kit as {to?: unknown} | null | undefined)?.to
+  return {...p, msg: out.msg, kit: Array.isArray(to) && out.kit && typeof out.kit === 'object' ? {...(out.kit as object), to} : out.kit}
 }
