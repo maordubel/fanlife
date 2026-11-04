@@ -222,3 +222,138 @@ def tone_tab(tone: str, tone_rgb, file_label: str) -> np.ndarray:
     d.rectangle([wb, 0, wb + wa, h], fill=tone_rgb + (255,), outline=INK + (255,), width=4)
     d.text((wb + 22, 9), a, font=fcaps, fill=PAPER + (255,))
     return _arr(im)
+
+
+# ------------------------------------------------------------------ full episode cards (produce.py)
+def _plate(w: int, h: int, second=None, seed: int = 9) -> Image.Image:
+    """A paper plate with an ink frame and (optionally) a coloured second plate offset behind it."""
+    im = Image.new('RGBA', (w + 24, h + 24), (0, 0, 0, 0))
+    if second is not None:
+        im.paste(Image.new('RGBA', (w, h), tuple(second) + (255,)), (18, 18))
+    im.alpha_composite(paper_strip(w, h, seed), (0, 0))
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, w - 1, h - 1], outline=INK + (255,), width=6)
+    return im
+
+
+def chapter_card(n: int, title: str, tone_rgb) -> np.ndarray:
+    """CHAPTER 2 · FRIDAY NIGHT, JEREZ — a case-file divider: the chapter number in Ultra, the title in the head face."""
+    fn, fh, fc = face('num', 150), face('head', 118), face('caps', 38)
+    tl, tt, tr, tb = fh.getbbox(title)
+    w = max(900, tr - tl + 120)
+    im = _plate(w, 330, tone_rgb, seed=20 + n)
+    d = ImageDraw.Draw(im)
+    d.text((44, 24), f'CHAPTER', font=fc, fill=RED + (255,))
+    d.text((44, 58), f'{n:02d}', font=fn, fill=INK + (255,))
+    d.line([(44, 218), (w - 44, 218)], fill=INK + (255,), width=4)
+    d.text((44 - tl, 236 - tt), title, font=fh, fill=INK + (255,))
+    return _arr(im)
+
+
+def version_tab(text: str, tone_rgb) -> np.ndarray:
+    """VERSION A · REUTERS — a folder tab: which telling the picture shows."""
+    f = face('caps', 44)
+    w = int(f.getlength(text)) + 64
+    im = Image.new('RGBA', (w + 14, 92), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.polygon([(10, 88), (24, 10), (w - 10, 10), (w + 4, 88)], fill=INK + (255,))
+    d.polygon([(0, 80), (14, 2), (w - 20, 2), (w - 6, 80)], fill=tuple(tone_rgb) + (255,), outline=INK + (255,))
+    d.line([(0, 80), (14, 2), (w - 20, 2), (w - 6, 80)], fill=INK + (255,), width=5)
+    d.text((32, 16), text, font=f, fill=PAPER + (255,))
+    return _arr(im)
+
+
+def score_card(score: str, label: str, tone_rgb) -> np.ndarray:
+    """1–1 · AFTER EXTRA TIME — the score in Ultra on a plate."""
+    fs, fc = face('num', 190), face('caps', 40)
+    l, t, r, b = fs.getbbox(score)
+    w = max(560, r - l + 120, int(fc.getlength(label)) + 100)
+    im = _plate(w, 330, tone_rgb, seed=31)
+    d = ImageDraw.Draw(im)
+    d.text(((w - (r - l)) / 2 - l, 40 - t), score, font=fs, fill=INK + (255,))
+    d.line([(40, 250), (w - 40, 250)], fill=INK + (255,), width=4)
+    d.text(((w - fc.getlength(label)) / 2, 266), label, font=fc, fill=RED + (255,))
+    return _arr(im)
+
+
+def sources_card(sources: list[dict], width: int = 1720) -> np.ndarray:
+    """The case file's sources, numbered, typed on one sheet of paper (paper, not ink: a black card reads as a gap)."""
+    ft, fc, fh = face('type', 27), face('caps', 30), face('head', 70)
+    asc, desc = ft.getmetrics()
+    lh = int((asc + desc) * 1.32)
+    maxc = int((width - 140) / ft.getlength('M'))
+    lines: list[tuple[str, str]] = []
+    for s in sources:
+        text = f"{s['title']}"
+        first, rest = text[:maxc - 4], text[maxc - 4:]
+        if rest:   # one wrap at a word, then cut: a sources card lists, it does not quote
+            cut_at = first.rfind(' ')
+            first, rest = (first[:cut_at], first[cut_at + 1:] + rest) if cut_at > 20 else (first, rest)
+            rest = rest if len(rest) <= maxc - 4 else rest[:maxc - 5] + '…'
+        lines.append((f"{s['n']:>2}", first))
+        if rest:
+            lines.append(('', rest))
+    h = 150 + lh * len(lines) + 40
+    im = _plate(width, h, None, seed=41)
+    d = ImageDraw.Draw(im)
+    d.text((48, 26), 'SOURCES', font=fh, fill=INK + (255,))
+    d.text((width - 48 - fc.getlength('CASE FILE · ON THE RECORD'), 52), 'CASE FILE · ON THE RECORD', font=fc, fill=RED + (255,))
+    d.line([(48, 118), (width - 48, 118)], fill=INK + (255,), width=4)
+    y = 140
+    for n, ln in lines:
+        if n:
+            d.text((48, y), n, font=ft, fill=RED + (255,))
+        d.text((110, y), ln, font=ft, fill=INK + (255,))
+        y += lh
+    return _arr(im)
+
+
+def member_card(club_line: str, tone_rgb) -> np.ndarray:
+    """The supporters' card the follow beat asks the viewer to fill in: NAME · CLUB · SINCE, blank lines to write on
+    (rule 136). No logo of any platform; the button is ours."""
+    fh, fc, ft = face('head', 92), face('caps', 34), face('type', 34)
+    w, h = 980, 520
+    im = _plate(w, h, tone_rgb, seed=51)
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, w - 1, 96], fill=INK + (255,))
+    d.text((40, 18), 'SUPPORTERS’ CARD', font=face('caps', 52), fill=PAPER + (255,))
+    d.text((w - 40 - fc.getlength(club_line), 32), club_line, font=fc, fill=tuple(tone_rgb) + (255,))
+    for i, lab in enumerate(('NAME', 'CLUB', 'SINCE')):
+        y = 150 + i * 110
+        d.text((40, y), lab, font=fc, fill=RED + (255,))
+        d.line([(190, y + 44), (w - 40, y + 44)], fill=INK + (255,), width=3)
+    d.text((40, h - 66), 'For the terrace, not the TV.', font=ft, fill=INK + (200,))
+    return _arr(im)
+
+
+def subscribe_button(pressed: bool, tone_rgb) -> np.ndarray:
+    """SUBSCRIBE in the tone colour; once pressed, SUBSCRIBED ✓ in ink. Drawn here — never a platform's logo."""
+    f = face('caps', 64)
+    text = 'SUBSCRIBED' if pressed else 'SUBSCRIBE'
+    w = int(f.getlength('SUBSCRIBED')) + 150
+    h = 118
+    im = Image.new('RGBA', (w + 16, h + 16), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    if not pressed:
+        d.rounded_rectangle([14, 14, w + 14, h + 14], radius=20, fill=INK + (255,))
+    off = 8 if pressed else 0
+    fill = INK if pressed else tuple(tone_rgb)
+    d.rounded_rectangle([off, off, w + off, h + off], radius=20, fill=fill + (255,), outline=INK + (255,), width=6)
+    tx = off + (w - f.getlength(text) - (52 if pressed else 0)) / 2
+    d.text((tx, off + 22), text, font=f, fill=PAPER + (255,))
+    if pressed:   # a tick, drawn
+        x = tx + f.getlength(text) + 18
+        d.line([(x, off + 62), (x + 16, off + 80), (x + 44, off + 38)], fill=PAPER + (255,), width=10, joint='curve')
+    return _arr(im)
+
+
+def end_card(site: str, handle: str, tone_rgb) -> np.ndarray:
+    fh, fc = face('head', 96), face('caps', 46)
+    w = max(1100, int(fh.getlength(site.upper())) + 120)
+    im = _plate(w, 360, tone_rgb, seed=61)
+    d = ImageDraw.Draw(im)
+    d.text((48, 30), 'MORE FILES', font=fc, fill=RED + (255,))
+    d.text((48, 96), site.upper(), font=fh, fill=INK + (255,))
+    d.line([(48, 236), (w - 48, 236)], fill=INK + (255,), width=4)
+    d.text((48, 258), handle, font=fc, fill=INK + (255,))
+    return _arr(im)

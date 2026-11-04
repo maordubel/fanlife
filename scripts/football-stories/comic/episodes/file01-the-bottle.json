@@ -1,0 +1,1063 @@
+{
+ "file": "file01",
+ "number": "01",
+ "title": "THE BOTTLE",
+ "tone": "LAUGH",
+ "fps": 25,
+ "grade": 0.45,
+ "script": "docs/fanlife/classified/file01-the-bottle.script.md",
+ "script_version": "draft 2, 4.11.2026",
+ "approved": false,
+ "minutes": 5.2,
+ "note": "FILE 01 from the script DRAFT 2 (owner, 4.11.2026; not yet approved). Each beat's `camera` is the script's own camera direction, rendered by `move`, `transition` and the camera-life effects. Narrated beats carry `say`; their length comes from the narrator's voice (produce.py) — `dur` is only the estimate for a dry run. `cont` beats carry the previous line on another panel, sharing its time by `share`. `t0: \"word\"` lands an effect on the word in `smash_at_word` (`word2` on `smash2_at_word`); `freeze: \"word\"` stops the camera there. `@CH1` is the character sheet in the red training top, measured on each run (roles.py, owner: green = Casillas = CH2). P05 = the keeper standing in the floodlights, P15 = entering the stadium at night (owner). Chapter 3's dossier is the desk; P18 (pile-on) is not uploaded, so the shoot-out line is held. The follow line (rule 136) and the closing line are added by produce.py through studio/script.py with_cta.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "s02-dossier",
+   "say": "May, two thousand and two. The World Cup in Korea and Japan is sixteen days away. Spain's first game: Slovenia, in Gwangju.",
+   "dur": 9.0,
+   "chapter": "Cold open",
+   "mood": "tense",
+   "delivery": "tense",
+   "move": "crane_down",
+   "amount": 0.16,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "sources": [
+    12
+   ],
+   "camera": "top-down, slow crane down onto the folder; desk lamp flickers on",
+   "fx": [
+    {
+     "type": "flicker",
+     "t0": 0,
+     "dur": 1.1
+    },
+    {
+     "type": "caption",
+     "t0": 1.4,
+     "label": "WORLD CUP · GROUP B",
+     "text": "SPAIN v SLOVENIA · GWANGJU · 2 JUNE 2002",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b02",
+   "panel": "@CH1",
+   "say": "Spain's number one is ready. Thirty-two, the best season of his life behind him.",
+   "dur": 7.0,
+   "mood": "tense",
+   "move": "push",
+   "focus": "subject",
+   "amount": 0.16,
+   "transition": "slide",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "CH1 sheet pinned in the open folder · push-in, red string slides to it",
+   "fx": [
+    {
+     "type": "string",
+     "start": [
+      0.0,
+      0.08
+     ],
+     "at": "subject",
+     "t0": 0.3,
+     "dur": 1.0
+    },
+    {
+     "type": "version",
+     "text": "SUBJECT · THE NUMBER ONE",
+     "side": "l",
+     "t0": 0.5
+    }
+   ]
+  },
+  {
+   "id": "b03",
+   "panel": "f01-p07-room-evening",
+   "say": "Friday evening, a hotel near Jerez. He walks into the bathroom.",
+   "dur": 7.0,
+   "mood": "tense",
+   "delivery": "hush",
+   "move": "follow",
+   "focus": "subject",
+   "amount": 0.24,
+   "transition": "slide",
+   "sources": [
+    1,
+    5
+   ],
+   "camera": "slow push-in down the corridor, the door swings",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 0.8,
+     "label": "MONTECASTILLO, JEREZ",
+     "text": "Friday 17 May · 16 days to go",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b04",
+   "panel": "f01-p08-reach",
+   "say": "A shelf. A heavy glass bottle of cologne.",
+   "dur": 5.0,
+   "mood": "tense",
+   "delivery": "hush",
+   "move": "push",
+   "focus": "subject",
+   "amount": 0.3,
+   "transition": "fade",
+   "camera": "macro push-in on the hand, depth blur rising",
+   "fx": [
+    {
+     "type": "dof",
+     "t0": 0.2,
+     "rise": 2.4
+    },
+    {
+     "type": "glint",
+     "at": "subject",
+     "t0": 1.4,
+     "size": 80,
+     "period": 1.8
+    }
+   ]
+  },
+  {
+   "id": "b05",
+   "panel": "f01-p01-slip",
+   "say": "He had spent his life catching things.",
+   "dur": 4.0,
+   "mood": "build",
+   "delivery": "hush",
+   "move": "tilt3d",
+   "focus": "subject",
+   "speed": 0.25,
+   "transition": "smash",
+   "camera": "slow motion, 3D tilt as the bottle falls past camera, droplets drift",
+   "fx": [
+    {
+     "type": "droplets",
+     "at": "subject",
+     "n": 34,
+     "spread": 0.42
+    },
+    {
+     "type": "glint",
+     "at": "subject",
+     "t0": 0.4,
+     "size": 95,
+     "period": 2.2
+    }
+   ]
+  },
+  {
+   "id": "b06",
+   "panel": "f01-p10-sink-smash",
+   "say": "This one got away.",
+   "dur": 4.0,
+   "mood": "build",
+   "delivery": "punch",
+   "move": "pan_down",
+   "amount": 0.12,
+   "focus": "subject",
+   "transition": "whip",
+   "shake": 1.6,
+   "smash_at_word": "away.",
+   "camera": "whip-pan down, impact shake, white flash frame",
+   "fx": [
+    {
+     "type": "speedlines",
+     "from": 0.0,
+     "to": 1.0,
+     "alpha": 0.7
+    },
+    {
+     "type": "flash",
+     "t0": "word",
+     "dur": 0.14
+    },
+    {
+     "type": "shards",
+     "at": "subject",
+     "t0": "word",
+     "n": 80
+    },
+    {
+     "type": "stars",
+     "at": "subject",
+     "t0": "word",
+     "n": 5,
+     "radius": 0.15
+    },
+    {
+     "type": "smash",
+     "t0": "word",
+     "text": "SMASH!",
+     "at": [
+      0.5,
+      0.42
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b07",
+   "panel": "s02-dossier",
+   "dur": 7.0,
+   "mood": "minor",
+   "move": "hold",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "transition": "cut",
+   "camera": "hard cut, the stamp slams, ink bleeds",
+   "fx": [
+    {
+     "type": "tab",
+     "t0": 0.15
+    },
+    {
+     "type": "stamp",
+     "t0": 0.4,
+     "at": [
+      0.5,
+      0.34
+     ],
+     "rot": -9,
+     "scale": 1.05
+    },
+    {
+     "type": "title",
+     "t0": 1.8,
+     "at": [
+      0.5,
+      0.7
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b08",
+   "panel": "s03-laugh",
+   "dur": 2.6,
+   "chapter": "The number one",
+   "mood": "minor",
+   "move": "dolly_r",
+   "transition": "turn",
+   "fx": [
+    {
+     "type": "chapter",
+     "n": 1,
+     "text": "THE NUMBER ONE",
+     "t0": 0.25
+    }
+   ]
+  },
+  {
+   "id": "b09",
+   "panel": "f01-p04-training-dive",
+   "say": "His name: Santiago Cañizares, the goalkeeper of Valencia, champions of Spain. The shirt with the number one was his.",
+   "dur": 13.0,
+   "mood": "minor",
+   "move": "pull",
+   "focus": "subject",
+   "amount": 0.24,
+   "transition": "slide",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "pull-out from the gloves to the whole goal",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 1.0,
+     "label": "CASE FILE · THE KEEPER",
+     "text": "Valencia · Champions of Spain 2002",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b10",
+   "panel": "s03-laugh",
+   "say": "Behind him, on the list, a kid from Real Madrid. Iker Casillas, about to turn twenty-one, had spent the spring on the bench.",
+   "dur": 5.0,
+   "mood": "minor",
+   "move": "pan_r",
+   "transition": "whip",
+   "share": 0.4,
+   "sources": [
+    3
+   ],
+   "camera": "page-slide reveal (S03 → P05), then a crane up the floodlight",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 1.0,
+     "label": "CASE FILE · THE KID",
+     "text": "Iker Casillas · 20",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b10b",
+   "panel": "f01-floodlit-standing",
+   "dur": 8.0,
+   "cont": true,
+   "share": 0.6,
+   "mood": "minor",
+   "move": "crane_up",
+   "amount": 0.16,
+   "focus": "subject",
+   "transition": "slide",
+   "fx": [
+    {
+     "type": "flare",
+     "at": [
+      0.5,
+      0.1
+     ],
+     "strength": 0.5
+    }
+   ]
+  },
+  {
+   "id": "b11",
+   "panel": "f01-floodlit-standing",
+   "say": "Then, on the fifteenth of May in Glasgow, the Champions League final. Real Madrid's goalkeeper César went down injured. The kid came on, and made the saves that kept a two-one lead.",
+   "dur": 17.0,
+   "mood": "build",
+   "delivery": "tense",
+   "move": "push",
+   "focus": "subject",
+   "amount": 0.2,
+   "transition": "fade",
+   "sources": [
+    4
+   ],
+   "camera": "push-in on the young keeper",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 0.8,
+     "label": "CHAMPIONS LEAGUE FINAL",
+     "text": "Glasgow · 15 May 2002",
+     "cps": 30,
+     "pos": "tl"
+    },
+    {
+     "type": "flare",
+     "at": [
+      0.5,
+      0.12
+     ],
+     "strength": 0.6
+    }
+   ]
+  },
+  {
+   "id": "b12",
+   "panel": "f01-p02-bottle-hero",
+   "say": "Two days later, Spain's camp near Jerez. Bags unpacked. Toiletries out. Back to that Friday evening.",
+   "dur": 10.0,
+   "mood": "minor",
+   "move": "orbit",
+   "focus": "subject",
+   "transition": "fade",
+   "sources": [
+    1,
+    5
+   ],
+   "camera": "slow orbit around the bottle on the shelf, light glints",
+   "fx": [
+    {
+     "type": "glint",
+     "at": "subject",
+     "t0": 0.8,
+     "size": 70,
+     "period": 2.0
+    }
+   ]
+  },
+  {
+   "id": "b13",
+   "panel": "s03-laugh",
+   "dur": 2.6,
+   "chapter": "Friday night, Jerez",
+   "mood": "tense",
+   "move": "dolly_l",
+   "transition": "turn",
+   "fx": [
+    {
+     "type": "chapter",
+     "n": 2,
+     "text": "FRIDAY NIGHT, JEREZ",
+     "t0": 0.25
+    }
+   ]
+  },
+  {
+   "id": "b14",
+   "panel": "f01-p07-room-evening",
+   "say": "What happened next has two versions, and this file keeps both.",
+   "dur": 7.0,
+   "mood": "tense",
+   "delivery": "tense",
+   "move": "hold",
+   "focus": "subject",
+   "shake": 1.8,
+   "transition": "slide",
+   "camera": "handheld drift, the light dims",
+   "fx": [
+    {
+     "type": "fade_black",
+     "t0": 0.4,
+     "dur": 4.0,
+     "to": 0.38
+    }
+   ]
+  },
+  {
+   "id": "b15",
+   "panel": "f01-p08-reach",
+   "say": "The one the wire services sent round the world that night: he knocked the bottle, it broke against the washbasin, and a shard of glass fell onto his right foot.",
+   "dur": 13.0,
+   "mood": "tense",
+   "move": "dolly_r",
+   "focus": "subject",
+   "transition": "slide",
+   "sources": [
+    1
+   ],
+   "camera": "split-screen slide, version A on the left",
+   "fx": [
+    {
+     "type": "version",
+     "text": "VERSION A · REUTERS",
+     "side": "l",
+     "t0": 0.3
+    },
+    {
+     "type": "glint",
+     "at": "subject",
+     "t0": 1.0,
+     "size": 80,
+     "period": 1.6
+    }
+   ]
+  },
+  {
+   "id": "b16",
+   "panel": "f01-p01-slip",
+   "say": "The one football tells: the bottle slipped, and the goalkeeper — on instinct — tried to stop it with his foot. Like a ball.",
+   "dur": 7.0,
+   "mood": "tense",
+   "move": "slowmo",
+   "focus": "subject",
+   "speed": 0.6,
+   "transition": "rewind",
+   "share": 0.58,
+   "sources": [
+    5,
+    6
+   ],
+   "camera": "rewind tape, replay faster, version B on the right",
+   "fx": [
+    {
+     "type": "version",
+     "text": "VERSION B · THE LEGEND",
+     "side": "r",
+     "ink": "navy",
+     "t0": 0.3
+    },
+    {
+     "type": "droplets",
+     "at": "subject",
+     "n": 28,
+     "spread": 0.4
+    }
+   ]
+  },
+  {
+   "id": "b16b",
+   "panel": "f01-p10-sink-smash",
+   "dur": 5.0,
+   "cont": true,
+   "share": 0.42,
+   "mood": "tense",
+   "move": "push",
+   "focus": "subject",
+   "amount": 0.12,
+   "transition": "whip",
+   "fx": [
+    {
+     "type": "version",
+     "text": "VERSION B · THE LEGEND",
+     "side": "r",
+     "ink": "navy",
+     "t0": 0
+    },
+    {
+     "type": "speedlines",
+     "alpha": 0.6
+    }
+   ]
+  },
+  {
+   "id": "b17",
+   "panel": "f01-p10-sink-smash",
+   "say": "Either way, the result was the same. The glass cut the tendon of his big toe.",
+   "dur": 9.0,
+   "mood": "tense",
+   "delivery": "punch",
+   "move": "crash",
+   "focus": "subject",
+   "transition": "smash",
+   "sources": [
+    1
+   ],
+   "smash_at_word": "toe.",
+   "camera": "crash zoom",
+   "fx": [
+    {
+     "type": "flash",
+     "t0": "word",
+     "dur": 0.12
+    },
+    {
+     "type": "stars",
+     "at": "subject",
+     "t0": "word",
+     "n": 6,
+     "radius": 0.16
+    },
+    {
+     "type": "smash",
+     "t0": "word",
+     "text": "CRACK!",
+     "at": [
+      0.52,
+      0.4
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b18",
+   "panel": "f01-p12-hospital",
+   "say": "Surgery that night at a hospital nearby. The doctors' verdict reached the camp before he did: no World Cup.",
+   "dur": 14.0,
+   "mood": "sad",
+   "delivery": "hush",
+   "move": "follow",
+   "focus": "subject",
+   "amount": 0.26,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "long dolly down the corridor with the trolley",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 1.2,
+     "label": "MEDICAL REPORT",
+     "text": "Ruled out · 17 May 2002",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b19",
+   "panel": "f01-p13-crutches",
+   "say": "In front of the cameras he refused to call himself unlucky. From the start of his career, he said, he had had more than his share of good luck.",
+   "dur": 16.0,
+   "mood": "minor",
+   "move": "push",
+   "focus": "subject",
+   "amount": 0.14,
+   "transition": "slide",
+   "sources": [
+    7
+   ],
+   "camera": "camera flashes, slow push-in",
+   "fx": [
+    {
+     "type": "flashbulbs",
+     "n": 8
+    },
+    {
+     "type": "caption",
+     "t0": 1.0,
+     "label": "PARAPHRASED · NOT A QUOTE",
+     "text": "Cañizares to the press, in our words",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b20",
+   "panel": "f01-p14-home",
+   "say": "And the coach, José Antonio Camacho, had a hole in his team two weeks before the opening game.",
+   "dur": 10.0,
+   "mood": "minor",
+   "move": "static",
+   "focus": "subject",
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "static, the TV glow pulses",
+   "fx": [
+    {
+     "type": "glow",
+     "at": [
+      0.5,
+      0.4
+     ],
+     "strength": 0.5
+    }
+   ]
+  },
+  {
+   "id": "b21",
+   "panel": "s03-laugh",
+   "dur": 2.6,
+   "chapter": "San Iker",
+   "mood": "build",
+   "move": "dolly_r",
+   "transition": "turn",
+   "fx": [
+    {
+     "type": "chapter",
+     "n": 3,
+     "text": "SAN IKER",
+     "t0": 0.25
+    }
+   ]
+  },
+  {
+   "id": "b22",
+   "panel": "s02-dossier",
+   "say": "César was still injured from Glasgow, so he could not step in. The gloves went to the kid.",
+   "dur": 12.0,
+   "mood": "build",
+   "move": "crane_down",
+   "amount": 0.1,
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "transition": "turn",
+   "sources": [
+    1
+   ],
+   "camera": "top-down, the folder flips open (the dossier desk: the kid’s file)",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 1.0,
+     "label": "CASE FILE · THE KID",
+     "text": "Spain’s new number one",
+     "cps": 30,
+     "pos": "tl"
+    }
+   ]
+  },
+  {
+   "id": "b23",
+   "panel": "f01-floodlit-entering",
+   "say": "Sixteenth of June. Suwon, South Korea. A place in the quarter-finals against Ireland. Nearly thirty-nine thousand inside.",
+   "dur": 14.0,
+   "mood": "build",
+   "delivery": "tense",
+   "move": "follow",
+   "focus": "subject",
+   "amount": 0.32,
+   "transition": "whip",
+   "sources": [
+    8
+   ],
+   "camera": "follow from behind through the tunnel, the bowl opens up",
+   "fx": [
+    {
+     "type": "caption",
+     "t0": 0.8,
+     "label": "WORLD CUP · LAST SIXTEEN",
+     "text": "Suwon · 16 June 2002",
+     "cps": 30,
+     "pos": "tl"
+    },
+    {
+     "type": "godrays",
+     "at": [
+      0.5,
+      0.1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b24",
+   "panel": "f01-p16-penalty-save",
+   "say": "Spain led, then Ireland won a penalty. Ian Harte struck it. Casillas went the right way. Kilbane put the rebound wide.",
+   "dur": 18.0,
+   "mood": "tense",
+   "delivery": "tense",
+   "move": "dolly_r",
+   "focus": "subject",
+   "transition": "whip",
+   "sources": [
+    9,
+    10
+   ],
+   "smash_at_word": "way.",
+   "freeze": "word",
+   "camera": "slow motion along the dive, freeze, burst",
+   "crowd_at_word": "way.",
+   "fx": [
+    {
+     "type": "flash",
+     "t0": "word",
+     "dur": 0.12
+    },
+    {
+     "type": "smash",
+     "t0": "word",
+     "text": "SAVED!",
+     "color": "cyan",
+     "at": [
+      0.5,
+      0.4
+     ]
+    },
+    {
+     "type": "stars",
+     "at": "subject",
+     "t0": "word",
+     "n": 6
+    }
+   ]
+  },
+  {
+   "id": "b25",
+   "panel": "f01-p17-shootout-line",
+   "say": "Robbie Keane equalised in the ninetieth minute, and extra time settled nothing. The first penalty shoot-out of that World Cup.",
+   "dur": 16.0,
+   "mood": "tense",
+   "delivery": "tense",
+   "move": "pan_r",
+   "amount": 0.14,
+   "transition": "slide",
+   "sources": [
+    8,
+    9
+   ],
+   "camera": "slow pan along the line of players",
+   "fx": [
+    {
+     "type": "score",
+     "text": "1–1",
+     "label": "AFTER EXTRA TIME",
+     "t0": 2.0
+    }
+   ]
+  },
+  {
+   "id": "b26",
+   "panel": "f01-p16-penalty-save",
+   "say": "Matt Holland hit the bar. Casillas saved from David Connolly. He saved from Kevin Kilbane. Gaizka Mendieta scored. Spain through, three-two.",
+   "dur": 11.0,
+   "mood": "tense",
+   "delivery": "tense",
+   "move": "push",
+   "focus": "subject",
+   "amount": 0.2,
+   "transition": "whip",
+   "share": 0.62,
+   "sources": [
+    9,
+    10
+   ],
+   "smash_at_word": "Connolly.",
+   "smash2_at_word": "Kilbane.",
+   "crowd_at_word": "Connolly.",
+   "camera": "two quick whips, a hold on the last save",
+   "fx": [
+    {
+     "type": "smash",
+     "t0": "word",
+     "text": "SAVED!",
+     "color": "cyan",
+     "at": [
+      0.36,
+      0.38
+     ]
+    },
+    {
+     "type": "smash",
+     "t0": "word2",
+     "text": "SAVED!",
+     "color": "cyan",
+     "at": [
+      0.64,
+      0.5
+     ],
+     "rot": 6
+    }
+   ]
+  },
+  {
+   "id": "b26b",
+   "panel": "f01-p17-shootout-line",
+   "dur": 7.0,
+   "cont": true,
+   "share": 0.38,
+   "mood": "triumph",
+   "move": "hold",
+   "transition": "whip",
+   "fx": [
+    {
+     "type": "score",
+     "text": "3–2",
+     "label": "ON PENALTIES",
+     "t0": 0.6
+    },
+    {
+     "type": "flare",
+     "at": [
+      0.5,
+      0.1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b27",
+   "panel": "f01-p17-shootout-line",
+   "say": "Three penalties saved in one night, by a goalkeeper who should have been on the bench. Spain had a new saint: San Iker.",
+   "dur": 14.0,
+   "mood": "triumph",
+   "delivery": "punch",
+   "move": "crane_up",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    10,
+    11
+   ],
+   "camera": "P17 held, confetti overlay · crane up and away",
+   "fallback_for": "P18 pile-on (not uploaded: the shoot-out line is held)",
+   "fx": [
+    {
+     "type": "confetti",
+     "t0": 0.3,
+     "n": 170
+    }
+   ]
+  },
+  {
+   "id": "b28",
+   "panel": "f01-p19-kiosk",
+   "say": "In Madrid the next morning, it was his face on the front pages. The number one would be his for most of the next fifteen years.",
+   "dur": 14.0,
+   "mood": "joy",
+   "move": "pan_l",
+   "amount": 0.14,
+   "transition": "slide",
+   "sources": [
+    11
+   ],
+   "camera": "pan along the newspapers"
+  },
+  {
+   "id": "b29",
+   "panel": "f01-p20-empty-shelf",
+   "say": "Somewhere in a hotel near Jerez, there's a shelf where a bottle of cologne used to stand. It changed who played in goal for Spain. File closed.",
+   "dur": 12.0,
+   "chapter": "File closed",
+   "mood": "sad",
+   "delivery": "hush",
+   "move": "pull",
+   "focus": "subject",
+   "amount": 0.2,
+   "transition": "fade",
+   "camera": "slow pull-out to black",
+   "fx": [
+    {
+     "type": "glint",
+     "at": "subject",
+     "t0": 0.5,
+     "size": 46,
+     "period": 2.6
+    },
+    {
+     "type": "stamp",
+     "t0": "end",
+     "text": "FILE 01 · CLOSED",
+     "at": [
+      0.5,
+      0.55
+     ],
+     "rot": -7
+    },
+    {
+     "type": "fade_black",
+     "t0": "end",
+     "dur": 1.3
+    }
+   ]
+  },
+  {
+   "id": "b30",
+   "panel": "s02-dossier",
+   "dur": 7.0,
+   "mood": "minor",
+   "move": "static",
+   "transition": "fade",
+   "fx": [
+    {
+     "type": "sources",
+     "t0": 0.3
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "Reuters via CNN — \"Canizares ruled out by aftershave accident\", 18 May 2002"
+  },
+  {
+   "n": 2,
+   "title": "BBC Sport — \"Canizares out of World Cup\", 17 May 2002"
+  },
+  {
+   "n": 3,
+   "title": "Wikipedia / RSSSF — Iker Casillas (born 20 May 1981); Santiago Cañizares (born 18 December 1969)"
+  },
+  {
+   "n": 4,
+   "title": "Reuters — Champions League final report, Glasgow, 15 May 2002 (Real Madrid 2–1 Bayer Leverkusen)"
+  },
+  {
+   "n": 5,
+   "title": "Soccer-Spain.com — World Cup news, May 2002 (the cologne bottle, the foot, the nearby hospital)"
+  },
+  {
+   "n": 6,
+   "title": "Bleacher Report / Planet Football — the popular telling of the foot version (shown as the legend)"
+  },
+  {
+   "n": 7,
+   "title": "The Courier — \"Bottle of aftershave ruins World Cup bid\" (Cañizares at the press conference, paraphrased)"
+  },
+  {
+   "n": 8,
+   "title": "DFB data centre — Spain v Republic of Ireland, 16 June 2002, World Cup Stadium Suwon (38,926; 3–2 on penalties)"
+  },
+  {
+   "n": 9,
+   "title": "CNN — \"Spain break Irish hearts on penalties\", 16 June 2002"
+  },
+  {
+   "n": 10,
+   "title": "VOA — \"Spain Advances to Quarterfinals\", 16 June 2002"
+  },
+  {
+   "n": 11,
+   "title": "These Football Times — \"San Iker Casillas\""
+  },
+  {
+   "n": 12,
+   "title": "FIFA+ / Wikipedia (Gwangju World Cup Stadium) — Spain v Slovenia, Group B, 2 June 2002"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "The Bottle That Made Casillas Spain’s Number One",
+   "The Cologne Bottle That Cost a Goalkeeper the World Cup",
+   "The Bottle That Gave Spain a Saint"
+  ],
+  "selected": 0,
+  "hook": "Friday, 17 May 2002. Two weeks before the World Cup, Spain's number one goalkeeper, Santiago Cañizares, dropped a bottle of cologne in his hotel bathroom near Jerez. CLASSIFIED · FILE 01: what happened that night, in both the versions it is told, and how a twenty-year-old from Real Madrid ended up saving three penalties in one night in Suwon.",
+  "tags": [
+   "CLASSIFIED",
+   "FanLife Football Stories",
+   "strange football stories",
+   "true football stories",
+   "Santiago Cañizares",
+   "Iker Casillas",
+   "San Iker",
+   "World Cup 2002",
+   "Spain",
+   "Valencia",
+   "Real Madrid",
+   "goalkeeper",
+   "Suwon",
+   "football comic",
+   "football history"
+  ],
+  "thumbnails": [
+   {
+    "panel": "f01-p10-sink-smash",
+    "hook": [
+     "ONE BOTTLE.",
+     "NO WORLD CUP."
+    ]
+   },
+   {
+    "panel": "f01-p01-slip",
+    "hook": [
+     "THE BOTTLE",
+     "THAT CHANGED",
+     "SPAIN"
+    ]
+   },
+   {
+    "panel": "f01-p16-penalty-save",
+    "hook": [
+     "HE SHOULD",
+     "HAVE BEEN ON",
+     "THE BENCH"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "from": "b01",
+    "to": "b03",
+    "hook": "A goalkeeper. A bottle of cologne. And gravity."
+   },
+   {
+    "from": "b10",
+    "to": "b13",
+    "hook": "Two versions. One big toe."
+   },
+   {
+    "from": "b20",
+    "to": "b23",
+    "hook": "The kid who should have been on the bench"
+   }
+  ]
+ }
+}

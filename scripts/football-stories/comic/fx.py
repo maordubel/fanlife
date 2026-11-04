@@ -421,5 +421,112 @@ def flash(frame, ctx, t0=0.0, dur=.16, color=(255, 251, 242), **_):
     overlay(frame, color, np.full(frame.shape[:2], a ** 1.5, np.float32))
 
 
+# ---------------------------------------------------------------- draft-2 camera life (owner, 4.11.2026)
+def flicker(frame, ctx, t0=0.0, dur=1.1, **_):
+    """A desk lamp flickering on: dark, two or three stutters of light, then steady."""
+    tau = ctx['t'] - t0
+    if tau >= dur:
+        return
+    r = _rng(ctx, 31)
+    beats = sorted(r.uniform(0, dur * .8, 4))
+    on = tau > beats[-1] or any(b <= tau < b + .06 for b in beats[:3])
+    dark = .15 if on else .72 * (1 - max(0.0, tau / dur) ** 3)
+    overlay(frame, (21, 19, 15), np.full(frame.shape[:2], dark, np.float32))
+
+
+def dof(frame, ctx, t0=0.0, rise=1.6, strength=1.0, at='subject', **_):
+    """Depth blur rising: everything away from the subject softens over `rise` seconds (a macro lens racking in)."""
+    k = min(1.0, max(0.0, (ctx['t'] - t0) / rise)) * strength
+    if k <= .02:
+        return
+    H, W = frame.shape[:2]
+    cx, cy = anchor(ctx, at)
+    yy, xx = np.ogrid[:H, :W]
+    d = np.sqrt(((xx - cx) / W) ** 2 + ((yy - cy) / H) ** 2).astype(np.float32)
+    m = np.clip((d - .12) / .3, 0, 1) * k
+    sig = max(1.0, 9 * k * H / 1080)
+    blur = cv2.GaussianBlur(frame, (0, 0), sig)
+    frame[:] = (frame * (1 - m[..., None]) + blur * m[..., None]).astype(np.uint8)
+
+
+def flashbulbs(frame, ctx, n=7, alpha=.55, **_):
+    """Press cameras going off: short white bursts at seeded moments, each a bright star at the lens."""
+    r = _rng(ctx, 47)
+    H, W = frame.shape[:2]
+    for i in range(n):
+        at = r.uniform(.2, 6.0)
+        x, y = r.uniform(.05, .95) * W, r.uniform(.1, .7) * H
+        tau = ctx['t'] - at
+        if 0 <= tau < .12:
+            a = (1 - tau / .12) ** 1.5
+            overlay(frame, (255, 251, 242), np.full(frame.shape[:2], alpha * .45 * a, np.float32))
+            R = int(H * .05)
+            cv2.circle(frame, (int(x), int(y)), R, (255, 251, 242), -1, cv2.LINE_AA)
+            cv2.line(frame, (int(x - R * 2.4), int(y)), (int(x + R * 2.4), int(y)), (255, 251, 242), max(2, R // 6), cv2.LINE_AA)
+
+
+def glow(frame, ctx, at=(.5, .45), color=(150, 190, 230), radius=.45, period=1.9, strength=.5, **_):
+    """A screen's light pulsing on the room (an empty armchair before a TV)."""
+    H, W = frame.shape[:2]
+    cx, cy = anchor(ctx, at)
+    yy, xx = np.ogrid[:H, :W]
+    d = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2) / (radius * W)
+    pulse = .6 + .4 * math.sin(ctx['t'] * 2 * math.pi / period) + .08 * math.sin(ctx['t'] * 17)
+    light = (np.clip(1 - d, 0, 1) ** 2 * strength * pulse).astype(np.float32)[..., None] * np.asarray(color, np.float32)[None, None, :]
+    add_light(frame, light * .6)
+
+
+def confetti(frame, ctx, n=160, t0=0.0, **_):
+    """Paper confetti falling and fluttering: ink, vermilion, cyan and cream bits, never a person."""
+    tau = ctx['t'] - t0
+    if tau < 0:
+        return
+    r = _rng(ctx, 59)
+    H, W = frame.shape[:2]
+    cols = [(215, 25, 32), (27, 154, 214), (255, 251, 242), (21, 19, 15), (35, 60, 143)]
+    for i in range(n):
+        x0, y0 = r.uniform(-.05, 1.05) * W, r.uniform(-1.2, 0) * H
+        vy, sway, ph = r.uniform(.12, .3) * H, r.uniform(.01, .04) * W, r.uniform(0, 6.28)
+        y = y0 + vy * tau
+        if not (0 <= y <= H):
+            continue
+        x = x0 + sway * math.sin(tau * r.uniform(2, 4) + ph)
+        s = r.uniform(.006, .012) * H
+        ang = tau * r.uniform(3, 8) + ph
+        w = abs(math.cos(ang)) * s + 1
+        box = cv2.boxPoints(((x, y), (w * 2, s), math.degrees(ang) * .3)).astype(np.int32)
+        cv2.fillConvexPoly(frame, box, cols[i % len(cols)], cv2.LINE_AA)
+
+
+def fade_black(frame, ctx, t0=0.0, dur=1.4, to=1.0, **_):
+    """A fade to black (to=1) or a dimming of the light (to<1), from t0 over dur seconds."""
+    k = min(1.0, max(0.0, (ctx['t'] - t0) / dur))
+    if k > 0:
+        overlay(frame, (21, 19, 15), np.full(frame.shape[:2], to * k * k * (3 - 2 * k), np.float32))
+
+
+def string(frame, ctx, start=(.0, .1), at='subject', t0=0.0, dur=.9, **_):
+    """The case board's red string sliding across to the thing that matters, pinned with a drawing pin."""
+    tau = ctx['t'] - t0
+    if tau < 0:
+        return
+    H, W = frame.shape[:2]
+    k = min(1.0, tau / dur)
+    k = 1 - (1 - k) ** 3
+    x0, y0 = start[0] * W, start[1] * H
+    x1, y1 = anchor(ctx, at)
+    x, y = x0 + (x1 - x0) * k, y0 + (y1 - y0) * k
+    sag = H * .04 * math.sin(math.pi * k)
+    pts = np.array([(x0 + (x - x0) * u, y0 + (y - y0) * u + sag * math.sin(math.pi * u)) for u in np.linspace(0, 1, 24)], np.int32)
+    th = max(3, H // 220)
+    cv2.polylines(frame, [pts + th // 2], False, (21, 19, 15), th, cv2.LINE_AA)
+    cv2.polylines(frame, [pts], False, (215, 25, 32), th, cv2.LINE_AA)
+    if k >= 1:
+        cv2.circle(frame, (int(x1), int(y1)), th * 3, (21, 19, 15), -1, cv2.LINE_AA)
+        cv2.circle(frame, (int(x1) - 1, int(y1) - 1), th * 2, (215, 25, 32), -1, cv2.LINE_AA)
+
+
 OVERLAYS = {'smoke': smoke, 'shards': shards, 'droplets': droplets, 'glint': glint, 'rain': rain, 'flare': flare,
-            'godrays': flare, 'embers': embers, 'speedlines': speedlines, 'stars': stars, 'flash': flash}
+            'godrays': flare, 'embers': embers, 'speedlines': speedlines, 'stars': stars, 'flash': flash,
+            'flicker': flicker, 'dof': dof, 'flashbulbs': flashbulbs, 'glow': glow, 'confetti': confetti,
+            'fade_black': fade_black, 'string': string}

@@ -5,16 +5,25 @@
   "note": "The owner's panels live in his public Drive folder only. Nothing listed here is ever committed to the repository: drive_fetch.py downloads them into a temporary folder outside it. Owner decision 4.11.2026: everything in a targeted folder is approved material used AS IS (real faces, press originals included) — the composer never blurs, rejects or anonymises it. The no-real-faces / no-blood rules apply only to what the composer draws in code.",
   "drive_folder": "1tZgDuFn7LdaxSd-LctIG1j2n0JuNW-_L",
   "download_url": "https://drive.usercontent.google.com/download?id={id}&export=download&confirm=t",
+  "music_note": "The score under a full episode (produce.py) is chosen by the tone tab from studio/kit/music/index.json. An episode may name its own track (\"music\"). The owner can change any of these; a track that cannot be fetched falls back to the studio's composed score, and the report says so.",
   "tones": {
-    "LAUGH": {"color": "#1B9AD6", "label": "LAUGH"},
-    "WAR": {"color": "#D71920", "label": "WAR"},
-    "HEART": {"color": "#233C8F", "label": "HEART"}
+    "LAUGH": {"color": "#1B9AD6", "label": "LAUGH", "music": "helland-clowns"},
+    "WAR": {"color": "#D71920", "label": "WAR", "music": "leberch-dark"},
+    "HEART": {"color": "#233C8F", "label": "HEART", "music": "sub-clair-lofi-study"}
   },
   "kit": [
     {"id": "s02-dossier", "role": "S02", "kind": "panel", "name": "Desk_items_under_lamp_light", "drive_id": "1MAcM2IW6crWqkKV6j2DqHAnqqCsH13u6", "file": "s02-dossier.jpg"},
     {"id": "s03-laugh", "role": "S03", "kind": "panel", "name": "Comic_background_with_sunray_str…", "drive_id": "1QrUM9_C21PpmNVI4inlTaKxPpguVq_d_", "file": "s03-laugh.jpg"},
-    {"id": "s04-abstract-a", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_f49f7622", "drive_id": "1fZIBjvoFyP0ZDcBKAbHkm6FWYOV0unkv", "file": "s04-abstract-a.jpg", "brief_match": "uncertain: WAR or HEART background, to be confirmed by the owner"},
-    {"id": "s05-abstract-b", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_787e7b7d", "drive_id": "1oVZzTAr4zxCn1raUOW1u42CePDzjxCHv", "file": "s05-abstract-b.jpg", "brief_match": "uncertain: WAR or HEART background, to be confirmed by the owner"}
+    {"id": "s04-abstract-a", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_f49f7622", "drive_id": "1fZIBjvoFyP0ZDcBKAbHkm6FWYOV0unkv", "file": "s04-abstract-a.jpg", "brief_match": "owner 4.11.2026: WAR = the red/vermilion one, HEART = the navy one — decided by measured hue (role_rules)"},
+    {"id": "s05-abstract-b", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_787e7b7d", "drive_id": "1oVZzTAr4zxCn1raUOW1u42CePDzjxCHv", "file": "s05-abstract-b.jpg", "brief_match": "owner 4.11.2026: WAR = the red/vermilion one, HEART = the navy one — decided by measured hue (role_rules)"}
+  ],
+  "role_rules": [
+    {"file": "file01", "roles": ["CH1", "CH2"], "ids": ["f01-ch-a", "f01-ch-b"], "hues": ["red", "green"],
+     "why": "Owner, 4.11.2026: green = Casillas (CH2); the red training top = Cañizares (CH1). The sheet whose saturated pixels are mostly green is CH2.",
+     "measured": "on every run by comic/roles.py (the panels never reach this repository); the result is in the run's report.json → roles"},
+    {"file": null, "roles": ["S04", "S05"], "ids": ["s04-abstract-a", "s05-abstract-b"], "hues": ["red", "navy"],
+     "why": "Owner, 4.11.2026: S04 WAR = the abstract background with the most vermilion/red; S05 HEART = the navy one.",
+     "measured": "on every run by comic/roles.py; the result is in the run's report.json → roles"}
   ],
   "files": {
     "file01": {
@@ -24,13 +33,13 @@
       "year": 2002,
       "brief_roles": ["CH1", "CH2", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20", "V1", "V2"],
       "panels": [
-        {"id": "f01-ch-a", "role": "CH1/CH2", "kind": "sheet", "name": "Goalkeeper_character_sheet_views", "drive_id": "1OUPf_eNQI0aHmVm9RCc2R2v7CNKgSNZA", "file": "f01-ch-a.jpg", "brief_match": "uncertain: which sheet is CH1 (keeper) and which CH2 (the kid)"},
-        {"id": "f01-ch-b", "role": "CH1/CH2", "kind": "sheet", "name": "Character_sheet_of_goalkeeper", "drive_id": "1fLYdLA1FHEBVCFBdSwzwAhtopNo5NB8M", "file": "f01-ch-b.jpg", "brief_match": "uncertain: which sheet is CH1 (keeper) and which CH2 (the kid)"},
+        {"id": "f01-ch-a", "role": "CH1/CH2", "kind": "sheet", "name": "Goalkeeper_character_sheet_views", "drive_id": "1OUPf_eNQI0aHmVm9RCc2R2v7CNKgSNZA", "file": "f01-ch-a.jpg", "brief_match": "owner 4.11.2026: CH2 = the green jersey (Casillas), CH1 = the red training top (Cañizares) — decided by measured hue (role_rules)"},
+        {"id": "f01-ch-b", "role": "CH1/CH2", "kind": "sheet", "name": "Character_sheet_of_goalkeeper", "drive_id": "1fLYdLA1FHEBVCFBdSwzwAhtopNo5NB8M", "file": "f01-ch-b.jpg", "brief_match": "owner 4.11.2026: CH2 = the green jersey (Casillas), CH1 = the red training top (Cañizares) — decided by measured hue (role_rules)"},
         {"id": "f01-p01-slip", "role": "P01", "kind": "panel", "name": "Hand_dropping_cologne_bottle", "drive_id": "12BCsm0BAg-wlhwhP90eFp1WUBESoK28g", "file": "f01-p01-slip.jpg"},
         {"id": "f01-p02-bottle-hero", "role": "P02", "kind": "panel", "name": "Cologne_bottle_on_bathroom_shelf", "drive_id": "1aTTEJrMqeByaQuw7DBTYXXS8JSffFfE7", "file": "f01-p02-bottle-hero.jpg"},
         {"id": "f01-p04-training-dive", "role": "P04", "kind": "panel", "name": "Goalkeeper_making_diving_save", "drive_id": "1UkQny-bnw2dPfBEJ1s88MmTsbXTAEqqI", "file": "f01-p04-training-dive.jpg"},
-        {"id": "f01-floodlit-standing", "role": "P05/P15", "kind": "panel", "name": "Goalkeeper_standing_in_floodlit_…", "drive_id": "1-rm6AH4wFWgiiiPdWxgOcoQ2SgOwZkb0", "file": "f01-floodlit-standing.jpg", "brief_match": "uncertain: P05 (the kid) or P15 (Suwon)"},
-        {"id": "f01-floodlit-entering", "role": "P05/P15", "kind": "panel", "name": "Goalkeeper_entering_stadium_at_n…", "drive_id": "1vjM2jWf0P0zNOGEaO7iaz1WH3nwenA8u", "file": "f01-floodlit-entering.jpg", "brief_match": "uncertain: P05 (the kid) or P15 (Suwon)"},
+        {"id": "f01-floodlit-standing", "role": "P05", "kind": "panel", "name": "Goalkeeper_standing_in_floodlit_…", "drive_id": "1-rm6AH4wFWgiiiPdWxgOcoQ2SgOwZkb0", "file": "f01-floodlit-standing.jpg", "brief_match": "owner 4.11.2026: P05"},
+        {"id": "f01-floodlit-entering", "role": "P15", "kind": "panel", "name": "Goalkeeper_entering_stadium_at_n…", "drive_id": "1vjM2jWf0P0zNOGEaO7iaz1WH3nwenA8u", "file": "f01-floodlit-entering.jpg", "brief_match": "owner 4.11.2026: P15"},
         {"id": "f01-p07-room-evening", "role": "P07", "kind": "panel", "name": "Goalkeeper_walking_towards_bathroom", "drive_id": "1--L3Pb621NQBk71nNjNnFiylmZicfsqr", "file": "f01-p07-room-evening.jpg"},
         {"id": "f01-p08-reach", "role": "P08", "kind": "panel", "name": "Man_reaching_for_cologne_bottle", "drive_id": "1QMUfDDJttya6P9aGjWU2v1u4PcY6mL6q", "file": "f01-p08-reach.jpg"},
         {"id": "f01-p10-sink-smash", "role": "P10", "kind": "panel", "name": "Glass_cologne_bottle_falling", "drive_id": "1obEoQQ5-5idou2y2fho91Bw52HmRqlji", "file": "f01-p10-sink-smash.jpg"},

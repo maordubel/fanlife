@@ -16,10 +16,17 @@ from pathlib import Path
 
 from comic.camera import MOVES
 
-TRANSITIONS = {'cut': 0.0, 'whip': .36, 'smash': .16, 'slide': .55, 'turn': .7, 'fade': .45}
+TRANSITIONS = {'cut': 0.0, 'whip': .36, 'smash': .16, 'slide': .55, 'turn': .7, 'fade': .45, 'rewind': .6}
 FX_KINDS = {'smoke', 'shards', 'droplets', 'glint', 'rain', 'flare', 'godrays', 'embers', 'speedlines', 'stars', 'flash',
-            'stamp', 'smash', 'caption', 'title', 'tab', 'handheld', 'cutout'}
+            'stamp', 'smash', 'caption', 'title', 'tab', 'handheld', 'cutout',
+            # full episodes (produce.py): chapter dividers, version tabs, score plates, the sources sheet, the follow
+            # beat's supporters' card (rule 136), the end card, and paper puppets (rig.py)
+            'chapter', 'version', 'score', 'sources', 'follow', 'end', 'puppet',
+            # draft-2 camera life: a lamp flickering on, depth blur rising, press flashbulbs, a pulsing TV glow,
+            # confetti, a fade to black (or a dimming), the red string of the case board
+            'flicker', 'dof', 'flashbulbs', 'glow', 'confetti', 'fade_black', 'string'}
 TONES = ('LAUGH', 'WAR', 'HEART')
+WORD_GUESS = {'word': .55, 'word2': .75}
 
 
 @dataclass
@@ -97,9 +104,18 @@ def load(path: Path | dict, timing: dict | None = None) -> tuple[dict, list[Beat
         td = float(b.get('tdur', TRANSITIONS[tr])) if i > 0 else 0.0
         if td >= dur:
             raise EpisodeError(f'beat {i}: the transition is longer than the beat')
+        fxl = _fx_list(b)
+        for e in fxl:   # a time named by a word ("word") is set by produce.py from the voice; a dry run estimates it
+            if isinstance(e.get('t0'), str):
+                e['t0'] = max(0.0, dur - 1.4) if e['t0'] == 'end' else dur * WORD_GUESS.get(e['t0'], .55)
+            if isinstance(e.get('press_at'), str):
+                e['press_at'] = dur * .8
+        if isinstance(b.get('freeze'), str):   # a freeze on a word: produce.py sets it from the voice, a dry run guesses
+            w = dur * WORD_GUESS.get(b['freeze'], .55)
+            b = {**b, 'freeze': [w, w + .7]}
         foc = b.get('focus')
         beats.append(Beat(b['panel'], dur, mv, tuple(foc) if isinstance(foc, (list, tuple)) else None, b.get('amount'), b.get('ease'),
-                          _fx_list(b), tr if i > 0 else 'cut', td, b.get('shake'), float(b.get('speed', 1.0)), t, b))
+                          fxl, tr if i > 0 else 'cut', td, b.get('shake'), float(b.get('speed', 1.0)), t, b))
         t += dur
     return ep, beats
 

@@ -112,8 +112,13 @@ The demo, beat by beat:
 
 | FILE | Not supplied yet | Close, to be confirmed |
 |---|---|---|
-| FILE 01 | P03 camp · P06 final bench · P09 foot catch · P11 shards · P18 pile-on · V1 · V2 | Which floodlit picture is P05 and which is P15 · which character sheet is CH1 and which is CH2 · P14 is an armchair before a TV, where the brief has a phone |
+| FILE 01 | P03 camp · P06 final bench · P09 foot catch · P11 shards · P18 pile-on · V1 · V2 | Decided by the owner (4.11.2026): P05 = standing in the floodlights, P15 = entering the stadium; CH2 = the green jersey (Casillas), CH1 = the red training top — measured on each run (`roles.py`) · P14 is an armchair before a TV, where the brief has a phone |
 | FILE 02 | P03 stadium at dusk · P04 away end · P05 seats torn · P06 fence breaks · P08 tear gas · P16 TV summer · V1 | "Footballer facing police in smoke" could be P07 or an alternate P11 |
-| Series kit | S01 style anchor (not needed by the composer) | S04/S05 abstract backgrounds: which one is WAR and which is HEART |
+| Series kit | S01 style anchor (not needed by the composer) | Decided by the owner: S04 WAR = the red/vermilion background, S05 HEART = the navy one — measured on each run (`roles.py`) |
 
 `manifest.missing_roles()` computes this list, and `drive_fetch.py` prints it on every run.
+
+## The full episode
+
+`produce.py` turns an approved script into the finished FILE: voice, clock, picture, mix, captions, QA, Shorts, the
+YouTube package and the Telegram draft. See `docs/fanlife/65-classified-production.md`.
