@@ -128,6 +128,24 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
     return text, {'provider': p, 'model': model, 'seconds': round(time.time() - t0, 1), **usage}
 
 
+ATTEMPTS = 5
+
+
+def repair(s: dict) -> dict:
+    """What can be fixed without a model: the hook IS the first sentence spoken (measured 4.11.2026 — the light
+    models paraphrased it in the "hook" field and failed four rounds on that alone)."""
+    try:
+        first = next(b for ch in s.get('chapters') or [] for b in ch.get('beats') or [] if isinstance(b, dict) and (b.get('narration') or '').strip())
+    except (StopIteration, AttributeError, TypeError):
+        return s
+    n = first['narration'].strip()
+    hook = str(s.get('hook') or '').strip()
+    if not hook or not n.startswith(hook):
+        m = re.match(r'(.+?[.!?])(\s|$)', n)
+        s['hook'] = (m.group(1) if m else n)[:300]
+    return s
+
+
 def parse_json(text: str) -> dict:
     t = text.strip()
     t = re.sub(r'^```(?:json)?\s*|\s*```$', '', t)
@@ -227,7 +245,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
                  'used as it is. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
     _LOG[0] = log
     attempts = []
-    for attempt in range(4):
+    for attempt in range(ATTEMPTS):
         req = {'system': SYSTEM, 'user': user, 'attempt': attempt}
         key = sha256_json(req)
         cached = cache_dir / f'writer-{key[:20]}.json'
@@ -240,7 +258,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             write_json(cached, reply)
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
         try:
-            script = parse_json(reply['text'])
+            script = repair(parse_json(reply['text']))
             errs = validate_script(script, ledger, minutes)
         except StageError as e:
             script, errs = None, [str(e)]
