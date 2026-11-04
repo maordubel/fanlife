@@ -33,7 +33,11 @@ def main() -> int:
     n = int(mode)
     if not (job / f'script-option-{n}.json').exists():
         print(f'option {n} was not written'); return 0
-    r = pipeline.run(job, brief(n), pal)
+    if REQ.get('send_from_run') and (job / 'out' / 'preview.mp4').exists():
+        qa = job / 'out' / 'qa.json'
+        r = {'qa': read_json(qa) if qa.exists() else {}}
+    else:
+        r = pipeline.run(job, brief(n), pal)
     s = read_json(job / f'script-option-{n}.json')
     prev = job / 'out' / 'preview.mp4'
     from matchday.vlog_auto import send_telegram

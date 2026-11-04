@@ -6,9 +6,21 @@ on:
   push:
     branches-ignore: [main]
     paths: ['scripts/football-stories/studio/director-test.json']
-permissions: {contents: read}
+permissions: {contents: read, actions: read}
+env:
+  STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+  FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: {reuse: '${{ steps.p.outputs.reuse }}'}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: echo "reuse=$(python3 -c "import json;print(json.load(open('scripts/football-stories/studio/director-test.json')).get('send_from_run') or '')")" >> "$GITHUB_OUTPUT"
   write:
+    needs: plan
+    if: needs.plan.outputs.reuse == ''
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -51,7 +63,8 @@ jobs:
         if: always()
         with: {name: dtest, path: '${{ github.workspace }}/dtest', retention-days: 3, include-hidden-files: true}
   film:
-    needs: write
+    needs: [plan, write]
+    if: always() && (needs.write.result == 'success' || needs.plan.outputs.reuse != '')
     runs-on: ubuntu-latest
     timeout-minutes: 120
     strategy: {fail-fast: false, matrix: {n: [1, 2, 3]}}
@@ -87,8 +100,16 @@ jobs:
         run: |
           mkdir -p node_modules/server-only && echo "{\"name\":\"server-only\",\"main\":\"index.js\"}" > node_modules/server-only/package.json && : > node_modules/server-only/index.js
           npx tsx scripts/football-stories/palettes.ts > /tmp/palettes.json
-      - uses: actions/download-artifact@v4
+      - if: needs.plan.outputs.reuse == ''
+        uses: actions/download-artifact@v4
         with: {name: dtest, path: '${{ github.workspace }}/dtest'}
+      - if: needs.plan.outputs.reuse != ''
+        uses: actions/download-artifact@v4
+        with: {name: dtest, path: '${{ github.workspace }}/dtest', run-id: '${{ needs.plan.outputs.reuse }}', github-token: '${{ github.token }}'}
+      - if: needs.plan.outputs.reuse != ''
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: {name: 'film-${{ matrix.n }}', path: '${{ github.workspace }}/dtest/out', run-id: '${{ needs.plan.outputs.reuse }}', github-token: '${{ github.token }}'}
       - name: Render this director's film
         working-directory: scripts/football-stories
         env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}', PALETTES: /tmp/palettes.json, KOKORO_DIR: /home/runner/models, STORIES_WORKERS: '4', STORIES_MASTER_PRESET: medium, TELEGRAM_BOT_TOKEN: '${{ secrets.TELEGRAM_BOT_TOKEN }}'}
