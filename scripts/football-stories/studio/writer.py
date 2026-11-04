@@ -81,6 +81,11 @@ PICTURE (choose a visual for every beat, matching its emotion):
   climax), "broll" (the art behind a data card — a terrace for a derby, an empty stand for a defeat, a tunnel before a
   final), "sfx" (roar on a goal, groan on a defeat, whistle at full time, gasp at a miss, drum under a trailer). Don't
   repeat a camera move three beats running.
+- SLUG LINES AND A MOTIF (the owner's own craft): open a scene with a "slug" on its first beat — a screenplay slug line,
+  "<place> — <time phrase>" ("Piraeus — the night of the final", "Bloomfield — a Saturday in May"); the place and any
+  month or weekday come from a claim that beat cites. Give the film one "motif" (top level, ≤6 words, an image, never a
+  fact: "a red scarf", "the clock above the stand") and let the narration return to it, paying it off at the end.
+- THE WEATHER IS A FACT. Rain, snow, fog, sunshine, mud: only when a claim cited in that beat records it.
 - A "trailer" card (1–4 lines, ≤5 words each) is for the cold open and the turn between acts: short, hard lines
   ("NOBODY GAVE THEM A CHANCE"); no number, date or name a claim cited in that beat does not hold.
 - Illustrations are symbolic period scenes (terraces, a tunnel, a supporter seen from behind) — never a real person's
@@ -249,6 +254,13 @@ def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
     if any('[no position]' in e for e in errs):
         out.append('Say where the form went (wins, defeats, runs — cite "story" or the matches), never where they stood: no '
                    'table, place, standings or points unless a table claim is cited in that beat.')
+    if any('slug' in e for e in errs):
+        out.append('A slug is "<place> — <time phrase>" with an em dash, ≤ 60 characters; the place is a ground or city a '
+                   'claim cited in that beat names, and a month or weekday must be the cited match\'s own. Otherwise drop the slug.')
+    if any('"motif"' in e for e in errs):
+        out.append('The motif is an image of at most six words with no number, date or name in it ("a red scarf").')
+    if any('weather' in e for e in errs):
+        out.append('Say nothing about the weather (rain, snow, fog, sun, mud) unless a claim you cite in that beat records it.')
     if any('"director"' in e for e in errs):
         out.append('Set "director": 2 at the top level of the JSON.')
     m = next((re.search(r'Narration is (\d+) words', e) for e in errs if 'Narration is' in e), None)
@@ -458,13 +470,13 @@ gripping, then pitch it:
 - "acts": exactly three short lines, at most 160 characters each: Act I, Act II, Act III.
 - "why": at most 300 characters: why this story, why you.
 Every number and every club or person you name must come from the chosen candidate's own data. Never a league position
-or a points total. Never an invented quote, crowd size or minute.
+or a points total. Never an invented quote, crowd size, minute or weather — the house soul is a voice, not a source.
 
 Return ONE JSON object and nothing else: {{"pick": n, "title": "...", "logline": "...", "cold_open": "...", "acts": ["...", "...", "..."], "why": "..."}}'''
 
 
 def _pitch_errors(p: dict, candidates: list[dict]) -> list[str]:
-    from .script import FREE_NUMBERS, MONTHS, _fold, numbers_in_text, numbers_in_value
+    from .script import FREE_NUMBERS, MONTHS, WEATHER, _fold, numbers_in_text, numbers_in_value
     errs = []
     if not isinstance(p, dict):
         return ['The pitch is not a JSON object']
@@ -511,6 +523,9 @@ def _pitch_errors(p: dict, candidates: list[dict]) -> list[str]:
             for mi, mn in enumerate(MONTHS):
                 if re.search(rf'\b{mn}\b', t, re.I) and f'-{mi + 1:02d}-' not in json.dumps(cand):
                     errs.append(f'"{k}": {mn} is not a month in the chosen candidate\'s data')
+            for m in WEATHER.finditer(t):
+                if m.group(0).lower() not in json.dumps(cand, ensure_ascii=False).lower():
+                    errs.append(f'"{k}": "{m.group(0)}" — the weather is a fact, and the candidate\'s data does not record it')
     return errs
 
 

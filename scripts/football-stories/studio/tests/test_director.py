@@ -392,6 +392,98 @@ class NoPosition(unittest.TestCase):
         self.assertFalse(any('[no position]' in e for e in validate_script(s, L, minutes_for(s))))
 
 
+class Craft(unittest.TestCase):
+    """The owner's craft in the schema: a slug line and a motif; and the weather, which is a fact."""
+
+    def setUp(self):
+        self.L = season('WWLLLLLWWWWW')
+        self.L['claims'][0]['fact']['venue'] = {'name': 'Mill Road', 'city': 'Easton'}
+        self.s = director_script(self.L)
+
+    def errs(self, s):
+        return [e for e in validate_script(s, self.L, minutes_for(s)) if not e.startswith('Narration is')]
+
+    def test_a_slug_is_a_place_and_a_time_from_the_cited_claims(self):
+        s = copy.deepcopy(self.s)
+        b = s['chapters'][1]['beats'][1]                      # cites m01..m03; m01 was at Mill Road, Easton, a Saturday in August
+        for good in ('Easton — a Saturday in August', 'Mill Road — the night before', 'Easton — later that week'):
+            b['slug'] = good
+            self.assertEqual(self.errs(s), [], good)
+        for bad, want in (('Easton - a Saturday', 'em dash'), ('Westport — a Saturday', '"Westport"'),
+                          ('Easton — a Tuesday in August', 'Tuesday'), ('Easton — one March night', 'March'),
+                          ('Easton — 12 days later', 'number 12'), ('Easton — a rainy Saturday', 'weather'),
+                          ('Club 9 ground — that night', 'number 9')):
+            b['slug'] = bad
+            self.assertTrue(any(want in e for e in self.errs(s)), (bad, self.errs(s)))
+
+    def test_a_motif_is_an_image_never_a_fact(self):
+        s = copy.deepcopy(self.s)
+        s['motif'] = 'a red scarf on the fence'
+        self.assertEqual(self.errs(s), [])
+        for bad in ('the scarf from 1998', 'a scarf for Club 3', 'a red scarf in August', 'a very very long motif with too many words'):
+            s['motif'] = bad
+            self.assertTrue(any('"motif"' in e for e in self.errs(s)), bad)
+
+    def test_the_weather_is_a_fact(self):
+        s = copy.deepcopy(self.s)
+        b = s['chapters'][1]['beats'][1]
+        b['narration'] = 'Three in a row, all of them in the pouring rain. ' + words(6)
+        self.assertTrue(any('[no invented weather]' in e for e in self.errs(s)))
+        b['narration'] = 'Three in a row, and they stormed back every time with a thunderbolt. ' + words(4)
+        self.assertFalse(any('weather' in e for e in self.errs(s)))      # football, not a forecast
+        self.L['claims'][1]['fact']['note'] = 'played in heavy rain'
+        b['narration'] = 'Three in a row, one of them in the rain. ' + words(6)
+        self.assertFalse(any('weather' in e for e in self.errs(s)))      # m02's claim records it
+
+
+class Soul(unittest.TestCase):
+    """The house soul (studio/soul.py) reaches the model in every script and every pitch, and never adds a fact."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        old = writer.call_model
+        self.addCleanup(lambda: setattr(writer, 'call_model', old))
+
+    def test_the_soul_reaches_the_model_in_options_and_pitches(self):
+        from studio.directors import BY_ID
+        from studio.soul import brief as soul_brief
+        L = season('WWLLLLLWWWWW')
+        base = director_script(L)
+        n = [0]
+
+        def answer(system, user):
+            n[0] += 1
+            if 'CANDIDATES' in user:
+                return pitch()
+            sc = copy.deepcopy(base)
+            sc['hook'] = f'Hook {"ABC"[n[0] - 1]}.'
+            sc['chapters'][0]['beats'][0]['narration'] = sc['hook'] + ' ' + words(14)
+            sc['title_candidates'][0]['title'] = f'Title {"ABC"[n[0] - 1]}'
+            return json.dumps(sc)
+        fake = FakeModel(answer)
+        writer.call_model = fake
+        writer.write_options({'duration': minutes_for(base), 'kind': 'season'}, L, Path(self.tmp.name), lambda *_: None)
+        writer.write_pitch(BY_ID['terrace'], CANDS, Path(self.tmp.name), lambda *_: None)
+        soul = soul_brief()
+        self.assertEqual(len(fake.prompts), 4)
+        for _, user in fake.prompts:
+            self.assertIn(soul, user)
+
+    def test_the_soul_is_not_a_source(self):
+        from studio.soul import SOUL, brief as soul_brief
+        L = season('WWLLLLLWWWWW')
+        self.assertNotIn(SOUL['who'][:40], json.dumps(writer.ledger_for_prompt(L)))   # the soul is never in the evidence
+        s = director_script(L)
+        self.assertIn('forty years', soul_brief())
+        s['chapters'][1]['beats'][2]['narration'] = 'Some keep the ticket of that night for forty years. ' + words(4)
+        self.assertTrue(any('number 40' in e for e in validate_script(s, L, minutes_for(s))))
+        s['chapters'][1]['beats'][2]['narration'] = 'The rain, the songs, the away end. ' + words(6)
+        self.assertTrue(any('[no invented weather]' in e for e in validate_script(s, L, minutes_for(s))))
+        self.assertTrue(writer._pitch_errors(json.loads(pitch(logline='Forty years of AEK Athens away days.')), CANDS))
+        self.assertTrue(any('weather' in e for e in writer._pitch_errors(json.loads(pitch(cold_open='Rain on the away end.')), CANDS)))
+
+
 class Cards(unittest.TestCase):
     def setUp(self):
         self.L = season('WWLLLLLWWWWW')

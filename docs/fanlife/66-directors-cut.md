@@ -100,6 +100,14 @@ scorers and the chosen scorer's minute; `run` 3+ consecutive matches of one stre
 unbeaten, or winless); labels ≤ 40 characters; trailer lines are checked for numbers (fact guard), for the name words of
 any claim the beat does not cite, and for a month no cited claim is dated in.
 
+The owner's craft (§6) in the schema, added by A (4.11.2026), both optional and validated for every script:
+- beat `slug`: a screenplay slug line, `"<place> — <time phrase>"` (em dash), ≤ 60 characters — "Piraeus — the night of
+  the final". Every capitalised word must be in a claim the beat cites (or be a month/weekday that matches a cited date,
+  or a plain time word); numbers through the fact guard; no weather. **For B:** print it as a slug at the start of that
+  beat's shot (typewriter, lower-left), before the visual's own text.
+- top-level `motif`: the film's recurring image, ≤ 6 words, no number, month, club or name in it ("a red scarf"). The
+  narration returns to it; **for B:** a small recurring mark/caption is optional — the motif is the writer's device first.
+
 A beat may cite the pseudo-claim `"story"` (like `summary:<competition>`): its numbers are the run lengths, the form
 line's end/high/low, the goal difference and the matches played. It is not a ledger claim — B ignores ids it cannot find.
 
@@ -136,6 +144,8 @@ disk validates exactly as before. The `follow` and `end` beats the studio adds a
 - Rule 5: the last line of every chapter but the last ends with `?`, `…` or a dash, or carries a turn word (but, until,
   then, yet, still, only, nobody, what, how, would, could, next, …). "The next chapter answers it" is the writer's craft.
 - Rule 6 is a writing rule, in the writer's prompt.
+- Also: no weather (rain, snow, fog, sunshine, mud — literal words only, "stormed back" is football) unless a claim
+  cited in that beat records it; the same for trailer lines, slugs and pitches.
 - Also (rule 11, §1): a beat may not talk about the table, the standings, a place or points ("top of the table",
   "second place", "five points clear") unless it cites a `table` claim. Seen in the first real Gemini script.
 

@@ -7,6 +7,7 @@ Free text (narration, fact boxes, headlines) goes through `fact_guard`: every nu
 """
 from __future__ import annotations
 
+import json
 import re
 
 from .common import StageError
@@ -42,6 +43,11 @@ CAMERAS = {'push', 'pull', 'whip', 'shake', 'drift', 'slow', 'orbit'}
 PACES = {'fast', 'normal', 'slow'}
 SFX = {'roar', 'whistle', 'groan', 'gasp', 'drum', 'none'}
 SCORE_VISUALS = {'matchday', 'score', 'versus', 'goal'}   # a visual that puts a match's score on screen itself
+SLUG_WORDS = {'the', 'a', 'an', 'of', 'at', 'in', 'on', 'and', 'night', 'morning', 'evening', 'afternoon', 'day', 'week',
+              'final', 'derby', 'whistle', 'kick', 'off', 'full', 'time', 'half', 'before', 'after', 'later', 'earlier', 'meanwhile',
+              'same', 'that', 'this', 'next', 'last', 'first', 'second', 'leg', 'home', 'away', 'end', 'ground', 'stadium',
+              'terrace', 'tunnel', 'dressing', 'room', 'city', 'town', 'street', 'station', 'airport', 'bus', 'train',
+              'summer', 'autumn', 'winter', 'spring', 'august', 'midnight', 'dawn', 'dusk', 'minutes', 'minute', 'hours'}
 DIRECTOR = 2   # a script that declares "director": 2 is held to the director rules (contract §3)
 PROPS = {'board_member', 'coach', 'football', 'generic_trophy', 'goal_net', 'match_ticket', 'passenger_plane', 'portable_radio',
          'referee', 'supporter_scarf', 'supporters_bus', 'tactics_board'}
@@ -126,6 +132,7 @@ WORDS_PER_MINUTE = 148  # Kokoro at speed 1.0: a supporter telling it, not a lec
 
 SCHEMA_TEXT = '''{
   "director": 2 — always; it says this script is cut by the director rules,
+  "motif": optional — the film's recurring image, ≤6 words, no fact in it ("a red scarf", "the clock above the stand"),
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
   "selected": integer index into title_candidates,
   "hook": string — the first sentence the viewer hears; must be the start of the first beat's narration,
@@ -137,6 +144,8 @@ SCHEMA_TEXT = '''{
       "pace": optional "fast|normal|slow" — fast = hard cuts and quick motion, slow = held frames,
       "broll": optional art key ("beat:…", "clip:…", tunnel|terrace-crowd|terrace-empty|supporter) behind a data card,
       "sfx": optional "roar|whistle|groan|gasp|drum|none",
+      "slug": optional screenplay slug line "<place> — <time phrase>" ("Piraeus — the night of the final"), ≤60 chars;
+              the place and any month or weekday must come from a claim cited in this beat,
       "visual": one of
         {"type":"open","backdrop":"tunnel|terrace-crowd|terrace-empty|supporter","headline":string,"kicker":string}
         {"type":"chapter","number":int,"title":string,"backdrop":"tunnel|terrace-crowd|terrace-empty|supporter|paper"}
@@ -467,7 +476,7 @@ def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = No
             if t == 'timeline' and not (2 <= len(v.get('claims') or []) <= 8):
                 errs.append(f'{where}: a timeline needs 2–8 claims')
             errs += [f'{where}: {e}' for e in director_visual(t, v, by, order, story, ledger, cites + vc)]
-            errs += [f'{where}: {e}' for e in beat_fields(b, ledger)]
+            errs += [f'{where}: {e}' for e in beat_fields(b, ledger, by, cites + vc)]
             seq.append((where, b, v, cites + vc))
             if 'backdrop' in v and not art_ok(v['backdrop'], ledger):
                 errs.append(f'{where}: unknown backdrop {v["backdrop"]}')
@@ -482,10 +491,20 @@ def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = No
                                                            'who', 'role', 'outlet', 'standfirst')
                                         if isinstance(v.get(k), str) and k not in verbatim]
             texts += [x for x in v.get('lines') or [] if isinstance(x, str)] if t == 'trailer' and isinstance(v.get('lines'), list) else []
+            texts += [b['slug']] if isinstance(b.get('slug'), str) else []
             for tx in texts:
                 errs += [f'{where}: {e}' for e in fact_guard(tx, ledger, cites + vc)]
             if t == 'stat' and isinstance(v.get('value'), str) and not numbers_in_text(v['value']):
                 errs.append(f'{where}: a stat value must be a number')
+    if 'motif' in s:  # the film's recurring object or image (the owner's craft): an image, never a fact
+        mo = s['motif']
+        known: set[str] = set()
+        for c in by.values():
+            _name_words(c['fact'], known)
+        if not isinstance(mo, str) or not mo.strip() or len(mo) > 40 or len(mo.split()) > 6:
+            errs.append('"motif" is a short image of at most six words (a red scarf, the clock above the north stand)')
+        elif numbers_in_text(mo) or any(w in known for w in _fold(mo).split()) or any(m.lower() in mo.lower() for m in MONTHS):
+            errs.append('"motif" is an image, not a fact: no number, date, club or name in it')
     if directed:
         errs += director_rules(s, seq, ledger, story, kind or film_kind(ledger), by)
     lo, hi = target_words(minutes)
@@ -650,26 +669,74 @@ def director_visual(t: str, v: dict, by: dict, order: dict, story: dict, ledger:
             return errs
         if any(len(x.split()) > 5 for x in lines):
             errs.append('a trailer line is at most 5 words')
-        allowed = _name_words({'club': ledger.get('club_name')})
-        for c in cites:
-            if c in by:
-                _name_words(by[c]['fact'], allowed)
-        known: set[str] = set()
-        for c in by.values():
-            _name_words(c['fact'], known)
-        months = {str(by[c]['fact'].get('date') or '')[5:7] for c in cites if c in by}
         for x in lines:
-            for w in _fold(x).split():
-                if w in known and w not in allowed:
-                    errs.append(f'trailer line "{x}" names "{w}", which no claim cited in this beat holds')
-            for mi, mn in enumerate(MONTHS):
-                if re.search(rf'\b{mn}\b', x, re.I) and f'{mi + 1:02d}' not in months:
-                    errs.append(f'trailer line "{x}" names {mn}, and no cited claim is dated in it')
+            errs += [f'trailer line "{x}" {e}' for e in cited_words(x, by, cites, ledger)]
     return errs
 
 
-def beat_fields(b: dict, ledger: dict) -> list[str]:
+# Literal weather only: "stormed back", "a thunderbolt", "a lightning break" are football, not a forecast.
+WEATHER = re.compile(r'\b(rain|rains|rained|raining|rainy|rainswept|rain-soaked|drizzle|drizzly|downpour|snow|snowed|snowing|'
+                     r'snowy|snowfall|sleet|fog|foggy|mist|misty|sunshine|sunny|sunlit|sun-baked|heatwave|scorching|sweltering|'
+                     r'frost|frosty|blizzard|waterlogged|muddy|gale|gales|windy|windswept|thunderstorm)\b', re.I)
+DAYS = 'Monday Tuesday Wednesday Thursday Friday Saturday Sunday'.split()
+
+
+def _cited_text(by: dict, cites: list[str], ledger: dict) -> str:
+    return _fold(' '.join([str(ledger.get('club_name') or '')] + [json.dumps(by[c]['fact'], ensure_ascii=False) for c in cites if c in by]))
+
+
+def cited_words(text: str, by: dict, cites: list[str], ledger: dict, strict: bool = False) -> list[str]:
+    """What a short line (a trailer card, a slug) may not say unless a claim cited in its beat says it: a club, person or
+    place the ledger knows, a month or a weekday no cited claim is dated in, the weather. `strict` (a slug) also refuses
+    any capitalised word the cited claims do not hold — a slug line is a place and a time, and both come from the record."""
+    import datetime as _dt
+    errs: list[str] = []
+    allowed = _name_words({'club': ledger.get('club_name')})
+    for c in cites:
+        if c in by:
+            _name_words(by[c]['fact'], allowed)
+    known: set[str] = set()
+    for c in by.values():
+        _name_words(c['fact'], known)
+    dates = [str(by[c]['fact'].get('date') or '') for c in cites if c in by]
+    months = {d[5:7] for d in dates if len(d) >= 7}
+    days = set()
+    for d in dates:
+        try:
+            days.add(DAYS[_dt.date.fromisoformat(d[:10]).weekday()])
+        except ValueError:
+            pass
+    for w in _fold(text).split():
+        if w in known and w not in allowed:
+            errs.append(f'names "{w}", which no claim cited in this beat holds')
+    for mi, mn in enumerate(MONTHS):
+        if re.search(rf'\b{mn}\b', text, re.I) and f'{mi + 1:02d}' not in months:
+            errs.append(f'names {mn}, and no cited claim is dated in it')
+    for dn in DAYS:
+        if re.search(rf'\b{dn}\b', text, re.I) and dn not in days:
+            errs.append(f'names a {dn}, and no cited claim fell on one')
+    cited = _cited_text(by, cites, ledger)
+    for m in WEATHER.finditer(text):
+        if _fold(m.group(0)).strip() not in cited:
+            errs.append(f'says "{m.group(0)}" — the weather is a fact, and no cited claim records it')
+    if strict:
+        words = cited.split()
+        for i, tok in enumerate(re.findall(r"[A-Za-zÀ-ÿĀ-ž'’.-]+", text)):
+            f = _fold(tok).strip()
+            if (tok[:1].isupper() and f and f not in SLUG_WORDS and f not in words
+                    and f.capitalize() not in MONTHS and f.capitalize() not in DAYS):
+                errs.append(f'"{tok}" is not in a claim cited in this beat — a slug is a place and a time from the record')
+    return errs
+
+
+def beat_fields(b: dict, ledger: dict, by: dict | None = None, cites: list[str] | None = None) -> list[str]:
     errs = []
+    if 'slug' in b:  # a screenplay slug line: "<place> — <time phrase>", both from the claims this beat cites
+        sl = b['slug']
+        if not isinstance(sl, str) or not 5 <= len(sl) <= 60 or not re.fullmatch(r'[^—]+ — [^—]+', sl.strip()):
+            errs.append('a slug is "<place> — <time phrase>" (an em dash between them), at most 60 characters')
+        else:
+            errs += [f'slug "{sl}" {e}' for e in cited_words(sl, by or {}, cites or [], ledger, strict=True)]
     if 'camera' in b and b['camera'] not in CAMERAS:
         errs.append(f'camera must be one of {sorted(CAMERAS)}')
     if 'pace' in b and b['pace'] not in PACES:
@@ -722,6 +789,14 @@ def director_rules(s: dict, seq: list, ledger: dict, story: dict, kind: str, by:
         if m and not any(c in by and by[c]['fact'].get('kind') == 'table' for c in cites):
             errs.append(f'{where}: [no position] "{m.group(0)}" — the archive holds only this club\'s matches; a table, a '
                         f'place or points need a table claim cited in the beat')
+
+    # the weather is a fact like any other (contract rule 6: humour from the weather only when the record has it)
+    for where, b, v, cites in seq:
+        cited = _cited_text(by, cites, ledger)
+        for m in WEATHER.finditer(b.get('narration') or ''):
+            if _fold(m.group(0)).strip() not in cited:
+                errs.append(f'{where}: [no invented weather] "{m.group(0)}" — no claim cited in this beat records the weather')
+                break
 
     # 2 · the cards each kind of film must have
     has = set(types)
