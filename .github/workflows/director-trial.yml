@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install -q numpy pillow
-      - name: Write one director-2 script (Hapoel Tel Aviv 1999/00, 5 minutes, Chronicle)
+      - name: The Trailer Cut writes Hapoel Tel Aviv 1999/00, and pitches one film
         working-directory: scripts/football-stories
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -24,31 +24,29 @@ jobs:
           from pathlib import Path
           sys.path.insert(0, '.')
           from studio import director, research, writer
+          from studio.directors import BY_ID
           from studio.common import read_json, StageError
-          from studio.script import validate_script, with_cta
           L = research.build_ledger('hapoel-tel-aviv', '1999/00', read_json(Path('studio/dossiers/hapoel-tel-aviv-1999-00.json'))['claims'])
           director.attach(L)
           L['art_sets'] = []
-          brief = {'duration': 5, 'kind': 'season', 'season': '1999/00'}
           cache = Path('/tmp/trial-cache'); cache.mkdir(exist_ok=True)
           try:
-              s = writer.write_script(brief, L, cache, print, angle=writer.ANGLES_V3[0])
+              s = writer.write_script({'duration': 4, 'kind': 'season', 'season': '1999/00'}, L, cache, print, director=BY_ID['trailer'])
+              for a in s.get('_writer') or []:
+                  print('attempt', a['attempt'], 'errors', len(a['errors']), a['errors'][:12])
+              print('HOOK', s.get('hook'))
+              for ci, ch in enumerate(s['chapters']):
+                  print(f'== {ci + 1}. {ch["title"]}')
+                  for b in ch['beats']:
+                      v = b['visual']
+                      print(f"  [{v['type']}{'/' + b['camera'] if b.get('camera') else ''}] {b['narration']}" + (('  ⟨' + ' | '.join(v['lines']) + '⟩') if v['type'] == 'trailer' else ''))
+              print('TITLE', s['title_candidates'][s['selected']]['title'])
           except StageError as e:
               print('WRITER FAILED', e.code, str(e)[:3000])
-              for f in sorted(cache.glob('writer-*.json')):
-                  print('--- attempt', f.name)
-              sys.exit(0)
-          for a in s.get('_writer') or []:
-              print('attempt', a['attempt'], 'errors', len(a['errors']), a['errors'][:12])
-          s2 = with_cta(json.loads(json.dumps(s)), 'trial')
-          print('AFTER CTA ERRORS', validate_script(s2, L, 5, 'season'))
-          print('DIRECTOR', s.get('director'), 'HOOK', s.get('hook'))
-          for ci, ch in enumerate(s['chapters']):
-              print(f'== {ci + 1}. {ch["title"]}')
-              for b in ch['beats']:
-                  v = b['visual']
-                  print(f"  [{v['type']}{'/' + b['camera'] if b.get('camera') else ''}{'/' + b['pace'] if b.get('pace') else ''}{'/' + b['sfx'] if b.get('sfx') else ''}] {b['narration']}")
-                  if v['type'] == 'trailer':
-                      print('      ', ' | '.join(v['lines']))
-          print('TITLE', s['title_candidates'][s['selected']]['title'])
+          c = director.candidates(['hapoel-tel-aviv'], 3)[:10]
+          for d in ('broadcaster', 'terrace'):
+              try:
+                  print('PITCH', json.dumps(writer.write_pitch(BY_ID[d], c, cache, print), ensure_ascii=False, indent=1))
+              except StageError as e:
+                  print('PITCH FAILED', d, e.code, str(e)[:1500])
           PY
