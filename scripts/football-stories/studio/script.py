@@ -28,7 +28,21 @@ VISUALS = {
     'press': {'outlet', 'date', 'headline', 'standfirst', 'claim', 'backdrop'},
     'follow': {'backdrop'},
     'end': set(),
+    # the Director's Cut (docs/fanlife/66-directors-cut.md §2): data from the claims, the writer picks which and a label
+    'form': {'claims', 'label'},
+    'race': {'label', 'mark'},
+    'versus': {'claim'},
+    'goal': {'claim', 'scorer'},
+    'record': {'claim'},
+    'run': {'claims', 'label'},
+    'trailer': {'lines'},
 }
+DIRECTOR_VISUALS = {'form', 'race', 'versus', 'goal', 'record', 'run', 'trailer'}
+CAMERAS = {'push', 'pull', 'whip', 'shake', 'drift', 'slow', 'orbit'}
+PACES = {'fast', 'normal', 'slow'}
+SFX = {'roar', 'whistle', 'groan', 'gasp', 'drum', 'none'}
+SCORE_VISUALS = {'matchday', 'score', 'versus', 'goal'}   # a visual that puts a match's score on screen itself
+DIRECTOR = 2   # a script that declares "director": 2 is held to the director rules (contract §3)
 PROPS = {'board_member', 'coach', 'football', 'generic_trophy', 'goal_net', 'match_ticket', 'passenger_plane', 'portable_radio',
          'referee', 'supporter_scarf', 'supporters_bus', 'tactics_board'}
 LIBRARY_ART = {'tunnel', 'terrace-crowd', 'terrace-empty', 'supporter', 'paper'}
@@ -104,19 +118,25 @@ def art_ok(key, ledger: dict, *, allow_gen: bool = False) -> bool:
     return False
 
 
-CLAIM_VISUALS = {'matchday', 'score', 'table', 'ticket', 'quote', 'press'}
+CLAIM_VISUALS = {'matchday', 'score', 'table', 'ticket', 'quote', 'press', 'versus', 'goal', 'record'}
 ANGLES = {'search', 'discovery'}
 DURATIONS = {0.5, 1, 2, 3, 5, *range(7, 26)}
 
 WORDS_PER_MINUTE = 148  # Kokoro at speed 1.0: a supporter telling it, not a lecture
 
 SCHEMA_TEXT = '''{
+  "director": 2 — always; it says this script is cut by the director rules,
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
   "selected": integer index into title_candidates,
   "hook": string — the first sentence the viewer hears; must be the start of the first beat's narration,
   "chapters": [{"title": string, "beats": [{
       "narration": string (one to three sentences),
-      "claim_ids": [string] — ledger ids this beat relies on (may be empty only for pure atmosphere with no fact),
+      "claim_ids": [string] — ledger ids this beat relies on (may be empty only for pure atmosphere with no fact);
+                   "story" may be cited for a number the STORY block counted (a run's length, the form line),
+      "camera": optional "push|pull|whip|shake|drift|slow|orbit" — the move you want on this beat,
+      "pace": optional "fast|normal|slow" — fast = hard cuts and quick motion, slow = held frames,
+      "broll": optional art key ("beat:…", "clip:…", tunnel|terrace-crowd|terrace-empty|supporter) behind a data card,
+      "sfx": optional "roar|whistle|groan|gasp|drum|none",
       "visual": one of
         {"type":"open","backdrop":"tunnel|terrace-crowd|terrace-empty|supporter","headline":string,"kicker":string}
         {"type":"chapter","number":int,"title":string,"backdrop":"tunnel|terrace-crowd|terrace-empty|supporter|paper"}
@@ -133,6 +153,14 @@ SCHEMA_TEXT = '''{
         {"type":"quote","claim":quote claim id,"text":the speaker's words copied EXACTLY from the claim (≤40 words),"who":the claim's speaker,"role":string}
         {"type":"press","claim":press claim id,"outlet":the claim's outlet,"headline":the claim's headline EXACTLY,"date":"YYYY-MM-DD" optional}
         {"type":"end"}
+      — the Director's Cut cards (data printed from the claims; you choose which claims and a short label):
+        {"type":"form","claims":[3-12 match claim ids in date order],"label":string <=40} — W/D/L tiles with their scores
+        {"type":"race","label":string <=40,"mark":[0-4 match claim ids]} — the season's form line drawing itself; marked matches pop
+        {"type":"versus","claim":match claim id} — the face-off before the whistle, then the score slams in
+        {"type":"goal","claim":match claim id,"scorer":index into that claim's scorers} — only when the claim names scorers WITH minutes
+        {"type":"record","claim":"summary:<competition>"} — won / drawn / lost / for / against counting up
+        {"type":"run","claims":[3+ consecutive match ids of one streak],"label":string <=40} — a streak counter
+        {"type":"trailer","lines":[1-4 lines, each at most 5 words]} — kinetic title cards; no number, date or name a cited claim does not hold
       Every "backdrop" and "art" may also be an owner piece from BEAT ART when one is listed — a still ("beat:…") or a
       ten-second stop-motion clip ("clip:…", it plays once and holds; use it where a moment builds or arrives). Colour
       paper-cut pictures made for this story. Prefer them — the right picture for each beat (a penalty picture for a shoot-out,
@@ -251,7 +279,9 @@ def claim_numbers(ledger: dict, ids: list[str]) -> set[int]:
     out: set[int] = set(FREE_NUMBERS)
     numbers_in_value(ledger.get('season'), out)  # the film's own season label, e.g. 1999/00 → 1999, 2000
     for i in ids:
-        if i.startswith('summary:'):
+        if i == 'story':
+            numbers_in_value(story_numbers(ledger), out)
+        elif i.startswith('summary:'):
             numbers_in_value(ledger.get('summary', {}).get('by_competition', {}).get(i[8:]), out)
         elif i in by:
             numbers_in_value(by[i]['fact'], out)
@@ -284,6 +314,20 @@ def claim_numbers(ledger: dict, ids: list[str]) -> set[int]:
     return out
 
 
+def story_of(ledger: dict) -> dict:
+    from .director import story_of as _so
+    return _so(ledger)
+
+
+def story_numbers(ledger: dict) -> list[int]:
+    """The numbers the story block COUNTED, which a beat may say when it cites "story": every run's length, the form
+    line's end, high and low, the goal difference, and how many matches it covers."""
+    st = story_of(ledger)
+    t = st.get('totals') or {}
+    return [*(r['length'] for r in st.get('runs') or []), *(abs(t.get(k) or 0) for k in ('form', 'form_high', 'form_low', 'gd')),
+            t.get('played') or 0]
+
+
 def fact_guard(text: str, ledger: dict, ids: list[str]) -> list[str]:
     """Numbers in `text` that none of the cited claims carries. Empty list = passes."""
     allowed = claim_numbers(ledger, ids)
@@ -308,14 +352,34 @@ def target_words(minutes: float) -> tuple[int, int]:
     return int(w * 0.9), int(w * 1.08)
 
 
-def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
-    """Every problem with a script, as sentences. An empty list means the script may be voiced."""
+def film_kind(ledger: dict) -> str:
+    """What kind of film a ledger is for, read off how research cut it: a rivalry, one match, a tie, or a season."""
+    f = ledger.get('focus') or {}
+    if f.get('opponent'):
+        return 'rivalry'
+    if f.get('matches'):
+        return 'match' if len(f['matches']) == 1 else 'tie'
+    return 'season'
+
+
+def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = None) -> list[str]:
+    """Every problem with a script, as sentences. An empty list means the script may be voiced. A script that declares
+    "director": 2 is also held to the director rules of docs/fanlife/66-directors-cut.md §3; an older script is checked
+    as it always was, so a film already in progress never breaks."""
     errs: list[str] = []
     if not isinstance(s, dict):
         return ['Script is not an object']
     ids = {c['id'] for c in ledger['claims']}
     by = {c['id']: c for c in ledger['claims']}
     summaries = {f'summary:{k}' for k in ledger.get('summary', {}).get('by_competition', {})}
+    if any((c.get('fact') or {}).get('kind') == 'match' for c in ledger['claims']):
+        summaries.add('story')  # a pseudo-claim: the numbers the story block counted (story_numbers)
+    if 'director' in s and s['director'] not in (1, DIRECTOR):
+        errs.append(f'"director" must be {DIRECTOR}')
+    directed = s.get('director') == DIRECTOR
+    story = story_of(ledger) if any(c['fact'].get('kind') == 'match' for c in ledger['claims']) else {}
+    order = {m['id']: i for i, m in enumerate(story.get('matches') or [])}
+    seq: list[tuple[str, dict, dict, list[str]]] = []   # (where, beat, visual, cites) in film order, for the director rules
     tc = s.get('title_candidates')
     if not isinstance(tc, list) or len(tc) != 10:
         errs.append('Exactly ten title candidates are required')
@@ -374,6 +438,7 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
                 errs.append(f'{where}: visual {t} has unknown fields {sorted(extra)}')
             vc = [v['claim']] if isinstance(v.get('claim'), str) else []
             vc += [c for c in v.get('claims') or [] if isinstance(c, str)]
+            vc += [c for c in v.get('mark') or [] if isinstance(c, str)] if isinstance(v.get('mark'), list) else []
             for c in vc:
                 if c not in ids and c not in summaries:
                     errs.append(f'{where}: visual names unknown claim {c}')
@@ -401,6 +466,9 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
                     errs.append(f'{where}: a press cutting prints the headline and outlet exactly as its claim has them')
             if t == 'timeline' and not (2 <= len(v.get('claims') or []) <= 8):
                 errs.append(f'{where}: a timeline needs 2–8 claims')
+            errs += [f'{where}: {e}' for e in director_visual(t, v, by, order, story, ledger, cites + vc)]
+            errs += [f'{where}: {e}' for e in beat_fields(b, ledger)]
+            seq.append((where, b, v, cites + vc))
             if 'backdrop' in v and not art_ok(v['backdrop'], ledger):
                 errs.append(f'{where}: unknown backdrop {v["backdrop"]}')
             if t == 'illustration':
@@ -413,10 +481,13 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
             texts = [b['narration']] + [v.get(k) for k in ('headline', 'kicker', 'title', 'subtitle', 'heading', 'text', 'label', 'value', 'caption',
                                                            'who', 'role', 'outlet', 'standfirst')
                                         if isinstance(v.get(k), str) and k not in verbatim]
+            texts += [x for x in v.get('lines') or [] if isinstance(x, str)] if t == 'trailer' and isinstance(v.get('lines'), list) else []
             for tx in texts:
                 errs += [f'{where}: {e}' for e in fact_guard(tx, ledger, cites + vc)]
             if t == 'stat' and isinstance(v.get('value'), str) and not numbers_in_text(v['value']):
                 errs.append(f'{where}: a stat value must be a number')
+    if directed:
+        errs += director_rules(s, seq, ledger, story, kind or film_kind(ledger), by)
     lo, hi = target_words(minutes)
     if not lo <= words <= hi:
         errs.append(f'Narration is {words} words; a {minutes}-minute film needs {lo}–{hi}')
@@ -434,6 +505,265 @@ def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:
     return errs
 
 
+# ── the Director's Cut (docs/fanlife/66-directors-cut.md §2–§3) ───────────────────────────────────────────────────────
+NAME_STOP = {'fc', 'fk', 'sc', 'ac', 'ca', 'cf', 'afc', 'sk', 'nk', 'cd', 'sv', 'the', 'of', 'de', 'del', 'la', 'le', 'club', 'city',
+             'united', 'real', 'sporting', 'athletic', 'cup', 'league', 'final', 'stadium', 'national', 'football', 'and', 'st',
+             'red', 'star', 'young', 'boys', 'old', 'new', 'royal', 'union', 'inter', 'county', 'town', 'rovers', 'wanderers'}
+NAME_FIELDS = ('club', 'opponent', 'home', 'away', 'name', 'speaker', 'outlet', 'city', 'venue', 'winner', 'club_scorer')
+RESULT_CUES = re.compile(r'\b(won|win|wins|beat|beaten|beating|lost|lose|loses|losing|drew|draw|drawn|defeat|defeated|victory|'
+                         r'thrash\w*|hammer\w*|crush\w*|held|equalis\w*|equaliz\w*|winner|scored|nil|knocked|eliminat\w*|through)\b', re.I)
+SCORE_WORDS = {'nil': 0, 'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8,
+               'nine': 9, 'ten': 10}
+_SW = '|'.join(SCORE_WORDS)
+SCORELINE = re.compile(r'(?<![\d–-])(\d{1,2})\s?[–-]\s?(\d{1,2})(?![\d–-])|'
+                       rf'(?<!a )\b({_SW})-({_SW}|all)\b|\b({_SW}) nil\b', re.I)
+COLD_TITLE = re.compile(r'^\s*(in|during)\s+(the\s+)?(\d{4}|season|summer|autumn|winter|spring)|^\s*(the\s+)?\d{4}(/\d{2,4})?\s+season'
+                        r'|^\s*this is the story|^\s*once upon', re.I)
+TURN_WORDS = re.compile(r'\b(but|until|then|yet|still|only|nobody|no one|not yet|what|who|how|why|would|could|next|waiting|'
+                        r'remember|unless|before|soon|coming|ahead|tomorrow|almost|if)\b', re.I)
+
+
+def _fold(t: str) -> str:
+    import unicodedata
+    t = ''.join(ch for ch in unicodedata.normalize('NFKD', t or '') if not unicodedata.combining(ch)).lower()
+    return re.sub(r'[^a-z0-9 ]+', ' ', t.replace('-', ' '))
+
+
+def _name_words(fact: dict, out: set[str] | None = None) -> set[str]:
+    """The distinctive words of the names a claim carries (clubs, scorers, speakers, places): what a trailer may not
+    print unless it cites the claim."""
+    out = set() if out is None else out
+
+    def add(x):
+        for w in _fold(str(x)).split():
+            if len(w) > 2 and w not in NAME_STOP and not w.isdigit():
+                out.add(w)
+    for k, x in (fact or {}).items():
+        if k in NAME_FIELDS and isinstance(x, str):
+            add(x)
+        elif k in NAME_FIELDS and isinstance(x, dict) and isinstance(x.get('name'), str):
+            add(x['name'])
+        elif k in ('scorers', 'opponent_scorers', 'extra_time_scorers') and isinstance(x, list):
+            for y in x:
+                add(y.get('name') if isinstance(y, dict) else y)
+    return out
+
+
+def scorelines(text: str) -> list[tuple[int, int]]:
+    out = []
+    for m in SCORELINE.finditer(text or ''):
+        if m.group(1):
+            out.append((int(m.group(1)), int(m.group(2))))
+        elif m.group(3):
+            a, b = m.group(3).lower(), m.group(4).lower()
+            if a == 'one' and b == 'two':
+                continue  # "a one-two" is a pass, and "one-two" is never how a narrator says a 1–2 defeat
+            out.append((SCORE_WORDS[a], SCORE_WORDS[a] if b == 'all' else SCORE_WORDS[b]))
+        else:
+            out.append((SCORE_WORDS[m.group(5).lower()], 0))
+    return out
+
+
+def _pairs_in(v, out: set) -> set:
+    if isinstance(v, str):
+        for a, b in scorelines(v):
+            out.add((a, b))
+    elif isinstance(v, dict):
+        for x in v.values():
+            _pairs_in(x, out)
+    elif isinstance(v, list):
+        if len(v) == 2 and all(isinstance(x, int) and not isinstance(x, bool) for x in v):
+            out.add((v[0], v[1]))
+        for x in v:
+            _pairs_in(x, out)
+    return out
+
+
+def director_visual(t: str, v: dict, by: dict, order: dict, story: dict, ledger: dict, cites: list[str]) -> list[str]:
+    """The fields of the Director's Cut cards: right types, real ids, the right lengths (contract §2)."""
+    errs: list[str] = []
+    matches = story.get('matches') or []
+
+    def is_match(c):
+        return isinstance(c, str) and c in by and by[c]['fact'].get('kind') == 'match'
+
+    def label(need=True):
+        lb = v.get('label')
+        if lb is None and not need:
+            return
+        if not isinstance(lb, str) or not lb.strip() or len(lb) > 40:
+            errs.append(f'a {t} needs a label of at most 40 characters')
+    if t == 'form':
+        cl = v.get('claims')
+        if not isinstance(cl, list) or not 3 <= len(cl) <= 12 or not all(is_match(c) for c in cl):
+            errs.append('a form card takes 3–12 match claim ids')
+        elif [order.get(c, -1) for c in cl] != sorted(order.get(c, -1) for c in cl) or len(set(cl)) != len(cl):
+            errs.append('a form card lists its matches in date order, each once')
+        label()
+    elif t == 'race':
+        label()
+        mk = v.get('mark', [])
+        if not isinstance(mk, list) or len(mk) > 4 or not all(is_match(c) for c in mk):
+            errs.append('a race marks 0–4 match claim ids')
+        if len(matches) < 3:
+            errs.append('a race needs a form line of at least three matches')
+    elif t == 'versus':
+        if not is_match(v.get('claim')):
+            errs.append('a versus needs a match claim')
+    elif t == 'goal':
+        c = v.get('claim')
+        sc = by[c]['fact'].get('scorers') if is_match(c) else None
+        i = v.get('scorer')
+        if not is_match(c):
+            errs.append('a goal needs a match claim')
+        elif not isinstance(sc, list) or not sc:
+            errs.append('a goal card needs a match whose claim names its scorers (this one does not)')
+        elif not isinstance(i, int) or isinstance(i, bool) or not 0 <= i < len(sc):
+            errs.append(f'a goal card names its scorer by index 0–{len(sc) - 1} into the claim\'s scorers')
+        elif not isinstance(sc[i].get('minute'), int):
+            errs.append('a goal card needs a scorer with a recorded minute')
+    elif t == 'record':
+        c = v.get('claim')
+        if not (isinstance(c, str) and c.startswith('summary:') and c[8:] in (ledger.get('summary') or {}).get('by_competition', {})):
+            errs.append('a record card names a season summary: "summary:<competition>"')
+    elif t == 'run':
+        cl = v.get('claims')
+        label()
+        if not isinstance(cl, list) or len(cl) < 3 or not all(is_match(c) for c in cl):
+            errs.append('a run card takes 3 or more match claim ids')
+        else:
+            idx = [order.get(c, -1) for c in cl]
+            if idx != list(range(idx[0], idx[0] + len(idx))):
+                errs.append('a run card lists consecutive matches of the season, in order')
+            else:
+                rs = [matches[k]['outcome'] for k in idx]
+                if not (all(r == 'win' for r in rs) or all(r == 'loss' for r in rs) or all(r != 'loss' for r in rs)
+                        or all(r != 'win' for r in rs)):
+                    errs.append('a run card shows one streak: all wins, all defeats, unbeaten, or without a win')
+    elif t == 'trailer':
+        lines = v.get('lines')
+        if not isinstance(lines, list) or not 1 <= len(lines) <= 4 or not all(isinstance(x, str) and x.strip() for x in lines):
+            errs.append('a trailer has 1–4 lines')
+            return errs
+        if any(len(x.split()) > 5 for x in lines):
+            errs.append('a trailer line is at most 5 words')
+        allowed = _name_words({'club': ledger.get('club_name')})
+        for c in cites:
+            if c in by:
+                _name_words(by[c]['fact'], allowed)
+        known: set[str] = set()
+        for c in by.values():
+            _name_words(c['fact'], known)
+        months = {str(by[c]['fact'].get('date') or '')[5:7] for c in cites if c in by}
+        for x in lines:
+            for w in _fold(x).split():
+                if w in known and w not in allowed:
+                    errs.append(f'trailer line "{x}" names "{w}", which no claim cited in this beat holds')
+            for mi, mn in enumerate(MONTHS):
+                if re.search(rf'\b{mn}\b', x, re.I) and f'{mi + 1:02d}' not in months:
+                    errs.append(f'trailer line "{x}" names {mn}, and no cited claim is dated in it')
+    return errs
+
+
+def beat_fields(b: dict, ledger: dict) -> list[str]:
+    errs = []
+    if 'camera' in b and b['camera'] not in CAMERAS:
+        errs.append(f'camera must be one of {sorted(CAMERAS)}')
+    if 'pace' in b and b['pace'] not in PACES:
+        errs.append(f'pace must be one of {sorted(PACES)}')
+    if 'sfx' in b and b['sfx'] not in SFX:
+        errs.append(f'sfx must be one of {sorted(SFX)}')
+    if 'broll' in b and not art_ok(b['broll'], ledger):
+        errs.append(f'unknown broll {b["broll"]}')
+    return errs
+
+
+def director_rules(s: dict, seq: list, ledger: dict, story: dict, kind: str, by: dict) -> list[str]:
+    """Contract §3, rules 1–5, as errors the writer can act on. Rule 6 (humour only from the record) is a writing rule."""
+    errs: list[str] = []
+    seq = [x for x in seq if x[2].get('type') not in ('follow', 'end')]
+    types = [x[2].get('type') for x in seq]
+    moments = story.get('moments') or []
+    matches_by_opp: dict[str, list[str]] = {}
+    for c in by.values():
+        f = c['fact']
+        if f.get('kind') == 'match' and f.get('opponent'):
+            matches_by_opp.setdefault(f['opponent'], []).append(c['id'])
+
+    # 1 · every match the narration names is shown with its score on that beat
+    for where, b, v, cites in seq:
+        text = b.get('narration') or ''
+        folded = f' {_fold(text)} '
+        cited_matches = [c for c in cites if c in by and by[c]['fact'].get('kind') == 'match']
+        if RESULT_CUES.search(text):
+            for opp, mids in matches_by_opp.items():
+                core = ' '.join(w for w in _fold(opp).split() if w not in NAME_STOP) or _fold(opp).strip()
+                if core and f' {core} ' in folded and not set(mids) & set(cited_matches):
+                    errs.append(f'{where}: [director rule 1] the narration tells a result against {opp} but the beat cites none '
+                                f'of those matches, so its score cannot be on screen')
+        pairs: set = set()
+        for c in cites:
+            if c in by:
+                f = by[c]['fact']
+                if f.get('kind') == 'match':
+                    pairs |= {(f['club_goals'], f['opponent_goals']), (f['opponent_goals'], f['club_goals'])}
+                _pairs_in(f, pairs)
+        pairs |= {(b_, a) for a, b_ in pairs}
+        for sl in scorelines(text):
+            if sl not in pairs:
+                errs.append(f'{where}: [director rule 1] the scoreline {sl[0]}–{sl[1]} is not the score of a match this beat cites')
+
+    # 2 · the cards each kind of film must have
+    has = set(types)
+    if kind == 'season':
+        if len(story.get('matches') or []) >= 3 and not has & {'race', 'form'}:
+            errs.append('[director rule 2] a season film needs a "race" or a "form" card')
+        if 'record' not in has:
+            errs.append('[director rule 2] a season film needs a "record" card')
+    elif kind in ('match', 'tie'):
+        if 'versus' not in has:
+            errs.append(f'[director rule 2] a {kind} film needs a "versus" card')
+        if not has & {'score', 'goal'}:
+            errs.append(f'[director rule 2] a {kind} film needs a "score" or a "goal" card')
+    elif kind == 'rivalry':
+        if 'All competitions' in (ledger.get('summary') or {}).get('by_competition', {}) and not any(
+                x[2].get('type') == 'record' and x[2].get('claim') == 'summary:All competitions' for x in seq):
+            errs.append('[director rule 2] a rivalry film needs a "record" card of "summary:All competitions"')
+        if moments and not any(x[2].get('type') == 'versus' and x[2].get('claim') == moments[0]['id'] for x in seq):
+            errs.append(f'[director rule 2] a rivalry film needs a "versus" card for its biggest meeting ({moments[0]["id"]})')
+
+    # 3 · open cold on the strongest moment, or on a trailer — never "In the season of…"
+    if seq:
+        where, b, v, cites = seq[0]
+        if moments and v.get('type') != 'trailer' and moments[0]['id'] not in cites:
+            errs.append(f'[director rule 3] the film must open cold: a "trailer" card, or the strongest moment '
+                        f'({moments[0]["id"]}) cited in the first beat')
+    if COLD_TITLE.search(str(s.get('hook') or '')):
+        errs.append('[director rule 3] the hook may not open like a history lesson ("In the season of…")')
+
+    # 4 · no visual type more than twice in a row; no camera move three times in a row
+    for i in range(2, len(seq)):
+        if types[i] == types[i - 1] == types[i - 2]:
+            errs.append(f'{seq[i][0]}: [director rule 4] a third "{types[i]}" in a row')
+        cams = [seq[j][1].get('camera') for j in (i - 2, i - 1, i)]
+        if cams[0] and cams[0] == cams[1] == cams[2]:
+            errs.append(f'{seq[i][0]}: [director rule 4] the same camera move ({cams[0]}) three times in a row')
+
+    # 5 · every chapter but the last ends on a question, a cliffhanger or a turn
+    chs = s.get('chapters') or []
+    for ci, ch in enumerate(chs[:-1]):
+        beats = [b for b in (ch.get('beats') or []) if isinstance(b, dict)
+                 and (b.get('visual') or {}).get('type') not in ('follow', 'end')]
+        if not beats:
+            continue
+        text = (beats[-1].get('narration') or '').strip()
+        sentences = [x for x in re.split(r'(?<=[.!?…])\s+', text) if x.strip()]
+        last = sentences[-1] if sentences else ''
+        if not (last.endswith(('?', '…', '...', '—', '-')) or TURN_WORDS.search(last)):
+            errs.append(f'Chapter {ci + 1}: [director rule 5] its last line must end on a question, a cliffhanger or a turn')
+    return errs
+
+
 def selected_title(s: dict) -> str:
     return s['title_candidates'][s['selected']]['title']
 
@@ -444,7 +774,7 @@ def all_beats(s: dict):
             yield ci, bi, ch, b
 
 
-def ensure_valid(s: dict, ledger: dict, minutes: float) -> None:
-    errs = validate_script(s, ledger, minutes)
+def ensure_valid(s: dict, ledger: dict, minutes: float, kind: str | None = None) -> None:
+    errs = validate_script(s, ledger, minutes, kind)
     if errs:
         raise StageError('SCRIPT_INVALID', '; '.join(errs[:12]) + (f' (+{len(errs) - 12} more)' if len(errs) > 12 else ''))

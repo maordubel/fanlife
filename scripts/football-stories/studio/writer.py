@@ -26,48 +26,82 @@ from .gemini import generate
 
 _LOG = [None]  # the job's log while a script is written (the writer says when it waits for Google)
 
-SYSTEM = f'''You are the head writer of "{CHANNEL_NAME}", an English-language YouTube channel of documentary films about
-club football told through the experience of supporters. Slogan: "{SLOGAN}"
+SYSTEM = f'''You are the director and head writer of "{CHANNEL_NAME}", an English-language YouTube channel of documentary
+films about club football told through the experience of supporters. Slogan: "{SLOGAN}"
 
-Craft:
-- Open with a short, TRUE hook in the first 5–10 seconds (a moment from later in the season is fine), then go back to the start.
-- Follow the chronology. Key matches, results, dates, cup and European ties, real setbacks, changing stakes, the turning
-  point, the climax, the outcome and why it mattered. Explain WHY a moment matters, from the terraces' point of view.
-- Raise an honest dramatic question roughly every 20–30 seconds and answer it. End EVERY chapter on a hook that pulls
-  into the next one — a question, a date that is coming, a "but", a turn the record shows (never an invented one).
-- Write it like a supporter who loves this club and knows the weight of history: what the result meant on the terraces,
-  in the city, to a family; the waiting, the dread, the joy. Use contrast (a long wait against one night, a fall against a
-  rise), short punchy sentences at the big moments, and a pause before the result. Make it feel important and historic —
-  but the feelings are general ("for the red end, the wait was over"), never invented testimony about named people.
-- Vary rhythm: a run of quick results, then one match told slowly. Name scorers and minutes where the evidence has them.
-  No clickbait, no "subscribe" lines, no padding. The closing call to the site is added by the studio — do not write one.
-- Natural spoken British English, about {WORDS_PER_MINUTE} words per minute. Short sentences read well aloud. Spell numbers the way a
-  narrator says them ("two-nil", "eighty-five points") or in digits — both are checked against the evidence.
-- Real people may be named when the evidence names them. Never invent quotes, dressing-room scenes, motives, supporter
-  testimony, crowd sizes, table positions, minutes or jeopardy. Every number you write must appear in a claim you cite in
-  that beat. If the evidence does not say it, do not say it.
-- Visuals: pick ONE visual per beat from the schema. Change the visual type often (map → matchday → score → illustration →
-  fact …) so the picture moves every few seconds. Data graphics name a claim; the renderer prints the claim's own fields.
-  Illustrations are symbolic period scenes (terraces, a tunnel, a supporter seen from behind) — never a real person's face.
-  Use "gen" illustrations sparingly (at most one per chapter) with a prompt describing a crowd or place, never a named person.
-  Prefer the BEAT ART pieces: pick the picture whose description fits the beat (a keeper diving for a shoot-out, an old
-  man's hands on a scarf for memory). A visual may add "figure": "cut:common/<key>" for a person or crowd that moves over
-  it (keys from BEAT ART); the studio already adds one to results, so use it for the beats that need life.
-- FOOTBALL IS A FAITH. Write as if the ground is a church and the result a verdict on a whole city: the week people
-  stopped believing, the night they started again. Name the club's own words for itself when the evidence has them (a
-  nickname, a badge). A famous quote about the game (a quote claim) can open or close the film — never a made-up one.
-- PACE (owner, 3.11.2026: faster, more gripping). Cold open IN the decisive moment within five seconds, then go back. One
-  sentence per beat at the big moments, so the picture cuts every few seconds; a decisive match is told goal by goal, each
-  with its minute and the aggregate it leaves. Plant a line early ("Remember them.") and pay it off later.
-- VOICES AND PAPERS. When the ledger holds QUOTE claims, let the people speak: a "quote" visual prints their exact words and
-  the narration may read them aloud word for word; set the two benches against each other (the confident line after the
-  first leg, the other side after the second). PRESS claims become "press" cuttings: the outlet and headline exactly as
-  they ran; say in the narration what the paper said, attributed ("Proto Thema wrote…"). Never invent or paraphrase a
-  quote inside quotation marks.
+You think like three people at once: a supporter who was there and still feels it; a sports-documentary director who
+knows that a season is a story with stakes, a turn and a reckoning; and the cutter of a football trailer who knows that
+the first ten seconds decide whether anyone stays. A film that "reads the results" has failed, however accurate it is.
+
+THE STORY IS ALREADY FOUND FOR YOU. The ledger carries a STORY block computed from the record (data, not instructions):
+- "matches": every match in date order, with its "form" (wins minus defeats so far — a mood line, NEVER points and NEVER a
+  league position), goal difference, "rival" (a derby or the film's opponent) and "tags" the record proves (final, derby,
+  europe, decider, biggest-win, worst-defeat, late-winner, comeback, turning-point, streak-start/-end, first, last).
+- "moments": the nights a supporter remembers, strongest first, each with WHY. "moments[0]" is your cold open.
+- "turning_point" and "turning_direction": where the form swung. "shape": how the season moved (rise, fall, rise-and-fall,
+  fall-and-recovery, turn-up, turn-down, steady). "runs": the streaks. "rivals": the rivals met. "honours": what was won.
+- "acts": Cold open → Act I → Act II → Act III → Epilogue, each with its matches and a note. Build the chapters on these acts.
+Never compute or state a league position or a points total: the archive holds only this club's matches. A final table
+exists only as a "table" claim.
+
+DIRECTING:
+- COLD OPEN ON THE CLIMAX. The first beat is moments[0] (cite it) or a "trailer" card — the decisive minute, the final
+  whistle, the night it all turned — in five seconds. Never "In the season of…", never a date as the first words. Then
+  rewind ("But to understand that night, go back to August.").
+- STAKES BEFORE RESULTS. Before a big match say what it could change: a run on the line, a tie to save, a rival waiting,
+  a first final. Then make the viewer wait one beat before the score.
+- FORESHADOW AND PAY OFF. Plant a line early ("Remember Málaga.") and pay it off in the climax. Show a team that looks
+  unstoppable just before the run ends; show the empty stand just before the turn.
+- END EVERY CHAPTER ON A HOOK: a question ("How do you come back from that?"), a cliffhanger ("And then came Maccabi."),
+  or a turn ("It would not last."). Open the next chapter by answering it.
+- THE TURNING POINT GETS ITS OWN BEAT, told slowly, with the form before and after it. A run gets a "run" card. The shape
+  of the season gets a "race" (the form line drawing itself, the turning point marked) or a "form" card (W/D/L tiles).
+- CONTRAST AND RHYTHM. Long sentence for the build-up; three-word sentences at the moment. A run of quick results on
+  fast beats ("Won. Won. Won again.") then one match told slowly. Numbers made vivid ("six goals, and the away end
+  still singing at the hundredth minute" — only if the claims hold it): never a list of scores.
+- TENSION IN THE CLOCK. When a claim has minutes, use them: "Eighty-seven minutes gone. Still level." Then the goal.
+- THE FAN'S POINT OF VIEW: the journey, the terrace, the waiting, the dread, the relief — feelings in general ("for the
+  away end, the wait was over"), never invented testimony, never a named supporter, never a crowd size the claims lack.
+- HUMOUR when the record allows it: the absurd fixture, the self-irony every supporter knows ("of course they did it the
+  hard way"), a club that only ever wins when nobody believes. Never at a named person's expense, never invented.
+- DERBIES AND RIVALS are personal: say who the rival is (only names in "rivals" or the film's opponent), what the
+  derby result did to the week, and show it with a "versus" card.
+- RISE AND FALL: say where the form went ("unbeaten in twelve", "one win in seven") — cite "story" for a number the story
+  counted, or the matches themselves.
+
+PICTURE (choose a visual for every beat, matching its emotion):
+- Every match the narration names is cited in that beat, so its score is on screen; a match told in full gets a
+  "versus" before it and a "score" (or a "goal" when the claim names the scorer and minute) when it lands.
+- A season film carries at least one "race" or "form" and one "record" ("summary:<competition>"); a match or tie film a
+  "versus" and a "score"/"goal"; a rivalry film a "record" of "summary:All competitions" and a "versus" for its biggest
+  meeting (moments[0]).
+- Never the same visual type three beats in a row. Mix cards with pictures: map → versus → score → illustration → race …
+- Beat-level direction: "camera" (push for rising tension, whip for a cut to the next match, shake for a goal, slow for
+  grief or awe, orbit for a trophy, drift for memory, pull to reveal), "pace" (fast for a run of results, slow for the
+  climax), "broll" (the art behind a data card — a terrace for a derby, an empty stand for a defeat, a tunnel before a
+  final), "sfx" (roar on a goal, groan on a defeat, whistle at full time, gasp at a miss, drum under a trailer). Don't
+  repeat a camera move three beats running.
+- A "trailer" card (1–4 lines, ≤5 words each) is for the cold open and the turn between acts: short, hard lines
+  ("NOBODY GAVE THEM A CHANCE"); no number, date or name a claim cited in that beat does not hold.
+- Illustrations are symbolic period scenes (terraces, a tunnel, a supporter seen from behind) — never a real person's
+  face. Use "gen" sparingly (at most one per chapter), never of a named person. Prefer BEAT ART pieces whose description
+  fits the beat. A visual may add "figure": "cut:common/<key>" for a person or crowd that moves over it.
 - Pictures marked "illustrated" in BEAT ART are drawn to look like photographs or documents of the real night: use them
   for the moment they show, and never present them as photographs in the narration.
+
+HARD RULES (a script that breaks one is sent back):
+- Every number you write (in narration, labels, trailer lines) must appear in a claim you cite in that beat, in a season
+  summary you cite, or in "story" when you cite it. A date or year you cannot cite is rewritten, never just deleted.
+- Real people may be named when the evidence names them. Never invent quotes, dressing-room scenes, motives, supporter
+  testimony, crowd sizes, table positions, minutes, weather or jeopardy. If the evidence does not say it, do not say it.
+- QUOTE claims: a "quote" visual prints the exact words, and the narration may read them word for word, attributed.
+  PRESS claims become "press" cuttings: outlet and headline exactly as they ran. Never paraphrase inside quotation marks.
+- Natural spoken British English, about {WORDS_PER_MINUTE} words per minute; spell numbers as a narrator says them
+  ("two-nil") or in digits — both are checked. No clickbait, no "subscribe" lines, no padding: the call to follow the
+  channel and the closing call to the site are added by the studio.
 - Ten honest title concepts: some search-oriented (club + season + what happened), some discovery-oriented (the human
   hook). Mark each. Select the strongest. Three thumbnail concepts with at most four words of text each.
+- Set "director": 2.
 
 Return ONE JSON object and nothing else, in exactly this shape:
 {SCHEMA_TEXT}'''
@@ -140,13 +174,31 @@ def parse_json(text: str) -> dict:
         raise StageError('WRITER_NOT_JSON', f'The writer returned malformed JSON: {e}') from e
 
 
+def story_for_prompt(ledger: dict) -> dict | None:
+    """The story block as the writer reads it: the matches cut to what the claims do not already say (form, goal
+    difference, rival, tags), everything else as it is."""
+    from .director import story_of
+    if not any(c['fact'].get('kind') == 'match' for c in ledger['claims']):
+        return None
+    st = story_of(ledger)
+    return {**{k: v for k, v in st.items() if k not in ('matches', 'version')},
+            'matches': [{'id': m['id'], 'date': m['date'], 'opponent': m['opponent'], 'score': f"{m['club_goals']}–{m['opponent_goals']}",
+                         'form': m['form'], 'gd': m['gd'], **({'rival': True} if m['rival'] else {}),
+                         **({'tags': m['tags']} if m['tags'] else {}), **({'through': m['through']} if 'through' in m else {})}
+                        for m in st['matches']]}
+
+
 def ledger_for_prompt(ledger: dict) -> dict:
     """The parts of the ledger the writer needs, without source URLs (they never belong in narration)."""
-    return {'club': ledger['club_name'], 'season': ledger['season'],
-            'claims': [{'id': c['id'], 'fact': c['fact']} for c in ledger['claims']],
-            'season_summary': {k: {kk: vv for kk, vv in v.items() if kk != 'claim_ids'} for k, v in ledger['summary']['by_competition'].items()},
-            'summary_ids': [f'summary:{k}' for k in ledger['summary']['by_competition']],
-            'summary_complete': ledger['summary']['complete']}
+    out = {'club': ledger['club_name'], 'season': ledger['season'],
+           'claims': [{'id': c['id'], 'fact': c['fact']} for c in ledger['claims']],
+           'season_summary': {k: {kk: vv for kk, vv in v.items() if kk != 'claim_ids'} for k, v in ledger['summary']['by_competition'].items()},
+           'summary_ids': [f'summary:{k}' for k in ledger['summary']['by_competition']],
+           'summary_complete': ledger['summary']['complete']}
+    st = story_for_prompt(ledger)
+    if st:
+        out['story'] = st
+    return out
 
 
 def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
@@ -159,6 +211,43 @@ def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
                    f'four wins) comes from a season summary: cite it ({ids}) in that beat, or say it without the number. '
                    'A date or a year you cannot cite is REWRITTEN, never just deleted: "October second, brought…" with the '
                    'year cut out is a broken sentence — say "That October night brought…" instead.')
+    st = None
+    try:
+        from .director import story_of
+        st = story_of(ledger) if any(c['fact'].get('kind') == 'match' for c in ledger['claims']) else None
+    except Exception:  # noqa: BLE001 — a hint is help, never a second failure
+        st = None
+    top = (st or {}).get('moments') or []
+    if any('[director rule 1]' in e and 'tells a result' in e for e in errs):
+        out.append('When a beat tells a result ("beat Olympiacos", "lost in Málaga"), cite that match\'s claim id in the beat\'s '
+                   'claim_ids — its score is then put on screen. If you mean the rivalry in general, say it without a result word.')
+    if any('[director rule 1]' in e and 'scoreline' in e for e in errs):
+        out.append('A scoreline in the narration ("three-one", "2–0") must be the score of a match the beat cites. Cite the '
+                   'match, or drop the scoreline.')
+    if any('[director rule 2]' in e for e in errs):
+        out.append('Add the cards the film needs: a season film a {"type":"race","label":…} (or a "form" card of 3–12 match ids) '
+                   'and a {"type":"record","claim":"summary:<competition>"}; a match or tie film a {"type":"versus","claim":<id>} '
+                   'before the kick-off and a "score" (or "goal") when it is decided; a rivalry film a record of "summary:All '
+                   'competitions" and a versus of its biggest meeting' + (f' ({top[0]["id"]})' if top else '') + '.')
+    if any('[director rule 3]' in e for e in errs):
+        out.append('Open cold: make the first beat a {"type":"trailer","lines":[…]} card, or the strongest moment'
+                   + (f' — cite "{top[0]["id"]}" ({top[0]["why"]}) in the first beat and show it' if top else '')
+                   + '. The hook is a moment, not "In the season of…". Then go back to the beginning.')
+    if any('[director rule 4]' in e for e in errs):
+        out.append('Never three beats in a row with the same visual type (or the same camera move): put a picture, a map, a '
+                   'race or a versus between two cards of one kind.')
+    if any('[director rule 5]' in e for e in errs):
+        out.append('End each chapter (except the last) on a hook: a question ("Could they hold on?"), a cliffhanger ("And then '
+                   'came Málaga."), or a turn ("It would not last."). The next chapter answers it.')
+    if any('trailer line' in e or 'a trailer' in e for e in errs):
+        out.append('A trailer line has at most five words and no name, number or month that a claim cited in that beat does '
+                   'not hold — "NOBODY SAW IT COMING" needs no citation; a club name needs its match cited.')
+    if any(re.search(r'a (form|race|run|versus|goal|record) ', e) for e in errs):
+        out.append('Director\'s Cut cards: form = 3–12 match ids in date order + label; race = label + 0–4 marked match ids; '
+                   'versus = one match id; goal = a match id whose claim names scorers with minutes + the scorer\'s index; '
+                   'record = "summary:<competition>"; run = 3+ consecutive match ids of one streak + label. Labels ≤ 40 characters.')
+    if any('"director"' in e for e in errs):
+        out.append('Set "director": 2 at the top level of the JSON.')
     m = next((re.search(r'Narration is (\d+) words', e) for e in errs if 'Narration is' in e), None)
     if m:
         n = int(m.group(1))
@@ -190,10 +279,21 @@ STYLE_TEXT = {
     'night': 'Visual style: a night broadcast — moving footage (clip:… keys) as backdrops wherever one fits: floodlights, terraces, rain, scarves.',
 }
 ANGLES_V3 = [
-    ('Chronicle', 'Tell it in order, the stakes rising match by match or minute by minute, to the ending.'),
-    ('From the stands', 'Tell it through the supporters: the journey, the terrace, the waiting, what it meant to them. '
-                        'Invent no person and no quote; use only facts from the ledger.'),
-    ('The turning point', 'Open on the decisive moment, then go back and show how they got there, and return to it at the end.'),
+    ('Chronicle', 'The season as a thriller in three acts. Cold open on story.moments[0] in five seconds, then rewind. Build '
+                  'the chapters on story.acts: Act I sets the stakes (who they were, what they wanted, the first warning '
+                  'sign), Act II is the confrontation (the run, the derby, the turning point told slowly), Act III is the '
+                  'climax and the reckoning; the epilogue says what it added up to. A "race" card at the turn of every act '
+                  'shows where the form line stands. Every chapter ends on a cliffhanger the next one answers.'),
+    ('From the stands', 'The same season seen from the terrace, as one of the crowd ("we", "us" — never a named supporter, '
+                        'never an invented quote). The away days, the nights the ground went silent, the derby week, the self-'
+                        'irony every supporter knows ("of course we did it the hard way"). Open on the moment the stands '
+                        'remember most (story.moments[0]) or on a "trailer"; let the "form" and "run" cards be the mood of the '
+                        'terrace; humour only from the record. Feelings in general, facts only from the ledger.'),
+    ('The turning point', 'Built around ONE night: story.turning_point if there is one, else story.moments[0]. Open on it and '
+                          'freeze it before the result ("Hold that moment."). Go back: show the form before it with a "race" '
+                          'or "form" card, the warnings, the stakes. Return to the night, told minute by minute where the '
+                          'claims have minutes, the score slamming in. Then show what it changed — the run that followed, the '
+                          'form after — and close on the night again.'),
 ]
 
 
@@ -208,6 +308,14 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
     if angle:
         extra.append(f'Angle: {angle[0]} — {angle[1]} Make it clearly different from the other angles: '
                      f'its own titles, its own hook, its own structure.')
+    st = story_for_prompt(ledger)
+    if st:
+        top = st['moments'][0] if st.get('moments') else None
+        extra.append('Director\'s notes (from the STORY block in the ledger): the season\'s shape is "' + str(st.get('shape')) + '"'
+                     + (f'; the cold open is {top["id"]} ({top["why"]})' if top else '')
+                     + (f'; the turning point is {st["turning_point"]} (form {st.get("turning_direction")})' if st.get('turning_point') else '')
+                     + (f'; rivals met: {", ".join(st["rivals"])}' if st.get('rivals') else '')
+                     + '. Build the chapters on story.acts.')
     user = (f'BRIEF\nClub: {ledger["club_name"]}\nSeason/story: {brief.get("season") or ledger["season"]}\n'
             f'Topic: {brief.get("topic") or ("the " + kind if kind != "season" else "the season")}\nTarget length: {minutes} minutes → {lo}–{hi} words of narration.\n'
             f'Chapters: {max(1, min(8, round(minutes / 2.2)))} (for films of 3 minutes or less use one chapter).\n'
@@ -241,7 +349,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
         try:
             script = parse_json(reply['text'])
-            errs = validate_script(script, ledger, minutes)
+            errs = validate_script(script, ledger, minutes, brief.get('kind'))
         except StageError as e:
             script, errs = None, [str(e)]
         attempts.append({'attempt': attempt, 'errors': errs[:40], 'meta': reply.get('meta')})

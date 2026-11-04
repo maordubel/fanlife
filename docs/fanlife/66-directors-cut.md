@@ -42,10 +42,42 @@ Deterministic, from the ledger's match claims (no model). Every value is compute
 }
 ```
 
+Added by A when it was built (4.11.2026, additive — nothing above changed meaning): `"version": 1`; `"shape"`
+(`rise | fall | rise-and-fall | fall-and-recovery | turn-up | turn-down | steady | single | tie`);
+`"turning_direction": "up|down|null"`; `"totals"` (`played, won, drawn, lost, for, against, form, gd, form_high,
+form_low`); `"note"`. Each match also carries `stage`, and `through` (true/false/null) when it is the second leg of a
+two-legged tie the ledger holds both legs of. Each moment carries `also` (its other reasons, strongest first). Each
+honour carries its claim `id`. The story is attached by `studio/director.py` in `pipeline.py` after any focus/pick, and
+computed again from its own claims for a ledger written before it existed (`director.story_of`).
+
 Rules: a tag or a moment exists only when the claims prove it (a late winner needs a scorer minute ≥ 85 on the deciding
 goal; a comeback needs minutes showing the club behind). The form line is **wins minus defeats**, never "points" and
 never "league position": the archive holds only the club's own matches, not the league's, so a position the archive
 cannot prove is never drawn (rule 11). A final league table appears only from a `table` claim.
+
+How A reads the claims (so B knows what a tag means on screen):
+- `derby`: the opponent is one of the club's approved rivals (The Worker's `isDerbyRival` for Hapoel Tel Aviv, else the
+  compiled pack's `rivals`, else the pack's `core.json`), matched by spelling — equal once FC/FK/AC… are dropped, or a
+  shorter form that starts the full name ("Velež" of "FK Velež Mostar"); never a longer name ("Olympiacos Volou" is not
+  Olympiacos). In a rivalry film the film's opponent is the rival.
+- `decider`: the second leg of a two-legged tie, a one-off knockout cup round, the night a title was decided, or a
+  shoot-out. A group stage is not a tie: home-and-away pairs that interleave or nest (A, B, C, C, A, B) are a group.
+- `comeback`: behind at some point and not beaten — proven by every goal's minute on both sides (the opponent's from a
+  `match-detail` claim of the same date), or a recorded half-time score; or lost the first leg and went through.
+- `late-winner`: won by one goal and the club's last goal came at 85′ or later; with the opponent's minutes, the score
+  was level just before it.
+- `biggest-win` / `worst-defeat`: the widest margin of the season, at least two goals, at most two matches sharing it.
+- `turning-point`: the first match of the new trend where the three-to-five-match rolling form changes most (at least
+  two results' worth), or none.
+- `streak-start` / `streak-end`: the first and last match of a listed run. Runs: wins/losses of 3+, unbeaten/winless of
+  5+ that contain a draw (a run of wins only is listed as wins); at most six, longest first.
+- `moments`: one per match, its strongest reason as `why` (`final, title-decided, comeback, late-winner, decider, derby,
+  turning-point, biggest-win, run-ended, drought-ended, worst-defeat, europe, last, first`), at most twelve, `weight`
+  normalised so the strongest is 1.0. `run-ended` is the defeat after 5+ unbeaten; `drought-ended` the win after 5+
+  without one.
+- `acts`: `Cold open` = `[moments[0]]`; Act I, II and III split the matches in date order with no gap and no overlap
+  (cut by the shape: the fall and the recovery, the rise and the fall, the turn, else thirds); with one or two matches,
+  Act I is the first, Act II all of them, Act III the last. `Epilogue` = the honour claims and the last match.
 
 ## 2. New visual types (A allows them in the schema and the validator; B renders them)
 
@@ -60,6 +92,15 @@ Data on screen always comes from the claims; the writer chooses WHICH claims and
 | `record` | `claim`: `summary:<competition>` | won / drawn / lost / for / against counting up |
 | `run` | `claims`: consecutive match ids, `label` | a streak counter: a tile per match, the number growing |
 | `trailer` | `lines`: 1–4 lines, ≤ 5 words each | kinetic title cards (slam, whip, stutter). No number, date or name unless a cited claim holds it |
+
+The new types carry exactly the fields above (no `backdrop`: the art behind a card is the beat's `broll`). Validation
+(A): `form` 3–12 distinct match ids in date order; `race` needs a story of 3+ matches; `goal` needs a claim with
+scorers and the chosen scorer's minute; `run` 3+ consecutive matches of one streak kind (all wins, all defeats,
+unbeaten, or winless); labels ≤ 40 characters; trailer lines are checked for numbers (fact guard), for the name words of
+any claim the beat does not cite, and for a month no cited claim is dated in.
+
+A beat may cite the pseudo-claim `"story"` (like `summary:<competition>`): its numbers are the run lengths, the form
+line's end/high/low, the goal difference and the matches played. It is not a ledger claim — B ignores ids it cannot find.
 
 Beat-level fields (all optional, all validated):
 - `camera`: `push | pull | whip | shake | drift | slow | orbit` — the move the director wants on this beat.
@@ -78,6 +119,22 @@ Beat-level fields (all optional, all validated):
 5. Chapter ends on a question, a cliffhanger or a turn; the next chapter answers it.
 6. Humour only from the record or the fan's point of view (self-irony, the absurd fixture, the weather) — never at a
    named person's expense, never invented.
+
+How A enforces them: only a script that declares `"director": 2` (the writer is told to set it); an older script on
+disk validates exactly as before. The `follow` and `end` beats the studio adds are not counted.
+- Rule 1: a beat whose narration tells a result (a result word — won, beat, lost, drew, defeat, winner, … — and an
+  opponent's name) must cite a match against that opponent; every scoreline in the narration ("2–0", "two-nil",
+  "one-all") must be the score of a match the beat cites (or a pair a cited claim prints, e.g. an aggregate).
+  **For B:** when a beat cites match claims and its visual is not `matchday/score/versus/goal`, the lower-third shows the
+  first cited match whose opponent the narration names, else the first cited match.
+- Rule 2: by the brief's kind (`season | match | tie | rivalry`), else read off the ledger's focus. The rivalry `versus`
+  must be `story.moments[0]`. A season with fewer than three matches is not asked for a race/form.
+- Rule 3: the first beat is a `trailer`, or cites `story.moments[0]`; the hook may not open "In the season…", "In 1999…",
+  "The 2002/03 season…", "This is the story…".
+- Rule 4: no visual type three beats running; no `camera` move three beats running.
+- Rule 5: the last line of every chapter but the last ends with `?`, `…` or a dash, or carries a turn word (but, until,
+  then, yet, still, only, nobody, what, how, would, could, next, …). "The next chapter answers it" is the writer's craft.
+- Rule 6 is a writing rule, in the writer's prompt.
 
 ## 4. The cinema (B)
 
