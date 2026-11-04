@@ -21,37 +21,45 @@ import urllib.request
 import wave
 from pathlib import Path
 
+from . import pronounce
 from .common import ROOT, StageError, read_json, sha256_json, write_json
 
 ELEVEN_GEORGE = 'JBFqnCBsd6RMkjVDRZzb'
 KOKORO_DIR = Path(os.environ.get('KOKORO_DIR', str(Path.home() / 'models')))
 SR = 24000
 
-# Written → spoken. Only spellings a TTS voice reads wrongly; extend per club in dossiers/<club>-pronounce.json.
-PRONOUNCE = {
-    'Računica': 'Rachunitsa', 'Pisont': 'Pishont', 'Kashtan': 'Kash-tahn', 'Hapoel': 'Hap-o-el', 'Beitar': 'Bay-tar',
-    'fanlife.dubelteam.com': 'fan life dot dubel team dot com', 'FanLife': 'Fan Life',
-    'Bloomfield': 'Bloomfield', "Be'er Sheva": 'Beh-er Sheva', 'Yerevan': 'Yerevan', 'Herzliya': 'Hertz-lia',
-    'Sūduva': 'Soo-doo-vah', 'Baldé': 'Bal-day', 'Derlei': 'Der-lay', 'Alenichev': 'Al-yen-ee-chev', 'Olímpico': 'Oh-leem-pico',
-    'Sevilla': 'Seh-vee-ya', 'Mourinho': 'Mo-reen-yo', 'Valgaeren': 'Val-gah-ren', 'José': 'Ho-zay', 'Celta': 'Thel-ta',
-    'Čukarički': 'Choo-ka-reech-kee', 'Bačka Topola': 'Bach-ka Toh-po-la', 'Mendilibar': 'Men-dee-lee-bar',
-    'Fenerbahçe': 'Fener-bah-cheh', 'Şükrü Saracoğlu': 'Shook-roo Sara-joh-loo', 'Tzolakis': 'Dzo-lah-kis', 'Kahveci': 'Kah-veh-jee',
-    'İrfan': 'Ir-fan', 'Tadić': 'Tah-ditch', 'Jovetić': 'Yo-veh-titch', 'Ünder': 'Oon-der', 'El Kaabi': 'El Kah-bee', 'Hezze': 'Heh-zeh',
-    'Fortounis': 'For-too-nis', 'Rodinei': 'Ho-dee-nay', 'Piraeus': 'Pie-ree-us', 'Karaiskakis': 'Kah-rice-kah-kis',
-    'Ferencváros': 'Feh-rents-vah-rosh', 'Carvalhal': 'Car-val-yal', 'Alexandropoulos': 'Alex-an-drop-oo-los', 'Agia Sophia': 'Ah-yee-a So-fee-a',
-    'Podence': 'Po-den-seh', 'Chiquinho': 'Shee-keen-yo', 'Olympiacos': 'Oh-lim-pee-a-kos', 'Martínez': 'Mar-tee-neth', 'Nyon': 'Nee-on',
-    'El-Arabi': 'El Ah-rah-bee', 'Zahavi': 'Za-ha-vee', 'Shahar': 'Sha-har', 'Thrylos': 'Three-los', 'RTÉ': 'R T E', 'EFE': 'E F E',
-    'Peretz': 'Peh-rets', 'Fiorentina': 'Fee-oh-ren-tee-na', 'Bonucci': 'Bo-noo-chee', 'Cengiz': 'Jen-giz',
+# Text that is not a name but is read wrongly (an address, a brand written as one word). Names live in the pronunciation
+# lexicon (studio/kit/pronounce/lexicon.json) and go in as phonemes; a film can add its own in dossiers/<club>-pronounce.json.
+TEXT_SAY = {
+    'fanlife.dubelteam.com': 'fan life dot dubel team dot com', 'FanLife': 'Fan Life', 'FAN LIFE': 'Fan Life', 'RTÉ': 'R T E',
 }
 
 
+def _score(m) -> str:
+    a, b = m.group(1), m.group(2)
+    if len(a) == 4 and len(b) == 4:            # 1971–2026 is a span of years, not a score
+        return f'{a} to {b}'
+    if len(a) > 2 or len(b) > 2:
+        return f'{a} {b}'
+    if a == b:                                 # a British narrator: nil-nil, one-all, three-all
+        return 'nil nil' if a == '0' else f'{a} all'
+    return f"{'nil' if a == '0' else a} {'nil' if b == '0' else b}"
+
+
+def _clock(m) -> str:
+    h, mm = m.group(1), m.group(2)
+    if mm == '00':
+        return f"{h} o'clock" if int(h) <= 12 else f'{h} hundred'
+    return f'{h} oh {mm[1]}' if mm[0] == '0' else f'{h} {mm}'
+
+
 def spoken(text: str, extra: dict | None = None) -> str:
+    """What the voice reads, before names become phonemes: addresses spelled out, scorelines said like a narrator."""
     out = text
-    for w, s in {**PRONOUNCE, **(extra or {})}.items():
-        out = re.sub(rf'\b{re.escape(w)}\b', s, out)
-    # Spoken scorelines: "2–1" → "two, one" reads oddly; a narrator says "two-one".
-    out = re.sub(r'(\d+)[–-](\d+)', lambda m: f'{m.group(1)} {m.group(2)}' if m.group(2) != '0' else f'{m.group(1)} nil', out)
-    return out
+    for w, s in TEXT_SAY.items():
+        out = re.sub(rf'(?<!\w){re.escape(w)}(?!\w)', s, out)
+    out = re.sub(r'\b(\d{1,2}):(\d{2})\b', _clock, out)  # 19:45 → nineteen forty-five
+    return re.sub(r'(?<![\d:])(\d+)[–-](\d+)(?![\d:])', _score, out)
 
 
 def provider() -> str:
@@ -191,18 +199,78 @@ def clauses(sentence: str) -> list[str]:
     return [p for p in parts if p.strip()]
 
 
+def voice_style(k, spec: str):
+    """'bm_george' or a blend 'bm_george:0.7,bm_fable:0.3' (Kokoro voices are style vectors; a blend is their mix)."""
+    if ',' not in spec and ':' not in spec:
+        return spec
+    parts = [p.split(':') for p in spec.split(',') if p.strip()]
+    ws = [(n.strip(), float(w) if w else 1.0) for n, *w in [(p[0], *(p[1:] or [''])) for p in parts]]
+    total = sum(w for _, w in ws) or 1.0
+    return sum(k.get_voice_style(n) * (w / total) for n, w in ws)
+
+
+def _breath(rng, sr: int = SR):
+    """A soft inhale before a long line: band-limited noise in a rise-and-fall envelope, about −40 dBFS. A narrator
+    breathes; a voice that never does is the first thing that gives a machine away."""
+    import numpy as np
+    n = int(sr * rng.uniform(0.22, 0.32))
+    noise = rng.standard_normal(n).astype('float32')
+    spec = np.fft.rfft(noise)
+    f = np.fft.rfftfreq(n, 1 / sr)
+    spec *= np.exp(-((np.log(np.maximum(f, 1) / 1400)) ** 2) / 0.5)  # centred near 1.4 kHz, an open-mouth inhale
+    b = np.fft.irfft(spec, n).astype('float32')
+    env = np.sin(np.linspace(0, np.pi, n)) ** 1.6
+    b = b * env
+    return b / (np.abs(b).max() or 1) * 0.012
+
+
+def _gap_for(sentence: str, base: float, rng) -> float:
+    """Silence after a sentence, as a narrator leaves it: longer after a question or a short hard line, shorter after a
+    run-on, never the same twice in a row."""
+    w = len(sentence.split())
+    g = base
+    if sentence.rstrip('”"’\'').endswith('?'):
+        g *= 1.25
+    elif sentence.rstrip('”"’\'').endswith('!'):
+        g *= 0.9
+    if w <= 4:
+        g *= 1.2
+    elif w >= 22:
+        g *= 1.1
+    return max(0.08, g * rng.uniform(0.86, 1.14))
+
+
+def _pace_for(sentence: str, rng) -> float:
+    """A short line is landed a touch slower; every line drifts a little, as a person's does."""
+    w = len(sentence.split())
+    p = 0.96 if w <= 4 else (1.02 if w >= 24 else 1.0)
+    return p * rng.uniform(0.975, 1.025)
+
+
 def kokoro_beat(text: str, out: Path, extra: dict | None, delivery: str = 'normal') -> dict:
     import numpy as np
     k = _kokoro()
     voice = os.environ.get('STORIES_KOKORO_VOICE', 'bm_george')
+    style = voice_style(k, voice)
     dv = DELIVERY.get(delivery, DELIVERY['normal'])
     speed = float(os.environ.get('STORIES_KOKORO_SPEED', '1.0')) * dv['speed']
-    chunks, words, t = [], [], 0.0
+    breaths = os.environ.get('STORIES_BREATHS', '1') != '0'
+    pr = pronounce.Pronouncer(extra)
+    # seeded by the text: the same beat always sounds the same, a resumed job never changes its voice
+    rng = np.random.default_rng(int(sha256_json({'t': text})[:12], 16))
+    chunks, words, t, engine = [], [], 0.0, 'espeak'
     sents = sentences(text)
     for i, s in enumerate(sents):
         parts = clauses(s)
+        pace = _pace_for(s, rng)
+        if breaths and i > 0 and len(s.split()) >= 12 and rng.random() < 0.7:
+            b = _breath(rng)
+            chunks.append(b)
+            chunks.append(np.zeros(int(SR * 0.06), dtype='float32'))
+            t += (len(b) + int(SR * 0.06)) / SR
         for j, part in enumerate(parts):
-            a, sr = k.create(spoken(part, extra), voice=voice, speed=speed, lang='en-gb')
+            ph, engine = pronounce.phonemes(spoken(part), pr, k)
+            a, sr = k.create(ph, voice=style, speed=speed * pace, lang='en-gb', is_phonemes=True)
             a = np.asarray(a, dtype='float32')
             # trim leading/trailing near-silence so pacing is ours, not the model's
             nz = np.where(np.abs(a) > 0.006)[0]
@@ -212,23 +280,24 @@ def kokoro_beat(text: str, out: Path, extra: dict | None, delivery: str = 'norma
             chunks.append(a)
             t += len(a) / SR
             if j < len(parts) - 1:
-                g = np.zeros(int(SR * dv['breath']), dtype='float32')
+                g = np.zeros(int(SR * dv['breath'] * rng.uniform(0.85, 1.15)), dtype='float32')
                 chunks.append(g)
                 t += len(g) / SR
         if i < len(sents) - 1:
-            g = np.zeros(int(SR * dv['gap']), dtype='float32')
+            g = np.zeros(int(SR * _gap_for(s, dv['gap'], rng)), dtype='float32')
             chunks.append(g)
             t += len(g) / SR
     _wav_write(out, np.concatenate(chunks) * dv['gain'])
     return {'words': words, 'alignment': 'sentence-exact, clauses pinned to pauses, words spread by syllables',
-            'voice': f'kokoro:{voice}', 'delivery': delivery}
+            'voice': f'kokoro:{voice}', 'delivery': delivery, 'g2p': engine,
+            'names': sorted(set(pr.names_in(text))), 'unknown': pronounce.unknown_names(text, pr)}
 
 
 def eleven_beat(text: str, out: Path, extra: dict | None) -> dict:
     key = os.environ['ELEVENLABS_API_KEY'].strip()
     voice = os.environ.get('STORIES_ELEVEN_VOICE', ELEVEN_GEORGE)
     model = os.environ.get('STORIES_ELEVEN_MODEL', 'eleven_multilingual_v2')
-    say = spoken(text, extra)
+    say = pronounce.Pronouncer(extra).respelled(spoken(text))
     body = {'text': say, 'model_id': model, 'voice_settings': {'stability': 0.55, 'similarity_boost': 0.8, 'style': 0.25, 'use_speaker_boost': True}}
     req = urllib.request.Request(f'https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128',
                                  data=json.dumps(body).encode(), headers={'xi-api-key': key, 'Content-Type': 'application/json'}, method='POST')
@@ -268,7 +337,7 @@ def voice_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict 
             text = b['narration'].strip()
             dl = delivery_of(b)
             key = sha256_json({'p': prov, 'v': os.environ.get('STORIES_ELEVEN_VOICE' if prov == 'elevenlabs' else 'STORIES_KOKORO_VOICE'),
-                               't': spoken(text, extra), 'r': 3, **({'d': dl, 's': os.environ.get('STORIES_KOKORO_SPEED')} if dl != 'normal' or os.environ.get('STORIES_KOKORO_SPEED') else {})})[:24]
+                               't': spoken(text), 'x': extra or {}, 'l': pronounce.lexicon_version(), 'g': 'misaki' if pronounce.misaki() is not None else 'espeak', 'b': os.environ.get('STORIES_BREATHS', '1'), 'r': 4, **({'d': dl, 's': os.environ.get('STORIES_KOKORO_SPEED')} if dl != 'normal' or os.environ.get('STORIES_KOKORO_SPEED') else {})})[:24]
             wav = cache_dir / f'{key}.wav'
             meta_p = cache_dir / f'{key}.json'
             if not (wav.exists() and meta_p.exists()):

@@ -318,6 +318,24 @@ CROWD_MAX_S = 2.6
 CROWD_GAP_S = 8.0
 
 
+# The narrator's chain (owner, 4.11.2026: "a narrator as human and real as possible"). The voice model renders at 24 kHz
+# with nothing above 12 kHz, dry, with an even level: a studio voice has a low end, a presence, a little air and a room.
+# Upsample, cut rumble and mud, warm the chest, lift the presence, tame the s's, add a hint of air from harmonics,
+# give it a few milliseconds of booth, then a gentle leveller. STORIES_NARRATOR_FX=0 turns it off (an A/B test).
+NARRATOR_FX = ('aresample=48000,highpass=f=80,equalizer=f=170:t=q:w=1.1:g=2,equalizer=f=330:t=q:w=1.4:g=-2.5,'
+               'equalizer=f=3100:t=q:w=1.2:g=2,deesser=i=0.45:m=0.5:f=0.5:s=o,'
+               'aexciter=amount=1.4:drive=6:blend=0:freq=6500:ceil=16000,aecho=0.85:0.7:11|23:0.05|0.035,'
+               'acompressor=threshold=0.16:ratio=2.4:attack=6:release=150:makeup=1.15')
+
+
+def narrator_fx(sr: int = SR) -> str:
+    """The chain as an ffmpeg filter, ending at the mix's sample rate."""
+    import os
+    if os.environ.get('STORIES_NARRATOR_FX', '1') == '0':
+        return 'highpass=f=70,acompressor=threshold=0.2:ratio=2.5:attack=5:release=120'
+    return f'{NARRATOR_FX},aresample={sr}'
+
+
 def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: str = 'synth') -> Path:
     total = plan['duration']
     n = int(total * SR) + SR
@@ -362,7 +380,7 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     out = d / 'mix.m4a'
     fg = ('[0:a]asplit=3[v0][vk1][vk2];'
           '[1:a]volume=0.55[m];[m][vk1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[md];'
-          '[v0]volume=1.0,highpass=f=70,acompressor=threshold=0.2:ratio=2.5:attack=5:release=120[v];'
+          f'[v0]volume=1.0,{narrator_fx()}[v];'
           '[2:a]volume=0.9[s];'
           # the crowd sounds far away (no hiss, no boom) and steps aside whenever the narrator speaks
           '[3:a]highpass=f=180,lowpass=f=3200,aecho=0.6:0.5:60:0.25[cf];[cf][vk2]sidechaincompress=threshold=0.02:ratio=12:attack=15:release=500[c];'
