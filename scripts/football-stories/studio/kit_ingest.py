@@ -75,7 +75,18 @@ def ingest(set_id: str, sources: list[Path], masks: dict, club: str | None, seas
     for src in sources:
         m = masks.get(src.name, {})
         slug = m.get('slug') or slug_of(src.name)
-        im = Image.open(src).convert('RGB')
+        try:
+            import pillow_heif  # the owner's iPhone stills
+            pillow_heif.register_heif_opener()
+        except ImportError:
+            pass
+        im = Image.open(src)
+        if im.mode in ('RGBA', 'LA', 'P'):
+            # a transparent cut-out sits on the paper the studio prints on, never on black
+            rgba = im.convert('RGBA')
+            paper = Image.new('RGBA', rgba.size, (244, 236, 216, 255))
+            im = Image.alpha_composite(paper, rgba)
+        im = im.convert('RGB')
         if m.get('blur'):
             im = blur_out(im, m['blur'])
         if im.width > MAX_W:

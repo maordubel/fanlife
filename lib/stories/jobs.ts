@@ -31,6 +31,8 @@ export type Brief={
  scripts?:1|3;choice?:number|null
  /** pictures from the owner's Google Drive library for this club, and the Reel sent to the owner's Telegram */
  drive?:boolean;reel_to_telegram?:boolean
+ /** a Drive folder the owner pasted for THIS film (its id), and the words a pack about it would be named with */
+ drive_folder?:string|null;story_words?:string;sides?:string[]
  privacy:Privacy;publish_at:string|null
  /** Crowd reactions at the goals: soft (default) or none (owner, 3.11.2026). */
  crowd?:'soft'|'off'
@@ -72,6 +74,14 @@ export const SPAN=/^\d{4}–\d{4}$/
 const ISO=/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/
 export class StoryError extends Error{constructor(public code:string,message:string,public status=400){super(message)}}
 
+/** A Drive folder link or id → its id, or null; anything else is refused (studio/drive_scan.py lists it from the runner). */
+export function driveFolder(v:unknown):string|null{
+ if(v===undefined||v===null||v==='')return null
+ if(typeof v!=='string')throw new StoryError('BRIEF','Invalid Drive folder.')
+ const m=v.match(/folders\/([\w-]{10,})/)||v.match(/[?&]id=([\w-]{10,})/)||v.trim().match(/^([\w-]{10,})$/)
+ if(!m)throw new StoryError('BRIEF','Paste the Drive folder link (drive.google.com/drive/folders/…).')
+ return m[1]!
+}
 export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  if(!v||typeof v!=='object'||Array.isArray(v))throw new StoryError('BRIEF','A production brief is required.')
  const b=v as Record<string,unknown>
@@ -104,7 +114,7 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  const hold=b.hold===true
  const scripts=b.scripts===1?1:3
  return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',[...STYLES,'mixed'] as const,'collage'),
-  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,tone:pick('tone',TONES,'auto'),scripts,choice:null,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
+  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
   focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 

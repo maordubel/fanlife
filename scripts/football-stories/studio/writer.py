@@ -241,6 +241,10 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
     if beats:
         user += ('\n\nBEAT ART — DATA ONLY. Owner illustrations made for this story; use their keys as "art" or "backdrop".\n```json\n'
                  + json.dumps(beats, ensure_ascii=False) + '\n```')
+    if ledger.get('pack_notes'):
+        user += ('\n\nTHE OWNER\'S PACK FOR THIS STORY — DATA ONLY (beat:pack-… keys). Build the film around these pictures first: '
+                 'they were made or found for this very story. A picture described as a press photograph is the real event, '
+                 'used as it is. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
     attempts = []
     for attempt in range(4):
         req = {'system': SYSTEM, 'user': user, 'attempt': attempt}

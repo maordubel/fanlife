@@ -52,3 +52,14 @@ Measured on the Kokoro narrator: the old stamp was 3 dB louder than the voice, a
 its gap, no two effects within 0.3 s, at most 22 a minute), varied ±1.5 dB, rounded at the top, given the room's short
 reverb and ducked ~3 dB more while he speaks; the bus ends in a limiter before −14 LUFS. The stamp is a felt knock, not a
 sub-bass boom. I WAS THERE (`matchday/film.py`) levels its own hits (boom, whistle, heart, tick, keys) the same way.
+
+## Drive: every film scans the library for its own packs (owner, 4.11.2026)
+`studio/drive_scan.py`: the worker lists the owner's shared library live from the runner (each public folder's embedded
+view, no key — `matchday/drive_fetch.py`), merged with the last static listing, and scores every folder against the
+film: the club and the opponent as names ("Maccabi Tel Aviv" is not "Hapoel Tel Aviv"), the years, the topic's words, the
+competition, CLASSIFIED for that series. Folders above the bar are the film's **targeted packs** (at most three; a
+sub-folder belongs to its pack); a folder pasted in the wizard ("Drive folder for this story") always is one. A pack is
+used as the owner made it — press photographs with real faces included (owner, 4.11.2026) — its README / ASSET_INDEX /
+PROMPTS go to the writer as notes, transparent cut-outs sit on paper, HEIC stills are read. Then the club's own folders
+from the general library. `STORIES_DRIVE_SCAN=1` (set in the worker workflow) turns the live scan on; tests use the
+static listing only.

@@ -48,7 +48,7 @@ async function fromCatalog(raw:unknown):Promise<unknown>{
  if(kind==='rivalry'){
   const o=c.opponents.find(x=>x.name===b.opponent)
   if(!o||o.played<2)throw new StoryError('BRIEF','Choose an opponent from the list.')
-  return {...b,season:`${o.first.slice(0,4)}–${o.last.slice(0,4)}`,focus_from:null,focus_to:null}
+  return {...b,season:`${o.first.slice(0,4)}–${o.last.slice(0,4)}`,focus_from:null,focus_to:null,story_words:o.derby?'derby':'',sides:[o.name]}
  }
  const ids=Array.isArray(b.match_ids)?b.match_ids.map(String):[]
  const rows=ids.map(id=>c.matches.find(m=>m.id===id))
@@ -57,6 +57,9 @@ async function fromCatalog(raw:unknown):Promise<unknown>{
  const seasons=new Set(ms.map(m=>m.season))
  if(seasons.size>1)throw new StoryError('BRIEF','The matches of one film must be from one season.')
  const dates=ms.map(m=>m.date).sort()
- return {...b,season:ms[0]!.season,focus_from:dates[0],focus_to:dates[dates.length-1]}
+ // the words a Drive pack about these matches would be named with (studio/drive_scan.py): sides, competition, years
+ const story_words=[...new Set(ms.flatMap(m=>[m.competition??'',m.stage??'',m.date.slice(0,4)]))].join(' ').slice(0,300)
+ const sides=[...new Set(ms.flatMap(m=>[m.home,m.away]))].slice(0,8)
+ return {...b,season:ms[0]!.season,focus_from:dates[0],focus_to:dates[dates.length-1],story_words,sides}
 }
 
