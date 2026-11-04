@@ -16,7 +16,7 @@ const claim = (body) => fetch(`${base}/api/master/dubid-lock`, {method: 'POST', 
 const got = await claim({stamp: due.stamp}).catch(e => ({status: 0, error: String(e)}))
 if (got.status === 409) { console.log('already claimed by another run'); process.exit(0) }
 if (got.status !== 200) fail(`could not claim the reminder (${got.status}); nothing was sent`)
-const when = new Intl.DateTimeFormat('he-IL', {timeZone: 'Asia/Jerusalem', weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false}).format(new Date(due.lockAt))
+const when = new Intl.DateTimeFormat('he-IL', {timeZone: 'Europe/Athens', weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false}).format(new Date(due.lockAt))
 const text = `⏳ DUBID · מחזור ${due.number}\nהמחזור ננעל בעוד ${due.hours} שעות — ${when}.\nהשעון כבר רץ בראש האפליקציה.\n\ndubid.dubelteam.com`
 const sent = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({chat_id: due.chatId, text}), signal: AbortSignal.timeout(20_000)}).then(r => r.json()).catch(e => ({ok: false, unknown: true, description: String(e)}))
 if (!sent.ok) {

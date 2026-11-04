@@ -1,5 +1,7 @@
 /**
- * FAN LIFE social plan v4 (owner, 29.10.2026): 45 days from 29.10, 18 slots a day, "easier text, smarter tags, real
+ * FAN LIFE social plan v5 (owner, 4.11.2026): Athens time, 45 days from 5.11, every row naming its channels in kit.to
+ * (feed · story · tiktok), four feed posts a day — see the v5 block below and docs 51/61.
+ * v4 (owner, 29.10.2026): 45 days from 29.10, 18 slots a day, "easier text, smarter tags, real
  * copy-paste". Every post carries its own smart tags (lib/marketing/tags.ts), a short label, and — where there is an
  * answer — a first comment, so the caption never gives the answer away and the comments do the talking.
  * New in v4: 17:30 Guess the score and 22:30 Guess the year (both from the approved archive).
@@ -11,10 +13,10 @@
  *   Matches and results (not marketing): live slots 09:00 results · 11:00 next up — composed at send time from the
  *   fixture feed (lib/marketing/live.ts), or quiet.
  * The data slots come from the clubs' approved archives through the FAN LIFE trivia forge (English, confidence ≥ 2,
- * exact dates — rule 109). Writes supabase/marketing/0008_marketing_plan_v4.sql and scripts/marketing/plan-v4.json.
+ * exact dates — rule 109). Writes supabase/marketing/0009_marketing_plan_v5.sql and scripts/marketing/plan-v5.json.
  * Run: node --require ./scripts/master/server-only.cjs --import tsx scripts/marketing/build-plan.mts
  */
-import {readFileSync, writeFileSync} from 'node:fs'
+import {existsSync, readdirSync, readFileSync, writeFileSync} from 'node:fs'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {loadClubBase, CORE_CLUB_IDS} from '../../lib/clubs/resolver'
@@ -172,7 +174,7 @@ function nerds(n: number): Item {
 }
 function quiz(n: number): Item {
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`q${n}${a}`) - h(`q${n}${b}`))
-  for (let tries = 0; tries < 20; tries++) {
+  for (let tries = 0; tries < 80; tries++) {
     const got = qPick(q => (L(q) === 2 || L(q) === 3) && q.type === 'mcq' && !/derby/i.test(q.prompt) && q.prompt.length < 120, `quiz${n}.${tries}`, used, order)
     if (!got) break
     const opts = optionsFor(got.q, got.c, `quiz${n}`)
@@ -514,34 +516,89 @@ function eraNames(text: string) {
 }
 type Row = {day: number; at: string; format: string; kind: string; main: Item}
 const rows: Row[] = []
-// v4: 45 days from 29.10.2026, 18 slots a day. Live slots on 09/11/13/15 (composed at send time, or quiet).
+
+// ── v5 (owner, 4.11.2026): a page that publishes itself ─────────────────────────────────────────────────────────────
+// Every row names where it goes in its kit (`kit.to`): 'feed' = Facebook Page + Instagram feed, 'story' = Instagram +
+// Facebook stories, 'tiktok' = a copy-paste draft for TikTok. The Meta publisher (scripts/marketing/meta-publish.mjs)
+// reads it; a row it publishes in full reaches Telegram as one quiet line, the rest as the usual copy-paste draft.
+// Four feed posts a day (a page that posts fifteen times a day is muted), eight stories, Athens time.
+type To = 'feed' | 'story' | 'tiktok'
+
+/** the public films of the channel, read from their own upload records — a film that is not public is never promoted */
+type Film = {slug: string; title: string; url: string; thumb: string; club?: string}
+const CH = path.join(HERE, '../football-stories/channel')
+const FILMS: Film[] = (() => {
+  const out: Film[] = []
+  for (const slug of readdirSync(CH).sort()) {
+    const dir = path.join(CH, slug)
+    try {
+      const um = JSON.parse(readFileSync(path.join(dir, 'upload-meta.json'), 'utf8'))
+      const yt = (() => { try { return JSON.parse(readFileSync(path.join(dir, 'youtube.json'), 'utf8')) } catch { return {} } })()
+      const film = um.published?.film || (yt.url ? {url: yt.url, visibility: 'public'} : null)
+      if (!film?.url || film.visibility !== 'public') continue
+      const thumb = ['thumbnail-1.jpg', 'thumbnail.jpg'].find(f => existsSync(path.join(dir, f)))
+      if (!thumb) continue
+      const title = String(um.title || yt.title || '').split(' | ')[0]!.trim()
+      out.push({slug, title, url: film.url, thumb: `../../football-stories/channel/${slug}/${thumb}`})
+    } catch { /* not a film folder */ }
+  }
+  return out
+})()
+if (FILMS.length < 2) throw Error('fewer than two public films to promote')
+function film(n: number, story = false): Item {
+  const f = FILMS[n % FILMS.length]!
+  return {app: 'fanlife', url: f.url, label: 'New film', tags: smartTags({clubs: [], topics: ['film'], max: 5}),
+    hook: pickOf([`New on the channel: ${f.title}`, `Ten minutes you won't regret: ${f.title}`, `Tonight's watch: ${f.title}`], `fm${n}`),
+    body: `${f.title}\n\nThe full film is on our YouTube channel, FanLife: Football Stories — real nights, real supporters.\n▶️ ${f.url}\n\nWere you there? Tell us in the comments 👇`,
+    visual: 'L-FILM the film\'s own thumbnail on a screen, its title.',
+    kit: {t: 'L-FILM', data: {title: f.title, thumb: f.thumb, kicker: story ? 'WATCH TONIGHT' : 'NOW ON YOUTUBE', shout: 'WATCH!'}}}
+}
+
+/** the story quiz as a story that needs no sticker: the question and four answers now, the answer three hours later */
+function storyQuiz(n: number): [Item, Item] {
+  const q = quiz(n), d = q.kit.data as {club: string; hook: string[]; options: string[]}
+  const c = clubs.find(x => x.id === d.club)!
+  const answer = String(q.body.split('\n').find(l => l.startsWith('✅ ')) || '').slice(2).trim()
+  const ask: Item = {...q, how: 'Published as a story by itself. The answer follows at 17:30.',
+    kit: {t: 'T10-NERDS', data: {club: {id: c.id, name: c.name}, crestName: c.name, question: q.hook, options: d.options, level: 'STORY QUIZ', shout: 'QUIZ TIME!'}}}
+  const reply: Item = {app: 'fanlife', url: q.url, label: 'Story quiz · answer', tags: q.tags,
+    hook: `The answer: ${answer}`, body: `${q.hook}\n\n✅ ${answer}. ${q.comment?.split('\n')[0] ?? ''}`.trim(),
+    visual: 'L-FACT the answer on the club\'s colours.',
+    kit: {t: 'L-FACT', data: {club: {id: c.id, name: c.name}, crestName: c.name, fact: (() => { const ex = (q.comment || '').split('\n')[0]!.trim(); return (ex.toLowerCase().startsWith(answer.toLowerCase()) ? ex : `${answer}. ${ex}`).slice(0, 170) })(), shout: 'THE ANSWER!', kicker: `${c.name.toUpperCase()} · STORY QUIZ`, label: 'FAN LIFE · STORY QUIZ'}}}
+  return [ask, reply]
+}
+
+// v5: 45 days from 5.11.2026 (Athens). Live slots 09/11/13:30/15 are composed at send time from real data, or quiet.
 export const DAYS = 45
-const LIVE: [string, string, string, string][] = [['09:00', 'results', 'fanlife', 'Results'], ['11:00', 'fixtures', 'fanlife', 'Next up'], ['13:00', 'dubid', 'dubid', 'DUBID round'], ['15:00', 'offsides', 'offsides', 'OFFSIDES today']]
+const LIVE: [string, string, string, string][] = [['09:00', 'results', 'fanlife', 'Results'], ['11:00', 'fixtures', 'fanlife', 'Next up'], ['13:30', 'dubid', 'dubid', 'DUBID round'], ['15:00', 'offsides', 'offsides', 'OFFSIDES today']]
+// 21:00, the evening post, rotates through the week (Sun = 0): the big games twice, a film on Friday night
+const EVENING = ['spicy', 'big', 'nerds', 'score', 'generations', 'film', 'big'] as const
 const safeOTD = (y: number, m: number, d: number, n: number) => { try { return onThisDay(y, m, d) } catch { return fact(500 + n) } }
 for (let n = 1; n <= DAYS; n++) {
-  const dt = new Date(Date.UTC(2026, 9, 28 + n))
+  const dt = new Date(Date.UTC(2026, 10, 4 + n))
   const y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1, d = dt.getUTCDate(), dow = dt.getUTCDay()
   const date = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`
-  const slot = (t: string, format: string, main: Item, kind = 'fixed') => rows.push({day: n, at: `${date} ${t}`, format, kind, main})
+  const slot = (t: string, format: string, main: Item, to: To[], kind = 'fixed') =>
+    rows.push({day: n, at: `${date} ${t}`, format, kind, main: {...main, kit: {...main.kit, to} as Kit}})
   const otd = safeOTD(y, m, d, n)
   if ((otd.kit.data.rows as unknown[] | undefined)?.length === 1) throw Error('one-row OTD')
-  slot('08:00', 'post', otd)
-  slot('10:00', 'post', gate(n))
-  slot('12:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : fact(n))
-  slot('14:00', 'story', quiz(n))
-  slot('16:00', 'post', nerds(n))
-  slot('17:00', 'post', gate(n + 15)) // launch phase (owner, 27.10.2026): more exposure — a second gate, another club
-  slot('17:30', 'post', guessScore(n))
-  slot('18:00', 'post', bigGame(n))
-  slot('19:00', 'carousel', carousel(n))
-  slot('19:30', 'post', generations(n)) // GENERATIONS (owner, 30.10.2026): 15–55, from father to son
-  slot('20:00', 'post', spicy(n))
-  slot('21:00', 'story', quiz(n + 60)) // a second story quiz, another club
-  slot('22:00', 'post', fact(100 + n))
-  slot('22:30', 'post', guessYear(n))
-  // the owner's morning briefing (owner, 29.10.2026): operations, not a post — composed at send time
-  slot('07:30', 'post', {app: 'fanlife', label: 'Morning briefing', hook: '(briefing: composed at send time)', body: '', visual: 'none', kit: {t: 'none', data: {}}}, 'briefing')
-  for (const [t, kind, app, label] of LIVE) slot(t, 'post', {app, label, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, kind)
+  const [ask, answer] = storyQuiz(n)
+  // feed: four a day
+  slot('10:00', 'post', otd, ['feed'])
+  slot('13:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : gate(n), ['feed'])
+  slot('19:00', 'carousel', carousel(n), ['feed', 'tiktok'])
+  const ev = EVENING[dow]!
+  slot('21:00', 'post', ev === 'spicy' ? spicy(n) : ev === 'big' ? bigGame(n) : ev === 'nerds' ? nerds(n) : ev === 'score' ? guessScore(n) : ev === 'generations' ? generations(n) : film(n), ['feed'])
+  // stories: the quiz and its answer, a fact, the generations question, a film on Wednesdays, a late fact
+  slot('14:00', 'story', ask, ['story'])
+  slot('16:00', 'story', fact(n), ['story'])
+  slot('17:30', 'story', answer, ['story'])
+  slot('19:30', 'story', ev === 'generations' ? gate(n + 30) : generations(n), ['story']) // GENERATIONS (owner, 30.10.2026): 15–55, from father to son
+  if (dow === 3) slot('20:00', 'story', film(n + 2, true), ['story'])
+  slot('22:00', 'story', fact(100 + n), ['story'])
+  // the owner's morning briefing (owner, 29.10.2026): operations, not a post — composed at send time, Telegram only
+  slot('07:30', 'post', {app: 'fanlife', label: 'Morning briefing', hook: '(briefing: composed at send time)', body: '', visual: 'none', kit: {t: 'none', data: {}}}, [], 'briefing')
+  for (const [t, kind, app, label] of LIVE) slot(t, 'post', {app, label, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, ['story'], kind)
 }
 for (const r of rows) if (r.kind === 'fixed' && (!r.main.tags || r.main.tags.split(' ').length > 8)) throw Error(`tags: ${r.at}`)
 
@@ -553,18 +610,18 @@ const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
 for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); if (r.main.comment) r.main.comment = eraNames(r.main.comment); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown>; const sl = (r.main.kit as {slides?: Kit[]}).slides; if (sl) for (const k of sl) k.data = eraDeep(k.data) as Record<string, unknown> }
 for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, r.main.comment || '', JSON.stringify(r.main.kit))) throw Error(`pre-1980 content in ${r.at}`)
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
-const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v4 (owner, 29.10.2026).`,
-  `-- 45 days from 29.10.2026, 18 slots a day: the fixed plan (FAN LIFE leads; DUBID and OFFSIDES in their own branding on`,
-  `-- fixed weekdays), each post with its picture's kit, its smart tags and — where there is an answer — a first comment.`,
-  `-- Live slots 09/11/13/15 are composed at send time from real data, or skipped. Nothing from before 1980.`,
+const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v5 (owner, 4.11.2026), Athens time.`,
+  `-- 45 days from 5.11.2026: four feed posts and up to eight stories a day, each row naming its channels in kit.to`,
+  `-- (feed = Facebook + Instagram, story = their stories, tiktok = a copy-paste draft), with its picture's kit and tags.`,
+  `-- Live slots 09/11/13:30/15 are composed at send time from real data, or skipped. Nothing from before 1980.`,
   `-- Every row still waiting and still ahead is replaced; what was already sent is never touched.`,
   `begin;`,
   `delete from marketing.posts where status in ('pending', 'skipped', 'failed') and send_at > now();`,
   `insert into marketing.posts (day, send_at, format, kind, main) values`,
-  rows.map(r => `  (${r.day}, (timestamp '${r.at}') at time zone 'Asia/Jerusalem', '${r.format}', '${r.kind}', ${J(r.main)})`).join(',\n'),
+  rows.map(r => `  (${r.day}, (timestamp '${r.at}') at time zone 'Europe/Athens', '${r.format}', '${r.kind}', ${J(r.main)})`).join(',\n'),
   `on conflict (send_at) do nothing;`,
   `-- and a slot inserted for a moment already past is not sent late`,
   `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes';`,
   `commit;`, ''].join('\n')
-writeFileSync(path.join(HERE, '../../supabase/marketing/0008_marketing_plan_v4.sql'), sql)
-writeFileSync(path.join(HERE, 'plan-v4.json'), JSON.stringify(rows, null, 1))
+writeFileSync(path.join(HERE, '../../supabase/marketing/0009_marketing_plan_v5.sql'), sql)
+writeFileSync(path.join(HERE, 'plan-v5.json'), JSON.stringify(rows, null, 1))

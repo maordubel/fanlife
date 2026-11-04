@@ -3,14 +3,14 @@ import {composeDubid, composeFixtures, composeOffsides, composeResults, dayKey, 
 // @ts-expect-error — plain ESM module, no types
 import {drawKit} from '../../scripts/marketing/kit/visual.mjs'
 
-const now = new Date('2026-10-31T08:00:00Z') // Saturday 10:00 in Israel
+const now = new Date('2026-10-31T08:00:00Z') // Saturday 10:00 in Athens
 const data = (o: Partial<LiveData> = {}): LiveData => ({dubid: [], offsides: [], posted: [], ...o})
 const NAMES = {celtic: 'Celtic', olympiacos: 'Olympiacos'}
 const fx = (id: string, clubId: string, kickoff: string, home: string, away: string) =>
   ({clubId, kickoff, dateOnly: false, home, away, clubSide: 'home' as const, opponent: away, competition: 'Scottish Premiership', round: null, venue: null, status: 'scheduled' as const, providerEventId: id})
 
 describe('live slots (owner, 27.10.2026): real data or quiet', () => {
-  it('days are Israel days', () => {
+  it('days are Athens days', () => {
     expect(dayKey('2026-10-31T22:30:00Z')).toBe('2026-11-01')
     expect(dayKey('2026-10-31T21:30:00Z')).toBe('2026-10-31')
   })
@@ -20,8 +20,8 @@ describe('live slots (owner, 27.10.2026): real data or quiet', () => {
     const out = composeFixtures(list, ['celtic', 'olympiacos'], data(), now, NAMES)
     if ('skip' in out) throw Error(out.skip)
     expect(out.refs).toEqual(['fx:a', 'fx:b'])
-    expect(out.msg).toContain('Today 17:00 (Israel time) · Celtic v Rangers')
-    expect(out.msg).toContain('Tomorrow 19:00 (Israel time) · Olympiacos v AEK Athens')
+    expect(out.msg).toContain('Today 17:00 (Athens time) · Celtic v Rangers')
+    expect(out.msg).toContain('Tomorrow 19:00 (Athens time) · Olympiacos v AEK Athens')
     expect(composeFixtures(list, ['celtic', 'olympiacos'], data({posted: ['fx:a', 'fx:b']}), now, NAMES)).toHaveProperty('skip')
     expect((await drawKit(out.kit)).subarray(1, 4).toString()).toBe('PNG')
   }, 60_000)
@@ -76,7 +76,7 @@ describe('plan v4 message (owner, 29.10.2026): a real copy-paste', async () => {
 
 describe('the morning briefing (owner, 29.10.2026): operations, not marketing', async () => {
   const {composeBriefing} = await import('../../lib/marketing/live')
-  const now = new Date('2026-10-29T05:30:00Z') // 07:30 Israel
+  const now = new Date('2026-10-29T05:30:00Z') // 07:30 Athens
   const data = {dubid: [{id: 'g1', round: 9, league: 'Israeli Premier League', code: 'il', lock_at: '2026-10-31T12:00:00Z', first_kickoff_at: null}],
     offsides: [{id: 'm1', home: 'Arsenal', away: 'Chelsea', league: 'Premier League', kickoff: '2026-10-29T19:00:00Z', tier: 1, arenas: 3},
       {id: 'm2', home: 'Roma', away: 'Lazio', league: 'Serie A', kickoff: '2026-10-29T17:00:00Z', tier: 1, arenas: 0}], posted: ['os:m1']}

@@ -26,7 +26,7 @@ export async function ConnectedDesk({clubs}: {clubs: readonly {id: string; name:
   return <section className="desk-panel" aria-label="Connected Football" data-testid="connected-desk">
     <p className="desk-kicker">Connected Football</p>
     <h2 className="desk-h">What fans see from DUBID and OFFSIDES now</h2>
-    <p className="desk-fine">Checked {new Date(cat.checkedAt).toLocaleString('en-GB', {timeZone: 'Asia/Jerusalem'})} (Israel time). {u.open ? '' : 'The Universe bridge is OFF — nothing is shown to fans. '}Home page card: {hub ? `${hub.action.family.toUpperCase()} · ${hub.action.copy.line} (${hub.action.intent}, until ${new Date(hub.action.expiresAt).toLocaleString('en-GB', {timeZone: 'Asia/Jerusalem'})})` : 'none — nothing true to offer'}.</p>
+    <p className="desk-fine">Checked {new Date(cat.checkedAt).toLocaleString('en-GB', {timeZone: 'Europe/Athens'})} (Athens time). {u.open ? '' : 'The Universe bridge is OFF — nothing is shown to fans. '}Home page card: {hub ? `${hub.action.family.toUpperCase()} · ${hub.action.copy.line} (${hub.action.intent}, until ${new Date(hub.action.expiresAt).toLocaleString('en-GB', {timeZone: 'Europe/Athens'})})` : 'none — nothing true to offer'}.</p>
     <p className="desk-fine">“Shown on the hub” is what a first-time visitor sees. A visitor who pressed × on a card of that family sees nothing from it for seven days — that choice lives on their device and is not visible here.</p>
     <div className="desk-table-wrap"><table className="desk-table">
       <thead><tr><th scope="col">Club</th><th scope="col">DUBID</th><th scope="col">OFFSIDES</th></tr></thead>

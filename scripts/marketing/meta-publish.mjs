@@ -7,8 +7,9 @@
  * a Page access token from a Business system user — never for a personal profile. Each post is tried ONCE: a claimed
  * post is never published twice, and a refusal is reported on the owner's Telegram so he can post it by hand.
  *
- * What is published: the plan's feed formats (Post, Carousel) with a picture. A story needs the Instagram quiz
- * sticker and a reel needs a video — the API cannot add either — so they stay ready-made drafts on Telegram.
+ * What is published: where the row says (`kit.to`, plan v5) — the feed (Post, Carousel) and stories, each with its
+ * picture. A plan-v4 row goes by its format: feed only. Reels need a video and TikTok has no open API for a page this
+ * size, so they stay ready-made drafts on Telegram.
  * The owner's morning briefing is never published.
  */
 const PUBLISH = new Set(['post', 'carousel'])
@@ -34,12 +35,20 @@ export function metaConfig(env = process.env) {
     version: /^v\d+\.\d+$/.test(env.META_GRAPH_VERSION || '') ? env.META_GRAPH_VERSION : 'v23.0'}
 }
 
+/** Where a post goes. Plan v5 names it in the kit (`kit.to`: feed · story · tiktok); an older row falls back to its format. */
+export function targetsOf(p, parts) {
+  const to = Array.isArray(p?.kit?.to) ? p.kit.to : null
+  if (to) return {feed: to.includes('feed'), story: to.includes('story'), tiktok: to.includes('tiktok'), named: true}
+  return {feed: PUBLISH.has(parts.format), story: false, tiktok: false, named: false}
+}
+
 /** Why this post is not for Meta, or null when it is. */
 export function skipReason(p, parts, pngs, cfg) {
   if (!cfg.on) return 'off'
   if (p.kind === 'briefing' || p.kit?.data?.briefing === true || /briefing/i.test(String(p.msg).split('\n')[0])) return 'owner briefing'
-  if (!PUBLISH.has(parts.format)) return `${parts.format || 'unknown format'} stays a Telegram draft`
-  if (!parts.caption) return 'no caption'
+  const tg = targetsOf(p, parts)
+  if (!tg.feed && !tg.story) return tg.named ? 'not for Facebook or Instagram' : `${parts.format || 'unknown format'} stays a Telegram draft`
+  if (!parts.caption && !tg.story) return 'no caption'
   if (!pngs?.length) return 'no picture'
   if (!parts.app) return 'unknown app'
   const app = parts.app
@@ -51,13 +60,14 @@ const clean = (s, token) => String(s ?? '').split(token).join('[token]').replace
 
 /** Instagram takes JPEG between 4:5 and 1.91:1; Facebook takes the same file. A picture taller than 4:5 is set on a
  *  1080×1350 ink sheet rather than cropped. Without sharp the PNG goes as it is (Facebook only). */
-async function asJpeg(png) {
+async function asJpeg(png, story = false) {
   let sharp
   try { sharp = (await import('sharp')).default } catch { try { sharp = (await import('./kit/node_modules/sharp/lib/index.js')).default } catch { return {buf: png, type: 'image/png', ig: false} } }
   const img = sharp(png), {width = 1080, height = 1350} = await img.metadata()
   const r = width / height
   let out = img
-  if (r < 0.8) out = sharp(png).resize(1080, 1350, {fit: 'contain', background: {r: 21, g: 19, b: 18}})
+  if (story) out = sharp(png).resize(1080, 1920, {fit: 'contain', background: {r: 21, g: 19, b: 18}})
+  else if (r < 0.8) out = sharp(png).resize(1080, 1350, {fit: 'contain', background: {r: 21, g: 19, b: 18}})
   else if (r > 1.91) out = sharp(png).resize(1080, 565, {fit: 'contain', background: {r: 21, g: 19, b: 18}})
   return {buf: await out.flatten({background: {r: 21, g: 19, b: 18}}).jpeg({quality: 92, mozjpeg: true}).toBuffer(), type: 'image/jpeg', ig: true}
 }
@@ -78,6 +88,40 @@ export function graph(cfg, fetcher = fetch) {
 }
 
 const wait = ms => new Promise(r => setTimeout(r, ms))
+const mark = s => s.startsWith('published') ? '✅' : s.startsWith('skipped') ? '➖' : '⚠️'
+
+/** One picture as a Facebook Page story and an Instagram story (plan v5). Stickers cannot be added through the API, so
+ *  a story in the plan is drawn to need none: the question now, its answer in a later story. */
+async function publishStory(p, png, cfg, api) {
+  const out = {facebook: '', instagram: ''}
+  let url = ''
+  try {
+    const f = await asJpeg(png, true)
+    const form = new FormData()
+    form.append('source', new Blob([f.buf], {type: f.type}), `fanlife-${p.id}-story.${f.type === 'image/png' ? 'png' : 'jpg'}`)
+    form.append('published', 'false')
+    const photo = await api(`${cfg.page}/photos`, {}, {form})
+    const g = await api(photo.id, {fields: 'images'}, {method: 'GET'}).catch(() => null)
+    url = (g?.images || []).sort((a, b) => b.width - a.width)[0]?.source || ''
+    const st = await api(`${cfg.page}/photo_stories`, {photo_id: photo.id})
+    out.facebook = `published ${st.post_id || st.id || photo.id}`
+  } catch (e) { out.facebook = `refused: ${clean(e?.message || e, cfg.token)}` }
+  if (!cfg.ig) out.instagram = 'skipped: no Instagram account (META_IG_USER_ID)'
+  else if (!url) out.instagram = 'skipped: Facebook did not hand back the picture URL'
+  else try {
+    const creation = (await api(`${cfg.ig}/media`, {image_url: url, media_type: 'STORIES'})).id
+    for (let i = 0; i < 6; i++) {
+      const s = await api(creation, {fields: 'status_code'}, {method: 'GET'}).catch(() => ({}))
+      if (s.status_code === 'FINISHED') break
+      if (s.status_code === 'ERROR') throw new Error('Instagram could not process the picture')
+      await wait(1500)
+    }
+    out.instagram = `published ${(await api(`${cfg.ig}/media_publish`, {creation_id: creation})).id}`
+  } catch (e) { out.instagram = `refused: ${clean(e?.message || e, cfg.token)}` }
+  const line = `${mark(out.facebook)} Facebook story · ${mark(out.instagram)} Instagram story` +
+    (out.facebook.startsWith('refused') || out.instagram.startsWith('refused') ? ' — post the ⚠️ one by hand.' : ' — published automatically.')
+  return {...out, line, story: true}
+}
 
 /**
  * Publish one claimed post. Returns {facebook, instagram} — each 'published <id>', 'skipped: …' or 'refused: …' —
@@ -88,6 +132,7 @@ export async function publishToMeta(p, pngs, {env = process.env, fetcher = fetch
   const why = skipReason(p, parts, pngs, cfg)
   if (why) return {facebook: `skipped: ${why}`, instagram: `skipped: ${why}`, line: why === 'off' ? '' : `ℹ️ Not auto-published: ${why}.`}
   const api = graph(cfg, fetcher)
+  if (targetsOf(p, parts).story) return publishStory(p, pngs[0], cfg, api)
   const files = await Promise.all(pngs.slice(0, 10).map(b => asJpeg(b).catch(() => ({buf: b, type: 'image/png', ig: false}))))
   const out = {facebook: '', instagram: ''}
   const urls = []
@@ -134,7 +179,6 @@ export async function publishToMeta(p, pngs, {env = process.env, fetcher = fetch
     out.instagram = `published ${media}`
   } catch (e) { out.instagram = `refused: ${clean(e?.message || e, cfg.token)}` }
 
-  const mark = s => s.startsWith('published') ? '✅' : s.startsWith('skipped') ? '➖' : '⚠️'
   const line = `${mark(out.facebook)} Facebook · ${mark(out.instagram)} Instagram` +
     (out.facebook.startsWith('refused') || out.instagram.startsWith('refused') ? ' — post the ⚠️ one by hand from the boxes below.' : ' — published automatically.')
   return {...out, line}

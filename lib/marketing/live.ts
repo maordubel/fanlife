@@ -20,7 +20,7 @@ export type LiveData = {dubid: DubidRound[]; offsides: OffsidesMatch[]; posted: 
 export type Kit = {t: string; data: Record<string, unknown>}
 export type Composed = {msg: string; kit: Kit; refs: string[]} | {skip: string}
 
-const TZ = 'Asia/Jerusalem'
+const TZ = 'Europe/Athens'
 const URL: Record<string, string> = {fanlife: 'https://fanlife.dubelteam.com', dubid: 'https://dubid.dubelteam.com', offsides: 'https://offsides.dubelteam.com'}
 const NAME: Record<string, string> = {fanlife: 'FAN LIFE', dubid: 'DUBID', offsides: 'OFFSIDES'}
 // Smart tags (plan v4, owner 29.10.2026): one brand tag, then the topic — never a wall of generic ones.
@@ -71,7 +71,7 @@ export function composeResults(results: readonly Result[], liveClubs: readonly s
     rows: rows.map(r => ({home: r.home, away: r.away, score: `${r.homeScore}-${r.awayScore}`, line: comp(r.competition).toUpperCase() || 'FULL TIME', homeCrestName: r.home, awayCrestName: r.away}))}}}
 }
 
-/** 11:00 — the FAN LIFE clubs playing today or tomorrow (Israel days), each match announced once */
+/** 11:00 — the FAN LIFE clubs playing today or tomorrow (Athens days), each match announced once */
 export function composeFixtures(fixtures: readonly Fixture[], liveClubs: readonly string[], d: LiveData, now: Date, names: Record<string, string>): Composed {
   const today = dayKey(now), tomorrow = dayKey(new Date(now.getTime() + 24 * 3600_000))
   const due = fixtures.filter(f => liveClubs.includes(f.clubId) && f.status === 'scheduled' && Date.parse(f.kickoff) > now.getTime() - (f.dateOnly ? 24 * 3600_000 : 0)
@@ -83,7 +83,7 @@ export function composeFixtures(fixtures: readonly Fixture[], liveClubs: readonl
   const one = rows.length === 1 ? rows[0]! : null
   const hook = one ? `${names[one.clubId] || one.home} play ${dayKey(one.kickoff) === today ? 'today' : 'tomorrow'}. Ready?` : `${rows.length} FAN LIFE clubs, ${allToday ? 'one day' : 'two days'}. Next up.`
   return {refs: rows.map(f => `fx:${f.providerEventId}`), msg: message({app: 'fanlife', sendAt: now, label: 'Next up', hook,
-    body: `${rows.map(f => `${when(f)} (Israel time) · ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`).join('\n')}\n\nWho are you with? Before kick-off, warm up on your club's trivia on FAN LIFE.`,
+    body: `${rows.map(f => `${when(f)} (Athens time) · ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`).join('\n')}\n\nWho are you with? Before kick-off, warm up on your club's trivia on FAN LIFE.`,
     url: one ? clubLink(one.clubId) : URL.fanlife, tags: smartTags({clubs: [...new Set(rows.map(f => f.clubId))], topics: ['fixtures']}), visual: 'L-FIXTURES Next up: the matches as tickets, both crests, the kick-off times.'}),
   kit: {t: 'L-FIXTURES', data: {clubs: [...new Set(rows.map(f => f.clubId))], dayTop: allToday ? 'TODAY' : weekday(rows[0]!.kickoff), dayBottom: dayMonth(rows[0]!.kickoff),
     rows: rows.map(f => ({home: f.home, away: f.away, line: `${when(f).toUpperCase()}${f.competition ? ' · ' + comp(f.competition).toUpperCase() : ''}`, homeCrestName: f.home, awayCrestName: f.away}))}}}
@@ -94,7 +94,7 @@ export function composeDubid(d: LiveData, now: Date): Composed {
   const rounds = d.dubid.filter(r => !d.posted.includes(`gw:${r.id}`) && Date.parse(r.lock_at) > now.getTime() + 3600_000).slice(0, 4)
   if (!rounds.length) return {skip: 'no new DUBID round is open'}
   const sameRound = rounds.every(r => r.round === rounds[0]!.round)
-  const lock = (r: DubidRound) => `${longDay(r.lock_at)}, ${hhmm(r.lock_at)} (Israel time)`
+  const lock = (r: DubidRound) => `${longDay(r.lock_at)}, ${hhmm(r.lock_at)} (Athens time)`
   const hook = sameRound ? `Round ${rounds[0]!.round} is open. One player from every club.` : `New DUBID rounds are open. One player from every club.`
   return {refs: rounds.map(r => `gw:${r.id}`), msg: message({app: 'dubid', sendAt: now, label: 'DUBID round', hook,
     body: `${rounds.map(r => `${r.league} · Round ${r.round} · lineups lock ${lock(r)}`).join('\n')}\n\nDUBID 11: build a full lineup with one player from each club and a captain.\nDUBID 5: five players, one budget.\nPick before the lock — after the first kick-off, the round is closed.`,
@@ -113,7 +113,7 @@ export function composeOffsides(d: LiveData, now: Date): Composed {
   const hook = arenas > 0 ? `${arenas} arena${arenas === 1 ? '' : 's'} open today. Who knows football in your group?` : `${all.length} match${all.length === 1 ? '' : 'es'} today. Open an arena, send the link.`
   const extra = all.length > top.length ? `\n…and ${all.length - top.length} more on OFFSIDES.` : ''
   return {refs: all.map(m => `os:${m.id}`), msg: message({app: 'offsides', sendAt: now, label: 'OFFSIDES today', hook,
-    body: `${top.map(m => `${hhmm(m.kickoff)} (Israel time) · ${m.home} v ${m.away} · ${m.league}${m.arenas ? ` · ${m.arenas} arena${m.arenas === 1 ? '' : 's'}` : ''}`).join('\n')}${extra}\n\nPredict before kick-off: the exact score, half-time, the first scorer. Flash questions live during the match.\nA free simulation game — no real money, only bragging rights.`,
+    body: `${top.map(m => `${hhmm(m.kickoff)} (Athens time) · ${m.home} v ${m.away} · ${m.league}${m.arenas ? ` · ${m.arenas} arena${m.arenas === 1 ? '' : 's'}` : ''}`).join('\n')}${extra}\n\nPredict before kick-off: the exact score, half-time, the first scorer. Flash questions live during the match.\nA free simulation game — no real money, only bragging rights.`,
     visual: 'L-OFFSIDES-TODAY Today\'s Central Arenas: OFFSIDES logo, the matches with both crests, JOIN THE BATTLE + QR.'}),
   kit: {t: 'L-OFFSIDES-TODAY', data: {app: 'offsides', rows: top.map(m => ({home: m.home, away: m.away, ko: hhmm(m.kickoff), league: m.league.toUpperCase(), arenas: m.arenas, line: `${hhmm(m.kickoff)} · ${m.league.toUpperCase()}${m.arenas ? ` · ${m.arenas} ARENA${m.arenas === 1 ? '' : 'S'}` : ''}`, homeCrestName: m.home, awayCrestName: m.away})),
     label: 'FREE PREDICTION GAME · NO REAL MONEY'}}}

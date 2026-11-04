@@ -3,7 +3,7 @@ import {capped,cleanBanner,cleanDoc,eligible,inWindow,israelClock,outbound,pageO
 import {SEED_DOC} from '@/lib/promo/seed'
 import {existsSync} from 'node:fs'
 
-const NOW=Date.parse('2026-10-14T09:00:00Z') // Wed 12:00 in Israel
+const NOW=Date.parse('2026-10-14T09:00:00Z') // Wed 12:00 in Athens
 const at=(club:string|null,path='/')=>pageOf(club,path)
 const ids=(page:ReturnType<typeof at>,israel=false,doc=SEED_DOC)=>eligible(doc,page,NOW,{israel}).map(b=>b.id).sort()
 

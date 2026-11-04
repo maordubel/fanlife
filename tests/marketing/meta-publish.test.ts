@@ -107,4 +107,23 @@ describe('Meta publishing (docs/fanlife/53-meta-publishing.md)', () => {
     expect(r.line).toMatch(/by hand/)
     expect(g.calls.filter(c => c.url.endsWith('178414/media'))).toHaveLength(1)
   })
+
+  it('plan v5: a story goes up as a Facebook Page story and an Instagram story, on a 9:16 sheet', async () => {
+    const {calls, fetcher} = fakeGraph()
+    const r = await publishToMeta({id: 9, msg: msg('Story', 'FAN LIFE', false), kit: {t: 'T10-NERDS', data: {}, to: ['story']}}, [png], {env: ON, fetcher})
+    expect(r.facebook).toMatch(/^published/)
+    expect(r.instagram).toMatch(/^published/)
+    expect(r.line).toBe('✅ Facebook story · ✅ Instagram story — published automatically.')
+    expect(calls.some(c => c.url.endsWith('/photo_stories'))).toBe(true)
+    expect(calls.find(c => c.url.endsWith('/photos'))!.body.published).toBe('false')
+    expect(calls.find(c => c.url.endsWith('/media'))!.body.media_type).toBe('STORIES')
+    expect(calls.some(c => c.url.endsWith('/feed'))).toBe(false)
+  })
+
+  it('plan v5: kit.to decides — a TikTok-only row is not for Meta, a feed row is', async () => {
+    const {calls, fetcher} = fakeGraph()
+    expect((await publishToMeta({id: 10, msg: msg('Post'), kit: {t: 'x', data: {}, to: ['tiktok']}}, [png], {env: ON, fetcher})).facebook).toBe('skipped: not for Facebook or Instagram')
+    expect(calls).toHaveLength(0)
+    expect((await publishToMeta({id: 11, msg: msg('Story'), kit: {t: 'x', data: {}, to: ['feed', 'tiktok']}}, [png], {env: ON, fetcher})).facebook).toMatch(/^published/)
+  })
 })
