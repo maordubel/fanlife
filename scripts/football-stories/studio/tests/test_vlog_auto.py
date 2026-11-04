@@ -187,6 +187,26 @@ class FactGuardTest(unittest.TestCase):
         led_without = V.ledger_of(MATCH, CLUB, '')
         self.assertTrue(any('cites "owner"' in e for e in V.fact_check(ep, led_without, mat)))
 
+    def test_the_play_and_the_crowd_need_a_record(self):
+        w = answer()
+        w['film']['beats'][3]['say'] = 'AEK pressed from the first minute… and every seat was taken.'
+        ep, led, mat, _ = built(w, self.root)
+        errs = V.play_check(ep, led)
+        self.assertTrue(any('"pressed"' in e for e in errs) and any('"every seat"' in e for e in errs), errs)
+        self.assertEqual(V.play_check(ep, V.ledger_of(MATCH, CLUB, 'AEK pressed high. Every seat was taken, from the first minute.')), [])
+        self.assertEqual(V.play_check(*built(answer(), self.root / 'b')[:2]), [])
+
+    def test_a_short_film_holds_its_footage_longer_first(self):
+        ep, led, mat, _ = built(answer(), self.root)
+        before = V.estimate(ep)
+        notes = V.breathe(ep, mat, (before + 12) / 60 / 0.87)
+        self.assertTrue(notes)
+        self.assertGreater(V.estimate(ep), before + 5)
+        for b in ep['film']['beats']:
+            if b.get('clip') in mat['clips']:
+                self.assertLessEqual(b.get('dur', 0), 8.0)
+                self.assertNotIn('speed', b)
+
     def test_the_narrator_is_never_i(self):
         w = answer()
         w['film']['beats'][3]['say'] = 'I remember the smoke.'

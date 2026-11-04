@@ -397,7 +397,8 @@ FACTS (RULES §6, the studio's fact guard). The date, the sides, the competition
 come ONLY from the CLAIMS below. A beat whose words (say, typed, doc, head, kicker, stat, prop texts) contain a NUMBER
 must list in "claims" the claim(s) that carry it; the camera's own clock (the hours and minutes of the CLIPS and PHOTOS)
 is the only other source of numbers. If no claim names the scorers, name nobody as a scorer and give no goal minute;
-if no claim gives the crowd, say no crowd figure. Never invent an exchange between ends, a song's words, a person's
+if no claim gives the crowd, say no crowd figure. The score says who won and by how much — nothing about HOW: a
+press, a chance, a save, a card, an equaliser, which half, "every seat taken" each need a claim that says so (checked). Never invent an exchange between ends, a song's words, a person's
 feelings, a chance, a save. What the footage shows (smoke, flares, a scarf, rain, floodlights, a tifo) may be said —
 only what the frame shows, and which stand only when the picture or a claim says so. Never claim a goal was filmed unless
 the camera's clock and the record make it certain; a moment the camera missed is told on a black card, never with a
@@ -1128,15 +1129,115 @@ def speech_check(ep: dict, mat: dict) -> list[str]:
     return errs
 
 
+# What a sentence says about the PLAY or the CROWD needs a record that says it (measured on the third runner pass, the
+# writer wrote "AEK pressed from the first minute" and "every seat taken" over a record that holds only the score).
+PLAY_TERMS = {
+    'the play': r'\b(press(?:ed|ing)|pressure|dominat\w*|chances?|sav(?:e|ed|es)|shots? on goal|clear(?:ed)? their lines|'
+                r'headers?|headed (?:it|in|home)|corner kicks?|free[- ]kicks?|counter[- ]?attack\w*|possession|tackles?|woodwork|'
+                r'crossbar|hit the (?:bar|post)|offside|var|goalkeeper|substitut\w*|injur\w*|booked|sent off|red card|'
+                r'yellow card|equali[sz]\w*|comeback|from behind|opener|opening goal|first minute|last minute|stoppage time|'
+                r'injury time|added time|first half|second half|half[- ]time)\b',
+    'the crowd': r'\b(every seat|sold[- ]out|sell[- ]out|full house|capacity|record crowd|attendance|thousands?)\b',
+}
+
+
+def play_check(ep: dict, ledger: dict) -> list[str]:
+    """A sentence about the play (a press, a save, a chance, a card, a half) or the crowd's size stands only on a claim
+    that says it — the owner's notes count — never on the score alone. Penalties and extra time count when the match
+    claim records them."""
+    vals: list[str] = []
+
+    def walk(v):
+        if isinstance(v, str):
+            vals.append(v.lower())
+        elif isinstance(v, dict):
+            for x in v.values():
+                walk(x)
+        elif isinstance(v, list):
+            for x in v:
+                walk(x)
+    for c in ledger['claims']:
+        walk(c['fact'])
+        f = c['fact']
+        if f.get('penalties'):
+            vals.append('penalties shoot-out')
+        if f.get('after_extra_time'):
+            vals.append('extra time')
+        for g in f.get('scorers') or []:
+            vals.append('penalty' if g.get('penalty') else '')
+            vals.append('own goal' if g.get('own_goal') else '')
+    corpus = ' '.join(vals)
+    errs = []
+    for cut in ('film', 'reel'):
+        for i, b in enumerate((ep.get(cut) or {}).get('beats') or []):
+            if not isinstance(b, dict):
+                continue
+            text = beat_text(b).lower()
+            for what, rx in PLAY_TERMS.items():
+                for m in re.finditer(rx, text):
+                    word = m.group(0)
+                    if not re.search(r'\b' + re.escape(word.split()[0][:5]), corpus):
+                        errs.append(f'{cut} beat {i}: "{word}" says something about {what} that no claim records — say only '
+                                    'what the record or the picture shows')
+                        break
+    return errs
+
+
+def breathe(ep: dict, mat: dict, minutes: float, log=lambda m: None) -> list[str]:
+    """When the film is short, the owner's footage is held longer before the writer is asked again: each footage beat may
+    run on to what its own clip holds from "in" at normal speed (8 s at most) — silence over the stand, which RULES §3
+    calls a tool. Never words, never slow motion, never a frozen frame. Returns what was lengthened."""
+    lo = minutes * 60 * 0.87
+    notes = []
+    for pass_ in ('silent', 'said'):
+        for i, b in enumerate(ep['film'].get('beats') or []):
+            short = lo - estimate(ep, 'film')
+            if short <= 0:
+                return notes
+            if not isinstance(b, dict) or b.get('kind', 'clip') != 'clip' or not isinstance(b.get('clip'), str):
+                continue
+            c = mat['clips'].get(b['clip'])
+            said = isinstance(b.get('say'), str) and b['say'].strip()
+            if not c or bool(said) != (pass_ == 'said') or _f(b.get('speed'), 1.0) != 1.0:
+                continue
+            now = plan_seconds(ep, 'film')[i]
+            room = min(8.0, c['seconds'] - _f(b.get('in')) - 0.2)
+            if room > now + 0.4:
+                new = round(min(room, now + short), 2)
+                b['min' if said else 'dur'] = new
+                notes.append(f'film beat {i}: {b["clip"]} held {now:.1f} → {new:.1f} s')
+    for n_ in notes:
+        log('Breathe: ' + n_)
+    return notes
+
+
 def check(ep: dict, ledger: dict, mat: dict, footage_dir: Path, minutes: float) -> list[str]:
     """Every check an automatic episode must pass before it is written: schema, files, length, facts, voice, speech."""
     errs = validate_episode(ep, footage_dir, minutes, auto=True, mat=mat)
     if any(e.startswith('episode.') or e.endswith('must be a non-empty list') for e in errs):
         return errs
-    return errs + fact_check(ep, ledger, mat) + voice_check(ep) + speech_check(ep, mat)
+    return errs + fact_check(ep, ledger, mat) + play_check(ep, ledger) + voice_check(ep) + speech_check(ep, mat)
 
 
-def fix_hints(errs: list[str], minutes: float, ep: dict | None = None) -> str:
+def unused_footage(ep: dict, mat: dict, least: float = 3.0) -> list[str]:
+    """Stretches of the owner's clips no film beat plays yet (≥ `least` s), longest first: what a short film can add."""
+    used: dict[str, list[tuple[float, float]]] = {}
+    for b, t in zip(ep['film'].get('beats') or [], plan_seconds(ep, 'film')):
+        if isinstance(b, dict) and isinstance(b.get('clip'), str):
+            a = _f(b.get('in'))
+            used.setdefault(b['clip'], []).append((a, a + t * _f(b.get('speed'), 1.0)))
+    out = []
+    for f, c in mat['clips'].items():
+        t, gaps = 0.0, []
+        for a, z in sorted(used.get(f, [])) + [(c['seconds'], c['seconds'])]:
+            if a - t >= least:
+                gaps.append((t, a))
+            t = max(t, z)
+        out += [(z - a, f'"{f}" in={a:.0f} ({z - a:.0f} s)') for a, z in gaps]
+    return [x for _, x in sorted(out, reverse=True)]
+
+
+def fix_hints(errs: list[str], minutes: float, ep: dict | None = None, mat: dict | None = None) -> str:
     """How to fix what failed, in the writer's terms (writer.py's fix_hints, for an episode)."""
     out = []
     if ep and any('The film is planned' in e for e in errs):
@@ -1152,8 +1253,12 @@ def fix_hints(errs: list[str], minutes: float, ep: dict | None = None) -> str:
     if m:
         t, lo, hi = (int(x) for x in m.groups())
         if t < lo:
-            out.append(f'The film runs {t} s; it must reach {lo}–{hi} s. Add about {lo - t + 15} s: more footage beats (silent '
-                       'clips of the stand with "dur"), a chapter you dropped if the footage has it, a typed card — never padding words.')
+            need = lo - t + 15
+            free = unused_footage(ep, mat) if ep and mat else []
+            out.append(f'The film runs {t} s; it must reach {lo}–{hi} s. Add about {need} s — that is about {max(2, round(need / 5))} NEW '
+                       'beats of about 5 s: silent footage beats of the stand ("dur" 4–6, "sound": "clip"), a "black" card with '
+                       'typed lines from the claims, an "art" still held longer; and give the narrated beats a "min" of 5–7 s. '
+                       'Never padding words.' + (' Footage not used yet: ' + '; '.join(free[:14]) + '.' if free else ''))
         else:
             out.append(f'The film runs {t} s; it must be at most {hi} s. Cut about {t - hi + 15} s: shorter lines, fewer silent beats.')
     if any('gives' in e and 'the beat needs' in e for e in errs):
@@ -1186,7 +1291,7 @@ def make_episode(footage_dir: Path, match: dict, club: dict, notes: str, minutes
     if not match_claim(ledger, match):
         log('Record: no research claim for the match itself — the film will state only the score line of the catalog row')
     system = system_prompt()
-    user = user_prompt(match, club, ledger, mat, float(minutes), notes)
+    base = user = user_prompt(match, club, ledger, mat, float(minutes), notes)
     images = material_images(mat)
     log(f'Writer: {len(mat["clips"])} clips, {len(mat["photos"])} stills, {len(images)} pictures, {len(ledger["claims"])} claims')
     cache = work_dir / 'cache'
@@ -1208,6 +1313,7 @@ def make_episode(footage_dir: Path, match: dict, club: dict, notes: str, minutes
             w = parse_reply(reply['text'])
             ep = assemble(w, match, club, ledger, footage_dir)
             fixed = normalise(ep, mat, log, ledger)
+            fixed += breathe(ep, mat, float(minutes), log)
             errs = check(ep, ledger, mat, footage_dir, float(minutes))
         except VlogError as e:
             ep, fixed, errs = None, [], [str(e)]
@@ -1229,8 +1335,10 @@ def make_episode(footage_dir: Path, match: dict, club: dict, notes: str, minutes
                 f"· {len(ep['film']['beats'])} + {len(ep['reel']['beats'])} beats · {attempt + 1} round(s)")
             return out
         log(f'Writer: round {attempt + 1} failed {len(errs)} check(s): ' + ' | '.join(errs[:6]))
-        user += ('\n\nYOUR PREVIOUS ANSWER FAILED THESE CHECKS. Return the whole corrected JSON object:\n- ' + '\n- '.join(errs[:40])
-                 + fix_hints(errs, float(minutes), ep) + '\n\nPrevious answer:\n' + reply['text'][:60000])
+        # only the LAST answer goes back (measured: carrying every round made the writer copy its own answer word for word)
+        user = (base + '\n\nYOUR PREVIOUS ANSWER FAILED THESE CHECKS. Return the whole corrected JSON object — change what '
+                'the checks name, keep what works:\n- ' + '\n- '.join(errs[:40]) + fix_hints(errs, float(minutes), ep, mat)
+                + '\n\nYour previous answer:\n' + reply['text'][:60000])
     raise VlogError('EPISODE_INVALID', 'The writer could not produce a valid episode in four rounds: ' + '; '.join(attempts[-1]['errors'][:10]))
 
 
