@@ -362,6 +362,7 @@ class Composer:
     def warm(self) -> None:
         """Build (or read) every picture's layers once, in order, before the frames are shared out: the workers then
         read them from the cache, and the report knows which depth path each picture took."""
+        letter.warm()
         for pid in dict.fromkeys(b.panel for b in self.beats):
             a = self.assets[pid]
             if a.kind == 'cutout':

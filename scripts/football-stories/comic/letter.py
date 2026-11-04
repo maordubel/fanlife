@@ -40,11 +40,19 @@ def face(name: str, size: int) -> ImageFont.FreeTypeFont:
     file = FACES[name]
     CACHE.mkdir(parents=True, exist_ok=True)
     ttf = CACHE / file.replace('.woff2', '.ttf')
-    if not ttf.exists():
+    if not ttf.exists():   # written to a temp name and moved: parallel renderers never read half a font
         f = TTFont(str(FONTS / file))
         f.flavor = None
-        f.save(str(ttf))
+        tmp = ttf.with_name(f'{ttf.stem}.{os.getpid()}.tmp')
+        f.save(str(tmp))
+        os.replace(tmp, ttf)
     return ImageFont.truetype(str(ttf), size)
+
+
+def warm() -> None:
+    """Unpack every face once, before frames are shared out between processes."""
+    for name in FACES:
+        face(name, 40)
 
 
 def _arr(im: Image.Image) -> np.ndarray:
