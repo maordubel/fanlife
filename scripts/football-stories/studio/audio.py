@@ -371,6 +371,29 @@ def fx(kind: str, rng) -> np.ndarray:
         trill = 0.6 + 0.4 * np.sin(2 * np.pi * 32 * t)
         env = np.minimum(1, t / 0.02) * np.minimum(1, (t[::-1]) / 0.06)
         return (np.sin(2 * np.pi * 2900 * t) * trill * env * 0.5).astype('float32')
+    if kind == 'pen':
+        # a felt-tip drawn across paper: a soft, bright scratch that rises and falls with the stroke
+        n = int(0.5 * SR)
+        t = np.arange(n) / SR
+        x = _noise(n, rng)
+        x = x - np.convolve(x, np.ones(6) / 6, 'same')
+        grain = 0.6 + 0.4 * np.sin(2 * np.pi * 23 * t + rng.uniform(0, 6)) ** 2
+        env = np.sin(np.pi * t / t[-1]) ** 0.7
+        return (x * grain * env * 0.22).astype('float32')
+    if kind == 'tick':
+        # a counter's wheels: a run of small clicks, fast then slowing as the number lands
+        n = int(0.8 * SR)
+        out = np.zeros(n, 'float32')
+        at = 0.0
+        gap = 0.035
+        while at < 0.72:
+            i = int(at * SR)
+            m = int(0.012 * SR)
+            k = np.arange(m) / SR
+            out[i:i + m] += (np.sin(2 * np.pi * 2600 * k) * np.exp(-k * 600) * 0.3)[: max(0, n - i)]
+            at += gap
+            gap *= 1.12
+        return out
     if kind == 'end':
         return (_pluck(midi(74), int(3 * SR), 1.2) * 0.4 + _pluck(midi(78), int(3 * SR), 1.2) * 0.3 + _pluck(midi(81), int(3 * SR), 1.2) * 0.3).astype('float32')
     return np.zeros(1, 'float32')
@@ -380,9 +403,9 @@ def fx(kind: str, rng) -> np.ndarray:
 # 3 dB LOUDER than the voice and every card fired two of them. An effect is seasoning: each kind is levelled to its own
 # distance under the narrator's measured loudness (dB below the speech RMS), thinned so the same sound never repeats
 # within its gap, varied a little so a repeat never sounds mechanical, and ducked a few dB more while he speaks.
-FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'glass': 15.0, 'end': 10.0,
+FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'glass': 15.0, 'end': 10.0, 'pen': 21.0, 'tick': 22.0,
                      'sting': 11.0, 'drum': 14.0, 'whistle': 19.0}
-FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'glass': 2.0, 'end': 0.0, 'sting': 3.0, 'drum': 0.9, 'whistle': 4.0}
+FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'pen': 0.9, 'tick': 1.0, 'glass': 2.0, 'end': 0.0, 'sting': 3.0, 'drum': 0.9, 'whistle': 4.0}
 FX_ANY_GAP_S = 0.3        # two different effects never land on top of each other
 FX_PER_MINUTE = 22        # a ceiling: past it, the rest of that minute is quiet
 FX_JITTER_DB = 1.5

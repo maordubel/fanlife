@@ -42,7 +42,7 @@ LOOKS = {
               "colorbalance=rs=-0.03:bs=0.05:rm=-0.02:bm=0.03:rh=0.02:bh=-0.01,vignette=angle=PI/4.5"),
 }
 # Each visual style finishes with its own grade unless the brief names one (studio v3).
-STYLE_LOOK = {'collage': 'clean', 'papercut': 'punch', 'archive': 'archive', 'night': 'night'}
+STYLE_LOOK = {'collage': 'clean', 'papercut': 'punch', 'archive': 'archive', 'night': 'night', 'vox': 'clean', 'classic': 'clean'}
 
 STAGES = ['research', 'script', 'voice', 'graphics', 'edit', 'mix', 'master', 'package', 'qa']
 
@@ -201,13 +201,20 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     ed = edit.Editor(job_dir, ledger, s, v, palette, job_dir / 'art')
     plan_p = job_dir / 'plan.json'
     plan = ed.plan()
+    # the engine: VOX (one paper board the camera glides across) is the documentary default; STORIES_VOX=0 or a brief
+    # with engine/visual_style 'classic' keeps the classic edit
+    from . import vox
+    plan['engine'] = vox.engine_for(brief)
     write_json(plan_p, plan)
-    log(f'Edit: {len(plan["shots"])} shots, {plan["duration"] / 60:.2f} minutes')
+    log(f'Edit: {len(plan["shots"])} shots, {plan["duration"] / 60:.2f} minutes, engine {plan["engine"]}')
     step('edit', 0.4, f'Rendering {len(plan["shots"])} shots')
     picture = job_dir / 'picture.mp4'
     if not picture.exists():
-        edit.render_film(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None,
-                         tick=lambda d, t: step('edit', 0.4 + 0.38 * d / max(t, 1), f'Rendering shots: {d} of {t}'))
+        render = edit.render_film
+        if plan['engine'] == 'vox':
+            from .vox.render import render_film as render
+        render(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None,
+               tick=lambda d, t: step('edit', 0.4 + 0.38 * d / max(t, 1), f'Rendering shots: {d} of {t}'))
 
     # 6 mix
     step('mix', 0.8, 'Mixing sound')
