@@ -114,5 +114,14 @@ class OptionsWait(unittest.TestCase):
         self.assertEqual(retry_at('WRITER_BUSY', datetime(2026, 11, 4, 15, 50, tzinfo=timezone.utc)), '2026-11-04T16:10:00Z')
 
 
+class Repair(unittest.TestCase):
+    def test_the_hook_is_the_first_sentence_spoken(self):
+        from studio.writer import repair
+        s = repair({'hook': 'A paraphrase.', 'chapters': [{'beats': [{'narration': 'Petah Tikva, nineteen sixty. The town waited.'}]}]})
+        self.assertEqual(s['hook'], 'Petah Tikva, nineteen sixty.')
+        ok = repair({'hook': 'Petah Tikva', 'chapters': [{'beats': [{'narration': 'Petah Tikva, nineteen sixty.'}]}]})
+        self.assertEqual(ok['hook'], 'Petah Tikva')
+
+
 if __name__ == '__main__':
     unittest.main()
