@@ -294,6 +294,38 @@ def _club_names(club_id: str) -> list[str]:
     return out
 
 
+NAMES_EN = ROOT / 'content' / 'manual' / 'names-en'
+
+
+def _names_en(kind: str) -> dict[str, str]:
+    """Reviewed English names (rule 109): Greek and Hebrew club names a pack's records use, and competitions."""
+    files = {'clubs': ('clubs-el.json', 'clubs-he.json', 'history-side-aliases.json'), 'competitions': ('competitions.json',)}[kind]
+    out: dict[str, str] = {}
+    for f in files:
+        p = NAMES_EN / f
+        if p.exists():
+            out.update(json.loads(p.read_text(encoding='utf-8')).get('names') or {})
+    return out
+
+
+def _latin(s: str | None) -> bool:
+    import unicodedata
+    return bool(s) and all(not ch.isalpha() or 'LATIN' in unicodedata.name(ch, '') for ch in s)
+
+
+def _english(name: str | None, table: dict[str, str]) -> str | None:
+    """A side or a competition in English: the reviewed dictionary, never a guess; a non-Latin name with no entry is None
+    (the film never prints a name in a script its viewers cannot read, and never transliterates one itself)."""
+    if not name:
+        return name
+    if name in table:
+        return table[name]
+    low = {k.lower(): v for k, v in table.items()}
+    if name.lower() in low:
+        return low[name.lower()]
+    return name if _latin(name) else None
+
+
 def compiled_ledger(club_id: str, season: str) -> dict:
     """FAN LIFE club packs (content/compiled/<club>.json): every APPROVED, sourced match of the season."""
     path = COMPILED / f'{club_id}.json'
@@ -306,6 +338,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
     name = ident.get('name') or club_id
     srcs = {s['id']: s for s in (data.get('sources') or []) if isinstance(s, dict) and s.get('id')}
     own = {name, *(_club_names(club_id))}
+    clubs_en, comps_en = _names_en('clubs'), _names_en('competitions')
     claims, held = [], []
     rows = []
     for m in data.get('matches') or []:
@@ -330,6 +363,10 @@ def compiled_ledger(club_id: str, season: str) -> dict:
         ) if bad]
         if sides:  # another spelling of the club itself is the club, printed under its own name
             sides = tuple(name if x in own else x for x in sides)
+            sides = tuple(name if x == name else (_english(x, clubs_en) or x) for x in sides)
+            sides = tuple(name if x in own or _english(x, clubs_en) == name else x for x in sides)
+            if not all(_latin(x) for x in sides):
+                reasons.append('a side has no reviewed English name')
         if sides and name not in sides:
             reasons.append(f'neither side is {name}')
         if reasons:
@@ -342,8 +379,8 @@ def compiled_ledger(club_id: str, season: str) -> dict:
         sh, sa = (int(x) for x in score.split('-'))
         ours_home = home == name
         cg, og = (sh, sa) if ours_home else (sa, sh)
-        comp, stage = _uefa_comp(v.get('competition'), season)
-        named = [x for x in v.get('scorers') or [] if isinstance(x, dict) and x.get('name')]
+        comp, stage = _uefa_comp(_english(v.get('competition'), comps_en), season)
+        named = [x for x in v.get('scorers') or [] if isinstance(x, dict) and x.get('name') and _latin(x['name'])]
         complete = len(named) == cg
         claims.append({'id': m['id'], 'type': 'match', 'fact': {
             'kind': 'match', 'date': date, 'competition': comp, 'stage': v.get('stage') or stage, 'club': name,

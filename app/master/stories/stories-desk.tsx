@@ -5,7 +5,7 @@ import type {Health} from '@/lib/stories/health'
 import {DURATIONS,STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
 
-type Club={id:string;name:string}
+type Club={id:string;name:string;seasons:{season:string;matches:number}[]}
 const ATHENS=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
 const when=(iso:string|null|undefined)=>iso?`${ATHENS.format(new Date(iso))} Athens`:''
 const mins=(d:number)=>d<1?'30 sec':`${d} min`
@@ -22,9 +22,9 @@ async function api(path:string,init?:RequestInit){
 export function StoriesDesk(){
  const [jobs,setJobs]=useState<Job[]>([]),[clubs,setClubs]=useState<Club[]>([]),[health,setHealth]=useState<Health|null>(null),[error,setError]=useState(''),[notice,setNotice]=useState('')
  const [busy,setBusy]=useState(false),[open,setOpen]=useState<string|null>(null)
- const [duration,setDuration]=useState(12),[privacy,setPrivacy]=useState<Privacy>('private')
+ const [club,setClub]=useState(''),[duration,setDuration]=useState(12),[privacy,setPrivacy]=useState<Privacy>('private')
  const key=useRef<string>('')
- const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setHealth(b.health??null);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
+ const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setClub(c=>c||(b.clubs.some((x:Club)=>x.id==='hapoel-tel-aviv')?'hapoel-tel-aviv':b.clubs[0]?.id||''));setHealth(b.health??null);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
  useEffect(()=>{void load()},[load])
  const live=jobs.some(j=>['queued','running','cancel_requested'].includes(j.state))
  useEffect(()=>{if(!live)return;const t=setInterval(()=>void load(),15000);return()=>clearInterval(t)},[live,load])
@@ -51,9 +51,9 @@ export function StoriesDesk(){
    <section className={`${css.panel} ${css.form}`} aria-labelledby="new-film">
     <div className={css.bar}><span id="new-film">New film</span><span>Owner only</span></div>
     <form className={css.body} onSubmit={create}>
-     <label>Club<select name="club_id" required key={clubs.length} defaultValue={clubs.some(c=>c.id==='hapoel-tel-aviv')?'hapoel-tel-aviv':clubs[0]?.id}>{clubs.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
+     <label>Club<select name="club_id" required value={club} onChange={e=>setClub(e.target.value)}>{clubs.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
      <div className={css.row}>
-      <label>Season<input name="season" required pattern="\d{4}/\d{2}" placeholder="1999/00" defaultValue="1999/00" inputMode="numeric"/></label>
+      <label>Season<select name="season" required key={club}>{(clubs.find(c=>c.id===club)?.seasons??[]).map(s=><option key={s.season} value={s.season}>{s.season} · {s.matches} matches</option>)}</select></label>
       <label>Visual<select name="visual_style" defaultValue="collage"><option value="collage">Collage · The Weekly</option><option value="papercut" disabled>Paper stop-motion — not in the renderer yet</option><option value="mixed" disabled>Mixed — not in the renderer yet</option></select></label>
      </div>
      <label>Story or angle<textarea name="topic" maxLength={240} placeholder="e.g. The double: twelve years of waiting, then five days in May"/><span className={css.hint}>Optional. The film follows the season&rsquo;s archive in order either way.</span></label>

@@ -191,3 +191,19 @@ Owner: *"a narrator whose English is human, who says every club, player and comp
 9. **Owner's choice (4.11.2026): Take B** — Kokoro bm_george with the lexicon, misaki, human timing, breaths and the
    narrator chain is the Football Stories narrator (the default). AEK stays one word, as the Greeks say it ("כמו היוונים").
    I WAS THERE keeps its own voice (bm_lewis, series.json) and gets the same lexicon and chain.
+
+## The studio in the desk (4.11.2026)
+
+Owner: *"I don't see any video studio in the admin. Tidy the admin, activate the studio, make sure it works."*
+- **Desk → Studio** (work area 05, on the phone bar too; `/master/stories` redirects there).
+- **Starts within a minute.** GitHub ran the worker's 10-minute schedule only every few hours. `stories-watch.yml`
+  listens all the time (asks for work every minute, starts the worker with the run's own token, starts its own next run).
+- **Status lights** under the studio's masthead: worker listening, script-writer key really works (checked against
+  Google every 30 minutes), film storage, narrator. `lib/stories/health.ts`; the heartbeat carries no secret.
+- **Only what can be made is offered.** Club and season are lists: seasons whose matches the research stage can read
+  (`content/generated/stories-seasons.json`, written by `python3 -m studio.seasons` after `npm run clubs:precompile`,
+  with the same reader). The API refuses anything else.
+- **Greek and Hebrew records are read in English** through the reviewed dictionaries (`content/manual/names-en`): AEK's
+  archive went from 15 readable matches to 3,381. A side with no reviewed English name is held, never transliterated;
+  a scorer written in another script is left out.
+- The worker compiles the club archives before it starts (it never had them: every film but Hapoel's would have failed).
