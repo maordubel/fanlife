@@ -44,3 +44,11 @@ the rest. Free: the writer is Gemini on its free tier, the voice is Kokoro, the 
   lines is split, never printed on a 60-character line.
 
 Tests: `tests/stories-v3.test.ts`, `scripts/football-stories/studio/tests/test_studio_v3.py`.
+
+## Sound (owner, 4.11.2026: "the effects are too loud")
+Measured on the Kokoro narrator: the old stamp was 3 dB louder than the voice, and a card fired two. Now
+(`studio/audio.py`): each effect is levelled to its own distance under the narrator's measured speech loudness
+(`FX_UNDER_VOICE_DB`: stamp 14 dB, paper 17, whoosh 18, pop 19, the end sting 10), thinned (`thin_cues`: no repeat inside
+its gap, no two effects within 0.3 s, at most 22 a minute), varied ±1.5 dB, rounded at the top, given the room's short
+reverb and ducked ~3 dB more while he speaks; the bus ends in a limiter before −14 LUFS. The stamp is a felt knock, not a
+sub-bass boom. I WAS THERE (`matchday/film.py`) levels its own hits (boom, whistle, heart, tick, keys) the same way.

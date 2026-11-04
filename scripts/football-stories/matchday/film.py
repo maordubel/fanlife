@@ -36,7 +36,7 @@ CUT = 'reel' if '--reel' in sys.argv else 'film'
 import studio.common as _sc  # noqa: E402
 if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
-from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score  # noqa: E402
+from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, speech_db, thin_cues  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402
@@ -659,15 +659,27 @@ def main() -> None:
                 seg = (a * env)[: n - i]
                 amb[i:i + len(seg)] += seg
     docfx = {'boom': D.boom(SR), 'tick': D.tick(SR), 'heart': D.heart(SR), 'whistle': D.whistle(SR)}
+    # every effect at its own distance under the narrator (owner, 4.11.2026: "the effects are too loud"), the same way the
+    # studio levels them (studio/audio.level_fx): a hit is felt, never louder than the voice
+    vdb = speech_db(voice) if voice.any() else -21.0
+    doc_under = {'boom': 12.0, 'whistle': 13.0, 'heart': 16.0, 'tick': 20.0, 'key': 20.0}
+
+    def at_level(a, under):
+        w = max(1, int(0.12 * SR))
+        body = max((a[j:j + w] for j in range(0, max(1, len(a) - w + 1), max(1, w // 4))), key=lambda x: float(np.mean(x * x)))
+        rms = 20 * math.log10(max(1e-9, float(np.sqrt(np.mean(body ** 2)))))
+        return a * 10 ** ((vdb - under + float(rng.uniform(-1.5, 1.5)) - rms) / 20)
+    studio_kinds = [(ct, k) for ct, k in all_cues if k not in docfx and k != 'key' and not k.startswith('crowd')]
+    keep = set(thin_cues(studio_kinds, total))
     for ct, kind in all_cues:
         i = int(ct * SR)
         if kind == 'key':
-            a = D.key_click(rng, SR)
-            sfx[i:i + len(a)] += a[: n - i] * 0.35
+            a = at_level(D.key_click(rng, SR), doc_under['key'])
+            sfx[i:i + len(a)] += a[: n - i]
             continue
         if kind in docfx:
-            a = docfx[kind]
-            sfx[i:i + len(a)] += a[: n - i] * (0.7 if kind != 'tick' else 0.4)
+            a = at_level(docfx[kind], doc_under[kind])
+            sfx[i:i + len(a)] += a[: n - i]
             continue
         if kind.startswith('crowd'):
             path = CROWD.get(kind)
@@ -676,8 +688,10 @@ def main() -> None:
                 a *= np.minimum(1, np.arange(len(a))[::-1] / (1.2 * SR))
                 sfx[i:i + len(a)] += a[: n - i] * 0.25
             continue
-        a = resample(fx(kind, rng), 32000, SR)
-        sfx[i:i + len(a)] += a[: n - i] * 0.5
+        if (ct, kind) not in keep:
+            continue
+        a = resample(level_fx(kind, fx(kind, rng), vdb, rng), 32000, SR)
+        sfx[i:i + len(a)] += a[: n - i]
     sections = [{'start': p['start'], 'end': p['start'] + p['dur'], **p['music']} for p in plan if p.get('music')]
     track = ep.get('music') if isinstance(ep.get('music'), str) else ''
     if isinstance(ep.get('music'), dict) and ep['music'].get('track'):   # the owner's track, laid under the edit with a level per beat
@@ -694,7 +708,7 @@ def main() -> None:
     g = (f'[2:a]volume={mv}[m];[1:a]volume={av}[am];[am][m]amix=inputs=2:normalize=0[bed];'
          '[bed][0:a]sidechaincompress=threshold=0.03:ratio=7:attack=25:release=420[bd];'
          f'[0:a]{narrator_fx(SR)},volume=1.1[v];'
-         '[3:a]volume=0.8[s];[v][bd][s]amix=inputs=3:normalize=0,afade=t=out:st=%.2f:d=1.5[a]' % (total - 1.6))
+         '[3:a]lowpass=f=9000[s0];[s0][0:a]sidechaincompress=threshold=0.04:ratio=3:attack=10:release=300[s];[v][bd][s]amix=inputs=3:normalize=0,afade=t=out:st=%.2f:d=1.5[a]' % (total - 1.6))
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(work / 'voice.wav'), '-i', str(work / 'amb.wav'), '-i', str(work / 'music.wav'),
          '-i', str(work / 'sfx.wav'), '-filter_complex', g, '-map', '[a]', '-ar', str(SR), str(mix)])
     r = subprocess.run(['ffmpeg', '-hide_banner', '-i', str(mix), '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'],
