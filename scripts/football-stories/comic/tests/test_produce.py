@@ -39,7 +39,7 @@ class File01(unittest.TestCase):
 
     def test_draft_2_opens_on_the_match_and_the_date(self):
         ep = ep01()
-        self.assertEqual(ep['script_version'], 'draft 2, 4.11.2026')
+        self.assertEqual(ep['script_version'], 'draft 3, 4.11.2026')
         first = ep['beats'][0]
         self.assertIn('Slovenia', first['say'])
         self.assertIn('Gwangju', first['say'])
@@ -49,8 +49,8 @@ class File01(unittest.TestCase):
     def test_every_narrated_line_is_the_scripts(self):
         """The narration in the episode is the approved text word for word (the script table's narration column)."""
         text = SCRIPT.read_text(encoding='utf-8') if SCRIPT.exists() else ''
-        if 'draft 2' not in text:
-            self.skipTest('draft 2 of the script is not on this branch yet')
+        if 'draft 3' not in text:
+            self.skipTest('draft 3 of the script is not on this branch yet')
         squash = lambda s: re.sub(r'\s+', ' ', s.replace('’', "'")).strip()  # noqa: E731
         rows = [squash(r.split('|')[3]) for r in text.split('\n') if r.startswith('| ') and r.count('|') >= 5]
         for b in ep01()['beats']:
