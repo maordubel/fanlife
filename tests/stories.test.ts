@@ -129,8 +129,7 @@ describe('Football Stories — a focused film, the owner’s quotes and pictures
 
 describe('Football Stories — access',()=>{
  it('keeps the studio and its routes behind the owner login, and the worker door behind the cron secret',()=>{
-  expect(src('app/master/stories/page.tsx')).toMatch(/requireAdmin\('\/master\/stories'\)/)
-  expect(src('app/master/stories/page.tsx')).toMatch(/index:false/)
+  expect(src('app/master/admin/page.tsx')).toMatch(/requireAdmin\('\/master\/admin'\)/)
   for(const f of ['app/api/master/stories/route.ts','app/api/master/stories/[id]/route.ts']){
    const s=src(f)
    expect(s.match(/adminFromRequest\(r\)/g)?.length).toBeGreaterThanOrEqual(2)
@@ -155,7 +154,7 @@ it('the studio is an area of the desk, on the phone bar too',()=>{
   expect(src('lib/master/crm/areas.ts')).toMatch(/key:'studio'/)
   expect(src('components/master/desk/AdminShell.tsx')).toMatch(/BAR=\[[^\]]*'studio'/)
   expect(src('app/master/admin/page.tsx')).toMatch(/section==='studio'\)return shell\(<StoriesDesk/)
-  expect(src('app/master/stories/page.tsx')).toMatch(/redirect\('\/master\/admin\?section=studio'\)/)
+  expect(src('next.config.mjs')).toMatch(/source: '\/master\/stories', destination: '\/master\/admin\?section=studio'/)
 })
 it('the listener starts the worker and keeps itself alive',()=>{
   const w=src('.github/workflows/stories-watch.yml')
