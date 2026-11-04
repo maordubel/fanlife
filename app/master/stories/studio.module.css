@@ -120,3 +120,46 @@
 .chapters{font-size:13px;padding-inline-start:18px;display:grid;gap:2px}
 .form .check{display:flex;gap:10px;align-items:center;text-transform:none;letter-spacing:0;font:15px 'Weekly Body',sans-serif;min-height:44px}
 .form .check input{width:22px;height:22px;min-height:0;margin:0;flex:none;display:inline-block}
+/* studio desk — tabs and the information banner (4.11.2026). Tabs wrap; nothing scrolls sideways. */
+.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:18px 0 0}
+@media (min-width:900px){.tabs{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.tab{display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;min-height:48px;padding:6px 8px;border:3px solid var(--ink);background:var(--paper);color:var(--ink);
+ font:700 14px/1.1 'Weekly Head',sans-serif;text-transform:uppercase;text-decoration:none;overflow-wrap:anywhere}
+.tab[aria-current=page]{background:var(--ink);color:var(--paper);box-shadow:4px 4px 0 var(--red)}
+.tabBadge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;background:var(--red);color:var(--paper);font:12px 'Weekly Caps',sans-serif}
+.banner{margin:16px 0 0;background:var(--paper);border:4px solid var(--ink);border-inline-start-width:12px;padding:12px 14px}
+.banner[data-run=yes]{border-inline-start-color:var(--green)}.banner[data-run=no]{border-inline-start-color:var(--red)}.banner[data-run=wait]{border-inline-start-color:var(--navy)}
+.bannerHead{display:grid;gap:4px;margin:0}
+.bannerHead b{font:22px 'Weekly Head',sans-serif;text-transform:uppercase;line-height:1}
+.bannerHead span{font-size:15px;line-height:1.4}
+.needs{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+@media (min-width:760px){.needs{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}}
+.needs li{border:2px solid var(--ink);border-inline-start-width:8px;padding:6px 8px;display:grid;gap:2px;background:#fff}
+.needs li[data-light=yes]{border-inline-start-color:var(--green)}.needs li[data-light=no]{border-inline-start-color:var(--red)}
+.needs li[data-light=wait]{border-inline-start-color:var(--navy)}.needs li[data-light=unknown]{border-inline-start-color:var(--muted);border-style:dashed}
+.needs b{font:12px 'Weekly Caps',sans-serif;text-transform:uppercase;letter-spacing:.08em;display:flex;justify-content:space-between;gap:6px}
+.needs i{font-style:normal;color:var(--muted)}
+.needs span{font-size:13px;line-height:1.35;overflow-wrap:anywhere}
+.bannerMore{margin-top:8px}
+.bannerMore summary{font:700 14px 'Weekly Head',sans-serif;text-transform:uppercase;cursor:pointer;display:flex;align-items:center}
+.bannerMore p{font-size:14px;line-height:1.45;margin:6px 0 0}
+.fileList{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fileList .card{width:100%}
+.tagline{font:700 15px 'Weekly Body',sans-serif;margin:0 0 6px}
+.facet{font-size:14px;line-height:1.45;border-inline-start:4px solid var(--red);padding-inline-start:8px;margin:0 0 8px}
+.soul{margin-top:16px}
+.soulWho{font-size:15px;line-height:1.5;margin:0}
+.soulCols{display:grid;gap:4px}
+@media (min-width:860px){.soulCols{grid-template-columns:1fr 1fr;gap:18px}}
+.soulList{margin:0;padding-inline-start:18px;display:grid;gap:6px;font-size:14px;line-height:1.45}
+.directors{display:grid;gap:18px;margin-top:18px}
+@media (min-width:1100px){.directors{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}}
+.pitch{border:3px solid var(--ink);padding:12px;display:grid;gap:6px;background:#fff;margin-top:10px}
+.pitch h4{font:22px 'Weekly Head',sans-serif;text-transform:uppercase;line-height:1;margin:0}
+/* the desk shell's own form and list rules are more specific than a module class: the studio's win inside .root */
+.root .check{display:flex;flex-direction:row;align-items:center;gap:10px;text-align:start}
+.root .check input{display:inline-block;width:22px;height:22px;min-height:0;margin:0;flex:none}
+.root .needs,.root .fileList,.root .checks{padding-inline-start:0}
+.root .tab{position:relative;font-size:13px;overflow-wrap:normal;word-break:normal;hyphens:manual}
+.root .tabBadge{position:absolute;inset-block-start:-9px;inset-inline-end:-7px}
+@media (min-width:900px){.root .tab{font-size:14px}}

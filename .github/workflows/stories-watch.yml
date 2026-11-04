@@ -5,6 +5,7 @@ name: Football Stories · listener
 # token — the one event GITHUB_TOKEN may trigger), and before its time is up it starts its own next run, so it never
 # stops. Every round it reports a heartbeat; every three hours it checks that the script writer's key really works (one
 # tiny request to the cheapest current Gemini model, never the Pro quota), which the studio shows as its status lights. The hourly schedule only restarts a chain that broke.
+# When the owner asks for new pitches (studio → Directors) the peek says so once, and the listener starts stories-pitch.yml.
 on:
   workflow_dispatch:
   push:
@@ -48,9 +49,14 @@ jobs:
           echo "Writer: $writer"
           while [ "$(date +%s)" -lt "$end" ]; do
             if [ $(( $(date +%s) - checked )) -gt 10800 ]; then writer=$(writer_check); checked=$(date +%s); fi
-            next=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
-              -d "{\"op\":\"peek\",\"worker\":\"listen-$GITHUB_RUN_ID\",\"health\":{\"writer\":$writer}}" "$STORIES_URL/api/master/stories/worker" \
-              | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
+            peek=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
+              -d "{\"op\":\"peek\",\"worker\":\"listen-$GITHUB_RUN_ID\",\"health\":{\"writer\":$writer}}" "$STORIES_URL/api/master/stories/worker" || true)
+            next=$(printf '%s' "$peek" | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
+            # the owner pressed "Ask for new pitches" (studio → Directors): the studio answers pitch:true once per request
+            if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('pitch')))" 2>/dev/null || echo False)" = "True" ]; then
+              echo "$(date -u +%T) the owner asked for new pitches — starting the directors"
+              gh workflow run stories-pitch.yml || echo "::warning::could not start the pitch run"
+            fi
             if [ -n "$next" ] && ! worker_busy; then
               echo "$(date -u +%T) film waiting: $next — starting the worker"
               gh workflow run stories-worker.yml || echo "::warning::could not start the worker"
