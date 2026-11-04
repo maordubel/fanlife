@@ -209,7 +209,7 @@
      "start": 0.0,
      "end": 1.16,
      "text": "Everybody",
-     "p_speech": 0.25,
+     "p_speech": 0.29,
      "lang": "en"
     }
    ]
@@ -397,8 +397,8 @@
    "speech": [
     {
      "start": 1.42,
-     "end": 2.44,
-     "text": "Καθαράκια τεσταλά.",
+     "end": 2.42,
+     "text": "Τα σανά και τα σανά.",
      "p_speech": 0.66,
      "lang": "el"
     }
@@ -533,7 +533,7 @@
      "start": 0.0,
      "end": 0.14,
      "text": "Bye.",
-     "p_speech": 0.32,
+     "p_speech": 0.28,
      "lang": "en"
     }
    ]
@@ -601,9 +601,9 @@
    "speech": [
     {
      "start": 0.0,
-     "end": 0.32,
+     "end": 0.3,
      "text": "Thank you.",
-     "p_speech": 0.77,
+     "p_speech": 0.72,
      "lang": "en"
     }
    ]
