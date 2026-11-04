@@ -391,14 +391,13 @@ body { text-wrap: pretty; }
 
 /* TYPE FLOW 2 — CSS-module classes and inline labels (owner QA, 3.11.2026) */
 :where(b, small, dd, figcaption, [class*='stamp'], [class*='Stamp'], [class*='coverTitle'], [class*='cover-name'],
-  [class*='shout'], [class*='_go'], [class*='cta'], [class*='chairTag'], [class*='-tag'], [class*='-mark']) { text-wrap: balance; }
-:where([class*='stamp'], [class*='Stamp'], [class*='-tag'], [class*='chairTag'], [class*='wga-mast-stamp']) { white-space: nowrap; }
+  [class*='shout'], [class*='_go'], [class*='cta'], [class*='chairTag']) { text-wrap: balance; }
+:where(.wk-stamp, .wga-mast-stamp, [class*='_stamp_'], [class*='_chairTag_']) { white-space: nowrap; }
 :where(bdi) { text-wrap: balance; }
 
 /* TAP TARGETS 2 — footer and legal links are real controls */
 .mag-credit { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 4px; }
 .mag-foot-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 6px; }
-.wga-hud-mark { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 
 .wkh-doc-nav a { display: inline-flex; align-items: center; min-height: 44px; }
 :where(.wk-tag) { white-space: nowrap; }
