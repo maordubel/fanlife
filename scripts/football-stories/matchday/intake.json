@@ -1,7 +1,8 @@
 {
   "_": "Changing this file runs .github/workflows/matchday-intake.yml: art folders into matchday/art/<set>/, footage surveyed and scouted onto the matchday-survey branch.",
-  "art": [
-    {"folder": "https://drive.google.com/drive/folders/1Z4tyR8rYB7qLfFg-O418LxoxlfzFqcZx", "set": "hapoel-pack", "note": "FAN LIFE Hapoel Tel Aviv graphic pack (owner, 3.11.2026): paper-cut scenes, transparent supporters/props, blank ticket and scoreboard, existing badges. Illustrations, not photographs."}
-  ],
-  "footage": {"folder": "https://drive.google.com/drive/folders/1xc-V9odiy-Y-975F0QvByZ4WMNh4ue_u", "episode": "iwt-02-bloomfield-2024"}
+  "art": [],
+  "footage": {
+    "folder": "https://drive.google.com/drive/folders/15cZJoP2flSu5J0o2c4mGm6uQUxusjf3J",
+    "episode": "iwt-04-aek"
+  }
 }

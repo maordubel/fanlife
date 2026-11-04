@@ -398,8 +398,16 @@ def music_bed(spec: dict, plan: list[dict], total: float, sr: int, read_audio) -
 
 
 def art_path(key: str) -> Path:
-    """iwt-art:<set>/<slug> · life:<name> · beat:<set>/<slug> · public:<path>"""
+    """iwt-art:<set>/<slug> · life:<name> · beat:<set>/<slug> · cut:<set>/<slug> · kitprop:<slug> ·
+    kitclip:<set>/<slug> · public:<path>"""
     kind, rest = key.split(':', 1)
+    kit = HERE.parent / 'studio' / 'kit'
+    if kind == 'cut':
+        return kit / 'cutouts' / f'{rest}.webp'
+    if kind == 'kitprop':
+        return kit / 'props' / f'{rest}.webp'
+    if kind == 'kitclip':
+        return kit / 'clips' / f'{rest}.mp4'
     if kind == 'iwt-art':
         return HERE / 'art' / f'{rest}.webp'
     if kind == 'life':
@@ -429,4 +437,72 @@ def prop_card(spec: dict, accent: str) -> Image.Image:
         f = _font(FACES[t.get('face', 'head')], int(t.get('size', 60) * w / 1000))
         d.text((t['x'] * im.width, t['y'] * im.height), t['t'], font=f, fill=cols[t.get('color', 'ink')] + (255,),
                anchor=t.get('anchor', 'mm'))
+    return im
+
+
+def art_image(key: str, accent: str | None = None, mode: str = 'RGBA') -> Image.Image:
+    """An art piece opened for the film. Pieces drawn in the studio's signal red (`-kr` in the name) wear the club's
+    colour (studio.paper.recolor); the alpha of a cut-out is kept."""
+    im = Image.open(art_path(key)).convert('RGBA')
+    if accent and '-kr' in key:
+        from studio.paper import recolor
+        a = im.getchannel('A')
+        im = recolor(im.convert('RGB'), accent).convert('RGBA')
+        im.putalpha(a)
+    return im.convert(mode)
+
+
+def kit_clip(key: str, accent: str | None, work: Path) -> Path:
+    """A studio stop-motion clip, recoloured into the club's colour when it is drawn in the signal red."""
+    key = key if key.startswith('kitclip:') else f'kitclip:{key}'
+    src = art_path(key)
+    if not (accent and '-kr' in key):
+        return src
+    out = work / f"kit-{key.split('/')[-1]}-{accent.lstrip('#')}.mp4"
+    if out.exists():
+        return out
+    import subprocess
+    from studio.paper import recolor
+    w, h = 1920, 1080
+    dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-i', str(src), '-vf', f'scale={w}:{h}', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'],
+                           stdout=subprocess.PIPE)
+    enc = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{w}x{h}', '-r', '24', '-i', '-',
+                            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-pix_fmt', 'yuv420p', str(out)], stdin=subprocess.PIPE)
+    while True:
+        buf = dec.stdout.read(w * h * 3)
+        if len(buf) < w * h * 3:
+            break
+        fr = Image.frombuffer('RGB', (w, h), buf)
+        enc.stdin.write(recolor(fr, accent).tobytes())
+    enc.stdin.close()
+    enc.wait()
+    dec.wait()
+    return out
+
+
+def whistle(sr: int) -> np.ndarray:
+    """A referee's whistle: a pea-whistle trill around 3 kHz, short-long."""
+    out = []
+    for dur in (0.18, 0.55):
+        t = np.arange(int(dur * sr)) / sr
+        f = 3150 + 90 * np.sin(2 * np.pi * 38 * t)
+        a = np.sin(2 * np.pi * np.cumsum(f) / sr) * (0.6 + 0.4 * np.sign(np.sin(2 * np.pi * 38 * t)))
+        env = np.minimum(1, t / 0.01) * np.minimum(1, (dur - t) / 0.04)
+        out += [a * env * 0.35, np.zeros(int(0.07 * sr))]
+    return np.concatenate(out).astype(np.float32)
+
+
+def photo(path: Path, crop: list | None = None) -> Image.Image:
+    """The owner's still from the night, upright, colour as shot; no metadata travels further than this. `crop` =
+    [x, y, w, h] in fractions keeps one part of it (a scoreboard, a stand)."""
+    from PIL import ImageOps
+    try:
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
+    im = ImageOps.exif_transpose(Image.open(path)).convert('RGB')
+    if crop:
+        x, y, w, h = crop
+        im = im.crop((int(x * im.width), int(y * im.height), int((x + w) * im.width), int((y + h) * im.height)))
     return im

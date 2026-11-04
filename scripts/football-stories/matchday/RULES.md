@@ -151,3 +151,22 @@ The owner asked for *The Last Dance*, not a vlog: `matchday/doc.py` is the layer
 Duration in range · loudness −14 ±1 LUFS, TP ≤ −1.5 · no ID tag in the master · face frames treated (sampled) ·
 every number on screen traced to the archive row · captions match the voice · tall frames: nothing inside the
 platform bands · thumbnail readable at 320 px wide. A failed check blocks the film; it is never reported as ready.
+
+## 8d · What the camera did not film is drawn, never invented (3.11.2026, ep 4)
+
+The owner asked for visuals of the goal, the stand and the celebration "as close to the source as possible".
+`matchday/plays.py` is the layer:
+- **Goal plates** (`play`): a broadcast-style tactics view, our side in the club's colour, theirs in white, the
+  ball's path traced. Every movement is a sentence in a cited report; RECONSTRUCTION and the source are printed on
+  the plate. A goal nobody described gets no plate — only its minute and the board (ep 4: Fernandes 86′).
+- **The ground's scoreboard** (`board`), re-drawn from the owner's own clip of it, filling up goal by goal.
+- **Red card** (`red`), **phone lights** (`lights`) — each only when a report names it.
+- **The studio kit in the club's colour**: `beat:` / `cut:` / `kitclip:` / `kitprop:` keys; anything drawn in the
+  signal red (`-kr`) is recoloured to the episode's accent (`doc.art_image`, `doc.kit_clip`).
+- **The owner's footage is the spine; plates fill what it missed.** Ep 4: the camera's clock on each clip is matched to
+  the match minute through the ground's own board in a still (IMG_2832, 21:25 → 1–0 at 21:54), so a clip is called a
+  goal's only when the clock says so. A clip is never held frozen and never replayed backwards.
+- **Survey the whole folder** — stills too (`survey.py → photos`, HEIC through pillow-heif) — before writing a beat.
+  A photo is a beat (`'kind': 'art', 'photo': <file>`, optional `crop`). Text typed onto a clip, a number plate:
+  `'blur': [[x, y, w, h]]`. Selfies of the owner, his hands, tattoos: left out.
+- A single Drive FILE link works wherever a folder link does (`drive_fetch.py`).
