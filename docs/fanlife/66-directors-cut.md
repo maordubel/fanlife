@@ -181,3 +181,18 @@ For the pitch desk (studio/pitch.py, another stream):
   index; title ≤ 100, logline and cold open ≤ 240, acts 3 × ≤ 160, why ≤ 300; every number, month and club name must
   come from the picked candidate's own data. Three tries through `writer.call_model`; a busy free tier raises the same
   wait codes as a script (`writer.WAIT_CODES`), a pitch that never passes raises `PITCH_INVALID`.
+
+## 6. The house soul (owner, 4.11.2026)
+
+*"I want the directors to really identify with me — sum up my character and the emotion I express towards football…
+so the system keeps speaking from my thinking."* `studio/soul.py` is the owner's football heart, drawn from his own words
+over months of work: football as belonging and inheritance, memory as sacred, rivalry lived with pride and wit (never
+hate for people), the fan as the hero, every club loved equally; and his demands — precision as respect, never boring,
+show don't list, emotion first, bold and original. `directors.brief(d)` puts the soul first, then the director's own
+facet of the owner (`owner_facet`), then his craft. Every script and every pitch is written from it. It is a voice, not
+a source: it adds no fact, never names the owner and never brings another club into a club's story.
+The soul also carries the owner's own storytelling craft (`SOUL['craft']`, from his novel's writing profile, 4.11.2026):
+slug lines (date + place), the parallel "meanwhile" cut, the personal moment tied to the real event of that day,
+screen-ready moments, headline montages broken into moments, a recurring motif that pays off, pathos punctured by
+irony, one strong image per moment, one quotable line, questions instead of explanations, chapters ending on a breath,
+heroes who are not clean. On the channel: terrace slang yes, profanity no; no political side; nothing graphic.

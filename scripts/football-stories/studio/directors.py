@@ -24,6 +24,8 @@ DIRECTORS: list[dict] = [
         'camera': ['push', 'whip', 'shake'],
         'music': 'drive',
         'pitch_taste': 'a decider, a derby, a title race, a final, a season-defining run',
+        'owner_facet': 'His demand for precision and his feel for what is at stake: the right minute, the right score, '
+                       'the derby as THE match, the clock that makes a whole terrace hold its breath.',
     },
     {
         'id': 'terrace',
@@ -42,6 +44,8 @@ DIRECTORS: list[dict] = [
         'camera': ['drift', 'slow', 'pull'],
         'music': 'warm',
         'pitch_taste': 'an away day, a rivalry, a cult season, a comeback the fans still talk about, a club\'s first time',
+        'owner_facet': 'His heart: the capo on the fence, the father and son on the terrace, the kept ticket stub, the '
+                       'demolished ground remembered, self-irony and pride — football as belonging.',
     },
     {
         'id': 'trailer',
@@ -58,6 +62,8 @@ DIRECTORS: list[dict] = [
         'camera': ['orbit', 'slow', 'push', 'whip'],
         'music': 'epic',
         'pitch_taste': 'the most dramatic single night, a final, a giant-killing, a turning point that changed a club',
+        'owner_facet': 'His refusal of the boring and the banal: bold, original, cinematic, movement in every frame — '
+                       'the night told as a film supporters would queue to see.',
     },
 ]
 
@@ -65,8 +71,12 @@ BY_ID = {d['id']: d for d in DIRECTORS}
 
 
 def brief(d: dict) -> str:
-    """The director's brief as the writer receives it."""
-    return (f'DIRECTOR: {d["name"]} — {d["tagline"]}\n'
+    """The director's brief as the writer receives it: the house soul (the owner's football heart, studio/soul.py),
+    then this director's facet of it and his own way of making a film."""
+    from .soul import brief as soul_brief
+    return (soul_brief() + '\n\n'
+            f'DIRECTOR: {d["name"]} — {d["tagline"]}\n'
+            f'The owner\'s side of you: {d["owner_facet"]}\n'
             f'Football brain: {d["football_brain"]}\nFilm brain: {d["film_brain"]}\n'
             f'Voice: {d["voice"]}\nHumour: {d["humour"]}\n'
             f'Favourite visuals: {", ".join(d["visuals"])}. Favourite camera: {", ".join(d["camera"])}.\n'
