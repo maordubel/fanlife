@@ -74,6 +74,23 @@ def openai(model: str, prompt: str, aspect: str) -> bytes | str:
     return base64.b64decode(d['b64_json']) if d.get('b64_json') else f'no image: {json.dumps(r)[:300]}'
 
 
+def pollinations(model: str, prompt: str, aspect: str, seed: int) -> bytes | str:
+    """Pollinations' free FLUX endpoint (no key). One request every ~16 s for anonymous use."""
+    import urllib.parse
+    w, h = {'16:9': (1536, 864), '9:16': (864, 1536), '1:1': (1024, 1024)}.get(aspect, (1536, 864))
+    m = model.split(':', 1)[1] if ':' in model else 'flux'
+    url = (f'https://image.pollinations.ai/prompt/{urllib.parse.quote(prompt[:1800])}'
+           f'?width={w}&height={h}&model={m}&nologo=true&private=true&enhance=false&seed={seed}')
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'fanlife-studio'}), timeout=300) as r:
+            data = r.read()
+            return data if data[:4] in (b'\x89PNG', b'\xff\xd8\xff\xe0', b'\xff\xd8\xff\xe1', b'\xff\xd8\xff\xdb') or len(data) > 20000 else f'not an image: {data[:200]!r}'
+    except urllib.error.HTTPError as e:
+        return f'HTTP {e.code}: {e.read().decode(errors="replace")[:300]}'
+    except Exception as e:  # noqa: BLE001
+        return f'{type(e).__name__}: {e}'
+
+
 def main() -> int:
     job, out = json.loads(Path(sys.argv[1]).read_text()), Path(sys.argv[2])
     out.mkdir(parents=True, exist_ok=True)
@@ -83,10 +100,16 @@ def main() -> int:
         refs = [Path(r) for r in p.get('refs', [])]
         for m in p.get('models') or job['models']:
             t0 = time.time()
-            res = openai(m, prompt, p.get('aspect', '16:9')) if m.startswith('gpt-image') else gemini(m, prompt, p.get('aspect', '16:9'), refs)
+            if m.startswith('pollinations'):
+                res = pollinations(m, prompt, p.get('aspect', '16:9'), p.get('seed', 7))
+                time.sleep(16)
+            elif m.startswith('gpt-image'):
+                res = openai(m, prompt, p.get('aspect', '16:9'))
+            else:
+                res = gemini(m, prompt, p.get('aspect', '16:9'), refs)
             dt = round(time.time() - t0, 1)
             if isinstance(res, bytes):
-                f = out / f"{p['id']}--{m}.png"
+                f = out / f"{p['id']}--{m.replace(':', '-')}.png"
                 f.write_bytes(res)
                 log.append({'panel': p['id'], 'model': m, 'seconds': dt, 'bytes': len(res), 'file': f.name})
             else:

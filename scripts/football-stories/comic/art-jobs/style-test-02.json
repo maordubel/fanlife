@@ -1,0 +1,25 @@
+{
+ "note": "Style test 02: the free FLUX endpoint (Gemini image models need billing on the key; no OpenAI key in Actions).",
+ "models": [
+  "pollinations:flux"
+ ],
+ "style": "A single full-bleed panel from a prestige graphic novel about football history, drawn at the level of a modern feature-length animated film. Bold confident ink linework with varied line weight, hand-printed halftone dot shading and slight print misregistration, inspired by 1970s British football comics printed on cream newsprint, but rendered with cinematic lighting, depth and atmosphere. Limited process-ink palette: ink black, vermilion red, process cyan, deep navy, warm cream paper, with one accent colour per panel. Dramatic film-camera composition (low angles, wide lenses, strong foreground), expressive gesture and movement, rich texture, high detail, 16:9 widescreen.",
+ "panels": [
+  {
+   "id": "a-funny-bathroom",
+   "prompt": "COMEDY. Morning in a hotel bathroom. A very tall goalkeeper wrapped in a white towel freezes mid-panic as a heavy faceted glass cologne bottle slips out of his wet hand and tumbles toward his bare foot. Water droplets hang in the air, steam curls off the mirror, his invented cartoon face is a picture of slow-motion horror. Exaggerated squash-and-stretch timing, motion lines, a funny low angle from floor level."
+  },
+  {
+   "id": "b-war-floodlit-riot",
+   "prompt": "WAR. Night, an old 1990 Eastern European football stadium blazing under four floodlight pylons. Chaos on the pitch: a torn fence, supporters pouring over the advertising boards, a wall of riot police with shields and batons in hard silhouette, tear-gas clouds glowing white in the floodlights. In the foreground, seen from behind, a young footballer in a blue kit launches himself into the air toward the police line. Epic war-film composition, smoke and sparks, no blood."
+  },
+  {
+   "id": "c-dark-1942-line",
+   "prompt": "DRAMA. Summer 1942, a small city stadium with wooden stands. Eleven footballers in faded red shirts stand in a line on the pitch, seen from behind, facing a grandstand packed with grey-uniformed officers and soldiers who stare down at them. Long late-afternoon shadows, oppressive silence, sepia-toned newsprint with the red shirts as the only colour. No insignia, no symbols, no flags."
+  },
+  {
+   "id": "d-emotion-platform",
+   "prompt": "EMOTION. Dawn on a small railway station platform in the Netherlands in 1942, mist over the rails. A father in a long dark coat holds the hands of two small children; a suitcase and an old leather football rest at his feet. All three are seen from behind, looking down the empty track. Quiet, devastating, tender; muted cream and navy palette with a single red scarf on the little girl."
+  }
+ ]
+}
