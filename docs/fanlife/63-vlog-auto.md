@@ -38,3 +38,17 @@ match id (and optionally the length and notes). Or push `scripts/football-storie
 the same fields on any branch but main. The run fetches the folder, compiles the club packs, makes the episode,
 renders, and sends the reel and a Telegram-sized film to the owner's linked chat. The episode, the writer's rounds and
 the publish files are the run's artifact; footage and renders are never committed.
+
+## Measured (4.11.2026, run 41856849660 — AEK Athens 4–0 PAOK, the owner's folder of 18 clips and 7 stills, 3 min)
+
+- Survey + scout of the folder: ~3 min on the runner. The record for the night is one claim (AEKdata: the score only;
+  no scorers, no venue), so the film states the score and what the footage shows — nothing about how the goals came.
+- Writer: Gemini's free tier answered only with the flash-lite models (every other model 429 on this key that day);
+  four rounds (malformed JSON → a hook in the film + "pressure" → 136 s for 153 → passed), ~25 min mostly waiting out
+  per-minute quotas. Round 4 passed after the footage was held longer (`breathe`).
+- film.py: film 157.08 s planned and cut (the plan model is exact on film.py's own timeline), −14.6 LUFS, −4.3 dBTP,
+  no identifying tags, 84 MB publish file, 18 min to render; reel 18.8 s, −14.3 LUFS, 3 min.
+- Telegram: the reel and a 720p copy of the film — both accepted by the bot.
+- Known gap: the fact guard checks numbers and the play/crowd guard checks a list of terms; a weak model can still
+  write a vague line the record does not hold ("waiting for the derby", "PAOK stood against the tide"). A paid writer
+  (`STORIES_ALLOW_PAID`) or a human pass on `episode.json` before the render is the remedy until the guard grows.
