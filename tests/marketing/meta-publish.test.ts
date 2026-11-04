@@ -88,7 +88,7 @@ describe('Meta publishing (docs/fanlife/53-meta-publishing.md)', () => {
     expect(photos.every(c => c.body.published === 'false')).toBe(true)
     const feed = g.calls.find(c => c.url.endsWith('/feed'))!
     expect(Object.keys(feed.body).filter(k => k.startsWith('attached_media'))).toHaveLength(3)
-    expect(g.calls.find(c => c.body.media_type === 'CAROUSEL')!.body.children.split(',')).toHaveLength(3)
+    expect(g.calls.find(c => c.body.media_type === 'CAROUSEL')!.body.children!.split(',')).toHaveLength(3)
   })
 
   it('a story-tall picture is set on a 4:5 sheet as JPEG; a broken one still reaches Facebook', async () => {
