@@ -169,8 +169,12 @@ def listen(files: list[Path]):
     from faster_whisper import WhisperModel
     m = WhisperModel('small.en', device='cpu', compute_type='int8')
     out = []
+    import numpy as np
     for f, (_, line) in zip(files, LINES):
-        segs, _ = m.transcribe(str(f), language='en', beam_size=5)
+        # decoded by ffmpeg, not by faster-whisper: its PyAV call breaks on PyAV 14 (metadata_errors)
+        raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(f), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'],
+                             capture_output=True, check=True).stdout
+        segs, _ = m.transcribe(np.frombuffer(raw, dtype='float32'), language='en', beam_size=5)
         out.append(' '.join(s.text.strip() for s in segs))
     return out
 
@@ -244,11 +248,12 @@ def main() -> None:
 def delivery(out_root: Path, report: dict) -> None:
     """The delivery file deliver.mjs sends: an intro, one video per take, then the scores."""
     base = os.environ['AUDITION_RAW_BASE'].rstrip('/')
-    items = [{'before': ['🎙 <b>אודישן קריין · Football Stories</b>\n\n'
+    scores_only = os.environ.get('AUDITION_SEND') == 'scores'
+    items = [] if scores_only else [{'before': ['🎙 <b>אודישן קריין · Football Stories</b>\n\n'
                          'אותן 7 שורות מהסרטים, בכל קול. שימו לב לשמות (Mbappé, Panathinaikos, Željezničar, Mourinho), '
                          'לנשימות ולהפסקות.\n\nA = איך שהסרטים נשמעים היום. B, C = Kokoro אחרי השיפור. '
                          'D = Qwen3-TTS, קריין בריטי שעוצב מתיאור.\n\nתשובה של אות אחת מספיקה (למשל: B).']}]
-    for t in report['takes']:
+    for t in ([] if scores_only else report['takes']):
         if 'file' not in t:
             items.append({'before': [f"⚠️ Take {t['take']} ({t['title']}) נכשל ברנדור: <code>{t.get('error', '')[:200]}</code>"]})
             continue
@@ -263,6 +268,7 @@ def delivery(out_root: Path, report: dict) -> None:
             lines.append(f"<b>{t['take']}</b> · {t['names_heard']}/{t['names_total']} שמות · ×{t['realtime_factor']} · לא זוהו: {miss}")
     if lines:
         items.append({'messages': ['📊 <b>מבחן אוזן אוטומטי</b> (Whisper מתמלל כל טייק ובודק אם השם נשמע נכון)\n\n' + '\n'.join(lines)
+                                   + ('\n\n(D רונדר מחדש למדידה; Qwen לא דטרמיניסטי, אז זה טייק אחות של מה ששמעת.)' if scores_only else '')
                                    + '\n\nהמדד עוזר, האוזן שלך מחליטה.']})
     (out_root / 'delivery.json').write_text(json.dumps({'items': items}, ensure_ascii=False, indent=1))
 
