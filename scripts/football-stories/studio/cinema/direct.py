@@ -83,8 +83,9 @@ LOOKS = {
 
 
 def director_of(ed) -> dict | None:
-    did = (getattr(ed, 'script', None) or {}).get('director')
-    if not did:
+    sc = getattr(ed, 'script', None) or {}
+    did = sc.get('director') if isinstance(sc.get('director'), str) else sc.get('_director')
+    if not isinstance(did, str) or not did:  # `"director": 2` is the script schema's version, not a director
         return None
     try:
         from ..directors import BY_ID
@@ -140,9 +141,7 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
         derby = bool(primary and kind not in AGGREGATE and rows.get(primary, {}).get('rival'))
         cold = first_chapter is not None and s['n'] < first_chapter and kind not in ('end', 'follow')
         letterbox = (cold and kind not in ('open',)) or s['n'] == climax or kind == 'trailer' or kind in dl.get('letterbox', ())
-        lower = [] if kind in SHOWS_SCORE | {'end', 'follow', 'chapter', 'open'} else [i for i in cited if i not in _shown(s)]
-        if len(lower) > 3:
-            lower = []  # an aggregate (a count over many matches) is not a scoreline to drop under the picture
+        lower = [] if kind in SHOWS_SCORE | {'end', 'follow', 'chapter', 'open'} else _lower(ed, s, cited)
         mood = s.get('mood')
         loss = bool(pf and pf['outcome'] == 'loss' and kind in ('score', 'versus', 'illustration', 'matchday'))
         broll = fx.get('broll')
@@ -177,6 +176,17 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
             'motif': motif_art if (motif_art and kind in ('illustration', 'map')) else None,
         }
     return shots
+
+
+def _lower(ed, s: dict, cited: list[str]) -> list[str]:
+    """Contract rule 1 on screen: the first cited match whose opponent the narration names, else the first cited match —
+    unless the visual already prints every match it cites (a form strip, a streak, a timeline, a race's marks)."""
+    rest = [i for i in cited if i not in _shown(s)]
+    if not rest:
+        return []
+    text = (s.get('narration') or '').lower()
+    named = [i for i in rest if (ed.by[i]['fact'].get('opponent') or '').lower() in text and ed.by[i]['fact'].get('opponent')]
+    return [(named or rest)[0]]
 
 
 def _tally(st: dict, upto: str) -> dict:

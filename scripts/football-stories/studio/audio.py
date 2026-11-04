@@ -270,7 +270,8 @@ def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndar
 
 def mood_sections(plan: dict, min_len: float = 7.0) -> list[dict]:
     """Consecutive shots of one mood become one section; a section shorter than min_len joins its neighbour. When the
-    story has acts the music changes key and colour at each act; otherwise the director's music key colours it all."""
+    story has acts the music changes key at each act; the director's music key colours it all (without a director, the
+    act's own colour: an epic cold open and last act, a driving middle, a warm epilogue)."""
     secs: list[dict] = []
     key = plan.get('music_key')
     for s in plan['shots']:
@@ -278,7 +279,7 @@ def mood_sections(plan: dict, min_len: float = 7.0) -> list[dict]:
         mood = s.get('mood') or 'minor'
         cin = s.get('cinema') or {}
         act, name = cin.get('act') or 0, cin.get('act_name')
-        flavour = ACT_FLAVOUR.get(name) if name else key
+        flavour = key or (ACT_FLAVOUR.get(name) if name else None)  # the director's colour; else the act's own
         shift = ACT_SHIFT[act % len(ACT_SHIFT)] if name else 0
         if secs and secs[-1]['mood'] == mood and secs[-1].get('act', 0) == act:
             secs[-1]['end'] = b

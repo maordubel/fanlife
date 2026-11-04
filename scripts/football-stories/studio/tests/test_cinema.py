@@ -58,7 +58,10 @@ def ledger(neutral=False):
     ]
     base = {'version': 1, 'club_id': 'test-fc', 'club_name': 'Test FC', 'season': '2002/03', 'claims': [], 'held': [],
             'rivals': ['Rival United'], **({'neutral': True} if neutral else {})}
-    return build_ledger('test-fc', '2002/03', ms, base=base)
+    led = build_ledger('test-fc', '2002/03', ms, base=base)
+    # the cinema's own reading, attached as the director would attach his, so these tests read one known block
+    led['story'] = cstory.computed(led)
+    return led
 
 
 def script(director=None):
@@ -147,6 +150,13 @@ class Story(unittest.TestCase):
         self.assertIn('derby', tags['m2'])
         self.assertIn('biggest-win', tags['m10'])
         self.assertIn({'kind': 'wins', 'from': 'm5', 'to': 'm8', 'length': 4}, st['runs'])
+
+    def test_a_ledger_without_a_block_still_gets_one(self):
+        led = ledger()
+        del led['story']
+        st = cstory.story_of(led)
+        self.assertEqual(len(st['matches']), 10)
+        self.assertEqual([m['id'] for m in st['matches']], [f'm{i}' for i in range(1, 11)])
 
     def test_the_directors_block_wins_when_present(self):
         led = ledger()

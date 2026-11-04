@@ -128,13 +128,20 @@ def turning_point(rows: list[dict], window: int = 4) -> str | None:
 
 
 def story_of(ledger: dict) -> dict:
-    """ledger['story'] when the director wrote it, else the one counted here (cached on the ledger dict)."""
+    """ledger['story'] when the director wrote it; else the director's own reading of this ledger (studio/director.py,
+    when the studio has it); else the one counted here. Cached on the ledger dict."""
     st = ledger.get('story')
     if isinstance(st, dict) and st.get('matches') is not None:
         return st
     cached = ledger.get('_cinema_story')
     if cached is None:
-        cached = computed(ledger)
+        try:
+            from ..director import story_of as director_story
+            cached = director_story(ledger)
+        except Exception:  # an older studio, or a ledger the director cannot read: count it here
+            cached = None
+        if not (isinstance(cached, dict) and cached.get('matches') is not None):
+            cached = computed(ledger)
         ledger['_cinema_story'] = cached
     return cached
 
