@@ -55,8 +55,13 @@ class CameraPath:
             prev = shots[i - 1] if i else None
             same = bool(prev and prev['engine'] == 'vox' and s['engine'] == 'vox' and prev['board'] == s['board'])
             new_board = s['engine'] == 'vox' and not same
-            pre = min(0.4 * G, 0.42 * prev['dur']) if prev else 0.0
-            post = min(0.6 * G, 0.45 * s['dur'])
+            # a long way across the board takes a little longer than a short hop to the neighbouring beat
+            g = G
+            if same:
+                a, b = prev['keys'][-1], s['keys'][0]
+                g = G * max(0.75, min(1.6, math.hypot(b[1] - a[1], b[2] - a[2]) / 2000))
+            pre = min(0.4 * g, 0.42 * prev['dur']) if prev else 0.0
+            post = min(0.6 * g, 0.45 * s['dur'])
             if new_board:
                 pre = min(0.55, 0.4 * prev['dur']) if (prev and prev['engine'] == 'vox') else 0.0
                 post = min(1.05, 0.5 * s['dur'])
@@ -135,15 +140,15 @@ class CameraPath:
         return Pose(B.board, x, y, z, B.rot - 4 * (1 - e), arrive=1 - k)
 
     def jumps(self, step: float = 1 / 25) -> list[tuple[float, float]]:
-        """(time, screen pixels moved in one frame) wherever the camera moves more than a glide can: used by the tests
-        to prove the path is continuous except where a chapter changes board."""
+        """(time, screen pixels moved in one frame) along the whole path, leaving out the dive into a new chapter's board
+        and the fall onto it (the one place the film is meant to break): the tests prove the rest is continuous."""
         out = []
         T, end = 0.0, self.shots[-1]['start'] + self.shots[-1]['dur']
         prev = self.pose(0.0)
         while T + step < end:
             T += step
             p = self.pose(T)
-            if p.board == prev.board:
+            if p.board == prev.board and not (p.through or prev.through or p.arrive or prev.arrive):
                 d = math.hypot(p.cx - prev.cx, p.cy - prev.cy) * p.z + abs(math.log(p.z / prev.z)) * 1000
                 out.append((T, d))
             prev = p

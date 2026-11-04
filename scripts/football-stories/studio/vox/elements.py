@@ -294,6 +294,16 @@ class Words(El):
         self.settle = t0 + stagger * max(0, n - 1) + dur + 0.05
         self._rc: dict = {}
 
+    def fit(self, end: float) -> None:
+        """A short beat: the words come faster, so the last one has landed before the camera moves on."""
+        n = len(self.items)
+        if self.settle <= end:
+            return
+        self.stagger = max(0.025, (end - self.t0 - self.dur) / max(1, n - 1)) if n > 1 else self.stagger
+        if self.t0 + self.dur + self.stagger * (n - 1) > end:
+            self.t0 = max(0.0, end - self.dur - self.stagger * (n - 1))
+        self.settle = self.t0 + self.stagger * max(0, n - 1) + self.dur + 0.05
+
     def word_t(self, i: int) -> float:
         return self.t0 + self.stagger * i
 
@@ -356,8 +366,19 @@ class Typewriter(El):
         self.t0, self.cps, self.rot, self.max_w, self.plate, self.pad = t0, cps, rot, max_w, plate, pad
         full = self._img(len(s), False)
         self.rect = (x, y, full.width / res, full.height / res)
-        self.settle = t0 + len(s) / cps + 0.9
+        self.blink = 0.8
+        self.settle = t0 + len(s) / cps + self.blink + 0.1
         self._c: dict = {}
+
+    def fit(self, end: float) -> None:
+        """A short beat: type faster (and start sooner) so the line is whole when the camera moves on."""
+        L = max(1, len(self.s))
+        if self.t0 + L / self.cps > end - 0.1:
+            if self.t0 > end - 0.5:
+                self.t0 = max(0.0, end - 0.5)
+            self.cps = max(self.cps, L / max(0.25, end - 0.1 - self.t0))
+        self.blink = max(0.0, min(0.8, end - (self.t0 + L / self.cps)))
+        self.settle = self.t0 + L / self.cps + self.blink + 0.05
 
     def _img(self, n: int, cur: bool) -> Image.Image:
         f = (self.max_w * self.res) if self.max_w else None
@@ -380,7 +401,7 @@ class Typewriter(El):
             return []
         n = min(len(self.s), int((t - self.t0) * self.cps) + 1)
         done = n >= len(self.s)
-        cur = (not done) or (t - self.t0 - len(self.s) / self.cps < 0.8 and int(t * 4) % 2 == 0)
+        cur = (not done) or (t - self.t0 - len(self.s) / self.cps < self.blink and int(t * 4) % 2 == 0)
         key = (n, cur)
         if key not in self._c:
             if len(self._c) > 4:
@@ -469,6 +490,9 @@ class Marker(El):
         self.cum = np.concatenate([[0], np.cumsum(seg)])
         self._final = None
 
+    def fit(self, end: float) -> None:
+        _fit_span(self, end)
+
     def point_at(self, u: float) -> tuple[float, float]:
         L = self.cum[-1] * clamp(u)
         i = int(np.searchsorted(self.cum, L, side='right') - 1)
@@ -519,6 +543,12 @@ class Marker(El):
         return [(im, int(cv.px(self.box[0])), int(cv.px(self.box[1])))]
 
 
+def _fit_span(e, end: float) -> None:
+    if e.t0 + e.dur > end:
+        e.t0 = max(0.0, end - e.dur)
+        e.settle = e.t0 + e.dur + 0.02
+
+
 class Highlight(El):
     """A highlighter swipe across a box, left to right, printed in multiply — the ink under it stays ink."""
     z = 75
@@ -533,6 +563,9 @@ class Highlight(El):
         self.target = target
         self.blend = 'multiply'
         self._c: dict = {}
+
+    def fit(self, end: float) -> None:
+        _fit_span(self, end)
 
     def _img(self, u: float) -> Image.Image:
         key = round(u, 2)

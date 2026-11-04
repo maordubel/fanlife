@@ -45,6 +45,14 @@ def main() -> int:
     vox_line = next((ln for ln in log.splitlines()[::-1] if 'ms a frame' in ln), '')
     print('VOX', vox_line, f'whole film {mins:.1f} min')
     prev = job / 'out' / 'preview.mp4'
+    # a contact sheet of the master in the log (base64), so the engine's author can look at the real film's frames
+    import base64
+    import subprocess
+    sheet = job / 'out' / 'sheet.jpg'
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(job / 'out' / 'master.mp4'), '-vf',
+                    f'fps={48 / max(30, plan["duration"]):.4f},scale=320:-2,tile=6x8', '-frames:v', '1', '-q:v', '6', str(sheet)])
+    if sheet.exists():
+        print('SHEET-BEGIN', base64.b64encode(sheet.read_bytes()).decode(), 'SHEET-END')
     from matchday.vlog_auto import send_telegram
     from studio.script import selected_title
     qa = r.get('qa', {})

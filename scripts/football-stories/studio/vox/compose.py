@@ -138,6 +138,14 @@ class Builder:
     def tl(self, s, font, size, fill):
         return E.tline(s, font, int(size * self.res), tuple(fill) + (255,))
 
+    def one_line(self, s, font, size, max_w):
+        """The size at which `s` fits on one line of `max_w` units (never under 60% of the asked size)."""
+        from ..cinema.type import face as F
+        sz = size
+        while sz > size * 0.6 and F(font, int(sz * self.res)).length(s.upper()) / self.res * 1.08 + 0.12 * sz * len(s.split()) > max_w:
+            sz -= 3
+        return sz
+
     def words(self, s, x, y, size, t0, *, hot=None, **k):
         k.setdefault('stagger', 0.085 if self.st['count'] >= 1 else 0.06)
         w = E.Words(E.words_of(s, hot), x, y, size=size, res=self.res, hot=k.pop('hot_fill', self.ink.accent), t0=t0, **k)
@@ -214,17 +222,59 @@ class Builder:
             im = self.ed.cut_img(key, int(h * self.res))
         except Exception:  # noqa: BLE001 — a missing cut-out leaves the edge empty, never stops the film
             return None
+        return self.person(im, x, foot, t0, side=side, motion=motion, near=near, exit=exit)
+
+    def person(self, im, x: float, foot: float, t0: float, *, side=None, motion='rise', near=True, exit=True):
         side = side if side is not None else self.side
         if side > 0 and motion == 'slide':
             im = im.transpose(Image.FLIP_LEFT_RIGHT)
-        w = im.width / self.res
+        w, h = im.width / self.res, im.height / self.res
         y = foot - h / 2
+        # a person stands beside the cards, never on them: step out towards the edge until clear, or stay out
+        out_dir = 1 if x > PW / 2 else -1
+        for _ in range(9):
+            r_ = (x - w / 2, y - h / 2, w, h)
+            if all(_ov(r_, d) < 0.03 * d[2] * d[3] for d in self.P.data_rects()):
+                break
+            x += out_dir * 60
+        else:
+            return None
         c = E.Cutout(im, x, y, t0=t0, dur=self.dur, side=side, motion=motion, res=self.res,
                      exit_at=(self.dur - 0.75) if exit else None, layer='near' if near else 'board',
                      rect=(x - w / 2, y - h / 2, w, h))
         self.P.add(c)
         self.P.cues.append((t0, 'paper'))
         return c
+
+    def library(self):
+        """The owner's moving-art library (cinema/library.py), as the plan chose it for this beat: its people step
+        in at the edges of the board, its objects and documents are laid on the paper."""
+        from ..cinema import animate
+        els = self.cin.get('lib') or []
+        k = 0
+        for e in els:
+            role, key, side = e.get('role'), e.get('key'), e.get('side', 1) or 1
+            if role == 'actor':
+                im = animate._sprite(self.ed, key, int(560 * self.res))
+                if im is None:
+                    continue
+                self.person(im, PW / 2 + side * 820, PH + 40, max(0.3, min(self.lead, 0.9)) + 0.35 * k, side=side,
+                            motion='slide' if e.get('motion') in ('walk', 'run', 'slide') else 'rise')
+                k += 1
+            elif role == 'object':
+                im = animate._sprite(self.ed, key, int(300 * self.res))
+                if im is None:
+                    continue
+                if im.width > 560 * self.res:
+                    im = im.resize((int(560 * self.res), int(im.height * 560 * self.res / im.width)), Image.LANCZOS)
+                w, h = im.width / self.res, im.height / self.res
+                x, y = PW / 2 + side * 700, 230 if k % 2 else 820
+                if any(_ov((x - w / 2, y - h / 2, w, h), d) > 0.2 * d[2] * d[3] for d in self.P.data_rects()):
+                    continue
+                self.P.add(E.Sprite(im, E.arrive(x, y, 0.5 + 0.25 * k, frm=(side * 700, 0), rot0=side * 10, rot1=side * 4, dur=0.6),
+                                    z=34, kind='photo', rect=(x - w / 2, y - h / 2, w, h), settle=1.2 + 0.25 * k))
+                self.P.cues.append((0.5 + 0.25 * k, 'paper'))
+                k += 1
 
     def art(self, key: str | None, w: float, h: float, cx: float, cy: float, rot: float, t0: float, *, dim=0.0, frm=(0, 0),
             style='drop', z=30, tape=2, clip_ok=True):
@@ -280,6 +330,12 @@ class Builder:
         self.underline(sc, t0 + 0.75, 'slip')
         self.P.targets['slip_match'] = f.get('date')
         return sp
+
+
+def _ov(a, b) -> float:
+    w = min(a[0] + a[2], b[0] + b[2]) - max(a[0], b[0])
+    h = min(a[1] + a[3], b[1] + b[3]) - max(a[1], b[1])
+    return max(0.0, w) * max(0.0, h)
 
 
 def _cover(im: Image.Image, size) -> Image.Image:
@@ -373,8 +429,10 @@ def result(ed, s, B: Builder) -> Panel:
     P, ink, r = B.P, B.ink, B.res
     rot = (-1.4, 1.1, -0.8)[s['n'] % 3]
     cx, cy = 960 + B.side * 40, 470
-    W_, H_ = 1300, 600
-    head = 'MATCHDAY' if kind == 'matchday' else 'FULL TIME'
+    # two layouts, so a season of results does not look like one card: side by side, or stacked like a results column
+    stack = kind == 'score' and s['n'] % 2 == 1
+    W_, H_ = (1180, 640) if stack else (1300, 600)
+    head = 'MATCHDAY' if kind == 'matchday' else 'RESULT' if stack else 'FULL TIME'
     stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
     bar = B.t(f'{head} · {stage}'.upper(), 'caps', 30, PAPER, max_w=W_ - 80, track=2)
 
@@ -383,14 +441,23 @@ def result(ed, s, B: Builder) -> Panel:
         d.rectangle([pad, pad, pad + W_ * res, pad + 74 * res], fill=INK + (255,))
         B.put(bar, im, 0, pad, 40, 37 - bar.height / res / 2)
         d.rectangle([pad + 50 * res, pad + 470 * res, pad + (W_ - 50) * res, pad + 476 * res], fill=INK + (255,))
-        dash = B.t('–', 'ultra', 120, INK)
-        B.put(dash, im, 0, pad, W_ / 2, 280, center=True)
+        if stack:
+            for yy in (258, 262):
+                d.rectangle([pad + 50 * res, pad + yy * res, pad + (W_ - 50) * res, pad + (yy + 2) * res], fill=(120, 110, 96, 255))
+        else:
+            dash = B.t('–', 'ultra', 120, INK)
+            B.put(dash, im, 0, pad, W_ / 2, 280, center=True)
     t_land = 0.15
-    B.card(W_, H_, cx, cy, rot, t_land, bake=bake, tape=2, frm=(0, 820) if s['n'] % 2 else (-1300, 40))
+    B.card(W_, H_, cx, cy, rot, t_land, bake=bake, tape=2, frm=(0, 820) if s['n'] % 2 else (-1300, 40), tone=NEWS if stack else PAPER)
     # the names rise onto the card, home then away
     t_n = t_land + 0.55
-    left = B.words(f['home'], *rot_pt(cx, cy, -W_ / 2 + 60, -H_ / 2 + 110, rot), 74, t_n, max_w=520, rot=rot, style='rise')
-    right = B.words(f['away'], *rot_pt(cx, cy, W_ / 2 - 60, -H_ / 2 + 110, rot), 74, t_n + 0.18, max_w=520, rot=rot, style='rise', align='right')
+    if stack:
+        sz = min(B.one_line(f['home'], 'head', 78, 760), B.one_line(f['away'], 'head', 78, 760))
+        left = B.words(f['home'], *rot_pt(cx, cy, -W_ / 2 + 60, -H_ / 2 + 125, rot), sz, t_n, max_w=800, rot=rot, style='rise')
+        right = B.words(f['away'], *rot_pt(cx, cy, -W_ / 2 + 60, -H_ / 2 + 305, rot), sz, t_n + 0.18, max_w=800, rot=rot, style='rise')
+    else:
+        left = B.words(f['home'], *rot_pt(cx, cy, -W_ / 2 + 60, -H_ / 2 + 110, rot), 74, t_n, max_w=520, rot=rot, style='rise')
+        right = B.words(f['away'], *rot_pt(cx, cy, W_ / 2 - 60, -H_ / 2 + 110, rot), 74, t_n + 0.18, max_w=520, rot=rot, style='rise', align='right')
     # the score flips up goal by goal, timed to the narrator
     t_sc0 = max(t_n + 0.6, B.at_voice(0.18, lo=1.0))
     pace = 0.24 * B.st['count']
@@ -398,17 +465,26 @@ def result(ed, s, B: Builder) -> Panel:
     t_sc1 = t_sc0 + max(0.25, pace * n_goals)
     if kind == 'matchday':  # the pre-match card: the score waits, then the result is stamped in at the end of the line
         t_sc0 = max(t_n + 1.2, B.at_voice(0.55, lo=1.6))
-        t_sc1 = t_sc0 + max(0.25, pace * n_goals)
+    # whatever the narration, the score lands, is circled and read before the camera moves on
+    t_sc0 = max(t_n + 0.3, min(t_sc0, B.dur - 1.6 - pace * n_goals))
+    t_sc1 = t_sc0 + max(0.25, pace * n_goals)
     hs, as_ = _score_steps(f, t_sc0, t_sc1)
-    fx, fy = rot_pt(cx, cy, -130, 280 - H_ / 2, rot)
-    gx, gy = rot_pt(cx, cy, 130, 280 - H_ / 2, rot)
+    if stack:
+        fx, fy = rot_pt(cx, cy, W_ / 2 - 150, 165 - H_ / 2, rot)
+        gx, gy = rot_pt(cx, cy, W_ / 2 - 150, 350 - H_ / 2, rot)
+    else:
+        fx, fy = rot_pt(cx, cy, -130, 280 - H_ / 2, rot)
+        gx, gy = rot_pt(cx, cy, 130, 280 - H_ / 2, rot)
     tone_h = ink.accent if f['home'] == ed.ledger.get('club_name') else PAPER
     tone_a = ink.accent if f['away'] == ed.ledger.get('club_name') else PAPER
-    fh = P.add(E.Flip(hs, fx, fy, size=150, res=r, w=190, tile=tone_h, fill=ink.on_accent if tone_h == ink.accent else INK, name='home'))
-    fa = P.add(E.Flip(as_, gx, gy, size=150, res=r, w=190, tile=tone_a, fill=ink.on_accent if tone_a == ink.accent else INK, name='away'))
+    fs = 130 if stack else 150
+    fh = P.add(E.Flip(hs, fx, fy, size=fs, res=r, w=fs * 1.27, tile=tone_h, fill=ink.on_accent if tone_h == ink.accent else INK, name='home'))
+    fa = P.add(E.Flip(as_, gx, gy, size=fs, res=r, w=fs * 1.27, tile=tone_a, fill=ink.on_accent if tone_a == ink.accent else INK, name='away'))
     for (tt, _) in hs[1:] + as_[1:]:
         P.cues.append((tt, 'tick'))
-    score_rect = (fh.rect[0], fh.rect[1], fa.rect[0] + fa.rect[2] - fh.rect[0], fh.rect[3])
+    x0_ = min(fh.rect[0], fa.rect[0])
+    y0_ = min(fh.rect[1], fa.rect[1])
+    score_rect = (x0_, y0_, max(fh.rect[0] + fh.rect[2], fa.rect[0] + fa.rect[2]) - x0_, max(fh.rect[1] + fh.rect[3], fa.rect[1] + fa.rect[3]) - y0_)
     P.targets['score'] = score_rect
     P.targets['score_value'] = f"{f['score_home']}–{f['score_away']}"
     # the line under it, typed: the date and the ground
@@ -423,11 +499,11 @@ def result(ed, s, B: Builder) -> Panel:
     if f.get('title_decided'):
         extra = (extra + ' · ' if extra else '') + 'The title is decided'
     # the pen circles the score as it lands; the winner's name is highlighted
-    t_mark = t_sc1 + 0.3
+    t_mark = min(t_sc1 + 0.3, B.dur - 0.65)
     B.circle(score_rect, t_mark, 'score', dur=0.55)
     if f['outcome'] != 'draw' and kind != 'matchday':
         winner = left if (f['score_home'] > f['score_away']) else right
-        B.highlight(winner.rect, t_mark + 0.5, 'winner', rot=rot)
+        B.highlight(winner.rect, min(t_mark + 0.5, B.dur - 0.5), 'winner', rot=rot)
     elif kind == 'matchday':
         B.underline(left.rect, t_n + 1.0, 'home')
     if extra:
@@ -453,7 +529,7 @@ def result(ed, s, B: Builder) -> Panel:
             by.setdefault(g['name'], []).append(f"{g['minute']}{mark}" if g.get('minute') is not None else '')
         line = '   '.join(f"{n.upper()} {' '.join(m for m in ms if m)}".strip() for n, ms in list(by.items())[:4])
         sx, sy = rot_pt(cx, cy, -W_ / 2 + 60, 405 - H_ / 2, rot)
-        strip = B.type(line, sx, sy, 30, t_mark + 0.9, font='cond', max_w=W_ - 140, rot=rot, fill=INK)
+        strip = B.type(line, sx, sy + (25 if stack else 0), 30, t_mark + 0.9, font='cond', max_w=W_ - (420 if stack else 140), rot=rot, fill=INK)
         B.arrow((score_rect[0] - 30, score_rect[1] + score_rect[3] * 0.6), (sx + 40, sy + 4), t_mark + 0.6, 'scorers', target=strip.rect, dur=0.35)
         P.targets['scorers'] = strip.rect
     # people at the edge: the club's own, celebrating or not
@@ -634,8 +710,8 @@ def form(ed, s, B: Builder) -> Panel:
     total = n * (size + 12) + (n - 1) * gap
     x0 = PW / 2 - total / 2
     ty = 520
-    step = clamp((max(B.dur - B.lead, 2.0) * 0.55) / n, 0.18, 0.5) * B.st['count']
     t0 = 0.9
+    step = min(clamp((max(B.dur - B.lead, 2.0) * 0.55) / n, 0.18, 0.5) * B.st['count'], max(0.06, (B.dur - t0 - 1.3) / n))
     lands = [t0 + i * step for i in range(n)]
     tiles = []
     for i, (cid, f) in enumerate(rows):
@@ -773,7 +849,7 @@ def race(ed, s, B: Builder) -> Panel:
     head = B.words(v.get('label') or 'The season', 140, 120, 70, 0.35, max_w=1100)
     B.type(f"{ed.ledger.get('season')} · EVERY MATCH, ALL COMPETITIONS", 144, 120 + head.rect[3] + 10, 26, 0.6, font='caps')
     t0 = 1.0
-    draw = clamp(max(B.dur - B.lead, 3.0) * 0.62, 2.6, 8.5) * (B.st['count'] ** 0.5)
+    draw = max(0.8, min(clamp(max(B.dur - B.lead, 3.0) * 0.62, 2.6, 8.5) * (B.st['count'] ** 0.5), B.dur - t0 - 1.0))
     col = lambda o: ink.accent if o == 'win' else PAPER if o == 'draw' else INK  # noqa: E731
     ln = P.add(E.Line(pts, t0=t0, dur=draw, res=r, colour=ink.accent, width=11, fill_to=zero,
                       fill_col=tuple(ink.accent) + (60,), dots=[(col(x['outcome']), INK) for x in rows]))
@@ -872,7 +948,7 @@ def run(ed, s, B: Builder) -> Panel:
     per_row = n if n <= 6 else math.ceil(n / 2)
     size = 112 if n > 6 else 128
     t0 = 0.8
-    step = clamp((max(B.dur - B.lead, 2.0) * 0.55) / n, 0.2, 0.55) * B.st['count']
+    step = min(clamp((max(B.dur - B.lead, 2.0) * 0.55) / n, 0.2, 0.55) * B.st['count'], max(0.06, (B.dur - t0 - 1.4) / n))
     lands = [t0 + i * step for i in range(n)]
     gx0 = 820
     tiles = []
@@ -1215,7 +1291,8 @@ def timeline(ed, s, B: Builder) -> Panel:
     n = len(pts_)
     X0, X1, Y = 200, PW - 200, 560
     xs = [X0 + (X1 - X0) * i / max(1, n - 1) for i in range(n)] if n > 1 else [PW / 2]
-    t0, dur = 0.7, clamp(max(B.dur - B.lead, 2.0) * 0.6, 1.6, 6.0) * B.st['count'] ** 0.5
+    t0 = 0.7
+    dur = max(0.6, min(clamp(max(B.dur - B.lead, 2.0) * 0.6, 1.6, 6.0) * B.st['count'] ** 0.5, B.dur - t0 - 0.9))
     ln = P.add(E.Line([(x, Y) for x in xs] if n > 1 else [(X0, Y), (X1, Y)], t0=t0, dur=dur, res=r, colour=INK, width=9, shadow=None,
                       dots=[(ink.accent if f['outcome'] == 'win' else PAPER, INK) for f in pts_]))
     P.cues.append((t0, 'pen'))
@@ -1344,7 +1421,7 @@ def trailer(ed, s, B: Builder) -> Panel:
         P.shake.append((t + 0.05, 12))
         P.flash.append(t)
         P.look(t + 0.02, w.rect[0] + w.rect[2] / 2, w.rect[1] + w.rect[3] / 2, B.st['push'] * 1.1)
-        P.look(min(B.dur, t + span / n - 0.2), w.rect[0] + w.rect[2] / 2 + 40, w.rect[1] + w.rect[3] / 2, B.st['push'] * 1.16)
+        P.look(min(B.dur, t + span / n - 0.4), w.rect[0] + w.rect[2] / 2 + 40, w.rect[1] + w.rect[3] / 2, B.st['push'] * 1.16)
     P.focus.insert(0, (0.0, 960, 540, 0.8))
     P.look(B.dur, 960, 540, 0.85)
     return P
@@ -1462,15 +1539,31 @@ def compose(ed, s: dict, res: float, style: dict) -> Panel:
             x, y = 1530, 210
         B.art(broll, 720, 450, x, y, 5.0 * B.side, 0.0, style='drop', z=12, tape=2, clip_ok=False)
     P = BUILDERS[kind](ed, s, B)
+    B.library()
     # rule 1 on the board: a beat that names a match the visual does not print gets the slip with its scoreline
     for cid in (B.cin.get('lower') or [])[:1]:
         f = _f(ed, cid)
         if f:
-            B.slip(f, 90 if kind != 'illustration' else 120, 870, max(0.6, B.lead + 0.2))
+            B.slip(f, 90 if kind != "illustration" else 120, 790, max(0.6, B.lead + 0.2))
     # the slug line (contract §2): typed on its own strip, lower left, before the visual's own text
     if B.cin.get('slug'):
         B.type(str(B.cin['slug']).upper(), 80, 40, 30, 0.2, plate=INK, fill=PAPER, pad=12, max_w=1300)
+    # a short beat: every line typed, every word landed, every stroke drawn before the camera leaves
+    for e in P.els:
+        if hasattr(e, 'fit'):
+            e.fit(P.dur - 0.35)
     P.focus.sort(key=lambda k: k[0])
     if not P.focus or P.focus[0][0] > 0:
         P.focus.insert(0, (0.0, 960, 540, 0.95))
+    # the camera needs time between two wishes: two looks closer than 0.4 s are one (the later wins)
+    out = [P.focus[0]]
+    for k in P.focus[1:]:
+        if k[0] - out[-1][0] < 0.4:
+            if len(out) > 1:
+                out[-1] = (max(k[0], out[-2][0] + 0.4),) + tuple(k[1:])
+            else:
+                out.append((min(P.dur, out[-1][0] + 0.4),) + tuple(k[1:]))
+        else:
+            out.append(k)
+    P.focus = out
     return P
