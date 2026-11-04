@@ -19,7 +19,7 @@ function fakeX(fail?: (url: string) => boolean) {
   let n = 0
   const fetcher = async (url: string, init: {headers: Record<string, string>; body: string}) => {
     const body = JSON.parse(init.body)
-    calls.push({url, auth: init.headers.authorization, body})
+    calls.push({url, auth: init.headers.authorization ?? "", body})
     if (fail?.(url)) return new Response(JSON.stringify({title: 'Forbidden', detail: `nope ${KEYS.X_ACCESS_SECRET}`}), {status: 403})
     return Response.json({data: {id: url.endsWith('media/upload') ? `m${++n}` : `t${++n}`}})
   }
