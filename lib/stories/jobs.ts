@@ -63,6 +63,8 @@ export type Job={
  brief:Brief;palette:Palette;state:JobState;stage:Stage|null;progress:number;message:string
  attempts:number;lease:{worker:string;until:string}|null
  log:{at:string;text:string}[];error:{code:string;message:string;retryable:boolean}|null
+ /** a queued film the worker leaves alone until then (Google's free quota was busy or spent) */
+ notBefore?:string|null
  artefacts:{master?:{chunks:Artefact[];bytes:number;sha256:string};preview?:Artefact;thumbnails?:Artefact[];captions?:{srt:Artefact;vtt:Artefact};contact?:Artefact;package?:Artefact;shorts?:ShortArtefact[]}|null
  youtube:Record<string,unknown>|null;qa:{ok:boolean;checks:{name:string;ok:boolean;detail:string}[];cannot_prove?:string[];rights?:string[]}|null
  upload:{state:UploadState;videoId:string|null;visibility:Privacy|null;publishAt:string|null;at:string|null;by:string|null;note:string|null}
@@ -145,7 +147,7 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'pause':if(!['queued','running'].includes(j.state))no('Only a queued or running job can be paused.');j.state='paused';pushLog(j,`Paused by ${actor}`,at);break
   case 'resume':if(j.state!=='paused')no('This job is not paused.');j.state='queued';j.lease=null;pushLog(j,`Resumed by ${actor} — continues from its last checkpoint`,at);break
   case 'cancel':if(j.state==='cancelled'||j.state==='cancel_requested')no('This job is already cancelled.');if(j.upload.state==='in_progress')no('An upload is in progress — record its result first.');j.state=j.state==='running'?'cancel_requested':'cancelled';j.lease=j.state==='cancelled'?null:j.lease;pushLog(j,`Cancelled by ${actor}`,at);break
-  case 'retry':if(j.state!=='failed'&&j.state!=='cancelled')no('Only a failed or cancelled job can be retried.');j.state='queued';j.error=null;j.lease=null;pushLog(j,`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at);break
+  case 'retry':if(j.state!=='failed'&&j.state!=='cancelled'&&!(j.state==='queued'&&j.notBefore))no('Only a failed or cancelled job (or one waiting for the writer) can be retried.');j.state='queued';j.error=null;j.lease=null;j.notBefore=null;pushLog(j,`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at);break
   case 'approve_script':if(j.state!=='needs_review'||j.stage!=='script')no('There is no script waiting for approval.');if(j.options?.length)no('Choose one of the scripts.');j.state='queued';j.brief={...j.brief,review:'auto'};pushLog(j,`Script approved by ${actor}`,at);break
   case 'choose_script':{if(j.state!=='needs_review'||j.stage!=='script'||!j.options?.length)no('There are no scripts waiting for your choice.');const o=j.options!.find(x=>x.n===a.option);if(!o)throw new StoryError('CHOICE','Unknown script.');j.state='queued';j.brief={...j.brief,review:'auto',choice:o.n};pushLog(j,`Script ${o.n} chosen by ${actor}: "${o.title}"`,at);break}
   case 'upload_started':if(j.state!=='ready'&&j.state!=='needs_review')no('Only a finished film can be uploaded.');if(j.upload.state==='done')no('This film is already uploaded.');if(j.upload.state==='in_progress'||j.upload.state==='uncertain')no('An upload was started already — check YouTube Studio, then record the result or reset.');j.upload={...j.upload,state:'in_progress',at,by:actor};pushLog(j,`Upload started by ${actor}`,at);break
@@ -168,11 +170,11 @@ export const LEASE_MS=6.5*3600_000
 /** The job the worker should take next: the oldest queued one, or a running one whose lease ran out (the worker died). */
 export function nextForWorker(jobs:Job[],now=new Date()):Job|null{
  const t=now.getTime()
- return jobs.filter(j=>j.state==='queued'||(j.state==='running'&&j.lease!==null&&Date.parse(j.lease.until)<t)).sort((a,b)=>a.createdAt.localeCompare(b.createdAt))[0]??null
+ return jobs.filter(j=>(j.state==='queued'&&!(j.notBefore&&Date.parse(j.notBefore)>t))||(j.state==='running'&&j.lease!==null&&Date.parse(j.lease.until)<t)).sort((a,b)=>a.createdAt.localeCompare(b.createdAt))[0]??null
 }
 export function claim(job:Job,worker:string,now=new Date()):Job{
  const j=structuredClone(job),at=now.toISOString()
- j.state='running';j.attempts+=1;j.lease={worker,until:new Date(now.getTime()+LEASE_MS).toISOString()};j.error=null
+ j.state='running';j.attempts+=1;j.notBefore=null;j.lease={worker,until:new Date(now.getTime()+LEASE_MS).toISOString()};j.error=null
  pushLog(j,`Worker ${worker} took the job (attempt ${j.attempts})`,at);j.updatedAt=at;return j
 }
 export type Progress={stage:Stage;progress:number;message:string;log?:string[]}
@@ -189,12 +191,22 @@ export function report(job:Job,worker:string,p:Progress,now=new Date()):{job:Job
  if(control==='pause')j.lease=null
  return {job:j,control}
 }
-export type Finish={options?:ScriptOption[];state:'ready'|'needs_review'|'failed';error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
+export type Finish={options?:ScriptOption[];state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
 export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  if(!job.lease||job.lease.worker!==worker)throw new StoryError('LEASE','This worker does not hold the job.',409)
  const j=structuredClone(job),at=now.toISOString()
- j.state=f.state;j.lease=null;j.updatedAt=at
+ j.lease=null;j.updatedAt=at
  if(f.stage)j.stage=f.stage
+ if(f.state==='waiting'){
+  // Google's free tier was busy or its daily quota spent: nothing is wrong with the film, it starts again by itself
+  const t=Date.parse(String(f.retryAt||'')),ok=Number.isFinite(t)&&t>now.getTime()&&t<now.getTime()+36*3600_000
+  j.state='queued';j.error=null;j.notBefore=new Date(ok?t:now.getTime()+20*60_000).toISOString()
+  const hm=new Date(j.notBefore).toISOString().slice(11,16)
+  j.message=`Waiting for Google's free writer — starts again by itself at ${hm} UTC`
+  pushLog(j,`${String(f.error?.message||'The writer is busy').slice(0,300)} — the film waits until ${hm} UTC and starts again by itself`,at)
+  return j
+ }
+ j.state=f.state;j.notBefore=null
  if(f.state==='failed'){j.error={code:String(f.error?.code||'FAILED').slice(0,60),message:String(f.error?.message||'').slice(0,600),retryable:!!f.error?.retryable};pushLog(j,`Failed: [${j.error.code}] ${j.error.message}`,at)}
  else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=f.options.slice(0,3).map(cleanOption);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
  return j

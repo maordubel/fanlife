@@ -1,6 +1,6 @@
 import {readFileSync} from 'node:fs'
 import {describe,expect,it} from 'vitest'
-import {claim,finish,newJob,ownerAct,validateBrief,StoryError,type Job} from '@/lib/stories/jobs'
+import {claim,finish,newJob,nextForWorker,ownerAct,validateBrief,StoryError,type Job} from '@/lib/stories/jobs'
 import {findMatches,type Catalog} from '@/lib/stories/catalog'
 
 const clubs=new Map([['aek','AEK Athens'],['olympiacos','Olympiacos']])
@@ -83,5 +83,24 @@ describe('Studio — the Drive folder for one story',()=>{
  it('keeps the sides and story words the catalog wrote, bounded',()=>{
   const b=validateBrief({club_id:'aek',season:'2002/03',duration:7,sides:['AEK Athens','Real Madrid',3],story_words:'Champions League 2002'},clubs)
   expect(b.sides).toEqual(['AEK Athens','Real Madrid']);expect(b.story_words).toBe('Champions League 2002')
+ })
+})
+
+describe('A busy free writer makes the film wait, not fail (4.11.2026)',()=>{
+ const brief=validateBrief({club_id:'aek',kind:'match',season:'2002/03',match_ids:['m:2002-10-02:real'],duration:5},clubs)
+ const base=newJob('job-wait-0001',brief,palette,'owner','key-wait-0001',now)
+ const later=new Date(now.getTime()+3600_000).toISOString()
+ it('goes back to the queue with a time, and the worker leaves it alone until then',()=>{
+  const w=finish(claim(base,'w1',now),'w1',{state:'waiting',retryAt:later,error:{code:'WRITER_QUOTA_DAY',message:'spent',retryable:true}},now)
+  expect(w.state).toBe('queued');expect(w.error).toBeNull();expect(w.notBefore).toBe(later)
+  expect(nextForWorker([w],now)).toBeNull()
+  expect(nextForWorker([w],new Date(Date.parse(later)+1000))?.id).toBe(w.id)
+  expect(claim(w,'w2',new Date(Date.parse(later)+1000)).notBefore).toBeNull()
+ })
+ it('an absurd time becomes twenty minutes, and the owner can start it now',()=>{
+  const w=finish(claim(base,'w1',now),'w1',{state:'waiting',retryAt:'nonsense'},now)
+  expect(Date.parse(w.notBefore!)-now.getTime()).toBe(20*60_000)
+  const r=ownerAct(w,{action:'retry'},'owner',now)
+  expect(r.state).toBe('queued');expect(r.notBefore).toBeNull();expect(nextForWorker([r],now)?.id).toBe(r.id)
  })
 })

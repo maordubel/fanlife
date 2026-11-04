@@ -20,6 +20,8 @@ import traceback
 import urllib.error
 import urllib.request
 import zipfile
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 from .common import Palette, StageError, read_json, write_json
@@ -82,6 +84,19 @@ class Studio:
 
 
 CTYPES = {'.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.srt': 'application/x-subrip', '.vtt': 'text/vtt', '.zip': 'application/zip', '.json': 'application/json'}
+
+
+WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY')
+
+
+def retry_at(code: str, now: datetime | None = None) -> str:
+    """When a waiting film is tried again: Gemini's free quota resets at midnight Pacific time; a busy writer gets 20 minutes."""
+    now = now or datetime.now(timezone.utc)
+    if code == 'WRITER_QUOTA_DAY':
+        la = now.astimezone(ZoneInfo('America/Los_Angeles'))
+        nxt = (la + timedelta(days=1)).replace(hour=0, minute=7, second=0, microsecond=0)
+        return nxt.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z')
+    return (now + timedelta(minutes=20)).isoformat().replace('+00:00', 'Z')
 
 
 def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
@@ -358,6 +373,15 @@ def run_once(st: Studio, root: Path, log) -> bool:
     except Stop as s:
         log(f'Job {jid}: {s.control} requested by the owner — stopping at a checkpoint.')
     except StageError as e:
+        if e.code in WAIT_CODES:
+            at = retry_at(e.code)
+            log(f'Job {jid} waits for the writer until {at} [{e.code}] {e}')
+            try:
+                st.call({'op': 'finish', 'id': jid, 'state': 'waiting', 'retryAt': at,
+                         'error': {'code': e.code, 'message': str(e)[:600], 'retryable': True}})
+                return True
+            except StageError:
+                pass
         log(f'Job {jid} failed [{e.code}] {e}')
         try:
             st.call({'op': 'finish', 'id': jid, 'state': 'failed', 'error': {'code': e.code, 'message': str(e)[:600], 'retryable': e.retryable}})
