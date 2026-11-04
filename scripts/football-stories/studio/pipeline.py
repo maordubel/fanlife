@@ -314,6 +314,15 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
                          'note': ('Some pictures are AI illustrations drawn to look like photographs or documents, based on match reports; '
                                   'marked ILLUSTRATION on screen. Personal details and newspaper marks are blurred.' if drawn else
                                   'Owner illustrations made for this film.')})
+    # the moving-art library the cinema animated (studio/cinema/library.py): every piece, by name, from the plan
+    plan_p = job_dir / 'plan.json'
+    if plan_p.exists():
+        used = sorted({e['key'] for sh in read_json(plan_p).get('shots') or [] for e in (sh.get('cinema') or {}).get('lib') or []})
+        if used:
+            rows.append({'id': 'moving-art-library', 'kind': 'illustration', 'owner': 'FanLife (owner-supplied, AI-generated)',
+                         'origin': 'ai-generated', 'licence': 'owned', 'photoreal': False, 'pieces': used,
+                         'note': 'Paper-cut pieces from the owner\'s "Dynamic Football Fan Art" folder, animated by the studio; '
+                                 'fictional figures seen from behind, no identifiable person.'})
     return rows
 
 

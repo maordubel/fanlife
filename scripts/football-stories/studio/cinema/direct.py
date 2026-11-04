@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw
 
 from ..common import FPS, H, W
 from ..motion import clamp, ease_in_out, ease_out_back, ease_out_cubic
-from . import gfx, look
+from . import animate, gfx, library, look
 from .story import LETTER, story_of
 
 # visuals that print a match's score themselves (contract §3.1); matchday is the pre-match card the contract lists too
@@ -118,6 +118,7 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
         climax = pick_[0]['n'] if pick_ else None
     neutral = bool(ed.ledger.get('neutral'))
     bug_date, act, prev_broll, prev_entry = None, (0, None), None, None
+    ctxs: list[dict] = []
     for s in shots:
         v = s['visual']
         kind = v['type']
@@ -151,7 +152,7 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
             broll = None
         if not broll and (kind in DATA_CARDS or kind in ('chapter', 'form', 'race', 'versus', 'goal', 'record', 'run', 'trailer')) and not v.get('backdrop'):
             broll = look.pick(list(dl.get('broll', ())) * (kind in ('stat', 'fact', 'quote', 'press', 'ticket', 'chapter')) + look.moods_for(kind, pf, mood, derby), ed.pal.bans, f"{ed.ledger.get('club_id')}:{ed.ledger.get('season')}:{s['n']}",
-                              {prev_broll} if prev_broll else set())
+                              {prev_broll} if prev_broll else set(), animate.recorded_weather(ed, s, cited))
         prev_broll = broll or v.get('backdrop') or v.get('art') or prev_broll
         entry = _entry(s, kind, fx.get('pace'), mood, prev_entry, pf, dl.get('entries'))
         if fx.get('cut') == 'meanwhile' and s['n'] > 0:
@@ -175,6 +176,9 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
             'slug': fx.get('slug'), 'meanwhile': fx.get('cut') == 'meanwhile',
             'motif': motif_art if (motif_art and kind in ('illustration', 'map')) else None,
         }
+        ctxs.append(animate.context(ed, s, cited, pf, rows.get(primary) if primary else None, derby))
+    # the owner's moving-art library (studio/cinema/library.py): who walks in, what flies in, the scene behind, the cut
+    animate.choose(ed, shots, ctxs, library.load())
     return shots
 
 
@@ -411,6 +415,7 @@ def dress(ed, shot, s: dict) -> None:
     if cin.get('entry') and not (shot.entry == 'black' and s['n'] == 0):
         shot.entry = cin['entry']
     shot.meta['side'] = 1 if s['n'] % 2 else -1
+    animate.stage(ed, shot, s)
     shot.post.append(look.Grade(letterbox=cin.get('letterbox', False), hush=cin.get('hush', False), leak=cin.get('leak', False),
                                 seed=seed, dur=dur, vignette=0.34 if cin.get('letterbox') else 0.26, warm=cin.get('warm', False)))
     for l in shot.layers:

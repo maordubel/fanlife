@@ -160,6 +160,32 @@ disk validates exactly as before. The `follow` and `end` beats the studio adds a
 - Sound: music changes by act (`story.acts`), stings on `trailer` and `goal`, crowd beds under terrace art.
 - The 9:16 Shorts reuse the same shot builders.
 
+### 4.1 The moving-art library (owner, 4.11.2026: "real animation — items moving across the screen, arriving, leaving")
+
+The owner's Drive folder **Dynamic Football Fan Art** (`studio/cinema/library.py`) is listed on every run, downloaded and
+cut out of its paper once (actions/cache, keyed by the listing), and read by the render through `STORIES_CINEMA_LIB`.
+Without it the film is exactly the house edit. The prefix of a file says what it is (`pup-`, `ppl-`, `sup-`, `obj-`,
+`era-`, `doc-`, `ins-`, `layer-`, `sky-`, `ground-`, `city-`, `tr-`, `clip-`); `cl-`, `f01-`, `thumb-`, `iwt-`, `map-`,
+`tex-`, series plates are not used in documentaries. `-kr` pieces wear the club's colour; every piece is scrubbed of the
+rival's families.
+
+The plan (`cinema.animate.choose`) gives each shot 1–3 elements by meaning, recorded in `shot.cinema.lib`
+(`{key, role: actor|object|scene|transition, motion, side}`): a goal → the striker puppet's kick and the net-ripple clip;
+penalties or a save → the keeper's dive, the shoot-out walk; a derby → the capo, the drummer, smoke/flag wipes; a defeat
+→ the empty ground, the supporter on the step (in the rain only if a cited claim records rain); memory, records,
+chapters → the old man and the child; away and European nights → the city where it was played, the away end, the
+European night layers; the season's era → its ground (never one 20 years older). Skies: weather only when a cited claim
+records it; a night sky only with a recorded evening kick-off. Silverware only on a final won or an honour claim. No
+piece implying an incident the record does not hold (riot line, police, doctor). The recurring supporter (`sup-`) is
+one man: never twice in a frame. No piece plays in two shots running; the least-used piece is chosen first.
+
+On screen every element enters (walks in, flies in on an arc, rises, slides in), performs (step bob, kick about the
+planted foot, dive, hops of joy, a float), and leaves before the cut, behind the cards and every glass graphic; on chart
+shots people keep to the edges and are dimmed. Depth layers (`layer-*-fg/mid/bg`) move against the camera at their own
+speeds. A `tr-*` piece is the cut itself (`entry: tr:<stem>`): a full picture slides over as a torn panel, a cut-out
+sweeps across and the new shot appears where it has passed. Puppet SHEETS are rigged only from a written
+`comic/rigs/<stem>.json`; without one the `-pose` picture performs as one piece.
+
 ## 5. Three directors (owner, 4.11.2026)
 
 *"Three directors with a football brain and a film brain, each thinking a little differently; the system runs all three
