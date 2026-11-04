@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import os
 import shutil
 import subprocess
@@ -61,12 +62,25 @@ def ingest_art(brief: dict, log) -> list[str]:
             log(f'Research: {len(files)} owner pictures as beat:{set_id}/…')
     if brief.get('drive_dir'):
         from . import kit_ingest
-        files = sorted(p for p in Path(brief['drive_dir']).iterdir() if p.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp'))
-        if files:
-            set_id = f'drive-{brief["club_id"]}'
-            kit_ingest.ingest(set_id, files, {}, brief['club_id'], brief['season'], "The owner's Google Drive library.")
+        root = Path(brief['drive_dir'])
+        pack = read_json(Path(brief['drive_pack'])) if brief.get('drive_pack') and Path(brief['drive_pack']).exists() else None
+        rows = pack['files'] if pack else [{'file': str(p.relative_to(root)), 'targeted': False, 'pack': '', 'photo': False}
+                                           for p in sorted(root.rglob('*')) if p.is_file()]
+        pic = lambda r: (root / r['file']).suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.heic') and (root / r['file']).exists()  # noqa: E731
+        groups = {'pack': [r for r in rows if r['targeted'] and pic(r)], 'library': [r for r in rows if not r['targeted'] and pic(r)]}
+        for g, rs in groups.items():
+            if not rs:
+                continue
+            set_id = f'pack-{brief["club_id"]}' if g == 'pack' else f'drive-{brief["club_id"]}'
+            files = [root / r['file'] for r in rs]
+            # the story's own pack is used as the owner made it (owner, 4.11.2026): a press photograph stays a photograph
+            masks = {(root / r['file']).name: {'description': (re.sub(r'[_-]+', ' ', Path(r['file']).stem) +
+                                                                (' — press photograph of the real event' if r['photo'] else ''))}
+                     for r in rs}
+            kit_ingest.ingest(set_id, files, masks, brief['club_id'], brief['season'],
+                              "The owner's own pack for this story." if g == 'pack' else "The owner's Google Drive library.")
             art_sets.append(set_id)
-            log(f'Research: {len(files)} pictures from the Drive library as beat:{set_id}/…')
+            log(f'Research: {len(files)} pictures from the Drive {"story pack" if g == "pack" else "library"} as beat:{set_id}/…')
     if brief.get('visual_style') == 'papercut':
         art_sets.append('papercut-library')
     return art_sets
@@ -125,6 +139,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '
                 f'({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
         art_sets = [*art_sets, *ingest_art(brief, log)]
+        if brief.get('drive_pack') and Path(brief['drive_pack']).exists():
+            notes = read_json(Path(brief['drive_pack'])).get('notes') or []
+            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes)[:4000]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')

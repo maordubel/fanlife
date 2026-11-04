@@ -159,36 +159,67 @@ def drive_folder_fits(club_id: str, club_name: str, path: str) -> bool:
 
 
 def fetch_drive(job: dict, jd: Path, log) -> Path | None:
-    """Pictures for this club from the owner's public Google Drive library (studio v3): the club's own folders in
-    `01_Football_Stories…` by the club's name, at most 24, through the same public download link drive_sync uses."""
-    if job['brief'].get('drive') is False:
+    """The owner's Drive material for this film (owner, 4.11.2026: scan Google every time, for this story).
+    TARGETED packs first — a folder pasted in the brief, or folders whose names carry the story (studio/drive_scan.py) —
+    used as the owner made them; then the club's own folders from the general library. Everything is downloaded into
+    jd/drive-art/<pack>/…, and jd/drive-pack.json says which pack each file came from, what it is (a press photo or an
+    illustration) and the pack's own notes (README / ASSET_INDEX), so the writer knows what it is holding."""
+    if job['brief'].get('drive') is False and not job['brief'].get('drive_folder'):
         return None
-    from . import drive_sync
-    inv = json.loads(drive_sync.INVENTORY.read_text())
+    from . import drive_scan, drive_sync
+    b = job['brief']
+    jd.mkdir(parents=True, exist_ok=True)
+    scan_p = jd / 'drive-scan.json'
+    if os.environ.get('STORIES_DRIVE_SCAN', '0') != '1':
+        tree = drive_scan.static_tree()  # tests and local runs: the last listing only, no network
+    elif scan_p.exists():
+        tree = json.loads(scan_p.read_text())
+    else:
+        tree = drive_scan.merged_tree(drive_scan.live_tree(drive_scan.ROOT_ID, log), drive_scan.static_tree())
+        pinned = drive_scan.drive_id(b.get('drive_folder'))
+        if pinned and not any(f['id'] == pinned for f in tree['folders']):
+            sub = drive_scan.live_tree(pinned, log, deadline_s=60, prefix='pinned')
+            tree['folders'] = [{'id': pinned, 'path': 'pinned'}, *sub['folders'], *tree['folders']]
+            tree['files'] = [*sub['files'], *tree['files']]
+        scan_p.write_text(json.dumps(tree, ensure_ascii=False))
+        log(f"Drive scan: {len(tree['folders'])} folders, {len(tree['files'])} files")
+    p = drive_scan.plan(tree, b)
     fold = lambda s: re.sub(r'[^a-z0-9]+', ' ', s.lower()).strip()  # noqa: E731
-    files = [f for f in inv['files'] if drive_sync.PICTURE.search(f['name']) and drive_folder_fits(job['brief']['club_id'], job['brief']['club_name'], fold(f['path']))][:24]
-    if not files:
-        log(f"Drive: no folder for {job['brief']['club_name']} in the library")
-        return None
+    general = [f for f in tree['files'] if drive_sync.PICTURE.search(f['name']) and drive_folder_fits(b['club_id'], b['club_name'], fold(f['path']))
+               and f['id'] not in {x['id'] for x in p['pictures']}][:16]
+    if p['targeted']:
+        log('Drive: targeted packs — ' + ' · '.join(f"{t['path']} ({t['score']:.0f})" for t in p['targeted']))
+    else:
+        log('Drive: no pack names this story; the club library only')
     d = jd / 'drive-art'
     d.mkdir(parents=True, exist_ok=True)
-    got = 0
-    for f in files:
-        out = d / re.sub(r'[^A-Za-z0-9._-]+', '-', f['name'])
-        if out.exists():
-            got += 1
-            continue
-        try:
-            with urllib.request.urlopen(drive_sync.URL.format(id=f['id']), timeout=120) as r:
-                data = r.read()
-            if f.get('bytes') and len(data) != f['bytes']:
-                log(f"Drive: {f['name']} came back the wrong size — skipped")
+    rows, got = [], 0
+    for f in [*p['pictures'], *[{**g, 'pack': ''} for g in general]]:
+        sub = re.sub(r'[^A-Za-z0-9._-]+', '-', f.get('pack') or 'library').strip('-')[-60:] or 'library'
+        out = d / sub / re.sub(r'[^A-Za-z0-9._-]+', '-', f['name'])
+        out.parent.mkdir(parents=True, exist_ok=True)
+        if not out.exists():
+            try:
+                with urllib.request.urlopen(drive_sync.URL.format(id=f['id']), timeout=180) as r:
+                    data = r.read()
+                if data[:15].lower().startswith(b'<!doctype html') or data[:5].lower() == b'<html':
+                    raise OSError('Drive answered with a page')
+                out.write_bytes(data)
+            except Exception as e:  # noqa: BLE001 — reported, never guessed
+                log(f"Drive: {f['name']} did not download ({type(e).__name__})")
                 continue
-            out.write_bytes(data)
-            got += 1
-        except Exception as e:  # noqa: BLE001 — a picture that does not download is reported, never guessed
-            log(f"Drive: {f['name']} did not download ({type(e).__name__})")
-    log(f'Drive: {got} pictures for this club')
+        got += 1
+        rows.append({'file': str(out.relative_to(d)), 'pack': f.get('pack') or '', 'targeted': bool(f.get('pack')),
+                     'photo': drive_scan.is_photo(f)})
+    notes = []
+    for n in p['notes']:
+        try:
+            with urllib.request.urlopen(drive_sync.URL.format(id=n['id']), timeout=60) as r:
+                notes.append({'pack': n['pack'], 'name': n['name'], 'text': r.read(4000).decode('utf-8', 'replace')})
+        except Exception:  # noqa: BLE001
+            log(f"Drive: note {n['name']} did not download")
+    (jd / 'drive-pack.json').write_text(json.dumps({'targeted': p['targeted'], 'files': rows, 'notes': notes}, ensure_ascii=False))
+    log(f'Drive: {got} pictures ({sum(r["targeted"] for r in rows)} from the story\'s own packs)')
     return d if got else None
 
 
@@ -274,6 +305,7 @@ def run_once(st: Studio, root: Path, log) -> bool:
         drive = fetch_drive(job, jd, log)  # every run: a resumed film starts on a clean machine
         if drive:
             pb['drive_dir'] = str(drive)
+            pb['drive_pack'] = str(jd / 'drive-pack.json')
         result = pipeline.run(jd, pb, Palette.from_json(job['palette']), progress=progress)
         if result.get('state') == 'review' and result.get('stage') == 'script' and result.get('options'):
             st.call({'op': 'finish', 'id': jid, 'state': 'needs_review', 'stage': 'script', 'options': result['options']})

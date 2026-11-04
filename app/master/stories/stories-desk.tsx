@@ -71,6 +71,7 @@ function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}
  const [club,setClub]=useState(''),[kind,setKind]=useState<Kind|''>('')
  const [season,setSeason]=useState(''),[picked,setPicked]=useState<Match[]>([]),[opp,setOpp]=useState<Opp|null>(null)
  const [duration,setDuration]=useState(10),[style,setStyle]=useState('collage'),[tone,setTone]=useState('auto')
+ const [folder,setFolder]=useState('')
  const [scripts,setScripts]=useState<1|3>(3),[drive,setDrive]=useState(true),[reel,setReel]=useState(false),[privacy,setPrivacy]=useState<Privacy>('private')
  const [busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('')
  const key=useRef<string>('')
@@ -90,7 +91,7 @@ function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}
   const local=String(d.get('publish_at')||'')
   const sorted=[...picked].sort((a,b)=>a.date.localeCompare(b.date))
   const brief={club_id:c.id,kind,season:kind==='season'?season:kind==='rivalry'?'1900–2100':sorted[0]?.season,match_ids:sorted.map(m=>m.id),opponent:opp?.name,
-   duration,visual_style:style,tone,scripts,drive,reel_to_telegram:reel,privacy,publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
+   duration,visual_style:style,tone,scripts,drive,drive_folder:folder.trim()||undefined,reel_to_telegram:reel,privacy,publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
    topic:d.get('topic')||'',notes:d.get('notes')||'',hold:d.get('hold')==='on',voice:d.get('voice')||'auto',crowd:d.get('crowd')||'soft',
    review:scripts===1&&d.get('review')==='script'?'script':'auto'}
   try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current=''
@@ -124,7 +125,8 @@ function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}
      </div>
     </Step>
     <Step n={8} title="Extras">
-     <label className={css.check}><input type="checkbox" checked={drive} onChange={e=>setDrive(e.target.checked)}/> Use this club&rsquo;s pictures from the Google Drive library</label>
+     <label className={css.check}><input type="checkbox" checked={drive} onChange={e=>setDrive(e.target.checked)}/> Scan the Google Drive library for this story (its own packs first, then the club&rsquo;s pictures)</label>
+     <label className={css.lab}>Drive folder for this story (optional)<input value={folder} onChange={e=>setFolder(e.target.value)} placeholder="https://drive.google.com/drive/folders/…" inputMode="url"/><span className={css.hint}>Paste a folder you made for this film — it is used first, as you made it. Leave empty: the studio finds packs whose names fit the story.</span></label>
      <label className={css.check}><input type="checkbox" checked={reel} onChange={e=>setReel(e.target.checked)}/> Send the first Reel to my Telegram when it is done</label>
      <div className={css.lab}>YouTube visibility<div className={css.chips} role="group" aria-label="Visibility">{(['private','unlisted','public','scheduled'] as const).map(p=><button type="button" key={p} className={`${css.chip} min-h-tap`} aria-pressed={privacy===p} onClick={()=>setPrivacy(p)}>{p}</button>)}</div></div>
     </Step>
@@ -141,7 +143,7 @@ function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}
       {scripts===1&&<label>Script review<select name="review" defaultValue="auto"><option value="auto">Automatic</option><option value="script">Stop for my approval</option></select></label>}
      </details>
     </form>
-    <div className={css.summary} aria-live="polite"><b>{subject}</b><span>{mins(duration)} · {STYLE_CARDS.find(x=>x.k===style)?.title} · {TONE_CHIPS.find(x=>x[0]===tone)?.[1]} · {scripts===3?'3 scripts':'1 script'}{drive?' · Drive pictures':''}{reel?' · Reel to Telegram':''} · {privacy}</span></div>
+    <div className={css.summary} aria-live="polite"><b>{subject}</b><span>{mins(duration)} · {STYLE_CARDS.find(x=>x.k===style)?.title} · {TONE_CHIPS.find(x=>x[0]===tone)?.[1]} · {scripts===3?'3 scripts':'1 script'}{folder.trim()?' · your Drive folder':drive?' · Drive scan':''}{reel?' · Reel to Telegram':''} · {privacy}</span></div>
     <button type="button" className={`${css.go} min-h-tap`} disabled={busy} onClick={()=>void make()}>{busy?'Queuing…':'Make it'}</button>
    </>}
    {error&&<p role="alert" className={css.alert}>{error}</p>}{notice&&<p role="status" className={`${css.alert} ${css.ok}`}>{notice}</p>}

@@ -72,3 +72,16 @@ describe('Studio v3 — the catalog',()=>{
   expect(s).toMatch(/choose_script/)
  })
 })
+
+describe('Studio — the Drive folder for one story',()=>{
+ it('takes a pasted Drive folder link or id and refuses anything else',()=>{
+  const b=validateBrief({club_id:'aek',season:'2002/03',duration:7,drive_folder:'https://drive.google.com/drive/folders/1Wegz3L6S2OrFZmvgShjNHpmSBxavsDxZ?usp=drive_link'},clubs)
+  expect(b.drive_folder).toBe('1Wegz3L6S2OrFZmvgShjNHpmSBxavsDxZ')
+  expect(validateBrief({club_id:'aek',season:'2002/03',duration:7},clubs).drive_folder).toBeNull()
+  expect(()=>validateBrief({club_id:'aek',season:'2002/03',duration:7,drive_folder:'my folder'},clubs)).toThrow(/Drive folder/)
+ })
+ it('keeps the sides and story words the catalog wrote, bounded',()=>{
+  const b=validateBrief({club_id:'aek',season:'2002/03',duration:7,sides:['AEK Athens','Real Madrid',3],story_words:'Champions League 2002'},clubs)
+  expect(b.sides).toEqual(['AEK Athens','Real Madrid']);expect(b.story_words).toBe('Champions League 2002')
+ })
+})
