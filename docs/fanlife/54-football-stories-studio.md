@@ -188,3 +188,6 @@ Owner: *"a narrator whose English is human, who says every club, player and comp
    (a 9-minute film ≈ 90 minutes), Kokoro at ×0.5. From the transcripts: a voiced r before a consonant made "Marko"
    sound like "Marikor", so the lexicon is now spoken non-rhotic, as a British narrator speaks (Mendilibar =
    men-dee-lee-BAH); AEK said as one word was heard as "Ayak" — the owner decides between AH-ek and A-E-K.
+9. **Owner's choice (4.11.2026): Take B** — Kokoro bm_george with the lexicon, misaki, human timing, breaths and the
+   narrator chain is the Football Stories narrator (the default). AEK stays one word, as the Greeks say it ("כמו היוונים").
+   I WAS THERE keeps its own voice (bm_lewis, series.json) and gets the same lexicon and chain.
