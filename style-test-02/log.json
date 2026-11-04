@@ -1,0 +1,29 @@
+[
+ {
+  "panel": "a-funny-bathroom",
+  "model": "pollinations:flux",
+  "seconds": 16.7,
+  "bytes": 133086,
+  "file": "a-funny-bathroom--pollinations-flux.png"
+ },
+ {
+  "panel": "b-war-floodlit-riot",
+  "model": "pollinations:flux",
+  "seconds": 22.7,
+  "bytes": 133204,
+  "file": "b-war-floodlit-riot--pollinations-flux.png"
+ },
+ {
+  "panel": "c-dark-1942-line",
+  "model": "pollinations:flux",
+  "seconds": 16.2,
+  "refused": "HTTP 404: 404 Not Found"
+ },
+ {
+  "panel": "d-emotion-platform",
+  "model": "pollinations:flux",
+  "seconds": 16.4,
+  "bytes": 133032,
+  "file": "d-emotion-platform--pollinations-flux.png"
+ }
+]
