@@ -1,0 +1,42 @@
+name: Stories · comic art
+# Generates comic panel art for the stories series from a job file (scripts/football-stories/comic/art-jobs/*.json)
+# with the image models whose keys live in Actions secrets, and puts the pictures on the short-lived `comic-art-tmp`
+# branch for review. Runs when a job file changes on a claude/comic-* branch (the job file is the budget).
+on:
+  workflow_dispatch:
+    inputs:
+      job: {description: 'job file under scripts/football-stories/comic/art-jobs', required: true}
+  push:
+    branches: ['claude/comic-*']
+    paths: ['scripts/football-stories/comic/art-jobs/*.json']
+permissions:
+  contents: write
+concurrency: {group: stories-comic-art, cancel-in-progress: false}
+jobs:
+  art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Which jobs
+        id: jobs
+        run: |
+          if [ -n "${{ github.event.inputs.job }}" ]; then echo "list=scripts/football-stories/comic/art-jobs/${{ github.event.inputs.job }}" >> "$GITHUB_OUTPUT"
+          else echo "list=$(git diff --name-only HEAD~1 HEAD -- 'scripts/football-stories/comic/art-jobs/*.json' | tr '\n' ' ')" >> "$GITHUB_OUTPUT"; fi
+      - name: Draw
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          for j in ${{ steps.jobs.outputs.list }}; do
+            n=$(basename "$j" .json); python3 scripts/football-stories/comic/art_gen.py "$j" "$RUNNER_TEMP/art/$n"
+          done
+      - name: Branch
+        run: |
+          cd "$RUNNER_TEMP/art" && git init -q && git checkout -q -b comic-art-tmp
+          git config user.name "fanlife-render" && git config user.email "actions@users.noreply.github.com"
+          git fetch -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" comic-art-tmp 2>/dev/null && git reset -q --soft FETCH_HEAD || true
+          git add -A && git commit -qm "comic art (temporary, for review)" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" comic-art-tmp
