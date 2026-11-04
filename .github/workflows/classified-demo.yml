@@ -1,0 +1,83 @@
+name: CLASSIFIED · demo
+# Renders the FILE 01 cold open from the owner's panels on Drive and sends it to his Telegram chat.
+# No terminal: GitHub → Actions → "CLASSIFIED · demo" → Run workflow.
+# The panels are downloaded into the runner's temp folder and the render is written there too: neither is ever
+# committed. The video is also kept as a workflow artifact for one day.
+# Secrets used: TELEGRAM_BOT_TOKEN · FAN_LIFE_CRON_SECRET (finds the linked chat, as the studio worker does).
+on:
+  workflow_dispatch:
+    inputs:
+      vertical:
+        description: 'Also render the 9:16 cut for Shorts'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: classified-demo
+  cancel-in-progress: false
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+      CLASSIFIED_DEPTH_MODEL: /home/runner/models/depth-anything-v2-small.onnx
+      CLASSIFIED_CACHE: /home/runner/.cache/fanlife-classified/layers
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow opencv-python-headless onnxruntime fonttools brotli
+      - name: Depth model (Depth Anything V2 Small, Apache-2.0 — free, cached)
+        id: depth
+        uses: actions/cache@v4
+        with: {path: ~/models, key: depth-anything-v2-small-onnx-v1}
+      - if: steps.depth.outputs.cache-hit != 'true'
+        name: Download the depth model
+        run: |
+          mkdir -p ~/models
+          if curl -fsSL --retry 3 -o ~/models/depth-anything-v2-small.onnx \
+              https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model.onnx; then
+            ls -l ~/models
+          else
+            rm -f ~/models/depth-anything-v2-small.onnx
+            echo "::warning::The depth model did not download — the composer falls back to its saliency layers"
+          fi
+      - name: Layer cache (per picture, by sha256)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/fanlife-classified/layers
+          key: classified-layers-${{ github.run_id }}
+          restore-keys: classified-layers-
+      - name: The owner's panels from Drive (into the runner's temp folder, never the repo)
+        run: |
+          python3 scripts/football-stories/comic/drive_fetch.py --file file01 --out "$RUNNER_TEMP/panels" --report "$RUNNER_TEMP/fetch.json"
+      - name: Render the FILE 01 cold open (16:9)
+        run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          python3 scripts/football-stories/comic/compose.py --episode scripts/football-stories/comic/episodes/file01-demo.json \
+            --panels "$RUNNER_TEMP/panels" --out "$RUNNER_TEMP/out/classified-file01-demo.mp4" --report "$RUNNER_TEMP/out/report.json"
+          cat "$RUNNER_TEMP/out/report.json"
+      - if: inputs.vertical
+        name: Render the 9:16 cut
+        run: |
+          python3 scripts/football-stories/comic/compose.py --episode scripts/football-stories/comic/episodes/file01-demo.json \
+            --panels "$RUNNER_TEMP/panels" --out "$RUNNER_TEMP/out/classified-file01-demo-9x16.mp4" --vertical
+      - name: Keep the video for one day
+        uses: actions/upload-artifact@v4
+        with:
+          name: classified-file01-demo
+          path: ${{ runner.temp }}/out/*.mp4
+          retention-days: 1
+      - name: Send to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          depth=$(python3 -c "import json;print(', '.join(sorted(set(json.load(open('$RUNNER_TEMP/out/report.json'))['depth'].values()))))")
+          python3 scripts/football-stories/comic/telegram_send.py "$RUNNER_TEMP"/out/*.mp4 \
+            --caption "🗂 CLASSIFIED · FILE 01 · THE BOTTLE — cold open demo (depth: $depth)"

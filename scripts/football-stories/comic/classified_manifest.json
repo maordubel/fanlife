@@ -1,0 +1,68 @@
+{
+  "series": "CLASSIFIED",
+  "channel": "FanLife: Football Stories",
+  "version": 1,
+  "note": "The owner's panels live in his public Drive folder only. Nothing listed here is ever committed to the repository: drive_fetch.py downloads them into a temporary folder outside it. Owner decision 4.11.2026: everything in a targeted folder is approved material used AS IS (real faces, press originals included) — the composer never blurs, rejects or anonymises it. The no-real-faces / no-blood rules apply only to what the composer draws in code.",
+  "drive_folder": "1tZgDuFn7LdaxSd-LctIG1j2n0JuNW-_L",
+  "download_url": "https://drive.usercontent.google.com/download?id={id}&export=download&confirm=t",
+  "tones": {
+    "LAUGH": {"color": "#1B9AD6", "label": "LAUGH"},
+    "WAR": {"color": "#D71920", "label": "WAR"},
+    "HEART": {"color": "#233C8F", "label": "HEART"}
+  },
+  "kit": [
+    {"id": "s02-dossier", "role": "S02", "kind": "panel", "name": "Desk_items_under_lamp_light", "drive_id": "1MAcM2IW6crWqkKV6j2DqHAnqqCsH13u6", "file": "s02-dossier.jpg"},
+    {"id": "s03-laugh", "role": "S03", "kind": "panel", "name": "Comic_background_with_sunray_str…", "drive_id": "1QrUM9_C21PpmNVI4inlTaKxPpguVq_d_", "file": "s03-laugh.jpg"},
+    {"id": "s04-abstract-a", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_f49f7622", "drive_id": "1fZIBjvoFyP0ZDcBKAbHkm6FWYOV0unkv", "file": "s04-abstract-a.jpg", "brief_match": "uncertain: WAR or HEART background, to be confirmed by the owner"},
+    {"id": "s05-abstract-b", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_787e7b7d", "drive_id": "1oVZzTAr4zxCn1raUOW1u42CePDzjxCHv", "file": "s05-abstract-b.jpg", "brief_match": "uncertain: WAR or HEART background, to be confirmed by the owner"}
+  ],
+  "files": {
+    "file01": {
+      "title": "THE BOTTLE",
+      "number": "01",
+      "tone": "LAUGH",
+      "year": 2002,
+      "brief_roles": ["CH1", "CH2", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20", "V1", "V2"],
+      "panels": [
+        {"id": "f01-ch-a", "role": "CH1/CH2", "kind": "sheet", "name": "Goalkeeper_character_sheet_views", "drive_id": "1OUPf_eNQI0aHmVm9RCc2R2v7CNKgSNZA", "file": "f01-ch-a.jpg", "brief_match": "uncertain: which sheet is CH1 (keeper) and which CH2 (the kid)"},
+        {"id": "f01-ch-b", "role": "CH1/CH2", "kind": "sheet", "name": "Character_sheet_of_goalkeeper", "drive_id": "1fLYdLA1FHEBVCFBdSwzwAhtopNo5NB8M", "file": "f01-ch-b.jpg", "brief_match": "uncertain: which sheet is CH1 (keeper) and which CH2 (the kid)"},
+        {"id": "f01-p01-slip", "role": "P01", "kind": "panel", "name": "Hand_dropping_cologne_bottle", "drive_id": "12BCsm0BAg-wlhwhP90eFp1WUBESoK28g", "file": "f01-p01-slip.jpg"},
+        {"id": "f01-p02-bottle-hero", "role": "P02", "kind": "panel", "name": "Cologne_bottle_on_bathroom_shelf", "drive_id": "1aTTEJrMqeByaQuw7DBTYXXS8JSffFfE7", "file": "f01-p02-bottle-hero.jpg"},
+        {"id": "f01-p04-training-dive", "role": "P04", "kind": "panel", "name": "Goalkeeper_making_diving_save", "drive_id": "1UkQny-bnw2dPfBEJ1s88MmTsbXTAEqqI", "file": "f01-p04-training-dive.jpg"},
+        {"id": "f01-floodlit-standing", "role": "P05/P15", "kind": "panel", "name": "Goalkeeper_standing_in_floodlit_…", "drive_id": "1-rm6AH4wFWgiiiPdWxgOcoQ2SgOwZkb0", "file": "f01-floodlit-standing.jpg", "brief_match": "uncertain: P05 (the kid) or P15 (Suwon)"},
+        {"id": "f01-floodlit-entering", "role": "P05/P15", "kind": "panel", "name": "Goalkeeper_entering_stadium_at_n…", "drive_id": "1vjM2jWf0P0zNOGEaO7iaz1WH3nwenA8u", "file": "f01-floodlit-entering.jpg", "brief_match": "uncertain: P05 (the kid) or P15 (Suwon)"},
+        {"id": "f01-p07-room-evening", "role": "P07", "kind": "panel", "name": "Goalkeeper_walking_towards_bathroom", "drive_id": "1--L3Pb621NQBk71nNjNnFiylmZicfsqr", "file": "f01-p07-room-evening.jpg"},
+        {"id": "f01-p08-reach", "role": "P08", "kind": "panel", "name": "Man_reaching_for_cologne_bottle", "drive_id": "1QMUfDDJttya6P9aGjWU2v1u4PcY6mL6q", "file": "f01-p08-reach.jpg"},
+        {"id": "f01-p10-sink-smash", "role": "P10", "kind": "panel", "name": "Glass_cologne_bottle_falling", "drive_id": "1obEoQQ5-5idou2y2fho91Bw52HmRqlji", "file": "f01-p10-sink-smash.jpg"},
+        {"id": "f01-p12-hospital", "role": "P12", "kind": "panel", "name": "Doctors_wheel_trolley_down_corridor", "drive_id": "1bwwv3CXiQ0yJMqQ2qSC11dFBakKL2odG", "file": "f01-p12-hospital.jpg"},
+        {"id": "f01-p13-crutches", "role": "P13", "kind": "panel", "name": "Goalkeeper_sits_injured_at_press", "drive_id": "1GR0RM1xmWVP8WQf4ONwzUmtWGyLrsRXd", "file": "f01-p13-crutches.jpg"},
+        {"id": "f01-p14-home", "role": "P14", "kind": "panel", "name": "Empty_armchair_before_television", "drive_id": "1h33EC7Ps5ae_hBCj_gzHbf6pF_VTeleG", "file": "f01-p14-home.jpg", "brief_match": "close: the brief's P14 is a phone on a kitchen table; this is an empty armchair before a television"},
+        {"id": "f01-p16-penalty-save", "role": "P16", "kind": "panel", "name": "Goalkeeper_diving_saving_penalty", "drive_id": "1Hh-rLmRIRd9QYgJosQ5XAyLas7tqiDxy", "file": "f01-p16-penalty-save.jpg"},
+        {"id": "f01-p17-shootout-line", "role": "P17", "kind": "panel", "name": "Footballers_watching_penalty_sho…", "drive_id": "1qCI1U4WxFiWv_frdjCAJqjgsL0VvHaTV", "file": "f01-p17-shootout-line.jpg"},
+        {"id": "f01-p19-kiosk", "role": "P19", "kind": "panel", "name": "People_walking_past_newspaper_kiosk", "drive_id": "11YzO0bj8GTdZ0Y2pE6uDAXJ0RXsktS_E", "file": "f01-p19-kiosk.jpg"},
+        {"id": "f01-p20-empty-shelf", "role": "P20", "kind": "panel", "name": "Empty_bathroom_shelf_clearing_mi…", "drive_id": "1oOEvF0jCrELI23otCBnWOk2hId2EVLjg", "file": "f01-p20-empty-shelf.jpg"}
+      ]
+    },
+    "file02": {
+      "title": "MAKSIMIR",
+      "number": "02",
+      "tone": "WAR",
+      "year": 1990,
+      "brief_roles": ["CH3", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "V1"],
+      "panels": [
+        {"id": "f02-ch-captain", "role": "CH3", "kind": "sheet", "name": "Footballer_character_sheet_angles", "drive_id": "1MQfmNQKL63V0ojETSdqO15ePjgkJlQMg", "file": "f02-ch-captain.jpg"},
+        {"id": "f02-p01-cold-open", "role": "P01", "kind": "panel", "name": "Character_leaping_into_riot_stadium", "drive_id": "1Vvn3PVkY9mh5jaCAoj3ydbwgkT4rLgwy", "file": "f02-p01-cold-open.jpg"},
+        {"id": "f02-p11-the-leap", "role": "P11", "kind": "panel", "name": "Footballer_leaping_into_riot_police", "drive_id": "1oNEPZf3OL112Dbd8jq8UkI1XDtg-9FZU", "file": "f02-p11-the-leap.jpg"},
+        {"id": "f02-facing-police", "role": "P07/P11", "kind": "panel", "name": "Footballer_facing_police_in_smoke", "drive_id": "1PoJKDf5O-Mbq4EwUj3g_P7XAhrgLnUxd", "file": "f02-facing-police.jpg", "brief_match": "uncertain: a player facing the police line — closest to P07 (police line) or an alternate P11"},
+        {"id": "f02-p10-captain-sees", "role": "P10", "kind": "panel", "name": "Captain_witnessing_clash_through…", "drive_id": "1JIIwoausyLVeE6NbQcTxqQFyM-QNu6uv", "file": "f02-p10-captain-sees.jpg"},
+        {"id": "f02-p12-shield", "role": "P12", "kind": "panel", "name": "Supporters_shielding_captain_acr…", "drive_id": "1bqFCLpk4QU4qxJLVABOoJURva-daVs8q", "file": "f02-p12-shield.jpg"},
+        {"id": "f02-p13-fire", "role": "P13", "kind": "panel", "name": "Wooden_stand_on_fire", "drive_id": "16-qfxm53I7iuIhvpcr0SWBA9OL_060jS", "file": "f02-p13-fire.jpg"},
+        {"id": "f02-p09-water-cannon", "role": "P09", "kind": "panel", "name": "Water-cannon_truck_dispersing_crowd", "drive_id": "1lIwRRpBQARHAmdTDs6VBfkkEUp6Ehd7q", "file": "f02-p09-water-cannon.jpg"},
+        {"id": "f02-p02-city-1990", "role": "P02", "kind": "panel", "name": "Crowds_gathering_in_city_square", "drive_id": "13Xxywiw8kmqVqDown9bS7ufWoJLEFKn0", "file": "f02-p02-city-1990.jpg"},
+        {"id": "f02-p17-memorial", "role": "P17", "kind": "panel", "name": "People_at_stone_memorial_wall", "drive_id": "1PYFVZCeReJ4-ixhTfgIoSNXai2CylnyP", "file": "f02-p17-memorial.jpg"},
+        {"id": "f02-p14-scoreboard", "role": "P14", "kind": "panel", "name": "Blank_stadium_scoreboard_in_smoke", "drive_id": "1ztF_DX9bWY15xfqRzwp9cuzcr6pHNrUQ", "file": "f02-p14-scoreboard.jpg"},
+        {"id": "f02-p15-dawn", "role": "P15", "kind": "panel", "name": "Empty_stadium_after_event", "drive_id": "1Yw7QBSgCTPdySIZeXmECCJPgURbvLDPT", "file": "f02-p15-dawn.jpg"}
+      ]
+    }
+  }
+}
