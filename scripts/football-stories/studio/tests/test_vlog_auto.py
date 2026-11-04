@@ -232,10 +232,25 @@ class MeasurementTest(unittest.TestCase):
     def test_a_beat_cannot_outrun_its_clip(self):
         with tempfile.TemporaryDirectory() as d:
             w = answer()
-            w['film']['beats'][0].update(clip='IMG_3.MP4', **{'in': 8.0}, dur=6.0)
+            w['film']['beats'][0].update(clip='IMG_3.MP4', **{'in': 7.0}, dur=6.0)        # silent: shortened to fit
+            w['film']['beats'][3].update(clip='IMG_3.MP4', **{'in': 8.0})                  # spoken: sent back
             ep, led, mat, foot = built(w, Path(d))
             errs = V.validate_episode(ep, foot, auto=True, mat=mat)
-        self.assertTrue(any('the beat needs' in e for e in errs), errs)
+        self.assertLess(ep['film']['beats'][0]['dur'], 6.0)
+        self.assertTrue(any('film beat 3' in e and 'the beat needs' in e for e in errs), errs)
+        self.assertFalse(any('film beat 0' in e for e in errs), errs)
+
+    def test_a_number_a_claim_carries_is_cited_for_the_writer(self):
+        with tempfile.TemporaryDirectory() as d:
+            w = answer()
+            w['film']['beats'][7].pop('claims')
+            foot, work = fake_material(Path(d))
+            mat = V.material(foot, work, lambda m: None)
+            led = V.ledger_of(MATCH, CLUB, '')
+            ep = V.assemble(w, MATCH, CLUB, led, foot, episode=5)
+            V.normalise(ep, mat, ledger=led)
+        self.assertEqual(ep['film']['beats'][7]['claims'], [MATCH_ID])
+        self.assertEqual(V.fact_check(ep, led, mat), [])
 
 
 class WriterLoopTest(unittest.TestCase):

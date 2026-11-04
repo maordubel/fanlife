@@ -128,6 +128,7 @@ jobs:
           [ -f "$r" ] && { echo '### Render' >> "$GITHUB_STEP_SUMMARY"; python3 -c "import json,sys;r=json.load(open(sys.argv[1]));[print(f'- {c}: {r[c].get(\"qa\")}') for c in ('film','reel') if c in r]" "$r" >> "$GITHUB_STEP_SUMMARY"; }
           mkdir -p "$RUNNER_TEMP/keep"
           cp "$w"/episode.json "$w"/writer.json "$w"/survey/inventory.md "$RUNNER_TEMP/keep/" 2>/dev/null || true
+          mkdir -p "$RUNNER_TEMP/keep/writer-answers" && cp "$w"/cache/*.json "$RUNNER_TEMP/keep/writer-answers/" 2>/dev/null || true
           find "$RUNNER_TEMP/out" \( -name '*-publish.mp4' -o -name 'thumbnail.jpg' -o -name '*.srt' -o -name 'report.json' -o -name 'result.json' -o -name 'youtube-description.txt' -o -name 'marketing.txt' -o -name 'frame-*.jpg' \) \
             -exec sh -c 'mkdir -p "$RUNNER_TEMP/keep/$(basename "$(dirname "$1")")" && cp "$1" "$RUNNER_TEMP/keep/$(basename "$(dirname "$1")")/"' _ {} \; 2>/dev/null || true
       - if: always()
