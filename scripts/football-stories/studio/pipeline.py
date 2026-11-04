@@ -36,9 +36,40 @@ LOOKS = {
                 "colorbalance=rs=0.03:gs=0.0:bs=-0.04:rm=0.02:bm=-0.03,"
                 "noise=c0s=9:c0f=t+u:c1s=3:c1f=t,vignette=angle=PI/5.5"),
     'punch': "eq=contrast=1.08:saturation=1.12,unsharp=5:5:0.6",
+    # a night broadcast: cooler, deeper blacks, the floodlights holding the highlights
+    'night': ("eq=contrast=1.1:saturation=0.95:brightness=-0.03:gamma=0.96,"
+              "colorbalance=rs=-0.03:bs=0.05:rm=-0.02:bm=0.03:rh=0.02:bh=-0.01,vignette=angle=PI/4.5"),
 }
+# Each visual style finishes with its own grade unless the brief names one (studio v3).
+STYLE_LOOK = {'collage': 'clean', 'papercut': 'punch', 'archive': 'archive', 'night': 'night'}
 
 STAGES = ['research', 'script', 'voice', 'graphics', 'edit', 'mix', 'master', 'package', 'qa']
+
+
+def ingest_art(brief: dict, log) -> list[str]:
+    """The owner's pictures for this film, the Drive library and the paper-cut set, as beat sets. Idempotent: run again
+    on every resume, because each run of the worker starts on a clean machine and only the job's JSON is kept."""
+    art_sets: list[str] = []
+    if brief.get('art_dir'):
+        from . import kit_ingest
+        set_id = brief['art_set']
+        files = [Path(brief['art_dir']) / a['name'] for a in brief.get('art') or [] if (Path(brief['art_dir']) / a['name']).exists()]
+        masks = {a['name']: {'illustrated': True} for a in brief.get('art') or [] if a.get('illustrated')}
+        if files:
+            kit_ingest.ingest(set_id, files, masks, brief['club_id'], brief['season'], 'Owner pictures uploaded for this film.')
+            art_sets.append(set_id)
+            log(f'Research: {len(files)} owner pictures as beat:{set_id}/…')
+    if brief.get('drive_dir'):
+        from . import kit_ingest
+        files = sorted(p for p in Path(brief['drive_dir']).iterdir() if p.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp'))
+        if files:
+            set_id = f'drive-{brief["club_id"]}'
+            kit_ingest.ingest(set_id, files, {}, brief['club_id'], brief['season'], "The owner's Google Drive library.")
+            art_sets.append(set_id)
+            log(f'Research: {len(files)} pictures from the Drive library as beat:{set_id}/…')
+    if brief.get('visual_style') == 'papercut':
+        art_sets.append('papercut-library')
+    return art_sets
 
 
 def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file: Path | None = None) -> dict:
@@ -77,23 +108,29 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         notes = research.note_claims(brief.get('notes') or '')
         if notes:
             log(f'Research: {len(notes)} quotes and headlines from the brief')
-        ledger = research.build_ledger(brief['club_id'], brief['season'], extra + notes, base)
-        if brief.get('focus_from') or brief.get('focus_to'):
+        kind = brief.get('kind') or 'season'
+        if kind == 'rivalry':
+            ledger = research.rivalry_ledger(brief['club_id'], brief['opponent'], brief['season'])
+            for c in extra + notes:
+                research.validate_claim(c)
+                ledger['claims'].append(c)
+            log(f'Research: every meeting with {brief["opponent"]} ({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
+        else:
+            ledger = research.build_ledger(brief['club_id'], brief['season'], extra + notes, base)
+        if kind in ('match', 'tie') and brief.get('match_ids'):
+            ledger = research.pick(ledger, brief['match_ids'])
+            log(f'Research: {len(brief["match_ids"])} chosen match(es)')
+        elif kind != 'rivalry' and (brief.get('focus_from') or brief.get('focus_to')):
             ledger = research.focus(ledger, brief.get('focus_from'), brief.get('focus_to'))
             log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '
                 f'({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
-        if brief.get('art_dir'):
-            from . import kit_ingest
-            set_id = brief['art_set']
-            files = [Path(brief['art_dir']) / a['name'] for a in brief.get('art') or [] if (Path(brief['art_dir']) / a['name']).exists()]
-            masks = {a['name']: {'illustrated': True} for a in brief.get('art') or [] if a.get('illustrated')}
-            if files:
-                kit_ingest.ingest(set_id, files, masks, brief['club_id'], brief['season'], 'Owner pictures uploaded for this film.')
-                art_sets = [*art_sets, set_id]
-                log(f'Research: {len(files)} owner pictures as beat:{set_id}/…')
+        art_sets = [*art_sets, *ingest_art(brief, log)]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
+    else:
+        # A resumed film (after the owner picked a script) runs on a fresh machine: the pictures are put back in place.
+        ingest_art(brief, lambda *_: None)
     ledger = read_json(lp)
 
     # 2 script
@@ -106,6 +143,22 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             s['_writer'] = [{'source': f'supplied file {script_file.name}'}]
             s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
             sc.ensure_valid(s, ledger, float(brief['duration']))
+        elif int(brief.get('scripts') or 1) > 1:
+            # three scripts, three angles: the owner chooses one in the studio (studio v3)
+            opts = sorted(job_dir.glob('script-option-*.json'))
+            if not opts:
+                made = writer.write_options(brief, {**ledger, 'bans': palette.bans}, cache, log)
+                for i, o in enumerate(made, 1):
+                    write_json(job_dir / f'script-option-{i}.json', o)
+                opts = sorted(job_dir.glob('script-option-*.json'))
+            choice = brief.get('choice')
+            if not choice:
+                return {'state': 'review', 'stage': 'script', 'options': [writer.option_summary(read_json(p), int(p.stem.rsplit('-', 1)[1])) for p in opts]}
+            chosen = job_dir / f'script-option-{int(choice)}.json'
+            if not chosen.exists():
+                raise StageError('CHOICE', f'Script {choice} is not among the written options')
+            s = read_json(chosen)
+            log(f'Script: option {choice} chosen by the owner')
         else:
             s = writer.write_script(brief, {**ledger, 'bans': palette.bans}, cache, log)
         s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
@@ -148,7 +201,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     master = out / 'master.mp4'
     if not master.exists():
         kb = master_kbps(plan['duration'])
-        look = LOOKS.get(brief.get('look') or 'clean')
+        look = LOOKS.get(brief.get('look') or STYLE_LOOK.get(brief.get('visual_style') or 'collage', 'clean'))
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(mix), '-map', '0:v', '-map', '1:a',
                         *(['-vf', look] if look else []),
                         '-c:v', 'libx264', '-preset', os.environ.get('STORIES_MASTER_PRESET', 'medium'), '-profile:v', 'high', '-crf', '18',

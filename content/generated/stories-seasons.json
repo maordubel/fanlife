@@ -1,5 +1,5 @@
 {
- "note": "Seasons a Football Stories film can be made about (matches the research stage can read). Regenerate: npm run clubs:precompile, then python3 -m studio.seasons in scripts/football-stories.",
+ "note": "Seasons a Football Stories film can be made about (matches the research stage can read). Regenerate: npm run clubs:precompile, then python3 -m studio.seasons in scripts/football-stories. The full per-club catalog (matches, opponents) is content/generated/stories/<club>.json.",
  "clubs": {
   "hapoel-tel-aviv": {
    "2026/27": 12,
