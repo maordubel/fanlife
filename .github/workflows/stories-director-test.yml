@@ -40,7 +40,9 @@ jobs:
           curl -sSL -o ~/models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
           curl -sSL -o ~/models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
       - name: Palettes
-        run: npx tsx scripts/football-stories/palettes.ts > /tmp/palettes.json
+        run: |
+          mkdir -p node_modules/server-only && echo "{\"name\":\"server-only\",\"main\":\"index.js\"}" > node_modules/server-only/package.json && : > node_modules/server-only/index.js
+          npx tsx scripts/football-stories/palettes.ts > /tmp/palettes.json
       - name: The three directors write
         working-directory: scripts/football-stories
         env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}', PALETTES: /tmp/palettes.json, KOKORO_DIR: /home/runner/models}
@@ -82,7 +84,9 @@ jobs:
           curl -sSL -o ~/models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
           curl -sSL -o ~/models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
       - name: Palettes
-        run: npx tsx scripts/football-stories/palettes.ts > /tmp/palettes.json
+        run: |
+          mkdir -p node_modules/server-only && echo "{\"name\":\"server-only\",\"main\":\"index.js\"}" > node_modules/server-only/package.json && : > node_modules/server-only/index.js
+          npx tsx scripts/football-stories/palettes.ts > /tmp/palettes.json
       - uses: actions/download-artifact@v4
         with: {name: dtest, path: '${{ github.workspace }}/dtest'}
       - name: Render this director's film
