@@ -90,9 +90,26 @@ def _kick(n):
     return (np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 9)).astype('float32')
 
 
+# The cinema's colour on the score (Director's Cut): a director's music key, or the act the story is in, leans the mood.
+# drive = the broadcaster's quicker pulse; warm = the terrace's slower, softer band; epic = the trailer's low swell and
+# crashes. An act moves the harmony to another key, so the music turns when the story turns (cinema.direct).
+FLAVOURS = {
+    'drive': {'bpm': 1.12, 'energy': 0.08, 'add': ('pulse',), 'drop': ()},
+    'warm': {'bpm': 0.92, 'energy': -0.06, 'add': ('claps',), 'drop': ('heart', 'crash')},
+    'epic': {'bpm': 0.96, 'energy': 0.1, 'add': ('rise', 'low'), 'drop': ('claps',)},
+}
+ACT_FLAVOUR = {'Cold open': 'epic', 'Act I': 'drive', 'Act II': 'drive', 'Act III': 'epic', 'Epilogue': 'warm'}
+ACT_SHIFT = (0, 2, -3, 5, 0)
+
+
 def _section(sec: dict, rng) -> np.ndarray:
     prog_name, energy, bpm, extras = MOODS.get(sec['mood'], MOODS['minor'])
-    prog = PROGRESSIONS[prog_name]
+    fl = FLAVOURS.get(sec.get('flavour') or '')
+    if fl:
+        bpm, energy = bpm * fl['bpm'], min(1.0, max(0.08, energy + fl['energy']))
+        extras = tuple(x for x in extras if x not in fl['drop']) + tuple(x for x in fl['add'] if x not in extras)
+    shift = int(sec.get('shift') or 0)
+    prog = [[n + shift for n in ch] for ch in PROGRESSIONS[prog_name]]
     dur = sec['end'] - sec['start']
     n_total = int(dur * SR)
     out = np.zeros(n_total + SR, 'float32')
@@ -252,18 +269,24 @@ def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndar
 
 
 def mood_sections(plan: dict, min_len: float = 7.0) -> list[dict]:
-    """Consecutive shots of one mood become one section; a section shorter than min_len joins its neighbour."""
+    """Consecutive shots of one mood become one section; a section shorter than min_len joins its neighbour. When the
+    story has acts the music changes key and colour at each act; otherwise the director's music key colours it all."""
     secs: list[dict] = []
+    key = plan.get('music_key')
     for s in plan['shots']:
         a, b = s['start'], s['start'] + s['frames'] / plan['fps']
         mood = s.get('mood') or 'minor'
-        if secs and secs[-1]['mood'] == mood:
+        cin = s.get('cinema') or {}
+        act, name = cin.get('act') or 0, cin.get('act_name')
+        flavour = ACT_FLAVOUR.get(name) if name else key
+        shift = ACT_SHIFT[act % len(ACT_SHIFT)] if name else 0
+        if secs and secs[-1]['mood'] == mood and secs[-1].get('act', 0) == act:
             secs[-1]['end'] = b
         else:
-            secs.append({'start': a, 'end': b, 'mood': mood})
+            secs.append({'start': a, 'end': b, 'mood': mood, 'act': act, 'flavour': flavour, 'shift': shift})
     merged: list[dict] = []
     for sec in secs:
-        if merged and (sec['end'] - sec['start'] < min_len) and sec['mood'] not in ('triumph', 'anthem'):
+        if merged and (sec['end'] - sec['start'] < min_len) and sec['mood'] not in ('triumph', 'anthem') and sec.get('act', 0) == merged[-1].get('act', 0):
             merged[-1]['end'] = sec['end']
         else:
             merged.append(sec)
@@ -322,6 +345,31 @@ def fx(kind: str, rng) -> np.ndarray:
             k = np.clip(t - at, 0, None)
             out += np.sin(2 * np.pi * f0 * k) * np.exp(-k * rng.uniform(14, 26)) * (t >= at) * rng.uniform(0.12, 0.25)
         return (out * 0.7).astype('float32')
+    if kind == 'sting':
+        # an orchestral stab for a trailer card or a goal: a bright chord of buzzing harmonics over a low hit
+        n = int(1.3 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n, 'float32')
+        for note in (50, 57, 62, 66, 69):
+            f0 = midi(note)
+            for h_, amp in ((1, 1.0), (2, 0.5), (3, 0.33), (4, 0.22), (5, 0.15)):
+                out += (np.sin(2 * np.pi * f0 * h_ * t) * amp).astype('float32')
+        out *= (np.exp(-t * 3.2) * np.minimum(1, t / 0.006)).astype('float32') / 8
+        out[: int(0.5 * SR)] += _kick(int(0.5 * SR)) * 0.8
+        return out.astype('float32')
+    if kind == 'drum':
+        n = int(0.6 * SR)
+        t = np.arange(n) / SR
+        body = np.sin(2 * np.pi * (78 + 40 * np.exp(-t * 18)) * t) * np.exp(-t * 6)
+        skin = _noise(n, rng)
+        skin = np.convolve(skin, np.ones(12) / 12, 'same') * np.exp(-t * 22) * 0.6
+        return ((body + skin) * 0.8).astype('float32')
+    if kind == 'whistle':
+        n = int(0.55 * SR)
+        t = np.arange(n) / SR
+        trill = 0.6 + 0.4 * np.sin(2 * np.pi * 32 * t)
+        env = np.minimum(1, t / 0.02) * np.minimum(1, (t[::-1]) / 0.06)
+        return (np.sin(2 * np.pi * 2900 * t) * trill * env * 0.5).astype('float32')
     if kind == 'end':
         return (_pluck(midi(74), int(3 * SR), 1.2) * 0.4 + _pluck(midi(78), int(3 * SR), 1.2) * 0.3 + _pluck(midi(81), int(3 * SR), 1.2) * 0.3).astype('float32')
     return np.zeros(1, 'float32')
@@ -331,8 +379,9 @@ def fx(kind: str, rng) -> np.ndarray:
 # 3 dB LOUDER than the voice and every card fired two of them. An effect is seasoning: each kind is levelled to its own
 # distance under the narrator's measured loudness (dB below the speech RMS), thinned so the same sound never repeats
 # within its gap, varied a little so a repeat never sounds mechanical, and ducked a few dB more while he speaks.
-FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'glass': 15.0, 'end': 10.0}
-FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'glass': 2.0, 'end': 0.0}
+FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'glass': 15.0, 'end': 10.0,
+                     'sting': 11.0, 'drum': 14.0, 'whistle': 19.0}
+FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'glass': 2.0, 'end': 0.0, 'sting': 3.0, 'drum': 0.9, 'whistle': 4.0}
 FX_ANY_GAP_S = 0.3        # two different effects never land on top of each other
 FX_PER_MINUTE = 22        # a ceiling: past it, the rest of that minute is quiet
 FX_JITTER_DB = 1.5
@@ -408,6 +457,20 @@ def narrator_fx(sr: int = SR) -> str:
     return f'{NARRATOR_FX},aresample={sr}'
 
 
+def hush_envelope(hushes: list[tuple[float, float]], n: int, depth: float = 0.35) -> np.ndarray:
+    """The music's gain over the film: 1, dipping to `depth` over each hush (0.4 s in, 1 s back)."""
+    env = np.ones(n, 'float32')
+    for at, d_ in hushes:
+        a, b = int(at * SR), int((at + d_) * SR)
+        idx = np.arange(max(0, a), min(n, b + SR))
+        if not len(idx):
+            continue
+        tt = (idx - a) / SR
+        g = np.where(tt < 0.4, 1 - (1 - depth) * tt / 0.4, np.where(idx < b, depth, depth + (1 - depth) * np.clip((idx - b) / SR, 0, 1)))
+        env[idx] = np.minimum(env[idx], g.astype('float32'))
+    return env
+
+
 def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: str = 'synth') -> Path:
     total = plan['duration']
     n = int(total * SR) + SR
@@ -418,6 +481,8 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     gain = CROWD_LEVELS.get(crowd_level, CROWD_LEVELS['soft'])
     last_crowd = -1e9
     fx_cues: list[tuple[float, str]] = []
+    hushes: list[tuple[float, float]] = []
+    beds: list[tuple[float, float]] = []
     for s in plan['shots']:
         if s['voice_file']:
             a = _read(job_dir / 'voice' / s['voice_file'])
@@ -427,6 +492,12 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
         if cp.exists():
             for (t, kind) in json.loads(cp.read_text())['cues']:
                 i = int((s['start'] + t) * SR)
+                if kind.startswith('hush:'):  # a defeat: the music steps back for a breath
+                    hushes.append((s['start'] + t, float(kind[5:])))
+                    continue
+                if kind.startswith('crowd-bed:'):  # terrace art: the stands murmur far away under the voice
+                    beds.append((s['start'] + t, float(kind[10:])))
+                    continue
                 if kind.startswith('crowd'):
                     p = CROWD.get(kind)
                     at = s['start'] + t
@@ -439,6 +510,16 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
                         last_crowd = at
                     continue
                 fx_cues.append((s['start'] + t, kind))
+    murmur = CROWD['crowd-murmur']
+    if gain and beds and murmur.exists():
+        m = _read(murmur)
+        for at, d_ in beds:
+            i, k = int(at * SR), int(d_ * SR)
+            if k < SR or not len(m):
+                continue
+            seg = np.resize(m, k) * gain * 0.4
+            ramp = np.minimum(1, np.arange(k) / (0.8 * SR)) * np.minimum(1, np.arange(k)[::-1] / (0.8 * SR))
+            crowd[i:i + k] += (seg * ramp)[: max(0, n - i)]
     vdb = speech_db(voice)
     kept = thin_cues(fx_cues, total)
     for at, kind in kept:
@@ -450,6 +531,7 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     sections = mood_sections(plan)
     music = score(sections, style=music)[:n]
     music = np.pad(music, (0, n - len(music)))
+    music *= hush_envelope(hushes, n)
     d = job_dir / 'mix'
     d.mkdir(exist_ok=True)
     _write(d / 'voice.wav', voice)
