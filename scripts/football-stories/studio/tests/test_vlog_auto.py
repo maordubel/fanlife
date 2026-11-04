@@ -219,6 +219,13 @@ class MeasurementTest(unittest.TestCase):
         self.assertEqual(ep['id'], 'iwt-05-aek-paok-2023')
         self.assertEqual(ep['folder'], 'aek-paok-test')
 
+    def test_a_file_name_as_the_writer_copied_it(self):
+        files = ['IMG_2831.HEIC', '5938EF8A.MP4', 'IMG_1.MOV', 'IMG_1.MP4']
+        self.assertEqual(V.resolve_name('PHOTO IMG_2831.HEIC', files), 'IMG_2831.HEIC')
+        self.assertEqual(V.resolve_name('"img_2831.heic"', files), 'IMG_2831.HEIC')
+        self.assertEqual(V.resolve_name('5938EF8A.MOV', files), '5938EF8A.MP4')
+        self.assertEqual(V.resolve_name('IMG_1.MTS', files), 'IMG_1.MTS')      # two files share the stem: not guessed
+
     def test_a_clip_with_a_voice_is_muted(self):
         with tempfile.TemporaryDirectory() as d:
             ep, led, mat, _ = built(answer(), Path(d))

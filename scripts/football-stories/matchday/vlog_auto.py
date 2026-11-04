@@ -220,12 +220,12 @@ def material_text(mat: dict) -> str:
     lines = []
     for c in mat['clips'].values():
         sp = '; '.join(f"{x['start']:.1f}–{x['end']:.1f}s “{x['text'][:70]}” p={x['p_speech']}" for x in c['speech']) or 'none'
-        lines.append(f"CLIP {c['file']} · {c['seconds']:.2f}s · {c['frame']} · camera clock {c['clock'] or 'unknown'}"
+        lines.append(f"CLIP \"{c['file']}\" · {c['seconds']:.2f}s · {c['frame']} · camera clock {c['clock'] or 'unknown'}"
                      f" · faces in {c['faces'] if c['faces'] is not None else '?'} of 12 frames"
                      f" · scene cuts {c['cuts'] or 'none'}\n  sound dBFS per second: {c['loud'] or 'no audio'}"
                      f" (median {c['median']}, peaks at {c['peaks'] or 'none'})\n  voices heard: {sp}")
     for p in mat['photos'].values():
-        lines.append(f"PHOTO {p['file']} · {p['frame']} {p['size'][0]}×{p['size'][1]} · taken {p['clock'] or 'unknown'}")
+        lines.append(f"PHOTO \"{p['file']}\" · {p['frame']} {p['size'][0]}×{p['size'][1]} · taken {p['clock'] or 'unknown'}")
     if mat['unreadable']:
         lines.append('UNREADABLE (do not use): ' + ', '.join(u['file'] for u in mat['unreadable']))
     return '\n'.join(lines)
@@ -238,10 +238,10 @@ def material_images(mat: dict, budget: int = 14_000_000, most: int = 60) -> list
     items = []
     for c in mat['clips'].values():
         for k, s in enumerate(c['strips']):
-            items.append((k, f"STRIP {c['file']} · seconds {k * 10}–{k * 10 + 9} (each frame is labelled with its second)", s, 1000))
+            items.append((k, f"STRIP of CLIP \"{c['file']}\" · seconds {k * 10}–{k * 10 + 9} (each frame is labelled with its second)", s, 1000))
     for p in mat['photos'].values():
         if p.get('still'):
-            items.append((0, f"PHOTO {p['file']} · taken {p['clock'] or 'unknown'}", p['still'], 720))
+            items.append((0, f"PHOTO \"{p['file']}\" · taken {p['clock'] or 'unknown'}", p['still'], 720))
     if len(items) > most:
         first = [x for x in items if x[0] == 0]
         rest = [x for x in items if x[0] != 0]
@@ -403,7 +403,7 @@ only what the frame shows, and which stand only when the picture or a claim says
 the camera's clock and the record make it certain; a moment the camera missed is told on a black card, never with a
 clip that pretends. The example episode below is ANOTHER night: never reuse its facts, names or numbers.
 
-PICTURES. Use only CLIP and PHOTO names from the material, exactly as written. Choose "in" points from the strips (each
+PICTURES. "clip" and "photo" take the file name only, exactly as the MATERIAL writes it between quotes (no "CLIP"/"PHOTO" word). Choose "in" points from the strips (each
 frame is labelled with its second) and the sound line: start a clip where the moment starts, not on a blurred pan. A
 beat may not run longer than its clip can give from "in" (the studio slows a short clip to 0.55× at most; never ask for
 more). Use each clip once in the film unless you cut a different second of it. Leave out any frame where the person
@@ -708,6 +708,20 @@ def estimate(ep: dict, cut: str = 'film') -> float:
     return t
 
 
+def resolve_name(name: str, files: list[str]) -> str:
+    """A file name as the writer copied it → the one file it means: a label prefix ("PHOTO …") or quotes dropped, the
+    case ignored, or the extension mistyped (".MOV" for ".MP4") when exactly one file has that stem. Anything else is
+    left as written, and the check names it."""
+    n = re.sub(r'^(?:PHOTO|CLIP|STRIP|STILL)\s*[:=]?\s*', '', name.strip().strip('"\'“”'), flags=re.I).strip().strip('"\'')
+    if n in files:
+        return n
+    low = [f for f in files if f.lower() == n.lower()]
+    if len(low) == 1:
+        return low[0]
+    stem = [f for f in files if Path(f).stem.lower() == Path(n).stem.lower()]
+    return stem[0] if len(stem) == 1 else name
+
+
 def normalise(ep: dict, mat: dict, log=lambda m: None, ledger: dict | None = None) -> list[str]:
     """What the measurement decides is set here, never left to the writer: the camera's clock on every clip, the mute on
     any clip a voice was heard in (RULES §4) or that has no sound, the crowd kept on the clips Whisper listened to and
@@ -723,6 +737,12 @@ def normalise(ep: dict, mat: dict, log=lambda m: None, ledger: dict | None = Non
         for i, b in enumerate(beats):
             if not isinstance(b, dict):
                 continue
+            for k, pool in (('clip', mat['clips']), ('photo', mat['photos'])):
+                if isinstance(b.get(k), str) and b[k] not in pool:
+                    got = resolve_name(b[k], list(pool))
+                    if got != b[k]:
+                        notes.append(f'{cut} beat {i}: {k} "{b[k]}" → "{got}"')
+                        b[k] = got
             if per_claim:
                 from studio.script import numbers_in_text
                 nums = numbers_in_text(CLOCK.sub(' ', beat_text(b)))
@@ -1191,6 +1211,12 @@ def make_episode(footage_dir: Path, match: dict, club: dict, notes: str, minutes
             errs = check(ep, ledger, mat, footage_dir, float(minutes))
         except VlogError as e:
             ep, fixed, errs = None, [], [str(e)]
+        if ep:
+            for cut in ('film', 'reel'):
+                for i, (b, t) in enumerate(zip(ep[cut].get('beats') or [], plan_seconds(ep, cut))):
+                    if isinstance(b, dict):
+                        log(f"  {cut} {i:02d} {str(b.get('kind', 'clip')):8} {str(b.get('clip') or b.get('photo') or b.get('art') or ''):42.42} "
+                            f"in {_f(b.get('in')):5.1f} {t:5.1f}s {str(b.get('say') or (b.get('typed') or {}).get('lines') or '')[:110]}")
         attempts.append({'round': attempt + 1, 'errors': errs[:40], 'normalised': fixed, 'meta': reply.get('meta'),
                          'planned_film_s': round(estimate(ep, 'film'), 1) if ep else None})
         (work_dir / 'writer.json').write_text(json.dumps(attempts, indent=1, ensure_ascii=False))
