@@ -210,6 +210,16 @@ def autofix(s: dict, errs: list[str], ledger: dict) -> dict | None:
         v = b.get('visual') if isinstance(b.get('visual'), dict) else {}
         if any('slug' in e for e in mine) and 'slug' in b:
             b.pop('slug'); changed = True
+        for k, word in (('broll', 'unknown broll'), ('camera', 'camera must be'), ('pace', 'pace must be'), ('sfx', 'sfx must be')):
+            if k in b and any(word in e for e in mine):
+                b.pop(k); changed = True
+        if 'backdrop' in v and any('unknown backdrop' in e for e in mine):
+            base = next((k for k in ('terrace-crowd', 'terrace-empty', 'tunnel', 'supporter', 'paper') if k in str(v['backdrop'])), None)
+            if base:
+                v['backdrop'] = base
+            else:
+                v.pop('backdrop')
+            changed = True
         if any('date order' in e for e in mine) and isinstance(v.get('claims'), list):
             ids = list(dict.fromkeys(x for x in v['claims'] if isinstance(x, str)))
             v['claims'] = sorted(ids, key=lambda x: dates.get(x, '')); changed = True
