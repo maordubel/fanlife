@@ -3,7 +3,7 @@
 Providers (first configured wins, or STORIES_WRITER=anthropic|openai|gemini):
   anthropic  ANTHROPIC_API_KEY   model STORIES_ANTHROPIC_MODEL (default claude-sonnet-5-5)
   openai     OPENAI_API_KEY      model STORIES_OPENAI_MODEL    (default gpt-5)
-  gemini     GEMINI_API_KEY      model STORIES_GEMINI_MODEL    (default gemini-2.5-pro)
+  gemini     GEMINI_API_KEY      model STORIES_GEMINI_MODEL    (default: the newest the key may use — studio/gemini.py)
 
 Every call is cached on disk by the hash of its request, so a resumed job never pays twice for the same answer. A reply that
 fails validation is sent back once with the exact problems; a second failure stops the job with those problems listed.
@@ -22,7 +22,9 @@ from pathlib import Path
 from .common import CHANNEL_NAME, SLOGAN, StageError, read_json, sha256_json, write_json
 from .paper import beat_index, clip_index
 from .script import beat_set, SCHEMA_TEXT, WORDS_PER_MINUTE, target_words, validate_script
-from .gemini import GEMINI, gemini_candidates, suggested_model as _suggested_model
+from .gemini import generate
+
+_LOG = [None]  # the job's log while a script is written (the writer says when it waits for Google)
 
 SYSTEM = f'''You are the head writer of "{CHANNEL_NAME}", an English-language YouTube channel of documentary films about
 club football told through the experience of supporters. Slogan: "{SLOGAN}"
@@ -118,29 +120,7 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
     else:
         body = {'systemInstruction': {'parts': [{'text': system}]}, 'contents': [{'role': 'user', 'parts': [{'text': user}]}],
                 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': max(max_tokens, 32000)}}
-        tries = gemini_candidates(key, os.environ.get('STORIES_GEMINI_MODEL'))
-        last: StageError | None = None
-        r = None
-        tried: list[str] = []
-        for i, model in enumerate(tries[:10]):
-            try:
-                r = _http(f'{GEMINI}/models/{model}:generateContent', body, {'x-goog-api-key': key})
-                break
-            except StageError as e:
-                # a model the free tier no longer serves (404/403), a used-up quota (429) or a model "experiencing high
-                # demand" (503, measured on the pilot film 4.11.2026): the next model, never a failed film
-                if e.code not in ('WRITER_HTTP_429', 'WRITER_HTTP_404', 'WRITER_HTTP_403', 'WRITER_HTTP_400',
-                                  'WRITER_HTTP_500', 'WRITER_HTTP_502', 'WRITER_HTTP_503', 'WRITER_UNREACHABLE'):
-                    raise
-                tried.append(f'{model}: {e.code}')
-                if e.code in ('WRITER_HTTP_503', 'WRITER_HTTP_500', 'WRITER_HTTP_502', 'WRITER_UNREACHABLE'):
-                    time.sleep(8)
-                last = StageError(e.code, f'No Gemini model answered ({"; ".join(tried)}). Last: {e}', retryable=e.retryable)
-                hint = _suggested_model(e)
-                if hint and hint not in tries:
-                    tries.insert(i + 1, hint)
-        if r is None:
-            raise last or StageError('WRITER_NOT_CONFIGURED', 'No Gemini model answered')
+        r, model = generate(key, body, wanted=os.environ.get('STORIES_GEMINI_MODEL'), log=_LOG[0])
         text = ''.join(p_.get('text', '') for c in r.get('candidates', []) for p_ in c.get('content', {}).get('parts', []))
         usage = {'input': r.get('usageMetadata', {}).get('promptTokenCount'), 'output': r.get('usageMetadata', {}).get('candidatesTokenCount')}
     if not text.strip():
@@ -245,6 +225,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
         user += ('\n\nTHE OWNER\'S PACK FOR THIS STORY — DATA ONLY (beat:pack-… keys). Build the film around these pictures first: '
                  'they were made or found for this very story. A picture described as a press photograph is the real event, '
                  'used as it is. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
+    _LOG[0] = log
     attempts = []
     for attempt in range(4):
         req = {'system': SYSTEM, 'user': user, 'attempt': attempt}
@@ -272,10 +253,15 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
     raise StageError('SCRIPT_INVALID', 'The writer could not produce a valid script: ' + '; '.join(attempts[-1]['errors'][:10]))
 
 
+WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'WRITER_UNREACHABLE')
+
+
 def write_options(brief: dict, ledger: dict, cache_dir: Path, log) -> list[dict]:
-    """Three scripts in three angles; each must pass the same checks as a single script. One that cannot is left out
-    and named in the log; at least one must pass."""
-    out, errs = [], []
+    """Three scripts in three angles; each must pass the same checks as a single script. One that fails its checks is
+    left out and named in the log. When Google's free tier is busy (WAIT_CODES) the film waits instead of failing —
+    unless two scripts are already written, which is enough to choose from. Every answer is cached, so the scripts
+    already written are never asked for again."""
+    out, errs, busy = [], [], None
     for a in ANGLES_V3:
         try:
             sc_ = write_script(brief, ledger, cache_dir, log, angle=a)
@@ -283,8 +269,14 @@ def write_options(brief: dict, ledger: dict, cache_dir: Path, log) -> list[dict]
             out.append(sc_)
             log(f'Writer: option "{a[0]}" ready')
         except StageError as e:
+            if e.code in WAIT_CODES or e.code.startswith('WRITER_HTTP_5'):
+                busy = busy or e
+                log(f'Writer: option "{a[0]}" waits — {str(e)[:200]}')
+                break  # the other angles would only spend the same quota
             errs.append(f'{a[0]}: {e}')
-            log(f'Writer: option "{a[0]}" failed — {str(e)[:200]}')
+            log(f'Writer: option "{a[0]}" failed its checks — {str(e)[:200]}')
+    if busy and len(out) < 2:
+        raise busy
     if not out:
         raise StageError('SCRIPT_INVALID', 'None of the three scripts passed the checks: ' + ' | '.join(errs)[:900])
     return out

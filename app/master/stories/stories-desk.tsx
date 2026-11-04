@@ -219,7 +219,7 @@ function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>voi
     <span className={`${css.state} ${css['s_'+job.state]}`}>{STATE_TEXT[job.state]}</span></div>
    {['running','queued','paused','cancel_requested'].includes(job.state)&&<>
     <div className={css.track} role="progressbar" aria-valuenow={Math.round(job.progress*100)} aria-valuemin={0} aria-valuemax={100}><div className={css.fill} style={{width:`${Math.round(job.progress*100)}%`}}/></div>
-    <p className={css.meta}>{job.message}</p>
+    <p className={css.meta}>{job.state==='queued'&&job.notBefore?`Waiting for Google's free writer — starts again by itself at ${new Date(job.notBefore).toLocaleString('en-GB',{weekday:'short',hour:'2-digit',minute:'2-digit'})}. Nothing is wrong with the film.`:job.message}</p>
     <ol className={css.stages}>{STAGES.filter(s=>s!=='done').map((s,i)=><li key={s} data-on={i===si||undefined} data-done={i<si||undefined}>{STAGE_TEXT[s]}</li>)}</ol></>}
    {job.error&&<p className={css.alert} role="alert"><b>[{job.error.code}]</b> {job.error.message} {job.error.retryable?'— safe to retry.':'— fix the cause before retrying.'}</p>}
    {job.state==='needs_review'&&job.stage==='script'&&job.options?.length?<ScriptChoice job={job} busy={busy} pick={n=>act({action:'choose_script',option:n})}/>:
@@ -227,7 +227,7 @@ function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>voi
    <div className={css.actions}>
     {['queued','running'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'pause'})}>Pause</button>}
     {job.state==='paused'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'resume'})}>Resume</button>}
-    {['failed','cancelled'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>Retry</button>}
+    {(['failed','cancelled'].includes(job.state)||(job.state==='queued'&&!!job.notBefore))&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>{job.state==='queued'?'Try now':'Retry'}</button>}
     {job.state==='needs_review'&&job.stage==='script'&&!job.options?.length&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
     {!['cancelled','cancel_requested'].includes(job.state)&&job.upload.state!=='done'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Cancel this film?'))void act({action:'cancel'})}}>Cancel</button>}
     <button className={`${css.btn} min-h-tap`} onClick={onOpen} aria-expanded={open}>{open?'Close':'Open'}</button>

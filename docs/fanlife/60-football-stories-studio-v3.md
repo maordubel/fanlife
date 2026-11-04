@@ -63,3 +63,15 @@ used as the owner made it — press photographs with real faces included (owner,
 PROMPTS go to the writer as notes, transparent cut-outs sit on paper, HEIC stills are read. Then the club's own folders
 from the general library. `STORIES_DRIVE_SCAN=1` (set in the worker workflow) turns the live scan on; tests use the
 static listing only.
+
+## When Google's free writer is busy (4.11.2026)
+
+The owner's film failed with `SCRIPT_INVALID` although nothing was wrong with it: three scripts in a row spent the
+free per-minute quota, every model answered 429 in seconds, two answered 404 and two 503. `studio/gemini.py → generate()`:
+- a per-minute 429 waits as long as Google's `RetryInfo` asks, then the same model again; a 503/5xx backs off 15·30·60·120 s;
+- a per-day 429, a quota of 0, a 404 or a 403 rules the model out for the run; `gemma-3-27b-it` (open model, large free
+  quota; system text folded into the user turn, no JSON mode, 8k output) is the last resort — the checks decide;
+- only when every model is ruled out → `WRITER_QUOTA_DAY`, or after 20 minutes of waiting → `WRITER_BUSY`.
+The worker turns both into a film that **waits** (`finish state:'waiting'` → `queued` + `notBefore`): the day's quota
+resets at midnight Pacific (+7 min), a busy writer gets 20 minutes. The desk says when it starts again and offers
+**Try now**. Two scripts already written are enough to choose from; every answer is cached, so a waiting film never asks twice.
