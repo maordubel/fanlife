@@ -9,7 +9,7 @@
 .club-app { --club-stick: 64px; --app-top: var(--club-stick); } /* one name for the strip: kit and family sheets read --app-top, the club shell sets --club-stick */
 .club-masthead { grid-area: mast; position: sticky; inset-block-start: 0; z-index: 50; background-color: var(--mag-vermilion); background-image: radial-gradient(rgb(21 19 15 / 0.16) 1.6px, transparent 1.9px); background-size: 8px 8px; color: var(--mag-white); border-bottom: 4px solid var(--mag-ink); }
 .club-masthead-in { display: flex; align-items: center; gap: 8px; min-height: 60px; padding-inline: 10px; width: min(1240px, 100%); margin-inline: auto; }
-.club-who { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; color: var(--mag-white); min-height: 44px; }
+.club-who { display: flex; align-items: center; gap: 10px; min-width: 44px; flex: 1; color: var(--mag-white); min-height: 44px; }
 .club-who .mag-badge { width: 40px; height: 40px; flex: none; }
 .club-who-name { display: block; font-family: var(--mag-condensed); font-weight: 700; font-size: 24px; line-height: 1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .club-who-kicker { display: block; font-family: var(--mag-display); font-size: 13px; text-transform: uppercase; color: var(--mag-white); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 1px 1px 0 var(--mag-ink); }
@@ -24,7 +24,8 @@
 .club-foot { grid-area: foot; background: var(--mag-ink); color: var(--mag-paper); border-top: 5px solid var(--mag-vermilion); margin-top: 32px; }
 .club-foot-in { font-family: var(--mag-mono); }
 .club-foot-in { width: min(1240px, 100% - 28px); margin-inline: auto; padding: 18px 0 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; line-height: 1.7; }
-.club-foot a { color: var(--mag-paper); text-underline-offset: 4px; }
+.club-foot a { color: var(--mag-paper); text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; justify-content: center; padding-inline: 3px; white-space: nowrap; }
+.club-foot-in > span { display: flex; flex-wrap: wrap; align-items: center; column-gap: 6px; }
 .club-foot img { width: 56px; height: 56px; }
 
 /* the five doors */
