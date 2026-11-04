@@ -5,6 +5,9 @@ name: CLASSIFIED · demo
 # committed. The video is also kept as a workflow artifact for one day.
 # Secrets used: TELEGRAM_BOT_TOKEN · FAN_LIFE_CRON_SECRET (finds the linked chat, as the studio worker does).
 on:
+  # TEMPORARY (removed before review): a dispatch needs the workflow on main, so the branch's own push runs it once
+  push:
+    branches: [claude/classified-composer]
   workflow_dispatch:
     inputs:
       vertical:
