@@ -250,6 +250,33 @@ def send_reel(st: Studio, job: dict, jd: Path, log) -> None:
         with urllib.request.urlopen(req, timeout=300) as r:
             ok = json.load(r).get('ok')
         log('Telegram: Reel sent' if ok else 'Telegram: the Reel was refused')
+        if not ok:
+            return
+        # the marketing rules (docs/fanlife/51, rule 127): a header, the caption in a copy box, the first comment
+        # (the film's link) in a second box, smart tags — composed by the studio itself (lib/stories/social.ts)
+        try:
+            pk = st.call({'op': 'social_pack', 'id': job['id']})
+        except Exception:  # noqa: BLE001 — the Reel is on Telegram either way
+            log('Telegram: the ready captions could not be composed — the Reel went alone')
+            return
+        esc = lambda s: str(s or '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        packs = pk.get('packs') or {}
+        lines = [f"📌 Reel · <b>FOOTBALL STORIES</b> · {esc(pk.get('title'))}",
+                 'Ready to post — tap a box to copy it. The Social panel in the studio can publish or schedule it for you.']
+        for key, label in (('instagram', 'Instagram / Facebook Reel'), ('tiktok', 'TikTok'), ('x', 'X')):
+            p = packs.get(key) or {}
+            if p.get('caption'):
+                part = ['', f'<b>{label}</b> — caption:', f"<pre>{esc(p['caption'])}</pre>"]
+                if p.get('comment'):
+                    part += ['First comment:', f"<pre>{esc(p['comment'])}</pre>"]
+                if len('\n'.join(lines + part)) < 4000:  # Telegram's limit; never cut a copy box in half
+                    lines += part
+        text = '\n'.join(lines)
+        body = json.dumps({'chat_id': ping, 'text': text, 'parse_mode': 'HTML', 'disable_web_page_preview': True}).encode()
+        req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage', data=body,
+                                     headers={'Content-Type': 'application/json'}, method='POST')
+        with urllib.request.urlopen(req, timeout=60) as r:
+            log('Telegram: ready captions sent' if json.load(r).get('ok') else 'Telegram: the captions were refused')
     except Exception as e:  # noqa: BLE001 — the film is ready either way
         log(f'Telegram: the Reel was not sent ({type(e).__name__})')
 

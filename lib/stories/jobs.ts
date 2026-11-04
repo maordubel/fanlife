@@ -7,6 +7,7 @@
  * video id is recorded only when YouTube itself has shown it.
  * Pure functions only: no I/O here, so every transition is tested on its own.
  */
+import {SocialError,cancelSocial,scheduleSocial,type PostInput,type SocialPlan} from './social'
 export const STAGES=['research','script','voice','graphics','edit','mix','master','package','qa','done'] as const
 export type Stage=typeof STAGES[number]
 export type JobState='queued'|'running'|'paused'|'cancel_requested'|'cancelled'|'failed'|'needs_review'|'ready'
@@ -68,6 +69,8 @@ export type Job={
  cost:{writer?:string;voice?:string;renderMinutes?:number}
  /** the scripts written for the owner to choose from (studio v3) */
  options?:ScriptOption[]|null
+ /** posts of the finished film on Facebook, Instagram, X and TikTok (lib/stories/social.ts) */
+ social?:SocialPlan|null
 }
 export const SEASON=/^\d{4}\/\d{2}$/
 export const SPAN=/^\d{4}–\d{4}$/
@@ -127,11 +130,15 @@ export function newJob(id:string,brief:Brief,palette:Palette,actor:string,idempo
 const LOG_KEEP=120
 const pushLog=(j:Job,text:string,at:string)=>{j.log=[...j.log,{at,text:text.slice(0,400)}].slice(-LOG_KEEP)}
 
-export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}
+export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}
 export const VIDEO_ID=/^[A-Za-z0-9_-]{11}$/
 
 /** An owner's action → the next job, or a StoryError saying why it is not allowed now. */
 export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
+ if(a.action==='social_schedule'||a.action==='social_cancel'){
+  try{return a.action==='social_schedule'?scheduleSocial(job,a.posts,actor,now):cancelSocial(job,a.id,actor,now)}
+  catch(e){if(e instanceof SocialError)throw new StoryError(e.code,e.message,e.status);throw e}
+ }
  const j:Job=structuredClone(job),at=now.toISOString()
  const no=(m:string)=>{throw new StoryError('STATE',m,409)}
  switch(a.action){

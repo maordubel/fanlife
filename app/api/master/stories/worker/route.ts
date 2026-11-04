@@ -4,6 +4,8 @@ import {getJob,listJobs,updateJob} from '@/lib/stories/store'
 import {signedDownload,signedUpload} from '@/lib/stories/media'
 import {body,fail,json} from '@/lib/stories/http'
 import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
+import {claimSocial,cleanLights,composeAll,dueSocial,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
+import {noteLights} from '@/lib/stories/socialLights'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 
@@ -15,6 +17,10 @@ export const runtime='nodejs'
  *   {op:'progress',id,worker,stage,progress,…}  → {control: continue | pause | cancel}
  *   {op:'upload_urls',id,worker,names:[…]}      → signed upload urls inside jobs/<id>/ only
  *   {op:'art_urls',id,worker}                   → signed download urls for the owner's pictures named in the brief
+ *   {op:'social_due',worker,lights}             → posts due on Facebook/Instagram/X/TikTok (records the yes/no lights)
+ *   {op:'social_claim',id,post,worker}          → the post, its film and a signed url for its file — once per post
+ *   {op:'social_result',id,post,worker,state,…} → sent | manual | failed, from the runner that claimed it
+ *   {op:'social_pack',id,worker}                → every platform's composed post (read-only)
  *   {op:'finish',id,worker,state,…}             → the finished job
  * A worker that lost its lease is refused, so two runners can never both finish one film.
  */
@@ -58,6 +64,32 @@ export async function POST(r:Request){
    const urls:Record<string,string>={}
    for(const a of art){const u=signed[mediaPath(id,`art-${a.name}`)];if(u)urls[a.name]=u}
    return json({urls})
+  }
+  // the social runner (.github/workflows/stories-social.yml): due posts, one claim per post, one result per claim
+  if(b.op==='social_due'){
+   const l=cleanLights(b.lights)
+   if(l)await noteLights(l).catch(()=>{})
+   return json({posts:dueSocial(await listJobs(200))})
+  }
+  if(b.op==='social_claim'){
+   const job=await updateJob(id,j=>claimSocial(j,b.post,worker))
+   const post=job.social!.posts.find(p=>p.id===b.post)!
+   const path=mediaPathOf(job,post.media)
+   let url:string|null=null
+   if(path){try{url=(await signedDownload([path],3600))[path]??null}catch{url=null}}
+   const yt=(job.youtube??{}) as {synthetic_media?:{altered_or_synthetic?:boolean}}
+   return json({post,film:{title:filmTitle(job),club:job.brief.club_name,season:job.brief.season,link:filmLink(job).url,synthetic:yt.synthetic_media?.altered_or_synthetic===true},
+    media:post.media?{kind:post.media.kind,url,name:path?path.split('/').pop():null}:null})
+  }
+  if(b.op==='social_result'){
+   const job=await updateJob(id,j=>resultSocial(j,b.post,worker,b as SocialResult))
+   return json({post:job.social!.posts.find(p=>p.id===b.post)})
+  }
+  // read-only: every platform's ready post for a finished film (the Reel message on Telegram uses it)
+  if(b.op==='social_pack'){
+   const cur=await getJob(id)
+   if(!cur)throw new StoryError('NOT_FOUND','No such job.',404)
+   return json({title:filmTitle(cur.job),link:filmLink(cur.job).url,packs:composeAll(cur.job)})
   }
   if(b.op==='finish'){
    const job=await updateJob(id,j=>finish(j,worker,b as unknown as Finish))

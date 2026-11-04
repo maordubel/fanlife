@@ -1,0 +1,54 @@
+/* Football Stories — the Social panel. The Weekly: ink, newsprint, vermilion; mobile first; nothing scrolls sideways. */
+.root{--ink:#15130F;--news:#F4ECD8;--paper:#FFFBF2;--red:#B02D10;--navy:#1F3A5F;--green:#2F6B3A;--muted:#5d564b;
+ margin:22px 0 8px;border-top:4px solid var(--ink);padding-top:14px;min-width:0}
+.h{font-family:'Weekly Head',sans-serif;text-transform:uppercase;font-size:20px;line-height:1.05;margin:0 0 8px}
+.h4{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin:18px 0 8px}
+.lead{font:15px/1.45 'Weekly Body',system-ui,sans-serif;margin:0 0 10px;text-wrap:pretty}
+.warn,.problem{border:3px solid var(--red);background:#fff;padding:8px 10px;font-size:14px;margin:8px 0;overflow-wrap:anywhere}
+.problem{border-width:2px;font-size:13px}
+.msg{font:14px 'Weekly Body',sans-serif;margin:8px 0 0;overflow-wrap:anywhere}
+.meta{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.06em;color:var(--muted);margin:4px 0 0;overflow-wrap:anywhere}
+.all{background:var(--news);border:3px solid var(--ink);padding:12px;margin:12px 0;display:grid;gap:10px}
+@media (min-width:640px){.all{grid-template-columns:1fr auto;align-items:end}.all .msg{grid-column:1/-1}}
+.grid{display:grid;gap:16px;min-width:0}
+@media (min-width:1100px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--paper);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:12px;min-width:0}
+.card[data-platform=facebook]{border-top:10px solid var(--navy)}
+.card[data-platform=instagram]{border-top:10px solid var(--red)}
+.card[data-platform=x]{border-top:10px solid var(--ink)}
+.card[data-platform=tiktok]{border-top:10px solid var(--green)}
+.cardHead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.name{font:24px 'Weekly Head',sans-serif;text-transform:uppercase}
+.light{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.06em;padding:6px 8px 6px 24px;border:2px solid var(--ink);position:relative;background:#fff}
+.light::before{content:'';position:absolute;inset-inline-start:7px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;border:2px solid var(--ink);background:#d9d2c3}
+.light[data-ok=yes]::before{background:var(--green)}
+.light[data-ok=no]::before{background:var(--red)}
+.lab{display:block;font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.08em;margin:0 0 10px;min-width:0}
+.input{display:block;width:100%;max-width:100%;margin-top:6px;padding:10px;border:3px solid var(--ink);background:#fff;color:var(--ink);font:16px 'Weekly Body',system-ui,sans-serif;border-radius:0;min-height:48px}
+.field{margin:0 0 10px;min-width:0}
+.fieldHead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.08em;margin-bottom:6px}
+.fieldHead>span:first-child{flex:1 1 auto;min-width:0}
+.over{color:var(--red);font-weight:700}
+.text{display:block;width:100%;max-width:100%;padding:10px;border:3px solid var(--ink);background:#fff;color:var(--ink);font:15px/1.4 'Weekly Body',system-ui,sans-serif;border-radius:0;resize:vertical;white-space:pre-wrap;overflow-wrap:anywhere}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.later{display:grid;gap:8px;margin-top:10px}
+@media (min-width:480px){.later{grid-template-columns:1fr auto;align-items:end}.later .lab{margin:0}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 14px;border:3px solid var(--ink);background:#fff;color:var(--ink);
+ font:700 15px 'Weekly Head',sans-serif;text-transform:uppercase;cursor:pointer;text-decoration:none;text-align:center}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn:active:not(:disabled){transform:translate(2px,2px)}
+.red{background:var(--red);color:var(--paper)}
+.setup{margin-top:12px;border-top:2px dashed var(--ink);padding-top:8px;font-size:14px}
+.setup summary{cursor:pointer;font:700 14px 'Weekly Head',sans-serif;text-transform:uppercase;display:flex;align-items:center}
+.setup ol{margin:8px 0 0;padding-inline-start:20px;display:grid;gap:6px;overflow-wrap:anywhere}
+.posts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.post{border:3px solid var(--ink);background:#fff;padding:10px;min-width:0}
+.postHead{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.06em;padding:4px 7px;border:2px solid var(--ink)}
+.chip[data-state=sent]{background:var(--green);color:var(--paper)}
+.chip[data-state=failed]{background:var(--red);color:var(--paper)}
+.chip[data-state=sending]{background:var(--navy);color:var(--paper)}
+.chip[data-state=manual]{background:var(--news)}
+.when{font-family:'Weekly Caps',sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.snip{margin:6px 0 0;font-size:14px;overflow-wrap:anywhere}
+@media (prefers-reduced-motion:reduce){.btn:active:not(:disabled){transform:none}}
