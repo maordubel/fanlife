@@ -110,6 +110,9 @@ class Composer:
         self.prepared: dict[str, Prepared] = {}
         self.sprites: dict = {}
         self.report = {'beats': [], 'missing': [], 'depth': {}}
+        self.post = None          # optional per-frame overlay (frame, t) → None: produce.py burns the narration captions here
+        self.rigs: dict = {}      # puppet rigs, by id, built once (rig.py)
+        self.rig_dir = None
         keep = []
         for i, b in enumerate(beats):
             if b.panel not in assets:
@@ -176,9 +179,15 @@ class Composer:
             focus = (.5, .5)
         if vertical:   # 9:16: the subject's centre across, the beat's own height
             focus = tuple(b.raw['focus_v']) if b.raw.get('focus_v') else (P.centre[0], focus[1])
-        k = tl / b.dur
+        tc = tl
+        fr = b.raw.get('freeze')   # [t0, t1]: the camera stops dead (a freeze on the save), then carries on
+        if fr:
+            f0, f1 = float(fr[0]), float(fr[1])
+            tc = tl if tl < f0 else (f0 if tl < f1 else tl - (f1 - f0))
+        k = tc / b.dur
         view, start = cam.view_at(b.move, k, focus, b.amount, b.ease)
-        dx = dy = rot = 0.0
+        dx = dy = 0.0
+        rot = view.rot
         sc = 1.0
         shake = b.shake if b.shake is not None else (1.0 if self.tone == 'WAR' else 0.0)
         if shake:
@@ -192,6 +201,9 @@ class Composer:
                 sc *= 1.01
         if b.transition == 'smash' and tl < .25:
             sc *= 1 + .07 * (1 - cam.ease_out(tl / .25))
+        if view.rot:   # a rolling frame (orbit, tilt3d) zooms just enough that its corners never leave the panel
+            th = math.radians(abs(view.rot))
+            sc *= math.cos(th) + max(W / H, H / W) * math.sin(th)
         extra = (dx, dy, rot, sc)
         Mb = cam.layer_matrix(P.wh, self.wh, view, start, cam.PARALLAX['bg'], extra)
         out = None
@@ -222,6 +234,8 @@ class Composer:
                 self.stamp(frame, ctx, e)
             elif t in fx.OVERLAYS:
                 fx.OVERLAYS[t](frame, ctx, **{k_: v for k_, v in e.items() if k_ not in ('type', 'from', 'to')})
+            elif t == 'puppet':
+                self.puppet(frame, ctx, e)
         frame = fx.look(frame, f, self.tone_rgb, P.drawn, self.grade)
         # screen lettering on top of the look
         for e in live:
@@ -234,6 +248,8 @@ class Composer:
                 self.title(frame, ctx, e)
             elif t == 'tab':
                 self.tab(frame, ctx, e)
+            elif t in CARDS:
+                CARDS[t](self, frame, ctx, e, b.dur)
         return frame
 
     # -- lettering
@@ -284,7 +300,8 @@ class Composer:
         if tau < 0:
             return
         text = e.get('text', 'SMASH!')
-        spr = self.sprite(('smash', text), lambda: letter.shout(text, 260, letter.RED))
+        col = SHOUT_COLOURS.get(e.get('color', 'red'), letter.RED)
+        spr = self.sprite(('smash', text, col), lambda: letter.shout(text, 260, col))
         W, H = ctx['W'], ctx['H']
         at = e.get('at', (.5, .46))
         fit = min(1.0, W * .82 / spr.shape[1])
@@ -347,6 +364,98 @@ class Composer:
         y = H - H * .07 - spr.shape[0] * fit / 2
         fx.blit(frame, spr, fx.sprite_matrix((spr.shape[1], spr.shape[0]), x, y, fit, 0), 1.0)
 
+    # -- paper puppets (rig.py): the owner's puppet sheet, pinned at the joints and posed
+    def puppet(self, frame, ctx, e):
+        from comic import rig as rg
+        key = e.get('rig')
+        if key not in self.rigs:
+            sheet = self.assets.get(e.get('sheet', key))
+            path = (Path(self.rig_dir) if self.rig_dir else rg.RIGS) / f'{key}.json'
+            if sheet is None or not path.exists():
+                self.rigs[key] = None
+                self.report.setdefault('missing', []).append(f'puppet:{key}')
+                self.log(f'puppet {key}: no sheet or no rig — not drawn')
+            else:
+                self.rigs[key] = rg.build(json.loads(path.read_text(encoding='utf-8')), rg.read_sheet(sheet.path), key)
+        R = self.rigs[key]
+        if R is None:
+            return
+        tau = (ctx['t'] - float(e.get('t0', 0))) * float(e.get('speed', 1.0))
+        pose = R.poses[e.get('pose', 'head_turn')]
+        ang, mv = rg.pose_at(pose, max(0.0, tau), bool(e.get('loop')))
+        R.draw(frame, ang, tuple(e.get('at', (.5, .8))), float(e.get('height', .6)), bool(e.get('flip')),
+               float(e.get('opacity', 1.0)), mv[0], mv[1])
+
+    def _card(self, frame, ctx, e, spr, at=(.5, .5), fit_w=.8, fit_h=.7, rot=-1.5, t0=.15, slam=True):
+        tau = ctx['t'] - float(e.get('t0', t0))
+        if tau < 0:
+            return
+        W, H = ctx['W'], ctx['H']
+        fit = min(W * float(e.get('fit_w', fit_w)) / spr.shape[1], H * float(e.get('fit_h', fit_h)) / spr.shape[0])
+        if slam:
+            s = (1.25 - .25 * cam.back(min(1.0, tau / .3))) * fit
+        else:
+            s = fit * (1 + .012 * min(1.0, tau / 4))
+        op = min(1.0, tau / .1)
+        at = e.get('at', at)
+        jx, jy = cam.impact(tau, .26, 7 * H / 1080, .25) if slam else (0.0, 0.0)
+        M = fx.sprite_matrix((spr.shape[1], spr.shape[0]), at[0] * W + jx, at[1] * H + jy, s, float(e.get('rot', rot)))
+        fx.blit(frame, spr, M, op)
+
+    def card_chapter(self, frame, ctx, e, dur):
+        spr = self.sprite(('chapter', e.get('n'), e.get('text')), lambda: letter.chapter_card(int(e.get('n', 1)), e.get('text', ''), self.tone_rgb))
+        self._card(frame, ctx, e, spr, (.5, .52), .78, .5, -2.0)
+
+    def card_version(self, frame, ctx, e, dur):
+        spr = self.sprite(('version', e.get('text'), e.get('ink')), lambda: letter.version_tab(e.get('text', ''), letter.NAVY if e.get('ink') == 'navy' else self.tone_rgb))
+        tau = ctx['t'] - float(e.get('t0', .1))
+        if tau < 0:
+            return
+        W, H = ctx['W'], ctx['H']
+        fit = H / 1080 if W > H else W / 1080
+        k = cam.ease_out(min(1.0, tau / .35))
+        side = e.get('side', 'r')   # split-screen telling: version A on the left, version B on the right
+        x = (W * .04 + spr.shape[1] * fit / 2) if side == 'l' else (W - W * .04 - spr.shape[1] * fit / 2)
+        y = H * .07 + spr.shape[0] * fit / 2 - (1 - k) * (spr.shape[0] * fit + 60)
+        fx.blit(frame, spr, fx.sprite_matrix((spr.shape[1], spr.shape[0]), x, y, fit, 0), 1.0)
+
+    def card_score(self, frame, ctx, e, dur):
+        spr = self.sprite(('score', e.get('text'), e.get('label')), lambda: letter.score_card(e.get('text', ''), e.get('label', ''), self.tone_rgb))
+        self._card(frame, ctx, e, spr, (.72, .5), .4, .42, 2.0)
+
+    def card_sources(self, frame, ctx, e, dur):
+        srcs = e.get('sources') or self.ep.get('sources') or []
+        spr = self.sprite(('sources', len(srcs)), lambda: letter.sources_card(srcs))
+        fx.overlay(frame, (21, 19, 15), np.full(frame.shape[:2], .35, np.float32))
+        self._card(frame, ctx, e, spr, (.5, .5), .92, .9, -.6, slam=False)
+
+    def card_follow(self, frame, ctx, e, dur):
+        """Rule 136 on screen: the supporters' card to fill in, JOIN US!, and our own SUBSCRIBE button pressed on the
+        word "subscribe" (press_at, beat seconds, set from the narrator's word timing) — it turns to SUBSCRIBED."""
+        fx.overlay(frame, (21, 19, 15), np.full(frame.shape[:2], .3, np.float32))
+        card = self.sprite(('member',), lambda: letter.member_card(e.get('club', 'CLASSIFIED · FANLIFE'), self.tone_rgb))
+        self._card(frame, ctx, {**e, 't0': e.get('t0', .1)}, card, (.36, .56), .46, .56, -3.0)
+        press = float(e.get('press_at', dur * .8))
+        tau = ctx['t'] - float(e.get('t0', .1))
+        if tau > .35:
+            sh = self.sprite(('shout', 'JOIN US!'), lambda: letter.shout('JOIN US!', 200, letter.RED))
+            self._card(frame, ctx, {'t0': float(e.get('t0', .1)) + .35}, sh, (.73, .3), .4, .3, -6.0)
+        pressed = ctx['t'] >= press
+        btn = self.sprite(('btn', pressed), lambda: letter.subscribe_button(pressed, self.tone_rgb))
+        W, H = ctx['W'], ctx['H']
+        fit = min(W * .34 / btn.shape[1], H * .16 / btn.shape[0])
+        k = cam.ease_out(min(1.0, max(0.0, tau - .6) / .4))
+        if k <= 0:
+            return
+        pop = 1 + (.12 * math.exp(-(ctx['t'] - press) * 8) if pressed else 0)
+        M = fx.sprite_matrix((btn.shape[1], btn.shape[0]), .73 * W, .7 * H + (1 - k) * 80, fit * pop, 0)
+        fx.blit(frame, btn, M, k)
+
+    def card_end(self, frame, ctx, e, dur):
+        spr = self.sprite(('end',), lambda: letter.end_card(e.get('site', 'fanlife.dubelteam.com'), e.get('handle', '@FanLifeFootballStories'), self.tone_rgb))
+        fx.overlay(frame, (21, 19, 15), np.full(frame.shape[:2], .3, np.float32))
+        self._card(frame, ctx, e, spr, (.5, .5), .8, .5, -1.5)
+
     # -- a frame of the film
     def frame(self, f: int) -> np.ndarray:
         t = f / self.fps
@@ -354,10 +463,12 @@ class Composer:
         b = self.beats[i]
         tl = t - b.start
         cur = self.render_beat(i, tl, f)
-        if i == 0 or b.tdur <= 0 or tl >= b.tdur:
-            return cur
-        prev = self.render_beat(i - 1, t - self.beats[i - 1].start, f)
-        return transition(b.transition, prev, cur, tl / b.tdur, f)
+        if not (i == 0 or b.tdur <= 0 or tl >= b.tdur):
+            prev = self.render_beat(i - 1, t - self.beats[i - 1].start, f)
+            cur = transition(b.transition, prev, cur, tl / b.tdur, f)
+        if self.post is not None:
+            self.post(cur, t)
+        return cur
 
     def warm(self) -> None:
         """Build (or read) every picture's layers once, in order, before the frames are shared out: the workers then
@@ -435,6 +546,9 @@ class Composer:
 
 CHUNK = 10
 _WORKER = None
+SHOUT_COLOURS = {'red': letter.RED, 'cyan': letter.CYAN, 'navy': letter.NAVY}
+CARDS = {'chapter': Composer.card_chapter, 'version': Composer.card_version, 'score': Composer.card_score,
+         'sources': Composer.card_sources, 'follow': Composer.card_follow, 'end': Composer.card_end}
 
 
 def _render_chunk(c):
@@ -474,6 +588,21 @@ def transition(kind: str, a: np.ndarray, b: np.ndarray, u: float, f: int) -> np.
     if kind == 'fade':
         k = cam.ease_io(u)
         return cv2.addWeighted(a, 1 - k, b, k, 0)
+    if kind == 'rewind':  # the tape winds back: the old frame tears into jittering bands, then the new one plays
+        if u < .7:
+            out = a.copy()
+            r = np.random.default_rng(f)
+            band = max(4, H // 36)
+            for y0 in range(0, H, band):
+                sh = int(r.normal(0, W * .04 * (1 + 2 * u)))
+                out[y0:y0 + band] = np.roll(out[y0:y0 + band], sh, axis=1)
+            out = _hblur(out, int(W * .02 * (1 + 3 * u)) | 1)
+            out[::4] = (out[::4].astype(np.float32) * .55).astype(np.uint8)   # scanlines
+            y = int((1 - u / .7) * H) % H                                      # the tracking bar rolling up
+            out[y:y + band * 2] = np.clip(out[y:y + band * 2].astype(np.int16) + 70, 0, 255).astype(np.uint8)
+            return out
+        k = (u - .7) / .3
+        return cv2.addWeighted(a, (1 - k) * .3, b, 1 - (1 - k) * .3, 0)
     if kind == 'smash':   # a hard cut through a white flash
         out = b.copy()
         fx.overlay(out, (255, 251, 242), np.full((H, W), (1 - u) ** 1.4, np.float32))

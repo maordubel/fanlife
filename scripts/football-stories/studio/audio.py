@@ -308,6 +308,20 @@ def fx(kind: str, rng) -> np.ndarray:
         n = int(0.12 * SR)
         t = np.arange(n) / SR
         return (np.sin(2 * np.pi * (520 + 300 * np.exp(-t * 60)) * t) * np.exp(-t * 40) * 0.35).astype('float32')
+    if kind == 'glass':
+        # a bottle breaking on a tiled floor, from across the room: a short bright crack, then a few tinkles that ring
+        # and die — synthesised, quieter than the narrator like every effect (level_fx)
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        crack = _noise(n, rng)
+        crack = (crack - np.convolve(crack, np.ones(4) / 4, 'same')) * np.exp(-t * 55)
+        out = crack * 0.6
+        for _ in range(7):
+            at = rng.uniform(0.02, 0.45)
+            f0 = rng.uniform(2400, 5200)
+            k = np.clip(t - at, 0, None)
+            out += np.sin(2 * np.pi * f0 * k) * np.exp(-k * rng.uniform(14, 26)) * (t >= at) * rng.uniform(0.12, 0.25)
+        return (out * 0.7).astype('float32')
     if kind == 'end':
         return (_pluck(midi(74), int(3 * SR), 1.2) * 0.4 + _pluck(midi(78), int(3 * SR), 1.2) * 0.3 + _pluck(midi(81), int(3 * SR), 1.2) * 0.3).astype('float32')
     return np.zeros(1, 'float32')
@@ -317,8 +331,8 @@ def fx(kind: str, rng) -> np.ndarray:
 # 3 dB LOUDER than the voice and every card fired two of them. An effect is seasoning: each kind is levelled to its own
 # distance under the narrator's measured loudness (dB below the speech RMS), thinned so the same sound never repeats
 # within its gap, varied a little so a repeat never sounds mechanical, and ducked a few dB more while he speaks.
-FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'end': 10.0}
-FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'end': 0.0}
+FX_UNDER_VOICE_DB = {'paper': 17.0, 'stamp': 14.0, 'whoosh': 18.0, 'pop': 19.0, 'glass': 15.0, 'end': 10.0}
+FX_GAP_S = {'paper': 1.4, 'stamp': 1.6, 'whoosh': 1.2, 'pop': 0.35, 'glass': 2.0, 'end': 0.0}
 FX_ANY_GAP_S = 0.3        # two different effects never land on top of each other
 FX_PER_MINUTE = 22        # a ceiling: past it, the rest of that minute is quiet
 FX_JITTER_DB = 1.5

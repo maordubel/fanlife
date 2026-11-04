@@ -34,7 +34,12 @@ def back(k: float, s: float = 1.9) -> float:
     return 1 + (s + 1) * k ** 3 + s * k ** 2
 
 
-EASE = {'io': ease_io, 'out': ease_out, 'sine': ease_sine, 'linear': lambda k: min(1.0, max(0.0, k))}
+def ease_crash(k: float) -> float:       # quintic out over the first third, then resting
+    k = min(1.0, max(0.0, k / .35))
+    return 1 - (1 - k) ** 5
+
+
+EASE = {'io': ease_io, 'out': ease_out, 'sine': ease_sine, 'crash': ease_crash, 'linear': lambda k: min(1.0, max(0.0, k))}
 
 
 @dataclass
@@ -70,6 +75,25 @@ def plan(move: str, focus=(0.5, 0.5), amount: float | None = None, ease: str | N
     if move == 'slowmo':
         a = a or .045
         return View(fx, fy, 1.06), View(fx, fy, 1.06 + a), EASE[ease or 'sine'], 1.4
+    # draft 2 directions (owner, 4.11.2026): a crane, an orbit with a 3-D tilt, a crash zoom, a follow down a tunnel
+    if move == 'crane_down':   # from above the desk, down and onto the subject
+        a = a or .14
+        return View(fx, fy - a, 1.04), View(fx, fy + a * .2, 1.06 + a * .9), EASE[ease or 'io'], 1.3
+    if move == 'crane_up':     # rise up the picture (a floodlight, a stand), a little closer
+        a = a or .14
+        return View(fx, fy + a, 1.1), View(fx, fy - a, 1.16), EASE[ease or 'io'], 1.3
+    if move == 'orbit':        # round the subject: a slow sideways slide with the frame rolling through it
+        a = a or .06
+        return View(fx - a, fy, 1.14, -1.8), View(fx + a, fy, 1.18, 1.8), EASE[ease or 'sine'], 1.5
+    if move == 'tilt3d':       # slow motion with the world tipping past the lens
+        a = a or .06
+        return View(fx, fy, 1.08, -2.6), View(fx, fy, 1.08 + a, 2.6), EASE[ease or 'sine'], 1.5
+    if move == 'crash':        # a crash zoom: most of the way in the first few frames
+        a = a or .42
+        return View(.5, .5, 1.04), View(fx, fy, 1.04 + a), EASE[ease or 'crash'], 1.2
+    if move == 'follow':       # walking in behind someone: forward, the far layers opening up
+        a = a or .3
+        return View(fx, fy + .04, 1.04), View(fx, fy, 1.04 + a), EASE[ease or 'io'], 1.6
     if move == 'hold':
         a = a or .025
         return View(fx, fy, 1.05), View(fx, fy, 1.05 + a), EASE[ease or 'sine'], .6
@@ -78,14 +102,15 @@ def plan(move: str, focus=(0.5, 0.5), amount: float | None = None, ease: str | N
     raise ValueError(f'unknown move: {move}')
 
 
-MOVES = ('push', 'pull', 'pan_l', 'pan_r', 'pan_up', 'pan_down', 'dolly_l', 'dolly_r', 'slowmo', 'hold', 'static')
+MOVES = ('push', 'pull', 'pan_l', 'pan_r', 'pan_up', 'pan_down', 'dolly_l', 'dolly_r', 'slowmo', 'hold', 'static',
+         'crane_down', 'crane_up', 'orbit', 'tilt3d', 'crash', 'follow')
 
 
 def view_at(move, k: float, focus=(0.5, 0.5), amount=None, ease=None) -> tuple[View, View]:
     """(current view, start view) at progress k in 0..1 (k may run past 1: the camera rests)."""
     a, b, e, par = plan(move, focus, amount, ease)
     u = e(k)
-    v = View(a.cx + (b.cx - a.cx) * u, a.cy + (b.cy - a.cy) * u, a.z + (b.z - a.z) * u, 0.0, par)
+    v = View(a.cx + (b.cx - a.cx) * u, a.cy + (b.cy - a.cy) * u, a.z + (b.z - a.z) * u, a.rot + (b.rot - a.rot) * u, par)
     return v, a
 
 

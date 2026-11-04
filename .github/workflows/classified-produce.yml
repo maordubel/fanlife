@@ -1,0 +1,124 @@
+name: CLASSIFIED · produce an episode
+# The whole FILE, after the owner has approved its script: GitHub → Actions → "CLASSIFIED · produce an episode" →
+# Run workflow → pick the FILE → tick "I approve the script" → Run. When it finishes the preview, the thumbnails and
+# the package text arrive in your Telegram chat as a DRAFT, and the run's page holds every master for 3 days.
+# Nothing is uploaded to YouTube and nothing is published: that stays the owner's click in YouTube Studio.
+# The panels are downloaded into the runner's temp folder and the renders are written there too: neither is ever
+# committed. Secrets used: TELEGRAM_BOT_TOKEN · FAN_LIFE_CRON_SECRET (finds the linked chat, as the studio worker does).
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Which FILE'
+        type: choice
+        options: [file01]
+        default: file01
+      approved:
+        description: 'I have read and approve this FILE''s script (FILE 01: draft 2, docs/fanlife/classified/file01-the-bottle.script.md)'
+        type: boolean
+        default: false
+      telegram:
+        description: 'Send the DRAFT to my Telegram chat'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: classified-produce-${{ inputs.file }}
+  cancel-in-progress: false
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+      CLASSIFIED_DEPTH_MODEL: /home/runner/models/depth-anything-v2-small.onnx
+      CLASSIFIED_CACHE: /home/runner/.cache/fanlife-classified/layers
+      CLASSIFIED_VOICE_CACHE: /home/runner/.cache/fanlife-classified/voice
+      KOKORO_DIR: /home/runner/kokoro
+      STORIES_KOKORO_VOICE: bm_george
+    steps:
+      - name: The script must be approved first
+        if: ${{ !inputs.approved }}
+        run: |
+          echo "::error::Tick \"I approve the script\" when you run this: the narrator only speaks an approved script. Nothing was made."
+          exit 1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow opencv-python-headless onnxruntime fonttools brotli kokoro-onnx soundfile
+          # misaki: the G2P the narrator was trained on (studio/pronounce.py) — part of the owner's "Take B"
+          pip install -q misaki num2words regex spacy && python -m spacy download en_core_web_sm -q
+      - name: Narrator model (Kokoro-82M, Apache-2.0 — free, cached)
+        id: kokoro
+        uses: actions/cache@v4
+        with: {path: ~/kokoro, key: kokoro-v1.0}
+      - if: steps.kokoro.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/kokoro
+          curl -fsSL --retry 3 -o ~/kokoro/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          curl -fsSL --retry 3 -o ~/kokoro/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+      - name: Depth model (Depth Anything V2 Small, Apache-2.0 — free, cached)
+        id: depth
+        uses: actions/cache@v4
+        with: {path: ~/models, key: depth-anything-v2-small-onnx-v1}
+      - if: steps.depth.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/models
+          if curl -fsSL --retry 3 -o ~/models/depth-anything-v2-small.onnx \
+              https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model.onnx; then
+            ls -l ~/models
+          else
+            rm -f ~/models/depth-anything-v2-small.onnx
+            echo "::warning::The depth model did not download — the composer falls back to its saliency layers"
+          fi
+      - name: Layer and voice caches (by content hash)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/fanlife-classified/layers
+            ~/.cache/fanlife-classified/voice
+          key: classified-produce-${{ inputs.file }}-${{ github.run_id }}
+          restore-keys: classified-produce-${{ inputs.file }}-
+      - name: The owner's panels from Drive (into the runner's temp folder, never the repo)
+        run: |
+          python3 scripts/football-stories/comic/drive_fetch.py --file "${{ inputs.file }}" --out "$RUNNER_TEMP/panels" --report "$RUNNER_TEMP/fetch.json"
+      - name: Which picture is which (measured, owner's rules)
+        run: python3 scripts/football-stories/comic/roles.py --panels "$RUNNER_TEMP/panels" --file "${{ inputs.file }}"
+      - name: Produce the episode
+        run: |
+          ep=$(ls scripts/football-stories/comic/episodes/${{ inputs.file }}-*.json | grep -v -- '-demo' | head -1)
+          echo "Episode: $ep"
+          python3 scripts/football-stories/comic/produce.py --episode "$ep" --panels "$RUNNER_TEMP/panels" \
+            --out "$RUNNER_TEMP/job" --approved
+          cat "$RUNNER_TEMP/job/out/qa.json"
+      - name: Keep the masters for 3 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: classified-${{ inputs.file }}
+          path: |
+            ${{ runner.temp }}/job/out/*.mp4
+            ${{ runner.temp }}/job/out/*.srt
+            ${{ runner.temp }}/job/out/*.vtt
+            ${{ runner.temp }}/job/out/*.jpg
+            ${{ runner.temp }}/job/out/*.json
+            ${{ runner.temp }}/job/out/*.txt
+            ${{ runner.temp }}/job/contact-sheet.jpg
+          retention-days: 3
+          if-no-files-found: warn
+      - name: Send the DRAFT to Telegram
+        if: inputs.telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          o="$RUNNER_TEMP/job/out"
+          title=$(python3 -c "import json;print(json.load(open('$o/youtube.json'))['title'])")
+          python3 scripts/football-stories/comic/telegram_send.py "$o/preview-telegram.mp4" "$o"/short-*.mp4 \
+            --photo "$o/thumbnail-1.jpg" --photo "$o/thumbnail-2.jpg" --photo "$o/thumbnail-3.jpg" \
+            --document "$o/telegram-draft.txt" --document "$o/youtube.json" --document "$o/captions.en.srt" \
+            --caption "🗂 CLASSIFIED · ${{ inputs.file }} — DRAFT, not uploaded, not published. Proposed title: $title. The package text is in telegram-draft.txt."
