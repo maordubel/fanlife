@@ -497,3 +497,44 @@ def season_summary(ledger: dict) -> dict:
     held_comps = {h['match_id'] for h in ledger['held']}
     return {'by_competition': out, 'complete': not held_comps,
             'note': 'Totals cover the claims above only; held rows are not counted, so a total is only "the season" when complete is true.'}
+
+
+# ── studio v3: one match, a tie, a rivalry (owner, 4.11.2026) ─────────────────────────────────────────────────────────
+def pick(ledger: dict, match_ids: list[str]) -> dict:
+    """Keep only the chosen matches of the season (one match, or the legs of a tie); every other claim stays, and the
+    summary is counted again from what is left — the film can only add up what it shows."""
+    want = set(match_ids)
+    kept = [c for c in ledger['claims'] if c['fact'].get('kind') != 'match' or c['id'] in want]
+    if not any(c['fact'].get('kind') == 'match' for c in kept):
+        raise StageError('EMPTY_FOCUS', f'None of the chosen matches is in {ledger["club_name"]} {ledger["season"]}')
+    out = {**ledger, 'claims': kept, 'held': [], 'focus': {'matches': sorted(want)}}
+    out['summary'] = season_summary(out)
+    return out
+
+
+def rivalry_ledger(club_id: str, opponent: str, label: str) -> dict:
+    """Every readable meeting with one opponent, all seasons (the shape of "Real Madrid in Athens", for any club). The
+    summary counts every meeting per competition and in all, so "they met 219 times" is counted, never typed."""
+    claims, held, base = [], [], None
+    first = int(label[:4]) if label[:4].isdigit() else 1900
+    for y in range(first - 1, dt.date.today().year + 1):
+        s = f'{y}/{str(y + 1)[2:]}'
+        try:
+            l = hapoel_ledger(s) if club_id == 'hapoel-tel-aviv' else compiled_ledger(club_id, s)
+        except StageError:
+            continue
+        base = base or l
+        claims += [c for c in l['claims'] if c['fact'].get('kind') == 'match' and c['fact'].get('opponent') == opponent]
+    if not claims or base is None:
+        raise StageError('EMPTY_FOCUS', f'No readable match against {opponent}')
+    claims.sort(key=lambda c: c['fact']['date'])
+    out = {**{k: v for k, v in base.items() if k not in ('claims', 'held', 'summary')}, 'season': label, 'claims': claims,
+           'held': held, 'focus': {'opponent': opponent}}
+    out['summary'] = season_summary(out)
+    allc = {'played': 0, 'won': 0, 'drawn': 0, 'lost': 0, 'for': 0, 'against': 0, 'claim_ids': []}
+    for v in out['summary']['by_competition'].values():
+        for k in ('played', 'won', 'drawn', 'lost', 'for', 'against'):
+            allc[k] += v[k]
+        allc['claim_ids'] += v['claim_ids']
+    out['summary']['by_competition']['All competitions'] = allc
+    return out

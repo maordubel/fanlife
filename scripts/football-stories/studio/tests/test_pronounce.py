@@ -115,3 +115,30 @@ class EnglishNames(unittest.TestCase):
         self.assertIsNone(R._english('Ομάδα που δεν υπάρχει', clubs))
         self.assertTrue(R._latin('Željezničar'))
         self.assertFalse(R._latin('Πανιώνιος'))
+
+
+class GeminiModels(unittest.TestCase):
+    """The writer picks the newest model the key can use, best first (4.11.2026: 2.5 answered 404 to a new key)."""
+
+    def test_newest_stable_pro_then_flash(self):
+        import io
+        from unittest import mock
+        from studio import gemini as W
+        listing = {'models': [{'name': f'models/{m}', 'supportedGenerationMethods': ['generateContent']} for m in
+                              ('gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-3.8-flash', 'gemini-3.5-pro', 'gemini-3.8-pro-preview',
+                               'gemini-3.8-flash-lite', 'gemini-3.8-flash-image')]}
+
+        class R(io.BytesIO):
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+        with mock.patch('urllib.request.urlopen', return_value=R(json.dumps(listing).encode())):
+            got = W.gemini_candidates('k')
+        self.assertEqual(got[:3], ['gemini-3.5-pro', 'gemini-2.5-pro', 'gemini-3.8-flash'])
+        self.assertNotIn('gemini-3.8-flash-image', got)
+        self.assertLess(got.index('gemini-3.8-flash'), got.index('gemini-3.8-pro-preview'))
+
+    def test_the_error_names_the_model_to_use(self):
+        from studio import gemini as W
+        from studio.common import StageError
+        e = StageError('WRITER_HTTP_404', 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest')
+        self.assertEqual(W.suggested_model(e), 'gemini-3.8-flash')

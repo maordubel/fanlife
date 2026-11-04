@@ -82,6 +82,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          # the Reel to the owner's linked Telegram chat when the brief asks for it (studio v3)
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           # free unless the owner turns paid providers on (repository variables)
           STORIES_ALLOW_PAID: ${{ vars.STORIES_ALLOW_PAID }}
           STORIES_VOICE: ${{ vars.STORIES_VOICE }}

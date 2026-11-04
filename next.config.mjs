@@ -34,6 +34,8 @@ const nextConfig = {
       '/api/track': EVALUATION_FILES,
       // pre-compiled club packs (lib/clubs/precompiled.ts): every route that may load a club reads them with fs
       '/**': ['./content/compiled/*.json'],
+      // the studio's catalog of what a film can be about (lib/stories/catalog.ts reads it with fs)
+      '/api/master/stories/**': ['./content/generated/stories/*.json'],
     },
   },
   // The static kit archives live in public/kit-archive/<club>/index.html; Next serves exact file paths only, so the folder URLs are rewritten to their index.

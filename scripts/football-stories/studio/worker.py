@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import socket
 import sys
 import time
@@ -57,6 +58,14 @@ class Studio:
                     raise StageError('STUDIO_UNREACHABLE', str(e), retryable=True)
             time.sleep(4 * (attempt + 1))
         raise StageError('STUDIO_UNREACHABLE', 'no answer', retryable=True)
+
+    def ping_chat(self) -> str | None:
+        """The owner's linked Telegram chat id (Final Whistle link), or None."""
+        req = urllib.request.Request(self.base + '/api/master/final-whistle/ping', data=b'{}', method='POST',
+                                     headers={'Authorization': 'Bearer ' + self.secret, 'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            chat = json.load(r).get('chatId')
+        return str(chat) if chat else None
 
     def put(self, url: str, path: Path, data: bytes | None = None, ctype: str = 'application/octet-stream') -> None:
         body = data if data is not None else path.read_bytes()
@@ -120,10 +129,98 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
     b = job['brief']
     out = {'club_id': b['club_id'], 'season': b['season'], 'duration': b['duration'], 'topic': b.get('topic') or '',
            'visual_style': b.get('visual_style', 'collage'), 'stop_after': 'script' if b.get('review') == 'script' else None,
-           'crowd': b.get('crowd') or 'soft', 'focus_from': b.get('focus_from') or None, 'focus_to': b.get('focus_to') or None, 'notes': b.get('notes') or ''}
+           'crowd': b.get('crowd') or 'soft', 'focus_from': b.get('focus_from') or None, 'focus_to': b.get('focus_to') or None, 'notes': b.get('notes') or '',
+           # studio v3: what the film is about, its tone, three scripts and the owner's pick
+           'kind': b.get('kind') or 'season', 'match_ids': b.get('match_ids') or [], 'opponent': b.get('opponent'),
+           'tone': b.get('tone') or 'auto', 'scripts': b.get('scripts') or 1, 'choice': b.get('choice')}
     if art_dir and b.get('art'):
         out.update(art_dir=str(art_dir), art=b['art'], art_set='job-' + job['id'][:40])
     return out
+
+
+GENERIC = {'hapoel', 'maccabi', 'fc', 'fk', 'sk', 'ac', 'cf', 'club', 'sporting', 'the'}
+# Folders outside 01_Football_Stories that are one club's own pictures (owner, 4.11.2026).
+DRIVE_EXTRA = {'hapoel-tel-aviv': ['approved graphics the worker and hapoel 02 stadiums',
+                                   'approved graphics the worker and hapoel 03 props shirts']}
+
+
+def drive_folder_fits(club_id: str, club_name: str, path: str) -> bool:
+    """A Drive picture belongs to a club's film when its folder in 01_Football_Stories names the club — by a word of the
+    club's name that is not a generic one (Hapoel, Maccabi, FC…), or by every word when all are generic — or when it sits
+    in one of the club's own folders elsewhere (DRIVE_EXTRA). Never another club's folder."""
+    if any(path.startswith('04 ' + x) or x in path for x in DRIVE_EXTRA.get(club_id, [])):
+        return True
+    if not path.startswith('01 '):
+        return False
+    name = re.sub(r'[^a-z0-9]+', ' ', club_name.lower()).split()
+    own = [w for w in name if w not in GENERIC and len(w) > 2]
+    words = path.split()
+    return bool(own) and own[0] in words if own else all(w in words for w in name)
+
+
+def fetch_drive(job: dict, jd: Path, log) -> Path | None:
+    """Pictures for this club from the owner's public Google Drive library (studio v3): the club's own folders in
+    `01_Football_Stories…` by the club's name, at most 24, through the same public download link drive_sync uses."""
+    if job['brief'].get('drive') is False:
+        return None
+    from . import drive_sync
+    inv = json.loads(drive_sync.INVENTORY.read_text())
+    fold = lambda s: re.sub(r'[^a-z0-9]+', ' ', s.lower()).strip()  # noqa: E731
+    files = [f for f in inv['files'] if drive_sync.PICTURE.search(f['name']) and drive_folder_fits(job['brief']['club_id'], job['brief']['club_name'], fold(f['path']))][:24]
+    if not files:
+        log(f"Drive: no folder for {job['brief']['club_name']} in the library")
+        return None
+    d = jd / 'drive-art'
+    d.mkdir(parents=True, exist_ok=True)
+    got = 0
+    for f in files:
+        out = d / re.sub(r'[^A-Za-z0-9._-]+', '-', f['name'])
+        if out.exists():
+            got += 1
+            continue
+        try:
+            with urllib.request.urlopen(drive_sync.URL.format(id=f['id']), timeout=120) as r:
+                data = r.read()
+            if f.get('bytes') and len(data) != f['bytes']:
+                log(f"Drive: {f['name']} came back the wrong size — skipped")
+                continue
+            out.write_bytes(data)
+            got += 1
+        except Exception as e:  # noqa: BLE001 — a picture that does not download is reported, never guessed
+            log(f"Drive: {f['name']} did not download ({type(e).__name__})")
+    log(f'Drive: {got} pictures for this club')
+    return d if got else None
+
+
+def send_reel(st: Studio, job: dict, jd: Path, log) -> None:
+    """The Reel (the first 9:16 cut) to the owner's linked Telegram chat, when the brief asks for it."""
+    token = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
+    reels = sorted((jd / 'out' / 'shorts').glob('*.mp4')) if (jd / 'out' / 'shorts').exists() else []
+    if not job['brief'].get('reel_to_telegram') or not token or not reels:
+        return
+    try:
+        ping = st.ping_chat()
+        if not ping:
+            log('Telegram: no chat linked — the Reel stays in the studio')
+            return
+        boundary = 'fanlife' + os.urandom(8).hex()
+        data = reels[0].read_bytes()
+        if len(data) > 49 * 1024 * 1024:
+            log('Telegram: the Reel is over 49 MB — not sent')
+            return
+        cap = f"🎬 {job['brief']['club_name']} · {job['brief']['season']} — the Reel from the studio"
+        parts = [f'--{boundary}\r\nContent-Disposition: form-data; name="chat_id"\r\n\r\n{ping}\r\n'.encode(),
+                 f'--{boundary}\r\nContent-Disposition: form-data; name="caption"\r\n\r\n{cap}\r\n'.encode(),
+                 f'--{boundary}\r\nContent-Disposition: form-data; name="supports_streaming"\r\n\r\ntrue\r\n'.encode(),
+                 f'--{boundary}\r\nContent-Disposition: form-data; name="video"; filename="{reels[0].name}"\r\nContent-Type: video/mp4\r\n\r\n'.encode(),
+                 data, f'\r\n--{boundary}--\r\n'.encode()]
+        req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendVideo', data=b''.join(parts),
+                                     headers={'Content-Type': f'multipart/form-data; boundary={boundary}'}, method='POST')
+        with urllib.request.urlopen(req, timeout=300) as r:
+            ok = json.load(r).get('ok')
+        log('Telegram: Reel sent' if ok else 'Telegram: the Reel was refused')
+    except Exception as e:  # noqa: BLE001 — the film is ready either way
+        log(f'Telegram: the Reel was not sent ({type(e).__name__})')
 
 
 def fetch_art(st: Studio, job: dict, jd: Path, log) -> Path | None:
@@ -174,7 +271,14 @@ def run_once(st: Studio, root: Path, log) -> bool:
 
     try:
         pb = brief_for_pipeline(job, fetch_art(st, job, jd, log))
+        drive = fetch_drive(job, jd, log)  # every run: a resumed film starts on a clean machine
+        if drive:
+            pb['drive_dir'] = str(drive)
         result = pipeline.run(jd, pb, Palette.from_json(job['palette']), progress=progress)
+        if result.get('state') == 'review' and result.get('stage') == 'script' and result.get('options'):
+            st.call({'op': 'finish', 'id': jid, 'state': 'needs_review', 'stage': 'script', 'options': result['options']})
+            log(f"{len(result['options'])} scripts written; waiting for the owner to choose one.")
+            return True
         if result.get('state') == 'review' and result.get('stage') == 'script':
             urls = st.call({'op': 'upload_urls', 'id': jid, 'names': ['script.json']})['urls']
             st.put(urls['script.json'], jd / 'script.json', ctype='application/json')
@@ -190,6 +294,7 @@ def run_once(st: Studio, root: Path, log) -> bool:
                  'youtube': read_json(out / 'youtube.json'),
                  'qa': {'ok': qa['ok'], 'checks': qa['checks'], 'cannot_prove': qa.get('cannot_prove'), 'rights': qa.get('rights')},
                  'cost': {'renderMinutes': qa.get('render_minutes'), 'voice': read_json(jd / 'voice.json').get('provider')}}, timeout=120)
+        send_reel(st, job, jd, log)
         log(f'Job {jid}: {result["state"]}')
     except Stop as s:
         log(f'Job {jid}: {s.control} requested by the owner — stopping at a checkpoint.')

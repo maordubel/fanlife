@@ -937,7 +937,9 @@ def _render_range(args) -> str:
     return f'{idxs[0]}-{idxs[-1]}'
 
 
-def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int | None = None, only: list[int] | None = None) -> Path:
+def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int | None = None, only: list[int] | None = None,
+                tick=None) -> Path:
+    """`tick(done, total)` is called from this thread about every 40 s while shots render (the studio's progress bar)."""
     out_dir = job_dir / 'shots'
     out_dir.mkdir(parents=True, exist_ok=True)
     plan_path = job_dir / 'plan.json'
@@ -950,9 +952,15 @@ def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int |
     args = [(str(job_dir), str(plan_path), str(job_dir / 'ledger.json'), str(job_dir / 'script.json'), str(job_dir / 'voice.json'), palette.to_json(), c, str(out_dir)) for c in chunks]
     if args:
         log(f'Edit: rendering {len(todo)} shots on {len(args)} workers')
+        from concurrent.futures import FIRST_COMPLETED, wait
         with ProcessPoolExecutor(max_workers=len(args)) as ex:
-            for done in ex.map(_render_range, args):
-                log(f'Edit: shots {done} rendered')
+            futs = {ex.submit(_render_range, a) for a in args}
+            while futs:
+                done_now, futs = wait(futs, timeout=40, return_when=FIRST_COMPLETED)
+                for f in done_now:
+                    log(f'Edit: shots {f.result()} rendered')
+                if tick:
+                    tick(sum(1 for i in idxs if (out_dir / f'shot-{i:04d}.mp4').exists()), len(idxs))
     if only is not None:
         return out_dir
     lst = out_dir / 'list.txt'

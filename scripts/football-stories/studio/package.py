@@ -54,7 +54,7 @@ def captions(plan: dict) -> list[dict]:
                 flush()
         flush()
     for a, b in zip(cues, cues[1:]):
-        a['end'] = min(a['end'], b['start'] - 0.04)
+        a['end'] = max(a['start'] + 0.2, min(a['end'], b['start'] - 0.04))
     out = []
     for c in cues:
         words, lines, line = c['text'].split(), [], ''
@@ -65,9 +65,15 @@ def captions(plan: dict) -> list[dict]:
             else:
                 line = (line + ' ' + w).strip()
         lines.append(line)
-        if len(lines) > 2:
-            lines = [' '.join(words[: len(words) // 2]), ' '.join(words[len(words) // 2:])]
-        out.append({**c, 'lines': lines})
+        # More than two lines: split the cue in two-line pieces and share its time by characters, so no line is
+        # ever longer than 42 characters (the old fallback halved the words and printed a 60-character line).
+        pieces = [lines[i:i + 2] for i in range(0, len(lines), 2)]
+        total = sum(len(' '.join(p)) for p in pieces) or 1
+        t = c['start']
+        for p in pieces:
+            span = (c['end'] - c['start']) * len(' '.join(p)) / total
+            out.append({**c, 'start': t, 'end': max(t + 0.3, t + span), 'text': ' '.join(p), 'lines': p})
+            t += span
     return out
 
 

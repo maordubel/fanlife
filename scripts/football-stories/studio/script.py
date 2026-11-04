@@ -297,9 +297,15 @@ def squash(t: str) -> str:
     return re.sub(r'\s+', ' ', t).strip().strip('"').lower()
 
 
+# Measured on the first full film (AEK 2002/03, 4.11.2026): a script at the old 148-word rate ran 8.83 min for a
+# 7 min request, because the cold open, chapter cards, pauses and the end card take screen time the voice does not.
+# A film is planned at this rate; the narrator still speaks at WORDS_PER_MINUTE.
+FILM_WORDS_PER_MINUTE = 122
+
+
 def target_words(minutes: float) -> tuple[int, int]:
-    w = minutes * WORDS_PER_MINUTE
-    return int(w * 0.85), int(w * 1.12)
+    w = minutes * FILM_WORDS_PER_MINUTE
+    return int(w * 0.9), int(w * 1.08)
 
 
 def validate_script(s: dict, ledger: dict, minutes: float) -> list[str]:

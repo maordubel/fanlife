@@ -14,9 +14,23 @@ export type UploadState='none'|'in_progress'|'uncertain'|'done'
 export type Privacy='private'|'unlisted'|'public'|'scheduled'
 export const DURATIONS=[0.5,1,2,3,5,...Array.from({length:19},(_,i)=>i+7)] as const
 export type ArtFile={name:string;illustrated:boolean}
+/** Studio v3 (owner, 4.11.2026: "less freedom, more choices; a film about one match; three scripts to choose from"). */
+export const KINDS=['season','match','tie','rivalry'] as const
+export type Kind=typeof KINDS[number]
+export const TONES=['auto','triumph','heartbreak','underdog','rivalry','nostalgia','drama'] as const
+export type Tone=typeof TONES[number]
+export const STYLES=['collage','papercut','archive','night'] as const
+export type Style=typeof STYLES[number]
+export type ScriptOption={n:number;angle:string;title:string;hook:string;chapters:string[];words:number;opening:string}
 export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
- visual_style:'collage'|'papercut'|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
+ visual_style:Style|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
+ /** what the film is about: a season (default), one match, a tie or run of matches, or every meeting with one opponent */
+ kind?:Kind;match_ids?:string[];opponent?:string|null;tone?:Tone
+ /** three scripts to choose from (default) or one; the owner's pick once they are written */
+ scripts?:1|3;choice?:number|null
+ /** pictures from the owner's Google Drive library for this club, and the Reel sent to the owner's Telegram */
+ drive?:boolean;reel_to_telegram?:boolean
  privacy:Privacy;publish_at:string|null
  /** Crowd reactions at the goals: soft (default) or none (owner, 3.11.2026). */
  crowd?:'soft'|'off'
@@ -50,18 +64,30 @@ export type Job={
  youtube:Record<string,unknown>|null;qa:{ok:boolean;checks:{name:string;ok:boolean;detail:string}[];cannot_prove?:string[];rights?:string[]}|null
  upload:{state:UploadState;videoId:string|null;visibility:Privacy|null;publishAt:string|null;at:string|null;by:string|null;note:string|null}
  cost:{writer?:string;voice?:string;renderMinutes?:number}
+ /** the scripts written for the owner to choose from (studio v3) */
+ options?:ScriptOption[]|null
 }
 export const SEASON=/^\d{4}\/\d{2}$/
+export const SPAN=/^\d{4}–\d{4}$/
 const ISO=/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/
 export class StoryError extends Error{constructor(public code:string,message:string,public status=400){super(message)}}
 
 export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  if(!v||typeof v!=='object'||Array.isArray(v))throw new StoryError('BRIEF','A production brief is required.')
  const b=v as Record<string,unknown>
- const str=(k:string,max:number,req=false)=>{const x=b[k];if(x===undefined||x===null)return '';if(typeof x!=='string'||x.trim().length>max||(req&&!x.trim()))throw new StoryError('BRIEF',`Invalid ${k}.`);return x.trim()}
+ const str=(k:string,max:number,req=false)=>{const x=b[k];if(x===undefined||x===null){if(req)throw new StoryError('BRIEF',`Invalid ${k}.`);return ''};if(typeof x!=='string'||x.trim().length>max||(req&&!x.trim()))throw new StoryError('BRIEF',`Invalid ${k}.`);return x.trim()}
  const club_id=str('club_id',60,true);const club_name=clubs.get(club_id);if(!club_name)throw new StoryError('BRIEF','Unknown club.')
- const season=str('season',7,true);if(!SEASON.test(season))throw new StoryError('BRIEF','Season must look like 1999/00.')
- if((+season.slice(0,4)+1)%100!==+season.slice(5))throw new StoryError('BRIEF','Season must be two consecutive years, like 1999/00.')
+ const pick0=<T extends string>(k:string,opts:readonly T[],d:T):T=>{const x=b[k]===undefined||b[k]===null?d:b[k];if(!opts.includes(x as T))throw new StoryError('BRIEF',`Invalid ${k}.`);return x as T}
+ const kind=pick0('kind',KINDS,'season')
+ const season=str('season',9,true)
+ if(kind==='rivalry'){if(!SPAN.test(season))throw new StoryError('BRIEF','A rivalry film spans years, like 1971–2026.')}
+ else{if(!SEASON.test(season))throw new StoryError('BRIEF','Season must look like 1999/00.')
+  if((+season.slice(0,4)+1)%100!==+season.slice(5))throw new StoryError('BRIEF','Season must be two consecutive years, like 1999/00.')}
+ const ids=Array.isArray(b.match_ids)?b.match_ids:[]
+ if(ids.some(x=>typeof x!=='string'||!/^[A-Za-z0-9:._-]{3,120}$/.test(x)))throw new StoryError('BRIEF','Invalid match.')
+ if(kind==='match'&&ids.length!==1)throw new StoryError('BRIEF','Choose one match.')
+ if(kind==='tie'&&(ids.length<2||ids.length>8))throw new StoryError('BRIEF','Choose two to eight matches.')
+ const opponent=kind==='rivalry'?str('opponent',80,true):null
  const duration=Number(b.duration);if(!(DURATIONS as readonly number[]).includes(duration))throw new StoryError('BRIEF','Duration must be 30 seconds, 1, 2, 3, 5 or 7–25 minutes.')
  const pick=<T extends string>(k:string,opts:readonly T[],d:T):T=>{const x=b[k]===undefined?d:b[k];if(!opts.includes(x as T))throw new StoryError('BRIEF',`Invalid ${k}.`);return x as T}
  const privacy=pick('privacy',['private','unlisted','public','scheduled'] as const,'private')
@@ -76,7 +102,9 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  const bad=lines.findIndex(l=>!noteLine(l))
  if(bad>=0)throw new StoryError('BRIEF',`Quotes and headlines, line ${bad+1}: use "quote | speaker | role | exact words | https://source" or "press | outlet | YYYY-MM-DD | headline | https://source".`)
  const hold=b.hold===true
- return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',['collage','papercut','mixed'] as const,'collage'),voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
+ const scripts=b.scripts===1?1:3
+ return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',[...STYLES,'mixed'] as const,'collage'),
+  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,tone:pick('tone',TONES,'auto'),scripts,choice:null,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
   focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 
@@ -89,7 +117,7 @@ export function newJob(id:string,brief:Brief,palette:Palette,actor:string,idempo
 const LOG_KEEP=120
 const pushLog=(j:Job,text:string,at:string)=>{j.log=[...j.log,{at,text:text.slice(0,400)}].slice(-LOG_KEEP)}
 
-export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}
+export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}
 export const VIDEO_ID=/^[A-Za-z0-9_-]{11}$/
 
 /** An owner's action → the next job, or a StoryError saying why it is not allowed now. */
@@ -101,7 +129,8 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'resume':if(j.state!=='paused')no('This job is not paused.');j.state='queued';j.lease=null;pushLog(j,`Resumed by ${actor} — continues from its last checkpoint`,at);break
   case 'cancel':if(j.state==='cancelled'||j.state==='cancel_requested')no('This job is already cancelled.');if(j.upload.state==='in_progress')no('An upload is in progress — record its result first.');j.state=j.state==='running'?'cancel_requested':'cancelled';j.lease=j.state==='cancelled'?null:j.lease;pushLog(j,`Cancelled by ${actor}`,at);break
   case 'retry':if(j.state!=='failed'&&j.state!=='cancelled')no('Only a failed or cancelled job can be retried.');j.state='queued';j.error=null;j.lease=null;pushLog(j,`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at);break
-  case 'approve_script':if(j.state!=='needs_review'||j.stage!=='script')no('There is no script waiting for approval.');j.state='queued';j.brief={...j.brief,review:'auto'};pushLog(j,`Script approved by ${actor}`,at);break
+  case 'approve_script':if(j.state!=='needs_review'||j.stage!=='script')no('There is no script waiting for approval.');if(j.options?.length)no('Choose one of the scripts.');j.state='queued';j.brief={...j.brief,review:'auto'};pushLog(j,`Script approved by ${actor}`,at);break
+  case 'choose_script':{if(j.state!=='needs_review'||j.stage!=='script'||!j.options?.length)no('There are no scripts waiting for your choice.');const o=j.options!.find(x=>x.n===a.option);if(!o)throw new StoryError('CHOICE','Unknown script.');j.state='queued';j.brief={...j.brief,review:'auto',choice:o.n};pushLog(j,`Script ${o.n} chosen by ${actor}: "${o.title}"`,at);break}
   case 'upload_started':if(j.state!=='ready'&&j.state!=='needs_review')no('Only a finished film can be uploaded.');if(j.upload.state==='done')no('This film is already uploaded.');if(j.upload.state==='in_progress'||j.upload.state==='uncertain')no('An upload was started already — check YouTube Studio, then record the result or reset.');j.upload={...j.upload,state:'in_progress',at,by:actor};pushLog(j,`Upload started by ${actor}`,at);break
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
@@ -143,16 +172,18 @@ export function report(job:Job,worker:string,p:Progress,now=new Date()):{job:Job
  if(control==='pause')j.lease=null
  return {job:j,control}
 }
-export type Finish={state:'ready'|'needs_review'|'failed';error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
+export type Finish={options?:ScriptOption[];state:'ready'|'needs_review'|'failed';error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
 export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  if(!job.lease||job.lease.worker!==worker)throw new StoryError('LEASE','This worker does not hold the job.',409)
  const j=structuredClone(job),at=now.toISOString()
  j.state=f.state;j.lease=null;j.updatedAt=at
  if(f.stage)j.stage=f.stage
  if(f.state==='failed'){j.error={code:String(f.error?.code||'FAILED').slice(0,60),message:String(f.error?.message||'').slice(0,600),retryable:!!f.error?.retryable};pushLog(j,`Failed: [${j.error.code}] ${j.error.message}`,at)}
- else{j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
+ else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=f.options.slice(0,3).map(cleanOption);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
  return j
 }
+const cut=(x:unknown,n:number)=>String(x??'').slice(0,n)
+function cleanOption(o:ScriptOption):ScriptOption{return {n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)}}
 /** Storage paths a worker may write for a job: its own folder only, plain file names. */
 export function mediaPath(jobId:string,name:string):string{
  if(!/^[a-z0-9-]{8,64}$/.test(jobId)||!/^[a-z0-9][a-z0-9._-]{0,80}$/.test(name)||name.includes('..'))throw new StoryError('PATH','Invalid media path.')
