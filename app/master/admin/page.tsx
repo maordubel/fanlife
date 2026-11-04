@@ -26,10 +26,11 @@ import {attentionNow} from '@/lib/master/crm/now'
 import {buildDesk} from '@/lib/master/crm/desk'
 import {featuresOf} from '@/lib/features'
 import {ConnectedDesk} from '@/components/master/desk/ConnectedDesk'
+import {StoriesDesk} from '../stories/stories-desk'
 import '../../desk.css'
 export const dynamic='force-dynamic'
 
-const SECTION_KEYS=['overview','clubs','players','games','market','community','audience','data','operations','advertising','settings','more'] as const
+const SECTION_KEYS=['overview','clubs','players','games','studio','market','community','audience','data','operations','advertising','settings','more'] as const
 /** Old bookmarks keep working (rule 99 §2): `?tab=` and `?section=data&view=players` land where they always did. */
 const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'overview'},club:{section:'clubs',view:'evidence'},data:{section:'data'},display:{section:'settings'},updates:{section:'operations'},activity:{section:'operations'}}
 /** sections the Admin component draws (the rest are the desk's own panels) */
@@ -54,6 +55,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  if(section==='players')return shell(<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>)
  if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features} lab={(['trivia','timeline','memory','league'] as const).find(g=>g===searchParams.lab)??null}/>:view==='missions'?<Suspense fallback={<p className="desk-state" role="status">Fitting every mission to every club…</p>}><MissionsDesk features={features}/></Suspense>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<><ExperienceCard features={features}/><div className="crm-exps"><MissionsCard features={features}/></div></>}/>)
  if(section==='advertising'){const named=state.clubs.map(c=>({id:c.id,name:c.name,status:c.status})).sort((a,b)=>a.name.localeCompare(b.name));return shell(<><Suspense fallback={<p className="desk-state" role="status">Checking DUBID and OFFSIDES…</p>}><ConnectedDesk clubs={named}/></Suspense><AdsDesk initial={await readPromo()} clubs={named}/></>)}
+ if(section==='studio')return shell(<StoriesDesk/>)
  if(section==='market')return shell(<MarketDesk/>)
  if(section==='community')return shell(<CommunityDesk/>)
  const runs=await readRuns()

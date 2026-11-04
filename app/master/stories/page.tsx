@@ -1,13 +1,10 @@
 import type {Metadata} from 'next'
-import {AdminShell} from '@/components/master/desk/AdminShell'
+import {redirect} from 'next/navigation'
 import {requireAdmin} from '@/lib/master/admin'
-import {StoriesDesk} from './stories-desk'
-import '../../desk.css'
 export const dynamic='force-dynamic'
 export const metadata:Metadata={title:'Football Stories studio',robots:{index:false,follow:false}}
-/** The owner's documentary studio: behind the control-room login (fails closed without FAN_LIFE_ADMIN_KEY in production),
- *  inside the Editor's Desk frame (rule 99) so the desk's navigation is one tap away. */
+/** The studio is an area of the desk (`/master/admin?section=studio`, 4.11.2026); old links land there. */
 export default function StoriesPage(){
  requireAdmin('/master/stories')
- return <AdminShell section="more" club={null} clubName={null} owner><StoriesDesk/></AdminShell>
+ redirect('/master/admin?section=studio')
 }

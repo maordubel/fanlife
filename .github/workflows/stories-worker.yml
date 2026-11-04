@@ -1,6 +1,6 @@
 name: Football Stories worker
 # Makes the films queued in the owner's studio (/master/stories). No terminal: queue a film in the studio and this
-# runner picks it up within about ten minutes (or click "Run workflow" in the Actions tab to start at once).
+# listener (stories-watch.yml) starts this worker within about a minute; the schedule below is only a fallback.
 # One film per run. Paid answers (script, voice) are kept per job between runs, so a retry never pays twice.
 # Secrets: FAN_LIFE_CRON_SECRET (required) · ANTHROPIC_API_KEY / OPENAI_API_KEY / GEMINI_API_KEY (one writer) ·
 # ELEVENLABS_API_KEY (optional premium voice; without it the free Kokoro British voice is used).
@@ -35,8 +35,12 @@ jobs:
         uses: actions/setup-node@v4
         with: {node-version: 22, cache: npm}
       - if: steps.peek.outputs.next != ''
-        name: Map data
-        run: npm install --no-save --no-audit --no-fund world-atlas@2
+        name: Club archives and map data
+        # the studio researches every club but Hapoel from its compiled pack (content/compiled/<club>.json, not in git)
+        run: |
+          npm ci --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund world-atlas@2
+          npm run clubs:precompile
       - if: steps.peek.outputs.next != ''
         uses: actions/setup-python@v5
         with: {python-version: '3.12'}

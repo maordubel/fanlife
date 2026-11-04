@@ -3,14 +3,15 @@ import {adminFromRequest} from '@/lib/master/admin'
 import {StoryError,newJob,validateBrief} from '@/lib/stories/jobs'
 import {clubNames,paletteFor,storyClubs} from '@/lib/stories/clubs'
 import {createJob,listJobs} from '@/lib/stories/store'
+import {readHealth} from '@/lib/stories/health'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 
-/** GET: the owner's films (newest first) and the clubs a film can be made about. */
+/** GET: the owner's films (newest first), the clubs a film can be made about, and whether the studio can work now. */
 export async function GET(r:Request){
  if(!adminFromRequest(r))return json({error:'Not authorised.'},401)
- try{return json({jobs:await listJobs(),clubs:storyClubs()})}catch(e){return fail(e)}
+ try{const [jobs,clubs,health]=await Promise.all([listJobs(),storyClubs(),readHealth()]);return json({jobs,clubs,health})}catch(e){return fail(e)}
 }
 /** POST: queue a new film. An idempotency key makes a double click one job, not two. */
 export async function POST(r:Request){
@@ -25,6 +26,7 @@ export async function POST(r:Request){
   const existing=(await listJobs(200)).find(j=>j.idempotencyKey===key)
   if(existing)return json({job:existing},200)
   const brief=validateBrief(b.brief,clubNames())
+  if(!(await storyClubs()).some(c=>c.id===brief.club_id))throw new StoryError('BRIEF','This club has no compiled archive yet, so the studio has nothing to research. Choose a club from the list.')
   const job=newJob(randomUUID(),brief,paletteFor(brief.club_id),s.actor||'owner',key)
   if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
   return json({job},201)

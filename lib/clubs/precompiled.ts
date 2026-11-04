@@ -34,6 +34,12 @@ const readManifest = () =>
     })
     .catch(() => null))
 
+/** The clubs the build compiled (the manifest), or null when there is none (development, a build without packs). */
+export async function compiledClubIds(): Promise<string[] | null> {
+  const m = await readManifest()
+  return m ? m.clubs : null
+}
+
 /** The compiled base of one repository club, or null (then the caller compiles). Never throws. */
 export async function readPrecompiled(id: string): Promise<Compiled | null> {
   if (!precompiledEnabled()) return null

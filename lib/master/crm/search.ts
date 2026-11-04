@@ -12,7 +12,7 @@ import {EXPERIENCES} from '@/lib/experiences/registry'
  */
 export type Hit={kind:'club'|'player'|'gate'|'experience'|'area';id:string;title:string;sub:string;href:string}
 const fold=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const AREAS:[string,string,string][]=[['Desk','overview','What needs you now'],['Players','players','Positions, prices, duplicates'],['Games','games','Every gate, every club'],['Market','market','Shirts, offers, reports'],['Community','community','Fan contributions'],['Performance','audience','Who plays'],['Sources & research','data','Collect, parse, stage'],['Operations','operations','Runs, storage, schedules'],['Settings','settings','Features, LIFE display'],['Features','settings','Switch ALL FOOTBALL, FAN LEAGUE, friendlies']]
+const AREAS:[string,string,string][]=[['Desk','overview','What needs you now'],['Players','players','Positions, prices, duplicates'],['Games','games','Every gate, every club'],['Studio','studio','Football Stories documentary films'],['Football Stories','studio','Make a documentary film'],['Video','studio','Football Stories studio'],['Market','market','Shirts, offers, reports'],['Community','community','Fan contributions'],['Performance','audience','Who plays'],['Sources & research','data','Collect, parse, stage'],['Operations','operations','Runs, storage, schedules'],['Settings','settings','Features, LIFE display'],['Features','settings','Switch ALL FOOTBALL, FAN LEAGUE, friendlies']]
 export async function deskSearch(raw:string,scope:string|null):Promise<{q:string;hits:Hit[];players:'ok'|'unavailable'}>{
  const q=raw.trim().slice(0,80);if(q.length<2)return {q,hits:[],players:'ok'}
  const f=fold(q),hits:Hit[]=[]

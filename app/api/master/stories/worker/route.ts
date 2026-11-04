@@ -3,12 +3,14 @@ import {StoryError,claim,finish,mediaPath,nextForWorker,report,type Finish,type 
 import {getJob,listJobs,updateJob} from '@/lib/stories/store'
 import {signedDownload,signedUpload} from '@/lib/stories/media'
 import {body,fail,json} from '@/lib/stories/http'
+import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 
 /**
  * The production worker's only door (GitHub Actions, `Authorization: Bearer <CRON_SECRET>`).
- *   {op:'peek',worker}                          → the id of the film that would be taken next (no lease)
+ *   {op:'peek',worker,health?}                  → the id of the film that would be taken next (no lease); the listener
+ *                                                 (stories-watch.yml) adds its heartbeat and the writer-key check
  *   {op:'claim',worker}                         → the next job, leased to this worker (or {job:null})
  *   {op:'progress',id,worker,stage,progress,…}  → {control: continue | pause | cancel}
  *   {op:'upload_urls',id,worker,names:[…]}      → signed upload urls inside jobs/<id>/ only
@@ -23,6 +25,8 @@ export async function POST(r:Request){
   const worker=typeof b.worker==='string'&&/^[A-Za-z0-9._:-]{3,80}$/.test(b.worker)?b.worker:null
   if(!worker)throw new StoryError('WORKER','Missing worker id.')
   if(b.op==='peek'){
+   const hb=cleanHeartbeat(b.health,worker)
+   if(hb)await noteHeartbeat(hb)
    const next=nextForWorker(await listJobs(200))
    return json({next:next?next.id:null})
   }
