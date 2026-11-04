@@ -170,3 +170,24 @@ The owner asked for visuals of the goal, the stand and the celebration "as close
   A photo is a beat (`'kind': 'art', 'photo': <file>`, optional `crop`). Text typed onto a clip, a number plate:
   `'blur': [[x, y, w, h]]`. Selfies of the owner, his hands, tattoos: left out.
 - A single Drive FILE link works wherever a folder link does (`drive_fetch.py`).
+
+## 10 · The automatic episode (4.11.2026)
+
+Owner: *"add VLOG production to the studio, by the settings and design of I WAS THERE, pulling the material straight
+from the Drive."* `vlog_auto.py` writes an episode file the way the four hand-made ones were written, and the studio
+worker can call it: `make_episode(footage_dir, match, club, notes, minutes, work_dir, log)` → `episode.json`, then
+`render(episode, footage_dir, out_dir, log)` → film.py's film and reel. Map: `docs/fanlife/63-vlog-auto.md`.
+- **Measured, then written.** survey.py + the scout run over the folder; the writer (Gemini, free, the studio's model
+  walk) sees the material table, the strips and the stills as pictures, the match's research claims and this file's
+  rules, and one hand-made episode as the gold standard.
+- **The record and the camera are filled in, never written:** the fixture (sides, date, score, scorers only when a
+  claim names every goal), the sources, the accent, the look, the camera clock on every clip, and the mute on any clip
+  in which Whisper heard a voice (§4).
+- **The fact guard is the studio's:** a number in a beat must be in a claim the beat cites (`"claims"`), or the hour
+  and minute of that beat's own clip or still; an HH:MM must be on the camera's clock or in a cited claim. The owner's
+  free notes are one claim (`owner`) — he was in the stand.
+- **What stays hand-made:** goal reconstructions, the ground's board, red cards, phone lights, maps and timelines —
+  each needs a report or coordinates the claims do not carry.
+- A failed check goes back to the writer with the exact problems, four rounds at most; then the job stops with them.
+- **Owner, 4.11.2026:** in his targeted folders, press photos with real faces are used as they are — never blurred,
+  never rejected. Voices and names said aloud in clips stay as in §4.
