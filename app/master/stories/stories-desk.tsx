@@ -4,6 +4,7 @@ import type {Job,Privacy} from '@/lib/stories/jobs'
 import type {Health} from '@/lib/stories/health'
 import {STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
+import {SocialPanel} from './SocialPanel'
 
 type Club={id:string;name:string;primary:string;on:string;seasons:{season:string;matches:number}[]}
 const ATHENS=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
@@ -284,6 +285,7 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
    <p className={css.meta}>Tags: {yt.tags.join(', ')}</p>
    <details><summary className={css.meta}>Shorts ideas</summary><ul>{yt.shorts.map(s=><li key={s.hook}><b>{s.hook}</b> — {s.idea}</li>)}</ul></details></>}
   {yt&&a?.master&&<PublishKit yt={yt} job={job}/>}
+  {a?.master&&<SocialPanel job={job}/>}
   {a?.master&&<><h3 className={css.h3}>Files</h3><div className={css.actions}>
    <button className={`${css.btn} min-h-tap`} onClick={()=>void downloadMaster()}>Download master ({(a.master.bytes/1e6).toFixed(0)} MB)</button>
    {u(a.package)&&<a className={`${css.btn} min-h-tap`} href={u(a.package)}>Package (zip)</a>}

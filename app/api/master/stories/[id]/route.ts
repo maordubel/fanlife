@@ -24,14 +24,14 @@ export async function GET(r:Request,{params}:{params:{id:string}}){
   return json({job:cur.job,urls})
  }catch(e){return fail(e)}
 }
-const ACTIONS=new Set(['pause','resume','cancel','retry','approve_script','choose_script','upload_started','upload_done','upload_uncertain','upload_reset','art_added'])
+const ACTIONS=new Set(['pause','resume','cancel','retry','approve_script','choose_script','upload_started','upload_done','upload_uncertain','upload_reset','art_added','social_schedule','social_cancel'])
 export async function POST(r:Request,{params}:{params:{id:string}}){
  const s=adminFromRequest(r)
  if(!s)return json({error:'Not authorised.'},401)
  if(!sameOrigin(r))return json({error:'Invalid request origin.'},403)
  if(limited(`act:${params.id}`,30,60_000))return json({error:'Too many actions; wait a moment.'},429)
  try{
-  const a=await body(r) as OwnerAction
+  const a=await body(r,100_000) as OwnerAction
   if(!a||typeof a!=='object'||!ACTIONS.has((a as {action:string}).action))throw new StoryError('ACTION','Unknown action.')
   const job=await updateJob(params.id,j=>ownerAct(j,a,s.actor||'owner'))
   // Free plan, 1 GB: once YouTube has the film, the master's chunks leave the bucket (preview and package stay).

@@ -1,0 +1,50 @@
+name: Football Stories · social
+# Publishes the posts scheduled in the studio (Desk → Studio → a finished film → Social) to Facebook, Instagram, X and
+# TikTok. docs/fanlife/61-stories-social-publishing.md. Every post is tried ONCE.
+# Nothing is published unless the repository VARIABLE STORIES_SOCIAL_AUTOPUBLISH is 1 AND that platform's secrets are
+# set; every other post goes to your Telegram as a ready copy-paste pack (caption box, first-comment box, the file).
+# Variables: FAN_LIFE_RESEARCH_URL · STORIES_SOCIAL_AUTOPUBLISH · META_PAGE_ID · META_IG_USER_ID · TIKTOK_PRIVACY (optional)
+# Secrets: FAN_LIFE_CRON_SECRET · TELEGRAM_BOT_TOKEN · META_PAGE_TOKEN · X_API_KEY · X_API_SECRET · X_ACCESS_TOKEN ·
+#          X_ACCESS_SECRET · TIKTOK_ACCESS_TOKEN (or TIKTOK_CLIENT_KEY + TIKTOK_CLIENT_SECRET + TIKTOK_REFRESH_TOKEN)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: stories-social
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/football-stories/publish
+            scripts/marketing/meta-publish.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - name: Publish the due posts
+        env:
+          STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+          FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          STORIES_SOCIAL_AUTOPUBLISH: ${{ vars.STORIES_SOCIAL_AUTOPUBLISH }}
+          META_PAGE_ID: ${{ vars.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ vars.META_IG_USER_ID }}
+          META_GRAPH_VERSION: ${{ vars.META_GRAPH_VERSION }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_PRIVACY: ${{ vars.TIKTOK_PRIVACY }}
+        run: node scripts/football-stories/publish/social.mjs

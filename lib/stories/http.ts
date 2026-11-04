@@ -1,6 +1,7 @@
 import 'server-only'
 import {NextResponse} from 'next/server'
 import {StoryError} from './jobs'
+import {SocialError} from './social'
 
 export const json=(v:unknown,status=200)=>NextResponse.json(v,{status,headers:{'Cache-Control':'no-store, private','X-Robots-Tag':'noindex, nofollow'}})
 /** State-changing owner requests must come from the studio's own origin (CSRF): a cross-site form or fetch is refused. */
@@ -14,7 +15,7 @@ export async function body(r:Request,max=8000):Promise<unknown>{
  try{return JSON.parse(raw)}catch{throw new StoryError('JSON','Invalid JSON.')}
 }
 export function fail(e:unknown){
- if(e instanceof StoryError)return json({error:e.message,code:e.code},e.status)
+ if(e instanceof StoryError||e instanceof SocialError)return json({error:e.message,code:e.code},e.status)
  console.error('[stories]',e)
  return json({error:'The studio could not complete that request.',code:'INTERNAL'},500)
 }
