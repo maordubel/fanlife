@@ -125,3 +125,25 @@ class Repair(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class AutoFix(unittest.TestCase):
+    def test_optional_devices_that_fail_are_dropped_and_form_cards_sorted(self):
+        from studio.writer import autofix, _length_only
+        ledger = {'claims': [{'id': 'a', 'fact': {'date': '2000-02-01'}}, {'id': 'b', 'fact': {'date': '1999-09-01'}}]}
+        s = {'motif': 'the 12th man', 'chapters': [{'beats': [
+            {'narration': 'x', 'slug': 'Alma — the final', 'visual': {'type': 'form', 'claims': ['a', 'b', 'a']}},
+            {'narration': 'y', 'visual': {'type': 'trailer', 'lines': ['TWELVE NIGHTS', 'ONE CITY']}}]}]}
+        errs = ['Chapter 1 beat 1: slug "Alma — the final" "Alma" is not in a claim cited in this beat',
+                'Chapter 1 beat 1: a form card lists its matches in date order, each once',
+                'Chapter 1 beat 2: trailer line "TWELVE NIGHTS" number twelve is not in the cited claims',
+                '"motif" is an image, not a fact: no number, date, club or name in it']
+        t = autofix(s, errs, ledger)
+        b1, b2 = t['chapters'][0]['beats']
+        self.assertNotIn('slug', b1)
+        self.assertEqual(b1['visual']['claims'], ['b', 'a'])
+        self.assertEqual(b2['visual']['lines'], ['ONE CITY'])
+        self.assertNotIn('motif', t)
+        self.assertIn('slug', s['chapters'][0]['beats'][0])  # the original is untouched
+        self.assertTrue(_length_only('Narration is 767 words; a 5.0-minute film needs 549–658', 549, 658))
+        self.assertFalse(_length_only('Narration is 900 words; a 5.0-minute film needs 549–658', 549, 658))
