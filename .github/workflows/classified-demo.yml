@@ -5,9 +5,6 @@ name: CLASSIFIED · demo
 # committed. The video is also kept as a workflow artifact for one day.
 # Secrets used: TELEGRAM_BOT_TOKEN · FAN_LIFE_CRON_SECRET (finds the linked chat, as the studio worker does).
 on:
-  # TEMPORARY (removed before review): a dispatch needs the workflow on main, so the branch's own push runs it once
-  push:
-    branches: [claude/classified-composer]
   workflow_dispatch:
     inputs:
       vertical:
@@ -65,7 +62,7 @@ jobs:
           python3 scripts/football-stories/comic/compose.py --episode scripts/football-stories/comic/episodes/file01-demo.json \
             --panels "$RUNNER_TEMP/panels" --out "$RUNNER_TEMP/out/classified-file01-demo.mp4" --report "$RUNNER_TEMP/out/report.json"
           cat "$RUNNER_TEMP/out/report.json"
-      - if: github.event_name == 'push' || inputs.vertical
+      - if: inputs.vertical
         name: Render the 9:16 cut
         run: |
           python3 scripts/football-stories/comic/compose.py --episode scripts/football-stories/comic/episodes/file01-demo.json \
