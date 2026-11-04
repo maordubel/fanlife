@@ -99,8 +99,12 @@ class Shot:
     meta: dict = field(default_factory=dict)
     # A moving world (an owner stop-motion clip): frame index → CANVAS-sized RGB. Read in order, never seeked.
     world_frames: Callable[[int], Image.Image] | None = None
-    # Drawn last, over everything (the burned-in captions): shot time → (RGBA, x, y) or None.
+    # Drawn last, over everything (the burned-in captions): shot time → (RGBA, x, y) or None — or a list of them, or
+    # a list of callables (the cinema's graphics, the scorebug, the lower-third, then the captions).
     overlay: Callable[[float], tuple[Image.Image, int, int] | None] | None = None
+    # The cinema's finishing (cinema.look.Grade): shot time, an H×W×3 uint8 picture → the graded picture. Applied to
+    # the picture before the overlays, so the glass graphics stay clean while the world is graded.
+    post: list = field(default_factory=list)
 
     @property
     def frames(self) -> int:
@@ -171,16 +175,30 @@ class ShotRenderer:
             r = transformed(l.img, p, l._cache) if p else None
             if r:
                 frame.alpha_composite(r[0], (r[1], r[2])) if 0 <= r[1] and 0 <= r[2] and r[1] + r[0].width <= W and r[2] + r[0].height <= H else frame.paste(r[0], (r[1], r[2]), r[0])
+        if s.post:
+            arr = np.asarray(frame.convert('RGB'))
+            for fn in s.post:
+                arr = fn(t, arr)
+            frame = Image.fromarray(arr, 'RGB').convert('RGBA')
         for ov in (s.overlay if isinstance(s.overlay, list) else [s.overlay] if s.overlay else []):
             o = ov(t)
-            if o:
-                frame.alpha_composite(o[0], (o[1], o[2])) if frame.mode == 'RGBA' else frame.paste(o[0], (o[1], o[2]), o[0])
+            for piece in (o if isinstance(o, list) else [o] if o else []):
+                im, x, y = piece
+                if 0 <= x and 0 <= y and x + im.width <= W and y + im.height <= H:
+                    frame.alpha_composite(im, (x, y))
+                else:
+                    frame.paste(im, (x, y), im)
         a = np.asarray(frame.convert('RGB'), dtype='int16') + _grain(global_i)
         return np.clip(a, 0, 255).astype('uint8')
 
 
 def blend_entry(shot: Shot, i: int, frame: np.ndarray, prev_last: np.ndarray | None, accent_rgb) -> np.ndarray:
     t = i / FPS
+    if shot.entry not in ('black', 'fade', 'wipe'):
+        from .cinema.look import blend
+        out = blend(shot.entry, t, frame, prev_last, shot.meta.get('side', 1))
+        if out is not None:
+            return out
     if shot.entry == 'black':
         k = ease_in_out(t / 0.8)
         return (frame.astype('float32') * k).astype('uint8')

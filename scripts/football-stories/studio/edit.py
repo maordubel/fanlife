@@ -27,6 +27,7 @@ from .captions import Captions
 from .package import sources_list
 from .paper import CANVAS, ClipWorld, art_backdrop, beat_path, clip_path, crumpled, cut_path, cut_index, piece_meta, recolor, scrub, supporter_scene
 from .sprites import SpriteFactory, key_of
+from . import cinema
 
 LEAD = 0.22       # picture before the voice: cut on the word, not before it
 TAIL = 0.32       # breath after the voice
@@ -229,6 +230,20 @@ class Editor:
             return 'joy'
         if b.get('mood') in MOOD_NAMES:  # the script may say what a beat feels like when the words alone mislead
             return b['mood']
+        if v['type'] == 'trailer':
+            return 'build'
+        if v['type'] in ('goal', 'versus') and f.get('kind') == 'match':
+            if v['type'] == 'goal':
+                return 'triumph' if f.get('outcome') == 'win' and (f.get('stage') == 'Final' or f.get('title_decided')) else 'joy'
+            return 'tense'
+        if v['type'] in ('form', 'run', 'race', 'record'):
+            ids = v.get('claims') or []
+            outs = [self.by[i]['fact'].get('outcome') for i in ids if i in self.by and self.by[i]['fact'].get('kind') == 'match']
+            if outs and all(o == 'loss' for o in outs):
+                return 'sad'
+            if outs and all(o == 'win' for o in outs):
+                return 'joy'
+            return 'build'
         if v['type'] == 'score' and f.get('stage') == 'Final' and self.won_shootout(f):
             return 'triumph'
         if any(w in text for w in ('penalt', 'shoot-out', 'extra time', 'eighty-fifth', 'last minute')):
@@ -261,7 +276,7 @@ class Editor:
                 kind = b['visual']['type']
                 lead = CHAPTER_LEAD if kind == 'chapter' else (1.0 if n == 0 else LEAD)
                 tail = TAIL + (0.4 if bi == len(ch['beats']) - 1 else 0)
-                dur = lead + v['duration'] + tail
+                dur = max(lead + v['duration'] + tail, cinema.min_duration(b['visual']))
                 if kind == 'end':
                     dur = max(dur, END_MIN)  # the call to the site holds until every tile and the address have landed
                 start_f = round(t * FPS)
@@ -269,7 +284,8 @@ class Editor:
                 shots.append({'n': n, 'chapter': ci, 'beat': bi, 'visual': b['visual'], 'claim_ids': b.get('claim_ids') or [],
                               'mood': self.mood(b),
                               'start': start_f / FPS, 'frames': end_f - start_f, 'voice_at': start_f / FPS + lead,
-                              'voice_file': v['file'], 'voice_dur': v['duration'], 'words': v['words'], 'narration': b['narration']})
+                              'voice_file': v['file'], 'voice_dur': v['duration'], 'words': v['words'], 'narration': b['narration'],
+                              'beat_fx': cinema.beat_fx(b)})
                 t += dur
                 n += 1
         start_f = round(t * FPS)
@@ -279,14 +295,30 @@ class Editor:
                           'words': [], 'narration': ''})
             start_f += round(END_MIN * FPS)
         total = start_f / FPS
+        cinema.direct_plan(self, shots)
         chapters, last = [], None
         for s in shots:
             if s['beat'] == 0:
                 chapters.append({'t': s['start'], 'title': self.script['chapters'][s['chapter']]['title']})
-        return {'fps': FPS, 'shots': shots, 'duration': round(total, 3), 'chapters': chapters}
+        dr = cinema.direct_mod.director_of(self)
+        return {'fps': FPS, 'shots': shots, 'duration': round(total, 3), 'chapters': chapters,
+                'director': (dr or {}).get('id'), 'music_key': (dr or {}).get('music')}
 
     # ------------------------------------------------------------------ shots
     def build(self, sp: SpriteFactory, s: dict) -> Shot:
+        if s['visual']['type'] in cinema.TYPES:
+            shot = cinema.build(self, sp, s)
+            caps = None
+            if os.environ.get('STORIES_BURN_CAPTIONS', '1') != '0' and s.get('words') and s.get('voice_at') is not None:
+                caps = Captions(s['words'], s['voice_at'] - s['start'], self.pal.accent)
+            shot.overlay = list(shot.overlay or []) + ([caps] if caps else [])
+            cinema.dress(self, shot, s)
+            return shot
+        shot = self._build(sp, s)
+        cinema.dress(self, shot, s)
+        return shot
+
+    def _build(self, sp: SpriteFactory, s: dict) -> Shot:
         v = s['visual']
         kind = v['type']
         dur = s['frames'] / FPS
@@ -311,7 +343,7 @@ class Editor:
             entry = 'black'
             cues += [(0.9, 'whoosh'), (1.6, 'paper')]
         elif kind == 'chapter':
-            world = self.backdrop(v.get('backdrop') or 'paper', seed, dim=0.32)
+            world = self.backdrop(v.get('backdrop') or (s.get('cinema') or {}).get('broll') or 'paper', seed, dim=0.32)
             card = fit(_img(sp.chapter(k, int(v.get('number') or s['chapter'] + 1), v.get('title') or self.script['chapters'][s['chapter']]['title'])), 1640, 460)
             layers.append(Layer(card, slam(W * 0.47, H * 0.48, 0.45, rot=-1.5), settle=1e9))
             st = _img(sp.stamp(key_of('season', self.ledger['season']), self.ledger['season']))
@@ -364,7 +396,7 @@ class Editor:
                 backdrop = v.get('backdrop') or 'terrace-empty'
             if kind == 'score' and f and f.get('outcome') == 'win' and f.get('stage') in ('Final', 'Semi-final'):
                 backdrop = 'terrace-crowd'
-            backdrop = v.get('backdrop') or backdrop
+            backdrop = v.get('backdrop') or (s.get('cinema') or {}).get('broll') or backdrop
             # Behind a card an owner picture is darkened so the card is what the eye reads first.
             world = self.backdrop(backdrop, seed, dim=0.42 if backdrop.startswith(('beat:', 'clip:')) else 0.0)
             card = self.card(sp, k, v, f, claim, s)
@@ -916,7 +948,7 @@ def _render_range(args) -> str:
                 continue
             shot = ed.build(sp, s)
             prev_last = None
-            if i > 0 and shot.entry in ('fade', 'wipe'):
+            if i > 0 and shot.entry in ('fade', 'wipe', 'whip', 'push', 'burn', 'dissolve', 'split'):
                 ps = ed.build(sp, shots[i - 1])
                 prev_last = ShotRenderer(ps).frame(ps.frames - 1, round(shots[i - 1]['start'] * FPS) + ps.frames - 1)
             r = ShotRenderer(shot)

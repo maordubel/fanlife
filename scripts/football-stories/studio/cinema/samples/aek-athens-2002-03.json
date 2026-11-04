@@ -1,0 +1,234 @@
+{
+  "title_candidates": [
+    {
+      "title": "Unbeaten and Out: AEK's Champions League Autumn",
+      "angle": "search"
+    }
+  ],
+  "selected": 0,
+  "hook": "Six group games. Not one defeat. And still out.",
+  "note": "A hand-written director-2 sample for the cinema (workstream B). Not a published script.",
+  "chapters": [
+    {
+      "title": "Cold open",
+      "beats": [
+        {
+          "narration": "Six nights in the Champions League. Not one defeat. Real Madrid, twice.",
+          "claim_ids": [
+            "summary:UEFA Champions League",
+            "aek-athens:m-dh-9211b7784310",
+            "aek-athens:m-dh-f7fa8e25e783"
+          ],
+          "visual": {
+            "type": "trailer",
+            "lines": [
+              "Six nights.",
+              "Not one defeat.",
+              "Real Madrid. Twice."
+            ]
+          },
+          "pace": "fast"
+        },
+        {
+          "narration": "Athens, the second of October 2002. The champions of Europe walk out to face AEK.",
+          "claim_ids": [
+            "aek-athens:m-dh-9211b7784310"
+          ],
+          "visual": {
+            "type": "versus",
+            "claim": "aek-athens:m-dh-9211b7784310"
+          },
+          "camera": "push",
+          "sfx": "roar"
+        },
+        {
+          "narration": "Six minutes in, Vasilis Tsiartas puts AEK in front.",
+          "claim_ids": [
+            "aek-athens:m-dh-9211b7784310"
+          ],
+          "visual": {
+            "type": "goal",
+            "claim": "aek-athens:m-dh-9211b7784310",
+            "scorer": 0
+          },
+          "camera": "shake"
+        }
+      ]
+    },
+    {
+      "title": "The longest autumn",
+      "beats": [
+        {
+          "narration": "To understand that night, go back to August, and a qualifier in Cyprus.",
+          "claim_ids": [],
+          "visual": {
+            "type": "chapter",
+            "number": 1,
+            "title": "The longest autumn"
+          }
+        },
+        {
+          "narration": "In Nicosia, AEK won three-two. The winner came in the ninetieth minute.",
+          "claim_ids": [
+            "aek-athens:m-dh-ee3787650289"
+          ],
+          "visual": {
+            "type": "illustration",
+            "art": "beat:common/last-minute-clock-n",
+            "caption": "Nicosia, August 2002"
+          },
+          "camera": "drift",
+          "slug": "Nicosia — a night in August"
+        },
+        {
+          "narration": "Then the group. Draw after draw after draw.",
+          "claim_ids": [
+            "aek-athens:m-dh-ee3787650289",
+            "aek-athens:m-dh-d0b8d6d5c0b2",
+            "aek-athens:m-dh-36b3625bc03b",
+            "aek-athens:m-dh-a771cb1bbd07",
+            "aek-athens:m-dh-9211b7784310",
+            "aek-athens:m-dh-f7fa8e25e783",
+            "aek-athens:m-dh-c9f2480b74e9",
+            "aek-athens:m-dh-d6099e9e17a6"
+          ],
+          "visual": {
+            "type": "form",
+            "label": "The Champions League",
+            "claims": [
+              "aek-athens:m-dh-ee3787650289",
+              "aek-athens:m-dh-d0b8d6d5c0b2",
+              "aek-athens:m-dh-36b3625bc03b",
+              "aek-athens:m-dh-a771cb1bbd07",
+              "aek-athens:m-dh-9211b7784310",
+              "aek-athens:m-dh-f7fa8e25e783",
+              "aek-athens:m-dh-c9f2480b74e9",
+              "aek-athens:m-dh-d6099e9e17a6"
+            ]
+          }
+        },
+        {
+          "narration": "Two wins, six draws, no defeats. Eleven scored, nine conceded.",
+          "claim_ids": [
+            "summary:UEFA Champions League"
+          ],
+          "visual": {
+            "type": "record",
+            "claim": "summary:UEFA Champions League",
+            "label": "Unbeaten in Europe"
+          },
+          "camera": "pull"
+        },
+        {
+          "narration": "In Rome, in November, Walter Centeno scored in the ninetieth minute. One each. It was not enough.",
+          "claim_ids": [
+            "aek-athens:m-dh-d6099e9e17a6"
+          ],
+          "visual": {
+            "type": "illustration",
+            "art": "beat:common/europe-stadium-night-n",
+            "caption": "Rome, November 2002"
+          },
+          "mood": "sad",
+          "pace": "slow",
+          "cut": "meanwhile",
+          "slug": "Rome — twelfth of November"
+        }
+      ]
+    },
+    {
+      "title": "The league",
+      "beats": [
+        {
+          "narration": "At home, the race was longer.",
+          "claim_ids": [],
+          "visual": {
+            "type": "chapter",
+            "number": 2,
+            "title": "The race at home"
+          }
+        },
+        {
+          "narration": "Up, and up, and then a winter that stalled.",
+          "claim_ids": [
+            "aek-athens:m-dh-cecc5751515f",
+            "aek-athens:m-dh-10ccfa59ceb2",
+            "aek-athens:m-dh-944ad7e27010"
+          ],
+          "visual": {
+            "type": "race",
+            "label": "Wins minus defeats",
+            "mark": [
+              "aek-athens:m-dh-cecc5751515f",
+              "aek-athens:m-dh-10ccfa59ceb2",
+              "aek-athens:m-dh-944ad7e27010"
+            ]
+          },
+          "camera": "drift"
+        },
+        {
+          "narration": "Ninth of March. Olympiacos, away.",
+          "claim_ids": [
+            "aek-athens:m-dh-944ad7e27010"
+          ],
+          "visual": {
+            "type": "versus",
+            "claim": "aek-athens:m-dh-944ad7e27010"
+          },
+          "camera": "orbit"
+        },
+        {
+          "narration": "And from the second of March to the twentieth of April, eight wins in a row.",
+          "claim_ids": [
+            "aek-athens:m-dh-4ea266180db0",
+            "aek-athens:m-dh-96c8b22c2454",
+            "aek-athens:m-dh-944ad7e27010",
+            "aek-athens:m-dh-80af08154b4c",
+            "aek-athens:m-dh-dd23ced3a69b",
+            "aek-athens:m-dh-c8ed1efa2191",
+            "aek-athens:m-dh-f5e4ba93e3c9",
+            "aek-athens:m-dh-a70f1ac9c11d"
+          ],
+          "visual": {
+            "type": "run",
+            "label": "The spring run",
+            "claims": [
+              "aek-athens:m-dh-4ea266180db0",
+              "aek-athens:m-dh-96c8b22c2454",
+              "aek-athens:m-dh-944ad7e27010",
+              "aek-athens:m-dh-80af08154b4c",
+              "aek-athens:m-dh-dd23ced3a69b",
+              "aek-athens:m-dh-c8ed1efa2191",
+              "aek-athens:m-dh-f5e4ba93e3c9",
+              "aek-athens:m-dh-a70f1ac9c11d"
+            ]
+          },
+          "pace": "fast"
+        },
+        {
+          "narration": "But in the UEFA Cup, Malaga came to Athens and won one-nil.",
+          "claim_ids": [
+            "aek-athens:m-dh-a72e3af84cc5"
+          ],
+          "visual": {
+            "type": "score",
+            "claim": "aek-athens:m-dh-a72e3af84cc5"
+          }
+        },
+        {
+          "narration": "Fifty-two matches in all.",
+          "claim_ids": [
+            "summary:All competitions"
+          ],
+          "visual": {
+            "type": "record",
+            "claim": "summary:All competitions",
+            "label": "The whole season"
+          },
+          "motif": true
+        }
+      ]
+    }
+  ],
+  "motif": "a radio on the kitchen table"
+}
