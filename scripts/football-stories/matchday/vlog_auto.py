@@ -464,8 +464,8 @@ def _post(url: str, body: dict, key: str, timeout: int = 600) -> tuple[int, dict
             return 200, json.load(r)
     except urllib.error.HTTPError as e:
         return e.code, e.read().decode('utf-8', 'replace')
-    except (urllib.error.URLError, TimeoutError) as e:
-        return 0, str(e)
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:   # incl. RemoteDisconnected (4.11.2026)
+        return 0, f'{type(e).__name__}: {e}'
 
 
 def retry_delay(err: str) -> float | None:
@@ -480,10 +480,11 @@ def budget(minutes: float, mat: dict) -> str:
     words = int(rest * 0.42 / SEC_PER_WORD)
     footage = sum(c['seconds'] for c in mat['clips'].values())
     return (f"BUDGET: the end screen ({ENDSCREEN:.0f} s) and the end beat with the spoken ask (~9 s) are added by the studio. "
-            f"The other ~{rest:.0f} s are yours: about {round(rest / 5.5)} beats, about {words} words of narration in all "
+            f"The other ~{rest:.0f} s are yours: AT LEAST {round(rest / 5.5)} film beats, about {words} words of narration in all "
             f"(~{words * SEC_PER_WORD:.0f} s of voice), the rest silent footage beats of the stand (\"dur\" 3–6 s) and cards. "
             f"The folder holds {footage:.0f} s of clips and {len(mat['photos'])} stills: cut different seconds of the long clips, "
-            "use the stills as \"art\" beats, and tell what the camera missed on \"black\" cards.")
+            "use the stills as \"art\" beats, and tell what the camera missed on \"black\" cards. A long clip may give two or "
+            "three beats from different \"in\" seconds. The reel: 15–45 s.")
 
 
 def call_writer(system: str, user: str, images: list[tuple[str, bytes]]) -> tuple[str, dict]:
@@ -1185,23 +1186,32 @@ def play_check(ep: dict, ledger: dict) -> list[str]:
 
 def breathe(ep: dict, mat: dict, minutes: float, log=lambda m: None) -> list[str]:
     """When the film is short, the owner's footage is held longer before the writer is asked again: each footage beat may
-    run on to what its own clip holds from "in" at normal speed (8 s at most) — silence over the stand, which RULES §3
-    calls a tool. Never words, never slow motion, never a frozen frame. Returns what was lengthened."""
+    run on to what its own clip holds from "in" at normal speed (10 s at most silent, 8 s under a line), and a still to
+    7 s — silence over the stand, which RULES §3 calls a tool. Never words, never slow motion, never a frozen frame."""
     lo = minutes * 60 * 0.87
     notes = []
-    for pass_ in ('silent', 'said'):
+    for pass_ in ('silent', 'said', 'still'):
         for i, b in enumerate(ep['film'].get('beats') or []):
             short = lo - estimate(ep, 'film')
             if short <= 0:
                 return notes
-            if not isinstance(b, dict) or b.get('kind', 'clip') != 'clip' or not isinstance(b.get('clip'), str):
+            if not isinstance(b, dict):
+                continue
+            said = isinstance(b.get('say'), str) and b['say'].strip()
+            if pass_ == 'still':        # an owner still, held to 7 s
+                if b.get('kind') == 'art' and isinstance(b.get('photo'), str) and b['photo'] in mat['photos']:
+                    now = plan_seconds(ep, 'film')[i]
+                    if now < 6.6:
+                        b['min'] = round(min(7.0, now + short), 2)
+                        notes.append(f'film beat {i}: still {b["photo"]} held {now:.1f} → {b["min"]:.1f} s')
+                continue
+            if b.get('kind', 'clip') != 'clip' or not isinstance(b.get('clip'), str):
                 continue
             c = mat['clips'].get(b['clip'])
-            said = isinstance(b.get('say'), str) and b['say'].strip()
             if not c or bool(said) != (pass_ == 'said') or _f(b.get('speed'), 1.0) != 1.0:
                 continue
             now = plan_seconds(ep, 'film')[i]
-            room = min(8.0, c['seconds'] - _f(b.get('in')) - 0.2)
+            room = min(8.0 if said else 10.0, c['seconds'] - _f(b.get('in')) - 0.2)
             if room > now + 0.4:
                 new = round(min(room, now + short), 2)
                 b['min' if said else 'dur'] = new
@@ -1255,7 +1265,9 @@ def fix_hints(errs: list[str], minutes: float, ep: dict | None = None, mat: dict
         if t < lo:
             need = lo - t + 15
             free = unused_footage(ep, mat) if ep and mat else []
-            out.append(f'The film runs {t} s; it must reach {lo}–{hi} s. Add about {need} s — that is about {max(2, round(need / 5))} NEW '
+            nb = len(ep['film'].get('beats') or []) if ep else 0
+            out.append(f'The film runs {t} s in {nb} beats; it must reach {lo}–{hi} s. Return at least {nb + max(2, round(need / 5))} '
+                       f'beats: add about {need} s — that is about {max(2, round(need / 5))} NEW '
                        'beats of about 5 s: silent footage beats of the stand ("dur" 4–6, "sound": "clip"), a "black" card with '
                        'typed lines from the claims, an "art" still held longer; and give the narrated beats a "min" of 5–7 s. '
                        'Never padding words.' + (' Footage not used yet: ' + '; '.join(free[:14]) + '.' if free else ''))

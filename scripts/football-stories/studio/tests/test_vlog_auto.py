@@ -204,7 +204,7 @@ class FactGuardTest(unittest.TestCase):
         self.assertGreater(V.estimate(ep), before + 5)
         for b in ep['film']['beats']:
             if b.get('clip') in mat['clips']:
-                self.assertLessEqual(b.get('dur', 0), 8.0)
+                self.assertLessEqual(b.get('dur', 0), 10.0)
                 self.assertNotIn('speed', b)
 
     def test_the_narrator_is_never_i(self):
