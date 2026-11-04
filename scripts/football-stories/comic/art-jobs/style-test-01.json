@@ -1,5 +1,5 @@
 {
- "note": "Style test for the comic series (4.11.2026). 4 panels x 4 models = 16 images.",
+ "note": "Style test for the comic series (4.11.2026). 4 panels x 4 models = 16 images (about $1.5).",
  "models": ["gemini-3-pro-image-preview", "gemini-2.5-flash-image", "imagen-4.0-generate-001", "gpt-image-1"],
  "style": "A single full-bleed panel from a prestige graphic novel about football history, drawn at the level of a modern feature-length animated film. Bold confident ink linework with varied line weight, hand-printed halftone dot shading and slight print misregistration, inspired by 1970s British football comics printed on cream newsprint, but rendered with cinematic lighting, depth and atmosphere. Limited process-ink palette: ink black, vermilion red, process cyan, deep navy, warm cream paper, with one accent colour per panel. Dramatic film-camera composition (low angles, wide lenses, strong foreground), expressive gesture and movement, rich texture, high detail, 16:9 widescreen.",
  "panels": [
