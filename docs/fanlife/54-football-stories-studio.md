@@ -153,3 +153,38 @@ the ledger is neutral (only an upset is shouted: SHOCK!), and `end_line` names t
 can be drawn in code: `studio/clipdraw.py` renders paper-cut canvas animations into `kit/clips/<set>/` (first set:
 `real-madrid-athens` — the Acropolis at night, four shirts, three floodlit grounds). Covers: `versus` shape in
 `studio/covers.py` (the city, the hook, the clubs' crests).
+
+## The narrator (4.11.2026)
+
+Owner: *"a narrator whose English is human, who says every club, player and competition right, as human and real as possible."*
+
+1. **Names come from a lexicon, not from a guess.** `studio/kit/pronounce/lexicon.json` holds every name the films say,
+   in standard IPA. Rule: a person or a club is said the way its own people say it, in English sounds (AEK = AH-ek,
+   Olympiacos stressed on the last syllable, Mourinho mo-REEN-yoo); a world star keeps the form the football world uses
+   (Rivaldo, Roberto Carlos, Ajax); a city with an English name keeps it (Athens, Piraeus, Seville). The longer key wins,
+   so José Mourinho (Portuguese) and José Luis Mendilibar (Spanish) differ. A film can add its own in
+   `dossiers/<club>-pronounce.json` — IPA (`/…/`) or a respelling.
+2. **The rest of the English goes through misaki**, the G2P the voice was trained on (British lexicon, stress, the
+   voice's own diphthong symbols), instead of raw espeak. Without misaki installed the old espeak path still works, with
+   the names spliced in. `studio/pronounce.py` is shared with I WAS THERE (`matchday/render.py`), where an episode's own
+   `ipa` table still wins.
+3. **A narrator's timing:** the gap after a sentence follows the sentence (longer after a question or a short hard line,
+   never the same twice), each line drifts a little in pace, a soft breath before a long line (`STORIES_BREATHS=0`
+   removes it). Seeded by the text, so a beat always sounds the same.
+4. **Spoken numbers:** 3–3 = "three all", 0–0 = "nil nil", 2–0 = "two nil", 1971–2026 = "1971 to 2026", 19:45 =
+   "nineteen forty-five".
+5. **The narrator's chain** (`studio/audio.py → NARRATOR_FX`, films and I WAS THERE): rumble and mud cut, chest and
+   presence, de-esser, a little air from harmonics (the model has nothing above 12 kHz), a few ms of booth, a gentle
+   leveller. `STORIES_NARRATOR_FX=0` is the A/B.
+6. **What the lexicon does not know is reported:** each voiced beat lists `names` it said from the lexicon and
+   `unknown` capitalised words it guessed. `tests/test_pronounce.py` fails on any accented name in a script with no entry,
+   and on any entry that uses a symbol the voice cannot say.
+7. **Audition:** `studio/narrator_audition.py` (workflow *Football Stories · narrator audition*) reads seven name-heavy
+   lines with each candidate — the old voice, Kokoro George and Lewis after this pass, and Qwen3-TTS (Apache-2.0) with a
+   British narrator designed from a description and cloned for every line — has Whisper check which names it heard,
+   and sends the takes to the owner's Telegram. The takes sit on a temporary branch only while Telegram fetches them.
+8. **First audition result (4.11.2026):** Whisper heard 34/41 names in Kokoro George after the pass, 33/41 before, 24/41 in
+   Qwen3-TTS (respelled names read as letters: "Z-DAN", "Ray AHL"). Qwen renders at ×9.7 real time on the runner
+   (a 9-minute film ≈ 90 minutes), Kokoro at ×0.5. From the transcripts: a voiced r before a consonant made "Marko"
+   sound like "Marikor", so the lexicon is now spoken non-rhotic, as a British narrator speaks (Mendilibar =
+   men-dee-lee-BAH); AEK said as one word was heard as "Ayak" — the owner decides between AH-ek and A-E-K.

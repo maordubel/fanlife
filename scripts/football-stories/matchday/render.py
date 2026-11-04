@@ -73,18 +73,18 @@ def kokoro():
 
 
 def phonemes(text: str, ipa: dict[str, str], lang: str) -> str:
-    """Phonemise a line, putting each listed name in as the IPA the episode gives (Kokoro spells unknown names)."""
+    """Phonemise a line: the episode's own IPA first, then the studio's pronunciation lexicon, then misaki (the G2P the
+    voice was trained on) for everything else — studio/pronounce.py, shared with the documentaries."""
+    from studio import pronounce
+    from studio.voice import spoken
+    if lang == 'en-gb':
+        return pronounce.phonemes(spoken(text), pronounce.Pronouncer({k: f'/{v}/' for k, v in ipa.items()}), kokoro())[0]
     k = kokoro()
     names = sorted(ipa, key=len, reverse=True)
     if not names:
         return k.tokenizer.phonemize(text, lang)
     parts = re.split('(' + '|'.join(re.escape(n) for n in names) + ')', text)
-    out = []
-    for p in parts:
-        if not p:
-            continue
-        out.append(ipa[p] if p in ipa else k.tokenizer.phonemize(p, lang))
-    return ' '.join(s.strip() for s in out if s.strip())
+    return ' '.join(s.strip() for s in (ipa[p] if p in ipa else k.tokenizer.phonemize(p, lang) for p in parts if p) if s.strip())
 
 
 def speak(text: str, ipa: dict, target: Path) -> float:
