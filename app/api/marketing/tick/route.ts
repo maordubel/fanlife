@@ -34,10 +34,18 @@ async function visuals(msg: string, kit: unknown): Promise<{pngs: Buffer[]; why:
     return {pngs, why: mod.lastError || (pngs.length ? null : 'nothing to draw')}
   } catch (e) { return {pngs: [], why: `load: ${String((e as Error)?.stack || e).slice(0, 400)}`} }
 }
+type Meta = {facebook: string; instagram: string; line: string}
+/** docs/fanlife/53-meta-publishing.md — the same module the GitHub backup imports */
+async function publish(p: Due, pngs: Buffer[]): Promise<Meta> {
+  try {
+    const file = pathToFileURL(path.join(process.cwd(), 'scripts/marketing/meta-publish.mjs')).href
+    const mod = await import(/* webpackIgnore: true */ file)
+    return await mod.publishToMeta(p, pngs)
+  } catch (e) { return {facebook: 'error', instagram: 'error', line: `⚠️ Meta publisher failed to load: ${String((e as Error)?.message || e).slice(0, 120)}`} }
+}
 /** what happened to the picture — returned in the tick's answer so a missing image says why */
-async function sendVisuals(token: string, chat: string, msg: string, kit: unknown): Promise<string> {
+async function sendVisuals(token: string, chat: string, kit: unknown, {pngs, why}: {pngs: Buffer[]; why: string | null}): Promise<string> {
   const brief = (kit as {data?: {briefing?: boolean}} | null)?.data?.briefing === true
-  const {pngs, why} = await visuals(msg, kit)
   if (!pngs.length) return `none: ${why}`
   const note = why ? ` (own layout failed, app card sent: ${why.split('\n')[0]!.slice(0, 160)})` : ''
   const form = new FormData()
@@ -69,18 +77,22 @@ export async function POST(r: NextRequest) {
     const sample = await visuals('📌 Post · <b>FAN LIFE</b>\n\n🪝 <b>HOOK</b>\n<b>Football. Forever.</b>\n\n🎨 <i>Visual: T1 Quote card.</i>', null)
     return json({ok: true, probe: true, reachable: !!c.ok, why: c.ok ? null : String(c.description || c.status).slice(0, 120), render: sample.pngs.length ? `ok ${sample.pngs[0]!.length} bytes` : sample.why})
   }
-  const done: {id: number; outcome: string; visual: string}[] = []
+  const done: {id: number; outcome: string; visual: string; facebook?: string; instagram?: string}[] = []
   const cache = {}
   for (const due of got.posts || []) {
     // a live slot (matches, results, a DUBID round, OFFSIDES today) is composed now from real data, or stays quiet
     const p = await prepare(due, new Date(), cache).catch(() => null)
     if (!p) { done.push({id: due.id, outcome: 'skipped', visual: '-'}); continue }
-    const visual = await sendVisuals(token, p.chat_id, p.msg, p.kit).catch(e => `error: ${String(e).slice(0, 200)}`)
-    const sent = await tg(token, 'sendMessage', {chat_id: p.chat_id, text: p.msg, parse_mode: 'HTML', disable_web_page_preview: true})
+    const drawn = await visuals(p.msg, p.kit)
+    const visual = await sendVisuals(token, p.chat_id, p.kit, drawn).catch(e => `error: ${String(e).slice(0, 200)}`)
+    // the business Page + its Instagram (off unless META_AUTOPUBLISH=1); tried once, and the result is printed on the draft
+    const meta = await publish(p, drawn.pngs)
+    const text = meta.line ? `${meta.line}\n${p.msg}` : p.msg
+    const sent = await tg(token, 'sendMessage', {chat_id: p.chat_id, text, parse_mode: 'HTML', disable_web_page_preview: true})
     const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status ?? 0) >= 500 ? 'unknown' : 'refused'
     const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)
     await rpc('worker_marketing_report', {p_id: p.id, p_outcome: outcome, p_error: error})
-    done.push({id: p.id, outcome, visual})
+    done.push({id: p.id, outcome, visual, facebook: meta.facebook, instagram: meta.instagram})
   }
   return json({ok: true, done})
 }
