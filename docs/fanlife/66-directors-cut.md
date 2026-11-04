@@ -146,3 +146,16 @@ disk validates exactly as before. The `follow` and `end` beats the studio adds a
 - Goals: shake, flash, crowd roar, a net ripple; defeats: desaturate, hush; derbies: split colour fields.
 - Sound: music changes by act (`story.acts`), stings on `trailer` and `goal`, crowd beds under terrace art.
 - The 9:16 Shorts reuse the same shot builders.
+
+## 5. Three directors (owner, 4.11.2026)
+
+*"Three directors with a football brain and a film brain, each thinking a little differently; the system runs all three
+and gives three scripts; each also proposes the next film and the script he loves most, each time another club and
+another event."*
+
+`studio/directors.py` is the one definition: **The Broadcaster** (live thriller, forward in time), **The Terrace** (the
+supporters' documentary, warm and wry), **The Trailer Cut** (non-linear cinema, cold open on the climax). The three
+script options of a film are one per director (they replace ANGLES_V3; the option's `angle` field carries the
+director's name, and `director` its id). Each director also writes **pitches** (studio/pitch.py): the next film he
+wants to make — a club and an event no other director pitched that round and no film already made — with a title,
+a logline, the cold open and the three acts, and "Make this film" in the studio.
