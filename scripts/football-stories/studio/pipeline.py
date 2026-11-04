@@ -103,7 +103,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         if progress:
             progress(stage, frac, msg)
 
-    from . import research, writer, script as sc, voice, edit, audio, package, qa
+    from . import director, research, writer, script as sc, voice, edit, audio, package, qa
     from .sprites import SpriteFactory
 
     # 1 research
@@ -143,12 +143,16 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             notes = read_json(Path(brief['drive_pack'])).get('notes') or []
             ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes)[:4000]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
+        director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     else:
         # A resumed film (after the owner picked a script) runs on a fresh machine: the pictures are put back in place.
         ingest_art(brief, lambda *_: None)
     ledger = read_json(lp)
+    if not isinstance(ledger.get('story'), dict) or ledger['story'].get('version') != director.STORY_VERSION:
+        director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
+        write_json(lp, ledger)
 
     # 2 script
     step('script', 0.1, 'Writing the film')
@@ -156,10 +160,10 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     if not sp_.exists():
         if script_file:
             s = read_json(script_file)
-            sc.ensure_valid(s, ledger, float(brief['duration']))
+            sc.ensure_valid(s, ledger, float(brief['duration']), brief.get('kind'))
             s['_writer'] = [{'source': f'supplied file {script_file.name}'}]
             s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
-            sc.ensure_valid(s, ledger, float(brief['duration']))
+            sc.ensure_valid(s, ledger, float(brief['duration']), brief.get('kind'))
         elif int(brief.get('scripts') or 1) > 1:
             # three scripts, three angles: the owner chooses one in the studio (studio v3)
             opts = sorted(job_dir.glob('script-option-*.json'))

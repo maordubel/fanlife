@@ -24,6 +24,22 @@ GENERATED = ROOT / 'content' / 'generated'
 COMPILED = ROOT / 'content' / 'compiled'
 
 
+_READ: dict = {}
+
+
+def _read(path: Path) -> tuple[bytes, object]:
+    """A large archive file (bytes and parsed JSON), read once per version on disk: the pitch desk reads a club's whole
+    history season by season, and a 10 MB pack parsed a hundred times is minutes. Nothing here mutates what it returns."""
+    st = path.stat()
+    key = (str(path), st.st_mtime_ns, st.st_size)
+    if key not in _READ:
+        if len(_READ) >= 4:
+            _READ.pop(next(iter(_READ)))
+        raw = path.read_bytes()
+        _READ[key] = (raw, json.loads(raw))
+    return _READ[key]
+
+
 def _names() -> dict:
     clubs = read_json(MANUAL / 'names-en' / 'clubs-he.json')['names']
     comps = read_json(MANUAL / 'names-en' / 'competitions.json')['names']
@@ -103,8 +119,7 @@ def _stage_en(he: str | None) -> str | None:
 
 def hapoel_ledger(season: str) -> dict:
     path = GENERATED / 'match-master.json'
-    raw = path.read_bytes()
-    master = json.loads(raw)
+    raw, master = _read(path)
     names = _names()
     venues = _venues()
     sources = master.get('sources') or {}
@@ -331,8 +346,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
     path = COMPILED / f'{club_id}.json'
     if not path.exists():
         raise StageError('CLUB_NOT_COMPILED', f'No compiled pack for {club_id}; run the build (npm run clubs:precompile)')
-    raw = path.read_bytes()
-    pack = json.loads(raw)
+    raw, pack = _read(path)
     data = pack.get('data') or pack
     ident = data.get('identity') or {}
     name = ident.get('name') or club_id
