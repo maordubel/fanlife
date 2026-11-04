@@ -121,15 +121,21 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
         tries = gemini_candidates(key, os.environ.get('STORIES_GEMINI_MODEL'))
         last: StageError | None = None
         r = None
-        for i, model in enumerate(tries[:8]):
+        tried: list[str] = []
+        for i, model in enumerate(tries[:10]):
             try:
                 r = _http(f'{GEMINI}/models/{model}:generateContent', body, {'x-goog-api-key': key})
                 break
             except StageError as e:
-                # a model the free tier no longer serves (404/403) or a used-up quota (429): the next model, never a failed film
-                if e.code not in ('WRITER_HTTP_429', 'WRITER_HTTP_404', 'WRITER_HTTP_403', 'WRITER_HTTP_400'):
+                # a model the free tier no longer serves (404/403), a used-up quota (429) or a model "experiencing high
+                # demand" (503, measured on the pilot film 4.11.2026): the next model, never a failed film
+                if e.code not in ('WRITER_HTTP_429', 'WRITER_HTTP_404', 'WRITER_HTTP_403', 'WRITER_HTTP_400',
+                                  'WRITER_HTTP_500', 'WRITER_HTTP_502', 'WRITER_HTTP_503', 'WRITER_UNREACHABLE'):
                     raise
-                last = e
+                tried.append(f'{model}: {e.code}')
+                if e.code in ('WRITER_HTTP_503', 'WRITER_HTTP_500', 'WRITER_HTTP_502', 'WRITER_UNREACHABLE'):
+                    time.sleep(8)
+                last = StageError(e.code, f'No Gemini model answered ({"; ".join(tried)}). Last: {e}', retryable=e.retryable)
                 hint = _suggested_model(e)
                 if hint and hint not in tries:
                     tries.insert(i + 1, hint)
