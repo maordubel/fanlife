@@ -320,7 +320,10 @@ def fetch_art(st: Studio, job: dict, jd: Path, log) -> Path | None:
 
 def run_once(st: Studio, root: Path, log) -> bool:
     from . import pipeline
-    got = st.call({'op': 'claim'})
+    # the job whose checkpoints the workflow restored (STORIES_PEEK): claiming another would write its cache where
+    # the run never saves it (measured 4.11.2026: 'Path(s) … do not exist, hence no cache is being saved')
+    peek = os.environ.get('STORIES_PEEK', '').strip()
+    got = st.call({'op': 'claim', **({'id': peek} if peek else {})})
     job = got.get('job')
     if not job:
         log('No film waiting.')

@@ -70,7 +70,9 @@ export async function POST(r:Request){
    return json({saved,refused,desk})
   }
   if(b.op==='claim'){
-   const next=nextForWorker(await listJobs(200))
+   // the job the workflow peeked (its checkpoints are the ones restored), when it is still the one to take
+   const jobs=await listJobs(200),want=typeof b.id==='string'?b.id:null
+   const next=want?nextForWorker(jobs.filter(j=>j.id===want)):nextForWorker(jobs)
    if(!next)return json({job:null})
    const job=await updateJob(next.id,j=>{if(nextForWorker([j])?.id!==j.id)throw new StoryError('TAKEN','Taken by another worker.',409);return claim(j,worker)})
    return json({job})

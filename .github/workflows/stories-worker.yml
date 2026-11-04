@@ -102,6 +102,7 @@ jobs:
         working-directory: scripts/football-stories
         env:
           STORIES_JOBS: ${{ github.workspace }}/stories-jobs
+          STORIES_PEEK: ${{ steps.peek.outputs.next }}
           KOKORO_DIR: /home/runner/models
           STORIES_WORKERS: '4'
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
