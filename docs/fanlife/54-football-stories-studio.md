@@ -144,3 +144,12 @@ and **banner** (2560×1440, the owner's art with the band every device shows). T
 owner's Drive footage by `.github/workflows/stories-covers.yml` (manual) onto the short-lived `covers-tmp` branch,
 with a contact sheet of candidate frames; set in Studio, then the branch is deleted. Episodes: 1 Grbavica, 2 Bloomfield
 2024, 3 Mostar.
+
+## Dossier films (4.11.2026)
+
+A film that is not one club's season — Real Madrid in Athens and Piraeus, against three clubs over six decades — is a
+dossier with `"ledger": "dossier"`: every match is a claim of the dossier with its sources (`research.dossier_ledger`),
+the ledger is neutral (only an upset is shouted: SHOCK!), and `end_line` names the clubs on the end card. Its pictures
+can be drawn in code: `studio/clipdraw.py` renders paper-cut canvas animations into `kit/clips/<set>/` (first set:
+`real-madrid-athens` — the Acropolis at night, four shirts, three floodlit grounds). Covers: `versus` shape in
+`studio/covers.py` (the city, the hook, the clubs' crests).

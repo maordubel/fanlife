@@ -68,14 +68,16 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         extra = []
         d = Path(brief['dossier']) if brief.get('dossier') else STUDIO / 'dossiers' / f'{brief["club_id"]}-{brief["season"].replace("/", "-")}.json'
         art_sets: list[str] = []
+        base = None
         if d.exists():
             dos = read_json(d)
             extra, art_sets = dos['claims'], dos.get('art_sets') or []
+            base = research.dossier_ledger(dos) if dos.get('ledger') == 'dossier' else None
             log(f'Research: {len(extra)} dossier claims from {d.name}')
         notes = research.note_claims(brief.get('notes') or '')
         if notes:
             log(f'Research: {len(notes)} quotes and headlines from the brief')
-        ledger = research.build_ledger(brief['club_id'], brief['season'], extra + notes)
+        ledger = research.build_ledger(brief['club_id'], brief['season'], extra + notes, base)
         if brief.get('focus_from') or brief.get('focus_to'):
             ledger = research.focus(ledger, brief.get('focus_from'), brief.get('focus_to'))
             log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '

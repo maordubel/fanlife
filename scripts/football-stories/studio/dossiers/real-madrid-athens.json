@@ -1,0 +1,1365 @@
+{
+ "club_id": "real-madrid-athens",
+ "club_name": "Real Madrid",
+ "country": "Greece",
+ "season": "1971–2026",
+ "film": "real-madrid-athens",
+ "ledger": "dossier",
+ "researched": "2026-11-04",
+ "art_sets": [
+  "real-madrid-athens"
+ ],
+ "note": "Every competitive Real Madrid match in Greece (two 1971 finals at Karaiskakis, eight games against Olympiacos, Panathinaikos and AEK), from UEFA, RSSSF, fbref, worldfootball, contemporary press and club sites. Conflicts are recorded per claim; a minute two sources disagree on is not printed.",
+ "claims": [
+  {
+   "id": "m-1971-final",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "1971-05-19",
+    "competition": "Cup Winners' Cup",
+    "stage": "Final",
+    "club": "Real Madrid",
+    "opponent": "Chelsea",
+    "side": "away",
+    "home": "Chelsea",
+    "away": "Real Madrid",
+    "score_home": 1,
+    "score_away": 1,
+    "club_goals": 1,
+    "opponent_goals": 1,
+    "outcome": "draw",
+    "venue": {
+     "name": "Karaiskakis Stadium, Piraeus"
+    },
+    "after_extra_time": true,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Zoco",
+      "minute": 90,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "UEFA — 1970/71: Replay joy for Chelsea",
+     "url": "https://www.uefa.com/news/0252-0cda61bb5603-88bdb26a0132-1000--1970-71-replay-joy-for-chelsea",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Chelsea FC — Real Madrid vs Chelsea: the stats",
+     "url": "https://www.chelseafc.com/en/news/article/real-madrid-vs-chelsea---the-stats",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "RSSSF — European Competitions 1970-71",
+     "url": "https://rsssf.org/ec/ec197071.html",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "Zoco minute",
+     "values": [
+      90,
+      30
+     ],
+     "note": "UEFA and Chelsea FC: 90; RSSSF prints 30 against its own report."
+    }
+   ]
+  },
+  {
+   "id": "m-1971-replay",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "1971-05-21",
+    "competition": "Cup Winners' Cup",
+    "stage": "Final replay",
+    "club": "Real Madrid",
+    "opponent": "Chelsea",
+    "side": "away",
+    "home": "Chelsea",
+    "away": "Real Madrid",
+    "score_home": 2,
+    "score_away": 1,
+    "club_goals": 1,
+    "opponent_goals": 2,
+    "outcome": "loss",
+    "venue": {
+     "name": "Karaiskakis Stadium, Piraeus"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Fleitas",
+      "minute": null,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "UEFA — 1970/71: Replay joy for Chelsea",
+     "url": "https://www.uefa.com/news/0252-0cda61bb5603-88bdb26a0132-1000--1970-71-replay-joy-for-chelsea",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "RSSSF — European Competitions 1970-71",
+     "url": "https://rsssf.org/ec/ec197071.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Chelsea FC — Real Madrid vs Chelsea: the stats",
+     "url": "https://www.chelseafc.com/en/news/article/real-madrid-vs-chelsea---the-stats",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "minutes",
+     "values": [
+      "31/39/75",
+      "32/38/74"
+     ],
+     "note": "UEFA v RSSSF; minutes not printed."
+    },
+    {
+     "field": "attendance",
+     "values": [
+      19917,
+      35000
+     ],
+     "note": "not printed"
+    }
+   ]
+  },
+  {
+   "id": "d-1971",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "1971-05-19",
+    "first_european_final_in_greece": true,
+    "chelsea_scorer_final": "Peter Osgood",
+    "osgood_minute_final": 56,
+    "attendance_final": 42000,
+    "replay_after_hours": 48,
+    "replay_chelsea_scorers": [
+     "John Dempsey",
+     "Peter Osgood"
+    ],
+    "madrid_coach": "Miguel Muñoz",
+    "chelsea_coach": "Dave Sexton",
+    "madrid_in_xi": [
+     "Gento",
+     "Amancio",
+     "Pirri",
+     "Zoco"
+    ],
+    "road_to_final": [
+     "Hibernians",
+     "Wacker Innsbruck",
+     "Cardiff City",
+     "PSV Eindhoven"
+    ]
+   },
+   "sources": [
+    {
+     "title": "UEFA — 1970/71: Replay joy for Chelsea",
+     "url": "https://www.uefa.com/news/0252-0cda61bb5603-88bdb26a0132-1000--1970-71-replay-joy-for-chelsea",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Karaiskakis Stadium — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Karaiskakis_Stadium",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "RSSSF — European Competitions 1970-71",
+     "url": "https://rsssf.org/ec/ec197071.html",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-1985",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "1985-09-18",
+    "competition": "UEFA Cup",
+    "stage": "First round, first leg",
+    "club": "Real Madrid",
+    "opponent": "AEK Athens",
+    "side": "away",
+    "home": "AEK Athens",
+    "away": "Real Madrid",
+    "score_home": 1,
+    "score_away": 0,
+    "club_goals": 0,
+    "opponent_goals": 1,
+    "outcome": "loss",
+    "venue": {
+     "name": "Olympic Stadium, Athens"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "1985–86 AEK Athens F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/1985%E2%80%9386_AEK_Athens_F.C._season",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "worldfootball.net — AEK Athens 1985/86",
+     "url": "https://www.worldfootball.net/teams/aek-athen/1986/3/",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Athens Voice — The nights AEK wore her best",
+     "url": "https://www.athensvoice.gr/epikairotita/athlitismos/487194/oi-nyhtes-poy-i-aek-forese-ta-kala-tis-video/",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Pavlos Papaioannou — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Pavlos_Papaioannou",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "d-1985",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "1985-09-18",
+    "aek_scorer": "Pavlos Papaioannou",
+    "attendance": 39819,
+    "aek_coach": "Jacek Gmoch",
+    "return_leg": "Real Madrid 5–0 AEK",
+    "return_score": [
+     5,
+     0
+    ],
+    "aggregate": [
+     5,
+     1
+    ],
+    "season_end": "Real Madrid won the UEFA Cup",
+    "final_opponent": "Köln",
+    "first_defeat_in_greece_v_greek_club": true,
+    "esterhazy": "Márton Esterházy stepped in front of goalkeeper Bouyo on the goal",
+    "years_since_1971_final": 14
+   },
+   "sources": [
+    {
+     "title": "1985–86 AEK Athens F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/1985%E2%80%9386_AEK_Athens_F.C._season",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Pavlos Papaioannou — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Pavlos_Papaioannou",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "1985–86 UEFA Cup — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/1985%E2%80%9386_UEFA_Cup",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "worldfootball.net — AEK Athens v Real Madrid",
+     "url": "https://worldfootball.net/teams/aek-athen/real-madrid/11",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-1997",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "1997-11-05",
+    "competition": "Champions League",
+    "stage": "Group D",
+    "club": "Real Madrid",
+    "opponent": "Olympiacos",
+    "side": "away",
+    "home": "Olympiacos",
+    "away": "Real Madrid",
+    "score_home": 0,
+    "score_away": 0,
+    "club_goals": 0,
+    "opponent_goals": 0,
+    "outcome": "draw",
+    "venue": null,
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "RSSSF — European Competitions 1997-98",
+     "url": "https://rsssf.org/ec/ec199798.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "fbref — Real Madrid vs Olympiacos history",
+     "url": "https://aws.fbref.com/en/stathead/matchup/teams/53a2f082/2fdb4aef/Real-Madrid-vs-Olympiacos-History",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "date",
+     "values": [
+      "1997-11-05",
+      "1997-11-04"
+     ],
+     "note": "UEFA, fbref, RSSSF: 5 Nov."
+    },
+    {
+     "field": "venue",
+     "values": [
+      "Olympic Stadium",
+      "Piraeus"
+     ],
+     "note": "not printed"
+    }
+   ]
+  },
+  {
+   "id": "d-1997",
+   "type": "history",
+   "fact": {
+    "kind": "history",
+    "season_end": "Real Madrid won the European Cup, their seventh",
+    "cups": 7
+   },
+   "sources": [
+    {
+     "title": "1997–98 Real Madrid CF season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/1997%E2%80%9398_Real_Madrid_CF_season",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-1999",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "1999-09-15",
+    "competition": "Champions League",
+    "stage": "First group stage",
+    "club": "Real Madrid",
+    "opponent": "Olympiacos",
+    "side": "away",
+    "home": "Olympiacos",
+    "away": "Real Madrid",
+    "score_home": 3,
+    "score_away": 3,
+    "club_goals": 3,
+    "opponent_goals": 3,
+    "outcome": "draw",
+    "venue": {
+     "name": "Olympic Stadium, Athens"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Sávio",
+      "minute": 24,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Roberto Carlos",
+      "minute": 32,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Raúl",
+      "minute": 80,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "UEFA archive copy (100bombardirov) — Olympiakos Piraeus v Real Madrid 1999",
+     "url": "https://100bombardirov.ru/eu/ucl/uefaarc/1999_00/57100.olympiakos_piraeus__real_madrid.htm",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Irish Times — Raul the saviour for Real Madrid",
+     "url": "https://irishtimes.com/sport/raul-the-saviour-for-real-madrid-1.228006",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "fbref — Real Madrid vs Olympiacos history",
+     "url": "https://aws.fbref.com/en/stathead/matchup/teams/53a2f082/2fdb4aef/Real-Madrid-vs-Olympiacos-History",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "1999–2000 Olympiacos F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/1999%E2%80%932000_Olympiacos_F.C._season",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "d-1999",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "1999-09-15",
+    "olympiacos_scorers": [
+     [
+      "Giovanni",
+      11
+     ],
+     [
+      "Giovanni",
+      64
+     ],
+     [
+      "Zahović",
+      67
+     ]
+    ],
+    "attendance": 70800,
+    "half_time": "1–2",
+    "olympiacos_coach": "Dušan Bajević",
+    "madrid_coach": "John Toshack",
+    "casillas_age_years": 18,
+    "casillas_age_days": 118,
+    "season_end": "Real Madrid won the Champions League",
+    "final_date": "2000-05-24"
+   },
+   "sources": [
+    {
+     "title": "Irish Times — Raul the saviour for Real Madrid",
+     "url": "https://irishtimes.com/sport/raul-the-saviour-for-real-madrid-1.228006",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "UEFA archive copy (100bombardirov) — Olympiakos Piraeus v Real Madrid 1999",
+     "url": "https://100bombardirov.ru/eu/ucl/uefaarc/1999_00/57100.olympiakos_piraeus__real_madrid.htm",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "1999–2000 Olympiacos F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/1999%E2%80%932000_Olympiacos_F.C._season",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "UEFA — Champions League youngest goalkeepers",
+     "url": "https://www.uefa.com/uefachampionsleague/news/025a-0ea02bbb2607-648cf8e6b42c-1000--champions-league-youngest-goalkeepers-vandevoordt-svilar-casill/",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-2002-pao",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "2002-03-20",
+    "competition": "Champions League",
+    "stage": "Second group stage",
+    "club": "Real Madrid",
+    "opponent": "Panathinaikos",
+    "side": "away",
+    "home": "Panathinaikos",
+    "away": "Real Madrid",
+    "score_home": 2,
+    "score_away": 2,
+    "club_goals": 2,
+    "opponent_goals": 2,
+    "outcome": "draw",
+    "venue": {
+     "name": "Apostolos Nikolaidis Stadium, Athens"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Morientes",
+      "minute": 11,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Portillo",
+      "minute": 80,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "UEFA — Panathinaikos keep dream alive",
+     "url": "https://www.uefa.com/uefachampionsleague/news/025a-0eab0617e2cb-e7d010fc8a4c-1000--panathinaikos-keep-dream-alive",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "worldfootball.net — Panathinaikos v Real Madrid, 2001/02",
+     "url": "https://worldfootball.net/report/champions-league-2001-2002-zwischenrunde-gr-c-panathinaikos-real-madrid",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "fbref — Panathinaikos vs Real Madrid history",
+     "url": "https://aws.fbref.com/en/stathead/matchup/teams/f3a5726c/53a2f082/Panathinaikos-vs-Real-Madrid-History",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "date",
+     "values": [
+      "2002-03-20",
+      "2002-03-19"
+     ],
+     "note": "UEFA, fbref: 20 March."
+    }
+   ]
+  },
+  {
+   "id": "d-2002-pao",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2002-03-20",
+    "panathinaikos_scorers": [
+     [
+      "Liberopoulos",
+      9
+     ],
+     [
+      "Goumas",
+      64
+     ]
+    ],
+    "attendance": 17000,
+    "portillo_debut": "first Champions League match, off the bench",
+    "madrid_coach": "Vicente del Bosque",
+    "panathinaikos_coach": "Sergio Markarián",
+    "season_end": "Real Madrid won the Champions League"
+   },
+   "sources": [
+    {
+     "title": "UEFA — Panathinaikos keep dream alive",
+     "url": "https://www.uefa.com/uefachampionsleague/news/025a-0eab0617e2cb-e7d010fc8a4c-1000--panathinaikos-keep-dream-alive",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "worldfootball.net — Panathinaikos v Real Madrid, 2001/02",
+     "url": "https://worldfootball.net/report/champions-league-2001-2002-zwischenrunde-gr-c-panathinaikos-real-madrid",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-2002-aek",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "2002-10-02",
+    "competition": "Champions League",
+    "stage": "First group stage",
+    "club": "Real Madrid",
+    "opponent": "AEK Athens",
+    "side": "away",
+    "home": "AEK Athens",
+    "away": "Real Madrid",
+    "score_home": 3,
+    "score_away": 3,
+    "club_goals": 3,
+    "opponent_goals": 3,
+    "outcome": "draw",
+    "venue": {
+     "name": "Nikos Goumas Stadium, Athens"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Zidane",
+      "minute": 15,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Zidane",
+      "minute": 39,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Guti",
+      "minute": 60,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "UEFA — AEK rock the Madrid boat",
+     "url": "https://www.uefa.com/uefachampionsleague/news/018a-0e6a9c5c185f-fa4bbad1eae1-1000--aek-rock-the-madrid-boat",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Soccer-Spain — AEK 3 Real Madrid 3",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2002/champs/champ13.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "EFE (Periódico de Ibiza) — El Real Madrid no logra romper el maleficio griego",
+     "url": "https://www.periodicodeibiza.es/deportes/deporte-ibiza/2002/10/03/762185/el-real-madrid-no-logra-romper-el-maleficio-griego.html",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "Zidane second goal",
+     "values": [
+      39,
+      40
+     ],
+     "note": "UEFA 39; Soccer-Spain and EFE 40. UEFA printed."
+    }
+   ]
+  },
+  {
+   "id": "d-2002-aek",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2002-10-02",
+    "aek_scorers": [
+     [
+      "Tsartas",
+      6
+     ],
+     [
+      "Maladenis",
+      25
+     ],
+     [
+      "Nikolaidis",
+      28
+     ]
+    ],
+    "half_time": "3–2",
+    "aek_coach": "Dušan Bajević",
+    "madrid_coach": "Vicente del Bosque",
+    "madrid_names": [
+     "Figo",
+     "Zidane",
+     "Raúl",
+     "Roberto Carlos",
+     "Casillas",
+     "Makelele"
+    ],
+    "aek_group_draws": 6,
+    "aek_group_games": 6,
+    "athens_voice": "perhaps the best match ever played in Greece",
+    "zidane_applauded": "the whole ground applauded Zidane when he was substituted",
+    "tickets": "not sold out because tickets were expensive",
+    "months_after_panathinaikos": 7
+   },
+   "sources": [
+    {
+     "title": "UEFA — AEK rock the Madrid boat",
+     "url": "https://www.uefa.com/uefachampionsleague/news/018a-0e6a9c5c185f-fa4bbad1eae1-1000--aek-rock-the-madrid-boat",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Soccer-Spain — AEK 3 Real Madrid 3",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2002/champs/champ13.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "2002–03 AEK Athens F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2002%E2%80%9303_AEK_Athens_F.C._season",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Athens Voice — The nights AEK wore her best",
+     "url": "https://www.athensvoice.gr/epikairotita/athlitismos/487194/oi-nyhtes-poy-i-aek-forese-ta-kala-tis-video/",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-2005",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "2005-12-06",
+    "competition": "Champions League",
+    "stage": "Group F",
+    "club": "Real Madrid",
+    "opponent": "Olympiacos",
+    "side": "away",
+    "home": "Olympiacos",
+    "away": "Real Madrid",
+    "score_home": 2,
+    "score_away": 1,
+    "club_goals": 1,
+    "opponent_goals": 2,
+    "outcome": "loss",
+    "venue": {
+     "name": "Karaiskakis Stadium, Piraeus"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Sergio Ramos",
+      "minute": 7,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "EFE (Periódico de Ibiza) — Rivaldo agrava el sonrojo europeo del Real Madrid",
+     "url": "https://www.periodicodeibiza.es/deportes/deporte-ibiza/2005/12/07/569771/rivaldo-agrava-sonrojo-europeo-del-real-madrid.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Soccer-Spain — Olympiakos 2 Real Madrid 1",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2005/champ/champ26.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Sky Sports — Rivaldo sinks old foes",
+     "url": "https://www.skysports.com/football/news/2356461/rivaldo-sinks-old-foes",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "d-2005",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2005-12-06",
+    "olympiacos_scorers": [
+     [
+      "Bulut",
+      50
+     ],
+     [
+      "Rivaldo",
+      87
+     ]
+    ],
+    "madrid_coach": "Juan Ramón López Caro",
+    "coach_debut": true,
+    "rivaldo_former": "Barcelona"
+   },
+   "sources": [
+    {
+     "title": "EFE (Periódico de Ibiza) — Rivaldo agrava el sonrojo europeo del Real Madrid",
+     "url": "https://www.periodicodeibiza.es/deportes/deporte-ibiza/2005/12/07/569771/rivaldo-agrava-sonrojo-europeo-del-real-madrid.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Soccer-Spain — Olympiakos 2 Real Madrid 1",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2005/champ/champ26.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Sky Sports — Rivaldo sinks old foes",
+     "url": "https://www.skysports.com/football/news/2356461/rivaldo-sinks-old-foes",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-2007",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "2007-11-06",
+    "competition": "Champions League",
+    "stage": "Group C",
+    "club": "Real Madrid",
+    "opponent": "Olympiacos",
+    "side": "away",
+    "home": "Olympiacos",
+    "away": "Real Madrid",
+    "score_home": 0,
+    "score_away": 0,
+    "club_goals": 0,
+    "opponent_goals": 0,
+    "outcome": "draw",
+    "venue": {
+     "name": "Karaiskakis Stadium, Piraeus"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "Soccer-Spain — Olympiakos 0 Real Madrid 0",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2007/champ/champ18.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Sky Sports — Real held in Greece",
+     "url": "https://www.skysports.com/football/news/2865243/real-held-in-greece",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "2007–08 Olympiacos F.C. season — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Olympiacos_F.C._season",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "d-2007",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2007-11-06",
+    "attendance": 33500,
+    "madrid_coach": "Bernd Schuster",
+    "woodwork": [
+     "Van Nistelrooy",
+     "Raúl"
+    ],
+    "raul_bravo": "played for Real Madrid at Karaiskakis in 2005 and for Olympiacos against Real Madrid in 2007",
+    "years": [
+     2005,
+     2007
+    ]
+   },
+   "sources": [
+    {
+     "title": "Soccer-Spain — Olympiakos 0 Real Madrid 0",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2007/champ/champ18.html",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Sky Sports — Real held in Greece",
+     "url": "https://www.skysports.com/football/news/2865243/real-held-in-greece",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Soccer-Spain — Olympiakos 2 Real Madrid 1",
+     "url": "https://www.soccer-spain.com/ssdocs/archive2005/champ/champ26.html",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "m-2025",
+   "type": "match",
+   "fact": {
+    "kind": "match",
+    "date": "2025-11-26",
+    "competition": "Champions League",
+    "stage": "League phase",
+    "club": "Real Madrid",
+    "opponent": "Olympiacos",
+    "side": "away",
+    "home": "Olympiacos",
+    "away": "Real Madrid",
+    "score_home": 3,
+    "score_away": 4,
+    "club_goals": 4,
+    "opponent_goals": 3,
+    "outcome": "win",
+    "venue": {
+     "name": "Karaiskakis Stadium, Piraeus"
+    },
+    "after_extra_time": null,
+    "penalties": null,
+    "scorers": [
+     {
+      "name": "Mbappé",
+      "minute": 22,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Mbappé",
+      "minute": 24,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Mbappé",
+      "minute": 29,
+      "penalty": null,
+      "own_goal": null
+     },
+     {
+      "name": "Mbappé",
+      "minute": 60,
+      "penalty": null,
+      "own_goal": null
+     }
+    ],
+    "scorers_note": null
+   },
+   "sources": [
+    {
+     "title": "Reuters via The Star — Mbappe's four-goal bonanza earns Real Madrid 4-3 comeback win at Olympiacos",
+     "url": "https://www.thestar.com.my/sport/football/2025/11/27/soccer-mbappe039s-four-goal-bonanza-earns-real-madrid-4-3-comeback-win-at-olympiacos",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "realmadrid.com — Olympiacos 3-4 Real Madrid",
+     "url": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-olympiacos-real-madrid-26-11-2025",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "To Vima — Olympiacos counter-attack falls just short against Real Madrid",
+     "url": "https://www.tovima.com/sports/champions-league-olympiacos-counter-attack-falls-just-short-against-real-madrid-3-4hat-looked-the-queen-in-the-eye",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "Mbappé fourth",
+     "values": [
+      60,
+      59
+     ],
+     "note": "Reuters, realmadrid.com, To Vima: 60."
+    }
+   ]
+  },
+  {
+   "id": "d-2025",
+   "type": "match-detail",
+   "fact": {
+    "kind": "match-detail",
+    "date": "2025-11-26",
+    "olympiacos_scorers": [
+     [
+      "Chiquinho",
+      8
+     ],
+     [
+      "Taremi",
+      52
+     ],
+     [
+      "El Kaabi",
+      81
+     ]
+    ],
+    "half_time": "1–3",
+    "hat_trick_minutes": 6,
+    "hat_trick_seconds": 42,
+    "attempt_at_olympiacos": 5,
+    "madrid_coach": "Xabi Alonso",
+    "olympiacos_coach": "José Luis Mendilibar",
+    "first_win_in_greece": true
+   },
+   "sources": [
+    {
+     "title": "Reuters via The Star — Mbappe's four-goal bonanza earns Real Madrid 4-3 comeback win at Olympiacos",
+     "url": "https://www.thestar.com.my/sport/football/2025/11/27/soccer-mbappe039s-four-goal-bonanza-earns-real-madrid-4-3-comeback-win-at-olympiacos",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "realmadrid.com — Olympiacos 3-4 Real Madrid",
+     "url": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-olympiacos-real-madrid-26-11-2025",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "r-curse",
+   "type": "history",
+   "fact": {
+    "kind": "history",
+    "games_in_greece_before_2025": 9,
+    "won": 0,
+    "drawn": 6,
+    "lost": 3,
+    "v_greek_clubs_in_greece_before_2025": 7,
+    "v_greek_drawn": 5,
+    "v_greek_lost": 2,
+    "years_without_win": 54,
+    "from": 1971,
+    "to": 2025,
+    "after_2025_games": 10,
+    "after_2025_won": 1,
+    "note": "Counted from the match list. UEFA's Nov 2025 facts article prints D2 L5 / D3 L6 for the same games — a transposition; its match list adds up to D5 L2 / D6 L3."
+   },
+   "sources": [
+    {
+     "title": "UEFA — Matchday 5: Olympiacos vs Real Madrid facts",
+     "url": "https://www.uefa.com/uefachampionsleague/news/029f-1f332b2d5034-2ef38bc67aff-1000--champions-league-matchday-5-olympiacos-vs-real-madrid-facts/",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Reuters via The Star — Mbappe's four-goal bonanza earns Real Madrid 4-3 comeback win at Olympiacos",
+     "url": "https://www.thestar.com.my/sport/football/2025/11/27/soccer-mbappe039s-four-goal-bonanza-earns-real-madrid-4-3-comeback-win-at-olympiacos",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "EFE (Periódico de Ibiza) — El Real Madrid no logra romper el maleficio griego",
+     "url": "https://www.periodicodeibiza.es/deportes/deporte-ibiza/2002/10/03/762185/el-real-madrid-no-logra-romper-el-maleficio-griego.html",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": [
+    {
+     "field": "UEFA count",
+     "values": [
+      "D5 L2",
+      "D2 L5"
+     ],
+     "note": "counted from the matches"
+    }
+   ]
+  },
+  {
+   "id": "r-grounds",
+   "type": "history",
+   "fact": {
+    "kind": "history",
+    "karaiskakis": "Neo Faliro, Piraeus; rebuilt for 2004",
+    "olympic_stadium": "Marousi, opened 1982",
+    "nikos_goumas": "Nea Filadelfeia, built 1930, demolished",
+    "agia_sophia_opened": 2022,
+    "agia_sophia_on_goumas_site": true,
+    "karaiskakis_return_years": 18
+   },
+   "sources": [
+    {
+     "title": "Karaiskakis Stadium — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Karaiskakis_Stadium",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Olympic Stadium (Athens) — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Olympic_Stadium_(Athens)",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Agia Sophia Stadium — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Agia_Sophia_Stadium",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "realmadrid.com — Real Madrid return to the Georgios Karaiskakis 18 years later",
+     "url": "https://www.realmadrid.com/en-US/news/football/first-team/latest-news/el-real-madrid-visita-el-estadio-georgios-karaiskakis-18-anos-despues-25-10-2025",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "t-2026",
+   "type": "history",
+   "fact": {
+    "kind": "history",
+    "date": "2026-11-04",
+    "fixture": "AEK Athens v Real Madrid",
+    "competition": "Champions League",
+    "stage": "League phase, matchday 4",
+    "matchday": 4,
+    "kick_off_athens": "19:45",
+    "kick_off": [
+     19,
+     45
+    ],
+    "venue": "AEK Arena (Agia Sophia Stadium), Nea Filadelfeia",
+    "madrid_coach": "José Mourinho",
+    "aek_coach": "Marko Nikolić",
+    "aek_titles": 14,
+    "aek_ex_madrid": "Luka Jović",
+    "aek_first_league_phase_since": 2018,
+    "madrid_points_after_md3": 9,
+    "aek_points_after_md3": 3,
+    "first_visit_new_ground": true
+   },
+   "sources": [
+    {
+     "title": "UEFA — AEK Athens vs Real Madrid",
+     "url": "https://www.uefa.com/uefachampionsleague/match/2049622--aek-athens-vs-real-madrid/",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "realmadrid.com — Real Madrid fixtures, Champions League league phase 2026/27",
+     "url": "https://www.realmadrid.com/en-US/news/football/first-team/latest-news/calendarios-del-real-madrid-en-la-primera-fase-de-la-champions-2026-27-29-08-2026",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "Agia Sophia Stadium — Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Agia_Sophia_Stadium",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "realmadrid.com — Official statement: José Mourinho",
+     "url": "https://www.realmadrid.com/en-US/news/club/latest-news/comunicado-oficial-mourinho-11-06-2026",
+     "accessed": "2026-11-04"
+    },
+    {
+     "title": "UEFA — AEK Athens in the 2026/27 Champions League",
+     "url": "https://www.uefa.com/uefachampionsleague/news/02a9-2182e7bc0d8c-12e4d3e297a1-1000--aek-athens-in-the-2026-27-champions-league-what-are-their-/",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-delbosque",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Vicente del Bosque",
+    "role": "Real Madrid coach",
+    "text": "I would like to think all three goals were the result of AEK excellence rather than Madrid mistakes.",
+    "date": "2002-10-02"
+   },
+   "sources": [
+    {
+     "title": "UEFA — Dead-ball dilemma for Del Bosque",
+     "url": "https://www.uefa.com/uefachampionsleague/news/018a-0e6a4d22b8e4-dc1f60130099-1000--dead-ball-dilemma-for-del-bosque",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-bajevic",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Dušan Bajević",
+    "role": "AEK Athens coach",
+    "text": "We came so near to making history.",
+    "date": "2002-10-02"
+   },
+   "sources": [
+    {
+     "title": "UEFA — Dead-ball dilemma for Del Bosque",
+     "url": "https://www.uefa.com/uefachampionsleague/news/018a-0e6a4d22b8e4-dc1f60130099-1000--dead-ball-dilemma-for-del-bosque",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-bajevic2",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Dušan Bajević",
+    "role": "AEK Athens coach",
+    "text": "We could now have three wins, instead we have three draws.",
+    "date": "2002-10-02"
+   },
+   "sources": [
+    {
+     "title": "UEFA — Dead-ball dilemma for Del Bosque",
+     "url": "https://www.uefa.com/uefachampionsleague/news/018a-0e6a4d22b8e4-dc1f60130099-1000--dead-ball-dilemma-for-del-bosque",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "q-alonso",
+   "type": "quote",
+   "fact": {
+    "kind": "quote",
+    "speaker": "Xabi Alonso",
+    "role": "Real Madrid coach",
+    "text": "We are back to winning ways, and we won in Greece for the first time.",
+    "date": "2025-11-26"
+   },
+   "sources": [
+    {
+     "title": "Reuters via The Star — Mbappe's four-goal bonanza earns Real Madrid 4-3 comeback win at Olympiacos",
+     "url": "https://www.thestar.com.my/sport/football/2025/11/27/soccer-mbappe039s-four-goal-bonanza-earns-real-madrid-4-3-comeback-win-at-olympiacos",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-efe02",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "EFE",
+    "date": "2002-10-03",
+    "headline": "El Real Madrid no logra romper el maleficio griego",
+    "translation": "Real Madrid fails to break the Greek curse"
+   },
+   "sources": [
+    {
+     "title": "EFE (Periódico de Ibiza) — El Real Madrid no logra romper el maleficio griego",
+     "url": "https://www.periodicodeibiza.es/deportes/deporte-ibiza/2002/10/03/762185/el-real-madrid-no-logra-romper-el-maleficio-griego.html",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-irish99",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "The Irish Times",
+    "date": "1999-09-16",
+    "headline": "Raul the saviour for Real Madrid"
+   },
+   "sources": [
+    {
+     "title": "Irish Times — Raul the saviour for Real Madrid",
+     "url": "https://irishtimes.com/sport/raul-the-saviour-for-real-madrid-1.228006",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-sky05",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "Sky Sports",
+    "date": "2005-12-06",
+    "headline": "Rivaldo sinks old foes"
+   },
+   "sources": [
+    {
+     "title": "Sky Sports — Rivaldo sinks old foes",
+     "url": "https://www.skysports.com/football/news/2356461/rivaldo-sinks-old-foes",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  },
+  {
+   "id": "p-sky07",
+   "type": "press",
+   "fact": {
+    "kind": "press",
+    "outlet": "Sky Sports",
+    "date": "2007-11-06",
+    "headline": "Real held in Greece"
+   },
+   "sources": [
+    {
+     "title": "Sky Sports — Real held in Greece",
+     "url": "https://www.skysports.com/football/news/2865243/real-held-in-greece",
+     "accessed": "2026-11-04"
+    }
+   ],
+   "confidence": 2,
+   "status": "web",
+   "conflicts": []
+  }
+ ],
+ "end_line": "Olympiacos, Panathinaikos, AEK and every club on FanLife"
+}

@@ -582,7 +582,7 @@ class Editor:
         badge = Image.open(self.app_art('brand/fanlife/logo-512.png')).convert('RGBA').resize((360, 360), Image.LANCZOS)
         layers.append(Layer(badge, slam(300, 300, 0.25, s0=1.8, rot=-8, dur=0.3), settle=1e9))
         cues += [(0.25, 'stamp')]
-        head = fit(_img(sp.cta_headline('end', 'The whole archive is open', f"{self.ledger['club_name']} and every club on FanLife")), 1250, 230)
+        head = fit(_img(sp.cta_headline('end', 'The whole archive is open', self.ledger.get('end_line') or f"{self.ledger['club_name']} and every club on FanLife")), 1250, 230)
         layers.append(Layer(head, slide_in(560 + head.width / 2, 210, 0.55, frm=(900, 0), rot0=2, rot1=-1, dur=0.5, drift=False), settle=1e9))
         cues.append((0.55, 'whoosh'))
         x0, y0, dx, dy = 700, 445, 380, 262
@@ -608,7 +608,11 @@ class Editor:
         """One word stamped on the corner of a result: a win shouts, a title shouts louder, a defeat says so quietly."""
         if not f or f.get('kind') != 'match':
             return []
-        if f.get('title_decided'):
+        if self.ledger.get('neutral'):  # a film with no side of its own: only an upset is shouted
+            if f.get('outcome') != 'loss':
+                return []
+            word, tone = 'SHOCK!', 'accent'
+        elif f.get('title_decided'):
             word, tone = 'CHAMPIONS!', 'accent'
         elif self.won_shootout(f):
             word, tone = ('CUP!' if f.get('stage') == 'Final' else 'YES!'), 'accent'

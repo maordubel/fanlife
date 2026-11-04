@@ -1,0 +1,905 @@
+{
+ "title_candidates": [
+  {
+   "title": "Real Madrid in Athens: The Greek Curse (1971–2026) | Olympiacos, Panathinaikos, AEK",
+   "angle": "search"
+  },
+  {
+   "title": "Why Real Madrid Could Never Win in Greece | Football Documentary",
+   "angle": "search"
+  },
+  {
+   "title": "AEK v Real Madrid: Every Real Madrid Game in Athens and Piraeus",
+   "angle": "search"
+  },
+  {
+   "title": "Olympiacos 3–4 Real Madrid and the 54-Year Greek Curse",
+   "angle": "search"
+  },
+  {
+   "title": "AEK 3–3 Real Madrid (2002): Zidane, Tsartas and the Greek Curse",
+   "angle": "search"
+  },
+  {
+   "title": "Nine Games. No Wins. Real Madrid's Greek Curse",
+   "angle": "discovery"
+  },
+  {
+   "title": "54 Years Without a Win: Real Madrid in Greece",
+   "angle": "discovery"
+  },
+  {
+   "title": "The City Real Madrid Could Not Beat",
+   "angle": "discovery"
+  },
+  {
+   "title": "Maleficio: Real Madrid's 54 Years in Athens",
+   "angle": "discovery"
+  },
+  {
+   "title": "Before AEK v Real Madrid: The Curse of Athens",
+   "angle": "discovery"
+  }
+ ],
+ "selected": 6,
+ "hook": "For fifty-four years, Real Madrid came to Greece and could not win.",
+ "chapters": [
+  {
+   "title": "The Greek curse",
+   "beats": [
+    {
+     "narration": "For fifty-four years, Real Madrid came to Greece and could not win. Nine games. Six draws. Three defeats.",
+     "claim_ids": [
+      "r-curse"
+     ],
+     "visual": {
+      "type": "open",
+      "backdrop": "clip:real-madrid-athens/acropolis-night",
+      "headline": "The Greek Curse",
+      "kicker": "Real Madrid in Athens · 1971–2026"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "In Spain they had a word for it. Maleficio. A curse.",
+     "claim_ids": [
+      "p-efe02"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-efe02",
+      "outlet": "EFE",
+      "headline": "El Real Madrid no logra romper el maleficio griego",
+      "date": "2002-10-03"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "This is the story of every one of those nights. A European final in Piraeus. Three Athens clubs. Olympiacos, Panathinaikos, AEK.",
+     "claim_ids": [
+      "r-curse",
+      "m-1971-final"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:real-madrid-athens/four-shirts",
+      "caption": "Real Madrid · Olympiacos · Panathinaikos · AEK"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "From Madrid to Athens is a long way across the Mediterranean. Real Madrid have made the trip for finals, for group games, for nights they would rather forget.",
+     "claim_ids": [
+      "m-1971-final",
+      "m-1985",
+      "m-1999",
+      "m-2002-pao",
+      "m-2005"
+     ],
+     "visual": {
+      "type": "map",
+      "focus": "europe",
+      "claims": [
+       "m-1971-final",
+       "m-1985",
+       "m-2002-pao"
+      ],
+      "label": "Madrid → Athens · Piraeus"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "And tonight, the fourth of November 2026, Real Madrid are back. At the new home of AEK.",
+     "claim_ids": [
+      "t-2026"
+     ],
+     "visual": {
+      "type": "turning",
+      "title": "Tonight",
+      "subtitle": "AEK Athens v Real Madrid · 4 November 2026",
+      "backdrop": "clip:real-madrid-athens/night-aek"
+     },
+     "mood": "build"
+    }
+   ]
+  },
+  {
+   "title": "Piraeus, 1971",
+   "beats": [
+    {
+     "narration": "It started with a final. Not even against a Greek club.",
+     "claim_ids": [
+      "m-1971-final"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 1,
+      "title": "Piraeus, 1971",
+      "backdrop": "clip:real-madrid-athens/night-piraeus"
+     }
+    },
+    {
+     "narration": "May 1971. The Cup Winners' Cup final, the first European final ever played in Greece. Real Madrid against Chelsea, at the Karaiskakis in Piraeus.",
+     "claim_ids": [
+      "m-1971-final",
+      "d-1971"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m-1971-final"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "On the way they had beaten Hibernians of Malta, Wacker Innsbruck, Cardiff City and PSV Eindhoven.",
+     "claim_ids": [
+      "d-1971"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/airport-gate-kr",
+      "caption": "Cup Winners' Cup · the road to the final"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Miguel Muñoz's Madrid still had Gento and Amancio. Forty-two thousand watched.",
+     "claim_ids": [
+      "d-1971"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "42,000",
+      "label": "in Piraeus for the final",
+      "claim": "d-1971"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Peter Osgood scored for Chelsea after fifty-six minutes. Madrid were going home with nothing.",
+     "claim_ids": [
+      "d-1971"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/last-minute-clock-n",
+      "caption": "Karaiskakis, 19 May 1971"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Then, in the last minute, Zoco. One–one. Extra time, no winner.",
+     "claim_ids": [
+      "m-1971-final"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-1971-final"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "There were no penalties in those days. The final was played again, forty-eight hours later, on the same pitch.",
+     "claim_ids": [
+      "d-1971"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/stadium-lights-off-n",
+      "caption": "Forty-eight hours"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Dempsey and Osgood put Chelsea two up before half-time. Fleitas pulled one back. It was not enough.",
+     "claim_ids": [
+      "m-1971-replay",
+      "d-1971"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-1971-replay"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "Real Madrid's first two games in Greece. A draw and a defeat. The curse had its first page.",
+     "claim_ids": [
+      "m-1971-final",
+      "m-1971-replay"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/newspaper-stand-n",
+      "caption": "The first page"
+     },
+     "mood": "minor"
+    }
+   ]
+  },
+  {
+   "title": "AEK, 1985",
+   "beats": [
+    {
+     "narration": "Fourteen years later, Madrid came back to Athens to play a Greek club for the first time.",
+     "claim_ids": [
+      "m-1985",
+      "m-1971-replay",
+      "d-1985"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 2,
+      "title": "AEK, 1985",
+      "backdrop": "clip:real-madrid-athens/night-aek"
+     }
+    },
+    {
+     "narration": "September 1985. The UEFA Cup, first round. AEK Athens, at the Olympic Stadium. 39,819 inside.",
+     "claim_ids": [
+      "m-1985",
+      "d-1985"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m-1985"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Pavlos Papaioannou scored the only goal, with Márton Esterházy standing right in front of the Madrid goalkeeper. AEK one, Real Madrid nil.",
+     "claim_ids": [
+      "m-1985",
+      "d-1985"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-1985"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Jacek Gmoch's AEK had given Real Madrid their first defeat at the hands of a Greek club, in Greece.",
+     "claim_ids": [
+      "d-1985"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/terrace-full-b-kr",
+      "caption": "Olympic Stadium, 18 September 1985"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "Madrid won the second leg five–nil, and went on to win the whole competition. But in Athens, they had lost.",
+     "claim_ids": [
+      "d-1985"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "The return leg in Madrid",
+      "text": "Real Madrid 5–0 AEK · Madrid went on to win the UEFA Cup",
+      "claim": "d-1985"
+     },
+     "mood": "minor"
+    }
+   ]
+  },
+  {
+   "title": "Olympiacos at the Olympic Stadium",
+   "beats": [
+    {
+     "narration": "In the nineties, Olympiacos played their big European nights at the Olympic Stadium. Real Madrid came twice.",
+     "claim_ids": [
+      "m-1997",
+      "m-1999"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 3,
+      "title": "The Olympic Stadium",
+      "backdrop": "clip:real-madrid-athens/night-piraeus"
+     }
+    },
+    {
+     "narration": "November 1997. Nil–nil. That season Madrid won their seventh European Cup.",
+     "claim_ids": [
+      "m-1997",
+      "d-1997"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-1997"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "September 1999. 70,800 people, and a goalkeeper of eighteen in the Madrid goal. Iker Casillas, eighteen years and a hundred and eighteen days.",
+     "claim_ids": [
+      "m-1999",
+      "d-1999"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "18",
+      "label": "Iker Casillas, years old, in goal",
+      "claim": "d-1999"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Giovanni scored after eleven minutes. Sávio and Roberto Carlos turned it around before half-time.",
+     "claim_ids": [
+      "m-1999",
+      "d-1999"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/volley-edge-box-kr",
+      "caption": "Olympic Stadium, 15 September 1999"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Then Giovanni again. Then Zahović. Three–two Olympiacos.",
+     "claim_ids": [
+      "m-1999",
+      "d-1999"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/terrace-full-kr",
+      "caption": "Sixty-four, sixty-seven"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "And in the eightieth minute, Raúl. Three–three.",
+     "claim_ids": [
+      "m-1999"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-1999"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "The Irish Times called him the saviour. Madrid won the Champions League again that season. Not in Athens.",
+     "claim_ids": [
+      "p-irish99",
+      "d-1999"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-irish99",
+      "outlet": "The Irish Times",
+      "headline": "Raul the saviour for Real Madrid",
+      "date": "1999-09-16"
+     },
+     "mood": "minor"
+    }
+   ]
+  },
+  {
+   "title": "Two thousand and two",
+   "beats": [
+    {
+     "narration": "In 2002, two Athens clubs, seven months apart.",
+     "claim_ids": [
+      "m-2002-pao",
+      "m-2002-aek",
+      "d-2002-aek"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 4,
+      "title": "2002",
+      "backdrop": "clip:real-madrid-athens/night-leoforos"
+     }
+    },
+    {
+     "narration": "March. Panathinaikos at Leoforos, their old ground on Alexandras Avenue. Madrid had already won the group, and Del Bosque sent a young team.",
+     "claim_ids": [
+      "m-2002-pao",
+      "d-2002-pao"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m-2002-pao"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Liberopoulos after nine minutes. Morientes two minutes later. Then Goumas, and Panathinaikos led again.",
+     "claim_ids": [
+      "m-2002-pao",
+      "d-2002-pao"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/header-goalmouth-kr",
+      "caption": "Leoforos, 20 March 2002"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "In the eightieth minute, a substitute in his first Champions League match. Javier Portillo. Two–two.",
+     "claim_ids": [
+      "m-2002-pao",
+      "d-2002-pao"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-2002-pao"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "October. AEK, at the old Nikos Goumas in Nea Filadelfeia. Madrid brought Figo, Zidane, Raúl and Roberto Carlos.",
+     "claim_ids": [
+      "m-2002-aek",
+      "d-2002-aek"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m-2002-aek"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "After six minutes, Tsartas from a free kick. Zidane equalised. Then Maladenis and Nikolaidis, two headers in three minutes. AEK three, Madrid one.",
+     "claim_ids": [
+      "m-2002-aek",
+      "d-2002-aek"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/free-kick-wall-kr",
+      "caption": "Nikos Goumas, 2 October 2002"
+     },
+     "mood": "excited"
+    },
+    {
+     "narration": "Zidane again before half-time. Guti on the hour. Three–three.",
+     "claim_ids": [
+      "m-2002-aek"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-2002-aek"
+     },
+     "mood": "joy"
+    },
+    {
+     "narration": "The ground was not even full; tickets were expensive. The ones who came saw what Athens Voice later called perhaps the best match ever played in Greece. When Zidane came off, the whole ground applauded him.",
+     "claim_ids": [
+      "d-2002-aek"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/choreography-kr",
+      "caption": "Nikos Goumas · 2 October 2002"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Dušan Bajević had coached Olympiacos against Madrid in 1999. Now he was on the AEK bench.",
+     "claim_ids": [
+      "d-1999",
+      "d-2002-aek"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-bajevic",
+      "text": "We came so near to making history.",
+      "who": "Dušan Bajević",
+      "role": "AEK Athens coach"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Vicente del Bosque did not blame his defence.",
+     "claim_ids": [
+      "q-delbosque"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-delbosque",
+      "text": "I would like to think all three goals were the result of AEK excellence rather than Madrid mistakes.",
+      "who": "Vicente del Bosque",
+      "role": "Real Madrid coach"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "AEK drew all six of their group games that season. And in Spain, the morning papers wrote the word again. Maleficio.",
+     "claim_ids": [
+      "d-2002-aek",
+      "p-efe02"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/scrapbook-desk-kr",
+      "caption": "The Greek curse"
+     },
+     "mood": "minor"
+    }
+   ]
+  },
+  {
+   "title": "Karaiskakis",
+   "beats": [
+    {
+     "narration": "In 2004 the Karaiskakis was rebuilt, and Olympiacos came home to Piraeus.",
+     "claim_ids": [
+      "r-grounds"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 5,
+      "title": "Karaiskakis",
+      "backdrop": "clip:real-madrid-athens/night-piraeus"
+     }
+    },
+    {
+     "narration": "December 2005. Madrid had a new coach, Juan Ramón López Caro, in his first match. Sergio Ramos headed them in front after seven minutes.",
+     "claim_ids": [
+      "m-2005",
+      "d-2005"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m-2005"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Bulut equalised. And in the eighty-seventh minute, an old enemy from Barcelona. Rivaldo.",
+     "claim_ids": [
+      "m-2005",
+      "d-2005"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/despair-kneeling-kr",
+      "caption": "Karaiskakis, 6 December 2005"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Olympiacos two, Real Madrid one.",
+     "claim_ids": [
+      "m-2005"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-2005"
+     },
+     "mood": "sad"
+    },
+    {
+     "narration": "Sky Sports had the headline that night.",
+     "claim_ids": [
+      "p-sky05"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-sky05",
+      "outlet": "Sky Sports",
+      "headline": "Rivaldo sinks old foes",
+      "date": "2005-12-06"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "November 2007, and Madrid were back. 33,500 inside. Van Nistelrooy hit the woodwork, so did Raúl. Nil–nil.",
+     "claim_ids": [
+      "m-2007",
+      "d-2007"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-2007"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "And in the Olympiacos defence that night stood Raúl Bravo, who had played for Real Madrid on the same pitch in 2005.",
+     "claim_ids": [
+      "d-2007"
+     ],
+     "visual": {
+      "type": "press",
+      "claim": "p-sky07",
+      "outlet": "Sky Sports",
+      "headline": "Real held in Greece",
+      "date": "2007-11-06"
+     },
+     "mood": "minor"
+    },
+    {
+     "narration": "Then eighteen years without a visit.",
+     "claim_ids": [
+      "r-grounds"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/terrace-empty-dusk-n",
+      "caption": "Eighteen years"
+     },
+     "mood": "minor"
+    }
+   ]
+  },
+  {
+   "title": "Six minutes and forty-two seconds",
+   "beats": [
+    {
+     "narration": "November 2025. Karaiskakis again. Xabi Alonso against José Luis Mendilibar, the man who had won Olympiacos their European trophy.",
+     "claim_ids": [
+      "m-2025",
+      "d-2025"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 6,
+      "title": "The curse breaks",
+      "backdrop": "clip:real-madrid-athens/night-piraeus"
+     }
+    },
+    {
+     "narration": "After eight minutes, Chiquinho. One–nil Olympiacos. The curse was awake.",
+     "claim_ids": [
+      "m-2025",
+      "d-2025"
+     ],
+     "visual": {
+      "type": "matchday",
+      "claim": "m-2025"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Then Kylian Mbappé. Twenty-two minutes. Twenty-four. Twenty-nine. A hat-trick in six minutes and forty-two seconds.",
+     "claim_ids": [
+      "m-2025",
+      "d-2025"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "6:42",
+      "label": "Mbappé · the hat-trick",
+      "claim": "d-2025"
+     },
+     "mood": "excited"
+    },
+    {
+     "narration": "Taremi pulled one back. Mbappé scored his fourth on the hour. El Kaabi made it four–three in the eighty-first minute.",
+     "claim_ids": [
+      "m-2025",
+      "d-2025"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/last-minute-clock-n",
+      "caption": "Karaiskakis, 26 November 2025"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Four–three. Real Madrid's first win at Olympiacos, at the fifth attempt. Their first win in Greece.",
+     "claim_ids": [
+      "m-2025",
+      "d-2025",
+      "r-curse"
+     ],
+     "visual": {
+      "type": "score",
+      "claim": "m-2025"
+     },
+     "mood": "triumph"
+    },
+    {
+     "narration": "Xabi Alonso said it plainly.",
+     "claim_ids": [
+      "q-alonso"
+     ],
+     "visual": {
+      "type": "quote",
+      "claim": "q-alonso",
+      "text": "We are back to winning ways, and we won in Greece for the first time.",
+      "who": "Xabi Alonso",
+      "role": "Real Madrid coach"
+     },
+     "mood": "minor"
+    }
+   ]
+  },
+  {
+   "title": "Tonight",
+   "beats": [
+    {
+     "narration": "Ten games in Greece. One win, six draws, three defeats.",
+     "claim_ids": [
+      "r-curse"
+     ],
+     "visual": {
+      "type": "timeline",
+      "claims": [
+       "m-1971-final",
+       "m-1985",
+       "m-1997",
+       "m-1999",
+       "m-2002-pao",
+       "m-2002-aek",
+       "m-2005",
+       "m-2025"
+      ],
+      "label": "Real Madrid in Greece"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Tonight, at 19:45 Athens time, the eleventh. Champions League, league phase, matchday four.",
+     "claim_ids": [
+      "t-2026"
+     ],
+     "visual": {
+      "type": "chapter",
+      "number": 7,
+      "title": "Tonight",
+      "backdrop": "clip:real-madrid-athens/night-aek"
+     }
+    },
+    {
+     "narration": "AEK's new ground stands where the Nikos Goumas stood, the ground of the three–three. It opened in 2022. Real Madrid have never played there.",
+     "claim_ids": [
+      "t-2026",
+      "r-grounds",
+      "m-2002-aek"
+     ],
+     "visual": {
+      "type": "fact",
+      "heading": "AEK Arena · Nea Filadelfeia",
+      "text": "Built on the site of the Nikos Goumas · opened 2022 · Real Madrid’s first visit",
+      "claim": "r-grounds"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "José Mourinho on the Madrid bench. Marko Nikolić for AEK, champions of Greece for the fourteenth time. And up front for AEK, Luka Jović. A former Real Madrid striker.",
+     "claim_ids": [
+      "t-2026"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/tunnel-walk-out",
+      "caption": "4 November 2026"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "Madrid have nine points from three games. AEK have three. On paper, there is no contest.",
+     "claim_ids": [
+      "t-2026"
+     ],
+     "visual": {
+      "type": "stat",
+      "value": "9 – 3",
+      "label": "points after matchday three",
+      "claim": "t-2026"
+     },
+     "mood": "build"
+    },
+    {
+     "narration": "But in Athens, paper has never meant much. Ask Papaioannou. Ask Tsartas. Ask Rivaldo.",
+     "claim_ids": [
+      "m-1985",
+      "d-1985",
+      "d-2002-aek",
+      "d-2005"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "clip:real-madrid-athens/acropolis-night",
+      "caption": "Athens"
+     },
+     "mood": "tense"
+    },
+    {
+     "narration": "Fifty-four years of nights like these. Whoever you sing for tonight, you know why they matter.",
+     "claim_ids": [
+      "r-curse"
+     ],
+     "visual": {
+      "type": "illustration",
+      "art": "beat:common/father-son-walk-kr",
+      "caption": "Tonight"
+     },
+     "mood": "minor"
+    }
+   ]
+  }
+ ],
+ "description": "For fifty-four years Real Madrid came to Greece and could not win: a European final and its replay in Piraeus in 1971, then Olympiacos, Panathinaikos and AEK in Athens and Piraeus. Nine games, six draws, three defeats — the Spanish papers called it the Greek curse. In November 2025 Kylian Mbappé scored four at the Karaiskakis and it was over.\n\nTonight, 4 November 2026, Real Madrid play AEK Athens in the Champions League at the new AEK Arena, built where the Nikos Goumas stood — the ground of the 3–3 in 2002.\n\nEvery night, told from the stands: Zoco's last-minute goal in 1971, Papaioannou in 1985, Casillas at eighteen, Portillo's debut, Tsartas and Zidane, Rivaldo's winner, Raúl Bravo on both sides, and Mbappé's hat-trick in six minutes and forty-two seconds.",
+ "tags": [
+  "Real Madrid",
+  "AEK Athens",
+  "Olympiacos",
+  "Panathinaikos",
+  "AEK Real Madrid",
+  "Olympiacos Real Madrid",
+  "Real Madrid Greece",
+  "Champions League",
+  "Mbappe",
+  "Zidane",
+  "Greek football",
+  "football documentary",
+  "FanLife"
+ ],
+ "shorts": [
+  {
+   "hook": "54 years. 9 games. 0 wins. Then this.",
+   "idea": "The curse in numbers, then Mbappé's hat-trick in 6:42 and the 4–3.",
+   "claim_ids": [
+    "r-curse",
+    "m-2025",
+    "d-2025"
+   ]
+  },
+  {
+   "hook": "AEK 3–3 Real Madrid. Two headers in three minutes.",
+   "idea": "Tsartas, Maladenis, Nikolaidis v Zidane twice and Guti, 2002.",
+   "claim_ids": [
+    "m-2002-aek",
+    "d-2002-aek"
+   ]
+  },
+  {
+   "hook": "Tonight: AEK v Real Madrid.",
+   "idea": "The new ground on the site of the Goumas, Mourinho v Nikolić, Jović.",
+   "claim_ids": [
+    "t-2026",
+    "r-grounds"
+   ]
+  }
+ ],
+ "thumbnails": [
+  {
+   "text": "54 years. 0 wins.",
+   "concept": "the curse",
+   "claim": "r-curse"
+  },
+  {
+   "text": "The Greek curse",
+   "concept": "four shirts",
+   "claim": null
+  },
+  {
+   "text": "Mbappé broke it",
+   "concept": "the 4–3",
+   "claim": "m-2025"
+  }
+ ]
+}
