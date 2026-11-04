@@ -519,6 +519,9 @@ SCORELINE = re.compile(r'(?<![\d–-])(\d{1,2})\s?[–-]\s?(\d{1,2})(?![\d–-])
                        rf'(?<!a )\b({_SW})-({_SW}|all)\b|\b({_SW}) nil\b', re.I)
 COLD_TITLE = re.compile(r'^\s*(in|during)\s+(the\s+)?(\d{4}|season|summer|autumn|winter|spring)|^\s*(the\s+)?\d{4}(/\d{2,4})?\s+season'
                         r'|^\s*this is the story|^\s*once upon', re.I)
+TABLE_TALK = re.compile(r'\b(league table|the table|the standings|top of the (league|pile)|bottom of the (league|table)|'
+                        r'league leaders|top spot|(first|second|third|fourth|fifth|top|bottom|last|\d+(st|nd|rd|th)) place|'
+                        r'points? (clear|behind|ahead|adrift|gap)|relegation zone|\d+ points)\b', re.I)
 TURN_WORDS = re.compile(r'\b(but|until|then|yet|still|only|nobody|no one|not yet|what|who|how|why|would|could|next|waiting|'
                         r'remember|unless|before|soon|coming|ahead|tomorrow|almost|if)\b', re.I)
 
@@ -712,6 +715,13 @@ def director_rules(s: dict, seq: list, ledger: dict, story: dict, kind: str, by:
         for sl in scorelines(text):
             if sl not in pairs:
                 errs.append(f'{where}: [director rule 1] the scoreline {sl[0]}–{sl[1]} is not the score of a match this beat cites')
+
+    # no position the archive cannot prove (contract §1, rule 11): table talk needs a table claim in the beat
+    for where, b, v, cites in seq:
+        m = TABLE_TALK.search(b.get('narration') or '')
+        if m and not any(c in by and by[c]['fact'].get('kind') == 'table' for c in cites):
+            errs.append(f'{where}: [no position] "{m.group(0)}" — the archive holds only this club\'s matches; a table, a '
+                        f'place or points need a table claim cited in the beat')
 
     # 2 · the cards each kind of film must have
     has = set(types)

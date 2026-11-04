@@ -75,7 +75,7 @@ def _rival_rows(club_id: str) -> list[dict]:
         if not club_id or not p.exists():
             continue
         try:
-            pack = json.loads(p.read_text(encoding='utf-8'))
+            pack = research._read(p)[1]
         except (OSError, ValueError):
             continue
         return list((pack.get('data') or pack).get('rivals') or [])
@@ -475,7 +475,7 @@ def story(ledger: dict) -> dict:
         if set(w) <= {'first', 'last'} and len(ms) > 3:
             continue  # an opener or a closer with nothing else is not a moment of a season
         moments.append({'id': mid, 'why': why, 'also': sorted((x for x in w if x != why), key=PRIORITY.index),
-                        'weight': total, '_k': k})
+                        'weight': total, 'score': round(total, 2), '_k': k})
     moments.sort(key=lambda m: (-m['weight'], m['_k']))
     moments = moments[:12]
     if moments:
@@ -496,7 +496,7 @@ def story(ledger: dict) -> dict:
             'club_goals': f['club_goals'], 'opponent_goals': f['opponent_goals'],
             'outcome': {1: 'win', 0: 'draw', -1: 'loss'}[rs[k]], 'form': form[k], 'gd': gd[k], 'rival': extra[k]['rival'],
             'tags': [t for t in order if t in tags[k]],
-            **({'through': extra[k]['through']} if 'through' in extra[k] else {}),
+            **({'through': extra[k]['through'], 'first_leg': ties[mid]['first']} if mid in ties else {}),
         })
     honours = [{'id': c['id'], 'competition': c['fact'].get('competition'), 'result': c['fact'].get('result')}
                for c in ledger.get('claims') or [] if (c.get('fact') or {}).get('kind') == 'honour']
@@ -577,3 +577,103 @@ def story_of(ledger: dict) -> dict:
 def attach(ledger: dict) -> dict:
     ledger['story'] = story(ledger)
     return ledger
+
+
+# ── the pitch desk's shortlist ────────────────────────────────────────────────────────────────────────────────────────
+def _seasons_of(club_id: str) -> list[str]:
+    """Every season the club's archive has a football match in, newest first."""
+    from . import research
+    if club_id == 'hapoel-tel-aviv':
+        _, master = research._read(research.GENERATED / 'match-master.json')
+        seasons = {m.get('season') for m in master.get('matches') or [] if m.get('sport') == 'football' and m.get('season')}
+    else:
+        p = research.COMPILED / f'{club_id}.json'
+        if not p.exists():
+            return []
+        _, pack = research._read(p)
+        data = pack.get('data') or pack
+        seasons = {research.season_of((m.get('value') or {}).get('on')) for m in data.get('matches') or []
+                   if (m.get('value') or {}).get('sport', 'football') == 'football'}
+    return sorted((x for x in seasons if x), reverse=True)
+
+
+def _brief_match(m: dict) -> dict:
+    return {'id': m['id'], 'date': m['date'], 'competition': m['competition'], 'stage': m.get('stage'), 'opponent': m['opponent'],
+            'side': m['side'], 'score': f"{m['club_goals']}–{m['opponent_goals']}", 'tags': m['tags']}
+
+
+def _season_card(st: dict) -> dict:
+    by = {m['id']: m for m in st['matches']}
+    return {'shape': st['shape'], 'totals': st['totals'], 'rivals': st['rivals'],
+            'honours': [{'competition': h['competition'], 'result': h['result']} for h in st['honours']],
+            'moments': [{**_brief_match(by[m['id']]), 'why': m['why']} for m in st['moments'][:4]],
+            'runs': [{'kind': r['kind'], 'length': r['length'], 'from': by[r['from']]['date'], 'to': by[r['to']]['date']}
+                     for r in st['runs'][:2]],
+            'turning_point': _brief_match(by[st['turning_point']]) if st.get('turning_point') else None}
+
+
+def candidates(club_ids: list[str], seasons_per_club: int = 6) -> list[dict]:
+    """Strong stories the archive can tell, for the pitch desk: per club its best seasons, its biggest single nights, its
+    two-legged ties and its rivalry — each `{club_id, club_name, kind, season, match_ids?, opponent?, story, why, score}`,
+    ranked by the story block's own moment weights (finals, title nights, comebacks, deciders, derbies, giant wins, runs).
+    One candidate per (club, kind, season or match). Reads every club's archive once; no model, no network."""
+    from . import research
+    from .common import StageError
+    out: list[dict] = []
+    for club_id in club_ids:
+        seasons, nights, ties = [], [], []
+        meetings: dict[str, list[dict]] = {}
+        club_name = None
+        for season in _seasons_of(club_id):
+            try:
+                L = research.build_ledger(club_id, season)
+            except (StageError, OSError, ValueError):
+                continue
+            club_name = club_name or L['club_name']
+            st = story(L)
+            if not st['matches']:
+                continue
+            by = {m['id']: m for m in st['matches']}
+            raw = sorted((m['score'] for m in st['moments']), reverse=True)
+            longest = max((r['length'] for r in st['runs']), default=0)
+            score = (sum(w * x for w, x in zip((1, 0.5, 0.25), raw)) + 4 * len(st['honours']) + longest / 5
+                     + min(len(st['matches']), 40) / 20)
+            top = st['moments'][0] if st['moments'] else None
+            if len(st['matches']) >= 6:
+                seasons.append({'club_id': club_id, 'club_name': L['club_name'], 'kind': 'season', 'season': season,
+                                'story': _season_card(st), 'score': round(score, 2),
+                                'why': f'{season}: {st["shape"]} season' + (f'; top moment: {top["why"]} v {by[top["id"]]["opponent"]}' if top else '')
+                                       + (f'; honours: {", ".join(h["competition"] or "" for h in st["honours"])}' if st['honours'] else '')})
+            for m in st['moments']:
+                mm = by[m['id']]
+                if m['why'] in ('first', 'last', 'europe') and m['score'] < 6:
+                    continue
+                nights.append({'club_id': club_id, 'club_name': L['club_name'], 'kind': 'match', 'season': season,
+                               'match_ids': [m['id']], 'story': {**_brief_match(mm), 'why': m['why'], 'also': m['also']},
+                               'score': m['score'], 'why': f'{m["why"]} v {mm["opponent"]}, {mm["date"]}'})
+                if mm.get('first_leg') and mm['first_leg'] in by:
+                    first = by[mm['first_leg']]
+                    ties.append({'club_id': club_id, 'club_name': L['club_name'], 'kind': 'tie', 'season': season,
+                                 'match_ids': [first['id'], mm['id']], 'opponent': mm['opponent'],
+                                 'story': {'legs': [_brief_match(first), _brief_match(mm)], 'through': mm.get('through'), 'why': m['why']},
+                                 'score': round(m['score'] + (2 if 'comeback' in mm['tags'] else 0), 2),
+                                 'why': f'two legs v {mm["opponent"]} ({first["date"]}, {mm["date"]})'})
+            for m in st['matches']:
+                if m['rival'] and not (L.get('focus') or {}).get('opponent'):
+                    meetings.setdefault(m['opponent'], []).append(m)
+        pick = lambda xs, n: sorted(xs, key=lambda c: (-c['score'], c['season']))[:n]  # noqa: E731
+        out += pick(seasons, seasons_per_club) + pick(nights, seasons_per_club) + pick(ties, max(1, seasons_per_club // 2))
+        for opp, ms in meetings.items():
+            if len(ms) < 4:
+                continue
+            ms.sort(key=lambda m: m['date'])
+            t = {'won': sum(m['outcome'] == 'win' for m in ms), 'drawn': sum(m['outcome'] == 'draw' for m in ms),
+                 'lost': sum(m['outcome'] == 'loss' for m in ms)}
+            label = f'{ms[0]["date"][:4]}–{ms[-1]["date"][:4]}'
+            biggest = max(ms, key=lambda m: (abs(m['club_goals'] - m['opponent_goals']), m['date']))
+            out.append({'club_id': club_id, 'club_name': club_name, 'kind': 'rivalry', 'season': label, 'opponent': opp,
+                        'story': {'meetings': len(ms), **t, 'first': _brief_match(ms[0]), 'last': _brief_match(ms[-1]),
+                                  'biggest': _brief_match(biggest)},
+                        'score': round(8 + min(len(ms), 60) / 6, 2), 'why': f'{len(ms)} meetings with {opp}, {label}'})
+    out.sort(key=lambda c: (-c['score'], c['club_id'], c['kind'], c['season']))
+    return out

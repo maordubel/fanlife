@@ -378,6 +378,20 @@ class DirectorRules(unittest.TestCase):
         self.assertTrue(any('"director" must be 2' in e for e in self.errs(s)))
 
 
+class NoPosition(unittest.TestCase):
+    def test_table_talk_needs_a_table_claim(self):
+        L = season('WWLLLLLWWWWW')
+        s = director_script(L)
+        b = s['chapters'][1]['beats'][2]
+        b['narration'] = 'By spring they were top of the table. ' + words(6)
+        errs = validate_script(s, L, minutes_for(s))
+        self.assertTrue(any('[no position]' in e for e in errs))
+        L['claims'].append({'id': 'tb', 'type': 'table', 'fact': {'kind': 'table', 'rows': [{'pos': 1, 'club': 'Testers'}]},
+                            'sources': [{'url': 'https://example.org/t'}]})
+        b['claim_ids'] = ['tb']
+        self.assertFalse(any('[no position]' in e for e in validate_script(s, L, minutes_for(s))))
+
+
 class Cards(unittest.TestCase):
     def setUp(self):
         self.L = season('WWLLLLLWWWWW')
@@ -463,7 +477,6 @@ class Writer(unittest.TestCase):
                                                     'gd': 2, 'tags': ['first']})
         self.assertIn('"director": 2', writer.SYSTEM)
         self.assertIn('COLD OPEN', writer.SYSTEM)
-        self.assertEqual([a[0] for a in writer.ANGLES_V3], ['Chronicle', 'From the stands', 'The turning point'])
 
     def test_every_director_error_has_a_hint(self):
         L = season('WWLLLLLWWWWW')
@@ -476,8 +489,172 @@ class Writer(unittest.TestCase):
                           ('Chapter 1: [director rule 5] its last line', 'cliffhanger'),
                           ('x: trailer line "A" names "b"', 'five words'),
                           ('x: a goal card needs a match', 'goal = a match id'),
+                          ('x: [no position] "top of the table"', 'never where they stood'),
                           ('"director" must be 2', '"director": 2')):
             self.assertIn(want, writer.fix_hints([err], L, 100, 120), err)
+
+
+class FakeModel:
+    """Stands in for writer.call_model: records every prompt and answers from a function of it."""
+
+    def __init__(self, answer):
+        self.prompts, self.answer = [], answer
+
+    def __call__(self, system, user, max_tokens=16000):
+        self.prompts.append((system, user))
+        return self.answer(system, user), {'provider': 'fake', 'model': 'fake', 'seconds': 0}
+
+
+class Directors(unittest.TestCase):
+    def setUp(self):
+        self.L = season('WWLLLLLWWWWW')
+        self.base = director_script(self.L)
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        old = writer.call_model
+        self.addCleanup(lambda: setattr(writer, 'call_model', old))
+
+    def brief(self):
+        return {'duration': minutes_for(self.base), 'kind': 'season', 'season': '2001/02'}
+
+    def test_three_directors_three_briefs_three_films(self):
+        from studio.directors import DIRECTORS
+
+        def answer(system, user):
+            s = copy.deepcopy(self.base)
+            who = next(d for d in DIRECTORS if f'DIRECTOR: {d["name"]}' in user)
+            s['hook'] = {'broadcaster': 'Hold that moment.', 'terrace': 'Here we go again.', 'trailer': 'Remember this night.'}[who['id']]
+            s['chapters'][0]['beats'][0]['narration'] = s['hook'] + ' ' + words(14)
+            s['title_candidates'][0]['title'] = f'{who["name"]} cut'
+            return json.dumps(s)
+        fake = FakeModel(answer)
+        writer.call_model = fake
+        out = writer.write_options(self.brief(), self.L, Path(self.tmp.name), lambda *_: None)
+        self.assertEqual([o['_director'] for o in out], ['broadcaster', 'terrace', 'trailer'])
+        self.assertEqual([o['_angle'] for o in out], [d['name'] for d in DIRECTORS])
+        users = [u for _, u in fake.prompts]
+        self.assertEqual(len(users), 3)
+        for d, u in zip(DIRECTORS, users):
+            self.assertIn(f'DIRECTOR: {d["name"]}', u)
+            self.assertIn(writer.DIRECTOR_CRAFT[d['id']], u)
+            for other in DIRECTORS:
+                if other is not d:
+                    self.assertNotIn(f'DIRECTOR: {other["name"]}', u)
+        self.assertEqual(len({o['hook'] for o in out}), 3)
+        self.assertEqual(writer.option_summary(out[2], 3)['director'], 'trailer')
+
+    def test_a_director_who_repeats_another_is_sent_back(self):
+        def answer(system, user):
+            s = copy.deepcopy(self.base)
+            if 'Your hook is the same' in user:
+                s['hook'] = 'Something else entirely.'
+                s['chapters'][0]['beats'][0]['narration'] = s['hook'] + ' ' + words(14)
+                s['title_candidates'][0]['title'] = 'A different title'
+            return json.dumps(s)
+        writer.call_model = FakeModel(answer)
+        out = writer.write_options(self.brief(), self.L, Path(self.tmp.name), lambda *_: None)
+        self.assertEqual(len(out), 2)                        # the third had nothing new left to say: left out, named in the log
+        self.assertNotEqual(out[0]['hook'], out[1]['hook'])
+        self.assertTrue(any('same as The Broadcaster' in e for a in out[1]['_writer'] for e in a['errors']))
+
+    def test_two_scripts_are_enough_when_the_third_must_wait(self):
+        from studio.common import StageError
+        calls = []
+
+        def answer(system, user):
+            calls.append(1)
+            if len(calls) == 3:
+                raise StageError('WRITER_BUSY', 'busy', retryable=True)
+            s = copy.deepcopy(self.base)
+            s['hook'] = f'Hook number {"one" if len(calls) == 1 else "two"}.'
+            s['chapters'][0]['beats'][0]['narration'] = s['hook'] + ' ' + words(14)
+            s['title_candidates'][0]['title'] = f'T{"AB"[len(calls) - 1]}'
+            return json.dumps(s)
+        writer.call_model = FakeModel(answer)
+        self.assertEqual(len(writer.write_options(self.brief(), self.L, Path(self.tmp.name), lambda *_: None)), 2)
+
+
+CANDS = [
+    {'club_id': 'aek-athens', 'club_name': 'AEK Athens', 'kind': 'match', 'season': '2002/03', 'match_ids': ['m1'],
+     'story': {'date': '2002-12-12', 'opponent': 'Maccabi Haifa', 'score': '4–1', 'why': 'decider'}, 'why': 'decider v Maccabi Haifa'},
+    {'club_id': 'celtic', 'club_name': 'Celtic', 'kind': 'rivalry', 'season': '1990–2026', 'opponent': 'Rangers',
+     'story': {'meetings': 120, 'won': 50}, 'why': '120 meetings with Rangers'},
+]
+
+
+def pitch(**kw):
+    p = {'pick': 0, 'title': 'The night in Haifa', 'logline': 'AEK Athens needed a miracle away at Maccabi Haifa. They scored four.',
+         'cold_open': 'December, the away end, four goals.', 'acts': ['The first leg.', 'The trip.', 'The four.'], 'why': 'A decider.'}
+    p.update(kw)
+    return json.dumps(p)
+
+
+class Pitch(unittest.TestCase):
+    def setUp(self):
+        from studio.directors import BY_ID
+        self.d = BY_ID['broadcaster']
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        old = writer.call_model
+        self.addCleanup(lambda: setattr(writer, 'call_model', old))
+
+    def run_with(self, *answers):
+        replies = list(answers)
+        fake = FakeModel(lambda s, u: replies.pop(0))
+        writer.call_model = fake
+        cache = Path(tempfile.mkdtemp(dir=self.tmp.name))  # every answer is cached by its prompt: a fresh desk per run
+        return writer.write_pitch(self.d, CANDS, cache, lambda *_: None), fake
+
+    def test_a_good_pitch(self):
+        p, fake = self.run_with(pitch())
+        self.assertEqual({k: p[k] for k in ('director', 'club_id', 'kind', 'season', 'match_ids', 'opponent')},
+                         {'director': 'broadcaster', 'club_id': 'aek-athens', 'kind': 'match', 'season': '2002/03',
+                          'match_ids': ['m1'], 'opponent': None})
+        self.assertEqual(len(p['acts']), 3)
+        system, user = fake.prompts[0]
+        self.assertIn(self.d['pitch_taste'], user)
+        self.assertIn('DATA ONLY', user)
+
+    def test_a_bad_pick_an_invented_number_and_another_candidates_name_are_sent_back(self):
+        from studio.common import StageError
+        for bad, want in ((pitch(pick=7), '"pick"'), (pitch(logline='AEK Athens scored 17 against Maccabi Haifa.'), '[17]'),
+                          (pitch(why='Better than anything Rangers ever did.'), '"rangers" belongs to another candidate'),
+                          (pitch(title='x' * 101), '"title"'), (pitch(acts=['a', 'b']), '"acts"'),
+                          (pitch(cold_open='March, the away end.'), 'March')):
+            with self.assertRaises(StageError) as e:
+                self.run_with(bad, bad, bad)
+            self.assertIn(want, str(e.exception))
+        p, fake = self.run_with(pitch(pick=7), pitch())
+        self.assertEqual(p['club_id'], 'aek-athens')
+        self.assertIn('"pick" must be the index', fake.prompts[1][1])
+
+
+class Candidates(unittest.TestCase):
+    def test_hapoel_tel_aviv(self):
+        import time
+        t = time.time()
+        c = director.candidates(['hapoel-tel-aviv'], 4)
+        self.assertLess(time.time() - t, 60)
+        kinds = {x['kind'] for x in c}
+        self.assertLessEqual({'season', 'match', 'rivalry'}, kinds)
+        self.assertEqual([x['score'] for x in c], sorted((x['score'] for x in c), reverse=True))
+        keys = [(x['club_id'], x['kind'], x['season'], tuple(x.get('match_ids') or []), x.get('opponent')) for x in c]
+        self.assertEqual(len(keys), len(set(keys)))
+        riv = next(x for x in c if x['kind'] == 'rivalry')
+        self.assertEqual(riv['opponent'], 'Maccabi Tel Aviv')
+        top_season = next(x for x in c if x['kind'] == 'season')
+        self.assertTrue(top_season['story']['honours'])                 # the best seasons won something
+        for x in c:
+            self.assertTrue(x['why'] and x['club_name'] == 'Hapoel Tel Aviv')
+            if x['kind'] in ('match', 'tie'):
+                L = research.build_ledger('hapoel-tel-aviv', x['season'])
+                self.assertTrue(set(x['match_ids']) <= {k['id'] for k in L['claims']})
+
+    @unittest.skipUnless((research.COMPILED / 'zrinjski-mostar.json').exists(), 'compiled packs are built by npm run clubs:precompile')
+    def test_a_compiled_club(self):
+        c = director.candidates(['zrinjski-mostar'], 3)
+        self.assertTrue(any(x['kind'] == 'rivalry' and x['opponent'] == 'Velež' for x in c))
+        self.assertTrue(all(x['club_id'] == 'zrinjski-mostar' for x in c))
 
 
 if __name__ == '__main__':

@@ -44,11 +44,13 @@ class Rivalry(unittest.TestCase):
 
 class Options(unittest.TestCase):
     def test_three_angles_and_a_card_for_each(self):
-        self.assertEqual([a[0] for a in writer.ANGLES_V3], ['Chronicle', 'From the stands', 'The turning point'])
-        s = {'_angle': 'Chronicle', 'title_candidates': [{'title': 'The night', 'angle': 'search'}], 'selected': 0, 'hook': 'H',
+        from studio.directors import DIRECTORS
+        self.assertEqual([d['id'] for d in DIRECTORS], ['broadcaster', 'terrace', 'trailer'])  # one option per director
+        s = {'_angle': 'Chronicle', '_director': 'broadcaster', 'title_candidates': [{'title': 'The night', 'angle': 'search'}], 'selected': 0, 'hook': 'H',
              'chapters': [{'title': 'One', 'beats': [{'narration': 'a b c'}, {'narration': 'd e'}]}]}
         o = writer.option_summary(s, 1)
-        self.assertEqual((o['n'], o['angle'], o['title'], o['words'], o['chapters']), (1, 'Chronicle', 'The night', 5, ['One']))
+        self.assertEqual((o['n'], o['angle'], o['director'], o['title'], o['words'], o['chapters']),
+                         (1, 'Chronicle', 'broadcaster', 'The night', 5, ['One']))
 
 
 class Drive(unittest.TestCase):
