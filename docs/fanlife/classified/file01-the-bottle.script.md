@@ -1,4 +1,4 @@
-# CLASSIFIED · FILE 01 · THE BOTTLE — script for approval (draft 2, 4.11.2026)
+# CLASSIFIED · FILE 01 · THE BOTTLE — script for approval (draft 3, 4.11.2026)
 
 Draft 2 (owner, 4.11.2026): the film first says WHICH match and WHEN — the World Cup, Spain's first game, sixteen
 days away — and only then enters the bathroom; every beat now carries its camera move.
@@ -25,9 +25,9 @@ Panels: the owner's uploads in Drive `CLASSIFIED` (mapped by content — see the
 | **CHAPTER 2 · FRIDAY NIGHT, JEREZ** | | | |
 | 1:42 | P07 room evening [+CH1] · handheld drift, the light dims | What happened next has two versions, and this file keeps both. | — |
 | 1:50 | P08 reach [+CH1] · split-screen slide, version A on the left | The one the wire services sent round the world that night: he knocked the bottle, it broke against the washbasin, and a shard of glass fell onto his right foot. [1] | Tab: *VERSION A · REUTERS* |
-| 2:04 | P01 slip → P10 falling · rewind tape, replay faster, version B on the right | The one football tells: the bottle slipped, and the goalkeeper — on instinct — tried to stop it with his foot. Like a ball. [5][6] | Tab: *VERSION B · THE LEGEND* |
+| 2:04 | P01 slip → P10 falling · rewind tape, replay faster, version B on the right | The one he told the next day, back from hospital at three in the morning: he had showered, reached for the cologne, it slipped — and he put out his foot to stop it. Like a ball. [5][13] | Tab: *VERSION B · HIS OWN WORDS* |
 | 2:17 | P10 → impact FX (stars, no blood) · crash zoom | Either way, the result was the same. The glass cut the tendon of his big toe. | **CRACK!** |
-| 2:27 | P12 hospital corridor · long dolly down the corridor with the trolley | Surgery that night at a hospital nearby. The doctors' verdict reached the camp before he did: no World Cup. [1][2] | Caption: *Ruled out · 17 May 2002* |
+| 2:27 | P12 hospital corridor · long dolly down the corridor with the trolley | Surgery that night at the general hospital in Jerez: the tendon that lifts the big toe of his right foot, cut clean through. No World Cup. [1][2][13] | Caption: *Ruled out · 17 May 2002* |
 | 2:42 | P13 press (sits injured) [+CH1] · camera flashes, slow push-in | In front of the cameras he refused to call himself unlucky. From the start of his career, he said, he had had more than his share of good luck. [7] | Caption: paraphrase (not a quote) |
 | 2:58 | Empty armchair before TV · static, the TV glow pulses | And the coach, José Antonio Camacho, had a hole in his team two weeks before the opening game. [1] | — |
 | **CHAPTER 3 · SAN IKER** | | | |
@@ -55,10 +55,12 @@ Panels: the owner's uploads in Drive `CLASSIFIED` (mapped by content — see the
 9. CNN, *Spain break Irish hearts on penalties*, 16 June 2002 — Harte's penalty saved, Kilbane's rebound wide; Holland, Connolly, Kilbane failed; Casillas saved two.
 10. VOA, *Spain Advances to Quarterfinals*, 16 June 2002 — first shoot-out of the tournament; Casillas, 21, saved one in normal time and two in the shoot-out.
 11. These Football Times, *San Iker Casillas*.
+13. EFE via Periódico de Ibiza, *Cañizares: «Me duele no poder disputar el Mundial»*, 19 May 2002 — Montecastillo camp, surgery at the Hospital General de Jerez, back at 03:00; in his words the cologne bottle fell after the shower and he put his foot out to stop it; the extensor tendon of the right big toe.
 12. FIFA+ / Wikipedia (Gwangju World Cup Stadium) — Spain v Slovenia, Group B, 2 June 2002, Gwangju, Spain's first game of the tournament.
 
 ## Notes for the owner
-- **Two versions on screen, labelled.** Reuters (sink, shard falls on the foot) is the record; "tried to control it with his foot" is presented as the legend.
+- **Two versions on screen, labelled.** Reuters (it broke against the sink, a shard fell on the foot) and his own account at the press conference (it slipped, he put his foot out to stop it).
+- **No match the next day.** Spain's last game before the World Cup was 17 April (Northern Ireland 0–5, 11v11); the injury came on the third day of the Montecastillo camp, sixteen days before Spain–Slovenia.
 - **No minute for Harte's penalty**: the sources give 62', 63' and 64'.
 - **Panels decided** (owner, 4.11.2026): CH2 = the keeper in the green jersey (Casillas), CH1 = the red training top (Cañizares); P05 = the keeper standing in the floodlights, P15 = the keeper entering the stadium at night; WAR = the red/vermilion abstract background, HEART = the navy one.
 - **Missing panels**: P03 (camp), P06 (final bench), P09 (foot catch), P11 (shards), P18 (pile-on). The film works without them (holds and FX on the existing panels). If you want them, upload with the names in the art brief.
