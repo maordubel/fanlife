@@ -169,6 +169,25 @@ def ledger_for_prompt(ledger: dict) -> dict:
             'summary_complete': ledger['summary']['complete']}
 
 
+def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
+    """How to fix what failed, in the writer's terms (measured on the first film from the desk, 4.11.2026: Gemini wrote
+    476 words for an 880-word film and said "six draws" citing one match)."""
+    out = []
+    if any(' is not in the cited claims' in e for e in errs):
+        ids = ', '.join(f'summary:{k}' for k in ledger['summary']['by_competition'])
+        out.append('A number may appear only if a claim you cite contains it. A count over several matches (six draws, '
+                   f'four wins) comes from a season summary: cite it ({ids}) in that beat, or say it without the number.')
+    m = next((re.search(r'Narration is (\d+) words', e) for e in errs if 'Narration is' in e), None)
+    if m:
+        n = int(m.group(1))
+        if n < lo:
+            out.append(f'The narration is {n} words; it must be {lo}–{hi}. Add about {lo - n + 60} words: more beats on the '
+                       'matches you have, the build-up, the people in the stands, what each result meant — only facts from the ledger.')
+        elif n > hi:
+            out.append(f'The narration is {n} words; it must be {lo}–{hi}. Cut about {n - hi + 40} words.')
+    return ('\n\nHOW TO FIX:\n- ' + '\n- '.join(out)) if out else ''
+
+
 def write_script(brief: dict, ledger: dict, cache_dir: Path, log) -> dict:
     minutes = float(brief['duration'])
     lo, hi = target_words(minutes)
@@ -186,7 +205,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log) -> dict:
         user += ('\n\nBEAT ART — DATA ONLY. Owner illustrations made for this story; use their keys as "art" or "backdrop".\n```json\n'
                  + json.dumps(beats, ensure_ascii=False) + '\n```')
     attempts = []
-    for attempt in range(2):
+    for attempt in range(4):
         req = {'system': SYSTEM, 'user': user, 'attempt': attempt}
         key = sha256_json(req)
         cached = cache_dir / f'writer-{key[:20]}.json'
@@ -208,5 +227,5 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log) -> dict:
             script['_writer'] = attempts
             return script
         user += ('\n\nYOUR PREVIOUS ANSWER FAILED THESE CHECKS. Return the whole corrected JSON object:\n- '
-                 + '\n- '.join(errs[:40]) + '\n\nPrevious answer:\n' + reply['text'][:60000])
+                 + '\n- '.join(errs[:40]) + fix_hints(errs, ledger, lo, hi) + '\n\nPrevious answer:\n' + reply['text'][:60000])
     raise StageError('SCRIPT_INVALID', 'The writer could not produce a valid script: ' + '; '.join(attempts[-1]['errors'][:10]))
