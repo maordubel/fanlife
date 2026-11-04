@@ -183,3 +183,8 @@ Owner: *"a narrator whose English is human, who says every club, player and comp
    lines with each candidate — the old voice, Kokoro George and Lewis after this pass, and Qwen3-TTS (Apache-2.0) with a
    British narrator designed from a description and cloned for every line — has Whisper check which names it heard,
    and sends the takes to the owner's Telegram. The takes sit on a temporary branch only while Telegram fetches them.
+8. **First audition result (4.11.2026):** Whisper heard 34/41 names in Kokoro George after the pass, 33/41 before, 24/41 in
+   Qwen3-TTS (respelled names read as letters: "Z-DAN", "Ray AHL"). Qwen renders at ×9.7 real time on the runner
+   (a 9-minute film ≈ 90 minutes), Kokoro at ×0.5. From the transcripts: a voiced r before a consonant made "Marko"
+   sound like "Marikor", so the lexicon is now spoken non-rhotic, as a British narrator speaks (Mendilibar =
+   men-dee-lee-BAH); AEK said as one word was heard as "Ayak" — the owner decides between AH-ek and A-E-K.

@@ -40,7 +40,6 @@ jobs:
         working-directory: scripts/football-stories
         env:
           AUDITION_RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ env.BRANCH }}
-          AUDITION_SEND: scores   # the takes were sent on 4.11.2026; this run sends the Whisper scores only
         run: python3 -m studio.narrator_audition "$RUNNER_TEMP/voice" --send
       - name: Publish the takes for the delivery
         run: |

@@ -39,6 +39,29 @@ def _move_stress(s: str) -> str:
     return ''.join(out)
 
 
+# A British narrator is non-rhotic: an r before a consonant or at the end of a word is not said, the vowel before it
+# lengthens instead (Mendilibar = men-dee-lee-BAH, Marko = MAH-ko). Measured on the audition: a voiced r there made
+# Whisper hear "Marko Nikolić" as "Marikor".
+_RHOTIC_LONG = {'a': 'ɑː', 'ɑ': 'ɑː', 'ɒ': 'ɔː', 'o': 'ɔː', 'ɔ': 'ɔː', 'ɛ': 'ɛː', 'e': 'ɛː', 'ɜ': 'ɜː', 'i': 'ɪə',
+                'ɪ': 'ɪə', 'u': 'ʊə', 'ʊ': 'ʊə'}
+
+
+def _non_rhotic(s: str) -> str:
+    out = []
+    for i, ch in enumerate(s):
+        if ch == 'ɹ':
+            nxt = s[i + 1] if i + 1 < len(s) else ' '
+            if nxt not in VOWELS and nxt not in 'ˈˌjw':
+                prev = out[-1] if out else ''
+                if prev == 'ə' and len(out) > 1 and out[-2] in 'ˈˌ':
+                    out[-1] = 'ɜː'                       # a stressed syllabic r: Grbavica = GUR-ba-vi-tsa
+                elif prev in _RHOTIC_LONG:
+                    out[-1] = _RHOTIC_LONG[prev]
+                continue
+        out.append(ch)
+    return ''.join(out)
+
+
 def to_kokoro(ipa: str, diphthongs: bool = True) -> str:
     """Standard IPA from the lexicon → the voice's phonemes. `diphthongs=False` keeps espeak's two-letter form."""
     s = ipa.strip().strip('/').replace('g', 'ɡ').replace('tʃ', 'ʧ').replace('dʒ', 'ʤ')
@@ -48,7 +71,7 @@ def to_kokoro(ipa: str, diphthongs: bool = True) -> str:
             s = s.replace(a, b)
     else:
         s = s.replace('ʧ', 'tʃ').replace('ʤ', 'dʒ')
-    return _move_stress(s)
+    return _non_rhotic(_move_stress(s))
 
 
 def unknown_symbols(ipa: str) -> set[str]:

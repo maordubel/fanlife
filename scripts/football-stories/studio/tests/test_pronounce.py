@@ -39,7 +39,13 @@ class Lexicon(unittest.TestCase):
     def test_stress_moves_before_the_vowel(self):
         self.assertEqual(P.to_kokoro('ziˈdan'), 'zidˈan')
         self.assertEqual(P.to_kokoro('ˌɛmbaˈpeɪ'), 'ˌɛmbapˈA')
-        self.assertEqual(P.to_kokoro('ˈtʃɒrluka'), 'ʧˈɒɹluka')
+        self.assertEqual(P.to_kokoro('ˈtʃɒrluka'), 'ʧˈɔːluka')
+
+    def test_a_british_narrator_drops_the_r_before_a_consonant(self):
+        self.assertEqual(P.to_kokoro('ˌmɛndiliˈbar'), 'mˌɛndilibˈɑː')
+        self.assertEqual(P.to_kokoro('ˈmarijan'), 'mˈaɹijan')          # an r before a vowel stays
+        self.assertEqual(P.to_kokoro('mɒˈrjɛntɛs'), 'mɒɹjˈɛntɛs')      # and in an onset cluster
+        self.assertEqual(P.to_kokoro('ˈɡərbavitsa'), 'ɡˈɜːbavitsa')
 
     def test_longest_name_wins_and_language_follows_the_person(self):
         pr = P.Pronouncer()
