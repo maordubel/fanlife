@@ -367,8 +367,17 @@ def compiled_ledger(club_id: str, season: str) -> dict:
                     'a total is the season only when the summary says complete.'}
 
 
-def build_ledger(club_id: str, season: str, extra_claims: list[dict] | None = None) -> dict:
-    ledger = hapoel_ledger(season) if club_id == 'hapoel-tel-aviv' else compiled_ledger(club_id, season)
+def dossier_ledger(dos: dict) -> dict:
+    """A film that is not one club's season (Real Madrid in Athens, against three clubs over six decades): every match is a
+    claim of the film's own dossier, each with its sources, and the ledger is neutral — no side is "ours"."""
+    return {'version': 1, 'club_id': dos['club_id'], 'club_name': dos['club_name'], 'country': dos.get('country'),
+            'season': dos['season'], 'built_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
+            'archive': {'file': 'dossier', 'sha256': None}, 'claims': [], 'held': [], 'neutral': True, 'end_line': dos.get('end_line'),
+            'note': 'A dossier film: every match and fact is a researched claim with its sources.'}
+
+
+def build_ledger(club_id: str, season: str, extra_claims: list[dict] | None = None, base: dict | None = None) -> dict:
+    ledger = base if base is not None else hapoel_ledger(season) if club_id == 'hapoel-tel-aviv' else compiled_ledger(club_id, season)
     for c in extra_claims or []:
         validate_claim(c)
         ledger['claims'].append(c)

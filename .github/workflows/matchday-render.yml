@@ -29,7 +29,9 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           ffmpeg -hide_banner -filters | grep -q zscale || { echo "::error::ffmpeg has no zscale (HDR tone map)"; exit 1; }
-          pip install -q numpy pillow pillow-heif playwright kokoro-onnx soundfile faster-whisper fonttools brotli
+          pip install -q numpy pillow playwright kokoro-onnx soundfile faster-whisper fonttools brotli
+          # misaki: the G2P the voice was trained on (studio/pronounce.py); without it the voice falls back to espeak
+          pip install -q misaki num2words regex spacy && python -m spacy download en_core_web_sm -q
           npm install --no-save --no-audit --no-fund world-atlas@2
           python -m playwright install --with-deps chromium > /dev/null
       - name: Voice model (cached)

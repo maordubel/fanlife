@@ -1,0 +1,43 @@
+[
+ {
+  "name": "vlog-ep1-grbavica",
+  "shape": "vlog",
+  "footage": {
+   "sub": "Sarajevo game against Zeljeznicar"
+  },
+  "frames": [
+   "clip:IMG_0089.MOV@1.6",
+   "clip:IMG_0105.MOV@3.8"
+  ],
+  "hook": [
+   "Red, then blue",
+   "Their curva lit up."
+  ],
+  "episode": "1",
+  "place": "Grbavica",
+  "crest": "../../../public/club-kits/zrinjski-mostar/crest.png",
+  "accent": "#C92D39",
+  "pos": [
+   "88% 75%/150%",
+   "35% 75%/150%"
+  ]
+ },
+ {
+  "name": "vlog-ep2-bloomfield",
+  "shape": "vlog",
+  "footage": {
+   "drive": "https://drive.google.com/drive/folders/1xc-V9odiy-Y-975F0QvByZ4WMNh4ue_u"
+  },
+  "frames": [
+   "clip:5a59bbd6-8905-4b38-9663-4bddf6084aab.mp4@6.5"
+  ],
+  "hook": [
+   "25,550 came",
+   "to see us go down."
+  ],
+  "episode": "2",
+  "place": "Bloomfield",
+  "crest": "../../../public/club-kits/hapoel-tel-aviv/crest.png",
+  "accent": "#D71920"
+ }
+]

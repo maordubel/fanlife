@@ -1,0 +1,58 @@
+{
+ "set": "real-madrid-athens",
+ "origin": "code",
+ "supplied": "2026-11-04",
+ "note": "Animations drawn in code for the Real Madrid in Athens film: plain shirts, no marks, no real person.",
+ "pieces": [
+  {
+   "key": "clip:real-madrid-athens/acropolis-night",
+   "description": "Athens at night: the Acropolis lit on its rock, the city below, floodlights in the distance; the camera drifts in",
+   "families": [],
+   "seconds": 10.0,
+   "source": "drawn in code (rma/animate.py)",
+   "sha256": "ef61fe4a883228c4"
+  },
+  {
+   "key": "clip:real-madrid-athens/four-shirts",
+   "description": "Four plain shirts drop onto a rail one by one: Real Madrid white, Olympiacos red-and-white stripes, Panathinaikos green, AEK yellow and black, each with its name tag",
+   "families": [
+    "red",
+    "green",
+    "yellow"
+   ],
+   "seconds": 8.0,
+   "source": "drawn in code (rma/animate.py)",
+   "sha256": "6fe29ba3811303db"
+  },
+  {
+   "key": "clip:real-madrid-athens/night-piraeus",
+   "description": "A ground at night in red and white, flares in the stand, two lines of players walk out, white and red; tag PIRAEUS",
+   "families": [
+    "red"
+   ],
+   "seconds": 10.0,
+   "source": "drawn in code (rma/animate.py)",
+   "sha256": "ec444e5068959297"
+  },
+  {
+   "key": "clip:real-madrid-athens/night-leoforos",
+   "description": "A ground at night in green and white, flares in the stand, white and green players walk out; tag ATHENS",
+   "families": [
+    "green"
+   ],
+   "seconds": 10.0,
+   "source": "drawn in code (rma/animate.py)",
+   "sha256": "4f5041cd5a65583e"
+  },
+  {
+   "key": "clip:real-madrid-athens/night-aek",
+   "description": "A ground at night in yellow and black, flares in the stand, white and yellow players walk out; tag ATHENS",
+   "families": [
+    "yellow"
+   ],
+   "seconds": 10.0,
+   "source": "drawn in code (rma/animate.py)",
+   "sha256": "8cc357c6f95ae3d6"
+  }
+ ]
+}

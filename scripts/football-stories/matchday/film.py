@@ -36,7 +36,7 @@ CUT = 'reel' if '--reel' in sys.argv else 'film'
 import studio.common as _sc  # noqa: E402
 if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
-from studio.audio import music_track, CROWD, fx, score, track_score  # noqa: E402
+from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402
@@ -693,7 +693,7 @@ def main() -> None:
     mv, av = (0.72, 0.6) if track.startswith('track:') else (0.5, 0.9)
     g = (f'[2:a]volume={mv}[m];[1:a]volume={av}[am];[am][m]amix=inputs=2:normalize=0[bed];'
          '[bed][0:a]sidechaincompress=threshold=0.03:ratio=7:attack=25:release=420[bd];'
-         '[0:a]highpass=f=70,acompressor=threshold=0.2:ratio=2.5:attack=5:release=120,volume=1.1[v];'
+         f'[0:a]{narrator_fx(SR)},volume=1.1[v];'
          '[3:a]volume=0.8[s];[v][bd][s]amix=inputs=3:normalize=0,afade=t=out:st=%.2f:d=1.5[a]' % (total - 1.6))
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(work / 'voice.wav'), '-i', str(work / 'amb.wav'), '-i', str(work / 'music.wav'),
          '-i', str(work / 'sfx.wav'), '-filter_complex', g, '-map', '[a]', '-ar', str(SR), str(mix)])
