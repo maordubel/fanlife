@@ -27,7 +27,8 @@ from .compose import CLASSIC, PW, PH, compose, style_of
 RES = 1.25          # panel canvas pixels per unit: crisp up to a 1.25 zoom, soft but clean beyond
 BR = 0.7            # board pixels per unit (the panels already played, seen while the camera crosses the board)
 MARGIN = 700        # paper around the outermost panels
-VERSION = 1
+VERSION = 2
+MAX_PANELS = 15     # a longer chapter goes on to a second board (the memory of a board is its width × height)
 
 
 def director_id(ed) -> str | None:
@@ -52,7 +53,7 @@ def place(plan: dict, style: dict, seed: str) -> dict:
             out[s['n']] = {'engine': 'classic', 'board': -1, 'ox': 0.0, 'oy': 0.0}
             cur = None
             continue
-        if cur is None or kind == 'chapter':
+        if cur is None or kind == 'chapter' or len(cur['panels']) >= MAX_PANELS:
             cur = {'id': len(boards), 'panels': []}
             boards.append(cur)
             idx = 0
@@ -61,13 +62,13 @@ def place(plan: dict, style: dict, seed: str) -> dict:
         gy = PH + 300 + ((h >> 8) % 220)
         cols = 3
         r_, c_ = divmod(idx, cols)
-        if direction == 'stairs':      # the Trailer Cut: a diagonal descent, every move a big one
-            c_, r_ = idx % 2 + idx // 2, idx // 2 + (idx % 2)
-        elif r_ % 2:                   # a snake: right, right, down, left, left, down…
+        if r_ % 2:                     # a snake: right, right, down, left, left, down…
             c_ = cols - 1 - c_
         jx = ((h >> 4) % 240) - 120
         jy = ((h >> 12) % 200) - 100
         ox, oy = c_ * gx + jx, r_ * gy + jy
+        if direction == 'stairs':      # the Trailer Cut: every move a diagonal, a big one
+            oy += c_ * 460 if r_ % 2 == 0 else (cols - 1 - c_) * 460
         cur['panels'].append(s['n'])
         out[s['n']] = {'engine': 'vox', 'board': cur['id'], 'ox': float(ox), 'oy': float(oy)}
         idx += 1
@@ -91,10 +92,10 @@ def board_paper(b: dict, seed: int, warm: bool, accent, photos=(), years=(), cen
     w, h = int(b['w'] * BR), int(b['h'] * BR)
     tone = '#EFE1C4' if warm else '#ECE2CB'
     small = crumpled(seed % 9, (max(64, w // 2), max(64, h // 2)), tone)
-    im = small.resize((w, h), Image.BICUBIC).convert('RGB')
-    a = np.asarray(im, 'float32')
+    a = np.asarray(small.convert('RGB'), 'float32')
     a = a * (np.array([1.02, 0.985, 0.92], 'float32') if warm else np.array([1.0, 0.98, 0.93], 'float32')) + np.array([10, 8, 2], 'float32')
-    im = Image.fromarray(np.clip(a, 0, 255).astype('uint8'), 'RGB')
+    im = Image.fromarray(np.clip(a, 0, 255).astype('uint8'), 'RGB').resize((w, h), Image.BICUBIC)
+    del a
     rng = np.random.default_rng(seed)
     d = ImageDraw.Draw(im, 'RGBA')
     from ..cinema.type import text as T
@@ -247,6 +248,7 @@ class VoxFilm:
         """The board with every panel before beat `n` already played on it."""
         if self._board and self._board[0] == (board, n):
             return self._board[1]
+        self._board = None
         b = self.layout['boards'][board]
         pp = self.dir / f'board-{board}.png'
         if not pp.exists():
@@ -262,7 +264,7 @@ class VoxFilm:
                 break
             f, x, y = self.final(m)
             im.paste(f, (x, y), f)
-        self._board = ((board, n), im)
+        self._board = ((board, n), im, np.asarray(im))
         return im
 
     # -------------------------------------------------------------- one frame
@@ -292,7 +294,7 @@ class VoxFilm:
                 sh = (sh[0] + k * math.sin(t * 91), sh[1] + k * math.cos(t * 77))
         board = self.board_upto(pose.board if pose.board >= 0 else w['board'], n)
         fill = board.getpixel((0, 0))
-        frame = warp(board, self._affine(pose, BR, shake=sh), fill)
+        frame = warp(self._board[2] if self._board and self._board[1] is board else board, self._affine(pose, BR, shake=sh), fill, 'RGB')
         if pose.board == w['board']:
             # the live panel: settled pieces baked once into a base, live ones drawn over it every frame
             key = 'base'
@@ -387,16 +389,18 @@ except ImportError:  # pragma: no cover
     cv2 = None
 
 
-def warp(src: Image.Image, data, fill=(0, 0, 0)) -> Image.Image:
-    """Cut the frame out of a big image by an affine map (output pixel → source pixel), bilinear."""
+def warp(src, data, fill=(0, 0, 0), mode: str | None = None) -> Image.Image:
+    """Cut the frame out of a big image (PIL, or its numpy array) by an affine map (output pixel → source pixel)."""
+    mode = mode or src.mode
     if cv2 is None:
-        kw = {'fillcolor': fill} if src.mode == 'RGB' else {}
-        return src.transform((W, H), Image.AFFINE, data, Image.BILINEAR, **kw)
-    a = np.asarray(src)
+        im = src if isinstance(src, Image.Image) else Image.fromarray(src, mode)
+        kw = {'fillcolor': fill} if mode == 'RGB' else {}
+        return im.transform((W, H), Image.AFFINE, data, Image.BILINEAR, **kw)
+    a = src if isinstance(src, np.ndarray) else np.asarray(src)
     M = np.array([data[:3], data[3:]], np.float64)
-    border = tuple(int(c) for c in fill) + ((0,) if src.mode == 'RGBA' else ())
+    border = tuple(int(c) for c in fill) + ((0,) if mode == 'RGBA' else ())
     out = cv2.warpAffine(a, M, (W, H), flags=cv2.INTER_LINEAR | cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_CONSTANT, borderValue=border)
-    return Image.fromarray(out, src.mode)
+    return Image.fromarray(out, mode)
 
 
 def _paste(dst: Image.Image, pc) -> None:

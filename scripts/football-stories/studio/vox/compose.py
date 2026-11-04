@@ -536,11 +536,15 @@ def result(ed, s, B: Builder) -> Panel:
     if B.st['people']:
         base = ('fig-celebrate-arms-kr' if f['outcome'] == 'win' else 'fig-kneel-despair-kr' if f['outcome'] == 'loss' else 'fig-supporter-scarf-up-kr')
         B.cut(base, 560, 960 - B.side * 830, 1130, t_sc1 + 0.1, side=-B.side)
-    zp = B.st['push']
+    # the push onto the score keeps the names in the frame (a stacked card has its score at the side)
+    zp = min(B.st['push'], 1.22 if stack else 1.32)
+    sx_ = (score_rect[0] + score_rect[2] / 2)
+    if stack:
+        sx_ = cx + 170
     P.look(0.0, cx, cy + 60, 0.92)
     P.look(t_n + 0.2, cx, cy + 20, 0.98)
-    P.look(t_sc0 - 0.05, (score_rect[0] + score_rect[2] / 2), score_rect[1] + score_rect[3] / 2, zp)
-    P.look(t_mark + 0.9, (score_rect[0] + score_rect[2] / 2), score_rect[1] + score_rect[3] / 2 + 40, zp * 0.96)
+    P.look(t_sc0 - 0.05, sx_, score_rect[1] + score_rect[3] / 2, zp)
+    P.look(t_mark + 0.9, sx_, score_rect[1] + score_rect[3] / 2 + 40, zp * 0.96)
     P.look(B.dur, cx, cy + 90, 1.0)
     if kind == 'versus':
         pass

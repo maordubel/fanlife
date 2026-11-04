@@ -232,3 +232,40 @@ slug lines (date + place), the parallel "meanwhile" cut, the personal moment tie
 screen-ready moments, headline montages broken into moments, a recurring motif that pays off, pathos punctured by
 irony, one strong image per moment, one quotable line, questions instead of explanations, chapters ending on a breath,
 heroes who are not clean. On the channel: terrace slang yes, profanity no; no political side; nothing graphic.
+
+## 7. VOX — the documentary look (owner, 4.11.2026: "VOX Style, automatically")
+
+`studio/vox/` renders the same plan (script + ledger + story block + the cinema's `s['cinema']` block) as one paper
+board per chapter that a single camera glides across. No new inputs; `vox.engine_for(brief)` makes it the default
+(`plan['engine']`), `STORIES_VOX=0` or a brief with `engine`/`visual_style` `classic` keeps the classic edit.
+
+- **Board** (`render.place`): a board starts at the open, at every chapter card and after a shot off the board; panels
+  (1920×1080 units each) follow a snake (the Trailer Cut: a diagonal staircase) with a little irregularity. The paper is
+  crumpled newsprint with faded archive prints, older cuttings, the season's years in huge outline type and a pencil path
+  from beat to beat. Panels already played are baked onto it once per shot (`final-<n>.png`, board resolution 0.7).
+- **Camera** (`camera.CameraPath`): a pure function of the layout, so a glide that starts in one shot and lands in the
+  next is seamless across workers. Each beat's `focus` keys (where to look, when, how close) are eased in-out; between
+  beats it glides with a pull-back and a small overshoot (longer for a longer way); a held frame drifts; a chapter is a
+  dive into the paper and a fall onto the next board. Motion blur on fast glides, a zoom blur through the paper.
+- **Panels** (`compose.py`, one function per visual type): torn paper cards with soft shadows and tape that slide, drop or
+  are stamped onto the board; kinetic words (rise from a mask, pop, slide, stamp), typewriter lines with a block cursor;
+  the pen (`Marker`) circles the score, points at the scorers, underlines, brackets a run; a multiply highlighter on the
+  winner, the headline, the key words; odometers that roll up and down (the form number rides the form line's tip) and
+  split-flap scores that count up goal by goal; maps with dropping pins and the route drawn; the beat's b-roll as a
+  printed photograph half under the card; kit cut-outs and the moving-art library's people at the edges in front of the
+  board (they move faster than the paper: the depth). Every number is read from a claim or the story block.
+- **Duties kept**: the scorebug and the burned captions are glass; contract rule 1's lower-third is a torn slip with the
+  scoreline, underlined by the pen; the slug line is typed on its own strip; the grade (letterbox at the climax and cold
+  open, hush, leaks, the Terrace's warm paper); `follow` and `end` keep their own designed shots (classic engine) and the
+  board hands over with a dissolve.
+- **Directors** (`compose.STYLES`): the Broadcaster glides fastest and counts fastest; the Terrace glides slowest, warmer
+  paper, more people; the Trailer Cut pulls back furthest and pushes in hardest.
+- **Sound**: a whoosh on every glide, `pen` on a stroke, `tick` on a counter or a flip, `paper` when a card lands —
+  levelled like every effect (`audio.FX_UNDER_VOICE_DB`).
+- **Shorts**: a VOX film's Short takes the middle 4:3 of the frame (the camera keeps what matters at its centre), larger
+  on the page.
+- **Cost**: OpenCV's warp (Pillow's transform as the fallback) — one board warp and one panel warp a frame. Measured on a
+  GitHub runner: a 4.7-minute film, 7,097 frames in 437 s on 4 workers (62 ms a frame).
+
+Look at it without a narrator: `python3 -m studio.vox.stills --club <id> --season <s> --script s.json --out /tmp/v
+--shots 0-6 --at 0.2,0.9` (or `--clip 3-6` for an MP4 with the glides). Tests: `studio/tests/test_vox.py`.
