@@ -1,0 +1,139 @@
+name: I WAS THERE · automatic episode (test)
+# The manual end-to-end check of scripts/football-stories/matchday/vlog_auto.py: one Drive folder of the owner's footage
+# + one FAN LIFE catalog match → survey + scout → the writer (Gemini, free) → episode.json → film.py (film + reel) →
+# the owner's Telegram, exactly as the studio worker sends a Reel. Footage and renders never enter the repository: the
+# episode, the writer's rounds and the publish files are this run's artifact (14 days).
+# Secrets: GEMINI_API_KEY · TELEGRAM_BOT_TOKEN · FAN_LIFE_CRON_SECRET (the chat id comes from the Final Whistle link).
+# Started by hand (Actions → Run workflow) or by a push of matchday/vlog-auto-test.json (the same fields), so a branch
+# that is not the default branch can run it too.
+on:
+  push:
+    branches-ignore: [main]
+    paths: ['scripts/football-stories/matchday/vlog-auto-test.json']
+  workflow_dispatch:
+    inputs:
+      drive_folder: {description: 'Drive folder (or file) link, shared "anyone with the link"', required: true}
+      club_id: {description: 'FAN LIFE club id, e.g. aek-athens', required: true}
+      match_id: {description: 'Catalog match id (content/generated/stories/<club>.json)', required: true}
+      minutes: {description: 'Film length in minutes (incl. the end screen)', required: false, default: '4'}
+      notes: {description: 'Owner notes (optional): free lines, or "quote | …" / "press | …" lines', required: false, default: ''}
+      telegram: {description: 'Send the reel and the film to Telegram', type: boolean, default: true}
+permissions:
+  contents: read
+concurrency:
+  group: vlog-auto-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+      KOKORO_DIR: /home/runner/models
+    steps:
+      - uses: actions/checkout@v4
+      - name: The request
+        env:
+          IN_DRIVE: ${{ inputs.drive_folder }}
+          IN_CLUB: ${{ inputs.club_id }}
+          IN_MATCH: ${{ inputs.match_id }}
+          IN_MINUTES: ${{ inputs.minutes }}
+          IN_NOTES: ${{ inputs.notes }}
+          IN_TELEGRAM: ${{ inputs.telegram }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_ENV"
+          import json, os
+          from pathlib import Path
+          f = Path('scripts/football-stories/matchday/vlog-auto-test.json')
+          j = json.loads(f.read_text()) if not os.environ.get('IN_DRIVE') and f.exists() else {}
+          get = lambda k, e, d='': str(j.get(k, os.environ.get(e) or d))
+          tg = get('telegram', 'IN_TELEGRAM', 'true').lower() not in ('false', '0', 'no')
+          for k, v in (('DRIVE', get('drive_folder', 'IN_DRIVE')), ('CLUB', get('club_id', 'IN_CLUB')), ('MATCH', get('match_id', 'IN_MATCH')),
+                       ('MINUTES', get('minutes', 'IN_MINUTES', '4')), ('TELEGRAM', 'true' if tg else 'false')):
+              print(f'{k}={v}')
+          notes = get('notes', 'IN_NOTES').replace('\r', '')
+          print('NOTES<<EOF_NOTES\n' + notes + '\nEOF_NOTES')
+          PY
+          [ -n "$(grep '^DRIVE=.\+' "$GITHUB_ENV")" ] || { echo "::error::no drive_folder"; exit 1; }
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - name: Club archive (the research claims read the compiled pack) and the palette
+        run: |
+          npm ci --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund world-atlas@2
+          npm run clubs:precompile
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/football-stories/palettes.ts > "$RUNNER_TEMP/palettes.json"
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -filters | grep -q zscale || { echo "::error::ffmpeg has no zscale (HDR tone map)"; exit 1; }
+          pip install -q numpy pillow pillow-heif "opencv-python-headless<5" playwright kokoro-onnx soundfile faster-whisper fonttools brotli
+          pip install -q misaki num2words regex spacy && python -m spacy download en_core_web_sm -q
+          python -m playwright install --with-deps chromium > /dev/null
+      - name: Voice model (cached)
+        id: kokoro
+        uses: actions/cache@v4
+        with: {path: ~/models, key: kokoro-v1.0}
+      - if: steps.kokoro.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/models
+          curl -sSL -o ~/models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          curl -sSL -o ~/models/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+      - name: The match and its claims
+        run: |
+          python3 scripts/football-stories/matchday/vlog_auto.py match --club "$CLUB" --match "$MATCH" \
+            --palette "$RUNNER_TEMP/palettes.json" --out "$RUNNER_TEMP/match.json"
+          echo "JOB=vlog-$(python3 -c "import json,re,sys;m=json.load(open(sys.argv[1]));print(re.sub(r'[^a-z0-9]+','-',(m['club']['id']+'-'+m['date']).lower()))" "$RUNNER_TEMP/match.json")" >> "$GITHUB_ENV"
+      - name: The footage, from Drive
+        run: |
+          python3 scripts/football-stories/matchday/drive_fetch.py "$DRIVE" "$RUNNER_TEMP/footage/$JOB"
+      - name: The writer's answers from an earlier run of this match (never written twice)
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/work/${{ env.JOB }}
+          key: vlog-${{ env.JOB }}-${{ github.run_id }}
+          restore-keys: vlog-${{ env.JOB }}-
+      - name: The episode (survey, scout, writer, checks)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          STORIES_GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL }}
+        run: |
+          python3 scripts/football-stories/matchday/vlog_auto.py episode --footage "$RUNNER_TEMP/footage/$JOB" \
+            --match "$RUNNER_TEMP/match.json" --notes "$NOTES" --minutes "${MINUTES:-4}" --work "$RUNNER_TEMP/work/$JOB"
+      - if: always() && env.JOB != ''
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/work/${{ env.JOB }}
+          key: vlog-${{ env.JOB }}-${{ github.run_id }}
+      - name: Render (film.py — the film and the reel)
+        run: |
+          python3 scripts/football-stories/matchday/vlog_auto.py render --episode "$RUNNER_TEMP/work/$JOB/episode.json" \
+            --footage "$RUNNER_TEMP/footage/$JOB" --out "$RUNNER_TEMP/out/$JOB"
+      - name: To the owner's Telegram
+        if: env.TELEGRAM == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          cap=$(python3 -c "import json,sys;e=json.load(open(sys.argv[1]));print('🎬 I WAS THERE (automatic) · '+e['title'].split(' · ',1)[1])" "$RUNNER_TEMP/work/$JOB/episode.json")
+          python3 scripts/football-stories/matchday/vlog_auto.py telegram --result "$RUNNER_TEMP/out/$JOB/result.json" --caption "$cap"
+      - name: Summary
+        if: always()
+        run: |
+          w="$RUNNER_TEMP/work/$JOB"
+          [ -f "$w/writer.json" ] && { echo '### Writer rounds' >> "$GITHUB_STEP_SUMMARY"; python3 -c "import json,sys;[print(f\"- round {a['round']} · {(a.get('meta') or {}).get('model')} · planned {a.get('planned_film_s')} s · {len(a['errors'])} problem(s): {'; '.join(a['errors'][:6])}\") for a in json.load(open(sys.argv[1]))]" "$w/writer.json" >> "$GITHUB_STEP_SUMMARY"; }
+          r="$RUNNER_TEMP/out/$JOB/result.json"
+          [ -f "$r" ] && { echo '### Render' >> "$GITHUB_STEP_SUMMARY"; python3 -c "import json,sys;r=json.load(open(sys.argv[1]));[print(f'- {c}: {r[c].get(\"qa\")}') for c in ('film','reel') if c in r]" "$r" >> "$GITHUB_STEP_SUMMARY"; }
+          mkdir -p "$RUNNER_TEMP/keep"
+          cp "$w"/episode.json "$w"/writer.json "$w"/survey/inventory.md "$RUNNER_TEMP/keep/" 2>/dev/null || true
+          find "$RUNNER_TEMP/out" \( -name '*-publish.mp4' -o -name 'thumbnail.jpg' -o -name '*.srt' -o -name 'report.json' -o -name 'result.json' -o -name 'youtube-description.txt' -o -name 'marketing.txt' -o -name 'frame-*.jpg' \) \
+            -exec sh -c 'mkdir -p "$RUNNER_TEMP/keep/$(basename "$(dirname "$1")")" && cp "$1" "$RUNNER_TEMP/keep/$(basename "$(dirname "$1")")/"' _ {} \; 2>/dev/null || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlog-auto-${{ env.JOB }}
+          path: ${{ runner.temp }}/keep
+          retention-days: 14
+          if-no-files-found: ignore
