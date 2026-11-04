@@ -23,7 +23,8 @@ describe('Social — the composer follows the marketing rules',()=>{
    expect(captionLength(p,d.caption)).toBeLessThanOrEqual(LIMITS[p].caption)
    expect(textProblem(p,d.caption,d.comment)).toBeNull()
    expect(d.caption).not.toMatch(/https?:\/\//)
-   expect(d.comment).toContain('https://youtu.be/abcdefghijk')
+   // X: no link at all (a post with a link is billed many times over — PR #385); the bio carries it
+   if(p==='x')expect(d.comment).not.toMatch(/https?:\/\//);else expect(d.comment).toContain('https://youtu.be/abcdefghijk')
    expect(d.tags[0]).toBe('#FootballStories')
    expect(d.caption).toContain('#FootballStories')
    expect(d.tags.length).toBeLessThanOrEqual(LIMITS[p].tags)

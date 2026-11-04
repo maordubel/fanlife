@@ -134,7 +134,10 @@ export function compose(job:Job,platform:Platform,media:SocialMedia|null=default
  const tags=socialTags(job,platform)
  const where=film?'The full film is on YouTube':`The full film is on YouTube — ${CHANNEL.name}`
  const sameAsTitle=hook.trim().toLowerCase()===title.toLowerCase()
- const comment=film?`▶ The full film: ${url}\nEvery film: ${CHANNEL.url}`:`▶ Every film: ${url}`
+ // X bills a post that carries a link many times over (marketing chat, PR #385): there the reply names the channel and
+ // the link lives in the account's bio, unless X_LINKS=1 lets the publisher put it back (scripts/football-stories/publish)
+ const comment=platform==='x'?`▶ The full film: YouTube · ${CHANNEL.handle} (link in bio)`
+  :film?`▶ The full film: ${url}\nEvery film: ${CHANNEL.url}`:`▶ Every film: ${url}`
  let caption=''
  if(platform==='x'){
   const tagLine=tags.join(' ')
