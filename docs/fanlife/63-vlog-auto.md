@@ -50,5 +50,6 @@ the publish files are the run's artifact; footage and renders are never committe
   no identifying tags, 84 MB publish file, 18 min to render; reel 18.8 s, −14.3 LUFS, 3 min.
 - Telegram: the reel and a 720p copy of the film — both accepted by the bot.
 - Known gap: the fact guard checks numbers and the play/crowd guard checks a list of terms; a weak model can still
-  write a vague line the record does not hold ("waiting for the derby", "PAOK stood against the tide"). A paid writer
-  (`STORIES_ALLOW_PAID`) or a human pass on `episode.json` before the render is the remedy until the guard grows.
+  write a vague line the record does not hold ("waiting for the derby", "PAOK stood against the tide"). A stronger
+  Gemini model (the repository variable `STORIES_GEMINI_MODEL`, when the key's quota serves it) or a human pass on
+  `episode.json` before the render is the remedy until the guard grows. The writer here is Gemini only (free).
