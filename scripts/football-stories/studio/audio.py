@@ -523,6 +523,44 @@ def hush_envelope(hushes: list[tuple[float, float]], n: int, depth: float = 0.35
     return env
 
 
+ROOM_FLOOR_DB = -42.0   # the room tone's level where nothing else sounds (QA's dead-air detector is at -45 dB)
+ROOM_QUIET_DB = -52.0   # a half second this quiet counts as nothing sounding
+ROOM_AFTER_S = 2.0      # nothing for this long is dead air in a film; the room comes in under it
+
+
+def room_tone(voice, music, sfx, crowd, rate: int = SR, seed: int = 11) -> np.ndarray:
+    """A soft room tone laid only where the whole mix is near silent for more than ROOM_AFTER_S seconds (a silent
+    sources beat, a held black). It fades in over 0.6 s and out over 0.6 s, so it is felt, not heard, and never covers speech."""
+    n = len(voice)
+    total = voice[:n] + music[:n] + sfx[:n] + crowd[:n]
+    w = rate // 2
+    k = n // w
+    rms = np.sqrt(np.mean(total[: k * w].reshape(k, w) ** 2, axis=1) + 1e-12)
+    quiet = 20 * np.log10(rms) < ROOM_QUIET_DB
+    out = np.zeros(n, 'float32')
+    rng = np.random.default_rng(seed)
+    i = 0
+    while i < k:
+        if not quiet[i]:
+            i += 1
+            continue
+        j = i
+        while j < k and quiet[j]:
+            j += 1
+        if (j - i) * 0.5 >= ROOM_AFTER_S:
+            a, b = i * w, min(n, j * w)
+            seg = np.cumsum(rng.standard_normal(b - a)).astype('float32')     # brown noise: low, soft
+            seg -= np.convolve(seg, np.ones(rate // 4) / (rate // 4), mode='same')
+            seg *= 10 ** (ROOM_FLOOR_DB / 20) / (float(np.sqrt(np.mean(seg ** 2))) + 1e-9)
+            f = min(int(0.6 * rate), len(seg) // 2)
+            env = np.ones(len(seg), 'float32')
+            env[:f] = np.linspace(0, 1, f)
+            env[-f:] = np.linspace(1, 0, f)
+            out[a:b] = seg * env
+        i = j
+    return out
+
+
 def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: str = 'synth') -> Path:
     total = plan['duration']
     n = int(total * SR) + SR
@@ -586,6 +624,10 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     music *= hush_envelope(hushes, n)
     music = level_music(music, vdb)
     log(f'Mix: score set {MUSIC_UNDER_VOICE_DB:.0f} dB under the narrator, ducked further while he speaks')
+    room = room_tone(voice, music, sfx, crowd)
+    if float(np.max(np.abs(room))) > 0:
+        crowd = crowd + room
+        log(f'Mix: room tone under {int(np.count_nonzero(room) / SR)} s where nothing else sounded')
     d = job_dir / 'mix'
     d.mkdir(exist_ok=True)
     _write(d / 'voice.wav', voice)
