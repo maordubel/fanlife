@@ -319,9 +319,16 @@ class Picture(unittest.TestCase):
 
     def test_no_yellow_on_a_hapoel_film(self):
         pal = Palette('hapoel-tel-aviv', 'Test FC', '#E30613', '#FFFBF2', ['yellow'])
-        ed, plan, f = film(scr=tc.script(), pal=pal)
-        for kind, fr in self.frames(f, plan, {'score', 'goal', 'form', 'record', 'trailer'}, (0.9,)):
-            self.assertLess(tc.banned_share(fr, ['yellow']), 0.002, kind)
+        for director in (None, 'terrace'):
+            ed, plan, f = film(scr=tc.script(director), pal=pal)
+            for kind, fr in self.frames(f, plan, {'score', 'goal', 'form', 'record', 'trailer', 'race'}, (0.15, 0.9)):
+                self.assertLess(tc.banned_share(fr, ['yellow']), 0.0005, f'{director} {kind}')
+
+    def test_the_warm_paper_is_never_yellow(self):
+        from studio.vox.render import paper_safe
+        a = np.array([[[214, 182, 120], [240, 226, 196], [120, 90, 60]]], 'float32')
+        out = paper_safe(a)
+        self.assertEqual(tc.banned_share(out.astype('uint8'), ['yellow']), 0.0)
 
     def test_the_highlighter_and_pen_are_never_a_rival_colour(self):
         for pal in (tc.PAL, Palette('x', 'X', '#1F3A5F', '#FFFBF2', ['red', 'green']),
