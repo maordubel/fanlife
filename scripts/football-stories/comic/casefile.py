@@ -931,14 +931,17 @@ class CaseFilm(VR.VoxFilm):
 
     def dim(self, n: int, t: float) -> float:
         """How far the light is down (0..1): the beat's own fade_black, and a dimming left over from the beat before
-        lifted over the first 0.9 s of this one — the light never comes back in one frame."""
+        lifted over this one's first 0.9–2.4 s (the deeper, the slower) — the light never comes back in a jump."""
         own = 0.0
         for (d0, dd, to) in self.panel(n).targets.get('dim', []):
             k = clamp((t - d0) / max(0.4, dd))
             own = max(own, to * k * k * (3 - 2 * k))
-        if n > 1 and t < 0.9:
+        if n > 1 and t < 2.4:
             prev = self.shots[n - 1]
-            own = max(own, self.dim(n - 1, prev['frames'] / self.fps) * (1 - ease_in_out(t / 0.9)))
+            left = self.dim(n - 1, prev['frames'] / self.fps)
+            up = 0.9 + 1.5 * left   # out of a full fade to black the light comes back over 2.4 s
+            if t < up:
+                own = max(own, left * (1 - ease_in_out(t / up)))
         return own
 
     # -------------------------------------------------------------- Composer.render's hooks
