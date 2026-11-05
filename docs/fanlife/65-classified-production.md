@@ -58,7 +58,7 @@ style in `vox/compose.STYLES`):
 - **Measured** (`comic/tests/test_casefile.py`, stand-in panels): on a held beat the mean luma moves under 0.35 levels a
   frame and the picture under 0.6 px (phase correlation); a slow camera move steps the same every frame; the print keeps
   its detail against the picture shrunk to that size; the stamp count is one per chapter. FILE 01 with stand-in panels,
-  every frame: mean |Δluma| 0.25, p99 3.9 (glides between differently coloured prints) — the living comic reached 20 on
+  every frame (8,445): mean |Δluma| 0.25, p99 3.6, max 8.3 (a glide between differently coloured prints) — the living comic reached 20 on
   the flicker, 20 on the flashbulbs and 100 on a flash frame.
 
 Look at it without the narrator: `python3 scripts/football-stories/comic/casefile.py --episode … --panels <dir> --out
