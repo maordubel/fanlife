@@ -296,7 +296,9 @@ class Builder:
         except Exception:  # noqa: BLE001
             src = Image.open(ed.backdrop('terrace-crowd', self.seed)).convert('RGB')
         W_, H_ = int(w * self.res), int(h * self.res)
-        pic = _cover(src, (W_, H_))
+        from ..paper import scrub
+        # resampling can mix a new rival colour out of two allowed ones (rule 44): scrub again after the resize
+        pic = scrub(_cover(src, (W_, H_)), ed.pal.bans)
         pic = E.photo_treat(pic, amount=0.34)
         card, pad = E.paper(w + 36, h + 36, self.res, self.seed + 11, tone=PAPER, edges='tblr', tape=tape)
         card.alpha_composite(pic.convert('RGBA'), (int(pad + 18 * self.res), int(pad + 18 * self.res)))
@@ -360,14 +362,16 @@ class ClipPrint(E.El):
         self.rect = None
         self.settle = 1e9
         self._last = None
+        self.bans = list(getattr(clip, 'bans', None) or [])
 
     def pieces(self, t, cv):
         if t < self.t0:
             return []
         i = int((t - self.t0) * FPS)
         if self._last is None or self._last[0] != i:
+            from ..paper import scrub
             fr = self.clip(i)
-            im = E.photo_treat(_cover(fr, (self.w, self.h)), amount=0.34).convert('RGBA')
+            im = E.photo_treat(scrub(_cover(fr, (self.w, self.h)), self.bans), amount=0.34).convert('RGBA')
             if abs(self.rot) > 0.05:
                 im = im.rotate(self.rot, expand=True, resample=Image.BILINEAR)
             self._last = (i, im)
