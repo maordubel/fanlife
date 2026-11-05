@@ -1,5 +1,5 @@
 {
- "note": "Music the owner chose for the films. A film names one with --music track:<id> (brief: music). The editor plays it under the narration, choosing the quiet and the loud passages to match each part of the story, ducked under the voice. Tracks with a url are fetched on first use into kit/music/cache/ (not committed). The Tanner Helland library (github.com/tannerhelland/free-music) is CC BY 4.0: every film that uses one credits 'Music by Tanner Helland' with the link. Its covers and remixes of other people's works (Final Fantasy, Castlevania, Eragon, Carol of the Bells, the DragonFyre remix, the C&C-titled anthem) are left out on purpose.",
+ "note": "Music the owner supplied. Owner rule (5.11.2026): every film is scored ONLY with a track he supplied (owner: true) — never the synthesiser, never a library he did not choose. A film may name one (brief music: track:<id>); otherwise the studio picks by director, tone and mood (studio/audio.pick_owner_track). Tracks with 'drive' live in the owner's public Drive folder and are fetched on first use into kit/music/cache/ (gitignored, never committed: Free To Use forbids redistribution). Free To Use tracks need the attribution block in the description (package.py prints it). The Tanner Helland entries remain for reference only and are never picked.",
  "tracks": [
   {
    "id": "kontraa-balkan-drill",
@@ -9,7 +9,12 @@
    "supplied": "2026-11-03",
    "origin": "owner-supplied (Pixabay, item 573741)",
    "licence": "Pixabay Content License — owner-supplied",
-   "mood": "Balkan, rhythmic, upbeat"
+   "mood": "Balkan, rhythmic, upbeat",
+   "owner": true,
+   "tags": [
+    "drive",
+    "balkan"
+   ]
   },
   {
    "id": "sub-clair-lofi-study",
@@ -19,7 +24,14 @@
    "supplied": "2026-11-03",
    "origin": "owner-supplied (Pixabay, item 628178)",
    "licence": "Pixabay Content License — owner-supplied",
-   "mood": "calm, reflective, talk"
+   "mood": "calm, reflective, talk",
+   "owner": true,
+   "tags": [
+    "calm",
+    "reflective",
+    "warm",
+    "memory"
+   ]
   },
   {
    "id": "gr0za-energy",
@@ -29,7 +41,14 @@
    "supplied": "2026-11-03",
    "origin": "owner-supplied (Pixabay, item 627556)",
    "licence": "Pixabay Content License — owner-supplied",
-   "mood": "high energy, hype, Shorts"
+   "mood": "high energy, hype, Shorts",
+   "owner": true,
+   "tags": [
+    "hype",
+    "drive",
+    "shorts",
+    "joy"
+   ]
   },
   {
    "id": "atlasaudio-sports",
@@ -39,7 +58,14 @@
    "supplied": "2026-11-03",
    "origin": "owner-supplied (Pixabay, item 625740)",
    "licence": "Pixabay Content License — owner-supplied",
-   "mood": "drive, matchday, promo"
+   "mood": "drive, matchday, promo",
+   "owner": true,
+   "tags": [
+    "drive",
+    "matchday",
+    "joy",
+    "triumph"
+   ]
   },
   {
    "id": "leberch-dark",
@@ -49,7 +75,15 @@
    "supplied": "2026-11-03",
    "origin": "owner-supplied (Pixabay, item 625667)",
    "licence": "Pixabay Content License — owner-supplied",
-   "mood": "sombre, tension, documentary — I WAS THERE Bloomfield 2024"
+   "mood": "sombre, tension, documentary — I WAS THERE Bloomfield 2024",
+   "owner": true,
+   "tags": [
+    "sombre",
+    "tension",
+    "sad",
+    "war",
+    "heartbreak"
+   ]
   },
   {
    "id": "helland-a-memory-away",
@@ -512,6 +546,171 @@
    "licence": "CC BY 4.0",
    "credit": "Music by Tanner Helland — https://github.com/tannerhelland/free-music (CC BY 4.0)",
    "mood": "listen first"
+  },
+  {
+   "id": "pufino-rock-me-now",
+   "file": "cache/owner/pufino-rock-me-now.mp3",
+   "title": "Rock Me Now",
+   "artist": "Pufino",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "Rock Me Now by Pufino",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Pufino_-_Rock_Me_Now"
+   },
+   "owner": true,
+   "mood": "drive, matchday, rock, hype",
+   "tags": [
+    "drive",
+    "epic",
+    "joy",
+    "triumph",
+    "anthem",
+    "hype"
+   ]
+  },
+  {
+   "id": "zambolino-hummer",
+   "file": "cache/owner/zambolino-hummer.mp3",
+   "title": "Hummer",
+   "artist": "Zambolino",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "Hummer by Zambolino",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Zambolino_-_Hummer"
+   },
+   "owner": true,
+   "mood": "high energy, groove, fast",
+   "tags": [
+    "drive",
+    "hype",
+    "joy",
+    "shorts"
+   ]
+  },
+  {
+   "id": "pufino-enlivening",
+   "file": "cache/owner/pufino-enlivening.mp3",
+   "title": "Enlivening",
+   "artist": "Pufino",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "Enlivening by Pufino",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Pufino_-_Enlivening"
+   },
+   "owner": true,
+   "mood": "soft, uplifting, reflective",
+   "tags": [
+    "warm",
+    "memory",
+    "reflective",
+    "calm",
+    "hope"
+   ]
+  },
+  {
+   "id": "zambolino-lighthearted",
+   "file": "cache/owner/zambolino-lighthearted.mp3",
+   "title": "Lighthearted",
+   "artist": "Zambolino",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "Lighthearted by Zambolino",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Zambolino_-_Lighthearted"
+   },
+   "owner": true,
+   "mood": "light, warm, playful",
+   "tags": [
+    "warm",
+    "light",
+    "vlog",
+    "humour",
+    "calm"
+   ]
+  },
+  {
+   "id": "zolvi-march-of-the-mini-monsters",
+   "file": "cache/owner/zolvi-march-of-the-mini-monsters.mp3",
+   "title": "March of the Mini Monsters",
+   "artist": "Zolvi",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "March of the Mini Monsters by Zolvi",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Zolvi_-_March_of_the_Mini_Monsters"
+   },
+   "owner": true,
+   "mood": "quirky march, comic",
+   "tags": [
+    "laugh",
+    "humour",
+    "quirky"
+   ]
+  },
+  {
+   "id": "zolvi-unanswered-call",
+   "file": "cache/owner/zolvi-unanswered-call.mp3",
+   "title": "Unanswered Call",
+   "artist": "Zolvi",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "Unanswered Call by Zolvi",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Zolvi_-_Unanswered_Call"
+   },
+   "owner": true,
+   "mood": "sombre, tension, heartbreak",
+   "tags": [
+    "sad",
+    "heartbreak",
+    "tension",
+    "war",
+    "sombre"
+   ]
+  },
+  {
+   "id": "aetheric-snap-crackle",
+   "file": "cache/owner/aetheric-snap-crackle.mp3",
+   "title": "Snap Crackle",
+   "artist": "Aetheric",
+   "supplied": "2026-11-05",
+   "origin": "owner-supplied (Free To Use, freetouse.com)",
+   "licence": "Free To Use free licence — attribution in the description; the file is not redistributed",
+   "credit": "Snap Crackle by Aetheric",
+   "credit_source": "Music from Free To Use · Source: https://freetouse.com/music",
+   "drive": {
+    "folder": "1z5OD1VxRnhaFQdVazIg4OSOzymX1Zrk7",
+    "name": "Aetheric_-_Snap_Crackle"
+   },
+   "owner": true,
+   "mood": "playful, crisp, explainer",
+   "tags": [
+    "explainer",
+    "light",
+    "tension",
+    "quirky"
+   ]
   }
  ]
 }

@@ -5,11 +5,11 @@
   "note": "The owner's panels live in his public Drive folder only. Nothing listed here is ever committed to the repository: drive_fetch.py downloads them into a temporary folder outside it. Owner decision 4.11.2026: everything in a targeted folder is approved material used AS IS (real faces, press originals included) — the composer never blurs, rejects or anonymises it. The no-real-faces / no-blood rules apply only to what the composer draws in code.",
   "drive_folder": "1tZgDuFn7LdaxSd-LctIG1j2n0JuNW-_L",
   "download_url": "https://drive.usercontent.google.com/download?id={id}&export=download&confirm=t",
-  "music_note": "The score under a full episode (produce.py) is chosen by the tone tab from studio/kit/music/index.json. An episode may name its own track (\"music\"). The owner can change any of these; a track that cannot be fetched falls back to the studio's composed score, and the report says so.",
+  "music_note": "The score under a full episode (produce.py) is chosen by the tone tab from studio/kit/music/index.json. An episode may name its own track (\"music\"). The owner can change any of these; only the owner's own tracks are used (owner: true); a track that cannot be fetched falls back to the next owner track, never to a composed score.",
   "tones": {
-    "LAUGH": {"color": "#1B9AD6", "label": "LAUGH", "music": "helland-clowns"},
+    "LAUGH": {"color": "#1B9AD6", "label": "LAUGH", "music": "zolvi-march-of-the-mini-monsters"},
     "WAR": {"color": "#D71920", "label": "WAR", "music": "leberch-dark"},
-    "HEART": {"color": "#233C8F", "label": "HEART", "music": "sub-clair-lofi-study"}
+    "HEART": {"color": "#233C8F", "label": "HEART", "music": "pufino-enlivening"}
   },
   "kit": [
     {"id": "s02-dossier", "role": "S02", "kind": "panel", "name": "Desk_items_under_lamp_light", "drive_id": "1MAcM2IW6crWqkKV6j2DqHAnqqCsH13u6", "file": "s02-dossier.jpg"},

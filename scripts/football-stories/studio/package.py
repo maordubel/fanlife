@@ -164,7 +164,8 @@ def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
     tail = ['', 'Credits',
               f'• Facts: the FanLife archive and the sources above. Scores, dates and tables on screen are printed from those records.',
               f'• Narration: {manifest["voice"]["credit"]}',
-              next((f"• Music: {a.get('credit') or a['owner'] + ' (' + a['licence'] + ')'}. Sound effects composed for this film; crowd atmosphere from FanLife's own recordings."
+              next(((f"• {a['credit_source']}\n  {a['credit']}" if a.get('credit_source') else f"• Music: {a.get('credit') or a['owner'] + ' (' + a['licence'] + ')'}.")
+                    + " Sound effects composed for this film; crowd atmosphere from FanLife's own recordings."
                     for a in manifest.get('assets', []) if a['id'].startswith('music-')),
                    '• Score and sound effects: composed for this film; crowd atmosphere from FanLife\'s own recordings.'),
               ('• Illustrations: AI-generated art made for FanLife. Pictures marked ILLUSTRATION are drawn to look like photographs or '

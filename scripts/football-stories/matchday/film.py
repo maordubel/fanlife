@@ -698,8 +698,11 @@ def main() -> None:
         music = D.music_bed(ep['music'], plan, total, SR, read_audio)
     elif sections and track.startswith('track:'):   # the owner's chosen track, edited to the night (studio/audio.track_score)
         music = resample(track_score(sections, track.split(':', 1)[1]), 32000, SR)[:n]
+    elif sections:   # the owner's music only (5.11.2026): the best owner track for a vlog night, never synthesised
+        sc, _used = owner_score(sections, resolve_music(None, ['vlog', 'light', 'warm'], str(ep.get('id') or '')))
+        music = resample(sc, 32000, SR)[:n]
     else:
-        music = resample(score(sections), 32000, SR)[:n] if sections else np.zeros(n, np.float32)
+        music = np.zeros(n, np.float32)
     music = np.pad(music, (0, n - len(music)))
     for name, arr in (('voice', voice), ('amb', amb), ('music', music), ('sfx', sfx)):
         write_wav(work / f'{name}.wav', arr[: int(total * SR)])
