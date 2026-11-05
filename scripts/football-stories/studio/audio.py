@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import math
 import subprocess
 import wave
@@ -241,8 +242,10 @@ def _fetch_drive_track(t: dict, path: Path) -> None:
         import sys
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'matchday'))
         import drive_fetch as DF  # noqa: E402
-        want = t['drive']['name'].lower()
-        hit = next((fid for fid, title, folder in DF.listing(t['drive']['folder']) if not folder and want in title.lower()), None)
+        norm = lambda x: re.sub(r'[\s_]+', ' ', x.lower()).strip()  # noqa: E731 — Drive keeps spaces where a download had underscores
+        want = norm(t['drive']['name'])
+        hit = t['drive'].get('id') or next((fid for fid, title, folder in DF.listing(t['drive']['folder'])
+                                           if not folder and want in norm(title)), None)
         if hit:
             DF.download(hit, path)
     except Exception:  # noqa: BLE001 — the next owner track is tried (pick_owner_track / resolve_music)
