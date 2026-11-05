@@ -27,11 +27,42 @@ DRAFT to the owner's Telegram. Nothing is uploaded to YouTube and nothing is pub
 | Follow line | Rule 136 through the studio's `with_cta`: once, at the end of CHAPTER 2 (the cold open belongs with chapter 1), on the supporters' card with our own SUBSCRIBE button pressed on the word "subscribe" and turning to SUBSCRIBED. The close ends "…subscribe, and the next one will find you." | `produce.with_follow`, `card_follow` |
 | Narrator | The owner's **Take B**: Kokoro bm_george, the pronunciation lexicon, misaki, human timing and breaths; the narrator chain in the mix. Cached per line | `produce.narrator`, `studio/voice.py`, `studio/kit/pronounce/lexicon.json` |
 | Clock | A beat lasts lead + its line + a breath (0.5 s); a line spread over two panels (`cont`) shares its time by `share`; `t0: "word"` lands on the word named in `smash_at_word` (SMASH! on "away"); `freeze: "word"` stops the camera there | `produce.lay_out` |
-| Picture | `compose.py` on that clock, the narration captions burned in (studio captions) | `Composer.post` |
+| Picture | The VOX case board (below) on that clock, the narration captions burned in (studio captions). `CLASSIFIED_VOX=0` or `"engine": "classic"` in the episode keeps the living comic (`compose.py`) | `casefile.CaseFilm`, `.post` |
 | Mix | The studio's `build_mix`: score by the tone tab (manifest `tones.*.music`: LAUGH `helland-clowns`, WAR `leberch-dark`, HEART `sub-clair-lofi-study`), effects levelled under the voice and thinned (`level_fx`/`thin_cues`), the owner's crowd recordings only at a save. A track that cannot be fetched falls back to the composed score, and the report says so | `studio/audio.py` |
 | QA | Streams, length (±15 % of the episode's `minutes`), sync, loudness (−14 LUFS), dead air, black gaps, captions; a contact sheet | `studio/qa.py` |
 | Shorts | Three 9:16 cuts of whole beats (≤ 59 s; beats are dropped from the end until it fits), with the hook and the call to the full film | `studio/shorts.py` |
 | Package | `youtube.json` (title + candidates, description with the chapters of the actual cut and the sources, tags, private), `description.txt`, three thumbnails in the case-folder look | `release.py` |
+
+## The case board — VOX is the leading edit (owner, 5.11.2026)
+
+The owner watched FILE 01 as a living comic and wrote: *"there's a feeling of epilepsy, the pictures shake, they're not
+clear. Take the VOX atmosphere there too. VOX is our leading edit."* `comic/casefile.py` now draws every FILE the way
+the studio's VOX film is drawn (doc 66 §7), on VOX's own code (`studio/vox`: board, camera, elements; the `classified`
+style in `vox/compose.STYLES`):
+
+- **A board per chapter** — cork, closed manila folders and typed index cards (some lines blacked out), the case number
+  stencilled faint. One camera glides across it: cosine-eased, a shallow pull-back, no overshoot, the arrival framing
+  held until the glide has landed. A chapter change lifts off the board while it fades to cork and settles onto the next.
+- **The owner's pictures are prints**: the whole picture (contained, never cropped, never treated), a white border,
+  dropped onto the board and then still. Red string from the previous print's pin to this one's, drawn on as it lands.
+- **Lettering**: the slug line (label + date/place) typed letter by letter; the pen circles the key detail where the
+  script asked for a glint, droplets, shards or depth blur, and draws an arrow from the shout (SMASH!) that pops beside
+  it; a source with a quoted headline lies on a torn clipping and the highlighter sweeps over the quote;
+  VERSION A | VERSION B are kraft tabs over two prints side by side on one row; a score card pops and is underlined.
+- **The stamp lands once per chapter**: the chapter's own stamp effect where the script has one (FILE 01 · CLOSED),
+  otherwise CLASSIFIED on the chapter's folder. It presses in (a small settle, the ink bleeding) — no flash, no thump.
+- **Never drawn on the board** (they flicker, flash or wobble): line boil, the depth re-warp of a picture, lamp flicker,
+  flashbulbs, flash frames, hand-held shake, impact jitter, crash zooms, speed lines, particles, strobing grain.
+  `report.json → dropped_fx` counts what the script asked for and the board left out. A fade to black dims smoothly and
+  the light comes back over the next beat's first 0.9–2.4 s.
+- **Measured** (`comic/tests/test_casefile.py`, stand-in panels): on a held beat the mean luma moves under 0.35 levels a
+  frame and the picture under 0.6 px (phase correlation); a slow camera move steps the same every frame; the print keeps
+  its detail against the picture shrunk to that size; the stamp count is one per chapter. FILE 01 with stand-in panels,
+  every frame (8,445): mean |Δluma| 0.25, p99 3.6, max 8.3 (a glide between differently coloured prints) — the living comic reached 20 on
+  the flicker, 20 on the flashbulbs and 100 on a flash frame.
+
+Look at it without the narrator: `python3 scripts/football-stories/comic/casefile.py --episode … --panels <dir> --out
+/tmp/stills --stills 3,12,40` (or `--clip 13-19 --out /tmp/clip.mp4`).
 
 ## Episode fields (beyond doc 62)
 

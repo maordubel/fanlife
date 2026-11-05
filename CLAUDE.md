@@ -3363,3 +3363,11 @@ Owner's launch-day A–Z QA. `scripts/qa/full-audit.mjs` (`npm run qa:full`, env
 1. **Flow is global** (`app/weekly.css` TYPE FLOW): paragraphs `text-wrap: pretty`; headings, labels, buttons, stamps, tags, CTAs balance; stamps and tags never wrap. A new component does not re-solve this.
 2. **Footer and legal links are controls**: 44px high and wide (`.mag-credit`, `.club-foot a`, `.wkh-doc-nav a`).
 3. Dev server, not a build, runs the sweep here; one worker, one group of routes at a time (the sandbox OOMs otherwise). LIFE (Phaser) pages are covered by `life:play`, not by this script.
+
+## 141 · A thumbnail's hook is read off the record (5.11.2026)
+
+`studio/thumbs` makes every thumbnail of the channel: three variants a film (score · emotion · question) and a Shorts cover. Every word, number and name on one passes the same cited-claim checks a trailer card passes. A question is asked only when the record holds its answer. The words must be readable at 168×94 (`legibility`, at least 9 px and 3:1). `thumb-*` library pieces are for thumbnails only and never appear in a film shot.
+
+## 142 · CLASSIFIED is drawn on VOX's case board, and nothing on it flickers (5.11.2026)
+
+Owner: *"a feeling of epilepsy, the pictures shake … VOX is our leading edit."* `comic/casefile.py` lays a FILE out on VOX's board and camera (`studio/vox`, the `classified` style): the owner's pictures as whole, untreated prints that land once and then stay still; string, slug lines, the pen, the highlighter over a source's own quote, VERSION A | B side by side, the stamp once per chapter. Never on the board: line boil, depth re-warp, lamp flicker, flashbulbs, flash frames, shake, impact jitter, crash zooms, strobing grain. A held beat moves its mean luma under 0.35 levels and its picture under 0.6 px a frame (`comic/tests/test_casefile.py`); the classic comic is one switch away (`CLASSIFIED_VOX=0`). Where the whole mix is silent for over 2 s, a room tone at −42 dB comes in under it (`audio.room_tone`), so a silent beat is never dead air.
