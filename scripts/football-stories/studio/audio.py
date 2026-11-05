@@ -424,6 +424,34 @@ def speech_db(voice: np.ndarray) -> float:
     return float(20 * np.log10(np.sqrt(np.mean(active ** 2)))) if len(active) else -21.0
 
 
+# The score (owner, 5.11.2026: "the background music is too loud relative to the narrator — sort out the sound"). It
+# used to go in at a fixed 0.55 of whatever the track was, so a mastered library track sat level with the voice. Now it
+# is measured like the effects: its body (the 75th percentile of 400 ms windows) is set MUSIC_UNDER_VOICE_DB below the
+# narrator's speech, and the sidechain takes it a further ~6–9 dB down while he talks. Between lines the music breathes
+# back up to that bed, never over it.
+MUSIC_UNDER_VOICE_DB = 17.0
+MUSIC_DUCK = 'sidechaincompress=threshold=0.02:ratio=10:attack=15:release=450:makeup=1'
+
+
+def music_db(music: np.ndarray, rate: int = SR) -> float:
+    """The music's playing loudness: the 75th percentile of 400 ms RMS windows that are not silence."""
+    w = max(1, int(0.4 * rate))
+    if len(music) < w:
+        return _rms_db(music) if len(music) else -90.0
+    frames = music[: len(music) // w * w].reshape(-1, w)
+    rms = np.sqrt(np.mean(np.square(frames, dtype='float64'), axis=1))
+    active = rms[rms > 10 ** (-50 / 20)]
+    return float(20 * np.log10(np.percentile(active, 75))) if len(active) else -90.0
+
+
+def level_music(music: np.ndarray, voice_db: float, under: float = MUSIC_UNDER_VOICE_DB, rate: int = SR) -> np.ndarray:
+    """The score set `under` dB below the narrator's speech (silence stays silence)."""
+    m = music_db(music, rate)
+    if m <= -89:
+        return music
+    return (music * 10 ** ((voice_db - under - m) / 20)).astype('float32')
+
+
 def level_fx(kind: str, a: np.ndarray, voice_db: float, rng) -> np.ndarray:
     """An effect at its distance under the narrator, measured on its loudest 120 ms (the part the ear hears)."""
     if kind not in FX_UNDER_VOICE_DB or not len(a):
@@ -556,6 +584,8 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     music = score(sections, style=music)[:n]
     music = np.pad(music, (0, n - len(music)))
     music *= hush_envelope(hushes, n)
+    music = level_music(music, vdb)
+    log(f'Mix: score set {MUSIC_UNDER_VOICE_DB:.0f} dB under the narrator, ducked further while he speaks')
     d = job_dir / 'mix'
     d.mkdir(exist_ok=True)
     _write(d / 'voice.wav', voice)
@@ -564,7 +594,7 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     _write(d / 'crowd.wav', crowd)
     out = d / 'mix.m4a'
     fg = ('[0:a]asplit=4[v0][vk1][vk2][vk3];'
-          '[1:a]volume=0.55[m];[m][vk1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[md];'
+          f'[1:a]anull[m];[m][vk1]{MUSIC_DUCK}[md];'
           f'[v0]volume=1.0,{narrator_fx()}[v];'
           # effects sit in the same room as the picture: rounded top, a short room, a few dB further back while he speaks
           '[2:a]lowpass=f=9000,equalizer=f=3500:t=q:w=1.2:g=-2,aecho=0.8:0.6:28|47:0.12|0.07[sf];'

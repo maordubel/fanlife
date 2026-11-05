@@ -47,3 +47,25 @@ class Density(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class MusicLevel(unittest.TestCase):
+    """Owner, 5.11.2026: the background music was too loud relative to the narrator."""
+
+    def test_a_loud_track_sits_well_under_the_voice(self):
+        import numpy as np
+        from studio import audio as A
+        t = np.arange(A.SR * 6) / A.SR
+        voice = (0.25 * np.sin(2 * np.pi * 180 * t)).astype('float32')
+        voice[A.SR * 2:A.SR * 3] = 0  # a pause between lines
+        music = (0.9 * np.sin(2 * np.pi * 220 * t)).astype('float32')  # a mastered track: louder than the voice
+        out = A.level_music(music, A.speech_db(voice))
+        self.assertAlmostEqual(A.speech_db(voice) - A.music_db(out), A.MUSIC_UNDER_VOICE_DB, delta=0.5)
+        self.assertGreaterEqual(A.MUSIC_UNDER_VOICE_DB, 15)
+
+    def test_silence_stays_silent_and_the_mix_has_no_fixed_music_gain(self):
+        import inspect
+        import numpy as np
+        from studio import audio as A
+        self.assertEqual(float(np.abs(A.level_music(np.zeros(A.SR, 'float32'), -20.0)).max()), 0.0)
+        self.assertNotIn('volume=0.55', inspect.getsource(A.build_mix))
