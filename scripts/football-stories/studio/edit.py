@@ -165,6 +165,11 @@ class Editor:
             return self.world_image(f'clip-{name}-{round(dim * 100)}', lambda: first)
         if art.startswith('clip:'):
             art = 'terrace-crowd'
+        if art.startswith('lib:'):  # the owner's moving-art library (cinema/library.py); absent → the house b-roll
+            p = cinema.animate.backdrop(self, art, dim)
+            if p:
+                return p
+            art = 'terrace-crowd'
         if not art.startswith('beat:'):
             dim = 0.0
         if art.startswith('beat:') and beat_path(art):
@@ -307,7 +312,10 @@ class Editor:
     # ------------------------------------------------------------------ shots
     def build(self, sp: SpriteFactory, s: dict) -> Shot:
         if s['visual']['type'] in cinema.TYPES:
+            self._clip = None
             shot = cinema.build(self, sp, s)
+            if self._clip is not None and shot.world_frames is None:  # a moving b-roll (a library clip) behind the card
+                shot.world_frames, self._clip = self._clip, None
             caps = None
             if os.environ.get('STORIES_BURN_CAPTIONS', '1') != '0' and s.get('words') and s.get('voice_at') is not None:
                 caps = Captions(s['words'], s['voice_at'] - s['start'], self.pal.accent)
@@ -457,7 +465,7 @@ class Editor:
                 layers.append(Layer(fl, slide_in(W * 0.86, H * 0.52, 0.5, frm=(500, 0), rot0=0, rot1=0, dur=0.7, drift=False), settle=1e9))
                 cam = cam_push(1.12, 1.0, 0, 0, dur)
         elif kind == 'illustration':
-            art = v.get('art') or 'terrace-crowd'
+            art = v.get('art') or (s.get('cinema') or {}).get('broll') or 'terrace-crowd'
             if art == 'gen':
                 art = 'gen:' + key_of(s['n'])
             world = self.backdrop(art, seed)
@@ -733,7 +741,8 @@ class Editor:
         wanted = v.get('figure')
         keys = [wanted] if isinstance(wanted, str) else list(wanted or [])
         owner_illus = kind == 'illustration' and str(v.get('art') or '').startswith(('beat:', 'clip:'))
-        if not keys and not owner_illus and os.environ.get('STORIES_AUTO_FIGURES', '1') != '0':
+        lib_people = any(e.get('role') == 'actor' for e in (s.get('cinema') or {}).get('lib') or [])
+        if not keys and not owner_illus and not lib_people and os.environ.get('STORIES_AUTO_FIGURES', '1') != '0':
             text = (s.get('narration') or '').lower()
             base = None
             if kind == 'score' and f:
@@ -948,7 +957,7 @@ def _render_range(args) -> str:
                 continue
             shot = ed.build(sp, s)
             prev_last = None
-            if i > 0 and shot.entry in ('fade', 'wipe', 'whip', 'push', 'burn', 'dissolve', 'split'):
+            if i > 0 and (shot.entry in ('fade', 'wipe', 'whip', 'push', 'burn', 'dissolve', 'split') or str(shot.entry).startswith('tr:')):
                 ps = ed.build(sp, shots[i - 1])
                 prev_last = ShotRenderer(ps).frame(ps.frames - 1, round(shots[i - 1]['start'] * FPS) + ps.frames - 1)
             r = ShotRenderer(shot)

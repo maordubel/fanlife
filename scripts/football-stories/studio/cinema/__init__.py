@@ -5,6 +5,7 @@ from .direct import beat_fx, dress  # noqa: F401
 from .direct import direct as direct_plan  # noqa: F401  (the module keeps the name `cinema.direct`)
 from .shots import TYPES, build  # noqa: F401
 from .story import story_of  # noqa: F401
+from . import animate, library  # noqa: F401  (the moving-art library)
 
 # the least a shot of each new type lasts, so its animation lands whatever the narration's length (seconds)
 MIN_DUR = {'versus': 5.2, 'goal': 6.0, 'race': 6.5, 'record': 5.0, 'form': 4.0, 'run': 4.0, 'trailer': 2.2}

@@ -251,12 +251,20 @@ def allowed(key: str, bans: list[str]) -> bool:
     return not (set(bans) & fam)
 
 
-def pick(moods: list[str], bans: list[str], salt: str, avoid: set[str] | None = None) -> str | None:
+WEATHER_WORDS = {'rain': 'rain', 'snow': 'snow', 'fog': 'fog', 'storm': 'storm'}
+
+
+def pick(moods: list[str], bans: list[str], salt: str, avoid: set[str] | None = None, weather: set[str] | None = None) -> str | None:
     """A fitting picture from the owner's library: the first mood with a usable piece, chosen by a hash of the salt so
-    two films (and two shots) differ, never one in the rival's colours, never the picture of the shot before."""
+    two films (and two shots) differ, never one in the rival's colours, never the picture of the shot before, and never
+    a rainy (snowy, foggy) picture unless a claim cited in the beat records that weather (contract §4)."""
     avoid = avoid or set()
+    weather = weather or set()
+
+    def dry(s: str) -> bool:
+        return all(need in weather for w, need in WEATHER_WORDS.items() if w in s.split('-'))
     for m in moods:
-        opts = [f'beat:common/{s}' for s in BROLL.get(m, ()) if allowed(f'beat:common/{s}', bans)]
+        opts = [f'beat:common/{s}' for s in BROLL.get(m, ()) if dry(s) and allowed(f'beat:common/{s}', bans)]
         fresh = [o for o in opts if o not in avoid] or opts
         if fresh:
             h = int(hashlib.sha256(salt.encode()).hexdigest()[:8], 16)
