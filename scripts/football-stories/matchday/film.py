@@ -36,7 +36,7 @@ CUT = 'reel' if '--reel' in sys.argv else 'film'
 import studio.common as _sc  # noqa: E402
 if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
-from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, speech_db, thin_cues  # noqa: E402
+from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, level_music, speech_db, thin_cues, MUSIC_DUCK  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402
@@ -701,12 +701,14 @@ def main() -> None:
     else:
         music = resample(score(sections), 32000, SR)[:n] if sections else np.zeros(n, np.float32)
     music = np.pad(music, (0, n - len(music)))
+    # the score at a measured distance under the narrator (owner, 5.11.2026: the music was too loud), not a fixed gain
+    music = level_music(music, vdb, rate=SR)
     for name, arr in (('voice', voice), ('amb', amb), ('music', music), ('sfx', sfx)):
         write_wav(work / f'{name}.wav', arr[: int(total * SR)])
     mix = work / 'mix.wav'
-    mv, av = (0.72, 0.6) if track.startswith('track:') else (0.5, 0.9)
+    mv, av = 1.0, (0.6 if track.startswith('track:') else 0.9)
     g = (f'[2:a]volume={mv}[m];[1:a]volume={av}[am];[am][m]amix=inputs=2:normalize=0[bed];'
-         '[bed][0:a]sidechaincompress=threshold=0.03:ratio=7:attack=25:release=420[bd];'
+         f'[bed][0:a]{MUSIC_DUCK}[bd];'
          f'[0:a]{narrator_fx(SR)},volume=1.1[v];'
          '[3:a]lowpass=f=9000[s0];[s0][0:a]sidechaincompress=threshold=0.04:ratio=3:attack=10:release=300[s];[v][bd][s]amix=inputs=3:normalize=0,afade=t=out:st=%.2f:d=1.5[a]' % (total - 1.6))
     run(['ffmpeg', '-y', '-v', 'error', '-i', str(work / 'voice.wav'), '-i', str(work / 'amb.wav'), '-i', str(work / 'music.wav'),
