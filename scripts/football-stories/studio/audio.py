@@ -8,6 +8,8 @@ The mix ducks the score under the voice and is normalised for YouTube (−14 LUF
 from __future__ import annotations
 
 import json
+import os
+import re
 import math
 import subprocess
 import wave
@@ -214,8 +216,11 @@ def music_track(track_id: str) -> dict:
 
 
 def track_path(t: dict) -> Path:
-    """The track's file. A library track (one with a url) is fetched once into kit/music/cache/, which is not committed."""
+    """The track's file. A library track (a url) or an owner track kept on his Drive (drive: folder + name) is fetched
+    once into kit/music/cache/, which is never committed."""
     path = MUSIC_DIR / t['file']
+    if not path.exists() and t.get('drive'):
+        _fetch_drive_track(t, path)
     if not path.exists() and t.get('url'):
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix('.part')
@@ -227,6 +232,73 @@ def track_path(t: dict) -> Path:
     if not path.exists():
         raise StageError('MUSIC', f'Track file missing: kit/music/{t["file"]}')
     return path
+
+
+def _fetch_drive_track(t: dict, path: Path) -> None:
+    """An owner track from his public Drive music folder, found by its name (the runner reaches Drive; a sandbox may not)."""
+    if os.environ.get('STORIES_MUSIC_FETCH', '1') == '0':
+        return
+    try:
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'matchday'))
+        import drive_fetch as DF  # noqa: E402
+        norm = lambda x: re.sub(r'[\s_]+', ' ', x.lower()).strip()  # noqa: E731 — Drive keeps spaces where a download had underscores
+        want = norm(t['drive']['name'])
+        hit = t['drive'].get('id') or next((fid for fid, title, folder in DF.listing(t['drive']['folder'])
+                                           if not folder and want in norm(title)), None)
+        if hit:
+            DF.download(hit, path)
+    except Exception:  # noqa: BLE001 — the next owner track is tried (pick_owner_track / resolve_music)
+        path.unlink(missing_ok=True)
+
+
+# Owner rule (5.11.2026): "the studio and the films are always produced with music I supplied". Only tracks marked
+# owner: true are ever used; the synthesiser and libraries he did not choose are never picked.
+DIRECTOR_TAGS = {'drive': ['drive', 'hype', 'matchday'], 'warm': ['warm', 'memory', 'light'], 'epic': ['epic', 'tension', 'drive']}
+TONE_TAGS = {'triumph': ['triumph', 'joy', 'anthem'], 'heartbreak': ['heartbreak', 'sad', 'sombre'], 'underdog': ['hope', 'drive'],
+             'rivalry': ['drive', 'tension'], 'nostalgia': ['memory', 'warm'], 'drama': ['tension', 'epic'],
+             'laugh': ['laugh', 'humour', 'quirky'], 'war': ['war', 'tension', 'sombre'], 'heart': ['memory', 'hope', 'warm'],
+             'vlog': ['vlog', 'light', 'warm'], 'explainer': ['explainer', 'light']}
+
+
+def owner_tracks() -> list[dict]:
+    idx = json.loads((MUSIC_DIR / 'index.json').read_text(encoding='utf-8'))
+    return [t for t in idx['tracks'] if t.get('owner')]
+
+
+def pick_owner_track(tags: list[str], seed: str = '', avoid: tuple = ()) -> list[str]:
+    """The owner's tracks ranked for these wishes (best first): matching tags, then a stable shuffle by the film's seed so
+    two films of the same mood do not always get the same track; a track whose file cannot be had comes last."""
+    import hashlib
+    def rank(t):
+        hit = sum(2 if g in (t.get('tags') or []) else 0 for g in tags[:1]) + sum(1 for g in tags[1:] if g in (t.get('tags') or []))
+        local = (MUSIC_DIR / t['file']).exists() or bool(t.get('drive'))
+        h = int(hashlib.sha256(f"{seed}|{t['id']}".encode()).hexdigest()[:6], 16)
+        return (-hit, t['id'] in avoid, not local, h)
+    return [t['id'] for t in sorted(owner_tracks(), key=rank)]
+
+
+def resolve_music(choice: str | None, tags: list[str], seed: str = '') -> list[str]:
+    """Owner tracks to try, in order: the brief's own choice when it is an owner track, then the best for the film."""
+    first = []
+    if choice and choice.startswith('track:'):
+        tid = choice.split(':', 1)[1]
+        if any(t['id'] == tid for t in owner_tracks()):
+            first = [tid]
+    return first + [x for x in pick_owner_track(tags, seed) if x not in first]
+
+
+def owner_score(sections: list[dict], candidates: list[str], log=None) -> tuple[np.ndarray, str]:
+    """The film's score from the first owner track that can be had. Never the synthesiser (owner, 5.11.2026)."""
+    errs = []
+    for tid in candidates:
+        try:
+            return track_score(sections, tid), tid
+        except (StageError, subprocess.CalledProcessError, OSError) as e:
+            errs.append(f'{tid}: {e}'[:120])
+            if log:
+                log(f'Music: {tid} unavailable — trying the next owner track')
+    raise StageError('MUSIC', 'None of the owner\'s tracks could be fetched: ' + '; '.join(errs)[:500], retryable=True)
 
 
 def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndarray:
@@ -444,11 +516,25 @@ def music_db(music: np.ndarray, rate: int = SR) -> float:
     return float(20 * np.log10(np.percentile(active, 75))) if len(active) else -90.0
 
 
+MUSIC_FLOOR_DB = 10.0   # a quiet passage is lifted to at most this far under the music's body (never dead air)
+
+
 def level_music(music: np.ndarray, voice_db: float, under: float = MUSIC_UNDER_VOICE_DB, rate: int = SR) -> np.ndarray:
-    """The score set `under` dB below the narrator's speech (silence stays silence)."""
+    """The score set `under` dB below the narrator's speech, its quiet passages lifted so a held beat never falls into
+    dead air (measured 5.11.2026: a 4 s silence on the CLASSIFIED sources card once the music sat lower). Silence stays
+    silence; a hush (a dip the edit asked for) is a dip, not a passage, and stays within the lift."""
     m = music_db(music, rate)
     if m <= -89:
         return music
+    w = max(1, int(0.4 * rate))
+    k = len(music) // w
+    if k >= 3:
+        rms = np.sqrt(np.mean(np.square(music[: k * w].reshape(k, w), dtype='float64'), axis=1)) + 1e-9
+        db = 20 * np.log10(rms)
+        lift = np.where(db > -60, np.clip(m - MUSIC_FLOOR_DB - db, 0, 14), 0.0)
+        lift = np.convolve(lift, np.ones(5) / 5, mode='same')  # ~2 s glide, no pumping
+        g = np.interp(np.arange(len(music)), np.arange(k) * w + w / 2, 10 ** (lift / 20))
+        music = music * g.astype('float32')
     return (music * 10 ** ((voice_db - under - m) / 20)).astype('float32')
 
 
@@ -523,7 +609,8 @@ def hush_envelope(hushes: list[tuple[float, float]], n: int, depth: float = 0.35
     return env
 
 
-def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: str = 'synth') -> Path:
+def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: str = 'auto', tags: list[str] | None = None,
+              seed: str = '') -> Path:
     total = plan['duration']
     n = int(total * SR) + SR
     rng = np.random.default_rng(5)
@@ -581,7 +668,13 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     log(f'Mix: {len(kept)} of {len(fx_cues)} effect cues kept, levelled {min(FX_UNDER_VOICE_DB.values()):.0f}–{max(FX_UNDER_VOICE_DB.values()):.0f} dB under the narrator ({vdb:.1f} dBFS)')
     # the score follows the story beat by beat: tension under a shoot-out, joy on a win, sadness on a defeat
     sections = mood_sections(plan)
-    music = score(sections, style=music)[:n]
+    wish = list(tags or []) + DIRECTOR_TAGS.get(plan.get('music_key') or '', [])
+    music, used = owner_score(sections, resolve_music(music, wish, seed), log)
+    plan['music_track'] = used
+    (job_dir / 'mix').mkdir(exist_ok=True)
+    (job_dir / 'mix' / 'track.txt').write_text(used, encoding='utf-8')
+    log(f'Music: {used} (the owner\'s track)')
+    music = music[:n]
     music = np.pad(music, (0, n - len(music)))
     music *= hush_envelope(hushes, n)
     music = level_music(music, vdb)

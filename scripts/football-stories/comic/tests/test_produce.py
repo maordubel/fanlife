@@ -270,7 +270,8 @@ class EndToEnd(unittest.TestCase):
     def test_report(self):
         self.assertIn('roles', self.rep)
         self.assertEqual(self.rep['voice'], 'fake (test stand-in)')
-        self.assertTrue(self.rep['music'].startswith('synth'))
+        from studio.audio import owner_tracks  # the owner's music only (5.11.2026), never the synthesiser
+        self.assertIn(self.rep['music'].split(' ')[0], {t['id'] for t in owner_tracks()})
         self.assertGreater(self.rep['cues'], 3)
 
 

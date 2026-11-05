@@ -220,7 +220,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     step('mix', 0.8, 'Mixing sound')
     mix = job_dir / 'mix' / 'mix.m4a'
     if not mix.exists():
-        audio.build_mix(job_dir, plan, log, brief.get('crowd') or 'soft', brief.get('music') or 'synth')
+        audio.build_mix(job_dir, plan, log, brief.get('crowd') or 'soft', brief.get('music') or 'auto',
+                        tags=[x for x in (brief.get('tone'), brief.get('kind')) if x], seed=f"{brief.get('club_id')}|{brief.get('season')}")
 
     # 7 master + preview
     step('master', 0.85, 'Mastering')
@@ -253,11 +254,12 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
                   'credit': ('ElevenLabs synthetic voice' if v['provider'] == 'elevenlabs' else 'Kokoro synthetic British voice (open model, Apache-2.0)')},
         'assets': asset_ledger(job_dir, s),
     }
-    if (brief.get('music') or '').startswith('track:'):
-        t = audio.music_track(brief['music'].split(':', 1)[1])
+    used = job_dir / 'mix' / 'track.txt'
+    if used.exists():
+        t = audio.music_track(used.read_text(encoding='utf-8').strip())
         manifest['assets'] = [a for a in manifest['assets'] if a['id'] != 'score'] + [
             {'id': 'music-' + t['id'], 'kind': 'music', 'owner': f"{t['artist']} — {t['title']}", 'origin': t['origin'],
-             'licence': t['licence'], 'credit': t.get('credit'), 'photoreal': False}]
+             'licence': t['licence'], 'credit': t.get('credit'), 'credit_source': t.get('credit_source'), 'photoreal': False}]
     write_json(out / 'assets.json', manifest)
     meta = package.youtube_metadata(s, plan, ledger, manifest)
     write_json(out / 'youtube.json', meta)
@@ -347,7 +349,7 @@ def main() -> int:
     ap.add_argument('--palette', type=Path, help='JSON from scripts/football-stories/palettes.ts')
     ap.add_argument('--script', type=Path)
     ap.add_argument('--look', choices=list(LOOKS), default='clean', help='the grade at the master: clean, archive (documentary), punch')
-    ap.add_argument('--music', default='synth', help='the score: synth, or track:<id> from kit/music/index.json')
+    ap.add_argument('--music', default='auto', help="the score: an owner track (track:<id> from kit/music/index.json) or 'auto'")
     ap.add_argument('--crowd', choices=['soft', 'off'], default='soft', help='crowd reactions at goals: soft (default) or none')
     ap.add_argument('--dossier', type=Path, help='a film\'s own dossier when a season has more than one film')
     a = ap.parse_args()

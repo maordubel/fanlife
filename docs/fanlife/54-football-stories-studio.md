@@ -108,7 +108,13 @@ New batches: `python3 scripts/football-stories/ingest-art.py <zip> [--set <club>
   Owner footage is never committed (it lives on Drive): pull it with the encrypted `drive-pull` route. The same holds
   for his photos (index rows flagged `owner_photo` stay; the files are gitignored) and for a licensed track he supplies
   (Pixabay: not redistributable on its own).
-- **The music library** (owner, 3.11.2026): Tanner Helland's free-music (CC BY 4.0) — 42 original tracks in
+- **Only the owner's music** (owner, 5.11.2026: *"the studio and the films are always produced with music I supplied
+  before or one of these"*): every film — documentary, VOX, CLASSIFIED, I WAS THERE — is scored with a track marked
+  `owner: true` in `kit/music/index.json`, picked by director, tone and kind (`studio/audio.resolve_music`); a track that
+  cannot be fetched gives way to the next owner track, never to the synthesiser. His Free To Use tracks (freetouse.com)
+  live in his public Drive folder *Music · Football Stories (owner tracks)* and are fetched into the gitignored cache —
+  their licence forbids redistributing the files; the description prints the Free To Use attribution block.
+- **The music library** (owner, 3.11.2026, reference only since 5.11.2026): Tanner Helland's free-music (CC BY 4.0) — 42 original tracks in
   `kit/music/index.json` with a `url`, fetched on first use into `kit/music/cache/` (gitignored). Every film that uses
   one prints "Music by Tanner Helland" with the link in its description. His covers and remixes of other people's
   works are left out. A track's mood is "listen first" until someone has listened.

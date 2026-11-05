@@ -445,17 +445,12 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
     tone = ep.get('tone', 'LAUGH')
     track = music if music is not None else (ep.get('music') or man['tones'][tone].get('music'))
     report['cues'] = write_cues(job, plan, raw)
-    music_info = None
-    try:
-        style = f'track:{track}' if track and track != 'synth' else 'synth'
-        mix = audio.build_mix(job, plan, log, ep.get('crowd') or 'soft', style)
-        if style != 'synth':
-            music_info = audio.music_track(track)
-        report['music'] = track if style != 'synth' else 'synth (the studio\'s composed score)'
-    except Exception as e:  # noqa: BLE001 — a track that cannot be fetched costs the track, never the film
-        log(f'Mix: the track {track!r} is not available ({e}); the studio\'s composed score is used instead')
-        mix = audio.build_mix(job, plan, log, ep.get('crowd') or 'soft', 'synth')
-        report['music'] = f'synth (the studio\'s composed score; {track} was not available)'
+    # the owner's music only (owner, 5.11.2026): the tone's track, else the best owner track for the tone — never synthesised
+    mix = audio.build_mix(job, plan, log, ep.get('crowd') or 'soft', f'track:{track}' if track else 'auto',
+                          tags=[tone.lower()], seed=str(ep.get('file') or ep.get('id') or ''))
+    used = (job / 'mix' / 'track.txt').read_text(encoding='utf-8').strip()
+    music_info = audio.music_track(used)
+    report['music'] = used if used == track else f'{used} (the owner\'s track; {track} was not available)'
 
     # 4 · the picture, on the same clock, with the captions burned in
     tone_hex = man['tones'][tone]['color']

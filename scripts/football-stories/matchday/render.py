@@ -241,7 +241,8 @@ def build_sound(plan: list[dict], lines: list[dict], total: float, sections: lis
         bed[i:i + len(seg)] += seg
     # score where the picture asked for it (muted road/city shots), from the studio's own synthesiser
     if sections:
-        sc = resample(synth_score(sections), 32000, SR) * 10 ** (-12 / 20)
+        from studio.audio import owner_score, resolve_music  # the owner's music only (5.11.2026)
+        sc = resample(owner_score(sections, resolve_music(None, ['vlog', 'light', 'warm']))[0], 32000, SR) * 10 ** (-12 / 20)
         bed[: len(sc)] += sc[: n]
     voice = np.zeros(n, np.float32)
     for ln in lines:

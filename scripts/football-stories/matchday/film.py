@@ -36,7 +36,7 @@ CUT = 'reel' if '--reel' in sys.argv else 'film'
 import studio.common as _sc  # noqa: E402
 if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
-from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, level_music, speech_db, thin_cues, MUSIC_DUCK  # noqa: E402
+from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, level_music, speech_db, thin_cues, MUSIC_DUCK, owner_score, resolve_music  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402
@@ -698,8 +698,11 @@ def main() -> None:
         music = D.music_bed(ep['music'], plan, total, SR, read_audio)
     elif sections and track.startswith('track:'):   # the owner's chosen track, edited to the night (studio/audio.track_score)
         music = resample(track_score(sections, track.split(':', 1)[1]), 32000, SR)[:n]
+    elif sections:   # the owner's music only (5.11.2026): the best owner track for a vlog night, never synthesised
+        sc, _used = owner_score(sections, resolve_music(None, ['vlog', 'light', 'warm'], str(ep.get('id') or '')))
+        music = resample(sc, 32000, SR)[:n]
     else:
-        music = resample(score(sections), 32000, SR)[:n] if sections else np.zeros(n, np.float32)
+        music = np.zeros(n, np.float32)
     music = np.pad(music, (0, n - len(music)))
     # the score at a measured distance under the narrator (owner, 5.11.2026: the music was too loud), not a fixed gain
     music = level_music(music, vdb, rate=SR)

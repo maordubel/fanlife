@@ -69,3 +69,16 @@ class MusicLevel(unittest.TestCase):
         from studio import audio as A
         self.assertEqual(float(np.abs(A.level_music(np.zeros(A.SR, 'float32'), -20.0)).max()), 0.0)
         self.assertNotIn('volume=0.55', inspect.getsource(A.build_mix))
+
+
+class NoDeadAir(unittest.TestCase):
+    def test_a_quiet_passage_is_lifted_towards_the_body(self):
+        import numpy as np
+        from studio import audio as A
+        t = np.arange(A.SR * 8) / A.SR
+        m = (0.5 * np.sin(2 * np.pi * 220 * t)).astype('float32')
+        m[A.SR * 4:A.SR * 6] *= 10 ** (-30 / 20)  # a 2 s near-silent passage, 30 dB down
+        out = A.level_music(m, -20.0)
+        body = A.music_db(out)
+        quiet = 20 * np.log10(np.sqrt(np.mean(out[int(A.SR * 4.6):int(A.SR * 5.4)] ** 2)))
+        self.assertGreater(quiet, body - 20)
