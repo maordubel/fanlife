@@ -43,6 +43,8 @@ LOOKS = {
 }
 # Each visual style finishes with its own grade unless the brief names one (studio v3).
 STYLE_LOOK = {'collage': 'clean', 'papercut': 'punch', 'archive': 'archive', 'night': 'night', 'vox': 'clean', 'classic': 'clean'}
+# 'vox-hf' in the brief's look picks the HyperFrames renderer (studio/hyperframes), not a grade: the master stays clean
+LOOKS['vox-hf'] = None
 
 STAGES = ['research', 'script', 'voice', 'graphics', 'edit', 'mix', 'master', 'package', 'qa']
 
@@ -204,6 +206,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     # with engine/visual_style 'classic' keeps the classic edit
     from . import vox
     plan['engine'] = vox.engine_for(brief)
+    from . import hyperframes
+    if plan['engine'] == 'vox' and hyperframes.wanted(brief):
+        plan['engine'] = hyperframes.ENGINE   # VOX drawn by HyperFrames (prototype; look 'vox-hf' or STORIES_VOX_HF=1)
     write_json(plan_p, plan)
     log(f'Edit: {len(plan["shots"])} shots, {plan["duration"] / 60:.2f} minutes, engine {plan["engine"]}')
     step('edit', 0.4, f'Rendering {len(plan["shots"])} shots')
@@ -212,6 +217,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         render = edit.render_film
         if plan['engine'] == 'vox':
             from .vox.render import render_film as render
+        elif plan['engine'] == 'vox-hf':
+            from .hyperframes.render import render_film as render
         render(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None,
                tick=lambda d, t: step('edit', 0.4 + 0.38 * d / max(t, 1), f'Rendering shots: {d} of {t}'))
 
