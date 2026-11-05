@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/05/03/lage-am-millerntor-03-mai-2021/",
-    "locator": "p55",
-    "quote": "Ach, ich weiß es doch auch nicht, was man da noch zu schreiben soll. Und eigentlich ist mir meine Zeit auch zu schade dafür. Zum Glück gibt es also den Deutschlandfunk , wo Maximilian Rieger mit ARD-Sportreporterin Martina Knief und SZ-Journalist Thomas Kistner gestern im Sportgespräch (30min) über die gestrige Rücktrittsforderung der Landesverbände gegen DFB-Präsident Fritz Keller – und natürlich auch über die Abstimmung über Vize-Rainer Koch, der sich nur mit den ihm zur Verfügung stehenden vier Stimmen seines eigenen Landesverbandes retten konnte.",
-    "bodyHash": "68e0d382b6eb85f01b3967d824f69b835a29a65dc593250ed6ec2b63ee5fdadc",
-    "fetchedAt": "2026-10-28T10:02:37.271Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/10/25/fc-st-pauli-hansa-rostock-40-vier-treffer-versenkt/",
     "locator": "p26",
     "quote": "FC St. Pauli gegen Hansa Rostock ist ein besonderes Spiel. Ein Spiel, bei dem sich alle Fans wünschen oder besser gesagt erwarten, dass ihr Team vor allem körperlich alles reinlegt, in jeden Zweikampf mit vollem Einsatz geht, jeden notwendigen Meter läuft, bis gar nichts mehr geht. Dem FC St. Pauli ist das gelungen: Nur ein einziger Spieler auf dem Platz (mit mehr als 30min Spielzeit) hat weniger als zwei Drittel seiner Defensiv-Zweikämpfe gewonnen (Maximilian Dittgen hat „nur“ 50% gewonnen). Alle andere Spieler haben erheblich höhere Quoten. Knapp 3 von 4 Duellen (genauer: 74%) hat der FCSP g",
@@ -82,6 +73,15 @@
     "bodyHash": "c09e64b878d5702b87c8681cf9111f79f78fb775e73319d9bc0c1695dc5ef3d4",
     "fetchedAt": "2026-11-03T11:22:03.588Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/29/lage-am-millerntor-29-maerz-2023/",
+    "locator": "p31",
+    "quote": "Zum Thema gibt es auch wieder einen Audiobeitrag auf YouTube (30min), in dem Hamburger Hochbahn Mobilitätsexpertin Doreen Kerinnis, Verkehrssenator Anjes Tjarks und Franziska Altenrath (Nachhaltigkeit beim FCSP) zu Gast sind.",
+    "bodyHash": "aa603c7b0a60528d9b2f841e6a76697d873d896f93911f18abf7737ac96ab190",
+    "fetchedAt": "2026-11-05T11:31:50.250Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:03.588Z",
-  "updatedAt": "2026-11-03T11:22:03.588Z"
+  "createdAt": "2026-11-05T11:31:50.250Z",
+  "updatedAt": "2026-11-05T11:31:50.250Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -130,6 +130,15 @@
     "bodyHash": "348b49e2e1974acdaa600bd73ab8c04bd9691c5fd5f97e1f63560d0e2b1b12d9",
     "fetchedAt": "2026-10-27T09:22:18.693Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/28/lage-am-millerntor-28-maerz-2023/",
+    "locator": "p47",
+    "quote": "Der DFB hat gerade eine Werbe-Kampagne für Schiedsrichter gestartet, weshalb das Thema auch verstärkt in den Medien ist. Beim NDR gibt es einen kurzen Beitrag (3min) über die Arbeit im „Kölner Keller“, sowie ein längeres Interview mit dem Hamburger Bundesliga-Schiedsrichter Patrick Ittrich (9min). Ergänzt wird der Artikel durch ein paar zahlen der Sporthochschule Köln, wonach bei Schiedsrichtern, Trainern und Spielern lediglich 20 Prozent der Befragten die negativen Aspekte des Videobeweises betonen. Ittrich betont aber auch, dass es in der Kommunikation mit den Zuschauern (vor allem im Stadio",
+    "bodyHash": "5a33569e5c53bc8ee1370d608b232e8d3d034b953eae6c791e2d3ed252ec7eee",
+    "fetchedAt": "2026-11-05T11:31:50.249Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -137,8 +146,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:18.693Z",
-  "updatedAt": "2026-10-27T09:22:18.693Z"
+  "createdAt": "2026-11-05T11:31:50.249Z",
+  "updatedAt": "2026-11-05T11:31:50.249Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -277,15 +286,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/02/27/lage-am-millerntor-27-02-2020/",
-    "locator": "p15",
-    "quote": "„ Polizeigewalt – Besonders im Fußball ein Problem “ (10min)",
-    "bodyHash": "88f160805f10c9832fc4048a56611a7989e69ecee33d9e680ab87b4f91cd4a57",
-    "fetchedAt": "2026-10-23T08:52:17.089Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2020/05/25/lage-am-millerntor-25-05-2020/",
     "locator": "p29",
     "quote": "Vereinsboss Mark Palios erzählt nun im Guardian Video (10min) wie er den Virus nicht einfach über sich und seinen Verein ergehen ließ, sondern liegen gelassene Projekte anpackte und sich Gedanken über die Rolle des Vereins für die Stadt und die wirtschaftliche Situation des Profifußball im Allgemeinen machte.",
@@ -346,6 +346,15 @@
     "bodyHash": "780ebfda69f5a5bf27a730524b808c0635f7890edb5fb0cd419b794a9fced6d1",
     "fetchedAt": "2026-11-04T11:36:00.533Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/14/lage-am-millerntor-14-maerz-2023/",
+    "locator": "p65",
+    "quote": "Der Torhüter des FC Hansa Rostock , Markus Kolke , war am Sonntag zu Gast im Sportclub. Im Interview (10min) ging es zunächst um die sportliche Situation und das Spiel in Hannover.",
+    "bodyHash": "d9c94cf5256c034de38eb959bc6d0bf9a7df7065dbfee2d3497a2d4be5c5f595",
+    "fetchedAt": "2026-11-05T11:31:47.267Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -353,8 +362,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:00.533Z",
-  "updatedAt": "2026-11-04T11:36:00.533Z"
+  "createdAt": "2026-11-05T11:31:47.267Z",
+  "updatedAt": "2026-11-05T11:31:47.267Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -385,6 +394,15 @@
     "bodyHash": "7fbd2847900e5b687bdc4b4e626da8467dcae67499429c23b6c55d2581604c02",
     "fetchedAt": "2026-11-03T11:04:07.703Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/22/lage-am-millerntor-22-maerz-2023/",
+    "locator": "p4",
+    "quote": "Auf manches kann man ja auch länger zurückblicken bzw. -hören: Der „If you can hear us“-Podcast (Deutsch, 39m) behandelt das Spiel auf Deutsch (39min), während „Fell in Love with a Girl“ (1h02m) und „Welcome to Hell“ (37min) gleiches auf Englisch tun.",
+    "bodyHash": "b2a50b634ea0751f5b27f564cb5860503609e8e6b6f12790f187de568b004f5c",
+    "fetchedAt": "2026-11-05T11:31:47.275Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -392,8 +410,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:04:07.703Z",
-  "updatedAt": "2026-11-03T11:04:07.703Z"
+  "createdAt": "2026-11-05T11:31:47.275Z",
+  "updatedAt": "2026-11-05T11:31:47.275Z"
  },
  {
   "id": "ga-ee3d885becb3b388",
@@ -628,6 +646,15 @@
     "bodyHash": "4d626c07a19d6389f128722b9ce5bdce9d0418e1b41ad92a476a36d4bd72bb09",
     "fetchedAt": "2026-11-02T11:43:03.186Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/15/lage-am-millerntor-15-februar-2023/",
+    "locator": "p21",
+    "quote": "Kwasi Okyere Wriedt (Holstein Kiel) war zu Gast im NDR Sportclub (8min) . Dabei spricht er u.a. über die Anfänge seiner Karriere im Hamburger Jugendfußball, auch seine sechs Jahre beim FC St. Pauli, das Ende seiner Zeit bei uns – und seinen Weg in den Profifußball über Lüneburg, Osnabrück und den FC Bayern München.",
+    "bodyHash": "2d89d4667baf18ab0f4236421482dd0c0c4cfe9e142dcdf497d760f52af4bf52",
+    "fetchedAt": "2026-11-05T11:31:41.785Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -635,8 +662,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:03.186Z",
-  "updatedAt": "2026-11-02T11:43:03.186Z"
+  "createdAt": "2026-11-05T11:31:41.785Z",
+  "updatedAt": "2026-11-05T11:31:41.785Z"
  },
  {
   "id": "ga-f0288a576187c45b",
@@ -775,6 +802,15 @@
     "bodyHash": "0b7170854beeea3980f13d39f79b19ca7bf8e08a3dc9354bf0244cd3aaf230f5",
     "fetchedAt": "2026-10-26T09:23:39.234Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/01/lage-am-millerntor-01-februar-2023/",
+    "locator": "p33",
+    "quote": "// Kurzbericht Hamburg Journal (2min) // ARD Mediathek (31min)",
+    "bodyHash": "cef5cfc956d3c8f080f344255500f727780c2218b0542c1813cb9329aa189cee",
+    "fetchedAt": "2026-11-05T11:31:38.999Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -782,8 +818,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-26T09:23:39.234Z",
-  "updatedAt": "2026-10-26T09:23:39.234Z"
+  "createdAt": "2026-11-05T11:31:38.999Z",
+  "updatedAt": "2026-11-05T11:31:38.999Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -937,6 +973,15 @@
     "bodyHash": "592716f441d3f1ba05ed944be81145040cdc5a46bb56870214b36fb1c69a2943",
     "fetchedAt": "2026-11-04T11:36:02.709Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/27/lage-am-millerntor-27-februar-2023/",
+    "locator": "p33",
+    "quote": "Interessanter dann der anschließende Teil, in dem es um die aktuelle Diskussion bei der DFL in Bezug auf Investoren ging – hier wagte Göttlich die Prognose, dass es bei den gegenwärtigen Überlegungen wohl eher nicht dazu kommen würde, die dafür nötige 2/3-Mehrheit dafür zusammen zu bekommen. Im Kern geht es um die Veräußerung von zukünftigen Medienerlösen, was ja (meine persönliche Ergänzung) allein schon deshalb ein Unding wäre, weil dadurch Gelder an aktuelle Vereine ausgegeben werden, die davon zukünftig evtl. gar nicht mehr partizipieren würden. // NDR (11min)",
+    "bodyHash": "37ad4c82ee56735ce2ad470aeaa06884001ff86bf116a14a62958178cfc679f9",
+    "fetchedAt": "2026-11-05T11:31:44.386Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -944,8 +989,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:02.709Z",
-  "updatedAt": "2026-11-04T11:36:02.709Z"
+  "createdAt": "2026-11-05T11:31:44.386Z",
+  "updatedAt": "2026-11-05T11:31:44.386Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1054,6 +1099,15 @@
     "bodyHash": "b652bf69606fa355e97ac3f2b01211a7825807510b1a58bff4fbc5f1e03227f6",
     "fetchedAt": "2026-10-25T08:45:28.824Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/28/lage-am-millerntor-28-februar-2023/",
+    "locator": "p5",
+    "quote": "Das „Nach dem Spiel“-Gespräch (49min) hat Yannick mit Uwe (Hanseator) geführt und Letzterer bringt damit eine (differenzierte) Sichtweise der Gästefans mit rein, ohne irgendetwas beschönigen zu wollen – Hörempfehlung und Grüße! Außerdem ist nach der ja bereits veröffentlichten Analyse von Tim jetzt auch der „Stimmen und Statistiken“-Artikel fertig, wo es eine unglaublich einfallslose Frage an Eric Smith mit einer ganz fantastischen Antwort nachzulesen gibt.",
+    "bodyHash": "4a134fbcfffd9e612f26ad0e6e3e1e395956d3d5298c82b7c90df5d8cd1c9346",
+    "fetchedAt": "2026-11-05T11:31:44.390Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1061,8 +1115,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:28.824Z",
-  "updatedAt": "2026-10-25T08:45:28.824Z"
+  "createdAt": "2026-11-05T11:31:44.390Z",
+  "updatedAt": "2026-11-05T11:31:44.390Z"
  },
  {
   "id": "ga-5347dfcfe7f58c5c",
@@ -1204,6 +1258,15 @@
     "bodyHash": "aa7026d10f6a02a519175deaed57cbcbadcd220c68497ca5c0f34a64660abf65",
     "fetchedAt": "2026-11-03T11:04:05.104Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/14/lage-am-millerntor-14-maerz-2023/",
+    "locator": "p43",
+    "quote": "Mit 4:3 (1:1) konnte das Team des FC St. Pauli in der Futsal-Bundesliga das Derby gegen den HSV für sich entscheiden, die Tore erzielten Ilija Subasic (4.), Maximilian Grünberg (34.), Mohamma Mozafari (38.) und Jurij Jeremejev (40.), wobei die Spielzeit ja 2x20min beträgt und somit der 1:2-Rückstand in der 33. Minute spät noch gedreht werden konnte.",
+    "bodyHash": "d9c94cf5256c034de38eb959bc6d0bf9a7df7065dbfee2d3497a2d4be5c5f595",
+    "fetchedAt": "2026-11-05T11:31:47.267Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1211,8 +1274,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:04:05.104Z",
-  "updatedAt": "2026-11-03T11:04:05.104Z"
+  "createdAt": "2026-11-05T11:31:47.267Z",
+  "updatedAt": "2026-11-05T11:31:47.267Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1489,15 +1552,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
-    "locator": "p15",
-    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
-    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
-    "fetchedAt": "2026-11-04T11:36:00.536Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
     "locator": "p15",
     "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
@@ -1558,6 +1612,15 @@
     "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
     "fetchedAt": "2026-11-04T11:36:05.651Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/08/lage-am-millerntor-08-februar-2023/",
+    "locator": "p5",
+    "quote": "Jedenfalls ist das „Nach dem Spiel“-Gespräch (40min) von Luca mit Tim vom „Vorwärts nach weit“-Podcast online und mit dem Bericht vom FCSP South End Scum (Englisch) und den Podcasts „If you can hear us“ (43min) und Welcome To Hell (56min, English) ist jetzt so ziemlich alles beisammen. Wir warten auf die letzten Nachzügler.",
+    "bodyHash": "65b41c2bce9b20725518db30fc53ef228a79493e9bc27e26648d60fe56b5f82d",
+    "fetchedAt": "2026-11-05T11:31:39.011Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1565,8 +1628,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:05.651Z",
-  "updatedAt": "2026-11-04T11:36:05.651Z"
+  "createdAt": "2026-11-05T11:31:39.011Z",
+  "updatedAt": "2026-11-05T11:31:39.011Z"
  },
  {
   "id": "ga-c61079b9040fc062",
@@ -1642,6 +1705,15 @@
     "bodyHash": "f84c24bcd44b684166c7b941e42dd2e4560410a3b7329a425f0c6ae30b7a8385",
     "fetchedAt": "2026-11-04T11:36:09.724Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/28/lage-am-millerntor-28-maerz-2023/",
+    "locator": "p54",
+    "quote": "Wer das auf sich nehmen will: „Hoyzer – Verrat am Fußball“ ist mit allen sechs Episoden (30-45min) verfügbar.",
+    "bodyHash": "5a33569e5c53bc8ee1370d608b232e8d3d034b953eae6c791e2d3ed252ec7eee",
+    "fetchedAt": "2026-11-05T11:31:50.249Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1649,8 +1721,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:09.724Z",
-  "updatedAt": "2026-11-04T11:36:09.724Z"
+  "createdAt": "2026-11-05T11:31:50.249Z",
+  "updatedAt": "2026-11-05T11:31:50.249Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -1672,6 +1744,15 @@
     "bodyHash": "a3cc70841e1d85e592d5a6681fe42a1757caf9d6f8c1412fe983cd0724017290",
     "fetchedAt": "2026-10-28T10:02:34.148Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/16/lage-am-millerntor-16-februar-2023/",
+    "locator": "p29",
+    "quote": "Der FC St. Pauli ist der Verein, der er aktuell ist, in allererster Linie aufgrund seiner Fans. Dies ist die Quintessenz der 4. Folge des Vereinspodcasts (55min), in der damit auch größtenteils Fans zu Wort kommen. Da auch Debbie, Tim und ich zu Wort kommen, dürft Ihr diese persönliche Einschätzung meinerseits gerne ignorieren, aber mir hat diese Folge sehr gut gefallen.",
+    "bodyHash": "9d8e1e63b5d66e840054b9c7a6d01f9fcaf8e948ed8a5921eb1f6853c0c214ac",
+    "fetchedAt": "2026-11-05T11:31:41.785Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1679,8 +1760,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:02:34.148Z",
-  "updatedAt": "2026-10-28T10:02:34.148Z"
+  "createdAt": "2026-11-05T11:31:41.785Z",
+  "updatedAt": "2026-11-05T11:31:41.785Z"
  },
  {
   "id": "ga-288016b5c0b2dce9",
@@ -1999,6 +2080,15 @@
     "bodyHash": "c1960a2e1474742c37e81c7267ce5a95fc16c530457ed1e3ea7c14f4f7f92c11",
     "fetchedAt": "2026-11-03T11:04:07.704Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/06/lage-am-millerntor-06-maerz-2023/",
+    "locator": "p106",
+    "quote": "In dieser Funktion wird sie nun auch zur Weltmeisterschaft nach Australien / Neuseeland reisen – und zwar finanziert über den Rasenfunk, der bekanntlich crowdfinanziert ist. Während sich andere Medien teilweise auf Agenturen vor Ort verlassen und gar keine eigenen Reporter*innen dorthin entsenden, wird der Rasenfunk eben Annika Becker schicken. Wie es dazu kam, ob und wie sich das trägt und wie Ihr das unterstützen könnt: Rasenfunk Kurzpass 246 (22min)",
+    "bodyHash": "10c0cc0599ac94d8aec1dd82097e2febeeaae5f0d974468e7500cd5741c2a464",
+    "fetchedAt": "2026-11-05T11:31:44.400Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2006,8 +2096,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:04:07.704Z",
-  "updatedAt": "2026-11-03T11:04:07.704Z"
+  "createdAt": "2026-11-05T11:31:44.400Z",
+  "updatedAt": "2026-11-05T11:31:44.400Z"
  },
  {
   "id": "ga-ddcd1ba7a0236f13",
@@ -2443,5 +2533,185 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-04T11:36:00.528Z",
   "updatedAt": "2026-11-04T11:36:00.528Z"
+ },
+ {
+  "id": "ga-afad2f9dd6a68f82",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "25",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/06/lage-am-millerntor-06-februar-2023/",
+    "locator": "p30",
+    "quote": "Wie es ihm damit geht, hat er im Abendblatt-Podcast „Millerntalk“ (25min) erzählt. Eine schriftliche Version des Artikels gibt es ebenfalls beim Abendblatt (€€) .",
+    "bodyHash": "bd98000f16959bc6c9435acae594f1e2919ed5fde4fe5ebe4c010bc003cb2cc5",
+    "fetchedAt": "2026-11-05T11:31:39.006Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-05T11:31:39.006Z",
+  "updatedAt": "2026-11-05T11:31:39.006Z"
+ },
+ {
+  "id": "ga-690e32cb743d0203",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "16",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/08/lage-am-millerntor-08-februar-2023/",
+    "locator": "p46",
+    "quote": "Der Berliner Fußball-Verband hat nach einem Bericht der Sportschau (16min) ein Verfahren gegen den Vorsitzenden von CFC Hertha 06 eingeleitet. Es ging um das Zeigen der israelischen Flagge durch einen Zuschauer von Makkabi bei einem A-Jugendspiel, woraufhin sich Antisemitismus auf der Gegenseite entlud. Wenn Euch das bekannt vorkommt: Ihr habt wahrscheinlich schon Ende November in der Lage davon gelesen, als die Berliner Zeitung erstmals berichtete.",
+    "bodyHash": "65b41c2bce9b20725518db30fc53ef228a79493e9bc27e26648d60fe56b5f82d",
+    "fetchedAt": "2026-11-05T11:31:39.011Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-05T11:31:39.011Z",
+  "updatedAt": "2026-11-05T11:31:39.011Z"
+ },
+ {
+  "id": "ga-23538979652ce03b",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "28",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/02/23/lage-am-millerntor-23-februar-2023/",
+    "locator": "p8",
+    "quote": "Die Beziehung beider Fanszenen ist bekanntlich nicht die beste, dementsprechend fiel es uns schwer eine*n Gesprächspartner*in für die VdS/NdS-Gespräche zu finden. Pragmatische Lösung: Wir regeln das auf St. Pauli unter uns. Also hatte Michael mich eingeladen und wir blickten in der gebotenen Kürze (28min) auf das, was in der Vergangenheit war und was uns da am Sonntag so erwartet.",
+    "bodyHash": "4c05f5bb001610d57447fb618269ca134a985987d506483fb4d2404a72318552",
+    "fetchedAt": "2026-11-05T11:31:44.383Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-05T11:31:44.383Z",
+  "updatedAt": "2026-11-05T11:31:44.383Z"
+ },
+ {
+  "id": "ga-22637ca0f1c3482a",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "33",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/14/lage-am-millerntor-14-maerz-2023/",
+    "locator": "p74",
+    "quote": "Gut möglich, dass der SV Darmstadt 98 im Sommer mal wieder in die 1. Bundesliga aufsteigt. In einer Doku (33min) auf dem Vereinskanal wird jetzt aber erst mal erzählt, wie düster alles rund um den Abstieg aus der Regionalliga 2007 war, bis zum Insolvenzantrag im März 2008.",
+    "bodyHash": "d9c94cf5256c034de38eb959bc6d0bf9a7df7065dbfee2d3497a2d4be5c5f595",
+    "fetchedAt": "2026-11-05T11:31:47.267Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-05T11:31:47.267Z",
+  "updatedAt": "2026-11-05T11:31:47.267Z"
+ },
+ {
+  "id": "ga-7c4815fc7c36128a",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "51",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/15/lage-am-millerntor-15-maerz-2023/",
+    "locator": "p7",
+    "quote": "Außerdem gibt es die neue Folge vom „If you can hear us“ -Podcast, die nach einer Woche Pause die Siege in Paderborn und gegen Fürth gleich im Doppelpack (51min) besprechen. Zoltan ist verhindert, daher sprechen Tom und Christian.",
+    "bodyHash": "ffc70935134302871babf858310237cec97204b6491b1e0dc4f04635310a4601",
+    "fetchedAt": "2026-11-05T11:31:47.268Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-05T11:31:47.268Z",
+  "updatedAt": "2026-11-05T11:31:47.268Z"
+ },
+ {
+  "id": "ga-6a1a244ece56de71",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "31",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/03/23/lage-am-millerntor-23-maerz-2023-2/",
+    "locator": "p44",
+    "quote": "Wie sie beim TSV Barmke gelandet ist und wie sie die Entwicklung im Fußball der Frauen wahrnimmt, erzählt sie im Gespräch. Sehr spannend, unbedingte Hörempfehlung (31min).",
+    "bodyHash": "c918e4a69f3e640f742fce0bc37b8156a6fa499444a0d5f35e44895c0012672d",
+    "fetchedAt": "2026-11-05T11:31:50.246Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-05T11:31:50.246Z",
+  "updatedAt": "2026-11-05T11:31:50.246Z"
  }
 ]

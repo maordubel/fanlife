@@ -1,7 +1,7 @@
 {
  "club": "partizan-belgrade",
- "snapshotAsOf": "2026-11-04",
- "researchVersion": 20,
+ "snapshotAsOf": "2026-11-05",
+ "researchVersion": 21,
  "approvedForProduction": 0,
  "counts": {
   "sources": 4,
@@ -11,11 +11,11 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-04T11-35-32-845Z-ef749d",
+  "runId": "2026-11-05T11-31-15-813Z-22d5d1",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
-  "documents": 69,
-  "needsParser": 69
+  "documents": 73,
+  "needsParser": 73
  }
 }
