@@ -28,6 +28,8 @@ jobs:
   stories:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # tests never reach the owner's Drive: the committed owner tracks score them (studio/audio._fetch_drive_track)
+    env: {STORIES_MUSIC_FETCH: '0'}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

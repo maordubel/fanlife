@@ -36,7 +36,7 @@ CUT = 'reel' if '--reel' in sys.argv else 'film'
 import studio.common as _sc  # noqa: E402
 if CUT == 'reel':
     _sc.W, _sc.H = 1080, 1920
-from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, level_music, speech_db, thin_cues, MUSIC_DUCK  # noqa: E402
+from studio.audio import music_track, narrator_fx, CROWD, fx, score, track_score, level_fx, level_music, speech_db, thin_cues, MUSIC_DUCK, owner_score, resolve_music  # noqa: E402
 import studio.captions as _caps  # noqa: E402
 import subscribe as SUB  # noqa: E402
 import doc as D  # noqa: E402

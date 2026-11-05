@@ -8,6 +8,7 @@ The mix ducks the score under the voice and is normalised for YouTube (−14 LUF
 from __future__ import annotations
 
 import json
+import os
 import math
 import subprocess
 import wave
@@ -234,6 +235,8 @@ def track_path(t: dict) -> Path:
 
 def _fetch_drive_track(t: dict, path: Path) -> None:
     """An owner track from his public Drive music folder, found by its name (the runner reaches Drive; a sandbox may not)."""
+    if os.environ.get('STORIES_MUSIC_FETCH', '1') == '0':
+        return
     try:
         import sys
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'matchday'))
