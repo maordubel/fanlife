@@ -1,18 +1,24 @@
 import {cronAuthorized} from '@/lib/master/request'
-import {StoryError,claim,finish,mediaPath,nextForWorker,report,type Finish,type Progress} from '@/lib/stories/jobs'
+import {StoryError,claim,finish,jobKind,mediaPath,nextForWorker,report,type Finish,type Progress} from '@/lib/stories/jobs'
 import {getJob,listJobs,updateJob} from '@/lib/stories/store'
 import {signedDownload,signedUpload} from '@/lib/stories/media'
 import {body,fail,json} from '@/lib/stories/http'
 import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
 import {claimSocial,cleanLights,composeAll,dueSocial,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
 import {noteLights} from '@/lib/stories/socialLights'
+import {addRound,markDispatched,noteRun,shouldDispatch,takenEvents} from '@/lib/stories/pitches'
+import {readPitchDays,readPitchDesk,updatePitchDay,updatePitchDesk} from '@/lib/stories/pitchStore'
+import {clubNames} from '@/lib/stories/clubs'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 
 /**
  * The production worker's only door (GitHub Actions, `Authorization: Bearer <CRON_SECRET>`).
- *   {op:'peek',worker,health?}                  → the id of the film that would be taken next (no lease); the listener
+ *   {op:'peek',worker,health?}                  → the id of the job that would be taken next and its kind (no lease), and
+ *                                                 `pitch: true` once when the owner asked for new pitches; the listener
  *                                                 (stories-watch.yml) adds its heartbeat and the writer-key check
+ *   {op:'pitch_history',worker,days?}           → what the directors must not pitch again: recent pitches + every film
+ *   {op:'pitch_save',worker,pitches,status}     → a round of pitches (one per director) and how the run went
  *   {op:'claim',worker}                         → the next job, leased to this worker (or {job:null})
  *   {op:'progress',id,worker,stage,progress,…}  → {control: continue | pause | cancel}
  *   {op:'upload_urls',id,worker,names:[…]}      → signed upload urls inside jobs/<id>/ only
@@ -33,8 +39,35 @@ export async function POST(r:Request){
   if(b.op==='peek'){
    const hb=cleanHeartbeat(b.health,worker)
    if(hb)await noteHeartbeat(hb)
-   const next=nextForWorker(await listJobs(200))
-   return json({next:next?next.id:null})
+   const jobs=await listJobs(200)
+   const next=nextForWorker(jobs)
+   let pitch=false
+   try{const desk=await readPitchDesk();if(desk&&shouldDispatch(desk)){await updatePitchDesk(d=>markDispatched(d));pitch=true}}catch{pitch=false}
+   return json({next:next?next.id:null,kind:next?jobKind(next):null,pitch})
+  }
+  // the pitch desk (scripts/football-stories/studio/pitch.py, .github/workflows/stories-pitch.yml)
+  if(b.op==='pitch_history'){
+   const n=Math.min(Math.max(Number(b.days)||14,1),60)
+   const [days,jobs]=await Promise.all([readPitchDays(n),listJobs(200)])
+   return json(takenEvents(days,jobs))
+  }
+  if(b.op==='pitch_save'){
+   const raw=Array.isArray(b.pitches)?b.pitches:[]
+   const st=(b.status&&typeof b.status==='object'?b.status:{}) as Record<string,unknown>
+   let saved=0,refused:string[]=[]
+   if(raw.length){
+    const date=new Date().toISOString().slice(0,10)
+    const [days,jobs]=await Promise.all([readPitchDays(14),listJobs(200)])
+    const t=takenEvents(days.filter(d=>d.date!==date),jobs)
+    await updatePitchDay(date,d=>{
+     const taken=new Set([...t.pitched.map(x=>x.event),...t.films.map(x=>x.event),...(d?takenEvents([d],[]).pitched.map(x=>x.event):[])])
+     const out=addRound(d,date,raw,clubNames(),taken,worker)
+     saved=out.saved.length;refused=out.refused
+     return out.day
+    })
+   }
+   const desk=await updatePitchDesk(d=>noteRun(d,{state:st.state,retryAt:st.retryAt,note:st.note,saved}))
+   return json({saved,refused,desk})
   }
   if(b.op==='claim'){
    // the job the workflow peeked (its checkpoints are the ones restored), when it is still the one to take

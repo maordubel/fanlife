@@ -1,7 +1,11 @@
 name: Football Stories worker
 # Makes the films queued in the owner's studio (/master/stories). No terminal: queue a film in the studio and this
 # listener (stories-watch.yml) starts this worker within about a minute; the schedule below is only a fallback.
-# One film per run. Paid answers (script, voice) are kept per job between runs, so a retry never pays twice.
+# One job per run: a documentary, a CLASSIFIED FILE (comic/produce.py, only with the owner's approval recorded in the
+# studio) or an I WAS THERE vlog (matchday/vlog_auto.py) — studio/kinds.py. The peek says which kind, and only that
+# kind's extra tools are installed. Runner limit: the job allows 350 minutes; a 25-minute documentary takes ~1–2 h, a
+# CLASSIFIED FILE ~2½ h at most (its own workflow allows 150 min), a vlog ~1 h (survey, writer, film, reel).
+# Paid answers (script, voice) are kept per job between runs, so a retry never pays twice.
 # Secrets: FAN_LIFE_CRON_SECRET (required) · ANTHROPIC_API_KEY / OPENAI_API_KEY / GEMINI_API_KEY (one writer) ·
 # ELEVENLABS_API_KEY (optional premium voice; without it the free Kokoro British voice is used).
 on:
@@ -25,10 +29,13 @@ jobs:
         id: peek
         run: |
           if [ ${#FAN_LIFE_CRON_SECRET} -lt 32 ]; then echo "::warning::FAN_LIFE_CRON_SECRET is not set"; echo "next=" >> "$GITHUB_OUTPUT"; exit 0; fi
-          next=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
-            -d "{\"op\":\"peek\",\"worker\":\"peek-$GITHUB_RUN_ID\"}" "$STORIES_URL/api/master/stories/worker" | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
+          peek=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
+            -d "{\"op\":\"peek\",\"worker\":\"peek-$GITHUB_RUN_ID\"}" "$STORIES_URL/api/master/stories/worker" || true)
+          next=$(printf '%s' "$peek" | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
+          kind=$(printf '%s' "$peek" | python3 -c "import sys,json;print(json.load(sys.stdin).get('kind') or 'film')" 2>/dev/null || echo film)
           echo "next=$next" >> "$GITHUB_OUTPUT"
-          [ -n "$next" ] && echo "Film waiting: $next" || echo "No film waiting."
+          echo "kind=$kind" >> "$GITHUB_OUTPUT"
+          [ -n "$next" ] && echo "Job waiting: $next ($kind)" || echo "No job waiting."
       - if: steps.peek.outputs.next != ''
         uses: actions/checkout@v4
       - if: steps.peek.outputs.next != ''
@@ -52,6 +59,25 @@ jobs:
           # misaki: the G2P the voice was trained on (studio/pronounce.py); without it the voice falls back to espeak
           pip install -q misaki num2words regex spacy && python -m spacy download en_core_web_sm -q
           python -m playwright install --with-deps chromium > /dev/null
+      - if: steps.peek.outputs.next != '' && steps.peek.outputs.kind == 'classified'
+        name: CLASSIFIED tools (the composer's layers, depth model)
+        run: pip install -q opencv-python-headless onnxruntime
+      - if: steps.peek.outputs.next != '' && steps.peek.outputs.kind == 'classified'
+        name: Depth model (Depth Anything V2 Small, Apache-2.0 — free, cached)
+        id: depth
+        uses: actions/cache@v4
+        with: {path: ~/depth, key: depth-anything-v2-small-onnx-v1}
+      - if: steps.peek.outputs.next != '' && steps.peek.outputs.kind == 'classified' && steps.depth.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/depth
+          curl -fsSL --retry 3 -o ~/depth/depth-anything-v2-small.onnx \
+            https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model.onnx \
+            || { rm -f ~/depth/depth-anything-v2-small.onnx; echo "::warning::The depth model did not download — the composer falls back to its saliency layers"; }
+      - if: steps.peek.outputs.next != '' && steps.peek.outputs.kind == 'vlog'
+        name: I WAS THERE tools (footage survey, speech check, HEIC stills, HDR tone map)
+        run: |
+          pip install -q "opencv-python-headless<5" faster-whisper
+          ffmpeg -hide_banner -filters | grep -q zscale || { echo "::error::ffmpeg has no zscale (HDR tone map)"; exit 1; }
       - if: steps.peek.outputs.next != ''
         name: Voice model (free, cached)
         id: kokoro
@@ -115,6 +141,9 @@ jobs:
           STORIES_MASTER_PRESET: medium
           # scan the owner's Drive live for this story's packs (studio/drive_scan.py)
           STORIES_DRIVE_SCAN: '1'
+          # CLASSIFIED (studio/kinds.py → comic/produce.py): the depth model (kinds.py sets the Take B narrator itself)
+          CLASSIFIED_DEPTH_MODEL: /home/runner/depth/depth-anything-v2-small.onnx
+          STORIES_GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL }}
           # the moving-art library the cinema animates (absent → the film renders without it)
           STORIES_CINEMA_LIB: /home/runner/cinema-lib
         run: python -m studio.worker

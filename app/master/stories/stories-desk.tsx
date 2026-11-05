@@ -1,19 +1,20 @@
 'use client'
-import {useCallback,useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react'
+import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react'
 import type {Job,Privacy} from '@/lib/stories/jobs'
 import type {Health} from '@/lib/stories/health'
 import {STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
 import {SocialPanel} from './SocialPanel'
+import {directorOfOption,DIRECTORS} from '@/lib/stories/directors'
 
-type Club={id:string;name:string;primary:string;on:string;seasons:{season:string;matches:number}[]}
-const ATHENS=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
-const when=(iso:string|null|undefined)=>iso?`${ATHENS.format(new Date(iso))} Athens`:''
-const mins=(d:number)=>d<1?'30 sec':`${d} min`
+export type Club={id:string;name:string;primary:string;on:string;seasons:{season:string;matches:number}[]}
+export const ATHENS=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Athens',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})
+export const when=(iso:string|null|undefined)=>iso?`${ATHENS.format(new Date(iso))} Athens`:''
+export const mins=(d:number)=>d<1?'30 sec':`${d} min`
 const STATE_TEXT:Record<Job['state'],string>={queued:'Waiting for the worker',running:'In production',paused:'Paused',cancel_requested:'Stopping',cancelled:'Cancelled',failed:'Failed',needs_review:'Needs your review',ready:'Ready'}
 const STAGE_TEXT:Record<string,string>={research:'Research',script:'Script',voice:'Voice',graphics:'Graphics',edit:'Edit',mix:'Sound',master:'Master',package:'Package',qa:'Checks',done:'Done'}
 
-async function api(path:string,init?:RequestInit){
+export async function api(path:string,init?:RequestInit){
  const r=await fetch(path,{cache:'no-store',...init,headers:{'Content-Type':'application/json',...(init?.headers||{})}})
  const b=await r.json().catch(()=>({}))
  if(!r.ok)throw new Error(b.error||`Request failed (${r.status})`)
@@ -21,7 +22,7 @@ async function api(path:string,init?:RequestInit){
 }
 
 type Kind='season'|'match'|'tie'|'rivalry'
-type Match={id:string;date:string;season:string;competition:string|null;stage:string|null;home:string;away:string;score:string;outcome:'win'|'draw'|'loss';opponent:string;tags:string[]}
+export type Match={id:string;date:string;season:string;competition:string|null;stage:string|null;home:string;away:string;score:string;outcome:'win'|'draw'|'loss';opponent:string;tags:string[]}
 type Opp={name:string;played:number;won:number;drawn:number;lost:number;first:string;last:string;derby:boolean}
 const KIND_CARDS:{k:Kind;title:string;line:string}[]=[
  {k:'match',title:'One match',line:'The night itself — the build-up, the minutes that decided it, what it meant.'},
@@ -39,36 +40,12 @@ const STYLE_CARDS:{k:string;title:string;line:string}[]=[
 ]
 const TONE_CHIPS:[string,string][]=[['auto','Let the story decide'],['triumph','Triumph'],['heartbreak','Heartbreak'],['underdog','Underdog'],['rivalry','Rivalry'],['nostalgia','Nostalgia'],['drama','Drama']]
 const FILTERS:[string,string][]=[['big','Big nights'],['final','Finals'],['derby','Derbies'],['europe','Europe'],['','All']]
-const dayOf=(d:string)=>new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})
+export const dayOf=(d:string)=>new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})
 const TAG_TEXT:Record<string,string>={final:'Final',derby:'Derby',europe:'Europe','big-score':'Big score',penalties:'Penalties','extra-time':'Extra time',goals:'Goals'}
-
-export function StoriesDesk(){
- const [jobs,setJobs]=useState<Job[]>([]),[clubs,setClubs]=useState<Club[]>([]),[health,setHealth]=useState<Health|null>(null),[error,setError]=useState('')
- const [open,setOpen]=useState<string|null>(null)
- const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setHealth(b.health??null);setError('')}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
- useEffect(()=>{void load()},[load])
- const live=jobs.some(j=>['queued','running','cancel_requested'].includes(j.state))
- // a film in production refreshes every 15 s; otherwise once a minute, so the status lights never go stale on an open tab
- useEffect(()=>{const t=setInterval(()=>void load(),live?15000:60000);return()=>clearInterval(t)},[live,load])
-
- return <div className={css.root}>
-  <header className={css.mast}><div className={css.wrap}>
-   <p className={css.kicker}><a href="/master/admin">FAN LIFE desk</a> · Owner studio</p>
-   <h1 className={css.title}>Football Stories</h1>
-   <p className={css.slogan}>Football is ninety minutes. Being a supporter is a lifetime.</p>
-  </div></header>
-  <div className={css.wrap}>{health&&<HealthStrip h={health}/>}{error&&<p role="alert" className={css.alert}>{error}</p>}<div className={css.grid}>
-   <NewFilm clubs={clubs} onMade={async id=>{setOpen(id);await load()}}/>
-   <section aria-label="Films" className={css.list}>
-    {jobs.length===0?<div className={css.panel}><p className={css.empty}>No films yet. Make the first one.</p></div>:jobs.map(j=><JobCard key={j.id} job={j} open={open===j.id} onOpen={()=>setOpen(open===j.id?null:j.id)} onChange={load}/>)}
-   </section>
-  </div></div>
- </div>
-}
 
 /** Click and make (studio v3): every choice is a card or a chip, in the order a film is decided. Nothing to type unless
  *  the owner opens "More". The server checks each choice against the club's archive again before it queues. */
-function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}){
+export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}){
  const [club,setClub]=useState(''),[kind,setKind]=useState<Kind|''>('')
  const [season,setSeason]=useState(''),[picked,setPicked]=useState<Match[]>([]),[opp,setOpp]=useState<Opp|null>(null)
  const [duration,setDuration]=useState(10),[style,setStyle]=useState('collage'),[tone,setTone]=useState('auto')
@@ -121,7 +98,7 @@ function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}
     <Step n={6} title="The feeling"><div className={css.chips} role="group" aria-label="Tone">{TONE_CHIPS.map(([k,l])=><button type="button" key={k} className={`${css.chip} min-h-tap`} aria-pressed={tone===k} onClick={()=>setTone(k)}>{l}</button>)}</div></Step>
     <Step n={7} title="The script">
      <div className={css.cards}>
-      <button type="button" className={`${css.card} min-h-tap`} aria-pressed={scripts===3} onClick={()=>setScripts(3)}><b>Three scripts to choose from</b><span>Chronicle · From the stands · The turning point. You pick one; the film makes itself.</span></button>
+      <button type="button" className={`${css.card} min-h-tap`} aria-pressed={scripts===3} onClick={()=>setScripts(3)}><b>Three scripts to choose from</b><span>One per director — {DIRECTORS.map(d=>d.name).join(' · ')}. You pick one; the film makes itself.</span></button>
       <button type="button" className={`${css.card} min-h-tap`} aria-pressed={scripts===1} onClick={()=>setScripts(1)}><b>Straight to the film</b><span>One script, no stop. Fastest.</span></button>
      </div>
     </Step>
@@ -152,11 +129,11 @@ function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise<void>}
  </section>
 }
 
-function Step({n,title,children}:{n:number;title:string;children:ReactNode}){
+export function Step({n,title,children}:{n:number;title:string;children:ReactNode}){
  return <fieldset className={css.step}><legend><span className={css.num}>{n}</span>{title}</legend>{children}</fieldset>
 }
 
-function MatchPicker({club,multi,picked,setPicked}:{club:Club;multi:boolean;picked:Match[];setPicked:(m:Match[])=>void}){
+export function MatchPicker({club,multi,picked,setPicked}:{club:Club;multi:boolean;picked:Match[];setPicked:(m:Match[])=>void}){
  const [tag,setTag]=useState('big'),[season,setSeason]=useState(''),[q,setQ]=useState(''),[rows,setRows]=useState<Match[]>([]),[total,setTotal]=useState(0),[err,setErr]=useState(''),[loading,setLoading]=useState(false)
  useEffect(()=>{
   const ctl=new AbortController(),t=setTimeout(()=>{setLoading(true)
@@ -207,7 +184,7 @@ function athensToIso(local:string){
  return `${d}T${t}:00${off}`
 }
 
-function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>void;onChange:()=>void}){
+export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>void;onChange:()=>void}){
  const [err,setErr]=useState(''),[busy,setBusy]=useState(false)
  const b=job.brief
  const act=async(body:Record<string,unknown>)=>{setErr('');setBusy(true);try{await api(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify(body)});onChange()}catch(e){setErr(e instanceof Error?e.message:'Failed')}finally{setBusy(false)}}
@@ -238,13 +215,14 @@ function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>voi
  </article>
 }
 
-/** Three scripts, three angles (studio v3): what each one opens with and how it is built. One click makes the film. */
+/** Three scripts, one per director (docs/fanlife/66 §5): who wrote it, what it opens with, how it is built. One click
+ *  makes the film. A film made from a pitch lists the pitching director first. */
 function ScriptChoice({job,busy,pick}:{job:Job;busy:boolean;pick:(n:number)=>Promise<void>}){
  return <div className={css.choice}>
   <h3 className={css.h3}>Pick the script</h3>
-  <p className={css.hint}>Three versions of the same facts. Pick one and the film makes itself — voice, pictures, edit, checks.</p>
+  <p className={css.hint}>Three directors, the same facts, three different films. Pick one and the film makes itself — voice, pictures, edit, checks.</p>
   <div className={css.options}>{job.options!.map(o=><article key={o.n} className={css.option}>
-   <p className={css.kicker2}>{o.angle} · {o.words} words</p>
+   {(()=>{const d=directorOfOption(o);return <><p className={css.kicker2}>{d?.name??o.angle} · {o.words} words{job.brief.lead_director&&d?.id===job.brief.lead_director?' · his pitch':''}</p>{d&&<p className={css.tagline}>{d.tagline}</p>}</>})()}
    <h4>{o.title}</h4>
    <p className={css.hook}>&ldquo;{o.hook}&rdquo;</p>
    <p className={css.opening}>{o.opening}</p>
@@ -260,7 +238,9 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
  const a=job.artefacts
  useEffect(()=>{void api(`/api/master/stories/${job.id}`).then(b=>setUrls(b.urls||{})).catch(()=>{})},[job.id,job.updatedAt])
  useEffect(()=>{const su=a?.package?urls[a.package.path]:undefined;if(job.stage==='script'&&su)void fetch(su).then(r=>r.text()).then(t=>{try{const s=JSON.parse(t);setScript(s.chapters.map((c:{title:string;beats:{narration:string}[]})=>`${c.title.toUpperCase()}\n`+c.beats.map(b=>b.narration).join('\n')).join('\n\n'))}catch{setScript(t)}})},[a,urls,job.stage])
- const yt=job.youtube as null|{title:string;description:string;tags:string[];category:string;chapters:{time:string;title:string}[];synthetic_media:{altered_or_synthetic:boolean;reason:string};title_candidates:{title:string;angle:string}[];shorts:{hook:string;idea:string}[]}
+ const raw=job.youtube as null|{title:string;description:string;tags:string[];category:string;chapters:{time:string;title:string}[];synthetic_media:{altered_or_synthetic:boolean;reason:string};title_candidates:{title:string;angle:string}[];shorts:{hook:string;idea:string}[]}
+ // a package of another shape (an older CLASSIFIED or vlog job) is not drawn as one rather than breaking the card
+ const yt=raw&&typeof raw.title==='string'&&raw.synthetic_media&&Array.isArray(raw.title_candidates)&&Array.isArray(raw.tags)&&Array.isArray(raw.shorts)?raw:null
  const u=(p?:{path:string}|null)=>p?urls[p.path]:undefined
  async function downloadMaster(){
   setDl('Fetching the master…')
@@ -365,7 +345,7 @@ function PublishKit({yt,job}:{yt:Yt;job:Job}){
 }
 
 /** Can the studio make a film right now? Three lights, each with the one thing to do when it is off. */
-function HealthStrip({h}:{h:Health}){
+export function HealthStrip({h}:{h:Health}){
  const w=h.writer
  const rows:[string,boolean|null,string][]=[
   ['Studio worker',h.listener.ok,h.listener.ok?'Listening — a new film starts within about a minute':h.listener.at?`Last seen ${when(h.listener.at)} — it restarts by itself; GitHub → Actions → "Football Stories · listener" → Run workflow starts it now`:'Not started yet — GitHub → Actions → "Football Stories · listener" → Run workflow'],

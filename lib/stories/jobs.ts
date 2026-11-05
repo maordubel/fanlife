@@ -8,6 +8,7 @@
  * Pure functions only: no I/O here, so every transition is tested on its own.
  */
 import {SocialError,cancelSocial,scheduleSocial,type PostInput,type SocialPlan} from './social'
+import {isDirector,type DirectorId} from './directors'
 export const STAGES=['research','script','voice','graphics','edit','mix','master','package','qa','done'] as const
 export type Stage=typeof STAGES[number]
 export type JobState='queued'|'running'|'paused'|'cancel_requested'|'cancelled'|'failed'|'needs_review'|'ready'
@@ -22,7 +23,8 @@ export const TONES=['auto','triumph','heartbreak','underdog','rivalry','nostalgi
 export type Tone=typeof TONES[number]
 export const STYLES=['collage','papercut','archive','night'] as const
 export type Style=typeof STYLES[number]
-export type ScriptOption={n:number;angle:string;title:string;hook:string;chapters:string[];words:number;opening:string}
+/** One script per director (docs/fanlife/66 §5): `angle` carries the director's name, `director` his id. */
+export type ScriptOption={n:number;angle:string;title:string;hook:string;chapters:string[];words:number;opening:string;director?:DirectorId}
 export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
  visual_style:Style|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
@@ -30,6 +32,8 @@ export type Brief={
  kind?:Kind;match_ids?:string[];opponent?:string|null;tone?:Tone
  /** three scripts to choose from (default) or one; the owner's pick once they are written */
  scripts?:1|3;choice?:number|null
+ /** the director whose pitch this film came from: his script is offered first (studio desk, Directors tab) */
+ lead_director?:DirectorId|null
  /** pictures from the owner's Google Drive library for this club, and the Reel sent to the owner's Telegram */
  drive?:boolean;reel_to_telegram?:boolean
  /** a Drive folder the owner pasted for THIS film (its id), and the words a pack about it would be named with */
@@ -73,6 +77,9 @@ export type Job={
  options?:ScriptOption[]|null
  /** posts of the finished film on Facebook, Instagram, X and TikTok (lib/stories/social.ts) */
  social?:SocialPlan|null
+ /** what the worker makes (studio desk, 4.11.2026): a documentary (absent = 'film'), a CLASSIFIED FILE or an I WAS THERE
+  *  vlog — and the kind's own validated request. `brief` still carries the summary every screen prints. */
+ kind?:JobKind;spec?:ClassifiedSpec|VlogSpec|null
 }
 export const SEASON=/^\d{4}\/\d{2}$/
 export const SPAN=/^\d{4}–\d{4}$/
@@ -118,8 +125,10 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  if(bad>=0)throw new StoryError('BRIEF',`Quotes and headlines, line ${bad+1}: use "quote | speaker | role | exact words | https://source" or "press | outlet | YYYY-MM-DD | headline | https://source".`)
  const hold=b.hold===true
  const scripts=b.scripts===1?1:3
+ if(b.lead_director!==undefined&&b.lead_director!==null&&!isDirector(b.lead_director))throw new StoryError('BRIEF','Unknown director.')
+ const lead_director=isDirector(b.lead_director)?b.lead_director:null
  return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',[...STYLES,'mixed'] as const,'collage'),
-  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
+  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,lead_director,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
   focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 
@@ -208,13 +217,91 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  }
  j.state=f.state;j.notBefore=null
  if(f.state==='failed'){j.error={code:String(f.error?.code||'FAILED').slice(0,60),message:String(f.error?.message||'').slice(0,600),retryable:!!f.error?.retryable};pushLog(j,`Failed: [${j.error.code}] ${j.error.message}`,at)}
- else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=f.options.slice(0,3).map(cleanOption);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
+ else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=leadFirst(f.options.slice(0,3).map(cleanOption),j.brief.lead_director);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
  return j
 }
 const cut=(x:unknown,n:number)=>String(x??'').slice(0,n)
-function cleanOption(o:ScriptOption):ScriptOption{return {n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)}}
+function cleanOption(o:ScriptOption):ScriptOption{const x:ScriptOption={n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)};if(isDirector(o.director))x.director=o.director;return x}
+/** The pitching director's script first, the others in the order they were written. `n` is never renumbered: it names
+ *  the file the worker resumes from (script-option-<n>.json). */
+export function leadFirst(opts:ScriptOption[],lead:DirectorId|null|undefined):ScriptOption[]{
+ if(!lead)return opts
+ return [...opts].sort((a,b)=>Number(b.director===lead)-Number(a.director===lead))
+}
 /** Storage paths a worker may write for a job: its own folder only, plain file names. */
 export function mediaPath(jobId:string,name:string):string{
  if(!/^[a-z0-9-]{8,64}$/.test(jobId)||!/^[a-z0-9][a-z0-9._-]{0,80}$/.test(name)||name.includes('..'))throw new StoryError('PATH','Invalid media path.')
  return `jobs/${jobId}/${name}`
+}
+
+/* ── The studio desk's other productions (owner, 4.11.2026: "split the studio — documentary, CLASSIFIED, VLOG …") ──
+ * One queue, one worker, one lease: a CLASSIFIED FILE and an I WAS THERE vlog are jobs like a film, so pause, cancel,
+ * retry, the status lights and the Telegram delivery work the same. Each carries its own request in `spec`, checked
+ * here; `brief` is a summary in the film's shape so every list and card prints it. */
+export const JOB_KINDS=['film','classified','vlog'] as const
+export type JobKind=typeof JOB_KINDS[number]
+export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind==='vlog'?j.kind:'film'
+
+/** A CLASSIFIED FILE as the desk sees it (lib/stories/classifiedIndex.ts reads the episodes and the panel map). */
+export type ClassifiedFile={file:string;number:string;title:string;tone:string;year:number|null;episode:string|null
+ script:string|null;script_version:string|null;approved_in_file:boolean;minutes:number|null;beats:number
+ panels:{have:number;roles:number;missing:string[]};shorts:number}
+/** The owner's approval is part of the request (mirrors the workflow's "I approve the script" tick): who, when, and
+ *  WHICH draft — the worker refuses to voice a script whose version changed after the click. */
+export type ClassifiedSpec={file:string;number:string;title:string;episode:string;script_version:string
+ approved:true;approved_by:string;approved_at:string;telegram:boolean}
+export type VlogMatch={id:string;date:string;season:string;competition:string|null;home:string;away:string;score:string}
+export type VlogSpec={club_id:string;club_name:string;match:VlogMatch;drive_link:string;notes:string;minutes:number;telegram:boolean}
+export const VLOG_MINUTES=[2,3,4,5,6,8,10] as const
+
+/** A Drive folder OR a single file the owner shared ("anyone with the link") → its canonical link. */
+export function driveLink(v:unknown):string{
+ if(typeof v!=='string'||!v.trim())throw new StoryError('BRIEF','Paste the Drive folder with the footage (drive.google.com/drive/folders/…).')
+ const t=v.trim(),file=t.match(/\/file\/d\/([\w-]{10,})/)
+ if(file)return `https://drive.google.com/file/d/${file[1]}/view`
+ return `https://drive.google.com/drive/folders/${driveFolder(t)}`
+}
+
+export function validateClassified(v:unknown,files:ClassifiedFile[],actor:string,now=new Date()):{brief:Brief;spec:ClassifiedSpec}{
+ if(!v||typeof v!=='object')throw new StoryError('BRIEF','Choose a FILE.')
+ const b=v as Record<string,unknown>
+ const f=files.find(x=>x.file===b.file)
+ if(!f)throw new StoryError('BRIEF','Unknown FILE.')
+ if(!f.episode||!f.script_version)throw new StoryError('BRIEF',`FILE ${f.number} has no episode script yet — it cannot be produced.`)
+ if(b.approved!==true)throw new StoryError('APPROVAL',`Tick "I have read and approve this FILE's script" first: the narrator speaks only an approved script.`)
+ if(b.script_version!==f.script_version)throw new StoryError('APPROVAL',`The script changed (now ${f.script_version}) — read it again and approve the new draft.`,409)
+ if(f.panels.missing.length&&f.panels.have===0)throw new StoryError('BRIEF',`FILE ${f.number} has no panels in the Drive map yet.`)
+ const spec:ClassifiedSpec={file:f.file,number:f.number,title:f.title,episode:f.episode,script_version:f.script_version,approved:true,
+  approved_by:String(actor||'owner').slice(0,80),approved_at:now.toISOString(),telegram:b.telegram!==false}
+ const brief:Brief={club_id:'classified',club_name:'CLASSIFIED',season:`FILE ${f.number}`,topic:f.title,duration:f.minutes??5,visual_style:'mixed',
+  voice:'kokoro',review:'auto',privacy:'private',publish_at:null,scripts:1,choice:null,drive:false,reel_to_telegram:spec.telegram,art:[],hold:false}
+ return {brief,spec}
+}
+
+export function validateVlog(v:unknown,clubs:Map<string,string>,findMatch:(club:string,id:string)=>VlogMatch|null):{brief:Brief;spec:VlogSpec}{
+ if(!v||typeof v!=='object')throw new StoryError('BRIEF','Choose the match.')
+ const b=v as Record<string,unknown>
+ const club_id=typeof b.club_id==='string'?b.club_id:''
+ const club_name=clubs.get(club_id)
+ if(!club_name)throw new StoryError('BRIEF','Unknown club.')
+ const id=typeof b.match_id==='string'?b.match_id:''
+ const match=/^[A-Za-z0-9:._-]{3,120}$/.test(id)?findMatch(club_id,id):null
+ if(!match)throw new StoryError('BRIEF','Choose the match from the list.')
+ const drive_link=driveLink(b.drive_folder)
+ const notes=typeof b.notes==='string'?b.notes.replace(/\r/g,'').trim():''
+ if(notes.length>4000)throw new StoryError('BRIEF','Notes: at most 4,000 characters.')
+ const minutes=b.minutes===undefined?4:Number(b.minutes)
+ if(!(VLOG_MINUTES as readonly number[]).includes(minutes))throw new StoryError('BRIEF','Length: 2, 3, 4, 5, 6, 8 or 10 minutes.')
+ const spec:VlogSpec={club_id,club_name,match,drive_link,notes,minutes,telegram:b.telegram!==false}
+ const brief:Brief={club_id,club_name,season:match.season,topic:`${match.home} ${match.score} ${match.away}`,duration:minutes,visual_style:'mixed',
+  voice:'kokoro',review:'auto',privacy:'private',publish_at:null,kind:'match',match_ids:[match.id],scripts:1,choice:null,drive:false,
+  drive_folder:null,reel_to_telegram:spec.telegram,notes:'',art:[],hold:false}
+ return {brief,spec}
+}
+
+export function newSpecialJob(id:string,kind:'classified'|'vlog',x:{brief:Brief;spec:ClassifiedSpec|VlogSpec},palette:Palette,actor:string,key:string,now=new Date()):Job{
+ const j=newJob(id,{...x.brief,hold:false},palette,actor,key,now)
+ j.kind=kind;j.spec=x.spec
+ if(kind==='classified'){const s=x.spec as ClassifiedSpec;j.log=[{at:j.createdAt,text:`Queued — script ${s.script_version} approved by ${s.approved_by}`}]}
+ return j
 }

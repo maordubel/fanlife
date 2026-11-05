@@ -27,6 +27,7 @@ export const RUNTIME_READ = [
   /^research-profiles\//,
   /^research-data\//,
   /^scripts\/clubs\//, // the build's first step (npm run clubs:precompile)
+  /^scripts\/football-stories\/comic\/(episodes\/|classified_manifest\.json)/, // the studio desk's CLASSIFIED tab (lib/stories/classified.ts)
 ]
 
 /** Paths the running site never reads. Everything else builds. */

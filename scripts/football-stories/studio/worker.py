@@ -147,7 +147,9 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
            'crowd': b.get('crowd') or 'soft', 'focus_from': b.get('focus_from') or None, 'focus_to': b.get('focus_to') or None, 'notes': b.get('notes') or '',
            # studio v3: what the film is about, its tone, three scripts and the owner's pick
            'kind': b.get('kind') or 'season', 'match_ids': b.get('match_ids') or [], 'opponent': b.get('opponent'),
-           'tone': b.get('tone') or 'auto', 'scripts': b.get('scripts') or 1, 'choice': b.get('choice')}
+           'tone': b.get('tone') or 'auto', 'scripts': b.get('scripts') or 1, 'choice': b.get('choice'),
+           # a film made from a director's pitch: his script is written first and offered first (studio desk)
+           'lead_director': b.get('lead_director') or None}
     if art_dir and b.get('art'):
         out.update(art_dir=str(art_dir), art=b['art'], art_set='job-' + job['id'][:40])
     return out
@@ -346,8 +348,22 @@ def run_once(st: Studio, root: Path, log) -> bool:
                 raise Stop(r['control'])
 
     try:
+        kind = job.get('kind') or 'film'
+        if kind in ('classified', 'vlog'):
+            # the studio desk's other productions (studio/kinds.py): same claim, progress, waiting and failure handling
+            from . import kinds
+            fin = (kinds.run_classified if kind == 'classified' else kinds.run_vlog)(st, job, jd, progress, log)
+            progress('done', 1.0, 'Finished')
+            st.call({'op': 'finish', 'id': jid, **fin}, timeout=120)
+            log(f'Job {jid} ({kind}): {fin["state"]}')
+            return True
+        if kind != 'film':
+            raise StageError('KIND', f'This worker does not know how to make a {kind!r} job — update the worker.')
         pb = brief_for_pipeline(job, fetch_art(st, job, jd, log))
-        drive = fetch_drive(job, jd, log)  # every run: a resumed film starts on a clean machine
+        seen: list[str] = []
+        drive = fetch_drive(job, jd, lambda m: (log(m), seen.append(m)))  # every run: a resumed film starts on a clean machine
+        for m in [x for x in seen if x.startswith('Drive') and ('targeted' in x or 'pictures' in x or 'no pack' in x)][-2:]:
+            progress('research', 0.01, m)  # the studio's Status tab shows the last Drive scans from the job log
         if drive:
             pb['drive_dir'] = str(drive)
             pb['drive_pack'] = str(jd / 'drive-pack.json')
