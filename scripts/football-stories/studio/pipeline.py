@@ -247,15 +247,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         plan['engine'] = hyperframes.ENGINE   # VOX drawn by HyperFrames (prototype; look 'vox-hf' or STORIES_VOX_HF=1)
     from .common import sha256_json
     fingerprint = sha256_json({'version': media_assets.VERSION, 'plan': plan, 'media': ledger['media_assets']})
-    mark = job_dir / 'media-render.json'
-    changed = not mark.exists() or read_json(mark).get('fingerprint') != fingerprint
-    if changed:
-        # A checkpoint made with different pictures cannot count as this edit. Keep paid writer/voice caches.
-        for name in ('shots', 'out', 'mix', 'worlds', 'vox', 'hf'):
-            shutil.rmtree(job_dir / name, ignore_errors=True)
-        for name in ('picture.mp4', 'contact-sheet.jpg'):
-            (job_dir / name).unlink(missing_ok=True)
-        write_json(mark, {'fingerprint': fingerprint})
+    media_assets.refresh_render(job_dir, fingerprint)
     write_json(plan_p, plan)
     write_json(job_dir / 'media-usage.json', plan.get('media_usage') or {})
     usage = plan.get('media_usage') or {}

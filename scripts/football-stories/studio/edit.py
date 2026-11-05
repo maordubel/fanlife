@@ -474,7 +474,7 @@ class Editor:
         elif kind == 'illustration':
             art = v.get('art') or (s.get('cinema') or {}).get('broll') or 'terrace-crowd'
             if art == 'gen':
-                art = 'gen:' + key_of(s['n'])
+                art = 'gen:' + key_of(s.get('source_n', s['n']))
             if s.get('required_asset'):
                 from .media_assets import require_file, whole_picture
                 world = self.world_image(f'required-{s["n"]}', lambda: whole_picture(require_file(art), (W, H), self.pal.bans))

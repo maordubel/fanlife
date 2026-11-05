@@ -12,6 +12,7 @@ import io
 import json
 import os
 import re
+import shutil
 import unicodedata
 from collections import Counter
 from pathlib import Path
@@ -207,6 +208,7 @@ def place(shots: list[dict], ledger: dict) -> tuple[list[dict], dict]:
             optional_uses[ranked[0]['key']] += 1
     out, frame = [], 0
     for i, shot in enumerate(shots):
+        shot.setdefault('source_n', shot['n'])  # generated art is keyed by the original script beat
         for s in [shot, *inserts.get(i, [])]:
             offset = s['voice_at'] - s['start'] if s.get('voice_at') is not None else None
             s['start'] = frame / FPS
@@ -218,6 +220,18 @@ def place(shots: list[dict], ledger: dict) -> tuple[list[dict], dict]:
     report = coverage(out, required)
     report['added_seconds'] = sum(len(v) for v in inserts.values()) * HOLD_SECONDS
     return out, report
+
+
+def refresh_render(job_dir: Path, fingerprint: str) -> None:
+    """Invalidate frame/timing-dependent caches together, retaining script, voice and generated originals."""
+    mark = job_dir / 'media-render.json'
+    if mark.exists() and read_json(mark).get('fingerprint') == fingerprint:
+        return
+    for name in ('shots', 'out', 'mix', 'worlds', 'vox', 'hf', 'sprites', 'qa'):
+        shutil.rmtree(job_dir / name, ignore_errors=True)
+    for name in ('picture.mp4', 'contact-sheet.jpg'):
+        (job_dir / name).unlink(missing_ok=True)
+    write_json(mark, {'fingerprint': fingerprint})
 
 
 def coverage(shots: list[dict], required: list[dict]) -> dict:

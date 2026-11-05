@@ -1353,7 +1353,7 @@ def illustration(ed, s, B: Builder) -> Panel:
     art = v.get('art') or B.cin.get('broll') or 'terrace-crowd'
     if art == 'gen':
         from ..sprites import key_of
-        art = 'gen:' + key_of(s['n'])
+        art = 'gen:' + key_of(s.get('source_n', s['n']))
     rot = (-1.6, 2.0, -2.4)[s['n'] % 3]
     cx, cy = 960 + B.side * 70, 470
     pic = B.art(art, 1240, 700, cx, cy, rot, 0.1, frm=(0, -150), style='drop')

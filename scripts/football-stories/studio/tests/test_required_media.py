@@ -32,6 +32,7 @@ class EditCoverage(unittest.TestCase):
         self.assertEqual(report['added_seconds'], 69 * 4)
         self.assertEqual([s['n'] for s in result], list(range(len(result))))
         voiced = [s for s in result if s.get('voice_file')]
+        self.assertEqual([s['source_n'] for s in voiced], list(range(4)))
         self.assertEqual([s['narration'] for s in voiced], [s['narration'] for s in original])
         self.assertTrue(all(abs(s['voice_at'] - s['start'] - .5) < .001 for s in voiced))
         self.assertEqual(next(s for s in voiced if s['voice_file'] == '1.wav')['visual']['type'], 'score')
@@ -102,6 +103,26 @@ class Discovery(unittest.TestCase):
 
 
 class Ingestion(unittest.TestCase):
+    def test_resume_invalidates_numbered_cards_and_qa_frames_but_keeps_paid_inputs(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            stale = ('shots', 'out', 'mix', 'worlds', 'vox', 'hf', 'sprites', 'qa')
+            retained = ('voice', 'cache', 'art')
+            for name in (*stale, *retained):
+                (root / name).mkdir()
+                (root / name / 'old').write_text('old')
+            media.refresh_render(root, 'old')
+            for name in stale:
+                self.assertFalse((root / name).exists())
+            for name in retained:
+                self.assertTrue((root / name / 'old').exists())
+            (root / 'sprites').mkdir()
+            (root / 'sprites/card.png').write_text('current')
+            media.refresh_render(root, 'old')
+            self.assertTrue((root / 'sprites/card.png').exists())
+            media.refresh_render(root, 'new')
+            self.assertFalse((root / 'sprites/card.png').exists())
+
     def test_same_names_unicode_and_new_resume_file_remain_distinct(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

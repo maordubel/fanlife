@@ -687,6 +687,9 @@ def illustration(b: B) -> None:
     s = b.s
     v = s['visual']
     art = v.get('art') or b.cin.get('broll') or 'terrace-crowd'
+    if art == 'gen':
+        from ..sprites import key_of
+        art = 'gen:' + key_of(s.get('source_n', s['n']))
     rot = (-1.6, 2.0, -2.4)[s['n'] % 3]
     cx, cy = 960 + b.side * 70, 470
     b.art(art, 1240, 700, cx, cy, rot, 0.1, frm=(0, -150), style='drop')
