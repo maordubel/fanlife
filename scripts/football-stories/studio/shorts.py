@@ -22,6 +22,7 @@ from .common import ROOT, StageError, hex_rgb, read_json
 
 W, H = 1080, 1920
 FRAME_Y = 660            # the 16:9 picture: 1080×608 from here
+TIGHT_Y, TIGHT_H = 560, 810   # a VOX film's Short: the middle 4:3 of the board, 1080×810
 MAX_SECONDS = 59.0
 HANDLE = '@FanLifeFootballStories'
 
@@ -38,20 +39,21 @@ def _text(d: ImageDraw.ImageDraw, xy, text: str, f, fill) -> None:
     f.draw(d, xy, text, fill)
 
 
-def overlay(hook: str, kicker: str, accent: str, out: Path) -> Path:
+def overlay(hook: str, kicker: str, accent: str, out: Path, frame_y: int = FRAME_Y, frame_h: int = 608) -> Path:
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     ink, paper, acc = (21, 19, 15, 255), (244, 238, 223, 255), (*hex_rgb(accent), 255)
     # top: the hook, printed twice (ink under, paper over), on a dark band
-    d.rectangle((0, 0, W, FRAME_Y - 24), fill=(21, 19, 15, 205))
+    d.rectangle((0, 0, W, frame_y - 24), fill=(21, 19, 15, 205))
     size = 104
     lines = textwrap.wrap(hook.upper(), 16)
-    while len(lines) > 4 and size > 70:
+    most = 4 if frame_y >= FRAME_Y else 3
+    while len(lines) > most and size > 70:
         size -= 8
         lines = textwrap.wrap(hook.upper(), int(16 * 104 / size))
     f = _font(size)
-    y = 120
-    for ln in lines[:4]:
+    y = 120 if frame_y >= FRAME_Y else 80
+    for ln in lines[:most]:
         _text(d, (66, y + 7), ln, f, ink)
         _text(d, (60, y), ln, f, paper)
         y += int(size * 1.02)
@@ -60,9 +62,9 @@ def overlay(hook: str, kicker: str, accent: str, out: Path) -> Path:
     d.rectangle((60, y + 26, 60 + kw + 36, y + 90), fill=acc)
     _text(d, (78, y + 34), kicker.upper(), kf, paper)
     # the frame: a paper edge around the picture
-    d.rectangle((0, FRAME_Y - 10, W, FRAME_Y + 608 + 10), outline=paper, width=10)
+    d.rectangle((0, frame_y - 10, W, frame_y + frame_h + 10), outline=paper, width=10)
     # bottom: the call to the full film and the channel
-    by = FRAME_Y + 608 + 70
+    by = frame_y + frame_h + (70 if frame_h <= 608 else 50)
     d.rectangle((60, by, W - 60, by + 150), fill=acc, outline=ink, width=6)
     bf = _font(68)
     t = 'FULL FILM ON THE CHANNEL'
@@ -93,12 +95,16 @@ def cut(job: Path, first: int, last: int, hook: str, kicker: str, accent: str, o
     if t1 - t0 > MAX_SECONDS + 0.5:
         raise StageError('SHORT_TOO_LONG', f'{t1 - t0:.1f}s: a Short is at most {MAX_SECONDS:.0f}s')
     master = job / 'out' / 'master.mp4'
-    ov = overlay(hook, kicker, accent, out.with_suffix('.overlay.png'))
+    # a VOX film keeps what matters at the centre of its camera, so the Short reframes the board tighter: the middle
+    # 4:3 of the frame, larger on the page (captions are centred, so they stay whole)
+    tight = plan.get('engine') == 'vox'
+    fy, fh = (TIGHT_Y, TIGHT_H) if tight else (FRAME_Y, 608)
+    ov = overlay(hook, kicker, accent, out.with_suffix('.overlay.png'), fy, fh)
     fade = max(0.0, t1 - t0 - 0.6)
     fc = (f"[0:v]split=2[a][b];"
           f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=28:2,eq=brightness=-0.22:saturation=0.7[bg];"
-          f"[b]scale={W}:-2[fg];"
-          f"[bg][fg]overlay=0:{FRAME_Y}[v1];[v1][1:v]overlay=0:0,fade=t=in:st=0:d=0.25,fade=t=out:st={fade:.2f}:d=0.5[v];"
+          + (f"[b]crop=1440:1080,scale={W}:-2[fg];" if tight else f"[b]scale={W}:-2[fg];") +
+          f"[bg][fg]overlay=0:{fy}[v1];[v1][1:v]overlay=0:0,fade=t=in:st=0:d=0.25,fade=t=out:st={fade:.2f}:d=0.5[v];"
           f"[0:a]afade=t=in:st=0:d=0.2,afade=t=out:st={fade:.2f}:d=0.5[aout]")
     subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{t0:.3f}', '-t', f'{t1 - t0:.3f}', '-i', str(master),
                     '-loop', '1', '-t', f'{t1 - t0:.3f}', '-i', str(ov), '-filter_complex', fc, '-map', '[v]', '-map', '[aout]',

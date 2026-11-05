@@ -76,7 +76,7 @@ def transformed(img: Image.Image, p: Pose, cache: dict) -> tuple[Image.Image, in
             a = im.getchannel('A').point(lambda v: int(v * p.alpha))
             im = im.copy()
             im.putalpha(a)
-        if len(cache) > 6:
+        if len(cache) > getattr(cache, 'cap', 6):  # a library figure's cache holds its repeating angles (cinema.animate)
             cache.clear()
         cache[key] = im
     # the pose's (x, y) is the CENTRE of the un-revealed image
@@ -194,6 +194,9 @@ class ShotRenderer:
 
 def blend_entry(shot: Shot, i: int, frame: np.ndarray, prev_last: np.ndarray | None, accent_rgb) -> np.ndarray:
     t = i / FPS
+    if str(shot.entry).startswith('tr:'):  # the owner's transition art (cinema.animate.Transition)
+        fn = shot.meta.get('tr_fn')
+        return fn(t, frame, prev_last) if fn else frame
     if shot.entry not in ('black', 'fade', 'wipe'):
         from .cinema.look import blend
         out = blend(shot.entry, t, frame, prev_last, shot.meta.get('side', 1))
