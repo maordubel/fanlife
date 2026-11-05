@@ -498,11 +498,10 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
     yt = release.youtube(ep, plan, music_info, voice_credit)
     release.write_json(o / 'youtube.json', yt)
     (o / 'description.txt').write_text(yt['description'] + '\n', encoding='utf-8')
-    thumbs = []
-    for k, th in enumerate((ep.get('package') or {}).get('thumbnails') or [], 1):
-        a = assets.get(th['panel'])
-        thumbs.append(str(release.thumbnail(a.path if a else None, th['hook'], ep.get('number', '00'), ep.get('title', ''),
-                                            tone, compose.letter.hex_rgb(tone_hex), o / f'thumbnail-{k}.jpg', seed=k)))
+    from studio import thumbs as T   # the hook engine (docs/fanlife/68): the case-folder look, three hooks, a Shorts cover
+    pk_th = (ep.get('package') or {}).get('thumbnails') or []
+    thumbs = [str(p) for p in T.for_classified(ep, {th['panel']: (assets[th['panel']].path if assets.get(th['panel']) else None)
+                                                     for th in pk_th}, tone, tone_hex, o)]
     report['thumbnails'] = thumbs
     release.preview(master, o / 'preview-telegram.mp4')
     report['render_seconds'] = round(time.time() - t_start, 1)

@@ -104,7 +104,6 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             progress(stage, frac, msg)
 
     from . import director, research, writer, script as sc, voice, edit, audio, package, qa
-    from .sprites import SpriteFactory
 
     # 1 research
     step('research', 0.0, 'Reading the archive')
@@ -262,10 +261,10 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
              'licence': t['licence'], 'credit': t.get('credit'), 'credit_source': t.get('credit_source'), 'photoreal': False}]
     write_json(out / 'assets.json', manifest)
     meta = package.youtube_metadata(s, plan, ledger, manifest)
+    # the hook engine (studio/thumbs): three thumbnails, three hooks, and the Shorts cover — listed in youtube.json
+    meta['thumbnails'] = package.thumbnails(s, ledger, palette, out, director=brief.get('director'))
     write_json(out / 'youtube.json', meta)
     (out / 'description.txt').write_text(meta['description'], encoding='utf-8')
-    with SpriteFactory(palette, job_dir / 'sprites') as sp:
-        package.thumbnails(sp, s, ledger, out)
 
     # 9 qa
     step('qa', 0.95, 'Checking the film')

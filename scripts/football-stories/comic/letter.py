@@ -63,8 +63,8 @@ def _grunge(size, seed: int, coarse: int = 9) -> np.ndarray:
     """A rubber-stamp wear mask (1 = ink kept)."""
     r = np.random.default_rng(seed)
     w, h = size
-    import cv2
-    n = cv2.resize(r.random((max(2, h // coarse), max(2, w // coarse))).astype(np.float32), (w, h), interpolation=cv2.INTER_CUBIC)
+    low = r.random((max(2, h // coarse), max(2, w // coarse))).astype(np.float32)
+    n = np.asarray(Image.fromarray(low, 'F').resize((w, h), Image.BICUBIC), dtype=np.float32)
     fine = r.random((h, w)).astype(np.float32)
     m = (n * .7 + fine * .3)
     return np.clip((m - .18) * 3.2, 0, 1)

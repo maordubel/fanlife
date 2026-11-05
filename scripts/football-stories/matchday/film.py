@@ -774,14 +774,14 @@ def main() -> None:
             break
     report['publish'] = {'file': pub.name, 'mb': round(pub.stat().st_size / 1048576, 1), 'video': f'{k}k'}
     th = ep[CUT].get('thumbnail')
-    if th:
+    if th or CUT == 'film':   # the film always gets its thumbnails: the night's scoreline is a hook on its own
         frame = work / 'thumb-src.jpg'
         sc = 0 if tall else int(ep.get('look', {}).get('scope', 0))    # never the scope bars on a thumbnail
         crop = ['-vf', f'crop=iw-{sc * 32 // 9}:ih-{sc * 2},scale={W}:{H}'] if sc else []
-        run(['ffmpeg', '-y', '-v', 'error', '-ss', f"{th['at']:.2f}", '-i', str(master), '-frames:v', '1', *crop, str(frame)])
-        with SpriteFactory(pal, sp_dir) as sp:
-            tp = sp.thumbnail('iwt-thumb', th['text'], th['sub'], frame.as_uri())
-        Image.open(tp).convert('RGB').resize((1280, 720)).save(out / 'thumbnail.jpg', quality=92)
+        at = float((th or {}).get('at') or total * 0.3)
+        run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{at:.2f}', '-i', str(master), '-frames:v', '1', *crop, str(frame)])
+        from studio import thumbs as T   # the hook engine (docs/fanlife/68): thumbnail.jpg, -2, -3 and the Shorts cover
+        T.for_vlog(ep, CUT, frame, out)
     for kk, frac in enumerate((0.04, 0.16, 0.3, 0.45, 0.6, 0.72, 0.86, 0.96)):
         run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{total * frac:.2f}', '-i', str(master), '-frames:v', '1', '-vf', 'scale=960:-2',
              str(out / f'frame-{kk}.jpg')])
