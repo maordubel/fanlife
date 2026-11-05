@@ -24,7 +24,7 @@ from datetime import date
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageOps
 
 from .paper import BEATS, HUES
 
@@ -73,14 +73,14 @@ def ingest(set_id: str, sources: list[Path], masks: dict, club: str | None, seas
         'note': note, 'pieces': []}
     by_key = {p['key']: p for p in index['pieces']}
     for src in sources:
-        m = masks.get(src.name, {})
+        m = masks.get(str(src), masks.get(src.name, {}))
         slug = m.get('slug') or slug_of(src.name)
         try:
             import pillow_heif  # the owner's iPhone stills
             pillow_heif.register_heif_opener()
         except ImportError:
             pass
-        im = Image.open(src)
+        im = ImageOps.exif_transpose(Image.open(src))
         if im.mode in ('RGBA', 'LA', 'P'):
             # a transparent cut-out sits on the paper the studio prints on, never on black
             rgba = im.convert('RGBA')
@@ -97,6 +97,8 @@ def ingest(set_id: str, sources: list[Path], masks: dict, club: str | None, seas
         by_key[key] = {'key': key, 'description': m.get('description') or slug.replace('-', ' '),
                        'families': families(im), 'source': src.name,
                        'sha256': hashlib.sha256(dst.read_bytes()).hexdigest()[:16], 'size': list(im.size),
+                       **{k: m[k] for k in ('required', 'source_id', 'pack', 'visual_description', 'tags', 'role', 'analysis_model') if k in m},
+                       **({'source': m['source']} if m.get('source') else {}),
                        **({'illustrated': True} if m.get('illustrated') else {}),
                        **({'masked': len(m['blur'])} if m.get('blur') else {})}
     index['pieces'] = sorted(by_key.values(), key=lambda p: p['key'])

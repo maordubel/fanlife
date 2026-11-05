@@ -299,15 +299,21 @@ class Editor:
                           'start': start_f / FPS, 'frames': round(END_MIN * FPS), 'voice_at': None, 'voice_file': None, 'voice_dur': 0,
                           'words': [], 'narration': ''})
             start_f += round(END_MIN * FPS)
-        total = start_f / FPS
+        from .media_assets import place
+        shots, media_usage = place(shots, self.ledger)
+        total = sum(s['frames'] for s in shots) / FPS
         cinema.direct_plan(self, shots)
+        for s in shots:
+            if s.get('required_asset'):
+                s['cinema'] = {'entry': 'dissolve', 'lib': [], 'lower': [], 'letterbox': False}
         chapters, last = [], None
         for s in shots:
-            if s['beat'] == 0:
+            if s['chapter'] != last:
                 chapters.append({'t': s['start'], 'title': self.script['chapters'][s['chapter']]['title']})
+                last = s['chapter']
         dr = cinema.direct_mod.director_of(self)
         return {'fps': FPS, 'shots': shots, 'duration': round(total, 3), 'chapters': chapters,
-                'director': (dr or {}).get('id'), 'music_key': (dr or {}).get('music')}
+                'director': (dr or {}).get('id'), 'music_key': (dr or {}).get('music'), 'media_usage': media_usage}
 
     # ------------------------------------------------------------------ shots
     def build(self, sp: SpriteFactory, s: dict) -> Shot:
@@ -323,7 +329,8 @@ class Editor:
             cinema.dress(self, shot, s)
             return shot
         shot = self._build(sp, s)
-        cinema.dress(self, shot, s)
+        if not s.get('required_asset'):
+            cinema.dress(self, shot, s)
         return shot
 
     def _build(self, sp: SpriteFactory, s: dict) -> Shot:
@@ -468,9 +475,14 @@ class Editor:
             art = v.get('art') or (s.get('cinema') or {}).get('broll') or 'terrace-crowd'
             if art == 'gen':
                 art = 'gen:' + key_of(s['n'])
-            world = self.backdrop(art, seed)
-            d = [(1.0, 1.12, 60, -20), (1.12, 1.0, -60, 20), (1.04, 1.14, -80, 0)][seed % 3]
-            cam = cam_push(d[0], d[1], d[2], d[3], dur)
+            if s.get('required_asset'):
+                from .media_assets import require_file, whole_picture
+                world = self.world_image(f'required-{s["n"]}', lambda: whole_picture(require_file(art), (W, H), self.pal.bans))
+                cam = cam_push(1.0, 1.0, 0, 0, dur)
+            else:
+                world = self.backdrop(art, seed)
+                d = [(1.0, 1.12, 60, -20), (1.12, 1.0, -60, 20), (1.04, 1.14, -80, 0)][seed % 3]
+                cam = cam_push(d[0], d[1], d[2], d[3], dur)
             if v.get('caption'):
                 cap = fit(_img(sp.caption(k, v['caption'])), 1300, 130)
                 layers.append(Layer(cap, slide_in(cap.width / 2 + 90, 130, 0.7, frm=(-700, 0), rot0=0, rot1=0, dur=0.5, drift=False), settle=1e9))
@@ -977,7 +989,7 @@ def _render_range(args) -> str:
             if p.wait() != 0:
                 raise StageError('ENCODE_FAILED', f'ffmpeg failed on shot {i}', retryable=True)
             tmp.rename(out)
-            write_json(Path(out_dir) / f'shot-{i:04d}.cues.json', {'cues': shot.cues, 'kind': shot.meta['kind']})
+            write_json(Path(out_dir) / f'shot-{i:04d}.cues.json', {'cues': shot.cues, 'kind': shot.meta['kind'], 'required_asset': s.get('required_asset')})
     return f'{idxs[0]}-{idxs[-1]}'
 
 

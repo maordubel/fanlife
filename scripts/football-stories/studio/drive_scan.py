@@ -64,12 +64,15 @@ def static_tree() -> dict:
     return {'folders': list(inv.get('folders') or []), 'files': list(inv.get('files') or [])}
 
 
-def live_tree(root: str, log, deadline_s: float = 120.0, max_folders: int = 500, prefix: str = '') -> dict:
+def live_tree(root: str, log, deadline_s: float = 120.0, max_folders: int = 500, prefix: str = '', strict: bool = False) -> dict:
     """Breadth-first listing of a public folder and everything below it. Stops at the deadline, saying so."""
     from matchday.drive_fetch import listing  # the one Drive reader
     folders, files, queue, seen, t0 = [], [], [(root, prefix)], set(), time.time()
     while queue and len(seen) < max_folders:
         if time.time() - t0 > deadline_s:
+            if strict:
+                from .common import StageError
+                raise StageError('REQUIRED_MEDIA', 'Your Drive folder could not be fully listed before the deadline. Retry; no selected pictures were discarded.', retryable=True)
             log(f'Drive scan: stopped after {len(seen)} folders (time budget); the rest comes from the last listing')
             break
         fid, path = queue.pop(0)
@@ -78,7 +81,14 @@ def live_tree(root: str, log, deadline_s: float = 120.0, max_folders: int = 500,
         seen.add(fid)
         try:
             entries = listing(fid)
+            if strict and not entries:
+                # The public reader also returns [] for an inaccessible folder. Do not interpret that as proof
+                # that it contains no selected images, including when an otherwise readable parent has siblings.
+                raise ValueError('Folder is empty or its public listing could not be read')
         except Exception as e:  # noqa: BLE001 — a folder that does not list is reported, the scan goes on
+            if strict:
+                from .common import StageError
+                raise StageError('REQUIRED_MEDIA', f'Cannot read your Drive folder {path or root}. Check its sharing and retry.', retryable=True) from e
             log(f'Drive scan: could not list {path or "the library"} ({type(e).__name__})')
             continue
         for eid, title, is_folder in entries:
@@ -88,6 +98,9 @@ def live_tree(root: str, log, deadline_s: float = 120.0, max_folders: int = 500,
                 queue.append((eid, p))
             else:
                 files.append({'id': eid, 'path': path, 'name': title})
+    if strict and queue:
+        from .common import StageError
+        raise StageError('REQUIRED_MEDIA', 'Your selected Drive folder has too many subfolders to scan completely. Choose a more specific folder.')
     return {'folders': folders, 'files': files}
 
 
@@ -167,7 +180,7 @@ def targeted_folders(tree: dict, terms, pinned: str | None = None) -> list[dict]
     for f in scored:
         if f['score'] < TARGET_BAR or f['score'] < 0.7 * best:
             break
-        if any(f['path'].startswith(o['path'] + '/') or o['path'].startswith(f['path'] + '/') for o in out):
+        if any(f['path'] == o['path'] or f['path'].startswith(o['path'] + '/') or o['path'].startswith(f['path'] + '/') for o in out):
             continue
         out.append(f)
         if len(out) >= 3:
@@ -186,8 +199,13 @@ def plan(tree: dict, brief: dict, limit: int = 60) -> dict:
     pics, notes = [], []
     for p in packs:
         for f in files_under(tree, p['path']):
-            (pics if PICTURE.search(f['name']) else notes if NOTE.search(f['name']) else []).append({**f, 'pack': p['path']})
-    return {'terms': [' '.join(t) for t, _ in terms], 'targeted': packs, 'pictures': pics[:limit], 'notes': notes[:6]}
+            (pics if PICTURE.search(f['name']) else notes if NOTE.search(f['name']) else []).append({**f, 'pack': p['path'], 'required': bool(p.get('pinned'))})
+    # A selected folder is a requirement, not a top-N suggestion. Rank optional pictures by their own names too.
+    from .media_assets import rank_files
+    required = {f['id']: f for f in pics if f['required']}
+    optional = rank_files([f for f in pics if f['id'] not in required], brief)
+    return {'terms': [' '.join(t) for t, _ in terms], 'targeted': packs,
+            'pictures': [*required.values(), *optional[:limit]], 'notes': notes[:12]}
 
 
 def is_photo(f: dict) -> bool:

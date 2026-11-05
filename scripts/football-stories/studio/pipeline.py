@@ -50,39 +50,66 @@ STAGES = ['research', 'script', 'voice', 'graphics', 'edit', 'mix', 'master', 'p
 
 
 def ingest_art(brief: dict, log) -> list[str]:
-    """The owner's pictures for this film, the Drive library and the paper-cut set, as beat sets. Idempotent: run again
-    on every resume, because each run of the worker starts on a clean machine and only the job's JSON is kept."""
-    art_sets: list[str] = []
+    """Build a fresh manifest on every run. Explicit pictures are required; automatic discoveries are candidates."""
+    from . import kit_ingest, media_assets
+    from .common import sha256_bytes
+    try:
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
+    art_sets, entries = [], []
+    cache = Path(brief['media_cache']) if brief.get('media_cache') else None
     if brief.get('art_dir'):
-        from . import kit_ingest
-        set_id = brief['art_set']
-        files = [Path(brief['art_dir']) / a['name'] for a in brief.get('art') or [] if (Path(brief['art_dir']) / a['name']).exists()]
-        masks = {a['name']: {'illustrated': True} for a in brief.get('art') or [] if a.get('illustrated')}
-        if files:
-            kit_ingest.ingest(set_id, files, masks, brief['club_id'], brief['season'], 'Owner pictures uploaded for this film.')
-            art_sets.append(set_id)
-            log(f'Research: {len(files)} owner pictures as beat:{set_id}/…')
+        for a in brief.get('art') or []:
+            entries.append({'path': Path(brief['art_dir']) / a['name'], 'source': a.get('originalName') or a['name'],
+                            'source_id': 'upload:' + a['name'], 'required': True, 'illustrated': a.get('illustrated', False), 'pack': 'Your uploads'})
+    pack = None
     if brief.get('drive_dir'):
-        from . import kit_ingest
         root = Path(brief['drive_dir'])
         pack = read_json(Path(brief['drive_pack'])) if brief.get('drive_pack') and Path(brief['drive_pack']).exists() else None
-        rows = pack['files'] if pack else [{'file': str(p.relative_to(root)), 'targeted': False, 'pack': '', 'photo': False}
-                                           for p in sorted(root.rglob('*')) if p.is_file()]
-        pic = lambda r: (root / r['file']).suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.heic') and (root / r['file']).exists()  # noqa: E731
-        groups = {'pack': [r for r in rows if r['targeted'] and pic(r)], 'library': [r for r in rows if not r['targeted'] and pic(r)]}
-        for g, rs in groups.items():
-            if not rs:
+        rows = pack['files'] if pack else [{'file': str(p.relative_to(root))} for p in sorted(root.rglob('*')) if p.is_file()]
+        for r in rows:
+            path = root / r['file']
+            if path.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.heic'):
+                entries.append({'path': path, 'source': r.get('name') or path.name, 'source_id': r.get('source_id') or r['file'],
+                                'required': bool(r.get('required')), 'pack': r.get('pack') or 'Club library'})
+    if entries:
+        # Per-job names and content-derived slugs prevent two image.png files (or non-Latin names) overwriting each other.
+        set_id = brief.get('media_set') or brief.get('art_set') or ('media-' + brief['club_id'])
+        out = kit_ingest.BEATS / set_id
+        out.mkdir(parents=True, exist_ok=True)
+        (out / 'index.json').unlink(missing_ok=True)
+        masks, sources = {}, []
+        started, calls = time.monotonic(), 0
+        for e in entries:
+            path = e['path']
+            try:
+                from PIL import Image
+                with Image.open(path) as im:
+                    im.verify()
+            except Exception as exc:
+                if e['required']:
+                    raise StageError('REQUIRED_MEDIA', f'Your selected picture {e["source"]} is missing or unreadable. Replace it and retry.', retryable=True) from exc
+                log(f'Pictures: optional image {e["source"]} is unreadable — skipped')
                 continue
-            set_id = f'pack-{brief["club_id"]}' if g == 'pack' else f'drive-{brief["club_id"]}'
-            files = [root / r['file'] for r in rs]
-            # the story's own pack is used as the owner made it (owner, 4.11.2026): a press photograph stays a photograph
-            masks = {(root / r['file']).name: {'description': (re.sub(r'[_-]+', ' ', Path(r['file']).stem) +
-                                                                (' — press photograph of the real event' if r['photo'] else ''))}
-                     for r in rs}
-            kit_ingest.ingest(set_id, files, masks, brief['club_id'], brief['season'],
-                              "The owner's own pack for this story." if g == 'pack' else "The owner's Google Drive library.")
+            identity = sha256_bytes((e['source_id'] + ':').encode() + path.read_bytes())[:16]
+            desc = re.sub(r'[_-]+', ' ', Path(e['source']).stem)
+            # Keep the pack's per-file descriptions near that image, instead of losing them in one truncated prompt.
+            notes = [n.get('text', '') for n in (pack or {}).get('notes', []) if n.get('pack') == e['pack']]
+            mentions = [line for note in notes for line in note.splitlines() if e['source'].casefold() in line.casefold()]
+            extra = {}
+            if cache and calls < 16 and time.monotonic() - started < 120:
+                extra = media_assets.describe(path, cache, log)
+                calls += 1
+            masks[str(path)] = {**{k: v for k, v in e.items() if k != 'path'}, **extra,
+                                'slug': (kit_ingest.slug_of(e['source'])[:50] + '-' + identity),
+                                'description': (desc + (' — ' + ' '.join(mentions) if mentions else ''))[:1000]}
+            sources.append(path)
+        if sources:
+            idx = kit_ingest.ingest(set_id, sources, masks, brief['club_id'], brief['season'], 'Pictures for this production; required means selected by the owner.')
             art_sets.append(set_id)
-            log(f'Research: {len(files)} pictures from the Drive {"story pack" if g == "pack" else "library"} as beat:{set_id}/…')
+            log(f'Pictures: {len(idx["pieces"])} readable, {sum(bool(p.get("required")) for p in idx["pieces"])} required in the film')
     if brief.get('visual_style') == 'papercut':
         art_sets.append('papercut-library')
     return art_sets
@@ -106,6 +133,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             progress(stage, frac, msg)
 
     from . import director, research, writer, script as sc, voice, edit, audio, package, qa
+
+    brief = {**brief, 'media_cache': str(cache / 'images')}
+    live_sets = ingest_art(brief, log)
 
     # 1 research
     step('research', 0.0, 'Reading the archive')
@@ -139,7 +169,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             ledger = research.focus(ledger, brief.get('focus_from'), brief.get('focus_to'))
             log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '
                 f'({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
-        art_sets = [*art_sets, *ingest_art(brief, log)]
+        art_sets = [*art_sets, *live_sets]
         if brief.get('drive_pack') and Path(brief['drive_pack']).exists():
             notes = read_json(Path(brief['drive_pack'])).get('notes') or []
             ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes)[:4000]
@@ -147,10 +177,16 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
-    else:
-        # A resumed film (after the owner picked a script) runs on a fresh machine: the pictures are put back in place.
-        ingest_art(brief, lambda *_: None)
     ledger = read_json(lp)
+    from .paper import beat_index
+    from . import media_assets
+    # New uploads after Pause must reach the edit even when the ledger and chosen script already exist.
+    ledger['art_sets'] = list(dict.fromkeys([*(ledger.get('art_sets') or []), *live_sets]))
+    ledger['media_assets'] = [p for sid in live_sets for p in beat_index(sid)]
+    for asset in ledger['media_assets']:
+        if asset.get('required'):
+            media_assets.require_file(asset['key'])
+    write_json(lp, ledger)
     if not isinstance(ledger.get('story'), dict) or ledger['story'].get('version') != director.STORY_VERSION:
         director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
         write_json(lp, ledger)
@@ -193,7 +229,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     # 3 voice
     step('voice', 0.2, 'Recording narration')
     vp = job_dir / 'voice.json'
-    if not vp.exists():
+    if not vp.exists() or any(not (job_dir / 'voice' / b['file']).exists() for b in read_json(vp)['beats']):
         write_json(vp, voice.voice_script(s, job_dir / 'voice', cache / 'voice', log))
     v = read_json(vp)
 
@@ -209,7 +245,22 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from . import hyperframes
     if plan['engine'] == 'vox' and hyperframes.wanted(brief):
         plan['engine'] = hyperframes.ENGINE   # VOX drawn by HyperFrames (prototype; look 'vox-hf' or STORIES_VOX_HF=1)
+    from .common import sha256_json
+    fingerprint = sha256_json({'version': media_assets.VERSION, 'plan': plan, 'media': ledger['media_assets']})
+    mark = job_dir / 'media-render.json'
+    changed = not mark.exists() or read_json(mark).get('fingerprint') != fingerprint
+    if changed:
+        # A checkpoint made with different pictures cannot count as this edit. Keep paid writer/voice caches.
+        for name in ('shots', 'out', 'mix', 'worlds', 'vox', 'hf'):
+            shutil.rmtree(job_dir / name, ignore_errors=True)
+        for name in ('picture.mp4', 'contact-sheet.jpg'):
+            (job_dir / name).unlink(missing_ok=True)
+        write_json(mark, {'fingerprint': fingerprint})
     write_json(plan_p, plan)
+    write_json(job_dir / 'media-usage.json', plan.get('media_usage') or {})
+    usage = plan.get('media_usage') or {}
+    if usage.get('required'):
+        log(f'Pictures: {usage["used"]}/{usage["required"]} selected pictures assigned to visible shots; {usage["added_seconds"]:.0f}s added to keep every picture readable')
     log(f'Edit: {len(plan["shots"])} shots, {plan["duration"] / 60:.2f} minutes, engine {plan["engine"]}')
     step('edit', 0.4, f'Rendering {len(plan["shots"])} shots')
     picture = job_dir / 'picture.mp4'
@@ -221,6 +272,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             from .hyperframes.render import render_film as render
         render(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None,
                tick=lambda d, t: step('edit', 0.4 + 0.38 * d / max(t, 1), f'Rendering shots: {d} of {t}'))
+
+    # A successful render must acknowledge each selected image. A plan alone is not proof of inclusion.
+    media_assets.verify_rendered(job_dir, plan)
 
     # 6 mix
     step('mix', 0.8, 'Mixing sound')
@@ -275,7 +329,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 9 qa
     step('qa', 0.95, 'Checking the film')
-    report = qa.check(job_dir, master, plan, cues, float(brief['duration']), palette, log)
+    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + float(usage.get('added_seconds', 0)) / 60, palette, log)
+    report['media_usage'] = usage
     report['rights'] = rights_gaps(manifest)
     report['render_minutes'] = round((time.time() - t_start) / 60, 1)
     write_json(out / 'qa.json', report)

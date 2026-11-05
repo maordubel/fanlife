@@ -111,7 +111,7 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
         for f in ['youtube.json', 'description.txt', 'captions.en.srt', 'captions.en.vtt', 'qa.json', 'assets.json', 'shorts.json']:
             if (out / f).exists():
                 z.write(out / f, f)
-        for f in ['script.json', 'ledger.json', 'plan.json', 'log.txt']:
+        for f in ['script.json', 'ledger.json', 'plan.json', 'media-usage.json', 'log.txt']:
             if (job_dir / f).exists():
                 z.write(job_dir / f, f)
     files = {'preview.mp4': out / 'preview.mp4', 'contact-sheet.jpg': job_dir / 'contact-sheet.jpg', 'package.zip': pkg,
@@ -149,30 +149,17 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
            'kind': b.get('kind') or 'season', 'match_ids': b.get('match_ids') or [], 'opponent': b.get('opponent'),
            'tone': b.get('tone') or 'auto', 'scripts': b.get('scripts') or 1, 'choice': b.get('choice'),
            # a film made from a director's pitch: his script is written first and offered first (studio desk)
-           'lead_director': b.get('lead_director') or None}
+           'lead_director': b.get('lead_director') or None, 'media_set': 'job-' + job['id'][:40]}
     if art_dir and b.get('art'):
         out.update(art_dir=str(art_dir), art=b['art'], art_set='job-' + job['id'][:40])
     return out
 
 
-GENERIC = {'hapoel', 'maccabi', 'fc', 'fk', 'sk', 'ac', 'cf', 'club', 'sporting', 'the'}
-# Folders outside 01_Football_Stories that are one club's own pictures (owner, 4.11.2026).
-DRIVE_EXTRA = {'hapoel-tel-aviv': ['approved graphics the worker and hapoel 02 stadiums',
-                                   'approved graphics the worker and hapoel 03 props shirts']}
-
-
 def drive_folder_fits(club_id: str, club_name: str, path: str) -> bool:
-    """A Drive picture belongs to a club's film when its folder in 01_Football_Stories names the club — by a word of the
-    club's name that is not a generic one (Hapoel, Maccabi, FC…), or by every word when all are generic — or when it sits
-    in one of the club's own folders elsewhere (DRIVE_EXTRA). Never another club's folder."""
-    if any(path.startswith('04 ' + x) or x in path for x in DRIVE_EXTRA.get(club_id, [])):
-        return True
-    if not path.startswith('01 '):
-        return False
-    name = re.sub(r'[^a-z0-9]+', ' ', club_name.lower()).split()
-    own = [w for w in name if w not in GENERIC and len(w) > 2]
-    words = path.split()
-    return bool(own) and own[0] in words if own else all(w in words for w in name)
+    """Recognize complete club identities across projects; sharing 'Tel Aviv' is not a match."""
+    from .media_assets import named_clubs
+    clubs = named_clubs(path)
+    return club_id in clubs
 
 
 def fetch_drive(job: dict, jd: Path, log) -> Path | None:
@@ -193,29 +180,37 @@ def fetch_drive(job: dict, jd: Path, log) -> Path | None:
         tree = json.loads(scan_p.read_text())
     else:
         tree = drive_scan.merged_tree(drive_scan.live_tree(drive_scan.ROOT_ID, log), drive_scan.static_tree())
-        pinned = drive_scan.drive_id(b.get('drive_folder'))
-        if pinned and not any(f['id'] == pinned for f in tree['folders']):
-            sub = drive_scan.live_tree(pinned, log, deadline_s=60, prefix='pinned')
-            tree['folders'] = [{'id': pinned, 'path': 'pinned'}, *sub['folders'], *tree['folders']]
-            tree['files'] = [*sub['files'], *tree['files']]
         scan_p.write_text(json.dumps(tree, ensure_ascii=False))
         log(f"Drive scan: {len(tree['folders'])} folders, {len(tree['files'])} files")
+    # Always list an explicitly selected folder directly, including its root. The root library scan can time out
+    # before reaching it; its stale inventory must never decide which of the owner's pictures are mandatory.
+    pinned = drive_scan.drive_id(b.get('drive_folder'))
+    if pinned:
+        selected = drive_scan.live_tree(pinned, log, deadline_s=180, prefix=f'selected-{pinned}', strict=True)
+        selected['folders'].insert(0, {'id': pinned, 'path': f'selected-{pinned}'})
+        if not any(drive_scan.PICTURE.search(f['name']) for f in selected['files']):
+            raise StageError('REQUIRED_MEDIA', 'No readable pictures were found in your selected Drive folder. Check sharing (Anyone with the link), the folder link and image formats.', retryable=True)
+        ids = {f['id'] for f in selected['folders']}
+        files = {f['id'] for f in selected['files']}
+        tree = {'folders': selected['folders'] + [f for f in tree['folders'] if f['id'] not in ids],
+                'files': selected['files'] + [f for f in tree['files'] if f['id'] not in files]}
     p = drive_scan.plan(tree, b)
-    fold = lambda s: re.sub(r'[^a-z0-9]+', ' ', s.lower()).strip()  # noqa: E731
-    general = [f for f in tree['files'] if drive_sync.PICTURE.search(f['name']) and drive_folder_fits(b['club_id'], b['club_name'], fold(f['path']))
-               and f['id'] not in {x['id'] for x in p['pictures']}][:16]
+    from .media_assets import rank_files
+    # Search across projects (including THE WORKER), using complete club identity, year and scene terms.
+    chosen = {x['id'] for x in p['pictures']}
+    general = rank_files([f for f in tree['files'] if drive_sync.PICTURE.search(f['name']) and f['id'] not in chosen], b)[:24]
     if p['targeted']:
         log('Drive: targeted packs — ' + ' · '.join(f"{t['path']} ({t['score']:.0f})" for t in p['targeted']))
     else:
         log('Drive: no pack names this story; the club library only')
     d = jd / 'drive-art'
     d.mkdir(parents=True, exist_ok=True)
-    rows, got = [], 0
+    rows, got, failed = [], 0, []
     for f in [*p['pictures'], *[{**g, 'pack': ''} for g in general]]:
         sub = re.sub(r'[^A-Za-z0-9._-]+', '-', f.get('pack') or 'library').strip('-')[-60:] or 'library'
-        out = d / sub / re.sub(r'[^A-Za-z0-9._-]+', '-', f['name'])
+        out = d / sub / (f['id'] + '-' + re.sub(r'[^A-Za-z0-9._-]+', '-', f['name']))
         out.parent.mkdir(parents=True, exist_ok=True)
-        if not out.exists():
+        if not out.exists() or f.get('required'):
             try:
                 with urllib.request.urlopen(drive_sync.URL.format(id=f['id']), timeout=180) as r:
                     data = r.read()
@@ -224,10 +219,14 @@ def fetch_drive(job: dict, jd: Path, log) -> Path | None:
                 out.write_bytes(data)
             except Exception as e:  # noqa: BLE001 — reported, never guessed
                 log(f"Drive: {f['name']} did not download ({type(e).__name__})")
+                if f.get('required'):
+                    failed.append(f['name'])
                 continue
         got += 1
         rows.append({'file': str(out.relative_to(d)), 'pack': f.get('pack') or '', 'targeted': bool(f.get('pack')),
-                     'photo': drive_scan.is_photo(f)})
+                     'photo': drive_scan.is_photo(f), 'required': bool(f.get('required')), 'source_id': f['id'], 'name': f['name'], 'path': f['path']})
+    if failed:
+        raise StageError('REQUIRED_MEDIA', 'Could not download your selected pictures: ' + ', '.join(failed) + '. Check sharing and retry.', retryable=True)
     notes = []
     for n in p['notes']:
         try:
@@ -299,21 +298,23 @@ def send_reel(st: Studio, job: dict, jd: Path, log) -> None:
 
 
 def fetch_art(st: Studio, job: dict, jd: Path, log) -> Path | None:
-    """The owner's pictures named in the brief, downloaded once into the job directory."""
+    """Refresh every required upload, including after a pause; missing storage is never a stock-art fallback."""
     art = job['brief'].get('art') or []
     if not art:
         return None
     d = jd / 'owner-art'
     d.mkdir(parents=True, exist_ok=True)
-    missing = [a['name'] for a in art if not (d / a['name']).exists()]
+    missing = [a['name'] for a in art]  # refresh on resume: a file may have been replaced while paused
     if missing:
         urls = st.call({'op': 'art_urls', 'id': job['id']})['urls']
         for n in missing:
             if n not in urls:
-                log(f'Art: {n} is named in the brief but not in storage — skipped')
-                continue
-            with urllib.request.urlopen(urls[n], timeout=300) as r:
-                (d / n).write_bytes(r.read())
+                raise StageError('REQUIRED_MEDIA', f'Your uploaded picture {n} is missing from storage. Upload it again.', retryable=True)
+            try:
+                with urllib.request.urlopen(urls[n], timeout=300) as r:
+                    (d / n).write_bytes(r.read())
+            except Exception as e:
+                raise StageError('REQUIRED_MEDIA', f'Your uploaded picture {n} could not be downloaded. Retry or upload it again.', retryable=True) from e
         log(f'Art: {len(art)} owner pictures ready')
     return d
 

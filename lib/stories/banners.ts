@@ -143,6 +143,7 @@ export function statusBanner(f:Facts):Banner{
 
 /** A job's error code in plain words, for the Status tab. Unknown codes keep their own message. */
 const PLAIN:Record<string,string>={
+ REQUIRED_MEDIA:'A picture you selected could not be read or included. The film will not silently omit it. Check the file or Drive sharing, then Retry.',
  WRITER_QUOTA_DAY:'Google’s free writer used up today’s quota. The job waits and starts again by itself after midnight Pacific time.',
  WRITER_BUSY:'Google’s free writer was too busy. The job waits about 20 minutes and tries again by itself.',
  WRITER_KEY:'Google refused the writer key. Make a new free key in Google AI Studio and paste it as GEMINI_API_KEY in GitHub secrets.',

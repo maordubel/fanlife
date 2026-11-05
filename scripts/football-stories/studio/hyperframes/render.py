@@ -84,7 +84,7 @@ def render_chapter(job_dir: Path, plan: dict, palette: Palette, shots: list[dict
     sd = job_dir / 'shots'
     sd.mkdir(parents=True, exist_ok=True)
     for s in shots:
-        write_json(sd / f'shot-{s["n"]:04d}.cues.json', {'cues': comp.cues()[s['n']], 'kind': s['visual']['type'], 'engine': 'vox-hf'})
+        write_json(sd / f'shot-{s["n"]:04d}.cues.json', {'cues': comp.cues()[s['n']], 'kind': s['visual']['type'], 'engine': 'vox-hf', 'required_asset': s.get('required_asset')})
     r = hf_render(proj, out, fps, log, workers=workers)
     return {'compose_s': round(built, 1), 'render_s': r['seconds'], 'duration': comp.duration, 'fps': fps}
 
