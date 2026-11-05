@@ -1,0 +1,169 @@
+[
+ {
+  "file": "thumbnail.jpg",
+  "size": [
+   1280,
+   720
+  ],
+  "kind": "score",
+  "headline": "GATE 21 ON FIRE",
+  "chip": "4–0",
+  "label": "AEK V PAOK",
+  "sub": "OPAP ARENA · 26 APRIL 2023",
+  "legibility": {
+   "size": [
+    168,
+    94
+   ],
+   "lines": [
+    {
+     "role": "headline",
+     "text": "GATE 21",
+     "px": 12.3,
+     "contrast": 17.84,
+     "ok": true
+    },
+    {
+     "role": "headline",
+     "text": "ON FIRE",
+     "px": 12.3,
+     "contrast": 18.93,
+     "ok": true
+    },
+    {
+     "role": "chip",
+     "text": "4–0",
+     "px": 16.8,
+     "contrast": 11.19,
+     "ok": true
+    }
+   ],
+   "ok": true
+  }
+ },
+ {
+  "file": "thumbnail-2.jpg",
+  "size": [
+   1280,
+   720
+  ],
+  "kind": "emotion",
+  "headline": "NIGHT AT OPAP ARENA",
+  "sub": "AEK 4–0 PAOK",
+  "legibility": {
+   "size": [
+    168,
+    94
+   ],
+   "lines": [
+    {
+     "role": "headline",
+     "text": "NIGHT AT",
+     "px": 12.3,
+     "contrast": 17.44,
+     "ok": true
+    },
+    {
+     "role": "headline",
+     "text": "OPAP ARENA",
+     "px": 12.3,
+     "contrast": 18.77,
+     "ok": true
+    }
+   ],
+   "ok": true
+  }
+ },
+ {
+  "file": "thumbnail-3.jpg",
+  "size": [
+   1280,
+   720
+  ],
+  "kind": "question",
+  "headline": "WERE YOU THERE?",
+  "sub": "AEK V PAOK · 2023",
+  "chip": "4–0",
+  "label": "AEK V PAOK",
+  "legibility": {
+   "size": [
+    168,
+    94
+   ],
+   "lines": [
+    {
+     "role": "headline",
+     "text": "WERE YOU",
+     "px": 12.3,
+     "contrast": 17.39,
+     "ok": true
+    },
+    {
+     "role": "headline",
+     "text": "THERE?",
+     "px": 12.1,
+     "contrast": 18.82,
+     "ok": true
+    },
+    {
+     "role": "chip",
+     "text": "4–0",
+     "px": 16.8,
+     "contrast": 11.19,
+     "ok": true
+    }
+   ],
+   "ok": true
+  }
+ },
+ {
+  "file": "thumbnail-short.jpg",
+  "size": [
+   1080,
+   1920
+  ],
+  "shorts_cover": true,
+  "kind": "score",
+  "headline": "GATE 21 ON FIRE",
+  "chip": "4–0",
+  "label": "AEK V PAOK",
+  "sub": "OPAP ARENA · 26 APRIL 2023",
+  "legibility": {
+   "size": [
+    94,
+    168
+   ],
+   "lines": [
+    {
+     "role": "headline",
+     "text": "GATE",
+     "px": 11.2,
+     "contrast": 17.61,
+     "ok": true
+    },
+    {
+     "role": "headline",
+     "text": "21 ON",
+     "px": 11.2,
+     "contrast": 18.24,
+     "ok": true
+    },
+    {
+     "role": "headline",
+     "text": "FIRE",
+     "px": 10.8,
+     "contrast": 19.09,
+     "ok": true
+    },
+    {
+     "role": "chip",
+     "text": "4–0",
+     "px": 14.8,
+     "contrast": 11.07,
+     "ok": true
+    }
+   ],
+   "ok": true
+  }
+ }
+]

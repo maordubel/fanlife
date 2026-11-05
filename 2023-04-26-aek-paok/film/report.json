@@ -1,0 +1,446 @@
+{
+  "episode": "iwt-04-aek-paok-2023",
+  "cut": "film",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "bm_lewis",
+    "lang": "en-gb",
+    "speed": 0.94,
+    "licence": "Kokoro-82M, Apache-2.0",
+    "chosen": "Take B of the narration audition (matchday-voice branch), owner, 2.11.2026"
+  },
+  "beats": [
+    {
+      "n": 0,
+      "kind": "clip",
+      "clip": "IMG_2830.MOV",
+      "start": 0.0,
+      "dur": 4.2,
+      "say": ""
+    },
+    {
+      "n": 1,
+      "kind": "clip",
+      "clip": "IMG_2835.MOV",
+      "start": 4.2,
+      "dur": 7.2,
+      "say": "Two goals in three minutes… and Agia Sophia disappeared into smoke."
+    },
+    {
+      "n": 2,
+      "kind": "title",
+      "clip": "IMG_2829.MOV",
+      "start": 11.4,
+      "dur": 4.8,
+      "say": ""
+    },
+    {
+      "n": 3,
+      "kind": "chapter",
+      "clip": null,
+      "start": 16.2,
+      "dur": 2.4,
+      "say": ""
+    },
+    {
+      "n": 4,
+      "kind": "clip",
+      "clip": "IMG_2798.MOV",
+      "start": 18.6,
+      "dur": 1.6,
+      "say": ""
+    },
+    {
+      "n": 5,
+      "kind": "art",
+      "clip": null,
+      "start": 20.2,
+      "dur": 12.12,
+      "say": "For nineteen years, AEK had no home of its own. In September twenty twenty-two… it finally did. Agia Sophia, in Nea Filadelfeia."
+    },
+    {
+      "n": 6,
+      "kind": "timeline",
+      "clip": null,
+      "start": 32.32,
+      "dur": 9.2,
+      "say": "Ten years earlier, the club had gone down. Now, in its first season back home… it was chasing a title."
+    },
+    {
+      "n": 7,
+      "kind": "prop",
+      "clip": null,
+      "start": 41.52,
+      "dur": 10.8,
+      "say": "Wednesday, the twenty-sixth of April. PAOK at home. Four games left… and the title between AEK and Panathinaikos."
+    },
+    {
+      "n": 8,
+      "kind": "chapter",
+      "clip": null,
+      "start": 52.32,
+      "dur": 2.4,
+      "say": ""
+    },
+    {
+      "n": 9,
+      "kind": "black",
+      "clip": null,
+      "start": 54.72,
+      "dur": 7.4,
+      "say": "Before kick-off, the floodlights went off… and the stands lit the pitch themselves."
+    },
+    {
+      "n": 10,
+      "kind": "clip",
+      "clip": "IMG_2829.MOV",
+      "start": 62.12,
+      "dur": 5.6,
+      "say": ""
+    },
+    {
+      "n": 11,
+      "kind": "clip",
+      "clip": "IMG_2829.MOV",
+      "start": 67.72,
+      "dur": 5.4,
+      "say": ""
+    },
+    {
+      "n": 12,
+      "kind": "chapter",
+      "clip": null,
+      "start": 73.12,
+      "dur": 2.4,
+      "say": ""
+    },
+    {
+      "n": 13,
+      "kind": "art",
+      "clip": null,
+      "start": 75.52,
+      "dur": 8.56,
+      "say": "Inside ten minutes, PAOK were down to ten. Kargas, studs on Jonsson's ankle… Straight red."
+    },
+    {
+      "n": 14,
+      "kind": "black",
+      "clip": null,
+      "start": 84.08,
+      "dur": 9.0,
+      "say": "Twenty-one minutes. Kotarski plays it short to Schwab. Jonsson takes it off him… Steven Zuber."
+    },
+    {
+      "n": 15,
+      "kind": "clip",
+      "clip": "IMG_2830.MOV",
+      "start": 93.08,
+      "dur": 6.0,
+      "say": ""
+    },
+    {
+      "n": 16,
+      "kind": "art",
+      "clip": null,
+      "start": 99.08,
+      "dur": 5.8,
+      "say": "And Gate 21 answered… in flares."
+    },
+    {
+      "n": 17,
+      "kind": "art",
+      "clip": null,
+      "start": 104.88,
+      "dur": 4.6,
+      "say": "One–nil. The board says so."
+    },
+    {
+      "n": 18,
+      "kind": "black",
+      "clip": null,
+      "start": 109.48,
+      "dur": 8.88,
+      "say": "Three minutes later. A corner from Hajsafi. Jonsson heads it back across… Harold Moukoudi."
+    },
+    {
+      "n": 19,
+      "kind": "clip",
+      "clip": "IMG_2835.MOV",
+      "start": 118.36,
+      "dur": 6.4,
+      "say": ""
+    },
+    {
+      "n": 20,
+      "kind": "clip",
+      "clip": "IMG_2840.MOV",
+      "start": 124.76,
+      "dur": 4.72,
+      "say": "Ten minutes later, the smoke was still hanging over the pitch."
+    },
+    {
+      "n": 21,
+      "kind": "clip",
+      "clip": "video_1_f40a55c92b7d4e5893301f86277b48be.MP4",
+      "start": 129.48,
+      "dur": 7.24,
+      "say": "Two–nil at the break. And Gate 21 kept singing… through half-time too."
+    },
+    {
+      "n": 22,
+      "kind": "clip",
+      "clip": "1EC12267-2022-4360-9871-9BBDB3507F65.MP4",
+      "start": 136.72,
+      "dur": 5.0,
+      "say": ""
+    },
+    {
+      "n": 23,
+      "kind": "black",
+      "clip": null,
+      "start": 141.72,
+      "dur": 10.64,
+      "say": "Seventy-seven. Paolo Fernandes hits the bar… and seconds later, Levi García. Left foot, from the edge of the box."
+    },
+    {
+      "n": 24,
+      "kind": "clip",
+      "clip": "5938EF8A-0F1C-417B-91B5-DC93071A3CC5.MP4",
+      "start": 152.36,
+      "dur": 6.4,
+      "say": ""
+    },
+    {
+      "n": 25,
+      "kind": "black",
+      "clip": null,
+      "start": 158.76,
+      "dur": 5.36,
+      "say": "And Fernandes, who had been looking for one all night…"
+    },
+    {
+      "n": 26,
+      "kind": "clip",
+      "clip": null,
+      "start": 164.12,
+      "dur": 3.6,
+      "say": ""
+    },
+    {
+      "n": 27,
+      "kind": "art",
+      "clip": null,
+      "start": 167.72,
+      "dur": 4.6,
+      "say": "Found one."
+    },
+    {
+      "n": 28,
+      "kind": "black",
+      "clip": null,
+      "start": 172.32,
+      "dur": 4.6,
+      "say": ""
+    },
+    {
+      "n": 29,
+      "kind": "black",
+      "clip": null,
+      "start": 176.92,
+      "dur": 5.6,
+      "say": "Eighteen shots for AEK. One for PAOK."
+    },
+    {
+      "n": 30,
+      "kind": "chapter",
+      "clip": null,
+      "start": 182.52,
+      "dur": 2.4,
+      "say": ""
+    },
+    {
+      "n": 31,
+      "kind": "clip",
+      "clip": "95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4",
+      "start": 184.92,
+      "dur": 4.6,
+      "say": "Ninety minutes on the board… four–nil."
+    },
+    {
+      "n": 32,
+      "kind": "clip",
+      "clip": "1B8C5511-7711-4822-BB2D-BF02B339D065.MP4",
+      "start": 189.52,
+      "dur": 4.4,
+      "say": ""
+    },
+    {
+      "n": 33,
+      "kind": "black",
+      "clip": null,
+      "start": 193.92,
+      "dur": 7.16,
+      "say": "Level on points at the top. And on Sunday… Panathinaikos, away."
+    },
+    {
+      "n": 34,
+      "kind": "chapter",
+      "clip": null,
+      "start": 201.08,
+      "dur": 2.4,
+      "say": ""
+    },
+    {
+      "n": 35,
+      "kind": "timeline",
+      "clip": null,
+      "start": 203.48,
+      "dur": 11.44,
+      "say": "A draw at Leoforos. A draw with Olympiacos. A win in Thessaloniki… and then, on the last night, Volos. Four–nil."
+    },
+    {
+      "n": 36,
+      "kind": "art",
+      "clip": null,
+      "start": 214.92,
+      "dur": 6.56,
+      "say": "Champions. The thirteenth title… the first in their new home."
+    },
+    {
+      "n": 37,
+      "kind": "clip",
+      "clip": null,
+      "start": 221.48,
+      "dur": 9.04,
+      "say": "Ten days later, PAOK again — in the cup final. Two–nil. The first double since nineteen seventy-eight."
+    },
+    {
+      "n": 38,
+      "kind": "clip",
+      "clip": "IMG_2854.MOV",
+      "start": 230.52,
+      "dur": 3.8,
+      "say": "And then… the ride home."
+    },
+    {
+      "n": 39,
+      "kind": "end",
+      "clip": null,
+      "start": 234.32,
+      "dur": 8.4,
+      "say": "Were you there? If you were there, or wish you had been, subscribe. Next week, another night from the stand."
+    },
+    {
+      "n": 40,
+      "kind": "endscreen",
+      "clip": null,
+      "start": 242.72,
+      "dur": 20.0,
+      "say": ""
+    }
+  ],
+  "speech": {
+    "00 IMG_2830.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "01 IMG_2835.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "02 IMG_2829.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "10 IMG_2829.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "11 IMG_2829.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "15 IMG_2830.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "19 IMG_2835.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "20 IMG_2840.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "21 video_1_f40a55c92b7d4e5893301f86277b48be.MP4": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "22 1EC12267-2022-4360-9871-9BBDB3507F65.MP4": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "24 5938EF8A-0F1C-417B-91B5-DC93071A3CC5.MP4": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "31 95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "32 1B8C5511-7711-4822-BB2D-BF02B339D065.MP4": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    }
+  },
+  "subscribe_stub_beat": 11,
+  "publish": {
+    "file": "iwt-04-aek-paok-2023-film-publish.mp4",
+    "mb": 83.6,
+    "video": "2538k"
+  },
+  "duration": 262.72,
+  "planned": 262.72,
+  "lufs": -14.4,
+  "true_peak": -3.9,
+  "identifying_tags_left": [],
+  "chapters": [
+    [
+      "0:00",
+      "Cold open"
+    ],
+    [
+      "0:16",
+      "A home again"
+    ],
+    [
+      "0:52",
+      "Lights out"
+    ],
+    [
+      "1:13",
+      "Ninety minutes"
+    ],
+    [
+      "3:02",
+      "Full time"
+    ],
+    [
+      "3:21",
+      "What came next"
+    ]
+  ]
+}
