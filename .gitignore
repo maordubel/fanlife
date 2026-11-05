@@ -27,6 +27,7 @@ playwright-report/
 # pre-compiled club packs, written by `npm run build` (lib/clubs/precompiled.ts)
 content/compiled/
 /scripts/marketing/kit/node_modules
+/scripts/football-stories/studio/hyperframes/node_modules
 scripts/football-stories/features/weeks/
 scripts/football-stories/studio/kit/music/cache/
 # owner material is never committed (docs/fanlife/54 · Sound and look): his camera, his photos, his licensed track

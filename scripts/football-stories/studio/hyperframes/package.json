@@ -1,0 +1,9 @@
+{
+  "name": "fanlife-studio-hyperframes",
+  "private": true,
+  "description": "The HyperFrames CLI and GSAP pinned for studio/hyperframes (VOX on HyperFrames, look 'vox-hf').",
+  "dependencies": {
+    "gsap": "3.15.1",
+    "hyperframes": "0.9.15"
+  }
+}

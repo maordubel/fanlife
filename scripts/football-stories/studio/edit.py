@@ -708,6 +708,9 @@ class Editor:
         """An owner cut-out at height h: key red repainted in the club colour, the rival's family scrubbed, alpha kept."""
         out = self.sprites_dir / f"cut-{key[4:].replace('/', '--')}-{h}.png"
         if not out.exists():
+            # a VOX worker can reach a cut-out before anything else has made the job's sprites folder: without it the
+            # save failed and the board's people were silently left out
+            out.parent.mkdir(parents=True, exist_ok=True)
             im = Image.open(cut_path(key)).convert('RGBA')
             s_ = h / im.height
             im = im.resize((max(1, round(im.width * s_)), h), Image.LANCZOS)
