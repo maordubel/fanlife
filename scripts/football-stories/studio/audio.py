@@ -516,11 +516,25 @@ def music_db(music: np.ndarray, rate: int = SR) -> float:
     return float(20 * np.log10(np.percentile(active, 75))) if len(active) else -90.0
 
 
+MUSIC_FLOOR_DB = 10.0   # a quiet passage is lifted to at most this far under the music's body (never dead air)
+
+
 def level_music(music: np.ndarray, voice_db: float, under: float = MUSIC_UNDER_VOICE_DB, rate: int = SR) -> np.ndarray:
-    """The score set `under` dB below the narrator's speech (silence stays silence)."""
+    """The score set `under` dB below the narrator's speech, its quiet passages lifted so a held beat never falls into
+    dead air (measured 5.11.2026: a 4 s silence on the CLASSIFIED sources card once the music sat lower). Silence stays
+    silence; a hush (a dip the edit asked for) is a dip, not a passage, and stays within the lift."""
     m = music_db(music, rate)
     if m <= -89:
         return music
+    w = max(1, int(0.4 * rate))
+    k = len(music) // w
+    if k >= 3:
+        rms = np.sqrt(np.mean(np.square(music[: k * w].reshape(k, w), dtype='float64'), axis=1)) + 1e-9
+        db = 20 * np.log10(rms)
+        lift = np.where(db > -60, np.clip(m - MUSIC_FLOOR_DB - db, 0, 14), 0.0)
+        lift = np.convolve(lift, np.ones(5) / 5, mode='same')  # ~2 s glide, no pumping
+        g = np.interp(np.arange(len(music)), np.arange(k) * w + w / 2, 10 ** (lift / 20))
+        music = music * g.astype('float32')
     return (music * 10 ** ((voice_db - under - m) / 20)).astype('float32')
 
 

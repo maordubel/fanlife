@@ -876,6 +876,8 @@ class Bar(El):
 
 
 # ------------------------------------------------------------------ cut-outs
+class _Angles(dict):
+    cap = 12
 class Cutout(Sprite):
     """A cut-out person or object in front of the board (layer 'near': it moves faster than the paper as the camera
     glides, which is what makes the board read as depth). It rises in, breathes, and leaves before the cut."""
@@ -895,7 +897,7 @@ class Cutout(Sprite):
             else:
                 py = y + (1 - k) * (img.height / res * 0.9 + 120)
             py += 5 * math.sin((t - t0) * 2.2)
-            r = 1.2 * math.sin((t - t0) * 1.3)
+            r = round(1.2 * math.sin((t - t0) * 1.3) / 0.4) * 0.4   # a sway in steps, so its few angles are drawn once
             if exit_at is not None and t > exit_at:
                 ko = ease_in_out((t - exit_at) / 0.55)
                 if motion == 'slide':
@@ -908,3 +910,4 @@ class Cutout(Sprite):
         w, h = img.width / res, img.height / res
         super().__init__(img, pose, z=z, kind='cutout', rect=rect or (x - w / 2, y - h / 2, w, h),
                          settle=1e9 if exit_at is None else exit_at + 0.6, layer=layer, t0=t0)
+        self._cache = _Angles()

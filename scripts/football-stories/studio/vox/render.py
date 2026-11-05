@@ -84,17 +84,32 @@ def place(plan: dict, style: dict, seed: str) -> dict:
     return {'shots': out, 'boards': boards}
 
 
-def board_paper(b: dict, seed: int, warm: bool, accent, photos=(), years=(), centres=()) -> Image.Image:
+def paper_safe(a: np.ndarray, most: float = 0.2) -> np.ndarray:
+    """Warm paper is a beige, never a yellow: wherever the paper's hue sits in the yellow band (38–70°) its
+    saturation is held under `most` (the scanner counts a pixel only from 0.35), so no club's rival yellow can come
+    out of the table, however warm the director wants it."""
+    mx, mn = a.max(-1), a.min(-1)
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    d = np.maximum(mx - mn, 1e-3)
+    hue = np.where(mx == r, ((g - b) / d) % 6, np.where(mx == g, (b - r) / d + 2, (r - g) / d + 4)) * 60
+    sat = (mx - mn) / np.maximum(mx, 1)
+    band = (hue >= 34) & (hue <= 74) & (sat > most)
+    k = np.where(band, most / np.maximum(sat, 1e-3), 1.0)[..., None]
+    return mx[..., None] - (mx[..., None] - a) * k
+
+
+def board_paper(b: dict, seed: int, warm: bool, accent, photos=(), years=(), centres=(), bans=()) -> Image.Image:
     """The table the film is laid out on: warm crumpled newsprint the size of the board, older cuttings and faded
     archive prints scattered in the gutters, the season's years printed huge and faint, and a pencil line from beat to
     beat — the path the camera is about to take."""
     from ..paper import crumpled
     w, h = int(b['w'] * BR), int(b['h'] * BR)
-    tone = '#EFE1C4' if warm else '#ECE2CB'
+    tone = '#F0DCC6' if warm else '#ECE0CE'
     small = crumpled(seed % 9, (max(64, w // 2), max(64, h // 2)), tone)
     a = np.asarray(small.convert('RGB'), 'float32')
-    a = a * (np.array([1.02, 0.985, 0.92], 'float32') if warm else np.array([1.0, 0.98, 0.93], 'float32')) + np.array([10, 8, 2], 'float32')
-    im = Image.fromarray(np.clip(a, 0, 255).astype('uint8'), 'RGB').resize((w, h), Image.BICUBIC)
+    a = a * (np.array([1.02, 0.985, 0.94], 'float32') if warm else np.array([1.0, 0.985, 0.95], 'float32')) + np.array([8, 6, 3], 'float32')
+    a = paper_safe(np.clip(a, 0, 255))
+    im = Image.fromarray(a.astype('uint8'), 'RGB').resize((w, h), Image.BICUBIC)
     del a
     rng = np.random.default_rng(seed)
     d = ImageDraw.Draw(im, 'RGBA')
@@ -122,7 +137,8 @@ def board_paper(b: dict, seed: int, warm: bool, accent, photos=(), years=(), cen
         pw_, ph_ = int(rng.uniform(520, 900) * BR), int(rng.uniform(340, 560) * BR)
         s_ = max(pw_ / src.width, ph_ / src.height)
         src = src.resize((max(pw_, int(src.width * s_)), max(ph_, int(src.height * s_))), Image.BILINEAR).crop((0, 0, pw_, ph_))
-        src = E.photo_treat(src, amount=0.75)
+        from ..paper import scrub
+        src = E.photo_treat(scrub(src, bans), amount=0.75)
         src = Image.blend(src, Image.new('RGB', src.size, (236, 226, 204)), 0.35)
         card, pad = E.paper(pw_ / BR + 24, ph_ / BR + 24, BR, seed + k, tone=(246, 240, 226), tape=2)
         card.alpha_composite(src.convert('RGBA'), (int(pad + 12 * BR), int(pad + 12 * BR)))
@@ -254,7 +270,8 @@ class VoxFilm:
         if not pp.exists():
             sd = E.hsh(self.seed, board)
             im = board_paper(b, sd, self.style.get('warm', False), hex_rgb(self.ed.pal.accent), self._photos(board),
-                             self._years(), [(self.where(m)['ox'] + PW / 2, self.where(m)['oy'] + PH / 2) for m in b['panels']])
+                             self._years(), [(self.where(m)['ox'] + PW / 2, self.where(m)['oy'] + PH / 2) for m in b['panels']],
+                             list(self.ed.pal.bans))
             tmp = pp.with_name(f'{pp.stem}.{os.getpid()}.tmp.png')
             im.save(tmp, compress_level=1)
             os.replace(tmp, pp)
@@ -360,8 +377,10 @@ class VoxFilm:
             glass.append(Scorebug(gfx.Inks(self.ed.pal), self.ed.ledger.get('club_name') or '', str(self.ed.ledger.get('season') or ''), cin['bug']))
         if os.environ.get('STORIES_BURN_CAPTIONS', '1') != '0' and s.get('words') and s.get('voice_at') is not None:
             glass.append(Captions(s['words'], s['voice_at'] - s['start'], self.ed.pal.accent))
+        # the Terrace's warmth is in its paper (board_paper), not in a grade over the frame: a grade would warm the
+        # photographs and the cards too, and warm paper must never drift into the rival's yellow (paper_safe)
         grade = [look.Grade(letterbox=bool(cin.get('letterbox')), hush=bool(cin.get('hush')), leak=bool(cin.get('leak')),
-                            seed=1000 + n * 7, dur=dur, vignette=0.2, warm=bool(self.style.get('warm')))]
+                            seed=1000 + n * 7, dur=dur, vignette=0.2)]
         return {'glass': glass, 'grade': grade}
 
     def cues(self, n: int) -> list:
