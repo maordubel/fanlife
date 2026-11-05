@@ -60,6 +60,14 @@ class ProduceError(RuntimeError):
     pass
 
 
+def engine_of(ep: dict) -> str:
+    """'vox' — the case board on VOX's camera, the leading edit (owner, 5.11.2026) — unless the episode asks for
+    "engine": "classic" or the run sets CLASSIFIED_VOX=0."""
+    if os.environ.get('CLASSIFIED_VOX', '1') == '0' or ep.get('engine') == 'classic':
+        return 'classic'
+    return 'vox'
+
+
 # ------------------------------------------------------------------ 1 · the episode against the panel map
 def validate(ep: dict, man: dict | None = None) -> list[str]:
     """Everything that would make the film wrong before a frame is drawn. [] = good to go."""
@@ -319,24 +327,26 @@ def plan_of(beats, raw: list[dict], voices: dict, fps: int) -> dict:
     return {'fps': fps, 'duration': round(total, 3), 'shots': shots, 'chapters': chapters}
 
 
-def write_cues(job: Path, plan: dict, raw: list[dict]) -> int:
-    """The effect cues of every shot, for the studio mix (which levels and thins them under the narrator)."""
+def write_cues(job: Path, plan: dict, raw: list[dict], board: dict | None = None) -> int:
+    """The effect cues of every shot, for the studio mix (which levels and thins them under the narrator). `board`
+    (the case board's own cues by shot: paper as a print lands, the typewriter, the pen, the stamp, a whoosh on each
+    glide) replaces the living comic's transition, stamp and chapter sounds."""
     d = job / 'shots'
     d.mkdir(parents=True, exist_ok=True)
     n = 0
     for s, r in zip(plan['shots'], raw):
-        cues = []
-        if s['n'] > 1 and r.get('transition') in TRANSITION_CUES:
+        cues = [[float(a), b] for a, b in board.get(s['n'], [])] if board is not None else []
+        if board is None and s['n'] > 1 and r.get('transition') in TRANSITION_CUES:
             cues.append([0.0, TRANSITION_CUES[r['transition']]])
         for e in r.get('fx') or []:
             if not isinstance(e, dict):
                 continue
             t0 = float(e['t0']) if isinstance(e.get('t0'), (int, float)) else None
-            if e['type'] == 'stamp' and t0 is not None:
+            if e['type'] == 'stamp' and t0 is not None and board is None:
                 cues.append([t0 + .14, 'stamp'])
             elif e['type'] == 'smash' and t0 is not None:
                 cues.append([t0, 'glass' if e.get('text', 'SMASH!') in GLASS else 'pop'])
-            elif e['type'] == 'chapter':
+            elif e['type'] == 'chapter' and board is None:
                 cues.append([float(e.get('t0', .25)), 'paper'])
             elif e['type'] == 'follow' and isinstance(e.get('press_at'), (int, float)):
                 cues.append([float(e['press_at']), 'pop'])
@@ -440,11 +450,23 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
     release.write_json(o / 'episode.resolved.json', ep)
     log(f"Clock: {len(beats)} beats, {plan['duration'] / 60:.2f} min, {len(voices)} narrated lines")
 
-    # 3 · the mix
-    from studio import audio
+    # 3 · the picture's plan (VOX's case board — the leading edit — or the classic living comic), then the mix
     tone = ep.get('tone', 'LAUGH')
+    tone_hex = man['tones'][tone]['color']
+    assets = {}
+    for d in panels:
+        assets.update(scan_folder(Path(d), 'auto', man))
+    report['engine'] = engine_of(ep)
+    if report['engine'] == 'vox':
+        from comic import casefile
+        comp = casefile.CaseFilm(ep_c, beats, assets, size, allow_model, 'slate', log, plan=plan, work=job / 'vox')
+        board_cues = comp.cues()
+    else:
+        comp, board_cues = compose.Composer(ep_c, beats, assets, size, allow_model, 'slate', log), None
+    log(f"Picture: {'the VOX case board' if board_cues is not None else 'the classic living comic'}")
+    from studio import audio
     track = music if music is not None else (ep.get('music') or man['tones'][tone].get('music'))
-    report['cues'] = write_cues(job, plan, raw)
+    report['cues'] = write_cues(job, plan, raw, board_cues)
     music_info = None
     try:
         style = f'track:{track}' if track and track != 'synth' else 'synth'
@@ -458,15 +480,13 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
         report['music'] = f'synth (the studio\'s composed score; {track} was not available)'
 
     # 4 · the picture, on the same clock, with the captions burned in
-    tone_hex = man['tones'][tone]['color']
-    assets = {}
-    for d in panels:
-        assets.update(scan_folder(Path(d), 'auto', man))
-    comp = compose.Composer(ep_c, beats, assets, size, allow_model, 'slate', log)
     comp.post = Burner(plan, tone_hex, size)
     master = o / 'master.mp4'
     rep = comp.render(master, mix)
     report.update({'seconds': rep.get('seconds'), 'missing': rep.get('missing'), 'depth': rep.get('depth')})
+    for k in ('stamps', 'dropped_fx'):
+        if k in rep:
+            report[k] = rep[k]
 
     # 5 · captions, QA
     from studio import package, qa
