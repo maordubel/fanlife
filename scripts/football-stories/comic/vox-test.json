@@ -1,5 +1,0 @@
-{"note": "TEMPORARY (remove before merge): renders FILE 01 on the VOX case board and sends it to the owner's Telegram as a DRAFT. The approval is the owner's own, recorded on studio job 09d8ad54-272a-4ff7-a4da-7f8426c276ab (kind classified, script draft 3, approved by the owner 2026-11-05T05:38:16Z); kinds.check_approval stops the run if the episode's script changed since.",
- "spec": {"file": "file01", "number": "01", "episode": "file01-the-bottle.json", "script_version": "draft 3, 4.11.2026",
-          "approved": true, "approved_by": "owner", "approved_at": "2026-11-05T05:38:16.210Z",
-          "job": "09d8ad54-272a-4ff7-a4da-7f8426c276ab"},
- "run": 1}
