@@ -42,8 +42,9 @@ CLASSES = {
     'pup': 'puppet', 'ppl': 'person', 'sup': 'supporter', 'obj': 'object', 'era': 'object', 'doc': 'document',
     'ins': 'insert', 'layer': 'layer', 'sky': 'sky', 'ground': 'ground', 'city': 'city', 'tr': 'transition',
     'clip': 'clip', 'fx': 'fx',
+    'thumb': 'thumb',   # thumbnail heroes (thumb-hero-*, thumb-classified-*): studio/thumbs only, never in a film's shot
 }
-SKIP = {'cl': 'CLASSIFIED panel', 'f01': 'CLASSIFIED panel', 'thumb': 'thumbnail', 'tex': 'texture', 'map': 'map plate',
+SKIP = {'cl': 'CLASSIFIED panel', 'f01': 'CLASSIFIED panel', 'tex': 'texture', 'map': 'map plate',
         'chap': 'series plate', 'end': 'series plate', 'banner': 'channel banner', 'iwt': 'I WAS THERE scrapbook kit'}
 CUT = {'puppet', 'person', 'supporter', 'object', 'document', 'insert', 'layer', 'transition'}   # keyed when on flat paper
 PICTURE = re.compile(r'\.(png|jpe?g|webp)$', re.I)

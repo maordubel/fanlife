@@ -109,7 +109,7 @@ def run_classified(st, job: dict, jd: Path, progress, log) -> dict:
     report = read_json(o / 'report.json') if (o / 'report.json').exists() else {}
     shorts = [{'file': s['file'], 'hook': s.get('hook') or '', 'seconds': s.get('seconds') or 0} for s in report.get('shorts') or [] if s.get('file') and Path(s['file']).exists()]
     files = {'preview.mp4': o / 'preview-telegram.mp4', 'captions.en.srt': o / 'captions.en.srt', 'captions.en.vtt': o / 'captions.en.vtt',
-             'contact-sheet.jpg': out / 'contact-sheet.jpg', **{f'thumbnail-{i}.jpg': o / f'thumbnail-{i}.jpg' for i in (1, 2, 3)}}
+             'contact-sheet.jpg': out / 'contact-sheet.jpg', **{f'thumbnail-{i}.jpg': o / f'thumbnail-{i}.jpg' for i in (1, 2, 3, 'short')}}
     pkg = [o / n for n in ('youtube.json', 'description.txt', 'qa.json', 'report.json', 'telegram-draft.txt', 'captions.en.srt', 'episode.resolved.json')]
     art = upload_set(st, job['id'], o / 'master.mp4', files, pkg, shorts, log)
     qa = read_json(o / 'qa.json') if (o / 'qa.json').exists() else {'ok': False, 'checks': []}
@@ -151,7 +151,8 @@ def run_vlog(st, job: dict, jd: Path, progress, log) -> dict:
     progress('research', 0.03, 'The match and its record')
     try:
         m = V.match_from_catalog(spec['club_id'], spec['match']['id'])
-        m['club'] = {'id': spec['club_id'], 'name': spec.get('club_name') or m.get('club_name'), 'accent': pal.get('primary') or '#D71920'}
+        m['club'] = {'id': spec['club_id'], 'name': spec.get('club_name') or m.get('club_name'), 'accent': pal.get('primary') or '#D71920',
+                     'bans': pal.get('bans') or []}
         slug = re.sub(r'[^a-z0-9]+', '-', f"{spec['club_id']}-{m.get('date') or ''}".lower()).strip('-')
         footage = jd / 'footage' / f'vlog-{slug}'
         if not footage.exists() or not any(footage.rglob('*')):
@@ -174,7 +175,8 @@ def run_vlog(st, job: dict, jd: Path, progress, log) -> dict:
     tmp = outside_repo(job['id'], 'vlog-up')
     tmp.mkdir(parents=True, exist_ok=True)
     preview = V.telegram_size(publish, tmp / 'preview.mp4') if publish.stat().st_size > 48 * 1024 * 1024 else publish
-    files = {'preview.mp4': preview, 'thumbnail-1.jpg': Path(film['thumbnail']) if film.get('thumbnail') else None}
+    files = {'preview.mp4': preview, 'thumbnail-1.jpg': Path(film['thumbnail']) if film.get('thumbnail') else None,
+             **{f'thumbnail-{k}.jpg': Path(film[f'thumbnail_{k}']) for k in ('2', '3', 'short') if film.get(f'thumbnail_{k}')}}
     if srt and srt.exists():
         files['captions.en.srt'] = srt
         files['captions.en.vtt'] = srt_to_vtt(srt, tmp / 'captions.en.vtt')
@@ -238,7 +240,7 @@ def upload_set(st, job_id: str, master: Path, files: dict, package: list, shorts
                  'package': {'path': prefix + 'package.zip', 'bytes': size('package.zip')}}
     if 'preview.mp4' in present:
         art['preview'] = {'path': prefix + 'preview.mp4', 'bytes': size('preview.mp4')}
-    th = [{'path': prefix + f'thumbnail-{i}.jpg', 'bytes': size(f'thumbnail-{i}.jpg')} for i in (1, 2, 3) if f'thumbnail-{i}.jpg' in present]
+    th = [{'path': prefix + f'thumbnail-{i}.jpg', 'bytes': size(f'thumbnail-{i}.jpg')} for i in (1, 2, 3, 'short') if f'thumbnail-{i}.jpg' in present]
     if th:
         art['thumbnails'] = th
     if 'captions.en.srt' in present and 'captions.en.vtt' in present:

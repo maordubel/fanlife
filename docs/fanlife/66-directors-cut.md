@@ -165,7 +165,8 @@ disk validates exactly as before. The `follow` and `end` beats the studio adds a
 The owner's Drive folder **Dynamic Football Fan Art** (`studio/cinema/library.py`) is listed on every run, downloaded and
 cut out of its paper once (actions/cache, keyed by the listing), and read by the render through `STORIES_CINEMA_LIB`.
 Without it the film is exactly the house edit. The prefix of a file says what it is (`pup-`, `ppl-`, `sup-`, `obj-`,
-`era-`, `doc-`, `ins-`, `layer-`, `sky-`, `ground-`, `city-`, `tr-`, `clip-`); `cl-`, `f01-`, `thumb-`, `iwt-`, `map-`,
+`era-`, `doc-`, `ins-`, `layer-`, `sky-`, `ground-`, `city-`, `tr-`, `clip-`); `thumb-` is kept for the thumbnails only
+(doc 68); `cl-`, `f01-`, `iwt-`, `map-`,
 `tex-`, series plates are not used in documentaries. `-kr` pieces wear the club's colour; every piece is scrubbed of the
 rival's families.
 

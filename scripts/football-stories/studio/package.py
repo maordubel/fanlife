@@ -9,8 +9,6 @@ from pathlib import Path
 from PIL import Image
 
 from .common import CHANNEL_HANDLE, CHANNEL_ID, CHANNEL_NAME, KIT, SLOGAN, Palette, write_json
-from .paper import art_backdrop
-from .sprites import SpriteFactory
 
 
 def ts_srt(t: float) -> str:
@@ -186,21 +184,11 @@ def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
     return text[:4900]
 
 
-def thumbnails(sp: SpriteFactory, script: dict, ledger: dict, out: Path) -> list[Path]:
-    arts = ['terrace-crowd', 'tunnel', 'supporter']
-    paths = []
-    for i, th in enumerate(script['thumbnails'][:3]):
-        a = out / f'_thumbart-{i}.jpg'
-        if arts[i] == 'supporter':
-            from .paper import supporter_scene
-            supporter_scene(9, (1280, 720)).save(a, quality=92)
-        else:
-            art_backdrop(arts[i], (1280, 720)).save(a, quality=92)
-        p = sp.thumbnail(f'{i}', th['text'], f"{ledger['club_name']} · {ledger['season'].replace('/', '–')}", a.as_uri())
-        jpg = out / f'thumbnail-{i + 1}.jpg'
-        Image.open(p).convert('RGB').save(jpg, quality=90, optimize=True)
-        paths.append(jpg)
-    return paths
+def thumbnails(script: dict, ledger: dict, palette: Palette, out: Path, director: str | None = None) -> list[dict]:
+    """Three thumbnails with three different hooks (score, emotion, question) and the Shorts cover — the hook engine
+    (studio/thumbs, docs/fanlife/68-thumbnail-hooks.md). Returns the rows youtube.json lists."""
+    from . import thumbs
+    return thumbs.for_film(script, ledger, palette, out, director=director)
 
 
 def youtube_metadata(script: dict, plan: dict, ledger: dict, manifest: dict) -> dict:

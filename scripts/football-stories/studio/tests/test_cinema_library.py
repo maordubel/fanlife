@@ -154,8 +154,11 @@ class Names(unittest.TestCase):
         self.assertEqual(c('ground-1950s-int-kr')['era'], 1950)
         self.assertEqual(c('ground-1950s-int-kr')['side'], 'int')
         self.assertEqual(c('tr-scarf-whip-kr')['cls'], 'transition')
-        for skip in ('cl-dossier-n', 'f01-panel-03', 'thumb-x-kr', 'iwt-tape-piece', 'map-europe-n', 'tex-paper-n', 'zzz-x'):
+        for skip in ('cl-dossier-n', 'f01-panel-03', 'iwt-tape-piece', 'map-europe-n', 'tex-paper-n', 'zzz-x'):
             self.assertEqual(c(skip)['cls'], 'skip', skip)
+        # a thumbnail hero is kept for studio/thumbs (5.11.2026) — as its own class, which no film shot ever takes
+        self.assertEqual(c('thumb-x-kr')['cls'], 'thumb')
+        self.assertEqual(c('thumb-hero-derby-kr')['colour'], 'kr')
 
 
 class Cutting(unittest.TestCase):
@@ -208,7 +211,8 @@ class Sync(unittest.TestCase):
         self.assertFalse(lib.by['layer-rain-stand-kr-bg']['keyed'])
         self.assertEqual(lib.by['layer-rain-stand-kr-fg']['w'], lib.by['layer-rain-stand-kr-bg']['w'])  # registered, not cropped
         self.assertNotIn('cl-dossier-n', lib.by)
-        self.assertNotIn('thumb-x-kr', lib.by)
+        self.assertEqual(lib.by['thumb-x-kr']['cls'], 'thumb')        # kept for the thumbnails, not cut out of its paper
+        self.assertFalse(lib.by['thumb-x-kr']['keyed'])
 
     def test_a_second_sync_downloads_nothing(self):
         d = Path(tempfile.mkdtemp(prefix='cinema-lib-sync-'))
