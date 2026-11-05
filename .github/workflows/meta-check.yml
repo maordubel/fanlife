@@ -1,0 +1,32 @@
+name: Meta connection check
+# Read-only: confirms the Page, the Instagram account and the token the social publisher uses. Posts nothing, prints
+# no token. Temporary (push to this branch); removed once the connection is confirmed.
+on:
+  push:
+    branches: [claude/blissful-keller-no0d7q]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check
+        env:
+          PAGE: ${{ vars.META_PAGE_ID }}
+          IG: ${{ vars.META_IG_USER_ID }}
+          TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          V: ${{ vars.META_GRAPH_VERSION }}
+        run: |
+          V=${V:-v21.0}; G="https://graph.facebook.com/$V"
+          echo "META_PAGE_ID set: $([ -n "$PAGE" ] && echo yes || echo NO)"
+          echo "META_IG_USER_ID set: $([ -n "$IG" ] && echo yes || echo NO)"
+          echo "META_PAGE_TOKEN set: $([ -n "$TOKEN" ] && echo yes || echo NO)"
+          [ -n "$TOKEN" ] || exit 1
+          echo "--- who the token is"; curl -s "$G/me?fields=id,name&access_token=$TOKEN" | jq -c 'del(.access_token)'
+          echo "--- the token (type, app, expiry, scopes)"
+          curl -s "$G/debug_token?input_token=$TOKEN&access_token=$TOKEN" | jq -c '.data // . | {type, application, is_valid, expires_at, data_access_expires_at, scopes, granular_scopes, error}'
+          echo "--- the page"; curl -s "$G/$PAGE?fields=id,name,instagram_business_account&access_token=$TOKEN" | jq -c 'del(.access_token)'
+          echo "--- the instagram account"; curl -s "$G/$IG?fields=id,username,name&access_token=$TOKEN" | jq -c .
+          echo "--- can publish to instagram (content_publishing_limit)"; curl -s "$G/$IG/content_publishing_limit?access_token=$TOKEN" | jq -c .
