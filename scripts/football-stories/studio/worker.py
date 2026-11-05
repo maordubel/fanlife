@@ -116,7 +116,7 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
                 z.write(job_dir / f, f)
     files = {'preview.mp4': out / 'preview.mp4', 'contact-sheet.jpg': job_dir / 'contact-sheet.jpg', 'package.zip': pkg,
              'captions.en.srt': out / 'captions.en.srt', 'captions.en.vtt': out / 'captions.en.vtt',
-             **{f'thumbnail-{i}.jpg': out / f'thumbnail-{i}.jpg' for i in (1, 2, 3)}}
+             **{f'thumbnail-{i}.jpg': out / f'thumbnail-{i}.jpg' for i in (1, 2, 3, 'short')}}
     files = {k: v for k, v in files.items() if v.exists()}
     shorts = [x for x in (read_json(out / 'shorts.json') if (out / 'shorts.json').exists() else []) if Path(x['file']).exists()]
     for i, x in enumerate(shorts, 1):
@@ -130,7 +130,7 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
         st.put(urls[n], p, ctype=CTYPES.get(p.suffix, 'application/octet-stream'))
     art = {'master': {'chunks': [{'path': prefix + n, 'bytes': len(c)} for n, c in zip(names, chunks)], 'bytes': len(blob), 'sha256': sha},
            'preview': {'path': prefix + 'preview.mp4', 'bytes': files['preview.mp4'].stat().st_size},
-           'thumbnails': [{'path': prefix + f'thumbnail-{i}.jpg', 'bytes': files[f'thumbnail-{i}.jpg'].stat().st_size} for i in (1, 2, 3) if f'thumbnail-{i}.jpg' in files],
+           'thumbnails': [{'path': prefix + f'thumbnail-{i}.jpg', 'bytes': files[f'thumbnail-{i}.jpg'].stat().st_size} for i in (1, 2, 3, 'short') if f'thumbnail-{i}.jpg' in files],
            'captions': {'srt': {'path': prefix + 'captions.en.srt', 'bytes': files['captions.en.srt'].stat().st_size},
                         'vtt': {'path': prefix + 'captions.en.vtt', 'bytes': files['captions.en.vtt'].stat().st_size}},
            'contact': {'path': prefix + 'contact-sheet.jpg', 'bytes': files['contact-sheet.jpg'].stat().st_size} if 'contact-sheet.jpg' in files else None,

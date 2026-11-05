@@ -242,7 +242,7 @@ class Picker:
 
     def ok(self, p: dict, c: dict) -> bool:
         st = p['stem']
-        if st.startswith(NEVER) or p['cls'] in ('sheet', 'fx', 'skip'):
+        if st.startswith(NEVER) or p['cls'] in ('sheet', 'fx', 'skip', 'thumb'):
             return False
         for w, need in PIECE_WEATHER.items():
             if w in p['words'] and need not in c['weather']:

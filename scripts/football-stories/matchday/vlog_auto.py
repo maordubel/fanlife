@@ -650,7 +650,7 @@ def assemble(w: dict, match: dict, club: dict, ledger: dict, footage_dir: Path, 
         'id': f"iwt-{n:02d}-{slug(fx['home_short'])}-{slug(fx['away_short'])}-{fx['year']}",
         'title': f"I WAS THERE · {place}, {fx['date_long']} · {fx['home']} {score} {fx['away']}",
         'folder': footage_dir.name, 'auto': {'made': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'), 'match_id': match.get('id'),
-                                             'club_id': club.get('id')},
+                                             'club_id': club.get('id'), 'bans': list(club.get('bans') or [])},
         'accent': club.get('accent') or '#D71920',
         'music': w.get('music') if isinstance(w.get('music'), dict) else {'track': 'atlasaudio-sports', 'gain': 0.6},
         'look': {'scope': 54, 'vignette': 0.32, 'paper': '#1A1813', 'vertical': 'fill'},
@@ -1380,7 +1380,10 @@ def render(episode: Path, footage_dir: Path, out_dir: Path, log, cuts: tuple[str
         name = f"{ep['id']}-{cut}"
         files = {'publish': d / f'{name}-publish.mp4', 'master': d / f'{name}.mp4', 'preview': d / f'{name}-preview.mp4',
                  'captions': d / f'{name}.en.srt', 'report': d / 'report.json', 'description': d / 'youtube-description.txt',
-                 'thumbnail': d / 'thumbnail.jpg', 'marketing': d / 'marketing.txt'}
+                 'thumbnail': d / 'thumbnail.jpg', 'marketing': d / 'marketing.txt',
+                 # the hook engine's other variants and the Shorts cover (studio/thumbs, docs/fanlife/68)
+                 'thumbnail_2': d / 'thumbnail-2.jpg', 'thumbnail_3': d / 'thumbnail-3.jpg', 'thumbnail_short': d / 'thumbnail-short.jpg',
+                 'thumbnails': d / 'thumbnails.json'}
         res[cut] = {k: str(v) for k, v in files.items() if v.exists()}
         res[cut]['frames'] = [str(x) for x in sorted(d.glob('frame-*.jpg'))]
         if (d / 'report.json').exists():
@@ -1500,7 +1503,8 @@ def main() -> None:
         if args.cmd == 'match':
             m = match_from_catalog(args.club, args.match)
             pal = json.loads(args.palette.read_text()).get(args.club, {}) if args.palette else {}
-            m['club'] = {'id': args.club, 'name': pal.get('club_name') or m['club_name'], 'accent': pal.get('primary') or '#D71920'}
+            m['club'] = {'id': args.club, 'name': pal.get('club_name') or m['club_name'], 'accent': pal.get('primary') or '#D71920',
+                         'bans': pal.get('bans') or []}
             args.out.write_text(json.dumps(m, indent=1, ensure_ascii=False))
             log(json.dumps({k: m[k] for k in ('id', 'date', 'home', 'away', 'score')} | {'claims': len(m['facts']), 'club': m['club']}, ensure_ascii=False))
         elif args.cmd == 'episode':
