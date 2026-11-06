@@ -292,7 +292,7 @@ class Builder:
             if cp:
                 clip = ClipWorld(cp, ed.pal.bans, 0.0, accent=ed.pal.accent if piece_meta(key).get('accent') == 'key-red' else None)
         W_, H_ = int(w * self.res), int(h * self.res)
-        if self.s.get('required_asset') == key:
+        if self.s.get('required_asset') == key or self.s.get('archive_asset') == key:
             from ..media_assets import require_file, whole_picture
             pic = whole_picture(require_file(key), (W_, H_), ed.pal.bans)
         else:
@@ -1360,7 +1360,7 @@ def illustration(ed, s, B: Builder) -> Panel:
     if v.get('caption'):
         cw = B.words(str(v['caption']), cx - 560, cy + 210, 64, 0.9, max_w=1000, style='rise', fill=PAPER, hot_fill=PAPER, plate=INK, shift=6, rot=rot)
         B.highlight(cw.rect, cw.settle + 0.1, 'caption')
-    if s.get('required_asset'):
+    if s.get('required_asset') or s.get('archive_asset'):
         P.look(0.0, cx, cy, 0.95)
         P.look(B.dur, cx, cy, 1.0)
         return P

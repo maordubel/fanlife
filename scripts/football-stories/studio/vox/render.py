@@ -211,7 +211,7 @@ class VoxFilm:
             try:
                 self._panels[n] = compose(self.ed, s, RES, self.style)
             except Exception as e:  # noqa: BLE001 — one beat the board cannot draw must not cost the film
-                if s.get('required_asset'):
+                if s.get('required_asset') or s.get('archive_asset'):
                     raise  # selected pictures cannot be replaced by a generic fallback
                 import sys
                 print(f'Vox: beat {n} ({s["visual"].get("type")}) falls back to its picture: {type(e).__name__}: {e}', file=sys.stderr)

@@ -97,7 +97,7 @@ def ingest(set_id: str, sources: list[Path], masks: dict, club: str | None, seas
         by_key[key] = {'key': key, 'description': m.get('description') or slug.replace('-', ' '),
                        'families': families(im), 'source': src.name,
                        'sha256': hashlib.sha256(dst.read_bytes()).hexdigest()[:16], 'size': list(im.size),
-                       **{k: m[k] for k in ('required', 'source_id', 'pack', 'visual_description', 'tags', 'role', 'analysis_model') if k in m},
+                       **{k: m[k] for k in ('required', 'source_id', 'pack', 'visual_description', 'tags', 'role', 'analysis_model', 'archive', 'entity', 'context', 'date', 'creator', 'licence', 'licence_url', 'source_url', 'origin', 'pageid') if k in m},
                        **({'source': m['source']} if m.get('source') else {}),
                        **({'illustrated': True} if m.get('illustrated') else {}),
                        **({'masked': len(m['blur'])} if m.get('blur') else {})}

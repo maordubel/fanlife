@@ -191,6 +191,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
         write_json(lp, ledger)
 
+    from . import commons
+    commons_cache = cache / 'commons'
+
     # 2 script
     step('script', 0.1, 'Writing the film')
     sp_ = job_dir / 'script.json'
@@ -209,6 +212,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
                 for i, o in enumerate(made, 1):
                     write_json(job_dir / f'script-option-{i}.json', o)
                 opts = sorted(job_dir.glob('script-option-*.json'))
+            for option in opts:
+                commons.discover(brief, ledger, read_json(option), commons_cache, log)
             choice = brief.get('choice')
             if not choice:
                 return {'state': 'review', 'stage': 'script', 'options': [writer.option_summary(read_json(p), int(p.stem.rsplit('-', 1)[1])) for p in opts]}
@@ -223,8 +228,14 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         write_json(sp_, s)
         log(f'Script: "{sc.selected_title(s)}" · {sum(len(b["narration"].split()) for *_, b in sc.all_beats(s))} words')
     s = read_json(sp_)
+    archive = commons.discover(brief, ledger, s, commons_cache, log)
+    write_json(job_dir / 'commons-search.json', archive)
     if brief.get('stop_after') == 'script':
         return {'state': 'review', 'stage': 'script'}
+
+    archive_assets = commons.ingest(archive, brief, commons_cache, log)
+    ledger['media_assets'].extend(archive_assets)
+    write_json(lp, ledger)
 
     # 3 voice
     step('voice', 0.2, 'Recording narration')
@@ -312,6 +323,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         manifest['assets'] = [a for a in manifest['assets'] if a['id'] != 'score'] + [
             {'id': 'music-' + t['id'], 'kind': 'music', 'owner': f"{t['artist']} — {t['title']}", 'origin': t['origin'],
              'licence': t['licence'], 'credit': t.get('credit'), 'credit_source': t.get('credit_source'), 'photoreal': False}]
+    write_json(out / 'commons-search.json', {**archive, 'used': [a['key'] for a in archive_assets if any(sh['visual'].get('art') == a['key'] for sh in plan['shots'])]})
     write_json(out / 'assets.json', manifest)
     meta = package.youtube_metadata(s, plan, ledger, manifest)
     # the hook engine (studio/thumbs): three thumbnails, three hooks, and the Shorts cover — listed in youtube.json
@@ -360,6 +372,9 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
     from .paper import beat_index
     keys = {v.get(k) for ch in script.get('chapters') or [] for b in ch.get('beats') or [] for v in [b.get('visual') or {}]
             for k in ('art', 'backdrop') if isinstance(v.get(k), str)}
+    plan_file = job_dir / 'plan.json'
+    if plan_file.exists():
+        keys.update(sh['visual'].get('art') for sh in read_json(plan_file).get('shots', []) if sh['visual'].get('art'))
     from .paper import clip_index
     real = [p['key'] for set_id in sorted({k.split(':', 1)[1].split('/')[0] for k in keys if k and k.startswith(('beat:', 'clip:'))})
             for p in beat_index(set_id) + clip_index(set_id) if p['key'] in keys and (p.get('owner_photo') or p.get('owner_footage'))]
@@ -369,6 +384,13 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
                      'note': 'Real photos and phone clips from the stand that night; sound and metadata removed, no identifiable face.'})
     for set_id in sorted({k[5:].split('/')[0] for k in keys if k and k.startswith('beat:')} - {'common'}):
         pieces = [p for p in beat_index(set_id) if p['key'] in keys and not p.get('owner_photo')]
+        for piece in pieces:
+            if piece.get('archive'):
+                rows.append({'id': f'commons-{piece["pageid"]}', 'kind': 'archive photo', 'owner': piece['creator'],
+                             'origin': piece['source_url'], 'licence': piece['licence'], 'licence_url': piece.get('licence_url'),
+                             'photoreal': False, 'archive': True, 'title': piece['source'], 'date': piece.get('date'),
+                             'note': 'Context image; resized and colour graded. Not evidence of the narrated match.'})
+        pieces = [p for p in pieces if not p.get('archive')]
         if pieces:
             drawn = [p['key'] for p in pieces if p.get('illustrated')]
             rows.append({'id': f'art-{set_id}', 'kind': 'illustration', 'owner': 'FanLife (owner-supplied, AI-generated)', 'origin': 'ai-generated',

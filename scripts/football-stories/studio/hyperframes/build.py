@@ -391,7 +391,7 @@ class B:
         ed = self.ed
         key = key or 'terrace-crowd'
         W_, H_ = int(w), int(h)
-        if self.s.get('required_asset') == key:
+        if self.s.get('required_asset') == key or self.s.get('archive_asset') == key:
             from ..media_assets import require_file, whole_picture
             pic = whole_picture(require_file(key), (W_, H_), ed.pal.bans)
         else:
@@ -697,7 +697,7 @@ def illustration(b: B) -> None:
         cap = str(v['caption'])
         b.words(cap, cx - 560, cy + 210, 64, 0.9, max_w=1000, fill=PAPER, hot_fill=PAPER, plate=INK, rot=rot, z=80,
                 hl={w.lower().strip('.,!?') for w in cap.split()[-1:]})
-    if s.get('required_asset'):
+    if s.get('required_asset') or s.get('archive_asset'):
         b.P.look(0.0, cx, cy, 0.95)
         b.P.look(b.dur, cx, cy, 1.0)
         return
