@@ -1,7 +1,7 @@
 import {cronAuthorized} from '@/lib/master/request'
 import {StoryError,claim,finish,jobKind,mediaPath,nextForWorker,report,type Finish,type Progress} from '@/lib/stories/jobs'
-import {getJob,listJobs,updateJob} from '@/lib/stories/store'
-import {signedDownload,signedUpload} from '@/lib/stories/media'
+import {deletionCleaned,getJob,listJobs,pendingDeletions,updateJob} from '@/lib/stories/store'
+import {purgeJobMedia,signedDownload,signedUpload} from '@/lib/stories/media'
 import {body,fail,json} from '@/lib/stories/http'
 import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
 import {claimSocial,cleanLights,composeAll,dueSocial,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
@@ -36,6 +36,15 @@ export async function POST(r:Request){
   const b=await body(r,200_000) as Record<string,unknown>
   const worker=typeof b.worker==='string'&&/^[A-Za-z0-9._:-]{3,80}$/.test(b.worker)?b.worker:null
   if(!worker)throw new StoryError('WORKER','Missing worker id.')
+  if(b.op==='cleanup_due')return json({ids:(await pendingDeletions()).slice(0,20).map(j=>j.id)})
+  if(b.op==='cleanup_done'){
+   const id=String(b.id||'')
+   if(!(await pendingDeletions()).some(j=>j.id===id))throw new StoryError('NOT_FOUND','No pending deletion.',404)
+   await purgeJobMedia(id)
+   await deletionCleaned(id)
+   return json({cleaned:true})
+  }
+  if(b.op==='checkpoint_allowed')return json({allowed:!!await getJob(String(b.id||''))})
   if(b.op==='peek'){
    const hb=cleanHeartbeat(b.health,worker)
    if(hb)await noteHeartbeat(hb)

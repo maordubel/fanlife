@@ -1,7 +1,7 @@
 import {adminFromRequest} from '@/lib/master/admin'
 import {StoryError} from '@/lib/stories/jobs'
 import {storyClubs} from '@/lib/stories/clubs'
-import {listJobs} from '@/lib/stories/store'
+import {listJobs,pendingDeletions} from '@/lib/stories/store'
 import {readHealth} from '@/lib/stories/health'
 import {createClassified,createFilm,createVlog,idemKey} from '@/lib/stories/create'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
@@ -12,7 +12,7 @@ export const runtime='nodejs'
  *  whether the studio can work now. The desk's slower facts (episodes, pitches, social lights) are /stories/desk. */
 export async function GET(r:Request){
  if(!adminFromRequest(r))return json({error:'Not authorised.'},401)
- try{const [jobs,clubs,health]=await Promise.all([listJobs(),storyClubs(),readHealth()]);return json({jobs,clubs,health})}catch(e){return fail(e)}
+ try{const [jobs,clubs,health,cleanup]=await Promise.all([listJobs(),storyClubs(),readHealth(),pendingDeletions(new Date(),false)]);return json({jobs,clubs,health,cleanupPending:cleanup.length})}catch(e){return fail(e)}
 }
 /** POST: queue a job — a documentary (`kind` absent or 'film'), a CLASSIFIED FILE or an I WAS THERE vlog. */
 export async function POST(r:Request){

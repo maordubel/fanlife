@@ -147,7 +147,16 @@ jobs:
           # the moving-art library the cinema animates (absent → the film renders without it)
           STORIES_CINEMA_LIB: /home/runner/cinema-lib
         run: python -m studio.worker
-      - if: always() && steps.peek.outputs.next != ''
+      - name: Check production still exists
+        if: always() && steps.peek.outputs.next != ''
+        id: checkpoint
+        env:
+          JOB_ID: ${{ steps.peek.outputs.next }}
+        run: |
+          result=$(curl --fail -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
+            -d "{\"op\":\"checkpoint_allowed\",\"worker\":\"cache-$GITHUB_RUN_ID\",\"id\":\"$JOB_ID\"}" "$STORIES_URL/api/master/stories/worker")
+          printf '%s' "$result" | python3 -c 'import json,sys; print("allowed=" + str(bool(json.load(sys.stdin).get("allowed"))).lower())' >> "$GITHUB_OUTPUT"
+      - if: always() && steps.checkpoint.outputs.allowed == 'true'
         uses: actions/cache/save@v4
         with:
           path: |

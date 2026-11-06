@@ -28,8 +28,9 @@ export type DeskData={classified:ClassifiedFile[]|null;pitches:PitchDay[]|null;p
 
 export function StoriesDesk({view}:{view:DeskTab}){
  const [jobs,setJobs]=useState<Job[]|null>(null),[clubs,setClubs]=useState<Club[]>([]),[health,setHealth]=useState<Health|null>(null),[error,setError]=useState('')
+ const [cleanupPending,setCleanupPending]=useState(0)
  const [desk,setDesk]=useState<DeskData|null>(null),[open,setOpen]=useState<string|null>(null),[now,setNow]=useState(()=>Date.now())
- const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setClubs(b.clubs);setHealth(b.health??null);setError('');setNow(Date.now())}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
+ const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setCleanupPending(b.cleanupPending??0);setClubs(b.clubs);setHealth(b.health??null);setError('');setNow(Date.now())}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
  const loadDesk=useCallback(async()=>{try{setDesk(await api('/api/master/stories/desk'))}catch{setDesk(d=>d??{classified:null,pitches:null,pitchDesk:null,lights:null,plan:null})}},[])
  useEffect(()=>{void load();void loadDesk()},[load,loadDesk])
  const live=(jobs??[]).some(j=>['queued','running','cancel_requested'].includes(j.state))
@@ -48,6 +49,7 @@ export function StoriesDesk({view}:{view:DeskTab}){
   </div></header>
   <div className={css.wrap}>
    <nav aria-label="Studio" className={css.tabs}>{DESK_TABS.map(t=><Link key={t} href={`/master/admin?section=studio&view=${t}`} scroll={false} aria-current={view===t?'page':undefined} className={`${css.tab} min-h-tap`}>{TAB_TEXT[t]}{badge(t,jobs,desk)}</Link>)}</nav>
+   {cleanupPending>0&&<p role="status" className={css.hint}>{cleanupPending} deleted production(s): storage cleanup is queued or awaiting its final sweep. You can leave this page; cleanup retries automatically.</p>}
    {error&&<p role="alert" className={css.alert}>{error}</p>}
    {view==='docs'&&<><DeskBanner b={docsBanner(facts)}/><div className={css.grid}><NewFilm clubs={clubs} onMade={made}/>{list('film','No documentaries yet. Make the first one.')}</div></>}
    {view==='classified'&&<ClassifiedTab facts={facts} onMade={made}>{list('classified','No CLASSIFIED FILE produced yet.')}</ClassifiedTab>}

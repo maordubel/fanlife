@@ -51,6 +51,7 @@ jobs:
             if [ $(( $(date +%s) - checked )) -gt 10800 ]; then writer=$(writer_check); checked=$(date +%s); fi
             peek=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
               -d "{\"op\":\"peek\",\"worker\":\"listen-$GITHUB_RUN_ID\",\"health\":{\"writer\":$writer}}" "$STORIES_URL/api/master/stories/worker" || true)
+            python3 scripts/football-stories/studio/cleanup.py || echo "::warning::Storage cleanup will retry"
             next=$(printf '%s' "$peek" | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
             # the owner pressed "Ask for new pitches" (studio → Directors): the studio answers pitch:true once per request
             if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('pitch')))" 2>/dev/null || echo False)" = "True" ]; then

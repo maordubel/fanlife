@@ -41,5 +41,30 @@ export async function signedDownload(paths:string[],seconds=3600):Promise<Record
 export async function removeFolder(jobId:string,names:string[]):Promise<void>{
  if(!names.length)return
  const {url,headers}=cfg()
- await fetch(`${url}/storage/v1/object/${BUCKET}`,{method:'DELETE',headers,body:JSON.stringify({prefixes:names.map(n=>`jobs/${jobId}/${n}`)}),cache:'no-store'})
+ const r=await fetch(`${url}/storage/v1/object/${BUCKET}`,{method:'DELETE',headers,body:JSON.stringify({prefixes:names.map(n=>`jobs/${jobId}/${n}`)}),cache:'no-store'})
+ if(!r.ok)throw new StoryError('MEDIA',`Storage refused deletion (${r.status}).`,502)
+}
+
+/** List the real prefix before deleting: includes nested files and uploads absent from the job manifest. */
+export async function purgeJobMedia(id:string):Promise<void>{
+ if(!/^[a-z0-9-]{8,64}$/.test(id))throw new StoryError('MEDIA','Invalid job id.')
+ const {url,headers}=cfg(),paths:string[]=[],folders=[`jobs/${id}`]
+ while(folders.length){
+  const prefix=folders.pop()!
+  for(let offset=0;;offset+=100){
+   const r=await fetch(`${url}/storage/v1/object/list/${BUCKET}`,{method:'POST',headers,body:JSON.stringify({prefix,limit:100,offset,sortBy:{column:'name',order:'asc'}}),cache:'no-store'})
+   if(!r.ok)throw new StoryError('MEDIA',`Storage listing failed (${r.status}).`,502)
+   const rows=await r.json() as {name:string;id:string|null}[]
+   for(const row of rows){
+    if(!row.name||row.name.includes('/')||row.name==='.'||row.name==='..')throw new StoryError('MEDIA','Invalid storage listing.',502)
+    const path=`${prefix}/${row.name}`
+    if(row.id===null)folders.push(path);else paths.push(path)
+   }
+   if(rows.length<100)break
+  }
+ }
+ for(let i=0;i<paths.length;i+=100){
+  const r=await fetch(`${url}/storage/v1/object/${BUCKET}`,{method:'DELETE',headers,body:JSON.stringify({prefixes:paths.slice(i,i+100)}),cache:'no-store'})
+  if(!r.ok)throw new StoryError('MEDIA',`Storage deletion failed (${r.status}).`,502)
+ }
 }

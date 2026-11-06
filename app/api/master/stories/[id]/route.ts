@@ -1,7 +1,7 @@
 import {adminFromRequest} from '@/lib/master/admin'
 import {StoryError,ownerAct,type Job,type OwnerAction} from '@/lib/stories/jobs'
-import {getJob,updateJob} from '@/lib/stories/store'
-import {removeFolder,signedDownload} from '@/lib/stories/media'
+import {deleteJob,getJob,updateJob} from '@/lib/stories/store'
+import {purgeJobMedia,removeFolder,signedDownload} from '@/lib/stories/media'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -40,5 +40,17 @@ export async function POST(r:Request,{params}:{params:{id:string}}){
    try{await removeFolder(job.id,names)}catch{/* the film is on YouTube either way; a later delete can retry */}
   }
   return json({job})
+ }catch(e){return fail(e)}
+}
+
+export async function DELETE(r:Request,{params}:{params:{id:string}}){
+ if(!adminFromRequest(r))return json({error:'Not authorised.'},401)
+ if(!sameOrigin(r))return json({error:'Invalid request origin.'},403)
+ if(limited(`delete:${params.id}`,10,60_000))return json({error:'Too many actions; wait a moment.'},429)
+ try{
+  await deleteJob(params.id)
+  let mediaRemoved=false
+  try{await purgeJobMedia(params.id);mediaRemoved=true}catch{/* durable listener queue retries */}
+  return json({deleted:true,mediaRemoved,cleanupPending:true},202)
  }catch(e){return fail(e)}
 }
