@@ -5,7 +5,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-04T11:34:54.826Z"
+  "checkedAt": "2026-11-05T11:30:32.764Z"
  },
  "celtic-official:/history/": {
   "endpoint": "/history/",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-04T11:34:55.719Z"
+  "checkedAt": "2026-11-05T11:30:33.107Z"
  },
  "celtic-official:/history/history-timeline/": {
   "endpoint": "/history/history-timeline/",
@@ -21,6 +21,6 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-04T11:34:59.445Z"
+  "checkedAt": "2026-11-05T11:30:37.105Z"
  }
 }
