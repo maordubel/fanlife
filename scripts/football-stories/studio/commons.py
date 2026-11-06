@@ -33,7 +33,7 @@ def normal(value):
 
 def allowed_url(url):
     p = urllib.parse.urlparse(url)
-    return p.scheme == 'https' and p.hostname in ('commons.wikimedia.org', 'upload.wikimedia.org') and not p.username and p.port in (None, 443)
+    return p.scheme == 'https' and p.hostname in ('commons.wikimedia.org', 'upload.wikimedia.org', 'thumb.wikimedia.org') and not p.username and p.port in (None, 443)
 
 
 class SafeRedirect(urllib.request.HTTPRedirectHandler):
@@ -65,6 +65,10 @@ def queries(brief, ledger, script):
     club = ledger.get('club_name') or brief.get('club_name') or ''
     year = str(ledger.get('season') or brief.get('season') or '')[:4]
     result = [{'entity': club, 'year': year, 'context': False}] if club and re.fullmatch(r'\d{4}', year) else []
+    cited_years = sorted({str(c.get('fact', {}).get('date') or '')[:4] for c in ledger.get('claims', []) if c.get('id') in ids})
+    cited_years = [y for y in cited_years if re.fullmatch(r'\d{4}', y)]
+    if club and cited_years:
+        result = [{'entity': club, 'year': y, 'context': False} for y in cited_years[:3]]
     for claim in ledger.get('claims', []):
         if claim.get('id') not in ids:
             continue
@@ -92,8 +96,10 @@ def candidate(page, query):
     meta = info.get('extmetadata') or {}
     value = lambda k: plain((meta.get(k) or {}).get('value'))
     title, description = plain(page.get('title')), value('ImageDescription')
-    if normal(query['entity']) not in normal(title + ' ' + description):
+    if ' ' + normal(query['entity']) + ' ' not in ' ' + normal(title + ' ' + description) + ' ':
         return None, 'unrelated'
+    if re.search(r'AI.generated|artificial intelligence|synthetic image', title + ' ' + description + ' ' + value('Categories'), re.I):
+        return None, 'synthetic-image'
     years = set(re.findall(r'\b(?:18|19|20)\d{2}\b', title + ' ' + description + ' ' + value('DateTimeOriginal')))
     if query.get('year') and query['year'] not in years:
         return None, 'undated-event'
@@ -106,7 +112,7 @@ def candidate(page, query):
     if info.get('mime') not in ('image/jpeg', 'image/png', 'image/webp') or min(info.get('width', 0), info.get('height', 0)) < 480:
         return None, 'format-size'
     url = info.get('thumburl') or info.get('url') or ''
-    if not allowed_url(url) or urllib.parse.urlparse(url).hostname != 'upload.wikimedia.org':
+    if not allowed_url(url) or urllib.parse.urlparse(url).hostname not in ('upload.wikimedia.org', 'thumb.wikimedia.org'):
         return None, 'url'
     return {'pageid': int(page['pageid']), 'title': title, 'description': description, 'entity': query['entity'],
             'context': query['context'], 'date': value('DateTimeOriginal'), 'creator': value('Artist') or 'Not recorded',

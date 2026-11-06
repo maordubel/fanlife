@@ -155,7 +155,7 @@ def shot_text(shot: dict, ledger: dict) -> str:
 def relevance(asset: dict, shot: dict, ledger: dict) -> float:
     if asset.get('archive'):
         from .commons import normal
-        return 12.0 if normal(asset['entity']) in normal(shot_text(shot, ledger)) else -100.0
+        return 12.0 if ' ' + normal(asset['entity']) + ' ' in ' ' + normal(shot_text(shot, ledger)) + ' ' else -100.0
     desc = ' '.join(str(asset.get(k) or '') for k in ('description', 'visual_description', 'source', 'pack'))
     desc += ' ' + ' '.join(asset.get('tags') or [])
     a, b = tokens(desc), tokens(shot_text(shot, ledger))
@@ -210,7 +210,8 @@ def place(shots: list[dict], ledger: dict) -> tuple[list[dict], dict]:
             shot['visual']['art'] = ranked[0]['key']
             if ranked[0].get('archive'):
                 shot['archive_asset'] = ranked[0]['key']
-                shot['visual']['caption'] = 'Context image · Wikimedia Commons'
+                year = re.search(r'\b(?:18|19|20)\d{2}\b', str(ranked[0].get('date') or '') + ' ' + str(ranked[0].get('source') or ''))
+                shot['visual']['caption'] = 'Context image' + (' · ' + year.group() if year else '') + ' · Commons'
             optional_uses[ranked[0]['key']] += 1
     out, frame = [], 0
     for i, shot in enumerate(shots):

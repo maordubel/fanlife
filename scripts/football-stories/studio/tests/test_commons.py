@@ -28,6 +28,10 @@ class Discovery(unittest.TestCase):
     def test_only_entities_in_this_scripts_cited_facts_are_searched(self):
         self.assertEqual([q['entity'] for q in commons.queries(BRIEF, LEDGER, SCRIPT)], ['Sample Club', 'Sample Stadium', 'Jane Player'])
 
+    def test_cited_match_year_is_used_across_a_season_boundary(self):
+        ledger = {**LEDGER, 'claims': [{'id': 'goal', 'fact': {'date': '2000-05-13'}}]}
+        self.assertEqual(commons.queries(BRIEF, ledger, SCRIPT)[0]['year'], '2000')
+
     def test_rights_relevance_dates_and_format_fail_closed(self):
         row, reason = commons.candidate(page(), Q)
         self.assertIsNone(reason);self.assertEqual(row['creator'], 'Creator')
@@ -38,6 +42,9 @@ class Discovery(unittest.TestCase):
         self.assertIsNone(commons.candidate(page(), {**Q, 'entity': 'Someone Else'})[0])
         self.assertIsNone(commons.candidate(page(title='File:Jane Player 2010.jpg'), {**Q, 'year': '1999'})[0])
         self.assertIsNotNone(commons.candidate(page(licence='CC0'), Q)[0])
+        self.assertIsNone(commons.candidate(page(Categories='AI-generated images'), Q)[0])
+        thumb = page();thumb['imageinfo'][0]['thumburl'] = 'https://thumb.wikimedia.org/a.jpg'
+        self.assertIsNotNone(commons.candidate(thumb, Q)[0])
         for override in ({'width': 120}, {'mime': 'image/svg+xml'}, {'thumburl': 'http://127.0.0.1/x'}):
             p = page();p['imageinfo'][0].update(override)
             self.assertIsNone(commons.candidate(p, Q)[0])
@@ -99,3 +106,28 @@ class Cleanup(unittest.TestCase):
         with patch.dict('os.environ', {'GH_REPO': 'owner/repo'}), patch.object(cleanup, 'call', return_value={'ids': ['job-0000001']}) as call, \
                 patch.object(cleanup, 'cache_ids', return_value=[1]), patch.object(cleanup.subprocess, 'run', side_effect=OSError('failed')):
             cleanup.run();self.assertEqual(call.call_count, 1)
+
+
+class ArchiveFrames(unittest.TestCase):
+    def test_archive_pixels_survive_classic_and_vox(self):
+        from studio.tests import test_cinema as tc
+        from studio.motion import ShotRenderer
+        from studio.vox.render import VoxFilm
+        from studio.common import FPS, StageError
+        with tempfile.TemporaryDirectory() as d:
+            picture = Path(d) / 'photo.png'
+            Image.new('RGB', (600, 350), (0, 0, 255)).save(picture)
+            ed, root = tc.editor()
+            plan = ed.plan()
+            s = next(s for s in plan['shots'] if s['visual']['type'] == 'illustration')
+            s['visual'] = {'type': 'illustration', 'art': 'beat:commons-test/photo', 'caption': 'Context image · 1999 · Commons'}
+            s['archive_asset'] = s['visual']['art']
+            s['cinema'] = {'entry': 'dissolve', 'lib': [], 'lower': [], 'letterbox': False}
+            with patch.object(paper, 'beat_path', return_value=picture):
+                classic = ShotRenderer(ed.build(tc.StubSprites(ed.sprites_dir), s)).frame(2 * FPS)
+                vox = VoxFilm(ed, plan, root).frame(s['n'], 2 * FPS, {})
+            for frame in [classic, vox]:
+                blue = (frame[..., 2] > 180) & (frame[..., 0] < 60) & (frame[..., 1] < 60)
+                self.assertGreater(blue.mean(), .15)
+            with patch.object(paper, 'beat_path', return_value=None), self.assertRaises(StageError):
+                VoxFilm(ed, plan, root).frame(s['n'], 2 * FPS, {})
