@@ -139,6 +139,15 @@
     "bodyHash": "5a33569e5c53bc8ee1370d608b232e8d3d034b953eae6c791e2d3ed252ec7eee",
     "fetchedAt": "2026-11-05T11:31:50.249Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/19/dfl-und-investoren-sind-denn-alle-bekloppt/",
+    "locator": "p14",
+    "quote": "WDR Sport Inside : Juppi Trixer (3min Video)",
+    "bodyHash": "8b3f583e2afd7e47578c1a77e273178e8b003478c3b91951d1fc5f1ee0505fb3",
+    "fetchedAt": "2026-11-06T11:09:25.398Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -146,8 +155,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:50.249Z",
-  "updatedAt": "2026-11-05T11:31:50.249Z"
+  "createdAt": "2026-11-06T11:09:25.398Z",
+  "updatedAt": "2026-11-06T11:09:25.398Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -427,24 +436,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/05/19/lage-am-millerntor-19-05-2020/",
-    "locator": "p30",
-    "quote": "Und wo wir gerade dabei sind, noch ein Interview mit unserem Ex-Präsidenten Reenald Koch (Eintracht Norderstedt) beim Kicker (4min), in dem er für eine zweigleisige 3.Liga wirbt.",
-    "bodyHash": "0161bf1b8109e0a91d371d5e625147ef7d4295b1ca2c06f528f98cacd6b97dd0",
-    "fetchedAt": "2026-10-25T08:45:17.495Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2020/10/27/lage-am-millerntor-27-oktober-2020/",
-    "locator": "p40",
-    "quote": "Apropos unrühmliches Verhalten des DFB. Die große Razzia der Steuerfahnder beim DFB machte vor gut zwei Wochen Schlagzeilen. Und nach und nach kam dann raus, dass Präsident Keller sich zunächst von seinen Angestellten distanziert und dann, nach einigen Verwicklungen eher zögerlich doch vor sie stellt, was dann aber nicht mehr so richtig glaubwürdig rüber kam. Laut dem ehemaligen Mediendirektor Harald Stenger läuft alles auf einen Machtkampf zwischen Präsident Keller und Generalsekretär Curtius hinaus – bei dem am Ende einer auf der Strecke bleiben muss, wenn man nicht den ganzen Verband an die",
-    "bodyHash": "7f65ff374f036d59f5f759dd215f3ac7f055e3a72c2bd4fd821322556f7b3528",
-    "fetchedAt": "2026-10-26T09:23:45.248Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/03/02/lage-am-millerntor-02-maerz-2022/",
     "locator": "p22",
     "quote": "„Die Verpflichtung, als Sportler Haltung zu zeigen“ . So lautet der Titel einer Kurzdoku (4min) der Sportschau über Jackson Irvine , in der unser australischer Nationalspieler vorgestellt wird und zu Wort kommt, insbesondere mit seinen Gedanken über Verantwortung als Profisportler, u.a. zur WM in Katar .",
@@ -496,6 +487,24 @@
     "bodyHash": "59014aaa982514f7a9dc1678bfbc92ea53a5225e876213fc5c60398ba00c449e",
     "fetchedAt": "2026-11-04T11:36:09.735Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/11/lage-am-millerntor-11-april-2023/",
+    "locator": "p13",
+    "quote": "NDR: „Vom Rekordjäger zum Aufstiegsaspiranten“ (4min Video)",
+    "bodyHash": "1eddfc8c2cc89708f6094847f3482d0855caa83ea82ce44f87736cc25c4d062d",
+    "fetchedAt": "2026-11-06T11:09:20.275Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/12/lage-am-millerntor-12-april-2023/",
+    "locator": "p40",
+    "quote": "Einen Punkt in der Diskussion setzte jüngst auch das DFB-Nationalteam der Frauen. Nach dem Freundschaftsspiel in den Niederlanden reiste man bewusst nicht mit dem Flieger zum nächsten Spiel in Nürnberg, sondern fuhr mit der Bahn. Jessica Sturmberg mit einem Audiobeitrag (4min) zur Mobilität im Profifußball.",
+    "bodyHash": "ab600c8074263177188e7c361f64cbc8bab127c83e74483e579256fc52160d07",
+    "fetchedAt": "2026-11-06T11:09:20.283Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -503,8 +512,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:09.735Z",
-  "updatedAt": "2026-11-04T11:36:09.735Z"
+  "createdAt": "2026-11-06T11:09:20.283Z",
+  "updatedAt": "2026-11-06T11:09:20.283Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -982,6 +991,15 @@
     "bodyHash": "37ad4c82ee56735ce2ad470aeaa06884001ff86bf116a14a62958178cfc679f9",
     "fetchedAt": "2026-11-05T11:31:44.386Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/12/lage-am-millerntor-12-april-2023/",
+    "locator": "p42",
+    "quote": "Last but not least müssen natürlich auch die Sportverbände das Thema aktiver angehen. Umweltforscher Roger Pielke erklärt, wie das gehen könnte. // Deutschlandfunk (Text und Audio, 11min)",
+    "bodyHash": "ab600c8074263177188e7c361f64cbc8bab127c83e74483e579256fc52160d07",
+    "fetchedAt": "2026-11-06T11:09:20.283Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -989,8 +1007,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:44.386Z",
-  "updatedAt": "2026-11-05T11:31:44.386Z"
+  "createdAt": "2026-11-06T11:09:20.283Z",
+  "updatedAt": "2026-11-06T11:09:20.283Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1069,6 +1087,24 @@
     "bodyHash": "a40e66a1ab7b592f254c1b519a5ebc6b61542b494e62e46f5b5ca5b7b324e578",
     "fetchedAt": "2026-11-03T11:04:09.899Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/16/lage-am-millerntor-16-mai-2023/",
+    "locator": "p50",
+    "quote": "Zum Thema „Investor bei der DFL“ gibt es auch einen sehr hörenswerten Podcast bei WDR Sport Inside (54min) , wo Nora Hespers mit Marcus Bark (Sportschau) gesprochen hat. Spoiler: Ganz so uneingeschränkt positiv wie die beiden Geschäftsführer sieht Bark es dann doch nicht, breitet aber den Stand der Dinge nachvollziehbar aus.",
+    "bodyHash": "4e592cb182a52046ff459c003d1c5ae4a2eb266e426fe508b2550fbb650179dd",
+    "fetchedAt": "2026-11-06T11:09:25.397Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/19/dfl-und-investoren-sind-denn-alle-bekloppt/",
+    "locator": "p15",
+    "quote": "WDR Sport Inside (Podcast, 54min)",
+    "bodyHash": "8b3f583e2afd7e47578c1a77e273178e8b003478c3b91951d1fc5f1ee0505fb3",
+    "fetchedAt": "2026-11-06T11:09:25.398Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1076,8 +1112,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:04:09.899Z",
-  "updatedAt": "2026-11-03T11:04:09.899Z"
+  "createdAt": "2026-11-06T11:09:25.398Z",
+  "updatedAt": "2026-11-06T11:09:25.398Z"
  },
  {
   "id": "ga-adefbda210a2bea6",
@@ -1267,6 +1303,15 @@
     "bodyHash": "d9c94cf5256c034de38eb959bc6d0bf9a7df7065dbfee2d3497a2d4be5c5f595",
     "fetchedAt": "2026-11-05T11:31:47.267Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/21/lage-am-millerntor-21-april-2023/",
+    "locator": "p11",
+    "quote": "Andreas Bornemann zu Gast bei Sebastian Wolff (YouTube, 20min)",
+    "bodyHash": "957972d7f4094b050311fd377db4f942fab24267aeb5cd0c0052c8363e86e2f2",
+    "fetchedAt": "2026-11-06T11:09:20.292Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1274,8 +1319,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:47.267Z",
-  "updatedAt": "2026-11-05T11:31:47.267Z"
+  "createdAt": "2026-11-06T11:09:20.292Z",
+  "updatedAt": "2026-11-06T11:09:20.292Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1471,6 +1516,15 @@
     "bodyHash": "e185c2845d7620f374f5af630f7d68f46cb03cf85fae45dc2b935c109f7bcb85",
     "fetchedAt": "2026-11-04T11:36:00.527Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/11/lage-am-millerntor-11-april-2023/",
+    "locator": "p47",
+    "quote": "Mit Paul (Fanbeauftragter für Menschen mit Behinderung) und Jan (Rollifahrer und Stotterer) waren zwei St. Pauli-Fans zu Gast bei „Reporter Inklusiv“ . In diesem Audioformat (35min) ging es um Barrierefreiheit und Inklusion rund um den Verein.",
+    "bodyHash": "1eddfc8c2cc89708f6094847f3482d0855caa83ea82ce44f87736cc25c4d062d",
+    "fetchedAt": "2026-11-06T11:09:20.275Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1478,8 +1532,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:00.527Z",
-  "updatedAt": "2026-11-04T11:36:00.527Z"
+  "createdAt": "2026-11-06T11:09:20.275Z",
+  "updatedAt": "2026-11-06T11:09:20.275Z"
  },
  {
   "id": "ga-f4ca32025f2ce9d5",
@@ -1528,6 +1582,15 @@
     "bodyHash": "3fbc8424af14d5f4d4a5c16d7124897cb4cacb7f4e8d539da49aa71f26773ebf",
     "fetchedAt": "2026-10-31T09:59:22.760Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/12/lage-am-millerntor-12-april-2023/",
+    "locator": "p41",
+    "quote": "Fußballfans und Klimaschutz ist ein eigenes Thema, insbesondere im Bereich Pyrotechnik und Reisetätigkeit. Fanforscherin Jenny Amann hat die Fans des englischen Siebtligisten Whitehawk FC begleitet, die an einer Kampagne namens „Pledgeball“ teilnahmen, einer Art Wettbewerb unter Fangruppen für klimafreundliche Maßnahmen. // Deutschlandfunk (Text & Audio, 9min)",
+    "bodyHash": "ab600c8074263177188e7c361f64cbc8bab127c83e74483e579256fc52160d07",
+    "fetchedAt": "2026-11-06T11:09:20.283Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1535,8 +1598,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:59:22.760Z",
-  "updatedAt": "2026-10-31T09:59:22.760Z"
+  "createdAt": "2026-11-06T11:09:20.283Z",
+  "updatedAt": "2026-11-06T11:09:20.283Z"
  },
  {
   "id": "ga-b034321cdb0cc0d5",
@@ -1645,15 +1708,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/03/30/lage-am-millerntor-30-maerz-2021/",
-    "locator": "p18",
-    "quote": "Ja, auch das war gestern schon Thema, auch ausführlich, aber so viel ist ja aktuell nicht los, daher sei auf die gestrige Lage nochmals verwiesen und generell die Dokumentation des ZDF (45min) erneut empfohlen.",
-    "bodyHash": "133ebf71a98a47dce244900232213a94897eac12a2a7b339186e92c93bd344c4",
-    "fetchedAt": "2026-10-28T10:02:31.919Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/01/31/lage-am-millerntor-31-januar-2022/",
     "locator": "p62",
     "quote": "Doch auch abgesehen davon gibt es natürlich viele Punkte, die die Vergabe der Spiele nach China unverständlich erscheinen lassen – zumindest, wenn man mal den offensichtlichen Punkt „Geld & Macht“ ausblendet. In Zusammenarbeit mit Christian Neureuther hat die ARD eine Dokumentation veröffentlicht, die heute immerhin mal zur besten Sendezeit (20.15h) ausgestrahlt wird, vorab aber auch schon in der Mediathek abrufbar ist. // ( ARD Mediathek, 45min )",
@@ -1714,6 +1768,15 @@
     "bodyHash": "5a33569e5c53bc8ee1370d608b232e8d3d034b953eae6c791e2d3ed252ec7eee",
     "fetchedAt": "2026-11-05T11:31:50.249Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/04/lage-am-millerntor-04-mai-2023/",
+    "locator": "p5",
+    "quote": "Vorbereitend könnt Ihr aber schon jetzt das „Vor dem Spiel“-Gespräch (45min) von Casche hören, der mit Stadionmoderator Colin Mahnke und Ex-Lilien-Profi Marco „Toni“ Sailer sprach.",
+    "bodyHash": "31c687530f1109238daa844337384fae133aa99a947b7f2d6366eaab9f81bf14",
+    "fetchedAt": "2026-11-06T11:09:22.959Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1721,8 +1784,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:50.249Z",
-  "updatedAt": "2026-11-05T11:31:50.249Z"
+  "createdAt": "2026-11-06T11:09:22.959Z",
+  "updatedAt": "2026-11-06T11:09:22.959Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -2218,6 +2281,15 @@
     "bodyHash": "33c3cfe59b3912ec361be5d0f58057b834136bc4cd0ee43e742482e7e505500a",
     "fetchedAt": "2026-11-03T11:22:00.386Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/08/lage-am-millerntor-08-mai-2023/",
+    "locator": "p57",
+    "quote": "Das Crowdfunding des Nationalteams der Frauen ist inzwischen erfolgreich abgeschlossen. Trotzdem bleibt es natürlich eine unfassbare Ungerechtigkeit, dass man dem Team die finanzielle Unterstützung verweigert, die es bei den den Männern (zurecht) gibt. Darauf weist auch Bjarne Mädel hin, wie hier in einem Kurzbeitrag zu sehen – den ganzen Beitrag gab es dann am Samstagabend in der ARD in „Was kann der Mensch“ (19min) .",
+    "bodyHash": "f7f758b0540b872f7b1c6d618c78a8a091626ce765e5f6ec9c11fecc67171778",
+    "fetchedAt": "2026-11-06T11:09:25.387Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2225,8 +2297,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:00.386Z",
-  "updatedAt": "2026-11-03T11:22:00.386Z"
+  "createdAt": "2026-11-06T11:09:25.387Z",
+  "updatedAt": "2026-11-06T11:09:25.387Z"
  },
  {
   "id": "ga-0757fd767d0fbf20",
@@ -2614,6 +2686,15 @@
     "bodyHash": "4c05f5bb001610d57447fb618269ca134a985987d506483fb4d2404a72318552",
     "fetchedAt": "2026-11-05T11:31:44.383Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/26/lage-am-millerntor-26-april-2023/",
+    "locator": "p55",
+    "quote": "// YouTube, 28min",
+    "bodyHash": "5aa91f10f095a7d0a01c64e26dca5cd401f0f0066dd0f48381c9487dd2c070a3",
+    "fetchedAt": "2026-11-06T11:09:22.953Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2621,8 +2702,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:44.383Z",
-  "updatedAt": "2026-11-05T11:31:44.383Z"
+  "createdAt": "2026-11-06T11:09:22.953Z",
+  "updatedAt": "2026-11-06T11:09:22.953Z"
  },
  {
   "id": "ga-22637ca0f1c3482a",
@@ -2713,5 +2794,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-05T11:31:50.246Z",
   "updatedAt": "2026-11-05T11:31:50.246Z"
+ },
+ {
+  "id": "ga-e7140d3faa9a7eb3",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "24",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/13/blindenfussball-saison-2023/",
+    "locator": "p10",
+    "quote": "Wer mehr dazu wissen möchte, findet dazu auf YouTube diverse Videos, u.a. dieses Kurzvideo des kicker (3m48s) von vor drei Jahren oder (etwas ausführlicher) dieses „Kann es Johannes?“ -Video (24min) des WDR, u.a. mit Thoya Küster , Nationalspielerin des FC St. Pauli.",
+    "bodyHash": "4b19ff6319a8f81e2b6b4d812d1476d00c5ff395c3770cf5eeb6d6825d92901d",
+    "fetchedAt": "2026-11-06T11:09:20.280Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-06T11:09:20.280Z",
+  "updatedAt": "2026-11-06T11:09:20.280Z"
+ },
+ {
+  "id": "ga-a99a1f742832ea22",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "48",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/04/25/lage-am-millerntor-25-april-2023/",
+    "locator": "p4",
+    "quote": "Das „Nach dem Spiel“-Gespräch (48min) von Luca mit Jan und Jakob vom Sechspunktespiel-Podcast ist online. Es gab natürlich viel zu bereden, u.a. natürlich auch über einige Vorfälle drumherum.",
+    "bodyHash": "92338e00ae28c096150f3120406d47e026adfaec2fe6d0e2cb04f17ba8a99ec5",
+    "fetchedAt": "2026-11-06T11:09:22.952Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-06T11:09:22.952Z",
+  "updatedAt": "2026-11-06T11:09:22.952Z"
  }
 ]

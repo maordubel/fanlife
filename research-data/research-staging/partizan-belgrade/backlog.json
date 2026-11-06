@@ -48,6 +48,14 @@
   "owner": null
  },
  {
+  "id": "blocked-crno-bela-nostalgija-/wp-json/wp/v2/pages",
+  "priority": "P2",
+  "task": "Crno-bela Nostalgija: /wp-json/wp/v2/pages answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "Crno-bela Nostalgija: /wp-json/wp/v2/pages חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-crno-bela-nostalgija-0",
   "priority": "P3",
   "task": "Mixes current-season items with history; search answered 403 and is not used.",
