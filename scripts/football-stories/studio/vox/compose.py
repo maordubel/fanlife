@@ -291,15 +291,17 @@ class Builder:
             cp = clip_path(key)
             if cp:
                 clip = ClipWorld(cp, ed.pal.bans, 0.0, accent=ed.pal.accent if piece_meta(key).get('accent') == 'key-red' else None)
-        try:
-            src = Image.open(ed.backdrop(key, self.seed, dim=dim)).convert('RGB')
-        except Exception:  # noqa: BLE001
-            src = Image.open(ed.backdrop('terrace-crowd', self.seed)).convert('RGB')
         W_, H_ = int(w * self.res), int(h * self.res)
-        from ..paper import scrub
-        # resampling can mix a new rival colour out of two allowed ones (rule 44): scrub again after the resize
-        pic = scrub(_cover(src, (W_, H_)), ed.pal.bans)
-        pic = E.photo_treat(pic, amount=0.34)
+        if self.s.get('required_asset') == key:
+            from ..media_assets import require_file, whole_picture
+            pic = whole_picture(require_file(key), (W_, H_), ed.pal.bans)
+        else:
+            try:
+                src = Image.open(ed.backdrop(key, self.seed, dim=dim)).convert('RGB')
+            except Exception:  # optional library art only
+                src = Image.open(ed.backdrop('terrace-crowd', self.seed)).convert('RGB')
+            from ..paper import scrub
+            pic = E.photo_treat(scrub(_cover(src, (W_, H_)), ed.pal.bans), amount=0.34)
         card, pad = E.paper(w + 36, h + 36, self.res, self.seed + 11, tone=PAPER, edges='tblr', tape=tape)
         card.alpha_composite(pic.convert('RGBA'), (int(pad + 18 * self.res), int(pad + 18 * self.res)))
         from ..paper import piece_meta
@@ -1351,13 +1353,17 @@ def illustration(ed, s, B: Builder) -> Panel:
     art = v.get('art') or B.cin.get('broll') or 'terrace-crowd'
     if art == 'gen':
         from ..sprites import key_of
-        art = 'gen:' + key_of(s['n'])
+        art = 'gen:' + key_of(s.get('source_n', s['n']))
     rot = (-1.6, 2.0, -2.4)[s['n'] % 3]
     cx, cy = 960 + B.side * 70, 470
     pic = B.art(art, 1240, 700, cx, cy, rot, 0.1, frm=(0, -150), style='drop')
     if v.get('caption'):
         cw = B.words(str(v['caption']), cx - 560, cy + 210, 64, 0.9, max_w=1000, style='rise', fill=PAPER, hot_fill=PAPER, plate=INK, shift=6, rot=rot)
         B.highlight(cw.rect, cw.settle + 0.1, 'caption')
+    if s.get('required_asset'):
+        P.look(0.0, cx, cy, 0.95)
+        P.look(B.dur, cx, cy, 1.0)
+        return P
     # the camera wanders inside the picture, as you would look at a photograph on a table
     a = (cx - 200 * B.side, cy - 120)
     b = (cx + 160 * B.side, cy + 40)

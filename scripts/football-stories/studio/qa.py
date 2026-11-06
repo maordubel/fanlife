@@ -33,6 +33,11 @@ def check(job_dir: Path, master: Path, plan: dict, cues: list[dict], requested_m
         log(f'QA {"✓" if ok else "✗"} {name}: {detail}')
 
     p = probe(master)
+    from .media_assets import verify_rendered
+    media = verify_rendered(job_dir, plan)
+    if media['required']:
+        add('selected pictures', media['required'] == media['rendered'],
+            f"{media['rendered']}/{media['required']} selected pictures rendered; shot times in media-usage.json")
     v = next((s for s in p['streams'] if s['codec_type'] == 'video'), None)
     a = next((s for s in p['streams'] if s['codec_type'] == 'audio'), None)
     dur = float(p['format']['duration'])

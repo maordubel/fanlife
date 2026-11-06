@@ -27,7 +27,9 @@ jobs:
   # The Football Stories studio pipeline (Python): fact guard, ledger, script contract, captions, worker ⇄ studio contract.
   stories:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Studio now has 335 frame-rendering tests (~7 min), followed by the comic and legacy suites.
+    # Keep every check; allow the combined job to finish on a slower hosted runner.
+    timeout-minutes: 20
     # tests never reach the owner's Drive: the committed owner tracks score them (studio/audio._fetch_drive_track)
     env: {STORIES_MUSIC_FETCH: '0'}
     steps:

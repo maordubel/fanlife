@@ -211,6 +211,8 @@ class VoxFilm:
             try:
                 self._panels[n] = compose(self.ed, s, RES, self.style)
             except Exception as e:  # noqa: BLE001 — one beat the board cannot draw must not cost the film
+                if s.get('required_asset'):
+                    raise  # selected pictures cannot be replaced by a generic fallback
                 import sys
                 print(f'Vox: beat {n} ({s["visual"].get("type")}) falls back to its picture: {type(e).__name__}: {e}', file=sys.stderr)
                 art = (s.get('cinema') or {}).get('broll') or 'terrace-crowd'
@@ -533,7 +535,7 @@ def _render_range(args) -> str:
             if p.wait() != 0:
                 raise StageError('ENCODE_FAILED', f'ffmpeg failed on shot {i}', retryable=True)
             tmp.rename(out)
-            write_json(Path(out_dir) / f'shot-{i:04d}.cues.json', {'cues': cues, 'kind': s['visual']['type'], 'engine': film.where(n)['engine']})
+            write_json(Path(out_dir) / f'shot-{i:04d}.cues.json', {'cues': cues, 'kind': s['visual']['type'], 'engine': film.where(n)['engine'], 'required_asset': s.get('required_asset')})
     finally:
         if sp is not None:
             sp.__exit__(None, None, None)

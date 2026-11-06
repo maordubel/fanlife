@@ -390,16 +390,20 @@ class B:
         from ..paper import piece_meta
         ed = self.ed
         key = key or 'terrace-crowd'
-        try:
-            src = Image.open(ed.backdrop(key, self.seed(), dim=dim)).convert('RGB')
-        except Exception:  # noqa: BLE001 — a picture the library cannot give: the house crowd
-            key = 'terrace-crowd'
-            src = Image.open(ed.backdrop(key, self.seed())).convert('RGB')
         W_, H_ = int(w), int(h)
-        s_ = max(W_ / src.width, H_ / src.height)
-        src = src.resize((max(W_, int(src.width * s_)), max(H_, int(src.height * s_))), Image.LANCZOS)
-        L, T_ = (src.width - W_) // 2, (src.height - H_) // 2
-        pic = E.photo_treat(src.crop((L, T_, L + W_, T_ + H_)), amount=0.34)
+        if self.s.get('required_asset') == key:
+            from ..media_assets import require_file, whole_picture
+            pic = whole_picture(require_file(key), (W_, H_), ed.pal.bans)
+        else:
+            try:
+                src = Image.open(ed.backdrop(key, self.seed(), dim=dim)).convert('RGB')
+            except Exception:  # optional library art only
+                key = 'terrace-crowd'
+                src = Image.open(ed.backdrop(key, self.seed())).convert('RGB')
+            s_ = max(W_ / src.width, H_ / src.height)
+            src = src.resize((max(W_, int(src.width * s_)), max(H_, int(src.height * s_))), Image.LANCZOS)
+            L, T_ = (src.width - W_) // 2, (src.height - H_) // 2
+            pic = E.photo_treat(src.crop((L, T_, L + W_, T_ + H_)), amount=0.34)
         url = self.c.assets.put_image(pic, 'print')
         inner = f'<img class="pic" src="{url}" style="left:18px;top:18px;width:{W_}px;height:{H_}px">'
         if key.startswith('clip:'):
@@ -683,6 +687,9 @@ def illustration(b: B) -> None:
     s = b.s
     v = s['visual']
     art = v.get('art') or b.cin.get('broll') or 'terrace-crowd'
+    if art == 'gen':
+        from ..sprites import key_of
+        art = 'gen:' + key_of(s.get('source_n', s['n']))
     rot = (-1.6, 2.0, -2.4)[s['n'] % 3]
     cx, cy = 960 + b.side * 70, 470
     b.art(art, 1240, 700, cx, cy, rot, 0.1, frm=(0, -150), style='drop')
@@ -690,6 +697,10 @@ def illustration(b: B) -> None:
         cap = str(v['caption'])
         b.words(cap, cx - 560, cy + 210, 64, 0.9, max_w=1000, fill=PAPER, hot_fill=PAPER, plate=INK, rot=rot, z=80,
                 hl={w.lower().strip('.,!?') for w in cap.split()[-1:]})
+    if s.get('required_asset'):
+        b.P.look(0.0, cx, cy, 0.95)
+        b.P.look(b.dur, cx, cy, 1.0)
+        return
     a = (cx - 200 * b.side, cy - 120)
     c = (cx + 160 * b.side, cy + 40)
     b.P.look(0.0, cx, cy + 40, 0.88)

@@ -15,7 +15,7 @@ export type JobState='queued'|'running'|'paused'|'cancel_requested'|'cancelled'|
 export type UploadState='none'|'in_progress'|'uncertain'|'done'
 export type Privacy='private'|'unlisted'|'public'|'scheduled'
 export const DURATIONS=[0.5,1,2,3,5,...Array.from({length:19},(_,i)=>i+7)] as const
-export type ArtFile={name:string;illustrated:boolean}
+export type ArtFile={name:string;illustrated:boolean;originalName?:string}
 /** Studio v3 (owner, 4.11.2026: "less freedom, more choices; a film about one match; three scripts to choose from"). */
 export const KINDS=['season','match','tie','rivalry'] as const
 export type Kind=typeof KINDS[number]
@@ -163,11 +163,13 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
   case 'art_added':{
+   if(['classified','vlog'].includes(j.brief.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
    if(!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts (pause it first).')
+   if(j.lease)no('The worker is still stopping. Wait for it to pause, then add your pictures.')
    const files=Array.isArray(a.files)?a.files:[]
    if(!files.length||files.some(f=>!f||typeof f.name!=='string'||!ART_NAME.test(f.name)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg or .webp.')
    const keep=new Map((j.brief.art??[]).map(f=>[f.name,f]))
-   for(const f of files)keep.set(f.name,{name:f.name,illustrated:f.illustrated===true})
+   for(const f of files)keep.set(f.name,{name:f.name,illustrated:f.illustrated===true,...(typeof f.originalName==='string'?{originalName:f.originalName.slice(0,200)}:{})})
    if(keep.size>30)throw new StoryError('ART','At most 30 pictures for one film.')
    j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} picture(s) added by ${actor}`,at);break}
   case 'upload_reset':if(j.upload.state==='done')no('A confirmed upload cannot be reset.');j.upload={state:'none',videoId:null,visibility:null,publishAt:null,at,by:actor,note:'Reset after checking YouTube Studio'};pushLog(j,`Upload state reset by ${actor} after checking YouTube Studio`,at);break

@@ -5,6 +5,7 @@ import type {Health} from '@/lib/stories/health'
 import {STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
 import {SocialPanel} from './SocialPanel'
+import {uploadPictures,validatePictures} from '@/lib/stories/pictureUpload'
 import {directorOfOption,DIRECTORS} from '@/lib/stories/directors'
 
 export type Club={id:string;name:string;primary:string;on:string;seasons:{season:string;matches:number}[]}
@@ -49,7 +50,7 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
  const [club,setClub]=useState(''),[kind,setKind]=useState<Kind|''>('')
  const [season,setSeason]=useState(''),[picked,setPicked]=useState<Match[]>([]),[opp,setOpp]=useState<Opp|null>(null)
  const [duration,setDuration]=useState(10),[style,setStyle]=useState('collage'),[tone,setTone]=useState('auto')
- const [folder,setFolder]=useState('')
+ const [folder,setFolder]=useState(''),[pictures,setPictures]=useState<File[]>([])
  const [scripts,setScripts]=useState<1|3>(3),[drive,setDrive]=useState(true),[reel,setReel]=useState(false),[privacy,setPrivacy]=useState<Privacy>('private')
  const [busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('')
  const key=useRef<string>('')
@@ -63,17 +64,26 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
 
  async function make(){
   if(!ready||!c||!kind)return
-  setError('');setNotice('');setBusy(true)
+  setError('');setNotice('');
+  try{validatePictures(pictures)}catch(e){setError(e instanceof Error?e.message:'Invalid pictures');return}
+  setBusy(true)
   if(!key.current)key.current=crypto.randomUUID()
   const d=new FormData(more.current??undefined)
   const local=String(d.get('publish_at')||'')
   const sorted=[...picked].sort((a,b)=>a.date.localeCompare(b.date))
   const brief={club_id:c.id,kind,season:kind==='season'?season:kind==='rivalry'?'1900–2100':sorted[0]?.season,match_ids:sorted.map(m=>m.id),opponent:opp?.name,
    duration,visual_style:style,tone,scripts,drive,drive_folder:folder.trim()||undefined,reel_to_telegram:reel,privacy,publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
-   topic:d.get('topic')||'',notes:d.get('notes')||'',hold:d.get('hold')==='on',voice:d.get('voice')||'auto',crowd:d.get('crowd')||'soft',
+   topic:d.get('topic')||'',notes:d.get('notes')||'',hold:pictures.length>0||d.get('hold')==='on',voice:d.get('voice')||'auto',crowd:d.get('crowd')||'soft',
    review:scripts===1&&d.get('review')==='script'?'script':'auto'}
-  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});key.current=''
-   setNotice(b.job.state==='paused'?'Created and held. Open it, add your pictures, then press Resume.':scripts===3?'Queued. In a few minutes three scripts are waiting for you below — pick one and the film makes itself.':'Queued. The studio starts it within about a minute.')
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});
+   await onMade(b.job.id)
+   if(pictures.length){
+    await uploadPictures(b.job.id,pictures,true,setNotice)
+    if(d.get('hold')!=='on')await api(`/api/master/stories/${b.job.id}`,{method:'POST',body:JSON.stringify({action:'resume'})})
+   }
+   key.current=''
+   setPictures([])
+   setNotice(d.get('hold')==='on'?'Created and held. Open it, add your pictures, then press Resume.':scripts===3?'Queued. In a few minutes three scripts are waiting for you below — pick one and the film makes itself.':'Queued. The studio starts it within about a minute.')
    await onMade(b.job.id)}
   catch(err){setError(err instanceof Error?err.message:'Could not queue the film.')}finally{setBusy(false)}
  }
@@ -104,7 +114,8 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
     </Step>
     <Step n={8} title="Extras">
      <label className={css.check}><input type="checkbox" checked={drive} onChange={e=>setDrive(e.target.checked)}/> Scan the Google Drive library for this story (its own packs first, then the club&rsquo;s pictures)</label>
-     <label className={css.lab}>Drive folder for this story (optional)<input value={folder} onChange={e=>setFolder(e.target.value)} placeholder="https://drive.google.com/drive/folders/…" inputMode="url"/><span className={css.hint}>Paste a folder you made for this film — it is used first, as you made it. Leave empty: the studio finds packs whose names fit the story.</span></label>
+     <label className={css.lab}>Drive folder for this story (optional)<input value={folder} onChange={e=>setFolder(e.target.value)} placeholder="https://drive.google.com/drive/folders/…" inputMode="url"/><span className={css.hint}>Every supported image in this folder and its subfolders must appear in the film. Share it as “Anyone with the link”. Leave empty for automatic library matching.</span></label>
+     <label className={css.lab}>Your pictures (required in the film)<input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy} onChange={e=>setPictures(Array.from(e.target.files??[]))}/><span className={css.hint}>{pictures.length?`${pictures.length} picture(s) selected. `:''}All selected pictures will appear. The film may run longer to give each one time on screen; missing files stop the job.</span></label>
      <label className={css.check}><input type="checkbox" checked={reel} onChange={e=>setReel(e.target.checked)}/> Send the first Reel to my Telegram when it is done</label>
      <div className={css.lab}>YouTube visibility<div className={css.chips} role="group" aria-label="Visibility">{(['private','unlisted','public','scheduled'] as const).map(p=><button type="button" key={p} className={`${css.chip} min-h-tap`} aria-pressed={privacy===p} onClick={()=>setPrivacy(p)}>{p}</button>)}</div></div>
     </Step>
@@ -210,7 +221,7 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
     <button className={`${css.btn} min-h-tap`} onClick={onOpen} aria-expanded={open}>{open?'Close':'Open'}</button>
    </div>
    {err&&<p role="alert" className={css.alert}>{err}</p>}
-   {open&&<Detail job={job} act={act} busy={busy}/>}
+   {open&&<Detail job={job} act={act} busy={busy} onChange={onChange}/>}
   </div>
  </article>
 }
@@ -232,7 +243,7 @@ function ScriptChoice({job,busy,pick}:{job:Job;busy:boolean;pick:(n:number)=>Pro
  </div>
 }
 
-function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<void>;busy:boolean}){
+function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=>Promise<void>;busy:boolean;onChange:()=>void}){
  const [urls,setUrls]=useState<Record<string,string>>({}),[script,setScript]=useState<string>('')
  const [vid,setVid]=useState(''),[vis,setVis]=useState<Privacy>(job.brief.privacy),[dl,setDl]=useState('')
  const a=job.artefacts
@@ -250,8 +261,8 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
   catch(e){setDl(e instanceof Error?e.message:'Download failed')}
  }
  return <div>
-  {['queued','paused'].includes(job.state)&&<Pictures job={job} act={act} busy={busy}/>}
-  {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>x.name+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
+  {['queued','paused'].includes(job.state)&&!['classified','vlog'].includes(job.brief.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
+  {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
   {a?.thumbnails?.length?<><h3 className={css.h3}>Thumbnails</h3><div className={css.thumbs}>{a.thumbnails.map(t=>u(t)&&<img key={t.path} src={u(t)} alt="Thumbnail option"/>)}</div></>:null}
@@ -288,29 +299,26 @@ function Detail({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<
 }
 
 /** The owner's pictures for this film, before it starts. Uploaded straight to private storage; then named in the brief. */
-function Pictures({job,act,busy}:{job:Job;act:(b:Record<string,unknown>)=>Promise<void>;busy:boolean}){
+function Pictures({job,onChange,busy}:{job:Job;onChange:()=>void;busy:boolean}){
  const [msg,setMsg]=useState(''),[illustrated,setIllustrated]=useState(true),[up,setUp]=useState(false)
  const art=job.brief.art??[]
- const clean=(n:string)=>n.toLowerCase().replace(/\.jpeg$/,'.jpg').replace(/[^a-z0-9._-]+/g,'-').replace(/^-+/,'').slice(-64)
  async function send(files:FileList|null){
   if(!files?.length)return
-  const list=[...files].filter(f=>/\.(png|jpe?g|webp)$/i.test(f.name)&&f.size<=45*1024*1024)
-  if(!list.length){setMsg('PNG, JPG or WebP, at most 45 MB each.');return}
-  setUp(true);setMsg('Asking for upload links…')
+  const list=Array.from(files)
+  try{validatePictures(list)}catch(e){setMsg(e instanceof Error?e.message:'Invalid pictures');return}
+  setUp(true);setMsg('Preparing your pictures…')
   try{
-   const names=list.map(f=>clean(f.name))
-   const {urls}=await api(`/api/master/stories/${job.id}/art`,{method:'POST',body:JSON.stringify({names})})
-   for(const [i,f] of list.entries()){const n=names[i]!;setMsg(`Uploading ${i+1} of ${list.length}: ${n}`);const r=await fetch(urls[n],{method:'PUT',body:f,headers:{'Content-Type':f.type||'application/octet-stream','x-upsert':'true'}});if(!r.ok)throw new Error(`${n} was refused (${r.status})`)}
-   await act({action:'art_added',files:names.map(name=>({name,illustrated}))})
-   setMsg(`${list.length} picture(s) added. Press Resume when everything is in.`)
-  }catch(e){setMsg(e instanceof Error?e.message:'Upload failed')}finally{setUp(false)}
+   if(job.state==='queued')await api(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify({action:'pause'})})
+   await uploadPictures(job.id,list,illustrated,setMsg)
+   setMsg(`${list.length} required picture(s) added. Press Resume when everything is in.`)
+  }catch(e){setMsg(e instanceof Error?e.message:'Upload failed')}finally{setUp(false);onChange()}
  }
  return <div className={css.pics}>
   <h3 className={css.h3}>Your pictures</h3>
-  <p style={{fontSize:14}}>Name each file after what it shows (<i>el-kaabi-header.png</i>) — the writer reads the name. Blur any personal details (a name or ID on a ticket, a real newspaper&rsquo;s masthead) before uploading.</p>
+  <p style={{fontSize:14}}>Every picture you add must appear in the film. Descriptive names help place it in the right scene (<i>el-kaabi-header.png</i>). Blur any personal details (a name or ID on a ticket, a real newspaper&rsquo;s masthead) before uploading.</p>
   <label className={css.check}><input type="checkbox" checked={illustrated} onChange={e=>setIllustrated(e.target.checked)}/> These look like photographs or documents (the film marks them ILLUSTRATION and the upload says so)</label>
   <input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy||up} onChange={e=>void send(e.target.files)} className={css.input}/>
-  {art.length?<p className={css.meta}>In the brief: {art.map(x=>x.name+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
+  {art.length?<p className={css.meta}>In the brief: {art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {msg&&<p className={css.meta} role="status">{msg}</p>}
  </div>
 }
