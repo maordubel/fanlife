@@ -90,6 +90,16 @@ def check_approval(spec: dict) -> Path:
     return ep_path
 
 
+def check_classified_panels(ep: dict, report: dict) -> None:
+    """Do not render a script with a missing explicitly selected scene or cover."""
+    required = {b.get('panel') for b in ep.get('beats') or []}
+    required.update(t.get('panel') for t in (ep.get('package') or {}).get('thumbnails') or [])
+    required = {p for p in required if isinstance(p, str) and p and not p.startswith('@')}
+    missing = sorted(required - set(report.get('ok') or []))
+    if missing:
+        raise StageError('PANELS', 'Selected episode images could not be downloaded: ' + ', '.join(missing), retryable=True)
+
+
 def run_classified(st, job: dict, jd: Path, progress, log) -> dict:
     """→ the finish payload. `progress(stage, frac, msg)` may raise Stop between steps."""
     spec = job.get('spec') or {}
@@ -98,6 +108,7 @@ def run_classified(st, job: dict, jd: Path, progress, log) -> dict:
     panels, out = tmp / 'panels', tmp / 'job'
     progress('research', 0.05, f"FILE {spec.get('number')}: the panels from your Drive")
     _run([sys.executable, str(COMIC / 'drive_fetch.py'), '--file', spec['file'], '--out', str(panels), '--report', str(tmp / 'fetch.json')], log, code='PANELS')
+    check_classified_panels(read_json(ep_path), read_json(tmp / 'fetch.json'))
     progress('graphics', 0.12, 'Which picture is which (measured)')
     _run([sys.executable, str(COMIC / 'roles.py'), '--panels', str(panels), '--file', spec['file']], log, code='ROLES')
     progress('voice', 0.2, f"Producing — narrator, picture, mix (script {spec.get('script_version')}, approved by {spec.get('approved_by')})")
@@ -126,7 +137,8 @@ def draft(o: Path, spec: dict, title: str, log) -> None:
     if not os.environ.get('TELEGRAM_BOT_TOKEN'):
         log('Telegram: TELEGRAM_BOT_TOKEN is not set — the DRAFT stays in the studio')
         return
-    cmd = [sys.executable, str(COMIC / 'telegram_send.py'), str(o / 'preview-telegram.mp4'), *[str(p) for p in sorted(o.glob('short-*.mp4'))]]
+    clips = sorted(o.glob('short-*.mp4')) + sorted((o / 'shorts').glob('short-*.mp4'))
+    cmd = [sys.executable, str(COMIC / 'telegram_send.py'), str(o / 'preview-telegram.mp4'), *[str(p) for p in clips]]
     for i in (1, 2, 3):
         if (o / f'thumbnail-{i}.jpg').exists():
             cmd += ['--photo', str(o / f'thumbnail-{i}.jpg')]

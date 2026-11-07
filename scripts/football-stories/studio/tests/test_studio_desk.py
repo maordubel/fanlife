@@ -155,6 +155,15 @@ class ClassifiedApproval(unittest.TestCase):
     def test_the_approved_draft_passes(self):
         self.assertEqual(kinds.check_approval(self.spec()).name, self.EP)
 
+    def test_selected_episode_and_cover_images_must_download(self):
+        ep = {'beats': [{'panel': 'scene-a'}, {'panel': '@OPTIONAL'}],
+              'package': {'thumbnails': [{'panel': 'cover-b'}]}}
+        kinds.check_classified_panels(ep, {'ok': ['scene-a', 'cover-b']})
+        with self.assertRaises(StageError) as err:
+            kinds.check_classified_panels(ep, {'ok': ['scene-a']})
+        self.assertEqual(err.exception.code, 'PANELS')
+        self.assertIn('cover-b', str(err.exception))
+
     def test_no_click_no_voice(self):
         for bad in ({'approved': False}, {'approved_by': ''}):
             with self.assertRaises(StageError) as e:
