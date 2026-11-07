@@ -2626,5 +2626,80 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-03T11:03:12.331Z",
   "updatedAt": "2026-11-03T11:03:12.331Z"
+ },
+ {
+  "id": "ga-2d15aa7f5918d0d1",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "50",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1951-52-pics/1951-09-22-rangers-1-1-celtic-league-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1951-52 Pictures | 1951 – 1952 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "f51fcbd565b6bc518270483436a3cfe7ae6531a668ce75b707d1394c1eb75537",
+    "fetchedAt": "2026-11-06T11:29:51.471Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1951-52-pics/1951-09-24-celtic-1-2-clyde-glasgow-cup-final-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1951-52 Pictures | 1951 – 1952 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "d3e856b295fecc20716bea12c5775f06ead057e694dd6893c50bdeb1d5e910ae",
+    "fetchedAt": "2026-11-06T11:29:51.475Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1952-53-pics/1952-09-20-celtic-2-1-rangers-league-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1952-53 Pictures | 1952 – 1953 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "d920fcb311c6bf6a5f5174d9c408221d3eaa3a228216de609e09047e39b08e77",
+    "fetchedAt": "2026-11-06T11:29:51.477Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1952-53-pics/1953-05-11-celtic-1-0-arsenal-coronation-cup-1st-round-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1952-53 Pictures | 1952 – 1953 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "7edce572f0d1a040ab04a897e6141f26e68ca1a7c823f68c30def4cb78df1901",
+    "fetchedAt": "2026-11-06T11:29:54.601Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1952-53-pics/1953-05-16-celtic-2-1-manchester-united-coronation-cup-semi-final-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1952-53 Pictures | 1952 – 1953 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "a15ad73f657727f9042ff47d31b1209228f38a2c4e8fed816600882712f48c51",
+    "fetchedAt": "2026-11-06T11:29:54.601Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1954-55-pics/1955-02-19-kilmarnock-1-1-celtic-scottish-cup-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1954-55 Pictures | 1954 – 1955 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "268ba793f6f6f7291b2a69e8cbd3a537d2e3302161c05ccd07773a9f0605780d",
+    "fetchedAt": "2026-11-06T11:30:06.527Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-06T11:30:06.527Z",
+  "updatedAt": "2026-11-06T11:30:06.527Z"
  }
 ]

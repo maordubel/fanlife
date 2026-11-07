@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/10/25/fc-st-pauli-hansa-rostock-40-vier-treffer-versenkt/",
-    "locator": "p26",
-    "quote": "FC St. Pauli gegen Hansa Rostock ist ein besonderes Spiel. Ein Spiel, bei dem sich alle Fans wünschen oder besser gesagt erwarten, dass ihr Team vor allem körperlich alles reinlegt, in jeden Zweikampf mit vollem Einsatz geht, jeden notwendigen Meter läuft, bis gar nichts mehr geht. Dem FC St. Pauli ist das gelungen: Nur ein einziger Spieler auf dem Platz (mit mehr als 30min Spielzeit) hat weniger als zwei Drittel seiner Defensiv-Zweikämpfe gewonnen (Maximilian Dittgen hat „nur“ 50% gewonnen). Alle andere Spieler haben erheblich höhere Quoten. Knapp 3 von 4 Duellen (genauer: 74%) hat der FCSP g",
-    "bodyHash": "2928b5e57020dd4b9f7ac604482016575ec8e9d757d683dc002f4d20cc7b6bd9",
-    "fetchedAt": "2026-10-30T10:28:52.385Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/11/29/lage-am-millerntor-29-november-2021/",
     "locator": "p68",
     "quote": "„ Gefahr aus der Luft – Kopfverletzungen im Fußball“ , so heißt eine Dokumentation im NDR Sportclub (30min). Neben den Kopfbällen sind natürlich auch die oft aus Kopfballduellen resultierenden Zusammenstöße ein großes Risiko.",
@@ -82,6 +73,15 @@
     "bodyHash": "aa603c7b0a60528d9b2f841e6a76697d873d896f93911f18abf7737ac96ab190",
     "fetchedAt": "2026-11-05T11:31:50.250Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/26/lage-am-millerntor-26-mai-2023/",
+    "locator": "p65",
+    "quote": "Organisiert vom Fanclub „Hexenkessel St. Pauli“ und dem Fanladen findet morgen um 19.00h ein Vortrag einer polnischen „No Borders“-Gruppe statt, die über die Situation von Flüchtlingen an der Grenze zwischen Polen und Belarus berichten werden. Außerdem wird der Film „The limits of humanity“ (30min) im Original mit deutschen Untertiteln gezeigt.",
+    "bodyHash": "8a357ff25c49d121345bf9d169e4ace745ba96a285455c3c2785680d5f7c2c0a",
+    "fetchedAt": "2026-11-06T11:31:17.664Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:50.250Z",
-  "updatedAt": "2026-11-05T11:31:50.250Z"
+  "createdAt": "2026-11-06T11:31:17.664Z",
+  "updatedAt": "2026-11-06T11:31:17.664Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -148,6 +148,24 @@
     "bodyHash": "8b3f583e2afd7e47578c1a77e273178e8b003478c3b91951d1fc5f1ee0505fb3",
     "fetchedAt": "2026-11-06T11:09:25.398Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/05/31/lage-am-millerntor-31-mai-2023/",
+    "locator": "p28",
+    "quote": "Beim NDR gibt es einen Bericht im Schleswig-Holstein Magazin (3 Min) aus Sicht von Tornesch sowie einen etwas kürzeren im Hamburg Journal .",
+    "bodyHash": "9a046ab74de4c4853d71d64d8074aaf80cfc12d41f5dc69f7e62474ac49618b6",
+    "fetchedAt": "2026-11-06T11:31:17.672Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/20/lage-am-millerntor-20-juni-2023/",
+    "locator": "p35",
+    "quote": "Das Team der Deutschen Blindenfußballerinnen bereitet sich aktuell auf die Weltmeisterschaft vor, welche Mitte August in Birmingham stattfindet. Beim NDR gab es gestern einen Beitrag im Hamburg-Journal (3min) rund um das Team von Trainer Wolf Schmidt und FCSP-Spielerin Thoya Küster.",
+    "bodyHash": "78a157ee8f99fd88daa2a54beb22a19088d5407587f2636db4ac3e969f034685",
+    "fetchedAt": "2026-11-06T11:31:20.128Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -155,8 +173,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:25.398Z",
-  "updatedAt": "2026-11-06T11:09:25.398Z"
+  "createdAt": "2026-11-06T11:31:20.128Z",
+  "updatedAt": "2026-11-06T11:31:20.128Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -170,24 +188,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2021/06/30/die-baustellen-im-kader-des-fc-st-pauli/",
-    "locator": "p50",
-    "quote": "Ärgerlich, sogar sehr ärgerlich ist die nun inzwischen schon langfristige Verletzung von Igor Matanović . Dem wäre es zuzutrauen trotz jungen Alters in die Startelf zu kommen. Auch deshalb, da er hinter Burgstaller der Spieler beim FCSP ist, der den höchsten xG-Wert aufweist (0.42 pro 90min, Burgstaller bei 0.55). Ob ein Duo aus Burgstaller und Matanović aber auch wirklich auf dem Platz zusammenpassen würde, ist ohnehin unklar. Es erscheint eher sinnvoll neben einem Spieler wie Burgstaller einen etwas agileren Spieler zu haben. Wenn Amenyido diese Rolle nicht übernehmen kann, dann kommt auf me",
-    "bodyHash": "07fdfcbf198f163648c908feba90804e3727b6940b8e1bcc882375a1a918c9ae",
-    "fetchedAt": "2026-10-29T10:26:05.402Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/04/05/1-frauen-gewinnen-20-bei-jahn-delmenhorst/",
-    "locator": "p12",
-    "quote": "Die Mädels, die privat angereist sind, waren wesentlich früher als wir am Platz und haben uns ca. 90min vor Anpfiff bereits Bilder der sich aufwärmenden Gegnerinnen geschickt. Schnell war klar, dass wir weder im standesgemäßen Auswärtsdress, noch im Heimdress spielen können, weil Delmenhorst in schwarzen Hosen und Stutzen und weißem Trikot spielen wird.",
-    "bodyHash": "95693311c6e2a0940f89a9263a1cfdb5c97ab75eec487c43f07ae7d44fe7e190",
-    "fetchedAt": "2026-11-01T10:49:44.577Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/06/16/die-saison-21-22-der-achter-des-fc-st-pauli/",
@@ -241,6 +241,24 @@
     "bodyHash": "8e34329142b444866e20a03c014310636e2f434adab3ee77fd38f67fd1ff5507",
     "fetchedAt": "2026-11-04T11:36:09.732Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/22/lage-am-millerntor-22-juni-2023/",
+    "locator": "p63",
+    "quote": "0:3 gegen Belgien (EM-Quali, 90min)",
+    "bodyHash": "5bcf56910b48fd880e62cafc42dda0fad6d091090f7fe6d50aebe942df337900",
+    "fetchedAt": "2026-11-06T11:31:20.129Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/25/wer-ist-andreas-albers-ein-spielerprofil/",
+    "locator": "p38",
+    "quote": "Mit dem Prognose-Tool des Global Soccer Network wurde dann berechnet, was man an Zahlen von ihm erwarten kann. Herausgekommen sind: 0.26 Tore pro 90min, 0.06 Vorlagen, ein xG-Wert von 0.36 und ein xA-Wert von 0.06. Das macht dann, sollte Albers rund die Hälfte der Spielzeit in der kommenden Saison auf dem Platz stehen (also knapp 1.500 Minuten) 4.33 Tore und 0.97 Vorlagen.",
+    "bodyHash": "550c75935777533950112edf428295a1207cb4f8a365e41d92be8135b7bc26d0",
+    "fetchedAt": "2026-11-06T11:31:20.131Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -248,8 +266,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:09.732Z",
-  "updatedAt": "2026-11-04T11:36:09.732Z"
+  "createdAt": "2026-11-06T11:31:20.131Z",
+  "updatedAt": "2026-11-06T11:31:20.131Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -293,15 +311,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2020/05/25/lage-am-millerntor-25-05-2020/",
-    "locator": "p29",
-    "quote": "Vereinsboss Mark Palios erzählt nun im Guardian Video (10min) wie er den Virus nicht einfach über sich und seinen Verein ergehen ließ, sondern liegen gelassene Projekte anpackte und sich Gedanken über die Rolle des Vereins für die Stadt und die wirtschaftliche Situation des Profifußball im Allgemeinen machte.",
-    "bodyHash": "e99d499dcf0bdb14e8e18aa04783cb93170d5d7f544a13c3dd3a059cc5f63354",
-    "fetchedAt": "2026-10-25T08:45:20.322Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2021/03/05/lage-am-millerntor-05-maerz-2021/",
@@ -364,6 +373,15 @@
     "bodyHash": "d9c94cf5256c034de38eb959bc6d0bf9a7df7065dbfee2d3497a2d4be5c5f595",
     "fetchedAt": "2026-11-05T11:31:47.267Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/06/lage-am-millerntor-06-juni-2023/",
+    "locator": "p12",
+    "quote": "Der FCSP nutzt die Gelegenheit, sein Nachwuchsleistungszentrum, durch das Eric eben auch die letzten Jahre gelaufen ist, ausführlich vorzustellen ( YouTube, 10min ). Weniger, um zu zeigen wie toll das alles ist – sondern eher, um aufzuzeigen, warum das „Projekt Kollaustraße“ so wichtig für die Zukunft des Vereins ist.",
+    "bodyHash": "73e64c6ccbb5fa5378bed3a6b38ab55ddd1db7af67945a724dd980ba463ae57c",
+    "fetchedAt": "2026-11-06T11:31:20.121Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -371,8 +389,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:47.267Z",
-  "updatedAt": "2026-11-05T11:31:47.267Z"
+  "createdAt": "2026-11-06T11:31:20.121Z",
+  "updatedAt": "2026-11-06T11:31:20.121Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -436,15 +454,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/03/02/lage-am-millerntor-02-maerz-2022/",
-    "locator": "p22",
-    "quote": "„Die Verpflichtung, als Sportler Haltung zu zeigen“ . So lautet der Titel einer Kurzdoku (4min) der Sportschau über Jackson Irvine , in der unser australischer Nationalspieler vorgestellt wird und zu Wort kommt, insbesondere mit seinen Gedanken über Verantwortung als Profisportler, u.a. zur WM in Katar .",
-    "bodyHash": "8537ce48f405ff8f21a69e44e56df2150f3a2b63a50cd7cefa28c60a297dce27",
-    "fetchedAt": "2026-10-31T09:59:34.210Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/05/09/lage-am-millerntor-09-mai-2022/",
     "locator": "p64",
     "quote": "Denkwürdiges gab es in der Regionalliga Südwest : Vor dem letzten Spieltag hat die SV Elversberg drei Punkte und 19 Tore Vorsprung auf den SSV Ulm, ähnliches (drei Punkte und 14 Tore) gilt auf den Nicht-Abstiegsplätzen für den FSV Frankfurt – und diese Situation manifestierten beide Teams dann beim 1:1 gestern auf dem Platz, indem der Ball in den letzten 15 Minuten nur noch hin und her gespielt wurde ( Video beim Kicker , ab ca. 4min).",
@@ -505,6 +514,15 @@
     "bodyHash": "ab600c8074263177188e7c361f64cbc8bab127c83e74483e579256fc52160d07",
     "fetchedAt": "2026-11-06T11:09:20.283Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/06/lage-am-millerntor-06-juni-2023/",
+    "locator": "p15",
+    "quote": "Im Schleswig-Holstein Magazin (4min) spricht Empen jetzt über diese Zeit, seine Therapie und seinen Umgang damit.",
+    "bodyHash": "73e64c6ccbb5fa5378bed3a6b38ab55ddd1db7af67945a724dd980ba463ae57c",
+    "fetchedAt": "2026-11-06T11:31:20.121Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -512,8 +530,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:20.283Z",
-  "updatedAt": "2026-11-06T11:09:20.283Z"
+  "createdAt": "2026-11-06T11:31:20.121Z",
+  "updatedAt": "2026-11-06T11:31:20.121Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -527,15 +545,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
-    "locator": "p12",
-    "quote": "– NDR: Zwischen Ablehnung und Vorfreude: Die umstrittene WM in Katar (17min)",
-    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
-    "fetchedAt": "2026-11-04T11:36:00.536Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
@@ -598,6 +607,15 @@
     "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
     "fetchedAt": "2026-11-04T11:36:05.651Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/14/lage-am-millerntor-14-juni-2023/",
+    "locator": "p9",
+    "quote": "Timo Schultz übernimmt bekanntlich zur neuen Saison den FC Basel. Er war im Vorfeld jetzt beim FCB-Talk zu Gast ( YouTube, 17min ).",
+    "bodyHash": "f49088c4d877972b199333eb78fe1518058fab7eefe91ab3da426a598ac6585e",
+    "fetchedAt": "2026-11-06T11:31:20.126Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -605,8 +623,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:05.651Z",
-  "updatedAt": "2026-11-04T11:36:05.651Z"
+  "createdAt": "2026-11-06T11:31:20.126Z",
+  "updatedAt": "2026-11-06T11:31:20.126Z"
  },
  {
   "id": "ga-39c9baa061395123",
@@ -1105,6 +1123,15 @@
     "bodyHash": "8b3f583e2afd7e47578c1a77e273178e8b003478c3b91951d1fc5f1ee0505fb3",
     "fetchedAt": "2026-11-06T11:09:25.398Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/22/lage-am-millerntor-22-juni-2023/",
+    "locator": "p60",
+    "quote": "1:2 gegen Belarus (EM-Quali, nach 54min beim Stand von 0:0 ausgewechselt)",
+    "bodyHash": "5bcf56910b48fd880e62cafc42dda0fad6d091090f7fe6d50aebe942df337900",
+    "fetchedAt": "2026-11-06T11:31:20.129Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1112,8 +1139,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:25.398Z",
-  "updatedAt": "2026-11-06T11:09:25.398Z"
+  "createdAt": "2026-11-06T11:31:20.129Z",
+  "updatedAt": "2026-11-06T11:31:20.129Z"
  },
  {
   "id": "ga-adefbda210a2bea6",
@@ -1525,6 +1552,15 @@
     "bodyHash": "1eddfc8c2cc89708f6094847f3482d0855caa83ea82ce44f87736cc25c4d062d",
     "fetchedAt": "2026-11-06T11:09:20.275Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/07/17/lage-am-millerntor-17-juli-2023/",
+    "locator": "p69",
+    "quote": "Den eher übergeordneten Blick auf den Fußball der Frauen gibt es bei Legende Verloren . Dort läuft inzwischen die dritte Staffel und in Episode 1 (35min) geht es um die Historie der bisherigen internationalen Turniere.",
+    "bodyHash": "5f66d2f0113173b565fe1ef695583eab28b4328e8fa6c5c681dcb96c0777d88c",
+    "fetchedAt": "2026-11-06T11:31:25.428Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1532,8 +1568,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:20.275Z",
-  "updatedAt": "2026-11-06T11:09:20.275Z"
+  "createdAt": "2026-11-06T11:31:25.428Z",
+  "updatedAt": "2026-11-06T11:31:25.428Z"
  },
  {
   "id": "ga-f4ca32025f2ce9d5",
@@ -2014,6 +2050,15 @@
     "bodyHash": "4ce53edb6d4a492311a5987678e9f378b71e209a92b8855ff470eacfedac655f",
     "fetchedAt": "2026-11-01T10:49:42.297Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/06/lage-am-millerntor-06-juni-2023/",
+    "locator": "p16",
+    "quote": "Wer da mehr zu erfahren möchte, sei auf diese Podcast-Folge (47min) von vor vier Monaten verwiesen.",
+    "bodyHash": "73e64c6ccbb5fa5378bed3a6b38ab55ddd1db7af67945a724dd980ba463ae57c",
+    "fetchedAt": "2026-11-06T11:31:20.121Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2021,8 +2066,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:49:42.297Z",
-  "updatedAt": "2026-11-01T10:49:42.297Z"
+  "createdAt": "2026-11-06T11:31:20.121Z",
+  "updatedAt": "2026-11-06T11:31:20.121Z"
  },
  {
   "id": "ga-088195fdd4978abd",
@@ -2626,6 +2671,15 @@
     "bodyHash": "bd98000f16959bc6c9435acae594f1e2919ed5fde4fe5ebe4c010bc003cb2cc5",
     "fetchedAt": "2026-11-05T11:31:39.006Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/22/lage-am-millerntor-22-juni-2023/",
+    "locator": "p57",
+    "quote": "1:2 gegen Belarus (EM-Quali, nach 25min verletzt ausgewechselt)",
+    "bodyHash": "5bcf56910b48fd880e62cafc42dda0fad6d091090f7fe6d50aebe942df337900",
+    "fetchedAt": "2026-11-06T11:31:20.129Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2633,8 +2687,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:39.006Z",
-  "updatedAt": "2026-11-05T11:31:39.006Z"
+  "createdAt": "2026-11-06T11:31:20.129Z",
+  "updatedAt": "2026-11-06T11:31:20.129Z"
  },
  {
   "id": "ga-690e32cb743d0203",
@@ -2854,5 +2908,95 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-06T11:09:22.952Z",
   "updatedAt": "2026-11-06T11:09:22.952Z"
+ },
+ {
+  "id": "ga-cc82faf41239ff50",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "32",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/01/lage-am-millerntor-01-juni-2023/",
+    "locator": "p9",
+    "quote": "Ein letzter Blick zurück auf diesen Spieltag sei gestattet: Der Welcome to Hell-Podcast hat eine „Final Day Farewell & Season Review“ -Folge (32min, Englisch) veröffentlicht, ähnliches gilt für den „Fell in love with a girl“-Podcast aus Kanada ( 59min, Englisch ).",
+    "bodyHash": "f34dc2f20ad5b2fc68e825182b4863a71ba2f86c5ce4889e746a58477705f7e0",
+    "fetchedAt": "2026-11-06T11:31:17.675Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-06T11:31:17.675Z",
+  "updatedAt": "2026-11-06T11:31:17.675Z"
+ },
+ {
+  "id": "ga-0c31350ed1a9efb9",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "73",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/06/22/lage-am-millerntor-22-juni-2023/",
+    "locator": "p65",
+    "quote": "0:2 gegen Argentinien (in Peking, nach 73min eingewechselt)",
+    "bodyHash": "5bcf56910b48fd880e62cafc42dda0fad6d091090f7fe6d50aebe942df337900",
+    "fetchedAt": "2026-11-06T11:31:20.129Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-06T11:31:20.129Z",
+  "updatedAt": "2026-11-06T11:31:20.129Z"
+ },
+ {
+  "id": "ga-4994fa08c082e8c4",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "21",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/07/17/lage-am-millerntor-17-juli-2023/",
+    "locator": "p70",
+    "quote": "Und dann ist da noch der sowieso empfehlenswerte Players Podcast vom Deutschlandfunk. In der aktuellen Episode (21min) erzählt Anne Trabant-Haarbach ihren Weg vom Kindheitstraum bis zur Nationalspielerin, gegen alle Widerstände.",
+    "bodyHash": "5f66d2f0113173b565fe1ef695583eab28b4328e8fa6c5c681dcb96c0777d88c",
+    "fetchedAt": "2026-11-06T11:31:25.428Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-06T11:31:25.428Z",
+  "updatedAt": "2026-11-06T11:31:25.428Z"
  }
 ]
