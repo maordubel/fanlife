@@ -10,6 +10,14 @@ from PIL import Image
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
 from studio import shorts_hooks
 
+class EpisodeEvidence(unittest.TestCase):
+    def test_spoken_numbers_and_year_are_supported_without_inventing_new_ones(self):
+        from studio.script import fact_guard
+        episode = {'sources': [{'n': 1}], 'beats': [{'say': 'They needed two goals.', 'sources': [1]}]}
+        ledger = shorts_hooks.episode_evidence(episode, 1994)
+        self.assertEqual(fact_guard('In 1994 they needed two goals.', ledger, ['src-1']), [])
+        self.assertTrue(fact_guard('They needed seven goals.', ledger, ['src-1']))
+
 @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'),'ffmpeg required')
 class HookShorts(unittest.TestCase):
     def test_new_short_has_own_voice_and_is_under_thirty_seconds(self):

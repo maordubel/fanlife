@@ -7,6 +7,20 @@ from . import voice
 from .common import StageError, read_json
 
 
+def episode_evidence(ep: dict, year=None) -> dict:
+    """Turn cited, approved episode lines into a ledger for independently written hooks."""
+    from .script import numbers_in_text
+    claims = []
+    for source in ep.get('sources') or []:
+        number = source.get('n')
+        lines = [b.get('say', '') for b in ep['beats'] if number in (b.get('sources') or []) and b.get('say')]
+        if lines:
+            text = ' '.join(lines)
+            claims.append({'id': f'src-{number}', 'fact': {'kind': 'history', 'text': text,
+                           'spoken_numbers': sorted(numbers_in_text(text))}, 'sources': []})
+    return {'claims': claims, 'summary': {}, 'season': str(year) if year else ''}
+
+
 def make(job: Path, script: dict, club: str, season: str, accent: str, *, ledger_override: dict | None = None) -> list[dict]:
     from . import shorts
     from .script import fact_guard, identity_guard, knockout_guard, story_of

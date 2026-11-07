@@ -511,12 +511,8 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
         # original audio into a Short and never turn the evidence into invented specifics.
         try:
             from studio import writer, shorts_hooks
-            evidence = []
-            for source in ep.get('sources') or []:
-                number = source.get('n')
-                lines = [b.get('say', '') for b in ep['beats'] if number in (b.get('sources') or []) and b.get('say')]
-                if lines:
-                    evidence.append({'id': f'src-{number}', 'fact': {'kind': 'history', 'text': ' '.join(lines)}, 'sources': []})
+            evidence_ledger = shorts_hooks.episode_evidence(ep, man['files'][ep['file']].get('year'))
+            evidence = evidence_ledger['claims']
             authored = [s for s in (ep.get('package') or {}).get('shorts') or [] if s.get('narration') and s.get('claim_ids')]
             if authored:
                 hooks = {'shorts': authored}
@@ -532,7 +528,7 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
                 hooks = writer.parse_json(response)
             tiny = {'chapters': [{'beats': [{'narration': b.get('say', '')} for b in ep['beats']]}], 'shorts': hooks.get('shorts') or []}
             made = shorts_hooks.make(job, tiny, 'CLASSIFIED', f"FILE {ep.get('number')}", tone_hex,
-                                     ledger_override={'claims': evidence, 'summary': {}})
+                                     ledger_override=evidence_ledger)
             log(f'Shorts: {len(made)} independently written hooks, each under 30 seconds')
         except Exception as e:  # noqa: BLE001 — the film remains available; do not substitute an old excerpt
             log(f'Shorts: independent hooks unavailable ({type(e).__name__}: {e})')
