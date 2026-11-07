@@ -26,6 +26,18 @@ class FootballAccuracy(unittest.TestCase):
         with self.assertRaises(ValueError):
             Palette('test', 'Test', '#cc0000', bans=['red'])
 
+    def test_opponent_colour_in_photograph_is_preserved(self):
+        import tempfile
+        from PIL import Image
+        from studio.media_assets import whole_picture
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'opponent.png'
+            Image.new('RGB', (640, 360), (255, 220, 0)).save(path)
+            pal = Palette('hapoel-tel-aviv', 'Hapoel Tel Aviv', '#c8102e', bans=['yellow'])
+            result = whole_picture(path, (640, 360), pal.render_bans)
+            self.assertEqual(result.getpixel((320, 180)), (255, 220, 0))
+            self.assertNotEqual(pal.accent, '#ffdc00')
+
     def test_qualification_is_not_the_result_of_one_leg(self):
         st = {'matches': [{'id': 'second', 'through': False}]}
         self.assertTrue(knockout_guard('We qualified.', self.ledger, ['second'], st))
