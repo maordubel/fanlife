@@ -136,6 +136,7 @@ SCHEMA_TEXT = '''{
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
   "selected": integer index into title_candidates,
   "hook": string — the first sentence the viewer hears; must be the start of the first beat's narration,
+  "hook_options": [{"text": string, "claim_ids": [string]}] — EXACTLY 3 alternative complete openings for the selected title; each 3–4 sentences, about 20 seconds, distinct, with cited evidence. The first is used in the opening narration.
   "chapters": [{"title": string, "beats": [{
       "narration": string (one to three sentences),
       "claim_ids": [string] — ledger ids this beat relies on (may be empty only for pure atmosphere with no fact);

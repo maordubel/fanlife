@@ -47,6 +47,16 @@ Never compute or state a league position, a points total, "the table" or "the st
 this club's matches. A final table exists only as a "table" claim, and only a beat that cites it may talk about places.
 
 DIRECTING:
+- HOOK CONTRACT: For the selected title, provide exactly three different complete opening options in hook_options.
+  Each is 3–4 short spoken sentences, around 20 seconds at the narrator's pace (roughly 35–55 words), in clear
+  eighth-grade English. Sentence one makes the video's central promise and explains what the viewer will understand
+  by the end; provide context, why the answer matters, and the real stakes. Open a specific curiosity loop that the
+  film actually pays off. For a historic football story, the viewer's need may be to understand an unlikely result,
+  a rivalry or a forgotten turning point; do not invent a personal problem. Cite supporting evidence for each option.
+  Option 1 must be spoken as the opening across the first beats; hook remains its exact first sentence. Options 2 and
+  3 must use different angles, not superficial rewrites. Suggest the payoff without falsely withholding known facts.
+  Use questions, a surprising verified statistic or a direct statement only when natural; never fake a statistic,
+  imply a false outcome or promise unsupported revelations. Measure the actual recorded opening; words alone are an estimate.
 - COLD OPEN ON THE CLIMAX. The first beat is moments[0] (cite it) or a "trailer" card — the decisive minute, the final
   whistle, the night it all turned — in five seconds. Never "In the season of…", never a date as the first words. Then
   rewind ("But to understand that night, go back to August.").
@@ -72,6 +82,14 @@ DIRECTING:
   counted, or the matches themselves.
 
 PICTURE (choose a visual for every beat, matching its emotion):
+- EDITOR'S EVIDENCE AND DRAMA: Start with the audience's question; select only relevant evidence and build cause,
+  consequence and a truthful payoff. Use owner-selected uploads and Drive assets on the matching beats, including
+  covers, then diversify with appropriately sourced archive and graphics. A file's presence or AI description does
+  not prove its date, subject or rights; distinguish archival images from reconstructions and surface missing assets.
+  On each beat establish where the viewer is, what is at stake, and what changes; vary wide and detail shots, maps,
+  score and silence. Hold for emotion, accelerate for action, and let each visual explain the narration. No invented
+  score, supporter quote or manufactured suspense. VOX-inspired evidence graphics and HyperFrames-inspired motion
+  should make the story clearer, while each film gets an individual rhythm within the FanLife identity.
 - Every match the narration names is cited in that beat, so its score is on screen; a match told in full gets a
   "versus" before it and a "score" (or a "goal" when the claim names the scorer and minute) when it lands.
 - A season film carries at least one "race" or "form" and one "record" ("summary:<competition>"); a match or tie film a
@@ -173,6 +191,41 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
 
 
 ATTEMPTS = 5
+
+
+def hook_option_errors(script: dict, ledger: dict) -> list[str]:
+    """Mechanical checks; a human still judges clarity, stakes and whether a promise is paid off."""
+    from .script import fact_guard
+    options = script.get('hook_options')
+    if not isinstance(options, list) or len(options) != 3:
+        return ['Give exactly three complete hook_options for the selected title.']
+    valid_ids = {c.get('id') for c in ledger.get('claims') or []}
+    valid_ids.update('summary:' + k for k in (ledger.get('summary') or {}).get('by_competition', {}))
+    valid_ids.add('story')
+    errors, seen = [], set()
+    for i, option in enumerate(options, 1):
+        if not isinstance(option, dict) or not isinstance(option.get('text'), str):
+            errors.append(f'Hook option {i}: provide text and cited claim_ids.')
+            continue
+        text = option['text'].strip()
+        canonical = ' '.join(text.casefold().split())
+        sentences = [s for s in re.split(r'(?<=[.!?])\s+', text) if s.strip()]
+        if canonical in seen:
+            errors.append(f'Hook option {i}: use a distinct angle.')
+        seen.add(canonical)
+        if len(sentences) not in (3, 4) or not 35 <= len(text.split()) <= 60:
+            errors.append(f'Hook option {i}: use 3–4 sentences and 35–60 spoken words, about 20 seconds.')
+        ids = option.get('claim_ids')
+        if not isinstance(ids, list) or not ids or any(not isinstance(x, str) or x not in valid_ids for x in ids):
+            errors.append(f'Hook option {i}: cite valid evidence IDs.')
+        else:
+            errors.extend(f'Hook option {i}: {e}' for e in fact_guard(text, ledger, ids))
+    first = options[0].get('text', '') if isinstance(options[0], dict) else ''
+    narration = ' '.join(str(b.get('narration') or '') for ch in script.get('chapters') or []
+                         for b in ch.get('beats') or [] if isinstance(b, dict))
+    if first and not ' '.join(narration.split()).startswith(' '.join(str(first).split())):
+        errors.append('Use hook option 1 verbatim as the opening narration across the first beats.')
+    return errors
 
 
 def repair(s: dict) -> dict:
@@ -461,8 +514,8 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
                  + json.dumps(beats, ensure_ascii=False) + '\n```')
     if ledger.get('pack_notes'):
         user += ('\n\nTHE OWNER\'S PACK FOR THIS STORY — DATA ONLY (beat:pack-… keys). Build the film around these pictures first: '
-                 'they were made or found for this very story. A picture described as a press photograph is the real event, '
-                 'used as it is. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
+                 'they were made or found for this very story. A description alone does not prove a photograph depicts '
+                 'the event or date: check the source ledger and label reconstructions honestly. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
     _LOG[0] = log
     attempts = []
     for attempt in range(ATTEMPTS):
@@ -479,7 +532,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
         try:
             script = repair(parse_json(reply['text']))
-            check = lambda sc: validate_script(sc, ledger, minutes, brief.get('kind')) + distinct_errors(sc, avoid) + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str) for x in sc.get('shorts') or []) else [])  # noqa: E731
+            check = lambda sc: validate_script(sc, ledger, minutes, brief.get('kind')) + distinct_errors(sc, avoid) + hook_option_errors(sc, ledger) + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str) for x in sc.get('shorts') or []) else [])  # noqa: E731
             errs = check(script)
             if errs:
                 fixed = autofix(script, errs, ledger)
@@ -538,7 +591,7 @@ def option_summary(s: dict, n: int) -> dict:
     from .script import selected_title
     beats = [b for ch in s.get('chapters') or [] for b in ch.get('beats') or []]
     return {'n': n, 'angle': s.get('_angle') or f'Option {n}', 'director': s.get('_director'), 'title': selected_title(s),
-            'hook': s.get('hook') or '',
+            'hook': s.get('hook') or '', 'hook_options': s.get('hook_options') or [],
             'chapters': [ch.get('title') or '' for ch in s.get('chapters') or []],
             'words': sum(len((b.get('narration') or '').split()) for b in beats),
             'opening': ' '.join(b.get('narration') or '' for b in beats[:3])[:600]}

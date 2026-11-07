@@ -24,7 +24,7 @@ export type Tone=typeof TONES[number]
 export const STYLES=['collage','papercut','archive','night'] as const
 export type Style=typeof STYLES[number]
 /** One script per director (docs/fanlife/66 §5): `angle` carries the director's name, `director` his id. */
-export type ScriptOption={n:number;angle:string;title:string;hook:string;chapters:string[];words:number;opening:string;director?:DirectorId}
+export type ScriptOption={n:number;angle:string;title:string;hook:string;hook_options?:{text:string;claim_ids:string[]}[];chapters:string[];words:number;opening:string;director?:DirectorId}
 export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
  visual_style:Style|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
@@ -223,7 +223,7 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  return j
 }
 const cut=(x:unknown,n:number)=>String(x??'').slice(0,n)
-function cleanOption(o:ScriptOption):ScriptOption{const x:ScriptOption={n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)};if(isDirector(o.director))x.director=o.director;return x}
+function cleanOption(o:ScriptOption):ScriptOption{const x:ScriptOption={n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)};if(Array.isArray(o.hook_options))x.hook_options=o.hook_options.slice(0,3).filter(h=>h&&typeof h==='object').map(h=>({text:cut(h.text,600),claim_ids:(Array.isArray(h.claim_ids)?h.claim_ids:[]).slice(0,10).map(id=>cut(id,80))}));if(isDirector(o.director))x.director=o.director;return x}
 /** The pitching director's script first, the others in the order they were written. `n` is never renumbered: it names
  *  the file the worker resumes from (script-option-<n>.json). */
 export function leadFirst(opts:ScriptOption[],lead:DirectorId|null|undefined):ScriptOption[]{
@@ -247,7 +247,7 @@ export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind
 /** A CLASSIFIED FILE as the desk sees it (lib/stories/classifiedIndex.ts reads the episodes and the panel map). */
 export type ClassifiedFile={file:string;number:string;title:string;tone:string;year:number|null;episode:string|null
  script:string|null;script_version:string|null;approved_in_file:boolean;minutes:number|null;beats:number
- panels:{have:number;roles:number;missing:string[]};shorts:number}
+ panels:{have:number;roles:number;missing:string[]};shorts:number;hook_options?:string[]}
 /** The owner's approval is part of the request (mirrors the workflow's "I approve the script" tick): who, when, and
  *  WHICH draft — the worker refuses to voice a script whose version changed after the click. */
 export type ClassifiedSpec={file:string;number:string;title:string;episode:string;script_version:string

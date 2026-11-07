@@ -440,6 +440,10 @@ class Soul(unittest.TestCase):
     """The house soul (studio/soul.py) reaches the model in every script and every pitch, and never adds a fact."""
 
     def setUp(self):
+        from unittest.mock import patch
+        hook_check = patch.object(writer, 'hook_option_errors', return_value=[])
+        hook_check.start()
+        self.addCleanup(hook_check.stop)
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         old = writer.call_model
@@ -599,6 +603,10 @@ class FakeModel:
 
 class Directors(unittest.TestCase):
     def setUp(self):
+        from unittest.mock import patch
+        hook_check = patch.object(writer, 'hook_option_errors', return_value=[])
+        hook_check.start()
+        self.addCleanup(hook_check.stop)
         self.L = season('WWLLLLLWWWWW')
         self.base = director_script(self.L)
         self.tmp = tempfile.TemporaryDirectory()

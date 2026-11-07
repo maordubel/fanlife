@@ -6,7 +6,7 @@
   "fps": 25,
   "grade": 0.4,
   "script": "docs/fanlife/classified/file02-maksimir.script.md",
-  "script_version": "owner-approved-2026-11-07",
+  "script_version": "owner-approved-hooks-2026-11-07",
   "approved": true,
   "minutes": 7.0,
   "note": "The match was never played. Artwork is reconstruction; owner-selected photographs require accurate captions and image provenance. Never present the administrative award as a played score.",
@@ -14,8 +14,8 @@
     {
       "id": "b01a",
       "panel": "f02-owner-kick-art",
-      "say": "The match never started. But the photographs travelled further than the score of any ordinary Sunday afternoon. A captain in a blue shirt, a police officer, supporters on the pitch. One violent moment at Maksimir Stadium would become an image people returned to for decades.",
-      "dur": 22.0,
+      "say": "This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?",
+      "dur": 21.9,
       "chapter": "the whistle that never came",
       "mood": "tense",
       "move": "push",
@@ -378,7 +378,7 @@
       "The Match That Became a Myth"
     ],
     "selected": 0,
-    "hook": "A match never kicked off, yet its photographs became a symbol of a country in crisis.",
+    "hook": "This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis.",
     "tags": [
       "CLASSIFIED",
       "FanLife Football Stories",
@@ -431,6 +431,29 @@
         ],
         "from": "b06a",
         "to": "b09a"
+      }
+    ],
+    "hook_options": [
+      {
+        "text": "This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ]
+      },
+      {
+        "text": "One photograph from a match that never kicked off became a symbol of a country in crisis. Dinamo Zagreb were due to face Red Star Belgrade in May 1990. Before football could begin, violence took over the stadium. The story behind that image is more complicated than the myth that followed.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ]
+      },
+      {
+        "text": "The match at Maksimir never started, yet its images still shape how people remember Yugoslavia. Dinamo Zagreb and Red Star Belgrade were meant to play that afternoon. Instead, a stadium descended into violence. To understand why the photograph mattered, we need to look beyond the frame.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ]
       }
     ]
   }

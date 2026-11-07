@@ -6,7 +6,7 @@
   "fps": 25,
   "grade": 0.4,
   "script": "docs/fanlife/classified/file03-two-goals.script.md",
-  "script_version": "owner-approved-2026-11-07",
+  "script_version": "owner-approved-hooks-2026-11-07",
   "approved": true,
   "minutes": 3.0,
   "note": "Owner-supplied illustrations are reconstructions, not archival match photographs. RSSSF lists the played score as 3–2 and the competition counted the sudden-death winner twice in the standings.",
@@ -14,8 +14,8 @@
     {
       "id": "b01",
       "panel": "f03-board",
-      "say": "A team needed to win by two. So it scored in its own net. Then it had to defend both goals.",
-      "dur": 10.0,
+      "say": "This is the story of why a team scored in its own net and then had to defend both goals. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.",
+      "dur": 20.7,
       "mood": "tense",
       "move": "push",
       "amount": 0.12,
@@ -276,7 +276,7 @@
       "The Game That Made Both Goals Dangerous"
     ],
     "selected": 0,
-    "hook": "Barbados were winning, but they needed to score in their own net.",
+    "hook": "This is the story of why a team scored in its own net and then had to defend both goals.",
     "tags": [
       "CLASSIFIED",
       "Barbados",
@@ -328,6 +328,29 @@
         ],
         "from": "b09",
         "to": "b13"
+      }
+    ],
+    "hook_options": [
+      {
+        "text": "This is the story of why a team scored in its own net and then had to defend both goals. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ]
+      },
+      {
+        "text": "Barbados scored an own goal on purpose to keep their qualifying hopes alive. They were ahead, but the score was not enough to send Grenada out. An unusual extra-time rule changed the calculation. It also gave Grenada a reason to attack either goal, turning the final minutes upside down.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ]
+      },
+      {
+        "text": "How can scoring in your own net help you qualify? In a Caribbean Cup qualifier, Barbados needed a bigger winning margin against Grenada. A special extra-time rule opened a route that would seem impossible in an ordinary game. Follow the score, and the strange decision starts to make sense.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ]
       }
     ]
   }
