@@ -5,13 +5,13 @@
   "collection": "posts",
   "queryFingerprint": "73d89cab8686a720",
   "parserVersion": "millernton-stats-v1",
-  "nextPage": 95,
-  "lastCommittedPage": 94,
-  "observedTotalDocuments": 4443,
+  "nextPage": 100,
+  "lastCommittedPage": 99,
+  "observedTotalDocuments": 4445,
   "observedTotalPages": 178,
   "perPage": 25,
   "state": "partial_budget",
-  "updatedAt": "2026-11-06T11:31:28.264Z",
+  "updatedAt": "2026-11-07T10:43:01.982Z",
   "lastError": null
  },
  "millernton:pages": {
@@ -26,7 +26,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-11-06T11:31:31.417Z",
+  "updatedAt": "2026-11-07T10:43:04.858Z",
   "lastError": null
  },
  "fcstpauli-museum:posts": {
@@ -41,7 +41,7 @@
   "observedTotalPages": 2,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-11-06T11:31:37.457Z",
+  "updatedAt": "2026-11-07T10:43:11.329Z",
   "lastError": null
  },
  "fcstpauli-museum:pages": {
@@ -56,7 +56,7 @@
   "observedTotalPages": 2,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-11-06T11:31:43.738Z",
+  "updatedAt": "2026-11-07T10:43:17.562Z",
   "lastError": null
  }
 }
