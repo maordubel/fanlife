@@ -49,7 +49,7 @@ class ArchiveGoals(unittest.TestCase):
     def test_compiled_club_archive_puts_linked_goal_in_writer_ledger(self):
         pack = {'data': {'identity': {'name': 'Club'}, 'sources': list(self.sources.values()),
                          'matches': [{'id': 'match-1', 'status': 'approved', 'confidence': 2, 'sources': ['source-1'],
-                                      'value': {'on': '2004-04-15', 'name': 'Club 2-1 Rival FC', 'score': '2-1',
+                                      'value': {'on': '2004-04-15', 'name': 'Club 2-1 Rival FC', 'score': '2-1', 'attendance': 12345,
                                                 'competition': 'League'}}], 'goals': [self.goal]}}
         with tempfile.TemporaryDirectory() as d:
             Path(d, 'club.json').write_text(json.dumps(pack), encoding='utf-8')
@@ -57,6 +57,7 @@ class ArchiveGoals(unittest.TestCase):
                  patch.object(research, '_names_en', return_value={}):
                 ledger = research.compiled_ledger('club', '2003/04')
         goal = next(c for c in ledger['claims'] if c['id'] == 'goal-1')
+        self.assertEqual(next(c for c in ledger['claims'] if c['id'] == 'match-1')['fact']['attendance'], 12345)
         self.assertEqual(goal['fact']['match_id'], 'match-1')
         self.assertEqual(goal['fact']['minute_label'], '45+2')
 

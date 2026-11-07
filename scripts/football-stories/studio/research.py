@@ -174,6 +174,9 @@ def hapoel_ledger(season: str) -> dict:
             'scorers': scorers if (all_named and len(scorers) == gh) else None,
             'scorers_note': None if (all_named and len(scorers) == gh) else 'Scorers not printed: not every goal is a reviewed, named record.',
         }
+        attendance = m.get('attendance')
+        if isinstance(attendance, int) and not isinstance(attendance, bool) and attendance >= 0:
+            fact['attendance'] = attendance
         claims.append({'id': m['matchId'], 'type': 'match', 'fact': fact, 'sources': src,
                        'confidence': m.get('confidence'), 'status': 'archive', 'conflicts': []})
     try:
@@ -456,11 +459,13 @@ def compiled_ledger(club_id: str, season: str) -> dict:
         comp, stage = _uefa_comp(_english(v.get('competition'), comps_en), season)
         named = [x for x in v.get('scorers') or [] if isinstance(x, dict) and x.get('name') and _latin(x['name'])]
         complete = len(named) == cg
+        attendance = v.get('attendance')
         claims.append({'id': m['id'], 'type': 'match', 'fact': {
             'kind': 'match', 'date': date, 'competition': comp, 'stage': v.get('stage') or stage, 'club': name,
             'opponent': away if ours_home else home, 'side': 'home' if ours_home else 'away', 'home': home, 'away': away,
             'score_home': sh, 'score_away': sa, 'club_goals': cg, 'opponent_goals': og,
             'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': {'name': v['venue']} if v.get('venue') else None,
+            **({'attendance': attendance} if isinstance(attendance, int) and not isinstance(attendance, bool) and attendance >= 0 else {}),
             'after_extra_time': aet or None,
             'penalties': {'winner': pens.group(1).strip(), 'score': f'{pens.group(2)}–{pens.group(3)}'} if pens else None,
             'scorers': [{'name': x['name'], 'minute': x.get('minute'), 'penalty': x.get('penalty'), 'own_goal': x.get('ownGoal')}
