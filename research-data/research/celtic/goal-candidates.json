@@ -73,6 +73,15 @@
     "bodyHash": "cea959d7b3da8d0863cc52d4c7bc5066d1903977edacff10e369adb2abe8d86a",
     "fetchedAt": "2026-11-03T11:03:15.285Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1959-60-pics/1960-05-14-celtic-5-1-sparta-rotterdam-friendly-pictures/",
+    "locator": "p1",
+    "quote": "Match Page | Matches: 1959 1960 | Pics 1959-60 | 60's pics | Photograph Library",
+    "bodyHash": "f00ce235610486c51c4df382a301c7ed8372b939d073aa4906a537ecd3362769",
+    "fetchedAt": "2026-11-07T10:41:46.421Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -80,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:03:15.285Z",
-  "updatedAt": "2026-11-03T11:03:15.285Z"
+  "createdAt": "2026-11-07T10:41:46.421Z",
+  "updatedAt": "2026-11-07T10:41:46.421Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -2641,15 +2650,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1951-52-pics/1951-09-22-rangers-1-1-celtic-league-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1951-52 Pictures | 1951 – 1952 | 50's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "f51fcbd565b6bc518270483436a3cfe7ae6531a668ce75b707d1394c1eb75537",
-    "fetchedAt": "2026-11-06T11:29:51.471Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1951-52-pics/1951-09-24-celtic-1-2-clyde-glasgow-cup-final-pictures/",
     "locator": "p1",
     "quote": "Match | 1951-52 Pictures | 1951 – 1952 | 50's Pictures | Year By Year Pictures | Picture Library",
@@ -2692,6 +2692,33 @@
     "bodyHash": "268ba793f6f6f7291b2a69e8cbd3a537d2e3302161c05ccd07773a9f0605780d",
     "fetchedAt": "2026-11-06T11:30:06.527Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1956-57-pics/1957-01-23-dumbarton-2-5-celtic-friendly-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1956-57 Pictures | 1956 – 1957 | 50's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "2babdd05e2285f259e6785df92e76684a068ed40dc6d90c6cf39c55edc401046",
+    "fetchedAt": "2026-11-07T10:41:25.413Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1957-58-pics/1957-10-19-celtic-7-1-rangers-league-cup-pictures/1957-10-19-celtic-7-1-rangers-league-cup-banners-and-tributes/",
+    "locator": "p1",
+    "quote": "Match | 1957-58 Pictures | 1957 – 1958 | 50's Pictures | Year By Year Pictures | Picture Library | Forum",
+    "bodyHash": "d95b927d92bb509c3fde9d4a73bc3c055e03b689589ea2fd3c7b5824b834557e",
+    "fetchedAt": "2026-11-07T10:41:31.490Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1958-59-pics/1958-10-01-celtic-1-2-partick-thistle-league-cup-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1958-59 Pictures | 1958 – 1959 | 50's Pictures | Year By Year Pictures | Picture Library | Forum",
+    "bodyHash": "decb60e7d42c6031fb157997395d8165264819aa175b89563012792c0b0f3d64",
+    "fetchedAt": "2026-11-07T10:41:37.448Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2699,7 +2726,37 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:30:06.527Z",
-  "updatedAt": "2026-11-06T11:30:06.527Z"
+  "createdAt": "2026-11-07T10:41:37.448Z",
+  "updatedAt": "2026-11-07T10:41:37.448Z"
+ },
+ {
+  "id": "ga-ee5b3c55d11a63bc",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "56",
+  "scorerAlias": "Pat Quinn",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1958-59-pics/1959-01-02-celtic-3-3-motherwell-league-division-1-pictures/",
+    "locator": "p2",
+    "quote": "Celtic 3 v 3 Motherwell 2 January 1959 (postponed from 6 Dec), watched by 36,000.\n‘Well were down 3-1 with one minute to play.\nPat Quinn scored in the 56th minute to make it 2-1.\nSt John scored with 60 secs left and Pat hit the equaliser in the last seconds.\n#heritagematters thx to @steelmenhistory Motherwell Historian",
+    "bodyHash": "1b42934ee286dd659356116f910046cc08421fea4acfcce838a8e8cb0f7efca1",
+    "fetchedAt": "2026-11-07T10:41:37.449Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-07T10:41:37.449Z",
+  "updatedAt": "2026-11-07T10:41:37.449Z"
  }
 ]

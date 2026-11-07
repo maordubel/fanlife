@@ -1,7 +1,7 @@
 {
  "club": "fenerbahce",
- "snapshotAsOf": "2026-11-06",
- "researchVersion": 22,
+ "snapshotAsOf": "2026-11-07",
+ "researchVersion": 23,
  "approvedForProduction": 0,
  "counts": {
   "sources": 0,
@@ -11,7 +11,7 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-06T11-30-27-942Z-83f38d",
+  "runId": "2026-11-07T10-42-00-768Z-b3cbc3",
   "state": "blocked",
   "historicalOnly": true,
   "completeArchiveClaim": false,

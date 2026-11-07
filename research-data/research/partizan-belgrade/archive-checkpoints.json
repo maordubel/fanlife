@@ -7,14 +7,10 @@
   "parserVersion": "partizanopedia-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 500,
+  "observedTotalDocuments": 548,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/1516.html",
-   "/1617.html",
-   "/1718.html",
-   "/1819.html",
    "/1920.html",
    "/rekordi.html",
    "/stjepanbobek.html",
@@ -438,7 +434,55 @@
    "/gregorbalazic.html",
    "/miladinstevanovic.html",
    "/sasalukic.html",
-   "/filipkljajic.html"
+   "/filipkljajic.html",
+   "/abubakarumaru.html",
+   "/valeribozinov.html",
+   "/markojevtovic.html",
+   "/alenstevanovic.html",
+   "/fabrisio.html",
+   "/nebojsakosovic.html",
+   "/nemanjamihajlovic.html",
+   "/miroslavbogosavac.html",
+   "/dusanvlahovic.html",
+   "/markogolubovic.html",
+   "/aleksandarsubic.html",
+   "/bojansaranov.html",
+   "/nikolatrujic.html",
+   "/everton.html",
+   "/sedrikgogua.html",
+   "/nikolalekovic.html",
+   "/nikolamilenkovic.html",
+   "/markojovicic.html",
+   "/leonardo.html",
+   "/urosdjurdjevic.html",
+   "/markojankovic.html",
+   "/nemanjagmiletic.html",
+   "/bojanostojic.html",
+   "/leandretavamba.html",
+   "/petardjurickovic.html",
+   "/nikoladjurdjic.html",
+   "/milanradin.html",
+   "/sasamarjanovic.html",
+   "/mohamedelmonir.html",
+   "/djordjejovanovic.html",
+   "/nemanjarmiletic.html",
+   "/ognjenozegovic.html",
+   "/sejdubasuma.html",
+   "/milanmitrovic.html",
+   "/sasazdjelar.html",
+   "/svetozarmarkovic.html",
+   "/djordjeivanovic.html",
+   "/nemanjaantonov.html",
+   "/armindjerlek.html",
+   "/slobodanurosevic.html",
+   "/rikardogomes.html",
+   "/markvaliente.html",
+   "/goranzakaric.html",
+   "/nemanjanikolic.html",
+   "/aleksandarscekic.html",
+   "/strahinjapavlovic.html",
+   "/gabrielenake.html",
+   "/zlatansehovic.html"
   ],
   "seen": [
    "/",
@@ -512,10 +556,14 @@
    "/1112.html",
    "/1213.html",
    "/1314.html",
-   "/1415.html"
+   "/1415.html",
+   "/1516.html",
+   "/1617.html",
+   "/1718.html",
+   "/1819.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-06T11:31:06.828Z",
+  "updatedAt": "2026-11-07T10:42:39.131Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -530,7 +578,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-11-06T11:31:06.909Z",
+  "updatedAt": "2026-11-07T10:42:39.692Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -545,7 +593,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-11-06T11:31:10.796Z",
+  "updatedAt": "2026-11-07T10:42:43.609Z",
   "lastError": null
  },
  "partizan-official:html": {
@@ -564,7 +612,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-06T11:31:12.324Z",
+  "updatedAt": "2026-11-07T10:42:45.297Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -583,7 +631,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-06T11:31:13.090Z",
+  "updatedAt": "2026-11-07T10:42:46.584Z",
   "lastError": null
  }
 }

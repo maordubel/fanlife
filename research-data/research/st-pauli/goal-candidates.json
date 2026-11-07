@@ -166,6 +166,15 @@
     "bodyHash": "78a157ee8f99fd88daa2a54beb22a19088d5407587f2636db4ac3e969f034685",
     "fetchedAt": "2026-11-06T11:31:20.128Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/10/24/lage-am-millerntor-24-oktober-2023/",
+    "locator": "p18",
+    "quote": "Einen Einblick in die Thematik gibt auch der Kinofilm „Total Trust“, der die Verwendung dieser Technik in China beschreibt ( NDR Hamburg Journal, 3min ).",
+    "bodyHash": "ee61db445a9214b0ac41bf112543d434f45020ebb9b14a2bdeb4347cb57f1d2d",
+    "fetchedAt": "2026-11-07T10:43:01.978Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -173,8 +182,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:20.128Z",
-  "updatedAt": "2026-11-06T11:31:20.128Z"
+  "createdAt": "2026-11-07T10:43:01.978Z",
+  "updatedAt": "2026-11-07T10:43:01.978Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -188,15 +197,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/06/16/die-saison-21-22-der-achter-des-fc-st-pauli/",
-    "locator": "p35",
-    "quote": "Denn Christopher Buchtmann bringt sicher vieles mit, um erfolgreichen Fußball zu spielen und hat das auch lange Zeit am Millerntor getan. Beim nun geforderten Tempo konnte er aber einfach nicht mehr ganz mithalten. Entsprechend sieht auch seine Radar-Grafik aus. Einzig bei der Anzahl der Torschüsse und den xG-Werten liegt er deutlich über dem Liga-Durchschnitt. Der Zug zum Tor war auch in den vielen Jahren zuvor eine seiner großen Stärken. Und ganz im Gegensatz zu seinen Kollegen auf dieser Position hat er diese Möglichkeiten auch genutzt (xG pro 90min: 0.15; Tore pro 90min: 0.17). Trotzdem re",
-    "bodyHash": "af36505e1847f3ac4e3265456dd3a6cb772f2674fb121631e808c806e47bfca2",
-    "fetchedAt": "2026-11-02T11:43:05.206Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/06/21/die-saison-21-22-der-offensivspieler-des-fc-st-pauli-chapter-two/",
@@ -259,6 +259,15 @@
     "bodyHash": "550c75935777533950112edf428295a1207cb4f8a365e41d92be8135b7bc26d0",
     "fetchedAt": "2026-11-06T11:31:20.131Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/10/04/lage-am-millerntor-04-oktober-2023/",
+    "locator": "p47",
+    "quote": "Bei 90min.de schaut man auf die Entwicklung der Zuschauer*innenzahlen bei den Spielen von Arsenals Frauen. Zu Highlightspielen kommen über 60.000 ins Stadion, letzte Saison gab es vier Mal über 40.000. Aber auch im Liga-Alltag gibt es konstant über 5.000 Fans, die eine eigene Fankultur geschaffen haben.",
+    "bodyHash": "5f5cb1633640a550d253e7dc0dbb47b6d7a823dd2e722a8462379f3e82925ff2",
+    "fetchedAt": "2026-11-07T10:42:59.146Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -266,8 +275,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:20.131Z",
-  "updatedAt": "2026-11-06T11:31:20.131Z"
+  "createdAt": "2026-11-07T10:42:59.146Z",
+  "updatedAt": "2026-11-07T10:42:59.146Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -838,6 +847,15 @@
     "bodyHash": "cef5cfc956d3c8f080f344255500f727780c2218b0542c1813cb9329aa189cee",
     "fetchedAt": "2026-11-05T11:31:38.999Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/09/29/lage-am-millerntor-29-september-2023/",
+    "locator": "p85",
+    "quote": "Noch eine Ergänzung zum Thema „Keine Zusammenarbeit mit Berater*innen im NLZ“ : NLZ-Leiter Benjamin Liedtke hat in einem Interview mit dem NDR (2min) die Entscheidung genauer erläutert.",
+    "bodyHash": "aaa98b69ebbec415ab6be264389cef98f67b92af79d9946e4973e524f84afd2a",
+    "fetchedAt": "2026-11-07T10:42:59.143Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -845,8 +863,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:38.999Z",
-  "updatedAt": "2026-11-05T11:31:38.999Z"
+  "createdAt": "2026-11-07T10:42:59.143Z",
+  "updatedAt": "2026-11-07T10:42:59.143Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -949,15 +967,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/07/09/lage-am-millerntor-09-juli-2020/",
-    "locator": "p15",
-    "quote": "Filmer Valentin Herleth hat einen Kurzfilm (11min) erstellt, in dem er mit genau dieser Frage spielt. Eine junge Frau, gelangweilt vom Job, kommt in eine kleine Hooligangruppe und mischt dann dort mit – oder will dies zumindest und kämpft eben auch gegen die üblichen Widerstände an.",
-    "bodyHash": "9c799d5bb36aed60433025c09b0df9106729ffdae939dd5cf3d56d017ac8e8ce",
-    "fetchedAt": "2026-10-25T08:45:25.855Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/01/15/lage-am-millerntor-15-januar-2021/",
     "locator": "p35",
     "quote": "Bibiana Steinhaus hat bekanntlich ihre Karriere als Schiedsrichterin beendet, so wurde für den DFB auch ein Platz auf der FIFA-Liste frei. Dieser wurde jetzt mit Franziska Wildfeuer aus Schleswig-Holstein besetzt, die am Sonntag im N3 Sportclub (11min) zu Gast war.",
@@ -1018,6 +1027,15 @@
     "bodyHash": "ab600c8074263177188e7c361f64cbc8bab127c83e74483e579256fc52160d07",
     "fetchedAt": "2026-11-06T11:09:20.283Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/09/25/lage-am-millerntor-25-september-2023/",
+    "locator": "p23",
+    "quote": "Gestern Abend war unser Neuzugang aus Kiel zu Gast im NDR-Sportclub. Den Auftakt in der Sendung macht ein kleiner Beitrag über seinen Bruder Morten, der beim SV Eichede in der Oberliga spielt. In den anschließenden Minuten wird dann klar, warum Tim sich in der Mixed Zone ab sofort immer um ein Statement von Hauke Wahl bemüht. Denn der 29-Jährige liefert durchaus Druckreifes ohne leere Phrasen, hat in fast jedem Satz ein Augenzwinkern. Und wie im Beitrag dann zu sehen, ist er „der Kümmerer“, wie Ole Zeisler berichtet (11 min) .",
+    "bodyHash": "cdac9c7d12860b3f0c250194dfcb63aa59ebcd4bef5a7ba3007038b753b60045",
+    "fetchedAt": "2026-11-07T10:42:56.088Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1025,8 +1043,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:20.283Z",
-  "updatedAt": "2026-11-06T11:09:20.283Z"
+  "createdAt": "2026-11-07T10:42:56.088Z",
+  "updatedAt": "2026-11-07T10:42:56.088Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1951,6 +1969,15 @@
     "bodyHash": "ae75443692b8f817970898ab35bbebc407330fca09e309f6e81aeee5429c0435",
     "fetchedAt": "2026-11-04T11:36:00.532Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/08/24/lage-am-millerntor-24-august-2023/",
+    "locator": "p36",
+    "quote": "Nicht auf dem Feld stand der weiterhin verletzte Luca Zander der dafür im Vereinspodcast des SVS zu Gast war ( Soundcloud , 37min).",
+    "bodyHash": "2bcd206feec88514ae0d7a5a74c19e67523e33ed7d8a6550a1b91dac142f62d8",
+    "fetchedAt": "2026-11-07T10:42:51.228Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1958,8 +1985,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:00.532Z",
-  "updatedAt": "2026-11-04T11:36:00.532Z"
+  "createdAt": "2026-11-07T10:42:51.228Z",
+  "updatedAt": "2026-11-07T10:42:51.228Z"
  },
  {
   "id": "ga-0eb50d0b362777e7",
@@ -2197,6 +2224,15 @@
     "bodyHash": "10c0cc0599ac94d8aec1dd82097e2febeeaae5f0d974468e7500cd5741c2a464",
     "fetchedAt": "2026-11-05T11:31:44.400Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/08/22/schiri-wir-wissen-wo-die-doku-laeuft/",
+    "locator": "p15",
+    "quote": "Im Juni wurde eine Doku (22min) über die Pokalendspiele 2023 in Bremen veröffentlicht, bei denen die beiden Gespanne bei den Finals der Männer und Frauen begleitet wurde. Simon Rott durfte das Endspiel bei den Männern leiten (FC Oberneuland gegen SG Aumund-Vegesack). Jennifer Rehnert leitete bei den Frauen ATS Buntentor gegen TuS Schwachhausen, zwei Teams die ja auch Fans des Frauenteams des FC St. Pauli gut kennen.",
+    "bodyHash": "a32a34b30ff375d42385bce7e961fb2b3a3b45fd2fdc366661ce976bb4500317",
+    "fetchedAt": "2026-11-07T10:42:51.223Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2204,8 +2240,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:44.400Z",
-  "updatedAt": "2026-11-05T11:31:44.400Z"
+  "createdAt": "2026-11-07T10:42:51.223Z",
+  "updatedAt": "2026-11-07T10:42:51.223Z"
  },
  {
   "id": "ga-ddcd1ba7a0236f13",
@@ -2680,6 +2716,15 @@
     "bodyHash": "5bcf56910b48fd880e62cafc42dda0fad6d091090f7fe6d50aebe942df337900",
     "fetchedAt": "2026-11-06T11:31:20.129Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/09/15/lage-am-millerntor-15-september-2023/",
+    "locator": "p69",
+    "quote": "Schulleiterin Nicole Boutez und NLZ-Leiter Benny Liedtke haben gemeinsam erklärt, wie man Nachwuchsförderung, Leistungssport und Schule sinnvoll zusammenbringen kann. // fcstpauli.com (25min)",
+    "bodyHash": "5a51cb611cbbc85121bc85cbc6fb928909114e23fb7a6eebe4c7442d9bdb933d",
+    "fetchedAt": "2026-11-07T10:42:53.735Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2687,8 +2732,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:20.129Z",
-  "updatedAt": "2026-11-06T11:31:20.129Z"
+  "createdAt": "2026-11-07T10:42:53.735Z",
+  "updatedAt": "2026-11-07T10:42:53.735Z"
  },
  {
   "id": "ga-690e32cb743d0203",
