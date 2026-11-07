@@ -14,8 +14,8 @@
     {
       "id": "b01",
       "panel": "f03-board",
-      "say": "This is the story of why a team scored in its own net and then had to defend both goals. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.",
-      "dur": 20.7,
+      "say": "Barbados scored in its own net, then had to defend both goals — here is the rule that made that decision make sense. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.",
+      "dur": 21.9,
       "mood": "tense",
       "move": "push",
       "amount": 0.12,
@@ -276,7 +276,7 @@
       "The Game That Made Both Goals Dangerous"
     ],
     "selected": 0,
-    "hook": "This is the story of why a team scored in its own net and then had to defend both goals.",
+    "hook": "Barbados scored in its own net, then had to defend both goals — here is the rule that made that decision make sense.",
     "tags": [
       "CLASSIFIED",
       "Barbados",
@@ -332,7 +332,7 @@
     ],
     "hook_options": [
       {
-        "text": "This is the story of why a team scored in its own net and then had to defend both goals. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.",
+        "text": "Barbados scored in its own net, then had to defend both goals — here is the rule that made that decision make sense. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.",
         "claim_ids": [
           "src-1",
           "src-2"

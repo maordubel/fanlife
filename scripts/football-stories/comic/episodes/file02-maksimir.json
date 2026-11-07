@@ -14,8 +14,8 @@
     {
       "id": "b01a",
       "panel": "f02-owner-kick-art",
-      "say": "This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?",
-      "dur": 21.9,
+      "say": "A football match never began, yet its images became a symbol of a country in crisis — here is what happened beyond the famous photograph. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?",
+      "dur": 22.7,
       "chapter": "the whistle that never came",
       "mood": "tense",
       "move": "push",
@@ -378,7 +378,7 @@
       "The Match That Became a Myth"
     ],
     "selected": 0,
-    "hook": "This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis.",
+    "hook": "A football match never began, yet its images became a symbol of a country in crisis — here is what happened beyond the famous photograph.",
     "tags": [
       "CLASSIFIED",
       "FanLife Football Stories",
@@ -435,7 +435,7 @@
     ],
     "hook_options": [
       {
-        "text": "This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?",
+        "text": "A football match never began, yet its images became a symbol of a country in crisis — here is what happened beyond the famous photograph. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?",
         "claim_ids": [
           "src-1",
           "src-2"

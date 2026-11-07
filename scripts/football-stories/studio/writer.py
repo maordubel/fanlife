@@ -195,13 +195,14 @@ ATTEMPTS = 5
 
 def hook_option_errors(script: dict, ledger: dict) -> list[str]:
     """Mechanical checks; a human still judges clarity, stakes and whether a promise is paid off."""
-    from .script import fact_guard
+    from .script import fact_guard, identity_guard, knockout_guard, story_of
     options = script.get('hook_options')
     if not isinstance(options, list) or len(options) != 3:
         return ['Give exactly three complete hook_options for the selected title.']
     valid_ids = {c.get('id') for c in ledger.get('claims') or []}
     valid_ids.update('summary:' + k for k in (ledger.get('summary') or {}).get('by_competition', {}))
     valid_ids.add('story')
+    story = story_of(ledger) if any((c.get('fact') or {}).get('kind') == 'match' for c in ledger.get('claims') or []) else {}
     errors, seen = [], set()
     for i, option in enumerate(options, 1):
         if not isinstance(option, dict) or not isinstance(option.get('text'), str):
@@ -220,6 +221,8 @@ def hook_option_errors(script: dict, ledger: dict) -> list[str]:
             errors.append(f'Hook option {i}: cite valid evidence IDs.')
         else:
             errors.extend(f'Hook option {i}: {e}' for e in fact_guard(text, ledger, ids))
+            errors.extend(f'Hook option {i}: {e}' for e in identity_guard(text, ledger))
+            errors.extend(f'Hook option {i}: {e}' for e in knockout_guard(text, ledger, ids, story))
     first = options[0].get('text', '') if isinstance(options[0], dict) else ''
     narration = ' '.join(str(b.get('narration') or '') for ch in script.get('chapters') or []
                          for b in ch.get('beats') or [] if isinstance(b, dict))

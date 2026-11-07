@@ -4,7 +4,7 @@ Research draft, not yet approved. Source and visual brief: CLASSIFIED_BARBADOS_G
 
 ## The case
 
-This is the story of why a team scored in its own net and then had to defend both goals. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.
+Barbados scored in its own net, then had to defend both goals — here is the rule that made that decision make sense. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.
 
 In January nineteen ninety-four, Barbados met Grenada in a Caribbean Cup qualifying group. Only one team would reach the final tournament.
 
@@ -51,7 +51,7 @@ A team scored an own goal to help itself qualify. Its opponent then had a reason
 
 ## Three opening hooks for review
 
-1. This is the story of why a team scored in its own net and then had to defend both goals. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.
+1. Barbados scored in its own net, then had to defend both goals — here is the rule that made that decision make sense. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.
 
 2. Barbados scored an own goal on purpose to keep their qualifying hopes alive. They were ahead, but the score was not enough to send Grenada out. An unusual extra-time rule changed the calculation. It also gave Grenada a reason to attack either goal, turning the final minutes upside down.
 

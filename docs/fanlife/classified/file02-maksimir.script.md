@@ -11,7 +11,7 @@
 
 **Voiceover:**
 
-This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?
+A football match never began, yet its images became a symbol of a country in crisis — here is what happened beyond the famous photograph. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?
 
 The story is often sold as the day a football match started a war. It is a powerful line. It is also too simple. To understand what happened here, we have to go back before the photographs — and then look carefully at everything that happened after them.
 
@@ -164,7 +164,7 @@ Each Short needs separate narration, new pacing, independently edited 9:16 visua
 
 ## Three opening hooks for review
 
-1. This is the story of the football match that never began, and how one photograph became a symbol of a country in crisis. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?
+1. A football match never began, yet its images became a symbol of a country in crisis — here is what happened beyond the famous photograph. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?
 
 2. One photograph from a match that never kicked off became a symbol of a country in crisis. Dinamo Zagreb were due to face Red Star Belgrade in May 1990. Before football could begin, violence took over the stadium. The story behind that image is more complicated than the myth that followed.
 
