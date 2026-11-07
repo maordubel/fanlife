@@ -30,6 +30,7 @@ ROOT_ID = '1CNLhWlab7Irfq4jJw-QRGHI37tpJcucw'   # FAN LIFE's shared library (own
 INVENTORY = ROOT / 'docs' / 'fanlife' / 'drive-library' / 'inventory.json'
 PICTURE = re.compile(r'\.(png|jpe?g|webp|heic)$', re.I)
 NOTE = re.compile(r'(readme|asset_index|prompts?|notes?|credits?|sources?)\.(md|txt|csv)$', re.I)
+STORY_DOCUMENT = re.compile(r'\.(md|txt)$', re.I)
 # words that say nothing about WHICH story a folder is
 GENERIC = {'fanlife', 'fan', 'life', 'pack', 'graphic', 'graphics', 'art', 'research', 'documentary', 'assets', 'asset',
            'editing', 'scenes', 'scene', 'source', 'sources', 'references', 'reference', 'the', 'and', 'club', 'clubs',
@@ -199,13 +200,15 @@ def plan(tree: dict, brief: dict, limit: int = 60) -> dict:
     pics, notes = [], []
     for p in packs:
         for f in files_under(tree, p['path']):
-            (pics if PICTURE.search(f['name']) else notes if NOTE.search(f['name']) else []).append({**f, 'pack': p['path'], 'required': bool(p.get('pinned'))})
+            (pics if PICTURE.search(f['name']) else notes if NOTE.search(f['name']) or (p.get('pinned') and STORY_DOCUMENT.search(f['name'])) else []).append({**f, 'pack': p['path'], 'required': bool(p.get('pinned'))})
     # A selected folder is a requirement, not a top-N suggestion. Rank optional pictures by their own names too.
     from .media_assets import rank_files
     required = {f['id']: f for f in pics if f['required']}
     optional = rank_files([f for f in pics if f['id'] not in required], brief)
+    required_notes = {n['id']: n for n in notes if n['required']}
+    optional_notes = {n['id']: n for n in notes if not n['required'] and n['id'] not in required_notes}
     return {'terms': [' '.join(t) for t, _ in terms], 'targeted': packs,
-            'pictures': [*required.values(), *optional[:limit]], 'notes': notes[:12]}
+            'pictures': [*required.values(), *optional[:limit]], 'notes': [*required_notes.values(), *list(optional_notes.values())[:12]]}
 
 
 def is_photo(f: dict) -> bool:

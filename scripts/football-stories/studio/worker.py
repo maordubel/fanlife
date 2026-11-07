@@ -188,8 +188,8 @@ def fetch_drive(job: dict, jd: Path, log) -> Path | None:
     if pinned:
         selected = drive_scan.live_tree(pinned, log, deadline_s=180, prefix=f'selected-{pinned}', strict=True)
         selected['folders'].insert(0, {'id': pinned, 'path': f'selected-{pinned}'})
-        if not any(drive_scan.PICTURE.search(f['name']) for f in selected['files']):
-            raise StageError('REQUIRED_MEDIA', 'No readable pictures were found in your selected Drive folder. Check sharing (Anyone with the link), the folder link and image formats.', retryable=True)
+        if not any(drive_scan.PICTURE.search(f['name']) or drive_scan.STORY_DOCUMENT.search(f['name']) for f in selected['files']):
+            raise StageError('REQUIRED_MEDIA', 'No readable pictures or .md/.txt story documents were found in your selected Drive folder. Check sharing (Anyone with the link), the folder link and formats.', retryable=True)
         ids = {f['id'] for f in selected['folders']}
         files = {f['id'] for f in selected['files']}
         tree = {'folders': selected['folders'] + [f for f in tree['folders'] if f['id'] not in ids],
@@ -227,16 +227,25 @@ def fetch_drive(job: dict, jd: Path, log) -> Path | None:
                      'photo': drive_scan.is_photo(f), 'required': bool(f.get('required')), 'source_id': f['id'], 'name': f['name'], 'path': f['path']})
     if failed:
         raise StageError('REQUIRED_MEDIA', 'Could not download your selected pictures: ' + ', '.join(failed) + '. Check sharing and retry.', retryable=True)
-    notes = []
+    notes, story_bytes = [], 0
     for n in p['notes']:
         try:
             with urllib.request.urlopen(drive_sync.URL.format(id=n['id']), timeout=60) as r:
-                notes.append({'pack': n['pack'], 'name': n['name'], 'text': r.read(4000).decode('utf-8', 'replace')})
-        except Exception:  # noqa: BLE001
+                data = r.read(65537 if n.get('required') else 4000)
+                if n.get('required') and (len(data) > 65536 or story_bytes + len(data) > 131072):
+                    raise ValueError('selected documents exceed the size limit')
+                text = data.decode('utf-8', 'strict' if n.get('required') else 'replace')
+                if text.lstrip().lower().startswith(('<!doctype html', '<html')):
+                    raise ValueError('Drive answered with a web page')
+                story_bytes += len(data) if n.get('required') else 0
+                notes.append({'pack': n['pack'], 'name': n['name'], 'text': text, 'required': bool(n.get('required'))})
+        except Exception as e:  # noqa: BLE001
+            if n.get('required'):
+                raise StageError('REQUIRED_DOCUMENT', f"Could not read selected story document {n['name']}: {e}. Use UTF-8 text, at most 64 KiB per document and 128 KiB total; check Drive sharing.", retryable=True) from e
             log(f"Drive: note {n['name']} did not download")
     (jd / 'drive-pack.json').write_text(json.dumps({'targeted': p['targeted'], 'files': rows, 'notes': notes}, ensure_ascii=False))
     log(f'Drive: {got} pictures ({sum(r["targeted"] for r in rows)} from the story\'s own packs)')
-    return d if got else None
+    return d if got or notes else None
 
 
 def send_reel(st: Studio, job: dict, jd: Path, log) -> None:

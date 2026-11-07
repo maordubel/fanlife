@@ -172,7 +172,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         art_sets = [*art_sets, *live_sets]
         if brief.get('drive_pack') and Path(brief['drive_pack']).exists():
             notes = read_json(Path(brief['drive_pack'])).get('notes') or []
-            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes)[:4000]
+            ledger['story_documents'] = [{'name': n['name'], 'text': n['text']} for n in notes if n.get('required')]
+            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes if not n.get('required'))[:4000]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         write_json(lp, ledger)
