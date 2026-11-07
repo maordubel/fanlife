@@ -236,7 +236,7 @@ def refresh_render(job_dir: Path, fingerprint: str) -> None:
         return
     for name in ('shots', 'out', 'mix', 'worlds', 'vox', 'hf', 'sprites', 'qa'):
         shutil.rmtree(job_dir / name, ignore_errors=True)
-    for name in ('picture.mp4', 'contact-sheet.jpg'):
+    for name in ('picture.mp4', 'contact-sheet.jpg', 'intro-body.mp4', 'intro.json', 'intro-normalized.mp4', 'intro-result.mp4'):
         (job_dir / name).unlink(missing_ok=True)
     write_json(mark, {'fingerprint': fingerprint})
 

@@ -1,0 +1,437 @@
+{
+  "file": "file02",
+  "number": "02",
+  "title": "MAKSIMIR",
+  "tone": "WAR",
+  "fps": 25,
+  "grade": 0.4,
+  "script": "docs/fanlife/classified/file02-maksimir.script.md",
+  "script_version": "owner-approved-2026-11-07",
+  "approved": true,
+  "minutes": 7.0,
+  "note": "The match was never played. Artwork is reconstruction; owner-selected photographs require accurate captions and image provenance. Never present the administrative award as a played score.",
+  "beats": [
+    {
+      "id": "b01a",
+      "panel": "f02-owner-kick-art",
+      "say": "The match never started. But the photographs travelled further than the score of any ordinary Sunday afternoon. A captain in a blue shirt, a police officer, supporters on the pitch. One violent moment at Maksimir Stadium would become an image people returned to for decades.",
+      "dur": 22.0,
+      "chapter": "the whistle that never came",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b01b",
+      "panel": "f02-p01-cold-open",
+      "say": "The story is often sold as the day a football match started a war. It is a powerful line. It is also too simple. To understand what happened here, we have to go back before the photographs — and then look carefully at everything that happened after them.",
+      "dur": 23.4,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b02a",
+      "panel": "f02-owner-supporters",
+      "say": "Dinamo Zagreb and Red Star Belgrade were two of the biggest names in Yugoslav football. Their meetings already carried the heat of a great rivalry. Dinamo's Bad Blue Boys and Red Star's Delije gave those afternoons voices of their own.",
+      "dur": 19.5,
+      "chapter": "2. Two clubs, one country",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b02b",
+      "panel": "f02-p02-city-1990",
+      "say": "On the thirteenth of May, nineteen ninety, the teams were due to meet in Zagreb. The contest belonged to a Yugoslav league played across a federation whose political future had become deeply uncertain. There was still a football match on the calendar. But the atmosphere around it was shaped by much more than football.",
+      "dur": 26.3,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b03a",
+      "panel": "f02-p02-city-1990",
+      "say": "Yugoslavia was living through economic strain, political change and rising nationalism. Croatia had just held its first multiparty elections. Franjo Tuđman's Croatian Democratic Union had won a majority. Across the federation, political arguments about power, identity and the future of the republics had become harder to separate from everyday life.",
+      "dur": 24.4,
+      "chapter": "3. A country under pressure",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b03b",
+      "panel": "f02-p02-city-1990",
+      "say": "Football did not create those tensions. It gave them a stage where cameras, crowds and old rivalries could bring them into sharp view.",
+      "dur": 11.2,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b04a",
+      "panel": "f02-owner-clash",
+      "say": "On match day, Red Star supporters travelled to Zagreb. Accounts describe tension and violence before kick-off, including clashes in the city and disorder at the stadium. Inside Maksimir, rivalry became confrontation. Seats were torn up. Supporters and police faced each other across barriers and on the pitch.",
+      "dur": 22.9,
+      "chapter": "4. The supporters arrive",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2,
+        3
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b04b",
+      "panel": "f02-owner-chaos-wide",
+      "say": "Accounts differ on responsibility and on the sequence of individual moments. What is clear is that the violence unfolded before the game could begin.",
+      "dur": 15.6,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2,
+        3
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b05a",
+      "panel": "f02-owner-escorted",
+      "say": "As the situation worsened, the pitch — the place meant for the teams — filled with people who had come there for entirely different reasons. Police moved among supporters. Players who were preparing for the match found themselves watching a stadium in crisis.",
+      "dur": 21.0,
+      "chapter": "5. Onto the pitch",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b05b",
+      "panel": "f02-p09-water-cannon",
+      "say": "For someone seeing the images years later, it is easy to mistake a frozen frame for the whole afternoon. It was one fragment of a much larger, confused and violent sequence.",
+      "dur": 15.1,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b06a",
+      "panel": "f02-owner-kick-photo",
+      "say": "Dinamo's captain, Zvonimir Boban, was among the players still visible on the field. During the disorder, he attacked a police officer. The moment was photographed, filmed and reproduced so often that it became the most recognisable image of the day.",
+      "dur": 19.5,
+      "chapter": "6. Boban",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        3
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b06b",
+      "panel": "f02-owner-kick-art",
+      "say": "Many Dinamo supporters came to see Boban's action as an act of resistance. Others have told the events differently. The footage records the confrontation; the meanings attached to it were built and contested over the years that followed.",
+      "dur": 18.5,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        3
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b07a",
+      "panel": "f02-owner-chaos-wide",
+      "say": "A famous image can make everyone outside it disappear. The day involved supporters, police, players and people trying to get out of danger. Some saw what happened as proof that the authorities had failed to protect them. Others disputed those accounts.",
+      "dur": 20.0,
+      "chapter": "7. The faces around the frame",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        3,
+        6
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b07b",
+      "panel": "f02-p12-shield",
+      "say": "The officer involved has been identified in later reporting as Refik Ahmetović. His identity complicates any easy attempt to reduce every person on the pitch to a single ethnic label. The real people in this story deserve more care than a myth allows.",
+      "dur": 21.0,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        3,
+        6
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b08a",
+      "panel": "f02-p14-scoreboard",
+      "say": "There was no kick-off, no winning goal, no ninety minutes to analyse. The match was not played. Dinamo's own historical account records that it was subsequently awarded to Red Star, three–nil. That was an administrative decision, not a score produced on the grass.",
+      "dur": 21.0,
+      "chapter": "8. No football result on the pitch",
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b08b",
+      "panel": "f02-owner-aftermath",
+      "say": "Boban was suspended; Dinamo's account says the initial nine-month ban was later reduced to four. He missed the World Cup in Italy. One afternoon had already changed the direction of his football year.",
+      "dur": 16.1,
+      "chapter": null,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b09a",
+      "panel": "f02-p15-dawn",
+      "say": "The violence at Maksimir did not begin the war that day. Yugoslav league football continued: another full season was played, and Dinamo and Red Star met again in Zagreb in May nineteen ninety-one.",
+      "dur": 16.1,
+      "chapter": "and what did not",
+      "mood": "somber",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        4
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b09b",
+      "panel": "f02-p15-dawn",
+      "say": "Later that year the federation moved into armed conflict. People connected to football would live through the breakup and its wars in profoundly different ways. Some supporters joined armed formations; countless civilians suffered. None of that makes a football crowd the sole cause of a complex political and human catastrophe.",
+      "dur": 24.4,
+      "chapter": null,
+      "mood": "somber",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        4
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b10a",
+      "panel": "f02-p17-memorial",
+      "say": "For many Dinamo supporters, Maksimir became a symbol of resistance and a marker of what was coming. That meaning is part of the history. So is the warning from historians and researchers: a symbol is not the same thing as the beginning or the cause of a war.",
+      "dur": 23.4,
+      "chapter": "10. The story after the story",
+      "mood": "somber",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b10b",
+      "panel": "f02-p17-memorial",
+      "say": "The question is not whether the afternoon mattered. It did. The question is how we remember it without letting the most dramatic sentence erase everything around it.",
+      "dur": 13.2,
+      "chapter": null,
+      "mood": "somber",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    },
+    {
+      "id": "b10c",
+      "panel": "f02-owner-kick-art",
+      "say": "A match was scheduled. A stadium erupted. A photograph endured. And the football that was supposed to explain the day never began.",
+      "dur": 10.7,
+      "chapter": null,
+      "mood": "somber",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Slow push into a sourced moment; the art is an illustration, not a record."
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "GNK Dinamo Zagreb — Riots at the never-played match",
+      "url": "https://gnkdinamo.hr/en/timeline/243"
+    },
+    {
+      "n": 2,
+      "title": "University of East Anglia — Serbian football and the disintegration of Yugoslavia",
+      "url": "https://ueaeprints.uea.ac.uk/id/eprint/40786/1/It_all_ended_in_an_unsporting_way.pdf"
+    },
+    {
+      "n": 3,
+      "title": "University North — media coverage of the unplayed match",
+      "url": "https://repozitorij.unin.hr/en/islandora/object/unin%3A6747/datastream/PDF/view"
+    },
+    {
+      "n": 4,
+      "title": "HRT — Dinamo and Red Star met again in 1991",
+      "url": "https://sport.hrt.hr/hrvatski-nogomet/svi-pamte-bobanov-udarac-35-godisnjica-neodigrane-utakmice-dinama-i-zvezde-12154319"
+    },
+    {
+      "n": 6,
+      "title": "Index — accounts and identification of the officer",
+      "url": "https://www.index.hr/sport/clanak/video-prve-i-posljednje-snimke-osnivaca-boysa-o-mitskoj-utakmici-dinama-i-zvezde/2182049.aspx"
+    }
+  ],
+  "package": {
+    "title_candidates": [
+      "The Match That Never Started",
+      "The Photograph That Became a Symbol",
+      "The Match That Became a Myth"
+    ],
+    "selected": 0,
+    "hook": "A match never kicked off, yet its photographs became a symbol of a country in crisis.",
+    "tags": [
+      "CLASSIFIED",
+      "FanLife Football Stories",
+      "Dinamo Zagreb",
+      "Red Star Belgrade",
+      "Maksimir",
+      "football history",
+      "1990"
+    ],
+    "thumbnails": [
+      {
+        "panel": "f02-p01-cold-open",
+        "hook": [
+          "THE MATCH",
+          "NEVER STARTED"
+        ]
+      },
+      {
+        "panel": "f02-p11-the-leap",
+        "hook": [
+          "ONE PICTURE",
+          "A NATION"
+        ]
+      },
+      {
+        "panel": "f02-p14-scoreboard",
+        "hook": [
+          "NO KICK OFF",
+          "A LASTING MYTH"
+        ]
+      }
+    ],
+    "shorts": [
+      {
+        "hook": "The match never began.",
+        "narration": "The match never began. In 1990, Dinamo Zagreb and Red Star Belgrade were due to meet at Maksimir. Violence erupted before kick-off. One photograph became a symbol of a country in crisis — but the real story is more complicated. Watch the full film.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ],
+        "from": "b01a",
+        "to": "b04a"
+      },
+      {
+        "hook": "One image became a myth.",
+        "narration": "One image became a myth. Zvonimir Boban confronted a police officer as Maksimir descended into violence. The picture endured, but the claim that this match started a war is too simple. The football never even began. Discover the story behind the image.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ],
+        "from": "b06a",
+        "to": "b09a"
+      }
+    ]
+  }
+}

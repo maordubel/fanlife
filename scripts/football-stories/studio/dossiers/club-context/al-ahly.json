@@ -1,0 +1,19 @@
+{
+ "schemaVersion": 1,
+ "clubId": "al-ahly",
+ "review": "primary-sources-2026-11-07",
+ "note": "Editorial orientation. Do not treat present-day supporter culture, a venue, a rivalry or a club milestone as proof it applied in an earlier year. No original supporter testimony or chants are claimed. Further archival and supporter-culture research is needed.",
+ "voice": {"welcome": "A Cairo club whose supporters carry local and continental history.", "kicker": "Cairo · The Red Devils"},
+ "nicknames": [{"text": "The Red Devils", "confidence": 3, "sources": [
+   {"publisher": "FIFA", "url": "https://www.fifa.com/en/tournaments/mens/club-world-cup/usa-2025/articles/al-ahly-club-profile-history-players-qualified"},
+   {"publisher": "CAF", "url": "https://www.cafonline.com/caf-champions-league/news/totalenergies-caf-cl-final-meet-the-finalists/"}
+ ]}],
+ "founded": {"line": "Al Ahly was founded in 1907 in Cairo.", "confidence": 3, "sources": [
+   {"publisher": "FIFA", "url": "https://www.fifa.com/en/tournaments/mens/club-world-cup/usa-2025/articles/al-ahly-club-profile-history-players-qualified"},
+   {"publisher": "CAF", "url": "https://www.cafonline.com/caf-champions-league/news/totalenergies-caf-cl-final-meet-the-finalists/"}
+ ]},
+ "facts": [{"id":"cairo-rivalry", "line":"Al Ahly and Zamalek contest the Cairo Derby.", "confidence":3, "sources":[
+   {"publisher":"Egyptian Football Association", "url":"https://www.efa.eg/ar/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D8%B3%D9%88%D8%A8%D8%B1-%D9%83%D9%84%D8%A7%D8%B3%D9%8A%D9%83%D9%88-%D9%83%D9%8A%D9%81-%D9%83%D8%A7%D9%86%D8%AA-%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A-%D9%88%D8%A7%D9%84%D8%B2%D9%85%D8%A7%D9%84%D9%83-%D8%AE%D9%84%D8%A7%D9%84-107-%D8%B3%D9%86%D8%A9/"},
+   {"publisher":"CAF", "url":"https://www.cafonline.com/news/al-ahly-beat-zamalek-to-dominate-cairo-derby/"}
+ ]}]
+}

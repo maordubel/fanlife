@@ -296,7 +296,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     out = job_dir / 'out'
     out.mkdir(exist_ok=True)
     master = out / 'master.mp4'
-    if not master.exists():
+    if not master.exists() and not (job_dir / 'intro-body.mp4').exists():
         kb = master_kbps(plan['duration'])
         look = LOOKS.get(brief.get('look') or STYLE_LOOK.get(brief.get('visual_style') or 'collage', 'clean'))
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(picture), '-i', str(mix), '-map', '0:v', '-map', '1:a',
@@ -305,6 +305,16 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
                         '-maxrate', f'{kb}k', '-bufsize', f'{kb * 2}k', '-pix_fmt', 'yuv420p', '-g', '50', '-c:a', 'aac', '-b:a', '192k',
                         '-shortest', '-movflags', '+faststart', str(out / 'master.part.mp4')], check=True)
         (out / 'master.part.mp4').rename(master)
+    # Insert the owner-selected opening after mastering; all following timing is on the final film.
+    from . import intros
+    previous_stamp = (job_dir / 'intro.json').read_text() if (job_dir / 'intro.json').exists() else None
+    intro_seconds = intros.prepend(master, job_dir, 'film', log)
+    if previous_stamp != (job_dir / 'intro.json').read_text():
+        (out / 'preview.mp4').unlink(missing_ok=True)
+        (out / 'shorts.json').unlink(missing_ok=True)
+    plan = intros.shift_plan(plan, intro_seconds)
+    usage = plan.get('media_usage') or {}
+    write_json(job_dir / 'media-usage.json', usage)
     preview = out / 'preview.mp4'
     if not preview.exists():
         # under 45 MB whatever the length (the storage plan's per-file limit): bitrate from duration
@@ -338,7 +348,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 9 qa
     step('qa', 0.95, 'Checking the film')
-    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + float(usage.get('added_seconds', 0)) / 60, palette, log)
+    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log)
     report['media_usage'] = usage
     report['rights'] = rights_gaps(manifest)
     report['render_minutes'] = round((time.time() - t_start) / 60, 1)
@@ -346,13 +356,17 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 10 shorts: every Short the script proposes, cut from the finished master (a failure costs the Shorts, not the film)
     shorts_p = out / 'shorts.json'
+    if shorts_p.exists():
+        old = read_json(shorts_p)
+        if old and any(not sh.get('independent') or float(sh.get('seconds') or 0) > 30 for sh in old):
+            shorts_p.unlink()  # legacy continuous excerpts cannot satisfy the new Shorts brief
     if not shorts_p.exists():
         step('qa', 0.97, 'Cutting the Shorts')
         try:
             from . import shorts
             made = shorts.auto(job_dir, s, ledger['club_name'], ledger['season'], palette.accent)
             write_json(shorts_p, made)
-            log(f'Shorts: {len(made)} cut')
+            log(f'Shorts: {len(made)} independent hooks; older scripts need their own new Short narration')
         except Exception as e:  # noqa: BLE001 — reported, never swallowed silently
             log(f'Shorts: none cut ({type(e).__name__}: {e})')
             write_json(shorts_p, [])

@@ -270,7 +270,7 @@ def director_script(L: dict, chapter2_cards=None) -> dict:
             'selected': 0, 'hook': hook,
             'chapters': [{'title': 'The night', 'beats': ch1}, {'title': 'The season', 'beats': ch2}],
             'description': 'x' * 300, 'tags': ['a', 'b', 'c', 'd', 'e'],
-            'shorts': [{'hook': 'h', 'idea': 'i', 'claim_ids': []}, {'hook': 'h', 'idea': 'i', 'claim_ids': []}],
+            'shorts': [{'hook': 'Remember this.', 'idea': 'i', 'narration': 'Remember this. A match became a memory that supporters would carry long after the final whistle.', 'claim_ids': [top]}, {'hook': 'A night apart.', 'idea': 'i', 'narration': 'A night apart. The supporters arrived with hope and left with another story to tell.', 'claim_ids': [top]}],
             'thumbnails': [{'text': 'One', 'concept': 'c', 'claim': None}] * 3}
 
 

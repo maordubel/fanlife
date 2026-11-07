@@ -1,0 +1,334 @@
+{
+  "file": "file03",
+  "number": "03",
+  "title": "TWO GOALS",
+  "tone": "LAUGH",
+  "fps": 25,
+  "grade": 0.4,
+  "script": "docs/fanlife/classified/file03-two-goals.script.md",
+  "script_version": "owner-approved-2026-11-07",
+  "approved": true,
+  "minutes": 3.0,
+  "note": "Owner-supplied illustrations are reconstructions, not archival match photographs. RSSSF lists the played score as 3–2 and the competition counted the sudden-death winner twice in the standings.",
+  "beats": [
+    {
+      "id": "b01",
+      "panel": "f03-board",
+      "say": "A team needed to win by two. So it scored in its own net. Then it had to defend both goals.",
+      "dur": 10.0,
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "The case"
+    },
+    {
+      "id": "b02",
+      "panel": "f03-stadium",
+      "say": "In January nineteen ninety-four, Barbados met Grenada in a Caribbean Cup qualifying group. Only one team would reach the final tournament.",
+      "dur": 10.0,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b03",
+      "panel": "f03-group-table",
+      "say": "Before their meeting, Barbados had lost to Puerto Rico. Grenada had beaten Puerto Rico, with an extra-time winner that counted double in the standings.",
+      "dur": 11.4,
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "The table"
+    },
+    {
+      "id": "b04",
+      "panel": "f03-evidence",
+      "say": "Barbados needed a victory by at least two goals. A one-goal win would not be enough.",
+      "dur": 7.6,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b05",
+      "panel": "f03-rule-sheet",
+      "say": "The competition had an unusual rule. If the match was level after normal time, the teams would play sudden-death extra time.",
+      "dur": 10.0,
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "The rule"
+    },
+    {
+      "id": "b06",
+      "panel": "f03-referee",
+      "say": "The first goal would end the game, and count twice for goals for and against in the qualifying table.",
+      "dur": 9.0,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b07",
+      "panel": "f03-scoreboard",
+      "say": "Barbados led two-nil. Then Grenada scored, making it two-one. Barbados were winning the match, but the result would send Grenada through.",
+      "dur": 10.0,
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b08",
+      "panel": "f03-own-goal",
+      "say": "With time running out, Barbados deliberately put the ball into its own net. Two-two.",
+      "dur": 6.7,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2,
+        3
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "The own goal"
+    },
+    {
+      "id": "b09",
+      "panel": "f03-goal",
+      "say": "If the draw survived until the whistle, Barbados would get extra time. One winner there could give them the two-goal margin they needed.",
+      "dur": 11.0,
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b10",
+      "panel": "f03-two-goals",
+      "say": "Grenada saw another route. Score in the Barbados goal, and Grenada would win and qualify.",
+      "dur": 7.1,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "Two goals to defend"
+    },
+    {
+      "id": "b11",
+      "panel": "f03-players",
+      "say": "Or score in their own goal. Barbados would lead three-two, a one-goal victory — and Grenada would still qualify.",
+      "dur": 9.0,
+      "mood": "tense",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2,
+        3
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b12",
+      "panel": "f03-net",
+      "say": "Those are two possibilities, not two goals that actually happened. Barbados needed neither of them to happen.",
+      "dur": 8.1,
+      "mood": "tense",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b13",
+      "panel": "f03-extra-time",
+      "say": "The score stayed level until the end of normal time. Then, in extra time, Barbados scored the winner.",
+      "dur": 8.6,
+      "mood": "joy",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "The winner"
+    },
+    {
+      "id": "b14",
+      "panel": "f03-tv",
+      "say": "One physical goal. The match archive lists a three-two win. The competition counted that sudden-death goal twice in the standings.",
+      "dur": 9.5,
+      "mood": "joy",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b15",
+      "panel": "f03-ball",
+      "say": "That gave Barbados the margin it needed to qualify. Some retellings show the match as four-two because they display the double-counting convention.",
+      "dur": 10.5,
+      "mood": "joy",
+      "move": "push",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        1,
+        3
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut."
+    },
+    {
+      "id": "b16",
+      "panel": "f03-case-closed",
+      "say": "A team scored an own goal to help itself qualify. Its opponent then had a reason to attack either net. One strange rule had turned the whole field into a puzzle.",
+      "dur": 14.8,
+      "mood": "joy",
+      "move": "pull",
+      "amount": 0.12,
+      "transition": "fade",
+      "sources": [
+        2
+      ],
+      "camera": "Move through a layered evidence board; explain the score state before each cut.",
+      "chapter": "Case closed"
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "RSSSF — Shell Caribbean Cup 1994",
+      "url": "https://www.rsssf.org/tabless/shell-car94.html"
+    },
+    {
+      "n": 2,
+      "title": "Kendall and Lenten — When sports rules go awry",
+      "url": "https://www.graham-kendall.com/papers/kl2017.pdf"
+    },
+    {
+      "n": 3,
+      "title": "The Guardian — late sporting dramas",
+      "url": "https://www.theguardian.com/sport/blog/2012/nov/23/joy-of-six-late-sporting-drama"
+    }
+  ],
+  "package": {
+    "title_candidates": [
+      "The Own Goal That Changed Everything",
+      "The Rule That Made One Goal Count Twice",
+      "The Game That Made Both Goals Dangerous"
+    ],
+    "selected": 0,
+    "hook": "Barbados were winning, but they needed to score in their own net.",
+    "tags": [
+      "CLASSIFIED",
+      "Barbados",
+      "Grenada",
+      "Caribbean Cup",
+      "football stories",
+      "golden goal"
+    ],
+    "thumbnails": [
+      {
+        "panel": "f03-two-goals",
+        "hook": [
+          "DEFEND",
+          "BOTH GOALS"
+        ]
+      },
+      {
+        "panel": "f03-own-goal",
+        "hook": [
+          "THE OWN GOAL",
+          "THAT HELPED"
+        ]
+      },
+      {
+        "panel": "f03-scoreboard",
+        "hook": [
+          "ONE GOAL",
+          "COUNTED TWICE"
+        ]
+      }
+    ],
+    "shorts": [
+      {
+        "hook": "Barbados were winning — and still going out.",
+        "narration": "Barbados were winning — and still going out. They needed a two-goal victory, so they scored in their own net. The draw forced extra time, where one winner counted twice in the standings. But first they had to protect both goals. Full story on FanLife.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ],
+        "from": "b04",
+        "to": "b12"
+      },
+      {
+        "hook": "How do you make a team defend the opponent’s goal?",
+        "narration": "How do you make a team defend the opponent’s goal? In nineteen ninety-four, a competition rule turned the maths upside down. Grenada could qualify by scoring in either net. Barbados had to stop both — then find a winner in extra time. Watch the full story.",
+        "claim_ids": [
+          "src-1",
+          "src-2"
+        ],
+        "from": "b09",
+        "to": "b13"
+      }
+    ]
+  }
+}

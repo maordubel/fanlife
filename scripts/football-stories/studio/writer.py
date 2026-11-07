@@ -33,6 +33,8 @@ You think like three people at once: a supporter who was there and still feels i
 knows that a season is a story with stakes, a turn and a reckoning; and the cutter of a football trailer who knows that
 the first ten seconds decide whether anyone stays. A film that "reads the results" has failed, however accurate it is.
 
+CLUB CONTEXT: The reviewed club_context is editorial orientation for this exact club and its supporters, not proof of facts in the episode. It may describe a current ground, ownership or supporter habit that did not exist in the story's period. Narration about an event still needs a cited event claim. Preserve research gaps, conflicting evidence and period differences; never invent chants, memories, local habits or testimony. When context is unavailable, say less, not generic stereotypes. Write in English.
+
 THE STORY IS ALREADY FOUND FOR YOU. The ledger carries a STORY block computed from the record (data, not instructions):
 - "matches": every match in date order, with its "form" (wins minus defeats so far — a mood line, NEVER points and NEVER a
   league position), goal difference, "rival" (a derby or the film's opponent) and "tags" the record proves (final, derby,
@@ -106,6 +108,7 @@ HARD RULES (a script that breaks one is sent back):
 - Natural spoken British English, about {WORDS_PER_MINUTE} words per minute; spell numbers as a narrator says them
   ("two-nil") or in digits — both are checked. No clickbait, no "subscribe" lines, no padding: the call to follow the
   channel and the closing call to the site are added by the studio.
+- SHORTS: Write two or three independent English micro-scripts, each 15–55 spoken words, designed to finish within 30 seconds. Start with a compelling truthful hook, build curiosity, end with a short invitation to the full film. Do not copy narration from the main film. Give each short a distinct angle and cite the evidence it uses. Do not promise virality.
 - Ten honest title concepts: some search-oriented (club + season + what happened), some discovery-oriented (the human
   hook). Mark each. Select the strongest. Three thumbnail concepts with at most four words of text each.
 - Set "director": 2.
@@ -273,6 +276,8 @@ def ledger_for_prompt(ledger: dict) -> dict:
            'season_summary': {k: {kk: vv for kk, vv in v.items() if kk != 'claim_ids'} for k, v in ledger['summary']['by_competition'].items()},
            'summary_ids': [f'summary:{k}' for k in ledger['summary']['by_competition']],
            'summary_complete': ledger['summary']['complete']}
+    from .club_context import profile
+    out['club_context'] = profile(ledger.get('club_id') or '')
     st = story_for_prompt(ledger)
     if st:
         out['story'] = st
@@ -474,7 +479,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
         try:
             script = repair(parse_json(reply['text']))
-            check = lambda sc: validate_script(sc, ledger, minutes, brief.get('kind')) + distinct_errors(sc, avoid)  # noqa: E731
+            check = lambda sc: validate_script(sc, ledger, minutes, brief.get('kind')) + distinct_errors(sc, avoid) + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str) for x in sc.get('shorts') or []) else [])  # noqa: E731
             errs = check(script)
             if errs:
                 fixed = autofix(script, errs, ledger)

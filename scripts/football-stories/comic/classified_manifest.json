@@ -7,23 +7,93 @@
   "download_url": "https://drive.usercontent.google.com/download?id={id}&export=download&confirm=t",
   "music_note": "The score under a full episode (produce.py) is chosen by the tone tab from studio/kit/music/index.json. An episode may name its own track (\"music\"). The owner can change any of these; only the owner's own tracks are used (owner: true); a track that cannot be fetched falls back to the next owner track, never to a composed score.",
   "tones": {
-    "LAUGH": {"color": "#1B9AD6", "label": "LAUGH", "music": "zolvi-march-of-the-mini-monsters"},
-    "WAR": {"color": "#D71920", "label": "WAR", "music": "leberch-dark"},
-    "HEART": {"color": "#233C8F", "label": "HEART", "music": "pufino-enlivening"}
+    "LAUGH": {
+      "color": "#1B9AD6",
+      "label": "LAUGH",
+      "music": "zolvi-march-of-the-mini-monsters"
+    },
+    "WAR": {
+      "color": "#D71920",
+      "label": "WAR",
+      "music": "leberch-dark"
+    },
+    "HEART": {
+      "color": "#233C8F",
+      "label": "HEART",
+      "music": "pufino-enlivening"
+    }
   },
   "kit": [
-    {"id": "s02-dossier", "role": "S02", "kind": "panel", "name": "Desk_items_under_lamp_light", "drive_id": "1MAcM2IW6crWqkKV6j2DqHAnqqCsH13u6", "file": "s02-dossier.jpg"},
-    {"id": "s03-laugh", "role": "S03", "kind": "panel", "name": "Comic_background_with_sunray_str…", "drive_id": "1QrUM9_C21PpmNVI4inlTaKxPpguVq_d_", "file": "s03-laugh.jpg"},
-    {"id": "s04-abstract-a", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_f49f7622", "drive_id": "1fZIBjvoFyP0ZDcBKAbHkm6FWYOV0unkv", "file": "s04-abstract-a.jpg", "brief_match": "owner 4.11.2026: WAR = the red/vermilion one, HEART = the navy one — decided by measured hue (role_rules)"},
-    {"id": "s05-abstract-b", "role": "S04/S05", "kind": "panel", "name": "Abstract_comic_book_background_s…_787e7b7d", "drive_id": "1oVZzTAr4zxCn1raUOW1u42CePDzjxCHv", "file": "s05-abstract-b.jpg", "brief_match": "owner 4.11.2026: WAR = the red/vermilion one, HEART = the navy one — decided by measured hue (role_rules)"}
+    {
+      "id": "s02-dossier",
+      "role": "S02",
+      "kind": "panel",
+      "name": "Desk_items_under_lamp_light",
+      "drive_id": "1MAcM2IW6crWqkKV6j2DqHAnqqCsH13u6",
+      "file": "s02-dossier.jpg"
+    },
+    {
+      "id": "s03-laugh",
+      "role": "S03",
+      "kind": "panel",
+      "name": "Comic_background_with_sunray_str…",
+      "drive_id": "1QrUM9_C21PpmNVI4inlTaKxPpguVq_d_",
+      "file": "s03-laugh.jpg"
+    },
+    {
+      "id": "s04-abstract-a",
+      "role": "S04/S05",
+      "kind": "panel",
+      "name": "Abstract_comic_book_background_s…_f49f7622",
+      "drive_id": "1fZIBjvoFyP0ZDcBKAbHkm6FWYOV0unkv",
+      "file": "s04-abstract-a.jpg",
+      "brief_match": "owner 4.11.2026: WAR = the red/vermilion one, HEART = the navy one — decided by measured hue (role_rules)"
+    },
+    {
+      "id": "s05-abstract-b",
+      "role": "S04/S05",
+      "kind": "panel",
+      "name": "Abstract_comic_book_background_s…_787e7b7d",
+      "drive_id": "1oVZzTAr4zxCn1raUOW1u42CePDzjxCHv",
+      "file": "s05-abstract-b.jpg",
+      "brief_match": "owner 4.11.2026: WAR = the red/vermilion one, HEART = the navy one — decided by measured hue (role_rules)"
+    }
   ],
   "role_rules": [
-    {"file": "file01", "roles": ["CH1", "CH2"], "ids": ["f01-ch-a", "f01-ch-b"], "hues": ["red", "green"],
-     "why": "Owner, 4.11.2026: green = Casillas (CH2); the red training top = Cañizares (CH1). The sheet whose saturated pixels are mostly green is CH2.",
-     "measured": "on every run by comic/roles.py (the panels never reach this repository); the result is in the run's report.json → roles"},
-    {"file": null, "roles": ["S04", "S05"], "ids": ["s04-abstract-a", "s05-abstract-b"], "hues": ["red", "navy"],
-     "why": "Owner, 4.11.2026: S04 WAR = the abstract background with the most vermilion/red; S05 HEART = the navy one.",
-     "measured": "on every run by comic/roles.py; the result is in the run's report.json → roles"}
+    {
+      "file": "file01",
+      "roles": [
+        "CH1",
+        "CH2"
+      ],
+      "ids": [
+        "f01-ch-a",
+        "f01-ch-b"
+      ],
+      "hues": [
+        "red",
+        "green"
+      ],
+      "why": "Owner, 4.11.2026: green = Casillas (CH2); the red training top = Cañizares (CH1). The sheet whose saturated pixels are mostly green is CH2.",
+      "measured": "on every run by comic/roles.py (the panels never reach this repository); the result is in the run's report.json → roles"
+    },
+    {
+      "file": null,
+      "roles": [
+        "S04",
+        "S05"
+      ],
+      "ids": [
+        "s04-abstract-a",
+        "s05-abstract-b"
+      ],
+      "hues": [
+        "red",
+        "navy"
+      ],
+      "why": "Owner, 4.11.2026: S04 WAR = the abstract background with the most vermilion/red; S05 HEART = the navy one.",
+      "measured": "on every run by comic/roles.py; the result is in the run's report.json → roles"
+    }
   ],
   "files": {
     "file01": {
@@ -31,25 +101,174 @@
       "number": "01",
       "tone": "LAUGH",
       "year": 2002,
-      "brief_roles": ["CH1", "CH2", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20", "V1", "V2"],
+      "brief_roles": [
+        "CH1",
+        "CH2",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19",
+        "P20",
+        "V1",
+        "V2"
+      ],
       "panels": [
-        {"id": "f01-ch-a", "role": "CH1/CH2", "kind": "sheet", "name": "Goalkeeper_character_sheet_views", "drive_id": "1OUPf_eNQI0aHmVm9RCc2R2v7CNKgSNZA", "file": "f01-ch-a.jpg", "brief_match": "owner 4.11.2026: CH2 = the green jersey (Casillas), CH1 = the red training top (Cañizares) — decided by measured hue (role_rules)"},
-        {"id": "f01-ch-b", "role": "CH1/CH2", "kind": "sheet", "name": "Character_sheet_of_goalkeeper", "drive_id": "1fLYdLA1FHEBVCFBdSwzwAhtopNo5NB8M", "file": "f01-ch-b.jpg", "brief_match": "owner 4.11.2026: CH2 = the green jersey (Casillas), CH1 = the red training top (Cañizares) — decided by measured hue (role_rules)"},
-        {"id": "f01-p01-slip", "role": "P01", "kind": "panel", "name": "Hand_dropping_cologne_bottle", "drive_id": "12BCsm0BAg-wlhwhP90eFp1WUBESoK28g", "file": "f01-p01-slip.jpg"},
-        {"id": "f01-p02-bottle-hero", "role": "P02", "kind": "panel", "name": "Cologne_bottle_on_bathroom_shelf", "drive_id": "1aTTEJrMqeByaQuw7DBTYXXS8JSffFfE7", "file": "f01-p02-bottle-hero.jpg"},
-        {"id": "f01-p04-training-dive", "role": "P04", "kind": "panel", "name": "Goalkeeper_making_diving_save", "drive_id": "1UkQny-bnw2dPfBEJ1s88MmTsbXTAEqqI", "file": "f01-p04-training-dive.jpg"},
-        {"id": "f01-floodlit-standing", "role": "P05", "kind": "panel", "name": "Goalkeeper_standing_in_floodlit_…", "drive_id": "1-rm6AH4wFWgiiiPdWxgOcoQ2SgOwZkb0", "file": "f01-floodlit-standing.jpg", "brief_match": "owner 4.11.2026: P05"},
-        {"id": "f01-floodlit-entering", "role": "P15", "kind": "panel", "name": "Goalkeeper_entering_stadium_at_n…", "drive_id": "1vjM2jWf0P0zNOGEaO7iaz1WH3nwenA8u", "file": "f01-floodlit-entering.jpg", "brief_match": "owner 4.11.2026: P15"},
-        {"id": "f01-p07-room-evening", "role": "P07", "kind": "panel", "name": "Goalkeeper_walking_towards_bathroom", "drive_id": "1--L3Pb621NQBk71nNjNnFiylmZicfsqr", "file": "f01-p07-room-evening.jpg"},
-        {"id": "f01-p08-reach", "role": "P08", "kind": "panel", "name": "Man_reaching_for_cologne_bottle", "drive_id": "1QMUfDDJttya6P9aGjWU2v1u4PcY6mL6q", "file": "f01-p08-reach.jpg"},
-        {"id": "f01-p10-sink-smash", "role": "P10", "kind": "panel", "name": "Glass_cologne_bottle_falling", "drive_id": "1obEoQQ5-5idou2y2fho91Bw52HmRqlji", "file": "f01-p10-sink-smash.jpg"},
-        {"id": "f01-p12-hospital", "role": "P12", "kind": "panel", "name": "Doctors_wheel_trolley_down_corridor", "drive_id": "1bwwv3CXiQ0yJMqQ2qSC11dFBakKL2odG", "file": "f01-p12-hospital.jpg"},
-        {"id": "f01-p13-crutches", "role": "P13", "kind": "panel", "name": "Goalkeeper_sits_injured_at_press", "drive_id": "1GR0RM1xmWVP8WQf4ONwzUmtWGyLrsRXd", "file": "f01-p13-crutches.jpg"},
-        {"id": "f01-p14-home", "role": "P14", "kind": "panel", "name": "Empty_armchair_before_television", "drive_id": "1h33EC7Ps5ae_hBCj_gzHbf6pF_VTeleG", "file": "f01-p14-home.jpg", "brief_match": "close: the brief's P14 is a phone on a kitchen table; this is an empty armchair before a television"},
-        {"id": "f01-p16-penalty-save", "role": "P16", "kind": "panel", "name": "Goalkeeper_diving_saving_penalty", "drive_id": "1Hh-rLmRIRd9QYgJosQ5XAyLas7tqiDxy", "file": "f01-p16-penalty-save.jpg"},
-        {"id": "f01-p17-shootout-line", "role": "P17", "kind": "panel", "name": "Footballers_watching_penalty_sho…", "drive_id": "1qCI1U4WxFiWv_frdjCAJqjgsL0VvHaTV", "file": "f01-p17-shootout-line.jpg"},
-        {"id": "f01-p19-kiosk", "role": "P19", "kind": "panel", "name": "People_walking_past_newspaper_kiosk", "drive_id": "11YzO0bj8GTdZ0Y2pE6uDAXJ0RXsktS_E", "file": "f01-p19-kiosk.jpg"},
-        {"id": "f01-p20-empty-shelf", "role": "P20", "kind": "panel", "name": "Empty_bathroom_shelf_clearing_mi…", "drive_id": "1oOEvF0jCrELI23otCBnWOk2hId2EVLjg", "file": "f01-p20-empty-shelf.jpg"}
+        {
+          "id": "f01-ch-a",
+          "role": "CH1/CH2",
+          "kind": "sheet",
+          "name": "Goalkeeper_character_sheet_views",
+          "drive_id": "1OUPf_eNQI0aHmVm9RCc2R2v7CNKgSNZA",
+          "file": "f01-ch-a.jpg",
+          "brief_match": "owner 4.11.2026: CH2 = the green jersey (Casillas), CH1 = the red training top (Cañizares) — decided by measured hue (role_rules)"
+        },
+        {
+          "id": "f01-ch-b",
+          "role": "CH1/CH2",
+          "kind": "sheet",
+          "name": "Character_sheet_of_goalkeeper",
+          "drive_id": "1fLYdLA1FHEBVCFBdSwzwAhtopNo5NB8M",
+          "file": "f01-ch-b.jpg",
+          "brief_match": "owner 4.11.2026: CH2 = the green jersey (Casillas), CH1 = the red training top (Cañizares) — decided by measured hue (role_rules)"
+        },
+        {
+          "id": "f01-p01-slip",
+          "role": "P01",
+          "kind": "panel",
+          "name": "Hand_dropping_cologne_bottle",
+          "drive_id": "12BCsm0BAg-wlhwhP90eFp1WUBESoK28g",
+          "file": "f01-p01-slip.jpg"
+        },
+        {
+          "id": "f01-p02-bottle-hero",
+          "role": "P02",
+          "kind": "panel",
+          "name": "Cologne_bottle_on_bathroom_shelf",
+          "drive_id": "1aTTEJrMqeByaQuw7DBTYXXS8JSffFfE7",
+          "file": "f01-p02-bottle-hero.jpg"
+        },
+        {
+          "id": "f01-p04-training-dive",
+          "role": "P04",
+          "kind": "panel",
+          "name": "Goalkeeper_making_diving_save",
+          "drive_id": "1UkQny-bnw2dPfBEJ1s88MmTsbXTAEqqI",
+          "file": "f01-p04-training-dive.jpg"
+        },
+        {
+          "id": "f01-floodlit-standing",
+          "role": "P05",
+          "kind": "panel",
+          "name": "Goalkeeper_standing_in_floodlit_…",
+          "drive_id": "1-rm6AH4wFWgiiiPdWxgOcoQ2SgOwZkb0",
+          "file": "f01-floodlit-standing.jpg",
+          "brief_match": "owner 4.11.2026: P05"
+        },
+        {
+          "id": "f01-floodlit-entering",
+          "role": "P15",
+          "kind": "panel",
+          "name": "Goalkeeper_entering_stadium_at_n…",
+          "drive_id": "1vjM2jWf0P0zNOGEaO7iaz1WH3nwenA8u",
+          "file": "f01-floodlit-entering.jpg",
+          "brief_match": "owner 4.11.2026: P15"
+        },
+        {
+          "id": "f01-p07-room-evening",
+          "role": "P07",
+          "kind": "panel",
+          "name": "Goalkeeper_walking_towards_bathroom",
+          "drive_id": "1--L3Pb621NQBk71nNjNnFiylmZicfsqr",
+          "file": "f01-p07-room-evening.jpg"
+        },
+        {
+          "id": "f01-p08-reach",
+          "role": "P08",
+          "kind": "panel",
+          "name": "Man_reaching_for_cologne_bottle",
+          "drive_id": "1QMUfDDJttya6P9aGjWU2v1u4PcY6mL6q",
+          "file": "f01-p08-reach.jpg"
+        },
+        {
+          "id": "f01-p10-sink-smash",
+          "role": "P10",
+          "kind": "panel",
+          "name": "Glass_cologne_bottle_falling",
+          "drive_id": "1obEoQQ5-5idou2y2fho91Bw52HmRqlji",
+          "file": "f01-p10-sink-smash.jpg"
+        },
+        {
+          "id": "f01-p12-hospital",
+          "role": "P12",
+          "kind": "panel",
+          "name": "Doctors_wheel_trolley_down_corridor",
+          "drive_id": "1bwwv3CXiQ0yJMqQ2qSC11dFBakKL2odG",
+          "file": "f01-p12-hospital.jpg"
+        },
+        {
+          "id": "f01-p13-crutches",
+          "role": "P13",
+          "kind": "panel",
+          "name": "Goalkeeper_sits_injured_at_press",
+          "drive_id": "1GR0RM1xmWVP8WQf4ONwzUmtWGyLrsRXd",
+          "file": "f01-p13-crutches.jpg"
+        },
+        {
+          "id": "f01-p14-home",
+          "role": "P14",
+          "kind": "panel",
+          "name": "Empty_armchair_before_television",
+          "drive_id": "1h33EC7Ps5ae_hBCj_gzHbf6pF_VTeleG",
+          "file": "f01-p14-home.jpg",
+          "brief_match": "close: the brief's P14 is a phone on a kitchen table; this is an empty armchair before a television"
+        },
+        {
+          "id": "f01-p16-penalty-save",
+          "role": "P16",
+          "kind": "panel",
+          "name": "Goalkeeper_diving_saving_penalty",
+          "drive_id": "1Hh-rLmRIRd9QYgJosQ5XAyLas7tqiDxy",
+          "file": "f01-p16-penalty-save.jpg"
+        },
+        {
+          "id": "f01-p17-shootout-line",
+          "role": "P17",
+          "kind": "panel",
+          "name": "Footballers_watching_penalty_sho…",
+          "drive_id": "1qCI1U4WxFiWv_frdjCAJqjgsL0VvHaTV",
+          "file": "f01-p17-shootout-line.jpg"
+        },
+        {
+          "id": "f01-p19-kiosk",
+          "role": "P19",
+          "kind": "panel",
+          "name": "People_walking_past_newspaper_kiosk",
+          "drive_id": "11YzO0bj8GTdZ0Y2pE6uDAXJ0RXsktS_E",
+          "file": "f01-p19-kiosk.jpg"
+        },
+        {
+          "id": "f01-p20-empty-shelf",
+          "role": "P20",
+          "kind": "panel",
+          "name": "Empty_bathroom_shelf_clearing_mi…",
+          "drive_id": "1oOEvF0jCrELI23otCBnWOk2hId2EVLjg",
+          "file": "f01-p20-empty-shelf.jpg"
+        }
       ]
     },
     "file02": {
@@ -57,20 +276,344 @@
       "number": "02",
       "tone": "WAR",
       "year": 1990,
-      "brief_roles": ["CH3", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "V1"],
+      "brief_roles": [
+        "CH3",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "V1"
+      ],
       "panels": [
-        {"id": "f02-ch-captain", "role": "CH3", "kind": "sheet", "name": "Footballer_character_sheet_angles", "drive_id": "1MQfmNQKL63V0ojETSdqO15ePjgkJlQMg", "file": "f02-ch-captain.jpg"},
-        {"id": "f02-p01-cold-open", "role": "P01", "kind": "panel", "name": "Character_leaping_into_riot_stadium", "drive_id": "1Vvn3PVkY9mh5jaCAoj3ydbwgkT4rLgwy", "file": "f02-p01-cold-open.jpg"},
-        {"id": "f02-p11-the-leap", "role": "P11", "kind": "panel", "name": "Footballer_leaping_into_riot_police", "drive_id": "1oNEPZf3OL112Dbd8jq8UkI1XDtg-9FZU", "file": "f02-p11-the-leap.jpg"},
-        {"id": "f02-facing-police", "role": "P07/P11", "kind": "panel", "name": "Footballer_facing_police_in_smoke", "drive_id": "1PoJKDf5O-Mbq4EwUj3g_P7XAhrgLnUxd", "file": "f02-facing-police.jpg", "brief_match": "uncertain: a player facing the police line — closest to P07 (police line) or an alternate P11"},
-        {"id": "f02-p10-captain-sees", "role": "P10", "kind": "panel", "name": "Captain_witnessing_clash_through…", "drive_id": "1JIIwoausyLVeE6NbQcTxqQFyM-QNu6uv", "file": "f02-p10-captain-sees.jpg"},
-        {"id": "f02-p12-shield", "role": "P12", "kind": "panel", "name": "Supporters_shielding_captain_acr…", "drive_id": "1bqFCLpk4QU4qxJLVABOoJURva-daVs8q", "file": "f02-p12-shield.jpg"},
-        {"id": "f02-p13-fire", "role": "P13", "kind": "panel", "name": "Wooden_stand_on_fire", "drive_id": "16-qfxm53I7iuIhvpcr0SWBA9OL_060jS", "file": "f02-p13-fire.jpg"},
-        {"id": "f02-p09-water-cannon", "role": "P09", "kind": "panel", "name": "Water-cannon_truck_dispersing_crowd", "drive_id": "1lIwRRpBQARHAmdTDs6VBfkkEUp6Ehd7q", "file": "f02-p09-water-cannon.jpg"},
-        {"id": "f02-p02-city-1990", "role": "P02", "kind": "panel", "name": "Crowds_gathering_in_city_square", "drive_id": "13Xxywiw8kmqVqDown9bS7ufWoJLEFKn0", "file": "f02-p02-city-1990.jpg"},
-        {"id": "f02-p17-memorial", "role": "P17", "kind": "panel", "name": "People_at_stone_memorial_wall", "drive_id": "1PYFVZCeReJ4-ixhTfgIoSNXai2CylnyP", "file": "f02-p17-memorial.jpg"},
-        {"id": "f02-p14-scoreboard", "role": "P14", "kind": "panel", "name": "Blank_stadium_scoreboard_in_smoke", "drive_id": "1ztF_DX9bWY15xfqRzwp9cuzcr6pHNrUQ", "file": "f02-p14-scoreboard.jpg"},
-        {"id": "f02-p15-dawn", "role": "P15", "kind": "panel", "name": "Empty_stadium_after_event", "drive_id": "1Yw7QBSgCTPdySIZeXmECCJPgURbvLDPT", "file": "f02-p15-dawn.jpg"}
+        {
+          "id": "f02-ch-captain",
+          "role": "CH3",
+          "kind": "sheet",
+          "name": "Footballer_character_sheet_angles",
+          "drive_id": "1MQfmNQKL63V0ojETSdqO15ePjgkJlQMg",
+          "file": "f02-ch-captain.jpg"
+        },
+        {
+          "id": "f02-p01-cold-open",
+          "role": "P01",
+          "kind": "panel",
+          "name": "Character_leaping_into_riot_stadium",
+          "drive_id": "1Vvn3PVkY9mh5jaCAoj3ydbwgkT4rLgwy",
+          "file": "f02-p01-cold-open.jpg"
+        },
+        {
+          "id": "f02-p11-the-leap",
+          "role": "P11",
+          "kind": "panel",
+          "name": "Footballer_leaping_into_riot_police",
+          "drive_id": "1oNEPZf3OL112Dbd8jq8UkI1XDtg-9FZU",
+          "file": "f02-p11-the-leap.jpg"
+        },
+        {
+          "id": "f02-facing-police",
+          "role": "P07/P11",
+          "kind": "panel",
+          "name": "Footballer_facing_police_in_smoke",
+          "drive_id": "1PoJKDf5O-Mbq4EwUj3g_P7XAhrgLnUxd",
+          "file": "f02-facing-police.jpg",
+          "brief_match": "uncertain: a player facing the police line — closest to P07 (police line) or an alternate P11"
+        },
+        {
+          "id": "f02-p10-captain-sees",
+          "role": "P10",
+          "kind": "panel",
+          "name": "Captain_witnessing_clash_through…",
+          "drive_id": "1JIIwoausyLVeE6NbQcTxqQFyM-QNu6uv",
+          "file": "f02-p10-captain-sees.jpg"
+        },
+        {
+          "id": "f02-p12-shield",
+          "role": "P12",
+          "kind": "panel",
+          "name": "Supporters_shielding_captain_acr…",
+          "drive_id": "1bqFCLpk4QU4qxJLVABOoJURva-daVs8q",
+          "file": "f02-p12-shield.jpg"
+        },
+        {
+          "id": "f02-p13-fire",
+          "role": "P13",
+          "kind": "panel",
+          "name": "Wooden_stand_on_fire",
+          "drive_id": "16-qfxm53I7iuIhvpcr0SWBA9OL_060jS",
+          "file": "f02-p13-fire.jpg"
+        },
+        {
+          "id": "f02-p09-water-cannon",
+          "role": "P09",
+          "kind": "panel",
+          "name": "Water-cannon_truck_dispersing_crowd",
+          "drive_id": "1lIwRRpBQARHAmdTDs6VBfkkEUp6Ehd7q",
+          "file": "f02-p09-water-cannon.jpg"
+        },
+        {
+          "id": "f02-p02-city-1990",
+          "role": "P02",
+          "kind": "panel",
+          "name": "Crowds_gathering_in_city_square",
+          "drive_id": "13Xxywiw8kmqVqDown9bS7ufWoJLEFKn0",
+          "file": "f02-p02-city-1990.jpg"
+        },
+        {
+          "id": "f02-p17-memorial",
+          "role": "P17",
+          "kind": "panel",
+          "name": "People_at_stone_memorial_wall",
+          "drive_id": "1PYFVZCeReJ4-ixhTfgIoSNXai2CylnyP",
+          "file": "f02-p17-memorial.jpg"
+        },
+        {
+          "id": "f02-p14-scoreboard",
+          "role": "P14",
+          "kind": "panel",
+          "name": "Blank_stadium_scoreboard_in_smoke",
+          "drive_id": "1ztF_DX9bWY15xfqRzwp9cuzcr6pHNrUQ",
+          "file": "f02-p14-scoreboard.jpg"
+        },
+        {
+          "id": "f02-p15-dawn",
+          "role": "P15",
+          "kind": "panel",
+          "name": "Empty_stadium_after_event",
+          "drive_id": "1Yw7QBSgCTPdySIZeXmECCJPgURbvLDPT",
+          "file": "f02-p15-dawn.jpg"
+        },
+        {
+          "id": "f02-owner-kick-art",
+          "role": "P30",
+          "kind": "panel",
+          "name": "reconstruction of confrontation",
+          "drive_id": "1NaywEMOtobnoAVyz857AWwThwC1ouynp",
+          "file": "f02-owner-kick-art.png"
+        },
+        {
+          "id": "f02-owner-supporters",
+          "role": "P31",
+          "kind": "panel",
+          "name": "supporters contextual illustration",
+          "drive_id": "11dmKuBTfNhFg9q7kKsm32q8TTnOQweef",
+          "file": "f02-owner-supporters.png"
+        },
+        {
+          "id": "f02-owner-aftermath",
+          "role": "P32",
+          "kind": "panel",
+          "name": "escorted player reconstruction",
+          "drive_id": "1ZBQg_R9gXEcdAYH2SHj9TkJW1GvQ384m",
+          "file": "f02-owner-aftermath.png"
+        },
+        {
+          "id": "f02-owner-chaos-wide",
+          "role": "P33",
+          "kind": "panel",
+          "name": "stadium disorder reconstruction",
+          "drive_id": "167jWDtgtGX7BryWfqNDriDHOh1YIOELG",
+          "file": "f02-owner-chaos-wide.png"
+        },
+        {
+          "id": "f02-owner-escorted",
+          "role": "P34",
+          "kind": "panel",
+          "name": "escorted group reconstruction",
+          "drive_id": "1XLyC0db1dIUzmAgUuYbRNVFRAPFOORnw",
+          "file": "f02-owner-escorted.png"
+        },
+        {
+          "id": "f02-owner-clash",
+          "role": "P35",
+          "kind": "panel",
+          "name": "clash reconstruction",
+          "drive_id": "1DS2Ys7JDRlxHnLFutep3sw-xcWpLR_Xt",
+          "file": "f02-owner-clash.png"
+        },
+        {
+          "id": "f02-owner-kick-photo",
+          "role": "P36",
+          "kind": "photo",
+          "name": "owner selected reference photograph",
+          "drive_id": "1uVFyhVMIsOrYJjVjUv0RIH6xdyqdpxny",
+          "file": "f02-owner-kick-photo.jpg"
+        }
+      ]
+    },
+    "file03": {
+      "title": "TWO GOALS",
+      "number": "03",
+      "tone": "LAUGH",
+      "year": 1994,
+      "brief_roles": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09"
+      ],
+      "panels": [
+        {
+          "id": "f03-case-desk",
+          "role": "P01",
+          "kind": "panel",
+          "name": "investigation desk",
+          "drive_id": "1Hf7TqMU__2Ma3cQ0ldf7ybUl54FlU5uG",
+          "file": "f03-case-desk.jpg"
+        },
+        {
+          "id": "f03-stadium",
+          "role": "P02",
+          "kind": "panel",
+          "name": "football action illustration",
+          "drive_id": "19YYjE3wDyQBniZj4s5hEDd0G2KPyy6ZQ",
+          "file": "f03-stadium.jpg"
+        },
+        {
+          "id": "f03-group-table",
+          "role": "P03",
+          "kind": "panel",
+          "name": "tactical board",
+          "drive_id": "1XSSYcgRVyM4bLA5Qgu4fchisC_yWDhUK",
+          "file": "f03-group-table.jpg"
+        },
+        {
+          "id": "f03-rule-sheet",
+          "role": "P04",
+          "kind": "panel",
+          "name": "blank ruled sheet",
+          "drive_id": "1H2pDsxMYiOgSQbzbwcF20FvK5iOECDO_",
+          "file": "f03-rule-sheet.jpg"
+        },
+        {
+          "id": "f03-scoreboard",
+          "role": "P05",
+          "kind": "panel",
+          "name": "football graphic with blank blocks",
+          "drive_id": "17AGH5LWtxy8NokBuUrX9BPsQSUUMExgT",
+          "file": "f03-scoreboard.jpg"
+        },
+        {
+          "id": "f03-own-goal",
+          "role": "P06",
+          "kind": "panel",
+          "name": "diving goalkeeper illustration",
+          "drive_id": "1rahoW4X1ol5VEOknP4sJjQE84jkkzXuO",
+          "file": "f03-own-goal.jpg"
+        },
+        {
+          "id": "f03-two-goals",
+          "role": "P07",
+          "kind": "panel",
+          "name": "pitch seen from above",
+          "drive_id": "1QTs4jpuNGdMaSwgAYvnz5lJP5ndRbICf",
+          "file": "f03-two-goals.jpg"
+        },
+        {
+          "id": "f03-extra-time",
+          "role": "P08",
+          "kind": "panel",
+          "name": "stopwatch and tactics",
+          "drive_id": "17yNGGVkAA4t_i4j6isXeJ4GCcOmr84Zt",
+          "file": "f03-extra-time.jpg"
+        },
+        {
+          "id": "f03-case-closed",
+          "role": "P09",
+          "kind": "panel",
+          "name": "case file",
+          "drive_id": "1VVxj35dJcMZ7w68-fXjiPg88fUpcifAh",
+          "file": "f03-case-closed.jpg"
+        },
+        {
+          "id": "f03-goal",
+          "role": "P10",
+          "kind": "panel",
+          "name": "goal illustration",
+          "drive_id": "1BzLfefeLZZuJt1rxpBTYEBJ_AUqccERD",
+          "file": "f03-goal.jpg"
+        },
+        {
+          "id": "f03-referee",
+          "role": "P11",
+          "kind": "panel",
+          "name": "referee illustration",
+          "drive_id": "1lcawoAYntARK5jqIcy3U355ETkkGMSh8",
+          "file": "f03-referee.jpg"
+        },
+        {
+          "id": "f03-tv",
+          "role": "P12",
+          "kind": "panel",
+          "name": "television illustration",
+          "drive_id": "1XNIf5nooWe8iZuL0FFeBGZSCKJVCdXK9",
+          "file": "f03-tv.jpg"
+        },
+        {
+          "id": "f03-folder",
+          "role": "P13",
+          "kind": "panel",
+          "name": "open folder illustration",
+          "drive_id": "1x0MZSQQHroEEK-Dlp_i0xF0OqQR8_7Bd",
+          "file": "f03-folder.jpg"
+        },
+        {
+          "id": "f03-board",
+          "role": "P14",
+          "kind": "panel",
+          "name": "investigation board illustration",
+          "drive_id": "1Z8HWFLf4UzKxx0LcI7YtHdF5wFQiemR3",
+          "file": "f03-board.jpg"
+        },
+        {
+          "id": "f03-ball",
+          "role": "P15",
+          "kind": "panel",
+          "name": "football graphic",
+          "drive_id": "18zQnOqiXFxyqw-K4gGF2C_JMTtM-CcHF",
+          "file": "f03-ball.jpg"
+        },
+        {
+          "id": "f03-net",
+          "role": "P16",
+          "kind": "panel",
+          "name": "football net",
+          "drive_id": "1QoWO8MTpTtqKn8TiLAIvxH3lFS1XvTZq",
+          "file": "f03-net.jpg"
+        },
+        {
+          "id": "f03-evidence",
+          "role": "P17",
+          "kind": "panel",
+          "name": "evidence desk",
+          "drive_id": "1OXSk17NamA55B6BPVLvwE1lD1K50MNz-",
+          "file": "f03-evidence.jpg"
+        },
+        {
+          "id": "f03-players",
+          "role": "P18",
+          "kind": "panel",
+          "name": "players and tactics",
+          "drive_id": "1gxySfGG-1UdxiCuzvNejz28RYZuej0ub",
+          "file": "f03-players.jpg"
+        }
       ]
     }
   }
