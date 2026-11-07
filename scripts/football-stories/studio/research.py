@@ -191,10 +191,19 @@ def hapoel_ledger(season: str) -> dict:
                        'fact': {'kind': 'honour', 'season': season, 'club': 'Hapoel Tel Aviv', 'competition': comp, 'result': r.get('result')},
                        'sources': [{'id': None, 'title': r.get('sourceTitle'), 'url': r.get('sourceUrl')}],
                        'confidence': r.get('confidence'), 'status': 'archive', 'conflicts': []})
+    goal_archive = None
+    compiled = COMPILED / 'hapoel-tel-aviv.json'
+    if compiled.exists():
+        goal_raw, pack = _read(compiled)
+        data = pack.get('data') or pack
+        goal_sources = {s['id']: s for s in data.get('sources') or [] if isinstance(s, dict) and s.get('id')}
+        claims += _goal_claims(data.get('goals') or [], claims, goal_sources, season)
+        goal_archive = {'file': 'content/compiled/hapoel-tel-aviv.json', 'sha256': sha256_bytes(goal_raw)}
     return {
         'version': 1, 'club_id': 'hapoel-tel-aviv', 'club_name': 'Hapoel Tel Aviv', 'season': season,
         'built_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
         'archive': {'file': 'content/generated/match-master.json', 'sha256': sha256_bytes(raw)},
+        'goal_archive': goal_archive,
         'claims': claims, 'held': held,
         'note': 'Archive records with sources and confidence. They are research inputs: confidence is not independent '
                 'verification, and nothing here is permission to use any image or sound.',
@@ -341,6 +350,57 @@ def _english(name: str | None, table: dict[str, str]) -> str | None:
     return name if _latin(name) else None
 
 
+def _goal_claims(goals: list[dict], matches: list[dict], sources_by_id: dict, season: str) -> list[dict]:
+    """Link approved, sourced archive goals to one exact reviewed match; incomplete goals stay partial."""
+    import unicodedata
+
+    def normal(value):
+        value = unicodedata.normalize('NFKD', str(value or ''))
+        return ' '.join(''.join(c for c in value if not unicodedata.combining(c)).casefold().split())
+
+    found = []
+    ids = {c['id'] for c in matches}
+    for goal in goals:
+        if not isinstance(goal, dict) or goal.get('status') != 'approved' or (goal.get('confidence') or 0) < 2:
+            continue
+        if goal.get('conflictRefs') or goal.get('conflicts'):
+            continue
+        v = goal.get('value') or {}
+        date, opp, score = v.get('on'), v.get('opponent'), v.get('score')
+        match_score = re.match(r'^\s*(\d+)\s*[-–]\s*(\d+)(?:\s|$|\()', str(score or ''))
+        if season_of(date) != season or not opp or not match_score:
+            continue
+        cg, og = (int(x) for x in match_score.groups())  # archive goal scores are club-relative
+        candidates = [c for c in matches if c['fact'].get('kind') == 'match'
+                      and c['fact'].get('date') == date and normal(c['fact'].get('opponent')) == normal(opp)
+                      and (c['fact'].get('club_goals'), c['fact'].get('opponent_goals')) == (cg, og)]
+        if len(candidates) != 1:
+            continue
+        src = [sources_by_id.get(i) for i in goal.get('sources') or []]
+        src = [{'id': s.get('id'), 'title': s.get('title'), 'url': s.get('url')} for s in src
+               if isinstance(s, dict) and str(s.get('url') or '').startswith('https://')]
+        goal_id = goal.get('id')
+        if not isinstance(goal_id, str) or not goal_id or goal_id in ids or not src:
+            continue
+        ids.add(goal_id)
+        title = str(v.get('name') or '')[:300]
+        fact = {'kind': 'goal-detail', 'match_id': candidates[0]['id'], 'date': date,
+                'opponent': candidates[0]['fact']['opponent'], 'competition': v.get('competition'),
+                'title': title, 'description': str(v.get('narrative') or '')[:1200],
+                'reconstruction_scope': str(v.get('reconstructionScope') or '')[:400]}
+        steps = v.get('sequence') or []
+        if isinstance(steps, list):
+            fact['documented_contacts'] = [{k: s.get(k) for k in ('actor', 'side', 'action', 'position', 'note')
+                                            if isinstance(s.get(k), str)} for s in steps[:8] if isinstance(s, dict)]
+        # Only an explicit minute-and-name goal title is parsed; no scorer is inferred from an action sequence.
+        m = re.match(r"^(\d{1,3}(?:\+\d{1,2})?)\s*['’]\s*[·–-]\s*(.+?)\s+v(?:s\.?|\.)?\s+.+$", title, re.I)
+        if m and _latin(m.group(2)):
+            fact['minute_label'], fact['scorer'] = m.group(1), m.group(2).strip()
+        found.append({'id': goal_id, 'type': 'goal-detail', 'fact': fact, 'sources': src,
+                      'confidence': goal['confidence'], 'status': 'archive', 'conflicts': []})
+    return found
+
+
 def compiled_ledger(club_id: str, season: str) -> dict:
     """FAN LIFE club packs (content/compiled/<club>.json): every APPROVED, sourced match of the season."""
     path = COMPILED / f'{club_id}.json'
@@ -410,6 +470,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
     claims = _same_match(claims)
     if not claims:
         raise StageError('SEASON_NOT_IN_ARCHIVE', f'{name} {season}: no approved, sourced match records')
+    claims += _goal_claims(data.get('goals') or [], claims, srcs, season)
     return {'version': 1, 'club_id': club_id, 'club_name': name, 'country': ident.get('country'), 'season': season,
             'built_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
             'archive': {'file': f'content/compiled/{club_id}.json', 'sha256': sha256_bytes(raw)},
@@ -474,7 +535,7 @@ def focus(ledger: dict, start: str | None, end: str | None) -> dict:
         f = c['fact']
         if f.get('kind') != 'match':
             d = f.get('date')
-            return not (f.get('kind') == 'match-detail' and d and ((start and d < start) or (end and d > end)))
+            return not (f.get('kind') in ('match-detail', 'goal-detail') and d and ((start and d < start) or (end and d > end)))
         d = f.get('date') or ''
         return (not start or d >= start) and (not end or d <= end)
     kept = [c for c in ledger['claims'] if inside(c)]
@@ -518,7 +579,8 @@ def pick(ledger: dict, match_ids: list[str]) -> dict:
     """Keep only the chosen matches of the season (one match, or the legs of a tie); every other claim stays, and the
     summary is counted again from what is left — the film can only add up what it shows."""
     want = set(match_ids)
-    kept = [c for c in ledger['claims'] if c['fact'].get('kind') != 'match' or c['id'] in want]
+    kept = [c for c in ledger['claims'] if (c['id'] in want if c['fact'].get('kind') == 'match' else
+            c['fact'].get('match_id') in want if c['fact'].get('kind') == 'goal-detail' else True)]
     if not any(c['fact'].get('kind') == 'match' for c in kept):
         raise StageError('EMPTY_FOCUS', f'None of the chosen matches is in {ledger["club_name"]} {ledger["season"]}')
     out = {**ledger, 'claims': kept, 'held': [], 'focus': {'matches': sorted(want)}}
@@ -538,7 +600,9 @@ def rivalry_ledger(club_id: str, opponent: str, label: str) -> dict:
         except StageError:
             continue
         base = base or l
-        claims += [c for c in l['claims'] if c['fact'].get('kind') == 'match' and c['fact'].get('opponent') == opponent]
+        matches = [c for c in l['claims'] if c['fact'].get('kind') == 'match' and c['fact'].get('opponent') == opponent]
+        match_ids = {c['id'] for c in matches}
+        claims += matches + [c for c in l['claims'] if c['fact'].get('kind') == 'goal-detail' and c['fact'].get('match_id') in match_ids]
     if not claims or base is None:
         raise StageError('EMPTY_FOCUS', f'No readable match against {opponent}')
     claims.sort(key=lambda c: c['fact']['date'])

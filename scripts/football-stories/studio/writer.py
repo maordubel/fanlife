@@ -72,6 +72,10 @@ DIRECTING:
   fast beats ("Won. Won. Won again.") then one match told slowly. Numbers made vivid ("six goals, and the away end
   still singing at the hundredth minute" — only if the claims hold it): never a list of scores.
 - TENSION IN THE CLOCK. When a claim has minutes, use them: "Eighty-seven minutes gone. Still level." Then the goal.
+- ARCHIVE GOALS: A goal-detail claim is one separately documented goal linked by match_id to a reviewed match.
+  When telling it, cite both the goal-detail and its match. Use only its stated scorer, minute and description;
+  its presence does not mean that every scorer, every goal minute or the entire build-up is known. A minute such as
+  45+2 is stoppage time, not the 47th minute. Never fill a missing scorer or match state from an illustration.
 - THE FAN'S POINT OF VIEW: the journey, the terrace, the waiting, the dread, the relief — feelings in general ("for the
   away end, the wait was over"), never invented testimony, never a named supporter, never a crowd size the claims lack.
 - HUMOUR when the record allows it: the absurd fixture, the self-irony every supporter knows ("of course they did it the
