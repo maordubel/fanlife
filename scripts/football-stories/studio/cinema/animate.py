@@ -346,7 +346,7 @@ def choose(ed, shots: list[dict], ctxs: list[dict], lib: L.Library | None) -> No
     """Annotate each shot's cinema block with the library's elements, transition and scene (deterministic)."""
     if not lib:
         return
-    pk = Picker(lib, ed.pal.bans, f"{ed.ledger.get('club_id')}:{ed.ledger.get('season')}")
+    pk = Picker(lib, ed.pal.render_bans, f"{ed.ledger.get('club_id')}:{ed.ledger.get('season')}")
     tr_used: Counter = Counter()
     last_tr, last_clip = None, -99
     clips = {p['stem'] for p in lib.of('clip')}
@@ -415,7 +415,7 @@ def _sprite(ed, stem: str, height: int, flip: bool = False, dim: float = 0.0) ->
         im = Image.open(lib.path(stem)).convert('RGBA')
         s_ = height / im.height
         im = im.resize((max(1, round(im.width * s_)), height), Image.LANCZOS)
-        im = L.paint(im, p.get('colour'), ed.pal.accent, ed.pal.bans)
+        im = L.paint(im, p.get('colour'), ed.pal.accent, ed.pal.render_bans)
         if flip:
             im = im.transpose(Image.FLIP_LEFT_RIGHT)
         if dim:
@@ -438,7 +438,7 @@ def backdrop(ed, key: str, dim: float = 0.0):
         return None
     if stem in lib.by and lib.by[stem]['cls'] == 'clip':
         p = lib.by[stem]
-        ed._clip = LibClip(lib.path(stem), ed.pal.bans, dim, accent=ed.pal.accent if p.get('colour') == 'kr' else None)
+        ed._clip = LibClip(lib.path(stem), ed.pal.render_bans, dim, accent=ed.pal.accent if p.get('colour') == 'kr' else None)
         first = ed._clip(0)
         return ed.world_image(f'lib-clip-{stem}-{round(dim * 100)}', lambda: first)
     grp = lib.group(stem)
@@ -448,7 +448,7 @@ def backdrop(ed, key: str, dim: float = 0.0):
 
     def make():
         im = cover(Image.open(lib.path(p['stem'])).convert('RGB'), CANVAS)
-        im = L.paint(im, p.get('colour'), ed.pal.accent, ed.pal.bans)
+        im = L.paint(im, p.get('colour'), ed.pal.accent, ed.pal.render_bans)
         im = vignette(im, 0.3)
         if dim:
             im = Image.blend(im, Image.new('RGB', im.size, hex_rgb(INK)), dim)
@@ -659,7 +659,7 @@ def stage(ed, shot, s: dict) -> None:
                     continue
                 pim = Image.open(lib.path(p['stem'])).convert('RGBA')
                 pim = cover_rgba(pim, (int(W * 1.14), int(H * 1.14)))
-                pim = L.paint(pim, p.get('colour'), ed.pal.accent, ed.pal.bans)
+                pim = L.paint(pim, p.get('colour'), ed.pal.accent, ed.pal.render_bans)
                 if card:
                     pim = _dim(pim, 0.38 if part == 'fg' else 0.3)
                 back.append(parallax_layer(pim, shot, fac, drift * (1 if s['n'] % 2 else -1), rise, dur))
@@ -765,7 +765,7 @@ class Transition:
             return None
         im = Image.open(lib.path(stem))
         im = im.convert('RGBA') if p.get('keyed') else im.convert('RGB')
-        return Transition(im, bool(p.get('keyed')), side, lambda x: L.paint(x, p.get('colour'), ed.pal.accent, ed.pal.bans))
+        return Transition(im, bool(p.get('keyed')), side, lambda x: L.paint(x, p.get('colour'), ed.pal.accent, ed.pal.render_bans))
 
     def __call__(self, t: float, frame: np.ndarray, prev: np.ndarray | None) -> np.ndarray:
         if t >= self.DUR or prev is None:

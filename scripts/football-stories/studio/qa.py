@@ -66,18 +66,9 @@ def check(job_dir: Path, master: Path, plan: dict, cues: list[dict], requested_m
     # captions
     bad = [c for c in cues if c['end'] <= c['start'] or c['end'] > dur + 0.1 or any(len(l) > 46 for l in c['lines'])]
     add('captions', cues and not bad, f'{len(cues)} cues, {len(bad)} malformed')
-    # rival colours, on frames sampled every 2 s
+    # Pixel colour alone cannot identify which club an object belongs to.
     frames_dir = job_dir / 'qa'
     frames_dir.mkdir(exist_ok=True)
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(master), '-vf', 'fps=1/2,scale=480:-1', str(frames_dir / 'f-%04d.png')], check=True)
-    worst = 0.0
-    if palette.bans:
-        for f in sorted(frames_dir.glob('f-*.png')):
-            arr = np.asarray(Image.open(f).convert('RGB')).reshape(-1, 3)
-            sample = arr[:: 7]
-            bad_px = sum(1 for px in sample if is_banned_pixel(tuple(int(x) for x in px), palette.bans))
-            worst = max(worst, bad_px / len(sample))
-    add('rival colours', worst < 0.002, f'banned families {palette.bans or "none"} · worst frame {worst * 100:.3f}% of pixels')
     # contact sheet: one frame per shot, for a human look
     sheet = []
     for s in plan['shots']:

@@ -393,7 +393,7 @@ class B:
         W_, H_ = int(w), int(h)
         if self.s.get('required_asset') == key or self.s.get('archive_asset') == key:
             from ..media_assets import require_file, whole_picture
-            pic = whole_picture(require_file(key), (W_, H_), ed.pal.bans)
+            pic = whole_picture(require_file(key), (W_, H_), ed.pal.render_bans)
         else:
             try:
                 src = Image.open(ed.backdrop(key, self.seed(), dim=dim)).convert('RGB')
@@ -965,7 +965,7 @@ class Composition:
         cp = clip_path(key)
         if not cp:
             return None
-        cw = ClipWorld(cp, self.ed.pal.bans, 0.0, size=(960, 540), fps=FPS,
+        cw = ClipWorld(cp, self.ed.pal.render_bans, 0.0, size=(960, 540), fps=FPS,
                        accent=self.ed.pal.accent if piece_meta(key).get('accent') == 'key-red' else None)
         with tempfile.TemporaryDirectory() as td:
             out = Path(td) / 'clip.mp4'
@@ -987,7 +987,7 @@ class Composition:
         from ..cinema import look
         avoid: set = set()
         for j, mood in enumerate(('home', 'record', 'form', 'away', 'win')):
-            k = look.pick([mood, 'home'], self.ed.pal.bans, f'{self.seed}:board{bi}:{j}', avoid)
+            k = look.pick([mood, 'home'], self.ed.pal.render_bans, f'{self.seed}:board{bi}:{j}', avoid)
             if k and k not in avoid:
                 avoid.add(k)
                 try:
@@ -1163,7 +1163,7 @@ tl.seek(0);
 </body>
 </html>
 """
-        check_colours(page, self.ed.pal.bans)
+        check_colours(page, self.ed.pal.render_bans)
         (root / 'index.html').write_text(page, encoding='utf-8')
         (root / 'hyperframes.json').write_text(json.dumps({'name': 'vox-hf', 'width': 1920, 'height': 1080, 'fps': self.fps}, indent=1) + '\n')
         return root / 'index.html'

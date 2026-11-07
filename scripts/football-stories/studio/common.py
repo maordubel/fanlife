@@ -83,6 +83,11 @@ class Palette:
                 raise ValueError(f'{c} is a rival colour for {self.club_name}')
 
     @property
+    def render_bans(self) -> list[str]:
+        """Rival colours may appear in photographs, opponents and neutral scenery."""
+        return []
+
+    @property
     def accent(self) -> str:
         """The accent printed on the magazine paper: the club colour, else the Weekly vermilion, else ink."""
         for c in (self.primary, VERMILION, NAVY):

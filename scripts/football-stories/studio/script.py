@@ -132,7 +132,7 @@ WORDS_PER_MINUTE = 148  # Kokoro at speed 1.0: a supporter telling it, not a lec
 
 SCHEMA_TEXT = '''{
   "director": 2 — always; it says this script is cut by the director rules,
-  "motif": optional — the film's recurring image, ≤6 words, no fact in it ("a red scarf", "the clock above the stand"),
+  "motif": optional — the film's recurring image, ≤6 words, no fact in it ("a scarf in the club colours", "the clock above the stand"),
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
   "selected": integer index into title_candidates,
   "hook": string — the first sentence the viewer hears; must be the start of the first beat's narration,
@@ -344,6 +344,44 @@ def fact_guard(text: str, ledger: dict, ids: list[str]) -> list[str]:
     return [f'number {n} is not in the cited claims {ids or "[]"}' for n in missing]
 
 
+
+def identity_guard(text: str, ledger: dict, *, motif: bool = False) -> list[str]:
+    """Flag an unsupported focus-supporter scarf colour; never police rival or background colours."""
+    from .common import family, hex_rgb
+    primary = ledger.get('identity_primary')
+    if not primary:
+        return []
+    try:
+        club_colour = family(hex_rgb(primary))
+    except ValueError:
+        return []
+    if not club_colour:
+        return []
+    out = []
+    # Process sentences separately, so a reference to the other club does not taint the whole film.
+    for sentence in re.split(r'(?<=[.!?])\s+', text):
+        for m in re.finditer(r'\b(red|blue|green|yellow)\s+(?:and\s+\w+\s+)?scar(?:f|ves)\b', sentence, re.I):
+            colour = m.group(1).lower()
+            focus = motif or bool(re.search(r"\b(our|ours|we|us|my|the supporter|supporters|fans|terrace|wear|wearing|wrap|wrapped|put on)\b", sentence, re.I))
+            opponents = [str((c.get('fact') or {}).get('opponent') or '') for c in ledger.get('claims') or []]
+            opponent = any(len(o) >= 4 and o.lower() in sentence.lower() for o in opponents)
+            if focus and not opponent and colour != club_colour:
+                out.append(f'{colour} scarf attributed to {ledger.get("club_name")}: verify club identity against a source or use a colour-neutral scarf')
+    return out
+
+
+def knockout_guard(text: str, ledger: dict, ids: list[str], story: dict) -> list[str]:
+    """Catch explicit first-person qualification contradictions when one decisive tie is cited."""
+    matches = [m for m in (story.get('matches') or []) if m.get('id') in ids and 'through' in m]
+    if len(matches) != 1 or matches[0]['through'] is None:
+        return []
+    # The outcome is focus-club-relative. Do not infer the subject for named opponents.
+    positive = re.search(r"\b(?:we|our (?:club|team|side))\s+(?:had\s+)?(?:qualified|advanced|went through|progressed)\b", text, re.I)
+    negative = re.search(r"\b(?:we|our (?:club|team|side))\s+(?:were|was|had been)\s+(?:eliminated|knocked out|out)\b", text, re.I)
+    if (positive and matches[0]['through'] is False) or (negative and matches[0]['through'] is True):
+        return ['qualification contradicts the cited two-leg result; distinguish the match result from the tie outcome']
+    return []
+
 def squash(t: str) -> str:
     """Text compared as words: curly and straight quotes, dashes and spacing do not make a quote different."""
     t = t.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')
@@ -494,15 +532,19 @@ def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = No
             texts += [b['slug']] if isinstance(b.get('slug'), str) else []
             for tx in texts:
                 errs += [f'{where}: {e}' for e in fact_guard(tx, ledger, cites + vc)]
+                errs += [f'{where}: {e}' for e in identity_guard(tx, ledger)]
+                errs += [f'{where}: {e}' for e in knockout_guard(tx, ledger, cites + vc, story)]
             if t == 'stat' and isinstance(v.get('value'), str) and not numbers_in_text(v['value']):
                 errs.append(f'{where}: a stat value must be a number')
     if 'motif' in s:  # the film's recurring object or image (the owner's craft): an image, never a fact
         mo = s['motif']
+        if isinstance(mo, str):
+            errs += [f'motif: {e}' for e in identity_guard(mo, ledger, motif=True)]
         known: set[str] = set()
         for c in by.values():
             _name_words(c['fact'], known)
         if not isinstance(mo, str) or not mo.strip() or len(mo) > 40 or len(mo.split()) > 6:
-            errs.append('"motif" is a short image of at most six words (a red scarf, the clock above the north stand)')
+            errs.append('"motif" is a short image of at most six words (a scarf in the club colours, the clock above the north stand)')
         elif numbers_in_text(mo) or any(w in known for w in _fold(mo).split()) or any(m.lower() in mo.lower() for m in MONTHS):
             errs.append('"motif" is an image, not a fact: no number, date, club or name in it')
     if directed:
@@ -863,3 +905,23 @@ def ensure_valid(s: dict, ledger: dict, minutes: float, kind: str | None = None)
     errs = validate_script(s, ledger, minutes, kind)
     if errs:
         raise StageError('SCRIPT_INVALID', '; '.join(errs[:12]) + (f' (+{len(errs) - 12} more)' if len(errs) > 12 else ''))
+
+
+def ensure_football_accuracy(s: dict, ledger: dict) -> None:
+    """Recheck selected/resumed scripts before voice, without reapplying unrelated length rules."""
+    story = story_of(ledger) if any((c.get('fact') or {}).get('kind') == 'match' for c in ledger.get('claims') or []) else {}
+    errors = identity_guard(str(s.get('motif') or ''), ledger, motif=True)
+    for ci, bi, _, beat in all_beats(s):
+        visual = beat.get('visual') or {}
+        ids = list(beat.get('claim_ids') or [])
+        ids += [visual['claim']] if isinstance(visual.get('claim'), str) else []
+        ids += visual.get('claims') or []
+        texts = [beat.get('narration') or '']
+        texts += [v for k, v in visual.items() if isinstance(v, str) and k in
+                  ('headline', 'kicker', 'title', 'subtitle', 'heading', 'text', 'label', 'caption')]
+        texts += [v for v in visual.get('lines') or [] if isinstance(v, str)]
+        for text in texts:
+            errors += [f'Chapter {ci + 1} beat {bi + 1}: {e}' for e in
+                       identity_guard(text, ledger) + knockout_guard(text, ledger, ids, story)]
+    if errors:
+        raise StageError('SCRIPT_INVALID', '; '.join(errors[:12]))
