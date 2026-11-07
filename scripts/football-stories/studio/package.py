@@ -146,11 +146,12 @@ def synthetic_decision(manifest: dict) -> dict:
     photoreal = [a for a in manifest.get('assets', []) if a.get('photoreal')]
     cloned = manifest.get('voice', {}).get('cloned_real_person')
     flag = bool(photoreal or cloned)
+    archive = any(a.get('archive') for a in manifest.get('assets', []))
     return {'altered_or_synthetic': flag,
             'reason': ('Photoreal generated imagery or a cloned voice is present' if flag else
-                       'No realistic synthetic scene, no altered footage, no real person depicted or voiced: the illustrations are '
+                       'No realistic synthetic scene, no altered footage, no cloned voice: the illustrations are '
                        'stylised paper-cut collage and the narrator is a synthetic voice of no real person.'),
-            'transparency_line': 'Narration voice and illustrations are AI-generated. No archive footage is shown; graphics present archive records.'}
+            'transparency_line': ('Narration voice and illustrations are AI-generated. Commons photographs are labelled context images; graphics present archive records.' if archive else 'Narration voice and illustrations are AI-generated. No archive footage is shown; graphics present archive records.')}
 
 
 def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
@@ -173,6 +174,9 @@ def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
               '• Maps: Natural Earth (public domain).',
               '• ' + synthetic_decision(manifest)['transparency_line'],
               '', SLOGAN, f'{CHANNEL_NAME} · {CHANNEL_HANDLE}']
+    archive_credits = [f"• {a.get('title', a['id'])[:100]} — {a['owner'][:100]} ({a['licence']}). {a['origin']}" for a in manifest.get('assets', []) if a.get('archive')]
+    if archive_credits:
+        tail[1:1] = ['Commons context photographs (resized and colour graded)', *archive_credits, '']
     # YouTube allows 5,000 characters: drop sources from the end (never the credits or the slogan) until it fits
     for n in range(min(25, len(srcs)), -1, -1):
         src = ['Sources'] + [f'• {s["title"]} — {s["url"]}' for s in srcs[:n]]

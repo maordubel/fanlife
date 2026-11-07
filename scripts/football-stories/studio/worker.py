@@ -108,7 +108,7 @@ def upload_outputs(st: Studio, job_id: str, job_dir: Path, log) -> dict:
     names = [f'master.{i:03d}.part' for i in range(len(chunks))]
     pkg = out / 'package.zip'
     with zipfile.ZipFile(pkg, 'w', zipfile.ZIP_DEFLATED) as z:
-        for f in ['youtube.json', 'description.txt', 'captions.en.srt', 'captions.en.vtt', 'qa.json', 'assets.json', 'shorts.json']:
+        for f in ['youtube.json', 'description.txt', 'captions.en.srt', 'captions.en.vtt', 'qa.json', 'assets.json', 'shorts.json', 'commons-search.json']:
             if (out / f).exists():
                 z.write(out / f, f)
         for f in ['script.json', 'ledger.json', 'plan.json', 'media-usage.json', 'log.txt']:

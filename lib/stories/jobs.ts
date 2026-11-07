@@ -163,7 +163,7 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
   case 'art_added':{
-   if(['classified','vlog'].includes(j.brief.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
+   if(['classified','vlog'].includes(j.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
    if(!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts (pause it first).')
    if(j.lease)no('The worker is still stopping. Wait for it to pause, then add your pictures.')
    const files=Array.isArray(a.files)?a.files:[]

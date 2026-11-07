@@ -304,7 +304,7 @@ class Editor:
         total = sum(s['frames'] for s in shots) / FPS
         cinema.direct_plan(self, shots)
         for s in shots:
-            if s.get('required_asset'):
+            if s.get('required_asset') or s.get('archive_asset'):
                 s['cinema'] = {'entry': 'dissolve', 'lib': [], 'lower': [], 'letterbox': False}
         chapters, last = [], None
         for s in shots:
@@ -329,7 +329,7 @@ class Editor:
             cinema.dress(self, shot, s)
             return shot
         shot = self._build(sp, s)
-        if not s.get('required_asset'):
+        if not (s.get('required_asset') or s.get('archive_asset')):
             cinema.dress(self, shot, s)
         return shot
 
@@ -475,7 +475,7 @@ class Editor:
             art = v.get('art') or (s.get('cinema') or {}).get('broll') or 'terrace-crowd'
             if art == 'gen':
                 art = 'gen:' + key_of(s.get('source_n', s['n']))
-            if s.get('required_asset'):
+            if s.get('required_asset') or s.get('archive_asset'):
                 from .media_assets import require_file, whole_picture
                 world = self.world_image(f'required-{s["n"]}', lambda: whole_picture(require_file(art), (W, H), self.pal.bans))
                 cam = cam_push(1.0, 1.0, 0, 0, dur)

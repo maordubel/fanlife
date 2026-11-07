@@ -116,6 +116,7 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
      <label className={css.check}><input type="checkbox" checked={drive} onChange={e=>setDrive(e.target.checked)}/> Scan the Google Drive library for this story (its own packs first, then the club&rsquo;s pictures)</label>
      <label className={css.lab}>Drive folder for this story (optional)<input value={folder} onChange={e=>setFolder(e.target.value)} placeholder="https://drive.google.com/drive/folders/…" inputMode="url"/><span className={css.hint}>Every supported image in this folder and its subfolders must appear in the film. Share it as “Anyone with the link”. Leave empty for automatic library matching.</span></label>
      <label className={css.lab}>Your pictures (required in the film)<input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy} onChange={e=>setPictures(Array.from(e.target.files??[]))}/><span className={css.hint}>{pictures.length?`${pictures.length} picture(s) selected. `:''}All selected pictures will appear. The film may run longer to give each one time on screen; missing files stop the job.</span></label>
+     <p className={css.hint}>Each script searches Wikimedia Commons for relevant public-domain and CC0 photographs. Matches supplement your required pictures; sources and licences are included in the production package.</p>
      <label className={css.check}><input type="checkbox" checked={reel} onChange={e=>setReel(e.target.checked)}/> Send the first Reel to my Telegram when it is done</label>
      <div className={css.lab}>YouTube visibility<div className={css.chips} role="group" aria-label="Visibility">{(['private','unlisted','public','scheduled'] as const).map(p=><button type="button" key={p} className={`${css.chip} min-h-tap`} aria-pressed={privacy===p} onClick={()=>setPrivacy(p)}>{p}</button>)}</div></div>
     </Step>
@@ -199,6 +200,11 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
  const [err,setErr]=useState(''),[busy,setBusy]=useState(false)
  const b=job.brief
  const act=async(body:Record<string,unknown>)=>{setErr('');setBusy(true);try{await api(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify(body)});onChange()}catch(e){setErr(e instanceof Error?e.message:'Failed')}finally{setBusy(false)}}
+ const remove=async()=>{
+  if(!confirm('Permanently delete this production, its scripts, uploads, video and working caches? This cannot be undone. Original Drive files and already published videos stay online. Storage cleanup continues automatically in the background.'))return
+  setErr('');setBusy(true)
+  try{await api(`/api/master/stories/${job.id}`,{method:'DELETE'});onChange()}catch(e){setErr(e instanceof Error?e.message:'Deletion failed')}finally{setBusy(false)}
+ }
  const si=job.stage?STAGES.indexOf(job.stage):-1
  return <article className={`${css.panel} ${css.job}`}>
   <div className={css.body}>
@@ -218,6 +224,7 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
     {(['failed','cancelled'].includes(job.state)||(job.state==='queued'&&!!job.notBefore))&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>{job.state==='queued'?'Try now':'Retry'}</button>}
     {job.state==='needs_review'&&job.stage==='script'&&!job.options?.length&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
     {!['cancelled','cancel_requested'].includes(job.state)&&job.upload.state!=='done'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Cancel this film?'))void act({action:'cancel'})}}>Cancel</button>}
+    <button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>void remove()}>Delete production</button>
     <button className={`${css.btn} min-h-tap`} onClick={onOpen} aria-expanded={open}>{open?'Close':'Open'}</button>
    </div>
    {err&&<p role="alert" className={css.alert}>{err}</p>}
@@ -261,7 +268,7 @@ function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=
   catch(e){setDl(e instanceof Error?e.message:'Download failed')}
  }
  return <div>
-  {['queued','paused'].includes(job.state)&&!['classified','vlog'].includes(job.brief.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
+  {['queued','paused'].includes(job.state)&&!['classified','vlog'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
   {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
