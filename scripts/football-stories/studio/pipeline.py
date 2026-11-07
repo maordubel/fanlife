@@ -194,6 +194,10 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from . import commons
     commons_cache = cache / 'commons'
 
+    # Keep identity policy on every path, including supplied and resumed scripts.
+    ledger['identity_primary'] = palette.primary
+    ledger['identity_rival_colours'] = palette.bans
+
     # 2 script
     step('script', 0.1, 'Writing the film')
     sp_ = job_dir / 'script.json'
@@ -228,6 +232,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         write_json(sp_, s)
         log(f'Script: "{sc.selected_title(s)}" · {sum(len(b["narration"].split()) for *_, b in sc.all_beats(s))} words')
     s = read_json(sp_)
+    sc.ensure_football_accuracy(s, ledger)
     archive = commons.discover(brief, ledger, s, commons_cache, log)
     write_json(job_dir / 'commons-search.json', archive)
     if brief.get('stop_after') == 'script':

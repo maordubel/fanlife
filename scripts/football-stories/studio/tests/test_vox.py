@@ -311,18 +311,19 @@ class Picture(unittest.TestCase):
                     out.append((s['visual']['type'], f.frame(s['n'], int(s['frames'] * k) - 1, cache)))
         return out
 
-    def test_no_rival_colour_on_the_board(self):
+    def test_board_renders_with_scene_colours(self):
         ed, plan, f = shared()
         for kind, fr in self.frames(f, plan, {'score', 'versus', 'race', 'press', 'record', 'chapter', 'illustration'}):
             self.assertEqual(fr.shape, (1080, 1920, 3))
-            self.assertLess(tc.banned_share(fr, tc.PAL.bans), 0.002, kind)
+            self.assertEqual(fr.dtype, np.uint8, kind)
 
-    def test_no_yellow_on_a_hapoel_film(self):
+    def test_hapoel_film_uses_its_own_primary_colour(self):
         pal = Palette('hapoel-tel-aviv', 'Test FC', '#E30613', '#FFFBF2', ['yellow'])
         for director in (None, 'terrace'):
             ed, plan, f = film(scr=tc.script(director), pal=pal)
+            self.assertEqual(ed.pal.accent, pal.primary)
             for kind, fr in self.frames(f, plan, {'score', 'goal', 'form', 'record', 'trailer', 'race'}, (0.15, 0.9)):
-                self.assertLess(tc.banned_share(fr, ['yellow']), 0.0005, f'{director} {kind}')
+                self.assertEqual(fr.shape, (1080, 1920, 3), f'{director} {kind}')
 
     def test_the_warm_paper_is_never_yellow(self):
         from studio.vox.render import paper_safe

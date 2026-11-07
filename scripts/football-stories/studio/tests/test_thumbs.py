@@ -199,19 +199,19 @@ class Films(unittest.TestCase):
         keys = [art.base_key(r['picture']['key']) for r in self.rows[:3]]
         self.assertEqual(len(set(keys)), 3)
 
-    def test_no_yellow_on_hapoel(self):
+    def test_hapoel_thumbnail_renders(self):
         for r in self.rows:
             with Image.open(self.out / r['file']) as im:
-                self.assertLess(yellow_share(im), 0.004, r['file'])
+                self.assertEqual(list(im.size), r['size'], r['file'])
 
-    def test_a_yellow_picture_is_scrubbed_for_a_club_that_bans_it(self):
+    def test_an_opponent_yellow_picture_is_preserved(self):
         pic = art.Picture(Image.new('RGB', (1280, 720), (240, 200, 20)), 'test-yellow', 'house')
         h = hooks.film_hooks(None, self.L)[0]
         B = compose.documentary(h, pic, PAL, None)
-        p = thumbs._save(B, tmpdir() / 't.jpg', PAL.bans)
+        p = thumbs._save(B, tmpdir() / 't.jpg', PAL.render_bans)
         with Image.open(p) as im:
-            self.assertLess(yellow_share(im), 0.004)
-        # a club whose own colour is yellow keeps it
+            self.assertGreater(yellow_share(im), 0.1)
+        # a club whose own colour is yellow also keeps it
         B = compose.documentary(h, pic, AEK, None)
         p = thumbs._save(B, tmpdir() / 'a.jpg', AEK.bans)
         with Image.open(p) as im:

@@ -252,7 +252,7 @@ class VoxFilm:
         from ..cinema import look
         out, avoid = [], set()
         for j, mood in enumerate(('home', 'record', 'form', 'away', 'win')):
-            k = look.pick([mood, 'home'], self.ed.pal.bans, f'{self.seed}:board{board}:{j}', avoid)
+            k = look.pick([mood, 'home'], self.ed.pal.render_bans, f'{self.seed}:board{board}:{j}', avoid)
             if k and k not in avoid:
                 avoid.add(k)
                 try:
@@ -273,7 +273,7 @@ class VoxFilm:
             sd = E.hsh(self.seed, board)
             im = board_paper(b, sd, self.style.get('warm', False), hex_rgb(self.ed.pal.accent), self._photos(board),
                              self._years(), [(self.where(m)['ox'] + PW / 2, self.where(m)['oy'] + PH / 2) for m in b['panels']],
-                             list(self.ed.pal.bans))
+                             list(self.ed.pal.render_bans))
             tmp = pp.with_name(f'{pp.stem}.{os.getpid()}.tmp.png')
             im.save(tmp, compress_level=1)
             os.replace(tmp, pp)

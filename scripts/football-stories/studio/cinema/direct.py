@@ -148,16 +148,16 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
         broll = fx.get('broll')
         if broll and not (broll.startswith(('beat:', 'clip:')) or broll in ('tunnel', 'terrace-crowd', 'terrace-empty', 'supporter')):
             broll = None
-        if broll and broll.startswith('beat:') and not look.allowed(broll, ed.pal.bans):
+        if broll and broll.startswith('beat:') and not look.allowed(broll, ed.pal.render_bans):
             broll = None
         if not broll and (kind in DATA_CARDS or kind in ('chapter', 'form', 'race', 'versus', 'goal', 'record', 'run', 'trailer')) and not v.get('backdrop'):
-            broll = look.pick(list(dl.get('broll', ())) * (kind in ('stat', 'fact', 'quote', 'press', 'ticket', 'chapter')) + look.moods_for(kind, pf, mood, derby), ed.pal.bans, f"{ed.ledger.get('club_id')}:{ed.ledger.get('season')}:{s['n']}",
+            broll = look.pick(list(dl.get('broll', ())) * (kind in ('stat', 'fact', 'quote', 'press', 'ticket', 'chapter')) + look.moods_for(kind, pf, mood, derby), ed.pal.render_bans, f"{ed.ledger.get('club_id')}:{ed.ledger.get('season')}:{s['n']}",
                               {prev_broll} if prev_broll else set(), animate.recorded_weather(ed, s, cited))
         prev_broll = broll or v.get('backdrop') or v.get('art') or prev_broll
         entry = _entry(s, kind, fx.get('pace'), mood, prev_entry, pf, dl.get('entries'))
         if fx.get('cut') == 'meanwhile' and s['n'] > 0:
             entry = 'split'
-        motif_art = look.motif_piece(motif, ed.pal.bans, ed.ledger.get('club_id') or '') if fx.get('motif') and motif else None
+        motif_art = look.motif_piece(motif, ed.pal.render_bans, ed.ledger.get('club_id') or '') if fx.get('motif') and motif else None
         if motif_art and kind not in ('illustration', 'map', 'end', 'follow') and not v.get('backdrop'):
             broll = motif_art  # the motif comes back as the picture behind the card
         prev_entry = entry

@@ -66,11 +66,11 @@ def for_film(script: dict | None, ledger: dict, palette, out: Path, director: st
             avoid.add(pic.figure_key)
         pics.append(pic)
         B = compose.documentary(h, pic, palette, crest, director, seed=i)
-        p = _save(B, out / f'thumbnail-{i}.jpg', palette.bans)
+        p = _save(B, out / f'thumbnail-{i}.jpg', palette.render_bans)
         rows.append({'file': p.name, 'size': [1280, 720], **_public(h), 'picture': {'key': pic.key, 'kind': pic.kind, 'figure': pic.figure_key},
                      'director': director, 'legibility': legibility(B)})
     S = compose.documentary_short(hs[0], pics[0], palette, crest, director, seed=1)
-    sp = _save(S, out / SHORT_NAME, palette.bans)
+    sp = _save(S, out / SHORT_NAME, palette.render_bans)
     rows.append({'file': sp.name, 'size': [1080, 1920], 'shorts_cover': True, **_public(hs[0]),
                  'picture': {'key': pics[0].key, 'kind': pics[0].kind}, 'legibility': legibility(S, small=(94, 168))})
     (out / 'thumbnails.json').write_text(json.dumps(rows, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')

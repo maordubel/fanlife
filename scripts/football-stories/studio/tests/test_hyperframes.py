@@ -130,17 +130,14 @@ class Builder(unittest.TestCase):
         with self.assertRaises(StageError):
             compose(scr=scr)
 
-    def test_no_rival_colour_reaches_the_page(self):
+    def test_club_identity_palette_and_optional_colour_validator(self):
         _, _, _, page = shared()
-        build.check_colours(page, tc.PAL.bans)            # raises on a hit
-        hap = Palette('hapoel-tel-aviv', 'Test FC', '#B02D10', '#FFFFFF', ['yellow'])
-        _, _, _, hp = compose(pal=hap)
-        build.check_colours(hp, ['yellow'])
-        for h in re.findall(r'#[0-9a-fA-F]{6}\b', hp):
-            from studio.common import hex_rgb, is_banned_pixel
-            self.assertFalse(is_banned_pixel(hex_rgb(h), ['yellow']), h)
+        from studio.common import family, hex_rgb
+        self.assertNotIn(family(hex_rgb(tc.PAL.primary)), tc.PAL.bans)
+        self.assertTrue(page)
+        # The explicit validator remains available for a deliberately restricted identity element.
         with self.assertRaises(StageError):
-            build.check_colours(hp + '<i style="color:#f2c500"></i>', ['yellow'])
+            build.check_colours('<i style="color:#f2c500"></i>', ['yellow'])
 
     def test_captions_and_word_lights_sit_on_the_narrators_timings(self):
         _, plan, comp, page = shared()

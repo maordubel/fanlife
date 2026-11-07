@@ -7,6 +7,7 @@ import {englishName} from '@/lib/clubs/rumble-xi/names'
 import playerLabels from '@/content/manual/trivia-player-labels.json'
 import heritage from '@/content/manual/trivia-heritage-facts-2026-10-21.json'
 import goalReviews from '@/content/manual/trivia-goal-reviews.json'
+import editorialSelections from '@/content/manual/trivia-editorial-2026-10-21.json'
 import {rawPool} from '@/lib/clubs/rumble'
 import {normKey} from '@/lib/clubs/trivia-bank'
 import {clampLevel,difficultyOf} from './levels'
@@ -371,13 +372,23 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  // Pair names with genuinely different positions. Each component keeps its underlying fact identity.
  const positionMen=ranked.filter(p=>p.positions.length===1&&POS[p.positions[0]!]&&p.source.url).sort((a,b)=>(prominence.get(b.id)??0)-(prominence.get(a.id)??0)||a.id.localeCompare(b.id))
  const lanes=Object.keys(POS).map(pos=>positionMen.filter(p=>p.positions[0]===pos))
- for(let i=0;i<12;i++){
-  const trio=lanes.map(l=>l[i]).filter((p):p is Man=>!!p).slice(0,3);if(trio.length!==3)continue
+ const addPlayerPair=(trio:Man[])=>{
+  if(trio.length!==3||trio.some(p=>p.positions.length!==1||!POS[p.positions[0]!]||!p.source.url)||new Set(trio.map(p=>p.positions[0])).size!==3)return
   const L=clampLevel(Math.round(trio.reduce((n,p)=>n+p.fame,0)/3))
   add({key:`player-pairs:${trio.map(p=>p.id).join(',')}`,template:'fl-player-pairs',type:'match',topic:'players',level:L,
    prompt:`Fill the ${NAME} team sheet: match each player to his position.`,left:trio.map(p=>p.name),answer:trio.map(p=>POS[p.positions[0]!]!),
    explanation:trio.map(p=>`${p.name}: ${POS[p.positions[0]!]}`).join(' · ')+'.',hint:{kind:'context'},
    factIds:trio.map(p=>`pos:${p.id}`),decades:[...new Set(trio.flatMap(p=>p.from?[decadeOf(p.from)]:[]))],source:trio[0]!.source,facets:[`level:${L}`,'player']})
+ }
+ for(let i=0;i<12;i++)addPlayerPair(lanes.map(l=>l[i]).filter((p):p is Man=>!!p).slice(0,3))
+ // A reviewed combination must not disappear just because another player rose in the
+ // ranking. Reconstruct it only from current approved, unambiguous player records;
+ // curateQuestions still withdraws the overlay if its source or answer changed.
+ const reviewed=(editorialSelections.clubs as Record<string,{factIds:string[]}[]>)[id]??[]
+ for(const edit of reviewed){
+  if(edit.factIds.length!==3||!edit.factIds.every(f=>f.startsWith('pos:')))continue
+  const trio=edit.factIds.map(f=>byId.get(f.slice(4))).filter((p):p is Man=>!!p)
+  addPlayerPair(trio)
  }
  // Three home shirts, three distinct makers: one unambiguous answer per season.
  const homeKits=kits.filter(k=>k.type==='home'&&k.maker&&k.source.url&&kitKey.get(`${k.season}|home`)===1).sort((a,b)=>a.season.localeCompare(b.season))

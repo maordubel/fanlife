@@ -159,7 +159,7 @@ def documentary_picture(ledger: dict, hook: dict, palette, size=(1280, 720), sal
     tag = hook.get('tag') or 'terrace'
     if tag == 'europe' and hook.get('side') == 'home':
         tag = 'europe-home'
-    bans, accent = list(palette.bans), palette.accent
+    bans, accent = list(palette.render_bans), palette.accent
     lib = L.load()
     pr = _press(ledger, hook, by)
     if pr and pr[0] not in avoid:

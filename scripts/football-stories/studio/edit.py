@@ -159,7 +159,7 @@ class Editor:
         art = art or 'paper'
         if art.startswith('clip:') and clip_path(art):
             # A clip is a moving world: build() hands the reader to the shot, and the first frame stands in as the still.
-            self._clip = ClipWorld(clip_path(art), self.pal.bans, dim, accent=self.pal.accent if piece_meta(art).get('accent') == 'key-red' else None)
+            self._clip = ClipWorld(clip_path(art), self.pal.render_bans, dim, accent=self.pal.accent if piece_meta(art).get('accent') == 'key-red' else None)
             name = art[5:].replace('/', '--')
             first = self._clip(0)
             return self.world_image(f'clip-{name}-{round(dim * 100)}', lambda: first)
@@ -174,7 +174,7 @@ class Editor:
             dim = 0.0
         if art.startswith('beat:') and beat_path(art):
             name = art[5:].replace('/', '--')
-            return self.world_image(f'beat-{name}-{round(dim * 100)}', lambda: art_backdrop(art, bans=self.pal.bans, dim=dim, accent=self.pal.accent))
+            return self.world_image(f'beat-{name}-{round(dim * 100)}', lambda: art_backdrop(art, bans=self.pal.render_bans, dim=dim, accent=self.pal.accent))
         if art.startswith('beat:'):
             art = 'terrace-crowd'
         if art == 'paper':
@@ -218,7 +218,9 @@ class Editor:
         us, them = first['club_goals'] + f['club_goals'], first['opponent_goals'] + f['opponent_goals']
         if us != them:
             return us > them
-        if int(str(self.ledger.get('season') or '0')[:4] or 0) >= 2021:
+        if not re.search(r'uefa|european cup|champions league|europa|conference league|cup winners|intertoto|fairs', comp, re.I):
+            return None  # domestic competitions can use different tie-break rules
+        if int(str(self.ledger.get('season') or '0')[:4] or 0) < 1965 or int(str(self.ledger.get('season') or '0')[:4] or 0) >= 2021:
             return None  # UEFA dropped away goals from 2021/22: a level tie went to extra time and penalties
         away_us = first['club_goals'] if first['side'] == 'away' else f['club_goals']
         away_them = first['opponent_goals'] if first['side'] == 'home' else f['opponent_goals']
@@ -477,7 +479,7 @@ class Editor:
                 art = 'gen:' + key_of(s.get('source_n', s['n']))
             if s.get('required_asset') or s.get('archive_asset'):
                 from .media_assets import require_file, whole_picture
-                world = self.world_image(f'required-{s["n"]}', lambda: whole_picture(require_file(art), (W, H), self.pal.bans))
+                world = self.world_image(f'required-{s["n"]}', lambda: whole_picture(require_file(art), (W, H), self.pal.render_bans))
                 cam = cam_push(1.0, 1.0, 0, 0, dur)
             else:
                 world = self.backdrop(art, seed)
@@ -590,7 +592,7 @@ class Editor:
 
     def follow_backdrop(self) -> str:
         """One of the owner's follow-moment pictures, chosen by club and season, never one in the rival's colours."""
-        bans = set(self.pal.bans)
+        bans = set(self.pal.render_bans)
         opts = []
         for slug in self.FOLLOW_BACKDROPS:
             key = f'beat:common/{slug}'
@@ -615,12 +617,12 @@ class Editor:
         owns is swapped for its one-ink version (rule 95)."""
         mono = {'brand/fanlife/logo-512.png': ('brand/fanlife/logo-mono.webp', {'red', 'green', 'blue'}),
                 'legends/brand/logo-512.webp': ('legends/brand/logo-mono-512.webp', {'red', 'green', 'blue', 'yellow'})}
-        if rel in mono and set(self.pal.bans) & mono[rel][1]:
+        if rel in mono and set(self.pal.render_bans) & mono[rel][1]:
             rel = mono[rel][0]
         out = self.sprites_dir / ('app-' + rel.replace('/', '--').rsplit('.', 1)[0] + '.png')
         if not out.exists():
             im = Image.open(ROOT / 'public' / rel).convert('RGBA')
-            rgb = scrub(im.convert('RGB'), self.pal.bans).convert('RGBA')
+            rgb = scrub(im.convert('RGB'), self.pal.render_bans).convert('RGBA')
             rgb.putalpha(im.getchannel('A'))
             atomic_save(rgb, out)
         return out
@@ -729,7 +731,7 @@ class Editor:
             rgb = im.convert('RGB')
             if piece_meta(key).get('accent') == 'key-red':
                 rgb = recolor(rgb, self.pal.accent)
-            rgb = scrub(rgb, self.pal.bans).convert('RGBA')
+            rgb = scrub(rgb, self.pal.render_bans).convert('RGBA')
             rgb.putalpha(im.getchannel('A'))
             atomic_save(rgb, out)
         return Image.open(out).convert('RGBA')
@@ -738,7 +740,7 @@ class Editor:
         """One of the variants of a cut-out (`fig-x-kr`, `fig-x-b-kr`, `fig-x-c-kr`), chosen by club and shot — so two
         clubs' films, and two shots of one film, do not show the same drawing."""
         stem, kind = base.rsplit('-', 1)
-        bans = set(self.pal.bans)
+        bans = set(self.pal.render_bans)
         opts = []
         for p in cut_index('common'):
             if not re.fullmatch(rf'cut:common/{re.escape(stem)}(-[bc])?-{kind}', p['key']):

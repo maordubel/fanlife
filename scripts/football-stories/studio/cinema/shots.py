@@ -69,7 +69,7 @@ def _ctx(ed, s: dict):
 
 
 def _world(ed, s: dict, cin: dict, moods: list[str], seed: int, dim: float = 0.55) -> Image.Image:
-    key = cin.get('broll') or look.pick(moods, ed.pal.bans, f"{ed.ledger.get('club_id')}:{s['n']}") or 'terrace-crowd'
+    key = cin.get('broll') or look.pick(moods, ed.pal.render_bans, f"{ed.ledger.get('club_id')}:{s['n']}") or 'terrace-crowd'
     return Image.open(ed.backdrop(key, seed, dim=dim)).convert('RGB')
 
 
@@ -711,7 +711,7 @@ def trailer(ed, s: dict) -> Shot:
     keys = []
     avoid = set()
     for j in range(n):
-        k_ = look.pick(['trailer', 'europe', 'derby', 'win', 'form'][j % 5:] + ['trailer'], ed.pal.bans, f"{ed.ledger.get('club_id')}:{s['n']}:{j}", avoid)
+        k_ = look.pick(['trailer', 'europe', 'derby', 'win', 'form'][j % 5:] + ['trailer'], ed.pal.render_bans, f"{ed.ledger.get('club_id')}:{s['n']}:{j}", avoid)
         if cin.get('broll') and j == 0:
             k_ = cin['broll']
         keys.append(k_ or 'terrace-crowd')

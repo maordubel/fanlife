@@ -16,7 +16,7 @@ import json
 import re
 import unicodedata
 
-STORY_VERSION = 1
+STORY_VERSION = 2
 
 # Word forms a club name carries that say nothing about WHICH club it is ("FK Velež Mostar" is "Velež").
 GENERIC = {'fc', 'fk', 'sc', 'ac', 'ca', 'cf', 'afc', 'sk', 'nk', 'cd', 'club', 'the', 'de', 'football', 'f.c.', 'f.k.'}
@@ -239,7 +239,7 @@ def _ties(ms: list[tuple[str, dict]], club: str | None, pens_of=lambda f: {}) ->
             through = us > them
         elif (f.get('penalties') or {}).get('winner') or pens_of(f).get('winner'):
             through = ((f.get('penalties') or {}).get('winner') or pens_of(f).get('winner')) == club
-        elif f['date'][:7] < '2021-07':  # UEFA dropped away goals from 2021/22
+        elif EUROPE.search(str(f.get('competition') or '')) and '1965-07' <= f['date'][:7] < '2021-07':  # limited to European ties; domestic rules differ
             away_us = g['club_goals'] if g.get('side') == 'away' else f['club_goals']
             away_them = g['opponent_goals'] if g.get('side') == 'home' else f['opponent_goals']
             through = None if away_us == away_them else away_us > away_them

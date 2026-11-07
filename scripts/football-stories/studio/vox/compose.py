@@ -290,18 +290,18 @@ class Builder:
             from ..paper import ClipWorld, clip_path, piece_meta
             cp = clip_path(key)
             if cp:
-                clip = ClipWorld(cp, ed.pal.bans, 0.0, accent=ed.pal.accent if piece_meta(key).get('accent') == 'key-red' else None)
+                clip = ClipWorld(cp, ed.pal.render_bans, 0.0, accent=ed.pal.accent if piece_meta(key).get('accent') == 'key-red' else None)
         W_, H_ = int(w * self.res), int(h * self.res)
         if self.s.get('required_asset') == key or self.s.get('archive_asset') == key:
             from ..media_assets import require_file, whole_picture
-            pic = whole_picture(require_file(key), (W_, H_), ed.pal.bans)
+            pic = whole_picture(require_file(key), (W_, H_), ed.pal.render_bans)
         else:
             try:
                 src = Image.open(ed.backdrop(key, self.seed, dim=dim)).convert('RGB')
             except Exception:  # optional library art only
                 src = Image.open(ed.backdrop('terrace-crowd', self.seed)).convert('RGB')
             from ..paper import scrub
-            pic = E.photo_treat(scrub(_cover(src, (W_, H_)), ed.pal.bans), amount=0.34)
+            pic = E.photo_treat(scrub(_cover(src, (W_, H_)), ed.pal.render_bans), amount=0.34)
         card, pad = E.paper(w + 36, h + 36, self.res, self.seed + 11, tone=PAPER, edges='tblr', tape=tape)
         card.alpha_composite(pic.convert('RGBA'), (int(pad + 18 * self.res), int(pad + 18 * self.res)))
         from ..paper import piece_meta
