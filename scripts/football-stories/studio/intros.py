@@ -91,7 +91,7 @@ def shift_plan(plan: dict, seconds: float) -> dict:
     p['duration'] += seconds
     for shot in p['shots']:
         for key in ('start','voice_at'):
-            if key in shot:
+            if isinstance(shot.get(key), (int, float)):
                 shot[key] += seconds
     for chapter in p.get('chapters') or []:
         chapter['t'] += seconds

@@ -31,9 +31,10 @@ class Openings(unittest.TestCase):
                     self.assertEqual(json.loads((job/'intro.json').read_text())['kind'],kind)
 
     def test_timelines_shift_without_mutating_render_plan(self):
-        plan={'duration':10,'shots':[{'start':0,'voice_at':.2}],'chapters':[{'t':0}]}
+        plan={'duration':10,'shots':[{'start':0,'voice_at':.2}, {'start':5,'voice_at':None}],'chapters':[{'t':0}]}
         shifted=intros.shift_plan(plan,10)
         self.assertEqual(shifted['shots'][0]['voice_at'],10.2)
+        self.assertIsNone(shifted['shots'][1]['voice_at'])
         self.assertEqual(shifted['chapters'][0]['t'],10)
         self.assertEqual(plan['shots'][0]['start'],0)
 
