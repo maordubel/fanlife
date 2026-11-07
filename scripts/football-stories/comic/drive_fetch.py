@@ -65,6 +65,11 @@ def fetch(items: list[dict], out: Path, url: str, log=print, getter=fetch_one) -
         if dst.exists() and is_picture(dst.read_bytes()) is None:
             report['ok'].append(e['id'])
             continue
+        if not e.get('drive_id'):
+            why = 'artwork has not been supplied; no Drive file is configured'
+            report['failed'].append({'id': e['id'], 'name': e['name'], 'why': why})
+            log(f"Drive: {e['id']} did not download — {why}")
+            continue
         try:
             data = getter(url.format(id=e['drive_id']))
             why = is_picture(data)

@@ -8,6 +8,7 @@ import os
 import re
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 import numpy as np
@@ -210,8 +211,9 @@ class EndToEnd(unittest.TestCase):
         cls.panels = t / 'panels'
         dummy.write_all(cls.panels, (480, 270), 'file01')
         cls.out = t / 'job'
-        cls.rep = produce.produce(_dummy_episode(), [cls.panels], cls.out, say=produce.fake_voice, size=(320, 180),
-                                  allow_model=False, music='synth', log=lambda m: None)
+        with patch('studio.intros.prepend', return_value=0), patch('studio.writer.call_model', side_effect=RuntimeError('offline test')):
+            cls.rep = produce.produce(_dummy_episode(), [cls.panels], cls.out, say=produce.fake_voice, size=(320, 180),
+                                      allow_model=False, music='synth', log=lambda m: None)
         cls.o = cls.out / 'out'
 
     @classmethod
@@ -220,7 +222,7 @@ class EndToEnd(unittest.TestCase):
 
     def test_files(self):
         for f in ('master.mp4', 'captions.en.srt', 'captions.en.vtt', 'qa.json', 'youtube.json', 'description.txt',
-                  'thumbnail-1.jpg', 'preview-telegram.mp4', 'telegram-draft.txt', 'report.json', 'short-1.mp4'):
+                  'thumbnail-1.jpg', 'preview-telegram.mp4', 'telegram-draft.txt', 'report.json'):
             self.assertTrue((self.o / f).exists(), f)
 
     def test_the_clock_follows_the_voice(self):
@@ -261,11 +263,9 @@ class EndToEnd(unittest.TestCase):
         self.assertIn('DRAFT', note)
         self.assertIn('Nothing has been uploaded', note)
 
-    def test_short_is_vertical(self):
-        import subprocess
-        r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height',
-                            '-of', 'csv=p=0', str(self.o / 'short-1.mp4')], capture_output=True, text=True, check=True)
-        self.assertEqual(r.stdout.strip(), '1080,1920')
+    def test_no_legacy_film_excerpt_when_independent_hooks_are_unavailable(self):
+        self.assertEqual(self.rep['shorts'], [])
+        self.assertFalse((self.o / 'short-1.mp4').exists())
 
     def test_report(self):
         self.assertIn('roles', self.rep)

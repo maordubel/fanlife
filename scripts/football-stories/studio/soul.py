@@ -17,7 +17,7 @@ SOUL = {
         'terrace that becomes yours. The emotion lives in the people around the match as much as in the match.',
         'Memory is sacred: the old ground, the floodlight pylons, the club that was demolished, the ticket stub, the '
         'paper the morning after. Nostalgia is warm, never sugary.',
-        'Rivalry is real and personal — the derby is THE match, the rival\'s colour does not belong on our page — and it '
+        'Rivalry is real and personal — the derby is THE match, each club and its supporters keep their own colours; the rival may appear in its own colours — and it '
         'is lived with pride, wit and respect for the game, never with hate for people.',
         'The fan is the hero: the away trip for a draw, the rain, the songs, the self-irony of loving a club that breaks '
         'your heart. Supporters, not owners, are the soul of a club.',

@@ -44,6 +44,11 @@ describe('Studio v3 — three scripts, one click',()=>{
   expect(()=>ownerAct(base,{action:'choose_script',option:1},'owner',now)).toThrow(/no scripts/)
   expect(()=>ownerAct(f,{action:'approve_script'},'owner',now)).toThrow()
  })
+ it('retains three cited opening alternatives for review',()=>{
+  const hooks=[1,2,3,4].map(n=>({text:`Opening ${n}`,claim_ids:[`claim-${n}`]}))
+  const f=finish(claim(base,'w1',now),'w1',{state:'needs_review',stage:'script',options:[{...opts[0]!,hook_options:hooks}]},now)
+  expect(f.options?.[0]?.hook_options).toEqual(hooks.slice(0,3))
+ })
 })
 
 describe('Studio v3 — the catalog',()=>{

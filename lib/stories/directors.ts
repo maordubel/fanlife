@@ -34,7 +34,7 @@ export const HOUSE_SOUL={
  feels:[
   "Football is belonging and inheritance — a father taking his son to the ground, the first shirt, the step on the terrace that becomes yours. The emotion lives in the people around the match as much as in the match.",
   "Memory is sacred: the old ground, the floodlight pylons, the club that was demolished, the ticket stub, the paper the morning after. Nostalgia is warm, never sugary.",
-  "Rivalry is real and personal — the derby is THE match, the rival's colour does not belong on our page — and it is lived with pride, wit and respect for the game, never with hate for people."],
+  'Rivalry is real and personal — the derby is THE match, each club and its supporters keep their own colours; the rival may appear in its own colours — and it is lived with pride, wit and respect for the game, never with hate for people.'],
  demands:[
   "Accuracy is respect (\"I ask for precision in the details!\"): the right man, the right date, the right score. Nothing invented, ever — a wrong fact in front of supporters is a betrayal.",
   "Never boring, never mechanical (\"the movement fakes it\"; \"just reads results\"): it must have rhythm, movement, cinema — the bar is the films and games he loves, not \"good enough\".",

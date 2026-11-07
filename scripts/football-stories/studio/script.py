@@ -136,6 +136,7 @@ SCHEMA_TEXT = '''{
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
   "selected": integer index into title_candidates,
   "hook": string — the first sentence the viewer hears; must be the start of the first beat's narration,
+  "hook_options": [{"text": string, "claim_ids": [string]}] — EXACTLY 3 alternative complete openings for the selected title; each 3–4 sentences, about 20 seconds, distinct, with cited evidence. The first is used in the opening narration.
   "chapters": [{"title": string, "beats": [{
       "narration": string (one to three sentences),
       "claim_ids": [string] — ledger ids this beat relies on (may be empty only for pure atmosphere with no fact);
@@ -181,7 +182,7 @@ SCHEMA_TEXT = '''{
   }]}],
   "description": string — 2-4 natural paragraphs; NO sources, credits or chapters (they are appended from the cut),
   "tags": [string] 8-15, total under 450 characters,
-  "shorts": [{"hook": string, "idea": string, "claim_ids": [string]}] — 2 or 3,
+  "shorts": [{"hook": string, "idea": string, "narration": string, "claim_ids": [string]}] — 2 or 3. Each is an independently written hook-led short, 25–55 spoken words, under 30 seconds including ending. Start narration with hook, use cited evidence, do not copy film narration.
   "thumbnails": [{"text": string <= 4 words, "concept": string, "claim": claim id or null}] — EXACTLY 3
 }'''
 
@@ -560,6 +561,25 @@ def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = No
     sh = s.get('shorts')
     if not isinstance(sh, list) or not 2 <= len(sh) <= 3:
         errs.append('Two or three Shorts ideas are required')
+    if isinstance(sh, list):
+        film_text = ' '.join(b.get('narration', '') for ch in chapters for b in ch.get('beats') or [] if isinstance(b, dict)).lower()
+        for i, short in enumerate(sh):
+            if not isinstance(short, dict) or 'narration' not in short:
+                continue  # Older scripts can still be filmed; their Shorts need to be rewritten.
+            narration = short.get('narration')
+            cited = short.get('claim_ids')
+            if not isinstance(narration, str) or not 15 <= len(narration.split()) <= 55:
+                errs.append(f'Short {i+1}: independent narration must contain 15–55 words')
+                continue
+            if not isinstance(short.get('hook'), str) or not narration.startswith(short['hook']):
+                errs.append(f'Short {i+1}: narration must start with its hook')
+            if not isinstance(cited, list) or not cited or any(x not in ids and x not in summaries for x in cited):
+                errs.append(f'Short {i+1}: cite evidence for the short')
+                continue
+            errs += [f'Short {i+1}: {e}' for e in fact_guard(narration, ledger, cited)]
+            errs += [f'Short {i+1}: {e}' for e in identity_guard(narration, ledger) + knockout_guard(narration, ledger, cited, story)]
+            if len(narration.split()) >= 12 and narration.lower() in film_text:
+                errs.append(f'Short {i+1}: write independently rather than copy the main film')
     th = s.get('thumbnails')
     if not isinstance(th, list) or len(th) != 3 or any(not isinstance(x, dict) or not isinstance(x.get('text'), str) or len(x['text'].split()) > 5 for x in th):
         errs.append('Exactly three thumbnail concepts with text of at most four words')

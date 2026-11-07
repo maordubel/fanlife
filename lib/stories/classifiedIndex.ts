@@ -9,7 +9,7 @@ import type {ClassifiedFile} from './jobs'
 type Panel={id?:string;role?:string;drive_id?:string|null}
 type ManifestFile={title?:string;number?:string;tone?:string;year?:number;brief_roles?:string[];panels?:Panel[]}
 export type Manifest={files?:Record<string,ManifestFile>}
-type Episode={file?:string;number?:string;title?:string;tone?:string;script?:string;script_version?:string;approved?:boolean;minutes?:number;beats?:unknown[];package?:{shorts?:unknown[]}}
+type Episode={file?:string;number?:string;title?:string;tone?:string;script?:string;script_version?:string;approved?:boolean;minutes?:number;beats?:unknown[];package?:{shorts?:unknown[];hook_options?:{text?:string}[]}}
 
 /** A panel's role may name two ("CH1/CH2", "S04/S05"): it covers both. */
 const rolesOf=(p:Panel)=>String(p.role||'').split('/').map(x=>x.trim()).filter(Boolean)
@@ -25,6 +25,7 @@ export function classifiedIndex(manifest:Manifest,episodes:{name:string;json:unk
   return {file,number:String(f.number||ep?.number||file.replace(/\D/g,'')),title:String(f.title||ep?.title||file.toUpperCase()),tone:String(f.tone||ep?.tone||''),
    year:typeof f.year==='number'?f.year:null,episode:e?.name??null,script:ep?.script??null,script_version:ep?.script_version??null,
    approved_in_file:ep?.approved===true,minutes:typeof ep?.minutes==='number'?ep.minutes:null,beats:Array.isArray(ep?.beats)?ep!.beats!.length:0,
-   panels:{have:roles.length-missing.length,roles:roles.length,missing},shorts:Array.isArray(ep?.package?.shorts)?ep!.package!.shorts!.length:0}
+   panels:{have:roles.length-missing.length,roles:roles.length,missing},shorts:Array.isArray(ep?.package?.shorts)?ep!.package!.shorts!.length:0,
+   hook_options:Array.isArray(ep?.package?.hook_options)?ep.package.hook_options.slice(0,3).map(h=>String(h?.text||'').slice(0,600)).filter(Boolean):[]}
  }).sort((a,b)=>a.file.localeCompare(b.file))
 }

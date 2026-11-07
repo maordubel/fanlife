@@ -23,7 +23,7 @@ from .common import ROOT, StageError, hex_rgb, read_json
 W, H = 1080, 1920
 FRAME_Y = 660            # the 16:9 picture: 1080×608 from here
 TIGHT_Y, TIGHT_H = 560, 810   # a VOX film's Short: the middle 4:3 of the board, 1080×810
-MAX_SECONDS = 59.0
+MAX_SECONDS = 30.0
 HANDLE = '@FanLifeFootballStories'
 
 
@@ -92,7 +92,12 @@ def cut(job: Path, first: int, last: int, hook: str, kicker: str, accent: str, o
         raise StageError('SHORT_RANGE', f'Shots {first}-{last} are not in the plan')
     t0 = shots[first]['start']
     t1 = shots[last]['start'] + shots[last]['frames'] / plan.get('fps', 25)
-    if t1 - t0 > MAX_SECONDS + 0.5:
+    # plan.json is the original edit; master.mp4 starts with the series opening.
+    marker = job / 'intro.json'
+    offset = float(read_json(marker).get('seconds', 0)) if marker.exists() else 0
+    t0 += offset
+    t1 += offset
+    if t1 - t0 > MAX_SECONDS:
         raise StageError('SHORT_TOO_LONG', f'{t1 - t0:.1f}s: a Short is at most {MAX_SECONDS:.0f}s')
     master = job / 'out' / 'master.mp4'
     # a VOX film keeps what matters at the centre of its camera, so the Short reframes the board tighter: the middle
@@ -146,19 +151,9 @@ def pick_range(plan: dict, claim_ids: list[str], max_s: float = 58.0, min_s: flo
 
 
 def auto(job: Path, script: dict, club: str, season: str, accent: str) -> list[dict]:
-    """Every Short the script proposes, cut from the finished master into out/shorts/."""
-    plan = read_json(job / 'plan.json')
-    out, used = [], set()
-    for i, sh in enumerate(script.get('shorts') or [], 1):
-        r = pick_range(plan, sh.get('claim_ids') or [], used=used)
-        if not r:
-            continue
-        used |= set(range(r[0], r[1] + 1))
-        dst = job / 'out' / 'shorts' / f'short-{i}.mp4'
-        dst.parent.mkdir(parents=True, exist_ok=True)
-        res = cut(job, r[0], r[1], sh['hook'], f'{club} · {season}', accent, dst)
-        out.append({**res, 'hook': sh['hook'], 'idea': sh.get('idea'), 'shots': list(r), 'file': str(dst)})
-    return out
+    """Independent narrated hooks, not excerpts of the film's audio or script."""
+    from . import shorts_hooks
+    return shorts_hooks.make(job, script, club, season, accent)
 
 
 def main() -> int:

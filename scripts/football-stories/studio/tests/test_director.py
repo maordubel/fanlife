@@ -270,7 +270,7 @@ def director_script(L: dict, chapter2_cards=None) -> dict:
             'selected': 0, 'hook': hook,
             'chapters': [{'title': 'The night', 'beats': ch1}, {'title': 'The season', 'beats': ch2}],
             'description': 'x' * 300, 'tags': ['a', 'b', 'c', 'd', 'e'],
-            'shorts': [{'hook': 'h', 'idea': 'i', 'claim_ids': []}, {'hook': 'h', 'idea': 'i', 'claim_ids': []}],
+            'shorts': [{'hook': 'Remember this.', 'idea': 'i', 'narration': 'Remember this. A match became a memory that supporters would carry long after the final whistle.', 'claim_ids': [top]}, {'hook': 'A night apart.', 'idea': 'i', 'narration': 'A night apart. The supporters arrived with hope and left with another story to tell.', 'claim_ids': [top]}],
             'thumbnails': [{'text': 'One', 'concept': 'c', 'claim': None}] * 3}
 
 
@@ -440,6 +440,10 @@ class Soul(unittest.TestCase):
     """The house soul (studio/soul.py) reaches the model in every script and every pitch, and never adds a fact."""
 
     def setUp(self):
+        from unittest.mock import patch
+        hook_check = patch.object(writer, 'hook_option_errors', return_value=[])
+        hook_check.start()
+        self.addCleanup(hook_check.stop)
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         old = writer.call_model
@@ -599,6 +603,10 @@ class FakeModel:
 
 class Directors(unittest.TestCase):
     def setUp(self):
+        from unittest.mock import patch
+        hook_check = patch.object(writer, 'hook_option_errors', return_value=[])
+        hook_check.start()
+        self.addCleanup(hook_check.stop)
         self.L = season('WWLLLLLWWWWW')
         self.base = director_script(self.L)
         self.tmp = tempfile.TemporaryDirectory()

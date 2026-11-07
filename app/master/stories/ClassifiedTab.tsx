@@ -38,6 +38,7 @@ export function ClassifiedTab({facts,onMade,children}:{facts:Facts;onMade:(id:st
       <span>{x.approved_in_file?'Marked approved in the episode file':'Approval: yours, here'}</span>
      </button></li>)}</ul>}
      {f&&f.episode&&<>
+      {f.hook_options?.length?<details><summary>Three opening hooks</summary><ol>{f.hook_options.map((hook,i)=><li key={i}>{hook}</li>)}</ol><small>Opening 1 is used in this script; alternatives are for review.</small></details>:null}
       <p className={css.hint}>Read it first: {f.script?<a href={REPO+f.script} target="_blank" rel="noreferrer">the script ({f.script_version})</a>:'the script'} · <a href={`${REPO}scripts/football-stories/comic/episodes/${f.episode}`} target="_blank" rel="noreferrer">the episode as produced</a>. {f.beats} beats, {f.shorts} Shorts planned.</p>
       <label className={css.check}><input type="checkbox" checked={approved} onChange={e=>setApproved(e.target.checked)}/> I have read and approve this FILE&rsquo;s script ({f.script_version})</label>
       <label className={css.check}><input type="checkbox" checked={telegram} onChange={e=>setTelegram(e.target.checked)}/> Send the DRAFT to my Telegram</label>
