@@ -7,6 +7,7 @@
  * video id is recorded only when YouTube itself has shown it.
  * Pure functions only: no I/O here, so every transition is tested on its own.
  */
+import type {PromoSpec} from './promo'
 import {SocialError,cancelSocial,scheduleSocial,type PostInput,type SocialPlan} from './social'
 import {isDirector,type DirectorId} from './directors'
 import {reviewEdits,type Review,type ReviewAction} from './editorial'
@@ -82,7 +83,7 @@ export type Job={
  social?:SocialPlan|null
  /** what the worker makes (studio desk, 4.11.2026): a documentary (absent = 'film'), a CLASSIFIED FILE or an I WAS THERE
   *  vlog — and the kind's own validated request. `brief` still carries the summary every screen prints. */
- kind?:JobKind;spec?:ClassifiedSpec|VlogSpec|null
+ kind?:JobKind;spec?:ClassifiedSpec|VlogSpec|PromoSpec|null
 }
 export const SEASON=/^\d{4}\/\d{2}$/
 export const SPAN=/^\d{4}–\d{4}$/
@@ -220,7 +221,7 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
   case 'art_added':{
-   if(['classified','vlog'].includes(j.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
+   if(['classified','vlog','promo'].includes(j.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
    const reviewingScenes=j.state==='needs_review'&&j.stage==='edit'&&j.brief.review==='editorial'
    if(!reviewingScenes&&!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts or during scene review.')
    if(j.lease)no('The worker is still stopping. Wait for it to pause, then add your pictures.')
@@ -307,9 +308,9 @@ export function mediaPath(jobId:string,name:string):string{
  * One queue, one worker, one lease: a CLASSIFIED FILE and an I WAS THERE vlog are jobs like a film, so pause, cancel,
  * retry, the status lights and the Telegram delivery work the same. Each carries its own request in `spec`, checked
  * here; `brief` is a summary in the film's shape so every list and card prints it. */
-export const JOB_KINDS=['film','classified','vlog'] as const
+export const JOB_KINDS=['film','classified','vlog','promo'] as const
 export type JobKind=typeof JOB_KINDS[number]
-export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind==='vlog'?j.kind:'film'
+export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind==='vlog'||j.kind==='promo'?j.kind:'film'
 
 /** A CLASSIFIED FILE as the desk sees it (lib/stories/classifiedIndex.ts reads the episodes and the panel map). */
 export type ClassifiedFile={file:string;number:string;title:string;tone:string;year:number|null;episode:string|null
@@ -381,7 +382,7 @@ export function validateVlog(v:unknown,clubs:Map<string,string>,findMatch:(club:
  return {brief,spec}
 }
 
-export function newSpecialJob(id:string,kind:'classified'|'vlog',x:{brief:Brief;spec:ClassifiedSpec|VlogSpec},palette:Palette,actor:string,key:string,now=new Date()):Job{
+export function newSpecialJob(id:string,kind:'classified'|'vlog'|'promo',x:{brief:Brief;spec:ClassifiedSpec|VlogSpec|PromoSpec},palette:Palette,actor:string,key:string,now=new Date()):Job{
  const j=newJob(id,{...x.brief,hold:false},palette,actor,key,now)
  j.kind=kind;j.spec=x.spec
  if(kind==='classified'){const s=x.spec as ClassifiedSpec;j.log=[{at:j.createdAt,text:`Queued — script ${s.script_version} approved by ${s.approved_by}`}]}

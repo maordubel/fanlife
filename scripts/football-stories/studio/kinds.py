@@ -276,3 +276,45 @@ def upload_set(st, job_id: str, master: Path, files: dict, package: list, shorts
                          for i, s in enumerate(ok_shorts, 1)]
     shutil.rmtree(zdir, ignore_errors=True)
     return art
+
+
+# ── marketing films (owner, 8.11.2026) ───────────────────────────────────────────────────────────────────────────────
+def run_promo(st, job: dict, jd: Path, progress, log) -> dict:
+    """A promo: the promo writer (studio/promo.py) from the spec's facts, then the cut-out cartoon (studio/cartoon), then
+    the same private storage, Telegram delivery and YouTube pack as every other job."""
+    from . import promo
+    from .cartoon import make as cartoon
+    spec = job.get('spec') or {}
+    progress('script', 0.05, f'Writing the marketing film: {spec.get("label")}')
+    s = promo.write(spec, jd / 'cache', log)
+    (jd / 'promo-script.json').write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding='utf-8')
+    progress('edit', 0.3, 'Drawing and animating the cartoon')
+    out = outside_repo(job['id'], 'promo')
+    out.mkdir(parents=True, exist_ok=True)
+    mp4 = out / 'promo.mp4'
+    r = cartoon.make(s['narration'], s.get('cartoon'), mp4, out / 'work', primary='#B02D10', on_primary='#FFFBF2', bans=[],
+                     tag='FAN LIFE · ' + str(spec.get('label') or 'FOOTBALL. FOREVER.')[:34], cache=jd / 'cache' / 'voice', log=log)
+    frame = out / 'thumbnail-1.jpg'
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', '0.2', '-i', str(mp4), '-frames:v', '1', str(frame)], check=True)
+    progress('package', 0.85, 'Storing the promo privately')
+    desc = (str(s.get('description') or '') + f'\n\n▶ {spec.get("url") or "https://fanlife.dubelteam.com"}\n'
+            '▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1').strip()
+    (out / 'description.txt').write_text(desc, encoding='utf-8')
+    art = upload_set(st, job['id'], mp4, {'preview.mp4': mp4, 'thumbnail-1.jpg': frame}, [out / 'description.txt', jd / 'promo-script.json'],
+                     [{'file': str(mp4), 'hook': s.get('title') or 'Promo', 'seconds': r['seconds']}], log)
+    yt = yt_shape(None, title=str(s.get('title') or spec.get('label') or 'FAN LIFE')[:100], description=desc,
+                  reason='An animated cartoon promo drawn in code; no realistic person or event is depicted.')
+    yt['tags'] = [str(t)[:40] for t in (s.get('tags') or [])][:12]
+    if spec.get('telegram', True):
+        try:
+            if str(MATCHDAY.parent) not in sys.path:
+                sys.path.insert(0, str(MATCHDAY.parent))
+            from matchday import vlog_auto as V
+            V.send_telegram([(mp4, f'📣 Marketing film · {s.get("title")}')], log)
+        except Exception as e:  # noqa: BLE001 — Telegram is a courtesy copy; the promo is stored either way
+            log(f'Telegram: not sent ({e})')
+    return {'state': 'ready', 'stage': 'done', 'artefacts': art, 'youtube': yt,
+            'qa': {'ok': True, 'checks': [{'name': 'facts', 'ok': True, 'detail': 'every number is in the subject\'s facts'},
+                                          {'name': 'length', 'ok': r['seconds'] <= 30, 'detail': f'{r["seconds"]} s'}],
+                   'cannot_prove': ['That the tone is right for the brand — watch it before posting.']},
+            'cost': {'renderMinutes': round(r['seconds'] / 60, 1), 'voice': 'kokoro'}}

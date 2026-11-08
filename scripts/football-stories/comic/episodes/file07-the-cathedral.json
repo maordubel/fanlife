@@ -1,0 +1,252 @@
+{
+ "file": "file07",
+ "number": "07",
+ "title": "THE CATHEDRAL",
+ "tone": "WAR",
+ "fps": 25,
+ "grade": 0.4,
+ "script": "docs/fanlife/classified/file07-the-cathedral.script.md",
+ "script_version": "owner-treatment-2026-11-08",
+ "approved": false,
+ "minutes": 2.1,
+ "note": "Draft from the owner's Hebrew treatment (8.11.2026), fact-checked; see the script document for every correction. Panels are still to be drawn.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "@P01",
+   "say": "In nineteen ninety-one the most wanted man in the world built his own prison. It had a football pitch. And by his own account, Diego Maradona played on it.",
+   "dur": 13.1,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Cold open"
+  },
+  {
+   "id": "b02",
+   "panel": "@P01",
+   "say": "June nineteen ninety-one. Pablo Escobar surrenders to the Colombian state — into a prison on a hill above Medellín that he had a hand in building. They called it La Catedral.",
+   "dur": 14.0,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "La Catedral"
+  },
+  {
+   "id": "b03",
+   "panel": "@P03",
+   "say": "At its heart, a floodlit pitch with small goals. Escobar staged games there, and footballers were brought up the mountain to play.",
+   "dur": 10.2,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    4,
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b04",
+   "panel": "@P03",
+   "say": "Óscar Pareja, captain of Independiente Medellín, was one. He said Escobar played left midfield, even though he was right-footed.",
+   "dur": 8.9,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b05",
+   "panel": "@P02",
+   "say": "Maradona in nineteen ninety-one is banned from football for fifteen months after a positive test in Italy.",
+   "dur": 8.0,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The invitation"
+  },
+  {
+   "id": "b06",
+   "panel": "@CH1",
+   "say": "In interviews years later, he told it like this: an offer, a lot of money, a game for \"an important man\". A trip into the mountains. A fortress full of guards.",
+   "dur": 14.0,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b07",
+   "panel": "@P04",
+   "say": "A game, he said, and then a party — \"with the best girls I've ever seen in my life. And it was in a prison.\"",
+   "dur": 11.4,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b08",
+   "panel": "@P05",
+   "say": "But Maradona also told the other version. \"I never met Pablo Escobar,\" he said to the Argentine paper Olé. \"I swear it on my mother.\"",
+   "dur": 11.4,
+   "mood": "tense",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Two versions"
+  },
+  {
+   "id": "b09",
+   "panel": "@CH1",
+   "say": "So which Diego do you believe? The file keeps both — because he gave both.",
+   "dur": 7.2,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    6,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b10",
+   "panel": "@P01",
+   "say": "In July nineteen ninety-two Escobar walked out of La Catedral. Seventeen months later he was dead. The pitch is still on the hill.",
+   "dur": 10.6,
+   "mood": "tense",
+   "move": "pull",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "Sportskeeda — Maradona recalls La Catedral (1991)",
+   "url": "https://sportskeeda.com/football/we-party-best-girls-i-ve-ever-seen-life-when-diego-maradona-shared-unbelievable-prison-experience-pablo-escobar"
+  },
+  {
+   "n": 2,
+   "title": "Khel Now — Maradona's account and the quote",
+   "url": "https://khelnow.com/football/diego-maradona-controversies"
+  },
+  {
+   "n": 3,
+   "title": "Amusing Planet — La Catedral: surrender on 19 June 1991",
+   "url": "https://www.amusingplanet.com/2023/07/la-catedral-pablo-escobars-personal.html?amp=1"
+  },
+  {
+   "n": 4,
+   "title": "B/R Football thread — prison matches at La Catedral",
+   "url": "https://threadreaderapp.com/scrolly/1449031647257677832"
+  },
+  {
+   "n": 5,
+   "title": "ESPN — Playing soccer with Pablo Escobar (Óscar Pareja)",
+   "url": "https://www.espn.in/espn/story/_/id/7958914/playing-soccer-pablo-escobar"
+  },
+  {
+   "n": 6,
+   "title": "Pulzo — Maradona's two versions (AS, 2019; Olé denial)",
+   "url": "https://www.pulzo.com/deportes/murio-maradona-su-historia-real-con-pablo-escobar-PP1005532"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "Maradona Played Football in Pablo Escobar's Prison?",
+   "The Cathedral: Escobar's Private Prison Pitch",
+   "The Night Maradona Went Up the Mountain"
+  ],
+  "selected": 0,
+  "hook": "In nineteen ninety-one the most wanted man in the world built his own prison. It had a football pitch. And by his own account, Diego Maradona played on it.",
+  "tags": [
+   "CLASSIFIED",
+   "Maradona",
+   "Pablo Escobar",
+   "La Catedral",
+   "Colombia",
+   "football stories",
+   "Higuita"
+  ],
+  "thumbnails": [
+   {
+    "panel": "@P01",
+    "hook": [
+     "THE PRISON",
+     "PITCH"
+    ]
+   },
+   {
+    "panel": "@CH1",
+    "hook": [
+     "DIEGO",
+     "IN PRISON?"
+    ]
+   },
+   {
+    "panel": "@P04",
+    "hook": [
+     "TWO",
+     "VERSIONS"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "hook": "Escobar's prison had a football pitch. Guess who said he played on it.",
+    "narration": "Escobar's prison had a football pitch. Guess who said he played on it. In 1991 Pablo Escobar surrendered into La Catedral, a prison above Medellín. Footballers were brought up to play. Maradona told the story years later, party and all. He also said he never met Escobar. Full file on FanLife.",
+    "hook_law": "is-this-real",
+    "claim_ids": [
+     "src-3",
+     "src-6"
+    ]
+   }
+  ],
+  "hook_options": [
+   {
+    "text": "In nineteen ninety-one the most wanted man in the world built his own prison. It had a football pitch. And by his own account, Diego Maradona played on it."
+   }
+  ]
+ }
+}

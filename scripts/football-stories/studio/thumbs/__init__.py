@@ -48,6 +48,25 @@ def _public(h: dict) -> dict:
                                                  'concept', 'opponent')}
 
 
+def cutting(ledger: dict, h: dict) -> dict | None:
+    """The newspaper cutting a documentary cover pins: a press claim the ledger holds (outlet, headline, date exactly as
+    they ran), else the hook's own night as a dateline. Nothing is typed here."""
+    by = {c['id']: c for c in ledger.get('claims') or []}
+    press = [c['fact'] for c in ledger.get('claims') or [] if (c.get('fact') or {}).get('kind') == 'press' and c['fact'].get('headline')]
+    want = [by.get(x) for x in (h.get('claims') or [])]
+    for c in want:
+        if c and c['fact'].get('kind') == 'press':
+            return {k: c['fact'].get(k) for k in ('outlet', 'headline', 'date')}
+    if press:
+        f = press[0]
+        return {k: f.get(k) for k in ('outlet', 'headline', 'date')}
+    for c in want:
+        f = (c or {}).get('fact') or {}
+        if f.get('kind') == 'match' and f.get('date'):
+            return {'outlet': 'MATCH REPORT', 'date': f"{f['date']} · {f.get('competition') or ''}".strip(' ·')}
+    return None
+
+
 def for_film(script: dict | None, ledger: dict, palette, out: Path, director: str | None = None) -> list[dict]:
     """A documentary's three thumbnails and its Shorts cover. Returns the rows youtube.json lists."""
     out = Path(out)
@@ -65,7 +84,7 @@ def for_film(script: dict | None, ledger: dict, palette, out: Path, director: st
         if pic.figure_key:
             avoid.add(pic.figure_key)
         pics.append(pic)
-        B = compose.documentary(h, pic, palette, crest, director, seed=i)
+        B = compose.documentary(h, pic, palette, crest, director, seed=i, cut=cutting(ledger, h))
         p = _save(B, out / f'thumbnail-{i}.jpg', palette.render_bans)
         rows.append({'file': p.name, 'size': [1280, 720], **_public(h), 'picture': {'key': pic.key, 'kind': pic.kind, 'figure': pic.figure_key},
                      'director': director, 'legibility': legibility(B)})

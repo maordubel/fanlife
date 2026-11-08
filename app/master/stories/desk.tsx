@@ -44,7 +44,7 @@ export function StoriesDesk({view}:{view:DeskTab}){
  useEffect(()=>{const t=setInterval(()=>{if(document.visibilityState==='visible')void loadDesk()},180000);return()=>clearInterval(t)},[loadDesk])
  const facts:Facts={now,health,jobs,classified:desk?.classified,pitchDesk:desk?.pitchDesk,lights:desk?.lights,plan:desk?.plan}
  const made=async(id:string)=>{setOpen(id);await load()}
- const list=(k:'film'|'classified'|'vlog',empty:string)=><JobList jobs={jobs} kind={k} open={open} setOpen={setOpen} onChange={load} empty={empty}/>
+ const list=(k:'film'|'classified'|'vlog'|'promo',empty:string)=><JobList jobs={jobs} kind={k} open={open} setOpen={setOpen} onChange={load} empty={empty}/>
 
  return <div className={css.root}>
   <header className={css.mast}><div className={css.wrap}>
@@ -59,7 +59,7 @@ export function StoriesDesk({view}:{view:DeskTab}){
    {view==='docs'&&<><DeskBanner b={docsBanner(facts)}/><div className={css.grid}><NewFilm clubs={clubs} onMade={made}/>{list('film','No documentaries yet. Make the first one.')}</div></>}
    {view==='classified'&&<ClassifiedTab facts={facts} onMade={made}>{list('classified','No CLASSIFIED FILE produced yet.')}</ClassifiedTab>}
    {view==='vlog'&&<VlogTab facts={facts} clubs={clubs} onMade={made}>{list('vlog','No I WAS THERE episode yet.')}</VlogTab>}
-   {view==='marketing'&&<MarketingTab facts={facts} jobs={jobs} onChange={load}/>}
+   {view==='marketing'&&<MarketingTab facts={facts} jobs={jobs} onChange={load} onMade={made}>{list('promo','No marketing film yet. Make the first one above.')}</MarketingTab>}
    {view==='directors'&&<DirectorsTab facts={facts} days={desk?.pitches??null} onChange={async()=>{await loadDesk();await load()}}/>}
    {view==='status'&&<><DeskBanner b={statusBanner(facts)}/><StatusTab facts={facts} jobs={jobs}/></>}
   </div>
@@ -84,7 +84,7 @@ export function DeskBanner({b}:{b:Banner}){
  </section>
 }
 
-export function JobList({jobs,kind,open,setOpen,onChange,empty}:{jobs:Job[]|null;kind:'film'|'classified'|'vlog';open:string|null;setOpen:(id:string|null)=>void;onChange:()=>void;empty:string}){
+export function JobList({jobs,kind,open,setOpen,onChange,empty}:{jobs:Job[]|null;kind:'film'|'classified'|'vlog'|'promo';open:string|null;setOpen:(id:string|null)=>void;onChange:()=>void;empty:string}){
  const rows=(jobs??[]).filter(j=>jobKind(j)===kind)
  return <section aria-label="Jobs" className={css.list}>
   {jobs===null?<div className={css.panel}><p className={css.empty}>Loading…</p></div>:rows.length===0?<div className={css.panel}><p className={css.empty}>{empty}</p></div>:

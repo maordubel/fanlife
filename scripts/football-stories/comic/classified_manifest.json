@@ -615,6 +615,108 @@
           "file": "f03-players.jpg"
         }
       ]
+    },
+    "file04": {
+      "title": "THE COUSIN",
+      "number": "04",
+      "tone": "LAUGH",
+      "year": 1996,
+      "brief_roles": [
+        "CH1",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "panels": [],
+      "awaiting_panels": "2026-11-08: drafted from the owner's treatment; panels to be drawn (docs/fanlife/classified/files-04-09-panels.md)"
+    },
+    "file05": {
+      "title": "THE SHEIKH",
+      "number": "05",
+      "tone": "LAUGH",
+      "year": 1982,
+      "brief_roles": [
+        "CH1",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "panels": [],
+      "awaiting_panels": "2026-11-08: drafted from the owner's treatment; panels to be drawn (docs/fanlife/classified/files-04-09-panels.md)"
+    },
+    "file06": {
+      "title": "THE HOLY WATER",
+      "number": "06",
+      "tone": "WAR",
+      "year": 1990,
+      "brief_roles": [
+        "CH1",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "panels": [],
+      "awaiting_panels": "2026-11-08: drafted from the owner's treatment; panels to be drawn (docs/fanlife/classified/files-04-09-panels.md)"
+    },
+    "file07": {
+      "title": "THE CATHEDRAL",
+      "number": "07",
+      "tone": "WAR",
+      "year": 1991,
+      "brief_roles": [
+        "CH1",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "panels": [],
+      "awaiting_panels": "2026-11-08: drafted from the owner's treatment; panels to be drawn (docs/fanlife/classified/files-04-09-panels.md)"
+    },
+    "file08": {
+      "title": "THE ARMED DRESSING ROOM",
+      "number": "08",
+      "tone": "WAR",
+      "year": 1974,
+      "brief_roles": [
+        "CH1",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "panels": [],
+      "awaiting_panels": "2026-11-08: drafted from the owner's treatment; panels to be drawn (docs/fanlife/classified/files-04-09-panels.md)"
+    },
+    "file09": {
+      "title": "THE RANSOM",
+      "number": "09",
+      "tone": "HEART",
+      "year": 1981,
+      "brief_roles": [
+        "CH1",
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "panels": [],
+      "awaiting_panels": "2026-11-08: drafted from the owner's treatment; panels to be drawn (docs/fanlife/classified/files-04-09-panels.md)"
     }
   }
 }

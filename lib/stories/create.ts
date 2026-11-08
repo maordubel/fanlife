@@ -5,6 +5,8 @@ import {clubNames,paletteFor,storyClubs} from './clubs'
 import {createJob,listJobs} from './store'
 import {catalogOf} from './catalog'
 import {readClassified} from './classified'
+import {validatePromo} from './promo'
+import {filmTitle} from './social'
 
 /**
  * Every way a job is queued, in one place: a clicked documentary, a director's pitch ("Make this film"), a CLASSIFIED
@@ -82,4 +84,18 @@ export async function fromCatalog(raw:unknown):Promise<unknown>{
  const story_words=[...new Set(ms.flatMap(m=>[m.competition??'',m.stage??'',m.date.slice(0,4)]))].join(' ').slice(0,300)
  const sides=[...new Set(ms.flatMap(m=>[m.home,m.away]))].slice(0,8)
  return {...b,season:ms[0]!.season,focus_from:dates[0],focus_to:dates[dates.length-1],story_words,sides}
+}
+
+/** A marketing film (owner, 8.11.2026): a feature, the channel, a finished film, or the owner's own words. */
+export async function createPromo(raw:unknown,actor:string,key:string):Promise<{job:Job;created:boolean}>{
+ const dup=await existing(key)
+ if(dup)return {job:dup,created:false}
+ const films=new Map((await listJobs(200)).filter(j=>j.kind!=='promo'&&(j.state==='ready'||j.upload?.state==='done')).map(j=>[j.id,{
+  title:filmTitle(j),description:String((j.youtube as {description?:string}|null)?.description||j.brief.topic||'').slice(0,1800),
+  url:j.upload?.videoId?`https://youtu.be/${j.upload.videoId}`:''}]))
+ const x=validatePromo(raw,films)
+ const palette={club_id:'promo',club_name:'FAN LIFE',primary:'#B02D10',on_primary:'#FFFBF2',bans:[]}
+ const job=newSpecialJob(randomUUID(),'promo',x,palette,actor||'owner',key)
+ if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
+ return {job,created:true}
 }

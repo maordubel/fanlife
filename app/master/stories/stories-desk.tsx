@@ -225,7 +225,7 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
     {['queued','running'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'pause'})}>Pause</button>}
     {job.state==='paused'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'resume'})}>Resume</button>}
     {(['failed','cancelled'].includes(job.state)||(job.state==='queued'&&!!job.notBefore))&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>{job.state==='queued'?'Try now':'Retry'}</button>}
-    {job.state==='failed'&&job.error?.code==='SCRIPT_INVALID'&&!['classified','vlog'].includes(job.kind??'')?<button className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry_editorial'})}>Retry in editing room</button>:null}
+    {job.state==='failed'&&job.error?.code==='SCRIPT_INVALID'&&!['classified','vlog','promo'].includes(job.kind??'')?<button className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry_editorial'})}>Retry in editing room</button>:null}
     {b.review!=='editorial'&&job.state==='needs_review'&&job.stage==='script'&&!job.options?.length&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
     {!['cancelled','cancel_requested'].includes(job.state)&&job.upload.state!=='done'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Cancel this film?'))void act({action:'cancel'})}}>Cancel</button>}
     <button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>void remove()}>Delete production</button>
@@ -274,7 +274,7 @@ function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=
  }
  return <div>
   {job.brief.review==='editorial'?<EditorialRoom job={job} urls={urls} busy={busy} act={act}/>:null}
-  {(['queued','paused'].includes(job.state)||job.state==='needs_review'&&job.stage==='edit'&&job.brief.review==='editorial')&&!['classified','vlog'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
+  {(['queued','paused'].includes(job.state)||job.state==='needs_review'&&job.stage==='edit'&&job.brief.review==='editorial')&&!['classified','vlog','promo'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
   {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}

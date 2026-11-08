@@ -44,6 +44,14 @@ jobs:
           echo "::error::Tick \"I approve the script\" when you run this: the narrator only speaks an approved script. Nothing was made."
           exit 1
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - name: HyperFrames (pinned) for the cartoon Shorts
+        working-directory: scripts/football-stories/studio/hyperframes
+        env: {HYPERFRAMES_NO_TELEMETRY: '1', HYPERFRAMES_SKIP_SKILLS: '1', HYPERFRAMES_NO_UPDATE_CHECK: '1'}
+        run: |
+          npm ci --no-audit --no-fund
+          npx hyperframes browser ensure || echo "::warning::HyperFrames browser not ready — Shorts fall back to the still montage"
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - name: Tools

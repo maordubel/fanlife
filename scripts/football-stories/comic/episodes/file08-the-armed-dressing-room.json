@@ -1,0 +1,281 @@
+{
+ "file": "file08",
+ "number": "08",
+ "title": "THE ARMED DRESSING ROOM",
+ "tone": "WAR",
+ "fps": 25,
+ "grade": 0.4,
+ "script": "docs/fanlife/classified/file08-the-armed-dressing-room.script.md",
+ "script_version": "owner-treatment-2026-11-08",
+ "approved": false,
+ "minutes": 2.2,
+ "note": "Draft from the owner's Hebrew treatment (8.11.2026), fact-checked; see the script document for every correction. Panels are still to be drawn.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "@P02",
+   "say": "Two dressing rooms. One team. A squad so divided that its players would not change in the same room — and some of them carried guns. That team won the league.",
+   "dur": 14.0,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Cold open"
+  },
+  {
+   "id": "b02",
+   "panel": "@P05",
+   "say": "Rome, nineteen seventy-four. This is the file on Lazio.",
+   "dur": 4.6,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b03",
+   "panel": "@P03",
+   "say": "Italy in the seventies is the years of lead: political violence on the streets. Lazio's dressing room is split down the middle.",
+   "dur": 10.2,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Two clans"
+  },
+  {
+   "id": "b04",
+   "panel": "@CH1",
+   "say": "One side gathers around the centre-forward Giorgio Chinaglia. The other does not want to know him. Luciano Re Cecconi is on the other side.",
+   "dur": 11.0,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b05",
+   "panel": "@P03",
+   "say": "They changed in separate rooms. Training games, players said, were like cage fights; some wore shin pads in training and not in matches.",
+   "dur": 10.6,
+   "mood": "tense",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b06",
+   "panel": "@P01",
+   "say": "Several players kept pistols, and some fired them for no reason. The stories of shots in the team hotel are told by the players themselves, decades later.",
+   "dur": 12.3,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The guns"
+  },
+  {
+   "id": "b07",
+   "panel": "@P04",
+   "say": "The man in the middle: the coach, Tommaso Maestrelli. He could not make them friends. He made them a team on Sunday.",
+   "dur": 10.2,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3,
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b08",
+   "panel": "@P05",
+   "say": "On the twelfth of May nineteen seventy-four, Lazio are champions of Italy for the first time.",
+   "dur": 7.6,
+   "mood": "tense",
+   "move": "orbit",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b09",
+   "panel": "@P06",
+   "say": "The eighteenth of January, nineteen seventy-seven. Re Cecconi, twenty-eight, walks into a jeweller's shop in Rome with his teammate Pietro Ghedin and a friend.",
+   "dur": 11.0,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    6,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The prank"
+  },
+  {
+   "id": "b10",
+   "panel": "@P06",
+   "say": "The jeweller, Bruno Tabocchini, had been robbed before. He fires once. Re Cecconi dies within the hour.",
+   "dur": 8.0,
+   "mood": "tense",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    6,
+    7
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b11",
+   "panel": "@CH1",
+   "say": "The papers said it was a joke gone wrong — that he had shouted \"Hands up, this is a robbery\". Ghedin and the family say he never said it. The jeweller was acquitted. The file has never been settled.",
+   "dur": 17.4,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    6,
+    7,
+    8
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "FourFourTwo — \"He was the soul of Lazio\" (factions, guns, Re Cecconi)",
+   "url": "https://www.fourfourtwo.com/person/player/he-was-the-soul-of-lazio-the-tragic-story-of-luciano-re-cecconi-and-the-shooting-that-stunned-italy"
+  },
+  {
+   "n": 2,
+   "title": "Panorama — Re Cecconi in the clan opposed to Chinaglia",
+   "url": "https://www.panorama.it/lifestyle/re-cecconi-a-quarantanni-dalla-morte-il-ricordo-di-quella-lazio"
+  },
+  {
+   "n": 3,
+   "title": "Il Fatto Quotidiano — Lazio's first title, 50 years (12 May 1974)",
+   "url": "https://www.ilfattoquotidiano.it/2024/05/11/lazio-il-primo-scudetto-compie-50-anni-le-pistole-in-spogliatoio-i-vizi-di-chinaglia-e-maestrelli-il-partigiano-tra-mito-e-realta/7544633/"
+  },
+  {
+   "n": 4,
+   "title": "Pulse Sports — players carried guns and fired them",
+   "url": "https://www.pulsesports.ng/story/luciano-re-cecconi-how-a-prank-ended-the-life-of-an-italian-and-lazio-midfielder-2024051514290148841"
+  },
+  {
+   "n": 5,
+   "title": "Gentleman Ultra — Lazio 1974 and Maestrelli",
+   "url": "https://www.gentlemanultra.com/?p=24"
+  },
+  {
+   "n": 6,
+   "title": "Il Post — L'inspiegabile morte di Luciano Re Cecconi",
+   "url": "https://www.ilpost.it/2017/01/18/luciano-re-cecconi-morte/"
+  },
+  {
+   "n": 7,
+   "title": "Lazio Stories — Pietro Ghedin",
+   "url": "https://laziostories.com/post/pietro-ghedin"
+  },
+  {
+   "n": 8,
+   "title": "Goal.it — Re Cecconi, \"L'Angelo Biondo\"",
+   "url": "https://www.goal.com/it/notizie/re-cecconi-langelo-biondo-della-lazio-dallo-scudetto-allassurda-morte/1rhoxcrn26fsf1ix0mkn78mxz7"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "Lazio 1974: The Champions Who Carried Guns",
+   "Two Dressing Rooms, One Title",
+   "The Prank That Killed a Champion"
+  ],
+  "selected": 0,
+  "hook": "Two dressing rooms. One team. A squad so divided that its players would not change in the same room — and some of them carried guns. That team won the league.",
+  "tags": [
+   "CLASSIFIED",
+   "Lazio",
+   "1974",
+   "Chinaglia",
+   "Re Cecconi",
+   "Maestrelli",
+   "Serie A",
+   "football stories"
+  ],
+  "thumbnails": [
+   {
+    "panel": "@P02",
+    "hook": [
+     "TWO",
+     "DRESSING ROOMS"
+    ]
+   },
+   {
+    "panel": "@P01",
+    "hook": [
+     "ARMED",
+     "CHAMPIONS"
+    ]
+   },
+   {
+    "panel": "@P06",
+    "hook": [
+     "THE PRANK"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "hook": "You think every title team gets on? Meet Lazio 1974.",
+    "narration": "You think every title team gets on? Meet Lazio 1974. Two clans, two dressing rooms, and some players carried pistols. Their coach could not make them friends, so he made them a team on Sunday. And on 12 May 1974 they were champions of Italy. Full file on FanLife.",
+    "hook_law": "know-it-all",
+    "claim_ids": [
+     "src-1",
+     "src-3"
+    ]
+   }
+  ],
+  "hook_options": [
+   {
+    "text": "Two dressing rooms. One team. A squad so divided that its players would not change in the same room — and some of them carried guns. That team won the league."
+   }
+  ]
+ }
+}

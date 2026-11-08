@@ -1,0 +1,329 @@
+{
+ "file": "file04",
+ "number": "04",
+ "title": "THE COUSIN",
+ "tone": "LAUGH",
+ "fps": 25,
+ "grade": 0.4,
+ "script": "docs/fanlife/classified/file04-the-cousin.script.md",
+ "script_version": "owner-treatment-2026-11-08",
+ "approved": false,
+ "minutes": 2.2,
+ "note": "Draft from the owner's Hebrew treatment (8.11.2026), fact-checked; see the script document for every correction. Panels are still to be drawn.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "@P01",
+   "say": "The phone rings in a Premier League manager's office. On the line, the best footballer in the world. Or so the voice says.",
+   "dur": 10.6,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Cold open"
+  },
+  {
+   "id": "b02",
+   "panel": "@P01",
+   "say": "November nineteen ninety-six. Southampton are in trouble, and Graeme Souness needs players.",
+   "dur": 5.9,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b03",
+   "panel": "@CH1",
+   "say": "The voice says it is George Weah, World Player of the Year. And Weah has a cousin.",
+   "dur": 8.0,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b04",
+   "panel": "@CH1",
+   "say": "His name is Ali Dia. Senegal international, the voice says. Paris Saint-Germain, the voice says.",
+   "dur": 7.2,
+   "mood": "light",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The bait"
+  },
+  {
+   "id": "b05",
+   "panel": "@P02",
+   "say": "None of it is true. There is no internet search in nineteen ninety-six, and nobody rings Paris.",
+   "dur": 8.0,
+   "mood": "light",
+   "move": "pull",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b06",
+   "panel": "@P02",
+   "say": "Dia is given a one-month contract. A reserve game against Arsenal is called off — the pitch is waterlogged.",
+   "dur": 8.9,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b07",
+   "panel": "@P03",
+   "say": "So the next time Southampton need a striker, Ali Dia is on the bench. Against Leeds United. In the Premier League.",
+   "dur": 9.7,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b08",
+   "panel": "@P04",
+   "say": "Saturday, the twenty-third of November. Thirty-two minutes gone. Matt Le Tissier, the club's best player, is injured.",
+   "dur": 8.0,
+   "mood": "light",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Thirty-two minutes"
+  },
+  {
+   "id": "b09",
+   "panel": "@P05",
+   "say": "On comes the cousin.",
+   "dur": 4.0,
+   "mood": "light",
+   "move": "whip",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b10",
+   "panel": "@P05",
+   "say": "Le Tissier watched it from the bench. He said Dia ran around the pitch like Bambi on ice.",
+   "dur": 8.5,
+   "mood": "light",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b11",
+   "panel": "@P03",
+   "say": "In the eighty-fifth minute, Souness does the most embarrassing thing a manager can do. He substitutes his substitute.",
+   "dur": 8.5,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b12",
+   "panel": "@P04",
+   "say": "Fifty-three minutes. Leeds win two-nil.",
+   "dur": 4.0,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b13",
+   "panel": "@P06",
+   "say": "A few days later Ali Dia is gone from Southampton. He turns up at Gateshead, in non-league football.",
+   "dur": 8.5,
+   "mood": "light",
+   "move": "pull",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "File closed"
+  },
+  {
+   "id": "b14",
+   "panel": "@P07",
+   "say": "And the phone call? It was not George Weah. According to the reports that followed, it was a fellow student of Dia's at university.",
+   "dur": 11.0,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b15",
+   "panel": "@CH1",
+   "say": "One phone call, one Saturday, fifty-three minutes. The worst Premier League player ever — or one of its best con men.",
+   "dur": 9.7,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "Ali Dia — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ali_Dia"
+  },
+  {
+   "n": 2,
+   "title": "The42 — Souness and the call from \"George Weah\"",
+   "url": "https://the42.ie/ali-dia-southampton-2462437-Nov2015"
+  },
+  {
+   "n": 3,
+   "title": "1996–97 Southampton F.C. season — Wikipedia (Leeds, 23.11.1996, 0–2; reserve game called off)",
+   "url": "https://wikipedia.com/wiki/1996-97_Southampton_F.C._season"
+  },
+  {
+   "n": 4,
+   "title": "FourFourTwo — What really happened to Ali Dia",
+   "url": "https://www.fourfourtwo.com/features/what-really-happened-ali-dia-fft-trail-premier-leagues-worst-player"
+  },
+  {
+   "n": 5,
+   "title": "Talksport — Le Tissier, Souness and \"football's most famous phoney\"",
+   "url": "https://www.wikipedia.org/wiki/Ali_Dia"
+  },
+  {
+   "n": 6,
+   "title": "Bleacher Report — Finding Ali Dia (via Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ali_Dia"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "George Weah's \"Cousin\" Played in the Premier League",
+   "The Phone Call That Fooled Southampton",
+   "53 Minutes: The Premier League's Greatest Con"
+  ],
+  "selected": 0,
+  "hook": "The phone rings in a Premier League manager's office. On the line, the best footballer in the world. Or so the voice says.",
+  "tags": [
+   "CLASSIFIED",
+   "Ali Dia",
+   "Southampton",
+   "Graeme Souness",
+   "George Weah",
+   "Premier League",
+   "football stories",
+   "Matt Le Tissier"
+  ],
+  "thumbnails": [
+   {
+    "panel": "@CH1",
+    "hook": [
+     "WEAH'S",
+     "\"COUSIN\""
+    ]
+   },
+   {
+    "panel": "@P01",
+    "hook": [
+     "ONE PHONE",
+     "CALL"
+    ]
+   },
+   {
+    "panel": "@P05",
+    "hook": [
+     "53 MINUTES"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "hook": "This phone call put a fake footballer in the Premier League.",
+    "narration": "This phone call put a fake footballer in the Premier League. So in 1996 Southampton's manager hears George Weah recommend his cousin. It wasn't Weah. It wasn't his cousin. And on 23 November he came on against Leeds. Fifty-three minutes later, he was subbed off. Full file on FanLife.",
+    "hook_law": "is-this-real",
+    "claim_ids": [
+     "src-1",
+     "src-3"
+    ]
+   }
+  ],
+  "hook_options": [
+   {
+    "text": "The phone rings in a Premier League manager's office. On the line, the best footballer in the world. Or so the voice says."
+   }
+  ]
+ }
+}

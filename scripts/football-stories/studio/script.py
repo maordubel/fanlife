@@ -182,7 +182,7 @@ SCHEMA_TEXT = '''{
   }]}],
   "description": string — 2-4 natural paragraphs; NO sources, credits or chapters (they are appended from the cut),
   "tags": [string] 8-15, total under 450 characters,
-  "shorts": [{"hook": string, "idea": string, "narration": string, "claim_ids": [string]}] — 2 or 3. Each is an independently written hook-led short, 25–55 spoken words, under 30 seconds including ending. Start narration with hook, use cited evidence, do not copy film narration.
+  "shorts": [{"hook": string, "idea": string, "narration": string, "claim_ids": [string], "hook_law": "know-it-all" | "is-this-real", "cartoon": [{"say": string, "show": string}]}] — 2 or 3. Each is an independently written hook-led short, 25–55 spoken words, under 30 seconds including ending. Start narration with hook, use cited evidence, do not copy film narration. "cartoon" splits the narration into 3–6 beats (their "say" joined is the narration) with what the cut-out cartoon does on each.
   "thumbnails": [{"text": string <= 4 words, "concept": string, "claim": claim id or null}] — EXACTLY 3
 }'''
 

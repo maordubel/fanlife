@@ -40,7 +40,8 @@ class Manifest(unittest.TestCase):
             self.assertIn(e['kind'], ('panel', 'photo', 'sheet', 'cutout'))
         for k, f in man['files'].items():
             self.assertIn(f['tone'], man['tones'])
-            self.assertTrue(f['panels'])
+            # a FILE drafted before its drawings exist says so, with the date and where the drawing brief is (8.11.2026)
+            self.assertTrue(f['panels'] or f.get('awaiting_panels'), k)
 
     def test_missing_roles_are_reported(self):
         man = manifest.load_manifest()
