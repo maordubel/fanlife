@@ -189,6 +189,23 @@ sweeps across and the new shot appears where it has passed. Puppet SHEETS are ri
 
 ## 5. Three directors (owner, 4.11.2026)
 
+### Documentary mini-drama and the owner's record
+
+Open on a concrete paradox or decisive action. Rewind to the stakes, let a setback
+narrow the options, give the viewer a reason to hope, then show what changes the
+outcome. Close on the human consequence. Each scene has one narrative job and
+one visible change. For two-leg ties, show the match score, aggregate and
+qualification condition on separate graphic layers.
+
+The selected project story is the editorial authority for that film. Preserve
+the owner's exact names, spelling and accents. `Key Figures:` or `Exact Names:`
+declares spellings. Use `Alias: archive spelling => exact spelling` for a
+known discrepancy that cannot be matched unambiguously. `Leg 1:` and
+`Leg 2:` can declare the date, ground and score as in a research ledger.
+The compact fixture format is `Match: YYYY-MM-DD | Home | Away | 2–1 | Ground`.
+Label these claims as owner-supplied in review. An atmosphere note or a proposed
+reconstruction remains an editorial direction unless it has evidence.
+
 *"Three directors with a football brain and a film brain, each thinking a little differently; the system runs all three
 and gives three scripts; each also proposes the next film and the script he loves most, each time another club and
 another event."*

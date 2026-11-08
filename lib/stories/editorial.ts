@@ -1,4 +1,4 @@
-export type Evidence = {id:string;summary:string;status:'verified'|'disputed'|'context';links:string[]}
+export type Evidence = {id:string;summary:string;status:'verified'|'disputed'|'context'|'owner-supplied';links:string[]}
 export type DraftBeat = {id:string;text:string;evidence:Evidence[]}
 export type Draft = {option:number;title:string;angle?:string;revision:string;chapters:{title:string;beats:DraftBeat[]}[]}
 export type Scene = {

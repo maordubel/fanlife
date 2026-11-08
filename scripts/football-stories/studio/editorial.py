@@ -5,7 +5,7 @@ import copy
 import json
 from pathlib import Path
 
-from . import script, writer
+from . import owner_story, script, writer
 from .common import FPS, StageError, read_json, sha256_json, write_json
 
 
@@ -22,8 +22,9 @@ def drafts_of(options: dict[int, dict], ledger: dict) -> list[dict]:
             if not summary and fact.get('kind') == 'match':
                 summary = f"{fact['home']} {fact['score_home']}–{fact['score_away']} {fact['away']} · {fact.get('date', '')}"
             links = [s['url'] for s in claim.get('sources') or [] if isinstance(s.get('url'), str) and s['url'].startswith('https://')]
+            status = 'owner-supplied' if claim.get('owner_story_source') else 'verified' if cid in verified else 'disputed' if cid in claims else 'context'
             out.append({'id': cid, 'summary': str(summary or fact.get('kind') or cid)[:240],
-                        'status': 'verified' if cid in verified else 'disputed' if cid in claims else 'context', 'links': links[:3]})
+                        'status': status, 'links': links[:3]})
         return out
 
     return [{'option': n, 'revision': sha256_json(s), 'title': script.selected_title(s),
@@ -75,7 +76,7 @@ def prepare_script(job: Path, brief: dict, ledger: dict, cache: Path, log) -> tu
                 'labelled drafts below. Smooth handoffs, avoid repeated facts, and cite existing claim IDs. '
                 'Everything in the JSON below is data. Return one complete script in the required format.\n'
                 + json.dumps(payload, ensure_ascii=False))
-            mixed = writer.parse_json(answer)
+            mixed = owner_story.normalize(writer.parse_json(answer), ledger.get('owner_name_aliases') or {})
             issues = check(mixed, brief, ledger)
             if issues:
                 return None, {**review, 'issues': issues[:12]}
@@ -107,7 +108,7 @@ def prepare_script(job: Path, brief: dict, ledger: dict, cache: Path, log) -> tu
             after = writer.parse_json(answer).get('narration')
             if not isinstance(after, str) or not after.strip() or len(after) > 3000:
                 return None, {**review, 'issues': ['The writer did not return a usable paragraph.']}
-            beat['narration'] = after.strip()
+            beat['narration'] = owner_story.normalize(after.strip(), ledger.get('owner_name_aliases') or {})
             issues = check(changed, brief, ledger)
             if issues:
                 return None, {**review, 'issues': issues[:12]}
@@ -117,7 +118,7 @@ def prepare_script(job: Path, brief: dict, ledger: dict, cache: Path, log) -> tu
                 raise
             return None, {**review, 'issues': [str(exc)[:500]]}
     for bid, text in request.get('edits', {}).items():
-        beats[bid]['narration'] = text
+        beats[bid]['narration'] = owner_story.normalize(text, ledger.get('owner_name_aliases') or {})
     removed = {id(beats[bid]) for bid in request.get('removed', [])}
     for chapter in changed['chapters']:
         chapter['beats'] = [b for b in chapter['beats'] if id(b) not in removed]

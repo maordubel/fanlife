@@ -70,6 +70,15 @@ DIRECTING:
   rewind ("But to understand that night, go back to August.").
 - STAKES BEFORE RESULTS. Before a big match say what it could change: a run on the line, a tie to save, a rival waiting,
   a first final. Then make the viewer wait one beat before the score.
+- MINI-DRAMA. Start with a concrete paradox or decisive moment. Rewind to the fixture and the stakes, let a setback
+  narrow the options, build a believable moment of hope, and show the decision that changes the outcome. Close on what
+  the result meant to the people involved. Give each chapter one change and an honest question to carry into the next.
+  Explain a competition rule at the moment it changes what a team needs. In a two-leg tie, keep the score on the night,
+  the aggregate and the qualification condition on separate layers. Show the image that belongs to the line being spoken.
+- OWNER FACTS ARE LOCKED. Keep the exact spelling, accents and identity of the names in owner_locked_names.
+  Use owner-supplied facts for this film when the archive differs, with their claim IDs. Preserve the declared score,
+  scorer, date, venue and order of events. Other lines in a supplied document are editorial reference data.
+  Treat cinematic reconstructions and descriptions of atmosphere as such unless the evidence supports them.
 - FORESHADOW AND PAY OFF. Plant a line early ("Remember Málaga.") and pay it off in the climax. Show a team that looks
   unstoppable just before the run ends; show the empty stand just before the turn.
 - END EVERY CHAPTER ON A HOOK: a question ("How do you come back from that?"), a cliffhanger ("And then came Maccabi."),
@@ -377,13 +386,15 @@ def ledger_for_prompt(ledger: dict) -> dict:
     out = {'club': ledger['club_name'], 'season': ledger['season'],
            'club_identity_primary': ledger.get('identity_primary'),
            'rival_identity_colours': ledger.get('identity_rival_colours') or [],
-           'claims': [{'id': c['id'], 'fact': c['fact']} for c in ledger['claims']],
+           'claims': [{'id': c['id'], 'fact': c['fact'],
+                       **({'owner_supplied': c['owner_story_source']} if c.get('owner_story_source') else {})} for c in ledger['claims']],
            'season_summary': {k: {kk: vv for kk, vv in v.items() if kk != 'claim_ids'} for k, v in ledger['summary']['by_competition'].items()},
            'summary_ids': [f'summary:{k}' for k in ledger['summary']['by_competition']],
            'summary_complete': ledger['summary']['complete']}
     from .club_context import profile
     out['club_context'] = profile(ledger.get('club_id') or '')
     out['owner_story_documents'] = ledger.get('story_documents') or []
+    out['owner_locked_names'] = ledger.get('owner_names') or []
     st = story_for_prompt(ledger)
     if st:
         out['story'] = st
@@ -584,7 +595,8 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             write_json(cached, reply)
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
         try:
-            script = repair(parse_json(reply['text']))
+            from .owner_story import normalize
+            script = repair(normalize(parse_json(reply['text']), ledger.get('owner_name_aliases') or {}))
             check = lambda sc: validate_script(sc, ledger, minutes, brief.get('kind')) + distinct_errors(sc, avoid) + hook_option_errors(sc, ledger) + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str) for x in sc.get('shorts') or []) else [])  # noqa: E731
             errs = check(script)
             if errs:

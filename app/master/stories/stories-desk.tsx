@@ -200,6 +200,7 @@ function athensToIso(local:string){
 export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>void;onChange:()=>void}){
  const [err,setErr]=useState(''),[busy,setBusy]=useState(false)
  const b=job.brief
+ const title=(job.youtube?.title as string)||job.editorial?.drafts.find(d=>d.option===0)?.title||b.topic||`${b.club_name} · ${b.season}`
  const act=async(body:Record<string,unknown>)=>{setErr('');setBusy(true);try{await api(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify(body)});onChange()}catch(e){setErr(e instanceof Error?e.message:'Failed')}finally{setBusy(false)}}
  const remove=async()=>{
   if(!confirm('Permanently delete this production, its scripts, uploads, video and working caches? This cannot be undone. Original Drive files and already published videos stay online. Storage cleanup continues automatically in the background.'))return
@@ -209,7 +210,7 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
  const si=job.stage?STAGES.indexOf(job.stage):-1
  return <article className={`${css.panel} ${css.job}`}>
   <div className={css.body}>
-   <div className={css.jobHead}><div><h2 className={css.jobTitle}>{(job.youtube?.title as string)||`${b.club_name} · ${b.season}`}</h2>
+   <div className={css.jobHead}><div><h2 className={css.jobTitle}>{title}</h2>
     <p className={css.meta}>{b.club_name} · {b.season} · {mins(b.duration)} · {b.privacy}{b.publish_at?` ${when(b.publish_at)}`:''} · queued {when(job.createdAt)}</p></div>
     <span className={`${css.state} ${css['s_'+job.state]}`}>{STATE_TEXT[job.state]}</span></div>
    {['running','queued','paused','cancel_requested'].includes(job.state)&&<>
