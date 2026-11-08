@@ -280,7 +280,7 @@ def upload_set(st, job_id: str, master: Path, files: dict, package: list, shorts
 
 # ── marketing films (owner, 8.11.2026) ───────────────────────────────────────────────────────────────────────────────
 def run_promo(st, job: dict, jd: Path, progress, log) -> dict:
-    """A promo: the promo writer (studio/promo.py) from the spec's facts, then the cut-out cartoon (studio/cartoon), then
+    """A promo: the promo writer (studio/promo.py) from the spec's facts, then the illustrated Short (studio/cartoon), then
     the same private storage, Telegram delivery and YouTube pack as every other job."""
     from . import promo
     from .cartoon import make as cartoon
@@ -288,7 +288,7 @@ def run_promo(st, job: dict, jd: Path, progress, log) -> dict:
     progress('script', 0.05, f'Writing the marketing film: {spec.get("label")}')
     s = promo.write(spec, jd / 'cache', log)
     (jd / 'promo-script.json').write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding='utf-8')
-    progress('edit', 0.3, 'Drawing and animating the cartoon')
+    progress('edit', 0.3, 'Animating the illustrated promo')
     out = outside_repo(job['id'], 'promo')
     out.mkdir(parents=True, exist_ok=True)
     mp4 = out / 'promo.mp4'
@@ -303,7 +303,7 @@ def run_promo(st, job: dict, jd: Path, progress, log) -> dict:
     art = upload_set(st, job['id'], mp4, {'preview.mp4': mp4, 'thumbnail-1.jpg': frame}, [out / 'description.txt', jd / 'promo-script.json'],
                      [{'file': str(mp4), 'hook': s.get('title') or 'Promo', 'seconds': r['seconds']}], log)
     yt = yt_shape(None, title=str(s.get('title') or spec.get('label') or 'FAN LIFE')[:100], description=desc,
-                  reason='An animated cartoon promo drawn in code; no realistic person or event is depicted.')
+                  reason='An animated promo made from the studio\'s own illustration library; no realistic person or event is depicted.')
     yt['tags'] = [str(t)[:40] for t in (s.get('tags') or [])][:12]
     if spec.get('telegram', True):
         try:

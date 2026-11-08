@@ -15,8 +15,9 @@ from .common import CHANNEL_NAME, StageError, read_json, sha256_json, write_json
 from .script import numbers_in_text
 
 SYSTEM = f'''You write vertical marketing Shorts for FAN LIFE ("Football. Forever.") and its YouTube channel
-"{CHANNEL_NAME}". The Short is a flat 2D cut-out cartoon: a round-headed supporter in a club scarf, objects that come
-alive, one gag per line, kinetic captions. Your audience: football supporters, history lovers, people who love a story.
+"{CHANNEL_NAME}". The Short is ILLUSTRATED: every line stands on one of the owner's drawn football scenes (terraces,
+stadiums at night, the dugout, a trophy lift, a newspaper stand), inked people act in it and objects come alive, with
+captions on the words. Your audience: football supporters, history lovers, people who love a story.
 
 Write ONE script of {{lo}}–{{hi}} spoken words (it must finish inside {{seconds}} seconds) about the SUBJECT, from its FACTS only.
 - Line one names what the first frame shows and hooks: "no way I don't know this" (the fan's pride: "You think you know
@@ -30,7 +31,7 @@ Write ONE script of {{lo}}–{{hi}} spoken words (it must finish inside {{second
 
 Return ONE JSON object and nothing else:
 {{{{"title": "≤60 characters, the hook in a few words", "narration": "the whole script", "hook_law": "know-it-all|is-this-real",
-  "cartoon": [{{{{"say": "the words of this beat", "show": "what the cartoon does on them"}}}}],
+  "cartoon": [{{{{"say": "the words of this beat", "show": "the place this line happens in and what happens there"}}}}],
   "description": "2–3 sentences for YouTube/Instagram", "tags": ["5–10 tags"]}}}}'''
 
 

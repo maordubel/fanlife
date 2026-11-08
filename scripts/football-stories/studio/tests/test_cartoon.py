@@ -92,3 +92,78 @@ class Grounding(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Illustrated(unittest.TestCase):
+    """The illustrated Short (owner, 8.11.2026): the owner's drawn library behind every line, never a plate twice."""
+
+    BEATS = [{'say': 'Brazil were losing to Argentina at the World Cup.', 'show': 'nervous fans in the stand at night'},
+             {'say': 'The physio handed Branco a bottle.', 'show': 'the bench, a bottle'},
+             {'say': 'Minutes later he could barely stand.', 'show': 'the clock'},
+             {'say': 'Then Caniggia scored.', 'show': 'the ball flies into the net'},
+             {'say': 'Argentina won the match and celebrated.', 'show': 'the players celebrate'}]
+
+    def setUp(self):
+        from studio.cartoon import plates
+        if not plates.has_library():
+            self.skipTest('the drawn library is not in this checkout')
+        self.plates = plates
+        for i, b in enumerate(self.BEATS):
+            b['pose'], b['expr'] = scene.pose_of(b['say'] + ' ' + b['show'], i, len(self.BEATS))
+            b['gag'] = scene.gag_of(b['show']) or scene.gag_of(b['say'])
+
+    def test_one_plate_per_line_never_twice_and_never_a_transition(self):
+        keys = self.plates.pick_plates(self.BEATS, [])
+        self.assertEqual(len(keys), len(self.BEATS))
+        stems = [k.replace('-b-', '-').replace('-c-', '-') for k in keys]
+        self.assertEqual(len(set(stems)), len(stems))
+        self.assertFalse(any('/tr-' in k or '/follow-' in k for k in keys))
+        self.assertEqual(keys, self.plates.pick_plates(self.BEATS, []), 'the same Short draws the same film')
+
+    def test_a_losing_line_never_stands_on_a_celebration(self):
+        keys = self.plates.pick_plates(self.BEATS, [])
+        self.assertFalse(self.plates.JOY_PLATE.search(keys[0]), keys[0])
+        self.assertNotEqual(self.plates.pick_figure(self.BEATS[0], [], 'x'), 'cut:common/fig-captain-cup-kr')
+
+    def test_the_story_lines_find_their_drawings(self):
+        keys = self.plates.pick_plates(self.BEATS, [])
+        self.assertIn('clock', keys[2])
+        self.assertRegex(keys[3], r'net|goal|header|volley')
+
+    def test_rival_colours_keep_out_plates_that_print_them(self):
+        keys = self.plates.pick_plates(self.BEATS, ['green'])
+        meta = {p['key']: p for p in self.plates.catalog()}
+        for k in keys:
+            fam = set(meta[k].get('families') or []) - ({'red'} if meta[k].get('accent') == 'key-red' else set())
+            self.assertNotIn('green', fam, k)
+
+    def test_the_page_is_one_function_of_time_with_every_shot(self):
+        from studio.cartoon import stage
+        text = ' '.join(b['say'] for b in self.BEATS)
+        ws = words(text)
+        beats = scene.plan([{'say': b['say'], 'show': b['show']} for b in self.BEATS], ws)
+        with tempfile.TemporaryDirectory() as d:
+            page, cues, shots = stage.compose(Path(d), beats, ws, ws[-1]['end'] + 0.8, accent='#B02D10', bans=['yellow'],
+                                              tag='FAN LIFE · TEST', gsap=Path(d) / 'g.js' if (Path(d) / 'g.js').write_text('') is not None else None)
+            html_ = page.read_text()
+            self.assertEqual(html_.count('class="shot"'), len(beats))
+            self.assertIn('window.__timelines["main"]=tl', html_)
+            self.assertTrue(all((Path(d) / 'assets' / m).exists() for m in __import__('re').findall(r'src="assets/([^"]+)"', html_)))
+            self.assertEqual(len(shots), len(beats))
+            self.assertTrue(any(k == 'whoosh' for _, k in cues) or any(k == 'drum' for _, k in cues))
+            self.assertTrue(all(s['amb'] for s in shots))
+
+
+class ShortSound(unittest.TestCase):
+    def test_the_music_ducks_under_the_voice_and_the_limiter_never_clips(self):
+        import numpy as np
+        from studio.cartoon import sound
+        sr = 8000
+        v = np.zeros(sr * 3, 'float32')
+        v[sr:2 * sr] = 0.3 * np.sin(np.arange(sr) / sr * 2 * np.pi * 220)
+        env = sound.duck_envelope(v, sr)
+        self.assertGreater(env[sr // 2], 0.95)
+        self.assertLess(env[int(1.6 * sr)], 0.6)
+        y = sound.limit(np.array([0.2, 0.9, 1.6, -3.0], 'float32'))
+        self.assertTrue(np.all(np.abs(y) <= 0.93 + 1e-6))
+        self.assertAlmostEqual(float(y[0]), 0.2, places=5)

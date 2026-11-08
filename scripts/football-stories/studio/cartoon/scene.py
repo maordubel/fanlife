@@ -17,7 +17,7 @@ GAGS: list[tuple[str, str]] = [
     (r'\bscore(?:d|board|line)?\b|\b\d+\s*[–-]\s*\d+\b|\bnil\b|\bgoals?\b.*\bto\b', 'scoreboard'),
     (r'\bstamp\b|\bclassified\b|\bfile\b|\bsecret\b|\bconfess', 'stamp'),
     (r'\bnewspapers?\b|\bheadlines?\b|\bpaper\b|\breport(?:ed|s)?\b|\bpress\b', 'newspaper'),
-    (r'\btroph(?:y|ies)\b|\bcup\b|\btitle\b|\bchampions?\b|\bwon the\b', 'trophy'),
+    (r'\btroph(?:y|ies)\b|(?<!world )\bcup\b|\btitle\b|\bchampions?\b|\bwon the\b', 'trophy'),
     (r'\bwhistle\b|\breferee\b|\bref\b|\bdisallow|\bruled out\b|\bcancell?ed\b', 'whistle'),
     (r'\bred card\b|\bsent off\b|\bsending off\b', 'red_card'),
     (r'\bphone\b|\bcalled\b|\bcall\b|\bringing\b', 'phone'),
@@ -29,7 +29,7 @@ GAGS: list[tuple[str, str]] = [
 ]
 POSE_WORDS: list[tuple[str, tuple[str, str]]] = [
     (r'\bwon\b|\bwin\b|\bwinner\b|\bcelebrat|\bchampions\b|\bscored\b|\bgoal!?\b', ('cheer', 'grin')),
-    (r'\blost\b|\bout\b|\bmissed\b|\bcut\b|\binjur|\bbroke|\bkidnapp|\bdrugged|\bdied\b|\bshot dead', ('scared', 'shock')),
+    (r'\blost\b|\blosing\b|\bout\b|\bmissed\b|\bcut\b|\binjur|\bbroke|\bkidnapp|\bdrugged|\bdied\b|\bshot dead', ('scared', 'shock')),
     (r'\bwhy\b|\bhow\b|\bwhat\b|\?|\bbut\b|\bwait\b', ('shrug', 'think')),
     (r'\blaugh|\bjoke|\bsmil|\bof course\b|\bobviously\b', ('stand', 'smug')),
     (r'\bthis is\b|\bthis\b|\bhere\b|\blook\b|\bmeet\b|\bthat\b', ('point', 'smile')),
@@ -48,7 +48,7 @@ def split_beats(narration: str, cartoon: list | None) -> list[dict]:
     if isinstance(cartoon, list) and cartoon and all(isinstance(b, dict) and isinstance(b.get('say'), str) for b in cartoon):
         said = ' '.join(b['say'].strip() for b in cartoon).split()
         if [w.lower().strip('.,!?;:—"') for w in said] == [w.lower().strip('.,!?;:—"') for w in words]:
-            return [{'say': b['say'].strip(), 'show': str(b.get('show') or '')} for b in cartoon]
+            return [{'say': b['say'].strip(), 'show': str(b.get('show') or ''), 'plate': str(b.get('plate') or '')} for b in cartoon]
     parts = [p.strip() for p in re.split(r'(?<=[.?!])\s+', narration.strip()) if p.strip()]
     return [{'say': p, 'show': ''} for p in parts]
 
@@ -100,6 +100,6 @@ def plan(beats: list[dict], words: list[dict], lead: float = 0.1) -> list[dict]:
             if gag and gag_of(w['w']) == gag:
                 hit = w['start'] + lead
                 break
-        out.append({'i': i, 'say': b['say'], 'show': b['show'], 't0': round(t0, 3), 't1': round(t1, 3), 'pose': pose, 'expr': expr,
+        out.append({'i': i, 'say': b['say'], 'show': b['show'], 'plate': b.get('plate') or '', 't0': round(t0, 3), 't1': round(t1, 3), 'pose': pose, 'expr': expr,
                     'gag': gag, 'hit': round(hit, 3), 'score': score_in(text) if gag == 'scoreboard' else None})
     return out

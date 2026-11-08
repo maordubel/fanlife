@@ -88,3 +88,25 @@ drawn: `docs/fanlife/classified/files-04-09-panels.md`. They sit in the desk as 
   characters, CLASSIFIED added, the six clubs); six titles retuned — the weaker performers only; the films already
   drawing views (Real Madrid in Athens, the 2000 double, Olympiacos v Maccabi, the Bottle, Grbavica, the 2004 cup final,
   Zrinjski I WAS THERE) were left alone.
+
+## The illustrated Short (owner, 8.11.2026, same day)
+
+> "The animation is not at the level I expect — not in sound, not in experience, not in items, not in graphics."
+> Reference: a full-screen illustrated scene behind every sentence, a character inside it, the camera always moving.
+
+The first cut-out cartoon drew everything in code. The Short is now built from the drawn library the owner already
+supplied (studio kit): `kit/beats/common` (175 scenes), `kit/beats/papercut-library` (33), the club's own beat sets,
+`kit/cutouts/common` (inked people and crowd rows), `kit/props` (ball, cup, radio, ticket, plane, bus, scarf, board).
+
+* `studio/cartoon/plates.py` — a plate per line by meaning (a football synonym table + rare-word weighting, the club's
+  own set first), never the same drawing or its variant twice, a losing line never on a celebration (and back),
+  a figure and an object where the line asks for one; key red takes the club colour, the rival's family is scrubbed.
+* `studio/cartoon/stage.py` — the HyperFrames page: each 16:9 drawing framed 9:16 on its most detailed band, a pan /
+  push-in on the key word / pull-back on the last line, figures that spring up and hop, a blurred crowd row in front
+  on stadium plates, whip-pan and punch-in cuts on the narrator's words, grain and vignette, captions on the words.
+* `studio/cartoon/sound.py` — four layers: the voice; the owner's room recordings under each shot (terrace murmur,
+  street, tunnel, bus, radio — public/life/sfx), cross-faded at every cut; a sound for every cut, figure, object and
+  gag (ball kick, whistle, stamp, coins, the real crowd on a goal); the owner's music ducked under every word and up
+  at the end. A soft limiter, then loudness to −14 LUFS (Shorts level).
+* The writer and the promo writer now describe the PLACE of each beat (and may name a plate key).
+* `make(..., engine='drawn')` / `STORIES_SHORTS_LOOK=drawn` keeps the old code-drawn cartoon as the fallback.

@@ -20,7 +20,7 @@ from pathlib import Path
 import numpy as np
 
 from ..common import StageError, read_json, write_json
-from . import build, scene
+from . import build, plates, scene, sound, stage
 
 MAX_S = 30.0
 FPS = 30
@@ -88,28 +88,42 @@ def mix(voice_wav: Path, duration: float, cues: list[tuple[float, str]], out: Pa
 
 
 def make(text: str, cartoon: list | None, out: Path, work: Path, *, primary: str, on_primary: str, bans: list[str], tag: str,
-         masthead: str = '', music_tags: list[str] | None = None, fake_voice: bool = False, log=print, cache: Path | None = None) -> dict:
+         masthead: str = '', music_tags: list[str] | None = None, fake_voice: bool = False, log=print, cache: Path | None = None,
+         club_id: str | None = None, season: str | None = None, engine: str | None = None) -> dict:
+    """`engine`: 'illustrated' (default — the owner's drawn library, owner 8.11.2026) or 'drawn' (the code-drawn
+    character, kept as the fallback when the library is not on this runner)."""
+    engine = engine or os.environ.get('STORIES_SHORTS_LOOK') or ('illustrated' if plates.has_library() else 'drawn')
     work.mkdir(parents=True, exist_ok=True)
     wav, words, vdur = voice(text, work, cache or work / 'cache', fake_voice)
     duration = round(vdur + 0.75, 3)
     if duration > MAX_S:
         raise StageError('SHORT_TOO_LONG', f'the cartoon Short would run {duration:.1f}s (30 s at most)')
     beats = scene.plan(scene.split_beats(text, cartoon), words)
-    pal = build.palette(primary, on_primary, bans)
     proj = work / 'hf'
     if proj.exists():
         shutil.rmtree(proj)
-    _, cues = build.compose(proj, beats, words, duration, pal, tag=tag, bans=bans, masthead=masthead, fps=FPS)
-    write_json(work / 'beats.json', {'beats': beats, 'cues': cues})
+    shots = None
+    if engine == 'illustrated':
+        _, cues, shots = stage.compose(proj, beats, words, duration, accent=primary, bans=bans, tag=tag, masthead=masthead,
+                                       club_id=club_id, season=season, fps=FPS, salt=f'{club_id}:{text[:40]}')
+    else:
+        pal = build.palette(primary, on_primary, bans)
+        _, cues = build.compose(proj, beats, words, duration, pal, tag=tag, bans=bans, masthead=masthead, fps=FPS)
+    write_json(work / 'beats.json', {'beats': beats, 'cues': cues, 'shots': shots, 'engine': engine})
     from ..hyperframes.render import hf_render
     silent = work / 'picture.mp4'
     hf_render(proj, silent, FPS, log)
-    audio = mix(wav, duration, cues, work / 'mix.wav', music_tags or ['upbeat', 'energy'], text[:40], log)
+    if shots is not None:
+        audio = sound.mix(wav, duration, shots, cues, work / 'mix.wav', music_tags or ['upbeat', 'energy'], text[:40], log)
+    else:
+        audio = mix(wav, duration, cues, work / 'mix.wav', music_tags or ['upbeat', 'energy'], text[:40], log)
     out.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(silent), '-i', str(audio), '-map', '0:v', '-map', '1:a',
                     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-r', str(FPS),
-                    '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', str(out)], check=True)
-    return {'file': str(out), 'seconds': duration, 'beats': len(beats), 'gags': [b['gag'] for b in beats if b['gag']], 'engine': 'cartoon'}
+                    '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000',
+                    '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', str(out)], check=True)
+    return {'file': str(out), 'seconds': duration, 'beats': len(beats), 'gags': [b['gag'] for b in beats if b['gag']],
+            'engine': 'cartoon', 'look': engine, 'plates': [s['plate_key'] for s in shots] if shots else []}
 
 
 def main(argv=None) -> int:
@@ -123,10 +137,12 @@ def main(argv=None) -> int:
     ap.add_argument('--bans', default='yellow')
     ap.add_argument('--tag', default='FAN LIFE · FOOTBALL STORIES')
     ap.add_argument('--voice', choices=['kokoro', 'fake'], default='kokoro')
+    ap.add_argument('--look', choices=['illustrated', 'drawn'])
+    ap.add_argument('--club')
     a = ap.parse_args(argv)
     cartoon = read_json(a.cartoon) if a.cartoon else None
     r = make(a.text, cartoon, a.out, a.work, primary=a.primary, on_primary=a.on, bans=[b for b in a.bans.split(',') if b],
-             tag=a.tag, fake_voice=a.voice == 'fake')
+             tag=a.tag, fake_voice=a.voice == 'fake', engine=a.look, club_id=a.club)
     print(json.dumps(r))
     return 0
 
