@@ -178,6 +178,37 @@ TAKES = [
 ]
 
 
+# ── the name check (owner, 8.11.2026: "Petah Tikva, St. Pauli and the Arabic names are still not right") ───────────────
+# The names the owner flagged, each said three ways. He answers with a number; the chosen way goes into the hand lexicon
+# (a person's check wins over everything).
+NAME_CHECK = [
+    ('Petah Tikva', ['ˈpɛtax ˈtikva', 'ˈpɛtak ˈtikva', 'ˈpɛta ˈtikva']),
+    ('Hapoel Petah Tikva', ['hapɒˈɛl ˈpɛtax ˈtikva', 'haˈpɒɛl ˈpɛtax tikˈva', 'hapɒˈɛl pɛˈtax tikˈva']),
+    ('St. Pauli', ['zaŋkt ˈpaʊli', 'saŋkt ˈpaʊli', 'sənt ˈpɔːli']),
+    ('Ahmed', ['ˈaxmɛd', 'ˈahmɛd', 'ˈaːmɛd']),
+    ('Mohamed', ['muˈhamad', 'mɒˈhamɛd', 'muˈhammad']),
+    ('Mahmoud', ['maxˈmuːd', 'mahˈmuːd', 'maˈmuːd']),
+    ('Abdelilah', ['abdɛliˈlaː', 'abˈdɛlila', 'ˌabdɛlˈilə']),
+    ('Aboutrika', ['abuˈtrika', 'abuːˈtriːka', 'ˌabuːtˈrɪkə']),
+]
+
+
+def name_check(out: Path) -> Path:
+    """One clip: for each flagged name, "Petah Tikva — one: …, two: …, three: …", in the narrator's voice."""
+    import numpy as np
+    os.environ['STORIES_KOKORO_VOICE'] = 'bm_george'
+    parts = []
+    for k, (name, ways) in enumerate(NAME_CHECK):
+        extra = {f'Qv{i}x': '/' + w + '/' for i, w in enumerate(ways)}
+        text = ' '.join(f'{n}: Qv{i}x.' for i, n in enumerate(('One', 'Two', 'Three')))
+        f = out / f'check-{k}.wav'
+        voice.kokoro_beat(text, f, extra, 'normal')
+        parts += [f, silence(out / f'check-gap-{k}.wav', 1.2)]
+    mix = out / 'name-check.wav'
+    concat(parts[:-1], mix, True)
+    return mix
+
+
 # ── the ear-proxy ────────────────────────────────────────────────────────────────────────────────────────────────────
 def fold(s: str) -> str:
     s = unicodedata.normalize('NFKD', s)
@@ -259,6 +290,13 @@ def main() -> None:
         print(f'take {letter}: {dur:.0f}s audio in {took:.0f}s', flush=True)
         (out_root / 'audition.json').write_text(json.dumps(report, indent=1, ensure_ascii=False))
     try:
+        (out_root / 'check').mkdir(exist_ok=True)
+        nc = name_check(out_root / 'check')
+        card_video(nc, out_root / 'name-check.mp4', '?', 'Name check — one, two or three')
+        report['name_check'] = [{'name': n, 'ways': w} for n, w in NAME_CHECK]
+    except Exception as e:  # noqa: BLE001
+        report['name_check_error'] = f'{type(e).__name__}: {e}'[:300]
+    try:
         for t in report['takes']:
             if 'error' in t:
                 continue
@@ -296,6 +334,11 @@ def delivery(out_root: Path, report: dict) -> None:
         items.append({'video': {'url': f"{base}/{t['file'].replace('.wav', '.mp4')}", 'name': f"narrator-take-{t['take']}.mp4",
                                 'width': 1080, 'height': 1080,
                                 'caption': f"<b>Take {t['take']}</b> · {t['title']}{score}\nזמן רנדור: ×{t['realtime_factor']} מזמן אמת"}})
+    if report.get('name_check') and not scores_only:
+        order = '\n'.join(f'{i + 1}. {n["name"]}' for i, n in enumerate(report['name_check']))
+        items.append({'video': {'url': f"{base}/name-check.mp4", 'name': 'name-check.mp4', 'width': 1080, 'height': 1080,
+                                'caption': '<b>בדיקת שמות</b> — כל שם בשלוש דרכים (One / Two / Three), בסדר הזה:\n' + order +
+                                           '\n\nענה למשל: פתח תקווה 1, סנט פאולי 2, אחמד 2 — ואני נועל את זה במילון.'}})
     lines = []
     for t in report['takes']:
         if 'names_total' in t:
