@@ -158,3 +158,7 @@ clips, captions, sound, Telegram. Flow has no API, so the studio never spends it
 - 31 football words and places added to the hand lexicon (Europa, Bundesliga, Ligat Ha'Al, Premijer liga, Parkhead,
   Ibrox, Millerntor, Reeperbahn, HaMoshava, Pod Bijelim Brijegom, derby as DAR-bee, ultras, tifo …).
 - The audition now has a line for every club and one of football words: A = as heard, B = researched.
+- Name check (8.11.2026, 21:20): the owner heard every flagged name three ways — "1 + 2 sound good". Way 1, the
+  native one, is locked in the hand lexicon: Petah Tikva /ˈpɛtax ˈtikva/, Hapoel Petah Tikva, St. Pauli /zaŋkt ˈpaʊli/,
+  Ahmed /ˈaxmɛd/, Mohamed /muˈhamad/, Mahmoud /maxˈmuːd/, Abdelilah, Aboutrika. So Kokoro says the Hebrew and Arabic x
+  well; the St. Pauli fault was the sentence cut after "St.", fixed.
