@@ -1,0 +1,37 @@
+{
+  "0": {
+    "file": "fl-mon-quiz-aek-athens.mp4",
+    "seconds": 29.5,
+    "mb": 7.1
+  },
+  "1": {
+    "file": "fl-tue-whoami-panathinaikos.mp4",
+    "seconds": 27.8,
+    "mb": 7.3
+  },
+  "2": {
+    "file": "fl-wed-score-celtic.mp4",
+    "seconds": 29.9,
+    "mb": 7.7
+  },
+  "3": {
+    "file": "fl-thu-order-st-pauli.mp4",
+    "seconds": 22.3,
+    "mb": 5.8
+  },
+  "4": {
+    "file": "fl-fri-scorer-zrinjski-mostar.mp4",
+    "seconds": 29.9,
+    "mb": 6.9
+  },
+  "5": {
+    "file": "fl-sat-tf-hapoel-tel-aviv.mp4",
+    "seconds": 38.0,
+    "mb": 8.7
+  },
+  "6": {
+    "file": "fl-sun-decade-olympiacos.mp4",
+    "seconds": 26.5,
+    "mb": 6.9
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "week": "2026-W46",
+  "monday": "2026-11-09",
+  "built": "2026-11-08T19:42:17.957Z",
+  "shorts": [
+    {
+      "kind": "quiz",
+      "club": "aek-athens",
+      "prompt": "AEK Athens on the road in Europe: 20 Oct 2011 in the UEFA Europa League, AEK Athens 1-3. Who were the opponents?",
+      "options": [
+        "Dundee United",
+        "Zenit",
+        "Lokomotiv Moscow",
+        "Dinamo Tbilisi"
+      ],
+      "answer": "Lokomotiv Moscow",
+      "explanation": "Lokomotiv Moscow 3-1 AEK Athens, UEFA Europa League, 20 Oct 2011.",
+      "source": {
+        "title": "Lokomotiv Moscow 3-1 ΑΕΚ — AEKdata",
+        "url": "https://aekdata.gr/agonas/2256-lokomotiv-moscow-aek-3-1",
+        "confidence": 2
+      },
+      "qid": "q_9c0e31109d59f10d",
+      "day": "Mon",
+      "hook": "AEK Athens fans: 5 seconds. Go.",
+      "clubName": "AEK Athens",
+      "primary": "#F3C613",
+      "on": "#151515",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/aek-athens/trivia",
+      "gate": "trivia",
+      "title": "AEK Athens fans: 5 seconds. Go. #Shorts",
+      "caption": "AEK Athens fans: 5 seconds. Go. 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #AEK #AEKAthens #SuperLeagueGreece #FootballQuiz #FootballTrivia #Shorts",
+      "comment": "Answer: Lokomotiv Moscow\nLokomotiv Moscow 3-1 AEK Athens, UEFA Europa League, 20 Oct 2011.\nPlay the full AEK Athens round: https://fanlife.dubelteam.com/clubs/aek-athens/trivia",
+      "tags": "#FANLIFE #AEK #AEKAthens #SuperLeagueGreece #FootballQuiz #FootballTrivia"
+    },
+    {
+      "kind": "whoami",
+      "club": "panathinaikos",
+      "prompt": "Who am I?",
+      "clues": [
+        {
+          "label": "Position",
+          "value": "A forward."
+        },
+        {
+          "label": "Era",
+          "value": "First recorded at the club in the 2010s."
+        },
+        {
+          "label": "Competition",
+          "value": "Started a UEFA Champions League match for the club."
+        },
+        {
+          "label": "Team sheet",
+          "value": "Started against Club Brugge — UEFA Champions League, 28 Jul 2015."
+        },
+        {
+          "label": "Goal",
+          "value": "Scored against Club Brugge — UEFA Champions League, 28 Jul 2015."
+        }
+      ],
+      "answer": "Marcus Berg",
+      "explanation": "Marcus Berg — Panathinaikos, 2013–2017.",
+      "source": null,
+      "qid": "panathinaikos:arch-m-6c7cd3f2bec5",
+      "day": "Tue",
+      "hook": "Panathinaikos fans — name him before the last clue",
+      "clubName": "Panathinaikos",
+      "primary": "#0B7A3B",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/panathinaikos/blind-cow",
+      "gate": "blind-cow",
+      "title": "Panathinaikos fans — name him before the last clue #Shorts",
+      "caption": "Panathinaikos fans — name him before the last clue 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Panathinaikos #PAO #SuperLeagueGreece #FootballQuiz #FootballTrivia #FootballNerd #Shorts",
+      "comment": "Answer: Marcus Berg\nMarcus Berg — Panathinaikos, 2013–2017.\nPlay the full Panathinaikos round: https://fanlife.dubelteam.com/clubs/panathinaikos/blind-cow",
+      "tags": "#FANLIFE #Panathinaikos #PAO #SuperLeagueGreece #FootballQuiz #FootballTrivia #FootballNerd"
+    },
+    {
+      "kind": "score",
+      "club": "celtic",
+      "prompt": "Full time, 19 Feb 2026: Celtic v Stuttgart in the UEFA Europa League. What did the scoreboard say? (Celtic first)",
+      "options": [
+        "2-5",
+        "0-4",
+        "1-4",
+        "3-4"
+      ],
+      "answer": "1-4",
+      "explanation": "Celtic 1-4 Stuttgart, UEFA Europa League, 19 Feb 2026.",
+      "source": {
+        "title": "UEFA: Celtic 1-4 Stuttgart, 2026-02-19",
+        "url": "https://www.uefa.com/uefachampionsleague/match/2047784--",
+        "confidence": 2
+      },
+      "qid": "q_bb9c9eb293c10638",
+      "day": "Wed",
+      "hook": "You were there? Then you know the score",
+      "clubName": "Celtic",
+      "primary": "#0B7A3B",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/celtic/trivia",
+      "gate": "trivia",
+      "title": "You were there? Then you know the score #Shorts",
+      "caption": "You were there? Then you know the score 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Celtic #CelticFC #COYBIG #SPFL #GuessTheScore #FootballQuiz #Shorts",
+      "comment": "Answer: 1-4\nCeltic 1-4 Stuttgart, UEFA Europa League, 19 Feb 2026.\nPlay the full Celtic round: https://fanlife.dubelteam.com/clubs/celtic/trivia",
+      "tags": "#FANLIFE #Celtic #CelticFC #COYBIG #SPFL #GuessTheScore #FootballQuiz"
+    },
+    {
+      "kind": "order",
+      "club": "st-pauli",
+      "prompt": "Oldest first. Put them in order.",
+      "items": [
+        "Eintracht Braunschweig 0-2 FC St. Pauli",
+        "FC St. Pauli 1-1 VfL Wolfsburg",
+        "FC St. Pauli 0-1 Hannover 96",
+        "FC Ingolstadt 0-0 FC St. Pauli"
+      ],
+      "answer": "FC St. Pauli 1-1 VfL Wolfsburg (2010) → FC St. Pauli 0-1 Hannover 96 (2011) → FC Ingolstadt 0-0 FC St. Pauli (2012) → Eintracht Braunschweig 0-2 FC St. Pauli (2017)",
+      "order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "years": [
+        "2010",
+        "2011",
+        "2012",
+        "2017"
+      ],
+      "explanation": "",
+      "source": null,
+      "day": "Thu",
+      "hook": "Put these FC St. Pauli nights in order",
+      "clubName": "FC St. Pauli",
+      "primary": "#5A3A22",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/st-pauli/timeline",
+      "gate": "timeline",
+      "title": "Put these FC St. Pauli nights in order #Shorts",
+      "caption": "Put these FC St. Pauli nights in order 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #FCStPauli #StPauli #Bundesliga #GuessTheYear #FootballTrivia #FootballHistory #Shorts",
+      "comment": "Answer: FC St. Pauli 1-1 VfL Wolfsburg (2010) → FC St. Pauli 0-1 Hannover 96 (2011) → FC Ingolstadt 0-0 FC St. Pauli (2012) → Eintracht Braunschweig 0-2 FC St. Pauli (2017)\nPlay the full FC St. Pauli round: https://fanlife.dubelteam.com/clubs/st-pauli/timeline",
+      "tags": "#FANLIFE #FCStPauli #StPauli #Bundesliga #GuessTheYear #FootballTrivia #FootballHistory"
+    },
+    {
+      "kind": "scorer",
+      "club": "zrinjski-mostar",
+      "prompt": "Who opened Zrinjski Mostar's scoring against Botev Plovdiv in the UEFA Conference League on 15 Aug 2024?",
+      "options": [
+        "Marko Marić",
+        "Matija Malekinušić",
+        "Josip Ćorluka",
+        "Nardin Mulahusejnović"
+      ],
+      "answer": "Nardin Mulahusejnović",
+      "explanation": "Zrinjski Mostar 2-0 Botev Plovdiv, UEFA Conference League, 15 Aug 2024. Nardin Mulahusejnović opened the scoring for Zrinjski Mostar.",
+      "source": {
+        "title": "UEFA: Zrinjski 2-0 Botev Plovdiv, 2024-08-15",
+        "url": "https://www.uefa.com/uefachampionsleague/match/2041781--",
+        "confidence": 2
+      },
+      "qid": "q_06b3688ed48a587c",
+      "day": "Fri",
+      "hook": "Who scored it? Zrinjski Mostar edition",
+      "clubName": "Zrinjski Mostar",
+      "primary": "#C92D39",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
+      "gate": "trivia",
+      "title": "Who scored it? Zrinjski Mostar edition #Shorts",
+      "caption": "Who scored it? Zrinjski Mostar edition 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Zrinjski #HSKZrinjski #ZrinjskiMostar #Goals #FootballMemories #FootballQuiz #Shorts",
+      "comment": "Answer: Nardin Mulahusejnović\nZrinjski Mostar 2-0 Botev Plovdiv, UEFA Conference League, 15 Aug 2024. Nardin Mulahusejnović opened the scoring for Zrinjski Mostar.\nPlay the full Zrinjski Mostar round: https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
+      "tags": "#FANLIFE #Zrinjski #HSKZrinjski #ZrinjskiMostar #Goals #FootballMemories #FootballQuiz"
+    },
+    {
+      "kind": "tf",
+      "club": "hapoel-tel-aviv",
+      "prompt": "Scoreboard check: Hapoel Tel Aviv v Anderlecht, 25 Oct 2007 in the UEFA Cup. It finished 0-3 (Hapoel Tel Aviv first). True or false?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False",
+      "explanation": "Anderlecht 2-0 Hapoel Tel Aviv, UEFA Cup, 25 Oct 2007.",
+      "source": {
+        "title": "ויקיפועל · טבלת המשחקים (Games)",
+        "url": "https://wiki.red-fans.com/",
+        "confidence": 2
+      },
+      "qid": "q_e4a4c5e26350cc38",
+      "day": "Sat",
+      "hook": "Fact or fake? Hapoel Tel Aviv edition",
+      "clubName": "Hapoel Tel Aviv",
+      "primary": "#B02D10",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv/trivia",
+      "gate": "trivia",
+      "title": "Fact or fake? Hapoel Tel Aviv edition #Shorts",
+      "caption": "Fact or fake? Hapoel Tel Aviv edition 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #HapoelTelAviv #Hapoel #IsraeliFootball #FootballQuiz #FootballTrivia #Shorts",
+      "comment": "Answer: False\nAnderlecht 2-0 Hapoel Tel Aviv, UEFA Cup, 25 Oct 2007.\nPlay the full Hapoel Tel Aviv round: https://fanlife.dubelteam.com/clubs/hapoel-tel-aviv/trivia",
+      "tags": "#FANLIFE #HapoelTelAviv #Hapoel #IsraeliFootball #FootballQuiz #FootballTrivia"
+    },
+    {
+      "kind": "decade",
+      "club": "olympiacos",
+      "prompt": "Turn back to Christian Karembeu's Olympiacos years. In which decade does the archive first place him at the club?",
+      "options": [
+        "1980s",
+        "2010s",
+        "2000s",
+        "2020s"
+      ],
+      "answer": "2000s",
+      "explanation": "Christian Karembeu's recorded years at Olympiacos: 2001–2004.",
+      "source": {
+        "title": "Christian Karembeu: the ambassador",
+        "url": "https://www.tovima.com/sports/christian-karembeu-the-ambassador/",
+        "confidence": 3
+      },
+      "qid": "q_0954200ea7c33c1f",
+      "day": "Sun",
+      "hook": "Olympiacos fans: when did he play for you?",
+      "clubName": "Olympiacos",
+      "primary": "#D71920",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
+      "gate": "trivia",
+      "title": "Olympiacos fans: when did he play for you? #Shorts",
+      "caption": "Olympiacos fans: when did he play for you? 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Olympiacos #Thrylos #SuperLeagueGreece #GuessTheYear #FootballTrivia #FootballHistory #Shorts",
+      "comment": "Answer: 2000s\nChristian Karembeu's recorded years at Olympiacos: 2001–2004.\nPlay the full Olympiacos round: https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
+      "tags": "#FANLIFE #Olympiacos #Thrylos #SuperLeagueGreece #GuessTheYear #FootballTrivia #FootballHistory"
+    }
+  ],
+  "film": {
+    "feature": "trivia",
+    "name": "Trivia",
+    "title": "Only real fans get past stage three | FAN LIFE Trivia",
+    "path": "/clubs/{club}/trivia",
+    "shots": [
+      {
+        "name": "door"
+      },
+      {
+        "name": "run",
+        "click": "Kick off"
+      },
+      {
+        "name": "answer",
+        "click": "^A "
+      }
+    ],
+    "beats": [
+      {
+        "shot": "door",
+        "say": "Every club on FAN LIFE has its own trivia wing, written from that club's own history. Not a generic quiz. Your club."
+      },
+      {
+        "shot": "run",
+        "say": "Twelve questions in three stages, and every stage is harder than the last. You get three lives, and a wrong answer costs one."
+      },
+      {
+        "shot": "answer",
+        "say": "Answer quickly and the combo grows, up to four times. The clock is part of the game, so thinking fast is how you score big."
+      },
+      {
+        "shot": "answer",
+        "say": "Four levels, from easy to expert. Every answer is checked against the club's archive, and every question shows its source."
+      }
+    ],
+    "hook": "How well do you really know your club?",
+    "clubs": [
+      {
+        "id": "olympiacos",
+        "name": "Olympiacos",
+        "primary": "#D71920"
+      },
+      {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva",
+        "primary": "#1F4E9C"
+      },
+      {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar",
+        "primary": "#C92D39"
+      },
+      {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv",
+        "primary": "#B02D10"
+      },
+      {
+        "id": "celtic",
+        "name": "Celtic",
+        "primary": "#0B7A3B"
+      },
+      {
+        "id": "st-pauli",
+        "name": "FC St. Pauli",
+        "primary": "#5A3A22"
+      },
+      {
+        "id": "aek-athens",
+        "name": "AEK Athens",
+        "primary": "#F3C613"
+      },
+      {
+        "id": "panathinaikos",
+        "name": "Panathinaikos",
+        "primary": "#0B7A3B"
+      }
+    ]
+  }
+}
