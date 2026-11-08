@@ -66,11 +66,10 @@ def provider() -> str:
     want = os.environ.get('STORIES_VOICE', '').strip()
     if want and want != 'auto':
         return want
-    # Free by default (owner, 8.11.2026: "free only"): Gemini's speech model on the free tier when the key is there — it
-    # acts the line — and Kokoro, local, whenever Gemini is spent, refuses or slips a word. ElevenLabs only when asked
-    # for (STORIES_VOICE=elevenlabs): its free tier does not cover a film and the paid one costs money.
-    from . import gemini_tts
-    return 'gemini' if gemini_tts.available() else 'kokoro'
+    # Kokoro, local and free (the owner's Take B, 8.11.2026: "B is better"). Gemini's speech model is opt-in
+    # (STORIES_VOICE=gemini): measured 8.11.2026, its free tier answered about ten requests a day and read some lines
+    # twice — not a film's narrator. ElevenLabs only when asked for: its free tier does not cover a film.
+    return 'kokoro'
 
 
 def _wav_write(path: Path, samples, sr: int = SR) -> None:
@@ -434,6 +433,16 @@ def voice_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict 
             log(f'Voice: Gemini path failed ({type(e).__name__}: {str(e)[:160]}) — the free local narrator reads the whole film')
             prov = 'kokoro'
     beats, n = [], 0
+    if prov == 'kokoro':
+        # a name no lexicon knows is researched now, from the sentence it is in (studio/name_research.py)
+        from . import name_research
+        try:
+            found = name_research.for_script([b['narration'] for ch in script['chapters'] for b in ch['beats']], cache_dir / 'names', log,
+                                             str(script.get('club_name') or ''))
+        except Exception as e:  # noqa: BLE001 — never stops a film; the QA names what was left to the English reading
+            log(f'Names: research skipped ({type(e).__name__})')
+            found = {}
+        extra = {**found, **(extra or {})}
     for ci, ch in enumerate(script['chapters']):
         for bi, b in enumerate(ch['beats']):
             n += 1

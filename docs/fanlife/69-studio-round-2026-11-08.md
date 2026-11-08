@@ -137,9 +137,24 @@ clips, captions, sound, Telegram. Flow has no API, so the studio never spends it
   a British commentator says them. The hand lexicon still wins. Re-run after a big archive wave.
 - Kokoro (local): pitch per delivery (excitement a little higher, a hush lower), a build gathers pace, the last short line
   lands slower after a longer beat, a name ending a sentence lands on its own beat.
-- Gemini's speech model on the free tier (`studio/gemini_tts.py`) is now the default narrator when the key is there:
+- Gemini's speech model on the free tier (`studio/gemini_tts.py`) — first made the default, then opt-in (below):
   directed per chapter (profile, scene, pace, pronunciation notes from the lexicons), checked by Whisper word by word —
   a take that does not say the script is thrown away and Kokoro reads the WHOLE film (one narrator a film). Documentaries:
   Charon; Shorts: Puck; CLASSIFIED stays George (the owner's Take B). `STORIES_VOICE=kokoro` puts the local voice back.
 - The narrator audition (Actions → "Football Stories · narrator audition") sends A (old) · B (upgraded Kokoro) · E
   (Gemini documentary) · F (Gemini Shorts) to Telegram, with the Whisper name score.
+
+### The narrator, second pass (owner: "B is better; Greek fairly good; Zrinjski, Hapoel Petah Tikva, Celtic bad — the names must be exact")
+- Measured: Gemini's free speech model answered about ten requests a day and read some lines twice. It is opt-in only
+  (`STORIES_VOICE=gemini`); the narrator is Kokoro George (the owner's B) everywhere.
+- `studio/name_research.py` → `kit/pronounce/researched.json`: every player, club, ground, city and competition in
+  the archive (7,000+), sent in batches to the free writer briefed as the BBC Pronunciation Unit, with the club, the
+  country and the native spelling (Hebrew, Greek, Arabic) — answered as broad IPA with the stress, a BBC respelling and
+  the language; kept only when its sounds are the voice's and its syllables agree with its respelling. The worst clubs
+  first. Actions → "Football Stories · names" (nightly, resumable, commits to its branch).
+- At narration time every name a person or the research has not confirmed is researched from its sentence (one request
+  a film, cached) — including a spelling the writer chose. CLASSIFIED does the same, line by line.
+- Priority: hand lexicon (a person checked it) > researched > the namebook's rules. Hebrew and Greek ch are said as x.
+- 31 football words and places added to the hand lexicon (Europa, Bundesliga, Ligat Ha'Al, Premijer liga, Parkhead,
+  Ibrox, Millerntor, Reeperbahn, HaMoshava, Pod Bijelim Brijegom, derby as DAR-bee, ultras, tifo …).
+- The audition now has a line for every club and one of football words: A = as heard, B = researched.

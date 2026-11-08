@@ -91,7 +91,7 @@ class Names(unittest.TestCase):
         self.assertIsNone(namebook.lang_of('Henrik Larsson', None))
 
     def test_anglicised_to_the_voice_s_sounds(self):
-        self.assertEqual(namebook.anglicise('ˈxristos'), 'ˈhristos')
+        self.assertEqual(namebook.anglicise('ˈχristos'), 'ˈxristos')
         self.assertEqual(pronounce.unknown_symbols(namebook.anglicise('nˈikolɪdʑ ʒˈɛʎeznˌɪtʃɑr')) - {' '}, set())
 
     def test_the_archive_namebook_is_said_and_the_hand_lexicon_wins(self):
@@ -134,3 +134,29 @@ class Prosody(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Research(unittest.TestCase):
+    def test_an_answer_is_kept_only_when_it_can_be_said(self):
+        from studio import name_research as R
+        self.assertEqual(R.valid('Zrinjski', {'ipa': '/ˈzriɲski/', 'respell': 'ZRIN-skee'}), 'ˈzriɲski')
+        self.assertEqual(R.valid('Petah Tikva', {'ipa': 'ˈpɛtaχ ˈtikva', 'respell': 'PET-akh TIK-vuh'}), 'ˈpɛtax ˈtikva')
+        self.assertIsNone(R.valid('Petah Tikva', {'ipa': 'ˈpɛtax', 'respell': 'PET-akh'}))          # a word missing
+        self.assertIsNone(R.valid('Celtic', {'ipa': 'ˈsɛltɪk', 'respell': 'SEL-tik-a-ra-ma-da'}))  # syllables disagree
+        self.assertIsNone(R.valid('Celtic', 'SEL-tik'))
+
+    def test_without_a_writer_the_film_goes_on(self):
+        import os
+        import tempfile
+        from studio import name_research as R
+        env = {k: v for k, v in os.environ.items() if k not in ('GEMINI_API_KEY', 'ANTHROPIC_API_KEY', 'OPENAI_API_KEY')}
+        with patch.dict(os.environ, env, clear=True), tempfile.TemporaryDirectory() as d:
+            self.assertEqual(R.for_script(['Riyad Benayad scored in Casablanca.'], Path(d), lambda m: None), {})
+
+    def test_the_research_order_puts_the_worst_clubs_first(self):
+        from studio import name_research as R
+        e = R.entries()
+        self.assertGreater(len(e), 5000)
+        players = [x for x in e if x['kind'] == 'player']
+        self.assertEqual(players[0]['club'], 'Zrinjski Mostar')
+        self.assertTrue(any(x.get('native') for x in e if x['club'] == 'Hapoel Petah Tikva'))

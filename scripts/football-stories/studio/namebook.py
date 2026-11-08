@@ -6,7 +6,7 @@ The hand lexicon (kit/pronounce/lexicon.json) holds the names a person checked. 
 English G2P guessing: a South Slavic name goes through espeak's Croatian, a German one through German, a Brazilian one
 through Portuguese, and a Greek one (written in Latin letters in the archive) through a Greek reading with the stress the
 name's own ending puts on it (-ópoulos, -ákis, -ídis, -íou …). The result is anglicised the way a British commentator
-would say it — no rolled r, no Greek χ — and kept to the sounds the voice knows (pronounce.VOCAB).
+would say it — no rolled r; the Greek χ kept as x (owner, 8.11.2026: "exact") — and kept to the sounds the voice knows (pronounce.VOCAB).
 
     python3 -m studio.namebook            # writes kit/pronounce/archive.json from content/compiled/*.json
 
@@ -32,22 +32,22 @@ CLUB_LANG = {'olympiacos': 'el', 'panathinaikos': 'el', 'aek-athens': 'el', 'zri
 GREEK_FIRST = {  # the first names an archive writes most, with their stress (IPA, anglicised)
     'giorgos': 'ˈjɒrɡɒs', 'georgios': 'ˈjɒrjɒs', 'dimitris': 'diˈmitris', 'dimitrios': 'diˈmitriɒs', 'nikos': 'ˈnikɒs',
     'nikolaos': 'niˈkɒlaɒs', 'kostas': 'ˈkɒstas', 'konstantinos': 'kɒnstanˈdinɒs', 'giannis': 'ˈjanis', 'ioannis': 'iɒˈanis',
-    'vasilis': 'vaˈsilis', 'vasileios': 'vaˈsiliɒs', 'christos': 'ˈhristɒs', 'panagiotis': 'panaˈjɒtis', 'stelios': 'ˈstɛliɒs',
-    'stylianos': 'stiliaˈnɒs', 'thanasis': 'θaˈnasis', 'athanasios': 'aθaˈnasiɒs', 'michalis': 'miˈhalis', 'sotiris': 'sɒˈtiris',
+    'vasilis': 'vaˈsilis', 'vasileios': 'vaˈsiliɒs', 'christos': 'ˈxristɒs', 'panagiotis': 'panaˈjɒtis', 'stelios': 'ˈstɛliɒs',
+    'stylianos': 'stiliaˈnɒs', 'thanasis': 'θaˈnasis', 'athanasios': 'aθaˈnasiɒs', 'michalis': 'miˈxalis', 'sotiris': 'sɒˈtiris',
     'alexandros': 'alɛˈksandrɒs', 'antonis': 'anˈdɒnis', 'manolis': 'maˈnɒlis', 'petros': 'ˈpɛtrɒs', 'pavlos': 'ˈpavlɒs',
     'spyros': 'ˈspirɒs', 'stavros': 'ˈstavrɒs', 'theodoros': 'θɛˈɒðɒrɒs', 'thodoris': 'θɒˈðɒris', 'lefteris': 'lɛfˈtɛris',
     'kyriakos': 'kiriˈakɒs', 'angelos': 'ˈanjɛlɒs', 'apostolos': 'aˈpɒstɒlɒs', 'grigoris': 'ɡriˈɡɒris', 'ilias': 'iˈlias',
     'takis': 'ˈtakis', 'mimis': 'ˈmimis', 'sakis': 'ˈsakis', 'babis': 'ˈbabis', 'lakis': 'ˈlakis', 'tasos': 'ˈtasɒs',
-    'zisis': 'ˈzisis', 'fotis': 'ˈfɒtis', 'charis': 'ˈharis', 'evangelos': 'ɛˈvanjɛlɒs', 'vangelis': 'vanˈjɛlis',
+    'zisis': 'ˈzisis', 'fotis': 'ˈfɒtis', 'charis': 'ˈxaris', 'evangelos': 'ɛˈvanjɛlɒs', 'vangelis': 'vanˈjɛlis',
     'anastasios': 'anaˈstasiɒs', 'traianos': 'traiaˈnɒs', 'savvas': 'ˈsavas', 'andreas': 'anˈdrɛas', 'marinos': 'maˈrinɒs',
 }
 GREEK_END = re.compile(r'(opoulos|poulos|akis|akos|idis|idou|iadis|ides|atos|itos|ou|os|is|as|es|eas|ys)$')
 GREEK_END_FLAT = re.compile(r'_?(opoulos|poulos|akis|akos|idis|idou|iadis|ides|atos|itos|ou|os|is|as|es|eas|ys)$')
 NOT_GREEK = re.compile(r'[cqw]|ll$|tt|ck|sch|ee|oo|(?<![sz])z$')
-G_PAIRS = [('ou', 'u'), ('ai', 'ɛ'), ('ei', 'i'), ('oi', 'i'), ('ui', 'i'), ('th', 'θ'), ('ch', 'h'), ('kh', 'h'),
+G_PAIRS = [('ou', 'u'), ('ai', 'ɛ'), ('ei', 'i'), ('oi', 'i'), ('ui', 'i'), ('th', 'θ'), ('ch', 'x'), ('kh', 'x'),
            ('ph', 'f'), ('ps', 'ps'), ('ks', 'ks'), ('gk', 'ŋɡ'), ('gg', 'ŋɡ'), ('mp', 'mb'), ('nt', 'nd'), ('tz', 'dz'),
            ('ts', 'ts'), ('ss', 's'), ('ll', 'l'), ('nn', 'n'), ('mm', 'm'), ('rr', 'r'), ('pp', 'p'), ('tt', 't'),
-           ('a', 'a'), ('e', 'ɛ'), ('i', 'i'), ('o', 'ɒ'), ('u', 'u'), ('y', 'i'), ('x', 'ks'), ('h', 'h'), ('g', 'ɡ'),
+           ('a', 'a'), ('e', 'ɛ'), ('i', 'i'), ('o', 'ɒ'), ('u', 'u'), ('y', 'i'), ('x', 'ks'), ('h', 'x'), ('g', 'ɡ'),
            ('b', 'b'), ('d', 'd'), ('f', 'f'), ('k', 'k'), ('l', 'l'), ('m', 'm'), ('n', 'n'), ('p', 'p'), ('r', 'r'),
            ('s', 's'), ('t', 't'), ('v', 'v'), ('z', 'z'), ('j', 'j')]
 G_VOWEL = set('aɛiɒu')
@@ -149,8 +149,8 @@ def espeak_ipa(text: str, lang: str) -> str | None:
 
 
 # a British commentator's English sounds for what the voice would mumble (VOCAB has them, the voice barely trained on them)
-ANGLICISE = [('dʑ', 'ʤ'), ('tɕ', 'ʧ'), ('ɕ', 'ʃ'), ('ʑ', 'ʒ'), ('d͡ʒ', 'ʤ'), ('t͡ʃ', 'ʧ'), ('t͡s', 'ts'), ('x', 'h'),
-             ('χ', 'h'), ('ɣ', 'ɡ'), ('β', 'b'), ('ʎ', 'lj'), ('ɲ', 'nj'), ('ʏ', 'ʊ'), ('y', 'ʊ'), ('ø', 'ɜː'), ('œ', 'ɜː'),
+ANGLICISE = [('dʑ', 'ʤ'), ('tɕ', 'ʧ'), ('ɕ', 'ʃ'), ('ʑ', 'ʒ'), ('d͡ʒ', 'ʤ'), ('t͡ʃ', 'ʧ'), ('t͡s', 'ts'),
+             ('χ', 'x'), ('ɣ', 'ɡ'), ('β', 'b'), ('ʎ', 'lj'), ('ɲ', 'nj'), ('ʏ', 'ʊ'), ('y', 'ʊ'), ('ø', 'ɜː'), ('œ', 'ɜː'),
              ('ɐ', 'ə'), ('ʁ', 'r'), ('ɾ', 'r'), ('ɫ', 'l'), ('ç', 'ʃ'), ('ɟ', 'ʤ'), ('c', 'ʧ'), ('ɨ', 'ɪ'), ('ɯ', 'u'),
              ('ʉ', 'u'), ('ɞ', 'ɜː'), ('ɘ', 'ə'), ('ɵ', 'ɜː'), ('ɤ', 'ʌ'), ('ʋ', 'v'), ('ɦ', 'h'), ('ɬ', 'l'), ('ɱ', 'm'),
              ('ʔ', ''), ('̃', ''), ('ʰ', ''), ('ʲ', 'j'), ('ˑ', ''), ('ʊ̯', 'ʊ'), ('ɪ̯', 'ɪ'), ('̯', '')]

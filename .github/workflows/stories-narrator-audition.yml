@@ -5,7 +5,7 @@ name: Football Stories · narrator audition
 on:
   workflow_dispatch:
   push:
-    paths: ['scripts/football-stories/studio/narrator_audition.py', 'scripts/football-stories/studio/gemini_tts.py']
+    paths: ['scripts/football-stories/studio/narrator_audition.py']
 permissions:
   contents: write
 concurrency:
@@ -21,8 +21,8 @@ jobs:
       CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      # the old voice, the upgraded Kokoro, and Gemini's free speech model as documentary narrator and Shorts storyteller
-      AUDITION_TAKES: A,B,E,F
+      # the narrator as the owner heard it, and the same narrator with every name researched (owner, 8.11.2026)
+      AUDITION_TAKES: A,B
       BRANCH: narrator-audition-${{ github.run_id }}
     steps:
       - uses: actions/checkout@v4

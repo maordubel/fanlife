@@ -95,13 +95,31 @@ def archive() -> dict[str, str]:
         return {}
 
 
+RESEARCHED = LEXICON.with_name('researched.json')
+
+
+@lru_cache(maxsize=1)
+def researched() -> dict[str, str]:
+    """Names a pronunciation editor researched with their club, country and native spelling (studio/name_research.py)."""
+    try:
+        return json.loads(RESEARCHED.read_text())['names']
+    except (OSError, ValueError, KeyError):
+        return {}
+
+
+def is_latin(s: str) -> bool:
+    import unicodedata
+    return bool(s) and all(not ch.isalpha() or 'LATIN' in unicodedata.name(ch, '') for ch in s)
+
+
 @lru_cache(maxsize=1)
 def lexicon_version() -> str:
     """Changes whenever an entry changes, so a cached beat is said again with the new pronunciation."""
     import hashlib
     h = hashlib.sha256(LEXICON.read_bytes())
-    if ARCHIVE.exists():
-        h.update(ARCHIVE.read_bytes())
+    for f in (ARCHIVE, RESEARCHED):
+        if f.exists():
+            h.update(f.read_bytes())
     return h.hexdigest()[:12]
 
 
@@ -166,7 +184,9 @@ def _possessive(ph: str) -> str:
 
 class Pronouncer:
     def __init__(self, extra: dict | None = None):
-        self.ipa: dict[str, str] = {**archive(), **lexicon()}
+        import os
+        res = {} if os.environ.get('STORIES_NO_RESEARCH') == '1' else researched()  # the audition's "before" take
+        self.ipa: dict[str, str] = {**archive(), **res, **lexicon()}  # a person's check wins, then research, then rules
         self.respell: dict[str, str] = {}
         for k, v in (extra or {}).items():
             if is_ipa(v):

@@ -29,14 +29,17 @@ sys.path.insert(0, str(HERE))
 
 from studio import pronounce, voice  # noqa: E402
 
-LINES = [
-    ('build', 'October. AEK, at the old Nikos Goumas in Nea Filadelfeia. Madrid brought Figo, Zidane, Raúl and Roberto Carlos.'),
+LINES = [  # every club the narrator speaks for, the owner's worst first (8.11.2026), and the words of football
+    ('build', 'Zrinjski at Pod Bijelim Brijegom, in Mostar. Krešimir Bandić, Matej Senić and Tomislav Barišić. The Premijer liga, and the derby against Velež.'),
+    ('tense', "Hapoel Petah Tikva at HaMoshava. Zacharia Ratzabi, Elad Gabai, Hen Azriel and Nir Levin. Ligat Ha'Al, and the Toto Cup."),
+    ('normal', 'Celtic at Parkhead. Billy McNeill, Danny McGrain, Paul McStay and Henrik Larsson. The Scottish Premiership, and Rangers at Ibrox.'),
+    ('excited', 'Hapoel Tel Aviv at Bloomfield. Eran Zahavi, Barak Badash, Yitzhak Bibas and Eyal Meshumar. Then the derby against Maccabi Tel Aviv.'),
+    ('build', 'St. Pauli at the Millerntor, off the Reeperbahn. Carsten Pröpper, Marc Rzatkowski and Yannick Deichmann, in the Bundesliga.'),
+    ('normal', 'Al Ahly in Cairo. Ahmed Hegazi, Badr Banoun and Mahmoud Abou El-Saoud. The CAF Champions League, and the derby against Zamalek.'),
+    ('tense', 'Raja against Wydad in Casablanca. Riyad Benayad, Yahya Jabrane and Abdelilah Saber.'),
     ('excited', 'After six minutes, Tsartas from a free kick. Zidane equalised. Then Maladenis and Nikolaidis, two headers in three minutes. AEK three, Madrid one.'),
-    ('build', 'José Mourinho on the Madrid bench. Marko Nikolić for AEK, champions of Greece for the fourteenth time. And up front for AEK, Luka Jović. A former Real Madrid striker.'),
-    ('build', 'March. Panathinaikos at Leoforos, their old ground on Alexandras Avenue. Madrid had already won the group, and Del Bosque sent a young team.'),
     ('normal', 'November 2025. Karaiskakis again. Xabi Alonso against José Luis Mendilibar, the man who had won Olympiacos their European trophy.'),
-    ('tense', 'Three-two in Piraeus. Fortounis, Jovetić, Chiquinho. Then two Fenerbahçe goals that made the trip to Istanbul feel very long.'),
-    ('hush', 'Bosnia and Herzegovina, round seven. Željezničar at home in Sarajevo. Zrinjski up the road from Mostar. Nine minutes in, Eran Zahavi.'),
+    ('excited', "The UEFA Europa Conference League, the Cup Winners' Cup and the Intertoto. Extra time, penalties, and nil-nil."),
 ]
 
 # The respellings the films used before this pass — kept here only so take A is what the owner heard until now.
@@ -99,13 +102,23 @@ def take_before(out: Path) -> list[Path]:
     return files
 
 
-def take_kokoro(out: Path, v: str) -> list[Path]:
+def take_kokoro(out: Path, v: str, research: bool = True) -> list[Path]:
+    """`research=False` is the narrator as the owner heard it on 8.11.2026; True adds the researched names
+    (kit/pronounce/researched.json) and researches what is left from its sentence, as a film does."""
     os.environ['STORIES_KOKORO_VOICE'] = v
+    extra = None
+    if research:
+        os.environ.pop('STORIES_NO_RESEARCH', None)
+        from studio import name_research
+        extra = name_research.for_script([l for _, l in LINES], out / 'names', lambda m: print(m, flush=True))
+    else:
+        os.environ['STORIES_NO_RESEARCH'] = '1'
     files = []
     for i, (dl, line) in enumerate(LINES):
         f = out / f'line-{i}.wav'
-        voice.kokoro_beat(line, f, None, dl)
+        voice.kokoro_beat(line, f, extra, dl)
         files.append(f)
+    os.environ.pop('STORIES_NO_RESEARCH', None)
     return files
 
 
@@ -156,8 +169,8 @@ def take_gemini(out: Path, voice_name: str, style: str = '') -> list[Path]:
 
 
 TAKES = [
-    ('A', 'before', 'Kokoro · George — as the films sound today', take_before, False),
-    ('B', 'george', 'Kokoro · George — names + human pacing + narrator chain', lambda o: take_kokoro(o, 'bm_george'), True),
+    ('A', 'before', 'Kokoro · George — as you heard it (B of 8.11)', lambda o: take_kokoro(o, 'bm_george', False), True),
+    ('B', 'george', 'Kokoro · George — every name researched (club, country, native spelling)', lambda o: take_kokoro(o, 'bm_george'), True),
     ('C', 'lewis', 'Kokoro · Lewis — names + human pacing + narrator chain', lambda o: take_kokoro(o, 'bm_lewis'), True),
     ('D', 'qwen', 'Qwen3-TTS — a designed British narrator', take_qwen, True),
     ('E', 'gemini-charon', 'Gemini (free) · Charon — the documentary narrator, directed', lambda o: take_gemini(o, 'Charon'), True),
@@ -272,9 +285,9 @@ def delivery(out_root: Path, report: dict) -> None:
     scores_only = os.environ.get('AUDITION_SEND') == 'scores'
     items = [] if scores_only else [{'before': ['🎙 <b>אודישן קריין · Football Stories</b>\n\n'
                          'אותן 7 שורות מהסרטים, בכל קול. שימו לב לשמות (Mbappé, Panathinaikos, Željezničar, Mourinho), '
-                         'לנשימות ולהפסקות.\n\nA = הקול הישן. B = Kokoro אחרי השדרוג (מילון שמות מכל הארכיון, גובה קול, '
-                         'הנחתת שמות, בניית מתח). E = Gemini חינמי, קריין דוקו מבוים. F = Gemini חינמי, מספר השורטים.\n\n'
-                         'תשובה של אות אחת מספיקה (למשל: E).']}]
+                         'לנשימות ולהפסקות.\n\nשורה לכל מועדון: זרינסקי, הפועל פתח תקווה, סלטיק, הפועל ת"א, סנט פאולי, אל אהלי, '
+                         'ראג\'ה/וידאד, היוונים, ומונחי כדורגל.\nA = הקריין כפי ששמעת (B של הסבב הקודם). '
+                         'B = אותו קריין, וכל שם נחקר: מועדון, מדינה, כתיב מקורי.\n\nכתוב לי איזה שם עדיין לא נכון — אני מתקן אותו ביד.']}]
     for t in ([] if scores_only else report['takes']):
         if 'file' not in t:
             items.append({'before': [f"⚠️ Take {t['take']} ({t['title']}) נכשל ברנדור: <code>{t.get('error', '')[:200]}</code>"]})
