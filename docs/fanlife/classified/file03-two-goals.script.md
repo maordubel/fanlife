@@ -1,24 +1,24 @@
 # CLASSIFIED FILE 03 — THE OWN GOAL THAT CHANGED EVERYTHING
 
-Research draft, not yet approved. Source and visual brief: CLASSIFIED_BARBADOS_GRENADA_VISUAL_PROMPTS.md.
+Revised CLASSIFIED script for editorial approval. Source and visual brief: CLASSIFIED_BARBADOS_GRENADA_VISUAL_PROMPTS.md.
 
 ## The case
 
 Barbados scored in its own net, then had to defend both goals — here is the rule that made that decision make sense. Barbados were winning against Grenada, but a narrow victory would send them out. A strange rule offered another way through. To understand their decision, first we need to understand the maths.
 
-In January nineteen ninety-four, Barbados met Grenada in a Caribbean Cup qualifying group. Only one team would reach the final tournament.
+Start in Bridgetown, on the twenty-seventh of January, nineteen ninety-four. Barbados and Grenada are playing for one place in the Caribbean Cup finals. Puerto Rico has already played both sides. Its results are still on the board.
 
 ## The table
 
 Before their meeting, Barbados had lost to Puerto Rico. Grenada had beaten Puerto Rico, with an extra-time winner that counted double in the standings.
 
-Barbados needed a victory by at least two goals. A one-goal win would not be enough.
+Put the two possible wins side by side. Win by two and Barbados go through. Win by one and Grenada go through. For the side in front, the number that matters is the gap.
 
 ## The rule
 
 The competition had an unusual rule. If the match was level after normal time, the teams would play sudden-death extra time.
 
-The first goal would end the game, and count twice for goals for and against in the qualifying table.
+Watch the ball and the table separately. In sudden death, one ball crossing the line ends the match. The same goal gets two marks in the qualifying table. That difference is about to give Barbados an opening.
 
 Barbados went one-nil up. Then two-nil. Then Grenada scored, making it two-one. Barbados were winning the match, but the result would send Grenada through.
 
@@ -26,15 +26,15 @@ Barbados went one-nil up. Then two-nil. Then Grenada scored, making it two-one. 
 
 ## The own goal
 
-With time running out, Barbados deliberately put the ball into its own net. Two-two.
+The camera turns towards the Barbados net. With time running out, Barbados put the ball into it on purpose. Two-two. The lead is gone. Extra time is suddenly within reach.
 
 If the draw survived until the whistle, Barbados would get extra time. One winner there could give them the two-goal margin they needed.
 
 ## Two goals to defend
 
-Grenada saw another route. Score in the Barbados goal, and Grenada would win and qualify.
+Now follow Grenada. With the match level, one of their routes is the familiar one. Score in the Barbados net and win. The other route points back towards their own goalkeeper.
 
-Or score in their own goal. Barbados would lead three-two, a one-goal victory — and Grenada would still qualify.
+Imagine the ball going into Grenada’s net. Barbados would lead three-two, just one goal ahead. At that margin, Grenada would still qualify. For a few minutes, either net offers Grenada a way through.
 
 Those are two possibilities, not two goals that actually happened. Barbados needed neither of them to happen.
 
@@ -50,7 +50,7 @@ That gave Barbados the margin it needed to qualify. Some retellings show the mat
 
 ## Case closed
 
-A team scored an own goal to help itself qualify. Its opponent then had a reason to attack either net. One strange rule had turned the whole field into a puzzle.
+Replay the two routes on the pitch diagram. At one end, a goal could send Grenada through. At the other, an own goal could do the same. A rule written for extra time had changed what both teams were trying to do before the whistle.
 
 
 ## Three opening hooks for review

@@ -6,9 +6,9 @@
   "fps": 25,
   "grade": 0.4,
   "script": "docs/fanlife/classified/file03-two-goals.script.md",
-  "script_version": "running-score-2026-11-08",
+  "script_version": "editorial-vox-2026-11-08",
   "score_teams": ["Barbados", "Grenada"],
-  "approved": true,
+  "approved": false,
   "minutes": 3.0,
   "note": "Owner-supplied illustrations are reconstructions, not archival match photographs. RSSSF lists the played score as 3–2 and the competition counted the sudden-death winner twice in the standings.",
   "beats": [
@@ -30,7 +30,7 @@
     {
       "id": "b02",
       "panel": "f03-stadium",
-      "say": "In January nineteen ninety-four, Barbados met Grenada in a Caribbean Cup qualifying group. Only one team would reach the final tournament.",
+      "say": "Start in Bridgetown, on the twenty-seventh of January, nineteen ninety-four. Barbados and Grenada are playing for one place in the Caribbean Cup finals. Puerto Rico has already played both sides. Its results are still on the board.",
       "dur": 10.0,
       "mood": "tense",
       "move": "pull",
@@ -61,7 +61,7 @@
     {
       "id": "b04",
       "panel": "f03-evidence",
-      "say": "Barbados needed a victory by at least two goals. A one-goal win would not be enough.",
+      "say": "Put the two possible wins side by side. Win by two and Barbados go through. Win by one and Grenada go through. For the side in front, the number that matters is the gap.",
       "dur": 7.6,
       "mood": "tense",
       "move": "pull",
@@ -91,7 +91,7 @@
     {
       "id": "b06",
       "panel": "f03-referee",
-      "say": "The first goal would end the game, and count twice for goals for and against in the qualifying table.",
+      "say": "Watch the ball and the table separately. In sudden death, one ball crossing the line ends the match. The same goal gets two marks in the qualifying table. That difference is about to give Barbados an opening.",
       "dur": 9.0,
       "mood": "tense",
       "move": "pull",
@@ -121,7 +121,7 @@
     {
       "id": "b08",
       "panel": "f03-own-goal",
-      "say": "With time running out, Barbados deliberately put the ball into its own net. Two-two.",
+      "say": "The camera turns towards the Barbados net. With time running out, Barbados put the ball into it on purpose. Two-two. The lead is gone. Extra time is suddenly within reach.",
       "score_reveal": true,
       "dur": 6.7,
       "mood": "tense",
@@ -153,7 +153,7 @@
     {
       "id": "b10",
       "panel": "f03-two-goals",
-      "say": "Grenada saw another route. Score in the Barbados goal, and Grenada would win and qualify.",
+      "say": "Now follow Grenada. With the match level, one of their routes is the familiar one. Score in the Barbados net and win. The other route points back towards their own goalkeeper.",
       "dur": 7.1,
       "mood": "tense",
       "move": "pull",
@@ -168,7 +168,7 @@
     {
       "id": "b11",
       "panel": "f03-players",
-      "say": "Or score in their own goal. Barbados would lead three-two, a one-goal victory — and Grenada would still qualify.",
+      "say": "Imagine the ball going into Grenada’s net. Barbados would lead three-two, just one goal ahead. At that margin, Grenada would still qualify. For a few minutes, either net offers Grenada a way through.",
       "dur": 9.0,
       "mood": "tense",
       "move": "push",
@@ -243,7 +243,7 @@
     {
       "id": "b16",
       "panel": "f03-case-closed",
-      "say": "A team scored an own goal to help itself qualify. Its opponent then had a reason to attack either net. One strange rule had turned the whole field into a puzzle.",
+      "say": "Replay the two routes on the pitch diagram. At one end, a goal could send Grenada through. At the other, an own goal could do the same. A rule written for extra time had changed what both teams were trying to do before the whistle.",
       "dur": 14.8,
       "mood": "joy",
       "move": "pull",

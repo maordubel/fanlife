@@ -374,9 +374,15 @@ class Burner:
         self.W, self.H = wh
         self.lines = []
         self.scores = []
+        self.picture_labels = []
         from studio.cinema.type import text
         teams = plan.get('score_teams')
         for s in plan['shots']:
+            label = s['visual'].get('picture_label')
+            if label:
+                tag = text(label, 'caps', max(12, self.W // 70), (255, 251, 242, 255),
+                           max_w=self.W / 3, plate=(23, 22, 20, 255))
+                self.picture_labels.append((s['start'], s['start'] + s['frames'] / plan['fps'], np.asarray(tag)))
             if self.scores and s['visual']['type'] in ('follow', 'end'):
                 self.scores.append((s['start'], None))
             for at, (home, away) in s.get('score_reveals') or []:
@@ -393,6 +399,10 @@ class Burner:
         score = next((arr for at, arr in reversed(self.scores) if at <= t), None)
         if score is not None:
             _paste(frame, score, (self.W - score.shape[1]) // 2, self.H // 20)
+        for start, end, label in self.picture_labels:
+            if start <= t < end:
+                _paste(frame, label, self.W // 26, self.H // 20)
+                break
         for a, b, cap in self.lines:
             if a <= t <= b:
                 got = cap(t)
@@ -461,6 +471,13 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
     raw = ep['beats']
     ep_c, beats = epi.load({**ep, 'beats': [{k: v for k, v in b.items() if k != 'voice'} for b in raw]})
     plan = plan_of(beats, raw, voices, int(ep.get('fps', FPS)), ep.get('score_teams'))
+    if ep['file'] in ('file02', 'file03'):
+        by_panel = {entry['id']: entry for entry in entries(man, ep['file'])}
+        for shot in plan['shots']:
+            asset = by_panel.get(shot['visual']['panel'])
+            if asset and shot['visual']['type'] == 'panel':
+                shot['visual']['picture_label'] = ('OWNER-SUPPLIED CONTEXT PHOTO' if asset.get('kind') == 'photo'
+                                                    else 'ILLUSTRATION / RECONSTRUCTION')
     for s in plan['shots']:
         if s['voice_file']:
             shutil.copyfile(job / 'voice' / voices[s['id']]['file'], job / 'voice' / s['voice_file'])

@@ -106,9 +106,20 @@ def run_classified(st, job: dict, jd: Path, progress, log) -> dict:
     ep_path = check_approval(spec)
     tmp = outside_repo(job['id'], 'classified')
     panels, out = tmp / 'panels', tmp / 'job'
+    episode = read_json(ep_path)
+    overrides = spec.get('panel_overrides') or {}
+    if overrides:
+        beats = {b['id']: b for b in episode['beats']}
+        if not set(overrides) <= set(beats):
+            raise StageError('EPISODE', 'The approved scene board no longer matches this FILE. Review it again.')
+        for bid, panel in overrides.items():
+            beats[bid]['panel'] = panel
+        tmp.mkdir(parents=True, exist_ok=True)
+        ep_path = tmp / ep_path.name
+        ep_path.write_text(json.dumps(episode, ensure_ascii=False), encoding='utf-8')
     progress('research', 0.05, f"FILE {spec.get('number')}: the panels from your Drive")
     _run([sys.executable, str(COMIC / 'drive_fetch.py'), '--file', spec['file'], '--out', str(panels), '--report', str(tmp / 'fetch.json')], log, code='PANELS')
-    check_classified_panels(read_json(ep_path), read_json(tmp / 'fetch.json'))
+    check_classified_panels(episode, read_json(tmp / 'fetch.json'))
     progress('graphics', 0.12, 'Which picture is which (measured)')
     _run([sys.executable, str(COMIC / 'roles.py'), '--panels', str(panels), '--file', spec['file']], log, code='ROLES')
     progress('voice', 0.2, f"Producing — narrator, picture, mix (script {spec.get('script_version')}, approved by {spec.get('approved_by')})")

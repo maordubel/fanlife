@@ -287,6 +287,9 @@ def autofix(s: dict, errs: list[str], ledger: dict) -> dict | None:
         if not mine:
             continue
         v = b.get('visual') if isinstance(b.get('visual'), dict) else {}
+        if v.get('type') == 'illustration' and any('illustration art must be' in e for e in mine):
+            v['art'] = 'gen' if isinstance(v.get('prompt'), str) and len(v['prompt']) >= 20 else 'paper'
+            changed = True
         if any('slug' in e for e in mine) and 'slug' in b:
             b.pop('slug'); changed = True
         for k, word in (('broll', 'unknown broll'), ('camera', 'camera must be'), ('pace', 'pace must be'), ('sfx', 'sfx must be')):
@@ -312,6 +315,27 @@ def autofix(s: dict, errs: list[str], ledger: dict) -> dict | None:
             changed = True
     if any(e.startswith('"motif"') for e in errs) and 'motif' in t:
         t.pop('motif'); changed = True
+    if any(e.startswith('Use hook option 1 verbatim') for e in errs):
+        # The narration is already evidence-checked beat by beat. Derive the review card from it.
+        previous_errors = {e for e in hook_option_errors(t, ledger) if not e.startswith('Use hook option 1 verbatim')}
+        intro, cites = [], []
+        for _, _, beat in beats:
+            line = beat.get('narration')
+            if not isinstance(line, str) or not line.strip():
+                continue
+            intro.extend(re.split(r'(?<=[.!?])\s+', line.strip()))
+            cites.extend(beat.get('claim_ids') or [])
+            for count in (3, 4):
+                opening = ' '.join(intro[:count])
+                if len(intro) >= count and 35 <= len(opening.split()) <= 60:
+                    options = t['hook_options']
+                    previous = options[0]
+                    options[0] = {**previous, 'text': opening, 'claim_ids': list(dict.fromkeys(cites))}
+                    if set(hook_option_errors(t, ledger)) <= previous_errors:
+                        return t
+                    options[0] = previous
+            if len(intro) >= 4:
+                break
     return t if changed else None
 
 

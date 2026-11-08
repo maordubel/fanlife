@@ -1,7 +1,7 @@
 # MAKSIMIR 1990 — THE MATCH THAT WAS NEVER PLAYED
 
 **FanLife: Football Stories | English documentary | Production script and image map**  
-**Status:** owner-approved editorial script, adapted as a CLASSIFIED episode. Every image supplied by the owner in the project Drive folder is approved for use. Use the image mapping and accurate captions to distinguish verified scenes, contextual photos and reconstructions. Do not represent the awarded result as an on-field score.
+**Status:** Revised CLASSIFIED script for editorial approval. Every image supplied by the owner in the project Drive folder is approved for use. Use the image mapping and accurate captions to distinguish verified scenes, contextual photos and reconstructions. Do not represent the awarded result as an on-field score.
 
 **Editorial position:** A football riot reflected an escalating political crisis; it did not start the Yugoslav wars. Its later meaning is contested. Do not invent dialogue, individual motivations, eyewitness testimony, crowd numbers, exact sequence where sources differ, or the precise identities of unverified figures. AI-generated or reconstructed artwork is an illustration, never archival evidence.
 
@@ -13,7 +13,7 @@
 
 A football match never began, yet its images became a symbol of a country in crisis — here is what happened beyond the famous photograph. Dinamo Zagreb and Red Star Belgrade were supposed to meet at Maksimir. Instead, violence overtook the stadium. But what does the picture really tell us, and what did it leave out?
 
-The story is often sold as the day a football match started a war. It is a powerful line. It is also too simple. To understand what happened here, we have to go back before the photographs — and then look carefully at everything that happened after them.
+A photograph gives you an instant. This story needs an afternoon. Pull back from the picture and the first clue is the pitch itself. The players were there to play. The game never started.
 
 **Picture:** Open on O01 / reference image 24 as a still. Use illustration 11 and the cutout 3 as visibly reconstructed alternatives. Freeze, pull back into a television frame 4. Keep the caption tied to the pictured event.
 
@@ -33,7 +33,7 @@ On the thirteenth of May, nineteen ninety, the teams were due to meet in Zagreb.
 
 Yugoslavia was living through economic strain, political change and rising nationalism. Croatia had just held its first multiparty elections. Franjo Tuđman's Croatian Democratic Union had won a majority. Across the federation, political arguments about power, identity and the future of the republics had become harder to separate from everyday life.
 
-Football did not create those tensions. It gave them a stage where cameras, crowds and old rivalries could bring them into sharp view.
+Put the election result on one side of the board and the fixture on the other. They belong to the same spring. The ballot explains the pressure around the stadium. The fixture tells us what everyone was supposed to be there for.
 
 **Picture:** Tuđman cutout 10 and Milošević cutout 9 appear with names and positions only when supported by the source record; show as graphic portraits, not proof either was at the stadium. Use the blank paper and television 4 for newspaper-style transitions. No fabricated headlines or quotations.
 
@@ -53,19 +53,19 @@ Accounts differ on responsibility and on the sequence of individual moments. Wha
 
 As the situation worsened, the pitch — the place meant for the teams — filled with people who had come there for entirely different reasons. Police moved among supporters. Players who were preparing for the match found themselves watching a stadium in crisis.
 
-For someone seeing the images years later, it is easy to mistake a frozen frame for the whole afternoon. It was one fragment of a much larger, confused and violent sequence.
+Start wide. A football ground is designed to tell you where to look. That afternoon the action was no longer organised around a ball. The still we remember can show only one corner of it.
 
-**Picture:** Reference 21 and reconstruction 15: escorted figure and police. Reference 22 and reconstruction 14: wide scene. Use short reframes and paper transitions. Confirm date and ownership before calling either photograph an image from that day.
+**Picture:** Reference 21 and reconstruction 15: escorted figure and police. Reference 22 and reconstruction 14: wide scene. Use short reframes and paper transitions. Use a context caption unless the date is supported.
 
 ## 6. Boban
 
 **Voiceover:**
 
-Dinamo's captain, Zvonimir Boban, was among the players still visible on the field. During the disorder, he attacked a police officer. The moment was photographed, filmed and reproduced so often that it became the most recognisable image of the day.
+In the middle of that wider scene is Dinamo's captain, Zvonimir Boban. Hold the original frame. Boban is confronting a police officer. That encounter was filmed and photographed, then reproduced until it came to stand for the whole afternoon.
 
 Many Dinamo supporters came to see Boban's action as an act of resistance. Others have told the events differently. The footage records the confrontation; the meanings attached to it were built and contested over the years that followed.
 
-**Picture:** O01 / 24 if cleared. The illustrated recreation 11 and isolated action 3 can build to it but must be identified as reconstructions. The apparent broadcast-style image 17 is an illustration unless its source proves otherwise. Boban cutouts 5 and 6 are alternate stylised versions, not independent historical evidence.
+**Picture:** O01 / 24 as an original still. The illustrated recreation 11 and isolated action 3 can build to it but must be identified as reconstructions. The apparent broadcast-style image 17 is an illustration unless its source proves otherwise. Boban cutouts 5 and 6 are alternate stylised versions, not independent historical evidence.
 
 ## 7. The faces around the frame
 
@@ -73,7 +73,7 @@ Many Dinamo supporters came to see Boban's action as an act of resistance. Other
 
 A famous image can make everyone outside it disappear. The day involved supporters, police, players and people trying to get out of danger. Some saw what happened as proof that the authorities had failed to protect them. Others disputed those accounts.
 
-The officer involved has been identified in later reporting as Refik Ahmetović. His identity complicates any easy attempt to reduce every person on the pitch to a single ethnic label. The real people in this story deserve more care than a myth allows.
+The officer has a name too. Later reporting identifies him as Refik Ahmetović. That name belongs on its own card, beside Boban’s. The photograph records a confrontation between two people. The larger story still has room for the people beyond its edges.
 
 **Picture:** Officer cutout 1 and helmet/baton 2 as symbolic illustration, not confirmed portraits of Ahmetović. Use O04 / 21 and O05 / 20 only after source and caption checks. The man in red jacket 8 is unidentified: do not attach a name or role without verification.
 
@@ -105,7 +105,7 @@ For many Dinamo supporters, Maksimir became a symbol of resistance and a marker 
 
 The question is not whether the afternoon mattered. It did. The question is how we remember it without letting the most dramatic sentence erase everything around it.
 
-A match was scheduled. A stadium erupted. A photograph endured. And the football that was supposed to explain the day never began.
+Return to the fixture card. Dinamo Zagreb. Red Star Belgrade. Maksimir. The date is still there. The space for the score is empty. What survived was the image, and the argument over what it meant.
 
 **Picture:** Return to 24 or its labelled reconstruction 11; dissolve to the television cutout 4, then an empty graphic frame. End with an honest FanLife invitation. Use 12 and 23 only as context pending provenance. Close without inventing a final score or asserting that football caused the war.
 

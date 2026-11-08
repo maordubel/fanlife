@@ -6,8 +6,8 @@
   "fps": 25,
   "grade": 0.4,
   "script": "docs/fanlife/classified/file02-maksimir.script.md",
-  "script_version": "owner-approved-hooks-2026-11-07",
-  "approved": true,
+  "script_version": "editorial-vox-2026-11-08",
+  "approved": false,
   "minutes": 7.0,
   "note": "The match was never played. Artwork is reconstruction; owner-selected photographs require accurate captions and image provenance. Never present the administrative award as a played score.",
   "beats": [
@@ -30,7 +30,7 @@
     {
       "id": "b01b",
       "panel": "f02-p01-cold-open",
-      "say": "The story is often sold as the day a football match started a war. It is a powerful line. It is also too simple. To understand what happened here, we have to go back before the photographs — and then look carefully at everything that happened after them.",
+      "say": "A photograph gives you an instant. This story needs an afternoon. Pull back from the picture and the first clue is the pitch itself. The players were there to play. The game never started.",
       "dur": 23.4,
       "chapter": null,
       "mood": "tense",
@@ -93,7 +93,7 @@
     {
       "id": "b03b",
       "panel": "f02-p02-city-1990",
-      "say": "Football did not create those tensions. It gave them a stage where cameras, crowds and old rivalries could bring them into sharp view.",
+      "say": "Put the election result on one side of the board and the fixture on the other. They belong to the same spring. The ballot explains the pressure around the stadium. The fixture tells us what everyone was supposed to be there for.",
       "dur": 11.2,
       "chapter": null,
       "mood": "tense",
@@ -156,7 +156,7 @@
     {
       "id": "b05b",
       "panel": "f02-p09-water-cannon",
-      "say": "For someone seeing the images years later, it is easy to mistake a frozen frame for the whole afternoon. It was one fragment of a much larger, confused and violent sequence.",
+      "say": "Start wide. A football ground is designed to tell you where to look. That afternoon the action was no longer organised around a ball. The still we remember can show only one corner of it.",
       "dur": 15.1,
       "chapter": null,
       "mood": "tense",
@@ -172,7 +172,7 @@
     {
       "id": "b06a",
       "panel": "f02-owner-kick-photo",
-      "say": "Dinamo's captain, Zvonimir Boban, was among the players still visible on the field. During the disorder, he attacked a police officer. The moment was photographed, filmed and reproduced so often that it became the most recognisable image of the day.",
+      "say": "In the middle of that wider scene is Dinamo's captain, Zvonimir Boban. Hold the original frame. Boban is confronting a police officer. That encounter was filmed and photographed, then reproduced until it came to stand for the whole afternoon.",
       "dur": 19.5,
       "chapter": "6. Boban",
       "mood": "tense",
@@ -220,7 +220,7 @@
     {
       "id": "b07b",
       "panel": "f02-p12-shield",
-      "say": "The officer involved has been identified in later reporting as Refik Ahmetović. His identity complicates any easy attempt to reduce every person on the pitch to a single ethnic label. The real people in this story deserve more care than a myth allows.",
+      "say": "The officer has a name too. Later reporting identifies him as Refik Ahmetović. That name belongs on its own card, beside Boban’s. The photograph records a confrontation between two people. The larger story still has room for the people beyond its edges.",
       "dur": 21.0,
       "chapter": null,
       "mood": "tense",
@@ -330,7 +330,7 @@
     {
       "id": "b10c",
       "panel": "f02-owner-kick-art",
-      "say": "A match was scheduled. A stadium erupted. A photograph endured. And the football that was supposed to explain the day never began.",
+      "say": "Return to the fixture card. Dinamo Zagreb. Red Star Belgrade. Maksimir. The date is still there. The space for the score is empty. What survived was the image, and the argument over what it meant.",
       "dur": 10.7,
       "chapter": null,
       "mood": "somber",

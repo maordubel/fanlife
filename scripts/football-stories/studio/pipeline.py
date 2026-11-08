@@ -203,6 +203,13 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     # 2 script
     step('script', 0.1, 'Writing the film')
     sp_ = job_dir / 'script.json'
+    editorial_review = None
+    if brief.get('editorial'):
+        from . import editorial
+        selected, editorial_review = editorial.prepare_script(job_dir, brief, ledger, cache, log)
+        if selected is None:
+            return {'state': 'review', 'stage': 'script', 'editorial': editorial_review}
+        write_json(sp_, selected)
     if not sp_.exists():
         if script_file:
             s = read_json(script_file)
@@ -263,6 +270,11 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from . import hyperframes
     if plan['engine'] == 'vox' and hyperframes.wanted(brief):
         plan['engine'] = hyperframes.ENGINE   # VOX drawn by HyperFrames (prototype; look 'vox-hf' or STORIES_VOX_HF=1)
+    if editorial_review is not None:
+        plan, review = editorial.review_plan(job_dir, brief, ed, plan, editorial_review)
+        if review is not None:
+            step('edit', 0.39, 'Scene board ready for review')
+            return {'state': 'review', 'stage': 'edit', 'editorial': review}
     from .common import sha256_json
     fingerprint = sha256_json({'version': media_assets.VERSION, 'plan': plan, 'media': ledger['media_assets']})
     media_assets.refresh_render(job_dir, fingerprint)

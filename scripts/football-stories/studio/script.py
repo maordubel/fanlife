@@ -113,10 +113,10 @@ def beat_set(ledger: dict) -> str:
 def art_ok(key, ledger: dict, *, allow_gen: bool = False) -> bool:
     """A library piece, an owner beat piece made for THIS club and season, or (for illustrations) a generated one."""
     from .paper import beat_path, clip_path, cut_path
-    if key in LIBRARY_ART or (allow_gen and key == 'gen'):
-        return True
     if not isinstance(key, str):
         return False
+    if key in LIBRARY_ART or (allow_gen and key == 'gen'):
+        return True
     for kind, find in (('beat', beat_path), ('clip', clip_path), ('cut', cut_path)):
         for set_id in (beat_set(ledger), *(ledger.get('art_sets') or []), 'common'):
             if key.startswith(f'{kind}:{set_id}/') and find(key) is not None:

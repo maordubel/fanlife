@@ -51,6 +51,24 @@ describe('Studio v3 — three scripts, one click',()=>{
  })
 })
 
+describe('Editorial approval gates',()=>{
+ const brief=validateBrief({club_id:'aek',season:'2002/03',duration:5,review:'editorial'},clubs)
+ const base=newJob('job-edit-0001',brief,palette,'owner','key-edit-0001',now)
+ const drafts=[{option:1,title:'Test',revision:'draft-1',chapters:[{title:'Opening',beats:[{id:'0:0',text:'The match.',evidence:[]}]}]}]
+ it('checks the script revision and requires a second approval for the exact scene board',()=>{
+  const draft=finish(claim(base,'writer',now),'writer',{state:'needs_review',stage:'script',editorial:{drafts}},now)
+  expect(()=>ownerAct(draft,{action:'approve_script'},'owner',now)).toThrow()
+  expect(()=>ownerAct(draft,{action:'editorial_script',option:1,revision:'old',edits:{}},'owner',now)).toThrow(/draft changed/)
+  const approved=ownerAct(draft,{action:'editorial_script',option:1,revision:'draft-1',edits:{'0:0':'The match begins.'}},'owner',now)
+  expect(approved).toMatchObject({state:'queued',editorialRequest:{action:'editorial_script'}})
+  const board=finish(claim(approved,'planner',now),'planner',{state:'needs_review',stage:'edit',editorial:{drafts,plan:'plan-1',
+   scenes:[{id:'0',chapter:'Opening',text:'The match begins.',seconds:3,visual:'illustration',movement:'Push',alternatives:['paper']}]}},now)
+  expect(()=>ownerAct(board,{action:'editorial_plan',revision:'old',images:{},order:['0'],approved:true},'owner',now)).toThrow(/board changed/)
+  expect(()=>ownerAct(board,{action:'editorial_plan',revision:'plan-1',images:{'0':'missing'},order:['0'],approved:true},'owner',now)).toThrow(/picture offered/)
+  expect(ownerAct(board,{action:'editorial_plan',revision:'plan-1',images:{},order:['0'],approved:true},'owner',now)).toMatchObject({state:'queued',editorialRequest:{approved:true}})
+ })
+})
+
 describe('Studio v3 — the catalog',()=>{
  const m=(id:string,date:string,tags:string[],o='Real Madrid',season='2002/03')=>({id,date,season,competition:'Champions League',stage:null,home:'AEK Athens',away:o,score:'3–3',outcome:'draw' as const,opponent:o,side:'home' as const,scorers:true,tags})
  const cat:Catalog={club_id:'aek',seasons:{'2002/03':3,'2001/02':1},opponents:[],matches:[m('a','2002-09-01',[]),m('b','2002-10-02',['europe','goals']),m('c','2003-05-01',['final'],'Olympiacos'),m('d','2001-11-01',['derby'],'Olympiacos','2001/02')]}

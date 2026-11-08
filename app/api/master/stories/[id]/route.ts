@@ -9,9 +9,10 @@ export const runtime='nodejs'
 /** Signed links (one hour) to a finished film's files, for the owner's eyes only. The master's chunks only on request. */
 async function links(job:Job,master:boolean){
  const a=job.artefacts
- if(!a)return {}
- const paths=[a.preview?.path,a.contact?.path,a.package?.path,a.captions?.srt.path,a.captions?.vtt.path,...(a.thumbnails??[]).map(t=>t.path),...(a.shorts??[]).map(x=>x.path),...(master?(a.master?.chunks??[]).map(c=>c.path):[])].filter((p):p is string=>!!p)
- return signedDownload(paths)
+ const previews=(job.editorial?.scenes??[]).map(s=>s.preview).filter(p=>p?.startsWith(`jobs/${job.id}/review-`))
+ const paths=[...previews,a?.preview?.path,a?.contact?.path,a?.package?.path,a?.captions?.srt.path,a?.captions?.vtt.path,...(a?.thumbnails??[]).map(t=>t.path),...(a?.shorts??[]).map(x=>x.path),...(master?(a?.master?.chunks??[]).map(c=>c.path):[])].filter((p):p is string=>!!p)
+ if(!paths.length)return {}
+ return signedDownload([...new Set(paths)])
 }
 export async function GET(r:Request,{params}:{params:{id:string}}){
  if(!adminFromRequest(r))return json({error:'Not authorised.'},401)
@@ -24,7 +25,7 @@ export async function GET(r:Request,{params}:{params:{id:string}}){
   return json({job:cur.job,urls})
  }catch(e){return fail(e)}
 }
-const ACTIONS=new Set(['pause','resume','cancel','retry','approve_script','choose_script','upload_started','upload_done','upload_uncertain','upload_reset','art_added','social_schedule','social_cancel'])
+const ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','art_added','social_schedule','social_cancel'])
 export async function POST(r:Request,{params}:{params:{id:string}}){
  const s=adminFromRequest(r)
  if(!s)return json({error:'Not authorised.'},401)
