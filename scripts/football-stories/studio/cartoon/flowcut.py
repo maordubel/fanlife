@@ -68,7 +68,7 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,{font},92,&H00F2FBFF,&H00F2FBFF,&H000F1315,&H64000000,0,0,0,0,100,100,1,0,1,9,4,8,60,60,330,1
+Style: Cap,{font},112,&H00F2FBFF,&H00F2FBFF,&H000F1315,&H64000000,0,0,0,0,100,100,1,0,1,9,4,8,60,60,330,1
 Style: Tag,{font},30,&H000F1315,&H000F1315,&H00F2FBFF,&H00F2FBFF,0,0,0,0,100,100,4,0,3,10,0,7,56,56,196,1
 Style: Stamp,{font},120,{bgr(accent)},{bgr(accent)},{bgr(accent)},&H00000000,0,0,0,0,100,100,6,0,1,6,0,5,60,60,0,1
 
@@ -85,7 +85,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             parts.append(f"{{\\alpha&HFF&\\fscx60\\fscy60\\t({ms},{ms + 140},\\alpha&H00&\\fscx112\\fscy112)\\t({ms + 140},{ms + 240},\\fscx100\\fscy100){col}}}{w['w'].upper()}")
         ev.append(f"Dialogue: 1,{_ts(q['t0'])},{_ts(end)},Cap,,0,0,0,,{' '.join(parts)}")
     for t, txt in stamps:
-        ev.append(f"Dialogue: 3,{_ts(t)},{_ts(duration)},Stamp,,0,0,0,,{{\\pos({W // 2},{int(H * 0.56)})\\frz8\\fscx260\\fscy260\\t(0,160,\\fscx100\\fscy100)\\bord8\\3c{bgr(accent)}}}{txt}")
+        ev.append(f"Dialogue: 3,{_ts(t)},{_ts(duration)},Stamp,,0,0,0,,{{\\pos({W // 2},{int(H * 0.56)})\\frz8\\fscx260\\fscy260\\t(0,160,\\fscx100\\fscy100)\\bord7\\3c&H00F2FBFF&\\shad5}}{txt}")
     return head + '\n'.join(ev) + '\n'
 
 
@@ -101,11 +101,13 @@ def segment(src: Path, out: Path, need: float, still: bool) -> None:
               '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-pix_fmt', 'yuv420p', str(out)])
         return
     have = _dur(src)
+    # a short line gets the END of its clip — where the action pays off (the shot goes in, the man falls)
+    start = max(0.0, have - need - 0.3) if need < have * 0.5 else 0.0
     speed = min(1.25, need / have) if need > have else 1.0
     pad = max(0.0, need - have * speed)
     v = f"setpts={speed:.4f}*PTS,{vf}" + (f',tpad=stop_mode=clone:stop_duration={pad + 0.1:.3f}' if pad > 0 else '')
     a = f"atempo={1 / speed:.4f},apad" if speed != 1.0 else 'apad'
-    _run(['ffmpeg', '-y', '-v', 'error', '-i', str(src), '-t', f'{need:.3f}', '-filter_complex', f'[0:v]{v}[v];[0:a]{a}[a]',
+    _run(['ffmpeg', '-y', '-v', 'error', '-ss', f'{start:.3f}', '-i', str(src), '-t', f'{need:.3f}', '-filter_complex', f'[0:v]{v}[v];[0:a]{a}[a]',
           '-map', '[v]', '-map', '[a]', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-pix_fmt', 'yuv420p',
           '-c:a', 'aac', '-ar', '48000', '-ac', '2', str(out)])
 
