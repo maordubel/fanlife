@@ -11,10 +11,10 @@ on:
       file:
         description: 'Which FILE'
         type: choice
-        options: [file01]
+        options: [file01, file02, file03]
         default: file01
       approved:
-        description: 'I have read and approve this FILE''s script (FILE 01: draft 2, docs/fanlife/classified/file01-the-bottle.script.md)'
+        description: 'I have read and approve the selected FILE script in docs/fanlife/classified/'
         type: boolean
         default: false
       telegram:
