@@ -390,10 +390,11 @@ def run_once(st: Studio, root: Path, log) -> bool:
 
     try:
         kind = job.get('kind') or 'film'
-        if kind in ('classified', 'vlog', 'promo'):
+        if kind in ('classified', 'vlog', 'promo', 'short'):
             # the studio desk's other productions (studio/kinds.py): same claim, progress, waiting and failure handling
             from . import kinds
-            fin = {'classified': kinds.run_classified, 'vlog': kinds.run_vlog, 'promo': kinds.run_promo}[kind](st, job, jd, progress, log)
+            fin = {'classified': kinds.run_classified, 'vlog': kinds.run_vlog, 'promo': kinds.run_promo,
+                   'short': kinds.run_short}[kind](st, job, jd, progress, log)
             progress('done', 1.0, 'Finished')
             st.call({'op': 'finish', 'id': jid, **fin}, timeout=120)
             log(f'Job {jid} ({kind}): {fin["state"]}')

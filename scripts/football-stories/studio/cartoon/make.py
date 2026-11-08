@@ -41,15 +41,19 @@ def voice(text: str, work: Path, cache: Path, fake: bool = False) -> tuple[Path,
             dur = w.getnframes() / w.getframerate()
         return wav, meta['words'], dur
     from .. import voice as V
-    prev = os.environ.get('STORIES_KOKORO_VOICE')
-    os.environ['STORIES_KOKORO_VOICE'] = os.environ.get('STORIES_SHORTS_VOICE', 'am_michael')
+    # a Short's narrator: Gemini's upbeat storyteller (free tier) or, when it is spent, Kokoro's Michael
+    want = {'STORIES_KOKORO_VOICE': os.environ.get('STORIES_SHORTS_VOICE', 'am_michael'),
+            'STORIES_GEMINI_VOICE': os.environ.get('STORIES_SHORTS_GEMINI_VOICE', 'Puck'), 'STORIES_GEMINI_STYLE': 'short'}
+    prev = {k: os.environ.get(k) for k in want}
+    os.environ.update(want)
     try:
-        v = V.voice_script({'chapters': [{'beats': [{'narration': text}]}]}, work / 'voice', cache, lambda _m: None)
+        v = V.voice_script({'chapters': [{'beats': [{'narration': text}]}]}, work / 'voice', cache, lambda m: print(m, flush=True))
     finally:
-        if prev is None:
-            os.environ.pop('STORIES_KOKORO_VOICE', None)
-        else:
-            os.environ['STORIES_KOKORO_VOICE'] = prev
+        for k, val in prev.items():
+            if val is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = val
     b = v['beats'][0]
     return work / 'voice' / b['file'], b['words'], float(b['duration'])
 

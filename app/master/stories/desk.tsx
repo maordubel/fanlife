@@ -14,6 +14,9 @@ import {VlogTab} from './VlogTab'
 import {MarketingTab} from './MarketingTab'
 import {DirectorsTab} from './DirectorsTab'
 import {StatusTab} from './StatusTab'
+import {IdeasTab} from './IdeasTab'
+import {ShortsTab} from './ShortsTab'
+import {useRouter} from 'next/navigation'
 import css from './studio.module.css'
 
 /**
@@ -23,7 +26,7 @@ import css from './studio.module.css'
  * directors|status`. Every tab opens with its banner (lib/stories/banners.ts — computed from real state only), then
  * its own maker, then its own jobs. One queue and one worker underneath (lib/stories/jobs.ts → kind).
  */
-const TAB_TEXT:Record<DeskTab,string>={docs:'Documentary',classified:'CLASSIFIED',vlog:'VLOG · I was there',marketing:'Marketing',directors:'Directors',status:'Status'}
+const TAB_TEXT:Record<DeskTab,string>={ideas:'Ideas',shorts:'Animated Shorts',docs:'Documentary',classified:'CLASSIFIED',vlog:'VLOG · I was there',marketing:'Marketing',directors:'Directors',status:'Status'}
 export type DeskData={classified:ClassifiedFile[]|null;pitches:PitchDay[]|null;pitchDesk:PitchDesk|null;lights:SocialLights|null;plan:PlanPost[]|null}
 
 export function StoriesDesk({view}:{view:DeskTab}){
@@ -43,8 +46,9 @@ export function StoriesDesk({view}:{view:DeskTab}){
  useEffect(()=>{const t=setInterval(()=>{if(document.visibilityState==='visible')void load()},live?30000:180000);return()=>clearInterval(t)},[live,load])
  useEffect(()=>{const t=setInterval(()=>{if(document.visibilityState==='visible')void loadDesk()},180000);return()=>clearInterval(t)},[loadDesk])
  const facts:Facts={now,health,jobs,classified:desk?.classified,pitchDesk:desk?.pitchDesk,lights:desk?.lights,plan:desk?.plan}
- const made=async(id:string)=>{setOpen(id);await load()}
- const list=(k:'film'|'classified'|'vlog'|'promo',empty:string)=><JobList jobs={jobs} kind={k} open={open} setOpen={setOpen} onChange={load} empty={empty}/>
+ const router=useRouter()
+ const made=async(id:string,go?:string)=>{setOpen(id);await load();if(go&&go!==view)router.push(`/master/admin?section=studio&view=${go}`,{scroll:false})}
+ const list=(k:'film'|'classified'|'vlog'|'promo'|'short',empty:string)=><JobList jobs={jobs} kind={k} open={open} setOpen={setOpen} onChange={load} empty={empty}/>
 
  return <div className={css.root}>
   <header className={css.mast}><div className={css.wrap}>
@@ -56,6 +60,8 @@ export function StoriesDesk({view}:{view:DeskTab}){
    <nav aria-label="Studio" className={css.tabs}>{DESK_TABS.map(t=><Link key={t} href={`/master/admin?section=studio&view=${t}`} scroll={false} aria-current={view===t?'page':undefined} className={`${css.tab} min-h-tap`}>{TAB_TEXT[t]}{badge(t,jobs,desk)}</Link>)}</nav>
    {cleanupPending>0&&<p role="status" className={css.hint}>{cleanupPending} deleted production(s): storage cleanup is queued or awaiting its final sweep. You can leave this page; cleanup retries automatically.</p>}
    {error&&<p role="alert" className={css.alert}>{error}</p>}
+   {view==='ideas'&&<IdeasTab facts={facts} clubs={clubs} onMade={made}/>}
+   {view==='shorts'&&<ShortsTab facts={facts} clubs={clubs} jobs={jobs} onChange={load} onMade={made}>{list('short','No animated Short yet. Make the first one above.')}</ShortsTab>}
    {view==='docs'&&<><DeskBanner b={docsBanner(facts)}/><div className={css.grid}><NewFilm clubs={clubs} onMade={made}/>{list('film','No documentaries yet. Make the first one.')}</div></>}
    {view==='classified'&&<ClassifiedTab facts={facts} onMade={made}>{list('classified','No CLASSIFIED FILE produced yet.')}</ClassifiedTab>}
    {view==='vlog'&&<VlogTab facts={facts} clubs={clubs} onMade={made}>{list('vlog','No I WAS THERE episode yet.')}</VlogTab>}
@@ -69,7 +75,7 @@ export function StoriesDesk({view}:{view:DeskTab}){
 /** A count on a tab when something there waits for the owner: scripts to choose, an open pitch. */
 function badge(t:DeskTab,jobs:Job[]|null,desk:DeskData|null){
  const waiting=(k:string)=>(jobs??[]).filter(j=>jobKind(j)===k&&j.state==='needs_review'&&j.stage==='script').length
- const n=t==='docs'?waiting('film'):t==='directors'?(desk?.pitches??[]).flatMap(d=>d.rounds.flatMap(r=>r.pitches)).filter(p=>p.state==='open').length:0
+ const n=t==='docs'?waiting('film'):t==='shorts'?(jobs??[]).filter(j=>jobKind(j)==='short'&&j.state==='needs_review'&&j.stage==='graphics').length:t==='directors'?(desk?.pitches??[]).flatMap(d=>d.rounds.flatMap(r=>r.pitches)).filter(p=>p.state==='open').length:0
  return n?<span className={css.tabBadge} aria-label={`${n} waiting for you`}>{n}</span>:null
 }
 
@@ -84,7 +90,7 @@ export function DeskBanner({b}:{b:Banner}){
  </section>
 }
 
-export function JobList({jobs,kind,open,setOpen,onChange,empty}:{jobs:Job[]|null;kind:'film'|'classified'|'vlog'|'promo';open:string|null;setOpen:(id:string|null)=>void;onChange:()=>void;empty:string}){
+export function JobList({jobs,kind,open,setOpen,onChange,empty}:{jobs:Job[]|null;kind:'film'|'classified'|'vlog'|'promo'|'short';open:string|null;setOpen:(id:string|null)=>void;onChange:()=>void;empty:string}){
  const rows=(jobs??[]).filter(j=>jobKind(j)===kind)
  return <section aria-label="Jobs" className={css.list}>
   {jobs===null?<div className={css.panel}><p className={css.empty}>Loading…</p></div>:rows.length===0?<div className={css.panel}><p className={css.empty}>{empty}</p></div>:

@@ -2,6 +2,7 @@
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react'
 import type {Job,Privacy} from '@/lib/stories/jobs'
 import type {Health} from '@/lib/stories/health'
+import type {Evidence} from '@/lib/stories/catalog'
 import {STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
 import {EditorialRoom,EditorialSteps} from './EditorialRoom'
@@ -24,7 +25,7 @@ export async function api(path:string,init?:RequestInit){
 }
 
 type Kind='season'|'match'|'tie'|'rivalry'
-export type Match={id:string;date:string;season:string;competition:string|null;stage:string|null;home:string;away:string;score:string;outcome:'win'|'draw'|'loss';opponent:string;tags:string[]}
+export type Match={id:string;date:string;season:string;competition:string|null;stage:string|null;home:string;away:string;score:string;outcome:'win'|'draw'|'loss';opponent:string;tags:string[];evidence?:Evidence}
 type Opp={name:string;played:number;won:number;drawn:number;lost:number;first:string;last:string;derby:boolean}
 const KIND_CARDS:{k:Kind;title:string;line:string}[]=[
  {k:'match',title:'One match',line:'The night itself — the build-up, the minutes that decided it, what it meant.'},
@@ -41,7 +42,7 @@ const STYLE_CARDS:{k:string;title:string;line:string}[]=[
  {k:'night',title:'Night broadcast',line:'Floodlights, terraces and rain in moving footage; a cool grade.'},
 ]
 const TONE_CHIPS:[string,string][]=[['auto','Let the story decide'],['triumph','Triumph'],['heartbreak','Heartbreak'],['underdog','Underdog'],['rivalry','Rivalry'],['nostalgia','Nostalgia'],['drama','Drama']]
-const FILTERS:[string,string][]=[['big','Big nights'],['final','Finals'],['derby','Derbies'],['europe','Europe'],['','All']]
+const FILTERS:[string,string][]=[['rich','Most material'],['big','Big nights'],['final','Finals'],['derby','Derbies'],['europe','Europe'],['','All']]
 export const dayOf=(d:string)=>new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})
 const TAG_TEXT:Record<string,string>={final:'Final',derby:'Derby',europe:'Europe','big-score':'Big score',penalties:'Penalties','extra-time':'Extra time',goals:'Goals'}
 
@@ -168,10 +169,15 @@ export function MatchPicker({club,multi,picked,setPicked}:{club:Club;multi:boole
   <ul className={css.matches} aria-busy={loading}>{rows.map(m=><li key={m.id}><button type="button" className={`${css.match} min-h-tap`} aria-pressed={on(m)} onClick={()=>toggle(m)}>
    <span className={css.mDate}>{dayOf(m.date)}<small>{m.competition??''}{m.stage?` · ${m.stage}`:''}</small></span>
    <span className={css.mScore}>{m.home} <b data-o={m.outcome}>{m.score}</b> {m.away}</span>
-   {m.tags.length?<span className={css.mTags}>{m.tags.filter(t=>TAG_TEXT[t]).map(t=><i key={t}>{TAG_TEXT[t]}</i>)}</span>:null}
+   {m.tags.length||m.evidence?.level!=='thin'?<span className={css.mTags}>{m.evidence&&m.evidence.level!=='thin'?<EvidenceBadge e={m.evidence}/>:null}{m.tags.filter(t=>TAG_TEXT[t]).map(t=><i key={t}>{TAG_TEXT[t]}</i>)}</span>:null}
   </button></li>)}</ul>
   <p className={css.hint}>{loading?'Reading the archive…':rows.length?`Showing ${rows.length} of ${total}. Narrow it with a season or a search.`:'No match fits. Try All, or another season.'}</p>
  </div>
+}
+
+/** How much the studio holds about a night (studio/evidence.py), as one badge: the reasons are its title. */
+export function EvidenceBadge({e}:{e:Evidence}){
+ return <i className={css.evidence} data-level={e.level} title={e.has.join(' · ')}>{e.level==='rich'?'★ Rich record':'Good record'}</i>
 }
 
 function OppPicker({club,opp,setOpp}:{club:Club;opp:Opp|null;setOpp:(o:Opp)=>void}){

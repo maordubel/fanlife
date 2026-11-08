@@ -64,11 +64,13 @@ def spoken(text: str, extra: dict | None = None) -> str:
 
 def provider() -> str:
     want = os.environ.get('STORIES_VOICE', '').strip()
-    if want:
+    if want and want != 'auto':
         return want
-    # Free by default: Kokoro runs on the worker. ElevenLabs only when asked for (STORIES_VOICE=elevenlabs) — its free
-    # tier does not cover a full film and the paid one costs money.
-    return 'kokoro'
+    # Free by default (owner, 8.11.2026: "free only"): Gemini's speech model on the free tier when the key is there — it
+    # acts the line — and Kokoro, local, whenever Gemini is spent, refuses or slips a word. ElevenLabs only when asked
+    # for (STORIES_VOICE=elevenlabs): its free tier does not cover a film and the paid one costs money.
+    from . import gemini_tts
+    return 'gemini' if gemini_tts.available() else 'kokoro'
 
 
 def _wav_write(path: Path, samples, sr: int = SR) -> None:
@@ -177,13 +179,32 @@ def _words_aligned(text: str, a, sr: int, offset: float) -> list[dict]:
 
 # Delivery (owner, 3.11.2026: "narration that expresses emotion — pauses, tension, excitement"). A beat's delivery sets
 # the pace, the silence between sentences and inside them (an ellipsis or a dash is a held breath), and the level.
-DELIVERY = {
-    'hush':    {'speed': 0.86, 'gap': 0.62, 'breath': 0.70, 'gain': 0.82},
-    'tense':   {'speed': 0.92, 'gap': 0.48, 'breath': 0.55, 'gain': 0.90},
-    'normal':  {'speed': 1.00, 'gap': 0.30, 'breath': 0.40, 'gain': 0.92},
-    'punch':   {'speed': 0.96, 'gap': 0.55, 'breath': 0.45, 'gain': 0.98},
-    'excited': {'speed': 1.09, 'gap': 0.16, 'breath': 0.28, 'gain': 1.00},
+DELIVERY = {  # pitch: a hush sits a little lower, excitement a little higher (a person's voice rises when it races)
+    'hush':    {'speed': 0.86, 'gap': 0.62, 'breath': 0.70, 'gain': 0.82, 'pitch': 0.985, 'arc': 0.0},
+    'tense':   {'speed': 0.92, 'gap': 0.48, 'breath': 0.55, 'gain': 0.90, 'pitch': 1.0, 'arc': 0.018},
+    'normal':  {'speed': 1.00, 'gap': 0.30, 'breath': 0.40, 'gain': 0.92, 'pitch': 1.0, 'arc': 0.0},
+    'punch':   {'speed': 0.96, 'gap': 0.55, 'breath': 0.45, 'gain': 0.98, 'pitch': 0.995, 'arc': 0.0},
+    'excited': {'speed': 1.09, 'gap': 0.16, 'breath': 0.28, 'gain': 1.00, 'pitch': 1.03, 'arc': 0.012},
 }
+GOAL_WORDS = re.compile(r"\b(scores?|scored|goal|wins?|won|champions?|equalis\w+|winner|it's in|in!)\b", re.I)
+
+
+def repitch(a, factor: float):
+    """Raise (factor > 1) or lower the voice by playing it `factor` times faster; the caller asked the model for a line
+    `factor` times slower, so the length is what it was. Small factors only: a percent or three."""
+    import numpy as np
+    if abs(factor - 1) < 1e-3 or len(a) < 2:
+        return a
+    n = max(2, int(round(len(a) / factor)))
+    return np.interp(np.linspace(0, len(a) - 1, n), np.arange(len(a)), a).astype('float32')
+
+
+def landing(sentence: str, pr) -> list[str]:
+    """A name that ends a sentence after a comma is landed on its own beat: 'and the man who scored, Gili Landau.'"""
+    m = re.match(r'^(.*\S),\s+(\S+(?:\s+\S+){0,2}?)([.!?…]?["”’]?)$', sentence.strip())
+    if m and pr.names_in(m.group(2)) and len(m.group(1).split()) >= 3:
+        return [m.group(1) + ',', m.group(2) + m.group(3)]
+    return [sentence]
 MOOD_DELIVERY = {'sad': 'hush', 'minor': 'normal', 'build': 'tense', 'tense': 'tense', 'joy': 'excited',
                  'triumph': 'excited', 'anthem': 'punch'}
 
@@ -261,8 +282,12 @@ def kokoro_beat(text: str, out: Path, extra: dict | None, delivery: str = 'norma
     chunks, words, t, engine = [], [], 0.0, 'espeak'
     sents = sentences(text)
     for i, s in enumerate(sents):
-        parts = clauses(s)
-        pace = _pace_for(s, rng)
+        parts = [x for c in clauses(s) for x in landing(c, pr)]
+        pace = _pace_for(s, rng) * (1 + min(dv.get('arc', 0) * i, 0.06))  # a build gathers pace sentence by sentence
+        pitch = dv.get('pitch', 1.0) * (1.015 if delivery in ('excited', 'normal') and (s.rstrip().endswith('!') or GOAL_WORDS.search(s)) else 1.0)
+        last_punch = i == len(sents) - 1 and i > 0 and len(s.split()) <= 4
+        if last_punch:
+            pace *= 0.94  # the last short line lands slower
         if breaths and i > 0 and len(s.split()) >= 12 and rng.random() < 0.7:
             b = _breath(rng)
             chunks.append(b)
@@ -270,8 +295,8 @@ def kokoro_beat(text: str, out: Path, extra: dict | None, delivery: str = 'norma
             t += (len(b) + int(SR * 0.06)) / SR
         for j, part in enumerate(parts):
             ph, engine = pronounce.phonemes(spoken(part), pr, k)
-            a, sr = k.create(ph, voice=style, speed=speed * pace, lang='en-gb', is_phonemes=True)
-            a = np.asarray(a, dtype='float32')
+            a, sr = k.create(ph, voice=style, speed=speed * pace / pitch, lang='en-gb', is_phonemes=True)
+            a = repitch(np.asarray(a, dtype='float32'), pitch)
             # trim leading/trailing near-silence so pacing is ours, not the model's
             nz = np.where(np.abs(a) > 0.006)[0]
             if len(nz):
@@ -280,11 +305,13 @@ def kokoro_beat(text: str, out: Path, extra: dict | None, delivery: str = 'norma
             chunks.append(a)
             t += len(a) / SR
             if j < len(parts) - 1:
-                g = np.zeros(int(SR * dv['breath'] * rng.uniform(0.85, 1.15)), dtype='float32')
+                held = 0.55 if part.rstrip().endswith(',') else 1.0  # a landed name: a short beat, not a breath
+                g = np.zeros(int(SR * dv['breath'] * held * rng.uniform(0.85, 1.15)), dtype='float32')
                 chunks.append(g)
                 t += len(g) / SR
         if i < len(sents) - 1:
-            g = np.zeros(int(SR * _gap_for(s, dv['gap'], rng)), dtype='float32')
+            punch_next = i + 1 == len(sents) - 1 and len(sents[i + 1].split()) <= 4
+            g = np.zeros(int(SR * _gap_for(s, dv['gap'], rng) * (1.4 if punch_next else 1.0)), dtype='float32')
             chunks.append(g)
             t += len(g) / SR
     _wav_write(out, np.concatenate(chunks) * dv['gain'])
@@ -326,10 +353,86 @@ def eleven_beat(text: str, out: Path, extra: dict | None) -> dict:
     return {'words': words, 'alignment': 'provider character timestamps', 'voice': f'elevenlabs:{voice}:{model}'}
 
 
+GEMINI_MAX_WORDS = 300  # one request a chapter, split when longer (a few minutes of speech is what one take carries)
+
+
+def _gemini_chunks(script: dict) -> list[list[tuple[int, int, dict]]]:
+    """The narration in takes: a chapter each, a long chapter cut at a beat. Items are (chapter, beat, beat dict)."""
+    out = []
+    for ci, ch in enumerate(script['chapters']):
+        cur, words = [], 0
+        for bi, b in enumerate(ch['beats']):
+            w = len(b['narration'].split())
+            if cur and words + w > GEMINI_MAX_WORDS:
+                out.append(cur)
+                cur, words = [], 0
+            cur.append((ci, bi, b))
+            words += w
+        if cur:
+            out.append(cur)
+    return out
+
+
+def gemini_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict | None = None) -> dict:
+    """The whole narration from Gemini, a chapter a take, cut back into beats at the word where each beat begins.
+    Any failure raises — the caller reads the whole film with Kokoro instead (one narrator a film)."""
+    import numpy as np
+    from . import gemini_tts
+    beats, n = [], 0
+    for take in _gemini_chunks(script):
+        texts = [b['narration'].strip() for _, _, b in take]
+        dls = [delivery_of(b) for _, _, b in take]
+        main = max(set(dls), key=dls.count)
+        scene = ' '.join(f'Paragraph {k + 1} ("{" ".join(t.split()[:5])}…"): {DELIVERY_NOTES_SHORT[d]}.' for k, (t, d) in enumerate(zip(texts, dls)) if d != main)
+        text = '\n\n'.join(spoken(t) for t in texts)
+        key = sha256_json({'p': 'gemini', 'v': gemini_tts.voice_name(), 's': os.environ.get('STORIES_GEMINI_STYLE'), 't': text, 'd': dls, 'x': extra or {}, 'l': pronounce.lexicon_version(), 'r': 1})[:24]
+        wav, meta_p = cache_dir / f'g-{key}.wav', cache_dir / f'g-{key}.json'
+        if not (wav.exists() and meta_p.exists()):
+            meta = gemini_tts.speak(text, wav, main, extra, scene, log)
+            write_json(meta_p, meta)
+        meta = read_json(meta_p)
+        with wave.open(str(wav)) as w:
+            pcm = np.frombuffer(w.readframes(w.getnframes()), dtype='<i2').astype('float32') / 32767
+        words = meta['words']
+        # the written words of each beat, in order: spoken() may change a beat's word count, so count on the spoken text
+        counts = [len(spoken(t).split()) for t in texts]
+        at = 0
+        for (ci, bi, b), c, t in zip(take, counts, texts):
+            ws = words[at:at + c]
+            nxt = words[at + c]['start'] if at + c < len(words) else len(pcm) / SR
+            t0 = max(0.0, ws[0]['start'] - 0.12) if ws else 0.0
+            t1 = min(len(pcm) / SR, (ws[-1]['end'] + nxt) / 2 + 0.05) if ws else t0
+            at += c
+            n += 1
+            dst = out_dir / f'beat-{n:03d}.wav'
+            _wav_write(dst, pcm[int(t0 * SR):int(t1 * SR)])
+            written = t.split()
+            local = [{'w': written[k] if k < len(written) and len(written) == len(ws) else x['w'],
+                      'start': round(x['start'] - t0, 3), 'end': round(x['end'] - t0, 3)} for k, x in enumerate(ws)]
+            beats.append({'n': n, 'chapter': ci, 'beat': bi, 'file': dst.name, 'duration': round(_duration(dst), 3), 'words': local,
+                          'alignment': meta['alignment'], 'voice': meta['voice'], 'delivery': delivery_of(b), 'check': meta.get('check')})
+    total = sum(b['duration'] for b in beats)
+    log(f'Voice: {len(beats)} beats, {total / 60:.1f} minutes of narration (Gemini, checked against the script)')
+    return {'provider': 'gemini', 'beats': beats, 'narration_seconds': round(total, 2)}
+
+
+DELIVERY_NOTES_SHORT = {'hush': 'quiet, slow, close', 'tense': 'low and taut, held pauses', 'normal': 'warm and natural',
+                        'punch': 'a beat of silence, then land it', 'excited': 'faster, brighter, rising'}
+
+
 def voice_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict | None = None) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     cache_dir.mkdir(parents=True, exist_ok=True)
     prov = provider()
+    if prov == 'gemini':
+        try:
+            return gemini_script(script, out_dir, cache_dir, log, extra)
+        except StageError as e:
+            log(f'Voice: Gemini did not read it ({e.code}: {str(e)[:160]}) — the free local narrator reads the whole film')
+            prov = 'kokoro'
+        except Exception as e:  # noqa: BLE001 — a missing tool must never stop a film: the local voice reads it
+            log(f'Voice: Gemini path failed ({type(e).__name__}: {str(e)[:160]}) — the free local narrator reads the whole film')
+            prov = 'kokoro'
     beats, n = [], 0
     for ci, ch in enumerate(script['chapters']):
         for bi, b in enumerate(ch['beats']):
@@ -337,7 +440,7 @@ def voice_script(script: dict, out_dir: Path, cache_dir: Path, log, extra: dict 
             text = b['narration'].strip()
             dl = delivery_of(b)
             key = sha256_json({'p': prov, 'v': os.environ.get('STORIES_ELEVEN_VOICE' if prov == 'elevenlabs' else 'STORIES_KOKORO_VOICE'),
-                               't': spoken(text), 'x': extra or {}, 'l': pronounce.lexicon_version(), 'g': 'misaki' if pronounce.misaki() is not None else 'espeak', 'b': os.environ.get('STORIES_BREATHS', '1'), 'r': 4, **({'d': dl, 's': os.environ.get('STORIES_KOKORO_SPEED')} if dl != 'normal' or os.environ.get('STORIES_KOKORO_SPEED') else {})})[:24]
+                               't': spoken(text), 'x': extra or {}, 'l': pronounce.lexicon_version(), 'g': 'misaki' if pronounce.misaki() is not None else 'espeak', 'b': os.environ.get('STORIES_BREATHS', '1'), 'r': 5, **({'d': dl, 's': os.environ.get('STORIES_KOKORO_SPEED')} if dl != 'normal' or os.environ.get('STORIES_KOKORO_SPEED') else {})})[:24]
             wav = cache_dir / f'{key}.wav'
             meta_p = cache_dir / f'{key}.json'
             if not (wav.exists() and meta_p.exists()):

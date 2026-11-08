@@ -163,3 +163,26 @@
 .root .tab{position:relative;font-size:13px;overflow-wrap:normal;word-break:normal;hyphens:manual}
 .root .tabBadge{position:absolute;inset-block-start:-9px;inset-inline-end:-7px}
 @media (min-width:900px){.root .tab{font-size:14px}}
+/* ── Ideas and animated Shorts (8.11.2026) ── */
+.evidence{font:normal 10px 'Weekly Caps',sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:2px 6px;border:2px solid var(--ink)}
+.evidence[data-level=rich]{background:var(--ink);color:var(--paper)}
+.ideas{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));margin:14px 0}
+.idea{background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:grid;grid-template-rows:auto 1fr auto}
+.ideaHead{background:var(--c,var(--ink));color:var(--on,var(--paper));padding:8px 12px;display:flex;justify-content:space-between;gap:8px;align-items:center;font:normal 12px 'Weekly Caps',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.ideaBody{padding:10px 12px;display:grid;gap:8px;align-content:start}
+.ideaBody h3{margin:0;font:22px 'Weekly Head',sans-serif;text-transform:uppercase;line-height:1.05}
+.ideaBody p{margin:0;font-size:13px}
+.reasons{display:flex;flex-wrap:wrap;gap:4px;margin:0;padding:0;list-style:none}
+.reasons li{font-size:12px;border:1.5px solid var(--ink);padding:1px 6px;background:var(--paper)}
+.ideaGo{display:grid;grid-template-columns:1fr 1fr;border-top:3px solid var(--ink)}
+.ideaGo button{min-height:52px;border:0;background:var(--paper);font:700 14px 'Weekly Head',sans-serif;text-transform:uppercase;cursor:pointer;padding:6px}
+.ideaGo button+button{border-inline-start:3px solid var(--ink);background:var(--red);color:var(--paper)}
+.ideaGo button:disabled{opacity:.5;cursor:default}
+.made{font:normal 11px 'Weekly Caps',sans-serif;text-transform:uppercase;color:var(--red)}
+.flow{display:grid;gap:12px}
+.slot{border:3px solid var(--ink);background:#fff;padding:10px;display:grid;gap:6px}
+.slot[data-have=true]{border-color:var(--green,#1d7a3a)}
+.slotHead{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;font:700 14px 'Weekly Head',sans-serif;text-transform:uppercase}
+.prompt{white-space:pre-wrap;font:12px/1.45 ui-monospace,Menlo,monospace;background:var(--paper);border:2px dashed var(--ink);padding:8px;margin:0;max-height:220px;overflow:auto}
+.copy{min-height:44px;border:2px solid var(--ink);background:var(--paper);font:700 13px 'Weekly Head',sans-serif;text-transform:uppercase;padding:4px 10px;cursor:pointer}
+.file{font-size:13px}

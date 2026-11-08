@@ -6,7 +6,7 @@ import {HealthStrip,when} from './stories-desk'
 import css from './studio.module.css'
 
 /** The engine room: the lights, the queue, the last Drive scans and the recent failures in plain words. */
-const KIND_TEXT={film:'Documentary',classified:'CLASSIFIED',vlog:'I WAS THERE',promo:'Marketing film'} as const
+const KIND_TEXT={film:'Documentary',classified:'CLASSIFIED',vlog:'I WAS THERE',promo:'Marketing film',short:'Animated Short'} as const
 const STATE_TEXT:Record<string,string>={queued:'Waiting',running:'In production',paused:'Paused',cancel_requested:'Stopping'}
 export function StatusTab({facts,jobs}:{facts:Facts;jobs:Job[]|null}){
  const live=(jobs??[]).filter(j=>STATE_TEXT[j.state])

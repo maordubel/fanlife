@@ -83,11 +83,26 @@ def lexicon() -> dict[str, str]:
     return json.loads(LEXICON.read_text())['names']
 
 
+ARCHIVE = LEXICON.with_name('archive.json')
+
+
+@lru_cache(maxsize=1)
+def archive() -> dict[str, str]:
+    """Every name in the club packs, written by rules in its own language (studio/namebook.py). The hand lexicon wins."""
+    try:
+        return json.loads(ARCHIVE.read_text())['names']
+    except (OSError, ValueError, KeyError):
+        return {}
+
+
 @lru_cache(maxsize=1)
 def lexicon_version() -> str:
     """Changes whenever an entry changes, so a cached beat is said again with the new pronunciation."""
     import hashlib
-    return hashlib.sha256(LEXICON.read_bytes()).hexdigest()[:12]
+    h = hashlib.sha256(LEXICON.read_bytes())
+    if ARCHIVE.exists():
+        h.update(ARCHIVE.read_bytes())
+    return h.hexdigest()[:12]
 
 
 # IPA → an English respelling ('ziˈdan' → 'zee-DAHN'), for voices that take text only (ElevenLabs, auditions).
@@ -151,7 +166,7 @@ def _possessive(ph: str) -> str:
 
 class Pronouncer:
     def __init__(self, extra: dict | None = None):
-        self.ipa: dict[str, str] = dict(lexicon())
+        self.ipa: dict[str, str] = {**archive(), **lexicon()}
         self.respell: dict[str, str] = {}
         for k, v in (extra or {}).items():
             if is_ipa(v):
@@ -261,7 +276,7 @@ May June July August September October November December Football Stories Stadiu
 Athens Piraeus Seville London Glasgow Liverpool Manchester Birmingham Istanbul Belgrade Budapest Warsaw Munich Rome
 Milan Paris Lisbon Porto Amsterdam Jerusalem Christmas Day Award Fair Play State Super Youth Conference Cup Winners
 Olympic Rovers Villa Rangers Hampden Anfield Bloomfield Chelsea Barcelona Juventus Ajax Legend Over Nil Sports Times
-Voice Mediterranean Malta FC Penalties Relegated Thousands Semi finalists Aston Robbie Shaun Henrik Armenia Lithuania Lithuanian Switzerland Moroccan Gaza White Hill Wit Thema'''.split())
+Voice Mediterranean Malta FC Thirteen Fourteen Fifteen Sixteen Seventeen Eighteen Nineteen Twenty Thirty Forty Fifty Sixty Seventy Eighty Ninety Hundred Penalties Relegated Thousands Semi finalists Aston Robbie Shaun Henrik Armenia Lithuania Lithuanian Switzerland Moroccan Gaza White Hill Wit Thema'''.split())
 
 
 def unknown_names(text: str, pr: Pronouncer) -> list[str]:

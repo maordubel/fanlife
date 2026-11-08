@@ -85,6 +85,9 @@ jobs:
         run: |
           pip install -q "opencv-python-headless<5" faster-whisper
           ffmpeg -hide_banner -filters | grep -q zscale || { echo "::error::ffmpeg has no zscale (HDR tone map)"; exit 1; }
+      - if: steps.peek.outputs.next != '' && steps.peek.outputs.kind != 'vlog'
+        name: Narrator check (Gemini's free speech model is checked word by word against the script)
+        run: pip install -q faster-whisper || echo "::warning::faster-whisper did not install — the free local narrator reads every film"
       - if: steps.peek.outputs.next != ''
         name: Voice model (free, cached)
         id: kokoro

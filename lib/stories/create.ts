@@ -1,6 +1,6 @@
 import 'server-only'
 import {randomUUID} from 'crypto'
-import {StoryError,newJob,newSpecialJob,validateBrief,validateClassified,validateVlog,type Job,type VlogMatch} from './jobs'
+import {StoryError,newJob,newSpecialJob,validateBrief,validateClassified,validateShort,validateVlog,type Job,type VlogMatch} from './jobs'
 import {clubNames,paletteFor,storyClubs} from './clubs'
 import {createJob,listJobs} from './store'
 import {catalogOf} from './catalog'
@@ -43,6 +43,19 @@ export async function createClassified(raw:unknown,actor:string,key:string):Prom
  if(busy)throw new StoryError('STATE',`FILE ${x.spec.number} is already in production.`,409)
  const palette={club_id:'classified',club_name:'CLASSIFIED',primary:'#15130F',on_primary:'#FFFBF2',bans:[]}
  const job=newSpecialJob(randomUUID(),'classified',x,palette,actor||'owner',key)
+ if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
+ return {job,created:true}
+}
+
+/** An animated Short on Google Flow (owner, 8.11.2026): one match → the script and the Flow pack, then the edit. */
+export async function createShort(raw:unknown,actor:string,key:string):Promise<{job:Job;created:boolean}>{
+ const dup=await existing(key)
+ if(dup)return {job:dup,created:false}
+ const b=(raw&&typeof raw==='object'?raw:{}) as Record<string,unknown>
+ const cat=await catalogOf(String(b.club_id||''))
+ const find=(_club:string,id:string):VlogMatch|null=>{const m=cat?.matches.find(x=>x.id===id);return m?{id:m.id,date:m.date,season:m.season,competition:m.competition,home:m.home,away:m.away,score:m.score}:null}
+ const x=validateShort(raw,clubNames(),find)
+ const job=newSpecialJob(randomUUID(),'short',x,paletteFor(x.spec.club_id),actor||'owner',key)
  if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
  return {job,created:true}
 }

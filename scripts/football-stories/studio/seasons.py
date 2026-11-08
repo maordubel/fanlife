@@ -14,11 +14,12 @@ from __future__ import annotations
 import json
 import sys
 
-from . import research
+from . import evidence, research
 from .common import ROOT, StageError
 
 OUT = ROOT / 'content' / 'generated' / 'stories-seasons.json'
 CATALOG = ROOT / 'content' / 'generated' / 'stories'
+RECOMMENDED = ROOT / 'content' / 'generated' / 'stories-recommended.json'
 EUROPE = ('UEFA', 'European Cup', 'Cup Winners', 'Champions League', 'Europa', 'Conference League', 'Intertoto', 'Fairs Cup')
 
 
@@ -71,6 +72,9 @@ def club_catalog(club_id: str) -> dict:
                             'opponent': f['opponent'], 'side': f['side'], 'scorers': bool(f.get('scorers')),
                             'tags': tags_for(f, rivals)})
     matches.sort(key=lambda m: m['date'], reverse=True)
+    ev = evidence.ClubEvidence(club_id)
+    for m in matches:
+        m['evidence'] = ev.of(m)
     opp: dict[str, dict] = {}
     for m in matches:
         o = opp.setdefault(m['opponent'], {'name': m['opponent'], 'played': 0, 'won': 0, 'drawn': 0, 'lost': 0, 'first': m['date'], 'last': m['date'], 'derby': 'derby' in m['tags']})
@@ -86,6 +90,7 @@ def main() -> None:
     man = json.loads((ROOT / 'content' / 'compiled' / 'manifest.json').read_text())
     CATALOG.mkdir(parents=True, exist_ok=True)
     index = {}
+    catalogs = {}
     for c in man['clubs']:
         cat = club_catalog(c)
         if not cat['matches']:
@@ -93,7 +98,11 @@ def main() -> None:
             continue
         (CATALOG / f'{c}.json').write_text(json.dumps(cat, ensure_ascii=False, separators=(',', ':')) + '\n')
         index[c] = cat['seasons']
+        catalogs[c] = cat
         print(f"{c}: {len(cat['seasons'])} seasons, {len(cat['matches'])} matches, {len(cat['opponents'])} opponents", file=sys.stderr)
+    RECOMMENDED.write_text(json.dumps({'note': 'The matches the studio can make best (studio/evidence.py): rich evidence first, a '
+                                               'big night breaking ties. Regenerated with the catalog.',
+                                       'matches': evidence.recommended(catalogs)}, ensure_ascii=False, indent=0) + '\n')
     OUT.write_text(json.dumps({'note': 'Seasons a Football Stories film can be made about (matches the research stage can read). '
                                        'Regenerate: npm run clubs:precompile, then python3 -m studio.seasons in scripts/football-stories. '
                                        'The full per-club catalog (matches, opponents) is content/generated/stories/<club>.json.',

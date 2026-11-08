@@ -1,0 +1,2102 @@
+{
+"note": "The matches the studio can make best (studio/evidence.py): rich evidence first, a big night breaking ties. Regenerated with the catalog.",
+"matches": [
+{
+"id": "olympiacos:a-m-2024-05-29-olympiacos-fiorentina",
+"date": "2024-05-29",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Final",
+"home": "Olympiacos",
+"away": "Fiorentina",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Fiorentina",
+"side": "home",
+"scorers": true,
+"tags": [
+"final",
+"europe",
+"extra-time"
+],
+"evidence": {
+"score": 85,
+"level": "rich",
+"story": 19,
+"has": [
+"5 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "celtic:m-22c83ba20f",
+"date": "2003-05-21",
+"season": "2002/03",
+"competition": "UEFA Cup",
+"stage": "Final",
+"home": "Celtic",
+"away": "FC Porto",
+"score": "2–3",
+"outcome": "loss",
+"opponent": "FC Porto",
+"side": "home",
+"scorers": true,
+"tags": [
+"final",
+"europe"
+],
+"evidence": {
+"score": 75,
+"level": "rich",
+"story": 16,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "celtic"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar",
+"date": "2023-09-21",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "AZ Alkmaar",
+"score": "4–3",
+"outcome": "win",
+"opponent": "AZ Alkmaar",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"goals"
+],
+"evidence": {
+"score": 85,
+"level": "rich",
+"story": 8,
+"has": [
+"5 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"your Drive pack",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "olympiacos:a-m-2024-03-14-m-tel-aviv-olympiacos",
+"date": "2024-03-14",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Round of 16, second leg",
+"home": "Maccabi Tel Aviv",
+"away": "Olympiacos",
+"score": "1–6",
+"outcome": "win",
+"opponent": "Maccabi Tel Aviv",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"extra-time",
+"goals"
+],
+"evidence": {
+"score": 70,
+"level": "rich",
+"story": 15,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "aek-athens:m-dh-249101de6ec9",
+"date": "2025-10-23",
+"season": "2025/26",
+"competition": "UEFA Conference League",
+"stage": null,
+"home": "AEK Athens",
+"away": "Aberdeen",
+"score": "6–0",
+"outcome": "win",
+"opponent": "Aberdeen",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 63,
+"level": "rich",
+"story": 12,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "m_9b658c3bbc9e",
+"date": "2010-08-18",
+"season": "2010/11",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Red Bull Salzburg",
+"away": "Hapoel Tel Aviv",
+"score": "2–3",
+"outcome": "win",
+"opponent": "Red Bull Salzburg",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 70,
+"level": "rich",
+"story": 6,
+"has": [
+"line-up",
+"a described moment",
+"3 sources",
+"scorers",
+"a goal described move by move"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "hapoel-tel-aviv"
+},
+{
+"id": "m_b88bc98d09db",
+"date": "2002-03-14",
+"season": "2001/02",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "Hapoel Tel Aviv",
+"away": "AC Milan",
+"score": "1–0",
+"outcome": "win",
+"opponent": "AC Milan",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 70,
+"level": "rich",
+"story": 6,
+"has": [
+"5 match events",
+"line-up",
+"a described moment",
+"scorers",
+"a goal described move by move"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "hapoel-tel-aviv"
+},
+{
+"id": "olympiacos:a-m-2024-04-11-olympiacos-fenerbahce",
+"date": "2024-04-11",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Quarter-final, first leg",
+"home": "Olympiacos",
+"away": "Fenerbahçe",
+"score": "3–2",
+"outcome": "win",
+"opponent": "Fenerbahçe",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 70,
+"level": "rich",
+"story": 6,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "olympiacos:a-m-2024-03-07-olympiacos-m-tel-aviv",
+"date": "2024-03-07",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Round of 16, first leg",
+"home": "Olympiacos",
+"away": "Maccabi Tel Aviv",
+"score": "1–4",
+"outcome": "loss",
+"opponent": "Maccabi Tel Aviv",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 70,
+"level": "rich",
+"story": 6,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "olympiacos:a-m-2024-05-02-aston-villa-olympiacos",
+"date": "2024-05-02",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "Aston Villa",
+"away": "Olympiacos",
+"score": "2–4",
+"outcome": "win",
+"opponent": "Aston Villa",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"goals"
+],
+"evidence": {
+"score": 65,
+"level": "rich",
+"story": 8,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "olympiacos:a-m-2014-02-25-olympiacos-man-utd",
+"date": "2014-02-25",
+"season": "2013/14",
+"competition": "UEFA Champions League",
+"stage": "Round of 16, first leg",
+"home": "Olympiacos",
+"away": "Man Utd",
+"score": "2–0",
+"outcome": "win",
+"opponent": "Man Utd",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 68,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "m_ba6c1583a5ec",
+"date": "1986-05-24",
+"season": "1985/86",
+"competition": "Liga Leumit",
+"stage": null,
+"home": "Hapoel Tel Aviv",
+"away": "Maccabi Haifa",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Maccabi Haifa",
+"side": "home",
+"scorers": false,
+"tags": [],
+"evidence": {
+"score": 76,
+"level": "rich",
+"story": 0,
+"has": [
+"4 match events",
+"line-up",
+"a described moment",
+"2 sources",
+"a goal described move by move",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "hapoel-tel-aviv"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-12-14-zrinjski-aston-villa",
+"date": "2023-12-14",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "Aston Villa",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "Aston Villa",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 67,
+"level": "rich",
+"story": 6,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-10-26-zrinjski-legia-warszawa",
+"date": "2023-10-26",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "Legia Warszawa",
+"score": "1–2",
+"outcome": "loss",
+"opponent": "Legia Warszawa",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 67,
+"level": "rich",
+"story": 6,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "olympiacos:a-m-2025-10-21-barcelona-olympiacos",
+"date": "2025-10-21",
+"season": "2025/26",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Barcelona",
+"away": "Olympiacos",
+"score": "6–1",
+"outcome": "loss",
+"opponent": "Barcelona",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 58,
+"level": "rich",
+"story": 12,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "olympiacos:a-m-2024-05-09-olympiacos-aston-villa",
+"date": "2024-05-09",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "Olympiacos",
+"away": "Aston Villa",
+"score": "2–0",
+"outcome": "win",
+"opponent": "Aston Villa",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 65,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "olympiacos:a-m-2024-02-22-ferencvaros-olympiacos",
+"date": "2024-02-22",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Knockout play-off, second leg",
+"home": "Ferencváros",
+"away": "Olympiacos",
+"score": "0–1",
+"outcome": "win",
+"opponent": "Ferencváros",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 65,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "olympiacos:a-m-2024-02-15-olympiacos-ferencvaros",
+"date": "2024-02-15",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Knockout play-off, first leg",
+"home": "Olympiacos",
+"away": "Ferencváros",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Ferencváros",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 65,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "aek-athens:m-dh-8600e66f6538",
+"date": "2025-12-18",
+"season": "2025/26",
+"competition": "UEFA Conference League",
+"stage": null,
+"home": "AEK Athens",
+"away": "Universitatea Craiova",
+"score": "3–2",
+"outcome": "win",
+"opponent": "Universitatea Craiova",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 63,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-90f5c0e60cf2",
+"date": "2023-09-21",
+"season": "2023/24",
+"competition": "UEFA Europa League",
+"stage": null,
+"home": "Brighton",
+"away": "AEK Athens",
+"score": "2–3",
+"outcome": "win",
+"opponent": "Brighton",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 63,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-0e8f8460f871",
+"date": "2023-08-15",
+"season": "2023/24",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Dinamo Zagreb",
+"away": "AEK Athens",
+"score": "1–2",
+"outcome": "win",
+"opponent": "Dinamo Zagreb",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 63,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-599261d086be",
+"date": "2018-08-14",
+"season": "2018/19",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "AEK Athens",
+"away": "Celtic",
+"score": "2–1",
+"outcome": "win",
+"opponent": "Celtic",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 63,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "olympiacos:a-m-2020-02-27-arsenal-olympiacos",
+"date": "2020-02-27",
+"season": "2019/20",
+"competition": "UEFA Europa League",
+"stage": "Round of 32 second leg",
+"home": "Arsenal",
+"away": "Olympiacos",
+"score": "1–2",
+"outcome": "win",
+"opponent": "Arsenal",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"extra-time"
+],
+"evidence": {
+"score": 58,
+"level": "rich",
+"story": 9,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "panathinaikos:a-m-2010-09-14-barcelona-panathinaikos",
+"date": "2010-09-14",
+"season": "2010/11",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Barcelona",
+"away": "Panathinaikos",
+"score": "5–1",
+"outcome": "loss",
+"opponent": "Barcelona",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 12,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-08-10-zrinjski-brei-ablik",
+"date": "2023-08-10",
+"season": "2023/24",
+"competition": "UEFA Europa League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "Breiðablik",
+"score": "6–2",
+"outcome": "win",
+"opponent": "Breiðablik",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 52,
+"level": "rich",
+"story": 12,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "olympiacos:a-m-2024-04-18-fenerbahce-olympiacos",
+"date": "2024-04-18",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": "Quarter-final, second leg",
+"home": "Fenerbahçe",
+"away": "Olympiacos",
+"score": "1–0",
+"outcome": "loss",
+"opponent": "Fenerbahçe",
+"side": "away",
+"scorers": false,
+"tags": [
+"europe",
+"penalties"
+],
+"evidence": {
+"score": 55,
+"level": "rich",
+"story": 10,
+"has": [
+"3 sources",
+"line-up",
+"archive entry",
+"on the club timeline",
+"research dossier",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "olympiacos"
+},
+{
+"id": "panathinaikos:greek-cup-final-match-1988",
+"date": "1988-05-08",
+"season": "1987/88",
+"competition": "Greek Cup",
+"stage": "Final",
+"home": "Panathinaikos",
+"away": "Olympiacos",
+"score": "2–2",
+"outcome": "draw",
+"opponent": "Olympiacos",
+"side": "home",
+"scorers": false,
+"tags": [
+"final",
+"derby"
+],
+"evidence": {
+"score": 43,
+"level": "good",
+"story": 16,
+"has": [
+"3 sources",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:ec-final-1971-ajax",
+"date": "1971-06-02",
+"season": "1970/71",
+"competition": "European Cup",
+"stage": "Final",
+"home": "Ajax",
+"away": "Panathinaikos",
+"score": "2–0",
+"outcome": "loss",
+"opponent": "Ajax",
+"side": "away",
+"scorers": false,
+"tags": [
+"final",
+"europe"
+],
+"evidence": {
+"score": 43,
+"level": "good",
+"story": 16,
+"has": [
+"3 sources",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "aek-athens:m-dh-4293099659bf",
+"date": "2004-10-21",
+"season": "2004/05",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "Zenit",
+"away": "AEK Athens",
+"score": "5–1",
+"outcome": "loss",
+"opponent": "Zenit",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 12,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-832574d9f967",
+"date": "2001-08-09",
+"season": "2001/02",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "AEK Athens",
+"away": "Grevenmacher",
+"score": "6–0",
+"outcome": "win",
+"opponent": "Grevenmacher",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 12,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-672dff4d99f6",
+"date": "1999-09-30",
+"season": "1999/00",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "AEK Athens",
+"away": "Torpedo Kutaisi",
+"score": "6–1",
+"outcome": "win",
+"opponent": "Torpedo Kutaisi",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score",
+"goals"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 12,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "m_67a2f41af253",
+"date": "2001-10-18",
+"season": "2001/02",
+"competition": "UEFA Cup",
+"stage": "Round 2, leg 1",
+"home": "Hapoel Tel Aviv",
+"away": "Chelsea",
+"score": "2–0",
+"outcome": "win",
+"opponent": "Chelsea",
+"side": "home",
+"scorers": false,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 56,
+"level": "rich",
+"story": 6,
+"has": [
+"2 match events",
+"line-up",
+"a described moment",
+"a goal described move by move"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "hapoel-tel-aviv"
+},
+{
+"id": "hapoel-petah-tikva:w-m-2026-07-25-hpt-3194",
+"date": "2026-07-25",
+"season": "2026/27",
+"competition": "Toto Cup group stage",
+"stage": null,
+"home": "Hapoel Petah Tikva",
+"away": "Maccabi Petah Tikva",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Maccabi Petah Tikva",
+"side": "home",
+"scorers": false,
+"tags": [
+"derby"
+],
+"evidence": {
+"score": 55,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "hapoel-petah-tikva"
+},
+{
+"id": "aek-athens:m-dh-4feb1488646c",
+"date": "2026-08-26",
+"season": "2026/27",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "AEK Athens",
+"away": "Levski Sofia",
+"score": "4–0",
+"outcome": "win",
+"opponent": "Levski Sofia",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 10,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-1747b8893c9d",
+"date": "2026-03-12",
+"season": "2025/26",
+"competition": "UEFA Conference League",
+"stage": null,
+"home": "Celje",
+"away": "AEK Athens",
+"score": "0–4",
+"outcome": "win",
+"opponent": "Celje",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"big-score"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 10,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-3073336b35db",
+"date": "2024-08-01",
+"season": "2024/25",
+"competition": "UEFA Conference League",
+"stage": null,
+"home": "Inter Escaldes",
+"away": "AEK Athens",
+"score": "0–4",
+"outcome": "win",
+"opponent": "Inter Escaldes",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe",
+"big-score"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 10,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "aek-athens:m-dh-c77af3774aec",
+"date": "2002-11-28",
+"season": "2002/03",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "AEK Athens",
+"away": "Maccabi Haifa",
+"score": "4–0",
+"outcome": "win",
+"opponent": "Maccabi Haifa",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 10,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "aek-athens"
+},
+{
+"id": "zrinjski-mostar:a-m-2025-10-02-zrinjski-l-red-imps",
+"date": "2025-10-02",
+"season": "2025/26",
+"competition": "UEFA Conference League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "L. Red Imps",
+"score": "5–0",
+"outcome": "win",
+"opponent": "L. Red Imps",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe",
+"big-score"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 10,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "panathinaikos:a-m-2010-02-25-roma-panathinaikos",
+"date": "2010-02-25",
+"season": "2009/10",
+"competition": "UEFA Europa League",
+"stage": null,
+"home": "Roma",
+"away": "Panathinaikos",
+"score": "2–3",
+"outcome": "win",
+"opponent": "Roma",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:a-m-2008-11-26-inter-panathinaikos",
+"date": "2008-11-26",
+"season": "2008/09",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Inter",
+"away": "Panathinaikos",
+"score": "0–1",
+"outcome": "win",
+"opponent": "Inter",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:a-m-2008-11-04-bremen-panathinaikos",
+"date": "2008-11-04",
+"season": "2008/09",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Bremen",
+"away": "Panathinaikos",
+"score": "0–3",
+"outcome": "win",
+"opponent": "Bremen",
+"side": "away",
+"scorers": false,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:a-m-2003-02-20-panathinaikos-anderlecht",
+"date": "2003-02-20",
+"season": "2002/03",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "Panathinaikos",
+"away": "Anderlecht",
+"score": "3–0",
+"outcome": "win",
+"opponent": "Anderlecht",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:a-m-2002-03-20-panathinaikos-real-madrid",
+"date": "2002-03-20",
+"season": "2001/02",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Panathinaikos",
+"away": "Real Madrid",
+"score": "2–2",
+"outcome": "draw",
+"opponent": "Real Madrid",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:ucl02-arsenal-home",
+"date": "2001-09-26",
+"season": "2001/02",
+"competition": "UEFA Champions League",
+"stage": "First group stage",
+"home": "Panathinaikos",
+"away": "Arsenal",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Arsenal",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:ucl96-sf1-ajax-pao",
+"date": "1996-04-03",
+"season": "1995/96",
+"competition": "UEFA Champions League",
+"stage": "Semi-final, first leg",
+"home": "Ajax",
+"away": "Panathinaikos",
+"score": "0–1",
+"outcome": "win",
+"opponent": "Ajax",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 53,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "zrinjski-mostar:a-m-2000-06-25-zrinjski-vastra-frolunda",
+"date": "2000-06-25",
+"season": "1999/00",
+"competition": "UEFA Intertoto Cup",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "Västra Frölunda",
+"score": "2–1",
+"outcome": "win",
+"opponent": "Västra Frölunda",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 52,
+"level": "rich",
+"story": 6,
+"has": [
+"4 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "m_73bc1426d0e3",
+"date": "2001-11-01",
+"season": "2001/02",
+"competition": "UEFA Cup",
+"stage": "Round 2, leg 2",
+"home": "Chelsea",
+"away": "Hapoel Tel Aviv",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "Chelsea",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 51,
+"level": "rich",
+"story": 6,
+"has": [
+"line-up",
+"a described moment",
+"scorers",
+"a goal described move by move",
+"press column"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "hapoel-tel-aviv"
+},
+{
+"id": "hapoel-petah-tikva:a-m-2000-06-24-h-petah-tikva-lask",
+"date": "2000-06-24",
+"season": "1999/00",
+"competition": "UEFA Intertoto Cup",
+"stage": null,
+"home": "Hapoel Petah Tikva",
+"away": "LASK Linz",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "LASK Linz",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 50,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "hapoel-petah-tikva"
+},
+{
+"id": "hapoel-petah-tikva:a-m-1995-07-01-h-petah-tikva-floriana",
+"date": "1995-07-01",
+"season": "1995/96",
+"competition": "UEFA Intertoto Cup",
+"stage": null,
+"home": "Hapoel Petah Tikva",
+"away": "Floriana",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "Floriana",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 50,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "hapoel-petah-tikva"
+},
+{
+"id": "hapoel-petah-tikva:a-m-1992-09-30-h-petah-tikva-feyenoord",
+"date": "1992-09-30",
+"season": "1992/93",
+"competition": "European Cup Winners' Cup",
+"stage": null,
+"home": "Hapoel Petah Tikva",
+"away": "Feyenoord",
+"score": "2–1",
+"outcome": "win",
+"opponent": "Feyenoord",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 50,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "hapoel-petah-tikva"
+},
+{
+"id": "panathinaikos:pm-8e11b1a89f",
+"date": "2026-01-29",
+"season": "2025/26",
+"competition": "UEFA Europa League",
+"stage": null,
+"home": "Panathinaikos",
+"away": "AS Roma",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "AS Roma",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "panathinaikos:pm-4a61178f08",
+"date": "2026-01-22",
+"season": "2025/26",
+"competition": "UEFA Europa League",
+"stage": null,
+"home": "Ferencvarosi TC",
+"away": "Panathinaikos",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "Ferencvarosi TC",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "panathinaikos"
+},
+{
+"id": "celtic:m-dh-3167bd161ae1",
+"date": "2006-11-21",
+"season": "2006/07",
+"competition": "Champions League",
+"stage": null,
+"home": "Celtic",
+"away": "Manchester Utd",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Manchester Utd",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "celtic"
+},
+{
+"id": "celtic:m-dh-2d28c00443d3",
+"date": "2004-03-11",
+"season": "2003/04",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "Celtic",
+"away": "Barcelona",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Barcelona",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 48,
+"level": "rich",
+"story": 6,
+"has": [
+"2 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"on the club timeline",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "celtic"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-11-30-az-alkmaar-zrinjski",
+"date": "2023-11-30",
+"season": "2023/24",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "AZ Alkmaar",
+"away": "Zrinjski Mostar",
+"score": "1–0",
+"outcome": "loss",
+"opponent": "AZ Alkmaar",
+"side": "away",
+"scorers": false,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"line-up",
+"archive entry",
+"your Drive pack",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-08-24-lask-zrinjski",
+"date": "2023-08-24",
+"season": "2023/24",
+"competition": "UEFA Europa League",
+"stage": null,
+"home": "LASK Linz",
+"away": "Zrinjski Mostar",
+"score": "2–1",
+"outcome": "loss",
+"opponent": "LASK Linz",
+"side": "away",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "zrinjski-mostar:a-m-2023-07-18-zrinjski-urartu",
+"date": "2023-07-18",
+"season": "2023/24",
+"competition": "UEFA Champions League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "Urartu",
+"score": "2–3",
+"outcome": "loss",
+"opponent": "Urartu",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 6,
+"has": [
+"scorers with minutes",
+"line-up",
+"a goal described move by move",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary",
+"short"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "zrinjski-mostar:a-m-2022-08-18-zrinjski-s-bratislava",
+"date": "2022-08-18",
+"season": "2022/23",
+"competition": "UEFA Europa Conference League",
+"stage": null,
+"home": "Zrinjski Mostar",
+"away": "S. Bratislava",
+"score": "1–0",
+"outcome": "win",
+"opponent": "S. Bratislava",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "zrinjski-mostar"
+},
+{
+"id": "hapoel-petah-tikva:a-m-1997-09-30-h-petah-tikva-sk-rapid",
+"date": "1997-09-30",
+"season": "1997/98",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "Hapoel Petah Tikva",
+"away": "SK Rapid",
+"score": "1–1",
+"outcome": "draw",
+"opponent": "SK Rapid",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "hapoel-petah-tikva"
+},
+{
+"id": "hapoel-petah-tikva:a-m-1997-08-26-h-petah-tikva-vb",
+"date": "1997-08-26",
+"season": "1997/98",
+"competition": "UEFA Cup",
+"stage": null,
+"home": "Hapoel Petah Tikva",
+"away": "Vejle",
+"score": "1–0",
+"outcome": "win",
+"opponent": "Vejle",
+"side": "home",
+"scorers": true,
+"tags": [
+"europe"
+],
+"evidence": {
+"score": 47,
+"level": "rich",
+"story": 6,
+"has": [
+"3 sources",
+"scorers with minutes",
+"line-up",
+"archive entry",
+"the season's kits"
+],
+"formats": [
+"documentary"
+]
+},
+"club_id": "hapoel-petah-tikva"
+}
+]
+}

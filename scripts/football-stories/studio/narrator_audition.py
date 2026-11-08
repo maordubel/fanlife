@@ -136,11 +136,32 @@ def take_qwen(out: Path) -> list[Path]:
     return files
 
 
+def take_gemini(out: Path, voice_name: str, style: str = '') -> list[Path]:
+    """Gemini's speech model on the free tier, directed per line, with the lexicons' respellings in its notes. A take
+    that does not say the script fails here as it would in a film (the film then falls back to Kokoro)."""
+    from studio import gemini_tts
+    os.environ['STORIES_GEMINI_VOICE'] = voice_name
+    if style:
+        os.environ['STORIES_GEMINI_STYLE'] = style
+    else:
+        os.environ.pop('STORIES_GEMINI_STYLE', None)
+    files = []
+    for i, (dl, line) in enumerate(LINES):
+        f = out / f'line-{i}.wav'
+        meta = gemini_tts.speak(voice.spoken(line), f, dl, None, '', lambda m: print(m, flush=True))
+        print(f"  line {i}: {meta['check']['matched']:.0%} of the words heard", flush=True)
+        files.append(f)
+        time.sleep(21)  # the free tier's few requests a minute
+    return files
+
+
 TAKES = [
     ('A', 'before', 'Kokoro · George — as the films sound today', take_before, False),
     ('B', 'george', 'Kokoro · George — names + human pacing + narrator chain', lambda o: take_kokoro(o, 'bm_george'), True),
     ('C', 'lewis', 'Kokoro · Lewis — names + human pacing + narrator chain', lambda o: take_kokoro(o, 'bm_lewis'), True),
     ('D', 'qwen', 'Qwen3-TTS — a designed British narrator', take_qwen, True),
+    ('E', 'gemini-charon', 'Gemini (free) · Charon — the documentary narrator, directed', lambda o: take_gemini(o, 'Charon'), True),
+    ('F', 'gemini-puck', 'Gemini (free) · Puck — the Shorts storyteller', lambda o: take_gemini(o, 'Puck', 'short'), True),
 ]
 
 
@@ -220,7 +241,7 @@ def main() -> None:
         dur = voice._duration(mix)
         report['takes'].append({'take': letter, 'key': key, 'title': title, 'file': mix.name, 'seconds': round(dur, 1),
                                 'render_seconds': round(took, 1), 'realtime_factor': round(took / max(dur, 1), 2),
-                                'g2p': 'misaki' if letter in 'BC' and pronounce.misaki() is not None else ('respelled' if letter == 'D' else 'espeak'),
+                                'g2p': 'misaki' if letter in 'BC' and pronounce.misaki() is not None else ('respelled' if letter in 'DEF' else 'espeak'),
                                 '_files': [str(f) for f in files]})
         print(f'take {letter}: {dur:.0f}s audio in {took:.0f}s', flush=True)
         (out_root / 'audition.json').write_text(json.dumps(report, indent=1, ensure_ascii=False))
@@ -251,8 +272,9 @@ def delivery(out_root: Path, report: dict) -> None:
     scores_only = os.environ.get('AUDITION_SEND') == 'scores'
     items = [] if scores_only else [{'before': ['🎙 <b>אודישן קריין · Football Stories</b>\n\n'
                          'אותן 7 שורות מהסרטים, בכל קול. שימו לב לשמות (Mbappé, Panathinaikos, Željezničar, Mourinho), '
-                         'לנשימות ולהפסקות.\n\nA = איך שהסרטים נשמעים היום. B, C = Kokoro אחרי השיפור. '
-                         'D = Qwen3-TTS, קריין בריטי שעוצב מתיאור.\n\nתשובה של אות אחת מספיקה (למשל: B).']}]
+                         'לנשימות ולהפסקות.\n\nA = הקול הישן. B = Kokoro אחרי השדרוג (מילון שמות מכל הארכיון, גובה קול, '
+                         'הנחתת שמות, בניית מתח). E = Gemini חינמי, קריין דוקו מבוים. F = Gemini חינמי, מספר השורטים.\n\n'
+                         'תשובה של אות אחת מספיקה (למשל: E).']}]
     for t in ([] if scores_only else report['takes']):
         if 'file' not in t:
             items.append({'before': [f"⚠️ Take {t['take']} ({t['title']}) נכשל ברנדור: <code>{t.get('error', '')[:200]}</code>"]})
