@@ -29,6 +29,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm}
+      - name: The club packs (every player the archive holds)
+        run: |
+          npm ci --no-audit --no-fund
+          npm run clubs:precompile
+          pip install -q numpy pillow
       - name: Research the names
         working-directory: scripts/football-stories
         run: python3 -m studio.name_research --batches "${{ inputs.batches || '60' }}" ${{ inputs.club && format('--club {0}', inputs.club) || '' }}
