@@ -92,6 +92,14 @@ jobs:
         run: |
           ep=$(ls scripts/football-stories/comic/episodes/${{ inputs.file }}-*.json | grep -v -- '-demo' | head -1)
           echo "Episode: $ep"
+          PYTHONPATH=scripts/football-stories python3 - "$ep" "$RUNNER_TEMP/fetch.json" <<'PY'
+          import sys
+          from pathlib import Path
+          from studio.common import read_json
+          from studio.kinds import check_classified_panels
+
+          check_classified_panels(read_json(Path(sys.argv[1])), read_json(Path(sys.argv[2])))
+          PY
           python3 scripts/football-stories/comic/produce.py --episode "$ep" --panels "$RUNNER_TEMP/panels" \
             --out "$RUNNER_TEMP/job" --approved
           cat "$RUNNER_TEMP/job/out/qa.json"
@@ -102,6 +110,7 @@ jobs:
           name: classified-${{ inputs.file }}
           path: |
             ${{ runner.temp }}/job/out/*.mp4
+            ${{ runner.temp }}/job/out/shorts/*.mp4
             ${{ runner.temp }}/job/out/*.srt
             ${{ runner.temp }}/job/out/*.vtt
             ${{ runner.temp }}/job/out/*.jpg
@@ -118,7 +127,9 @@ jobs:
         run: |
           o="$RUNNER_TEMP/job/out"
           title=$(python3 -c "import json;print(json.load(open('$o/youtube.json'))['title'])")
-          python3 scripts/football-stories/comic/telegram_send.py "$o/preview-telegram.mp4" "$o"/short-*.mp4 \
+          shopt -s nullglob
+          shorts=("$o"/short-*.mp4 "$o"/shorts/short-*.mp4)
+          python3 scripts/football-stories/comic/telegram_send.py "$o/preview-telegram.mp4" "${shorts[@]}" \
             --photo "$o/thumbnail-1.jpg" --photo "$o/thumbnail-2.jpg" --photo "$o/thumbnail-3.jpg" \
             --document "$o/telegram-draft.txt" --document "$o/youtube.json" --document "$o/captions.en.srt" \
             --caption "🗂 CLASSIFIED · ${{ inputs.file }} — DRAFT, not uploaded, not published. Proposed title: $title. The package text is in telegram-draft.txt."
