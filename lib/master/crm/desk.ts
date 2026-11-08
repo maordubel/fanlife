@@ -29,9 +29,9 @@ export async function playerSignals(fresh=false):Promise<PlayerSignals[]|null>{
 export const readFlow=async(fresh=false):Promise<TaskFlow>=>{try{const r=await area.read(FLOW,fresh);if(!r)return EMPTY_FLOW;const v=JSON.parse(r.text) as TaskFlow;return v?.v===1&&v.decisions?v:EMPTY_FLOW}catch{return EMPTY_FLOW}}
 
 export type Desk={view:DeskView;players:'ok'|'unavailable';storage:ReturnType<typeof area.kind>}
-export async function buildDesk(attention:readonly AttentionItem[],now=new Date()):Promise<Desk>{
- const [signals,flow]=await Promise.all([playerSignals(),readFlow()])
- const tasks:Task[]=[...fromAttention(attention),...(signals?playerTasks(signals):[])]
+export async function buildDesk(attention:readonly AttentionItem[]|Promise<readonly AttentionItem[]>,now=new Date()):Promise<Desk>{
+ const [items,signals,flow]=await Promise.all([attention,playerSignals(),readFlow()])
+ const tasks:Task[]=[...fromAttention(items),...(signals?playerTasks(signals):[])]
  return {view:deskView(tasks,flow,now),players:signals?'ok':'unavailable',storage:area.kind()}
 }
 
