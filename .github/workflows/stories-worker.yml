@@ -1,6 +1,6 @@
 name: Football Stories worker
 # Makes the films queued in the owner's studio (/master/stories). No terminal: queue a film in the studio and this
-# listener (stories-watch.yml) starts this worker within about a minute; the schedule below is only a fallback.
+# listener (stories-watch.yml) starts this worker within a few minutes; the schedule below is only a fallback.
 # One job per run: a documentary, a CLASSIFIED FILE (comic/produce.py, only with the owner's approval recorded in the
 # studio) or an I WAS THERE vlog (matchday/vlog_auto.py) — studio/kinds.py. The peek says which kind, and only that
 # kind's extra tools are installed. Runner limit: the job allows 350 minutes; a 25-minute documentary takes ~1–2 h, a
