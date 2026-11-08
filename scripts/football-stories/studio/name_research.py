@@ -31,7 +31,7 @@ from .common import ROOT, StageError, read_json, sha256_json, write_json
 
 OUT = pronounce.LEXICON.with_name('researched.json')
 MANUAL = ROOT / 'content' / 'manual' / 'names-en'
-BATCH = 50  # names a request; a run researches up to --batches of them and resumes on the next
+BATCH = 50  # names a request; a run researches up to --batches of them and resumes on the next (nightly)
 
 SYSTEM = '''You are the pronunciation editor of a British football broadcaster (the BBC Pronunciation Unit's standard).
 A narrator with a Received Pronunciation accent must say every name EXACTLY the way the name's own people say it —
