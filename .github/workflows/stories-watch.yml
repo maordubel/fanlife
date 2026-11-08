@@ -1,7 +1,7 @@
 name: Football Stories · listener
-# Starts a film within about a minute of "Make the film" (owner, 4.11.2026: "activate the studio, make sure it works").
+# Starts a film within about three minutes of "Make the film" (owner, 4.11.2026: "activate the studio, make sure it works").
 # GitHub runs a 10-minute schedule only every few hours, so the studio waited hours for its worker. This listener asks
-# the studio for work once a minute; when a film is waiting it starts the worker (workflow_dispatch with the run's own
+# the studio for work every three minutes; when a film is waiting it starts the worker (workflow_dispatch with the run's own
 # token — the one event GITHUB_TOKEN may trigger), and before its time is up it starts its own next run, so it never
 # stops. Every round it reports a heartbeat; every three hours it checks that the script writer's key really works (one
 # tiny request to the cheapest current Gemini model, never the Pro quota), which the studio shows as its status lights. The hourly schedule only restarts a chain that broke.
@@ -45,13 +45,16 @@ jobs:
             [ "${n:-0}" -gt 0 ]
           }
           end=$(( $(date +%s) + 5*3600 + 40*60 ))
-          writer=$(writer_check); checked=$(date +%s)
+          writer=$(writer_check); checked=$(date +%s); cleaned=0
           echo "Writer: $writer"
           while [ "$(date +%s)" -lt "$end" ]; do
             if [ $(( $(date +%s) - checked )) -gt 10800 ]; then writer=$(writer_check); checked=$(date +%s); fi
             peek=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
               -d "{\"op\":\"peek\",\"worker\":\"listen-$GITHUB_RUN_ID\",\"health\":{\"writer\":$writer}}" "$STORIES_URL/api/master/stories/worker" || true)
-            python3 scripts/football-stories/studio/cleanup.py || echo "::warning::Storage cleanup will retry"
+            if [ $(( $(date +%s) - cleaned )) -ge 600 ]; then
+              python3 scripts/football-stories/studio/cleanup.py || echo "::warning::Storage cleanup will retry"
+              cleaned=$(date +%s)
+            fi
             next=$(printf '%s' "$peek" | python3 -c "import sys,json;print(json.load(sys.stdin).get('next') or '')" 2>/dev/null || true)
             # the owner pressed "Ask for new pitches" (studio → Directors): the studio answers pitch:true once per request
             if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('pitch')))" 2>/dev/null || echo False)" = "True" ]; then
@@ -63,7 +66,7 @@ jobs:
               gh workflow run stories-worker.yml || echo "::warning::could not start the worker"
               sleep 90
             fi
-            sleep 60
+            sleep 180
           done
       - name: Keep listening
         if: always()
