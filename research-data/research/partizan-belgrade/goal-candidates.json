@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0708.html",
-    "locator": "p350",
-    "quote": "Strelac: 1:0 Čadikovski 7' 2:0 Čadikovski 19'",
-    "bodyHash": "6d07bb2a92612e4e708e10cd3fcb0a682c29bd44dc25e167b6a9b332fc373014",
-    "fetchedAt": "2026-11-05T11:31:24.586Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
     "locator": "p312",
     "quote": "Partizan: Stojković, Miljković, Savić, Krstajić, Lazevski (7' M. Jovanović), R. Petrović, N. Tomić, Vukić, Babović, Adija (46' Iliev), Tejgo (70' M. Šćepović)",
@@ -82,6 +73,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p467",
+    "quote": "Strelac: Jahović 7'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-d5142a9a330027ed",
@@ -199,15 +199,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0405.html",
-    "locator": "p505",
-    "quote": "Strelci: 0:1 Aldonin 17' 1:1 Ivan Tomić 83' (penal)",
-    "bodyHash": "974685658dc4dfc49fa6faca4bc5fd456cc4774df54dde21ab07cd86fd18be94",
-    "fetchedAt": "2026-11-04T11:35:45.895Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0809.html",
     "locator": "p316",
     "quote": "Strelci: 1:0 Ljajić 17' 1:1 Jovanović 51'",
@@ -268,6 +259,15 @@
     "bodyHash": "9bc8ee59c17e34562ce15c34aca2779d942a437ac78a56c852677de4a80aa33f",
     "fetchedAt": "2026-11-07T10:42:27.593Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p390",
+    "quote": "Strelci: 1:0 Matić 17' 2:0 Natho 40' 3:0 Vitas 45' 4:0 Suma 54' 4:1 Tedić 57'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -275,8 +275,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:27.593Z",
-  "updatedAt": "2026-11-07T10:42:27.593Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-6d0570269de3417b",
@@ -290,15 +290,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0304.html",
-    "locator": "p435",
-    "quote": "Strelci: 0:1 Radović 1' 0:2 Radonjić 30'",
-    "bodyHash": "f60bda98a835e14b3bf3576c982d8c2f7cc78b63fa7eb19a3b1ee263995b33e3",
-    "fetchedAt": "2026-11-04T11:35:41.892Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0405.html",
@@ -361,6 +352,15 @@
     "bodyHash": "a54bb4e83ccadaf939bfe90fa437a01ef9aaaa0e099b4af8464538a787dca0df",
     "fetchedAt": "2026-11-07T10:42:31.442Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p221",
+    "quote": "Strelci: 0:1 Lukić 1' 1:1 Sadik 44'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -368,8 +368,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:31.442Z",
-  "updatedAt": "2026-11-07T10:42:31.442Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-86f9b83bff62dd76",
@@ -383,15 +383,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0203.html",
-    "locator": "p348",
-    "quote": "Strelci: 1:0 Mirosavljević 14' (penal) 1:1 Vukić 47' 1:2 Vukić 51' 1:3 Vukić 86' 2:3 Mirosavljević 89' 2:4 Saša Ilić 90'",
-    "bodyHash": "aaaebeda6071d4fd02c38d192b104a190dd2ac9e6e2305fc61d508b20c6612a5",
-    "fetchedAt": "2026-11-04T11:35:38.211Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0304.html",
@@ -454,6 +445,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p398",
+    "quote": "Strelac: Čović 14' (penal)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -461,8 +461,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-c9fd81a335a0f559",
@@ -571,15 +571,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p442",
-    "quote": "Partizan: R. Ilić, Aksentijević, Ranković, Ivanov, Volkov, Kamara, N. Tomić (46' Babović), Vukić (76' Ninković), Saša Ilić, M. Šćepović, Eduardo (63' Jovančić)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
     "locator": "p498",
     "quote": "Inter: Handanović, Nagatomo (46' Palasio), Žonatan, Silvestre, Huan Žezus, Kambijaso, Mudingaji, Zaneti, Alvaro Pereira, Guarin, Livaja (77' Kasano) Trener: Andrea Stramaćoni",
@@ -640,6 +631,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p458",
+    "quote": "Malatija: Farnol, Čibake, Mina, Akbaš, Kaš, Jalsin, Bifuma (46' Tore), Čagiran (56' Giljerme), Čalali (71' Jildirim), Fofana, Jahović",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -647,8 +647,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-4c811867bbd891be",
@@ -662,15 +662,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p267",
-    "quote": "Partizan: Stojković, Miljković, Rnić, Ivanov, Lazevski, Kamara, N. Tomić, Vukić (76' Smiljanić), Babović, L. Marković (70' Diara), M. Šćepović (83' Jovančić)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -733,6 +724,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p255",
+    "quote": "Voždovac: Ilić, Lasickas, Cvetković, Mikić (76' Mihajlov), Hajdin, Nikolić, Purtić (54' Dević), Stanisavljević, Zličić, Mašović (86' Daničić), Stojčev",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -740,8 +740,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-161326c7c72e064c",
@@ -850,15 +850,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0405.html",
-    "locator": "p491",
-    "quote": "Strelci: 1:0 Odita 12' 1:1 Nazarenko 28' 2:1 Odita 45' 2:2 Rusol 57'",
-    "bodyHash": "974685658dc4dfc49fa6faca4bc5fd456cc4774df54dde21ab07cd86fd18be94",
-    "fetchedAt": "2026-11-04T11:35:45.895Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0809.html",
     "locator": "p373",
     "quote": "Strelci: 1:0 Diara 12' 2:0 Vujović 81'",
@@ -919,6 +910,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p383",
+    "quote": "Strelci: 0:1 Stevanović 12' 1:1 Nikolić 29' 1:2 Stevanović 44' 2:2 Nikolić 57' 3:2 Denković 69'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -926,8 +926,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-1babe330bb22521e",
@@ -941,15 +941,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p464",
-    "quote": "Partizan: Stojković, Ranković, Rnić, Ivanov, Stanković, Kamara, Smiljanić, N. Tomić, Saša Ilić (83' L. Marković), Eduardo (65' Babović), Jovančić (89' S. Marković)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -1012,6 +1003,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p480",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Zdjelar, Šćekić, Tošić (83' Lutovac), Suma (66' Natho), Asano, Sadik (68' Ožegović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1019,8 +1019,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-4ac0bd638787a959",
@@ -1034,15 +1034,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0607.html",
-    "locator": "p452",
-    "quote": "Strelci: 1:0 Rukavina 16' 2:0 Lazetić 24' 2:1 Drakulić 28' 3:1 Zajić 36' 4:1 Bajić 39' 5:1 Maletić 66' 6:1 Bajić 71' 7:1 Lazetić 85'",
-    "bodyHash": "dbf4d47fa268af6f01f309662e6ad61e2df00f884b4ef088b69c8b3e4ddcf715",
-    "fetchedAt": "2026-11-05T11:31:20.798Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0910.html",
@@ -1105,6 +1096,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p518",
+    "quote": "Strelci: 0:1 Asano 16' 0:2 Suma 27' 1:2 Drujf 88' 2:2 Drujf 90+2'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1112,8 +1112,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-0688db01204a79e5",
@@ -1127,15 +1127,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p495",
-    "quote": "Strelci: 1:0 Paunović 11' 2:0 Bogunović 14' 2:1 Aleks 45' (penal) 2:2 Guiza 50'",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -1198,6 +1189,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p207",
+    "quote": "Strelci: 1:0 Ivanović 11' 1:1 Brežančić 14' 2:1 Ivanović 29' 2:2 Suma 66'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1205,8 +1205,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-4e6976309b7cf764",
@@ -1315,15 +1315,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0203.html",
-    "locator": "p363",
-    "quote": "Strelci: 1:0 Bošković 29' 2:0 Bogavac 53'",
-    "bodyHash": "aaaebeda6071d4fd02c38d192b104a190dd2ac9e6e2305fc61d508b20c6612a5",
-    "fetchedAt": "2026-11-04T11:35:38.211Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0304.html",
     "locator": "p229",
     "quote": "Strelac: Delibašić 29'",
@@ -1384,6 +1375,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p495",
+    "quote": "Strelci: 0:1 Sadik 29' 0:2 Sadik 73' 1:2 Sigurjonson 85'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1391,8 +1391,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-e7ede0f21e48c3c9",
@@ -1406,15 +1406,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p329",
-    "quote": "Crvena zvezda: Stamenković, Lazetić (63' Parker), Pejčinović, Milijaš (85' Bogdanović), Koroman, Umaru (87' Šišić), Tutorić, Tomović, Kleo, Ninkov, Isah Trener: Čedomir Janevski",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0910.html",
@@ -1477,6 +1468,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p227",
+    "quote": "Partizan: Stojković, Miletić, Vujačić, S. Pavlović, Brežančić, Šćekić, Zdjelar, Tošić (63' Marković), Natho, Stevanović (84' Ivanović), Sadik (od 75. Asano)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1484,8 +1484,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-728c9730083b0672",
@@ -1594,15 +1594,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0001.html",
-    "locator": "p302",
-    "quote": "Strelci: 0:1 Iliev 30' 0:2 Saša Ilić 32' 0:3 Delibašić 61' 0:4 Bečanović 82'",
-    "bodyHash": "401a3b24ea5e1e54174ab9225ffa3e87aa3ae3a3d2d8194d839bcbb8079f055b",
-    "fetchedAt": "2026-11-03T11:21:50.518Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0203.html",
     "locator": "p221",
     "quote": "Strelci: 1:0 Pešterac 30' 2:0 Markoski 90'",
@@ -1663,6 +1654,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p327",
+    "quote": "Strelci: 0:1 Suma 30' 0:2 Asano 52' 1:2 Mićić 90'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1670,8 +1670,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-ce905a51b4b288a1",
@@ -1685,15 +1685,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p388",
-    "quote": "Partizan: Stojković, Miljković, M. Jovanović, Krstajić (74' Savić), Davidov, Kamara, N. Tomić, Vukić (71' Smiljanić), Saša ILić, Iliev, Tejgo (63' M. Šćepović)",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -1756,6 +1747,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p419",
+    "quote": "Radnik: Vasiljević, Đorđević (74' Georgijev), Stevanović, Kričak, Stojanović, Kostić, Pejčić (83' Mićić), Mitošević, Danoski (83' Dimitrić ), Makarić (83' Islamović), Pavlov (37' Stamenković)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1763,8 +1763,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-b996908235adce9d",
@@ -1873,15 +1873,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/9192.html",
-    "locator": "p352",
-    "quote": "Željezničar: Škrba, Hurić (44' Pavlović), Milošević, Krunić, Alihodžić, Katana, Bogdanović, Velić, Stanić, Pehlivanović, Karić (46' Gutalj)",
-    "bodyHash": "4af992aa43d45e338f984791162f7935dde1f751f3c20df930b4d1e46af82444",
-    "fetchedAt": "2026-11-02T11:42:37.418Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/9293.html",
     "locator": "p230",
     "quote": "Sutjeska: Poleksić, Damjanović, Jaramaz, Medić, Kuzeljević, Rama (44' Gardašević), Bandović, Radojičić, Brkuljan (65' Miljanić), Knežević, Vešović Trener: Nikola Rakojević",
@@ -1942,6 +1933,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p474",
+    "quote": "Strelci: 0:1 Boli 44' 1:1 Suma 45+1' 2:1 Tošić 84'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1949,8 +1949,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-d26a3bc53d01f40c",
@@ -2059,15 +2059,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/9900.html",
-    "locator": "p478",
-    "quote": "Strelci: 1:0 Kežman 22' (penal) 2:0 Saša Ilić 31' 2:1 Marinković 41' 3:1 Kežman 52' 4:1 Delibašić 61' 4:2 Puhalak 87'",
-    "bodyHash": "0cd704a86c900c2d4ebbeb43c1b2e0819c0cbcaa9d614337721148e013ac6761",
-    "fetchedAt": "2026-11-03T11:21:46.616Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0001.html",
     "locator": "p377",
     "quote": "Strelac: 0:1 Ivić 22' 0:2 Ivić 80'",
@@ -2128,6 +2119,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p511",
+    "quote": "Strelci: 1:0 Grinvud 22' 2:0 Marsijal 33' 3:0 Rašford 49'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2135,8 +2135,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-f74a514858809bf9",
@@ -2245,15 +2245,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p476",
-    "quote": "HJK Helsinki: Valen, Rafinja, Magnuson, Ojala, Kansikas, Kamara, Rihilahti (33' Fauler), Bah, Sorsa, Parika (74' Vesto), Pevlas (62' Mahela)",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
     "locator": "p318",
     "quote": "Strelac: 0:1 N. Tomić 33' (penal) 0:2 N. Tomić 89'",
@@ -2314,6 +2305,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p320",
+    "quote": "Strelci: 0:1 Sadik 33' 1:1 Riznić 35' 1:2 Suma 53'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2321,8 +2321,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-d59a3078423f44c2",
@@ -2336,15 +2336,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0910.html",
-    "locator": "p263",
-    "quote": "Metalac: Živković, Vasić, Simović, Otašević, Rakočević, Gojak, Krasić, Teodorović (67' Savićević), Obradović, (46' Tošković), Jeremić, Betolingar (90' Zukić) Trener: Neško Milovanović",
-    "bodyHash": "622f8cfc86eb4242da3d02fff9cb85ce990b98ecfdc31d8750e696a7352f86ad",
-    "fetchedAt": "2026-11-06T11:09:05.479Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -2407,6 +2398,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p339",
+    "quote": "TSC: Filipović, Varga, Antonić, Babić, Tumbasević, Milićević, Duronjić, (67' Đurić), Zec, Arsenijević, Silađi (75' Šinković), Lukić (88' Galić)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2414,8 +2414,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-ef4d417c982ef259",
@@ -2429,15 +2429,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p450",
-    "quote": "Strelci: 0:1 N. Tomić 65' 1:1 Fosen 68' (penal) 2:1 Ogundžimi 90+2'",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -2500,6 +2491,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p406",
+    "quote": "Partizan: Stevanović, Pešukić, Vujačić, Dinga, Urošević (65' Stanojlović), Smiljanić, Lakčević, Ivanović, Marković (73' Đorđević), Lutovac, Gigić (46' Jovanović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2507,8 +2507,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-3618791d55358fb7",
@@ -2522,15 +2522,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0203.html",
-    "locator": "p489",
-    "quote": "Strelci: 0:1 Toñito 13' 0:2 Kutuzov 55' 1:2 Delibašić 78' 1:3 Pablo Contreras 82' 2:3 Živković 110' 3:3 Čakar 117'",
-    "bodyHash": "aaaebeda6071d4fd02c38d192b104a190dd2ac9e6e2305fc61d508b20c6612a5",
-    "fetchedAt": "2026-11-04T11:35:38.211Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0708.html",
@@ -2593,6 +2584,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p488",
+    "quote": "Strelci: 0:1 Stengs 13' 1:1 Natho 42' (penal) 2:1 Natho 61' 2:2 Boadu 67'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2600,8 +2600,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-bd43559c3cce1a8d",
@@ -2615,15 +2615,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p396",
-    "quote": "Novi Pazar: Đogatović, Marković, Spasojević, Babić, Ostojić, Šunjevarić (75' Stojanović), Arifović, Šupić, Đalac (52' Caković), Ademović (67' Kecap), Bogunović",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -2686,6 +2677,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p509",
+    "quote": "Mančester junajted: Romero, Van-Bisaka, Megvajer, Roho, Jang, Mektomini (75' Lingard), Fred (63' Gardner), Mata, Grinvud, Rašford (67' Pereira), Marsijal Trener: Ole Gunar Solskjer",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2693,8 +2693,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-a2910a980acebe46",
@@ -2708,15 +2708,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0607.html",
-    "locator": "p221",
-    "quote": "Strelci: 1:0 Urošević 2' 2:0 Damjanović 23' 2:1 Odita 27' 3:1 Lazetić 44' 3:2 P. Lazić 50' 3:3 Odita 56' 3:4 Odita 64'",
-    "bodyHash": "dbf4d47fa268af6f01f309662e6ad61e2df00f884b4ef088b69c8b3e4ddcf715",
-    "fetchedAt": "2026-11-05T11:31:20.798Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0708.html",
@@ -2779,6 +2770,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p299",
+    "quote": "Strelci: 0:1 Petković 2' 1:1 Sadik 9' 2:1 Ostojić 15' 3:1 Sadik 38' 4:1 Miletić 40' 4:2 Krnić 45+2' 5:2 Sadik 59' 6:2 Stevanović 78'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2786,8 +2786,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-12ecd76569d36e96",
@@ -2801,15 +2801,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0708.html",
-    "locator": "p203",
-    "quote": "Strelac: Jovetić 28'",
-    "bodyHash": "6d07bb2a92612e4e708e10cd3fcb0a682c29bd44dc25e167b6a9b332fc373014",
-    "fetchedAt": "2026-11-05T11:31:24.586Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0809.html",
@@ -2872,6 +2863,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p256",
+    "quote": "Strelci: 0:1 Nikolić 28' (penal) 1:1 S. Pavlović 90+2' 1:2 Dević 90+5'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2879,8 +2879,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-e89b08dc6ee0d566",
@@ -2894,15 +2894,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p206",
-    "quote": "Strelci: 0:1 Iliev 10' 0:2 N. Tomić 45'",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -2965,6 +2956,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p465",
+    "quote": "Malatija: Farnol, Čebake (10' Čagiran), Mina, Akbaš, Kaš, Šalali, Jildirim, Tore, Giljerme (74' Tozlu), Bifuma (68' Fofana), Jahović",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2972,8 +2972,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-34fff30bd02ffbb5",
@@ -3175,15 +3175,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0506.html",
-    "locator": "p315",
-    "quote": "Strelac: Saveljić 55'",
-    "bodyHash": "1ddf9da21124cc5d13a2a754fc0625dcbd0cf2f49a14cfbc78cbc90cb1dc6862",
-    "fetchedAt": "2026-11-05T11:31:16.812Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0607.html",
     "locator": "p346",
     "quote": "Partizan: Kralj, Rukavina, Bajić, Mihajlov, Lomić, Ivan Tomić (55' Zajić), Smiljanić, Maletić, Đ. Lazić, Nebojša Marinković (79' Jovetić), Lazetić",
@@ -3244,6 +3235,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p487",
+    "quote": "AZ Alkmar: Bizo, Svenson, Vlar, Vujtens (55' Hacidijakos), Vijndal, Midtsjo, De Vit, Kupmejners, Stengs (84' Klasi), Boadu, Idrisi (31' Sugavara)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3251,8 +3251,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-0dd9f9a2dee13446",
@@ -3361,15 +3361,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/9798.html",
-    "locator": "p459",
-    "quote": "Strelci: 1:0 Isailović 26' 2:0 Isailović 36' 3:0 Isailović 77' 4:0 Saša Ilić 88' 4:1 Mudrinić 89'",
-    "bodyHash": "51d077bd389daddd8f7fabdf628bc9916980d5771916b92b5671ea457a99b9f5",
-    "fetchedAt": "2026-11-03T11:21:38.752Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0102.html",
     "locator": "p444",
     "quote": "Strelci: 1:0 Pešterac 26' 1:1 Delibašić 30'",
@@ -3430,6 +3421,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p242",
+    "quote": "Strelac: 0:1 Marković 26' 0:2 Marković 75'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3437,8 +3437,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-7d95876a0578f5aa",
@@ -3733,15 +3733,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0910.html",
-    "locator": "p473",
-    "quote": "Strelci: 0:1 Diara 59' 0:2 B. Ilić 65'",
-    "bodyHash": "622f8cfc86eb4242da3d02fff9cb85ce990b98ecfdc31d8750e696a7352f86ad",
-    "fetchedAt": "2026-11-06T11:09:05.479Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
     "locator": "p523",
     "quote": "Partizan: Stojković, Miljković, M. Jovanović, Krstajić, Lazevski, R. Petrović, Boja (59' Babović), Saša Ilić, Moreira, Kleo, Iliev (78' M. Šćepović)",
@@ -3802,6 +3793,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p510",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Zdjelar, Šćekić, Natho (59' Tošić), Suma, Asano (69' Stevanović), Sadik (85' Ivanović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3809,8 +3809,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-560a152e23a2cd2e",
@@ -3919,15 +3919,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p359",
-    "quote": "Strelci: 1:0 Moreira 38' 2:0 Diara 67' 3:0 Diara 81'",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0910.html",
     "locator": "p429",
     "quote": "Strelci: 0:1 Mrđa 38' 1:1 R. Petrović 44' 1:2 Mrđa 48' 1:3 Đurovski 58'",
@@ -3988,6 +3979,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p436",
+    "quote": "Strelci: 1:0 Vukadinović 38' 2:0 Bojić 55' 2:1 Stevanović 81' 2:2 S. Pavlović 90+6'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3995,8 +3995,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-2d8e2b5e295e3ba0",
@@ -4010,15 +4010,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p397",
-    "quote": "Partizan: Stojković, Miljković, Rnić, Stanković, Lazevski, Kamara, N. Tomić (64' S. Marković), Vukić, Saša Ilić (73' Manga), M. Šćepović, Diara (55' Jovančić)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -4081,6 +4072,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p451",
+    "quote": "Kohans Ki Nomads: Bras, Dizni, Roberts, Horan, Holms, Herison (64' Vignal), Insal (81' Bakari), Moris, Oven, Pul, Vajld (74' Farkurson)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -4088,8 +4088,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-5e5e6ed94627da38",
@@ -4103,15 +4103,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p481",
-    "quote": "Strelci: 0:1 Bogunović 4' 1:1 Zlatinov 84'",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0910.html",
@@ -4174,6 +4165,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p525",
+    "quote": "Strelci: 1:0 Suma 4' 2:0 Sadik 22' 3:0 Asano 26' 4:0 Sadik 76' 4:1 Rotariju 79'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -4181,8 +4181,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-e8e93024a1e9f28f",
@@ -4196,15 +4196,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0708.html",
-    "locator": "p421",
-    "quote": "Partizan: M. Božović, Maletić (48' Knežević), Đorđević, Rnić, Obradović, Žuka, Đ. Lazić, Moreira (86' Ednilson), Tošić, Diara, Jovetić",
-    "bodyHash": "6d07bb2a92612e4e708e10cd3fcb0a682c29bd44dc25e167b6a9b332fc373014",
-    "fetchedAt": "2026-11-05T11:31:24.586Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0910.html",
@@ -4267,6 +4258,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p247",
+    "quote": "Radnički: Petrović, Bondarenko (48' Stevanović), Čumić, Đorđević, Haskić, Knežević, Meleg (60' Mihailović), Ostojić, Pantelić (88' Miloradović), Sulaka, Todorovski",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -4274,8 +4274,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-05da510b5159603a",
@@ -4289,15 +4289,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p499",
-    "quote": "Šahtjor: Pjatov, Srna, Kučer, Rakicki, Rac, Hibšman, Gaj, Daglas Košta, Žadson (58' Aleks), Vilijan, Luiz Adrijano (83' Vitsenets) Trener: Mirčea Lučesku",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -4360,6 +4351,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p443",
+    "quote": "Kohans Ki Nomads: Bras, Dizni, Horan, Holms, Roberts, Pul, Oven, Vajld, Moris, Vulfi (58' Bakari), Insal (od 73. Farkurson)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -4367,8 +4367,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-92ac4e957404fc12",
@@ -4756,15 +4756,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/9899.html",
-    "locator": "p356",
-    "quote": "Radnički KG: Sretenović (43' Janjić), Milošević, Despotović, Kizić, MIlićević, MIlosavljević, Radić (46' Antonijević), N. Milovanović, Radosavljević, Buzić (64' Delibašić), Madžar Trener: Žarko Olarević",
-    "bodyHash": "ff8a90a8815bc5bd1bc700c0b826a140e8dd9a311ac02782834c3c238d5ff545",
-    "fetchedAt": "2026-11-03T11:21:42.729Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/9900.html",
     "locator": "p501",
     "quote": "Partizan: R. Ilić, Rašović, Stojanoski (43' Savić), Stanojević, Duljaj, Trobok, Saša Ilić, Ivić (80' Mišković), Đorđe Tomić, Peković, Kežman (75' Obradović)",
@@ -4825,6 +4816,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p503",
+    "quote": "Strelac: Marsijal 43'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -4832,8 +4832,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-b1c1641e03cbdb91",
@@ -4847,15 +4847,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0607.html",
-    "locator": "p474",
-    "quote": "Mladost Apatin: Kesić, Kozoš (27' Vislavski), Trnavac, Mojić, Dragić, Trivunović (46' Torbica), Marinković, Stevanović, Radosavljev (54' Lečić), Kopunović, Simović",
-    "bodyHash": "dbf4d47fa268af6f01f309662e6ad61e2df00f884b4ef088b69c8b3e4ddcf715",
-    "fetchedAt": "2026-11-05T11:31:20.798Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -4918,6 +4909,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p193",
+    "quote": "Strelac: Tošić 27'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -4925,8 +4925,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-2089c2cb85688080",
@@ -4940,15 +4940,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p346",
-    "quote": "Javor: Nikolić, Milinković, Novaković, Vujadinović, Momčilović, Ostojić (79'Radivojević), Luković, Stanisavljević, Odita (90' Onjilo), Josović (68' Eliomar), Veljović",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -5011,6 +5002,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p486",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Zdjelar, Šćekić (79' Suma), Tošić (63' Marković), Natho, Asano, Sadik (88' Gigić)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5018,8 +5018,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-ad54ef1c666a07ee",
@@ -5128,15 +5128,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p380",
-    "quote": "Strelci: 0:1 Diara 53' 0:2 Moreira 70'",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
     "locator": "p340",
     "quote": "Strelci: 1:0 Mirić 53' 1:1 R. Petrović 69' (penal) 1:2 N. Tomić 90'",
@@ -5197,6 +5188,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p516",
+    "quote": "AZ Alkmar: Bizo, Svenson, Hadžidijakos (53' Drujf), Vujtens (60' Sugavara), Vijndal, Midtsje, De Vit (70' Klasi), Kupmajners, Stengs, Idrisi, Boadu",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5204,8 +5204,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-1be4717ac030eba3",
@@ -5219,15 +5219,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0708.html",
-    "locator": "p400",
-    "quote": "Strelci: 1:0 Diara 50' 2:0 Jovetić 55'",
-    "bodyHash": "6d07bb2a92612e4e708e10cd3fcb0a682c29bd44dc25e167b6a9b332fc373014",
-    "fetchedAt": "2026-11-05T11:31:24.586Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0809.html",
@@ -5290,6 +5281,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p413",
+    "quote": "Spartak: Đokić, Ivančević, Vujanović (50' Bijelović), Vidaković, Milanović, Leal, Baić (59' Šormaz), Vidović, Milutinović, Jovanović, Milić (71' Đurasović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5297,8 +5297,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-d7a67ef5f34a4458",
@@ -5312,15 +5312,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0910.html",
-    "locator": "p391",
-    "quote": "OFK Beograd: Topalović, Lazarevski, Rodić, Lazarević, Nikolić, Sinđić, Marković (61' Simić), Beljić (79' Injac), Krstić (73' Milić), Žeravica, Umaru",
-    "bodyHash": "622f8cfc86eb4242da3d02fff9cb85ce990b98ecfdc31d8750e696a7352f86ad",
-    "fetchedAt": "2026-11-06T11:09:05.479Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
@@ -5383,6 +5374,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p284",
+    "quote": "Vojvodina: Rockov, Veselinović, Đurić, Saničanin, Devetak, Drinčić, Đurišić (61' Topić), Đuričin, Bojić, Eze (61' Gemović), Matić (61' Nikolić)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5390,8 +5390,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-f0aee07430a88c70",
@@ -5500,15 +5500,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0910.html",
-    "locator": "p378",
-    "quote": "Partizan: M. Božović, Kamberović, M. Jovanović, Stanković, Lomić, R. Petrović (62' B. Jovanović), N. Tomić, Moreira (57' Davidov), Saša Ilić, Diara (73' B. Ilić), Kleo",
-    "bodyHash": "622f8cfc86eb4242da3d02fff9cb85ce990b98ecfdc31d8750e696a7352f86ad",
-    "fetchedAt": "2026-11-06T11:09:05.479Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
     "locator": "p362",
     "quote": "Strelac: Tejgo 62'",
@@ -5569,6 +5560,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p445",
+    "quote": "Strelac: Šćekić 62'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5576,8 +5576,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-1f04c9f427843a8e",
@@ -5591,15 +5591,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0001.html",
-    "locator": "p279",
-    "quote": "Zemun: Ristović, Dobrijević, Kruščić, Radulović (52' Čelar), Jolović (46' Tomić), Milenković, Kalajdžić, Branković, Matić, Čvorkov (30'Jelovac), Bojanić Trener: Nebojša Miličić",
-    "bodyHash": "401a3b24ea5e1e54174ab9225ffa3e87aa3ae3a3d2d8194d839bcbb8079f055b",
-    "fetchedAt": "2026-11-03T11:21:50.518Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0708.html",
@@ -5662,6 +5653,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p405",
+    "quote": "Vodojaža: Živak, Dajić (52' Đurić), Đokić, Mijalčić, Komatina, Petrović, Jekić, Vuković, Vasiljević, Nedeljković (65' Jovanović), Sretenović (73' Popović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5669,8 +5669,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-dbd9c7ea5512e30a",
@@ -5785,6 +5785,15 @@
     "bodyHash": "3c8b17e08fe35c92eae6104d7f835f65b0fa3e181032b4c200e2c115cffb1d39",
     "fetchedAt": "2026-10-23T08:51:47.801Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p192",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Zdjelar, Šćekić, Tošić (96' F. Stevanović), Suma (83' Smiljanić), Ivanović, Sadik (72' Ožegović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5792,8 +5801,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:51:47.801Z",
-  "updatedAt": "2026-10-23T08:51:47.801Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-39155c10a0964df2",
@@ -5807,15 +5816,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0506.html",
-    "locator": "p273",
-    "quote": "Strelci: 0:1 Nađ 19' 0:2 Radonjić 28' (penal)",
-    "bodyHash": "1ddf9da21124cc5d13a2a754fc0625dcbd0cf2f49a14cfbc78cbc90cb1dc6862",
-    "fetchedAt": "2026-11-05T11:31:16.812Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0809.html",
@@ -5878,6 +5878,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p200",
+    "quote": "Strelci: 1:0 Stevanović 19' 2:0 Ožegović 42' 3:0 Suma 49' 4:0 Sadik 90'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -5885,8 +5894,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-cb451cbb52bf399f",
@@ -6034,15 +6043,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p471",
-    "quote": "Šamrok rovers: Tomson, Saliven, Sajvs, Marej, Stivens, Mekejb (69' O' Doneli), Rajs, Fin, Tarner, Bili Denej (46' Šepard), Tvig (102' Kildaf)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
     "locator": "p380",
     "quote": "Radnički: Perić, Stamenković, Kolarević, Pejčić, Živković, Petrović, Jovanović, Stefanović (69' Mitrović), Škuletić, Ljubinković, Binić (90' I. Milenković)",
@@ -6103,6 +6103,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p473",
+    "quote": "Molde: Kraninks, Haraldsejd, Bjernbak, Gabrijelsen, Foren, Husein, Aursnes, Hestad, Ejkrem (69' Ejkrem), Knudson (33' Boli (85' Mostrem)), Džejms",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6110,8 +6119,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-05f1febcfa1a6853",
@@ -6125,15 +6134,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p545",
-    "quote": "Sevilja: Palop, Dragutinović, Dušer, Hesus Navas (80' Navaro), Mareska (77' Romarik), Luis Fabiano, Renato, Eskid, Prijeto, Kapel (70' Demul), Konko Trener: Manolo Himenez",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
@@ -6196,6 +6196,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p312",
+    "quote": "Napredak: Milošević, Aksentijević, Obradović, Milovanović, Spremo, Bjeloš, Baha (80' Markoski),Ivanović, Zec (88' Eskić), Vukadinović, Gavrić (90+3' Đorić)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6203,8 +6212,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-399247ff6829f845",
@@ -6218,15 +6227,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0102.html",
-    "locator": "p334",
-    "quote": "Strelci: 0:1 Lazović 41' 0:2 Ivić 42' 0:3 Vukić 88' 1:3 Bojanić 90'",
-    "bodyHash": "a9f1440ffdcf85f87fcfa662707d7ced73478a004575deaf7b0bfe8b59f81a81",
-    "fetchedAt": "2026-11-04T11:35:34.212Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0304.html",
@@ -6289,6 +6289,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p407",
+    "quote": "Strelci: 0:1 Ivanović 41' 0:2 Ivanović 46' 0:3 Ivanović 61' 0:4 Lutovac 66' 0:5 Ivanović 67' 0:6 Ivanović 90'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6296,8 +6305,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-aae056344b8e899f",
@@ -6311,15 +6320,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p403",
-    "quote": "Partizan: R. Ilić, Miljković, Anderson Markeš, Stanković, Lazevski, Smiljanić, N. Tomić (73' Saša Ilić), Vukić, Manga (57' Babović), Jovančić (57' Diara), Eduardo",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -6382,6 +6382,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p472",
+    "quote": "Partizan: Stojković, Miletić, Vujačić, S. Pavlović, Urošević, Zdjelar, Šćekić, Tošić, Suma (73' Natho), Stevanović (62' Asano), Sadik (46' Ožegović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6389,8 +6398,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-2e4763b29c1400d8",
@@ -6404,15 +6413,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0102.html",
-    "locator": "p284",
-    "quote": "Strelci: 1:0 Ivić 54' 1:1 B. Đokić 86'",
-    "bodyHash": "a9f1440ffdcf85f87fcfa662707d7ced73478a004575deaf7b0bfe8b59f81a81",
-    "fetchedAt": "2026-11-04T11:35:34.212Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0304.html",
@@ -6475,6 +6475,15 @@
     "bodyHash": "04728f5147e9c7e8ab9791b65971150830b32d6d59bd35af1560b08f666a26ab",
     "fetchedAt": "2026-11-06T11:31:06.822Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p452",
+    "quote": "Strelci: 1:0 Tošić 54' 2:0 Ožegović 70' 3:0 Stevanović 73'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6482,8 +6491,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:06.822Z",
-  "updatedAt": "2026-11-06T11:31:06.822Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-4ab9e47ee65f92bc",
@@ -6497,15 +6506,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p290",
-    "quote": "Partizan: Stojković, Miljković, M. Jovanović, Krstajić, Kizito, R. Petrović, Moreira (57' Kamara), Saša Ilić (57' Brašanac), Babović, Iliev, Kleo (68' Boja)",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -6568,6 +6568,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p226",
+    "quote": "Proleter Novi Sad: Petrić, Tanasin, Andrejević, Lukaševič, Kovačević, Pejić (57' Balabanović), B. Jovanović, Čolović, Marjanović, Novaković ( 66' Rušević), Babić (61' Radinović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6575,8 +6584,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-174f8cccf09bd4f6",
@@ -6590,15 +6599,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/9900.html",
-    "locator": "p524",
-    "quote": "Strelci: 1:0 Širko 37' 2:0 Tihonov 73'",
-    "bodyHash": "0cd704a86c900c2d4ebbeb43c1b2e0819c0cbcaa9d614337721148e013ac6761",
-    "fetchedAt": "2026-11-03T11:21:46.616Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0203.html",
@@ -6661,6 +6661,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p334",
+    "quote": "Strelci: 1:0 Tošić 37' 2:0 Natho 67' (penal) 3:0 Natho 80'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6668,8 +6677,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-03fc6a82020dca79",
@@ -6683,15 +6692,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p441",
-    "quote": "Škendija: Zendeli, Neziri, Beriša, Nikitović, Kuculi, Mustafi, Emini (85' Bilbilovski), Huseini, Selimani (74' Taipi), Hasani, Sali (46' Hiseni)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -6754,6 +6754,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p524",
+    "quote": "Astana: Erić,Rukavina, Postnjikov, Logvinenko, Šomko, Rotariju, Majevski, Sigurjonson (85' Žanga), Bejsebekov, Kižničenko, Murtazajev (47' Pertsuk)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6761,8 +6770,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-bcebb9c897ff2b02",
@@ -6776,15 +6785,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0809.html",
-    "locator": "p251",
-    "quote": "Strelci: 0:1 Diara 56' 0:2 Žuka 90'",
-    "bodyHash": "d0928903698d23e5d3a773bef9682e2b1132a5ac8bd7d64adfd883e384e9c9d7",
-    "fetchedAt": "2026-11-05T11:31:28.576Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0910.html",
@@ -6847,6 +6847,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p414",
+    "quote": "Strelci: 1:0 L. Pavlović 2:0 Milanović (autogol) 3:0 L. Pavlović 56' 4:0 Matić 62'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6854,8 +6863,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-8aa9507f7db2dea3",
@@ -6869,15 +6878,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p477",
-    "quote": "Partizan: R. Ilić, Stevanović, M. Jovanović, Krstajić (82' Stanković), Lazevski, R. Petrović (70' B. Jovanović), Smiljanić, N. Tomić, Saša Ilić, Kleo, Iliev (62' Davidov)",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -6940,6 +6940,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p434",
+    "quote": "Vojvodina: Rockov, Andrić, Bralić, Saničanin, Đorđević, Drinčić, Stojković, Bojić (82' Stojisavljević), Vukadinović (67' Gemović), Čović (81' Zukić), Mrkaić (55' Devetak).",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -6947,8 +6956,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-b8d05e35f7b5a701",
@@ -6962,15 +6971,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0506.html",
-    "locator": "p366",
-    "quote": "Partizan: Kralj, Lomić, Saveljić (81' Smiljanić), Đorđević, Rnić, Nađ, Ivan Tomić , Babović, Boja (66' Veselinović), Radonjić, Lazović",
-    "bodyHash": "1ddf9da21124cc5d13a2a754fc0625dcbd0cf2f49a14cfbc78cbc90cb1dc6862",
-    "fetchedAt": "2026-11-05T11:31:16.812Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/0708.html",
@@ -7033,6 +7033,15 @@
     "bodyHash": "907f7899727f1ae50948d8ec577e6986d1e474460849c8dfb26a53b5ea9f8b54",
     "fetchedAt": "2026-11-07T10:42:35.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p361",
+    "quote": "Radnički: Ristić, Todorovski, Đorđević, Stevanović, Letić, Subotić (81' Bjeličić), Pejović, Pantelić, Čumić (90+3' Meleg), Knežević (88' Mitrović), Mihailović",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7040,8 +7049,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:35.279Z",
-  "updatedAt": "2026-11-07T10:42:35.279Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-2cfdc104f068d7a4",
@@ -7055,15 +7064,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p354",
-    "quote": "Strelci: 0:1 Saša Ilić 86' 0:2 Manga 90+2'",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -7126,6 +7126,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p304",
+    "quote": "Mačva: Puletić, Pejović, Jevtić, Mijailović, Dukić, Ivić, Milosavljević (86' Stevanović), Božić (79' Čermelj), Marinković (75' Vujašin), Ašćerić, Šušnjar",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7133,8 +7142,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-0d542b29bd7d23ad",
@@ -7243,15 +7252,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p449",
-    "quote": "Partizan: Stojković, Ranković, Rnić, Ivanov, Volkov, Kamara, Babović, Vukić (90' S. Marković), Saša Ilić, M. Šćepović (53' N. Tomić), Eduardo (67' Jovančić)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
     "locator": "p461",
     "quote": "Partizan: Stojković, Aksentijević, Miljković, Ivanov, Volkov, S. Marković (90' Smiljanić), Kamara, N. Tomić, Babović (81' Saša Ilić), L. Marković, S. Šćepović (58' Mitrović)",
@@ -7312,6 +7312,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p326",
+    "quote": "Partizan: Kljajić, Lutovac, Ostojić, Vujačić, Urošević, Zdjelar (90' Smiljanić), Natho, Tošić, Asano, Suma (72' L. Pavlović), Sadik (82' Stevanović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7319,8 +7328,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-10be892c82e12a41",
@@ -7334,15 +7343,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p352",
-    "quote": "Smederevo: Ranković, I. Milosavljević, Milović, Brković, Boljević, Adamović, Jerinić, Krčmarević, Vučinić (70' Momić), Kovačević (83' M. Milosavljević), D. Živković (90' Jelovac)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -7405,6 +7405,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p523",
+    "quote": "Partizan: Stojković (70' Kljajić), Lutovac, Ostojić, S. Pavlović, Urošević, Zdjelar, Šćekić, Tošić, Suma (64' L. Pavlović), Asano, Sadik (83' Stevanović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7412,8 +7421,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-8c60960d8d703a48",
@@ -7537,6 +7546,15 @@
     "bodyHash": "c8bd2f1887d5d8af567a6f79004c1fb3ed3a4552c74a2551a7102fd1d8b221b0",
     "fetchedAt": "2026-11-01T10:49:16.081Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p241",
+    "quote": "Partizan: Stojković, Miletić, Vujačić (91' Dinga), Ostojić, Brežančić, Šćekić, Zdjelar, Stevanović (62' Lutovac), Suma, Marković, Sadik (46' Gigić)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7544,8 +7562,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:49:16.081Z",
-  "updatedAt": "2026-11-01T10:49:16.081Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-7861bdf2d235cfea",
@@ -7559,15 +7577,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1011.html",
-    "locator": "p524",
-    "quote": "Braga: Felipe, Silvio, Moizes, Rodrigez, Elderson, Vandinjo, Aguiar, Alan (68' Andres Madrid), Mosoro (50' Leandro), Paulo Sezar, Mateus (88' Lima) Trener: Domingos Paciência",
-    "bodyHash": "fd0ad2f834f112f5f91825f8f18d994d5ba0d445055be58c11b25761960f4938",
-    "fetchedAt": "2026-11-06T11:09:09.480Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1112.html",
@@ -7630,6 +7639,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p388",
+    "quote": "Partizan: N. Stevanović, Miletić, Ostojić (68' Smiljanić), Vitas, Urošević, Šćekić, Zdjelar (80' L. Pavlović), F. Stevanović, Natho (46' Suma), Asano (58' Ivanović), Matić (69' Štulić)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7637,8 +7655,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-55535912a7f3626d",
@@ -7652,15 +7670,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p359",
-    "quote": "Partizan: N. Petrović, Miljković, Ostojić, Ivanov, Volkov, Kamara (78' Babović), N. Tomić, Vukić, Saša Ilić (64' S. Marković), L. Marković (31' Manga), Diara",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -7723,6 +7732,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p381",
+    "quote": "Spartak: Dokić, Ivančević, Srećković (78' Jovanović), Vidaković, Denković (90' Vujanović), Dunđerski, Marčić, Urošević, Vidović, Bijelović (46' Šormaz (89. Baić)), Nikolić",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7730,8 +7748,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-7f3a06385d0d0b48",
@@ -7745,15 +7763,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p411",
-    "quote": "Partizan: R. Ilić, Aksentijević, Rnić, Ivаnov, Volkov, Kаmаrа (77' S. Mаrković), Smiljаnić, Saša Ilić, Bаbović, Diаrа (53' L. Mаrković), M. Šćepović (58' Eduаrdo)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -7816,6 +7825,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p494",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, Pavlović, Urošević, Natho, Zdjelar, Tošić (77' Marković), Suma (66' Šćekić), Asano (80' Brežančić), Sadik",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7823,8 +7841,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-b8fa95e421bf874b",
@@ -7838,15 +7856,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p266",
-    "quote": "Crvena zvezda: Bajković, Mikić, Mijailović, Adi, Petković, Evandro, Dimitrijević (72' Vilotić), Kadu (72' Vešović), Lazović, Kaluđerović (77' Mezenga), Borha",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -7909,6 +7918,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p481",
+    "quote": "Strelci: 1:0 Džejms 72' 1:1 Miletić 80'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -7916,8 +7934,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-b93e73f48d193471",
@@ -7931,15 +7949,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p316",
-    "quote": "Hajduk: Perić, Pauljević, Mujdragić, Vasiljević, Fejsa, Maksimović, Čovilo, Novković, Bubalo (60' Paunović), Hadžibulić, Veselinović, (45' Lalić)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -8002,6 +8011,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p248",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Zdjelar, Natho (60' Šćekić), Suma (79' L. Pavlović), Tošić (72' Marković), Asano, Sadik",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -8009,8 +8027,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-d67091cbe813f55b",
@@ -8024,15 +8042,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/1112.html",
-    "locator": "p418",
-    "quote": "Crvena zvezda: Bajković, Mikić, Maksimović, Tošić, Mladenović, Mijailović (Dimitrijević), Lazović (66' Kasalica), Evandro, Milivojević, Borha, Milunović (88' Mirić)",
-    "bodyHash": "91d10b92aed093a8db9a0992349729f70bf2b90902d837786938e856b1c29364",
-    "fetchedAt": "2026-11-06T11:30:55.047Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1213.html",
@@ -8095,6 +8104,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p297",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović (66' Vujačić), Urošević, Zdjelar (86' Natho), Šćekić, Tošić (81' Ivanović), Suma, Stevanović, Sadik",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -8102,8 +8120,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-db055eea26d97246",
@@ -8117,15 +8135,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0910.html",
-    "locator": "p471",
-    "quote": "Žilina: Perniš, Pečalka, Pjaček, Šurek, Lejtner, Mraz (71' Kobilik), Simakuridze, Jež, Viskočil (63' Rilke), Adauto (62' Lietava), Oravec",
-    "bodyHash": "622f8cfc86eb4242da3d02fff9cb85ce990b98ecfdc31d8750e696a7352f86ad",
-    "fetchedAt": "2026-11-06T11:09:05.479Z",
-    "language": "en"
-   },
    {
     "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
@@ -8188,6 +8197,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p466",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Šćekić, Zdjelar, Tošić (71' Lutovac), Suma (81' L. Pavlović), Asano, Sadik (90+6' Ožegović)",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -8195,8 +8213,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-30585e2e10b49a4f",
@@ -8344,15 +8362,6 @@
   "evidence": [
    {
     "sourceId": "partizanopedia",
-    "url": "https://partizanopedia.rs/0910.html",
-    "locator": "p451",
-    "quote": "Partizan: M. Božović, S. Stevanović (84' Knežević), Đorđević, Gavrančić, Obradović, R. Petrović, N. Tomić (61' Fejsa), Moreira, B. Ilić (73' Bogunović), Kleo, Diara",
-    "bodyHash": "622f8cfc86eb4242da3d02fff9cb85ce990b98ecfdc31d8750e696a7352f86ad",
-    "fetchedAt": "2026-11-06T11:09:05.479Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "partizanopedia",
     "url": "https://partizanopedia.rs/1011.html",
     "locator": "p360",
     "quote": "Partizan: Stojković, Miljković, Savić, Krstajić, Lazevski (84' M. Jovanović), Smiljanić, Kamara, Saša Ilić (25' N. Tomić), Babović, Iliev (74' R. Petrović), Tejgo",
@@ -8413,6 +8422,15 @@
     "bodyHash": "9cab55f5dbba0608e6b33d6d0c46c885b30e8c131a966d10413198c3a88e8688",
     "fetchedAt": "2026-11-07T10:42:39.125Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p479",
+    "quote": "Molde: Kraniks, Haraldseid, Foren, Gabrijelsen, Haugen (84' Knudtzon), Husein, Orsnes, Boli (60' Omoijanfo), Volf Ejkrem, E. Hestad, Džejms",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -8420,8 +8438,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:39.125Z",
-  "updatedAt": "2026-11-07T10:42:39.125Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-63eebbed28150e37",
@@ -8821,6 +8839,15 @@
     "bodyHash": "09bef5581308b362f090ca57ce24a8a86db7064890f7fb15e42a74f58edcb9b1",
     "fetchedAt": "2026-11-06T11:31:02.817Z",
     "language": "en"
+   },
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p421",
+    "quote": "Strelci: 0:1 Asano 45+2' 0:2 Asano 45+15' 1:2 Stamenković 45+17'",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -8828,8 +8855,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:02.817Z",
-  "updatedAt": "2026-11-06T11:31:02.817Z"
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  },
  {
   "id": "ga-20794665830ec5fa",
@@ -8998,5 +9025,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-07T10:42:39.125Z",
   "updatedAt": "2026-11-07T10:42:39.125Z"
+ },
+ {
+  "id": "ga-f496d1d1b72590dd",
+  "clubId": "partizan-belgrade",
+  "sourceIds": [
+   "partizanopedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "45+8",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p254",
+    "quote": "Partizan: Stojković, Urošević, Ostojić, Pavlović, Brežančić (45+8' Šehović), Šćekić, Natho, Tošić (80' Lakčević), Marković, Stevanović (46' Suma), Asano",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
+ },
+ {
+  "id": "ga-06a3fade6dd2349c",
+  "clubId": "partizan-belgrade",
+  "sourceIds": [
+   "partizanopedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "92",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "partizanopedia",
+    "url": "https://partizanopedia.rs/1920.html",
+    "locator": "p517",
+    "quote": "Partizan: Stojković, Miletić, Ostojić, S. Pavlović, Urošević, Zdjelar, Natho (92' Vujačić), Tošić (69' Brežančić), Suma (75' Šćekić), Asano, Sadik",
+    "bodyHash": "934bc0cc5f9ccf33350b5f93353f5eeaf76a433da5c667ef90dea8c9efeb0a43",
+    "fetchedAt": "2026-11-08T10:47:22.740Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-08T10:47:22.740Z",
+  "updatedAt": "2026-11-08T10:47:22.740Z"
  }
 ]
