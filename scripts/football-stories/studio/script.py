@@ -17,7 +17,7 @@ VISUALS = {
     'chapter': {'number', 'title', 'backdrop'},
     'map': {'focus', 'claims', 'label'},
     'matchday': {'claim', 'backdrop'},
-    'score': {'claim', 'backdrop'},
+    'score': {'claim', 'backdrop', 'in_play'},
     'fact': {'heading', 'text', 'claim', 'backdrop'},
     'stat': {'value', 'label', 'claim', 'backdrop'},
     'timeline': {'claims', 'label', 'backdrop'},
@@ -494,6 +494,8 @@ def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = No
                 errs.append(f'{where}: a {t} must name its claim')
             if t in ('matchday', 'score', 'ticket') and vc and vc[0] in by and by[vc[0]]['fact'].get('kind') != 'match':
                 errs.append(f'{where}: {t} needs a match claim')
+            if t == 'score' and 'in_play' in v and not isinstance(v['in_play'], bool):
+                errs.append(f'{where}: in_play must be a boolean')
             if t == 'table' and vc and vc[0] in by and by[vc[0]]['fact'].get('kind') != 'table':
                 errs.append(f'{where}: table needs a table claim')
             if t == 'quote' and vc and vc[0] in by:

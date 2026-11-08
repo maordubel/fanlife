@@ -200,13 +200,20 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'pause':if(!['queued','running'].includes(j.state))no('Only a queued or running job can be paused.');j.state='paused';pushLog(j,`Paused by ${actor}`,at);break
   case 'resume':if(j.state!=='paused')no('This job is not paused.');j.state='queued';j.lease=null;pushLog(j,`Resumed by ${actor} — continues from its last checkpoint`,at);break
   case 'cancel':if(j.state==='cancelled'||j.state==='cancel_requested')no('This job is already cancelled.');if(j.upload.state==='in_progress')no('An upload is in progress — record its result first.');j.state=j.state==='running'?'cancel_requested':'cancelled';j.lease=j.state==='cancelled'?null:j.lease;pushLog(j,`Cancelled by ${actor}`,at);break
-  case 'retry':if(j.state!=='failed'&&j.state!=='cancelled'&&!(j.state==='queued'&&j.notBefore))no('Only a failed or cancelled job (or one waiting for the writer) can be retried.');j.state='queued';j.error=null;j.lease=null;j.notBefore=null;pushLog(j,`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at);break
+  case 'retry':
   case 'retry_editorial':
-   if(jobKind(j)!=='film'||j.state!=='failed'||j.error?.code!=='SCRIPT_INVALID')no('Only a failed documentary script can be retried in the editing room.')
-   j.brief={...j.brief,review:'editorial',choice:null};j.options=null;delete j.editorial
-   j.editorialRequest={action:'editorial_restart',attempt:j.attempts}
+   if(j.state!=='failed'&&j.state!=='cancelled'&&!(j.state==='queued'&&j.notBefore))no('Only a failed or cancelled job (or one waiting for the writer) can be retried.')
+   {
+    const scriptFailed=jobKind(j)==='film'&&j.state==='failed'&&j.error?.code==='SCRIPT_INVALID'
+    if(a.action==='retry_editorial'&&!scriptFailed)no('Only a failed documentary script can be retried in the editing room.')
+    if(scriptFailed){
+     j.brief={...j.brief,review:'editorial',choice:null};j.options=null;delete j.editorial
+     j.editorialRequest={action:'editorial_restart',attempt:j.attempts}
+    }
+    pushLog(j,scriptFailed?`Script retry in the editing room requested by ${actor}`:`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at)
+   }
    j.state='queued';j.error=null;j.lease=null;j.notBefore=null
-   pushLog(j,`Script retry in the editing room requested by ${actor}`,at);break
+   break
   case 'approve_script':if(j.brief.review==='editorial'||j.state!=='needs_review'||j.stage!=='script')no('There is no script waiting for approval.');if(j.options?.length)no('Choose one of the scripts.');j.state='queued';j.brief={...j.brief,review:'auto'};pushLog(j,`Script approved by ${actor}`,at);break
   case 'choose_script':{if(j.brief.review==='editorial'||j.state!=='needs_review'||j.stage!=='script'||!j.options?.length)no('There are no scripts waiting for your choice.');const o=j.options!.find(x=>x.n===a.option);if(!o)throw new StoryError('CHOICE','Unknown script.');j.state='queued';j.brief={...j.brief,review:'auto',choice:o.n};pushLog(j,`Script ${o.n} chosen by ${actor}: "${o.title}"`,at);break}
   case 'upload_started':if(j.state!=='ready'&&j.state!=='needs_review')no('Only a finished film can be uploaded.');if(j.upload.state==='done')no('This film is already uploaded.');if(j.upload.state==='in_progress'||j.upload.state==='uncertain')no('An upload was started already — check YouTube Studio, then record the result or reset.');j.upload={...j.upload,state:'in_progress',at,by:actor};pushLog(j,`Upload started by ${actor}`,at);break
@@ -272,6 +279,7 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  }
  j.state=f.state;j.notBefore=null
  if(f.editorial&&f.state==='needs_review'&&(f.stage==='script'||f.stage==='edit')){
+  j.brief={...j.brief,review:'editorial'}
   j.editorial=f.editorial;delete j.editorialRequest
   j.message=f.stage==='script'?'Waiting for script approval':'Waiting for scene and picture approval'
   pushLog(j,j.message,at)

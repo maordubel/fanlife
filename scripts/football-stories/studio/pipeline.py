@@ -142,8 +142,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     step('research', 0.0, 'Reading the archive')
     lp = job_dir / 'ledger.json'
     pack_path = Path(brief['drive_pack']) if brief.get('drive_pack') else None
-    notes = (read_json(pack_path).get('notes') or []) if pack_path and pack_path.exists() else None
-    supplied = [{'name': n['name'], 'text': n['text']} for n in notes if n.get('required')] if notes is not None else None
+    pack_notes = (read_json(pack_path).get('notes') or []) if pack_path and pack_path.exists() else None
+    supplied = [{'name': n['name'], 'text': n['text']} for n in pack_notes if n.get('required')] if pack_notes is not None else None
     cached = read_json(lp) if lp.exists() else None
     owner_document_changed = cached is not None and supplied is not None and supplied != (cached.get('story_documents') or [])
     if cached is None or owner_document_changed:
@@ -176,16 +176,16 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '
                 f'({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
         art_sets = [*art_sets, *live_sets]
-        if notes is not None:
+        if pack_notes is not None:
             ledger['story_documents'] = supplied
-            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes if not n.get('required'))[:4000]
+            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in pack_notes if not n.get('required'))[:4000]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     ledger = read_json(lp)
     from .paper import beat_index
-    from . import media_assets, owner_story
+    from . import media_assets, owner_story, owner_treatment
     owner_updated = owner_story.apply(ledger) or owner_document_changed
     if owner_updated:
         ledger['summary'] = research.season_summary(ledger)
@@ -214,9 +214,12 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     step('script', 0.1, 'Writing the film')
     sp_ = job_dir / 'script.json'
     editorial_review = None
-    if brief.get('editorial'):
+    owner_draft = owner_treatment.build(ledger) if brief.get('kind') == 'tie' and not script_file else None
+    if owner_draft:
+        write_json(lp, ledger)
+    if brief.get('editorial') or owner_draft:
         from . import editorial
-        selected, editorial_review = editorial.prepare_script(job_dir, brief, ledger, cache, log)
+        selected, editorial_review = editorial.prepare_script(job_dir, brief, ledger, cache, log, owner_draft)
         if selected is None:
             return {'state': 'review', 'stage': 'script', 'editorial': editorial_review}
         write_json(sp_, selected)

@@ -76,6 +76,7 @@ function DraftReview({jobId,draft,review,busy,act}:{jobId:string;draft:Draft;rev
    <summary>{ci+1}. {c.title}</summary>
    {c.beats.map((b,bi)=>{
     const proposal=review.suggestion?.option===draft.option&&review.suggestion.beat===b.id?review.suggestion:null
+    const instruction=notes[b.id]??''
     return <article key={b.id} className={css.option}>
      <label>Paragraph {bi+1}<textarea rows={4} lang="en" maxLength={3000} value={edits[b.id]??b.text} onChange={e=>edit(b.id,e.target.value)}/></label>
      <label className={css.check}><input type="checkbox" checked={removed.includes(b.id)} onChange={e=>setRemoved(ids=>e.target.checked?[...ids,b.id]:ids.filter(id=>id!==b.id))}/> Remove this paragraph</label>
@@ -83,7 +84,7 @@ function DraftReview({jobId,draft,review,busy,act}:{jobId:string;draft:Draft;rev
      <details><summary>Rewrite this paragraph</summary>
       <label>Instruction in Hebrew or English<input dir="auto" maxLength={600} value={notes[b.id]??''} onChange={e=>setNotes(n=>({...n,[b.id]:e.target.value}))}/></label>
       <div className={css.actions}>{presets.map(p=><button key={p} type="button" className={button} onClick={()=>setNotes(n=>({...n,[b.id]:p}))}>{p}</button>)}
-       <button type="button" className={button} disabled={busy||!notes[b.id]?.trim()} onClick={()=>void act({action:'editorial_rewrite',option:draft.option,revision:draft.revision,beat:b.id,instruction:notes[b.id]})}>Suggest rewrite</button>
+       <button type="button" className={button} disabled={busy||!instruction.trim()} onClick={()=>void act({action:'editorial_rewrite',option:draft.option,revision:draft.revision,beat:b.id,instruction})}>Suggest rewrite</button>
       </div>
      </details>
      {proposal?<div><p><b>Before</b> {proposal.before}</p><p><b>After</b> {proposal.after}</p>
@@ -103,7 +104,11 @@ function SceneReview({review,urls,busy,act}:{review:Review;urls:Record<string,st
  const [order,setOrder]=useState(()=>original.map(s=>s.id))
  const [images,setImages]=useState<Record<string,string>>({})
  const byId=new Map(original.map(s=>[s.id,s]))
- const move=(i:number,by:number)=>setOrder(prev=>{const next=[...prev];[next[i],next[i+by]]=[next[i+by],next[i]];return next})
+ const move=(i:number,by:number)=>setOrder(prev=>{
+  const first=prev[i],second=prev[i+by]
+  if(first===undefined||second===undefined)return prev
+  const next=[...prev];next[i]=second;next[i+by]=first;return next
+ })
  const dirty=Object.keys(images).length>0||order.some((id,i)=>id!==original[i]?.id)
  const selected=new Set(original.filter(s=>s.required&&s.image).map(s=>s.image))
  const submit=(approved:boolean)=>void act({action:'editorial_plan',revision:review.plan!,order,images,approved})
@@ -113,6 +118,7 @@ function SceneReview({review,urls,busy,act}:{review:Review;urls:Record<string,st
   <Issues review={review}/>
   {order.map((id,i)=>{
    const scene=byId.get(id)!
+    const before=order[i-1],after=order[i+1]
    const canMove=(other?:Scene)=>scene.visual==='illustration'&&!scene.text&&other?.chapter===scene.chapter
    return <article key={id} className={css.option}>
     <h4>{i+1}. {scene.chapter}</h4><p>{scene.text||'Unvoiced scene'}</p>
@@ -124,8 +130,8 @@ function SceneReview({review,urls,busy,act}:{review:Review;urls:Record<string,st
      setImages(previous=>{const next={...previous};if(choice)next[id]=choice;else delete next[id];return next})
     }}><option value="">Current picture</option>{scene.alternatives.map(a=><option key={a} value={a}>{a.split('/').at(-1)}</option>)}</select></label>:null}
     <div className={css.actions}>
-     {canMove(byId.get(order[i-1]))?<button type="button" className={button} onClick={()=>move(i,-1)}>Move up</button>:null}
-     {canMove(byId.get(order[i+1]))?<button type="button" className={button} onClick={()=>move(i,1)}>Move down</button>:null}
+     {before!==undefined&&canMove(byId.get(before))?<button type="button" className={button} onClick={()=>move(i,-1)}>Move up</button>:null}
+     {after!==undefined&&canMove(byId.get(after))?<button type="button" className={button} onClick={()=>move(i,1)}>Move down</button>:null}
     </div>
    </article>
   })}

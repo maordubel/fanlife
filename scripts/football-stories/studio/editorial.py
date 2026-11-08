@@ -41,16 +41,29 @@ def editable(s: dict) -> dict:
 
 
 def check(s: dict, brief: dict, ledger: dict) -> list[str]:
-    return script.validate_script(writer.repair(s), ledger, float(brief['duration']), brief.get('kind'))
+    repaired = writer.repair(s)
+    minutes = float(brief['duration'])
+    if s.get('_owner_treatment'):
+        # An imported treatment has its own length. Don't pad it to the writer's target.
+        words = sum(len(b['narration'].split()) for *_, b in script.all_beats(repaired))
+        minutes = words / script.FILM_WORDS_PER_MINUTE
+    return script.validate_script(repaired, ledger, minutes, brief.get('kind'))
 
 
-def prepare_script(job: Path, brief: dict, ledger: dict, cache: Path, log) -> tuple[dict | None, dict]:
+def prepare_script(job: Path, brief: dict, ledger: dict, cache: Path, log,
+                   owner_draft: dict | None = None) -> tuple[dict | None, dict]:
     request = brief.get('editorial_request') or {}
     action = request.get('action')
     options = {int(p.stem.rsplit('-', 1)[-1]): read_json(p) for p in sorted(job.glob('script-option-*.json'))}
     approved_path = job / 'editorial-script.json'
     if approved_path.exists():
         options[0] = read_json(approved_path)
+    if owner_draft is not None and not any(s.get('_owner_treatment') for s in options.values()):
+        issues = check(owner_draft, brief, ledger)
+        if issues:
+            raise StageError('SCRIPT_INVALID', 'The imported draft failed validation: ' + '; '.join(issues))
+        options = {**options, 1: owner_draft}
+        write_json(job / 'script-option-1.json', owner_draft)
     if not options:
         if action == 'editorial_restart':
             brief = {**brief, 'writer_retry': request.get('attempt')}

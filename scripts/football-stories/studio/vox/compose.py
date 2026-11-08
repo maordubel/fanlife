@@ -434,7 +434,7 @@ def result(ed, s, B: Builder) -> Panel:
     stack = kind == 'score' and s['n'] % 2 == 1
     W_, H_ = (1180, 640) if stack else (1300, 600)
     reveals = match_score_reveals(ed.ledger, s, f)
-    live = any(score != (f['score_home'], f['score_away']) for _, score in reveals)
+    live = v.get('in_play') or any(score != (f['score_home'], f['score_away']) for _, score in reveals)
     head = 'MATCH SCORE' if live else 'MATCHDAY' if kind == 'matchday' else 'RESULT' if stack else 'FULL TIME'
     stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
     bar = B.t(f'{head} · {stage}'.upper(), 'caps', 30, PAPER, max_w=W_ - 80, track=2)
