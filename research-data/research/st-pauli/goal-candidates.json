@@ -13,24 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/11/29/lage-am-millerntor-29-november-2021/",
-    "locator": "p68",
-    "quote": "„ Gefahr aus der Luft – Kopfverletzungen im Fußball“ , so heißt eine Dokumentation im NDR Sportclub (30min). Neben den Kopfbällen sind natürlich auch die oft aus Kopfballduellen resultierenden Zusammenstöße ein großes Risiko.",
-    "bodyHash": "0275a62f2b08138d871add08773b63b9fc20b79fc1ff07dd07a10f3efab85406",
-    "fetchedAt": "2026-10-30T10:28:57.786Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2021/11/30/lage-am-millerntor-30-november-2021/",
-    "locator": "p47",
-    "quote": "Vielen Dank an Michael für den Tipp, den ich Euch hiermit gerne weiterreiche. Arte.tv (30min)",
-    "bodyHash": "170ea1f6b279a7aadbb953773e5fa295bcb25cb401302035987c36083b1071a7",
-    "fetchedAt": "2026-10-30T10:28:57.788Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/01/27/bericht-von-der-kollaustrasse-26-01-2022/",
     "locator": "p11",
     "quote": "Nach dem Aufwärmen ging es dann an die erste intensive Übung: Die Gruppe wurde in zwei Teams unterteilt, die auf jeweils einem kleinen Feld im 4vs4 antraten und zusätzlich zwei Spieler dabei hatten, die immer beim ballführenden Team spielten. Runtergebrochen also das klassische 5vs2 mit höherer Intensität. Zudem waren nur jeweils zwei Kontakte erlaubt und es gab auch wieder die Möglichkeit nach einer gewissen Anzahl an Pässen auf kleine Tore zu schießen (Dauer etwa 30min).",
@@ -82,6 +64,24 @@
     "bodyHash": "8a357ff25c49d121345bf9d169e4ace745ba96a285455c3c2785680d5f7c2c0a",
     "fetchedAt": "2026-11-06T11:31:17.664Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/02/lage-am-millerntor-02-november-2023/",
+    "locator": "p123",
+    "quote": "Die ARD-Doku „WM der Schande“ wurde mit vier Episoden im Oktober 2022 veröffentlicht. Wer gestern Abend nach den Zusammenfassungen der Pokalspiele noch dran blieb, konnte ab 0.00h den fünften und letzten Teil sehen, die „Ein Jahr danach“ -Episode (30min).",
+    "bodyHash": "17c919da722bccc19006b5605bb175594639178a13b249183635899f00869cf4",
+    "fetchedAt": "2026-11-08T10:47:46.093Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/12/03/viscapauli/",
+    "locator": "p30",
+    "quote": "Gestern wurde der Vlog dann online gestellt – und es war alles erwartbar in der buntesten Comicsprache: „Krass, boah, zack, wumm, peng, boing, huiuiuiui, geisteskrank!“ . // YouTube (30min)",
+    "bodyHash": "5a9ddbe4692a6299cc2dfe948e0ad651469457c354b645fe893e4ba0b33d73ed",
+    "fetchedAt": "2026-11-08T10:47:53.749Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:17.664Z",
-  "updatedAt": "2026-11-06T11:31:17.664Z"
+  "createdAt": "2026-11-08T10:47:53.749Z",
+  "updatedAt": "2026-11-08T10:47:53.749Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -856,6 +856,24 @@
     "bodyHash": "aaa98b69ebbec415ab6be264389cef98f67b92af79d9946e4973e524f84afd2a",
     "fetchedAt": "2026-11-07T10:42:59.143Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/09/lage-am-millerntor-09-november-2023/",
+    "locator": "p12",
+    "quote": "Einen kleinen Vorbericht (2min) mit Fokus auf Philipp Treu und Bildern vom Training gibt es im Hamburg-Journal.",
+    "bodyHash": "f0253ba0b5ff0d4d0fdab3d3345c1946b80f3456423a2d2c4b4cc16974086243",
+    "fetchedAt": "2026-11-08T10:47:48.399Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/27/lage-am-millerntor-27-november-2023/",
+    "locator": "p12",
+    "quote": "Klare Worte zu besagtem Stöckchen finden u.a. auch der NDR Sportclub (2min) mit Moderator Ben Wozny oder der morgendliche 11Freunde-Newsletter von Philipp Köster. Das Abendblatt (€) zeigt sich gnädig und fügt zumindest in der Überschrift noch ein Fragezeichen hinzu, ist im Text aber auch sehr klar.",
+    "bodyHash": "2e94496c22d30c451a805c0d16b476a4bc097a113b57d961ccf25718ce30f67f",
+    "fetchedAt": "2026-11-08T10:47:50.876Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -863,8 +881,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:59.143Z",
-  "updatedAt": "2026-11-07T10:42:59.143Z"
+  "createdAt": "2026-11-08T10:47:50.876Z",
+  "updatedAt": "2026-11-08T10:47:50.876Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -1084,6 +1102,15 @@
     "bodyHash": "1faa9a1635aa1b4555d2579e29da891c463163bd3d284d9848c8d5fd040fe675",
     "fetchedAt": "2026-11-04T11:36:00.528Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/27/lage-am-millerntor-27-november-2023/",
+    "locator": "p76",
+    "quote": "Nein, Spaß beiseite, ich will dieses Zitat auch gar nicht aus dem Zusammenhang reißen und Boll ordnet das sowohl vor dem Satz als auch im weiteren Gespräch (12min) entsprechend differenziert ein. Er wünscht sich einen weiteren Dialog, in den er explizit auch Fanvertreter und Fans eingebunden sehen will. Ob das realistisch ist, ist eine andere Frage.",
+    "bodyHash": "2e94496c22d30c451a805c0d16b476a4bc097a113b57d961ccf25718ce30f67f",
+    "fetchedAt": "2026-11-08T10:47:50.876Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1091,8 +1118,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:00.528Z",
-  "updatedAt": "2026-11-04T11:36:00.528Z"
+  "createdAt": "2026-11-08T10:47:50.876Z",
+  "updatedAt": "2026-11-08T10:47:50.876Z"
  },
  {
   "id": "ga-c85bb1efc815c755",
@@ -1273,6 +1300,15 @@
     "bodyHash": "de2fdbb5a085968ee5761efa11ed6f060a3dfd225164fe22df89917fc86467c5",
     "fetchedAt": "2026-11-04T11:36:00.532Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/12/05/lage-am-millerntor-05-dezember-2023/",
+    "locator": "p21",
+    "quote": "Auch beim FCH wurde die Pressekonferenz (14min) online gestellt und man weist erneut auf die grün-weißen Zipfelmützen hin…",
+    "bodyHash": "6de2408c93d8aad6bfc8386588526ca6f9e292fb1fd0f9187ebdd2e15b5484a8",
+    "fetchedAt": "2026-11-08T10:47:53.749Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1280,8 +1316,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:00.532Z",
-  "updatedAt": "2026-11-04T11:36:00.532Z"
+  "createdAt": "2026-11-08T10:47:53.749Z",
+  "updatedAt": "2026-11-08T10:47:53.749Z"
  },
  {
   "id": "ga-3d4715fe356e053e",
@@ -1357,6 +1393,15 @@
     "bodyHash": "957972d7f4094b050311fd377db4f942fab24267aeb5cd0c0052c8363e86e2f2",
     "fetchedAt": "2026-11-06T11:09:20.292Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/30/vlogger-am-millerntor/",
+    "locator": "p10",
+    "quote": "„Die Wahrheit über Stadionvlogs von ViscaBarca und Co.“ (20min)",
+    "bodyHash": "1ce7587e6b85e9c7549371f82b36a62ab0bc19cf867d0702ebe10d323dc9e01c",
+    "fetchedAt": "2026-11-08T10:47:50.880Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1364,8 +1409,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:20.292Z",
-  "updatedAt": "2026-11-06T11:09:20.292Z"
+  "createdAt": "2026-11-08T10:47:50.880Z",
+  "updatedAt": "2026-11-08T10:47:50.880Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1669,15 +1714,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
-    "locator": "p15",
-    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
-    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
-    "fetchedAt": "2026-11-04T11:36:02.702Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
     "locator": "p15",
     "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
@@ -1738,6 +1774,15 @@
     "bodyHash": "65b41c2bce9b20725518db30fc53ef228a79493e9bc27e26648d60fe56b5f82d",
     "fetchedAt": "2026-11-05T11:31:39.011Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/13/lage-am-millerntor-13-november-2023/",
+    "locator": "p20",
+    "quote": "Etwas mehr Zeit braucht es für den „Millerntalk“-Podcast im Abendblatt (40min), diesen gibt es wahlweise gratis zu hören oder im Abo nachzulesen (€) . Auch hier ist der Werdegang natürlich Thema, auch die schwere Zeit bei Werder inklusive Abstieg wird dort ausführlich behandelt.",
+    "bodyHash": "54bccb2233d26a7bd513eb647ced8fa56b5274c4b4ff68e13edbdccca7e3678c",
+    "fetchedAt": "2026-11-08T10:47:48.400Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1745,8 +1790,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:39.011Z",
-  "updatedAt": "2026-11-05T11:31:39.011Z"
+  "createdAt": "2026-11-08T10:47:48.400Z",
+  "updatedAt": "2026-11-08T10:47:48.400Z"
  },
  {
   "id": "ga-c61079b9040fc062",
@@ -2401,6 +2446,15 @@
     "bodyHash": "6ac473e47cc6141db374111e6d417391c0a9e09e539aff8aad1f4a72f1f71086",
     "fetchedAt": "2026-11-03T11:22:05.781Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/08/lage-am-millerntor-08-november-2023/",
+    "locator": "p64",
+    "quote": "Serie D, girone F. 93' minuto di Matese-Avezzanno, che sono sullo 0-0. Il portiere si scontra con il difensore, resta a terra alcuni secondi e crede erroneamente che l'arbitro abbia fischiato punizione. L'attaccante dell'Avezzano ruba il pallone e segna il clamoroso gol vittoria. pic.twitter.com/GRO4YPf6dT",
+    "bodyHash": "9a694823b2b3da285758d0fb6046ca43c51ec86cca2221094678ec046135b7a5",
+    "fetchedAt": "2026-11-08T10:47:48.398Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2408,8 +2462,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:05.781Z",
-  "updatedAt": "2026-11-03T11:22:05.781Z"
+  "createdAt": "2026-11-08T10:47:48.398Z",
+  "updatedAt": "2026-11-08T10:47:48.398Z"
  },
  {
   "id": "ga-0976c87709fd6931",
@@ -2755,6 +2809,15 @@
     "bodyHash": "65b41c2bce9b20725518db30fc53ef228a79493e9bc27e26648d60fe56b5f82d",
     "fetchedAt": "2026-11-05T11:31:39.011Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/30/lage-am-millerntor-30-november-2023/",
+    "locator": "p6",
+    "quote": "Die Pressekonferenz des HSV gibt es ebenfalls in Wort und Bild (16min) , personell ist hier die eventuell mögliche Rückkehr von Ignace Van der Brempt und Sebastian Schonlau zu erwähnen.",
+    "bodyHash": "f37b5e9fad8173d87c25416ab79d600bad19dde04cce393603a35368a052a80b",
+    "fetchedAt": "2026-11-08T10:47:50.879Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2762,8 +2825,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:39.011Z",
-  "updatedAt": "2026-11-05T11:31:39.011Z"
+  "createdAt": "2026-11-08T10:47:50.879Z",
+  "updatedAt": "2026-11-08T10:47:50.879Z"
  },
  {
   "id": "ga-23538979652ce03b",
@@ -2884,6 +2947,15 @@
     "bodyHash": "c918e4a69f3e640f742fce0bc37b8156a6fa499444a0d5f35e44895c0012672d",
     "fetchedAt": "2026-11-05T11:31:50.246Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/27/lage-am-millerntor-27-november-2023/",
+    "locator": "p60",
+    "quote": "Die WDR-Doku „Alles Blinde – Fußball-Pionierinnen bei ihrer ersten Weltmeisterschaft“ (31min) lief gestern Abend in der ARD. Grundlagen des Sports, ein Rückblick auf die EM 2022, der Konflikt über die Nicht-Finanzierung durch die Verbände, die mediale Aufmerksamkeit nach dem Beitrag in „Fest & Flauschig“, exklusive Interviews, Thoya Küsters Einstufung als B4 (was sie als „zu gut sehend“ einstufte und ihr damit die Teilnahme an der WM verwehrte) und natürlich die WM selbst.",
+    "bodyHash": "2e94496c22d30c451a805c0d16b476a4bc097a113b57d961ccf25718ce30f67f",
+    "fetchedAt": "2026-11-08T10:47:50.876Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2891,8 +2963,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:50.246Z",
-  "updatedAt": "2026-11-05T11:31:50.246Z"
+  "createdAt": "2026-11-08T10:47:50.876Z",
+  "updatedAt": "2026-11-08T10:47:50.876Z"
  },
  {
   "id": "ga-e7140d3faa9a7eb3",
@@ -3043,5 +3115,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-06T11:31:25.428Z",
   "updatedAt": "2026-11-06T11:31:25.428Z"
+ },
+ {
+  "id": "ga-618311f55e778cfd",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "36",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/13/lage-am-millerntor-13-november-2023/",
+    "locator": "p63",
+    "quote": "Es gibt einen Podcast von Patrick Gensing und Martin Drust, in dem es viele Infos und Hintergründe zum am kommenden Wochenende stattfindenden FCSP-Kongress gibt. Hörempfehlung! (36min)! // Blog-Kongress.fcstpauli.com",
+    "bodyHash": "54bccb2233d26a7bd513eb647ced8fa56b5274c4b4ff68e13edbdccca7e3678c",
+    "fetchedAt": "2026-11-08T10:47:48.400Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-08T10:47:48.400Z",
+  "updatedAt": "2026-11-08T10:47:48.400Z"
+ },
+ {
+  "id": "ga-d537512c2e048a18",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "91",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2023/11/29/lage-am-millerntor-29-november-2023/",
+    "locator": "p58",
+    "quote": "Barnsley have just scored this goal in the 91st minute against Wycombe…",
+    "bodyHash": "4fa4fe30ff7108e5afb2c22d915c1678876e2167cc7af5172283fde74fdaa0e5",
+    "fetchedAt": "2026-11-08T10:47:50.878Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-08T10:47:50.878Z",
+  "updatedAt": "2026-11-08T10:47:50.878Z"
  }
 ]

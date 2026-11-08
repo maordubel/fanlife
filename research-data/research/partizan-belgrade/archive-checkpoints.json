@@ -7,14 +7,10 @@
   "parserVersion": "partizanopedia-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 548,
+  "observedTotalDocuments": 559,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/1920.html",
-   "/rekordi.html",
-   "/stjepanbobek.html",
-   "/miroslavbrozovic.html",
    "/franjorupnik.html",
    "/belapalfi.html",
    "/zlatkocajkovski.html",
@@ -482,7 +478,18 @@
    "/aleksandarscekic.html",
    "/strahinjapavlovic.html",
    "/gabrielenake.html",
-   "/zlatansehovic.html"
+   "/zlatansehovic.html",
+   "/bibrasnatho.html",
+   "/umarsadik.html",
+   "/takumaasano.html",
+   "/filipstevanovic.html",
+   "/lazarpavlovic.html",
+   "/bojanmatic.html",
+   "/aleksandarlutovac.html",
+   "/igorvujacic.html",
+   "/urosvitas.html",
+   "/nemanjastevanovic.html",
+   "/nikolalakcevic.html"
   ],
   "seen": [
    "/",
@@ -560,10 +567,14 @@
    "/1516.html",
    "/1617.html",
    "/1718.html",
-   "/1819.html"
+   "/1819.html",
+   "/1920.html",
+   "/rekordi.html",
+   "/stjepanbobek.html",
+   "/miroslavbrozovic.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-07T10:42:39.131Z",
+  "updatedAt": "2026-11-08T10:47:34.487Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -578,7 +589,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-11-07T10:42:39.692Z",
+  "updatedAt": "2026-11-08T10:47:34.929Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -593,7 +604,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-11-07T10:42:43.609Z",
+  "updatedAt": "2026-11-08T10:47:38.690Z",
   "lastError": null
  },
  "partizan-official:html": {
@@ -612,7 +623,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-07T10:42:45.297Z",
+  "updatedAt": "2026-11-08T10:47:40.619Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -631,7 +642,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-07T10:42:46.584Z",
+  "updatedAt": "2026-11-08T10:47:41.663Z",
   "lastError": null
  }
 }
