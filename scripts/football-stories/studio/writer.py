@@ -193,18 +193,19 @@ HARD RULES (a script that breaks one is sent back):
   ("two-nil") or in digits — both are checked. No clickbait, no "subscribe" lines, no padding: the call to follow the
   channel and the closing call to the site are added by the studio.
 - SHORTS: Write two or three independent English micro-scripts, each 15–55 spoken words, designed to finish within 30 seconds. Start with a compelling truthful hook, build curiosity, end with a short invitation to the full film. Do not copy narration from the main film. Give each short a distinct angle and cite the evidence it uses. Do not promise virality.
-  A Short is a different FILM, not a cut of this one: an ILLUSTRATED Short — every line stands on one of the owner's
-  drawn scenes (a terrace at night, the dugout, a stadium clock, a newspaper stand, a trophy lift, an airport gate…),
-  the camera travels across it, the library's inked people act in front (a player on his knees, the referee with a
-  card, a supporter jumping) and its objects come alive (the ball, the cup, the radio, the ticket, a stamp, a
-  scoreboard). Write it like a person talking to a friend: plain words, "so", "basically", "right?"; no narrator
-  phrases, no exclamation marks. Line one names what the first frame shows (the premise, readable like a thumbnail:
-  "This is the bottle that cost a goalkeeper the World Cup."). One picture per sentence; the payoff lands on the last
-  words and the last line loops back to the first. Give each Short "hook_law": "know-it-all" (the die-hard's pride)
-  or "is-this-real" (the absurd), and "cartoon": a list of 4–7 beats, each {{"say": the words, "show": the PLACE the
-  line happens in and what happens there — "the dugout at night, a bottle passed along the bench", "an empty terrace
-  in the rain, one supporter on his knees", "a scoreboard flips to 1–0" — and, when you know it, "plate": the key of
-  the drawing from BEAT ART that fits (beat:common/…)}}. Name places and objects; the studio draws from them.
+  A Short is a different FILM, not a cut of this one: an ANIMATED cartoon. Every line gets its own painted set and
+  the story's real people act in it as cartoon characters (drawn from their kit, number, era and look — never a
+  photograph), in the story's real colours. Write it like a person talking to a friend: plain words, "so",
+  "basically", "right?"; no narrator phrases, no exclamation marks. Line one names what the first frame shows (the
+  premise, readable like a thumbnail: "This bottle of water knocked Brazil out of a World Cup."). One picture per
+  sentence; the payoff lands on the last words. Give each Short "hook_law": "know-it-all" or "is-this-real";
+  "cast_sheet": the people who appear, each {{"id": "branco", "look": "who he is and how he looks in THIS story — team,
+  year, shirt colours and number, shorts, hair, moustache, build"}} (only what the evidence or well-known kit history
+  supports; a person nobody can describe is "a Brazil player in yellow"); and "cartoon": 5–7 beats, each
+  {{"say": the words, "scene": the PLACE, its era and real colours, as a painter needs it ("Stadio delle Alpi in Turin at
+  night, 1990: Brazil fans in yellow, Argentina fans in sky-blue and white"), "cast": [{{"id": …, "action": what he does
+  on these words, "motion": idle|talk|walk|run|wobble|fall|jump|celebrate|point|kneel}}] (0–2 people), "show": one line
+  for the editor}}. Make the characters DO things — the story is acted, not illustrated.
 - Ten honest title concepts: some search-oriented (club + season + what happened), some discovery-oriented (the human
   hook). Mark each. Select the strongest. Titles follow the HOOK LAWS: the club's or the player's name early (fans
   search and click on names), a concrete detail, a tension the film resolves; under 60 characters where possible;

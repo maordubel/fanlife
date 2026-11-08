@@ -54,7 +54,8 @@ def make(job: Path, script: dict, club: str, season: str, accent: str, *, ledger
                 masthead=next((c['fact'].get('outlet','') for c in ledger.get('claims') or [] if c['id'] in ids and c['fact'].get('kind')=='press'),'')
                 r=cartoon.make(text,sh.get('cartoon'),dest,work/'cartoon',primary=accent,on_primary='#FFFBF2',
                                bans=list(ledger.get('identity_rival_colours') or []),tag=f'{club} · {season}',masthead=masthead,
-                               cache=job/'cache'/'voice',club_id=ledger.get('club_id'),season=ledger.get('season'))
+                               cache=job/'cache'/'voice',club_id=ledger.get('club_id'),season=ledger.get('season'),
+                               cast_sheet=sh.get('cast_sheet'))
                 out.append({'file':str(dest),'seconds':r['seconds'],'hook':hook,'narration':text,'claim_ids':ids,'independent':True,
                             'engine':'cartoon','look':r.get('look'),'plates':r.get('plates'),'hook_law':sh.get('hook_law'),'gags':r['gags']})
                 continue

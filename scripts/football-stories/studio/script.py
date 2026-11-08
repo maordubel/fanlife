@@ -182,7 +182,7 @@ SCHEMA_TEXT = '''{
   }]}],
   "description": string — 2-4 natural paragraphs; NO sources, credits or chapters (they are appended from the cut),
   "tags": [string] 8-15, total under 450 characters,
-  "shorts": [{"hook": string, "idea": string, "narration": string, "claim_ids": [string], "hook_law": "know-it-all" | "is-this-real", "cartoon": [{"say": string, "show": string, "plate"?: string}]}] — 2 or 3. Each is an independently written hook-led short, 25–55 spoken words, under 30 seconds including ending. Start narration with hook, use cited evidence, do not copy film narration. "cartoon" splits the narration into 4–7 beats (their "say" joined is the narration): "show" is the place and the action the illustrated Short draws on it; "plate" optionally names a BEAT ART drawing.
+  "shorts": [{"hook": string, "idea": string, "narration": string, "claim_ids": [string], "hook_law": "know-it-all" | "is-this-real", "cast_sheet": [{"id": string, "look": string}], "cartoon": [{"say": string, "scene": string, "cast": [{"id": string, "action": string, "motion": string}], "show": string}]}] — 2 or 3. Each is an independently written hook-led short, 25–55 spoken words, under 30 seconds including ending. Start narration with hook, use cited evidence, do not copy film narration. "cartoon" splits the narration into 5–7 beats (their "say" joined is the narration): "scene" is the painted set, "cast" who acts in it and how (ids from "cast_sheet").
   "thumbnails": [{"text": string <= 4 words, "concept": string, "claim": claim id or null}] — EXACTLY 3
 }'''
 
