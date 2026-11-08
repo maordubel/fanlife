@@ -148,10 +148,16 @@ def speak(text: str, out: Path, delivery: str = 'normal', extra: dict | None = N
             w.setframerate(SR)
             w.writeframes(pcm)
         words, check = align(text, out)
+        if check['ok'] and check.get('trim'):
+            t0, t1 = check['trim']
+            log(f"Voice: cut away what was said outside the script: {check['outside']!r}")
+            _cut(out, t0, t1)
+            words = [{**w, 'start': round(max(0.0, w['start'] - t0), 3), 'end': round(max(0.0, w['end'] - t0), 3)} for w in words]
         if check['ok']:
             return {'words': words, 'voice': f'gemini:{model}:{voice_name()}', 'alignment': 'whisper word timestamps matched to the script',
                     'delivery': delivery, 'check': check}
-        last = StageError('GEMINI_TTS_WORDS', f"the take did not say the script ({check['matched']:.0%} of the words; missing: {', '.join(check['missing'][:6])})")
+        last = StageError('GEMINI_TTS_WORDS', f"the take did not say the script ({check['matched']:.0%} of the words, "
+                                              f"{check['added']:.0%} added; heard: {check['heard'][:240]!r})")
         log(f'Voice: {model} — {last}')
     raise last or StageError('GEMINI_TTS_FAILED', 'no speech model answered')
 
@@ -171,11 +177,11 @@ def align(text: str, wav: Path) -> tuple[list[dict], dict]:
     really says the script."""
     global _WHISPER
     import numpy as np
-    try:
-        from faster_whisper import WhisperModel
-    except ImportError as e:
-        raise StageError('GEMINI_TTS_NO_WHISPER', 'faster-whisper is not installed: the take cannot be checked') from e
     if _WHISPER is None:
+        try:
+            from faster_whisper import WhisperModel
+        except ImportError as e:
+            raise StageError('GEMINI_TTS_NO_WHISPER', 'faster-whisper is not installed: the take cannot be checked') from e
         _WHISPER = WhisperModel(os.environ.get('STORIES_WHISPER_MODEL', 'small.en'), device='cpu', compute_type='int8')
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(wav), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'],
                          capture_output=True, check=True).stdout
@@ -185,8 +191,15 @@ def align(text: str, wav: Path) -> tuple[list[dict], dict]:
     a, b = [_norm(w) for w in script], [_norm(h[0]) for h in heard]
     times: list[tuple[float, float] | None] = [None] * len(script)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+    ops = sm.get_opcodes()
+    # words heard before the script starts or after it ends (the model saying a note aloud, "Transcript", a sigh):
+    # cut away, never captioned; only words added INSIDE the script count against the take
+    first_j = ops[0][4] if ops and ops[0][0] == 'insert' and ops[0][1] == 0 else 0
+    last_j = ops[-1][3] if ops and ops[-1][0] == 'insert' and ops[-1][1] == len(a) else len(b)
+    outside = first_j + (len(b) - last_j)
+    trim = (max(0.0, heard[first_j][1] - 0.15), heard[last_j - 1][2] + 0.35) if outside and last_j > first_j else None
     matched = 0
-    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+    for tag, i1, i2, j1, j2 in ops:
         if tag == 'equal':
             for k in range(i2 - i1):
                 times[i1 + k] = (heard[j1 + k][1], heard[j1 + k][2])
@@ -212,10 +225,23 @@ def align(text: str, wav: Path) -> tuple[list[dict], dict]:
     missing = [n for n in names if not any(difflib.SequenceMatcher(None, _norm(p), h).ratio() >= 0.6
                                            for p in n.split() for h in b)]
     share = matched / max(1, len(script))
-    added = max(0, len(b) - len(a)) / max(1, len(a))
+    added = max(0, (last_j - first_j) - len(a)) / max(1, len(a))
     # names are not required to be HEARD (Whisper mishears a foreign name the narrator said right); the words around them are
     ok = share >= 0.85 and added <= 0.15
-    return words, {'ok': ok, 'matched': share, 'added': added, 'missing': missing, 'heard': heard_text[:600]}
+    return words, {'ok': ok, 'matched': share, 'added': added, 'missing': missing, 'heard': heard_text[:600], 'trim': trim,
+                   'outside': ' '.join(h[0] for h in heard[:first_j] + heard[last_j:])[:200]}
+
+
+def _cut(p: Path, t0: float, t1: float) -> None:
+    with wave.open(str(p)) as w:
+        sr, ch, sw = w.getframerate(), w.getnchannels(), w.getsampwidth()
+        w.setpos(int(t0 * sr))
+        data = w.readframes(max(0, int((t1 - t0) * sr)))
+    with wave.open(str(p), 'wb') as w:
+        w.setnchannels(ch)
+        w.setsampwidth(sw)
+        w.setframerate(sr)
+        w.writeframes(data)
 
 
 def _wav_seconds(p: Path) -> float:
