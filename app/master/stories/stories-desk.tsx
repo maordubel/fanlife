@@ -83,7 +83,7 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
    }
    key.current=''
    setPictures([])
-   setNotice(d.get('hold')==='on'?'Created and held. Open it, add your pictures, then press Resume.':scripts===3?'Queued. In a few minutes three scripts are waiting for you below — pick one and the film makes itself.':'Queued. The studio starts it within about a minute.')
+   setNotice(d.get('hold')==='on'?'Created and held. Open it, add your pictures, then press Resume.':scripts===3?'Queued. In a few minutes three scripts are waiting for you below — pick one and the film makes itself.':'Queued. The studio starts it within a few minutes.')
    await onMade(b.job.id)}
   catch(err){setError(err instanceof Error?err.message:'Could not queue the film.')}finally{setBusy(false)}
  }
@@ -364,7 +364,7 @@ function PublishKit({yt,job}:{yt:Yt;job:Job}){
 export function HealthStrip({h}:{h:Health}){
  const w=h.writer
  const rows:[string,boolean|null,string][]=[
-  ['Studio worker',h.listener.ok,h.listener.ok?'Listening — a new film starts within about a minute':h.listener.at?`Last seen ${when(h.listener.at)} — it restarts by itself; GitHub → Actions → "Football Stories · listener" → Run workflow starts it now`:'Not started yet — GitHub → Actions → "Football Stories · listener" → Run workflow'],
+  ['Studio worker',h.listener.ok,h.listener.ok?'Listening — a new film starts within a few minutes':h.listener.at?`Last seen ${when(h.listener.at)} — it restarts by itself; GitHub → Actions → "Football Stories · listener" → Run workflow starts it now`:'Not started yet — GitHub → Actions → "Football Stories · listener" → Run workflow'],
   ['Script writer',w?w.ok:null,!w?'Checked by the worker on its next round':w.provider==='none'?'No key: add GEMINI_API_KEY in GitHub → Settings → Secrets → Actions':w.ok?`${w.provider==='gemini'?'Gemini':w.provider} key works${w.model?` · ${w.model}`:''}`:`The ${w.provider} key was refused${w.note?` (${w.note})`:''} — paste it again in GitHub → Settings → Secrets → Actions`],
   ['Film storage',h.storage.ok,h.storage.ok?'Private bucket ready':h.storage.note||'Storage is not ready'],
   ['Narrator',true,'Kokoro George · names from the lexicon (Take B, 4.11.2026)'],

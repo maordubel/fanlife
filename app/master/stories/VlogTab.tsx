@@ -21,7 +21,7 @@ export function VlogTab({facts,clubs,onMade,children}:{facts:Facts;clubs:Club[];
   setBusy(true);setErr('');setMsg('')
   if(!key.current)key.current=crypto.randomUUID()
   try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'vlog',brief:{club_id:c.id,match_id:m.id,drive_folder:drive.trim(),notes,minutes,telegram},idempotencyKey:key.current})})
-   key.current='';setMsg('Queued. The worker starts it within about a minute; the episode takes about an hour.');await onMade(b.job.id)}
+   key.current='';setMsg('Queued. The worker starts it within a few minutes; the episode takes about an hour.');await onMade(b.job.id)}
   catch(e){setErr(e instanceof Error?e.message:'Could not queue the episode.')}finally{setBusy(false)}
  }
  return <>

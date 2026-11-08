@@ -4,7 +4,7 @@ import {BUCKET} from './media'
 
 /**
  * Is the studio able to make a film right now? Three facts the owner should never have to guess (4.11.2026):
- *   · the listener — `stories-watch.yml` asks for work every minute and reports here (throttled to one write in 4 min);
+ *   · the listener — `stories-watch.yml` asks for work every three minutes and reports here (throttled to one write in 4 min);
  *   · the script writer — the listener checks the key it holds (GEMINI_API_KEY, …) against the provider, not just its
  *     presence, because a key pasted wrong looks exactly like a key that works until a film fails at "Script";
  *   · storage — the private bucket the films are delivered to.

@@ -21,7 +21,7 @@ export function ClassifiedTab({facts,onMade,children}:{facts:Facts;onMade:(id:st
   setBusy(true);setErr('');setMsg('')
   if(!key.current)key.current=crypto.randomUUID()
   try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'classified',brief:{file:f.file,approved,script_version:f.script_version,telegram},idempotencyKey:key.current})})
-   key.current='';setMsg(`FILE ${f.number} is queued. The worker starts it within about a minute.`);await onMade(b.job.id)}
+   key.current='';setMsg(`FILE ${f.number} is queued. The worker starts it within a few minutes.`);await onMade(b.job.id)}
   catch(e){setErr(e instanceof Error?e.message:'Could not queue the FILE.')}finally{setBusy(false)}
  }
  return <>
