@@ -4,7 +4,7 @@ name: Short sample (animated)
 on:
   workflow_dispatch:
   push:
-    paths: ['docs/fanlife/shorts-samples/**']
+    paths: ['docs/fanlife/shorts-samples/*.gemini-api.json']
 permissions:
   contents: read
 concurrency:
@@ -55,7 +55,7 @@ jobs:
           KOKORO_DIR: /home/runner/models
         run: |
           mkdir -p "$RUNNER_TEMP/out"
-          for f in ../../docs/fanlife/shorts-samples/*.json; do
+          for f in ../../docs/fanlife/shorts-samples/*.gemini-api.json; do
             n=$(basename "$f" .json)
             text=$(python3 -c "import json,sys;d=json.load(open(sys.argv[1]));print(' '.join(b['say'] for b in d['beats']))" "$f")
             python3 -m studio.cartoon.make --text "$text" --cartoon "$f" --look animated --out "$RUNNER_TEMP/out/$n.mp4" \
