@@ -202,7 +202,47 @@ def _arrow(a, b, seed):
 
 
 # ── documentary ───────────────────────────────────────────────────────────────────────────────────────────────────────
-def documentary(h: dict, pic, pal, crest_path, director: str | None = None, seed: int = 0, size=(1280, 720)) -> Board:
+def clipping(B: Board, cut: dict, side: str, seed: int = 0, scale: float = 1.0) -> tuple[int, int, int, int] | None:
+    """A torn newspaper cutting pinned to the thumbnail (owner, 8.11.2026: every cover must show at a glance that this is
+    real history, not another AI video). It prints ONLY what a claim holds — a press claim's outlet, date and headline,
+    or, when the ledger has none, the night's own dateline (date · competition). Never a headline that did not run."""
+    outlet = str(cut.get('outlet') or '').upper()[:28]
+    headline = str(cut.get('headline') or '').strip()
+    dateline = str(cut.get('date') or '')[:24]
+    if not (headline or dateline):
+        return None
+    w = int(330 * scale)
+    lines = split_lines(headline.upper(), 3 if len(headline) > 34 else 2) if headline else []
+    size = 30
+    if lines:
+        size = min(fit_size('head', int(40 * scale), max(lines, key=len), w - 40), int(40 * scale))
+    h = int((70 + len(lines) * size * 1.08 + (34 if not lines else 0)) * 1.0 * max(scale, 0.7)) + 20
+    card, pad = paper_card(w, h, seed + 11, tone=NEWS, tape=1)
+    d = ImageDraw.Draw(card)
+    from .render import face
+    y = pad + 10
+    top = outlet or 'THE ARCHIVE'
+    ft = face('caps', int(20 * scale))
+    ft.draw(d, (pad + 16, y), top, INK + (255,), track=1.5)
+    y += int(26 * scale)
+    d.line([(pad + 14, y), (pad + w - 30, y)], fill=INK + (255,), width=3)
+    d.line([(pad + 14, y + 6), (pad + w - 30, y + 6)], fill=INK + (255,), width=1)
+    y += 14
+    fh = face('head', size)
+    for l in lines:
+        fh.draw(d, (pad + 16, y), l, INK + (255,))
+        y += int(size * 1.08)
+    if dateline:
+        face('caps', int(18 * scale)).draw(d, (pad + 16, y + 4), dateline.upper(), INK + (230,), track=1.0)
+    im, m = rotate(card, None, -6 if side == 'left' else 6)
+    x = int(B.w * 0.62) if side == 'left' else int(B.w * 0.05)
+    y0 = int(B.h * 0.06)
+    B.paste(im, (x, y0))
+    return (x, y0, x + im.width, y0 + im.height)
+
+
+def documentary(h: dict, pic, pal, crest_path, director: str | None = None, seed: int = 0, size=(1280, 720),
+                cut: dict | None = None) -> Board:
     B = Board(*size)
     ink = _inks(pal)
     warm = director == 'terrace'
@@ -265,6 +305,8 @@ def documentary(h: dict, pic, pal, crest_path, director: str | None = None, seed
             stroke = pen_stroke(_arrow(start, tgt, seed), pen, 11, head=True, size=size)
     if stroke is not None:
         B.im.alpha_composite(stroke)
+    if cut and pic.kind not in ('press',) and not (kind == 'score' and h.get('chip') and side == 'left'):
+        clipping(B, cut, side, seed, scale=0.9)
     wm, wmm = wordmark(34)
     B.paste(wm, (x0 if side == 'left' else B.w - wm.width - 40, B.h - wm.height - (30 if director != 'trailer' else 90)))
     return B

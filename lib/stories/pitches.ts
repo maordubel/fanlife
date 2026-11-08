@@ -101,8 +101,10 @@ const LENGTH:Record<Kind,number>={match:5,tie:7,season:10,rivalry:10}
  *  path then checks every match and opponent against the club's catalog again, exactly as a clicked film. */
 export function pitchBrief(p:Pitch):Record<string,unknown>{
  return {club_id:p.club_id,kind:p.kind,season:p.season,match_ids:p.match_ids,opponent:p.opponent??undefined,duration:LENGTH[p.kind],
-  visual_style:'collage',tone:'auto',scripts:3,lead_director:p.director,drive:true,reel_to_telegram:false,privacy:'private',
-  topic:`${p.title} — ${p.logline}`.slice(0,240)} satisfies Partial<Record<keyof Brief,unknown>>
+  // one click = the whole film (owner, 8.11.2026): the pitching director writes the one script and the studio goes straight
+  // on to the picture, the Shorts and the upload pack — no second choice to make. The film is still private until approved.
+  visual_style:'collage',tone:'auto',scripts:1,review:'auto',lead_director:p.director,drive:true,reel_to_telegram:false,privacy:'private',
+  topic:`${p.title} — ${p.logline} Cold open: ${p.cold_open}`.slice(0,240)} satisfies Partial<Record<keyof Brief,unknown>>
 }
 
 /* ── the request and the last run ── */

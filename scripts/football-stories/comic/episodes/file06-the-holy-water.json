@@ -1,0 +1,269 @@
+{
+ "file": "file06",
+ "number": "06",
+ "title": "THE HOLY WATER",
+ "tone": "WAR",
+ "fps": 25,
+ "grade": 0.4,
+ "script": "docs/fanlife/classified/file06-the-holy-water.script.md",
+ "script_version": "owner-treatment-2026-11-08",
+ "approved": false,
+ "minutes": 1.9,
+ "note": "Draft from the owner's Hebrew treatment (8.11.2026), fact-checked; see the script document for every correction. Panels are still to be drawn.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "@P01",
+   "say": "A water bottle. Green. Handed over in the middle of a World Cup match. For fourteen years it was a rumour. Then Diego Maradona laughed on television.",
+   "dur": 12.3,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Cold open"
+  },
+  {
+   "id": "b02",
+   "panel": "@P02",
+   "say": "Turin, the twenty-fourth of June, nineteen ninety. Round of sixteen: Argentina against Brazil.",
+   "dur": 6.3,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b03",
+   "panel": "@P02",
+   "say": "Brazil came as favourites, and they controlled the night. Argentina, the holders, held on.",
+   "dur": 6.8,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The pause"
+  },
+  {
+   "id": "b04",
+   "panel": "@P03",
+   "say": "Before half-time, the game stops: an Argentina player is treated on the pitch. The physio, Miguel Di Lorenzo — known as Galíndez — brings the bottles.",
+   "dur": 11.9,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    4,
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b05",
+   "panel": "@P01",
+   "say": "Players from both sides drink. Brazil's left-back, Branco, takes a bottle too.",
+   "dur": 5.9,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b06",
+   "panel": "@P04",
+   "say": "Branco said afterwards that he felt dizzy for the rest of the match. He said it the next day, and nobody believed him.",
+   "dur": 10.6,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The fog"
+  },
+  {
+   "id": "b07",
+   "panel": "@P05",
+   "say": "In the eighty-first minute, Maradona runs at Brazil's defence and slides the ball to Claudio Caniggia. Caniggia rounds the keeper. One-nil.",
+   "dur": 9.7,
+   "mood": "tense",
+   "move": "whip",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b08",
+   "panel": "@P02",
+   "say": "Brazil are out of the World Cup.",
+   "dur": 4.0,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b09",
+   "panel": "@P06",
+   "say": "December two thousand and four. On Argentine television, Maradona says, laughing, that \"someone\" put a sleeping pill in the water — and that Branco was left completely dazed.",
+   "dur": 12.7,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The confession"
+  },
+  {
+   "id": "b10",
+   "panel": "@P06",
+   "say": "Argentina's José Basualdo later said the story was true. Coach Carlos Bilardo and Galíndez have always called it a myth.",
+   "dur": 9.3,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    5,
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b11",
+   "panel": "@P01",
+   "say": "Nothing was ever proven. But in Argentina it has a name: the holy water. File stays open.",
+   "dur": 8.0,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "Branco (footballer) — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Branco_(footballer)"
+  },
+  {
+   "n": 2,
+   "title": "Perfil 442 — Branco, the bidón and Maradona's 2004 remark",
+   "url": "https://442.perfil.com/noticias/futbol/preocupacion-en-brasil-branco-esta-internado-en-grave-estado-con-covid-19.phtml"
+  },
+  {
+   "n": 3,
+   "title": "Argentina–Brazil football rivalry — Wikipedia (1990 round of 16, 1–0)",
+   "url": "https://wikipedia.com/wiki/Copa_Confraternidad"
+  },
+  {
+   "n": 4,
+   "title": "El Gráfico — Branco y el bidón, la foto que nunca se vio (39th minute, Troglio treated)",
+   "url": "https://www.elgrafico.com.ar/articulo/%C2%A1habla-memoria!/53945/branco-y-el-bidon-la-foto-que-nunca-se-vio"
+  },
+  {
+   "n": 5,
+   "title": "Página/12 — Basualdo confirms; Galíndez is Miguel Di Lorenzo (31.1.2005)",
+   "url": "https://www.pagina12.com.ar/diario/suplementos/libero/10-1985-2005-01-31.html?mobile=1"
+  },
+  {
+   "n": 6,
+   "title": "Reuters factbox via Lenz — Argentina's \"Holy Water\" scandal",
+   "url": "https://lenz.io/c/argentina-brazil-tranquilliser-water-maradona-era-7a8ce9d7"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "The Holy Water: Did Argentina Drug Brazil in 1990?",
+   "The Green Bottle That Knocked Brazil Out of Italia 90",
+   "Maradona Laughed. Branco Was Right."
+  ],
+  "selected": 0,
+  "hook": "A water bottle. Green. Handed over in the middle of a World Cup match. For fourteen years it was a rumour. Then Diego Maradona laughed on television.",
+  "tags": [
+   "CLASSIFIED",
+   "Branco",
+   "Maradona",
+   "Argentina",
+   "Brazil",
+   "Italia 90",
+   "holy water",
+   "football stories"
+  ],
+  "thumbnails": [
+   {
+    "panel": "@P01",
+    "hook": [
+     "THE HOLY",
+     "WATER"
+    ]
+   },
+   {
+    "panel": "@P06",
+    "hook": [
+     "HE LAUGHED"
+    ]
+   },
+   {
+    "panel": "@P04",
+    "hook": [
+     "DRUGGED?"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "hook": "You think you know Italia 90? Then you know about the water bottle.",
+    "narration": "You think you know Italia 90? Then you know about the water bottle. Argentina against Brazil, round of sixteen. A player is treated, the Argentina physio hands out bottles, and Branco drinks. He says he felt dizzy. Argentina win 1-0. Years later Maradona laughs about it on TV. Full file on FanLife.",
+    "hook_law": "know-it-all",
+    "claim_ids": [
+     "src-1",
+     "src-3"
+    ]
+   }
+  ],
+  "hook_options": [
+   {
+    "text": "A water bottle. Green. Handed over in the middle of a World Cup match. For fourteen years it was a rumour. Then Diego Maradona laughed on television."
+   }
+  ]
+ }
+}

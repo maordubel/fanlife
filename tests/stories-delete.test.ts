@@ -8,7 +8,8 @@ const {rows,write}=vi.hoisted(()=>{
  })
  return {rows,write}
 })
-vi.mock('@/lib/master/durable',()=>({durable:()=>({kind:'supabase',read:async(n:string)=>rows.get(n)??null,write,list:async()=>[...rows.keys()]})}))
+vi.mock('@/lib/master/durable',()=>({durable:()=>({kind:'supabase',read:async(n:string)=>rows.get(n)??null,write,list:async()=>[...rows.keys()]}),
+ readPrefix:async(_d:unknown,p:string)=>[...rows.entries()].filter(([k])=>k.startsWith(p)).map(([name,r])=>({name,...(r as {text:string;etag:string})}))}))
 vi.mock('@/lib/master/admin',()=>({adminFromRequest:(r:Request)=>r.headers.get('x-test-owner')==='yes'?{actor:'owner'}:null}))
 import {DELETE} from '@/app/api/master/stories/[id]/route'
 import {createJob,deleteJob,deletionCleaned,getJob,listJobs,pendingDeletions,updateJob} from '@/lib/stories/store'

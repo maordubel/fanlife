@@ -10,7 +10,7 @@ import type {PitchDesk} from './pitches'
 import type {SocialLights} from './social'
 import type {PlanPost} from './marketing'
 
-export const DESK_TABS=['docs','classified','vlog','marketing','directors','status'] as const
+export const DESK_TABS=['ideas','docs','shorts','classified','vlog','marketing','directors','status'] as const
 export type DeskTab=typeof DESK_TABS[number]
 export const deskTab=(v:unknown):DeskTab=>(DESK_TABS as readonly string[]).includes(String(v))?v as DeskTab:'docs'
 
@@ -132,6 +132,24 @@ export function directorsBanner(f:Facts):Banner{
  return {tab:'directors',makes:'Every day each director pitches the next film he wants to make — another club and another event each time — with its cold open and three acts.',
   needs,run,headline:run==='yes'?'Ready. Ask for a new round any time; a round also comes by itself every morning (about 06:30 Athens).':`${run==='no'?'Cannot pitch now':'Waiting'}: ${bad!.label} — ${bad!.text}`,
   next:'“Make this film” queues a documentary with three scripts — the pitching director’s first. “Pass” sets it aside; that club and event are not pitched again for two weeks.'}
+}
+
+export function ideasBanner(f:Facts,ideas:{evidence:{level:string}}[]|null):Banner{
+ const needs=[workerNeed(f.health),writerNeed(f.health,f.jobs,f.now),
+  ideas===null?{label:'Ideas',light:'wait' as Light,text:'Reading what the studio holds'}:ideas.length?{label:'Ideas',light:'yes' as Light,text:`${ideas.length} nights with the most material · ${ideas.filter(i=>i.evidence.level==='rich').length} rich`}:{label:'Ideas',light:'no' as Light,text:'No recommendation file on this server (it is written with the catalog)'}]
+ const run=verdict(needs),bad=firstBad(needs)
+ return {tab:'ideas',makes:'The nights the studio can tell best: scored by what it holds — sources, scorers with minutes, the line-up, a goal described move by move, press, research dossiers, your Drive packs, the season’s kits — a big night breaking ties.',
+  needs,run,headline:run==='yes'?'Pick a night. Documentary = three scripts to choose from; Animated Short = the script and its Google Flow pack.':`${run==='no'?'Cannot start now':'Not yet'}: ${bad!.label} — ${bad!.text}`,
+  next:'A night already made says so on its card. The list is regenerated with the catalog whenever the archive grows.'}
+}
+
+export function shortsBanner(f:Facts):Banner{
+ const needs=[workerNeed(f.health),writerNeed(f.health,f.jobs,f.now),storageNeed(f.health),
+  {label:'Google Flow',light:'yes' as Light,text:'Your AI Pro plan: about 900 credits a month · a 6-clip Short ≈ 108 credits; character sheets and stills are free'}]
+ const run=verdict(needs),bad=firstBad(needs)
+ return {tab:'shorts',makes:'An animated Short (20–30 s, 9:16) of one real night: the story’s real players drawn in their real kits, acting it out — written from the record, made in Google Flow, voiced, captioned and mixed here.',
+  needs,run,headline:run==='yes'?`Ready. ${queueText(f.jobs)}`:`${run==='no'?'Cannot start now':'Will wait'}: ${bad!.label} — ${bad!.text}`,
+  next:'1 · The studio writes the Short and its Flow pack (a few minutes). 2 · Make the characters, clips and stills in Flow and upload them into their slots. 3 · “Edit the Short” — about ten minutes later it is in the job card and on your Telegram.'}
 }
 
 export function statusBanner(f:Facts):Banner{

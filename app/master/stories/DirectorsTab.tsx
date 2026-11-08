@@ -9,8 +9,8 @@ import css from './studio.module.css'
 
 /**
  * The three directors (docs/fanlife/66 §5) and what each wants to make next (studio/pitch.py). Above them, the house
- * soul they all share (studio/soul.py). "Make this film" queues a documentary with three scripts, the pitching
- * director's first; "Pass" sets the pitch aside. "Ask for new pitches" is a request the listener picks up.
+ * soul they all share (studio/soul.py). "Make this film" produces the whole documentary in one click, written by the
+ * pitching director; "Pass" sets the pitch aside. "Ask for new pitches" is a request the listener picks up.
  */
 const KIND_TEXT={match:'One match',tie:'A tie or a run',season:'A whole season',rivalry:'A rivalry'} as const
 type Dated=Pitch&{date:string}

@@ -1,3 +1,4 @@
+import {memo} from '@/lib/perf/memo'
 import {loadClub} from '@/lib/clubs/resolver'
 import {SHARED_GATES,gateAvailability} from '@/lib/clubs/gates'
 import {gateAccess,type AccessControl} from '@/lib/clubs/access'
@@ -9,6 +10,10 @@ export type HubClub={id:string;name:string;city:string;gates:Record<string,HubGa
  *  the clubs (performance audit, 11.10.2026: the hub used to build the whole model twice). Outside evaluation the two are the same. */
 export async function hubModels(clubs:readonly ({id:string;name:string;city:string}&AccessControl)[],locale:string):Promise<{model:HubClub[];strict:HubClub[]}>{
  const preview=evaluationMode()
+ // the front page's heaviest step, shared by every visitor on a warm instance for five minutes (lib/perf/memo.ts)
+ return memo(`hub:${locale}:${preview}:${JSON.stringify(clubs)}`,300_000,()=>hubModelsNow(clubs,locale,preview))
+}
+async function hubModelsNow(clubs:readonly ({id:string;name:string;city:string}&AccessControl)[],locale:string,preview:boolean):Promise<{model:HubClub[];strict:HubClub[]}>{
  if(!preview){const m=await hubModel(clubs,locale,false);return {model:m,strict:m}}
  const pairs=await Promise.all(clubs.map(async c=>{const one=[c];const [a,b]=await Promise.all([hubModel(one,locale,true),hubModel(one,locale,false)]);return [a[0]!,b[0]!] as const}))
  return {model:pairs.map(p=>p[0]),strict:pairs.map(p=>p[1])}

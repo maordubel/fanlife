@@ -1,6 +1,7 @@
 """Independent 9:16 hook films: new script and narration, source pictures from the edit."""
 from __future__ import annotations
 import math
+import os
 import subprocess
 from pathlib import Path
 from . import voice
@@ -43,10 +44,29 @@ def make(job: Path, script: dict, club: str, season: str, accent: str, *, ledger
             continue
         if len(text.split()) >= 12 and text.lower() in original:
             continue
+        work=job/'short-hooks'/str(i);work.mkdir(parents=True,exist_ok=True)
+        dest=job/'out'/'shorts'/f'short-{i}.mp4';dest.parent.mkdir(parents=True,exist_ok=True)
+        # The Short is its own film (owner, 8.11.2026): an illustrated Short on the hook's words (studio/cartoon), not stills of the documentary.
+        # The old still-montage remains only as the fallback when the cartoon cannot be rendered on this runner.
+        if os.environ.get('STORIES_SHORTS_ENGINE','cartoon')=='cartoon':
+            try:
+                from .cartoon import make as cartoon
+                masthead=next((c['fact'].get('outlet','') for c in ledger.get('claims') or [] if c['id'] in ids and c['fact'].get('kind')=='press'),'')
+                r=cartoon.make(text,sh.get('cartoon'),dest,work/'cartoon',primary=accent,on_primary='#FFFBF2',
+                               bans=list(ledger.get('identity_rival_colours') or []),tag=f'{club} · {season}',masthead=masthead,
+                               cache=job/'cache'/'voice',club_id=ledger.get('club_id'),season=ledger.get('season'),
+                               cast_sheet=sh.get('cast_sheet'))
+                out.append({'file':str(dest),'seconds':r['seconds'],'hook':hook,'narration':text,'claim_ids':ids,'independent':True,
+                            'engine':'cartoon','look':r.get('look'),'plates':r.get('plates'),'hook_law':sh.get('hook_law'),'gags':r['gags']})
+                continue
+            except StageError as e:
+                if e.code=='SHORT_TOO_LONG':
+                    continue
+            except Exception:  # noqa: BLE001 — never lose the Short: fall back to the montage below
+                pass
         matched=[s for s in plan['shots'] if set(s.get('claim_ids') or []) & set(ids) and s.get('visual',{}).get('type') not in ('follow','end')]
         if not matched:
             continue
-        work=job/'short-hooks'/str(i);work.mkdir(parents=True,exist_ok=True)
         v=voice.voice_script({'chapters':[{'beats':[{'narration':text,'delivery':'tense'}]}]}, work/'voice', job/'cache'/'voice', lambda _:None)
         duration=v['beats'][0]['duration'] + 1.2
         if duration > 29.5:
@@ -61,7 +81,6 @@ def make(job: Path, script: dict, club: str, season: str, accent: str, *, ledger
         if not images:
             continue
         overlay=shorts.overlay(hook,f'{club} · {season}',accent,work/'overlay.png')
-        dest=job/'out'/'shorts'/f'short-{i}.mp4';dest.parent.mkdir(parents=True,exist_ok=True)
         # New visuals: a rapid sequence of distinct frames; the full film's sound is never used.
         segment=duration/len(images)
         args=['ffmpeg','-y','-v','error']

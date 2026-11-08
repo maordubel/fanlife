@@ -10,6 +10,12 @@ from pathlib import Path
 from .common import StageError
 
 FILES = {'film': '1qeTwYH9yuZRb-IbGEWd5AjKcg4jqttAH', 'classified': '1QA41TgtkdMmB6fcLCHmIPZoAALfO5vC8'}
+# Owner, 8.11.2026: "in CLASSIFIED use only the first 3 seconds of the opening, and a smoother move into the film; in the
+# documentary too, a smoother, nicer move into the film." TRIM cuts the opening; XFADE is how it hands over to the film —
+# the picture dissolves (or wipes) into the first shot while the opening's sound fades out under the narrator's first
+# words, instead of a hard cut on a frame of black.
+TRIM = {'classified': 3.0, 'film': None}
+XFADE = {'classified': ('fadeblack', 0.45), 'film': ('fade', 0.8)}
 
 
 def _sha(p: Path) -> str:
@@ -66,10 +72,18 @@ def prepend(master: Path, job: Path, kind: str, log, source: Path | None = None)
     width, height = int(v['width']), int(v['height'])
     normalized, candidate = job / 'intro-normalized.mp4', job / 'intro-result.mp4'
     try:
-        subprocess.run(['ffmpeg','-y','-v','error','-i',str(opening),'-vf',f'scale={width}:{height}:force_original_aspect_ratio=decrease,pad={width}:{height}:(ow-iw)/2:(oh-ih)/2,fps=25,setsar=1',
+        trim = TRIM.get(kind)
+        subprocess.run(['ffmpeg','-y','-v','error','-i',str(opening),*(['-t',str(trim)] if trim else []),
+                        '-vf',f'scale={width}:{height}:force_original_aspect_ratio=decrease,pad={width}:{height}:(ow-iw)/2:(oh-ih)/2,fps=25,setsar=1',
                         '-c:v','libx264','-preset','veryfast','-pix_fmt','yuv420p','-c:a','aac','-ar','48000','-ac','2','-shortest',str(normalized)],check=True)
-        seconds = float(_probe(normalized)['format']['duration'])
-        vf = '[0:v]setpts=PTS-STARTPTS[v0];[1:v]fps=25,setsar=1,setpts=PTS-STARTPTS[v1];[0:a]aresample=48000,asetpts=PTS-STARTPTS[a0];[1:a]aresample=48000,asetpts=PTS-STARTPTS[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]'
+        length = float(_probe(normalized)['format']['duration'])
+        effect, d = XFADE.get(kind, ('fade', 0.6))
+        d = min(d, max(0.1, length / 3))
+        seconds = round(length - d, 3)   # where the film's own clock starts in the result (subtitles and chapters shift by it)
+        vf = (f'[0:v]fps=25,setsar=1,format=yuv420p,settb=AVTB,setpts=PTS-STARTPTS[v0];[1:v]fps=25,setsar=1,format=yuv420p,settb=AVTB,setpts=PTS-STARTPTS[v1];'
+              f'[v0][v1]xfade=transition={effect}:duration={d}:offset={seconds}[v];'
+              f'[0:a]aresample=48000,asetpts=PTS-STARTPTS[a0];[1:a]aresample=48000,asetpts=PTS-STARTPTS[a1];'
+              f'[a0][a1]acrossfade=d={d}:c1=tri:c2=tri[a]')
         subprocess.run(['ffmpeg','-y','-v','error','-i',str(normalized),'-i',str(body),'-filter_complex',vf,'-map','[v]','-map','[a]',
                         '-c:v','libx264','-preset',os.environ.get('STORIES_MASTER_PRESET','medium'),'-crf','18','-pix_fmt','yuv420p',
                         '-c:a','aac','-ar','48000','-ac','2','-b:a','192k','-movflags','+faststart',str(candidate)],check=True)
@@ -78,7 +92,7 @@ def prepend(master: Path, job: Path, kind: str, log, source: Path | None = None)
         tmp = stamp.with_suffix('.part')
         tmp.write_text(json.dumps({'kind':kind,'seconds':seconds,'master_sha256':_sha(master)}))
         os.replace(tmp, stamp)
-        log(f'Opening: {kind} · {seconds:.2f}s, original owner video')
+        log(f'Opening: {kind} · {length:.2f}s of the owner video, {effect} {d:.2f}s into the film')
         return seconds
     except Exception as e:
         candidate.unlink(missing_ok=True)

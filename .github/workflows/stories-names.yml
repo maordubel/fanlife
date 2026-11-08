@@ -1,0 +1,58 @@
+name: Football Stories · names
+# Every name the narrator can meet, researched (studio/name_research.py): the free writer, briefed as the BBC
+# Pronunciation Unit, answers how each player, club, ground and competition is said by its own people — with the club,
+# the country and the native spelling the archive holds. Resumable: each run researches the next names and commits
+# kit/pronounce/researched.json to the branch it ran on. Runs nightly until every name is done; nothing here costs money.
+on:
+  workflow_dispatch:
+    inputs:
+      batches: {description: 'Batches of 50 names (each one free request)', default: '60'}
+      club: {description: 'Only this club (optional)', default: ''}
+      audition: {description: 'Send the narrator audition to Telegram afterwards', type: boolean, default: true}
+  schedule:
+    - cron: '17 2 * * *'
+  push:
+    paths: ['scripts/football-stories/studio/name_research.py']
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: stories-names-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  names:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm}
+      - name: The club packs (every player the archive holds)
+        run: |
+          npm ci --no-audit --no-fund
+          npm run clubs:precompile
+          pip install -q numpy pillow
+      - name: Research the names, committing every ten batches (a timeout never loses an hour of answers)
+        env:
+          BATCHES: ${{ inputs.batches || '60' }}
+          CLUB: ${{ inputs.club || '' }}
+        run: |
+          git config user.name "fanlife-names" && git config user.email "actions@users.noreply.github.com"
+          F=scripts/football-stories/studio/kit/pronounce/researched.json
+          rounds=$(( (BATCHES + 9) / 10 ))
+          for i in $(seq 1 $rounds); do
+            (cd scripts/football-stories && python3 -m studio.name_research --batches 10 ${CLUB:+--club "$CLUB"}) || true
+            git add "$F"
+            if git diff --cached --quiet; then echo "Nothing new — done."; break; fi
+            git commit -qm "Names: researched pronunciations ($(date -u +%FT%H:%M))"
+            git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}"
+          done
+      - if: github.event_name == 'workflow_dispatch' && inputs.audition && github.ref_name == github.event.repository.default_branch
+        name: The narrator audition, with the new names
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run stories-narrator-audition.yml --ref "${{ github.ref_name }}"

@@ -276,3 +276,120 @@ def upload_set(st, job_id: str, master: Path, files: dict, package: list, shorts
                          for i, s in enumerate(ok_shorts, 1)]
     shutil.rmtree(zdir, ignore_errors=True)
     return art
+
+
+# ── marketing films (owner, 8.11.2026) ───────────────────────────────────────────────────────────────────────────────
+def run_promo(st, job: dict, jd: Path, progress, log) -> dict:
+    """A promo, animated in Google Flow like the Shorts (owner, 8.11.2026: "smart use of Flow"): visit 1 writes it
+    (studio/promo.py, facts only) and stops with its Flow pack; visit 2 edits the clips the owner uploaded."""
+    from . import flowkit, promo
+    spec = job.get('spec') or {}
+    pack = job.get('flow')
+    if not pack:
+        progress('script', 0.05, f'Writing the marketing film: {spec.get("label")}')
+        s = promo.write(spec, jd / 'cache', log)
+        (jd / 'promo-script.json').write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding='utf-8')
+        pack = flowkit.flow_pack({'title': s.get('title'), 'cast_sheet': s.get('cast_sheet') or [], 'beats': s['cartoon']})
+        tag = 'FAN LIFE · ' + str(spec.get('label') or 'FOOTBALL. FOREVER.')[:34].upper()
+        pack['story']['tag'] = tag
+        pack.update(narration=s['narration'], hook_law=s.get('hook_law'), tags=[str(t)[:40] for t in s.get('tags') or []][:12],
+                    description=(str(s.get('description') or '') + f'\n\n▶ {spec.get("url") or "https://fanlife.dubelteam.com"}').strip())
+        pack['markdown'] = flowkit.markdown(pack, s)
+        log(f"Promo: {len(pack['clips'])} clips + {len(pack['stills'])} stills ready for Flow ({pack['credits']} credits)")
+        return {'state': 'needs_review', 'stage': 'graphics', 'flow': pack}
+    fin = _short_edit(st, job, {**spec, 'telegram': spec.get('telegram', True)}, pack, jd, progress, log,
+                      accent='#B02D10', label='📣 Marketing film',
+                      reason='An animated promo made in Google Flow: invented supporters, no real person or event depicted; synthetic narration.')
+    return fin
+
+
+# ── animated Shorts on Google Flow (owner, 8.11.2026: "the Flow Short is excellent — now build the studio around it") ──
+def run_short(st, job: dict, jd: Path, progress, log) -> dict:
+    """Two visits. The first writes the Short from the match's record (studio/flowkit.py) and stops with the Flow pack —
+    the character sheets, one clip prompt a line, the stills, the credits — for the owner (or Claude in his browser) to
+    make in Google Flow; the clips are uploaded into the job. The second edits them (studio/cartoon/flowcut.py), stores
+    the Short privately and sends it to Telegram. Flow has no API, so nothing here can spend its credits."""
+    spec = job.get('spec') or {}
+    pack = job.get('flow')
+    if not pack:
+        return _short_pack(job, spec, jd, progress, log)
+    return _short_edit(st, job, spec, pack, jd, progress, log)
+
+
+def _short_ledger(job: dict, spec: dict, jd: Path, log) -> dict:
+    from . import deep_research, research
+    m = spec['match']
+    ledger = research.pick(research.build_ledger(spec['club_id'], m['season']), [m['id']])
+    deep_research.enrich(ledger, {**job['brief'], 'series': 'animated Short'}, jd / 'cache', log)
+    return ledger
+
+
+def _short_pack(job: dict, spec: dict, jd: Path, progress, log) -> dict:
+    from . import flowkit
+    progress('research', 0.05, f"The record of {spec['match']['home']} {spec['match']['score']} {spec['match']['away']}")
+    ledger = _short_ledger(job, spec, jd, log)
+    facts = '\n'.join([flowkit.facts_of(ledger, spec['match']['id']), *flowkit.kit_lines(spec['club_id'], spec['match']['season'])])
+    progress('script', 0.4, 'Writing the Short: the hook, the lines, the cast')
+    s = flowkit.write_short(facts, int(spec.get('seconds') or 30), jd / 'cache', log, spec.get('angle') or '')
+    pack = flowkit.flow_pack(s, flowkit.names_in(ledger))
+    pack['narration'] = s['narration']
+    pack['hook_law'] = s.get('hook_law')
+    pack['description'] = s.get('description') or ''
+    pack['tags'] = [str(t)[:40] for t in s.get('tags') or []][:12]
+    pack['markdown'] = flowkit.markdown(pack, s)
+    (jd / 'short-script.json').write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding='utf-8')
+    log(f"Short: {len(pack['clips'])} clips + {len(pack['stills'])} stills ready for Flow ({pack['credits']} credits)")
+    return {'state': 'needs_review', 'stage': 'graphics', 'flow': pack}
+
+
+def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log, *, accent: str | None = None,
+                label: str = '🎞 Animated Short', reason: str | None = None) -> dict:
+    import urllib.request
+    from .cartoon import flowcut
+    need = [c['file'] for c in pack.get('clips') or []] + [c['file'] for c in pack.get('stills') or []]
+    have = {a['name'] for a in job['brief'].get('art') or []}
+    missing = [n for n in need if n not in have]
+    if missing:
+        raise StageError('REQUIRED_MEDIA', f"Upload the Flow files first: {', '.join(missing)}.", retryable=True)
+    progress('graphics', 0.05, 'Your Flow clips')
+    media = jd / 'flow-media'
+    media.mkdir(parents=True, exist_ok=True)
+    urls = st.call({'op': 'art_urls', 'id': job['id']})['urls']
+    for n in need:
+        if n not in urls:
+            raise StageError('REQUIRED_MEDIA', f'{n} is missing from storage. Upload it again.', retryable=True)
+        with urllib.request.urlopen(urls[n], timeout=300) as r:
+            (media / n).write_bytes(r.read())
+    progress('edit', 0.2, 'Editing the Short: voice, clips, captions, sound')
+    out = outside_repo(job['id'], 'short')
+    out.mkdir(parents=True, exist_ok=True)
+    mp4 = out / 'short.mp4'
+    accent = accent or (job.get('palette') or {}).get('primary') or '#B02D10'
+    r = flowcut.make(pack['story'], media, mp4, out / 'work', accent=accent, log=log)
+    frame = out / 'thumbnail-short.jpg'
+    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', '0.3', '-i', str(mp4), '-frames:v', '1', str(frame)], check=True)
+    progress('package', 0.85, 'Storing the Short privately')
+    desc = (pack.get('description') or '') + '\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1'
+    (out / 'description.txt').write_text(desc.strip(), encoding='utf-8')
+    (out / 'flow-pack.json').write_text(json.dumps(pack, ensure_ascii=False, indent=1), encoding='utf-8')
+    art = upload_set(st, job['id'], mp4, {'preview.mp4': mp4, 'thumbnail-short.jpg': frame},
+                     [out / 'description.txt', out / 'flow-pack.json'], [{'file': str(mp4), 'hook': pack.get('title') or 'Short', 'seconds': r['seconds']}], log)
+    yt = yt_shape(None, title=str(pack.get('title') or job['brief'].get('topic'))[:100], description=desc.strip(),
+                  reason=reason or ('Animated with Google Flow: an illustrated cartoon of a real match, told from the sourced record; '
+                                    'the people are drawn, not realistic, and the narration is synthetic.'))
+    yt['tags'] = pack.get('tags') or []
+    yt['synthetic'] = True
+    if spec.get('telegram', True):
+        try:
+            if str(MATCHDAY.parent) not in sys.path:
+                sys.path.insert(0, str(MATCHDAY.parent))
+            from matchday import vlog_auto as V
+            V.send_telegram([(mp4, f"{label} · {pack.get('title')}")], log)
+        except Exception as e:  # noqa: BLE001 — a courtesy copy; the Short is stored either way
+            log(f'Telegram: not sent ({e})')
+    ok = r['seconds'] <= 60
+    return {'state': 'ready' if ok else 'needs_review', 'stage': 'done', 'artefacts': art, 'youtube': yt,
+            'qa': {'ok': ok, 'checks': [{'name': 'facts', 'ok': True, 'detail': 'every number the narrator says is in the match record'},
+                                        {'name': 'length', 'ok': ok, 'detail': f"{r['seconds']} s (a Short is at most 60 s)"}],
+                   'cannot_prove': ['That the drawn players read as the right men — watch it before posting.']},
+            'cost': {'renderMinutes': round(r['seconds'] / 60, 1), 'voice': os.environ.get('STORIES_VOICE') or 'kokoro'}}

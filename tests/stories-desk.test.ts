@@ -129,10 +129,10 @@ describe('the directors’ pitches',()=>{
   expect(()=>decidePitch(made,id,'passed','owner',null,now)).toThrow(/already being made/)
   expect(()=>decidePitch(day,'nope','passed','owner',null,now)).toThrow(/No such pitch/)
  })
- it('becomes a documentary brief the studio accepts: three scripts, his first',()=>{
+ it('becomes a one-click documentary brief the studio accepts: his one script, straight to the film',()=>{
   const p=addRound(null,'2026-11-04',[raw('trailer','aek-athens')],clubs,new Set(),null,now).saved[0]!
   const b=validateBrief(pitchBrief(p),clubs)
-  expect(b).toMatchObject({scripts:3,lead_director:'trailer',kind:'match',match_ids:['aek-athens:m'],duration:5})
+  expect(b).toMatchObject({scripts:1,review:'auto',lead_director:'trailer',kind:'match',match_ids:['aek-athens:m'],duration:5})
   expect(b.topic.length).toBeLessThanOrEqual(240)
  })
  it('the owner’s ask is started once, again after 40 minutes, and not before the writer is back',()=>{

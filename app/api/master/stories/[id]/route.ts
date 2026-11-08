@@ -25,7 +25,7 @@ export async function GET(r:Request,{params}:{params:{id:string}}){
   return json({job:cur.job,urls})
  }catch(e){return fail(e)}
 }
-const ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','art_added','social_schedule','social_cancel'])
+const ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','art_added','flow_added','flow_ready','social_schedule','social_cancel'])
 export async function POST(r:Request,{params}:{params:{id:string}}){
  const s=adminFromRequest(r)
  if(!s)return json({error:'Not authorised.'},401)

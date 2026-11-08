@@ -22,6 +22,20 @@ export type DurableStore = {
   /** `etag` null = create only; returns false when someone else wrote first. */
   write(name: string, text: string, etag: string | null): Promise<boolean>
   list(prefix: string, opts?: { fresh?: boolean; soft?: boolean; shared?: boolean }): Promise<string[]>
+  /** Every file under a prefix in ONE request, fresh (no shared copy). Optional: a store without it is read file by file. */
+  readAll?(prefix: string): Promise<{ name: string; text: string; etag: string }[]>
+}
+
+/**
+ * Every file under a prefix, fresh. The studio's job list read each job with its own request — a hundred jobs were a hundred
+ * Supabase calls and a hundred JSON parses on every listener round (every few minutes, all day): 94% of the account's Vercel
+ * Active CPU in October 2026 and the reason the account was frozen (owner, 8.11.2026). One PostgREST call does the same.
+ */
+export async function readPrefix(d: DurableStore, prefix: string): Promise<{ name: string; text: string; etag: string }[]> {
+  if (d.readAll) return d.readAll(prefix)
+  const keys = (await d.list(prefix, { fresh: true, soft: false })).filter((k) => k.startsWith(prefix))
+  const rows = await Promise.all(keys.map(async (name) => { const r = await d.read(name, { fresh: true, soft: false }); return r ? { name, text: r.text, etag: r.etag } : null }))
+  return rows.filter((r): r is { name: string; text: string; etag: string } => !!r)
 }
 
 const PREFIX = 'fan-life/'
@@ -163,6 +177,16 @@ function supabaseStore(): DurableStore {
       if (opts?.fresh) return rawList(prefix)
       return soften(prefix, () => viaShared(['fan-sb-list', prefix], sharedListTag(prefix), () => rawList(prefix)), [] as string[], opts?.soft)
     },
+    async readAll(prefix) {
+      const like = q(prefix.replace(/[\\%_]/g, (m) => `\\${m}`))
+      const out: { name: string; text: string; etag: string }[] = []
+      for (let offset = 0; offset < 20_000; offset += 200) {
+        const rows = (await call(`${base()}?name=like.${like}*&select=name,body,etag&order=name&limit=200&offset=${offset}`)) as { name: string; body: string; etag: string }[]
+        out.push(...rows.map((r) => ({ name: r.name, text: r.body, etag: r.etag })))
+        if (rows.length < 200) break
+      }
+      return out
+    },
   }
 }
 
@@ -218,6 +242,11 @@ function layeredStore(sb: DurableStore, blob: DurableStore | null): DurableStore
         if (opts?.fresh || opts?.soft === false) throw e
         return []
       }
+    },
+    // Supabase only: a prefix still partly in Blob (migration not retired) is read file by file, so nothing is missed.
+    async readAll(prefix) {
+      if (!tableGone() && sb.readAll && (!blob || (await retired()))) return sb.readAll(prefix)
+      return readPrefix({ kind: 'supabase', read: (n, o) => this.read(n, o), write: (n, t, e) => this.write(n, t, e), list: (p, o) => this.list(p, o) }, prefix)
     },
   }
 }
@@ -345,5 +374,6 @@ export function memoryStore(): DurableStore {
       return true
     },
     async list(prefix) { return [...files.keys()].filter((k) => k.startsWith(prefix)) },
+    async readAll(prefix) { return [...files.entries()].filter(([k]) => k.startsWith(prefix)).map(([name, v]) => ({ name, ...v })) },
   }
 }

@@ -115,8 +115,11 @@ def prepare_script(job: Path, brief: dict, ledger: dict, cache: Path, log,
         evidence = {'paragraph': before, 'claims': cited, 'note': request['instruction']}
         try:
             answer, _ = writer.call_model(
-                'Rewrite only one English football documentary paragraph. Follow the owner note (which can be Hebrew). '
-                'Use only the supplied claims. Keep the same subject and scope. Return JSON {"narration":"…"}.',
+                'You are the film\'s editor and a football person: you know the competition rules of that season, the '
+                'vocabulary supporters use and why the moment mattered to both sides. Rewrite only one English football '
+                'documentary paragraph. Follow the owner note (which can be Hebrew). Use only the supplied claims. Keep '
+                'the same subject and scope, give the moment its football context in plain words, keep sentences short '
+                'enough to be spoken. Return JSON {"narration":"…"}.',
                 json.dumps(evidence, ensure_ascii=False))
             after = writer.parse_json(answer).get('narration')
             if not isinstance(after, str) or not after.strip() or len(after) > 3000:

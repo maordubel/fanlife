@@ -1,0 +1,303 @@
+{
+ "file": "file05",
+ "number": "05",
+ "title": "THE SHEIKH",
+ "tone": "LAUGH",
+ "fps": 25,
+ "grade": 0.4,
+ "script": "docs/fanlife/classified/file05-the-sheikh.script.md",
+ "script_version": "owner-treatment-2026-11-08",
+ "approved": false,
+ "minutes": 2.0,
+ "note": "Draft from the owner's Hebrew treatment (8.11.2026), fact-checked; see the script document for every correction. Panels are still to be drawn.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "@P04",
+   "say": "A World Cup match. A goal is scored. And a man walks down from the royal box, onto the pitch, and has it taken back.",
+   "dur": 11.4,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Cold open"
+  },
+  {
+   "id": "b02",
+   "panel": "@P01",
+   "say": "Valladolid, the twenty-first of June, nineteen eighty-two. France against Kuwait, at Kuwait's first World Cup.",
+   "dur": 7.2,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b03",
+   "panel": "@P01",
+   "say": "France lead three-one. Then Alain Giresse breaks through.",
+   "dur": 4.2,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The whistle"
+  },
+  {
+   "id": "b04",
+   "panel": "@P02",
+   "say": "Somewhere behind the goal, a whistle blows. Not the referee's. One from the crowd.",
+   "dur": 6.8,
+   "mood": "light",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b05",
+   "panel": "@P03",
+   "say": "The Kuwait defenders stop. Giresse does not. Four-one.",
+   "dur": 4.2,
+   "mood": "light",
+   "move": "whip",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b06",
+   "panel": "@CH1",
+   "say": "The referee, Miroslav Stupar from the Soviet Union, points to the centre circle. He did not blow. The goal stands.",
+   "dur": 9.3,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b07",
+   "panel": "@P04",
+   "say": "In the stand sits Sheikh Fahad Al-Ahmad Al-Sabah, president of Kuwait's football association and brother of the Emir.",
+   "dur": 8.5,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The prince"
+  },
+  {
+   "id": "b08",
+   "panel": "@P04",
+   "say": "He signals to his players to leave the pitch. Then he walks down himself.",
+   "dur": 6.8,
+   "mood": "light",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b09",
+   "panel": "@P05",
+   "say": "On the grass, a long argument. Kuwait threaten to walk off, at a World Cup.",
+   "dur": 7.2,
+   "mood": "light",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b10",
+   "panel": "@CH1",
+   "say": "And the referee changes his mind. The goal is disallowed. Play restarts with a dropped ball.",
+   "dur": 7.6,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b11",
+   "panel": "@P06",
+   "say": "It changed nothing on the scoreboard. In the eighty-ninth minute Maxime Bossis scored, and France won four-one anyway.",
+   "dur": 8.5,
+   "mood": "light",
+   "move": "pull",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "File closed"
+  },
+  {
+   "id": "b12",
+   "panel": "@CH1",
+   "say": "Stupar never refereed at a World Cup again. Kuwait's federation was fined by FIFA; the sources disagree on how much, and on who paid it.",
+   "dur": 11.4,
+   "mood": "light",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3,
+    5
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b13",
+   "panel": "@P04",
+   "say": "The only time a man walked down from the stand and took a goal off a World Cup scoreboard. Kuwait have not been back to a World Cup since.",
+   "dur": 13.1,
+   "mood": "light",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "France v Kuwait, 1982 FIFA World Cup — Wikipedia (Group 4)",
+   "url": "https://en.wikipedia.org/wiki/1982_FIFA_World_Cup_Group_4"
+  },
+  {
+   "n": 2,
+   "title": "beIN Sports — The sheikh who walked to the pitch and disallowed a goal",
+   "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/the-sheikh-who-walked-to-the-pitch-and-disallowed-a-goal-during-the-world-cup-2026-06-02?c=us"
+  },
+  {
+   "n": 3,
+   "title": "Kuwait Times — clippings of Kuwait's 1982 World Cup (fine of 25,000 Swiss francs)",
+   "url": "https://kuwaittimes.com/article/44818/lifestyle/art-fashion/kuwait-times-clippings-chronicle-kuwaits-1982-world-cup-heroics/amp"
+  },
+  {
+   "n": 4,
+   "title": "Sportskeeda — Bossis in the 89th minute",
+   "url": "https://sportskeeda.com/football/5-strangest-football-matches-of-all-time-ss/2"
+  },
+  {
+   "n": 5,
+   "title": "Myroslav Stupar — Wikipedia (FIFA list 1977–1982)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/Miroslav_Stupar"
+  },
+  {
+   "n": 6,
+   "title": "Arab News — Kuwait's crowning glory turns into a nightmare",
+   "url": "https://arabnews.pk/node/1690661/sport"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "The Sheikh Who Cancelled a World Cup Goal",
+   "A Prince Walked Onto the Pitch. The Goal Disappeared.",
+   "France v Kuwait 1982: The Goal That Was Taken Back"
+  ],
+  "selected": 0,
+  "hook": "A World Cup match. A goal is scored. And a man walks down from the royal box, onto the pitch, and has it taken back.",
+  "tags": [
+   "CLASSIFIED",
+   "France",
+   "Kuwait",
+   "World Cup 1982",
+   "Sheikh Fahad",
+   "Giresse",
+   "football stories",
+   "referee"
+  ],
+  "thumbnails": [
+   {
+    "panel": "@P04",
+    "hook": [
+     "GOAL",
+     "CANCELLED"
+    ]
+   },
+   {
+    "panel": "@P05",
+    "hook": [
+     "THE PRINCE",
+     "WINS"
+    ]
+   },
+   {
+    "panel": "@P02",
+    "hook": [
+     "ONE WHISTLE"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "hook": "A prince walked onto a World Cup pitch and a goal disappeared.",
+    "narration": "A prince walked onto a World Cup pitch and a goal disappeared. France were 3-1 up on Kuwait in 1982. A whistle from the crowd, Kuwait stop, France score. The sheikh comes down from the stand, argues, and the referee cancels it. France still won 4-1. Full file on FanLife.",
+    "hook_law": "is-this-real",
+    "claim_ids": [
+     "src-1",
+     "src-4"
+    ]
+   }
+  ],
+  "hook_options": [
+   {
+    "text": "A World Cup match. A goal is scored. And a man walks down from the royal box, onto the pitch, and has it taken back."
+   }
+  ]
+ }
+}

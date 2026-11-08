@@ -1,5 +1,5 @@
 import 'server-only'
-import {durable} from '@/lib/master/durable'
+import {durable,readPrefix} from '@/lib/master/durable'
 import {StoryError,type Job} from './jobs'
 
 /**
@@ -16,10 +16,10 @@ function store(){
  return d
 }
 
+/** Every job file in one request (readPrefix) — owner, 8.11.2026: the per-file reads were the account's CPU bill. */
+async function jobRows(){return (await readPrefix(store(),PREFIX)).filter(r=>r.name.endsWith('.json'))}
 export async function listJobs(limit=60):Promise<Job[]>{
- const d=store()
- const keys=(await d.list(PREFIX,{fresh:true,soft:false})).filter(k=>k.startsWith(PREFIX)&&k.endsWith('.json'))
- const rows=await Promise.all(keys.map(k=>d.read(k,{fresh:true,soft:false})))
+ const rows=await jobRows()
  return rows.flatMap(r=>{try{const j=r?JSON.parse(r.text):null;return j&&!j.deleted?[j as Job]:[]}catch{return []}}).sort((a,b)=>b.createdAt.localeCompare(a.createdAt)).slice(0,limit)
 }
 
@@ -62,8 +62,7 @@ export async function deleteJob(id:string,now=new Date()):Promise<void>{
  throw new StoryError('CONFLICT','The job changed while deleting; try again.',409)
 }
 export async function pendingDeletions(now=new Date(),dueOnly=true):Promise<DeletedJob[]>{
- const d=store(),keys=await d.list(PREFIX,{fresh:true,soft:false})
- const rows=await Promise.all(keys.filter(k=>k.startsWith(PREFIX)&&k.endsWith('.json')).map(k=>d.read(k,{fresh:true,soft:false})))
+ const rows=await jobRows()
  return rows.flatMap(r=>{try{const j=r?JSON.parse(r.text):null;return j?.deleted&&j.cleanupAfter&&(!dueOnly||j.cleanupAfter<=now.toISOString())?[j as DeletedJob]:[]}catch{return []}})
 }
 /** Called only after both Storage and Actions cache deletion succeeds. Failures remain queued. */
@@ -75,4 +74,11 @@ export async function deletionCleaned(id:string,now=new Date()):Promise<void>{
  const next:DeletedJob=marker.settleAfter&&marker.settleAfter>now.toISOString()
   ?{...marker,cleanupAfter:marker.settleAfter}:{id,deleted:true}
  if(!await d.write(nameOf(id),JSON.stringify(next),row.etag))throw new StoryError('CONFLICT','Cleanup changed; retry.',409)
+}
+
+/** The desk's GET needs both lists: one read of the job files answers both (8.11.2026). */
+export async function jobsAndDeletions(limit=60):Promise<{jobs:Job[];pending:number}>{
+ const rows=await jobRows(),jobs:Job[]=[];let pending=0
+ for(const r of rows){try{const j=JSON.parse(r.text);if(!j)continue;if(j.deleted){if(j.cleanupAfter)pending++}else jobs.push(j as Job)}catch{/* a broken file is not a job */}}
+ return {jobs:jobs.sort((a,b)=>b.createdAt.localeCompare(a.createdAt)).slice(0,limit),pending}
 }

@@ -69,12 +69,23 @@ DIRECTORS: list[dict] = [
 
 BY_ID = {d['id']: d for d in DIRECTORS}
 
+# Shared by all three (owner, 8.11.2026: "improve the football understanding of the writer, the director and the editor").
+FOOTBALL_SENSE = (
+    'FOOTBALL SENSE (all three directors share it): you have watched thousands of matches from the stand and the gantry. '
+    'You read a fixture by its situation — the table and the form on that date, what each side needed, the rule of that '
+    'competition that season (two or three points, away goals, golden goal, replays, aggregate), the injury list, the '
+    'manager under pressure, the rival waiting next week. You know the vocabulary supporters use and use it correctly '
+    '(equaliser, brace, clean sheet, dead rubber, six-pointer, two-legged tie, shoot-out; a left-back is not a midfielder). '
+    'You treat the opponent as a character with its own stars and supporters. You cut the picture like a match director: '
+    'the scoreboard when the score changes, the clock when time is the enemy, the bench when a substitution turns it, the '
+    'away end when it goes quiet. And you give every key moment its context so a fan of ANOTHER club still follows it.')
+
 
 def brief(d: dict) -> str:
     """The director's brief as the writer receives it: the house soul (the owner's football heart, studio/soul.py),
     then this director's facet of it and his own way of making a film."""
     from .soul import brief as soul_brief
-    return (soul_brief() + '\n\n'
+    return (soul_brief() + '\n\n' + FOOTBALL_SENSE + '\n\n'
             f'DIRECTOR: {d["name"]} — {d["tagline"]}\n'
             f'The owner\'s side of you: {d["owner_facet"]}\n'
             f'Football brain: {d["football_brain"]}\nFilm brain: {d["film_brain"]}\n'

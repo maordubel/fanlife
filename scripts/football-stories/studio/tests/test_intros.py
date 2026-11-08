@@ -24,10 +24,11 @@ class Openings(unittest.TestCase):
                 with patch.dict('os.environ', {'STORIES_MASTER_PRESET':'ultrafast'}):
                     dt=intros.prepend(master,job,kind,lambda _:None,opening)
                     digest=intros._sha(master)
-                    self.assertAlmostEqual(dt,1,delta=.1)
+                    d=min(intros.XFADE[kind][1],1/3)   # the opening dissolves into the film (owner, 8.11.2026)
+                    self.assertAlmostEqual(dt,1-d,delta=.1)
                     self.assertEqual(intros.prepend(master,job,kind,lambda _:None,opening),dt)
                     self.assertEqual(intros._sha(master),digest)
-                    self.assertAlmostEqual(float(intros._probe(master)['format']['duration']),3,delta=.15)
+                    self.assertAlmostEqual(float(intros._probe(master)['format']['duration']),3-d,delta=.15)
                     self.assertEqual(json.loads((job/'intro.json').read_text())['kind'],kind)
 
     def test_timelines_shift_without_mutating_render_plan(self):
@@ -39,3 +40,14 @@ class Openings(unittest.TestCase):
         self.assertEqual(plan['shots'][0]['start'],0)
 
 if __name__=='__main__': unittest.main()
+
+
+@unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'), 'ffmpeg required')
+class ClassifiedTrim(unittest.TestCase):
+    def test_classified_uses_only_three_seconds(self):
+        with tempfile.TemporaryDirectory() as d:
+            job=Path(d); opening=job/'source.mp4'; master=job/'master.mp4'
+            Openings.film(None,opening,'red',6); Openings.film(None,master,'blue',2)
+            with patch.dict('os.environ', {'STORIES_MASTER_PRESET':'ultrafast'}):
+                dt=intros.prepend(master,job,'classified',lambda _:None,opening)
+            self.assertAlmostEqual(dt,3-intros.XFADE['classified'][1],delta=.12)

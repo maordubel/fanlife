@@ -7,6 +7,7 @@
  * video id is recorded only when YouTube itself has shown it.
  * Pure functions only: no I/O here, so every transition is tested on its own.
  */
+import type {PromoSpec} from './promo'
 import {SocialError,cancelSocial,scheduleSocial,type PostInput,type SocialPlan} from './social'
 import {isDirector,type DirectorId} from './directors'
 import {reviewEdits,type Review,type ReviewAction} from './editorial'
@@ -50,6 +51,8 @@ export type Brief={
  art?:ArtFile[];hold?:boolean
 }
 export const ART_NAME=/^[a-z0-9][a-z0-9._-]{0,60}\.(png|jpe?g|webp)$/
+/** The files an animated Short is edited from, as Google Flow made them (studio/flowkit.py names the slots). */
+export const FLOW_NAME=/^(clip-\d{1,2}\.mp4|still-\d{1,2}\.(jpg|png|webp))$/
 const DAY=/^\d{4}-\d{2}-\d{2}$/
 /** One line of owner notes: `quote | speaker | role | the exact words | https://…` or `press | outlet | YYYY-MM-DD | headline | https://…`. */
 export function noteLine(line:string):{kind:'quote'|'press';parts:string[];url:string}|null{
@@ -82,7 +85,9 @@ export type Job={
  social?:SocialPlan|null
  /** what the worker makes (studio desk, 4.11.2026): a documentary (absent = 'film'), a CLASSIFIED FILE or an I WAS THERE
   *  vlog — and the kind's own validated request. `brief` still carries the summary every screen prints. */
- kind?:JobKind;spec?:ClassifiedSpec|VlogSpec|null
+ kind?:JobKind;spec?:ClassifiedSpec|VlogSpec|PromoSpec|ShortSpec|null
+ /** an animated Short's Google Flow pack (studio/flowkit.py): what to make in Flow, and the edit plan for the clips */
+ flow?:FlowPack|null
 }
 export const SEASON=/^\d{4}\/\d{2}$/
 export const SPAN=/^\d{4}–\d{4}$/
@@ -144,7 +149,7 @@ export function newJob(id:string,brief:Brief,palette:Palette,actor:string,idempo
 const LOG_KEEP=120
 const pushLog=(j:Job,text:string,at:string)=>{j.log=[...j.log,{at,text:text.slice(0,400)}].slice(-LOG_KEEP)}
 
-export type OwnerAction=ReviewAction|{action:'pause'|'resume'|'cancel'|'retry'|'retry_editorial'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}
+export type OwnerAction=ReviewAction|{action:'pause'|'resume'|'cancel'|'retry'|'retry_editorial'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}|{action:'flow_added';files:string[]}|{action:'flow_ready'}
 export const VIDEO_ID=/^[A-Za-z0-9_-]{11}$/
 
 /** An owner's action → the next job, or a StoryError saying why it is not allowed now. */
@@ -219,8 +224,28 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'upload_started':if(j.state!=='ready'&&j.state!=='needs_review')no('Only a finished film can be uploaded.');if(j.upload.state==='done')no('This film is already uploaded.');if(j.upload.state==='in_progress'||j.upload.state==='uncertain')no('An upload was started already — check YouTube Studio, then record the result or reset.');j.upload={...j.upload,state:'in_progress',at,by:actor};pushLog(j,`Upload started by ${actor}`,at);break
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
+  case 'flow_added':{
+   if(!FLOW_KINDS.includes(jobKind(j))||!j.flow)no('Flow clips belong to an animated Short or promo whose Flow pack is ready.')
+   if(j.lease)no('The worker is still stopping. Wait a moment.')
+   if(!['needs_review','failed','paused'].includes(j.state))no('Add the Flow clips while the Short waits for them.')
+   const want=new Set(flowFiles(j.flow!))
+   const files=Array.isArray(a.files)?a.files:[]
+   if(!files.length||files.some(f=>typeof f!=='string'||!FLOW_NAME.test(f)||!want.has(f)))throw new StoryError('ART','Each file goes into one of this Short\'s slots (clip-0.mp4, still-0.jpg …).')
+   const keep=new Map((j.brief.art??[]).map(f=>[f.name,f]))
+   for(const f of files)keep.set(f,{name:f,illustrated:true})
+   j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} Flow file(s) added by ${actor}`,at)
+   break}
+  case 'flow_ready':{
+   if(!FLOW_KINDS.includes(jobKind(j))||!j.flow)no('There is no Flow pack on this job.')
+   if(j.lease)no('The worker is still stopping. Wait a moment.')
+   if(!['needs_review','failed','paused'].includes(j.state))no('This Short is not waiting for its clips.')
+   const have=new Set((j.brief.art??[]).map(f=>f.name)),left=flowFiles(j.flow!).filter(n=>!have.has(n))
+   if(left.length)throw new StoryError('ART',`Upload the missing Flow files first: ${left.join(', ')}.`)
+   j.state='queued';j.error=null;j.notBefore=null;j.message='Waiting for the production worker — editing the Short'
+   pushLog(j,`Flow clips complete — editing requested by ${actor}`,at)
+   break}
   case 'art_added':{
-   if(['classified','vlog'].includes(j.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
+   if(['classified','vlog','promo','short'].includes(j.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
    const reviewingScenes=j.state==='needs_review'&&j.stage==='edit'&&j.brief.review==='editorial'
    if(!reviewingScenes&&!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts or during scene review.')
    if(j.lease)no('The worker is still stopping. Wait for it to pause, then add your pictures.')
@@ -262,7 +287,7 @@ export function report(job:Job,worker:string,p:Progress,now=new Date()):{job:Job
  if(control==='pause')j.lease=null
  return {job:j,control}
 }
-export type Finish={options?:ScriptOption[];editorial?:Review;state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
+export type Finish={flow?:FlowPack;options?:ScriptOption[];editorial?:Review;state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
 export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  if(!job.lease||job.lease.worker!==worker)throw new StoryError('LEASE','This worker does not hold the job.',409)
  const j=structuredClone(job),at=now.toISOString()
@@ -282,6 +307,12 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
   j.brief={...j.brief,review:'editorial'}
   j.editorial=f.editorial;delete j.editorialRequest
   j.message=f.stage==='script'?'Waiting for script approval':'Waiting for scene and picture approval'
+  pushLog(j,j.message,at)
+  return j
+ }
+ if(f.flow&&f.state==='needs_review'&&FLOW_KINDS.includes(jobKind(j))){
+  j.flow=cleanFlow(f.flow);j.stage='graphics';j.progress=0.5
+  j.message=`Waiting for ${j.flow.clips.length} Flow clip(s) and ${j.flow.stills.length} still(s) — ${j.flow.credits} credits`
   pushLog(j,j.message,at)
   return j
  }
@@ -307,9 +338,9 @@ export function mediaPath(jobId:string,name:string):string{
  * One queue, one worker, one lease: a CLASSIFIED FILE and an I WAS THERE vlog are jobs like a film, so pause, cancel,
  * retry, the status lights and the Telegram delivery work the same. Each carries its own request in `spec`, checked
  * here; `brief` is a summary in the film's shape so every list and card prints it. */
-export const JOB_KINDS=['film','classified','vlog'] as const
+export const JOB_KINDS=['film','classified','vlog','promo','short'] as const
 export type JobKind=typeof JOB_KINDS[number]
-export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind==='vlog'?j.kind:'film'
+export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind==='vlog'||j.kind==='promo'||j.kind==='short'?j.kind:'film'
 
 /** A CLASSIFIED FILE as the desk sees it (lib/stories/classifiedIndex.ts reads the episodes and the panel map). */
 export type ClassifiedFile={file:string;number:string;title:string;tone:string;year:number|null;episode:string|null
@@ -381,9 +412,52 @@ export function validateVlog(v:unknown,clubs:Map<string,string>,findMatch:(club:
  return {brief,spec}
 }
 
-export function newSpecialJob(id:string,kind:'classified'|'vlog',x:{brief:Brief;spec:ClassifiedSpec|VlogSpec},palette:Palette,actor:string,key:string,now=new Date()):Job{
+export function newSpecialJob(id:string,kind:'classified'|'vlog'|'promo'|'short',x:{brief:Brief;spec:ClassifiedSpec|VlogSpec|PromoSpec|ShortSpec},palette:Palette,actor:string,key:string,now=new Date()):Job{
  const j=newJob(id,{...x.brief,hold:false},palette,actor,key,now)
  j.kind=kind;j.spec=x.spec
  if(kind==='classified'){const s=x.spec as ClassifiedSpec;j.log=[{at:j.createdAt,text:`Queued — script ${s.script_version} approved by ${s.approved_by}`}]}
  return j
+}
+
+/* ── Animated Shorts on Google Flow (owner, 8.11.2026) ──────────────────────────────────────────────────────────────
+ * One match → the Short's script and its Flow pack (first worker visit, finishes as needs_review / graphics with `flow`);
+ * the owner makes the clips in Flow and uploads them into their slots (`flow_added`), then `flow_ready` queues the edit
+ * (second visit). Flow has no API: nothing here can spend its credits. */
+/** The kinds made in Google Flow: the animated Shorts and the marketing films. */
+export const FLOW_KINDS:readonly JobKind[]=['short','promo']
+export const SHORT_SECONDS=[20,30] as const
+export type ShortSpec={club_id:string;club_name:string;match:VlogMatch;seconds:number;angle:string;telegram:boolean}
+export type FlowStep={id:string;role:string;prompt:string;model:string;aspect:string;credits:number}
+export type FlowClip={beat:number;file:string;prompt:string;model:string;aspect:string;credits:number;seconds?:number;ingredients?:string[]}
+export type FlowPack={title:string;narration:string;hook_law?:string|null;characters:FlowStep[];clips:FlowClip[];stills:FlowClip[];credits:number;steps:string[];markdown?:string;description?:string;tags?:string[]
+ story:{tag:string;beats:{say:string;clip?:number;still?:number;stamp?:string}[]}}
+export const flowFiles=(p:Pick<FlowPack,'clips'|'stills'>):string[]=>[...p.clips,...p.stills].map(c=>c.file)
+function cleanFlow(f:FlowPack):FlowPack{
+ const step=(x:FlowStep)=>({id:cut(x.id,40),role:cut(x.role,120),prompt:cut(x.prompt,2400),model:cut(x.model,40),aspect:cut(x.aspect,8),credits:Number(x.credits)||0})
+ const clip=(x:FlowClip)=>({beat:Number(x.beat)||0,file:cut(x.file,40),prompt:cut(x.prompt,2400),model:cut(x.model,40),aspect:cut(x.aspect,8),credits:Number(x.credits)||0,
+  ...(x.seconds?{seconds:Number(x.seconds)}:{}),...(Array.isArray(x.ingredients)?{ingredients:x.ingredients.slice(0,4).map(i=>cut(i,40))}:{})})
+ const clips=(Array.isArray(f.clips)?f.clips:[]).slice(0,10).map(clip).filter(c=>FLOW_NAME.test(c.file))
+ const stills=(Array.isArray(f.stills)?f.stills:[]).slice(0,10).map(clip).filter(c=>FLOW_NAME.test(c.file))
+ const beats=(Array.isArray(f.story?.beats)?f.story.beats:[]).slice(0,10).map(b=>({say:cut(b.say,600),...(Number.isInteger(b.clip)?{clip:b.clip}:{}),...(Number.isInteger(b.still)?{still:b.still}:{}),...(b.stamp?{stamp:cut(b.stamp,20)}:{})}))
+ return {title:cut(f.title,110),narration:cut(f.narration,1600),hook_law:f.hook_law?cut(f.hook_law,40):null,characters:(Array.isArray(f.characters)?f.characters:[]).slice(0,4).map(step),
+  clips,stills,credits:clips.reduce((n,c)=>n+c.credits,0),steps:(Array.isArray(f.steps)?f.steps:[]).slice(0,8).map(x=>cut(x,300)),markdown:cut(f.markdown,20000),
+  description:cut(f.description,1800),tags:(Array.isArray(f.tags)?f.tags:[]).slice(0,12).map(x=>cut(x,40)),story:{tag:cut(f.story?.tag,40),beats}}
+}
+export function validateShort(v:unknown,clubs:Map<string,string>,findMatch:(club:string,id:string)=>VlogMatch|null):{brief:Brief;spec:ShortSpec}{
+ if(!v||typeof v!=='object')throw new StoryError('BRIEF','Choose the match.')
+ const b=v as Record<string,unknown>
+ const club_id=typeof b.club_id==='string'?b.club_id:''
+ const club_name=clubs.get(club_id)
+ if(!club_name)throw new StoryError('BRIEF','Unknown club.')
+ const id=typeof b.match_id==='string'?b.match_id:''
+ const match=/^[A-Za-z0-9:._-]{3,120}$/.test(id)?findMatch(club_id,id):null
+ if(!match)throw new StoryError('BRIEF','Choose the match from the list.')
+ const seconds=b.seconds===undefined?30:Number(b.seconds)
+ if(!(SHORT_SECONDS as readonly number[]).includes(seconds))throw new StoryError('BRIEF','Length: 20 or 30 seconds.')
+ const angle=typeof b.angle==='string'?b.angle.replace(/\r/g,'').trim().slice(0,400):''
+ const spec:ShortSpec={club_id,club_name,match,seconds,angle,telegram:b.telegram!==false}
+ const brief:Brief={club_id,club_name,season:match.season,topic:`${match.home} ${match.score} ${match.away}`,duration:0.5,visual_style:'mixed',
+  voice:'auto',review:'auto',privacy:'private',publish_at:null,kind:'match',match_ids:[match.id],scripts:1,choice:null,drive:false,
+  drive_folder:null,reel_to_telegram:spec.telegram,notes:'',art:[],hold:false}
+ return {brief,spec}
 }

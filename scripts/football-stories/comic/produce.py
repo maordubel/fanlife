@@ -219,11 +219,17 @@ def narrator(cache: Path, extra: dict | None = None):
     cache.mkdir(parents=True, exist_ok=True)
 
     def say(text: str, wav: Path, delivery: str = 'normal') -> dict:
-        key = sha256_json({'v': os.environ['STORIES_KOKORO_VOICE'], 't': V.spoken(text), 'd': delivery, 'x': extra or {},
+        from studio import name_research
+        try:  # a name no lexicon knows is researched from its sentence (studio/name_research.py)
+            found = name_research.for_script([text], cache / 'names', print, 'CLASSIFIED')
+        except Exception:  # noqa: BLE001
+            found = {}
+        x = {**found, **(extra or {})}
+        key = sha256_json({'v': os.environ['STORIES_KOKORO_VOICE'], 't': V.spoken(text), 'd': delivery, 'x': x,
                            'l': pronounce.lexicon_version(), 'b': os.environ.get('STORIES_BREATHS', '1'), 'r': 'classified-1'})[:24]
         cw, cm = cache / f'{key}.wav', cache / f'{key}.json'
         if not (cw.exists() and cm.exists()):
-            write_json(cm, V.kokoro_beat(text, cw, extra, delivery))
+            write_json(cm, V.kokoro_beat(text, cw, x, delivery))
         shutil.copyfile(cw, wav)
         return read_json(cm)
     return say

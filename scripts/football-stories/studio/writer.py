@@ -54,8 +54,47 @@ THE STORY IS ALREADY FOUND FOR YOU. The ledger carries a STORY block computed fr
 Never compute or state a league position, a points total, "the table" or "the standings": the archive holds only
 this club's matches. A final table exists only as a "table" claim, and only a beat that cites it may talk about places.
 
-DIRECTING:
-- HOOK CONTRACT: For the selected title, provide exactly three different complete opening options in hook_options.
+DEEP RESEARCH: "deep_research" in the ledger is grounded editorial orientation (the competition's rules that season,
+both sides before kick-off, the timeline, the tactics, the stands, the aftermath, myths against the record, hidden and
+absurd details, real headlines, quotes, thumbnail faces). Use it to UNDERSTAND and to paint the full picture around the
+event. Its facts are citable only through the dr-* claims, which carry their pages; a dr-* claim with
+research_confidence 1 is attributed in the narration ("according to …", "as the Gazzetta told it"). "owner_fact_checks"
+marks statements in the owner's document as supported, contradicted or unverified: a contradicted statement is told as
+the record has it (or as "the story goes … but the report says …"), never repeated as fact; an unverified one is told
+as the account it is ("he said", "the legend says").
+
+THINK FOOTBALL (the writer, the director and the editor are football people first):
+- A result means nothing without the situation: the table and the form at that date, what each side needed, the
+  manager's job on the line, the injury list, the travelling support, the money, the rival waiting. Say it in one or
+  two lines before the match, as a pundit would on the night.
+- Know the competition of that season: two or three points for a win, away goals, golden goal, replays, aggregate,
+  seeding, promotion and relegation places. Explain the one rule that changes what a team needs, at the moment it does.
+- Football grammar: a header is not a volley; a penalty is not a free kick; a clean sheet, a brace, a hat-trick, a
+  late winner, an equaliser, extra time, a shoot-out, a two-legged tie, a dead rubber, a six-pointer, a title decider —
+  use the words supporters use, correctly. Positions matter (a left-back is not a midfielder).
+- The opponent is a character with its own story, its own stars and its own supporters. A great win needs a great
+  opponent; say why they were dangerous.
+- Show the game, not only the goals: the spell of pressure, the save that kept it level, the substitution that turned
+  it, the red card, the tactical switch, the clock. Tell it the way it FELT in the stand, minute by minute.
+- Context around every key moment so a viewer who has never heard of the club still understands it: who, where,
+  when, why it mattered, what happened next. A fan of another club must still finish the film.
+
+HOOK LAWS (the first 5 seconds decide everything; every opening, title, thumbnail and Short obeys them):
+- "NO WAY I DON'T KNOW THIS" — play on the die-hard's pride. The supporter believes he knows every statistic, every
+  player and every title night. Open on a hidden angle of a night everybody thinks they know by heart: the detail that
+  was left out of the report, the protocol line, the substitute who never came on, the number that turns the legend
+  around. Frame it as the archive's file ("the part of the story that never made the highlights"). He keeps watching to
+  prove to himself there is nothing in his club's history he does not know. Only with a real, cited fact.
+- "COME ON, IS THIS REAL?!" — the absurd story told dead straight: a sheikh walking onto a World Cup pitch, an impostor
+  in the Premier League, a cologne bottle that changed a World Cup. It sounds like a crime film or a black comedy; show
+  the evidence (the cutting, the photo, the quote) that proves it is real. Disbelief holds the viewer.
+- Other proven openers, used only when true: the paradox ("they won the match and went out"), the countdown ("sixteen
+  days before the World Cup…"), the villain or the impostor, the confession years later, the number that cannot be right,
+  the cliff-hanger at the decisive minute, the "you were told X — the record says Y".
+- Never: "In this video…", "Welcome back", a date as the first words, a generic question ("Did you know…?"), hype words
+  (incredible, insane, shocking), a promise the film does not pay off.
+
+ For the selected title, provide exactly three different complete opening options in hook_options.
   Each is 3–4 short spoken sentences, around 20 seconds at the narrator's pace (roughly 35–55 words), in clear
   eighth-grade English. Sentence one makes the video's central promise and explains what the viewer will understand
   by the end; provide context, why the answer matters, and the real stakes. Open a specific curiosity loop that the
@@ -154,8 +193,26 @@ HARD RULES (a script that breaks one is sent back):
   ("two-nil") or in digits — both are checked. No clickbait, no "subscribe" lines, no padding: the call to follow the
   channel and the closing call to the site are added by the studio.
 - SHORTS: Write two or three independent English micro-scripts, each 15–55 spoken words, designed to finish within 30 seconds. Start with a compelling truthful hook, build curiosity, end with a short invitation to the full film. Do not copy narration from the main film. Give each short a distinct angle and cite the evidence it uses. Do not promise virality.
+  A Short is a different FILM, not a cut of this one: an ANIMATED cartoon. Every line gets its own painted set and
+  the story's real people act in it as cartoon characters (drawn from their kit, number, era and look — never a
+  photograph), in the story's real colours. Write it like a person talking to a friend: plain words, "so",
+  "basically", "right?"; no narrator phrases, no exclamation marks. Line one names what the first frame shows (the
+  premise, readable like a thumbnail: "This bottle of water knocked Brazil out of a World Cup."). One picture per
+  sentence; the payoff lands on the last words. Give each Short "hook_law": "know-it-all" or "is-this-real";
+  "cast_sheet": the people who appear, each {{"id": "branco", "look": "who he is and how he looks in THIS story — team,
+  year, shirt colours and number, shorts, hair, moustache, build"}} (only what the evidence or well-known kit history
+  supports; a person nobody can describe is "a Brazil player in yellow"); and "cartoon": 5–7 beats, each
+  {{"say": the words, "scene": the PLACE, its era and real colours, as a painter needs it ("Stadio delle Alpi in Turin at
+  night, 1990: Brazil fans in yellow, Argentina fans in sky-blue and white"), "cast": [{{"id": …, "action": what he does
+  on these words, "motion": idle|talk|walk|run|wobble|fall|jump|celebrate|point|kneel}}] (0–2 people), "show": one line
+  for the editor}}. Make the characters DO things — the story is acted, not illustrated.
 - Ten honest title concepts: some search-oriented (club + season + what happened), some discovery-oriented (the human
-  hook). Mark each. Select the strongest. Three thumbnail concepts with at most four words of text each.
+  hook). Mark each. Select the strongest. Titles follow the HOOK LAWS: the club's or the player's name early (fans
+  search and click on names), a concrete detail, a tension the film resolves; under 60 characters where possible;
+  no clickbait the film does not deliver. Three thumbnail concepts with at most four words of text each: every
+  thumbnail shows a FACE (a real person the evidence names, or the club's supporter seen from behind) or a striking
+  object, plus a newspaper cutting, a stamp or a scoreboard, so a viewer sees at once that this is real history and not
+  another AI video. Name the face and the object in the concept.
 - Set "director": 2.
 
 Return ONE JSON object and nothing else, in exactly this shape:
@@ -387,7 +444,8 @@ def ledger_for_prompt(ledger: dict) -> dict:
            'club_identity_primary': ledger.get('identity_primary'),
            'rival_identity_colours': ledger.get('identity_rival_colours') or [],
            'claims': [{'id': c['id'], 'fact': c['fact'],
-                       **({'owner_supplied': c['owner_story_source']} if c.get('owner_story_source') else {})} for c in ledger['claims']],
+                       **({'owner_supplied': c['owner_story_source']} if c.get('owner_story_source') else {}),
+                       **({'research_confidence': c.get('confidence', 1)} if c.get('research') == 'grounded' else {})} for c in ledger['claims']],
            'season_summary': {k: {kk: vv for kk, vv in v.items() if kk != 'claim_ids'} for k, v in ledger['summary']['by_competition'].items()},
            'summary_ids': [f'summary:{k}' for k in ledger['summary']['by_competition']],
            'summary_complete': ledger['summary']['complete']}
@@ -395,6 +453,10 @@ def ledger_for_prompt(ledger: dict) -> dict:
     out['club_context'] = profile(ledger.get('club_id') or '')
     out['owner_story_documents'] = ledger.get('story_documents') or []
     out['owner_locked_names'] = ledger.get('owner_names') or []
+    if ledger.get('deep_research'):
+        out['deep_research'] = ledger['deep_research']
+    if ledger.get('owner_checks'):
+        out['owner_fact_checks'] = ledger['owner_checks']
     st = story_for_prompt(ledger)
     if st:
         out['story'] = st
@@ -676,6 +738,11 @@ gripping, then pitch it:
 - "cold_open": the first five seconds as you see them, at most 240 characters.
 - "acts": exactly three short lines, at most 160 characters each: Act I, Act II, Act III.
 - "why": at most 300 characters: why this story, why you.
+Think football first: the situation before the night (what each side needed, the form, the rival waiting), the rule of
+that competition that mattered, the opponent as a character. Your logline and cold open obey the channel's two hook laws:
+"no way I don't know this" (the hidden angle of a night every fan thinks he knows by heart — the die-hard watches to
+prove he knows everything about his club) or "come on, is this real?!" (the absurd that sounds invented, proved by the
+record). Never "In this film…", never a date as the first words, never hype words.
 Every number and every club or person you name must come from the chosen candidate's own data. Never a league position
 or a points total. Never an invented quote, crowd size, minute or weather — the house soul is a voice, not a source.
 

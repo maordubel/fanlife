@@ -29,14 +29,17 @@ sys.path.insert(0, str(HERE))
 
 from studio import pronounce, voice  # noqa: E402
 
-LINES = [
-    ('build', 'October. AEK, at the old Nikos Goumas in Nea Filadelfeia. Madrid brought Figo, Zidane, Raúl and Roberto Carlos.'),
+LINES = [  # every club the narrator speaks for, the owner's worst first (8.11.2026), and the words of football
+    ('build', 'Zrinjski at Pod Bijelim Brijegom, in Mostar. Krešimir Bandić, Matej Senić and Tomislav Barišić. The Premijer liga, and the derby against Velež.'),
+    ('tense', "Hapoel Petah Tikva at HaMoshava. Zacharia Ratzabi, Elad Gabai, Hen Azriel and Nir Levin. Ligat Ha'Al, and the Toto Cup."),
+    ('normal', 'Celtic at Parkhead. Billy McNeill, Danny McGrain, Paul McStay and Henrik Larsson. The Scottish Premiership, and Rangers at Ibrox.'),
+    ('excited', 'Hapoel Tel Aviv at Bloomfield. Eran Zahavi, Barak Badash, Yitzhak Bibas and Eyal Meshumar. Then the derby against Maccabi Tel Aviv.'),
+    ('build', 'St. Pauli at the Millerntor, off the Reeperbahn. Carsten Pröpper, Marc Rzatkowski and Yannick Deichmann, in the Bundesliga.'),
+    ('normal', 'Al Ahly in Cairo. Ahmed Hegazi, Badr Banoun and Mahmoud Abou El-Saoud. The CAF Champions League, and the derby against Zamalek.'),
+    ('tense', 'Raja against Wydad in Casablanca. Riyad Benayad, Yahya Jabrane and Abdelilah Saber.'),
     ('excited', 'After six minutes, Tsartas from a free kick. Zidane equalised. Then Maladenis and Nikolaidis, two headers in three minutes. AEK three, Madrid one.'),
-    ('build', 'José Mourinho on the Madrid bench. Marko Nikolić for AEK, champions of Greece for the fourteenth time. And up front for AEK, Luka Jović. A former Real Madrid striker.'),
-    ('build', 'March. Panathinaikos at Leoforos, their old ground on Alexandras Avenue. Madrid had already won the group, and Del Bosque sent a young team.'),
     ('normal', 'November 2025. Karaiskakis again. Xabi Alonso against José Luis Mendilibar, the man who had won Olympiacos their European trophy.'),
-    ('tense', 'Three-two in Piraeus. Fortounis, Jovetić, Chiquinho. Then two Fenerbahçe goals that made the trip to Istanbul feel very long.'),
-    ('hush', 'Bosnia and Herzegovina, round seven. Željezničar at home in Sarajevo. Zrinjski up the road from Mostar. Nine minutes in, Eran Zahavi.'),
+    ('excited', "The UEFA Europa Conference League, the Cup Winners' Cup and the Intertoto. Extra time, penalties, and nil-nil."),
 ]
 
 # The respellings the films used before this pass — kept here only so take A is what the owner heard until now.
@@ -99,13 +102,23 @@ def take_before(out: Path) -> list[Path]:
     return files
 
 
-def take_kokoro(out: Path, v: str) -> list[Path]:
+def take_kokoro(out: Path, v: str, research: bool = True) -> list[Path]:
+    """`research=False` is the narrator as the owner heard it on 8.11.2026; True adds the researched names
+    (kit/pronounce/researched.json) and researches what is left from its sentence, as a film does."""
     os.environ['STORIES_KOKORO_VOICE'] = v
+    extra = None
+    if research:
+        os.environ.pop('STORIES_NO_RESEARCH', None)
+        from studio import name_research
+        extra = name_research.for_script([l for _, l in LINES], out / 'names', lambda m: print(m, flush=True))
+    else:
+        os.environ['STORIES_NO_RESEARCH'] = '1'
     files = []
     for i, (dl, line) in enumerate(LINES):
         f = out / f'line-{i}.wav'
-        voice.kokoro_beat(line, f, None, dl)
+        voice.kokoro_beat(line, f, extra, dl)
         files.append(f)
+    os.environ.pop('STORIES_NO_RESEARCH', None)
     return files
 
 
@@ -136,12 +149,64 @@ def take_qwen(out: Path) -> list[Path]:
     return files
 
 
+def take_gemini(out: Path, voice_name: str, style: str = '') -> list[Path]:
+    """Gemini's speech model on the free tier, directed per line, with the lexicons' respellings in its notes. A take
+    that does not say the script fails here as it would in a film (the film then falls back to Kokoro)."""
+    from studio import gemini_tts
+    os.environ['STORIES_GEMINI_VOICE'] = voice_name
+    if style:
+        os.environ['STORIES_GEMINI_STYLE'] = style
+    else:
+        os.environ.pop('STORIES_GEMINI_STYLE', None)
+    files = []
+    for i, (dl, line) in enumerate(LINES):
+        f = out / f'line-{i}.wav'
+        meta = gemini_tts.speak(voice.spoken(line), f, dl, None, '', lambda m: print(m, flush=True))
+        print(f"  line {i}: {meta['check']['matched']:.0%} of the words heard", flush=True)
+        files.append(f)
+        time.sleep(21)  # the free tier's few requests a minute
+    return files
+
+
 TAKES = [
-    ('A', 'before', 'Kokoro · George — as the films sound today', take_before, False),
-    ('B', 'george', 'Kokoro · George — names + human pacing + narrator chain', lambda o: take_kokoro(o, 'bm_george'), True),
+    ('A', 'before', 'Kokoro · George — as you heard it (B of 8.11)', lambda o: take_kokoro(o, 'bm_george', False), True),
+    ('B', 'george', 'Kokoro · George — every name researched (club, country, native spelling)', lambda o: take_kokoro(o, 'bm_george'), True),
     ('C', 'lewis', 'Kokoro · Lewis — names + human pacing + narrator chain', lambda o: take_kokoro(o, 'bm_lewis'), True),
     ('D', 'qwen', 'Qwen3-TTS — a designed British narrator', take_qwen, True),
+    ('E', 'gemini-charon', 'Gemini (free) · Charon — the documentary narrator, directed', lambda o: take_gemini(o, 'Charon'), True),
+    ('F', 'gemini-puck', 'Gemini (free) · Puck — the Shorts storyteller', lambda o: take_gemini(o, 'Puck', 'short'), True),
 ]
+
+
+# ── the name check (owner, 8.11.2026: "Petah Tikva, St. Pauli and the Arabic names are still not right") ───────────────
+# The names the owner flagged, each said three ways. He answers with a number; the chosen way goes into the hand lexicon
+# (a person's check wins over everything).
+NAME_CHECK = [
+    ('Petah Tikva', ['ˈpɛtax ˈtikva', 'ˈpɛtak ˈtikva', 'ˈpɛta ˈtikva']),
+    ('Hapoel Petah Tikva', ['hapɒˈɛl ˈpɛtax ˈtikva', 'haˈpɒɛl ˈpɛtax tikˈva', 'hapɒˈɛl pɛˈtax tikˈva']),
+    ('St. Pauli', ['zaŋkt ˈpaʊli', 'saŋkt ˈpaʊli', 'sənt ˈpɔːli']),
+    ('Ahmed', ['ˈaxmɛd', 'ˈahmɛd', 'ˈaːmɛd']),
+    ('Mohamed', ['muˈhamad', 'mɒˈhamɛd', 'muˈhammad']),
+    ('Mahmoud', ['maxˈmuːd', 'mahˈmuːd', 'maˈmuːd']),
+    ('Abdelilah', ['abdɛliˈlaː', 'abˈdɛlila', 'ˌabdɛlˈilə']),
+    ('Aboutrika', ['abuˈtrika', 'abuːˈtriːka', 'ˌabuːtˈrɪkə']),
+]
+
+
+def name_check(out: Path) -> Path:
+    """One clip: for each flagged name, "Petah Tikva — one: …, two: …, three: …", in the narrator's voice."""
+    import numpy as np
+    os.environ['STORIES_KOKORO_VOICE'] = 'bm_george'
+    parts = []
+    for k, (name, ways) in enumerate(NAME_CHECK):
+        extra = {f'Qv{i}x': '/' + w + '/' for i, w in enumerate(ways)}
+        text = ' '.join(f'{n}: Qv{i}x.' for i, n in enumerate(('One', 'Two', 'Three')))
+        f = out / f'check-{k}.wav'
+        voice.kokoro_beat(text, f, extra, 'normal')
+        parts += [f, silence(out / f'check-gap-{k}.wav', 1.2)]
+    mix = out / 'name-check.wav'
+    concat(parts[:-1], mix, True)
+    return mix
 
 
 # ── the ear-proxy ────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -220,10 +285,17 @@ def main() -> None:
         dur = voice._duration(mix)
         report['takes'].append({'take': letter, 'key': key, 'title': title, 'file': mix.name, 'seconds': round(dur, 1),
                                 'render_seconds': round(took, 1), 'realtime_factor': round(took / max(dur, 1), 2),
-                                'g2p': 'misaki' if letter in 'BC' and pronounce.misaki() is not None else ('respelled' if letter == 'D' else 'espeak'),
+                                'g2p': 'misaki' if letter in 'BC' and pronounce.misaki() is not None else ('respelled' if letter in 'DEF' else 'espeak'),
                                 '_files': [str(f) for f in files]})
         print(f'take {letter}: {dur:.0f}s audio in {took:.0f}s', flush=True)
         (out_root / 'audition.json').write_text(json.dumps(report, indent=1, ensure_ascii=False))
+    try:
+        (out_root / 'check').mkdir(exist_ok=True)
+        nc = name_check(out_root / 'check')
+        card_video(nc, out_root / 'name-check.mp4', '?', 'Name check — one, two or three')
+        report['name_check'] = [{'name': n, 'ways': w} for n, w in NAME_CHECK]
+    except Exception as e:  # noqa: BLE001
+        report['name_check_error'] = f'{type(e).__name__}: {e}'[:300]
     try:
         for t in report['takes']:
             if 'error' in t:
@@ -251,8 +323,9 @@ def delivery(out_root: Path, report: dict) -> None:
     scores_only = os.environ.get('AUDITION_SEND') == 'scores'
     items = [] if scores_only else [{'before': ['🎙 <b>אודישן קריין · Football Stories</b>\n\n'
                          'אותן 7 שורות מהסרטים, בכל קול. שימו לב לשמות (Mbappé, Panathinaikos, Željezničar, Mourinho), '
-                         'לנשימות ולהפסקות.\n\nA = איך שהסרטים נשמעים היום. B, C = Kokoro אחרי השיפור. '
-                         'D = Qwen3-TTS, קריין בריטי שעוצב מתיאור.\n\nתשובה של אות אחת מספיקה (למשל: B).']}]
+                         'לנשימות ולהפסקות.\n\nשורה לכל מועדון: זרינסקי, הפועל פתח תקווה, סלטיק, הפועל ת"א, סנט פאולי, אל אהלי, '
+                         'ראג\'ה/וידאד, היוונים, ומונחי כדורגל.\nA = הקריין כפי ששמעת (B של הסבב הקודם). '
+                         'B = אותו קריין, וכל שם נחקר: מועדון, מדינה, כתיב מקורי.\n\nכתוב לי איזה שם עדיין לא נכון — אני מתקן אותו ביד.']}]
     for t in ([] if scores_only else report['takes']):
         if 'file' not in t:
             items.append({'before': [f"⚠️ Take {t['take']} ({t['title']}) נכשל ברנדור: <code>{t.get('error', '')[:200]}</code>"]})
@@ -261,6 +334,11 @@ def delivery(out_root: Path, report: dict) -> None:
         items.append({'video': {'url': f"{base}/{t['file'].replace('.wav', '.mp4')}", 'name': f"narrator-take-{t['take']}.mp4",
                                 'width': 1080, 'height': 1080,
                                 'caption': f"<b>Take {t['take']}</b> · {t['title']}{score}\nזמן רנדור: ×{t['realtime_factor']} מזמן אמת"}})
+    if report.get('name_check') and not scores_only:
+        order = '\n'.join(f'{i + 1}. {n["name"]}' for i, n in enumerate(report['name_check']))
+        items.append({'video': {'url': f"{base}/name-check.mp4", 'name': 'name-check.mp4', 'width': 1080, 'height': 1080,
+                                'caption': '<b>בדיקת שמות</b> — כל שם בשלוש דרכים (One / Two / Three), בסדר הזה:\n' + order +
+                                           '\n\nענה למשל: פתח תקווה 1, סנט פאולי 2, אחמד 2 — ואני נועל את זה במילון.'}})
     lines = []
     for t in report['takes']:
         if 'names_total' in t:

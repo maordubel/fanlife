@@ -1,0 +1,298 @@
+{
+ "file": "file09",
+ "number": "09",
+ "title": "THE RANSOM",
+ "tone": "HEART",
+ "fps": 25,
+ "grade": 0.4,
+ "script": "docs/fanlife/classified/file09-the-ransom.script.md",
+ "script_version": "owner-treatment-2026-11-08",
+ "approved": false,
+ "minutes": 2.2,
+ "note": "Draft from the owner's Hebrew treatment (8.11.2026), fact-checked; see the script document for every correction. Panels are still to be drawn.",
+ "beats": [
+  {
+   "id": "b01",
+   "panel": "@P01",
+   "say": "Your club is chasing the title. Your striker has just scored twice. Then he gets into his car — and disappears.",
+   "dur": 9.7,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Cold open"
+  },
+  {
+   "id": "b02",
+   "panel": "@P02",
+   "say": "Barcelona, the first of March, nineteen eighty-one. This is the file on Quini.",
+   "dur": 6.3,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b03",
+   "panel": "@CH1",
+   "say": "Enrique Castro, Quini. Signed from Sporting Gijón the summer before, Barcelona's centre-forward, Spain's top scorer.",
+   "dur": 7.2,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The striker"
+  },
+  {
+   "id": "b04",
+   "panel": "@P01",
+   "say": "That evening Barcelona beat Hércules six-nil at the Camp Nou. Quini scores two.",
+   "dur": 6.3,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b05",
+   "panel": "@P02",
+   "say": "On his way to collect his family from the airport, two men stop him at gunpoint and force him into a van.",
+   "dur": 10.2,
+   "mood": "tense",
+   "move": "shake",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b06",
+   "panel": "@P03",
+   "say": "He is held under the floor of a lock-up in Zaragoza, in a hole about a metre and a half long. Three unemployed men, no plan for the money.",
+   "dur": 13.1,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    4
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "Twenty-five days"
+  },
+  {
+   "id": "b07",
+   "panel": "@P04",
+   "say": "First they ask three hundred and fifty million pesetas. Then a hundred million. Barcelona have to open the bank account for them.",
+   "dur": 10.2,
+   "mood": "tense",
+   "move": "drift",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    5,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b08",
+   "panel": "@P04",
+   "say": "The team falls apart. Bernd Schuster refused to play the next game: \"As well as legs, I have a heart.\"",
+   "dur": 9.3,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b09",
+   "panel": "@P01",
+   "say": "In Quini's twenty-five days, Barcelona manage one draw in four league games. The title goes to Real Sociedad — their first ever.",
+   "dur": 10.2,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    1,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b10",
+   "panel": "@P05",
+   "say": "The money trail ends at a bank. One of the kidnappers comes to withdraw it, and the police are waiting.",
+   "dur": 9.3,
+   "mood": "tense",
+   "move": "push",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    2,
+    6
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word.",
+   "chapter": "The rescue"
+  },
+  {
+   "id": "b11",
+   "panel": "@P06",
+   "say": "On the twenty-fifth of March, police break into the lock-up in Zaragoza. Quini is alive.",
+   "dur": 7.2,
+   "mood": "tense",
+   "move": "whip",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    5,
+    1
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b12",
+   "panel": "@CH1",
+   "say": "The kidnappers got ten years and were ordered to pay him five million pesetas. Quini never took it. He said he forgave them.",
+   "dur": 10.6,
+   "mood": "tense",
+   "move": "slow",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3,
+    2
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  },
+  {
+   "id": "b13",
+   "panel": "@P01",
+   "say": "That June, Barcelona won the Copa del Rey. The league was gone. The man came home.",
+   "dur": 7.6,
+   "mood": "tense",
+   "move": "pull",
+   "amount": 0.12,
+   "transition": "fade",
+   "sources": [
+    3
+   ],
+   "camera": "One move per beat; hold for the line; the stamp and the score land on the word."
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "Quini — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Quini"
+  },
+  {
+   "n": 2,
+   "title": "The Guardian via Asharq Al-Awsat — Quini: a tale of kidnap, ransom and forgiveness",
+   "url": "https://english.aawsat.com/home/article/1194596/quini-tale-kidnap-ransom-and-forgiveness-barcelona"
+  },
+  {
+   "n": 3,
+   "title": "The Daily Telegraph — obituary of Quini (3.3.2018)",
+   "url": "https://www.pressreader.com/uk/the-daily-telegraph/20180303/282033327696722"
+  },
+  {
+   "n": 4,
+   "title": "Asharq Al-Awsat — the cell in Zaragoza",
+   "url": "https://english.aawsat.com/home/article/1194596/quini-tale-kidnap-ransom-and-forgiveness-barcelona?page=7"
+  },
+  {
+   "n": 5,
+   "title": "FEMP — Marzo 1981 (350 then 100 million; freed 25 March in Zaragoza)",
+   "url": "https://www.femp.es/sites/default/files/multimedia/40_anos_marzo_81.pdf"
+  },
+  {
+   "n": 6,
+   "title": "Klikk — Real Sociedad's first title that season",
+   "url": "https://www.klikk.no/historie/barcelona-virket-ustoppelige-sa-ble-toppscoreren-deres-kidnappet-7200502"
+  }
+ ],
+ "package": {
+  "title_candidates": [
+   "The Kidnapping That Cost Barcelona the Title",
+   "Quini: 25 Days Under the Floor",
+   "Barcelona's Striker Vanished After Scoring Twice"
+  ],
+  "selected": 0,
+  "hook": "Your club is chasing the title. Your striker has just scored twice. Then he gets into his car — and disappears.",
+  "tags": [
+   "CLASSIFIED",
+   "Quini",
+   "Barcelona",
+   "1981",
+   "kidnapping",
+   "La Liga",
+   "Real Sociedad",
+   "football stories"
+  ],
+  "thumbnails": [
+   {
+    "panel": "@CH1",
+    "hook": [
+     "KIDNAPPED"
+    ]
+   },
+   {
+    "panel": "@P03",
+    "hook": [
+     "25 DAYS"
+    ]
+   },
+   {
+    "panel": "@P02",
+    "hook": [
+     "HE",
+     "VANISHED"
+    ]
+   }
+  ],
+  "shorts": [
+   {
+    "hook": "Barcelona's striker scored twice and then vanished.",
+    "narration": "Barcelona's striker scored twice and then vanished. 1 March 1981, Quini, kidnapped at gunpoint after a 6-0 win. Twenty-five days under a garage floor in Zaragoza. Barça lose the title. He comes home alive, and he forgives the kidnappers. Full file on FanLife.",
+    "hook_law": "is-this-real",
+    "claim_ids": [
+     "src-1",
+     "src-2"
+    ]
+   }
+  ],
+  "hook_options": [
+   {
+    "text": "Your club is chasing the title. Your striker has just scored twice. Then he gets into his car — and disappears."
+   }
+  ]
+ }
+}

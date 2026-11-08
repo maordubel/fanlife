@@ -2,6 +2,7 @@
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react'
 import type {Job,Privacy} from '@/lib/stories/jobs'
 import type {Health} from '@/lib/stories/health'
+import type {Evidence} from '@/lib/stories/catalog'
 import {STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
 import {EditorialRoom,EditorialSteps} from './EditorialRoom'
@@ -24,7 +25,7 @@ export async function api(path:string,init?:RequestInit){
 }
 
 type Kind='season'|'match'|'tie'|'rivalry'
-export type Match={id:string;date:string;season:string;competition:string|null;stage:string|null;home:string;away:string;score:string;outcome:'win'|'draw'|'loss';opponent:string;tags:string[]}
+export type Match={id:string;date:string;season:string;competition:string|null;stage:string|null;home:string;away:string;score:string;outcome:'win'|'draw'|'loss';opponent:string;tags:string[];evidence?:Evidence}
 type Opp={name:string;played:number;won:number;drawn:number;lost:number;first:string;last:string;derby:boolean}
 const KIND_CARDS:{k:Kind;title:string;line:string}[]=[
  {k:'match',title:'One match',line:'The night itself — the build-up, the minutes that decided it, what it meant.'},
@@ -41,7 +42,7 @@ const STYLE_CARDS:{k:string;title:string;line:string}[]=[
  {k:'night',title:'Night broadcast',line:'Floodlights, terraces and rain in moving footage; a cool grade.'},
 ]
 const TONE_CHIPS:[string,string][]=[['auto','Let the story decide'],['triumph','Triumph'],['heartbreak','Heartbreak'],['underdog','Underdog'],['rivalry','Rivalry'],['nostalgia','Nostalgia'],['drama','Drama']]
-const FILTERS:[string,string][]=[['big','Big nights'],['final','Finals'],['derby','Derbies'],['europe','Europe'],['','All']]
+const FILTERS:[string,string][]=[['rich','Most material'],['big','Big nights'],['final','Finals'],['derby','Derbies'],['europe','Europe'],['','All']]
 export const dayOf=(d:string)=>new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})
 const TAG_TEXT:Record<string,string>={final:'Final',derby:'Derby',europe:'Europe','big-score':'Big score',penalties:'Penalties','extra-time':'Extra time',goals:'Goals'}
 
@@ -168,10 +169,15 @@ export function MatchPicker({club,multi,picked,setPicked}:{club:Club;multi:boole
   <ul className={css.matches} aria-busy={loading}>{rows.map(m=><li key={m.id}><button type="button" className={`${css.match} min-h-tap`} aria-pressed={on(m)} onClick={()=>toggle(m)}>
    <span className={css.mDate}>{dayOf(m.date)}<small>{m.competition??''}{m.stage?` · ${m.stage}`:''}</small></span>
    <span className={css.mScore}>{m.home} <b data-o={m.outcome}>{m.score}</b> {m.away}</span>
-   {m.tags.length?<span className={css.mTags}>{m.tags.filter(t=>TAG_TEXT[t]).map(t=><i key={t}>{TAG_TEXT[t]}</i>)}</span>:null}
+   {m.tags.length||m.evidence?.level!=='thin'?<span className={css.mTags}>{m.evidence&&m.evidence.level!=='thin'?<EvidenceBadge e={m.evidence}/>:null}{m.tags.filter(t=>TAG_TEXT[t]).map(t=><i key={t}>{TAG_TEXT[t]}</i>)}</span>:null}
   </button></li>)}</ul>
   <p className={css.hint}>{loading?'Reading the archive…':rows.length?`Showing ${rows.length} of ${total}. Narrow it with a season or a search.`:'No match fits. Try All, or another season.'}</p>
  </div>
+}
+
+/** How much the studio holds about a night (studio/evidence.py), as one badge: the reasons are its title. */
+export function EvidenceBadge({e}:{e:Evidence}){
+ return <i className={css.evidence} data-level={e.level} title={e.has.join(' · ')}>{e.level==='rich'?'★ Rich record':'Good record'}</i>
 }
 
 function OppPicker({club,opp,setOpp}:{club:Club;opp:Opp|null;setOpp:(o:Opp)=>void}){
@@ -225,7 +231,7 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
     {['queued','running'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'pause'})}>Pause</button>}
     {job.state==='paused'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'resume'})}>Resume</button>}
     {(['failed','cancelled'].includes(job.state)||(job.state==='queued'&&!!job.notBefore))&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>{job.state==='queued'?'Try now':'Retry'}</button>}
-    {job.state==='failed'&&job.error?.code==='SCRIPT_INVALID'&&!['classified','vlog'].includes(job.kind??'')?<button className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry_editorial'})}>Retry in editing room</button>:null}
+    {job.state==='failed'&&job.error?.code==='SCRIPT_INVALID'&&!['classified','vlog','promo'].includes(job.kind??'')?<button className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry_editorial'})}>Retry in editing room</button>:null}
     {b.review!=='editorial'&&job.state==='needs_review'&&job.stage==='script'&&!job.options?.length&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
     {!['cancelled','cancel_requested'].includes(job.state)&&job.upload.state!=='done'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Cancel this film?'))void act({action:'cancel'})}}>Cancel</button>}
     <button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>void remove()}>Delete production</button>
@@ -274,7 +280,7 @@ function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=
  }
  return <div>
   {job.brief.review==='editorial'?<EditorialRoom job={job} urls={urls} busy={busy} act={act}/>:null}
-  {(['queued','paused'].includes(job.state)||job.state==='needs_review'&&job.stage==='edit'&&job.brief.review==='editorial')&&!['classified','vlog'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
+  {(['queued','paused'].includes(job.state)||job.state==='needs_review'&&job.stage==='edit'&&job.brief.review==='editorial')&&!['classified','vlog','promo'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
   {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
