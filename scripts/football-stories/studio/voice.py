@@ -104,9 +104,19 @@ def _kokoro():
     return _KOKORO
 
 
+ABBREV = re.compile(r'\b(St|Mr|Mrs|Ms|Dr|Mt|No|Nos|vs|Jr|Sr|Ft|Gen|Col|Capt|Prof|Sgt|Lt)\.$')
+
+
 def sentences(text: str) -> list[str]:
+    """Sentences, never cut after an abbreviation: "St. Pauli" is one name, not a full stop and a pause."""
     parts = re.split(r'(?<=[.!?…])\s+(?=[A-Z0-9“"‘\'])', text.strip())
-    return [p for p in parts if p.strip()]
+    out: list[str] = []
+    for p in parts:
+        if out and ABBREV.search(out[-1]):
+            out[-1] += ' ' + p
+        else:
+            out.append(p)
+    return [p for p in out if p.strip()]
 
 
 def _syllables(w: str) -> float:

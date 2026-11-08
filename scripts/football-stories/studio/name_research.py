@@ -137,8 +137,8 @@ def entries(only: str | None = None) -> list[dict]:
                 for native, eng in (json.loads(p.read_text()).get('names') or {}).items():
                     add(eng, kind, '', 'Israel' if 'he' in f else 'Greece' if 'el' in f else '', native)
     # the clubs the owner heard said worst first; the Greek clubs last (the namebook's rules already read them well)
-    order = ['zrinjski-mostar', 'hapoel-petah-tikva', 'celtic', 'hapoel-tel-aviv', 'al-ahly', 'raja-casablanca',
-             'wydad-casablanca', 'st-pauli', 'aek-athens', 'olympiacos', 'panathinaikos']
+    order = ['zrinjski-mostar', 'hapoel-petah-tikva', 'al-ahly', 'raja-casablanca', 'wydad-casablanca', 'st-pauli',
+             'hapoel-tel-aviv', 'celtic', 'aek-athens', 'olympiacos', 'panathinaikos']  # owner, 8.11: Arabic names, St. Pauli
     rank = {name: i for i, name in enumerate(order)}
     club_of = {json.loads(f.read_text()).get('data', {}).get('identity', {}).get('name', f.stem): f.stem
                for f in (ROOT / 'content' / 'compiled').glob('*.json')} if not only else {}

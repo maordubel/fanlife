@@ -22,7 +22,7 @@ concurrency:
 jobs:
   names:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     steps:
@@ -36,16 +36,21 @@ jobs:
           npm ci --no-audit --no-fund
           npm run clubs:precompile
           pip install -q numpy pillow
-      - name: Research the names
-        working-directory: scripts/football-stories
-        run: python3 -m studio.name_research --batches "${{ inputs.batches || '60' }}" ${{ inputs.club && format('--club {0}', inputs.club) || '' }}
-      - name: Commit what was researched
+      - name: Research the names, committing every ten batches (a timeout never loses an hour of answers)
+        env:
+          BATCHES: ${{ inputs.batches || '60' }}
+          CLUB: ${{ inputs.club || '' }}
         run: |
           git config user.name "fanlife-names" && git config user.email "actions@users.noreply.github.com"
-          git add scripts/football-stories/studio/kit/pronounce/researched.json
-          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
-          git commit -qm "Names: researched pronunciations ($(date -u +%F))"
-          git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}"
+          F=scripts/football-stories/studio/kit/pronounce/researched.json
+          rounds=$(( (BATCHES + 9) / 10 ))
+          for i in $(seq 1 $rounds); do
+            (cd scripts/football-stories && python3 -m studio.name_research --batches 10 ${CLUB:+--club "$CLUB"}) || true
+            git add "$F"
+            if git diff --cached --quiet; then echo "Nothing new — done."; break; fi
+            git commit -qm "Names: researched pronunciations ($(date -u +%FT%H:%M))"
+            git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}"
+          done
       - if: github.event_name == 'workflow_dispatch' && inputs.audition && github.ref_name == github.event.repository.default_branch
         name: The narrator audition, with the new names
         env:
