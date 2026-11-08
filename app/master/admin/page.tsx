@@ -55,7 +55,7 @@ export default async function Page({searchParams}:{searchParams:Params}){
  const scoped=state?.clubs.find(c=>c.id===searchParams.club)
  const club=scoped?.id??null
  return <AdminShell section={section} club={club} clubName={scoped?.name??null} owner={owner}
-  overviewBadge={overview?<Suspense fallback={null}><OverviewBadge overview={overview}/></Suspense>:undefined}>
+  renderOverviewBadge={overview?()=> <Suspense fallback={null}><OverviewBadge overview={overview}/></Suspense>:undefined}>
   <Suspense key={JSON.stringify([section,view,club,searchParams.days,searchParams.gate,searchParams.lab])}
    fallback={<p className="desk-state" role="status">Loading the desk…</p>}>
    <DeskContent section={section} view={view} club={club} owner={owner} searchParams={searchParams} overview={overview} scopedState={state}/>
