@@ -11,6 +11,8 @@ on:
       audition: {description: 'Send the narrator audition to Telegram afterwards', type: boolean, default: true}
   schedule:
     - cron: '17 2 * * *'
+  push:
+    paths: ['scripts/football-stories/studio/name_research.py']
 permissions:
   contents: write
   actions: write
@@ -37,7 +39,7 @@ jobs:
           if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
           git commit -qm "Names: researched pronunciations ($(date -u +%F))"
           git pull -q --rebase origin "${{ github.ref_name }}" && git push -q origin "HEAD:${{ github.ref_name }}"
-      - if: github.event_name == 'workflow_dispatch' && inputs.audition
+      - if: github.event_name == 'workflow_dispatch' && inputs.audition && github.ref_name == github.event.repository.default_branch
         name: The narrator audition, with the new names
         env:
           GH_TOKEN: ${{ github.token }}
