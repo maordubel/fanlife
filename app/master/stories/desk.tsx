@@ -34,9 +34,14 @@ export function StoriesDesk({view}:{view:DeskTab}){
  const loadDesk=useCallback(async()=>{try{setDesk(await api('/api/master/stories/desk'))}catch{setDesk(d=>d??{classified:null,pitches:null,pitchDesk:null,lights:null,plan:null})}},[])
  useEffect(()=>{void load();void loadDesk()},[load,loadDesk])
  const live=(jobs??[]).some(j=>['queued','running','cancel_requested'].includes(j.state))
- // a job in production refreshes every 15 s; otherwise once a minute, so the banners never go stale on an open tab
- useEffect(()=>{const t=setInterval(()=>void load(),live?15000:60000);return()=>clearInterval(t)},[live,load])
- useEffect(()=>{const t=setInterval(()=>void loadDesk(),60000);return()=>clearInterval(t)},[loadDesk])
+ // Background tabs do not poll. When the owner returns, refresh immediately; visible active jobs update every 30s.
+ useEffect(()=>{
+  const refresh=()=>{if(document.visibilityState==='visible'){void load();void loadDesk()}}
+  document.addEventListener('visibilitychange',refresh)
+  return()=>document.removeEventListener('visibilitychange',refresh)
+ },[load,loadDesk])
+ useEffect(()=>{const t=setInterval(()=>{if(document.visibilityState==='visible')void load()},live?30000:180000);return()=>clearInterval(t)},[live,load])
+ useEffect(()=>{const t=setInterval(()=>{if(document.visibilityState==='visible')void loadDesk()},180000);return()=>clearInterval(t)},[loadDesk])
  const facts:Facts={now,health,jobs,classified:desk?.classified,pitchDesk:desk?.pitchDesk,lights:desk?.lights,plan:desk?.plan}
  const made=async(id:string)=>{setOpen(id);await load()}
  const list=(k:'film'|'classified'|'vlog',empty:string)=><JobList jobs={jobs} kind={k} open={open} setOpen={setOpen} onChange={load} empty={empty}/>
