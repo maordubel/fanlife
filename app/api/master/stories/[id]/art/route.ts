@@ -1,5 +1,5 @@
 import {adminFromRequest} from '@/lib/master/admin'
-import {ART_NAME,FLOW_NAME,StoryError,flowFiles,jobKind,mediaPath} from '@/lib/stories/jobs'
+import {ART_NAME,FLOW_KINDS,FLOW_NAME,StoryError,flowFiles,jobKind,mediaPath} from '@/lib/stories/jobs'
 import {getJob} from '@/lib/stories/store'
 import {signedUpload} from '@/lib/stories/media'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
@@ -20,8 +20,8 @@ export async function POST(r:Request,{params}:{params:{id:string}}){
   const names=Array.isArray(b.names)?b.names.map(String):[]
   const cur=await getJob(params.id)
   if(!cur)return json({error:'No such job.'},404)
-  if(jobKind(cur.job)==='short'){
-   // an animated Short: the clips and stills Google Flow made, into the slots its Flow pack names
+  if(FLOW_KINDS.includes(jobKind(cur.job))){
+   // an animated Short or promo: the clips and stills Google Flow made, into the slots its Flow pack names
    const want=new Set(cur.job.flow?flowFiles(cur.job.flow):[])
    if(!names.length||names.some(n=>!FLOW_NAME.test(n)||!want.has(n)))throw new StoryError('ART','Each file goes into one of this Short\'s slots.')
    if(cur.job.lease)throw new StoryError('ART','The worker is still stopping. Wait a moment.',409)

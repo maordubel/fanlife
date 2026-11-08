@@ -225,7 +225,7 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
   case 'flow_added':{
-   if(jobKind(j)!=='short'||!j.flow)no('Flow clips belong to an animated Short whose Flow pack is ready.')
+   if(!FLOW_KINDS.includes(jobKind(j))||!j.flow)no('Flow clips belong to an animated Short or promo whose Flow pack is ready.')
    if(j.lease)no('The worker is still stopping. Wait a moment.')
    if(!['needs_review','failed','paused'].includes(j.state))no('Add the Flow clips while the Short waits for them.')
    const want=new Set(flowFiles(j.flow!))
@@ -236,7 +236,7 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
    j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} Flow file(s) added by ${actor}`,at)
    break}
   case 'flow_ready':{
-   if(jobKind(j)!=='short'||!j.flow)no('There is no Flow pack on this job.')
+   if(!FLOW_KINDS.includes(jobKind(j))||!j.flow)no('There is no Flow pack on this job.')
    if(j.lease)no('The worker is still stopping. Wait a moment.')
    if(!['needs_review','failed','paused'].includes(j.state))no('This Short is not waiting for its clips.')
    const have=new Set((j.brief.art??[]).map(f=>f.name)),left=flowFiles(j.flow!).filter(n=>!have.has(n))
@@ -310,7 +310,7 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
   pushLog(j,j.message,at)
   return j
  }
- if(f.flow&&f.state==='needs_review'&&jobKind(j)==='short'){
+ if(f.flow&&f.state==='needs_review'&&FLOW_KINDS.includes(jobKind(j))){
   j.flow=cleanFlow(f.flow);j.stage='graphics';j.progress=0.5
   j.message=`Waiting for ${j.flow.clips.length} Flow clip(s) and ${j.flow.stills.length} still(s) — ${j.flow.credits} credits`
   pushLog(j,j.message,at)
@@ -423,6 +423,8 @@ export function newSpecialJob(id:string,kind:'classified'|'vlog'|'promo'|'short'
  * One match → the Short's script and its Flow pack (first worker visit, finishes as needs_review / graphics with `flow`);
  * the owner makes the clips in Flow and uploads them into their slots (`flow_added`), then `flow_ready` queues the edit
  * (second visit). Flow has no API: nothing here can spend its credits. */
+/** The kinds made in Google Flow: the animated Shorts and the marketing films. */
+export const FLOW_KINDS:readonly JobKind[]=['short','promo']
 export const SHORT_SECONDS=[20,30] as const
 export type ShortSpec={club_id:string;club_name:string;match:VlogMatch;seconds:number;angle:string;telegram:boolean}
 export type FlowStep={id:string;role:string;prompt:string;model:string;aspect:string;credits:number}

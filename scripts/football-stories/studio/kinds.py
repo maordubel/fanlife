@@ -280,44 +280,27 @@ def upload_set(st, job_id: str, master: Path, files: dict, package: list, shorts
 
 # ── marketing films (owner, 8.11.2026) ───────────────────────────────────────────────────────────────────────────────
 def run_promo(st, job: dict, jd: Path, progress, log) -> dict:
-    """A promo: the promo writer (studio/promo.py) from the spec's facts, then the illustrated Short (studio/cartoon), then
-    the same private storage, Telegram delivery and YouTube pack as every other job."""
-    from . import promo
-    from .cartoon import make as cartoon
+    """A promo, animated in Google Flow like the Shorts (owner, 8.11.2026: "smart use of Flow"): visit 1 writes it
+    (studio/promo.py, facts only) and stops with its Flow pack; visit 2 edits the clips the owner uploaded."""
+    from . import flowkit, promo
     spec = job.get('spec') or {}
-    progress('script', 0.05, f'Writing the marketing film: {spec.get("label")}')
-    s = promo.write(spec, jd / 'cache', log)
-    (jd / 'promo-script.json').write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding='utf-8')
-    progress('edit', 0.3, 'Animating the illustrated promo')
-    out = outside_repo(job['id'], 'promo')
-    out.mkdir(parents=True, exist_ok=True)
-    mp4 = out / 'promo.mp4'
-    r = cartoon.make(s['narration'], s.get('cartoon'), mp4, out / 'work', primary='#B02D10', on_primary='#FFFBF2', bans=[],
-                     tag='FAN LIFE · ' + str(spec.get('label') or 'FOOTBALL. FOREVER.')[:34], cache=jd / 'cache' / 'voice', log=log)
-    frame = out / 'thumbnail-1.jpg'
-    subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', '0.2', '-i', str(mp4), '-frames:v', '1', str(frame)], check=True)
-    progress('package', 0.85, 'Storing the promo privately')
-    desc = (str(s.get('description') or '') + f'\n\n▶ {spec.get("url") or "https://fanlife.dubelteam.com"}\n'
-            '▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1').strip()
-    (out / 'description.txt').write_text(desc, encoding='utf-8')
-    art = upload_set(st, job['id'], mp4, {'preview.mp4': mp4, 'thumbnail-1.jpg': frame}, [out / 'description.txt', jd / 'promo-script.json'],
-                     [{'file': str(mp4), 'hook': s.get('title') or 'Promo', 'seconds': r['seconds']}], log)
-    yt = yt_shape(None, title=str(s.get('title') or spec.get('label') or 'FAN LIFE')[:100], description=desc,
-                  reason='An animated promo made from the studio\'s own illustration library; no realistic person or event is depicted.')
-    yt['tags'] = [str(t)[:40] for t in (s.get('tags') or [])][:12]
-    if spec.get('telegram', True):
-        try:
-            if str(MATCHDAY.parent) not in sys.path:
-                sys.path.insert(0, str(MATCHDAY.parent))
-            from matchday import vlog_auto as V
-            V.send_telegram([(mp4, f'📣 Marketing film · {s.get("title")}')], log)
-        except Exception as e:  # noqa: BLE001 — Telegram is a courtesy copy; the promo is stored either way
-            log(f'Telegram: not sent ({e})')
-    return {'state': 'ready', 'stage': 'done', 'artefacts': art, 'youtube': yt,
-            'qa': {'ok': True, 'checks': [{'name': 'facts', 'ok': True, 'detail': 'every number is in the subject\'s facts'},
-                                          {'name': 'length', 'ok': r['seconds'] <= 30, 'detail': f'{r["seconds"]} s'}],
-                   'cannot_prove': ['That the tone is right for the brand — watch it before posting.']},
-            'cost': {'renderMinutes': round(r['seconds'] / 60, 1), 'voice': 'kokoro'}}
+    pack = job.get('flow')
+    if not pack:
+        progress('script', 0.05, f'Writing the marketing film: {spec.get("label")}')
+        s = promo.write(spec, jd / 'cache', log)
+        (jd / 'promo-script.json').write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding='utf-8')
+        pack = flowkit.flow_pack({'title': s.get('title'), 'cast_sheet': s.get('cast_sheet') or [], 'beats': s['cartoon']})
+        tag = 'FAN LIFE · ' + str(spec.get('label') or 'FOOTBALL. FOREVER.')[:34].upper()
+        pack['story']['tag'] = tag
+        pack.update(narration=s['narration'], hook_law=s.get('hook_law'), tags=[str(t)[:40] for t in s.get('tags') or []][:12],
+                    description=(str(s.get('description') or '') + f'\n\n▶ {spec.get("url") or "https://fanlife.dubelteam.com"}').strip())
+        pack['markdown'] = flowkit.markdown(pack, s)
+        log(f"Promo: {len(pack['clips'])} clips + {len(pack['stills'])} stills ready for Flow ({pack['credits']} credits)")
+        return {'state': 'needs_review', 'stage': 'graphics', 'flow': pack}
+    fin = _short_edit(st, job, {**spec, 'telegram': spec.get('telegram', True)}, pack, jd, progress, log,
+                      accent='#B02D10', label='📣 Marketing film',
+                      reason='An animated promo made in Google Flow: invented supporters, no real person or event depicted; synthetic narration.')
+    return fin
 
 
 # ── animated Shorts on Google Flow (owner, 8.11.2026: "the Flow Short is excellent — now build the studio around it") ──
@@ -359,7 +342,8 @@ def _short_pack(job: dict, spec: dict, jd: Path, progress, log) -> dict:
     return {'state': 'needs_review', 'stage': 'graphics', 'flow': pack}
 
 
-def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log) -> dict:
+def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log, *, accent: str | None = None,
+                label: str = '🎞 Animated Short', reason: str | None = None) -> dict:
     import urllib.request
     from .cartoon import flowcut
     need = [c['file'] for c in pack.get('clips') or []] + [c['file'] for c in pack.get('stills') or []]
@@ -380,19 +364,19 @@ def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log) 
     out = outside_repo(job['id'], 'short')
     out.mkdir(parents=True, exist_ok=True)
     mp4 = out / 'short.mp4'
-    accent = (job.get('palette') or {}).get('primary') or '#B02D10'
+    accent = accent or (job.get('palette') or {}).get('primary') or '#B02D10'
     r = flowcut.make(pack['story'], media, mp4, out / 'work', accent=accent, log=log)
     frame = out / 'thumbnail-short.jpg'
     subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', '0.3', '-i', str(mp4), '-frames:v', '1', str(frame)], check=True)
     progress('package', 0.85, 'Storing the Short privately')
-    desc = (pack.get('description') or '') + '\n\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1'
+    desc = (pack.get('description') or '') + '\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1'
     (out / 'description.txt').write_text(desc.strip(), encoding='utf-8')
     (out / 'flow-pack.json').write_text(json.dumps(pack, ensure_ascii=False, indent=1), encoding='utf-8')
     art = upload_set(st, job['id'], mp4, {'preview.mp4': mp4, 'thumbnail-short.jpg': frame},
                      [out / 'description.txt', out / 'flow-pack.json'], [{'file': str(mp4), 'hook': pack.get('title') or 'Short', 'seconds': r['seconds']}], log)
     yt = yt_shape(None, title=str(pack.get('title') or job['brief'].get('topic'))[:100], description=desc.strip(),
-                  reason='Animated with Google Flow: an illustrated cartoon of a real match, told from the sourced record; '
-                         'the people are drawn, not realistic, and the narration is synthetic.')
+                  reason=reason or ('Animated with Google Flow: an illustrated cartoon of a real match, told from the sourced record; '
+                                    'the people are drawn, not realistic, and the narration is synthetic.'))
     yt['tags'] = pack.get('tags') or []
     yt['synthetic'] = True
     if spec.get('telegram', True):
@@ -400,7 +384,7 @@ def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log) 
             if str(MATCHDAY.parent) not in sys.path:
                 sys.path.insert(0, str(MATCHDAY.parent))
             from matchday import vlog_auto as V
-            V.send_telegram([(mp4, f"🎞 Animated Short · {pack.get('title')}")], log)
+            V.send_telegram([(mp4, f"{label} · {pack.get('title')}")], log)
         except Exception as e:  # noqa: BLE001 — a courtesy copy; the Short is stored either way
             log(f'Telegram: not sent ({e})')
     ok = r['seconds'] <= 60

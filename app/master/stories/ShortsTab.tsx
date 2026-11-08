@@ -58,7 +58,7 @@ function Copy({text}:{text:string}){
 }
 
 /** One Short waiting for its Flow files: the steps, every prompt with a copy button, and a slot per file. */
-function FlowPanel({job,onChange}:{job:Job;onChange:()=>Promise<void>|void}){
+export function FlowPanel({job,onChange}:{job:Job;onChange:()=>Promise<void>|void}){
  const p=job.flow!
  const have=new Set((job.brief.art??[]).map(a=>a.name))
  const [busy,setBusy]=useState(''),[err,setErr]=useState('')

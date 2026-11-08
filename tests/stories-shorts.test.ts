@@ -35,6 +35,12 @@ describe('animated Shorts on Google Flow',()=>{
   const j=newSpecialJob('aaaaaaaa-2222','short',validateShort({club_id:'olympiacos',match_id:match.id},clubs,find),palette,'owner','k2')
   expect(()=>ownerAct(j,{action:'art_added',files:[{name:'a.png',illustrated:false}]},'owner')).toThrow()
  })
+ it('a marketing film is made in Flow the same way',()=>{
+  let j=newSpecialJob('aaaaaaaa-3333','promo',{brief:validateShort({club_id:'olympiacos',match_id:match.id},clubs,find).brief,spec:{about:'channel',subject:'channel',label:'The channel',facts:'x',url:'',seconds:30,angle:'',telegram:true}},palette,'owner','k3')
+  j=finish(claim(j,'w1'),'w1',{state:'needs_review',stage:'graphics',flow:pack})
+  j=ownerAct(ownerAct(j,{action:'flow_added',files:['clip-0.mp4','still-0.jpg']},'owner'),{action:'flow_ready'},'owner')
+  expect(j.state).toBe('queued')
+ })
  it('has its own tab, and the Ideas tab comes first',()=>{
   expect(DESK_TABS[0]).toBe('ideas');expect(DESK_TABS).toContain('shorts')
  })

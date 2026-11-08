@@ -7,13 +7,14 @@ import type {PlanPost} from '@/lib/stories/marketing'
 import {DeskBanner} from './desk'
 import {api} from './stories-desk'
 import {SocialPanel} from './SocialPanel'
+import {FlowPanel} from './ShortsTab'
 import {PROMO_SUBJECTS,PROMO_SECONDS,type PromoAbout} from '@/lib/stories/promo'
 import css from './studio.module.css'
 
 /**
  * Marketing (owner, 4.11.2026: "marketing video production"): every finished film, Short and Reel in one place, the
  * four platforms and the Telegram packs (SocialPanel, doc 61), and what the social plan has sent today (doc 51 · 61).
- * Marketing films (owner, 8.11.2026): a 20–30 s vertical cartoon about a FAN LIFE feature, the channel, a finished film
+ * Marketing films (owner, 8.11.2026): a 20–30 s vertical cartoon animated in Google Flow about a FAN LIFE feature, the channel, a finished film
  * or the owner's own words — written only from that subject's facts (lib/stories/promo.ts), produced with one click.
  */
 const KIND_TEXT={film:'Documentary',classified:'CLASSIFIED',vlog:'I WAS THERE',promo:'Marketing film',short:'Animated Short'} as const
@@ -29,6 +30,7 @@ export function MarketingTab({facts,jobs,onChange,onMade,children}:{facts:Facts;
  const job=films.find(j=>j.id===open)??null
  return <>
   <DeskBanner b={marketingBanner(facts)}/>
+  {(jobs??[]).filter(j=>jobKind(j)==='promo'&&j.flow&&['needs_review','failed','paused'].includes(j.state)&&j.stage!=='done').map(j=><FlowPanel key={j.id} job={j} onChange={onChange}/>)}
   <div className={css.grid}><NewPromo films={films} onMade={onMade}/>{children}</div>
   <div className={css.grid}>
    <section className={css.panel} aria-labelledby="mk-films">
@@ -92,12 +94,12 @@ function NewPromo({films,onMade}:{films:Job[];onMade:(id:string)=>Promise<void>}
   if(!key.current)key.current=crypto.randomUUID()
   const brief=about==='feature'?{about,subject}:about==='film'?{about,subject:film}:about==='free'?{about,facts,label}:{about}
   try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'promo',brief:{...brief,seconds,angle,telegram},idempotencyKey:key.current})})
-   key.current='';setMsg('Queued. The worker starts it within a few minutes; a marketing film takes about ten.');await onMade(b.job.id)}
+   key.current='';setMsg('Queued. Within a few minutes its Google Flow pack appears at the top of this tab: make the clips in Flow, upload them into their slots, then press “Edit the Short”.');await onMade(b.job.id)}
   catch(e){setErr(e instanceof Error?e.message:'Could not queue the marketing film.')}finally{setBusy(false)}
  }
  const ready=about==='feature'||about==='channel'||(about==='film'&&!!film)||(about==='free'&&facts.trim().length>=40)
  return <section className={css.panel} aria-labelledby="mk-new">
-  <div className={css.bar}><span id="mk-new">Make a marketing film</span><span>20–30 s · 9:16 cartoon</span></div>
+  <div className={css.bar}><span id="mk-new">Make a marketing film</span><span>20–30 s · 9:16 · Google Flow</span></div>
   <div className={css.body}>
    <fieldset className={css.lab}><legend>About</legend>
     {([['feature','A FAN LIFE feature'],['channel','Our YouTube channel'],['film','A film we made'],['free','My own words']] as const).map(([v,t])=>

@@ -162,3 +162,8 @@ clips, captions, sound, Telegram. Flow has no API, so the studio never spends it
   native one, is locked in the hand lexicon: Petah Tikva /ˈpɛtax ˈtikva/, Hapoel Petah Tikva, St. Pauli /zaŋkt ˈpaʊli/,
   Ahmed /ˈaxmɛd/, Mohamed /muˈhamad/, Mahmoud /maxˈmuːd/, Abdelilah, Aboutrika. So Kokoro says the Hebrew and Arabic x
   well; the St. Pauli fault was the sentence cut after "St.", fixed.
+
+### Marketing films in Google Flow too
+The promo writer now writes a cast sheet of INVENTED supporters and a scene per line; a marketing film stops with its
+Flow pack at the top of the Marketing tab, like a Short, and "Edit the Short" cuts it (`kinds._short_edit`, shared).
+The illustrated-library and code-drawn cartoons are no longer used by any job.

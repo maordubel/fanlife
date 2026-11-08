@@ -13,25 +13,31 @@ from pathlib import Path
 
 from .common import CHANNEL_NAME, StageError, read_json, sha256_json, write_json
 from .script import numbers_in_text
+from .flowkit import MOTIONS
 
 SYSTEM = f'''You write vertical marketing Shorts for FAN LIFE ("Football. Forever.") and its YouTube channel
-"{CHANNEL_NAME}". The Short is ILLUSTRATED: every line stands on one of the owner's drawn football scenes (terraces,
-stadiums at night, the dugout, a trophy lift, a newspaper stand), inked people act in it and objects come alive, with
-captions on the words. Your audience: football supporters, history lovers, people who love a story.
+"{CHANNEL_NAME}". The Short is ANIMATED in Google Flow: a 2D cartoon in bold clean outlines and flat cel colours,
+INVENTED supporters (never a real person, never a real player) acting out every line in a richly painted place —
+a terrace at night, a kitchen with the match on, a stadium tunnel, a phone glowing in a crowd. Your audience: football
+supporters, history lovers, people who love a story.
 
 Write ONE script of {{lo}}–{{hi}} spoken words (it must finish inside {{seconds}} seconds) about the SUBJECT, from its FACTS only.
 - Line one names what the first frame shows and hooks: "no way I don't know this" (the fan's pride: "You think you know
   your club? …") or "come on, is this real?!" (the surprising thing, said straight). Never "Did you know", never
   "In this video", never hype words (incredible, insane, amazing), no exclamation marks.
 - Plain words, short sentences, like a person talking to a friend ("so", "basically", "right?").
-- Show, don't list: one concrete picture per sentence (a scoreboard, a ticket, a shirt, a trophy, a stamp, a phone).
+- Show, don't list: one concrete picture per beat (a scoreboard, a ticket, a shirt, a trophy, a stamp, a phone).
 - Every number, price and name you say must appear in the FACTS. Never invent a feature, a statistic or a quote.
 - End on ONE call to action that fits the subject (play it on FAN LIFE / watch the film on the channel / subscribe), then
   the last line loops back to the first image.
+- 5–7 beats; their "say" joined is the whole narration. At most 3 characters in "cast_sheet", each an invented supporter
+  described as a cartoon designer needs them (age, hair, build, scarf and shirt colours — never a club crest or a sponsor).
+  A beat with no person in its picture has an empty "cast". "motion" is one of: {", ".join(MOTIONS)}.
 
 Return ONE JSON object and nothing else:
 {{{{"title": "≤60 characters, the hook in a few words", "narration": "the whole script", "hook_law": "know-it-all|is-this-real",
-  "cartoon": [{{{{"say": "the words of this beat", "show": "the place this line happens in and what happens there"}}}}],
+  "cast_sheet": [{{{{"id": "short-id", "role": "the young fan in the red scarf", "look": "…"}}}}],
+  "cartoon": [{{{{"say": "the words of this beat", "scene": "the place, its light and colours", "cast": [{{{{"id": "…", "action": "…", "motion": "…"}}}}]}}}}],
   "description": "2–3 sentences for YouTube/Instagram", "tags": ["5–10 tags"]}}}}'''
 
 
@@ -56,6 +62,25 @@ def errors(s: dict, facts: str, seconds: int) -> list[str]:
         errs.append('no hype words, no "Did you know", no exclamation marks')
     if not isinstance(s.get('title'), str) or not 4 <= len(s['title']) <= 70:
         errs.append('a title of at most 60 characters')
+    beats = s.get('cartoon')
+    if not isinstance(beats, list) or not 4 <= len(beats) <= 8:
+        errs.append('5–7 beats in "cartoon"')
+        return errs
+    said = ' '.join(str(b.get('say') or '') for b in beats if isinstance(b, dict)).split()
+    if [w.lower().strip('.,!?;:—"') for w in said] != [w.lower().strip('.,!?;:—"') for w in text.split()]:
+        errs.append('the beats\' "say" joined must be exactly the narration')
+    ids = {str(c.get('id')) for c in s.get('cast_sheet') or [] if isinstance(c, dict) and c.get('look')}
+    if len(ids) > 3:
+        errs.append('at most 3 characters in the cast sheet')
+    for i, b in enumerate(beats):
+        if not isinstance(b, dict) or not str(b.get('scene') or '').strip():
+            errs.append(f'beat {i + 1} needs a "scene"')
+            continue
+        for c in b.get('cast') or []:
+            if str(c.get('id')) not in ids:
+                errs.append(f'beat {i + 1}: cast id {c.get("id")!r} is not in the cast sheet')
+            if c.get('motion') not in MOTIONS:
+                errs.append(f'beat {i + 1}: motion must be one of {", ".join(MOTIONS)}')
     return errs
 
 
