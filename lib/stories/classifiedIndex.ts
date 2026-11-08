@@ -6,10 +6,10 @@ import type {ClassifiedFile} from './jobs'
  * (comic/episodes/<file>-*.json — never the `-demo` cut, which the produce workflow skips too), its draft, whether the
  * episode file itself says approved, and how many of the brief's roles have a panel in the owner's Drive.
  */
-type Panel={id?:string;role?:string;drive_id?:string|null}
+type Panel={id?:string;role?:string;drive_id?:string|null;kind?:string;name?:string}
 type ManifestFile={title?:string;number?:string;tone?:string;year?:number;brief_roles?:string[];panels?:Panel[]}
 export type Manifest={files?:Record<string,ManifestFile>}
-type Episode={file?:string;number?:string;title?:string;tone?:string;script?:string;script_version?:string;approved?:boolean;minutes?:number;beats?:unknown[];package?:{shorts?:unknown[];hook_options?:{text?:string}[]}}
+type Episode={file?:string;number?:string;title?:string;tone?:string;script?:string;script_version?:string;approved?:boolean;minutes?:number;beats?:{id?:string;chapter?:string;say?:string;panel?:string;dur?:number;camera?:string;move?:string;transition?:string;sources?:number[]}[];sources?:{n:number;title?:string;label?:string;url?:string}[];package?:{shorts?:unknown[];hook_options?:{text?:string}[]}}
 
 /** A panel's role may name two ("CH1/CH2", "S04/S05"): it covers both. */
 const rolesOf=(p:Panel)=>String(p.role||'').split('/').map(x=>x.trim()).filter(Boolean)
@@ -22,10 +22,21 @@ export function classifiedIndex(manifest:Manifest,episodes:{name:string;json:unk
   const roles=f.brief_roles||[]
   const covered=new Set((f.panels||[]).filter(p=>p.drive_id).flatMap(rolesOf))
   const missing=roles.filter(r=>!covered.has(r))
+  let chapter='Opening'
+  const scenes=(ep?.beats??[]).flatMap(b=>{
+   if(b.chapter)chapter=b.chapter
+   return b.id&&b.panel?[{id:b.id,chapter,text:b.say??'',panel:b.panel,seconds:Number(b.dur)||0,
+    camera:b.camera||[b.move,b.transition].filter(Boolean).join(' · '),sourceIds:b.sources??[]}]:[]
+  })
+  const pictures=(f.panels??[]).flatMap(p=>p.id&&p.drive_id?[{id:p.id,name:p.name||p.id,
+   thumbnail:`https://drive.google.com/thumbnail?id=${encodeURIComponent(p.drive_id)}&sz=w480`,
+   label:p.kind==='photo'?'Original photograph · owner-supplied':'Illustration / reconstruction · owner-supplied'}]:[])
+  const sources=(ep?.sources??[]).flatMap(s=>s.url?.startsWith('https://')?[{id:s.n,title:s.title||s.label||`Source ${s.n}`,url:s.url}]:[])
   return {file,number:String(f.number||ep?.number||file.replace(/\D/g,'')),title:String(f.title||ep?.title||file.toUpperCase()),tone:String(f.tone||ep?.tone||''),
    year:typeof f.year==='number'?f.year:null,episode:e?.name??null,script:ep?.script??null,script_version:ep?.script_version??null,
    approved_in_file:ep?.approved===true,minutes:typeof ep?.minutes==='number'?ep.minutes:null,beats:Array.isArray(ep?.beats)?ep!.beats!.length:0,
    panels:{have:roles.length-missing.length,roles:roles.length,missing},shorts:Array.isArray(ep?.package?.shorts)?ep!.package!.shorts!.length:0,
-   hook_options:Array.isArray(ep?.package?.hook_options)?ep.package.hook_options.slice(0,3).map(h=>String(h?.text||'').slice(0,600)).filter(Boolean):[]}
+   hook_options:Array.isArray(ep?.package?.hook_options)?ep.package.hook_options.slice(0,3).map(h=>String(h?.text||'').slice(0,600)).filter(Boolean):[],
+   ...(scenes.length?{scenes,pictures,sources}:{})}
  }).sort((a,b)=>a.file.localeCompare(b.file))
 }

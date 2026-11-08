@@ -430,7 +430,7 @@ class Editor:
             if reveals:
                 for i, (at, (home, away)) in enumerate(reveals):
                     fact = {**f, 'score_home': home, 'score_away': away,
-                            'in_play': (home, away) != (f['score_home'], f['score_away'])}
+                            'in_play': v.get('in_play') or (home, away) != (f['score_home'], f['score_away'])}
                     sprite = self.card(sp, f'{k}-score-{i}', v, fact, claim, s)
                     stop = reveals[i + 1][0] if i + 1 < len(reveals) else dur
                     enter = slam(cx, cy, at, rot=-1.0)

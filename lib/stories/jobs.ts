@@ -9,6 +9,7 @@
  */
 import {SocialError,cancelSocial,scheduleSocial,type PostInput,type SocialPlan} from './social'
 import {isDirector,type DirectorId} from './directors'
+import {reviewEdits,type Review,type ReviewAction} from './editorial'
 export const STAGES=['research','script','voice','graphics','edit','mix','master','package','qa','done'] as const
 export type Stage=typeof STAGES[number]
 export type JobState='queued'|'running'|'paused'|'cancel_requested'|'cancelled'|'failed'|'needs_review'|'ready'
@@ -27,7 +28,7 @@ export type Style=typeof STYLES[number]
 export type ScriptOption={n:number;angle:string;title:string;hook:string;hook_options?:{text:string;claim_ids:string[]}[];chapters:string[];words:number;opening:string;director?:DirectorId}
 export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
- visual_style:Style|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'
+ visual_style:Style|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'|'editorial'
  /** what the film is about: a season (default), one match, a tie or run of matches, or every meeting with one opponent */
  kind?:Kind;match_ids?:string[];opponent?:string|null;tone?:Tone
  /** three scripts to choose from (default) or one; the owner's pick once they are written */
@@ -75,6 +76,8 @@ export type Job={
  cost:{writer?:string;voice?:string;renderMinutes?:number}
  /** the scripts written for the owner to choose from (studio v3) */
  options?:ScriptOption[]|null
+ editorial?:Review
+ editorialRequest?:ReviewAction
  /** posts of the finished film on Facebook, Instagram, X and TikTok (lib/stories/social.ts) */
  social?:SocialPlan|null
  /** what the worker makes (studio desk, 4.11.2026): a documentary (absent = 'film'), a CLASSIFIED FILE or an I WAS THERE
@@ -128,7 +131,7 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  if(b.lead_director!==undefined&&b.lead_director!==null&&!isDirector(b.lead_director))throw new StoryError('BRIEF','Unknown director.')
  const lead_director=isDirector(b.lead_director)?b.lead_director:null
  return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',[...STYLES,'mixed'] as const,'collage'),
-  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,lead_director,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
+  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,lead_director,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script','editorial'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
   focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 
@@ -141,7 +144,7 @@ export function newJob(id:string,brief:Brief,palette:Palette,actor:string,idempo
 const LOG_KEEP=120
 const pushLog=(j:Job,text:string,at:string)=>{j.log=[...j.log,{at,text:text.slice(0,400)}].slice(-LOG_KEEP)}
 
-export type OwnerAction={action:'pause'|'resume'|'cancel'|'retry'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}
+export type OwnerAction=ReviewAction|{action:'pause'|'resume'|'cancel'|'retry'|'retry_editorial'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}
 export const VIDEO_ID=/^[A-Za-z0-9_-]{11}$/
 
 /** An owner's action → the next job, or a StoryError saying why it is not allowed now. */
@@ -152,26 +155,83 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
  }
  const j:Job=structuredClone(job),at=now.toISOString()
  const no=(m:string)=>{throw new StoryError('STATE',m,409)}
+ const queueReview=(request:ReviewAction)=>{
+  j.editorialRequest=request;j.state='queued';j.error=null;j.notBefore=null
+  pushLog(j,`Editorial request saved by ${actor}`,at)
+ }
  switch(a.action){
+  case 'editorial_script':
+  case 'editorial_rewrite':{
+   const draft=j.editorial?.drafts.find(d=>d.option===a.option&&d.revision===a.revision)
+   if(j.state!=='needs_review'||j.stage!=='script'||!draft)throw new StoryError('REVISION','This draft changed. Open the latest review.',409)
+   const ids=new Set(draft.chapters.flatMap(c=>c.beats.map(b=>b.id)))
+   if(a.action==='editorial_rewrite'){
+    if(!ids.has(a.beat)||typeof a.instruction!=='string'||!a.instruction.trim()||a.instruction.length>600)throw new StoryError('REWRITE','Enter a short instruction for a paragraph.')
+    queueReview(a)
+   }else{
+    try{
+     const removed=a.removed??[]
+     if(!Array.isArray(removed)||removed.some(id=>!ids.has(id)))throw new Error('Unknown paragraph')
+     queueReview({...a,edits:reviewEdits(a.edits,ids,3000),removed:[...new Set(removed)]})
+    }
+    catch{throw new StoryError('EDITS','Each edit must refer to a paragraph in this draft and contain text.')}
+   }
+   break
+  }
+  case 'editorial_combine':{
+   const ids=new Set(j.editorial?.drafts.map(d=>d.option))
+   if(j.state!=='needs_review'||j.stage!=='script'||![a.opening,a.body,a.ending].every(n=>ids.has(n)))no('Choose from the available scripts.')
+   queueReview(a);break
+  }
+  case 'editorial_plan':{
+   const board=j.editorial
+   if(j.state!=='needs_review'||j.stage!=='edit'||!board?.scenes||a.revision!==board.plan)throw new StoryError('REVISION','The scene board changed. Open the latest review.',409)
+   const ids=new Set(board.scenes.map(s=>s.id))
+   if(!Array.isArray(a.order)||a.order.length!==ids.size||new Set(a.order).size!==ids.size||a.order.some(id=>!ids.has(id)))throw new StoryError('SCENES','Scene order must include each scene once.')
+   let images:Record<string,string>
+   try{images=reviewEdits(a.images,ids,300)}catch{throw new StoryError('SCENES','Invalid picture selection.')}
+   if(Object.entries(images).some(([id,key])=>!board.scenes!.find(s=>s.id===id)?.alternatives?.includes(key)))throw new StoryError('SCENES','Choose a picture offered for that scene.')
+   if(a.approved===true&&board.issues?.length)throw new StoryError('SCENES','Resolve the review issues before production.')
+   queueReview({...a,images,approved:a.approved===true});break
+  }
+  case 'editorial_back':
+   if(j.state!=='needs_review'||j.stage!=='edit'||!j.editorial)no('There is no scene board to return from.')
+   j.stage='script';j.editorial={drafts:j.editorial!.drafts,gaps:j.editorial!.gaps};delete j.editorialRequest;break
   case 'pause':if(!['queued','running'].includes(j.state))no('Only a queued or running job can be paused.');j.state='paused';pushLog(j,`Paused by ${actor}`,at);break
   case 'resume':if(j.state!=='paused')no('This job is not paused.');j.state='queued';j.lease=null;pushLog(j,`Resumed by ${actor} — continues from its last checkpoint`,at);break
   case 'cancel':if(j.state==='cancelled'||j.state==='cancel_requested')no('This job is already cancelled.');if(j.upload.state==='in_progress')no('An upload is in progress — record its result first.');j.state=j.state==='running'?'cancel_requested':'cancelled';j.lease=j.state==='cancelled'?null:j.lease;pushLog(j,`Cancelled by ${actor}`,at);break
-  case 'retry':if(j.state!=='failed'&&j.state!=='cancelled'&&!(j.state==='queued'&&j.notBefore))no('Only a failed or cancelled job (or one waiting for the writer) can be retried.');j.state='queued';j.error=null;j.lease=null;j.notBefore=null;pushLog(j,`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at);break
-  case 'approve_script':if(j.state!=='needs_review'||j.stage!=='script')no('There is no script waiting for approval.');if(j.options?.length)no('Choose one of the scripts.');j.state='queued';j.brief={...j.brief,review:'auto'};pushLog(j,`Script approved by ${actor}`,at);break
-  case 'choose_script':{if(j.state!=='needs_review'||j.stage!=='script'||!j.options?.length)no('There are no scripts waiting for your choice.');const o=j.options!.find(x=>x.n===a.option);if(!o)throw new StoryError('CHOICE','Unknown script.');j.state='queued';j.brief={...j.brief,review:'auto',choice:o.n};pushLog(j,`Script ${o.n} chosen by ${actor}: "${o.title}"`,at);break}
+  case 'retry':
+  case 'retry_editorial':
+   if(j.state!=='failed'&&j.state!=='cancelled'&&!(j.state==='queued'&&j.notBefore))no('Only a failed or cancelled job (or one waiting for the writer) can be retried.')
+   {
+    const scriptFailed=jobKind(j)==='film'&&j.state==='failed'&&j.error?.code==='SCRIPT_INVALID'
+    if(a.action==='retry_editorial'&&!scriptFailed)no('Only a failed documentary script can be retried in the editing room.')
+    if(scriptFailed){
+     j.brief={...j.brief,review:'editorial',choice:null};j.options=null;delete j.editorial
+     j.editorialRequest={action:'editorial_restart',attempt:j.attempts}
+    }
+    pushLog(j,scriptFailed?`Script retry in the editing room requested by ${actor}`:`Retry requested by ${actor} — resumes from its last checkpoint; paid steps already done are not repeated`,at)
+   }
+   j.state='queued';j.error=null;j.lease=null;j.notBefore=null
+   break
+  case 'approve_script':if(j.brief.review==='editorial'||j.state!=='needs_review'||j.stage!=='script')no('There is no script waiting for approval.');if(j.options?.length)no('Choose one of the scripts.');j.state='queued';j.brief={...j.brief,review:'auto'};pushLog(j,`Script approved by ${actor}`,at);break
+  case 'choose_script':{if(j.brief.review==='editorial'||j.state!=='needs_review'||j.stage!=='script'||!j.options?.length)no('There are no scripts waiting for your choice.');const o=j.options!.find(x=>x.n===a.option);if(!o)throw new StoryError('CHOICE','Unknown script.');j.state='queued';j.brief={...j.brief,review:'auto',choice:o.n};pushLog(j,`Script ${o.n} chosen by ${actor}: "${o.title}"`,at);break}
   case 'upload_started':if(j.state!=='ready'&&j.state!=='needs_review')no('Only a finished film can be uploaded.');if(j.upload.state==='done')no('This film is already uploaded.');if(j.upload.state==='in_progress'||j.upload.state==='uncertain')no('An upload was started already — check YouTube Studio, then record the result or reset.');j.upload={...j.upload,state:'in_progress',at,by:actor};pushLog(j,`Upload started by ${actor}`,at);break
   case 'upload_done':if(!VIDEO_ID.test(a.videoId))throw new StoryError('UPLOAD','A YouTube video id has 11 characters.');if(!['private','unlisted','public','scheduled'].includes(a.visibility))throw new StoryError('UPLOAD','Unknown visibility.');if(j.upload.state==='done'&&j.upload.videoId!==a.videoId)no('A different video id is already recorded.');j.upload={state:'done',videoId:a.videoId,visibility:a.visibility,publishAt:a.publishAt??null,at,by:actor,note:null};pushLog(j,`YouTube shows video ${a.videoId} (${a.visibility})`,at);break
   case 'upload_uncertain':j.upload={...j.upload,state:'uncertain',note:a.note.slice(0,300),at};pushLog(j,`Upload result uncertain: ${a.note.slice(0,200)}`,at);break
   case 'art_added':{
    if(['classified','vlog'].includes(j.kind??''))no('Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
-   if(!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts (pause it first).')
+   const reviewingScenes=j.state==='needs_review'&&j.stage==='edit'&&j.brief.review==='editorial'
+   if(!reviewingScenes&&!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts or during scene review.')
    if(j.lease)no('The worker is still stopping. Wait for it to pause, then add your pictures.')
    const files=Array.isArray(a.files)?a.files:[]
    if(!files.length||files.some(f=>!f||typeof f.name!=='string'||!ART_NAME.test(f.name)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg or .webp.')
    const keep=new Map((j.brief.art??[]).map(f=>[f.name,f]))
    for(const f of files)keep.set(f.name,{name:f.name,illustrated:f.illustrated===true,...(typeof f.originalName==='string'?{originalName:f.originalName.slice(0,200)}:{})})
    if(keep.size>30)throw new StoryError('ART','At most 30 pictures for one film.')
-   j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} picture(s) added by ${actor}`,at);break}
+   j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} picture(s) added by ${actor}`,at)
+   if(reviewingScenes)queueReview({action:'editorial_refresh'})
+   break}
   case 'upload_reset':if(j.upload.state==='done')no('A confirmed upload cannot be reset.');j.upload={state:'none',videoId:null,visibility:null,publishAt:null,at,by:actor,note:'Reset after checking YouTube Studio'};pushLog(j,`Upload state reset by ${actor} after checking YouTube Studio`,at);break
  }
  j.updatedAt=at;return j
@@ -202,7 +262,7 @@ export function report(job:Job,worker:string,p:Progress,now=new Date()):{job:Job
  if(control==='pause')j.lease=null
  return {job:j,control}
 }
-export type Finish={options?:ScriptOption[];state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
+export type Finish={options?:ScriptOption[];editorial?:Review;state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
 export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  if(!job.lease||job.lease.worker!==worker)throw new StoryError('LEASE','This worker does not hold the job.',409)
  const j=structuredClone(job),at=now.toISOString()
@@ -218,6 +278,13 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
   return j
  }
  j.state=f.state;j.notBefore=null
+ if(f.editorial&&f.state==='needs_review'&&(f.stage==='script'||f.stage==='edit')){
+  j.brief={...j.brief,review:'editorial'}
+  j.editorial=f.editorial;delete j.editorialRequest
+  j.message=f.stage==='script'?'Waiting for script approval':'Waiting for scene and picture approval'
+  pushLog(j,j.message,at)
+  return j
+ }
  if(f.state==='failed'){j.error={code:String(f.error?.code||'FAILED').slice(0,60),message:String(f.error?.message||'').slice(0,600),retryable:!!f.error?.retryable};pushLog(j,`Failed: [${j.error.code}] ${j.error.message}`,at)}
  else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=leadFirst(f.options.slice(0,3).map(cleanOption),j.brief.lead_director);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
  return j
@@ -247,11 +314,14 @@ export const jobKind=(j:Pick<Job,'kind'>):JobKind=>j.kind==='classified'||j.kind
 /** A CLASSIFIED FILE as the desk sees it (lib/stories/classifiedIndex.ts reads the episodes and the panel map). */
 export type ClassifiedFile={file:string;number:string;title:string;tone:string;year:number|null;episode:string|null
  script:string|null;script_version:string|null;approved_in_file:boolean;minutes:number|null;beats:number
- panels:{have:number;roles:number;missing:string[]};shorts:number;hook_options?:string[]}
+ panels:{have:number;roles:number;missing:string[]};shorts:number;hook_options?:string[]
+ scenes?:{id:string;chapter:string;text:string;panel:string;seconds:number;camera:string;sourceIds:number[]}[]
+ pictures?:{id:string;name:string;thumbnail:string;label:string}[]
+ sources?:{id:number;title:string;url:string}[]}
 /** The owner's approval is part of the request (mirrors the workflow's "I approve the script" tick): who, when, and
  *  WHICH draft — the worker refuses to voice a script whose version changed after the click. */
 export type ClassifiedSpec={file:string;number:string;title:string;episode:string;script_version:string
- approved:true;approved_by:string;approved_at:string;telegram:boolean}
+ approved:true;approved_by:string;approved_at:string;telegram:boolean;panel_overrides?:Record<string,string>}
 export type VlogMatch={id:string;date:string;season:string;competition:string|null;home:string;away:string;score:string}
 export type VlogSpec={club_id:string;club_name:string;match:VlogMatch;drive_link:string;notes:string;minutes:number;telegram:boolean}
 export const VLOG_MINUTES=[2,3,4,5,6,8,10] as const
@@ -275,6 +345,16 @@ export function validateClassified(v:unknown,files:ClassifiedFile[],actor:string
  if(f.panels.missing.length&&f.panels.have===0)throw new StoryError('BRIEF',`FILE ${f.number} has no panels in the Drive map yet.`)
  const spec:ClassifiedSpec={file:f.file,number:f.number,title:f.title,episode:f.episode,script_version:f.script_version,approved:true,
   approved_by:String(actor||'owner').slice(0,80),approved_at:now.toISOString(),telegram:b.telegram!==false}
+ if(f.scenes?.length){
+  if(b.scenes_approved!==true)throw new StoryError('APPROVAL','Review and approve the CLASSIFIED scene board first.')
+  const ids=new Set(f.scenes.map(s=>s.id))
+  const pictures=new Set(f.pictures?.map(p=>p.id))
+  try{
+   const selected=reviewEdits(b.panel_overrides??{},ids,120)
+   if(Object.values(selected).some(id=>!pictures.has(id)))throw new Error('Unknown picture')
+   spec.panel_overrides=selected
+  }catch{throw new StoryError('SCENES','Choose pictures listed for this FILE.')}
+ }
  const brief:Brief={club_id:'classified',club_name:'CLASSIFIED',season:`FILE ${f.number}`,topic:f.title,duration:f.minutes??5,visual_style:'mixed',
   voice:'kokoro',review:'auto',privacy:'private',publish_at:null,scripts:1,choice:null,drive:false,reel_to_telegram:spec.telegram,art:[],hold:false}
  return {brief,spec}

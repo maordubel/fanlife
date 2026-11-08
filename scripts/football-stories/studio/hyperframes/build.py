@@ -512,7 +512,7 @@ def result(b: B) -> None:
     W_, H_ = 1300, 600
     reveals = match_score_reveals(ed.ledger, s, f)
     preview = s.get('match_preview')
-    live = any(score != (f['score_home'], f['score_away']) for _, score in reveals)
+    live = s['visual'].get('in_play') or any(score != (f['score_home'], f['score_away']) for _, score in reveals)
     head = 'MATCHDAY' if preview or kind == 'matchday' else 'MATCH SCORE' if live else 'FULL TIME'
     stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
     bar = f'{head} · {stage}'.upper()

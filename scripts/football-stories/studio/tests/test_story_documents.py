@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from studio import drive_scan, worker, writer
+from studio import director, drive_scan, owner_story, worker, writer
 from studio.common import StageError
 
 
@@ -47,6 +47,34 @@ class StoryDocuments(unittest.TestCase):
         self.assertEqual(out['owner_story_documents'], ledger['story_documents'])
         self.assertEqual(out['claims'], [])
         self.assertIn('not an instruction', writer.SYSTEM)
+
+    def test_owner_names_and_declared_match_facts_take_precedence(self):
+        text = """3. SCRIPT STRUCTURE
+The first leg starts slowly. Áron Szabo breaks the deadlock.
+The return leg starts quickly. Daniel Levy scores.
+Mika Raham heads the ball into the net. Johan Frazer scores.
+
+4. RESEARCH LEDGER
+Key Figures: Daniel Levy, Mika Raham (City Goalscorers). Áron Szabo, Johan Frazer (Visitors Goalscorers).
+Leg 1: Sept 16, 1992 - North Ground, North Town (Visitors 1-0 City)
+Leg 2: Sept 30, 1992 - City Ground (City 2-1 Visitors)
+Aggregate: 2-2. Visitors advance on away goals.
+"""
+        leg1 = {'kind': 'match', 'date': '1992-09-16', 'home': 'Visitors', 'away': 'City',
+                'side': 'away', 'opponent_goals': 1, 'club_goals': 0, 'scorers': []}
+        leg2 = {'kind': 'match', 'date': '1992-09-30', 'home': 'City', 'away': 'Visitors',
+                'side': 'home', 'opponent_goals': 0, 'club_goals': 2, 'scorers': [
+                    {'name': 'Daniel Levi', 'minute': 12}, {'name': 'Mika Raham', 'minute': 48}]}
+        ledger = {'claims': [{'id': 'leg1', 'fact': leg1}, {'id': 'leg2', 'fact': leg2}],
+                  'story_documents': [{'name': 'owner.md', 'text': text}]}
+        self.assertTrue(owner_story.apply(ledger))
+        self.assertFalse(owner_story.apply(ledger))
+        self.assertEqual(ledger['owner_names'], ['Daniel Levy', 'Mika Raham', 'Áron Szabo', 'Johan Frazer'])
+        self.assertEqual(owner_story.normalize('DANIEL LEVI and Aron Szabo', ledger['owner_name_aliases']), 'Daniel Levy and Áron Szabo')
+        fact = ledger['claims'][1]['fact']
+        self.assertEqual((fact['score_home'], fact['score_away'], fact['venue']['name']), (2, 1, 'City Ground'))
+        self.assertEqual([g['name'] for g in fact['owner_goal_order']], ['Daniel Levy', 'Mika Raham', 'Johan Frazer'])
+        self.assertEqual([after for _, _, after in director.match_goal_states(ledger, fact)], [(1, 0), (2, 0), (2, 1)])
 
 
 if __name__ == '__main__':

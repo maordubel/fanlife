@@ -157,6 +157,17 @@ def _opp_minutes(f: dict, detail: dict | None) -> list[int] | None:
 
 def match_goal_states(ledger: dict, match: dict) -> list[tuple[int | None, tuple[int, int], tuple[int, int]]]:
     """Verified home–away scores around goals. Opponent goals have no club-scorer index."""
+    if match.get('owner_goal_order'):
+        score = [0, 0]
+        states = []
+        club_index = 0
+        for goal in match['owner_goal_order']:
+            before = tuple(score)
+            score[int(goal['side'] == 'away')] += 1
+            index = club_index if goal['side'] == match.get('side') else None
+            club_index += int(index is not None)
+            states.append((index, before, tuple(score)))
+        return states
     scorers = match.get('scorers') or []
     if (match['club_goals'] or scorers) and _club_minutes(match) is None:
         return []

@@ -33,7 +33,7 @@ export const runtime='nodejs'
 export async function POST(r:Request){
  if(!cronAuthorized(r))return json({error:'Not authorised.'},401)
  try{
-  const b=await body(r,200_000) as Record<string,unknown>
+  const b=await body(r,600_000) as Record<string,unknown>
   const worker=typeof b.worker==='string'&&/^[A-Za-z0-9._:-]{3,80}$/.test(b.worker)?b.worker:null
   if(!worker)throw new StoryError('WORKER','Missing worker id.')
   if(b.op==='cleanup_due')return json({ids:(await pendingDeletions()).slice(0,20).map(j=>j.id)})
@@ -83,6 +83,8 @@ export async function POST(r:Request){
    const jobs=await listJobs(200),want=typeof b.id==='string'?b.id:null
    const next=want?nextForWorker(jobs.filter(j=>j.id===want)):nextForWorker(jobs)
    if(!next)return json({job:null})
+   const requiresEditorial=next.brief.review==='editorial'||(next.kind==='classified'&&next.spec&&'panel_overrides' in next.spec)
+   if(requiresEditorial&&b.editorial!==true)return json({job:null})
    const job=await updateJob(next.id,j=>{if(nextForWorker([j])?.id!==j.id)throw new StoryError('TAKEN','Taken by another worker.',409);return claim(j,worker)})
    return json({job})
   }

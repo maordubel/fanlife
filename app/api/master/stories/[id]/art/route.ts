@@ -22,7 +22,8 @@ export async function POST(r:Request,{params}:{params:{id:string}}){
   const cur=await getJob(params.id)
   if(!cur)return json({error:'No such job.'},404)
   if(['classified','vlog'].includes(cur.job.kind??''))throw new StoryError('ART','Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
-  if(!['queued','paused'].includes(cur.job.state))throw new StoryError('ART','Pictures can be added before the film starts (pause it first).',409)
+  const reviewing=cur.job.state==='needs_review'&&cur.job.stage==='edit'&&cur.job.brief.review==='editorial'
+  if(!reviewing&&!['queued','paused'].includes(cur.job.state))throw new StoryError('ART','Pictures can be added before the film starts or during scene review.',409)
   if(cur.job.lease)throw new StoryError('ART','The worker is still stopping. Wait until it pauses, then upload your pictures.',409)
   if(new Set([...(cur.job.brief.art??[]).map(f=>f.name),...names]).size>30)throw new StoryError('ART','At most 30 uploaded pictures per film. Use a Drive folder for larger selections.')
   const urls:Record<string,string>={}

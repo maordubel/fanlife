@@ -152,6 +152,8 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
            'lead_director': b.get('lead_director') or None, 'media_set': 'job-' + job['id'][:40]}
     if art_dir and b.get('art'):
         out.update(art_dir=str(art_dir), art=b['art'], art_set='job-' + job['id'][:40])
+    if b.get('review') == 'editorial':
+        out.update(editorial=True, editorial_request=job.get('editorialRequest'))
     return out
 
 
@@ -328,12 +330,41 @@ def fetch_art(st: Studio, job: dict, jd: Path, log) -> Path | None:
     return d
 
 
+def publish_review_images(st: Studio, jid: str, job_dir: Path, review: dict, log) -> None:
+    from PIL import Image, ImageOps
+    from .common import sha256_json
+    from .paper import beat_path
+    files = {}
+    for scene in review.get('scenes') or []:
+        key = scene.pop('assetKey', None)
+        source = beat_path(key) if key else None
+        if not source:
+            continue
+        name = f'review-{sha256_json(key)[:20]}.jpg'
+        file = job_dir / name
+        try:
+            if name not in files:
+                with Image.open(source) as im:
+                    thumb = ImageOps.exif_transpose(im).convert('RGB')
+                    thumb.thumbnail((420, 260))
+                    thumb.save(file, quality=82)
+                files[name] = file
+            scene['preview'] = f'jobs/{jid}/{name}'
+        except OSError as exc:
+            log(f'Review picture could not be previewed: {type(exc).__name__}')
+    names = list(files)
+    for start in range(0, len(names), 50):
+        urls = st.call({'op': 'upload_urls', 'id': jid, 'names': names[start:start+50]})['urls']
+        for name, url in urls.items():
+            st.put(url, files[name], ctype='image/jpeg')
+
+
 def run_once(st: Studio, root: Path, log) -> bool:
     from . import pipeline
     # the job whose checkpoints the workflow restored (STORIES_PEEK): claiming another would write its cache where
     # the run never saves it (measured 4.11.2026: 'Path(s) … do not exist, hence no cache is being saved')
     peek = os.environ.get('STORIES_PEEK', '').strip()
-    got = st.call({'op': 'claim', **({'id': peek} if peek else {})})
+    got = st.call({'op': 'claim', 'editorial': True, **({'id': peek} if peek else {})})
     job = got.get('job')
     if not job:
         log('No film waiting.')
@@ -378,6 +409,12 @@ def run_once(st: Studio, root: Path, log) -> bool:
             pb['drive_dir'] = str(drive)
             pb['drive_pack'] = str(jd / 'drive-pack.json')
         result = pipeline.run(jd, pb, Palette.from_json(job['palette']), progress=progress)
+        if result.get('state') == 'review' and result.get('editorial'):
+            review = result['editorial']
+            publish_review_images(st, jid, jd, review, log)
+            st.call({'op': 'finish', 'id': jid, 'state': 'needs_review', 'stage': result['stage'],
+                     'editorial': review}, timeout=120)
+            return True
         if result.get('state') == 'review' and result.get('stage') == 'script' and result.get('options'):
             st.call({'op': 'finish', 'id': jid, 'state': 'needs_review', 'stage': 'script', 'options': result['options']})
             log(f"{len(result['options'])} scripts written; waiting for the owner to choose one.")

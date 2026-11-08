@@ -141,7 +141,12 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     # 1 research
     step('research', 0.0, 'Reading the archive')
     lp = job_dir / 'ledger.json'
-    if not lp.exists():
+    pack_path = Path(brief['drive_pack']) if brief.get('drive_pack') else None
+    pack_notes = (read_json(pack_path).get('notes') or []) if pack_path and pack_path.exists() else None
+    supplied = [{'name': n['name'], 'text': n['text']} for n in pack_notes if n.get('required')] if pack_notes is not None else None
+    cached = read_json(lp) if lp.exists() else None
+    owner_document_changed = cached is not None and supplied is not None and supplied != (cached.get('story_documents') or [])
+    if cached is None or owner_document_changed:
         extra = []
         d = Path(brief['dossier']) if brief.get('dossier') else STUDIO / 'dossiers' / f'{brief["club_id"]}-{brief["season"].replace("/", "-")}.json'
         art_sets: list[str] = []
@@ -171,17 +176,22 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             log(f'Research: focused on {brief.get("focus_from") or "…"} → {brief.get("focus_to") or "…"} '
                 f'({sum(1 for c in ledger["claims"] if c["fact"].get("kind") == "match")} matches)')
         art_sets = [*art_sets, *live_sets]
-        if brief.get('drive_pack') and Path(brief['drive_pack']).exists():
-            notes = read_json(Path(brief['drive_pack'])).get('notes') or []
-            ledger['story_documents'] = [{'name': n['name'], 'text': n['text']} for n in notes if n.get('required')]
-            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in notes if not n.get('required'))[:4000]
+        if pack_notes is not None:
+            ledger['story_documents'] = supplied
+            ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in pack_notes if not n.get('required'))[:4000]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     ledger = read_json(lp)
     from .paper import beat_index
-    from . import media_assets
+    from . import media_assets, owner_story, owner_treatment
+    owner_updated = owner_story.apply(ledger) or owner_document_changed
+    if owner_updated:
+        ledger['summary'] = research.season_summary(ledger)
+        for saved in [job_dir / name for name in ('script.json', 'editorial-script.json', 'editorial-plan.json', 'voice.json')] + list(job_dir.glob('script-option-*.json')):
+            saved.unlink(missing_ok=True)
+        log('Research: applied the owner’s exact names and declared facts')
     # New uploads after Pause must reach the edit even when the ledger and chosen script already exist.
     ledger['art_sets'] = list(dict.fromkeys([*(ledger.get('art_sets') or []), *live_sets]))
     ledger['media_assets'] = [p for sid in live_sets for p in beat_index(sid)]
@@ -189,7 +199,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         if asset.get('required'):
             media_assets.require_file(asset['key'])
     write_json(lp, ledger)
-    if not isinstance(ledger.get('story'), dict) or ledger['story'].get('version') != director.STORY_VERSION:
+    if owner_updated or not isinstance(ledger.get('story'), dict) or ledger['story'].get('version') != director.STORY_VERSION:
         director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
         write_json(lp, ledger)
 
@@ -203,9 +213,19 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     # 2 script
     step('script', 0.1, 'Writing the film')
     sp_ = job_dir / 'script.json'
+    editorial_review = None
+    owner_draft = owner_treatment.build(ledger) if brief.get('kind') == 'tie' and not script_file else None
+    if owner_draft:
+        write_json(lp, ledger)
+    if brief.get('editorial') or owner_draft:
+        from . import editorial
+        selected, editorial_review = editorial.prepare_script(job_dir, brief, ledger, cache, log, owner_draft)
+        if selected is None:
+            return {'state': 'review', 'stage': 'script', 'editorial': editorial_review}
+        write_json(sp_, selected)
     if not sp_.exists():
         if script_file:
-            s = read_json(script_file)
+            s = owner_story.normalize(read_json(script_file), ledger.get('owner_name_aliases') or {})
             sc.ensure_valid(s, ledger, float(brief['duration']), brief.get('kind'))
             s['_writer'] = [{'source': f'supplied file {script_file.name}'}]
             s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
@@ -226,7 +246,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             chosen = job_dir / f'script-option-{int(choice)}.json'
             if not chosen.exists():
                 raise StageError('CHOICE', f'Script {choice} is not among the written options')
-            s = read_json(chosen)
+            s = owner_story.normalize(read_json(chosen), ledger.get('owner_name_aliases') or {})
             log(f'Script: option {choice} chosen by the owner')
         else:
             s = writer.write_script(brief, {**ledger, 'bans': palette.bans}, cache, log)
@@ -263,6 +283,11 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from . import hyperframes
     if plan['engine'] == 'vox' and hyperframes.wanted(brief):
         plan['engine'] = hyperframes.ENGINE   # VOX drawn by HyperFrames (prototype; look 'vox-hf' or STORIES_VOX_HF=1)
+    if editorial_review is not None:
+        plan, review = editorial.review_plan(job_dir, brief, ed, plan, editorial_review)
+        if review is not None:
+            step('edit', 0.39, 'Scene board ready for review')
+            return {'state': 'review', 'stage': 'edit', 'editorial': review}
     from .common import sha256_json
     fingerprint = sha256_json({'version': media_assets.VERSION, 'plan': plan, 'media': ledger['media_assets']})
     media_assets.refresh_render(job_dir, fingerprint)

@@ -17,7 +17,7 @@ VISUALS = {
     'chapter': {'number', 'title', 'backdrop'},
     'map': {'focus', 'claims', 'label'},
     'matchday': {'claim', 'backdrop'},
-    'score': {'claim', 'backdrop'},
+    'score': {'claim', 'backdrop', 'in_play'},
     'fact': {'heading', 'text', 'claim', 'backdrop'},
     'stat': {'value', 'label', 'claim', 'backdrop'},
     'timeline': {'claims', 'label', 'backdrop'},
@@ -113,10 +113,10 @@ def beat_set(ledger: dict) -> str:
 def art_ok(key, ledger: dict, *, allow_gen: bool = False) -> bool:
     """A library piece, an owner beat piece made for THIS club and season, or (for illustrations) a generated one."""
     from .paper import beat_path, clip_path, cut_path
-    if key in LIBRARY_ART or (allow_gen and key == 'gen'):
-        return True
     if not isinstance(key, str):
         return False
+    if key in LIBRARY_ART or (allow_gen and key == 'gen'):
+        return True
     for kind, find in (('beat', beat_path), ('clip', clip_path), ('cut', cut_path)):
         for set_id in (beat_set(ledger), *(ledger.get('art_sets') or []), 'common'):
             if key.startswith(f'{kind}:{set_id}/') and find(key) is not None:
@@ -494,6 +494,8 @@ def validate_script(s: dict, ledger: dict, minutes: float, kind: str | None = No
                 errs.append(f'{where}: a {t} must name its claim')
             if t in ('matchday', 'score', 'ticket') and vc and vc[0] in by and by[vc[0]]['fact'].get('kind') != 'match':
                 errs.append(f'{where}: {t} needs a match claim')
+            if t == 'score' and 'in_play' in v and not isinstance(v['in_play'], bool):
+                errs.append(f'{where}: in_play must be a boolean')
             if t == 'table' and vc and vc[0] in by and by[vc[0]]['fact'].get('kind') != 'table':
                 errs.append(f'{where}: table needs a table claim')
             if t == 'quote' and vc and vc[0] in by:

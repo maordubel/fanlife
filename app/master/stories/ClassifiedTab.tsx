@@ -10,17 +10,18 @@ import css from './studio.module.css'
 const REPO='https://github.com/maordubel/fanlife/blob/main/'
 export function ClassifiedTab({facts,onMade,children}:{facts:Facts;onMade:(id:string)=>Promise<void>;children:ReactNode}){
  const [file,setFile]=useState<string|null>(null),[approved,setApproved]=useState(false),[telegram,setTelegram]=useState(true)
+ const [scenesApproved,setScenesApproved]=useState(false),[panels,setPanels]=useState<Record<string,string>>({})
  const [busy,setBusy]=useState(false),[msg,setMsg]=useState(''),[err,setErr]=useState('')
  const key=useRef('')
  const files=facts.classified
  const f=files?.find(x=>x.file===file)??null
  const banner=classifiedBanner(facts,{file,approved})
- const choose=(id:string)=>{setFile(id);setApproved(false);setMsg('');setErr('');key.current=''}
+ const choose=(id:string)=>{setFile(id);setApproved(false);setScenesApproved(false);setPanels({});setMsg('');setErr('');key.current=''}
  async function produce(){
   if(!f)return
   setBusy(true);setErr('');setMsg('')
   if(!key.current)key.current=crypto.randomUUID()
-  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'classified',brief:{file:f.file,approved,script_version:f.script_version,telegram},idempotencyKey:key.current})})
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'classified',brief:{file:f.file,approved,script_version:f.script_version,telegram,scenes_approved:scenesApproved,panel_overrides:panels},idempotencyKey:key.current})})
    key.current='';setMsg(`FILE ${f.number} is queued. The worker starts it within a few minutes.`);await onMade(b.job.id)}
   catch(e){setErr(e instanceof Error?e.message:'Could not queue the FILE.')}finally{setBusy(false)}
  }
@@ -41,8 +42,25 @@ export function ClassifiedTab({facts,onMade,children}:{facts:Facts;onMade:(id:st
       {f.hook_options?.length?<details><summary>Three opening hooks</summary><ol>{f.hook_options.map((hook,i)=><li key={i}>{hook}</li>)}</ol><small>Opening 1 is used in this script; alternatives are for review.</small></details>:null}
       <p className={css.hint}>Read it first: {f.script?<a href={REPO+f.script} target="_blank" rel="noreferrer">the script ({f.script_version})</a>:'the script'} · <a href={`${REPO}scripts/football-stories/comic/episodes/${f.episode}`} target="_blank" rel="noreferrer">the episode as produced</a>. {f.beats} beats, {f.shorts} Shorts planned.</p>
       <label className={css.check}><input type="checkbox" checked={approved} onChange={e=>setApproved(e.target.checked)}/> I have read and approve this FILE&rsquo;s script ({f.script_version})</label>
+      {f.scenes?.length?<details>
+       <summary>Review structure and pictures · {f.scenes.length} scenes</summary>
+       {f.scenes.map((scene,i)=>{
+        const picture=f.pictures?.find(p=>p.id===(panels[scene.id]??scene.panel))
+        return <article key={scene.id} className={css.option}>
+         <h4>{i+1}. {scene.chapter}</h4><p>{scene.text||'Unvoiced scene'}</p>
+         {picture?<img className={css.sheet} src={picture.thumbnail} alt={picture.name} loading="lazy" referrerPolicy="no-referrer"/>:null}
+         <p className={css.meta}>{scene.seconds.toFixed(1)} s estimated · {scene.camera||'Hold'} · {picture?.label||scene.panel}</p>
+         <p>{f.sources?.filter(s=>scene.sourceIds.includes(s.id)).map(s=><a key={s.id} href={s.url} target="_blank" rel="noreferrer">{s.title} </a>)}</p>
+         {f.pictures?.length?<label>Replace picture <select value={panels[scene.id]??''} onChange={e=>{
+          const choice=e.target.value;setScenesApproved(false)
+          setPanels(prev=>{const next={...prev};if(choice)next[scene.id]=choice;else delete next[scene.id];return next})
+         }}><option value="">Scripted picture</option>{f.pictures.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>:null}
+        </article>
+       })}
+       <label className={css.check}><input type="checkbox" checked={scenesApproved} onChange={e=>setScenesApproved(e.target.checked)}/> I approve this order and picture selection</label>
+      </details>:null}
       <label className={css.check}><input type="checkbox" checked={telegram} onChange={e=>setTelegram(e.target.checked)}/> Send the DRAFT to my Telegram</label>
-      <button type="button" className={`${css.go} min-h-tap`} disabled={busy||banner.run!=='yes'} onClick={()=>void produce()}>{busy?'Queuing…':`Produce FILE ${f.number}`}</button>
+      <button type="button" className={`${css.go} min-h-tap`} disabled={busy||banner.run!=='yes'||!!f.scenes?.length&&!scenesApproved} onClick={()=>void produce()}>{busy?'Queuing…':`Produce FILE ${f.number}`}</button>
       <p className={css.hint}>Nothing is uploaded to YouTube and nothing is published. If the script changes after you approve it, the job stops and asks again.</p>
      </>}
      {err&&<p role="alert" className={css.alert}>{err}</p>}{msg&&<p role="status" className={`${css.alert} ${css.ok}`}>{msg}</p>}

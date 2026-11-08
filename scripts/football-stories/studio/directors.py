@@ -89,5 +89,9 @@ def brief(d: dict) -> str:
             'the visual treatment and rhythm, and identify reconstructions as illustrations. In a VOX-inspired '
             'explanation, maps and on-screen evidence should clarify cause and effect; HyperFrames-inspired '
             'movement should direct attention to the fact being explained. Do not invent archival imagery.\n'
+            'Shape the documentary as a mini-drama: hook, clear stakes, setback, hope, reversal and a human ending. '
+            'Give each turning point one verified action and one visible change. Explain the rule when it changes the '
+            'stakes, and keep the match score, aggregate and qualification separate. Keep the owner’s supplied facts '
+            'and exact names, including diacritics, even when the archive uses a different spelling.\n'
             'Make this film unmistakably yours — your own titles, your own hook, your own structure — and different '
             'from what the other two directors would make of the same story.')

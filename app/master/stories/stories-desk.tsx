@@ -4,6 +4,7 @@ import type {Job,Privacy} from '@/lib/stories/jobs'
 import type {Health} from '@/lib/stories/health'
 import {STAGES} from '@/lib/stories/jobs'
 import css from './studio.module.css'
+import {EditorialRoom,EditorialSteps} from './EditorialRoom'
 import {SocialPanel} from './SocialPanel'
 import {uploadPictures,validatePictures} from '@/lib/stories/pictureUpload'
 import {directorOfOption,DIRECTORS} from '@/lib/stories/directors'
@@ -74,7 +75,7 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
   const brief={club_id:c.id,kind,season:kind==='season'?season:kind==='rivalry'?'1900–2100':sorted[0]?.season,match_ids:sorted.map(m=>m.id),opponent:opp?.name,
    duration,visual_style:style,tone,scripts,drive,drive_folder:folder.trim()||undefined,reel_to_telegram:reel,privacy,publish_at:privacy==='scheduled'&&local?athensToIso(local):undefined,
    topic:d.get('topic')||'',notes:d.get('notes')||'',hold:pictures.length>0||d.get('hold')==='on',voice:d.get('voice')||'auto',crowd:d.get('crowd')||'soft',
-   review:scripts===1&&d.get('review')==='script'?'script':'auto'}
+   review:d.get('review')==='auto'?'auto':'editorial'}
   try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({brief,idempotencyKey:key.current})});
    await onMade(b.job.id)
    if(pictures.length){
@@ -130,7 +131,7 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
        <label>Narrator<select name="voice" defaultValue="auto"><option value="auto">Automatic</option><option value="elevenlabs">ElevenLabs (premium)</option><option value="kokoro">Free British voice</option></select></label>
        <label>Crowd<select name="crowd" defaultValue="soft"><option value="soft">Soft, at the goals</option><option value="off">None</option></select></label>
       </div>
-      {scripts===1&&<label>Script review<select name="review" defaultValue="auto"><option value="auto">Automatic</option><option value="script">Stop for my approval</option></select></label>}
+      {scripts===1&&<label>Production review<select name="review" defaultValue="editorial"><option value="editorial">Approve script and scenes</option><option value="auto">Automatic</option></select></label>}
      </details>
     </form>
     <div className={css.summary} aria-live="polite"><b>{subject}</b><span>{mins(duration)} · {STYLE_CARDS.find(x=>x.k===style)?.title} · {TONE_CHIPS.find(x=>x[0]===tone)?.[1]} · {scripts===3?'3 scripts':'1 script'}{folder.trim()?' · your Drive folder':drive?' · Drive scan':''}{reel?' · Reel to Telegram':''} · {privacy}</span></div>
@@ -199,6 +200,7 @@ function athensToIso(local:string){
 export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:()=>void;onChange:()=>void}){
  const [err,setErr]=useState(''),[busy,setBusy]=useState(false)
  const b=job.brief
+ const title=(job.youtube?.title as string)||job.editorial?.drafts.find(d=>d.option===0)?.title||b.topic||`${b.club_name} · ${b.season}`
  const act=async(body:Record<string,unknown>)=>{setErr('');setBusy(true);try{await api(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify(body)});onChange()}catch(e){setErr(e instanceof Error?e.message:'Failed')}finally{setBusy(false)}}
  const remove=async()=>{
   if(!confirm('Permanently delete this production, its scripts, uploads, video and working caches? This cannot be undone. Original Drive files and already published videos stay online. Storage cleanup continues automatically in the background.'))return
@@ -208,7 +210,7 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
  const si=job.stage?STAGES.indexOf(job.stage):-1
  return <article className={`${css.panel} ${css.job}`}>
   <div className={css.body}>
-   <div className={css.jobHead}><div><h2 className={css.jobTitle}>{(job.youtube?.title as string)||`${b.club_name} · ${b.season}`}</h2>
+   <div className={css.jobHead}><div><h2 className={css.jobTitle}>{title}</h2>
     <p className={css.meta}>{b.club_name} · {b.season} · {mins(b.duration)} · {b.privacy}{b.publish_at?` ${when(b.publish_at)}`:''} · queued {when(job.createdAt)}</p></div>
     <span className={`${css.state} ${css['s_'+job.state]}`}>{STATE_TEXT[job.state]}</span></div>
    {['running','queued','paused','cancel_requested'].includes(job.state)&&<>
@@ -216,16 +218,18 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
     <p className={css.meta}>{job.state==='queued'&&job.notBefore?`Waiting for Google's free writer — starts again by itself at ${new Date(job.notBefore).toLocaleString('en-GB',{weekday:'short',hour:'2-digit',minute:'2-digit'})}. Nothing is wrong with the film.`:job.message}</p>
     <ol className={css.stages}>{STAGES.filter(s=>s!=='done').map((s,i)=><li key={s} data-on={i===si||undefined} data-done={i<si||undefined}>{STAGE_TEXT[s]}</li>)}</ol></>}
    {job.error&&<p className={css.alert} role="alert"><b>[{job.error.code}]</b> {job.error.message} {job.error.retryable?'— safe to retry.':'— fix the cause before retrying.'}</p>}
-   {job.state==='needs_review'&&job.stage==='script'&&job.options?.length?<ScriptChoice job={job} busy={busy} pick={n=>act({action:'choose_script',option:n})}/>:
-    job.state==='needs_review'&&job.stage==='script'&&<p className={css.alert}>The script is written and waiting for you. Open the film to read it, then approve.</p>}
+   {b.review==='editorial'?<><EditorialSteps job={job}/>{job.state==='needs_review'?<p className={css.alert}>{job.message}</p>:null}</>:
+    job.state==='needs_review'&&job.stage==='script'&&job.options?.length?<ScriptChoice job={job} busy={busy} pick={n=>act({action:'choose_script',option:n})}/>:
+    job.state==='needs_review'&&job.stage==='script'?<p className={css.alert}>The script is written and waiting for you. Open the film to read it, then approve.</p>:null}
    <div className={css.actions}>
     {['queued','running'].includes(job.state)&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'pause'})}>Pause</button>}
     {job.state==='paused'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'resume'})}>Resume</button>}
     {(['failed','cancelled'].includes(job.state)||(job.state==='queued'&&!!job.notBefore))&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry'})}>{job.state==='queued'?'Try now':'Retry'}</button>}
-    {job.state==='needs_review'&&job.stage==='script'&&!job.options?.length&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
+    {job.state==='failed'&&job.error?.code==='SCRIPT_INVALID'&&!['classified','vlog'].includes(job.kind??'')?<button className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>act({action:'retry_editorial'})}>Retry in editing room</button>:null}
+    {b.review!=='editorial'&&job.state==='needs_review'&&job.stage==='script'&&!job.options?.length&&<button className={`${css.btn} min-h-tap ${css.btnRed}`} disabled={busy} onClick={()=>act({action:'approve_script'})}>Approve script</button>}
     {!['cancelled','cancel_requested'].includes(job.state)&&job.upload.state!=='done'&&<button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>{if(confirm('Cancel this film?'))void act({action:'cancel'})}}>Cancel</button>}
     <button className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>void remove()}>Delete production</button>
-    <button className={`${css.btn} min-h-tap`} onClick={onOpen} aria-expanded={open}>{open?'Close':'Open'}</button>
+    <button className={`${css.btn} min-h-tap ${b.review==='editorial'&&job.state==='needs_review'?css.btnRed:''}`} onClick={onOpen} aria-expanded={open}>{open?'Close':b.review==='editorial'&&job.state==='needs_review'?'Open editing room':'Open'}</button>
    </div>
    {err&&<p role="alert" className={css.alert}>{err}</p>}
    {open&&<Detail job={job} act={act} busy={busy} onChange={onChange}/>}
@@ -269,7 +273,8 @@ function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=
   catch(e){setDl(e instanceof Error?e.message:'Download failed')}
  }
  return <div>
-  {['queued','paused'].includes(job.state)&&!['classified','vlog'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
+  {job.brief.review==='editorial'?<EditorialRoom job={job} urls={urls} busy={busy} act={act}/>:null}
+  {(['queued','paused'].includes(job.state)||job.state==='needs_review'&&job.stage==='edit'&&job.brief.review==='editorial')&&!['classified','vlog'].includes(job.kind??'')&&<Pictures job={job} onChange={onChange} busy={busy}/>}
   {job.brief.art?.length&&!['queued','paused'].includes(job.state)?<p className={css.meta}>Your pictures: {job.brief.art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
