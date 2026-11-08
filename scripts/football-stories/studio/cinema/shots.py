@@ -349,7 +349,7 @@ def versus(ed, s: dict) -> Shot:
         dtag = gfx.plate(dt_.width + 40, dt_.height + 20, ink.ink, shift=6, shift_fill=ink.accent)
         dtag.alpha_composite(dt_, (20, 10))
     t_vs = 0.85
-    t_sc = clamp(lead + 0.55 * max(s.get('voice_dur') or 0, 2.0), t_vs + 1.4, max(t_vs + 1.4, dur - 1.3))
+    t_sc = dur + 1 if s.get('match_preview') else clamp(lead + 0.55 * max(s.get('voice_dur') or 0, 2.0), t_vs + 1.4, max(t_vs + 1.4, dur - 1.3))
     cam = look.move(cin.get('camera') or 'push', dur, seed, cin.get('cam_pace') or cin.get('pace'))
     par = look.parallax(cam, -0.12)
 
@@ -400,6 +400,7 @@ def versus(ed, s: dict) -> Shot:
 
 # ------------------------------------------------------------------ goal
 def goal(ed, s: dict) -> Shot:
+    from ..director import goal_scores, goal_word_time
     dur, seed, lead, cin, ink = _ctx(ed, s)
     v = s['visual']
     f = _match(ed, v.get('claim'))
@@ -411,24 +412,23 @@ def goal(ed, s: dict) -> Shot:
         raise StageError('GOAL_SCORER_INDEX', f'scorer {i} is not in the claim')
     g = sc[i]
     club = ed.ledger.get('club_name')
-    order = sorted(range(len(sc)), key=lambda j: (sc[j].get('minute') if sc[j].get('minute') is not None else 999, j))
-    nth = order.index(i) + 1
-    exact = f['opponent_goals'] == 0 and all(x.get('minute') is not None for x in sc)
+    scores = goal_scores(ed.ledger, f).get(i)
     m = g.get('minute')
     t_hit = clamp(lead + 0.25 * max(s.get('voice_dur') or 0, 2.0), 1.6, 3.2)
+    t_hit = clamp(goal_word_time(s, g['name'], t_hit), 0.8, dur - 0.9)
     t_clock = t_hit - 0.55
     us_home = f['home'] == club
     ab_us, ab_them = gfx.abbr(club), gfx.abbr(f['opponent'])
 
     @lru_cache(maxsize=64)
-    def clock(mm: int, ss: int, goals: int | None) -> Image.Image:
+    def clock(mm: int, ss: int, goals: tuple[int, int] | None) -> Image.Image:
         h = 64
         tm = text(f'{mm:02d}:{ss:02d}', 'cond', 42, gfx.a(ink.ink))
         a1 = text(ab_us if us_home else ab_them, 'cond', 40, gfx.a(ink.paper))
         a2 = text(ab_them if us_home else ab_us, 'cond', 40, gfx.a(ink.paper))
         mid = None
         if goals is not None:
-            hs, as_ = (goals, 0) if us_home else (0, goals)
+            hs, as_ = goals
             mid = text(f'{hs}–{as_}', 'cond', 40, gfx.a(ink.on_accent))
         w = a1.width + a2.width + (mid.width + 40 if mid else 30) + 60 + tm.width + 40
         im = Image.new('RGBA', (w + 8, h + 8), (0, 0, 0, 0))
@@ -449,7 +449,6 @@ def goal(ed, s: dict) -> Shot:
         d.rectangle([x, 0, w, h], fill=gfx.a(ink.paper))
         im.alpha_composite(tm, (x + 20, int(h / 2 - tm.height / 2)))
         return im
-    before = sum(1 for j in order[:nth - 1])
     net = gfx.Net(W + 200, int(H * 0.9))
     ball0 = ed.prop_img('football', 150)
     hit = (W * 0.6 + 100, H * 0.38)
@@ -466,14 +465,7 @@ def goal(ed, s: dict) -> Shot:
     d.rectangle([mins.width + 40, 0, strap.width - 12, hh], fill=gfx.a(ink.paper), outline=gfx.a(ink.ink), width=5)
     strap.alpha_composite(mins, (20, int(hh / 2 - mins.height / 2)))
     strap.alpha_composite(nm, (mins.width + 70, int(hh / 2 - nm.height / 2)))
-    if exact:
-        tick_a = text(f"{before}–0" if us_home else f"0–{before}", 'ultra', 130, gfx.a(ink.ink))
-        tick_b = text(f"{before + 1}–0" if us_home else f"0–{before + 1}", 'ultra', 130, gfx.a(ink.on_accent))
-        sub = None
-    else:
-        tick_a = None
-        tick_b = text(f"{f['score_home']}–{f['score_away']}", 'ultra', 110, gfx.a(ink.ink))
-        sub = text(f"{ab_us} GOAL {nth} OF {f['club_goals']} · FINAL SCORE", 'caps', 26, gfx.a(ink.ink), track=2)
+    tick = text(f"{scores[1][0]}–{scores[1][1]}", 'ultra', 130, gfx.a(ink.on_accent)) if scores else None
     lines = gfx.speedlines(W, H, hit[0] - 100, hit[1], seed, alpha=110)
     cam = look.move(cin.get('camera') or 'shake', dur, seed, cin.get('cam_pace') or cin.get('pace'))
 
@@ -487,7 +479,7 @@ def goal(ed, s: dict) -> Shot:
             run_ = clamp((t - 0.2) / max(0.4, t_clock - 0.2))
             total = max(0, m - 6) * 60 + run_ * 6 * 60 if m >= 6 else run_ * m * 60
             total = min(total, m * 60) if t < t_hit else m * 60
-            goals_ = (before if t < t_hit else before + 1) if exact else None
+            goals_ = scores[int(t >= t_hit)] if scores else None
             c = clock(int(total // 60), int(total % 60), goals_)
             out.append((c, 56, 46))
         if t_clock <= t < t_hit + 0.05:
@@ -513,17 +505,10 @@ def goal(ed, s: dict) -> Shot:
             if kn > 0:
                 out.append((strap, int(70 - (1 - kn) * (strap.width + 100)), int(H * 0.66)))
             kt = clamp((t - t_hit - 0.4) / 0.3)
-            if kt > 0:
-                box = tick_b if (tick_a is None or t > t_hit + 0.85) else tick_a
-                tone = ink.accent if (box is tick_b and tick_a is not None) else ink.paper
-                has_sub = sub is not None and box is tick_b
-                pw = max(box.width, sub.width if has_sub else 0) + 60
-                p = gfx.plate(pw, box.height + 40 + (sub.height + 14 if has_sub else 0), tone, shift=12, border=6)
-                p.alpha_composite(box, (int(pw / 2 - box.width / 2), 20))
-                if sub is not None:
-                    p.alpha_composite(sub, (int(pw / 2 - sub.width / 2), box.height + 34))
-                pop = 1 + 0.25 * math.sin(math.pi * clamp((t - t_hit - 0.85) / 0.25)) if t > t_hit + 0.85 and tick_a is not None else 1
-                out.append(_at(_scale(p, ease_out_back(kt, 1.8) * pop), W - 70 - p.width / 2, H * 0.3))
+            if kt > 0 and tick is not None:
+                p = gfx.plate(tick.width + 60, tick.height + 40, ink.accent, shift=12, border=6)
+                p.alpha_composite(tick, (30, 20))
+                out.append(_at(_scale(p, ease_out_back(kt, 1.8)), W - 70 - p.width / 2, H * 0.3))
         return out
     cues = [(0.1, 'whistle'), (t_clock, 'whoosh'), (t_hit, 'sting'), (t_hit + 0.02, 'crowd-goal'), (t_hit + 0.6, 'whoosh')]
     shake = [(t_hit, 18), (t_hit + 0.2, 10)]

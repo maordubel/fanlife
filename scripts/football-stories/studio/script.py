@@ -648,6 +648,48 @@ def scorelines(text: str) -> list[tuple[int, int]]:
     return out
 
 
+def timed_scorelines(shot: dict) -> list[tuple[float, tuple[int, int]]]:
+    """Match score phrases to the word timing used for the spoken captions."""
+    from .voice import spoken
+    if shot.get('voice_at') is None:
+        return []
+    tokens = []
+    for word in shot.get('words') or []:
+        tokens.extend((t, word['start']) for t in re.findall(r'\w+', word['w'].casefold()))
+    values = [SCORE_WORDS.get(t, t) for t, _ in tokens]
+    lead = shot['voice_at'] - shot['start']
+    cursor = 0
+    timed = []
+    for match in SCORELINE.finditer(shot.get('narration') or ''):
+        phrase = match.group()
+        scores = scorelines(phrase)
+        if not scores:
+            continue
+        pattern = [SCORE_WORDS.get(t, t) for t in re.findall(r'\w+', spoken(phrase).casefold())]
+        pattern = [int(t) if isinstance(t, str) and t.isdecimal() else t for t in pattern]
+        for i in range(cursor, len(values) - len(pattern) + 1):
+            window = [int(t) if isinstance(t, str) and t.isdecimal() else t for t in values[i:i + len(pattern)]]
+            if window == pattern:
+                timed.append((lead + tokens[i + len(pattern) - 1][1], scores[0]))
+                cursor = i + len(pattern)
+                break
+    return timed
+
+
+def match_score_reveals(ledger: dict, shot: dict, match: dict) -> list[tuple[float, tuple[int, int]]]:
+    from .director import match_goal_states
+    valid = {(match['score_home'], match['score_away'])}
+    for _, before, after in match_goal_states(ledger, match):
+        valid.update((before, after))
+    reveals = []
+    for at, score in timed_scorelines(shot):
+        if score not in valid:
+            score = score[::-1]
+        if score in valid and (not reveals or score != reveals[-1][1]):
+            reveals.append((at, score))
+    return reveals
+
+
 def _pairs_in(v, out: set) -> set:
     if isinstance(v, str):
         for a, b in scorelines(v):
@@ -838,7 +880,10 @@ def director_rules(s: dict, seq: list, ledger: dict, story: dict, kind: str, by:
             if c in by:
                 f = by[c]['fact']
                 if f.get('kind') == 'match':
+                    from .director import match_goal_states
                     pairs |= {(f['club_goals'], f['opponent_goals']), (f['opponent_goals'], f['club_goals'])}
+                    for _, before, after in match_goal_states(ledger, f):
+                        pairs.update((before, after))
                 _pairs_in(f, pairs)
         pairs |= {(b_, a) for a, b_ in pairs}
         for sl in scorelines(text):

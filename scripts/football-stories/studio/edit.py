@@ -416,15 +416,28 @@ class Editor:
             backdrop = v.get('backdrop') or (s.get('cinema') or {}).get('broll') or backdrop
             # Behind a card an owner picture is darkened so the card is what the eye reads first.
             world = self.backdrop(backdrop, seed, dim=0.42 if backdrop.startswith(('beat:', 'clip:')) else 0.0)
-            card = self.card(sp, k, v, f, claim, s)
+            from .script import match_score_reveals
+            reveals = match_score_reveals(self.ledger, s, f) if kind == 'score' and f else []
+            card = None if reveals else self.card(sp, k, v, f, claim, s)
             target = {'matchday': (1560, 760), 'score': (1560, 760), 'ticket': (1300, 620), 'fact': (1300, 720), 'stat': (1000, 820),
                       'table': (1480, 800), 'timeline': (1800, 620), 'turning': (1500, 540), 'quote': (1380, 820),
                       'press': (1420, 840)}[kind]
-            card = fit(card, *target)
-            if kind not in ('timeline', 'table', 'turning'):
-                card = taped(card, seed)
+            if card is not None:
+                card = fit(card, *target)
+                if kind not in ('timeline', 'table', 'turning'):
+                    card = taped(card, seed)
             cx, cy = W * (0.5 + ((seed % 3) - 1) * 0.04), H * 0.45
-            if kind == 'score':
+            if reveals:
+                for i, (at, (home, away)) in enumerate(reveals):
+                    fact = {**f, 'score_home': home, 'score_away': away,
+                            'in_play': (home, away) != (f['score_home'], f['score_away'])}
+                    sprite = self.card(sp, f'{k}-score-{i}', v, fact, claim, s)
+                    stop = reveals[i + 1][0] if i + 1 < len(reveals) else dur
+                    enter = slam(cx, cy, at, rot=-1.0)
+                    layers.append(Layer(taped(fit(sprite, *target), seed),
+                                        lambda t, end=stop, pose=enter: pose(t) if t < end else None))
+                    cues.append((at, 'tick'))
+            elif kind == 'score':
                 layers.append(Layer(card, slam(cx, cy, 0.25, rot=-1.0), settle=1e9))
                 shake.append((0.25, 10))
                 cues += [(0.25, 'stamp')]
@@ -920,6 +933,8 @@ class Editor:
         if kind == 'matchday':
             return _img(sp.matchday(k, f))
         if kind == 'score':
+            if f.get('in_play'):
+                return _img(sp.score(k, f))
             pens = f.get('penalties') or next((c['fact'] for c in self.ledger['claims']
                                                 if c['fact'].get('kind') == 'penalties' and c['fact'].get('date') == f.get('date')), None)
             extra = f"{pens['winner']} won {pens.get('shootout') or pens.get('score')} on penalties" if pens else None

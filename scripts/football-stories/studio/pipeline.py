@@ -73,7 +73,8 @@ def ingest_art(brief: dict, log) -> list[str]:
             path = root / r['file']
             if path.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.heic'):
                 entries.append({'path': path, 'source': r.get('name') or path.name, 'source_id': r.get('source_id') or r['file'],
-                                'required': bool(r.get('required')), 'pack': r.get('pack') or 'Club library'})
+                                'required': bool(r.get('required')), 'pack': r.get('pack') or 'Club library',
+                                'origin': 'owner-drive', 'licence': 'Owner-approved for FanLife use'})
     if entries:
         # Per-job names and content-derived slugs prevent two image.png files (or non-Latin names) overwriting each other.
         set_id = brief.get('media_set') or brief.get('art_set') or ('media-' + brief['club_id'])
@@ -410,7 +411,12 @@ def asset_ledger(job_dir: Path, script: dict) -> list[dict]:
                              'origin': piece['source_url'], 'licence': piece['licence'], 'licence_url': piece.get('licence_url'),
                              'photoreal': False, 'archive': True, 'title': piece['source'], 'date': piece.get('date'),
                              'note': 'Context image; resized and colour graded. Not evidence of the narrated match.'})
-        pieces = [p for p in pieces if not p.get('archive')]
+        drive = [p for p in pieces if p.get('origin') == 'owner-drive']
+        if drive:
+            rows.append({'id': f'drive-{set_id}', 'kind': 'image', 'owner': 'Supplied by FanLife',
+                         'origin': 'owner-drive', 'licence': drive[0]['licence'], 'photoreal': False,
+                         'pieces': [p['key'] for p in drive]})
+        pieces = [p for p in pieces if not p.get('archive') and p.get('origin') != 'owner-drive']
         if pieces:
             drawn = [p['key'] for p in pieces if p.get('illustrated')]
             rows.append({'id': f'art-{set_id}', 'kind': 'illustration', 'owner': 'FanLife (owner-supplied, AI-generated)', 'origin': 'ai-generated',

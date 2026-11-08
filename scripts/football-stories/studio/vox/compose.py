@@ -407,30 +407,21 @@ def shout_word(ed, f: dict, n: int) -> tuple[str, str] | None:
     return None
 
 
-def _score_steps(f: dict, t0: float, t1: float) -> tuple[list, list]:
-    """The figures counting up to the final score, goal by goal: the home side's and the away side's flips."""
-    hs, as_ = int(f['score_home']), int(f['score_away'])
-    n = hs + as_
-    hsteps, asteps = [(t0, '0')], [(t0, '0')]
-    if n:
-        step = (t1 - t0) / n
-        # interleaved, so the score climbs the way a night does, not one side and then the other
-        hi, ai = 0, 0
-        seq = []
-        while hi < hs or ai < as_:
-            if hi < hs and (hi * (as_ + 1) <= ai * (hs + 1) or ai >= as_):
-                hi += 1
-                seq.append(('h', hi))
-            else:
-                ai += 1
-                seq.append(('a', ai))
-        for j, (side, v) in enumerate(seq):
-            tt = t0 + step * (j + 1)
-            (hsteps if side == 'h' else asteps).append((tt, str(v)))
-    return hsteps, asteps
+def _score_steps(f: dict, reveal_at: float, reveals=()) -> tuple[list, list]:
+    """Use the narrated states or reveal the result in one step."""
+    states = reveals or [(reveal_at, (f['score_home'], f['score_away']))]
+    steps = ([], [])
+    for at, score in states:
+        for side, value in zip(steps, score):
+            if not side or side[-1][1] != str(value):
+                side.append((at, str(value)))
+    return steps
 
 
 def result(ed, s, B: Builder) -> Panel:
+    from ..script import match_score_reveals
+    if s.get('match_preview'):
+        return versus(ed, s, B)
     v = s['visual']
     kind = v['type']
     f = _f(ed, v.get('claim'))
@@ -442,7 +433,9 @@ def result(ed, s, B: Builder) -> Panel:
     # two layouts, so a season of results does not look like one card: side by side, or stacked like a results column
     stack = kind == 'score' and s['n'] % 2 == 1
     W_, H_ = (1180, 640) if stack else (1300, 600)
-    head = 'MATCHDAY' if kind == 'matchday' else 'RESULT' if stack else 'FULL TIME'
+    reveals = match_score_reveals(ed.ledger, s, f)
+    live = any(score != (f['score_home'], f['score_away']) for _, score in reveals)
+    head = 'MATCH SCORE' if live else 'MATCHDAY' if kind == 'matchday' else 'RESULT' if stack else 'FULL TIME'
     stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
     bar = B.t(f'{head} · {stage}'.upper(), 'caps', 30, PAPER, max_w=W_ - 80, track=2)
 
@@ -470,15 +463,12 @@ def result(ed, s, B: Builder) -> Panel:
         right = B.words(f['away'], *rot_pt(cx, cy, W_ / 2 - 60, -H_ / 2 + 110, rot), 74, t_n + 0.18, max_w=520, rot=rot, style='rise', align='right')
     # the score flips up goal by goal, timed to the narrator
     t_sc0 = max(t_n + 0.6, B.at_voice(0.18, lo=1.0))
-    pace = 0.24 * B.st['count']
-    n_goals = int(f['score_home']) + int(f['score_away'])
-    t_sc1 = t_sc0 + max(0.25, pace * n_goals)
     if kind == 'matchday':  # the pre-match card: the score waits, then the result is stamped in at the end of the line
         t_sc0 = max(t_n + 1.2, B.at_voice(0.55, lo=1.6))
     # whatever the narration, the score lands, is circled and read before the camera moves on
-    t_sc0 = max(t_n + 0.3, min(t_sc0, B.dur - 1.6 - pace * n_goals))
-    t_sc1 = t_sc0 + max(0.25, pace * n_goals)
-    hs, as_ = _score_steps(f, t_sc0, t_sc1)
+    t_sc0 = max(t_n + 0.3, min(t_sc0, B.dur - 1.6))
+    hs, as_ = _score_steps(f, t_sc0, reveals)
+    t_sc1 = max(hs[-1][0], as_[-1][0])
     if stack:
         fx, fy = rot_pt(cx, cy, W_ / 2 - 150, 165 - H_ / 2, rot)
         gx, gy = rot_pt(cx, cy, W_ / 2 - 150, 350 - H_ / 2, rot)
@@ -496,7 +486,7 @@ def result(ed, s, B: Builder) -> Panel:
     y0_ = min(fh.rect[1], fa.rect[1])
     score_rect = (x0_, y0_, max(fh.rect[0] + fh.rect[2], fa.rect[0] + fa.rect[2]) - x0_, max(fh.rect[1] + fh.rect[3], fa.rect[1] + fa.rect[3]) - y0_)
     P.targets['score'] = score_rect
-    P.targets['score_value'] = f"{f['score_home']}–{f['score_away']}"
+    P.targets['score_value'] = f"{hs[-1][1]}–{as_[-1][1]}"
     # the line under it, typed: the date and the ground
     venue = (f.get('venue') or {}).get('name')
     line = ' · '.join(x for x in [_date(f.get('date')), venue.upper() if venue else None] if x)
@@ -511,17 +501,17 @@ def result(ed, s, B: Builder) -> Panel:
     # the pen circles the score as it lands; the winner's name is highlighted
     t_mark = min(t_sc1 + 0.3, B.dur - 0.65)
     B.circle(score_rect, t_mark, 'score', dur=0.55)
-    if f['outcome'] != 'draw' and kind != 'matchday':
+    if not live and f['outcome'] != 'draw' and kind != 'matchday':
         winner = left if (f['score_home'] > f['score_away']) else right
         B.highlight(winner.rect, min(t_mark + 0.5, B.dur - 0.5), 'winner', rot=rot)
     elif kind == 'matchday':
         B.underline(left.rect, t_n + 1.0, 'home')
-    if extra:
+    if extra and not live:
         ex, ey = rot_pt(cx, cy, -W_ / 2 + 56, H_ / 2 + 30, rot)
         B.type(extra.upper(), ex, ey, 28, t_mark + 0.5, rot=rot, fill=ink.pen if ink.pen != INK else INK, max_w=W_ - 120)
     # GOAL! / CHAMPIONS! / LOST stamped on the card's corner
     sw = shout_word(ed, f, s['n'])
-    if sw and kind in ('score', 'versus', 'matchday'):
+    if sw and not live and kind in ('score', 'versus', 'matchday'):
         sx, sy = rot_pt(cx, cy, W_ / 2 - 190, H_ / 2 - 70, rot)
         B.stamp(sw[0], sx, sy, t_sc1 + 0.15, size=96 if len(sw[0]) < 7 else 80, tone=sw[1])
         if sw[1] == 'accent':
@@ -532,7 +522,7 @@ def result(ed, s, B: Builder) -> Panel:
     # the scorers, typed onto the card under the score, the pen's arrow pointing at them — only when the archive
     # names every goal (as the classic edit)
     sc = f.get('scorers') or []
-    if sc and f.get('club_goals') == len(sc):
+    if not live and sc and f.get('club_goals') == len(sc):
         by: dict[str, list[str]] = {}
         for g in sc:
             mark = '’' + (' PEN' if g.get('penalty') else '') + (' OG' if g.get('own_goal') else '')
@@ -543,7 +533,7 @@ def result(ed, s, B: Builder) -> Panel:
         B.arrow((score_rect[0] - 30, score_rect[1] + score_rect[3] * 0.6), (sx + 40, sy + 4), t_mark + 0.6, 'scorers', target=strip.rect, dur=0.35)
         P.targets['scorers'] = strip.rect
     # people at the edge: the club's own, celebrating or not
-    if B.st['people']:
+    if B.st['people'] and not live:
         base = ('fig-celebrate-arms-kr' if f['outcome'] == 'win' else 'fig-kneel-despair-kr' if f['outcome'] == 'loss' else 'fig-supporter-scarf-up-kr')
         B.cut(base, 560, 960 - B.side * 830, 1130, t_sc1 + 0.1, side=-B.side)
     # the push onto the score keeps the names in the frame (a stacked card has its score at the side)
@@ -563,6 +553,7 @@ def result(ed, s, B: Builder) -> Panel:
 
 def versus(ed, s, B: Builder) -> Panel:
     """The face-off: two torn fields of colour meet on the board, the names rise, VS is stamped, then the score."""
+    from ..script import match_score_reveals
     v = s['visual']
     f = _f(ed, v.get('claim'))
     if not f:
@@ -587,8 +578,13 @@ def versus(ed, s, B: Builder) -> Panel:
     venue = (f.get('venue') or {}).get('name')
     line = ' · '.join(x for x in [_date(f.get('date')), venue.upper() if venue else None] if x)
     B.type(line, 960 - min(700, len(line) * 9.5), 920, 30, 1.0, plate=PAPER, pad=10, max_w=1500)
+    if s.get('match_preview'):
+        P.look(0.0, 960, 540, 0.9)
+        P.look(B.dur, 960, 600, 1.02)
+        P.cues += [(0.1, 'whoosh'), (t_vs, 'drum')]
+        return P
     t_sc = clamp(B.lead + 0.55 * max(B.vdur, 2.0), t_vs + 1.4, max(t_vs + 1.4, B.dur - 1.6))
-    hs, as_ = _score_steps(f, t_sc, t_sc + 0.24 * B.st['count'] * (int(f['score_home']) + int(f['score_away'])) + 0.05)
+    hs, as_ = _score_steps(f, t_sc, match_score_reveals(ed.ledger, s, f))
     fh = P.add(E.Flip(hs, 810, 760, size=130, res=r, w=170, tile=PAPER, name='home'))
     fa = P.add(E.Flip(as_, 1110, 760, size=130, res=r, w=170, tile=PAPER, name='away'))
     end = max(hs[-1][0], as_[-1][0])
@@ -596,12 +592,12 @@ def versus(ed, s, B: Builder) -> Panel:
         P.cues.append((tt, 'tick'))
     score_rect = (fh.rect[0], fh.rect[1], fa.rect[0] + fa.rect[2] - fh.rect[0], fh.rect[3])
     P.targets['score'] = score_rect
-    P.targets['score_value'] = f"{f['score_home']}–{f['score_away']}"
+    P.targets['score_value'] = f"{hs[-1][1]}–{as_[-1][1]}"
     B.circle(score_rect, end + 0.3, 'score')
     if B.cin.get('derby'):
         B.stamp('DERBY', 520 if lt == ink.accent else 1400, 200, 1.5, rot=8, size=80)
     sw = shout_word(ed, f, s['n'])
-    if sw:
+    if sw and P.targets['score_value'] == f"{f['score_home']}–{f['score_away']}":
         B.stamp(sw[0], 1460, 790, end + 0.2, size=84, tone=sw[1])
         P.flash.append(end + 0.2)
     P.cues += [(0.1, 'whoosh'), (t_vs, 'drum')]
@@ -615,6 +611,7 @@ def versus(ed, s, B: Builder) -> Panel:
 
 
 def goal(ed, s, B: Builder) -> Panel:
+    from ..director import goal_scores, goal_word_time
     """A goal on paper: the minute rolls up on the clock, GOAL! is stamped, the scorer's name rises, the score flips."""
     v = s['visual']
     f = _f(ed, v.get('claim'))
@@ -630,6 +627,7 @@ def goal(ed, s, B: Builder) -> Panel:
     m = g.get('minute')
     t_clock = 0.55
     t_hit = clamp(B.lead + 0.3 * max(B.vdur, 2.0), 1.9, max(1.9, B.dur - 2.4))
+    t_hit = clamp(goal_word_time(s, g['name'], t_hit), 0.8, B.dur - 0.9)
     # the clock slip
     B.card(430, 230, 470, 330, -3, 0.15, tone=INK, frm=(-700, -200), edges='tb', z=40, tape=1)
     lab = B.type('MINUTE', 300, 248, 26, 0.5, font='caps', fill=PAPER)
@@ -648,24 +646,17 @@ def goal(ed, s, B: Builder) -> Panel:
     P.targets['scorer'] = nm.rect
     B.underline(nm.rect, t_hit + 0.35 + 0.09 * len(nm.boxes) + 0.4, 'scorer')
     # the score on a card: the goal ticking in when the record says the order (every goal of the night has a minute)
-    order = sorted(range(len(sc)), key=lambda j: (sc[j].get('minute') if sc[j].get('minute') is not None else 999, j))
-    nth = order.index(i) + 1
-    exact = f['opponent_goals'] == 0 and all(x.get('minute') is not None for x in sc)
+    scores = goal_scores(ed.ledger, f).get(i)
     us_home = f['home'] == club
-    if exact:
-        a_, b_ = (str(nth - 1), '0') if us_home else ('0', str(nth - 1))
-        a2, b2 = (str(nth), '0') if us_home else ('0', str(nth))
-        hs, as_ = [(t_hit - 0.6, a_), (t_hit + 0.9, a2)], [(t_hit - 0.6, b_), (t_hit + 0.9, b2)]
-    else:
-        hs, as_ = _score_steps(f, t_hit + 0.7, t_hit + 0.7 + 0.2 * (f['score_home'] + f['score_away']))
-    B.card(560, 250, 1340, 860, 2, t_hit - 0.75, tone=NEWS, frm=(900, 0), edges='lr', z=40)
-    fh = P.add(E.Flip(hs, 1230, 880, size=110, res=r, w=150, tile=ink.accent if us_home else PAPER, fill=ink.on_accent if us_home else INK, name='home'))
-    fa = P.add(E.Flip(as_, 1450, 880, size=110, res=r, w=150, tile=ink.accent if not us_home else PAPER, fill=ink.on_accent if not us_home else INK, name='away'))
-    B.type(f"{gfx.abbr(f['home'])}   {gfx.abbr(f['away'])}", 1150, 760, 28, t_hit - 0.4, font='caps')
-    if not exact:
-        B.type(f"GOAL {nth} OF {f['club_goals']} · FINAL SCORE", 1100, 960, 24, t_hit + 1.0, font='caps')
-    P.targets['score'] = (fh.rect[0], fh.rect[1], fa.rect[0] + fa.rect[2] - fh.rect[0], fh.rect[3])
-    P.targets['score_value'] = f"{hs[-1][1]}–{as_[-1][1]}"
+    if scores:
+        before, after = scores
+        hs, as_ = _score_steps(f, t_hit, [(t_hit - 0.6, before), (t_hit, after)])
+        B.card(560, 250, 1340, 860, 2, t_hit - 0.75, tone=NEWS, frm=(900, 0), edges='lr', z=40)
+        fh = P.add(E.Flip(hs, 1230, 880, size=110, res=r, w=150, tile=ink.accent if us_home else PAPER, fill=ink.on_accent if us_home else INK, name='home'))
+        fa = P.add(E.Flip(as_, 1450, 880, size=110, res=r, w=150, tile=ink.accent if not us_home else PAPER, fill=ink.on_accent if not us_home else INK, name='away'))
+        B.type(f"{gfx.abbr(f['home'])}   {gfx.abbr(f['away'])}", 1150, 760, 28, t_hit - 0.4, font='caps')
+        P.targets['score'] = (fh.rect[0], fh.rect[1], fa.rect[0] + fa.rect[2] - fh.rect[0], fh.rect[3])
+        P.targets['score_value'] = f"{after[0]}–{after[1]}"
     if m is not None:
         B.arrow((610, 400), (300, 540), t_hit + 0.2, 'minute_to_name', target=nm.rect)
     if B.st['people']:
@@ -1562,7 +1553,11 @@ def compose(ed, s: dict, res: float, style: dict) -> Panel:
     for cid in (B.cin.get('lower') or [])[:1]:
         f = _f(ed, cid)
         if f:
-            B.slip(f, 90 if kind != "illustration" else 120, 790, max(0.6, B.lead + 0.2))
+            from ..cinema.direct import lower_score
+            item = lower_score(ed, s, f, max(0.6, B.lead + 0.2))
+            if item:
+                fact, at = item
+                B.slip(fact, 90 if kind != "illustration" else 120, 790, at)
     # the slug line (contract §2): typed on its own strip, lower left, before the visual's own text
     if B.cin.get('slug'):
         B.type(str(B.cin['slug']).upper(), 80, 40, 30, 0.2, plate=INK, fill=PAPER, pad=12, max_w=1300)

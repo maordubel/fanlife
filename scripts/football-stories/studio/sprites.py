@@ -204,9 +204,10 @@ class SpriteFactory:
 
     def score(self, key: str, f: dict, extra: str | None = None) -> Path:
         stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
+        heading = 'Match score' if f.get('in_play') else 'Full time'
         note = f'<div class="caps" style="font-size:30px;padding:0 50px 12px;color:var(--accent)">{esc(extra)}</div>' if extra else ''
         body = f'''<div class="sh"></div><div class="box" style="width:1180px">
-          <div class="bar" style="padding:16px 40px;font-size:30px">Full time · {esc(long_date(f.get("date")))}</div>
+          <div class="bar" style="padding:16px 40px;font-size:30px">{heading} · {esc(long_date(f.get("date")))}</div>
           <div style="display:grid;grid-template-columns:330px auto 330px;align-items:center;padding:44px 50px 24px;gap:28px">
             <div class="head fit" data-fit="330" style="font-size:66px">{esc(f['home'])}</div>
             <div class="goal" style="font-size:170px;letter-spacing:.02em;white-space:nowrap">{f['score_home']}<span style="font-size:110px;padding:0 18px">–</span>{f['score_away']}</div>

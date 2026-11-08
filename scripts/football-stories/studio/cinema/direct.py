@@ -9,11 +9,13 @@ graphics, for the old visual types as much as for the new ones.
 from __future__ import annotations
 
 import math
+import re
 
 from PIL import Image, ImageDraw
 
 from ..common import FPS, H, W
 from ..motion import clamp, ease_in_out, ease_out_back, ease_out_cubic
+from ..script import match_score_reveals, scorelines
 from . import animate, gfx, library, look
 from .story import LETTER, story_of
 
@@ -122,6 +124,8 @@ def direct(ed, shots: list[dict], script: dict | None = None) -> list[dict]:
     for s in shots:
         v = s['visual']
         kind = v['type']
+        if kind in ('versus', 'matchday') and not scorelines(s.get('narration') or ''):
+            s['match_preview'] = True
         fx = dict(s.get('beat_fx') or {})
         if favourite and not fx.get('camera') and kind not in ('end', 'follow'):
             fx['camera'] = favourite[s['n'] % len(favourite)]
@@ -189,8 +193,20 @@ def _lower(ed, s: dict, cited: list[str]) -> list[str]:
     if not rest:
         return []
     text = (s.get('narration') or '').lower()
+    if not scorelines(text) and not re.search(r'\b(ended|finished|final whistle|full time|won|beat|lost|drew|defeated)\b', text):
+        return []
     named = [i for i in rest if (ed.by[i]['fact'].get('opponent') or '').lower() in text and ed.by[i]['fact'].get('opponent')]
     return [(named or rest)[0]]
+
+
+def lower_score(ed, shot: dict, fact: dict, default_at: float) -> tuple[dict, float] | None:
+    reveals = match_score_reveals(ed.ledger, shot, fact)
+    if not reveals:
+        return None if scorelines(shot.get('narration') or '') else (fact, default_at)
+    at, (home, away) = reveals[-1]
+    if (home, away) != (fact['score_home'], fact['score_away']):
+        fact = {**fact, 'score_home': home, 'score_away': away, 'in_play': True}
+    return fact, at
 
 
 def _tally(st: dict, upto: str) -> dict:
@@ -442,10 +458,13 @@ def dress(ed, shot, s: dict) -> None:
     if cin.get('bug'):
         glass.append(Scorebug(ink, ed.ledger.get('club_name') or '', str(ed.ledger.get('season') or ''), cin['bug']))
     if cin.get('lower'):
-        facts = [ed.by[i]['fact'] for i in cin['lower'] if i in ed.by]
         at = 'bottom' if kind in ('illustration', 'map', 'turning', 'trailer') else 'top'
         # a slug line owns the lower left for its first two seconds: the scoreline waits for it
-        glass.append(LowerThird(ink, facts, ed.ledger.get('club_name') or '', dur, max(lead, 2.3) if (cin.get('slug') and at == 'bottom') else lead, at))
+        base = max(lead, 2.3) if (cin.get('slug') and at == 'bottom') else lead
+        item = lower_score(ed, s, ed.by[cin['lower'][0]]['fact'], base + 0.25)
+        if item:
+            fact, at_time = item
+            glass.append(LowerThird(ink, [fact], ed.ledger.get('club_name') or '', dur, at_time - 0.25, at))
     if cin.get('motif'):
         from ..paper import beat_path
         mp = beat_path(cin['motif'])

@@ -80,6 +80,10 @@ DIRECTING:
   fast beats ("Won. Won. Won again.") then one match told slowly. Numbers made vivid ("six goals, and the away end
   still singing at the hundredth minute" — only if the claims hold it): never a list of scores.
 - TENSION IN THE CLOCK. When a claim has minutes, use them: "Eighty-seven minutes gone. Still level." Then the goal.
+- RUNNING SCORE. For a match told in full, establish the stakes, then tell the verified goals in their real order.
+  Say each verified score when it changes, in home–away order. Give an opponent goal its own score beat when it
+  changes the story. Keep the preview scoreless and save the final result and shootout for their own reveals.
+  If the archive lacks goal order, tell only the recorded moments and reveal the known result at full time.
 - ARCHIVE GOALS: A goal-detail claim is one separately documented goal linked by match_id to a reviewed match.
   When telling it, cite both the goal-detail and its match. Use only its stated scorer, minute and description;
   its presence does not mean that every scorer, every goal minute or the entire build-up is known. A minute such as
@@ -96,14 +100,16 @@ DIRECTING:
 PICTURE (choose a visual for every beat, matching its emotion):
 - EDITOR'S EVIDENCE AND DRAMA: Start with the audience's question; select only relevant evidence and build cause,
   consequence and a truthful payoff. Use owner-selected uploads and Drive assets on the matching beats, including
-  covers, then diversify with appropriately sourced archive and graphics. A file's presence or AI description does
-  not prove its date, subject or rights; distinguish archival images from reconstructions and surface missing assets.
+  covers, then diversify with appropriately sourced archive and graphics. Images supplied by the owner in the
+  project's Drive folders are approved for use. Match each picture to this beat's team, period, person and action.
+  Use a context caption when the exact scene is unverified. Distinguish archive photos from reconstructions and
+  keep generated pictures free of score text so the timed graphic supplies the score.
   On each beat establish where the viewer is, what is at stake, and what changes; vary wide and detail shots, maps,
   score and silence. Hold for emotion, accelerate for action, and let each visual explain the narration. No invented
   score, supporter quote or manufactured suspense. VOX-inspired evidence graphics and HyperFrames-inspired motion
   should make the story clearer, while each film gets an individual rhythm within the FanLife identity.
-- Every match the narration names is cited in that beat, so its score is on screen; a match told in full gets a
-  "versus" before it and a "score" (or a "goal" when the claim names the scorer and minute) when it lands.
+- Every match the narration names is cited in that beat. A match told in full gets a "versus" before it and a
+  "score" (or a "goal" when the claim names the scorer and minute) when a result or verified goal is revealed.
 - A season film carries at least one "race" or "form" and one "record" ("summary:<competition>"); a match or tie film a
   "versus" and a "score"/"goal"; a rivalry film a "record" of "summary:All competitions" and a "versus" for its biggest
   meeting (moments[0]).
@@ -324,13 +330,20 @@ def parse_json(text: str) -> dict:
 def story_for_prompt(ledger: dict) -> dict | None:
     """The story block as the writer reads it: the matches cut to what the claims do not already say (form, goal
     difference, rival, tags), everything else as it is."""
-    from .director import story_of
+    from .director import match_goal_states, story_of
     if not any(c['fact'].get('kind') == 'match' for c in ledger['claims']):
         return None
     st = story_of(ledger)
+    running = {}
+    for claim in ledger['claims']:
+        if claim['fact'].get('kind') == 'match':
+            states = match_goal_states(ledger, claim['fact'])
+            if states:
+                running[claim['id']] = [f'{home}–{away}' for _, _, (home, away) in states]
     return {**{k: v for k, v in st.items() if k not in ('matches', 'version')},
             'matches': [{'id': m['id'], 'date': m['date'], 'opponent': m['opponent'], 'score': f"{m['club_goals']}–{m['opponent_goals']}",
                          'form': m['form'], 'gd': m['gd'], **({'rival': True} if m['rival'] else {}),
+                         **({'home_away_score_path': running[m['id']]} if m['id'] in running else {}),
                          **({'tags': m['tags']} if m['tags'] else {}), **({'through': m['through']} if 'through' in m else {})}
                         for m in st['matches']]}
 
@@ -374,8 +387,8 @@ def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
         out.append('When a beat tells a result ("beat Olympiacos", "lost in Málaga"), cite that match\'s claim id in the beat\'s '
                    'claim_ids — its score is then put on screen. If you mean the rivalry in general, say it without a result word.')
     if any('[director rule 1]' in e and 'scoreline' in e for e in errs):
-        out.append('A scoreline in the narration ("three-one", "2–0") must be the score of a match the beat cites. Cite the '
-                   'match, or drop the scoreline.')
+        out.append('A scoreline in the narration ("three-one", "2–0") must be a verified running or final score of the '
+                   'match the beat cites. Use the score that applies to this moment, or drop it.')
     if any('[director rule 2]' in e for e in errs):
         out.append('Add the cards the film needs: a season film a {"type":"race","label":…} (or a "form" card of 3–12 match ids) '
                    'and a {"type":"record","claim":"summary:<competition>"}; a match or tie film a {"type":"versus","claim":<id>} '

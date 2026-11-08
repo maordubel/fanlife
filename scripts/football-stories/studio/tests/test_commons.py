@@ -76,7 +76,8 @@ class Discovery(unittest.TestCase):
             with patch.object(kit_ingest, 'BEATS', root / 'beats'), patch.object(commons, 'fetch', return_value=buf.getvalue()):
                 assets = commons.ingest({'candidates': [row]}, BRIEF, root, lambda _: None)
             self.assertEqual(assets[0]['licence'], 'Public domain');self.assertTrue(assets[0]['archive'])
-            shots, usage = media_assets.place([shot(0, narration='Jane Player scored.'), shot(1, narration='Jane Player scored.')], {'media_assets': [asset(1), *assets]})
+            selected = asset(1, description='Jane Player')
+            shots, usage = media_assets.place([shot(0, narration='Jane Player scored.'), shot(1, narration='Jane Player scored.')], {'media_assets': [selected, *assets]})
             self.assertEqual(usage['used'], 1);self.assertEqual(shots[0]['required_asset'], asset(1)['key'])
             self.assertEqual(shots[1]['archive_asset'], assets[0]['key'])
             (root / 'plan.json').write_text(json.dumps({'shots': shots}))

@@ -310,7 +310,8 @@ def lay_out(ep: dict, voices: dict[str, dict]) -> dict:
 
 
 # ------------------------------------------------------------------ the studio's plan (mix, captions, QA, Shorts read it)
-def plan_of(beats, raw: list[dict], voices: dict, fps: int) -> dict:
+def plan_of(beats, raw: list[dict], voices: dict, fps: int, score_teams=None) -> dict:
+    from studio.script import timed_scorelines
     shots, chapters = [], []
     for n, (b, r) in enumerate(zip(beats, raw), 1):
         f0, f1 = int(round(b.start * fps)), int(round((b.start + b.dur) * fps))
@@ -321,10 +322,15 @@ def plan_of(beats, raw: list[dict], voices: dict, fps: int) -> dict:
                       'words': v['words'] if v else [], 'narration': r.get('say', ''), 'mood': r.get('mood') or 'minor',
                       'visual': {'type': r['id'] if r['id'] in ('follow', 'end') else 'panel', 'panel': r['panel']},
                       'claim_ids': [f"src-{s}" for s in r.get('sources') or []]})
+        if r.get('score_reveal'):
+            shot = shots[-1]
+            shot['score_reveals'] = timed_scorelines(shot)
+            if not score_teams or not shot['score_reveals']:
+                raise ProduceError(f"{r['id']}: score reveal needs a score in the timed narration")
         if r.get('chapter'):
             chapters.append({'t': round(f0 / fps, 2), 'title': r['chapter']})
     total = epi.frames(beats, fps) / fps
-    return {'fps': fps, 'duration': round(total, 3), 'shots': shots, 'chapters': chapters}
+    return {'fps': fps, 'duration': round(total, 3), 'shots': shots, 'chapters': chapters, 'score_teams': score_teams}
 
 
 def write_cues(job: Path, plan: dict, raw: list[dict], board: dict | None = None) -> int:
@@ -367,6 +373,16 @@ class Burner:
         from studio.captions import Captions
         self.W, self.H = wh
         self.lines = []
+        self.scores = []
+        from studio.cinema.type import text
+        teams = plan.get('score_teams')
+        for s in plan['shots']:
+            if self.scores and s['visual']['type'] in ('follow', 'end'):
+                self.scores.append((s['start'], None))
+            for at, (home, away) in s.get('score_reveals') or []:
+                label = text(f'{teams[0].upper()}  {home}–{away}  {teams[1].upper()}', 'cond', max(14, self.W // 44),
+                             (255, 251, 242, 255), plate=(23, 22, 20, 255))
+                self.scores.append((s['start'] + at, np.asarray(label)))
         for s in plan['shots']:
             if s['words']:
                 end = s['voice_at'] + s['words'][-1]['end'] + .6
@@ -374,6 +390,9 @@ class Burner:
 
     def __call__(self, frame: np.ndarray, t: float) -> None:
         from studio.common import H as SH, W as SW
+        score = next((arr for at, arr in reversed(self.scores) if at <= t), None)
+        if score is not None:
+            _paste(frame, score, (self.W - score.shape[1]) // 2, self.H // 20)
         for a, b, cap in self.lines:
             if a <= t <= b:
                 got = cap(t)
@@ -441,7 +460,7 @@ def produce(episode: Path | dict, panels: list[Path], out: Path, *, say=None, ap
     ep = lay_out(ep, voices)
     raw = ep['beats']
     ep_c, beats = epi.load({**ep, 'beats': [{k: v for k, v in b.items() if k != 'voice'} for b in raw]})
-    plan = plan_of(beats, raw, voices, int(ep.get('fps', FPS)))
+    plan = plan_of(beats, raw, voices, int(ep.get('fps', FPS)), ep.get('score_teams'))
     for s in plan['shots']:
         if s['voice_file']:
             shutil.copyfile(job / 'voice' / voices[s['id']]['file'], job / 'voice' / s['voice_file'])

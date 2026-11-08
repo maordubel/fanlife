@@ -500,6 +500,7 @@ def _ov(a, b) -> float:
 # ==================================================================== the panels (one per visual type)
 def result(b: B) -> None:
     from ..cinema import gfx
+    from ..script import match_score_reveals
     s, ed, ink = b.s, b.ed, b.ink
     v = s['visual']
     kind = v['type']
@@ -509,7 +510,10 @@ def result(b: B) -> None:
     rot = (-1.4, 1.1, -0.8)[s['n'] % 3]
     cx, cy = 960 + b.side * 40, 470
     W_, H_ = 1300, 600
-    head = 'MATCHDAY' if kind == 'matchday' else 'FULL TIME'
+    reveals = match_score_reveals(ed.ledger, s, f)
+    preview = s.get('match_preview')
+    live = any(score != (f['score_home'], f['score_away']) for _, score in reveals)
+    head = 'MATCHDAY' if preview or kind == 'matchday' else 'MATCH SCORE' if live else 'FULL TIME'
     stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
     bar = f'{head} · {stage}'.upper()
     venue = (f.get('venue') or {}).get('name')
@@ -522,19 +526,20 @@ def result(b: B) -> None:
     t_n = t_land + 0.55
     hs = min(74, fit_size(f['home'].upper(), 'head', 74, 520))
     as_ = min(74, fit_size(f['away'].upper(), 'head', 74, 520))
-    win_name = f['home'] if f['score_home'] > f['score_away'] else f['away'] if f['score_away'] > f['score_home'] else None
+    win_name = None if preview or live else f['home'] if f['score_home'] > f['score_away'] else f['away'] if f['score_away'] > f['score_home'] else None
     hl_home = {w.lower().strip('.,') for w in f['home'].upper().split()} if (win_name == f['home'] and kind != 'matchday') else set()
     hl_away = {w.lower().strip('.,') for w in f['away'].upper().split()} if (win_name == f['away'] and kind != 'matchday') else set()
     left = b.words(f['home'], x0 + 60, y0 + 110, hs, t_n, max_w=520, z=72, hl=hl_home, rot=rot)
     right = b.words(f['away'], x0 + W_ - 60, y0 + 110, as_, t_n + 0.18, max_w=520, align='right', z=72, hl=hl_away, rot=rot)
-    pace = 0.24 * b.st['count']
-    n_goals = int(f['score_home']) + int(f['score_away'])
+    if preview:
+        b.type(dline, x0 + 56, y0 + 500, 30, t_n + 0.4, max_w=W_ - 120)
+        return
     t_sc0 = max(t_n + 0.6, b.at_voice(0.18, lo=1.0))
     if kind == 'matchday':
         t_sc0 = max(t_n + 1.2, b.at_voice(0.55, lo=1.6))
-    t_sc0 = max(t_n + 0.3, min(t_sc0, b.dur - 1.6 - pace * n_goals))
-    t_sc1 = t_sc0 + max(0.25, pace * n_goals)
-    hsteps, asteps = _score_steps(f, t_sc0, t_sc1)
+    t_sc0 = max(t_n + 0.3, min(t_sc0, b.dur - 1.6))
+    hsteps, asteps = _score_steps(f, t_sc0, reveals)
+    t_sc1 = max(hsteps[-1][0], asteps[-1][0])
     club = ed.ledger.get('club_name')
     tone_h = ink.accent if f['home'] == club else PAPER
     tone_a = ink.accent if f['away'] == club else PAPER
@@ -552,10 +557,10 @@ def result(b: B) -> None:
     b.circle(score_rect, t_mark, dur=0.55)
     if kind == 'matchday':
         b.underline(left[1], t_n + 1.0)
-    if extra:
+    if extra and not live:
         b.type(extra.upper(), x0 + 56, y0 + H_ + 30, 28, t_mark + 0.5, fill=ink.pen, max_w=W_ - 120)
     sw = shout_word(ed, f, s['n'])
-    if sw and kind in ('score', 'versus', 'matchday'):
+    if sw and not live and kind in ('score', 'versus', 'matchday'):
         b.stamp(sw[0], cx + W_ / 2 - 190, cy + H_ / 2 - 70, t_sc1 + 0.15, size=96 if len(sw[0]) < 7 else 80, tone=sw[1])
         if sw[1] == 'accent':
             b.P.flashes.append(t_sc1 + 0.15)
@@ -563,7 +568,7 @@ def result(b: B) -> None:
         else:
             b.P.cues.append((t_sc1 + 0.2, 'crowd-miss'))
     sc = f.get('scorers') or []
-    if sc and f.get('club_goals') == len(sc):
+    if not live and sc and f.get('club_goals') == len(sc):
         by: dict[str, list[str]] = {}
         for g in sc:
             mark = '’' + (' PEN' if g.get('penalty') else '') + (' OG' if g.get('own_goal') else '')
@@ -572,7 +577,7 @@ def result(b: B) -> None:
         sx, sy = x0 + 60, y0 + 405
         _, srect, _ = b.type(line, sx, sy, 30, t_mark + 0.9, font='cond', max_w=W_ - 140)
         b.arrow((score_rect[0] - 30, score_rect[1] + score_rect[3] * 0.6), (sx + 40, sy + 4), t_mark + 0.6, dur=0.35)
-    if b.st['people']:
+    if b.st['people'] and not live:
         base = ('fig-celebrate-arms-kr' if f['outcome'] == 'win' else 'fig-kneel-despair-kr' if f['outcome'] == 'loss' else 'fig-supporter-scarf-up-kr')
         b.cut(base, 560, 960 - b.side * 830, 1130, t_sc1 + 0.1, side=-b.side)
     zp = min(b.st['push'], 1.32)
@@ -826,7 +831,11 @@ def compose(comp: 'Composition', s: dict) -> Panel:
     for cid in (b.cin.get('lower') or [])[:1]:
         f = _f(b.ed, cid)
         if f:
-            b.slip(f, 90 if kind != 'illustration' else 120, 790, max(0.6, b.lead + 0.2))
+            from ..cinema.direct import lower_score
+            item = lower_score(b.ed, s, f, max(0.6, b.lead + 0.2))
+            if item:
+                fact, at = item
+                b.slip(fact, 90 if kind != 'illustration' else 120, 790, at)
     if b.cin.get('slug'):
         b.type(str(b.cin['slug']).upper(), 80, 40, 30, 0.2, plate=INK, fill=PAPER, pad=12, max_w=1300)
     P = b.P
