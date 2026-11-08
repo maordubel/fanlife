@@ -28,7 +28,8 @@ const BAR=['overview','clubs','players','games','studio'] as const
 /** areas that read a club scope keep it when you move between them; the rest are application-wide */
 const SCOPED=new Set(['clubs','players','games','data','audience'])
 
-export function AdminShell({section,club,clubName,owner,children,counts}:{section:Section;club:string|null;clubName:string|null;owner:boolean;children:ReactNode;counts?:{tasks:number;blocking:number}}){
+// Each menu creates its own Suspense boundary. Reusing one streamed badge element can break server rendering.
+export function AdminShell({section,club,clubName,owner,children,renderOverviewBadge}:{section:Section;club:string|null;clubName:string|null;owner:boolean;children:ReactNode;renderOverviewBadge?:()=>ReactNode}){
  const keep=(s:string)=>SCOPED.has(s)?{club:club||undefined}:{}
  const onMore=section==='more'||TOOLS.some(t=>t.key===section)||section==='market'||section==='community'||section==='audience'
  return <div className="fl mag desk" lang="en" dir="ltr">
@@ -41,15 +42,15 @@ export function AdminShell({section,club,clubName,owner,children,counts}:{sectio
   </header>
   <div className="desk-body">
    <nav className="desk-side" aria-label="Control room">
-    <ol>{SECTIONS.map((s,i)=><li key={s.key}><Link href={deskHref(s.key,keep(s.key))} aria-current={section===s.key?'page':undefined}><span className="desk-no">{String(i+1).padStart(2,'0')}</span><span><b>{s.label}{s.key==='overview'&&counts&&counts.tasks>0?<em className="desk-count" data-hot={counts.blocking>0||undefined} aria-label={`${counts.tasks} open`}>{counts.tasks}</em>:null}</b><small>{s.hint}</small></span></Link></li>)}</ol>
+    <ol>{SECTIONS.map((s,i)=><li key={s.key}><Link prefetch={false} href={deskHref(s.key,keep(s.key))} aria-current={section===s.key?'page':undefined}><span className="desk-no">{String(i+1).padStart(2,'0')}</span><span><b>{s.label}{s.key==='overview'&&renderOverviewBadge?.()}</b><small>{s.hint}</small></span></Link></li>)}</ol>
     <p className="desk-side-label">Tools</p>
-    <ul className="desk-tools">{TOOLS.map(t=><li key={t.key}><Link href={deskHref(t.key,keep(t.key))} aria-current={section===t.key?'page':undefined}><b>{t.label}</b><small>{t.hint}</small></Link></li>)}</ul>
+    <ul className="desk-tools">{TOOLS.map(t=><li key={t.key}><Link prefetch={false} href={deskHref(t.key,keep(t.key))} aria-current={section===t.key?'page':undefined}><b>{t.label}</b><small>{t.hint}</small></Link></li>)}</ul>
     <p className="desk-side-foot"><Link href="/master/test-lab">Test lab ↗</Link><Link href="/master/core">Compiler diagnostics ↗</Link></p>
    </nav>
    <main id="desk-main" className="desk-main" tabIndex={-1}>{children}</main>
   </div>
   <nav className="desk-bottom" aria-label="Control room">
-   {BAR.map(k=><Link key={k} href={deskHref(k,keep(k))} aria-current={section===k?'page':undefined}><Icon k={k}/>{SECTIONS.find(s=>s.key===k)!.label}{k==='overview'&&counts&&counts.tasks>0?<em className="desk-count" data-hot={counts.blocking>0||undefined}>{counts.tasks}</em>:null}</Link>)}
+   {BAR.map(k=><Link key={k} prefetch={false} href={deskHref(k,keep(k))} aria-current={section===k?'page':undefined}><Icon k={k}/>{SECTIONS.find(s=>s.key===k)!.label}{k==='overview'&&renderOverviewBadge?.()}</Link>)}
    <Link href={deskHref('more')} aria-current={onMore?'page':undefined}><Icon k="more"/>More</Link>
   </nav>
  </div>

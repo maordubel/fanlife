@@ -153,7 +153,9 @@ describe('Football Stories — access',()=>{
 it('the studio is an area of the desk, on the phone bar too',()=>{
   expect(src('lib/master/crm/areas.ts')).toMatch(/key:'studio'/)
   expect(src('components/master/desk/AdminShell.tsx')).toMatch(/BAR=\[[^\]]*'studio'/)
-  expect(src('app/master/admin/page.tsx')).toMatch(/section==='studio'\)return shell\(<StoriesDesk/)
+ const admin=src('app/master/admin/page.tsx')
+ expect(admin).toMatch(/<AdminShell\b[^>]*>[\s\S]*?<DeskContent\b[^>]*section=\{section\}[\s\S]*?<\/AdminShell>/)
+ expect(admin).toMatch(/if\s*\(section\s*===\s*'studio'\)\s*return\s*<StoriesDesk\b/)
   expect(src('next.config.mjs')).toMatch(/source: '\/master\/stories', destination: '\/master\/admin\?section=studio'/)
 })
 it('the listener starts the worker and keeps itself alive',()=>{

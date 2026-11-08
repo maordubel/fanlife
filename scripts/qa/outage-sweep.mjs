@@ -79,8 +79,25 @@ try{
  if(photo.status()!==200||!photo.headers()['content-type']?.startsWith('image/png'))bad.push('Telegram → welcome photo is not a public PNG')
  await page.goto(base+'/master/admin');await page.locator('#owner-key').fill(KEY);await page.getByRole('button',{name:'Enter the control room'}).click()
  await page.waitForURL(u=>u.pathname==='/master/admin',{timeout:30000}).catch(()=>bad.push('admin → the key did not open the control room'))
- for(const s of ['overview','clubs','data','audience','operations','settings']){checked++;const r=await page.goto(`${base}/master/admin?section=${s}`);if(r.status()>=400||await visibleFault())bad.push(`admin ${s} → ${r.status()}`)}
+ for(const s of ['overview','clubs','data','audience','operations','settings']){
+  checked++
+  const r=await page.goto(`${base}/master/admin?section=${s}`)
+  if(r.status()>=400||await visibleFault()){bad.push(`admin ${s} → ${r.status()}`);continue}
+  if(s!=='overview')continue
+  try{
+   await page.getByRole('heading',{name:'What needs you now',exact:true}).waitFor({timeout:10000})
+   await page.getByRole('heading',{name:'Storage is not answering',exact:true}).waitFor({timeout:10000})
+   const counts=await Promise.all(['.desk-side','.desk-bottom'].map(nav=>
+    page.locator(`${nav} a[aria-current="page"] .desk-count`).textContent({timeout:10000})))
+   if(!/^[1-9]\d*$/.test(counts[0]??'')||counts[0]!==counts[1])bad.push('admin overview → task counts missing or different in the two menus')
+  }catch{bad.push('admin overview → the storage warning or task counts did not finish rendering')}
+ }
 }finally{await browser?.close();server.kill()}
 console.log(`outage sweep: ${checked} screens with the store refusing everything`)
-if(bad.length){console.log(bad.map(b=>'  FAIL '+b).join('\n'));if(/Error/.test(logs))console.log(logs.split('\n').filter(l=>/Error/.test(l)).slice(0,5).join('\n'));process.exit(1)}
+if(bad.length){
+ console.log(bad.map(b=>'  FAIL '+b).join('\n'))
+ const errors=logs.match(/^[^\n]*Error[^\n]*(?:\r?\n\s+at [^\n]*)*/gm)??[]
+ if(errors.length)console.log(errors.slice(-5).join('\n'))
+ process.exit(1)
+}
 console.log('outage sweep: all open')
