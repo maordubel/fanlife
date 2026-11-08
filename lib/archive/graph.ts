@@ -47,8 +47,11 @@ const aliasOf = new Map<string, string>(Object.entries(graph.aliases))
 const edgesOf = new Map<string, GraphEdge[]>()
 const pairIndex = new Map<string, GraphEdge>()
 for (const edge of graph.edges) {
-  edgesOf.set(edge.from, [...(edgesOf.get(edge.from) ?? []), edge])
-  edgesOf.set(edge.to, [...(edgesOf.get(edge.to) ?? []), edge])
+  for (const id of [edge.from, edge.to]) {
+    const edges = edgesOf.get(id)
+    if (edges) edges.push(edge)
+    else edgesOf.set(id, [edge])
+  }
   // one edge per unordered pair for the walk; the stronger one wins a tie
   for (const key of [`${edge.from}|${edge.to}`, `${edge.to}|${edge.from}`]) {
     const had = pairIndex.get(key)
