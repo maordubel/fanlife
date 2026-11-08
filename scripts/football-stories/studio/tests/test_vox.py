@@ -205,7 +205,8 @@ class Numbers(unittest.TestCase):
         flips = {e.name: e for e in P.els if isinstance(e, E.Flip)}
         self.assertEqual(flips['home'].final, str(f['score_home']))
         self.assertEqual(flips['away'].final, str(f['score_away']))
-        self.assertEqual(flips['home'].steps[0][1], '0')  # it counts up, it does not appear
+        self.assertEqual([v for _, v in flips['home'].steps], [str(f['score_home'])])
+        self.assertEqual([v for _, v in flips['away'].steps], [str(f['score_away'])])
         self.assertEqual(P.targets['score_value'], f"{f['score_home']}–{f['score_away']}")
 
     def test_the_form_number_rides_the_line_up_and_down_and_lands_on_the_story(self):

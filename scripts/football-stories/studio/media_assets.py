@@ -158,9 +158,15 @@ def relevance(asset: dict, shot: dict, ledger: dict) -> float:
         return 12.0 if ' ' + normal(asset['entity']) + ' ' in ' ' + normal(shot_text(shot, ledger)) + ' ' else -100.0
     desc = ' '.join(str(asset.get(k) or '') for k in ('description', 'visual_description', 'source', 'pack'))
     desc += ' ' + ' '.join(asset.get('tags') or [])
-    a, b = tokens(desc), tokens(shot_text(shot, ledger))
-    # Scene/action and names in the filename are stronger than an incidental shared word.
-    return sum(4 if t.startswith('scene:') else 1 for t in a & b) + 2 * len(tokens(str(asset.get('source') or '')) & b)
+    context = shot_text(shot, ledger)
+    image_clubs = named_clubs(' '.join(str(asset.get(k) or '') for k in ('source', 'description')))
+    story_clubs = named_clubs(context)
+    if image_clubs and story_clubs and image_clubs.isdisjoint(story_clubs):
+        return -100.0
+    a, b = tokens(desc), tokens(context)
+    spoken = tokens(str(shot.get('narration') or ''))
+    # Match the action being told, ahead of names or words mentioned elsewhere in the match record.
+    return sum(4 if t.startswith('scene:') else 1 for t in a & b) + 2 * len(a & spoken) + 2 * len(tokens(str(asset.get('source') or '')) & spoken)
 
 
 def place(shots: list[dict], ledger: dict) -> tuple[list[dict], dict]:
@@ -180,22 +186,27 @@ def place(shots: list[dict], ledger: dict) -> tuple[list[dict], dict]:
     used_slots, usage = set(), Counter()
     for asset in required:
         key = asset['key']
-        free = [i for i in candidates if i not in used_slots and shots[i]['visual']['type'] == 'illustration'
-                and shots[i]['frames'] >= HOLD_SECONDS * FPS
-                and (not str(shots[i]['visual'].get('art') or '').startswith('beat:') or shots[i]['visual'].get('art') == key)]
-        pool = free or candidates
-        i = max(pool, key=lambda n: (relevance(asset, shots[n], ledger) - usage[n] * 2, -n))
+        scores = {i: relevance(asset, shots[i], ledger) for i in candidates}
+        compatible = [i for i in candidates if scores[i] >= 2]
+        matching = [i for i in compatible if shots[i]['visual'].get('art') == key]
+        i = max(matching or compatible, key=lambda n: (scores[n] - usage[n] * 2, -n)) if compatible else candidates[-1]
+        shot = shots[i]
+        free = (i in compatible and i not in used_slots and shot['visual']['type'] == 'illustration'
+                and shot['frames'] >= HOLD_SECONDS * FPS
+                and (not str(shot['visual'].get('art') or '').startswith('beat:') or shot['visual'].get('art') == key))
         usage[i] += 1
         if free:
-            shot = shots[i]
             shot['visual'] = {'type': 'illustration', 'art': key, 'required': True}
             shot['required_asset'] = key
             used_slots.add(i)
         else:
             anchor = shots[i]
+            visual = {'type': 'illustration', 'art': key, 'required': True}
+            if not compatible:
+                visual['caption'] = 'Owner-supplied context image'
             inserts.setdefault(i, []).append({
                 'chapter': anchor['chapter'], 'beat': -2, 'frames': round(HOLD_SECONDS * FPS),
-                'visual': {'type': 'illustration', 'art': key, 'required': True}, 'required_asset': key,
+                'visual': visual, 'required_asset': key,
                 'claim_ids': [], 'mood': anchor.get('mood') or 'minor', 'voice_at': None, 'voice_file': None,
                 'voice_dur': 0, 'words': [], 'narration': '', 'beat_fx': {'camera': 'drift'},
             })
@@ -203,8 +214,14 @@ def place(shots: list[dict], ledger: dict) -> tuple[list[dict], dict]:
     optional_uses = Counter()
     for i in candidates:
         shot = shots[i]
-        if i in used_slots or shot['visual']['type'] != 'illustration' or str(shot['visual'].get('art') or '').startswith(('beat:', 'clip:')):
+        if i in used_slots or shot['visual']['type'] != 'illustration':
             continue
+        art = str(shot['visual'].get('art') or '')
+        if art.startswith(('beat:', 'clip:')):
+            known = next((a for a in assets if a['key'] == art), None)
+            if known is None or relevance(known, shot, ledger) >= 2:
+                continue
+            shot['visual'].pop('art')
         ranked = sorted(optional, key=lambda a: (-(relevance(a, shot, ledger) - optional_uses[a['key']] * 3), a['key']))
         if ranked and relevance(ranked[0], shot, ledger) >= 2:
             shot['visual']['art'] = ranked[0]['key']

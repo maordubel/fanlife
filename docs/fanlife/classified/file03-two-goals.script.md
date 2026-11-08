@@ -20,7 +20,9 @@ The competition had an unusual rule. If the match was level after normal time, t
 
 The first goal would end the game, and count twice for goals for and against in the qualifying table.
 
-Barbados led two-nil. Then Grenada scored, making it two-one. Barbados were winning the match, but the result would send Grenada through.
+Barbados went one-nil up. Then two-nil. Then Grenada scored, making it two-one. Barbados were winning the match, but the result would send Grenada through.
+
+**Picture:** Use the blank scoreboard illustration. Reveal each score on its spoken cue and carry it into the next scene.
 
 ## The own goal
 
@@ -38,7 +40,9 @@ Those are two possibilities, not two goals that actually happened. Barbados need
 
 ## The winner
 
-The score stayed level until the end of normal time. Then, in extra time, Barbados scored the winner.
+The score stayed level until the end of normal time. Then, in extra time, Barbados scored the winner. Three-two.
+
+**Picture:** Hold 2–2 while the narrator explains the hypothetical goals. Change to 3–2 on the real winner. Keep the qualifying-table convention separate from the match score.
 
 One physical goal. The match archive lists a three-two win. The competition counted that sudden-death goal twice in the standings.
 

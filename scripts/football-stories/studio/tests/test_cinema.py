@@ -238,7 +238,11 @@ class NewVisuals(unittest.TestCase):
         import studio.cinema.shots as sh_mod
         sh_mod.text = lambda t, *a, **k: printed.append(t) or real(t, *a, **k)
         try:
-            shots.goal(ed, s)
+            goal = shots.goal(ed, s)
+            renderer = ShotRenderer(goal)
+            frame = round(goal.meta['goal_at'] * FPS)
+            renderer.frame(frame - 4)
+            renderer.frame(frame + 4)
         finally:
             sh_mod.text = real
         self.assertIn('1–0', printed)

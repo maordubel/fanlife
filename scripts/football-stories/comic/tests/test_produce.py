@@ -28,6 +28,24 @@ def ep01() -> dict:
     return json.loads(FILE01.read_text(encoding='utf-8'))
 
 
+class Scoreboard(unittest.TestCase):
+    def test_file03_uses_only_actual_scores_on_the_narration_clock(self):
+        from types import SimpleNamespace
+        ep = json.loads((HERE / 'episodes' / 'file03-two-goals.json').read_text(encoding='utf-8'))
+        raw = ep['beats']
+        beats = [SimpleNamespace(start=i * 15, dur=15, td=0) for i in range(len(raw))]
+        voices = {b['id']: {'words': [{'w': w, 'start': j * 0.2, 'end': (j + 1) * 0.2}
+                                     for j, w in enumerate(b['say'].split())]}
+                  for b in raw if b.get('say')}
+        plan = produce.plan_of(beats, raw, voices, 25, ep['score_teams'])
+        reveals = [(s['id'], score) for s in plan['shots'] for _, score in s.get('score_reveals') or []]
+        self.assertEqual(reveals, [('b07', (1, 0)), ('b07', (2, 0)), ('b07', (2, 1)),
+                                   ('b08', (2, 2)), ('b13', (3, 2))])
+        burner = produce.Burner(plan, '#B72221', (640, 360))
+        self.assertEqual(len(burner.scores), 5)
+        self.assertTrue(all(a[0] < b[0] for a, b in zip(burner.scores, burner.scores[1:])))
+
+
 class File01(unittest.TestCase):
     def test_validates_against_the_manifest(self):
         self.assertEqual(produce.validate(ep01()), [])

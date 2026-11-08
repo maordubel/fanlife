@@ -1,7 +1,7 @@
 # MAKSIMIR 1990 — THE MATCH THAT WAS NEVER PLAYED
 
 **FanLife: Football Stories | English documentary | Production script and image map**  
-**Status:** owner-approved editorial script, adapted as a CLASSIFIED episode. The image mapping is based on visual inspection of the supplied Drive folder. Original photographs need accurate provenance and captions. Do not represent the awarded result as an on-field score.
+**Status:** owner-approved editorial script, adapted as a CLASSIFIED episode. Every image supplied by the owner in the project Drive folder is approved for use. Use the image mapping and accurate captions to distinguish verified scenes, contextual photos and reconstructions. Do not represent the awarded result as an on-field score.
 
 **Editorial position:** A football riot reflected an escalating political crisis; it did not start the Yugoslav wars. Its later meaning is contested. Do not invent dialogue, individual motivations, eyewitness testimony, crowd numbers, exact sequence where sources differ, or the precise identities of unverified figures. AI-generated or reconstructed artwork is an illustration, never archival evidence.
 
@@ -15,7 +15,7 @@ A football match never began, yet its images became a symbol of a country in cri
 
 The story is often sold as the day a football match started a war. It is a powerful line. It is also too simple. To understand what happened here, we have to go back before the photographs — and then look carefully at everything that happened after them.
 
-**Picture:** Open on O01 / reference image 24 as a still only if rights are cleared; use illustration 11 and the cutout 3 as visibly reconstructed alternatives. Freeze, pull back into a television frame 4. Do not animate a real photograph as though it were contemporaneous footage.
+**Picture:** Open on O01 / reference image 24 as a still. Use illustration 11 and the cutout 3 as visibly reconstructed alternatives. Freeze, pull back into a television frame 4. Keep the caption tied to the pictured event.
 
 ## 2. Two clubs, one country
 
@@ -132,15 +132,15 @@ Numbers correspond to the reviewed contact sheet; paths are relative to the [sup
 | 15 | `01_Scenes/Photographic football magazine cut-paper plate-3.png` | Reconstructed escorted group; scene 5. |
 | 16 | `01_Scenes/Archival football photo, torn-paper magazine plate.png` | Reconstructed clash; scene 4. |
 | 17 | `00_Original_References/Archival broadcast with blue-and-white kit-1.png` | Broadcast-style graphic; authenticity unverified; treat as reconstruction. |
-| 18 | `00_Original_References/O07_Josip_Kuze_Later_Portrait.jpg` | Later portrait; scene 9 only; source, date and rights unverified. |
-| 19 | `00_Original_References/O06_Boban_Early_Career_Context.jpg` | Career context; date and rights unverified. |
-| 20 | `00_Original_References/O05_Boban_Aftermath_Close.jpg` | Scene 8; source/date/rights unverified. |
-| 21 | `00_Original_References/O04_Boban_Escorted.jpg` | Scene 5/7; source/date/rights unverified. |
-| 22 | `00_Original_References/O03_Pitch_Chaos.jpg` | Scene 5; source/date/rights unverified. |
-| 23 | `00_Original_References/O02_Track_Clashes.jpg` | Context until independently verified; source/date/rights unverified. |
-| 24 | `00_Original_References/O01_Boban_Ahmetovic_Kick.jpg` | Key image; source/date/rights unverified. |
+| 18 | `00_Original_References/O07_Josip_Kuze_Later_Portrait.jpg` | Later portrait for scene 9. Exact date and source unverified. |
+| 19 | `00_Original_References/O06_Boban_Early_Career_Context.jpg` | Career context. Exact date unverified. |
+| 20 | `00_Original_References/O05_Boban_Aftermath_Close.jpg` | Context for scene 8. Exact date and source unverified. |
+| 21 | `00_Original_References/O04_Boban_Escorted.jpg` | Context for scenes 5 and 7. Exact date and source unverified. |
+| 22 | `00_Original_References/O03_Pitch_Chaos.jpg` | Context for scene 5. Exact date and source unverified. |
+| 23 | `00_Original_References/O02_Track_Clashes.jpg` | Context image. Exact date and source unverified. |
+| 24 | `00_Original_References/O01_Boban_Ahmetovic_Kick.jpg` | Key image. Exact date and source unverified. |
 
-The user selected the folder as a whole. The finished production needs a per-file usage report; if an item is withheld because its identification or rights cannot be established, show the reason clearly rather than silently dropping it or fabricating its context. Two folder sections (`04_Titles_And_Labels`, `05_Production_Notes`) were empty when checked.
+The user selected the folder as a whole and approved all its pictures for use. The finished production needs a per-file usage report. When the exact subject or date is uncertain, label the photo as context. Two folder sections (`04_Titles_And_Labels`, `05_Production_Notes`) were empty when checked.
 
 ## Sources / claim ledger
 
@@ -149,7 +149,7 @@ The user selected the folder as a whole. The finished production needs a per-fil
 - [Ivan Đorđević: The War Did (not) Begin at Maksimir](https://www.ceeol.com/search/article-detail?id=134073) — scholarly account of later media narratives and national mythology.
 - [University North: media coverage of the unplayed match](https://repozitorij.unin.hr/en/islandora/object/unin%3A6747/datastream/PDF/view) — review of media accounts and different interpretations.
 - [HRT: Dinamo and Red Star met again in 1991](https://sport.hrt.hr/hrvatski-nogomet/svi-pamte-bobanov-udarac-35-godisnjica-neodigrane-utakmice-dinama-i-zvezde-12154319) — later fixture and continuation of league football.
-- [Index: contemporary footage and recollections](https://www.index.hr/sport/clanak/video-prve-i-posljednje-snimke-osnivaca-boysa-o-mitskoj-utakmici-dinama-i-zvezde/2182049.aspx) — names the officer; verify footage and image rights independently.
+- [Index: contemporary footage and recollections](https://www.index.hr/sport/clanak/video-prve-i-posljednje-snimke-osnivaca-boysa-o-mitskoj-utakmici-dinama-i-zvezde/2182049.aspx) — names the officer and helps identify the scene.
 
 ## Separate Shorts — new hooks, not excerpts from the film
 

@@ -46,6 +46,23 @@ def season(results: str, **kw):
     return ledger(out, **kw)
 
 
+class RunningScore(unittest.TestCase):
+    def test_scores_follow_the_record_and_narration(self):
+        from studio.script import match_score_reveals
+        claim = match('m', '2002-01-01', 'Visitors', 2, 1,
+                      scorers=[{'minute': 12}, {'minute': 49}])
+        detail = {'id': 'd', 'fact': {'kind': 'match-detail', 'date': '2002-01-01',
+                                     'opponent_scorers': [{'minute': 81}]}}
+        f = claim['fact']
+        self.assertEqual(director.goal_scores({'claims': [claim, detail]}, f),
+                         {0: ((0, 0), (1, 0)), 1: ((1, 0), (2, 0))})
+        self.assertEqual(director.goal_scores({'claims': [claim]}, f), {})
+        words = [{'w': word, 'start': i} for i, word in enumerate(('One-nil.', 'Then', 'two-nil.', 'Finally', 'two-one.'))]
+        shot = {'start': 5, 'voice_at': 5.5, 'words': words, 'narration': 'One-nil. Then two-nil. Finally two-one.'}
+        self.assertEqual(match_score_reveals({'claims': [claim, detail]}, shot, f),
+                         [(0.5, (1, 0)), (2.5, (2, 0)), (4.5, (2, 1))])
+
+
 class FormLine(unittest.TestCase):
     def test_form_is_wins_minus_defeats_and_gd_accumulates(self):
         st = director.story(season('WWLDW'))

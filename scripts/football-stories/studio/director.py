@@ -15,6 +15,7 @@ import datetime as dt
 import json
 import re
 import unicodedata
+from itertools import groupby
 
 STORY_VERSION = 2
 
@@ -152,6 +153,52 @@ def _opp_minutes(f: dict, detail: dict | None) -> list[int] | None:
         return None
     mins = [x.get('minute') for x in sc if isinstance(x, dict)]
     return sorted(mins) if len(mins) == len(sc) and all(_is_int(m) for m in mins) else None
+
+
+def match_goal_states(ledger: dict, match: dict) -> list[tuple[int | None, tuple[int, int], tuple[int, int]]]:
+    """Verified home–away scores around goals. Opponent goals have no club-scorer index."""
+    scorers = match.get('scorers') or []
+    if (match['club_goals'] or scorers) and _club_minutes(match) is None:
+        return []
+    if match.get('side') not in ('home', 'away'):
+        return []
+    detail = _detail(ledger, match['date']) if match['opponent_goals'] and match.get('date') else None
+    if detail and detail.get('opponent') and not same_club(detail['opponent'], [match.get('opponent')]):
+        detail = None
+    opponent = _opp_minutes(match, match if match.get('opponent_scorers') else detail)
+    if opponent is None:
+        return []
+    us = int(match['side'] == 'away')
+    events = [(goal['minute'], us, index) for index, goal in enumerate(scorers)]
+    events += [(minute, 1 - us, None) for minute in opponent]
+    score = [0, 0]
+    states = []
+    for _, group in groupby(sorted(events, key=lambda e: e[0]), key=lambda e: e[0]):
+        goals = list(group)
+        before = tuple(score)
+        for _, side, _ in goals:
+            score[side] += 1
+        # Several goals in one recorded minute can establish the next score but not their order.
+        index = goals[0][2] if len(goals) == 1 else None
+        states.append((index, before, tuple(score)))
+    return states
+
+
+def goal_scores(ledger: dict, match: dict) -> dict[int, tuple[tuple[int, int], tuple[int, int]]]:
+    return {index: (before, after) for index, before, after in match_goal_states(ledger, match) if index is not None}
+
+
+def goal_word_time(shot: dict, scorer: str, fallback: float) -> float:
+    """Find the spoken scorer reveal on the same clock used by captions."""
+    name = re.findall(r'[^\W_]+', scorer.casefold())
+    words = shot.get('words') or []
+    if not name or shot.get('voice_at') is None:
+        return fallback
+    lead = shot['voice_at'] - shot['start']
+    for word in words:
+        if name[-1] in re.findall(r'[^\W_]+', word['w'].casefold()):
+            return lead + word['start']
+    return fallback
 
 
 def _pens(ledger: dict, f: dict) -> dict:

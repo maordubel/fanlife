@@ -160,15 +160,15 @@ def lower_third(ink: Inks, f: dict, club: str) -> Image.Image:
     im.alpha_composite(ai, (int(name_w + sw + 26), int(h / 2 - ai.height / 2)))
     im.alpha_composite(sc, (int(name_w + sw / 2 - sc.width / 2), int(h / 2 - sc.height / 2)))
     extra = []
-    if f.get('after_extra_time'):
+    if f.get('after_extra_time') and not f.get('in_play'):
         extra.append('A.E.T.')
-    if f.get('penalties'):
+    if f.get('penalties') and not f.get('in_play'):
         extra.append(f"{f['penalties'].get('winner')} won {f['penalties'].get('score') or f['penalties'].get('shootout')} on pens")
     strap = ' · '.join(x for x in [f.get('competition'), f.get('stage'), short_date(f.get('date')), *extra] if x).upper()
     st = text(strap, 'caps', 22, a(ink.ink), max_w=W_ - 40)
     d.rectangle([0, h, st.width + 30, h + st.height + 14], fill=a(ink.news))
     im.alpha_composite(st, (15, h + 7))
-    ft = text('FULL TIME', 'caps', 18, a(ink.paper))
+    ft = text('MATCH SCORE' if f.get('in_play') else 'FULL TIME', 'caps', 18, a(ink.paper))
     d.rectangle([W_ - ft.width - 24, h, W_, h + ft.height + 12], fill=a(ink.ink))
     im.alpha_composite(ft, (W_ - ft.width - 12, h + 6))
     return im

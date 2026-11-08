@@ -29,7 +29,7 @@ class EditCoverage(unittest.TestCase):
         assets = [asset(n) for n in range(70)]
         result, report = media.place(original, {'media_assets': assets})
         self.assertEqual((report['required'], report['used']), (70, 70))
-        self.assertEqual(report['added_seconds'], 69 * 4)
+        self.assertEqual(report['added_seconds'], 70 * 4)
         self.assertEqual([s['n'] for s in result], list(range(len(result))))
         voiced = [s for s in result if s.get('voice_file')]
         self.assertEqual([s['source_n'] for s in voiced], list(range(4)))
@@ -49,16 +49,27 @@ class EditCoverage(unittest.TestCase):
         self.assertEqual(report['added_seconds'], 0)
         self.assertEqual([s['required_asset'] for s in result], [assets[1]['key'], assets[0]['key']])
 
+    def test_selected_picture_with_wrong_club_does_not_accompany_narration(self):
+        wrong = {**asset(1), 'source': 'Celtic goal.png'}
+        original = shot(0, narration='Hapoel Tel Aviv scored a goal.')
+        original['visual']['art'] = wrong['key']
+        result, _ = media.place([original], {'media_assets': [wrong]})
+        self.assertNotIn('art', result[0]['visual'])
+        self.assertEqual(result[1]['required_asset'], wrong['key'])
+        self.assertEqual(result[1]['narration'], '')
+
     def test_receipt_missing_or_wrong_fails(self):
         result, report = media.place([shot(0)], {'media_assets': [asset(1)]})
         with tempfile.TemporaryDirectory() as d, patch.object(media, 'require_file'):
             root = Path(d)
+            n = report['pictures'][0]['shots'][0]['n']
+            receipt = root / 'shots' / f'shot-{n:04d}.cues.json'
             with self.assertRaises(StageError):
                 media.verify_rendered(root, {'media_usage': report})
-            write_json(root / 'shots/shot-0000.cues.json', {'required_asset': 'wrong'})
+            write_json(receipt, {'required_asset': 'wrong'})
             with self.assertRaises(StageError):
                 media.verify_rendered(root, {'media_usage': report})
-            write_json(root / 'shots/shot-0000.cues.json', {'required_asset': asset(1)['key']})
+            write_json(receipt, {'required_asset': asset(1)['key']})
             self.assertEqual(media.verify_rendered(root, {'media_usage': report})['rendered'], 1)
 
 
