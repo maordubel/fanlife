@@ -37,6 +37,11 @@ Write ONE Short of {{lo}}–{{hi}} spoken words (it must finish inside {{seconds
 - Line one is the premise, readable as a thumbnail. Plain words, like a person telling a friend ("so", "basically",
   "right?"). No hype words (incredible, insane, amazing), no "Did you know", no exclamation marks.
 - Every number, name, date and score you SAY must appear in the FACTS. Nothing invented, no quotes you were not given.
+- Tell a STORY, never a list of facts. The arc, one beat each: 1 the hook (the impossible, or the fan's pride);
+  2 the stakes (what was on the line — the competition, the round, what losing meant; use the CONTEXT lines);
+  3–5 the moments, in order, each one turning the story (a goal changes the night — say what it changed);
+  6 the payoff (what it meant, then and now). Never two sentences in a row of the shape "X scored in minute N";
+  turn a number into drama ("three minutes in, and the keeper is the one who scores").
 - 5–7 beats; their "say" joined is the whole narration. One picture per beat: a PLACE and what the people DO there.
 - "cast_sheet": at most 3 people who act on screen, each described as a cartoon designer needs them — team, shirt
   colours, number only if the facts give it, shorts, hair, build, expression. A person no fact describes is "a player

@@ -90,10 +90,15 @@ export function FlowPanel({job,onChange}:{job:Job;onChange:()=>Promise<void>|voi
   <label className={css.file}>{have.has(file)?`✓ ${file} uploaded — replace:`:`Upload ${file}:`} <input type="file" accept={file.endsWith('.mp4')?'video/mp4':'image/*'} disabled={!!busy} onChange={e=>{const f=e.target.files?.[0];if(f)void upload(file,f);e.target.value=''}}/></label>
   {busy===file&&<p role="status" className={css.hint}>Uploading…</p>}
  </div>
+ const total=flowFiles(p).length,done=total-missing.length
  return <section className={`${css.panel}`} aria-label={`Flow pack: ${p.title}`} style={{marginBottom:18}}>
-  <div className={css.bar}><span>Make in Google Flow · {p.title}</span><span>{p.clips.length} clips · {p.credits} credits</span></div>
-  <div className={`${css.body} ${css.flow}`}>
+  <div className={css.bar}><span>Google Flow · {p.title}</span><span>{done}/{total} files · {p.credits} credits</span></div>
+  <div className={css.body}>
+   <p role="status"><b>Automatic.</b> Claude makes the characters, the clips and the stills in Google Flow on your computer, uploads them here and starts the edit — about once an hour while the Claude app is open. Nothing for you to do; the finished Short arrives on your Telegram.</p>
    <p><b>The narration:</b> {p.narration}</p>
+  </div>
+  <details className={css.bannerMore} style={{margin:'0 16px 16px'}}><summary className="min-h-tap">Manual fallback — the prompts and the upload slots</summary>
+  <div className={`${css.body} ${css.flow}`}>
    <ol>{p.steps.map(s=><li key={s}>{s}</li>)}</ol>
    <h3>1 · Characters (free)</h3>
    {p.characters.map(c=><div key={c.id} className={css.slot}><div className={css.slotHead}><span>{c.id} — {c.role}</span><Copy text={c.prompt}/></div><pre className={css.prompt}>{c.prompt}</pre></div>)}
@@ -103,5 +108,6 @@ export function FlowPanel({job,onChange}:{job:Job;onChange:()=>Promise<void>|voi
    {err&&<p role="alert" className={css.alert}>{err}</p>}
    <button type="button" className={`${css.go} min-h-tap`} disabled={!!busy||missing.length>0} onClick={()=>void edit()}>{busy==='edit'?'Starting…':missing.length?`${missing.length} file(s) to go`:'Edit the Short'}</button>
   </div>
+  </details>
  </section>
 }

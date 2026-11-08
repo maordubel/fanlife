@@ -393,3 +393,49 @@ def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log, 
                                         {'name': 'length', 'ok': ok, 'detail': f"{r['seconds']} s (a Short is at most 60 s)"}],
                    'cannot_prove': ['That the drawn players read as the right men — watch it before posting.']},
             'cost': {'renderMinutes': round(r['seconds'] / 60, 1), 'voice': os.environ.get('STORIES_VOICE') or 'kokoro'}}
+
+
+# ── CLASSIFIED writers' room (owner, 8.11.2026: "full automation") ───────────────────────────────────────────────────
+def run_casefile(st, job: dict, jd: Path, progress, log) -> dict:
+    """A FILE researched and written by the studio (studio/casefile.py), committed to the repository so the desk lists
+    it for the owner's approval; its panels are made in Google Flow by Claude on the owner's computer."""
+    from . import casefile
+    spec = job.get('spec') or {}
+    progress('research', 0.05, f"Researching: {spec.get('topic')}")
+    r = casefile.make(spec['topic'], spec.get('tone') or 'LAUGH', spec.get('notes') or '', jd / 'cache', log,
+                      number=(spec.get('file') or '').removeprefix('file') or None)
+    progress('package', 0.9, f"Saving FILE {r['number']} · {r['title']}")
+    commit = _commit([r['script'], 'scripts/football-stories/comic/classified_manifest.json',
+                      f"scripts/football-stories/comic/episodes/{r['file']}-*.json"],
+                     f"CLASSIFIED FILE {r['number']} · {r['title']} — drafted by the studio's writers' room", log)
+    checks = [{'name': 'validate', 'ok': not r['errors'], 'detail': '; '.join(r['errors']) or 'the episode validates'},
+              {'name': 'saved', 'ok': commit, 'detail': 'committed to the repository; the desk shows it after the next deploy' if commit else 'not committed — see the log'}]
+    return {'state': 'needs_review', 'stage': 'done',
+            'qa': {'ok': not r['errors'] and commit, 'checks': checks,
+                   'cannot_prove': [f"FILE {r['number']} is a draft: read it and approve it in Studio → CLASSIFIED. "
+                                    f"Its {r['panels']} panels are made in Google Flow by Claude on your computer."]},
+            'youtube': {'title': r['title'], 'file': r['file'], 'script': r['script']}}
+
+
+def _commit(paths: list[str], message: str, log) -> bool:
+    """Commit the FILE to the branch the worker runs on (main) and push; a race with another commit is rebased."""
+    import glob
+    repo = HERE.parents[2]
+    files = [p for x in paths for p in (glob.glob(str(repo / x)) if '*' in x else [str(repo / x)])]
+    try:
+        subprocess.run(['git', '-C', str(repo), 'config', 'user.name', 'fanlife-studio'], check=True)
+        subprocess.run(['git', '-C', str(repo), 'config', 'user.email', 'actions@users.noreply.github.com'], check=True)
+        subprocess.run(['git', '-C', str(repo), 'add', *files], check=True)
+        if subprocess.run(['git', '-C', str(repo), 'diff', '--cached', '--quiet']).returncode == 0:
+            log('Commit: nothing changed')
+            return True
+        subprocess.run(['git', '-C', str(repo), 'commit', '-qm', message], check=True)
+        for _ in range(3):
+            subprocess.run(['git', '-C', str(repo), 'pull', '-q', '--rebase', 'origin', 'main'], check=False)
+            if subprocess.run(['git', '-C', str(repo), 'push', '-q', 'origin', 'HEAD:main']).returncode == 0:
+                log('Commit: pushed to main')
+                return True
+        return False
+    except subprocess.CalledProcessError as e:
+        log(f'Commit failed: {e}')
+        return False

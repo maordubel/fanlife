@@ -25,6 +25,12 @@ export function ClassifiedTab({facts,onMade,children}:{facts:Facts;onMade:(id:st
    key.current='';setMsg(`FILE ${f.number} is queued. The worker starts it within a few minutes.`);await onMade(b.job.id)}
   catch(e){setErr(e instanceof Error?e.message:'Could not queue the FILE.')}finally{setBusy(false)}
  }
+ async function writeFile(brief:{file?:string;topic:string;tone:string;notes?:string}){
+  setBusy(true);setErr('');setMsg('')
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'casefile',brief,idempotencyKey:crypto.randomUUID()})})
+   setMsg('The writers\u2019 room is on it: research, script, episode — about fifteen minutes. Claude then makes its panels in Google Flow; you read it and approve it here.');await onMade(b.job.id)}
+  catch(e){setErr(e instanceof Error?e.message:'Could not start the writers\u2019 room.')}finally{setBusy(false)}
+ }
  return <>
   <DeskBanner b={banner}/>
   <div className={css.grid}>
@@ -63,10 +69,30 @@ export function ClassifiedTab({facts,onMade,children}:{facts:Facts;onMade:(id:st
       <button type="button" className={`${css.go} min-h-tap`} disabled={busy||banner.run!=='yes'||!!f.scenes?.length&&!scenesApproved} onClick={()=>void produce()}>{busy?'Queuing…':`Produce FILE ${f.number}`}</button>
       <p className={css.hint}>Nothing is uploaded to YouTube and nothing is published. If the script changes after you approve it, the job stops and asks again.</p>
      </>}
+     {f&&<button type="button" className={`${css.chip} min-h-tap`} disabled={busy} onClick={()=>void writeFile({file:f.file,topic:`${f.title}: ${f.hook_options?.[0]??f.title}`,tone:f.tone})}>Rewrite FILE {f.number} in the writers&rsquo; room</button>}
      {err&&<p role="alert" className={css.alert}>{err}</p>}{msg&&<p role="status" className={`${css.alert} ${css.ok}`}>{msg}</p>}
     </div>
    </section>
+   <WritersRoom busy={busy} onWrite={writeFile}/>
    {children}
   </div>
  </>
+}
+
+
+/** The writers' room (owner, 8.11.2026: "full automation"): a story in a sentence → the studio researches it (every fact
+ *  tied to its page), writes the FILE by docs/fanlife/classified/WRITERS-ROOM.md, saves it, and Claude makes its panels
+ *  in Google Flow. The FILE then waits here for the owner's approval like any other. */
+function WritersRoom({busy,onWrite}:{busy:boolean;onWrite:(b:{topic:string;tone:string;notes?:string})=>Promise<void>}){
+ const [topic,setTopic]=useState(''),[tone,setTone]=useState('LAUGH'),[notes,setNotes]=useState('')
+ return <section className={`${css.panel} ${css.form}`} aria-labelledby="wr-h">
+  <div className={css.bar}><span id="wr-h">Writers&rsquo; room · a new FILE</span><span>Automatic</span></div>
+  <div className={css.body}>
+   <label className={css.lab}>The story, in a sentence or two<textarea value={topic} onChange={e=>setTopic(e.target.value)} rows={3} maxLength={400} placeholder="In 1981 Barcelona's top scorer Quini was kidnapped the day after scoring twice — and the league played on."/></label>
+   <div className={css.chips} role="group" aria-label="Tab">{['LAUGH','WAR','HEART'].map(t=><button type="button" key={t} className={`${css.chip} min-h-tap`} aria-pressed={tone===t} onClick={()=>setTone(t)}>{t}</button>)}</div>
+   <label className={css.lab}>What you know (optional)<textarea value={notes} onChange={e=>setNotes(e.target.value)} rows={3} maxLength={4000} placeholder="Names, dates, a link — the research checks it."/></label>
+   <button type="button" className={`${css.go} min-h-tap`} disabled={busy||topic.trim().length<12} onClick={()=>void onWrite({topic,tone,notes})}>Write the FILE</button>
+   <p className={css.hint}>Research, a 5–7 minute script with its cold open, chapters, versions and sources, the episode and its panel prompts — then Claude makes the panels in Google Flow on your computer. Nothing is produced until you approve it.</p>
+  </div>
+ </section>
 }

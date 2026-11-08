@@ -1,6 +1,6 @@
 import 'server-only'
 import {randomUUID} from 'crypto'
-import {StoryError,newJob,newSpecialJob,validateBrief,validateClassified,validateShort,validateVlog,type Job,type VlogMatch} from './jobs'
+import {StoryError,newJob,newSpecialJob,validateBrief,validateCasefile,validateClassified,validateShort,validateVlog,type Job,type VlogMatch} from './jobs'
 import {clubNames,paletteFor,storyClubs} from './clubs'
 import {createJob,listJobs} from './store'
 import {catalogOf} from './catalog'
@@ -109,6 +109,18 @@ export async function createPromo(raw:unknown,actor:string,key:string):Promise<{
  const x=validatePromo(raw,films)
  const palette={club_id:'promo',club_name:'FAN LIFE',primary:'#B02D10',on_primary:'#FFFBF2',bans:[]}
  const job=newSpecialJob(randomUUID(),'promo',x,palette,actor||'owner',key)
+ if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
+ return {job,created:true}
+}
+
+/** A CLASSIFIED FILE written by the studio's writers' room (a new story, or a rewrite of an existing FILE). */
+export async function createCasefile(raw:unknown,actor:string,key:string):Promise<{job:Job;created:boolean}>{
+ const dup=await existing(key)
+ if(dup)return {job:dup,created:false}
+ const files=await readClassified()??[]
+ const x=validateCasefile(raw,files)
+ const palette={club_id:'classified',club_name:'CLASSIFIED',primary:'#15130F',on_primary:'#FFFBF2',bans:[]}
+ const job=newSpecialJob(randomUUID(),'casefile',x,palette,actor||'owner',key)
  if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
  return {job,created:true}
 }
