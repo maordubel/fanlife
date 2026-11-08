@@ -153,6 +153,8 @@ class Research(unittest.TestCase):
         with patch.dict(os.environ, env, clear=True), tempfile.TemporaryDirectory() as d:
             self.assertEqual(R.for_script(['Riyad Benayad scored in Casablanca.'], Path(d), lambda m: None), {})
 
+    @unittest.skipUnless(len(list((Path(__file__).resolve().parents[4] / 'content' / 'compiled').glob('*.json'))) >= 5,
+                         'the club packs are built by npm run clubs:precompile')
     def test_the_research_order_puts_the_worst_clubs_first(self):
         from studio import name_research as R
         e = R.entries()
