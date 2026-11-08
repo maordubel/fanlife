@@ -48,7 +48,8 @@ def split_beats(narration: str, cartoon: list | None) -> list[dict]:
     if isinstance(cartoon, list) and cartoon and all(isinstance(b, dict) and isinstance(b.get('say'), str) for b in cartoon):
         said = ' '.join(b['say'].strip() for b in cartoon).split()
         if [w.lower().strip('.,!?;:—"') for w in said] == [w.lower().strip('.,!?;:—"') for w in words]:
-            return [{'say': b['say'].strip(), 'show': str(b.get('show') or ''), 'plate': str(b.get('plate') or '')} for b in cartoon]
+            return [{**{k: b[k] for k in ('scene', 'era', 'cast') if k in b}, 'say': b['say'].strip(), 'show': str(b.get('show') or ''),
+                     'plate': str(b.get('plate') or '')} for b in cartoon]
     parts = [p.strip() for p in re.split(r'(?<=[.?!])\s+', narration.strip()) if p.strip()]
     return [{'say': p, 'show': ''} for p in parts]
 
@@ -100,6 +101,6 @@ def plan(beats: list[dict], words: list[dict], lead: float = 0.1) -> list[dict]:
             if gag and gag_of(w['w']) == gag:
                 hit = w['start'] + lead
                 break
-        out.append({'i': i, 'say': b['say'], 'show': b['show'], 'plate': b.get('plate') or '', 't0': round(t0, 3), 't1': round(t1, 3), 'pose': pose, 'expr': expr,
+        out.append({**{k: b[k] for k in ('scene', 'era', 'cast') if k in b}, 'i': i, 'say': b['say'], 'show': b['show'], 'plate': b.get('plate') or '', 't0': round(t0, 3), 't1': round(t1, 3), 'pose': pose, 'expr': expr,
                     'gag': gag, 'hit': round(hit, 3), 'score': score_in(text) if gag == 'scoreboard' else None})
     return out

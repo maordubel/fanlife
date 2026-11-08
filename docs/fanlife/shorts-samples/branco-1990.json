@@ -1,0 +1,12 @@
+{"cast_sheet":[
+ {"id":"branco","look":"Branco, Brazil's left-back at the 1990 World Cup: yellow shirt with green collar and cuffs and the number 6, blue shorts, white socks, dark curly hair, thick dark moustache, strong build"},
+ {"id":"physio","look":"an Argentina team physio in 1990: light sky-blue tracksuit with white stripes, a medical bag on his shoulder, short dark hair, sly grin"},
+ {"id":"caniggia","look":"Claudio Caniggia, Argentina striker 1990: sky-blue and white vertical striped shirt number 8, black shorts, long straight blond hair, slim and fast"}],
+ "beats":[
+ {"say":"This bottle of water knocked Brazil out of a World Cup.","show":"the bottle","scene":"close on the touchline at a big floodlit stadium at night in 1990, a plastic water bottle glowing on the grass, crowd blurred behind","cast":[]},
+ {"say":"Turin, 1990. Brazil are battering Argentina.","show":"stadium","scene":"Stadio delle Alpi in Turin at night, 1990 World Cup: packed stands, Brazil fans in yellow and Argentina fans in sky-blue and white, floodlights, the pitch from low angle","cast":[{"id":"branco","action":"running forward with the ball at his feet, determined","motion":"run"}]},
+ {"say":"The Argentine physio runs on, and Branco asks for a drink.","show":"bench","scene":"the touchline in front of the Argentina bench at night, a medical bag on the grass, floodlights","cast":[{"id":"physio","action":"holding out a water bottle with a sly grin","motion":"walk"},{"id":"branco","action":"reaching out for the water bottle, thirsty, sweating","motion":"talk"}]},
+ {"say":"Minutes later he can barely stand.","show":"dizzy","scene":"the middle of the pitch at night, floodlights glaring, the stands a hazy blur","cast":[{"id":"branco","action":"dizzy, swaying, a hand on his head","motion":"wobble"}]},
+ {"say":"Then Caniggia scores.","show":"goal","scene":"the penalty area in front of the goal at night, the net, the goalkeeper's side of the pitch, floodlights","cast":[{"id":"caniggia","action":"sprinting past the keeper and shooting into the net","motion":"run"}]},
+ {"say":"Argentina win one nil. Brazil go home.","show":"celebrate","scene":"the Argentina fans' end at night, sky-blue and white flags waving, floodlights","cast":[{"id":"caniggia","action":"celebrating with both arms up","motion":"celebrate"}]},
+ {"say":"Years later Maradona admitted it on TV. The water was spiked.","show":"confession, stamp","scene":"a 2000s television studio set with warm lights and an empty talk-show couch, a big TV screen glowing","cast":[]}]}

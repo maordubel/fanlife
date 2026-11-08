@@ -20,7 +20,7 @@ from pathlib import Path
 import numpy as np
 
 from ..common import StageError, read_json, write_json
-from . import build, plates, scene, sound, stage
+from . import anim, build, plates, scene, sound, stage
 
 MAX_S = 30.0
 FPS = 30
@@ -89,10 +89,15 @@ def mix(voice_wav: Path, duration: float, cues: list[tuple[float, str]], out: Pa
 
 def make(text: str, cartoon: list | None, out: Path, work: Path, *, primary: str, on_primary: str, bans: list[str], tag: str,
          masthead: str = '', music_tags: list[str] | None = None, fake_voice: bool = False, log=print, cache: Path | None = None,
-         club_id: str | None = None, season: str | None = None, engine: str | None = None) -> dict:
+         club_id: str | None = None, season: str | None = None, engine: str | None = None, cast_sheet: list | None = None) -> dict:
     """`engine`: 'illustrated' (default — the owner's drawn library, owner 8.11.2026) or 'drawn' (the code-drawn
     character, kept as the fallback when the library is not on this runner)."""
-    engine = engine or os.environ.get('STORIES_SHORTS_LOOK') or ('illustrated' if plates.has_library() else 'drawn')
+    if isinstance(cartoon, dict):  # {"beats": [...], "cast_sheet": [...]}
+        cast_sheet = cast_sheet or cartoon.get('cast_sheet')
+        cartoon = cartoon.get('beats')
+    has_story_art = isinstance(cartoon, list) and any(isinstance(b, dict) and b.get('scene') for b in cartoon)
+    engine = engine or os.environ.get('STORIES_SHORTS_LOOK') or (
+        'animated' if has_story_art and os.environ.get('GEMINI_API_KEY') else 'illustrated' if plates.has_library() else 'drawn')
     work.mkdir(parents=True, exist_ok=True)
     wav, words, vdur = voice(text, work, cache or work / 'cache', fake_voice)
     duration = round(vdur + 0.75, 3)
@@ -103,7 +108,11 @@ def make(text: str, cartoon: list | None, out: Path, work: Path, *, primary: str
     if proj.exists():
         shutil.rmtree(proj)
     shots = None
-    if engine == 'illustrated':
+    if engine == 'animated':
+        gen_cache = Path(os.environ.get('STORIES_GENART_CACHE') or ((cache or work / 'cache').parent / 'genart'))
+        art = anim.draw_story(beats, cast_sheet or [], gen_cache, bans, log)
+        _, cues, shots = anim.compose(proj, beats, art, words, duration, accent=primary, bans=bans, tag=tag, fps=FPS)
+    elif engine == 'illustrated':
         _, cues, shots = stage.compose(proj, beats, words, duration, accent=primary, bans=bans, tag=tag, masthead=masthead,
                                        club_id=club_id, season=season, fps=FPS, salt=f'{club_id}:{text[:40]}')
     else:
@@ -137,7 +146,7 @@ def main(argv=None) -> int:
     ap.add_argument('--bans', default='yellow')
     ap.add_argument('--tag', default='FAN LIFE · FOOTBALL STORIES')
     ap.add_argument('--voice', choices=['kokoro', 'fake'], default='kokoro')
-    ap.add_argument('--look', choices=['illustrated', 'drawn'])
+    ap.add_argument('--look', choices=['animated', 'illustrated', 'drawn'])
     ap.add_argument('--club')
     a = ap.parse_args(argv)
     cartoon = read_json(a.cartoon) if a.cartoon else None
