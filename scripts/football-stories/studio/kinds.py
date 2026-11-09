@@ -16,6 +16,7 @@ failure reporting the same for all of them.
 from __future__ import annotations
 
 import json
+import urllib.request
 import os
 import re
 import shutil
@@ -100,6 +101,30 @@ def check_classified_panels(ep: dict, report: dict) -> None:
         raise StageError('PANELS', 'Selected episode images could not be downloaded: ' + ', '.join(missing), retryable=True)
 
 
+def flow_panels(st, file: str, panels: Path, log) -> int:
+    """Panels the Flow operator made (no Drive picture in the manifest) → the panels folder, before the Drive fetch."""
+    try:
+        from comic.manifest import entries, load_manifest
+        want = {e['id']: e for e in entries(load_manifest(), file) if not e.get('drive_id')}
+    except Exception as e:  # noqa: BLE001
+        log(f'Flow panels: manifest unreadable ({e})')
+        return 0
+    if not want:
+        return 0
+    urls = (st.call({'op': 'classified_urls', 'file': file, 'ids': sorted(want)}) or {}).get('urls') or {}
+    panels.mkdir(parents=True, exist_ok=True)
+    n = 0
+    for pid, url in urls.items():
+        try:
+            with urllib.request.urlopen(url, timeout=180) as r:
+                (panels / want[pid]['file']).write_bytes(r.read())
+            n += 1
+        except OSError as e:
+            log(f'Flow panel {pid} did not download — {e}')
+    log(f'Flow panels: {n} of {len(want)} made in Google Flow')
+    return n
+
+
 def run_classified(st, job: dict, jd: Path, progress, log) -> dict:
     """→ the finish payload. `progress(stage, frac, msg)` may raise Stop between steps."""
     spec = job.get('spec') or {}
@@ -118,6 +143,7 @@ def run_classified(st, job: dict, jd: Path, progress, log) -> dict:
         ep_path = tmp / ep_path.name
         ep_path.write_text(json.dumps(episode, ensure_ascii=False), encoding='utf-8')
     progress('research', 0.05, f"FILE {spec.get('number')}: the panels from your Drive")
+    flow_panels(st, spec['file'], panels, log)
     _run([sys.executable, str(COMIC / 'drive_fetch.py'), '--file', spec['file'], '--out', str(panels), '--report', str(tmp / 'fetch.json')], log, code='PANELS')
     check_classified_panels(episode, read_json(tmp / 'fetch.json'))
     progress('graphics', 0.12, 'Which picture is which (measured)')
@@ -393,3 +419,49 @@ def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log, 
                                         {'name': 'length', 'ok': ok, 'detail': f"{r['seconds']} s (a Short is at most 60 s)"}],
                    'cannot_prove': ['That the drawn players read as the right men — watch it before posting.']},
             'cost': {'renderMinutes': round(r['seconds'] / 60, 1), 'voice': os.environ.get('STORIES_VOICE') or 'kokoro'}}
+
+
+# ── CLASSIFIED writers' room (owner, 8.11.2026: "full automation") ───────────────────────────────────────────────────
+def run_casefile(st, job: dict, jd: Path, progress, log) -> dict:
+    """A FILE researched and written by the studio (studio/casefile.py), committed to the repository so the desk lists
+    it for the owner's approval; its panels are made in Google Flow by Claude on the owner's computer."""
+    from . import casefile
+    spec = job.get('spec') or {}
+    progress('research', 0.05, f"Researching: {spec.get('topic')}")
+    r = casefile.make(spec['topic'], spec.get('tone') or 'LAUGH', spec.get('notes') or '', jd / 'cache', log,
+                      number=(spec.get('file') or '').removeprefix('file') or None)
+    progress('package', 0.9, f"Saving FILE {r['number']} · {r['title']}")
+    commit = _commit([r['script'], 'scripts/football-stories/comic/classified_manifest.json',
+                      f"scripts/football-stories/comic/episodes/{r['file']}-*.json"],
+                     f"CLASSIFIED FILE {r['number']} · {r['title']} — drafted by the studio's writers' room", log)
+    checks = [{'name': 'validate', 'ok': not r['errors'], 'detail': '; '.join(r['errors']) or 'the episode validates'},
+              {'name': 'saved', 'ok': commit, 'detail': 'committed to the repository; the desk shows it after the next deploy' if commit else 'not committed — see the log'}]
+    return {'state': 'needs_review', 'stage': 'done',
+            'qa': {'ok': not r['errors'] and commit, 'checks': checks,
+                   'cannot_prove': [f"FILE {r['number']} is a draft: read it and approve it in Studio → CLASSIFIED. "
+                                    f"Its {r['panels']} panels are made in Google Flow by Claude on your computer."]},
+            'youtube': {'title': r['title'], 'file': r['file'], 'script': r['script']}}
+
+
+def _commit(paths: list[str], message: str, log) -> bool:
+    """Commit the FILE to the branch the worker runs on (main) and push; a race with another commit is rebased."""
+    import glob
+    repo = HERE.parents[2]
+    files = [p for x in paths for p in (glob.glob(str(repo / x)) if '*' in x else [str(repo / x)])]
+    try:
+        subprocess.run(['git', '-C', str(repo), 'config', 'user.name', 'fanlife-studio'], check=True)
+        subprocess.run(['git', '-C', str(repo), 'config', 'user.email', 'actions@users.noreply.github.com'], check=True)
+        subprocess.run(['git', '-C', str(repo), 'add', *files], check=True)
+        if subprocess.run(['git', '-C', str(repo), 'diff', '--cached', '--quiet']).returncode == 0:
+            log('Commit: nothing changed')
+            return True
+        subprocess.run(['git', '-C', str(repo), 'commit', '-qm', message], check=True)
+        for _ in range(3):
+            subprocess.run(['git', '-C', str(repo), 'pull', '-q', '--rebase', 'origin', 'main'], check=False)
+            if subprocess.run(['git', '-C', str(repo), 'push', '-q', 'origin', 'HEAD:main']).returncode == 0:
+                log('Commit: pushed to main')
+                return True
+        return False
+    except subprocess.CalledProcessError as e:
+        log(f'Commit failed: {e}')
+        return False

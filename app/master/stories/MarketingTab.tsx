@@ -17,7 +17,7 @@ import css from './studio.module.css'
  * Marketing films (owner, 8.11.2026): a 20–30 s vertical cartoon animated in Google Flow about a FAN LIFE feature, the channel, a finished film
  * or the owner's own words — written only from that subject's facts (lib/stories/promo.ts), produced with one click.
  */
-const KIND_TEXT={film:'Documentary',classified:'CLASSIFIED',vlog:'I WAS THERE',promo:'Marketing film',short:'Animated Short'} as const
+const KIND_TEXT={film:'Documentary',classified:'CLASSIFIED',vlog:'I WAS THERE',promo:'Marketing film',short:'Animated Short',casefile:'CLASSIFIED · writers\' room'} as const
 /** The plan's fixed day (docs/fanlife/61 §2, plan v5) — the shape of a day, not a promise that a post went out. */
 const DAY:[string,string,string][]=[
  ['09:00','Stories','Live results of the FAN LIFE clubs (or nothing)'],['10:00','Feed','On this day'],['11:00','Stories','Live: next up'],

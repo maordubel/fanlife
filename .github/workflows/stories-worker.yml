@@ -13,7 +13,7 @@ on:
   schedule:
     - cron: '*/10 * * * *'
 permissions:
-  contents: read
+  contents: write  # a CLASSIFIED FILE written by the studio is committed to main (studio/kinds.run_casefile)
 concurrency:
   group: stories-worker
   cancel-in-progress: false

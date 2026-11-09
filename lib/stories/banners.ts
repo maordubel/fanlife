@@ -145,11 +145,11 @@ export function ideasBanner(f:Facts,ideas:{evidence:{level:string}}[]|null):Bann
 
 export function shortsBanner(f:Facts):Banner{
  const needs=[workerNeed(f.health),writerNeed(f.health,f.jobs,f.now),storageNeed(f.health),
-  {label:'Google Flow',light:'yes' as Light,text:'Your AI Pro plan: about 900 credits a month · a 6-clip Short ≈ 108 credits; character sheets and stills are free'}]
+  {label:'Google Flow',light:'yes' as Light,text:'Made automatically by Claude on your computer (your AI Pro plan, about 900 credits a month · a 6-clip Short ≈ 108 credits)'}]
  const run=verdict(needs),bad=firstBad(needs)
  return {tab:'shorts',makes:'An animated Short (20–30 s, 9:16) of one real night: the story’s real players drawn in their real kits, acting it out — written from the record, made in Google Flow, voiced, captioned and mixed here.',
   needs,run,headline:run==='yes'?`Ready. ${queueText(f.jobs)}`:`${run==='no'?'Cannot start now':'Will wait'}: ${bad!.label} — ${bad!.text}`,
-  next:'1 · The studio writes the Short and its Flow pack (a few minutes). 2 · Make the characters, clips and stills in Flow and upload them into their slots. 3 · “Edit the Short” — about ten minutes later it is in the job card and on your Telegram.'}
+  next:'Fully automatic: the studio writes the Short; Claude makes it in Google Flow on your computer (about once an hour while the Claude app is open), uploads it and starts the edit; it arrives on your Telegram.'}
 }
 
 export function statusBanner(f:Facts):Banner{
