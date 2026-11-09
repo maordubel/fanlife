@@ -98,10 +98,13 @@ export async function classifiedUrls(b:{file?:unknown;ids?:unknown}){
 
 /** The ticket the operator minted for this run (sha256 + expiry, two hours at most). */
 export const TICKET_FILE='stories/flow-ticket.json'
-export async function ticketOk(ticket:unknown,now=Date.now()):Promise<boolean>{
+/** The studio operator's own ticket (a session producing films), so the hourly Flow run and a production session never
+ *  overwrite each other's ticket. Same shape, same limits. */
+export const OPERATOR_TICKET_FILE='stories/operator-ticket.json'
+export async function ticketOk(ticket:unknown,now=Date.now(),file=TICKET_FILE):Promise<boolean>{
  if(typeof ticket!=='string'||!/^[A-Za-z0-9-]{32,128}$/.test(ticket))return false
  const d=durable();if(!d||d.kind==='memory')return false
- const r=await d.read(TICKET_FILE,{fresh:true,soft:false}).catch(()=>null)
+ const r=await d.read(file,{fresh:true,soft:false}).catch(()=>null)
  if(!r)return false
  let t:{hash?:string;expires?:string}
  try{t=JSON.parse(r.text)}catch{return false}

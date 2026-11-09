@@ -70,4 +70,6 @@ origin only). Ops: `jobs` (one line per job), `job` (the job + signed links; `ma
 `create` (kind + brief + key — the desk's own create functions and archive checks) and `act` (approve or choose a script,
 the editorial steps, pause/resume/retry/cancel, record an upload). It cannot delete a job, add pictures or fill Flow
 slots, and every change is logged as "Studio operator". This is how Claude produces and publishes a showcase without the
-owner signing in.
+owner signing in. A production session mints its own ticket in `stories/operator-ticket.json` (same SQL, that
+file name), so the hourly Flow run and the session never overwrite each other's ticket; the Flow door reads only
+`stories/flow-ticket.json`.

@@ -47,6 +47,7 @@ describe('the studio operator door (docs/fanlife/70 §Studio operator)',()=>{
   const r=src('app/api/master/stories/operator/route.ts')
   expect(r).toContain('sameOrigin(r)')
   expect(r).toContain('ticketOk(b.ticket)')
+  expect(r).toContain('OPERATOR_TICKET_FILE')
   expect(r).not.toMatch(/cronAuthorized|adminFromRequest|export async function (GET|DELETE)/)
   const o=src('lib/stories/operator.ts')
   expect(o).not.toMatch(/deleteJob|purgeJobMedia/)

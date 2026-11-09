@@ -1,4 +1,4 @@
-import {ticketOk} from '@/lib/stories/flowOperator'
+import {OPERATOR_TICKET_FILE,ticketOk} from '@/lib/stories/flowOperator'
 import {operatorAct,operatorCreate,operatorJob,operatorJobs} from '@/lib/stories/operator'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
@@ -17,7 +17,7 @@ export async function POST(r:Request){
  if(limited('studio-operator',90,60_000))return json({error:'Too many requests.'},429)
  try{
   const b=await body(r,60_000) as Record<string,unknown>
-  if(!await ticketOk(b.ticket))return json({error:'No valid ticket.'},401)
+  if(!await ticketOk(b.ticket)&&!await ticketOk(b.ticket,Date.now(),OPERATOR_TICKET_FILE))return json({error:'No valid ticket.'},401)
   if(b.op==='jobs')return json(await operatorJobs())
   if(b.op==='job')return json(await operatorJob(b))
   if(b.op==='create'){
