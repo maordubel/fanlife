@@ -63,3 +63,11 @@ grounds of every decade (1950s–2020s, inside and out), and each club's own cit
 red becomes each club's colour at render time, so one drawing serves every club. Stored at `library/flow/<stem>.png`;
 the worker adds them to the cinema library (`library.list_flow`, worker op `library_flow`) next to the owner's
 drawings.
+
+## Studio operator (9.11.2026)
+The same two-hour ticket also opens `POST /api/master/stories/operator`, called from a tab of the site itself (same
+origin only). Ops: `jobs` (one line per job), `job` (the job + signed links; `master:true` adds the master's chunks),
+`create` (kind + brief + key — the desk's own create functions and archive checks) and `act` (approve or choose a script,
+the editorial steps, pause/resume/retry/cancel, record an upload). It cannot delete a job, add pictures or fill Flow
+slots, and every change is logged as "Studio operator". This is how Claude produces and publishes a showcase without the
+owner signing in.
