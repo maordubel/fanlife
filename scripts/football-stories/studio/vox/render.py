@@ -162,6 +162,8 @@ def board_paper(b: dict, seed: int, warm: bool, accent, photos=(), years=(), cen
 class VoxFilm:
     def __init__(self, ed, plan: dict, job_dir: Path):
         self.ed, self.plan, self.dir = ed, plan, Path(job_dir) / 'vox'
+        from ..score_story import annotate
+        annotate(plan, ed.ledger)  # the score follows the story: what the viewer knows at every shot
         self.dir.mkdir(parents=True, exist_ok=True)
         self.director = director_id(ed)
         self.style = style_of(self.director)
@@ -182,7 +184,7 @@ class VoxFilm:
 
     def _plan_key(self) -> str:
         from ..common import sha256_json
-        return sha256_json([[s['n'], s['frames'], s['visual']] for s in self.plan['shots']])
+        return sha256_json([[s['n'], s['frames'], s['visual'], s.get('score_story')] for s in self.plan['shots']])
 
     def _layout(self) -> dict:
         pl = place(self.plan, self.style, self.seed)

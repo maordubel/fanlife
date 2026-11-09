@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 from PIL import Image, ImageDraw
 
 from ..common import FPS, StageError, hex_rgb
+from ..score_story import state as score_state
 from ..motion import Pose, clamp, ease_in_out, ease_out_cubic
 from ..cinema import gfx
 from ..cinema.story import LETTER, story_of
@@ -35,7 +36,7 @@ STYLES = {
     'trailer': {'glide': 0.95, 'over': 0.07, 'bump': 0.42, 'push': 1.46, 'count': 0.9, 'people': 1, 'warm': False, 'roll': 2.4},
     # CLASSIFIED's case-file board (comic/casefile.py, owner 5.11.2026: "VOX is our leading edit"): the slowest, calmest
     # glide — barely an overshoot, a shallow pull-back, almost no roll — so the owner's pictures stay sharp and steady
-    'classified': {'glide': 1.5, 'over': 0.015, 'bump': 0.2, 'push': 1.14, 'count': 1.1, 'people': 0, 'warm': True, 'roll': 0.4,
+    'classified': {'glide': 1.5, 'lead': 6.0, 'over': 0.015, 'bump': 0.2, 'push': 1.14, 'count': 1.1, 'people': 0, 'warm': True, 'roll': 0.4,
                    'board': 'case'},
 }
 
@@ -418,6 +419,26 @@ def _score_steps(f: dict, reveal_at: float, reveals=()) -> tuple[list, list]:
     return steps
 
 
+def _story_steps(f: dict, t_default: float, reveals, st: dict, t_min: float, dur: float) -> tuple[list, list]:
+    """The flips the viewer sees, in story order: the score known when the shot starts, each score the narrator says
+    on its word, and the final result only once it is told — on the word that tells it (score_story.py)."""
+    final = (f['score_home'], f['score_away'])
+    before = tuple(st.get('before') or (0, 0))
+    told_at = st.get('told_at')
+    if told_at is None and st.get('last') and not reveals:
+        told_at = t_default  # the last card about this match tells it
+    states = []
+    if st.get('told_before') and not reveals:
+        states = [(t_default, final)]
+    else:
+        first_t = reveals[0][0] if reveals else (told_at if told_at is not None else t_default)
+        states.append((max(0.2, min(t_min, first_t - 0.6)), before))
+        states += [(max(t_min, at), sc) for at, sc in reveals]
+        if told_at is not None and (not states or states[-1][1] != final):
+            states.append((clamp(max(told_at, states[-1][0] + 0.4), t_min, max(t_min, dur - 1.0)), final))
+    return _score_steps(f, t_default, states)
+
+
 def result(ed, s, B: Builder) -> Panel:
     from ..script import match_score_reveals
     if s.get('match_preview'):
@@ -434,7 +455,11 @@ def result(ed, s, B: Builder) -> Panel:
     stack = kind == 'score' and s['n'] % 2 == 1
     W_, H_ = (1180, 640) if stack else (1300, 600)
     reveals = match_score_reveals(ed.ledger, s, f)
-    live = v.get('in_play') or any(score != (f['score_home'], f['score_away']) for _, score in reveals)
+    # the score follows the story (score_story.py): the final result never shows before the narrator tells it
+    st_ = score_state(s, v.get('claim'))
+    final_ = (f['score_home'], f['score_away'])
+    told = bool(reveals and reveals[-1][1] == final_) or st_['told_at'] is not None or (st_.get('last', True) and not reveals)
+    live = v.get('in_play') or not told or any(score != final_ for _, score in reveals[-1:])
     head = 'MATCH SCORE' if live else 'MATCHDAY' if kind == 'matchday' else 'RESULT' if stack else 'FULL TIME'
     stage = ' · '.join(x for x in [f.get('competition'), f.get('stage')] if x)
     bar = B.t(f'{head} · {stage}'.upper(), 'caps', 30, PAPER, max_w=W_ - 80, track=2)
@@ -467,7 +492,7 @@ def result(ed, s, B: Builder) -> Panel:
         t_sc0 = max(t_n + 1.2, B.at_voice(0.55, lo=1.6))
     # whatever the narration, the score lands, is circled and read before the camera moves on
     t_sc0 = max(t_n + 0.3, min(t_sc0, B.dur - 1.6))
-    hs, as_ = _score_steps(f, t_sc0, reveals)
+    hs, as_ = _story_steps(f, t_sc0, reveals, st_, t_n + 0.3, B.dur)
     t_sc1 = max(hs[-1][0], as_[-1][0])
     if stack:
         fx, fy = rot_pt(cx, cy, W_ / 2 - 150, 165 - H_ / 2, rot)
@@ -584,7 +609,7 @@ def versus(ed, s, B: Builder) -> Panel:
         P.cues += [(0.1, 'whoosh'), (t_vs, 'drum')]
         return P
     t_sc = clamp(B.lead + 0.55 * max(B.vdur, 2.0), t_vs + 1.4, max(t_vs + 1.4, B.dur - 1.6))
-    hs, as_ = _score_steps(f, t_sc, match_score_reveals(ed.ledger, s, f))
+    hs, as_ = _story_steps(f, t_sc, match_score_reveals(ed.ledger, s, f), score_state(s, v.get('claim')), t_vs + 0.6, B.dur)
     fh = P.add(E.Flip(hs, 810, 760, size=130, res=r, w=170, tile=PAPER, name='home'))
     fa = P.add(E.Flip(as_, 1110, 760, size=130, res=r, w=170, tile=PAPER, name='away'))
     end = max(hs[-1][0], as_[-1][0])
@@ -1235,8 +1260,13 @@ def table(ed, s, B: Builder) -> Panel:
     rows = f.get('rows') or []
     if not rows:
         return document(ed, {**s, 'visual': {'type': 'fact', 'heading': 'The table', 'text': ''}}, B)
-    rows = rows[:12]
-    W_, rh = 1180, 68
+    # the club's row is always on the card: the top of the table, then the club's own neighbourhood if it sits lower
+    ci = next((i for i, row in enumerate(rows) if row.get('club') == club), None)
+    if ci is not None and ci >= 10:
+        rows = rows[:3] + rows[max(3, ci - 4):ci + 3]
+    else:
+        rows = rows[:10]
+    W_, rh = 1180, 72
     H_ = 110 + rh * len(rows) + 60
     cx, cy = 960, 70 + H_ / 2 if H_ < 940 else 540
     rot = -1.0
@@ -1265,12 +1295,19 @@ def table(ed, s, B: Builder) -> Panel:
         ImageDraw.Draw(im).line([(0, 0), (im.width, 0)], fill=INK + (255,), width=max(2, int(3 * r)))
         x = cx - W_ / 2 + 35
         rect = (x, y, W_ - 70, rh)
-        P.add(E.Sprite(im, E.arrive(x + (W_ - 70) / 2, y + rh / 2, t_r + 0.07 * i, frm=(-200, 0), style='slide', dur=0.35),
-                       z=60, kind='data', rect=rect, settle=t_r + 0.07 * i + 0.4))
+        # built from the bottom up, so the top of the table is the last thing that lands (tension, not a list)
+        t_i = t_r + 0.11 * (len(rows) - 1 - i)
+        P.add(E.Sprite(im, E.arrive(x + (W_ - 70) / 2, y + rh / 2, t_i, frm=(-200, 0), style='slide', dur=0.35),
+                       z=60, kind='data', rect=rect, settle=t_i + 0.4))
         if row['club'] == club:
             ours = rect
     if ours:
-        t_o = t_r + 0.07 * len(rows) + 0.4
+        # the club's row lights up on the word that names it or its place (the narrator's clock), else after the build
+        from ..score_story import word_time
+        built = t_r + 0.11 * len(rows) + 0.4
+        said = word_time(s, re.compile(r'\b(' + '|'.join(re.escape(w) for w in str(club or '').split()[-1:]) +
+                                       r'|top|bottom|first|second|third|champions|leaders|relegat\w*|\d+(st|nd|rd|th))\b', re.I))
+        t_o = clamp(max(built, said or 0.0), built, max(built, B.dur - 1.2))
         B.highlight(ours, t_o, 'club_row')
         B.circle((ours[0], ours[1], 80, ours[3]), t_o + 0.5, 'position')
         P.look(t_o, cx, ours[1] + rh / 2, B.st['push'])

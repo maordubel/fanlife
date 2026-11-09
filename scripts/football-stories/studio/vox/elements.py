@@ -279,8 +279,11 @@ class Words(El):
         n = 0
         for ln, lw in lines:
             xx = {'left': 0.0, 'center': -lw / 2, 'right': -lw}[align]
+            # capitals sit on one baseline: each word image is trimmed to its ink, so a short word would float high
+            # (it put "FC" under "TEST" on a result card) — bottom-align them in the line
+            top = max(im.height for _, im, _ in ln) if upper else 0
             for s, im, k in ln:
-                bx, by = x + xx / res, y + yy / res
+                bx, by = x + xx / res, y + (yy + (top - im.height if upper else 0)) / res
                 self.items.append({'im': im, 'x': bx, 'y': by, 'k': k, 'i': n, 's': s})
                 self.boxes.append((bx, by, im.width / res, im.height / res))
                 xx += im.width + space

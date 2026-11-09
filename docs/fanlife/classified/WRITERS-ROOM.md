@@ -120,3 +120,8 @@ Upload to Drive `CLASSIFIED/<FILE>` named by role (`P03_…png`); the panel map 
 - [ ] 650–950 narrated words; no sentence over 18 words.
 - [ ] Title in the series shape; three Shorts with hooks; three thumbnails.
 - [ ] Every panel role has a prompt; `produce.validate` is clean.
+
+## 10 · The edit the script is written for (docs/fanlife/71-continuous-camera-edit.md)
+Write every beat for ONE hero on screen: one idea per line, one picture or one word or one document. A phrase is either
+on a real document or typed on screen — never both, and never also said word for word on a card. Name the moment a
+visual should land on (the word the circle or the stamp hits). No decorative props in the panel prompts.
