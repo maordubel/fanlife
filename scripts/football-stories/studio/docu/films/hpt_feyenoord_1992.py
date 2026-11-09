@@ -68,7 +68,7 @@ beat("And for almost ninety minutes, it works.",
 beat("Then, late, József Kiprich.", img('duel.jpg', 'slam', veil=0.3, tag=tag('JÓZSEF KIPRICH', 'LATE', 'them')),
      flash=0.4, sound=[('groan', 0.5, 2.6, 0.6)])
 beat("One, nil, Feyenoord.", img('duel.jpg', veil=0.4, mini=dict(home='FEYENOORD', score='1 – 0', away='HAPOEL P.T.', at=0.2)), pad=1.0)
-beat("A defeat. But the smallest one possible. One goal, and no away goal conceded at home yet. The tie is still alive.",
+beat("A defeat. But only by one goal. Hapoel go home with the tie still alive.",
      dict(kind='ledger', us='HAPOEL P.T.', them='FEYENOORD', rows=[['AFTER LEG ONE', 0, 1]]))
 
 # ── MIDPOINT ── Ramat Gan
@@ -142,7 +142,7 @@ beat("Today Petah Tikva play at HaMoshava Stadium, home since twenty eleven. The
      img('fans.jpg', 'push', veil=0.4))
 beat("A famous win. A painful exit. And a night Petah Tikva still talks about.", img('huddle.jpg', 'push', veil=0.35), pad=1.2)
 beat("Subscribe to FanLife Football Stories for more forgotten European nights.",
-     dict(kind='end', title='The Win That Sent Hapoel Home', line='YouTube @FanLifeFootballStories'), pad=3.0)
+     dict(kind='end', title='The Win That Sent Hapoel Home', line='YouTube @FanLifeFootballStories'), pad=5.0)
 
 json.dump({'slug': 'hpt-feyenoord-1992', 'minutes': [7, 9], 'voice': 'bm_george',
            'palette': {'us': '#1F4EA8', 'them': '#D7192A', 'paper': '#F1E8D3', 'ink': '#14110D'},

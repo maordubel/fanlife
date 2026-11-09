@@ -52,6 +52,33 @@ def r2(x: float) -> float:
     return round(float(x), 2)
 
 
+def chunks(text: str, limit: int = 64) -> list[str]:
+    """A narrated line cut for subtitles: at sentence ends first, then at commas, never more than `limit` characters."""
+    import re
+    out = []
+    for sent in re.split(r'(?<=[.?!])\s+', text.strip()):
+        cur = ''
+        for piece in re.split(r'(?<=,)\s+', sent):
+            if cur and len(cur) + 1 + len(piece) > limit:
+                out.append(cur)
+                cur = piece
+            else:
+                cur = f'{cur} {piece}'.strip()
+        while len(cur) > limit:
+            cut = cur.rfind(' ', 0, limit)
+            out.append(cur[:cut])
+            cur = cur[cut + 1:]
+        if cur:
+            out.append(cur)
+    merged = []
+    for x in out:  # a fragment shorter than a few words joins its neighbour
+        if merged and (len(x) < 14 or len(merged[-1]) < 14) and len(merged[-1]) + 1 + len(x) <= limit:
+            merged[-1] = f'{merged[-1]} {x}'
+        else:
+            merged.append(x)
+    return merged
+
+
 class Film:
     def __init__(self, sb: dict, root: Path):
         self.sb, self.root = sb, root
@@ -147,7 +174,7 @@ class Film:
     def question(self, s, t, d):
         cid = self.id('q')
         txt = e(s['text']).replace('[', f'<em style="background:{self.US}">').replace(']', '</em>').replace('{', f'<em style="background:{self.THEM}">').replace('}', '</em>').replace('|', '<br>')
-        self.clip(cid, t, d, f'<div class="q">{txt}</div>', 8)
+        self.clip(cid, t, d, f'<div class="q">{txt}</div>', 14)
         self.tween(f'tl.fromTo("#{cid} .q",{{opacity:0,y:40}},{{opacity:1,y:0,duration:0.5,ease:"power3.out"}},{r2(t)});')
 
     def ticket(self, s, t, d):
@@ -168,7 +195,7 @@ class Film:
                 f'<path id="{cid}c" d="M100 10 C170 10 190 50 188 72 C185 115 140 132 98 130 C45 128 12 105 14 68 C16 32 55 12 112 14" fill="none" stroke="{self.THEM}" stroke-width="7" stroke-linecap="round"/></svg>'
                 f'<div class="note" style="top:{430 + 225 * s["circle"][0]}px;left:{1210 if s["circle"][1] == 2 else 870}px;color:{self.THEM}">{e(s.get("note", ""))}</div>') if s.get('circle') else ''
         inner = (f'<div class="ledger"><div class="lh"><span></span><b style="color:{self.US}">{e(s["us"])}</b><b style="color:{self.THEM}">{e(s["them"])}</b></div>{rows}{circ}</div>')
-        self.clip(cid, t, d, inner, 10, 'paper')
+        self.clip(cid, t, d, inner, 14, 'paper')
         self.tween(f'tl.fromTo("#{cid} .ledger",{{y:80,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});')
         for i, at in enumerate(s.get('row_at', [0.4 + 1.2 * k for k in range(len(s['rows']))])):
             self.tween(f'tl.fromTo("#{cid}r{i}",{{opacity:0}},{{opacity:1,duration:0.3}},{r2(t + at)});')
@@ -179,7 +206,7 @@ class Film:
 
     def rule(self, s, t, d):
         cid = self.id('ru')
-        self.clip(cid, t, d, f'<div class="rule"><small style="color:{self.THEM}">{e(s["small"])}</small><b>{e(s["title"])}</b><p>{e(s["text"])}</p></div>', 10, 'paper')
+        self.clip(cid, t, d, f'<div class="rule"><small style="color:{self.THEM}">{e(s["small"])}</small><b>{e(s["title"])}</b><p>{e(s["text"])}</p></div>', 14, 'paper')
         self.tween(f'tl.fromTo("#{cid} .rule",{{scale:0.9,opacity:0}},{{scale:1,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});'
                    f'tl.fromTo("#{cid} p",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:{r2(min(2.4, d - 1))},ease:"none"}},{r2(t + 0.6)});')
 
@@ -218,8 +245,14 @@ class Film:
                 self.agg_window = (agg_on, b['t'])
             if b.get('vo'):
                 self.audio.append(f'<audio id="{self.id("vo")}" class="clip" src="assets/vo/{b["vo_file"]}" data-start="{r2(b["vo_t"])}" data-duration="{r2(b["vo_d"])}" data-volume="1.15"></audio>')
-                sid = self.id('sub')
-                self.clip(sid, b['vo_t'], b['vo_d'] + 0.15, f'<div class="sub">{e(b["vo"])}</div>', 20, 'subw')
+                # subtitles in short pieces (two lines at most), each on screen for its share of the line
+                parts = chunks(b['vo'])
+                total = sum(len(x) for x in parts)
+                at = b['vo_t']
+                for k, part in enumerate(parts):
+                    dd = b['vo_d'] * len(part) / total
+                    self.clip(self.id('sub'), at, dd + (0.15 if k == len(parts) - 1 else 0), f'<div class="sub">{e(part)}</div>', 20, 'subw')
+                    at += dd
         if agg_on is not None:
             a0, a1 = getattr(self, 'agg_window', (agg_on, beats[-1]['t']))
             sb = self.sb
