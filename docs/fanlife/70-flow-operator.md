@@ -7,44 +7,47 @@ while the Claude desktop app is open. It never needs the studio password: everyt
 
 ```
 studio job waits for Flow ─┐
-CLASSIFIED panel prompts ──┤  stories-flow-intake.yml  mode=queue  → the list (JSON in the run log)
+CLASSIFIED panel prompts ──┤
                            │
-Claude, hourly ── Google Flow (owner's Google sign-in, built-in browser) ── makes each file
-                │
-                └ downloads the result (flow-content.google) into its own cloud workspace
-                  gh release upload flow-inbox job--<id>--clip-0.mp4 | panel--file04--f04-p01.png
-                  gh workflow run stories-flow-intake.yml -f mode=intake
-                           │
-stories-flow-intake.yml  mode=intake (also hourly at :41) — worker cron secret, no login
-   checks each file (mp4 with frames / decodable picture) → private bucket → records it →
-   a full set queues the edit → the worker edits → the film arrives on Telegram
+Claude, hourly (scheduled task, owner's computer)
+  1 mints a 2-hour ticket in the database (Supabase connector; only its sha256 is stored, stories/flow-ticket.json)
+  2 in the Google Flow tab (built-in browser, owner's Google sign-in):
+      POST /api/master/stories/flow {ticket, op:'queue'}       → what to make, with prompts
+      makes each file in Flow
+      POST {ticket, op:'urls', id|file, names} → signed upload url → PUT the file straight to the private bucket
+      POST {ticket, op:'done', id, files}       → recorded; a full set queues the edit
+worker edits → the film arrives on Telegram
 ```
 
+* The files never leave the owner's browser except into the private bucket: no GitHub, no public page, no download.
+* The door (`app/api/master/stories/flow/route.ts`) answers the origin `https://labs.google` only, with a valid ticket
+  only (sha256 + expiry ≤ 3 h, `lib/stories/flowOperator.ts → ticketOk`). No studio login, no cron secret.
 * Shorts and marketing films: slots `clip-N.mp4`, `still-N.jpg` (`lib/stories/jobs.ts` FLOW_NAME).
 * CLASSIFIED: every manifest panel with no `drive_id` and a `prompt` (written by the writers' room) → stored at
-  `classified/<file>/<id>.png` in the private bucket; `studio/kinds.flow_panels` fetches them before the Drive fetch.
-  Panels never enter the repository.
-* Worker ops: `flow_queue`, `flow_urls`, `flow_done`, `classified_urls` (`lib/stories/flowOperator.ts`).
+  `classified/<file>/<id>.png` in the private bucket; `studio/kinds.flow_panels` fetches them (worker op
+  `classified_urls`) before the Drive fetch. Panels never enter the repository.
 
 ## The operator's procedure (what the scheduled task does)
 
-Security: a Flow media URL is a credential — it goes only from the browser tab to `curl` in the cloud workspace, is
-never written to a file, a commit, a secret, a variable or a log. The owner's GitHub token is never given to a web page.
-The studio password is never typed. Assets in `flow-inbox` are public for minutes; they are art for films that are
-about to be published.
-
-1. `gh workflow run stories-flow-intake.yml -R maordubel/fanlife -f mode=queue`, wait for it, read the JSON between
-   `FLOW-QUEUE-BEGIN` and `FLOW-QUEUE-END` in `gh run view <id> --log`. `{"jobs":[],"classified":[]}` → stop.
-2. Built-in browser → `https://labs.google/fx/tools/flow`. Not signed in → stop (the owner signs in to Google once;
-   say so in one line). Open (or create) the project named after the job title / `CLASSIFIED <file>`.
-3. **Characters first** (a Short): each `characters[]` step → Image, 9:16, Nano Banana, its prompt. Keep the best.
-4. **Clips**: each missing `clip-N.mp4` → Video · Ingredients, 9:16, the model in the step (Veo/Omni Flash), 720p,
-   the step's seconds, ×1, its character sheets as ingredients, its prompt. **Stills** `still-N.jpg` → Image, 9:16.
-   **CLASSIFIED panels** → Image, 16:9, the panel prompt (it already carries the house style).
-5. For each result: read the media `src` in the Flow tab, `curl` it into the workspace under its slot name
-   (`job--<job id>--clip-0.mp4`, `panel--file04--f04-p01.png`), check it opens, then
-   `gh release upload flow-inbox <files> -R maordubel/fanlife --clobber`
-   (first time: `gh release create flow-inbox -R maordubel/fanlife --prerelease --title "Flow inbox" --notes "Studio mailbox"`).
-6. `gh workflow run stories-flow-intake.yml -R maordubel/fanlife -f mode=intake`.
-7. Budget per run: at most one Short (≈6 clips) or 20 panels. Flow out of credits → stop; the rest waits for the next hour.
-8. Nothing to report when it went well (the film reaches Telegram). On a failure, one short line to the owner.
+1. Mint the ticket (Supabase connector, project `afxpjfxwpdjvlmuoawda`):
+   ```sql
+   with t as (select replace(gen_random_uuid()::text||gen_random_uuid()::text,'-','') v)
+   insert into worker_fanlife_files(name,body,etag,updated_at)
+   select 'stories/flow-ticket.json', json_build_object('hash',encode(sha256(convert_to(v,'utf8')),'hex'),'expires',now()+interval '2 hours')::text, gen_random_uuid()::text, now() from t
+   on conflict (name) do update set body=excluded.body, etag=excluded.etag, updated_at=now()
+   returning (select v from t) as ticket;
+   ```
+   The ticket lives only in this run; it is never written to a file, a commit, a message or a log.
+2. Built-in browser → `https://labs.google/fx/tools/flow`. Not signed in to Google → stop with one line to the owner.
+3. In that tab (javascript): `fetch('https://fanlife.dubelteam.com/api/master/stories/flow',{method:'POST',
+   headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket,op:'queue'})})`.
+   `{"jobs":[],"classified":[]}` → stop quietly.
+4. One job per run, oldest first (or up to 20 CLASSIFIED panels). In a Flow project named after it:
+   * characters (a Short): Image, 9:16, Nano Banana, each `characters[].prompt`;
+   * each missing `clip-N.mp4`: Video · Ingredients, 9:16, the step's model, 720p, its seconds, ×1, its character
+     sheets as ingredients, its prompt; each `still-N.jpg`: Image, 9:16;
+   * CLASSIFIED panels: Image, 16:9, the panel prompt (it carries the house style).
+5. Each result, in the tab: `fetch(src)` → blob (check type video/mp4 or image/*, size > 50 KB) → `op:'urls'` →
+   `PUT` the blob to the url (`x-upsert: true`) → after a job's files, `op:'done'` with the names that went up.
+6. Flow out of credits, a refusal, or anything unexpected → stop; the rest waits for the next hour. One short line
+   to the owner only when something needs him. A finished Short reaches his Telegram by itself.

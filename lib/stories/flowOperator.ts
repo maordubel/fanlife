@@ -2,12 +2,16 @@ import 'server-only'
 import {FLOW_KINDS,FLOW_NAME,StoryError,flowFiles,jobKind,mediaPath,ownerAct,type Job} from './jobs'
 import {getJob,listJobs,updateJob} from './store'
 import {signedDownload,signedUpload} from './media'
+import {durable} from '@/lib/master/durable'
+import {createHash,timingSafeEqual} from 'node:crypto'
+import manifest from '@/scripts/football-stories/comic/classified_manifest.json'
 
 /**
  * The Flow operator (owner, 9.11.2026: "easy, convenient, automatic — no login"). Google Flow has no API, so Claude makes
  * the pictures and clips in Flow on the owner's computer once an hour (a scheduled task, docs/fanlife/70-flow-operator.md).
- * It never touches the studio's login: it reads this queue and hands the files to GitHub, and the intake workflow
- * (stories-flow-intake.yml, the worker's cron secret) puts them in place through these four ops.
+ * It never touches the studio's login. Each run mints a two-hour ticket straight in the database (its sha256 in the file
+ * stories/flow-ticket.json, written with the Supabase connector); the Flow tab then calls /api/master/stories/flow with
+ * that ticket — queue, signed upload urls, done — and puts each file straight into the private bucket.
  *   - a waiting animated Short or marketing film: its missing slots (clip-N.mp4, still-N.jpg) and their Flow prompts
  *   - a CLASSIFIED FILE: the panels its manifest names with no Drive picture and no stored picture yet, with prompts
  * CLASSIFIED panels live in the private bucket at classified/<file>/<panel>.png — never in the repository.
@@ -78,4 +82,25 @@ export async function classifiedUrls(b:{file?:unknown;ids?:unknown}){
  const urls:Record<string,string>={}
  for(const i of ids){const u=s[panelPath(file,i)];if(u)urls[i]=u}
  return {urls}
+}
+
+/** The ticket the operator minted for this run (sha256 + expiry, two hours at most). */
+export const TICKET_FILE='stories/flow-ticket.json'
+export async function ticketOk(ticket:unknown,now=Date.now()):Promise<boolean>{
+ if(typeof ticket!=='string'||!/^[A-Za-z0-9-]{32,128}$/.test(ticket))return false
+ const d=durable();if(!d||d.kind==='memory')return false
+ const r=await d.read(TICKET_FILE,{fresh:true,soft:false}).catch(()=>null)
+ if(!r)return false
+ let t:{hash?:string;expires?:string}
+ try{t=JSON.parse(r.text)}catch{return false}
+ const exp=Date.parse(String(t.expires||''))
+ if(!Number.isFinite(exp)||exp<now||exp>now+3*3600_000||!/^[0-9a-f]{64}$/.test(String(t.hash)))return false
+ const a=Buffer.from(createHash('sha256').update(ticket).digest('hex')),b=Buffer.from(String(t.hash))
+ return a.length===b.length&&timingSafeEqual(a,b)
+}
+
+/** CLASSIFIED panels with no Drive picture and a Flow prompt (written by the writers' room, comic/from_script.py). */
+type Man={files:Record<string,{title?:string;panels?:{id:string;role?:string;drive_id?:string|null;prompt?:string}[]}>}
+export function panelNeeds(m:Man=manifest as unknown as Man):PanelNeed[]{
+ return Object.entries(m.files||{}).map(([file,f])=>({file,title:f.title,panels:(f.panels||[]).filter(p=>!p.drive_id&&typeof p.prompt==='string'&&p.prompt.length>10).map(p=>({id:p.id,role:p.role,prompt:p.prompt!}))})).filter(n=>n.panels.length)
 }
