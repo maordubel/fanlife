@@ -33,6 +33,8 @@ export const TOPIC_TAGS = {
   results: ['#FullTime', '#MatchDay'],
   fixtures: ['#MatchDay', '#NextUp'],
   film: ['#FootballStories', '#FootballDocumentary', '#FootballFans'],
+  vote: ['#FootballFans', '#YourClub', '#FootballPoll'],
+  debate: ['#FootballDebate', '#FootballFans', '#Ultras'],
 } as const
 export type Topic = keyof typeof TOPIC_TAGS
 

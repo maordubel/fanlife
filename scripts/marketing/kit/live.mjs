@@ -16,7 +16,7 @@ import {Canvas, measure} from './source/weekly.mjs'
 const QR = createRequire(import.meta.url)('qrcode')
 import {clubField, crestMedal, ownColour, paintFor, ribbon, LOGOS} from './poster.mjs'
 
-export const LIVE_TEMPLATES = ['L-FILM', 'L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
+export const LIVE_TEMPLATES = ['L-VOTE', 'L-NUMBERS', 'L-DEBATE', 'L-FILM', 'L-SLIDE', 'L-GATE', 'L-FACT', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND', 'L-DUBID-SYSTEM', 'L-OFFSIDES-TODAY', 'L-OFFSIDES-SYSTEM', 'L-CARD']
 const W = 1080, H = 1350
 const PLATES = ['kicker', 'keeper', 'dribbler', 'fans', 'memo', 'scarf', 'swap', 'bootball']
 // art round 2 (owner, 27.10.2026): one drawing per gate, found by the gate's printed name — the plan already in the
@@ -80,7 +80,7 @@ function matchRow(c, x, y, w, h, r, score = null) {
 
 export function designLive(t, app, d) {
   const brand = t.startsWith('L-DUBID') ? 'dubid' : t.startsWith('L-OFFSIDES') ? 'offsides' : t === 'L-CARD' && LOGO[app] ? app : null
-  const c = new Canvas(W, H, brand || 'fanlife', true, t === 'L-FIXTURES' || t === 'L-RESULTS' ? {clubs: d.clubs || []} : d, t)
+  const c = new Canvas(W, H, brand || 'fanlife', true, t === 'L-FIXTURES' || t === 'L-RESULTS' ? {clubs: d.clubs || []} : t === 'L-DEBATE' || t === 'L-VOTE' ? {} : d, t) // the hub's own pictures: every club in its own colours (rule 98)
   if (brand) c.accent = c.color(brand === 'dubid' ? c.P.cyan : c.P.orange)
   else c.halftone()
 
@@ -256,6 +256,67 @@ export function designLive(t, app, d) {
     for (let yy = 0; yy < qr.size; yy++) for (let xx = 0; xx < qr.size; xx++) if (qr.get(yy, xx)) path += `M${(qx + xx * cell).toFixed(2)} ${(qy + yy * cell).toFixed(2)}h${cell.toFixed(2)}v${cell.toFixed(2)}h-${cell.toFixed(2)}z`
     c.add(`<rect x="${qx - 8}" y="${qy - 8}" width="${qs + 16}" height="${qs + 16}" rx="10" fill="#FFFFFF"/><path d="${path}" fill="#000000"/>`)
     c.text('PREDICT THE CHAOS · VIRTUAL FLAMES · NOT REAL-MONEY', W / 2, H - 34, 20, 'Weekly Caps', CHALK, {anchor: 'middle', max: 960, min: 12})
+  } else if (t === 'L-VOTE') {
+    // plan v6 (owner, 9.11.2026): the Club Vote's REAL count — crests as ballot tickets, the votes on split-flap lamps
+    const rows = (d.rows || []).slice(0, 5)
+    if (!rows.length) throw Error('L-VOTE needs 1–5 clubs')
+    c.header()
+    c.masthead('WHICH CLUB', 64, 300, 92, 700)
+    c.masthead('OPENS NEXT?', 64, 392, 92, 760)
+    c.burst(925, 330, 104, d.shout || 'VOTE!', {fill: c.P.cyan, n: 34})
+    const top = 440, hh = Math.min(150, (1130 - top) / rows.length), most = Math.max(1, ...rows.map(r => Number(r.votes) || 0))
+    rows.forEach((r, i) => {
+      const y = top + i * hh, h = hh - 14
+      c.ticket(64, y, 952, h)
+      const cs = Math.min(h - 26, 104)
+      if (r.crest) c.image(r.crest, 96, y + (h - cs) / 2, cs, cs, {contain: true, id: 'vote-crest'})
+      c.text(`${i + 1}`, 96 + cs + 22, y + h * .62, 46, 'Ultra', c.accent, {max: 60})
+      c.text(r.name, 96 + cs + 80, y + h * .5, 40, 'Weekly Head', c.ink, {max: 520, min: 22})
+      const bw = Math.max(8, 520 * (Number(r.votes) || 0) / most)
+      c.rect(96 + cs + 80, y + h * .62, bw, 16, i === 0 ? c.accent : c.ink, {border: false, shadow: false})
+      c.lamp(String(r.votes), 1016 - 32 - 150, y + (h - Math.min(h - 30, 84)) / 2, 150, Math.min(h - 30, 84))
+    })
+    c.rect(64, 1150, 952, 70, c.ink, {border: false})
+    c.text(`${d.total} FANS HAVE VOTED · YOUR CLUB ISN'T ON TOP? SEND THIS.`, W / 2, 1197, 30, 'Weekly Caps', c.paper, {anchor: 'middle', max: 920, min: 16})
+    c.footer({label: d.label || 'FAN LIFE · THE CLUB VOTE'})
+  } else if (t === 'L-NUMBERS') {
+    // plan v6: one giant REAL number on the club field, what it counts, and the busiest game
+    const f = clubField(c, paintFor(d), 0, 0, W, 900)
+    c.header()
+    c.burst(900, 320, 104, d.shout || 'THIS WEEK!', {fill: c.P.cyan, n: 34})
+    c.text(String(d.number || ''), W / 2, 700, 330, 'Ultra', f.on, {anchor: 'middle', max: 960, min: 120, stroke: 8, shadow: true, tag: 'big-number'})
+    c.rect(64, 930, 952, 250, c.paper, {sw: 4})
+    c.text(d.line || '', W / 2, 1030, 56, 'Weekly Head', c.ink, {anchor: 'middle', max: 880, min: 28})
+    if (d.sub) c.text(d.sub, W / 2, 1110, 34, 'Weekly Caps', c.ink, {anchor: 'middle', max: 880, min: 18})
+    c.footer({label: d.label || 'FAN LIFE · REAL NUMBERS'})
+  } else if (t === 'L-DEBATE') {
+    // plan v6 (owner, 9.11.2026: "create opinion fights"). Two sides, two colours, a VS seal; or one club and YES / NO
+    // ("Is this the best crowd in the world?"). A side with no club wears one of the two inks: navy on the left, red on the right.
+    const L = d.left || {}, R = d.right || null
+    const ink = (side, fallback) => paintFor({club: side?.club}) || {primary: fallback, on: '#FFFFFF', pattern: 'solid'}
+    const medal = (side, cx, f) => {
+      if (side.crest) crestMedal(c, side.crest, cx, 470, 150)
+      else c.text(side.name || '', cx, 500, 72, 'Weekly Head', f.on, {anchor: 'middle', max: R ? 420 : 900, min: 28, stroke: 4, shadow: true})
+      if (side.crest && side.name) c.text(side.name, cx, 700, 40, 'Weekly Head', f.on, {anchor: 'middle', max: R ? 440 : 900, min: 20, stroke: 3})
+    }
+    if (R) {
+      const lf = clubField(c, ink(L, c.P.navy), 0, 0, W / 2, 900), rf = clubField(c, ink(R, '#D71920'), W / 2, 0, W / 2, 900)
+      c.add(`<path d="M${W / 2 - 40} 0L${W / 2 + 40} 0L${W / 2 - 20} 900L${W / 2 - 100} 900Z" fill="${c.ink}"/>`)
+      c.header()
+      medal(L, 270, lf); medal(R, W - 270, rf)
+      c.circle(W / 2 - 60, 470, 92, c.P.cyan)
+      c.text('VS', W / 2 - 60, 500, 86, 'Shrikhand', c.ink, {anchor: 'middle', max: 160})
+    } else {
+      const f = clubField(c, ink(L, c.P.navy), 0, 0, W, 900)
+      c.header()
+      medal(L, W / 2, f)
+      c.rect(240, 760, 260, 96, c.paper, {sw: 4}); c.text('YES', 370, 830, 64, 'Ultra', c.ink, {anchor: 'middle', max: 220})
+      c.rect(580, 760, 260, 96, c.ink, {sw: 4}); c.text('NO', 710, 830, 64, 'Ultra', c.paper, {anchor: 'middle', max: 220})
+    }
+    c.rect(64, 930, 952, 260, c.paper, {sw: 4})
+    c.burst(930, 870, 88, d.shout || 'YOUR CALL!', {fill: c.P.cyan, n: 30})
+    c.fitted(d.question, 100, 1040, {n: 62, min: 32, max: 820, maxLines: 3, step: 1.1})
+    c.footer({label: d.label || 'FAN LIFE · OPINION WAR'})
   } else if (t === 'L-FILM') {
     // plan v5 (owner, 4.11.2026): a film of the channel — its own thumbnail, in its own colours, framed like a screen
     c.rect(0, 0, W, H, c.ink, {border: false, shadow: false})

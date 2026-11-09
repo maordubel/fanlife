@@ -26,9 +26,9 @@ describe('DUBEL TEAM kit visuals', () => {
     expect(deck).toHaveLength(5)
     expect(await visualsFor('no template here')).toHaveLength(1)
   }, 30_000)
-  it('draws every layout the v5 plan uses', async () => {
-    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v5.json', 'utf8'))
-    const ts = ['T9-OTD', 'T10-NERDS', 'T11-SPICY', 'L-GATE', 'L-FACT', 'L-FILM', 'L-DUBID-SYSTEM', 'L-OFFSIDES-SYSTEM']
+  it('draws every layout the v6 plan uses', async () => {
+    const rows: {at: string; main: {app: string; kit: {t: string; data: unknown}}}[] = JSON.parse(readFileSync('scripts/marketing/plan-v6.json', 'utf8'))
+    const ts = ['T9-OTD', 'T10-NERDS', 'T11-SPICY', 'L-GATE', 'L-FACT', 'L-FILM', 'L-DEBATE', 'L-DUBID-SYSTEM', 'L-OFFSIDES-SYSTEM']
     for (const t of ts) {
       const r = rows.find(x => x.main.kit.t === t)!
       expect(r, t).toBeTruthy()
@@ -36,6 +36,14 @@ describe('DUBEL TEAM kit visuals', () => {
       expect(png.subarray(1, 4).toString(), t).toBe('PNG')
     }
   }, 120_000)
+  it('v6 live pictures: the Club Vote, the real numbers, and an Opinion War with one club (YES / NO)', async () => {
+    const kits = [
+      {t: 'L-VOTE', data: {app: 'fanlife', total: 57, rows: [{name: 'Celtic', votes: 21, crestName: 'Celtic'}, {name: 'Olympiacos', votes: 14, crestName: 'Olympiacos'}]}},
+      {t: 'L-NUMBERS', data: {app: 'fanlife', number: '1,284', line: 'games played on FAN LIFE this week', sub: 'Busiest gate: Trivia'}},
+      {t: 'L-DEBATE', data: {app: 'fanlife', question: 'Is this the best crowd in the world?', left: {name: 'Celtic', club: 'celtic', crestName: 'Celtic'}, right: null}},
+    ]
+    for (const k of kits) expect((await drawKit(k, 'fanlife')).subarray(1, 4).toString(), k.t).toBe('PNG')
+  }, 60_000)
   it('marketing rule: crests and shirts keep their own colours — never two-ink black and white', async () => {
     // @ts-expect-error — plain ESM module, no types
     const {Canvas} = await import('../../scripts/marketing/kit/source/weekly.mjs')

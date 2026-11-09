@@ -27,7 +27,7 @@ describe('art round 2 (owner, 27.10.2026)', () => {
   }, 120_000)
 
   it('every gate the plan prints wears its own drawing, not a shared plate', () => {
-    const plan = JSON.parse(readFileSync(path.join(process.cwd(), 'scripts/marketing/plan-v5.json'), 'utf8'))
+    const plan = JSON.parse(readFileSync(path.join(process.cwd(), 'scripts/marketing/plan-v6.json'), 'utf8'))
     const names = new Set<string>()
     for (const x of plan) for (const k of x.main.kit?.slides ?? [x.main.kit]) if (k?.t === 'L-GATE') names.add(k.data.name)
     expect(names.size).toBeGreaterThan(10)
@@ -37,7 +37,7 @@ describe('art round 2 (owner, 27.10.2026)', () => {
 
 describe('art round 2 is used, not just stored (owner, 29.10.2026)', () => {
   it('every gate plate, moment, cover, sticker and texture is drawn by the kit or the plan', () => {
-    const src = ['scripts/marketing/kit/live.mjs', 'scripts/marketing/kit/source/templates.mjs', 'scripts/marketing/kit/source/weekly.mjs', 'scripts/marketing/kit/visual.mjs', 'scripts/marketing/plan-v5.json']
+    const src = ['scripts/marketing/kit/live.mjs', 'scripts/marketing/kit/source/templates.mjs', 'scripts/marketing/kit/source/weekly.mjs', 'scripts/marketing/kit/visual.mjs', 'scripts/marketing/plan-v6.json']
       .map(f => readFileSync(f, 'utf8')).join('\n')
     const names = readdirSync('scripts/marketing/kit/assets').filter(f => /^(gate|moment|cover)-.+-line\.png$|^sticker-[a-z]+\.png$|^tex-/.test(f))
       .map(f => f.replace(/-line\.png$|\.png$/, ''))

@@ -88,9 +88,11 @@ describe('the morning briefing (owner, 29.10.2026): operations, not marketing', 
     const slides = (out.kit as unknown as {slides: {t: string}[]}).slides
     expect(slides.map(k => k.t)).toEqual(['L-OFFSIDES-TODAY', 'L-FIXTURES', 'L-RESULTS', 'L-DUBID-ROUND'])
     expect(out.msg).toContain('Morning briefing')
-    expect(out.msg).toContain('21:00 Arsenal v Chelsea · Premier League · 3 arenas')
+    // v6 (owner, 9.11.2026: "to the point"): only the arenas that are open, busiest first; a match with none is counted, not listed
+    expect(out.msg).toContain('2 matches today, 3 arenas open')
+    expect(out.msg).toContain('21:00 Arsenal v Chelsea · 3 arenas')
+    expect(out.msg).not.toContain('Roma v Lazio')
     expect(out.msg).toContain('21:45 Celtic v Rangers')
-    expect(out.msg).toContain('19:00 Roma v Lazio')
     expect(out.msg).toContain('Olympiacos 2-1 AEK Athens')
     expect(out.msg).toContain('Round 9')
     expect(out.msg).not.toContain('<pre>')
@@ -99,7 +101,30 @@ describe('the morning briefing (owner, 29.10.2026): operations, not marketing', 
     const out = composeBriefing([], [], ['celtic'], {dubid: [], offsides: [], posted: []}, now, {})
     if ('skip' in out) throw Error('skipped')
     expect(out.kit.t).toBe('none')
-    expect(out.msg).toContain('No active arena today.')
+    expect(out.msg).toContain('No active arena yet.')
     expect(out.msg).toContain('No FAN LIFE club plays today.')
+  })
+  it('v6 (owner, 9.11.2026): yesterday ✅ published / ❌ failed / ✋ by hand, then today’s plan with the live slots marked', () => {
+    const ledger = {
+      yesterday: [
+        {at: '10:00', kind: 'fixed', status: 'sent', format: 'post', label: 'On this day', app: 'fanlife', to: ['feed'], error: null, published: {facebook: 'published 1', instagram: 'published 2'}},
+        {at: '13:00', kind: 'fixed', status: 'sent', format: 'post', label: 'Gate · Trivia', app: 'fanlife', to: ['feed'], error: null, published: {facebook: 'published 5', instagram: 'refused: token expired'}},
+        {at: '19:00', kind: 'fixed', status: 'sent', format: 'carousel', label: 'Carousel · love', app: 'fanlife', to: ['feed', 'tiktok'], error: null, published: {facebook: 'published 3', instagram: 'published 4'}},
+        {at: '20:00', kind: 'pulse', status: 'skipped', format: 'post', label: 'Channel pulse', app: 'fanlife', to: ['story'], error: null, published: null},
+        {at: '21:00', kind: 'fixed', status: 'failed', format: 'post', label: 'Opinion War', app: 'fanlife', to: ['feed'], error: 'Telegram 502', published: null},
+      ],
+      today: [{at: '12:00', kind: 'vote', status: 'pending', format: 'post', label: 'Club Vote', app: 'fanlife', to: ['feed', 'story'], error: null, published: null},
+        {at: '16:00', kind: 'fixed', status: 'pending', format: 'story', label: 'Opinion War', app: 'fanlife', to: ['story'], error: null, published: null}],
+    }
+    const out = composeBriefing([], [], ['celtic'], {dubid: [], offsides: [], posted: []}, now, {}, ledger as never)
+    if ('skip' in out) throw Error('skipped')
+    expect(out.msg).toContain('Yesterday’s publishing')
+    expect(out.msg).toMatch(/✅ 10:00 On this day · feed/)
+    expect(out.msg).toMatch(/❌[^\n]*Gate · Trivia[^\n]*token expired/)
+    expect(out.msg).toMatch(/❌[^\n]*Opinion War[^\n]*Telegram 502/)
+    expect(out.msg).toMatch(/✋[^\n]*Carousel · love/)
+    expect(out.msg).toContain('Today’s plan')
+    expect(out.msg).toMatch(/12:00 Club Vote <i>\(live — only if there is data\)<\/i>/)
+    expect(out.msg).toContain('16:00 Opinion War')
   })
 })

@@ -119,6 +119,8 @@ export async function POST(r: NextRequest) {
     const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status ?? 0) >= 500 ? 'unknown' : 'refused'
     const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)
     await rpc('worker_marketing_report', {p_id: p.id, p_outcome: outcome, p_error: error})
+    // plan v6: where it went out, for the morning briefing's ✅ / ✋ / ❌ (best effort: the post is out either way)
+    await rpc('worker_marketing_published', {p_id: p.id, p_result: {facebook: meta.facebook || null, instagram: meta.instagram || null, x: x.x || null}}).catch(() => null)
     done.push({id: p.id, outcome, visual, facebook: meta.facebook, instagram: meta.instagram, x: x.x})
   }
   return json({ok: true, done})

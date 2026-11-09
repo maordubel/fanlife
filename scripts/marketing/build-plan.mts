@@ -191,9 +191,10 @@ function quiz(n: number): Item {
   throw Error('no quiz for day ' + n)
 }
 const spicyUsed = new Set<string>()
+let spicyCount = 0
 function spicy(n: number): Item {
   const kinds = ['derby', 'rout', 'final', 'kit', 'goalfest'] as const
-  const kind = kinds[n % kinds.length]
+  const kind = kinds[spicyCount++ % kinds.length]
   const order = [...clubs.map(c => c.id)].sort((a, b) => h(`s${n}${a}`) - h(`s${n}${b}`))
   if (kind === 'kit') {
     const got = qPick(q => q.template === 'fl-kit-sponsor', `kit${n}`, used, order)
@@ -378,6 +379,15 @@ function gate(n: number): Item {
     kit: {t: 'L-GATE', data: {club: {id: c.id, name: c.name}, crestName: c.name, gate: g.gate, name: g.name, plate: g.plate, headline: g.headline, body: g.body, label: `${c.name.toUpperCase()} · ${g.gate}`}}}
 }
 
+/** v6: the feature of the day names its gate (Tue Blind Cow · Wed All-time XI · Thu Timeline/Memory · Fri the goal · Sun shirts) */
+function gateKey(key: string, n: number): Item {
+  const i = GATES.findIndex(g => g.key === key)
+  if (i < 0) throw Error('no gate ' + key)
+  // gate(n) reads GATES[(n - 1) % len]: pick the n' with that index whose club turns over day by day
+  const len = GATES.length, m = n * len + i + 1
+  return gate(m)
+}
+
 // ── 18:00: the two big games of FAN LIFE, on alternate days ──────────────────────────────────────────────────────────
 type Pitch = {headline: string; body: [string, string]; hook: string; post: string}
 const RUMBLE: Pitch[] = [
@@ -408,8 +418,8 @@ const LEGENDS: Pitch[] = [
   {headline: 'Challenge a friend to a friendly.', body: ['Send the link — your eleven against his.', 'One match. Played once.'],
     hook: 'Your legends against your mate’s. One friendly.', post: 'Send a friendly link from your career: your eleven against his, played once by the match engine. No excuses afterwards.'},
 ]
-function bigGame(n: number): Item {
-  const lm = n % 2 === 1, list = lm ? LEGENDS : RUMBLE, p = list[Math.floor((n - 1) / 2) % list.length]!
+function bigGame(n: number, force?: 'legends' | 'rumble'): Item {
+  const lm = force ? force === 'legends' : n % 2 === 1, list = lm ? LEGENDS : RUMBLE, p = list[Math.floor((n - 1) / 2) % list.length]!
   const c = clubs[(n * 5) % clubs.length]!
   return {app: 'fanlife', url: lm ? 'https://fanlife.dubelteam.com/all-football/legends' : `https://fanlife.dubelteam.com/clubs/${c.id}/royal-rumble`, hook: p.hook,
     label: lm ? 'Legends Manager' : 'Royal Rumble', tags: smartTags({clubs: lm ? [] : [c.id], topics: [lm ? 'legends' : 'rumble']}),
@@ -500,6 +510,76 @@ function carouselGates(n: number, c: Club, w: World, tags: string): Item {
     visual: `Carousel · gates · ${c.name}: ${slides.length} slides.`, kit: {t: 'L-CAROUSEL', data: {club}, slides} as unknown as Kit}
 }
 
+// ── v6 (owner, 9.11.2026): OPINION WAR — "create opinion fights, drag them into the comments". Opinions only: the
+//    question names two sides and asks, it never states a fact, a count or a ranking. Every name is from the club's own
+//    sourced world file. Three shapes rotate: one club ("Is this the best crowd in the world?"), club against club, and
+//    the supporters' eternal arguments in two inks. ─────────────────────────────────────────────────────────────────────
+type Side = {name: string; club?: string; crestName?: string}
+const ground = (c: Club) => world(c.id).ground?.name || c.name
+const nick = (c: Club) => (world(c.id).nicknames?.[0]?.text || c.name).replace(/^The /, 'the ')
+const ONE: ((c: Club) => string)[] = [
+  () => 'Is this the best crowd in the world?',
+  c => `Is ${ground(c)} the loudest ground in Europe?`,
+  c => `${c.name} fans: the most loyal supporters in football?`,
+  c => `Would you swap your ground for a night at ${ground(c)}?`,
+]
+const TWO: ((a: Club, b: Club) => string)[] = [
+  (a, b) => `Which terrace is louder: ${ground(a)} or ${ground(b)}?`,
+  (a, b) => `Best away following in Europe: ${a.name} or ${b.name}?`,
+  (a, b) => `One ground for one night: ${ground(a)} or ${ground(b)}?`,
+  (a, b) => `Better nickname: ${nick(a)} or ${nick(b)}?`,
+]
+const SHIRT = (a: Club, b: Club) => `Whose home shirt is more beautiful: ${a.name} or ${b.name}?`
+const ETERNAL: [string, string, string][] = [
+  ['Terraces or seats?', 'TERRACES', 'SEATS'],
+  ['Home nights or away days?', 'HOME NIGHTS', 'AWAY DAYS'],
+  ['At the ground or with your mates in the pub?', 'THE GROUND', 'THE PUB'],
+  ['A derby win or a trophy: which feels bigger?', 'DERBY WIN', 'TROPHY'],
+  ['Old ground or new stadium?', 'OLD GROUND', 'NEW STADIUM'],
+  ['Number 9 or number 10?', 'NUMBER 9', 'NUMBER 10'],
+  ['Retro shirts or today’s shirts?', 'RETRO', 'TODAY'],
+  ['Your first match: with your dad or with your mates?', 'WITH DAD', 'WITH MATES'],
+  ['Penalty shoot-out: football’s best feeling or its worst?', 'THE BEST', 'THE WORST'],
+  ['Scarf or shirt on matchday?', 'SCARF', 'SHIRT'],
+  ['A last-minute winner or a 4–0 cruise?', 'LAST MINUTE', '4–0 CRUISE'],
+  ['Singing for 90 minutes or watching every touch?', 'SINGING', 'WATCHING'],
+]
+const side = (c: Club): Side => ({name: c.name, club: c.id, crestName: c.name})
+function debate(n: number, shape: 'one' | 'two' | 'eternal' | 'shirt'): Item {
+  const a = clubs[(n * 7 + 1) % clubs.length]!, b = clubs[(n * 7 + 1 + 1 + (n % (clubs.length - 1))) % clubs.length]!
+  const pair = a.id === b.id ? [a, clubs[(clubs.indexOf(a) + 1) % clubs.length]!] as const : [a, b] as const
+  let question: string, left: Side | null, right: Side | null, ids: string[] = []
+  if (shape === 'one') { question = ONE[n % ONE.length]!(a); left = side(a); right = null; ids = [a.id] }
+  else if (shape === 'eternal') { const e = ETERNAL[n % ETERNAL.length]!; question = e[0]; left = {name: e[1]}; right = {name: e[2]} }
+  else { question = (shape === 'shirt' ? SHIRT : TWO[n % TWO.length]!)(pair[0], pair[1]); left = side(pair[0]); right = side(pair[1]); ids = [pair[0].id, pair[1].id] }
+  const ask = right ? `⬅️ ${left!.name} or ➡️ ${right.name}?` : '🔥 YES or ❄️ NO?'
+  const url = ids.length === 1 ? `https://fanlife.dubelteam.com/clubs/${ids[0]}` : 'https://fanlife.dubelteam.com'
+  return {app: 'fanlife', url, label: 'Opinion War', hook: question, comment_label: 'First comment',
+    comment: 'Make your case below. The best argument gets pinned 📌',
+    tags: smartTags({clubs: ids, topics: [shape === 'shirt' ? 'shirt' : 'debate']}),
+    body: `${question}\n\n${ask} One word in the comments — then tell us why.\nTag the mate who’ll disagree 👇`,
+    visual: `L-DEBATE ${right ? 'two sides, a VS seal' : 'one club, YES or NO'}, the question on a paper strip.`,
+    kit: {t: 'L-DEBATE', data: {question, left, right, shout: right ? 'YOUR CALL!' : 'YES OR NO?', label: 'FAN LIFE · OPINION WAR'}}}
+}
+
+// ── v6: THE BUNDLE (Sundays, 21:00) — the whole universe in one carousel: "Your club's whole story. Free." ─────────────
+function bundle(n: number): Item {
+  const c = clubs[(n * 3 + 2) % clubs.length]!, f = FILMS[n % FILMS.length]!
+  const base = {club: {id: c.id, name: c.name}, crestName: c.name}
+  const slides: Slide[] = [
+    {t: 'L-SLIDE', data: {...base, s: 'cover', n: 1, of: 6, kicker: 'FAN LIFE · THE WHOLE UNIVERSE', title: 'Your club’s whole story. Free.'}},
+    {t: 'L-GATE', data: {...base, gate: 'GATE 2', name: 'TRIVIA WING', plate: 'memo', headline: 'Trivia, shirts, line-ups, the archive.', body: ['Every question from the club’s own records.', `${GATES.length} gates on your club’s own page.`], label: `${c.name.toUpperCase()} · FAN LIFE`}},
+    {t: 'L-GATE', data: {...base, gate: 'GATE 9', name: 'ROYAL RUMBLE', plate: 'bootball', shout: 'SPIN!', headline: 'Draft legends. Beat your mate.', body: ['Three names, one pick, a hard budget.', 'Send the link — same deal for him.'], label: `${c.name.toUpperCase()} · GATE 9`}},
+    {t: 'L-GATE', data: {brand: 'legends', gate: 'FAN LIFE · THE BIG GAME', name: 'LEGENDS MANAGER', plate: 'dribbler', shout: 'KICK OFF!', headline: 'A whole season with your club’s legends.', body: ['Watch it live. Change it at half-time.', 'The board sets the budget.'], label: 'LEGENDS MANAGER · FAN LIFE'}},
+    {t: 'L-FILM', data: {title: f.title, thumb: f.thumb, kicker: 'FANLIFE: FOOTBALL STORIES', shout: 'WATCH!'}},
+    {t: 'L-SLIDE', data: {...base, s: 'cta', n: 6, of: 6, title: 'One account. Every club. Free on FAN LIFE.'}},
+  ]
+  return {app: 'fanlife', url: 'https://fanlife.dubelteam.com', label: 'The bundle', tags: smartTags({clubs: [c.id], topics: ['gate', 'film']}),
+    hook: 'Your club’s whole story. Free. Swipe →',
+    body: `${clubs.length} clubs. ${GATES.length} gates. Two big games. A YouTube channel of real nights.\n\n1 · Your club’s own page — trivia, shirts, line-ups, the archive\n2 · Royal Rumble — draft legends against your mate\n3 · Legends Manager — a season with your club’s history\n4 · Football Stories on YouTube — ${f.title}\n\nWhich one first? Tell us 👇\nOne account, free — link in bio. Films: youtube.com/@FanLifeFootballStories`,
+    visual: 'Carousel · the bundle: cover, the club, Royal Rumble, Legends Manager, a film, the way in.', kit: {t: 'L-CAROUSEL', data: base, slides} as unknown as Kit}
+}
+
 // ── the plan: even hours fixed, odd hours live (composed at send time, or quiet) ─────────────────────────────────────
 // The archive files European competitions under their present names; a post says what the competition was called
 // in that year (European Cup before 1992/93, UEFA Cup before 2009/10). Same competition, the name of its time.
@@ -545,11 +625,13 @@ const FILMS: Film[] = (() => {
   return out
 })()
 if (FILMS.length < 2) throw Error('fewer than two public films to promote')
+/** the channel's own Instagram (owner, 8.11.2026): YouTube posts point at it, Instagram posts point at YouTube */
+const IG = 'fanlifefootballstories'
 function film(n: number, story = false): Item {
   const f = FILMS[n % FILMS.length]!
   return {app: 'fanlife', url: f.url, label: 'New film', tags: smartTags({clubs: [], topics: ['film'], max: 5}),
     hook: pickOf([`New on the channel: ${f.title}`, `Ten minutes you won't regret: ${f.title}`, `Tonight's watch: ${f.title}`], `fm${n}`),
-    body: `${f.title}\n\nThe full film is on our YouTube channel, FanLife: Football Stories — real nights, real supporters.\n▶️ ${f.url}\n\nWere you there? Tell us in the comments 👇`,
+    body: `${f.title}\n\nThe full film is on our YouTube channel, FanLife: Football Stories — real nights, real supporters.\n▶️ ${f.url}\n\nWere you there? Tell us in the comments 👇\nThe Shorts and the stories behind them: @${IG} on Instagram.`,
     visual: 'L-FILM the film\'s own thumbnail on a screen, its title.',
     kit: {t: 'L-FILM', data: {title: f.title, thumb: f.thumb, kicker: story ? 'WATCH TONIGHT' : 'NOW ON YOUTUBE', shout: 'WATCH!'}}}
 }
@@ -568,14 +650,18 @@ function storyQuiz(n: number): [Item, Item] {
   return [ask, reply]
 }
 
-// v5: 45 days from 5.11.2026 (Athens). Live slots 09/11/13:30/15 are composed at send time from real data, or quiet.
+// v6 (owner, 9.11.2026): 45 days from 10.11.2026 (Athens). Live slots are composed at send time from real data, or quiet:
+// 09 results · 11 next up · 12 the Club Vote (Mon/Thu) or the community's real numbers (Wed/Sun) · 13:30 DUBID round ·
+// 15 OFFSIDES today · 20 the channel pulse (a public film from the last ten days). No THE WORKER in this plan (owner).
 export const DAYS = 45
-const LIVE: [string, string, string, string][] = [['09:00', 'results', 'fanlife', 'Results'], ['11:00', 'fixtures', 'fanlife', 'Next up'], ['13:30', 'dubid', 'dubid', 'DUBID round'], ['15:00', 'offsides', 'offsides', 'OFFSIDES today']]
-// 21:00, the evening post, rotates through the week (Sun = 0): the big games twice, a film on Friday night
-const EVENING = ['spicy', 'big', 'nerds', 'score', 'generations', 'film', 'big'] as const
+const LIVE: [string, string, string, string][] = [['09:00', 'results', 'fanlife', 'Results'], ['11:00', 'fixtures', 'fanlife', 'Next up'], ['13:30', 'dubid', 'dubid', 'DUBID round'], ['15:00', 'offsides', 'offsides', 'OFFSIDES today'], ['20:00', 'pulse', 'fanlife', 'Channel pulse']]
+// the week (Sun = 0) — the feature of the day at 13:00 and the evening post at 21:00
+const FEATURE = ['kits', 'dubid', 'blind-cow', 'xi', 'timeline', 'goal', 'offsides'] as const
+// Tuesday night: the Opinion War on even weeks, SPICY (a sharp take from the archive) on odd ones; Wednesday: SPICY and Nerds only in turn
+const EVENING = ['bundle', 'rumble', 'debate', 'nerds', 'generations', 'film', 'legends'] as const
 const safeOTD = (y: number, m: number, d: number, n: number) => { try { return onThisDay(y, m, d) } catch { return fact(500 + n) } }
 for (let n = 1; n <= DAYS; n++) {
-  const dt = new Date(Date.UTC(2026, 10, 4 + n))
+  const dt = new Date(Date.UTC(2026, 10, 9 + n))
   const y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1, d = dt.getUTCDate(), dow = dt.getUTCDay()
   const date = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`
   const slot = (t: string, format: string, main: Item, to: To[], kind = 'fixed') =>
@@ -585,20 +671,25 @@ for (let n = 1; n <= DAYS; n++) {
   const [ask, answer] = storyQuiz(n)
   // feed: four a day
   slot('10:00', 'post', otd, ['feed'])
-  slot('13:00', 'post', dow === 1 || dow === 4 ? system('dubid') : dow === 2 || dow === 6 ? system('offsides') : gate(n), ['feed'])
+  const ft = FEATURE[dow]!
+  slot('13:00', 'post', ft === 'dubid' || ft === 'offsides' ? system(ft) : gateKey(ft === 'timeline' && n % 2 ? 'memory' : ft, n), ['feed'])
   slot('19:00', 'carousel', carousel(n), ['feed', 'tiktok'])
   const ev = EVENING[dow]!
-  slot('21:00', 'post', ev === 'spicy' ? spicy(n) : ev === 'big' ? bigGame(n) : ev === 'nerds' ? nerds(n) : ev === 'score' ? guessScore(n) : ev === 'generations' ? generations(n) : film(n), ['feed'])
-  // stories: the quiz and its answer, a fact, the generations question, a film on Wednesdays, a late fact
+  if (ev === 'bundle') slot('21:00', 'carousel', bundle(n), ['feed', 'tiktok'])
+  else slot('21:00', 'post', ev === 'rumble' || ev === 'legends' ? bigGame(n, ev) : ev === 'debate' ? (Math.floor(n / 7) % 2 ? spicy(n) : debate(n, 'two')) : ev === 'nerds' ? (Math.floor(n / 7) % 2 ? nerds(n) : spicy(n)) : ev === 'generations' ? generations(n) : film(n), ['feed'])
+  // stories: the quiz and its answer, OPINION WAR, the generations question, a film on Wednesdays, a late fact
   slot('14:00', 'story', ask, ['story'])
-  slot('16:00', 'story', fact(n), ['story'])
+  slot('16:00', 'story', debate(n + 100, dow === 0 ? 'shirt' : (['one', 'eternal', 'two'] as const)[n % 3]!), ['story'])
   slot('17:30', 'story', answer, ['story'])
   slot('19:30', 'story', ev === 'generations' ? gate(n + 30) : generations(n), ['story']) // GENERATIONS (owner, 30.10.2026): 15–55, from father to son
-  if (dow === 3) slot('20:00', 'story', film(n + 2, true), ['story'])
+  if (dow === 3) slot('20:30', 'story', film(n + 2, true), ['story'])
   slot('22:00', 'story', fact(100 + n), ['story'])
-  // the owner's morning briefing (owner, 29.10.2026): operations, not a post — composed at send time, Telegram only
+  // the owner's morning briefing (owner, 29.10.2026; v6 9.11.2026: yesterday ✅/❌ and today's plan): Telegram only
   slot('07:30', 'post', {app: 'fanlife', label: 'Morning briefing', hook: '(briefing: composed at send time)', body: '', visual: 'none', kit: {t: 'none', data: {}}}, [], 'briefing')
   for (const [t, kind, app, label] of LIVE) slot(t, 'post', {app, label, hook: `(${kind}: composed at send time)`, body: '', visual: `live ${kind}`, kit: {t: 'L-CARD', data: {hook: kind}}}, ['story'], kind)
+  // 12:00 — the Club Vote's real count (Mon/Thu) on feed and story, the community's real week (Wed/Sun) as a story
+  if (dow === 1 || dow === 4) slot('12:00', 'post', {app: 'fanlife', label: 'Club Vote', hook: '(vote: composed at send time)', body: '', visual: 'live vote', kit: {t: 'L-CARD', data: {hook: 'vote'}}}, ['feed', 'story'], 'vote')
+  if (dow === 0 || dow === 3) slot('12:00', 'post', {app: 'fanlife', label: 'Real numbers', hook: '(numbers: composed at send time)', body: '', visual: 'live numbers', kit: {t: 'L-CARD', data: {hook: 'numbers'}}}, ['story'], 'numbers')
 }
 for (const r of rows) if (r.kind === 'fixed' && (!r.main.tags || r.main.tags.split(' ').length > 8)) throw Error(`tags: ${r.at}`)
 
@@ -610,10 +701,10 @@ const eraDeep = (x: unknown, year = 0): unknown => typeof x === 'string'
 for (const r of rows) { r.main.hook = eraNames(r.main.hook); r.main.body = eraNames(r.main.body); if (r.main.comment) r.main.comment = eraNames(r.main.comment); r.main.kit.data = eraDeep(r.main.kit.data) as Record<string, unknown>; const sl = (r.main.kit as {slides?: Kit[]}).slides; if (sl) for (const k of sl) k.data = eraDeep(k.data) as Record<string, unknown> }
 for (const r of rows) if (r.kind === 'fixed' && !modern(r.main.hook, r.main.body, r.main.comment || '', JSON.stringify(r.main.kit))) throw Error(`pre-1980 content in ${r.at}`)
 const J = (x: unknown) => `'${JSON.stringify(x).replace(/'/g, "''")}'::jsonb`
-const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v5 (owner, 4.11.2026), Athens time.`,
-  `-- 45 days from 5.11.2026: four feed posts and up to eight stories a day, each row naming its channels in kit.to`,
+const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit by hand. FAN LIFE plan v6 (owner, 9.11.2026), Athens time.`,
+  `-- 45 days from 10.11.2026: four feed posts (+ the Club Vote Mon/Thu) and up to nine stories a day, each row naming its channels in kit.to`,
   `-- (feed = Facebook + Instagram, story = their stories, tiktok = a copy-paste draft), with its picture's kit and tags.`,
-  `-- Live slots 09/11/13:30/15 are composed at send time from real data, or skipped. Nothing from before 1980.`,
+  `-- Live slots 09/11/12/13:30/15/20 are composed at send time from real data, or skipped. Nothing from before 1980. No THE WORKER.`,
   `-- Every row still waiting and still ahead is replaced; what was already sent is never touched.`,
   `begin;`,
   `delete from marketing.posts where status in ('pending', 'skipped', 'failed') and send_at > now();`,
@@ -623,5 +714,5 @@ const sql = [`-- generated by scripts/marketing/build-plan.mts — do not edit b
   `-- and a slot inserted for a moment already past is not sent late`,
   `delete from marketing.posts where status = 'pending' and send_at < now() - interval '5 minutes';`,
   `commit;`, ''].join('\n')
-writeFileSync(path.join(HERE, '../../supabase/marketing/0009_marketing_plan_v5.sql'), sql)
-writeFileSync(path.join(HERE, 'plan-v5.json'), JSON.stringify(rows, null, 1))
+writeFileSync(path.join(HERE, '../../supabase/marketing/0010_marketing_plan_v6.sql'), sql)
+writeFileSync(path.join(HERE, 'plan-v6.json'), JSON.stringify(rows, null, 1))
