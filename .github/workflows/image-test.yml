@@ -1,0 +1,23 @@
+name: image-test
+on: { push: { branches: [claude/image-test] } }
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir out; i=0
+          for p in \
+           "cinematic film still, 2010 Champions League qualifier night in Salzburg, away supporters in red scarves celebrating behind a fence, floodlights, light rain, 35mm, shallow depth of field, no text" \
+           "cinematic film still, a footballer in a plain red shirt sliding on wet grass celebrating a late winning goal, stadium lights, motion blur, 35mm, no text, no logos" \
+           "hand-inked comic book panel, 1981 Spain, newspaper kiosk at dawn, headline-less newspapers, worried men reading, muted halftone colours, dramatic shadows" \
+           "photorealistic archive-style photograph, 1980s football terrace, crowd of men in coats, black and white, film grain" ; do
+            i=$((i+1)); enc=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$p")
+            for m in flux turbo; do
+              curl -sS -m 180 -o out/$i-$m.jpg -w "$i $m %{http_code} %{size_download} %{time_total}\n" "https://image.pollinations.ai/prompt/$enc?width=720&height=1280&model=$m&seed=11&nologo=true" || true
+              sleep 16
+            done
+          done
+          curl -sS -m 30 https://image.pollinations.ai/models || true
+          curl -sS -m 30 https://gen.pollinations.ai/image/models | head -c 3000 || true
+      - uses: actions/upload-artifact@v4
+        with: { name: imgs, path: out }
