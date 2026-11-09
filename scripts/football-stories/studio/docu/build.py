@@ -191,9 +191,9 @@ class Film:
     def ledger(self, s, t, d):
         cid = self.id('lg')
         rows = ''.join(f'<div class="lrow" id="{cid}r{i}"><span>{e(r[0])}</span><b>{e(r[1])}</b><b>{e(r[2])}</b></div>' for i, r in enumerate(s['rows']))
-        circ = (f'<svg class="circ" style="top:{220 + 225 * s["circle"][0]}px;left:{1180 if s["circle"][1] == 2 else 840}px" viewBox="0 0 200 140">'
+        circ = (f'<svg class="circ" style="top:{65 + 220 * s["circle"][0]}px;left:{1160 if s["circle"][1] == 2 else 820}px" viewBox="0 0 200 140">'
                 f'<path id="{cid}c" d="M100 10 C170 10 190 50 188 72 C185 115 140 132 98 130 C45 128 12 105 14 68 C16 32 55 12 112 14" fill="none" stroke="{self.THEM}" stroke-width="7" stroke-linecap="round"/></svg>'
-                f'<div class="note" style="top:{430 + 225 * s["circle"][0]}px;left:{1210 if s["circle"][1] == 2 else 870}px;color:{self.THEM}">{e(s.get("note", ""))}</div>') if s.get('circle') else ''
+                f'<div class="note" style="top:{278 + 220 * s["circle"][0]}px;left:{1160 if s["circle"][1] == 2 else 820}px;color:{self.THEM}">{e(s.get("note", ""))}</div>') if s.get('circle') else ''
         inner = (f'<div class="ledger"><div class="lh"><span></span><b style="color:{self.US}">{e(s["us"])}</b><b style="color:{self.THEM}">{e(s["them"])}</b></div>{rows}{circ}</div>')
         self.clip(cid, t, d, inner, 14, 'paper')
         self.tween(f'tl.fromTo("#{cid} .ledger",{{y:80,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});')
@@ -299,7 +299,7 @@ video.clip{{width:1920px;height:1080px}}
 .ledger{{position:absolute;left:220px;top:170px;width:1480px;color:{INK}}}
 .lh,.lrow{{display:grid;grid-template-columns:1fr 340px 340px;align-items:center;text-align:center}} .lh b{{font:400 54px 'Head'}}
 .lrow{{border-top:5px solid {INK};padding:28px 0}} .lrow span{{text-align:left;font:700 48px 'Cond';letter-spacing:3px}} .lrow b{{font:400 160px/1 'Ultra'}}
-.circ{{position:absolute;width:300px;height:210px}} .note{{position:absolute;font:700 36px 'Mono'}}
+.circ{{position:absolute;width:300px;height:210px}} .note{{position:absolute;width:300px;text-align:center;font:700 34px 'Mono'}}
 .rule{{position:absolute;left:260px;top:220px;width:1400px;color:{INK}}} .rule small{{font:700 40px 'Cond';letter-spacing:10px}} .rule b{{display:block;font:400 132px/1.05 'Ultra';margin:12px 0 30px}} .rule p{{font:700 52px/1.3 'Mono';margin:0}}
 .vd{{position:absolute;left:0;top:0;width:1920px;height:1080px;display:flex}} .vl,.vr{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#fff;text-align:center}}
 .vl img,.vr img{{width:230px;height:230px;object-fit:contain;background:#fff;border-radius:50%;padding:10px}} .vl small,.vr small{{font:700 46px 'Cond';letter-spacing:10px}} .vl b,.vr b{{font:400 92px/1.05 'Head'}}
