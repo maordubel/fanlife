@@ -4,7 +4,6 @@ import {getJob,listJobs,updateJob} from './store'
 import {signedDownload,signedUpload} from './media'
 import {durable} from '@/lib/master/durable'
 import {createHash,timingSafeEqual} from 'node:crypto'
-import manifest from '@/scripts/football-stories/comic/classified_manifest.json'
 
 /**
  * The Flow operator (owner, 9.11.2026: "easy, convenient, automatic — no login"). Google Flow has no API, so Claude makes
@@ -99,8 +98,9 @@ export async function ticketOk(ticket:unknown,now=Date.now()):Promise<boolean>{
  return a.length===b.length&&timingSafeEqual(a,b)
 }
 
-/** CLASSIFIED panels with no Drive picture and a Flow prompt (written by the writers' room, comic/from_script.py). */
+/** CLASSIFIED panels with no Drive picture and a Flow prompt (written by the writers' room, comic/from_script.py). The
+ *  operator sends the manifest's FILEs with the queue request (lib/ never reads scripts/). */
 type Man={files:Record<string,{title?:string;panels?:{id:string;role?:string;drive_id?:string|null;prompt?:string}[]}>}
-export function panelNeeds(m:Man=manifest as unknown as Man):PanelNeed[]{
+export function panelNeeds(m:Man):PanelNeed[]{
  return Object.entries(m.files||{}).map(([file,f])=>({file,title:f.title,panels:(f.panels||[]).filter(p=>!p.drive_id&&typeof p.prompt==='string'&&p.prompt.length>10).map(p=>({id:p.id,role:p.role,prompt:p.prompt!}))})).filter(n=>n.panels.length)
 }

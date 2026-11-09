@@ -40,7 +40,8 @@ worker edits → the film arrives on Telegram
    The ticket lives only in this run; it is never written to a file, a commit, a message or a log.
 2. Built-in browser → `https://flow.google.com`. Not signed in to Google → stop with one line to the owner.
 3. In that tab (javascript): `fetch('https://fanlife.dubelteam.com/api/master/stories/flow',{method:'POST',
-   headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket,op:'queue'})})`.
+   headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket,op:'queue',manifest})})` — `manifest` is
+   `scripts/football-stories/comic/classified_manifest.json` from main (raw.githubusercontent.com).
    `{"jobs":[],"classified":[]}` → stop quietly.
 4. One job per run, oldest first (or up to 20 CLASSIFIED panels). In a Flow project named after it:
    * characters (a Short): Image, 9:16, Nano Banana, each `characters[].prompt`;
